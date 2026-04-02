@@ -218,6 +218,9 @@ public class CloudRedisClusterClientTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     mockCloudRedisCluster.addResponse(expectedResponse);
 
@@ -284,6 +287,9 @@ public class CloudRedisClusterClientTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     mockCloudRedisCluster.addResponse(expectedResponse);
 
@@ -350,6 +356,9 @@ public class CloudRedisClusterClientTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -511,6 +520,9 @@ public class CloudRedisClusterClientTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -591,6 +603,9 @@ public class CloudRedisClusterClientTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -719,6 +734,90 @@ public class CloudRedisClusterClientTest {
   }
 
   @Test
+  public void getSharedRegionalCertificateAuthorityTest() throws Exception {
+    SharedRegionalCertificateAuthority expectedResponse =
+        SharedRegionalCertificateAuthority.newBuilder()
+            .setName(
+                SharedRegionalCertificateAuthorityName.of("[PROJECT]", "[LOCATION]").toString())
+            .build();
+    mockCloudRedisCluster.addResponse(expectedResponse);
+
+    SharedRegionalCertificateAuthorityName name =
+        SharedRegionalCertificateAuthorityName.of("[PROJECT]", "[LOCATION]");
+
+    SharedRegionalCertificateAuthority actualResponse =
+        client.getSharedRegionalCertificateAuthority(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSharedRegionalCertificateAuthorityRequest actualRequest =
+        ((GetSharedRegionalCertificateAuthorityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSharedRegionalCertificateAuthorityExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      SharedRegionalCertificateAuthorityName name =
+          SharedRegionalCertificateAuthorityName.of("[PROJECT]", "[LOCATION]");
+      client.getSharedRegionalCertificateAuthority(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSharedRegionalCertificateAuthorityTest2() throws Exception {
+    SharedRegionalCertificateAuthority expectedResponse =
+        SharedRegionalCertificateAuthority.newBuilder()
+            .setName(
+                SharedRegionalCertificateAuthorityName.of("[PROJECT]", "[LOCATION]").toString())
+            .build();
+    mockCloudRedisCluster.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SharedRegionalCertificateAuthority actualResponse =
+        client.getSharedRegionalCertificateAuthority(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudRedisCluster.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSharedRegionalCertificateAuthorityRequest actualRequest =
+        ((GetSharedRegionalCertificateAuthorityRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSharedRegionalCertificateAuthorityExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudRedisCluster.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSharedRegionalCertificateAuthority(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void rescheduleClusterMaintenanceTest() throws Exception {
     Cluster expectedResponse =
         Cluster.newBuilder()
@@ -751,6 +850,9 @@ public class CloudRedisClusterClientTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -835,6 +937,9 @@ public class CloudRedisClusterClientTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1448,6 +1553,9 @@ public class CloudRedisClusterClientTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1522,6 +1630,9 @@ public class CloudRedisClusterClientTest {
             .setKmsKey("kmsKey-1127483058")
             .setAutomatedBackupConfig(AutomatedBackupConfig.newBuilder().build())
             .setEncryptionInfo(EncryptionInfo.newBuilder().build())
+            .setServerCaMode(ServerCaMode.forNumber(0))
+            .setServerCaPool("serverCaPool1433802429")
+            .setRotateServerCertificate(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -132,6 +132,7 @@ public class GrpcSearchTuningServiceStub extends SearchTuningServiceStub {
                   builder.add("data_store", String.valueOf(request.getDataStore()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getDataStore())
             .build();
     GrpcCallSettings<ListCustomModelsRequest, ListCustomModelsResponse>
         listCustomModelsTransportSettings =
@@ -143,6 +144,7 @@ public class GrpcSearchTuningServiceStub extends SearchTuningServiceStub {
                       builder.add("data_store", String.valueOf(request.getDataStore()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getDataStore())
                 .build();
 
     this.trainCustomModelCallable =

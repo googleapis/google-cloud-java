@@ -1202,6 +1202,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupTransportSettings =
         HttpJsonCallSettings.<UpdateEntryGroupRequest, EntryGroup>newBuilder()
@@ -1225,6 +1226,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteEntryGroupRequest, Empty> deleteEntryGroupTransportSettings =
         HttpJsonCallSettings.<DeleteEntryGroupRequest, Empty>newBuilder()
@@ -1236,6 +1238,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListEntryGroupsRequest, ListEntryGroupsResponse>
         listEntryGroupsTransportSettings =
@@ -1248,6 +1251,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateEntryRequest, Entry> createEntryTransportSettings =
         HttpJsonCallSettings.<CreateEntryRequest, Entry>newBuilder()
@@ -1259,6 +1263,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateEntryRequest, Entry> updateEntryTransportSettings =
         HttpJsonCallSettings.<UpdateEntryRequest, Entry>newBuilder()
@@ -1281,6 +1286,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetEntryRequest, Entry> getEntryTransportSettings =
         HttpJsonCallSettings.<GetEntryRequest, Entry>newBuilder()
@@ -1292,6 +1298,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<LookupEntryRequest, Entry> lookupEntryTransportSettings =
         HttpJsonCallSettings.<LookupEntryRequest, Entry>newBuilder()
@@ -1308,6 +1315,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateTagTemplateRequest, TagTemplate> createTagTemplateTransportSettings =
         HttpJsonCallSettings.<CreateTagTemplateRequest, TagTemplate>newBuilder()
@@ -1319,6 +1327,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetTagTemplateRequest, TagTemplate> getTagTemplateTransportSettings =
         HttpJsonCallSettings.<GetTagTemplateRequest, TagTemplate>newBuilder()
@@ -1330,6 +1339,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateTransportSettings =
         HttpJsonCallSettings.<UpdateTagTemplateRequest, TagTemplate>newBuilder()
@@ -1353,6 +1363,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateTagTemplateFieldRequest, TagTemplateField>
         createTagTemplateFieldTransportSettings =
@@ -1365,6 +1376,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateTagTemplateFieldRequest, TagTemplateField>
         updateTagTemplateFieldTransportSettings =
@@ -1377,6 +1389,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RenameTagTemplateFieldRequest, TagTemplateField>
         renameTagTemplateFieldTransportSettings =
@@ -1389,6 +1402,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
         renameTagTemplateFieldEnumValueTransportSettings =
@@ -1402,6 +1416,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteTagTemplateFieldRequest, Empty>
         deleteTagTemplateFieldTransportSettings =
@@ -1414,6 +1429,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateTagRequest, Tag> createTagTransportSettings =
         HttpJsonCallSettings.<CreateTagRequest, Tag>newBuilder()
@@ -1425,6 +1441,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateTagRequest, Tag> updateTagTransportSettings =
         HttpJsonCallSettings.<UpdateTagRequest, Tag>newBuilder()
@@ -1447,6 +1464,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTagsRequest, ListTagsResponse> listTagsTransportSettings =
         HttpJsonCallSettings.<ListTagsRequest, ListTagsResponse>newBuilder()
@@ -1458,6 +1476,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1469,6 +1488,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1480,6 +1500,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1492,6 +1513,7 @@ public class HttpJsonDataCatalogStub extends DataCatalogStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.searchCatalogCallable =

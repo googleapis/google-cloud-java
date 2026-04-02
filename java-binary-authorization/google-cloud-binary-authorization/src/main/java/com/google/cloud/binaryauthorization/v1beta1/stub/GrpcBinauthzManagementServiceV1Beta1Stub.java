@@ -198,6 +198,7 @@ public class GrpcBinauthzManagementServiceV1Beta1Stub extends BinauthzManagement
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdatePolicyRequest, Policy> updatePolicyTransportSettings =
         GrpcCallSettings.<UpdatePolicyRequest, Policy>newBuilder()
@@ -218,6 +219,7 @@ public class GrpcBinauthzManagementServiceV1Beta1Stub extends BinauthzManagement
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAttestorRequest, Attestor> getAttestorTransportSettings =
         GrpcCallSettings.<GetAttestorRequest, Attestor>newBuilder()
@@ -228,6 +230,7 @@ public class GrpcBinauthzManagementServiceV1Beta1Stub extends BinauthzManagement
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateAttestorRequest, Attestor> updateAttestorTransportSettings =
         GrpcCallSettings.<UpdateAttestorRequest, Attestor>newBuilder()
@@ -248,6 +251,7 @@ public class GrpcBinauthzManagementServiceV1Beta1Stub extends BinauthzManagement
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteAttestorRequest, Empty> deleteAttestorTransportSettings =
         GrpcCallSettings.<DeleteAttestorRequest, Empty>newBuilder()
@@ -258,6 +262,7 @@ public class GrpcBinauthzManagementServiceV1Beta1Stub extends BinauthzManagement
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.getPolicyCallable =

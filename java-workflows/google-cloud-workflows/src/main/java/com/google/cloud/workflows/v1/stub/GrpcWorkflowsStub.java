@@ -218,6 +218,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetWorkflowRequest, Workflow> getWorkflowTransportSettings =
         GrpcCallSettings.<GetWorkflowRequest, Workflow>newBuilder()
@@ -228,6 +229,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateWorkflowRequest, Operation> createWorkflowTransportSettings =
         GrpcCallSettings.<CreateWorkflowRequest, Operation>newBuilder()
@@ -238,6 +240,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteWorkflowRequest, Operation> deleteWorkflowTransportSettings =
         GrpcCallSettings.<DeleteWorkflowRequest, Operation>newBuilder()
@@ -248,6 +251,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateWorkflowRequest, Operation> updateWorkflowTransportSettings =
         GrpcCallSettings.<UpdateWorkflowRequest, Operation>newBuilder()
@@ -270,6 +274,7 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

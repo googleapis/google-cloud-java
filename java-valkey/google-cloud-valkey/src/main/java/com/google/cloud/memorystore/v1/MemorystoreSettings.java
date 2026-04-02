@@ -170,6 +170,16 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
     return ((MemorystoreStubSettings) getStubSettings()).getCertificateAuthoritySettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to getSharedRegionalCertificateAuthority.
+   */
+  public UnaryCallSettings<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthoritySettings() {
+    return ((MemorystoreStubSettings) getStubSettings())
+        .getSharedRegionalCertificateAuthoritySettings();
+  }
+
   /** Returns the object with the settings used for calls to rescheduleMaintenance. */
   public UnaryCallSettings<RescheduleMaintenanceRequest, Operation>
       rescheduleMaintenanceSettings() {
@@ -397,6 +407,15 @@ public class MemorystoreSettings extends ClientSettings<MemorystoreSettings> {
     public UnaryCallSettings.Builder<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthoritySettings() {
       return getStubSettingsBuilder().getCertificateAuthoritySettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getSharedRegionalCertificateAuthority.
+     */
+    public UnaryCallSettings.Builder<
+            GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthoritySettings() {
+      return getStubSettingsBuilder().getSharedRegionalCertificateAuthoritySettings();
     }
 
     /** Returns the builder for the settings used for calls to rescheduleMaintenance. */

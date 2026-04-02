@@ -375,6 +375,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeletePosixAccountRequest, Empty> deletePosixAccountTransportSettings =
         HttpJsonCallSettings.<DeletePosixAccountRequest, Empty>newBuilder()
@@ -386,6 +387,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteSshPublicKeyRequest, Empty> deleteSshPublicKeyTransportSettings =
         HttpJsonCallSettings.<DeleteSshPublicKeyRequest, Empty>newBuilder()
@@ -397,6 +399,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetLoginProfileRequest, LoginProfile> getLoginProfileTransportSettings =
         HttpJsonCallSettings.<GetLoginProfileRequest, LoginProfile>newBuilder()
@@ -408,6 +411,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetSshPublicKeyRequest, OsLoginProto.SshPublicKey>
         getSshPublicKeyTransportSettings =
@@ -420,6 +424,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
         importSshPublicKeyTransportSettings =
@@ -432,6 +437,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
         updateSshPublicKeyTransportSettings =
@@ -444,6 +450,7 @@ public class HttpJsonOsLoginServiceStub extends OsLoginServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.createSshPublicKeyCallable =

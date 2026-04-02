@@ -973,6 +973,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAccountsRequest, ListAccountsResponse> listAccountsTransportSettings =
         GrpcCallSettings.<ListAccountsRequest, ListAccountsResponse>newBuilder()
@@ -987,6 +988,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateAccountRequest, Account> updateAccountTransportSettings =
         GrpcCallSettings.<UpdateAccountRequest, Account>newBuilder()
@@ -1018,6 +1020,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListPropertiesRequest, ListPropertiesResponse>
         listPropertiesTransportSettings =
@@ -1037,6 +1040,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdatePropertyRequest, Property> updatePropertyTransportSettings =
         GrpcCallSettings.<UpdatePropertyRequest, Property>newBuilder()
@@ -1057,6 +1061,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkTransportSettings =
         GrpcCallSettings.<DeleteFirebaseLinkRequest, Empty>newBuilder()
@@ -1067,6 +1072,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
         listFirebaseLinksTransportSettings =
@@ -1078,6 +1084,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateGoogleAdsLinkRequest, GoogleAdsLink>
         createGoogleAdsLinkTransportSettings =
@@ -1089,6 +1096,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateGoogleAdsLinkRequest, GoogleAdsLink>
         updateGoogleAdsLinkTransportSettings =
@@ -1112,6 +1120,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse>
         listGoogleAdsLinksTransportSettings =
@@ -1123,6 +1132,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDataSharingSettingsRequest, DataSharingSettings>
         getDataSharingSettingsTransportSettings =
@@ -1134,6 +1144,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
         getMeasurementProtocolSecretTransportSettings =
@@ -1146,6 +1157,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListMeasurementProtocolSecretsRequest, ListMeasurementProtocolSecretsResponse>
         listMeasurementProtocolSecretsTransportSettings =
@@ -1159,6 +1171,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
         createMeasurementProtocolSecretTransportSettings =
@@ -1171,6 +1184,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteMeasurementProtocolSecretRequest, Empty>
         deleteMeasurementProtocolSecretTransportSettings =
@@ -1182,6 +1196,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateMeasurementProtocolSecretRequest, MeasurementProtocolSecret>
         updateMeasurementProtocolSecretTransportSettings =
@@ -1209,6 +1224,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("property", String.valueOf(request.getProperty()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProperty())
                 .build();
     GrpcCallSettings<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
         searchChangeHistoryEventsTransportSettings =
@@ -1221,6 +1237,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("account", String.valueOf(request.getAccount()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAccount())
                 .build();
     GrpcCallSettings<CreateConversionEventRequest, ConversionEvent>
         createConversionEventTransportSettings =
@@ -1232,6 +1249,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateConversionEventRequest, ConversionEvent>
         updateConversionEventTransportSettings =
@@ -1256,6 +1274,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteConversionEventRequest, Empty> deleteConversionEventTransportSettings =
         GrpcCallSettings.<DeleteConversionEventRequest, Empty>newBuilder()
@@ -1266,6 +1285,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListConversionEventsRequest, ListConversionEventsResponse>
         listConversionEventsTransportSettings =
@@ -1277,6 +1297,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateKeyEventRequest, KeyEvent> createKeyEventTransportSettings =
         GrpcCallSettings.<CreateKeyEventRequest, KeyEvent>newBuilder()
@@ -1287,6 +1308,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateKeyEventRequest, KeyEvent> updateKeyEventTransportSettings =
         GrpcCallSettings.<UpdateKeyEventRequest, KeyEvent>newBuilder()
@@ -1307,6 +1329,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteKeyEventRequest, Empty> deleteKeyEventTransportSettings =
         GrpcCallSettings.<DeleteKeyEventRequest, Empty>newBuilder()
@@ -1317,6 +1340,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListKeyEventsRequest, ListKeyEventsResponse> listKeyEventsTransportSettings =
         GrpcCallSettings.<ListKeyEventsRequest, ListKeyEventsResponse>newBuilder()
@@ -1327,6 +1351,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateCustomDimensionRequest, CustomDimension>
         createCustomDimensionTransportSettings =
@@ -1338,6 +1363,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateCustomDimensionRequest, CustomDimension>
         updateCustomDimensionTransportSettings =
@@ -1362,6 +1388,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ArchiveCustomDimensionRequest, Empty> archiveCustomDimensionTransportSettings =
         GrpcCallSettings.<ArchiveCustomDimensionRequest, Empty>newBuilder()
@@ -1372,6 +1399,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetCustomDimensionRequest, CustomDimension>
         getCustomDimensionTransportSettings =
@@ -1383,6 +1411,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateCustomMetricRequest, CustomMetric> createCustomMetricTransportSettings =
         GrpcCallSettings.<CreateCustomMetricRequest, CustomMetric>newBuilder()
@@ -1393,6 +1422,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateCustomMetricRequest, CustomMetric> updateCustomMetricTransportSettings =
         GrpcCallSettings.<UpdateCustomMetricRequest, CustomMetric>newBuilder()
@@ -1415,6 +1445,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ArchiveCustomMetricRequest, Empty> archiveCustomMetricTransportSettings =
         GrpcCallSettings.<ArchiveCustomMetricRequest, Empty>newBuilder()
@@ -1425,6 +1456,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetCustomMetricRequest, CustomMetric> getCustomMetricTransportSettings =
         GrpcCallSettings.<GetCustomMetricRequest, CustomMetric>newBuilder()
@@ -1435,6 +1467,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetDataRetentionSettingsRequest, DataRetentionSettings>
         getDataRetentionSettingsTransportSettings =
@@ -1446,6 +1479,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
         updateDataRetentionSettingsTransportSettings =
@@ -1469,6 +1503,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteDataStreamRequest, Empty> deleteDataStreamTransportSettings =
         GrpcCallSettings.<DeleteDataStreamRequest, Empty>newBuilder()
@@ -1479,6 +1514,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDataStreamRequest, DataStream> updateDataStreamTransportSettings =
         GrpcCallSettings.<UpdateDataStreamRequest, DataStream>newBuilder()
@@ -1501,6 +1537,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDataStreamRequest, DataStream> getDataStreamTransportSettings =
         GrpcCallSettings.<GetDataStreamRequest, DataStream>newBuilder()
@@ -1511,6 +1548,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RunAccessReportRequest, RunAccessReportResponse>
         runAccessReportTransportSettings =

@@ -17,17 +17,16 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Properties;
 import org.junit.jupiter.api.Test;
 
-public class BigQueryJdbcUrlUtilityTest {
+public class BigQueryJdbcUrlUtilityTest extends BigQueryJdbcLoggingBaseTest {
 
   @Test
   public void testParsePropertyWithNoDefault() {
@@ -41,27 +40,25 @@ public class BigQueryJdbcUrlUtilityTest {
   }
 
   @Test
-  public void testParseUrlWithUnknownProperty_throwsException() {
+  public void testParseUrlWithUnknownProperty_no_exception() {
     String url =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
             + "ProjectId=MyBigQueryProject;"
             + "UnknownProperty=SomeValue";
 
-    assertThrows(
-        BigQueryJdbcRuntimeException.class,
-        () -> BigQueryJdbcUrlUtility.parseUriProperty(url, "ProjectId"));
+    BigQueryJdbcUrlUtility.parseUriProperty(url, "ProjectId");
+    assertThat(assertLogContains("Wrong value or unknown setting")).isTrue();
   }
 
   @Test
-  public void testParseUrlWithTypo_throwsException() {
+  public void testParseUrlWithTypo_no_exception() {
     String url =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
             + "ProjectId=MyBigQueryProject;"
             + "ProjeectId=TypoValue";
 
-    assertThrows(
-        BigQueryJdbcRuntimeException.class,
-        () -> BigQueryJdbcUrlUtility.parseUriProperty(url, "ProjectId"));
+    assertDoesNotThrow(() -> BigQueryJdbcUrlUtility.parseUriProperty(url, "ProjectId"));
+    assertThat(assertLogContains("Wrong value or unknown setting")).isTrue();
   }
 
   @Test
@@ -72,7 +69,7 @@ public class BigQueryJdbcUrlUtilityTest {
             + "OAuthAccessToken=RedactedToken";
 
     String result = BigQueryJdbcUrlUtility.parseUriProperty(url, "OAuthType");
-    assertThat(result).isEqualTo(null);
+    assertThat(result).isNull();
   }
 
   @Test
@@ -143,14 +140,12 @@ public class BigQueryJdbcUrlUtilityTest {
     String longKey = String.join("", Collections.nCopies(50, "a"));
     String url = "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;" + longKey + "=value";
 
-    BigQueryJdbcRuntimeException e =
-        assertThrows(
-            BigQueryJdbcRuntimeException.class, () -> BigQueryJdbcUrlUtility.parseUrl(url));
-
-    assertThat(e.getMessage()).contains("Wrong value or unknown setting: ");
-    assertThat(e.getMessage()).contains("...");
-    assertThat(e.getMessage()).doesNotContain(longKey);
-    assertThat(e.getMessage().length()).isLessThan(100);
+    assertDoesNotThrow(() -> BigQueryJdbcUrlUtility.parseUrl(url));
+    String message = capturedLogs.get(0).getMessage();
+    assertThat(message).contains("Wrong value or unknown setting: ");
+    assertThat(message).contains("...");
+    assertThat(message).doesNotContain(longKey);
+    assertThat(message.length()).isLessThan(100);
   }
 
   @Test

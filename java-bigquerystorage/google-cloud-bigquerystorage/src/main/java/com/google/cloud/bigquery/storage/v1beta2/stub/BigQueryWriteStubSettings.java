@@ -285,6 +285,7 @@ public class BigQueryWriteStubSettings extends StubSettings<BigQueryWriteStubSet
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-bigquerystorage")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

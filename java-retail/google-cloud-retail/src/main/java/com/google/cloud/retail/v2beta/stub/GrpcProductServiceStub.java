@@ -311,6 +311,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetProductRequest, Product> getProductTransportSettings =
         GrpcCallSettings.<GetProductRequest, Product>newBuilder()
@@ -321,6 +322,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
         GrpcCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
@@ -331,6 +333,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateProductRequest, Product> updateProductTransportSettings =
         GrpcCallSettings.<UpdateProductRequest, Product>newBuilder()
@@ -351,6 +354,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PurgeProductsRequest, Operation> purgeProductsTransportSettings =
         GrpcCallSettings.<PurgeProductsRequest, Operation>newBuilder()
@@ -361,6 +365,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ImportProductsRequest, Operation> importProductsTransportSettings =
         GrpcCallSettings.<ImportProductsRequest, Operation>newBuilder()
@@ -371,6 +376,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ExportProductsRequest, Operation> exportProductsTransportSettings =
         GrpcCallSettings.<ExportProductsRequest, Operation>newBuilder()
@@ -381,6 +387,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SetInventoryRequest, Operation> setInventoryTransportSettings =
         GrpcCallSettings.<SetInventoryRequest, Operation>newBuilder()
@@ -401,6 +408,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("product", String.valueOf(request.getProduct()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProduct())
             .build();
     GrpcCallSettings<RemoveFulfillmentPlacesRequest, Operation>
         removeFulfillmentPlacesTransportSettings =
@@ -412,6 +420,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                       builder.add("product", String.valueOf(request.getProduct()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProduct())
                 .build();
     GrpcCallSettings<AddLocalInventoriesRequest, Operation> addLocalInventoriesTransportSettings =
         GrpcCallSettings.<AddLocalInventoriesRequest, Operation>newBuilder()
@@ -422,6 +431,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   builder.add("product", String.valueOf(request.getProduct()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProduct())
             .build();
     GrpcCallSettings<RemoveLocalInventoriesRequest, Operation>
         removeLocalInventoriesTransportSettings =
@@ -433,6 +443,7 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                       builder.add("product", String.valueOf(request.getProduct()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProduct())
                 .build();
 
     this.createProductCallable =

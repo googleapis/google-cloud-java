@@ -418,6 +418,7 @@ public class HttpJsonTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         HttpJsonCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -429,6 +430,7 @@ public class HttpJsonTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetJobRequest, Job> getJobTransportSettings =
         HttpJsonCallSettings.<GetJobRequest, Job>newBuilder()
@@ -440,6 +442,7 @@ public class HttpJsonTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteJobRequest, Empty> deleteJobTransportSettings =
         HttpJsonCallSettings.<DeleteJobRequest, Empty>newBuilder()
@@ -451,6 +454,7 @@ public class HttpJsonTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateJobTemplateRequest, JobTemplate> createJobTemplateTransportSettings =
         HttpJsonCallSettings.<CreateJobTemplateRequest, JobTemplate>newBuilder()
@@ -462,6 +466,7 @@ public class HttpJsonTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListJobTemplatesRequest, ListJobTemplatesResponse>
         listJobTemplatesTransportSettings =
@@ -474,6 +479,7 @@ public class HttpJsonTranscoderServiceStub extends TranscoderServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetJobTemplateRequest, JobTemplate> getJobTemplateTransportSettings =
         HttpJsonCallSettings.<GetJobTemplateRequest, JobTemplate>newBuilder()
@@ -485,6 +491,7 @@ public class HttpJsonTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteJobTemplateRequest, Empty> deleteJobTemplateTransportSettings =
         HttpJsonCallSettings.<DeleteJobTemplateRequest, Empty>newBuilder()
@@ -496,6 +503,7 @@ public class HttpJsonTranscoderServiceStub extends TranscoderServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createJobCallable =

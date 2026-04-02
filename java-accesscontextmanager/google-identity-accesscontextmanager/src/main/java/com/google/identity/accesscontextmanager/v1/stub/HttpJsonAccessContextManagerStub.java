@@ -1309,6 +1309,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
             HttpJsonCallSettings.<ListAccessPoliciesRequest, ListAccessPoliciesResponse>newBuilder()
                 .setMethodDescriptor(listAccessPoliciesMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetAccessPolicyRequest, AccessPolicy> getAccessPolicyTransportSettings =
         HttpJsonCallSettings.<GetAccessPolicyRequest, AccessPolicy>newBuilder()
@@ -1320,11 +1321,13 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<AccessPolicy, Operation> createAccessPolicyTransportSettings =
         HttpJsonCallSettings.<AccessPolicy, Operation>newBuilder()
             .setMethodDescriptor(createAccessPolicyMethodDescriptor)
             .setTypeRegistry(typeRegistry)
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateAccessPolicyRequest, Operation> updateAccessPolicyTransportSettings =
         HttpJsonCallSettings.<UpdateAccessPolicyRequest, Operation>newBuilder()
@@ -1347,6 +1350,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAccessLevelsRequest, ListAccessLevelsResponse>
         listAccessLevelsTransportSettings =
@@ -1359,6 +1363,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetAccessLevelRequest, AccessLevel> getAccessLevelTransportSettings =
         HttpJsonCallSettings.<GetAccessLevelRequest, AccessLevel>newBuilder()
@@ -1370,6 +1375,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateAccessLevelRequest, Operation> createAccessLevelTransportSettings =
         HttpJsonCallSettings.<CreateAccessLevelRequest, Operation>newBuilder()
@@ -1381,6 +1387,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateAccessLevelRequest, Operation> updateAccessLevelTransportSettings =
         HttpJsonCallSettings.<UpdateAccessLevelRequest, Operation>newBuilder()
@@ -1404,6 +1411,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ReplaceAccessLevelsRequest, Operation>
         replaceAccessLevelsTransportSettings =
@@ -1416,6 +1424,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListServicePerimetersRequest, ListServicePerimetersResponse>
         listServicePerimetersTransportSettings =
@@ -1429,6 +1438,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetServicePerimeterRequest, ServicePerimeter>
         getServicePerimeterTransportSettings =
@@ -1441,6 +1451,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateServicePerimeterRequest, Operation>
         createServicePerimeterTransportSettings =
@@ -1453,6 +1464,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateServicePerimeterRequest, Operation>
         updateServicePerimeterTransportSettings =
@@ -1479,6 +1491,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ReplaceServicePerimetersRequest, Operation>
         replaceServicePerimetersTransportSettings =
@@ -1491,6 +1504,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CommitServicePerimetersRequest, Operation>
         commitServicePerimetersTransportSettings =
@@ -1503,6 +1517,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListGcpUserAccessBindingsRequest, ListGcpUserAccessBindingsResponse>
         listGcpUserAccessBindingsTransportSettings =
@@ -1516,6 +1531,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetGcpUserAccessBindingRequest, GcpUserAccessBinding>
         getGcpUserAccessBindingTransportSettings =
@@ -1528,6 +1544,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateGcpUserAccessBindingRequest, Operation>
         createGcpUserAccessBindingTransportSettings =
@@ -1540,6 +1557,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateGcpUserAccessBindingRequest, Operation>
         updateGcpUserAccessBindingTransportSettings =
@@ -1566,6 +1584,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1577,6 +1596,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1588,6 +1608,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1600,6 +1621,7 @@ public class HttpJsonAccessContextManagerStub extends AccessContextManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listAccessPoliciesCallable =

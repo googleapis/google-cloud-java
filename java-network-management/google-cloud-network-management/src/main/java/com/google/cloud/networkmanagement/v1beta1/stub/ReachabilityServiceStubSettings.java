@@ -541,6 +541,7 @@ public class ReachabilityServiceStubSettings extends StubSettings<ReachabilitySe
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-network-management")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

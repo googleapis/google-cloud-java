@@ -369,6 +369,7 @@ public class HttpJsonPagesStub extends PagesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetPageRequest, Page> getPageTransportSettings =
         HttpJsonCallSettings.<GetPageRequest, Page>newBuilder()
@@ -380,6 +381,7 @@ public class HttpJsonPagesStub extends PagesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreatePageRequest, Page> createPageTransportSettings =
         HttpJsonCallSettings.<CreatePageRequest, Page>newBuilder()
@@ -391,6 +393,7 @@ public class HttpJsonPagesStub extends PagesStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdatePageRequest, Page> updatePageTransportSettings =
         HttpJsonCallSettings.<UpdatePageRequest, Page>newBuilder()
@@ -413,6 +416,7 @@ public class HttpJsonPagesStub extends PagesStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

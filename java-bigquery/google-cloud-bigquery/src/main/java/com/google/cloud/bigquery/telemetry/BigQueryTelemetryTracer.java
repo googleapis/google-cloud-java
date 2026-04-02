@@ -49,7 +49,7 @@ public final class BigQueryTelemetryTracer {
       AttributeKey.stringKey("gcp.client.artifact");
   public static final AttributeKey<String> GCP_CLIENT_LANGUAGE =
       AttributeKey.stringKey("gcp.client.language");
-  public static final AttributeKey<String> GCP_RESOURCE_ID =
+  public static final AttributeKey<String> GCP_RESOURCE_DESTINATION_ID =
       AttributeKey.stringKey("gcp.resource.destination.id");
   public static final AttributeKey<String> RPC_SYSTEM_NAME =
       AttributeKey.stringKey("rpc.system.name");
@@ -65,6 +65,8 @@ public final class BigQueryTelemetryTracer {
   public static final AttributeKey<String> SERVER_ADDRESS =
       AttributeKey.stringKey("server.address");
   public static final AttributeKey<Long> SERVER_PORT = AttributeKey.longKey("server.port");
+  public static final AttributeKey<String> URL_TEMPLATE = AttributeKey.stringKey("url.template");
+  public static final AttributeKey<String> URL_DOMAIN = AttributeKey.stringKey("url.domain");
 
   public static void addCommonAttributeToSpan(Span span) {
     span.setAttribute(GCP_CLIENT_SERVICE, BQ_GCP_CLIENT_SERVICE)

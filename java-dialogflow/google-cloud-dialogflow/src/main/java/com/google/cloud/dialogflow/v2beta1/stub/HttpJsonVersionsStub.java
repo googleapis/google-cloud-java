@@ -380,6 +380,7 @@ public class HttpJsonVersionsStub extends VersionsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetVersionRequest, Version> getVersionTransportSettings =
         HttpJsonCallSettings.<GetVersionRequest, Version>newBuilder()
@@ -391,6 +392,7 @@ public class HttpJsonVersionsStub extends VersionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateVersionRequest, Version> createVersionTransportSettings =
         HttpJsonCallSettings.<CreateVersionRequest, Version>newBuilder()
@@ -402,6 +404,7 @@ public class HttpJsonVersionsStub extends VersionsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateVersionRequest, Version> updateVersionTransportSettings =
         HttpJsonCallSettings.<UpdateVersionRequest, Version>newBuilder()
@@ -424,6 +427,7 @@ public class HttpJsonVersionsStub extends VersionsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

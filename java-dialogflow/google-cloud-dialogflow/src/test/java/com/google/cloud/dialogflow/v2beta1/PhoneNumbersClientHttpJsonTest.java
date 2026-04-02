@@ -36,6 +36,7 @@ import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Any;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -241,6 +242,7 @@ public class PhoneNumbersClientHttpJsonTest {
                 PhoneNumberName.ofProjectPhoneNumberName("[PROJECT]", "[PHONE_NUMBER]").toString())
             .setPhoneNumber("phoneNumber-1192969641")
             .setConversationProfile("conversationProfile1691597734")
+            .setPurgeTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -250,6 +252,7 @@ public class PhoneNumbersClientHttpJsonTest {
                 PhoneNumberName.ofProjectPhoneNumberName("[PROJECT]", "[PHONE_NUMBER]").toString())
             .setPhoneNumber("phoneNumber-1192969641")
             .setConversationProfile("conversationProfile1691597734")
+            .setPurgeTime(Timestamp.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -286,6 +289,7 @@ public class PhoneNumbersClientHttpJsonTest {
                       .toString())
               .setPhoneNumber("phoneNumber-1192969641")
               .setConversationProfile("conversationProfile1691597734")
+              .setPurgeTime(Timestamp.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updatePhoneNumber(phoneNumber, updateMask);
@@ -303,6 +307,7 @@ public class PhoneNumbersClientHttpJsonTest {
                 PhoneNumberName.ofProjectPhoneNumberName("[PROJECT]", "[PHONE_NUMBER]").toString())
             .setPhoneNumber("phoneNumber-1192969641")
             .setConversationProfile("conversationProfile1691597734")
+            .setPurgeTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -351,6 +356,7 @@ public class PhoneNumbersClientHttpJsonTest {
                 PhoneNumberName.ofProjectPhoneNumberName("[PROJECT]", "[PHONE_NUMBER]").toString())
             .setPhoneNumber("phoneNumber-1192969641")
             .setConversationProfile("conversationProfile1691597734")
+            .setPurgeTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -398,6 +404,7 @@ public class PhoneNumbersClientHttpJsonTest {
                 PhoneNumberName.ofProjectPhoneNumberName("[PROJECT]", "[PHONE_NUMBER]").toString())
             .setPhoneNumber("phoneNumber-1192969641")
             .setConversationProfile("conversationProfile1691597734")
+            .setPurgeTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -446,6 +453,7 @@ public class PhoneNumbersClientHttpJsonTest {
                 PhoneNumberName.ofProjectPhoneNumberName("[PROJECT]", "[PHONE_NUMBER]").toString())
             .setPhoneNumber("phoneNumber-1192969641")
             .setConversationProfile("conversationProfile1691597734")
+            .setPurgeTime(Timestamp.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

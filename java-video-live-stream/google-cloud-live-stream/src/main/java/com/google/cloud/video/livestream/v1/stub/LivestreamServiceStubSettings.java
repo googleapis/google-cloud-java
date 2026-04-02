@@ -1121,6 +1121,7 @@ public class LivestreamServiceStubSettings extends StubSettings<LivestreamServic
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-live-stream")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

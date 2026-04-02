@@ -1044,6 +1044,7 @@ public class EdgeNetworkStubSettings extends StubSettings<EdgeNetworkStubSetting
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-edgenetwork")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -21,8 +21,8 @@
  *
  * <p>======================= JobsV1Beta3Client =======================
  *
- * <p>Service Description: Provides a method to create and modify Google Cloud Dataflow jobs. A Job
- * is a multi-stage computation graph run by the Cloud Dataflow service.
+ * <p>Service Description: Provides a method to create and modify Dataflow jobs. A Job is a
+ * multi-stage computation graph run by the Dataflow service.
  *
  * <p>Sample for JobsV1Beta3Client:
  *
@@ -47,7 +47,7 @@
  *
  * <p>======================= MessagesV1Beta3Client =======================
  *
- * <p>Service Description: The Dataflow Messages API is used for monitoring the progress of Dataflow
+ * <p>Service Description: The Dataflow Messages API is used to monitor the progress of Dataflow
  * jobs.
  *
  * <p>Sample for MessagesV1Beta3Client:

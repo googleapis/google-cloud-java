@@ -220,6 +220,7 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
                       builder.add("entity_type", String.valueOf(request.getEntityType()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEntityType())
                 .build();
     GrpcCallSettings<StreamingReadFeatureValuesRequest, ReadFeatureValuesResponse>
         streamingReadFeatureValuesTransportSettings =
@@ -232,6 +233,7 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
                       builder.add("entity_type", String.valueOf(request.getEntityType()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEntityType())
                 .build();
     GrpcCallSettings<WriteFeatureValuesRequest, WriteFeatureValuesResponse>
         writeFeatureValuesTransportSettings =
@@ -243,6 +245,7 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
                       builder.add("entity_type", String.valueOf(request.getEntityType()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEntityType())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -273,6 +276,7 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -283,6 +287,7 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -294,6 +299,7 @@ public class GrpcFeaturestoreOnlineServingServiceStub extends FeaturestoreOnline
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.readFeatureValuesCallable =

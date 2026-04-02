@@ -240,6 +240,7 @@ public class GrpcConversationDatasetsStub extends ConversationDatasetsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListConversationDatasetsRequest, ListConversationDatasetsResponse>
         listConversationDatasetsTransportSettings =
@@ -252,6 +253,7 @@ public class GrpcConversationDatasetsStub extends ConversationDatasetsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteConversationDatasetRequest, Operation>
         deleteConversationDatasetTransportSettings =
@@ -263,6 +265,7 @@ public class GrpcConversationDatasetsStub extends ConversationDatasetsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ImportConversationDataRequest, Operation>
         importConversationDataTransportSettings =
@@ -274,6 +277,7 @@ public class GrpcConversationDatasetsStub extends ConversationDatasetsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

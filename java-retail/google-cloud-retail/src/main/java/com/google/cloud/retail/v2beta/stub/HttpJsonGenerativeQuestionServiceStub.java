@@ -369,6 +369,7 @@ public class HttpJsonGenerativeQuestionServiceStub extends GenerativeQuestionSer
                       builder.add("catalog", String.valueOf(request.getCatalog()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCatalog())
                 .build();
     HttpJsonCallSettings<
             ListGenerativeQuestionConfigsRequest, ListGenerativeQuestionConfigsResponse>
@@ -384,6 +385,7 @@ public class HttpJsonGenerativeQuestionServiceStub extends GenerativeQuestionSer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateGenerativeQuestionConfigRequest, GenerativeQuestionConfig>
         updateGenerativeQuestionConfigTransportSettings =
@@ -416,6 +418,7 @@ public class HttpJsonGenerativeQuestionServiceStub extends GenerativeQuestionSer
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.updateGenerativeQuestionsFeatureConfigCallable =

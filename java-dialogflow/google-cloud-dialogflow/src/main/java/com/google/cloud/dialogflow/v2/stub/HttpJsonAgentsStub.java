@@ -599,6 +599,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<SetAgentRequest, Agent> setAgentTransportSettings =
         HttpJsonCallSettings.<SetAgentRequest, Agent>newBuilder()
@@ -621,6 +622,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<SearchAgentsRequest, SearchAgentsResponse> searchAgentsTransportSettings =
         HttpJsonCallSettings.<SearchAgentsRequest, SearchAgentsResponse>newBuilder()
@@ -632,6 +634,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<TrainAgentRequest, Operation> trainAgentTransportSettings =
         HttpJsonCallSettings.<TrainAgentRequest, Operation>newBuilder()
@@ -643,6 +646,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ExportAgentRequest, Operation> exportAgentTransportSettings =
         HttpJsonCallSettings.<ExportAgentRequest, Operation>newBuilder()
@@ -654,6 +658,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ImportAgentRequest, Operation> importAgentTransportSettings =
         HttpJsonCallSettings.<ImportAgentRequest, Operation>newBuilder()
@@ -665,6 +670,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<RestoreAgentRequest, Operation> restoreAgentTransportSettings =
         HttpJsonCallSettings.<RestoreAgentRequest, Operation>newBuilder()
@@ -676,6 +682,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetValidationResultRequest, ValidationResult>
         getValidationResultTransportSettings =
@@ -688,6 +695,7 @@ public class HttpJsonAgentsStub extends AgentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

@@ -17,7 +17,9 @@
 package com.google.cloud.bigquery.telemetry;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.Mockito.mock;
@@ -42,9 +44,11 @@ import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
+import com.google.cloud.bigquery.BigQueryRetryHelper;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
@@ -53,6 +57,7 @@ import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -144,6 +149,23 @@ public class HttpTracingRequestInitializerTest {
   }
 
   @Test
+  public void testTraceContextIsPropagatedInHeaders() throws IOException {
+    HttpTransport transport = createTransport();
+    HttpRequest request = buildGetRequest(transport, initializer, BASE_URL);
+
+    HttpResponse response = request.execute();
+    response.disconnect();
+
+    assertEquals(
+        String.format(
+            "00-%s-%s-%s",
+            parentSpan.getSpanContext().getTraceId(),
+            parentSpan.getSpanContext().getSpanId(),
+            parentSpan.getSpanContext().getTraceFlags().asHex()),
+        request.getHeaders().get("traceparent"));
+  }
+
+  @Test
   public void testDelegateInitializerIsCalled() throws IOException {
     HttpRequestInitializer delegateInitializer = mock(HttpRequestInitializer.class);
     HttpTracingRequestInitializer tracingInitializer =
@@ -202,6 +224,49 @@ public class HttpTracingRequestInitializerTest {
   }
 
   @Test
+  public void testUrlQueryParametersAreRedacted() throws IOException {
+    HttpTransport transport = createTransport();
+    String urlWithQuery = BASE_URL + "?upload_id=secret_id&Signature=secret_sig&keep_me=ok";
+    HttpRequest request = buildGetRequest(transport, initializer, urlWithQuery);
+
+    HttpResponse response = request.execute();
+    response.disconnect();
+
+    spanScope.close();
+    parentSpan.end();
+
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    assertEquals(1, spans.size());
+    SpanData span = spans.get(0);
+    String urlFull = span.getAttributes().get(HttpTracingRequestInitializer.URL_FULL);
+
+    assertTrue(urlFull.contains("upload_id=REDACTED"));
+    assertTrue(urlFull.contains("Signature=REDACTED"));
+    assertTrue(urlFull.contains("keep_me=ok"));
+  }
+
+  @Test
+  public void testUrlCredentialsAreRedacted() throws IOException {
+    HttpTransport transport = createTransport();
+    String credUrl = "https://user:pass@bigquery.googleapis.com/bigquery/v2/projects/test/datasets";
+    HttpRequest request = buildGetRequest(transport, initializer, credUrl);
+
+    HttpResponse response = request.execute();
+    response.disconnect();
+
+    spanScope.close();
+    parentSpan.end();
+
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    assertEquals(1, spans.size());
+    SpanData span = spans.get(0);
+    String urlFull = span.getAttributes().get(HttpTracingRequestInitializer.URL_FULL);
+
+    assertFalse(urlFull.contains("user:pass"));
+    assertTrue(urlFull.contains("REDACTED:REDACTED@"));
+  }
+
+  @Test
   public void testAddRequestBodySizeToSpan_ExceptionHandled() throws IOException {
     HttpContent content = mock(HttpContent.class);
     when(content.getLength()).thenThrow(new IOException("test"));
@@ -251,6 +316,31 @@ public class HttpTracingRequestInitializerTest {
     assertEquals(1, spans.size());
     SpanData span = spans.get(0);
     assertNull(span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_BODY_SIZE));
+  }
+
+  @Test
+  public void testRetryCountFromContext() throws IOException {
+    HttpTransport transport = createTransport();
+    AtomicInteger counter = new AtomicInteger(2);
+    Context context =
+        io.opentelemetry.context.Context.current()
+            .with(BigQueryRetryHelper.RETRY_ATTEMPT_KEY, counter);
+
+    try (io.opentelemetry.context.Scope scope = context.makeCurrent()) {
+      HttpRequest request = buildGetRequest(transport, initializer, BASE_URL);
+      HttpResponse response = request.execute();
+      response.disconnect();
+    }
+
+    spanScope.close();
+    parentSpan.end();
+
+    List<SpanData> spans = spanExporter.getFinishedSpanItems();
+    assertEquals(1, spans.size());
+    SpanData span = spans.get(0);
+    assertEquals(
+        2L, span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_RESEND_COUNT));
+    assertEquals(3, counter.get());
   }
 
   @Test
@@ -369,6 +459,7 @@ public class HttpTracingRequestInitializerTest {
         Version.VERSION, span.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_VERSION));
     assertEquals(
         method, span.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_METHOD));
+    assertEquals(BASE_URL, span.getAttributes().get(HttpTracingRequestInitializer.URL_FULL));
     if (requestBodySize >= 0) {
       assertEquals(
           requestBodySize,

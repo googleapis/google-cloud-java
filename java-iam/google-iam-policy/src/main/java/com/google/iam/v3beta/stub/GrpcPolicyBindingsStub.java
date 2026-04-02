@@ -199,6 +199,7 @@ public class GrpcPolicyBindingsStub extends PolicyBindingsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetPolicyBindingRequest, PolicyBinding> getPolicyBindingTransportSettings =
         GrpcCallSettings.<GetPolicyBindingRequest, PolicyBinding>newBuilder()
@@ -209,6 +210,7 @@ public class GrpcPolicyBindingsStub extends PolicyBindingsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdatePolicyBindingRequest, Operation> updatePolicyBindingTransportSettings =
         GrpcCallSettings.<UpdatePolicyBindingRequest, Operation>newBuilder()
@@ -230,6 +232,7 @@ public class GrpcPolicyBindingsStub extends PolicyBindingsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListPolicyBindingsRequest, ListPolicyBindingsResponse>
         listPolicyBindingsTransportSettings =
@@ -241,6 +244,7 @@ public class GrpcPolicyBindingsStub extends PolicyBindingsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SearchTargetPolicyBindingsRequest, SearchTargetPolicyBindingsResponse>
         searchTargetPolicyBindingsTransportSettings =
@@ -253,6 +257,7 @@ public class GrpcPolicyBindingsStub extends PolicyBindingsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createPolicyBindingCallable =

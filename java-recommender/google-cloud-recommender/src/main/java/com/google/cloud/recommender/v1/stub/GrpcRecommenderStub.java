@@ -283,6 +283,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInsightRequest, Insight> getInsightTransportSettings =
         GrpcCallSettings.<GetInsightRequest, Insight>newBuilder()
@@ -293,6 +294,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<MarkInsightAcceptedRequest, Insight> markInsightAcceptedTransportSettings =
         GrpcCallSettings.<MarkInsightAcceptedRequest, Insight>newBuilder()
@@ -303,6 +305,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRecommendationsRequest, ListRecommendationsResponse>
         listRecommendationsTransportSettings =
@@ -314,6 +317,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRecommendationRequest, Recommendation> getRecommendationTransportSettings =
         GrpcCallSettings.<GetRecommendationRequest, Recommendation>newBuilder()
@@ -324,6 +328,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<MarkRecommendationDismissedRequest, Recommendation>
         markRecommendationDismissedTransportSettings =
@@ -335,6 +340,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<MarkRecommendationClaimedRequest, Recommendation>
         markRecommendationClaimedTransportSettings =
@@ -346,6 +352,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<MarkRecommendationSucceededRequest, Recommendation>
         markRecommendationSucceededTransportSettings =
@@ -357,6 +364,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<MarkRecommendationFailedRequest, Recommendation>
         markRecommendationFailedTransportSettings =
@@ -368,6 +376,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetRecommenderConfigRequest, RecommenderConfig>
         getRecommenderConfigTransportSettings =
@@ -379,6 +388,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateRecommenderConfigRequest, RecommenderConfig>
         updateRecommenderConfigTransportSettings =
@@ -403,6 +413,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateInsightTypeConfigRequest, InsightTypeConfig>
         updateInsightTypeConfigTransportSettings =

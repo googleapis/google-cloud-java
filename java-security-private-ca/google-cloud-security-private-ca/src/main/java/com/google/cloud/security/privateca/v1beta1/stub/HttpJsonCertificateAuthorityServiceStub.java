@@ -1065,6 +1065,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetCertificateRequest, Certificate> getCertificateTransportSettings =
         HttpJsonCallSettings.<GetCertificateRequest, Certificate>newBuilder()
@@ -1076,6 +1077,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCertificatesRequest, ListCertificatesResponse>
         listCertificatesTransportSettings =
@@ -1088,6 +1090,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<RevokeCertificateRequest, Certificate> revokeCertificateTransportSettings =
         HttpJsonCallSettings.<RevokeCertificateRequest, Certificate>newBuilder()
@@ -1099,6 +1102,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateCertificateRequest, Certificate> updateCertificateTransportSettings =
         HttpJsonCallSettings.<UpdateCertificateRequest, Certificate>newBuilder()
@@ -1123,6 +1127,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateCertificateAuthorityRequest, Operation>
         createCertificateAuthorityTransportSettings =
@@ -1135,6 +1140,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DisableCertificateAuthorityRequest, Operation>
         disableCertificateAuthorityTransportSettings =
@@ -1147,6 +1153,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<EnableCertificateAuthorityRequest, Operation>
         enableCertificateAuthorityTransportSettings =
@@ -1159,6 +1166,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<FetchCertificateAuthorityCsrRequest, FetchCertificateAuthorityCsrResponse>
         fetchCertificateAuthorityCsrTransportSettings =
@@ -1173,6 +1181,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthorityTransportSettings =
@@ -1185,6 +1194,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse>
         listCertificateAuthoritiesTransportSettings =
@@ -1198,6 +1208,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<RestoreCertificateAuthorityRequest, Operation>
         restoreCertificateAuthorityTransportSettings =
@@ -1210,6 +1221,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ScheduleDeleteCertificateAuthorityRequest, Operation>
         scheduleDeleteCertificateAuthorityTransportSettings =
@@ -1222,6 +1234,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateCertificateAuthorityRequest, Operation>
         updateCertificateAuthorityTransportSettings =
@@ -1249,6 +1262,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse>
@@ -1264,6 +1278,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateCertificateRevocationListRequest, Operation>
         updateCertificateRevocationListTransportSettings =
@@ -1290,6 +1305,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListReusableConfigsRequest, ListReusableConfigsResponse>
         listReusableConfigsTransportSettings =
@@ -1303,6 +1319,7 @@ public class HttpJsonCertificateAuthorityServiceStub extends CertificateAuthorit
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createCertificateCallable =

@@ -541,6 +541,7 @@ public class HttpJsonInsightsConfigServiceStub extends InsightsConfigServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateInsightsConfigRequest, Operation>
         createInsightsConfigTransportSettings =
@@ -553,6 +554,7 @@ public class HttpJsonInsightsConfigServiceStub extends InsightsConfigServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetInsightsConfigRequest, InsightsConfig>
         getInsightsConfigTransportSettings =
@@ -565,6 +567,7 @@ public class HttpJsonInsightsConfigServiceStub extends InsightsConfigServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateInsightsConfigRequest, Operation>
         updateInsightsConfigTransportSettings =
@@ -591,6 +594,7 @@ public class HttpJsonInsightsConfigServiceStub extends InsightsConfigServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetDeploymentEventRequest, DeploymentEvent>
         getDeploymentEventTransportSettings =
@@ -603,6 +607,7 @@ public class HttpJsonInsightsConfigServiceStub extends InsightsConfigServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDeploymentEventsRequest, ListDeploymentEventsResponse>
         listDeploymentEventsTransportSettings =
@@ -616,6 +621,7 @@ public class HttpJsonInsightsConfigServiceStub extends InsightsConfigServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

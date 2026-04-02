@@ -247,6 +247,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetEntityReconciliationJobRequest, EntityReconciliationJob>
         getEntityReconciliationJobTransportSettings =
@@ -259,6 +260,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListEntityReconciliationJobsRequest, ListEntityReconciliationJobsResponse>
         listEntityReconciliationJobsTransportSettings =
@@ -272,6 +274,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CancelEntityReconciliationJobRequest, Empty>
         cancelEntityReconciliationJobTransportSettings =
@@ -283,6 +286,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteEntityReconciliationJobRequest, Empty>
         deleteEntityReconciliationJobTransportSettings =
@@ -294,6 +298,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<LookupRequest, LookupResponse> lookupTransportSettings =
         GrpcCallSettings.<LookupRequest, LookupResponse>newBuilder()
@@ -304,6 +309,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SearchRequest, SearchResponse> searchTransportSettings =
         GrpcCallSettings.<SearchRequest, SearchResponse>newBuilder()
@@ -314,6 +320,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<LookupPublicKgRequest, LookupPublicKgResponse>
         lookupPublicKgTransportSettings =
@@ -325,6 +332,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SearchPublicKgRequest, SearchPublicKgResponse>
         searchPublicKgTransportSettings =
@@ -336,6 +344,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createEntityReconciliationJobCallable =

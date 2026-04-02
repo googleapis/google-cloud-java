@@ -43,6 +43,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableListMultimap;
 import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.Multimap;
+import java.nio.charset.StandardCharsets;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -261,7 +262,11 @@ public final class MockHttpService extends MockHttpTransport {
           httpContent = methodDescriptor.getResponseParser().serialize(response);
         }
 
-        httpResponse.setContent(httpContent.getBytes());
+        byte[] contentBytes = httpContent.getBytes(StandardCharsets.UTF_8);
+        httpResponse.setContent(contentBytes);
+        if (methodDescriptor.getType() != MethodType.SERVER_STREAMING) {
+          httpResponse.addHeader("Content-Length", String.valueOf(contentBytes.length));
+        }
         httpResponse.setStatusCode(200);
         return httpResponse;
       }

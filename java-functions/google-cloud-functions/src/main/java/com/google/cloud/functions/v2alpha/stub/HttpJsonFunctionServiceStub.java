@@ -626,6 +626,7 @@ public class HttpJsonFunctionServiceStub extends FunctionServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListFunctionsRequest, ListFunctionsResponse>
         listFunctionsTransportSettings =
@@ -638,6 +639,7 @@ public class HttpJsonFunctionServiceStub extends FunctionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateFunctionRequest, Operation> createFunctionTransportSettings =
         HttpJsonCallSettings.<CreateFunctionRequest, Operation>newBuilder()
@@ -649,6 +651,7 @@ public class HttpJsonFunctionServiceStub extends FunctionServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateFunctionRequest, Operation> updateFunctionTransportSettings =
         HttpJsonCallSettings.<UpdateFunctionRequest, Operation>newBuilder()
@@ -671,6 +674,7 @@ public class HttpJsonFunctionServiceStub extends FunctionServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GenerateUploadUrlRequest, GenerateUploadUrlResponse>
         generateUploadUrlTransportSettings =
@@ -683,6 +687,7 @@ public class HttpJsonFunctionServiceStub extends FunctionServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GenerateDownloadUrlRequest, GenerateDownloadUrlResponse>
         generateDownloadUrlTransportSettings =
@@ -696,6 +701,7 @@ public class HttpJsonFunctionServiceStub extends FunctionServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListRuntimesRequest, ListRuntimesResponse> listRuntimesTransportSettings =
         HttpJsonCallSettings.<ListRuntimesRequest, ListRuntimesResponse>newBuilder()
@@ -707,6 +713,7 @@ public class HttpJsonFunctionServiceStub extends FunctionServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -730,6 +737,7 @@ public class HttpJsonFunctionServiceStub extends FunctionServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -741,6 +749,7 @@ public class HttpJsonFunctionServiceStub extends FunctionServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -753,6 +762,7 @@ public class HttpJsonFunctionServiceStub extends FunctionServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.getFunctionCallable =

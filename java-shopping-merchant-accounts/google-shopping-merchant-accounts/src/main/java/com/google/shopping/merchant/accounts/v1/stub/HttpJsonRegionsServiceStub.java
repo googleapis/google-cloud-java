@@ -421,6 +421,7 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateRegionRequest, Region> createRegionTransportSettings =
         HttpJsonCallSettings.<CreateRegionRequest, Region>newBuilder()
@@ -432,6 +433,7 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
         batchCreateRegionsTransportSettings =
@@ -444,6 +446,7 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateRegionRequest, Region> updateRegionTransportSettings =
         HttpJsonCallSettings.<UpdateRegionRequest, Region>newBuilder()
@@ -467,6 +470,7 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteRegionRequest, Empty> deleteRegionTransportSettings =
         HttpJsonCallSettings.<DeleteRegionRequest, Empty>newBuilder()
@@ -478,6 +482,7 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<BatchDeleteRegionsRequest, Empty> batchDeleteRegionsTransportSettings =
         HttpJsonCallSettings.<BatchDeleteRegionsRequest, Empty>newBuilder()
@@ -489,6 +494,7 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListRegionsRequest, ListRegionsResponse> listRegionsTransportSettings =
         HttpJsonCallSettings.<ListRegionsRequest, ListRegionsResponse>newBuilder()
@@ -500,6 +506,7 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.getRegionCallable =

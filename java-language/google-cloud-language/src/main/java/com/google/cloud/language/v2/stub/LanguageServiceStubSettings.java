@@ -273,6 +273,7 @@ public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-language")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

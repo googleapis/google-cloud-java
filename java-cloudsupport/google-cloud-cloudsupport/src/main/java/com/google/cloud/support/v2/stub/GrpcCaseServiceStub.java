@@ -201,6 +201,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCasesRequest, ListCasesResponse> listCasesTransportSettings =
         GrpcCallSettings.<ListCasesRequest, ListCasesResponse>newBuilder()
@@ -211,6 +212,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SearchCasesRequest, SearchCasesResponse> searchCasesTransportSettings =
         GrpcCallSettings.<SearchCasesRequest, SearchCasesResponse>newBuilder()
@@ -231,6 +233,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateCaseRequest, Case> updateCaseTransportSettings =
         GrpcCallSettings.<UpdateCaseRequest, Case>newBuilder()
@@ -251,6 +254,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CloseCaseRequest, Case> closeCaseTransportSettings =
         GrpcCallSettings.<CloseCaseRequest, Case>newBuilder()
@@ -261,6 +265,7 @@ public class GrpcCaseServiceStub extends CaseServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SearchCaseClassificationsRequest, SearchCaseClassificationsResponse>
         searchCaseClassificationsTransportSettings =

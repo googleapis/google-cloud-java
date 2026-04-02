@@ -30,8 +30,8 @@ public interface GrpcEndpointOrBuilder
    *
    *
    * <pre>
-   * Required. The target URI of the gRPC endpoint. Only UDS path is supported, and
-   * should start with "unix:".
+   * Required. The target URI of the gRPC endpoint. Only UDS path is supported,
+   * and should start with "unix:".
    * </pre>
    *
    * <code>string target_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -44,8 +44,8 @@ public interface GrpcEndpointOrBuilder
    *
    *
    * <pre>
-   * Required. The target URI of the gRPC endpoint. Only UDS path is supported, and
-   * should start with "unix:".
+   * Required. The target URI of the gRPC endpoint. Only UDS path is supported,
+   * and should start with "unix:".
    * </pre>
    *
    * <code>string target_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>

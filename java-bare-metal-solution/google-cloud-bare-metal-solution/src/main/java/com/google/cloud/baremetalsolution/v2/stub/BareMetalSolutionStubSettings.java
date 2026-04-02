@@ -1420,6 +1420,7 @@ public class BareMetalSolutionStubSettings extends StubSettings<BareMetalSolutio
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-bare-metal-solution")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

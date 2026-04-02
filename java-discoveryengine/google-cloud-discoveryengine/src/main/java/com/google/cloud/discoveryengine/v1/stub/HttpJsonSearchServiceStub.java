@@ -191,6 +191,7 @@ public class HttpJsonSearchServiceStub extends SearchServiceStub {
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
     HttpJsonCallSettings<SearchRequest, SearchResponse> searchLiteTransportSettings =
         HttpJsonCallSettings.<SearchRequest, SearchResponse>newBuilder()
@@ -202,6 +203,7 @@ public class HttpJsonSearchServiceStub extends SearchServiceStub {
                   builder.add("serving_config", String.valueOf(request.getServingConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getServingConfig())
             .build();
 
     this.searchCallable =

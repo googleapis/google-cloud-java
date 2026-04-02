@@ -576,6 +576,7 @@ public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScan
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-websecurityscanner")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

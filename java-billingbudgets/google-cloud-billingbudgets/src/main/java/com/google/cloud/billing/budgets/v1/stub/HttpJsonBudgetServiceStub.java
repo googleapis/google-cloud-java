@@ -297,6 +297,7 @@ public class HttpJsonBudgetServiceStub extends BudgetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateBudgetRequest, Budget> updateBudgetTransportSettings =
         HttpJsonCallSettings.<UpdateBudgetRequest, Budget>newBuilder()
@@ -319,6 +320,7 @@ public class HttpJsonBudgetServiceStub extends BudgetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListBudgetsRequest, ListBudgetsResponse> listBudgetsTransportSettings =
         HttpJsonCallSettings.<ListBudgetsRequest, ListBudgetsResponse>newBuilder()
@@ -330,6 +332,7 @@ public class HttpJsonBudgetServiceStub extends BudgetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteBudgetRequest, Empty> deleteBudgetTransportSettings =
         HttpJsonCallSettings.<DeleteBudgetRequest, Empty>newBuilder()
@@ -341,6 +344,7 @@ public class HttpJsonBudgetServiceStub extends BudgetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createBudgetCallable =

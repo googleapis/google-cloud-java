@@ -1104,6 +1104,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDataTaxonomyRequest, Operation> updateDataTaxonomyTransportSettings =
         HttpJsonCallSettings.<UpdateDataTaxonomyRequest, Operation>newBuilder()
@@ -1127,6 +1128,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDataTaxonomiesRequest, ListDataTaxonomiesResponse>
         listDataTaxonomiesTransportSettings =
@@ -1139,6 +1141,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDataTaxonomyRequest, DataTaxonomy> getDataTaxonomyTransportSettings =
         HttpJsonCallSettings.<GetDataTaxonomyRequest, DataTaxonomy>newBuilder()
@@ -1150,6 +1153,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDataAttributeBindingRequest, Operation>
         createDataAttributeBindingTransportSettings =
@@ -1162,6 +1166,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateDataAttributeBindingRequest, Operation>
         updateDataAttributeBindingTransportSettings =
@@ -1188,6 +1193,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDataAttributeBindingsRequest, ListDataAttributeBindingsResponse>
         listDataAttributeBindingsTransportSettings =
@@ -1201,6 +1207,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDataAttributeBindingRequest, DataAttributeBinding>
         getDataAttributeBindingTransportSettings =
@@ -1213,6 +1220,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateDataAttributeRequest, Operation>
         createDataAttributeTransportSettings =
@@ -1225,6 +1233,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateDataAttributeRequest, Operation>
         updateDataAttributeTransportSettings =
@@ -1251,6 +1260,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListDataAttributesRequest, ListDataAttributesResponse>
         listDataAttributesTransportSettings =
@@ -1263,6 +1273,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDataAttributeRequest, DataAttribute> getDataAttributeTransportSettings =
         HttpJsonCallSettings.<GetDataAttributeRequest, DataAttribute>newBuilder()
@@ -1274,6 +1285,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -1308,6 +1320,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1319,6 +1332,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1331,6 +1345,7 @@ public class HttpJsonDataTaxonomyServiceStub extends DataTaxonomyServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createDataTaxonomyCallable =

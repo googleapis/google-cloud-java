@@ -1057,6 +1057,7 @@ public class ApiHubStubSettings extends StubSettings<ApiHubStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-apihub")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(com.google.cloud.apihub.v1.stub.Version.VERSION)
         .build();
   }
 

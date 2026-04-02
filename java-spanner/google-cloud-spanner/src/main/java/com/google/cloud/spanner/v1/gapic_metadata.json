@@ -1,0 +1,66 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.spanner.v1",
+  "libraryPackage": "com.google.cloud.spanner.v1",
+  "services": {
+    "Spanner": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SpannerClient",
+          "rpcs": {
+            "BatchCreateSessions": {
+              "methods": ["batchCreateSessions", "batchCreateSessions", "batchCreateSessions", "batchCreateSessionsCallable"]
+            },
+            "BatchWrite": {
+              "methods": ["batchWriteCallable"]
+            },
+            "BeginTransaction": {
+              "methods": ["beginTransaction", "beginTransaction", "beginTransaction", "beginTransactionCallable"]
+            },
+            "Commit": {
+              "methods": ["commit", "commit", "commit", "commit", "commit", "commitCallable"]
+            },
+            "CreateSession": {
+              "methods": ["createSession", "createSession", "createSession", "createSessionCallable"]
+            },
+            "DeleteSession": {
+              "methods": ["deleteSession", "deleteSession", "deleteSession", "deleteSessionCallable"]
+            },
+            "ExecuteBatchDml": {
+              "methods": ["executeBatchDml", "executeBatchDmlCallable"]
+            },
+            "ExecuteSql": {
+              "methods": ["executeSql", "executeSqlCallable"]
+            },
+            "ExecuteStreamingSql": {
+              "methods": ["executeStreamingSqlCallable"]
+            },
+            "GetSession": {
+              "methods": ["getSession", "getSession", "getSession", "getSessionCallable"]
+            },
+            "ListSessions": {
+              "methods": ["listSessions", "listSessions", "listSessions", "listSessionsPagedCallable", "listSessionsCallable"]
+            },
+            "PartitionQuery": {
+              "methods": ["partitionQuery", "partitionQueryCallable"]
+            },
+            "PartitionRead": {
+              "methods": ["partitionRead", "partitionReadCallable"]
+            },
+            "Read": {
+              "methods": ["read", "readCallable"]
+            },
+            "Rollback": {
+              "methods": ["rollback", "rollback", "rollback", "rollbackCallable"]
+            },
+            "StreamingRead": {
+              "methods": ["streamingReadCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

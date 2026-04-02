@@ -101,8 +101,10 @@ public class SessionServiceClientHttpJsonTest {
                         AgentName.of("[PROJECT]", "[LOCATION]", "[APP]", "[AGENT]").toString())
                     .setDeployment("deployment1939520197")
                     .setTimeZone("timeZone-2077180903")
+                    .setUseToolFakes(true)
                     .setRemoteDialogflowQueryParameters(
                         SessionConfig.RemoteDialogflowQueryParameters.newBuilder().build())
+                    .setEnableTextStreaming(true)
                     .build())
             .addAllInputs(new ArrayList<SessionInput>())
             .build();
@@ -147,8 +149,10 @@ public class SessionServiceClientHttpJsonTest {
                           AgentName.of("[PROJECT]", "[LOCATION]", "[APP]", "[AGENT]").toString())
                       .setDeployment("deployment1939520197")
                       .setTimeZone("timeZone-2077180903")
+                      .setUseToolFakes(true)
                       .setRemoteDialogflowQueryParameters(
                           SessionConfig.RemoteDialogflowQueryParameters.newBuilder().build())
+                      .setEnableTextStreaming(true)
                       .build())
               .addAllInputs(new ArrayList<SessionInput>())
               .build();
@@ -157,6 +161,17 @@ public class SessionServiceClientHttpJsonTest {
     } catch (InvalidArgumentException e) {
       // Expected exception.
     }
+  }
+
+  @Test
+  public void streamRunSessionTest() throws Exception {}
+
+  @Test
+  public void streamRunSessionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
   }
 
   @Test

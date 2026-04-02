@@ -29,6 +29,11 @@ excluded_modules=(
   'sdk-platform-java/java-showcase'
   'sdk-platform-java/java-showcase-3.21.0'
   'sdk-platform-java/java-showcase-3.25.8'
+  'java-spanner'
+  'java-spanner-jdbc'
+  'google-auth-library-java'
+  'java-storage'
+  'java-storage-nio'
 )
 
 function retry_with_backoff {
@@ -257,7 +262,7 @@ function generate_modified_modules_list() {
     modified_module_list=(${maven_modules[*]})
     echo "Testing the entire monorepo"
   else
-    modules=$(echo "${modified_files}" | grep -E 'java-.*' || true)
+    modules=$(echo "${modified_files}" | grep -E '(google-auth|java)-.*' || true)
     printf "Files in java modules:\n%s\n" "${modules}"
     if [[ -n $modules ]]; then
       modules=$(echo "${modules}" | cut -d '/' -f1 | sort -u)
@@ -418,6 +423,16 @@ function install_modules() {
       'sdk-platform-java/java-shared-dependencies/first-party-dependencies'
       'sdk-platform-java/java-shared-dependencies/third-party-dependencies'
       'sdk-platform-java/gapic-generator-java-bom'
+      'sdk-platform-java/java-iam/grpc-google-iam-v1'
+      'sdk-platform-java/java-iam/grpc-google-iam-v2'
+      'sdk-platform-java/java-iam/grpc-google-iam-v2beta'
+      'sdk-platform-java/java-iam/grpc-google-iam-v3'
+      'sdk-platform-java/java-iam/grpc-google-iam-v3beta'
+      'sdk-platform-java/java-iam/proto-google-iam-v1'
+      'sdk-platform-java/java-iam/proto-google-iam-v2'
+      'sdk-platform-java/java-iam/proto-google-iam-v2beta'
+      'sdk-platform-java/java-iam/proto-google-iam-v3'
+      'sdk-platform-java/java-iam/proto-google-iam-v3beta'
       'sdk-platform-java/java-core/google-cloud-core-bom'
       'sdk-platform-java/java-core/google-cloud-core'
       'sdk-platform-java/java-core/google-cloud-core-grpc'

@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-nio-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>0.128.15-SNAPSHOT</version><!-- {x-version-update:google-cloud-nio:current} -->
+  <name>Storage Parent</name>
+  <url>https://github.com/googleapis/google-cloud-java</url>
+  <description>
+    FileSystemProvider for Java NIO to access Google Cloud Storage transparently.
+  </description>
+
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-jar-parent</artifactId>
+    <version>1.83.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
+  </parent>
+
+  <developers>
+    <developer>
+      <id>jart</id>
+      <name>Justine Tunney</name>
+      <email>jart@google.com</email>
+      <organization>Google</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>jean-philippe-martin</id>
+      <name>Jean-Philippe Martin</name>
+      <email>jpmartin@verily.com</email>
+      <organization>Verily</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+  <organization>
+    <name>Google LLC</name>
+  </organization>
+  <scm>
+    <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
+    <url>https://github.com/googleapis/google-cloud-java</url>
+    <tag>HEAD</tag>
+  </scm>
+  <issueManagement>
+    <url>https://github.com/googleapis/google-cloud-java/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+
+  <licenses>
+    <license>
+      <name>Apache-2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <github.global.server>github</github.global.server>
+    <site.installationModule>google-cloud-storage-nio-parent</site.installationModule>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-storage</artifactId>
+        <version>2.64.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage:current} -->
+        <exclusions>
+          <exclusion>
+            <groupId>io.opentelemetry.semconv</groupId>
+            <artifactId>opentelemetry-semconv</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>com.google.truth</groupId>
+        <artifactId>truth</artifactId>
+        <version>1.4.5</version>
+        <scope>test</scope>
+        <exclusions>
+          <exclusion>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker-qual</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>google-cloud-nio</module>
+    <module>google-cloud-nio-retrofit</module>
+    <module>google-cloud-nio-examples</module>
+    <module>google-cloud-nio-bom</module>
+  </modules>
+
+  <profiles>
+    <profile>
+      <id>include-samples</id>
+      <modules>
+        <module>google-cloud-nio-retrofit</module>
+        <module>google-cloud-nio-examples</module>
+      </modules>
+    </profile>
+  </profiles>
+</project>

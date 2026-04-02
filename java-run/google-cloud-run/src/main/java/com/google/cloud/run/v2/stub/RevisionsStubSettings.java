@@ -346,6 +346,7 @@ public class RevisionsStubSettings extends StubSettings<RevisionsStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-run")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

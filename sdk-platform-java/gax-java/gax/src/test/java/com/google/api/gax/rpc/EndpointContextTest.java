@@ -683,4 +683,44 @@ class EndpointContextTest {
             .build();
     Truth.assertThat(endpointContext.resolvedServerPort()).isNull();
   }
+
+  @Test
+  void endpointContextBuild_resolvesInvalidEndpointAndPort() throws Exception {
+
+    String endpoint = "localhost:-1";
+
+    EndpointContext endpointContext =
+        defaultEndpointContextBuilder
+            .setClientSettingsEndpoint(endpoint)
+            .setTransportChannelProviderEndpoint(null)
+            .build();
+
+    Truth.assertThat(endpointContext.resolvedServerAddress()).isNull();
+    Truth.assertThat(endpointContext.resolvedServerPort()).isNull();
+  }
+
+  @Test
+  void getUrlDomain_success() throws IOException {
+    EndpointContext endpointContext = defaultEndpointContextBuilder.build();
+    Truth.assertThat(endpointContext.getUrlDomain()).isEqualTo("test.googleapis.com");
+  }
+
+  @Test
+  void getUrlDomain_nullServiceName() throws IOException {
+    EndpointContext endpointContext = defaultEndpointContextBuilder.setServiceName(null).build();
+    Truth.assertThat(endpointContext.getUrlDomain()).isNull();
+  }
+
+  @Test
+  void getUrlDomain_emptyServiceName() throws IOException {
+    EndpointContext endpointContext = defaultEndpointContextBuilder.setServiceName("").build();
+    Truth.assertThat(endpointContext.getUrlDomain()).isNull();
+  }
+
+  @Test
+  void getUrlDomain_nonGDUUniverseDomain() throws IOException {
+    EndpointContext endpointContext =
+        defaultEndpointContextBuilder.setUniverseDomain("random.com").build();
+    Truth.assertThat(endpointContext.getUrlDomain()).isEqualTo("test.random.com");
+  }
 }

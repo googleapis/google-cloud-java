@@ -588,6 +588,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateRagCorpusRequest, Operation> updateRagCorpusTransportSettings =
         GrpcCallSettings.<UpdateRagCorpusRequest, Operation>newBuilder()
@@ -608,6 +609,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRagCorporaRequest, ListRagCorporaResponse>
         listRagCorporaTransportSettings =
@@ -619,6 +621,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteRagCorpusRequest, Operation> deleteRagCorpusTransportSettings =
         GrpcCallSettings.<DeleteRagCorpusRequest, Operation>newBuilder()
@@ -629,6 +632,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UploadRagFileRequest, UploadRagFileResponse> uploadRagFileTransportSettings =
         GrpcCallSettings.<UploadRagFileRequest, UploadRagFileResponse>newBuilder()
@@ -639,6 +643,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ImportRagFilesRequest, Operation> importRagFilesTransportSettings =
         GrpcCallSettings.<ImportRagFilesRequest, Operation>newBuilder()
@@ -649,6 +654,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetRagFileRequest, RagFile> getRagFileTransportSettings =
         GrpcCallSettings.<GetRagFileRequest, RagFile>newBuilder()
@@ -659,6 +665,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRagFilesRequest, ListRagFilesResponse> listRagFilesTransportSettings =
         GrpcCallSettings.<ListRagFilesRequest, ListRagFilesResponse>newBuilder()
@@ -669,6 +676,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteRagFileRequest, Operation> deleteRagFileTransportSettings =
         GrpcCallSettings.<DeleteRagFileRequest, Operation>newBuilder()
@@ -679,6 +687,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateRagEngineConfigRequest, Operation>
         updateRagEngineConfigTransportSettings =
@@ -703,6 +712,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateRagDataSchemaRequest, RagDataSchema>
         createRagDataSchemaTransportSettings =
@@ -714,6 +724,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<BatchCreateRagDataSchemasRequest, Operation>
         batchCreateRagDataSchemasTransportSettings =
@@ -725,6 +736,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetRagDataSchemaRequest, RagDataSchema> getRagDataSchemaTransportSettings =
         GrpcCallSettings.<GetRagDataSchemaRequest, RagDataSchema>newBuilder()
@@ -735,6 +747,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRagDataSchemasRequest, ListRagDataSchemasResponse>
         listRagDataSchemasTransportSettings =
@@ -746,6 +759,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteRagDataSchemaRequest, Empty> deleteRagDataSchemaTransportSettings =
         GrpcCallSettings.<DeleteRagDataSchemaRequest, Empty>newBuilder()
@@ -756,6 +770,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchDeleteRagDataSchemasRequest, Operation>
         batchDeleteRagDataSchemasTransportSettings =
@@ -767,6 +782,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateRagMetadataRequest, RagMetadata> createRagMetadataTransportSettings =
         GrpcCallSettings.<CreateRagMetadataRequest, RagMetadata>newBuilder()
@@ -777,6 +793,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchCreateRagMetadataRequest, Operation>
         batchCreateRagMetadataTransportSettings =
@@ -788,6 +805,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateRagMetadataRequest, RagMetadata> updateRagMetadataTransportSettings =
         GrpcCallSettings.<UpdateRagMetadataRequest, RagMetadata>newBuilder()
@@ -809,6 +827,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRagMetadataRequest, ListRagMetadataResponse>
         listRagMetadataTransportSettings =
@@ -820,6 +839,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteRagMetadataRequest, Empty> deleteRagMetadataTransportSettings =
         GrpcCallSettings.<DeleteRagMetadataRequest, Empty>newBuilder()
@@ -830,6 +850,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchDeleteRagMetadataRequest, Operation>
         batchDeleteRagMetadataTransportSettings =
@@ -841,6 +862,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -871,6 +893,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -881,6 +904,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -892,6 +916,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createRagCorpusCallable =

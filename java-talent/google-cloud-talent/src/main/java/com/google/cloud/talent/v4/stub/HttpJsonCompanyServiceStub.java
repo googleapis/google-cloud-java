@@ -298,6 +298,7 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetCompanyRequest, Company> getCompanyTransportSettings =
         HttpJsonCallSettings.<GetCompanyRequest, Company>newBuilder()
@@ -309,6 +310,7 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateCompanyRequest, Company> updateCompanyTransportSettings =
         HttpJsonCallSettings.<UpdateCompanyRequest, Company>newBuilder()
@@ -331,6 +333,7 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCompaniesRequest, ListCompaniesResponse>
         listCompaniesTransportSettings =
@@ -343,6 +346,7 @@ public class HttpJsonCompanyServiceStub extends CompanyServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createCompanyCallable =

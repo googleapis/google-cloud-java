@@ -393,6 +393,7 @@ public class HttpJsonMigrationServiceStub extends MigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetMigrationWorkflowRequest, MigrationWorkflow>
         getMigrationWorkflowTransportSettings =
@@ -405,6 +406,7 @@ public class HttpJsonMigrationServiceStub extends MigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse>
         listMigrationWorkflowsTransportSettings =
@@ -418,6 +420,7 @@ public class HttpJsonMigrationServiceStub extends MigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteMigrationWorkflowRequest, Empty>
         deleteMigrationWorkflowTransportSettings =
@@ -430,6 +433,7 @@ public class HttpJsonMigrationServiceStub extends MigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<StartMigrationWorkflowRequest, Empty>
         startMigrationWorkflowTransportSettings =
@@ -442,6 +446,7 @@ public class HttpJsonMigrationServiceStub extends MigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetMigrationSubtaskRequest, MigrationSubtask>
         getMigrationSubtaskTransportSettings =
@@ -454,6 +459,7 @@ public class HttpJsonMigrationServiceStub extends MigrationServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListMigrationSubtasksRequest, ListMigrationSubtasksResponse>
         listMigrationSubtasksTransportSettings =
@@ -467,6 +473,7 @@ public class HttpJsonMigrationServiceStub extends MigrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createMigrationWorkflowCallable =

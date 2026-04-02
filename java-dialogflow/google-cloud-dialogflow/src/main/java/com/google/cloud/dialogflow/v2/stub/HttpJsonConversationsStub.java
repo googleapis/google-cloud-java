@@ -673,6 +673,7 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListConversationsRequest, ListConversationsResponse>
         listConversationsTransportSettings =
@@ -685,6 +686,7 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetConversationRequest, Conversation> getConversationTransportSettings =
         HttpJsonCallSettings.<GetConversationRequest, Conversation>newBuilder()
@@ -696,6 +698,7 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CompleteConversationRequest, Conversation>
         completeConversationTransportSettings =
@@ -708,6 +711,7 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<IngestContextReferencesRequest, IngestContextReferencesResponse>
         ingestContextReferencesTransportSettings =
@@ -721,6 +725,7 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       builder.add("conversation", String.valueOf(request.getConversation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConversation())
                 .build();
     HttpJsonCallSettings<ListMessagesRequest, ListMessagesResponse> listMessagesTransportSettings =
         HttpJsonCallSettings.<ListMessagesRequest, ListMessagesResponse>newBuilder()
@@ -732,6 +737,7 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<SuggestConversationSummaryRequest, SuggestConversationSummaryResponse>
         suggestConversationSummaryTransportSettings =
@@ -745,6 +751,7 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       builder.add("conversation", String.valueOf(request.getConversation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConversation())
                 .build();
     HttpJsonCallSettings<GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
         generateStatelessSummaryTransportSettings =
@@ -760,6 +767,7 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                           String.valueOf(request.getStatelessConversation().getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLatestMessage())
                 .build();
     HttpJsonCallSettings<GenerateStatelessSuggestionRequest, GenerateStatelessSuggestionResponse>
         generateStatelessSuggestionTransportSettings =
@@ -774,6 +782,7 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<SearchKnowledgeRequest, SearchKnowledgeResponse>
         searchKnowledgeTransportSettings =
@@ -787,6 +796,7 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConversationProfile())
                 .build();
     HttpJsonCallSettings<GenerateSuggestionsRequest, GenerateSuggestionsResponse>
         generateSuggestionsTransportSettings =
@@ -800,6 +810,7 @@ public class HttpJsonConversationsStub extends ConversationsStub {
                       builder.add("conversation", String.valueOf(request.getConversation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getConversation())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

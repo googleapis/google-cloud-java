@@ -118,6 +118,7 @@ public class GrpcBranchServiceStub extends BranchServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetBranchRequest, Branch> getBranchTransportSettings =
         GrpcCallSettings.<GetBranchRequest, Branch>newBuilder()
@@ -128,6 +129,7 @@ public class GrpcBranchServiceStub extends BranchServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listBranchesCallable =

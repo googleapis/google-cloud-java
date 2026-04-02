@@ -1260,6 +1260,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRepositoryRequest, Repository> getRepositoryTransportSettings =
         HttpJsonCallSettings.<GetRepositoryRequest, Repository>newBuilder()
@@ -1271,6 +1272,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateRepositoryRequest, Operation> createRepositoryTransportSettings =
         HttpJsonCallSettings.<CreateRepositoryRequest, Operation>newBuilder()
@@ -1282,6 +1284,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateRepositoryRequest, Repository> updateRepositoryTransportSettings =
         HttpJsonCallSettings.<UpdateRepositoryRequest, Repository>newBuilder()
@@ -1304,6 +1307,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListPackagesRequest, ListPackagesResponse> listPackagesTransportSettings =
         HttpJsonCallSettings.<ListPackagesRequest, ListPackagesResponse>newBuilder()
@@ -1458,6 +1462,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1469,6 +1474,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1481,6 +1487,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<GetProjectSettingsRequest, ProjectSettings>
         getProjectSettingsTransportSettings =
@@ -1493,6 +1500,7 @@ public class HttpJsonArtifactRegistryStub extends ArtifactRegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateProjectSettingsRequest, ProjectSettings>
         updateProjectSettingsTransportSettings =

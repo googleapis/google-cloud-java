@@ -166,6 +166,20 @@ public interface ConversationProfileOrBuilder
    *
    *
    * <pre>
+   * Optional. Whether to use the bidi streaming API in telephony integration
+   * for the conversation profile.
+   * </pre>
+   *
+   * <code>bool use_bidi_streaming = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The useBidiStreaming.
+   */
+  boolean getUseBidiStreaming();
+
+  /**
+   *
+   *
+   * <pre>
    * Configuration for an automated agent to use with this profile.
    * </pre>
    *

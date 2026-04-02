@@ -102,7 +102,9 @@ public class ConversationsClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .setInitialConversationProfile(ConversationProfile.newBuilder().build())
             .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .putAllInitialGeneratorContexts(new HashMap<String, Conversation.GeneratorContext>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -159,7 +161,9 @@ public class ConversationsClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .setInitialConversationProfile(ConversationProfile.newBuilder().build())
             .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .putAllInitialGeneratorContexts(new HashMap<String, Conversation.GeneratorContext>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -216,7 +220,9 @@ public class ConversationsClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .setInitialConversationProfile(ConversationProfile.newBuilder().build())
             .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .putAllInitialGeneratorContexts(new HashMap<String, Conversation.GeneratorContext>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -423,7 +429,9 @@ public class ConversationsClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .setInitialConversationProfile(ConversationProfile.newBuilder().build())
             .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .putAllInitialGeneratorContexts(new HashMap<String, Conversation.GeneratorContext>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -480,7 +488,9 @@ public class ConversationsClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .setInitialConversationProfile(ConversationProfile.newBuilder().build())
             .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .putAllInitialGeneratorContexts(new HashMap<String, Conversation.GeneratorContext>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -535,7 +545,9 @@ public class ConversationsClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .setInitialConversationProfile(ConversationProfile.newBuilder().build())
             .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .putAllInitialGeneratorContexts(new HashMap<String, Conversation.GeneratorContext>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -592,7 +604,9 @@ public class ConversationsClientHttpJsonTest {
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
             .setTelephonyConnectionInfo(Conversation.TelephonyConnectionInfo.newBuilder().build())
+            .setInitialConversationProfile(ConversationProfile.newBuilder().build())
             .putAllIngestedContextReferences(new HashMap<String, Conversation.ContextReference>())
+            .putAllInitialGeneratorContexts(new HashMap<String, Conversation.GeneratorContext>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1076,6 +1090,7 @@ public class ConversationsClientHttpJsonTest {
         SearchKnowledgeResponse.newBuilder()
             .addAllAnswers(new ArrayList<SearchKnowledgeAnswer>())
             .setRewrittenQuery("rewrittenQuery-1572767836")
+            .setSearchKnowledgeDebugInfo(SearchKnowledgeDebugInfo.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

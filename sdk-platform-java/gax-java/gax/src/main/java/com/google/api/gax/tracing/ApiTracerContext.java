@@ -205,9 +205,15 @@ public abstract class ApiTracerContext {
         attributes.put(ObservabilityAttributes.HTTP_URL_TEMPLATE_ATTRIBUTE, httpPathTemplate());
       }
     }
+    if (!Strings.isNullOrEmpty(serviceName())) {
+      attributes.put(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE, serviceName());
+    }
     if (!Strings.isNullOrEmpty(destinationResourceId())) {
       attributes.put(
           ObservabilityAttributes.DESTINATION_RESOURCE_ID_ATTRIBUTE, destinationResourceId());
+    }
+    if (!Strings.isNullOrEmpty(urlDomain())) {
+      attributes.put(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE, urlDomain());
     }
     return attributes;
   }
@@ -229,10 +235,10 @@ public abstract class ApiTracerContext {
     if (!Strings.isNullOrEmpty(fullMethodName())) {
       attributes.put(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE, fullMethodName());
     }
+    if (!Strings.isNullOrEmpty(urlDomain())) {
+      attributes.put(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE, urlDomain());
+    }
     if (transport() == Transport.HTTP) {
-      if (!Strings.isNullOrEmpty(urlDomain())) {
-        attributes.put(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE, urlDomain());
-      }
       if (!Strings.isNullOrEmpty(httpPathTemplate())) {
         attributes.put(ObservabilityAttributes.URL_TEMPLATE_ATTRIBUTE, httpPathTemplate());
       }

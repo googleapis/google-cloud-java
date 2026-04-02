@@ -60,8 +60,8 @@ public interface ListRepositoriesRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Requested page size. Server may return fewer items than
-   * requested. If unspecified, server will pick an appropriate default.
+   * Optional. Requested page size. If unspecified, a default size of 30 will be
+   * used. The maximum value is 100; values above 100 will be coerced to 100.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -74,10 +74,10 @@ public interface ListRepositoriesRequestOrBuilder
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * Optional. A token identifying a page of results the server should return.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -87,10 +87,10 @@ public interface ListRepositoriesRequestOrBuilder
    *
    *
    * <pre>
-   * A token identifying a page of results the server should return.
+   * Optional. A token identifying a page of results the server should return.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */

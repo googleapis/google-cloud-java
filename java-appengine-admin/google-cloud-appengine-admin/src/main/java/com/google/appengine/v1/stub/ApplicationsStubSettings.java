@@ -320,6 +320,7 @@ public class ApplicationsStubSettings extends StubSettings<ApplicationsStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-appengine-admin")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

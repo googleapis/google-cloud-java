@@ -32,6 +32,7 @@ package com.google.api.gax.httpjson;
 import com.google.api.client.http.EmptyContent;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.testing.http.MockHttpTransport;
+import com.google.api.gax.tracing.ApiTracer;
 import com.google.common.truth.Truth;
 import com.google.longrunning.ListOperationsRequest;
 import com.google.protobuf.Empty;
@@ -121,6 +122,32 @@ class HttpRequestRunnableTest {
     Truth.assertThat(httpRequest.getContent()).isInstanceOf(EmptyContent.class);
     String expectedUrl = ENDPOINT + "/name/feline" + "?food=bird&food=mouse&size=small";
     Truth.assertThat(httpRequest.getUrl().toString()).isEqualTo(expectedUrl);
+  }
+
+  @Test
+  void testApiTracerRequestUrlResolved() throws IOException {
+    ApiTracer tracer = Mockito.mock(ApiTracer.class);
+    ApiMethodDescriptor<Field, Empty> methodDescriptor =
+        ApiMethodDescriptor.<Field, Empty>newBuilder()
+            .setFullMethodName("house.cat.get")
+            .setHttpMethod(null)
+            .setRequestFormatter(requestFormatter)
+            .setResponseParser(responseParser)
+            .build();
+
+    HttpRequestRunnable<Field, Empty> httpRequestRunnable =
+        new HttpRequestRunnable<>(
+            requestMessage,
+            methodDescriptor,
+            ENDPOINT,
+            HttpJsonCallOptions.newBuilder().setTracer(tracer).build(),
+            new MockHttpTransport(),
+            HttpJsonMetadata.newBuilder().build(),
+            (result) -> {});
+
+    httpRequestRunnable.createHttpRequest();
+    String expectedUrl = ENDPOINT + "/name/feline" + "?food=bird&food=mouse&size=small";
+    Mockito.verify(tracer).requestUrlResolved(expectedUrl);
   }
 
   @Test

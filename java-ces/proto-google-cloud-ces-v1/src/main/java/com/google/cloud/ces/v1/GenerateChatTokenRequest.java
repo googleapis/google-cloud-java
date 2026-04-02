@@ -248,6 +248,25 @@ public final class GenerateChatTokenRequest extends com.google.protobuf.Generate
     }
   }
 
+  public static final int LIVE_HANDOFF_ENABLED_FIELD_NUMBER = 4;
+  private boolean liveHandoffEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Indicates if live handoff is enabled for the session.
+   * </pre>
+   *
+   * <code>bool live_handoff_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The liveHandoffEnabled.
+   */
+  @java.lang.Override
+  public boolean getLiveHandoffEnabled() {
+    return liveHandoffEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -271,6 +290,9 @@ public final class GenerateChatTokenRequest extends com.google.protobuf.Generate
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(recaptchaToken_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, recaptchaToken_);
     }
+    if (liveHandoffEnabled_ != false) {
+      output.writeBool(4, liveHandoffEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -288,6 +310,9 @@ public final class GenerateChatTokenRequest extends com.google.protobuf.Generate
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(recaptchaToken_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, recaptchaToken_);
+    }
+    if (liveHandoffEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, liveHandoffEnabled_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -308,6 +333,7 @@ public final class GenerateChatTokenRequest extends com.google.protobuf.Generate
     if (!getName().equals(other.getName())) return false;
     if (!getDeployment().equals(other.getDeployment())) return false;
     if (!getRecaptchaToken().equals(other.getRecaptchaToken())) return false;
+    if (getLiveHandoffEnabled() != other.getLiveHandoffEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -325,6 +351,8 @@ public final class GenerateChatTokenRequest extends com.google.protobuf.Generate
     hash = (53 * hash) + getDeployment().hashCode();
     hash = (37 * hash) + RECAPTCHA_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getRecaptchaToken().hashCode();
+    hash = (37 * hash) + LIVE_HANDOFF_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLiveHandoffEnabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -469,6 +497,7 @@ public final class GenerateChatTokenRequest extends com.google.protobuf.Generate
       name_ = "";
       deployment_ = "";
       recaptchaToken_ = "";
+      liveHandoffEnabled_ = false;
       return this;
     }
 
@@ -514,6 +543,9 @@ public final class GenerateChatTokenRequest extends com.google.protobuf.Generate
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.recaptchaToken_ = recaptchaToken_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.liveHandoffEnabled_ = liveHandoffEnabled_;
+      }
     }
 
     @java.lang.Override
@@ -543,6 +575,9 @@ public final class GenerateChatTokenRequest extends com.google.protobuf.Generate
         recaptchaToken_ = other.recaptchaToken_;
         bitField0_ |= 0x00000004;
         onChanged();
+      }
+      if (other.getLiveHandoffEnabled() != false) {
+        setLiveHandoffEnabled(other.getLiveHandoffEnabled());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -588,6 +623,12 @@ public final class GenerateChatTokenRequest extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 32:
+              {
+                liveHandoffEnabled_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -976,6 +1017,62 @@ public final class GenerateChatTokenRequest extends com.google.protobuf.Generate
       checkByteStringIsUtf8(value);
       recaptchaToken_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private boolean liveHandoffEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if live handoff is enabled for the session.
+     * </pre>
+     *
+     * <code>bool live_handoff_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The liveHandoffEnabled.
+     */
+    @java.lang.Override
+    public boolean getLiveHandoffEnabled() {
+      return liveHandoffEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if live handoff is enabled for the session.
+     * </pre>
+     *
+     * <code>bool live_handoff_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The liveHandoffEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLiveHandoffEnabled(boolean value) {
+
+      liveHandoffEnabled_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Indicates if live handoff is enabled for the session.
+     * </pre>
+     *
+     * <code>bool live_handoff_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLiveHandoffEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      liveHandoffEnabled_ = false;
       onChanged();
       return this;
     }

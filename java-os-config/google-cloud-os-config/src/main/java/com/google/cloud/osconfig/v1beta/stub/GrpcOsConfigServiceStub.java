@@ -568,6 +568,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             PatchDeployments.ResumePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -582,6 +583,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GuestPolicies.CreateGuestPolicyRequest, GuestPolicies.GuestPolicy>
         createGuestPolicyTransportSettings =
@@ -594,6 +596,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GuestPolicies.GetGuestPolicyRequest, GuestPolicies.GuestPolicy>
         getGuestPolicyTransportSettings =
@@ -606,6 +609,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             GuestPolicies.ListGuestPoliciesRequest, GuestPolicies.ListGuestPoliciesResponse>
@@ -620,6 +624,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GuestPolicies.UpdateGuestPolicyRequest, GuestPolicies.GuestPolicy>
         updateGuestPolicyTransportSettings =
@@ -644,6 +649,7 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<
             GuestPolicies.LookupEffectiveGuestPolicyRequest, GuestPolicies.EffectiveGuestPolicy>

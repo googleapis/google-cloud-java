@@ -69,14 +69,14 @@ public interface UpdateBranchRuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
+   * Optional. Field mask is used to specify the fields to be overwritten in the
    * branchRule resource by the update.
    * The fields specified in the update_mask are relative to the resource, not
    * the full request. A field will be overwritten if it is in the mask.
    * The special value "*" means full replacement.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the updateMask field is set.
@@ -87,14 +87,14 @@ public interface UpdateBranchRuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
+   * Optional. Field mask is used to specify the fields to be overwritten in the
    * branchRule resource by the update.
    * The fields specified in the update_mask are relative to the resource, not
    * the full request. A field will be overwritten if it is in the mask.
    * The special value "*" means full replacement.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The updateMask.
@@ -105,14 +105,14 @@ public interface UpdateBranchRuleRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask is used to specify the fields to be overwritten in the
+   * Optional. Field mask is used to specify the fields to be overwritten in the
    * branchRule resource by the update.
    * The fields specified in the update_mask are relative to the resource, not
    * the full request. A field will be overwritten if it is in the mask.
    * The special value "*" means full replacement.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.protobuf.FieldMask update_mask = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();

@@ -328,6 +328,7 @@ public class ControlServiceStubSettings extends StubSettings<ControlServiceStubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-discoveryengine")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

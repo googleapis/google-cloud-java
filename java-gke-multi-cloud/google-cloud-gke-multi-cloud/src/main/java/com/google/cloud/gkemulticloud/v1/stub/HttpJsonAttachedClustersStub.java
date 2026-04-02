@@ -563,6 +563,7 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateAttachedClusterRequest, Operation>
         updateAttachedClusterTransportSettings =
@@ -589,6 +590,7 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetAttachedClusterRequest, AttachedCluster>
         getAttachedClusterTransportSettings =
@@ -601,6 +603,7 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListAttachedClustersRequest, ListAttachedClustersResponse>
         listAttachedClustersTransportSettings =
@@ -614,6 +617,7 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteAttachedClusterRequest, Operation>
         deleteAttachedClusterTransportSettings =
@@ -626,6 +630,7 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetAttachedServerConfigRequest, AttachedServerConfig>
         getAttachedServerConfigTransportSettings =
@@ -638,6 +643,7 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             GenerateAttachedClusterInstallManifestRequest,
@@ -655,6 +661,7 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             GenerateAttachedClusterAgentTokenRequest, GenerateAttachedClusterAgentTokenResponse>
@@ -671,6 +678,7 @@ public class HttpJsonAttachedClustersStub extends AttachedClustersStub {
                       builder.add("attached_cluster", String.valueOf(request.getAttachedCluster()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAttachedCluster())
                 .build();
 
     this.createAttachedClusterCallable =

@@ -530,6 +530,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchProcessRequest, Operation> batchProcessDocumentsTransportSettings =
         GrpcCallSettings.<BatchProcessRequest, Operation>newBuilder()
@@ -540,6 +541,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<FetchProcessorTypesRequest, FetchProcessorTypesResponse>
         fetchProcessorTypesTransportSettings =
@@ -551,6 +553,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListProcessorTypesRequest, ListProcessorTypesResponse>
         listProcessorTypesTransportSettings =
@@ -562,6 +565,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetProcessorTypeRequest, ProcessorType> getProcessorTypeTransportSettings =
         GrpcCallSettings.<GetProcessorTypeRequest, ProcessorType>newBuilder()
@@ -572,6 +576,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProcessorsRequest, ListProcessorsResponse>
         listProcessorsTransportSettings =
@@ -583,6 +588,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetProcessorRequest, Processor> getProcessorTransportSettings =
         GrpcCallSettings.<GetProcessorRequest, Processor>newBuilder()
@@ -593,6 +599,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<TrainProcessorVersionRequest, Operation>
         trainProcessorVersionTransportSettings =
@@ -604,6 +611,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetProcessorVersionRequest, ProcessorVersion>
         getProcessorVersionTransportSettings =
@@ -615,6 +623,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListProcessorVersionsRequest, ListProcessorVersionsResponse>
         listProcessorVersionsTransportSettings =
@@ -627,6 +636,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteProcessorVersionRequest, Operation>
         deleteProcessorVersionTransportSettings =
@@ -638,6 +648,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeployProcessorVersionRequest, Operation>
         deployProcessorVersionTransportSettings =
@@ -649,6 +660,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UndeployProcessorVersionRequest, Operation>
         undeployProcessorVersionTransportSettings =
@@ -660,6 +672,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateProcessorRequest, Processor> createProcessorTransportSettings =
         GrpcCallSettings.<CreateProcessorRequest, Processor>newBuilder()
@@ -670,6 +683,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteProcessorRequest, Operation> deleteProcessorTransportSettings =
         GrpcCallSettings.<DeleteProcessorRequest, Operation>newBuilder()
@@ -680,6 +694,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<EnableProcessorRequest, Operation> enableProcessorTransportSettings =
         GrpcCallSettings.<EnableProcessorRequest, Operation>newBuilder()
@@ -690,6 +705,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DisableProcessorRequest, Operation> disableProcessorTransportSettings =
         GrpcCallSettings.<DisableProcessorRequest, Operation>newBuilder()
@@ -700,6 +716,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SetDefaultProcessorVersionRequest, Operation>
         setDefaultProcessorVersionTransportSettings =
@@ -711,6 +728,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("processor", String.valueOf(request.getProcessor()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProcessor())
                 .build();
     GrpcCallSettings<ReviewDocumentRequest, Operation> reviewDocumentTransportSettings =
         GrpcCallSettings.<ReviewDocumentRequest, Operation>newBuilder()
@@ -722,6 +740,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       "human_review_config", String.valueOf(request.getHumanReviewConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getHumanReviewConfig())
             .build();
     GrpcCallSettings<EvaluateProcessorVersionRequest, Operation>
         evaluateProcessorVersionTransportSettings =
@@ -734,6 +753,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                           "processor_version", String.valueOf(request.getProcessorVersion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProcessorVersion())
                 .build();
     GrpcCallSettings<GetEvaluationRequest, Evaluation> getEvaluationTransportSettings =
         GrpcCallSettings.<GetEvaluationRequest, Evaluation>newBuilder()
@@ -744,6 +764,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEvaluationsRequest, ListEvaluationsResponse>
         listEvaluationsTransportSettings =
@@ -755,6 +776,7 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
