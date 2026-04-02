@@ -254,7 +254,7 @@ class ITOtelGoldenMetrics {
           .isEqualTo("v1beta1/echo:echo");
       assertThat(
               attributes.get(AttributeKey.stringKey(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE)))
-          .isNull(); 
+          .isEqualTo("google.showcase.v1beta1.Echo/Echo"); 
     }
   }
 
