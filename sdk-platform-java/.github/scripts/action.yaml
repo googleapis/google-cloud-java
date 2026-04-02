@@ -38,7 +38,6 @@ inputs:
     required: true
   force_regenerate_all:
     description: true if we want to regenerate all libraries
-    default: false
     required: false
 
 runs:
@@ -88,3 +87,4 @@ runs:
       IMAGE_TAG: ${{ inputs.image_tag }}
       SHOWCASE_MODE: ${{ inputs.showcase_mode }}
       GH_TOKEN: ${{ inputs.token }}
+      FORCE_REGENERATE_ALL: ${{ inputs.force_regenerate_all }}
