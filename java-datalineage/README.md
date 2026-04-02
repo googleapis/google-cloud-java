@@ -171,7 +171,7 @@ Apache 2.0 - See [LICENSE][license] for more information.
 
 Java is a registered trademark of Oracle and/or its affiliates.
 
-[product-docs]: https://cloud.google.com/data-catalog/docs/data-lineage/
+[product-docs]: https://cloud.google.com/dataplex/docs/about-data-lineage
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-datalineage/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-datalineage.svg

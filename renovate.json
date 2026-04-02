@@ -25,6 +25,21 @@
         "/^com.google.cloud:google-cloud-storage/",
         "/^com.google.apis:google-api-services-storage/"
       ]
+    },
+    {
+      "matchManagers": [
+        "custom.regex"
+      ],
+      "semanticCommitType": "chore",
+      "matchFileNames": [
+        "sdk-platform-java/dependencies.txt"
+      ],
+      "matchDatasources": [
+        "maven"
+      ],
+      "groupName": "Upper Bound Dependencies File",
+      "description": "Group all dependencies from the Upper Bound Dependencies File",
+      "enabled": true
     }
   ],
   "includePaths": [
@@ -35,6 +50,7 @@
     "java-samples/native-image-sample/pom.xml",
     "java-shared-dependencies/first-party-dependencies/pom.xml",
     "java-shared-dependencies/third-party-dependencies/pom.xml",
+    "sdk-platform-java/dependencies.txt",
     ".kokoro/nightly/graalvm-native*.cfg",
     ".kokoro/nightly/graalvm-sub-jobs/native*/common.cfg",
     ".kokoro/presubmit/graalvm-native*.cfg",
@@ -47,7 +63,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": [
+      "fileMatch": [
         "/^.kokoro/nightly/graalvm-native.*.cfg$/",
         "/^.kokoro/presubmit/graalvm-native.*.cfg$/",
         "/^.kokoro/presubmit/*-graalvm-native-presubmit.cfg$/",
@@ -62,7 +78,7 @@
     },
     {
       "customType": "regex",
-      "managerFilePatterns": [
+      "fileMatch": [
         "/java-dns/README.md/",
         "/java-notification/README.md/",
         "/java-samples/native-image-sample/pom.xml/",
@@ -76,7 +92,7 @@
     },
     {
       "customType": "regex",
-      "managerFilePatterns": [
+      "fileMatch": [
         "/.github/workflows/ci.yaml/",
         "/.github/workflows/generated_files_sync.yaml/"
       ],
@@ -88,13 +104,19 @@
     },
     {
       "customType": "regex",
-      "managerFilePatterns": [
+      "fileMatch": [
         "/^.github/workflows/unmanaged_dependency_check.yaml$/"
       ],
       "matchStrings": [
         "uses: googleapis/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check@google-cloud-shared-dependencies/v(?<currentValue>.+?)\\n"
       ],
       "depNameTemplate": "com.google.cloud:sdk-platform-java-config",
+      "datasourceTemplate": "maven"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["sdk-platform-java/dependencies.txt"],
+      "matchStrings": ["(?<depName>.*),(.*)=(?<currentValue>.*)"],
       "datasourceTemplate": "maven"
     }
   ]

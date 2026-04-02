@@ -384,4 +384,23 @@ class SpanTracerFactoryTest {
     ApiTracerFactory factoryWithContext = factory.withContext(context);
     assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
   }
+
+  @Test
+  void testNeedsContext_returnsTrueWhenContextIsEmpty() {
+    SpanTracerFactory factoryWithoutContext =
+        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    assertThat(factoryWithoutContext.needsContext()).isTrue();
+  }
+
+  @Test
+  void testNeedsContext_returnsFalseWhenContextIsNotEmpty() {
+    ApiTracerContext context =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(validMetadata)
+            .setServerAddress("test-address")
+            .build();
+    SpanTracerFactory factoryWithContext = new SpanTracerFactory(openTelemetry, tracer, context);
+
+    assertThat(factoryWithContext.needsContext()).isFalse();
+  }
 }
