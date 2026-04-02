@@ -85,7 +85,7 @@ public class DatastoreMetricsSampleIT {
   public void testTransactionFlowRecordsMetrics() throws Exception {
     DatastoreMetricsSample.runSample(PROJECT_ID, DATABASE_ID, kind);
 
-    systemsOutRule.assertContains("Built-in metrics are enabled by default");
+    systemsOutRule.assertContains("Built-in metrics are explicitly enabled");
     systemsOutRule.assertContains("Inserted entity");
     systemsOutRule.assertContains("Transaction committed");
     systemsOutRule.assertContains("transaction_latency and transaction_attempt_count metrics recorded");

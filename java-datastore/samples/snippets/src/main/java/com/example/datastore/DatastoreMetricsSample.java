@@ -37,9 +37,10 @@ import java.util.UUID;
  * firestore.googleapis.com/Database} monitored resource. The {@code service} metric label is set to
  * {@code datastore.googleapis.com} to distinguish Datastore traffic from Firestore.
  *
- * <p>No configuration is required to enable metrics — they are on by default. To disable them, set
- * {@link DatastoreOpenTelemetryOptions#setExportBuiltinMetricsToGoogleCloudMonitoring(boolean)} to
- * {@code false}, or set the environment variable {@code DATASTORE_ENABLE_METRICS=false}.
+ * <p>Built-in metrics are currently disabled by default until the Cloud Monitoring namespace is
+ * fully deployed. To enable them, set {@link
+ * DatastoreOpenTelemetryOptions.Builder#setExportBuiltinMetricsToGoogleCloudMonitoring(boolean)} to
+ * {@code true}, or set the environment variable {@code DATASTORE_ENABLE_METRICS=true}.
  *
  * <p>Metrics recorded by this sample:
  *
@@ -73,17 +74,23 @@ public class DatastoreMetricsSample {
 
   static void runSample(String projectId, String databaseId, String kind) throws Exception {
     // [START datastore_client_side_metrics_default]
-    // Built-in metrics are exported to Cloud Monitoring by default.
-    // No additional configuration is required.
+    // Built-in metrics are disabled by default. Enable them explicitly.
     DatastoreOptions options =
-        DatastoreOptions.newBuilder().setProjectId(projectId).setDatabaseId(databaseId).build();
+        DatastoreOptions.newBuilder()
+            .setProjectId(projectId)
+            .setDatabaseId(databaseId)
+            .setOpenTelemetryOptions(
+                DatastoreOpenTelemetryOptions.newBuilder()
+                    .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
+                    .build())
+            .build();
     // [END datastore_client_side_metrics_default]
 
     try (Datastore datastore = options.getService()) {
       System.out.printf(
           "Connected to project=%s database=%s%n", projectId, databaseId);
       System.out.println(
-          "Built-in metrics are enabled by default and will be exported to"
+          "Built-in metrics are explicitly enabled and will be exported to"
               + " Google Cloud Monitoring under custom.googleapis.com/internal/client/*");
 
       runTransactionFlow(datastore, kind);
