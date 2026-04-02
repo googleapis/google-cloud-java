@@ -56,10 +56,12 @@ import com.google.cloud.memorystore.v1beta.CreateInstanceRequest;
 import com.google.cloud.memorystore.v1beta.DeleteInstanceRequest;
 import com.google.cloud.memorystore.v1beta.GetCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1beta.GetInstanceRequest;
+import com.google.cloud.memorystore.v1beta.GetSharedRegionalCertificateAuthorityRequest;
 import com.google.cloud.memorystore.v1beta.Instance;
 import com.google.cloud.memorystore.v1beta.ListInstancesRequest;
 import com.google.cloud.memorystore.v1beta.ListInstancesResponse;
 import com.google.cloud.memorystore.v1beta.OperationMetadata;
+import com.google.cloud.memorystore.v1beta.SharedRegionalCertificateAuthority;
 import com.google.cloud.memorystore.v1beta.UpdateInstanceRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -171,6 +173,9 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       deleteInstanceOperationSettings;
   private final UnaryCallSettings<GetCertificateAuthorityRequest, CertificateAuthority>
       getCertificateAuthoritySettings;
+  private final UnaryCallSettings<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthoritySettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -328,6 +333,15 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     return getCertificateAuthoritySettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to getSharedRegionalCertificateAuthority.
+   */
+  public UnaryCallSettings<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthoritySettings() {
+    return getSharedRegionalCertificateAuthoritySettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -430,6 +444,8 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     deleteInstanceSettings = settingsBuilder.deleteInstanceSettings().build();
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
     getCertificateAuthoritySettings = settingsBuilder.getCertificateAuthoritySettings().build();
+    getSharedRegionalCertificateAuthoritySettings =
+        settingsBuilder.getSharedRegionalCertificateAuthoritySettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -464,6 +480,9 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
         deleteInstanceOperationSettings;
     private final UnaryCallSettings.Builder<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthoritySettings;
+    private final UnaryCallSettings.Builder<
+            GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthoritySettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -528,6 +547,8 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       deleteInstanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
       getCertificateAuthoritySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSharedRegionalCertificateAuthoritySettings =
+          UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -539,6 +560,7 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
               updateInstanceSettings,
               deleteInstanceSettings,
               getCertificateAuthoritySettings,
+              getSharedRegionalCertificateAuthoritySettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -556,6 +578,8 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
       deleteInstanceSettings = settings.deleteInstanceSettings.toBuilder();
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
       getCertificateAuthoritySettings = settings.getCertificateAuthoritySettings.toBuilder();
+      getSharedRegionalCertificateAuthoritySettings =
+          settings.getSharedRegionalCertificateAuthoritySettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -567,6 +591,7 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
               updateInstanceSettings,
               deleteInstanceSettings,
               getCertificateAuthoritySettings,
+              getSharedRegionalCertificateAuthoritySettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -613,6 +638,11 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
           .getCertificateAuthoritySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getSharedRegionalCertificateAuthoritySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .listLocationsSettings()
@@ -763,6 +793,15 @@ public class MemorystoreStubSettings extends StubSettings<MemorystoreStubSetting
     public UnaryCallSettings.Builder<GetCertificateAuthorityRequest, CertificateAuthority>
         getCertificateAuthoritySettings() {
       return getCertificateAuthoritySettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getSharedRegionalCertificateAuthority.
+     */
+    public UnaryCallSettings.Builder<
+            GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthoritySettings() {
+      return getSharedRegionalCertificateAuthoritySettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
