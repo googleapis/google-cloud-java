@@ -16,14 +16,14 @@
     <jdbc.jarPath>${env.JDBC_JAR_PATH}</jdbc.jarPath>
   </properties>
 
-  <parent>
+<!--  <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquery-parent</artifactId>
-    <version>2.63.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquery:current} -->
+    <version>2.63.0-SNAPSHOT</version>&lt;!&ndash; {x-version-update:google-cloud-bigquery:current} &ndash;&gt;
     <relativePath>../../pom.xml</relativePath>
-  </parent>
+  </parent>-->
 
-<!--  <dependencyManagement>
+  <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.google.cloud</groupId>
@@ -33,7 +33,7 @@
         <scope>import</scope>
       </dependency>
     </dependencies>
-  </dependencyManagement>-->
+  </dependencyManagement>
   <dependencies>
   <dependency>
     <groupId>com.google.cloud</groupId>

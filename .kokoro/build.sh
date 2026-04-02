@@ -282,6 +282,7 @@ case ${JOB_TYPE} in
                        [[ "$(basename "${dir}")" != "dependency-analyzer" ]] && \
                        [[ "$(basename "${dir}")" != "dependency-convergence-check" ]] && \
                        [[ "$(basename "${dir}")" != "unmanaged-dependency-check" ]] && \
+                       [[ "$(basename "${dir}")" != "bigquery-external-jdbc-tests" ]] && \
                        [[ "$(basename "${dir}")" != "google-cloud-jar-parent" ]]; then
 
                         changed_modules+=("${dir}")
