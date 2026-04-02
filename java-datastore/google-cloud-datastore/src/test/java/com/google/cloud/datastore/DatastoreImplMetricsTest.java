@@ -516,7 +516,7 @@ public class DatastoreImplMetricsTest {
 
     // Verify operation latency
     Optional<MetricData> operationLatency =
-        findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_LATENCY);
+        findMetric(metrics, TelemetryConstants.METRIC_PREFIX + "/operation_latency");
     assertThat(operationLatency.isPresent()).isTrue();
     HistogramPointData opLatencyPoint =
         operationLatency.get().getHistogramData().getPoints().stream()
@@ -545,12 +545,12 @@ public class DatastoreImplMetricsTest {
 
     // Verify operation count
     Optional<MetricData> operationCount =
-        findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_COUNT);
+        findMetric(metrics, TelemetryConstants.METRIC_PREFIX + "/operation_count");
     assertThat(operationCount.isPresent()).isTrue();
 
     // Verify attempt latency
     Optional<MetricData> attemptLatency =
-        findMetric(metrics, TelemetryConstants.METRIC_NAME_ATTEMPT_LATENCY);
+        findMetric(metrics, TelemetryConstants.METRIC_PREFIX + "/attempt_latency");
     assertThat(attemptLatency.isPresent()).isTrue();
     HistogramPointData attLatencyPoint =
         attemptLatency.get().getHistogramData().getPoints().stream()
@@ -567,7 +567,7 @@ public class DatastoreImplMetricsTest {
 
     // Verify attempt count
     Optional<MetricData> attemptCount =
-        findMetric(metrics, TelemetryConstants.METRIC_NAME_ATTEMPT_COUNT);
+        findMetric(metrics, TelemetryConstants.METRIC_PREFIX + "/attempt_count");
     assertThat(attemptCount.isPresent()).isTrue();
 
     EasyMock.verify(rpcMock);
@@ -599,7 +599,7 @@ public class DatastoreImplMetricsTest {
 
     // Verify operation latency with UNAVAILABLE status
     Optional<MetricData> operationLatency =
-        findMetric(metrics, TelemetryConstants.METRIC_NAME_OPERATION_LATENCY);
+        findMetric(metrics, TelemetryConstants.METRIC_PREFIX + "/operation_latency");
     assertThat(operationLatency.isPresent()).isTrue();
     HistogramPointData opLatencyPoint =
         operationLatency.get().getHistogramData().getPoints().stream()
@@ -621,7 +621,7 @@ public class DatastoreImplMetricsTest {
 
     // Verify attempt metrics were also recorded with UNAVAILABLE
     Optional<MetricData> attemptCount =
-        findMetric(metrics, TelemetryConstants.METRIC_NAME_ATTEMPT_COUNT);
+        findMetric(metrics, TelemetryConstants.METRIC_PREFIX + "/attempt_count");
     assertThat(attemptCount.isPresent()).isTrue();
 
     EasyMock.verify(rpcMock);
