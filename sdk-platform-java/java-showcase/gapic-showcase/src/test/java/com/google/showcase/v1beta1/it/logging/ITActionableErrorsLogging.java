@@ -92,32 +92,7 @@ public class ITActionableErrorsLogging {
   }
 
   @Test
-  void testGrpc_actionableErrorLogged() {
-    EchoRequest request = buildErrorRequest();
-
-    assertThrows(ApiException.class, () -> grpcClient.echo(request));
-
-    assertThat(testLogger.getMessageList().size()).isAtLeast(1);
-    String loggedMessage = testLogger.getMessageList().get(testLogger.getMessageList().size() - 1);
-
-    assertThat(loggedMessage).contains("This is a test error");
-
-    Map<String, Object> kvps = testLogger.getKeyValuePairsMap();
-    assertThat(kvps).containsEntry("rpc.system.name", "grpc");
-    assertThat(kvps).containsEntry("rpc.method", "google.showcase.v1beta1.Echo/Echo");
-    assertThat(kvps).containsEntry("rpc.response.status_code", "INVALID_ARGUMENT");
-    assertThat(kvps).containsEntry("error.type", "TEST_REASON");
-    assertThat(kvps).containsEntry("gcp.errors.domain", "test.googleapis.com");
-    assertThat(kvps).containsEntry("gcp.errors.metadata.test_metadata", "test_value");
-  }
-
-  @Test
-  void testHttpJson_actionableErrorLogged() throws Exception {
-    // The gapic-showcase server currently returns text/plain for failEchoWithDetails instead of
-    // JSON.
-    // Additionally, sending an ErrorInfo in a request over REST fails serialization.
-    // To test HTTP JSON actionable errors logic, we use a MockHttpTransport that simulates the
-    // correct JSON format.
+  void testHttpJson_logEmittedForLowLevelRequestFailure() throws Exception {
     MockHttpTransport mockTransport =
         new MockHttpTransport() {
           @Override
@@ -170,7 +145,6 @@ public class ITActionableErrorsLogging {
     EchoClient mockHttpJsonClient = EchoClient.create(stub);
 
     EchoRequest request = EchoRequest.newBuilder().build();
-
     assertThrows(ApiException.class, () -> mockHttpJsonClient.echo(request));
 
     assertThat(testLogger.getMessageList().size()).isAtLeast(1);
@@ -188,7 +162,82 @@ public class ITActionableErrorsLogging {
     assertThat(kvps).containsEntry("gcp.errors.metadata.mock_key", "mock_value");
 
     mockHttpJsonClient.close();
-    mockHttpJsonClient.awaitTermination(
-        TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
+    mockHttpJsonClient.awaitTermination(TestClientInitializer.AWAIT_TERMINATION_SECONDS, TimeUnit.SECONDS);
+  }
+
+  @Test
+  void testHttpJson_noLogEmittedForSuccess() {
+    EchoRequest request = EchoRequest.newBuilder().setContent("Success").build();
+    httpjsonClient.echo(request);
+    assertThat(testLogger.getMessageList().size()).isEqualTo(0);
+  }
+
+  @Test
+  void testHttpJson_clientLevelFailureAttributes() throws Exception {
+    com.google.showcase.v1beta1.stub.EchoStubSettings.Builder stubSettingsBuilder =
+        com.google.showcase.v1beta1.stub.EchoStubSettings.newHttpJsonBuilder();
+    stubSettingsBuilder.echoSettings().setRetrySettings(
+        com.google.api.gax.retrying.RetrySettings.newBuilder()
+            .setInitialRpcTimeoutDuration(java.time.Duration.ofMillis(0))
+            .setTotalTimeoutDuration(java.time.Duration.ofMillis(0))
+            .setMaxAttempts(1)
+            .build());
+    stubSettingsBuilder.setTracerFactory(new LoggingTracerFactory());
+    stubSettingsBuilder.setEndpoint(TestClientInitializer.DEFAULT_HTTPJSON_ENDPOINT);
+    
+    try (com.google.showcase.v1beta1.stub.EchoStub stub = stubSettingsBuilder.build().createStub();
+        EchoClient client = EchoClient.create(stub)) {
+      assertThrows(ApiException.class, () -> client.echo(EchoRequest.newBuilder().build()));
+      assertThat(testLogger.getMessageList().size()).isAtLeast(1);
+      Map<String, Object> kvps = testLogger.getKeyValuePairsMap();
+      assertThat(kvps).containsEntry("rpc.system.name", "http");
+    }
+  }
+
+  @Test
+  void testGrpc_logEmittedForLowLevelRequestFailure() {
+    EchoRequest request = buildErrorRequest();
+    assertThrows(ApiException.class, () -> grpcClient.echo(request));
+
+    assertThat(testLogger.getMessageList().size()).isAtLeast(1);
+    String loggedMessage = testLogger.getMessageList().get(testLogger.getMessageList().size() - 1);
+    assertThat(loggedMessage).contains("This is a test error");
+
+    Map<String, Object> kvps = testLogger.getKeyValuePairsMap();
+    assertThat(kvps).containsEntry("rpc.system.name", "grpc");
+    assertThat(kvps).containsEntry("rpc.method", "google.showcase.v1beta1.Echo/Echo");
+    assertThat(kvps).containsEntry("rpc.response.status_code", "INVALID_ARGUMENT");
+    assertThat(kvps).containsEntry("error.type", "TEST_REASON");
+    assertThat(kvps).containsEntry("gcp.errors.domain", "test.googleapis.com");
+    assertThat(kvps).containsEntry("gcp.errors.metadata.test_metadata", "test_value");
+  }
+
+  @Test
+  void testGrpc_noLogEmittedForSuccess() {
+    EchoRequest request = EchoRequest.newBuilder().setContent("Success").build();
+    grpcClient.echo(request);
+    assertThat(testLogger.getMessageList().size()).isEqualTo(0);
+  }
+
+  @Test
+  void testGrpc_clientLevelFailureAttributes() throws Exception {
+    com.google.showcase.v1beta1.stub.EchoStubSettings.Builder stubSettingsBuilder =
+        com.google.showcase.v1beta1.stub.EchoStubSettings.newBuilder();
+    stubSettingsBuilder.echoSettings().setRetrySettings(
+        com.google.api.gax.retrying.RetrySettings.newBuilder()
+            .setInitialRpcTimeoutDuration(java.time.Duration.ofMillis(0))
+            .setTotalTimeoutDuration(java.time.Duration.ofMillis(0))
+            .setMaxAttempts(1)
+            .build());
+    stubSettingsBuilder.setTracerFactory(new LoggingTracerFactory());
+    stubSettingsBuilder.setEndpoint(TestClientInitializer.DEFAULT_GRPC_ENDPOINT);
+    
+    try (com.google.showcase.v1beta1.stub.EchoStub stub = stubSettingsBuilder.build().createStub();
+        EchoClient client = EchoClient.create(stub)) {
+      assertThrows(ApiException.class, () -> client.echo(EchoRequest.newBuilder().build()));
+      assertThat(testLogger.getMessageList().size()).isAtLeast(1);
+      Map<String, Object> kvps = testLogger.getKeyValuePairsMap();
+      assertThat(kvps).containsEntry("rpc.system.name", "grpc");
+    }
   }
 }

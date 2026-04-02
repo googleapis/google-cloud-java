@@ -452,6 +452,13 @@
               <additionalClasspathElements>
                 <additionalClasspathElement>${project.basedir}/src/test/slf4j-test-provider</additionalClasspathElement>
               </additionalClasspathElements>
+              <classpathDependencyExcludes>
+                <classpathDependencyExclude>ch.qos.logback:logback-classic</classpathDependencyExclude>
+                <classpathDependencyExclude>ch.qos.logback:logback-core</classpathDependencyExclude>
+              </classpathDependencyExcludes>
+              <environmentVariables>
+                <GOOGLE_SDK_JAVA_LOGGING>true</GOOGLE_SDK_JAVA_LOGGING>
+              </environmentVariables>
             </configuration>
           </plugin>
         </plugins>
