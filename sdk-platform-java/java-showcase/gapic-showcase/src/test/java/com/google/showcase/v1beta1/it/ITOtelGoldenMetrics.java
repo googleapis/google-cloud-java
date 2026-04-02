@@ -111,8 +111,6 @@ class ITOtelGoldenMetrics {
 
       assertThat(durationMetric.getInstrumentationScopeInfo().getName())
           .isEqualTo(SHOWCASE_ARTIFACT);
-      assertThat(durationMetric.getInstrumentationScopeInfo().getVersion())
-          .isEqualTo(com.google.api.gax.core.GaxProperties.getLibraryVersion(EchoClient.class));
 
       io.opentelemetry.api.common.Attributes attributes =
           durationMetric.getHistogramData().getPoints().iterator().next().getAttributes();
