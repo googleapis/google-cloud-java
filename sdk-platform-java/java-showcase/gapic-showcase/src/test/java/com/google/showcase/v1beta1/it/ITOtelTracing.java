@@ -516,7 +516,7 @@ class ITOtelTracing {
     assertThat(resendCounts).containsExactlyElementsIn(expectedCounts).inOrder();
   }
 
-  private SpanData getErrorAttribute() {
+  private SpanData getErrorSpan() {
     List<SpanData> spans = spanExporter.getFinishedSpanItems();
     assertThat(spans).isNotEmpty();
 
@@ -577,7 +577,7 @@ class ITOtelTracing {
       EchoRequest echoRequest = EchoRequest.newBuilder().build();
 
       assertThrows(UnavailableException.class, () -> client.echo(echoRequest));
-      SpanData errorSpan = getErrorAttribute();
+      SpanData errorSpan = getErrorSpan();
       assertThat(errorSpan.getAttributes().get(ERROR_TYPE_KEY)).isEqualTo(VALUE_UNAVAILABLE);
       assertThat(errorSpan.getAttributes().get(EXCEPTION_TYPE_KEY))
           .isEqualTo("com.google.api.gax.rpc.UnavailableException");
@@ -677,7 +677,7 @@ class ITOtelTracing {
       EchoRequest echoRequest = EchoRequest.newBuilder().build();
 
       assertThrows(UnavailableException.class, () -> client.echo(echoRequest));
-      SpanData errorSpan = getErrorAttribute();
+      SpanData errorSpan = getErrorSpan();
       assertThat(errorSpan.getAttributes().get(ERROR_TYPE_KEY)).isEqualTo("503");
       assertThat(errorSpan.getAttributes().get(EXCEPTION_TYPE_KEY))
           .isEqualTo("com.google.api.gax.rpc.UnavailableException");
