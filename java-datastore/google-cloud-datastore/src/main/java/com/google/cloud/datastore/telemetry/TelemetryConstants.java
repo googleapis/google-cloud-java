@@ -17,9 +17,10 @@
 package com.google.cloud.datastore.telemetry;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.tracing.OpenTelemetryMetricsRecorder;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import io.opentelemetry.api.common.AttributeKey;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -36,7 +37,6 @@ public class TelemetryConstants {
   // until this is implemented.
   public static final String METRIC_PREFIX = "custom.googleapis.com/internal/client";
   public static final String DATASTORE_METER_NAME = "java-datastore";
-  public static final String GAX_METER_NAME = OpenTelemetryMetricsRecorder.GAX_METER_NAME;
 
   // Short names used to build GAX_METRICS and metric full-path constants below.
   public static final String METRIC_NAME_SHORT_OPERATION_LATENCY = "operation_latency";
@@ -44,15 +44,24 @@ public class TelemetryConstants {
   public static final String METRIC_NAME_SHORT_OPERATION_COUNT = "operation_count";
   public static final String METRIC_NAME_SHORT_ATTEMPT_COUNT = "attempt_count";
 
+  public static final String METRIC_NAME_SHORT_OPERATION_LATENCIES = "operation_latencies";
+  public static final String METRIC_NAME_SHORT_ATTEMPT_LATENCIES = "attempt_latencies";
+
+  /**
+   * Mapping from the singular metric names recorded by the GAX library to the pluralized metric
+   * names required by the internal Cloud Monitoring metric descriptors.
+   */
+  public static final Map<String, String> GAX_METRIC_NAME_MAP =
+      ImmutableMap.of(
+          METRIC_NAME_SHORT_OPERATION_LATENCY, METRIC_NAME_SHORT_OPERATION_LATENCIES,
+          METRIC_NAME_SHORT_ATTEMPT_LATENCY, METRIC_NAME_SHORT_ATTEMPT_LATENCIES,
+          METRIC_NAME_SHORT_OPERATION_COUNT, METRIC_NAME_SHORT_OPERATION_COUNT,
+          METRIC_NAME_SHORT_ATTEMPT_COUNT, METRIC_NAME_SHORT_ATTEMPT_COUNT);
+
   // Short metric names (without prefix) for the four metrics recorded by the GAX layer.
   // Used by DatastoreBuiltInMetricsView to register OTel views that capture and rename
   // GAX-emitted metrics for the built-in Cloud Monitoring export pipeline.
-  public static final Set<String> GAX_METRICS =
-      ImmutableSet.of(
-          METRIC_NAME_SHORT_OPERATION_LATENCY,
-          METRIC_NAME_SHORT_ATTEMPT_LATENCY,
-          METRIC_NAME_SHORT_OPERATION_COUNT,
-          METRIC_NAME_SHORT_ATTEMPT_COUNT);
+  public static final Set<String> GAX_METRICS = GAX_METRIC_NAME_MAP.keySet();
 
   // Monitored resource type for Cloud Monitoring
   public static final String DATASTORE_RESOURCE_TYPE = "global";
@@ -122,7 +131,7 @@ public class TelemetryConstants {
 
   /** Metric name for the total latency of a transaction. */
   public static final String METRIC_NAME_TRANSACTION_LATENCY =
-      METRIC_PREFIX + "/transaction_latencies";
+      METRIC_PREFIX + "/transaction_latency";
 
   /** Metric name for the number of attempts a transaction took. */
   public static final String METRIC_NAME_TRANSACTION_ATTEMPT_COUNT =
@@ -131,26 +140,28 @@ public class TelemetryConstants {
   /**
    * Metric name for the total latency of an operation (one full RPC call including retries).
    *
-   * <p>The plural form ({@code operation_latencies}) is intentional: it matches the internal Cloud
-   * Monitoring metric descriptor name. {@link OpenTelemetryDatastoreMetricsRecorder} overrides the
-   * inherited GAX method to record to this name rather than the singular GAX default.
+   * <p>Renamed to the plural form ({@code operation_latencies}) by {@link
+   * DatastoreBuiltInMetricsView} during export.
    */
-  public static final String METRIC_NAME_OPERATION_LATENCY = METRIC_PREFIX + "/operation_latencies";
+  public static final String METRIC_NAME_OPERATION_LATENCY =
+      METRIC_PREFIX + "/" + METRIC_NAME_SHORT_OPERATION_LATENCY;
 
   /**
    * Metric name for the latency of a single RPC attempt.
    *
-   * <p>The plural form ({@code attempt_latencies}) is intentional: it matches the internal Cloud
-   * Monitoring metric descriptor name. {@link OpenTelemetryDatastoreMetricsRecorder} overrides the
-   * inherited GAX method to record to this name rather than the singular GAX default.
+   * <p>Renamed to the plural form ({@code attempt_latencies}) by {@link
+   * DatastoreBuiltInMetricsView} during export.
    */
-  public static final String METRIC_NAME_ATTEMPT_LATENCY = METRIC_PREFIX + "/attempt_latencies";
+  public static final String METRIC_NAME_ATTEMPT_LATENCY =
+      METRIC_PREFIX + "/" + METRIC_NAME_SHORT_ATTEMPT_LATENCY;
 
   /** Metric name for the count of operations. */
-  public static final String METRIC_NAME_OPERATION_COUNT = METRIC_PREFIX + "/operation_count";
+  public static final String METRIC_NAME_OPERATION_COUNT =
+      METRIC_PREFIX + "/" + METRIC_NAME_SHORT_OPERATION_COUNT;
 
   /** Metric name for the count of RPC attempts. */
-  public static final String METRIC_NAME_ATTEMPT_COUNT = METRIC_PREFIX + "/attempt_count";
+  public static final String METRIC_NAME_ATTEMPT_COUNT =
+      METRIC_PREFIX + "/" + METRIC_NAME_SHORT_ATTEMPT_COUNT;
 
   // This is intentionally different from the `SERVICE_NAME` constant as it matches Gax's logic for
   // method name.

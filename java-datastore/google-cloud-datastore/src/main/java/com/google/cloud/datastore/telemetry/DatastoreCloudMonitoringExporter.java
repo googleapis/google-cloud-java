@@ -24,6 +24,7 @@ import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.PermissionDeniedException;
+import com.google.api.gax.tracing.OpenTelemetryMetricsRecorder;
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.monitoring.v3.MetricServiceClient;
@@ -65,9 +66,9 @@ import javax.annotation.Nullable;
  * com.google.cloud.opentelemetry:exporter-metrics} library, to avoid external version management
  * and ensure tight integration with Datastore requirements.
  *
- * <p>The implementation in this file is inspired from the original work done in the Spanner
- * client library (SpannerCloudMonitoringExporter) to export metrics. The logic has been
- * adapted for Datastore's use case.
+ * <p>The implementation in this file is inspired from the original work done in the Spanner client
+ * library (SpannerCloudMonitoringExporter) to export metrics. The logic has been adapted for
+ * Datastore's use case.
  */
 class DatastoreCloudMonitoringExporter implements MetricExporter {
 
@@ -175,7 +176,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
                     metricData
                             .getInstrumentationScopeInfo()
                             .getName()
-                            .equals(TelemetryConstants.GAX_METER_NAME)
+                            .equals(OpenTelemetryMetricsRecorder.GAX_METER_NAME)
                         || metricData
                             .getInstrumentationScopeInfo()
                             .getName()

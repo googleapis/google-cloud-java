@@ -111,8 +111,7 @@ public class DatastoreBuiltInAndCustomMetricsIT {
 
     // Build a user-configured OTel backend that records to an in-memory reader for assertions.
     metricReader = InMemoryMetricReader.createDelta();
-    customMeterProvider =
-        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
+    customMeterProvider = SdkMeterProvider.builder().registerMetricReader(metricReader).build();
     OpenTelemetrySdk customOtel =
         OpenTelemetrySdk.builder().setMeterProvider(customMeterProvider).build();
 
@@ -205,10 +204,7 @@ public class DatastoreBuiltInAndCustomMetricsIT {
     datastore.runInTransaction(
         tx -> {
           Entity current = tx.get(key);
-          tx.put(
-              Entity.newBuilder(current)
-                  .set("value", current.getLong("value") + 1)
-                  .build());
+          tx.put(Entity.newBuilder(current).set("value", current.getLong("value") + 1).build());
           return null;
         });
 
@@ -228,7 +224,9 @@ public class DatastoreBuiltInAndCustomMetricsIT {
     assertThat(latencyPoint).isNotNull();
     assertThat(latencyPoint.getCount()).isEqualTo(1);
     assertWithMessage("status=OK on transaction_latency")
-        .that(dataContainsStringAttribute(latencyPoint, TelemetryConstants.ATTRIBUTES_KEY_STATUS, "OK"))
+        .that(
+            dataContainsStringAttribute(
+                latencyPoint, TelemetryConstants.ATTRIBUTES_KEY_STATUS, "OK"))
         .isTrue();
     assertWithMessage("method=Transaction.Run on transaction_latency")
         .that(
@@ -255,7 +253,9 @@ public class DatastoreBuiltInAndCustomMetricsIT {
     assertThat(attemptPoint).isNotNull();
     assertThat(attemptPoint.getValue()).isEqualTo(1);
     assertWithMessage("status=OK on transaction_attempt_count")
-        .that(dataContainsStringAttribute(attemptPoint, TelemetryConstants.ATTRIBUTES_KEY_STATUS, "OK"))
+        .that(
+            dataContainsStringAttribute(
+                attemptPoint, TelemetryConstants.ATTRIBUTES_KEY_STATUS, "OK"))
         .isTrue();
     assertWithMessage("method=Transaction.Commit on transaction_attempt_count")
         .that(
@@ -294,7 +294,9 @@ public class DatastoreBuiltInAndCustomMetricsIT {
             .filter(
                 p ->
                     dataContainsStringAttribute(
-                        p, TelemetryConstants.ATTRIBUTES_KEY_METHOD, TelemetryConstants.METHOD_LOOKUP))
+                        p,
+                        TelemetryConstants.ATTRIBUTES_KEY_METHOD,
+                        TelemetryConstants.METHOD_LOOKUP))
             .findFirst()
             .orElse(null);
     assertWithMessage("operation_latency point for Lookup method").that(opPoint).isNotNull();
@@ -328,8 +330,8 @@ public class DatastoreBuiltInAndCustomMetricsIT {
   /**
    * Verifies that all six expected metrics appear in the custom (in-memory) OTel backend after a
    * combined transaction-plus-lookup workload. This is the primary "composite" scenario: both the
-   * SDK-layer metrics (transaction) and the GAX-layer metrics (operation/attempt) are captured in
-   * a single test run, confirming the full fan-out routing is correct.
+   * SDK-layer metrics (transaction) and the GAX-layer metrics (operation/attempt) are captured in a
+   * single test run, confirming the full fan-out routing is correct.
    */
   @Test
   public void combinedWorkload_recordsAllSixMetricsInCustomBackend() {
@@ -343,10 +345,7 @@ public class DatastoreBuiltInAndCustomMetricsIT {
     datastore.runInTransaction(
         tx -> {
           Entity current = tx.get(key);
-          tx.put(
-              Entity.newBuilder(current)
-                  .set("value", current.getLong("value") + 1)
-                  .build());
+          tx.put(Entity.newBuilder(current).set("value", current.getLong("value") + 1).build());
           return null;
         });
 

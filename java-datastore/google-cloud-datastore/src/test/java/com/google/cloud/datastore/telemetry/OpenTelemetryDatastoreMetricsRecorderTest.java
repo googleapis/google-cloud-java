@@ -175,7 +175,7 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
     MetricData metric =
         metrics.stream()
-            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_PREFIX + "/attempt_latency"))
+            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_NAME_ATTEMPT_LATENCY))
             .findFirst()
             .orElse(null);
 
@@ -205,7 +205,7 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
     MetricData metric =
         metrics.stream()
-            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_PREFIX + "/attempt_count"))
+            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_NAME_ATTEMPT_COUNT))
             .findFirst()
             .orElse(null);
 
@@ -227,8 +227,7 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
     MetricData metric =
         metrics.stream()
-            .filter(
-                m -> m.getName().equals(TelemetryConstants.METRIC_PREFIX + "/operation_latency"))
+            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_NAME_OPERATION_LATENCY))
             .findFirst()
             .orElse(null);
 
@@ -254,7 +253,7 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
     MetricData metric =
         metrics.stream()
-            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_PREFIX + "/operation_count"))
+            .filter(m -> m.getName().equals(TelemetryConstants.METRIC_NAME_OPERATION_COUNT))
             .findFirst()
             .orElse(null);
 

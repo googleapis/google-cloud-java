@@ -54,7 +54,8 @@ public final class BuiltInDatastoreMetricsProvider {
   private static final Logger logger =
       Logger.getLogger(BuiltInDatastoreMetricsProvider.class.getName());
 
-  // volatile ensures that the lazy initialisation in getDefaultTaskValue() and detectClientLocation()
+  // volatile ensures that the lazy initialisation in getDefaultTaskValue() and
+  // detectClientLocation()
   // is visible across threads. Without it, a second thread could read a stale null and trigger
   // duplicate initialisation (safe but wasteful), or — on some architectures — read a partially
   // written value. The fields are idempotent to initialise, so a small risk of double-write is

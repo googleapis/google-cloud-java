@@ -50,12 +50,11 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
    *
    * <p>For built-in recorders that own a private {@link io.opentelemetry.sdk.OpenTelemetrySdk}
    * instance, this will flush and shut down the underlying {@link
-   * io.opentelemetry.sdk.metrics.SdkMeterProvider}. For recorders backed by a user-provided
-   * {@link io.opentelemetry.api.OpenTelemetry} instance, this is a no-op since the caller owns
-   * that instance's lifecycle.
+   * io.opentelemetry.sdk.metrics.SdkMeterProvider}. For recorders backed by a user-provided {@link
+   * io.opentelemetry.api.OpenTelemetry} instance, this is a no-op since the caller owns that
+   * instance's lifecycle.
    *
-   * <p>This method should be called from {@link
-   * com.google.cloud.datastore.DatastoreImpl#close()}.
+   * <p>This method should be called from {@link com.google.cloud.datastore.DatastoreImpl#close()}.
    */
   default void close() {}
 

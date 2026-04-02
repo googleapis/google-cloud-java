@@ -19,7 +19,6 @@ package com.google.cloud.datastore.telemetry;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.CLIENT_NAME_KEY;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.CLIENT_UID_KEY;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.DATABASE_ID_KEY;
-import static com.google.cloud.datastore.telemetry.TelemetryConstants.GAX_METER_NAME;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.LOCATION_ID_KEY;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.METRIC_NAME_SHORT_OPERATION_COUNT;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.METRIC_PREFIX;
@@ -36,6 +35,7 @@ import static org.easymock.EasyMock.verify;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.gax.tracing.OpenTelemetryMetricsRecorder;
 import com.google.cloud.monitoring.v3.MetricServiceClient;
 import com.google.cloud.monitoring.v3.stub.MetricServiceStub;
 import com.google.common.collect.ImmutableList;
@@ -101,7 +101,7 @@ public class DatastoreCloudMonitoringExporterTest {
             .build();
     resource = Resource.create(resourceAttributes);
 
-    scope = InstrumentationScopeInfo.create(GAX_METER_NAME);
+    scope = InstrumentationScopeInfo.create(OpenTelemetryMetricsRecorder.GAX_METER_NAME);
   }
 
   @Test

@@ -22,9 +22,7 @@ import static com.google.api.MetricDescriptor.MetricKind.UNRECOGNIZED;
 import static com.google.api.MetricDescriptor.ValueType.DISTRIBUTION;
 import static com.google.api.MetricDescriptor.ValueType.DOUBLE;
 import static com.google.api.MetricDescriptor.ValueType.INT64;
-import static com.google.cloud.datastore.telemetry.TelemetryConstants.DATASTORE_METER_NAME;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.DATASTORE_RESOURCE_TYPE;
-import static com.google.cloud.datastore.telemetry.TelemetryConstants.GAX_METER_NAME;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.PROJECT_ID_KEY;
 
 import com.google.api.Distribution;
@@ -63,9 +61,9 @@ import java.util.logging.Logger;
  * <p>This class contains the logic to map OpenTelemetry {@link MetricData} and {@link PointData} to
  * Cloud Monitoring {@link TimeSeries}, including resource label mapping and attribute conversion.
  *
- * <p>The implementation in this file is inspired from the original work done in the Spanner
- * client library (SpannerCloudMonitoringExporterUtils) to export metrics. The logic has been
- * adapted for Datastore's use case.
+ * <p>The implementation in this file is inspired from the original work done in the Spanner client
+ * library (SpannerCloudMonitoringExporterUtils) to export metrics. The logic has been adapted for
+ * Datastore's use case.
  */
 class DatastoreCloudMonitoringExporterUtils {
 
@@ -88,8 +86,8 @@ class DatastoreCloudMonitoringExporterUtils {
    * Converts a list of {@link MetricData} to Cloud Monitoring {@link TimeSeries}.
    *
    * @param collection the collection of metrics to convert.
-   * @param clientAttributes common client labels (e.g. {@code client_name}, {@code client_uid})
-   *     to attach to every metric data point.
+   * @param clientAttributes common client labels (e.g. {@code client_name}, {@code client_uid}) to
+   *     attach to every metric data point.
    * @return a list of converted {@link TimeSeries}.
    */
   static List<TimeSeries> convertToDatastoreTimeSeries(

@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore.telemetry;
 
+import com.google.api.gax.tracing.OpenTelemetryMetricsRecorder;
 import com.google.common.collect.ImmutableList;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.sdk.metrics.Aggregation;
@@ -41,13 +42,12 @@ import java.util.stream.Collectors;
  *       TelemetryConstants#METRIC_PREFIX}, ensuring all RPC metrics follow the Firestore domain
  *       naming convention.
  *   <li><b>Latency Precision:</b> Datastore operations vary from sub-millisecond lookups to
- *       multi-second transactional commits. Default OTel histogram buckets are too coarse for this
- *       range. We define explicit {@link #BUCKET_BOUNDARIES} to ensure that latency heatmaps in
- *       Cloud Monitoring have the necessary resolution to be actionable.
+ *       multi-second transactional commits. Default OTel histogram buckets do not handle this well.
+ *       Define explicit {@link DatastoreBuiltInMetricsView#BUCKET_BOUNDARIES} to ensure that
+ *       latency heatmaps in Cloud Monitoring are more readable.
  *   <li><b>Cloud Monitoring Schema Alignment:</b> The Cloud Monitoring API is strict about labels.
  *       Exporting unexpected attributes can cause the entire export to fail. Views allow us to
- *       strictly filter attributes down to the {@link TelemetryConstants#COMMON_ATTRIBUTES} set,
- *       ensuring reliable delivery and preventing "label bloat."
+ *       strictly filter attributes down to the {@link TelemetryConstants#COMMON_ATTRIBUTES}.
  * </ol>
  */
 class DatastoreBuiltInMetricsView {
@@ -93,6 +93,8 @@ class DatastoreBuiltInMetricsView {
   private static void registerGaxViews(SdkMeterProviderBuilder builder) {
     for (String metricName : TelemetryConstants.GAX_METRICS) {
       Aggregation aggregation = Aggregation.defaultAggregation();
+
+      // Differentiate the instrumentation type between `count` vs `latency`
       InstrumentType type = InstrumentType.COUNTER;
       String unit = "1";
 
@@ -106,7 +108,7 @@ class DatastoreBuiltInMetricsView {
       // Select metrics from the GAX meter scope.
       InstrumentSelector selector =
           InstrumentSelector.builder()
-              .setMeterName(TelemetryConstants.GAX_METER_NAME)
+              .setMeterName(OpenTelemetryMetricsRecorder.GAX_METER_NAME)
               .setName(metricName)
               .setType(type)
               .setUnit(unit)
@@ -118,10 +120,13 @@ class DatastoreBuiltInMetricsView {
               .map(AttributeKey::getKey)
               .collect(Collectors.toSet());
 
+      String renamedMetricName =
+          TelemetryConstants.GAX_METRIC_NAME_MAP.getOrDefault(metricName, metricName);
+
       // Rename the metric to use the Datastore prefix for Cloud Monitoring.
       View view =
           View.builder()
-              .setName(TelemetryConstants.METRIC_PREFIX + "/" + metricName)
+              .setName(TelemetryConstants.METRIC_PREFIX + "/" + renamedMetricName)
               .setAggregation(aggregation)
               .setAttributeFilter(attributesFilter)
               .build();
