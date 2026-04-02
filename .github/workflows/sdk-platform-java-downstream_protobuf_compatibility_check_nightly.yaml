@@ -21,7 +21,7 @@ jobs:
     # 1. PR is raised from Release-Please (PR comes from branch: release-please--branches-main)
     # 2. Job is invoked by the nightly job (scheduled event)
     # 3. Job is manually invoked via Github UI (workflow_dispatch event)
-    if: needs.filter.outputs.library == 'true' && (github.head_ref == 'release-please--branches--main' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
+    if: github.head_ref == 'release-please--branches--main' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
