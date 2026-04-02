@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.telemetry;
 import com.google.api.client.http.*;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.cloud.bigquery.BigQueryRetryHelper;
 import com.google.common.annotations.VisibleForTesting;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
@@ -26,6 +27,7 @@ import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator;
 import io.opentelemetry.context.Context;
 import java.io.IOException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * HttpRequestInitializer that wraps a delegate initializer, intercepts all HTTP requests, adds
@@ -50,7 +52,7 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
   public static final AttributeKey<Long> HTTP_RESPONSE_BODY_SIZE =
       AttributeKey.longKey("http.response.body.size");
 
-  @VisibleForTesting static final String HTTP_RPC_SYSTEM_NAME = "http";
+  @VisibleForTesting public static final String HTTP_RPC_SYSTEM_NAME = "http";
 
   private static final java.util.Set<String> REDACTED_QUERY_PARAMETERS =
       com.google.common.collect.ImmutableSet.of(
@@ -83,6 +85,14 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
         .inject(Context.current(), request.getHeaders(), HttpHeaders::set);
 
     addInitialHttpAttributesToSpan(span, request);
+
+    AtomicInteger attemptTracker = Context.current().get(BigQueryRetryHelper.RETRY_ATTEMPT_KEY);
+    if (attemptTracker != null) {
+      int attempt = attemptTracker.getAndIncrement();
+      if (attempt > 0) {
+        span.setAttribute(HTTP_REQUEST_RESEND_COUNT, (long) attempt);
+      }
+    }
 
     HttpResponseInterceptor originalInterceptor = request.getResponseInterceptor();
     request.setResponseInterceptor(

@@ -130,4 +130,23 @@ class GoldenSignalsMetricsTracerFactoryTest {
 
     assertThat(actual).isInstanceOf(BaseApiTracer.class);
   }
+
+  @Test
+  void testNeedsContext_returnsTrueWhenContextIsEmpty() {
+    GoldenSignalsMetricsTracerFactory factoryWithoutContext =
+        new GoldenSignalsMetricsTracerFactory(OpenTelemetry.noop());
+
+    assertThat(factoryWithoutContext.needsContext()).isTrue();
+  }
+
+  @Test
+  void testNeedsContext_returnsFalseWhenContextIsNotEmpty() {
+    LibraryMetadata metadata =
+        LibraryMetadata.newBuilder().setArtifactName("gax-java").setVersion("1.0").build();
+    ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
+
+    tracerFactory.withContext(context);
+
+    assertThat(tracerFactory.needsContext()).isFalse();
+  }
 }

@@ -47,6 +47,7 @@ import com.google.api.services.bigquery.model.TableReference;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.telemetry.BigQueryTelemetryTracer;
+import com.google.cloud.bigquery.telemetry.HttpTracingRequestInitializer;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -160,6 +161,10 @@ public class HttpBigQueryRpcTest {
     assertEquals(
         gcpResourceDestinationId,
         rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID));
+
+    // this attribute should never get set in a normal success flow
+    assertNull(
+        rpcSpan.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_RESEND_COUNT));
   }
 
   private void verifySpanProductionAttributes(
@@ -1245,6 +1250,8 @@ public class HttpBigQueryRpcTest {
           "url.template attribute should not be set");
       assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID));
       assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.URL_DOMAIN));
+      assertNull(
+          rpcSpan.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_RESEND_COUNT));
     }
 
     @Test

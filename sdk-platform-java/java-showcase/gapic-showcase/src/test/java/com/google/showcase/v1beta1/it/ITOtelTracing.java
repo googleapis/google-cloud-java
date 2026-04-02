@@ -119,7 +119,6 @@ class ITOtelTracing {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
     EchoSettings grpcEchoSettings = createEchoSettings(false);
-
     EchoStub stub = createStubWithServiceName(grpcEchoSettings, tracingFactory);
 
     try (EchoClient client = EchoClient.create(stub)) {
@@ -176,8 +175,12 @@ class ITOtelTracing {
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE)))
           .isEqualTo("google.showcase.v1beta1.Echo/Echo");
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE)))
+          .isEqualTo("showcase.googleapis.com");
       assertThat(attemptSpan.getInstrumentationScopeInfo().getName()).isEqualTo(SHOWCASE_ARTIFACT);
-      // {x-version-update-end}
     }
   }
 
@@ -186,7 +189,6 @@ class ITOtelTracing {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
     EchoSettings httpJsonEchoSettings = createEchoSettings(true);
-
     EchoStub stub = createStubWithServiceName(httpJsonEchoSettings, tracingFactory);
 
     try (EchoClient client = EchoClient.create(stub)) {
@@ -244,6 +246,11 @@ class ITOtelTracing {
                   .getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.HTTP_URL_TEMPLATE_ATTRIBUTE)))
           .isEqualTo("v1beta1/echo:echo");
+      assertThat(
+              attemptSpan
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE)))
+          .isEqualTo("showcase.googleapis.com");
       assertThat(
               attemptSpan
                   .getAttributes()
