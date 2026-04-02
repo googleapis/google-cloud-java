@@ -52,6 +52,8 @@ import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
 import com.google.showcase.v1beta1.EchoResponse;
 import com.google.showcase.v1beta1.EchoSettings;
+import com.google.showcase.v1beta1.GetUserRequest;
+import com.google.showcase.v1beta1.IdentityClient;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import com.google.showcase.v1beta1.stub.EchoStub;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
@@ -152,6 +154,16 @@ class ITOtelTracing {
       assertThat(
               attemptSpan
                   .getAttributes()
+							.get(AttributeKey.stringKey(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE)))
+					.isEqualTo("grpc");
+			assertThat(
+					attemptSpan
+							.getAttributes()
+							.get(AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+					.isEqualTo("OK");
+			assertThat(
+					attemptSpan
+							.getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.REPO_ATTRIBUTE)))
           .isEqualTo(SHOWCASE_REPO);
       assertThat(
@@ -223,6 +235,16 @@ class ITOtelTracing {
       assertThat(
               attemptSpan
                   .getAttributes()
+							.get(AttributeKey.stringKey(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE)))
+					.isEqualTo("http");
+			assertThat(
+					attemptSpan
+							.getAttributes()
+							.get(AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
+					.isEqualTo(200L);
+			assertThat(
+					attemptSpan
+							.getAttributes()
                   .get(AttributeKey.stringKey(ObservabilityAttributes.REPO_ATTRIBUTE)))
           .isEqualTo(SHOWCASE_REPO);
       assertThat(
@@ -273,6 +295,66 @@ class ITOtelTracing {
     String jsonPayload = com.google.protobuf.util.JsonFormat.printer().print(message);
     return jsonPayload.getBytes(StandardCharsets.UTF_8).length;
   }
+
+	@Test
+	void testTracing_successfulIdentityGetUser_grpc() throws Exception {
+		SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
+
+		try (IdentityClient client = TestClientInitializer.createGrpcIdentityClientOpentelemetry(tracingFactory)) {
+
+			try {
+				client.getUser(GetUserRequest.newBuilder().setName("users/test-user").build());
+			} catch (Exception e) {
+				// Ignored, the showcase server may not have this user, but trace is still
+				// generated.
+			}
+
+			List<SpanData> spans = spanExporter.getFinishedSpanItems();
+			assertThat(spans).isNotEmpty();
+
+			SpanData attemptSpan = spans.stream()
+					.filter(span -> span.getName().equals("google.showcase.v1beta1.Identity/GetUser"))
+					.findFirst()
+					.orElseThrow(() -> new AssertionError("Incorrect span name"));
+			assertThat(
+					attemptSpan
+							.getAttributes()
+							.get(
+									AttributeKey.stringKey(
+											ObservabilityAttributes.DESTINATION_RESOURCE_ID_ATTRIBUTE)))
+					.isEqualTo("users/test-user");
+		}
+	}
+
+	@Test
+	void testTracing_successfulIdentityGetUser_httpjson() throws Exception {
+		SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
+
+		try (IdentityClient client = TestClientInitializer.createHttpJsonIdentityClientOpentelemetry(tracingFactory)) {
+
+			try {
+				client.getUser(GetUserRequest.newBuilder().setName("users/test-user").build());
+			} catch (Exception e) {
+				// Ignored, the showcase server may not have this user, but trace is still
+				// generated.
+			}
+
+			List<SpanData> spans = spanExporter.getFinishedSpanItems();
+			assertThat(spans).isNotEmpty();
+
+			SpanData attemptSpan = spans.stream()
+					.filter(span -> span.getName().equals("GET v1beta1/{name=users/*}"))
+					.findFirst()
+					.orElseThrow(() -> new AssertionError("Incorrect span name"));
+			assertThat(
+					attemptSpan
+							.getAttributes()
+							.get(
+									AttributeKey.stringKey(
+											ObservabilityAttributes.DESTINATION_RESOURCE_ID_ATTRIBUTE)))
+					.isEqualTo("users/test-user");
+		}
+	}
 
   @Test
   void testTracing_retry_grpc() throws Exception {
@@ -424,7 +506,7 @@ class ITOtelTracing {
     assertThat(resendCounts).containsExactlyElementsIn(expectedCounts).inOrder();
   }
 
-  private void verifyErrorTypeAttribute(String expectedErrorType) {
+	private SpanData getErrorAttribute() {
     List<SpanData> spans = spanExporter.getFinishedSpanItems();
     assertThat(spans).isNotEmpty();
 
@@ -439,16 +521,11 @@ class ITOtelTracing {
                         != null)
             .findFirst()
             .orElseThrow(() -> new AssertionError("Span with error.type not found"));
-
-    assertThat(
-            errorSpan
-                .getAttributes()
-                .get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
-        .isEqualTo(expectedErrorType);
+		return errorSpan;
   }
 
   @Test
-  void testTracing_failedEcho_grpc_recordsErrorType() throws Exception {
+	void testTracing_failedEcho_grpc_recordsErrorAttributes() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
     ClientInterceptor interceptor =
@@ -490,52 +567,28 @@ class ITOtelTracing {
       EchoRequest echoRequest = EchoRequest.newBuilder().build();
 
       assertThrows(UnavailableException.class, () -> client.echo(echoRequest));
-      verifyErrorTypeAttribute("UNAVAILABLE");
+			SpanData errorSpan = getErrorAttribute();
+			assertThat(
+					errorSpan
+							.getAttributes()
+							.get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
+					.isEqualTo("UNAVAILABLE");
+      assertThat(
+					errorSpan
+                  .getAttributes()
+                  .get(
+									AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE)))
+					.isEqualTo("com.google.api.gax.rpc.UnavailableException");
+      assertThat(
+					errorSpan
+                  .getAttributes()
+                  .get(
+									AttributeKey.stringKey(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE)))
+					.isEqualTo("io.grpc.StatusRuntimeException: UNAVAILABLE");
 		}
 	}
   @Test
-  void testTracing_statusCodes_grpc() throws Exception {
-    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
-    EchoRequest errorRequest =
-        EchoRequest.newBuilder()
-            .setError(
-                Status.newBuilder().setCode(StatusCode.Code.INVALID_ARGUMENT.ordinal()).build())
-            .build();
-    EchoRequest successRequest = EchoRequest.newBuilder().setContent("tracing-test").build();
-
-    try (EchoClient grpcClient =
-        TestClientInitializer.createGrpcEchoClientOpentelemetry(tracingFactory)) {
-
-      grpcClient.echo(successRequest);
-      assertThrows(
-          com.google.api.gax.rpc.InvalidArgumentException.class,
-          () -> grpcClient.echo(errorRequest));
-
-      List<SpanData> spans = spanExporter.getFinishedSpanItems();
-      assertThat(spans).hasSize(2);
-
-      SpanData grpcSuccessSpan = spans.get(0);
-      assertThat(
-              grpcSuccessSpan
-                  .getAttributes()
-                  .get(
-                      AttributeKey.stringKey(
-                          ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
-          .isEqualTo("OK");
-
-      SpanData grpcErrorSpan = spans.get(1);
-      assertThat(
-              grpcErrorSpan
-                  .getAttributes()
-                  .get(
-                      AttributeKey.stringKey(
-                          ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
-          .isEqualTo("INVALID_ARGUMENT");
-    }
-  }
-
-  @Test
-  void testTracing_failedEcho_httpjson_recordsErrorType() throws Exception {
+	void testTracing_failedEcho_httpjson_recordsErrorAttributes() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
     HttpTransport mockTransport =
@@ -625,9 +678,67 @@ class ITOtelTracing {
       EchoRequest echoRequest = EchoRequest.newBuilder().build();
 
       assertThrows(UnavailableException.class, () -> client.echo(echoRequest));
-      verifyErrorTypeAttribute("503");
+			SpanData errorSpan = getErrorAttribute();
+			assertThat(
+					errorSpan
+							.getAttributes()
+							.get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
+					.isEqualTo("503");
+			assertThat(
+					errorSpan
+							.getAttributes()
+							.get(
+									AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE)))
+					.isEqualTo("com.google.api.gax.rpc.UnavailableException");
+			assertThat(
+					errorSpan
+							.getAttributes()
+							.get(
+									AttributeKey.stringKey(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE)))
+					.isEqualTo("Service Unavailable");
 		}
 	}
+
+	@Test
+	void testTracing_statusCodes_grpc() throws Exception {
+		SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
+		EchoRequest errorRequest = EchoRequest.newBuilder()
+				.setError(
+						Status.newBuilder().setCode(StatusCode.Code.INVALID_ARGUMENT.ordinal()).build())
+				.build();
+		EchoRequest successRequest = EchoRequest.newBuilder().setContent("tracing-test").build();
+
+		try (EchoClient grpcClient = TestClientInitializer.createGrpcEchoClientOpentelemetry(tracingFactory)) {
+
+			grpcClient.echo(successRequest);
+			assertThrows(
+					com.google.api.gax.rpc.InvalidArgumentException.class,
+					() -> grpcClient.echo(errorRequest));
+
+			List<SpanData> spans = spanExporter.getFinishedSpanItems();
+			assertThat(spans).hasSize(2);
+
+			SpanData grpcSuccessSpan = spans.get(0);
+			assertThat(
+					grpcSuccessSpan
+							.getAttributes()
+							.get(
+									AttributeKey.stringKey(
+											ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+					.isEqualTo("OK");
+
+			SpanData grpcErrorSpan = spans.get(1);
+			assertThat(
+					grpcErrorSpan
+							.getAttributes()
+							.get(
+									AttributeKey.stringKey(
+											ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+					.isEqualTo("INVALID_ARGUMENT");
+		}
+	}
+
+	@Test
   void testTracing_statusCodes_httpjson() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
     EchoRequest errorRequest =
