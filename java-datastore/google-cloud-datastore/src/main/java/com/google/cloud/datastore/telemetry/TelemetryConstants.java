@@ -17,6 +17,7 @@
 package com.google.cloud.datastore.telemetry;
 
 import com.google.api.core.InternalApi;
+import com.google.api.gax.tracing.OpenTelemetryMetricsRecorder;
 import com.google.common.collect.ImmutableSet;
 import io.opentelemetry.api.common.AttributeKey;
 import java.util.Set;
@@ -35,6 +36,23 @@ public class TelemetryConstants {
   // until this is implemented.
   public static final String METRIC_PREFIX = "custom.googleapis.com/internal/client";
   public static final String DATASTORE_METER_NAME = "java-datastore";
+  public static final String GAX_METER_NAME = OpenTelemetryMetricsRecorder.GAX_METER_NAME;
+
+  // Short names used to build GAX_METRICS and metric full-path constants below.
+  public static final String METRIC_NAME_SHORT_OPERATION_LATENCY = "operation_latency";
+  public static final String METRIC_NAME_SHORT_ATTEMPT_LATENCY = "attempt_latency";
+  public static final String METRIC_NAME_SHORT_OPERATION_COUNT = "operation_count";
+  public static final String METRIC_NAME_SHORT_ATTEMPT_COUNT = "attempt_count";
+
+  // Short metric names (without prefix) for the four metrics recorded by the GAX layer.
+  // Used by DatastoreBuiltInMetricsView to register OTel views that capture and rename
+  // GAX-emitted metrics for the built-in Cloud Monitoring export pipeline.
+  public static final Set<String> GAX_METRICS =
+      ImmutableSet.of(
+          METRIC_NAME_SHORT_OPERATION_LATENCY,
+          METRIC_NAME_SHORT_ATTEMPT_LATENCY,
+          METRIC_NAME_SHORT_OPERATION_COUNT,
+          METRIC_NAME_SHORT_ATTEMPT_COUNT);
 
   // Monitored resource type for Cloud Monitoring
   public static final String DATASTORE_RESOURCE_TYPE = "global";
@@ -78,6 +96,7 @@ public class TelemetryConstants {
 
   // Metric attribute keys (used on metric data points)
   public static final AttributeKey<String> CLIENT_UID_KEY = AttributeKey.stringKey("client_uid");
+  public static final AttributeKey<String> CLIENT_NAME_KEY = AttributeKey.stringKey("client_name");
   public static final AttributeKey<String> METHOD_KEY = AttributeKey.stringKey("method");
   public static final AttributeKey<String> STATUS_KEY = AttributeKey.stringKey("status");
   public static final AttributeKey<String> SERVICE_KEY = AttributeKey.stringKey("service");
@@ -97,6 +116,9 @@ public class TelemetryConstants {
    */
   public static final Set<AttributeKey<?>> COMMON_ATTRIBUTES =
       ImmutableSet.of(CLIENT_UID_KEY, METHOD_KEY, STATUS_KEY, SERVICE_KEY);
+
+  // Environment variable to enable/disable built-in metrics
+  public static final String ENABLE_METRICS_ENV_VAR = "DATASTORE_ENABLE_METRICS";
 
   /** Metric name for the total latency of a transaction. */
   public static final String METRIC_NAME_TRANSACTION_LATENCY =
