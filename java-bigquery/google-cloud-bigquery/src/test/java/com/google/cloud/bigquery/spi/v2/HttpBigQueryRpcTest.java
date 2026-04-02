@@ -67,9 +67,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.parallel.Execution;
 import org.junit.jupiter.api.parallel.ExecutionMode;
 
-// same thread execution temporarily required for using java system properties will get removed in
-// issue https://github.com/googleapis/google-cloud-java/issues/12100
-@Execution(ExecutionMode.SAME_THREAD)
 public class HttpBigQueryRpcTest {
 
   private static final String PROJECT_ID = "test-project";
@@ -225,83 +222,82 @@ public class HttpBigQueryRpcTest {
     @BeforeEach
     public void setUp() {
       setUpServer();
-      System.setProperty("com.google.cloud.bigquery.http.tracing.dev.enabled", "true");
       rpc = createRpc(true);
     }
 
     @Test
     public void testSpanEndOnError() {
       assertThrows(
-          IOException.class,
-          () -> {
-            rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
-          });
+              IOException.class,
+              () -> {
+                rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+              });
 
       // Verify that span was ended (collected) despite the error
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getDataset",
-          "DatasetService",
-          "GetDataset",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID,
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.getDataset",
+              "DatasetService",
+              "GetDataset",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID,
+              null);
     }
 
     @Test
     public void testGetDatasetTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#dataset\",\"id\":\""
-              + PROJECT_ID
-              + ":"
-              + DATASET_ID
-              + "\",\"datasetReference\":{\"projectId\":\""
-              + PROJECT_ID
-              + "\",\"datasetId\":\""
-              + DATASET_ID
-              + "\"}}");
+              "{\"kind\":\"bigquery#dataset\",\"id\":\""
+                      + PROJECT_ID
+                      + ":"
+                      + DATASET_ID
+                      + "\",\"datasetReference\":{\"projectId\":\""
+                      + PROJECT_ID
+                      + "\",\"datasetId\":\""
+                      + DATASET_ID
+                      + "\"}}");
 
       rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getDataset",
-          "DatasetService",
-          "GetDataset",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID,
-          Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
+              "com.google.cloud.bigquery.BigQueryRpc.getDataset",
+              "DatasetService",
+              "GetDataset",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID,
+              Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
     }
 
     @Test
     public void testListDatasetsTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#datasetList\",\"datasets\":[], \"nextPageToken\":\"next-page-token\"}");
+              "{\"kind\":\"bigquery#datasetList\",\"datasets\":[], \"nextPageToken\":\"next-page-token\"}");
 
       rpc.listDatasetsSkipExceptionTranslation(PROJECT_ID, new HashMap<>());
 
       verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.listDatasets",
-          "DatasetService",
-          "ListDatasets",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets",
-          Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
+              "com.google.cloud.bigquery.BigQueryRpc.listDatasets",
+              "DatasetService",
+              "ListDatasets",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets",
+              Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
     }
 
     @Test
     public void testCreateDatasetTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#dataset\",\"id\":\"" + PROJECT_ID + ":" + DATASET_ID + "\"}");
+              "{\"kind\":\"bigquery#dataset\",\"id\":\"" + PROJECT_ID + ":" + DATASET_ID + "\"}");
 
       Dataset dataset = new Dataset();
       dataset.setDatasetReference(
-          new DatasetReference().setProjectId(PROJECT_ID).setDatasetId(DATASET_ID));
+              new DatasetReference().setProjectId(PROJECT_ID).setDatasetId(DATASET_ID));
       rpc.createSkipExceptionTranslation(dataset, new HashMap<>());
 
       verifyRequest("POST", "/projects/" + PROJECT_ID + "/datasets");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.createDataset",
-          "DatasetService",
-          "InsertDataset",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID,
-          Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
+              "com.google.cloud.bigquery.BigQueryRpc.createDataset",
+              "DatasetService",
+              "InsertDataset",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID,
+              Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
     }
 
     @Test
@@ -313,99 +309,99 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("DELETE", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.deleteDataset",
-          "DatasetService",
-          "DeleteDataset",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID,
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.deleteDataset",
+              "DatasetService",
+              "DeleteDataset",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID,
+              null);
     }
 
     @Test
     public void testPatchDatasetTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#dataset\",\"id\":\"" + PROJECT_ID + ":" + DATASET_ID + "\"}");
+              "{\"kind\":\"bigquery#dataset\",\"id\":\"" + PROJECT_ID + ":" + DATASET_ID + "\"}");
 
       Dataset dataset = new Dataset();
       dataset.setDatasetReference(
-          new DatasetReference().setProjectId(PROJECT_ID).setDatasetId(DATASET_ID));
+              new DatasetReference().setProjectId(PROJECT_ID).setDatasetId(DATASET_ID));
       rpc.patchSkipExceptionTranslation(dataset, new HashMap<>());
 
       verifyRequest("PATCH", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.patchDataset",
-          "DatasetService",
-          "PatchDataset",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID,
-          Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
+              "com.google.cloud.bigquery.BigQueryRpc.patchDataset",
+              "DatasetService",
+              "PatchDataset",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID,
+              Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
     }
 
     @Test
     public void testGetTableTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#table\",\"id\":\""
-              + PROJECT_ID
-              + ":"
-              + DATASET_ID
-              + "."
-              + TABLE_ID
-              + "\"}");
+              "{\"kind\":\"bigquery#table\",\"id\":\""
+                      + PROJECT_ID
+                      + ":"
+                      + DATASET_ID
+                      + "."
+                      + TABLE_ID
+                      + "\"}");
 
       rpc.getTableSkipExceptionTranslation(PROJECT_ID, DATASET_ID, TABLE_ID, new HashMap<>());
 
       verifyRequest(
-          "GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID);
+              "GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getTable",
-          "TableService",
-          "GetTable",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
-          Collections.singletonMap(
-              "bq.rpc.response.table.id", PROJECT_ID + ":" + DATASET_ID + "." + TABLE_ID));
+              "com.google.cloud.bigquery.BigQueryRpc.getTable",
+              "TableService",
+              "GetTable",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
+              Collections.singletonMap(
+                      "bq.rpc.response.table.id", PROJECT_ID + ":" + DATASET_ID + "." + TABLE_ID));
     }
 
     @Test
     public void testListTablesTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#tableList\",\"tables\":[], \"nextPageToken\":\"next-page-token\"}");
+              "{\"kind\":\"bigquery#tableList\",\"tables\":[], \"nextPageToken\":\"next-page-token\"}");
 
       rpc.listTablesSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
       verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.listTables",
-          "TableService",
-          "ListTables",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables",
-          Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
+              "com.google.cloud.bigquery.BigQueryRpc.listTables",
+              "TableService",
+              "ListTables",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables",
+              Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
     }
 
     @Test
     public void testCreateTableTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#table\",\"id\":\""
-              + PROJECT_ID
-              + ":"
-              + DATASET_ID
-              + "."
-              + TABLE_ID
-              + "\"}");
+              "{\"kind\":\"bigquery#table\",\"id\":\""
+                      + PROJECT_ID
+                      + ":"
+                      + DATASET_ID
+                      + "."
+                      + TABLE_ID
+                      + "\"}");
 
       Table table = new Table();
       table.setTableReference(
-          new TableReference()
-              .setProjectId(PROJECT_ID)
-              .setDatasetId(DATASET_ID)
-              .setTableId(TABLE_ID));
+              new TableReference()
+                      .setProjectId(PROJECT_ID)
+                      .setDatasetId(DATASET_ID)
+                      .setTableId(TABLE_ID));
       rpc.createSkipExceptionTranslation(table, new HashMap<>());
 
       verifyRequest("POST", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.createTable",
-          "TableService",
-          "InsertTable",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
-          Collections.singletonMap(
-              "bq.rpc.response.table.id", PROJECT_ID + ":" + DATASET_ID + "." + TABLE_ID));
+              "com.google.cloud.bigquery.BigQueryRpc.createTable",
+              "TableService",
+              "InsertTable",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
+              Collections.singletonMap(
+                      "bq.rpc.response.table.id", PROJECT_ID + ":" + DATASET_ID + "." + TABLE_ID));
     }
 
     @Test
@@ -416,111 +412,111 @@ public class HttpBigQueryRpcTest {
       rpc.deleteTableSkipExceptionTranslation(PROJECT_ID, DATASET_ID, TABLE_ID);
 
       verifyRequest(
-          "DELETE", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID);
+              "DELETE", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.deleteTable",
-          "TableService",
-          "DeleteTable",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.deleteTable",
+              "TableService",
+              "DeleteTable",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
+              null);
     }
 
     @Test
     public void testPatchTableTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#table\",\"id\":\""
-              + PROJECT_ID
-              + ":"
-              + DATASET_ID
-              + "."
-              + TABLE_ID
-              + "\"}");
+              "{\"kind\":\"bigquery#table\",\"id\":\""
+                      + PROJECT_ID
+                      + ":"
+                      + DATASET_ID
+                      + "."
+                      + TABLE_ID
+                      + "\"}");
 
       Table table = new Table();
       table.setTableReference(
-          new TableReference()
-              .setProjectId(PROJECT_ID)
-              .setDatasetId(DATASET_ID)
-              .setTableId(TABLE_ID));
+              new TableReference()
+                      .setProjectId(PROJECT_ID)
+                      .setDatasetId(DATASET_ID)
+                      .setTableId(TABLE_ID));
       rpc.patchSkipExceptionTranslation(table, new HashMap<>());
 
       verifyRequest(
-          "PATCH", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID);
+              "PATCH", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.patchTable",
-          "TableService",
-          "PatchTable",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
-          Collections.singletonMap(
-              "bq.rpc.response.table.id", PROJECT_ID + ":" + DATASET_ID + "." + TABLE_ID));
+              "com.google.cloud.bigquery.BigQueryRpc.patchTable",
+              "TableService",
+              "PatchTable",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
+              Collections.singletonMap(
+                      "bq.rpc.response.table.id", PROJECT_ID + ":" + DATASET_ID + "." + TABLE_ID));
     }
 
     @Test
     public void testGetModelTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\""
-              + PROJECT_ID
-              + "\",\"datasetId\":\""
-              + DATASET_ID
-              + "\",\"modelId\":\""
-              + MODEL_ID
-              + "\"}}");
+              "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\""
+                      + PROJECT_ID
+                      + "\",\"datasetId\":\""
+                      + DATASET_ID
+                      + "\",\"modelId\":\""
+                      + MODEL_ID
+                      + "\"}}");
 
       rpc.getModelSkipExceptionTranslation(PROJECT_ID, DATASET_ID, MODEL_ID, new HashMap<>());
 
       verifyRequest(
-          "GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID);
+              "GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getModel",
-          "ModelService",
-          "GetModel",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID,
-          Collections.singletonMap("bq.rpc.response.model.id", MODEL_ID));
+              "com.google.cloud.bigquery.BigQueryRpc.getModel",
+              "ModelService",
+              "GetModel",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID,
+              Collections.singletonMap("bq.rpc.response.model.id", MODEL_ID));
     }
 
     @Test
     public void testListModelsTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#modelList\",\"models\":[], \"nextPageToken\":\"next-page-token\"}");
+              "{\"kind\":\"bigquery#modelList\",\"models\":[], \"nextPageToken\":\"next-page-token\"}");
 
       rpc.listModelsSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
       verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/models");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.listModels",
-          "ModelService",
-          "ListModels",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/models",
-          Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
+              "com.google.cloud.bigquery.BigQueryRpc.listModels",
+              "ModelService",
+              "ListModels",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/models",
+              Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
     }
 
     @Test
     public void testPatchModelTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\""
-              + PROJECT_ID
-              + "\",\"datasetId\":\""
-              + DATASET_ID
-              + "\",\"modelId\":\""
-              + MODEL_ID
-              + "\"}}");
+              "{\"kind\":\"bigquery#model\",\"modelReference\":{\"projectId\":\""
+                      + PROJECT_ID
+                      + "\",\"datasetId\":\""
+                      + DATASET_ID
+                      + "\",\"modelId\":\""
+                      + MODEL_ID
+                      + "\"}}");
 
       Model model = new Model();
       model.setModelReference(
-          new ModelReference()
-              .setProjectId(PROJECT_ID)
-              .setDatasetId(DATASET_ID)
-              .setModelId(MODEL_ID));
+              new ModelReference()
+                      .setProjectId(PROJECT_ID)
+                      .setDatasetId(DATASET_ID)
+                      .setModelId(MODEL_ID));
       rpc.patchSkipExceptionTranslation(model, new HashMap<>());
 
       verifyRequest(
-          "PATCH", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID);
+              "PATCH", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.patchModel",
-          "ModelService",
-          "PatchModel",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID,
-          Collections.singletonMap("bq.rpc.response.model.id", MODEL_ID));
+              "com.google.cloud.bigquery.BigQueryRpc.patchModel",
+              "ModelService",
+              "PatchModel",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID,
+              Collections.singletonMap("bq.rpc.response.model.id", MODEL_ID));
     }
 
     @Test
@@ -531,90 +527,90 @@ public class HttpBigQueryRpcTest {
       rpc.deleteModelSkipExceptionTranslation(PROJECT_ID, DATASET_ID, MODEL_ID);
 
       verifyRequest(
-          "DELETE", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID);
+              "DELETE", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.deleteModel",
-          "ModelService",
-          "DeleteModel",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID,
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.deleteModel",
+              "ModelService",
+              "DeleteModel",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/models/" + MODEL_ID,
+              null);
     }
 
     @Test
     public void testGetRoutineTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\""
-              + PROJECT_ID
-              + "\",\"datasetId\":\""
-              + DATASET_ID
-              + "\",\"routineId\":\""
-              + ROUTINE_ID
-              + "\"}}");
+              "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\""
+                      + PROJECT_ID
+                      + "\",\"datasetId\":\""
+                      + DATASET_ID
+                      + "\",\"routineId\":\""
+                      + ROUTINE_ID
+                      + "\"}}");
 
       rpc.getRoutineSkipExceptionTranslation(PROJECT_ID, DATASET_ID, ROUTINE_ID, new HashMap<>());
 
       verifyRequest(
-          "GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines/" + ROUTINE_ID);
+              "GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines/" + ROUTINE_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getRoutine",
-          "RoutineService",
-          "GetRoutine",
-          RESOURCE_PROJECT_PREFIX
-              + PROJECT_ID
-              + "/datasets/"
-              + DATASET_ID
-              + "/routines/"
-              + ROUTINE_ID,
-          Collections.singletonMap("bq.rpc.response.routine.id", ROUTINE_ID));
+              "com.google.cloud.bigquery.BigQueryRpc.getRoutine",
+              "RoutineService",
+              "GetRoutine",
+              RESOURCE_PROJECT_PREFIX
+                      + PROJECT_ID
+                      + "/datasets/"
+                      + DATASET_ID
+                      + "/routines/"
+                      + ROUTINE_ID,
+              Collections.singletonMap("bq.rpc.response.routine.id", ROUTINE_ID));
     }
 
     @Test
     public void testListRoutinesTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#routineList\",\"routines\":[], \"nextPageToken\":\"next-page-token\"}");
+              "{\"kind\":\"bigquery#routineList\",\"routines\":[], \"nextPageToken\":\"next-page-token\"}");
 
       rpc.listRoutinesSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
       verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.listRoutines",
-          "RoutineService",
-          "ListRoutines",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines",
-          Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
+              "com.google.cloud.bigquery.BigQueryRpc.listRoutines",
+              "RoutineService",
+              "ListRoutines",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines",
+              Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
     }
 
     @Test
     public void testCreateRoutineTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\""
-              + PROJECT_ID
-              + "\",\"datasetId\":\""
-              + DATASET_ID
-              + "\",\"routineId\":\""
-              + ROUTINE_ID
-              + "\"}}");
+              "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\""
+                      + PROJECT_ID
+                      + "\",\"datasetId\":\""
+                      + DATASET_ID
+                      + "\",\"routineId\":\""
+                      + ROUTINE_ID
+                      + "\"}}");
 
       Routine routine = new Routine();
       routine.setRoutineReference(
-          new RoutineReference()
-              .setProjectId(PROJECT_ID)
-              .setDatasetId(DATASET_ID)
-              .setRoutineId(ROUTINE_ID));
+              new RoutineReference()
+                      .setProjectId(PROJECT_ID)
+                      .setDatasetId(DATASET_ID)
+                      .setRoutineId(ROUTINE_ID));
       rpc.createSkipExceptionTranslation(routine, new HashMap<>());
 
       verifyRequest("POST", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.createRoutine",
-          "RoutineService",
-          "InsertRoutine",
-          RESOURCE_PROJECT_PREFIX
-              + PROJECT_ID
-              + "/datasets/"
-              + DATASET_ID
-              + "/routines/"
-              + ROUTINE_ID,
-          Collections.singletonMap("bq.rpc.response.routine.id", ROUTINE_ID));
+              "com.google.cloud.bigquery.BigQueryRpc.createRoutine",
+              "RoutineService",
+              "InsertRoutine",
+              RESOURCE_PROJECT_PREFIX
+                      + PROJECT_ID
+                      + "/datasets/"
+                      + DATASET_ID
+                      + "/routines/"
+                      + ROUTINE_ID,
+              Collections.singletonMap("bq.rpc.response.routine.id", ROUTINE_ID));
     }
 
     @Test
@@ -625,53 +621,53 @@ public class HttpBigQueryRpcTest {
       rpc.deleteRoutineSkipExceptionTranslation(PROJECT_ID, DATASET_ID, ROUTINE_ID);
 
       verifyRequest(
-          "DELETE",
-          "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines/" + ROUTINE_ID);
+              "DELETE",
+              "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines/" + ROUTINE_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.deleteRoutine",
-          "RoutineService",
-          "DeleteRoutine",
-          RESOURCE_PROJECT_PREFIX
-              + PROJECT_ID
-              + "/datasets/"
-              + DATASET_ID
-              + "/routines/"
-              + ROUTINE_ID,
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.deleteRoutine",
+              "RoutineService",
+              "DeleteRoutine",
+              RESOURCE_PROJECT_PREFIX
+                      + PROJECT_ID
+                      + "/datasets/"
+                      + DATASET_ID
+                      + "/routines/"
+                      + ROUTINE_ID,
+              null);
     }
 
     @Test
     public void testUpdateRoutineTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\""
-              + PROJECT_ID
-              + "\",\"datasetId\":\""
-              + DATASET_ID
-              + "\",\"routineId\":\""
-              + ROUTINE_ID
-              + "\"}}");
+              "{\"kind\":\"bigquery#routine\",\"routineReference\":{\"projectId\":\""
+                      + PROJECT_ID
+                      + "\",\"datasetId\":\""
+                      + DATASET_ID
+                      + "\",\"routineId\":\""
+                      + ROUTINE_ID
+                      + "\"}}");
 
       Routine routine = new Routine();
       routine.setRoutineReference(
-          new RoutineReference()
-              .setProjectId(PROJECT_ID)
-              .setDatasetId(DATASET_ID)
-              .setRoutineId(ROUTINE_ID));
+              new RoutineReference()
+                      .setProjectId(PROJECT_ID)
+                      .setDatasetId(DATASET_ID)
+                      .setRoutineId(ROUTINE_ID));
       rpc.updateSkipExceptionTranslation(routine, new HashMap<>());
 
       verifyRequest(
-          "PUT", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines/" + ROUTINE_ID);
+              "PUT", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/routines/" + ROUTINE_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.updateRoutine",
-          "RoutineService",
-          "UpdateRoutine",
-          RESOURCE_PROJECT_PREFIX
-              + PROJECT_ID
-              + "/datasets/"
-              + DATASET_ID
-              + "/routines/"
-              + ROUTINE_ID,
-          Collections.singletonMap("bq.rpc.response.routine.id", ROUTINE_ID));
+              "com.google.cloud.bigquery.BigQueryRpc.updateRoutine",
+              "RoutineService",
+              "UpdateRoutine",
+              RESOURCE_PROJECT_PREFIX
+                      + PROJECT_ID
+                      + "/datasets/"
+                      + DATASET_ID
+                      + "/routines/"
+                      + ROUTINE_ID,
+              Collections.singletonMap("bq.rpc.response.routine.id", ROUTINE_ID));
     }
 
     @Test
@@ -682,20 +678,20 @@ public class HttpBigQueryRpcTest {
       rpc.insertAllSkipExceptionTranslation(PROJECT_ID, DATASET_ID, TABLE_ID, request);
 
       verifyRequest(
-          "POST",
-          "/projects/"
-              + PROJECT_ID
-              + "/datasets/"
-              + DATASET_ID
-              + "/tables/"
-              + TABLE_ID
-              + "/insertAll");
+              "POST",
+              "/projects/"
+                      + PROJECT_ID
+                      + "/datasets/"
+                      + DATASET_ID
+                      + "/tables/"
+                      + TABLE_ID
+                      + "/insertAll");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.insertAll",
-          "TableDataService",
-          "InsertAll",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.insertAll",
+              "TableDataService",
+              "InsertAll",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
+              null);
     }
 
     @Test
@@ -705,14 +701,14 @@ public class HttpBigQueryRpcTest {
       rpc.listTableDataSkipExceptionTranslation(PROJECT_ID, DATASET_ID, TABLE_ID, new HashMap<>());
 
       verifyRequest(
-          "GET",
-          "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID + "/data");
+              "GET",
+              "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID + "/data");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.listTableData",
-          "TableDataService",
-          "List",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.listTableData",
+              "TableDataService",
+              "List",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
+              null);
     }
 
     @Test
@@ -720,27 +716,27 @@ public class HttpBigQueryRpcTest {
       setMockResponse("{\"kind\":\"bigquery#tableDataList\",\"rows\":[]}");
 
       rpc.listTableDataWithRowLimitSkipExceptionTranslation(
-          PROJECT_ID, DATASET_ID, TABLE_ID, 10, null);
+              PROJECT_ID, DATASET_ID, TABLE_ID, 10, null);
 
       verifyRequest(
-          "GET",
-          "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID + "/data");
+              "GET",
+              "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID + "/data");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.listTableDataWithRowLimit",
-          "TableDataService",
-          "List",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.listTableDataWithRowLimit",
+              "TableDataService",
+              "List",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
+              null);
     }
 
     @Test
     public void testGetJobTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#job\",\"id\":\""
-              + PROJECT_ID
-              + ":"
-              + JOB_ID
-              + "\",\"status\":{\"state\":\"DONE\"}}");
+              "{\"kind\":\"bigquery#job\",\"id\":\""
+                      + PROJECT_ID
+                      + ":"
+                      + JOB_ID
+                      + "\",\"status\":{\"state\":\"DONE\"}}");
 
       rpc.getJobSkipExceptionTranslation(PROJECT_ID, JOB_ID, LOCATION, new HashMap<>());
 
@@ -749,21 +745,21 @@ public class HttpBigQueryRpcTest {
       attributes.put("bq.rpc.response.job.id", PROJECT_ID + ":" + JOB_ID);
       attributes.put("bq.rpc.response.job.status.state", "DONE");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getJob",
-          "JobService",
-          "GetJob",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs/" + JOB_ID,
-          attributes);
+              "com.google.cloud.bigquery.BigQueryRpc.getJob",
+              "JobService",
+              "GetJob",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs/" + JOB_ID,
+              attributes);
     }
 
     @Test
     public void testGetQueryJobTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#job\",\"id\":\""
-              + PROJECT_ID
-              + ":"
-              + JOB_ID
-              + "\",\"status\":{\"state\":\"DONE\"}}");
+              "{\"kind\":\"bigquery#job\",\"id\":\""
+                      + PROJECT_ID
+                      + ":"
+                      + JOB_ID
+                      + "\",\"status\":{\"state\":\"DONE\"}}");
 
       rpc.getQueryJobSkipExceptionTranslation(PROJECT_ID, JOB_ID, LOCATION);
 
@@ -772,37 +768,37 @@ public class HttpBigQueryRpcTest {
       attributes.put("bq.rpc.response.job.id", PROJECT_ID + ":" + JOB_ID);
       attributes.put("bq.rpc.response.job.status.state", "DONE");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getQueryJob",
-          "JobService",
-          "GetJob",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs/" + JOB_ID,
-          attributes);
+              "com.google.cloud.bigquery.BigQueryRpc.getQueryJob",
+              "JobService",
+              "GetJob",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs/" + JOB_ID,
+              attributes);
     }
 
     @Test
     public void testListJobsTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#jobList\",\"jobs\":[], \"nextPageToken\":\"next-page-token\"}");
+              "{\"kind\":\"bigquery#jobList\",\"jobs\":[], \"nextPageToken\":\"next-page-token\"}");
 
       rpc.listJobsSkipExceptionTranslation(PROJECT_ID, new HashMap<>());
 
       verifyRequest("GET", "/projects/" + PROJECT_ID + "/jobs");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.listJobs",
-          "JobService",
-          "ListJobs",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs",
-          Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
+              "com.google.cloud.bigquery.BigQueryRpc.listJobs",
+              "JobService",
+              "ListJobs",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs",
+              Collections.singletonMap("bq.rpc.next_page_token", "next-page-token"));
     }
 
     @Test
     public void testCreateJobTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#job\",\"id\":\""
-              + PROJECT_ID
-              + ":"
-              + JOB_ID
-              + "\",\"status\":{\"state\":\"DONE\"}}");
+              "{\"kind\":\"bigquery#job\",\"id\":\""
+                      + PROJECT_ID
+                      + ":"
+                      + JOB_ID
+                      + "\",\"status\":{\"state\":\"DONE\"}}");
 
       Job job = new Job();
       job.setJobReference(new JobReference().setProjectId(PROJECT_ID).setJobId(JOB_ID));
@@ -813,21 +809,21 @@ public class HttpBigQueryRpcTest {
       attributes.put("bq.rpc.response.job.id", PROJECT_ID + ":" + JOB_ID);
       attributes.put("bq.rpc.response.job.status.state", "DONE");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.createJob",
-          "JobService",
-          "InsertJob",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs",
-          attributes);
+              "com.google.cloud.bigquery.BigQueryRpc.createJob",
+              "JobService",
+              "InsertJob",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs",
+              attributes);
     }
 
     @Test
     public void testCreateJobForQueryTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#job\",\"id\":\""
-              + PROJECT_ID
-              + ":"
-              + JOB_ID
-              + "\",\"status\":{\"state\":\"DONE\"}}");
+              "{\"kind\":\"bigquery#job\",\"id\":\""
+                      + PROJECT_ID
+                      + ":"
+                      + JOB_ID
+                      + "\",\"status\":{\"state\":\"DONE\"}}");
 
       Job job = new Job();
       job.setJobReference(new JobReference().setProjectId(PROJECT_ID).setJobId(JOB_ID));
@@ -838,11 +834,11 @@ public class HttpBigQueryRpcTest {
       attributes.put("bq.rpc.response.job.id", PROJECT_ID + ":" + JOB_ID);
       attributes.put("bq.rpc.response.job.status.state", "DONE");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.createJobForQuery",
-          "JobService",
-          "InsertJob",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs",
-          attributes);
+              "com.google.cloud.bigquery.BigQueryRpc.createJobForQuery",
+              "JobService",
+              "InsertJob",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs",
+              attributes);
     }
 
     @Test
@@ -853,11 +849,11 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("POST", "/projects/" + PROJECT_ID + "/jobs/" + JOB_ID + "/cancel");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.cancelJob",
-          "JobService",
-          "CancelJob",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs/" + JOB_ID,
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.cancelJob",
+              "JobService",
+              "CancelJob",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs/" + JOB_ID,
+              null);
     }
 
     @Test
@@ -869,11 +865,11 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("DELETE", "/projects/" + PROJECT_ID + "/jobs/" + JOB_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.deleteJob",
-          "JobService",
-          "DeleteJob",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs/" + JOB_ID,
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.deleteJob",
+              "JobService",
+              "DeleteJob",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs/" + JOB_ID,
+              null);
     }
 
     @Test
@@ -884,11 +880,11 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("GET", "/projects/" + PROJECT_ID + "/queries/" + JOB_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getQueryResults",
-          "JobService",
-          "GetQueryResults",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs/" + JOB_ID,
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.getQueryResults",
+              "JobService",
+              "GetQueryResults",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs/" + JOB_ID,
+              null);
     }
 
     @Test
@@ -896,15 +892,15 @@ public class HttpBigQueryRpcTest {
       setMockResponse("{\"kind\":\"bigquery#getQueryResultsResponse\"}");
 
       rpc.getQueryResultsWithRowLimitSkipExceptionTranslation(
-          PROJECT_ID, JOB_ID, LOCATION, 10, 1000L);
+              PROJECT_ID, JOB_ID, LOCATION, 10, 1000L);
 
       verifyRequest("GET", "/projects/" + PROJECT_ID + "/queries/" + JOB_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getQueryResultsWithRowLimit",
-          "JobService",
-          "GetQueryResults",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs/" + JOB_ID,
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.getQueryResultsWithRowLimit",
+              "JobService",
+              "GetQueryResults",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs/" + JOB_ID,
+              null);
     }
 
     @Test
@@ -915,11 +911,11 @@ public class HttpBigQueryRpcTest {
 
       verifyRequest("POST", "/projects/" + PROJECT_ID + "/queries");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.queryRpc",
-          "JobService",
-          "Query",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs",
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.queryRpc",
+              "JobService",
+              "Query",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/jobs",
+              null);
     }
 
     @Test
@@ -927,24 +923,24 @@ public class HttpBigQueryRpcTest {
       setMockResponse("{\"kind\":\"bigquery#policy\"}");
 
       rpc.getIamPolicySkipExceptionTranslation(
-          "projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
-          new HashMap<>());
+              "projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
+              new HashMap<>());
 
       verifyRequest(
-          "POST",
-          "/projects/"
-              + PROJECT_ID
-              + "/datasets/"
-              + DATASET_ID
-              + "/tables/"
-              + TABLE_ID
-              + ":getIamPolicy");
+              "POST",
+              "/projects/"
+                      + PROJECT_ID
+                      + "/datasets/"
+                      + DATASET_ID
+                      + "/tables/"
+                      + TABLE_ID
+                      + ":getIamPolicy");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getIamPolicy",
-          "TableService",
-          "GetIamPolicy",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.getIamPolicy",
+              "TableService",
+              "GetIamPolicy",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
+              null);
     }
 
     @Test
@@ -952,25 +948,25 @@ public class HttpBigQueryRpcTest {
       setMockResponse("{\"kind\":\"bigquery#policy\"}");
 
       rpc.setIamPolicySkipExceptionTranslation(
-          "projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
-          new Policy(),
-          new HashMap<>());
+              "projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
+              new Policy(),
+              new HashMap<>());
 
       verifyRequest(
-          "POST",
-          "/projects/"
-              + PROJECT_ID
-              + "/datasets/"
-              + DATASET_ID
-              + "/tables/"
-              + TABLE_ID
-              + ":setIamPolicy");
+              "POST",
+              "/projects/"
+                      + PROJECT_ID
+                      + "/datasets/"
+                      + DATASET_ID
+                      + "/tables/"
+                      + TABLE_ID
+                      + ":setIamPolicy");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.setIamPolicy",
-          "TableService",
-          "SetIamPolicy",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.setIamPolicy",
+              "TableService",
+              "SetIamPolicy",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
+              null);
     }
 
     @Test
@@ -978,39 +974,39 @@ public class HttpBigQueryRpcTest {
       setMockResponse("{\"kind\":\"bigquery#testIamPermissionsResponse\"}");
 
       rpc.testIamPermissionsSkipExceptionTranslation(
-          "projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
-          Arrays.asList("p1", "p2"),
-          new HashMap<>());
+              "projects/" + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
+              Arrays.asList("p1", "p2"),
+              new HashMap<>());
 
       verifyRequest(
-          "POST",
-          "/projects/"
-              + PROJECT_ID
-              + "/datasets/"
-              + DATASET_ID
-              + "/tables/"
-              + TABLE_ID
-              + ":testIamPermissions");
+              "POST",
+              "/projects/"
+                      + PROJECT_ID
+                      + "/datasets/"
+                      + DATASET_ID
+                      + "/tables/"
+                      + TABLE_ID
+                      + ":testIamPermissions");
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.testIamPermissions",
-          "TableService",
-          "TestIamPermissions",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
-          null);
+              "com.google.cloud.bigquery.BigQueryRpc.testIamPermissions",
+              "TableService",
+              "TestIamPermissions",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID + "/tables/" + TABLE_ID,
+              null);
     }
 
     @Test
     public void testOtelAttributesFromOptionsGetAddedtoSpan() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#dataset\",\"id\":\""
-              + PROJECT_ID
-              + ":"
-              + DATASET_ID
-              + "\",\"datasetReference\":{\"projectId\":\""
-              + PROJECT_ID
-              + "\",\"datasetId\":\""
-              + DATASET_ID
-              + "\"}}");
+              "{\"kind\":\"bigquery#dataset\",\"id\":\""
+                      + PROJECT_ID
+                      + ":"
+                      + DATASET_ID
+                      + "\",\"datasetReference\":{\"projectId\":\""
+                      + PROJECT_ID
+                      + "\",\"datasetId\":\""
+                      + DATASET_ID
+                      + "\"}}");
 
       Map<BigQueryRpc.Option, Object> options = new HashMap<>();
       options.put(BigQueryRpc.Option.FIELDS, "foo,bar");
@@ -1022,44 +1018,44 @@ public class HttpBigQueryRpcTest {
       expectedAttributes.put("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID);
 
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getDataset",
-          "DatasetService",
-          "GetDataset",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID,
-          expectedAttributes);
+              "com.google.cloud.bigquery.BigQueryRpc.getDataset",
+              "DatasetService",
+              "GetDataset",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID,
+              expectedAttributes);
     }
 
     @Test
     public void testHttpTracingEnabledAddsAdditionalAttributes() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#dataset\",\"id\":\""
-              + PROJECT_ID
-              + ":"
-              + DATASET_ID
-              + "\",\"datasetReference\":{\"projectId\":\""
-              + PROJECT_ID
-              + "\",\"datasetId\":\""
-              + DATASET_ID
-              + "\"}}");
+              "{\"kind\":\"bigquery#dataset\",\"id\":\""
+                      + PROJECT_ID
+                      + ":"
+                      + DATASET_ID
+                      + "\",\"datasetReference\":{\"projectId\":\""
+                      + PROJECT_ID
+                      + "\",\"datasetId\":\""
+                      + DATASET_ID
+                      + "\"}}");
 
       rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
       verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
       verifySpan(
-          "com.google.cloud.bigquery.BigQueryRpc.getDataset",
-          "DatasetService",
-          "GetDataset",
-          RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID,
-          Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
+              "com.google.cloud.bigquery.BigQueryRpc.getDataset",
+              "DatasetService",
+              "GetDataset",
+              RESOURCE_PROJECT_PREFIX + PROJECT_ID + "/datasets/" + DATASET_ID,
+              Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID));
 
       List<SpanData> spans = spanExporter.getFinishedSpanItems();
       assertThat(spans).isNotEmpty();
       SpanData rpcSpan =
-          spans.stream()
-              .filter(
-                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
-              .findFirst()
-              .orElse(null);
+              spans.stream()
+                      .filter(
+                              span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+                      .findFirst()
+                      .orElse(null);
       assertNotNull(rpcSpan);
       assertEquals("http", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.RPC_SYSTEM_NAME));
       assertNotNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_SERVICE));
@@ -1068,25 +1064,25 @@ public class HttpBigQueryRpcTest {
     @Test
     public void testHttpTracingEnabled_GenericException_SetsAttributes() throws Exception {
       assertThrows(
-          IOException.class,
-          () -> {
-            rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
-          });
+              IOException.class,
+              () -> {
+                rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+              });
 
       List<SpanData> spans = spanExporter.getFinishedSpanItems();
       assertThat(spans).isNotEmpty();
       SpanData rpcSpan =
-          spans.stream()
-              .filter(
-                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
-              .findFirst()
-              .orElse(null);
+              spans.stream()
+                      .filter(
+                              span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+                      .findFirst()
+                      .orElse(null);
       assertNotNull(rpcSpan);
       assertEquals(
-          "java.io.IOException",
-          rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
+              "java.io.IOException",
+              rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
       assertEquals(
-          "CLIENT_UNKNOWN_ERROR", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+              "CLIENT_UNKNOWN_ERROR", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
     }
 
     @Test
@@ -1094,214 +1090,109 @@ public class HttpBigQueryRpcTest {
       mockResponse.setStatusCode(400);
       mockResponse.setContentType(Json.MEDIA_TYPE);
       mockResponse.setContent(
-          "{\"error\":{\"code\":400,\"message\":\"Invalid request\",\"errors\":[{\"message\":\"Invalid request\",\"domain\":\"global\",\"reason\":\"invalid\"}]}}");
+              "{\"error\":{\"code\":400,\"message\":\"Invalid request\",\"errors\":[{\"message\":\"Invalid request\",\"domain\":\"global\",\"reason\":\"invalid\"}]}}");
 
       assertThrows(
-          IOException.class,
-          () -> {
-            rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
-          });
+              IOException.class,
+              () -> {
+                rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+              });
 
       List<SpanData> spans = spanExporter.getFinishedSpanItems();
       assertThat(spans).isNotEmpty();
       SpanData rpcSpan =
-          spans.stream()
-              .filter(
-                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
-              .findFirst()
-              .orElse(null);
+              spans.stream()
+                      .filter(
+                              span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+                      .findFirst()
+                      .orElse(null);
       assertNotNull(rpcSpan);
       assertEquals("invalid", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
       assertEquals(
-          "Invalid request", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
+              "Invalid request", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
       assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
     }
 
     @Test
     public void testGetUriTemplateValueTelemetry() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#dataset\",\"id\":\""
-              + PROJECT_ID
-              + ":"
-              + DATASET_ID
-              + "\",\"datasetReference\":{\"projectId\":\""
-              + PROJECT_ID
-              + "\",\"datasetId\":\""
-              + DATASET_ID
-              + "\"}}");
+              "{\"kind\":\"bigquery#dataset\",\"id\":\""
+                      + PROJECT_ID
+                      + ":"
+                      + DATASET_ID
+                      + "\",\"datasetReference\":{\"projectId\":\""
+                      + PROJECT_ID
+                      + "\",\"datasetId\":\""
+                      + DATASET_ID
+                      + "\"}}");
 
       rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
       List<SpanData> spans = spanExporter.getFinishedSpanItems();
       assertThat(spans).isNotEmpty();
       SpanData rpcSpan =
-          spans.stream()
-              .filter(
-                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
-              .findFirst()
-              .orElse(null);
+              spans.stream()
+                      .filter(
+                              span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+                      .findFirst()
+                      .orElse(null);
       assertNotNull(rpcSpan);
       assertEquals(
-          "projects/{+projectId}/datasets/{+datasetId}",
-          rpcSpan.getAttributes().get(BigQueryTelemetryTracer.URL_TEMPLATE));
+              "projects/{+projectId}/datasets/{+datasetId}",
+              rpcSpan.getAttributes().get(BigQueryTelemetryTracer.URL_TEMPLATE));
     }
 
     @Test
     public void testUrlDomain_DefaultValue() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#dataset\",\"id\":\"" + PROJECT_ID + ":" + DATASET_ID + "\"}");
+              "{\"kind\":\"bigquery#dataset\",\"id\":\"" + PROJECT_ID + ":" + DATASET_ID + "\"}");
 
       rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
       List<io.opentelemetry.sdk.trace.data.SpanData> spans = spanExporter.getFinishedSpanItems();
       io.opentelemetry.sdk.trace.data.SpanData rpcSpan =
-          spans.stream()
-              .filter(
-                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
-              .findFirst()
-              .orElse(null);
+              spans.stream()
+                      .filter(
+                              span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+                      .findFirst()
+                      .orElse(null);
       assertNotNull(rpcSpan);
       assertEquals(
-          "bigquery.googleapis.com",
-          rpcSpan.getAttributes().get(BigQueryTelemetryTracer.URL_DOMAIN));
+              "bigquery.googleapis.com",
+              rpcSpan.getAttributes().get(BigQueryTelemetryTracer.URL_DOMAIN));
     }
 
     @Test
     public void testUrlDomain_OverriddenValue() throws Exception {
       setMockResponse(
-          "{\"kind\":\"bigquery#dataset\",\"id\":\"" + PROJECT_ID + ":" + DATASET_ID + "\"}");
+              "{\"kind\":\"bigquery#dataset\",\"id\":\"" + PROJECT_ID + ":" + DATASET_ID + "\"}");
 
       BigQueryOptions customOptions =
-          BigQueryOptions.newBuilder()
-              .setProjectId(PROJECT_ID)
-              .setCredentials(NoCredentials.getInstance())
-              .setEnableOpenTelemetryTracing(true)
-              .setOpenTelemetryTracer(tracer)
-              .setTransportOptions(
-                  BigQueryOptions.getDefaultHttpTransportOptions().toBuilder()
-                      .setHttpTransportFactory(() -> mockTransport)
-                      .build())
-              .setHost("https://custom.googleapis.com")
-              .build();
+              BigQueryOptions.newBuilder()
+                      .setProjectId(PROJECT_ID)
+                      .setCredentials(NoCredentials.getInstance())
+                      .setEnableOpenTelemetryTracing(true)
+                      .setOpenTelemetryTracer(tracer)
+                      .setTransportOptions(
+                              BigQueryOptions.getDefaultHttpTransportOptions().toBuilder()
+                                      .setHttpTransportFactory(() -> mockTransport)
+                                      .build())
+                      .setHost("https://custom.googleapis.com")
+                      .build();
       HttpBigQueryRpc customRpc = new HttpBigQueryRpc(customOptions);
 
       customRpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
 
       List<io.opentelemetry.sdk.trace.data.SpanData> spans = spanExporter.getFinishedSpanItems();
       io.opentelemetry.sdk.trace.data.SpanData rpcSpan =
-          spans.stream()
-              .filter(
-                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
-              .findFirst()
-              .orElse(null);
+              spans.stream()
+                      .filter(
+                              span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+                      .findFirst()
+                      .orElse(null);
       assertNotNull(rpcSpan);
       assertEquals(
-          "custom.googleapis.com", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.URL_DOMAIN));
-    }
-  }
-
-  @Nested
-  class TelemetryEnabledDevDisabled {
-    private HttpBigQueryRpc rpc;
-
-    @BeforeEach
-    public void setUp() {
-      setUpServer();
-      System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
-      rpc = createRpc(true);
-    }
-
-    @Test
-    public void testHttpTracingDisabledDoesNotAddAdditionalAttributes() throws Exception {
-      setMockResponse(
-          "{\"kind\":\"bigquery#dataset\",\"id\":\""
-              + PROJECT_ID
-              + ":"
-              + DATASET_ID
-              + "\",\"datasetReference\":{\"projectId\":\""
-              + PROJECT_ID
-              + "\",\"datasetId\":\""
-              + DATASET_ID
-              + "\"}}");
-
-      rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
-
-      verifyRequest("GET", "/projects/" + PROJECT_ID + "/datasets/" + DATASET_ID);
-
-      List<SpanData> spans = spanExporter.getFinishedSpanItems();
-      assertThat(spans).isNotEmpty();
-      SpanData rpcSpan =
-          spans.stream()
-              .filter(
-                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
-              .findFirst()
-              .orElse(null);
-      assertNotNull(rpcSpan);
-      verifySpanProductionAttributes(
-          "DatasetService",
-          "GetDataset",
-          Collections.singletonMap("bq.rpc.response.dataset.id", PROJECT_ID + ":" + DATASET_ID),
-          rpcSpan);
-
-      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.RPC_SYSTEM_NAME));
-      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_SERVICE));
-      assertNull(
-          rpcSpan.getAttributes().get(AttributeKey.stringKey("url.template")),
-          "url.template attribute should not be set");
-      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID));
-      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.URL_DOMAIN));
-      assertNull(
-          rpcSpan.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_RESEND_COUNT));
-    }
-
-    @Test
-    public void testHttpTracingDisabled_GenericException_DoesNotSetAttributes() throws Exception {
-      assertThrows(
-          IOException.class,
-          () -> {
-            rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
-          });
-
-      List<io.opentelemetry.sdk.trace.data.SpanData> spans = spanExporter.getFinishedSpanItems();
-      assertThat(spans).isNotEmpty();
-      io.opentelemetry.sdk.trace.data.SpanData rpcSpan =
-          spans.stream()
-              .filter(
-                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
-              .findFirst()
-              .orElse(null);
-      assertNotNull(rpcSpan);
-      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
-      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
-      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
-    }
-
-    @Test
-    public void testHttpTracingDisabled_GoogleJsonResponseException_DoesNotSetAttributes()
-        throws Exception {
-      mockResponse.setStatusCode(400);
-      mockResponse.setContentType(Json.MEDIA_TYPE);
-      mockResponse.setContent(
-          "{\"error\":{\"code\":400,\"message\":\"Invalid request\",\"errors\":[{\"message\":\"Invalid request\",\"domain\":\"global\",\"reason\":\"invalid\"}]}}");
-
-      assertThrows(
-          IOException.class,
-          () -> {
-            rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
-          });
-
-      List<io.opentelemetry.sdk.trace.data.SpanData> spans = spanExporter.getFinishedSpanItems();
-      assertThat(spans).isNotEmpty();
-      io.opentelemetry.sdk.trace.data.SpanData rpcSpan =
-          spans.stream()
-              .filter(
-                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
-              .findFirst()
-              .orElse(null);
-      assertNotNull(rpcSpan);
-      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
-      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
-      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
+              "custom.googleapis.com", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.URL_DOMAIN));
     }
   }
 
@@ -1312,7 +1203,6 @@ public class HttpBigQueryRpcTest {
     @BeforeEach
     public void setUp() {
       setUpServer();
-      System.clearProperty("com.google.cloud.bigquery.http.tracing.dev.enabled");
       rpc = createRpc(false);
     }
 

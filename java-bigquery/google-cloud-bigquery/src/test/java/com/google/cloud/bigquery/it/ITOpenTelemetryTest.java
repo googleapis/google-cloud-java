@@ -54,7 +54,6 @@ public class ITOpenTelemetryTest {
 
   @BeforeAll
   public static void setUpClass() throws IOException {
-    System.setProperty("com.google.cloud.bigquery.http.tracing.dev.enabled", "true");
     bigqueryHelper = RemoteBigQueryHelper.create();
   }
 
