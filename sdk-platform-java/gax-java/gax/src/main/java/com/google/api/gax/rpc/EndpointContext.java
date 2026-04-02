@@ -140,6 +140,14 @@ public abstract class EndpointContext {
   @Nullable
   public abstract Integer resolvedServerPort();
 
+  @Nullable
+  String getUrlDomain() {
+    if (!Strings.isNullOrEmpty(serviceName()) && !Strings.isNullOrEmpty(resolvedUniverseDomain())) {
+      return serviceName() + "." + resolvedUniverseDomain();
+    }
+    return null;
+  }
+
   public abstract Builder toBuilder();
 
   public static Builder newBuilder() {

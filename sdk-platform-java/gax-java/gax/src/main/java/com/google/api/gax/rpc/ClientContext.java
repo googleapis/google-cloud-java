@@ -154,7 +154,8 @@ public abstract class ClientContext {
         .setTracerFactory(BaseApiTracerFactory.getInstance())
         .setQuotaProjectId(null)
         .setGdchApiAudience(null)
-        // Attempt to create an empty, non-functioning EndpointContext by default. This is
+        // Attempt to create an empty, non-functioning EndpointContext by default. This
+        // is
         // not exposed to the user via getters/setters.
         .setEndpointContext(EndpointContext.getDefaultInstance());
   }
@@ -187,8 +188,10 @@ public abstract class ClientContext {
     String settingsGdchApiAudience = settings.getGdchApiAudience();
     boolean usingGDCH = credentials instanceof GdchCredentials;
     if (usingGDCH) {
-      // Can only determine if the GDC-H is being used via the Credentials. The Credentials object
-      // is resolved in the ClientContext and must be passed to the EndpointContext. Rebuild the
+      // Can only determine if the GDC-H is being used via the Credentials. The
+      // Credentials object
+      // is resolved in the ClientContext and must be passed to the EndpointContext.
+      // Rebuild the
       // endpointContext only on GDC-H flows.
       endpointContext = endpointContext.withGDCH();
       // Resolve the new endpoint with the GDC-H flow
@@ -201,16 +204,20 @@ public abstract class ClientContext {
     }
 
     if (settings.getQuotaProjectId() != null && credentials != null) {
-      // If the quotaProjectId is set, wrap original credentials with correct quotaProjectId as
+      // If the quotaProjectId is set, wrap original credentials with correct
+      // quotaProjectId as
       // QuotaProjectIdHidingCredentials.
-      // Ensure that a custom set quota project id takes priority over one detected by credentials.
+      // Ensure that a custom set quota project id takes priority over one detected by
+      // credentials.
       // Avoid the backend receiving possibly conflict values of quotaProjectId
       credentials = new QuotaProjectIdHidingCredentials(credentials);
     }
 
     TransportChannelProvider transportChannelProvider = settings.getTransportChannelProvider();
-    // After needsExecutor and StubSettings#setExecutorProvider are deprecated, transport channel
-    // executor can only be set from TransportChannelProvider#withExecutor directly, and a provider
+    // After needsExecutor and StubSettings#setExecutorProvider are deprecated,
+    // transport channel
+    // executor can only be set from TransportChannelProvider#withExecutor directly,
+    // and a provider
     // will have a default executor if it needs one.
     if (transportChannelProvider.needsExecutor() && settings.getExecutorProvider() != null) {
       transportChannelProvider =
@@ -313,6 +320,7 @@ public abstract class ClientContext {
               .setServerPort(endpointContext.resolvedServerPort())
               .setServiceName(endpointContext.serviceName())
               .setLibraryMetadata(settings.getLibraryMetadata())
+              .setUrlDomain(endpointContext.getUrlDomain())
               .build();
       apiTracerFactory = apiTracerFactory.withContext(apiTracerContext);
     }

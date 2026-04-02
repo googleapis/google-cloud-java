@@ -187,6 +187,19 @@ class ApiTracerContextTest {
   }
 
   @Test
+  void testGetAttemptAttributes_urlDomain() {
+    ApiTracerContext context =
+        ApiTracerContext.newBuilder()
+            .setLibraryMetadata(LibraryMetadata.empty())
+            .setUrlDomain("test-domain.com")
+            .build();
+    Map<String, Object> attributes = context.getAttemptAttributes();
+
+    assertThat(attributes)
+        .containsEntry(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE, "test-domain.com");
+  }
+
+  @Test
   void testGetAttemptAttributes_serviceName() {
     ApiTracerContext context =
         ApiTracerContext.newBuilder()
@@ -317,7 +330,8 @@ class ApiTracerContextTest {
             .build();
     Map<String, Object> attributes = context.getMetricsAttributes();
 
-    assertThat(attributes).doesNotContainKey(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE);
+    assertThat(attributes)
+        .containsEntry(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE, "test-domain.com");
   }
 
   @Test

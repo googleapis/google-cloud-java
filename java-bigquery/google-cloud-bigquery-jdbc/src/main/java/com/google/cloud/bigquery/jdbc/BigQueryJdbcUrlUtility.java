@@ -706,10 +706,16 @@ final class BigQueryJdbcUrlUtility {
       if (kv.length != 2 || !PROPERTY_NAME_MAP.containsKey(key)) {
         String ref = (kv.length == 2) ? key : part;
         String safeRef = ref.length() > 32 ? ref.substring(0, 32) + "..." : ref;
-        throw new BigQueryJdbcRuntimeException(
-            String.format("Wrong value or unknown setting: %s", safeRef));
+        // Some tools can pass unknown keys. In order not to break compatibility, throw
+        // an exception only with incorrect format, otherwise log an error.
+        if (kv.length != 2) {
+          throw new BigQueryJdbcRuntimeException(
+              String.format("Wrong value or unknown setting: %s", safeRef));
+        } else {
+          LOG.warning("Wrong value or unknown setting: %s", safeRef);
+          continue;
+        }
       }
-
       map.put(PROPERTY_NAME_MAP.get(key), CharEscapers.decodeUriPath(kv[1].replace("+", "%2B")));
     }
     return Collections.unmodifiableMap(map);

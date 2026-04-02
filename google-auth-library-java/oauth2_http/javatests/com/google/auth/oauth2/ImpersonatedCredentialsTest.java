@@ -44,6 +44,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.google.api.client.http.HttpStatusCodes;
+import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonGenerator;
@@ -54,6 +55,7 @@ import com.google.api.client.util.Clock;
 import com.google.auth.Credentials;
 import com.google.auth.ServiceAccountSigner.SigningException;
 import com.google.auth.TestUtils;
+import com.google.auth.http.HttpTransportFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import java.io.ByteArrayOutputStream;
@@ -61,8 +63,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.security.PrivateKey;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -70,7 +71,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.TimeZone;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -121,8 +121,6 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
   static final int VALID_LIFETIME = 300;
   private static final int INVALID_LIFETIME = 43210;
   private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
-
-  private static final String RFC3339 = "yyyy-MM-dd'T'HH:mm:ssX";
 
   private static final String TEST_UNIVERSE_DOMAIN = "test.xyz";
   private static final String OLD_IMPERSONATION_URL =
@@ -654,60 +652,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void refreshAccessToken_GMT_dateParsedCorrectly() throws IOException, IllegalStateException {
-    Calendar c = Calendar.getInstance();
-    c.add(Calendar.SECOND, VALID_LIFETIME);
-
-    mockTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
-    mockTransportFactory.getTransport().setAccessToken(ACCESS_TOKEN);
-    mockTransportFactory.getTransport().setExpireTime(getFormattedTime(c.getTime()));
-    mockTransportFactory.getTransport().addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
-    ImpersonatedCredentials targetCredentials =
-        ImpersonatedCredentials.create(
-                sourceCredentials,
-                IMPERSONATED_CLIENT_EMAIL,
-                null,
-                IMMUTABLE_SCOPES_LIST,
-                VALID_LIFETIME,
-                mockTransportFactory)
-            .createWithCustomCalendar(
-                // Set system timezone to GMT
-                Calendar.getInstance(TimeZone.getTimeZone("GMT")));
-
-    assertTrue(
-        c.getTime().toInstant().truncatedTo(ChronoUnit.SECONDS).toEpochMilli()
-            == targetCredentials.refreshAccessToken().getExpirationTimeMillis());
-  }
-
-  @Test
-  void refreshAccessToken_nonGMT_dateParsedCorrectly() throws IOException, IllegalStateException {
-    Calendar c = Calendar.getInstance();
-    c.add(Calendar.SECOND, VALID_LIFETIME);
-
-    mockTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
-    mockTransportFactory.getTransport().setAccessToken(ACCESS_TOKEN);
-    mockTransportFactory.getTransport().setExpireTime(getFormattedTime(c.getTime()));
-    mockTransportFactory.getTransport().addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
-    ImpersonatedCredentials targetCredentials =
-        ImpersonatedCredentials.create(
-                sourceCredentials,
-                IMPERSONATED_CLIENT_EMAIL,
-                null,
-                IMMUTABLE_SCOPES_LIST,
-                VALID_LIFETIME,
-                mockTransportFactory)
-            .createWithCustomCalendar(
-                // Set system timezone to one different than GMT
-                Calendar.getInstance(TimeZone.getTimeZone("America/Los_Angeles")));
-
-    assertTrue(
-        c.getTime().toInstant().truncatedTo(ChronoUnit.SECONDS).toEpochMilli()
-            == targetCredentials.refreshAccessToken().getExpirationTimeMillis());
-  }
-
-  @Test
   void refreshAccessToken_invalidDate() throws IllegalStateException {
-    String expectedMessage = "Unparseable date";
+    String expectedMessage = "Error parsing expireTime: ";
     mockTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
     mockTransportFactory.getTransport().setAccessToken("foo");
     mockTransportFactory.getTransport().setExpireTime("1973-09-29T15:01:23");
@@ -1297,22 +1243,69 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     assertSame(deserializedCredentials.clock, Clock.SYSTEM);
   }
 
-  public static String getDefaultExpireTime() {
-    Calendar c = Calendar.getInstance();
-    c.add(Calendar.SECOND, VALID_LIFETIME);
-    return getFormattedTime(c.getTime());
+  /**
+   * A stateful {@link HttpTransportFactory} that provides a shared {@link
+   * MockIAMCredentialsServiceTransport} instance.
+   *
+   * <p>This is necessary for serialization tests because {@link ImpersonatedCredentials} stores the
+   * factory's class name and re-instantiates it via reflection during deserialization. A standard
+   * factory would create a fresh, unconfigured transport upon re-instantiation, causing refreshed
+   * token requests to fail. Using a static transport ensures the mock configuration persists across
+   * serialization boundaries.
+   */
+  public static class StatefulMockIAMTransportFactory implements HttpTransportFactory {
+    private static final MockIAMCredentialsServiceTransport TRANSPORT =
+        new MockIAMCredentialsServiceTransport(GoogleCredentials.GOOGLE_DEFAULT_UNIVERSE);
+
+    @Override
+    public HttpTransport create() {
+      return TRANSPORT;
+    }
+
+    public static MockIAMCredentialsServiceTransport getTransport() {
+      return TRANSPORT;
+    }
   }
 
-  /**
-   * Given a {@link Date}, it will return a string of the date formatted like
-   * <b>yyyy-MM-dd'T'HH:mm:ss'Z'</b>
-   */
-  private static String getFormattedTime(final Date date) {
-    // Set timezone to GMT since that's the TZ used in the response from the service impersonation
-    // token exchange
-    final DateFormat formatter = new SimpleDateFormat(RFC3339);
-    formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
-    return formatter.format(date);
+  @Test
+  void refreshAccessToken_afterSerialization_success() throws IOException, ClassNotFoundException {
+    // This test ensures that credentials can still refresh after being serialized.
+    // ImpersonatedCredentials only serializes the transport factory's class name.
+    // Upon deserialization, it creates a new instance of that factory via reflection.
+    // StatefulMockIAMTransportFactory uses a static transport instance so that the
+    // configuration we set here (token, expiration) is available to the new factory instance.
+    MockIAMCredentialsServiceTransport transport = StatefulMockIAMTransportFactory.getTransport();
+    transport.setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
+    transport.setAccessToken(ACCESS_TOKEN);
+
+    transport.setExpireTime(getDefaultExpireTime());
+    transport.addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "", true);
+
+    // Use a source credential that doesn't need refresh
+    AccessToken sourceToken =
+        new AccessToken("source-token", new Date(System.currentTimeMillis() + 3600000));
+    GoogleCredentials sourceCredentials = GoogleCredentials.create(sourceToken);
+
+    ImpersonatedCredentials targetCredentials =
+        ImpersonatedCredentials.create(
+            sourceCredentials,
+            IMPERSONATED_CLIENT_EMAIL,
+            null,
+            IMMUTABLE_SCOPES_LIST,
+            VALID_LIFETIME,
+            new StatefulMockIAMTransportFactory());
+
+    ImpersonatedCredentials deserializedCredentials = serializeAndDeserialize(targetCredentials);
+
+    // This should not throw NPE. The transient 'calendar' field being null after
+    // deserialization is now handled by using java.time.Instant for parsing.
+    AccessToken token = deserializedCredentials.refreshAccessToken();
+    assertNotNull(token);
+    assertEquals(ACCESS_TOKEN, token.getTokenValue());
+  }
+
+  public static String getDefaultExpireTime() {
+    return Instant.now().plusSeconds(VALID_LIFETIME).truncatedTo(ChronoUnit.SECONDS).toString();
   }
 
   private String generateErrorJson(
