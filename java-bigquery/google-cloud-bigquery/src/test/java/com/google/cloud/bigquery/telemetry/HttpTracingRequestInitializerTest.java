@@ -435,8 +435,9 @@ public class HttpTracingRequestInitializerTest {
     assertEquals(1, spans.size());
     SpanData span = spans.get(0);
     assertEquals(SPAN_NAME, span.getName());
-    assertEquals(BIGQUERY_DOMAIN, span.getAttributes().get(BigQueryTelemetryTracer.SERVER_ADDRESS));
-    assertEquals(443, span.getAttributes().get(BigQueryTelemetryTracer.SERVER_PORT));
+    assertEquals(
+        BIGQUERY_DOMAIN, span.getAttributes().get(HttpTracingRequestInitializer.SERVER_ADDRESS));
+    assertEquals(443, span.getAttributes().get(HttpTracingRequestInitializer.SERVER_PORT));
     assertEquals(
         BigQueryTelemetryTracer.BQ_GCP_CLIENT_SERVICE,
         span.getAttributes().get(BigQueryTelemetryTracer.GCP_CLIENT_SERVICE));

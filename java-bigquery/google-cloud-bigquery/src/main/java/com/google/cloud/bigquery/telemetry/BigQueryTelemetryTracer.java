@@ -32,7 +32,7 @@ public final class BigQueryTelemetryTracer {
   private BigQueryTelemetryTracer() {}
 
   public static final String BQ_GCP_CLIENT_SERVICE = "bigquery";
-  public static final String BQ_GCP_CLIENT_REPO = "googleapis/java-bigquery";
+  public static final String BQ_GCP_CLIENT_REPO = "googleapis/google-cloud-java";
   public static final String BQ_GCP_CLIENT_ARTIFACT = "google-cloud-bigquery";
   public static final String BQ_GCP_CLIENT_LANGUAGE = "java";
 
@@ -61,10 +61,6 @@ public final class BigQueryTelemetryTracer {
   public static final AttributeKey<String> STATUS_MESSAGE =
       AttributeKey.stringKey("status.message");
 
-  // Common Server Attributes
-  public static final AttributeKey<String> SERVER_ADDRESS =
-      AttributeKey.stringKey("server.address");
-  public static final AttributeKey<Long> SERVER_PORT = AttributeKey.longKey("server.port");
   public static final AttributeKey<String> URL_TEMPLATE = AttributeKey.stringKey("url.template");
   public static final AttributeKey<String> URL_DOMAIN = AttributeKey.stringKey("url.domain");
 

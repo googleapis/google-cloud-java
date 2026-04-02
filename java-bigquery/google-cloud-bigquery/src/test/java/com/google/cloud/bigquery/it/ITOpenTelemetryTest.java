@@ -19,6 +19,7 @@ import static com.google.cloud.bigquery.telemetry.ErrorTypeUtil.ErrorType;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -30,11 +31,13 @@ import com.google.cloud.bigquery.telemetry.HttpTracingRequestInitializer;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
+import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
+import io.opentelemetry.sdk.trace.data.StatusData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
 import java.io.IOException;
 import java.util.List;
@@ -86,12 +89,15 @@ public class ITOpenTelemetryTest {
     for (SpanData span : spans) {
       if (span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.listDatasets")) {
         foundRpcSpan = true;
+        assertEquals(SpanKind.CLIENT, span.getKind());
+        assertEquals(StatusData.unset(), span.getStatus());
         Map<AttributeKey<?>, Object> attrs = span.getAttributes().asMap();
         checkGeneralAttributes(attrs);
         assertEquals("GET", attrs.get(HttpTracingRequestInitializer.HTTP_REQUEST_METHOD));
         assertEquals("DatasetService", attrs.get(AttributeKey.stringKey("bq.rpc.service")));
         assertEquals("ListDatasets", attrs.get(AttributeKey.stringKey("bq.rpc.method")));
-        assertEquals("bigquery.googleapis.com", attrs.get(BigQueryTelemetryTracer.SERVER_ADDRESS));
+        assertEquals(
+            "bigquery.googleapis.com", attrs.get(HttpTracingRequestInitializer.SERVER_ADDRESS));
         assertEquals(200L, attrs.get(HttpTracingRequestInitializer.HTTP_RESPONSE_STATUS_CODE));
         assertEquals("bigquery.googleapis.com", attrs.get(BigQueryTelemetryTracer.URL_DOMAIN));
         assertEquals(
@@ -102,6 +108,10 @@ public class ITOpenTelemetryTest {
             attrs.get(BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID));
         assertEquals(
             "projects/{+projectId}/datasets", attrs.get(BigQueryTelemetryTracer.URL_TEMPLATE));
+        assertNull(attrs.get(BigQueryTelemetryTracer.STATUS_MESSAGE));
+        assertNull(attrs.get(BigQueryTelemetryTracer.ERROR_TYPE));
+        assertNull(attrs.get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
+        assertNull(attrs.get(HttpTracingRequestInitializer.HTTP_REQUEST_RESEND_COUNT));
       }
     }
     assertTrue(foundRpcSpan, "Expected to find BigQueryRpc.listDatasets span");
@@ -126,6 +136,8 @@ public class ITOpenTelemetryTest {
     for (SpanData span : spans) {
       if (span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset")) {
         foundRpcSpan = true;
+        assertEquals(SpanKind.CLIENT, span.getKind());
+        assertEquals(StatusData.error(), span.getStatus());
         Map<AttributeKey<?>, Object> attrs = span.getAttributes().asMap();
         checkGeneralAttributes(attrs);
         assertEquals("GET", attrs.get(HttpTracingRequestInitializer.HTTP_REQUEST_METHOD));
@@ -138,7 +150,8 @@ public class ITOpenTelemetryTest {
         assertEquals(
             "https://bigquery.googleapis.com/bigquery/v2/projects/gcloud-devel/datasets/non_existent_dataset?prettyPrint=false",
             attrs.get(HttpTracingRequestInitializer.URL_FULL));
-        assertEquals("bigquery.googleapis.com", attrs.get(BigQueryTelemetryTracer.SERVER_ADDRESS));
+        assertEquals(
+            "bigquery.googleapis.com", attrs.get(HttpTracingRequestInitializer.SERVER_ADDRESS));
         assertEquals("bigquery.googleapis.com", attrs.get(BigQueryTelemetryTracer.URL_DOMAIN));
         assertEquals(
             "//bigquery.googleapis.com/projects/gcloud-devel/datasets/non_existent_dataset",
@@ -155,7 +168,7 @@ public class ITOpenTelemetryTest {
   }
 
   @Test
-  public void testConnectionErrorRetriesTraced() {
+  public void testClientErrorAndRetriesTraced() {
     // Pass invalid host to force connection error and retries
     BigQuery bq =
         bigqueryHelper.getOptions().toBuilder()
@@ -181,14 +194,16 @@ public class ITOpenTelemetryTest {
     for (SpanData span : spans) {
       if (span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.listDatasets")) {
         rpcSpanCount++;
+        assertEquals(SpanKind.CLIENT, span.getKind());
+        assertEquals(StatusData.error().getStatusCode(), span.getStatus().getStatusCode());
         Map<AttributeKey<?>, Object> attrs = span.getAttributes().asMap();
         checkGeneralAttributes(attrs);
         assertEquals(
             "https://invalid-host-name-12345.com:8080/bigquery/v2/projects/gcloud-devel/datasets?prettyPrint=false",
             (String) attrs.get(HttpTracingRequestInitializer.URL_FULL));
         assertEquals(
-            "invalid-host-name-12345.com", attrs.get(BigQueryTelemetryTracer.SERVER_ADDRESS));
-        assertEquals(8080L, attrs.get(BigQueryTelemetryTracer.SERVER_PORT));
+            "invalid-host-name-12345.com", attrs.get(HttpTracingRequestInitializer.SERVER_ADDRESS));
+        assertEquals(8080L, attrs.get(HttpTracingRequestInitializer.SERVER_PORT));
         assertEquals("invalid-host-name-12345.com", attrs.get(BigQueryTelemetryTracer.URL_DOMAIN));
         assertEquals(
             "projects/{+projectId}/datasets", attrs.get(BigQueryTelemetryTracer.URL_TEMPLATE));
@@ -254,11 +269,26 @@ public class ITOpenTelemetryTest {
     assertEquals(5, cancelJobSpanCount, "Expected 5 attempts total for cancelJob call");
   }
 
+  @Test
+  public void testTracingDisabledNoSpansCollected() {
+    BigQuery bq =
+        bigqueryHelper.getOptions().toBuilder()
+            .setEnableOpenTelemetryTracing(false)
+            .setOpenTelemetryTracer(tracer)
+            .build()
+            .getService();
+
+    bq.listDatasets();
+
+    List<SpanData> spans = memoryExporter.getFinishedSpanItems();
+    assertTrue(spans.isEmpty(), "Expected no spans to be collected when tracing is disabled");
+  }
+
   private static void checkRetryAttribute(SpanData span, int listDataSpanCount) {
     Map<AttributeKey<?>, Object> attrs = span.getAttributes().asMap();
     Long resendCount = (Long) attrs.get(HttpTracingRequestInitializer.HTTP_REQUEST_RESEND_COUNT);
     if (listDataSpanCount == 1) {
-      assertTrue(resendCount == null || resendCount == 0);
+      assertNull(resendCount, "Expected no resend count for first attempt");
     } else {
       assertNotNull(resendCount, "Expected resend count for retry attempt " + listDataSpanCount);
       assertEquals((long) (listDataSpanCount - 1), resendCount.longValue());
