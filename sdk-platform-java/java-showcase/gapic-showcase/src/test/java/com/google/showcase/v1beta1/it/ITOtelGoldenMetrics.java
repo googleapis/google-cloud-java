@@ -31,10 +31,12 @@
 package com.google.showcase.v1beta1.it;
 
 import static com.google.common.truth.Truth.assertThat;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertThrows;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnavailableException;
@@ -579,7 +581,7 @@ class ITOtelGoldenMetrics {
                   return new com.google.api.client.http.LowLevelHttpResponse() {
                     @Override
                     public InputStream getContent() {
-                      return new ByteArrayInputStream("{}".getBytes());
+                      return new ByteArrayInputStream("{}".getBytes(UTF_8));
                     }
 
                     @Override
@@ -613,7 +615,7 @@ class ITOtelGoldenMetrics {
                   return new com.google.api.client.http.LowLevelHttpResponse() {
                     @Override
                     public InputStream getContent() {
-                      return new ByteArrayInputStream("{\"content\":\"metrics-test\"}".getBytes());
+                      return new ByteArrayInputStream("{\"content\":\"metrics-test\"}".getBytes(UTF_8));
                     }
 
                     @Override
