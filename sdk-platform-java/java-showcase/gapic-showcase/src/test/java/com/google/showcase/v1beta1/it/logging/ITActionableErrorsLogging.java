@@ -215,6 +215,7 @@ public class ITActionableErrorsLogging {
             .setMaxAttempts(1)
             .build());
     stubSettingsBuilder.setTracerFactory(new LoggingTracerFactory());
+    stubSettingsBuilder.setCredentialsProvider(NoCredentialsProvider.create());
     stubSettingsBuilder.setEndpoint(TestClientInitializer.DEFAULT_HTTPJSON_ENDPOINT);
     
     try (com.google.showcase.v1beta1.stub.EchoStub stub = stubSettingsBuilder.build().createStub();
@@ -266,6 +267,7 @@ public class ITActionableErrorsLogging {
             .setMaxAttempts(1)
             .build());
     stubSettingsBuilder.setTracerFactory(new LoggingTracerFactory());
+    stubSettingsBuilder.setCredentialsProvider(NoCredentialsProvider.create());
     stubSettingsBuilder.setEndpoint(TestClientInitializer.DEFAULT_GRPC_ENDPOINT);
     
     try (com.google.showcase.v1beta1.stub.EchoStub stub = stubSettingsBuilder.build().createStub();
