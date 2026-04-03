@@ -238,11 +238,11 @@ public interface SynthesizeSpeechRequestOrBuilder
    *
    *
    * <pre>
-   * Advanced voice options.
+   * Optional. Advanced voice options.
    * </pre>
    *
    * <code>
-   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the advancedVoiceOptions field is set.
@@ -253,11 +253,11 @@ public interface SynthesizeSpeechRequestOrBuilder
    *
    *
    * <pre>
-   * Advanced voice options.
+   * Optional. Advanced voice options.
    * </pre>
    *
    * <code>
-   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The advancedVoiceOptions.
@@ -268,11 +268,11 @@ public interface SynthesizeSpeechRequestOrBuilder
    *
    *
    * <pre>
-   * Advanced voice options.
+   * Optional. Advanced voice options.
    * </pre>
    *
    * <code>
-   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8;
+   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 8 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptionsOrBuilder

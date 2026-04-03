@@ -55,6 +55,7 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
     name_ = "";
     description_ = "";
     rootAgent_ = "";
+    agent_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -187,17 +188,21 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The resource name of the root agent that is the entry point of
-   * the tool. Format: `projects/{project}/locations/{location}/agents/{agent}`
+   * Optional. Deprecated: Use `agent` instead.
+   * The resource name of the root agent that is the entry point of the tool.
+   * Format: `projects/{project}/locations/{location}/agents/{agent}`
    * </pre>
    *
    * <code>
-   * string root_agent = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string root_agent = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.ces.v1beta.AgentTool.root_agent is deprecated. See
+   *     google/cloud/ces/v1beta/agent_tool.proto;l=37
    * @return The rootAgent.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getRootAgent() {
     java.lang.Object ref = rootAgent_;
     if (ref instanceof java.lang.String) {
@@ -214,23 +219,86 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The resource name of the root agent that is the entry point of
-   * the tool. Format: `projects/{project}/locations/{location}/agents/{agent}`
+   * Optional. Deprecated: Use `agent` instead.
+   * The resource name of the root agent that is the entry point of the tool.
+   * Format: `projects/{project}/locations/{location}/agents/{agent}`
    * </pre>
    *
    * <code>
-   * string root_agent = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * string root_agent = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.ces.v1beta.AgentTool.root_agent is deprecated. See
+   *     google/cloud/ces/v1beta/agent_tool.proto;l=37
    * @return The bytes for rootAgent.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getRootAgentBytes() {
     java.lang.Object ref = rootAgent_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       rootAgent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AGENT_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object agent_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the agent that is the entry point of the
+   * tool. Format: `projects/{project}/locations/{location}/agents/{agent}`
+   * </pre>
+   *
+   * <code>
+   * string agent = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The agent.
+   */
+  @java.lang.Override
+  public java.lang.String getAgent() {
+    java.lang.Object ref = agent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      agent_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the agent that is the entry point of the
+   * tool. Format: `projects/{project}/locations/{location}/agents/{agent}`
+   * </pre>
+   *
+   * <code>
+   * string agent = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for agent.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAgentBytes() {
+    java.lang.Object ref = agent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      agent_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -260,6 +328,9 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(rootAgent_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, rootAgent_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(agent_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, agent_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -277,6 +348,9 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(rootAgent_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, rootAgent_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(agent_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, agent_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -296,6 +370,7 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
     if (!getName().equals(other.getName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getRootAgent().equals(other.getRootAgent())) return false;
+    if (!getAgent().equals(other.getAgent())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -313,6 +388,8 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + ROOT_AGENT_FIELD_NUMBER;
     hash = (53 * hash) + getRootAgent().hashCode();
+    hash = (37 * hash) + AGENT_FIELD_NUMBER;
+    hash = (53 * hash) + getAgent().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -455,6 +532,7 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
       name_ = "";
       description_ = "";
       rootAgent_ = "";
+      agent_ = "";
       return this;
     }
 
@@ -500,6 +578,9 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.rootAgent_ = rootAgent_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.agent_ = agent_;
+      }
     }
 
     @java.lang.Override
@@ -527,6 +608,11 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
       if (!other.getRootAgent().isEmpty()) {
         rootAgent_ = other.rootAgent_;
         bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getAgent().isEmpty()) {
+        agent_ = other.agent_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -573,6 +659,12 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                agent_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -820,16 +912,20 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The resource name of the root agent that is the entry point of
-     * the tool. Format: `projects/{project}/locations/{location}/agents/{agent}`
+     * Optional. Deprecated: Use `agent` instead.
+     * The resource name of the root agent that is the entry point of the tool.
+     * Format: `projects/{project}/locations/{location}/agents/{agent}`
      * </pre>
      *
      * <code>
-     * string root_agent = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string root_agent = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.ces.v1beta.AgentTool.root_agent is deprecated. See
+     *     google/cloud/ces/v1beta/agent_tool.proto;l=37
      * @return The rootAgent.
      */
+    @java.lang.Deprecated
     public java.lang.String getRootAgent() {
       java.lang.Object ref = rootAgent_;
       if (!(ref instanceof java.lang.String)) {
@@ -846,16 +942,20 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The resource name of the root agent that is the entry point of
-     * the tool. Format: `projects/{project}/locations/{location}/agents/{agent}`
+     * Optional. Deprecated: Use `agent` instead.
+     * The resource name of the root agent that is the entry point of the tool.
+     * Format: `projects/{project}/locations/{location}/agents/{agent}`
      * </pre>
      *
      * <code>
-     * string root_agent = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string root_agent = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.ces.v1beta.AgentTool.root_agent is deprecated. See
+     *     google/cloud/ces/v1beta/agent_tool.proto;l=37
      * @return The bytes for rootAgent.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getRootAgentBytes() {
       java.lang.Object ref = rootAgent_;
       if (ref instanceof String) {
@@ -872,17 +972,21 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The resource name of the root agent that is the entry point of
-     * the tool. Format: `projects/{project}/locations/{location}/agents/{agent}`
+     * Optional. Deprecated: Use `agent` instead.
+     * The resource name of the root agent that is the entry point of the tool.
+     * Format: `projects/{project}/locations/{location}/agents/{agent}`
      * </pre>
      *
      * <code>
-     * string root_agent = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string root_agent = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.ces.v1beta.AgentTool.root_agent is deprecated. See
+     *     google/cloud/ces/v1beta/agent_tool.proto;l=37
      * @param value The rootAgent to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setRootAgent(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -897,16 +1001,20 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The resource name of the root agent that is the entry point of
-     * the tool. Format: `projects/{project}/locations/{location}/agents/{agent}`
+     * Optional. Deprecated: Use `agent` instead.
+     * The resource name of the root agent that is the entry point of the tool.
+     * Format: `projects/{project}/locations/{location}/agents/{agent}`
      * </pre>
      *
      * <code>
-     * string root_agent = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string root_agent = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.ces.v1beta.AgentTool.root_agent is deprecated. See
+     *     google/cloud/ces/v1beta/agent_tool.proto;l=37
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearRootAgent() {
       rootAgent_ = getDefaultInstance().getRootAgent();
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -918,17 +1026,21 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The resource name of the root agent that is the entry point of
-     * the tool. Format: `projects/{project}/locations/{location}/agents/{agent}`
+     * Optional. Deprecated: Use `agent` instead.
+     * The resource name of the root agent that is the entry point of the tool.
+     * Format: `projects/{project}/locations/{location}/agents/{agent}`
      * </pre>
      *
      * <code>
-     * string root_agent = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * string root_agent = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
+     * @deprecated google.cloud.ces.v1beta.AgentTool.root_agent is deprecated. See
+     *     google/cloud/ces/v1beta/agent_tool.proto;l=37
      * @param value The bytes for rootAgent to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setRootAgentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -936,6 +1048,132 @@ public final class AgentTool extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       rootAgent_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object agent_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the agent that is the entry point of the
+     * tool. Format: `projects/{project}/locations/{location}/agents/{agent}`
+     * </pre>
+     *
+     * <code>
+     * string agent = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The agent.
+     */
+    public java.lang.String getAgent() {
+      java.lang.Object ref = agent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        agent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the agent that is the entry point of the
+     * tool. Format: `projects/{project}/locations/{location}/agents/{agent}`
+     * </pre>
+     *
+     * <code>
+     * string agent = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for agent.
+     */
+    public com.google.protobuf.ByteString getAgentBytes() {
+      java.lang.Object ref = agent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        agent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the agent that is the entry point of the
+     * tool. Format: `projects/{project}/locations/{location}/agents/{agent}`
+     * </pre>
+     *
+     * <code>
+     * string agent = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The agent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAgent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      agent_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the agent that is the entry point of the
+     * tool. Format: `projects/{project}/locations/{location}/agents/{agent}`
+     * </pre>
+     *
+     * <code>
+     * string agent = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAgent() {
+      agent_ = getDefaultInstance().getAgent();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the agent that is the entry point of the
+     * tool. Format: `projects/{project}/locations/{location}/agents/{agent}`
+     * </pre>
+     *
+     * <code>
+     * string agent = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for agent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAgentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      agent_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

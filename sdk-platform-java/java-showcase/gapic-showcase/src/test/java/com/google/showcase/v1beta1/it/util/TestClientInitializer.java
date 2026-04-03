@@ -328,6 +328,92 @@ public class TestClientInitializer {
     return EchoClient.create(createStubWithServiceName(httpJsonEchoSettings, metricsTracerFactory));
   }
 
+  public static EchoClient createGrpcEchoClientOpentelemetryWithRetrySettings(
+      ApiTracerFactory metricsTracerFactory, RetrySettings retrySettings) throws Exception {
+    EchoStubSettings.Builder grpcEchoSettingsBuilder = EchoStubSettings.newBuilder();
+    grpcEchoSettingsBuilder.echoSettings().setRetrySettings(retrySettings);
+    EchoSettings grpcEchoSettings = EchoSettings.create(grpcEchoSettingsBuilder.build());
+    grpcEchoSettings =
+        grpcEchoSettings.toBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultGrpcTransportProviderBuilder()
+                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                    .build())
+            .setEndpoint(DEFAULT_GRPC_ENDPOINT)
+            .build();
+
+    return EchoClient.create(createStubWithServiceName(grpcEchoSettings, metricsTracerFactory));
+  }
+
+  public static EchoClient createHttpJsonEchoClientOpentelemetryWithRetrySettings(
+      ApiTracerFactory metricsTracerFactory, RetrySettings retrySettings) throws Exception {
+    EchoStubSettings.Builder httpJsonEchoSettingsBuilder = EchoStubSettings.newHttpJsonBuilder();
+    httpJsonEchoSettingsBuilder.echoSettings().setRetrySettings(retrySettings);
+    EchoSettings httpJsonEchoSettings = EchoSettings.create(httpJsonEchoSettingsBuilder.build());
+    httpJsonEchoSettings =
+        httpJsonEchoSettings.toBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(
+                        new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                    .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT)
+                    .build())
+            .build();
+
+    return EchoClient.create(createStubWithServiceName(httpJsonEchoSettings, metricsTracerFactory));
+  }
+
+  public static EchoClient createGrpcEchoClientOpentelemetry(
+      ApiTracerFactory metricsTracerFactory,
+      RetrySettings retrySettings,
+      Set<StatusCode.Code> retryableCodes,
+      List<ClientInterceptor> interceptorList) throws Exception {
+    EchoStubSettings.Builder grpcEchoSettingsBuilder = EchoStubSettings.newBuilder();
+    grpcEchoSettingsBuilder
+        .echoSettings()
+        .setRetrySettings(retrySettings)
+        .setRetryableCodes(retryableCodes);
+    EchoSettings grpcEchoSettings = EchoSettings.create(grpcEchoSettingsBuilder.build());
+    grpcEchoSettings =
+        grpcEchoSettings.toBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultGrpcTransportProviderBuilder()
+                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                    .setInterceptorProvider(() -> interceptorList)
+                    .build())
+            .setEndpoint(DEFAULT_GRPC_ENDPOINT)
+            .build();
+
+    return EchoClient.create(createStubWithServiceName(grpcEchoSettings, metricsTracerFactory));
+  }
+
+  public static EchoClient createHttpJsonEchoClientOpentelemetry(
+      ApiTracerFactory metricsTracerFactory,
+      RetrySettings retrySettings,
+      Set<StatusCode.Code> retryableCodes,
+      com.google.api.client.http.HttpTransport transport) throws Exception {
+    EchoStubSettings.Builder httpJsonEchoSettingsBuilder = EchoStubSettings.newHttpJsonBuilder();
+    httpJsonEchoSettingsBuilder
+        .echoSettings()
+        .setRetrySettings(retrySettings)
+        .setRetryableCodes(retryableCodes);
+    EchoSettings httpJsonEchoSettings = EchoSettings.create(httpJsonEchoSettingsBuilder.build());
+    httpJsonEchoSettings =
+        httpJsonEchoSettings.toBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(transport)
+                    .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT)
+                    .build())
+            .build();
+
+    return EchoClient.create(createStubWithServiceName(httpJsonEchoSettings, metricsTracerFactory));
+  }
+
   public static IdentityClient createGrpcIdentityClientOpentelemetry(ApiTracerFactory tracerFactory)
       throws Exception {
     IdentitySettings grpcIdentitySettings =

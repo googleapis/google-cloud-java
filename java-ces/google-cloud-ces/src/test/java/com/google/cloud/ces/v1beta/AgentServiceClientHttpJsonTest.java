@@ -5794,6 +5794,106 @@ public class AgentServiceClientHttpJsonTest {
   }
 
   @Test
+  public void generateAppResourceTest() throws Exception {
+    GenerateAppResourceResponse expectedResponse =
+        GenerateAppResourceResponse.newBuilder()
+            .setGenerateResultInfo(
+                GenerateAppResourceResponse.GenerateResultInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("generateAppResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+
+    GenerateAppResourceResponse actualResponse = client.generateAppResourceAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void generateAppResourceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+      client.generateAppResourceAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void generateAppResourceTest2() throws Exception {
+    GenerateAppResourceResponse expectedResponse =
+        GenerateAppResourceResponse.newBuilder()
+            .setGenerateResultInfo(
+                GenerateAppResourceResponse.GenerateResultInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("generateAppResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-8877/locations/location-8877/apps/app-8877";
+
+    GenerateAppResourceResponse actualResponse = client.generateAppResourceAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void generateAppResourceExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-8877/locations/location-8877/apps/app-8877";
+      client.generateAppResourceAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
   public void listChangelogsTest() throws Exception {
     Changelog responsesElement = Changelog.newBuilder().build();
     ListChangelogsResponse expectedResponse =

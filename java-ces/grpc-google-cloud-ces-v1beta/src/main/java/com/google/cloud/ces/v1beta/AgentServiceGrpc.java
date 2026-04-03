@@ -2113,6 +2113,52 @@ public final class AgentServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.GenerateAppResourceRequest, com.google.longrunning.Operation>
+      getGenerateAppResourceMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateAppResource",
+      requestType = com.google.cloud.ces.v1beta.GenerateAppResourceRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.GenerateAppResourceRequest, com.google.longrunning.Operation>
+      getGenerateAppResourceMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.ces.v1beta.GenerateAppResourceRequest,
+            com.google.longrunning.Operation>
+        getGenerateAppResourceMethod;
+    if ((getGenerateAppResourceMethod = AgentServiceGrpc.getGenerateAppResourceMethod) == null) {
+      synchronized (AgentServiceGrpc.class) {
+        if ((getGenerateAppResourceMethod = AgentServiceGrpc.getGenerateAppResourceMethod)
+            == null) {
+          AgentServiceGrpc.getGenerateAppResourceMethod =
+              getGenerateAppResourceMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.ces.v1beta.GenerateAppResourceRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GenerateAppResource"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.GenerateAppResourceRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AgentServiceMethodDescriptorSupplier("GenerateAppResource"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateAppResourceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.ces.v1beta.ListChangelogsRequest,
           com.google.cloud.ces.v1beta.ListChangelogsResponse>
       getListChangelogsMethod;
@@ -2937,6 +2983,20 @@ public final class AgentServiceGrpc {
      *
      *
      * <pre>
+     * Generates specific resources (e.g. agent) in the app using LLM assistant.
+     * </pre>
+     */
+    default void generateAppResource(
+        com.google.cloud.ces.v1beta.GenerateAppResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateAppResourceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the changelogs of the specified app.
      * </pre>
      */
@@ -3752,6 +3812,22 @@ public final class AgentServiceGrpc {
      *
      *
      * <pre>
+     * Generates specific resources (e.g. agent) in the app using LLM assistant.
+     * </pre>
+     */
+    public void generateAppResource(
+        com.google.cloud.ces.v1beta.GenerateAppResourceRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateAppResourceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the changelogs of the specified app.
      * </pre>
      */
@@ -4443,6 +4519,20 @@ public final class AgentServiceGrpc {
      *
      *
      * <pre>
+     * Generates specific resources (e.g. agent) in the app using LLM assistant.
+     * </pre>
+     */
+    public com.google.longrunning.Operation generateAppResource(
+        com.google.cloud.ces.v1beta.GenerateAppResourceRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGenerateAppResourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the changelogs of the specified app.
      * </pre>
      */
@@ -5110,6 +5200,19 @@ public final class AgentServiceGrpc {
         com.google.cloud.ces.v1beta.RestoreAppVersionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRestoreAppVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates specific resources (e.g. agent) in the app using LLM assistant.
+     * </pre>
+     */
+    public com.google.longrunning.Operation generateAppResource(
+        com.google.cloud.ces.v1beta.GenerateAppResourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateAppResourceMethod(), getCallOptions(), request);
     }
 
     /**
@@ -5807,6 +5910,19 @@ public final class AgentServiceGrpc {
      *
      *
      * <pre>
+     * Generates specific resources (e.g. agent) in the app using LLM assistant.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        generateAppResource(com.google.cloud.ces.v1beta.GenerateAppResourceRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateAppResourceMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the changelogs of the specified app.
      * </pre>
      */
@@ -5879,8 +5995,9 @@ public final class AgentServiceGrpc {
   private static final int METHODID_CREATE_APP_VERSION = 45;
   private static final int METHODID_DELETE_APP_VERSION = 46;
   private static final int METHODID_RESTORE_APP_VERSION = 47;
-  private static final int METHODID_LIST_CHANGELOGS = 48;
-  private static final int METHODID_GET_CHANGELOG = 49;
+  private static final int METHODID_GENERATE_APP_RESOURCE = 48;
+  private static final int METHODID_LIST_CHANGELOGS = 49;
+  private static final int METHODID_GET_CHANGELOG = 50;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -6157,6 +6274,11 @@ public final class AgentServiceGrpc {
         case METHODID_RESTORE_APP_VERSION:
           serviceImpl.restoreAppVersion(
               (com.google.cloud.ces.v1beta.RestoreAppVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GENERATE_APP_RESOURCE:
+          serviceImpl.generateAppResource(
+              (com.google.cloud.ces.v1beta.GenerateAppResourceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_CHANGELOGS:
@@ -6487,6 +6609,12 @@ public final class AgentServiceGrpc {
                     com.google.cloud.ces.v1beta.RestoreAppVersionRequest,
                     com.google.longrunning.Operation>(service, METHODID_RESTORE_APP_VERSION)))
         .addMethod(
+            getGenerateAppResourceMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.ces.v1beta.GenerateAppResourceRequest,
+                    com.google.longrunning.Operation>(service, METHODID_GENERATE_APP_RESOURCE)))
+        .addMethod(
             getListChangelogsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -6598,6 +6726,7 @@ public final class AgentServiceGrpc {
                       .addMethod(getCreateAppVersionMethod())
                       .addMethod(getDeleteAppVersionMethod())
                       .addMethod(getRestoreAppVersionMethod())
+                      .addMethod(getGenerateAppResourceMethod())
                       .addMethod(getListChangelogsMethod())
                       .addMethod(getGetChangelogMethod())
                       .build();
