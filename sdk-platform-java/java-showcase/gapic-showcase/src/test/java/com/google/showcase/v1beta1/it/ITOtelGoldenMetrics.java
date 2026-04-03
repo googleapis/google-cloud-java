@@ -398,7 +398,7 @@ class ITOtelGoldenMetrics {
   }
 
   @Test
-  void testMetrics_zeroDeadline_grpc() throws Exception {
+  void testMetrics_clientTimeout_grpc() throws Exception {
     GoldenSignalsMetricsTracerFactory tracerFactory =
         new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
 
@@ -444,7 +444,7 @@ class ITOtelGoldenMetrics {
   }
 
   @Test
-  void testMetrics_zeroDeadline_httpjson() throws Exception {
+  void testMetrics_clientTimeout_httpjson() throws Exception {
     GoldenSignalsMetricsTracerFactory tracerFactory =
         new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
 
@@ -488,7 +488,7 @@ class ITOtelGoldenMetrics {
   }
 
   @Test
-  void testMetrics_retryAndSucceed_grpc() throws Exception {
+  void testMetrics_retryShouldResultInOneMetric_grpc() throws Exception {
     GoldenSignalsMetricsTracerFactory tracerFactory =
         new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
 
@@ -566,7 +566,7 @@ class ITOtelGoldenMetrics {
   }
 
   @Test
-  void testMetrics_retryAndSucceed_httpjson() throws Exception {
+  void testMetrics_retryShouldResultInOneMetric_httpjson() throws Exception {
     GoldenSignalsMetricsTracerFactory tracerFactory =
         new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
 
