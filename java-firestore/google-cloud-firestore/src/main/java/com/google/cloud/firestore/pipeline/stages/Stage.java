@@ -31,7 +31,8 @@ public abstract class Stage {
     this.options = options;
   }
 
-  final Pipeline.Stage toStageProto() {
+  @com.google.api.core.InternalApi
+  public final Pipeline.Stage toStageProto() {
     return Pipeline.Stage.newBuilder()
         .setName(name)
         .addAllArgs(toStageArgs())

@@ -54,6 +54,7 @@ import com.google.cloud.firestore.pipeline.stages.RawStage;
 import com.google.cloud.firestore.pipeline.stages.RemoveFields;
 import com.google.cloud.firestore.pipeline.stages.ReplaceWith;
 import com.google.cloud.firestore.pipeline.stages.Sample;
+import com.google.cloud.firestore.pipeline.stages.Search;
 import com.google.cloud.firestore.pipeline.stages.Select;
 import com.google.cloud.firestore.pipeline.stages.Sort;
 import com.google.cloud.firestore.pipeline.stages.Stage;
@@ -221,6 +222,21 @@ public final class Pipeline {
 
   private Pipeline append(Stage stage) {
     return new Pipeline(this.rpcContext, stages.append(stage));
+  }
+
+  /**
+   * Adds a search stage to the Pipeline.
+   *
+   * <p>This must be the first stage of the pipeline.
+   *
+   * <p>A limited set of expressions are supported in the search stage.
+   *
+   * @param searchStage An object that specifies how search is performed.
+   * @return A new {@code Pipeline} object with this stage appended to the stage list.
+   */
+  @BetaApi
+  public Pipeline search(Search searchStage) {
+    return append(searchStage);
   }
 
   /**
@@ -1575,9 +1591,9 @@ public final class Pipeline {
   }
 
   @InternalApi
-  private com.google.firestore.v1.Pipeline toProto() {
+  public com.google.firestore.v1.Pipeline toProto() {
     return com.google.firestore.v1.Pipeline.newBuilder()
-        .addAllStages(stages.transform(StageUtils::toStageProto))
+        .addAllStages(stages.transform(Stage::toStageProto))
         .build();
   }
 

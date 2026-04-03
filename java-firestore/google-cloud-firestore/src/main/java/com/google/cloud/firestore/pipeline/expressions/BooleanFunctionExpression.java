@@ -36,6 +36,11 @@ class BooleanFunctionExpression extends BooleanExpression {
     this(new FunctionExpression(name, java.util.Arrays.asList(params)));
   }
 
+  BooleanFunctionExpression(
+      String name, List<? extends Expression> params, java.util.Map<String, Value> options) {
+    this(new FunctionExpression(name, params, options));
+  }
+
   @Override
   Value toProto() {
     return expr.toProto();

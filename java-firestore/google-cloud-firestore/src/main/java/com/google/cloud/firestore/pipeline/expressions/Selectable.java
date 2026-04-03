@@ -19,4 +19,24 @@ package com.google.cloud.firestore.pipeline.expressions;
 import com.google.api.core.BetaApi;
 
 @BetaApi
-public interface Selectable {}
+public interface Selectable {
+  /**
+   * Converts an object to a {@link Selectable}.
+   *
+   * @param o The object to convert. Supported types: {@link Selectable}, {@link String}, {@link
+   *     com.google.cloud.firestore.FieldPath}.
+   * @return The converted {@link Selectable}.
+   */
+  @com.google.api.core.InternalApi
+  static Selectable toSelectable(Object o) {
+    if (o instanceof Selectable) {
+      return (Selectable) o;
+    } else if (o instanceof String) {
+      return Expression.field((String) o);
+    } else if (o instanceof com.google.cloud.firestore.FieldPath) {
+      return Expression.field((com.google.cloud.firestore.FieldPath) o);
+    } else {
+      throw new IllegalArgumentException("Unknown Selectable type: " + o.getClass().getName());
+    }
+  }
+}

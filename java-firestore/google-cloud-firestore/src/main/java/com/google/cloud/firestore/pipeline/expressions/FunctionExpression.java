@@ -18,9 +18,7 @@ package com.google.cloud.firestore.pipeline.expressions;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
-import com.google.common.base.Objects;
 import com.google.firestore.v1.Value;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,10 +26,18 @@ import java.util.stream.Collectors;
 public class FunctionExpression extends Expression {
   private final String name;
   private final List<Expression> params;
+  private final java.util.Map<String, Value> options;
 
   public FunctionExpression(String name, List<? extends Expression> params) {
+    this(name, params, java.util.Collections.emptyMap());
+  }
+
+  @InternalApi
+  FunctionExpression(
+      String name, List<? extends Expression> params, java.util.Map<String, Value> options) {
     this.name = name;
-    this.params = Collections.unmodifiableList(params);
+    this.params = java.util.Collections.unmodifiableList(params);
+    this.options = java.util.Collections.unmodifiableMap(options);
   }
 
   @InternalApi
@@ -44,7 +50,8 @@ public class FunctionExpression extends Expression {
                 .addAllArgs(
                     this.params.stream()
                         .map(FunctionUtils::exprToValue)
-                        .collect(Collectors.toList())))
+                        .collect(Collectors.toList()))
+                .putAllOptions(this.options))
         .build();
   }
 
@@ -53,11 +60,13 @@ public class FunctionExpression extends Expression {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     FunctionExpression that = (FunctionExpression) o;
-    return Objects.equal(name, that.name) && Objects.equal(params, that.params);
+    return java.util.Objects.equals(name, that.name)
+        && java.util.Objects.equals(params, that.params)
+        && java.util.Objects.equals(options, that.options);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(name, params);
+    return java.util.Objects.hash(name, params, options);
   }
 }

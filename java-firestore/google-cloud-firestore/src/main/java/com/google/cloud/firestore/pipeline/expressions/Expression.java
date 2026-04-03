@@ -121,7 +121,7 @@ public abstract class Expression {
    */
   @BetaApi
   public static BooleanExpression constant(Boolean value) {
-    return equal(new Constant(value), true);
+    return new BooleanConstant(new Constant(value));
   }
 
   /**
@@ -4591,6 +4591,200 @@ public abstract class Expression {
   @BetaApi
   public static BooleanExpression isError(Expression expr) {
     return new BooleanFunctionExpression("is_error", expr);
+  }
+
+  /**
+   * Evaluates to the distance in meters between the location in the specified field and the query
+   * location.
+   *
+   * <p>This Expression can only be used within a {@code Search} stage.
+   *
+   * @param fieldName Specifies the field in the document which contains the first {@link GeoPoint}
+   *     for distance computation.
+   * @param location Compute distance to this {@link GeoPoint}.
+   * @return A new {@link Expression} representing the geoDistance operation.
+   */
+  @BetaApi
+  public static Expression geoDistance(String fieldName, GeoPoint location) {
+    return geoDistance(field(fieldName), location);
+  }
+
+  /**
+   * Evaluates to the distance in meters between the location in the specified field and the query
+   * location.
+   *
+   * <p>This Expression can only be used within a {@code Search} stage.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * db.pipeline().collection("restaurants").search(
+   *   Search.withQuery("waffles").withSort(geoDistance(field("location"), new GeoPoint(37.0, -122.0)).ascending())
+   * )
+   * }</pre>
+   *
+   * @param field Specifies the field in the document which contains the first {@link GeoPoint} for
+   *     distance computation.
+   * @param location Compute distance to this {@link GeoPoint}.
+   * @return A new {@link Expression} representing the geoDistance operation.
+   */
+  @BetaApi
+  public static Expression geoDistance(Field field, GeoPoint location) {
+    return new FunctionExpression(
+        "geo_distance", java.util.Arrays.asList(field, constant(location)));
+  }
+
+  /**
+   * Perform a full-text search on all indexed search fields in the document.
+   *
+   * <p>This Expression can only be used within a {@code Search} stage.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * db.pipeline().collection("restaurants").search(Search.withQuery(documentMatches("waffles OR pancakes")))
+   * }</pre>
+   *
+   * @param rquery Define the search query using the search domain-specific language (DSL).
+   * @return A new {@link BooleanExpression} representing the documentMatches operation.
+   */
+  @BetaApi
+  public static BooleanExpression documentMatches(String rquery) {
+    return new BooleanFunctionExpression("document_matches", constant(rquery));
+  }
+
+  /**
+   * Perform a full-text search on the specified field.
+   *
+   * <p>This Expression can only be used within a {@code Search} stage.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * db.pipeline().collection("restaurants").search(Search.withQuery(matches("menu", "waffles")))
+   * }</pre>
+   *
+   * @param fieldName Perform search on this field.
+   * @param rquery Define the search query using the search domain-specific language (DSL).
+   */
+  @InternalApi
+  static BooleanExpression matches(String fieldName, String rquery) {
+    return matches(field(fieldName), rquery);
+  }
+
+  /**
+   * Perform a full-text search on the specified field.
+   *
+   * <p>This Expression can only be used within a {@code Search} stage.
+   *
+   * @param field Perform search on this field.
+   * @param rquery Define the search query using the search domain-specific language (DSL).
+   */
+  @InternalApi
+  static BooleanExpression matches(Field field, String rquery) {
+    return new BooleanFunctionExpression("matches", field, constant(rquery));
+  }
+
+  /**
+   * Evaluates to the search score that reflects the topicality of the document to all of the text
+   * predicates (for example: {@code documentMatches}) in the search query.
+   *
+   * <p>This Expression can only be used within a {@code Search} stage.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * db.pipeline().collection("restaurants").search(
+   *   Search.withQuery("waffles").withSort(score().descending())
+   * )
+   * }</pre>
+   *
+   * @return A new {@link Expression} representing the score operation.
+   */
+  @BetaApi
+  public static Expression score() {
+    return new FunctionExpression("score", com.google.common.collect.ImmutableList.of());
+  }
+
+  /**
+   * Evaluates to an HTML-formatted text snippet that highlights terms matching the search query in
+   * {@code <b>bold</b>}.
+   *
+   * <p>This Expression can only be used within a {@code Search} stage.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * db.pipeline().collection("restaurants").search(
+   *   Search.withQuery("waffles").withAddFields(snippet("menu", "waffles").as("snippet"))
+   * )
+   * }</pre>
+   *
+   * @param fieldName Search the specified field for matching terms.
+   * @param rquery Define the search query using the search domain-specific language (DSL).
+   * @return A new {@link Expression} representing the snippet operation.
+   */
+  @BetaApi
+  public static Expression snippet(String fieldName, String rquery) {
+    return new FunctionExpression(
+        "snippet", java.util.Arrays.asList(field(fieldName), constant(rquery)));
+  }
+
+  /**
+   * Evaluates to an HTML-formatted text snippet that highlights terms matching the search query in
+   * {@code <b>bold</b>}.
+   *
+   * <p>This Expression can only be used within a {@code Search} stage.
+   *
+   * <p>Example:
+   *
+   * <pre>{@code
+   * db.pipeline().collection("restaurants").search(
+   *   Search.withQuery("waffles").withAddFields(field("menu").snippet("waffles").as("snippet"))
+   * )
+   * }</pre>
+   *
+   * @param rquery Define the search query using the search domain-specific language (DSL).
+   * @return A new {@link Expression} representing the snippet operation.
+   */
+  @BetaApi
+  public final Expression snippet(String rquery) {
+    return new FunctionExpression(
+        "snippet",
+        java.util.Arrays.asList(this, constant(rquery)),
+        java.util.Collections.singletonMap(
+            "query", com.google.cloud.firestore.PipelineUtils.encodeValue(rquery)));
+  }
+
+  @InternalApi
+  static BooleanExpression between(String fieldName, Expression lowerBound, Expression upperBound) {
+    return between(field(fieldName), lowerBound, upperBound);
+  }
+
+  @InternalApi
+  static BooleanExpression between(String fieldName, Object lowerBound, Object upperBound) {
+    return between(fieldName, toExprOrConstant(lowerBound), toExprOrConstant(upperBound));
+  }
+
+  @InternalApi
+  static BooleanExpression between(
+      Expression expression, Expression lowerBound, Expression upperBound) {
+    return new BooleanFunctionExpression("between", expression, lowerBound, upperBound);
+  }
+
+  @InternalApi
+  static BooleanExpression between(Expression expression, Object lowerBound, Object upperBound) {
+    return between(expression, toExprOrConstant(lowerBound), toExprOrConstant(upperBound));
+  }
+
+  @InternalApi
+  public final BooleanExpression between(Expression lowerBound, Expression upperBound) {
+    return Expression.between(this, lowerBound, upperBound);
+  }
+
+  @InternalApi
+  public final BooleanExpression between(Object lowerBound, Object upperBound) {
+    return Expression.between(this, lowerBound, upperBound);
   }
 
   // Other Utility Functions

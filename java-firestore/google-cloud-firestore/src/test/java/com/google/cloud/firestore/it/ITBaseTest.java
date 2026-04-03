@@ -79,8 +79,7 @@ public abstract class ITBaseTest {
     return FirestoreEdition.valueOf(firestoreEdition.toUpperCase());
   }
 
-  @Before
-  public void before() throws Exception {
+  public static FirestoreOptions.Builder getOptionsBuilder() {
     FirestoreOptions.Builder optionsBuilder = FirestoreOptions.newBuilder();
 
     String dbPropertyName = "FIRESTORE_NAMED_DATABASE";
@@ -110,8 +109,12 @@ public abstract class ITBaseTest {
         optionsBuilder.setEmulatorHost("localhost:8080");
       }
     }
+    return optionsBuilder;
+  }
 
-    firestoreOptions = optionsBuilder.build();
+  @Before
+  public void before() throws Exception {
+    firestoreOptions = getOptionsBuilder().build();
     logger.log(
         Level.INFO,
         "Integration test against " + firestoreOptions.getTransportChannelProvider().getEndpoint());
