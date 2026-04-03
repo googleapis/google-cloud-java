@@ -35,16 +35,13 @@ import static org.junit.Assert.assertThrows;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.gax.tracing.GoldenSignalsMetricsTracerFactory;
 import com.google.api.gax.tracing.ObservabilityAttributes;
 import com.google.common.collect.ImmutableList;
-import com.google.rpc.Status;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
-import com.google.showcase.v1beta1.EchoResponse;
 import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
@@ -52,8 +49,8 @@ import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
 import io.grpc.ClientInterceptor;
-import io.grpc.MethodDescriptor;
 import io.grpc.Metadata;
+import io.grpc.MethodDescriptor;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
@@ -103,7 +100,8 @@ class ITOtelGoldenMetrics {
 
       // The end of an operation is tracked in a separate thread.
       // Add a small sleep to make sure the tracking is completed.
-      // This is implemented by adding a TraceFinisher to ApiFuture as a callback in TracedUnaryCallable,
+      // This is implemented by adding a TraceFinisher to ApiFuture as a callback in
+      // TracedUnaryCallable,
       // which could be executed in a different thread.
       Thread.sleep(100);
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
@@ -122,22 +120,27 @@ class ITOtelGoldenMetrics {
           durationMetric.getHistogramData().getPoints().iterator().next().getAttributes();
 
       assertThat(
-              attributes.get(AttributeKey.stringKey(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE)))
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE)))
           .isEqualTo(SHOWCASE_SERVER_ADDRESS);
       assertThat(
               attributes.get(AttributeKey.longKey(ObservabilityAttributes.SERVER_PORT_ATTRIBUTE)))
           .isEqualTo(SHOWCASE_SERVER_PORT);
       assertThat(
-              attributes.get(AttributeKey.stringKey(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE)))
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE)))
           .isEqualTo("grpc");
       assertThat(
-              attributes.get(AttributeKey.stringKey(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE)))
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE)))
           .isEqualTo("showcase");
       assertThat(
-              attributes.get(AttributeKey.stringKey(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE)))
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE)))
           .isEqualTo("google.showcase.v1beta1.Echo/Echo");
       assertThat(
-              attributes.get(AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
           .isEqualTo("OK");
     }
   }
@@ -201,7 +204,8 @@ class ITOtelGoldenMetrics {
           durationMetric.getHistogramData().getPoints().iterator().next().getAttributes();
 
       assertThat(
-              attributes.get(AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
           .isEqualTo("UNAVAILABLE");
       assertThat(
               attributes.get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
@@ -236,29 +240,36 @@ class ITOtelGoldenMetrics {
           durationMetric.getHistogramData().getPoints().iterator().next().getAttributes();
 
       assertThat(
-              attributes.get(AttributeKey.stringKey(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE)))
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE)))
           .isEqualTo(SHOWCASE_SERVER_ADDRESS);
       assertThat(
               attributes.get(AttributeKey.longKey(ObservabilityAttributes.SERVER_PORT_ATTRIBUTE)))
           .isEqualTo(SHOWCASE_SERVER_PORT);
       assertThat(
-              attributes.get(AttributeKey.stringKey(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE)))
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE)))
           .isEqualTo("http");
       assertThat(
-              attributes.get(AttributeKey.stringKey(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE)))
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE)))
           .isEqualTo("showcase");
       assertThat(
-              attributes.get(AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
           .isEqualTo("OK");
       assertThat(
-              attributes.get(AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
+              attributes.get(
+                  AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
           .isEqualTo(200L);
       assertThat(
-              attributes.get(AttributeKey.stringKey(ObservabilityAttributes.URL_TEMPLATE_ATTRIBUTE)))
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.URL_TEMPLATE_ATTRIBUTE)))
           .isEqualTo("v1beta1/echo:echo");
       assertThat(
-              attributes.get(AttributeKey.stringKey(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE)))
-          .isEqualTo("google.showcase.v1beta1.Echo/Echo"); 
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE)))
+          .isEqualTo("google.showcase.v1beta1.Echo/Echo");
     }
   }
 
@@ -369,10 +380,12 @@ class ITOtelGoldenMetrics {
           durationMetric.getHistogramData().getPoints().iterator().next().getAttributes();
 
       assertThat(
-              attributes.get(AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
           .isEqualTo("UNAVAILABLE");
       assertThat(
-              attributes.get(AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
+              attributes.get(
+                  AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
           .isEqualTo(503L);
       assertThat(
               attributes.get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))

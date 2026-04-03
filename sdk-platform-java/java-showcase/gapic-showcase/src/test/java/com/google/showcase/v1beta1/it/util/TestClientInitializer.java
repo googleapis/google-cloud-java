@@ -38,7 +38,6 @@ import com.google.showcase.v1beta1.stub.EchoStub;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannelBuilder;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
@@ -371,9 +370,9 @@ public class TestClientInitializer {
   }
 
   private static EchoStub createStubWithServiceName(
-          EchoSettings settings, ApiTracerFactory tracingFactory) throws IOException {
+      EchoSettings settings, ApiTracerFactory tracingFactory) throws IOException {
     EchoStubSettings.Builder builder =
-            (EchoStubSettings.Builder) settings.getStubSettings().toBuilder();
+        (EchoStubSettings.Builder) settings.getStubSettings().toBuilder();
     builder.setTracerFactory(tracingFactory);
     return new ExtendedEchoStubSettings(builder).createStub();
   }

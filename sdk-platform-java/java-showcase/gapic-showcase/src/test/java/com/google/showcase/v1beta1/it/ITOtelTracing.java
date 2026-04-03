@@ -53,9 +53,12 @@ import com.google.showcase.v1beta1.EchoResponse;
 import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.GetUserRequest;
 import com.google.showcase.v1beta1.IdentityClient;
+import com.google.showcase.v1beta1.IdentitySettings;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import com.google.showcase.v1beta1.stub.EchoStub;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
+import com.google.showcase.v1beta1.stub.IdentityStub;
+import com.google.showcase.v1beta1.stub.IdentityStubSettings;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
@@ -115,7 +118,7 @@ class ITOtelTracing {
   private static final String VALUE_GRPC = "grpc";
   private static final String VALUE_HTTP = "http";
   private static final String VALUE_OK = "OK";
-  private static final String VALUE_TEST_USER = "users/test-user";
+  private static final String VALUE_TEST_USER = "//showcase.googleapis.com/users/test-user";
   private static final String VALUE_UNAVAILABLE = "UNAVAILABLE";
   private static final String VALUE_UNAVAILABLE_EXCEPTION = "UnavailableException";
   private static final String VALUE_SERVICE_UNAVAILABLE = "Service Unavailable";
@@ -316,8 +319,10 @@ class ITOtelTracing {
   void testTracing_successfulIdentityGetUser_grpc() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
-    try (IdentityClient client =
-        TestClientInitializer.createGrpcIdentityClientOpentelemetry(tracingFactory)) {
+    IdentitySettings grpcIdentitySettings = createIdentitySettings(false);
+    IdentityStub stub = createIdentityStubWithServiceName(grpcIdentitySettings, tracingFactory);
+
+    try (IdentityClient client = IdentityClient.create(stub)) {
 
       try {
         client.getUser(GetUserRequest.newBuilder().setName("users/test-user").build());
@@ -343,8 +348,10 @@ class ITOtelTracing {
   void testTracing_successfulIdentityGetUser_httpjson() throws Exception {
     SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
 
-    try (IdentityClient client =
-        TestClientInitializer.createHttpJsonIdentityClientOpentelemetry(tracingFactory)) {
+    IdentitySettings httpJsonIdentitySettings = createIdentitySettings(true);
+    IdentityStub stub = createIdentityStubWithServiceName(httpJsonIdentitySettings, tracingFactory);
+
+    try (IdentityClient client = IdentityClient.create(stub)) {
 
       try {
         client.getUser(GetUserRequest.newBuilder().setName("users/test-user").build());
@@ -797,9 +804,52 @@ class ITOtelTracing {
     return new ExtendedEchoStubSettings(builder).createStub();
   }
 
+  private IdentityStub createIdentityStubWithServiceName(
+      IdentitySettings settings, SpanTracerFactory tracingFactory) throws IOException {
+    IdentityStubSettings.Builder builder =
+        (IdentityStubSettings.Builder) settings.getStubSettings().toBuilder();
+    builder.setTracerFactory(tracingFactory);
+    return new ExtendedIdentityStubSettings(builder).createStub();
+  }
+
+  private IdentitySettings createIdentitySettings(boolean isHttpJson) throws Exception {
+    if (isHttpJson) {
+      return IdentitySettings.newHttpJsonBuilder()
+          .setCredentialsProvider(NoCredentialsProvider.create())
+          .setTransportChannelProvider(
+              IdentitySettings.defaultHttpJsonTransportProviderBuilder()
+                  .setHttpTransport(
+                      new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                  .build())
+          .setEndpoint(SHOWCASE_HTTPJSON_ENDPOINT)
+          .build();
+    } else {
+      return IdentitySettings.newBuilder()
+          .setCredentialsProvider(NoCredentialsProvider.create())
+          .setTransportChannelProvider(
+              IdentitySettings.defaultGrpcTransportProviderBuilder()
+                  .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                  .build())
+          .setEndpoint(SHOWCASE_GRPC_ENDPOINT)
+          .build();
+    }
+  }
+
   /** Custom wrapper to set a service name for showcase clients, which lack one by default. */
   private static class ExtendedEchoStubSettings extends EchoStubSettings {
     protected ExtendedEchoStubSettings(EchoStubSettings.Builder builder) throws IOException {
+      super(builder);
+    }
+
+    @Override
+    public String getServiceName() {
+      return "showcase";
+    }
+  }
+
+  private static class ExtendedIdentityStubSettings extends IdentityStubSettings {
+    protected ExtendedIdentityStubSettings(IdentityStubSettings.Builder builder)
+        throws IOException {
       super(builder);
     }
 
