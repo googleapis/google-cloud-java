@@ -74,16 +74,6 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
-        <configuration>
-          <!-- These tests require an Env Var to be set. Use -PenvVarTest to ONLY run these tests -->
-          <excludes>
-            <exclude>**/ITActionableErrorsLogging.java</exclude>
-          </excludes>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
 
@@ -302,7 +292,6 @@
                 <testExclude>**/com/google/showcase/v1beta1/it/*.java</testExclude>
                 <testExclude>**/com/google/showcase/v1beta1/it/logging/ITLoggingDisabled.java</testExclude>
                 <testExclude>**/com/google/showcase/v1beta1/it/logging/ITLogging1x.java</testExclude>
-                <testExclude>**/com/google/showcase/v1beta1/it/logging/ITActionableErrorsLogging.java</testExclude>
               </testExcludes>
             </configuration>
           </plugin>
@@ -414,51 +403,6 @@
               <testIncludes>
                 <testInclude>**/com/google/showcase/v1beta1/it/ITProtobuf3Compatibility.java</testInclude>
               </testIncludes>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-    <profile>
-      <id>envVarTest</id>
-      <dependencies>
-        <dependency>
-          <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-api</artifactId>
-          <scope>test</scope>
-        </dependency>
-      </dependencies>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-              <testExcludes combine.self="override" />
-              <testIncludes>
-                <testInclude>**/ITActionableErrorsLogging.java</testInclude>
-              </testIncludes>
-            </configuration>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-failsafe-plugin</artifactId>
-            <configuration>
-              <!-- Clear excludes so it runs -->
-              <excludes combine.self="override" />
-              <includes>
-                <include>**/ITActionableErrorsLogging.java</include>
-              </includes>
-              <additionalClasspathElements>
-                <additionalClasspathElement>${project.basedir}/src/test/slf4j-test-provider</additionalClasspathElement>
-              </additionalClasspathElements>
-              <classpathDependencyExcludes>
-                <classpathDependencyExclude>ch.qos.logback:logback-classic</classpathDependencyExclude>
-                <classpathDependencyExclude>ch.qos.logback:logback-core</classpathDependencyExclude>
-              </classpathDependencyExcludes>
-              <environmentVariables>
-                <GOOGLE_SDK_JAVA_LOGGING>true</GOOGLE_SDK_JAVA_LOGGING>
-              </environmentVariables>
             </configuration>
           </plugin>
         </plugins>
