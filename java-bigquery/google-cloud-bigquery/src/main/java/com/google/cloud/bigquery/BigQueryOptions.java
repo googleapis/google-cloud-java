@@ -126,7 +126,18 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     /**
      * Enables OpenTelemetry tracing functionality for this BigQuery instance
      *
-     * <p>[TODO] add warning text here
+     * <p><div class="warning"> Traces may contain sensitive data such as resource names, full URLs,
+     * and error messages.
+     *
+     * <p>Before configuring subscribers or exporters for traces, review the contents of the spans
+     * and consult the <a
+     * href="https://opentelemetry.io/docs/security/handling-sensitive-data/">OpenTelemetry
+     * documentation</a> to set up filters and formatters to prevent leaking sensitive information,
+     * depending on your intended use case.
+     *
+     * <p>See also: <a
+     * href="https://opentelemetry.io/docs/concepts/semantic-conventions/">OpenTelemetry Semantic
+     * Conventions</a> </div>
      *
      * @param enableOpenTelemetryTracing enables OpenTelemetry tracing if true
      */
@@ -137,6 +148,19 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
     /**
      * Sets the OpenTelemetry tracer for this BigQuery instance to be tracer.
+     *
+     * <p><div class="warning"> Traces may contain sensitive data such as resource names, full URLs,
+     * and error messages.
+     *
+     * <p>Before configuring subscribers or exporters for traces, review the contents of the spans
+     * and consult the <a
+     * href="https://opentelemetry.io/docs/security/handling-sensitive-data/">OpenTelemetry
+     * documentation</a> to set up filters and formatters to prevent leaking sensitive information,
+     * depending on your intended use case.
+     *
+     * <p>See also: <a
+     * href="https://opentelemetry.io/docs/concepts/semantic-conventions/">OpenTelemetry Semantic
+     * Conventions</a> </div>
      *
      * @param tracer OpenTelemetry tracer to be used
      */
