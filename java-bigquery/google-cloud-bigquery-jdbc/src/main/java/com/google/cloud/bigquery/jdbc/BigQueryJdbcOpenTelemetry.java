@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
 
@@ -29,14 +28,16 @@ public class BigQueryJdbcOpenTelemetry {
    * customOpenTelemetry if provided; fallback to an auto-configured GCP exporter if requested.
    */
   public static OpenTelemetry getOpenTelemetry(
-      boolean enableDefaultTelemetryExporter, OpenTelemetry customOpenTelemetry) {
+      boolean enableGcpTraceExporter,
+      boolean enableGcpLogExporter,
+      OpenTelemetry customOpenTelemetry) {
     if (customOpenTelemetry != null) {
       return customOpenTelemetry;
     }
 
-    if (enableDefaultTelemetryExporter) {
-      // TODO(b/491245568): Initialize and return GCP-specific auto-configured SDK
-      return GlobalOpenTelemetry.get();
+    if (enableGcpTraceExporter || enableGcpLogExporter) {
+      // TODO(b/491238299): Initialize and return GCP-specific auto-configured SDK
+      return OpenTelemetry.noop();
     }
 
     return OpenTelemetry.noop();

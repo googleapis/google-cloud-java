@@ -114,7 +114,8 @@ public class DataSource implements javax.sql.DataSource {
   private String privateServiceConnect;
   private Long connectionPoolSize;
   private Long listenerPoolSize;
-  private Boolean enableDefaultTelemetryExporter;
+  private Boolean enableGcpTraceExporter;
+  private Boolean enableGcpLogExporter;
   private OpenTelemetry customOpenTelemetry;
 
   // Make sure the JDBC driver class is loaded.
@@ -328,12 +329,17 @@ public class DataSource implements javax.sql.DataSource {
               BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME,
               (ds, val) -> ds.setListenerPoolSize(Long.parseLong(val)))
           .put(
-              BigQueryJdbcUrlUtility.ENABLE_DEFAULT_TELEMETRY_EXPORTER_PROPERTY_NAME,
+              BigQueryJdbcUrlUtility.ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME,
               (ds, val) ->
-                  ds.setEnableDefaultTelemetryExporter(
+                  ds.setEnableGcpTraceExporter(
                       BigQueryJdbcUrlUtility.convertIntToBoolean(
-                          val,
-                          BigQueryJdbcUrlUtility.ENABLE_DEFAULT_TELEMETRY_EXPORTER_PROPERTY_NAME)))
+                          val, BigQueryJdbcUrlUtility.ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME)))
+          .put(
+              BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setEnableGcpLogExporter(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME)))
           .build();
 
   public static DataSource fromUrl(String url) {
@@ -630,10 +636,15 @@ public class DataSource implements javax.sql.DataSource {
           BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME,
           String.valueOf(this.listenerPoolSize));
     }
-    if (this.enableDefaultTelemetryExporter != null) {
+    if (this.enableGcpTraceExporter != null) {
       connectionProperties.setProperty(
-          BigQueryJdbcUrlUtility.ENABLE_DEFAULT_TELEMETRY_EXPORTER_PROPERTY_NAME,
-          String.valueOf(this.enableDefaultTelemetryExporter));
+          BigQueryJdbcUrlUtility.ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME,
+          String.valueOf(this.enableGcpTraceExporter));
+    }
+    if (this.enableGcpLogExporter != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME,
+          String.valueOf(this.enableGcpLogExporter));
     }
     return connectionProperties;
   }
@@ -756,14 +767,24 @@ public class DataSource implements javax.sql.DataSource {
     this.listenerPoolSize = listenerPoolSize;
   }
 
-  public Boolean getEnableDefaultTelemetryExporter() {
-    return enableDefaultTelemetryExporter != null
-        ? enableDefaultTelemetryExporter
-        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_DEFAULT_TELEMETRY_EXPORTER_VALUE;
+  public Boolean getEnableGcpTraceExporter() {
+    return enableGcpTraceExporter != null
+        ? enableGcpTraceExporter
+        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GCP_TRACE_EXPORTER_VALUE;
   }
 
-  public void setEnableDefaultTelemetryExporter(Boolean enableDefaultTelemetryExporter) {
-    this.enableDefaultTelemetryExporter = enableDefaultTelemetryExporter;
+  public void setEnableGcpTraceExporter(Boolean enableGcpTraceExporter) {
+    this.enableGcpTraceExporter = enableGcpTraceExporter;
+  }
+
+  public Boolean getEnableGcpLogExporter() {
+    return enableGcpLogExporter != null
+        ? enableGcpLogExporter
+        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GCP_LOG_EXPORTER_VALUE;
+  }
+
+  public void setEnableGcpLogExporter(Boolean enableGcpLogExporter) {
+    this.enableGcpLogExporter = enableGcpLogExporter;
   }
 
   public OpenTelemetry getCustomOpenTelemetry() {
