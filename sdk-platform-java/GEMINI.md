@@ -136,7 +136,7 @@ Showcase integration tests are run against a local server that implements the Sh
 
 1. Minimize scope; avoid `public` unless necessary.
 2. Use short names over fully qualified names.
-3. Avoid `@ObsoleteApi` or `@Deprecated` methods unless necessary.
+3. Avoid calling `@ObsoleteApi` or `@Deprecated` methods unless there are no alternatives.
 4. Avoid unnecessary formatting changes to keep diffs clean.
 5. Use `mvn` for everything other than the `test/integration` folder.
 
