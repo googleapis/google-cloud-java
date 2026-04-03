@@ -220,17 +220,8 @@ public abstract class ApiTracerContext {
     if (rpcSystemName() != null) {
       attributes.put(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE, rpcSystemName());
     }
-    if (!libraryMetadata().isEmpty()) {
-      if (!Strings.isNullOrEmpty(libraryMetadata().repository())) {
-        attributes.put(ObservabilityAttributes.REPO_ATTRIBUTE, libraryMetadata().repository());
-      }
-      if (!Strings.isNullOrEmpty(libraryMetadata().artifactName())) {
-        attributes.put(
-            ObservabilityAttributes.ARTIFACT_ATTRIBUTE, libraryMetadata().artifactName());
-      }
-      if (!Strings.isNullOrEmpty(libraryMetadata().version())) {
-        attributes.put(ObservabilityAttributes.VERSION_ATTRIBUTE, libraryMetadata().version());
-      }
+    if (!libraryMetadata().isEmpty() && !Strings.isNullOrEmpty(libraryMetadata().repository())) {
+      attributes.put(ObservabilityAttributes.REPO_ATTRIBUTE, libraryMetadata().repository());
     }
     if (transport() == Transport.GRPC && !Strings.isNullOrEmpty(fullMethodName())) {
       attributes.put(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE, fullMethodName());
@@ -263,6 +254,9 @@ public abstract class ApiTracerContext {
     }
     if (serverPort() != null) {
       attributes.put(ObservabilityAttributes.SERVER_PORT_ATTRIBUTE, serverPort());
+    }
+    if (!libraryMetadata().isEmpty() && !Strings.isNullOrEmpty(libraryMetadata().repository())) {
+      attributes.put(ObservabilityAttributes.REPO_ATTRIBUTE, libraryMetadata().repository());
     }
     if (!Strings.isNullOrEmpty(serviceName())) {
       attributes.put(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE, serviceName());

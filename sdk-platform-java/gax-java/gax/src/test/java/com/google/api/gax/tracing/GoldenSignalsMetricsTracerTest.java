@@ -138,7 +138,9 @@ class GoldenSignalsMetricsTracerTest {
                 AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE),
                 "CancellationException",
                 AttributeKey.stringKey(RPC_RESPONSE_STATUS_ATTRIBUTE),
-                StatusCode.Code.CANCELLED.toString()));
+                StatusCode.Code.CANCELLED.toString(),
+                AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE),
+                java.util.concurrent.CancellationException.class.getName()));
   }
 
   @Test
@@ -174,7 +176,9 @@ class GoldenSignalsMetricsTracerTest {
                 AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE),
                 "INTERNAL",
                 AttributeKey.stringKey(RPC_RESPONSE_STATUS_ATTRIBUTE),
-                StatusCode.Code.INTERNAL.toString()));
+                StatusCode.Code.INTERNAL.toString(),
+                AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE),
+                com.google.api.gax.rpc.ApiException.class.getName()));
   }
 
   @Test
@@ -194,7 +198,9 @@ class GoldenSignalsMetricsTracerTest {
                 AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE),
                 "CancellationException",
                 AttributeKey.stringKey(RPC_RESPONSE_STATUS_ATTRIBUTE),
-                StatusCode.Code.CANCELLED.toString()));
+                StatusCode.Code.CANCELLED.toString(),
+                AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE),
+                java.util.concurrent.CancellationException.class.getName()));
   }
 
   @Test
@@ -213,7 +219,9 @@ class GoldenSignalsMetricsTracerTest {
                 AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE),
                 "CLIENT_TIMEOUT",
                 AttributeKey.stringKey(RPC_RESPONSE_STATUS_ATTRIBUTE),
-                StatusCode.Code.UNKNOWN.toString()));
+                StatusCode.Code.UNKNOWN.toString(),
+                AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE),
+                java.net.SocketTimeoutException.class.getName()));
   }
 
   @Test
@@ -232,6 +240,8 @@ class GoldenSignalsMetricsTracerTest {
                 AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE),
                 "CLIENT_REQUEST_ERROR",
                 AttributeKey.stringKey(RPC_RESPONSE_STATUS_ATTRIBUTE),
-                StatusCode.Code.UNKNOWN.toString()));
+                StatusCode.Code.UNKNOWN.toString(),
+                AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE),
+                java.lang.IllegalArgumentException.class.getName()));
   }
 }

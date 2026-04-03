@@ -184,7 +184,6 @@ class ITOtelTracing {
       assertThat(attemptSpan.getAttributes().get(RPC_SYSTEM_KEY)).isEqualTo(VALUE_GRPC);
       assertThat(attemptSpan.getAttributes().get(RPC_RESPONSE_STATUS_KEY)).isEqualTo(VALUE_OK);
       assertThat(attemptSpan.getAttributes().get(REPO_KEY)).isEqualTo(SHOWCASE_REPO);
-      assertThat(attemptSpan.getAttributes().get(ARTIFACT_KEY)).isEqualTo(SHOWCASE_ARTIFACT);
 
       assertThat(
               attemptSpan
@@ -255,7 +254,6 @@ class ITOtelTracing {
       assertThat(attemptSpan.getAttributes().get(RPC_SYSTEM_KEY)).isEqualTo(VALUE_HTTP);
       assertThat(attemptSpan.getAttributes().get(HTTP_RESPONSE_STATUS_KEY)).isEqualTo(200L);
       assertThat(attemptSpan.getAttributes().get(REPO_KEY)).isEqualTo(SHOWCASE_REPO);
-      assertThat(attemptSpan.getAttributes().get(ARTIFACT_KEY)).isEqualTo(SHOWCASE_ARTIFACT);
       assertThat(
               attemptSpan
                   .getAttributes()

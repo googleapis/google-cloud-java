@@ -63,28 +63,6 @@ class ApiTracerContextTest {
   }
 
   @Test
-  void testGetAttemptAttributes_artifact() {
-    LibraryMetadata libraryMetadata =
-        LibraryMetadata.newBuilder().setArtifactName("test-artifact").build();
-    ApiTracerContext context =
-        ApiTracerContext.newBuilder().setLibraryMetadata(libraryMetadata).build();
-    Map<String, Object> attributes = context.getAttemptAttributes();
-
-    assertThat(attributes)
-        .containsEntry(ObservabilityAttributes.ARTIFACT_ATTRIBUTE, "test-artifact");
-  }
-
-  @Test
-  void testGetAttemptAttributes_version() {
-    LibraryMetadata libraryMetadata = LibraryMetadata.newBuilder().setVersion("1.2.3").build();
-    ApiTracerContext context =
-        ApiTracerContext.newBuilder().setLibraryMetadata(libraryMetadata).build();
-    Map<String, Object> attributes = context.getAttemptAttributes();
-
-    assertThat(attributes).containsEntry(ObservabilityAttributes.VERSION_ATTRIBUTE, "1.2.3");
-  }
-
-  @Test
   void testGetAttemptAttributes_httpMethod() {
     ApiTracerContext context =
         ApiTracerContext.newBuilder()
