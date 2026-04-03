@@ -32,8 +32,15 @@ package com.google.api.gax.tracing;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.logging.LoggingUtils;
+import com.google.common.annotations.VisibleForTesting;
 
-/** A {@link ApiTracerFactory} that creates instances of {@link LoggingTracer}. */
+/**
+ * A {@link ApiTracerFactory} that creates instances of {@link LoggingTracer}. This class is
+ * intended for internal framework use only. Manual instantiation is discouraged; the lifecycle is
+ * managed automatically by the system, when {@link LoggingUtils#isLoggingEnabled()} returning
+ * {@code true}.
+ */
 @BetaApi
 @InternalApi
 public class LoggingTracerFactory implements ApiTracerFactory {
@@ -57,9 +64,14 @@ public class LoggingTracerFactory implements ApiTracerFactory {
     return new LoggingTracer(apiTracerContext.merge(context));
   }
 
-  @Override
-  public ApiTracerContext getApiTracerContext() {
+  @VisibleForTesting
+  ApiTracerContext getApiTracerContext() {
     return apiTracerContext;
+  }
+
+  @Override
+  public boolean needsContext() {
+    return apiTracerContext == null || apiTracerContext.equals(ApiTracerContext.empty());
   }
 
   @Override

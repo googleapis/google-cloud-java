@@ -80,7 +80,7 @@ class LoggingTracer extends BaseApiTracer {
 
     logContext.put(
         ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE,
-        ObservabilityUtils.extractStatus(error));
+        ObservabilityUtils.extractStatus(error).toString());
 
     ErrorInfo errorInfo = ObservabilityUtils.extractErrorInfo(error);
     if (errorInfo != null) {

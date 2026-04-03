@@ -30,6 +30,7 @@
 
 package com.google.api.gax.tracing;
 
+import com.google.api.client.util.Strings;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import io.opentelemetry.api.trace.Span;
@@ -38,14 +39,12 @@ import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.api.trace.Tracer;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CancellationException;
 
 /** An implementation of {@link ApiTracer} that uses OpenTelemetry to record traces. */
 @BetaApi
 @InternalApi
 public class SpanTracer implements ApiTracer {
-  public static final String LANGUAGE_ATTRIBUTE = "gcp.client.language";
-
-  public static final String DEFAULT_LANGUAGE = "Java";
 
   static final String CONTENT_LENGTH_KEY = "Content-Length";
 
@@ -101,7 +100,6 @@ public class SpanTracer implements ApiTracer {
   }
 
   private void buildAttributes() {
-    this.attemptAttributes.put(LANGUAGE_ATTRIBUTE, DEFAULT_LANGUAGE);
     this.attemptAttributes.putAll(this.apiTracerContext.getAttemptAttributes());
   }
 
@@ -133,7 +131,7 @@ public class SpanTracer implements ApiTracer {
 
   @Override
   public void attemptSucceeded() {
-    endAttempt();
+    recordErrorAndEndAttempt(null);
   }
 
   @Override
@@ -180,29 +178,62 @@ public class SpanTracer implements ApiTracer {
 
   @Override
   public void attemptCancelled() {
-    endAttempt();
+    recordErrorAndEndAttempt(new CancellationException());
   }
 
   @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
-    endAttempt();
+    recordErrorAndEndAttempt(error);
   }
 
   @Override
   public void attemptFailedRetriesExhausted(Throwable error) {
-    endAttempt();
+    recordErrorAndEndAttempt(error);
   }
 
   @Override
   public void attemptPermanentFailure(Throwable error) {
+    recordErrorAndEndAttempt(error);
+  }
+
+  private void recordErrorAndEndAttempt(Throwable error) {
+    if (attemptSpan == null) {
+      return;
+    }
+
+    Map<String, Object> statusAttributes = new HashMap<>();
+    ObservabilityUtils.populateStatusAttributes(
+        statusAttributes, error, this.apiTracerContext.transport());
+    if (!statusAttributes.isEmpty()) {
+      attemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(statusAttributes));
+    }
+
+    if (error == null) {
+      endAttempt();
+      return;
+    }
+
+    attemptSpan.setAttribute(
+        ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, ObservabilityUtils.extractErrorType(error));
+
+    attemptSpan.setAttribute(
+        ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE, error.getClass().getName());
+
+    if (!Strings.isNullOrEmpty(error.getMessage())) {
+      attemptSpan.setAttribute(
+          ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, error.getMessage());
+    }
+
     endAttempt();
   }
 
   private void endAttempt() {
-    if (attemptSpan != null) {
-      attemptSpan.end();
-      attemptSpan = null;
+    if (attemptSpan == null) {
+      return;
     }
+
+    attemptSpan.end();
+    attemptSpan = null;
   }
 
   @Override

@@ -217,6 +217,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
         GrpcCallSettings.<GetJobRequest, Job>newBuilder()
@@ -227,6 +228,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateJobRequest, Job> createJobTransportSettings =
         GrpcCallSettings.<CreateJobRequest, Job>newBuilder()
@@ -237,6 +239,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateJobRequest, Job> updateJobTransportSettings =
         GrpcCallSettings.<UpdateJobRequest, Job>newBuilder()
@@ -257,6 +260,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PauseJobRequest, Job> pauseJobTransportSettings =
         GrpcCallSettings.<PauseJobRequest, Job>newBuilder()
@@ -267,6 +271,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResumeJobRequest, Job> resumeJobTransportSettings =
         GrpcCallSettings.<ResumeJobRequest, Job>newBuilder()
@@ -277,6 +282,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RunJobRequest, Job> runJobTransportSettings =
         GrpcCallSettings.<RunJobRequest, Job>newBuilder()
@@ -287,6 +293,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

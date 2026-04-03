@@ -200,6 +200,7 @@ public class GatewayControlStubSettings extends StubSettings<GatewayControlStubS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-connectgateway")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

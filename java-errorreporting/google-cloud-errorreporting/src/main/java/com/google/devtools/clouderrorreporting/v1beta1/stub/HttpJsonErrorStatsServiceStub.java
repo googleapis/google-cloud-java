@@ -249,6 +249,7 @@ public class HttpJsonErrorStatsServiceStub extends ErrorStatsServiceStub {
                       builder.add("project_name", String.valueOf(request.getProjectName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProjectName())
                 .build();
     HttpJsonCallSettings<ListEventsRequest, ListEventsResponse> listEventsTransportSettings =
         HttpJsonCallSettings.<ListEventsRequest, ListEventsResponse>newBuilder()
@@ -260,6 +261,7 @@ public class HttpJsonErrorStatsServiceStub extends ErrorStatsServiceStub {
                   builder.add("project_name", String.valueOf(request.getProjectName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProjectName())
             .build();
     HttpJsonCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsTransportSettings =
         HttpJsonCallSettings.<DeleteEventsRequest, DeleteEventsResponse>newBuilder()
@@ -271,6 +273,7 @@ public class HttpJsonErrorStatsServiceStub extends ErrorStatsServiceStub {
                   builder.add("project_name", String.valueOf(request.getProjectName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProjectName())
             .build();
 
     this.listGroupStatsCallable =

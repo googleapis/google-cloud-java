@@ -434,6 +434,7 @@ public class HttpJsonCaseServiceStub extends CaseServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCasesRequest, ListCasesResponse> listCasesTransportSettings =
         HttpJsonCallSettings.<ListCasesRequest, ListCasesResponse>newBuilder()
@@ -445,6 +446,7 @@ public class HttpJsonCaseServiceStub extends CaseServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<SearchCasesRequest, SearchCasesResponse> searchCasesTransportSettings =
         HttpJsonCallSettings.<SearchCasesRequest, SearchCasesResponse>newBuilder()
@@ -467,6 +469,7 @@ public class HttpJsonCaseServiceStub extends CaseServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateCaseRequest, Case> updateCaseTransportSettings =
         HttpJsonCallSettings.<UpdateCaseRequest, Case>newBuilder()
@@ -489,6 +492,7 @@ public class HttpJsonCaseServiceStub extends CaseServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CloseCaseRequest, Case> closeCaseTransportSettings =
         HttpJsonCallSettings.<CloseCaseRequest, Case>newBuilder()
@@ -500,6 +504,7 @@ public class HttpJsonCaseServiceStub extends CaseServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SearchCaseClassificationsRequest, SearchCaseClassificationsResponse>
         searchCaseClassificationsTransportSettings =

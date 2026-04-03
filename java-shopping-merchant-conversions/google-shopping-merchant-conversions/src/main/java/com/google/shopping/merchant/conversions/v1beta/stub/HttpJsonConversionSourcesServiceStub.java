@@ -359,6 +359,7 @@ public class HttpJsonConversionSourcesServiceStub extends ConversionSourcesServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateConversionSourceRequest, ConversionSource>
         updateConversionSourceTransportSettings =
@@ -385,6 +386,7 @@ public class HttpJsonConversionSourcesServiceStub extends ConversionSourcesServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UndeleteConversionSourceRequest, ConversionSource>
         undeleteConversionSourceTransportSettings =
@@ -397,6 +399,7 @@ public class HttpJsonConversionSourcesServiceStub extends ConversionSourcesServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetConversionSourceRequest, ConversionSource>
         getConversionSourceTransportSettings =
@@ -409,6 +412,7 @@ public class HttpJsonConversionSourcesServiceStub extends ConversionSourcesServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListConversionSourcesRequest, ListConversionSourcesResponse>
         listConversionSourcesTransportSettings =
@@ -422,6 +426,7 @@ public class HttpJsonConversionSourcesServiceStub extends ConversionSourcesServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createConversionSourceCallable =

@@ -253,6 +253,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ResetAdminPasswordRequest, ResetAdminPasswordResponse>
         resetAdminPasswordTransportSettings =
@@ -264,6 +265,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDomainsRequest, ListDomainsResponse> listDomainsTransportSettings =
         GrpcCallSettings.<ListDomainsRequest, ListDomainsResponse>newBuilder()
@@ -274,6 +276,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetDomainRequest, Domain> getDomainTransportSettings =
         GrpcCallSettings.<GetDomainRequest, Domain>newBuilder()
@@ -284,6 +287,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDomainRequest, Operation> updateDomainTransportSettings =
         GrpcCallSettings.<UpdateDomainRequest, Operation>newBuilder()
@@ -304,6 +308,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AttachTrustRequest, Operation> attachTrustTransportSettings =
         GrpcCallSettings.<AttachTrustRequest, Operation>newBuilder()
@@ -314,6 +319,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ReconfigureTrustRequest, Operation> reconfigureTrustTransportSettings =
         GrpcCallSettings.<ReconfigureTrustRequest, Operation>newBuilder()
@@ -324,6 +330,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DetachTrustRequest, Operation> detachTrustTransportSettings =
         GrpcCallSettings.<DetachTrustRequest, Operation>newBuilder()
@@ -334,6 +341,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ValidateTrustRequest, Operation> validateTrustTransportSettings =
         GrpcCallSettings.<ValidateTrustRequest, Operation>newBuilder()
@@ -344,6 +352,7 @@ public class GrpcManagedIdentitiesServiceStub extends ManagedIdentitiesServiceSt
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createMicrosoftAdDomainCallable =

@@ -45,6 +45,7 @@ import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.GenericData;
 import com.google.api.core.InternalApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.ServiceAccountSigner;
 import com.google.auth.http.HttpCredentialsAdapter;
@@ -59,9 +60,9 @@ import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.DateTimeException;
+import java.time.Instant;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
@@ -101,7 +102,6 @@ public class ImpersonatedCredentials extends GoogleCredentials
     implements ServiceAccountSigner, IdTokenProvider {
 
   private static final long serialVersionUID = -2133257318957488431L;
-  private static final String RFC3339 = "yyyy-MM-dd'T'HH:mm:ssX";
   private static final int TWELVE_HOURS_IN_SECONDS = 43200;
   private static final int DEFAULT_LIFETIME_IN_SECONDS = 3600;
   private GoogleCredentials sourceCredentials;
@@ -510,12 +510,16 @@ public class ImpersonatedCredentials extends GoogleCredentials
   }
 
   /**
-   * Clones the impersonated credentials with a new calendar.
+   * This method is marked obsolete. There is no alternative to setting a custom calendar for the
+   * Credential.
+   *
+   * <p>Clones the impersonated credentials with a new calendar.
    *
    * @param calendar the calendar that will be used by the new ImpersonatedCredentials instance when
    *     parsing the received expiration time of the refreshed access token
    * @return the cloned impersonated credentials with the given custom calendar
    */
+  @ObsoleteApi("This method is obsolete and will be removed in a future release.")
   public ImpersonatedCredentials createWithCustomCalendar(Calendar calendar) {
     return toBuilder()
         .setScopes(this.scopes)
@@ -660,14 +664,23 @@ public class ImpersonatedCredentials extends GoogleCredentials
     String expireTime =
         OAuth2Utils.validateString(responseData, "expireTime", "Expected to find an expireTime");
 
-    DateFormat format = new SimpleDateFormat(RFC3339);
-    format.setCalendar(calendar);
+    Instant expirationInstant;
     try {
-      Date date = format.parse(expireTime);
-      return new AccessToken(accessToken, date);
-    } catch (ParseException pe) {
-      throw new IOException("Error parsing expireTime: " + pe.getMessage());
+      if (calendar != null) {
+        // For backward compatibility, if a custom calendar is set, use its timezone
+        // and convert it to an Instant
+        expirationInstant =
+            Instant.from(
+                DateTimeFormatter.ISO_INSTANT
+                    .withZone(calendar.getTimeZone().toZoneId())
+                    .parse(expireTime));
+      } else {
+        expirationInstant = Instant.parse(expireTime);
+      }
+    } catch (DateTimeException e) {
+      throw new IOException("Error parsing expireTime: " + expireTime, e);
     }
+    return new AccessToken(accessToken, Date.from(expirationInstant));
   }
 
   /**
@@ -883,7 +896,17 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return this;
     }
 
+    /**
+     * This method is marked obsolete. There is no alternative to setting a custom calendar for the
+     * Credential.
+     *
+     * <p>Sets the calendar to be used for parsing the expiration time.
+     *
+     * @param calendar the calendar to use
+     * @return the builder
+     */
     @CanIgnoreReturnValue
+    @ObsoleteApi("This method is obsolete and will be removed in a future release.")
     public Builder setCalendar(Calendar calendar) {
       this.calendar = calendar;
       return this;
@@ -903,6 +926,15 @@ public class ImpersonatedCredentials extends GoogleCredentials
       return this;
     }
 
+    /**
+     * This method is marked obsolete. There is no alternative to getting a custom calendar for the
+     * Credential.
+     *
+     * <p>Returns the calendar to be used for parsing the expiration time.
+     *
+     * @return the calendar
+     */
+    @ObsoleteApi("This method is obsolete and will be removed in a future release.")
     public Calendar getCalendar() {
       return this.calendar;
     }

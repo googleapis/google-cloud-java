@@ -283,6 +283,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DetectLanguageRequest, DetectLanguageResponse>
         detectLanguageTransportSettings =
@@ -294,6 +295,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetSupportedLanguagesRequest, SupportedLanguages>
         getSupportedLanguagesTransportSettings =
@@ -305,6 +307,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<TranslateDocumentRequest, TranslateDocumentResponse>
         translateDocumentTransportSettings =
@@ -316,6 +319,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<BatchTranslateTextRequest, Operation> batchTranslateTextTransportSettings =
         GrpcCallSettings.<BatchTranslateTextRequest, Operation>newBuilder()
@@ -326,6 +330,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchTranslateDocumentRequest, Operation>
         batchTranslateDocumentTransportSettings =
@@ -337,6 +342,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateGlossaryRequest, Operation> createGlossaryTransportSettings =
         GrpcCallSettings.<CreateGlossaryRequest, Operation>newBuilder()
@@ -347,6 +353,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListGlossariesRequest, ListGlossariesResponse>
         listGlossariesTransportSettings =
@@ -358,6 +365,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetGlossaryRequest, Glossary> getGlossaryTransportSettings =
         GrpcCallSettings.<GetGlossaryRequest, Glossary>newBuilder()
@@ -368,6 +376,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteGlossaryRequest, Operation> deleteGlossaryTransportSettings =
         GrpcCallSettings.<DeleteGlossaryRequest, Operation>newBuilder()
@@ -378,6 +387,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RefineTextRequest, RefineTextResponse> refineTextTransportSettings =
         GrpcCallSettings.<RefineTextRequest, RefineTextResponse>newBuilder()
@@ -388,6 +398,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.translateTextCallable =

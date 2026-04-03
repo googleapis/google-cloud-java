@@ -87,10 +87,7 @@ public class ITBigQueryJDBCTest extends ITBase {
       "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
           + PROJECT_ID
           + ";OAUTHTYPE=3";
-  static final String session_enabled_connection_uri =
-      "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-          + PROJECT_ID
-          + ";OAUTHTYPE=3;EnableSession=1";
+  static final String session_enabled_connection_uri = connection_uri + ";EnableSession=1";
   private static final String BASE_QUERY =
       "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 order by"
           + " trip_distance asc LIMIT %s";
@@ -3715,6 +3712,63 @@ public class ITBigQueryJDBCTest extends ITBase {
     assertFalse(rs.next());
     assertFalse(bigQueryStatement.getMoreResults());
     assertEquals(-1, bigQueryStatement.getUpdateCount());
+  }
+
+  @Test
+  public void testExecuteSingleSelectMoreResultsBehavior() throws SQLException {
+    String sql = "SELECT 1;";
+    assertTrue(bigQueryStatement.execute(sql));
+    ResultSet rs = bigQueryStatement.getResultSet();
+    assertNotNull(rs);
+    assertTrue(rs.next());
+    assertEquals(1, rs.getInt(1));
+    assertFalse(rs.next());
+
+    // Validate no more results reset update count to -1
+    assertFalse(bigQueryStatement.getMoreResults());
+    assertEquals(-1, bigQueryStatement.getUpdateCount());
+  }
+
+  @Test
+  public void testExecuteSingleInsertMoreResultsBehavior() throws SQLException {
+    String tableName = "test_insert_more_results_" + System.currentTimeMillis();
+    String createSql =
+        String.format("CREATE OR REPLACE TABLE %s.%s (id INT64);", DATASET, tableName);
+    String insertSql = String.format("INSERT INTO %s.%s (id) VALUES (1);", DATASET, tableName);
+    String dropSql = String.format("DROP TABLE IF EXISTS %s.%s;", DATASET, tableName);
+
+    try {
+      bigQueryStatement.execute(createSql);
+
+      assertFalse(bigQueryStatement.execute(insertSql));
+      assertNull(bigQueryStatement.getResultSet());
+      assertTrue(bigQueryStatement.getUpdateCount() > 0);
+
+      // Validate no more results reset update count to -1
+      assertFalse(bigQueryStatement.getMoreResults());
+      assertEquals(-1, bigQueryStatement.getUpdateCount());
+    } finally {
+      bigQueryStatement.execute(dropSql);
+    }
+  }
+
+  @Test
+  public void testExecuteSingleTclMoreResultsBehavior() throws SQLException {
+    Connection sessionConnection = DriverManager.getConnection(session_enabled_connection_uri);
+    Statement sessionStatement = sessionConnection.createStatement();
+
+    try {
+      assertFalse(sessionStatement.execute("START TRANSACTION;"));
+      assertNull(sessionStatement.getResultSet());
+      assertEquals(0, sessionStatement.getUpdateCount());
+
+      // Validate no more results reset update count to -1
+      assertFalse(sessionStatement.getMoreResults());
+      assertEquals(-1, sessionStatement.getUpdateCount());
+    } finally {
+      sessionStatement.close();
+      sessionConnection.close();
+    }
   }
 
   @Test

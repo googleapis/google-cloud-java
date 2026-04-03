@@ -231,6 +231,7 @@ public class HttpJsonLocalInventoryServiceStub extends LocalInventoryServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<InsertLocalInventoryRequest, LocalInventory>
         insertLocalInventoryTransportSettings =
@@ -243,6 +244,7 @@ public class HttpJsonLocalInventoryServiceStub extends LocalInventoryServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteLocalInventoryRequest, Empty> deleteLocalInventoryTransportSettings =
         HttpJsonCallSettings.<DeleteLocalInventoryRequest, Empty>newBuilder()
@@ -254,6 +256,7 @@ public class HttpJsonLocalInventoryServiceStub extends LocalInventoryServiceStub
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listLocalInventoriesCallable =

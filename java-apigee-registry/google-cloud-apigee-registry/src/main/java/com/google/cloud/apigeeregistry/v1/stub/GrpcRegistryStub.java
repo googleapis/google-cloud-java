@@ -650,6 +650,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetApiRequest, Api> getApiTransportSettings =
         GrpcCallSettings.<GetApiRequest, Api>newBuilder()
@@ -660,6 +661,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateApiRequest, Api> createApiTransportSettings =
         GrpcCallSettings.<CreateApiRequest, Api>newBuilder()
@@ -670,6 +672,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateApiRequest, Api> updateApiTransportSettings =
         GrpcCallSettings.<UpdateApiRequest, Api>newBuilder()
@@ -690,6 +693,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListApiVersionsRequest, ListApiVersionsResponse>
         listApiVersionsTransportSettings =
@@ -701,6 +705,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetApiVersionRequest, ApiVersion> getApiVersionTransportSettings =
         GrpcCallSettings.<GetApiVersionRequest, ApiVersion>newBuilder()
@@ -711,6 +716,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateApiVersionRequest, ApiVersion> createApiVersionTransportSettings =
         GrpcCallSettings.<CreateApiVersionRequest, ApiVersion>newBuilder()
@@ -721,6 +727,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateApiVersionRequest, ApiVersion> updateApiVersionTransportSettings =
         GrpcCallSettings.<UpdateApiVersionRequest, ApiVersion>newBuilder()
@@ -742,6 +749,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListApiSpecsRequest, ListApiSpecsResponse> listApiSpecsTransportSettings =
         GrpcCallSettings.<ListApiSpecsRequest, ListApiSpecsResponse>newBuilder()
@@ -752,6 +760,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetApiSpecRequest, ApiSpec> getApiSpecTransportSettings =
         GrpcCallSettings.<GetApiSpecRequest, ApiSpec>newBuilder()
@@ -762,6 +771,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetApiSpecContentsRequest, HttpBody> getApiSpecContentsTransportSettings =
         GrpcCallSettings.<GetApiSpecContentsRequest, HttpBody>newBuilder()
@@ -772,6 +782,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateApiSpecRequest, ApiSpec> createApiSpecTransportSettings =
         GrpcCallSettings.<CreateApiSpecRequest, ApiSpec>newBuilder()
@@ -782,6 +793,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateApiSpecRequest, ApiSpec> updateApiSpecTransportSettings =
         GrpcCallSettings.<UpdateApiSpecRequest, ApiSpec>newBuilder()
@@ -802,6 +814,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<TagApiSpecRevisionRequest, ApiSpec> tagApiSpecRevisionTransportSettings =
         GrpcCallSettings.<TagApiSpecRevisionRequest, ApiSpec>newBuilder()
@@ -812,6 +825,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListApiSpecRevisionsRequest, ListApiSpecRevisionsResponse>
         listApiSpecRevisionsTransportSettings =
@@ -823,6 +837,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RollbackApiSpecRequest, ApiSpec> rollbackApiSpecTransportSettings =
         GrpcCallSettings.<RollbackApiSpecRequest, ApiSpec>newBuilder()
@@ -833,6 +848,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteApiSpecRevisionRequest, ApiSpec> deleteApiSpecRevisionTransportSettings =
         GrpcCallSettings.<DeleteApiSpecRevisionRequest, ApiSpec>newBuilder()
@@ -843,6 +859,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListApiDeploymentsRequest, ListApiDeploymentsResponse>
         listApiDeploymentsTransportSettings =
@@ -854,6 +871,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetApiDeploymentRequest, ApiDeployment> getApiDeploymentTransportSettings =
         GrpcCallSettings.<GetApiDeploymentRequest, ApiDeployment>newBuilder()
@@ -864,6 +882,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateApiDeploymentRequest, ApiDeployment>
         createApiDeploymentTransportSettings =
@@ -875,6 +894,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateApiDeploymentRequest, ApiDeployment>
         updateApiDeploymentTransportSettings =
@@ -898,6 +918,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<TagApiDeploymentRevisionRequest, ApiDeployment>
         tagApiDeploymentRevisionTransportSettings =
@@ -909,6 +930,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListApiDeploymentRevisionsRequest, ListApiDeploymentRevisionsResponse>
         listApiDeploymentRevisionsTransportSettings =
@@ -921,6 +943,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<RollbackApiDeploymentRequest, ApiDeployment>
         rollbackApiDeploymentTransportSettings =
@@ -932,6 +955,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteApiDeploymentRevisionRequest, ApiDeployment>
         deleteApiDeploymentRevisionTransportSettings =
@@ -943,6 +967,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListArtifactsRequest, ListArtifactsResponse> listArtifactsTransportSettings =
         GrpcCallSettings.<ListArtifactsRequest, ListArtifactsResponse>newBuilder()
@@ -953,6 +978,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetArtifactRequest, Artifact> getArtifactTransportSettings =
         GrpcCallSettings.<GetArtifactRequest, Artifact>newBuilder()
@@ -963,6 +989,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetArtifactContentsRequest, HttpBody> getArtifactContentsTransportSettings =
         GrpcCallSettings.<GetArtifactContentsRequest, HttpBody>newBuilder()
@@ -973,6 +1000,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateArtifactRequest, Artifact> createArtifactTransportSettings =
         GrpcCallSettings.<CreateArtifactRequest, Artifact>newBuilder()
@@ -983,6 +1011,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ReplaceArtifactRequest, Artifact> replaceArtifactTransportSettings =
         GrpcCallSettings.<ReplaceArtifactRequest, Artifact>newBuilder()
@@ -1003,6 +1032,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1033,6 +1063,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1043,6 +1074,7 @@ public class GrpcRegistryStub extends RegistryStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1054,6 +1086,7 @@ public class GrpcRegistryStub extends RegistryStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listApisCallable =

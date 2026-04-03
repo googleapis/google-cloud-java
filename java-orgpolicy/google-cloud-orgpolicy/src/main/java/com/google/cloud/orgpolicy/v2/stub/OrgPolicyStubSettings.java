@@ -522,6 +522,7 @@ public class OrgPolicyStubSettings extends StubSettings<OrgPolicyStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-orgpolicy")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

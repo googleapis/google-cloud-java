@@ -25,7 +25,6 @@ package com.google.dataflow.v1beta3;
  *
  * <pre>
  * Describes the state of a metric.
- * Next ID: 14
  * </pre>
  *
  * Protobuf type {@code google.dataflow.v1beta3.MetricUpdate}
@@ -488,6 +487,64 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
     return trie_ == null ? com.google.protobuf.Value.getDefaultInstance() : trie_;
   }
 
+  public static final int BOUNDED_TRIE_FIELD_NUMBER = 14;
+  private com.google.protobuf.Value boundedTrie_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+   * possible value type is a BoundedTrieNode.
+   * Introduced this field to avoid breaking older SDKs when Dataflow service
+   * starts to populate the `bounded_trie` field.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value bounded_trie = 14;</code>
+   *
+   * @return Whether the boundedTrie field is set.
+   */
+  @java.lang.Override
+  public boolean hasBoundedTrie() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+   * possible value type is a BoundedTrieNode.
+   * Introduced this field to avoid breaking older SDKs when Dataflow service
+   * starts to populate the `bounded_trie` field.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value bounded_trie = 14;</code>
+   *
+   * @return The boundedTrie.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Value getBoundedTrie() {
+    return boundedTrie_ == null ? com.google.protobuf.Value.getDefaultInstance() : boundedTrie_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+   * possible value type is a BoundedTrieNode.
+   * Introduced this field to avoid breaking older SDKs when Dataflow service
+   * starts to populate the `bounded_trie` field.
+   * </pre>
+   *
+   * <code>.google.protobuf.Value bounded_trie = 14;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.ValueOrBuilder getBoundedTrieOrBuilder() {
+    return boundedTrie_ == null ? com.google.protobuf.Value.getDefaultInstance() : boundedTrie_;
+  }
+
   public static final int DISTRIBUTION_FIELD_NUMBER = 11;
   private com.google.protobuf.Value distribution_;
 
@@ -504,7 +561,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasDistribution() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -555,7 +612,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasGauge() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -609,7 +666,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasInternal() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -662,7 +719,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
 
   /**
@@ -734,20 +791,23 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(7, getSet());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(8, getInternal());
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(9, getUpdateTime());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(11, getDistribution());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(12, getGauge());
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(13, getTrie());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(14, getBoundedTrie());
     }
     getUnknownFields().writeTo(output);
   }
@@ -779,20 +839,23 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getSet());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getInternal());
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getUpdateTime());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getDistribution());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getGauge());
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getTrie());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getBoundedTrie());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -834,6 +897,10 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
     if (hasTrie() != other.hasTrie()) return false;
     if (hasTrie()) {
       if (!getTrie().equals(other.getTrie())) return false;
+    }
+    if (hasBoundedTrie() != other.hasBoundedTrie()) return false;
+    if (hasBoundedTrie()) {
+      if (!getBoundedTrie().equals(other.getBoundedTrie())) return false;
     }
     if (hasDistribution() != other.hasDistribution()) return false;
     if (hasDistribution()) {
@@ -889,6 +956,10 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
     if (hasTrie()) {
       hash = (37 * hash) + TRIE_FIELD_NUMBER;
       hash = (53 * hash) + getTrie().hashCode();
+    }
+    if (hasBoundedTrie()) {
+      hash = (37 * hash) + BOUNDED_TRIE_FIELD_NUMBER;
+      hash = (53 * hash) + getBoundedTrie().hashCode();
     }
     if (hasDistribution()) {
       hash = (37 * hash) + DISTRIBUTION_FIELD_NUMBER;
@@ -1012,7 +1083,6 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Describes the state of a metric.
-   * Next ID: 14
    * </pre>
    *
    * Protobuf type {@code google.dataflow.v1beta3.MetricUpdate}
@@ -1054,6 +1124,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
         internalGetMeanCountFieldBuilder();
         internalGetSetFieldBuilder();
         internalGetTrieFieldBuilder();
+        internalGetBoundedTrieFieldBuilder();
         internalGetDistributionFieldBuilder();
         internalGetGaugeFieldBuilder();
         internalGetInternalFieldBuilder();
@@ -1096,6 +1167,11 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
       if (trieBuilder_ != null) {
         trieBuilder_.dispose();
         trieBuilder_ = null;
+      }
+      boundedTrie_ = null;
+      if (boundedTrieBuilder_ != null) {
+        boundedTrieBuilder_.dispose();
+        boundedTrieBuilder_ = null;
       }
       distribution_ = null;
       if (distributionBuilder_ != null) {
@@ -1185,21 +1261,26 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.distribution_ =
-            distributionBuilder_ == null ? distribution_ : distributionBuilder_.build();
+        result.boundedTrie_ =
+            boundedTrieBuilder_ == null ? boundedTrie_ : boundedTrieBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.gauge_ = gaugeBuilder_ == null ? gauge_ : gaugeBuilder_.build();
+        result.distribution_ =
+            distributionBuilder_ == null ? distribution_ : distributionBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.internal_ = internalBuilder_ == null ? internal_ : internalBuilder_.build();
+        result.gauge_ = gaugeBuilder_ == null ? gauge_ : gaugeBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        result.internal_ = internalBuilder_ == null ? internal_ : internalBuilder_.build();
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1241,6 +1322,9 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasTrie()) {
         mergeTrie(other.getTrie());
+      }
+      if (other.hasBoundedTrie()) {
+        mergeBoundedTrie(other.getBoundedTrie());
       }
       if (other.hasDistribution()) {
         mergeDistribution(other.getDistribution());
@@ -1327,27 +1411,27 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetInternalFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 74
             case 90:
               {
                 input.readMessage(
                     internalGetDistributionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
             case 98:
               {
                 input.readMessage(internalGetGaugeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 98
             case 106:
@@ -1356,6 +1440,13 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(
+                    internalGetBoundedTrieFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2817,6 +2908,223 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
       return trieBuilder_;
     }
 
+    private com.google.protobuf.Value boundedTrie_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        boundedTrieBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+     * possible value type is a BoundedTrieNode.
+     * Introduced this field to avoid breaking older SDKs when Dataflow service
+     * starts to populate the `bounded_trie` field.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value bounded_trie = 14;</code>
+     *
+     * @return Whether the boundedTrie field is set.
+     */
+    public boolean hasBoundedTrie() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+     * possible value type is a BoundedTrieNode.
+     * Introduced this field to avoid breaking older SDKs when Dataflow service
+     * starts to populate the `bounded_trie` field.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value bounded_trie = 14;</code>
+     *
+     * @return The boundedTrie.
+     */
+    public com.google.protobuf.Value getBoundedTrie() {
+      if (boundedTrieBuilder_ == null) {
+        return boundedTrie_ == null ? com.google.protobuf.Value.getDefaultInstance() : boundedTrie_;
+      } else {
+        return boundedTrieBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+     * possible value type is a BoundedTrieNode.
+     * Introduced this field to avoid breaking older SDKs when Dataflow service
+     * starts to populate the `bounded_trie` field.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value bounded_trie = 14;</code>
+     */
+    public Builder setBoundedTrie(com.google.protobuf.Value value) {
+      if (boundedTrieBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        boundedTrie_ = value;
+      } else {
+        boundedTrieBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+     * possible value type is a BoundedTrieNode.
+     * Introduced this field to avoid breaking older SDKs when Dataflow service
+     * starts to populate the `bounded_trie` field.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value bounded_trie = 14;</code>
+     */
+    public Builder setBoundedTrie(com.google.protobuf.Value.Builder builderForValue) {
+      if (boundedTrieBuilder_ == null) {
+        boundedTrie_ = builderForValue.build();
+      } else {
+        boundedTrieBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+     * possible value type is a BoundedTrieNode.
+     * Introduced this field to avoid breaking older SDKs when Dataflow service
+     * starts to populate the `bounded_trie` field.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value bounded_trie = 14;</code>
+     */
+    public Builder mergeBoundedTrie(com.google.protobuf.Value value) {
+      if (boundedTrieBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && boundedTrie_ != null
+            && boundedTrie_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getBoundedTrieBuilder().mergeFrom(value);
+        } else {
+          boundedTrie_ = value;
+        }
+      } else {
+        boundedTrieBuilder_.mergeFrom(value);
+      }
+      if (boundedTrie_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+     * possible value type is a BoundedTrieNode.
+     * Introduced this field to avoid breaking older SDKs when Dataflow service
+     * starts to populate the `bounded_trie` field.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value bounded_trie = 14;</code>
+     */
+    public Builder clearBoundedTrie() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      boundedTrie_ = null;
+      if (boundedTrieBuilder_ != null) {
+        boundedTrieBuilder_.dispose();
+        boundedTrieBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+     * possible value type is a BoundedTrieNode.
+     * Introduced this field to avoid breaking older SDKs when Dataflow service
+     * starts to populate the `bounded_trie` field.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value bounded_trie = 14;</code>
+     */
+    public com.google.protobuf.Value.Builder getBoundedTrieBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return internalGetBoundedTrieFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+     * possible value type is a BoundedTrieNode.
+     * Introduced this field to avoid breaking older SDKs when Dataflow service
+     * starts to populate the `bounded_trie` field.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value bounded_trie = 14;</code>
+     */
+    public com.google.protobuf.ValueOrBuilder getBoundedTrieOrBuilder() {
+      if (boundedTrieBuilder_ != null) {
+        return boundedTrieBuilder_.getMessageOrBuilder();
+      } else {
+        return boundedTrie_ == null ? com.google.protobuf.Value.getDefaultInstance() : boundedTrie_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Worker-computed aggregate value for the "Trie" aggregation kind.  The only
+     * possible value type is a BoundedTrieNode.
+     * Introduced this field to avoid breaking older SDKs when Dataflow service
+     * starts to populate the `bounded_trie` field.
+     * </pre>
+     *
+     * <code>.google.protobuf.Value bounded_trie = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Value,
+            com.google.protobuf.Value.Builder,
+            com.google.protobuf.ValueOrBuilder>
+        internalGetBoundedTrieFieldBuilder() {
+      if (boundedTrieBuilder_ == null) {
+        boundedTrieBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Value,
+                com.google.protobuf.Value.Builder,
+                com.google.protobuf.ValueOrBuilder>(
+                getBoundedTrie(), getParentForChildren(), isClean());
+        boundedTrie_ = null;
+      }
+      return boundedTrieBuilder_;
+    }
+
     private com.google.protobuf.Value distribution_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Value,
@@ -2836,7 +3144,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      * @return Whether the distribution field is set.
      */
     public boolean hasDistribution() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2878,7 +3186,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         distributionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2898,7 +3206,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         distributionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2914,7 +3222,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeDistribution(com.google.protobuf.Value value) {
       if (distributionBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && distribution_ != null
             && distribution_ != com.google.protobuf.Value.getDefaultInstance()) {
           getDistributionBuilder().mergeFrom(value);
@@ -2925,7 +3233,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
         distributionBuilder_.mergeFrom(value);
       }
       if (distribution_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -2941,7 +3249,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Value distribution = 11;</code>
      */
     public Builder clearDistribution() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       distribution_ = null;
       if (distributionBuilder_ != null) {
         distributionBuilder_.dispose();
@@ -2961,7 +3269,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Value distribution = 11;</code>
      */
     public com.google.protobuf.Value.Builder getDistributionBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetDistributionFieldBuilder().getBuilder();
     }
@@ -3032,7 +3340,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      * @return Whether the gauge field is set.
      */
     public boolean hasGauge() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3076,7 +3384,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         gaugeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3098,7 +3406,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         gaugeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3116,7 +3424,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeGauge(com.google.protobuf.Value value) {
       if (gaugeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && gauge_ != null
             && gauge_ != com.google.protobuf.Value.getDefaultInstance()) {
           getGaugeBuilder().mergeFrom(value);
@@ -3127,7 +3435,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
         gaugeBuilder_.mergeFrom(value);
       }
       if (gauge_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -3145,7 +3453,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Value gauge = 12;</code>
      */
     public Builder clearGauge() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       gauge_ = null;
       if (gaugeBuilder_ != null) {
         gaugeBuilder_.dispose();
@@ -3167,7 +3475,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Value gauge = 12;</code>
      */
     public com.google.protobuf.Value.Builder getGaugeBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetGaugeFieldBuilder().getBuilder();
     }
@@ -3238,7 +3546,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      * @return Whether the internal field is set.
      */
     public boolean hasInternal() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -3280,7 +3588,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         internalBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3301,7 +3609,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         internalBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3318,7 +3626,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeInternal(com.google.protobuf.Value value) {
       if (internalBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && internal_ != null
             && internal_ != com.google.protobuf.Value.getDefaultInstance()) {
           getInternalBuilder().mergeFrom(value);
@@ -3329,7 +3637,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
         internalBuilder_.mergeFrom(value);
       }
       if (internal_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -3346,7 +3654,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Value internal = 8;</code>
      */
     public Builder clearInternal() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       internal_ = null;
       if (internalBuilder_ != null) {
         internalBuilder_.dispose();
@@ -3367,7 +3675,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Value internal = 8;</code>
      */
     public com.google.protobuf.Value.Builder getInternalBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetInternalFieldBuilder().getBuilder();
     }
@@ -3438,7 +3746,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -3484,7 +3792,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3506,7 +3814,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3524,7 +3832,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -3535,7 +3843,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -3553,7 +3861,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp update_time = 9;</code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -3575,7 +3883,7 @@ public final class MetricUpdate extends com.google.protobuf.GeneratedMessage
      * <code>.google.protobuf.Timestamp update_time = 9;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }

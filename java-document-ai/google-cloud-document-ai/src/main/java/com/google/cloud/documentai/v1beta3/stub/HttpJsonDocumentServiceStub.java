@@ -551,6 +551,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                   builder.add("dataset", String.valueOf(request.getDataset()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getDataset())
             .build();
     HttpJsonCallSettings<GetDocumentRequest, GetDocumentResponse> getDocumentTransportSettings =
         HttpJsonCallSettings.<GetDocumentRequest, GetDocumentResponse>newBuilder()
@@ -562,6 +563,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                   builder.add("dataset", String.valueOf(request.getDataset()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getDataset())
             .build();
     HttpJsonCallSettings<ListDocumentsRequest, ListDocumentsResponse>
         listDocumentsTransportSettings =
@@ -574,6 +576,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                       builder.add("dataset", String.valueOf(request.getDataset()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getDataset())
                 .build();
     HttpJsonCallSettings<BatchDeleteDocumentsRequest, Operation>
         batchDeleteDocumentsTransportSettings =
@@ -597,6 +600,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateDatasetSchemaRequest, DatasetSchema>
         updateDatasetSchemaTransportSettings =

@@ -307,6 +307,7 @@ public class CssProductsServiceStubSettings extends StubSettings<CssProductsServ
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.shopping:google-shopping-css")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

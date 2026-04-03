@@ -179,6 +179,7 @@ public class GrpcWebRiskServiceStub extends WebRiskServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SubmitUriRequest, Operation> submitUriTransportSettings =
         GrpcCallSettings.<SubmitUriRequest, Operation>newBuilder()
@@ -189,6 +190,7 @@ public class GrpcWebRiskServiceStub extends WebRiskServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.computeThreatListDiffCallable =

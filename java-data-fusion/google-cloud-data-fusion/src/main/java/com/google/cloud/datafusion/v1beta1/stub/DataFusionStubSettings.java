@@ -667,6 +667,7 @@ public class DataFusionStubSettings extends StubSettings<DataFusionStubSettings>
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-data-fusion")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(com.google.cloud.datafusion.v1beta1.stub.Version.VERSION)
         .build();
   }
 

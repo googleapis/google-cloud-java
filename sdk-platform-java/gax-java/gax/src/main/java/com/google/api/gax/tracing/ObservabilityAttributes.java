@@ -85,8 +85,17 @@ public class ObservabilityAttributes {
   /** The url template of the request (e.g. /v1/{name}:access). */
   public static final String URL_TEMPLATE_ATTRIBUTE = "url.template";
 
+  /** A human-readable error message, which may include details from the exception or response. */
+  public static final String STATUS_MESSAGE_ATTRIBUTE = "status.message";
+
+  /** If the error was caused by an exception, the exception class name. */
+  public static final String EXCEPTION_TYPE_ATTRIBUTE = "exception.type";
+
   /** Size of the response body in bytes. */
   public static final String HTTP_RESPONSE_BODY_SIZE = "http.response.body.size";
+
+  /** The HTTP status code of the request (e.g., 200, 404). */
+  public static final String HTTP_RESPONSE_STATUS_ATTRIBUTE = "http.response.status_code";
 
   /** The resend count of the request. Only used in HTTP transport. */
   public static final String HTTP_RESEND_COUNT_ATTRIBUTE = "http.request.resend_count";
@@ -100,7 +109,10 @@ public class ObservabilityAttributes {
   /** The full URL of the HTTP request, with sensitive query parameters redacted. */
   public static final String HTTP_URL_FULL_ATTRIBUTE = "url.full";
 
-  /** The type of error that occurred (e.g., from google.rpc.ErrorInfo.reason). */
+  /**
+   * * The specific error type. Value will be google.rpc.ErrorInfo.reason, a specific Server Error
+   * Code, Client-Side Network/Operational Error (e.g., CLIENT_TIMEOUT) or internal fallback.
+   */
   public static final String ERROR_TYPE_ATTRIBUTE = "error.type";
 
   /** The domain of the error (e.g., from google.rpc.ErrorInfo.domain). */

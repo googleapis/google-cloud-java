@@ -278,6 +278,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateCatalogRequest, Catalog> updateCatalogTransportSettings =
         GrpcCallSettings.<UpdateCatalogRequest, Catalog>newBuilder()
@@ -298,6 +299,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   builder.add("catalog", String.valueOf(request.getCatalog()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getCatalog())
             .build();
     GrpcCallSettings<GetDefaultBranchRequest, GetDefaultBranchResponse>
         getDefaultBranchTransportSettings =
@@ -309,6 +311,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                       builder.add("catalog", String.valueOf(request.getCatalog()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getCatalog())
                 .build();
     GrpcCallSettings<GetCompletionConfigRequest, CompletionConfig>
         getCompletionConfigTransportSettings =
@@ -320,6 +323,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateCompletionConfigRequest, CompletionConfig>
         updateCompletionConfigTransportSettings =
@@ -344,6 +348,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateAttributesConfigRequest, AttributesConfig>
         updateAttributesConfigTransportSettings =
@@ -369,6 +374,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                           "attributes_config", String.valueOf(request.getAttributesConfig()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAttributesConfig())
                 .build();
     GrpcCallSettings<RemoveCatalogAttributeRequest, AttributesConfig>
         removeCatalogAttributeTransportSettings =
@@ -381,6 +387,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                           "attributes_config", String.valueOf(request.getAttributesConfig()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAttributesConfig())
                 .build();
     GrpcCallSettings<BatchRemoveCatalogAttributesRequest, BatchRemoveCatalogAttributesResponse>
         batchRemoveCatalogAttributesTransportSettings =
@@ -395,6 +402,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                           "attributes_config", String.valueOf(request.getAttributesConfig()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAttributesConfig())
                 .build();
     GrpcCallSettings<ReplaceCatalogAttributeRequest, AttributesConfig>
         replaceCatalogAttributeTransportSettings =
@@ -407,6 +415,7 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                           "attributes_config", String.valueOf(request.getAttributesConfig()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAttributesConfig())
                 .build();
 
     this.listCatalogsCallable =

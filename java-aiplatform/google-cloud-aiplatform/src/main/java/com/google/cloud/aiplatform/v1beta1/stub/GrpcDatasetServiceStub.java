@@ -512,6 +512,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetDatasetRequest, Dataset> getDatasetTransportSettings =
         GrpcCallSettings.<GetDatasetRequest, Dataset>newBuilder()
@@ -522,6 +523,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDatasetRequest, Dataset> updateDatasetTransportSettings =
         GrpcCallSettings.<UpdateDatasetRequest, Dataset>newBuilder()
@@ -542,6 +544,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteDatasetRequest, Operation> deleteDatasetTransportSettings =
         GrpcCallSettings.<DeleteDatasetRequest, Operation>newBuilder()
@@ -552,6 +555,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportDataRequest, Operation> importDataTransportSettings =
         GrpcCallSettings.<ImportDataRequest, Operation>newBuilder()
@@ -562,6 +566,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ExportDataRequest, Operation> exportDataTransportSettings =
         GrpcCallSettings.<ExportDataRequest, Operation>newBuilder()
@@ -572,6 +577,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDatasetVersionRequest, Operation> createDatasetVersionTransportSettings =
         GrpcCallSettings.<CreateDatasetVersionRequest, Operation>newBuilder()
@@ -582,6 +588,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDatasetVersionRequest, DatasetVersion>
         updateDatasetVersionTransportSettings =
@@ -605,6 +612,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetDatasetVersionRequest, DatasetVersion> getDatasetVersionTransportSettings =
         GrpcCallSettings.<GetDatasetVersionRequest, DatasetVersion>newBuilder()
@@ -615,6 +623,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDatasetVersionsRequest, ListDatasetVersionsResponse>
         listDatasetVersionsTransportSettings =
@@ -626,6 +635,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<RestoreDatasetVersionRequest, Operation>
         restoreDatasetVersionTransportSettings =
@@ -637,6 +647,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDataItemsRequest, ListDataItemsResponse> listDataItemsTransportSettings =
         GrpcCallSettings.<ListDataItemsRequest, ListDataItemsResponse>newBuilder()
@@ -647,6 +658,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SearchDataItemsRequest, SearchDataItemsResponse>
         searchDataItemsTransportSettings =
@@ -658,6 +670,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                       builder.add("dataset", String.valueOf(request.getDataset()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getDataset())
                 .build();
     GrpcCallSettings<ListSavedQueriesRequest, ListSavedQueriesResponse>
         listSavedQueriesTransportSettings =
@@ -669,6 +682,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteSavedQueryRequest, Operation> deleteSavedQueryTransportSettings =
         GrpcCallSettings.<DeleteSavedQueryRequest, Operation>newBuilder()
@@ -679,6 +693,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecTransportSettings =
         GrpcCallSettings.<GetAnnotationSpecRequest, AnnotationSpec>newBuilder()
@@ -689,6 +704,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAnnotationsRequest, ListAnnotationsResponse>
         listAnnotationsTransportSettings =
@@ -700,6 +716,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<AssessDataRequest, Operation> assessDataTransportSettings =
         GrpcCallSettings.<AssessDataRequest, Operation>newBuilder()
@@ -710,6 +727,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AssembleDataRequest, Operation> assembleDataTransportSettings =
         GrpcCallSettings.<AssembleDataRequest, Operation>newBuilder()
@@ -720,6 +738,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -750,6 +769,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -760,6 +780,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -771,6 +792,7 @@ public class GrpcDatasetServiceStub extends DatasetServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createDatasetCallable =

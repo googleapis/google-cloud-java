@@ -425,6 +425,7 @@ public class HttpJsonUsageServiceStub extends UsageServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<QueryForecastsRequest, QueryForecastsResponse>
         queryForecastsTransportSettings =
@@ -437,6 +438,7 @@ public class HttpJsonUsageServiceStub extends UsageServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<QueryReservationsRequest, QueryReservationsResponse>
         queryReservationsTransportSettings =
@@ -449,6 +451,7 @@ public class HttpJsonUsageServiceStub extends UsageServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ExportUsageHistoriesRequest, Operation>
         exportUsageHistoriesTransportSettings =
@@ -461,6 +464,7 @@ public class HttpJsonUsageServiceStub extends UsageServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ExportForecastsRequest, Operation> exportForecastsTransportSettings =
         HttpJsonCallSettings.<ExportForecastsRequest, Operation>newBuilder()
@@ -472,6 +476,7 @@ public class HttpJsonUsageServiceStub extends UsageServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ExportReservationsUsageRequest, Operation>
         exportReservationsUsageTransportSettings =
@@ -484,6 +489,7 @@ public class HttpJsonUsageServiceStub extends UsageServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.queryUsageHistoriesCallable =

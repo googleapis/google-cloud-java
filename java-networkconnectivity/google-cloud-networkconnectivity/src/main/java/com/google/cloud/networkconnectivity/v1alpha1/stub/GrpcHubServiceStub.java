@@ -229,6 +229,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetHubRequest, Hub> getHubTransportSettings =
         GrpcCallSettings.<GetHubRequest, Hub>newBuilder()
@@ -239,6 +240,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateHubRequest, Operation> createHubTransportSettings =
         GrpcCallSettings.<CreateHubRequest, Operation>newBuilder()
@@ -249,6 +251,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateHubRequest, Operation> updateHubTransportSettings =
         GrpcCallSettings.<UpdateHubRequest, Operation>newBuilder()
@@ -269,6 +272,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSpokesRequest, ListSpokesResponse> listSpokesTransportSettings =
         GrpcCallSettings.<ListSpokesRequest, ListSpokesResponse>newBuilder()
@@ -279,6 +283,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSpokeRequest, Spoke> getSpokeTransportSettings =
         GrpcCallSettings.<GetSpokeRequest, Spoke>newBuilder()
@@ -289,6 +294,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateSpokeRequest, Operation> createSpokeTransportSettings =
         GrpcCallSettings.<CreateSpokeRequest, Operation>newBuilder()
@@ -299,6 +305,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateSpokeRequest, Operation> updateSpokeTransportSettings =
         GrpcCallSettings.<UpdateSpokeRequest, Operation>newBuilder()
@@ -319,6 +326,7 @@ public class GrpcHubServiceStub extends HubServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listHubsCallable =

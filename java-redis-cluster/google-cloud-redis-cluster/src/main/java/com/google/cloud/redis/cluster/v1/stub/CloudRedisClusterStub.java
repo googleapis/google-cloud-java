@@ -41,6 +41,7 @@ import com.google.cloud.redis.cluster.v1.GetBackupCollectionRequest;
 import com.google.cloud.redis.cluster.v1.GetBackupRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1.GetClusterRequest;
+import com.google.cloud.redis.cluster.v1.GetSharedRegionalCertificateAuthorityRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsRequest;
 import com.google.cloud.redis.cluster.v1.ListBackupCollectionsResponse;
 import com.google.cloud.redis.cluster.v1.ListBackupsRequest;
@@ -48,6 +49,7 @@ import com.google.cloud.redis.cluster.v1.ListBackupsResponse;
 import com.google.cloud.redis.cluster.v1.ListClustersRequest;
 import com.google.cloud.redis.cluster.v1.ListClustersResponse;
 import com.google.cloud.redis.cluster.v1.RescheduleClusterMaintenanceRequest;
+import com.google.cloud.redis.cluster.v1.SharedRegionalCertificateAuthority;
 import com.google.cloud.redis.cluster.v1.UpdateClusterRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -112,6 +114,13 @@ public abstract class CloudRedisClusterStub implements BackgroundResource {
       getClusterCertificateAuthorityCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: getClusterCertificateAuthorityCallable()");
+  }
+
+  public UnaryCallable<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthorityCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getSharedRegionalCertificateAuthorityCallable()");
   }
 
   public OperationCallable<RescheduleClusterMaintenanceRequest, Cluster, Any>

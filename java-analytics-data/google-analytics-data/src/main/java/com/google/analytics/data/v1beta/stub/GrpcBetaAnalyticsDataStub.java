@@ -315,6 +315,7 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RunRealtimeReportRequest, RunRealtimeReportResponse>
         runRealtimeReportTransportSettings =
@@ -347,6 +348,7 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<QueryAudienceExportRequest, QueryAudienceExportResponse>
         queryAudienceExportTransportSettings =
@@ -368,6 +370,7 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAudienceExportsRequest, ListAudienceExportsResponse>
         listAudienceExportsTransportSettings =
@@ -379,6 +382,7 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.runReportCallable =

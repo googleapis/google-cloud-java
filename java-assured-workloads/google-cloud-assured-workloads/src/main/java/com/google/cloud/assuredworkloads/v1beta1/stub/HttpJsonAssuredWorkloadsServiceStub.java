@@ -270,6 +270,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<RestrictAllowedResourcesRequest, RestrictAllowedResourcesResponse>
         restrictAllowedResourcesTransportSettings =
@@ -294,6 +295,7 @@ public class HttpJsonAssuredWorkloadsServiceStub extends AssuredWorkloadsService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createWorkloadCallable =

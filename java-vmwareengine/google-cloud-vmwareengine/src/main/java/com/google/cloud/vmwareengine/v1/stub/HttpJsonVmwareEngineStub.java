@@ -3679,6 +3679,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPrivateCloudRequest, PrivateCloud> getPrivateCloudTransportSettings =
         HttpJsonCallSettings.<GetPrivateCloudRequest, PrivateCloud>newBuilder()
@@ -3690,6 +3691,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreatePrivateCloudRequest, Operation> createPrivateCloudTransportSettings =
         HttpJsonCallSettings.<CreatePrivateCloudRequest, Operation>newBuilder()
@@ -3701,6 +3703,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdatePrivateCloudRequest, Operation> updatePrivateCloudTransportSettings =
         HttpJsonCallSettings.<UpdatePrivateCloudRequest, Operation>newBuilder()
@@ -3724,6 +3727,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UndeletePrivateCloudRequest, Operation>
         undeletePrivateCloudTransportSettings =
@@ -3736,6 +3740,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListClustersRequest, ListClustersResponse> listClustersTransportSettings =
         HttpJsonCallSettings.<ListClustersRequest, ListClustersResponse>newBuilder()
@@ -3747,6 +3752,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         HttpJsonCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -3758,6 +3764,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         HttpJsonCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -3769,6 +3776,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         HttpJsonCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -3791,6 +3799,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListNodesRequest, ListNodesResponse> listNodesTransportSettings =
         HttpJsonCallSettings.<ListNodesRequest, ListNodesResponse>newBuilder()
@@ -3802,6 +3811,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetNodeRequest, Node> getNodeTransportSettings =
         HttpJsonCallSettings.<GetNodeRequest, Node>newBuilder()
@@ -3813,6 +3823,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListExternalAddressesRequest, ListExternalAddressesResponse>
         listExternalAddressesTransportSettings =
@@ -3826,6 +3837,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             FetchNetworkPolicyExternalAddressesRequest, FetchNetworkPolicyExternalAddressesResponse>
@@ -3842,6 +3854,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("network_policy", String.valueOf(request.getNetworkPolicy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getNetworkPolicy())
                 .build();
     HttpJsonCallSettings<GetExternalAddressRequest, ExternalAddress>
         getExternalAddressTransportSettings =
@@ -3854,6 +3867,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateExternalAddressRequest, Operation>
         createExternalAddressTransportSettings =
@@ -3866,6 +3880,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateExternalAddressRequest, Operation>
         updateExternalAddressTransportSettings =
@@ -3892,6 +3907,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListSubnetsRequest, ListSubnetsResponse> listSubnetsTransportSettings =
         HttpJsonCallSettings.<ListSubnetsRequest, ListSubnetsResponse>newBuilder()
@@ -3903,6 +3919,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetSubnetRequest, Subnet> getSubnetTransportSettings =
         HttpJsonCallSettings.<GetSubnetRequest, Subnet>newBuilder()
@@ -3914,6 +3931,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateSubnetRequest, Operation> updateSubnetTransportSettings =
         HttpJsonCallSettings.<UpdateSubnetRequest, Operation>newBuilder()
@@ -3938,6 +3956,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetExternalAccessRuleRequest, ExternalAccessRule>
         getExternalAccessRuleTransportSettings =
@@ -3950,6 +3969,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateExternalAccessRuleRequest, Operation>
         createExternalAccessRuleTransportSettings =
@@ -3962,6 +3982,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateExternalAccessRuleRequest, Operation>
         updateExternalAccessRuleTransportSettings =
@@ -3988,6 +4009,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLoggingServersRequest, ListLoggingServersResponse>
         listLoggingServersTransportSettings =
@@ -4000,6 +4022,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetLoggingServerRequest, LoggingServer> getLoggingServerTransportSettings =
         HttpJsonCallSettings.<GetLoggingServerRequest, LoggingServer>newBuilder()
@@ -4011,6 +4034,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateLoggingServerRequest, Operation>
         createLoggingServerTransportSettings =
@@ -4023,6 +4047,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateLoggingServerRequest, Operation>
         updateLoggingServerTransportSettings =
@@ -4049,6 +4074,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListNodeTypesRequest, ListNodeTypesResponse>
         listNodeTypesTransportSettings =
@@ -4061,6 +4087,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetNodeTypeRequest, NodeType> getNodeTypeTransportSettings =
         HttpJsonCallSettings.<GetNodeTypeRequest, NodeType>newBuilder()
@@ -4072,6 +4099,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ShowNsxCredentialsRequest, Credentials>
         showNsxCredentialsTransportSettings =
@@ -4084,6 +4112,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getPrivateCloud())
                 .build();
     HttpJsonCallSettings<ShowVcenterCredentialsRequest, Credentials>
         showVcenterCredentialsTransportSettings =
@@ -4096,6 +4125,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getPrivateCloud())
                 .build();
     HttpJsonCallSettings<ResetNsxCredentialsRequest, Operation>
         resetNsxCredentialsTransportSettings =
@@ -4108,6 +4138,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getPrivateCloud())
                 .build();
     HttpJsonCallSettings<ResetVcenterCredentialsRequest, Operation>
         resetVcenterCredentialsTransportSettings =
@@ -4120,6 +4151,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("private_cloud", String.valueOf(request.getPrivateCloud()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getPrivateCloud())
                 .build();
     HttpJsonCallSettings<GetDnsForwardingRequest, DnsForwarding> getDnsForwardingTransportSettings =
         HttpJsonCallSettings.<GetDnsForwardingRequest, DnsForwarding>newBuilder()
@@ -4131,6 +4163,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateDnsForwardingRequest, Operation>
         updateDnsForwardingTransportSettings =
@@ -4157,6 +4190,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListNetworkPeeringsRequest, ListNetworkPeeringsResponse>
         listNetworkPeeringsTransportSettings =
@@ -4170,6 +4204,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateNetworkPeeringRequest, Operation>
         createNetworkPeeringTransportSettings =
@@ -4182,6 +4217,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteNetworkPeeringRequest, Operation>
         deleteNetworkPeeringTransportSettings =
@@ -4194,6 +4230,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateNetworkPeeringRequest, Operation>
         updateNetworkPeeringTransportSettings =
@@ -4220,6 +4257,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateHcxActivationKeyRequest, Operation>
         createHcxActivationKeyTransportSettings =
@@ -4232,6 +4270,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListHcxActivationKeysRequest, ListHcxActivationKeysResponse>
         listHcxActivationKeysTransportSettings =
@@ -4245,6 +4284,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetHcxActivationKeyRequest, HcxActivationKey>
         getHcxActivationKeyTransportSettings =
@@ -4257,6 +4297,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetNetworkPolicyRequest, NetworkPolicy> getNetworkPolicyTransportSettings =
         HttpJsonCallSettings.<GetNetworkPolicyRequest, NetworkPolicy>newBuilder()
@@ -4268,6 +4309,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListNetworkPoliciesRequest, ListNetworkPoliciesResponse>
         listNetworkPoliciesTransportSettings =
@@ -4281,6 +4323,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateNetworkPolicyRequest, Operation>
         createNetworkPolicyTransportSettings =
@@ -4293,6 +4336,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateNetworkPolicyRequest, Operation>
         updateNetworkPolicyTransportSettings =
@@ -4319,6 +4363,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListManagementDnsZoneBindingsRequest, ListManagementDnsZoneBindingsResponse>
@@ -4334,6 +4379,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetManagementDnsZoneBindingRequest, ManagementDnsZoneBinding>
         getManagementDnsZoneBindingTransportSettings =
@@ -4347,6 +4393,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateManagementDnsZoneBindingRequest, Operation>
         createManagementDnsZoneBindingTransportSettings =
@@ -4359,6 +4406,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateManagementDnsZoneBindingRequest, Operation>
         updateManagementDnsZoneBindingTransportSettings =
@@ -4385,6 +4433,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RepairManagementDnsZoneBindingRequest, Operation>
         repairManagementDnsZoneBindingTransportSettings =
@@ -4397,6 +4446,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateVmwareEngineNetworkRequest, Operation>
         createVmwareEngineNetworkTransportSettings =
@@ -4409,6 +4459,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateVmwareEngineNetworkRequest, Operation>
         updateVmwareEngineNetworkTransportSettings =
@@ -4435,6 +4486,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetVmwareEngineNetworkRequest, VmwareEngineNetwork>
         getVmwareEngineNetworkTransportSettings =
@@ -4447,6 +4499,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListVmwareEngineNetworksRequest, ListVmwareEngineNetworksResponse>
         listVmwareEngineNetworksTransportSettings =
@@ -4460,6 +4513,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreatePrivateConnectionRequest, Operation>
         createPrivateConnectionTransportSettings =
@@ -4472,6 +4526,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPrivateConnectionRequest, PrivateConnection>
         getPrivateConnectionTransportSettings =
@@ -4484,6 +4539,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
         listPrivateConnectionsTransportSettings =
@@ -4497,6 +4553,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdatePrivateConnectionRequest, Operation>
         updatePrivateConnectionTransportSettings =
@@ -4523,6 +4580,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<
             ListPrivateConnectionPeeringRoutesRequest, ListPrivateConnectionPeeringRoutesResponse>
@@ -4539,6 +4597,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GrantDnsBindPermissionRequest, Operation>
         grantDnsBindPermissionTransportSettings =
@@ -4551,6 +4610,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetDnsBindPermissionRequest, DnsBindPermission>
         getDnsBindPermissionTransportSettings =
@@ -4563,6 +4623,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RevokeDnsBindPermissionRequest, Operation>
         revokeDnsBindPermissionTransportSettings =
@@ -4575,6 +4636,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -4609,6 +4671,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -4620,6 +4683,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -4632,6 +4696,7 @@ public class HttpJsonVmwareEngineStub extends VmwareEngineStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listPrivateCloudsCallable =

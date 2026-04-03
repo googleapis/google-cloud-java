@@ -258,6 +258,7 @@ public class HttpJsonDeveloperRegistrationServiceStub extends DeveloperRegistrat
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetDeveloperRegistrationRequest, DeveloperRegistration>
         getDeveloperRegistrationTransportSettings =
@@ -271,6 +272,7 @@ public class HttpJsonDeveloperRegistrationServiceStub extends DeveloperRegistrat
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UnregisterGcpRequest, Empty> unregisterGcpTransportSettings =
         HttpJsonCallSettings.<UnregisterGcpRequest, Empty>newBuilder()
@@ -282,6 +284,7 @@ public class HttpJsonDeveloperRegistrationServiceStub extends DeveloperRegistrat
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<Empty, GetAccountForGcpRegistrationResponse>
         getAccountForGcpRegistrationTransportSettings =

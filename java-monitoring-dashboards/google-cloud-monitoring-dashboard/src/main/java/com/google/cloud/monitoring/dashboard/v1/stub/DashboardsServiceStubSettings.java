@@ -335,6 +335,7 @@ public class DashboardsServiceStubSettings extends StubSettings<DashboardsServic
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-monitoring-dashboard")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

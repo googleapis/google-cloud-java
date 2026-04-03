@@ -342,6 +342,7 @@ public class RegionalInventoryServiceStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.shopping:google-shopping-merchant-inventories")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -366,6 +366,7 @@ public class ApiHubCurateStubSettings extends StubSettings<ApiHubCurateStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-apihub")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

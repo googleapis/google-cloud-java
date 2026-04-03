@@ -721,6 +721,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -731,6 +732,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateInstanceRequest, Operation> createInstanceTransportSettings =
         GrpcCallSettings.<CreateInstanceRequest, Operation>newBuilder()
@@ -741,6 +743,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         GrpcCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
@@ -761,6 +764,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportRegisteredPartiesRequest, Operation>
         importRegisteredPartiesTransportSettings =
@@ -772,6 +776,7 @@ public class GrpcAMLStub extends AMLStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ExportRegisteredPartiesRequest, Operation>
         exportRegisteredPartiesTransportSettings =
@@ -783,6 +788,7 @@ public class GrpcAMLStub extends AMLStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDatasetsRequest, ListDatasetsResponse> listDatasetsTransportSettings =
         GrpcCallSettings.<ListDatasetsRequest, ListDatasetsResponse>newBuilder()
@@ -793,6 +799,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetDatasetRequest, Dataset> getDatasetTransportSettings =
         GrpcCallSettings.<GetDatasetRequest, Dataset>newBuilder()
@@ -803,6 +810,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDatasetRequest, Operation> createDatasetTransportSettings =
         GrpcCallSettings.<CreateDatasetRequest, Operation>newBuilder()
@@ -813,6 +821,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDatasetRequest, Operation> updateDatasetTransportSettings =
         GrpcCallSettings.<UpdateDatasetRequest, Operation>newBuilder()
@@ -833,6 +842,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListModelsRequest, ListModelsResponse> listModelsTransportSettings =
         GrpcCallSettings.<ListModelsRequest, ListModelsResponse>newBuilder()
@@ -843,6 +853,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetModelRequest, Model> getModelTransportSettings =
         GrpcCallSettings.<GetModelRequest, Model>newBuilder()
@@ -853,6 +864,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateModelRequest, Operation> createModelTransportSettings =
         GrpcCallSettings.<CreateModelRequest, Operation>newBuilder()
@@ -863,6 +875,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateModelRequest, Operation> updateModelTransportSettings =
         GrpcCallSettings.<UpdateModelRequest, Operation>newBuilder()
@@ -883,6 +896,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("model", String.valueOf(request.getModel()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getModel())
             .build();
     GrpcCallSettings<DeleteModelRequest, Operation> deleteModelTransportSettings =
         GrpcCallSettings.<DeleteModelRequest, Operation>newBuilder()
@@ -893,6 +907,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEngineConfigsRequest, ListEngineConfigsResponse>
         listEngineConfigsTransportSettings =
@@ -904,6 +919,7 @@ public class GrpcAMLStub extends AMLStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetEngineConfigRequest, EngineConfig> getEngineConfigTransportSettings =
         GrpcCallSettings.<GetEngineConfigRequest, EngineConfig>newBuilder()
@@ -914,6 +930,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEngineConfigRequest, Operation> createEngineConfigTransportSettings =
         GrpcCallSettings.<CreateEngineConfigRequest, Operation>newBuilder()
@@ -924,6 +941,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEngineConfigRequest, Operation> updateEngineConfigTransportSettings =
         GrpcCallSettings.<UpdateEngineConfigRequest, Operation>newBuilder()
@@ -946,6 +964,7 @@ public class GrpcAMLStub extends AMLStub {
                       builder.add("engine_config", String.valueOf(request.getEngineConfig()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getEngineConfig())
                 .build();
     GrpcCallSettings<DeleteEngineConfigRequest, Operation> deleteEngineConfigTransportSettings =
         GrpcCallSettings.<DeleteEngineConfigRequest, Operation>newBuilder()
@@ -956,6 +975,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetEngineVersionRequest, EngineVersion> getEngineVersionTransportSettings =
         GrpcCallSettings.<GetEngineVersionRequest, EngineVersion>newBuilder()
@@ -966,6 +986,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEngineVersionsRequest, ListEngineVersionsResponse>
         listEngineVersionsTransportSettings =
@@ -977,6 +998,7 @@ public class GrpcAMLStub extends AMLStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListPredictionResultsRequest, ListPredictionResultsResponse>
         listPredictionResultsTransportSettings =
@@ -989,6 +1011,7 @@ public class GrpcAMLStub extends AMLStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPredictionResultRequest, PredictionResult>
         getPredictionResultTransportSettings =
@@ -1000,6 +1023,7 @@ public class GrpcAMLStub extends AMLStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreatePredictionResultRequest, Operation>
         createPredictionResultTransportSettings =
@@ -1011,6 +1035,7 @@ public class GrpcAMLStub extends AMLStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdatePredictionResultRequest, Operation>
         updatePredictionResultTransportSettings =
@@ -1036,6 +1061,7 @@ public class GrpcAMLStub extends AMLStub {
                           "prediction_result", String.valueOf(request.getPredictionResult()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getPredictionResult())
                 .build();
     GrpcCallSettings<DeletePredictionResultRequest, Operation>
         deletePredictionResultTransportSettings =
@@ -1047,6 +1073,7 @@ public class GrpcAMLStub extends AMLStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListBacktestResultsRequest, ListBacktestResultsResponse>
         listBacktestResultsTransportSettings =
@@ -1058,6 +1085,7 @@ public class GrpcAMLStub extends AMLStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetBacktestResultRequest, BacktestResult> getBacktestResultTransportSettings =
         GrpcCallSettings.<GetBacktestResultRequest, BacktestResult>newBuilder()
@@ -1068,6 +1096,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateBacktestResultRequest, Operation> createBacktestResultTransportSettings =
         GrpcCallSettings.<CreateBacktestResultRequest, Operation>newBuilder()
@@ -1078,6 +1107,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateBacktestResultRequest, Operation> updateBacktestResultTransportSettings =
         GrpcCallSettings.<UpdateBacktestResultRequest, Operation>newBuilder()
@@ -1101,6 +1131,7 @@ public class GrpcAMLStub extends AMLStub {
                       builder.add("backtest_result", String.valueOf(request.getBacktestResult()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getBacktestResult())
                 .build();
     GrpcCallSettings<DeleteBacktestResultRequest, Operation> deleteBacktestResultTransportSettings =
         GrpcCallSettings.<DeleteBacktestResultRequest, Operation>newBuilder()
@@ -1111,6 +1142,7 @@ public class GrpcAMLStub extends AMLStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

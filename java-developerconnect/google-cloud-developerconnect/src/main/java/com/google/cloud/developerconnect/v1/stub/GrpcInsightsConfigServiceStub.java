@@ -247,6 +247,7 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateInsightsConfigRequest, Operation> createInsightsConfigTransportSettings =
         GrpcCallSettings.<CreateInsightsConfigRequest, Operation>newBuilder()
@@ -257,6 +258,7 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInsightsConfigRequest, InsightsConfig> getInsightsConfigTransportSettings =
         GrpcCallSettings.<GetInsightsConfigRequest, InsightsConfig>newBuilder()
@@ -267,6 +269,7 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateInsightsConfigRequest, Operation> updateInsightsConfigTransportSettings =
         GrpcCallSettings.<UpdateInsightsConfigRequest, Operation>newBuilder()
@@ -289,6 +292,7 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetDeploymentEventRequest, DeploymentEvent>
         getDeploymentEventTransportSettings =
@@ -300,6 +304,7 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListDeploymentEventsRequest, ListDeploymentEventsResponse>
         listDeploymentEventsTransportSettings =
@@ -311,6 +316,7 @@ public class GrpcInsightsConfigServiceStub extends InsightsConfigServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

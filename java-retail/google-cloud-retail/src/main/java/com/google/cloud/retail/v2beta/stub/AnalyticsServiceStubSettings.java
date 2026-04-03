@@ -277,6 +277,7 @@ public class AnalyticsServiceStubSettings extends StubSettings<AnalyticsServiceS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-retail")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

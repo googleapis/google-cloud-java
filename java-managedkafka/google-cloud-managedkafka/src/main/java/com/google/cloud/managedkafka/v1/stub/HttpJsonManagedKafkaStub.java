@@ -1046,6 +1046,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         HttpJsonCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -1057,6 +1058,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         HttpJsonCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -1068,6 +1070,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateClusterRequest, Operation> updateClusterTransportSettings =
         HttpJsonCallSettings.<UpdateClusterRequest, Operation>newBuilder()
@@ -1090,6 +1093,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTopicsRequest, ListTopicsResponse> listTopicsTransportSettings =
         HttpJsonCallSettings.<ListTopicsRequest, ListTopicsResponse>newBuilder()
@@ -1101,6 +1105,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetTopicRequest, Topic> getTopicTransportSettings =
         HttpJsonCallSettings.<GetTopicRequest, Topic>newBuilder()
@@ -1112,6 +1117,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateTopicRequest, Topic> createTopicTransportSettings =
         HttpJsonCallSettings.<CreateTopicRequest, Topic>newBuilder()
@@ -1123,6 +1129,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateTopicRequest, Topic> updateTopicTransportSettings =
         HttpJsonCallSettings.<UpdateTopicRequest, Topic>newBuilder()
@@ -1145,6 +1152,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListConsumerGroupsRequest, ListConsumerGroupsResponse>
         listConsumerGroupsTransportSettings =
@@ -1157,6 +1165,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetConsumerGroupRequest, ConsumerGroup> getConsumerGroupTransportSettings =
         HttpJsonCallSettings.<GetConsumerGroupRequest, ConsumerGroup>newBuilder()
@@ -1168,6 +1177,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateConsumerGroupRequest, ConsumerGroup>
         updateConsumerGroupTransportSettings =
@@ -1193,6 +1203,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAclsRequest, ListAclsResponse> listAclsTransportSettings =
         HttpJsonCallSettings.<ListAclsRequest, ListAclsResponse>newBuilder()
@@ -1204,6 +1215,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetAclRequest, Acl> getAclTransportSettings =
         HttpJsonCallSettings.<GetAclRequest, Acl>newBuilder()
@@ -1215,6 +1227,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateAclRequest, Acl> createAclTransportSettings =
         HttpJsonCallSettings.<CreateAclRequest, Acl>newBuilder()
@@ -1226,6 +1239,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateAclRequest, Acl> updateAclTransportSettings =
         HttpJsonCallSettings.<UpdateAclRequest, Acl>newBuilder()
@@ -1248,6 +1262,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<AddAclEntryRequest, AddAclEntryResponse> addAclEntryTransportSettings =
         HttpJsonCallSettings.<AddAclEntryRequest, AddAclEntryResponse>newBuilder()
@@ -1259,6 +1274,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                   builder.add("acl", String.valueOf(request.getAcl()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getAcl())
             .build();
     HttpJsonCallSettings<RemoveAclEntryRequest, RemoveAclEntryResponse>
         removeAclEntryTransportSettings =
@@ -1271,6 +1287,7 @@ public class HttpJsonManagedKafkaStub extends ManagedKafkaStub {
                       builder.add("acl", String.valueOf(request.getAcl()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getAcl())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

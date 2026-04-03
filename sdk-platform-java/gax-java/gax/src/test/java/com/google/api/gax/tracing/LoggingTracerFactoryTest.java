@@ -65,10 +65,28 @@ class LoggingTracerFactoryTest {
     LoggingTracerFactory factory = new LoggingTracerFactory();
     ApiTracerContext context =
         ApiTracerContext.empty().toBuilder().setServerAddress("address").build();
-    ApiTracerFactory updatedFactory = factory.withContext(context);
+    LoggingTracerFactory updatedFactory = (LoggingTracerFactory) factory.withContext(context);
 
     assertNotNull(updatedFactory);
     assertTrue(updatedFactory instanceof LoggingTracerFactory);
     assertEquals("address", updatedFactory.getApiTracerContext().serverAddress());
+  }
+
+  @Test
+  void testNeedsContext_returnsTrueWhenContextIsEmpty() {
+    LoggingTracerFactory factoryWithoutContext = new LoggingTracerFactory();
+    assertTrue(factoryWithoutContext.needsContext());
+  }
+
+  @Test
+  void testNeedsContext_returnsFalseWhenContextIsNotEmpty() {
+    LoggingTracerFactory factoryWithoutContext = new LoggingTracerFactory();
+
+    ApiTracerContext context =
+        ApiTracerContext.empty().toBuilder().setServerAddress("address").build();
+    LoggingTracerFactory factoryWithContext =
+        (LoggingTracerFactory) factoryWithoutContext.withContext(context);
+
+    org.junit.jupiter.api.Assertions.assertFalse(factoryWithContext.needsContext());
   }
 }

@@ -586,6 +586,7 @@ public class DataAgentServiceStubSettings extends StubSettings<DataAgentServiceS
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-geminidataanalytics")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

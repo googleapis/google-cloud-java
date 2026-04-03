@@ -115,6 +115,7 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<Span, Span> createSpanTransportSettings =
         GrpcCallSettings.<Span, Span>newBuilder()
@@ -125,6 +126,7 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.batchWriteSpansCallable =

@@ -355,6 +355,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateProcessRequest, Process> updateProcessTransportSettings =
         GrpcCallSettings.<UpdateProcessRequest, Process>newBuilder()
@@ -375,6 +376,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProcessesRequest, ListProcessesResponse> listProcessesTransportSettings =
         GrpcCallSettings.<ListProcessesRequest, ListProcessesResponse>newBuilder()
@@ -385,6 +387,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteProcessRequest, Operation> deleteProcessTransportSettings =
         GrpcCallSettings.<DeleteProcessRequest, Operation>newBuilder()
@@ -395,6 +398,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateRunRequest, Run> createRunTransportSettings =
         GrpcCallSettings.<CreateRunRequest, Run>newBuilder()
@@ -405,6 +409,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateRunRequest, Run> updateRunTransportSettings =
         GrpcCallSettings.<UpdateRunRequest, Run>newBuilder()
@@ -425,6 +430,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRunsRequest, ListRunsResponse> listRunsTransportSettings =
         GrpcCallSettings.<ListRunsRequest, ListRunsResponse>newBuilder()
@@ -435,6 +441,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteRunRequest, Operation> deleteRunTransportSettings =
         GrpcCallSettings.<DeleteRunRequest, Operation>newBuilder()
@@ -445,6 +452,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateLineageEventRequest, LineageEvent> createLineageEventTransportSettings =
         GrpcCallSettings.<CreateLineageEventRequest, LineageEvent>newBuilder()
@@ -455,6 +463,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetLineageEventRequest, LineageEvent> getLineageEventTransportSettings =
         GrpcCallSettings.<GetLineageEventRequest, LineageEvent>newBuilder()
@@ -465,6 +474,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLineageEventsRequest, ListLineageEventsResponse>
         listLineageEventsTransportSettings =
@@ -476,6 +486,7 @@ public class GrpcLineageStub extends LineageStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteLineageEventRequest, Empty> deleteLineageEventTransportSettings =
         GrpcCallSettings.<DeleteLineageEventRequest, Empty>newBuilder()
@@ -486,6 +497,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SearchLinksRequest, SearchLinksResponse> searchLinksTransportSettings =
         GrpcCallSettings.<SearchLinksRequest, SearchLinksResponse>newBuilder()
@@ -496,6 +508,7 @@ public class GrpcLineageStub extends LineageStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchSearchLinkProcessesRequest, BatchSearchLinkProcessesResponse>
         batchSearchLinkProcessesTransportSettings =
@@ -508,6 +521,7 @@ public class GrpcLineageStub extends LineageStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.processOpenLineageRunEventCallable =

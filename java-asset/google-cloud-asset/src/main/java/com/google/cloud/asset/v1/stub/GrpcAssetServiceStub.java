@@ -467,6 +467,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         GrpcCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
@@ -477,6 +478,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
         batchGetAssetsHistoryTransportSettings =
@@ -489,6 +491,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateFeedRequest, Feed> createFeedTransportSettings =
         GrpcCallSettings.<CreateFeedRequest, Feed>newBuilder()
@@ -509,6 +512,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListFeedsRequest, ListFeedsResponse> listFeedsTransportSettings =
         GrpcCallSettings.<ListFeedsRequest, ListFeedsResponse>newBuilder()
@@ -539,6 +543,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<SearchAllResourcesRequest, SearchAllResourcesResponse>
         searchAllResourcesTransportSettings =
@@ -597,6 +602,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<QueryAssetsRequest, QueryAssetsResponse> queryAssetsTransportSettings =
         GrpcCallSettings.<QueryAssetsRequest, QueryAssetsResponse>newBuilder()
@@ -607,6 +613,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateSavedQueryRequest, SavedQuery> createSavedQueryTransportSettings =
         GrpcCallSettings.<CreateSavedQueryRequest, SavedQuery>newBuilder()
@@ -617,6 +624,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSavedQueryRequest, SavedQuery> getSavedQueryTransportSettings =
         GrpcCallSettings.<GetSavedQueryRequest, SavedQuery>newBuilder()
@@ -627,6 +635,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSavedQueriesRequest, ListSavedQueriesResponse>
         listSavedQueriesTransportSettings =
@@ -638,6 +647,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateSavedQueryRequest, SavedQuery> updateSavedQueryTransportSettings =
         GrpcCallSettings.<UpdateSavedQueryRequest, SavedQuery>newBuilder()
@@ -659,6 +669,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BatchGetEffectiveIamPoliciesRequest, BatchGetEffectiveIamPoliciesResponse>
         batchGetEffectiveIamPoliciesTransportSettings =
@@ -672,6 +683,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                       builder.add("scope", String.valueOf(request.getScope()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getScope())
                 .build();
     GrpcCallSettings<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>
         analyzeOrgPoliciesTransportSettings =

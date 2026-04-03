@@ -16,10 +16,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.jupiter.api.Assertions.fail;
 
-import com.google.cloud.bigquery.exception.BigQueryJdbcException;
-import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
 import java.sql.Connection;
 import java.sql.DriverPropertyInfo;
 import java.sql.SQLException;
@@ -98,15 +95,13 @@ public class BigQueryDriverTest {
   }
 
   @Test
-  public void testConnectWithInvalidUrlChainsException() {
-    try {
-      bigQueryDriver.connect(
-          "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;InvalidProperty=Value",
-          new Properties());
-      fail("Expected SQLException");
-    } catch (SQLException e) {
-      assertThat((Throwable) e).isInstanceOf(BigQueryJdbcException.class);
-      assertThat(e.getCause()).isInstanceOf(BigQueryJdbcRuntimeException.class);
-    }
+  public void testConnectWithInvalidUrlChainsNoException() throws SQLException {
+    Connection connection =
+        bigQueryDriver.connect(
+            "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                + "OAuthType=2;OAuthAccessToken=redactedToken;ProjectId=t;"
+                + "InvalidProperty=Value",
+            new Properties());
+    assertThat(connection.isClosed()).isFalse();
   }
 }

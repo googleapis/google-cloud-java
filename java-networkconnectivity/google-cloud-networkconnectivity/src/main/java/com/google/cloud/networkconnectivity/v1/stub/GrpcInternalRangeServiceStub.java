@@ -250,6 +250,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetInternalRangeRequest, InternalRange> getInternalRangeTransportSettings =
         GrpcCallSettings.<GetInternalRangeRequest, InternalRange>newBuilder()
@@ -260,6 +261,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateInternalRangeRequest, Operation> createInternalRangeTransportSettings =
         GrpcCallSettings.<CreateInternalRangeRequest, Operation>newBuilder()
@@ -270,6 +272,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateInternalRangeRequest, Operation> updateInternalRangeTransportSettings =
         GrpcCallSettings.<UpdateInternalRangeRequest, Operation>newBuilder()
@@ -291,6 +294,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -321,6 +325,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -331,6 +336,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -342,6 +348,7 @@ public class GrpcInternalRangeServiceStub extends InternalRangeServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listInternalRangesCallable =

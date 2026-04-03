@@ -2286,6 +2286,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetAssetRequest, Asset> getAssetTransportSettings =
         HttpJsonCallSettings.<GetAssetRequest, Asset>newBuilder()
@@ -2297,6 +2298,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateAssetRequest, Asset> updateAssetTransportSettings =
         HttpJsonCallSettings.<UpdateAssetRequest, Asset>newBuilder()
@@ -2320,6 +2322,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteAssetRequest, Empty> deleteAssetTransportSettings =
         HttpJsonCallSettings.<DeleteAssetRequest, Empty>newBuilder()
@@ -2331,6 +2334,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<BatchDeleteAssetsRequest, Empty> batchDeleteAssetsTransportSettings =
         HttpJsonCallSettings.<BatchDeleteAssetsRequest, Empty>newBuilder()
@@ -2342,6 +2346,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ReportAssetFramesRequest, ReportAssetFramesResponse>
         reportAssetFramesTransportSettings =
@@ -2354,6 +2359,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSource())
                 .build();
     HttpJsonCallSettings<AggregateAssetsValuesRequest, AggregateAssetsValuesResponse>
         aggregateAssetsValuesTransportSettings =
@@ -2378,6 +2384,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListImportJobsRequest, ListImportJobsResponse>
         listImportJobsTransportSettings =
@@ -2390,6 +2397,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetImportJobRequest, ImportJob> getImportJobTransportSettings =
         HttpJsonCallSettings.<GetImportJobRequest, ImportJob>newBuilder()
@@ -2401,6 +2409,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteImportJobRequest, Operation> deleteImportJobTransportSettings =
         HttpJsonCallSettings.<DeleteImportJobRequest, Operation>newBuilder()
@@ -2412,6 +2421,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateImportJobRequest, Operation> updateImportJobTransportSettings =
         HttpJsonCallSettings.<UpdateImportJobRequest, Operation>newBuilder()
@@ -2434,6 +2444,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RunImportJobRequest, Operation> runImportJobTransportSettings =
         HttpJsonCallSettings.<RunImportJobRequest, Operation>newBuilder()
@@ -2445,6 +2456,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetImportDataFileRequest, ImportDataFile>
         getImportDataFileTransportSettings =
@@ -2457,6 +2469,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListImportDataFilesRequest, ListImportDataFilesResponse>
         listImportDataFilesTransportSettings =
@@ -2470,6 +2483,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateImportDataFileRequest, Operation>
         createImportDataFileTransportSettings =
@@ -2482,6 +2496,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteImportDataFileRequest, Operation>
         deleteImportDataFileTransportSettings =
@@ -2494,6 +2509,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListGroupsRequest, ListGroupsResponse> listGroupsTransportSettings =
         HttpJsonCallSettings.<ListGroupsRequest, ListGroupsResponse>newBuilder()
@@ -2505,6 +2521,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetGroupRequest, Group> getGroupTransportSettings =
         HttpJsonCallSettings.<GetGroupRequest, Group>newBuilder()
@@ -2516,6 +2533,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateGroupRequest, Operation> createGroupTransportSettings =
         HttpJsonCallSettings.<CreateGroupRequest, Operation>newBuilder()
@@ -2527,6 +2545,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateGroupRequest, Operation> updateGroupTransportSettings =
         HttpJsonCallSettings.<UpdateGroupRequest, Operation>newBuilder()
@@ -2549,6 +2568,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<AddAssetsToGroupRequest, Operation> addAssetsToGroupTransportSettings =
         HttpJsonCallSettings.<AddAssetsToGroupRequest, Operation>newBuilder()
@@ -2560,6 +2580,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("group", String.valueOf(request.getGroup()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getGroup())
             .build();
     HttpJsonCallSettings<RemoveAssetsFromGroupRequest, Operation>
         removeAssetsFromGroupTransportSettings =
@@ -2572,6 +2593,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                       builder.add("group", String.valueOf(request.getGroup()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getGroup())
                 .build();
     HttpJsonCallSettings<ListErrorFramesRequest, ListErrorFramesResponse>
         listErrorFramesTransportSettings =
@@ -2584,6 +2606,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetErrorFrameRequest, ErrorFrame> getErrorFrameTransportSettings =
         HttpJsonCallSettings.<GetErrorFrameRequest, ErrorFrame>newBuilder()
@@ -2595,6 +2618,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSourcesRequest, ListSourcesResponse> listSourcesTransportSettings =
         HttpJsonCallSettings.<ListSourcesRequest, ListSourcesResponse>newBuilder()
@@ -2606,6 +2630,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetSourceRequest, Source> getSourceTransportSettings =
         HttpJsonCallSettings.<GetSourceRequest, Source>newBuilder()
@@ -2617,6 +2642,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateSourceRequest, Operation> createSourceTransportSettings =
         HttpJsonCallSettings.<CreateSourceRequest, Operation>newBuilder()
@@ -2628,6 +2654,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateSourceRequest, Operation> updateSourceTransportSettings =
         HttpJsonCallSettings.<UpdateSourceRequest, Operation>newBuilder()
@@ -2650,6 +2677,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListPreferenceSetsRequest, ListPreferenceSetsResponse>
         listPreferenceSetsTransportSettings =
@@ -2662,6 +2690,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPreferenceSetRequest, PreferenceSet> getPreferenceSetTransportSettings =
         HttpJsonCallSettings.<GetPreferenceSetRequest, PreferenceSet>newBuilder()
@@ -2673,6 +2702,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreatePreferenceSetRequest, Operation>
         createPreferenceSetTransportSettings =
@@ -2685,6 +2715,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdatePreferenceSetRequest, Operation>
         updatePreferenceSetTransportSettings =
@@ -2711,6 +2742,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetSettingsRequest, Settings> getSettingsTransportSettings =
         HttpJsonCallSettings.<GetSettingsRequest, Settings>newBuilder()
@@ -2722,6 +2754,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateSettingsRequest, Operation> updateSettingsTransportSettings =
         HttpJsonCallSettings.<UpdateSettingsRequest, Operation>newBuilder()
@@ -2744,6 +2777,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetReportConfigRequest, ReportConfig> getReportConfigTransportSettings =
         HttpJsonCallSettings.<GetReportConfigRequest, ReportConfig>newBuilder()
@@ -2755,6 +2789,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListReportConfigsRequest, ListReportConfigsResponse>
         listReportConfigsTransportSettings =
@@ -2767,6 +2802,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteReportConfigRequest, Operation> deleteReportConfigTransportSettings =
         HttpJsonCallSettings.<DeleteReportConfigRequest, Operation>newBuilder()
@@ -2778,6 +2814,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateReportRequest, Operation> createReportTransportSettings =
         HttpJsonCallSettings.<CreateReportRequest, Operation>newBuilder()
@@ -2789,6 +2826,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetReportRequest, Report> getReportTransportSettings =
         HttpJsonCallSettings.<GetReportRequest, Report>newBuilder()
@@ -2800,6 +2838,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListReportsRequest, ListReportsResponse> listReportsTransportSettings =
         HttpJsonCallSettings.<ListReportsRequest, ListReportsResponse>newBuilder()
@@ -2811,6 +2850,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteReportRequest, Operation> deleteReportTransportSettings =
         HttpJsonCallSettings.<DeleteReportRequest, Operation>newBuilder()
@@ -2822,6 +2862,7 @@ public class HttpJsonMigrationCenterStub extends MigrationCenterStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

@@ -877,6 +877,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDataSourcesRequest, ListDataSourcesResponse>
         listDataSourcesTransportSettings =
@@ -889,6 +890,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateTransferConfigRequest, TransferConfig>
         createTransferConfigTransportSettings =
@@ -901,6 +903,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateTransferConfigRequest, TransferConfig>
         updateTransferConfigTransportSettings =
@@ -926,6 +929,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetTransferConfigRequest, TransferConfig>
         getTransferConfigTransportSettings =
@@ -938,6 +942,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListTransferConfigsRequest, ListTransferConfigsResponse>
         listTransferConfigsTransportSettings =
@@ -951,6 +956,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
         scheduleTransferRunsTransportSettings =
@@ -964,6 +970,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
         startManualTransferRunsTransportSettings =
@@ -977,6 +984,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetTransferRunRequest, TransferRun> getTransferRunTransportSettings =
         HttpJsonCallSettings.<GetTransferRunRequest, TransferRun>newBuilder()
@@ -988,6 +996,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteTransferRunRequest, Empty> deleteTransferRunTransportSettings =
         HttpJsonCallSettings.<DeleteTransferRunRequest, Empty>newBuilder()
@@ -999,6 +1008,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListTransferRunsRequest, ListTransferRunsResponse>
         listTransferRunsTransportSettings =
@@ -1011,6 +1021,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListTransferLogsRequest, ListTransferLogsResponse>
         listTransferLogsTransportSettings =
@@ -1023,6 +1034,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
         checkValidCredsTransportSettings =
@@ -1035,6 +1047,7 @@ public class HttpJsonDataTransferServiceStub extends DataTransferServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<EnrollDataSourcesRequest, Empty> enrollDataSourcesTransportSettings =
         HttpJsonCallSettings.<EnrollDataSourcesRequest, Empty>newBuilder()
