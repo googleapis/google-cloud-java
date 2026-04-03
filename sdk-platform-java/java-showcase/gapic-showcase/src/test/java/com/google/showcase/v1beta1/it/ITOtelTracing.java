@@ -103,8 +103,6 @@ class ITOtelTracing {
       AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE);
   private static final AttributeKey<String> REPO_KEY =
       AttributeKey.stringKey(ObservabilityAttributes.REPO_ATTRIBUTE);
-  private static final AttributeKey<String> ARTIFACT_KEY =
-      AttributeKey.stringKey(ObservabilityAttributes.ARTIFACT_ATTRIBUTE);
   private static final AttributeKey<String> ERROR_TYPE_KEY =
       AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE);
   private static final AttributeKey<String> EXCEPTION_TYPE_KEY =
