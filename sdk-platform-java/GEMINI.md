@@ -131,14 +131,21 @@ Showcase integration tests are run against a local server that implements the Sh
     cd java-showcase
     mvn verify -P enable-integration-tests
     ```
-    
-## 5. Dependency Management
+## 5. Style Guide
+
+1. Minimize scope; avoid `public` unless necessary.
+2. Use short names over fully qualified names.
+3. Avoid `@ObsoleteApi` or `@Deprecated` methods unless necessary.
+4. Avoid unnecessary formatting changes to keep diffs clean.
+5. Use `mvn` for everything other than the `test/integration` folder.
+
+## 6. Dependency Management
 
 - Try not to bump any external dependency version unless there is a known CVE (security or vulnerability issue) or a critical bug fix.
 - Try to avoid introducing new external dependencies. If a new dependency is required, please state the reason.
 - Prefer to use features from the Java standard library, then try to use features from any existing dependencies (preferably from Google managed dependencies).
 
-## 6. Contribution Guidelines
+## 7. Contribution Guidelines
 
 - **Commits:** Commit messages should follow the [Conventional Commits](https://www.conventionalcommits.org/)
   specification. The format is `<type>: <description>`. The type should be one of the following: fix, feat,
