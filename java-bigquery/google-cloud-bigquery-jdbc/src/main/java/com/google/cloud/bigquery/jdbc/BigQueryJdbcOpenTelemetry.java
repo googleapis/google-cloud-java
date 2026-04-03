@@ -23,6 +23,8 @@ public class BigQueryJdbcOpenTelemetry {
 
   static final String INSTRUMENTATION_SCOPE_NAME = "com.google.cloud.bigquery.jdbc";
 
+  private BigQueryJdbcOpenTelemetry() {}
+
   /**
    * Initializes or returns the OpenTelemetry instance based on hybrid logic. Prefer
    * customOpenTelemetry if provided; fallback to an auto-configured GCP exporter if requested.
