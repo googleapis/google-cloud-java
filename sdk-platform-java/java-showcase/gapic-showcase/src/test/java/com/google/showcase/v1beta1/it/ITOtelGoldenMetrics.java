@@ -407,9 +407,9 @@ class ITOtelGoldenMetrics {
     // metrics
     RetrySettings zeroRetrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(Duration.ofMillis(1))
-            .setMaxRpcTimeout(Duration.ofMillis(1))
-            .setTotalTimeout(Duration.ofMillis(1))
+            .setInitialRpcTimeoutDuration(Duration.ofMillis(1))
+            .setMaxRpcTimeoutDuration(Duration.ofMillis(1))
+            .setTotalTimeoutDuration(Duration.ofMillis(1))
             .setMaxAttempts(1)
             .build();
 
@@ -451,9 +451,9 @@ class ITOtelGoldenMetrics {
 
     RetrySettings zeroRetrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(Duration.ofMillis(1))
-            .setMaxRpcTimeout(Duration.ofMillis(1))
-            .setTotalTimeout(Duration.ofMillis(1))
+            .setInitialRpcTimeoutDuration(Duration.ofMillis(1))
+            .setMaxRpcTimeoutDuration(Duration.ofMillis(1))
+            .setTotalTimeoutDuration(Duration.ofMillis(1))
             .setMaxAttempts(1)
             .build();
 
@@ -495,9 +495,9 @@ class ITOtelGoldenMetrics {
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(Duration.ofMillis(5000L))
-            .setMaxRpcTimeout(Duration.ofMillis(5000L))
-            .setTotalTimeout(Duration.ofMillis(5000L))
+            .setInitialRpcTimeoutDuration(Duration.ofMillis(5000L))
+            .setMaxRpcTimeoutDuration(Duration.ofMillis(5000L))
+            .setTotalTimeoutDuration(Duration.ofMillis(5000L))
             .setMaxAttempts(3)
             .build();
 
@@ -573,9 +573,9 @@ class ITOtelGoldenMetrics {
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(Duration.ofMillis(5000L))
-            .setMaxRpcTimeout(Duration.ofMillis(5000L))
-            .setTotalTimeout(Duration.ofMillis(5000L))
+            .setInitialRpcTimeoutDuration(Duration.ofMillis(5000L))
+            .setMaxRpcTimeoutDuration(Duration.ofMillis(5000L))
+            .setTotalTimeoutDuration(Duration.ofMillis(5000L))
             .setMaxAttempts(3)
             .build();
 
