@@ -4,8 +4,8 @@ CONTAINER_NAME=jdbc
 PACKAGE_DESTINATION=$(PWD)/drivers
 SRC="$(PWD)"
 skipSurefire ?= true
-JDBC_DRIVER_VERSION := $(shell mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-JDBC_JAR ?= $(PACKAGE_DESTINATION)/google-cloud-bigquery-jdbc-$(JDBC_DRIVER_VERSION)-all.jar
+JDBC_DRIVER_VERSION = $(shell mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+JDBC_JAR = $(PACKAGE_DESTINATION)/google-cloud-bigquery-jdbc-$(JDBC_DRIVER_VERSION)-all.jar
 
 
 # no indendation for ifndef\endif due to their evaluation before execution
@@ -69,7 +69,7 @@ build-it-standalone:
 	mvn -Dmaven.test.skip=true package -f pom-it.xml
 
 run-it-standalone:
-	java -cp $(JDBC_JAR):target-it/google-cloud-bigquery-jdbc-it-standalone-1.0-SNAPSHOT.jar org.junit.platform.console.ConsoleLauncher --select-class com.google.cloud.bigquery.jdbc.it.suites.ITDriverAgnosticTests
+	java -cp $(JDBC_JAR):target-it/* org.junit.platform.console.ConsoleLauncher --select-class com.google.cloud.bigquery.jdbc.it.suites.ITDriverAgnosticTests
 
 
 # Commands for dockerized environments
