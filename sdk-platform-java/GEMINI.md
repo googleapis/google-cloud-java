@@ -131,6 +131,7 @@ Showcase integration tests are run against a local server that implements the Sh
     cd java-showcase
     mvn verify -P enable-integration-tests
     ```
+
 ## 5. Style Guide
 
 1. Minimize scope; avoid `public` unless necessary.
