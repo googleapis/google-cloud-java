@@ -115,36 +115,36 @@ class ObservabilityUtilsTest {
   }
 
   @Test
-  void testGettErrorAttributes_grpc_success() {
+  void testGetErrorAttributes_grpc_success() {
     Map<String, Object> attributes =
-        ObservabilityUtils.gettErrorAttributes(null, ApiTracerContext.Transport.GRPC);
+        ObservabilityUtils.getErrorAttributes(null, ApiTracerContext.Transport.GRPC);
     assertThat(attributes)
         .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "OK");
   }
 
   @Test
-  void testGettErrorAttributes_grpc_apiException() {
+  void testGetErrorAttributes_grpc_apiException() {
     ApiException error =
         new ApiException("fake_error", null, new FakeStatusCode(StatusCode.Code.NOT_FOUND), false);
     Map<String, Object> attributes =
-        ObservabilityUtils.gettErrorAttributes(error, ApiTracerContext.Transport.GRPC);
+        ObservabilityUtils.getErrorAttributes(error, ApiTracerContext.Transport.GRPC);
     assertThat(attributes)
         .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "NOT_FOUND");
   }
 
   @Test
-  void testGettErrorAttributes_grpc_cancellationException() {
+  void testGetErrorAttributes_grpc_cancellationException() {
     Throwable error = new java.util.concurrent.CancellationException();
     Map<String, Object> attributes =
-        ObservabilityUtils.gettErrorAttributes(error, ApiTracerContext.Transport.GRPC);
+        ObservabilityUtils.getErrorAttributes(error, ApiTracerContext.Transport.GRPC);
     assertThat(attributes)
         .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "CANCELLED");
   }
 
   @Test
-  void testGettErrorAttributes_http_success() {
+  void testGetErrorAttributes_http_success() {
     Map<String, Object> attributes =
-        ObservabilityUtils.gettErrorAttributes(null, ApiTracerContext.Transport.HTTP);
+        ObservabilityUtils.getErrorAttributes(null, ApiTracerContext.Transport.HTTP);
     assertThat(attributes)
         .containsEntry(
             ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
@@ -152,7 +152,7 @@ class ObservabilityUtilsTest {
   }
 
   @Test
-  void testGettErrorAttributes_http_apiExceptionWithIntegerTransportCode() {
+  void testGetErrorAttributes_http_apiExceptionWithIntegerTransportCode() {
     ApiException error =
         new ApiException(
             "fake_error",
@@ -170,7 +170,7 @@ class ObservabilityUtilsTest {
             },
             false);
     Map<String, Object> attributes =
-        ObservabilityUtils.gettErrorAttributes(error, ApiTracerContext.Transport.HTTP);
+        ObservabilityUtils.getErrorAttributes(error, ApiTracerContext.Transport.HTTP);
     assertThat(attributes)
         .containsEntry(
             ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
@@ -178,7 +178,7 @@ class ObservabilityUtilsTest {
   }
 
   @Test
-  void testGettErrorAttributes_http_apiExceptionWithNonIntegerTransportCode() {
+  void testGetErrorAttributes_http_apiExceptionWithNonIntegerTransportCode() {
     ApiException error =
         new ApiException(
             "fake_error",
@@ -196,7 +196,7 @@ class ObservabilityUtilsTest {
             },
             false);
     Map<String, Object> attributes =
-        ObservabilityUtils.gettErrorAttributes(error, ApiTracerContext.Transport.HTTP);
+        ObservabilityUtils.getErrorAttributes(error, ApiTracerContext.Transport.HTTP);
     assertThat(attributes)
         .containsEntry(
             ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
@@ -204,10 +204,10 @@ class ObservabilityUtilsTest {
   }
 
   @Test
-  void testGettErrorAttributes_http_cancellationException() {
+  void testGetErrorAttributes_http_cancellationException() {
     Throwable error = new java.util.concurrent.CancellationException();
     Map<String, Object> attributes =
-        ObservabilityUtils.gettErrorAttributes(error, ApiTracerContext.Transport.HTTP);
+        ObservabilityUtils.getErrorAttributes(error, ApiTracerContext.Transport.HTTP);
     assertThat(attributes)
         .containsEntry(
             ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
