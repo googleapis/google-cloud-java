@@ -406,9 +406,9 @@ class ITOtelGoldenMetrics {
     // metrics
     RetrySettings zeroRetrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(org.threeten.bp.Duration.ofMillis(1))
-            .setMaxRpcTimeout(org.threeten.bp.Duration.ofMillis(1))
-            .setTotalTimeout(org.threeten.bp.Duration.ofMillis(1))
+            .setInitialRpcTimeout(java.time.Duration.ofMillis(1))
+            .setMaxRpcTimeout(java.time.Duration.ofMillis(1))
+            .setTotalTimeout(java.time.Duration.ofMillis(1))
             .setMaxAttempts(1)
             .build();
 
@@ -450,9 +450,9 @@ class ITOtelGoldenMetrics {
 
     RetrySettings zeroRetrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(org.threeten.bp.Duration.ofMillis(1))
-            .setMaxRpcTimeout(org.threeten.bp.Duration.ofMillis(1))
-            .setTotalTimeout(org.threeten.bp.Duration.ofMillis(1))
+            .setInitialRpcTimeout(java.time.Duration.ofMillis(1))
+            .setMaxRpcTimeout(java.time.Duration.ofMillis(1))
+            .setTotalTimeout(java.time.Duration.ofMillis(1))
             .setMaxAttempts(1)
             .build();
 
@@ -494,9 +494,9 @@ class ITOtelGoldenMetrics {
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(org.threeten.bp.Duration.ofMillis(5000L))
-            .setMaxRpcTimeout(org.threeten.bp.Duration.ofMillis(5000L))
-            .setTotalTimeout(org.threeten.bp.Duration.ofMillis(5000L))
+            .setInitialRpcTimeout(java.time.Duration.ofMillis(5000L))
+            .setMaxRpcTimeout(java.time.Duration.ofMillis(5000L))
+            .setTotalTimeout(java.time.Duration.ofMillis(5000L))
             .setMaxAttempts(3)
             .build();
 
@@ -572,9 +572,9 @@ class ITOtelGoldenMetrics {
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(org.threeten.bp.Duration.ofMillis(5000L))
-            .setMaxRpcTimeout(org.threeten.bp.Duration.ofMillis(5000L))
-            .setTotalTimeout(org.threeten.bp.Duration.ofMillis(5000L))
+            .setInitialRpcTimeout(java.time.Duration.ofMillis(5000L))
+            .setMaxRpcTimeout(java.time.Duration.ofMillis(5000L))
+            .setTotalTimeout(java.time.Duration.ofMillis(5000L))
             .setMaxAttempts(3)
             .build();
 
