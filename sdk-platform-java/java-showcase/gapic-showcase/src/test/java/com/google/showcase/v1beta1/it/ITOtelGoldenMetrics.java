@@ -379,4 +379,305 @@ class ITOtelGoldenMetrics {
           .isEqualTo("503");
     }
   }
+
+  @Test
+  void testMetrics_zeroDeadline_grpc() throws Exception {
+    GoldenSignalsMetricsTracerFactory tracerFactory =
+        new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
+
+    // Using 1ms as 0ms might be rejected by some validation or trigger immediate failure before
+    // metrics
+    RetrySettings zeroRetrySettings =
+        RetrySettings.newBuilder()
+            .setInitialRpcTimeout(org.threeten.bp.Duration.ofMillis(1))
+            .setMaxRpcTimeout(org.threeten.bp.Duration.ofMillis(1))
+            .setTotalTimeout(org.threeten.bp.Duration.ofMillis(1))
+            .setMaxAttempts(1)
+            .build();
+
+    try (EchoClient client =
+        TestClientInitializer.createGrpcEchoClientOpentelemetryWithRetrySettings(
+            tracerFactory, zeroRetrySettings)) {
+
+      assertThrows(
+          Exception.class,
+          () -> client.echo(EchoRequest.newBuilder().setContent("metrics-test").build()));
+
+      Thread.sleep(100);
+      Collection<MetricData> metrics = metricReader.collectAllMetrics();
+      assertThat(metrics).isNotEmpty();
+
+      MetricData durationMetric =
+          metrics.stream()
+              .filter(m -> m.getName().equals("gcp.client.request.duration"))
+              .findFirst()
+              .orElseThrow(() -> new AssertionError("Duration metric not found"));
+
+      io.opentelemetry.api.common.Attributes attributes =
+          durationMetric.getHistogramData().getPoints().iterator().next().getAttributes();
+
+      assertThat(
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+          .isEqualTo("DEADLINE_EXCEEDED");
+      assertThat(
+              attributes.get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
+          .isEqualTo("DEADLINE_EXCEEDED");
+    }
+  }
+
+  @Test
+  void testMetrics_zeroDeadline_httpjson() throws Exception {
+    GoldenSignalsMetricsTracerFactory tracerFactory =
+        new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
+
+    RetrySettings zeroRetrySettings =
+        RetrySettings.newBuilder()
+            .setInitialRpcTimeout(org.threeten.bp.Duration.ofMillis(1))
+            .setMaxRpcTimeout(org.threeten.bp.Duration.ofMillis(1))
+            .setTotalTimeout(org.threeten.bp.Duration.ofMillis(1))
+            .setMaxAttempts(1)
+            .build();
+
+    try (EchoClient client =
+        TestClientInitializer.createHttpJsonEchoClientOpentelemetryWithRetrySettings(
+            tracerFactory, zeroRetrySettings)) {
+
+      assertThrows(
+          Exception.class,
+          () -> client.echo(EchoRequest.newBuilder().setContent("metrics-test").build()));
+
+      Thread.sleep(100);
+      Collection<MetricData> metrics = metricReader.collectAllMetrics();
+      assertThat(metrics).isNotEmpty();
+
+      MetricData durationMetric =
+          metrics.stream()
+              .filter(m -> m.getName().equals("gcp.client.request.duration"))
+              .findFirst()
+              .orElseThrow(() -> new AssertionError("Duration metric not found"));
+
+      io.opentelemetry.api.common.Attributes attributes =
+          durationMetric.getHistogramData().getPoints().iterator().next().getAttributes();
+
+      assertThat(
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+          .isEqualTo("DEADLINE_EXCEEDED");
+      assertThat(
+              attributes.get(AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE)))
+          .isEqualTo("504");
+    }
+  }
+
+  @Test
+  void testMetrics_retryAndSucceed_grpc() throws Exception {
+    GoldenSignalsMetricsTracerFactory tracerFactory =
+        new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
+
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setInitialRpcTimeout(org.threeten.bp.Duration.ofMillis(5000L))
+            .setMaxRpcTimeout(org.threeten.bp.Duration.ofMillis(5000L))
+            .setTotalTimeout(org.threeten.bp.Duration.ofMillis(5000L))
+            .setMaxAttempts(3)
+            .build();
+
+    java.util.concurrent.atomic.AtomicInteger attemptCount = new java.util.concurrent.atomic.AtomicInteger(0);
+
+    ClientInterceptor interceptor =
+        new ClientInterceptor() {
+          @Override
+          public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
+              MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
+            int attempt = attemptCount.incrementAndGet();
+            if (attempt <= 2) {
+              return new ClientCall<ReqT, RespT>() {
+                @Override
+                public void start(Listener<RespT> responseListener, Metadata headers) {
+                  responseListener.onClose(io.grpc.Status.UNAVAILABLE, new Metadata());
+                }
+
+                @Override
+                public void request(int numMessages) {}
+
+                @Override
+                public void cancel(String message, Throwable cause) {}
+
+                @Override
+                public void halfClose() {}
+
+                @Override
+                public void sendMessage(ReqT message) {}
+              };
+            } else {
+              return next.interceptCall(method, callOptions);
+            }
+          }
+        };
+
+    java.util.Set<StatusCode.Code> retryableCodes = java.util.Collections.singleton(StatusCode.Code.UNAVAILABLE);
+
+    try (EchoClient client =
+        TestClientInitializer.createGrpcEchoClientOpentelemetry(
+            tracerFactory, retrySettings, retryableCodes, ImmutableList.of(interceptor))) {
+
+      client.echo(EchoRequest.newBuilder().setContent("metrics-test").build());
+
+      assertThat(attemptCount.get()).isEqualTo(3);
+
+      Thread.sleep(100);
+      Collection<MetricData> metrics = metricReader.collectAllMetrics();
+      assertThat(metrics).hasSize(1);
+
+      MetricData durationMetric =
+          metrics.stream()
+              .filter(m -> m.getName().equals("gcp.client.request.duration"))
+              .findFirst()
+              .orElseThrow(() -> new AssertionError("Duration metric not found"));
+
+      assertThat(durationMetric.getHistogramData().getPoints()).hasSize(1);
+
+      io.opentelemetry.api.common.Attributes attributes =
+          durationMetric.getHistogramData().getPoints().iterator().next().getAttributes();
+
+      assertThat(
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+          .isEqualTo("OK");
+    }
+  }
+
+  @Test
+  void testMetrics_retryAndSucceed_httpjson() throws Exception {
+    GoldenSignalsMetricsTracerFactory tracerFactory =
+        new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
+
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setInitialRpcTimeout(org.threeten.bp.Duration.ofMillis(5000L))
+            .setMaxRpcTimeout(org.threeten.bp.Duration.ofMillis(5000L))
+            .setTotalTimeout(org.threeten.bp.Duration.ofMillis(5000L))
+            .setMaxAttempts(3)
+            .build();
+
+    java.util.concurrent.atomic.AtomicInteger requestCount = new java.util.concurrent.atomic.AtomicInteger(0);
+
+    HttpTransport mockTransport =
+        new HttpTransport() {
+          @Override
+          protected com.google.api.client.http.LowLevelHttpRequest buildRequest(
+              String method, String url) {
+            int currentCount = requestCount.incrementAndGet();
+            return new com.google.api.client.http.LowLevelHttpRequest() {
+              @Override
+              public void addHeader(String name, String value) {}
+
+              @Override
+              public com.google.api.client.http.LowLevelHttpResponse execute() {
+                if (currentCount <= 2) {
+                  return new com.google.api.client.http.LowLevelHttpResponse() {
+                    @Override
+                    public InputStream getContent() {
+                      return new ByteArrayInputStream("{}".getBytes());
+                    }
+
+                    @Override
+                    public String getContentEncoding() { return null; }
+
+                    @Override
+                    public long getContentLength() { return 2; }
+
+                    @Override
+                    public String getContentType() { return "application/json"; }
+
+                    @Override
+                    public String getStatusLine() { return "HTTP/1.1 503 Service Unavailable"; }
+
+                    @Override
+                    public int getStatusCode() { return 503; }
+
+                    @Override
+                    public String getReasonPhrase() { return "Service Unavailable"; }
+
+                    @Override
+                    public int getHeaderCount() { return 0; }
+
+                    @Override
+                    public String getHeaderName(int index) { return null; }
+
+                    @Override
+                    public String getHeaderValue(int index) { return null; }
+                  };
+                } else {
+                  return new com.google.api.client.http.LowLevelHttpResponse() {
+                    @Override
+                    public InputStream getContent() {
+                      return new ByteArrayInputStream("{\"content\":\"metrics-test\"}".getBytes());
+                    }
+
+                    @Override
+                    public String getContentEncoding() { return null; }
+
+                    @Override
+                    public long getContentLength() { return 24; }
+
+                    @Override
+                    public String getContentType() { return "application/json"; }
+
+                    @Override
+                    public String getStatusLine() { return "HTTP/1.1 200 OK"; }
+
+                    @Override
+                    public int getStatusCode() { return 200; }
+
+                    @Override
+                    public String getReasonPhrase() { return "OK"; }
+
+                    @Override
+                    public int getHeaderCount() { return 0; }
+
+                    @Override
+                    public String getHeaderName(int index) { return null; }
+
+                    @Override
+                    public String getHeaderValue(int index) { return null; }
+                  };
+                }
+              }
+            };
+          }
+        };
+
+    java.util.Set<StatusCode.Code> retryableCodes = java.util.Collections.singleton(StatusCode.Code.UNAVAILABLE);
+
+    try (EchoClient client =
+        TestClientInitializer.createHttpJsonEchoClientOpentelemetry(
+            tracerFactory, retrySettings, retryableCodes, mockTransport)) {
+
+      client.echo(EchoRequest.newBuilder().setContent("metrics-test").build());
+
+      assertThat(requestCount.get()).isEqualTo(3);
+
+      Thread.sleep(100);
+      Collection<MetricData> metrics = metricReader.collectAllMetrics();
+      assertThat(metrics).hasSize(1);
+
+      MetricData durationMetric =
+          metrics.stream()
+              .filter(m -> m.getName().equals("gcp.client.request.duration"))
+              .findFirst()
+              .orElseThrow(() -> new AssertionError("Duration metric not found"));
+
+      assertThat(durationMetric.getHistogramData().getPoints()).hasSize(1);
+
+      io.opentelemetry.api.common.Attributes attributes =
+          durationMetric.getHistogramData().getPoints().iterator().next().getAttributes();
+
+      assertThat(
+              attributes.get(
+                  AttributeKey.stringKey(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE)))
+          .isEqualTo("OK");
+    }
+  }
 }
