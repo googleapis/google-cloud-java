@@ -29,14 +29,12 @@
  */
 package com.google.api.gax.tracing;
 
-import static com.google.api.gax.tracing.ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE;
-
-import com.google.api.gax.rpc.StatusCode;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Stopwatch;
 import com.google.common.base.Ticker;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -77,21 +75,25 @@ class GoldenSignalsMetricsTracer implements ApiTracer {
    */
   @Override
   public void operationSucceeded() {
-    attributes.put(RPC_RESPONSE_STATUS_ATTRIBUTE, StatusCode.Code.OK.toString());
+    ObservabilityUtils.populateStatusAttributes(attributes, null, transport);
     metricsRecorder.recordOperationLatency(
         clientRequestTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000_000.0, attributes);
   }
 
   @Override
   public void operationCancelled() {
-    attributes.put(RPC_RESPONSE_STATUS_ATTRIBUTE, StatusCode.Code.CANCELLED.toString());
-    metricsRecorder.recordOperationLatency(
-        clientRequestTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000_000.0, attributes);
+    recordError(new CancellationException());
   }
 
   @Override
   public void operationFailed(Throwable error) {
+    recordError(error);
+  }
+
+  private void recordError(Throwable error) {
     ObservabilityUtils.populateStatusAttributes(attributes, error, transport);
+    attributes.put(
+        ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, ObservabilityUtils.extractErrorType(error));
     metricsRecorder.recordOperationLatency(
         clientRequestTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000_000.0, attributes);
   }

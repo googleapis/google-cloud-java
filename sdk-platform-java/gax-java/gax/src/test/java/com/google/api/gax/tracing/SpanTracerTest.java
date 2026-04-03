@@ -85,19 +85,6 @@ class SpanTracerTest {
   }
 
   @Test
-  void testAttemptStarted_includesLanguageAttribute() {
-    spanTracer.attemptStarted(new Object(), 1);
-
-    ArgumentCaptor<Attributes> attributesCaptor = ArgumentCaptor.forClass(Attributes.class);
-    verify(spanBuilder).setAllAttributes(attributesCaptor.capture());
-
-    assertThat(attributesCaptor.getValue().asMap())
-        .containsEntry(
-            io.opentelemetry.api.common.AttributeKey.stringKey(SpanTracer.LANGUAGE_ATTRIBUTE),
-            SpanTracer.DEFAULT_LANGUAGE);
-  }
-
-  @Test
   void testAttemptSucceeded_grpc() {
     ApiTracerContext context =
         ApiTracerContext.newBuilder()
@@ -565,10 +552,8 @@ class SpanTracerTest {
     // For an anonymous inner class Throwable, getSimpleName() is empty string,
     // which triggers the
     // fallback
-    verify(span)
-        .setAttribute(
-            ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE,
-            ErrorTypeUtil.ErrorType.INTERNAL.toString());
+    verify(span, never())
+        .setAttribute(eq(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE), anyString());
     verify(span).end();
   }
 

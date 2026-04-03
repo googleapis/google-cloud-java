@@ -36,6 +36,9 @@ inputs:
   token:
     description: Personal Access Token
     required: true
+  force_regenerate_all:
+    description: true if we want to regenerate all libraries
+    required: false
 
 runs:
   using: "composite"
@@ -76,10 +79,12 @@ runs:
         --target_branch "${BASE_REF}" \
         --current_branch "${HEAD_REF}" \
         --showcase_mode "${SHOWCASE_MODE}" \
-        --image_tag "${IMAGE_TAG}"
+        --image_tag "${IMAGE_TAG}" \
+        --force_regenerate_all "${FORCE_REGENERATE_ALL}"
     env:
       BASE_REF: ${{ inputs.base_ref }}
       HEAD_REF: ${{ inputs.head_ref }}
       IMAGE_TAG: ${{ inputs.image_tag }}
       SHOWCASE_MODE: ${{ inputs.showcase_mode }}
       GH_TOKEN: ${{ inputs.token }}
+      FORCE_REGENERATE_ALL: ${{ inputs.force_regenerate_all }}

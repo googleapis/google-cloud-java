@@ -34,6 +34,7 @@ import static com.google.api.gax.tracing.GoldenSignalsMetricsRecorder.CLIENT_REQ
 import static com.google.api.gax.tracing.GoldenSignalsMetricsRecorder.CLIENT_REQUEST_DURATION_METRIC_NAME;
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.common.collect.ImmutableMap;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
@@ -62,7 +63,13 @@ class GoldenSignalsMetricsRecorderTest {
         SdkMeterProvider.builder().registerMetricReader(metricReader).build();
     OpenTelemetry openTelemetry =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider).build();
-    recorder = new GoldenSignalsMetricsRecorder(openTelemetry, ARTIFACT_NAME);
+    recorder =
+        GoldenSignalsMetricsRecorder.create(
+            openTelemetry,
+            LibraryMetadata.newBuilder()
+                .setArtifactName(ARTIFACT_NAME)
+                .setVersion("1.2.3")
+                .build());
   }
 
   @Test
@@ -113,5 +120,28 @@ class GoldenSignalsMetricsRecorderTest {
 
     assertThat(metricData.getHistogramData().getPoints().iterator().next().getAttributes())
         .isEqualTo(Attributes.of(AttributeKey.stringKey(ATTRIBUTE_1), VALUE_1));
+  }
+
+  @Test
+  void create_shouldReturnNull_whenLibraryMetadataIsNull() {
+    GoldenSignalsMetricsRecorder actual =
+        GoldenSignalsMetricsRecorder.create(OpenTelemetry.noop(), null);
+    assertThat(actual).isNull();
+  }
+
+  @Test
+  void create_shouldReturnNull_whenArtifactNameIsNull() {
+    LibraryMetadata metadata = LibraryMetadata.newBuilder().setVersion("1.0.0").build();
+    GoldenSignalsMetricsRecorder actual =
+        GoldenSignalsMetricsRecorder.create(OpenTelemetry.noop(), metadata);
+    assertThat(actual).isNull();
+  }
+
+  @Test
+  void create_shouldReturnNull_whenArtifactNameIsEmpty() {
+    LibraryMetadata metadata = LibraryMetadata.newBuilder().setArtifactName("").build();
+    GoldenSignalsMetricsRecorder actual =
+        GoldenSignalsMetricsRecorder.create(OpenTelemetry.noop(), metadata);
+    assertThat(actual).isNull();
   }
 }

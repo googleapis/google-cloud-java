@@ -190,15 +190,21 @@ python hermetic_build/library_generation/cli/entry_point.py generate \
 2. Set the version of gapic-generator-java
 
    ```shell
-   LOCAL_GENERATOR_VERSION=$(mvn \
+   export LOCAL_GENERATOR_VERSION=$(mvn \
      org.apache.maven.plugins:maven-help-plugin:evaluate \
      -Dexpression=project.version \
-     -pl gapic-generator-java \
+     -pl sdk-platform-java/gapic-generator-java \
      -DforceStdout \
      -q)
    ```
 
-3. Run the image
+3. Clone the googleapis repository (API definitions)
+   ```shell
+	 	  cd google-cloud-java
+	    git clone https://github.com/googleapis/googleapis
+	 ```
+
+4. Run the image
 
    ```shell
       # Assume you want to generate the library in the current working directory
@@ -208,13 +214,13 @@ python hermetic_build/library_generation/cli/entry_point.py generate \
         --quiet \
         -u "$(id -u):$(id -g)" \
         -v "$(pwd):/workspace" \
-        -v /path/to/api-definitions:/workspace/apis \
+        -v "$(pwd)/googleapis:/googleapis" \
         -e GENERATOR_VERSION="${LOCAL_GENERATOR_VERSION}" \
         local:image-tag \
-        --generation-config-path=/workspace/generation_config_file \
-        --library-names=apigee-connect,asset \
+        --generation-config-path=/workspace/generation_config.yaml \
+        --library-names=translate \
         --repository-path=/workspace \
-        --api-definitions-path=/workspace/apis
+        --api-definitions-path=/googleapis
    ```
 
 # Debugging tips
