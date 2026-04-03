@@ -218,7 +218,7 @@ public class SpanTracer implements ApiTracer {
       return;
     }
     Map<String, Object> errorAttributes =
-        ObservabilityUtils.populateErrorAttributes(error, this.apiTracerContext.transport());
+        ObservabilityUtils.gettErrorAttributes(error, this.apiTracerContext.transport());
     if (!errorAttributes.isEmpty()) {
       attemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(errorAttributes));
     }

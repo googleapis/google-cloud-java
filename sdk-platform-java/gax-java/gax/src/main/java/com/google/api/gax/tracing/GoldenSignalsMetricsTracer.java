@@ -90,7 +90,7 @@ class GoldenSignalsMetricsTracer implements ApiTracer {
 
   private void recordError(Throwable error) {
     Map<String, Object> errorAttributes =
-        ObservabilityUtils.populateErrorAttributes(error, transport);
+        ObservabilityUtils.gettErrorAttributes(error, transport);
     attributes.putAll(errorAttributes);
     metricsRecorder.recordOperationLatency(
         clientRequestTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000_000.0, attributes);
