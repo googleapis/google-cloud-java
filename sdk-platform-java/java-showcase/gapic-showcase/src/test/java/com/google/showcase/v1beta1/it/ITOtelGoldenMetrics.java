@@ -61,6 +61,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.time.Duration;
 import java.util.Collection;
 
 import static com.google.common.truth.Truth.assertThat;
@@ -406,9 +407,9 @@ class ITOtelGoldenMetrics {
     // metrics
     RetrySettings zeroRetrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(java.time.Duration.ofMillis(1))
-            .setMaxRpcTimeout(java.time.Duration.ofMillis(1))
-            .setTotalTimeout(java.time.Duration.ofMillis(1))
+            .setInitialRpcTimeout(Duration.ofMillis(1))
+            .setMaxRpcTimeout(Duration.ofMillis(1))
+            .setTotalTimeout(Duration.ofMillis(1))
             .setMaxAttempts(1)
             .build();
 
@@ -450,9 +451,9 @@ class ITOtelGoldenMetrics {
 
     RetrySettings zeroRetrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(java.time.Duration.ofMillis(1))
-            .setMaxRpcTimeout(java.time.Duration.ofMillis(1))
-            .setTotalTimeout(java.time.Duration.ofMillis(1))
+            .setInitialRpcTimeout(Duration.ofMillis(1))
+            .setMaxRpcTimeout(Duration.ofMillis(1))
+            .setTotalTimeout(Duration.ofMillis(1))
             .setMaxAttempts(1)
             .build();
 
@@ -494,9 +495,9 @@ class ITOtelGoldenMetrics {
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(java.time.Duration.ofMillis(5000L))
-            .setMaxRpcTimeout(java.time.Duration.ofMillis(5000L))
-            .setTotalTimeout(java.time.Duration.ofMillis(5000L))
+            .setInitialRpcTimeout(Duration.ofMillis(5000L))
+            .setMaxRpcTimeout(Duration.ofMillis(5000L))
+            .setTotalTimeout(Duration.ofMillis(5000L))
             .setMaxAttempts(3)
             .build();
 
@@ -572,9 +573,9 @@ class ITOtelGoldenMetrics {
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
-            .setInitialRpcTimeout(java.time.Duration.ofMillis(5000L))
-            .setMaxRpcTimeout(java.time.Duration.ofMillis(5000L))
-            .setTotalTimeout(java.time.Duration.ofMillis(5000L))
+            .setInitialRpcTimeout(Duration.ofMillis(5000L))
+            .setMaxRpcTimeout(Duration.ofMillis(5000L))
+            .setTotalTimeout(Duration.ofMillis(5000L))
             .setMaxAttempts(3)
             .build();
 
