@@ -30,10 +30,6 @@
 
 package com.google.showcase.v1beta1.it;
 
-import static com.google.common.truth.Truth.assertThat;
-import static java.nio.charset.StandardCharsets.UTF_8;
-import static org.junit.Assert.assertThrows;
-
 import com.google.api.client.http.HttpTransport;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.retrying.RetrySettings;
@@ -43,10 +39,8 @@ import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.gax.tracing.GoldenSignalsMetricsTracerFactory;
 import com.google.api.gax.tracing.ObservabilityAttributes;
 import com.google.common.collect.ImmutableList;
-import com.google.rpc.Status;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
-import com.google.showcase.v1beta1.EchoResponse;
 import com.google.showcase.v1beta1.EchoSettings;
 import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
@@ -54,19 +48,24 @@ import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
 import io.grpc.ClientInterceptor;
-import io.grpc.MethodDescriptor;
 import io.grpc.Metadata;
+import io.grpc.MethodDescriptor;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.util.Collection;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.util.Collection;
+
+import static com.google.common.truth.Truth.assertThat;
+import static java.nio.charset.StandardCharsets.UTF_8;
+import static org.junit.Assert.assertThrows;
 
 class ITOtelGoldenMetrics {
   private static final String SHOWCASE_SERVER_ADDRESS = "localhost";
@@ -513,7 +512,7 @@ class ITOtelGoldenMetrics {
                 public void sendMessage(ReqT message) {}
               };
             } else {
-              return next.interceptCall(method, callOptions);
+              return next.newCall(method, callOptions);
             }
           }
         };
