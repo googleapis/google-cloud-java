@@ -37,6 +37,8 @@ import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
 import io.opentelemetry.api.trace.SpanKind;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Scope;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
@@ -53,6 +55,7 @@ public class SpanTracer implements ApiTracer {
   private final String attemptSpanName;
   private final ApiTracerContext apiTracerContext;
   private Span attemptSpan;
+  private io.opentelemetry.context.Scope scope;
 
   @Override
   public void injectTraceContext(java.util.Map<String, String> carrier) {
@@ -144,6 +147,7 @@ public class SpanTracer implements ApiTracer {
     spanBuilder.setAllAttributes(ObservabilityUtils.toOtelAttributes(currentAttemptAttributes));
 
     this.attemptSpan = spanBuilder.startSpan();
+    this.scope = attemptSpan.makeCurrent();
   }
 
   @Override
@@ -249,6 +253,7 @@ public class SpanTracer implements ApiTracer {
       return;
     }
 
+    scope.close();
     attemptSpan.end();
     attemptSpan = null;
   }
