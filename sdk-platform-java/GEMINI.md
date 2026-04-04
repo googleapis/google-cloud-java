@@ -134,7 +134,7 @@ Showcase integration tests are run against a local server that implements the Sh
 
 ## 5. Style Guide
 
-1. Minimize scope; avoid `public` unless necessary.
+1. Minimize visibility scopes by defaulting to the most restrictive access level, avoiding the `public` modifier unless required.
 2. Use short names over fully qualified names.
 3. Avoid calling `@ObsoleteApi` or `@Deprecated` methods unless there are no alternatives.
 4. Avoid unnecessary formatting changes to keep diffs clean.
