@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.httpjson.ApiMethodDescriptor;
 import com.google.api.gax.httpjson.ForwardingHttpJsonClientCall;
+import com.google.api.gax.httpjson.ForwardingHttpJsonClientCallListener;
 import com.google.api.gax.httpjson.HttpJsonCallOptions;
 import com.google.api.gax.httpjson.HttpJsonChannel;
 import com.google.api.gax.httpjson.HttpJsonClientCall;
@@ -76,8 +77,7 @@ class ITOtelTracePropagation {
         public void start(ClientCall.Listener<ResponseT> responseListener, Metadata headers) {
           requestHeaders = headers;
           ClientCall.Listener<ResponseT> forwardingResponseListener =
-              new ForwardingClientCallListener.SimpleForwardingClientCallListener<ResponseT>(
-                  responseListener) {
+              new ForwardingClientCallListener.SimpleForwardingClientCallListener<ResponseT>(responseListener) {
                 @Override
                 public void onClose(io.grpc.Status status, Metadata trailers) {
                   responseTrailers = trailers;
@@ -90,8 +90,7 @@ class ITOtelTracePropagation {
     }
   }
 
-  private static class HttpJsonResponseCapturingClientInterceptor
-      implements HttpJsonClientInterceptor {
+  private static class HttpJsonResponseCapturingClientInterceptor implements HttpJsonClientInterceptor {
     private HttpJsonMetadata requestHeaders;
 
     @Override
@@ -204,8 +203,7 @@ class ITOtelTracePropagation {
     String expectedTraceId = attemptSpan.getSpanContext().getTraceId();
     String expectedSpanId = attemptSpan.getSpanContext().getSpanId();
     String expectedTraceFlags = attemptSpan.getSpanContext().getTraceFlags().asHex();
-    String expectedTraceparent =
-        "00-" + expectedTraceId + "-" + expectedSpanId + "-" + expectedTraceFlags;
+    String expectedTraceparent = "00-" + expectedTraceId + "-" + expectedSpanId + "-" + expectedTraceFlags;
 
     String headerValue = grpcInterceptor.requestHeaders.get(TRACEPARENT_GRPC_HEADER_KEY);
     assertThat(headerValue).isNotNull();
@@ -230,8 +228,7 @@ class ITOtelTracePropagation {
     String expectedTraceId = attemptSpan.getSpanContext().getTraceId();
     String expectedSpanId = attemptSpan.getSpanContext().getSpanId();
     String expectedTraceFlags = attemptSpan.getSpanContext().getTraceFlags().asHex();
-    String expectedTraceparent =
-        "00-" + expectedTraceId + "-" + expectedSpanId + "-" + expectedTraceFlags;
+    String expectedTraceparent = "00-" + expectedTraceId + "-" + expectedSpanId + "-" + expectedTraceFlags;
 
     assertThat(httpJsonInterceptor.requestHeaders).isNotNull();
     Map<String, Object> headers = httpJsonInterceptor.requestHeaders.getHeaders();
@@ -240,12 +237,12 @@ class ITOtelTracePropagation {
 
     Object headerVal = headers.get(expectedHttpHeaderKey);
     if (headerVal instanceof List) {
-      @SuppressWarnings("unchecked")
-      List<String> traceparentHeaders = (List<String>) headerVal;
-      assertThat(traceparentHeaders).hasSize(1);
-      assertThat(traceparentHeaders.get(0)).isEqualTo(expectedTraceparent);
+       @SuppressWarnings("unchecked")
+       List<String> traceparentHeaders = (List<String>) headerVal;
+       assertThat(traceparentHeaders).hasSize(1);
+       assertThat(traceparentHeaders.get(0)).isEqualTo(expectedTraceparent);
     } else {
-      assertThat(String.valueOf(headerVal)).isEqualTo(expectedTraceparent);
+       assertThat(String.valueOf(headerVal)).isEqualTo(expectedTraceparent);
     }
   }
 }
