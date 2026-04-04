@@ -217,10 +217,10 @@ public class SpanTracer implements ApiTracer {
     if (attemptSpan == null) {
       return;
     }
-    Map<String, Object> errorAttributes =
+    Map<String, Object> responseAttributes =
         ObservabilityUtils.getResponseAttributes(error, this.apiTracerContext.transport());
-    if (!errorAttributes.isEmpty()) {
-      attemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(errorAttributes));
+    if (!responseAttributes.isEmpty()) {
+      attemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(responseAttributes));
     }
 
     if (error != null && !Strings.isNullOrEmpty(error.getMessage())) {
