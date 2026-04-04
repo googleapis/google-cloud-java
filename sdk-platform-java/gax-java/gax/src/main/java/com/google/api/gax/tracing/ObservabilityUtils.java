@@ -171,7 +171,7 @@ final class ObservabilityUtils {
     return Joiner.on('&').join(redactedParams);
   }
 
-  static Map<String, Object> getErrorAttributes(
+  static Map<String, Object> getResponseAttributes(
       @Nullable Throwable error, ApiTracerContext.Transport transport) {
     Map<String, Object> attributes = new HashMap<>();
     StatusCode.Code code = extractStatus(error);

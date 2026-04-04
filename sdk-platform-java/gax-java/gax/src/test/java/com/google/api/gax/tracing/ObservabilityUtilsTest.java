@@ -115,36 +115,36 @@ class ObservabilityUtilsTest {
   }
 
   @Test
-  void testGetErrorAttributes_grpc_success() {
+  void testGetResponseAttributes_grpc_success() {
     Map<String, Object> attributes =
-        ObservabilityUtils.getErrorAttributes(null, ApiTracerContext.Transport.GRPC);
+        ObservabilityUtils.getResponseAttributes(null, ApiTracerContext.Transport.GRPC);
     assertThat(attributes)
         .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "OK");
   }
 
   @Test
-  void testGetErrorAttributes_grpc_apiException() {
+  void testGetResponseAttributes_grpc_apiException() {
     ApiException error =
         new ApiException("fake_error", null, new FakeStatusCode(StatusCode.Code.NOT_FOUND), false);
     Map<String, Object> attributes =
-        ObservabilityUtils.getErrorAttributes(error, ApiTracerContext.Transport.GRPC);
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.GRPC);
     assertThat(attributes)
         .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "NOT_FOUND");
   }
 
   @Test
-  void testGetErrorAttributes_grpc_cancellationException() {
+  void testGetResponseAttributes_grpc_cancellationException() {
     Throwable error = new java.util.concurrent.CancellationException();
     Map<String, Object> attributes =
-        ObservabilityUtils.getErrorAttributes(error, ApiTracerContext.Transport.GRPC);
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.GRPC);
     assertThat(attributes)
         .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "CANCELLED");
   }
 
   @Test
-  void testGetErrorAttributes_http_success() {
+  void testGetResponseAttributes_http_success() {
     Map<String, Object> attributes =
-        ObservabilityUtils.getErrorAttributes(null, ApiTracerContext.Transport.HTTP);
+        ObservabilityUtils.getResponseAttributes(null, ApiTracerContext.Transport.HTTP);
     assertThat(attributes)
         .containsEntry(
             ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
@@ -152,7 +152,7 @@ class ObservabilityUtilsTest {
   }
 
   @Test
-  void testGetErrorAttributes_http_apiExceptionWithIntegerTransportCode() {
+  void testGetResponseAttributes_http_apiExceptionWithIntegerTransportCode() {
     ApiException error =
         new ApiException(
             "fake_error",
@@ -170,7 +170,7 @@ class ObservabilityUtilsTest {
             },
             false);
     Map<String, Object> attributes =
-        ObservabilityUtils.getErrorAttributes(error, ApiTracerContext.Transport.HTTP);
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.HTTP);
     assertThat(attributes)
         .containsEntry(
             ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
@@ -178,7 +178,7 @@ class ObservabilityUtilsTest {
   }
 
   @Test
-  void testGetErrorAttributes_http_apiExceptionWithNonIntegerTransportCode() {
+  void testGetResponseAttributes_http_apiExceptionWithNonIntegerTransportCode() {
     ApiException error =
         new ApiException(
             "fake_error",
@@ -196,7 +196,7 @@ class ObservabilityUtilsTest {
             },
             false);
     Map<String, Object> attributes =
-        ObservabilityUtils.getErrorAttributes(error, ApiTracerContext.Transport.HTTP);
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.HTTP);
     assertThat(attributes)
         .containsEntry(
             ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
@@ -204,10 +204,10 @@ class ObservabilityUtilsTest {
   }
 
   @Test
-  void testGetErrorAttributes_http_cancellationException() {
+  void testGetResponseAttributes_http_cancellationException() {
     Throwable error = new java.util.concurrent.CancellationException();
     Map<String, Object> attributes =
-        ObservabilityUtils.getErrorAttributes(error, ApiTracerContext.Transport.HTTP);
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.HTTP);
     assertThat(attributes)
         .containsEntry(
             ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
