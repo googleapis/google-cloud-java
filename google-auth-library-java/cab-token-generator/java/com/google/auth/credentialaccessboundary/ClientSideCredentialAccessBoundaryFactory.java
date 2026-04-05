@@ -248,7 +248,7 @@ public class ClientSideCredentialAccessBoundaryFactory {
         }
         try {
           // Wait for the refresh task to complete.
-          currentRefreshTask.task.get();
+          currentRefreshTask.get();
         } catch (InterruptedException e) {
           // Restore the interrupted status and throw an exception.
           Thread.currentThread().interrupt();
@@ -495,31 +495,17 @@ public class ClientSideCredentialAccessBoundaryFactory {
       this.task = task;
       this.isNew = isNew;
 
-      // Add listener to update factory's credentials when the task completes.
+      // Single listener to guarantee that finishRefreshTask updates the internal state BEFORE
+      // the outer future completes and unblocks waiters.
       task.addListener(
           () -> {
             try {
               finishRefreshTask(task);
+              RefreshTask.this.set(Futures.getDone(task));
             } catch (ExecutionException e) {
-              Throwable cause = e.getCause();
-              RefreshTask.this.setException(cause);
-            }
-          },
-          MoreExecutors.directExecutor());
-
-      // Add callback to set the result or exception based on the outcome.
-      Futures.addCallback(
-          task,
-          new FutureCallback<IntermediateCredentials>() {
-            @Override
-            public void onSuccess(IntermediateCredentials result) {
-              RefreshTask.this.set(result);
-            }
-
-            @Override
-            public void onFailure(@Nullable Throwable t) {
-              RefreshTask.this.setException(
-                  t != null ? t : new IOException("Refresh failed with null Throwable."));
+              RefreshTask.this.setException(e.getCause());
+            } catch (Exception e) {
+              RefreshTask.this.setException(e);
             }
           },
           MoreExecutors.directExecutor());
