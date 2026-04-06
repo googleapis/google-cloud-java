@@ -31,7 +31,6 @@
 package com.google.api.gax.tracing;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.gax.logging.TestLogger;
 import com.google.api.gax.rpc.ApiExceptionFactory;
@@ -121,8 +120,6 @@ class LoggingTracerTest {
     tracer.recordActionableError(error);
 
     Map<String, ?> attributesMap = getAttributesMap();
-
-    assertTrue(attributesMap != null && !attributesMap.isEmpty());
     assertEquals(
         "INVALID_ARGUMENT",
         attributesMap.get(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE));
@@ -138,8 +135,6 @@ class LoggingTracerTest {
     tracer.recordActionableError(error);
 
     Map<String, ?> attributesMap = getAttributesMap();
-
-    assertTrue(attributesMap != null && !attributesMap.isEmpty());
     assertEquals(
         "test-service", attributesMap.get(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE));
   }
@@ -172,8 +167,6 @@ class LoggingTracerTest {
     tracer.recordActionableError(error);
 
     Map<String, ?> attributesMap = getAttributesMap();
-
-    assertTrue(attributesMap != null && !attributesMap.isEmpty());
     assertEquals("TEST_REASON", attributesMap.get(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE));
     assertEquals(
         "test.domain.com", attributesMap.get(ObservabilityAttributes.ERROR_DOMAIN_ATTRIBUTE));
@@ -191,8 +184,6 @@ class LoggingTracerTest {
     tracer.recordActionableError(error);
 
     Map<String, ?> attributesMap = getAttributesMap();
-
-    assertTrue(attributesMap != null && !attributesMap.isEmpty());
     assertEquals(
         "java.lang.RuntimeException",
         attributesMap.get(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE));
@@ -217,8 +208,6 @@ class LoggingTracerTest {
     tracer.recordActionableError(error);
 
     Map<String, ?> attributesMap = getAttributesMap();
-
-    assertTrue(attributesMap != null && !attributesMap.isEmpty());
     assertEquals(
         "INVALID_ARGUMENT",
         attributesMap.get(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE));
