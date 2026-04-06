@@ -38,47 +38,39 @@
         <dependency>
             <groupId>com.google.api.grpc</groupId>
             <artifactId>proto-google-common-protos</artifactId>
-          <version>2.68.0</version><!-- {x-version-update:proto-google-common-protos:current} -->
         </dependency>
         <dependency>
             <groupId>com.google.api.grpc</groupId>
             <artifactId>proto-google-iam-v1</artifactId>
-          <version>1.63.0</version><!-- {x-version-update:proto-google-iam-v1:current} -->
         </dependency>
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>api-common</artifactId>
-          <version>2.60.0</version><!-- {x-version-update:api-common:current} -->
         </dependency>
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax</artifactId>
-          <version>2.77.0</version><!-- {x-version-update:gax:current} -->
         </dependency>
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax</artifactId>
             <scope>test</scope>
             <classifier>testlib</classifier>
-          <version>2.77.0</version><!-- {x-version-update:gax:current} -->
         </dependency>
 
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax-grpc</artifactId>
-          <version>2.77.0</version><!-- {x-version-update:gax-grpc:current} -->
         </dependency>
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax-httpjson</artifactId>
-          <version>0.162.0</version><!-- {x-version-update:gax-httpjson:current} -->
         </dependency>
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax-httpjson</artifactId>
             <scope>test</scope>
             <classifier>testlib</classifier>
-          <version>0.162.0</version><!-- {x-version-update:gax-httpjson:current} -->
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -94,7 +86,6 @@
             <artifactId>gax-grpc</artifactId>
             <classifier>testlib</classifier>
             <scope>test</scope>
-          <version>2.77.0</version><!-- {x-version-update:gax-grpc:current} -->
         </dependency>
         <dependency>
             <groupId>com.google.api.grpc</groupId>
