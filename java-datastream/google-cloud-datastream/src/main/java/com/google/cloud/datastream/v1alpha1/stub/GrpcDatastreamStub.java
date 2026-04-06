@@ -436,6 +436,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetConnectionProfileRequest, ConnectionProfile>
         getConnectionProfileTransportSettings =
@@ -447,6 +448,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateConnectionProfileRequest, Operation>
         createConnectionProfileTransportSettings =
@@ -458,6 +460,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateConnectionProfileRequest, Operation>
         updateConnectionProfileTransportSettings =
@@ -482,6 +485,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DiscoverConnectionProfileRequest, DiscoverConnectionProfileResponse>
         discoverConnectionProfileTransportSettings =
@@ -494,6 +498,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListStreamsRequest, ListStreamsResponse> listStreamsTransportSettings =
         GrpcCallSettings.<ListStreamsRequest, ListStreamsResponse>newBuilder()
@@ -504,6 +509,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetStreamRequest, Stream> getStreamTransportSettings =
         GrpcCallSettings.<GetStreamRequest, Stream>newBuilder()
@@ -514,6 +520,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateStreamRequest, Operation> createStreamTransportSettings =
         GrpcCallSettings.<CreateStreamRequest, Operation>newBuilder()
@@ -524,6 +531,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateStreamRequest, Operation> updateStreamTransportSettings =
         GrpcCallSettings.<UpdateStreamRequest, Operation>newBuilder()
@@ -544,6 +552,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<FetchErrorsRequest, Operation> fetchErrorsTransportSettings =
         GrpcCallSettings.<FetchErrorsRequest, Operation>newBuilder()
@@ -554,6 +563,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                   builder.add("stream", String.valueOf(request.getStream()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getStream())
             .build();
     GrpcCallSettings<FetchStaticIpsRequest, FetchStaticIpsResponse>
         fetchStaticIpsTransportSettings =
@@ -565,6 +575,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreatePrivateConnectionRequest, Operation>
         createPrivateConnectionTransportSettings =
@@ -576,6 +587,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPrivateConnectionRequest, PrivateConnection>
         getPrivateConnectionTransportSettings =
@@ -587,6 +599,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListPrivateConnectionsRequest, ListPrivateConnectionsResponse>
         listPrivateConnectionsTransportSettings =
@@ -599,6 +612,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeletePrivateConnectionRequest, Operation>
         deletePrivateConnectionTransportSettings =
@@ -610,6 +624,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateRouteRequest, Operation> createRouteTransportSettings =
         GrpcCallSettings.<CreateRouteRequest, Operation>newBuilder()
@@ -620,6 +635,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetRouteRequest, Route> getRouteTransportSettings =
         GrpcCallSettings.<GetRouteRequest, Route>newBuilder()
@@ -630,6 +646,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListRoutesRequest, ListRoutesResponse> listRoutesTransportSettings =
         GrpcCallSettings.<ListRoutesRequest, ListRoutesResponse>newBuilder()
@@ -640,6 +657,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteRouteRequest, Operation> deleteRouteTransportSettings =
         GrpcCallSettings.<DeleteRouteRequest, Operation>newBuilder()
@@ -650,6 +668,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.listConnectionProfilesCallable =

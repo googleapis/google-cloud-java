@@ -295,6 +295,7 @@ public class HttpJsonTagBindingsStub extends TagBindingsStub {
             HttpJsonCallSettings.<ListTagBindingsRequest, ListTagBindingsResponse>newBuilder()
                 .setMethodDescriptor(listTagBindingsMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateTagBindingRequest, Operation> createTagBindingTransportSettings =
         HttpJsonCallSettings.<CreateTagBindingRequest, Operation>newBuilder()
@@ -311,6 +312,7 @@ public class HttpJsonTagBindingsStub extends TagBindingsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListEffectiveTagsRequest, ListEffectiveTagsResponse>
         listEffectiveTagsTransportSettings =

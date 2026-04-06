@@ -268,6 +268,7 @@ public class GrpcIdentityAwareProxyAdminServiceStub extends IdentityAwareProxyAd
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -278,6 +279,7 @@ public class GrpcIdentityAwareProxyAdminServiceStub extends IdentityAwareProxyAd
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -289,6 +291,7 @@ public class GrpcIdentityAwareProxyAdminServiceStub extends IdentityAwareProxyAd
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<GetIapSettingsRequest, IapSettings> getIapSettingsTransportSettings =
         GrpcCallSettings.<GetIapSettingsRequest, IapSettings>newBuilder()
@@ -334,6 +337,7 @@ public class GrpcIdentityAwareProxyAdminServiceStub extends IdentityAwareProxyAd
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateTunnelDestGroupRequest, TunnelDestGroup>
         createTunnelDestGroupTransportSettings =
@@ -345,6 +349,7 @@ public class GrpcIdentityAwareProxyAdminServiceStub extends IdentityAwareProxyAd
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTunnelDestGroupRequest, TunnelDestGroup>
         getTunnelDestGroupTransportSettings =
@@ -356,6 +361,7 @@ public class GrpcIdentityAwareProxyAdminServiceStub extends IdentityAwareProxyAd
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DeleteTunnelDestGroupRequest, Empty> deleteTunnelDestGroupTransportSettings =
         GrpcCallSettings.<DeleteTunnelDestGroupRequest, Empty>newBuilder()
@@ -366,6 +372,7 @@ public class GrpcIdentityAwareProxyAdminServiceStub extends IdentityAwareProxyAd
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateTunnelDestGroupRequest, TunnelDestGroup>
         updateTunnelDestGroupTransportSettings =

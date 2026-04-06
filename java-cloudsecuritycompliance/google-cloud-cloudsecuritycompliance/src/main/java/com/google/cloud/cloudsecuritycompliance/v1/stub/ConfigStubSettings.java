@@ -508,6 +508,7 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-cloudsecuritycompliance")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

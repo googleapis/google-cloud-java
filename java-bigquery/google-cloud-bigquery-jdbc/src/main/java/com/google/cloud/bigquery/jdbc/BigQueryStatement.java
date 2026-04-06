@@ -643,6 +643,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   Job getNextJob() {
+    if (this.parentJobId == null) {
+      return null;
+    }
+
     while (this.currentJobIdIndex + 1 < this.parentJobId.getJobs().size()) {
       this.currentJobIdIndex += 1;
       Job currentJob = this.parentJobId.getJobs().get(this.currentJobIdIndex);
@@ -1446,10 +1450,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (current != CLOSE_CURRENT_RESULT) {
       throw new BigQueryJdbcSqlFeatureNotSupportedException(
           "The JDBC driver only supports Statement.CLOSE_CURRENT_RESULT.");
-    }
-
-    if (this.parentJobId == null) {
-      return false;
     }
 
     try {

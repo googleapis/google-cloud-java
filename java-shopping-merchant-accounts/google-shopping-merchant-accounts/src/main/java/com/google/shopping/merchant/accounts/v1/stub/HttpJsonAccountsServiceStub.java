@@ -385,6 +385,7 @@ public class HttpJsonAccountsServiceStub extends AccountsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateAndConfigureAccountRequest, Account>
         createAndConfigureAccountTransportSettings =
@@ -402,6 +403,7 @@ public class HttpJsonAccountsServiceStub extends AccountsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteAccountRequest, Empty> deleteAccountTransportSettings =
         HttpJsonCallSettings.<DeleteAccountRequest, Empty>newBuilder()
@@ -413,6 +415,7 @@ public class HttpJsonAccountsServiceStub extends AccountsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateAccountRequest, Account> updateAccountTransportSettings =
         HttpJsonCallSettings.<UpdateAccountRequest, Account>newBuilder()
@@ -441,6 +444,7 @@ public class HttpJsonAccountsServiceStub extends AccountsServiceStub {
                       builder.add("provider", String.valueOf(request.getProvider()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProvider())
                 .build();
 
     this.getAccountCallable =

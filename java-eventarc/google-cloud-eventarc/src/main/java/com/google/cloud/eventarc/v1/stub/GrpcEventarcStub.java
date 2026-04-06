@@ -774,6 +774,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTriggersRequest, ListTriggersResponse> listTriggersTransportSettings =
         GrpcCallSettings.<ListTriggersRequest, ListTriggersResponse>newBuilder()
@@ -784,6 +785,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateTriggerRequest, Operation> createTriggerTransportSettings =
         GrpcCallSettings.<CreateTriggerRequest, Operation>newBuilder()
@@ -794,6 +796,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTriggerRequest, Operation> updateTriggerTransportSettings =
         GrpcCallSettings.<UpdateTriggerRequest, Operation>newBuilder()
@@ -814,6 +817,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetChannelRequest, Channel> getChannelTransportSettings =
         GrpcCallSettings.<GetChannelRequest, Channel>newBuilder()
@@ -824,6 +828,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListChannelsRequest, ListChannelsResponse> listChannelsTransportSettings =
         GrpcCallSettings.<ListChannelsRequest, ListChannelsResponse>newBuilder()
@@ -834,6 +839,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateChannelRequest, Operation> createChannelTransportSettings =
         GrpcCallSettings.<CreateChannelRequest, Operation>newBuilder()
@@ -844,6 +850,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateChannelRequest, Operation> updateChannelTransportSettings =
         GrpcCallSettings.<UpdateChannelRequest, Operation>newBuilder()
@@ -864,6 +871,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetProviderRequest, Provider> getProviderTransportSettings =
         GrpcCallSettings.<GetProviderRequest, Provider>newBuilder()
@@ -874,6 +882,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProvidersRequest, ListProvidersResponse> listProvidersTransportSettings =
         GrpcCallSettings.<ListProvidersRequest, ListProvidersResponse>newBuilder()
@@ -884,6 +893,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetChannelConnectionRequest, ChannelConnection>
         getChannelConnectionTransportSettings =
@@ -895,6 +905,7 @@ public class GrpcEventarcStub extends EventarcStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListChannelConnectionsRequest, ListChannelConnectionsResponse>
         listChannelConnectionsTransportSettings =
@@ -907,6 +918,7 @@ public class GrpcEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateChannelConnectionRequest, Operation>
         createChannelConnectionTransportSettings =
@@ -918,6 +930,7 @@ public class GrpcEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteChannelConnectionRequest, Operation>
         deleteChannelConnectionTransportSettings =
@@ -929,6 +942,7 @@ public class GrpcEventarcStub extends EventarcStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<GetGoogleChannelConfigRequest, GoogleChannelConfig>
         getGoogleChannelConfigTransportSettings =
@@ -940,6 +954,7 @@ public class GrpcEventarcStub extends EventarcStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<UpdateGoogleChannelConfigRequest, GoogleChannelConfig>
         updateGoogleChannelConfigTransportSettings =
@@ -963,6 +978,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListMessageBusesRequest, ListMessageBusesResponse>
         listMessageBusesTransportSettings =
@@ -974,6 +990,7 @@ public class GrpcEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListMessageBusEnrollmentsRequest, ListMessageBusEnrollmentsResponse>
         listMessageBusEnrollmentsTransportSettings =
@@ -986,6 +1003,7 @@ public class GrpcEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateMessageBusRequest, Operation> createMessageBusTransportSettings =
         GrpcCallSettings.<CreateMessageBusRequest, Operation>newBuilder()
@@ -996,6 +1014,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateMessageBusRequest, Operation> updateMessageBusTransportSettings =
         GrpcCallSettings.<UpdateMessageBusRequest, Operation>newBuilder()
@@ -1017,6 +1036,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetEnrollmentRequest, Enrollment> getEnrollmentTransportSettings =
         GrpcCallSettings.<GetEnrollmentRequest, Enrollment>newBuilder()
@@ -1027,6 +1047,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListEnrollmentsRequest, ListEnrollmentsResponse>
         listEnrollmentsTransportSettings =
@@ -1038,6 +1059,7 @@ public class GrpcEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateEnrollmentRequest, Operation> createEnrollmentTransportSettings =
         GrpcCallSettings.<CreateEnrollmentRequest, Operation>newBuilder()
@@ -1048,6 +1070,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEnrollmentRequest, Operation> updateEnrollmentTransportSettings =
         GrpcCallSettings.<UpdateEnrollmentRequest, Operation>newBuilder()
@@ -1068,6 +1091,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetPipelineRequest, Pipeline> getPipelineTransportSettings =
         GrpcCallSettings.<GetPipelineRequest, Pipeline>newBuilder()
@@ -1078,6 +1102,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListPipelinesRequest, ListPipelinesResponse> listPipelinesTransportSettings =
         GrpcCallSettings.<ListPipelinesRequest, ListPipelinesResponse>newBuilder()
@@ -1088,6 +1113,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreatePipelineRequest, Operation> createPipelineTransportSettings =
         GrpcCallSettings.<CreatePipelineRequest, Operation>newBuilder()
@@ -1098,6 +1124,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdatePipelineRequest, Operation> updatePipelineTransportSettings =
         GrpcCallSettings.<UpdatePipelineRequest, Operation>newBuilder()
@@ -1118,6 +1145,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetGoogleApiSourceRequest, GoogleApiSource>
         getGoogleApiSourceTransportSettings =
@@ -1129,6 +1157,7 @@ public class GrpcEventarcStub extends EventarcStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListGoogleApiSourcesRequest, ListGoogleApiSourcesResponse>
         listGoogleApiSourcesTransportSettings =
@@ -1140,6 +1169,7 @@ public class GrpcEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateGoogleApiSourceRequest, Operation>
         createGoogleApiSourceTransportSettings =
@@ -1151,6 +1181,7 @@ public class GrpcEventarcStub extends EventarcStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateGoogleApiSourceRequest, Operation>
         updateGoogleApiSourceTransportSettings =
@@ -1175,6 +1206,7 @@ public class GrpcEventarcStub extends EventarcStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1205,6 +1237,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1215,6 +1248,7 @@ public class GrpcEventarcStub extends EventarcStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1226,6 +1260,7 @@ public class GrpcEventarcStub extends EventarcStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.getTriggerCallable =

@@ -662,6 +662,7 @@ public class HttpJsonRapidMigrationAssessmentStub extends RapidMigrationAssessme
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateAnnotationRequest, Operation> createAnnotationTransportSettings =
         HttpJsonCallSettings.<CreateAnnotationRequest, Operation>newBuilder()
@@ -673,6 +674,7 @@ public class HttpJsonRapidMigrationAssessmentStub extends RapidMigrationAssessme
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetAnnotationRequest, Annotation> getAnnotationTransportSettings =
         HttpJsonCallSettings.<GetAnnotationRequest, Annotation>newBuilder()
@@ -684,6 +686,7 @@ public class HttpJsonRapidMigrationAssessmentStub extends RapidMigrationAssessme
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCollectorsRequest, ListCollectorsResponse>
         listCollectorsTransportSettings =
@@ -696,6 +699,7 @@ public class HttpJsonRapidMigrationAssessmentStub extends RapidMigrationAssessme
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetCollectorRequest, Collector> getCollectorTransportSettings =
         HttpJsonCallSettings.<GetCollectorRequest, Collector>newBuilder()
@@ -707,6 +711,7 @@ public class HttpJsonRapidMigrationAssessmentStub extends RapidMigrationAssessme
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateCollectorRequest, Operation> updateCollectorTransportSettings =
         HttpJsonCallSettings.<UpdateCollectorRequest, Operation>newBuilder()
@@ -729,6 +734,7 @@ public class HttpJsonRapidMigrationAssessmentStub extends RapidMigrationAssessme
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ResumeCollectorRequest, Operation> resumeCollectorTransportSettings =
         HttpJsonCallSettings.<ResumeCollectorRequest, Operation>newBuilder()
@@ -740,6 +746,7 @@ public class HttpJsonRapidMigrationAssessmentStub extends RapidMigrationAssessme
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RegisterCollectorRequest, Operation> registerCollectorTransportSettings =
         HttpJsonCallSettings.<RegisterCollectorRequest, Operation>newBuilder()
@@ -751,6 +758,7 @@ public class HttpJsonRapidMigrationAssessmentStub extends RapidMigrationAssessme
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<PauseCollectorRequest, Operation> pauseCollectorTransportSettings =
         HttpJsonCallSettings.<PauseCollectorRequest, Operation>newBuilder()
@@ -762,6 +770,7 @@ public class HttpJsonRapidMigrationAssessmentStub extends RapidMigrationAssessme
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

@@ -36,7 +36,7 @@ import java.util.Map;
 @InternalApi
 public class LoggingUtils {
 
-  static final String GOOGLE_SDK_JAVA_LOGGING = "GOOGLE_SDK_JAVA_LOGGING";
+  private static final String GOOGLE_SDK_JAVA_LOGGING = "GOOGLE_SDK_JAVA_LOGGING";
 
   private static boolean loggingEnabled = checkLoggingEnabled(GOOGLE_SDK_JAVA_LOGGING);
 
@@ -45,7 +45,7 @@ public class LoggingUtils {
    *
    * @return true if logging is enabled, false otherwise.
    */
-  static boolean isLoggingEnabled() {
+  public static boolean isLoggingEnabled() {
     return loggingEnabled;
   }
 

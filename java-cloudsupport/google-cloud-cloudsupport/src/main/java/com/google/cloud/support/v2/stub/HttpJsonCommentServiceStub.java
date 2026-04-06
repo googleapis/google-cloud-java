@@ -185,6 +185,7 @@ public class HttpJsonCommentServiceStub extends CommentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateCommentRequest, Comment> createCommentTransportSettings =
         HttpJsonCallSettings.<CreateCommentRequest, Comment>newBuilder()
@@ -196,6 +197,7 @@ public class HttpJsonCommentServiceStub extends CommentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.listCommentsCallable =

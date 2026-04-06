@@ -192,6 +192,7 @@ public class GrpcSipTrunksStub extends SipTrunksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteSipTrunkRequest, Empty> deleteSipTrunkTransportSettings =
         GrpcCallSettings.<DeleteSipTrunkRequest, Empty>newBuilder()
@@ -202,6 +203,7 @@ public class GrpcSipTrunksStub extends SipTrunksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListSipTrunksRequest, ListSipTrunksResponse> listSipTrunksTransportSettings =
         GrpcCallSettings.<ListSipTrunksRequest, ListSipTrunksResponse>newBuilder()
@@ -212,6 +214,7 @@ public class GrpcSipTrunksStub extends SipTrunksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetSipTrunkRequest, SipTrunk> getSipTrunkTransportSettings =
         GrpcCallSettings.<GetSipTrunkRequest, SipTrunk>newBuilder()
@@ -222,6 +225,7 @@ public class GrpcSipTrunksStub extends SipTrunksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSipTrunkRequest, SipTrunk> updateSipTrunkTransportSettings =
         GrpcCallSettings.<UpdateSipTrunkRequest, SipTrunk>newBuilder()

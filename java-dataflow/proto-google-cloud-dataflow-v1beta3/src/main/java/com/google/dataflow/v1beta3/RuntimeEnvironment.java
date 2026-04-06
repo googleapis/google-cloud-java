@@ -64,6 +64,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     workerRegion_ = "";
     workerZone_ = "";
     streamingMode_ = 0;
+    additionalPipelineOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1034,6 +1035,82 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     return result == null ? com.google.dataflow.v1beta3.StreamingMode.UNRECOGNIZED : result;
   }
 
+  public static final int ADDITIONAL_PIPELINE_OPTIONS_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList additionalPipelineOptions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional pipeline option flags for the job.
+   * </pre>
+   *
+   * <code>
+   * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the additionalPipelineOptions.
+   */
+  public com.google.protobuf.ProtocolStringList getAdditionalPipelineOptionsList() {
+    return additionalPipelineOptions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional pipeline option flags for the job.
+   * </pre>
+   *
+   * <code>
+   * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of additionalPipelineOptions.
+   */
+  public int getAdditionalPipelineOptionsCount() {
+    return additionalPipelineOptions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional pipeline option flags for the job.
+   * </pre>
+   *
+   * <code>
+   * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The additionalPipelineOptions at the given index.
+   */
+  public java.lang.String getAdditionalPipelineOptions(int index) {
+    return additionalPipelineOptions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional pipeline option flags for the job.
+   * </pre>
+   *
+   * <code>
+   * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the additionalPipelineOptions at the given index.
+   */
+  public com.google.protobuf.ByteString getAdditionalPipelineOptionsBytes(int index) {
+    return additionalPipelineOptions_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1105,6 +1182,10 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeEnum(19, streamingMode_);
+    }
+    for (int i = 0; i < additionalPipelineOptions_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(
+          output, 20, additionalPipelineOptions_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1183,6 +1264,14 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, streamingMode_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < additionalPipelineOptions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(additionalPipelineOptions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getAdditionalPipelineOptionsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1221,6 +1310,8 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     if (hasStreamingMode()) {
       if (streamingMode_ != other.streamingMode_) return false;
     }
+    if (!getAdditionalPipelineOptionsList().equals(other.getAdditionalPipelineOptionsList()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1273,6 +1364,10 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     if (hasStreamingMode()) {
       hash = (37 * hash) + STREAMING_MODE_FIELD_NUMBER;
       hash = (53 * hash) + streamingMode_;
+    }
+    if (getAdditionalPipelineOptionsCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_PIPELINE_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalPipelineOptionsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1454,6 +1549,7 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       enableStreamingEngine_ = false;
       diskSizeGb_ = 0;
       streamingMode_ = 0;
+      additionalPipelineOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1548,6 +1644,10 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
         result.streamingMode_ = streamingMode_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        additionalPipelineOptions_.makeImmutable();
+        result.additionalPipelineOptions_ = additionalPipelineOptions_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1640,6 +1740,16 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasStreamingMode()) {
         setStreamingModeValue(other.getStreamingModeValue());
+      }
+      if (!other.additionalPipelineOptions_.isEmpty()) {
+        if (additionalPipelineOptions_.isEmpty()) {
+          additionalPipelineOptions_ = other.additionalPipelineOptions_;
+          bitField0_ |= 0x00040000;
+        } else {
+          ensureAdditionalPipelineOptionsIsMutable();
+          additionalPipelineOptions_.addAll(other.additionalPipelineOptions_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1783,6 +1893,13 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00020000;
                 break;
               } // case 152
+            case 162:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAdditionalPipelineOptionsIsMutable();
+                additionalPipelineOptions_.add(s);
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3866,6 +3983,208 @@ public final class RuntimeEnvironment extends com.google.protobuf.GeneratedMessa
     public Builder clearStreamingMode() {
       bitField0_ = (bitField0_ & ~0x00020000);
       streamingMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList additionalPipelineOptions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureAdditionalPipelineOptionsIsMutable() {
+      if (!additionalPipelineOptions_.isModifiable()) {
+        additionalPipelineOptions_ =
+            new com.google.protobuf.LazyStringArrayList(additionalPipelineOptions_);
+      }
+      bitField0_ |= 0x00040000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional pipeline option flags for the job.
+     * </pre>
+     *
+     * <code>
+     * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the additionalPipelineOptions.
+     */
+    public com.google.protobuf.ProtocolStringList getAdditionalPipelineOptionsList() {
+      additionalPipelineOptions_.makeImmutable();
+      return additionalPipelineOptions_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional pipeline option flags for the job.
+     * </pre>
+     *
+     * <code>
+     * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of additionalPipelineOptions.
+     */
+    public int getAdditionalPipelineOptionsCount() {
+      return additionalPipelineOptions_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional pipeline option flags for the job.
+     * </pre>
+     *
+     * <code>
+     * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The additionalPipelineOptions at the given index.
+     */
+    public java.lang.String getAdditionalPipelineOptions(int index) {
+      return additionalPipelineOptions_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional pipeline option flags for the job.
+     * </pre>
+     *
+     * <code>
+     * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the additionalPipelineOptions at the given index.
+     */
+    public com.google.protobuf.ByteString getAdditionalPipelineOptionsBytes(int index) {
+      return additionalPipelineOptions_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional pipeline option flags for the job.
+     * </pre>
+     *
+     * <code>
+     * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The additionalPipelineOptions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdditionalPipelineOptions(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdditionalPipelineOptionsIsMutable();
+      additionalPipelineOptions_.set(index, value);
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional pipeline option flags for the job.
+     * </pre>
+     *
+     * <code>
+     * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The additionalPipelineOptions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalPipelineOptions(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureAdditionalPipelineOptionsIsMutable();
+      additionalPipelineOptions_.add(value);
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional pipeline option flags for the job.
+     * </pre>
+     *
+     * <code>
+     * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The additionalPipelineOptions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllAdditionalPipelineOptions(java.lang.Iterable<java.lang.String> values) {
+      ensureAdditionalPipelineOptionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalPipelineOptions_);
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional pipeline option flags for the job.
+     * </pre>
+     *
+     * <code>
+     * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdditionalPipelineOptions() {
+      additionalPipelineOptions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional pipeline option flags for the job.
+     * </pre>
+     *
+     * <code>
+     * repeated string additional_pipeline_options = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the additionalPipelineOptions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdditionalPipelineOptionsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureAdditionalPipelineOptionsIsMutable();
+      additionalPipelineOptions_.add(value);
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

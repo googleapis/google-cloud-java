@@ -32,7 +32,7 @@ public interface DeploymentOrBuilder
    * <pre>
    * Identifier. The resource name of the deployment.
    * Format:
-   * projects/{project}/locations/{location}/apps/{app}/deployments/{deployment}
+   * `projects/{project}/locations/{location}/apps/{app}/deployments/{deployment}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -47,7 +47,7 @@ public interface DeploymentOrBuilder
    * <pre>
    * Identifier. The resource name of the deployment.
    * Format:
-   * projects/{project}/locations/{location}/apps/{app}/deployments/{deployment}
+   * `projects/{project}/locations/{location}/apps/{app}/deployments/{deployment}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -86,13 +86,15 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the app version to deploy.
+   * Optional. The resource name of the app version to deploy.
    * Format:
-   * projects/{project}/locations/{location}/apps/{app}/versions/{version}
+   * `projects/{project}/locations/{location}/apps/{app}/versions/{version}`
+   * Use `projects/{project}/locations/{location}/apps/{app}/versions/-` to use
+   * the draft app.
    * </pre>
    *
    * <code>
-   * string app_version = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string app_version = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The appVersion.
@@ -103,13 +105,15 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the app version to deploy.
+   * Optional. The resource name of the app version to deploy.
    * Format:
-   * projects/{project}/locations/{location}/apps/{app}/versions/{version}
+   * `projects/{project}/locations/{location}/apps/{app}/versions/{version}`
+   * Use `projects/{project}/locations/{location}/apps/{app}/versions/-` to use
+   * the draft app.
    * </pre>
    *
    * <code>
-   * string app_version = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string app_version = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for appVersion.

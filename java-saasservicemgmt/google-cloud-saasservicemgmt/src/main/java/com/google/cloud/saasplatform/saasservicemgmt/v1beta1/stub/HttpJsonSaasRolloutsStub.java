@@ -608,6 +608,7 @@ public class HttpJsonSaasRolloutsStub extends SaasRolloutsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetRolloutRequest, Rollout> getRolloutTransportSettings =
         HttpJsonCallSettings.<GetRolloutRequest, Rollout>newBuilder()
@@ -619,6 +620,7 @@ public class HttpJsonSaasRolloutsStub extends SaasRolloutsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateRolloutRequest, Rollout> createRolloutTransportSettings =
         HttpJsonCallSettings.<CreateRolloutRequest, Rollout>newBuilder()
@@ -630,6 +632,7 @@ public class HttpJsonSaasRolloutsStub extends SaasRolloutsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateRolloutRequest, Rollout> updateRolloutTransportSettings =
         HttpJsonCallSettings.<UpdateRolloutRequest, Rollout>newBuilder()
@@ -652,6 +655,7 @@ public class HttpJsonSaasRolloutsStub extends SaasRolloutsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRolloutKindsRequest, ListRolloutKindsResponse>
         listRolloutKindsTransportSettings =
@@ -664,6 +668,7 @@ public class HttpJsonSaasRolloutsStub extends SaasRolloutsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRolloutKindRequest, RolloutKind> getRolloutKindTransportSettings =
         HttpJsonCallSettings.<GetRolloutKindRequest, RolloutKind>newBuilder()
@@ -675,6 +680,7 @@ public class HttpJsonSaasRolloutsStub extends SaasRolloutsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateRolloutKindRequest, RolloutKind> createRolloutKindTransportSettings =
         HttpJsonCallSettings.<CreateRolloutKindRequest, RolloutKind>newBuilder()
@@ -686,6 +692,7 @@ public class HttpJsonSaasRolloutsStub extends SaasRolloutsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateRolloutKindRequest, RolloutKind> updateRolloutKindTransportSettings =
         HttpJsonCallSettings.<UpdateRolloutKindRequest, RolloutKind>newBuilder()
@@ -709,6 +716,7 @@ public class HttpJsonSaasRolloutsStub extends SaasRolloutsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

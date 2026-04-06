@@ -254,10 +254,12 @@ public class GrpcProjectsStub extends ProjectsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProjectsRequest, ListProjectsResponse> listProjectsTransportSettings =
         GrpcCallSettings.<ListProjectsRequest, ListProjectsResponse>newBuilder()
             .setMethodDescriptor(listProjectsMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SearchProjectsRequest, SearchProjectsResponse>
         searchProjectsTransportSettings =
@@ -287,6 +289,7 @@ public class GrpcProjectsStub extends ProjectsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteProjectRequest, Operation> deleteProjectTransportSettings =
         GrpcCallSettings.<DeleteProjectRequest, Operation>newBuilder()
@@ -297,6 +300,7 @@ public class GrpcProjectsStub extends ProjectsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UndeleteProjectRequest, Operation> undeleteProjectTransportSettings =
         GrpcCallSettings.<UndeleteProjectRequest, Operation>newBuilder()
@@ -307,6 +311,7 @@ public class GrpcProjectsStub extends ProjectsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -317,6 +322,7 @@ public class GrpcProjectsStub extends ProjectsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -327,6 +333,7 @@ public class GrpcProjectsStub extends ProjectsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -338,6 +345,7 @@ public class GrpcProjectsStub extends ProjectsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.getProjectCallable =

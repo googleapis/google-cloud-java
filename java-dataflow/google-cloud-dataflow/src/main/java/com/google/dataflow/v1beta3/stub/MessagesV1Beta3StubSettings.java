@@ -302,6 +302,7 @@ public class MessagesV1Beta3StubSettings extends StubSettings<MessagesV1Beta3Stu
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-dataflow")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

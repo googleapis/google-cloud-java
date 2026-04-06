@@ -376,6 +376,7 @@ public class HttpJsonApiHubCurateStub extends ApiHubCurateStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetCurationRequest, Curation> getCurationTransportSettings =
         HttpJsonCallSettings.<GetCurationRequest, Curation>newBuilder()
@@ -387,6 +388,7 @@ public class HttpJsonApiHubCurateStub extends ApiHubCurateStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCurationsRequest, ListCurationsResponse>
         listCurationsTransportSettings =
@@ -399,6 +401,7 @@ public class HttpJsonApiHubCurateStub extends ApiHubCurateStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateCurationRequest, Curation> updateCurationTransportSettings =
         HttpJsonCallSettings.<UpdateCurationRequest, Curation>newBuilder()
@@ -421,6 +424,7 @@ public class HttpJsonApiHubCurateStub extends ApiHubCurateStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

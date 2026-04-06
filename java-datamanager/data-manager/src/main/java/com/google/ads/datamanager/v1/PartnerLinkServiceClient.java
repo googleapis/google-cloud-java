@@ -71,7 +71,6 @@ import javax.annotation.Generated;
  * <p>  This method supports the following optional headers to define how the API authorizes access for the request:
  * <ul>
  * <li>  `login-account`: (Optional) The resource name of the account where the   Google Account of the credentials is a user. If not set, defaults to the   account of the request. Format:   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
- * <li>  `linked-account`: (Optional) The resource name of the account with an    established product link to the `login-account`. Format:    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
  * </ul></td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -96,7 +95,6 @@ import javax.annotation.Generated;
  * <p>  This method supports the following optional headers to define how the API authorizes access for the request:
  * <ul>
  * <li>  `login-account`: (Optional) The resource name of the account where the   Google Account of the credentials is a user. If not set, defaults to the   account of the request. Format:   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
- * <li>  `linked-account`: (Optional) The resource name of the account with an    established product link to the `login-account`. Format:    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
  * </ul></td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -121,7 +119,6 @@ import javax.annotation.Generated;
  * <p>  This method supports the following optional headers to define how the API authorizes access for the request:
  * <ul>
  * <li>  `login-account`: (Optional) The resource name of the account where the   Google Account of the credentials is a user. If not set, defaults to the   account of the request. Format:   `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
- * <li>  `linked-account`: (Optional) The resource name of the account with an    established product link to the `login-account`. Format:    `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
  * </ul></td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -261,9 +258,6 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    *   <li>`login-account`: (Optional) The resource name of the account where the Google Account of
    *       the credentials is a user. If not set, defaults to the account of the request. Format:
    *       `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-   *   <li>`linked-account`: (Optional) The resource name of the account with an established product
-   *       link to the `login-account`. Format:
-   *       `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
    * </ul>
    *
    * <p>Sample code:
@@ -308,9 +302,6 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    *   <li>`login-account`: (Optional) The resource name of the account where the Google Account of
    *       the credentials is a user. If not set, defaults to the account of the request. Format:
    *       `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-   *   <li>`linked-account`: (Optional) The resource name of the account with an established product
-   *       link to the `login-account`. Format:
-   *       `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
    * </ul>
    *
    * <p>Sample code:
@@ -352,9 +343,6 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    *   <li>`login-account`: (Optional) The resource name of the account where the Google Account of
    *       the credentials is a user. If not set, defaults to the account of the request. Format:
    *       `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-   *   <li>`linked-account`: (Optional) The resource name of the account with an established product
-   *       link to the `login-account`. Format:
-   *       `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
    * </ul>
    *
    * <p>Sample code:
@@ -395,9 +383,6 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    *   <li>`login-account`: (Optional) The resource name of the account where the Google Account of
    *       the credentials is a user. If not set, defaults to the account of the request. Format:
    *       `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-   *   <li>`linked-account`: (Optional) The resource name of the account with an established product
-   *       link to the `login-account`. Format:
-   *       `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
    * </ul>
    *
    * <p>Sample code:
@@ -438,9 +423,6 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    *   <li>`login-account`: (Optional) The resource name of the account where the Google Account of
    *       the credentials is a user. If not set, defaults to the account of the request. Format:
    *       `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-   *   <li>`linked-account`: (Optional) The resource name of the account with an established product
-   *       link to the `login-account`. Format:
-   *       `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
    * </ul>
    *
    * <p>Sample code:
@@ -482,9 +464,6 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    *   <li>`login-account`: (Optional) The resource name of the account where the Google Account of
    *       the credentials is a user. If not set, defaults to the account of the request. Format:
    *       `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-   *   <li>`linked-account`: (Optional) The resource name of the account with an established product
-   *       link to the `login-account`. Format:
-   *       `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
    * </ul>
    *
    * <p>Sample code:
@@ -523,9 +502,6 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    *   <li>`login-account`: (Optional) The resource name of the account where the Google Account of
    *       the credentials is a user. If not set, defaults to the account of the request. Format:
    *       `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-   *   <li>`linked-account`: (Optional) The resource name of the account with an established product
-   *       link to the `login-account`. Format:
-   *       `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
    * </ul>
    *
    * <p>Sample code:
@@ -566,9 +542,6 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    *   <li>`login-account`: (Optional) The resource name of the account where the Google Account of
    *       the credentials is a user. If not set, defaults to the account of the request. Format:
    *       `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-   *   <li>`linked-account`: (Optional) The resource name of the account with an established product
-   *       link to the `login-account`. Format:
-   *       `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
    * </ul>
    *
    * <p>Sample code:
@@ -609,9 +582,6 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    *   <li>`login-account`: (Optional) The resource name of the account where the Google Account of
    *       the credentials is a user. If not set, defaults to the account of the request. Format:
    *       `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-   *   <li>`linked-account`: (Optional) The resource name of the account with an established product
-   *       link to the `login-account`. Format:
-   *       `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
    * </ul>
    *
    * <p>Sample code:
@@ -657,9 +627,6 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    *   <li>`login-account`: (Optional) The resource name of the account where the Google Account of
    *       the credentials is a user. If not set, defaults to the account of the request. Format:
    *       `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-   *   <li>`linked-account`: (Optional) The resource name of the account with an established product
-   *       link to the `login-account`. Format:
-   *       `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
    * </ul>
    *
    * <p>Sample code:
@@ -703,9 +670,6 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    *   <li>`login-account`: (Optional) The resource name of the account where the Google Account of
    *       the credentials is a user. If not set, defaults to the account of the request. Format:
    *       `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-   *   <li>`linked-account`: (Optional) The resource name of the account with an established product
-   *       link to the `login-account`. Format:
-   *       `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
    * </ul>
    *
    * <p>Sample code:
@@ -752,9 +716,6 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    *   <li>`login-account`: (Optional) The resource name of the account where the Google Account of
    *       the credentials is a user. If not set, defaults to the account of the request. Format:
    *       `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-   *   <li>`linked-account`: (Optional) The resource name of the account with an established product
-   *       link to the `login-account`. Format:
-   *       `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
    * </ul>
    *
    * <p>Sample code:
@@ -800,9 +761,6 @@ public class PartnerLinkServiceClient implements BackgroundResource {
    *   <li>`login-account`: (Optional) The resource name of the account where the Google Account of
    *       the credentials is a user. If not set, defaults to the account of the request. Format:
    *       `accountTypes/{loginAccountType}/accounts/{loginAccountId}`
-   *   <li>`linked-account`: (Optional) The resource name of the account with an established product
-   *       link to the `login-account`. Format:
-   *       `accountTypes/{linkedAccountType}/accounts/{linkedAccountId}`
    * </ul>
    *
    * <p>Sample code:

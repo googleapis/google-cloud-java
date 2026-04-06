@@ -37,6 +37,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.rpc.DeadlineExceededException;
 import com.google.api.gax.rpc.NotFoundException;
 import com.google.cloud.datastore.AggregationQuery;
 import com.google.cloud.datastore.AggregationResult;
@@ -450,8 +451,11 @@ public class ITE2ETracingTest {
                 + numExpectedSpans
                 + ", retrievedSpanCount="
                 + retrievedTrace.getSpansCount());
-      } catch (NotFoundException notFound) {
-        logger.info("Trace not found, retrying in " + GET_TRACE_RETRY_BACKOFF_MILLIS + " ms");
+      } catch (NotFoundException | DeadlineExceededException e) {
+        logger.info(
+            "Trace not found or deadline exceeded, retrying in "
+                + GET_TRACE_RETRY_BACKOFF_MILLIS
+                + " ms");
       } catch (IndexOutOfBoundsException outOfBoundsException) {
         logger.info("Call stack not found in trace. Retrying.");
       }

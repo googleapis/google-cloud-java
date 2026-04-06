@@ -248,6 +248,7 @@ public class SolarStubSettings extends StubSettings<SolarStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.maps:google-maps-solar")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

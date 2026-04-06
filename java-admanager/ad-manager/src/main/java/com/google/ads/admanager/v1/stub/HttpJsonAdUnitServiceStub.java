@@ -517,6 +517,7 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAdUnitsRequest, ListAdUnitsResponse> listAdUnitsTransportSettings =
         HttpJsonCallSettings.<ListAdUnitsRequest, ListAdUnitsResponse>newBuilder()
@@ -528,6 +529,7 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListAdUnitSizesRequest, ListAdUnitSizesResponse>
         listAdUnitSizesTransportSettings =
@@ -540,6 +542,7 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateAdUnitRequest, AdUnit> createAdUnitTransportSettings =
         HttpJsonCallSettings.<CreateAdUnitRequest, AdUnit>newBuilder()
@@ -551,6 +554,7 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateAdUnitRequest, AdUnit> updateAdUnitTransportSettings =
         HttpJsonCallSettings.<UpdateAdUnitRequest, AdUnit>newBuilder()
@@ -574,6 +578,7 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchUpdateAdUnitsRequest, BatchUpdateAdUnitsResponse>
         batchUpdateAdUnitsTransportSettings =
@@ -586,6 +591,7 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchActivateAdUnitsRequest, BatchActivateAdUnitsResponse>
         batchActivateAdUnitsTransportSettings =
@@ -599,6 +605,7 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchDeactivateAdUnitsRequest, BatchDeactivateAdUnitsResponse>
         batchDeactivateAdUnitsTransportSettings =
@@ -612,6 +619,7 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchArchiveAdUnitsRequest, BatchArchiveAdUnitsResponse>
         batchArchiveAdUnitsTransportSettings =
@@ -625,6 +633,7 @@ public class HttpJsonAdUnitServiceStub extends AdUnitServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getAdUnitCallable =

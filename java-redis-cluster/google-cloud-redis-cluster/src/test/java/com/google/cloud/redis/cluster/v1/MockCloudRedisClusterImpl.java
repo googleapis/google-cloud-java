@@ -187,6 +187,29 @@ public class MockCloudRedisClusterImpl extends CloudRedisClusterImplBase {
   }
 
   @Override
+  public void getSharedRegionalCertificateAuthority(
+      GetSharedRegionalCertificateAuthorityRequest request,
+      StreamObserver<SharedRegionalCertificateAuthority> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SharedRegionalCertificateAuthority) {
+      requests.add(request);
+      responseObserver.onNext(((SharedRegionalCertificateAuthority) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSharedRegionalCertificateAuthority,"
+                      + " expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SharedRegionalCertificateAuthority.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void rescheduleClusterMaintenance(
       RescheduleClusterMaintenanceRequest request, StreamObserver<Operation> responseObserver) {
     Object response = responses.poll();

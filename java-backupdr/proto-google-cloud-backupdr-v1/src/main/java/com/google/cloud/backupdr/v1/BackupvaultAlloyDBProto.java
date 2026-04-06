@@ -48,6 +48,10 @@ public final class BackupvaultAlloyDBProto extends com.google.protobuf.Generated
       internal_static_google_cloud_backupdr_v1_AlloyDbClusterBackupProperties_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_backupdr_v1_AlloyDbClusterBackupProperties_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_backupdr_v1_AlloyDBClusterBackupPlanAssociationProperties_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_backupdr_v1_AlloyDBClusterBackupPlanAssociationProperties_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -60,7 +64,8 @@ public final class BackupvaultAlloyDBProto extends com.google.protobuf.Generated
       "\n"
           + "2google/cloud/backupdr/v1/backupvault_a"
           + "lloydb.proto\022\030google.cloud.backupdr.v1\032\037"
-          + "google/api/field_behavior.proto\032\031google/api/resource.proto\"Z\n"
+          + "google/api/field_behavior.proto\032\033google/"
+          + "api/field_info.proto\032\031google/api/resource.proto\"Z\n"
           + "\"AlloyDBClusterDataSourceProperties\0224\n"
           + "\004name\030\001 \001(\tB&\340A\003\372A \n"
           + "\036alloydb.googleapis.com/Cluster\"\233\001\n"
@@ -69,19 +74,23 @@ public final class BackupvaultAlloyDBProto extends com.google.protobuf.Generated
           + "\014stored_bytes\030\002 \001(\003B\003\340A\003\022\025\n"
           + "\010chain_id\030\003 \001(\tB\003\340A\003\022\035\n"
           + "\020database_version\030\004 \001(\tB\003\340A\003B\016\n"
-          + "\014_descriptionB\246\002\n"
-          + "\034com.google.cloud.backupdr.v1B\027BackupvaultAlloyD"
-          + "BProtoP\001Z8cloud.google.com/go/backupdr/a"
-          + "piv1/backupdrpb;backupdrpb\252\002\030Google.Clou"
-          + "d.BackupDR.V1\312\002\030Google\\Cloud\\BackupDR\\V1\352\002\033Google::Cloud::BackupDR::V1\352A\\\n"
-          + "\036alloydb.googleapis.com/Cluster\022:projects/{pro"
-          + "ject}/locations/{location}/clusters/{cluster}b\006proto3"
+          + "\014_description\"Q\n"
+          + "-AlloyDBClusterBackupPlanAssociationProperties\022 \n"
+          + "\013cluster_uid\030\001 \001("
+          + "\tB\013\340A\003\342\214\317\327\010\002\010\001B\246\002\n"
+          + "\034com.google.cloud.backupdr.v1B\027BackupvaultAlloyDBProtoP\001"
+          + "Z8cloud.google.com/go/backupdr/apiv1/bac"
+          + "kupdrpb;backupdrpb\252\002\030Google.Cloud.Backup"
+          + "DR.V1\312\002\030Google\\Cloud\\BackupDR\\V1\352\002\033Google::Cloud::BackupDR::V1\352A\\\n"
+          + "\036alloydb.googleapis.com/Cluster\022:projects/{project}/lo"
+          + "cations/{location}/clusters/{cluster}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_backupdr_v1_AlloyDBClusterDataSourceProperties_descriptor =
@@ -100,12 +109,22 @@ public final class BackupvaultAlloyDBProto extends com.google.protobuf.Generated
             new java.lang.String[] {
               "Description", "StoredBytes", "ChainId", "DatabaseVersion",
             });
+    internal_static_google_cloud_backupdr_v1_AlloyDBClusterBackupPlanAssociationProperties_descriptor =
+        getDescriptor().getMessageType(2);
+    internal_static_google_cloud_backupdr_v1_AlloyDBClusterBackupPlanAssociationProperties_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_backupdr_v1_AlloyDBClusterBackupPlanAssociationProperties_descriptor,
+            new java.lang.String[] {
+              "ClusterUid",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.FieldInfoProto.fieldInfo);
     registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(

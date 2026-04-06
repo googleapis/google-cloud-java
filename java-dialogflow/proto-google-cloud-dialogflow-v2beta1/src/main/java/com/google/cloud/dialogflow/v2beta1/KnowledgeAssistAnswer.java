@@ -5775,6 +5775,67 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int KNOWLEDGE_ASSIST_DEBUG_INFO_FIELD_NUMBER = 7;
+  private com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledgeAssistDebugInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug information related to Knowledge Assist feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledge_assist_debug_info = 7;
+   * </code>
+   *
+   * @return Whether the knowledgeAssistDebugInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasKnowledgeAssistDebugInfo() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug information related to Knowledge Assist feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledge_assist_debug_info = 7;
+   * </code>
+   *
+   * @return The knowledgeAssistDebugInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo
+      getKnowledgeAssistDebugInfo() {
+    return knowledgeAssistDebugInfo_ == null
+        ? com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo.getDefaultInstance()
+        : knowledgeAssistDebugInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Debug information related to Knowledge Assist feature.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledge_assist_debug_info = 7;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfoOrBuilder
+      getKnowledgeAssistDebugInfoOrBuilder() {
+    return knowledgeAssistDebugInfo_ == null
+        ? com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo.getDefaultInstance()
+        : knowledgeAssistDebugInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5798,6 +5859,9 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(answerRecord_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, answerRecord_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(7, getKnowledgeAssistDebugInfo());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -5816,6 +5880,11 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(answerRecord_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, answerRecord_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, getKnowledgeAssistDebugInfo());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -5842,6 +5911,10 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       if (!getSuggestedQueryAnswer().equals(other.getSuggestedQueryAnswer())) return false;
     }
     if (!getAnswerRecord().equals(other.getAnswerRecord())) return false;
+    if (hasKnowledgeAssistDebugInfo() != other.hasKnowledgeAssistDebugInfo()) return false;
+    if (hasKnowledgeAssistDebugInfo()) {
+      if (!getKnowledgeAssistDebugInfo().equals(other.getKnowledgeAssistDebugInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -5863,6 +5936,10 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
     }
     hash = (37 * hash) + ANSWER_RECORD_FIELD_NUMBER;
     hash = (53 * hash) + getAnswerRecord().hashCode();
+    if (hasKnowledgeAssistDebugInfo()) {
+      hash = (37 * hash) + KNOWLEDGE_ASSIST_DEBUG_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getKnowledgeAssistDebugInfo().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6007,6 +6084,7 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetSuggestedQueryFieldBuilder();
         internalGetSuggestedQueryAnswerFieldBuilder();
+        internalGetKnowledgeAssistDebugInfoFieldBuilder();
       }
     }
 
@@ -6025,6 +6103,11 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         suggestedQueryAnswerBuilder_ = null;
       }
       answerRecord_ = "";
+      knowledgeAssistDebugInfo_ = null;
+      if (knowledgeAssistDebugInfoBuilder_ != null) {
+        knowledgeAssistDebugInfoBuilder_.dispose();
+        knowledgeAssistDebugInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -6077,6 +6160,13 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.answerRecord_ = answerRecord_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.knowledgeAssistDebugInfo_ =
+            knowledgeAssistDebugInfoBuilder_ == null
+                ? knowledgeAssistDebugInfo_
+                : knowledgeAssistDebugInfoBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -6103,6 +6193,9 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
         answerRecord_ = other.answerRecord_;
         bitField0_ |= 0x00000004;
         onChanged();
+      }
+      if (other.hasKnowledgeAssistDebugInfo()) {
+        mergeKnowledgeAssistDebugInfo(other.getKnowledgeAssistDebugInfo());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -6150,6 +6243,14 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 58:
+              {
+                input.readMessage(
+                    internalGetKnowledgeAssistDebugInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6754,6 +6855,226 @@ public final class KnowledgeAssistAnswer extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledgeAssistDebugInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo,
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo.Builder,
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfoOrBuilder>
+        knowledgeAssistDebugInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information related to Knowledge Assist feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledge_assist_debug_info = 7;
+     * </code>
+     *
+     * @return Whether the knowledgeAssistDebugInfo field is set.
+     */
+    public boolean hasKnowledgeAssistDebugInfo() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information related to Knowledge Assist feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledge_assist_debug_info = 7;
+     * </code>
+     *
+     * @return The knowledgeAssistDebugInfo.
+     */
+    public com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo
+        getKnowledgeAssistDebugInfo() {
+      if (knowledgeAssistDebugInfoBuilder_ == null) {
+        return knowledgeAssistDebugInfo_ == null
+            ? com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo.getDefaultInstance()
+            : knowledgeAssistDebugInfo_;
+      } else {
+        return knowledgeAssistDebugInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information related to Knowledge Assist feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledge_assist_debug_info = 7;
+     * </code>
+     */
+    public Builder setKnowledgeAssistDebugInfo(
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo value) {
+      if (knowledgeAssistDebugInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        knowledgeAssistDebugInfo_ = value;
+      } else {
+        knowledgeAssistDebugInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information related to Knowledge Assist feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledge_assist_debug_info = 7;
+     * </code>
+     */
+    public Builder setKnowledgeAssistDebugInfo(
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo.Builder builderForValue) {
+      if (knowledgeAssistDebugInfoBuilder_ == null) {
+        knowledgeAssistDebugInfo_ = builderForValue.build();
+      } else {
+        knowledgeAssistDebugInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information related to Knowledge Assist feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledge_assist_debug_info = 7;
+     * </code>
+     */
+    public Builder mergeKnowledgeAssistDebugInfo(
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo value) {
+      if (knowledgeAssistDebugInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && knowledgeAssistDebugInfo_ != null
+            && knowledgeAssistDebugInfo_
+                != com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo
+                    .getDefaultInstance()) {
+          getKnowledgeAssistDebugInfoBuilder().mergeFrom(value);
+        } else {
+          knowledgeAssistDebugInfo_ = value;
+        }
+      } else {
+        knowledgeAssistDebugInfoBuilder_.mergeFrom(value);
+      }
+      if (knowledgeAssistDebugInfo_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information related to Knowledge Assist feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledge_assist_debug_info = 7;
+     * </code>
+     */
+    public Builder clearKnowledgeAssistDebugInfo() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      knowledgeAssistDebugInfo_ = null;
+      if (knowledgeAssistDebugInfoBuilder_ != null) {
+        knowledgeAssistDebugInfoBuilder_.dispose();
+        knowledgeAssistDebugInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information related to Knowledge Assist feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledge_assist_debug_info = 7;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo.Builder
+        getKnowledgeAssistDebugInfoBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetKnowledgeAssistDebugInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information related to Knowledge Assist feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledge_assist_debug_info = 7;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfoOrBuilder
+        getKnowledgeAssistDebugInfoOrBuilder() {
+      if (knowledgeAssistDebugInfoBuilder_ != null) {
+        return knowledgeAssistDebugInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return knowledgeAssistDebugInfo_ == null
+            ? com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo.getDefaultInstance()
+            : knowledgeAssistDebugInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Debug information related to Knowledge Assist feature.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo knowledge_assist_debug_info = 7;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo,
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo.Builder,
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfoOrBuilder>
+        internalGetKnowledgeAssistDebugInfoFieldBuilder() {
+      if (knowledgeAssistDebugInfoBuilder_ == null) {
+        knowledgeAssistDebugInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo,
+                com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfo.Builder,
+                com.google.cloud.dialogflow.v2beta1.KnowledgeAssistDebugInfoOrBuilder>(
+                getKnowledgeAssistDebugInfo(), getParentForChildren(), isClean());
+        knowledgeAssistDebugInfo_ = null;
+      }
+      return knowledgeAssistDebugInfoBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.KnowledgeAssistAnswer)

@@ -1742,6 +1742,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetApiRequest, Api> getApiTransportSettings =
         HttpJsonCallSettings.<GetApiRequest, Api>newBuilder()
@@ -1753,6 +1754,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateApiRequest, Api> createApiTransportSettings =
         HttpJsonCallSettings.<CreateApiRequest, Api>newBuilder()
@@ -1764,6 +1766,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateApiRequest, Api> updateApiTransportSettings =
         HttpJsonCallSettings.<UpdateApiRequest, Api>newBuilder()
@@ -1786,6 +1789,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListApiVersionsRequest, ListApiVersionsResponse>
         listApiVersionsTransportSettings =
@@ -1798,6 +1802,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetApiVersionRequest, ApiVersion> getApiVersionTransportSettings =
         HttpJsonCallSettings.<GetApiVersionRequest, ApiVersion>newBuilder()
@@ -1809,6 +1814,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateApiVersionRequest, ApiVersion> createApiVersionTransportSettings =
         HttpJsonCallSettings.<CreateApiVersionRequest, ApiVersion>newBuilder()
@@ -1820,6 +1826,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateApiVersionRequest, ApiVersion> updateApiVersionTransportSettings =
         HttpJsonCallSettings.<UpdateApiVersionRequest, ApiVersion>newBuilder()
@@ -1843,6 +1850,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListApiSpecsRequest, ListApiSpecsResponse> listApiSpecsTransportSettings =
         HttpJsonCallSettings.<ListApiSpecsRequest, ListApiSpecsResponse>newBuilder()
@@ -1854,6 +1862,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetApiSpecRequest, ApiSpec> getApiSpecTransportSettings =
         HttpJsonCallSettings.<GetApiSpecRequest, ApiSpec>newBuilder()
@@ -1865,6 +1874,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetApiSpecContentsRequest, HttpBody> getApiSpecContentsTransportSettings =
         HttpJsonCallSettings.<GetApiSpecContentsRequest, HttpBody>newBuilder()
@@ -1876,6 +1886,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateApiSpecRequest, ApiSpec> createApiSpecTransportSettings =
         HttpJsonCallSettings.<CreateApiSpecRequest, ApiSpec>newBuilder()
@@ -1887,6 +1898,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateApiSpecRequest, ApiSpec> updateApiSpecTransportSettings =
         HttpJsonCallSettings.<UpdateApiSpecRequest, ApiSpec>newBuilder()
@@ -1909,6 +1921,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<TagApiSpecRevisionRequest, ApiSpec> tagApiSpecRevisionTransportSettings =
         HttpJsonCallSettings.<TagApiSpecRevisionRequest, ApiSpec>newBuilder()
@@ -1920,6 +1933,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListApiSpecRevisionsRequest, ListApiSpecRevisionsResponse>
         listApiSpecRevisionsTransportSettings =
@@ -1933,6 +1947,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RollbackApiSpecRequest, ApiSpec> rollbackApiSpecTransportSettings =
         HttpJsonCallSettings.<RollbackApiSpecRequest, ApiSpec>newBuilder()
@@ -1944,6 +1959,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteApiSpecRevisionRequest, ApiSpec>
         deleteApiSpecRevisionTransportSettings =
@@ -1956,6 +1972,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListApiDeploymentsRequest, ListApiDeploymentsResponse>
         listApiDeploymentsTransportSettings =
@@ -1968,6 +1985,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetApiDeploymentRequest, ApiDeployment> getApiDeploymentTransportSettings =
         HttpJsonCallSettings.<GetApiDeploymentRequest, ApiDeployment>newBuilder()
@@ -1979,6 +1997,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateApiDeploymentRequest, ApiDeployment>
         createApiDeploymentTransportSettings =
@@ -1991,6 +2010,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateApiDeploymentRequest, ApiDeployment>
         updateApiDeploymentTransportSettings =
@@ -2016,6 +2036,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<TagApiDeploymentRevisionRequest, ApiDeployment>
         tagApiDeploymentRevisionTransportSettings =
@@ -2028,6 +2049,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListApiDeploymentRevisionsRequest, ListApiDeploymentRevisionsResponse>
         listApiDeploymentRevisionsTransportSettings =
@@ -2041,6 +2063,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RollbackApiDeploymentRequest, ApiDeployment>
         rollbackApiDeploymentTransportSettings =
@@ -2053,6 +2076,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeleteApiDeploymentRevisionRequest, ApiDeployment>
         deleteApiDeploymentRevisionTransportSettings =
@@ -2065,6 +2089,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListArtifactsRequest, ListArtifactsResponse>
         listArtifactsTransportSettings =
@@ -2077,6 +2102,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetArtifactRequest, Artifact> getArtifactTransportSettings =
         HttpJsonCallSettings.<GetArtifactRequest, Artifact>newBuilder()
@@ -2088,6 +2114,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetArtifactContentsRequest, HttpBody>
         getArtifactContentsTransportSettings =
@@ -2100,6 +2127,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateArtifactRequest, Artifact> createArtifactTransportSettings =
         HttpJsonCallSettings.<CreateArtifactRequest, Artifact>newBuilder()
@@ -2111,6 +2139,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ReplaceArtifactRequest, Artifact> replaceArtifactTransportSettings =
         HttpJsonCallSettings.<ReplaceArtifactRequest, Artifact>newBuilder()
@@ -2133,6 +2162,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -2167,6 +2197,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -2178,6 +2209,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -2190,6 +2222,7 @@ public class HttpJsonRegistryStub extends RegistryStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listApisCallable =

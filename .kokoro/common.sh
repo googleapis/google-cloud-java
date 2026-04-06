@@ -32,6 +32,8 @@ excluded_modules=(
   'java-spanner'
   'java-spanner-jdbc'
   'google-auth-library-java'
+  'java-storage'
+  'java-storage-nio'
 )
 
 function retry_with_backoff {
@@ -333,20 +335,20 @@ function run_graalvm_tests() {
 function generate_graalvm_presubmit_modules_list() {
   modules_assigned_list=()
   generate_modified_modules_list
-  if [[ ${#modified_module_list[@]} -gt 4 ]]; then
-    # Too many modules modified, run a subset
-    echo "Too many modules modified, running a subset"
-    module_list="java-aiplatform,java-compute"
-  elif [[ ${#modified_module_list[@]} -gt 0 ]]; then
+  if [[ ${#modified_module_list[@]} -gt 0 && ${#modified_module_list[@]} -lt 5 ]]; then
     # If only a few modules have been modified, focus presubmit testing only on them.
     module_list=$(
       IFS=,
       echo "${modified_module_list[*]}"
     )
   else
-    # no modules modified
-    echo "No modules modified"
-    module_list=""
+    # If no modules have been modified or if too many have been modified, just test the modules
+    # specified in the MAVEN_MODULES env var.
+    if [ -z "${MAVEN_MODULES}" ]; then
+      echo "MAVEN_MODULES not defined in environment."
+      exit 1
+    fi
+    module_list=${MAVEN_MODULES}
   fi
 }
 
@@ -405,6 +407,16 @@ function install_modules() {
       'sdk-platform-java/java-shared-dependencies/first-party-dependencies'
       'sdk-platform-java/java-shared-dependencies/third-party-dependencies'
       'sdk-platform-java/gapic-generator-java-bom'
+      'sdk-platform-java/java-iam/grpc-google-iam-v1'
+      'sdk-platform-java/java-iam/grpc-google-iam-v2'
+      'sdk-platform-java/java-iam/grpc-google-iam-v2beta'
+      'sdk-platform-java/java-iam/grpc-google-iam-v3'
+      'sdk-platform-java/java-iam/grpc-google-iam-v3beta'
+      'sdk-platform-java/java-iam/proto-google-iam-v1'
+      'sdk-platform-java/java-iam/proto-google-iam-v2'
+      'sdk-platform-java/java-iam/proto-google-iam-v2beta'
+      'sdk-platform-java/java-iam/proto-google-iam-v3'
+      'sdk-platform-java/java-iam/proto-google-iam-v3beta'
       'sdk-platform-java/java-core/google-cloud-core-bom'
       'sdk-platform-java/java-core/google-cloud-core'
       'sdk-platform-java/java-core/google-cloud-core-grpc'

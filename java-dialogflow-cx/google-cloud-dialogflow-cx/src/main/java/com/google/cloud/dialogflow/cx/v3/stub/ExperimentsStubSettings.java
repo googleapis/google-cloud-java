@@ -423,6 +423,7 @@ public class ExperimentsStubSettings extends StubSettings<ExperimentsStubSetting
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-dialogflow-cx")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

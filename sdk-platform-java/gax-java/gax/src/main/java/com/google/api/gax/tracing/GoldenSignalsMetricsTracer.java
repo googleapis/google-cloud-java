@@ -29,14 +29,12 @@
  */
 package com.google.api.gax.tracing;
 
-import static com.google.api.gax.tracing.ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE;
-
-import com.google.api.gax.rpc.StatusCode;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Stopwatch;
 import com.google.common.base.Ticker;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -49,12 +47,14 @@ class GoldenSignalsMetricsTracer implements ApiTracer {
   private final Stopwatch clientRequestTimer;
   private final GoldenSignalsMetricsRecorder metricsRecorder;
   private final Map<String, Object> attributes;
+  private final ApiTracerContext.Transport transport;
 
   GoldenSignalsMetricsTracer(
       GoldenSignalsMetricsRecorder metricsRecorder, ApiTracerContext apiTracerContext) {
     this.clientRequestTimer = Stopwatch.createStarted();
     this.metricsRecorder = metricsRecorder;
     this.attributes = apiTracerContext.getMetricsAttributes();
+    this.transport = apiTracerContext.transport();
   }
 
   @VisibleForTesting
@@ -65,6 +65,7 @@ class GoldenSignalsMetricsTracer implements ApiTracer {
     this.clientRequestTimer = Stopwatch.createStarted(ticker);
     this.metricsRecorder = metricsRecorder;
     this.attributes = new HashMap<>(apiTracerContext.getMetricsAttributes());
+    this.transport = apiTracerContext.transport();
   }
 
   /**
@@ -74,21 +75,23 @@ class GoldenSignalsMetricsTracer implements ApiTracer {
    */
   @Override
   public void operationSucceeded() {
-    attributes.put(RPC_RESPONSE_STATUS_ATTRIBUTE, StatusCode.Code.OK.toString());
-    metricsRecorder.recordOperationLatency(
-        clientRequestTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000_000.0, attributes);
+    recordMetric(null);
   }
 
   @Override
   public void operationCancelled() {
-    attributes.put(RPC_RESPONSE_STATUS_ATTRIBUTE, StatusCode.Code.CANCELLED.toString());
-    metricsRecorder.recordOperationLatency(
-        clientRequestTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000_000.0, attributes);
+    recordMetric(new CancellationException());
   }
 
   @Override
   public void operationFailed(Throwable error) {
-    attributes.put(RPC_RESPONSE_STATUS_ATTRIBUTE, ObservabilityUtils.extractStatus(error));
+    recordMetric(error);
+  }
+
+  private void recordMetric(Throwable error) {
+    Map<String, Object> responseAttributes =
+        ObservabilityUtils.getResponseAttributes(error, transport);
+    attributes.putAll(responseAttributes);
     metricsRecorder.recordOperationLatency(
         clientRequestTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000_000.0, attributes);
   }

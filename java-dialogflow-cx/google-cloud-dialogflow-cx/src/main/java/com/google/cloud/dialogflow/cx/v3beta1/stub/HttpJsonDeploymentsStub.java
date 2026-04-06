@@ -261,6 +261,7 @@ public class HttpJsonDeploymentsStub extends DeploymentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDeploymentRequest, Deployment> getDeploymentTransportSettings =
         HttpJsonCallSettings.<GetDeploymentRequest, Deployment>newBuilder()
@@ -272,6 +273,7 @@ public class HttpJsonDeploymentsStub extends DeploymentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

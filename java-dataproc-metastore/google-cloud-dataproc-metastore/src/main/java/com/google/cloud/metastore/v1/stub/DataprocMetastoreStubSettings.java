@@ -822,6 +822,7 @@ public class DataprocMetastoreStubSettings extends StubSettings<DataprocMetastor
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-dataproc-metastore")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

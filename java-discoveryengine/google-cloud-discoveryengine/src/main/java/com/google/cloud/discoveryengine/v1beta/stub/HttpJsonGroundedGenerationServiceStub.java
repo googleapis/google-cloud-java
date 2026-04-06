@@ -197,6 +197,7 @@ public class HttpJsonGroundedGenerationServiceStub extends GroundedGenerationSer
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     HttpJsonCallSettings<CheckGroundingRequest, CheckGroundingResponse>
         checkGroundingTransportSettings =
@@ -209,6 +210,7 @@ public class HttpJsonGroundedGenerationServiceStub extends GroundedGenerationSer
                       builder.add("grounding_config", String.valueOf(request.getGroundingConfig()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getGroundingConfig())
                 .build();
 
     this.generateGroundedContentCallable =

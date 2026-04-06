@@ -278,6 +278,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteTaxonomyRequest, Empty> deleteTaxonomyTransportSettings =
         GrpcCallSettings.<DeleteTaxonomyRequest, Empty>newBuilder()
@@ -288,6 +289,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateTaxonomyRequest, Taxonomy> updateTaxonomyTransportSettings =
         GrpcCallSettings.<UpdateTaxonomyRequest, Taxonomy>newBuilder()
@@ -309,6 +311,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetTaxonomyRequest, Taxonomy> getTaxonomyTransportSettings =
         GrpcCallSettings.<GetTaxonomyRequest, Taxonomy>newBuilder()
@@ -319,6 +322,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreatePolicyTagRequest, PolicyTag> createPolicyTagTransportSettings =
         GrpcCallSettings.<CreatePolicyTagRequest, PolicyTag>newBuilder()
@@ -329,6 +333,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeletePolicyTagRequest, Empty> deletePolicyTagTransportSettings =
         GrpcCallSettings.<DeletePolicyTagRequest, Empty>newBuilder()
@@ -339,6 +344,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdatePolicyTagRequest, PolicyTag> updatePolicyTagTransportSettings =
         GrpcCallSettings.<UpdatePolicyTagRequest, PolicyTag>newBuilder()
@@ -360,6 +366,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetPolicyTagRequest, PolicyTag> getPolicyTagTransportSettings =
         GrpcCallSettings.<GetPolicyTagRequest, PolicyTag>newBuilder()
@@ -370,6 +377,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -380,6 +388,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -390,6 +399,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -401,6 +411,7 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createTaxonomyCallable =

@@ -454,6 +454,7 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateSpaceRequest, Space> updateSpaceTransportSettings =
         HttpJsonCallSettings.<UpdateSpaceRequest, Space>newBuilder()
@@ -478,6 +479,7 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<EndActiveConferenceRequest, Empty> endActiveConferenceTransportSettings =
         HttpJsonCallSettings.<EndActiveConferenceRequest, Empty>newBuilder()
@@ -489,6 +491,7 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateMemberRequest, Member> createMemberTransportSettings =
         HttpJsonCallSettings.<CreateMemberRequest, Member>newBuilder()
@@ -500,6 +503,7 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetMemberRequest, Member> getMemberTransportSettings =
         HttpJsonCallSettings.<GetMemberRequest, Member>newBuilder()
@@ -511,6 +515,7 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListMembersRequest, ListMembersResponse> listMembersTransportSettings =
         HttpJsonCallSettings.<ListMembersRequest, ListMembersResponse>newBuilder()
@@ -522,6 +527,7 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteMemberRequest, Empty> deleteMemberTransportSettings =
         HttpJsonCallSettings.<DeleteMemberRequest, Empty>newBuilder()
@@ -533,6 +539,7 @@ public class HttpJsonSpacesServiceStub extends SpacesServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createSpaceCallable =

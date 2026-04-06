@@ -808,6 +808,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -818,6 +819,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateInstanceRequest, Operation> updateInstanceTransportSettings =
         GrpcCallSettings.<UpdateInstanceRequest, Operation>newBuilder()
@@ -838,6 +840,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResetInstanceRequest, Operation> resetInstanceTransportSettings =
         GrpcCallSettings.<ResetInstanceRequest, Operation>newBuilder()
@@ -848,6 +851,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StartInstanceRequest, Operation> startInstanceTransportSettings =
         GrpcCallSettings.<StartInstanceRequest, Operation>newBuilder()
@@ -858,6 +862,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<StopInstanceRequest, Operation> stopInstanceTransportSettings =
         GrpcCallSettings.<StopInstanceRequest, Operation>newBuilder()
@@ -868,6 +873,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<EnableInteractiveSerialConsoleRequest, Operation>
         enableInteractiveSerialConsoleTransportSettings =
@@ -879,6 +885,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DisableInteractiveSerialConsoleRequest, Operation>
         disableInteractiveSerialConsoleTransportSettings =
@@ -890,6 +897,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<DetachLunRequest, Operation> detachLunTransportSettings =
         GrpcCallSettings.<DetachLunRequest, Operation>newBuilder()
@@ -900,6 +908,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("instance", String.valueOf(request.getInstance()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getInstance())
             .build();
     GrpcCallSettings<ListSSHKeysRequest, ListSSHKeysResponse> listSSHKeysTransportSettings =
         GrpcCallSettings.<ListSSHKeysRequest, ListSSHKeysResponse>newBuilder()
@@ -910,6 +919,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateSSHKeyRequest, SSHKey> createSSHKeyTransportSettings =
         GrpcCallSettings.<CreateSSHKeyRequest, SSHKey>newBuilder()
@@ -920,6 +930,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteSSHKeyRequest, Empty> deleteSSHKeyTransportSettings =
         GrpcCallSettings.<DeleteSSHKeyRequest, Empty>newBuilder()
@@ -930,6 +941,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListVolumesRequest, ListVolumesResponse> listVolumesTransportSettings =
         GrpcCallSettings.<ListVolumesRequest, ListVolumesResponse>newBuilder()
@@ -940,6 +952,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetVolumeRequest, Volume> getVolumeTransportSettings =
         GrpcCallSettings.<GetVolumeRequest, Volume>newBuilder()
@@ -950,6 +963,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateVolumeRequest, Operation> updateVolumeTransportSettings =
         GrpcCallSettings.<UpdateVolumeRequest, Operation>newBuilder()
@@ -970,6 +984,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<EvictVolumeRequest, Operation> evictVolumeTransportSettings =
         GrpcCallSettings.<EvictVolumeRequest, Operation>newBuilder()
@@ -980,6 +995,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResizeVolumeRequest, Operation> resizeVolumeTransportSettings =
         GrpcCallSettings.<ResizeVolumeRequest, Operation>newBuilder()
@@ -990,6 +1006,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("volume", String.valueOf(request.getVolume()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getVolume())
             .build();
     GrpcCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksTransportSettings =
         GrpcCallSettings.<ListNetworksRequest, ListNetworksResponse>newBuilder()
@@ -1000,6 +1017,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListNetworkUsageRequest, ListNetworkUsageResponse>
         listNetworkUsageTransportSettings =
@@ -1011,6 +1029,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     GrpcCallSettings<GetNetworkRequest, Network> getNetworkTransportSettings =
         GrpcCallSettings.<GetNetworkRequest, Network>newBuilder()
@@ -1021,6 +1040,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateNetworkRequest, Operation> updateNetworkTransportSettings =
         GrpcCallSettings.<UpdateNetworkRequest, Operation>newBuilder()
@@ -1042,6 +1062,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<RestoreVolumeSnapshotRequest, Operation>
         restoreVolumeSnapshotTransportSettings =
@@ -1053,6 +1074,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("volume_snapshot", String.valueOf(request.getVolumeSnapshot()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getVolumeSnapshot())
                 .build();
     GrpcCallSettings<DeleteVolumeSnapshotRequest, Empty> deleteVolumeSnapshotTransportSettings =
         GrpcCallSettings.<DeleteVolumeSnapshotRequest, Empty>newBuilder()
@@ -1063,6 +1085,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetVolumeSnapshotRequest, VolumeSnapshot> getVolumeSnapshotTransportSettings =
         GrpcCallSettings.<GetVolumeSnapshotRequest, VolumeSnapshot>newBuilder()
@@ -1073,6 +1096,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListVolumeSnapshotsRequest, ListVolumeSnapshotsResponse>
         listVolumeSnapshotsTransportSettings =
@@ -1084,6 +1108,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetLunRequest, Lun> getLunTransportSettings =
         GrpcCallSettings.<GetLunRequest, Lun>newBuilder()
@@ -1094,6 +1119,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLunsRequest, ListLunsResponse> listLunsTransportSettings =
         GrpcCallSettings.<ListLunsRequest, ListLunsResponse>newBuilder()
@@ -1104,6 +1130,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<EvictLunRequest, Operation> evictLunTransportSettings =
         GrpcCallSettings.<EvictLunRequest, Operation>newBuilder()
@@ -1114,6 +1141,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetNfsShareRequest, NfsShare> getNfsShareTransportSettings =
         GrpcCallSettings.<GetNfsShareRequest, NfsShare>newBuilder()
@@ -1124,6 +1152,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListNfsSharesRequest, ListNfsSharesResponse> listNfsSharesTransportSettings =
         GrpcCallSettings.<ListNfsSharesRequest, ListNfsSharesResponse>newBuilder()
@@ -1134,6 +1163,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateNfsShareRequest, Operation> updateNfsShareTransportSettings =
         GrpcCallSettings.<UpdateNfsShareRequest, Operation>newBuilder()
@@ -1154,6 +1184,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RenameNfsShareRequest, NfsShare> renameNfsShareTransportSettings =
         GrpcCallSettings.<RenameNfsShareRequest, NfsShare>newBuilder()
@@ -1164,6 +1195,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteNfsShareRequest, Operation> deleteNfsShareTransportSettings =
         GrpcCallSettings.<DeleteNfsShareRequest, Operation>newBuilder()
@@ -1174,6 +1206,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListProvisioningQuotasRequest, ListProvisioningQuotasResponse>
         listProvisioningQuotasTransportSettings =
@@ -1186,6 +1219,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<SubmitProvisioningConfigRequest, SubmitProvisioningConfigResponse>
         submitProvisioningConfigTransportSettings =
@@ -1198,6 +1232,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetProvisioningConfigRequest, ProvisioningConfig>
         getProvisioningConfigTransportSettings =
@@ -1209,6 +1244,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateProvisioningConfigRequest, ProvisioningConfig>
         createProvisioningConfigTransportSettings =
@@ -1220,6 +1256,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateProvisioningConfigRequest, ProvisioningConfig>
         updateProvisioningConfigTransportSettings =
@@ -1243,6 +1280,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListOSImagesRequest, ListOSImagesResponse> listOSImagesTransportSettings =
         GrpcCallSettings.<ListOSImagesRequest, ListOSImagesResponse>newBuilder()
@@ -1253,6 +1291,7 @@ public class GrpcBareMetalSolutionStub extends BareMetalSolutionStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

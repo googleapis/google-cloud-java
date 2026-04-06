@@ -498,6 +498,7 @@ public class ParallelstoreStubSettings extends StubSettings<ParallelstoreStubSet
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-parallelstore")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

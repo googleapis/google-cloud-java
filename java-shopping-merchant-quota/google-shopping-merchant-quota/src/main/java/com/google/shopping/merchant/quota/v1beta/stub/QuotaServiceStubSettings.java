@@ -299,6 +299,7 @@ public class QuotaServiceStubSettings extends StubSettings<QuotaServiceStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.shopping:google-shopping-merchant-quota")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -71,5 +71,48 @@ public interface PointwiseMetricInstanceOrBuilder
    */
   com.google.protobuf.ByteString getJsonInstanceBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Key-value contents for the mutlimodality input, including text, image,
+   * video, audio, and pdf, etc. The key is placeholder in metric prompt
+   * template, and the value is the multimodal content.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ContentMap content_map_instance = 2;</code>
+   *
+   * @return Whether the contentMapInstance field is set.
+   */
+  boolean hasContentMapInstance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Key-value contents for the mutlimodality input, including text, image,
+   * video, audio, and pdf, etc. The key is placeholder in metric prompt
+   * template, and the value is the multimodal content.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ContentMap content_map_instance = 2;</code>
+   *
+   * @return The contentMapInstance.
+   */
+  com.google.cloud.aiplatform.v1.ContentMap getContentMapInstance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Key-value contents for the mutlimodality input, including text, image,
+   * video, audio, and pdf, etc. The key is placeholder in metric prompt
+   * template, and the value is the multimodal content.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1.ContentMap content_map_instance = 2;</code>
+   */
+  com.google.cloud.aiplatform.v1.ContentMapOrBuilder getContentMapInstanceOrBuilder();
+
   com.google.cloud.aiplatform.v1.PointwiseMetricInstance.InstanceCase getInstanceCase();
 }

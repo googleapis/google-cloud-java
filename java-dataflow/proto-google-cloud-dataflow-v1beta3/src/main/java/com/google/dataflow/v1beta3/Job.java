@@ -1912,6 +1912,25 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         : serviceResources_;
   }
 
+  public static final int PAUSABLE_FIELD_NUMBER = 29;
+  private boolean pausable_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the job can be paused.
+   * </pre>
+   *
+   * <code>bool pausable = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The pausable.
+   */
+  @java.lang.Override
+  public boolean getPausable() {
+    return pausable_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2010,6 +2029,9 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(28, getServiceResources());
+    }
+    if (pausable_ != false) {
+      output.writeBool(29, pausable_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2125,6 +2147,9 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(28, getServiceResources());
     }
+    if (pausable_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(29, pausable_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2199,6 +2224,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
     if (hasServiceResources()) {
       if (!getServiceResources().equals(other.getServiceResources())) return false;
     }
+    if (getPausable() != other.getPausable()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2296,6 +2322,8 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + SERVICE_RESOURCES_FIELD_NUMBER;
       hash = (53 * hash) + getServiceResources().hashCode();
     }
+    hash = (37 * hash) + PAUSABLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPausable());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2556,6 +2584,7 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         serviceResourcesBuilder_.dispose();
         serviceResourcesBuilder_ = null;
       }
+      pausable_ = false;
       return this;
     }
 
@@ -2715,6 +2744,9 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         result.serviceResources_ =
             serviceResourcesBuilder_ == null ? serviceResources_ : serviceResourcesBuilder_.build();
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.pausable_ = pausable_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2885,6 +2917,9 @@ public final class Job extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasServiceResources()) {
         mergeServiceResources(other.getServiceResources());
+      }
+      if (other.getPausable() != false) {
+        setPausable(other.getPausable());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3118,6 +3153,12 @@ public final class Job extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x08000000;
                 break;
               } // case 226
+            case 232:
+              {
+                pausable_ = input.readBool();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 232
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8229,6 +8270,62 @@ public final class Job extends com.google.protobuf.GeneratedMessage
         serviceResources_ = null;
       }
       return serviceResourcesBuilder_;
+    }
+
+    private boolean pausable_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the job can be paused.
+     * </pre>
+     *
+     * <code>bool pausable = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The pausable.
+     */
+    @java.lang.Override
+    public boolean getPausable() {
+      return pausable_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the job can be paused.
+     * </pre>
+     *
+     * <code>bool pausable = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The pausable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPausable(boolean value) {
+
+      pausable_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the job can be paused.
+     * </pre>
+     *
+     * <code>bool pausable = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPausable() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      pausable_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.dataflow.v1beta3.Job)

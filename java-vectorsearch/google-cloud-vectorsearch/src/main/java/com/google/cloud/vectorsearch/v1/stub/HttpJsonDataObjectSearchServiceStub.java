@@ -360,6 +360,7 @@ public class HttpJsonDataObjectSearchServiceStub extends DataObjectSearchService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<QueryDataObjectsRequest, QueryDataObjectsResponse>
         queryDataObjectsTransportSettings =
@@ -372,6 +373,7 @@ public class HttpJsonDataObjectSearchServiceStub extends DataObjectSearchService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<AggregateDataObjectsRequest, AggregateDataObjectsResponse>
         aggregateDataObjectsTransportSettings =
@@ -385,6 +387,7 @@ public class HttpJsonDataObjectSearchServiceStub extends DataObjectSearchService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchSearchDataObjectsRequest, BatchSearchDataObjectsResponse>
         batchSearchDataObjectsTransportSettings =
@@ -398,6 +401,7 @@ public class HttpJsonDataObjectSearchServiceStub extends DataObjectSearchService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

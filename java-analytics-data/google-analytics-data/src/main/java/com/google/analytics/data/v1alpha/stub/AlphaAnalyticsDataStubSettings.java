@@ -635,6 +635,7 @@ public class AlphaAnalyticsDataStubSettings extends StubSettings<AlphaAnalyticsD
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.analytics:google-analytics-data")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -168,6 +168,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -178,6 +179,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -189,6 +191,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<GetVulnerabilityOccurrencesSummaryRequest, VulnerabilityOccurrencesSummary>
         getVulnerabilityOccurrencesSummaryTransportSettings =
@@ -202,6 +205,7 @@ public class GrpcContainerAnalysisStub extends ContainerAnalysisStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ExportSBOMRequest, ExportSBOMResponse> exportSBOMTransportSettings =
         GrpcCallSettings.<ExportSBOMRequest, ExportSBOMResponse>newBuilder()

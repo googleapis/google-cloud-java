@@ -35,6 +35,53 @@ class FixPomsTest(unittest.TestCase):
         for sub_dir in sub_dirs:
             self.__remove_file_in_subdir(ad_manager_resource, sub_dir)
 
+    def test_update_bom_pom_excludes_vertexai_comment(self):
+        import tempfile
+        from library_generation.owlbot.src.poms.module import Module
+        from library_generation.owlbot.src.fix_poms import update_bom_pom
+
+        # Minimal XML structure
+        initial_xml = """<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <dependencyManagement>
+    <dependencies>
+    </dependencies>
+  </dependencyManagement>
+</project>"""
+
+        with tempfile.NamedTemporaryFile(mode="w+", delete=False) as tmp:
+            tmp.write(initial_xml)
+            tmp_path = tmp.name
+
+        try:
+            modules = [
+                Module(
+                    group_id="com.google.cloud",
+                    artifact_id="google-cloud-vertexai",
+                    version="1.0.0",
+                    release_version="1.0.0",
+                ),
+                Module(
+                    group_id="com.google.cloud",
+                    artifact_id="google-cloud-datastore",
+                    version="1.0.0",
+                    release_version="1.0.0",
+                ),
+            ]
+
+            update_bom_pom(tmp_path, modules)
+
+            with open(tmp_path, "r") as f:
+                content = f.read()
+
+            self.assertNotIn("x-version-update:google-cloud-vertexai:current", content)
+            self.assertIn("x-version-update:google-cloud-datastore:current", content)
+
+        finally:
+            import os
+
+            os.unlink(tmp_path)
+
     @classmethod
     def __copy__golden(cls, base_dir: str, subdir: str):
         golden = os.path.join(base_dir, subdir, "pom-golden.xml")

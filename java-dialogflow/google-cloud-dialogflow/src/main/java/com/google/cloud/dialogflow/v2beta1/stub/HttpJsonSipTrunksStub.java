@@ -375,6 +375,7 @@ public class HttpJsonSipTrunksStub extends SipTrunksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteSipTrunkRequest, Empty> deleteSipTrunkTransportSettings =
         HttpJsonCallSettings.<DeleteSipTrunkRequest, Empty>newBuilder()
@@ -386,6 +387,7 @@ public class HttpJsonSipTrunksStub extends SipTrunksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListSipTrunksRequest, ListSipTrunksResponse>
         listSipTrunksTransportSettings =
@@ -398,6 +400,7 @@ public class HttpJsonSipTrunksStub extends SipTrunksStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetSipTrunkRequest, SipTrunk> getSipTrunkTransportSettings =
         HttpJsonCallSettings.<GetSipTrunkRequest, SipTrunk>newBuilder()
@@ -409,6 +412,7 @@ public class HttpJsonSipTrunksStub extends SipTrunksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateSipTrunkRequest, SipTrunk> updateSipTrunkTransportSettings =
         HttpJsonCallSettings.<UpdateSipTrunkRequest, SipTrunk>newBuilder()

@@ -65,10 +65,16 @@ public final class ToolCallProto extends com.google.protobuf.GeneratedFile {
           + "*google/cloud/dialogflow/v2/tool_call.p"
           + "roto\022\032google.cloud.dialogflow.v2\032\037google"
           + "/api/field_behavior.proto\032\031google/api/re"
-          + "source.proto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\265\003\n"
+          + "source.proto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\330\004\n"
           + "\010ToolCall\0226\n"
           + "\004tool\030\001 \001(\tB&\340A\001\372A \n"
-          + "\036dialogflow.googleapis.com/ToolH\000\022\036\n"
+          + "\036dialogflow.googleapis.com/ToolH\000\0223\n"
+          + "\010ces_tool\030\013 \001(\tB\037\340A\001\372A\031\n"
+          + "\027ces.googleapis.com/ToolH\000\0229\n"
+          + "\013ces_toolset\030\014 \001(\tB\"\340A\001\372A\034\n"
+          + "\032ces.googleapis.com/ToolsetH\000\0221\n"
+          + "\007ces_app\030\010 \001(\tB\036\340A\001\372A\030\n"
+          + "\026ces.googleapis.com/AppH\000\022\036\n"
           + "\021tool_display_name\030\t \001(\tB\003\340A\001\022!\n"
           + "\024tool_display_details\030\n"
           + " \001(\tB\003\340A\001\022\023\n"
@@ -84,13 +90,20 @@ public final class ToolCallProto extends com.google.protobuf.GeneratedFile {
           + "\021STATE_UNSPECIFIED\020\000\022\r\n"
           + "\tTRIGGERED\020\001\022\026\n"
           + "\022NEEDS_CONFIRMATION\020\002B\010\n"
-          + "\006source\"\317\002\n"
+          + "\006source\"\362\003\n"
           + "\016ToolCallResult\0226\n"
           + "\004tool\030\001 \001(\tB&\340A\001\372A \n"
-          + "\036dialogflow.googleapis.com/ToolH\000\022\023\n"
+          + "\036dialogflow.googleapis.com/ToolH\000\0229\n"
+          + "\013ces_toolset\030\r"
+          + " \001(\tB\"\340A\001\372A\034\n"
+          + "\032ces.googleapis.com/ToolsetH\000\0223\n"
+          + "\010ces_tool\030\014 \001(\tB\037\340A\001\372A\031\n"
+          + "\027ces.googleapis.com/ToolH\000\0221\n"
+          + "\007ces_app\030\013 \001(\tB\036\340A\001\372A\030\n"
+          + "\026ces.googleapis.com/AppH\000\022\023\n"
           + "\006action\030\002 \001(\tB\003\340A\001\022A\n"
-          + "\005error\030\003 \001(\01320.google.clou"
-          + "d.dialogflow.v2.ToolCallResult.ErrorH\001\022\025\n"
+          + "\005error\030\003 \001(\01320.googl"
+          + "e.cloud.dialogflow.v2.ToolCallResult.ErrorH\001\022\025\n"
           + "\013raw_content\030\005 \001(\014H\001\022\021\n"
           + "\007content\030\006 \001(\tH\001\0224\n"
           + "\013create_time\030\007"
@@ -101,8 +114,8 @@ public final class ToolCallProto extends com.google.protobuf.GeneratedFile {
           + "\006sourceB\010\n"
           + "\006resultB\223\001\n"
           + "\036com.google.cloud.dialogflow.v2B\r"
-          + "ToolCallProtoP\001Z>cloud.google.com/go/dialogflow/apiv2/dialogflowpb;dia"
-          + "logflowpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b\006proto3"
+          + "ToolCallProtoP\001Z>cloud.google.com/go/dialogflow/apiv2/dialogflow"
+          + "pb;dialogflowpb\242\002\002DF\252\002\032Google.Cloud.Dialogflow.V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -120,6 +133,9 @@ public final class ToolCallProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_dialogflow_v2_ToolCall_descriptor,
             new java.lang.String[] {
               "Tool",
+              "CesTool",
+              "CesToolset",
+              "CesApp",
               "ToolDisplayName",
               "ToolDisplayDetails",
               "Action",
@@ -136,6 +152,9 @@ public final class ToolCallProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_cloud_dialogflow_v2_ToolCallResult_descriptor,
             new java.lang.String[] {
               "Tool",
+              "CesToolset",
+              "CesTool",
+              "CesApp",
               "Action",
               "Error",
               "RawContent",

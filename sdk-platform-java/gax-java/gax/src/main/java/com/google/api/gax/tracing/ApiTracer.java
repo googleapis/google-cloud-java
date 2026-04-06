@@ -196,6 +196,17 @@ public interface ApiTracer {
   default void batchRequestSent(long elementCount, long requestSize) {}
   ;
 
+  /** Extract the trace context from the tracer and add it to the given headers map. */
+  default void injectTraceContext(java.util.Map<String, String> carrier) {}
+
+  /**
+   * Annotates the attempt with the full resolved HTTP URL. Only relevant for HTTP transport.
+   *
+   * @param requestUrl the full URL of the request
+   */
+  default void requestUrlResolved(String requestUrl) {}
+  ;
+
   /**
    * A context class to be used with {@link #inScope()} and a try-with-resources block. Closing a
    * {@link Scope} removes any context that the underlying implementation might've set in {@link

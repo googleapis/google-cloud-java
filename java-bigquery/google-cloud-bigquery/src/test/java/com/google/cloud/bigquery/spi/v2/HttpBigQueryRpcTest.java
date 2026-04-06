@@ -47,6 +47,7 @@ import com.google.api.services.bigquery.model.TableReference;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.telemetry.BigQueryTelemetryTracer;
+import com.google.cloud.bigquery.telemetry.HttpTracingRequestInitializer;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -160,6 +161,10 @@ public class HttpBigQueryRpcTest {
     assertEquals(
         gcpResourceDestinationId,
         rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID));
+
+    // this attribute should never get set in a normal success flow
+    assertNull(
+        rpcSpan.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_RESEND_COUNT));
   }
 
   private void verifySpanProductionAttributes(
@@ -1140,6 +1145,59 @@ public class HttpBigQueryRpcTest {
           "projects/{+projectId}/datasets/{+datasetId}",
           rpcSpan.getAttributes().get(BigQueryTelemetryTracer.URL_TEMPLATE));
     }
+
+    @Test
+    public void testUrlDomain_DefaultValue() throws Exception {
+      setMockResponse(
+          "{\"kind\":\"bigquery#dataset\",\"id\":\"" + PROJECT_ID + ":" + DATASET_ID + "\"}");
+
+      rpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+
+      List<io.opentelemetry.sdk.trace.data.SpanData> spans = spanExporter.getFinishedSpanItems();
+      io.opentelemetry.sdk.trace.data.SpanData rpcSpan =
+          spans.stream()
+              .filter(
+                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+              .findFirst()
+              .orElse(null);
+      assertNotNull(rpcSpan);
+      assertEquals(
+          "bigquery.googleapis.com",
+          rpcSpan.getAttributes().get(BigQueryTelemetryTracer.URL_DOMAIN));
+    }
+
+    @Test
+    public void testUrlDomain_OverriddenValue() throws Exception {
+      setMockResponse(
+          "{\"kind\":\"bigquery#dataset\",\"id\":\"" + PROJECT_ID + ":" + DATASET_ID + "\"}");
+
+      BigQueryOptions customOptions =
+          BigQueryOptions.newBuilder()
+              .setProjectId(PROJECT_ID)
+              .setCredentials(NoCredentials.getInstance())
+              .setEnableOpenTelemetryTracing(true)
+              .setOpenTelemetryTracer(tracer)
+              .setTransportOptions(
+                  BigQueryOptions.getDefaultHttpTransportOptions().toBuilder()
+                      .setHttpTransportFactory(() -> mockTransport)
+                      .build())
+              .setHost("https://custom.googleapis.com")
+              .build();
+      HttpBigQueryRpc customRpc = new HttpBigQueryRpc(customOptions);
+
+      customRpc.getDatasetSkipExceptionTranslation(PROJECT_ID, DATASET_ID, new HashMap<>());
+
+      List<io.opentelemetry.sdk.trace.data.SpanData> spans = spanExporter.getFinishedSpanItems();
+      io.opentelemetry.sdk.trace.data.SpanData rpcSpan =
+          spans.stream()
+              .filter(
+                  span -> span.getName().equals("com.google.cloud.bigquery.BigQueryRpc.getDataset"))
+              .findFirst()
+              .orElse(null);
+      assertNotNull(rpcSpan);
+      assertEquals(
+          "custom.googleapis.com", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.URL_DOMAIN));
+    }
   }
 
   @Nested
@@ -1190,8 +1248,10 @@ public class HttpBigQueryRpcTest {
       assertNull(
           rpcSpan.getAttributes().get(AttributeKey.stringKey("url.template")),
           "url.template attribute should not be set");
-
       assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID));
+      assertNull(rpcSpan.getAttributes().get(BigQueryTelemetryTracer.URL_DOMAIN));
+      assertNull(
+          rpcSpan.getAttributes().get(HttpTracingRequestInitializer.HTTP_REQUEST_RESEND_COUNT));
     }
 
     @Test

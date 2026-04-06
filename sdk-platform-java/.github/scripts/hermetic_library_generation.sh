@@ -50,6 +50,10 @@ case "${key}" in
     showcase_mode="$2"
     shift
     ;;
+  --force_regenerate_all)
+    force_regenerate_all="$2"
+    shift
+    ;;
   *)
     echo "Invalid option: [$1]"
     exit 1
@@ -81,6 +85,10 @@ if [ -z "${image_tag}" ]; then
   image_tag=$(grep "gapic_generator_version" "${generation_config}" | cut -d ':' -f 2 | xargs)
 fi
 
+if [ -z "${force_regenerate_all}" ]; then
+  force_regenerate_all="false"
+fi
+
 workspace_name="/workspace"
 baseline_generation_config="baseline_generation_config.yaml"
 message="chore: generate libraries at $(date)"
@@ -109,7 +117,8 @@ fi
 changed_libraries_file="$(mktemp)"
 python hermetic_build/common/cli/get_changed_libraries.py create \
   --baseline-generation-config-path="${baseline_generation_config}" \
-  --current-generation-config-path="${generation_config}" | tee "${changed_libraries_file}"
+  --current-generation-config-path="${generation_config}"\
+  --force-regenerate-all="${force_regenerate_all}" | tee "${changed_libraries_file}"
 changed_libraries="$(cat "${changed_libraries_file}")"
 echo "Changed libraries are: ${changed_libraries:-"No changed library"}."
 

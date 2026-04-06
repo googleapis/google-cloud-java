@@ -580,6 +580,7 @@ public class HttpJsonDataprocMetastoreFederationStub extends DataprocMetastoreFe
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetFederationRequest, Federation> getFederationTransportSettings =
         HttpJsonCallSettings.<GetFederationRequest, Federation>newBuilder()
@@ -591,6 +592,7 @@ public class HttpJsonDataprocMetastoreFederationStub extends DataprocMetastoreFe
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateFederationRequest, Operation> createFederationTransportSettings =
         HttpJsonCallSettings.<CreateFederationRequest, Operation>newBuilder()
@@ -602,6 +604,7 @@ public class HttpJsonDataprocMetastoreFederationStub extends DataprocMetastoreFe
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateFederationRequest, Operation> updateFederationTransportSettings =
         HttpJsonCallSettings.<UpdateFederationRequest, Operation>newBuilder()
@@ -624,6 +627,7 @@ public class HttpJsonDataprocMetastoreFederationStub extends DataprocMetastoreFe
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -658,6 +662,7 @@ public class HttpJsonDataprocMetastoreFederationStub extends DataprocMetastoreFe
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -669,6 +674,7 @@ public class HttpJsonDataprocMetastoreFederationStub extends DataprocMetastoreFe
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -681,6 +687,7 @@ public class HttpJsonDataprocMetastoreFederationStub extends DataprocMetastoreFe
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listFederationsCallable =

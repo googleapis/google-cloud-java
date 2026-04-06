@@ -261,6 +261,7 @@ public class ImageServiceStubSettings extends StubSettings<ImageServiceStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.shopping:google-shopping-merchant-productstudio")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

@@ -61,6 +61,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessage
     trainingPhrases_ = java.util.Collections.emptyList();
     parameters_ = java.util.Collections.emptyList();
     description_ = "";
+    dtmfPattern_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4546,6 +4547,59 @@ public final class Intent extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int DTMF_PATTERN_FIELD_NUMBER = 16;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object dtmfPattern_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Matching DTMF pattern for the intent.
+   * </pre>
+   *
+   * <code>string dtmf_pattern = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The dtmfPattern.
+   */
+  @java.lang.Override
+  public java.lang.String getDtmfPattern() {
+    java.lang.Object ref = dtmfPattern_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      dtmfPattern_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Matching DTMF pattern for the intent.
+   * </pre>
+   *
+   * <code>string dtmf_pattern = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for dtmfPattern.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDtmfPatternBytes() {
+    java.lang.Object ref = dtmfPattern_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      dtmfPattern_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4582,6 +4636,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessage
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 7);
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, description_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dtmfPattern_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 16, dtmfPattern_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -4623,6 +4680,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, description_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(dtmfPattern_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(16, dtmfPattern_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4646,6 +4706,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessage
     if (getIsFallback() != other.getIsFallback()) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (!getDtmfPattern().equals(other.getDtmfPattern())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4679,6 +4740,8 @@ public final class Intent extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    hash = (37 * hash) + DTMF_PATTERN_FIELD_NUMBER;
+    hash = (53 * hash) + getDtmfPattern().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4865,6 +4928,7 @@ public final class Intent extends com.google.protobuf.GeneratedMessage
       isFallback_ = false;
       internalGetMutableLabels().clear();
       description_ = "";
+      dtmfPattern_ = "";
       return this;
     }
 
@@ -4941,6 +5005,9 @@ public final class Intent extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.dtmfPattern_ = dtmfPattern_;
       }
     }
 
@@ -5031,6 +5098,11 @@ public final class Intent extends com.google.protobuf.GeneratedMessage
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
         bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (!other.getDtmfPattern().isEmpty()) {
+        dtmfPattern_ = other.dtmfPattern_;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -5129,6 +5201,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 130:
+              {
+                dtmfPattern_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6710,6 +6788,117 @@ public final class Intent extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       description_ = value;
       bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object dtmfPattern_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Matching DTMF pattern for the intent.
+     * </pre>
+     *
+     * <code>string dtmf_pattern = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dtmfPattern.
+     */
+    public java.lang.String getDtmfPattern() {
+      java.lang.Object ref = dtmfPattern_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        dtmfPattern_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Matching DTMF pattern for the intent.
+     * </pre>
+     *
+     * <code>string dtmf_pattern = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for dtmfPattern.
+     */
+    public com.google.protobuf.ByteString getDtmfPatternBytes() {
+      java.lang.Object ref = dtmfPattern_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        dtmfPattern_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Matching DTMF pattern for the intent.
+     * </pre>
+     *
+     * <code>string dtmf_pattern = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The dtmfPattern to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDtmfPattern(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      dtmfPattern_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Matching DTMF pattern for the intent.
+     * </pre>
+     *
+     * <code>string dtmf_pattern = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDtmfPattern() {
+      dtmfPattern_ = getDefaultInstance().getDtmfPattern();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Matching DTMF pattern for the intent.
+     * </pre>
+     *
+     * <code>string dtmf_pattern = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for dtmfPattern to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDtmfPatternBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      dtmfPattern_ = value;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

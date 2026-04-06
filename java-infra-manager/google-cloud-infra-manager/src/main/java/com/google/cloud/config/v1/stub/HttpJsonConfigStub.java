@@ -1551,6 +1551,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDeploymentRequest, Deployment> getDeploymentTransportSettings =
         HttpJsonCallSettings.<GetDeploymentRequest, Deployment>newBuilder()
@@ -1562,6 +1563,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDeploymentRequest, Operation> createDeploymentTransportSettings =
         HttpJsonCallSettings.<CreateDeploymentRequest, Operation>newBuilder()
@@ -1573,6 +1575,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDeploymentRequest, Operation> updateDeploymentTransportSettings =
         HttpJsonCallSettings.<UpdateDeploymentRequest, Operation>newBuilder()
@@ -1595,6 +1598,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListRevisionsRequest, ListRevisionsResponse>
         listRevisionsTransportSettings =
@@ -1607,6 +1611,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetRevisionRequest, Revision> getRevisionTransportSettings =
         HttpJsonCallSettings.<GetRevisionRequest, Revision>newBuilder()
@@ -1618,6 +1623,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetResourceRequest, Resource> getResourceTransportSettings =
         HttpJsonCallSettings.<GetResourceRequest, Resource>newBuilder()
@@ -1629,6 +1635,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListResourcesRequest, ListResourcesResponse>
         listResourcesTransportSettings =
@@ -1641,6 +1648,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ExportDeploymentStatefileRequest, Statefile>
         exportDeploymentStatefileTransportSettings =
@@ -1653,6 +1661,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ExportRevisionStatefileRequest, Statefile>
         exportRevisionStatefileTransportSettings =
@@ -1665,6 +1674,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ImportStatefileRequest, Statefile> importStatefileTransportSettings =
         HttpJsonCallSettings.<ImportStatefileRequest, Statefile>newBuilder()
@@ -1676,6 +1686,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteStatefileRequest, Empty> deleteStatefileTransportSettings =
         HttpJsonCallSettings.<DeleteStatefileRequest, Empty>newBuilder()
@@ -1687,6 +1698,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<LockDeploymentRequest, Operation> lockDeploymentTransportSettings =
         HttpJsonCallSettings.<LockDeploymentRequest, Operation>newBuilder()
@@ -1698,6 +1710,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UnlockDeploymentRequest, Operation> unlockDeploymentTransportSettings =
         HttpJsonCallSettings.<UnlockDeploymentRequest, Operation>newBuilder()
@@ -1709,6 +1722,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportLockInfoRequest, LockInfo> exportLockInfoTransportSettings =
         HttpJsonCallSettings.<ExportLockInfoRequest, LockInfo>newBuilder()
@@ -1720,6 +1734,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreatePreviewRequest, Operation> createPreviewTransportSettings =
         HttpJsonCallSettings.<CreatePreviewRequest, Operation>newBuilder()
@@ -1731,6 +1746,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetPreviewRequest, Preview> getPreviewTransportSettings =
         HttpJsonCallSettings.<GetPreviewRequest, Preview>newBuilder()
@@ -1742,6 +1758,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListPreviewsRequest, ListPreviewsResponse> listPreviewsTransportSettings =
         HttpJsonCallSettings.<ListPreviewsRequest, ListPreviewsResponse>newBuilder()
@@ -1753,6 +1770,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeletePreviewRequest, Operation> deletePreviewTransportSettings =
         HttpJsonCallSettings.<DeletePreviewRequest, Operation>newBuilder()
@@ -1764,6 +1782,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportPreviewResultRequest, ExportPreviewResultResponse>
         exportPreviewResultTransportSettings =
@@ -1777,6 +1796,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListTerraformVersionsRequest, ListTerraformVersionsResponse>
         listTerraformVersionsTransportSettings =
@@ -1790,6 +1810,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetTerraformVersionRequest, TerraformVersion>
         getTerraformVersionTransportSettings =
@@ -1802,6 +1823,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListResourceChangesRequest, ListResourceChangesResponse>
         listResourceChangesTransportSettings =
@@ -1815,6 +1837,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetResourceChangeRequest, ResourceChange>
         getResourceChangeTransportSettings =
@@ -1827,6 +1850,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListResourceDriftsRequest, ListResourceDriftsResponse>
         listResourceDriftsTransportSettings =
@@ -1839,6 +1863,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetResourceDriftRequest, ResourceDrift> getResourceDriftTransportSettings =
         HttpJsonCallSettings.<GetResourceDriftRequest, ResourceDrift>newBuilder()
@@ -1850,6 +1875,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetAutoMigrationConfigRequest, AutoMigrationConfig>
         getAutoMigrationConfigTransportSettings =
@@ -1862,6 +1888,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateAutoMigrationConfigRequest, Operation>
         updateAutoMigrationConfigTransportSettings =
@@ -1910,6 +1937,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1921,6 +1949,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1933,6 +1962,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listDeploymentsCallable =

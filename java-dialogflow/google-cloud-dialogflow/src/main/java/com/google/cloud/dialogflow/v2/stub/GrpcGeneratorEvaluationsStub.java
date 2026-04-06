@@ -203,6 +203,7 @@ public class GrpcGeneratorEvaluationsStub extends GeneratorEvaluationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetGeneratorEvaluationRequest, GeneratorEvaluation>
         getGeneratorEvaluationTransportSettings =
@@ -214,6 +215,7 @@ public class GrpcGeneratorEvaluationsStub extends GeneratorEvaluationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListGeneratorEvaluationsRequest, ListGeneratorEvaluationsResponse>
         listGeneratorEvaluationsTransportSettings =
@@ -226,6 +228,7 @@ public class GrpcGeneratorEvaluationsStub extends GeneratorEvaluationsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<DeleteGeneratorEvaluationRequest, Empty>
         deleteGeneratorEvaluationTransportSettings =
@@ -237,6 +240,7 @@ public class GrpcGeneratorEvaluationsStub extends GeneratorEvaluationsStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

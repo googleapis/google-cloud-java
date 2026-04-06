@@ -30,7 +30,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. A unique identifier for an instance. The name should be of the
+   * Identifier. A unique identifier for an instance. The name should be of the
    * format:
    * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
    *
@@ -44,7 +44,7 @@ public interface InstanceOrBuilder
    * project_number and location_id combination.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -54,7 +54,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Optional. A unique identifier for an instance. The name should be of the
+   * Identifier. A unique identifier for an instance. The name should be of the
    * format:
    * `projects/{project_number}/locations/{location_id}/instances/{instance_id}`
    *
@@ -68,7 +68,7 @@ public interface InstanceOrBuilder
    * project_number and location_id combination.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -159,6 +159,10 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Optional. Labels as key value pairs.
+   * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -170,6 +174,10 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Optional. Labels as key value pairs.
+   * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -185,6 +193,10 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Optional. Labels as key value pairs.
+   * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -196,6 +208,10 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Optional. Labels as key value pairs.
+   * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -211,6 +227,10 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Optional. Labels as key value pairs.
+   * Keys and values can contain only lowercase letters, numeric characters,
+   * underscores, and dashes.
+   * For more information, see [Requirements for
+   * labels](https://cloud.google.com/resource-manager/docs/best-practices-labels#label_encoding).
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

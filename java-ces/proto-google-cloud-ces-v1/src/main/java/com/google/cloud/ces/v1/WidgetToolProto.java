@@ -44,6 +44,14 @@ public final class WidgetToolProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_ces_v1_WidgetTool_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1_WidgetTool_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_FieldMappingsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_FieldMappingsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -53,41 +61,93 @@ public final class WidgetToolProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n%google/cloud/ces/v1/widget_tool.proto\022"
+      "\n"
+          + "%google/cloud/ces/v1/widget_tool.proto\022"
           + "\023google.cloud.ces.v1\032\037google/api/field_b"
-          + "ehavior.proto\032 google/cloud/ces/v1/schem"
-          + "a.proto\"\302\003\n\nWidgetTool\0226\n\nparameters\030\004 \001"
-          + "(\0132\033.google.cloud.ces.v1.SchemaB\003\340A\001H\000\022\021"
-          + "\n\004name\030\001 \001(\tB\003\340A\002\022\030\n\013description\030\002 \001(\tB\003"
-          + "\340A\001\022D\n\013widget_type\030\003 \001(\0162*.google.cloud."
-          + "ces.v1.WidgetTool.WidgetTypeB\003\340A\001\"\377\001\n\nWi"
-          + "dgetType\022\033\n\027WIDGET_TYPE_UNSPECIFIED\020\000\022\n\n"
-          + "\006CUSTOM\020\001\022\024\n\020PRODUCT_CAROUSEL\020\002\022\023\n\017PRODU"
-          + "CT_DETAILS\020\003\022\021\n\rQUICK_ACTIONS\020\004\022\026\n\022PRODU"
-          + "CT_COMPARISON\020\005\022\034\n\030ADVANCED_PRODUCT_DETA"
-          + "ILS\020\006\022\016\n\nSHORT_FORM\020\007\022\030\n\024OVERALL_SATISFA"
-          + "CTION\020\010\022\021\n\rORDER_SUMMARY\020\t\022\027\n\023APPOINTMEN"
-          + "T_DETAILS\020\nB\007\n\005inputBW\n\027com.google.cloud"
-          + ".ces.v1B\017WidgetToolProtoP\001Z)cloud.google"
-          + ".com/go/ces/apiv1/cespb;cespbb\006proto3"
+          + "ehavior.proto\032)google/cloud/ces/v1/python_function.proto\032 google/cloud/ces/v1/sc"
+          + "hema.proto\032\034google/protobuf/struct.proto\"\221\010\n\n"
+          + "WidgetTool\0226\n\n"
+          + "parameters\030\004"
+          + " \001(\0132\033.google.cloud.ces.v1.SchemaB\003\340A\001H\000\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\022\030\n"
+          + "\013description\030\002 \001(\tB\003\340A\001\022D\n"
+          + "\013widget_type\030\003"
+          + " \001(\0162*.google.cloud.ces.v1.WidgetTool.WidgetTypeB\003\340A\001\022/\n"
+          + "\tui_config\030\005 \001(\0132\027.google.protobuf.StructB\003\340A\001\022F\n"
+          + "\014data_mapping\030\006"
+          + " \001(\0132+.google.cloud.ces.v1.WidgetTool.DataMappingB\003\340A\001\032\246\003\n"
+          + "\013DataMapping\022\035\n"
+          + "\020source_tool_name\030\001 \001(\tB\003\340A\001\022[\n"
+          + "\016field_mappings\030\002 \003(\0132>.google.cloud.ces.v1"
+          + ".WidgetTool.DataMapping.FieldMappingsEntryB\003\340A\001\022A\n"
+          + "\017python_function\030\005"
+          + " \001(\0132#.google.cloud.ces.v1.PythonFunctionB\003\340A\001\022C\n"
+          + "\004mode\030\004"
+          + " \001(\01620.google.cloud.ces.v1.WidgetTool.DataMapping.ModeB\003\340A\001\022\031\n\r"
+          + "python_script\030\003 \001(\tB\002\030\001\0324\n"
+          + "\022FieldMappingsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"B\n"
+          + "\004Mode\022\024\n"
+          + "\020MODE_UNSPECIFIED\020\000\022\021\n\r"
+          + "FIELD_MAPPING\020\001\022\021\n\r"
+          + "PYTHON_SCRIPT\020\002\"\254\002\n\n"
+          + "WidgetType\022\033\n"
+          + "\027WIDGET_TYPE_UNSPECIFIED\020\000\022\n\n"
+          + "\006CUSTOM\020\001\022\024\n"
+          + "\020PRODUCT_CAROUSEL\020\002\022\023\n"
+          + "\017PRODUCT_DETAILS\020\003\022\021\n\r"
+          + "QUICK_ACTIONS\020\004\022\026\n"
+          + "\022PRODUCT_COMPARISON\020\005\022\034\n"
+          + "\030ADVANCED_PRODUCT_DETAILS\020\006\022\016\n\n"
+          + "SHORT_FORM\020\007\022\030\n"
+          + "\024OVERALL_SATISFACTION\020\010\022\021\n\r"
+          + "ORDER_SUMMARY\020\t\022\027\n"
+          + "\023APPOINTMENT_DETAILS\020\n"
+          + "\022\031\n"
+          + "\025APPOINTMENT_SCHEDULER\020\013\022\020\n"
+          + "\014CONTACT_FORM\020\014B\007\n"
+          + "\005inputBW\n"
+          + "\027com.google.cloud.ces.v1B\017WidgetToolProtoP\001Z)cloud.google.com/go/ces/apiv"
+          + "1/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.cloud.ces.v1.PythonFunctionProto.getDescriptor(),
               com.google.cloud.ces.v1.SchemaProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
             });
     internal_static_google_cloud_ces_v1_WidgetTool_descriptor = getDescriptor().getMessageType(0);
     internal_static_google_cloud_ces_v1_WidgetTool_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1_WidgetTool_descriptor,
             new java.lang.String[] {
-              "Parameters", "Name", "Description", "WidgetType", "Input",
+              "Parameters", "Name", "Description", "WidgetType", "UiConfig", "DataMapping", "Input",
+            });
+    internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_descriptor =
+        internal_static_google_cloud_ces_v1_WidgetTool_descriptor.getNestedType(0);
+    internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_descriptor,
+            new java.lang.String[] {
+              "SourceToolName", "FieldMappings", "PythonFunction", "Mode", "PythonScript",
+            });
+    internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_FieldMappingsEntry_descriptor =
+        internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_descriptor.getNestedType(0);
+    internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_FieldMappingsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1_WidgetTool_DataMapping_FieldMappingsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.cloud.ces.v1.PythonFunctionProto.getDescriptor();
     com.google.cloud.ces.v1.SchemaProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

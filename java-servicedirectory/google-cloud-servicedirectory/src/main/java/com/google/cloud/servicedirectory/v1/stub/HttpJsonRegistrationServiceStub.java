@@ -917,6 +917,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListNamespacesRequest, ListNamespacesResponse>
         listNamespacesTransportSettings =
@@ -929,6 +930,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetNamespaceRequest, Namespace> getNamespaceTransportSettings =
         HttpJsonCallSettings.<GetNamespaceRequest, Namespace>newBuilder()
@@ -940,6 +942,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateNamespaceRequest, Namespace> updateNamespaceTransportSettings =
         HttpJsonCallSettings.<UpdateNamespaceRequest, Namespace>newBuilder()
@@ -962,6 +965,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateServiceRequest, Service> createServiceTransportSettings =
         HttpJsonCallSettings.<CreateServiceRequest, Service>newBuilder()
@@ -973,6 +977,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListServicesRequest, ListServicesResponse> listServicesTransportSettings =
         HttpJsonCallSettings.<ListServicesRequest, ListServicesResponse>newBuilder()
@@ -984,6 +989,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetServiceRequest, Service> getServiceTransportSettings =
         HttpJsonCallSettings.<GetServiceRequest, Service>newBuilder()
@@ -995,6 +1001,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateServiceRequest, Service> updateServiceTransportSettings =
         HttpJsonCallSettings.<UpdateServiceRequest, Service>newBuilder()
@@ -1017,6 +1024,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateEndpointRequest, Endpoint> createEndpointTransportSettings =
         HttpJsonCallSettings.<CreateEndpointRequest, Endpoint>newBuilder()
@@ -1028,6 +1036,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListEndpointsRequest, ListEndpointsResponse>
         listEndpointsTransportSettings =
@@ -1040,6 +1049,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetEndpointRequest, Endpoint> getEndpointTransportSettings =
         HttpJsonCallSettings.<GetEndpointRequest, Endpoint>newBuilder()
@@ -1051,6 +1061,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateEndpointRequest, Endpoint> updateEndpointTransportSettings =
         HttpJsonCallSettings.<UpdateEndpointRequest, Endpoint>newBuilder()
@@ -1073,6 +1084,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1084,6 +1096,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -1095,6 +1108,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1107,6 +1121,7 @@ public class HttpJsonRegistrationServiceStub extends RegistrationServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

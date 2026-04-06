@@ -252,6 +252,7 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<AugmentPromptRequest, AugmentPromptResponse> augmentPromptTransportSettings =
         GrpcCallSettings.<AugmentPromptRequest, AugmentPromptResponse>newBuilder()
@@ -262,6 +263,7 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CorroborateContentRequest, CorroborateContentResponse>
         corroborateContentTransportSettings =
@@ -273,6 +275,7 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<AskContextsRequest, AskContextsResponse> askContextsTransportSettings =
         GrpcCallSettings.<AskContextsRequest, AskContextsResponse>newBuilder()
@@ -283,6 +286,7 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<AsyncRetrieveContextsRequest, Operation>
         asyncRetrieveContextsTransportSettings =
@@ -294,6 +298,7 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -324,6 +329,7 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -334,6 +340,7 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -345,6 +352,7 @@ public class GrpcVertexRagServiceStub extends VertexRagServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.retrieveContextsCallable =

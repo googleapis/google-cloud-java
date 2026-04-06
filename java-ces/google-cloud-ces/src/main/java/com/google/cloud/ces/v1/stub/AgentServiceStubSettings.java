@@ -1375,6 +1375,7 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-ces")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

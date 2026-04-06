@@ -175,6 +175,16 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
         .getClusterCertificateAuthoritySettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to getSharedRegionalCertificateAuthority.
+   */
+  public UnaryCallSettings<
+          GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+      getSharedRegionalCertificateAuthoritySettings() {
+    return ((CloudRedisClusterStubSettings) getStubSettings())
+        .getSharedRegionalCertificateAuthoritySettings();
+  }
+
   /** Returns the object with the settings used for calls to rescheduleClusterMaintenance. */
   public UnaryCallSettings<RescheduleClusterMaintenanceRequest, Operation>
       rescheduleClusterMaintenanceSettings() {
@@ -418,6 +428,15 @@ public class CloudRedisClusterSettings extends ClientSettings<CloudRedisClusterS
     public UnaryCallSettings.Builder<GetClusterCertificateAuthorityRequest, CertificateAuthority>
         getClusterCertificateAuthoritySettings() {
       return getStubSettingsBuilder().getClusterCertificateAuthoritySettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getSharedRegionalCertificateAuthority.
+     */
+    public UnaryCallSettings.Builder<
+            GetSharedRegionalCertificateAuthorityRequest, SharedRegionalCertificateAuthority>
+        getSharedRegionalCertificateAuthoritySettings() {
+      return getStubSettingsBuilder().getSharedRegionalCertificateAuthoritySettings();
     }
 
     /** Returns the builder for the settings used for calls to rescheduleClusterMaintenance. */

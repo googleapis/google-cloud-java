@@ -215,6 +215,7 @@ public class GrpcNotificationsApiServiceStub extends NotificationsApiServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateNotificationSubscriptionRequest, NotificationSubscription>
         createNotificationSubscriptionTransportSettings =
@@ -227,6 +228,7 @@ public class GrpcNotificationsApiServiceStub extends NotificationsApiServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateNotificationSubscriptionRequest, NotificationSubscription>
         updateNotificationSubscriptionTransportSettings =
@@ -252,6 +254,7 @@ public class GrpcNotificationsApiServiceStub extends NotificationsApiServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListNotificationSubscriptionsRequest, ListNotificationSubscriptionsResponse>
         listNotificationSubscriptionsTransportSettings =
@@ -265,6 +268,7 @@ public class GrpcNotificationsApiServiceStub extends NotificationsApiServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<
             GetNotificationSubscriptionHealthMetricsRequest, NotificationSubscriptionHealthMetrics>
@@ -280,6 +284,7 @@ public class GrpcNotificationsApiServiceStub extends NotificationsApiServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.getNotificationSubscriptionCallable =

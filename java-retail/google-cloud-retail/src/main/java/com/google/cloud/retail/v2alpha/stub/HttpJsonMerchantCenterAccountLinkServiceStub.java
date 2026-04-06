@@ -303,6 +303,7 @@ public class HttpJsonMerchantCenterAccountLinkServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateMerchantCenterAccountLinkRequest, Operation>
         createMerchantCenterAccountLinkTransportSettings =
@@ -315,6 +316,7 @@ public class HttpJsonMerchantCenterAccountLinkServiceStub
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteMerchantCenterAccountLinkRequest, Empty>
         deleteMerchantCenterAccountLinkTransportSettings =
@@ -327,6 +329,7 @@ public class HttpJsonMerchantCenterAccountLinkServiceStub
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
 
     this.listMerchantCenterAccountLinksCallable =

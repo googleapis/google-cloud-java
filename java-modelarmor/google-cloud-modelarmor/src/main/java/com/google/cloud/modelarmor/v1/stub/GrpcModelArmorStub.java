@@ -250,6 +250,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTemplateRequest, Template> getTemplateTransportSettings =
         GrpcCallSettings.<GetTemplateRequest, Template>newBuilder()
@@ -260,6 +261,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateTemplateRequest, Template> createTemplateTransportSettings =
         GrpcCallSettings.<CreateTemplateRequest, Template>newBuilder()
@@ -270,6 +272,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTemplateRequest, Template> updateTemplateTransportSettings =
         GrpcCallSettings.<UpdateTemplateRequest, Template>newBuilder()
@@ -290,6 +293,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetFloorSettingRequest, FloorSetting> getFloorSettingTransportSettings =
         GrpcCallSettings.<GetFloorSettingRequest, FloorSetting>newBuilder()
@@ -300,6 +304,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateFloorSettingRequest, FloorSetting> updateFloorSettingTransportSettings =
         GrpcCallSettings.<UpdateFloorSettingRequest, FloorSetting>newBuilder()
@@ -322,6 +327,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
         sanitizeModelResponseTransportSettings =
@@ -334,6 +340,7 @@ public class GrpcModelArmorStub extends ModelArmorStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

@@ -149,6 +149,7 @@ public class GrpcGroundedGenerationServiceStub extends GroundedGenerationService
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     GrpcCallSettings<GenerateGroundedContentRequest, GenerateGroundedContentResponse>
         generateGroundedContentTransportSettings =
@@ -161,6 +162,7 @@ public class GrpcGroundedGenerationServiceStub extends GroundedGenerationService
                       builder.add("location", String.valueOf(request.getLocation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getLocation())
                 .build();
     GrpcCallSettings<CheckGroundingRequest, CheckGroundingResponse>
         checkGroundingTransportSettings =
@@ -172,6 +174,7 @@ public class GrpcGroundedGenerationServiceStub extends GroundedGenerationService
                       builder.add("grounding_config", String.valueOf(request.getGroundingConfig()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getGroundingConfig())
                 .build();
 
     this.streamGenerateGroundedContentCallable =

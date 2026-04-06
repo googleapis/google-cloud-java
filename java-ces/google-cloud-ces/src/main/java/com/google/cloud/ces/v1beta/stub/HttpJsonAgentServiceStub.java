@@ -73,6 +73,9 @@ import com.google.cloud.ces.v1beta.Deployment;
 import com.google.cloud.ces.v1beta.Example;
 import com.google.cloud.ces.v1beta.ExportAppRequest;
 import com.google.cloud.ces.v1beta.ExportAppResponse;
+import com.google.cloud.ces.v1beta.GenerateAppResourceOperationMetadata;
+import com.google.cloud.ces.v1beta.GenerateAppResourceRequest;
+import com.google.cloud.ces.v1beta.GenerateAppResourceResponse;
 import com.google.cloud.ces.v1beta.GetAgentRequest;
 import com.google.cloud.ces.v1beta.GetAppRequest;
 import com.google.cloud.ces.v1beta.GetAppVersionRequest;
@@ -148,7 +151,9 @@ import javax.annotation.Generated;
 public class HttpJsonAgentServiceStub extends AgentServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(GenerateAppResourceOperationMetadata.getDescriptor())
           .add(Empty.getDescriptor())
+          .add(GenerateAppResourceResponse.getDescriptor())
           .add(RestoreAppVersionResponse.getDescriptor())
           .add(ExportAppResponse.getDescriptor())
           .add(BatchDeleteConversationsResponse.getDescriptor())
@@ -1919,6 +1924,46 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<GenerateAppResourceRequest, Operation>
+      generateAppResourceMethodDescriptor =
+          ApiMethodDescriptor.<GenerateAppResourceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.ces.v1beta.AgentService/GenerateAppResource")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GenerateAppResourceRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*/apps/*}:generateAppResource",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateAppResourceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateAppResourceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (GenerateAppResourceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListChangelogsRequest, ListChangelogsResponse>
       listChangelogsMethodDescriptor =
           ApiMethodDescriptor.<ListChangelogsRequest, ListChangelogsResponse>newBuilder()
@@ -2142,6 +2187,12 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
   private final OperationCallable<
           RestoreAppVersionRequest, RestoreAppVersionResponse, OperationMetadata>
       restoreAppVersionOperationCallable;
+  private final UnaryCallable<GenerateAppResourceRequest, Operation> generateAppResourceCallable;
+  private final OperationCallable<
+          GenerateAppResourceRequest,
+          GenerateAppResourceResponse,
+          GenerateAppResourceOperationMetadata>
+      generateAppResourceOperationCallable;
   private final UnaryCallable<ListChangelogsRequest, ListChangelogsResponse> listChangelogsCallable;
   private final UnaryCallable<ListChangelogsRequest, ListChangelogsPagedResponse>
       listChangelogsPagedCallable;
@@ -2231,6 +2282,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetAppRequest, App> getAppTransportSettings =
         HttpJsonCallSettings.<GetAppRequest, App>newBuilder()
@@ -2242,6 +2294,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateAppRequest, Operation> createAppTransportSettings =
         HttpJsonCallSettings.<CreateAppRequest, Operation>newBuilder()
@@ -2253,6 +2306,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateAppRequest, App> updateAppTransportSettings =
         HttpJsonCallSettings.<UpdateAppRequest, App>newBuilder()
@@ -2275,6 +2329,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportAppRequest, Operation> exportAppTransportSettings =
         HttpJsonCallSettings.<ExportAppRequest, Operation>newBuilder()
@@ -2286,6 +2341,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportAppRequest, Operation> importAppTransportSettings =
         HttpJsonCallSettings.<ImportAppRequest, Operation>newBuilder()
@@ -2297,6 +2353,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetSecuritySettingsRequest, SecuritySettings>
         getSecuritySettingsTransportSettings =
@@ -2309,6 +2366,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UpdateSecuritySettingsRequest, SecuritySettings>
         updateSecuritySettingsTransportSettings =
@@ -2334,6 +2392,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetAgentRequest, Agent> getAgentTransportSettings =
         HttpJsonCallSettings.<GetAgentRequest, Agent>newBuilder()
@@ -2345,6 +2404,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateAgentRequest, Agent> createAgentTransportSettings =
         HttpJsonCallSettings.<CreateAgentRequest, Agent>newBuilder()
@@ -2356,6 +2416,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateAgentRequest, Agent> updateAgentTransportSettings =
         HttpJsonCallSettings.<UpdateAgentRequest, Agent>newBuilder()
@@ -2378,6 +2439,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListExamplesRequest, ListExamplesResponse> listExamplesTransportSettings =
         HttpJsonCallSettings.<ListExamplesRequest, ListExamplesResponse>newBuilder()
@@ -2389,6 +2451,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetExampleRequest, Example> getExampleTransportSettings =
         HttpJsonCallSettings.<GetExampleRequest, Example>newBuilder()
@@ -2400,6 +2463,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateExampleRequest, Example> createExampleTransportSettings =
         HttpJsonCallSettings.<CreateExampleRequest, Example>newBuilder()
@@ -2411,6 +2475,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateExampleRequest, Example> updateExampleTransportSettings =
         HttpJsonCallSettings.<UpdateExampleRequest, Example>newBuilder()
@@ -2433,6 +2498,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListToolsRequest, ListToolsResponse> listToolsTransportSettings =
         HttpJsonCallSettings.<ListToolsRequest, ListToolsResponse>newBuilder()
@@ -2444,6 +2510,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetToolRequest, Tool> getToolTransportSettings =
         HttpJsonCallSettings.<GetToolRequest, Tool>newBuilder()
@@ -2455,6 +2522,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListConversationsRequest, ListConversationsResponse>
         listConversationsTransportSettings =
@@ -2467,6 +2535,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetConversationRequest, Conversation> getConversationTransportSettings =
         HttpJsonCallSettings.<GetConversationRequest, Conversation>newBuilder()
@@ -2478,6 +2547,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteConversationRequest, Empty> deleteConversationTransportSettings =
         HttpJsonCallSettings.<DeleteConversationRequest, Empty>newBuilder()
@@ -2489,6 +2559,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<BatchDeleteConversationsRequest, Operation>
         batchDeleteConversationsTransportSettings =
@@ -2501,6 +2572,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateToolRequest, Tool> createToolTransportSettings =
         HttpJsonCallSettings.<CreateToolRequest, Tool>newBuilder()
@@ -2512,6 +2584,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateToolRequest, Tool> updateToolTransportSettings =
         HttpJsonCallSettings.<UpdateToolRequest, Tool>newBuilder()
@@ -2534,6 +2607,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListGuardrailsRequest, ListGuardrailsResponse>
         listGuardrailsTransportSettings =
@@ -2546,6 +2620,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetGuardrailRequest, Guardrail> getGuardrailTransportSettings =
         HttpJsonCallSettings.<GetGuardrailRequest, Guardrail>newBuilder()
@@ -2557,6 +2632,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateGuardrailRequest, Guardrail> createGuardrailTransportSettings =
         HttpJsonCallSettings.<CreateGuardrailRequest, Guardrail>newBuilder()
@@ -2568,6 +2644,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateGuardrailRequest, Guardrail> updateGuardrailTransportSettings =
         HttpJsonCallSettings.<UpdateGuardrailRequest, Guardrail>newBuilder()
@@ -2590,6 +2667,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDeploymentsRequest, ListDeploymentsResponse>
         listDeploymentsTransportSettings =
@@ -2602,6 +2680,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetDeploymentRequest, Deployment> getDeploymentTransportSettings =
         HttpJsonCallSettings.<GetDeploymentRequest, Deployment>newBuilder()
@@ -2613,6 +2692,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateDeploymentRequest, Deployment> createDeploymentTransportSettings =
         HttpJsonCallSettings.<CreateDeploymentRequest, Deployment>newBuilder()
@@ -2624,6 +2704,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateDeploymentRequest, Deployment> updateDeploymentTransportSettings =
         HttpJsonCallSettings.<UpdateDeploymentRequest, Deployment>newBuilder()
@@ -2646,6 +2727,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListToolsetsRequest, ListToolsetsResponse> listToolsetsTransportSettings =
         HttpJsonCallSettings.<ListToolsetsRequest, ListToolsetsResponse>newBuilder()
@@ -2657,6 +2739,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetToolsetRequest, Toolset> getToolsetTransportSettings =
         HttpJsonCallSettings.<GetToolsetRequest, Toolset>newBuilder()
@@ -2668,6 +2751,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateToolsetRequest, Toolset> createToolsetTransportSettings =
         HttpJsonCallSettings.<CreateToolsetRequest, Toolset>newBuilder()
@@ -2679,6 +2763,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateToolsetRequest, Toolset> updateToolsetTransportSettings =
         HttpJsonCallSettings.<UpdateToolsetRequest, Toolset>newBuilder()
@@ -2701,6 +2786,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListAppVersionsRequest, ListAppVersionsResponse>
         listAppVersionsTransportSettings =
@@ -2713,6 +2799,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetAppVersionRequest, AppVersion> getAppVersionTransportSettings =
         HttpJsonCallSettings.<GetAppVersionRequest, AppVersion>newBuilder()
@@ -2724,6 +2811,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateAppVersionRequest, AppVersion> createAppVersionTransportSettings =
         HttpJsonCallSettings.<CreateAppVersionRequest, AppVersion>newBuilder()
@@ -2735,6 +2823,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteAppVersionRequest, Empty> deleteAppVersionTransportSettings =
         HttpJsonCallSettings.<DeleteAppVersionRequest, Empty>newBuilder()
@@ -2746,6 +2835,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RestoreAppVersionRequest, Operation> restoreAppVersionTransportSettings =
         HttpJsonCallSettings.<RestoreAppVersionRequest, Operation>newBuilder()
@@ -2757,7 +2847,21 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<GenerateAppResourceRequest, Operation>
+        generateAppResourceTransportSettings =
+            HttpJsonCallSettings.<GenerateAppResourceRequest, Operation>newBuilder()
+                .setMethodDescriptor(generateAppResourceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<ListChangelogsRequest, ListChangelogsResponse>
         listChangelogsTransportSettings =
             HttpJsonCallSettings.<ListChangelogsRequest, ListChangelogsResponse>newBuilder()
@@ -2769,6 +2873,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetChangelogRequest, Changelog> getChangelogTransportSettings =
         HttpJsonCallSettings.<GetChangelogRequest, Changelog>newBuilder()
@@ -2780,6 +2885,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -3026,6 +3132,17 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
             settings.restoreAppVersionOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.generateAppResourceCallable =
+        callableFactory.createUnaryCallable(
+            generateAppResourceTransportSettings,
+            settings.generateAppResourceSettings(),
+            clientContext);
+    this.generateAppResourceOperationCallable =
+        callableFactory.createOperationCallable(
+            generateAppResourceTransportSettings,
+            settings.generateAppResourceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listChangelogsCallable =
         callableFactory.createUnaryCallable(
             listChangelogsTransportSettings, settings.listChangelogsSettings(), clientContext);
@@ -3100,6 +3217,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
     methodDescriptors.add(createAppVersionMethodDescriptor);
     methodDescriptors.add(deleteAppVersionMethodDescriptor);
     methodDescriptors.add(restoreAppVersionMethodDescriptor);
+    methodDescriptors.add(generateAppResourceMethodDescriptor);
     methodDescriptors.add(listChangelogsMethodDescriptor);
     methodDescriptors.add(getChangelogMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
@@ -3437,6 +3555,20 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
   public OperationCallable<RestoreAppVersionRequest, RestoreAppVersionResponse, OperationMetadata>
       restoreAppVersionOperationCallable() {
     return restoreAppVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateAppResourceRequest, Operation> generateAppResourceCallable() {
+    return generateAppResourceCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          GenerateAppResourceRequest,
+          GenerateAppResourceResponse,
+          GenerateAppResourceOperationMetadata>
+      generateAppResourceOperationCallable() {
+    return generateAppResourceOperationCallable;
   }
 
   @Override

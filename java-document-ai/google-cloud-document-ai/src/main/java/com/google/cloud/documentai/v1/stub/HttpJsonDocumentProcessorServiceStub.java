@@ -1248,6 +1248,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<BatchProcessRequest, Operation> batchProcessDocumentsTransportSettings =
         HttpJsonCallSettings.<BatchProcessRequest, Operation>newBuilder()
@@ -1259,6 +1260,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<FetchProcessorTypesRequest, FetchProcessorTypesResponse>
         fetchProcessorTypesTransportSettings =
@@ -1272,6 +1274,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListProcessorTypesRequest, ListProcessorTypesResponse>
         listProcessorTypesTransportSettings =
@@ -1284,6 +1287,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetProcessorTypeRequest, ProcessorType> getProcessorTypeTransportSettings =
         HttpJsonCallSettings.<GetProcessorTypeRequest, ProcessorType>newBuilder()
@@ -1295,6 +1299,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListProcessorsRequest, ListProcessorsResponse>
         listProcessorsTransportSettings =
@@ -1307,6 +1312,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetProcessorRequest, Processor> getProcessorTransportSettings =
         HttpJsonCallSettings.<GetProcessorRequest, Processor>newBuilder()
@@ -1318,6 +1324,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<TrainProcessorVersionRequest, Operation>
         trainProcessorVersionTransportSettings =
@@ -1330,6 +1337,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetProcessorVersionRequest, ProcessorVersion>
         getProcessorVersionTransportSettings =
@@ -1342,6 +1350,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListProcessorVersionsRequest, ListProcessorVersionsResponse>
         listProcessorVersionsTransportSettings =
@@ -1355,6 +1364,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeleteProcessorVersionRequest, Operation>
         deleteProcessorVersionTransportSettings =
@@ -1367,6 +1377,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<DeployProcessorVersionRequest, Operation>
         deployProcessorVersionTransportSettings =
@@ -1379,6 +1390,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<UndeployProcessorVersionRequest, Operation>
         undeployProcessorVersionTransportSettings =
@@ -1391,6 +1403,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateProcessorRequest, Processor> createProcessorTransportSettings =
         HttpJsonCallSettings.<CreateProcessorRequest, Processor>newBuilder()
@@ -1402,6 +1415,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteProcessorRequest, Operation> deleteProcessorTransportSettings =
         HttpJsonCallSettings.<DeleteProcessorRequest, Operation>newBuilder()
@@ -1413,6 +1427,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<EnableProcessorRequest, Operation> enableProcessorTransportSettings =
         HttpJsonCallSettings.<EnableProcessorRequest, Operation>newBuilder()
@@ -1424,6 +1439,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DisableProcessorRequest, Operation> disableProcessorTransportSettings =
         HttpJsonCallSettings.<DisableProcessorRequest, Operation>newBuilder()
@@ -1435,6 +1451,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<SetDefaultProcessorVersionRequest, Operation>
         setDefaultProcessorVersionTransportSettings =
@@ -1447,6 +1464,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       builder.add("processor", String.valueOf(request.getProcessor()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProcessor())
                 .build();
     HttpJsonCallSettings<ReviewDocumentRequest, Operation> reviewDocumentTransportSettings =
         HttpJsonCallSettings.<ReviewDocumentRequest, Operation>newBuilder()
@@ -1459,6 +1477,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       "human_review_config", String.valueOf(request.getHumanReviewConfig()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getHumanReviewConfig())
             .build();
     HttpJsonCallSettings<EvaluateProcessorVersionRequest, Operation>
         evaluateProcessorVersionTransportSettings =
@@ -1472,6 +1491,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                           "processor_version", String.valueOf(request.getProcessorVersion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProcessorVersion())
                 .build();
     HttpJsonCallSettings<GetEvaluationRequest, Evaluation> getEvaluationTransportSettings =
         HttpJsonCallSettings.<GetEvaluationRequest, Evaluation>newBuilder()
@@ -1483,6 +1503,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListEvaluationsRequest, ListEvaluationsResponse>
         listEvaluationsTransportSettings =
@@ -1495,6 +1516,7 @@ public class HttpJsonDocumentProcessorServiceStub extends DocumentProcessorServi
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

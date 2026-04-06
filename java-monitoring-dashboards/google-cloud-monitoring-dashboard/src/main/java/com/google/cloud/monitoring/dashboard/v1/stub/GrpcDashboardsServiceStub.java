@@ -164,6 +164,7 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListDashboardsRequest, ListDashboardsResponse>
         listDashboardsTransportSettings =
@@ -175,6 +176,7 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetDashboardRequest, Dashboard> getDashboardTransportSettings =
         GrpcCallSettings.<GetDashboardRequest, Dashboard>newBuilder()
@@ -185,6 +187,7 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteDashboardRequest, Empty> deleteDashboardTransportSettings =
         GrpcCallSettings.<DeleteDashboardRequest, Empty>newBuilder()
@@ -195,6 +198,7 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateDashboardRequest, Dashboard> updateDashboardTransportSettings =
         GrpcCallSettings.<UpdateDashboardRequest, Dashboard>newBuilder()

@@ -208,6 +208,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<AcceptTermsRequest, Project> acceptTermsTransportSettings =
         GrpcCallSettings.<AcceptTermsRequest, Project>newBuilder()
@@ -218,6 +219,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProject())
             .build();
     GrpcCallSettings<EnrollSolutionRequest, Operation> enrollSolutionTransportSettings =
         GrpcCallSettings.<EnrollSolutionRequest, Operation>newBuilder()
@@ -228,6 +230,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProject())
             .build();
     GrpcCallSettings<ListEnrolledSolutionsRequest, ListEnrolledSolutionsResponse>
         listEnrolledSolutionsTransportSettings =
@@ -240,6 +243,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetLoggingConfigRequest, LoggingConfig> getLoggingConfigTransportSettings =
         GrpcCallSettings.<GetLoggingConfigRequest, LoggingConfig>newBuilder()
@@ -250,6 +254,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateLoggingConfigRequest, LoggingConfig>
         updateLoggingConfigTransportSettings =
@@ -273,6 +278,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateAlertConfigRequest, AlertConfig> updateAlertConfigTransportSettings =
         GrpcCallSettings.<UpdateAlertConfigRequest, AlertConfig>newBuilder()

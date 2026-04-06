@@ -346,6 +346,7 @@ public class HttpJsonUserListGlobalLicenseServiceStub extends UserListGlobalLice
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateUserListGlobalLicenseRequest, UserListGlobalLicense>
         updateUserListGlobalLicenseTransportSettings =
@@ -374,6 +375,7 @@ public class HttpJsonUserListGlobalLicenseServiceStub extends UserListGlobalLice
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListUserListGlobalLicensesRequest, ListUserListGlobalLicensesResponse>
         listUserListGlobalLicensesTransportSettings =
@@ -387,6 +389,7 @@ public class HttpJsonUserListGlobalLicenseServiceStub extends UserListGlobalLice
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<
             ListUserListGlobalLicenseCustomerInfosRequest,
@@ -404,6 +407,7 @@ public class HttpJsonUserListGlobalLicenseServiceStub extends UserListGlobalLice
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.createUserListGlobalLicenseCallable =

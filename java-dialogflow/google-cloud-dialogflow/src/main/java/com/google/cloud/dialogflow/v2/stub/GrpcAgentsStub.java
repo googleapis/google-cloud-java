@@ -239,6 +239,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SetAgentRequest, Agent> setAgentTransportSettings =
         GrpcCallSettings.<SetAgentRequest, Agent>newBuilder()
@@ -259,6 +260,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<SearchAgentsRequest, SearchAgentsResponse> searchAgentsTransportSettings =
         GrpcCallSettings.<SearchAgentsRequest, SearchAgentsResponse>newBuilder()
@@ -269,6 +271,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<TrainAgentRequest, Operation> trainAgentTransportSettings =
         GrpcCallSettings.<TrainAgentRequest, Operation>newBuilder()
@@ -279,6 +282,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ExportAgentRequest, Operation> exportAgentTransportSettings =
         GrpcCallSettings.<ExportAgentRequest, Operation>newBuilder()
@@ -289,6 +293,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ImportAgentRequest, Operation> importAgentTransportSettings =
         GrpcCallSettings.<ImportAgentRequest, Operation>newBuilder()
@@ -299,6 +304,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RestoreAgentRequest, Operation> restoreAgentTransportSettings =
         GrpcCallSettings.<RestoreAgentRequest, Operation>newBuilder()
@@ -309,6 +315,7 @@ public class GrpcAgentsStub extends AgentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetValidationResultRequest, ValidationResult>
         getValidationResultTransportSettings =
@@ -320,6 +327,7 @@ public class GrpcAgentsStub extends AgentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

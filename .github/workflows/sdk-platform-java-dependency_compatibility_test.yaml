@@ -69,9 +69,8 @@ jobs:
 
       # Set up local showcase server to run the showcase ITs
       - name: Parse showcase version
-        working-directory: sdk-plaform-java/java-showcase/gapic-showcase
+        working-directory: sdk-platform-java/java-showcase/gapic-showcase
         run: echo "SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)" >> "$GITHUB_ENV"
-        working-directory: sdk-platform-java
       - name: Install showcase server
         run: |
           sudo mkdir -p /usr/src/showcase
@@ -89,8 +88,8 @@ jobs:
         # Need to cd out of the directory to get the scripts as this step is run inside the java-showcase directory
         run: |
           if [[ -n "${{ env.DEPENDENCIES_LIST }}" ]]; then
-            ../sdk-platform-java/.github/scripts/test_dependency_compatibility.sh -l ${{ env.DEPENDENCIES_LIST }}
+            ../.github/scripts/test_dependency_compatibility.sh -l ${{ env.DEPENDENCIES_LIST }}
           else
-            ../sdk-platform-java/.github/scripts/test_dependency_compatibility.sh -f ../dependencies.txt
+            ../.github/scripts/test_dependency_compatibility.sh -f ../dependencies.txt
           fi
         working-directory: sdk-platform-java/java-showcase

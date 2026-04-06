@@ -719,6 +719,7 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeletePlaybookRequest, Empty> deletePlaybookTransportSettings =
         HttpJsonCallSettings.<DeletePlaybookRequest, Empty>newBuilder()
@@ -730,6 +731,7 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListPlaybooksRequest, ListPlaybooksResponse>
         listPlaybooksTransportSettings =
@@ -742,6 +744,7 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPlaybookRequest, Playbook> getPlaybookTransportSettings =
         HttpJsonCallSettings.<GetPlaybookRequest, Playbook>newBuilder()
@@ -753,6 +756,7 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ExportPlaybookRequest, Operation> exportPlaybookTransportSettings =
         HttpJsonCallSettings.<ExportPlaybookRequest, Operation>newBuilder()
@@ -764,6 +768,7 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportPlaybookRequest, Operation> importPlaybookTransportSettings =
         HttpJsonCallSettings.<ImportPlaybookRequest, Operation>newBuilder()
@@ -775,6 +780,7 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdatePlaybookRequest, Playbook> updatePlaybookTransportSettings =
         HttpJsonCallSettings.<UpdatePlaybookRequest, Playbook>newBuilder()
@@ -798,6 +804,7 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetPlaybookVersionRequest, PlaybookVersion>
         getPlaybookVersionTransportSettings =
@@ -810,6 +817,7 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<RestorePlaybookVersionRequest, RestorePlaybookVersionResponse>
         restorePlaybookVersionTransportSettings =
@@ -823,6 +831,7 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListPlaybookVersionsRequest, ListPlaybookVersionsResponse>
         listPlaybookVersionsTransportSettings =
@@ -836,6 +845,7 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<DeletePlaybookVersionRequest, Empty>
         deletePlaybookVersionTransportSettings =
@@ -848,6 +858,7 @@ public class HttpJsonPlaybooksStub extends PlaybooksStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =

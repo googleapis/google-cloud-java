@@ -113,6 +113,7 @@ public class JobsV1Beta3ClientHttpJsonTest {
             .setRuntimeUpdatableParams(RuntimeUpdatableParams.newBuilder().build())
             .setSatisfiesPzi(true)
             .setServiceResources(ServiceResources.newBuilder().build())
+            .setPausable(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -198,6 +199,7 @@ public class JobsV1Beta3ClientHttpJsonTest {
             .setRuntimeUpdatableParams(RuntimeUpdatableParams.newBuilder().build())
             .setSatisfiesPzi(true)
             .setServiceResources(ServiceResources.newBuilder().build())
+            .setPausable(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -281,6 +283,7 @@ public class JobsV1Beta3ClientHttpJsonTest {
             .setRuntimeUpdatableParams(RuntimeUpdatableParams.newBuilder().build())
             .setSatisfiesPzi(true)
             .setServiceResources(ServiceResources.newBuilder().build())
+            .setPausable(true)
             .build();
     mockService.addResponse(expectedResponse);
 

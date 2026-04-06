@@ -130,6 +130,7 @@ public class GrpcGbpAccountsServiceStub extends GbpAccountsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<LinkGbpAccountRequest, LinkGbpAccountResponse>
         linkGbpAccountTransportSettings =
@@ -141,6 +142,7 @@ public class GrpcGbpAccountsServiceStub extends GbpAccountsServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.listGbpAccountsCallable =

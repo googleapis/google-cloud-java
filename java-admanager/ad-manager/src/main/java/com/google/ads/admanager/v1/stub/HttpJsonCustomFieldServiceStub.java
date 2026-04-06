@@ -441,6 +441,7 @@ public class HttpJsonCustomFieldServiceStub extends CustomFieldServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListCustomFieldsRequest, ListCustomFieldsResponse>
         listCustomFieldsTransportSettings =
@@ -453,6 +454,7 @@ public class HttpJsonCustomFieldServiceStub extends CustomFieldServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateCustomFieldRequest, CustomField> createCustomFieldTransportSettings =
         HttpJsonCallSettings.<CreateCustomFieldRequest, CustomField>newBuilder()
@@ -464,6 +466,7 @@ public class HttpJsonCustomFieldServiceStub extends CustomFieldServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<BatchCreateCustomFieldsRequest, BatchCreateCustomFieldsResponse>
         batchCreateCustomFieldsTransportSettings =
@@ -477,6 +480,7 @@ public class HttpJsonCustomFieldServiceStub extends CustomFieldServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateCustomFieldRequest, CustomField> updateCustomFieldTransportSettings =
         HttpJsonCallSettings.<UpdateCustomFieldRequest, CustomField>newBuilder()
@@ -502,6 +506,7 @@ public class HttpJsonCustomFieldServiceStub extends CustomFieldServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchActivateCustomFieldsRequest, BatchActivateCustomFieldsResponse>
         batchActivateCustomFieldsTransportSettings =
@@ -515,6 +520,7 @@ public class HttpJsonCustomFieldServiceStub extends CustomFieldServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<BatchDeactivateCustomFieldsRequest, BatchDeactivateCustomFieldsResponse>
         batchDeactivateCustomFieldsTransportSettings =
@@ -529,6 +535,7 @@ public class HttpJsonCustomFieldServiceStub extends CustomFieldServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
 
     this.getCustomFieldCallable =

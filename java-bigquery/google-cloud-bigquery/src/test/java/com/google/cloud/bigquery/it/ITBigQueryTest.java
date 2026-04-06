@@ -4698,13 +4698,10 @@ class ITBigQueryTest {
     JobId jobIdWithProjectId = JobId.newBuilder().setProject(invalidProjectId).build();
     QueryJobConfiguration configSelect =
         QueryJobConfiguration.newBuilder(query).setDefaultDataset(DatasetId.of(DATASET)).build();
-    try {
-      bigquery.query(configSelect, jobIdWithProjectId);
-    } catch (Exception exception) {
-      // error message for non-existent project
-      assertEquals("Cannot parse  as CloudRegion.", exception.getMessage());
-      assertEquals(BigQueryException.class, exception.getClass());
-    }
+    BigQueryException bqException =
+        assertThrows(
+            BigQueryException.class, () -> bigquery.query(configSelect, jobIdWithProjectId));
+    assertEquals(400, bqException.getCode());
   }
 
   @Test

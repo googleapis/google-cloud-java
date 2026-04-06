@@ -938,7 +938,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> BatchCreatePullRequestComments</td>
- *      <td><p> Batch creates pull request comments. This function is used to create multiple PullRequestComments for code review. There needs to be exactly one PullRequestComment of type Review, and at most 100 PullRequestComments of type Code per request. The Postition of the code comments must be unique within the request.</td>
+ *      <td><p> Batch creates pull request comments. This function is used to create multiple PullRequestComments for code review. There needs to be exactly one PullRequestComment of type Review, and at most 100 PullRequestComments of type Code per request. The Position of the code comments must be unique within the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1093,7 +1093,10 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
+ * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1814,6 +1817,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *       DeleteInstanceRequest.newBuilder()
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   secureSourceManagerClient.deleteInstanceAsync(request).get();
    * }
@@ -1844,6 +1848,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *       DeleteInstanceRequest.newBuilder()
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       secureSourceManagerClient.deleteInstanceOperationCallable().futureCall(request);
@@ -1874,6 +1879,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    *       DeleteInstanceRequest.newBuilder()
    *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
    *           .setRequestId("requestId693933066")
+   *           .setForce(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       secureSourceManagerClient.deleteInstanceCallable().futureCall(request);
@@ -3100,7 +3106,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param hook Required. The hook being updated.
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
    *     hook resource by the update. The fields specified in the update_mask are relative to the
    *     resource, not the full request. A field will be overwritten if it is in the mask. The
    *     special value "&#42;" means full replacement.
@@ -4163,7 +4169,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
    * }</pre>
    *
    * @param branchRule
-   * @param updateMask Required. Field mask is used to specify the fields to be overwritten in the
+   * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
    *     branchRule resource by the update. The fields specified in the update_mask are relative to
    *     the resource, not the full request. A field will be overwritten if it is in the mask. The
    *     special value "&#42;" means full replacement.
@@ -7573,7 +7579,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Batch creates pull request comments. This function is used to create multiple
    * PullRequestComments for code review. There needs to be exactly one PullRequestComment of type
-   * Review, and at most 100 PullRequestComments of type Code per request. The Postition of the code
+   * Review, and at most 100 PullRequestComments of type Code per request. The Position of the code
    * comments must be unique within the request.
    *
    * <p>Sample code:
@@ -7616,7 +7622,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Batch creates pull request comments. This function is used to create multiple
    * PullRequestComments for code review. There needs to be exactly one PullRequestComment of type
-   * Review, and at most 100 PullRequestComments of type Code per request. The Postition of the code
+   * Review, and at most 100 PullRequestComments of type Code per request. The Position of the code
    * comments must be unique within the request.
    *
    * <p>Sample code:
@@ -7660,7 +7666,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Batch creates pull request comments. This function is used to create multiple
    * PullRequestComments for code review. There needs to be exactly one PullRequestComment of type
-   * Review, and at most 100 PullRequestComments of type Code per request. The Postition of the code
+   * Review, and at most 100 PullRequestComments of type Code per request. The Position of the code
    * comments must be unique within the request.
    *
    * <p>Sample code:
@@ -7696,7 +7702,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Batch creates pull request comments. This function is used to create multiple
    * PullRequestComments for code review. There needs to be exactly one PullRequestComment of type
-   * Review, and at most 100 PullRequestComments of type Code per request. The Postition of the code
+   * Review, and at most 100 PullRequestComments of type Code per request. The Position of the code
    * comments must be unique within the request.
    *
    * <p>Sample code:
@@ -7736,7 +7742,7 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Batch creates pull request comments. This function is used to create multiple
    * PullRequestComments for code review. There needs to be exactly one PullRequestComment of type
-   * Review, and at most 100 PullRequestComments of type Code per request. The Postition of the code
+   * Review, and at most 100 PullRequestComments of type Code per request. The Position of the code
    * comments must be unique within the request.
    *
    * <p>Sample code:
@@ -8888,6 +8894,19 @@ public class SecureSourceManagerClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -8920,6 +8939,19 @@ public class SecureSourceManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -8954,6 +8986,19 @@ public class SecureSourceManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

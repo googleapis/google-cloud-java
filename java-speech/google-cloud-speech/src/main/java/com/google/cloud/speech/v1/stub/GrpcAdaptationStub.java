@@ -234,6 +234,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetPhraseSetRequest, PhraseSet> getPhraseSetTransportSettings =
         GrpcCallSettings.<GetPhraseSetRequest, PhraseSet>newBuilder()
@@ -244,6 +245,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListPhraseSetRequest, ListPhraseSetResponse> listPhraseSetTransportSettings =
         GrpcCallSettings.<ListPhraseSetRequest, ListPhraseSetResponse>newBuilder()
@@ -254,6 +256,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdatePhraseSetRequest, PhraseSet> updatePhraseSetTransportSettings =
         GrpcCallSettings.<UpdatePhraseSetRequest, PhraseSet>newBuilder()
@@ -274,6 +277,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateCustomClassRequest, CustomClass> createCustomClassTransportSettings =
         GrpcCallSettings.<CreateCustomClassRequest, CustomClass>newBuilder()
@@ -284,6 +288,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetCustomClassRequest, CustomClass> getCustomClassTransportSettings =
         GrpcCallSettings.<GetCustomClassRequest, CustomClass>newBuilder()
@@ -294,6 +299,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListCustomClassesRequest, ListCustomClassesResponse>
         listCustomClassesTransportSettings =
@@ -305,6 +311,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateCustomClassRequest, CustomClass> updateCustomClassTransportSettings =
         GrpcCallSettings.<UpdateCustomClassRequest, CustomClass>newBuilder()
@@ -326,6 +333,7 @@ public class GrpcAdaptationStub extends AdaptationStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createPhraseSetCallable =

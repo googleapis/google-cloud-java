@@ -533,6 +533,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateLakeRequest, Operation> updateLakeTransportSettings =
         GrpcCallSettings.<UpdateLakeRequest, Operation>newBuilder()
@@ -553,6 +554,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLakesRequest, ListLakesResponse> listLakesTransportSettings =
         GrpcCallSettings.<ListLakesRequest, ListLakesResponse>newBuilder()
@@ -563,6 +565,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetLakeRequest, Lake> getLakeTransportSettings =
         GrpcCallSettings.<GetLakeRequest, Lake>newBuilder()
@@ -573,6 +576,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLakeActionsRequest, ListActionsResponse> listLakeActionsTransportSettings =
         GrpcCallSettings.<ListLakeActionsRequest, ListActionsResponse>newBuilder()
@@ -583,6 +587,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateZoneRequest, Operation> createZoneTransportSettings =
         GrpcCallSettings.<CreateZoneRequest, Operation>newBuilder()
@@ -593,6 +598,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateZoneRequest, Operation> updateZoneTransportSettings =
         GrpcCallSettings.<UpdateZoneRequest, Operation>newBuilder()
@@ -613,6 +619,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListZonesRequest, ListZonesResponse> listZonesTransportSettings =
         GrpcCallSettings.<ListZonesRequest, ListZonesResponse>newBuilder()
@@ -623,6 +630,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetZoneRequest, Zone> getZoneTransportSettings =
         GrpcCallSettings.<GetZoneRequest, Zone>newBuilder()
@@ -633,6 +641,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListZoneActionsRequest, ListActionsResponse> listZoneActionsTransportSettings =
         GrpcCallSettings.<ListZoneActionsRequest, ListActionsResponse>newBuilder()
@@ -643,6 +652,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateAssetRequest, Operation> createAssetTransportSettings =
         GrpcCallSettings.<CreateAssetRequest, Operation>newBuilder()
@@ -653,6 +663,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAssetRequest, Operation> updateAssetTransportSettings =
         GrpcCallSettings.<UpdateAssetRequest, Operation>newBuilder()
@@ -673,6 +684,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAssetsRequest, ListAssetsResponse> listAssetsTransportSettings =
         GrpcCallSettings.<ListAssetsRequest, ListAssetsResponse>newBuilder()
@@ -683,6 +695,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAssetRequest, Asset> getAssetTransportSettings =
         GrpcCallSettings.<GetAssetRequest, Asset>newBuilder()
@@ -693,6 +706,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAssetActionsRequest, ListActionsResponse>
         listAssetActionsTransportSettings =
@@ -704,6 +718,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateTaskRequest, Operation> createTaskTransportSettings =
         GrpcCallSettings.<CreateTaskRequest, Operation>newBuilder()
@@ -714,6 +729,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateTaskRequest, Operation> updateTaskTransportSettings =
         GrpcCallSettings.<UpdateTaskRequest, Operation>newBuilder()
@@ -734,6 +750,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListTasksRequest, ListTasksResponse> listTasksTransportSettings =
         GrpcCallSettings.<ListTasksRequest, ListTasksResponse>newBuilder()
@@ -744,6 +761,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetTaskRequest, Task> getTaskTransportSettings =
         GrpcCallSettings.<GetTaskRequest, Task>newBuilder()
@@ -754,6 +772,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         GrpcCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -764,6 +783,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<RunTaskRequest, RunTaskResponse> runTaskTransportSettings =
         GrpcCallSettings.<RunTaskRequest, RunTaskResponse>newBuilder()
@@ -774,6 +794,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetJobRequest, Job> getJobTransportSettings =
         GrpcCallSettings.<GetJobRequest, Job>newBuilder()
@@ -784,6 +805,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CancelJobRequest, Empty> cancelJobTransportSettings =
         GrpcCallSettings.<CancelJobRequest, Empty>newBuilder()
@@ -794,6 +816,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -824,6 +847,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -834,6 +858,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -845,6 +870,7 @@ public class GrpcDataplexServiceStub extends DataplexServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createLakeCallable =

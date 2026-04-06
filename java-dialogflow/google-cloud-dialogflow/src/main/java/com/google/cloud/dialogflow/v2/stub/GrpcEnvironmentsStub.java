@@ -213,6 +213,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetEnvironmentRequest, Environment> getEnvironmentTransportSettings =
         GrpcCallSettings.<GetEnvironmentRequest, Environment>newBuilder()
@@ -223,6 +224,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateEnvironmentRequest, Environment> createEnvironmentTransportSettings =
         GrpcCallSettings.<CreateEnvironmentRequest, Environment>newBuilder()
@@ -233,6 +235,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateEnvironmentRequest, Environment> updateEnvironmentTransportSettings =
         GrpcCallSettings.<UpdateEnvironmentRequest, Environment>newBuilder()
@@ -254,6 +257,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetEnvironmentHistoryRequest, EnvironmentHistory>
         getEnvironmentHistoryTransportSettings =
@@ -265,6 +269,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()

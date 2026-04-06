@@ -285,6 +285,7 @@ public class FleetRoutingStubSettings extends StubSettings<FleetRoutingStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-optimization")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

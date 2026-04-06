@@ -503,6 +503,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetLbTrafficExtensionRequest, LbTrafficExtension>
         getLbTrafficExtensionTransportSettings =
@@ -514,6 +515,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateLbTrafficExtensionRequest, Operation>
         createLbTrafficExtensionTransportSettings =
@@ -525,6 +527,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateLbTrafficExtensionRequest, Operation>
         updateLbTrafficExtensionTransportSettings =
@@ -549,6 +552,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLbRouteExtensionsRequest, ListLbRouteExtensionsResponse>
         listLbRouteExtensionsTransportSettings =
@@ -561,6 +565,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetLbRouteExtensionRequest, LbRouteExtension>
         getLbRouteExtensionTransportSettings =
@@ -572,6 +577,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateLbRouteExtensionRequest, Operation>
         createLbRouteExtensionTransportSettings =
@@ -583,6 +589,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateLbRouteExtensionRequest, Operation>
         updateLbRouteExtensionTransportSettings =
@@ -607,6 +614,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListLbEdgeExtensionsRequest, ListLbEdgeExtensionsResponse>
         listLbEdgeExtensionsTransportSettings =
@@ -618,6 +626,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetLbEdgeExtensionRequest, LbEdgeExtension>
         getLbEdgeExtensionTransportSettings =
@@ -629,6 +638,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<CreateLbEdgeExtensionRequest, Operation>
         createLbEdgeExtensionTransportSettings =
@@ -640,6 +650,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateLbEdgeExtensionRequest, Operation>
         updateLbEdgeExtensionTransportSettings =
@@ -664,6 +675,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListAuthzExtensionsRequest, ListAuthzExtensionsResponse>
         listAuthzExtensionsTransportSettings =
@@ -675,6 +687,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetAuthzExtensionRequest, AuthzExtension> getAuthzExtensionTransportSettings =
         GrpcCallSettings.<GetAuthzExtensionRequest, AuthzExtension>newBuilder()
@@ -685,6 +698,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAuthzExtensionRequest, Operation> createAuthzExtensionTransportSettings =
         GrpcCallSettings.<CreateAuthzExtensionRequest, Operation>newBuilder()
@@ -695,6 +709,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateAuthzExtensionRequest, Operation> updateAuthzExtensionTransportSettings =
         GrpcCallSettings.<UpdateAuthzExtensionRequest, Operation>newBuilder()
@@ -717,6 +732,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -747,6 +763,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -757,6 +774,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -768,6 +786,7 @@ public class GrpcDepServiceStub extends DepServiceStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.listLbTrafficExtensionsCallable =

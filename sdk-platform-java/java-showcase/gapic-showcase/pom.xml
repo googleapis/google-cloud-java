@@ -17,7 +17,7 @@
   </parent>
 
   <properties>
-    <gapic-showcase.version>0.36.2</gapic-showcase.version>
+    <gapic-showcase.version>0.39.0</gapic-showcase.version>
     <!-- This is the last version supporting slf4j 1.x, do not upgrade -->
     <slf4j1-logback.version>1.2.13</slf4j1-logback.version>
     <slf4j2-logback.version>1.5.25</slf4j2-logback.version>
@@ -233,6 +233,24 @@
     </dependency>
 
     <!--  Logging testing dependencies  -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>2.0.16</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${slf4j2-logback.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>${slf4j2-logback.version}</version>
+      <scope>test</scope>
+    </dependency>
 
   </dependencies>
   <profiles>

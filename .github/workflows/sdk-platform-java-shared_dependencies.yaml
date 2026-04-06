@@ -25,10 +25,9 @@ jobs:
             - 'sdk-platform-java/**'
   upper-bound-check:
     needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
+    if: needs.filter.outputs.library == 'true' && github.repository_owner == 'googleapis'
     name: Shared Dependencies BOM upper-bound check
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'googleapis'
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-java@v4

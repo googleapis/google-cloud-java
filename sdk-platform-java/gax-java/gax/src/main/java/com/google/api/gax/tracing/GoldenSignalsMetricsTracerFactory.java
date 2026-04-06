@@ -73,11 +73,22 @@ public class GoldenSignalsMetricsTracerFactory implements ApiTracerFactory {
   }
 
   @Override
+  public boolean needsContext() {
+    return clientLevelTracerContext == null
+        || clientLevelTracerContext.equals(ApiTracerContext.empty());
+  }
+
+  @Override
   public ApiTracerFactory withContext(ApiTracerContext context) {
-    this.clientLevelTracerContext = context;
+    if (context == null) {
+      return new BaseApiTracerFactory();
+    }
     this.metricsRecorder =
-        new GoldenSignalsMetricsRecorder(
-            openTelemetry, clientLevelTracerContext.libraryMetadata().artifactName());
+        GoldenSignalsMetricsRecorder.create(openTelemetry, context.libraryMetadata());
+    if (this.metricsRecorder == null) {
+      return new BaseApiTracerFactory();
+    }
+    this.clientLevelTracerContext = context;
     return this;
   }
 }

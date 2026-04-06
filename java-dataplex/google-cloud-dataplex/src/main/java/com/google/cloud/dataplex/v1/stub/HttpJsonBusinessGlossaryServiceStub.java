@@ -1044,6 +1044,7 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateGlossaryRequest, Operation> updateGlossaryTransportSettings =
         HttpJsonCallSettings.<UpdateGlossaryRequest, Operation>newBuilder()
@@ -1066,6 +1067,7 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetGlossaryRequest, Glossary> getGlossaryTransportSettings =
         HttpJsonCallSettings.<GetGlossaryRequest, Glossary>newBuilder()
@@ -1077,6 +1079,7 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListGlossariesRequest, ListGlossariesResponse>
         listGlossariesTransportSettings =
@@ -1089,6 +1092,7 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateGlossaryCategoryRequest, GlossaryCategory>
         createGlossaryCategoryTransportSettings =
@@ -1101,6 +1105,7 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateGlossaryCategoryRequest, GlossaryCategory>
         updateGlossaryCategoryTransportSettings =
@@ -1125,6 +1130,7 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<GetGlossaryCategoryRequest, GlossaryCategory>
         getGlossaryCategoryTransportSettings =
@@ -1137,6 +1143,7 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListGlossaryCategoriesRequest, ListGlossaryCategoriesResponse>
         listGlossaryCategoriesTransportSettings =
@@ -1150,6 +1157,7 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<CreateGlossaryTermRequest, GlossaryTerm>
         createGlossaryTermTransportSettings =
@@ -1162,6 +1170,7 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateGlossaryTermRequest, GlossaryTerm>
         updateGlossaryTermTransportSettings =
@@ -1185,6 +1194,7 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetGlossaryTermRequest, GlossaryTerm> getGlossaryTermTransportSettings =
         HttpJsonCallSettings.<GetGlossaryTermRequest, GlossaryTerm>newBuilder()
@@ -1196,6 +1206,7 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListGlossaryTermsRequest, ListGlossaryTermsResponse>
         listGlossaryTermsTransportSettings =
@@ -1208,6 +1219,7 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
@@ -1242,6 +1254,7 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -1253,6 +1266,7 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1265,6 +1279,7 @@ public class HttpJsonBusinessGlossaryServiceStub extends BusinessGlossaryService
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createGlossaryCallable =

@@ -340,4 +340,48 @@ class GrpcClientCallsTest {
     Truth.assertThat(exception.isRetryable()).isTrue();
     Mockito.verify(mockChannel, Mockito.never()).newCall(descriptor, callOptions);
   }
+
+  @Test
+  void testTraceContextHeaders() throws IOException {
+    Metadata emptyHeaders = new Metadata();
+
+    MethodDescriptor<Color, Money> descriptor = FakeServiceGrpc.METHOD_RECOGNIZE;
+
+    @SuppressWarnings("unchecked")
+    ClientCall<Color, Money> mockClientCall = Mockito.mock(ClientCall.class);
+
+    @SuppressWarnings("unchecked")
+    ClientCall.Listener<Money> mockListener = Mockito.mock(ClientCall.Listener.class);
+
+    Channel mockChannel = Mockito.mock(ManagedChannel.class);
+    com.google.api.gax.tracing.ApiTracer mockTracer =
+        Mockito.mock(com.google.api.gax.tracing.ApiTracer.class);
+
+    Mockito.doAnswer(
+            invocation -> {
+              java.util.Map<String, String> carrier = invocation.getArgument(0);
+              carrier.put("traceparent", "00-00000000000000000000000000000001-0000000000000002-01");
+              return null;
+            })
+        .when(mockTracer)
+        .injectTraceContext(Mockito.anyMap());
+
+    Mockito.doAnswer(
+            invocation -> {
+              Metadata clientCallHeaders = (Metadata) invocation.getArguments()[1];
+              Metadata.Key<String> traceparentKey =
+                  Metadata.Key.of("traceparent", Metadata.ASCII_STRING_MARSHALLER);
+              assertThat(clientCallHeaders.getAll(traceparentKey))
+                  .containsExactly("00-00000000000000000000000000000001-0000000000000002-01");
+              return null;
+            })
+        .when(mockClientCall)
+        .start(Mockito.<ClientCall.Listener<Money>>any(), Mockito.<Metadata>any());
+
+    Mockito.when(mockChannel.newCall(Mockito.eq(descriptor), Mockito.<CallOptions>any()))
+        .thenReturn(mockClientCall);
+
+    GrpcCallContext context = defaultCallContext.withChannel(mockChannel).withTracer(mockTracer);
+    GrpcClientCalls.newCall(descriptor, context).start(mockListener, emptyHeaders);
+  }
 }

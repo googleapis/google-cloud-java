@@ -510,6 +510,7 @@ public class HttpJsonJobsStub extends JobsStub {
                   builder.add(request.getParent(), "location", CREATE_JOB_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetJobRequest, Job> getJobTransportSettings =
         HttpJsonCallSettings.<GetJobRequest, Job>newBuilder()
@@ -521,6 +522,7 @@ public class HttpJsonJobsStub extends JobsStub {
                   builder.add(request.getName(), "location", GET_JOB_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListJobsRequest, ListJobsResponse> listJobsTransportSettings =
         HttpJsonCallSettings.<ListJobsRequest, ListJobsResponse>newBuilder()
@@ -532,6 +534,7 @@ public class HttpJsonJobsStub extends JobsStub {
                   builder.add(request.getParent(), "location", LIST_JOBS_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<UpdateJobRequest, Operation> updateJobTransportSettings =
         HttpJsonCallSettings.<UpdateJobRequest, Operation>newBuilder()
@@ -556,6 +559,7 @@ public class HttpJsonJobsStub extends JobsStub {
                   builder.add(request.getName(), "location", DELETE_JOB_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RunJobRequest, Operation> runJobTransportSettings =
         HttpJsonCallSettings.<RunJobRequest, Operation>newBuilder()
@@ -567,6 +571,7 @@ public class HttpJsonJobsStub extends JobsStub {
                   builder.add(request.getName(), "location", RUN_JOB_0_PATH_TEMPLATE);
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -578,6 +583,7 @@ public class HttpJsonJobsStub extends JobsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -589,6 +595,7 @@ public class HttpJsonJobsStub extends JobsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -601,6 +608,7 @@ public class HttpJsonJobsStub extends JobsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createJobCallable =

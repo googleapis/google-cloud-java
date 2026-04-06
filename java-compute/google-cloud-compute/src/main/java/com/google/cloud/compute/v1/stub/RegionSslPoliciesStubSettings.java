@@ -371,6 +371,7 @@ public class RegionSslPoliciesStubSettings extends StubSettings<RegionSslPolicie
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-compute")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

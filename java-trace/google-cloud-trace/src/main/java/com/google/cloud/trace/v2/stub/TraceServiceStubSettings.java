@@ -241,6 +241,7 @@ public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSetti
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-trace")
         .setRepository("googleapis/google-cloud-java")
+        .setVersion(Version.VERSION)
         .build();
   }
 

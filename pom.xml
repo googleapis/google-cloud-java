@@ -148,6 +148,7 @@
     <module>java-maps-area-insights</module>
     <module>java-maps-fleetengine</module>
     <module>java-maps-fleetengine-delivery</module>
+    <module>java-maps-geocode</module>
     <module>java-maps-mapsplatformdatasets</module>
     <module>java-maps-places</module>
     <module>java-maps-routeoptimization</module>
@@ -226,6 +227,8 @@
     <module>java-spanner-jdbc</module>
     <module>java-spanneradapter</module>
     <module>java-speech</module>
+    <module>java-storage</module>
+    <module>java-storage-nio</module>
     <module>java-storage-transfer</module>
     <module>java-storagebatchoperations</module>
     <module>java-storageinsights</module>
