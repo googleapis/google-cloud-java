@@ -85,6 +85,9 @@ public class ObservabilityAttributes {
   /** If the error was caused by an exception, the exception class name. */
   public static final String EXCEPTION_TYPE_ATTRIBUTE = "exception.type";
 
+  /** If the error was caused by an exception, the exception message. */
+  public static final String EXCEPTION_MESSAGE_ATTRIBUTE = "exception.message";
+
   /** Size of the response body in bytes. */
   public static final String HTTP_RESPONSE_BODY_SIZE = "http.response.body.size";
 

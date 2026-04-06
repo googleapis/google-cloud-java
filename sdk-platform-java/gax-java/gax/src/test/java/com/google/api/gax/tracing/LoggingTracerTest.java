@@ -196,7 +196,9 @@ class LoggingTracerTest {
     assertEquals(
         "java.lang.RuntimeException",
         attributesMap.get(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE));
-    assertEquals("test error message", attributesMap.get("exception.message"));
+    assertEquals(
+        "test error message",
+        attributesMap.get(ObservabilityAttributes.EXCEPTION_MESSAGE_ATTRIBUTE));
   }
 
   @Test

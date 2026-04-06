@@ -35,6 +35,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.logging.LoggerProvider;
 import com.google.api.gax.logging.LoggingUtils;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Strings;
 import com.google.rpc.ErrorInfo;
 import java.util.HashMap;
 import java.util.Map;
@@ -80,13 +81,13 @@ class LoggingTracer extends BaseApiTracer {
     logContext.putAll(
         ObservabilityUtils.getResponseAttributes(error, apiTracerContext.transport()));
 
-    if (error != null && error.getMessage() != null) {
-      logContext.put("exception.message", error.getMessage());
+    if (!Strings.isNullOrEmpty(error.getMessage())) {
+      logContext.put(ObservabilityAttributes.EXCEPTION_MESSAGE_ATTRIBUTE, error.getMessage());
     }
 
     ErrorInfo errorInfo = ObservabilityUtils.extractErrorInfo(error);
     if (errorInfo != null) {
-      if (errorInfo.getDomain() != null && !errorInfo.getDomain().isEmpty()) {
+      if (!Strings.isNullOrEmpty(errorInfo.getDomain())) {
         logContext.put(ObservabilityAttributes.ERROR_DOMAIN_ATTRIBUTE, errorInfo.getDomain());
       }
       if (errorInfo.getMetadataMap() != null) {
