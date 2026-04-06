@@ -52,7 +52,7 @@ case ${JOB_TYPE} in
     retry_with_backoff 3 10 \
       mvn install \
         -B -ntp \
-        -PquickBuild \
+        -Pquick-build \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -Dmaven.wagon.http.retryHandler.count=5 \
@@ -76,7 +76,7 @@ case ${JOB_TYPE} in
       install_modules "sdk-platform-java"
       mvn install \
         -B -ntp \
-        -PquickBuild \
+        -Pquick-build \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
         -Dmaven.wagon.http.retryHandler.count=5 \
@@ -135,7 +135,7 @@ case ${JOB_TYPE} in
 
       echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
       echo "INTEGRATION_TEST_ARGS: ${INTEGRATION_TEST_ARGS}"
-      mvn verify -Penable-integration-tests -PquickBuild \
+      mvn verify -Penable-integration-tests -Pquick-build \
         --also-make \
         ${INTEGRATION_TEST_ARGS} \
         -B -ntp -fae \
@@ -188,7 +188,7 @@ case ${JOB_TYPE} in
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
       echo "INTEGRATION_TEST_ARGS: ${INTEGRATION_TEST_ARGS}"
-      mvn test -Pnative -PquickBuild \
+      mvn test -Pnative -Pquick-build \
         --also-make \
         ${INTEGRATION_TEST_ARGS} \
         -B -ntp -fae \
