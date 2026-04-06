@@ -10,19 +10,33 @@ The `generation_config.yaml` file at the root of the repository controls the gen
 
 ### Library Configuration Fields
 
+**Required (always present):**
 - `api_shortname`: (String) Identifier (e.g., `alloydb`).
 - `name_pretty`: (String) Display name (e.g., `AlloyDB API`).
-- `product_documentation`: (URL) Product documentation.
+- `product_documentation`: (URL) Product documentation URL.
 - `api_description`: (String) Service description.
-- `client_documentation`: (URL) Link to the generated client docs.
+- `client_documentation`: (URL) Auto-generated link to the generated client docs.
 - `release_level`: (String) Usually `preview` for new libraries.
 - `distribution_name`: (String) Maven coordinates (e.g., `com.google.cloud:google-cloud-alloydb`).
 - `api_id`: (String) API identifier (e.g., `alloydb.googleapis.com`).
 - `library_type`: (String) Usually `GAPIC_AUTO`.
-- `group_id`: (String) Maven group ID.
-- `cloud_api`: (Boolean) True if it's a Cloud API.
+- `group_id`: (String) Maven group ID (e.g., `com.google.cloud`).
+- `cloud_api`: (Boolean) `true` if distribution name starts with `google-cloud-`.
 - `GAPICs`: (List) List of proto paths to generate from.
-  - `proto_path`: (String) Path to versioned protos.
+  - `proto_path`: (String) Path to versioned protos (must include version, e.g., `google/cloud/alloydb/v1`).
+
+**Optional:**
+- `library_name`: (String) Override the output directory name (without `java-` prefix).
+- `rest_documentation`: (URL) REST reference documentation URL.
+- `rpc_documentation`: (URL) RPC/proto reference documentation URL.
+- `requires_billing`: (Boolean) Whether billing is required (default: `true`).
+- `api_reference`: (URL) API reference documentation link.
+- `codeowner_team`: (String) GitHub team responsible for this library.
+- `googleapis_commitish`: (String) Pin to a specific `googleapis/googleapis` commit (overrides repo-level setting).
+- `issue_tracker`: (URL) Issue tracker for this library.
+- `extra_versioned_modules`: (String) Extra modules managed via `versions.txt`.
+- `excluded_dependencies`: (String) Comma-separated dependencies excluded from postprocessing.
+- `excluded_poms`: (String) Comma-separated pom files excluded from postprocessing.
 
 ## Example Library Entry
 

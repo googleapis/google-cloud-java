@@ -5,40 +5,56 @@ description: Generates new Google Cloud Java client libraries by processing serv
 
 # New Client Library Generator
 
-This skill automates the process of adding a new client library to the `google-cloud-java` repository using the hermetic build system. It guides the extraction of service information from Cloud Drop files and handles the execution of the configuration script.
+This skill automates the process of adding a new client library to the `google-cloud-java` repository using the hermetic build system. It retrieves service information from a Buganizer ticket and runs the configuration script to update `generation_config.yaml`.
 
 ## Workflow
 
-### 1. Information Gathering
+### 1. Retrieve Service Information from Buganizer
 
-The skill expects service information, typically found in a "Cloud Drop" YAML file or a Buganizer ticket.
+Use the available Buganizer MCP server to fetch the ticket content. Extract the following fields:
 
-**Triggers:**
-- "Generate a new client library for [Service Name]"
-- "Add a new library using this Cloud Drop: [URL]"
-- "Process this Buganizer request: [Bug ID]"
+**Required:**
+- `api_shortname`: Unique service identifier (e.g., `alloydb`).
+- `name_pretty`: Human-friendly name (e.g., `AlloyDB API`).
+- `proto_path`: Versioned path to protos (e.g., `google/cloud/alloydb/v1`). Must include the version component — root-level paths like `google/cloud/alloydb` are not supported.
+- `product_docs`: Product documentation URL (must start with `https://`).
+- `api_description`: First sentence of the service summary.
 
-**Required Information:**
-- `api_shortname`: Unique service identifier.
-- `name_pretty`: Human-friendly name.
-- `proto_path`: Path to versioned protos (e.g., `google/cloud/service/v1`).
-- `product_docs`: Documentation URL.
-- `api_description`: Brief summary.
+**Optional:**
+- `rest_docs`: REST reference documentation URL.
+- `rpc_docs`: RPC/proto reference documentation URL.
+- `library_name`: Override the default `java-<api_shortname>` directory name.
+- `distribution_name`: Override Maven coordinates (default: `com.google.cloud:google-cloud-<api_shortname>`).
 
-For mapping details, refer to [references/cloud_drop_mapping.md](references/cloud_drop_mapping.md).
+For the field-to-flag mapping, see [references/cloud_drop_mapping.md](references/cloud_drop_mapping.md) (service config YAML fields → script flags).
 
-### 2. Fetching & Processing
+### 2. Check for Conflicts
 
-If a URL or Buganizer ID is provided, use any available MCP servers to fetch the content.
-- If an MCP server for `googleapis` is available, use it to find the Cloud Drop YAML.
-- If a Buganizer MCP server is available, use it to find the Cloud Drop link in the ticket.
-
-### 3. Execution
-
-Once information is gathered and mapped, run the following script:
+Before running the script, verify `api_shortname` is not already in use:
 
 ```bash
-python3 generation/new_client_hermetic_build/add-new-client-config.py generate \
+grep "api_shortname: <API_SHORTNAME>" generation_config.yaml
+```
+
+If a conflict exists, determine a unique name or use `--library-name` to set a distinct directory. See [references/generation_guide.md](references/generation_guide.md) for examples.
+
+### 3. Special Cases
+
+Some APIs require non-default Maven coordinates and `api_shortname` values:
+
+| Proto path prefix   | `--api-shortname`            | `--distribution-name`                                    |
+|---------------------|------------------------------|----------------------------------------------------------|
+| `google/maps/*`     | `maps-<api_short_name>`      | `com.google.maps:google-maps-<api_short_name>`           |
+| `google/shopping/*` | `shopping-<api_short_name>`  | `com.google.shopping:google-shopping-<api_short_name>`   |
+
+where `<api_short_name>` is the value from the Buganizer ticket.
+
+### 4. Execution
+
+Run the script with the gathered information:
+
+```bash
+python3 generation/new_client_hermetic_build/add-new-client-config.py add-new-library \
   --api-shortname="[API_SHORTNAME]" \
   --name-pretty="[NAME_PRETTY]" \
   --proto-path="[PROTO_PATH]" \
@@ -47,20 +63,28 @@ python3 generation/new_client_hermetic_build/add-new-client-config.py generate \
   [OPTIONAL_FLAGS]
 ```
 
-**Note:** The script will modify `generation_config.yaml` and sort the `libraries` list.
+The script modifies `generation_config.yaml` and sorts the `libraries` list alphabetically.
 
-### 4. Verification
+To see all available flags:
+```bash
+python3 generation/new_client_hermetic_build/add-new-client-config.py add-new-library --help
+```
 
-After execution, verify that:
-1. `generation_config.yaml` has been updated with the new entry.
-2. The library entry contains the correct fields. Refer to [references/generation_config_schema.md](references/generation_config_schema.md) for field definitions.
+### 5. Verification
 
-## Advanced Usage
+After execution:
+1. Confirm `generation_config.yaml` has a new entry with the correct fields. See [references/generation_config_schema.md](references/generation_config_schema.md).
+2. Confirm `proto_path` under `GAPICs` includes a version component (e.g., `v1`, `v1beta`, `v1alpha`).
+3. Confirm `product_documentation` starts with `https://`.
 
-For more complex scenarios, such as overriding the library name or Maven coordinates, refer to [references/generation_guide.md](references/generation_guide.md).
+### 6. Create a Branch and PR
 
-### Common Optional Flags
-- `--rest-docs`: URL for REST documentation.
-- `--rpc-docs`: URL for RPC/Proto documentation.
-- `--library-name`: Override the default `java-<api_shortname>` directory.
-- `--distribution-name`: Override Maven coordinates (default: `com.google.cloud:google-cloud-<api_shortname>`).
+After verifying the changes:
+
+```bash
+git checkout -b "new-library/[API_SHORTNAME]"
+git add generation_config.yaml
+git commit -m "feat: [API_SHORTNAME] new module for [API_SHORTNAME]"
+```
+
+Then open a pull request. Include the exact `add-new-library` command and arguments used in the PR body. Add the `owlbot:run` label so the hermetic build workflow generates the library code.

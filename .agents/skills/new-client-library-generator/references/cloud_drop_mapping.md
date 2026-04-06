@@ -1,8 +1,8 @@
-# Cloud Drop Mapping to Generation Script Parameters
+# Service Configuration Field Mapping
 
-This document explains how to extract information from a "Cloud Drop" (typically a YAML file in the `googleapis` repository) to populate the parameters for `generation/new_client_hermetic_build/add-new-client-config.py`.
+This document explains how to map fields from the service configuration YAML (retrieved from the Buganizer ticket via MCP server) to parameters for `generation/new_client_hermetic_build/add-new-client-config.py`.
 
-| Cloud Drop Field (YAML) | Script Parameter (`--flag`) | Description |
+| Service Config Field (YAML) | Script Parameter (`--flag`) | Description |
 |---|---|---|
 | `api_short_name` | `api-shortname` | Unique identifier for the service (e.g., `alloydb`). |
 | (extracted from proto) | `proto-path` | Path from the root of the googleapis repository to the versioned proto directory (e.g., `google/cloud/alloydb/v1alpha`). Root-level paths like `google/cloud/alloydb` are not supported. |
@@ -14,7 +14,7 @@ This document explains how to extract information from a "Cloud Drop" (typically
 
 ## Example Mapping
 
-**Cloud Drop File excerpt:**
+**Service config YAML excerpt:**
 ```yaml
 title: "Discovery Engine API"
 api_short_name: "discoveryengine"

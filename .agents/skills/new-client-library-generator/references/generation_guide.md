@@ -242,7 +242,7 @@ the GitHub Action**, hence the need for a local run (refer to the "Prerequisites
 (for local environment)" section).
 For the explanation of the available parameters, run:
 ```
-python3.9 generation/new_client_hermetic_build/add-new-client-config.py generate  --help
+python3 generation/new_client_hermetic_build/add-new-client-config.py add-new-library --help
 ```
 
 After you run the script, you will see that the `generation_config.yaml` file
