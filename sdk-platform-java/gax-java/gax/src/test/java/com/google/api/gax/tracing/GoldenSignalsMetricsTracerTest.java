@@ -33,6 +33,7 @@ import static com.google.api.gax.tracing.ObservabilityAttributes.RPC_RESPONSE_ST
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.testing.FakeTicker;
@@ -68,7 +69,12 @@ class GoldenSignalsMetricsTracerTest {
     ticker = new FakeTicker();
     tracer =
         new GoldenSignalsMetricsTracer(
-            new GoldenSignalsMetricsRecorder(openTelemetry, ARTIFACT_NAME),
+            GoldenSignalsMetricsRecorder.create(
+                openTelemetry,
+                LibraryMetadata.newBuilder()
+                    .setArtifactName(ARTIFACT_NAME)
+                    .setVersion("1.2.3")
+                    .build()),
             ApiTracerContext.empty(),
             ticker);
   }
@@ -129,8 +135,12 @@ class GoldenSignalsMetricsTracerTest {
     assertThat(metricData.getHistogramData().getPoints().iterator().next().getAttributes())
         .isEqualTo(
             Attributes.of(
+                AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE),
+                "CancellationException",
                 AttributeKey.stringKey(RPC_RESPONSE_STATUS_ATTRIBUTE),
-                StatusCode.Code.CANCELLED.toString()));
+                StatusCode.Code.CANCELLED.toString(),
+                AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE),
+                java.util.concurrent.CancellationException.class.getName()));
   }
 
   @Test
@@ -163,7 +173,75 @@ class GoldenSignalsMetricsTracerTest {
     assertThat(metricData.getHistogramData().getPoints().iterator().next().getAttributes())
         .isEqualTo(
             Attributes.of(
+                AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE),
+                "INTERNAL",
                 AttributeKey.stringKey(RPC_RESPONSE_STATUS_ATTRIBUTE),
-                StatusCode.Code.INTERNAL.toString()));
+                StatusCode.Code.INTERNAL.toString(),
+                AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE),
+                com.google.api.gax.rpc.ApiException.class.getName()));
+  }
+
+  @Test
+  void operationFailed_shouldRecordCancellationException() {
+    java.util.concurrent.CancellationException error =
+        new java.util.concurrent.CancellationException("test cancellation");
+    tracer.operationFailed(error);
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    assertThat(metrics).hasSize(1);
+    MetricData metricData = metrics.iterator().next();
+
+    assertThat(metricData.getHistogramData().getPoints()).hasSize(1);
+    assertThat(metricData.getHistogramData().getPoints().iterator().next().getAttributes())
+        .isEqualTo(
+            Attributes.of(
+                AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE),
+                "CancellationException",
+                AttributeKey.stringKey(RPC_RESPONSE_STATUS_ATTRIBUTE),
+                StatusCode.Code.CANCELLED.toString(),
+                AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE),
+                java.util.concurrent.CancellationException.class.getName()));
+  }
+
+  @Test
+  void operationFailed_shouldRecordClientTimeout() {
+    java.net.SocketTimeoutException error = new java.net.SocketTimeoutException("test timeout");
+    tracer.operationFailed(error);
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    assertThat(metrics).hasSize(1);
+    MetricData metricData = metrics.iterator().next();
+
+    assertThat(metricData.getHistogramData().getPoints()).hasSize(1);
+    assertThat(metricData.getHistogramData().getPoints().iterator().next().getAttributes())
+        .isEqualTo(
+            Attributes.of(
+                AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE),
+                "CLIENT_TIMEOUT",
+                AttributeKey.stringKey(RPC_RESPONSE_STATUS_ATTRIBUTE),
+                StatusCode.Code.UNKNOWN.toString(),
+                AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE),
+                java.net.SocketTimeoutException.class.getName()));
+  }
+
+  @Test
+  void operationFailed_shouldRecordClientRequestError() {
+    IllegalArgumentException error = new IllegalArgumentException("test illegal argument");
+    tracer.operationFailed(error);
+
+    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+    assertThat(metrics).hasSize(1);
+    MetricData metricData = metrics.iterator().next();
+
+    assertThat(metricData.getHistogramData().getPoints()).hasSize(1);
+    assertThat(metricData.getHistogramData().getPoints().iterator().next().getAttributes())
+        .isEqualTo(
+            Attributes.of(
+                AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE),
+                "CLIENT_REQUEST_ERROR",
+                AttributeKey.stringKey(RPC_RESPONSE_STATUS_ATTRIBUTE),
+                StatusCode.Code.UNKNOWN.toString(),
+                AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE),
+                java.lang.IllegalArgumentException.class.getName()));
   }
 }

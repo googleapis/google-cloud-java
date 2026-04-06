@@ -51,6 +51,9 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
       AttributeKey.longKey("http.request.body.size");
   public static final AttributeKey<Long> HTTP_RESPONSE_BODY_SIZE =
       AttributeKey.longKey("http.response.body.size");
+  public static final AttributeKey<String> SERVER_ADDRESS =
+      AttributeKey.stringKey("server.address");
+  public static final AttributeKey<Long> SERVER_PORT = AttributeKey.longKey("server.port");
 
   @VisibleForTesting public static final String HTTP_RPC_SYSTEM_NAME = "http";
 
@@ -119,10 +122,10 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
     BigQueryTelemetryTracer.addCommonAttributeToSpan(span);
     span.setAttribute(BigQueryTelemetryTracer.RPC_SYSTEM_NAME, HTTP_RPC_SYSTEM_NAME);
     String host = request.getUrl().getHost();
-    span.setAttribute(BigQueryTelemetryTracer.SERVER_ADDRESS, host);
+    span.setAttribute(SERVER_ADDRESS, host);
     int port = request.getUrl().getPort();
     if (port > 0) {
-      span.setAttribute(BigQueryTelemetryTracer.SERVER_PORT, (long) port);
+      span.setAttribute(SERVER_PORT, (long) port);
     }
     span.setAttribute(URL_FULL, getSanitizedUrl(request));
   }

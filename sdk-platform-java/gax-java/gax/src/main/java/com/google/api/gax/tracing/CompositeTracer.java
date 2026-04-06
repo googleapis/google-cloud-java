@@ -213,4 +213,11 @@ class CompositeTracer extends BaseApiTracer {
       child.batchRequestSent(elementCount, requestSize);
     }
   }
+
+  @Override
+  public void injectTraceContext(java.util.Map<String, String> carrier) {
+    for (ApiTracer child : children) {
+      child.injectTraceContext(carrier);
+    }
+  }
 }

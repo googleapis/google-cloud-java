@@ -34,7 +34,6 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.tracing.CompositeTracerFactory;
 import com.google.api.gax.tracing.GoldenSignalsMetricsTracerFactory;
-import com.google.api.gax.tracing.LoggingTracerFactory;
 import com.google.api.gax.tracing.ObservabilityAttributes;
 import com.google.api.gax.tracing.SpanTracerFactory;
 import com.google.showcase.v1beta1.EchoClient;
@@ -43,13 +42,13 @@ import com.google.showcase.v1beta1.it.util.TestClientInitializer;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
+import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import io.opentelemetry.sdk.testing.exporter.InMemorySpanExporter;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import io.opentelemetry.sdk.trace.export.SimpleSpanProcessor;
-import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
-import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -94,7 +93,8 @@ class ITCompositeTracer {
 
   private CompositeTracerFactory createCompositeTracerFactory() {
     SpanTracerFactory spanTracerFactory = new SpanTracerFactory(openTelemetrySdk);
-    GoldenSignalsMetricsTracerFactory metricsTracerFactory = new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
+    GoldenSignalsMetricsTracerFactory metricsTracerFactory =
+        new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
 
     return new CompositeTracerFactory(Arrays.asList(spanTracerFactory, metricsTracerFactory));
   }
@@ -102,7 +102,7 @@ class ITCompositeTracer {
   @Test
   void testCompositeTracer() throws Exception {
     try (EchoClient client =
-                 TestClientInitializer.createGrpcEchoClientOpentelemetry(createCompositeTracerFactory())) {
+        TestClientInitializer.createGrpcEchoClientOpentelemetry(createCompositeTracerFactory())) {
 
       client.echo(EchoRequest.newBuilder().setContent("composite-tracing-test").build());
 
@@ -111,31 +111,37 @@ class ITCompositeTracer {
       assertThat(actualSpans).isNotEmpty();
 
       SpanData attemptSpan =
-              actualSpans.stream()
-                      .filter(span -> span.getName().equals("google.showcase.v1beta1.Echo/Echo"))
-                      .findFirst()
-                      .orElseThrow(() -> new AssertionError("Incorrect span name"));
+          actualSpans.stream()
+              .filter(span -> span.getName().equals("google.showcase.v1beta1.Echo/Echo"))
+              .findFirst()
+              .orElseThrow(() -> new AssertionError("Incorrect span name"));
       assertThat(attemptSpan.getInstrumentationScopeInfo().getName()).isEqualTo(SHOWCASE_ARTIFACT);
       assertThat(
               attemptSpan
-                      .getAttributes()
-                      .get(AttributeKey.stringKey(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE)))
-              .isEqualTo(SHOWCASE_SERVER_ADDRESS);
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE)))
+          .isEqualTo(SHOWCASE_SERVER_ADDRESS);
 
       // Verify metric name and one basic attribute server.address
       Collection<MetricData> actualMetrics = metricReader.collectAllMetrics();
 
       assertThat(actualMetrics).isNotEmpty();
-      MetricData metricData = actualMetrics.stream()
+      MetricData metricData =
+          actualMetrics.stream()
               .filter(metricData1 -> metricData1.getName().equals("gcp.client.request.duration"))
               .findFirst()
               .orElseThrow(() -> new AssertionError("Incorrect metric name"));
       assertThat(metricData.getInstrumentationScopeInfo().getName()).isEqualTo(SHOWCASE_ARTIFACT);
 
-      assertThat(metricData.getHistogramData().getPoints().iterator().next()
-              .getAttributes()
-              .get(AttributeKey.stringKey(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE)))
-              .isEqualTo(SHOWCASE_SERVER_ADDRESS);
+      assertThat(
+              metricData
+                  .getHistogramData()
+                  .getPoints()
+                  .iterator()
+                  .next()
+                  .getAttributes()
+                  .get(AttributeKey.stringKey(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE)))
+          .isEqualTo(SHOWCASE_SERVER_ADDRESS);
     }
   }
 }

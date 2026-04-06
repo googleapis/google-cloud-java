@@ -20,8 +20,33 @@ on:
   pull_request:
 name: ci
 jobs:
+  # detect whether or note we should run "bulk" (non-handwritten) unit tests
+  bulk-filter:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    # Set job outputs to values from filter step
+    outputs:
+      src: ${{ steps.filter.outputs.src }}
+      ci: ${{ steps.filter.outputs.ci }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        # we want to run tests if source code is changed or the scripts
+        # used to run the unit tests
+        filters: |
+          src:
+            - '**/*.java'
+            - '**/pom.xml'
+          ci:
+            - '.github/workflows/ci.yaml'
+            - '.kokoro/**'
+  # these unit tests are "bulk" (non-handwritten) libraries
   units:
     runs-on: ubuntu-latest
+    needs: bulk-filter
     strategy:
       fail-fast: false
       matrix:
@@ -42,11 +67,13 @@ jobs:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
+      if: ${{ needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true' }}
       env:
         JOB_TYPE: test
         JOB_NAME: units-${{matrix.java}}
   units-8-runtime:
     runs-on: ubuntu-latest
+    needs: bulk-filter
     name: "units (8)"
     steps:
     - name: Get current week within the year
@@ -73,6 +100,7 @@ jobs:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
+      if: ${{ needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true' }}
       shell: bash      
       env:
         JOB_TYPE: test

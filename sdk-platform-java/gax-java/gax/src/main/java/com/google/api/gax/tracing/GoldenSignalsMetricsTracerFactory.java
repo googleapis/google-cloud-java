@@ -29,10 +29,8 @@
  */
 package com.google.api.gax.tracing;
 
-import com.google.api.client.util.Strings;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
-import com.google.api.gax.rpc.LibraryMetadata;
 import io.opentelemetry.api.OpenTelemetry;
 
 /**
@@ -85,14 +83,12 @@ public class GoldenSignalsMetricsTracerFactory implements ApiTracerFactory {
     if (context == null) {
       return new BaseApiTracerFactory();
     }
-    LibraryMetadata metadata = context.libraryMetadata();
-    if (metadata == null || metadata.isEmpty() || Strings.isNullOrEmpty(metadata.artifactName())) {
+    this.metricsRecorder =
+        GoldenSignalsMetricsRecorder.create(openTelemetry, context.libraryMetadata());
+    if (this.metricsRecorder == null) {
       return new BaseApiTracerFactory();
     }
     this.clientLevelTracerContext = context;
-    this.metricsRecorder =
-        new GoldenSignalsMetricsRecorder(
-            openTelemetry, clientLevelTracerContext.libraryMetadata().artifactName());
     return this;
   }
 }

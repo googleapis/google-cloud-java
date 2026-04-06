@@ -45,9 +45,6 @@ import java.util.concurrent.CancellationException;
 @BetaApi
 @InternalApi
 public class SpanTracer implements ApiTracer {
-  public static final String LANGUAGE_ATTRIBUTE = "gcp.client.language";
-
-  public static final String DEFAULT_LANGUAGE = "Java";
 
   static final String CONTENT_LENGTH_KEY = "Content-Length";
 
@@ -56,6 +53,23 @@ public class SpanTracer implements ApiTracer {
   private final String attemptSpanName;
   private final ApiTracerContext apiTracerContext;
   private Span attemptSpan;
+
+  @Override
+  public void injectTraceContext(java.util.Map<String, String> carrier) {
+    if (attemptSpan != null) {
+      io.opentelemetry.context.Context context =
+          io.opentelemetry.context.Context.current().with(attemptSpan);
+      io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator.getInstance()
+          .inject(
+              context,
+              carrier,
+              (c, k, v) -> {
+                if (c != null) {
+                  c.put(k, v);
+                }
+              });
+    }
+  }
 
   /**
    * Creates a new instance of {@code SpanTracer}.
@@ -103,7 +117,6 @@ public class SpanTracer implements ApiTracer {
   }
 
   private void buildAttributes() {
-    this.attemptAttributes.put(LANGUAGE_ATTRIBUTE, DEFAULT_LANGUAGE);
     this.attemptAttributes.putAll(this.apiTracerContext.getAttemptAttributes());
   }
 
@@ -204,26 +217,13 @@ public class SpanTracer implements ApiTracer {
     if (attemptSpan == null) {
       return;
     }
-
-    attemptSpan.setAttribute(
-        ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, ObservabilityUtils.extractErrorType(error));
-
-    Map<String, Object> statusAttributes = new HashMap<>();
-    ObservabilityUtils.populateStatusAttributes(
-        statusAttributes, error, this.apiTracerContext.transport());
-    if (!statusAttributes.isEmpty()) {
-      attemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(statusAttributes));
+    Map<String, Object> responseAttributes =
+        ObservabilityUtils.getResponseAttributes(error, this.apiTracerContext.transport());
+    if (!responseAttributes.isEmpty()) {
+      attemptSpan.setAllAttributes(ObservabilityUtils.toOtelAttributes(responseAttributes));
     }
 
-    if (error == null) {
-      endAttempt();
-      return;
-    }
-
-    attemptSpan.setAttribute(
-        ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE, error.getClass().getName());
-
-    if (!Strings.isNullOrEmpty(error.getMessage())) {
+    if (error != null && !Strings.isNullOrEmpty(error.getMessage())) {
       attemptSpan.setAttribute(
           ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE, error.getMessage());
     }

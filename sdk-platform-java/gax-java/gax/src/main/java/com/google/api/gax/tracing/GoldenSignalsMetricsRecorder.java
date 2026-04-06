@@ -29,12 +29,16 @@
  */
 package com.google.api.gax.tracing;
 
+import com.google.api.gax.rpc.LibraryMetadata;
+import com.google.common.base.Strings;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.Meter;
+import io.opentelemetry.api.metrics.MeterBuilder;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import javax.annotation.Nullable;
 
 /**
  * This class takes an OpenTelemetry object, and creates instruments (meters, histograms etc.) from
@@ -53,8 +57,23 @@ class GoldenSignalsMetricsRecorder {
           900.0, 3600.0);
   final DoubleHistogram clientRequestDurationRecorder;
 
-  GoldenSignalsMetricsRecorder(OpenTelemetry openTelemetry, String libraryName) {
-    Meter meter = openTelemetry.meterBuilder(libraryName).build();
+  @Nullable
+  static GoldenSignalsMetricsRecorder create(
+      OpenTelemetry openTelemetry, LibraryMetadata libraryMetadata) {
+    if (libraryMetadata == null || Strings.isNullOrEmpty(libraryMetadata.artifactName())) {
+      return null;
+    }
+    return new GoldenSignalsMetricsRecorder(openTelemetry, libraryMetadata);
+  }
+
+  private GoldenSignalsMetricsRecorder(
+      OpenTelemetry openTelemetry, LibraryMetadata libraryMetadata) {
+    MeterBuilder meterBuilder = openTelemetry.meterBuilder(libraryMetadata.artifactName());
+    String libraryVersion = libraryMetadata.version();
+    if (!Strings.isNullOrEmpty(libraryVersion)) {
+      meterBuilder.setInstrumentationVersion(libraryVersion);
+    }
+    Meter meter = meterBuilder.build();
 
     this.clientRequestDurationRecorder =
         meter

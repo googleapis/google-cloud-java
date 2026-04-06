@@ -73,6 +73,9 @@ import com.google.cloud.ces.v1beta.Deployment;
 import com.google.cloud.ces.v1beta.Example;
 import com.google.cloud.ces.v1beta.ExportAppRequest;
 import com.google.cloud.ces.v1beta.ExportAppResponse;
+import com.google.cloud.ces.v1beta.GenerateAppResourceOperationMetadata;
+import com.google.cloud.ces.v1beta.GenerateAppResourceRequest;
+import com.google.cloud.ces.v1beta.GenerateAppResourceResponse;
 import com.google.cloud.ces.v1beta.GetAgentRequest;
 import com.google.cloud.ces.v1beta.GetAppRequest;
 import com.google.cloud.ces.v1beta.GetAppVersionRequest;
@@ -148,7 +151,9 @@ import javax.annotation.Generated;
 public class HttpJsonAgentServiceStub extends AgentServiceStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(GenerateAppResourceOperationMetadata.getDescriptor())
           .add(Empty.getDescriptor())
+          .add(GenerateAppResourceResponse.getDescriptor())
           .add(RestoreAppVersionResponse.getDescriptor())
           .add(ExportAppResponse.getDescriptor())
           .add(BatchDeleteConversationsResponse.getDescriptor())
@@ -1919,6 +1924,46 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
+  private static final ApiMethodDescriptor<GenerateAppResourceRequest, Operation>
+      generateAppResourceMethodDescriptor =
+          ApiMethodDescriptor.<GenerateAppResourceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.ces.v1beta.AgentService/GenerateAppResource")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GenerateAppResourceRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{parent=projects/*/locations/*/apps/*}:generateAppResource",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateAppResourceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateAppResourceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (GenerateAppResourceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private static final ApiMethodDescriptor<ListChangelogsRequest, ListChangelogsResponse>
       listChangelogsMethodDescriptor =
           ApiMethodDescriptor.<ListChangelogsRequest, ListChangelogsResponse>newBuilder()
@@ -2142,6 +2187,12 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
   private final OperationCallable<
           RestoreAppVersionRequest, RestoreAppVersionResponse, OperationMetadata>
       restoreAppVersionOperationCallable;
+  private final UnaryCallable<GenerateAppResourceRequest, Operation> generateAppResourceCallable;
+  private final OperationCallable<
+          GenerateAppResourceRequest,
+          GenerateAppResourceResponse,
+          GenerateAppResourceOperationMetadata>
+      generateAppResourceOperationCallable;
   private final UnaryCallable<ListChangelogsRequest, ListChangelogsResponse> listChangelogsCallable;
   private final UnaryCallable<ListChangelogsRequest, ListChangelogsPagedResponse>
       listChangelogsPagedCallable;
@@ -2798,6 +2849,19 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    HttpJsonCallSettings<GenerateAppResourceRequest, Operation>
+        generateAppResourceTransportSettings =
+            HttpJsonCallSettings.<GenerateAppResourceRequest, Operation>newBuilder()
+                .setMethodDescriptor(generateAppResourceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     HttpJsonCallSettings<ListChangelogsRequest, ListChangelogsResponse>
         listChangelogsTransportSettings =
             HttpJsonCallSettings.<ListChangelogsRequest, ListChangelogsResponse>newBuilder()
@@ -3068,6 +3132,17 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
             settings.restoreAppVersionOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.generateAppResourceCallable =
+        callableFactory.createUnaryCallable(
+            generateAppResourceTransportSettings,
+            settings.generateAppResourceSettings(),
+            clientContext);
+    this.generateAppResourceOperationCallable =
+        callableFactory.createOperationCallable(
+            generateAppResourceTransportSettings,
+            settings.generateAppResourceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.listChangelogsCallable =
         callableFactory.createUnaryCallable(
             listChangelogsTransportSettings, settings.listChangelogsSettings(), clientContext);
@@ -3142,6 +3217,7 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
     methodDescriptors.add(createAppVersionMethodDescriptor);
     methodDescriptors.add(deleteAppVersionMethodDescriptor);
     methodDescriptors.add(restoreAppVersionMethodDescriptor);
+    methodDescriptors.add(generateAppResourceMethodDescriptor);
     methodDescriptors.add(listChangelogsMethodDescriptor);
     methodDescriptors.add(getChangelogMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
@@ -3479,6 +3555,20 @@ public class HttpJsonAgentServiceStub extends AgentServiceStub {
   public OperationCallable<RestoreAppVersionRequest, RestoreAppVersionResponse, OperationMetadata>
       restoreAppVersionOperationCallable() {
     return restoreAppVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateAppResourceRequest, Operation> generateAppResourceCallable() {
+    return generateAppResourceCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          GenerateAppResourceRequest,
+          GenerateAppResourceResponse,
+          GenerateAppResourceOperationMetadata>
+      generateAppResourceOperationCallable() {
+    return generateAppResourceOperationCallable;
   }
 
   @Override
