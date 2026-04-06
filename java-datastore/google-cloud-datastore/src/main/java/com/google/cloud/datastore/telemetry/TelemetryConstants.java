@@ -130,8 +130,6 @@ public class TelemetryConstants {
   /** Metric name for the count of RPC attempts. */
   public static final String METRIC_NAME_ATTEMPT_COUNT = METRIC_PREFIX + "/attempt_count";
 
-  // This is intentionally different from the `SERVICE_NAME` constant as it matches Gax's logic for
-  // method name.
   static final String METHOD_SERVICE_NAME = "Datastore";
 
   // The follow method name formats are not in SnakeCase to match the method name convention in Gax.
