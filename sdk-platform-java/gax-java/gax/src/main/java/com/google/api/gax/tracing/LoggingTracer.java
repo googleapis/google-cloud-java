@@ -77,16 +77,14 @@ class LoggingTracer extends BaseApiTracer {
     }
 
     Map<String, Object> logContext = new HashMap<>(apiTracerContext.getAttemptAttributes());
+    logContext.putAll(ObservabilityUtils.getResponseAttributes(error, apiTracerContext.transport()));
 
-    logContext.put(
-        ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE,
-        ObservabilityUtils.extractStatus(error).toString());
+    if (error != null && error.getMessage() != null) {
+      logContext.put("exception.message", error.getMessage());
+    }
 
     ErrorInfo errorInfo = ObservabilityUtils.extractErrorInfo(error);
     if (errorInfo != null) {
-      if (errorInfo.getReason() != null && !errorInfo.getReason().isEmpty()) {
-        logContext.put(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, errorInfo.getReason());
-      }
       if (errorInfo.getDomain() != null && !errorInfo.getDomain().isEmpty()) {
         logContext.put(ObservabilityAttributes.ERROR_DOMAIN_ATTRIBUTE, errorInfo.getDomain());
       }

@@ -182,6 +182,49 @@ class LoggingTracerTest {
         attributesMap.get(ObservabilityAttributes.ERROR_METADATA_ATTRIBUTE_PREFIX + "test_key"));
   }
 
+  @Test
+  void testRecordActionableError_logsExceptionDetails() {
+    ApiTracerContext context = ApiTracerContext.empty();
+    LoggingTracer tracer = new LoggingTracer(context);
+
+    Exception error = new RuntimeException("test error message");
+    tracer.recordActionableError(error);
+
+    Map<String, ?> attributesMap = getAttributesMap();
+
+    assertTrue(attributesMap != null && !attributesMap.isEmpty());
+    assertEquals(
+        "java.lang.RuntimeException",
+        attributesMap.get(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE));
+    assertEquals("test error message", attributesMap.get("exception.message"));
+  }
+
+  @Test
+  void testRecordActionableError_logsHttpStatus() {
+    ApiTracerContext context =
+        ApiTracerContext.empty().toBuilder().setTransport(ApiTracerContext.Transport.HTTP).build();
+    LoggingTracer tracer = new LoggingTracer(context);
+
+    Exception error =
+        ApiExceptionFactory.createException(
+            "test error message",
+            new RuntimeException("cause"),
+            FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT),
+            false);
+
+    tracer.recordActionableError(error);
+
+    Map<String, ?> attributesMap = getAttributesMap();
+
+    assertTrue(attributesMap != null && !attributesMap.isEmpty());
+    assertEquals(
+        "INVALID_ARGUMENT",
+        attributesMap.get(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE));
+    assertEquals(
+        400L,
+        attributesMap.get(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE));
+  }
+
   private Map<String, ?> getAttributesMap() {
     if (!testLogger.getMDCMap().isEmpty()) {
       return testLogger.getMDCMap();
