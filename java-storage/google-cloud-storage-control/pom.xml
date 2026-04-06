@@ -53,7 +53,6 @@
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax</artifactId>
-          <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
         </dependency>
         <dependency>
             <groupId>com.google.api</groupId>
@@ -71,14 +70,14 @@
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax-httpjson</artifactId>
-          <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax-httpjson:current} -->
+          <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
         </dependency>
         <dependency>
             <groupId>com.google.api</groupId>
             <artifactId>gax-httpjson</artifactId>
             <scope>test</scope>
             <classifier>testlib</classifier>
-          <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax-httpjson:current} -->
+          <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
