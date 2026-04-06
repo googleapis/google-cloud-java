@@ -25,14 +25,14 @@
       <dependency>
         <groupId>com.google.auth</groupId>
         <artifactId>google-auth-library-bom</artifactId>
-        <version>${google.auth.version}</version>
+        <version>1.43.1-SNAPSHOT</version><!-- {x-version-update:google-auth-library:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.auth</groupId>
         <artifactId>google-auth-library-oauth2-http</artifactId>
-        <version>${google.auth.version}</version>
+        <version>1.43.1-SNAPSHOT</version><!-- {x-version-update:google-auth-library:current} -->
         <type>test-jar</type>
         <classifier>testlib</classifier>
         <scope>test</scope>

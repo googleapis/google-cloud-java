@@ -20,10 +20,11 @@ set -eox pipefail
 
 # Get the directory of the build script
 scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
-cd "${scriptDir}/../.." # cd to the root of this repo
+cd "${scriptDir}/.." # cd to the root of this repo
 source "$scriptDir/common.sh"
 
-install_repo_modules
+install_modules "sdk-platform-java"
+cd sdk-platform-java
 GAPIC_GENERATOR_VERSION=$(parse_pom_version "gapic-generator-java-bom")
 echo "Install complete. gapic-generator-java-bom = $GAPIC_GENERATOR_VERSION"
 

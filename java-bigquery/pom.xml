@@ -88,7 +88,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-storage</artifactId>
-        <version>2.53.3</version>
+        <version>2.64.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage:current} -->
         <scope>test</scope>
       </dependency>
       <dependency>
