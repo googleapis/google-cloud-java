@@ -44,15 +44,6 @@ import javax.annotation.Nullable;
 
 final class ObservabilityUtils {
 
-  /**
-   * Extracts a low-cardinality string representing the specific classification of the error to be
-   * used in the {@link ObservabilityAttributes#ERROR_TYPE_ATTRIBUTE} attribute. See {@link
-   * ErrorTypeUtil#extractErrorType} for extended documentation.
-   */
-  static String extractErrorType(@Nullable Throwable error) {
-    return ErrorTypeUtil.extractErrorType(error);
-  }
-
   /** Function to extract the status of the error as a canonical code. */
   static StatusCode.Code extractStatus(@Nullable Throwable error) {
     if (error == null) {
@@ -182,7 +173,7 @@ final class ObservabilityUtils {
     }
     if (error != null) {
       attributes.put(
-          ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, ObservabilityUtils.extractErrorType(error));
+          ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, ErrorTypeUtil.extractErrorType(error));
       attributes.put(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE, error.getClass().getName());
     }
     return attributes;

@@ -43,6 +43,7 @@ import java.net.UnknownHostException;
 import java.nio.channels.UnresolvedAddressException;
 import java.security.GeneralSecurityException;
 import java.util.Set;
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.net.ssl.SSLHandshakeException;
 
@@ -112,15 +113,10 @@ public class ErrorTypeUtil {
    * </ol>
    *
    * @param error the Throwable from which to extract the error type string.
-   * @return a low-cardinality string representing the specific error type, or {@code null} if the
-   *     provided error is {@code null} or non-determined.
+   * @return a low-cardinality string representing the specific error type
    */
   // Requirement source: go/clo:product-requirements-v1
-  public static String extractErrorType(@Nullable Throwable error) {
-    if (error == null) {
-      // No information about the error; return null so the attribute is not recorded.
-      return null;
-    }
+  public static String extractErrorType(@Nonnull Throwable error) {
 
     // 1. Unwrap standard wrapper exceptions if present
     Throwable realError = getRealCause(error);
