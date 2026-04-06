@@ -1361,7 +1361,6 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-video-intelligence-bom</artifactId>
