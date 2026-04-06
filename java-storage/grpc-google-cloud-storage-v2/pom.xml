@@ -40,7 +40,6 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-iam-v1</artifactId>
-      <version>1.62.1-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v1:current} -->
     </dependency>
   </dependencies>
 
