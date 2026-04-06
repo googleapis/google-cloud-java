@@ -5,13 +5,13 @@ description: Generates new Google Cloud Java client libraries by processing serv
 
 # New Client Library Generator
 
-This skill automates the process of adding a new client library to the `google-cloud-java` repository using the hermetic build system. It retrieves service information from a Buganizer ticket and runs the configuration script to update `generation_config.yaml`.
+This skill automates the process of adding a new client library to the `google-cloud-java` repository using the hermetic build system. It retrieves service information from a Buganizer ticket (which links to a Service YAML file) and runs the configuration script to update `generation_config.yaml`.
 
 ## Workflow
 
 ### 1. Retrieve Service Information from Buganizer
 
-Use the available Buganizer MCP server to fetch the ticket content. Extract the following fields:
+Use the available Buganizer MCP server to fetch the ticket content. The ticket will contain a link to a Service YAML file. Parse this YAML file to extract the following fields:
 
 **Required:**
 - `api_shortname`: Unique service identifier (e.g., `alloydb`).
@@ -26,7 +26,7 @@ Use the available Buganizer MCP server to fetch the ticket content. Extract the 
 - `library_name`: Override the default `java-<api_shortname>` directory name.
 - `distribution_name`: Override Maven coordinates (default: `com.google.cloud:google-cloud-<api_shortname>`).
 
-For the field-to-flag mapping, see [references/cloud_drop_mapping.md](references/cloud_drop_mapping.md) (service config YAML fields → script flags).
+For the field-to-flag mapping, see [references/service_yaml_mapping.md](references/service_yaml_mapping.md) (Service YAML fields → script flags).
 
 ### 2. Check for Conflicts
 
@@ -47,14 +47,16 @@ Some APIs require non-default Maven coordinates and `api_shortname` values:
 | `google/maps/*`     | `maps-<api_short_name>`      | `com.google.maps:google-maps-<api_short_name>`           |
 | `google/shopping/*` | `shopping-<api_short_name>`  | `com.google.shopping:google-shopping-<api_short_name>`   |
 
-where `<api_short_name>` is the value from the Buganizer ticket.
+where `<api_short_name>` is the value from the Service YAML.
 
 ### 4. Execution
 
-Run the script with the gathered information:
+#### Adding a new library
+
+If the library does not exist yet, run the script with the gathered information:
 
 ```bash
-python3 generation/new_client_hermetic_build/add-new-client-config.py add-new-library \
+python3 generation/new_client_hermetic_build/add-new-client-config.py generate \
   --api-shortname="[API_SHORTNAME]" \
   --name-pretty="[NAME_PRETTY]" \
   --proto-path="[PROTO_PATH]" \
@@ -67,13 +69,26 @@ The script modifies `generation_config.yaml` and sorts the `libraries` list alph
 
 To see all available flags:
 ```bash
-python3 generation/new_client_hermetic_build/add-new-client-config.py add-new-library --help
+python3 generation/new_client_hermetic_build/add-new-client-config.py generate --help
+```
+
+#### Adding a new version to an existing library
+
+If the client library module already exists and the request is to add a new version, do NOT run the script. Instead, manually add the corresponding `proto_path` for the new version to the `GAPICs` list of the existing library entry in `generation_config.yaml`.
+
+Example entry update:
+```yaml
+- api_shortname: myapi
+  ...
+  GAPICs:
+  - proto_path: google/cloud/myapi/v1
+  - proto_path: google/cloud/myapi/v2  # Manually added
 ```
 
 ### 5. Verification
 
-After execution:
-1. Confirm `generation_config.yaml` has a new entry with the correct fields. See [references/generation_config_schema.md](references/generation_config_schema.md).
+After execution or manual update:
+1. Confirm `generation_config.yaml` has a new or updated entry with the correct fields. See [references/generation_config_schema.md](references/generation_config_schema.md).
 2. Confirm `proto_path` under `GAPICs` includes a version component (e.g., `v1`, `v1beta`, `v1alpha`).
 3. Confirm `product_documentation` starts with `https://`.
 
@@ -87,4 +102,4 @@ git add generation_config.yaml
 git commit -m "feat: [API_SHORTNAME] new module for [API_SHORTNAME]"
 ```
 
-Then open a pull request. Include the exact `add-new-library` command and arguments used in the PR body. Add the `owlbot:run` label so the hermetic build workflow generates the library code.
+Then open a pull request. Include the exact `generate` command and arguments used (if applicable) in the PR body. The hermetic library generation workflow will be triggered automatically upon changes to `generation_config.yaml`.
