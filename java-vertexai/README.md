@@ -42,7 +42,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
 
 If you're using Maven without the BOM, add the following to your dependencies:
 
-<!-- {x-version-update-start:google-cloud-vertexai:released} -->
+
 
 ```xml
 <dependency>
@@ -63,7 +63,7 @@ If you are using SBT, add this to your dependencies:
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-vertexai" % "1.48.0"
 ```
-<!-- {x-version-update-end} -->
+
 
 ## Authentication
 
