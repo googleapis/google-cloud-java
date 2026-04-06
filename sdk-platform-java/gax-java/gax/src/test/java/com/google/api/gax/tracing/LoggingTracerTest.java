@@ -220,9 +220,7 @@ class LoggingTracerTest {
     assertEquals(
         "INVALID_ARGUMENT",
         attributesMap.get(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE));
-    assertEquals(
-        400L,
-        attributesMap.get(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE));
+    assertEquals(400L, attributesMap.get(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE));
   }
 
   private Map<String, ?> getAttributesMap() {

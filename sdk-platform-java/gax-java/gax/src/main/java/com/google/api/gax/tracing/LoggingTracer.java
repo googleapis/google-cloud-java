@@ -77,7 +77,8 @@ class LoggingTracer extends BaseApiTracer {
     }
 
     Map<String, Object> logContext = new HashMap<>(apiTracerContext.getAttemptAttributes());
-    logContext.putAll(ObservabilityUtils.getResponseAttributes(error, apiTracerContext.transport()));
+    logContext.putAll(
+        ObservabilityUtils.getResponseAttributes(error, apiTracerContext.transport()));
 
     if (error != null && error.getMessage() != null) {
       logContext.put("exception.message", error.getMessage());
