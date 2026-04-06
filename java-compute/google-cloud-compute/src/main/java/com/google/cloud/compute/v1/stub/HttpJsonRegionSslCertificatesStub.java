@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteRegionSslCertificateRequest;
 import com.google.cloud.compute.v1.GetRegionSslCertificateRequest;
 import com.google.cloud.compute.v1.InsertRegionSslCertificateRequest;
@@ -272,6 +273,15 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/sslCertificates/{ssl_certificate}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/sslCertificates/{ssl_certificate}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+
   public static final HttpJsonRegionSslCertificatesStub create(
       RegionSslCertificatesStubSettings settings) throws IOException {
     return new HttpJsonRegionSslCertificatesStub(settings, ClientContext.create(settings));
@@ -325,6 +335,15 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
                   builder.add("ssl_certificate", String.valueOf(request.getSslCertificate()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put(
+                      "ssl_certificate", String.valueOf(request.getSslCertificate()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetRegionSslCertificateRequest, SslCertificate> getTransportSettings =
         HttpJsonCallSettings.<GetRegionSslCertificateRequest, SslCertificate>newBuilder()
@@ -338,6 +357,15 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
                   builder.add("ssl_certificate", String.valueOf(request.getSslCertificate()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put(
+                      "ssl_certificate", String.valueOf(request.getSslCertificate()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertRegionSslCertificateRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionSslCertificateRequest, Operation>newBuilder()
@@ -349,6 +377,13 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListRegionSslCertificatesRequest, SslCertificateList>
@@ -362,6 +397,13 @@ public class HttpJsonRegionSslCertificatesStub extends RegionSslCertificatesStub
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
 

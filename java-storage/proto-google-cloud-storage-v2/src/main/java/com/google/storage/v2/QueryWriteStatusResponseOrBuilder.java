@@ -98,5 +98,42 @@ public interface QueryWriteStatusResponseOrBuilder
    */
   com.google.storage.v2.ObjectOrBuilder getResourceOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * If persisted_size is set, contains checksums of persisted data.
+   * </pre>
+   *
+   * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 3;</code>
+   *
+   * @return Whether the persistedDataChecksums field is set.
+   */
+  boolean hasPersistedDataChecksums();
+
+  /**
+   *
+   *
+   * <pre>
+   * If persisted_size is set, contains checksums of persisted data.
+   * </pre>
+   *
+   * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 3;</code>
+   *
+   * @return The persistedDataChecksums.
+   */
+  com.google.storage.v2.ObjectChecksums getPersistedDataChecksums();
+
+  /**
+   *
+   *
+   * <pre>
+   * If persisted_size is set, contains checksums of persisted data.
+   * </pre>
+   *
+   * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 3;</code>
+   */
+  com.google.storage.v2.ObjectChecksumsOrBuilder getPersistedDataChecksumsOrBuilder();
+
   com.google.storage.v2.QueryWriteStatusResponse.WriteStatusCase getWriteStatusCase();
 }

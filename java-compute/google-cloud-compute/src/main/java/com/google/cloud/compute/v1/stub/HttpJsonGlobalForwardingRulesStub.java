@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteGlobalForwardingRuleRequest;
 import com.google.cloud.compute.v1.ForwardingRule;
 import com.google.cloud.compute.v1.ForwardingRuleList;
@@ -442,6 +443,21 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/forwardingRules/{forwarding_rule}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/forwardingRules/{forwarding_rule}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/forwardingRules/{forwarding_rule}");
+  private static final PathTemplate SET_LABELS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/forwardingRules/{resource}");
+  private static final PathTemplate SET_TARGET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/forwardingRules/{forwarding_rule}");
+
   public static final HttpJsonGlobalForwardingRulesStub create(
       GlobalForwardingRulesStubSettings settings) throws IOException {
     return new HttpJsonGlobalForwardingRulesStub(settings, ClientContext.create(settings));
@@ -494,6 +510,14 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "forwarding_rule", String.valueOf(request.getForwardingRule()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetGlobalForwardingRuleRequest, ForwardingRule> getTransportSettings =
         HttpJsonCallSettings.<GetGlobalForwardingRuleRequest, ForwardingRule>newBuilder()
@@ -506,6 +530,14 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "forwarding_rule", String.valueOf(request.getForwardingRule()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertGlobalForwardingRuleRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertGlobalForwardingRuleRequest, Operation>newBuilder()
@@ -516,6 +548,12 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListGlobalForwardingRulesRequest, ForwardingRuleList>
@@ -529,6 +567,12 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchGlobalForwardingRuleRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchGlobalForwardingRuleRequest, Operation>newBuilder()
@@ -540,6 +584,14 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                   builder.add("forwarding_rule", String.valueOf(request.getForwardingRule()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "forwarding_rule", String.valueOf(request.getForwardingRule()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetLabelsGlobalForwardingRuleRequest, Operation>
@@ -554,6 +606,13 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return SET_LABELS_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetTargetGlobalForwardingRuleRequest, Operation>
         setTargetTransportSettings =
@@ -566,6 +625,14 @@ public class HttpJsonGlobalForwardingRulesStub extends GlobalForwardingRulesStub
                       builder.add("forwarding_rule", String.valueOf(request.getForwardingRule()));
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "forwarding_rule", String.valueOf(request.getForwardingRule()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return SET_TARGET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
 

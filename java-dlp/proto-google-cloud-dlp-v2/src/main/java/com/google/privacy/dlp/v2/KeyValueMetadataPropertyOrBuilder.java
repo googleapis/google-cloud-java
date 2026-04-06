@@ -21,61 +21,60 @@
 package com.google.privacy.dlp.v2;
 
 @com.google.protobuf.Generated
-public interface InfoTypeSummaryOrBuilder
+public interface KeyValueMetadataPropertyOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.InfoTypeSummary)
+    // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.KeyValueMetadataProperty)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * The infoType.
+   * The key of the property.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   * <code>string key = 1;</code>
    *
-   * @return Whether the infoType field is set.
+   * @return The key.
    */
-  boolean hasInfoType();
+  java.lang.String getKey();
 
   /**
    *
    *
    * <pre>
-   * The infoType.
+   * The key of the property.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   * <code>string key = 1;</code>
    *
-   * @return The infoType.
+   * @return The bytes for key.
    */
-  com.google.privacy.dlp.v2.InfoType getInfoType();
+  com.google.protobuf.ByteString getKeyBytes();
 
   /**
    *
    *
    * <pre>
-   * The infoType.
+   * The value of the property.
    * </pre>
    *
-   * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
+   * <code>string value = 2;</code>
+   *
+   * @return The value.
    */
-  com.google.privacy.dlp.v2.InfoTypeOrBuilder getInfoTypeOrBuilder();
+  java.lang.String getValue();
 
   /**
    *
    *
    * <pre>
-   * Not populated for predicted infotypes.
+   * The value of the property.
    * </pre>
    *
-   * <code>int32 estimated_prevalence = 2 [deprecated = true];</code>
+   * <code>string value = 2;</code>
    *
-   * @deprecated google.privacy.dlp.v2.InfoTypeSummary.estimated_prevalence is deprecated. See
-   *     google/privacy/dlp/v2/dlp.proto;l=8057
-   * @return The estimatedPrevalence.
+   * @return The bytes for value.
    */
-  @java.lang.Deprecated
-  int getEstimatedPrevalence();
+  com.google.protobuf.ByteString getValueBytes();
 }

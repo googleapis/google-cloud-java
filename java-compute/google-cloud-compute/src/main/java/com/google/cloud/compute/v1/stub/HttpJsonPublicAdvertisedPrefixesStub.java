@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AnnouncePublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.DeletePublicAdvertisedPrefixeRequest;
 import com.google.cloud.compute.v1.GetPublicAdvertisedPrefixeRequest;
@@ -450,6 +451,26 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate ANNOUNCE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/global/publicAdvertisedPrefixes/{public_advertised_prefix}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/global/publicAdvertisedPrefixes/{public_advertised_prefix}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/global/publicAdvertisedPrefixes/{public_advertised_prefix}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/global/publicAdvertisedPrefixes/{public_advertised_prefix}");
+  private static final PathTemplate WITHDRAW_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/global/publicAdvertisedPrefixes/{public_advertised_prefix}");
+
   public static final HttpJsonPublicAdvertisedPrefixesStub create(
       PublicAdvertisedPrefixesStubSettings settings) throws IOException {
     return new HttpJsonPublicAdvertisedPrefixesStub(settings, ClientContext.create(settings));
@@ -506,6 +527,15 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                           String.valueOf(request.getPublicAdvertisedPrefix()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "public_advertised_prefix",
+                          String.valueOf(request.getPublicAdvertisedPrefix()));
+                      return ANNOUNCE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeletePublicAdvertisedPrefixeRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeletePublicAdvertisedPrefixeRequest, Operation>newBuilder()
@@ -519,6 +549,15 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                       "public_advertised_prefix",
                       String.valueOf(request.getPublicAdvertisedPrefix()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "public_advertised_prefix",
+                      String.valueOf(request.getPublicAdvertisedPrefix()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetPublicAdvertisedPrefixeRequest, PublicAdvertisedPrefix>
@@ -536,6 +575,15 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                           String.valueOf(request.getPublicAdvertisedPrefix()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "public_advertised_prefix",
+                          String.valueOf(request.getPublicAdvertisedPrefix()));
+                      return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertPublicAdvertisedPrefixeRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertPublicAdvertisedPrefixeRequest, Operation>newBuilder()
@@ -546,6 +594,12 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListPublicAdvertisedPrefixesRequest, PublicAdvertisedPrefixList>
@@ -559,6 +613,12 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<PatchPublicAdvertisedPrefixeRequest, Operation> patchTransportSettings =
@@ -574,6 +634,15 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                       String.valueOf(request.getPublicAdvertisedPrefix()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "public_advertised_prefix",
+                      String.valueOf(request.getPublicAdvertisedPrefix()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<WithdrawPublicAdvertisedPrefixeRequest, Operation>
         withdrawTransportSettings =
@@ -588,6 +657,15 @@ public class HttpJsonPublicAdvertisedPrefixesStub extends PublicAdvertisedPrefix
                           "public_advertised_prefix",
                           String.valueOf(request.getPublicAdvertisedPrefix()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "public_advertised_prefix",
+                          String.valueOf(request.getPublicAdvertisedPrefix()));
+                      return WITHDRAW_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
 

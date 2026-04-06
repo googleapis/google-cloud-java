@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.ListRegionZonesRequest;
 import com.google.cloud.compute.v1.ZoneList;
 import com.google.protobuf.TypeRegistry;
@@ -106,6 +107,9 @@ public class HttpJsonRegionZonesStub extends RegionZonesStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+
   public static final HttpJsonRegionZonesStub create(RegionZonesStubSettings settings)
       throws IOException {
     return new HttpJsonRegionZonesStub(settings, ClientContext.create(settings));
@@ -154,6 +158,13 @@ public class HttpJsonRegionZonesStub extends RegionZonesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListSslCertificatesRequest;
 import com.google.cloud.compute.v1.DeleteSslCertificateRequest;
 import com.google.cloud.compute.v1.GetSslCertificateRequest;
@@ -336,6 +337,17 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/sslCertificates/{ssl_certificate}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/sslCertificates/{ssl_certificate}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+
   public static final HttpJsonSslCertificatesStub create(SslCertificatesStubSettings settings)
       throws IOException {
     return new HttpJsonSslCertificatesStub(settings, ClientContext.create(settings));
@@ -389,6 +401,13 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteSslCertificateRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteSslCertificateRequest, Operation>newBuilder()
@@ -400,6 +419,14 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("ssl_certificate", String.valueOf(request.getSslCertificate()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "ssl_certificate", String.valueOf(request.getSslCertificate()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetSslCertificateRequest, SslCertificate> getTransportSettings =
@@ -413,6 +440,14 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                   builder.add("ssl_certificate", String.valueOf(request.getSslCertificate()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "ssl_certificate", String.valueOf(request.getSslCertificate()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertSslCertificateRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertSslCertificateRequest, Operation>newBuilder()
@@ -424,6 +459,12 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListSslCertificatesRequest, SslCertificateList> listTransportSettings =
         HttpJsonCallSettings.<ListSslCertificatesRequest, SslCertificateList>newBuilder()
@@ -434,6 +475,12 @@ public class HttpJsonSslCertificatesStub extends SslCertificatesStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

@@ -61,6 +61,16 @@ public enum MetadataType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CONTENT_METADATA = 3;</code>
    */
   CONTENT_METADATA(3),
+  /**
+   *
+   *
+   * <pre>
+   * Metadata provided by the client.
+   * </pre>
+   *
+   * <code>CLIENT_PROVIDED_METADATA = 4;</code>
+   */
+  CLIENT_PROVIDED_METADATA(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -107,6 +117,17 @@ public enum MetadataType implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int CONTENT_METADATA_VALUE = 3;
 
+  /**
+   *
+   *
+   * <pre>
+   * Metadata provided by the client.
+   * </pre>
+   *
+   * <code>CLIENT_PROVIDED_METADATA = 4;</code>
+   */
+  public static final int CLIENT_PROVIDED_METADATA_VALUE = 4;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -137,6 +158,8 @@ public enum MetadataType implements com.google.protobuf.ProtocolMessageEnum {
         return STORAGE_METADATA;
       case 3:
         return CONTENT_METADATA;
+      case 4:
+        return CLIENT_PROVIDED_METADATA;
       default:
         return null;
     }
