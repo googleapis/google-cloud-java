@@ -986,7 +986,6 @@ gapic-generator-java:2.68.0:2.68.1-SNAPSHOT
 api-common:2.59.0:2.59.1-SNAPSHOT
 gax:2.76.0:2.76.1-SNAPSHOT
 gax-grpc:2.76.0:2.76.1-SNAPSHOT
-gax-httpjson:0.161.0:0.161.1-SNAPSHOT
 proto-google-common-protos:2.67.0:2.67.1-SNAPSHOT
 grpc-google-common-protos:2.67.0:2.67.1-SNAPSHOT
 proto-google-iam-v1:1.62.0:1.62.1-SNAPSHOT
