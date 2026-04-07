@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api</groupId>
   <artifactId>gapic-generator-java-pom-parent</artifactId>
-  <version>2.68.1-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+  <version>2.69.0</version><!-- {x-version-update:gapic-generator-java:current} -->
   <packaging>pom</packaging>
   <name>GAPIC Generator Java POM Parent</name>
   <url>https://github.com/googleapis/sdk-platform-java</url>
