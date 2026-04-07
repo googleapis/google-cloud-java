@@ -28,6 +28,7 @@ import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.StubSettings;
@@ -258,6 +259,14 @@ public class BigtableStubSettings extends StubSettings<BigtableStubSettings> {
     readChangeStreamSettings = settingsBuilder.readChangeStreamSettings().build();
     prepareQuerySettings = settingsBuilder.prepareQuerySettings().build();
     executeQuerySettings = settingsBuilder.executeQuerySettings().build();
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder()
+        .setArtifactName("com.google.cloud:google-cloud-bigtable")
+        .setRepository("googleapis/java-bigtable")
+        .build();
   }
 
   /** Builder for BigtableStubSettings. */

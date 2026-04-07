@@ -2099,8 +2099,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. How long the automated backups should be retained. The only
-     * supported value at this time is 3 days.
+     * Required. How long the automated backups should be retained. Values must
+     * be at least 3 days and at most 90 days.
      * </pre>
      *
      * <code>
@@ -2115,8 +2115,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. How long the automated backups should be retained. The only
-     * supported value at this time is 3 days.
+     * Required. How long the automated backups should be retained. Values must
+     * be at least 3 days and at most 90 days.
      * </pre>
      *
      * <code>
@@ -2131,8 +2131,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. How long the automated backups should be retained. The only
-     * supported value at this time is 3 days.
+     * Required. How long the automated backups should be retained. Values must
+     * be at least 3 days and at most 90 days.
      * </pre>
      *
      * <code>
@@ -2145,12 +2145,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. How frequently automated backups should occur. The only
-     * supported value at this time is 24 hours.
+     * How frequently automated backups should occur. The only supported value
+     * at this time is 24 hours. An undefined frequency is treated as 24 hours.
      * </pre>
      *
-     * <code>.google.protobuf.Duration frequency = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Duration frequency = 2;</code>
      *
      * @return Whether the frequency field is set.
      */
@@ -2160,12 +2159,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. How frequently automated backups should occur. The only
-     * supported value at this time is 24 hours.
+     * How frequently automated backups should occur. The only supported value
+     * at this time is 24 hours. An undefined frequency is treated as 24 hours.
      * </pre>
      *
-     * <code>.google.protobuf.Duration frequency = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Duration frequency = 2;</code>
      *
      * @return The frequency.
      */
@@ -2175,14 +2173,91 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. How frequently automated backups should occur. The only
-     * supported value at this time is 24 hours.
+     * How frequently automated backups should occur. The only supported value
+     * at this time is 24 hours. An undefined frequency is treated as 24 hours.
      * </pre>
      *
-     * <code>.google.protobuf.Duration frequency = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Duration frequency = 2;</code>
      */
     com.google.protobuf.DurationOrBuilder getFrequencyOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Cloud Bigtable zones where automated backups are
+     * allowed to be created. If empty, automated backups will be created in all
+     * zones of the instance. Locations are in the format
+     * `projects/{project}/locations/{zone}`.
+     * This field can only set for tables in Enterprise Plus instances.
+     * </pre>
+     *
+     * <code>
+     * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the locations.
+     */
+    java.util.List<java.lang.String> getLocationsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Cloud Bigtable zones where automated backups are
+     * allowed to be created. If empty, automated backups will be created in all
+     * zones of the instance. Locations are in the format
+     * `projects/{project}/locations/{zone}`.
+     * This field can only set for tables in Enterprise Plus instances.
+     * </pre>
+     *
+     * <code>
+     * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of locations.
+     */
+    int getLocationsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Cloud Bigtable zones where automated backups are
+     * allowed to be created. If empty, automated backups will be created in all
+     * zones of the instance. Locations are in the format
+     * `projects/{project}/locations/{zone}`.
+     * This field can only set for tables in Enterprise Plus instances.
+     * </pre>
+     *
+     * <code>
+     * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The locations at the given index.
+     */
+    java.lang.String getLocations(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Cloud Bigtable zones where automated backups are
+     * allowed to be created. If empty, automated backups will be created in all
+     * zones of the instance. Locations are in the format
+     * `projects/{project}/locations/{zone}`.
+     * This field can only set for tables in Enterprise Plus instances.
+     * </pre>
+     *
+     * <code>
+     * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the locations at the given index.
+     */
+    com.google.protobuf.ByteString getLocationsBytes(int index);
   }
 
   /**
@@ -2215,7 +2290,9 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       super(builder);
     }
 
-    private AutomatedBackupPolicy() {}
+    private AutomatedBackupPolicy() {
+      locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.bigtable.admin.v2.TableProto
@@ -2240,8 +2317,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. How long the automated backups should be retained. The only
-     * supported value at this time is 3 days.
+     * Required. How long the automated backups should be retained. Values must
+     * be at least 3 days and at most 90 days.
      * </pre>
      *
      * <code>
@@ -2259,8 +2336,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. How long the automated backups should be retained. The only
-     * supported value at this time is 3 days.
+     * Required. How long the automated backups should be retained. Values must
+     * be at least 3 days and at most 90 days.
      * </pre>
      *
      * <code>
@@ -2280,8 +2357,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. How long the automated backups should be retained. The only
-     * supported value at this time is 3 days.
+     * Required. How long the automated backups should be retained. Values must
+     * be at least 3 days and at most 90 days.
      * </pre>
      *
      * <code>
@@ -2302,12 +2379,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. How frequently automated backups should occur. The only
-     * supported value at this time is 24 hours.
+     * How frequently automated backups should occur. The only supported value
+     * at this time is 24 hours. An undefined frequency is treated as 24 hours.
      * </pre>
      *
-     * <code>.google.protobuf.Duration frequency = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Duration frequency = 2;</code>
      *
      * @return Whether the frequency field is set.
      */
@@ -2320,12 +2396,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. How frequently automated backups should occur. The only
-     * supported value at this time is 24 hours.
+     * How frequently automated backups should occur. The only supported value
+     * at this time is 24 hours. An undefined frequency is treated as 24 hours.
      * </pre>
      *
-     * <code>.google.protobuf.Duration frequency = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Duration frequency = 2;</code>
      *
      * @return The frequency.
      */
@@ -2338,16 +2413,107 @@ public final class Table extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. How frequently automated backups should occur. The only
-     * supported value at this time is 24 hours.
+     * How frequently automated backups should occur. The only supported value
+     * at this time is 24 hours. An undefined frequency is treated as 24 hours.
      * </pre>
      *
-     * <code>.google.protobuf.Duration frequency = 2 [(.google.api.field_behavior) = REQUIRED];
-     * </code>
+     * <code>.google.protobuf.Duration frequency = 2;</code>
      */
     @java.lang.Override
     public com.google.protobuf.DurationOrBuilder getFrequencyOrBuilder() {
       return frequency_ == null ? com.google.protobuf.Duration.getDefaultInstance() : frequency_;
+    }
+
+    public static final int LOCATIONS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList locations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Cloud Bigtable zones where automated backups are
+     * allowed to be created. If empty, automated backups will be created in all
+     * zones of the instance. Locations are in the format
+     * `projects/{project}/locations/{zone}`.
+     * This field can only set for tables in Enterprise Plus instances.
+     * </pre>
+     *
+     * <code>
+     * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the locations.
+     */
+    public com.google.protobuf.ProtocolStringList getLocationsList() {
+      return locations_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Cloud Bigtable zones where automated backups are
+     * allowed to be created. If empty, automated backups will be created in all
+     * zones of the instance. Locations are in the format
+     * `projects/{project}/locations/{zone}`.
+     * This field can only set for tables in Enterprise Plus instances.
+     * </pre>
+     *
+     * <code>
+     * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of locations.
+     */
+    public int getLocationsCount() {
+      return locations_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Cloud Bigtable zones where automated backups are
+     * allowed to be created. If empty, automated backups will be created in all
+     * zones of the instance. Locations are in the format
+     * `projects/{project}/locations/{zone}`.
+     * This field can only set for tables in Enterprise Plus instances.
+     * </pre>
+     *
+     * <code>
+     * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The locations at the given index.
+     */
+    public java.lang.String getLocations(int index) {
+      return locations_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of Cloud Bigtable zones where automated backups are
+     * allowed to be created. If empty, automated backups will be created in all
+     * zones of the instance. Locations are in the format
+     * `projects/{project}/locations/{zone}`.
+     * This field can only set for tables in Enterprise Plus instances.
+     * </pre>
+     *
+     * <code>
+     * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the locations at the given index.
+     */
+    public com.google.protobuf.ByteString getLocationsBytes(int index) {
+      return locations_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2370,6 +2536,9 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(2, getFrequency());
       }
+      for (int i = 0; i < locations_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, locations_.getRaw(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2384,6 +2553,14 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getFrequency());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < locations_.size(); i++) {
+          dataSize += computeStringSizeNoTag(locations_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getLocationsList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2409,6 +2586,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       if (hasFrequency()) {
         if (!getFrequency().equals(other.getFrequency())) return false;
       }
+      if (!getLocationsList().equals(other.getLocationsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2427,6 +2605,10 @@ public final class Table extends com.google.protobuf.GeneratedMessage
       if (hasFrequency()) {
         hash = (37 * hash) + FREQUENCY_FIELD_NUMBER;
         hash = (53 * hash) + getFrequency().hashCode();
+      }
+      if (getLocationsCount() > 0) {
+        hash = (37 * hash) + LOCATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getLocationsList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -2589,6 +2771,7 @@ public final class Table extends com.google.protobuf.GeneratedMessage
           frequencyBuilder_.dispose();
           frequencyBuilder_ = null;
         }
+        locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -2635,6 +2818,10 @@ public final class Table extends com.google.protobuf.GeneratedMessage
           result.frequency_ = frequencyBuilder_ == null ? frequency_ : frequencyBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          locations_.makeImmutable();
+          result.locations_ = locations_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -2656,6 +2843,16 @@ public final class Table extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasFrequency()) {
           mergeFrequency(other.getFrequency());
+        }
+        if (!other.locations_.isEmpty()) {
+          if (locations_.isEmpty()) {
+            locations_ = other.locations_;
+            bitField0_ |= 0x00000004;
+          } else {
+            ensureLocationsIsMutable();
+            locations_.addAll(other.locations_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2697,6 +2894,13 @@ public final class Table extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureLocationsIsMutable();
+                  locations_.add(s);
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2727,8 +2931,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How long the automated backups should be retained. The only
-       * supported value at this time is 3 days.
+       * Required. How long the automated backups should be retained. Values must
+       * be at least 3 days and at most 90 days.
        * </pre>
        *
        * <code>
@@ -2745,8 +2949,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How long the automated backups should be retained. The only
-       * supported value at this time is 3 days.
+       * Required. How long the automated backups should be retained. Values must
+       * be at least 3 days and at most 90 days.
        * </pre>
        *
        * <code>
@@ -2769,8 +2973,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How long the automated backups should be retained. The only
-       * supported value at this time is 3 days.
+       * Required. How long the automated backups should be retained. Values must
+       * be at least 3 days and at most 90 days.
        * </pre>
        *
        * <code>
@@ -2795,8 +2999,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How long the automated backups should be retained. The only
-       * supported value at this time is 3 days.
+       * Required. How long the automated backups should be retained. Values must
+       * be at least 3 days and at most 90 days.
        * </pre>
        *
        * <code>
@@ -2818,8 +3022,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How long the automated backups should be retained. The only
-       * supported value at this time is 3 days.
+       * Required. How long the automated backups should be retained. Values must
+       * be at least 3 days and at most 90 days.
        * </pre>
        *
        * <code>
@@ -2849,8 +3053,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How long the automated backups should be retained. The only
-       * supported value at this time is 3 days.
+       * Required. How long the automated backups should be retained. Values must
+       * be at least 3 days and at most 90 days.
        * </pre>
        *
        * <code>
@@ -2872,8 +3076,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How long the automated backups should be retained. The only
-       * supported value at this time is 3 days.
+       * Required. How long the automated backups should be retained. Values must
+       * be at least 3 days and at most 90 days.
        * </pre>
        *
        * <code>
@@ -2890,8 +3094,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How long the automated backups should be retained. The only
-       * supported value at this time is 3 days.
+       * Required. How long the automated backups should be retained. Values must
+       * be at least 3 days and at most 90 days.
        * </pre>
        *
        * <code>
@@ -2912,8 +3116,8 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How long the automated backups should be retained. The only
-       * supported value at this time is 3 days.
+       * Required. How long the automated backups should be retained. Values must
+       * be at least 3 days and at most 90 days.
        * </pre>
        *
        * <code>
@@ -2948,12 +3152,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How frequently automated backups should occur. The only
-       * supported value at this time is 24 hours.
+       * How frequently automated backups should occur. The only supported value
+       * at this time is 24 hours. An undefined frequency is treated as 24 hours.
        * </pre>
        *
-       * <code>.google.protobuf.Duration frequency = 2 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
+       * <code>.google.protobuf.Duration frequency = 2;</code>
        *
        * @return Whether the frequency field is set.
        */
@@ -2965,12 +3168,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How frequently automated backups should occur. The only
-       * supported value at this time is 24 hours.
+       * How frequently automated backups should occur. The only supported value
+       * at this time is 24 hours. An undefined frequency is treated as 24 hours.
        * </pre>
        *
-       * <code>.google.protobuf.Duration frequency = 2 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
+       * <code>.google.protobuf.Duration frequency = 2;</code>
        *
        * @return The frequency.
        */
@@ -2988,12 +3190,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How frequently automated backups should occur. The only
-       * supported value at this time is 24 hours.
+       * How frequently automated backups should occur. The only supported value
+       * at this time is 24 hours. An undefined frequency is treated as 24 hours.
        * </pre>
        *
-       * <code>.google.protobuf.Duration frequency = 2 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
+       * <code>.google.protobuf.Duration frequency = 2;</code>
        */
       public Builder setFrequency(com.google.protobuf.Duration value) {
         if (frequencyBuilder_ == null) {
@@ -3013,12 +3214,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How frequently automated backups should occur. The only
-       * supported value at this time is 24 hours.
+       * How frequently automated backups should occur. The only supported value
+       * at this time is 24 hours. An undefined frequency is treated as 24 hours.
        * </pre>
        *
-       * <code>.google.protobuf.Duration frequency = 2 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
+       * <code>.google.protobuf.Duration frequency = 2;</code>
        */
       public Builder setFrequency(com.google.protobuf.Duration.Builder builderForValue) {
         if (frequencyBuilder_ == null) {
@@ -3035,12 +3235,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How frequently automated backups should occur. The only
-       * supported value at this time is 24 hours.
+       * How frequently automated backups should occur. The only supported value
+       * at this time is 24 hours. An undefined frequency is treated as 24 hours.
        * </pre>
        *
-       * <code>.google.protobuf.Duration frequency = 2 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
+       * <code>.google.protobuf.Duration frequency = 2;</code>
        */
       public Builder mergeFrequency(com.google.protobuf.Duration value) {
         if (frequencyBuilder_ == null) {
@@ -3065,12 +3264,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How frequently automated backups should occur. The only
-       * supported value at this time is 24 hours.
+       * How frequently automated backups should occur. The only supported value
+       * at this time is 24 hours. An undefined frequency is treated as 24 hours.
        * </pre>
        *
-       * <code>.google.protobuf.Duration frequency = 2 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
+       * <code>.google.protobuf.Duration frequency = 2;</code>
        */
       public Builder clearFrequency() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -3087,12 +3285,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How frequently automated backups should occur. The only
-       * supported value at this time is 24 hours.
+       * How frequently automated backups should occur. The only supported value
+       * at this time is 24 hours. An undefined frequency is treated as 24 hours.
        * </pre>
        *
-       * <code>.google.protobuf.Duration frequency = 2 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
+       * <code>.google.protobuf.Duration frequency = 2;</code>
        */
       public com.google.protobuf.Duration.Builder getFrequencyBuilder() {
         bitField0_ |= 0x00000002;
@@ -3104,12 +3301,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How frequently automated backups should occur. The only
-       * supported value at this time is 24 hours.
+       * How frequently automated backups should occur. The only supported value
+       * at this time is 24 hours. An undefined frequency is treated as 24 hours.
        * </pre>
        *
-       * <code>.google.protobuf.Duration frequency = 2 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
+       * <code>.google.protobuf.Duration frequency = 2;</code>
        */
       public com.google.protobuf.DurationOrBuilder getFrequencyOrBuilder() {
         if (frequencyBuilder_ != null) {
@@ -3125,12 +3321,11 @@ public final class Table extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. How frequently automated backups should occur. The only
-       * supported value at this time is 24 hours.
+       * How frequently automated backups should occur. The only supported value
+       * at this time is 24 hours. An undefined frequency is treated as 24 hours.
        * </pre>
        *
-       * <code>.google.protobuf.Duration frequency = 2 [(.google.api.field_behavior) = REQUIRED];
-       * </code>
+       * <code>.google.protobuf.Duration frequency = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
               com.google.protobuf.Duration,
@@ -3147,6 +3342,243 @@ public final class Table extends com.google.protobuf.GeneratedMessage
           frequency_ = null;
         }
         return frequencyBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringArrayList locations_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureLocationsIsMutable() {
+        if (!locations_.isModifiable()) {
+          locations_ = new com.google.protobuf.LazyStringArrayList(locations_);
+        }
+        bitField0_ |= 0x00000004;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of Cloud Bigtable zones where automated backups are
+       * allowed to be created. If empty, automated backups will be created in all
+       * zones of the instance. Locations are in the format
+       * `projects/{project}/locations/{zone}`.
+       * This field can only set for tables in Enterprise Plus instances.
+       * </pre>
+       *
+       * <code>
+       * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return A list containing the locations.
+       */
+      public com.google.protobuf.ProtocolStringList getLocationsList() {
+        locations_.makeImmutable();
+        return locations_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of Cloud Bigtable zones where automated backups are
+       * allowed to be created. If empty, automated backups will be created in all
+       * zones of the instance. Locations are in the format
+       * `projects/{project}/locations/{zone}`.
+       * This field can only set for tables in Enterprise Plus instances.
+       * </pre>
+       *
+       * <code>
+       * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The count of locations.
+       */
+      public int getLocationsCount() {
+        return locations_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of Cloud Bigtable zones where automated backups are
+       * allowed to be created. If empty, automated backups will be created in all
+       * zones of the instance. Locations are in the format
+       * `projects/{project}/locations/{zone}`.
+       * This field can only set for tables in Enterprise Plus instances.
+       * </pre>
+       *
+       * <code>
+       * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The locations at the given index.
+       */
+      public java.lang.String getLocations(int index) {
+        return locations_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of Cloud Bigtable zones where automated backups are
+       * allowed to be created. If empty, automated backups will be created in all
+       * zones of the instance. Locations are in the format
+       * `projects/{project}/locations/{zone}`.
+       * This field can only set for tables in Enterprise Plus instances.
+       * </pre>
+       *
+       * <code>
+       * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the locations at the given index.
+       */
+      public com.google.protobuf.ByteString getLocationsBytes(int index) {
+        return locations_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of Cloud Bigtable zones where automated backups are
+       * allowed to be created. If empty, automated backups will be created in all
+       * zones of the instance. Locations are in the format
+       * `projects/{project}/locations/{zone}`.
+       * This field can only set for tables in Enterprise Plus instances.
+       * </pre>
+       *
+       * <code>
+       * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The locations to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLocations(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLocationsIsMutable();
+        locations_.set(index, value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of Cloud Bigtable zones where automated backups are
+       * allowed to be created. If empty, automated backups will be created in all
+       * zones of the instance. Locations are in the format
+       * `projects/{project}/locations/{zone}`.
+       * This field can only set for tables in Enterprise Plus instances.
+       * </pre>
+       *
+       * <code>
+       * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The locations to add.
+       * @return This builder for chaining.
+       */
+      public Builder addLocations(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLocationsIsMutable();
+        locations_.add(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of Cloud Bigtable zones where automated backups are
+       * allowed to be created. If empty, automated backups will be created in all
+       * zones of the instance. Locations are in the format
+       * `projects/{project}/locations/{zone}`.
+       * This field can only set for tables in Enterprise Plus instances.
+       * </pre>
+       *
+       * <code>
+       * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param values The locations to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllLocations(java.lang.Iterable<java.lang.String> values) {
+        ensureLocationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, locations_);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of Cloud Bigtable zones where automated backups are
+       * allowed to be created. If empty, automated backups will be created in all
+       * zones of the instance. Locations are in the format
+       * `projects/{project}/locations/{zone}`.
+       * This field can only set for tables in Enterprise Plus instances.
+       * </pre>
+       *
+       * <code>
+       * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearLocations() {
+        locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of Cloud Bigtable zones where automated backups are
+       * allowed to be created. If empty, automated backups will be created in all
+       * zones of the instance. Locations are in the format
+       * `projects/{project}/locations/{zone}`.
+       * This field can only set for tables in Enterprise Plus instances.
+       * </pre>
+       *
+       * <code>
+       * repeated string locations = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes of the locations to add.
+       * @return This builder for chaining.
+       */
+      public Builder addLocationsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureLocationsIsMutable();
+        locations_.add(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.Table.AutomatedBackupPolicy)
