@@ -35,8 +35,8 @@ public class ITResultSetMetadataTest {
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
   static Random random = new Random();
   static int randomNumber = random.nextInt(999);
-  private static final String TABLE_NAME = "EXT_JDBC_RSMETADATA_TEST_TABLE" + randomNumber;
-  private static final String DATASET = "EXT_JDBC_RSMETADATA_TEST_DATASET";
+  private static final String TABLE_NAME = "JDBC_RSMETADATA_TEST_TABLE" + randomNumber;
+  private static final String DATASET = "JDBC_RSMETADATA_TEST_DATASET";
   private static ResultSetMetaData metaData;
 
   @BeforeClass

@@ -42,11 +42,11 @@ import org.junit.Test;
 
 public class ITConnectionTest {
 
-  private static final String DATASET = "EXT_JDBC_CONNECTION_TEST_DATASET";
+  private static final String DATASET = "JDBC_CONNECTION_TEST_DATASET";
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
   static Random random = new Random();
   static int randomNumber = random.nextInt(999);
-  private static final String TABLE_NAME = "EXT_JDBC_CONNECTION_TEST_TABLE" + randomNumber;
+  private static final String TABLE_NAME = "JDBC_CONNECTION_TEST_TABLE" + randomNumber;
 
   private static String connectionUrl =
       "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId=%s;OAuthType=3;Timeout=3600;";

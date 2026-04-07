@@ -352,5 +352,8 @@ public class ITConnectionPoolingTest extends ITBase {
     assertEquals(1, listener.getConnectionPoolCurrentCapacity());
     assertEquals(connectionPoolSize, listener.getConnectionPoolSize());
     pooledConnection.close();
+    jsonResultSet.close();
+    statement.close();
+    connection.close();
   }
 }

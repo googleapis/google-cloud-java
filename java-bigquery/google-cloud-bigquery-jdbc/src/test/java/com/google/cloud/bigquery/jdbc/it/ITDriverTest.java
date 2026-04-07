@@ -65,8 +65,8 @@ public class ITDriverTest {
             + OAUTH_TYPE
             + ";LOCATION=US;";
 
-    String dataset = "EXT_JDBC_DRIVER_TEST_DATASET" + random.nextInt(999);
-    String tableName = "EXT_JDBC_DRIVER_TEST_TABLE" + randomNumber;
+    String dataset = "JDBC_DRIVER_TEST_DATASET" + random.nextInt(999);
+    String tableName = "JDBC_DRIVER_TEST_TABLE" + randomNumber;
 
     Driver driver = DriverManager.getDriver(CONNECTION_URL);
 
@@ -92,8 +92,8 @@ public class ITDriverTest {
   @Test
   public void testDriverLocation() throws SQLException, InterruptedException {
 
-    String datasetUS = "EXT_JDBC_DRIVER_US_TEST_DATASET" + random.nextInt(999);
-    String tableNameUS = "EXT_JDBC_DRIVER_US_TEST_TABLE" + randomNumber;
+    String datasetUS = "JDBC_DRIVER_US_TEST_DATASET" + random.nextInt(999);
+    String tableNameUS = "JDBC_DRIVER_US_TEST_TABLE" + randomNumber;
     String OAUTH_TYPE = "3";
     String CONNECTION_URL =
         "jdbc:bigquery://https://bigquery.googleapis.com/bigquery/v2/:443;ProjectId=%s;OAuthType=%s;LOCATION=%s;";
@@ -116,5 +116,6 @@ public class ITDriverTest {
     Dataset retrievedDataset = bigQuery.getDataset(DatasetId.of(DEFAULT_CATALOG, datasetUS));
     assertEquals("us-east5", retrievedDataset.getLocation());
     ITBase.cleanUp(datasetUS);
+    connectionUS.close();
   }
 }

@@ -170,9 +170,8 @@ public class ITBase extends BigQueryJdbcBaseTest {
   public static List<String> getInfoBySQL(Connection connection, String sqlCmd)
       throws SQLException {
     List<String> result = new ArrayList<>();
-    try {
-      Statement st = connection.createStatement();
-      ResultSet rs = st.executeQuery(sqlCmd);
+    try (Statement st = connection.createStatement();
+        ResultSet rs = st.executeQuery(sqlCmd)) {
       while (rs.next()) {
         result.add(rs.getString(1));
       }
