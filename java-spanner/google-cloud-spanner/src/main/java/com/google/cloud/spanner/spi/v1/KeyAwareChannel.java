@@ -44,6 +44,7 @@ import io.grpc.MethodDescriptor;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
 import java.io.IOException;
+import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
 import java.util.HashSet;
 import java.util.Map;
@@ -51,6 +52,8 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Predicate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
 /**
@@ -63,6 +66,9 @@ import javax.annotation.Nullable;
  */
 @InternalApi
 final class KeyAwareChannel extends ManagedChannel {
+
+  private static final Logger logger = Logger.getLogger(KeyAwareChannel.class.getName());
+
   private static final long MAX_TRACKED_READ_ONLY_TRANSACTIONS = 100_000L;
   private static final long MAX_TRACKED_EXCLUDED_LOGICAL_REQUESTS = 100_000L;
   private static final long EXCLUDED_LOGICAL_REQUEST_TTL_MINUTES = 10L;
@@ -77,10 +83,11 @@ final class KeyAwareChannel extends ManagedChannel {
 
   private final ManagedChannel defaultChannel;
   private final ChannelEndpointCache endpointCache;
+  @Nullable private final EndpointLifecycleManager lifecycleManager;
   private final String authority;
   private final String defaultEndpointAddress;
-  private final Map<String, SoftReference<ChannelFinder>> channelFinders =
-      new ConcurrentHashMap<>();
+  private final ReferenceQueue<ChannelFinder> channelFinderReferenceQueue = new ReferenceQueue<>();
+  private final Map<String, ChannelFinderReference> channelFinders = new ConcurrentHashMap<>();
   private final Map<ByteString, String> transactionAffinities = new ConcurrentHashMap<>();
   // Maps read-only transaction IDs to their preferLeader value.
   // Strong reads → true (prefer leader), Stale reads → false (any replica).
@@ -108,6 +115,11 @@ final class KeyAwareChannel extends ManagedChannel {
     this.defaultChannel = endpointCache.defaultChannel().getChannel();
     this.defaultEndpointAddress = endpointCache.defaultChannel().getAddress();
     this.authority = this.defaultChannel.authority();
+    // Only create lifecycle manager for production (non-factory) path.
+    // Factory path is used by tests with custom caches where background probing
+    // would interfere with test assertions.
+    this.lifecycleManager =
+        (endpointCacheFactory == null) ? new EndpointLifecycleManager(endpointCache) : null;
   }
 
   static KeyAwareChannel create(
@@ -115,6 +127,18 @@ final class KeyAwareChannel extends ManagedChannel {
       @Nullable ChannelEndpointCacheFactory endpointCacheFactory)
       throws IOException {
     return new KeyAwareChannel(channelProvider, endpointCacheFactory);
+  }
+
+  private static final class ChannelFinderReference extends SoftReference<ChannelFinder> {
+    final String databaseId;
+
+    ChannelFinderReference(
+        String databaseId,
+        ChannelFinder referent,
+        ReferenceQueue<? super ChannelFinder> referenceQueue) {
+      super(referent, referenceQueue);
+      this.databaseId = databaseId;
+    }
   }
 
   private String extractDatabaseIdFromSession(String session) {
@@ -128,30 +152,64 @@ final class KeyAwareChannel extends ManagedChannel {
     return session.substring(0, sessionsIndex);
   }
 
+  private void cleanupStaleChannelFinders() {
+    ChannelFinderReference reference;
+    while ((reference = (ChannelFinderReference) channelFinderReferenceQueue.poll()) != null) {
+      if (channelFinders.remove(reference.databaseId, reference) && lifecycleManager != null) {
+        lifecycleManager.unregisterFinder(reference.databaseId);
+      }
+    }
+  }
+
   private ChannelFinder getOrCreateChannelFinder(String databaseId) {
-    SoftReference<ChannelFinder> ref = channelFinders.get(databaseId);
+    cleanupStaleChannelFinders();
+    ChannelFinderReference ref = channelFinders.get(databaseId);
     ChannelFinder finder = (ref != null) ? ref.get() : null;
     if (finder == null) {
       synchronized (channelFinders) {
+        cleanupStaleChannelFinders();
         ref = channelFinders.get(databaseId);
         finder = (ref != null) ? ref.get() : null;
         if (finder == null) {
-          finder = new ChannelFinder(endpointCache);
-          channelFinders.put(databaseId, new SoftReference<>(finder));
+          finder =
+              lifecycleManager != null
+                  ? new ChannelFinder(endpointCache, lifecycleManager, databaseId)
+                  : new ChannelFinder(endpointCache);
+          channelFinders.put(
+              databaseId,
+              new ChannelFinderReference(databaseId, finder, channelFinderReferenceQueue));
         }
       }
     }
     return finder;
   }
 
+  /** Records real traffic to the selected endpoint for idle eviction tracking. */
+  private void onRequestRouted(@Nullable ChannelEndpoint selectedEndpoint) {
+    if (lifecycleManager == null) {
+      return;
+    }
+    if (selectedEndpoint != null && !defaultEndpointAddress.equals(selectedEndpoint.getAddress())) {
+      lifecycleManager.recordRealTraffic(selectedEndpoint.getAddress());
+    }
+  }
+
   @Override
   public ManagedChannel shutdown() {
+    cleanupStaleChannelFinders();
+    if (lifecycleManager != null) {
+      lifecycleManager.shutdown();
+    }
     endpointCache.shutdown();
     return this;
   }
 
   @Override
   public ManagedChannel shutdownNow() {
+    cleanupStaleChannelFinders();
+    if (lifecycleManager != null) {
+      lifecycleManager.shutdown();
+    }
     endpointCache.shutdown();
     return this;
   }
@@ -205,7 +263,23 @@ final class KeyAwareChannel extends ManagedChannel {
     if (address == null || excludedEndpoints.test(address)) {
       return null;
     }
-    return endpointCache.get(address);
+    // Use non-creating lookup and require READY state for location-aware routing.
+    ChannelEndpoint endpoint = endpointCache.getIfPresent(address);
+    if (endpoint == null) {
+      logger.log(
+          Level.FINE,
+          "Affinity endpoint for address {0} not present in cache, falling back to default",
+          address);
+      return null;
+    }
+    if (!endpoint.isHealthy()) {
+      logger.log(
+          Level.FINE,
+          "Affinity endpoint for address {0} not READY, falling back to default",
+          address);
+      return null;
+    }
+    return endpoint;
   }
 
   private void clearAffinity(ByteString transactionId) {
@@ -495,6 +569,10 @@ final class KeyAwareChannel extends ManagedChannel {
         }
         selectedEndpoint = endpoint;
         this.channelFinder = finder;
+
+        // Record real traffic for idle eviction tracking.
+        parentChannel.onRequestRouted(endpoint);
+
         recordRouteSelectionTrace(
             methodDescriptor,
             endpoint.getAddress(),
