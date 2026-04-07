@@ -38,16 +38,11 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcSqlSyntaxErrorException;
 import com.google.cloud.bigquery.jdbc.BigQueryConnection;
 import com.google.cloud.bigquery.jdbc.BigQueryDriver;
 import com.google.cloud.bigquery.jdbc.DataSource;
-import com.google.cloud.bigquery.jdbc.PooledConnectionDataSource;
-import com.google.cloud.bigquery.jdbc.PooledConnectionListener;
-import com.google.cloud.bigquery.jdbc.utils.TestUtilities.TestConnectionListener;
 import com.google.common.collect.ImmutableMap;
 import java.io.File;
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.sql.CallableStatement;
+import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
-import java.sql.DatabaseMetaData;
 import java.sql.Date;
 import java.sql.Driver;
 import java.sql.DriverManager;
@@ -58,19 +53,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
 import java.sql.Timestamp;
-import java.sql.Types;
 import java.time.Instant;
 import java.time.LocalTime;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.HashSet;
 import java.util.Properties;
 import java.util.Random;
-import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.function.BiFunction;
-import javax.sql.PooledConnection;
+import org.junit.Assert;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -78,11 +66,6 @@ import org.junit.jupiter.api.Test;
 
 public class ITBigQueryJDBCTest extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
-  static Connection bigQueryConnection;
-  static BigQuery bigQuery;
-  static Statement bigQueryStatement;
-  static Connection bigQueryConnectionNoReadApi;
-  static Statement bigQueryStatementNoReadApi;
   static final String connection_uri =
       "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
           + PROJECT_ID
@@ -94,24 +77,12 @@ public class ITBigQueryJDBCTest extends ITBase {
   private static final Random random = new Random();
   private static final int randomNumber = random.nextInt(9999);
   private static final String DATASET = "JDBC_PRESUBMIT_INTEGRATION_DATASET";
-  private static final String DATASET2 = "JDBC_PRESUBMIT_INTEGRATION_DATASET_2";
-  private static final String CONSTRAINTS_DATASET = "JDBC_CONSTRAINTS_TEST_DATASET";
-  private static final String CONSTRAINTS_TABLE_NAME = "JDBC_CONSTRAINTS_TEST_TABLE";
-  private static final String CONSTRAINTS_TABLE_NAME2 = "JDBC_CONSTRAINTS_TEST_TABLE2";
-  private static final String CONSTRAINTS_TABLE_NAME3 = "JDBC_CONSTRAINTS_TEST_TABLE3";
-  private static final String CALLABLE_STMT_PROC_NAME = "IT_CALLABLE_STMT_PROC_TEST";
-  private static final String CALLABLE_STMT_TABLE_NAME = "IT_CALLABLE_STMT_PROC_TABLE";
-  private static final String CALLABLE_STMT_PARAM_KEY = "CALL_STMT_PARAM_KEY";
-  private static final String CALLABLE_STMT_DML_INSERT_PROC_NAME =
-      "IT_CALLABLE_STMT_PROC_DML_INSERT_TEST";
-  private static final String CALLABLE_STMT_DML_UPDATE_PROC_NAME =
-      "IT_CALLABLE_STMT_PROC_DML_UPDATE_TEST";
-  private static final String CALLABLE_STMT_DML_DELETE_PROC_NAME =
-      "IT_CALLABLE_STMT_PROC_DML_DELETE_TEST";
-  private static final String CALLABLE_STMT_DML_TABLE_NAME = "IT_CALLABLE_STMT_PROC_DML_TABLE";
-  private static final Long DEFAULT_CONN_POOL_SIZE = 10L;
-  private static final Long CUSTOM_CONN_POOL_SIZE = 5L;
   private static final Object EXCEPTION_REPLACEMENT = "EXCEPTION-WAS-RAISED";
+  static Connection bigQueryConnection;
+  static BigQuery bigQuery;
+  static Statement bigQueryStatement;
+  static Connection bigQueryConnectionNoReadApi;
+  static Statement bigQueryStatementNoReadApi;
 
   @BeforeAll
   public static void beforeClass() throws SQLException {
@@ -134,6 +105,49 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  public void testValidAllDataTypesSerializationFromSelectQueryArrowDataset() throws SQLException {
+    String DATASET = "JDBC_INTEGRATION_DATASET";
+    String TABLE_NAME = "JDBC_INTEGRATION_ARROW_TEST_TABLE";
+    String selectQuery = "select * from " + DATASET + "." + TABLE_NAME + " LIMIT 5000;";
+    String connection_uri =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "OAuthType=3;ProjectId="
+            + DEFAULT_CATALOG
+            + ";EnableHighThroughputAPI=1;"
+            + "HighThroughputActivationRatio=2;"
+            + "HighThroughputMinTableSize=1000;";
+
+    // Read data via JDBC
+    Connection connection = DriverManager.getConnection(connection_uri);
+    Statement statement = connection.createStatement();
+    ResultSet resultSet = statement.executeQuery(selectQuery);
+    Assert.assertNotNull(resultSet);
+
+    ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
+    resultSet.next();
+    Assert.assertEquals(15, resultSetMetaData.getColumnCount());
+    Assert.assertTrue(resultSet.getBoolean(1));
+    Assert.assertEquals(33, resultSet.getInt(2));
+    Assert.assertEquals(50.05f, resultSet.getFloat(3), 0.0);
+    Assert.assertEquals(123.456, resultSet.getDouble(4), 0.0);
+    Assert.assertEquals(123.456789, resultSet.getDouble(5), 0.0);
+    Assert.assertEquals("testString", resultSet.getString(6));
+    Assert.assertEquals("Test String", new String(resultSet.getBytes(7), StandardCharsets.UTF_8));
+    Assert.assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getObject(10));
+    Assert.assertEquals(Timestamp.valueOf("2020-04-27 18:07:25.356"), resultSet.getTimestamp(10));
+    Assert.assertEquals(Date.valueOf("2019-1-12"), resultSet.getObject(11));
+    Assert.assertEquals(Date.valueOf("2019-1-12"), resultSet.getDate(11));
+    Assert.assertEquals(Time.valueOf("14:00:00"), resultSet.getObject(12));
+    Assert.assertEquals(Time.valueOf("14:00:00"), resultSet.getTime(12));
+    Assert.assertEquals(Timestamp.valueOf("2022-01-22 22:22:12.142265"), resultSet.getObject(13));
+    Assert.assertEquals("POINT(1 2)", resultSet.getString(14));
+    Assert.assertEquals(
+        "{\"class\":{\"students\":[{\"name\":\"Jane\"}]}}", resultSet.getString(15));
+    connection.close();
+    connection.close();
+  }
+
+  @Test
   public void testFastQueryPathSmall() throws SQLException {
     String query =
         "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT"
@@ -141,6 +155,19 @@ public class ITBigQueryJDBCTest extends ITBase {
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(850, resultSetRowCount(jsonResultSet));
+  }
+
+  @Test
+  public void testFastQueryPathEmpty() throws SQLException {
+    String query =
+        "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT"
+            + " 0";
+    Connection connection =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Statement bigQueryStatement = connection.createStatement();
+    ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
+    Assert.assertEquals(0, resultSetRowCount(jsonResultSet));
+    connection.close();
   }
 
   @Test
@@ -174,6 +201,104 @@ public class ITBigQueryJDBCTest extends ITBase {
       oldTriDis = tripDis;
     }
     assertEquals(expectedCnt, cnt); // all the records were retrieved
+  }
+
+  @Test
+  // reads using ReadAPI and makes sure that they are in order, which implies threads worked
+  // correctly
+  public void testIterateOrderArrowMultiThread() throws SQLException {
+    int expectedCnt = 200000;
+    String longQuery = String.format(BASE_QUERY, expectedCnt);
+    Connection connection =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Statement bigQueryStatement = connection.createStatement();
+    ResultSet rs = bigQueryStatement.executeQuery(longQuery);
+    int cnt = 0;
+    double oldTriDis = 0.0d;
+    while (rs.next()) {
+      double tripDis = rs.getDouble("trip_distance");
+      ++cnt;
+      Assert.assertTrue(oldTriDis <= tripDis);
+      oldTriDis = tripDis;
+    }
+    Assert.assertEquals(expectedCnt, cnt); // all the records were retrieved
+    connection.close();
+  }
+
+  @Test
+  public void testReadAPIPathLarge() throws SQLException {
+    Properties withReadApi = new Properties();
+    withReadApi.setProperty("EnableHighThroughputAPI", "1");
+    withReadApi.setProperty("HighThroughputActivationRatio", "2");
+    withReadApi.setProperty("HighThroughputMinTableSize", "1000");
+    withReadApi.setProperty("MaxResults", "300");
+
+    Connection connection =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG), withReadApi);
+    Statement statement = connection.createStatement();
+    int expectedCnt = 5000;
+    String longQuery = String.format(BASE_QUERY, expectedCnt);
+    ResultSet arrowResultSet = statement.executeQuery(longQuery);
+    Assert.assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
+    arrowResultSet.close();
+    connection.close();
+  }
+
+  @Test
+  public void testReadAPIPathLargeWithThresholdParameters() throws SQLException {
+    String connectionUri =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
+            + DEFAULT_CATALOG
+            + ";OAUTHTYPE=3;MaxResults=300;HighThroughputActivationRatio=2;"
+            + "HighThroughputMinTableSize=100;EnableHighThroughputAPI=1";
+    Connection connection = DriverManager.getConnection(connectionUri);
+    Statement statement = connection.createStatement();
+    int expectedCnt = 1000;
+    String longQuery = String.format(BASE_QUERY, expectedCnt);
+    ResultSet arrowResultSet = statement.executeQuery(longQuery);
+    Assert.assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
+    arrowResultSet.close();
+    connection.close();
+  }
+
+  @Test
+  public void testReadAPIPathLargeWithThresholdNotMet() throws SQLException {
+    String connectionUri =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
+            + DEFAULT_CATALOG
+            + ";OAUTHTYPE=3;HighThroughputActivationRatio=4;"
+            + "HighThroughputMinTableSize=100;EnableHighThroughputAPI=1";
+    Connection connection = DriverManager.getConnection(connectionUri);
+    Statement statement = connection.createStatement();
+    int expectedCnt = 5000;
+    String longQuery = String.format(BASE_QUERY, expectedCnt);
+    ResultSet arrowResultSet = statement.executeQuery(longQuery);
+    Assert.assertEquals(expectedCnt, resultSetRowCount(arrowResultSet));
+    arrowResultSet.close();
+    connection.close();
+  }
+
+  @Test
+  public void testStatelessQueryPathSmall() throws SQLException {
+    Properties jobCreationMode = new Properties();
+    jobCreationMode.setProperty("JobCreationMode", "2");
+    Connection connectionUseStateless =
+        DriverManager.getConnection(ITBase.connectionUrl, jobCreationMode);
+
+    Statement statement = connectionUseStateless.createStatement();
+
+    String query =
+        "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT"
+            + " 850";
+    ResultSet jsonResultSet = statement.executeQuery(query);
+    Assert.assertEquals(850, resultSetRowCount(jsonResultSet));
+
+    String queryEmpty =
+        "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT"
+            + " 0";
+    ResultSet jsonResultSetEmpty = statement.executeQuery(queryEmpty);
+    Assert.assertEquals(0, resultSetRowCount(jsonResultSetEmpty));
+    connectionUseStateless.close();
   }
 
   @Test
@@ -437,6 +562,48 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  public void testRollbackOnConnectionClosed() throws SQLException {
+    String TRANSACTION_TABLE = "JDBC_TRANSACTION_TABLE1" + random.nextInt(99);
+    String createTransactionTable =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
+            DATASET, TRANSACTION_TABLE);
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (id, name, age) VALUES (15, 'Farhan', %s);",
+            DATASET, TRANSACTION_TABLE, randomNumber);
+    String updateQuery =
+        String.format(
+            "UPDATE %s.%s SET age = 12 WHERE age = %s;", DATASET, TRANSACTION_TABLE, randomNumber);
+    String selectQuery =
+        String.format("SELECT id, name, age FROM %s.%s WHERE id = 12;", DATASET, TRANSACTION_TABLE);
+
+    Connection connection1 =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Statement bigQueryStatement = connection1.createStatement();
+    bigQueryStatement.execute(createTransactionTable);
+    Connection connection = DriverManager.getConnection(session_enabled_connection_uri);
+    connection.setAutoCommit(false);
+    Statement statement = connection.createStatement();
+
+    boolean status = statement.execute(insertQuery);
+    Assert.assertFalse(status);
+    int rows = statement.executeUpdate(updateQuery);
+    Assert.assertEquals(1, rows);
+    status = statement.execute(selectQuery);
+    Assert.assertTrue(status);
+    connection.close();
+
+    // Separate query to check if transaction rollback worked
+    ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
+    Assert.assertFalse(resultSet.next());
+
+    bigQueryStatement.execute(
+        String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
+    connection.close();
+  }
+
+  @Test
   public void testRollbackWithConnectionClosedThrowsIllegalState() throws SQLException {
     BigQueryConnection connection =
         (BigQueryConnection) DriverManager.getConnection(session_enabled_connection_uri);
@@ -457,6 +624,115 @@ public class ITBigQueryJDBCTest extends ITBase {
     BigQueryConnection connection =
         (BigQueryConnection) DriverManager.getConnection(session_enabled_connection_uri);
     assertThrows(IllegalStateException.class, connection::rollback);
+    connection.close();
+  }
+
+  @Test
+  public void testMultiStatementTransactionRollbackByUser() throws SQLException {
+    String TRANSACTION_TABLE = "JDBC_TRANSACTION_TABLE3" + random.nextInt(99);
+    String createTransactionTable =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
+            DATASET, TRANSACTION_TABLE);
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (id, name, age) VALUES (12, 'Farhan', %s);",
+            DATASET, TRANSACTION_TABLE, randomNumber);
+    String updateQuery =
+        String.format(
+            "UPDATE %s.%s SET age = 14 WHERE age = %s;", DATASET, TRANSACTION_TABLE, randomNumber);
+    String selectQuery =
+        String.format("SELECT id, name, age FROM %s.%s WHERE id = 12;", DATASET, TRANSACTION_TABLE);
+
+    Connection connection1 =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Statement bigQueryStatement = connection1.createStatement();
+    bigQueryStatement.execute(createTransactionTable);
+
+    Connection connection = DriverManager.getConnection(session_enabled_connection_uri);
+    connection.setAutoCommit(false);
+    Statement statement = connection.createStatement();
+
+    boolean status = statement.execute(insertQuery);
+    Assert.assertFalse(status);
+    int rows = statement.executeUpdate(updateQuery);
+    Assert.assertEquals(1, rows);
+    status = statement.execute(selectQuery);
+    Assert.assertTrue(status);
+    connection.rollback();
+
+    // Separate query to check if transaction rollback worked
+    ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
+    Assert.assertFalse(resultSet.next());
+
+    bigQueryStatement.execute(
+        String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
+    connection.close();
+  }
+
+  @Test
+  public void testSingleStatementTransaction() throws SQLException {
+    String TRANSACTION_TABLE = "JDBC_TRANSACTION_TABLE2" + random.nextInt(99);
+    String createTransactionTable =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
+            DATASET, TRANSACTION_TABLE);
+    String beginTransaction = "BEGIN TRANSACTION; ";
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (id, name, age) VALUES (12, 'Farhan', %s);",
+            DATASET, TRANSACTION_TABLE, randomNumber);
+    String updateQuery =
+        String.format(
+            "UPDATE %s.%s SET age = 14 WHERE age = %s;", DATASET, TRANSACTION_TABLE, randomNumber);
+    String selectQuery =
+        String.format("SELECT id, name, age FROM %s.%s WHERE id = 12;", DATASET, TRANSACTION_TABLE);
+    String commitTransaction = "COMMIT TRANSACTION;";
+
+    String transactionQuery =
+        beginTransaction
+            + insertQuery
+            + insertQuery
+            + updateQuery
+            + selectQuery
+            + commitTransaction;
+
+    Connection connection1 =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Statement bigQueryStatement = connection1.createStatement();
+    bigQueryStatement.execute(createTransactionTable);
+
+    // Run the transaction
+    Connection connection = DriverManager.getConnection(session_enabled_connection_uri);
+    Statement statement = connection.createStatement();
+    statement.execute(transactionQuery);
+
+    // Test each query's result with getMoreResults
+    int resultsCount = 0;
+    boolean hasMoreResult = statement.getMoreResults();
+    while (hasMoreResult || statement.getUpdateCount() != -1) {
+      if (statement.getUpdateCount() == -1) {
+        ResultSet result = statement.getResultSet();
+        Assert.assertTrue(result.next());
+        Assert.assertEquals(-1, statement.getUpdateCount());
+      } else {
+        Assert.assertTrue(statement.getUpdateCount() > -1);
+      }
+      hasMoreResult = statement.getMoreResults();
+      resultsCount++;
+    }
+
+    // Check the transaction was actually committed.
+    ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
+    int rowCount = 0;
+    while (resultSet.next()) {
+      rowCount++;
+      Assert.assertEquals(14, resultSet.getInt(3));
+    }
+    Assert.assertEquals(2, rowCount);
+
+    bigQueryStatement.execute(
+        String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
     connection.close();
   }
 
@@ -497,6 +773,137 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     connection.close();
     assertThrows(IllegalStateException.class, () -> connection.setAutoCommit(true));
+  }
+
+  @Test
+  public void testMultiStatementTransactionDoesNotCommitWithoutCommit() throws SQLException {
+    String TRANSACTION_TABLE = "JDBC_TRANSACTION_TABLE4" + random.nextInt(99);
+    String createTransactionTable =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
+            DATASET, TRANSACTION_TABLE);
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (id, name, age) VALUES (12, 'Farhan', %s);",
+            DATASET, TRANSACTION_TABLE, randomNumber);
+    String updateQuery =
+        String.format(
+            "UPDATE %s.%s SET age = 14 WHERE age = %s;", DATASET, TRANSACTION_TABLE, randomNumber);
+    String selectQuery =
+        String.format("SELECT id, name, age FROM %s.%s WHERE id = 12;", DATASET, TRANSACTION_TABLE);
+
+    Connection connection1 =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Statement bigQueryStatement = connection1.createStatement();
+    bigQueryStatement.execute(createTransactionTable);
+    Connection connection = DriverManager.getConnection(session_enabled_connection_uri);
+    connection.setAutoCommit(false);
+    Statement statement = connection.createStatement();
+
+    boolean status = statement.execute(insertQuery);
+    Assert.assertFalse(status);
+    int rows = statement.executeUpdate(updateQuery);
+    Assert.assertEquals(1, rows);
+    status = statement.execute(selectQuery);
+    Assert.assertTrue(status);
+
+    // Separate query to check nothing committed
+    ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
+    Assert.assertFalse(resultSet.next());
+
+    bigQueryStatement.execute(
+        String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
+    statement.close();
+    connection.close();
+  }
+
+  @Test
+  public void testValidMultiStatementTransactionCommits() throws SQLException {
+    String TRANSACTION_TABLE = "JDBC_TRANSACTION_TABLE5" + random.nextInt(99);
+    String createTransactionTable =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
+            DATASET, TRANSACTION_TABLE);
+    String insertQuery =
+        String.format(
+            "INSERT INTO %s.%s (id, name, age) VALUES (12, 'Farhan', %s);",
+            DATASET, TRANSACTION_TABLE, randomNumber);
+    String updateQuery =
+        String.format(
+            "UPDATE %s.%s SET age = 14 WHERE age = %s;", DATASET, TRANSACTION_TABLE, randomNumber);
+    String selectQuery =
+        String.format("SELECT id, name, age FROM %s.%s WHERE id = 12;", DATASET, TRANSACTION_TABLE);
+
+    Connection connection1 =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Statement bigQueryStatement = connection1.createStatement();
+    bigQueryStatement.execute(createTransactionTable);
+    Connection connection = DriverManager.getConnection(session_enabled_connection_uri);
+    connection.setAutoCommit(false);
+    Statement statement = connection.createStatement();
+
+    boolean status = statement.execute(insertQuery);
+    Assert.assertFalse(status);
+    status = statement.execute(updateQuery);
+    Assert.assertFalse(status);
+    status = statement.execute(selectQuery);
+    Assert.assertTrue(status);
+    connection.commit();
+
+    // Separate query to check inserted and updated data committed
+    ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
+    Assert.assertTrue(resultSet.next());
+    Assert.assertEquals(14, resultSet.getInt(3));
+
+    bigQueryStatement.execute(
+        String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
+    statement.close();
+    connection.close();
+  }
+
+  @Test
+  public void testTransactionRollbackOnError() throws SQLException {
+    String TRANSACTION_TABLE = "JDBC_TRANSACTION_TABLE6" + random.nextInt(99);
+    String createTransactionTable =
+        String.format(
+            "CREATE OR REPLACE TABLE %s.%s (`id` INTEGER, `name` STRING, `age` INTEGER);",
+            DATASET, TRANSACTION_TABLE);
+    String selectQuery =
+        String.format("SELECT id, name, age FROM %s.%s ;", DATASET, TRANSACTION_TABLE);
+
+    Connection connection1 =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    Statement bigQueryStatement = connection1.createStatement();
+    bigQueryStatement.execute(createTransactionTable);
+    String transactionOnError =
+        "BEGIN\n"
+            + "\n"
+            + "  BEGIN TRANSACTION;\n"
+            + "  INSERT INTO "
+            + DATASET
+            + "."
+            + TRANSACTION_TABLE
+            + "\n"
+            + "    VALUES (39, 'Drake', 123);\n"
+            + "  SELECT 1/0;\n"
+            + "  COMMIT TRANSACTION;\n"
+            + "\n"
+            + "EXCEPTION WHEN ERROR THEN\n"
+            + "  SELECT @@error.message;\n"
+            + "  ROLLBACK TRANSACTION;\n"
+            + "END;";
+    Connection connection = DriverManager.getConnection(session_enabled_connection_uri);
+    Statement statement = connection.createStatement();
+    statement.execute(transactionOnError);
+
+    // do a check to see if no vals inserted
+    ResultSet resultSet = bigQueryStatement.executeQuery(selectQuery);
+    Assert.assertFalse(resultSet.next());
+
+    bigQueryStatement.execute(
+        String.format("DROP TABLE IF EXISTS %S.%s", DATASET, TRANSACTION_TABLE));
+    connection.close();
+    connection1.close();
   }
 
   @Test
@@ -1327,6 +1734,47 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
+  public void testNonEnabledUseLegacySQLThrowsSyntaxError() throws SQLException {
+    // setup
+    String connection_uri =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "OAuthType=3;"
+            + "ProjectId="
+            + DEFAULT_CATALOG
+            + ";";
+    String selectLegacyQuery =
+        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 20000000;";
+    Connection connection = DriverManager.getConnection(connection_uri, new Properties());
+    Statement statement = connection.createStatement();
+
+    // act & assertion
+    Assert.assertThrows(SQLException.class, () -> statement.execute(selectLegacyQuery));
+    connection.close();
+  }
+
+  @Test
+  public void testUseLegacySQLWithLargeResultsNotAllowedQueries() throws SQLException {
+    // setup
+    String connection_uri =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "OAuthType=3;"
+            + "ProjectId="
+            + DEFAULT_CATALOG
+            + ";QueryDialect=BIG_QUERY;AllowLargeResults=0;";
+    String selectLegacyQuery =
+        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 250000;";
+    Connection connection = DriverManager.getConnection(connection_uri, new Properties());
+    Statement statement = connection.createStatement();
+
+    // act
+    ResultSet resultSet = statement.executeQuery(selectLegacyQuery);
+
+    // assertion
+    Assert.assertNotNull(resultSet);
+    connection.close();
+  }
+
+  @Test
   public void testValidDestinationTableSavesQueriesWithStandardSQL() throws SQLException {
     // setup
     String connection_uri =
@@ -1388,6 +1836,29 @@ public class ITBigQueryJDBCTest extends ITBase {
 
     // clean up
     bigQueryStatement.execute("DROP SCHEMA FakeDataset CASCADE;");
+    connection.close();
+  }
+
+  @Test
+  public void testUseLegacySQLWithLargeResultsAllowedWithNoDestinationTableDefaults()
+      throws SQLException {
+    // setup
+    String connection_uri =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "OAuthType=3;"
+            + "ProjectId="
+            + DEFAULT_CATALOG
+            + ";QueryDialect=BIG_QUERY;AllowLargeResults=1;";
+    String selectLegacyQuery =
+        "SELECT * FROM [bigquery-public-data.deepmind_alphafold.metadata] LIMIT 250000;";
+    Connection connection = DriverManager.getConnection(connection_uri, new Properties());
+    Statement statement = connection.createStatement();
+
+    // act
+    ResultSet resultSet = statement.executeQuery(selectLegacyQuery);
+
+    // assertion
+    Assert.assertNotNull(resultSet);
     connection.close();
   }
 
@@ -1472,728 +1943,6 @@ public class ITBigQueryJDBCTest extends ITBase {
   }
 
   @Test
-  public void testTableConstraints() throws SQLException {
-    ResultSet primaryKey1 =
-        bigQueryConnection
-            .getMetaData()
-            .getPrimaryKeys(PROJECT_ID, CONSTRAINTS_DATASET, CONSTRAINTS_TABLE_NAME);
-    primaryKey1.next();
-    assertEquals("id", primaryKey1.getString(4));
-    assertFalse(primaryKey1.next());
-
-    ResultSet primaryKey2 =
-        bigQueryConnection
-            .getMetaData()
-            .getPrimaryKeys(PROJECT_ID, CONSTRAINTS_DATASET, CONSTRAINTS_TABLE_NAME2);
-    primaryKey2.next();
-    assertEquals("first_name", primaryKey2.getString(4));
-    primaryKey2.next();
-    assertEquals("last_name", primaryKey2.getString(4));
-    assertFalse(primaryKey2.next());
-
-    ResultSet foreignKeys =
-        bigQueryConnection
-            .getMetaData()
-            .getImportedKeys(PROJECT_ID, CONSTRAINTS_DATASET, CONSTRAINTS_TABLE_NAME);
-    foreignKeys.next();
-    assertEquals(CONSTRAINTS_TABLE_NAME2, foreignKeys.getString(3));
-    assertEquals("first_name", foreignKeys.getString(4));
-    assertEquals("name", foreignKeys.getString(8));
-    foreignKeys.next();
-    assertEquals(CONSTRAINTS_TABLE_NAME2, foreignKeys.getString(3));
-    assertEquals("last_name", foreignKeys.getString(4));
-    assertEquals("second_name", foreignKeys.getString(8));
-    foreignKeys.next();
-    assertEquals(CONSTRAINTS_TABLE_NAME3, foreignKeys.getString(3));
-    assertEquals("address", foreignKeys.getString(4));
-    assertEquals("address", foreignKeys.getString(8));
-    assertFalse(foreignKeys.next());
-
-    ResultSet crossReference =
-        bigQueryConnection
-            .getMetaData()
-            .getCrossReference(
-                PROJECT_ID,
-                CONSTRAINTS_DATASET,
-                CONSTRAINTS_TABLE_NAME2,
-                PROJECT_ID,
-                CONSTRAINTS_DATASET,
-                CONSTRAINTS_TABLE_NAME);
-    crossReference.next();
-    assertEquals(CONSTRAINTS_TABLE_NAME2, crossReference.getString(3));
-    assertEquals("first_name", crossReference.getString(4));
-    assertEquals("name", crossReference.getString(8));
-    crossReference.next();
-    assertEquals("last_name", crossReference.getString(4));
-    assertEquals("second_name", crossReference.getString(8));
-    assertFalse(crossReference.next());
-  }
-
-  @Test
-  public void testDatabaseMetadataGetCatalogs() throws SQLException {
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
-    try (ResultSet rs = databaseMetaData.getCatalogs()) {
-      assertNotNull(rs, "ResultSet from getCatalogs() should not be null");
-
-      ResultSetMetaData rsmd = rs.getMetaData();
-      assertNotNull(rsmd, "ResultSetMetaData should not be null");
-      assertEquals(1, rsmd.getColumnCount(), "Should have one column");
-      assertEquals("TABLE_CAT", rsmd.getColumnName(1), "Column name should be TABLE_CAT");
-
-      assertTrue(rs.next(), "ResultSet should have one row");
-      assertEquals(PROJECT_ID, rs.getString("TABLE_CAT"), "Catalog name should match Project ID");
-      assertFalse(rs.next(), "ResultSet should have no more rows");
-    }
-  }
-
-  @Test
-  public void testDatabaseMetadataGetProcedures() throws SQLException {
-    String DATASET = "JDBC_INTEGRATION_DATASET";
-    String procedureName = "create_customer";
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
-    ResultSet resultSet = databaseMetaData.getProcedures(PROJECT_ID, DATASET, procedureName);
-    while (resultSet.next()) {
-      assertEquals(PROJECT_ID, resultSet.getString("PROCEDURE_CAT"));
-      assertEquals(DATASET, resultSet.getString("PROCEDURE_SCHEM"));
-      assertEquals(procedureName, resultSet.getString("PROCEDURE_NAME"));
-      assertEquals(procedureName, resultSet.getString("SPECIFIC_NAME"));
-      assertEquals(DatabaseMetaData.procedureResultUnknown, resultSet.getInt("PROCEDURE_TYPE"));
-    }
-  }
-
-  @Test
-  public void testDatabaseMetadataGetProcedureColumns() throws SQLException {
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
-
-    // --- Test Case 1: Specific schema and procedure, null column name pattern ---
-    String specificSchema = "JDBC_INTEGRATION_DATASET";
-    String specificProcedure = "create_customer";
-    ResultSet resultSet =
-        databaseMetaData.getProcedureColumns(PROJECT_ID, specificSchema, specificProcedure, null);
-    int specificProcRows = 0;
-    boolean foundNameParam = false;
-    boolean foundIdParam = false;
-    while (resultSet.next()) {
-      specificProcRows++;
-      assertEquals(PROJECT_ID, resultSet.getString("PROCEDURE_CAT"));
-      assertEquals(specificSchema, resultSet.getString("PROCEDURE_SCHEM"));
-      assertEquals(specificProcedure, resultSet.getString("PROCEDURE_NAME"));
-      assertEquals(specificProcedure, resultSet.getString("SPECIFIC_NAME"));
-      if ("name".equals(resultSet.getString("COLUMN_NAME"))) {
-        foundNameParam = true;
-        assertEquals(1, resultSet.getInt("ORDINAL_POSITION"));
-      }
-      if ("id".equals(resultSet.getString("COLUMN_NAME"))) {
-        foundIdParam = true;
-        assertEquals(2, resultSet.getInt("ORDINAL_POSITION"));
-      }
-    }
-    assertEquals(2, specificProcRows, "Should find 2 parameters for " + specificProcedure);
-    assertTrue(foundNameParam, "Parameter 'name' should be found");
-    assertTrue(foundIdParam, "Parameter 'id' should be found");
-    resultSet.close();
-
-    // --- Test Case 2: Specific schema, procedure, and column name pattern ---
-    String specificColumn = "name";
-    resultSet =
-        databaseMetaData.getProcedureColumns(
-            PROJECT_ID, specificSchema, specificProcedure, specificColumn);
-    assertTrue(resultSet.next(), "Should find the specific column 'name'");
-    assertEquals(PROJECT_ID, resultSet.getString("PROCEDURE_CAT"));
-    assertEquals(specificSchema, resultSet.getString("PROCEDURE_SCHEM"));
-    assertEquals(specificProcedure, resultSet.getString("PROCEDURE_NAME"));
-    assertEquals(specificColumn, resultSet.getString("COLUMN_NAME"));
-    assertEquals(1, resultSet.getInt("ORDINAL_POSITION"));
-    assertEquals(
-        (short) DatabaseMetaData.procedureColumnUnknown, resultSet.getShort("COLUMN_TYPE"));
-    assertEquals(java.sql.Types.NVARCHAR, resultSet.getInt("DATA_TYPE"));
-    assertEquals("NVARCHAR", resultSet.getString("TYPE_NAME"));
-    assertFalse(resultSet.next(), "Should only find one row for exact column match");
-    resultSet.close();
-
-    // --- Test Case 3: Non-existent procedure ---
-    resultSet =
-        databaseMetaData.getProcedureColumns(
-            PROJECT_ID, specificSchema, "non_existent_procedure_xyz", null);
-    assertFalse(resultSet.next(), "Should not find columns for a non-existent procedure");
-    resultSet.close();
-  }
-
-  @Test
-  public void testDatabaseMetadataGetColumns() throws SQLException {
-    String DATASET = "JDBC_INTEGRATION_DATASET";
-    String TABLE_NAME = "JDBC_DATATYPES_INTEGRATION_TEST_TABLE";
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
-
-    // --- Test Case 1: Specific Column (StringField) ---
-    ResultSet resultSet =
-        databaseMetaData.getColumns(PROJECT_ID, DATASET, TABLE_NAME, "StringField");
-
-    assertTrue(resultSet.next());
-    assertEquals(PROJECT_ID, resultSet.getString("TABLE_CAT"));
-    assertEquals(DATASET, resultSet.getString("TABLE_SCHEM"));
-    assertEquals(TABLE_NAME, resultSet.getString("TABLE_NAME"));
-    assertEquals("StringField", resultSet.getString("COLUMN_NAME"));
-    assertEquals("NVARCHAR", resultSet.getString("TYPE_NAME"));
-    resultSet.getObject("COLUMN_SIZE");
-    assertTrue(resultSet.wasNull());
-    resultSet.getObject("DECIMAL_DIGITS");
-    assertTrue(resultSet.wasNull());
-    assertEquals(1, resultSet.getInt("NULLABLE"));
-    assertEquals(6, resultSet.getInt("ORDINAL_POSITION"));
-    assertFalse(resultSet.next());
-
-    // --- Test Case 2: All Columns ---
-    resultSet = databaseMetaData.getColumns(PROJECT_ID, DATASET, TABLE_NAME, null);
-    assertTrue(resultSet.next());
-    int count = 0;
-    do {
-      count++;
-      assertEquals(PROJECT_ID, resultSet.getString("TABLE_CAT"));
-      assertEquals(DATASET, resultSet.getString("TABLE_SCHEM"));
-      assertEquals(TABLE_NAME, resultSet.getString("TABLE_NAME"));
-      assertNotNull(resultSet.getString("COLUMN_NAME"));
-    } while (resultSet.next());
-    assertEquals(16, count);
-
-    // --- Test Case 3: Column Name Pattern Matching (%Field) ---
-    resultSet = databaseMetaData.getColumns(PROJECT_ID, DATASET, TABLE_NAME, "%Time%");
-    assertTrue(resultSet.next());
-    count = 0;
-    do {
-      count++;
-      String columnName = resultSet.getString("COLUMN_NAME");
-      assertTrue(columnName.contains("Time"));
-    } while (resultSet.next());
-    assertEquals(3, count);
-
-    // --- Test Case 4: Column Name Pattern Matching (Integer%) ---
-    resultSet = databaseMetaData.getColumns(PROJECT_ID, DATASET, TABLE_NAME, "Integer%");
-    assertTrue(resultSet.next());
-    assertEquals("IntegerField", resultSet.getString("COLUMN_NAME"));
-    assertEquals("BIGINT", resultSet.getString("TYPE_NAME"));
-    assertEquals(19, resultSet.getInt("COLUMN_SIZE"));
-    assertEquals(0, resultSet.getInt("DECIMAL_DIGITS"));
-    assertEquals(10, resultSet.getInt("NUM_PREC_RADIX"));
-    assertEquals(1, resultSet.getInt("NULLABLE"));
-    assertEquals(2, resultSet.getInt("ORDINAL_POSITION"));
-    assertFalse(resultSet.next());
-
-    // --- Test Case 5: Specific Column (BooleanField) ---
-    resultSet = databaseMetaData.getColumns(PROJECT_ID, DATASET, TABLE_NAME, "BooleanField");
-    assertTrue(resultSet.next());
-    assertEquals("BooleanField", resultSet.getString("COLUMN_NAME"));
-    assertEquals("BOOLEAN", resultSet.getString("TYPE_NAME"));
-    assertEquals(1, resultSet.getInt("COLUMN_SIZE"));
-    resultSet.getObject("DECIMAL_DIGITS");
-    assertTrue(resultSet.wasNull());
-    resultSet.getObject("NUM_PREC_RADIX");
-    assertTrue(resultSet.wasNull());
-    assertEquals(1, resultSet.getInt("NULLABLE"));
-    assertEquals(1, resultSet.getInt("ORDINAL_POSITION"));
-    assertFalse(resultSet.next());
-
-    // --- Test Case 6: Specific Column (NumericField) ---
-    resultSet = databaseMetaData.getColumns(PROJECT_ID, DATASET, TABLE_NAME, "NumericField");
-    assertTrue(resultSet.next());
-    assertEquals("NumericField", resultSet.getString("COLUMN_NAME"));
-    assertEquals("NUMERIC", resultSet.getString("TYPE_NAME"));
-    assertEquals(38, resultSet.getInt("COLUMN_SIZE"));
-    assertEquals(9, resultSet.getInt("DECIMAL_DIGITS"));
-    assertEquals(10, resultSet.getInt("NUM_PREC_RADIX"));
-    assertEquals(1, resultSet.getInt("NULLABLE"));
-    assertEquals(4, resultSet.getInt("ORDINAL_POSITION"));
-    assertFalse(resultSet.next());
-
-    // --- Test Case 7: Specific Column (BytesField) ---
-    resultSet = databaseMetaData.getColumns(PROJECT_ID, DATASET, TABLE_NAME, "BytesField");
-    assertTrue(resultSet.next());
-    assertEquals("BytesField", resultSet.getString("COLUMN_NAME"));
-    assertEquals("VARBINARY", resultSet.getString("TYPE_NAME"));
-    resultSet.getObject("COLUMN_SIZE");
-    assertTrue(resultSet.wasNull());
-    resultSet.getObject("DECIMAL_DIGITS");
-    assertTrue(resultSet.wasNull());
-    resultSet.getObject("NUM_PREC_RADIX");
-    assertTrue(resultSet.wasNull());
-    assertEquals(1, resultSet.getInt("NULLABLE"));
-    assertEquals(7, resultSet.getInt("ORDINAL_POSITION"));
-    assertFalse(resultSet.next());
-
-    // --- Test Case 8: Specific Column (ArrayField) ---
-    resultSet = databaseMetaData.getColumns(PROJECT_ID, DATASET, TABLE_NAME, "ArrayField");
-    assertTrue(resultSet.next());
-    assertEquals("ArrayField", resultSet.getString("COLUMN_NAME"));
-    assertEquals("ARRAY", resultSet.getString("TYPE_NAME"));
-    resultSet.getObject("COLUMN_SIZE");
-    assertTrue(resultSet.wasNull());
-    resultSet.getObject("DECIMAL_DIGITS");
-    assertTrue(resultSet.wasNull());
-    resultSet.getObject("NUM_PREC_RADIX");
-    assertTrue(resultSet.wasNull());
-    assertEquals(1, resultSet.getInt("NULLABLE"));
-    assertEquals(9, resultSet.getInt("ORDINAL_POSITION"));
-    assertFalse(resultSet.next());
-
-    // --- Test Case 9: Specific Column (TimestampField) ---
-    resultSet = databaseMetaData.getColumns(PROJECT_ID, DATASET, TABLE_NAME, "TimestampField");
-    assertTrue(resultSet.next());
-    assertEquals("TimestampField", resultSet.getString("COLUMN_NAME"));
-    assertEquals("TIMESTAMP", resultSet.getString("TYPE_NAME"));
-    assertEquals(29, resultSet.getInt("COLUMN_SIZE"));
-    resultSet.getObject("DECIMAL_DIGITS");
-    assertTrue(resultSet.wasNull());
-    resultSet.getObject("NUM_PREC_RADIX");
-    assertTrue(resultSet.wasNull());
-    assertEquals(1, resultSet.getInt("NULLABLE"));
-    assertEquals(10, resultSet.getInt("ORDINAL_POSITION"));
-    assertFalse(resultSet.next());
-
-    // --- Test Case 10: Specific Column (DateField) ---
-    resultSet = databaseMetaData.getColumns(PROJECT_ID, DATASET, TABLE_NAME, "DateField");
-    assertTrue(resultSet.next());
-    assertEquals("DateField", resultSet.getString("COLUMN_NAME"));
-    assertEquals("DATE", resultSet.getString("TYPE_NAME"));
-    assertEquals(10, resultSet.getInt("COLUMN_SIZE"));
-    resultSet.getObject("DECIMAL_DIGITS");
-    assertTrue(resultSet.wasNull());
-    resultSet.getObject("NUM_PREC_RADIX");
-    assertTrue(resultSet.wasNull());
-    assertEquals(1, resultSet.getInt("NULLABLE"));
-    assertEquals(11, resultSet.getInt("ORDINAL_POSITION"));
-    assertFalse(resultSet.next());
-
-    // --- Test Case 11: Specific Column (TimeField) ---
-    resultSet = databaseMetaData.getColumns(PROJECT_ID, DATASET, TABLE_NAME, "TimeField");
-    assertTrue(resultSet.next());
-    assertEquals("TimeField", resultSet.getString("COLUMN_NAME"));
-    assertEquals("TIME", resultSet.getString("TYPE_NAME"));
-    assertEquals(15, resultSet.getInt("COLUMN_SIZE"));
-    resultSet.getObject("DECIMAL_DIGITS");
-    assertTrue(resultSet.wasNull());
-    resultSet.getObject("NUM_PREC_RADIX");
-    assertTrue(resultSet.wasNull());
-    assertEquals(1, resultSet.getInt("NULLABLE"));
-    assertEquals(12, resultSet.getInt("ORDINAL_POSITION"));
-    assertFalse(resultSet.next());
-
-    // --- Test Case 12: Specific Column (DateTimeField) ---
-    resultSet = databaseMetaData.getColumns(PROJECT_ID, DATASET, TABLE_NAME, "DateTimeField");
-    assertTrue(resultSet.next());
-    assertEquals("DateTimeField", resultSet.getString("COLUMN_NAME"));
-    assertEquals("TIMESTAMP", resultSet.getString("TYPE_NAME"));
-    assertEquals(29, resultSet.getInt("COLUMN_SIZE"));
-    resultSet.getObject("DECIMAL_DIGITS");
-    assertTrue(resultSet.wasNull());
-    resultSet.getObject("NUM_PREC_RADIX");
-    assertTrue(resultSet.wasNull());
-    assertEquals(1, resultSet.getInt("NULLABLE"));
-    assertEquals(13, resultSet.getInt("ORDINAL_POSITION"));
-    assertFalse(resultSet.next());
-
-    // --- Test Case 13: Specific Column (GeographyField) ---
-    resultSet = databaseMetaData.getColumns(PROJECT_ID, DATASET, TABLE_NAME, "GeographyField");
-    assertTrue(resultSet.next());
-    assertEquals("GeographyField", resultSet.getString("COLUMN_NAME"));
-    assertEquals("VARCHAR", resultSet.getString("TYPE_NAME"));
-    resultSet.getObject("COLUMN_SIZE");
-    assertTrue(resultSet.wasNull());
-    resultSet.getObject("DECIMAL_DIGITS");
-    assertTrue(resultSet.wasNull());
-    resultSet.getObject("NUM_PREC_RADIX");
-    assertTrue(resultSet.wasNull());
-    assertEquals(1, resultSet.getInt("NULLABLE"));
-    assertEquals(14, resultSet.getInt("ORDINAL_POSITION"));
-    assertFalse(resultSet.next());
-  }
-
-  @Test
-  public void testDatabaseMetadataGetTables() throws SQLException {
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
-    String DATASET = "JDBC_TABLE_TYPES_TEST";
-
-    // --- Test Case 1: Get all tables (types = null) ---
-    ResultSet rsAll = databaseMetaData.getTables(PROJECT_ID, DATASET, null, null);
-    Set<String> allTableNames = new HashSet<>();
-    while (rsAll.next()) {
-      allTableNames.add(rsAll.getString("TABLE_NAME"));
-    }
-    assertTrue(allTableNames.contains("base_table"));
-    assertTrue(allTableNames.contains("my_view"));
-    assertTrue(allTableNames.contains("external_table"));
-    assertTrue(allTableNames.contains("my_materialized_view"));
-    assertTrue(allTableNames.contains("base_table_clone"));
-    assertTrue(allTableNames.contains("base_table_snapshot"));
-    assertEquals(6, allTableNames.size());
-
-    // --- Test Case 2: Get only "TABLE" type ---
-    ResultSet rsTable =
-        databaseMetaData.getTables(PROJECT_ID, DATASET, null, new String[] {"TABLE"});
-    Set<String> tableNames = new HashSet<>();
-    while (rsTable.next()) {
-      tableNames.add(rsTable.getString("TABLE_NAME"));
-    }
-    assertTrue(tableNames.contains("base_table"));
-    assertTrue(tableNames.contains("base_table_clone"));
-    assertEquals(2, tableNames.size());
-
-    // --- Test Case 3: Get "VIEW" type ---
-    ResultSet rsView = databaseMetaData.getTables(PROJECT_ID, DATASET, null, new String[] {"VIEW"});
-    assertTrue(rsView.next());
-    assertEquals("my_view", rsView.getString("TABLE_NAME"));
-    assertEquals("VIEW", rsView.getString("TABLE_TYPE"));
-    assertFalse(rsView.next());
-
-    // --- Test Case 4: Get "EXTERNAL TABLE" type ---
-    ResultSet rsExternal =
-        databaseMetaData.getTables(PROJECT_ID, DATASET, null, new String[] {"EXTERNAL"});
-    assertTrue(rsExternal.next());
-    assertEquals("external_table", rsExternal.getString("TABLE_NAME"));
-    assertEquals("EXTERNAL", rsExternal.getString("TABLE_TYPE"));
-    assertFalse(rsExternal.next());
-
-    // --- Test Case 5: Get "MATERIALIZED_VIEW" type ---
-    ResultSet rsMaterialized =
-        databaseMetaData.getTables(PROJECT_ID, DATASET, null, new String[] {"MATERIALIZED_VIEW"});
-    assertTrue(rsMaterialized.next());
-    assertEquals("my_materialized_view", rsMaterialized.getString("TABLE_NAME"));
-    assertEquals("MATERIALIZED_VIEW", rsMaterialized.getString("TABLE_TYPE"));
-    assertFalse(rsMaterialized.next());
-
-    // --- Test Case 6: Get "SNAPSHOT" type ---
-    ResultSet rsSnapshot =
-        databaseMetaData.getTables(PROJECT_ID, DATASET, null, new String[] {"SNAPSHOT"});
-    assertTrue(rsSnapshot.next());
-    assertEquals("base_table_snapshot", rsSnapshot.getString("TABLE_NAME"));
-    assertEquals("SNAPSHOT", rsSnapshot.getString("TABLE_TYPE"));
-    assertFalse(rsSnapshot.next());
-
-    // --- Test Case 8: Get multiple types ("TABLE" and "VIEW") ---
-    ResultSet rsMulti =
-        databaseMetaData.getTables(PROJECT_ID, DATASET, null, new String[] {"TABLE", "VIEW"});
-    Set<String> multiTableNames = new HashSet<>();
-    while (rsMulti.next()) {
-      multiTableNames.add(rsMulti.getString("TABLE_NAME"));
-    }
-    assertTrue(multiTableNames.contains("base_table"));
-    assertTrue(multiTableNames.contains("base_table_clone"));
-    assertTrue(multiTableNames.contains("my_view"));
-    assertEquals(3, multiTableNames.size());
-
-    // --- Test Case 9: tableNamePattern  ---
-    ResultSet rsNamePattern = databaseMetaData.getTables(PROJECT_ID, DATASET, "base%", null);
-    Set<String> baseTableNames = new HashSet<>();
-    while (rsNamePattern.next()) {
-      baseTableNames.add(rsNamePattern.getString("TABLE_NAME"));
-    }
-    assertTrue(baseTableNames.contains("base_table"));
-    assertTrue(baseTableNames.contains("base_table_clone"));
-    assertTrue(baseTableNames.contains("base_table_snapshot"));
-    assertEquals(3, baseTableNames.size());
-
-    // --- Test Case 10: No matching table ---
-    ResultSet rsNoMatch =
-        databaseMetaData.getTables(PROJECT_ID, DATASET, "nonexistent_table", null);
-    assertFalse(rsNoMatch.next());
-
-    // --- Test Case 11: Null type in array ---
-    ResultSet rsNullType =
-        databaseMetaData.getTables(PROJECT_ID, DATASET, null, new String[] {null, "VIEW"});
-    assertTrue(rsNullType.next());
-    assertEquals("VIEW", rsNullType.getString("TABLE_TYPE"));
-    assertEquals("my_view", rsNullType.getString("TABLE_NAME"));
-    assertFalse(rsNullType.next());
-  }
-
-  @Test
-  public void testDatabaseMetadataGetSchemas() throws SQLException {
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
-
-    // Test case 1: Get all schemas with catalog and check for the presence of specific schemas
-    ResultSet rsAll = databaseMetaData.getSchemas(PROJECT_ID, null);
-    Set<String> actualSchemas = new HashSet<>();
-    while (rsAll.next()) {
-      assertEquals(PROJECT_ID, rsAll.getString("TABLE_CATALOG"));
-      actualSchemas.add(rsAll.getString("TABLE_SCHEM"));
-    }
-    assertTrue(actualSchemas.contains("JDBC_INTEGRATION_DATASET"));
-    assertTrue(actualSchemas.contains("JDBC_TABLE_TYPES_TEST"));
-    assertTrue(actualSchemas.contains("ODBC_TEST_DATASET"));
-
-    // Test case 2: Get schemas with catalog and schemaPattern matching "JDBC_NIGHTLY_IT_DATASET"
-    ResultSet rsPattern = databaseMetaData.getSchemas(PROJECT_ID, "JDBC_NIGHTLY_IT_DATASET");
-    Set<String> actualSchemasPattern = new HashSet<>();
-    while (rsPattern.next()) {
-      assertEquals(PROJECT_ID, rsPattern.getString("TABLE_CATALOG"));
-      actualSchemasPattern.add(rsPattern.getString("TABLE_SCHEM"));
-    }
-    assertTrue(actualSchemasPattern.contains("JDBC_NIGHTLY_IT_DATASET"));
-    assertEquals(1, actualSchemasPattern.size());
-
-    // Test case 3: Get schemas with catalog and schemaPattern matching "nonexistent"
-    ResultSet rsNoMatch = databaseMetaData.getSchemas(PROJECT_ID, "nonexistent");
-    assertFalse(rsNoMatch.next());
-
-    // Test case 4: Get schemas with non-existent catalog
-    rsNoMatch = databaseMetaData.getSchemas("invalid-catalog", null);
-    assertFalse(rsNoMatch.next());
-  }
-
-  @Test
-  public void testDatabaseMetadataGetSchemasNoArgs() throws SQLException {
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
-    String expectedCatalog = bigQueryConnection.getCatalog();
-    assertNotNull(expectedCatalog, "Project ID (catalog) from connection should not be null");
-
-    // Test case: Get all schemas (datasets) for the current project
-    try (ResultSet rsAll = databaseMetaData.getSchemas()) {
-      assertNotNull(rsAll, "ResultSet from getSchemas() should not be null");
-      boolean foundTestDataset = false;
-      int rowCount = 0;
-      while (rsAll.next()) {
-        rowCount++;
-        assertEquals(
-            expectedCatalog,
-            rsAll.getString("TABLE_CATALOG"),
-            "TABLE_CATALOG should match the connection's project ID");
-        String schemaName = rsAll.getString("TABLE_SCHEM");
-        assertNotNull(schemaName, "TABLE_SCHEM should not be null");
-        if (DATASET.equals(schemaName)
-            || DATASET2.equals(schemaName)
-            || CONSTRAINTS_DATASET.equals(schemaName)
-            || "JDBC_TABLE_TYPES_TEST".equals(schemaName)
-            || "JDBC_INTEGRATION_DATASET".equals(schemaName)) {
-          foundTestDataset = true;
-        }
-      }
-      assertTrue(foundTestDataset, "At least one of the known test datasets should be found");
-      assertTrue(rowCount > 0, "Should retrieve at least one schema/dataset");
-    }
-  }
-
-  @Test
-  public void testDatabaseMetaDataGetFunctions() throws SQLException {
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
-    String testSchema = "JDBC_TABLE_TYPES_TEST";
-    String testCatalog = PROJECT_ID;
-
-    Set<String> expectedFunctionNames =
-        new HashSet<>(
-            Arrays.asList(
-                "complex_scalar_sql_udf",
-                "persistent_sql_udf_named_params",
-                "scalar_js_udf",
-                "scalar_sql_udf"));
-
-    // Test 1: Get all functions from a specific schema
-    ResultSet rsAll = databaseMetaData.getFunctions(testCatalog, testSchema, null);
-    Set<String> foundFunctionNames = new HashSet<>();
-    int countAll = 0;
-    while (rsAll.next()) {
-      countAll++;
-      assertEquals(testCatalog, rsAll.getString("FUNCTION_CAT"));
-      assertEquals(testSchema, rsAll.getString("FUNCTION_SCHEM"));
-      String funcName = rsAll.getString("FUNCTION_NAME");
-      foundFunctionNames.add(funcName);
-      assertNull(rsAll.getString("REMARKS"));
-      assertEquals(DatabaseMetaData.functionResultUnknown, rsAll.getShort("FUNCTION_TYPE"));
-      assertEquals(funcName, rsAll.getString("SPECIFIC_NAME"));
-    }
-    assertEquals(
-        expectedFunctionNames.size(),
-        countAll,
-        "Should find all " + expectedFunctionNames.size() + " functions in " + testSchema);
-    assertEquals(expectedFunctionNames, foundFunctionNames);
-    rsAll.close();
-
-    // Test 2: Get a specific function using functionNamePattern
-    String specificFunctionName = "scalar_sql_udf";
-    ResultSet rsSpecific =
-        databaseMetaData.getFunctions(testCatalog, testSchema, specificFunctionName);
-    assertTrue(rsSpecific.next(), "Should find the specific function " + specificFunctionName);
-    assertEquals(testCatalog, rsSpecific.getString("FUNCTION_CAT"));
-    assertEquals(testSchema, rsSpecific.getString("FUNCTION_SCHEM"));
-    assertEquals(specificFunctionName, rsSpecific.getString("FUNCTION_NAME"));
-    assertNull(rsSpecific.getString("REMARKS"));
-    assertEquals(DatabaseMetaData.functionResultUnknown, rsSpecific.getShort("FUNCTION_TYPE"));
-    assertEquals(specificFunctionName, rsSpecific.getString("SPECIFIC_NAME"));
-    assertFalse(rsSpecific.next(), "Should only find one row for exact function match");
-    rsSpecific.close();
-
-    // Test 3: Get functions using a wildcard functionNamePattern "scalar%"
-    // Expected order due to sorting: scalar_js_udf, scalar_sql_udf
-    ResultSet rsWildcard = databaseMetaData.getFunctions(testCatalog, testSchema, "scalar%");
-    assertTrue(rsWildcard.next(), "Should find functions matching 'scalar%'");
-    assertEquals("scalar_js_udf", rsWildcard.getString("FUNCTION_NAME"));
-    assertEquals(DatabaseMetaData.functionResultUnknown, rsWildcard.getShort("FUNCTION_TYPE"));
-
-    assertTrue(rsWildcard.next(), "Should find the second function matching 'scalar%'");
-    assertEquals("scalar_sql_udf", rsWildcard.getString("FUNCTION_NAME"));
-    assertEquals(DatabaseMetaData.functionResultUnknown, rsWildcard.getShort("FUNCTION_TYPE"));
-    assertFalse(rsWildcard.next(), "Should be no more functions matching 'scalar%'");
-    rsWildcard.close();
-
-    // Test 4: Schema pattern with wildcard
-    ResultSet rsSchemaWildcard =
-        databaseMetaData.getFunctions(testCatalog, "JDBC_TABLE_TYPES_T%", "complex_scalar_sql_udf");
-    assertTrue(rsSchemaWildcard.next(), "Should find function with schema wildcard");
-    assertEquals(testSchema, rsSchemaWildcard.getString("FUNCTION_SCHEM"));
-    assertEquals("complex_scalar_sql_udf", rsSchemaWildcard.getString("FUNCTION_NAME"));
-    assertFalse(
-        rsSchemaWildcard.next(),
-        "Should only find one row for this schema wildcard and specific function");
-    rsSchemaWildcard.close();
-
-    // Test 5: Non-existent function
-    ResultSet rsNonExistentFunc =
-        databaseMetaData.getFunctions(testCatalog, testSchema, "non_existent_function_xyz123");
-    assertFalse(rsNonExistentFunc.next(), "Should not find a non-existent function");
-    rsNonExistentFunc.close();
-
-    // Test 6: Non-existent schema
-    ResultSet rsNonExistentSchema =
-        databaseMetaData.getFunctions(testCatalog, "NON_EXISTENT_SCHEMA_XYZ123", null);
-    assertFalse(rsNonExistentSchema.next(), "Should not find functions in a non-existent schema");
-    rsNonExistentSchema.close();
-
-    // Test 7: Empty schema pattern
-    ResultSet rsEmptySchema = databaseMetaData.getFunctions(testCatalog, "", null);
-    assertFalse(rsEmptySchema.next(), "Empty schema pattern should return no results");
-    rsEmptySchema.close();
-
-    // Test 8: Empty function name pattern
-    ResultSet rsEmptyFunction = databaseMetaData.getFunctions(testCatalog, testSchema, "");
-    assertFalse(rsEmptyFunction.next(), "Empty function name pattern should return no results");
-    rsEmptyFunction.close();
-
-    // Test 9: Null catalog
-    ResultSet rsNullCatalog = databaseMetaData.getFunctions(null, testSchema, null);
-    assertFalse(rsNullCatalog.next(), "Null catalog should return no results");
-    rsNullCatalog.close();
-  }
-
-  @Test
-  public void testDatabaseMetadataGetFunctionColumns() throws SQLException {
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
-    String testCatalog = PROJECT_ID;
-    String testSchema = "JDBC_TABLE_TYPES_TEST";
-
-    // Test Case 1: Specific function 'scalar_sql_udf', specific column 'x'
-    String specificFunction1 = "scalar_sql_udf";
-    String specificColumn1 = "x";
-    ResultSet rs =
-        databaseMetaData.getFunctionColumns(
-            testCatalog, testSchema, specificFunction1, specificColumn1);
-
-    assertTrue(rs.next(), "Should find column 'x' for function 'scalar_sql_udf'");
-    assertEquals(testCatalog, rs.getString("FUNCTION_CAT"));
-    assertEquals(testSchema, rs.getString("FUNCTION_SCHEM"));
-    assertEquals(specificFunction1, rs.getString("FUNCTION_NAME"));
-    assertEquals(specificColumn1, rs.getString("COLUMN_NAME"));
-    assertEquals(DatabaseMetaData.functionColumnUnknown, rs.getShort("COLUMN_TYPE"));
-    assertEquals(Types.BIGINT, rs.getInt("DATA_TYPE"));
-    assertEquals("BIGINT", rs.getString("TYPE_NAME"));
-    assertEquals(19, rs.getInt("PRECISION"));
-    assertEquals(null, rs.getObject("LENGTH"));
-    assertTrue(rs.wasNull());
-    assertEquals(0, rs.getShort("SCALE"));
-    assertEquals(10, rs.getShort("RADIX"));
-    assertEquals(DatabaseMetaData.functionNullableUnknown, rs.getShort("NULLABLE"));
-    assertNull(rs.getString("REMARKS"));
-    assertEquals(null, rs.getObject("CHAR_OCTET_LENGTH"));
-    assertTrue(rs.wasNull());
-    assertEquals(1, rs.getInt("ORDINAL_POSITION"));
-    assertEquals("", rs.getString("IS_NULLABLE"));
-    assertEquals(specificFunction1, rs.getString("SPECIFIC_NAME"));
-    assertFalse(rs.next(), "Should only find one row for exact column match");
-    rs.close();
-
-    // Test Case 2: Specific function 'complex_scalar_sql_udf', specific column 'arr'
-    String specificFunction2 = "complex_scalar_sql_udf";
-    String specificColumn2 = "arr";
-    rs =
-        databaseMetaData.getFunctionColumns(
-            testCatalog, testSchema, specificFunction2, specificColumn2);
-    assertTrue(rs.next(), "Should find column 'arr' for function 'complex_scalar_sql_udf'");
-    assertEquals(testCatalog, rs.getString("FUNCTION_CAT"));
-    assertEquals(testSchema, rs.getString("FUNCTION_SCHEM"));
-    assertEquals(specificFunction2, rs.getString("FUNCTION_NAME"));
-    assertEquals(specificColumn2, rs.getString("COLUMN_NAME"));
-    assertEquals(DatabaseMetaData.functionColumnUnknown, rs.getShort("COLUMN_TYPE"));
-    assertEquals(Types.ARRAY, rs.getInt("DATA_TYPE"));
-    assertEquals("ARRAY", rs.getString("TYPE_NAME"));
-    assertEquals(null, rs.getObject("PRECISION"));
-    assertTrue(rs.wasNull());
-    assertEquals(null, rs.getObject("LENGTH"));
-    assertTrue(rs.wasNull());
-    assertEquals(null, rs.getObject("SCALE"));
-    assertTrue(rs.wasNull());
-    assertEquals(null, rs.getObject("RADIX"));
-    assertTrue(rs.wasNull());
-    assertEquals(DatabaseMetaData.functionNullableUnknown, rs.getShort("NULLABLE"));
-    assertNull(rs.getString("REMARKS"));
-    assertEquals(null, rs.getObject("CHAR_OCTET_LENGTH"));
-    assertTrue(rs.wasNull());
-    assertEquals(1, rs.getInt("ORDINAL_POSITION"));
-    assertEquals("", rs.getString("IS_NULLABLE"));
-    assertEquals(specificFunction2, rs.getString("SPECIFIC_NAME"));
-    assertFalse(rs.next(), "Should only find one row for exact column match");
-    rs.close();
-
-    // Test Case 3: All columns for 'persistent_sql_udf_named_params' (sorted by ordinal position)
-    String specificFunction3 = "persistent_sql_udf_named_params";
-    rs = databaseMetaData.getFunctionColumns(testCatalog, testSchema, specificFunction3, null);
-    assertTrue(rs.next(), "Should find columns for " + specificFunction3);
-    assertEquals(specificFunction3, rs.getString("FUNCTION_NAME"));
-    assertEquals("value1", rs.getString("COLUMN_NAME")); // Ordinal Position 1
-    assertEquals(DatabaseMetaData.functionColumnUnknown, rs.getShort("COLUMN_TYPE"));
-    assertEquals(Types.BIGINT, rs.getInt("DATA_TYPE"));
-    assertEquals("BIGINT", rs.getString("TYPE_NAME"));
-    assertEquals(1, rs.getInt("ORDINAL_POSITION"));
-
-    assertTrue(rs.next(), "Should find second column for " + specificFunction3);
-    assertEquals(specificFunction3, rs.getString("FUNCTION_NAME"));
-    assertEquals("value-two", rs.getString("COLUMN_NAME")); // Ordinal Position 2
-    assertEquals(DatabaseMetaData.functionColumnUnknown, rs.getShort("COLUMN_TYPE"));
-    assertEquals(Types.NVARCHAR, rs.getInt("DATA_TYPE"));
-    assertEquals("NVARCHAR", rs.getString("TYPE_NAME"));
-    assertEquals(2, rs.getInt("ORDINAL_POSITION"));
-    assertFalse(rs.next(), "Should be no more columns for " + specificFunction3);
-    rs.close();
-
-    // Test Case 4: Wildcard for function name "scalar%", specific column name "x"
-    rs = databaseMetaData.getFunctionColumns(testCatalog, testSchema, "scalar%", "x");
-    assertTrue(rs.next(), "Should find column 'x' for functions matching 'scalar%'");
-    assertEquals("scalar_sql_udf", rs.getString("FUNCTION_NAME"));
-    assertEquals("x", rs.getString("COLUMN_NAME"));
-    assertEquals(1, rs.getInt("ORDINAL_POSITION"));
-    assertFalse(rs.next(), "Should be no more columns named 'x' for functions matching 'scalar%'");
-    rs.close();
-
-    // Test Case 5: Wildcard for column name "%" for 'scalar_js_udf'
-    String specificFunction4 = "scalar_js_udf";
-    rs = databaseMetaData.getFunctionColumns(testCatalog, testSchema, specificFunction4, "%");
-    assertTrue(rs.next(), "Should find columns for " + specificFunction4 + " with wildcard");
-    assertEquals(specificFunction4, rs.getString("FUNCTION_NAME"));
-    assertEquals("name", rs.getString("COLUMN_NAME")); // Ordinal Position 1
-    assertEquals(1, rs.getInt("ORDINAL_POSITION"));
-
-    assertTrue(rs.next(), "Should find second column for " + specificFunction4 + " with wildcard");
-    assertEquals(specificFunction4, rs.getString("FUNCTION_NAME"));
-    assertEquals("age", rs.getString("COLUMN_NAME")); // Ordinal Position 2
-    assertEquals(2, rs.getInt("ORDINAL_POSITION"));
-    assertFalse(rs.next(), "Should be no more columns for " + specificFunction4 + " with wildcard");
-    rs.close();
-
-    // Test Case 6: Non-existent function
-    rs =
-        databaseMetaData.getFunctionColumns(
-            testCatalog, testSchema, "non_existent_function_xyz", null);
-    assertFalse(rs.next(), "Should not find columns for a non-existent function");
-    rs.close();
-  }
-
-  @Test
   public void testRangeDataTypeWithJsonResultSet() throws SQLException {
     String RANGE_DATA_TABLE = "JDBC_RANGE_DATA_TEST_TABLE_" + random.nextInt(99);
     String range_date_literal = "RANGE<DATE> '[2020-01-01, 2020-01-31)'";
@@ -2274,910 +2023,6 @@ public class ITBigQueryJDBCTest extends ITBase {
     resultSet.next();
     assertEquals("[2024-07-14, 2024-09-23)", resultSet.getString("rangeField"));
     connection.close();
-  }
-
-  @Test
-  public void testPrepareCallSql() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc");
-    assertNotNull(callableStatement);
-    callableStatement.close();
-  }
-
-  @Test
-  public void testRegisterOutParamIndex() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    callableStatement.registerOutParameter(1, Types.VARCHAR);
-    callableStatement.close();
-  }
-
-  @Test
-  public void testRegisterOutParamName() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    callableStatement.registerOutParameter("ParamKey", Types.VARCHAR);
-    callableStatement.close();
-  }
-
-  @Test
-  public void testRegisterOutParamIndexScale() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    callableStatement.registerOutParameter(1, Types.NUMERIC, 2);
-    callableStatement.close();
-  }
-
-  @Test
-  public void testRegisterOutParamNameScale() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    callableStatement.registerOutParameter("ParamKey", Types.NUMERIC, 2);
-    callableStatement.close();
-  }
-
-  @Test
-  public void testPrepareCallSqlResultSetTypeConcurrency() throws SQLException {
-    CallableStatement callableStatement =
-        this.bigQueryConnection.prepareCall(
-            "call testProc", ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-    assertNotNull(callableStatement);
-    callableStatement.close();
-  }
-
-  @Test
-  public void testPrepareCallConcurrencyRegisterOutParamIndex() throws SQLException {
-    CallableStatement callableStatement =
-        this.bigQueryConnection.prepareCall(
-            "call testProc('?')", ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-    assertNotNull(callableStatement);
-    callableStatement.registerOutParameter(1, Types.VARCHAR);
-    callableStatement.close();
-  }
-
-  @Test
-  public void testPrepareCallConcurrencyRegisterOutParamName() throws SQLException {
-    CallableStatement callableStatement =
-        this.bigQueryConnection.prepareCall(
-            "call testProc('?')", ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-    assertNotNull(callableStatement);
-    callableStatement.registerOutParameter("ParamKey", Types.VARCHAR);
-    callableStatement.close();
-  }
-
-  @Test
-  public void testPrepareCallConcurrencyRegisterOutParamIndexScale() throws SQLException {
-    CallableStatement callableStatement =
-        this.bigQueryConnection.prepareCall(
-            "call testProc('?')", ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-    assertNotNull(callableStatement);
-    callableStatement.registerOutParameter(1, Types.NUMERIC, 2);
-    callableStatement.close();
-  }
-
-  @Test
-  public void testPrepareCallConcurrencyRegisterOutParamNameScale() throws SQLException {
-    CallableStatement callableStatement =
-        this.bigQueryConnection.prepareCall(
-            "call testProc('?')", ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-    assertNotNull(callableStatement);
-    callableStatement.registerOutParameter("ParamKey", Types.NUMERIC, 2);
-    callableStatement.close();
-  }
-
-  @Test
-  public void testPrepareCallSqlResultSetTypeConcurrencyHoldability() throws SQLException {
-    CallableStatement callableStatement =
-        this.bigQueryConnection.prepareCall(
-            "call testProc",
-            ResultSet.TYPE_FORWARD_ONLY,
-            ResultSet.CONCUR_READ_ONLY,
-            ResultSet.CLOSE_CURSORS_AT_COMMIT);
-    assertNotNull(callableStatement);
-    callableStatement.close();
-  }
-
-  @Test
-  public void testPrepareCallHoldabilityRegisterOutParamIndex() throws SQLException {
-    CallableStatement callableStatement =
-        this.bigQueryConnection.prepareCall(
-            "call testProc('?')",
-            ResultSet.TYPE_FORWARD_ONLY,
-            ResultSet.CONCUR_READ_ONLY,
-            ResultSet.CLOSE_CURSORS_AT_COMMIT);
-    assertNotNull(callableStatement);
-    callableStatement.registerOutParameter(1, Types.VARCHAR);
-    callableStatement.close();
-  }
-
-  @Test
-  public void testPrepareCallHoldabilityRegisterOutParamName() throws SQLException {
-    CallableStatement callableStatement =
-        this.bigQueryConnection.prepareCall(
-            "call testProc('?')",
-            ResultSet.TYPE_FORWARD_ONLY,
-            ResultSet.CONCUR_READ_ONLY,
-            ResultSet.CLOSE_CURSORS_AT_COMMIT);
-    assertNotNull(callableStatement);
-    callableStatement.registerOutParameter("ParamKey", Types.VARCHAR);
-    callableStatement.close();
-  }
-
-  @Test
-  public void testPrepareCallHoldabilityRegisterOutParamIndexScale() throws SQLException {
-    CallableStatement callableStatement =
-        this.bigQueryConnection.prepareCall(
-            "call testProc('?')",
-            ResultSet.TYPE_FORWARD_ONLY,
-            ResultSet.CONCUR_READ_ONLY,
-            ResultSet.CLOSE_CURSORS_AT_COMMIT);
-    assertNotNull(callableStatement);
-    callableStatement.close();
-  }
-
-  @Test
-  public void testPrepareCallHoldabilityRegisterOutParamNameScale() throws SQLException {
-    CallableStatement callableStatement =
-        this.bigQueryConnection.prepareCall(
-            "call testProc('?')",
-            ResultSet.TYPE_FORWARD_ONLY,
-            ResultSet.CONCUR_READ_ONLY,
-            ResultSet.CLOSE_CURSORS_AT_COMMIT);
-    assertNotNull(callableStatement);
-    callableStatement.registerOutParameter("ParamKey", Types.NUMERIC, 2);
-    callableStatement.close();
-  }
-
-  @Test
-  public void testPrepareCallFailureResultSetType() throws SQLException {
-    assertThrows(
-        BigQueryJdbcSqlFeatureNotSupportedException.class,
-        () ->
-            this.bigQueryConnection.prepareCall(
-                "call testProc", ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY));
-  }
-
-  @Test
-  public void testPrepareCallFailureResultSetConcurrency() throws SQLException {
-    assertThrows(
-        BigQueryJdbcSqlFeatureNotSupportedException.class,
-        () ->
-            this.bigQueryConnection.prepareCall(
-                "call testProc", ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE));
-  }
-
-  @Test
-  public void testPrepareCallFailureResultSetHoldability() throws SQLException {
-    assertThrows(
-        BigQueryJdbcSqlFeatureNotSupportedException.class,
-        () ->
-            this.bigQueryConnection.prepareCall(
-                "call testProc",
-                ResultSet.TYPE_FORWARD_ONLY,
-                ResultSet.CONCUR_READ_ONLY,
-                ResultSet.HOLD_CURSORS_OVER_COMMIT));
-  }
-
-  // Integration tests for CallableStatement Setters and Getters
-  @Test
-  public void testSetterGetterBigDecimal() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    BigDecimal expected = new BigDecimal(12344);
-    callableStatement.setBigDecimal(CALLABLE_STMT_PARAM_KEY, expected);
-    BigDecimal actual = callableStatement.getBigDecimal(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterBoolean() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    Boolean expected = true;
-    callableStatement.setBoolean(CALLABLE_STMT_PARAM_KEY, expected);
-    Boolean actual = callableStatement.getBoolean(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterByte() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    Byte expected = "hello".getBytes()[0];
-    callableStatement.setByte(CALLABLE_STMT_PARAM_KEY, expected);
-    Byte actual = callableStatement.getByte(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterBytes() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    byte[] expected = "hello".getBytes();
-    callableStatement.setBytes(CALLABLE_STMT_PARAM_KEY, expected);
-    byte[] actual = callableStatement.getBytes(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterDate() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    Date expected = new Date(1234567);
-    callableStatement.setDate(CALLABLE_STMT_PARAM_KEY, expected);
-    Date actual = callableStatement.getDate(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterDateCal() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    Date expected = new Date(1L);
-    Calendar cal = Calendar.getInstance();
-    callableStatement.setDate(CALLABLE_STMT_PARAM_KEY, expected, cal);
-    Date actual = callableStatement.getDate(CALLABLE_STMT_PARAM_KEY, cal);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterDouble() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    Double expected = 123.2345;
-    callableStatement.setDouble(CALLABLE_STMT_PARAM_KEY, expected);
-    Double actual = callableStatement.getDouble(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterFloat() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    Float expected = 123.2345F;
-    callableStatement.setFloat(CALLABLE_STMT_PARAM_KEY, expected);
-    Float actual = callableStatement.getFloat(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterInt() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    Integer expected = 123;
-    callableStatement.setInt(CALLABLE_STMT_PARAM_KEY, expected);
-    Integer actual = callableStatement.getInt(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterLong() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    Long expected = 123L;
-    callableStatement.setLong(CALLABLE_STMT_PARAM_KEY, expected);
-    Long actual = callableStatement.getLong(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterNString() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    String expected = "heelo";
-    callableStatement.setNString(CALLABLE_STMT_PARAM_KEY, expected);
-    String actual = callableStatement.getNString(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterObject() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    String expected = "heelo";
-    callableStatement.setObject(CALLABLE_STMT_PARAM_KEY, expected);
-    Object actual = callableStatement.getObject(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterObjectWithSQLType() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    String expected = "heelo";
-    callableStatement.setObject(CALLABLE_STMT_PARAM_KEY, expected, Types.NVARCHAR);
-    Object actual = callableStatement.getObject(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterObjectWithSqlTypeAndScale() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    String expected = "heelo";
-    callableStatement.setObject(CALLABLE_STMT_PARAM_KEY, expected, Types.NVARCHAR, 0);
-    Object actual = callableStatement.getObject(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterString() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    String expected = "123";
-    callableStatement.setString(CALLABLE_STMT_PARAM_KEY, expected);
-    String actual = callableStatement.getString(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterTime() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    Time expected = new Time(1234567);
-    callableStatement.setTime(CALLABLE_STMT_PARAM_KEY, expected);
-    Time actual = callableStatement.getTime(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterTimeCal() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    Time expected = new Time(1L);
-    Calendar cal = Calendar.getInstance();
-    callableStatement.setTime(CALLABLE_STMT_PARAM_KEY, expected, cal);
-    Time actual = callableStatement.getTime(CALLABLE_STMT_PARAM_KEY, cal);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterTimestamp() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    Timestamp expected = new Timestamp(1234567);
-    callableStatement.setTimestamp(CALLABLE_STMT_PARAM_KEY, expected);
-    Timestamp actual = callableStatement.getTimestamp(CALLABLE_STMT_PARAM_KEY);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testSetterGetterTimestampCal() throws SQLException {
-    CallableStatement callableStatement = this.bigQueryConnection.prepareCall("call testProc('?')");
-    assertNotNull(callableStatement);
-    Timestamp expected = new Timestamp(1L);
-    Calendar cal = Calendar.getInstance();
-    callableStatement.setTimestamp(CALLABLE_STMT_PARAM_KEY, expected, cal);
-    Timestamp actual = callableStatement.getTimestamp(CALLABLE_STMT_PARAM_KEY, cal);
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  public void testPooledConnectionDataSourceSuccess() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
-
-    PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
-    pooledDataSource.setURL(connectionUrl);
-
-    PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-  }
-
-  @Test
-  public void testPooledConnectionDataSourceFailNoConnectionURl() throws SQLException {
-    PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
-
-    assertThrows(BigQueryJdbcException.class, () -> pooledDataSource.getPooledConnection());
-  }
-
-  @Test
-  public void testPooledConnectionDataSourceFailInvalidConnectionURl() {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;"
-            + "ListenerPoolSize=invalid";
-    PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
-    pooledDataSource.setURL(connectionUrl);
-
-    assertThrows(NumberFormatException.class, () -> pooledDataSource.getPooledConnection());
-  }
-
-  @Test
-  public void testPooledConnectionAddConnectionListener() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
-
-    PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
-    pooledDataSource.setURL(connectionUrl);
-
-    PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    TestConnectionListener listener = new TestConnectionListener();
-    pooledConnection.addConnectionEventListener(listener);
-    assertEquals(0, listener.getConnectionClosedCount());
-    assertEquals(0, listener.getConnectionErrorCount());
-  }
-
-  @Test
-  public void testPooledConnectionRemoveConnectionListener() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
-
-    PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
-    pooledDataSource.setURL(connectionUrl);
-
-    PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    TestConnectionListener listener = new TestConnectionListener();
-    pooledConnection.removeConnectionEventListener(listener);
-    assertEquals(0, listener.getConnectionClosedCount());
-    assertEquals(0, listener.getConnectionErrorCount());
-  }
-
-  @Test
-  public void testPooledConnectionConnectionClosed() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
-
-    PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
-    pooledDataSource.setURL(connectionUrl);
-
-    PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    TestConnectionListener listener = new TestConnectionListener();
-    pooledConnection.addConnectionEventListener(listener);
-    assertEquals(0, listener.getConnectionClosedCount());
-    assertEquals(0, listener.getConnectionErrorCount());
-
-    Connection connection = pooledConnection.getConnection();
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
-
-    connection.close();
-    assertEquals(1, listener.getConnectionClosedCount());
-    assertEquals(0, listener.getConnectionErrorCount());
-  }
-
-  @Test
-  public void testPooledConnectionClose() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
-
-    PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
-    pooledDataSource.setURL(connectionUrl);
-
-    PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    TestConnectionListener listener = new TestConnectionListener();
-    pooledConnection.addConnectionEventListener(listener);
-    assertEquals(0, listener.getConnectionClosedCount());
-    assertEquals(0, listener.getConnectionErrorCount());
-
-    pooledConnection.close();
-    assertEquals(1, listener.getConnectionClosedCount());
-    assertEquals(0, listener.getConnectionErrorCount());
-  }
-
-  @Test
-  public void testPooledConnectionConnectionError() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
-
-    PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
-    pooledDataSource.setURL(connectionUrl);
-
-    PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    TestConnectionListener listener = new TestConnectionListener();
-    pooledConnection.addConnectionEventListener(listener);
-    assertEquals(0, listener.getConnectionClosedCount());
-    assertEquals(0, listener.getConnectionErrorCount());
-
-    Connection connection = pooledConnection.getConnection();
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
-
-    ExecutorService executor = Executors.newFixedThreadPool(3);
-    connection.abort(executor);
-    assertEquals(0, listener.getConnectionClosedCount());
-    assertEquals(1, listener.getConnectionErrorCount());
-
-    executor.shutdown();
-    connection.close();
-    pooledConnection.close();
-  }
-
-  @Test
-  public void testPooledConnectionListenerAddListener() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
-
-    PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
-    pooledDataSource.setURL(connectionUrl);
-
-    PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    PooledConnectionListener listener = new PooledConnectionListener(DEFAULT_CONN_POOL_SIZE);
-    pooledConnection.addConnectionEventListener(listener);
-    assertTrue(listener.isConnectionPoolEmpty());
-    pooledConnection.close();
-  }
-
-  @Test
-  public void testPooledConnectionListenerRemoveListener() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
-
-    PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
-    pooledDataSource.setURL(connectionUrl);
-
-    PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    PooledConnectionListener listener = new PooledConnectionListener(DEFAULT_CONN_POOL_SIZE);
-    pooledConnection.addConnectionEventListener(listener);
-    assertTrue(listener.isConnectionPoolEmpty());
-
-    pooledConnection.removeConnectionEventListener(listener);
-    assertTrue(listener.isConnectionPoolEmpty());
-    pooledConnection.close();
-  }
-
-  @Test
-  public void testPooledConnectionListenerCloseConnection() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
-
-    PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
-    pooledDataSource.setURL(connectionUrl);
-
-    PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    PooledConnectionListener listener = new PooledConnectionListener(DEFAULT_CONN_POOL_SIZE);
-    pooledConnection.addConnectionEventListener(listener);
-    assertTrue(listener.isConnectionPoolEmpty());
-
-    Connection connection = pooledConnection.getConnection();
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
-
-    connection.close();
-    assertFalse(listener.isConnectionPoolEmpty());
-    pooledConnection.close();
-  }
-
-  @Test
-  public void testPooledConnectionListenerClosePooledConnection() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
-
-    PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
-    pooledDataSource.setURL(connectionUrl);
-
-    PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    PooledConnectionListener listener = new PooledConnectionListener(DEFAULT_CONN_POOL_SIZE);
-    pooledConnection.addConnectionEventListener(listener);
-    assertTrue(listener.isConnectionPoolEmpty());
-
-    pooledConnection.close();
-    assertFalse(listener.isConnectionPoolEmpty());
-  }
-
-  @Test
-  public void testPooledConnectionListenerConnectionError() throws SQLException {
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;OAuthType=3;ProjectId=testProject;ConnectionPoolSize=20;ListenerPoolSize=20;";
-
-    PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
-    pooledDataSource.setURL(connectionUrl);
-
-    PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    PooledConnectionListener listener = new PooledConnectionListener(DEFAULT_CONN_POOL_SIZE);
-    pooledConnection.addConnectionEventListener(listener);
-    assertTrue(listener.isConnectionPoolEmpty());
-
-    Connection connection = pooledConnection.getConnection();
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
-
-    ExecutorService executor = Executors.newFixedThreadPool(3);
-    connection.abort(executor);
-    assertTrue(listener.isConnectionPoolEmpty());
-
-    executor.shutdown();
-    connection.close();
-    pooledConnection.close();
-  }
-
-  @Test
-  public void testExecuteQueryWithConnectionPoolingEnabledDefaultPoolSize() throws SQLException {
-    String connectionURL =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;ProjectId="
-            + PROJECT_ID
-            + ";";
-    assertConnectionPoolingResults(connectionURL, DEFAULT_CONN_POOL_SIZE);
-  }
-
-  @Test
-  public void testExecuteQueryWithConnectionPoolingEnabledCustomPoolSize() throws SQLException {
-    String connectionURL =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=3;ProjectId="
-            + PROJECT_ID
-            + ";"
-            + "ConnectionPoolSize="
-            + CUSTOM_CONN_POOL_SIZE
-            + ";";
-    assertConnectionPoolingResults(connectionURL, CUSTOM_CONN_POOL_SIZE);
-  }
-
-  private void assertConnectionPoolingResults(String connectionURL, Long connectionPoolSize)
-      throws SQLException {
-    // Create Pooled Connection Datasource
-    PooledConnectionDataSource pooledDataSource = new PooledConnectionDataSource();
-    pooledDataSource.setURL(connectionURL);
-
-    // Get pooled connection and ensure listner was added with default connection pool size.
-    PooledConnection pooledConnection = pooledDataSource.getPooledConnection();
-    assertNotNull(pooledConnection);
-    PooledConnectionListener listener = pooledDataSource.getConnectionPoolManager();
-    assertNotNull(listener);
-    assertTrue(listener.isConnectionPoolEmpty());
-
-    // Get Underlying physical connection
-    Connection connection = pooledConnection.getConnection();
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
-
-    // Execute query with physical connection
-    String query =
-        "SELECT DISTINCT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT"
-            + " 850";
-    Statement statement = connection.createStatement();
-    ResultSet jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
-
-    // Close physical connection
-    connection.close();
-    assertFalse(listener.isConnectionPoolEmpty());
-    assertEquals(1, listener.getConnectionPoolCurrentCapacity());
-    assertEquals(connectionPoolSize, listener.getConnectionPoolSize());
-
-    // Reuse same physical connection.
-    connection = pooledConnection.getConnection();
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
-    assertFalse(listener.isConnectionPoolEmpty());
-    assertEquals(1, listener.getConnectionPoolCurrentCapacity());
-    assertEquals(connectionPoolSize, listener.getConnectionPoolSize());
-
-    // Execute query with reusable physical connection
-    jsonResultSet = statement.executeQuery(query);
-    assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
-
-    // Return connection back to the pool.
-    connection.close();
-    assertFalse(listener.isConnectionPoolEmpty());
-    assertEquals(1, listener.getConnectionPoolCurrentCapacity());
-    assertEquals(connectionPoolSize, listener.getConnectionPoolSize());
-    pooledConnection.close();
-  }
-
-  @Test
-  public void testAdditionalProjectsInMetadata() throws SQLException {
-    String additionalProjectsValue = "bigquery-public-data";
-    String datasetInAdditionalProject = "baseball";
-
-    String urlWithAdditionalProjects =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId="
-            + PROJECT_ID
-            + ";OAuthType=3"
-            + ";AdditionalProjects="
-            + additionalProjectsValue;
-
-    try (Connection conn = DriverManager.getConnection(urlWithAdditionalProjects)) {
-      DatabaseMetaData dbMetaData = conn.getMetaData();
-
-      // 1. Test getCatalogs()
-      Set<String> foundCatalogs = new HashSet<>();
-      try (ResultSet catalogsRs = dbMetaData.getCatalogs()) {
-        while (catalogsRs.next()) {
-          foundCatalogs.add(catalogsRs.getString("TABLE_CAT"));
-        }
-      }
-      assertTrue(
-          foundCatalogs.contains(PROJECT_ID),
-          "getCatalogs() should contain the primary project ID");
-      assertTrue(
-          foundCatalogs.contains(additionalProjectsValue),
-          "getCatalogs() should contain the additional project ID");
-
-      // 2. Test getSchemas()
-      Set<String> catalogsForSchemasFromAll = new HashSet<>();
-      boolean foundAdditionalDataset = false;
-      try (ResultSet schemasRs = dbMetaData.getSchemas()) {
-        while (schemasRs.next()) {
-          String schemaName = schemasRs.getString("TABLE_SCHEM");
-          String catalogName = schemasRs.getString("TABLE_CATALOG");
-          catalogsForSchemasFromAll.add(catalogName);
-          if (additionalProjectsValue.equals(catalogName)
-              && datasetInAdditionalProject.equals(schemaName)) {
-            foundAdditionalDataset = true;
-          }
-        }
-      }
-      assertTrue(
-          catalogsForSchemasFromAll.contains(PROJECT_ID),
-          "getSchemas() should list datasets from the primary project");
-      assertTrue(
-          catalogsForSchemasFromAll.contains(additionalProjectsValue),
-          "getSchemas() should list datasets from the additional project");
-      assertTrue(
-          foundAdditionalDataset,
-          "Known dataset from additional project not found in getSchemas()");
-
-    } catch (SQLException e) {
-      System.err.println("SQL Error during AdditionalProjects test: " + e.getMessage());
-      throw e;
-    }
-  }
-
-  @Test
-  public void testFilterTablesOnDefaultDataset_getTables() throws SQLException {
-    String defaultDatasetValue = CONSTRAINTS_DATASET;
-    String table1InDefaultDataset = CONSTRAINTS_TABLE_NAME;
-    String table2InDefaultDataset = CONSTRAINTS_TABLE_NAME2;
-
-    String specificDatasetValue = "JDBC_TABLE_TYPES_TEST";
-    String table1InSpecificDataset = "base_table";
-    String table2InSpecificDataset = "external_table";
-
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId="
-            + PROJECT_ID
-            + ";OAuthType=3"
-            + ";DefaultDataset="
-            + defaultDatasetValue
-            + ";FilterTablesOnDefaultDataset=1";
-    try (Connection conn = DriverManager.getConnection(connectionUrl)) {
-      DatabaseMetaData dbMetaData = conn.getMetaData();
-
-      // Case 1: Catalog and schemaPattern are null/wildcard, should use DefaultDataset
-      try (ResultSet rs = dbMetaData.getTables(null, null, null, null)) {
-        Set<String> tableNames = new HashSet<>();
-        while (rs.next()) {
-          assertEquals(PROJECT_ID, rs.getString("TABLE_CAT"));
-          assertEquals(defaultDatasetValue, rs.getString("TABLE_SCHEM"));
-          tableNames.add(rs.getString("TABLE_NAME"));
-        }
-        assertTrue(tableNames.contains(table1InDefaultDataset));
-        assertTrue(tableNames.contains(table2InDefaultDataset));
-      }
-
-      // Case 2: Explicit schemaPattern overrides DefaultDataset
-      try (ResultSet rs = dbMetaData.getTables(null, specificDatasetValue, null, null)) {
-        Set<String> tableNames = new HashSet<>();
-        while (rs.next()) {
-          assertEquals(PROJECT_ID, rs.getString("TABLE_CAT"));
-          assertEquals(specificDatasetValue, rs.getString("TABLE_SCHEM"));
-          tableNames.add(rs.getString("TABLE_NAME"));
-        }
-        assertTrue(tableNames.contains(table1InSpecificDataset));
-        assertTrue(tableNames.contains(table2InSpecificDataset));
-      }
-
-      // Case 3: Explicit catalog, schemaPattern is null/wildcard, should use DefaultDataset within
-      // that catalog
-      try (ResultSet rs = dbMetaData.getTables(PROJECT_ID, null, null, null)) {
-        Set<String> tableNames = new HashSet<>();
-        while (rs.next()) {
-          assertEquals(PROJECT_ID, rs.getString("TABLE_CAT"));
-          assertEquals(defaultDatasetValue, rs.getString("TABLE_SCHEM"));
-          tableNames.add(rs.getString("TABLE_NAME"));
-        }
-        assertTrue(tableNames.contains(table1InDefaultDataset));
-        assertTrue(tableNames.contains(table2InDefaultDataset));
-      }
-
-      // Case 4: Explicit catalog and schemaPattern override DefaultDataset
-      try (ResultSet rs = dbMetaData.getTables(PROJECT_ID, specificDatasetValue, null, null)) {
-        Set<String> tableNames = new HashSet<>();
-        while (rs.next()) {
-          assertEquals(PROJECT_ID, rs.getString("TABLE_CAT"));
-          assertEquals(specificDatasetValue, rs.getString("TABLE_SCHEM"));
-          tableNames.add(rs.getString("TABLE_NAME"));
-        }
-        assertTrue(tableNames.contains(table1InSpecificDataset));
-        assertTrue(tableNames.contains(table2InSpecificDataset));
-      }
-    }
-  }
-
-  @Test
-  public void testFilterTablesOnDefaultDataset_getColumns() throws SQLException {
-    String defaultDatasetValue = CONSTRAINTS_DATASET;
-    String tableInDefaultDataset = CONSTRAINTS_TABLE_NAME;
-    String[] columnsInDefaultTable = {"id", "name", "second_name", "address"};
-
-    String specificDatasetValue = "JDBC_TABLE_TYPES_TEST";
-    String tableInSpecificDataset = "base_table";
-    String[] columnsInSpecificTable = {"id", "name", "created_at"};
-
-    String connectionUrl =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId="
-            + PROJECT_ID
-            + ";OAuthType=3"
-            + ";DefaultDataset="
-            + defaultDatasetValue
-            + ";FilterTablesOnDefaultDataset=1";
-
-    try (Connection conn = DriverManager.getConnection(connectionUrl)) {
-      DatabaseMetaData dbMetaData = conn.getMetaData();
-
-      // Case 1: Catalog and schemaPattern are null/wildcard, should use DefaultDataset
-      try (ResultSet rs = dbMetaData.getColumns(null, null, tableInDefaultDataset, null)) {
-        Set<String> columnNames = new HashSet<>();
-        while (rs.next()) {
-          assertEquals(PROJECT_ID, rs.getString("TABLE_CAT"));
-          assertEquals(defaultDatasetValue, rs.getString("TABLE_SCHEM"));
-          assertEquals(tableInDefaultDataset, rs.getString("TABLE_NAME"));
-          columnNames.add(rs.getString("COLUMN_NAME"));
-        }
-        for (String expectedCol : columnsInDefaultTable) {
-          assertTrue(columnNames.contains(expectedCol));
-        }
-        assertEquals(columnsInDefaultTable.length, columnNames.size());
-      }
-
-      // Case 2: Explicit schemaPattern overrides DefaultDataset
-      try (ResultSet rs =
-          dbMetaData.getColumns(null, specificDatasetValue, tableInSpecificDataset, null)) {
-        Set<String> columnNames = new HashSet<>();
-        while (rs.next()) {
-          assertEquals(PROJECT_ID, rs.getString("TABLE_CAT"));
-          assertEquals(specificDatasetValue, rs.getString("TABLE_SCHEM"));
-          assertEquals(tableInSpecificDataset, rs.getString("TABLE_NAME"));
-          columnNames.add(rs.getString("COLUMN_NAME"));
-        }
-        for (String expectedCol : columnsInSpecificTable) {
-          assertTrue(columnNames.contains(expectedCol));
-        }
-        assertEquals(columnsInSpecificTable.length, columnNames.size());
-      }
-
-      // Case 3: Explicit catalog, schemaPattern is null/wildcard, should use DefaultDataset within
-      // that catalog
-      try (ResultSet rs = dbMetaData.getColumns(PROJECT_ID, null, tableInDefaultDataset, null)) {
-        Set<String> columnNames = new HashSet<>();
-        while (rs.next()) {
-          assertEquals(PROJECT_ID, rs.getString("TABLE_CAT"));
-          assertEquals(defaultDatasetValue, rs.getString("TABLE_SCHEM"));
-          assertEquals(tableInDefaultDataset, rs.getString("TABLE_NAME"));
-          columnNames.add(rs.getString("COLUMN_NAME"));
-        }
-        for (String expectedCol : columnsInDefaultTable) {
-          assertTrue(columnNames.contains(expectedCol));
-        }
-        assertEquals(columnsInDefaultTable.length, columnNames.size());
-      }
-
-      // Case 4: Explicit catalog and schemaPattern override DefaultDataset
-      try (ResultSet rs =
-          dbMetaData.getColumns(PROJECT_ID, specificDatasetValue, tableInSpecificDataset, null)) {
-        Set<String> columnNames = new HashSet<>();
-        while (rs.next()) {
-          assertEquals(PROJECT_ID, rs.getString("TABLE_CAT"));
-          assertEquals(specificDatasetValue, rs.getString("TABLE_SCHEM"));
-          assertEquals(tableInSpecificDataset, rs.getString("TABLE_NAME"));
-          columnNames.add(rs.getString("COLUMN_NAME"));
-        }
-        for (String expectedCol : columnsInSpecificTable) {
-          assertTrue(columnNames.contains(expectedCol));
-        }
-        assertEquals(columnsInSpecificTable.length, columnNames.size());
-      }
-    }
   }
 
   @Test
@@ -3493,211 +2338,6 @@ public class ITBigQueryJDBCTest extends ITBase {
     job = job.waitFor();
     Job stubJob = bigQuery.getJob(job.getJobId());
     return stubJob.getStatistics().getSessionInfo().getSessionId();
-  }
-
-  @Test
-  public void testCallableStatementScriptExecuteUpdate() throws SQLException {
-    int randomNum = java.util.UUID.randomUUID().hashCode();
-    String insertName = "callable-statement-dml-insert-test";
-    String insertResult = String.format("%s-%d", insertName, randomNum);
-    String updateName = "callable-statement-dml-update-test";
-    String updateResult = String.format("%s-%d", updateName, randomNum);
-    String selectStmtQuery =
-        String.format("SELECT * FROM %s.%s WHERE id = ?", DATASET, CALLABLE_STMT_DML_TABLE_NAME);
-    String insertCallStmtQuery =
-        String.format("CALL %s.%s(?,?,?);", DATASET, CALLABLE_STMT_DML_INSERT_PROC_NAME);
-    String updateCallStmtQuery =
-        String.format("CALL %s.%s(?,?,?);", DATASET, CALLABLE_STMT_DML_UPDATE_PROC_NAME);
-    String deleteCallStmtQuery =
-        String.format("CALL %s.%s(?);", DATASET, CALLABLE_STMT_DML_DELETE_PROC_NAME);
-
-    // DML INSERT
-    CallableStatement callableStatement = bigQueryConnection.prepareCall(insertCallStmtQuery);
-    assertNotNull(callableStatement);
-    callableStatement.setString(1, insertName);
-    callableStatement.setInt(2, randomNum);
-    callableStatement.setString(3, insertResult);
-    int rowsInserted = callableStatement.executeUpdate();
-    assertEquals(1, rowsInserted);
-
-    PreparedStatement preparedStatement = bigQueryConnection.prepareStatement(selectStmtQuery);
-    assertNotNull(preparedStatement);
-    preparedStatement.setInt(1, randomNum);
-    ResultSet rs = preparedStatement.executeQuery();
-    assertNotNull(rs);
-    assertTrue(rs.next());
-
-    assertEquals(insertName, rs.getString(1));
-    assertEquals(randomNum, rs.getInt(2));
-    assertEquals(insertResult, rs.getString(3));
-
-    // DML UPDATE
-    callableStatement = bigQueryConnection.prepareCall(updateCallStmtQuery);
-    assertNotNull(callableStatement);
-    callableStatement.setString(1, updateName);
-    callableStatement.setInt(2, randomNum);
-    callableStatement.setString(3, updateResult);
-    int rowsUpdated = callableStatement.executeUpdate();
-    assertEquals(1, rowsUpdated);
-
-    preparedStatement = bigQueryConnection.prepareStatement(selectStmtQuery);
-    assertNotNull(preparedStatement);
-    preparedStatement.setInt(1, randomNum);
-    rs = preparedStatement.executeQuery();
-    assertNotNull(rs);
-    assertTrue(rs.next());
-
-    assertEquals(updateName, rs.getString(1));
-    assertEquals(randomNum, rs.getInt(2));
-    assertEquals(updateResult, rs.getString(3));
-
-    // DML DELETE
-    callableStatement = bigQueryConnection.prepareCall(deleteCallStmtQuery);
-    assertNotNull(callableStatement);
-    callableStatement.setInt(1, randomNum);
-    int rowsDeleted = callableStatement.executeUpdate();
-    assertEquals(1, rowsDeleted);
-
-    preparedStatement = bigQueryConnection.prepareStatement(selectStmtQuery);
-    assertNotNull(preparedStatement);
-    preparedStatement.setInt(1, randomNum);
-    rs = preparedStatement.executeQuery();
-    assertNotNull(rs);
-    assertFalse(rs.next());
-
-    callableStatement.close();
-  }
-
-  @Test
-  public void testCallableStatementScriptExecuteLargeUpdate() throws SQLException {
-    int randomNum = java.util.UUID.randomUUID().hashCode();
-    String insertName = "callable-statement-dml-insert-test";
-    String insertResult = String.format("%s-%d", insertName, randomNum);
-    String updateName = "callable-statement-dml-update-test";
-    String updateResult = String.format("%s-%d", updateName, randomNum);
-    String selectStmtQuery =
-        String.format("SELECT * FROM %s.%s WHERE id = ?", DATASET, CALLABLE_STMT_DML_TABLE_NAME);
-    String insertCallStmtQuery =
-        String.format("CALL %s.%s(?,?,?);", DATASET, CALLABLE_STMT_DML_INSERT_PROC_NAME);
-    String updateCallStmtQuery =
-        String.format("CALL %s.%s(?,?,?);", DATASET, CALLABLE_STMT_DML_UPDATE_PROC_NAME);
-    String deleteCallStmtQuery =
-        String.format("CALL %s.%s(?);", DATASET, CALLABLE_STMT_DML_DELETE_PROC_NAME);
-
-    // DML INSERT
-    CallableStatement callableStatement = bigQueryConnection.prepareCall(insertCallStmtQuery);
-    assertNotNull(callableStatement);
-    callableStatement.setString(1, insertName);
-    callableStatement.setInt(2, randomNum);
-    callableStatement.setString(3, insertResult);
-    long rowsInserted = callableStatement.executeLargeUpdate();
-    assertEquals(1L, rowsInserted);
-
-    PreparedStatement preparedStatement = bigQueryConnection.prepareStatement(selectStmtQuery);
-    assertNotNull(preparedStatement);
-    preparedStatement.setInt(1, randomNum);
-    ResultSet rs = preparedStatement.executeQuery();
-    assertNotNull(rs);
-    assertTrue(rs.next());
-
-    assertEquals(insertName, rs.getString(1));
-    assertEquals(randomNum, rs.getInt(2));
-    assertEquals(insertResult, rs.getString(3));
-
-    // DML UPDATE
-    callableStatement = bigQueryConnection.prepareCall(updateCallStmtQuery);
-    assertNotNull(callableStatement);
-    callableStatement.setString(1, updateName);
-    callableStatement.setInt(2, randomNum);
-    callableStatement.setString(3, updateResult);
-    long rowsUpdated = callableStatement.executeLargeUpdate();
-    assertEquals(1L, rowsUpdated);
-
-    preparedStatement = bigQueryConnection.prepareStatement(selectStmtQuery);
-    assertNotNull(preparedStatement);
-    preparedStatement.setInt(1, randomNum);
-    rs = preparedStatement.executeQuery();
-    assertNotNull(rs);
-    assertTrue(rs.next());
-
-    assertEquals(updateName, rs.getString(1));
-    assertEquals(randomNum, rs.getInt(2));
-    assertEquals(updateResult, rs.getString(3));
-
-    // DML DELETE
-    callableStatement = bigQueryConnection.prepareCall(deleteCallStmtQuery);
-    assertNotNull(callableStatement);
-    callableStatement.setInt(1, randomNum);
-    long rowsDeleted = callableStatement.executeLargeUpdate();
-    assertEquals(1L, rowsDeleted);
-
-    preparedStatement = bigQueryConnection.prepareStatement(selectStmtQuery);
-    assertNotNull(preparedStatement);
-    preparedStatement.setInt(1, randomNum);
-    rs = preparedStatement.executeQuery();
-    assertNotNull(rs);
-    assertFalse(rs.next());
-
-    callableStatement.close();
-  }
-
-  @Test
-  public void testScript() throws SQLException {
-    String BASE_QUERY =
-        "SELECT * FROM bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2017 order by"
-            + " trip_distance asc LIMIT %s;";
-    String query1 = String.format(BASE_QUERY, 5000);
-    String query2 = String.format(BASE_QUERY, 7000);
-    String query3 = String.format(BASE_QUERY, 9000);
-
-    bigQueryStatement.execute(query1 + query2 + query3);
-    ResultSet resultSet = bigQueryStatement.getResultSet();
-    assertEquals(5000, resultSetRowCount(resultSet));
-
-    boolean hasMoreResult = bigQueryStatement.getMoreResults();
-    assertTrue(hasMoreResult);
-    resultSet = bigQueryStatement.getResultSet();
-    assertEquals(7000, resultSetRowCount(resultSet));
-
-    hasMoreResult = bigQueryStatement.getMoreResults();
-    assertTrue(hasMoreResult);
-    resultSet = bigQueryStatement.getResultSet();
-    assertEquals(9000, resultSetRowCount(resultSet));
-  }
-
-  @Test
-  public void testCallableStatementScriptExecute() throws SQLException {
-    int randomNum = random.nextInt(99);
-    String callableStmtQuery =
-        String.format(
-            "DECLARE call_result STRING;"
-                + "CALL %s.%s(?,?,call_result);"
-                + "SELECT * FROM %s.%s WHERE result = call_result;",
-            DATASET, CALLABLE_STMT_PROC_NAME, DATASET, CALLABLE_STMT_TABLE_NAME);
-    CallableStatement callableStatement = bigQueryConnection.prepareCall(callableStmtQuery);
-    callableStatement.setString(1, "callable-stmt-test");
-    callableStatement.setInt(2, randomNum);
-
-    assertFalse(callableStatement.execute());
-    assertEquals(1, callableStatement.getUpdateCount());
-
-    // This is an actual SELECT * from the above
-    assertTrue(callableStatement.getMoreResults());
-    ResultSet resultSet = callableStatement.getResultSet();
-    ResultSetMetaData rsMetadata = resultSet.getMetaData();
-    assertEquals(3, rsMetadata.getColumnCount());
-
-    assertTrue(resultSet.next());
-
-    String expected = String.format("callable-stmt-test-%d", randomNum);
-    String actual = resultSet.getString(3);
-
-    assertEquals(expected, actual);
-
-    // Validate there are no more results
-    assertFalse(callableStatement.getMoreResults());
-    assertEquals(-1, callableStatement.getUpdateCount());
-    callableStatement.close();
   }
 
   @Test
