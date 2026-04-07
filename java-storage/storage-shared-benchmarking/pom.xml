@@ -37,12 +37,10 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
-      <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
-      <version>2.59.1-SNAPSHOT</version><!-- {x-version-update:api-common:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -51,7 +49,6 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>2.66.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
     </dependency>
   </dependencies>
 
