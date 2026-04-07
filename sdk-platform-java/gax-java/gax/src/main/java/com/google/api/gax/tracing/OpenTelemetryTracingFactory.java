@@ -39,32 +39,32 @@ import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.trace.Tracer;
 
 /**
- * A {@link ApiTracerFactory} to build instances of {@link SpanTracer}.
+ * A {@link ApiTracerFactory} to build instances of {@link OpenTelemetryTracingTracer}.
  *
- * <p>This class wraps the {@link Tracer} and pass it to {@link SpanTracer}. It will be used to
- * record traces in {@link SpanTracer}.
+ * <p>This class wraps the {@link Tracer} and pass it to {@link OpenTelemetryTracingTracer}. It will
+ * be used to record traces in {@link OpenTelemetryTracingTracer}.
  *
  * <p>This class is expected to be initialized once during client initialization.
  */
 @BetaApi
 @InternalApi
-public class SpanTracerFactory implements ApiTracerFactory {
+public class OpenTelemetryTracingFactory implements ApiTracerFactory {
   private final Tracer tracer;
   private final OpenTelemetry openTelemetry;
   private final ApiTracerContext apiTracerContext;
 
-  /** Creates a SpanTracerFactory */
-  public SpanTracerFactory(OpenTelemetry openTelemetry) {
+  public OpenTelemetryTracingFactory(OpenTelemetry openTelemetry) {
     this(openTelemetry, null, ApiTracerContext.empty());
   }
 
   /**
-   * Pass in a Map of client level attributes which will be added to every single SpanTracer created
-   * from the ApiTracerFactory. This is package private since span attributes are determined
-   * internally.
+   * Pass in a Map of client level attributes which will be added to every single
+   * OpenTelemetryTracingTracer created from the ApiTracerFactory. This is package private since
+   * span attributes are determined internally.
    */
   @VisibleForTesting
-  SpanTracerFactory(OpenTelemetry openTelemetry, Tracer tracer, ApiTracerContext apiTracerContext) {
+  OpenTelemetryTracingFactory(
+      OpenTelemetry openTelemetry, Tracer tracer, ApiTracerContext apiTracerContext) {
     this.openTelemetry = openTelemetry;
     this.tracer = tracer;
     this.apiTracerContext = apiTracerContext;
@@ -80,7 +80,7 @@ public class SpanTracerFactory implements ApiTracerFactory {
     // feature is developed.
     String attemptSpanName = spanName.getClientName() + "/" + spanName.getMethodName() + "/attempt";
 
-    return new SpanTracer(tracer, this.apiTracerContext, attemptSpanName);
+    return new OpenTelemetryTracingTracer(tracer, this.apiTracerContext, attemptSpanName);
   }
 
   @Override
@@ -90,7 +90,7 @@ public class SpanTracerFactory implements ApiTracerFactory {
       return new BaseApiTracer();
     }
     ApiTracerContext mergedContext = this.apiTracerContext.merge(apiTracerContext);
-    return new SpanTracer(tracer, mergedContext);
+    return new OpenTelemetryTracingTracer(tracer, mergedContext);
   }
 
   @Override
@@ -99,8 +99,8 @@ public class SpanTracerFactory implements ApiTracerFactory {
   }
 
   /**
-   * Returns a new SpanTracerFactory with the provided context. The Tracer is re-initialized using
-   * the artifact name and version from the library metadata.
+   * Returns a new OpenTelemetryTracingFactory with the provided context. The Tracer is
+   * re-initialized using the artifact name and version from the library metadata.
    */
   @Override
   public ApiTracerFactory withContext(ApiTracerContext context) {
@@ -113,6 +113,6 @@ public class SpanTracerFactory implements ApiTracerFactory {
     }
     Tracer newTracer = openTelemetry.getTracer(metadata.artifactName(), metadata.version());
     ApiTracerContext mergedContext = this.apiTracerContext.merge(context);
-    return new SpanTracerFactory(openTelemetry, newTracer, mergedContext);
+    return new OpenTelemetryTracingFactory(openTelemetry, newTracer, mergedContext);
   }
 }
