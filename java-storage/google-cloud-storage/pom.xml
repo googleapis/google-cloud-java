@@ -276,7 +276,6 @@
       <artifactId>google-cloud-core</artifactId>
       <type>test-jar</type>
       <scope>test</scope>
-      <version>2.66.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.truth</groupId>
