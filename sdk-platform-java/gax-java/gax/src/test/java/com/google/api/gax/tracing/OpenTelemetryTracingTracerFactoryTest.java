@@ -55,7 +55,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
 
-class OpenTelemetryTracingTracerFactoryTest {
+class OpenTelemetryTracingFactoryTest {
   private OpenTelemetry openTelemetry;
   private Tracer tracer;
   private SpanBuilder spanBuilder;
