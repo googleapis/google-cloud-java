@@ -563,6 +563,7 @@ public class GapicSpannerRpc implements SpannerRpc {
         .setPrimaryChannelName("directpath")
         .setFallbackChannelName("cloudpath")
         .setMinFailedCalls(minFailedCalls)
+        .setPeriod(Duration.ofMinutes(3))
         .setGcpFallbackOpenTelemetry(fallbackTelemetry)
         .build();
   }

@@ -1041,7 +1041,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     }
 
     default boolean isEnableGcpFallback() {
-      return false;
+      return true;
     }
 
     default boolean isEnableBuiltInMetrics() {
@@ -1136,7 +1136,8 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     @Override
     public boolean isEnableGcpFallback() {
-      return Boolean.parseBoolean(System.getenv(GOOGLE_SPANNER_ENABLE_GCP_FALLBACK));
+      String enableGcpFallback = System.getenv(GOOGLE_SPANNER_ENABLE_GCP_FALLBACK);
+      return enableGcpFallback == null ? true : Boolean.parseBoolean(enableGcpFallback);
     }
 
     @Override

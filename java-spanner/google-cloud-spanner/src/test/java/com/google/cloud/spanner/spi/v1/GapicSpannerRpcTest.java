@@ -1164,61 +1164,50 @@ public class GapicSpannerRpcTest {
     OpenTelemetrySdk openTelemetry =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider).build();
 
-    SpannerOptions.useEnvironment(
-        new SpannerOptions.SpannerEnvironment() {
-          @Override
-          public boolean isEnableGcpFallback() {
-            return true;
-          }
-        });
+    SpannerOptions.Builder builder =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setEnableDirectAccess(true)
+            .setHost("http://localhost:1") // Closed port
+            .setCredentials(NoCredentials.getInstance())
+            .setOpenTelemetry(openTelemetry);
+    // Make sure the ExecuteBatchDml RPC fails quickly to keep the test fast.
+    // Note that the timeout is actually not used. It is the fact that it does not retry that
+    // makes it fail fast.
+    builder
+        .getSpannerStubSettingsBuilder()
+        .executeBatchDmlSettings()
+        .setSimpleTimeoutNoRetriesDuration(Duration.ofSeconds(10));
+    // Setup Options with invalid host to force error
+    SpannerOptions options = builder.build();
+
+    TestableGapicSpannerRpc rpc = new TestableGapicSpannerRpc(options);
     try {
-      SpannerOptions.Builder builder =
-          SpannerOptions.newBuilder()
-              .setProjectId("test-project")
-              .setEnableDirectAccess(true)
-              .setHost("http://localhost:1") // Closed port
-              .setCredentials(NoCredentials.getInstance())
-              .setOpenTelemetry(openTelemetry);
-      // Make sure the ExecuteBatchDml RPC fails quickly to keep the test fast.
-      // Note that the timeout is actually not used. It is the fact that it does not retry that
-      // makes it fail fast.
-      builder
-          .getSpannerStubSettingsBuilder()
-          .executeBatchDmlSettings()
-          .setSimpleTimeoutNoRetriesDuration(Duration.ofSeconds(10));
-      // Setup Options with invalid host to force error
-      SpannerOptions options = builder.build();
+      // Make a call that is expected to fail
+      SpannerException exception =
+          assertThrows(
+              SpannerException.class,
+              () ->
+                  rpc.executeBatchDml(
+                      com.google.spanner.v1.ExecuteBatchDmlRequest.newBuilder()
+                          .setSession("projects/p/instances/i/databases/d/sessions/s")
+                          .build(),
+                      null));
+      assertEquals(ErrorCode.UNAVAILABLE, exception.getErrorCode());
 
-      TestableGapicSpannerRpc rpc = new TestableGapicSpannerRpc(options);
-      try {
-        // Make a call that is expected to fail
-        SpannerException exception =
-            assertThrows(
-                SpannerException.class,
-                () ->
-                    rpc.executeBatchDml(
-                        com.google.spanner.v1.ExecuteBatchDmlRequest.newBuilder()
-                            .setSession("projects/p/instances/i/databases/d/sessions/s")
-                            .build(),
-                        null));
-        assertEquals(ErrorCode.UNAVAILABLE, exception.getErrorCode());
+      // Wait briefly for the 10ms period to trigger the fallback check
+      Thread.sleep(10);
 
-        // Wait briefly for the 10ms period to trigger the fallback check
-        Thread.sleep(10);
+      // Verify Fallback via Metrics
+      Collection<MetricData> metrics = metricReader.collectAllMetrics();
+      boolean fallbackOccurred =
+          metrics.stream()
+              .anyMatch(md -> md.getName().contains("fallback_count") && hasValue(md));
 
-        // Verify Fallback via Metrics
-        Collection<MetricData> metrics = metricReader.collectAllMetrics();
-        boolean fallbackOccurred =
-            metrics.stream()
-                .anyMatch(md -> md.getName().contains("fallback_count") && hasValue(md));
+      assertFalse("Fallback metric should not be present", fallbackOccurred);
 
-        assertFalse("Fallback metric should not be present", fallbackOccurred);
-
-      } finally {
-        rpc.shutdown();
-      }
     } finally {
-      SpannerOptions.useDefaultEnvironment();
+      rpc.shutdown();
     }
   }
 
@@ -1255,64 +1244,53 @@ public class GapicSpannerRpcTest {
     OpenTelemetrySdk openTelemetry =
         OpenTelemetrySdk.builder().setMeterProvider(meterProvider).build();
 
-    SpannerOptions.useEnvironment(
-        new SpannerOptions.SpannerEnvironment() {
-          @Override
-          public boolean isEnableGcpFallback() {
-            return true;
-          }
-        });
+    SpannerOptions.Builder builder =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setEnableDirectAccess(true)
+            .setHost("http://localhost:1") // Closed port
+            .setCredentials(NoCredentials.getInstance())
+            .setOpenTelemetry(openTelemetry);
+    // Make sure the ExecuteBatchDml RPC fails quickly to keep the test fast.
+    // Note that the timeout is actually not used. It is the fact that it does not retry that
+    // makes it fail fast.
+    builder
+        .getSpannerStubSettingsBuilder()
+        .executeBatchDmlSettings()
+        .setSimpleTimeoutNoRetriesDuration(Duration.ofSeconds(10));
+    // Setup Options with invalid host to force error
+    SpannerOptions options = builder.build();
+
+    TestableGapicSpannerRpcWithLowerMinFailedCalls rpc =
+        new TestableGapicSpannerRpcWithLowerMinFailedCalls(options);
     try {
-      SpannerOptions.Builder builder =
-          SpannerOptions.newBuilder()
-              .setProjectId("test-project")
-              .setEnableDirectAccess(true)
-              .setHost("http://localhost:1") // Closed port
-              .setCredentials(NoCredentials.getInstance())
-              .setOpenTelemetry(openTelemetry);
-      // Make sure the ExecuteBatchDml RPC fails quickly to keep the test fast.
-      // Note that the timeout is actually not used. It is the fact that it does not retry that
-      // makes it fail fast.
-      builder
-          .getSpannerStubSettingsBuilder()
-          .executeBatchDmlSettings()
-          .setSimpleTimeoutNoRetriesDuration(Duration.ofSeconds(10));
-      // Setup Options with invalid host to force error
-      SpannerOptions options = builder.build();
+      // Make a call that is expected to fail
+      SpannerException exception =
+          assertThrows(
+              SpannerException.class,
+              () ->
+                  rpc.executeBatchDml(
+                      com.google.spanner.v1.ExecuteBatchDmlRequest.newBuilder()
+                          .setSession("projects/p/instances/i/databases/d/sessions/s")
+                          .build(),
+                      null));
+      assertEquals(ErrorCode.UNAVAILABLE, exception.getErrorCode());
 
-      TestableGapicSpannerRpcWithLowerMinFailedCalls rpc =
-          new TestableGapicSpannerRpcWithLowerMinFailedCalls(options);
-      try {
-        // Make a call that is expected to fail
-        SpannerException exception =
-            assertThrows(
-                SpannerException.class,
-                () ->
-                    rpc.executeBatchDml(
-                        com.google.spanner.v1.ExecuteBatchDmlRequest.newBuilder()
-                            .setSession("projects/p/instances/i/databases/d/sessions/s")
-                            .build(),
-                        null));
-        assertEquals(ErrorCode.UNAVAILABLE, exception.getErrorCode());
+      // Wait briefly for the 10ms period to trigger the fallback check
+      Thread.sleep(10);
 
-        // Wait briefly for the 10ms period to trigger the fallback check
-        Thread.sleep(10);
+      // Verify Fallback via Metrics
+      Collection<MetricData> metrics = metricReader.collectAllMetrics();
+      boolean fallbackOccurred =
+          metrics.stream()
+              .anyMatch(md -> md.getName().contains("fallback_count") && hasValue(md));
 
-        // Verify Fallback via Metrics
-        Collection<MetricData> metrics = metricReader.collectAllMetrics();
-        boolean fallbackOccurred =
-            metrics.stream()
-                .anyMatch(md -> md.getName().contains("fallback_count") && hasValue(md));
+      assertTrue(
+          "Fallback metric should be present, indicating GcpFallbackChannel is active",
+          fallbackOccurred);
 
-        assertTrue(
-            "Fallback metric should be present, indicating GcpFallbackChannel is active",
-            fallbackOccurred);
-
-      } finally {
-        rpc.shutdown();
-      }
     } finally {
-      SpannerOptions.useDefaultEnvironment();
+      rpc.shutdown();
     }
   }
 
