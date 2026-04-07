@@ -293,7 +293,8 @@ class OpenTelemetryTracingFactoryTest {
             .setServerAddress("factory-address")
             .setLibraryMetadata(LibraryMetadata.empty())
             .build();
-    OpenTelemetryTracingFactory factory = new OpenTelemetryTracingFactory(openTelemetry, tracer, apiTracerContext);
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, apiTracerContext);
 
     ApiTracerContext callContext =
         ApiTracerContext.newBuilder()
@@ -399,7 +400,8 @@ class OpenTelemetryTracingFactoryTest {
             .setLibraryMetadata(validMetadata)
             .setServerAddress("test-address")
             .build();
-    OpenTelemetryTracingFactory factoryWithContext = new OpenTelemetryTracingFactory(openTelemetry, tracer, context);
+    OpenTelemetryTracingFactory factoryWithContext =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, context);
 
     assertThat(factoryWithContext.needsContext()).isFalse();
   }

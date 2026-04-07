@@ -73,7 +73,8 @@ class OpenTelemetryTracingTracerTest {
     when(spanBuilder.setSpanKind(any(SpanKind.class))).thenReturn(spanBuilder);
     when(spanBuilder.setAllAttributes(any(Attributes.class))).thenReturn(spanBuilder);
     when(spanBuilder.startSpan()).thenReturn(span);
-    openTelemetryTracingTracer = new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
+    openTelemetryTracingTracer =
+        new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
   }
 
   @Test
@@ -195,7 +196,8 @@ class OpenTelemetryTracingTracerTest {
             .setLibraryMetadata(com.google.api.gax.rpc.LibraryMetadata.empty())
             .setTransport(ApiTracerContext.Transport.GRPC)
             .build();
-    OpenTelemetryTracingTracer grpcTracer = new OpenTelemetryTracingTracer(tracer, grpcContext, ATTEMPT_SPAN_NAME);
+    OpenTelemetryTracingTracer grpcTracer =
+        new OpenTelemetryTracingTracer(tracer, grpcContext, ATTEMPT_SPAN_NAME);
 
     // Initial attempt, attemptNumber is 0
     grpcTracer.attemptStarted(new Object(), 0);
@@ -255,7 +257,8 @@ class OpenTelemetryTracingTracerTest {
             .setLibraryMetadata(com.google.api.gax.rpc.LibraryMetadata.empty())
             .setTransport(ApiTracerContext.Transport.GRPC)
             .build();
-    OpenTelemetryTracingTracer grpcTracer = new OpenTelemetryTracingTracer(tracer, grpcContext, ATTEMPT_SPAN_NAME);
+    OpenTelemetryTracingTracer grpcTracer =
+        new OpenTelemetryTracingTracer(tracer, grpcContext, ATTEMPT_SPAN_NAME);
 
     // N-th retry, attemptNumber is 5
     grpcTracer.attemptStarted(new Object(), 5);
@@ -315,7 +318,8 @@ class OpenTelemetryTracingTracerTest {
             .setLibraryMetadata(com.google.api.gax.rpc.LibraryMetadata.empty())
             .setTransport(ApiTracerContext.Transport.HTTP)
             .build();
-    OpenTelemetryTracingTracer httpTracer = new OpenTelemetryTracingTracer(tracer, httpContext, ATTEMPT_SPAN_NAME);
+    OpenTelemetryTracingTracer httpTracer =
+        new OpenTelemetryTracingTracer(tracer, httpContext, ATTEMPT_SPAN_NAME);
 
     // Initial attempt, attemptNumber is 0
     httpTracer.attemptStarted(new Object(), 0);
@@ -337,7 +341,8 @@ class OpenTelemetryTracingTracerTest {
             .setLibraryMetadata(com.google.api.gax.rpc.LibraryMetadata.empty())
             .setTransport(ApiTracerContext.Transport.HTTP)
             .build();
-    OpenTelemetryTracingTracer httpTracer = new OpenTelemetryTracingTracer(tracer, httpContext, ATTEMPT_SPAN_NAME);
+    OpenTelemetryTracingTracer httpTracer =
+        new OpenTelemetryTracingTracer(tracer, httpContext, ATTEMPT_SPAN_NAME);
 
     // N-th retry, attemptNumber is 5
     httpTracer.attemptStarted(new Object(), 5);
@@ -485,7 +490,8 @@ class OpenTelemetryTracingTracerTest {
   void testAttemptFailed_clientConnectionError() {
     openTelemetryTracingTracer.attemptStarted(new Object(), 1);
 
-    openTelemetryTracingTracer.attemptFailedRetriesExhausted(new ConnectException("connection failed"));
+    openTelemetryTracingTracer.attemptFailedRetriesExhausted(
+        new ConnectException("connection failed"));
 
     ArgumentCaptor<Attributes> attrsCaptor = ArgumentCaptor.forClass(Attributes.class);
     verify(span).setAllAttributes(attrsCaptor.capture());
@@ -502,7 +508,8 @@ class OpenTelemetryTracingTracerTest {
   void testAttemptFailed_clientRedirectError() {
     openTelemetryTracingTracer.attemptStarted(new Object(), 1);
 
-    openTelemetryTracingTracer.attemptFailedRetriesExhausted(new RedirectException("redirect failed"));
+    openTelemetryTracingTracer.attemptFailedRetriesExhausted(
+        new RedirectException("redirect failed"));
 
     ArgumentCaptor<Attributes> attrsCaptor = ArgumentCaptor.forClass(Attributes.class);
     verify(span).setAllAttributes(attrsCaptor.capture());
@@ -550,7 +557,8 @@ class OpenTelemetryTracingTracerTest {
   void testAttemptFailed_languageSpecificFallback() {
     openTelemetryTracingTracer.attemptStarted(new Object(), 1);
 
-    openTelemetryTracingTracer.attemptFailedRetriesExhausted(new IllegalStateException("illegal state"));
+    openTelemetryTracingTracer.attemptFailedRetriesExhausted(
+        new IllegalStateException("illegal state"));
 
     ArgumentCaptor<Attributes> attrsCaptor = ArgumentCaptor.forClass(Attributes.class);
     verify(span).setAllAttributes(attrsCaptor.capture());
@@ -602,7 +610,8 @@ class OpenTelemetryTracingTracerTest {
   void testAttemptFailed_populatesExceptionTypeAndMessage() {
     openTelemetryTracingTracer.attemptStarted(new Object(), 1);
 
-    openTelemetryTracingTracer.attemptFailedRetriesExhausted(new IllegalStateException("custom error message"));
+    openTelemetryTracingTracer.attemptFailedRetriesExhausted(
+        new IllegalStateException("custom error message"));
 
     ArgumentCaptor<Attributes> attrsCaptor = ArgumentCaptor.forClass(Attributes.class);
     verify(span).setAllAttributes(attrsCaptor.capture());
@@ -660,7 +669,8 @@ class OpenTelemetryTracingTracerTest {
         io.opentelemetry.api.trace.Span.wrap(mockSpanContext);
     when(spanBuilder.startSpan()).thenReturn(realSpan);
 
-    openTelemetryTracingTracer = new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
+    openTelemetryTracingTracer =
+        new OpenTelemetryTracingTracer(tracer, ApiTracerContext.empty(), ATTEMPT_SPAN_NAME);
     openTelemetryTracingTracer.attemptStarted(new Object(), 1);
 
     Map<String, String> carrier = new java.util.HashMap<>();

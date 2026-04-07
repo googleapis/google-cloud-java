@@ -41,8 +41,8 @@ import io.opentelemetry.api.trace.Tracer;
 /**
  * A {@link ApiTracerFactory} to build instances of {@link OpenTelemetryTracingTracer}.
  *
- * <p>This class wraps the {@link Tracer} and pass it to {@link OpenTelemetryTracingTracer}. It will be used to
- * record traces in {@link OpenTelemetryTracingTracer}.
+ * <p>This class wraps the {@link Tracer} and pass it to {@link OpenTelemetryTracingTracer}. It will
+ * be used to record traces in {@link OpenTelemetryTracingTracer}.
  *
  * <p>This class is expected to be initialized once during client initialization.
  */
@@ -64,7 +64,8 @@ public class OpenTelemetryTracingFactory implements ApiTracerFactory {
    * internally.
    */
   @VisibleForTesting
-  OpenTelemetryTracingFactory(OpenTelemetry openTelemetry, Tracer tracer, ApiTracerContext apiTracerContext) {
+  OpenTelemetryTracingFactory(
+      OpenTelemetry openTelemetry, Tracer tracer, ApiTracerContext apiTracerContext) {
     this.openTelemetry = openTelemetry;
     this.tracer = tracer;
     this.apiTracerContext = apiTracerContext;

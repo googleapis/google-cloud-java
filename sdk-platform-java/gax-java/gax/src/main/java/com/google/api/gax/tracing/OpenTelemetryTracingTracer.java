@@ -93,7 +93,8 @@ class OpenTelemetryTracingTracer implements ApiTracer {
    * @param attemptSpanName the name of the individual attempt spans
    */
   @InternalApi
-  OpenTelemetryTracingTracer(Tracer tracer, ApiTracerContext apiTracerContext, String attemptSpanName) {
+  OpenTelemetryTracingTracer(
+      Tracer tracer, ApiTracerContext apiTracerContext, String attemptSpanName) {
     this.tracer = tracer;
     this.attemptSpanName = attemptSpanName;
     this.apiTracerContext = apiTracerContext;

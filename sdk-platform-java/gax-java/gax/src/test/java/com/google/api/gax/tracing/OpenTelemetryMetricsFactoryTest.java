@@ -85,24 +85,21 @@ class OpenTelemetryMetricsFactoryTest {
 
   @Test
   void testWithContext_nullContext_returnsBaseApiTracerFactory() {
-    OpenTelemetryMetricsFactory factory =
-        new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
+    OpenTelemetryMetricsFactory factory = new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
     ApiTracerFactory factoryWithContext = factory.withContext(null);
     assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
   }
 
   @Test
   void testWithContext_nullMetadata_returnsBaseApiTracerFactory() {
-    OpenTelemetryMetricsFactory factory =
-        new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
+    OpenTelemetryMetricsFactory factory = new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
     ApiTracerFactory factoryWithContext = factory.withContext(ApiTracerContext.empty());
     assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
   }
 
   @Test
   void testWithContext_emptyArtifactName_returnsBaseApiTracerFactory() {
-    OpenTelemetryMetricsFactory factory =
-        new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
+    OpenTelemetryMetricsFactory factory = new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
     LibraryMetadata metadata =
         LibraryMetadata.newBuilder().setArtifactName("").setVersion("1.0").build();
     ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
@@ -113,8 +110,7 @@ class OpenTelemetryMetricsFactoryTest {
 
   @Test
   void testWithContext_nullArtifactName_returnsBaseApiTracerFactory() {
-    OpenTelemetryMetricsFactory factory =
-        new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
+    OpenTelemetryMetricsFactory factory = new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
     LibraryMetadata metadata = LibraryMetadata.newBuilder().setVersion("1.0").build();
     ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
 
@@ -124,8 +120,7 @@ class OpenTelemetryMetricsFactoryTest {
 
   @Test
   void newTracerWithApiTracerContext_shouldCreateBaseTracer_ifMetricsRecorderIsNull() {
-    OpenTelemetryMetricsFactory factory =
-        new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
+    OpenTelemetryMetricsFactory factory = new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
     ApiTracer actual = factory.newTracer(mock(ApiTracer.class), mock(ApiTracerContext.class));
 
     assertThat(actual).isInstanceOf(BaseApiTracer.class);
