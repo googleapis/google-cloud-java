@@ -14,3 +14,5 @@
     <maven.deploy.skip>true</maven.deploy.skip>
     <maven.enforcer.skip>true</maven.enforcer.skip>
   </properties>
+
+</project>
