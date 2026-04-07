@@ -29,11 +29,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.Types;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -56,10 +54,6 @@ public class ITDatabaseMetadataTest extends ITBase {
   private static final String CONSTRAINTS_TABLE_NAME = "JDBC_CONSTRAINTS_TEST_TABLE";
   private static final String CONSTRAINTS_TABLE_NAME2 = "JDBC_CONSTRAINTS_TEST_TABLE2";
   private static final String CONSTRAINTS_TABLE_NAME3 = "JDBC_CONSTRAINTS_TEST_TABLE3";
-
-  static Connection bigQueryConnection;
-  static Statement bigQueryStatement;
-
   private static final Pattern VERSION_PATTERN =
       Pattern.compile("^(\\d+)\\.(\\d+)(?:\\.\\d+)+\\s*.*");
   private static final String DEFAULT_CATALOG = ServiceOptions.getDefaultProjectId();
@@ -71,15 +65,10 @@ public class ITDatabaseMetadataTest extends ITBase {
   public static void beforeClass() throws InterruptedException, SQLException {
     // Set up Dataset
     ITBase.setUpTable(DATASET, TABLE_NAME);
-    bigQueryConnection = DriverManager.getConnection(connection_uri, new Properties());
-    bigQueryStatement = bigQueryConnection.createStatement();
   }
 
   @AfterClass
-  public static void afterClass() throws SQLException {
-    bigQueryStatement.close();
-    bigQueryConnection.close();
-  }
+  public static void afterClass() throws SQLException {}
 
   @Test
   public void testGetCatalogs() throws SQLException {
@@ -284,10 +273,12 @@ public class ITDatabaseMetadataTest extends ITBase {
     connection.close();
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   public void testTableConstraints() throws SQLException {
+    Connection connection =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
     ResultSet primaryKey1 =
-        bigQueryConnection
+        connection
             .getMetaData()
             .getPrimaryKeys(PROJECT_ID, CONSTRAINTS_DATASET, CONSTRAINTS_TABLE_NAME);
     primaryKey1.next();
@@ -295,7 +286,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     Assertions.assertFalse(primaryKey1.next());
 
     ResultSet primaryKey2 =
-        bigQueryConnection
+        connection
             .getMetaData()
             .getPrimaryKeys(PROJECT_ID, CONSTRAINTS_DATASET, CONSTRAINTS_TABLE_NAME2);
     primaryKey2.next();
@@ -305,7 +296,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     Assertions.assertFalse(primaryKey2.next());
 
     ResultSet foreignKeys =
-        bigQueryConnection
+        connection
             .getMetaData()
             .getImportedKeys(PROJECT_ID, CONSTRAINTS_DATASET, CONSTRAINTS_TABLE_NAME);
     foreignKeys.next();
@@ -323,7 +314,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     Assertions.assertFalse(foreignKeys.next());
 
     ResultSet crossReference =
-        bigQueryConnection
+        connection
             .getMetaData()
             .getCrossReference(
                 PROJECT_ID,
@@ -340,11 +331,15 @@ public class ITDatabaseMetadataTest extends ITBase {
     Assertions.assertEquals("last_name", crossReference.getString(4));
     Assertions.assertEquals("second_name", crossReference.getString(8));
     Assertions.assertFalse(crossReference.next());
+    connection.close();
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   public void testDatabaseMetadataGetCatalogs() throws SQLException {
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
+
+    Connection connection =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    DatabaseMetaData databaseMetaData = connection.getMetaData();
     try (ResultSet rs = databaseMetaData.getCatalogs()) {
       assertNotNull(rs, "ResultSet from getCatalogs() should not be null");
 
@@ -359,13 +354,17 @@ public class ITDatabaseMetadataTest extends ITBase {
           PROJECT_ID, rs.getString("TABLE_CAT"), "Catalog name should match Project ID");
       Assertions.assertFalse(rs.next(), "ResultSet should have no more rows");
     }
+    connection.close();
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   public void testDatabaseMetadataGetProcedures() throws SQLException {
+
+    Connection connection =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String procedureName = "create_customer";
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
+    DatabaseMetaData databaseMetaData = connection.getMetaData();
     ResultSet resultSet = databaseMetaData.getProcedures(PROJECT_ID, DATASET, procedureName);
     while (resultSet.next()) {
       Assertions.assertEquals(PROJECT_ID, resultSet.getString("PROCEDURE_CAT"));
@@ -375,11 +374,16 @@ public class ITDatabaseMetadataTest extends ITBase {
       Assertions.assertEquals(
           DatabaseMetaData.procedureResultUnknown, resultSet.getInt("PROCEDURE_TYPE"));
     }
+    resultSet.close();
+    connection.close();
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   public void testDatabaseMetadataGetProcedureColumns() throws SQLException {
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
+
+    Connection connection =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    DatabaseMetaData databaseMetaData = connection.getMetaData();
 
     // --- Test Case 1: Specific schema and procedure, null column name pattern ---
     String specificSchema = "JDBC_INTEGRATION_DATASET";
@@ -435,13 +439,17 @@ public class ITDatabaseMetadataTest extends ITBase {
     Assertions.assertFalse(
         resultSet.next(), "Should not find columns for a non-existent procedure");
     resultSet.close();
+    connection.close();
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   public void testDatabaseMetadataGetColumns() throws SQLException {
+
+    Connection connection =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
     String DATASET = "JDBC_INTEGRATION_DATASET";
     String TABLE_NAME = "JDBC_DATATYPES_INTEGRATION_TEST_TABLE";
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
+    DatabaseMetaData databaseMetaData = connection.getMetaData();
 
     // --- Test Case 1: Specific Column (StringField) ---
     ResultSet resultSet =
@@ -623,11 +631,15 @@ public class ITDatabaseMetadataTest extends ITBase {
     Assertions.assertEquals(1, resultSet.getInt("NULLABLE"));
     Assertions.assertEquals(14, resultSet.getInt("ORDINAL_POSITION"));
     Assertions.assertFalse(resultSet.next());
+
+    connection.close();
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   public void testDatabaseMetadataGetTables() throws SQLException {
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
+    Connection connection =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    DatabaseMetaData databaseMetaData = connection.getMetaData();
     String DATASET = "JDBC_TABLE_TYPES_TEST";
 
     // --- Test Case 1: Get all tables (types = null) ---
@@ -721,11 +733,14 @@ public class ITDatabaseMetadataTest extends ITBase {
     Assertions.assertEquals("VIEW", rsNullType.getString("TABLE_TYPE"));
     Assertions.assertEquals("my_view", rsNullType.getString("TABLE_NAME"));
     Assertions.assertFalse(rsNullType.next());
+    connection.close();
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   public void testDatabaseMetadataGetSchemas() throws SQLException {
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
+    Connection connection =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    DatabaseMetaData databaseMetaData = connection.getMetaData();
 
     // Test case 1: Get all schemas with catalog and check for the presence of specific schemas
     ResultSet rsAll = databaseMetaData.getSchemas(PROJECT_ID, null);
@@ -755,12 +770,15 @@ public class ITDatabaseMetadataTest extends ITBase {
     // Test case 4: Get schemas with non-existent catalog
     rsNoMatch = databaseMetaData.getSchemas("invalid-catalog", null);
     Assertions.assertFalse(rsNoMatch.next());
+    connection.close();
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   public void testDatabaseMetadataGetSchemasNoArgs() throws SQLException {
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
-    String expectedCatalog = bigQueryConnection.getCatalog();
+    Connection connection =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    DatabaseMetaData databaseMetaData = connection.getMetaData();
+    String expectedCatalog = connection.getCatalog();
     assertNotNull(expectedCatalog, "Project ID (catalog) from connection should not be null");
 
     // Test case: Get all schemas (datasets) for the current project
@@ -788,11 +806,14 @@ public class ITDatabaseMetadataTest extends ITBase {
           foundTestDataset, "At least one of the known test datasets should be found");
       Assertions.assertTrue(rowCount > 0, "Should retrieve at least one schema/dataset");
     }
+    connection.close();
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   public void testDatabaseMetaDataGetFunctions() throws SQLException {
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
+    Connection connection =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    DatabaseMetaData databaseMetaData = connection.getMetaData();
     String testSchema = "JDBC_TABLE_TYPES_TEST";
     String testCatalog = PROJECT_ID;
 
@@ -896,11 +917,14 @@ public class ITDatabaseMetadataTest extends ITBase {
     ResultSet rsNullCatalog = databaseMetaData.getFunctions(null, testSchema, null);
     Assertions.assertFalse(rsNullCatalog.next(), "Null catalog should return no results");
     rsNullCatalog.close();
+    connection.close();
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   public void testDatabaseMetadataGetFunctionColumns() throws SQLException {
-    DatabaseMetaData databaseMetaData = bigQueryConnection.getMetaData();
+    Connection connection =
+        DriverManager.getConnection(String.format(connectionUrl, DEFAULT_CATALOG));
+    DatabaseMetaData databaseMetaData = connection.getMetaData();
     String testCatalog = PROJECT_ID;
     String testSchema = "JDBC_TABLE_TYPES_TEST";
 
@@ -1022,9 +1046,10 @@ public class ITDatabaseMetadataTest extends ITBase {
             testCatalog, testSchema, "non_existent_function_xyz", null);
     Assertions.assertFalse(rs.next(), "Should not find columns for a non-existent function");
     rs.close();
+    connection.close();
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   public void testAdditionalProjectsInMetadata() throws SQLException {
     String additionalProjectsValue = "bigquery-public-data";
     String datasetInAdditionalProject = "baseball";
@@ -1083,8 +1108,9 @@ public class ITDatabaseMetadataTest extends ITBase {
     }
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   public void testFilterTablesOnDefaultDataset_getTables() throws SQLException {
+
     String defaultDatasetValue = CONSTRAINTS_DATASET;
     String table1InDefaultDataset = CONSTRAINTS_TABLE_NAME;
     String table2InDefaultDataset = CONSTRAINTS_TABLE_NAME2;
@@ -1154,7 +1180,7 @@ public class ITDatabaseMetadataTest extends ITBase {
     }
   }
 
-  @org.junit.jupiter.api.Test
+  @Test
   public void testFilterTablesOnDefaultDataset_getColumns() throws SQLException {
     String defaultDatasetValue = CONSTRAINTS_DATASET;
     String tableInDefaultDataset = CONSTRAINTS_TABLE_NAME;
