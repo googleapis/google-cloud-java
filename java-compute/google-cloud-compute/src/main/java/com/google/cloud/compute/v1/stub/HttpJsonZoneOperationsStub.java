@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteZoneOperationRequest;
 import com.google.cloud.compute.v1.DeleteZoneOperationResponse;
 import com.google.cloud.compute.v1.GetZoneOperationRequest;
@@ -249,6 +250,15 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
   private final LongRunningClient longRunningClient;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/operations/{operation}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/operations/{operation}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate WAIT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/operations/{operation}");
+
   public static final HttpJsonZoneOperationsStub create(ZoneOperationsStubSettings settings)
       throws IOException {
     return new HttpJsonZoneOperationsStub(settings, ClientContext.create(settings));
@@ -302,6 +312,14 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("operation", String.valueOf(request.getOperation()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetZoneOperationRequest, Operation> getTransportSettings =
         HttpJsonCallSettings.<GetZoneOperationRequest, Operation>newBuilder()
@@ -315,6 +333,14 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("operation", String.valueOf(request.getOperation()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListZoneOperationsRequest, OperationList> listTransportSettings =
         HttpJsonCallSettings.<ListZoneOperationsRequest, OperationList>newBuilder()
@@ -326,6 +352,13 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<WaitZoneOperationRequest, Operation> waitTransportSettings =
@@ -339,6 +372,14 @@ public class HttpJsonZoneOperationsStub extends ZoneOperationsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("operation", String.valueOf(request.getOperation()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return WAIT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.CreateMembersInterconnectGroupRequest;
 import com.google.cloud.compute.v1.DeleteInterconnectGroupRequest;
 import com.google.cloud.compute.v1.GetIamPolicyInterconnectGroupRequest;
@@ -571,6 +572,27 @@ public class HttpJsonInterconnectGroupsStub extends InterconnectGroupsStub {
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate CREATE_MEMBERS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/interconnectGroups/{interconnect_group}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/interconnectGroups/{interconnect_group}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/interconnectGroups/{interconnect_group}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/interconnectGroups/{resource}");
+  private static final PathTemplate GET_OPERATIONAL_STATUS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/interconnectGroups/{interconnect_group}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/interconnectGroups/{interconnect_group}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/interconnectGroups/{resource}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/interconnectGroups/{resource}");
+
   public static final HttpJsonInterconnectGroupsStub create(InterconnectGroupsStubSettings settings)
       throws IOException {
     return new HttpJsonInterconnectGroupsStub(settings, ClientContext.create(settings));
@@ -625,6 +647,15 @@ public class HttpJsonInterconnectGroupsStub extends InterconnectGroupsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "interconnect_group", String.valueOf(request.getInterconnectGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return CREATE_MEMBERS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteInterconnectGroupRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteInterconnectGroupRequest, Operation>newBuilder()
@@ -636,6 +667,14 @@ public class HttpJsonInterconnectGroupsStub extends InterconnectGroupsStub {
                   builder.add("interconnect_group", String.valueOf(request.getInterconnectGroup()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "interconnect_group", String.valueOf(request.getInterconnectGroup()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetInterconnectGroupRequest, InterconnectGroup> getTransportSettings =
@@ -649,6 +688,14 @@ public class HttpJsonInterconnectGroupsStub extends InterconnectGroupsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "interconnect_group", String.valueOf(request.getInterconnectGroup()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyInterconnectGroupRequest, Policy>
         getIamPolicyTransportSettings =
@@ -661,6 +708,14 @@ public class HttpJsonInterconnectGroupsStub extends InterconnectGroupsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<
@@ -681,6 +736,15 @@ public class HttpJsonInterconnectGroupsStub extends InterconnectGroupsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "interconnect_group", String.valueOf(request.getInterconnectGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return GET_OPERATIONAL_STATUS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertInterconnectGroupRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertInterconnectGroupRequest, Operation>newBuilder()
@@ -691,6 +755,12 @@ public class HttpJsonInterconnectGroupsStub extends InterconnectGroupsStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListInterconnectGroupsRequest, InterconnectGroupsListResponse>
@@ -705,6 +775,12 @@ public class HttpJsonInterconnectGroupsStub extends InterconnectGroupsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchInterconnectGroupRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchInterconnectGroupRequest, Operation>newBuilder()
@@ -716,6 +792,14 @@ public class HttpJsonInterconnectGroupsStub extends InterconnectGroupsStub {
                   builder.add("interconnect_group", String.valueOf(request.getInterconnectGroup()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "interconnect_group", String.valueOf(request.getInterconnectGroup()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetIamPolicyInterconnectGroupRequest, Policy>
@@ -730,6 +814,14 @@ public class HttpJsonInterconnectGroupsStub extends InterconnectGroupsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<TestIamPermissionsInterconnectGroupRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -743,6 +835,14 @@ public class HttpJsonInterconnectGroupsStub extends InterconnectGroupsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 

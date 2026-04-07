@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AcceleratorType;
 import com.google.cloud.compute.v1.AcceleratorTypeAggregatedList;
 import com.google.cloud.compute.v1.AcceleratorTypeList;
@@ -220,6 +221,13 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/acceleratorTypes/{accelerator_type}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+
   public static final HttpJsonAcceleratorTypesStub create(AcceleratorTypesStubSettings settings)
       throws IOException {
     return new HttpJsonAcceleratorTypesStub(settings, ClientContext.create(settings));
@@ -271,6 +279,13 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetAcceleratorTypeRequest, AcceleratorType> getTransportSettings =
         HttpJsonCallSettings.<GetAcceleratorTypeRequest, AcceleratorType>newBuilder()
@@ -284,6 +299,15 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "accelerator_type", String.valueOf(request.getAcceleratorType()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListAcceleratorTypesRequest, AcceleratorTypeList> listTransportSettings =
         HttpJsonCallSettings.<ListAcceleratorTypesRequest, AcceleratorTypeList>newBuilder()
@@ -295,6 +319,13 @@ public class HttpJsonAcceleratorTypesStub extends AcceleratorTypesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

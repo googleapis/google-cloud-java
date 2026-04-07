@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListTargetHttpsProxiesRequest;
 import com.google.cloud.compute.v1.DeleteTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.GetTargetHttpsProxyRequest;
@@ -704,6 +705,29 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetHttpsProxies/{target_https_proxy}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetHttpsProxies/{target_https_proxy}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetHttpsProxies/{target_https_proxy}");
+  private static final PathTemplate SET_CERTIFICATE_MAP_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetHttpsProxies/{target_https_proxy}");
+  private static final PathTemplate SET_QUIC_OVERRIDE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetHttpsProxies/{target_https_proxy}");
+  private static final PathTemplate SET_SSL_CERTIFICATES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/targetHttpsProxies/{target_https_proxy}");
+  private static final PathTemplate SET_SSL_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetHttpsProxies/{target_https_proxy}");
+  private static final PathTemplate SET_URL_MAP_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/targetHttpsProxies/{target_https_proxy}");
+
   public static final HttpJsonTargetHttpsProxiesStub create(TargetHttpsProxiesStubSettings settings)
       throws IOException {
     return new HttpJsonTargetHttpsProxiesStub(settings, ClientContext.create(settings));
@@ -758,6 +782,13 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteTargetHttpsProxyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteTargetHttpsProxyRequest, Operation>newBuilder()
@@ -769,6 +800,14 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetTargetHttpsProxyRequest, TargetHttpsProxy> getTransportSettings =
@@ -782,6 +821,14 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                   builder.add("target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertTargetHttpsProxyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertTargetHttpsProxyRequest, Operation>newBuilder()
@@ -792,6 +839,12 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListTargetHttpsProxiesRequest, TargetHttpsProxyList>
@@ -805,6 +858,12 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchTargetHttpsProxyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchTargetHttpsProxyRequest, Operation>newBuilder()
@@ -816,6 +875,14 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetCertificateMapTargetHttpsProxyRequest, Operation>
@@ -831,6 +898,15 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                           "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                      return SET_CERTIFICATE_MAP_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetQuicOverrideTargetHttpsProxyRequest, Operation>
         setQuicOverrideTransportSettings =
@@ -844,6 +920,15 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                       builder.add(
                           "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                      return SET_QUIC_OVERRIDE_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<SetSslCertificatesTargetHttpsProxyRequest, Operation>
@@ -859,6 +944,15 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                           "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                      return SET_SSL_CERTIFICATES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetSslPolicyTargetHttpsProxyRequest, Operation>
         setSslPolicyTransportSettings =
@@ -873,6 +967,15 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                           "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                      return SET_SSL_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetUrlMapTargetHttpsProxyRequest, Operation> setUrlMapTransportSettings =
         HttpJsonCallSettings.<SetUrlMapTargetHttpsProxyRequest, Operation>newBuilder()
@@ -884,6 +987,14 @@ public class HttpJsonTargetHttpsProxiesStub extends TargetHttpsProxiesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                  return SET_URL_MAP_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

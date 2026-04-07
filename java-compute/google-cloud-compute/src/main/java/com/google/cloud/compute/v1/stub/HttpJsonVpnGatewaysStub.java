@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListVpnGatewaysRequest;
 import com.google.cloud.compute.v1.DeleteVpnGatewayRequest;
 import com.google.cloud.compute.v1.GetStatusVpnGatewayRequest;
@@ -484,6 +485,23 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/vpnGateways/{vpn_gateway}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/vpnGateways/{vpn_gateway}");
+  private static final PathTemplate GET_STATUS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/vpnGateways/{vpn_gateway}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate SET_LABELS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/vpnGateways/{resource}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/vpnGateways/{resource}");
+
   public static final HttpJsonVpnGatewaysStub create(VpnGatewaysStubSettings settings)
       throws IOException {
     return new HttpJsonVpnGatewaysStub(settings, ClientContext.create(settings));
@@ -536,6 +554,13 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteVpnGatewayRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteVpnGatewayRequest, Operation>newBuilder()
@@ -549,6 +574,14 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
                   builder.add("vpn_gateway", String.valueOf(request.getVpnGateway()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("vpn_gateway", String.valueOf(request.getVpnGateway()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetVpnGatewayRequest, VpnGateway> getTransportSettings =
         HttpJsonCallSettings.<GetVpnGatewayRequest, VpnGateway>newBuilder()
@@ -561,6 +594,14 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("vpn_gateway", String.valueOf(request.getVpnGateway()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("vpn_gateway", String.valueOf(request.getVpnGateway()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetStatusVpnGatewayRequest, VpnGatewaysGetStatusResponse>
@@ -577,6 +618,15 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
                       builder.add("vpn_gateway", String.valueOf(request.getVpnGateway()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put(
+                          "vpn_gateway", String.valueOf(request.getVpnGateway()));
+                      return GET_STATUS_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertVpnGatewayRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertVpnGatewayRequest, Operation>newBuilder()
@@ -588,6 +638,13 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListVpnGatewaysRequest, VpnGatewayList> listTransportSettings =
@@ -601,6 +658,13 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<SetLabelsVpnGatewayRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsVpnGatewayRequest, Operation>newBuilder()
@@ -613,6 +677,14 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return SET_LABELS_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<TestIamPermissionsVpnGatewayRequest, TestPermissionsResponse>
@@ -628,6 +700,15 @@ public class HttpJsonVpnGatewaysStub extends VpnGatewaysStub {
                       builder.add("region", String.valueOf(request.getRegion()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 

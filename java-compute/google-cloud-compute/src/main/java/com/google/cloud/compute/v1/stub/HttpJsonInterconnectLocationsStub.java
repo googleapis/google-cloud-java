@@ -30,6 +30,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.GetInterconnectLocationRequest;
 import com.google.cloud.compute.v1.InterconnectLocation;
 import com.google.cloud.compute.v1.InterconnectLocationList;
@@ -151,6 +152,12 @@ public class HttpJsonInterconnectLocationsStub extends InterconnectLocationsStub
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/global/interconnectLocations/{interconnect_location}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+
   public static final HttpJsonInterconnectLocationsStub create(
       InterconnectLocationsStubSettings settings) throws IOException {
     return new HttpJsonInterconnectLocationsStub(settings, ClientContext.create(settings));
@@ -204,6 +211,15 @@ public class HttpJsonInterconnectLocationsStub extends InterconnectLocationsStub
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "interconnect_location",
+                          String.valueOf(request.getInterconnectLocation()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<ListInterconnectLocationsRequest, InterconnectLocationList>
         listTransportSettings =
@@ -216,6 +232,12 @@ public class HttpJsonInterconnectLocationsStub extends InterconnectLocationsStub
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
 

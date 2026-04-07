@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteRegionSslPolicyRequest;
 import com.google.cloud.compute.v1.GetRegionSslPolicyRequest;
 import com.google.cloud.compute.v1.InsertRegionSslPolicyRequest;
@@ -390,6 +391,19 @@ public class HttpJsonRegionSslPoliciesStub extends RegionSslPoliciesStub {
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/sslPolicies/{ssl_policy}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/sslPolicies/{ssl_policy}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_AVAILABLE_FEATURES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/sslPolicies/{ssl_policy}");
+
   public static final HttpJsonRegionSslPoliciesStub create(RegionSslPoliciesStubSettings settings)
       throws IOException {
     return new HttpJsonRegionSslPoliciesStub(settings, ClientContext.create(settings));
@@ -443,6 +457,14 @@ public class HttpJsonRegionSslPoliciesStub extends RegionSslPoliciesStub {
                   builder.add("ssl_policy", String.valueOf(request.getSslPolicy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("ssl_policy", String.valueOf(request.getSslPolicy()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetRegionSslPolicyRequest, SslPolicy> getTransportSettings =
         HttpJsonCallSettings.<GetRegionSslPolicyRequest, SslPolicy>newBuilder()
@@ -456,6 +478,14 @@ public class HttpJsonRegionSslPoliciesStub extends RegionSslPoliciesStub {
                   builder.add("ssl_policy", String.valueOf(request.getSslPolicy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("ssl_policy", String.valueOf(request.getSslPolicy()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertRegionSslPolicyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionSslPolicyRequest, Operation>newBuilder()
@@ -468,6 +498,13 @@ public class HttpJsonRegionSslPoliciesStub extends RegionSslPoliciesStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListRegionSslPoliciesRequest, SslPoliciesList> listTransportSettings =
         HttpJsonCallSettings.<ListRegionSslPoliciesRequest, SslPoliciesList>newBuilder()
@@ -479,6 +516,13 @@ public class HttpJsonRegionSslPoliciesStub extends RegionSslPoliciesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<
@@ -497,6 +541,14 @@ public class HttpJsonRegionSslPoliciesStub extends RegionSslPoliciesStub {
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return LIST_AVAILABLE_FEATURES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchRegionSslPolicyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRegionSslPolicyRequest, Operation>newBuilder()
@@ -509,6 +561,14 @@ public class HttpJsonRegionSslPoliciesStub extends RegionSslPoliciesStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("ssl_policy", String.valueOf(request.getSslPolicy()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("ssl_policy", String.valueOf(request.getSslPolicy()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

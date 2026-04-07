@@ -28,6 +28,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.GetImageFamilyViewRequest;
 import com.google.cloud.compute.v1.ImageFamilyView;
 import com.google.protobuf.TypeRegistry;
@@ -89,6 +90,9 @@ public class HttpJsonImageFamilyViewsStub extends ImageFamilyViewsStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/imageFamilyViews/{family}");
+
   public static final HttpJsonImageFamilyViewsStub create(ImageFamilyViewsStubSettings settings)
       throws IOException {
     return new HttpJsonImageFamilyViewsStub(settings, ClientContext.create(settings));
@@ -139,6 +143,14 @@ public class HttpJsonImageFamilyViewsStub extends ImageFamilyViewsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("family", String.valueOf(request.getFamily()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 
