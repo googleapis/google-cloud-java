@@ -27,14 +27,20 @@ import com.google.api.gax.retrying.TimedRetryAlgorithm;
 import com.google.cloud.RetryHelper;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Context;
+import io.opentelemetry.context.ContextKey;
 import io.opentelemetry.context.Scope;
 import java.io.IOException;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class BigQueryRetryHelper extends RetryHelper {
+
+  public static final ContextKey<AtomicInteger> RETRY_ATTEMPT_KEY =
+      ContextKey.named("bq_retry_attempt");
 
   private static final Logger LOG = Logger.getLogger(BigQueryRetryHelper.class.getName());
 
@@ -54,7 +60,11 @@ public class BigQueryRetryHelper extends RetryHelper {
               .spanBuilder("com.google.cloud.bigquery.BigQueryRetryHelper.runWithRetries")
               .startSpan();
     }
-    try (Scope runWithRetriesScope = runWithRetries != null ? runWithRetries.makeCurrent() : null) {
+    Context retryContext = Context.current().with(RETRY_ATTEMPT_KEY, new AtomicInteger(0));
+    if (runWithRetries != null) {
+      retryContext = retryContext.with(runWithRetries);
+    }
+    try (Scope runWithRetriesScope = retryContext.makeCurrent()) {
       // Suppressing should be ok as a workaraund. Current and only ResultRetryAlgorithm
       // implementation does not use response at all, so ignoring its type is ok.
       @SuppressWarnings("unchecked")

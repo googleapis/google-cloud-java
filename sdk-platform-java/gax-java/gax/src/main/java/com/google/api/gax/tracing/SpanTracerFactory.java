@@ -94,8 +94,8 @@ public class SpanTracerFactory implements ApiTracerFactory {
   }
 
   @Override
-  public ApiTracerContext getApiTracerContext() {
-    return apiTracerContext;
+  public boolean needsContext() {
+    return apiTracerContext == null || apiTracerContext.equals(ApiTracerContext.empty());
   }
 
   /**

@@ -25,7 +25,9 @@ from common.model.library_config import LibraryConfig
 
 
 def compare_config(
-    baseline_config: GenerationConfig, current_config: GenerationConfig
+    baseline_config: GenerationConfig,
+    current_config: GenerationConfig,
+    force_regenerate_all: bool = False,
 ) -> ConfigChange:
     """
     Compare two GenerationConfig object and output a mapping from ConfigChange
@@ -48,6 +50,12 @@ def compare_config(
     current_params = __convert_params_to_sorted_list(
         obj=current_config, excluded_params=excluded_params
     )
+    if force_regenerate_all:
+        config_change = LibraryChange(
+            changed_param="force_regenerate_all",
+            current_value="true",
+        )
+        diff[ChangeType.REPO_LEVEL_CHANGE].append(config_change)
 
     for baseline_param, current_param in zip(baseline_params, current_params):
         if baseline_param == current_param:
@@ -60,7 +68,6 @@ def compare_config(
                 current_value=current_param[1],
             )
             diff[ChangeType.REPO_LEVEL_CHANGE].append(config_change)
-
     __compare_libraries(
         diff=diff,
         baseline_library_configs=baseline_config.libraries,

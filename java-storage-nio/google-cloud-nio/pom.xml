@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>google-cloud-nio</artifactId>
+  <version>0.128.14</version><!-- {x-version-update:google-cloud-nio:current} -->
+  <packaging>jar</packaging>
+  <name>Google Cloud NIO</name>
+  <url>https://github.com/googleapis/google-cloud-java</url>
+  <description>
+    FileSystemProvider for Java NIO to access Google Cloud Storage transparently.
+  </description>
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-nio-parent</artifactId>
+    <version>0.128.15-SNAPSHOT</version><!-- {x-version-update:google-cloud-nio:current} -->
+  </parent>
+  <properties>
+    <site.installationModule>google-cloud-nio</site.installationModule>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
+      <version>2.64.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.apis</groupId>
+      <artifactId>google-api-services-storage</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+      <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
+      <version>2.66.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client-gson</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auto.value</groupId>
+      <artifactId>auto-value-annotations</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>jsr305</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+      <version>2.76.1-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava-testlib</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.truth</groupId>
+      <artifactId>truth</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auth</groupId>
+      <artifactId>google-auth-library-credentials</artifactId>
+      <scope>test</scope>
+      <version>1.43.1-SNAPSHOT</version><!-- {x-version-update:google-auth-library-credentials:current} -->
+    </dependency>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>4.11.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-core</artifactId>
+      <scope>test</scope>
+      <classifier>tests</classifier>
+      <version>2.66.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-core:current} -->
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <configuration>
+          <skip>false</skip>
+        </configuration>
+      </plugin>
+      <!-- shade the jar so we can demo adding the NIO jar to add functionality. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <!-- MSHADE-419: 3.3.0 Shade plugin causes pom to be created without compile dependencies -->
+        <version>3.2.4</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>9.9.1</version>
+          </dependency>
+          <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-commons</artifactId>
+            <version>9.9.1</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <shadedArtifactAttached>true</shadedArtifactAttached>
+          <relocations>
+            <relocation>
+              <pattern>com</pattern>
+              <shadedPattern>shaded.cloud_nio.com</shadedPattern>
+              <includes>
+                <include>com.google.**</include>
+                <include>com.fasterxml.**</include>
+              </includes>
+              <excludes>
+                <exclude>com.google.cloud.storage.**</exclude>
+                <exclude>com.google.auto.**</exclude>
+              </excludes>
+            </relocation>
+            <relocation>
+              <pattern>org</pattern>
+              <shadedPattern>shaded.cloud_nio.org</shadedPattern>
+              <includes>
+                <include>org.apache.**</include>
+                <include>org.threeten.**</include>
+                <include>org.codehaus.**</include>
+              </includes>
+            </relocation>
+            <relocation>
+              <pattern>io</pattern>
+              <shadedPattern>shaded.cloud_nio.io</shadedPattern>
+              <includes>
+                <include>io.opencensus.**</include>
+                <include>io.grpc.**</include>
+              </includes>
+            </relocation>
+            <relocation>
+              <pattern>okio</pattern>
+              <shadedPattern>shaded.cloud_nio.okio</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>google</pattern>
+              <shadedPattern>shaded.cloud_nio.google</shadedPattern>
+            </relocation>
+          </relocations>
+          <transformers>
+            <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+          </transformers>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <configuration>
+        <ignoredUnusedDeclaredDependencies>
+		  <!-- This dependency is used for its native image configuration in the test scope -->
+          <ignoredUnusedDeclaredDependency>com.google.api:gax:jar</ignoredUnusedDeclaredDependency>
+          <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
+		</ignoredUnusedDeclaredDependencies>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

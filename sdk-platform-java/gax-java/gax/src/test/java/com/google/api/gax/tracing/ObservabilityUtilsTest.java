@@ -47,23 +47,23 @@ class ObservabilityUtilsTest {
     ApiException error =
         new ApiException(
             "fake_error", null, new FakeStatusCode(StatusCode.Code.INVALID_ARGUMENT), false);
-    String errorCode = ObservabilityUtils.extractStatus(error);
-    assertThat(errorCode).isEqualTo(StatusCode.Code.INVALID_ARGUMENT.toString());
+    StatusCode.Code errorCode = ObservabilityUtils.extractStatus(error);
+    assertThat(errorCode).isEqualTo(StatusCode.Code.INVALID_ARGUMENT);
   }
 
   @Test
   void testExtractStatus_errorConversion_noError() {
     // test "OK", which corresponds to a "null" error.
-    String successCode = ObservabilityUtils.extractStatus(null);
-    assertThat(successCode).isEqualTo(StatusCode.Code.OK.toString());
+    StatusCode.Code successCode = ObservabilityUtils.extractStatus(null);
+    assertThat(successCode).isEqualTo(StatusCode.Code.OK);
   }
 
   @Test
   void testExtractStatus_errorConversion_unknownException() {
     // test "UNKNOWN"
     Throwable unknownException = new RuntimeException();
-    String errorCode2 = ObservabilityUtils.extractStatus(unknownException);
-    assertThat(errorCode2).isEqualTo(StatusCode.Code.UNKNOWN.toString());
+    StatusCode.Code errorCode2 = ObservabilityUtils.extractStatus(unknownException);
+    assertThat(errorCode2).isEqualTo(StatusCode.Code.UNKNOWN);
   }
 
   @Test
@@ -112,6 +112,106 @@ class ObservabilityUtilsTest {
         .isEqualTo((long) attribute1Value);
     Truth.assertThat(otelAttributes.get(AttributeKey.longKey(attribute2)))
         .isEqualTo((long) attribute2Value);
+  }
+
+  @Test
+  void testGetResponseAttributes_grpc_success() {
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(null, ApiTracerContext.Transport.GRPC);
+    assertThat(attributes)
+        .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "OK");
+  }
+
+  @Test
+  void testGetResponseAttributes_grpc_apiException() {
+    ApiException error =
+        new ApiException("fake_error", null, new FakeStatusCode(StatusCode.Code.NOT_FOUND), false);
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.GRPC);
+    assertThat(attributes)
+        .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "NOT_FOUND");
+  }
+
+  @Test
+  void testGetResponseAttributes_grpc_cancellationException() {
+    Throwable error = new java.util.concurrent.CancellationException();
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.GRPC);
+    assertThat(attributes)
+        .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "CANCELLED");
+  }
+
+  @Test
+  void testGetResponseAttributes_http_success() {
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(null, ApiTracerContext.Transport.HTTP);
+    assertThat(attributes)
+        .containsEntry(
+            ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
+            (long) StatusCode.Code.OK.getHttpStatusCode());
+  }
+
+  @Test
+  void testGetResponseAttributes_http_apiExceptionWithIntegerTransportCode() {
+    ApiException error =
+        new ApiException(
+            "fake_error",
+            null,
+            new com.google.api.gax.rpc.StatusCode() {
+              @Override
+              public Code getCode() {
+                return Code.NOT_FOUND;
+              }
+
+              @Override
+              public Object getTransportCode() {
+                return StatusCode.Code.NOT_FOUND.getHttpStatusCode();
+              }
+            },
+            false);
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.HTTP);
+    assertThat(attributes)
+        .containsEntry(
+            ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
+            (long) StatusCode.Code.NOT_FOUND.getHttpStatusCode());
+  }
+
+  @Test
+  void testGetResponseAttributes_http_apiExceptionWithNonIntegerTransportCode() {
+    ApiException error =
+        new ApiException(
+            "fake_error",
+            null,
+            new com.google.api.gax.rpc.StatusCode() {
+              @Override
+              public Code getCode() {
+                return Code.NOT_FOUND;
+              }
+
+              @Override
+              public Object getTransportCode() {
+                return "Not Found";
+              }
+            },
+            false);
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.HTTP);
+    assertThat(attributes)
+        .containsEntry(
+            ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
+            (long) StatusCode.Code.NOT_FOUND.getHttpStatusCode());
+  }
+
+  @Test
+  void testGetResponseAttributes_http_cancellationException() {
+    Throwable error = new java.util.concurrent.CancellationException();
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.HTTP);
+    assertThat(attributes)
+        .containsEntry(
+            ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
+            (long) StatusCode.Code.CANCELLED.getHttpStatusCode());
   }
 
   @Test

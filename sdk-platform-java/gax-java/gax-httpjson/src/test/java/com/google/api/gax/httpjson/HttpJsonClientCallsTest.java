@@ -139,4 +139,35 @@ class HttpJsonClientCallsTest {
         .isEqualTo(HttpJsonStatusCode.Code.UNAUTHENTICATED);
     Mockito.verify(mockChannel, Mockito.never()).newCall(descriptor, callOptions);
   }
+
+  @Test
+  void testGetMetadataWithTraceContext() {
+    com.google.api.gax.tracing.ApiTracer mockTracer =
+        Mockito.mock(com.google.api.gax.tracing.ApiTracer.class);
+    Mockito.doAnswer(
+            invocation -> {
+              java.util.Map<String, String> carrier = invocation.getArgument(0);
+              carrier.put("traceparent", "00-00000000000000000000000000000001-0000000000000002-01");
+              return null;
+            })
+        .when(mockTracer)
+        .injectTraceContext(Mockito.anyMap());
+
+    java.util.Map<String, java.util.List<String>> extraHeaders = new java.util.HashMap<>();
+    extraHeaders.put("existing-header", java.util.Collections.singletonList("existing-value"));
+
+    HttpJsonCallContext context =
+        (HttpJsonCallContext)
+            HttpJsonCallContext.createDefault()
+                .withTracer(mockTracer)
+                .withExtraHeaders(extraHeaders);
+
+    HttpJsonMetadata metadata = HttpJsonClientCalls.getMetadataWithTraceContext(context);
+
+    assertThat(metadata.getHeaders()).containsKey("existing-header");
+    assertThat(metadata.getHeaders().get("existing-header").toString()).contains("existing-value");
+    assertThat(metadata.getHeaders()).containsKey("traceparent");
+    assertThat(metadata.getHeaders().get("traceparent").toString())
+        .contains("00-00000000000000000000000000000001-0000000000000002-01");
+  }
 }

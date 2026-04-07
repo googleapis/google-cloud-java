@@ -425,6 +425,20 @@ public class AgentServiceSettings extends ClientSettings<AgentServiceSettings> {
     return ((AgentServiceStubSettings) getStubSettings()).restoreAppVersionOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to generateAppResource. */
+  public UnaryCallSettings<GenerateAppResourceRequest, Operation> generateAppResourceSettings() {
+    return ((AgentServiceStubSettings) getStubSettings()).generateAppResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to generateAppResource. */
+  public OperationCallSettings<
+          GenerateAppResourceRequest,
+          GenerateAppResourceResponse,
+          GenerateAppResourceOperationMetadata>
+      generateAppResourceOperationSettings() {
+    return ((AgentServiceStubSettings) getStubSettings()).generateAppResourceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listChangelogs. */
   public PagedCallSettings<
           ListChangelogsRequest, ListChangelogsResponse, ListChangelogsPagedResponse>
@@ -860,6 +874,21 @@ public class AgentServiceSettings extends ClientSettings<AgentServiceSettings> {
             RestoreAppVersionRequest, RestoreAppVersionResponse, OperationMetadata>
         restoreAppVersionOperationSettings() {
       return getStubSettingsBuilder().restoreAppVersionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to generateAppResource. */
+    public UnaryCallSettings.Builder<GenerateAppResourceRequest, Operation>
+        generateAppResourceSettings() {
+      return getStubSettingsBuilder().generateAppResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to generateAppResource. */
+    public OperationCallSettings.Builder<
+            GenerateAppResourceRequest,
+            GenerateAppResourceResponse,
+            GenerateAppResourceOperationMetadata>
+        generateAppResourceOperationSettings() {
+      return getStubSettingsBuilder().generateAppResourceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listChangelogs. */

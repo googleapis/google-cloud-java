@@ -32,6 +32,7 @@ package com.google.api.gax.rpc.testing;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
@@ -53,6 +54,11 @@ public class FakeStubSettings extends StubSettings {
   @Override
   public String getServiceName() {
     return "test";
+  }
+
+  @Override
+  protected LibraryMetadata getLibraryMetadata() {
+    return LibraryMetadata.newBuilder().build();
   }
 
   @Override

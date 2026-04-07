@@ -327,6 +327,17 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * <code>EVAL = 3;</code>
      */
     EVAL(3),
+    /**
+     *
+     *
+     * <pre>
+     * The conversation is from an agent tool. Agent tool runs the agent in a
+     * separate session, which is persisted for testing and debugging purposes.
+     * </pre>
+     *
+     * <code>AGENT_TOOL = 4;</code>
+     */
+    AGENT_TOOL(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -384,6 +395,18 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      */
     public static final int EVAL_VALUE = 3;
 
+    /**
+     *
+     *
+     * <pre>
+     * The conversation is from an agent tool. Agent tool runs the agent in a
+     * separate session, which is persisted for testing and debugging purposes.
+     * </pre>
+     *
+     * <code>AGENT_TOOL = 4;</code>
+     */
+    public static final int AGENT_TOOL_VALUE = 4;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -416,6 +439,8 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
           return SIMULATOR;
         case 3:
           return EVAL;
+        case 4:
+          return AGENT_TOOL;
         default:
           return null;
       }
@@ -2408,7 +2433,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-   *     google/cloud/ces/v1beta/conversation.proto;l=126
+   *     google/cloud/ces/v1beta/conversation.proto;l=130
    * @return The enum numeric value on the wire for channelType.
    */
   @java.lang.Override
@@ -2429,7 +2454,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-   *     google/cloud/ces/v1beta/conversation.proto;l=126
+   *     google/cloud/ces/v1beta/conversation.proto;l=130
    * @return The channelType.
    */
   @java.lang.Override
@@ -4656,7 +4681,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-     *     google/cloud/ces/v1beta/conversation.proto;l=126
+     *     google/cloud/ces/v1beta/conversation.proto;l=130
      * @return The enum numeric value on the wire for channelType.
      */
     @java.lang.Override
@@ -4677,7 +4702,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-     *     google/cloud/ces/v1beta/conversation.proto;l=126
+     *     google/cloud/ces/v1beta/conversation.proto;l=130
      * @param value The enum numeric value on the wire for channelType to set.
      * @return This builder for chaining.
      */
@@ -4701,7 +4726,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-     *     google/cloud/ces/v1beta/conversation.proto;l=126
+     *     google/cloud/ces/v1beta/conversation.proto;l=130
      * @return The channelType.
      */
     @java.lang.Override
@@ -4726,7 +4751,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-     *     google/cloud/ces/v1beta/conversation.proto;l=126
+     *     google/cloud/ces/v1beta/conversation.proto;l=130
      * @param value The channelType to set.
      * @return This builder for chaining.
      */
@@ -4753,7 +4778,7 @@ public final class Conversation extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.Conversation.channel_type is deprecated. See
-     *     google/cloud/ces/v1beta/conversation.proto;l=126
+     *     google/cloud/ces/v1beta/conversation.proto;l=130
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

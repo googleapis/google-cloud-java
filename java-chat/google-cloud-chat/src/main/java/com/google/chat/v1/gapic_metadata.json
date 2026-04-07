@@ -25,6 +25,9 @@
             "CreateReaction": {
               "methods": ["createReaction", "createReaction", "createReaction", "createReactionCallable"]
             },
+            "CreateSection": {
+              "methods": ["createSection", "createSection", "createSection", "createSectionCallable"]
+            },
             "CreateSpace": {
               "methods": ["createSpace", "createSpace", "createSpaceCallable"]
             },
@@ -39,6 +42,9 @@
             },
             "DeleteReaction": {
               "methods": ["deleteReaction", "deleteReaction", "deleteReaction", "deleteReactionCallable"]
+            },
+            "DeleteSection": {
+              "methods": ["deleteSection", "deleteSection", "deleteSection", "deleteSectionCallable"]
             },
             "DeleteSpace": {
               "methods": ["deleteSpace", "deleteSpace", "deleteSpace", "deleteSpaceCallable"]
@@ -85,11 +91,23 @@
             "ListReactions": {
               "methods": ["listReactions", "listReactions", "listReactions", "listReactionsPagedCallable", "listReactionsCallable"]
             },
+            "ListSectionItems": {
+              "methods": ["listSectionItems", "listSectionItems", "listSectionItems", "listSectionItemsPagedCallable", "listSectionItemsCallable"]
+            },
+            "ListSections": {
+              "methods": ["listSections", "listSections", "listSections", "listSectionsPagedCallable", "listSectionsCallable"]
+            },
             "ListSpaceEvents": {
               "methods": ["listSpaceEvents", "listSpaceEvents", "listSpaceEvents", "listSpaceEventsPagedCallable", "listSpaceEventsCallable"]
             },
             "ListSpaces": {
               "methods": ["listSpaces", "listSpaces", "listSpacesPagedCallable", "listSpacesCallable"]
+            },
+            "MoveSectionItem": {
+              "methods": ["moveSectionItem", "moveSectionItem", "moveSectionItem", "moveSectionItem", "moveSectionItem", "moveSectionItemCallable"]
+            },
+            "PositionSection": {
+              "methods": ["positionSection", "positionSectionCallable"]
             },
             "SearchSpaces": {
               "methods": ["searchSpaces", "searchSpaces", "searchSpacesPagedCallable", "searchSpacesCallable"]
@@ -102,6 +120,9 @@
             },
             "UpdateMessage": {
               "methods": ["updateMessage", "updateMessage", "updateMessageCallable"]
+            },
+            "UpdateSection": {
+              "methods": ["updateSection", "updateSection", "updateSectionCallable"]
             },
             "UpdateSpace": {
               "methods": ["updateSpace", "updateSpace", "updateSpaceCallable"]

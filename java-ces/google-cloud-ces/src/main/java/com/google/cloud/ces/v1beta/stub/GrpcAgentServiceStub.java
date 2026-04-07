@@ -65,6 +65,9 @@ import com.google.cloud.ces.v1beta.Deployment;
 import com.google.cloud.ces.v1beta.Example;
 import com.google.cloud.ces.v1beta.ExportAppRequest;
 import com.google.cloud.ces.v1beta.ExportAppResponse;
+import com.google.cloud.ces.v1beta.GenerateAppResourceOperationMetadata;
+import com.google.cloud.ces.v1beta.GenerateAppResourceRequest;
+import com.google.cloud.ces.v1beta.GenerateAppResourceResponse;
 import com.google.cloud.ces.v1beta.GetAgentRequest;
 import com.google.cloud.ces.v1beta.GetAppRequest;
 import com.google.cloud.ces.v1beta.GetAppVersionRequest;
@@ -627,6 +630,17 @@ public class GrpcAgentServiceStub extends AgentServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GenerateAppResourceRequest, Operation>
+      generateAppResourceMethodDescriptor =
+          MethodDescriptor.<GenerateAppResourceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.ces.v1beta.AgentService/GenerateAppResource")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateAppResourceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListChangelogsRequest, ListChangelogsResponse>
       listChangelogsMethodDescriptor =
           MethodDescriptor.<ListChangelogsRequest, ListChangelogsResponse>newBuilder()
@@ -753,6 +767,12 @@ public class GrpcAgentServiceStub extends AgentServiceStub {
   private final OperationCallable<
           RestoreAppVersionRequest, RestoreAppVersionResponse, OperationMetadata>
       restoreAppVersionOperationCallable;
+  private final UnaryCallable<GenerateAppResourceRequest, Operation> generateAppResourceCallable;
+  private final OperationCallable<
+          GenerateAppResourceRequest,
+          GenerateAppResourceResponse,
+          GenerateAppResourceOperationMetadata>
+      generateAppResourceOperationCallable;
   private final UnaryCallable<ListChangelogsRequest, ListChangelogsResponse> listChangelogsCallable;
   private final UnaryCallable<ListChangelogsRequest, ListChangelogsPagedResponse>
       listChangelogsPagedCallable;
@@ -1333,6 +1353,17 @@ public class GrpcAgentServiceStub extends AgentServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getName())
             .build();
+    GrpcCallSettings<GenerateAppResourceRequest, Operation> generateAppResourceTransportSettings =
+        GrpcCallSettings.<GenerateAppResourceRequest, Operation>newBuilder()
+            .setMethodDescriptor(generateAppResourceMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
     GrpcCallSettings<ListChangelogsRequest, ListChangelogsResponse>
         listChangelogsTransportSettings =
             GrpcCallSettings.<ListChangelogsRequest, ListChangelogsResponse>newBuilder()
@@ -1596,6 +1627,17 @@ public class GrpcAgentServiceStub extends AgentServiceStub {
         callableFactory.createOperationCallable(
             restoreAppVersionTransportSettings,
             settings.restoreAppVersionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.generateAppResourceCallable =
+        callableFactory.createUnaryCallable(
+            generateAppResourceTransportSettings,
+            settings.generateAppResourceSettings(),
+            clientContext);
+    this.generateAppResourceOperationCallable =
+        callableFactory.createOperationCallable(
+            generateAppResourceTransportSettings,
+            settings.generateAppResourceOperationSettings(),
             clientContext,
             operationsStub);
     this.listChangelogsCallable =
@@ -1951,6 +1993,20 @@ public class GrpcAgentServiceStub extends AgentServiceStub {
   public OperationCallable<RestoreAppVersionRequest, RestoreAppVersionResponse, OperationMetadata>
       restoreAppVersionOperationCallable() {
     return restoreAppVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateAppResourceRequest, Operation> generateAppResourceCallable() {
+    return generateAppResourceCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          GenerateAppResourceRequest,
+          GenerateAppResourceResponse,
+          GenerateAppResourceOperationMetadata>
+      generateAppResourceOperationCallable() {
+    return generateAppResourceOperationCallable;
   }
 
   @Override
