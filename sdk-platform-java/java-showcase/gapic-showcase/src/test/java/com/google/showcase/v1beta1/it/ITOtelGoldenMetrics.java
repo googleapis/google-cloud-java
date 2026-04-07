@@ -36,7 +36,7 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnavailableException;
-import com.google.api.gax.tracing.GoldenSignalsMetricsTracerFactory;
+import com.google.api.gax.tracing.OpenTelemetryMetricsFactory;
 import com.google.api.gax.tracing.ObservabilityAttributes;
 import com.google.common.collect.ImmutableList;
 import com.google.showcase.v1beta1.EchoClient;
@@ -95,8 +95,8 @@ class ITOtelGoldenMetrics {
 
   @Test
   void testMetrics_successfulEcho_grpc() throws Exception {
-    GoldenSignalsMetricsTracerFactory tracerFactory =
-        new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
+    OpenTelemetryMetricsFactory tracerFactory =
+        new OpenTelemetryMetricsFactory(openTelemetrySdk);
 
     try (EchoClient client =
         TestClientInitializer.createGrpcEchoClientOpentelemetry(tracerFactory)) {
@@ -152,8 +152,8 @@ class ITOtelGoldenMetrics {
 
   @Test
   void testMetrics_failedEcho_grpc_recordsErrorType() throws Exception {
-    GoldenSignalsMetricsTracerFactory tracerFactory =
-        new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
+    OpenTelemetryMetricsFactory tracerFactory =
+        new OpenTelemetryMetricsFactory(openTelemetrySdk);
 
     ClientInterceptor interceptor =
         new ClientInterceptor() {
@@ -220,8 +220,8 @@ class ITOtelGoldenMetrics {
 
   @Test
   void testMetrics_successfulEcho_httpjson() throws Exception {
-    GoldenSignalsMetricsTracerFactory tracerFactory =
-        new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
+    OpenTelemetryMetricsFactory tracerFactory =
+        new OpenTelemetryMetricsFactory(openTelemetrySdk);
 
     try (EchoClient client =
         TestClientInitializer.createHttpJsonEchoClientOpentelemetry(tracerFactory)) {
@@ -280,8 +280,8 @@ class ITOtelGoldenMetrics {
 
   @Test
   void testMetrics_failedEcho_httpjson_recordsErrorType() throws Exception {
-    GoldenSignalsMetricsTracerFactory tracerFactory =
-        new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
+    OpenTelemetryMetricsFactory tracerFactory =
+        new OpenTelemetryMetricsFactory(openTelemetrySdk);
 
     HttpTransport mockTransport =
         new HttpTransport() {
@@ -400,8 +400,8 @@ class ITOtelGoldenMetrics {
 
   @Test
   void testMetrics_clientTimeout_grpc() throws Exception {
-    GoldenSignalsMetricsTracerFactory tracerFactory =
-        new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
+    OpenTelemetryMetricsFactory tracerFactory =
+        new OpenTelemetryMetricsFactory(openTelemetrySdk);
 
     // Using 1ms as 0ms might be rejected by some validation or trigger immediate failure before
     // metrics
@@ -446,8 +446,8 @@ class ITOtelGoldenMetrics {
 
   @Test
   void testMetrics_clientTimeout_httpjson() throws Exception {
-    GoldenSignalsMetricsTracerFactory tracerFactory =
-        new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
+    OpenTelemetryMetricsFactory tracerFactory =
+        new OpenTelemetryMetricsFactory(openTelemetrySdk);
 
     RetrySettings zeroRetrySettings =
         RetrySettings.newBuilder()
@@ -490,8 +490,8 @@ class ITOtelGoldenMetrics {
 
   @Test
   void testMetrics_retryShouldResultInOneMetric_grpc() throws Exception {
-    GoldenSignalsMetricsTracerFactory tracerFactory =
-        new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
+    OpenTelemetryMetricsFactory tracerFactory =
+        new OpenTelemetryMetricsFactory(openTelemetrySdk);
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()
@@ -568,8 +568,8 @@ class ITOtelGoldenMetrics {
 
   @Test
   void testMetrics_retryShouldResultInOneMetric_httpjson() throws Exception {
-    GoldenSignalsMetricsTracerFactory tracerFactory =
-        new GoldenSignalsMetricsTracerFactory(openTelemetrySdk);
+    OpenTelemetryMetricsFactory tracerFactory =
+        new OpenTelemetryMetricsFactory(openTelemetrySdk);
 
     RetrySettings retrySettings =
         RetrySettings.newBuilder()

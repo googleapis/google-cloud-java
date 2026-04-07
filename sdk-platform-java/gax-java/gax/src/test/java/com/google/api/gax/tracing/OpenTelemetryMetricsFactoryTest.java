@@ -38,13 +38,13 @@ import io.opentelemetry.api.OpenTelemetry;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class GoldenSignalsMetricsTracerFactoryTest {
+class OpenTelemetryMetricsFactoryTest {
 
-  private GoldenSignalsMetricsTracerFactory tracerFactory;
+  private OpenTelemetryMetricsFactory tracerFactory;
 
   @BeforeEach
   void setUp() {
-    tracerFactory = new GoldenSignalsMetricsTracerFactory(OpenTelemetry.noop());
+    tracerFactory = new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
   }
 
   @Test
@@ -56,7 +56,7 @@ class GoldenSignalsMetricsTracerFactoryTest {
     ApiTracer actual =
         tracerFactory.newTracer(
             mock(ApiTracer.class), mock(SpanName.class), ApiTracerFactory.OperationType.Unary);
-    assertThat(actual).isInstanceOf(GoldenSignalsMetricsTracer.class);
+    assertThat(actual).isInstanceOf(OpenTelemetryMetricsTracer.class);
   }
 
   @Test
@@ -80,29 +80,26 @@ class GoldenSignalsMetricsTracerFactoryTest {
     ApiTracer actual = tracerFactory.newTracer(mock(ApiTracer.class), methodLevelTracerContext);
 
     verify(clientLevelTracerContext).merge(methodLevelTracerContext);
-    assertThat(actual).isInstanceOf(GoldenSignalsMetricsTracer.class);
+    assertThat(actual).isInstanceOf(OpenTelemetryMetricsTracer.class);
   }
 
   @Test
   void testWithContext_nullContext_returnsBaseApiTracerFactory() {
-    GoldenSignalsMetricsTracerFactory factory =
-        new GoldenSignalsMetricsTracerFactory(OpenTelemetry.noop());
+    OpenTelemetryMetricsFactory factory = new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
     ApiTracerFactory factoryWithContext = factory.withContext(null);
     assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
   }
 
   @Test
   void testWithContext_nullMetadata_returnsBaseApiTracerFactory() {
-    GoldenSignalsMetricsTracerFactory factory =
-        new GoldenSignalsMetricsTracerFactory(OpenTelemetry.noop());
+    OpenTelemetryMetricsFactory factory = new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
     ApiTracerFactory factoryWithContext = factory.withContext(ApiTracerContext.empty());
     assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
   }
 
   @Test
   void testWithContext_emptyArtifactName_returnsBaseApiTracerFactory() {
-    GoldenSignalsMetricsTracerFactory factory =
-        new GoldenSignalsMetricsTracerFactory(OpenTelemetry.noop());
+    OpenTelemetryMetricsFactory factory = new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
     LibraryMetadata metadata =
         LibraryMetadata.newBuilder().setArtifactName("").setVersion("1.0").build();
     ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
@@ -113,8 +110,7 @@ class GoldenSignalsMetricsTracerFactoryTest {
 
   @Test
   void testWithContext_nullArtifactName_returnsBaseApiTracerFactory() {
-    GoldenSignalsMetricsTracerFactory factory =
-        new GoldenSignalsMetricsTracerFactory(OpenTelemetry.noop());
+    OpenTelemetryMetricsFactory factory = new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
     LibraryMetadata metadata = LibraryMetadata.newBuilder().setVersion("1.0").build();
     ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
 
@@ -124,8 +120,7 @@ class GoldenSignalsMetricsTracerFactoryTest {
 
   @Test
   void newTracerWithApiTracerContext_shouldCreateBaseTracer_ifMetricsRecorderIsNull() {
-    GoldenSignalsMetricsTracerFactory factory =
-        new GoldenSignalsMetricsTracerFactory(OpenTelemetry.noop());
+    OpenTelemetryMetricsFactory factory = new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
     ApiTracer actual = factory.newTracer(mock(ApiTracer.class), mock(ApiTracerContext.class));
 
     assertThat(actual).isInstanceOf(BaseApiTracer.class);
@@ -133,8 +128,8 @@ class GoldenSignalsMetricsTracerFactoryTest {
 
   @Test
   void testNeedsContext_returnsTrueWhenContextIsEmpty() {
-    GoldenSignalsMetricsTracerFactory factoryWithoutContext =
-        new GoldenSignalsMetricsTracerFactory(OpenTelemetry.noop());
+    OpenTelemetryMetricsFactory factoryWithoutContext =
+        new OpenTelemetryMetricsFactory(OpenTelemetry.noop());
 
     assertThat(factoryWithoutContext.needsContext()).isTrue();
   }

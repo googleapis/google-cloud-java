@@ -43,13 +43,13 @@ import java.util.concurrent.TimeUnit;
  * GoldenSignalsMetricsRecorder}, hence this class should not have any knowledge about the
  * observability framework (e.g. OpenTelemetry).
  */
-class GoldenSignalsMetricsTracer implements ApiTracer {
+class OpenTelemetryMetricsTracer implements ApiTracer {
   private final Stopwatch clientRequestTimer;
   private final GoldenSignalsMetricsRecorder metricsRecorder;
   private final Map<String, Object> attributes;
   private final ApiTracerContext.Transport transport;
 
-  GoldenSignalsMetricsTracer(
+  OpenTelemetryMetricsTracer(
       GoldenSignalsMetricsRecorder metricsRecorder, ApiTracerContext apiTracerContext) {
     this.clientRequestTimer = Stopwatch.createStarted();
     this.metricsRecorder = metricsRecorder;
@@ -58,7 +58,7 @@ class GoldenSignalsMetricsTracer implements ApiTracer {
   }
 
   @VisibleForTesting
-  GoldenSignalsMetricsTracer(
+  OpenTelemetryMetricsTracer(
       GoldenSignalsMetricsRecorder metricsRecorder,
       ApiTracerContext apiTracerContext,
       Ticker ticker) {
