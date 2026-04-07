@@ -1031,3 +1031,6 @@ google-maps-geocode:0.0.0:0.0.1-SNAPSHOT
 proto-google-maps-geocode-v4:0.0.0:0.0.1-SNAPSHOT
 grpc-google-maps-geocode-v4:0.0.0:0.0.1-SNAPSHOT
 google-cloud-nio:0.128.14:0.128.15-SNAPSHOT
+google-cloud-appoptimize:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-appoptimize-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-appoptimize-v1beta:0.0.0:0.0.1-SNAPSHOT
