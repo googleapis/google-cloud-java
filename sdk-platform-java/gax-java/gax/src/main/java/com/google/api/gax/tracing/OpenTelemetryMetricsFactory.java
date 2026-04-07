@@ -34,19 +34,19 @@ import com.google.api.core.InternalApi;
 import io.opentelemetry.api.OpenTelemetry;
 
 /**
- * A {@link ApiTracerFactory} to build instances of {@link GoldenSignalsMetricsTracer}.
+ * A {@link ApiTracerFactory} to build instances of {@link OpenTelemetryMetricsTracer}.
  *
  * <p>This class is expected to be initialized once during client initialization.
  */
 @BetaApi
 @InternalApi
-public class GoldenSignalsMetricsTracerFactory implements ApiTracerFactory {
+public class OpenTelemetryMetricsFactory implements ApiTracerFactory {
 
   private ApiTracerContext clientLevelTracerContext;
   private final OpenTelemetry openTelemetry;
   private GoldenSignalsMetricsRecorder metricsRecorder;
 
-  public GoldenSignalsMetricsTracerFactory(OpenTelemetry openTelemetry) {
+  public OpenTelemetryMetricsFactory(OpenTelemetry openTelemetry) {
     this.openTelemetry = openTelemetry;
     this.clientLevelTracerContext = ApiTracerContext.empty();
   }
@@ -58,7 +58,7 @@ public class GoldenSignalsMetricsTracerFactory implements ApiTracerFactory {
       // regular requests.
       return new BaseApiTracer();
     }
-    return new GoldenSignalsMetricsTracer(metricsRecorder, clientLevelTracerContext);
+    return new OpenTelemetryMetricsTracer(metricsRecorder, clientLevelTracerContext);
   }
 
   @Override
@@ -69,7 +69,7 @@ public class GoldenSignalsMetricsTracerFactory implements ApiTracerFactory {
       return new BaseApiTracer();
     }
     ApiTracerContext mergedTracerContext = clientLevelTracerContext.merge(methodLevelTracerContext);
-    return new GoldenSignalsMetricsTracer(metricsRecorder, mergedTracerContext);
+    return new OpenTelemetryMetricsTracer(metricsRecorder, mergedTracerContext);
   }
 
   @Override

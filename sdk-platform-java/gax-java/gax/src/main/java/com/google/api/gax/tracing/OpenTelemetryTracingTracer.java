@@ -44,7 +44,7 @@ import java.util.concurrent.CancellationException;
 /** An implementation of {@link ApiTracer} that uses OpenTelemetry to record traces. */
 @BetaApi
 @InternalApi
-public class SpanTracer implements ApiTracer {
+class OpenTelemetryTracingTracer implements ApiTracer {
 
   static final String CONTENT_LENGTH_KEY = "Content-Length";
 
@@ -77,7 +77,7 @@ public class SpanTracer implements ApiTracer {
    * @param tracer the {@link Tracer} to use for recording spans
    * @param apiTracerContext the {@link ApiTracerContext} to use for recording spans
    */
-  public SpanTracer(Tracer tracer, ApiTracerContext apiTracerContext) {
+  OpenTelemetryTracingTracer(Tracer tracer, ApiTracerContext apiTracerContext) {
     this.tracer = tracer;
     this.apiTracerContext = apiTracerContext;
     this.attemptSpanName = resolveAttemptSpanName(apiTracerContext);
@@ -93,7 +93,7 @@ public class SpanTracer implements ApiTracer {
    * @param attemptSpanName the name of the individual attempt spans
    */
   @InternalApi
-  SpanTracer(Tracer tracer, ApiTracerContext apiTracerContext, String attemptSpanName) {
+  OpenTelemetryTracingTracer(Tracer tracer, ApiTracerContext apiTracerContext, String attemptSpanName) {
     this.tracer = tracer;
     this.attemptSpanName = attemptSpanName;
     this.apiTracerContext = apiTracerContext;
