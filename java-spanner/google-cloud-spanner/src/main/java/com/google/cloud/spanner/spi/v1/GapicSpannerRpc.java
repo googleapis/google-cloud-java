@@ -229,7 +229,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
@@ -614,27 +613,13 @@ public class GapicSpannerRpc implements SpannerRpc {
         createChannelProviderBuilder(
             options, headerProviderWithUserAgent, /* isEnableDirectAccess= */ false);
 
-    final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> existingCloudPathConfigurator =
-        cloudPathProviderBuilder.getChannelConfigurator();
-    final AtomicReference<ManagedChannelBuilder> cloudPathBuilderRef = new AtomicReference<>();
-    cloudPathProviderBuilder.setChannelConfigurator(
-        builder -> {
-          ManagedChannelBuilder effectiveBuilder = builder;
-          if (existingCloudPathConfigurator != null) {
-            effectiveBuilder = existingCloudPathConfigurator.apply(effectiveBuilder);
-          }
-          cloudPathBuilderRef.set(effectiveBuilder);
-          return effectiveBuilder;
-        });
-
-    // Build the cloudPathProvider to extract the builder which will be provided to
-    // FallbackChannelBuilder.
-    try (TransportChannel ignored = cloudPathProviderBuilder.build().getTransportChannel()) {
-    } catch (Exception e) {
+    InstantiatingGrpcChannelProvider cloudPathProvider = cloudPathProviderBuilder.build();
+    ManagedChannelBuilder cloudPathBuilder;
+    try {
+      cloudPathBuilder = cloudPathProvider.createDecoratedChannelBuilder();
+    } catch (IOException e) {
       throw asSpannerException(e);
     }
-
-    ManagedChannelBuilder cloudPathBuilder = cloudPathBuilderRef.get();
     if (cloudPathBuilder == null) {
       throw new IllegalStateException("CloudPath builder was not captured.");
     }
