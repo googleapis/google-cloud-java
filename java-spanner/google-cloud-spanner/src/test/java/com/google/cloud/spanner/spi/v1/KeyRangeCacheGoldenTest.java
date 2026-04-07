@@ -126,6 +126,12 @@ public class KeyRangeCacheGoldenTest {
     }
 
     @Override
+    public ChannelEndpoint getIfPresent(String address) {
+      // Auto-create for golden tests — simulates lifecycle manager having pre-created endpoints.
+      return endpoints.computeIfAbsent(address, FakeEndpoint::new);
+    }
+
+    @Override
     public void evict(String address) {
       endpoints.remove(address);
     }
@@ -152,6 +158,11 @@ public class KeyRangeCacheGoldenTest {
     @Override
     public boolean isHealthy() {
       return true;
+    }
+
+    @Override
+    public boolean isTransientFailure() {
+      return false;
     }
 
     @Override
