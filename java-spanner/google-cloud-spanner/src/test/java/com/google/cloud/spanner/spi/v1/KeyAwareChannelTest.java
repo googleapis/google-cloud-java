@@ -197,7 +197,8 @@ public class KeyAwareChannelTest {
     commitCall.sendMessage(
         CommitRequest.newBuilder().setSession(SESSION).setTransactionId(transactionId).build());
 
-    assertThat(harness.endpointCache.getCount(DEFAULT_ADDRESS)).isEqualTo(1);
+    // affinityEndpoint now uses getIfPresent (non-creating), so getCount stays at 0.
+    assertThat(harness.endpointCache.getCount(DEFAULT_ADDRESS)).isEqualTo(0);
 
     @SuppressWarnings("unchecked")
     RecordingClientCall<CommitRequest, CommitResponse> commitDelegate =
@@ -211,7 +212,8 @@ public class KeyAwareChannelTest {
     rollbackCall.sendMessage(
         RollbackRequest.newBuilder().setSession(SESSION).setTransactionId(transactionId).build());
 
-    assertThat(harness.endpointCache.getCount(DEFAULT_ADDRESS)).isEqualTo(1);
+    // Rollback also uses getIfPresent for affinity, so getCount remains 0.
+    assertThat(harness.endpointCache.getCount(DEFAULT_ADDRESS)).isEqualTo(0);
   }
 
   @Test
@@ -1284,6 +1286,16 @@ public class KeyAwareChannelTest {
     }
 
     @Override
+    public ChannelEndpoint getIfPresent(String address) {
+      if (defaultAddress.equals(address)) {
+        return defaultEndpoint;
+      }
+      // Auto-create for integration tests — simulates lifecycle manager having pre-created
+      // endpoints.
+      return endpoints.computeIfAbsent(address, FakeEndpoint::new);
+    }
+
+    @Override
     public void evict(String address) {
       endpoints.remove(address);
     }
@@ -1342,6 +1354,11 @@ public class KeyAwareChannelTest {
     @Override
     public boolean isHealthy() {
       return true;
+    }
+
+    @Override
+    public boolean isTransientFailure() {
+      return false;
     }
 
     @Override

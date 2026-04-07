@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AddAssociationOrganizationSecurityPolicyRequest;
 import com.google.cloud.compute.v1.AddRuleOrganizationSecurityPolicyRequest;
 import com.google.cloud.compute.v1.CopyRulesOrganizationSecurityPolicyRequest;
@@ -970,6 +971,31 @@ public class HttpJsonOrganizationSecurityPoliciesStub extends OrganizationSecuri
   private final HttpJsonGlobalOrganizationOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate ADD_ASSOCIATION_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("locations/global/securityPolicies/{security_policy}");
+  private static final PathTemplate ADD_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("locations/global/securityPolicies/{security_policy}");
+  private static final PathTemplate COPY_RULES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("locations/global/securityPolicies/{security_policy}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("locations/global/securityPolicies/{security_policy}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("locations/global/securityPolicies/{security_policy}");
+  private static final PathTemplate GET_ASSOCIATION_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("locations/global/securityPolicies/{security_policy}");
+  private static final PathTemplate GET_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("locations/global/securityPolicies/{security_policy}");
+  private static final PathTemplate MOVE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("locations/global/securityPolicies/{security_policy}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("locations/global/securityPolicies/{security_policy}");
+  private static final PathTemplate PATCH_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("locations/global/securityPolicies/{security_policy}");
+  private static final PathTemplate REMOVE_ASSOCIATION_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("locations/global/securityPolicies/{security_policy}");
+  private static final PathTemplate REMOVE_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("locations/global/securityPolicies/{security_policy}");
+
   public static final HttpJsonOrganizationSecurityPoliciesStub create(
       OrganizationSecurityPoliciesStubSettings settings) throws IOException {
     return new HttpJsonOrganizationSecurityPoliciesStub(settings, ClientContext.create(settings));
@@ -1026,6 +1052,14 @@ public class HttpJsonOrganizationSecurityPoliciesStub extends OrganizationSecuri
                       builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return ADD_ASSOCIATION_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<AddRuleOrganizationSecurityPolicyRequest, Operation>
         addRuleTransportSettings =
@@ -1037,6 +1071,13 @@ public class HttpJsonOrganizationSecurityPoliciesStub extends OrganizationSecuri
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return ADD_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<CopyRulesOrganizationSecurityPolicyRequest, Operation>
@@ -1050,6 +1091,13 @@ public class HttpJsonOrganizationSecurityPoliciesStub extends OrganizationSecuri
                       builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return COPY_RULES_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteOrganizationSecurityPolicyRequest, Operation>
         deleteTransportSettings =
@@ -1062,6 +1110,13 @@ public class HttpJsonOrganizationSecurityPoliciesStub extends OrganizationSecuri
                       builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetOrganizationSecurityPolicyRequest, SecurityPolicy>
         getTransportSettings =
@@ -1073,6 +1128,13 @@ public class HttpJsonOrganizationSecurityPoliciesStub extends OrganizationSecuri
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<GetAssociationOrganizationSecurityPolicyRequest, SecurityPolicyAssociation>
@@ -1088,6 +1150,14 @@ public class HttpJsonOrganizationSecurityPoliciesStub extends OrganizationSecuri
                       builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return GET_ASSOCIATION_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetRuleOrganizationSecurityPolicyRequest, SecurityPolicyRule>
         getRuleTransportSettings =
@@ -1100,6 +1170,13 @@ public class HttpJsonOrganizationSecurityPoliciesStub extends OrganizationSecuri
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return GET_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<InsertOrganizationSecurityPolicyRequest, Operation>
@@ -1147,6 +1224,13 @@ public class HttpJsonOrganizationSecurityPoliciesStub extends OrganizationSecuri
                   builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "security_policy", String.valueOf(request.getSecurityPolicy()));
+                  return MOVE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<PatchOrganizationSecurityPolicyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchOrganizationSecurityPolicyRequest, Operation>newBuilder()
@@ -1157,6 +1241,13 @@ public class HttpJsonOrganizationSecurityPoliciesStub extends OrganizationSecuri
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "security_policy", String.valueOf(request.getSecurityPolicy()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<PatchRuleOrganizationSecurityPolicyRequest, Operation>
@@ -1169,6 +1260,13 @@ public class HttpJsonOrganizationSecurityPoliciesStub extends OrganizationSecuri
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return PATCH_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<RemoveAssociationOrganizationSecurityPolicyRequest, Operation>
@@ -1183,6 +1281,14 @@ public class HttpJsonOrganizationSecurityPoliciesStub extends OrganizationSecuri
                       builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return REMOVE_ASSOCIATION_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<RemoveRuleOrganizationSecurityPolicyRequest, Operation>
         removeRuleTransportSettings =
@@ -1195,6 +1301,13 @@ public class HttpJsonOrganizationSecurityPoliciesStub extends OrganizationSecuri
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return REMOVE_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
 

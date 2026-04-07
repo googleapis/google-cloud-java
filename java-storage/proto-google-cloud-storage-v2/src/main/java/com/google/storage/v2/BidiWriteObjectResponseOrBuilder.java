@@ -98,6 +98,43 @@ public interface BidiWriteObjectResponseOrBuilder
    *
    *
    * <pre>
+   * If persisted_size is set, contains checksums of persisted data.
+   * </pre>
+   *
+   * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 4;</code>
+   *
+   * @return Whether the persistedDataChecksums field is set.
+   */
+  boolean hasPersistedDataChecksums();
+
+  /**
+   *
+   *
+   * <pre>
+   * If persisted_size is set, contains checksums of persisted data.
+   * </pre>
+   *
+   * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 4;</code>
+   *
+   * @return The persistedDataChecksums.
+   */
+  com.google.storage.v2.ObjectChecksums getPersistedDataChecksums();
+
+  /**
+   *
+   *
+   * <pre>
+   * If persisted_size is set, contains checksums of persisted data.
+   * </pre>
+   *
+   * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 4;</code>
+   */
+  com.google.storage.v2.ObjectChecksumsOrBuilder getPersistedDataChecksumsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * An optional write handle that is returned periodically in response
    * messages. Clients should save it for later use in establishing a new stream
    * if a connection is interrupted.

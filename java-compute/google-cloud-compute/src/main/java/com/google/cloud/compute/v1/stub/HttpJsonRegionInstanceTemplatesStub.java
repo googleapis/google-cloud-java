@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteRegionInstanceTemplateRequest;
 import com.google.cloud.compute.v1.GetRegionInstanceTemplateRequest;
 import com.google.cloud.compute.v1.InsertRegionInstanceTemplateRequest;
@@ -273,6 +274,17 @@ public class HttpJsonRegionInstanceTemplatesStub extends RegionInstanceTemplates
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceTemplates/{instance_template}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceTemplates/{instance_template}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+
   public static final HttpJsonRegionInstanceTemplatesStub create(
       RegionInstanceTemplatesStubSettings settings) throws IOException {
     return new HttpJsonRegionInstanceTemplatesStub(settings, ClientContext.create(settings));
@@ -327,6 +339,15 @@ public class HttpJsonRegionInstanceTemplatesStub extends RegionInstanceTemplates
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "instance_template", String.valueOf(request.getInstanceTemplate()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetRegionInstanceTemplateRequest, InstanceTemplate> getTransportSettings =
         HttpJsonCallSettings.<GetRegionInstanceTemplateRequest, InstanceTemplate>newBuilder()
@@ -340,6 +361,15 @@ public class HttpJsonRegionInstanceTemplatesStub extends RegionInstanceTemplates
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "instance_template", String.valueOf(request.getInstanceTemplate()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertRegionInstanceTemplateRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionInstanceTemplateRequest, Operation>newBuilder()
@@ -351,6 +381,13 @@ public class HttpJsonRegionInstanceTemplatesStub extends RegionInstanceTemplates
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListRegionInstanceTemplatesRequest, InstanceTemplateList>
@@ -365,6 +402,13 @@ public class HttpJsonRegionInstanceTemplatesStub extends RegionInstanceTemplates
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
 

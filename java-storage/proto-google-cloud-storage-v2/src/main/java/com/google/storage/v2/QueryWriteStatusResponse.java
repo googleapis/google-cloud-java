@@ -69,6 +69,7 @@ public final class QueryWriteStatusResponse extends com.google.protobuf.Generate
             com.google.storage.v2.QueryWriteStatusResponse.Builder.class);
   }
 
+  private int bitField0_;
   private int writeStatusCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -219,6 +220,59 @@ public final class QueryWriteStatusResponse extends com.google.protobuf.Generate
     return com.google.storage.v2.Object.getDefaultInstance();
   }
 
+  public static final int PERSISTED_DATA_CHECKSUMS_FIELD_NUMBER = 3;
+  private com.google.storage.v2.ObjectChecksums persistedDataChecksums_;
+
+  /**
+   *
+   *
+   * <pre>
+   * If persisted_size is set, contains checksums of persisted data.
+   * </pre>
+   *
+   * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 3;</code>
+   *
+   * @return Whether the persistedDataChecksums field is set.
+   */
+  @java.lang.Override
+  public boolean hasPersistedDataChecksums() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If persisted_size is set, contains checksums of persisted data.
+   * </pre>
+   *
+   * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 3;</code>
+   *
+   * @return The persistedDataChecksums.
+   */
+  @java.lang.Override
+  public com.google.storage.v2.ObjectChecksums getPersistedDataChecksums() {
+    return persistedDataChecksums_ == null
+        ? com.google.storage.v2.ObjectChecksums.getDefaultInstance()
+        : persistedDataChecksums_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * If persisted_size is set, contains checksums of persisted data.
+   * </pre>
+   *
+   * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.storage.v2.ObjectChecksumsOrBuilder getPersistedDataChecksumsOrBuilder() {
+    return persistedDataChecksums_ == null
+        ? com.google.storage.v2.ObjectChecksums.getDefaultInstance()
+        : persistedDataChecksums_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -239,6 +293,9 @@ public final class QueryWriteStatusResponse extends com.google.protobuf.Generate
     if (writeStatusCase_ == 2) {
       output.writeMessage(2, (com.google.storage.v2.Object) writeStatus_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getPersistedDataChecksums());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -258,6 +315,10 @@ public final class QueryWriteStatusResponse extends com.google.protobuf.Generate
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.storage.v2.Object) writeStatus_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPersistedDataChecksums());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -274,6 +335,10 @@ public final class QueryWriteStatusResponse extends com.google.protobuf.Generate
     com.google.storage.v2.QueryWriteStatusResponse other =
         (com.google.storage.v2.QueryWriteStatusResponse) obj;
 
+    if (hasPersistedDataChecksums() != other.hasPersistedDataChecksums()) return false;
+    if (hasPersistedDataChecksums()) {
+      if (!getPersistedDataChecksums().equals(other.getPersistedDataChecksums())) return false;
+    }
     if (!getWriteStatusCase().equals(other.getWriteStatusCase())) return false;
     switch (writeStatusCase_) {
       case 1:
@@ -296,6 +361,10 @@ public final class QueryWriteStatusResponse extends com.google.protobuf.Generate
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasPersistedDataChecksums()) {
+      hash = (37 * hash) + PERSISTED_DATA_CHECKSUMS_FIELD_NUMBER;
+      hash = (53 * hash) + getPersistedDataChecksums().hashCode();
+    }
     switch (writeStatusCase_) {
       case 1:
         hash = (37 * hash) + PERSISTED_SIZE_FIELD_NUMBER;
@@ -439,10 +508,19 @@ public final class QueryWriteStatusResponse extends com.google.protobuf.Generate
     }
 
     // Construct using com.google.storage.v2.QueryWriteStatusResponse.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetPersistedDataChecksumsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -451,6 +529,11 @@ public final class QueryWriteStatusResponse extends com.google.protobuf.Generate
       bitField0_ = 0;
       if (resourceBuilder_ != null) {
         resourceBuilder_.clear();
+      }
+      persistedDataChecksums_ = null;
+      if (persistedDataChecksumsBuilder_ != null) {
+        persistedDataChecksumsBuilder_.dispose();
+        persistedDataChecksumsBuilder_ = null;
       }
       writeStatusCase_ = 0;
       writeStatus_ = null;
@@ -491,6 +574,15 @@ public final class QueryWriteStatusResponse extends com.google.protobuf.Generate
 
     private void buildPartial0(com.google.storage.v2.QueryWriteStatusResponse result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.persistedDataChecksums_ =
+            persistedDataChecksumsBuilder_ == null
+                ? persistedDataChecksums_
+                : persistedDataChecksumsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.storage.v2.QueryWriteStatusResponse result) {
@@ -513,6 +605,9 @@ public final class QueryWriteStatusResponse extends com.google.protobuf.Generate
 
     public Builder mergeFrom(com.google.storage.v2.QueryWriteStatusResponse other) {
       if (other == com.google.storage.v2.QueryWriteStatusResponse.getDefaultInstance()) return this;
+      if (other.hasPersistedDataChecksums()) {
+        mergePersistedDataChecksums(other.getPersistedDataChecksums());
+      }
       switch (other.getWriteStatusCase()) {
         case PERSISTED_SIZE:
           {
@@ -568,6 +663,14 @@ public final class QueryWriteStatusResponse extends com.google.protobuf.Generate
                 writeStatusCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    internalGetPersistedDataChecksumsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -907,6 +1010,202 @@ public final class QueryWriteStatusResponse extends com.google.protobuf.Generate
       writeStatusCase_ = 2;
       onChanged();
       return resourceBuilder_;
+    }
+
+    private com.google.storage.v2.ObjectChecksums persistedDataChecksums_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.storage.v2.ObjectChecksums,
+            com.google.storage.v2.ObjectChecksums.Builder,
+            com.google.storage.v2.ObjectChecksumsOrBuilder>
+        persistedDataChecksumsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If persisted_size is set, contains checksums of persisted data.
+     * </pre>
+     *
+     * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 3;</code>
+     *
+     * @return Whether the persistedDataChecksums field is set.
+     */
+    public boolean hasPersistedDataChecksums() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If persisted_size is set, contains checksums of persisted data.
+     * </pre>
+     *
+     * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 3;</code>
+     *
+     * @return The persistedDataChecksums.
+     */
+    public com.google.storage.v2.ObjectChecksums getPersistedDataChecksums() {
+      if (persistedDataChecksumsBuilder_ == null) {
+        return persistedDataChecksums_ == null
+            ? com.google.storage.v2.ObjectChecksums.getDefaultInstance()
+            : persistedDataChecksums_;
+      } else {
+        return persistedDataChecksumsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If persisted_size is set, contains checksums of persisted data.
+     * </pre>
+     *
+     * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 3;</code>
+     */
+    public Builder setPersistedDataChecksums(com.google.storage.v2.ObjectChecksums value) {
+      if (persistedDataChecksumsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        persistedDataChecksums_ = value;
+      } else {
+        persistedDataChecksumsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If persisted_size is set, contains checksums of persisted data.
+     * </pre>
+     *
+     * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 3;</code>
+     */
+    public Builder setPersistedDataChecksums(
+        com.google.storage.v2.ObjectChecksums.Builder builderForValue) {
+      if (persistedDataChecksumsBuilder_ == null) {
+        persistedDataChecksums_ = builderForValue.build();
+      } else {
+        persistedDataChecksumsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If persisted_size is set, contains checksums of persisted data.
+     * </pre>
+     *
+     * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 3;</code>
+     */
+    public Builder mergePersistedDataChecksums(com.google.storage.v2.ObjectChecksums value) {
+      if (persistedDataChecksumsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && persistedDataChecksums_ != null
+            && persistedDataChecksums_
+                != com.google.storage.v2.ObjectChecksums.getDefaultInstance()) {
+          getPersistedDataChecksumsBuilder().mergeFrom(value);
+        } else {
+          persistedDataChecksums_ = value;
+        }
+      } else {
+        persistedDataChecksumsBuilder_.mergeFrom(value);
+      }
+      if (persistedDataChecksums_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If persisted_size is set, contains checksums of persisted data.
+     * </pre>
+     *
+     * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 3;</code>
+     */
+    public Builder clearPersistedDataChecksums() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      persistedDataChecksums_ = null;
+      if (persistedDataChecksumsBuilder_ != null) {
+        persistedDataChecksumsBuilder_.dispose();
+        persistedDataChecksumsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If persisted_size is set, contains checksums of persisted data.
+     * </pre>
+     *
+     * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 3;</code>
+     */
+    public com.google.storage.v2.ObjectChecksums.Builder getPersistedDataChecksumsBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetPersistedDataChecksumsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If persisted_size is set, contains checksums of persisted data.
+     * </pre>
+     *
+     * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 3;</code>
+     */
+    public com.google.storage.v2.ObjectChecksumsOrBuilder getPersistedDataChecksumsOrBuilder() {
+      if (persistedDataChecksumsBuilder_ != null) {
+        return persistedDataChecksumsBuilder_.getMessageOrBuilder();
+      } else {
+        return persistedDataChecksums_ == null
+            ? com.google.storage.v2.ObjectChecksums.getDefaultInstance()
+            : persistedDataChecksums_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If persisted_size is set, contains checksums of persisted data.
+     * </pre>
+     *
+     * <code>.google.storage.v2.ObjectChecksums persisted_data_checksums = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.storage.v2.ObjectChecksums,
+            com.google.storage.v2.ObjectChecksums.Builder,
+            com.google.storage.v2.ObjectChecksumsOrBuilder>
+        internalGetPersistedDataChecksumsFieldBuilder() {
+      if (persistedDataChecksumsBuilder_ == null) {
+        persistedDataChecksumsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.storage.v2.ObjectChecksums,
+                com.google.storage.v2.ObjectChecksums.Builder,
+                com.google.storage.v2.ObjectChecksumsOrBuilder>(
+                getPersistedDataChecksums(), getParentForChildren(), isClean());
+        persistedDataChecksums_ = null;
+      }
+      return persistedDataChecksumsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.storage.v2.QueryWriteStatusResponse)
