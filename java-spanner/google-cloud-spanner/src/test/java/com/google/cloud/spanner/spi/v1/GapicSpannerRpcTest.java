@@ -1201,8 +1201,7 @@ public class GapicSpannerRpcTest {
       // Verify Fallback via Metrics
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       boolean fallbackOccurred =
-          metrics.stream()
-              .anyMatch(md -> md.getName().contains("fallback_count") && hasValue(md));
+          metrics.stream().anyMatch(md -> md.getName().contains("fallback_count") && hasValue(md));
 
       assertFalse("Fallback metric should not be present", fallbackOccurred);
 
@@ -1282,8 +1281,7 @@ public class GapicSpannerRpcTest {
       // Verify Fallback via Metrics
       Collection<MetricData> metrics = metricReader.collectAllMetrics();
       boolean fallbackOccurred =
-          metrics.stream()
-              .anyMatch(md -> md.getName().contains("fallback_count") && hasValue(md));
+          metrics.stream().anyMatch(md -> md.getName().contains("fallback_count") && hasValue(md));
 
       assertTrue(
           "Fallback metric should be present, indicating GcpFallbackChannel is active",
