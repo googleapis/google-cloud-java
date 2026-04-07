@@ -58,15 +58,15 @@ public class SpanTracerFactory implements ApiTracerFactory {
    * URLs, and error messages.
    *
    * <p>Before configuring subscribers or exporters for traces, review the
-   * contents of the spans and consult the OpenTelemetry documentation to
-   * set up filters and formatters to prevent leaking sensitive information,
-   * depending on your intended use case.
+   * contents of the spans and consult the <a
+   * href="https://opentelemetry.io/docs/security/handling-sensitive-data/">
+   * OpenTelemetry documentation</a> to set up filters and formatters to
+   * prevent leaking sensitive information, depending on your intended use
+   * case.
    *
-   * <p>See also:
-   * <ul>
-   *   <li>https://opentelemetry.io/docs/security/handling-sensitive-data/</li>
-   *   <li>https://opentelemetry.io/docs/concepts/semantic-conventions/</li>
-   * </ul>
+   * <p>See also the <a
+   * href="https://opentelemetry.io/docs/concepts/semantic-conventions/">
+   * OpenTelemetry Semantic Conventions</a>.
    */
   public SpanTracerFactory(OpenTelemetry openTelemetry) {
     this(openTelemetry, null, ApiTracerContext.empty());
