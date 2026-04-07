@@ -28,6 +28,7 @@ import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import com.google.api.core.ApiFutures;
 import com.google.cloud.spanner.SessionClient.SessionConsumer;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -36,6 +37,8 @@ import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -243,6 +246,60 @@ public class MultiplexedSessionDatabaseClientTest {
     } finally {
       writeableEnvironmentVariables.remove("GOOGLE_CLOUD_SPANNER_MULTIPLEXED_SESSIONS");
     }
+  }
+
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testGrpcGcpSingleUseDoesNotReserveBitsetChannelHint() throws Exception {
+    assumeTrue(isJava8());
+    SessionClient sessionClient = mock(SessionClient.class);
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    SessionPoolOptions sessionPoolOptions = mock(SessionPoolOptions.class);
+    TraceWrapper tracer = mock(TraceWrapper.class);
+    ISpan span = mock(ISpan.class);
+
+    when(sessionClient.getSpanner()).thenReturn(spanner);
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(spanner.getTracer()).thenReturn(tracer);
+    when(tracer.getCurrentSpan()).thenReturn(span);
+    when(spannerOptions.getNumChannels()).thenReturn(4);
+    when(spannerOptions.isGrpcGcpExtensionEnabled()).thenReturn(true);
+    when(spannerOptions.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
+    when(sessionPoolOptions.getMultiplexedSessionMaintenanceDuration())
+        .thenReturn(Duration.ofDays(7));
+    when(sessionPoolOptions.getWaitForMinSessions()).thenReturn(Duration.ZERO);
+
+    MultiplexedSessionDatabaseClient client =
+        new MultiplexedSessionDatabaseClient(sessionClient, Clock.systemUTC());
+    SessionReference sessionReference =
+        new SessionReference(
+            "projects/p/instances/i/databases/d/sessions/s1",
+            null,
+            com.google.protobuf.Timestamp.getDefaultInstance(),
+            true,
+            null);
+
+    Field sessionFutureField =
+        MultiplexedSessionDatabaseClient.class.getDeclaredField("multiplexedSessionReference");
+    sessionFutureField.setAccessible(true);
+    @SuppressWarnings("unchecked")
+    AtomicReference<com.google.api.core.ApiFuture<SessionReference>> sessionFutureRef =
+        (AtomicReference<com.google.api.core.ApiFuture<SessionReference>>)
+            sessionFutureField.get(client);
+    sessionFutureRef.set(ApiFutures.immediateFuture(sessionReference));
+
+    java.lang.reflect.Method method =
+        MultiplexedSessionDatabaseClient.class.getDeclaredMethod(
+            "createDirectMultiplexedSessionTransaction", boolean.class);
+    method.setAccessible(true);
+    method.invoke(client, true);
+
+    Field field =
+        MultiplexedSessionDatabaseClient.class.getDeclaredField("numCurrentSingleUseTransactions");
+    field.setAccessible(true);
+    AtomicInteger counter = (AtomicInteger) field.get(client);
+    assertEquals(0, counter.get());
   }
 
   private boolean isJava8() {

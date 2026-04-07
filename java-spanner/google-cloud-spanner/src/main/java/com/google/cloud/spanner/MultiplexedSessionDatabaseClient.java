@@ -398,6 +398,10 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
   private MultiplexedSessionTransaction createDirectMultiplexedSessionTransaction(
       boolean singleUse) {
     try {
+      int singleUseChannelHint =
+          singleUse && !sessionClient.getSpanner().getOptions().isGrpcGcpExtensionEnabled()
+              ? getSingleUseChannelHint()
+              : NO_CHANNEL_HINT;
       return new MultiplexedSessionTransaction(
           this,
           tracer.getCurrentSpan(),
@@ -406,7 +410,7 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
           // session, such as for example a DatabaseNotFound exception. We therefore do not need
           // any special handling of such errors.
           multiplexedSessionReference.get().get(),
-          singleUse ? getSingleUseChannelHint() : NO_CHANNEL_HINT,
+          singleUseChannelHint,
           singleUse);
     } catch (ExecutionException executionException) {
       throw SpannerExceptionFactory.asSpannerException(executionException.getCause());

@@ -30,18 +30,26 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.NavigableMap;
 import java.util.Objects;
+import java.util.Set;
 import java.util.TreeMap;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.Predicate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.IntStream;
 
 /** Cache for routing information used by location-aware routing. */
 @InternalApi
 public final class KeyRangeCache {
+  private static final Predicate<String> NO_EXCLUDED_ENDPOINTS = address -> false;
+
+  private static final Logger logger = Logger.getLogger(KeyRangeCache.class.getName());
 
   private static final int MAX_LOCAL_REPLICA_DISTANCE = 5;
   private static final int DEFAULT_MIN_ENTRIES_FOR_RANDOM_PICK = 1000;
@@ -55,6 +63,7 @@ public final class KeyRangeCache {
   }
 
   private final ChannelEndpointCache endpointCache;
+  @javax.annotation.Nullable private final EndpointLifecycleManager lifecycleManager;
   private final NavigableMap<ByteString, CachedRange> ranges =
       new TreeMap<>(ByteString.unsignedLexicographicalComparator());
   private final Map<Long, CachedGroup> groups = new HashMap<>();
@@ -65,7 +74,14 @@ public final class KeyRangeCache {
   private volatile int minCacheEntriesForRandomPick = DEFAULT_MIN_ENTRIES_FOR_RANDOM_PICK;
 
   public KeyRangeCache(ChannelEndpointCache endpointCache) {
+    this(endpointCache, null);
+  }
+
+  public KeyRangeCache(
+      ChannelEndpointCache endpointCache,
+      @javax.annotation.Nullable EndpointLifecycleManager lifecycleManager) {
     this.endpointCache = Objects.requireNonNull(endpointCache);
+    this.lifecycleManager = lifecycleManager;
   }
 
   @VisibleForTesting
@@ -102,6 +118,16 @@ public final class KeyRangeCache {
       RangeMode rangeMode,
       DirectedReadOptions directedReadOptions,
       RoutingHint.Builder hintBuilder) {
+    return fillRoutingHint(
+        preferLeader, rangeMode, directedReadOptions, hintBuilder, NO_EXCLUDED_ENDPOINTS);
+  }
+
+  public ChannelEndpoint fillRoutingHint(
+      boolean preferLeader,
+      RangeMode rangeMode,
+      DirectedReadOptions directedReadOptions,
+      RoutingHint.Builder hintBuilder,
+      Predicate<String> excludedEndpoints) {
     ByteString key = hintBuilder.getKey();
     if (key.isEmpty()) {
       return null;
@@ -121,7 +147,25 @@ public final class KeyRangeCache {
     hintBuilder.setKey(targetRange.startKey);
     hintBuilder.setLimitKey(targetRange.limitKey);
 
-    return targetRange.group.fillRoutingHint(preferLeader, directedReadOptions, hintBuilder);
+    return targetRange.group.fillRoutingHint(
+        preferLeader, directedReadOptions, hintBuilder, excludedEndpoints);
+  }
+
+  /** Returns all server addresses currently referenced by cached tablets. */
+  Set<String> getActiveAddresses() {
+    Set<String> addresses = new HashSet<>();
+    synchronized (lock) {
+      for (CachedGroup group : groups.values()) {
+        synchronized (group) {
+          for (CachedTablet tablet : group.tablets) {
+            if (!tablet.serverAddress.isEmpty()) {
+              addresses.add(tablet.serverAddress);
+            }
+          }
+        }
+      }
+    }
+    return addresses;
   }
 
   public void clear() {
@@ -469,21 +513,88 @@ public final class KeyRangeCache {
       }
     }
 
-    boolean shouldSkip(RoutingHint.Builder hintBuilder) {
-      if (skip || serverAddress.isEmpty() || (endpoint != null && !endpoint.isHealthy())) {
-        RoutingHint.SkippedTablet.Builder skipped = hintBuilder.addSkippedTabletUidBuilder();
-        skipped.setTabletUid(tabletUid);
-        skipped.setIncarnation(incarnation);
+    /**
+     * Evaluates whether this tablet should be skipped for location-aware routing.
+     *
+     * <p>State-aware skip logic:
+     *
+     * <ul>
+     *   <li>Server-marked skip, empty address, or excluded endpoint: skip and report in
+     *       skipped_tablets.
+     *   <li>Endpoint exists and READY: usable, do not skip.
+     *   <li>Endpoint exists and TRANSIENT_FAILURE: skip and report in skipped_tablets.
+     *   <li>Endpoint absent, IDLE, CONNECTING, SHUTDOWN, or unsupported: skip silently (no
+     *       skipped_tablets).
+     * </ul>
+     */
+    boolean shouldSkip(RoutingHint.Builder hintBuilder, Predicate<String> excludedEndpoints) {
+      // Server-marked skip, no address, or excluded endpoint: always report.
+      if (skip || serverAddress.isEmpty() || excludedEndpoints.test(serverAddress)) {
+        addSkippedTablet(hintBuilder);
         return true;
       }
-      return false;
+
+      // If the cached endpoint's channel has been shut down (e.g. after idle eviction),
+      // discard the stale reference so we re-lookup from the cache below.
+      if (endpoint != null && endpoint.getChannel().isShutdown()) {
+        logger.log(
+            Level.FINE,
+            "Tablet {0} at {1}: cached endpoint is shutdown, clearing stale reference",
+            new Object[] {tabletUid, serverAddress});
+        endpoint = null;
+      }
+
+      // Lookup without creating: location-aware routing should not trigger foreground endpoint
+      // creation.
+      if (endpoint == null) {
+        endpoint = endpointCache.getIfPresent(serverAddress);
+      }
+
+      // No endpoint exists yet - skip silently, request background recreation so the
+      // endpoint becomes available for future requests.
+      if (endpoint == null) {
+        logger.log(
+            Level.FINE,
+            "Tablet {0} at {1}: no endpoint present, skipping silently",
+            new Object[] {tabletUid, serverAddress});
+        if (lifecycleManager != null) {
+          lifecycleManager.requestEndpointRecreation(serverAddress);
+        }
+        return true;
+      }
+
+      // READY - usable for location-aware routing.
+      if (endpoint.isHealthy()) {
+        return false;
+      }
+
+      // TRANSIENT_FAILURE - skip and report so server can refresh client cache.
+      if (endpoint.isTransientFailure()) {
+        logger.log(
+            Level.FINE,
+            "Tablet {0} at {1}: endpoint in TRANSIENT_FAILURE, adding to skipped_tablets",
+            new Object[] {tabletUid, serverAddress});
+        addSkippedTablet(hintBuilder);
+        return true;
+      }
+
+      // IDLE, CONNECTING, SHUTDOWN, or unsupported - skip silently.
+      logger.log(
+          Level.FINE,
+          "Tablet {0} at {1}: endpoint not ready, skipping silently",
+          new Object[] {tabletUid, serverAddress});
+      return true;
+    }
+
+    private void addSkippedTablet(RoutingHint.Builder hintBuilder) {
+      RoutingHint.SkippedTablet.Builder skipped = hintBuilder.addSkippedTabletUidBuilder();
+      skipped.setTabletUid(tabletUid);
+      skipped.setIncarnation(incarnation);
     }
 
     ChannelEndpoint pick(RoutingHint.Builder hintBuilder) {
       hintBuilder.setTabletUid(tabletUid);
-      if (endpoint == null && !serverAddress.isEmpty()) {
-        endpoint = endpointCache.get(serverAddress);
-      }
+      // Endpoint must already exist and be READY if shouldSkip returned false.
       return endpoint;
     }
 
@@ -562,42 +673,28 @@ public final class KeyRangeCache {
     ChannelEndpoint fillRoutingHint(
         boolean preferLeader,
         DirectedReadOptions directedReadOptions,
-        RoutingHint.Builder hintBuilder) {
+        RoutingHint.Builder hintBuilder,
+        Predicate<String> excludedEndpoints) {
       boolean hasDirectedReadOptions =
           directedReadOptions.getReplicasCase()
               != DirectedReadOptions.ReplicasCase.REPLICAS_NOT_SET;
 
-      // Fast path: pick a tablet while holding the lock. If the endpoint is already
-      // cached on the tablet, return it immediately without releasing the lock.
-      // If the endpoint needs to be created (blocking network dial), release the
-      // lock first so other threads are not blocked during channel creation.
-      CachedTablet selected;
+      // Select a tablet while holding the lock. With state-aware routing, only READY
+      // endpoints pass shouldSkip(), so the selected tablet always has a cached
+      // endpoint. No foreground endpoint creation is needed — the lifecycle manager
+      // creates endpoints in the background.
       synchronized (this) {
-        selected =
+        CachedTablet selected =
             selectTabletLocked(
-                preferLeader, hasDirectedReadOptions, hintBuilder, directedReadOptions);
+                preferLeader,
+                hasDirectedReadOptions,
+                hintBuilder,
+                directedReadOptions,
+                excludedEndpoints);
         if (selected == null) {
           return null;
         }
-        if (selected.endpoint != null || selected.serverAddress.isEmpty()) {
-          return selected.pick(hintBuilder);
-        }
-        // Slow path: endpoint not yet created. Capture the address and release the
-        // lock before calling endpointCache.get(), which may block on network dial.
-        hintBuilder.setTabletUid(selected.tabletUid);
-      }
-
-      String serverAddress = selected.serverAddress;
-      ChannelEndpoint endpoint = endpointCache.get(serverAddress);
-
-      synchronized (this) {
-        // Only update if the tablet's address hasn't changed since we released the lock.
-        if (selected.endpoint == null && selected.serverAddress.equals(serverAddress)) {
-          selected.endpoint = endpoint;
-        }
-        // Re-set tabletUid with the latest value in case update() ran concurrently.
-        hintBuilder.setTabletUid(selected.tabletUid);
-        return selected.endpoint;
+        return selected.pick(hintBuilder);
       }
     }
 
@@ -605,19 +702,27 @@ public final class KeyRangeCache {
         boolean preferLeader,
         boolean hasDirectedReadOptions,
         RoutingHint.Builder hintBuilder,
-        DirectedReadOptions directedReadOptions) {
+        DirectedReadOptions directedReadOptions,
+        Predicate<String> excludedEndpoints) {
+      boolean checkedLeader = false;
       if (preferLeader
           && !hasDirectedReadOptions
           && hasLeader()
-          && leader().distance <= MAX_LOCAL_REPLICA_DISTANCE
-          && !leader().shouldSkip(hintBuilder)) {
-        return leader();
+          && leader().distance <= MAX_LOCAL_REPLICA_DISTANCE) {
+        checkedLeader = true;
+        if (!leader().shouldSkip(hintBuilder, excludedEndpoints)) {
+          return leader();
+        }
       }
-      for (CachedTablet tablet : tablets) {
+      for (int index = 0; index < tablets.size(); index++) {
+        if (checkedLeader && index == leaderIndex) {
+          continue;
+        }
+        CachedTablet tablet = tablets.get(index);
         if (!tablet.matches(directedReadOptions)) {
           continue;
         }
-        if (tablet.shouldSkip(hintBuilder)) {
+        if (tablet.shouldSkip(hintBuilder, excludedEndpoints)) {
           continue;
         }
         return tablet;

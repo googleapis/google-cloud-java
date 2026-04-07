@@ -50,6 +50,13 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dependencies-list != '' }}
         run: echo "DEPENDENCIES_LIST=${{ github.event.inputs.dependencies-list }}" >> $GITHUB_ENV
 
+      - name: Install sdk-platform-java modules
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
+
       # Run in the root module which should test for everything except for showcase
       - name: Perform Dependency Compatibility Unit Testing
         shell: bash
@@ -59,12 +66,6 @@ jobs:
           else
             .github/scripts/test_dependency_compatibility.sh
           fi
-        working-directory: sdk-platform-java
-
-      # Install the modules for showcase (Shared-Deps is required to run showcase)
-      - name: Install sdk-platform-java's modules
-        # gapic-generator-java requires Java 8 and is irrelevant for this CI
-        run: mvn -q -B -ntp install --projects '!gapic-generator-java' -Dcheckstyle.skip -Dfmt.skip -DskipTests -Dclirr.skip -T 1C
         working-directory: sdk-platform-java
 
       # Set up local showcase server to run the showcase ITs

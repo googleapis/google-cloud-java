@@ -18,19 +18,20 @@
 
 FROM docker.io/library/maven:3.9.9-eclipse-temurin-17-alpine@sha256:969014ee8852c9910ff5ef09de17541c2587819364b79d7dc044634dfb8a3388 AS ggj-build
 
-WORKDIR /sdk-platform-java
-COPY sdk-platform-java/ .
+WORKDIR /google-cloud-java
+
+COPY . .
 # {x-version-update-start:gapic-generator-java:current}
 ENV DOCKER_GAPIC_GENERATOR_VERSION="2.68.1-SNAPSHOT"
 # {x-version-update-end}
 
 # Download the java formatter
-RUN mvn -pl gapic-generator-java-pom-parent help:evaluate -Dexpression='google-java-format.version' -q -DforceStdout > /java-formatter-version
+RUN mvn -pl sdk-platform-java/gapic-generator-java-pom-parent help:evaluate -Dexpression='google-java-format.version' -q -DforceStdout > /java-formatter-version
 RUN cat /java-formatter-version
 RUN V=$(cat /java-formatter-version) && curl -o "/google-java-format.jar" "https://maven-central.storage-download.googleapis.com/maven2/com/google/googlejavaformat/google-java-format/${V}/google-java-format-${V}-all-deps.jar"
 
 # Compile and install packages
-RUN mvn install -B -ntp -T 1.5C -DskipTests -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip
+RUN mvn install -B -ntp -T 1.5C -DskipTests -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -pl sdk-platform-java/gapic-generator-java --also-make
 RUN cp "/root/.m2/repository/com/google/api/gapic-generator-java/${DOCKER_GAPIC_GENERATOR_VERSION}/gapic-generator-java-${DOCKER_GAPIC_GENERATOR_VERSION}.jar" \
   "./gapic-generator-java.jar"
 
@@ -93,7 +94,7 @@ ENV JAVA_FORMATTER_LOCATION="${HOME}/.library_generation/google-java-format.jar"
 # Note that the destination is a well-known location that will be assumed at runtime
 # We hard-code the location string to avoid making it configurable (via ARG) as
 # well as to avoid it making it overridable at runtime (via ENV).
-COPY --from=ggj-build "/sdk-platform-java/gapic-generator-java.jar" "${HOME}/.library_generation/gapic-generator-java.jar"
+COPY --from=ggj-build "/google-cloud-java/gapic-generator-java.jar" "${HOME}/.library_generation/gapic-generator-java.jar"
 RUN chmod 755 "${HOME}/.library_generation/gapic-generator-java.jar"
 ENV GAPIC_GENERATOR_LOCATION="${HOME}/.library_generation/gapic-generator-java.jar"
 

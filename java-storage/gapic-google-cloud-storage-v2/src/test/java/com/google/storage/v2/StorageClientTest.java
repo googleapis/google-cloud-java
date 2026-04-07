@@ -1979,7 +1979,10 @@ public class StorageClientTest {
 
   @Test
   public void writeObjectTest() throws Exception {
-    WriteObjectResponse expectedResponse = WriteObjectResponse.newBuilder().build();
+    WriteObjectResponse expectedResponse =
+        WriteObjectResponse.newBuilder()
+            .setPersistedDataChecksums(ObjectChecksums.newBuilder().build())
+            .build();
     mockStorage.addResponse(expectedResponse);
     WriteObjectRequest request =
         WriteObjectRequest.newBuilder()
@@ -2039,6 +2042,7 @@ public class StorageClientTest {
   public void bidiWriteObjectTest() throws Exception {
     BidiWriteObjectResponse expectedResponse =
         BidiWriteObjectResponse.newBuilder()
+            .setPersistedDataChecksums(ObjectChecksums.newBuilder().build())
             .setWriteHandle(BidiWriteHandle.newBuilder().build())
             .build();
     mockStorage.addResponse(expectedResponse);
@@ -2372,7 +2376,10 @@ public class StorageClientTest {
 
   @Test
   public void queryWriteStatusTest() throws Exception {
-    QueryWriteStatusResponse expectedResponse = QueryWriteStatusResponse.newBuilder().build();
+    QueryWriteStatusResponse expectedResponse =
+        QueryWriteStatusResponse.newBuilder()
+            .setPersistedDataChecksums(ObjectChecksums.newBuilder().build())
+            .build();
     mockStorage.addResponse(expectedResponse);
 
     String uploadId = "uploadId1563990780";

@@ -4699,6 +4699,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .setDataset(
    *               AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
    *           .addAllContent(new ArrayList<String>())
+   *           .setMimeType("mimeType-1392120434")
    *           .setReferenceSentenceConfig(
    *               AdaptiveMtTranslateRequest.ReferenceSentenceConfig.newBuilder().build())
    *           .setGlossaryConfig(AdaptiveMtTranslateRequest.GlossaryConfig.newBuilder().build())
@@ -4733,6 +4734,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .setDataset(
    *               AdaptiveMtDatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
    *           .addAllContent(new ArrayList<String>())
+   *           .setMimeType("mimeType-1392120434")
    *           .setReferenceSentenceConfig(
    *               AdaptiveMtTranslateRequest.ReferenceSentenceConfig.newBuilder().build())
    *           .setGlossaryConfig(AdaptiveMtTranslateRequest.GlossaryConfig.newBuilder().build())
