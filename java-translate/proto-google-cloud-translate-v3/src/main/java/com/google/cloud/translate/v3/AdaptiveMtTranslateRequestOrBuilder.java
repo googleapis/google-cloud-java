@@ -150,6 +150,32 @@ public interface AdaptiveMtTranslateRequestOrBuilder
    *
    *
    * <pre>
+   * The format of the source text.
+   * </pre>
+   *
+   * <code>string mime_type = 4;</code>
+   *
+   * @return The mimeType.
+   */
+  java.lang.String getMimeType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The format of the source text.
+   * </pre>
+   *
+   * <code>string mime_type = 4;</code>
+   *
+   * @return The bytes for mimeType.
+   */
+  com.google.protobuf.ByteString getMimeTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Configuration for caller provided reference sentences.
    * </pre>
    *

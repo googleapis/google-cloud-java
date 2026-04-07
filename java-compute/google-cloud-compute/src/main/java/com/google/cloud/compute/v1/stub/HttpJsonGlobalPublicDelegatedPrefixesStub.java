@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteGlobalPublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.GetGlobalPublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.InsertGlobalPublicDelegatedPrefixeRequest;
@@ -342,6 +343,20 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/global/publicDelegatedPrefixes/{public_delegated_prefix}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/global/publicDelegatedPrefixes/{public_delegated_prefix}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/global/publicDelegatedPrefixes/{public_delegated_prefix}");
+
   public static final HttpJsonGlobalPublicDelegatedPrefixesStub create(
       GlobalPublicDelegatedPrefixesStubSettings settings) throws IOException {
     return new HttpJsonGlobalPublicDelegatedPrefixesStub(settings, ClientContext.create(settings));
@@ -400,6 +415,15 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                           String.valueOf(request.getPublicDelegatedPrefix()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "public_delegated_prefix",
+                          String.valueOf(request.getPublicDelegatedPrefix()));
+                      return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetGlobalPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>
         getTransportSettings =
@@ -416,6 +440,15 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                           String.valueOf(request.getPublicDelegatedPrefix()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "public_delegated_prefix",
+                          String.valueOf(request.getPublicDelegatedPrefix()));
+                      return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertGlobalPublicDelegatedPrefixeRequest, Operation>
         insertTransportSettings =
@@ -427,6 +460,12 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<ListGlobalPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList>
@@ -440,6 +479,12 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<PatchGlobalPublicDelegatedPrefixeRequest, Operation>
@@ -455,6 +500,15 @@ public class HttpJsonGlobalPublicDelegatedPrefixesStub extends GlobalPublicDeleg
                           "public_delegated_prefix",
                           String.valueOf(request.getPublicDelegatedPrefix()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "public_delegated_prefix",
+                          String.valueOf(request.getPublicDelegatedPrefix()));
+                      return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
 

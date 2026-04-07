@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListTargetHttpProxiesRequest;
 import com.google.cloud.compute.v1.DeleteTargetHttpProxyRequest;
 import com.google.cloud.compute.v1.GetTargetHttpProxyRequest;
@@ -456,6 +457,21 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetHttpProxies/{target_http_proxy}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetHttpProxies/{target_http_proxy}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetHttpProxies/{target_http_proxy}");
+  private static final PathTemplate SET_URL_MAP_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/targetHttpProxies/{target_http_proxy}");
+
   public static final HttpJsonTargetHttpProxiesStub create(TargetHttpProxiesStubSettings settings)
       throws IOException {
     return new HttpJsonTargetHttpProxiesStub(settings, ClientContext.create(settings));
@@ -509,6 +525,13 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteTargetHttpProxyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteTargetHttpProxyRequest, Operation>newBuilder()
@@ -520,6 +543,14 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("target_http_proxy", String.valueOf(request.getTargetHttpProxy()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_http_proxy", String.valueOf(request.getTargetHttpProxy()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetTargetHttpProxyRequest, TargetHttpProxy> getTransportSettings =
@@ -533,6 +564,14 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
                   builder.add("target_http_proxy", String.valueOf(request.getTargetHttpProxy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_http_proxy", String.valueOf(request.getTargetHttpProxy()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertTargetHttpProxyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertTargetHttpProxyRequest, Operation>newBuilder()
@@ -544,6 +583,12 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListTargetHttpProxiesRequest, TargetHttpProxyList> listTransportSettings =
         HttpJsonCallSettings.<ListTargetHttpProxiesRequest, TargetHttpProxyList>newBuilder()
@@ -554,6 +599,12 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<PatchTargetHttpProxyRequest, Operation> patchTransportSettings =
@@ -567,6 +618,14 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
                   builder.add("target_http_proxy", String.valueOf(request.getTargetHttpProxy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_http_proxy", String.valueOf(request.getTargetHttpProxy()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<SetUrlMapTargetHttpProxyRequest, Operation> setUrlMapTransportSettings =
         HttpJsonCallSettings.<SetUrlMapTargetHttpProxyRequest, Operation>newBuilder()
@@ -578,6 +637,14 @@ public class HttpJsonTargetHttpProxiesStub extends TargetHttpProxiesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("target_http_proxy", String.valueOf(request.getTargetHttpProxy()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_http_proxy", String.valueOf(request.getTargetHttpProxy()));
+                  return SET_URL_MAP_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

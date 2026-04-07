@@ -30,6 +30,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.GetSnapshotSettingRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.Operation.Status;
@@ -155,6 +156,11 @@ public class HttpJsonSnapshotSettingsServiceStub extends SnapshotSettingsService
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+
   public static final HttpJsonSnapshotSettingsServiceStub create(
       SnapshotSettingsServiceStubSettings settings) throws IOException {
     return new HttpJsonSnapshotSettingsServiceStub(settings, ClientContext.create(settings));
@@ -207,6 +213,12 @@ public class HttpJsonSnapshotSettingsServiceStub extends SnapshotSettingsService
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<PatchSnapshotSettingRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchSnapshotSettingRequest, Operation>newBuilder()
@@ -217,6 +229,12 @@ public class HttpJsonSnapshotSettingsServiceStub extends SnapshotSettingsService
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

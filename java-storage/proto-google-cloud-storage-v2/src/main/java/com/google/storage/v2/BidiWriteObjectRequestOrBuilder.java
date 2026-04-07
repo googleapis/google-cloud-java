@@ -215,9 +215,9 @@ public interface BidiWriteObjectRequestOrBuilder
    *
    * <pre>
    * Optional. Checksums for the complete object. If the checksums computed by
-   * the service don't match the specified checksums the call fails. Might only
-   * be provided in the first request or the last request (with finish_write
-   * set).
+   * the service don't match the specified checksums the call fails. May be
+   * provided in the last request (with finish_write set). For non-appendable
+   * objects only, may also be provided in the first request.
    * </pre>
    *
    * <code>
@@ -233,9 +233,9 @@ public interface BidiWriteObjectRequestOrBuilder
    *
    * <pre>
    * Optional. Checksums for the complete object. If the checksums computed by
-   * the service don't match the specified checksums the call fails. Might only
-   * be provided in the first request or the last request (with finish_write
-   * set).
+   * the service don't match the specified checksums the call fails. May be
+   * provided in the last request (with finish_write set). For non-appendable
+   * objects only, may also be provided in the first request.
    * </pre>
    *
    * <code>
@@ -251,9 +251,9 @@ public interface BidiWriteObjectRequestOrBuilder
    *
    * <pre>
    * Optional. Checksums for the complete object. If the checksums computed by
-   * the service don't match the specified checksums the call fails. Might only
-   * be provided in the first request or the last request (with finish_write
-   * set).
+   * the service don't match the specified checksums the call fails. May be
+   * provided in the last request (with finish_write set). For non-appendable
+   * objects only, may also be provided in the first request.
    * </pre>
    *
    * <code>
