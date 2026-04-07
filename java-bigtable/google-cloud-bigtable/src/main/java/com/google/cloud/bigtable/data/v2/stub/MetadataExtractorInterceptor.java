@@ -77,7 +77,7 @@ public class MetadataExtractorInterceptor implements ClientInterceptor {
 
               @Override
               public void onClose(Status status, Metadata trailers) {
-                sidebandData.onClose(status, trailers);
+                sidebandData.onClose(status, trailers, getAttributes());
                 super.onClose(status, trailers);
               }
             },
@@ -112,6 +112,7 @@ public class MetadataExtractorInterceptor implements ClientInterceptor {
     @Nullable private volatile PeerInfo peerInfo;
     @Nullable private volatile Duration gfeTiming;
     @Nullable private volatile Util.IpProtocol ipProtocol;
+    private boolean isAlts = false;
 
     @Nullable
     public ResponseParams getResponseParams() {
@@ -133,6 +134,10 @@ public class MetadataExtractorInterceptor implements ClientInterceptor {
       return ipProtocol;
     }
 
+    public boolean isAlts() {
+      return isAlts;
+    }
+
     private void reset() {
       responseParams = null;
       peerInfo = null;
@@ -147,7 +152,11 @@ public class MetadataExtractorInterceptor implements ClientInterceptor {
       ipProtocol = extractIpProtocol(attributes);
     }
 
-    void onClose(Status status, Metadata trailers) {
+    void onClose(Status status, Metadata trailers, Attributes attributes) {
+      isAlts = AltsContextUtil.check(attributes);
+      if (ipProtocol == null) {
+        ipProtocol = extractIpProtocol(attributes);
+      }
       if (responseParams == null) {
         responseParams = extractResponseParams(trailers);
       }

@@ -25,6 +25,8 @@ import com.google.common.base.Preconditions;
 import io.grpc.Channel;
 import io.grpc.ClientInterceptors;
 import io.grpc.ManagedChannel;
+import io.grpc.Status.Code;
+import io.grpc.StatusRuntimeException;
 import java.util.Optional;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Level;
@@ -76,15 +78,22 @@ public class ClassicDirectAccessChecker implements DirectAccessChecker {
   private boolean evaluateEligibility(Channel channel) {
     MetadataExtractorInterceptor interceptor = createInterceptor();
     Channel interceptedChannel = ClientInterceptors.intercept(channel, interceptor);
-    channelPrimer.primeChannel(interceptedChannel);
     MetadataExtractorInterceptor.SidebandData sidebandData = interceptor.getSidebandData();
-
-    boolean isEligible =
-        Optional.ofNullable(sidebandData)
-            .map(MetadataExtractorInterceptor.SidebandData::getPeerInfo)
-            .map(PeerInfo::getTransportType)
-            .map(type -> type == PeerInfo.TransportType.TRANSPORT_TYPE_DIRECT_ACCESS)
-            .orElse(false);
+    boolean isEligible = false;
+    try {
+      channelPrimer.primeChannel(interceptedChannel);
+      isEligible =
+          Optional.ofNullable(sidebandData.getPeerInfo())
+              .map(PeerInfo::getTransportType)
+              .map(type -> type == PeerInfo.TransportType.TRANSPORT_TYPE_DIRECT_ACCESS)
+              .orElse(false);
+    } catch (StatusRuntimeException e) {
+      if (e.getStatus().getCode() != Code.PERMISSION_DENIED) {
+        throw e;
+      }
+      // Failed with permission error, resorting to ALTS check.
+      isEligible = sidebandData.isAlts();
+    }
 
     if (isEligible) {
       // getIp should be non-null as isEligible is true
