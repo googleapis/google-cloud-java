@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore.telemetry;
 
+import com.google.api.gax.tracing.OpenTelemetryMetricsRecorder;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
@@ -26,22 +27,38 @@ import java.util.Map;
 import javax.annotation.Nonnull;
 
 /**
- * OpenTelemetry metrics recorder implementation, used to record metrics when metrics are enabled.
+ * OpenTelemetry implementation for recording Datastore metrics.
+ *
+ * <p>This class follows a two-tier hierarchy:
+ *
+ * <ol>
+ *   <li><b>Inheritance (GAX Alignment):</b> It extends {@link OpenTelemetryMetricsRecorder} from
+ *       the GAX library. This allows it to inherit the standardized implementation for common RPC
+ *       metrics like {@code operation_latency} and {@code attempt_count} without duplicating logic.
+ *   <li><b>Implementation (Datastore Specifics):</b> It implements {@link DatastoreMetricsRecorder}
+ *       to provide specialized recording for Datastore-only concepts, such as {@code
+ *       transaction_latency} and {@code transaction_attempt_count}.
+ * </ol>
  */
-class OpenTelemetryMetricsRecorder implements MetricsRecorder {
+class OpenTelemetryDatastoreMetricsRecorder extends OpenTelemetryMetricsRecorder
+    implements DatastoreMetricsRecorder {
+
   private final OpenTelemetry openTelemetry;
 
+  // Datastore-specific transaction metrics (registered under the Datastore meter).
   private final DoubleHistogram transactionLatency;
   private final LongCounter transactionAttemptCount;
-  private final DoubleHistogram attemptLatency;
-  private final LongCounter attemptCount;
-  private final DoubleHistogram operationLatency;
-  private final LongCounter operationCount;
 
-  OpenTelemetryMetricsRecorder(@Nonnull OpenTelemetry openTelemetry) {
+  // Note: Standard GAX RPC metrics (operation_latency, attempt_latency, etc.) are handled by the
+  // base OpenTelemetryMetricsRecorder class. Those metrics are inherited from the parent classes.
+  // However, the internal metrics expect plural suffixes (e.g. `latencies` instead of `latency`).
+  // The discrepancy between the singular GAX names and the plural internal Cloud Monitoring names
+  // is handled by configuring OpenTelemetry Views.
+  OpenTelemetryDatastoreMetricsRecorder(@Nonnull OpenTelemetry openTelemetry, String metricPrefix) {
+    super(openTelemetry, metricPrefix);
     this.openTelemetry = openTelemetry;
 
-    Meter meter = openTelemetry.getMeter(TelemetryConstants.METER_NAME);
+    Meter meter = openTelemetry.getMeter(TelemetryConstants.DATASTORE_METER_NAME);
 
     this.transactionLatency =
         meter
@@ -54,34 +71,6 @@ class OpenTelemetryMetricsRecorder implements MetricsRecorder {
         meter
             .counterBuilder(TelemetryConstants.METRIC_NAME_TRANSACTION_ATTEMPT_COUNT)
             .setDescription("Number of attempts to commit a transaction")
-            .build();
-
-    this.attemptLatency =
-        meter
-            .histogramBuilder(TelemetryConstants.METRIC_NAME_ATTEMPT_LATENCY)
-            .setDescription("Latency of a single RPC attempt")
-            .setUnit("ms")
-            .build();
-
-    this.attemptCount =
-        meter
-            .counterBuilder(TelemetryConstants.METRIC_NAME_ATTEMPT_COUNT)
-            .setDescription("Number of RPC attempts")
-            .setUnit("1")
-            .build();
-
-    this.operationLatency =
-        meter
-            .histogramBuilder(TelemetryConstants.METRIC_NAME_OPERATION_LATENCY)
-            .setDescription("Total latency of an operation including retries")
-            .setUnit("ms")
-            .build();
-
-    this.operationCount =
-        meter
-            .counterBuilder(TelemetryConstants.METRIC_NAME_OPERATION_COUNT)
-            .setDescription("Number of operations")
-            .setUnit("1")
             .build();
   }
 
@@ -97,26 +86,6 @@ class OpenTelemetryMetricsRecorder implements MetricsRecorder {
   @Override
   public void recordTransactionAttemptCount(long count, Map<String, String> attributes) {
     transactionAttemptCount.add(count, toOtelAttributes(attributes));
-  }
-
-  @Override
-  public void recordAttemptLatency(double latencyMs, Map<String, String> attributes) {
-    attemptLatency.record(latencyMs, toOtelAttributes(attributes));
-  }
-
-  @Override
-  public void recordAttemptCount(long count, Map<String, String> attributes) {
-    attemptCount.add(count, toOtelAttributes(attributes));
-  }
-
-  @Override
-  public void recordOperationLatency(double latencyMs, Map<String, String> attributes) {
-    operationLatency.record(latencyMs, toOtelAttributes(attributes));
-  }
-
-  @Override
-  public void recordOperationCount(long count, Map<String, String> attributes) {
-    operationCount.add(count, toOtelAttributes(attributes));
   }
 
   private static Attributes toOtelAttributes(Map<String, String> attributes) {

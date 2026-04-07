@@ -20,15 +20,17 @@ import com.google.api.core.InternalApi;
 import java.util.Map;
 
 /**
- * Metrics recorder implementation, used to stub out metrics instrumentation when metrics are
- * disabled.
+ * A no-op implementation of {@link DatastoreMetricsRecorder}.
+ *
+ * <p>Used to stub out metrics instrumentation when metrics are disabled or when no valid recorder
+ * could be initialized.
  *
  * <p>WARNING: This class is intended for internal use only. It was made public to be used across
  * packages as a default. It should not be used by external customers and its API may change without
  * notice.
  */
 @InternalApi
-public class NoOpMetricsRecorder implements MetricsRecorder {
+public class NoOpDatastoreMetricsRecorder implements DatastoreMetricsRecorder {
 
   @Override
   public void recordTransactionLatency(double latencyMs, Map<String, String> attributes) {
