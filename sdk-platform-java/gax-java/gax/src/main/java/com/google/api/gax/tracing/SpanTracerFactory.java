@@ -53,7 +53,20 @@ public class SpanTracerFactory implements ApiTracerFactory {
   private final OpenTelemetry openTelemetry;
   private final ApiTracerContext apiTracerContext;
 
-  /** Creates a SpanTracerFactory */
+  /**
+   * <p>Warning: Traces may contain sensitive data such as resource names, full
+   * URLs, and error messages.
+   *
+   * <p>Before configuring subscribers or exporters for traces, review the
+   * contents of the spans and consult the [opentelemetry] documentation to
+   * set up filters and formatters to prevent leaking sensitive information,
+   * depending on your intended use case.
+   *
+   * <p>[OpenTelemetry Semantic Conventions]:
+   * https://opentelemetry.io/docs/concepts/semantic-conventions/
+   * <p>[opentelemetry]:
+   * https://opentelemetry.io/docs/security/handling-sensitive-data/
+   */
   public SpanTracerFactory(OpenTelemetry openTelemetry) {
     this(openTelemetry, null, ApiTracerContext.empty());
   }
