@@ -12,7 +12,7 @@
 
   <properties>
     <maven.deploy.skip>true</maven.deploy.skip>
-    <maven.enforcer.skip>true</maven.enforcer.skip>
+    <enforcer.skip>true</enforcer.skip>
   </properties>
 
 </project>
