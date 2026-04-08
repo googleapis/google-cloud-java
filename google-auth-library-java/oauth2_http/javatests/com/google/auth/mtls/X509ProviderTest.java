@@ -140,24 +140,24 @@ class X509ProviderTest {
     String certConfigPath = "certConfig.txt";
     String certPath = "cert.crt";
     String keyPath = "key.crt";
-    InputStream certConfigStream =
+    try (InputStream certConfigStream =
         WorkloadCertificateConfigurationTest.writeWorkloadCertificateConfigStream(
-            certPath, keyPath);
+            certPath, keyPath)) {
+      TestX509Provider testProvider = new TestX509Provider();
+      testProvider.setEnv(certConfigPath);
+      testProvider.addFile(certConfigPath, certConfigStream);
+      testProvider.addFile(certPath, new ByteArrayInputStream(TEST_CERT.getBytes()));
+      testProvider.addFile(keyPath, new ByteArrayInputStream(TEST_PRIVATE_KEY.getBytes()));
 
-    TestX509Provider testProvider = new TestX509Provider();
-    testProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", certConfigPath);
-    testProvider.addFile(certConfigPath, certConfigStream);
-    testProvider.addFile(certPath, new ByteArrayInputStream(TEST_CERT.getBytes()));
-    testProvider.addFile(keyPath, new ByteArrayInputStream(TEST_PRIVATE_KEY.getBytes()));
+      CertificateFactory cf = CertificateFactory.getInstance("X.509");
+      Certificate expectedCert =
+          cf.generateCertificate(new ByteArrayInputStream(TEST_CERT.getBytes()));
 
-    CertificateFactory cf = CertificateFactory.getInstance("X.509");
-    Certificate expectedCert =
-        cf.generateCertificate(new ByteArrayInputStream(TEST_CERT.getBytes()));
-
-    // Assert that the store has the expected certificate and only the expected certificate.
-    KeyStore store = testProvider.getKeyStore();
-    assertEquals(1, store.size());
-    assertNotNull(store.getCertificateAlias(expectedCert));
+      // Assert that the store has the expected certificate and only the expected certificate.
+      KeyStore store = testProvider.getKeyStore();
+      assertEquals(1, store.size());
+      assertNotNull(store.getCertificateAlias(expectedCert));
+    }
   }
 
   @Test
@@ -166,24 +166,24 @@ class X509ProviderTest {
     String certConfigPath = "certConfig.txt";
     String certPath = "cert.crt";
     String keyPath = "key.crt";
-    InputStream certConfigStream =
+    try (InputStream certConfigStream =
         WorkloadCertificateConfigurationTest.writeWorkloadCertificateConfigStream(
-            certPath, keyPath);
+            certPath, keyPath)) {
+      TestX509Provider testProvider = new TestX509Provider();
+      testProvider.setEnv(certConfigPath);
+      testProvider.addFile(certConfigPath, certConfigStream);
+      testProvider.addFile(certPath, new ByteArrayInputStream(TEST_CERT.getBytes()));
+      testProvider.addFile(keyPath, new ByteArrayInputStream(TEST_PRIVATE_KEY.getBytes()));
 
-    TestX509Provider testProvider = new TestX509Provider();
-    testProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", certConfigPath);
-    testProvider.addFile(certConfigPath, certConfigStream);
-    testProvider.addFile(certPath, new ByteArrayInputStream(TEST_CERT.getBytes()));
-    testProvider.addFile(keyPath, new ByteArrayInputStream(TEST_PRIVATE_KEY.getBytes()));
+      CertificateFactory cf = CertificateFactory.getInstance("X.509");
+      Certificate expectedCert =
+          cf.generateCertificate(new ByteArrayInputStream(TEST_CERT.getBytes()));
 
-    CertificateFactory cf = CertificateFactory.getInstance("X.509");
-    Certificate expectedCert =
-        cf.generateCertificate(new ByteArrayInputStream(TEST_CERT.getBytes()));
-
-    // Assert that the store has the expected certificate and only the expected certificate.
-    KeyStore store = testProvider.getKeyStore();
-    assertEquals(1, store.size());
-    assertNotNull(store.getCertificateAlias(expectedCert));
+      // Assert that the store has the expected certificate and only the expected certificate.
+      KeyStore store = testProvider.getKeyStore();
+      assertEquals(1, store.size());
+      assertNotNull(store.getCertificateAlias(expectedCert));
+    }
   }
 
   static class TestX509Provider extends X509Provider {
@@ -211,8 +211,8 @@ class X509ProviderTest {
       return variables.get(name);
     }
 
-    void setEnv(String name, String value) {
-      variables.put(name, value);
+    void setEnv(String value) {
+      variables.put("GOOGLE_API_CERTIFICATE_CONFIG", value);
     }
 
     @Override

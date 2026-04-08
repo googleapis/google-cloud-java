@@ -34,8 +34,8 @@ package com.google.auth.oauth2;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.client.json.GenericJson;
 import java.io.IOException;
@@ -128,129 +128,107 @@ class ExecutableResponseTest {
   }
 
   @Test
-  void constructor_errorResponseMissingCode_throws() throws IOException {
+  void constructor_errorResponseMissingCode_throws() {
     GenericJson jsonResponse = buildErrorResponse();
 
     Object[] values = new Object[] {null, ""};
     for (Object value : values) {
       jsonResponse.put("code", value);
-      try {
-        new ExecutableResponse(jsonResponse);
-        fail("Should not be able to continue without exception.");
-      } catch (PluggableAuthException exception) {
-        assertEquals(
-            "Error code INVALID_EXECUTABLE_RESPONSE: The executable response must contain "
-                + "`error` and `message` fields when unsuccessful.",
-            exception.getMessage());
-      }
+      PluggableAuthException exception =
+          assertThrows(PluggableAuthException.class, () -> new ExecutableResponse(jsonResponse));
+      assertEquals(
+          "Error code INVALID_EXECUTABLE_RESPONSE: The executable response must contain "
+              + "`error` and `message` fields when unsuccessful.",
+          exception.getMessage());
     }
   }
 
   @Test
-  void constructor_errorResponseMissingMessage_throws() throws IOException {
+  void constructor_errorResponseMissingMessage_throws() {
     GenericJson jsonResponse = buildErrorResponse();
 
     Object[] values = new Object[] {null, ""};
     for (Object value : values) {
       jsonResponse.put("message", value);
 
-      try {
-        new ExecutableResponse(jsonResponse);
-        fail("Should not be able to continue without exception.");
-      } catch (PluggableAuthException exception) {
-        assertEquals(
-            "Error code INVALID_EXECUTABLE_RESPONSE: The executable response must contain "
-                + "`error` and `message` fields when unsuccessful.",
-            exception.getMessage());
-      }
+      PluggableAuthException exception =
+          assertThrows(PluggableAuthException.class, () -> new ExecutableResponse(jsonResponse));
+      assertEquals(
+          "Error code INVALID_EXECUTABLE_RESPONSE: The executable response must contain "
+              + "`error` and `message` fields when unsuccessful.",
+          exception.getMessage());
     }
   }
 
   @Test
-  void constructor_successResponseMissingVersionField_throws() throws IOException {
+  void constructor_successResponseMissingVersionField_throws() {
     GenericJson jsonResponse = buildOidcResponse();
     jsonResponse.remove("version");
 
-    try {
-      new ExecutableResponse(jsonResponse);
-      fail("Should not be able to continue without exception.");
-    } catch (PluggableAuthException exception) {
-      assertEquals(
-          "Error code INVALID_EXECUTABLE_RESPONSE: The executable response is missing the "
-              + "`version` field.",
-          exception.getMessage());
-    }
+    PluggableAuthException exception =
+        assertThrows(PluggableAuthException.class, () -> new ExecutableResponse(jsonResponse));
+    assertEquals(
+        "Error code INVALID_EXECUTABLE_RESPONSE: The executable response is missing the "
+            + "`version` field.",
+        exception.getMessage());
   }
 
   @Test
-  void constructor_successResponseMissingSuccessField_throws() throws Exception {
+  void constructor_successResponseMissingSuccessField_throws() {
     GenericJson jsonResponse = buildOidcResponse();
     jsonResponse.remove("success");
 
-    try {
-      new ExecutableResponse(jsonResponse);
-      fail("Should not be able to continue without exception.");
-    } catch (PluggableAuthException exception) {
-      assertEquals(
-          "Error code INVALID_EXECUTABLE_RESPONSE: The executable response is missing the "
-              + "`success` field.",
-          exception.getMessage());
-    }
+    PluggableAuthException exception =
+        assertThrows(PluggableAuthException.class, () -> new ExecutableResponse(jsonResponse));
+    assertEquals(
+        "Error code INVALID_EXECUTABLE_RESPONSE: The executable response is missing the "
+            + "`success` field.",
+        exception.getMessage());
   }
 
   @Test
-  void constructor_successResponseMissingTokenTypeField_throws() throws IOException {
+  void constructor_successResponseMissingTokenTypeField_throws() {
     GenericJson jsonResponse = buildOidcResponse();
     jsonResponse.remove("token_type");
 
-    try {
-      new ExecutableResponse(jsonResponse);
-      fail("Should not be able to continue without exception.");
-    } catch (PluggableAuthException exception) {
-      assertEquals(
-          "Error code INVALID_EXECUTABLE_RESPONSE: The executable response is missing the "
-              + "`token_type` field.",
-          exception.getMessage());
-    }
+    PluggableAuthException exception =
+        assertThrows(PluggableAuthException.class, () -> new ExecutableResponse(jsonResponse));
+    assertEquals(
+        "Error code INVALID_EXECUTABLE_RESPONSE: The executable response is missing the "
+            + "`token_type` field.",
+        exception.getMessage());
   }
 
   @Test
-  void constructor_samlResponseMissingSubjectToken_throws() throws IOException {
+  void constructor_samlResponseMissingSubjectToken_throws() {
     GenericJson jsonResponse = buildSamlResponse();
 
     Object[] values = new Object[] {null, ""};
     for (Object value : values) {
       jsonResponse.put("saml_response", value);
-
-      try {
-        new ExecutableResponse(jsonResponse);
-        fail("Should not be able to continue without exception.");
-      } catch (PluggableAuthException exception) {
-        assertEquals(
-            "Error code INVALID_EXECUTABLE_RESPONSE: The executable response does not "
-                + "contain a valid token.",
-            exception.getMessage());
-      }
+      PluggableAuthException exception =
+          assertThrows(PluggableAuthException.class, () -> new ExecutableResponse(jsonResponse));
+      assertEquals(
+          "Error code INVALID_EXECUTABLE_RESPONSE: The executable response does not "
+              + "contain a valid token.",
+          exception.getMessage());
     }
   }
 
   @Test
-  void constructor_oidcResponseMissingSubjectToken_throws() throws IOException {
+  void constructor_oidcResponseMissingSubjectToken_throws() {
     GenericJson jsonResponse = buildOidcResponse();
 
     Object[] values = new Object[] {null, ""};
     for (Object value : values) {
       jsonResponse.put("id_token", value);
 
-      try {
-        new ExecutableResponse(jsonResponse);
-        fail("Should not be able to continue without exception.");
-      } catch (PluggableAuthException exception) {
-        assertEquals(
-            "Error code INVALID_EXECUTABLE_RESPONSE: The executable response does not "
-                + "contain a valid token.",
-            exception.getMessage());
-      }
+      PluggableAuthException exception =
+          assertThrows(PluggableAuthException.class, () -> new ExecutableResponse(jsonResponse));
+      assertEquals(
+          "Error code INVALID_EXECUTABLE_RESPONSE: The executable response does not "
+              + "contain a valid token.",
+          exception.getMessage());
     }
   }
 

@@ -46,9 +46,9 @@ import com.google.common.collect.Lists;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -90,15 +90,11 @@ public class TestUtils {
   public static InputStream jsonToInputStream(GenericJson json) throws IOException {
     json.setFactory(JSON_FACTORY);
     String text = json.toPrettyString();
-    return new ByteArrayInputStream(text.getBytes("UTF-8"));
+    return new ByteArrayInputStream(text.getBytes(StandardCharsets.UTF_8));
   }
 
   public static InputStream stringToInputStream(String text) {
-    try {
-      return new ByteArrayInputStream(text.getBytes("UTF-8"));
-    } catch (UnsupportedEncodingException e) {
-      throw new RuntimeException("Unexpected encoding exception", e);
-    }
+    return new ByteArrayInputStream(text.getBytes(StandardCharsets.UTF_8));
   }
 
   public static Map<String, String> parseQuery(String query) throws IOException {
