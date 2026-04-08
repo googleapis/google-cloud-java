@@ -2,6 +2,7 @@ primaryBranch: main
 releaseType: java-yoshi
 manifest: true
 handleGHRelease: true
+onDemand: true
 branches:
     - branch: 1.0.x
       releaseType: java-backport

@@ -42,7 +42,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnavailableException;
 import com.google.api.gax.tracing.ObservabilityAttributes;
-import com.google.api.gax.tracing.SpanTracerFactory;
+import com.google.api.gax.tracing.OpenTelemetryTracingFactory;
 import com.google.common.collect.ImmutableList;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
@@ -151,7 +151,7 @@ class ITOtelTracing {
 
   @Test
   void testTracing_successfulEcho_grpc() throws Exception {
-    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
 
     EchoSettings grpcEchoSettings = createEchoSettings(false);
     EchoStub stub = createStubWithServiceName(grpcEchoSettings, tracingFactory);
@@ -220,7 +220,7 @@ class ITOtelTracing {
 
   @Test
   void testTracing_successfulEcho_httpjson() throws Exception {
-    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
 
     EchoSettings httpJsonEchoSettings = createEchoSettings(true);
     EchoStub stub = createStubWithServiceName(httpJsonEchoSettings, tracingFactory);
@@ -313,7 +313,7 @@ class ITOtelTracing {
 
   @Test
   void testTracing_successfulIdentityGetUser_grpc() throws Exception {
-    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
 
     IdentitySettings grpcIdentitySettings = createIdentitySettings(false);
     IdentityStub stub = createIdentityStubWithServiceName(grpcIdentitySettings, tracingFactory);
@@ -342,7 +342,7 @@ class ITOtelTracing {
 
   @Test
   void testTracing_successfulIdentityGetUser_httpjson() throws Exception {
-    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
 
     IdentitySettings httpJsonIdentitySettings = createIdentitySettings(true);
     IdentityStub stub = createIdentityStubWithServiceName(httpJsonIdentitySettings, tracingFactory);
@@ -398,7 +398,7 @@ class ITOtelTracing {
             .setEndpoint(SHOWCASE_GRPC_ENDPOINT)
             .build();
 
-    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
 
     EchoStubSettings echoStubSettings =
         (EchoStubSettings)
@@ -474,7 +474,7 @@ class ITOtelTracing {
                     .build())
             .build();
 
-    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
 
     EchoStubSettings echoStubSettings =
         (EchoStubSettings)
@@ -539,7 +539,7 @@ class ITOtelTracing {
 
   @Test
   void testTracing_failedEcho_grpc_recordsErrorAttributes() throws Exception {
-    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
 
     ClientInterceptor interceptor =
         new ClientInterceptor() {
@@ -591,7 +591,7 @@ class ITOtelTracing {
 
   @Test
   void testTracing_failedEcho_httpjson_recordsErrorAttributes() throws Exception {
-    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
 
     HttpTransport mockTransport =
         new HttpTransport() {
@@ -691,7 +691,7 @@ class ITOtelTracing {
 
   @Test
   void testTracing_statusCodes_grpc() throws Exception {
-    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
     EchoRequest errorRequest =
         EchoRequest.newBuilder()
             .setError(
@@ -732,7 +732,7 @@ class ITOtelTracing {
 
   @Test
   void testTracing_statusCodes_httpjson() throws Exception {
-    SpanTracerFactory tracingFactory = new SpanTracerFactory(openTelemetrySdk);
+    OpenTelemetryTracingFactory tracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
     EchoRequest errorRequest =
         EchoRequest.newBuilder()
             .setError(
@@ -793,7 +793,7 @@ class ITOtelTracing {
   }
 
   private EchoStub createStubWithServiceName(
-      EchoSettings settings, SpanTracerFactory tracingFactory) throws IOException {
+      EchoSettings settings, OpenTelemetryTracingFactory tracingFactory) throws IOException {
     EchoStubSettings.Builder builder =
         (EchoStubSettings.Builder) settings.getStubSettings().toBuilder();
     builder.setTracerFactory(tracingFactory);
@@ -801,7 +801,7 @@ class ITOtelTracing {
   }
 
   private IdentityStub createIdentityStubWithServiceName(
-      IdentitySettings settings, SpanTracerFactory tracingFactory) throws IOException {
+      IdentitySettings settings, OpenTelemetryTracingFactory tracingFactory) throws IOException {
     IdentityStubSettings.Builder builder =
         (IdentityStubSettings.Builder) settings.getStubSettings().toBuilder();
     builder.setTracerFactory(tracingFactory);

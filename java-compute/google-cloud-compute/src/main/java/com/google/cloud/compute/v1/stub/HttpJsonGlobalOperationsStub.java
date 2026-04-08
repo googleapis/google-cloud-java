@@ -34,6 +34,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListGlobalOperationsRequest;
 import com.google.cloud.compute.v1.DeleteGlobalOperationRequest;
 import com.google.cloud.compute.v1.DeleteGlobalOperationResponse;
@@ -318,6 +319,17 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
   private final LongRunningClient longRunningClient;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/operations/{operation}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/operations/{operation}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate WAIT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/operations/{operation}");
+
   public static final HttpJsonGlobalOperationsStub create(GlobalOperationsStubSettings settings)
       throws IOException {
     return new HttpJsonGlobalOperationsStub(settings, ClientContext.create(settings));
@@ -369,6 +381,13 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteGlobalOperationRequest, DeleteGlobalOperationResponse>
         deleteTransportSettings =
@@ -383,6 +402,13 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("operation", String.valueOf(request.getOperation()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetGlobalOperationRequest, Operation> getTransportSettings =
         HttpJsonCallSettings.<GetGlobalOperationRequest, Operation>newBuilder()
@@ -395,6 +421,13 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("operation", String.valueOf(request.getOperation()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListGlobalOperationsRequest, OperationList> listTransportSettings =
         HttpJsonCallSettings.<ListGlobalOperationsRequest, OperationList>newBuilder()
@@ -405,6 +438,12 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<WaitGlobalOperationRequest, Operation> waitTransportSettings =
@@ -417,6 +456,13 @@ public class HttpJsonGlobalOperationsStub extends GlobalOperationsStub {
                   builder.add("operation", String.valueOf(request.getOperation()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("operation", String.valueOf(request.getOperation()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return WAIT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

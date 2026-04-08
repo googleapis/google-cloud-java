@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListNodeTypesRequest;
 import com.google.cloud.compute.v1.GetNodeTypeRequest;
 import com.google.cloud.compute.v1.ListNodeTypesRequest;
@@ -216,6 +217,13 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/nodeTypes/{node_type}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+
   public static final HttpJsonNodeTypesStub create(NodeTypesStubSettings settings)
       throws IOException {
     return new HttpJsonNodeTypesStub(settings, ClientContext.create(settings));
@@ -265,6 +273,13 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetNodeTypeRequest, NodeType> getTransportSettings =
         HttpJsonCallSettings.<GetNodeTypeRequest, NodeType>newBuilder()
@@ -278,6 +293,14 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("node_type", String.valueOf(request.getNodeType()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListNodeTypesRequest, NodeTypeList> listTransportSettings =
         HttpJsonCallSettings.<ListNodeTypesRequest, NodeTypeList>newBuilder()
@@ -289,6 +312,13 @@ public class HttpJsonNodeTypesStub extends NodeTypesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

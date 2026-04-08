@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.CancelInstanceGroupManagerResizeRequestRequest;
 import com.google.cloud.compute.v1.DeleteInstanceGroupManagerResizeRequestRequest;
 import com.google.cloud.compute.v1.GetInstanceGroupManagerResizeRequestRequest;
@@ -374,6 +375,22 @@ public class HttpJsonInstanceGroupManagerResizeRequestsStub
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate CANCEL_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/instanceGroupManagers/{instance_group_manager}/resizeRequests/{resize_request}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/instanceGroupManagers/{instance_group_manager}/resizeRequests/{resize_request}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/instanceGroupManagers/{instance_group_manager}/resizeRequests/{resize_request}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/instanceGroupManagers/{instance_group_manager}");
+
   public static final HttpJsonInstanceGroupManagerResizeRequestsStub create(
       InstanceGroupManagerResizeRequestsStubSettings settings) throws IOException {
     return new HttpJsonInstanceGroupManagerResizeRequestsStub(
@@ -435,6 +452,18 @@ public class HttpJsonInstanceGroupManagerResizeRequestsStub
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "resize_request", String.valueOf(request.getResizeRequest()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return CANCEL_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteInstanceGroupManagerResizeRequestRequest, Operation>
         deleteTransportSettings =
@@ -452,6 +481,18 @@ public class HttpJsonInstanceGroupManagerResizeRequestsStub
                       builder.add("resize_request", String.valueOf(request.getResizeRequest()));
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "resize_request", String.valueOf(request.getResizeRequest()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<
@@ -473,6 +514,18 @@ public class HttpJsonInstanceGroupManagerResizeRequestsStub
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "resize_request", String.valueOf(request.getResizeRequest()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertInstanceGroupManagerResizeRequestRequest, Operation>
         insertTransportSettings =
@@ -489,6 +542,16 @@ public class HttpJsonInstanceGroupManagerResizeRequestsStub
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<
@@ -510,6 +573,16 @@ public class HttpJsonInstanceGroupManagerResizeRequestsStub
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
 

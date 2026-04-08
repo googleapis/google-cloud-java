@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListPublicDelegatedPrefixesRequest;
 import com.google.cloud.compute.v1.AnnouncePublicDelegatedPrefixeRequest;
 import com.google.cloud.compute.v1.DeletePublicDelegatedPrefixeRequest;
@@ -534,6 +535,28 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate ANNOUNCE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/publicDelegatedPrefixes/{public_delegated_prefix}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/publicDelegatedPrefixes/{public_delegated_prefix}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/publicDelegatedPrefixes/{public_delegated_prefix}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/publicDelegatedPrefixes/{public_delegated_prefix}");
+  private static final PathTemplate WITHDRAW_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/publicDelegatedPrefixes/{public_delegated_prefix}");
+
   public static final HttpJsonPublicDelegatedPrefixesStub create(
       PublicDelegatedPrefixesStubSettings settings) throws IOException {
     return new HttpJsonPublicDelegatedPrefixesStub(settings, ClientContext.create(settings));
@@ -590,6 +613,13 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<AnnouncePublicDelegatedPrefixeRequest, Operation>
         announceTransportSettings =
@@ -606,6 +636,16 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "public_delegated_prefix",
+                          String.valueOf(request.getPublicDelegatedPrefix()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return ANNOUNCE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeletePublicDelegatedPrefixeRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeletePublicDelegatedPrefixeRequest, Operation>newBuilder()
@@ -620,6 +660,16 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                       String.valueOf(request.getPublicDelegatedPrefix()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "public_delegated_prefix",
+                      String.valueOf(request.getPublicDelegatedPrefix()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetPublicDelegatedPrefixeRequest, PublicDelegatedPrefix>
@@ -638,6 +688,16 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "public_delegated_prefix",
+                          String.valueOf(request.getPublicDelegatedPrefix()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertPublicDelegatedPrefixeRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertPublicDelegatedPrefixeRequest, Operation>newBuilder()
@@ -649,6 +709,13 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListPublicDelegatedPrefixesRequest, PublicDelegatedPrefixList>
@@ -663,6 +730,13 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<PatchPublicDelegatedPrefixeRequest, Operation> patchTransportSettings =
@@ -679,6 +753,16 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "public_delegated_prefix",
+                      String.valueOf(request.getPublicDelegatedPrefix()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<WithdrawPublicDelegatedPrefixeRequest, Operation>
         withdrawTransportSettings =
@@ -694,6 +778,16 @@ public class HttpJsonPublicDelegatedPrefixesStub extends PublicDelegatedPrefixes
                           String.valueOf(request.getPublicDelegatedPrefix()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "public_delegated_prefix",
+                          String.valueOf(request.getPublicDelegatedPrefix()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return WITHDRAW_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
 

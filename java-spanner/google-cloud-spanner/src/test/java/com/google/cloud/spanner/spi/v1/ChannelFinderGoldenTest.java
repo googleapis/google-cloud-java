@@ -132,6 +132,12 @@ public class ChannelFinderGoldenTest {
     }
 
     @Override
+    public ChannelEndpoint getIfPresent(String address) {
+      // Auto-create for golden tests — simulates lifecycle manager having pre-created endpoints.
+      return endpoints.computeIfAbsent(address, FakeEndpoint::new);
+    }
+
+    @Override
     public void evict(String address) {
       endpoints.remove(address);
     }
@@ -156,6 +162,11 @@ public class ChannelFinderGoldenTest {
       @Override
       public boolean isHealthy() {
         return !unhealthyServers.contains(address);
+      }
+
+      @Override
+      public boolean isTransientFailure() {
+        return unhealthyServers.contains(address);
       }
 
       @Override

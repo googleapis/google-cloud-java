@@ -55,6 +55,19 @@ public interface ChannelEndpointCache {
   ChannelEndpoint get(String address);
 
   /**
+   * Returns a cached channel for the given address without creating it.
+   *
+   * <p>Unlike {@link #get(String)}, this method does not create a new endpoint if one does not
+   * already exist in the cache. This is used by location-aware routing to avoid foreground endpoint
+   * creation on the request path.
+   *
+   * @param address the server address in "host:port" format
+   * @return the cached channel instance, or null if no endpoint exists for this address
+   */
+  @javax.annotation.Nullable
+  ChannelEndpoint getIfPresent(String address);
+
+  /**
    * Evicts a server connection from the cache and gracefully shuts down its channel.
    *
    * <p>This method should be called when a server becomes unhealthy or is no longer needed. The

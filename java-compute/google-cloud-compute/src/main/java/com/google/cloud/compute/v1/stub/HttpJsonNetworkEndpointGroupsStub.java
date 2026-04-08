@@ -34,6 +34,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListNetworkEndpointGroupsRequest;
 import com.google.cloud.compute.v1.AttachNetworkEndpointsNetworkEndpointGroupRequest;
 import com.google.cloud.compute.v1.DeleteNetworkEndpointGroupRequest;
@@ -619,6 +620,30 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate ATTACH_NETWORK_ENDPOINTS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/networkEndpointGroups/{network_endpoint_group}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/networkEndpointGroups/{network_endpoint_group}");
+  private static final PathTemplate DETACH_NETWORK_ENDPOINTS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/networkEndpointGroups/{network_endpoint_group}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/networkEndpointGroups/{network_endpoint_group}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate LIST_NETWORK_ENDPOINTS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/networkEndpointGroups/{network_endpoint_group}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/networkEndpointGroups/{resource}");
+
   public static final HttpJsonNetworkEndpointGroupsStub create(
       NetworkEndpointGroupsStubSettings settings) throws IOException {
     return new HttpJsonNetworkEndpointGroupsStub(settings, ClientContext.create(settings));
@@ -673,6 +698,13 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<AttachNetworkEndpointsNetworkEndpointGroupRequest, Operation>
         attachNetworkEndpointsTransportSettings =
@@ -690,6 +722,17 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "network_endpoint_group",
+                          String.valueOf(request.getNetworkEndpointGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return ATTACH_NETWORK_ENDPOINTS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteNetworkEndpointGroupRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteNetworkEndpointGroupRequest, Operation>newBuilder()
@@ -703,6 +746,15 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "network_endpoint_group", String.valueOf(request.getNetworkEndpointGroup()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<DetachNetworkEndpointsNetworkEndpointGroupRequest, Operation>
@@ -721,6 +773,17 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "network_endpoint_group",
+                          String.valueOf(request.getNetworkEndpointGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return DETACH_NETWORK_ENDPOINTS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetNetworkEndpointGroupRequest, NetworkEndpointGroup>
         getTransportSettings =
@@ -737,6 +800,16 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "network_endpoint_group",
+                          String.valueOf(request.getNetworkEndpointGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertNetworkEndpointGroupRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertNetworkEndpointGroupRequest, Operation>newBuilder()
@@ -748,6 +821,13 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListNetworkEndpointGroupsRequest, NetworkEndpointGroupList>
@@ -762,6 +842,13 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<
@@ -784,6 +871,17 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "network_endpoint_group",
+                          String.valueOf(request.getNetworkEndpointGroup()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return LIST_NETWORK_ENDPOINTS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<TestIamPermissionsNetworkEndpointGroupRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -799,6 +897,15 @@ public class HttpJsonNetworkEndpointGroupsStub extends NetworkEndpointGroupsStub
                       builder.add("resource", String.valueOf(request.getResource()));
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 
