@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.GetRegionTargetHttpsProxyRequest;
 import com.google.cloud.compute.v1.InsertRegionTargetHttpsProxyRequest;
@@ -468,6 +469,26 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/targetHttpsProxies/{target_https_proxy}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/targetHttpsProxies/{target_https_proxy}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/targetHttpsProxies/{target_https_proxy}");
+  private static final PathTemplate SET_SSL_CERTIFICATES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/targetHttpsProxies/{target_https_proxy}");
+  private static final PathTemplate SET_URL_MAP_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/targetHttpsProxies/{target_https_proxy}");
+
   public static final HttpJsonRegionTargetHttpsProxiesStub create(
       RegionTargetHttpsProxiesStubSettings settings) throws IOException {
     return new HttpJsonRegionTargetHttpsProxiesStub(settings, ClientContext.create(settings));
@@ -522,6 +543,15 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
                   builder.add("target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put(
+                      "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetRegionTargetHttpsProxyRequest, TargetHttpsProxy> getTransportSettings =
         HttpJsonCallSettings.<GetRegionTargetHttpsProxyRequest, TargetHttpsProxy>newBuilder()
@@ -535,6 +565,15 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
                   builder.add("target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put(
+                      "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertRegionTargetHttpsProxyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionTargetHttpsProxyRequest, Operation>newBuilder()
@@ -546,6 +585,13 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListRegionTargetHttpsProxiesRequest, TargetHttpsProxyList>
@@ -561,6 +607,13 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchRegionTargetHttpsProxyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRegionTargetHttpsProxyRequest, Operation>newBuilder()
@@ -573,6 +626,15 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put(
+                      "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetSslCertificatesRegionTargetHttpsProxyRequest, Operation>
@@ -590,6 +652,16 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
                           "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put(
+                          "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                      return SET_SSL_CERTIFICATES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetUrlMapRegionTargetHttpsProxyRequest, Operation>
         setUrlMapTransportSettings =
@@ -604,6 +676,15 @@ public class HttpJsonRegionTargetHttpsProxiesStub extends RegionTargetHttpsProxi
                       builder.add(
                           "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put(
+                          "target_https_proxy", String.valueOf(request.getTargetHttpsProxy()));
+                      return SET_URL_MAP_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
 

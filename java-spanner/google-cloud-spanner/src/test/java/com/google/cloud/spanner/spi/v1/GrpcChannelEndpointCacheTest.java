@@ -114,10 +114,13 @@ public class GrpcChannelEndpointCacheTest {
     GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider("localhost:1234"));
     try {
       ChannelEndpoint server = cache.get("localhost:1111");
-      assertThat(server.isHealthy()).isTrue();
+      // Newly created channel is not READY (likely IDLE), so isHealthy is false for location aware.
+      // isHealthy now requires READY state for location aware routing.
+      assertThat(server.isHealthy()).isFalse();
 
       server.getChannel().shutdownNow();
       assertThat(server.isHealthy()).isFalse();
+      assertThat(server.isTransientFailure()).isFalse();
     } finally {
       cache.shutdown();
     }

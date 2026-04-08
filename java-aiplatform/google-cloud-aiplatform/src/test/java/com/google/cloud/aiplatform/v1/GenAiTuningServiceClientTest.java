@@ -128,6 +128,7 @@ public class GenAiTuningServiceClientTest {
             .setTuningDataStats(TuningDataStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .addAllEvaluateDatasetRuns(new ArrayList<EvaluateDatasetRun>())
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -185,6 +186,7 @@ public class GenAiTuningServiceClientTest {
             .setTuningDataStats(TuningDataStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .addAllEvaluateDatasetRuns(new ArrayList<EvaluateDatasetRun>())
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -242,6 +244,7 @@ public class GenAiTuningServiceClientTest {
             .setTuningDataStats(TuningDataStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .addAllEvaluateDatasetRuns(new ArrayList<EvaluateDatasetRun>())
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -296,6 +299,7 @@ public class GenAiTuningServiceClientTest {
             .setTuningDataStats(TuningDataStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .addAllEvaluateDatasetRuns(new ArrayList<EvaluateDatasetRun>())
             .build();
     mockGenAiTuningService.addResponse(expectedResponse);
 
@@ -506,6 +510,7 @@ public class GenAiTuningServiceClientTest {
             .setTuningDataStats(TuningDataStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .addAllEvaluateDatasetRuns(new ArrayList<EvaluateDatasetRun>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -571,6 +576,7 @@ public class GenAiTuningServiceClientTest {
             .setTuningDataStats(TuningDataStats.newBuilder().build())
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
+            .addAllEvaluateDatasetRuns(new ArrayList<EvaluateDatasetRun>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

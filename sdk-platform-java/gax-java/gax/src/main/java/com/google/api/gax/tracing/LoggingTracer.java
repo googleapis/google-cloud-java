@@ -35,6 +35,7 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.logging.LoggerProvider;
 import com.google.api.gax.logging.LoggingUtils;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Strings;
 import com.google.rpc.ErrorInfo;
 import java.util.HashMap;
 import java.util.Map;
@@ -77,17 +78,16 @@ class LoggingTracer extends BaseApiTracer {
     }
 
     Map<String, Object> logContext = new HashMap<>(apiTracerContext.getAttemptAttributes());
+    logContext.putAll(
+        ObservabilityUtils.getResponseAttributes(error, apiTracerContext.transport()));
 
-    logContext.put(
-        ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE,
-        ObservabilityUtils.extractStatus(error).toString());
+    if (!Strings.isNullOrEmpty(error.getMessage())) {
+      logContext.put(ObservabilityAttributes.EXCEPTION_MESSAGE_ATTRIBUTE, error.getMessage());
+    }
 
     ErrorInfo errorInfo = ObservabilityUtils.extractErrorInfo(error);
     if (errorInfo != null) {
-      if (errorInfo.getReason() != null && !errorInfo.getReason().isEmpty()) {
-        logContext.put(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, errorInfo.getReason());
-      }
-      if (errorInfo.getDomain() != null && !errorInfo.getDomain().isEmpty()) {
+      if (!Strings.isNullOrEmpty(errorInfo.getDomain())) {
         logContext.put(ObservabilityAttributes.ERROR_DOMAIN_ATTRIBUTE, errorInfo.getDomain());
       }
       if (errorInfo.getMetadataMap() != null) {

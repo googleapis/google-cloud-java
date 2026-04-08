@@ -183,4 +183,48 @@ public interface StreamingSynthesizeConfigOrBuilder
    */
   com.google.cloud.texttospeech.v1beta1.CustomPronunciationsOrBuilder
       getCustomPronunciationsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Advanced voice options.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the advancedVoiceOptions field is set.
+   */
+  boolean hasAdvancedVoiceOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Advanced voice options.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The advancedVoiceOptions.
+   */
+  com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions getAdvancedVoiceOptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Advanced voice options.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.texttospeech.v1beta1.AdvancedVoiceOptions advanced_voice_options = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.texttospeech.v1beta1.AdvancedVoiceOptionsOrBuilder
+      getAdvancedVoiceOptionsOrBuilder();
 }

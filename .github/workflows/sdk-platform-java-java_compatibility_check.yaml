@@ -43,9 +43,11 @@ jobs:
         distribution: temurin
         cache: maven
     - name: Install sdk-platform-modules to local Maven repository
-      run: |
-        mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip -Denforcer.skip
-      working-directory: sdk-platform-java
+      shell: bash
+      run: .kokoro/build.sh
+      env:
+        BUILD_SUBDIR: sdk-platform-java
+        JOB_TYPE: install
     - name: Check Java 8 compatibility for class files
       shell: bash
       run: |

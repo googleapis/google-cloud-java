@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AddRuleRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.DeleteRegionSecurityPolicyRequest;
 import com.google.cloud.compute.v1.GetRegionSecurityPolicyRequest;
@@ -635,6 +636,27 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate ADD_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/securityPolicies/{security_policy}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/securityPolicies/{security_policy}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/securityPolicies/{security_policy}");
+  private static final PathTemplate GET_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/securityPolicies/{security_policy}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/securityPolicies/{security_policy}");
+  private static final PathTemplate PATCH_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/securityPolicies/{security_policy}");
+  private static final PathTemplate REMOVE_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/securityPolicies/{security_policy}");
+  private static final PathTemplate SET_LABELS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/securityPolicies/{resource}");
+
   public static final HttpJsonRegionSecurityPoliciesStub create(
       RegionSecurityPoliciesStubSettings settings) throws IOException {
     return new HttpJsonRegionSecurityPoliciesStub(settings, ClientContext.create(settings));
@@ -688,6 +710,15 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                   builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put(
+                      "security_policy", String.valueOf(request.getSecurityPolicy()));
+                  return ADD_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<DeleteRegionSecurityPolicyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteRegionSecurityPolicyRequest, Operation>newBuilder()
@@ -701,6 +732,15 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                   builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put(
+                      "security_policy", String.valueOf(request.getSecurityPolicy()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetRegionSecurityPolicyRequest, SecurityPolicy> getTransportSettings =
         HttpJsonCallSettings.<GetRegionSecurityPolicyRequest, SecurityPolicy>newBuilder()
@@ -713,6 +753,15 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put(
+                      "security_policy", String.valueOf(request.getSecurityPolicy()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetRuleRegionSecurityPolicyRequest, SecurityPolicyRule>
@@ -729,6 +778,15 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                       builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put(
+                          "security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return GET_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertRegionSecurityPolicyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionSecurityPolicyRequest, Operation>newBuilder()
@@ -740,6 +798,13 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListRegionSecurityPoliciesRequest, SecurityPolicyList>
@@ -754,6 +819,13 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchRegionSecurityPolicyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRegionSecurityPolicyRequest, Operation>newBuilder()
@@ -766,6 +838,15 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put(
+                      "security_policy", String.valueOf(request.getSecurityPolicy()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<PatchRuleRegionSecurityPolicyRequest, Operation>
@@ -781,6 +862,15 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                       builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put(
+                          "security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return PATCH_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<RemoveRuleRegionSecurityPolicyRequest, Operation>
         removeRuleTransportSettings =
@@ -795,6 +885,15 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                       builder.add("security_policy", String.valueOf(request.getSecurityPolicy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put(
+                          "security_policy", String.valueOf(request.getSecurityPolicy()));
+                      return REMOVE_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetLabelsRegionSecurityPolicyRequest, Operation>
         setLabelsTransportSettings =
@@ -808,6 +907,14 @@ public class HttpJsonRegionSecurityPoliciesStub extends RegionSecurityPoliciesSt
                       builder.add("region", String.valueOf(request.getRegion()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return SET_LABELS_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
 

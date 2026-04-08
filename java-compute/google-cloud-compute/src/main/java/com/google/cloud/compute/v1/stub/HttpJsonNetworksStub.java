@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AddPeeringNetworkRequest;
 import com.google.cloud.compute.v1.DeleteNetworkRequest;
 import com.google.cloud.compute.v1.ExchangedPeeringRoutesList;
@@ -713,6 +714,31 @@ public class HttpJsonNetworksStub extends NetworksStub {
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate ADD_PEERING_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/networks/{network}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/networks/{network}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/networks/{network}");
+  private static final PathTemplate GET_EFFECTIVE_FIREWALLS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/networks/{network}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_PEERING_ROUTES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/networks/{network}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/networks/{network}");
+  private static final PathTemplate REMOVE_PEERING_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/networks/{network}");
+  private static final PathTemplate REQUEST_REMOVE_PEERING_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/networks/{network}");
+  private static final PathTemplate SWITCH_TO_CUSTOM_MODE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/networks/{network}");
+  private static final PathTemplate UPDATE_PEERING_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/networks/{network}");
+
   public static final HttpJsonNetworksStub create(NetworksStubSettings settings)
       throws IOException {
     return new HttpJsonNetworksStub(settings, ClientContext.create(settings));
@@ -763,6 +789,13 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("network", String.valueOf(request.getNetwork()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return ADD_PEERING_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<DeleteNetworkRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteNetworkRequest, Operation>newBuilder()
@@ -775,6 +808,13 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("network", String.valueOf(request.getNetwork()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetNetworkRequest, Network> getTransportSettings =
         HttpJsonCallSettings.<GetNetworkRequest, Network>newBuilder()
@@ -786,6 +826,13 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   builder.add("network", String.valueOf(request.getNetwork()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("network", String.valueOf(request.getNetwork()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetEffectiveFirewallsNetworkRequest, NetworksGetEffectiveFirewallsResponse>
@@ -802,6 +849,14 @@ public class HttpJsonNetworksStub extends NetworksStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("network", String.valueOf(request.getNetwork()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return GET_EFFECTIVE_FIREWALLS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertNetworkRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertNetworkRequest, Operation>newBuilder()
@@ -813,6 +868,12 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListNetworksRequest, NetworkList> listTransportSettings =
         HttpJsonCallSettings.<ListNetworksRequest, NetworkList>newBuilder()
@@ -823,6 +884,12 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListPeeringRoutesNetworksRequest, ExchangedPeeringRoutesList>
@@ -838,6 +905,14 @@ public class HttpJsonNetworksStub extends NetworksStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("network", String.valueOf(request.getNetwork()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return LIST_PEERING_ROUTES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchNetworkRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchNetworkRequest, Operation>newBuilder()
@@ -850,6 +925,13 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("network", String.valueOf(request.getNetwork()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<RemovePeeringNetworkRequest, Operation> removePeeringTransportSettings =
         HttpJsonCallSettings.<RemovePeeringNetworkRequest, Operation>newBuilder()
@@ -861,6 +943,13 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   builder.add("network", String.valueOf(request.getNetwork()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("network", String.valueOf(request.getNetwork()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return REMOVE_PEERING_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<RequestRemovePeeringNetworkRequest, Operation>
@@ -875,6 +964,14 @@ public class HttpJsonNetworksStub extends NetworksStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("network", String.valueOf(request.getNetwork()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return REQUEST_REMOVE_PEERING_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SwitchToCustomModeNetworkRequest, Operation>
         switchToCustomModeTransportSettings =
@@ -888,6 +985,14 @@ public class HttpJsonNetworksStub extends NetworksStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("network", String.valueOf(request.getNetwork()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return SWITCH_TO_CUSTOM_MODE_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<UpdatePeeringNetworkRequest, Operation> updatePeeringTransportSettings =
         HttpJsonCallSettings.<UpdatePeeringNetworkRequest, Operation>newBuilder()
@@ -899,6 +1004,13 @@ public class HttpJsonNetworksStub extends NetworksStub {
                   builder.add("network", String.valueOf(request.getNetwork()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("network", String.valueOf(request.getNetwork()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return UPDATE_PEERING_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

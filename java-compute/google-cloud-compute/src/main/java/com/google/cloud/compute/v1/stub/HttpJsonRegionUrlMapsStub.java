@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteRegionUrlMapRequest;
 import com.google.cloud.compute.v1.GetRegionUrlMapRequest;
 import com.google.cloud.compute.v1.InsertRegionUrlMapRequest;
@@ -426,6 +427,21 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/urlMaps/{url_map}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/urlMaps/{url_map}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/urlMaps/{url_map}");
+  private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/urlMaps/{url_map}");
+  private static final PathTemplate VALIDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/urlMaps/{url_map}");
+
   public static final HttpJsonRegionUrlMapsStub create(RegionUrlMapsStubSettings settings)
       throws IOException {
     return new HttpJsonRegionUrlMapsStub(settings, ClientContext.create(settings));
@@ -479,6 +495,14 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                   builder.add("url_map", String.valueOf(request.getUrlMap()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("url_map", String.valueOf(request.getUrlMap()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetRegionUrlMapRequest, UrlMap> getTransportSettings =
         HttpJsonCallSettings.<GetRegionUrlMapRequest, UrlMap>newBuilder()
@@ -492,6 +516,14 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                   builder.add("url_map", String.valueOf(request.getUrlMap()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("url_map", String.valueOf(request.getUrlMap()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertRegionUrlMapRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRegionUrlMapRequest, Operation>newBuilder()
@@ -504,6 +536,13 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListRegionUrlMapsRequest, UrlMapList> listTransportSettings =
         HttpJsonCallSettings.<ListRegionUrlMapsRequest, UrlMapList>newBuilder()
@@ -515,6 +554,13 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<PatchRegionUrlMapRequest, Operation> patchTransportSettings =
@@ -529,6 +575,14 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                   builder.add("url_map", String.valueOf(request.getUrlMap()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("url_map", String.valueOf(request.getUrlMap()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<UpdateRegionUrlMapRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateRegionUrlMapRequest, Operation>newBuilder()
@@ -541,6 +595,14 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("url_map", String.valueOf(request.getUrlMap()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("url_map", String.valueOf(request.getUrlMap()));
+                  return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ValidateRegionUrlMapRequest, UrlMapsValidateResponse>
@@ -555,6 +617,14 @@ public class HttpJsonRegionUrlMapsStub extends RegionUrlMapsStub {
                       builder.add("region", String.valueOf(request.getRegion()));
                       builder.add("url_map", String.valueOf(request.getUrlMap()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("url_map", String.valueOf(request.getUrlMap()));
+                      return VALIDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
 

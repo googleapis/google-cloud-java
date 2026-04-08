@@ -34,6 +34,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListSubnetworksRequest;
 import com.google.cloud.compute.v1.DeleteSubnetworkRequest;
 import com.google.cloud.compute.v1.ExpandIpCidrRangeSubnetworkRequest;
@@ -734,6 +735,31 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/subnetworks/{subnetwork}");
+  private static final PathTemplate EXPAND_IP_CIDR_RANGE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/subnetworks/{subnetwork}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/subnetworks/{subnetwork}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/subnetworks/{resource}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_USABLE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/subnetworks/{subnetwork}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/subnetworks/{resource}");
+  private static final PathTemplate SET_PRIVATE_IP_GOOGLE_ACCESS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/subnetworks/{subnetwork}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/subnetworks/{resource}");
+
   public static final HttpJsonSubnetworksStub create(SubnetworksStubSettings settings)
       throws IOException {
     return new HttpJsonSubnetworksStub(settings, ClientContext.create(settings));
@@ -786,6 +812,13 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteSubnetworkRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteSubnetworkRequest, Operation>newBuilder()
@@ -798,6 +831,14 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("subnetwork", String.valueOf(request.getSubnetwork()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("subnetwork", String.valueOf(request.getSubnetwork()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ExpandIpCidrRangeSubnetworkRequest, Operation>
@@ -813,6 +854,16 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       builder.add("subnetwork", String.valueOf(request.getSubnetwork()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put(
+                          "subnetwork", String.valueOf(request.getSubnetwork()));
+                      return EXPAND_IP_CIDR_RANGE_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetSubnetworkRequest, Subnetwork> getTransportSettings =
         HttpJsonCallSettings.<GetSubnetworkRequest, Subnetwork>newBuilder()
@@ -825,6 +876,14 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("subnetwork", String.valueOf(request.getSubnetwork()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("subnetwork", String.valueOf(request.getSubnetwork()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetIamPolicySubnetworkRequest, Policy> getIamPolicyTransportSettings =
@@ -839,6 +898,14 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertSubnetworkRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertSubnetworkRequest, Operation>newBuilder()
@@ -851,6 +918,13 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListSubnetworksRequest, SubnetworkList> listTransportSettings =
         HttpJsonCallSettings.<ListSubnetworksRequest, SubnetworkList>newBuilder()
@@ -862,6 +936,13 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListUsableSubnetworksRequest, UsableSubnetworksAggregatedList>
@@ -876,6 +957,12 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return LIST_USABLE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchSubnetworkRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchSubnetworkRequest, Operation>newBuilder()
@@ -889,6 +976,14 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                   builder.add("subnetwork", String.valueOf(request.getSubnetwork()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("subnetwork", String.valueOf(request.getSubnetwork()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<SetIamPolicySubnetworkRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicySubnetworkRequest, Policy>newBuilder()
@@ -901,6 +996,14 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetPrivateIpGoogleAccessSubnetworkRequest, Operation>
@@ -916,6 +1019,16 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       builder.add("subnetwork", String.valueOf(request.getSubnetwork()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put(
+                          "subnetwork", String.valueOf(request.getSubnetwork()));
+                      return SET_PRIVATE_IP_GOOGLE_ACCESS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<TestIamPermissionsSubnetworkRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -930,6 +1043,15 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                       builder.add("region", String.valueOf(request.getRegion()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 

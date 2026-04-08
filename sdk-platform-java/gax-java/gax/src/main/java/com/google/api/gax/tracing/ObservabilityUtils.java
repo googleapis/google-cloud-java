@@ -37,20 +37,12 @@ import com.google.common.collect.ImmutableSet;
 import com.google.rpc.ErrorInfo;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CancellationException;
 import javax.annotation.Nullable;
 
 final class ObservabilityUtils {
-
-  /**
-   * Extracts a low-cardinality string representing the specific classification of the error to be
-   * used in the {@link ObservabilityAttributes#ERROR_TYPE_ATTRIBUTE} attribute. See {@link
-   * ErrorTypeUtil#extractErrorType} for extended documentation.
-   */
-  static String extractErrorType(@Nullable Throwable error) {
-    return ErrorTypeUtil.extractErrorType(error);
-  }
 
   /** Function to extract the status of the error as a canonical code. */
   static StatusCode.Code extractStatus(@Nullable Throwable error) {
@@ -170,17 +162,21 @@ final class ObservabilityUtils {
     return Joiner.on('&').join(redactedParams);
   }
 
-  static void populateStatusAttributes(
-      Map<String, Object> attributes,
-      @Nullable Throwable error,
-      ApiTracerContext.Transport transport) {
+  static Map<String, Object> getResponseAttributes(
+      @Nullable Throwable error, ApiTracerContext.Transport transport) {
+    Map<String, Object> attributes = new HashMap<>();
     StatusCode.Code code = extractStatus(error);
+    attributes.put(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, code.toString());
     if (transport == ApiTracerContext.Transport.HTTP) {
       attributes.put(
           ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE, (long) code.getHttpStatusCode());
-    } else {
-      attributes.put(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, code.toString());
     }
+    if (error != null) {
+      attributes.put(
+          ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE, ErrorTypeUtil.extractErrorType(error));
+      attributes.put(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE, error.getClass().getName());
+    }
+    return attributes;
   }
 
   /** Function to extract the ErrorInfo payload from the error, if available */

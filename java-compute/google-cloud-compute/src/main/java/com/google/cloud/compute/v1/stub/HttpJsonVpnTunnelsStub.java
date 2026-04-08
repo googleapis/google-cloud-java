@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListVpnTunnelsRequest;
 import com.google.cloud.compute.v1.DeleteVpnTunnelRequest;
 import com.google.cloud.compute.v1.GetVpnTunnelRequest;
@@ -396,6 +397,19 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/vpnTunnels/{vpn_tunnel}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/vpnTunnels/{vpn_tunnel}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate SET_LABELS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/vpnTunnels/{resource}");
+
   public static final HttpJsonVpnTunnelsStub create(VpnTunnelsStubSettings settings)
       throws IOException {
     return new HttpJsonVpnTunnelsStub(settings, ClientContext.create(settings));
@@ -448,6 +462,13 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteVpnTunnelRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteVpnTunnelRequest, Operation>newBuilder()
@@ -460,6 +481,14 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("vpn_tunnel", String.valueOf(request.getVpnTunnel()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("vpn_tunnel", String.valueOf(request.getVpnTunnel()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetVpnTunnelRequest, VpnTunnel> getTransportSettings =
@@ -474,6 +503,14 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                   builder.add("vpn_tunnel", String.valueOf(request.getVpnTunnel()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("vpn_tunnel", String.valueOf(request.getVpnTunnel()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertVpnTunnelRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertVpnTunnelRequest, Operation>newBuilder()
@@ -485,6 +522,13 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListVpnTunnelsRequest, VpnTunnelList> listTransportSettings =
@@ -498,6 +542,13 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<SetLabelsVpnTunnelRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsVpnTunnelRequest, Operation>newBuilder()
@@ -510,6 +561,14 @@ public class HttpJsonVpnTunnelsStub extends VpnTunnelsStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return SET_LABELS_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

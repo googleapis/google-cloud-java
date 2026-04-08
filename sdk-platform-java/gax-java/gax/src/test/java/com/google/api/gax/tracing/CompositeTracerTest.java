@@ -270,4 +270,13 @@ class CompositeTracerTest {
     verify(child1).batchRequestSent(10L, 100L);
     verify(child2).batchRequestSent(10L, 100L);
   }
+
+  @Test
+  void testInjectTraceContext() {
+    java.util.Map<String, String> carrier = new java.util.HashMap<>();
+    compositeTracer.injectTraceContext(carrier);
+    InOrder inOrder = inOrder(child1, child2);
+    inOrder.verify(child1).injectTraceContext(carrier);
+    inOrder.verify(child2).injectTraceContext(carrier);
+  }
 }

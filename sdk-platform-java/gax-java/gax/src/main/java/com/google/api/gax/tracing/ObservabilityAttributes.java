@@ -50,12 +50,6 @@ public class ObservabilityAttributes {
   /** The repository of the client library (e.g., "googleapis/google-cloud-java"). */
   public static final String REPO_ATTRIBUTE = "gcp.client.repo";
 
-  /** The artifact name of the client library (e.g., "google-cloud-vision"). */
-  public static final String ARTIFACT_ATTRIBUTE = "gcp.client.artifact";
-
-  /** The version of the client library (e.g., "1.2.3"). */
-  public static final String VERSION_ATTRIBUTE = "gcp.client.version";
-
   /** The full RPC method name, including package, service, and method. */
   public static final String GRPC_RPC_METHOD_ATTRIBUTE = "rpc.method";
 
@@ -90,6 +84,9 @@ public class ObservabilityAttributes {
 
   /** If the error was caused by an exception, the exception class name. */
   public static final String EXCEPTION_TYPE_ATTRIBUTE = "exception.type";
+
+  /** If the error was caused by an exception, the exception message. */
+  public static final String EXCEPTION_MESSAGE_ATTRIBUTE = "exception.message";
 
   /** Size of the response body in bytes. */
   public static final String HTTP_RESPONSE_BODY_SIZE = "http.response.body.size";

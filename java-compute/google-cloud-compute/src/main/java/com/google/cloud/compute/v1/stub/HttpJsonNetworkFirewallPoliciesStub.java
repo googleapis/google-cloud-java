@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AddAssociationNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.AddPacketMirroringRuleNetworkFirewallPolicyRequest;
 import com.google.cloud.compute.v1.AddRuleNetworkFirewallPolicyRequest;
@@ -1262,6 +1263,49 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate ADD_ASSOCIATION_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate ADD_PACKET_MIRRORING_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate ADD_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate CLONE_RULES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate GET_ASSOCIATION_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{resource}");
+  private static final PathTemplate GET_PACKET_MIRRORING_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate GET_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate PATCH_PACKET_MIRRORING_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate PATCH_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate REMOVE_ASSOCIATION_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate REMOVE_PACKET_MIRRORING_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate REMOVE_RULE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{firewall_policy}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{resource}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/firewallPolicies/{resource}");
+
   public static final HttpJsonNetworkFirewallPoliciesStub create(
       NetworkFirewallPoliciesStubSettings settings) throws IOException {
     return new HttpJsonNetworkFirewallPoliciesStub(settings, ClientContext.create(settings));
@@ -1316,6 +1360,15 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return ADD_ASSOCIATION_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<AddPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
         addPacketMirroringRuleTransportSettings =
@@ -1330,6 +1383,15 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return ADD_PACKET_MIRRORING_RULE_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<AddRuleNetworkFirewallPolicyRequest, Operation> addRuleTransportSettings =
         HttpJsonCallSettings.<AddRuleNetworkFirewallPolicyRequest, Operation>newBuilder()
@@ -1341,6 +1403,14 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                   builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return ADD_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<
@@ -1357,6 +1427,13 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<CloneRulesNetworkFirewallPolicyRequest, Operation>
         cloneRulesTransportSettings =
@@ -1370,6 +1447,14 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return CLONE_RULES_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteNetworkFirewallPolicyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteNetworkFirewallPolicyRequest, Operation>newBuilder()
@@ -1382,6 +1467,14 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetNetworkFirewallPolicyRequest, FirewallPolicy> getTransportSettings =
         HttpJsonCallSettings.<GetNetworkFirewallPolicyRequest, FirewallPolicy>newBuilder()
@@ -1393,6 +1486,14 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                   builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetAssociationNetworkFirewallPolicyRequest, FirewallPolicyAssociation>
@@ -1408,6 +1509,15 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return GET_ASSOCIATION_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetIamPolicyNetworkFirewallPolicyRequest, Policy>
         getIamPolicyTransportSettings =
@@ -1420,6 +1530,14 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<GetPacketMirroringRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
@@ -1436,6 +1554,15 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return GET_PACKET_MIRRORING_RULE_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetRuleNetworkFirewallPolicyRequest, FirewallPolicyRule>
         getRuleTransportSettings =
@@ -1450,6 +1577,14 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return GET_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertNetworkFirewallPolicyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertNetworkFirewallPolicyRequest, Operation>newBuilder()
@@ -1460,6 +1595,12 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListNetworkFirewallPoliciesRequest, FirewallPolicyList>
@@ -1474,6 +1615,12 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchNetworkFirewallPolicyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchNetworkFirewallPolicyRequest, Operation>newBuilder()
@@ -1485,6 +1632,14 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                   builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<PatchPacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
@@ -1500,6 +1655,15 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return PATCH_PACKET_MIRRORING_RULE_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchRuleNetworkFirewallPolicyRequest, Operation>
         patchRuleTransportSettings =
@@ -1512,6 +1676,14 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("firewall_policy", String.valueOf(request.getFirewallPolicy()));
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return PATCH_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<RemoveAssociationNetworkFirewallPolicyRequest, Operation>
@@ -1527,6 +1699,15 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return REMOVE_ASSOCIATION_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<RemovePacketMirroringRuleNetworkFirewallPolicyRequest, Operation>
         removePacketMirroringRuleTransportSettings =
@@ -1541,6 +1722,15 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return REMOVE_PACKET_MIRRORING_RULE_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<RemoveRuleNetworkFirewallPolicyRequest, Operation>
         removeRuleTransportSettings =
@@ -1554,6 +1744,14 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "firewall_policy", String.valueOf(request.getFirewallPolicy()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return REMOVE_RULE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetIamPolicyNetworkFirewallPolicyRequest, Policy>
         setIamPolicyTransportSettings =
@@ -1566,6 +1764,14 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<TestIamPermissionsNetworkFirewallPolicyRequest, TestPermissionsResponse>
@@ -1581,6 +1787,14 @@ public class HttpJsonNetworkFirewallPoliciesStub extends NetworkFirewallPolicies
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 

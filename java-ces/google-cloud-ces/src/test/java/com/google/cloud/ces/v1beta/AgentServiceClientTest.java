@@ -5039,6 +5039,100 @@ public class AgentServiceClientTest {
   }
 
   @Test
+  public void generateAppResourceTest() throws Exception {
+    GenerateAppResourceResponse expectedResponse =
+        GenerateAppResourceResponse.newBuilder()
+            .setGenerateResultInfo(
+                GenerateAppResourceResponse.GenerateResultInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("generateAppResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAgentService.addResponse(resultOperation);
+
+    AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+
+    GenerateAppResourceResponse actualResponse = client.generateAppResourceAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateAppResourceRequest actualRequest = ((GenerateAppResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateAppResourceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentService.addException(exception);
+
+    try {
+      AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+      client.generateAppResourceAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void generateAppResourceTest2() throws Exception {
+    GenerateAppResourceResponse expectedResponse =
+        GenerateAppResourceResponse.newBuilder()
+            .setGenerateResultInfo(
+                GenerateAppResourceResponse.GenerateResultInfo.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("generateAppResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockAgentService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+
+    GenerateAppResourceResponse actualResponse = client.generateAppResourceAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateAppResourceRequest actualRequest = ((GenerateAppResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateAppResourceExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgentService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.generateAppResourceAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void listChangelogsTest() throws Exception {
     Changelog responsesElement = Changelog.newBuilder().build();
     ListChangelogsResponse expectedResponse =

@@ -68,6 +68,2327 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
             com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Harm categories that will block the content.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory}
+   */
+  public enum HarmCategory implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>HARM_CATEGORY_UNSPECIFIED = 0;</code>
+     */
+    HARM_CATEGORY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Content that promotes violence or incites hatred against individuals or
+     * groups based on certain attributes.
+     * </pre>
+     *
+     * <code>HARM_CATEGORY_HATE_SPEECH = 1;</code>
+     */
+    HARM_CATEGORY_HATE_SPEECH(1),
+    /**
+     *
+     *
+     * <pre>
+     * Content that promotes, facilitates, or enables dangerous activities.
+     * </pre>
+     *
+     * <code>HARM_CATEGORY_DANGEROUS_CONTENT = 2;</code>
+     */
+    HARM_CATEGORY_DANGEROUS_CONTENT(2),
+    /**
+     *
+     *
+     * <pre>
+     * Abusive, threatening, or content intended to bully, torment, or ridicule.
+     * </pre>
+     *
+     * <code>HARM_CATEGORY_HARASSMENT = 3;</code>
+     */
+    HARM_CATEGORY_HARASSMENT(3),
+    /**
+     *
+     *
+     * <pre>
+     * Content that contains sexually explicit material.
+     * </pre>
+     *
+     * <code>HARM_CATEGORY_SEXUALLY_EXPLICIT = 4;</code>
+     */
+    HARM_CATEGORY_SEXUALLY_EXPLICIT(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "HarmCategory");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. This value is unused.
+     * </pre>
+     *
+     * <code>HARM_CATEGORY_UNSPECIFIED = 0;</code>
+     */
+    public static final int HARM_CATEGORY_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Content that promotes violence or incites hatred against individuals or
+     * groups based on certain attributes.
+     * </pre>
+     *
+     * <code>HARM_CATEGORY_HATE_SPEECH = 1;</code>
+     */
+    public static final int HARM_CATEGORY_HATE_SPEECH_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Content that promotes, facilitates, or enables dangerous activities.
+     * </pre>
+     *
+     * <code>HARM_CATEGORY_DANGEROUS_CONTENT = 2;</code>
+     */
+    public static final int HARM_CATEGORY_DANGEROUS_CONTENT_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Abusive, threatening, or content intended to bully, torment, or ridicule.
+     * </pre>
+     *
+     * <code>HARM_CATEGORY_HARASSMENT = 3;</code>
+     */
+    public static final int HARM_CATEGORY_HARASSMENT_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Content that contains sexually explicit material.
+     * </pre>
+     *
+     * <code>HARM_CATEGORY_SEXUALLY_EXPLICIT = 4;</code>
+     */
+    public static final int HARM_CATEGORY_SEXUALLY_EXPLICIT_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static HarmCategory valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static HarmCategory forNumber(int value) {
+      switch (value) {
+        case 0:
+          return HARM_CATEGORY_UNSPECIFIED;
+        case 1:
+          return HARM_CATEGORY_HATE_SPEECH;
+        case 2:
+          return HARM_CATEGORY_DANGEROUS_CONTENT;
+        case 3:
+          return HARM_CATEGORY_HARASSMENT;
+        case 4:
+          return HARM_CATEGORY_SEXUALLY_EXPLICIT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<HarmCategory> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<HarmCategory> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<HarmCategory>() {
+          public HarmCategory findValueByNumber(int number) {
+            return HarmCategory.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final HarmCategory[] VALUES = values();
+
+    public static HarmCategory valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private HarmCategory(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Harm block thresholds for the safety settings.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold}
+   */
+  public enum HarmBlockThreshold implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The harm block threshold is unspecified.
+     * </pre>
+     *
+     * <code>HARM_BLOCK_THRESHOLD_UNSPECIFIED = 0;</code>
+     */
+    HARM_BLOCK_THRESHOLD_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Block content with a low harm probability or higher.
+     * </pre>
+     *
+     * <code>BLOCK_LOW_AND_ABOVE = 1;</code>
+     */
+    BLOCK_LOW_AND_ABOVE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Block content with a medium harm probability or higher.
+     * </pre>
+     *
+     * <code>BLOCK_MEDIUM_AND_ABOVE = 2;</code>
+     */
+    BLOCK_MEDIUM_AND_ABOVE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Block content with a high harm probability.
+     * </pre>
+     *
+     * <code>BLOCK_ONLY_HIGH = 3;</code>
+     */
+    BLOCK_ONLY_HIGH(3),
+    /**
+     *
+     *
+     * <pre>
+     * Do not block any content, regardless of its harm probability.
+     * </pre>
+     *
+     * <code>BLOCK_NONE = 4;</code>
+     */
+    BLOCK_NONE(4),
+    /**
+     *
+     *
+     * <pre>
+     * Turn off the safety filter entirely.
+     * </pre>
+     *
+     * <code>OFF = 5;</code>
+     */
+    OFF(5),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "HarmBlockThreshold");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The harm block threshold is unspecified.
+     * </pre>
+     *
+     * <code>HARM_BLOCK_THRESHOLD_UNSPECIFIED = 0;</code>
+     */
+    public static final int HARM_BLOCK_THRESHOLD_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Block content with a low harm probability or higher.
+     * </pre>
+     *
+     * <code>BLOCK_LOW_AND_ABOVE = 1;</code>
+     */
+    public static final int BLOCK_LOW_AND_ABOVE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Block content with a medium harm probability or higher.
+     * </pre>
+     *
+     * <code>BLOCK_MEDIUM_AND_ABOVE = 2;</code>
+     */
+    public static final int BLOCK_MEDIUM_AND_ABOVE_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Block content with a high harm probability.
+     * </pre>
+     *
+     * <code>BLOCK_ONLY_HIGH = 3;</code>
+     */
+    public static final int BLOCK_ONLY_HIGH_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Do not block any content, regardless of its harm probability.
+     * </pre>
+     *
+     * <code>BLOCK_NONE = 4;</code>
+     */
+    public static final int BLOCK_NONE_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * Turn off the safety filter entirely.
+     * </pre>
+     *
+     * <code>OFF = 5;</code>
+     */
+    public static final int OFF_VALUE = 5;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static HarmBlockThreshold valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static HarmBlockThreshold forNumber(int value) {
+      switch (value) {
+        case 0:
+          return HARM_BLOCK_THRESHOLD_UNSPECIFIED;
+        case 1:
+          return BLOCK_LOW_AND_ABOVE;
+        case 2:
+          return BLOCK_MEDIUM_AND_ABOVE;
+        case 3:
+          return BLOCK_ONLY_HIGH;
+        case 4:
+          return BLOCK_NONE;
+        case 5:
+          return OFF;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<HarmBlockThreshold>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<HarmBlockThreshold>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<HarmBlockThreshold>() {
+              public HarmBlockThreshold findValueByNumber(int number) {
+                return HarmBlockThreshold.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final HarmBlockThreshold[] VALUES = values();
+
+    public static HarmBlockThreshold valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private HarmBlockThreshold(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold)
+  }
+
+  public interface SafetySettingOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The harm category to apply the safety setting to.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory category = 1;</code>
+     *
+     * @return The enum numeric value on the wire for category.
+     */
+    int getCategoryValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The harm category to apply the safety setting to.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory category = 1;</code>
+     *
+     * @return The category.
+     */
+    com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory getCategory();
+
+    /**
+     *
+     *
+     * <pre>
+     * The harm block threshold for the safety setting.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold threshold = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for threshold.
+     */
+    int getThresholdValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * The harm block threshold for the safety setting.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold threshold = 2;
+     * </code>
+     *
+     * @return The threshold.
+     */
+    com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold getThreshold();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Safety setting for a single harm category.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting}
+   */
+  public static final class SafetySetting extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting)
+      SafetySettingOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "SafetySetting");
+    }
+
+    // Use SafetySetting.newBuilder() to construct.
+    private SafetySetting(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SafetySetting() {
+      category_ = 0;
+      threshold_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.texttospeech.v1.TextToSpeechProto
+          .internal_static_google_cloud_texttospeech_v1_AdvancedVoiceOptions_SafetySetting_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.texttospeech.v1.TextToSpeechProto
+          .internal_static_google_cloud_texttospeech_v1_AdvancedVoiceOptions_SafetySetting_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting.class,
+              com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting.Builder.class);
+    }
+
+    public static final int CATEGORY_FIELD_NUMBER = 1;
+    private int category_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The harm category to apply the safety setting to.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory category = 1;</code>
+     *
+     * @return The enum numeric value on the wire for category.
+     */
+    @java.lang.Override
+    public int getCategoryValue() {
+      return category_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The harm category to apply the safety setting to.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory category = 1;</code>
+     *
+     * @return The category.
+     */
+    @java.lang.Override
+    public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory getCategory() {
+      com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory result =
+          com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory.forNumber(category_);
+      return result == null
+          ? com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory.UNRECOGNIZED
+          : result;
+    }
+
+    public static final int THRESHOLD_FIELD_NUMBER = 2;
+    private int threshold_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The harm block threshold for the safety setting.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold threshold = 2;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for threshold.
+     */
+    @java.lang.Override
+    public int getThresholdValue() {
+      return threshold_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The harm block threshold for the safety setting.
+     * </pre>
+     *
+     * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold threshold = 2;
+     * </code>
+     *
+     * @return The threshold.
+     */
+    @java.lang.Override
+    public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold getThreshold() {
+      com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold result =
+          com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold.forNumber(
+              threshold_);
+      return result == null
+          ? com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (category_
+          != com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory
+              .HARM_CATEGORY_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, category_);
+      }
+      if (threshold_
+          != com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold
+              .HARM_BLOCK_THRESHOLD_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(2, threshold_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (category_
+          != com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory
+              .HARM_CATEGORY_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, category_);
+      }
+      if (threshold_
+          != com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold
+              .HARM_BLOCK_THRESHOLD_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, threshold_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting other =
+          (com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting) obj;
+
+      if (category_ != other.category_) return false;
+      if (threshold_ != other.threshold_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
+      hash = (53 * hash) + category_;
+      hash = (37 * hash) + THRESHOLD_FIELD_NUMBER;
+      hash = (53 * hash) + threshold_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Safety setting for a single harm category.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting)
+        com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.texttospeech.v1.TextToSpeechProto
+            .internal_static_google_cloud_texttospeech_v1_AdvancedVoiceOptions_SafetySetting_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.texttospeech.v1.TextToSpeechProto
+            .internal_static_google_cloud_texttospeech_v1_AdvancedVoiceOptions_SafetySetting_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting.class,
+                com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        category_ = 0;
+        threshold_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.texttospeech.v1.TextToSpeechProto
+            .internal_static_google_cloud_texttospeech_v1_AdvancedVoiceOptions_SafetySetting_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting
+          getDefaultInstanceForType() {
+        return com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting build() {
+        com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting buildPartial() {
+        com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting result =
+            new com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.category_ = category_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.threshold_ = threshold_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting) {
+          return mergeFrom(
+              (com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting other) {
+        if (other
+            == com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting
+                .getDefaultInstance()) return this;
+        if (other.category_ != 0) {
+          setCategoryValue(other.getCategoryValue());
+        }
+        if (other.threshold_ != 0) {
+          setThresholdValue(other.getThresholdValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  category_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  threshold_ = input.readEnum();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int category_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The harm category to apply the safety setting to.
+       * </pre>
+       *
+       * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory category = 1;</code>
+       *
+       * @return The enum numeric value on the wire for category.
+       */
+      @java.lang.Override
+      public int getCategoryValue() {
+        return category_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The harm category to apply the safety setting to.
+       * </pre>
+       *
+       * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory category = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for category to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCategoryValue(int value) {
+        category_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The harm category to apply the safety setting to.
+       * </pre>
+       *
+       * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory category = 1;</code>
+       *
+       * @return The category.
+       */
+      @java.lang.Override
+      public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory getCategory() {
+        com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory result =
+            com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory.forNumber(category_);
+        return result == null
+            ? com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The harm category to apply the safety setting to.
+       * </pre>
+       *
+       * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory category = 1;</code>
+       *
+       * @param value The category to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCategory(
+          com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        category_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The harm category to apply the safety setting to.
+       * </pre>
+       *
+       * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmCategory category = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCategory() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        category_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int threshold_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The harm block threshold for the safety setting.
+       * </pre>
+       *
+       * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold threshold = 2;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for threshold.
+       */
+      @java.lang.Override
+      public int getThresholdValue() {
+        return threshold_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The harm block threshold for the safety setting.
+       * </pre>
+       *
+       * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold threshold = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for threshold to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThresholdValue(int value) {
+        threshold_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The harm block threshold for the safety setting.
+       * </pre>
+       *
+       * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold threshold = 2;
+       * </code>
+       *
+       * @return The threshold.
+       */
+      @java.lang.Override
+      public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold
+          getThreshold() {
+        com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold result =
+            com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold.forNumber(
+                threshold_);
+        return result == null
+            ? com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The harm block threshold for the safety setting.
+       * </pre>
+       *
+       * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold threshold = 2;
+       * </code>
+       *
+       * @param value The threshold to set.
+       * @return This builder for chaining.
+       */
+      public Builder setThreshold(
+          com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        threshold_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The harm block threshold for the safety setting.
+       * </pre>
+       *
+       * <code>.google.cloud.texttospeech.v1.AdvancedVoiceOptions.HarmBlockThreshold threshold = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearThreshold() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        threshold_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting)
+    private static final com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting();
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SafetySetting> PARSER =
+        new com.google.protobuf.AbstractParser<SafetySetting>() {
+          @java.lang.Override
+          public SafetySetting parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SafetySetting> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SafetySetting> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface SafetySettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The safety settings for the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+     * </code>
+     */
+    java.util.List<com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting>
+        getSettingsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The safety settings for the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+     * </code>
+     */
+    com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting getSettings(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * The safety settings for the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+     * </code>
+     */
+    int getSettingsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * The safety settings for the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+     * </code>
+     */
+    java.util.List<
+            ? extends com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingOrBuilder>
+        getSettingsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * The safety settings for the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+     * </code>
+     */
+    com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingOrBuilder
+        getSettingsOrBuilder(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Safety settings for the request.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings}
+   */
+  public static final class SafetySettings extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings)
+      SafetySettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "SafetySettings");
+    }
+
+    // Use SafetySettings.newBuilder() to construct.
+    private SafetySettings(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SafetySettings() {
+      settings_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.texttospeech.v1.TextToSpeechProto
+          .internal_static_google_cloud_texttospeech_v1_AdvancedVoiceOptions_SafetySettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.texttospeech.v1.TextToSpeechProto
+          .internal_static_google_cloud_texttospeech_v1_AdvancedVoiceOptions_SafetySettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings.class,
+              com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings.Builder.class);
+    }
+
+    public static final int SETTINGS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting>
+        settings_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The safety settings for the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting>
+        getSettingsList() {
+      return settings_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The safety settings for the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingOrBuilder>
+        getSettingsOrBuilderList() {
+      return settings_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The safety settings for the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public int getSettingsCount() {
+      return settings_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The safety settings for the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting getSettings(
+        int index) {
+      return settings_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The safety settings for the request.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingOrBuilder
+        getSettingsOrBuilder(int index) {
+      return settings_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < settings_.size(); i++) {
+        output.writeMessage(1, settings_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < settings_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, settings_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings other =
+          (com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings) obj;
+
+      if (!getSettingsList().equals(other.getSettingsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getSettingsCount() > 0) {
+        hash = (37 * hash) + SETTINGS_FIELD_NUMBER;
+        hash = (53 * hash) + getSettingsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Safety settings for the request.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings)
+        com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.texttospeech.v1.TextToSpeechProto
+            .internal_static_google_cloud_texttospeech_v1_AdvancedVoiceOptions_SafetySettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.texttospeech.v1.TextToSpeechProto
+            .internal_static_google_cloud_texttospeech_v1_AdvancedVoiceOptions_SafetySettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings.class,
+                com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (settingsBuilder_ == null) {
+          settings_ = java.util.Collections.emptyList();
+        } else {
+          settings_ = null;
+          settingsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.texttospeech.v1.TextToSpeechProto
+            .internal_static_google_cloud_texttospeech_v1_AdvancedVoiceOptions_SafetySettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings
+          getDefaultInstanceForType() {
+        return com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings build() {
+        com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings buildPartial() {
+        com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings result =
+            new com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings result) {
+        if (settingsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            settings_ = java.util.Collections.unmodifiableList(settings_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.settings_ = settings_;
+        } else {
+          result.settings_ = settingsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings) {
+          return mergeFrom(
+              (com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings other) {
+        if (other
+            == com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings
+                .getDefaultInstance()) return this;
+        if (settingsBuilder_ == null) {
+          if (!other.settings_.isEmpty()) {
+            if (settings_.isEmpty()) {
+              settings_ = other.settings_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSettingsIsMutable();
+              settings_.addAll(other.settings_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.settings_.isEmpty()) {
+            if (settingsBuilder_.isEmpty()) {
+              settingsBuilder_.dispose();
+              settingsBuilder_ = null;
+              settings_ = other.settings_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              settingsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetSettingsFieldBuilder()
+                      : null;
+            } else {
+              settingsBuilder_.addAllMessages(other.settings_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting m =
+                      input.readMessage(
+                          com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting
+                              .parser(),
+                          extensionRegistry);
+                  if (settingsBuilder_ == null) {
+                    ensureSettingsIsMutable();
+                    settings_.add(m);
+                  } else {
+                    settingsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting>
+          settings_ = java.util.Collections.emptyList();
+
+      private void ensureSettingsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          settings_ =
+              new java.util.ArrayList<
+                  com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting>(settings_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting,
+              com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting.Builder,
+              com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingOrBuilder>
+          settingsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting>
+          getSettingsList() {
+        if (settingsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(settings_);
+        } else {
+          return settingsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public int getSettingsCount() {
+        if (settingsBuilder_ == null) {
+          return settings_.size();
+        } else {
+          return settingsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting getSettings(
+          int index) {
+        if (settingsBuilder_ == null) {
+          return settings_.get(index);
+        } else {
+          return settingsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public Builder setSettings(
+          int index, com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting value) {
+        if (settingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSettingsIsMutable();
+          settings_.set(index, value);
+          onChanged();
+        } else {
+          settingsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public Builder setSettings(
+          int index,
+          com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting.Builder
+              builderForValue) {
+        if (settingsBuilder_ == null) {
+          ensureSettingsIsMutable();
+          settings_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          settingsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public Builder addSettings(
+          com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting value) {
+        if (settingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSettingsIsMutable();
+          settings_.add(value);
+          onChanged();
+        } else {
+          settingsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public Builder addSettings(
+          int index, com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting value) {
+        if (settingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSettingsIsMutable();
+          settings_.add(index, value);
+          onChanged();
+        } else {
+          settingsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public Builder addSettings(
+          com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting.Builder
+              builderForValue) {
+        if (settingsBuilder_ == null) {
+          ensureSettingsIsMutable();
+          settings_.add(builderForValue.build());
+          onChanged();
+        } else {
+          settingsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public Builder addSettings(
+          int index,
+          com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting.Builder
+              builderForValue) {
+        if (settingsBuilder_ == null) {
+          ensureSettingsIsMutable();
+          settings_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          settingsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public Builder addAllSettings(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting>
+              values) {
+        if (settingsBuilder_ == null) {
+          ensureSettingsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, settings_);
+          onChanged();
+        } else {
+          settingsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public Builder clearSettings() {
+        if (settingsBuilder_ == null) {
+          settings_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          settingsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public Builder removeSettings(int index) {
+        if (settingsBuilder_ == null) {
+          ensureSettingsIsMutable();
+          settings_.remove(index);
+          onChanged();
+        } else {
+          settingsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting.Builder
+          getSettingsBuilder(int index) {
+        return internalGetSettingsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingOrBuilder
+          getSettingsOrBuilder(int index) {
+        if (settingsBuilder_ == null) {
+          return settings_.get(index);
+        } else {
+          return settingsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingOrBuilder>
+          getSettingsOrBuilderList() {
+        if (settingsBuilder_ != null) {
+          return settingsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(settings_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting.Builder
+          addSettingsBuilder() {
+        return internalGetSettingsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting.Builder
+          addSettingsBuilder(int index) {
+        return internalGetSettingsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The safety settings for the request.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting settings = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting.Builder>
+          getSettingsBuilderList() {
+        return internalGetSettingsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting,
+              com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting.Builder,
+              com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingOrBuilder>
+          internalGetSettingsFieldBuilder() {
+        if (settingsBuilder_ == null) {
+          settingsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting,
+                  com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySetting.Builder,
+                  com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingOrBuilder>(
+                  settings_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+          settings_ = null;
+        }
+        return settingsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings)
+    private static final com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings();
+    }
+
+    public static com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SafetySettings> PARSER =
+        new com.google.protobuf.AbstractParser<SafetySettings>() {
+          @java.lang.Override
+          public SafetySettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SafetySettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SafetySettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int LOW_LATENCY_JOURNEY_SYNTHESIS_FIELD_NUMBER = 1;
   private boolean lowLatencyJourneySynthesis_ = false;
@@ -113,21 +2434,128 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Input only. If true, relaxes safety filters for Gemini TTS. Only
-   * supported for accounts linked to Invoiced (Offline) Cloud billing accounts.
-   * Otherwise, will return result
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+   * Optional. Input only. Deprecated, use safety_settings instead.
+   * If true, relaxes safety filters for Gemini TTS.
    * </pre>
    *
    * <code>
-   * bool relax_safety_filters = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * bool relax_safety_filters = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.texttospeech.v1.AdvancedVoiceOptions.relax_safety_filters is
+   *     deprecated. See google/cloud/texttospeech/v1/cloud_tts.proto;l=224
    * @return The relaxSafetyFilters.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getRelaxSafetyFilters() {
     return relaxSafetyFilters_;
+  }
+
+  public static final int SAFETY_SETTINGS_FIELD_NUMBER = 9;
+  private com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safetySettings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. This applies to Gemini TTS only. If set, the category
+   * specified in the safety setting will be blocked if the harm probability is
+   * above the threshold. Otherwise, the safety filter will be disabled by
+   * default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safety_settings = 9 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the safetySettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasSafetySettings() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. This applies to Gemini TTS only. If set, the category
+   * specified in the safety setting will be blocked if the harm probability is
+   * above the threshold. Otherwise, the safety filter will be disabled by
+   * default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safety_settings = 9 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The safetySettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings getSafetySettings() {
+    return safetySettings_ == null
+        ? com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings.getDefaultInstance()
+        : safetySettings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. This applies to Gemini TTS only. If set, the category
+   * specified in the safety setting will be blocked if the harm probability is
+   * above the threshold. Otherwise, the safety filter will be disabled by
+   * default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safety_settings = 9 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingsOrBuilder
+      getSafetySettingsOrBuilder() {
+    return safetySettings_ == null
+        ? com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings.getDefaultInstance()
+        : safetySettings_;
+  }
+
+  public static final int ENABLE_TEXTNORM_FIELD_NUMBER = 2;
+  private boolean enableTextnorm_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, textnorm will be applied to text input. This feature is
+   * enabled by default. Only applies for Gemini TTS.
+   * </pre>
+   *
+   * <code>optional bool enable_textnorm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the enableTextnorm field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnableTextnorm() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, textnorm will be applied to text input. This feature is
+   * enabled by default. Only applies for Gemini TTS.
+   * </pre>
+   *
+   * <code>optional bool enable_textnorm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableTextnorm.
+   */
+  @java.lang.Override
+  public boolean getEnableTextnorm() {
+    return enableTextnorm_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -147,8 +2575,14 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(1, lowLatencyJourneySynthesis_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(2, enableTextnorm_);
+    }
     if (relaxSafetyFilters_ != false) {
       output.writeBool(8, relaxSafetyFilters_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(9, getSafetySettings());
     }
     getUnknownFields().writeTo(output);
   }
@@ -162,8 +2596,14 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, lowLatencyJourneySynthesis_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, enableTextnorm_);
+    }
     if (relaxSafetyFilters_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, relaxSafetyFilters_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getSafetySettings());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -186,6 +2626,14 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
       if (getLowLatencyJourneySynthesis() != other.getLowLatencyJourneySynthesis()) return false;
     }
     if (getRelaxSafetyFilters() != other.getRelaxSafetyFilters()) return false;
+    if (hasSafetySettings() != other.hasSafetySettings()) return false;
+    if (hasSafetySettings()) {
+      if (!getSafetySettings().equals(other.getSafetySettings())) return false;
+    }
+    if (hasEnableTextnorm() != other.hasEnableTextnorm()) return false;
+    if (hasEnableTextnorm()) {
+      if (getEnableTextnorm() != other.getEnableTextnorm()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -204,6 +2652,14 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     }
     hash = (37 * hash) + RELAX_SAFETY_FILTERS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRelaxSafetyFilters());
+    if (hasSafetySettings()) {
+      hash = (37 * hash) + SAFETY_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getSafetySettings().hashCode();
+    }
+    if (hasEnableTextnorm()) {
+      hash = (37 * hash) + ENABLE_TEXTNORM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableTextnorm());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -335,10 +2791,19 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
     }
 
     // Construct using com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetSafetySettingsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -347,6 +2812,12 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
       bitField0_ = 0;
       lowLatencyJourneySynthesis_ = false;
       relaxSafetyFilters_ = false;
+      safetySettings_ = null;
+      if (safetySettingsBuilder_ != null) {
+        safetySettingsBuilder_.dispose();
+        safetySettingsBuilder_ = null;
+      }
+      enableTextnorm_ = false;
       return this;
     }
 
@@ -391,6 +2862,15 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.relaxSafetyFilters_ = relaxSafetyFilters_;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.safetySettings_ =
+            safetySettingsBuilder_ == null ? safetySettings_ : safetySettingsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.enableTextnorm_ = enableTextnorm_;
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -412,6 +2892,12 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
       }
       if (other.getRelaxSafetyFilters() != false) {
         setRelaxSafetyFilters(other.getRelaxSafetyFilters());
+      }
+      if (other.hasSafetySettings()) {
+        mergeSafetySettings(other.getSafetySettings());
+      }
+      if (other.hasEnableTextnorm()) {
+        setEnableTextnorm(other.getEnableTextnorm());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -445,12 +2931,25 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 16:
+              {
+                enableTextnorm_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 16
             case 64:
               {
                 relaxSafetyFilters_ = input.readBool();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 64
+            case 74:
+              {
+                input.readMessage(
+                    internalGetSafetySettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -552,19 +3051,20 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Input only. If true, relaxes safety filters for Gemini TTS. Only
-     * supported for accounts linked to Invoiced (Offline) Cloud billing accounts.
-     * Otherwise, will return result
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+     * Optional. Input only. Deprecated, use safety_settings instead.
+     * If true, relaxes safety filters for Gemini TTS.
      * </pre>
      *
      * <code>
-     * bool relax_safety_filters = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * bool relax_safety_filters = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.texttospeech.v1.AdvancedVoiceOptions.relax_safety_filters is
+     *     deprecated. See google/cloud/texttospeech/v1/cloud_tts.proto;l=224
      * @return The relaxSafetyFilters.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getRelaxSafetyFilters() {
       return relaxSafetyFilters_;
     }
@@ -573,19 +3073,20 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Input only. If true, relaxes safety filters for Gemini TTS. Only
-     * supported for accounts linked to Invoiced (Offline) Cloud billing accounts.
-     * Otherwise, will return result
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+     * Optional. Input only. Deprecated, use safety_settings instead.
+     * If true, relaxes safety filters for Gemini TTS.
      * </pre>
      *
      * <code>
-     * bool relax_safety_filters = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * bool relax_safety_filters = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.texttospeech.v1.AdvancedVoiceOptions.relax_safety_filters is
+     *     deprecated. See google/cloud/texttospeech/v1/cloud_tts.proto;l=224
      * @param value The relaxSafetyFilters to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setRelaxSafetyFilters(boolean value) {
 
       relaxSafetyFilters_ = value;
@@ -598,21 +3099,348 @@ public final class AdvancedVoiceOptions extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Input only. If true, relaxes safety filters for Gemini TTS. Only
-     * supported for accounts linked to Invoiced (Offline) Cloud billing accounts.
-     * Otherwise, will return result
-     * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
+     * Optional. Input only. Deprecated, use safety_settings instead.
+     * If true, relaxes safety filters for Gemini TTS.
      * </pre>
      *
      * <code>
-     * bool relax_safety_filters = 8 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * bool relax_safety_filters = 8 [deprecated = true, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated google.cloud.texttospeech.v1.AdvancedVoiceOptions.relax_safety_filters is
+     *     deprecated. See google/cloud/texttospeech/v1/cloud_tts.proto;l=224
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearRelaxSafetyFilters() {
       bitField0_ = (bitField0_ & ~0x00000002);
       relaxSafetyFilters_ = false;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safetySettings_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings,
+            com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings.Builder,
+            com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingsOrBuilder>
+        safetySettingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. This applies to Gemini TTS only. If set, the category
+     * specified in the safety setting will be blocked if the harm probability is
+     * above the threshold. Otherwise, the safety filter will be disabled by
+     * default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safety_settings = 9 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the safetySettings field is set.
+     */
+    public boolean hasSafetySettings() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. This applies to Gemini TTS only. If set, the category
+     * specified in the safety setting will be blocked if the harm probability is
+     * above the threshold. Otherwise, the safety filter will be disabled by
+     * default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safety_settings = 9 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The safetySettings.
+     */
+    public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings
+        getSafetySettings() {
+      if (safetySettingsBuilder_ == null) {
+        return safetySettings_ == null
+            ? com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings
+                .getDefaultInstance()
+            : safetySettings_;
+      } else {
+        return safetySettingsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. This applies to Gemini TTS only. If set, the category
+     * specified in the safety setting will be blocked if the harm probability is
+     * above the threshold. Otherwise, the safety filter will be disabled by
+     * default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safety_settings = 9 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSafetySettings(
+        com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings value) {
+      if (safetySettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        safetySettings_ = value;
+      } else {
+        safetySettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. This applies to Gemini TTS only. If set, the category
+     * specified in the safety setting will be blocked if the harm probability is
+     * above the threshold. Otherwise, the safety filter will be disabled by
+     * default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safety_settings = 9 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSafetySettings(
+        com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings.Builder
+            builderForValue) {
+      if (safetySettingsBuilder_ == null) {
+        safetySettings_ = builderForValue.build();
+      } else {
+        safetySettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. This applies to Gemini TTS only. If set, the category
+     * specified in the safety setting will be blocked if the harm probability is
+     * above the threshold. Otherwise, the safety filter will be disabled by
+     * default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safety_settings = 9 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSafetySettings(
+        com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings value) {
+      if (safetySettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && safetySettings_ != null
+            && safetySettings_
+                != com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings
+                    .getDefaultInstance()) {
+          getSafetySettingsBuilder().mergeFrom(value);
+        } else {
+          safetySettings_ = value;
+        }
+      } else {
+        safetySettingsBuilder_.mergeFrom(value);
+      }
+      if (safetySettings_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. This applies to Gemini TTS only. If set, the category
+     * specified in the safety setting will be blocked if the harm probability is
+     * above the threshold. Otherwise, the safety filter will be disabled by
+     * default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safety_settings = 9 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSafetySettings() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      safetySettings_ = null;
+      if (safetySettingsBuilder_ != null) {
+        safetySettingsBuilder_.dispose();
+        safetySettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. This applies to Gemini TTS only. If set, the category
+     * specified in the safety setting will be blocked if the harm probability is
+     * above the threshold. Otherwise, the safety filter will be disabled by
+     * default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safety_settings = 9 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings.Builder
+        getSafetySettingsBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetSafetySettingsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. This applies to Gemini TTS only. If set, the category
+     * specified in the safety setting will be blocked if the harm probability is
+     * above the threshold. Otherwise, the safety filter will be disabled by
+     * default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safety_settings = 9 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingsOrBuilder
+        getSafetySettingsOrBuilder() {
+      if (safetySettingsBuilder_ != null) {
+        return safetySettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return safetySettings_ == null
+            ? com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings
+                .getDefaultInstance()
+            : safetySettings_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. This applies to Gemini TTS only. If set, the category
+     * specified in the safety setting will be blocked if the harm probability is
+     * above the threshold. Otherwise, the safety filter will be disabled by
+     * default.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings safety_settings = 9 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings,
+            com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings.Builder,
+            com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingsOrBuilder>
+        internalGetSafetySettingsFieldBuilder() {
+      if (safetySettingsBuilder_ == null) {
+        safetySettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings,
+                com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettings.Builder,
+                com.google.cloud.texttospeech.v1.AdvancedVoiceOptions.SafetySettingsOrBuilder>(
+                getSafetySettings(), getParentForChildren(), isClean());
+        safetySettings_ = null;
+      }
+      return safetySettingsBuilder_;
+    }
+
+    private boolean enableTextnorm_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, textnorm will be applied to text input. This feature is
+     * enabled by default. Only applies for Gemini TTS.
+     * </pre>
+     *
+     * <code>optional bool enable_textnorm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the enableTextnorm field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableTextnorm() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, textnorm will be applied to text input. This feature is
+     * enabled by default. Only applies for Gemini TTS.
+     * </pre>
+     *
+     * <code>optional bool enable_textnorm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableTextnorm.
+     */
+    @java.lang.Override
+    public boolean getEnableTextnorm() {
+      return enableTextnorm_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, textnorm will be applied to text input. This feature is
+     * enabled by default. Only applies for Gemini TTS.
+     * </pre>
+     *
+     * <code>optional bool enable_textnorm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableTextnorm to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableTextnorm(boolean value) {
+
+      enableTextnorm_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, textnorm will be applied to text input. This feature is
+     * enabled by default. Only applies for Gemini TTS.
+     * </pre>
+     *
+     * <code>optional bool enable_textnorm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableTextnorm() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      enableTextnorm_ = false;
       onChanged();
       return this;
     }

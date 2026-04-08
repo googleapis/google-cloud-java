@@ -53,6 +53,9 @@ public final class PairwiseMetricSpec extends com.google.protobuf.GeneratedMessa
 
   private PairwiseMetricSpec() {
     metricPromptTemplate_ = "";
+    candidateResponseFieldName_ = "";
+    baselineResponseFieldName_ = "";
+    systemInstruction_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -143,6 +146,255 @@ public final class PairwiseMetricSpec extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int CANDIDATE_RESPONSE_FIELD_NAME_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object candidateResponseFieldName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field name of the candidate response.
+   * </pre>
+   *
+   * <code>string candidate_response_field_name = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The candidateResponseFieldName.
+   */
+  @java.lang.Override
+  public java.lang.String getCandidateResponseFieldName() {
+    java.lang.Object ref = candidateResponseFieldName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      candidateResponseFieldName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field name of the candidate response.
+   * </pre>
+   *
+   * <code>string candidate_response_field_name = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for candidateResponseFieldName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCandidateResponseFieldNameBytes() {
+    java.lang.Object ref = candidateResponseFieldName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      candidateResponseFieldName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BASELINE_RESPONSE_FIELD_NAME_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object baselineResponseFieldName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field name of the baseline response.
+   * </pre>
+   *
+   * <code>string baseline_response_field_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The baselineResponseFieldName.
+   */
+  @java.lang.Override
+  public java.lang.String getBaselineResponseFieldName() {
+    java.lang.Object ref = baselineResponseFieldName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      baselineResponseFieldName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The field name of the baseline response.
+   * </pre>
+   *
+   * <code>string baseline_response_field_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for baselineResponseFieldName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBaselineResponseFieldNameBytes() {
+    java.lang.Object ref = baselineResponseFieldName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      baselineResponseFieldName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SYSTEM_INSTRUCTION_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object systemInstruction_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System instructions for pairwise metric.
+   * </pre>
+   *
+   * <code>optional string system_instruction = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the systemInstruction field is set.
+   */
+  @java.lang.Override
+  public boolean hasSystemInstruction() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System instructions for pairwise metric.
+   * </pre>
+   *
+   * <code>optional string system_instruction = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The systemInstruction.
+   */
+  @java.lang.Override
+  public java.lang.String getSystemInstruction() {
+    java.lang.Object ref = systemInstruction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      systemInstruction_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System instructions for pairwise metric.
+   * </pre>
+   *
+   * <code>optional string system_instruction = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for systemInstruction.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSystemInstructionBytes() {
+    java.lang.Object ref = systemInstruction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      systemInstruction_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CUSTOM_OUTPUT_FORMAT_CONFIG_FIELD_NUMBER = 5;
+  private com.google.cloud.aiplatform.v1.CustomOutputFormatConfig customOutputFormatConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CustomOutputFormatConfig allows customization of metric output.
+   * When this config is set, the default output is replaced with
+   * the raw output string.
+   * If a custom format is chosen, the `pairwise_choice` and `explanation`
+   * fields in the corresponding metric result will be empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.CustomOutputFormatConfig custom_output_format_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customOutputFormatConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomOutputFormatConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CustomOutputFormatConfig allows customization of metric output.
+   * When this config is set, the default output is replaced with
+   * the raw output string.
+   * If a custom format is chosen, the `pairwise_choice` and `explanation`
+   * fields in the corresponding metric result will be empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.CustomOutputFormatConfig custom_output_format_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customOutputFormatConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.CustomOutputFormatConfig getCustomOutputFormatConfig() {
+    return customOutputFormatConfig_ == null
+        ? com.google.cloud.aiplatform.v1.CustomOutputFormatConfig.getDefaultInstance()
+        : customOutputFormatConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CustomOutputFormatConfig allows customization of metric output.
+   * When this config is set, the default output is replaced with
+   * the raw output string.
+   * If a custom format is chosen, the `pairwise_choice` and `explanation`
+   * fields in the corresponding metric result will be empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.CustomOutputFormatConfig custom_output_format_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.CustomOutputFormatConfigOrBuilder
+      getCustomOutputFormatConfigOrBuilder() {
+    return customOutputFormatConfig_ == null
+        ? com.google.cloud.aiplatform.v1.CustomOutputFormatConfig.getDefaultInstance()
+        : customOutputFormatConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -160,6 +412,18 @@ public final class PairwiseMetricSpec extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, metricPromptTemplate_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(candidateResponseFieldName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, candidateResponseFieldName_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(baselineResponseFieldName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, baselineResponseFieldName_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, systemInstruction_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(5, getCustomOutputFormatConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -171,6 +435,21 @@ public final class PairwiseMetricSpec extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, metricPromptTemplate_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(candidateResponseFieldName_)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(2, candidateResponseFieldName_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(baselineResponseFieldName_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, baselineResponseFieldName_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, systemInstruction_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, getCustomOutputFormatConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -192,6 +471,17 @@ public final class PairwiseMetricSpec extends com.google.protobuf.GeneratedMessa
     if (hasMetricPromptTemplate()) {
       if (!getMetricPromptTemplate().equals(other.getMetricPromptTemplate())) return false;
     }
+    if (!getCandidateResponseFieldName().equals(other.getCandidateResponseFieldName()))
+      return false;
+    if (!getBaselineResponseFieldName().equals(other.getBaselineResponseFieldName())) return false;
+    if (hasSystemInstruction() != other.hasSystemInstruction()) return false;
+    if (hasSystemInstruction()) {
+      if (!getSystemInstruction().equals(other.getSystemInstruction())) return false;
+    }
+    if (hasCustomOutputFormatConfig() != other.hasCustomOutputFormatConfig()) return false;
+    if (hasCustomOutputFormatConfig()) {
+      if (!getCustomOutputFormatConfig().equals(other.getCustomOutputFormatConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -206,6 +496,18 @@ public final class PairwiseMetricSpec extends com.google.protobuf.GeneratedMessa
     if (hasMetricPromptTemplate()) {
       hash = (37 * hash) + METRIC_PROMPT_TEMPLATE_FIELD_NUMBER;
       hash = (53 * hash) + getMetricPromptTemplate().hashCode();
+    }
+    hash = (37 * hash) + CANDIDATE_RESPONSE_FIELD_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getCandidateResponseFieldName().hashCode();
+    hash = (37 * hash) + BASELINE_RESPONSE_FIELD_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getBaselineResponseFieldName().hashCode();
+    if (hasSystemInstruction()) {
+      hash = (37 * hash) + SYSTEM_INSTRUCTION_FIELD_NUMBER;
+      hash = (53 * hash) + getSystemInstruction().hashCode();
+    }
+    if (hasCustomOutputFormatConfig()) {
+      hash = (37 * hash) + CUSTOM_OUTPUT_FORMAT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomOutputFormatConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -337,10 +639,19 @@ public final class PairwiseMetricSpec extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.cloud.aiplatform.v1.PairwiseMetricSpec.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetCustomOutputFormatConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -348,6 +659,14 @@ public final class PairwiseMetricSpec extends com.google.protobuf.GeneratedMessa
       super.clear();
       bitField0_ = 0;
       metricPromptTemplate_ = "";
+      candidateResponseFieldName_ = "";
+      baselineResponseFieldName_ = "";
+      systemInstruction_ = "";
+      customOutputFormatConfig_ = null;
+      if (customOutputFormatConfigBuilder_ != null) {
+        customOutputFormatConfigBuilder_.dispose();
+        customOutputFormatConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -389,6 +708,23 @@ public final class PairwiseMetricSpec extends com.google.protobuf.GeneratedMessa
         result.metricPromptTemplate_ = metricPromptTemplate_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.candidateResponseFieldName_ = candidateResponseFieldName_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.baselineResponseFieldName_ = baselineResponseFieldName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.systemInstruction_ = systemInstruction_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.customOutputFormatConfig_ =
+            customOutputFormatConfigBuilder_ == null
+                ? customOutputFormatConfig_
+                : customOutputFormatConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -409,6 +745,24 @@ public final class PairwiseMetricSpec extends com.google.protobuf.GeneratedMessa
         metricPromptTemplate_ = other.metricPromptTemplate_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (!other.getCandidateResponseFieldName().isEmpty()) {
+        candidateResponseFieldName_ = other.candidateResponseFieldName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (!other.getBaselineResponseFieldName().isEmpty()) {
+        baselineResponseFieldName_ = other.baselineResponseFieldName_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (other.hasSystemInstruction()) {
+        systemInstruction_ = other.systemInstruction_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (other.hasCustomOutputFormatConfig()) {
+        mergeCustomOutputFormatConfig(other.getCustomOutputFormatConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -442,6 +796,32 @@ public final class PairwiseMetricSpec extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                candidateResponseFieldName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                baselineResponseFieldName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+            case 34:
+              {
+                systemInstruction_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    internalGetCustomOutputFormatConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -591,6 +971,624 @@ public final class PairwiseMetricSpec extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object candidateResponseFieldName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field name of the candidate response.
+     * </pre>
+     *
+     * <code>string candidate_response_field_name = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The candidateResponseFieldName.
+     */
+    public java.lang.String getCandidateResponseFieldName() {
+      java.lang.Object ref = candidateResponseFieldName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        candidateResponseFieldName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field name of the candidate response.
+     * </pre>
+     *
+     * <code>string candidate_response_field_name = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for candidateResponseFieldName.
+     */
+    public com.google.protobuf.ByteString getCandidateResponseFieldNameBytes() {
+      java.lang.Object ref = candidateResponseFieldName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        candidateResponseFieldName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field name of the candidate response.
+     * </pre>
+     *
+     * <code>string candidate_response_field_name = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The candidateResponseFieldName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCandidateResponseFieldName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      candidateResponseFieldName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field name of the candidate response.
+     * </pre>
+     *
+     * <code>string candidate_response_field_name = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCandidateResponseFieldName() {
+      candidateResponseFieldName_ = getDefaultInstance().getCandidateResponseFieldName();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field name of the candidate response.
+     * </pre>
+     *
+     * <code>string candidate_response_field_name = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for candidateResponseFieldName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCandidateResponseFieldNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      candidateResponseFieldName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object baselineResponseFieldName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field name of the baseline response.
+     * </pre>
+     *
+     * <code>string baseline_response_field_name = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The baselineResponseFieldName.
+     */
+    public java.lang.String getBaselineResponseFieldName() {
+      java.lang.Object ref = baselineResponseFieldName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        baselineResponseFieldName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field name of the baseline response.
+     * </pre>
+     *
+     * <code>string baseline_response_field_name = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for baselineResponseFieldName.
+     */
+    public com.google.protobuf.ByteString getBaselineResponseFieldNameBytes() {
+      java.lang.Object ref = baselineResponseFieldName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        baselineResponseFieldName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field name of the baseline response.
+     * </pre>
+     *
+     * <code>string baseline_response_field_name = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The baselineResponseFieldName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBaselineResponseFieldName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      baselineResponseFieldName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field name of the baseline response.
+     * </pre>
+     *
+     * <code>string baseline_response_field_name = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBaselineResponseFieldName() {
+      baselineResponseFieldName_ = getDefaultInstance().getBaselineResponseFieldName();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field name of the baseline response.
+     * </pre>
+     *
+     * <code>string baseline_response_field_name = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for baselineResponseFieldName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBaselineResponseFieldNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      baselineResponseFieldName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object systemInstruction_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System instructions for pairwise metric.
+     * </pre>
+     *
+     * <code>optional string system_instruction = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the systemInstruction field is set.
+     */
+    public boolean hasSystemInstruction() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System instructions for pairwise metric.
+     * </pre>
+     *
+     * <code>optional string system_instruction = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The systemInstruction.
+     */
+    public java.lang.String getSystemInstruction() {
+      java.lang.Object ref = systemInstruction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        systemInstruction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System instructions for pairwise metric.
+     * </pre>
+     *
+     * <code>optional string system_instruction = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for systemInstruction.
+     */
+    public com.google.protobuf.ByteString getSystemInstructionBytes() {
+      java.lang.Object ref = systemInstruction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        systemInstruction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System instructions for pairwise metric.
+     * </pre>
+     *
+     * <code>optional string system_instruction = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The systemInstruction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSystemInstruction(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      systemInstruction_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System instructions for pairwise metric.
+     * </pre>
+     *
+     * <code>optional string system_instruction = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSystemInstruction() {
+      systemInstruction_ = getDefaultInstance().getSystemInstruction();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. System instructions for pairwise metric.
+     * </pre>
+     *
+     * <code>optional string system_instruction = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for systemInstruction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSystemInstructionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      systemInstruction_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.aiplatform.v1.CustomOutputFormatConfig customOutputFormatConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1.CustomOutputFormatConfig,
+            com.google.cloud.aiplatform.v1.CustomOutputFormatConfig.Builder,
+            com.google.cloud.aiplatform.v1.CustomOutputFormatConfigOrBuilder>
+        customOutputFormatConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * When this config is set, the default output is replaced with
+     * the raw output string.
+     * If a custom format is chosen, the `pairwise_choice` and `explanation`
+     * fields in the corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.CustomOutputFormatConfig custom_output_format_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customOutputFormatConfig field is set.
+     */
+    public boolean hasCustomOutputFormatConfig() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * When this config is set, the default output is replaced with
+     * the raw output string.
+     * If a custom format is chosen, the `pairwise_choice` and `explanation`
+     * fields in the corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.CustomOutputFormatConfig custom_output_format_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customOutputFormatConfig.
+     */
+    public com.google.cloud.aiplatform.v1.CustomOutputFormatConfig getCustomOutputFormatConfig() {
+      if (customOutputFormatConfigBuilder_ == null) {
+        return customOutputFormatConfig_ == null
+            ? com.google.cloud.aiplatform.v1.CustomOutputFormatConfig.getDefaultInstance()
+            : customOutputFormatConfig_;
+      } else {
+        return customOutputFormatConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * When this config is set, the default output is replaced with
+     * the raw output string.
+     * If a custom format is chosen, the `pairwise_choice` and `explanation`
+     * fields in the corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.CustomOutputFormatConfig custom_output_format_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomOutputFormatConfig(
+        com.google.cloud.aiplatform.v1.CustomOutputFormatConfig value) {
+      if (customOutputFormatConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        customOutputFormatConfig_ = value;
+      } else {
+        customOutputFormatConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * When this config is set, the default output is replaced with
+     * the raw output string.
+     * If a custom format is chosen, the `pairwise_choice` and `explanation`
+     * fields in the corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.CustomOutputFormatConfig custom_output_format_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCustomOutputFormatConfig(
+        com.google.cloud.aiplatform.v1.CustomOutputFormatConfig.Builder builderForValue) {
+      if (customOutputFormatConfigBuilder_ == null) {
+        customOutputFormatConfig_ = builderForValue.build();
+      } else {
+        customOutputFormatConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * When this config is set, the default output is replaced with
+     * the raw output string.
+     * If a custom format is chosen, the `pairwise_choice` and `explanation`
+     * fields in the corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.CustomOutputFormatConfig custom_output_format_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeCustomOutputFormatConfig(
+        com.google.cloud.aiplatform.v1.CustomOutputFormatConfig value) {
+      if (customOutputFormatConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && customOutputFormatConfig_ != null
+            && customOutputFormatConfig_
+                != com.google.cloud.aiplatform.v1.CustomOutputFormatConfig.getDefaultInstance()) {
+          getCustomOutputFormatConfigBuilder().mergeFrom(value);
+        } else {
+          customOutputFormatConfig_ = value;
+        }
+      } else {
+        customOutputFormatConfigBuilder_.mergeFrom(value);
+      }
+      if (customOutputFormatConfig_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * When this config is set, the default output is replaced with
+     * the raw output string.
+     * If a custom format is chosen, the `pairwise_choice` and `explanation`
+     * fields in the corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.CustomOutputFormatConfig custom_output_format_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCustomOutputFormatConfig() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      customOutputFormatConfig_ = null;
+      if (customOutputFormatConfigBuilder_ != null) {
+        customOutputFormatConfigBuilder_.dispose();
+        customOutputFormatConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * When this config is set, the default output is replaced with
+     * the raw output string.
+     * If a custom format is chosen, the `pairwise_choice` and `explanation`
+     * fields in the corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.CustomOutputFormatConfig custom_output_format_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.CustomOutputFormatConfig.Builder
+        getCustomOutputFormatConfigBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetCustomOutputFormatConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * When this config is set, the default output is replaced with
+     * the raw output string.
+     * If a custom format is chosen, the `pairwise_choice` and `explanation`
+     * fields in the corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.CustomOutputFormatConfig custom_output_format_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.CustomOutputFormatConfigOrBuilder
+        getCustomOutputFormatConfigOrBuilder() {
+      if (customOutputFormatConfigBuilder_ != null) {
+        return customOutputFormatConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return customOutputFormatConfig_ == null
+            ? com.google.cloud.aiplatform.v1.CustomOutputFormatConfig.getDefaultInstance()
+            : customOutputFormatConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. CustomOutputFormatConfig allows customization of metric output.
+     * When this config is set, the default output is replaced with
+     * the raw output string.
+     * If a custom format is chosen, the `pairwise_choice` and `explanation`
+     * fields in the corresponding metric result will be empty.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.CustomOutputFormatConfig custom_output_format_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1.CustomOutputFormatConfig,
+            com.google.cloud.aiplatform.v1.CustomOutputFormatConfig.Builder,
+            com.google.cloud.aiplatform.v1.CustomOutputFormatConfigOrBuilder>
+        internalGetCustomOutputFormatConfigFieldBuilder() {
+      if (customOutputFormatConfigBuilder_ == null) {
+        customOutputFormatConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1.CustomOutputFormatConfig,
+                com.google.cloud.aiplatform.v1.CustomOutputFormatConfig.Builder,
+                com.google.cloud.aiplatform.v1.CustomOutputFormatConfigOrBuilder>(
+                getCustomOutputFormatConfig(), getParentForChildren(), isClean());
+        customOutputFormatConfig_ = null;
+      }
+      return customOutputFormatConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.PairwiseMetricSpec)

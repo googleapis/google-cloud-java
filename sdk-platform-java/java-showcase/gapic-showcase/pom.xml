@@ -17,7 +17,7 @@
   </parent>
 
   <properties>
-    <gapic-showcase.version>0.36.2</gapic-showcase.version>
+    <gapic-showcase.version>0.39.0</gapic-showcase.version>
     <!-- This is the last version supporting slf4j 1.x, do not upgrade -->
     <slf4j1-logback.version>1.2.13</slf4j1-logback.version>
     <slf4j2-logback.version>1.5.25</slf4j2-logback.version>
@@ -336,6 +336,7 @@
                 <testExclude>**/com/google/showcase/v1beta1/it/*.java</testExclude>
                 <testExclude>**/com/google/showcase/v1beta1/it/logging/ITLoggingDisabled.java</testExclude>
                 <testExclude>**/com/google/showcase/v1beta1/it/logging/ITLogging.java</testExclude>
+                <testExclude>**/com/google/showcase/v1beta1/it/logging/ITActionableErrorsLogging.java</testExclude>
               </testExcludes>
             </configuration>
           </plugin>
@@ -381,6 +382,7 @@
                 <testExclude>**/com/google/showcase/v1beta1/it/*.java</testExclude>
                 <testExclude>**/com/google/showcase/v1beta1/it/logging/ITLogging1x.java</testExclude>
                 <testExclude>**/com/google/showcase/v1beta1/it/logging/ITLogging.java</testExclude>
+                <testExclude>**/com/google/showcase/v1beta1/it/logging/ITActionableErrorsLogging.java</testExclude>
               </testExcludes>
             </configuration>
           </plugin>
