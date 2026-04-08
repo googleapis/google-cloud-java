@@ -25,7 +25,7 @@
       <dependency>
         <groupId>com.google.auth</groupId>
         <artifactId>google-auth-library-bom</artifactId>
-        <version>1.44.0</version><!-- {x-version-update:google-auth-library:current} -->
+        <version>1.43.0</version><!-- {x-version-update:google-auth-library:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
