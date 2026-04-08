@@ -588,7 +588,7 @@ abstract class AbstractReadContext
             ? readOptions.bufferRows()
             : AsyncResultSetImpl.DEFAULT_BUFFER_SIZE;
     return new AsyncResultSetImpl(
-        executorProvider, readInternal(table, null, keys, columns, options), bufferRows);
+        executorProvider, () -> readInternal(table, null, keys, columns, options), bufferRows);
   }
 
   @Override
@@ -607,7 +607,7 @@ abstract class AbstractReadContext
             : AsyncResultSetImpl.DEFAULT_BUFFER_SIZE;
     return new AsyncResultSetImpl(
         executorProvider,
-        readInternal(table, checkNotNull(index), keys, columns, options),
+        () -> readInternal(table, checkNotNull(index), keys, columns, options),
         bufferRows);
   }
 
@@ -659,8 +659,9 @@ abstract class AbstractReadContext
             : AsyncResultSetImpl.DEFAULT_BUFFER_SIZE;
     return new AsyncResultSetImpl(
         executorProvider,
-        executeQueryInternal(
-            statement, com.google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL, options),
+        () ->
+            executeQueryInternal(
+                statement, com.google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL, options),
         bufferRows);
   }
 
