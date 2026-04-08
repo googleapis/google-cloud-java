@@ -17,6 +17,7 @@
 package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.core.InternalApi;
+import com.google.common.util.concurrent.MoreExecutors;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CacheUpdate;
 import com.google.spanner.v1.CommitRequest;
@@ -34,6 +35,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Predicate;
@@ -47,11 +51,19 @@ import javax.annotation.Nullable;
 @InternalApi
 public final class ChannelFinder {
   private static final Predicate<String> NO_EXCLUDED_ENDPOINTS = address -> false;
+  private static final ExecutorService CACHE_UPDATE_POOL =
+      Executors.newCachedThreadPool(
+          r -> {
+            Thread t = new Thread(r, "spanner-cache-update");
+            t.setDaemon(true);
+            return t;
+          });
 
   private final Object updateLock = new Object();
   private final AtomicLong databaseId = new AtomicLong();
   private final KeyRecipeCache recipeCache = new KeyRecipeCache();
   private final KeyRangeCache rangeCache;
+  private final Executor cacheUpdateExecutor = MoreExecutors.newSequentialExecutor(CACHE_UPDATE_POOL);
   @Nullable private final EndpointLifecycleManager lifecycleManager;
   @Nullable private final String finderKey;
 
@@ -110,6 +122,10 @@ public final class ChannelFinder {
         lifecycleManager.updateActiveAddresses(finderKey, currentAddresses);
       }
     }
+  }
+
+  public void updateAsync(CacheUpdate update) {
+    cacheUpdateExecutor.execute(() -> update(update));
   }
 
   public ChannelEndpoint findServer(ReadRequest.Builder reqBuilder) {

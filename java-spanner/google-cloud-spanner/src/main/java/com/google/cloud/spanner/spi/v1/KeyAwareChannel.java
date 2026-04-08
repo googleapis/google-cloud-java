@@ -798,25 +798,25 @@ final class KeyAwareChannel extends ManagedChannel {
       if (message instanceof PartialResultSet) {
         PartialResultSet response = (PartialResultSet) message;
         if (response.hasCacheUpdate() && call.channelFinder != null) {
-          call.channelFinder.update(response.getCacheUpdate());
+          call.channelFinder.updateAsync(response.getCacheUpdate());
         }
         transactionId = transactionIdFromMetadata(response);
       } else if (message instanceof ResultSet) {
         ResultSet response = (ResultSet) message;
         if (response.hasCacheUpdate() && call.channelFinder != null) {
-          call.channelFinder.update(response.getCacheUpdate());
+          call.channelFinder.updateAsync(response.getCacheUpdate());
         }
         transactionId = transactionIdFromMetadata(response);
       } else if (message instanceof Transaction) {
         Transaction response = (Transaction) message;
         if (response.hasCacheUpdate() && call.channelFinder != null) {
-          call.channelFinder.update(response.getCacheUpdate());
+          call.channelFinder.updateAsync(response.getCacheUpdate());
         }
         transactionId = transactionIdFromTransaction(response);
       } else if (message instanceof CommitResponse) {
         CommitResponse response = (CommitResponse) message;
         if (response.hasCacheUpdate() && call.channelFinder != null) {
-          call.channelFinder.update(response.getCacheUpdate());
+          call.channelFinder.updateAsync(response.getCacheUpdate());
         }
       }
       if (transactionId != null) {

@@ -373,6 +373,33 @@ public class KeyRangeCacheTest {
   }
 
   @Test
+  public void recentlyEvictedTransientFailureEndpointStillAddsSkippedTablet() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    RecentTransientFailureLifecycleManager lifecycleManager =
+        new RecentTransientFailureLifecycleManager(endpointCache);
+    try {
+      KeyRangeCache cache = new KeyRangeCache(endpointCache, lifecycleManager);
+      cache.addRanges(singleReplicaUpdate("server1"));
+      lifecycleManager.markRecentlyEvictedTransientFailure("server1");
+
+      RoutingHint.Builder hint = RoutingHint.newBuilder().setKey(bytes("a"));
+      ChannelEndpoint server =
+          cache.fillRoutingHint(
+              false,
+              KeyRangeCache.RangeMode.COVERING_SPLIT,
+              DirectedReadOptions.getDefaultInstance(),
+              hint);
+
+      assertNull(server);
+      assertEquals(1, hint.getSkippedTabletUidCount());
+      assertEquals(1L, hint.getSkippedTabletUid(0).getTabletUid());
+      assertTrue(lifecycleManager.recreationRequested.contains("server1"));
+    } finally {
+      lifecycleManager.shutdown();
+    }
+  }
+
+  @Test
   public void oneUnusableReplicaAndOneReadyReplicaUsesReady() {
     FakeEndpointCache endpointCache = new FakeEndpointCache();
     KeyRangeCache cache = new KeyRangeCache(endpointCache);
@@ -447,6 +474,65 @@ public class KeyRangeCacheTest {
     // server1 was TRANSIENT_FAILURE, so it should be in skipped_tablets.
     assertEquals(1, hint.getSkippedTabletUidCount());
     assertEquals(1L, hint.getSkippedTabletUid(0).getTabletUid());
+  }
+
+  @Test
+  public void laterTransientFailureReplicaReportedWhenEarlierReplicaSelected() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    cache.addRanges(threeReplicaUpdate());
+
+    endpointCache.get("server1");
+    endpointCache.get("server2");
+    endpointCache.get("server3");
+
+    endpointCache.setState("server1", EndpointHealthState.READY);
+    endpointCache.setState("server2", EndpointHealthState.READY);
+    endpointCache.setState("server3", EndpointHealthState.TRANSIENT_FAILURE);
+
+    RoutingHint.Builder hint = RoutingHint.newBuilder().setKey(bytes("a"));
+    ChannelEndpoint server =
+        cache.fillRoutingHint(
+            false,
+            KeyRangeCache.RangeMode.COVERING_SPLIT,
+            DirectedReadOptions.getDefaultInstance(),
+            hint);
+
+    assertNotNull(server);
+    assertEquals("server1", server.getAddress());
+    assertEquals(1, hint.getSkippedTabletUidCount());
+    assertEquals(3L, hint.getSkippedTabletUid(0).getTabletUid());
+  }
+
+  @Test
+  public void laterRecentlyEvictedTransientFailureReplicaReportedWhenEarlierReplicaSelected() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    RecentTransientFailureLifecycleManager lifecycleManager =
+        new RecentTransientFailureLifecycleManager(endpointCache);
+    try {
+      KeyRangeCache cache = new KeyRangeCache(endpointCache, lifecycleManager);
+      cache.addRanges(threeReplicaUpdate());
+
+      endpointCache.get("server1");
+      endpointCache.get("server2");
+      lifecycleManager.markRecentlyEvictedTransientFailure("server3");
+
+      RoutingHint.Builder hint = RoutingHint.newBuilder().setKey(bytes("a"));
+      ChannelEndpoint server =
+          cache.fillRoutingHint(
+              false,
+              KeyRangeCache.RangeMode.COVERING_SPLIT,
+              DirectedReadOptions.getDefaultInstance(),
+              hint);
+
+      assertNotNull(server);
+      assertEquals("server1", server.getAddress());
+      assertEquals(1, hint.getSkippedTabletUidCount());
+      assertEquals(3L, hint.getSkippedTabletUid(0).getTabletUid());
+      assertTrue(lifecycleManager.recreationRequested.contains("server3"));
+    } finally {
+      lifecycleManager.shutdown();
+    }
   }
 
   // --- Eviction and recreation tests ---
@@ -529,7 +615,7 @@ public class KeyRangeCacheTest {
   }
 
   /** Minimal lifecycle manager stub that records recreation requests. */
-  private static final class TrackingLifecycleManager extends EndpointLifecycleManager {
+  private static class TrackingLifecycleManager extends EndpointLifecycleManager {
     final java.util.Set<String> recreationRequested = new java.util.HashSet<>();
 
     TrackingLifecycleManager(ChannelEndpointCache cache) {
@@ -539,6 +625,24 @@ public class KeyRangeCacheTest {
     @Override
     void requestEndpointRecreation(String address) {
       recreationRequested.add(address);
+    }
+  }
+
+  private static final class RecentTransientFailureLifecycleManager
+      extends TrackingLifecycleManager {
+    final java.util.Set<String> recentlyEvictedTransientFailures = new java.util.HashSet<>();
+
+    RecentTransientFailureLifecycleManager(ChannelEndpointCache cache) {
+      super(cache);
+    }
+
+    void markRecentlyEvictedTransientFailure(String address) {
+      recentlyEvictedTransientFailures.add(address);
+    }
+
+    @Override
+    boolean wasRecentlyEvictedTransientFailure(String address) {
+      return recentlyEvictedTransientFailures.contains(address);
     }
   }
 
@@ -591,6 +695,41 @@ public class KeyRangeCacheTest {
                     Tablet.newBuilder()
                         .setTabletUid(2)
                         .setServerAddress("server2")
+                        .setIncarnation(bytes("1"))
+                        .setDistance(0)))
+        .build();
+  }
+
+  private static CacheUpdate threeReplicaUpdate() {
+    return CacheUpdate.newBuilder()
+        .addRange(
+            Range.newBuilder()
+                .setStartKey(bytes("a"))
+                .setLimitKey(bytes("z"))
+                .setGroupUid(5)
+                .setSplitId(1)
+                .setGeneration(bytes("1")))
+        .addGroup(
+            Group.newBuilder()
+                .setGroupUid(5)
+                .setGeneration(bytes("1"))
+                .setLeaderIndex(0)
+                .addTablets(
+                    Tablet.newBuilder()
+                        .setTabletUid(1)
+                        .setServerAddress("server1")
+                        .setIncarnation(bytes("1"))
+                        .setDistance(0))
+                .addTablets(
+                    Tablet.newBuilder()
+                        .setTabletUid(2)
+                        .setServerAddress("server2")
+                        .setIncarnation(bytes("1"))
+                        .setDistance(0))
+                .addTablets(
+                    Tablet.newBuilder()
+                        .setTabletUid(3)
+                        .setServerAddress("server3")
                         .setIncarnation(bytes("1"))
                         .setDistance(0)))
         .build();

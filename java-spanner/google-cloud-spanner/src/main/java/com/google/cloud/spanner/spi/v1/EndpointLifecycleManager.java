@@ -73,6 +73,13 @@ class EndpointLifecycleManager {
    */
   private static final int MAX_TRANSIENT_FAILURE_COUNT = 3;
 
+  private enum EvictionReason {
+    TRANSIENT_FAILURE,
+    SHUTDOWN,
+    IDLE,
+    STALE
+  }
+
   /** Per-endpoint lifecycle state. */
   static final class EndpointState {
     final String address;
@@ -95,6 +102,7 @@ class EndpointLifecycleManager {
 
   private final ChannelEndpointCache endpointCache;
   private final Map<String, EndpointState> endpoints = new ConcurrentHashMap<>();
+  private final Set<String> transientFailureEvictedAddresses = ConcurrentHashMap.newKeySet();
 
   /**
    * Active addresses reported by each ChannelFinder, keyed by database id.
@@ -235,6 +243,7 @@ class EndpointLifecycleManager {
       for (Set<String> addresses : activeAddressesPerFinder.values()) {
         allActive.addAll(addresses);
       }
+      transientFailureEvictedAddresses.retainAll(allActive);
 
       // Evict managed endpoints not referenced by any finder.
       List<String> stale = new ArrayList<>();
@@ -276,6 +285,7 @@ class EndpointLifecycleManager {
       for (Set<String> addresses : activeAddressesPerFinder.values()) {
         allActive.addAll(addresses);
       }
+      transientFailureEvictedAddresses.retainAll(allActive);
 
       List<String> stale = new ArrayList<>();
       for (String address : endpoints.keySet()) {
@@ -412,6 +422,7 @@ class EndpointLifecycleManager {
         case READY:
           state.lastReadyAt = clock.instant();
           state.consecutiveTransientFailures = 0;
+          transientFailureEvictedAddresses.remove(address);
           break;
 
         case IDLE:
@@ -439,13 +450,13 @@ class EndpointLifecycleManager {
                 Level.FINE,
                 "Evicting endpoint {0}: {1} consecutive TRANSIENT_FAILURE probes",
                 new Object[] {address, state.consecutiveTransientFailures});
-            evictEndpoint(address);
+            evictEndpoint(address, EvictionReason.TRANSIENT_FAILURE);
           }
           break;
 
         case SHUTDOWN:
           logger.log(Level.FINE, "Probe for {0}: channel SHUTDOWN, evicting endpoint", address);
-          evictEndpoint(address);
+          evictEndpoint(address, EvictionReason.SHUTDOWN);
           break;
 
         default:
@@ -482,16 +493,26 @@ class EndpointLifecycleManager {
     }
 
     for (String address : toEvict) {
-      evictEndpoint(address);
+      evictEndpoint(address, EvictionReason.IDLE);
     }
   }
 
   /** Evicts an endpoint: stops probing, removes from tracking, shuts down the channel. */
   private void evictEndpoint(String address) {
+    evictEndpoint(address, EvictionReason.STALE);
+  }
+
+  /** Evicts an endpoint and records whether it should still be reported as unhealthy. */
+  private void evictEndpoint(String address, EvictionReason reason) {
     logger.log(Level.FINE, "Evicting endpoint {0}", address);
 
     stopProbing(address);
     endpoints.remove(address);
+    if (reason == EvictionReason.TRANSIENT_FAILURE) {
+      transientFailureEvictedAddresses.add(address);
+    } else {
+      transientFailureEvictedAddresses.remove(address);
+    }
     endpointCache.evict(address);
   }
 
@@ -526,6 +547,10 @@ class EndpointLifecycleManager {
     return endpoints.containsKey(address);
   }
 
+  boolean wasRecentlyEvictedTransientFailure(String address) {
+    return transientFailureEvictedAddresses.contains(address);
+  }
+
   /** Returns the endpoint state for testing. */
   @VisibleForTesting
   EndpointState getEndpointState(String address) {
@@ -558,6 +583,7 @@ class EndpointLifecycleManager {
       }
     }
     endpoints.clear();
+    transientFailureEvictedAddresses.clear();
 
     scheduler.shutdown();
     try {
