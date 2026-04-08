@@ -16,6 +16,7 @@
 
 package com.google.cloud.firestore.pipeline.expressions;
 
+import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.FieldPath;
 import com.google.cloud.firestore.Pipeline;
@@ -97,6 +98,7 @@ public final class Field extends Expression implements Selectable {
    * @param location Compute distance to this {@link com.google.cloud.firestore.GeoPoint}.
    * @return A new {@link Expression} representing the geoDistance operation.
    */
+  @BetaApi
   public Expression geoDistance(com.google.cloud.firestore.GeoPoint location) {
     return Expression.geoDistance(this, location);
   }
