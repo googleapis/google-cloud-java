@@ -24,12 +24,14 @@ fi
 
 # Get the directory of the build script
 scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
-cd "${scriptDir}/../.." # cd to the root of this repo
+cd "${scriptDir}/.." # cd to the root of this repo
 source "$scriptDir/common.sh"
 
 setup_maven_mirror
 
-install_repo_modules '!gapic-generator-java'
+install_modules "sdk-platform-java"
+cd sdk-platform-java
+
 SHARED_DEPS_VERSION=$(parse_pom_version java-shared-dependencies)
 echo "Install complete. java-shared-dependencies = $SHARED_DEPS_VERSION"
 

@@ -55,7 +55,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
 
-class SpanTracerFactoryTest {
+class OpenTelemetryTracingFactoryTest {
   private OpenTelemetry openTelemetry;
   private Tracer tracer;
   private SpanBuilder spanBuilder;
@@ -83,9 +83,9 @@ class SpanTracerFactoryTest {
 
   @ParameterizedTest
   @ValueSource(booleans = {false, true})
-  void testNewTracer_createsSpanTracer(boolean useContext) {
-    SpanTracerFactory factory =
-        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+  void testNewTracer_createsOpenTelemetryTracingTracer(boolean useContext) {
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, ApiTracerContext.empty());
     ApiTracer tracerInstance;
     if (useContext) {
       ApiTracerContext context =
@@ -99,14 +99,14 @@ class SpanTracerFactoryTest {
       tracerInstance =
           factory.newTracer(null, SpanName.of("service", "method"), OperationType.Unary);
     }
-    assertThat(tracerInstance).isInstanceOf(SpanTracer.class);
+    assertThat(tracerInstance).isInstanceOf(OpenTelemetryTracingTracer.class);
   }
 
   @ParameterizedTest
   @ValueSource(booleans = {false, true})
   void testNewTracer_addsAttributes(boolean useContext) {
     ApiTracerFactory factory =
-        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, ApiTracerContext.empty());
     factory =
         factory.withContext(
             ApiTracerContext.newBuilder()
@@ -146,8 +146,8 @@ class SpanTracerFactoryTest {
             .setServerAddress("example.com")
             .build();
 
-    SpanTracerFactory factory =
-        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, ApiTracerContext.empty());
     ApiTracerFactory factoryWithContext = factory.withContext(context);
 
     ApiTracer tracerInstance;
@@ -182,8 +182,8 @@ class SpanTracerFactoryTest {
     ApiTracerContext context =
         ApiTracerContext.newBuilder().setLibraryMetadata(validMetadata).build();
 
-    SpanTracerFactory factory =
-        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, ApiTracerContext.empty());
     ApiTracerFactory factoryWithContext = factory.withContext(context);
 
     ApiTracer tracerInstance;
@@ -220,8 +220,8 @@ class SpanTracerFactoryTest {
             .setLibraryMetadata(LibraryMetadata.empty())
             .build();
 
-    SpanTracerFactory factory =
-        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, ApiTracerContext.empty());
     ApiTracer tracerInstance = factory.newTracer(null, context);
 
     tracerInstance.attemptStarted(null, 1);
@@ -247,8 +247,8 @@ class SpanTracerFactoryTest {
             .setLibraryMetadata(LibraryMetadata.empty())
             .build();
 
-    SpanTracerFactory factory =
-        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, ApiTracerContext.empty());
     ApiTracer tracerInstance = factory.newTracer(null, context);
 
     tracerInstance.attemptStarted(null, 1);
@@ -265,8 +265,8 @@ class SpanTracerFactoryTest {
             .setLibraryMetadata(LibraryMetadata.empty())
             .build();
 
-    SpanTracerFactory factory =
-        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, ApiTracerContext.empty());
     ApiTracer tracerInstance = factory.newTracer(null, context);
 
     tracerInstance.attemptStarted(null, 1);
@@ -276,8 +276,8 @@ class SpanTracerFactoryTest {
 
   @Test
   void testNewTracer_withSpanName_usesPlaceholder() {
-    SpanTracerFactory factory =
-        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, ApiTracerContext.empty());
     ApiTracer tracerInstance =
         factory.newTracer(null, SpanName.of("Service", "Method"), OperationType.Unary);
 
@@ -293,7 +293,8 @@ class SpanTracerFactoryTest {
             .setServerAddress("factory-address")
             .setLibraryMetadata(LibraryMetadata.empty())
             .build();
-    SpanTracerFactory factory = new SpanTracerFactory(openTelemetry, tracer, apiTracerContext);
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, apiTracerContext);
 
     ApiTracerContext callContext =
         ApiTracerContext.newBuilder()
@@ -317,8 +318,8 @@ class SpanTracerFactoryTest {
 
   @Test
   void testNoOpWhenTracerNull() {
-    SpanTracerFactory factory =
-        new SpanTracerFactory(openTelemetry, null, ApiTracerContext.empty());
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(openTelemetry, null, ApiTracerContext.empty());
 
     ApiTracer tracerInstance =
         factory.newTracer(null, SpanName.of("Service", "Method"), OperationType.Unary);
@@ -332,16 +333,16 @@ class SpanTracerFactoryTest {
 
   @Test
   void testWithContext_nullContext_returnsBaseApiTracerFactory() {
-    SpanTracerFactory factory =
-        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, ApiTracerContext.empty());
     ApiTracerFactory factoryWithContext = factory.withContext(null);
     assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
   }
 
   @Test
   void testWithContext_nullMetadata_returnsBaseApiTracerFactory() {
-    SpanTracerFactory factory =
-        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, ApiTracerContext.empty());
     // Assuming ApiTracerContext.empty() has null libraryMetadata
     ApiTracerFactory factoryWithContext = factory.withContext(ApiTracerContext.empty());
     assertThat(factoryWithContext).isInstanceOf(BaseApiTracerFactory.class);
@@ -349,8 +350,8 @@ class SpanTracerFactoryTest {
 
   @Test
   void testWithContext_emptyArtifactName_returnsBaseApiTracerFactory() {
-    SpanTracerFactory factory =
-        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, ApiTracerContext.empty());
     LibraryMetadata metadata =
         LibraryMetadata.newBuilder().setArtifactName("").setVersion("1.0").build();
     ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
@@ -361,8 +362,8 @@ class SpanTracerFactoryTest {
 
   @Test
   void testWithContext_nullArtifactName_returnsBaseApiTracerFactory() {
-    SpanTracerFactory factory =
-        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, ApiTracerContext.empty());
     LibraryMetadata metadata = LibraryMetadata.newBuilder().setVersion("1.0").build();
     ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
 
@@ -376,8 +377,8 @@ class SpanTracerFactoryTest {
     when(mockOpenTelemetry.getTracer(nullable(String.class), nullable(String.class)))
         .thenReturn(null);
 
-    SpanTracerFactory factory =
-        new SpanTracerFactory(mockOpenTelemetry, tracer, ApiTracerContext.empty());
+    OpenTelemetryTracingFactory factory =
+        new OpenTelemetryTracingFactory(mockOpenTelemetry, tracer, ApiTracerContext.empty());
     ApiTracerContext context =
         ApiTracerContext.newBuilder().setLibraryMetadata(LibraryMetadata.empty()).build();
 
@@ -387,8 +388,8 @@ class SpanTracerFactoryTest {
 
   @Test
   void testNeedsContext_returnsTrueWhenContextIsEmpty() {
-    SpanTracerFactory factoryWithoutContext =
-        new SpanTracerFactory(openTelemetry, tracer, ApiTracerContext.empty());
+    OpenTelemetryTracingFactory factoryWithoutContext =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, ApiTracerContext.empty());
     assertThat(factoryWithoutContext.needsContext()).isTrue();
   }
 
@@ -399,7 +400,8 @@ class SpanTracerFactoryTest {
             .setLibraryMetadata(validMetadata)
             .setServerAddress("test-address")
             .build();
-    SpanTracerFactory factoryWithContext = new SpanTracerFactory(openTelemetry, tracer, context);
+    OpenTelemetryTracingFactory factoryWithContext =
+        new OpenTelemetryTracingFactory(openTelemetry, tracer, context);
 
     assertThat(factoryWithContext.needsContext()).isFalse();
   }
