@@ -84,11 +84,11 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
 
   static final String IAM_ENDPOINT = "https://iamcredentials.googleapis.com";
 
-  private Queue<Boolean> responseSequence = new ArrayDeque<>();
-  private Queue<IOException> responseErrorSequence = new ArrayDeque<>();
-  private Queue<String> refreshTokenSequence = new ArrayDeque<>();
-  private Queue<List<String>> scopeSequence = new ArrayDeque<>();
-  private List<MockLowLevelHttpRequest> requests = new ArrayList<>();
+  private final Queue<Boolean> responseSequence = new ArrayDeque<>();
+  private final Queue<IOException> responseErrorSequence = new ArrayDeque<>();
+  private final Queue<String> refreshTokenSequence = new ArrayDeque<>();
+  private final Queue<List<String>> scopeSequence = new ArrayDeque<>();
+  private final List<MockLowLevelHttpRequest> requests = new ArrayList<>();
   private String expireTime;
   private String metadataServerContentType;
   private String stsContent;

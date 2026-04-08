@@ -32,12 +32,12 @@
 package com.google.auth.oauth2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonFactory;
@@ -149,7 +149,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void fromJSON_nullFormatVersion() throws IOException {
+  void fromJSON_nullFormatVersion() {
     GenericJson json =
         writeGdchServiceAccountJson(
             null,
@@ -160,22 +160,18 @@ class GdchCredentialsTest extends BaseSerializationTest {
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
 
-    try {
-      GdchCredentials credentials = GdchCredentials.fromJson(json);
-      fail("Should not be able to create GDCH credential without exception.");
-    } catch (IOException ex) {
-      assertTrue(
-          ex.getMessage()
-              .contains(
-                  String.format(
-                      "Error reading GDCH service account credential from JSON, "
-                          + "%s is misconfigured.",
-                      "format_version")));
-    }
+    IOException ex = assertThrows(IOException.class, () -> GdchCredentials.fromJson(json));
+    assertTrue(
+        ex.getMessage()
+            .contains(
+                String.format(
+                    "Error reading GDCH service account credential from JSON, "
+                        + "%s is misconfigured.",
+                    "format_version")));
   }
 
   @Test
-  void fromJSON_nullProjectId() throws IOException {
+  void fromJSON_nullProjectId() {
     GenericJson json =
         writeGdchServiceAccountJson(
             FORMAT_VERSION,
@@ -186,22 +182,18 @@ class GdchCredentialsTest extends BaseSerializationTest {
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
 
-    try {
-      GdchCredentials credentials = GdchCredentials.fromJson(json);
-      fail("Should not be able to create GDCH credential without exception.");
-    } catch (IOException ex) {
-      assertTrue(
-          ex.getMessage()
-              .contains(
-                  String.format(
-                      "Error reading GDCH service account credential from JSON, "
-                          + "%s is misconfigured.",
-                      "project")));
-    }
+    IOException ex = assertThrows(IOException.class, () -> GdchCredentials.fromJson(json));
+    assertTrue(
+        ex.getMessage()
+            .contains(
+                String.format(
+                    "Error reading GDCH service account credential from JSON, "
+                        + "%s is misconfigured.",
+                    "project")));
   }
 
   @Test
-  void fromJSON_nullPrivateKeyId() throws IOException {
+  void fromJSON_nullPrivateKeyId() {
     GenericJson json =
         writeGdchServiceAccountJson(
             FORMAT_VERSION,
@@ -212,22 +204,18 @@ class GdchCredentialsTest extends BaseSerializationTest {
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
 
-    try {
-      GdchCredentials credentials = GdchCredentials.fromJson(json);
-      fail("Should not be able to create GDCH credential without exception.");
-    } catch (IOException ex) {
-      assertTrue(
-          ex.getMessage()
-              .contains(
-                  String.format(
-                      "Error reading GDCH service account credential from JSON, "
-                          + "%s is misconfigured.",
-                      "private_key_id")));
-    }
+    IOException ex = assertThrows(IOException.class, () -> GdchCredentials.fromJson(json));
+    assertTrue(
+        ex.getMessage()
+            .contains(
+                String.format(
+                    "Error reading GDCH service account credential from JSON, "
+                        + "%s is misconfigured.",
+                    "private_key_id")));
   }
 
   @Test
-  void fromJSON_nullPrivateKey() throws IOException {
+  void fromJSON_nullPrivateKey() {
     GenericJson json =
         writeGdchServiceAccountJson(
             FORMAT_VERSION,
@@ -238,22 +226,18 @@ class GdchCredentialsTest extends BaseSerializationTest {
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
 
-    try {
-      GdchCredentials credentials = GdchCredentials.fromJson(json);
-      fail("Should not be able to create GDCH credential without exception.");
-    } catch (IOException ex) {
-      assertTrue(
-          ex.getMessage()
-              .contains(
-                  String.format(
-                      "Error reading GDCH service account credential from JSON, "
-                          + "%s is misconfigured.",
-                      "private_key")));
-    }
+    IOException ex = assertThrows(IOException.class, () -> GdchCredentials.fromJson(json));
+    assertTrue(
+        ex.getMessage()
+            .contains(
+                String.format(
+                    "Error reading GDCH service account credential from JSON, "
+                        + "%s is misconfigured.",
+                    "private_key")));
   }
 
   @Test
-  void fromJSON_nullServiceIdentityName() throws IOException {
+  void fromJSON_nullServiceIdentityName() {
     GenericJson json =
         writeGdchServiceAccountJson(
             FORMAT_VERSION,
@@ -264,18 +248,14 @@ class GdchCredentialsTest extends BaseSerializationTest {
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
 
-    try {
-      GdchCredentials credentials = GdchCredentials.fromJson(json);
-      fail("Should not be able to create GDCH credential without exception.");
-    } catch (IOException ex) {
-      assertTrue(
-          ex.getMessage()
-              .contains(
-                  String.format(
-                      "Error reading GDCH service account credential from JSON, "
-                          + "%s is misconfigured.",
-                      "name")));
-    }
+    IOException ex = assertThrows(IOException.class, () -> GdchCredentials.fromJson(json));
+    assertTrue(
+        ex.getMessage()
+            .contains(
+                String.format(
+                    "Error reading GDCH service account credential from JSON, "
+                        + "%s is misconfigured.",
+                    "name")));
   }
 
   @Test
@@ -294,7 +274,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void fromJSON_nullTokenServerUri() throws IOException {
+  void fromJSON_nullTokenServerUri() {
     GenericJson json =
         writeGdchServiceAccountJson(
             FORMAT_VERSION,
@@ -305,22 +285,18 @@ class GdchCredentialsTest extends BaseSerializationTest {
             CA_CERT_PATH,
             null);
 
-    try {
-      GdchCredentials credentials = GdchCredentials.fromJson(json);
-      fail("Should not be able to create GDCH credential without exception.");
-    } catch (IOException ex) {
-      assertTrue(
-          ex.getMessage()
-              .contains(
-                  String.format(
-                      "Error reading GDCH service account credential from JSON, "
-                          + "%s is misconfigured.",
-                      "token_uri")));
-    }
+    IOException ex = assertThrows(IOException.class, () -> GdchCredentials.fromJson(json));
+    assertTrue(
+        ex.getMessage()
+            .contains(
+                String.format(
+                    "Error reading GDCH service account credential from JSON, "
+                        + "%s is misconfigured.",
+                    "token_uri")));
   }
 
   @Test
-  void fromJSON_invalidFormatVersion() throws IOException {
+  void fromJSON_invalidFormatVersion() {
     GenericJson json =
         writeGdchServiceAccountJson(
             "100",
@@ -331,18 +307,14 @@ class GdchCredentialsTest extends BaseSerializationTest {
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
 
-    try {
-      GdchCredentials credentials = GdchCredentials.fromJson(json);
-      fail("Should not be able to create GDCH credential without exception.");
-    } catch (IOException ex) {
-      assertTrue(
-          ex.getMessage()
-              .contains(String.format("Only format version %s is supported", FORMAT_VERSION)));
-    }
+    IOException ex = assertThrows(IOException.class, () -> GdchCredentials.fromJson(json));
+    assertTrue(
+        ex.getMessage()
+            .contains(String.format("Only format version %s is supported", FORMAT_VERSION)));
   }
 
   @Test
-  void fromJSON_invalidCaCertPath() throws IOException {
+  void fromJSON_invalidCaCertPath() {
     GenericJson json =
         writeGdchServiceAccountJson(
             FORMAT_VERSION,
@@ -353,12 +325,8 @@ class GdchCredentialsTest extends BaseSerializationTest {
             "/path/to/missing/file",
             TOKEN_SERVER_URI);
 
-    try {
-      GdchCredentials credentials = GdchCredentials.fromJson(json);
-      fail("Should not be able to create GDCH credential without exception.");
-    } catch (IOException ex) {
-      assertTrue(ex.getMessage().contains("Error reading certificate file from CA cert path"));
-    }
+    IOException ex = assertThrows(IOException.class, () -> GdchCredentials.fromJson(json));
+    assertTrue(ex.getMessage().contains("Error reading certificate file from CA cert path"));
   }
 
   @Test
@@ -455,12 +423,9 @@ class GdchCredentialsTest extends BaseSerializationTest {
             TOKEN_SERVER_URI);
     GdchCredentials credentials = GdchCredentials.fromJson(json);
 
-    try {
-      GdchCredentials gdchWithAudience = credentials.createWithGdchAudience(null);
-      fail("Should not be able to create GDCH credential without exception.");
-    } catch (NullPointerException ex) {
-      assertTrue(ex.getMessage().contains("Audience are not configured for GDCH service account"));
-    }
+    NullPointerException ex =
+        assertThrows(NullPointerException.class, () -> credentials.createWithGdchAudience(null));
+    assertTrue(ex.getMessage().contains("Audience are not configured for GDCH service account"));
   }
 
   @Test
@@ -548,30 +513,17 @@ class GdchCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.addGdchServiceAccount(
         GdchCredentials.getIssuerSubjectValue(PROJECT_ID, SERVICE_IDENTITY_NAME), tokenString);
     transportFactory.transport.setTokenServerUri(TOKEN_SERVER_URI);
-    try {
-      AccessToken accessToken = credentials.refreshAccessToken();
-      fail("Should not be able to refresh access token without exception.");
-    } catch (NullPointerException ex) {
-      assertTrue(
-          ex.getMessage()
-              .contains(
-                  "Audience are not configured for GDCH service account. Specify the "
-                      + "audience by calling createWithGDCHAudience"));
-    }
+    NullPointerException ex =
+        assertThrows(NullPointerException.class, credentials::refreshAccessToken);
+    assertTrue(
+        ex.getMessage()
+            .contains(
+                "Audience are not configured for GDCH service account. Specify the "
+                    + "audience by calling createWithGDCHAudience"));
   }
 
   @Test
-  void getIssuerSubjectValue_correct() throws IOException {
-    GenericJson json =
-        writeGdchServiceAccountJson(
-            FORMAT_VERSION,
-            PROJECT_ID,
-            PRIVATE_KEY_ID,
-            PRIVATE_KEY_PKCS8,
-            SERVICE_IDENTITY_NAME,
-            CA_CERT_PATH,
-            TOKEN_SERVER_URI);
-    GdchCredentials credentials = GdchCredentials.fromJson(json);
+  void getIssuerSubjectValue_correct() {
     Object expectedIssSubValue =
         String.format("system:serviceaccount:%s:%s", PROJECT_ID, SERVICE_IDENTITY_NAME);
     assertEquals(
@@ -590,7 +542,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
-    OAuth2Credentials credentials = GdchCredentials.fromJson(json);
+    GdchCredentials credentials = GdchCredentials.fromJson(json);
     GenericJson otherJson =
         writeGdchServiceAccountJson(
             FORMAT_VERSION,
@@ -600,14 +552,14 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
-    OAuth2Credentials otherCredentials = GdchCredentials.fromJson(otherJson);
-    assertTrue(credentials.equals(otherCredentials));
-    assertTrue(otherCredentials.equals(credentials));
+    GdchCredentials otherCredentials = GdchCredentials.fromJson(otherJson);
+    assertEquals(credentials, otherCredentials);
+    assertEquals(otherCredentials, credentials);
 
-    credentials = ((GdchCredentials) credentials).createWithGdchAudience(API_AUDIENCE);
-    otherCredentials = ((GdchCredentials) otherCredentials).createWithGdchAudience(API_AUDIENCE);
-    assertTrue(credentials.equals(otherCredentials));
-    assertTrue(otherCredentials.equals(credentials));
+    credentials = credentials.createWithGdchAudience(API_AUDIENCE);
+    otherCredentials = otherCredentials.createWithGdchAudience(API_AUDIENCE);
+    assertEquals(credentials, otherCredentials);
+    assertEquals(otherCredentials, credentials);
   }
 
   @Test
@@ -621,7 +573,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
-    OAuth2Credentials credentials = GdchCredentials.fromJson(json);
+    GdchCredentials credentials = GdchCredentials.fromJson(json);
     GenericJson otherJson =
         writeGdchServiceAccountJson(
             FORMAT_VERSION,
@@ -631,14 +583,14 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
-    OAuth2Credentials otherCredentials = GdchCredentials.fromJson(otherJson);
-    assertFalse(credentials.equals(otherCredentials));
-    assertFalse(otherCredentials.equals(credentials));
+    GdchCredentials otherCredentials = GdchCredentials.fromJson(otherJson);
+    assertNotEquals(credentials, otherCredentials);
+    assertNotEquals(otherCredentials, credentials);
 
-    credentials = ((GdchCredentials) credentials).createWithGdchAudience(API_AUDIENCE);
-    otherCredentials = ((GdchCredentials) otherCredentials).createWithGdchAudience(API_AUDIENCE);
-    assertFalse(credentials.equals(otherCredentials));
-    assertFalse(otherCredentials.equals(credentials));
+    credentials = credentials.createWithGdchAudience(API_AUDIENCE);
+    otherCredentials = otherCredentials.createWithGdchAudience(API_AUDIENCE);
+    assertNotEquals(credentials, otherCredentials);
+    assertNotEquals(otherCredentials, credentials);
   }
 
   @Test
@@ -652,7 +604,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
-    OAuth2Credentials credentials = GdchCredentials.fromJson(json);
+    GdchCredentials credentials = GdchCredentials.fromJson(json);
     GenericJson otherJson =
         writeGdchServiceAccountJson(
             FORMAT_VERSION,
@@ -662,14 +614,14 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
-    OAuth2Credentials otherCredentials = GdchCredentials.fromJson(otherJson);
-    assertFalse(credentials.equals(otherCredentials));
-    assertFalse(otherCredentials.equals(credentials));
+    GdchCredentials otherCredentials = GdchCredentials.fromJson(otherJson);
+    assertNotEquals(credentials, otherCredentials);
+    assertNotEquals(otherCredentials, credentials);
 
-    credentials = ((GdchCredentials) credentials).createWithGdchAudience(API_AUDIENCE);
-    otherCredentials = ((GdchCredentials) otherCredentials).createWithGdchAudience(API_AUDIENCE);
-    assertFalse(credentials.equals(otherCredentials));
-    assertFalse(otherCredentials.equals(credentials));
+    credentials = credentials.createWithGdchAudience(API_AUDIENCE);
+    otherCredentials = otherCredentials.createWithGdchAudience(API_AUDIENCE);
+    assertNotEquals(credentials, otherCredentials);
+    assertNotEquals(otherCredentials, credentials);
   }
 
   @Test
@@ -683,7 +635,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
-    OAuth2Credentials credentials = GdchCredentials.fromJson(json);
+    GdchCredentials credentials = GdchCredentials.fromJson(json);
     GenericJson otherJson =
         writeGdchServiceAccountJson(
             FORMAT_VERSION,
@@ -693,20 +645,22 @@ class GdchCredentialsTest extends BaseSerializationTest {
             "otherServiceIdentityName",
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
-    OAuth2Credentials otherCredentials = GdchCredentials.fromJson(otherJson);
-    assertFalse(credentials.equals(otherCredentials));
-    assertFalse(otherCredentials.equals(credentials));
+    GdchCredentials otherCredentials = GdchCredentials.fromJson(otherJson);
+    assertNotEquals(credentials, otherCredentials);
+    assertNotEquals(otherCredentials, credentials);
 
-    credentials = ((GdchCredentials) credentials).createWithGdchAudience(API_AUDIENCE);
-    otherCredentials = ((GdchCredentials) otherCredentials).createWithGdchAudience(API_AUDIENCE);
-    assertFalse(credentials.equals(otherCredentials));
-    assertFalse(otherCredentials.equals(credentials));
+    credentials = credentials.createWithGdchAudience(API_AUDIENCE);
+    otherCredentials = otherCredentials.createWithGdchAudience(API_AUDIENCE);
+    assertNotEquals(credentials, otherCredentials);
+    assertNotEquals(otherCredentials, credentials);
   }
 
   @Test
   void equals_false_caCertPath() throws IOException {
     File tmpDirectory = Files.createTempDirectory("tmpDirectory").toFile();
+    tmpDirectory.deleteOnExit();
     File testCaCertFile = File.createTempFile("testCert", ".pem", tmpDirectory);
+    testCaCertFile.deleteOnExit();
     GenericJson json =
         writeGdchServiceAccountJson(
             FORMAT_VERSION,
@@ -716,7 +670,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
-    OAuth2Credentials credentials = GdchCredentials.fromJson(json);
+    GdchCredentials credentials = GdchCredentials.fromJson(json);
     GenericJson otherJson =
         writeGdchServiceAccountJson(
             FORMAT_VERSION,
@@ -726,16 +680,14 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             testCaCertFile.getPath(),
             TOKEN_SERVER_URI);
-    OAuth2Credentials otherCredentials = GdchCredentials.fromJson(otherJson);
-    assertFalse(credentials.equals(otherCredentials));
-    assertFalse(otherCredentials.equals(credentials));
+    GdchCredentials otherCredentials = GdchCredentials.fromJson(otherJson);
+    assertNotEquals(credentials, otherCredentials);
+    assertNotEquals(otherCredentials, credentials);
 
-    credentials = ((GdchCredentials) credentials).createWithGdchAudience(API_AUDIENCE);
-    otherCredentials = ((GdchCredentials) otherCredentials).createWithGdchAudience(API_AUDIENCE);
-    assertFalse(credentials.equals(otherCredentials));
-    assertFalse(otherCredentials.equals(credentials));
-
-    testCaCertFile.delete();
+    credentials = credentials.createWithGdchAudience(API_AUDIENCE);
+    otherCredentials = otherCredentials.createWithGdchAudience(API_AUDIENCE);
+    assertNotEquals(credentials, otherCredentials);
+    assertNotEquals(otherCredentials, credentials);
   }
 
   @Test
@@ -749,7 +701,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
-    OAuth2Credentials credentials = GdchCredentials.fromJson(json);
+    GdchCredentials credentials = GdchCredentials.fromJson(json);
     GenericJson otherJson =
         writeGdchServiceAccountJson(
             FORMAT_VERSION,
@@ -759,14 +711,14 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             CA_CERT_PATH,
             URI.create("https://foo1.com/bar"));
-    OAuth2Credentials otherCredentials = GdchCredentials.fromJson(otherJson);
-    assertFalse(credentials.equals(otherCredentials));
-    assertFalse(otherCredentials.equals(credentials));
+    GdchCredentials otherCredentials = GdchCredentials.fromJson(otherJson);
+    assertNotEquals(credentials, otherCredentials);
+    assertNotEquals(otherCredentials, credentials);
 
-    credentials = ((GdchCredentials) credentials).createWithGdchAudience(API_AUDIENCE);
-    otherCredentials = ((GdchCredentials) otherCredentials).createWithGdchAudience(API_AUDIENCE);
-    assertFalse(credentials.equals(otherCredentials));
-    assertFalse(otherCredentials.equals(credentials));
+    credentials = credentials.createWithGdchAudience(API_AUDIENCE);
+    otherCredentials = otherCredentials.createWithGdchAudience(API_AUDIENCE);
+    assertNotEquals(credentials, otherCredentials);
+    assertNotEquals(otherCredentials, credentials);
   }
 
   @Test
@@ -782,7 +734,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
-    OAuth2Credentials credentials = GdchCredentials.fromJson(json);
+    GdchCredentials credentials = GdchCredentials.fromJson(json);
     GenericJson otherJson =
         writeGdchServiceAccountJson(
             FORMAT_VERSION,
@@ -792,13 +744,12 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
-    OAuth2Credentials otherCredentials = GdchCredentials.fromJson(otherJson);
+    GdchCredentials otherCredentials = GdchCredentials.fromJson(otherJson);
 
-    credentials = ((GdchCredentials) credentials).createWithGdchAudience(API_AUDIENCE);
-    otherCredentials =
-        ((GdchCredentials) otherCredentials).createWithGdchAudience(otherApiAudience);
-    assertFalse(credentials.equals(otherCredentials));
-    assertFalse(otherCredentials.equals(credentials));
+    credentials = credentials.createWithGdchAudience(API_AUDIENCE);
+    otherCredentials = otherCredentials.createWithGdchAudience(otherApiAudience);
+    assertNotEquals(credentials, otherCredentials);
+    assertNotEquals(otherCredentials, credentials);
   }
 
   @Test
@@ -812,8 +763,8 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
-    OAuth2Credentials credentials = GdchCredentials.fromJson(json);
-    credentials = ((GdchCredentials) credentials).createWithGdchAudience(API_AUDIENCE);
+    GdchCredentials credentials = GdchCredentials.fromJson(json);
+    credentials = credentials.createWithGdchAudience(API_AUDIENCE);
     String expectedToString =
         String.format(
             "GdchCredentials{projectId=%s, privateKeyId=%s, serviceIdentityName=%s, "
@@ -839,7 +790,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
-    OAuth2Credentials credentials = GdchCredentials.fromJson(json);
+    GdchCredentials credentials = GdchCredentials.fromJson(json);
     GenericJson otherJson =
         writeGdchServiceAccountJson(
             FORMAT_VERSION,
@@ -849,11 +800,11 @@ class GdchCredentialsTest extends BaseSerializationTest {
             SERVICE_IDENTITY_NAME,
             CA_CERT_PATH,
             TOKEN_SERVER_URI);
-    OAuth2Credentials otherCredentials = GdchCredentials.fromJson(otherJson);
+    GdchCredentials otherCredentials = GdchCredentials.fromJson(otherJson);
     assertEquals(credentials.hashCode(), otherCredentials.hashCode());
 
-    credentials = ((GdchCredentials) credentials).createWithGdchAudience(API_AUDIENCE);
-    otherCredentials = ((GdchCredentials) otherCredentials).createWithGdchAudience(API_AUDIENCE);
+    credentials = credentials.createWithGdchAudience(API_AUDIENCE);
+    otherCredentials = otherCredentials.createWithGdchAudience(API_AUDIENCE);
     assertEquals(credentials.hashCode(), otherCredentials.hashCode());
   }
 
@@ -876,7 +827,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
     assertEquals(credentials, deserializedCredentials);
     assertEquals(credentials.hashCode(), deserializedCredentials.hashCode());
     assertEquals(credentials.toString(), deserializedCredentials.toString());
-    assertSame(deserializedCredentials.clock, Clock.SYSTEM);
+    assertSame(Clock.SYSTEM, deserializedCredentials.clock);
     assertEquals(
         MockTokenServerTransportFactory.class,
         deserializedCredentials.toBuilder().getHttpTransportFactory().getClass());
