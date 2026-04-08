@@ -55,6 +55,8 @@ import com.google.spanner.v1.RequestOptions;
 import com.google.spanner.v1.Transaction;
 import com.google.spanner.v1.TransactionOptions;
 import com.google.spanner.v1.TransactionSelector;
+import java.util.Collections;
+import java.util.EnumMap;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicLong;
@@ -202,9 +204,19 @@ abstract class AbstractReadContext
       // of a channel hint. GAX will automatically choose a hint when used
       // with a multiplexed session to perform a round-robin channel selection. We are
       // passing a hint here to prefer random channel selection instead of doing GAX round-robin.
+      // Also signal unbind so the grpc-gcp affinity map entry is cleaned up once the call
+      // completes. The unbind flag is preserved on retries via prepareRetryOnDifferentGrpcChannel.
       this.channelHint =
           getChannelHintOptions(
-              session.getOptions(), ThreadLocalRandom.current().nextLong(Long.MAX_VALUE));
+              session.getOptions(),
+              ThreadLocalRandom.current().nextLong(Long.MAX_VALUE),
+              session.getSpanner().getOptions().isGrpcGcpExtensionEnabled());
+      if (this.channelHint != null) {
+        Map<SpannerRpc.Option, Object> mutable = new EnumMap<>(SpannerRpc.Option.class);
+        mutable.putAll(this.channelHint);
+        mutable.put(SpannerRpc.Option.UNBIND_CHANNEL_HINT, Boolean.TRUE);
+        this.channelHint = Collections.unmodifiableMap(mutable);
+      }
     }
 
     @Override
@@ -241,7 +253,10 @@ abstract class AbstractReadContext
     boolean prepareRetryOnDifferentGrpcChannel() {
       if (session.getIsMultiplexed() && channelHint.get(Option.CHANNEL_HINT) != null) {
         long channelHintForTransaction = Option.CHANNEL_HINT.getLong(channelHint) + 1L;
-        channelHint = optionMap(SessionOption.channelHint(channelHintForTransaction));
+        channelHint =
+            optionMap(
+                SessionOption.channelHint(channelHintForTransaction),
+                SessionOption.unbindChannelHint());
         return true;
       }
       return super.prepareRetryOnDifferentGrpcChannel();
@@ -360,7 +375,9 @@ abstract class AbstractReadContext
       }
       this.channelHint =
           getChannelHintOptions(
-              session.getOptions(), ThreadLocalRandom.current().nextLong(Long.MAX_VALUE));
+              session.getOptions(),
+              ThreadLocalRandom.current().nextLong(Long.MAX_VALUE),
+              session.getSpanner().getOptions().isGrpcGcpExtensionEnabled());
     }
 
     @Override
@@ -862,6 +879,19 @@ abstract class AbstractReadContext
 
   static Map<SpannerRpc.Option, ?> getChannelHintOptions(
       Map<SpannerRpc.Option, ?> channelHintForSession, Long channelHintForTransaction) {
+    return getChannelHintOptions(
+        channelHintForSession, channelHintForTransaction, /* useTransactionHint= */ false);
+  }
+
+  static Map<SpannerRpc.Option, ?> getChannelHintOptions(
+      Map<SpannerRpc.Option, ?> channelHintForSession,
+      Long channelHintForTransaction,
+      boolean useTransactionHint) {
+    // grpc-gcp uses a per-operation/per-transaction random hint instead of reusing the session
+    // hint so requests distribute independently from session affinity.
+    if (useTransactionHint && channelHintForTransaction != null) {
+      return optionMap(SessionOption.channelHint(channelHintForTransaction));
+    }
     if (channelHintForSession != null) {
       return channelHintForSession;
     } else if (channelHintForTransaction != null) {

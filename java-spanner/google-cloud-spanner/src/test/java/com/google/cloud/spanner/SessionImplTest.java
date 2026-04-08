@@ -319,6 +319,112 @@ public class SessionImplTest {
     assertThat(request.getMutationsList()).containsExactly(mutation);
   }
 
+  @SuppressWarnings("unchecked")
+  @Test
+  public void singleUseReadUsesRandomChannelHintWhenGrpcGcpEnabled() {
+    when(spannerOptions.isGrpcGcpExtensionEnabled()).thenReturn(true);
+    ArgumentCaptor<SpannerRpc.ResultStreamConsumer> consumer =
+        ArgumentCaptor.forClass(SpannerRpc.ResultStreamConsumer.class);
+    ArgumentCaptor<Map<SpannerRpc.Option, Object>> readOptionsCaptor =
+        ArgumentCaptor.forClass((Class) Map.class);
+    PartialResultSet resultSet =
+        PartialResultSet.newBuilder()
+            .setMetadata(newMetadata(Type.struct(Type.StructField.of("C", Type.string()))))
+            .build();
+    Mockito.when(
+            rpc.read(
+                Mockito.any(), consumer.capture(), readOptionsCaptor.capture(), any(), eq(false)))
+        .then(
+            invocation -> {
+              consumer.getValue().onPartialResultSet(resultSet);
+              consumer.getValue().onCompleted();
+              return new NoOpStreamingCall();
+            });
+
+    session
+        .singleUse(TimestampBound.strong())
+        .readRow("Dummy", Key.of(), Collections.singletonList("C"));
+
+    Map<SpannerRpc.Option, Object> readOptions = readOptionsCaptor.getValue();
+    assertThat(readOptions).isNotSameInstanceAs(options);
+    assertThat(readOptions).containsKey(SpannerRpc.Option.CHANNEL_HINT);
+    assertThat(readOptions.get(SpannerRpc.Option.UNBIND_CHANNEL_HINT)).isEqualTo(Boolean.TRUE);
+  }
+
+  @SuppressWarnings("unchecked")
+  @Test
+  public void multiUseReadOnlyTransactionUsesRandomChannelHintWhenGrpcGcpEnabled()
+      throws ParseException {
+    when(spannerOptions.isGrpcGcpExtensionEnabled()).thenReturn(true);
+    ArgumentCaptor<Map<SpannerRpc.Option, Object>> beginOptionsCaptor =
+        ArgumentCaptor.forClass((Class) Map.class);
+    Transaction txnMetadata =
+        Transaction.newBuilder()
+            .setId(ByteString.copyFromUtf8("x"))
+            .setReadTimestamp(Timestamps.parse("2015-10-01T10:54:20.021Z"))
+            .build();
+    Mockito.when(rpc.beginTransaction(Mockito.any(), beginOptionsCaptor.capture(), eq(false)))
+        .thenReturn(txnMetadata);
+    mockRead(
+        PartialResultSet.newBuilder()
+            .setMetadata(newMetadata(Type.struct(Type.StructField.of("C", Type.string()))))
+            .build());
+
+    session
+        .readOnlyTransaction(TimestampBound.strong())
+        .readRow("Dummy", Key.of(), Collections.singletonList("C"));
+
+    Map<SpannerRpc.Option, Object> beginOptions = beginOptionsCaptor.getValue();
+    assertThat(beginOptions).isNotSameInstanceAs(options);
+    assertThat(beginOptions).containsKey(SpannerRpc.Option.CHANNEL_HINT);
+  }
+
+  @SuppressWarnings("unchecked")
+  @Test
+  public void readWriteTransactionUsesRandomChannelHintWhenGrpcGcpEnabled() {
+    when(spannerOptions.isGrpcGcpExtensionEnabled()).thenReturn(true);
+    ArgumentCaptor<Map<SpannerRpc.Option, Object>> beginOptionsCaptor =
+        ArgumentCaptor.forClass((Class) Map.class);
+    Mockito.when(
+            rpc.beginTransactionAsync(
+                Mockito.any(BeginTransactionRequest.class), beginOptionsCaptor.capture(), eq(true)))
+        .thenReturn(
+            ApiFutures.immediateFuture(
+                Transaction.newBuilder().setId(ByteString.copyFromUtf8("TEST")).build()));
+
+    session
+        .readWriteTransaction()
+        .run(
+            transaction -> {
+              transaction.buffer(Mutation.newInsertBuilder("T").set("C").to("x").build());
+              return null;
+            });
+
+    Map<SpannerRpc.Option, Object> beginOptions = beginOptionsCaptor.getValue();
+    assertThat(beginOptions).isNotSameInstanceAs(options);
+    assertThat(beginOptions).containsKey(SpannerRpc.Option.CHANNEL_HINT);
+  }
+
+  @SuppressWarnings("unchecked")
+  @Test
+  public void writeAtLeastOnceUsesRandomChannelHintWhenGrpcGcpEnabled() throws ParseException {
+    when(spannerOptions.isGrpcGcpExtensionEnabled()).thenReturn(true);
+    ArgumentCaptor<Map<SpannerRpc.Option, Object>> commitOptionsCaptor =
+        ArgumentCaptor.forClass((Class) Map.class);
+    CommitResponse response =
+        CommitResponse.newBuilder()
+            .setCommitTimestamp(Timestamps.parse("2015-10-01T10:54:20.021Z"))
+            .build();
+    Mockito.when(rpc.commit(Mockito.any(), commitOptionsCaptor.capture())).thenReturn(response);
+
+    session.writeAtLeastOnce(
+        Collections.singletonList(Mutation.newInsertBuilder("T").set("C").to("x").build()));
+
+    Map<SpannerRpc.Option, Object> commitOptions = commitOptionsCaptor.getValue();
+    assertThat(commitOptions).isNotSameInstanceAs(options);
+    assertThat(commitOptions).containsKey(SpannerRpc.Option.CHANNEL_HINT);
+  }
+
   private static long utcTimeSeconds(int year, int month, int day, int hour, int min, int secs) {
     GregorianCalendar calendar = new GregorianCalendar(TimeZone.getTimeZone("UTC"));
     calendar.set(year, month, day, hour, min, secs);

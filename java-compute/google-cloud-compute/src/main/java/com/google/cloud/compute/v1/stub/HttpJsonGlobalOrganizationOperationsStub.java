@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.LongRunningClient;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteGlobalOrganizationOperationRequest;
 import com.google.cloud.compute.v1.DeleteGlobalOrganizationOperationResponse;
 import com.google.cloud.compute.v1.GetGlobalOrganizationOperationRequest;
@@ -222,6 +223,11 @@ public class HttpJsonGlobalOrganizationOperationsStub extends GlobalOrganization
   private final LongRunningClient longRunningClient;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("locations/global/operations/{operation}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("locations/global/operations/{operation}");
+
   public static final HttpJsonGlobalOrganizationOperationsStub create(
       GlobalOrganizationOperationsStubSettings settings) throws IOException {
     return new HttpJsonGlobalOrganizationOperationsStub(settings, ClientContext.create(settings));
@@ -279,6 +285,12 @@ public class HttpJsonGlobalOrganizationOperationsStub extends GlobalOrganization
                       builder.add("operation", String.valueOf(request.getOperation()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("operation", String.valueOf(request.getOperation()));
+                      return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetGlobalOrganizationOperationRequest, Operation> getTransportSettings =
         HttpJsonCallSettings.<GetGlobalOrganizationOperationRequest, Operation>newBuilder()
@@ -289,6 +301,12 @@ public class HttpJsonGlobalOrganizationOperationsStub extends GlobalOrganization
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("operation", String.valueOf(request.getOperation()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("operation", String.valueOf(request.getOperation()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListGlobalOrganizationOperationsRequest, OperationList>

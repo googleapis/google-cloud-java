@@ -83,6 +83,17 @@ public class XGoogSpannerRequestId {
     return this.nthRequest;
   }
 
+  /**
+   * Returns a stable identifier for the logical request, excluding channel and attempt.
+   *
+   * <p>This can be used to associate retry-local state across attempts of the same RPC without
+   * affecting unrelated requests.
+   */
+  @InternalApi
+  public String getLogicalRequestKey() {
+    return this.nthClientId + "." + this.nthRequest;
+  }
+
   @VisibleForTesting
   static final Pattern REGEX =
       Pattern.compile("^(\\d)\\.([0-9a-z]{16})\\.(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)$");

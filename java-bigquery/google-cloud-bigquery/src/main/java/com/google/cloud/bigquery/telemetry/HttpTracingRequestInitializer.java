@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.telemetry;
 import com.google.api.client.http.*;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.cloud.bigquery.BigQueryRetryHelper;
 import com.google.common.annotations.VisibleForTesting;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
@@ -26,6 +27,7 @@ import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.api.trace.propagation.W3CTraceContextPropagator;
 import io.opentelemetry.context.Context;
 import java.io.IOException;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * HttpRequestInitializer that wraps a delegate initializer, intercepts all HTTP requests, adds
@@ -49,8 +51,11 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
       AttributeKey.longKey("http.request.body.size");
   public static final AttributeKey<Long> HTTP_RESPONSE_BODY_SIZE =
       AttributeKey.longKey("http.response.body.size");
+  public static final AttributeKey<String> SERVER_ADDRESS =
+      AttributeKey.stringKey("server.address");
+  public static final AttributeKey<Long> SERVER_PORT = AttributeKey.longKey("server.port");
 
-  @VisibleForTesting static final String HTTP_RPC_SYSTEM_NAME = "http";
+  @VisibleForTesting public static final String HTTP_RPC_SYSTEM_NAME = "http";
 
   private static final java.util.Set<String> REDACTED_QUERY_PARAMETERS =
       com.google.common.collect.ImmutableSet.of(
@@ -84,6 +89,14 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
 
     addInitialHttpAttributesToSpan(span, request);
 
+    AtomicInteger attemptTracker = Context.current().get(BigQueryRetryHelper.RETRY_ATTEMPT_KEY);
+    if (attemptTracker != null) {
+      int attempt = attemptTracker.getAndIncrement();
+      if (attempt > 0) {
+        span.setAttribute(HTTP_REQUEST_RESEND_COUNT, (long) attempt);
+      }
+    }
+
     HttpResponseInterceptor originalInterceptor = request.getResponseInterceptor();
     request.setResponseInterceptor(
         response -> {
@@ -109,10 +122,10 @@ public class HttpTracingRequestInitializer implements HttpRequestInitializer {
     BigQueryTelemetryTracer.addCommonAttributeToSpan(span);
     span.setAttribute(BigQueryTelemetryTracer.RPC_SYSTEM_NAME, HTTP_RPC_SYSTEM_NAME);
     String host = request.getUrl().getHost();
-    span.setAttribute(BigQueryTelemetryTracer.SERVER_ADDRESS, host);
+    span.setAttribute(SERVER_ADDRESS, host);
     int port = request.getUrl().getPort();
     if (port > 0) {
-      span.setAttribute(BigQueryTelemetryTracer.SERVER_PORT, (long) port);
+      span.setAttribute(SERVER_PORT, (long) port);
     }
     span.setAttribute(URL_FULL, getSanitizedUrl(request));
   }

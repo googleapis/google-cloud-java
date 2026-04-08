@@ -30,6 +30,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.GetInstanceSettingRequest;
 import com.google.cloud.compute.v1.InstanceSettings;
 import com.google.cloud.compute.v1.Operation;
@@ -158,6 +159,11 @@ public class HttpJsonInstanceSettingsServiceStub extends InstanceSettingsService
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+
   public static final HttpJsonInstanceSettingsServiceStub create(
       InstanceSettingsServiceStubSettings settings) throws IOException {
     return new HttpJsonInstanceSettingsServiceStub(settings, ClientContext.create(settings));
@@ -210,6 +216,13 @@ public class HttpJsonInstanceSettingsServiceStub extends InstanceSettingsService
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<PatchInstanceSettingRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchInstanceSettingRequest, Operation>newBuilder()
@@ -221,6 +234,13 @@ public class HttpJsonInstanceSettingsServiceStub extends InstanceSettingsService
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

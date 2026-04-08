@@ -20,6 +20,8 @@ import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
@@ -43,12 +45,14 @@ import com.google.chat.v1.CreateCustomEmojiRequest;
 import com.google.chat.v1.CreateMembershipRequest;
 import com.google.chat.v1.CreateMessageRequest;
 import com.google.chat.v1.CreateReactionRequest;
+import com.google.chat.v1.CreateSectionRequest;
 import com.google.chat.v1.CreateSpaceRequest;
 import com.google.chat.v1.CustomEmoji;
 import com.google.chat.v1.DeleteCustomEmojiRequest;
 import com.google.chat.v1.DeleteMembershipRequest;
 import com.google.chat.v1.DeleteMessageRequest;
 import com.google.chat.v1.DeleteReactionRequest;
+import com.google.chat.v1.DeleteSectionRequest;
 import com.google.chat.v1.DeleteSpaceRequest;
 import com.google.chat.v1.FindDirectMessageRequest;
 import com.google.chat.v1.GetAttachmentRequest;
@@ -68,15 +72,24 @@ import com.google.chat.v1.ListMessagesRequest;
 import com.google.chat.v1.ListMessagesResponse;
 import com.google.chat.v1.ListReactionsRequest;
 import com.google.chat.v1.ListReactionsResponse;
+import com.google.chat.v1.ListSectionItemsRequest;
+import com.google.chat.v1.ListSectionItemsResponse;
+import com.google.chat.v1.ListSectionsRequest;
+import com.google.chat.v1.ListSectionsResponse;
 import com.google.chat.v1.ListSpaceEventsRequest;
 import com.google.chat.v1.ListSpaceEventsResponse;
 import com.google.chat.v1.ListSpacesRequest;
 import com.google.chat.v1.ListSpacesResponse;
 import com.google.chat.v1.Membership;
 import com.google.chat.v1.Message;
+import com.google.chat.v1.MoveSectionItemRequest;
+import com.google.chat.v1.MoveSectionItemResponse;
+import com.google.chat.v1.PositionSectionRequest;
+import com.google.chat.v1.PositionSectionResponse;
 import com.google.chat.v1.Reaction;
 import com.google.chat.v1.SearchSpacesRequest;
 import com.google.chat.v1.SearchSpacesResponse;
+import com.google.chat.v1.Section;
 import com.google.chat.v1.SetUpSpaceRequest;
 import com.google.chat.v1.Space;
 import com.google.chat.v1.SpaceEvent;
@@ -85,6 +98,7 @@ import com.google.chat.v1.SpaceReadState;
 import com.google.chat.v1.ThreadReadState;
 import com.google.chat.v1.UpdateMembershipRequest;
 import com.google.chat.v1.UpdateMessageRequest;
+import com.google.chat.v1.UpdateSectionRequest;
 import com.google.chat.v1.UpdateSpaceNotificationSettingRequest;
 import com.google.chat.v1.UpdateSpaceReadStateRequest;
 import com.google.chat.v1.UpdateSpaceRequest;
@@ -1401,6 +1415,263 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateSectionRequest, Section>
+      createSectionMethodDescriptor =
+          ApiMethodDescriptor.<CreateSectionRequest, Section>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/CreateSection")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateSectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=users/*}/sections",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("section", request.getSection(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Section>newBuilder()
+                      .setDefaultInstance(Section.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteSectionRequest, Empty>
+      deleteSectionMethodDescriptor =
+          ApiMethodDescriptor.<DeleteSectionRequest, Empty>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/DeleteSection")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteSectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=users/*/sections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateSectionRequest, Section>
+      updateSectionMethodDescriptor =
+          ApiMethodDescriptor.<UpdateSectionRequest, Section>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/UpdateSection")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateSectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{section.name=users/*/sections/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "section.name", request.getSection().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("section", request.getSection(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Section>newBuilder()
+                      .setDefaultInstance(Section.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListSectionsRequest, ListSectionsResponse>
+      listSectionsMethodDescriptor =
+          ApiMethodDescriptor.<ListSectionsRequest, ListSectionsResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/ListSections")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSectionsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=users/*}/sections",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSectionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSectionsResponse>newBuilder()
+                      .setDefaultInstance(ListSectionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<PositionSectionRequest, PositionSectionResponse>
+      positionSectionMethodDescriptor =
+          ApiMethodDescriptor.<PositionSectionRequest, PositionSectionResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/PositionSection")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<PositionSectionRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=users/*/sections/*}:position",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<PositionSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<PositionSectionRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<PositionSectionResponse>newBuilder()
+                      .setDefaultInstance(PositionSectionResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListSectionItemsRequest, ListSectionItemsResponse>
+      listSectionItemsMethodDescriptor =
+          ApiMethodDescriptor.<ListSectionItemsRequest, ListSectionItemsResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/ListSectionItems")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListSectionItemsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=users/*/sections/*}/items",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSectionItemsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListSectionItemsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListSectionItemsResponse>newBuilder()
+                      .setDefaultInstance(ListSectionItemsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<MoveSectionItemRequest, MoveSectionItemResponse>
+      moveSectionItemMethodDescriptor =
+          ApiMethodDescriptor.<MoveSectionItemRequest, MoveSectionItemResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/MoveSectionItem")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<MoveSectionItemRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=users/*/sections/*/items/*}:move",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveSectionItemRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<MoveSectionItemRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<MoveSectionItemResponse>newBuilder()
+                      .setDefaultInstance(MoveSectionItemResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<CreateMessageRequest, Message> createMessageCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesResponse> listMessagesCallable;
   private final UnaryCallable<ListMessagesRequest, ListMessagesPagedResponse>
@@ -1458,6 +1729,20 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
       getSpaceNotificationSettingCallable;
   private final UnaryCallable<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
       updateSpaceNotificationSettingCallable;
+  private final UnaryCallable<CreateSectionRequest, Section> createSectionCallable;
+  private final UnaryCallable<DeleteSectionRequest, Empty> deleteSectionCallable;
+  private final UnaryCallable<UpdateSectionRequest, Section> updateSectionCallable;
+  private final UnaryCallable<ListSectionsRequest, ListSectionsResponse> listSectionsCallable;
+  private final UnaryCallable<ListSectionsRequest, ListSectionsPagedResponse>
+      listSectionsPagedCallable;
+  private final UnaryCallable<PositionSectionRequest, PositionSectionResponse>
+      positionSectionCallable;
+  private final UnaryCallable<ListSectionItemsRequest, ListSectionItemsResponse>
+      listSectionItemsCallable;
+  private final UnaryCallable<ListSectionItemsRequest, ListSectionItemsPagedResponse>
+      listSectionItemsPagedCallable;
+  private final UnaryCallable<MoveSectionItemRequest, MoveSectionItemResponse>
+      moveSectionItemCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -1885,6 +2170,92 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<CreateSectionRequest, Section> createSectionTransportSettings =
+        HttpJsonCallSettings.<CreateSectionRequest, Section>newBuilder()
+            .setMethodDescriptor(createSectionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<DeleteSectionRequest, Empty> deleteSectionTransportSettings =
+        HttpJsonCallSettings.<DeleteSectionRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteSectionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getName())
+            .build();
+    HttpJsonCallSettings<UpdateSectionRequest, Section> updateSectionTransportSettings =
+        HttpJsonCallSettings.<UpdateSectionRequest, Section>newBuilder()
+            .setMethodDescriptor(updateSectionMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("section.name", String.valueOf(request.getSection().getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListSectionsRequest, ListSectionsResponse> listSectionsTransportSettings =
+        HttpJsonCallSettings.<ListSectionsRequest, ListSectionsResponse>newBuilder()
+            .setMethodDescriptor(listSectionsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(request -> request.getParent())
+            .build();
+    HttpJsonCallSettings<PositionSectionRequest, PositionSectionResponse>
+        positionSectionTransportSettings =
+            HttpJsonCallSettings.<PositionSectionRequest, PositionSectionResponse>newBuilder()
+                .setMethodDescriptor(positionSectionMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    HttpJsonCallSettings<ListSectionItemsRequest, ListSectionItemsResponse>
+        listSectionItemsTransportSettings =
+            HttpJsonCallSettings.<ListSectionItemsRequest, ListSectionItemsResponse>newBuilder()
+                .setMethodDescriptor(listSectionItemsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    HttpJsonCallSettings<MoveSectionItemRequest, MoveSectionItemResponse>
+        moveSectionItemTransportSettings =
+            HttpJsonCallSettings.<MoveSectionItemRequest, MoveSectionItemResponse>newBuilder()
+                .setMethodDescriptor(moveSectionItemMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
 
     this.createMessageCallable =
         callableFactory.createUnaryCallable(
@@ -2030,6 +2401,33 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
             updateSpaceNotificationSettingTransportSettings,
             settings.updateSpaceNotificationSettingSettings(),
             clientContext);
+    this.createSectionCallable =
+        callableFactory.createUnaryCallable(
+            createSectionTransportSettings, settings.createSectionSettings(), clientContext);
+    this.deleteSectionCallable =
+        callableFactory.createUnaryCallable(
+            deleteSectionTransportSettings, settings.deleteSectionSettings(), clientContext);
+    this.updateSectionCallable =
+        callableFactory.createUnaryCallable(
+            updateSectionTransportSettings, settings.updateSectionSettings(), clientContext);
+    this.listSectionsCallable =
+        callableFactory.createUnaryCallable(
+            listSectionsTransportSettings, settings.listSectionsSettings(), clientContext);
+    this.listSectionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSectionsTransportSettings, settings.listSectionsSettings(), clientContext);
+    this.positionSectionCallable =
+        callableFactory.createUnaryCallable(
+            positionSectionTransportSettings, settings.positionSectionSettings(), clientContext);
+    this.listSectionItemsCallable =
+        callableFactory.createUnaryCallable(
+            listSectionItemsTransportSettings, settings.listSectionItemsSettings(), clientContext);
+    this.listSectionItemsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSectionItemsTransportSettings, settings.listSectionItemsSettings(), clientContext);
+    this.moveSectionItemCallable =
+        callableFactory.createUnaryCallable(
+            moveSectionItemTransportSettings, settings.moveSectionItemSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -2073,6 +2471,13 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(listSpaceEventsMethodDescriptor);
     methodDescriptors.add(getSpaceNotificationSettingMethodDescriptor);
     methodDescriptors.add(updateSpaceNotificationSettingMethodDescriptor);
+    methodDescriptors.add(createSectionMethodDescriptor);
+    methodDescriptors.add(deleteSectionMethodDescriptor);
+    methodDescriptors.add(updateSectionMethodDescriptor);
+    methodDescriptors.add(listSectionsMethodDescriptor);
+    methodDescriptors.add(positionSectionMethodDescriptor);
+    methodDescriptors.add(listSectionItemsMethodDescriptor);
+    methodDescriptors.add(moveSectionItemMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -2293,6 +2698,53 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   public UnaryCallable<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
       updateSpaceNotificationSettingCallable() {
     return updateSpaceNotificationSettingCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateSectionRequest, Section> createSectionCallable() {
+    return createSectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSectionRequest, Empty> deleteSectionCallable() {
+    return deleteSectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSectionRequest, Section> updateSectionCallable() {
+    return updateSectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSectionsRequest, ListSectionsResponse> listSectionsCallable() {
+    return listSectionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSectionsRequest, ListSectionsPagedResponse> listSectionsPagedCallable() {
+    return listSectionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<PositionSectionRequest, PositionSectionResponse> positionSectionCallable() {
+    return positionSectionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSectionItemsRequest, ListSectionItemsResponse>
+      listSectionItemsCallable() {
+    return listSectionItemsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSectionItemsRequest, ListSectionItemsPagedResponse>
+      listSectionItemsPagedCallable() {
+    return listSectionItemsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<MoveSectionItemRequest, MoveSectionItemResponse> moveSectionItemCallable() {
+    return moveSectionItemCallable;
   }
 
   @Override

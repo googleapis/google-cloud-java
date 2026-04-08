@@ -21,7 +21,7 @@ FROM us-docker.pkg.dev/artifact-foundry-prod/docker-3p-trusted/maven@sha256:d3f0
 WORKDIR /sdk-platform-java
 COPY sdk-platform-java/ .
 # {x-version-update-start:gapic-generator-java:current}
-ENV DOCKER_GAPIC_GENERATOR_VERSION="2.68.1-SNAPSHOT"
+ENV DOCKER_GAPIC_GENERATOR_VERSION="2.69.0"
 # {x-version-update-end}
 
 # Download the java formatter
@@ -39,7 +39,7 @@ FROM us-docker.pkg.dev/artifact-foundry-prod/docker-3p-trusted/python@sha256:afc
 
 ARG OWLBOT_CLI_COMMITTISH=3a68a9c0de318784b3aefadcc502a6521b3f1bc5
 ARG PROTOC_VERSION=33.2
-ARG GRPC_VERSION=1.76.3
+ARG GRPC_VERSION=1.80.0
 ENV HOME=/home
 ENV OS_ARCHITECTURE="linux-x86_64"
 

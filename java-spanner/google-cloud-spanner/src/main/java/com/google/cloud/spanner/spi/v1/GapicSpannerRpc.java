@@ -2059,6 +2059,13 @@ public class GapicSpannerRpc implements SpannerRpc {
       CommitRequest request, @Nullable Map<Option, ?> options) {
     GrpcCallContext context =
         newCallContext(options, request.getSession(), request, SpannerGrpc.getCommitMethod(), true);
+    // Signal grpc-gcp to unbind the affinity key after this call completes.
+    // Commit is a terminal RPC — no more RPCs will use this transaction's affinity key.
+    if (this.isGrpcGcpExtensionEnabled) {
+      context =
+          context.withCallOptions(
+              context.getCallOptions().withOption(GcpManagedChannel.UNBIND_AFFINITY_KEY, true));
+    }
     return spannerStub.commitCallable().futureCall(request, context);
   }
 
@@ -2078,6 +2085,13 @@ public class GapicSpannerRpc implements SpannerRpc {
     GrpcCallContext context =
         newCallContext(
             options, request.getSession(), request, SpannerGrpc.getRollbackMethod(), true);
+    // Signal grpc-gcp to unbind the affinity key after this call completes.
+    // Rollback is a terminal RPC — no more RPCs will use this transaction's affinity key.
+    if (this.isGrpcGcpExtensionEnabled) {
+      context =
+          context.withCallOptions(
+              context.getCallOptions().withOption(GcpManagedChannel.UNBIND_AFFINITY_KEY, true));
+    }
     return spannerStub.rollbackCallable().futureCall(request, context);
   }
 
@@ -2278,6 +2292,13 @@ public class GapicSpannerRpc implements SpannerRpc {
         context =
             context.withCallOptions(
                 context.getCallOptions().withOption(GcpManagedChannel.AFFINITY_KEY, affinityKey));
+        // Check if the caller wants to unbind the affinity key after this call completes.
+        Boolean unbind = Option.UNBIND_CHANNEL_HINT.get(options);
+        if (Boolean.TRUE.equals(unbind)) {
+          context =
+              context.withCallOptions(
+                  context.getCallOptions().withOption(GcpManagedChannel.UNBIND_AFFINITY_KEY, true));
+        }
       } else {
         // Set channel affinity in GAX.
         context = context.withChannelAffinity(affinity.intValue());

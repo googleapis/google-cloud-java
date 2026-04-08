@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.GetReservationSlotRequest;
 import com.google.cloud.compute.v1.GetVersionReservationSlotRequest;
 import com.google.cloud.compute.v1.ListReservationSlotsRequest;
@@ -287,6 +288,19 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/reservationSlots/{reservation_slot}");
+  private static final PathTemplate GET_VERSION_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/reservationSlots/{reservation_slot}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}");
+  private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/{parent_name=reservations/*/reservationBlocks/*/reservationSubBlocks/*}/reservationSlots/{reservation_slot}");
+
   public static final HttpJsonReservationSlotsStub create(ReservationSlotsStubSettings settings)
       throws IOException {
     return new HttpJsonReservationSlotsStub(settings, ClientContext.create(settings));
@@ -342,6 +356,17 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "parent_name", String.valueOf(request.getParentName()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "reservation_slot", String.valueOf(request.getReservationSlot()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetVersionReservationSlotRequest, Operation> getVersionTransportSettings =
         HttpJsonCallSettings.<GetVersionReservationSlotRequest, Operation>newBuilder()
@@ -355,6 +380,16 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
                   builder.add("reservation_slot", String.valueOf(request.getReservationSlot()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("parent_name", String.valueOf(request.getParentName()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "reservation_slot", String.valueOf(request.getReservationSlot()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_VERSION_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListReservationSlotsRequest, ReservationSlotsListResponse>
@@ -371,6 +406,15 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "parent_name", String.valueOf(request.getParentName()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<UpdateReservationSlotRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateReservationSlotRequest, Operation>newBuilder()
@@ -384,6 +428,16 @@ public class HttpJsonReservationSlotsStub extends ReservationSlotsStub {
                   builder.add("reservation_slot", String.valueOf(request.getReservationSlot()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("parent_name", String.valueOf(request.getParentName()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "reservation_slot", String.valueOf(request.getReservationSlot()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

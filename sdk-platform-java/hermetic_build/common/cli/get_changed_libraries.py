@@ -21,6 +21,7 @@ logging.basicConfig(level=logging.DEBUG, stream=sys.stderr)
 import os
 import click
 
+from common.model.config_change import ConfigChange
 from common.model.generation_config import GenerationConfig
 from common.utils.generation_config_comparator import compare_config
 
@@ -51,9 +52,18 @@ def main(ctx):
     metadata about library generation.
     """,
 )
+@click.option(
+    "--force-regenerate-all",
+    required=False,
+    type=bool,
+    help="""
+    Force regenerate all libraries.
+    """,
+)
 def create(
     baseline_generation_config_path: str,
     current_generation_config_path: str,
+    force_regenerate_all: bool,
 ) -> None:
     """
     Compares baseline generation config with current generation config and
@@ -77,6 +87,7 @@ def create(
     config_change = compare_config(
         baseline_config=GenerationConfig.from_yaml(baseline_generation_config_path),
         current_config=GenerationConfig.from_yaml(current_generation_config_path),
+        force_regenerate_all=force_regenerate_all,
     )
     click.echo(",".join(config_change.get_changed_libraries()))
 

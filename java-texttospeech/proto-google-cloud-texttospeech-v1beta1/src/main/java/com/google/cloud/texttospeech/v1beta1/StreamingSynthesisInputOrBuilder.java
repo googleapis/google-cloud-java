@@ -75,8 +75,8 @@ public interface StreamingSynthesisInputOrBuilder
    *
    *
    * <pre>
-   * Markup for HD voices specifically. This field may not be used with any
-   * other voices.
+   * Markup for Chirp 3: HD voices specifically. This field may not be used
+   * with any other voices.
    * </pre>
    *
    * <code>string markup = 5;</code>
@@ -89,8 +89,8 @@ public interface StreamingSynthesisInputOrBuilder
    *
    *
    * <pre>
-   * Markup for HD voices specifically. This field may not be used with any
-   * other voices.
+   * Markup for Chirp 3: HD voices specifically. This field may not be used
+   * with any other voices.
    * </pre>
    *
    * <code>string markup = 5;</code>
@@ -103,8 +103,8 @@ public interface StreamingSynthesisInputOrBuilder
    *
    *
    * <pre>
-   * Markup for HD voices specifically. This field may not be used with any
-   * other voices.
+   * Markup for Chirp 3: HD voices specifically. This field may not be used
+   * with any other voices.
    * </pre>
    *
    * <code>string markup = 5;</code>

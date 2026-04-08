@@ -80,15 +80,25 @@ class HttpJsonClientCalls {
     return httpJsonContext.getChannel().newCall(methodDescriptor, httpJsonContext.getCallOptions());
   }
 
+  static HttpJsonMetadata getMetadataWithTraceContext(HttpJsonCallContext context) {
+    java.util.Map<String, String> traceHeaders = new java.util.HashMap<>();
+    context.getTracer().injectTraceContext(traceHeaders);
+
+    java.util.Map<String, java.util.List<String>> finalHeaders =
+        new java.util.HashMap<>(context.getExtraHeaders());
+    for (java.util.Map.Entry<String, String> entry : traceHeaders.entrySet()) {
+      finalHeaders.put(entry.getKey(), java.util.Collections.singletonList(entry.getValue()));
+    }
+    return HttpJsonMetadata.newBuilder().build().withHeaders(finalHeaders);
+  }
+
   static <RequestT, ResponseT> ApiFuture<ResponseT> futureUnaryCall(
       HttpJsonClientCall<RequestT, ResponseT> clientCall,
       RequestT request,
       HttpJsonCallContext context) {
     // Start the call
     HttpJsonFuture<ResponseT> future = new HttpJsonFuture<>(clientCall);
-    clientCall.start(
-        new FutureListener<>(future),
-        HttpJsonMetadata.newBuilder().build().withHeaders(context.getExtraHeaders()));
+    clientCall.start(new FutureListener<>(future), getMetadataWithTraceContext(context));
 
     // Send the request
     try {

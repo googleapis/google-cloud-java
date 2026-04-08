@@ -60,6 +60,9 @@ import com.google.cloud.ces.v1beta.Deployment;
 import com.google.cloud.ces.v1beta.Example;
 import com.google.cloud.ces.v1beta.ExportAppRequest;
 import com.google.cloud.ces.v1beta.ExportAppResponse;
+import com.google.cloud.ces.v1beta.GenerateAppResourceOperationMetadata;
+import com.google.cloud.ces.v1beta.GenerateAppResourceRequest;
+import com.google.cloud.ces.v1beta.GenerateAppResourceResponse;
 import com.google.cloud.ces.v1beta.GetAgentRequest;
 import com.google.cloud.ces.v1beta.GetAppRequest;
 import com.google.cloud.ces.v1beta.GetAppVersionRequest;
@@ -400,6 +403,19 @@ public abstract class AgentServiceStub implements BackgroundResource {
 
   public UnaryCallable<RestoreAppVersionRequest, Operation> restoreAppVersionCallable() {
     throw new UnsupportedOperationException("Not implemented: restoreAppVersionCallable()");
+  }
+
+  public OperationCallable<
+          GenerateAppResourceRequest,
+          GenerateAppResourceResponse,
+          GenerateAppResourceOperationMetadata>
+      generateAppResourceOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: generateAppResourceOperationCallable()");
+  }
+
+  public UnaryCallable<GenerateAppResourceRequest, Operation> generateAppResourceCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateAppResourceCallable()");
   }
 
   public UnaryCallable<ListChangelogsRequest, ListChangelogsPagedResponse>

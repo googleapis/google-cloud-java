@@ -792,4 +792,150 @@ public class MockChatServiceImpl extends ChatServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void createSection(
+      CreateSectionRequest request, StreamObserver<Section> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Section) {
+      requests.add(request);
+      responseObserver.onNext(((Section) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Section.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteSection(DeleteSectionRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateSection(
+      UpdateSectionRequest request, StreamObserver<Section> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Section) {
+      requests.add(request);
+      responseObserver.onNext(((Section) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Section.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSections(
+      ListSectionsRequest request, StreamObserver<ListSectionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSectionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSectionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSections, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSectionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void positionSection(
+      PositionSectionRequest request, StreamObserver<PositionSectionResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PositionSectionResponse) {
+      requests.add(request);
+      responseObserver.onNext(((PositionSectionResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PositionSection, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PositionSectionResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSectionItems(
+      ListSectionItemsRequest request, StreamObserver<ListSectionItemsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSectionItemsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSectionItemsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSectionItems, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSectionItemsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void moveSectionItem(
+      MoveSectionItemRequest request, StreamObserver<MoveSectionItemResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof MoveSectionItemResponse) {
+      requests.add(request);
+      responseObserver.onNext(((MoveSectionItemResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MoveSectionItem, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  MoveSectionItemResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

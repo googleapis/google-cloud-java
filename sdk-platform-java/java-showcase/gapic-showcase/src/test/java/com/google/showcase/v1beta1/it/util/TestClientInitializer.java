@@ -38,6 +38,7 @@ import com.google.showcase.v1beta1.stub.EchoStub;
 import com.google.showcase.v1beta1.stub.EchoStubSettings;
 import io.grpc.ClientInterceptor;
 import io.grpc.ManagedChannelBuilder;
+import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
@@ -307,14 +308,7 @@ public class TestClientInitializer {
             .setEndpoint(DEFAULT_GRPC_ENDPOINT)
             .build();
 
-    EchoStubSettings echoStubSettings =
-        (EchoStubSettings)
-            grpcEchoSettings.getStubSettings().toBuilder()
-                .setTracerFactory(metricsTracerFactory)
-                .build();
-    EchoStub stub = echoStubSettings.createStub();
-
-    return EchoClient.create(stub);
+    return EchoClient.create(createStubWithServiceName(grpcEchoSettings, metricsTracerFactory));
   }
 
   public static EchoClient createHttpJsonEchoClientOpentelemetry(
@@ -331,14 +325,93 @@ public class TestClientInitializer {
                     .build())
             .build();
 
-    EchoStubSettings echoStubSettings =
-        (EchoStubSettings)
-            httpJsonEchoSettings.getStubSettings().toBuilder()
-                .setTracerFactory(metricsTracerFactory)
-                .build();
-    EchoStub stub = echoStubSettings.createStub();
+    return EchoClient.create(createStubWithServiceName(httpJsonEchoSettings, metricsTracerFactory));
+  }
 
-    return EchoClient.create(stub);
+  public static EchoClient createGrpcEchoClientOpentelemetryWithRetrySettings(
+      ApiTracerFactory metricsTracerFactory, RetrySettings retrySettings) throws Exception {
+    EchoStubSettings.Builder grpcEchoSettingsBuilder = EchoStubSettings.newBuilder();
+    grpcEchoSettingsBuilder.echoSettings().setRetrySettings(retrySettings);
+    EchoSettings grpcEchoSettings = EchoSettings.create(grpcEchoSettingsBuilder.build());
+    grpcEchoSettings =
+        grpcEchoSettings.toBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultGrpcTransportProviderBuilder()
+                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                    .build())
+            .setEndpoint(DEFAULT_GRPC_ENDPOINT)
+            .build();
+
+    return EchoClient.create(createStubWithServiceName(grpcEchoSettings, metricsTracerFactory));
+  }
+
+  public static EchoClient createHttpJsonEchoClientOpentelemetryWithRetrySettings(
+      ApiTracerFactory metricsTracerFactory, RetrySettings retrySettings) throws Exception {
+    EchoStubSettings.Builder httpJsonEchoSettingsBuilder = EchoStubSettings.newHttpJsonBuilder();
+    httpJsonEchoSettingsBuilder.echoSettings().setRetrySettings(retrySettings);
+    EchoSettings httpJsonEchoSettings = EchoSettings.create(httpJsonEchoSettingsBuilder.build());
+    httpJsonEchoSettings =
+        httpJsonEchoSettings.toBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(
+                        new NetHttpTransport.Builder().doNotValidateCertificate().build())
+                    .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT)
+                    .build())
+            .build();
+
+    return EchoClient.create(createStubWithServiceName(httpJsonEchoSettings, metricsTracerFactory));
+  }
+
+  public static EchoClient createGrpcEchoClientOpentelemetry(
+      ApiTracerFactory metricsTracerFactory,
+      RetrySettings retrySettings,
+      Set<StatusCode.Code> retryableCodes,
+      List<ClientInterceptor> interceptorList) throws Exception {
+    EchoStubSettings.Builder grpcEchoSettingsBuilder = EchoStubSettings.newBuilder();
+    grpcEchoSettingsBuilder
+        .echoSettings()
+        .setRetrySettings(retrySettings)
+        .setRetryableCodes(retryableCodes);
+    EchoSettings grpcEchoSettings = EchoSettings.create(grpcEchoSettingsBuilder.build());
+    grpcEchoSettings =
+        grpcEchoSettings.toBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultGrpcTransportProviderBuilder()
+                    .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+                    .setInterceptorProvider(() -> interceptorList)
+                    .build())
+            .setEndpoint(DEFAULT_GRPC_ENDPOINT)
+            .build();
+
+    return EchoClient.create(createStubWithServiceName(grpcEchoSettings, metricsTracerFactory));
+  }
+
+  public static EchoClient createHttpJsonEchoClientOpentelemetry(
+      ApiTracerFactory metricsTracerFactory,
+      RetrySettings retrySettings,
+      Set<StatusCode.Code> retryableCodes,
+      com.google.api.client.http.HttpTransport transport) throws Exception {
+    EchoStubSettings.Builder httpJsonEchoSettingsBuilder = EchoStubSettings.newHttpJsonBuilder();
+    httpJsonEchoSettingsBuilder
+        .echoSettings()
+        .setRetrySettings(retrySettings)
+        .setRetryableCodes(retryableCodes);
+    EchoSettings httpJsonEchoSettings = EchoSettings.create(httpJsonEchoSettingsBuilder.build());
+    httpJsonEchoSettings =
+        httpJsonEchoSettings.toBuilder()
+            .setCredentialsProvider(NoCredentialsProvider.create())
+            .setTransportChannelProvider(
+                EchoSettings.defaultHttpJsonTransportProviderBuilder()
+                    .setHttpTransport(transport)
+                    .setEndpoint(DEFAULT_HTTPJSON_ENDPOINT)
+                    .build())
+            .build();
+
+    return EchoClient.create(createStubWithServiceName(httpJsonEchoSettings, metricsTracerFactory));
   }
 
   public static IdentityClient createGrpcIdentityClientOpentelemetry(ApiTracerFactory tracerFactory)
@@ -380,5 +453,25 @@ public class TestClientInitializer {
                 .setTracerFactory(tracerFactory)
                 .build();
     return IdentityClient.create(identityStubSettings.createStub());
+  }
+
+  private static EchoStub createStubWithServiceName(
+      EchoSettings settings, ApiTracerFactory tracingFactory) throws IOException {
+    EchoStubSettings.Builder builder =
+        (EchoStubSettings.Builder) settings.getStubSettings().toBuilder();
+    builder.setTracerFactory(tracingFactory);
+    return new ExtendedEchoStubSettings(builder).createStub();
+  }
+
+  /** Custom wrapper to set a service name for showcase clients, which lack one by default. */
+  private static class ExtendedEchoStubSettings extends EchoStubSettings {
+    protected ExtendedEchoStubSettings(EchoStubSettings.Builder builder) throws IOException {
+      super(builder);
+    }
+
+    @Override
+    public String getServiceName() {
+      return "showcase";
+    }
   }
 }

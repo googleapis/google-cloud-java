@@ -145,5 +145,42 @@ public interface ContentItemOrBuilder
    */
   com.google.privacy.dlp.v2.ByteContentItemOrBuilder getByteItemOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * User provided metadata for the content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
+   *
+   * @return Whether the contentMetadata field is set.
+   */
+  boolean hasContentMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * User provided metadata for the content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
+   *
+   * @return The contentMetadata.
+   */
+  com.google.privacy.dlp.v2.ContentMetadata getContentMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * User provided metadata for the content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
+   */
+  com.google.privacy.dlp.v2.ContentMetadataOrBuilder getContentMetadataOrBuilder();
+
   com.google.privacy.dlp.v2.ContentItem.DataItemCase getDataItemCase();
 }

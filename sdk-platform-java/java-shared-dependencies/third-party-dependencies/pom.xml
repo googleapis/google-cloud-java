@@ -6,7 +6,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>third-party-dependencies</artifactId>
   <packaging>pom</packaging>
-  <version>3.58.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+  <version>3.59.0</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
   <name>Google Cloud Third-party Shared Dependencies</name>
   <description>
     Shared third-party dependencies for Google Cloud Java libraries.
@@ -15,7 +15,7 @@
   <parent>
     <groupId>com.google.api</groupId>
     <artifactId>gapic-generator-java-pom-parent</artifactId>
-    <version>2.68.1-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+    <version>2.69.0</version><!-- {x-version-update:gapic-generator-java:current} -->
     <relativePath>../../gapic-generator-java-pom-parent</relativePath>
   </parent>
 
@@ -24,10 +24,10 @@
     <site.installationModule>${project.artifactId}</site.installationModule>
 
     <threeten-extra.version>1.8.0</threeten-extra.version>
-    <animal-sniffer.version>1.24</animal-sniffer.version>
+    <animal-sniffer.version>1.26</animal-sniffer.version>
     <opencensus.version>0.31.1</opencensus.version>
     <findbugs.version>3.0.2</findbugs.version>
-    <jackson.version>2.18.2</jackson.version>
+    <jackson.version>2.18.3</jackson.version>
     <codec.version>1.18.0</codec.version>
     <httpcomponents.httpcore.version>4.4.16</httpcomponents.httpcore.version>
     <httpcomponents.httpclient.version>4.5.14</httpcomponents.httpclient.version>

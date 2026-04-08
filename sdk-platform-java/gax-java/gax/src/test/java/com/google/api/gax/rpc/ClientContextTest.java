@@ -54,7 +54,6 @@ import com.google.api.gax.rpc.testing.FakeClientSettings;
 import com.google.api.gax.rpc.testing.FakeStubSettings;
 import com.google.api.gax.rpc.testing.FakeTransportChannel;
 import com.google.api.gax.tracing.ApiTracerFactory;
-import com.google.api.gax.tracing.SpanTracerFactory;
 import com.google.auth.ApiKeyCredentials;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.Credentials;
@@ -1297,7 +1296,8 @@ class ClientContextTest {
     builder.setCredentialsProvider(
         FixedCredentialsProvider.create(Mockito.mock(Credentials.class)));
 
-    ApiTracerFactory apiTracerFactory = Mockito.mock(SpanTracerFactory.class);
+    ApiTracerFactory apiTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    Mockito.doReturn(true).when(apiTracerFactory).needsContext();
     Mockito.doReturn(apiTracerFactory).when(apiTracerFactory).withContext(Mockito.any());
 
     FakeStubSettings settings = Mockito.spy(builder.build());
@@ -1306,5 +1306,69 @@ class ClientContextTest {
     ClientContext context = ClientContext.create(settings);
     assertThat(context.getTracerFactory()).isSameInstanceAs(apiTracerFactory);
     verify(apiTracerFactory, times(1)).withContext(Mockito.any());
+  }
+
+  @Test
+  void testGetApiTracerFactory_noContextNeeded() throws java.io.IOException {
+    ApiTracerFactory mockTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    when(mockTracerFactory.needsContext()).thenReturn(false);
+    when(mockTracerFactory.withContext(
+            Mockito.any(com.google.api.gax.tracing.ApiTracerContext.class)))
+        .thenReturn(mockTracerFactory);
+
+    FakeStubSettings.Builder builder = FakeStubSettings.newBuilder();
+    builder.setTracerFactory(mockTracerFactory);
+
+    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+
+    ApiTracerFactory apiTracerFactory =
+        ClientContext.getApiTracerFactory(builder.build(), endpointContext);
+
+    assertThat(apiTracerFactory).isSameInstanceAs(mockTracerFactory);
+  }
+
+  @Test
+  void testGetApiTracerFactory_contextNeeded() throws java.io.IOException {
+    ApiTracerFactory mockTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    ApiTracerFactory withContextTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    when(mockTracerFactory.needsContext()).thenReturn(true);
+    when(mockTracerFactory.withContext(
+            Mockito.any(com.google.api.gax.tracing.ApiTracerContext.class)))
+        .thenReturn(withContextTracerFactory);
+
+    FakeStubSettings.Builder builder = FakeStubSettings.newBuilder();
+    builder.setTracerFactory(mockTracerFactory);
+
+    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    when(endpointContext.resolvedServerAddress()).thenReturn("test-address");
+    when(endpointContext.resolvedServerPort()).thenReturn(443);
+
+    ApiTracerFactory apiTracerFactory =
+        ClientContext.getApiTracerFactory(builder.build(), endpointContext);
+
+    assertThat(apiTracerFactory).isSameInstanceAs(withContextTracerFactory);
+    verify(mockTracerFactory, times(1))
+        .withContext(Mockito.any(com.google.api.gax.tracing.ApiTracerContext.class));
+  }
+
+  // This test should only run when the maven profile `EnvVarTest` is enabled.
+  @Test
+  void testGetApiTracerFactory_loggingEnabled() throws java.io.IOException {
+    ApiTracerFactory mockTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    when(mockTracerFactory.needsContext()).thenReturn(false);
+    when(mockTracerFactory.withContext(
+            Mockito.any(com.google.api.gax.tracing.ApiTracerContext.class)))
+        .thenReturn(mockTracerFactory);
+
+    FakeStubSettings.Builder builder = FakeStubSettings.newBuilder();
+    builder.setTracerFactory(mockTracerFactory);
+
+    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+
+    ApiTracerFactory apiTracerFactory =
+        ClientContext.getApiTracerFactory(builder.build(), endpointContext);
+
+    assertThat(apiTracerFactory)
+        .isInstanceOf(com.google.api.gax.tracing.CompositeTracerFactory.class);
   }
 }

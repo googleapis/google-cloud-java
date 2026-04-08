@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.GetIamPolicyReservationBlockRequest;
 import com.google.cloud.compute.v1.GetReservationBlockRequest;
 import com.google.cloud.compute.v1.ListReservationBlocksRequest;
@@ -373,6 +374,24 @@ public class HttpJsonReservationBlocksStub extends ReservationBlocksStub {
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/reservations/{parent_resource}/reservationBlocks/{resource}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/reservations/{reservation}");
+  private static final PathTemplate PERFORM_MAINTENANCE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/reservations/{reservation}/reservationBlocks/{reservation_block}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/reservations/{parent_resource}/reservationBlocks/{resource}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/reservations/{parent_resource}/reservationBlocks/{resource}");
+
   public static final HttpJsonReservationBlocksStub create(ReservationBlocksStubSettings settings)
       throws IOException {
     return new HttpJsonReservationBlocksStub(settings, ClientContext.create(settings));
@@ -429,6 +448,17 @@ public class HttpJsonReservationBlocksStub extends ReservationBlocksStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "reservation", String.valueOf(request.getReservation()));
+                      resourceNameSegments.put(
+                          "reservation_block", String.valueOf(request.getReservationBlock()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetIamPolicyReservationBlockRequest, Policy>
         getIamPolicyTransportSettings =
@@ -444,6 +474,17 @@ public class HttpJsonReservationBlocksStub extends ReservationBlocksStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "parent_resource", String.valueOf(request.getParentResource()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<ListReservationBlocksRequest, ReservationBlocksListResponse>
         listTransportSettings =
@@ -458,6 +499,15 @@ public class HttpJsonReservationBlocksStub extends ReservationBlocksStub {
                       builder.add("reservation", String.valueOf(request.getReservation()));
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "reservation", String.valueOf(request.getReservation()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<PerformMaintenanceReservationBlockRequest, Operation>
@@ -475,6 +525,18 @@ public class HttpJsonReservationBlocksStub extends ReservationBlocksStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "reservation", String.valueOf(request.getReservation()));
+                      resourceNameSegments.put(
+                          "reservation_block", String.valueOf(request.getReservationBlock()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return PERFORM_MAINTENANCE_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetIamPolicyReservationBlockRequest, Policy>
         setIamPolicyTransportSettings =
@@ -489,6 +551,17 @@ public class HttpJsonReservationBlocksStub extends ReservationBlocksStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "parent_resource", String.valueOf(request.getParentResource()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<TestIamPermissionsReservationBlockRequest, TestPermissionsResponse>
@@ -505,6 +578,17 @@ public class HttpJsonReservationBlocksStub extends ReservationBlocksStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "parent_resource", String.valueOf(request.getParentResource()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 

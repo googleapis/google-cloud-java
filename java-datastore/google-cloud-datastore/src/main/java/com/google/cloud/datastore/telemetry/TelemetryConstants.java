@@ -131,7 +131,7 @@ public class TelemetryConstants {
 
   /** Metric name for the total latency of a transaction. */
   public static final String METRIC_NAME_TRANSACTION_LATENCY =
-      METRIC_PREFIX + "/transaction_latency";
+      METRIC_PREFIX + "/transaction_latencies";
 
   /** Metric name for the number of attempts a transaction took. */
   public static final String METRIC_NAME_TRANSACTION_ATTEMPT_COUNT =
@@ -163,8 +163,6 @@ public class TelemetryConstants {
   public static final String METRIC_NAME_ATTEMPT_COUNT =
       METRIC_PREFIX + "/" + METRIC_NAME_SHORT_ATTEMPT_COUNT;
 
-  // This is intentionally different from the `SERVICE_NAME` constant as it matches Gax's logic for
-  // method name.
   static final String METHOD_SERVICE_NAME = "Datastore";
 
   // The follow method name formats are not in SnakeCase to match the method name convention in Gax.
