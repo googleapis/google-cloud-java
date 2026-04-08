@@ -94,8 +94,8 @@ def main():
             if key not in to_check:
                 to_check[key] = pom_path
 
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"Error parsing {pom_path}: {e}")
 
     print(f"Checking {len(to_check)} unique artifacts on Maven Central...")
     
