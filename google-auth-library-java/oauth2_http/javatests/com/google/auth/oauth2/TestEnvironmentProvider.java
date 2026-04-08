@@ -3,7 +3,7 @@ package com.google.auth.oauth2;
 import java.util.HashMap;
 import java.util.Map;
 
-final class TestEnvironmentProvider implements EnvironmentProvider {
+public final class TestEnvironmentProvider implements EnvironmentProvider {
 
   private final Map<String, String> environmentVariables = new HashMap<>();
 

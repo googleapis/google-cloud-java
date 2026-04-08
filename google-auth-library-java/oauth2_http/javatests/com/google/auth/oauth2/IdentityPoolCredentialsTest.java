@@ -40,8 +40,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.verify;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
@@ -1019,17 +1017,11 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void build_withCertificateSourceAndCustomX509Provider_success()
-      throws IOException, KeyStoreException, CertificateException, NoSuchAlgorithmException {
-    // Create an empty KeyStore and a spy on a custom X509Provider.
-    KeyStore keyStore = KeyStore.getInstance("JKS");
-    keyStore.load(null, null);
-    TestX509Provider x509Provider =
-        spy(new TestX509Provider(keyStore, "/path/to/certificate.json"));
-
+  void build_withCertificateSource_succeeds() throws Exception {
     // Set up credential source for certificate type.
     Map<String, Object> certificateMap = new HashMap<>();
-    certificateMap.put("use_default_certificate_config", true);
+    certificateMap.put("use_default_certificate_config", false);
+    certificateMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
     Map<String, Object> credentialSourceMap = new HashMap<>();
     credentialSourceMap.put("certificate", certificateMap);
     IdentityPoolCredentialSource credentialSource =
@@ -1037,10 +1029,9 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     MockExternalAccountCredentialsTransportFactory mockTransportFactory =
         new MockExternalAccountCredentialsTransportFactory();
 
-    // Build credentials with the custom provider.
+    // Build credentials.
     IdentityPoolCredentials credentials =
         IdentityPoolCredentials.newBuilder()
-            .setX509Provider(x509Provider)
             .setHttpTransportFactory(mockTransportFactory)
             .setAudience("test-audience")
             .setSubjectTokenType("test-token-type")
@@ -1057,10 +1048,48 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
         IdentityPoolCredentials.CERTIFICATE_METRICS_HEADER_VALUE,
         credentials.getCredentialSourceType(),
         "Metrics header should indicate certificate source");
+  }
 
-    // Verify the custom provider methods were called during build.
-    verify(x509Provider).getKeyStore();
-    verify(x509Provider).getCertificatePath();
+  @Test
+  void build_withDefaultCertificateConfig_success()
+      throws IOException, KeyStoreException, CertificateException, NoSuchAlgorithmException {
+    // Set up credential source for certificate type.
+    Map<String, Object> certificateMap = new HashMap<>();
+    certificateMap.put("use_default_certificate_config", true);
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("certificate", certificateMap);
+    IdentityPoolCredentialSource credentialSource =
+        new IdentityPoolCredentialSource(credentialSourceMap);
+    MockExternalAccountCredentialsTransportFactory mockTransportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    // Use the pre-existing test configuration file to bypass well-known path resolution.
+    EnvironmentProvider mockEnvProvider =
+        name ->
+            "GOOGLE_API_CERTIFICATE_CONFIG".equals(name)
+                ? new File("testresources/mtls/certificate_config.json").getAbsolutePath()
+                : null;
+
+    // Build credentials using the default provider (no setX509Provider).
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(mockTransportFactory)
+            .setEnvironmentProvider(mockEnvProvider)
+            .setAudience("test-audience")
+            .setSubjectTokenType("test-token-type")
+            .setCredentialSource(credentialSource)
+            .build();
+
+    // Verify successful creation and correct internal setup.
+    assertNotNull(credentials, "Credentials should be successfully created");
+    assertTrue(
+        credentials.getIdentityPoolSubjectTokenSupplier()
+            instanceof CertificateIdentityPoolSubjectTokenSupplier,
+        "Subject token supplier should be for certificates");
+    assertEquals(
+        IdentityPoolCredentials.CERTIFICATE_METRICS_HEADER_VALUE,
+        credentials.getCredentialSourceType(),
+        "Metrics header should indicate certificate source");
   }
 
   @Test
@@ -1122,15 +1151,17 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   @Test
   void build_withCustomProvider_throwsOnGetCertificatePath()
       throws IOException, KeyStoreException, CertificateException, NoSuchAlgorithmException {
-    // Simulate a scenario where the X509Provider cannot access or read the certificate
-    // configuration file needed to determine the certificate path, resulting in an IOException.
+    // Simulate a scenario where path resolution fails during build with a custom
+    // provider.
+    // We achieve this by passing a non-existent configuration path which causes
+    // MtlsUtils to throw
+    // IOException.
     KeyStore keyStore = KeyStore.getInstance("JKS");
     keyStore.load(null, null);
     TestX509Provider x509Provider = new TestX509Provider(keyStore, "/path/to/certificate.json");
-    x509Provider.setShouldThrowOnGetCertificatePath(true); // Configure to throw
 
     Map<String, Object> certificateMap = new HashMap<>();
-    certificateMap.put("certificate_config_location", "/path/to/certificate.json");
+    certificateMap.put("certificate_config_location", "/non/existent/path.json");
 
     // Expect RuntimeException because the constructor wraps the IOException.
     RuntimeException exception =
@@ -1138,10 +1169,9 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             RuntimeException.class,
             () -> createCredentialsWithCertificate(x509Provider, certificateMap));
 
-    // Verify the cause is the expected IOException from the mock.
+    // Verify the cause is the expected IOException (or subclass) from MtlsUtils.
     assertNotNull(exception.getCause());
     assertTrue(exception.getCause() instanceof IOException);
-    assertEquals("Simulated IOException on certificate path", exception.getCause().getMessage());
 
     // Verify the wrapper exception message
     assertEquals(
@@ -1250,7 +1280,6 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     private final KeyStore keyStore;
     private final String certificatePath;
     private boolean shouldThrowOnGetKeyStore = false;
-    private boolean shouldThrowOnGetCertificatePath = false;
 
     TestX509Provider(KeyStore keyStore, String certificatePath) {
       super();
@@ -1266,20 +1295,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
       return keyStore;
     }
 
-    @Override
-    public String getCertificatePath() throws IOException {
-      if (shouldThrowOnGetCertificatePath) {
-        throw new IOException("Simulated IOException on certificate path");
-      }
-      return certificatePath;
-    }
-
     void setShouldThrowOnGetKeyStore(boolean shouldThrow) {
       this.shouldThrowOnGetKeyStore = shouldThrow;
-    }
-
-    void setShouldThrowOnGetCertificatePath(boolean shouldThrow) {
-      this.shouldThrowOnGetCertificatePath = shouldThrow;
     }
   }
 }
