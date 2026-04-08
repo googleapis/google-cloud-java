@@ -1,0 +1,27 @@
+name: Check Published Artifacts
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, edited]
+  workflow_dispatch:
+
+jobs:
+  check-versions:
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' || 
+      contains(github.event.pull_request.title, 'release') || 
+      contains(github.event.pull_request.title, 'Release')
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run check_maven_central.py
+        run: |
+          echo "Trigger condition met. Running check_maven_central.py..."
+          python3 .github/release/check_maven_central.py
