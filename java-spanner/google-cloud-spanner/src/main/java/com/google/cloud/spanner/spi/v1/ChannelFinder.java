@@ -17,6 +17,7 @@
 package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.core.InternalApi;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CacheUpdate;
@@ -127,6 +128,13 @@ public final class ChannelFinder {
 
   public void updateAsync(CacheUpdate update) {
     cacheUpdateExecutor.execute(() -> update(update));
+  }
+
+  @VisibleForTesting
+  void awaitPendingUpdates() throws InterruptedException {
+    java.util.concurrent.CountDownLatch latch = new java.util.concurrent.CountDownLatch(1);
+    cacheUpdateExecutor.execute(latch::countDown);
+    latch.await(5, java.util.concurrent.TimeUnit.SECONDS);
   }
 
   public ChannelEndpoint findServer(ReadRequest.Builder reqBuilder) {

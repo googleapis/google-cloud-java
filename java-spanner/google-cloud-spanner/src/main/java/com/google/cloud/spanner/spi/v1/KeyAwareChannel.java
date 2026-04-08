@@ -184,6 +184,16 @@ final class KeyAwareChannel extends ManagedChannel {
     return finder;
   }
 
+  @com.google.common.annotations.VisibleForTesting
+  void awaitPendingCacheUpdates() throws InterruptedException {
+    for (ChannelFinderReference ref : channelFinders.values()) {
+      ChannelFinder finder = ref.get();
+      if (finder != null) {
+        finder.awaitPendingUpdates();
+      }
+    }
+  }
+
   /** Records real traffic to the selected endpoint for idle eviction tracking. */
   private void onRequestRouted(@Nullable ChannelEndpoint selectedEndpoint) {
     if (lifecycleManager == null) {

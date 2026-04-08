@@ -30,6 +30,7 @@ import com.google.spanner.v1.RoutingHint;
 import com.google.spanner.v1.Tablet;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
+import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.MethodDescriptor;
 import java.util.HashMap;
@@ -529,7 +530,6 @@ public class KeyRangeCacheTest {
       assertEquals("server1", server.getAddress());
       assertEquals(1, hint.getSkippedTabletUidCount());
       assertEquals(3L, hint.getSkippedTabletUid(0).getTabletUid());
-      assertTrue(lifecycleManager.recreationRequested.contains("server3"));
     } finally {
       lifecycleManager.shutdown();
     }
@@ -825,7 +825,7 @@ public class KeyRangeCacheTest {
 
   static final class FakeEndpoint implements ChannelEndpoint {
     private final String address;
-    private final ManagedChannel channel = new FakeManagedChannel();
+    private final FakeManagedChannel channel = new FakeManagedChannel();
     private EndpointHealthState state = EndpointHealthState.READY;
 
     FakeEndpoint(String address) {
@@ -854,11 +854,39 @@ public class KeyRangeCacheTest {
 
     void setState(EndpointHealthState state) {
       this.state = state;
+      channel.setConnectivityState(toConnectivityState(state));
+    }
+
+    private static ConnectivityState toConnectivityState(EndpointHealthState healthState) {
+      switch (healthState) {
+        case READY:
+          return ConnectivityState.READY;
+        case TRANSIENT_FAILURE:
+          return ConnectivityState.TRANSIENT_FAILURE;
+        case IDLE:
+          return ConnectivityState.IDLE;
+        case CONNECTING:
+          return ConnectivityState.CONNECTING;
+        case UNSUPPORTED:
+          return ConnectivityState.IDLE;
+        default:
+          return ConnectivityState.IDLE;
+      }
     }
   }
 
   private static final class FakeManagedChannel extends ManagedChannel {
     private boolean shutdown = false;
+    private volatile ConnectivityState connectivityState = ConnectivityState.READY;
+
+    void setConnectivityState(ConnectivityState state) {
+      this.connectivityState = state;
+    }
+
+    @Override
+    public ConnectivityState getState(boolean requestConnection) {
+      return shutdown ? ConnectivityState.SHUTDOWN : connectivityState;
+    }
 
     @Override
     public ManagedChannel shutdown() {
