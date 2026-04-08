@@ -116,6 +116,8 @@ def main():
         print("\nSummary of published versions found in local pom.xml files:")
         for item in sorted(found_published):
             print(item)
+        import sys
+        sys.exit(1)
     else:
         print("\nNo published non-SNAPSHOT versions found.")
 
