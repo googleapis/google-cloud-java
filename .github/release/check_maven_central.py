@@ -29,11 +29,13 @@ def check_maven_central(group_id, artifact_id, version):
         with urllib.request.urlopen(req, timeout=10) as response:
             if response.getcode() == 200:
                 return True, group_id, artifact_id, version, url
-    except urllib.error.HTTPError:
+    except urllib.error.HTTPError as e:
+        if e.code != 404:
+            print(f"HTTP error {e.code} checking {url}")
         return False, group_id, artifact_id, version, url
-    except Exception:
+    except Exception as e:
+        print(f"Error checking {url}: {e}")
         return False, group_id, artifact_id, version, url
-    return False, group_id, artifact_id, version, url
 
 def main():
     print("Finding pom.xml files...")
