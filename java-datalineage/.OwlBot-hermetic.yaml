@@ -31,5 +31,14 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-datalineage/$1/google-cloud-datalineage/src"
 - source: "/google/cloud/datacatalog/lineage/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-datalineage/$1/samples/snippets/generated"
+# configmanagement
+- source: "/google/cloud/datacatalog/lineage/configmanagement/(v.*)/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-datalineage/$1/proto-google-cloud-datalineage-$1/src"
+- source: "/google/cloud/datacatalog/lineage/configmanagement/(v.*)/.*-java/grpc-google-.*/src"
+  dest: "/owl-bot-staging/java-datalineage/$1/grpc-google-cloud-datalineage-$1/src"
+- source: "/google/cloud/datacatalog/lineage/configmanagement/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-datalineage/$1/google-cloud-datalineage/src"
+- source: "/google/cloud/datacatalog/lineage/configmanagement/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-datalineage/$1/samples/snippets/generated"
 
 api-name: datalineage

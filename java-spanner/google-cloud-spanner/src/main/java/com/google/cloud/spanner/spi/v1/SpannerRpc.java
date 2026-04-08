@@ -81,7 +81,8 @@ import javax.annotation.Nullable;
 public interface SpannerRpc extends ServiceRpc {
   /** Options passed in {@link SpannerRpc} methods to control how an RPC is issued. */
   enum Option {
-    CHANNEL_HINT("Channel Hint");
+    CHANNEL_HINT("Channel Hint"),
+    UNBIND_CHANNEL_HINT("Unbind Channel Hint");
 
     private final String value;
 

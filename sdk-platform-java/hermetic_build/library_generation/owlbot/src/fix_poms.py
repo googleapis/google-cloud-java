@@ -273,7 +273,8 @@ def update_parent_pom(filename: str, modules: List[module.Module]):
         new_dependency.append(new_group)
         new_dependency.append(new_artifact)
         new_dependency.append(new_version)
-        new_dependency.append(comment)
+        if "vertexai" not in m.artifact_id:
+            new_dependency.append(comment)
         new_dependency.tail = "\n      "
         dependencies.insert(1, new_dependency)
 
@@ -310,7 +311,8 @@ def update_bom_pom(filename: str, modules: List[module.Module]):
         new_dependency.append(new_group)
         new_dependency.append(new_artifact)
         new_dependency.append(new_version)
-        new_dependency.append(comment)
+        if "vertexai" not in m.artifact_id:
+            new_dependency.append(comment)
 
         if index == num_modules - 1:
             new_dependency.tail = "\n    "

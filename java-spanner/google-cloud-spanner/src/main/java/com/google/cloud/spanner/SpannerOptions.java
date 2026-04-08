@@ -141,7 +141,7 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
   // Dynamic Channel Pool (DCP) default values and bounds
   /** Default max concurrent RPCs per channel before triggering scale up. */
-  public static final int DEFAULT_DYNAMIC_POOL_MAX_RPC = 25;
+  public static final int DEFAULT_DYNAMIC_POOL_MAX_RPC = 90;
 
   /** Default min concurrent RPCs per channel for scale down check. */
   public static final int DEFAULT_DYNAMIC_POOL_MIN_RPC = 15;
@@ -150,13 +150,13 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
   public static final Duration DEFAULT_DYNAMIC_POOL_SCALE_DOWN_INTERVAL = Duration.ofMinutes(3);
 
   /** Default initial number of channels for dynamic pool. */
-  public static final int DEFAULT_DYNAMIC_POOL_INITIAL_SIZE = 4;
+  public static final int DEFAULT_DYNAMIC_POOL_INITIAL_SIZE = 1;
 
   /** Default max number of channels for dynamic pool. */
-  public static final int DEFAULT_DYNAMIC_POOL_MAX_CHANNELS = 10;
+  public static final int DEFAULT_DYNAMIC_POOL_MAX_CHANNELS = 256;
 
   /** Default min number of channels for dynamic pool. */
-  public static final int DEFAULT_DYNAMIC_POOL_MIN_CHANNELS = 2;
+  public static final int DEFAULT_DYNAMIC_POOL_MIN_CHANNELS = 1;
 
   /**
    * Default affinity key lifetime for dynamic channel pool. This is how long to keep an affinity
@@ -202,6 +202,49 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
         .setAffinityKeyLifetime(DEFAULT_DYNAMIC_POOL_AFFINITY_KEY_LIFETIME)
         .setCleanupInterval(DEFAULT_DYNAMIC_POOL_CLEANUP_INTERVAL)
         .build();
+  }
+
+  /**
+   * Merges user-provided {@link GcpChannelPoolOptions} with Spanner-specific defaults. Any value
+   * that the user has not explicitly set (i.e. left at the builder's default of 0 or null) will be
+   * filled in from {@link #createDefaultDynamicChannelPoolOptions()}.
+   */
+  static GcpChannelPoolOptions mergeWithDefaultChannelPoolOptions(
+      GcpChannelPoolOptions userOptions) {
+    GcpChannelPoolOptions defaults = createDefaultDynamicChannelPoolOptions();
+    GcpChannelPoolOptions.Builder merged = GcpChannelPoolOptions.newBuilder(userOptions);
+    if (userOptions.getMaxSize() <= 0) {
+      merged.setMaxSize(defaults.getMaxSize());
+    }
+    if (userOptions.getMinSize() <= 0) {
+      merged.setMinSize(defaults.getMinSize());
+    }
+    if (userOptions.getInitSize() <= 0) {
+      merged.setInitSize(defaults.getInitSize());
+    }
+    if (userOptions.getMinRpcPerChannel() <= 0
+        || userOptions.getMaxRpcPerChannel() <= 0
+        || userOptions.getScaleDownInterval() == null
+        || userOptions.getScaleDownInterval().isZero()) {
+      merged.setDynamicScaling(
+          userOptions.getMinRpcPerChannel() > 0
+              ? userOptions.getMinRpcPerChannel()
+              : defaults.getMinRpcPerChannel(),
+          userOptions.getMaxRpcPerChannel() > 0
+              ? userOptions.getMaxRpcPerChannel()
+              : defaults.getMaxRpcPerChannel(),
+          userOptions.getScaleDownInterval() != null && !userOptions.getScaleDownInterval().isZero()
+              ? userOptions.getScaleDownInterval()
+              : defaults.getScaleDownInterval());
+    }
+    if (userOptions.getAffinityKeyLifetime() == null
+        || userOptions.getAffinityKeyLifetime().isZero()) {
+      merged.setAffinityKeyLifetime(defaults.getAffinityKeyLifetime());
+    }
+    if (userOptions.getCleanupInterval() == null || userOptions.getCleanupInterval().isZero()) {
+      merged.setCleanupInterval(defaults.getCleanupInterval());
+    }
+    return merged.build();
   }
 
   private final TransportChannelProvider channelProvider;
@@ -881,21 +924,29 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
 
     // Dynamic channel pooling is disabled by default.
     // It is only enabled when:
-    // 1. enableDynamicChannelPool() was explicitly called, AND
+    // 1. enableDynamicChannelPool() was explicitly called (or experimentalHost is set and DCP was
+    //    not explicitly disabled), AND
     // 2. grpc-gcp extension is enabled, AND
     // 3. numChannels was not explicitly set
-    if (builder.dynamicChannelPoolEnabled != null && builder.dynamicChannelPoolEnabled) {
-      // DCP was explicitly enabled, but respect numChannels if set
+    boolean dcpRequested =
+        builder.dynamicChannelPoolEnabled != null
+            ? builder.dynamicChannelPoolEnabled
+            : builder.experimentalHost != null;
+    if (dcpRequested) {
+      // DCP was enabled (explicitly or via experimentalHost), but respect numChannels if set
       dynamicChannelPoolEnabled = grpcGcpExtensionEnabled && !builder.numChannelsExplicitlySet;
     } else {
       // DCP is disabled by default, or was explicitly disabled
       dynamicChannelPoolEnabled = false;
     }
 
-    // Use user-provided GcpChannelPoolOptions or create Spanner-specific defaults
+    // Use user-provided GcpChannelPoolOptions merged with Spanner-specific defaults,
+    // or create Spanner-specific defaults if no custom options are provided.
+    // This ensures that dynamic scaling parameters (minRpcPerChannel, maxRpcPerChannel,
+    // scaleDownInterval) retain their defaults even when the user only customizes pool sizing.
     gcpChannelPoolOptions =
         builder.gcpChannelPoolOptions != null
-            ? builder.gcpChannelPoolOptions
+            ? mergeWithDefaultChannelPoolOptions(builder.gcpChannelPoolOptions)
             : createDefaultDynamicChannelPoolOptions();
 
     autoThrottleAdministrativeRequests = builder.autoThrottleAdministrativeRequests;
@@ -930,7 +981,14 @@ public class SpannerOptions extends ServiceOptions<Spanner, SpannerOptions> {
     } else {
       enableBuiltInMetrics = builder.enableBuiltInMetrics;
     }
-    enableLocationApi = builder.enableLocationApi;
+    // Enable location API when experimental host is set, unless explicitly disabled
+    // via GOOGLE_SPANNER_EXPERIMENTAL_LOCATION_API=false.
+    if (builder.experimentalHost != null) {
+      String locationApiEnvValue = System.getenv(EXPERIMENTAL_LOCATION_API_ENV_VAR);
+      enableLocationApi = locationApiEnvValue == null || Boolean.parseBoolean(locationApiEnvValue);
+    } else {
+      enableLocationApi = builder.enableLocationApi;
+    }
     enableEndToEndTracing = builder.enableEndToEndTracing;
     monitoringHost = builder.monitoringHost;
     defaultTransactionOptions = builder.defaultTransactionOptions;

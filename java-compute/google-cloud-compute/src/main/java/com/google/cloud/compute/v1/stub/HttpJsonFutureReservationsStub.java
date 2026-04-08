@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListFutureReservationsRequest;
 import com.google.cloud.compute.v1.CancelFutureReservationRequest;
 import com.google.cloud.compute.v1.DeleteFutureReservationRequest;
@@ -470,6 +471,25 @@ public class HttpJsonFutureReservationsStub extends FutureReservationsStub {
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate CANCEL_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/futureReservations/{future_reservation}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/futureReservations/{future_reservation}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/futureReservations/{future_reservation}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/zones/{zone}/futureReservations/{future_reservation}");
+
   public static final HttpJsonFutureReservationsStub create(FutureReservationsStubSettings settings)
       throws IOException {
     return new HttpJsonFutureReservationsStub(settings, ClientContext.create(settings));
@@ -524,6 +544,13 @@ public class HttpJsonFutureReservationsStub extends FutureReservationsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<CancelFutureReservationRequest, Operation> cancelTransportSettings =
         HttpJsonCallSettings.<CancelFutureReservationRequest, Operation>newBuilder()
@@ -536,6 +563,15 @@ public class HttpJsonFutureReservationsStub extends FutureReservationsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "future_reservation", String.valueOf(request.getFutureReservation()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return CANCEL_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<DeleteFutureReservationRequest, Operation> deleteTransportSettings =
@@ -550,6 +586,15 @@ public class HttpJsonFutureReservationsStub extends FutureReservationsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "future_reservation", String.valueOf(request.getFutureReservation()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetFutureReservationRequest, FutureReservation> getTransportSettings =
         HttpJsonCallSettings.<GetFutureReservationRequest, FutureReservation>newBuilder()
@@ -563,6 +608,15 @@ public class HttpJsonFutureReservationsStub extends FutureReservationsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "future_reservation", String.valueOf(request.getFutureReservation()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertFutureReservationRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertFutureReservationRequest, Operation>newBuilder()
@@ -574,6 +628,13 @@ public class HttpJsonFutureReservationsStub extends FutureReservationsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListFutureReservationsRequest, FutureReservationsListResponse>
@@ -589,6 +650,13 @@ public class HttpJsonFutureReservationsStub extends FutureReservationsStub {
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<UpdateFutureReservationRequest, Operation> updateTransportSettings =
         HttpJsonCallSettings.<UpdateFutureReservationRequest, Operation>newBuilder()
@@ -601,6 +669,15 @@ public class HttpJsonFutureReservationsStub extends FutureReservationsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "future_reservation", String.valueOf(request.getFutureReservation()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

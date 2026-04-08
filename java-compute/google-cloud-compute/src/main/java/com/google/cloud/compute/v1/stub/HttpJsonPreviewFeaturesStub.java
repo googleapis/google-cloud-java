@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.GetPreviewFeatureRequest;
 import com.google.cloud.compute.v1.ListPreviewFeaturesRequest;
 import com.google.cloud.compute.v1.Operation;
@@ -213,6 +214,13 @@ public class HttpJsonPreviewFeaturesStub extends PreviewFeaturesStub {
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/previewFeatures/{preview_feature}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/previewFeatures/{preview_feature}");
+
   public static final HttpJsonPreviewFeaturesStub create(PreviewFeaturesStubSettings settings)
       throws IOException {
     return new HttpJsonPreviewFeaturesStub(settings, ClientContext.create(settings));
@@ -265,6 +273,14 @@ public class HttpJsonPreviewFeaturesStub extends PreviewFeaturesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "preview_feature", String.valueOf(request.getPreviewFeature()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListPreviewFeaturesRequest, PreviewFeatureList> listTransportSettings =
         HttpJsonCallSettings.<ListPreviewFeaturesRequest, PreviewFeatureList>newBuilder()
@@ -275,6 +291,12 @@ public class HttpJsonPreviewFeaturesStub extends PreviewFeaturesStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<UpdatePreviewFeatureRequest, Operation> updateTransportSettings =
@@ -287,6 +309,14 @@ public class HttpJsonPreviewFeaturesStub extends PreviewFeaturesStub {
                   builder.add("preview_feature", String.valueOf(request.getPreviewFeature()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "preview_feature", String.valueOf(request.getPreviewFeature()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

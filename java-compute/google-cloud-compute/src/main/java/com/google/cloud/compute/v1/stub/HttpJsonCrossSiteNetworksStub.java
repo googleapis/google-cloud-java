@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.CrossSiteNetwork;
 import com.google.cloud.compute.v1.CrossSiteNetworkList;
 import com.google.cloud.compute.v1.DeleteCrossSiteNetworkRequest;
@@ -337,6 +338,17 @@ public class HttpJsonCrossSiteNetworksStub extends CrossSiteNetworksStub {
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/crossSiteNetworks/{cross_site_network}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/crossSiteNetworks/{cross_site_network}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/crossSiteNetworks/{cross_site_network}");
+
   public static final HttpJsonCrossSiteNetworksStub create(CrossSiteNetworksStubSettings settings)
       throws IOException {
     return new HttpJsonCrossSiteNetworksStub(settings, ClientContext.create(settings));
@@ -389,6 +401,14 @@ public class HttpJsonCrossSiteNetworksStub extends CrossSiteNetworksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "cross_site_network", String.valueOf(request.getCrossSiteNetwork()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetCrossSiteNetworkRequest, CrossSiteNetwork> getTransportSettings =
         HttpJsonCallSettings.<GetCrossSiteNetworkRequest, CrossSiteNetwork>newBuilder()
@@ -401,6 +421,14 @@ public class HttpJsonCrossSiteNetworksStub extends CrossSiteNetworksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "cross_site_network", String.valueOf(request.getCrossSiteNetwork()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertCrossSiteNetworkRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertCrossSiteNetworkRequest, Operation>newBuilder()
@@ -411,6 +439,12 @@ public class HttpJsonCrossSiteNetworksStub extends CrossSiteNetworksStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListCrossSiteNetworksRequest, CrossSiteNetworkList> listTransportSettings =
@@ -423,6 +457,12 @@ public class HttpJsonCrossSiteNetworksStub extends CrossSiteNetworksStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<PatchCrossSiteNetworkRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchCrossSiteNetworkRequest, Operation>newBuilder()
@@ -434,6 +474,14 @@ public class HttpJsonCrossSiteNetworksStub extends CrossSiteNetworksStub {
                   builder.add("cross_site_network", String.valueOf(request.getCrossSiteNetwork()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "cross_site_network", String.valueOf(request.getCrossSiteNetwork()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

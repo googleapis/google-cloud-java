@@ -20,6 +20,8 @@ import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListReactionsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionItemsPagedResponse;
+import static com.google.chat.v1.ChatServiceClient.ListSectionsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpaceEventsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListSpacesPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.SearchSpacesPagedResponse;
@@ -2591,6 +2593,587 @@ public class ChatServiceClientTest {
           SpaceNotificationSetting.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSpaceNotificationSetting(spaceNotificationSetting, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSectionTest() throws Exception {
+    Section expectedResponse =
+        Section.newBuilder()
+            .setName(SectionName.of("[USER]", "[SECTION]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSortOrder(-374296211)
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    UserName parent = UserName.of("[USER]");
+    Section section = Section.newBuilder().build();
+
+    Section actualResponse = client.createSection(parent, section);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSectionRequest actualRequest = ((CreateSectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(section, actualRequest.getSection());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      UserName parent = UserName.of("[USER]");
+      Section section = Section.newBuilder().build();
+      client.createSection(parent, section);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSectionTest2() throws Exception {
+    Section expectedResponse =
+        Section.newBuilder()
+            .setName(SectionName.of("[USER]", "[SECTION]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSortOrder(-374296211)
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Section section = Section.newBuilder().build();
+
+    Section actualResponse = client.createSection(parent, section);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSectionRequest actualRequest = ((CreateSectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(section, actualRequest.getSection());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Section section = Section.newBuilder().build();
+      client.createSection(parent, section);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSectionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockChatService.addResponse(expectedResponse);
+
+    SectionName name = SectionName.of("[USER]", "[SECTION]");
+
+    client.deleteSection(name);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSectionRequest actualRequest = ((DeleteSectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      SectionName name = SectionName.of("[USER]", "[SECTION]");
+      client.deleteSection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSectionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockChatService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteSection(name);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSectionRequest actualRequest = ((DeleteSectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSectionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteSection(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSectionTest() throws Exception {
+    Section expectedResponse =
+        Section.newBuilder()
+            .setName(SectionName.of("[USER]", "[SECTION]").toString())
+            .setDisplayName("displayName1714148973")
+            .setSortOrder(-374296211)
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    Section section = Section.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Section actualResponse = client.updateSection(section, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSectionRequest actualRequest = ((UpdateSectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(section, actualRequest.getSection());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateSectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      Section section = Section.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSection(section, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSectionsTest() throws Exception {
+    Section responsesElement = Section.newBuilder().build();
+    ListSectionsResponse expectedResponse =
+        ListSectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSections(Arrays.asList(responsesElement))
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    UserName parent = UserName.of("[USER]");
+
+    ListSectionsPagedResponse pagedListResponse = client.listSections(parent);
+
+    List<Section> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSectionsRequest actualRequest = ((ListSectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSectionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      UserName parent = UserName.of("[USER]");
+      client.listSections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSectionsTest2() throws Exception {
+    Section responsesElement = Section.newBuilder().build();
+    ListSectionsResponse expectedResponse =
+        ListSectionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSections(Arrays.asList(responsesElement))
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSectionsPagedResponse pagedListResponse = client.listSections(parent);
+
+    List<Section> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSectionsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSectionsRequest actualRequest = ((ListSectionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSectionsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSections(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void positionSectionTest() throws Exception {
+    PositionSectionResponse expectedResponse =
+        PositionSectionResponse.newBuilder().setSection(Section.newBuilder().build()).build();
+    mockChatService.addResponse(expectedResponse);
+
+    PositionSectionRequest request =
+        PositionSectionRequest.newBuilder()
+            .setName(SectionName.of("[USER]", "[SECTION]").toString())
+            .build();
+
+    PositionSectionResponse actualResponse = client.positionSection(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PositionSectionRequest actualRequest = ((PositionSectionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getSortOrder(), actualRequest.getSortOrder());
+    Assert.assertEquals(request.getRelativePosition(), actualRequest.getRelativePosition());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void positionSectionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      PositionSectionRequest request =
+          PositionSectionRequest.newBuilder()
+              .setName(SectionName.of("[USER]", "[SECTION]").toString())
+              .build();
+      client.positionSection(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSectionItemsTest() throws Exception {
+    SectionItem responsesElement = SectionItem.newBuilder().build();
+    ListSectionItemsResponse expectedResponse =
+        ListSectionItemsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSectionItems(Arrays.asList(responsesElement))
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    SectionName parent = SectionName.of("[USER]", "[SECTION]");
+
+    ListSectionItemsPagedResponse pagedListResponse = client.listSectionItems(parent);
+
+    List<SectionItem> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSectionItemsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSectionItemsRequest actualRequest = ((ListSectionItemsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSectionItemsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      SectionName parent = SectionName.of("[USER]", "[SECTION]");
+      client.listSectionItems(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSectionItemsTest2() throws Exception {
+    SectionItem responsesElement = SectionItem.newBuilder().build();
+    ListSectionItemsResponse expectedResponse =
+        ListSectionItemsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSectionItems(Arrays.asList(responsesElement))
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSectionItemsPagedResponse pagedListResponse = client.listSectionItems(parent);
+
+    List<SectionItem> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSectionItemsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSectionItemsRequest actualRequest = ((ListSectionItemsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSectionItemsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSectionItems(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void moveSectionItemTest() throws Exception {
+    MoveSectionItemResponse expectedResponse =
+        MoveSectionItemResponse.newBuilder()
+            .setSectionItem(SectionItem.newBuilder().build())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    SectionItemName name = SectionItemName.of("[USER]", "[SECTION]", "[ITEM]");
+    SectionName targetSection = SectionName.of("[USER]", "[SECTION]");
+
+    MoveSectionItemResponse actualResponse = client.moveSectionItem(name, targetSection);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MoveSectionItemRequest actualRequest = ((MoveSectionItemRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(targetSection.toString(), actualRequest.getTargetSection());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void moveSectionItemExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      SectionItemName name = SectionItemName.of("[USER]", "[SECTION]", "[ITEM]");
+      SectionName targetSection = SectionName.of("[USER]", "[SECTION]");
+      client.moveSectionItem(name, targetSection);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void moveSectionItemTest2() throws Exception {
+    MoveSectionItemResponse expectedResponse =
+        MoveSectionItemResponse.newBuilder()
+            .setSectionItem(SectionItem.newBuilder().build())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    SectionItemName name = SectionItemName.of("[USER]", "[SECTION]", "[ITEM]");
+    String targetSection = "targetSection-20778988";
+
+    MoveSectionItemResponse actualResponse = client.moveSectionItem(name, targetSection);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MoveSectionItemRequest actualRequest = ((MoveSectionItemRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(targetSection, actualRequest.getTargetSection());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void moveSectionItemExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      SectionItemName name = SectionItemName.of("[USER]", "[SECTION]", "[ITEM]");
+      String targetSection = "targetSection-20778988";
+      client.moveSectionItem(name, targetSection);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void moveSectionItemTest3() throws Exception {
+    MoveSectionItemResponse expectedResponse =
+        MoveSectionItemResponse.newBuilder()
+            .setSectionItem(SectionItem.newBuilder().build())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    SectionName targetSection = SectionName.of("[USER]", "[SECTION]");
+
+    MoveSectionItemResponse actualResponse = client.moveSectionItem(name, targetSection);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MoveSectionItemRequest actualRequest = ((MoveSectionItemRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(targetSection.toString(), actualRequest.getTargetSection());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void moveSectionItemExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      SectionName targetSection = SectionName.of("[USER]", "[SECTION]");
+      client.moveSectionItem(name, targetSection);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void moveSectionItemTest4() throws Exception {
+    MoveSectionItemResponse expectedResponse =
+        MoveSectionItemResponse.newBuilder()
+            .setSectionItem(SectionItem.newBuilder().build())
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String targetSection = "targetSection-20778988";
+
+    MoveSectionItemResponse actualResponse = client.moveSectionItem(name, targetSection);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    MoveSectionItemRequest actualRequest = ((MoveSectionItemRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(targetSection, actualRequest.getTargetSection());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void moveSectionItemExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String targetSection = "targetSection-20778988";
+      client.moveSectionItem(name, targetSection);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

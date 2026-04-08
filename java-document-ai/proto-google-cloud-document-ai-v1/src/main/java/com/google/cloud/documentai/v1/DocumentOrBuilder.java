@@ -716,6 +716,87 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
+   * Optional. The blob assets in this document. This is used to store the
+   * content of the inline blobs in this document, for example, image bytes,
+   * such that it can be referenced by other fields in the document via asset
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.documentai.v1.Document.BlobAsset> getBlobAssetsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The blob assets in this document. This is used to store the
+   * content of the inline blobs in this document, for example, image bytes,
+   * such that it can be referenced by other fields in the document via asset
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.documentai.v1.Document.BlobAsset getBlobAssets(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The blob assets in this document. This is used to store the
+   * content of the inline blobs in this document, for example, image bytes,
+   * such that it can be referenced by other fields in the document via asset
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getBlobAssetsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The blob assets in this document. This is used to store the
+   * content of the inline blobs in this document, for example, image bytes,
+   * such that it can be referenced by other fields in the document via asset
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.documentai.v1.Document.BlobAssetOrBuilder>
+      getBlobAssetsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The blob assets in this document. This is used to store the
+   * content of the inline blobs in this document, for example, image bytes,
+   * such that it can be referenced by other fields in the document via asset
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.documentai.v1.Document.BlobAssetOrBuilder getBlobAssetsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The entity validation output for the document. This is the validation
    * output for `document.entities` field.
    * </pre>
@@ -839,7 +920,7 @@ public interface DocumentOrBuilder
    * The entity revision ID that `document.entities` field is based on.
    * If this field is set and `entities_revisions` is not empty, the entities in
    * `document.entities` field are the entities in the entity revision with this
-   * ID and `document.entity_validation_output` field is the
+   * id and `document.entity_validation_output` field is the
    * `entity_validation_output` field in this entity revision.
    * </pre>
    *
@@ -856,7 +937,7 @@ public interface DocumentOrBuilder
    * The entity revision ID that `document.entities` field is based on.
    * If this field is set and `entities_revisions` is not empty, the entities in
    * `document.entities` field are the entities in the entity revision with this
-   * ID and `document.entity_validation_output` field is the
+   * id and `document.entity_validation_output` field is the
    * `entity_validation_output` field in this entity revision.
    * </pre>
    *

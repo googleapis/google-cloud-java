@@ -35,6 +35,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AbandonInstancesRegionInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest;
 import com.google.cloud.compute.v1.CreateInstancesRegionInstanceGroupManagerRequest;
@@ -1604,6 +1605,74 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate ABANDON_INSTANCES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate APPLY_UPDATES_TO_INSTANCES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate CREATE_INSTANCES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate DELETE_INSTANCES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate DELETE_PER_INSTANCE_CONFIGS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_ERRORS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate LIST_MANAGED_INSTANCES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate LIST_PER_INSTANCE_CONFIGS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate PATCH_PER_INSTANCE_CONFIGS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate RECREATE_INSTANCES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate RESIZE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate RESUME_INSTANCES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate SET_INSTANCE_TEMPLATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate SET_TARGET_POOLS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate START_INSTANCES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate STOP_INSTANCES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate SUSPEND_INSTANCES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+  private static final PathTemplate UPDATE_PER_INSTANCE_CONFIGS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/instanceGroupManagers/{instance_group_manager}");
+
   public static final HttpJsonRegionInstanceGroupManagersStub create(
       RegionInstanceGroupManagersStubSettings settings) throws IOException {
     return new HttpJsonRegionInstanceGroupManagersStub(settings, ClientContext.create(settings));
@@ -1664,6 +1733,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return ABANDON_INSTANCES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, Operation>
         applyUpdatesToInstancesTransportSettings =
@@ -1680,6 +1760,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return APPLY_UPDATES_TO_INSTANCES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<CreateInstancesRegionInstanceGroupManagerRequest, Operation>
@@ -1698,6 +1789,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return CREATE_INSTANCES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteRegionInstanceGroupManagerRequest, Operation>
         deleteTransportSettings =
@@ -1713,6 +1815,16 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<DeleteInstancesRegionInstanceGroupManagerRequest, Operation>
@@ -1731,6 +1843,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return DELETE_INSTANCES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
         deletePerInstanceConfigsTransportSettings =
@@ -1747,6 +1870,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return DELETE_PER_INSTANCE_CONFIGS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<GetRegionInstanceGroupManagerRequest, InstanceGroupManager>
@@ -1765,6 +1899,16 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertRegionInstanceGroupManagerRequest, Operation>
         insertTransportSettings =
@@ -1777,6 +1921,13 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<ListRegionInstanceGroupManagersRequest, RegionInstanceGroupManagerList>
@@ -1792,6 +1943,13 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<
@@ -1814,6 +1972,16 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return LIST_ERRORS_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<
             ListManagedInstancesRegionInstanceGroupManagersRequest,
@@ -1834,6 +2002,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return LIST_MANAGED_INSTANCES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<
@@ -1856,6 +2035,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return LIST_PER_INSTANCE_CONFIGS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchRegionInstanceGroupManagerRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRegionInstanceGroupManagerRequest, Operation>newBuilder()
@@ -1869,6 +2059,15 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "instance_group_manager", String.valueOf(request.getInstanceGroupManager()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
@@ -1887,6 +2086,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return PATCH_PER_INSTANCE_CONFIGS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<RecreateInstancesRegionInstanceGroupManagerRequest, Operation>
         recreateInstancesTransportSettings =
@@ -1904,6 +2114,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return RECREATE_INSTANCES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<ResizeRegionInstanceGroupManagerRequest, Operation>
         resizeTransportSettings =
@@ -1919,6 +2140,16 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return RESIZE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<ResumeInstancesRegionInstanceGroupManagerRequest, Operation>
@@ -1937,6 +2168,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return RESUME_INSTANCES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetInstanceTemplateRegionInstanceGroupManagerRequest, Operation>
         setInstanceTemplateTransportSettings =
@@ -1953,6 +2195,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return SET_INSTANCE_TEMPLATE_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<SetTargetPoolsRegionInstanceGroupManagerRequest, Operation>
@@ -1971,6 +2224,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return SET_TARGET_POOLS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<StartInstancesRegionInstanceGroupManagerRequest, Operation>
         startInstancesTransportSettings =
@@ -1987,6 +2251,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return START_INSTANCES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<StopInstancesRegionInstanceGroupManagerRequest, Operation>
@@ -2005,6 +2280,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return STOP_INSTANCES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SuspendInstancesRegionInstanceGroupManagerRequest, Operation>
         suspendInstancesTransportSettings =
@@ -2022,6 +2308,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return SUSPEND_INSTANCES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, Operation>
         updatePerInstanceConfigsTransportSettings =
@@ -2038,6 +2335,17 @@ public class HttpJsonRegionInstanceGroupManagersStub extends RegionInstanceGroup
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "instance_group_manager",
+                          String.valueOf(request.getInstanceGroupManager()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return UPDATE_PER_INSTANCE_CONFIGS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 

@@ -116,7 +116,8 @@ REPO_EXCLUSION = [
   'java-notification',
   'java-shared-config',
   'java-shared-dependencies',
-  'java-samples'
+  'java-samples',
+  'java-vertexai'
 ]
 
 LIBRARIES_IN_MONOREPO = glob("java-*")

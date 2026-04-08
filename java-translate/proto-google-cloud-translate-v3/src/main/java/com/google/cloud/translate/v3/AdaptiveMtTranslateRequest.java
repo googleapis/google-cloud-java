@@ -55,6 +55,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     parent_ = "";
     dataset_ = "";
     content_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    mimeType_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -4817,6 +4818,59 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     return content_.getByteString(index);
   }
 
+  public static final int MIME_TYPE_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object mimeType_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The format of the source text.
+   * </pre>
+   *
+   * <code>string mime_type = 4;</code>
+   *
+   * @return The mimeType.
+   */
+  @java.lang.Override
+  public java.lang.String getMimeType() {
+    java.lang.Object ref = mimeType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      mimeType_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The format of the source text.
+   * </pre>
+   *
+   * <code>string mime_type = 4;</code>
+   *
+   * @return The bytes for mimeType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMimeTypeBytes() {
+    java.lang.Object ref = mimeType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      mimeType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int REFERENCE_SENTENCE_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentenceConfig
       referenceSentenceConfig_;
@@ -4973,6 +5027,9 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     for (int i = 0; i < content_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, content_.getRaw(i));
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mimeType_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, mimeType_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(6, getReferenceSentenceConfig());
     }
@@ -5002,6 +5059,9 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       size += dataSize;
       size += 1 * getContentList().size();
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mimeType_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, mimeType_);
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(6, getReferenceSentenceConfig());
@@ -5028,6 +5088,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     if (!getParent().equals(other.getParent())) return false;
     if (!getDataset().equals(other.getDataset())) return false;
     if (!getContentList().equals(other.getContentList())) return false;
+    if (!getMimeType().equals(other.getMimeType())) return false;
     if (hasReferenceSentenceConfig() != other.hasReferenceSentenceConfig()) return false;
     if (hasReferenceSentenceConfig()) {
       if (!getReferenceSentenceConfig().equals(other.getReferenceSentenceConfig())) return false;
@@ -5055,6 +5116,8 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       hash = (37 * hash) + CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getContentList().hashCode();
     }
+    hash = (37 * hash) + MIME_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getMimeType().hashCode();
     if (hasReferenceSentenceConfig()) {
       hash = (37 * hash) + REFERENCE_SENTENCE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getReferenceSentenceConfig().hashCode();
@@ -5217,6 +5280,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       parent_ = "";
       dataset_ = "";
       content_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      mimeType_ = "";
       referenceSentenceConfig_ = null;
       if (referenceSentenceConfigBuilder_ != null) {
         referenceSentenceConfigBuilder_.dispose();
@@ -5273,15 +5337,18 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         content_.makeImmutable();
         result.content_ = content_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.referenceSentenceConfig_ =
             referenceSentenceConfigBuilder_ == null
                 ? referenceSentenceConfig_
                 : referenceSentenceConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.glossaryConfig_ =
             glossaryConfigBuilder_ == null ? glossaryConfig_ : glossaryConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
@@ -5320,6 +5387,11 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
           ensureContentIsMutable();
           content_.addAll(other.content_);
         }
+        onChanged();
+      }
+      if (!other.getMimeType().isEmpty()) {
+        mimeType_ = other.mimeType_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasReferenceSentenceConfig()) {
@@ -5373,19 +5445,25 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
                 content_.add(s);
                 break;
               } // case 26
+            case 34:
+              {
+                mimeType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             case 50:
               {
                 input.readMessage(
                     internalGetReferenceSentenceConfigFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(
                     internalGetGlossaryConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 58
             default:
@@ -5847,6 +5925,117 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       return this;
     }
 
+    private java.lang.Object mimeType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The format of the source text.
+     * </pre>
+     *
+     * <code>string mime_type = 4;</code>
+     *
+     * @return The mimeType.
+     */
+    public java.lang.String getMimeType() {
+      java.lang.Object ref = mimeType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mimeType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The format of the source text.
+     * </pre>
+     *
+     * <code>string mime_type = 4;</code>
+     *
+     * @return The bytes for mimeType.
+     */
+    public com.google.protobuf.ByteString getMimeTypeBytes() {
+      java.lang.Object ref = mimeType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        mimeType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The format of the source text.
+     * </pre>
+     *
+     * <code>string mime_type = 4;</code>
+     *
+     * @param value The mimeType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMimeType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      mimeType_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The format of the source text.
+     * </pre>
+     *
+     * <code>string mime_type = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMimeType() {
+      mimeType_ = getDefaultInstance().getMimeType();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The format of the source text.
+     * </pre>
+     *
+     * <code>string mime_type = 4;</code>
+     *
+     * @param value The bytes for mimeType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      mimeType_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentenceConfig
         referenceSentenceConfig_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -5871,7 +6060,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      * @return Whether the referenceSentenceConfig field is set.
      */
     public boolean hasReferenceSentenceConfig() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -5920,7 +6109,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       } else {
         referenceSentenceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5944,7 +6133,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       } else {
         referenceSentenceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5963,7 +6152,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     public Builder mergeReferenceSentenceConfig(
         com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentenceConfig value) {
       if (referenceSentenceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && referenceSentenceConfig_ != null
             && referenceSentenceConfig_
                 != com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentenceConfig
@@ -5976,7 +6165,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         referenceSentenceConfigBuilder_.mergeFrom(value);
       }
       if (referenceSentenceConfig_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -5994,7 +6183,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearReferenceSentenceConfig() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       referenceSentenceConfig_ = null;
       if (referenceSentenceConfigBuilder_ != null) {
         referenceSentenceConfigBuilder_.dispose();
@@ -6017,7 +6206,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      */
     public com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.ReferenceSentenceConfig.Builder
         getReferenceSentenceConfigBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetReferenceSentenceConfigFieldBuilder().getBuilder();
     }
@@ -6100,7 +6289,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      * @return Whether the glossaryConfig field is set.
      */
     public boolean hasGlossaryConfig() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -6153,7 +6342,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       } else {
         glossaryConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6179,7 +6368,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
       } else {
         glossaryConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6200,7 +6389,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
     public Builder mergeGlossaryConfig(
         com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.GlossaryConfig value) {
       if (glossaryConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && glossaryConfig_ != null
             && glossaryConfig_
                 != com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.GlossaryConfig
@@ -6213,7 +6402,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
         glossaryConfigBuilder_.mergeFrom(value);
       }
       if (glossaryConfig_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -6233,7 +6422,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearGlossaryConfig() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       glossaryConfig_ = null;
       if (glossaryConfigBuilder_ != null) {
         glossaryConfigBuilder_.dispose();
@@ -6258,7 +6447,7 @@ public final class AdaptiveMtTranslateRequest extends com.google.protobuf.Genera
      */
     public com.google.cloud.translate.v3.AdaptiveMtTranslateRequest.GlossaryConfig.Builder
         getGlossaryConfigBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetGlossaryConfigFieldBuilder().getBuilder();
     }

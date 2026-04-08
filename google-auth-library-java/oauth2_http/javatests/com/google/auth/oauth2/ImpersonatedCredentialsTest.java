@@ -499,9 +499,9 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     ServiceAccountCredentials sourceCredentialsSSJ =
         ((ServiceAccountCredentials) sourceCredentials)
             .toBuilder()
-                .setHttpTransportFactory(mockTransportFactory)
-                .setUseJwtAccessWithScope(true)
-                .build();
+            .setHttpTransportFactory(mockTransportFactory)
+            .setUseJwtAccessWithScope(true)
+            .build();
     ImpersonatedCredentials targetCredentials =
         ImpersonatedCredentials.create(
             sourceCredentialsSSJ,
@@ -528,9 +528,9 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     ServiceAccountCredentials sourceCredentialsNonGDU =
         ((ServiceAccountCredentials) sourceCredentials)
             .toBuilder()
-                .setUniverseDomain(TEST_UNIVERSE_DOMAIN)
-                .setHttpTransportFactory(transportFactory)
-                .build();
+            .setUniverseDomain(TEST_UNIVERSE_DOMAIN)
+            .setHttpTransportFactory(transportFactory)
+            .build();
     ImpersonatedCredentials impersonatedCredentials =
         ImpersonatedCredentials.create(
             sourceCredentialsNonGDU,
@@ -825,9 +825,9 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     ServiceAccountCredentials sourceCredentialsNonGDU =
         ((ServiceAccountCredentials) sourceCredentials)
             .toBuilder()
-                .setUniverseDomain("test.com")
-                .setHttpTransportFactory(transportFactory)
-                .build();
+            .setUniverseDomain("test.com")
+            .setHttpTransportFactory(transportFactory)
+            .build();
     ImpersonatedCredentials targetCredentials =
         ImpersonatedCredentials.create(
             sourceCredentialsNonGDU,
@@ -951,9 +951,9 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     ServiceAccountCredentials sourceCredentialsNonGDU =
         ((ServiceAccountCredentials) sourceCredentials)
             .toBuilder()
-                .setUniverseDomain("test.com")
-                .setHttpTransportFactory(transportFactory)
-                .build();
+            .setUniverseDomain("test.com")
+            .setHttpTransportFactory(transportFactory)
+            .build();
     ImpersonatedCredentials targetCredentials =
         ImpersonatedCredentials.create(
             sourceCredentialsNonGDU,
