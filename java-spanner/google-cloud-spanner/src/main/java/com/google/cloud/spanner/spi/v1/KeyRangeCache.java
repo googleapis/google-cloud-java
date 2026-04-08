@@ -558,8 +558,8 @@ public final class KeyRangeCache {
      *   <li>Endpoint exists and READY: usable, do not skip.
      *   <li>Endpoint exists and TRANSIENT_FAILURE: skip and report in skipped_tablets.
      *   <li>Endpoint absent, IDLE, CONNECTING, SHUTDOWN, or unsupported: skip silently unless the
-     *       lifecycle manager recently evicted the address for repeated TRANSIENT_FAILURE, in
-     *       which case report it in skipped_tablets.
+     *       lifecycle manager recently evicted the address for repeated TRANSIENT_FAILURE, in which
+     *       case report it in skipped_tablets.
      * </ul>
      */
     boolean shouldSkip(
@@ -626,8 +626,7 @@ public final class KeyRangeCache {
       return true;
     }
 
-    private void addSkippedTablet(
-        RoutingHint.Builder hintBuilder, Set<Long> skippedTabletUids) {
+    private void addSkippedTablet(RoutingHint.Builder hintBuilder, Set<Long> skippedTabletUids) {
       if (!skippedTabletUids.add(tabletUid)) {
         return;
       }

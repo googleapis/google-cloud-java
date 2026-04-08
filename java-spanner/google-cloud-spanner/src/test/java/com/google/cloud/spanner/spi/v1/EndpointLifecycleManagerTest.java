@@ -282,8 +282,7 @@ public class EndpointLifecycleManagerTest {
     awaitCondition(
         "endpoint should be evicted after repeated transient failures",
         () ->
-            !manager.isManaged("server1")
-                && manager.wasRecentlyEvictedTransientFailure("server1"));
+            !manager.isManaged("server1") && manager.wasRecentlyEvictedTransientFailure("server1"));
 
     manager.updateActiveAddresses(finder, Collections.emptySet());
 

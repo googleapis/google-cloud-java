@@ -63,7 +63,8 @@ public final class ChannelFinder {
   private final AtomicLong databaseId = new AtomicLong();
   private final KeyRecipeCache recipeCache = new KeyRecipeCache();
   private final KeyRangeCache rangeCache;
-  private final Executor cacheUpdateExecutor = MoreExecutors.newSequentialExecutor(CACHE_UPDATE_POOL);
+  private final Executor cacheUpdateExecutor =
+      MoreExecutors.newSequentialExecutor(CACHE_UPDATE_POOL);
   @Nullable private final EndpointLifecycleManager lifecycleManager;
   @Nullable private final String finderKey;
 
