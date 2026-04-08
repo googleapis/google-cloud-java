@@ -14,11 +14,12 @@
   <url>https://github.com/googleapis/google-cloud-java</url>
 
   <parent>
-    <!-- To avoid circular group ID dependencies in POM references in
-      Central Portal publication, this module does not reference google-cloud-jar-parent -->
+    <!-- Because we cannot release com.google.auth and com.google.cloud together,
+      we skip the deployment of this module <maven.deploy.skip>true</maven.deploy.skip> -->
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-shared-config</artifactId>
-    <version>1.17.0</version>
+    <artifactId>google-cloud-jar-parent</artifactId>
+    <version>1.83.0</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
   <distributionManagement>
