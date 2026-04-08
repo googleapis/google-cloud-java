@@ -16,13 +16,11 @@
 
 package com.google.cloud.firestore.pipeline.expressions;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.firestore.v1.Value;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@BetaApi
 public class FunctionExpression extends Expression {
   private final String name;
   private final List<Expression> params;

@@ -17,7 +17,6 @@
 package com.google.cloud.firestore;
 
 import com.google.api.core.ApiFuture;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalExtensionOnly;
 import com.google.cloud.firestore.pipeline.stages.PipelineExecuteOptions;
 import com.google.cloud.firestore.telemetry.MetricsUtil;
@@ -150,7 +149,6 @@ public abstract class Transaction extends UpdateBuilder<Transaction> {
    * @return The result of the execution.
    */
   @Nonnull
-  @BetaApi
   public abstract ApiFuture<Pipeline.Snapshot> execute(@Nonnull Pipeline pipeline);
 
   /**
@@ -159,7 +157,6 @@ public abstract class Transaction extends UpdateBuilder<Transaction> {
    * @return The result of the execution.
    */
   @Nonnull
-  @BetaApi
   public abstract ApiFuture<Pipeline.Snapshot> execute(
       @Nonnull Pipeline pipeline, @Nonnull PipelineExecuteOptions options);
 }

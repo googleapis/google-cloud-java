@@ -16,10 +16,8 @@
 
 package com.google.cloud.firestore.pipeline.expressions;
 
-import com.google.api.core.BetaApi;
 import com.google.common.collect.ImmutableList;
 
-@BetaApi
 public abstract class BooleanExpression extends Expression {
   BooleanExpression() {}
 
@@ -29,7 +27,6 @@ public abstract class BooleanExpression extends Expression {
    *
    * @return A new {@link AggregateFunction} representing the count aggregation.
    */
-  @BetaApi
   public AggregateFunction countIf() {
     return AggregateFunction.countIf(this);
   }
@@ -42,7 +39,6 @@ public abstract class BooleanExpression extends Expression {
    * @param elseExpr The expression to evaluate if the condition is false.
    * @return A new {@link Expression} representing the conditional operation.
    */
-  @BetaApi
   public final Expression conditional(Expression thenExpr, Expression elseExpr) {
     return conditional((BooleanExpression) this, thenExpr, elseExpr);
   }
@@ -55,7 +51,6 @@ public abstract class BooleanExpression extends Expression {
    * @param elseValue Value if the condition is false.
    * @return A new {@link Expression} representing the conditional operation.
    */
-  @BetaApi
   public final Expression conditional(Object thenValue, Object elseValue) {
     return conditional((BooleanExpression) this, thenValue, elseValue);
   }
@@ -68,7 +63,6 @@ public abstract class BooleanExpression extends Expression {
    *     expression produces an error.
    * @return A new {@link Expression} representing the ifError operation.
    */
-  @BetaApi
   public final BooleanExpression ifError(BooleanExpression catchExpr) {
     return ifError(this, catchExpr);
   }
@@ -78,7 +72,6 @@ public abstract class BooleanExpression extends Expression {
    *
    * @return A new {@link BooleanExpression} representing the not operation.
    */
-  @BetaApi
   public final BooleanExpression not() {
     return not(this);
   }

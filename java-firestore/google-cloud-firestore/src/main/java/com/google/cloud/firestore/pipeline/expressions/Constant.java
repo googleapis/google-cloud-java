@@ -18,10 +18,8 @@ package com.google.cloud.firestore.pipeline.expressions;
 
 import static com.google.cloud.firestore.PipelineUtils.encodeValue;
 
-import com.google.api.core.BetaApi;
 import com.google.firestore.v1.Value;
 
-@BetaApi
 final class Constant extends Expression {
 
   static final Constant NULL = new Constant(null);

@@ -18,10 +18,8 @@ package com.google.cloud.firestore.pipeline.stages;
 
 import static com.google.cloud.firestore.pipeline.expressions.Expression.field;
 
-import com.google.api.core.BetaApi;
 import com.google.cloud.firestore.pipeline.expressions.Field;
 
-@BetaApi
 public final class FindNearestOptions extends AbstractOptions<FindNearestOptions> {
 
   public FindNearestOptions() {

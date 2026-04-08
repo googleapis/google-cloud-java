@@ -16,7 +16,6 @@
 
 package com.google.cloud.firestore;
 
-import com.google.api.core.BetaApi;
 import com.google.protobuf.Any;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.StringValue;
@@ -26,7 +25,6 @@ import javax.annotation.Nonnull;
  * A wrapper object to access explain stats if explain or analyze was enabled for the Pipeline query
  * execution.
  */
-@BetaApi
 public final class ExplainStats {
 
   private final Any explainStatsData;

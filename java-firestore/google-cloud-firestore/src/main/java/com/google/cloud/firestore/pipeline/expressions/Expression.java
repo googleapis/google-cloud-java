@@ -16,7 +16,6 @@
 
 package com.google.cloud.firestore.pipeline.expressions;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.Blob;
@@ -49,7 +48,6 @@ import java.util.Map;
  * <p>The `Expression` class provides a fluent API for building expressions. You can chain together
  * method calls to create complex expressions.
  */
-@BetaApi
 public abstract class Expression {
 
   /** Constructor is package-private to prevent extension. */
@@ -75,7 +73,6 @@ public abstract class Expression {
    * @param value The {@link String} value.
    * @return A new {@link Expression} constant instance.
    */
-  @BetaApi
   public static Expression constant(String value) {
     return new Constant(value);
   }
@@ -86,7 +83,6 @@ public abstract class Expression {
    * @param value The {@link Number} value.
    * @return A new {@link Expression} constant instance.
    */
-  @BetaApi
   public static Expression constant(Number value) {
     return new Constant(value);
   }
@@ -97,7 +93,6 @@ public abstract class Expression {
    * @param value The {@link Date} value.
    * @return A new {@link Expression} constant instance.
    */
-  @BetaApi
   public static Expression constant(Date value) {
     return new Constant(value);
   }
@@ -108,7 +103,6 @@ public abstract class Expression {
    * @param value The {@link Timestamp} value.
    * @return A new {@link Expression} constant instance.
    */
-  @BetaApi
   public static Expression constant(Timestamp value) {
     return new Constant(value);
   }
@@ -119,7 +113,6 @@ public abstract class Expression {
    * @param value The {@link Boolean} value.
    * @return A new {@link BooleanExpression} constant instance.
    */
-  @BetaApi
   public static BooleanExpression constant(Boolean value) {
     return new BooleanConstant(new Constant(value));
   }
@@ -130,7 +123,6 @@ public abstract class Expression {
    * @param value The {@link GeoPoint} value.
    * @return A new {@link Expression} constant instance.
    */
-  @BetaApi
   public static Expression constant(GeoPoint value) {
     return new Constant(value);
   }
@@ -141,7 +133,6 @@ public abstract class Expression {
    * @param value The {@link Blob} value.
    * @return A new {@link Expression} constant instance.
    */
-  @BetaApi
   public static Expression constant(Blob value) {
     return new Constant(value);
   }
@@ -152,7 +143,6 @@ public abstract class Expression {
    * @param value The {@link DocumentReference} value.
    * @return A new {@link Expression} constant instance.
    */
-  @BetaApi
   public static Expression constant(DocumentReference value) {
     return new Constant(value);
   }
@@ -163,7 +153,6 @@ public abstract class Expression {
    * @param value The bytes value.
    * @return A new {@link Expression} constant instance.
    */
-  @BetaApi
   public static Expression constant(byte[] value) {
     return new Constant(value);
   }
@@ -174,7 +163,6 @@ public abstract class Expression {
    * @param value The {@link VectorValue} value.
    * @return A new {@link Expression} constant instance.
    */
-  @BetaApi
   public static Expression constant(VectorValue value) {
     return new Constant(value);
   }
@@ -184,7 +172,6 @@ public abstract class Expression {
    *
    * @return An {@link Expression} constant instance.
    */
-  @BetaApi
   public static Expression nullValue() {
     return Constant.NULL;
   }
@@ -199,7 +186,6 @@ public abstract class Expression {
    * @param path The path to the field.
    * @return A new {@link Field} instance representing the specified path.
    */
-  @BetaApi
   public static Field field(String path) {
     return Field.ofUserPath(path);
   }
@@ -213,7 +199,6 @@ public abstract class Expression {
    * @param fieldPath The {@link FieldPath} to the field.
    * @return A new {@link Field} instance representing the specified path.
    */
-  @BetaApi
   public static Field field(FieldPath fieldPath) {
     return Field.ofUserPath(fieldPath.toString());
   }
@@ -223,7 +208,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the current timestamp.
    */
-  @BetaApi
   public static Expression currentTimestamp() {
     return new FunctionExpression("current_timestamp", ImmutableList.of());
   }
@@ -236,7 +220,6 @@ public abstract class Expression {
    * @param elseExpr The default value.
    * @return A new {@link Expression} representing the ifAbsent operation.
    */
-  @BetaApi
   public static Expression ifAbsent(Expression ifExpr, Expression elseExpr) {
     return new FunctionExpression("if_absent", ImmutableList.of(ifExpr, elseExpr));
   }
@@ -249,7 +232,6 @@ public abstract class Expression {
    * @param elseValue The default value.
    * @return A new {@link Expression} representing the ifAbsent operation.
    */
-  @BetaApi
   public static Expression ifAbsent(Expression ifExpr, Object elseValue) {
     return ifAbsent(ifExpr, toExprOrConstant(elseValue));
   }
@@ -261,7 +243,6 @@ public abstract class Expression {
    * @param elseExpr The default value.
    * @return A new {@link Expression} representing the ifAbsent operation.
    */
-  @BetaApi
   public static Expression ifAbsent(String ifFieldName, Expression elseExpr) {
     return ifAbsent(field(ifFieldName), elseExpr);
   }
@@ -273,7 +254,6 @@ public abstract class Expression {
    * @param elseValue The default value.
    * @return A new {@link Expression} representing the ifAbsent operation.
    */
-  @BetaApi
   public static Expression ifAbsent(String ifFieldName, Object elseValue) {
     return ifAbsent(field(ifFieldName), toExprOrConstant(elseValue));
   }
@@ -288,7 +268,6 @@ public abstract class Expression {
    * @param elseExpression The default expression that will be evaluated and returned.
    * @return A new {@link Expression} representing the ifNull operation.
    */
-  @BetaApi
   public static Expression ifNull(Expression ifExpr, Expression elseExpression) {
     return new FunctionExpression("if_null", ImmutableList.of(ifExpr, elseExpression));
   }
@@ -303,7 +282,6 @@ public abstract class Expression {
    * @param elseValue The default value that will be returned.
    * @return A new {@link Expression} representing the ifNull operation.
    */
-  @BetaApi
   public static Expression ifNull(Expression ifExpr, Object elseValue) {
     return ifNull(ifExpr, toExprOrConstant(elseValue));
   }
@@ -318,7 +296,6 @@ public abstract class Expression {
    * @param elseExpression The default expression that will be evaluated and returned.
    * @return A new {@link Expression} representing the ifNull operation.
    */
-  @BetaApi
   public static Expression ifNull(String ifFieldName, Expression elseExpression) {
     return ifNull(field(ifFieldName), elseExpression);
   }
@@ -333,7 +310,6 @@ public abstract class Expression {
    * @param elseValue The default value that will be returned.
    * @return A new {@link Expression} representing the ifNull operation.
    */
-  @BetaApi
   public static Expression ifNull(String ifFieldName, Object elseValue) {
     return ifNull(field(ifFieldName), toExprOrConstant(elseValue));
   }
@@ -347,7 +323,6 @@ public abstract class Expression {
    * @param others Optional additional expressions to check if previous ones are null.
    * @return A new {@link Expression} representing the coalesce operation.
    */
-  @BetaApi
   public static Expression coalesce(Expression expression, Object replacement, Object... others) {
     ImmutableList.Builder<Expression> args = ImmutableList.builder();
     args.add(expression);
@@ -367,7 +342,6 @@ public abstract class Expression {
    * @param others Optional additional expressions to check if previous ones are null.
    * @return A new {@link Expression} representing the coalesce operation.
    */
-  @BetaApi
   public static Expression coalesce(String firstFieldName, Object replacement, Object... others) {
     return coalesce(field(firstFieldName), replacement, others);
   }
@@ -379,7 +353,6 @@ public abstract class Expression {
    * @param delimiter The delimiter to use.
    * @return A new {@link Expression} representing the join operation.
    */
-  @BetaApi
   public static Expression join(Expression arrayExpression, String delimiter) {
     return new FunctionExpression("join", ImmutableList.of(arrayExpression, constant(delimiter)));
   }
@@ -391,7 +364,6 @@ public abstract class Expression {
    * @param delimiterExpression The expression representing the delimiter.
    * @return A new {@link Expression} representing the join operation.
    */
-  @BetaApi
   public static Expression join(Expression arrayExpression, Expression delimiterExpression) {
     return new FunctionExpression("join", ImmutableList.of(arrayExpression, delimiterExpression));
   }
@@ -403,7 +375,6 @@ public abstract class Expression {
    * @param delimiter The delimiter to use.
    * @return A new {@link Expression} representing the join operation.
    */
-  @BetaApi
   public static Expression join(String arrayFieldName, String delimiter) {
     return join(field(arrayFieldName), constant(delimiter));
   }
@@ -415,7 +386,6 @@ public abstract class Expression {
    * @param delimiterExpression The expression representing the delimiter.
    * @return A new {@link Expression} representing the join operation.
    */
-  @BetaApi
   public static Expression join(String arrayFieldName, Expression delimiterExpression) {
     return join(field(arrayFieldName), delimiterExpression);
   }
@@ -428,7 +398,6 @@ public abstract class Expression {
    * @param expr The expressions to be passed as arguments to the function.
    * @return A new {@link Expression} representing the generic function.
    */
-  @BetaApi
   public static Expression rawExpression(String name, Expression... expr) {
     return new FunctionExpression(name, ImmutableList.copyOf(expr));
   }
@@ -441,7 +410,6 @@ public abstract class Expression {
    * @param conditions Additional {@link BooleanExpression}s.
    * @return A new {@link BooleanExpression} representing the logical 'AND' operation.
    */
-  @BetaApi
   public static BooleanExpression and(
       BooleanExpression condition, BooleanExpression... conditions) {
     ImmutableList.Builder<Expression> builder = ImmutableList.builder();
@@ -457,7 +425,6 @@ public abstract class Expression {
    * @param conditions Additional {@link BooleanExpression}s.
    * @return A new {@link BooleanExpression} representing the logical 'OR' operation.
    */
-  @BetaApi
   public static BooleanExpression or(BooleanExpression condition, BooleanExpression... conditions) {
     ImmutableList.Builder<Expression> builder = ImmutableList.builder();
     builder.add(condition);
@@ -472,7 +439,6 @@ public abstract class Expression {
    * @param conditions Additional {@link BooleanExpression}s.
    * @return A new {@link BooleanExpression} representing the logical 'NOR' operation.
    */
-  @BetaApi
   public static BooleanExpression nor(
       BooleanExpression condition, BooleanExpression... conditions) {
     ImmutableList.Builder<Expression> builder = ImmutableList.builder();
@@ -494,7 +460,6 @@ public abstract class Expression {
    * @param others Additional conditions and results, and optionally a default value.
    * @return A new {@link Expression} representing the switchOn operation.
    */
-  @BetaApi
   public static Expression switchOn(
       BooleanExpression condition, Expression result, Object... others) {
     ImmutableList.Builder<Expression> builder = ImmutableList.builder();
@@ -511,7 +476,6 @@ public abstract class Expression {
    * @param conditions Additional {@link BooleanExpression}s.
    * @return A new {@link BooleanExpression} representing the logical 'XOR' operation.
    */
-  @BetaApi
   public static BooleanExpression xor(
       BooleanExpression condition, BooleanExpression... conditions) {
     ImmutableList.Builder<Expression> builder = ImmutableList.builder();
@@ -526,7 +490,6 @@ public abstract class Expression {
    * @param condition The boolean expression to negate.
    * @return A new {@link BooleanExpression} representing the not operation.
    */
-  @BetaApi
   public static BooleanExpression not(BooleanExpression condition) {
     return new BooleanFunctionExpression("not", condition);
   }
@@ -539,7 +502,6 @@ public abstract class Expression {
    * @param second Numeric expression to add.
    * @return A new {@link Expression} representing the addition operation.
    */
-  @BetaApi
   public static Expression add(Expression first, Expression second) {
     return new FunctionExpression("add", ImmutableList.of(first, second));
   }
@@ -551,7 +513,6 @@ public abstract class Expression {
    * @param second Constant to add.
    * @return A new {@link Expression} representing the addition operation.
    */
-  @BetaApi
   public static Expression add(Expression first, Number second) {
     return add(first, constant(second));
   }
@@ -563,7 +524,6 @@ public abstract class Expression {
    * @param second Numeric expression to add to field value.
    * @return A new {@link Expression} representing the addition operation.
    */
-  @BetaApi
   public static Expression add(String fieldName, Expression second) {
     return add(field(fieldName), second);
   }
@@ -575,7 +535,6 @@ public abstract class Expression {
    * @param second Constant to add.
    * @return A new {@link Expression} representing the addition operation.
    */
-  @BetaApi
   public static Expression add(String fieldName, Number second) {
     return add(field(fieldName), constant(second));
   }
@@ -587,7 +546,6 @@ public abstract class Expression {
    * @param subtrahend Numeric expression to subtract.
    * @return A new {@link Expression} representing the subtract operation.
    */
-  @BetaApi
   public static Expression subtract(Expression minuend, Expression subtrahend) {
     return new FunctionExpression("subtract", ImmutableList.of(minuend, subtrahend));
   }
@@ -599,7 +557,6 @@ public abstract class Expression {
    * @param subtrahend Constant to subtract.
    * @return A new {@link Expression} representing the subtract operation.
    */
-  @BetaApi
   public static Expression subtract(Expression minuend, Number subtrahend) {
     return subtract(minuend, constant(subtrahend));
   }
@@ -611,7 +568,6 @@ public abstract class Expression {
    * @param subtrahend Numeric expression to subtract.
    * @return A new {@link Expression} representing the subtract operation.
    */
-  @BetaApi
   public static Expression subtract(String fieldName, Expression subtrahend) {
     return subtract(field(fieldName), subtrahend);
   }
@@ -623,7 +579,6 @@ public abstract class Expression {
    * @param subtrahend Constant to subtract.
    * @return A new {@link Expression} representing the subtract operation.
    */
-  @BetaApi
   public static Expression subtract(String fieldName, Number subtrahend) {
     return subtract(field(fieldName), constant(subtrahend));
   }
@@ -635,7 +590,6 @@ public abstract class Expression {
    * @param second Numeric expression to multiply.
    * @return A new {@link Expression} representing the multiplication operation.
    */
-  @BetaApi
   public static Expression multiply(Expression first, Expression second) {
     return new FunctionExpression("multiply", ImmutableList.of(first, second));
   }
@@ -647,7 +601,6 @@ public abstract class Expression {
    * @param second Constant to multiply.
    * @return A new {@link Expression} representing the multiplication operation.
    */
-  @BetaApi
   public static Expression multiply(Expression first, Number second) {
     return multiply(first, constant(second));
   }
@@ -659,7 +612,6 @@ public abstract class Expression {
    * @param second Numeric expression to multiply.
    * @return A new {@link Expression} representing the multiplication operation.
    */
-  @BetaApi
   public static Expression multiply(String fieldName, Expression second) {
     return multiply(field(fieldName), second);
   }
@@ -671,7 +623,6 @@ public abstract class Expression {
    * @param second Constant to multiply.
    * @return A new {@link Expression} representing the multiplication operation.
    */
-  @BetaApi
   public static Expression multiply(String fieldName, Number second) {
     return multiply(field(fieldName), constant(second));
   }
@@ -683,7 +634,6 @@ public abstract class Expression {
    * @param divisor The numeric expression to divide by.
    * @return A new {@link Expression} representing the division operation.
    */
-  @BetaApi
   public static Expression divide(Expression dividend, Expression divisor) {
     return new FunctionExpression("divide", ImmutableList.of(dividend, divisor));
   }
@@ -695,7 +645,6 @@ public abstract class Expression {
    * @param divisor The constant to divide by.
    * @return A new {@link Expression} representing the division operation.
    */
-  @BetaApi
   public static Expression divide(Expression dividend, Number divisor) {
     return divide(dividend, constant(divisor));
   }
@@ -707,7 +656,6 @@ public abstract class Expression {
    * @param divisor The numeric expression to divide by.
    * @return A new {@link Expression} representing the divide operation.
    */
-  @BetaApi
   public static Expression divide(String fieldName, Expression divisor) {
     return divide(field(fieldName), divisor);
   }
@@ -719,7 +667,6 @@ public abstract class Expression {
    * @param divisor The constant to divide by.
    * @return A new {@link Expression} representing the divide operation.
    */
-  @BetaApi
   public static Expression divide(String fieldName, Number divisor) {
     return divide(field(fieldName), constant(divisor));
   }
@@ -732,7 +679,6 @@ public abstract class Expression {
    * @param divisor The numeric expression to divide by.
    * @return A new {@link Expression} representing the modulo operation.
    */
-  @BetaApi
   public static Expression mod(Expression dividend, Expression divisor) {
     return new FunctionExpression("mod", ImmutableList.of(dividend, divisor));
   }
@@ -745,7 +691,6 @@ public abstract class Expression {
    * @param divisor The constant to divide by.
    * @return A new {@link Expression} representing the modulo operation.
    */
-  @BetaApi
   public static Expression mod(Expression dividend, Number divisor) {
     return mod(dividend, constant(divisor));
   }
@@ -758,7 +703,6 @@ public abstract class Expression {
    * @param divisor The numeric expression to divide by.
    * @return A new {@link Expression} representing the modulo operation.
    */
-  @BetaApi
   public static Expression mod(String fieldName, Expression divisor) {
     return mod(field(fieldName), divisor);
   }
@@ -771,7 +715,6 @@ public abstract class Expression {
    * @param divisor The constant to divide by.
    * @return A new {@link Expression} representing the modulo operation.
    */
-  @BetaApi
   public static Expression mod(String fieldName, Number divisor) {
     return mod(field(fieldName), constant(divisor));
   }
@@ -784,7 +727,6 @@ public abstract class Expression {
    * @param right The second expression.
    * @return A new {@link BooleanExpression} representing the equality comparison.
    */
-  @BetaApi
   public static BooleanExpression equal(Expression left, Expression right) {
     return new BooleanFunctionExpression("equal", left, right);
   }
@@ -796,7 +738,6 @@ public abstract class Expression {
    * @param right The constant value.
    * @return A new {@link BooleanExpression} representing the equality comparison.
    */
-  @BetaApi
   public static BooleanExpression equal(Expression left, Object right) {
     return new BooleanFunctionExpression("equal", left, toExprOrConstant(right));
   }
@@ -808,7 +749,6 @@ public abstract class Expression {
    * @param right The expression.
    * @return A new {@link BooleanExpression} representing the equality comparison.
    */
-  @BetaApi
   public static BooleanExpression equal(String fieldName, Expression right) {
     return equal(field(fieldName), right);
   }
@@ -820,7 +760,6 @@ public abstract class Expression {
    * @param right The constant value.
    * @return A new {@link BooleanExpression} representing the equality comparison.
    */
-  @BetaApi
   public static BooleanExpression equal(String fieldName, Object right) {
     return equal(field(fieldName), toExprOrConstant(right));
   }
@@ -832,7 +771,6 @@ public abstract class Expression {
    * @param right The second expression.
    * @return A new {@link BooleanExpression} representing the inequality comparison.
    */
-  @BetaApi
   public static BooleanExpression notEqual(Expression left, Expression right) {
     return new BooleanFunctionExpression("not_equal", left, right);
   }
@@ -844,7 +782,6 @@ public abstract class Expression {
    * @param right The constant value.
    * @return A new {@link BooleanExpression} representing the inequality comparison.
    */
-  @BetaApi
   public static BooleanExpression notEqual(Expression left, Object right) {
     return new BooleanFunctionExpression("not_equal", left, toExprOrConstant(right));
   }
@@ -856,7 +793,6 @@ public abstract class Expression {
    * @param right The expression.
    * @return A new {@link BooleanExpression} representing the inequality comparison.
    */
-  @BetaApi
   public static BooleanExpression notEqual(String fieldName, Expression right) {
     return notEqual(field(fieldName), right);
   }
@@ -868,7 +804,6 @@ public abstract class Expression {
    * @param right The constant value.
    * @return A new {@link BooleanExpression} representing the inequality comparison.
    */
-  @BetaApi
   public static BooleanExpression notEqual(String fieldName, Object right) {
     return notEqual(field(fieldName), toExprOrConstant(right));
   }
@@ -881,7 +816,6 @@ public abstract class Expression {
    * @param right The second expression.
    * @return A new {@link BooleanExpression} representing the greater than comparison.
    */
-  @BetaApi
   public static BooleanExpression greaterThan(Expression left, Expression right) {
     return new BooleanFunctionExpression("greater_than", left, right);
   }
@@ -893,7 +827,6 @@ public abstract class Expression {
    * @param right The constant value.
    * @return A new {@link BooleanExpression} representing the greater than comparison.
    */
-  @BetaApi
   public static BooleanExpression greaterThan(Expression left, Object right) {
     return new BooleanFunctionExpression("greater_than", left, toExprOrConstant(right));
   }
@@ -905,7 +838,6 @@ public abstract class Expression {
    * @param right The expression.
    * @return A new {@link BooleanExpression} representing the greater than comparison.
    */
-  @BetaApi
   public static BooleanExpression greaterThan(String fieldName, Expression right) {
     return greaterThan(field(fieldName), right);
   }
@@ -917,7 +849,6 @@ public abstract class Expression {
    * @param right The constant value.
    * @return A new {@link BooleanExpression} representing the greater than comparison.
    */
-  @BetaApi
   public static BooleanExpression greaterThan(String fieldName, Object right) {
     return greaterThan(field(fieldName), toExprOrConstant(right));
   }
@@ -930,7 +861,6 @@ public abstract class Expression {
    * @param right The second expression.
    * @return A new {@link BooleanExpression} representing the greater than or equal to comparison.
    */
-  @BetaApi
   public static BooleanExpression greaterThanOrEqual(Expression left, Expression right) {
     return new BooleanFunctionExpression("greater_than_or_equal", left, right);
   }
@@ -943,7 +873,6 @@ public abstract class Expression {
    * @param right The constant value.
    * @return A new {@link BooleanExpression} representing the greater than or equal to comparison.
    */
-  @BetaApi
   public static BooleanExpression greaterThanOrEqual(Expression left, Object right) {
     return new BooleanFunctionExpression("greater_than_or_equal", left, toExprOrConstant(right));
   }
@@ -955,7 +884,6 @@ public abstract class Expression {
    * @param right The expression.
    * @return A new {@link BooleanExpression} representing the greater than or equal to comparison.
    */
-  @BetaApi
   public static BooleanExpression greaterThanOrEqual(String fieldName, Expression right) {
     return greaterThanOrEqual(field(fieldName), right);
   }
@@ -967,7 +895,6 @@ public abstract class Expression {
    * @param right The constant value.
    * @return A new {@link BooleanExpression} representing the greater than or equal to comparison.
    */
-  @BetaApi
   public static BooleanExpression greaterThanOrEqual(String fieldName, Object right) {
     return greaterThanOrEqual(field(fieldName), toExprOrConstant(right));
   }
@@ -979,7 +906,6 @@ public abstract class Expression {
    * @param right The second expression.
    * @return A new {@link BooleanExpression} representing the less than comparison.
    */
-  @BetaApi
   public static BooleanExpression lessThan(Expression left, Expression right) {
     return new BooleanFunctionExpression("less_than", left, right);
   }
@@ -991,7 +917,6 @@ public abstract class Expression {
    * @param right The constant value.
    * @return A new {@link BooleanExpression} representing the less than comparison.
    */
-  @BetaApi
   public static BooleanExpression lessThan(Expression left, Object right) {
     return new BooleanFunctionExpression("less_than", left, toExprOrConstant(right));
   }
@@ -1003,7 +928,6 @@ public abstract class Expression {
    * @param right The expression.
    * @return A new {@link BooleanExpression} representing the less than comparison.
    */
-  @BetaApi
   public static BooleanExpression lessThan(String fieldName, Expression right) {
     return lessThan(field(fieldName), right);
   }
@@ -1015,7 +939,6 @@ public abstract class Expression {
    * @param right The constant value.
    * @return A new {@link BooleanExpression} representing the less than comparison.
    */
-  @BetaApi
   public static BooleanExpression lessThan(String fieldName, Object right) {
     return lessThan(field(fieldName), toExprOrConstant(right));
   }
@@ -1028,7 +951,6 @@ public abstract class Expression {
    * @param right The second expression.
    * @return A new {@link BooleanExpression} representing the less than or equal to comparison.
    */
-  @BetaApi
   public static BooleanExpression lessThanOrEqual(Expression left, Expression right) {
     return new BooleanFunctionExpression("less_than_or_equal", left, right);
   }
@@ -1040,7 +962,6 @@ public abstract class Expression {
    * @param right The constant value.
    * @return A new {@link BooleanExpression} representing the less than or equal to comparison.
    */
-  @BetaApi
   public static BooleanExpression lessThanOrEqual(Expression left, Object right) {
     return new BooleanFunctionExpression("less_than_or_equal", left, toExprOrConstant(right));
   }
@@ -1052,7 +973,6 @@ public abstract class Expression {
    * @param right The expression.
    * @return A new {@link BooleanExpression} representing the less than or equal to comparison.
    */
-  @BetaApi
   public static BooleanExpression lessThanOrEqual(String fieldName, Expression right) {
     return lessThanOrEqual(field(fieldName), right);
   }
@@ -1064,7 +984,6 @@ public abstract class Expression {
    * @param right The constant value.
    * @return A new {@link BooleanExpression} representing the less than or equal to comparison.
    */
-  @BetaApi
   public static BooleanExpression lessThanOrEqual(String fieldName, Object right) {
     return lessThanOrEqual(field(fieldName), toExprOrConstant(right));
   }
@@ -1077,7 +996,6 @@ public abstract class Expression {
    * @param values The values to check against.
    * @return A new {@link BooleanExpression} representing the 'IN' comparison.
    */
-  @BetaApi
   public static BooleanExpression equalAny(Expression expression, List<Object> values) {
     return new BooleanFunctionExpression(
         "equal_any",
@@ -1094,7 +1012,6 @@ public abstract class Expression {
    *     equality to the input.
    * @return A new {@link BooleanExpression} representing the 'IN' comparison.
    */
-  @BetaApi
   public static BooleanExpression equalAny(Expression expression, Expression arrayExpression) {
     return new BooleanFunctionExpression("equal_any", expression, arrayExpression);
   }
@@ -1107,7 +1024,6 @@ public abstract class Expression {
    * @param values The values to check against.
    * @return A new {@link BooleanExpression} representing the 'IN' comparison.
    */
-  @BetaApi
   public static BooleanExpression equalAny(String fieldName, List<Object> values) {
     return equalAny(
         field(fieldName),
@@ -1123,7 +1039,6 @@ public abstract class Expression {
    *     equality to the input.
    * @return A new {@link BooleanExpression} representing the 'IN' comparison.
    */
-  @BetaApi
   public static BooleanExpression equalAny(String fieldName, Expression arrayExpression) {
     return equalAny(field(fieldName), arrayExpression);
   }
@@ -1136,7 +1051,6 @@ public abstract class Expression {
    * @param values The values to check against.
    * @return A new {@link BooleanExpression} representing the 'NOT IN' comparison.
    */
-  @BetaApi
   public static BooleanExpression notEqualAny(Expression expression, List<Object> values) {
     return new BooleanFunctionExpression(
         "not_equal_any",
@@ -1153,7 +1067,6 @@ public abstract class Expression {
    *     equality to the input.
    * @return A new {@link BooleanExpression} representing the 'NOT IN' comparison.
    */
-  @BetaApi
   public static BooleanExpression notEqualAny(Expression expression, Expression arrayExpression) {
     return new BooleanFunctionExpression("not_equal_any", expression, arrayExpression);
   }
@@ -1166,7 +1079,6 @@ public abstract class Expression {
    * @param values The values to check against.
    * @return A new {@link BooleanExpression} representing the 'NOT IN' comparison.
    */
-  @BetaApi
   public static BooleanExpression notEqualAny(String fieldName, List<Object> values) {
     return notEqualAny(
         field(fieldName),
@@ -1182,7 +1094,6 @@ public abstract class Expression {
    *     equality to the input.
    * @return A new {@link BooleanExpression} representing the 'NOT IN' comparison.
    */
-  @BetaApi
   public static BooleanExpression notEqualAny(String fieldName, Expression arrayExpression) {
     return notEqualAny(field(fieldName), arrayExpression);
   }
@@ -1194,7 +1105,6 @@ public abstract class Expression {
    * @param string The expression representing the string.
    * @return A new {@link Expression} representing the charLength operation.
    */
-  @BetaApi
   public static Expression charLength(Expression string) {
     return new FunctionExpression("char_length", ImmutableList.of(string));
   }
@@ -1205,7 +1115,6 @@ public abstract class Expression {
    * @param fieldName The name of the field containing the string.
    * @return A new {@link Expression} representing the charLength operation.
    */
-  @BetaApi
   public static Expression charLength(String fieldName) {
     return charLength(field(fieldName));
   }
@@ -1217,7 +1126,6 @@ public abstract class Expression {
    * @param string The expression representing the string.
    * @return A new {@link Expression} representing the length of the string in bytes.
    */
-  @BetaApi
   public static Expression byteLength(Expression string) {
     return new FunctionExpression("byte_length", ImmutableList.of(string));
   }
@@ -1229,7 +1137,6 @@ public abstract class Expression {
    * @param fieldName The name of the field containing the string.
    * @return A new {@link Expression} representing the length of the string in bytes.
    */
-  @BetaApi
   public static Expression byteLength(String fieldName) {
     return byteLength(field(fieldName));
   }
@@ -1240,7 +1147,6 @@ public abstract class Expression {
    * @param string The expression representing the value to calculate the length of.
    * @return A new {@link Expression} representing the length of the value.
    */
-  @BetaApi
   public static Expression length(Expression string) {
     return new FunctionExpression("length", ImmutableList.of(string));
   }
@@ -1251,7 +1157,6 @@ public abstract class Expression {
    * @param fieldName The name of the field containing the value.
    * @return A new {@link Expression} representing the length of the value.
    */
-  @BetaApi
   public static Expression length(String fieldName) {
     return byteLength(field(fieldName));
   }
@@ -1263,7 +1168,6 @@ public abstract class Expression {
    * @param pattern The pattern to search for. You can use "%" as a wildcard character.
    * @return A new {@link BooleanExpression} representing the like operation.
    */
-  @BetaApi
   public static BooleanExpression like(Expression string, Expression pattern) {
     return new BooleanFunctionExpression("like", string, pattern);
   }
@@ -1275,7 +1179,6 @@ public abstract class Expression {
    * @param pattern The pattern to search for. You can use "%" as a wildcard character.
    * @return A new {@link BooleanExpression} representing the like operation.
    */
-  @BetaApi
   public static BooleanExpression like(Expression string, String pattern) {
     return like(string, constant(pattern));
   }
@@ -1288,7 +1191,6 @@ public abstract class Expression {
    * @param pattern The pattern to search for. You can use "%" as a wildcard character.
    * @return A new {@link BooleanExpression} representing the like comparison.
    */
-  @BetaApi
   public static BooleanExpression like(String fieldName, Expression pattern) {
     return like(field(fieldName), pattern);
   }
@@ -1301,7 +1203,6 @@ public abstract class Expression {
    * @param pattern The pattern to search for. You can use "%" as a wildcard character.
    * @return A new {@link BooleanExpression} representing the like comparison.
    */
-  @BetaApi
   public static BooleanExpression like(String fieldName, String pattern) {
     return like(field(fieldName), constant(pattern));
   }
@@ -1315,7 +1216,6 @@ public abstract class Expression {
    * @return A new {@link BooleanExpression} representing the contains regular expression
    *     comparison.
    */
-  @BetaApi
   public static BooleanExpression regexContains(Expression string, Expression pattern) {
     return new BooleanFunctionExpression("regex_contains", string, pattern);
   }
@@ -1329,7 +1229,6 @@ public abstract class Expression {
    * @return A new {@link BooleanExpression} representing the contains regular expression
    *     comparison.
    */
-  @BetaApi
   public static BooleanExpression regexContains(Expression string, String pattern) {
     return regexContains(string, constant(pattern));
   }
@@ -1343,7 +1242,6 @@ public abstract class Expression {
    * @return A new {@link BooleanExpression} representing the contains regular expression
    *     comparison.
    */
-  @BetaApi
   public static BooleanExpression regexContains(String fieldName, Expression pattern) {
     return regexContains(field(fieldName), pattern);
   }
@@ -1357,7 +1255,6 @@ public abstract class Expression {
    * @return A new {@link BooleanExpression} representing the contains regular expression
    *     comparison.
    */
-  @BetaApi
   public static BooleanExpression regexContains(String fieldName, String pattern) {
     return regexContains(field(fieldName), constant(pattern));
   }
@@ -1373,7 +1270,6 @@ public abstract class Expression {
    * @param pattern The regular expression to search for.
    * @return A new {@link Expression} representing the regular expression find function.
    */
-  @BetaApi
   public static Expression regexFind(Expression string, Expression pattern) {
     return new FunctionExpression("regex_find", ImmutableList.of(string, pattern));
   }
@@ -1389,7 +1285,6 @@ public abstract class Expression {
    * @param pattern The regular expression to search for.
    * @return A new {@link Expression} representing the regular expression find function.
    */
-  @BetaApi
   public static Expression regexFind(Expression string, String pattern) {
     return regexFind(string, constant(pattern));
   }
@@ -1405,7 +1300,6 @@ public abstract class Expression {
    * @param pattern The regular expression to search for.
    * @return A new {@link Expression} representing the regular expression find function.
    */
-  @BetaApi
   public static Expression regexFind(String fieldName, Expression pattern) {
     return regexFind(field(fieldName), pattern);
   }
@@ -1421,7 +1315,6 @@ public abstract class Expression {
    * @param pattern The regular expression to search for.
    * @return A new {@link Expression} representing the regular expression find function.
    */
-  @BetaApi
   public static Expression regexFind(String fieldName, String pattern) {
     return regexFind(field(fieldName), constant(pattern));
   }
@@ -1437,7 +1330,6 @@ public abstract class Expression {
    * @param pattern The regular expression to search for.
    * @return A new {@link Expression} that evaluates to a list of matched substrings.
    */
-  @BetaApi
   public static Expression regexFindAll(Expression string, Expression pattern) {
     return new FunctionExpression("regex_find_all", ImmutableList.of(string, pattern));
   }
@@ -1453,7 +1345,6 @@ public abstract class Expression {
    * @param pattern The regular expression to search for.
    * @return A new {@link Expression} that evaluates to a list of matched substrings.
    */
-  @BetaApi
   public static Expression regexFindAll(Expression string, String pattern) {
     return regexFindAll(string, constant(pattern));
   }
@@ -1469,7 +1360,6 @@ public abstract class Expression {
    * @param pattern The regular expression to search for.
    * @return A new {@link Expression} that evaluates to a list of matched substrings.
    */
-  @BetaApi
   public static Expression regexFindAll(String fieldName, Expression pattern) {
     return regexFindAll(field(fieldName), pattern);
   }
@@ -1485,7 +1375,6 @@ public abstract class Expression {
    * @param pattern The regular expression to search for.
    * @return A new {@link Expression} that evaluates to a list of matched substrings.
    */
-  @BetaApi
   public static Expression regexFindAll(String fieldName, String pattern) {
     return regexFindAll(field(fieldName), constant(pattern));
   }
@@ -1497,7 +1386,6 @@ public abstract class Expression {
    * @param pattern The regular expression to use for the match.
    * @return A new {@link BooleanExpression} representing the regular expression match comparison.
    */
-  @BetaApi
   public static BooleanExpression regexMatch(Expression string, Expression pattern) {
     return new BooleanFunctionExpression("regex_match", string, pattern);
   }
@@ -1509,7 +1397,6 @@ public abstract class Expression {
    * @param pattern The regular expression to use for the match.
    * @return A new {@link BooleanExpression} representing the regular expression match comparison.
    */
-  @BetaApi
   public static BooleanExpression regexMatch(Expression string, String pattern) {
     return regexMatch(string, constant(pattern));
   }
@@ -1521,7 +1408,6 @@ public abstract class Expression {
    * @param pattern The regular expression to use for the match.
    * @return A new {@link BooleanExpression} representing the regular expression match comparison.
    */
-  @BetaApi
   public static BooleanExpression regexMatch(String fieldName, Expression pattern) {
     return regexMatch(field(fieldName), pattern);
   }
@@ -1533,7 +1419,6 @@ public abstract class Expression {
    * @param pattern The regular expression to use for the match.
    * @return A new {@link BooleanExpression} representing the regular expression match comparison.
    */
-  @BetaApi
   public static BooleanExpression regexMatch(String fieldName, String pattern) {
     return regexMatch(field(fieldName), constant(pattern));
   }
@@ -1545,7 +1430,6 @@ public abstract class Expression {
    * @param substring The expression representing the substring to search for.
    * @return A new {@link BooleanExpression} representing the contains comparison.
    */
-  @BetaApi
   public static BooleanExpression stringContains(Expression string, Expression substring) {
     return new BooleanFunctionExpression("string_contains", string, substring);
   }
@@ -1557,7 +1441,6 @@ public abstract class Expression {
    * @param substring The substring to search for.
    * @return A new {@link BooleanExpression} representing the contains comparison.
    */
-  @BetaApi
   public static BooleanExpression stringContains(Expression string, String substring) {
     return stringContains(string, constant(substring));
   }
@@ -1569,7 +1452,6 @@ public abstract class Expression {
    * @param substring The expression representing the substring to search for.
    * @return A new {@link BooleanExpression} representing the contains comparison.
    */
-  @BetaApi
   public static BooleanExpression stringContains(String fieldName, Expression substring) {
     return stringContains(field(fieldName), substring);
   }
@@ -1581,7 +1463,6 @@ public abstract class Expression {
    * @param substring The substring to search for.
    * @return A new {@link BooleanExpression} representing the contains comparison.
    */
-  @BetaApi
   public static BooleanExpression stringContains(String fieldName, String substring) {
     return stringContains(field(fieldName), constant(substring));
   }
@@ -1593,7 +1474,6 @@ public abstract class Expression {
    * @param prefix The prefix string expression to check for.
    * @return A new {@link BooleanExpression} representing the 'starts with' comparison.
    */
-  @BetaApi
   public static BooleanExpression startsWith(Expression string, Expression prefix) {
     return new BooleanFunctionExpression("starts_with", string, prefix);
   }
@@ -1605,7 +1485,6 @@ public abstract class Expression {
    * @param prefix The prefix string to check for.
    * @return A new {@link BooleanExpression} representing the 'starts with' comparison.
    */
-  @BetaApi
   public static BooleanExpression startsWith(Expression string, String prefix) {
     return startsWith(string, constant(prefix));
   }
@@ -1617,7 +1496,6 @@ public abstract class Expression {
    * @param prefix The prefix string expression to check for.
    * @return A new {@link BooleanExpression} representing the 'starts with' comparison.
    */
-  @BetaApi
   public static BooleanExpression startsWith(String fieldName, Expression prefix) {
     return startsWith(field(fieldName), prefix);
   }
@@ -1629,7 +1507,6 @@ public abstract class Expression {
    * @param prefix The prefix string to check for.
    * @return A new {@link BooleanExpression} representing the 'starts with' comparison.
    */
-  @BetaApi
   public static BooleanExpression startsWith(String fieldName, String prefix) {
     return startsWith(field(fieldName), constant(prefix));
   }
@@ -1641,7 +1518,6 @@ public abstract class Expression {
    * @param suffix The suffix string expression to check for.
    * @return A new {@link BooleanExpression} representing the 'ends with' comparison.
    */
-  @BetaApi
   public static BooleanExpression endsWith(Expression string, Expression suffix) {
     return new BooleanFunctionExpression("ends_with", string, suffix);
   }
@@ -1653,7 +1529,6 @@ public abstract class Expression {
    * @param suffix The suffix string to check for.
    * @return A new {@link BooleanExpression} representing the 'ends with' comparison.
    */
-  @BetaApi
   public static BooleanExpression endsWith(Expression string, String suffix) {
     return endsWith(string, constant(suffix));
   }
@@ -1665,7 +1540,6 @@ public abstract class Expression {
    * @param suffix The suffix string expression to check for.
    * @return A new {@link BooleanExpression} representing the 'ends with' comparison.
    */
-  @BetaApi
   public static BooleanExpression endsWith(String fieldName, Expression suffix) {
     return endsWith(field(fieldName), suffix);
   }
@@ -1677,7 +1551,6 @@ public abstract class Expression {
    * @param suffix The suffix string to check for.
    * @return A new {@link BooleanExpression} representing the 'ends with' comparison.
    */
-  @BetaApi
   public static BooleanExpression endsWith(String fieldName, String suffix) {
     return endsWith(field(fieldName), constant(suffix));
   }
@@ -1690,7 +1563,6 @@ public abstract class Expression {
    * @param length The length of the substring.
    * @return A new {@link Expression} representing the substring.
    */
-  @BetaApi
   public static Expression substring(Expression string, Expression index, Expression length) {
     return new FunctionExpression("substring", ImmutableList.of(string, index, length));
   }
@@ -1703,7 +1575,6 @@ public abstract class Expression {
    * @param length The length of the substring.
    * @return A new {@link Expression} representing the substring.
    */
-  @BetaApi
   public static Expression substring(String fieldName, int index, int length) {
     return substring(field(fieldName), constant(index), constant(length));
   }
@@ -1714,7 +1585,6 @@ public abstract class Expression {
    * @param string The expression representing the string to convert to lowercase.
    * @return A new {@link Expression} representing the lowercase string.
    */
-  @BetaApi
   public static Expression toLower(Expression string) {
     return new FunctionExpression("to_lower", ImmutableList.of(string));
   }
@@ -1725,7 +1595,6 @@ public abstract class Expression {
    * @param fieldName The name of the field containing the string to convert to lowercase.
    * @return A new {@link Expression} representing the lowercase string.
    */
-  @BetaApi
   public static Expression toLower(String fieldName) {
     return toLower(field(fieldName));
   }
@@ -1736,7 +1605,6 @@ public abstract class Expression {
    * @param string The expression representing the string to convert to uppercase.
    * @return A new {@link Expression} representing the lowercase string.
    */
-  @BetaApi
   public static Expression toUpper(Expression string) {
     return new FunctionExpression("to_upper", ImmutableList.of(string));
   }
@@ -1747,7 +1615,6 @@ public abstract class Expression {
    * @param fieldName The name of the field containing the string to convert to uppercase.
    * @return A new {@link Expression} representing the lowercase string.
    */
-  @BetaApi
   public static Expression toUpper(String fieldName) {
     return toUpper(field(fieldName));
   }
@@ -1758,7 +1625,6 @@ public abstract class Expression {
    * @param string The expression representing the string to trim.
    * @return A new {@link Expression} representing the trimmed string.
    */
-  @BetaApi
   public static Expression trim(Expression string) {
     return new FunctionExpression("trim", ImmutableList.of(string));
   }
@@ -1769,7 +1635,6 @@ public abstract class Expression {
    * @param fieldName The name of the field containing the string to trim.
    * @return A new {@link Expression} representing the trimmed string.
    */
-  @BetaApi
   public static Expression trim(String fieldName) {
     return trim(field(fieldName));
   }
@@ -1782,7 +1647,6 @@ public abstract class Expression {
    * @param characters The characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public static Expression trimValue(Expression value, String characters) {
     return new FunctionExpression("trim", ImmutableList.of(value, constant(characters)));
   }
@@ -1795,7 +1659,6 @@ public abstract class Expression {
    * @param characters The characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public static Expression trimValue(String fieldName, String characters) {
     return trimValue(field(fieldName), characters);
   }
@@ -1808,7 +1671,6 @@ public abstract class Expression {
    * @param characters The expression representing the characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public static Expression trimValue(Expression value, Expression characters) {
     return new FunctionExpression("trim", ImmutableList.of(value, characters));
   }
@@ -1821,7 +1683,6 @@ public abstract class Expression {
    * @param characters The expression representing the characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public static Expression trimValue(String fieldName, Expression characters) {
     return trimValue(field(fieldName), characters);
   }
@@ -1832,7 +1693,6 @@ public abstract class Expression {
    * @param value The expression representing the string or blob to trim.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public static Expression ltrim(Expression value) {
     return new FunctionExpression("ltrim", ImmutableList.of(value));
   }
@@ -1843,7 +1703,6 @@ public abstract class Expression {
    * @param fieldName The name of the field containing the string or blob to trim.
    * @return A new {@link Expression} representing the trimmed string.
    */
-  @BetaApi
   public static Expression ltrim(String fieldName) {
     return ltrim(field(fieldName));
   }
@@ -1855,7 +1714,6 @@ public abstract class Expression {
    * @param characters The characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public static Expression ltrimValue(Expression value, String characters) {
     return new FunctionExpression("ltrim", ImmutableList.of(value, constant(characters)));
   }
@@ -1867,7 +1725,6 @@ public abstract class Expression {
    * @param characters The characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public static Expression ltrimValue(String fieldName, String characters) {
     return ltrimValue(field(fieldName), characters);
   }
@@ -1879,7 +1736,6 @@ public abstract class Expression {
    * @param characters The expression representing the characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public static Expression ltrimValue(Expression value, Expression characters) {
     return new FunctionExpression("ltrim", ImmutableList.of(value, characters));
   }
@@ -1891,7 +1747,6 @@ public abstract class Expression {
    * @param characters The expression representing the characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public static Expression ltrimValue(String fieldName, Expression characters) {
     return ltrimValue(field(fieldName), characters);
   }
@@ -1902,7 +1757,6 @@ public abstract class Expression {
    * @param value The expression representing the string or blob to trim.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public static Expression rtrim(Expression value) {
     return new FunctionExpression("rtrim", ImmutableList.of(value));
   }
@@ -1913,7 +1767,6 @@ public abstract class Expression {
    * @param fieldName The name of the field containing the string to trim.
    * @return A new {@link Expression} representing the trimmed string.
    */
-  @BetaApi
   public static Expression rtrim(String fieldName) {
     return rtrim(field(fieldName));
   }
@@ -1925,7 +1778,6 @@ public abstract class Expression {
    * @param characters The characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public static Expression rtrimValue(Expression value, String characters) {
     return new FunctionExpression("rtrim", ImmutableList.of(value, constant(characters)));
   }
@@ -1937,7 +1789,6 @@ public abstract class Expression {
    * @param characters The characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public static Expression rtrimValue(String fieldName, String characters) {
     return rtrimValue(field(fieldName), characters);
   }
@@ -1949,7 +1800,6 @@ public abstract class Expression {
    * @param characters The expression representing the characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public static Expression rtrimValue(Expression value, Expression characters) {
     return new FunctionExpression("rtrim", ImmutableList.of(value, characters));
   }
@@ -1961,7 +1811,6 @@ public abstract class Expression {
    * @param characters The expression representing the characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public static Expression rtrimValue(String fieldName, Expression characters) {
     return rtrimValue(field(fieldName), characters);
   }
@@ -1973,7 +1822,6 @@ public abstract class Expression {
    * @param repetitions The number of times to repeat the string or blob.
    * @return A new {@link Expression} representing the repeated string or blob.
    */
-  @BetaApi
   public static Expression stringRepeat(Expression value, Number repetitions) {
     return new FunctionExpression("string_repeat", ImmutableList.of(value, constant(repetitions)));
   }
@@ -1985,7 +1833,6 @@ public abstract class Expression {
    * @param repetitions The number of times to repeat the string or blob.
    * @return A new {@link Expression} representing the repeated string or blob.
    */
-  @BetaApi
   public static Expression stringRepeat(String fieldName, Number repetitions) {
     return stringRepeat(field(fieldName), repetitions);
   }
@@ -1997,7 +1844,6 @@ public abstract class Expression {
    * @param repetitions The expression representing the number of times to repeat.
    * @return A new {@link Expression} representing the repeated string or blob.
    */
-  @BetaApi
   public static Expression stringRepeat(Expression value, Expression repetitions) {
     return new FunctionExpression("string_repeat", ImmutableList.of(value, repetitions));
   }
@@ -2009,7 +1855,6 @@ public abstract class Expression {
    * @param repetitions The expression representing the number of times to repeat.
    * @return A new {@link Expression} representing the repeated string or blob.
    */
-  @BetaApi
   public static Expression stringRepeat(String fieldName, Expression repetitions) {
     return stringRepeat(field(fieldName), repetitions);
   }
@@ -2022,7 +1867,6 @@ public abstract class Expression {
    * @param replacement The replacement string/bytes.
    * @return A new {@link Expression} representing the replaced value.
    */
-  @BetaApi
   public static Expression stringReplaceAll(Expression value, String find, String replacement) {
     return new FunctionExpression(
         "string_replace_all", ImmutableList.of(value, constant(find), constant(replacement)));
@@ -2036,7 +1880,6 @@ public abstract class Expression {
    * @param replacement The replacement string/bytes.
    * @return A new {@link Expression} representing the replaced value.
    */
-  @BetaApi
   public static Expression stringReplaceAll(String fieldName, String find, String replacement) {
     return stringReplaceAll(field(fieldName), find, replacement);
   }
@@ -2049,7 +1892,6 @@ public abstract class Expression {
    * @param replacement The expression representing the replacement value.
    * @return A new {@link Expression} representing the replaced value.
    */
-  @BetaApi
   public static Expression stringReplaceAll(
       Expression value, Expression find, Expression replacement) {
     return new FunctionExpression("string_replace_all", ImmutableList.of(value, find, replacement));
@@ -2063,7 +1905,6 @@ public abstract class Expression {
    * @param replacement The expression representing the replacement value.
    * @return A new {@link Expression} representing the replaced value.
    */
-  @BetaApi
   public static Expression stringReplaceAll(
       String fieldName, Expression find, Expression replacement) {
     return stringReplaceAll(field(fieldName), find, replacement);
@@ -2077,7 +1918,6 @@ public abstract class Expression {
    * @param replacement The replacement string/bytes.
    * @return A new {@link Expression} representing the replaced value.
    */
-  @BetaApi
   public static Expression stringReplaceOne(Expression value, String find, String replacement) {
     return new FunctionExpression(
         "string_replace_one", ImmutableList.of(value, constant(find), constant(replacement)));
@@ -2091,7 +1931,6 @@ public abstract class Expression {
    * @param replacement The replacement string/bytes.
    * @return A new {@link Expression} representing the replaced value.
    */
-  @BetaApi
   public static Expression stringReplaceOne(String fieldName, String find, String replacement) {
     return stringReplaceOne(field(fieldName), find, replacement);
   }
@@ -2104,7 +1943,6 @@ public abstract class Expression {
    * @param replacement The expression representing the replacement value.
    * @return A new {@link Expression} representing the replaced value.
    */
-  @BetaApi
   public static Expression stringReplaceOne(
       Expression value, Expression find, Expression replacement) {
     return new FunctionExpression("string_replace_one", ImmutableList.of(value, find, replacement));
@@ -2118,7 +1956,6 @@ public abstract class Expression {
    * @param replacement The expression representing the replacement value.
    * @return A new {@link Expression} representing the replaced value.
    */
-  @BetaApi
   public static Expression stringReplaceOne(
       String fieldName, Expression find, Expression replacement) {
     return stringReplaceOne(field(fieldName), find, replacement);
@@ -2131,7 +1968,6 @@ public abstract class Expression {
    * @param search The search pattern.
    * @return A new {@link Expression} representing the index.
    */
-  @BetaApi
   public static Expression stringIndexOf(Expression value, String search) {
     return new FunctionExpression("string_index_of", ImmutableList.of(value, constant(search)));
   }
@@ -2143,7 +1979,6 @@ public abstract class Expression {
    * @param search The search pattern.
    * @return A new {@link Expression} representing the index.
    */
-  @BetaApi
   public static Expression stringIndexOf(String fieldName, String search) {
     return stringIndexOf(field(fieldName), search);
   }
@@ -2155,7 +1990,6 @@ public abstract class Expression {
    * @param search The expression representing the search pattern.
    * @return A new {@link Expression} representing the index.
    */
-  @BetaApi
   public static Expression stringIndexOf(Expression value, Expression search) {
     return new FunctionExpression("string_index_of", ImmutableList.of(value, search));
   }
@@ -2167,7 +2001,6 @@ public abstract class Expression {
    * @param search The expression representing the search pattern.
    * @return A new {@link Expression} representing the index.
    */
-  @BetaApi
   public static Expression stringIndexOf(String fieldName, Expression search) {
     return stringIndexOf(field(fieldName), search);
   }
@@ -2179,7 +2012,6 @@ public abstract class Expression {
    * @param delimiter The delimiter to split by.
    * @return A new {@link Expression} representing the split string or blob as an array.
    */
-  @BetaApi
   public static Expression split(Expression value, Expression delimiter) {
     return new FunctionExpression("split", ImmutableList.of(value, delimiter));
   }
@@ -2191,7 +2023,6 @@ public abstract class Expression {
    * @param delimiter The delimiter to split by.
    * @return A new {@link Expression} representing the split string or blob as an array.
    */
-  @BetaApi
   public static Expression split(Expression value, String delimiter) {
     return split(value, constant(delimiter));
   }
@@ -2203,7 +2034,6 @@ public abstract class Expression {
    * @param delimiter The delimiter to split by.
    * @return A new {@link Expression} representing the split string or blob as an array.
    */
-  @BetaApi
   public static Expression split(String fieldName, Expression delimiter) {
     return split(field(fieldName), delimiter);
   }
@@ -2215,7 +2045,6 @@ public abstract class Expression {
    * @param delimiter The delimiter to split by.
    * @return A new {@link Expression} representing the split string or blob as an array.
    */
-  @BetaApi
   public static Expression split(String fieldName, String delimiter) {
     return split(field(fieldName), constant(delimiter));
   }
@@ -2227,7 +2056,6 @@ public abstract class Expression {
    * @param otherStrings Optional additional string expressions or string constants to concatenate.
    * @return A new {@link Expression} representing the concatenated string.
    */
-  @BetaApi
   public static Expression stringConcat(Expression firstString, Object... otherStrings) {
     ImmutableList.Builder<Expression> builder = ImmutableList.builder();
     builder.add(firstString);
@@ -2242,7 +2070,6 @@ public abstract class Expression {
    * @param otherStrings Optional additional string expressions or string constants to concatenate.
    * @return A new {@link Expression} representing the concatenated string.
    */
-  @BetaApi
   public static Expression stringConcat(String fieldName, Object... otherStrings) {
     return stringConcat(field(fieldName), otherStrings);
   }
@@ -2254,7 +2081,6 @@ public abstract class Expression {
    * @param others Optional additional expressions or constants to concatenate.
    * @return A new {@link Expression} representing the concatenated value.
    */
-  @BetaApi
   public static Expression concat(Expression first, Object... others) {
     ImmutableList.Builder<Expression> builder = ImmutableList.builder();
     builder.add(first);
@@ -2269,7 +2095,6 @@ public abstract class Expression {
    * @param others Optional additional expressions or constants to concatenate.
    * @return A new {@link Expression} representing the concatenated value.
    */
-  @BetaApi
   public static Expression concat(String fieldName, Object... others) {
     return concat(field(fieldName), others);
   }
@@ -2281,7 +2106,6 @@ public abstract class Expression {
    * @param elements The input map to evaluate in the expression.
    * @return A new {@link Expression} representing the map function.
    */
-  @BetaApi
   public static Expression map(Map<String, Object> elements) {
     ImmutableList<Expression> params =
         elements.entrySet().stream()
@@ -2299,7 +2123,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing the value associated with the given key in the
    *     map.
    */
-  @BetaApi
   public static Expression mapGet(Expression map, Expression key) {
     return new FunctionExpression("map_get", ImmutableList.of(map, key));
   }
@@ -2312,7 +2135,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing the value associated with the given key in the
    *     map.
    */
-  @BetaApi
   public static Expression mapGet(Expression map, String key) {
     return mapGet(map, constant(key));
   }
@@ -2325,7 +2147,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing the value associated with the given key in the
    *     map.
    */
-  @BetaApi
   public static Expression mapGet(String fieldName, String key) {
     return mapGet(field(fieldName), constant(key));
   }
@@ -2338,17 +2159,14 @@ public abstract class Expression {
    * @return A new {@link Expression} representing the value associated with the given key in the
    *     map.
    */
-  @BetaApi
   public static Expression mapGet(String fieldName, Expression key) {
     return mapGet(field(fieldName), key);
   }
 
-  @BetaApi
   public static Expression mapMerge(Expression firstMap, Expression secondMap) {
     return mapMerge(firstMap, secondMap, new Expression[0]);
   }
 
-  @BetaApi
   public static Expression mapMerge(String firstMapFieldName, Expression secondMap) {
     return mapMerge(field(firstMapFieldName), secondMap, new Expression[0]);
   }
@@ -2362,7 +2180,6 @@ public abstract class Expression {
    * @param otherMaps Additional maps to merge.
    * @return A new {@link Expression} representing the mapMerge operation.
    */
-  @BetaApi
   public static Expression mapMerge(
       Expression firstMap, Expression secondMap, Expression... otherMaps) {
     ImmutableList.Builder<Expression> builder = ImmutableList.builder();
@@ -2381,7 +2198,6 @@ public abstract class Expression {
    * @param otherMaps Additional maps to merge.
    * @return A new {@link Expression} representing the mapMerge operation.
    */
-  @BetaApi
   public static Expression mapMerge(
       String firstMapFieldName, Expression secondMap, Expression... otherMaps) {
     return mapMerge(field(firstMapFieldName), secondMap, otherMaps);
@@ -2394,7 +2210,6 @@ public abstract class Expression {
    * @param key The key to remove from the map.
    * @return A new {@link Expression} representing the map with the key removed.
    */
-  @BetaApi
   public static Expression mapRemove(Expression mapExpr, Expression key) {
     return new FunctionExpression("map_remove", ImmutableList.of(mapExpr, key));
   }
@@ -2406,7 +2221,6 @@ public abstract class Expression {
    * @param key The key to remove from the map.
    * @return A new {@link Expression} representing the map with the key removed.
    */
-  @BetaApi
   public static Expression mapRemove(String mapField, Expression key) {
     return mapRemove(field(mapField), key);
   }
@@ -2418,7 +2232,6 @@ public abstract class Expression {
    * @param key The key to remove from the map.
    * @return A new {@link Expression} representing the map with the key removed.
    */
-  @BetaApi
   public static Expression mapRemove(Expression mapExpr, String key) {
     return mapRemove(mapExpr, constant(key));
   }
@@ -2430,7 +2243,6 @@ public abstract class Expression {
    * @param key The key to remove from the map.
    * @return A new {@link Expression} representing the map with the key removed.
    */
-  @BetaApi
   public static Expression mapRemove(String mapField, String key) {
     return mapRemove(field(mapField), key);
   }
@@ -2450,7 +2262,6 @@ public abstract class Expression {
    * @param moreKeyValues Additional key-value pairs to set.
    * @return A new {@link Expression} representing the map with the entries set.
    */
-  @BetaApi
   public static Expression mapSet(
       Expression mapExpr, Expression key, Expression value, Expression... moreKeyValues) {
     ImmutableList.Builder<Expression> builder = ImmutableList.builder();
@@ -2476,7 +2287,6 @@ public abstract class Expression {
    * @param moreKeyValues Additional key-value pairs to set.
    * @return A new {@link Expression} representing the map with the entries set.
    */
-  @BetaApi
   public static Expression mapSet(
       Expression mapExpr, String key, Object value, Object... moreKeyValues) {
     return mapSet(
@@ -2501,7 +2311,6 @@ public abstract class Expression {
    * @param moreKeyValues Additional key-value pairs to set.
    * @return A new {@link Expression} representing the map with the entries set.
    */
-  @BetaApi
   public static Expression mapSet(
       String mapField, Expression key, Expression value, Expression... moreKeyValues) {
     return mapSet(field(mapField), key, value, moreKeyValues);
@@ -2522,7 +2331,6 @@ public abstract class Expression {
    * @param moreKeyValues Additional key-value pairs to set.
    * @return A new {@link Expression} representing the map with the entries set.
    */
-  @BetaApi
   public static Expression mapSet(
       String mapField, String key, Object value, Object... moreKeyValues) {
     return mapSet(field(mapField), key, value, moreKeyValues);
@@ -2537,7 +2345,6 @@ public abstract class Expression {
    * @param mapExpr The expression representing the map to get the keys of.
    * @return A new {@link Expression} representing the keys of the map.
    */
-  @BetaApi
   public static Expression mapKeys(Expression mapExpr) {
     return new FunctionExpression("map_keys", ImmutableList.of(mapExpr));
   }
@@ -2551,7 +2358,6 @@ public abstract class Expression {
    * @param mapField The map field to get the keys of.
    * @return A new {@link Expression} representing the keys of the map.
    */
-  @BetaApi
   public static Expression mapKeys(String mapField) {
     return mapKeys(field(mapField));
   }
@@ -2565,7 +2371,6 @@ public abstract class Expression {
    * @param mapExpr The expression representing the map to get the values of.
    * @return A new {@link Expression} representing the values of the map.
    */
-  @BetaApi
   public static Expression mapValues(Expression mapExpr) {
     return new FunctionExpression("map_values", ImmutableList.of(mapExpr));
   }
@@ -2579,7 +2384,6 @@ public abstract class Expression {
    * @param mapField The map field to get the values of.
    * @return A new {@link Expression} representing the values of the map.
    */
-  @BetaApi
   public static Expression mapValues(String mapField) {
     return mapValues(field(mapField));
   }
@@ -2594,7 +2398,6 @@ public abstract class Expression {
    * @param mapExpr The expression representing the map to get the entries of.
    * @return A new {@link Expression} representing the entries of the map.
    */
-  @BetaApi
   public static Expression mapEntries(Expression mapExpr) {
     return new FunctionExpression("map_entries", ImmutableList.of(mapExpr));
   }
@@ -2608,7 +2411,6 @@ public abstract class Expression {
    * @param mapField The map field to get the entries of.
    * @return A new {@link Expression} representing the entries of the map.
    */
-  @BetaApi
   public static Expression mapEntries(String mapField) {
     return mapEntries(field(mapField));
   }
@@ -2619,7 +2421,6 @@ public abstract class Expression {
    * @param expr An expression evaluating to a string, blob, or array value, which will be reversed.
    * @return A new {@link Expression} representing the reversed value.
    */
-  @BetaApi
   public static Expression reverse(Expression expr) {
     return new FunctionExpression("reverse", ImmutableList.of(expr));
   }
@@ -2630,7 +2431,6 @@ public abstract class Expression {
    * @param fieldName A field evaluating to a string, blob, or array value.
    * @return A new {@link Expression} representing the reversed value.
    */
-  @BetaApi
   public static Expression reverse(String fieldName) {
     return reverse(field(fieldName));
   }
@@ -2642,7 +2442,6 @@ public abstract class Expression {
    * @param elements The input elements to evaluate in the expression.
    * @return A new {@link Expression} representing the array function.
    */
-  @BetaApi
   public static Expression array(Object... elements) {
     return new FunctionExpression("array", toArrayOfExprOrConstant(elements));
   }
@@ -2653,7 +2452,6 @@ public abstract class Expression {
    * @param elements The input elements to evaluate in the expression.
    * @return A new {@link Expression} representing the array function.
    */
-  @BetaApi
   public static Expression array(List<Object> elements) {
     return new FunctionExpression("array", toArrayOfExprOrConstant(elements.toArray()));
   }
@@ -2665,7 +2463,6 @@ public abstract class Expression {
    * @param otherArrays Additional arrays to concatenate.
    * @return A new {@link Expression} representing the concatenated array.
    */
-  @BetaApi
   public static Expression arrayConcat(Expression firstArray, Object... otherArrays) {
     ImmutableList.Builder<Expression> builder = ImmutableList.builder();
     builder.add(firstArray);
@@ -2680,7 +2477,6 @@ public abstract class Expression {
    * @param otherArrays Additional arrays to concatenate.
    * @return A new {@link Expression} representing the concatenated array.
    */
-  @BetaApi
   public static Expression arrayConcat(String firstArrayField, Object... otherArrays) {
     return arrayConcat(field(firstArrayField), otherArrays);
   }
@@ -2691,7 +2487,6 @@ public abstract class Expression {
    * @param array The expression representing the array to reverse.
    * @return A new {@link Expression} representing the reversed array.
    */
-  @BetaApi
   public static Expression arrayReverse(Expression array) {
     return new FunctionExpression("array_reverse", ImmutableList.of(array));
   }
@@ -2702,7 +2497,6 @@ public abstract class Expression {
    * @param arrayFieldName The field name of the array to reverse.
    * @return A new {@link Expression} representing the reversed array.
    */
-  @BetaApi
   public static Expression arrayReverse(String arrayFieldName) {
     return arrayReverse(field(arrayFieldName));
   }
@@ -2715,7 +2509,6 @@ public abstract class Expression {
    * @param filter The predicate boolean expression used to filter the elements.
    * @return A new {@link Expression} representing the filtered array.
    */
-  @BetaApi
   public static Expression arrayFilter(Expression array, String alias, BooleanExpression filter) {
     return new FunctionExpression("array_filter", ImmutableList.of(array, constant(alias), filter));
   }
@@ -2728,7 +2521,6 @@ public abstract class Expression {
    * @param filter The predicate boolean expression used to filter the elements.
    * @return A new {@link Expression} representing the filtered array.
    */
-  @BetaApi
   public static Expression arrayFilter(
       String arrayFieldName, String alias, BooleanExpression filter) {
     return arrayFilter(field(arrayFieldName), alias, filter);
@@ -2742,7 +2534,6 @@ public abstract class Expression {
    * @param transform The expression used to transform the elements.
    * @return A new {@link Expression} representing the transformed array.
    */
-  @BetaApi
   public static Expression arrayTransform(
       Expression array, String elementAlias, Expression transform) {
     return new FunctionExpression(
@@ -2757,7 +2548,6 @@ public abstract class Expression {
    * @param transform The expression used to transform the elements.
    * @return A new {@link Expression} representing the transformed array.
    */
-  @BetaApi
   public static Expression arrayTransform(
       String arrayFieldName, String elementAlias, Expression transform) {
     return arrayTransform(field(arrayFieldName), elementAlias, transform);
@@ -2773,7 +2563,6 @@ public abstract class Expression {
    * @param transform The expression used to transform the elements.
    * @return A new {@link Expression} representing the transformed array.
    */
-  @BetaApi
   public static Expression arrayTransformWithIndex(
       Expression array, String elementAlias, String indexAlias, Expression transform) {
     return new FunctionExpression(
@@ -2791,7 +2580,6 @@ public abstract class Expression {
    * @param transform The expression used to transform the elements.
    * @return A new {@link Expression} representing the transformed array.
    */
-  @BetaApi
   public static Expression arrayTransformWithIndex(
       String arrayFieldName, String elementAlias, String indexAlias, Expression transform) {
     return arrayTransformWithIndex(field(arrayFieldName), elementAlias, indexAlias, transform);
@@ -2805,7 +2593,6 @@ public abstract class Expression {
    * @param length The number of elements to return.
    * @return A new {@link Expression} representing the array slice.
    */
-  @BetaApi
   public static Expression arraySlice(Expression array, Expression offset, Expression length) {
     return new FunctionExpression("array_slice", ImmutableList.of(array, offset, length));
   }
@@ -2818,7 +2605,6 @@ public abstract class Expression {
    * @param length The number of elements to return.
    * @return A new {@link Expression} representing the array slice.
    */
-  @BetaApi
   public static Expression arraySlice(Expression array, int offset, int length) {
     return arraySlice(array, constant(offset), constant(length));
   }
@@ -2831,7 +2617,6 @@ public abstract class Expression {
    * @param length The number of elements to return.
    * @return A new {@link Expression} representing the array slice.
    */
-  @BetaApi
   public static Expression arraySlice(String arrayFieldName, int offset, int length) {
     return arraySlice(field(arrayFieldName), constant(offset), constant(length));
   }
@@ -2844,7 +2629,6 @@ public abstract class Expression {
    * @param length The number of elements to return.
    * @return A new {@link Expression} representing the array slice.
    */
-  @BetaApi
   public static Expression arraySlice(String arrayFieldName, Expression offset, Expression length) {
     return arraySlice(field(arrayFieldName), offset, length);
   }
@@ -2856,7 +2640,6 @@ public abstract class Expression {
    * @param offset The expression representing the starting index.
    * @return A new {@link Expression} representing the array slice.
    */
-  @BetaApi
   public static Expression arraySliceToEnd(Expression array, Expression offset) {
     return new FunctionExpression("array_slice", ImmutableList.of(array, offset));
   }
@@ -2868,7 +2651,6 @@ public abstract class Expression {
    * @param offset The starting index.
    * @return A new {@link Expression} representing the array slice.
    */
-  @BetaApi
   public static Expression arraySliceToEnd(Expression array, int offset) {
     return arraySliceToEnd(array, constant(offset));
   }
@@ -2880,7 +2662,6 @@ public abstract class Expression {
    * @param offset The starting index.
    * @return A new {@link Expression} representing the array slice.
    */
-  @BetaApi
   public static Expression arraySliceToEnd(String arrayFieldName, int offset) {
     return arraySliceToEnd(field(arrayFieldName), constant(offset));
   }
@@ -2892,7 +2673,6 @@ public abstract class Expression {
    * @param offset The expression representing the starting index.
    * @return A new {@link Expression} representing the array slice.
    */
-  @BetaApi
   public static Expression arraySliceToEnd(String arrayFieldName, Expression offset) {
     return arraySliceToEnd(field(arrayFieldName), offset);
   }
@@ -2904,7 +2684,6 @@ public abstract class Expression {
    * @param element The element to check for.
    * @return A new {@link BooleanExpression} representing the array contains comparison.
    */
-  @BetaApi
   public static BooleanExpression arrayContains(Expression array, Expression element) {
     return new BooleanFunctionExpression("array_contains", array, element);
   }
@@ -2916,7 +2695,6 @@ public abstract class Expression {
    * @param element The element to check for.
    * @return A new {@link BooleanExpression} representing the array contains comparison.
    */
-  @BetaApi
   public static BooleanExpression arrayContains(String arrayFieldName, Expression element) {
     return arrayContains(field(arrayFieldName), element);
   }
@@ -2928,7 +2706,6 @@ public abstract class Expression {
    * @param element The element to check for.
    * @return A new {@link BooleanExpression} representing the array contains comparison.
    */
-  @BetaApi
   public static BooleanExpression arrayContains(Expression array, Object element) {
     return arrayContains(array, toExprOrConstant(element));
   }
@@ -2940,7 +2717,6 @@ public abstract class Expression {
    * @param element The element to check for.
    * @return A new {@link BooleanExpression} representing the array contains comparison.
    */
-  @BetaApi
   public static BooleanExpression arrayContains(String arrayFieldName, Object element) {
     return arrayContains(field(arrayFieldName), toExprOrConstant(element));
   }
@@ -2952,7 +2728,6 @@ public abstract class Expression {
    * @param values The values to check for.
    * @return A new {@link BooleanExpression} representing the array contains all comparison.
    */
-  @BetaApi
   public static BooleanExpression arrayContainsAll(Expression array, List<Object> values) {
     return arrayContainsAll(array, array(values));
   }
@@ -2964,7 +2739,6 @@ public abstract class Expression {
    * @param arrayExpression The expression representing the array of values to check for.
    * @return A new {@link BooleanExpression} representing the array contains all comparison.
    */
-  @BetaApi
   public static BooleanExpression arrayContainsAll(Expression array, Expression arrayExpression) {
     return new BooleanFunctionExpression("array_contains_all", array, arrayExpression);
   }
@@ -2976,7 +2750,6 @@ public abstract class Expression {
    * @param values The values to check for.
    * @return A new {@link BooleanExpression} representing the array contains all comparison.
    */
-  @BetaApi
   public static BooleanExpression arrayContainsAll(String arrayFieldName, List<Object> values) {
     return arrayContainsAll(field(arrayFieldName), array(values));
   }
@@ -2988,7 +2761,6 @@ public abstract class Expression {
    * @param arrayExpression The expression representing the array of values to check for.
    * @return A new {@link BooleanExpression} representing the array contains all comparison.
    */
-  @BetaApi
   public static BooleanExpression arrayContainsAll(
       String arrayFieldName, Expression arrayExpression) {
     return arrayContainsAll(field(arrayFieldName), arrayExpression);
@@ -3001,7 +2773,6 @@ public abstract class Expression {
    * @param values The values to check for.
    * @return A new {@link BooleanExpression} representing the array contains any comparison.
    */
-  @BetaApi
   public static BooleanExpression arrayContainsAny(Expression array, List<Object> values) {
     return new BooleanFunctionExpression("array_contains_any", array, array(values));
   }
@@ -3013,7 +2784,6 @@ public abstract class Expression {
    * @param arrayExpression The expression representing the array of values to check for.
    * @return A new {@link BooleanExpression} representing the array contains any comparison.
    */
-  @BetaApi
   public static BooleanExpression arrayContainsAny(Expression array, Expression arrayExpression) {
     return new BooleanFunctionExpression("array_contains_any", array, arrayExpression);
   }
@@ -3025,7 +2795,6 @@ public abstract class Expression {
    * @param values The values to check for.
    * @return A new {@link BooleanExpression} representing the array contains any comparison.
    */
-  @BetaApi
   public static BooleanExpression arrayContainsAny(String arrayFieldName, List<Object> values) {
     return arrayContainsAny(field(arrayFieldName), array(values));
   }
@@ -3037,7 +2806,6 @@ public abstract class Expression {
    * @param arrayExpression The expression representing the array of values to check for.
    * @return A new {@link BooleanExpression} representing the array contains any comparison.
    */
-  @BetaApi
   public static BooleanExpression arrayContainsAny(
       String arrayFieldName, Expression arrayExpression) {
     return arrayContainsAny(field(arrayFieldName), arrayExpression);
@@ -3049,7 +2817,6 @@ public abstract class Expression {
    * @param array The expression representing the array.
    * @return A new {@link Expression} representing the length of the array.
    */
-  @BetaApi
   public static Expression arrayLength(Expression array) {
     return new FunctionExpression("array_length", ImmutableList.of(array));
   }
@@ -3060,7 +2827,6 @@ public abstract class Expression {
    * @param arrayFieldName The field name of the array.
    * @return A new {@link Expression} representing the length of the array.
    */
-  @BetaApi
   public static Expression arrayLength(String arrayFieldName) {
     return arrayLength(field(arrayFieldName));
   }
@@ -3071,7 +2837,6 @@ public abstract class Expression {
    * @param array The expression representing the array.
    * @return A new {@link Expression} representing the first element of the array.
    */
-  @BetaApi
   public static Expression arrayFirst(Expression array) {
     return new FunctionExpression("array_first", ImmutableList.of(array));
   }
@@ -3082,7 +2847,6 @@ public abstract class Expression {
    * @param arrayFieldName The field name of the array.
    * @return A new {@link Expression} representing the first element of the array.
    */
-  @BetaApi
   public static Expression arrayFirst(String arrayFieldName) {
     return arrayFirst(field(arrayFieldName));
   }
@@ -3094,7 +2858,6 @@ public abstract class Expression {
    * @param n The Expression evaluates to the number of elements to return.
    * @return A new {@link Expression} representing the first n elements of the array.
    */
-  @BetaApi
   public static Expression arrayFirstN(Expression array, Expression n) {
     return new FunctionExpression("array_first_n", ImmutableList.of(array, n));
   }
@@ -3106,7 +2869,6 @@ public abstract class Expression {
    * @param n The number of elements to return.
    * @return A new {@link Expression} representing the first n elements of the array.
    */
-  @BetaApi
   public static Expression arrayFirstN(Expression array, int n) {
     return arrayFirstN(array, constant(n));
   }
@@ -3118,7 +2880,6 @@ public abstract class Expression {
    * @param n The number of elements to return.
    * @return A new {@link Expression} representing the first n elements of the array.
    */
-  @BetaApi
   public static Expression arrayFirstN(String arrayFieldName, int n) {
     return arrayFirstN(field(arrayFieldName), constant(n));
   }
@@ -3130,7 +2891,6 @@ public abstract class Expression {
    * @param n The Expression evaluates to the number of elements to return.
    * @return A new {@link Expression} representing the first n elements of the array.
    */
-  @BetaApi
   public static Expression arrayFirstN(String arrayFieldName, Expression n) {
     return arrayFirstN(field(arrayFieldName), n);
   }
@@ -3141,7 +2901,6 @@ public abstract class Expression {
    * @param array The expression representing the array.
    * @return A new {@link Expression} representing the last element of the array.
    */
-  @BetaApi
   public static Expression arrayLast(Expression array) {
     return new FunctionExpression("array_last", ImmutableList.of(array));
   }
@@ -3152,7 +2911,6 @@ public abstract class Expression {
    * @param arrayFieldName The field name of the array.
    * @return A new {@link Expression} representing the last element of the array.
    */
-  @BetaApi
   public static Expression arrayLast(String arrayFieldName) {
     return arrayLast(field(arrayFieldName));
   }
@@ -3164,7 +2922,6 @@ public abstract class Expression {
    * @param n The Expression evaluates to the number of elements to return.
    * @return A new {@link Expression} representing the last n elements of the array.
    */
-  @BetaApi
   public static Expression arrayLastN(Expression array, Expression n) {
     return new FunctionExpression("array_last_n", ImmutableList.of(array, n));
   }
@@ -3176,7 +2933,6 @@ public abstract class Expression {
    * @param n The number of elements to return.
    * @return A new {@link Expression} representing the last n elements of the array.
    */
-  @BetaApi
   public static Expression arrayLastN(Expression array, int n) {
     return arrayLastN(array, constant(n));
   }
@@ -3188,7 +2944,6 @@ public abstract class Expression {
    * @param n The number of elements to return.
    * @return A new {@link Expression} representing the last n elements of the array.
    */
-  @BetaApi
   public static Expression arrayLastN(String arrayFieldName, int n) {
     return arrayLastN(field(arrayFieldName), n);
   }
@@ -3200,7 +2955,6 @@ public abstract class Expression {
    * @param n The Expression evaluates to the number of elements to return.
    * @return A new {@link Expression} representing the last n elements of the array.
    */
-  @BetaApi
   public static Expression arrayLastN(String arrayFieldName, Expression n) {
     return arrayLastN(field(arrayFieldName), n);
   }
@@ -3211,7 +2965,6 @@ public abstract class Expression {
    * @param array The expression representing the array.
    * @return A new {@link Expression} representing the minimum value of the array.
    */
-  @BetaApi
   public static Expression arrayMinimum(Expression array) {
     return new FunctionExpression("minimum", ImmutableList.of(array));
   }
@@ -3222,7 +2975,6 @@ public abstract class Expression {
    * @param arrayFieldName The field name of the array.
    * @return A new {@link Expression} representing the minimum value of the array.
    */
-  @BetaApi
   public static Expression arrayMinimum(String arrayFieldName) {
     return arrayMinimum(field(arrayFieldName));
   }
@@ -3237,7 +2989,6 @@ public abstract class Expression {
    * @param n The Expression evaluates to the number of elements to return.
    * @return A new {@link Expression} representing the n minimum values of the array.
    */
-  @BetaApi
   public static Expression arrayMinimumN(Expression array, Expression n) {
     return new FunctionExpression("minimum_n", ImmutableList.of(array, n));
   }
@@ -3252,7 +3003,6 @@ public abstract class Expression {
    * @param n The number of elements to return.
    * @return A new {@link Expression} representing the n minimum values of the array.
    */
-  @BetaApi
   public static Expression arrayMinimumN(Expression array, int n) {
     return arrayMinimumN(array, constant(n));
   }
@@ -3267,7 +3017,6 @@ public abstract class Expression {
    * @param n The number of elements to return.
    * @return A new {@link Expression} representing the n minimum values of the array.
    */
-  @BetaApi
   public static Expression arrayMinimumN(String arrayFieldName, int n) {
     return arrayMinimumN(field(arrayFieldName), n);
   }
@@ -3282,7 +3031,6 @@ public abstract class Expression {
    * @param n The Expression evaluates to the number of elements to return.
    * @return A new {@link Expression} representing the n minimum values of the array.
    */
-  @BetaApi
   public static Expression arrayMinimumN(String arrayFieldName, Expression n) {
     return arrayMinimumN(field(arrayFieldName), n);
   }
@@ -3293,7 +3041,6 @@ public abstract class Expression {
    * @param array The expression representing the array.
    * @return A new {@link Expression} representing the maximum value of the array.
    */
-  @BetaApi
   public static Expression arrayMaximum(Expression array) {
     return new FunctionExpression("maximum", ImmutableList.of(array));
   }
@@ -3304,7 +3051,6 @@ public abstract class Expression {
    * @param arrayFieldName The field name of the array.
    * @return A new {@link Expression} representing the maximum value of the array.
    */
-  @BetaApi
   public static Expression arrayMaximum(String arrayFieldName) {
     return arrayMaximum(field(arrayFieldName));
   }
@@ -3319,7 +3065,6 @@ public abstract class Expression {
    * @param n The Expression evaluates to the number of elements to return.
    * @return A new {@link Expression} representing the n maximum values of the array.
    */
-  @BetaApi
   public static Expression arrayMaximumN(Expression array, Expression n) {
     return new FunctionExpression("maximum_n", ImmutableList.of(array, n));
   }
@@ -3334,7 +3079,6 @@ public abstract class Expression {
    * @param n The number of elements to return.
    * @return A new {@link Expression} representing the n maximum values of the array.
    */
-  @BetaApi
   public static Expression arrayMaximumN(Expression array, int n) {
     return arrayMaximumN(array, constant(n));
   }
@@ -3349,7 +3093,6 @@ public abstract class Expression {
    * @param n The number of elements to return.
    * @return A new {@link Expression} representing the n maximum values of the array.
    */
-  @BetaApi
   public static Expression arrayMaximumN(String arrayFieldName, int n) {
     return arrayMaximumN(field(arrayFieldName), n);
   }
@@ -3364,7 +3107,6 @@ public abstract class Expression {
    * @param n The Expression evaluates to the number of elements to return.
    * @return A new {@link Expression} representing the n maximum values of the array.
    */
-  @BetaApi
   public static Expression arrayMaximumN(String arrayFieldName, Expression n) {
     return arrayMaximumN(field(arrayFieldName), n);
   }
@@ -3376,7 +3118,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the index.
    */
-  @BetaApi
   public static Expression arrayIndexOf(Expression array, Expression value) {
     return new FunctionExpression(
         "array_index_of",
@@ -3390,7 +3131,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the index.
    */
-  @BetaApi
   public static Expression arrayIndexOf(Expression array, Object value) {
     return arrayIndexOf(array, toExprOrConstant(value));
   }
@@ -3402,7 +3142,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the index.
    */
-  @BetaApi
   public static Expression arrayIndexOf(String arrayFieldName, Object value) {
     return arrayIndexOf(field(arrayFieldName), value);
   }
@@ -3414,7 +3153,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the index.
    */
-  @BetaApi
   public static Expression arrayIndexOf(String arrayFieldName, Expression value) {
     return arrayIndexOf(field(arrayFieldName), value);
   }
@@ -3426,7 +3164,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the last index.
    */
-  @BetaApi
   public static Expression arrayLastIndexOf(Expression array, Expression value) {
     return new FunctionExpression(
         "array_index_of",
@@ -3440,7 +3177,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the last index.
    */
-  @BetaApi
   public static Expression arrayLastIndexOf(Expression array, Object value) {
     return arrayLastIndexOf(array, toExprOrConstant(value));
   }
@@ -3452,7 +3188,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the last index.
    */
-  @BetaApi
   public static Expression arrayLastIndexOf(String arrayFieldName, Object value) {
     return arrayLastIndexOf(field(arrayFieldName), value);
   }
@@ -3464,7 +3199,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the last index.
    */
-  @BetaApi
   public static Expression arrayLastIndexOf(String arrayFieldName, Expression value) {
     return arrayLastIndexOf(field(arrayFieldName), value);
   }
@@ -3476,7 +3210,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the indices.
    */
-  @BetaApi
   public static Expression arrayIndexOfAll(Expression array, Expression value) {
     return new FunctionExpression(
         "array_index_of_all", ImmutableList.of(array, toExprOrConstant(value)));
@@ -3489,7 +3222,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the indices.
    */
-  @BetaApi
   public static Expression arrayIndexOfAll(Expression array, Object value) {
     return arrayIndexOfAll(array, toExprOrConstant(value));
   }
@@ -3501,7 +3233,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the indices.
    */
-  @BetaApi
   public static Expression arrayIndexOfAll(String arrayFieldName, Object value) {
     return arrayIndexOfAll(field(arrayFieldName), toExprOrConstant(value));
   }
@@ -3513,7 +3244,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the indices.
    */
-  @BetaApi
   public static Expression arrayIndexOfAll(String arrayFieldName, Expression value) {
     return arrayIndexOfAll(field(arrayFieldName), value);
   }
@@ -3525,7 +3255,6 @@ public abstract class Expression {
    * @param offset The index of the element to return.
    * @return A new {@link Expression} representing the element at the specified index.
    */
-  @BetaApi
   public static Expression arrayGet(Expression array, Expression offset) {
     return new FunctionExpression("array_get", ImmutableList.of(array, offset));
   }
@@ -3537,7 +3266,6 @@ public abstract class Expression {
    * @param offset The index of the element to return.
    * @return A new {@link Expression} representing the element at the specified index.
    */
-  @BetaApi
   public static Expression arrayGet(Expression array, int offset) {
     return arrayGet(array, constant(offset));
   }
@@ -3549,7 +3277,6 @@ public abstract class Expression {
    * @param offset The index of the element to return.
    * @return A new {@link Expression} representing the element at the specified index.
    */
-  @BetaApi
   public static Expression arrayGet(String arrayFieldName, Expression offset) {
     return arrayGet(field(arrayFieldName), offset);
   }
@@ -3561,7 +3288,6 @@ public abstract class Expression {
    * @param offset The index of the element to return.
    * @return A new {@link Expression} representing the element at the specified index.
    */
-  @BetaApi
   public static Expression arrayGet(String arrayFieldName, int offset) {
     return arrayGet(field(arrayFieldName), constant(offset));
   }
@@ -3572,7 +3298,6 @@ public abstract class Expression {
    * @param array The expression representing the array.
    * @return A new {@link Expression} representing the sum of the elements of the array.
    */
-  @BetaApi
   public static Expression arraySum(Expression array) {
     return new FunctionExpression("sum", ImmutableList.of(array));
   }
@@ -3583,7 +3308,6 @@ public abstract class Expression {
    * @param arrayFieldName The field name of the array.
    * @return A new {@link Expression} representing the sum of the elements of the array.
    */
-  @BetaApi
   public static Expression arraySum(String arrayFieldName) {
     return arraySum(field(arrayFieldName));
   }
@@ -3596,7 +3320,6 @@ public abstract class Expression {
    * @param vector2 The second vector.
    * @return A new {@link Expression} representing the cosine distance.
    */
-  @BetaApi
   public static Expression cosineDistance(Expression vector1, Expression vector2) {
     return new FunctionExpression("cosine_distance", ImmutableList.of(vector1, vector2));
   }
@@ -3608,7 +3331,6 @@ public abstract class Expression {
    * @param vector2 The second vector.
    * @return A new {@link Expression} representing the cosine distance.
    */
-  @BetaApi
   public static Expression cosineDistance(Expression vector1, double[] vector2) {
     return cosineDistance(vector1, constant(FieldValue.vector(vector2)));
   }
@@ -3620,7 +3342,6 @@ public abstract class Expression {
    * @param vector The second vector.
    * @return A new {@link Expression} representing the cosine distance.
    */
-  @BetaApi
   public static Expression cosineDistance(String vectorFieldName, Expression vector) {
     return cosineDistance(field(vectorFieldName), vector);
   }
@@ -3632,7 +3353,6 @@ public abstract class Expression {
    * @param vector The second vector.
    * @return A new {@link Expression} representing the cosine distance.
    */
-  @BetaApi
   public static Expression cosineDistance(String vectorFieldName, double[] vector) {
     return cosineDistance(field(vectorFieldName), constant(FieldValue.vector(vector)));
   }
@@ -3644,7 +3364,6 @@ public abstract class Expression {
    * @param vector2 The second vector.
    * @return A new {@link Expression} representing the dot product.
    */
-  @BetaApi
   public static Expression dotProduct(Expression vector1, Expression vector2) {
     return new FunctionExpression("dot_product", ImmutableList.of(vector1, vector2));
   }
@@ -3656,7 +3375,6 @@ public abstract class Expression {
    * @param vector2 The second vector.
    * @return A new {@link Expression} representing the dot product.
    */
-  @BetaApi
   public static Expression dotProduct(Expression vector1, double[] vector2) {
     return dotProduct(vector1, constant(FieldValue.vector(vector2)));
   }
@@ -3668,7 +3386,6 @@ public abstract class Expression {
    * @param vector The second vector.
    * @return A new {@link Expression} representing the dot product.
    */
-  @BetaApi
   public static Expression dotProduct(String vectorFieldName, Expression vector) {
     return dotProduct(field(vectorFieldName), vector);
   }
@@ -3680,7 +3397,6 @@ public abstract class Expression {
    * @param vector The second vector.
    * @return A new {@link Expression} representing the dot product.
    */
-  @BetaApi
   public static Expression dotProduct(String vectorFieldName, double[] vector) {
     return dotProduct(field(vectorFieldName), constant(FieldValue.vector(vector)));
   }
@@ -3692,7 +3408,6 @@ public abstract class Expression {
    * @param vector2 The second vector.
    * @return A new {@link Expression} representing the Euclidean distance.
    */
-  @BetaApi
   public static Expression euclideanDistance(Expression vector1, Expression vector2) {
     return new FunctionExpression("euclidean_distance", ImmutableList.of(vector1, vector2));
   }
@@ -3704,7 +3419,6 @@ public abstract class Expression {
    * @param vector2 The second vector.
    * @return A new {@link Expression} representing the Euclidean distance.
    */
-  @BetaApi
   public static Expression euclideanDistance(Expression vector1, double[] vector2) {
     return euclideanDistance(vector1, constant(FieldValue.vector(vector2)));
   }
@@ -3716,7 +3430,6 @@ public abstract class Expression {
    * @param vector The second vector.
    * @return A new {@link Expression} representing the Euclidean distance.
    */
-  @BetaApi
   public static Expression euclideanDistance(String vectorFieldName, Expression vector) {
     return euclideanDistance(field(vectorFieldName), vector);
   }
@@ -3728,7 +3441,6 @@ public abstract class Expression {
    * @param vector The second vector.
    * @return A new {@link Expression} representing the Euclidean distance.
    */
-  @BetaApi
   public static Expression euclideanDistance(String vectorFieldName, double[] vector) {
     return euclideanDistance(field(vectorFieldName), constant(FieldValue.vector(vector)));
   }
@@ -3739,7 +3451,6 @@ public abstract class Expression {
    * @param vectorExpression The expression representing the vector.
    * @return A new {@link Expression} representing the length of the vector.
    */
-  @BetaApi
   public static Expression vectorLength(Expression vectorExpression) {
     return new FunctionExpression("vector_length", ImmutableList.of(vectorExpression));
   }
@@ -3750,7 +3461,6 @@ public abstract class Expression {
    * @param fieldName The field name of the vector.
    * @return A new {@link Expression} representing the length of the vector.
    */
-  @BetaApi
   public static Expression vectorLength(String fieldName) {
     return vectorLength(field(fieldName));
   }
@@ -3762,7 +3472,6 @@ public abstract class Expression {
    * @param expr The expression representing the Unix timestamp in microseconds.
    * @return A new {@link Expression} representing the Firestore timestamp.
    */
-  @BetaApi
   public static Expression unixMicrosToTimestamp(Expression expr) {
     return new FunctionExpression("unix_micros_to_timestamp", ImmutableList.of(expr));
   }
@@ -3774,7 +3483,6 @@ public abstract class Expression {
    * @param fieldName The name of the field containing the number of microseconds since epoch.
    * @return A new {@link Expression} representing the timestamp.
    */
-  @BetaApi
   public static Expression unixMicrosToTimestamp(String fieldName) {
     return unixMicrosToTimestamp(field(fieldName));
   }
@@ -3786,7 +3494,6 @@ public abstract class Expression {
    * @param expr The expression representing the timestamp.
    * @return A new {@link Expression} representing the number of microseconds since epoch.
    */
-  @BetaApi
   public static Expression timestampToUnixMicros(Expression expr) {
     return new FunctionExpression("timestamp_to_unix_micros", ImmutableList.of(expr));
   }
@@ -3798,7 +3505,6 @@ public abstract class Expression {
    * @param fieldName The name of the field that contains the timestamp.
    * @return A new {@link Expression} representing the number of microseconds since epoch.
    */
-  @BetaApi
   public static Expression timestampToUnixMicros(String fieldName) {
     return timestampToUnixMicros(field(fieldName));
   }
@@ -3810,7 +3516,6 @@ public abstract class Expression {
    * @param expr The expression representing the number of milliseconds since epoch.
    * @return A new {@link Expression} representing the timestamp.
    */
-  @BetaApi
   public static Expression unixMillisToTimestamp(Expression expr) {
     return new FunctionExpression("unix_millis_to_timestamp", ImmutableList.of(expr));
   }
@@ -3822,7 +3527,6 @@ public abstract class Expression {
    * @param fieldName The name of the field containing the number of milliseconds since epoch.
    * @return A new {@link Expression} representing the timestamp.
    */
-  @BetaApi
   public static Expression unixMillisToTimestamp(String fieldName) {
     return unixMillisToTimestamp(field(fieldName));
   }
@@ -3834,7 +3538,6 @@ public abstract class Expression {
    * @param expr The expression representing the timestamp.
    * @return A new {@link Expression} representing the number of milliseconds since epoch.
    */
-  @BetaApi
   public static Expression timestampToUnixMillis(Expression expr) {
     return new FunctionExpression("timestamp_to_unix_millis", ImmutableList.of(expr));
   }
@@ -3846,7 +3549,6 @@ public abstract class Expression {
    * @param fieldName The name of the field that contains the timestamp.
    * @return A new {@link Expression} representing the number of milliseconds since epoch.
    */
-  @BetaApi
   public static Expression timestampToUnixMillis(String fieldName) {
     return timestampToUnixMillis(field(fieldName));
   }
@@ -3858,7 +3560,6 @@ public abstract class Expression {
    * @param expr The expression representing the number of seconds since epoch.
    * @return A new {@link Expression} representing the timestamp.
    */
-  @BetaApi
   public static Expression unixSecondsToTimestamp(Expression expr) {
     return new FunctionExpression("unix_seconds_to_timestamp", ImmutableList.of(expr));
   }
@@ -3870,7 +3571,6 @@ public abstract class Expression {
    * @param fieldName The name of the field containing the number of seconds since epoch.
    * @return A new {@link Expression} representing the timestamp.
    */
-  @BetaApi
   public static Expression unixSecondsToTimestamp(String fieldName) {
     return unixSecondsToTimestamp(field(fieldName));
   }
@@ -3882,7 +3582,6 @@ public abstract class Expression {
    * @param expr The expression representing the timestamp.
    * @return A new {@link Expression} representing the number of seconds since epoch.
    */
-  @BetaApi
   public static Expression timestampToUnixSeconds(Expression expr) {
     return new FunctionExpression("timestamp_to_unix_seconds", ImmutableList.of(expr));
   }
@@ -3894,7 +3593,6 @@ public abstract class Expression {
    * @param fieldName The name of the field that contains the timestamp.
    * @return A new {@link Expression} representing the number of seconds since epoch.
    */
-  @BetaApi
   public static Expression timestampToUnixSeconds(String fieldName) {
     return timestampToUnixSeconds(field(fieldName));
   }
@@ -3908,7 +3606,6 @@ public abstract class Expression {
    * @param amount The expression representing the amount of time to add.
    * @return A new {@link Expression} representing the resulting timestamp.
    */
-  @BetaApi
   public static Expression timestampAdd(Expression timestamp, Expression unit, Expression amount) {
     return new FunctionExpression("timestamp_add", ImmutableList.of(timestamp, unit, amount));
   }
@@ -3922,7 +3619,6 @@ public abstract class Expression {
    * @param amount The amount of time to add.
    * @return A new {@link Expression} representing the resulting timestamp.
    */
-  @BetaApi
   public static Expression timestampAdd(Expression timestamp, String unit, long amount) {
     return timestampAdd(timestamp, constant(unit), constant(amount));
   }
@@ -3936,7 +3632,6 @@ public abstract class Expression {
    * @param amount The expression representing the amount of time to add.
    * @return A new {@link Expression} representing the resulting timestamp.
    */
-  @BetaApi
   public static Expression timestampAdd(String fieldName, Expression unit, Expression amount) {
     return timestampAdd(field(fieldName), unit, amount);
   }
@@ -3950,7 +3645,6 @@ public abstract class Expression {
    * @param amount The amount of time to add.
    * @return A new {@link Expression} representing the resulting timestamp.
    */
-  @BetaApi
   public static Expression timestampAdd(String fieldName, String unit, long amount) {
     return timestampAdd(field(fieldName), constant(unit), constant(amount));
   }
@@ -3964,7 +3658,6 @@ public abstract class Expression {
    * @param amount The expression representing the amount of time to subtract.
    * @return A new {@link Expression} representing the resulting timestamp.
    */
-  @BetaApi
   public static Expression timestampSubtract(
       Expression timestamp, Expression unit, Expression amount) {
     return new FunctionExpression("timestamp_subtract", ImmutableList.of(timestamp, unit, amount));
@@ -3979,7 +3672,6 @@ public abstract class Expression {
    * @param amount The amount of time to subtract.
    * @return A new {@link Expression} representing the resulting timestamp.
    */
-  @BetaApi
   public static Expression timestampSubtract(Expression timestamp, String unit, long amount) {
     return timestampSubtract(timestamp, constant(unit), constant(amount));
   }
@@ -3993,7 +3685,6 @@ public abstract class Expression {
    * @param amount The amount of time to subtract.
    * @return A new {@link Expression} representing the resulting timestamp.
    */
-  @BetaApi
   public static Expression timestampSubtract(String fieldName, Expression unit, Expression amount) {
     return timestampSubtract(field(fieldName), unit, amount);
   }
@@ -4007,7 +3698,6 @@ public abstract class Expression {
    * @param amount The amount of time to subtract.
    * @return A new {@link Expression} representing the resulting timestamp.
    */
-  @BetaApi
   public static Expression timestampSubtract(String fieldName, String unit, long amount) {
     return timestampSubtract(field(fieldName), constant(unit), constant(amount));
   }
@@ -4022,7 +3712,6 @@ public abstract class Expression {
    *     "isoweek", "month", "quarter", "year", and "isoyear".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public static Expression timestampTruncate(Expression timestamp, String granularity) {
     return new FunctionExpression(
         "timestamp_trunc", ImmutableList.of(timestamp, constant(granularity)));
@@ -4038,7 +3727,6 @@ public abstract class Expression {
    *     "isoweek", "month", "quarter", "year", and "isoyear".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public static Expression timestampTruncate(Expression timestamp, Expression granularity) {
     return new FunctionExpression("timestamp_trunc", ImmutableList.of(timestamp, granularity));
   }
@@ -4053,7 +3741,6 @@ public abstract class Expression {
    *     "isoweek", "month", "quarter", "year", and "isoyear".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public static Expression timestampTruncate(String fieldName, String granularity) {
     return timestampTruncate(field(fieldName), constant(granularity));
   }
@@ -4068,7 +3755,6 @@ public abstract class Expression {
    *     "isoweek", "month", "quarter", "year", and "isoyear".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public static Expression timestampTruncate(String fieldName, Expression granularity) {
     return timestampTruncate(field(fieldName), granularity);
   }
@@ -4086,7 +3772,6 @@ public abstract class Expression {
    *     (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public static Expression timestampTruncateWithTimezone(
       Expression timestamp, String granularity, String timezone) {
     return new FunctionExpression(
@@ -4106,7 +3791,6 @@ public abstract class Expression {
    *     (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public static Expression timestampTruncateWithTimezone(
       Expression timestamp, Expression granularity, String timezone) {
     return new FunctionExpression(
@@ -4126,7 +3810,6 @@ public abstract class Expression {
    *     (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public static Expression timestampTruncateWithTimezone(
       String fieldName, String granularity, String timezone) {
     return timestampTruncateWithTimezone(field(fieldName), constant(granularity), timezone);
@@ -4145,7 +3828,6 @@ public abstract class Expression {
    *     (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public static Expression timestampTruncateWithTimezone(
       String fieldName, Expression granularity, String timezone) {
     return timestampTruncateWithTimezone(field(fieldName), granularity, timezone);
@@ -4164,7 +3846,6 @@ public abstract class Expression {
    *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public static Expression timestampTruncateWithTimezone(
       Expression timestamp, Expression granularity, Expression timezone) {
     return new FunctionExpression(
@@ -4184,7 +3865,6 @@ public abstract class Expression {
    *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public static Expression timestampTruncateWithTimezone(
       Expression timestamp, String granularity, Expression timezone) {
     return timestampTruncateWithTimezone(timestamp, constant(granularity), timezone);
@@ -4203,7 +3883,6 @@ public abstract class Expression {
    *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public static Expression timestampTruncateWithTimezone(
       String fieldName, String granularity, Expression timezone) {
     return timestampTruncateWithTimezone(field(fieldName), constant(granularity), timezone);
@@ -4222,7 +3901,6 @@ public abstract class Expression {
    *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public static Expression timestampTruncateWithTimezone(
       String fieldName, Expression granularity, Expression timezone) {
     return timestampTruncateWithTimezone(field(fieldName), granularity, timezone);
@@ -4237,7 +3915,6 @@ public abstract class Expression {
    *     "millisecond", "second", "minute", "hour" and "day".
    * @return A new {@link Expression} representing the difference.
    */
-  @BetaApi
   public static Expression timestampDiff(Expression end, Expression start, Expression unit) {
     return new FunctionExpression("timestamp_diff", ImmutableList.of(end, start, unit));
   }
@@ -4251,7 +3928,6 @@ public abstract class Expression {
    *     "millisecond", "second", "minute", "hour" and "day".
    * @return A new {@link Expression} representing the difference.
    */
-  @BetaApi
   public static Expression timestampDiff(Expression end, Expression start, String unit) {
     return timestampDiff(end, start, constant(unit));
   }
@@ -4265,7 +3941,6 @@ public abstract class Expression {
    *     "millisecond", "second", "minute", "hour" and "day".
    * @return A new {@link Expression} representing the difference.
    */
-  @BetaApi
   public static Expression timestampDiff(String endFieldName, String startFieldName, String unit) {
     return timestampDiff(field(endFieldName), field(startFieldName), constant(unit));
   }
@@ -4279,7 +3954,6 @@ public abstract class Expression {
    *     "millisecond", "second", "minute", "hour" and "day".
    * @return A new {@link Expression} representing the difference.
    */
-  @BetaApi
   public static Expression timestampDiff(String endFieldName, Expression start, String unit) {
     return timestampDiff(field(endFieldName), start, constant(unit));
   }
@@ -4293,7 +3967,6 @@ public abstract class Expression {
    *     "millisecond", "second", "minute", "hour" and "day".
    * @return A new {@link Expression} representing the difference.
    */
-  @BetaApi
   public static Expression timestampDiff(Expression end, String startFieldName, String unit) {
     return timestampDiff(end, field(startFieldName), constant(unit));
   }
@@ -4308,7 +3981,6 @@ public abstract class Expression {
    *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public static Expression timestampExtract(Expression timestamp, Expression part) {
     return new FunctionExpression("timestamp_extract", ImmutableList.of(timestamp, part));
   }
@@ -4323,7 +3995,6 @@ public abstract class Expression {
    *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public static Expression timestampExtract(Expression timestamp, String part) {
     return timestampExtract(timestamp, constant(part));
   }
@@ -4338,7 +4009,6 @@ public abstract class Expression {
    *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public static Expression timestampExtract(String fieldName, Expression part) {
     return timestampExtract(field(fieldName), part);
   }
@@ -4353,7 +4023,6 @@ public abstract class Expression {
    *     "week(saturday)", "week(sunday)", "isoweek", "month", "quarter", "year", and "isoyear".
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public static Expression timestampExtract(String fieldName, String part) {
     return timestampExtract(field(fieldName), constant(part));
   }
@@ -4371,7 +4040,6 @@ public abstract class Expression {
    *     not specified.
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public static Expression timestampExtractWithTimezone(
       Expression timestamp, Expression part, Expression timezone) {
     return new FunctionExpression("timestamp_extract", ImmutableList.of(timestamp, part, timezone));
@@ -4389,7 +4057,6 @@ public abstract class Expression {
    *     "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if not specified.
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public static Expression timestampExtractWithTimezone(
       Expression timestamp, Expression part, String timezone) {
     return timestampExtractWithTimezone(timestamp, part, constant(timezone));
@@ -4407,7 +4074,6 @@ public abstract class Expression {
    *     "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if not specified.
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public static Expression timestampExtractWithTimezone(
       Expression timestamp, String part, String timezone) {
     return timestampExtractWithTimezone(timestamp, constant(part), constant(timezone));
@@ -4425,7 +4091,6 @@ public abstract class Expression {
    *     "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if not specified.
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public static Expression timestampExtractWithTimezone(
       String fieldName, Expression part, String timezone) {
     return timestampExtractWithTimezone(field(fieldName), part, constant(timezone));
@@ -4443,7 +4108,6 @@ public abstract class Expression {
    *     "America/Los_Angeles") or in the format "Etc/GMT-1". Defaults to "UTC" if not specified.
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public static Expression timestampExtractWithTimezone(
       String fieldName, String part, String timezone) {
     return timestampExtractWithTimezone(field(fieldName), constant(part), constant(timezone));
@@ -4462,7 +4126,6 @@ public abstract class Expression {
    *     not specified.
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public static Expression timestampExtractWithTimezone(
       Expression timestamp, String part, Expression timezone) {
     return timestampExtractWithTimezone(timestamp, constant(part), timezone);
@@ -4481,7 +4144,6 @@ public abstract class Expression {
    *     not specified.
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public static Expression timestampExtractWithTimezone(
       String fieldName, Expression part, Expression timezone) {
     return timestampExtractWithTimezone(field(fieldName), part, timezone);
@@ -4500,7 +4162,6 @@ public abstract class Expression {
    *     not specified.
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public static Expression timestampExtractWithTimezone(
       String fieldName, String part, Expression timezone) {
     return timestampExtractWithTimezone(field(fieldName), constant(part), timezone);
@@ -4516,7 +4177,6 @@ public abstract class Expression {
    * @param elseExpr The expression to evaluate if the condition is false.
    * @return A new {@link Expression} representing the conditional operation.
    */
-  @BetaApi
   public static Expression conditional(
       BooleanExpression condition, Expression thenExpr, Expression elseExpr) {
     return new FunctionExpression("conditional", ImmutableList.of(condition, thenExpr, elseExpr));
@@ -4531,7 +4191,6 @@ public abstract class Expression {
    * @param elseValue Value if the condition is false.
    * @return A new {@link Expression} representing the conditional operation.
    */
-  @BetaApi
   public static Expression conditional(
       BooleanExpression condition, Object thenValue, Object elseValue) {
     return conditional(condition, toExprOrConstant(thenValue), toExprOrConstant(elseValue));
@@ -4547,7 +4206,6 @@ public abstract class Expression {
    *     tryExpr} produces an error.
    * @return A new {@link Expression} representing the ifError operation.
    */
-  @BetaApi
   public static Expression ifError(Expression tryExpr, Expression catchExpr) {
     return new FunctionExpression("if_error", ImmutableList.of(tryExpr, catchExpr));
   }
@@ -4564,7 +4222,6 @@ public abstract class Expression {
    *     tryExpr} produces an error.
    * @return A new {@link BooleanExpression} representing the ifError operation.
    */
-  @BetaApi
   public static BooleanExpression ifError(BooleanExpression tryExpr, BooleanExpression catchExpr) {
     return new BooleanFunctionExpression("if_error", tryExpr, catchExpr);
   }
@@ -4577,7 +4234,6 @@ public abstract class Expression {
    * @param catchValue The value that will be returned if the {@code tryExpr} produces an error.
    * @return A new {@link Expression} representing the ifError operation.
    */
-  @BetaApi
   public static Expression ifError(Expression tryExpr, Object catchValue) {
     return ifError(tryExpr, toExprOrConstant(catchValue));
   }
@@ -4588,7 +4244,6 @@ public abstract class Expression {
    * @param expr The expression to check.
    * @return A new {@link BooleanExpression} representing the `isError` check.
    */
-  @BetaApi
   public static BooleanExpression isError(Expression expr) {
     return new BooleanFunctionExpression("is_error", expr);
   }
@@ -4604,7 +4259,6 @@ public abstract class Expression {
    * @param location Compute distance to this {@link GeoPoint}.
    * @return A new {@link Expression} representing the geoDistance operation.
    */
-  @BetaApi
   public static Expression geoDistance(String fieldName, GeoPoint location) {
     return geoDistance(field(fieldName), location);
   }
@@ -4628,7 +4282,6 @@ public abstract class Expression {
    * @param location Compute distance to this {@link GeoPoint}.
    * @return A new {@link Expression} representing the geoDistance operation.
    */
-  @BetaApi
   public static Expression geoDistance(Field field, GeoPoint location) {
     return new FunctionExpression(
         "geo_distance", java.util.Arrays.asList(field, constant(location)));
@@ -4648,7 +4301,6 @@ public abstract class Expression {
    * @param rquery Define the search query using the search domain-specific language (DSL).
    * @return A new {@link BooleanExpression} representing the documentMatches operation.
    */
-  @BetaApi
   public static BooleanExpression documentMatches(String rquery) {
     return new BooleanFunctionExpression("document_matches", constant(rquery));
   }
@@ -4701,7 +4353,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the score operation.
    */
-  @BetaApi
   public static Expression score() {
     return new FunctionExpression("score", com.google.common.collect.ImmutableList.of());
   }
@@ -4724,7 +4375,6 @@ public abstract class Expression {
    * @param rquery Define the search query using the search domain-specific language (DSL).
    * @return A new {@link Expression} representing the snippet operation.
    */
-  @BetaApi
   public static Expression snippet(String fieldName, String rquery) {
     return new FunctionExpression(
         "snippet", java.util.Arrays.asList(field(fieldName), constant(rquery)));
@@ -4747,7 +4397,6 @@ public abstract class Expression {
    * @param rquery Define the search query using the search domain-specific language (DSL).
    * @return A new {@link Expression} representing the snippet operation.
    */
-  @BetaApi
   public final Expression snippet(String rquery) {
     return new FunctionExpression(
         "snippet",
@@ -4794,7 +4443,6 @@ public abstract class Expression {
    * @param documentPath An expression the evaluates to document path.
    * @return A new {@link Expression} representing the documentId operation.
    */
-  @BetaApi
   public static Expression documentId(Expression documentPath) {
     return new FunctionExpression("document_id", ImmutableList.of(documentPath));
   }
@@ -4805,7 +4453,6 @@ public abstract class Expression {
    * @param documentPath The string representation of the document path.
    * @return A new {@link Expression} representing the documentId operation.
    */
-  @BetaApi
   public static Expression documentId(String documentPath) {
     return documentId(constant(documentPath));
   }
@@ -4816,7 +4463,6 @@ public abstract class Expression {
    * @param docRef The {@link DocumentReference}.
    * @return A new {@link Expression} representing the documentId operation.
    */
-  @BetaApi
   public static Expression documentId(DocumentReference docRef) {
     return documentId(constant(docRef));
   }
@@ -4827,7 +4473,6 @@ public abstract class Expression {
    * @param path An expression the evaluates to document path.
    * @return A new {@link Expression} representing the collectionId operation.
    */
-  @BetaApi
   public static Expression collectionId(Expression path) {
     return new FunctionExpression("collection_id", ImmutableList.of(path));
   }
@@ -4838,7 +4483,6 @@ public abstract class Expression {
    * @param pathFieldName The field name of the path.
    * @return A new {@link Expression} representing the collectionId operation.
    */
-  @BetaApi
   public static Expression collectionId(String pathFieldName) {
     return collectionId(field(pathFieldName));
   }
@@ -4849,7 +4493,6 @@ public abstract class Expression {
    * @param documentPath An expression that evaluates to a document path.
    * @return A new {@link Expression} representing the parent operation.
    */
-  @BetaApi
   public static Expression parent(Expression documentPath) {
     return new FunctionExpression("parent", ImmutableList.of(documentPath));
   }
@@ -4860,7 +4503,6 @@ public abstract class Expression {
    * @param documentPath The string representation of the document path.
    * @return A new {@link Expression} representing the parent operation.
    */
-  @BetaApi
   public static Expression parent(String documentPath) {
     return parent(constant(documentPath));
   }
@@ -4871,7 +4513,6 @@ public abstract class Expression {
    * @param docRef The {@link DocumentReference}.
    * @return A new {@link Expression} representing the parent operation.
    */
-  @BetaApi
   public static Expression parent(DocumentReference docRef) {
     return parent(constant(docRef));
   }
@@ -4883,7 +4524,6 @@ public abstract class Expression {
    * @param value An expression evaluates to the name of the field to check.
    * @return A new {@link Expression} representing the exists check.
    */
-  @BetaApi
   public static BooleanExpression exists(Expression value) {
     return new BooleanFunctionExpression("exists", value);
   }
@@ -4894,7 +4534,6 @@ public abstract class Expression {
    * @param fieldName The field name to check.
    * @return A new {@link Expression} representing the exists check.
    */
-  @BetaApi
   public static BooleanExpression exists(String fieldName) {
     return exists(field(fieldName));
   }
@@ -4906,7 +4545,6 @@ public abstract class Expression {
    * @param value The expression to check.
    * @return A new {@link BooleanExpression} representing the isAbsent operation.
    */
-  @BetaApi
   public static BooleanExpression isAbsent(Expression value) {
     return new BooleanFunctionExpression("is_absent", value);
   }
@@ -4918,7 +4556,6 @@ public abstract class Expression {
    * @param fieldName The field to check.
    * @return A new {@link BooleanExpression} representing the isAbsent operation.
    */
-  @BetaApi
   public static BooleanExpression isAbsent(String fieldName) {
     return isAbsent(field(fieldName));
   }
@@ -4929,7 +4566,6 @@ public abstract class Expression {
    * @param value The expression to check.
    * @return A new {@link BooleanExpression} representing the isNan operation.
    */
-  @BetaApi
   static BooleanExpression isNaN(Expression value) {
     return new BooleanFunctionExpression("is_nan", value);
   }
@@ -4940,7 +4576,6 @@ public abstract class Expression {
    * @param fieldName The field to check.
    * @return A new {@link BooleanExpression} representing the isNan operation.
    */
-  @BetaApi
   static BooleanExpression isNaN(String fieldName) {
     return isNaN(field(fieldName));
   }
@@ -4951,7 +4586,6 @@ public abstract class Expression {
    * @param value The expression to check.
    * @return A new {@link BooleanExpression} representing the isNull operation.
    */
-  @BetaApi
   static BooleanExpression isNull(Expression value) {
     return new BooleanFunctionExpression("is_null", value);
   }
@@ -4962,7 +4596,6 @@ public abstract class Expression {
    * @param fieldName The field to check.
    * @return A new {@link BooleanExpression} representing the isNull operation.
    */
-  @BetaApi
   static BooleanExpression isNull(String fieldName) {
     return isNull(field(fieldName));
   }
@@ -4973,7 +4606,6 @@ public abstract class Expression {
    * @param value The expression to check.
    * @return A new {@link BooleanExpression} representing the isNotNull operation.
    */
-  @BetaApi
   static BooleanExpression isNotNull(Expression value) {
     return new BooleanFunctionExpression("is_not_null", value);
   }
@@ -4984,7 +4616,6 @@ public abstract class Expression {
    * @param fieldName The field to check.
    * @return A new {@link BooleanExpression} representing the isNotNull operation.
    */
-  @BetaApi
   static BooleanExpression isNotNull(String fieldName) {
     return isNotNull(field(fieldName));
   }
@@ -4996,7 +4627,6 @@ public abstract class Expression {
    * @param expr The expression to get the type of.
    * @return A new {@link Expression} representing the type operation.
    */
-  @BetaApi
   public static Expression type(Expression expr) {
     return new FunctionExpression("type", ImmutableList.of(expr));
   }
@@ -5008,7 +4638,6 @@ public abstract class Expression {
    * @param fieldName The name of the field to get the type of.
    * @return A new {@link Expression} representing the type operation.
    */
-  @BetaApi
   public static Expression type(String fieldName) {
     return type(field(fieldName));
   }
@@ -5025,7 +4654,6 @@ public abstract class Expression {
    * @return A new {@link BooleanExpression} that evaluates to true if the expression's result is of
    *     the given type, false otherwise.
    */
-  @BetaApi
   public static BooleanExpression isType(Expression expr, String type) {
     return new BooleanFunctionExpression("is_type", ImmutableList.of(expr, constant(type)));
   }
@@ -5042,7 +4670,6 @@ public abstract class Expression {
    * @return A new {@link BooleanExpression} that evaluates to true if the expression's result is of
    *     the given type, false otherwise.
    */
-  @BetaApi
   public static BooleanExpression isType(String fieldName, String type) {
     return new BooleanFunctionExpression(
         "is_type", ImmutableList.of(field(fieldName), constant(type)));
@@ -5057,7 +4684,6 @@ public abstract class Expression {
    * @param numericExpr An expression that returns number when evaluated.
    * @return A new {@link Expression} representing an integer result from the round operation.
    */
-  @BetaApi
   public static Expression round(Expression numericExpr) {
     return new FunctionExpression("round", ImmutableList.of(numericExpr));
   }
@@ -5070,7 +4696,6 @@ public abstract class Expression {
    * @param numericField Name of field that returns number when evaluated.
    * @return A new {@link Expression} representing an integer result from the round operation.
    */
-  @BetaApi
   public static Expression round(String numericField) {
     return round(field(numericField));
   }
@@ -5084,7 +4709,6 @@ public abstract class Expression {
    * @param decimalPlace The number of decimal places to round.
    * @return A new {@link Expression} representing the round operation.
    */
-  @BetaApi
   public static Expression roundToPrecision(Expression numericExpr, int decimalPlace) {
     return new FunctionExpression("round", ImmutableList.of(numericExpr, constant(decimalPlace)));
   }
@@ -5098,7 +4722,6 @@ public abstract class Expression {
    * @param decimalPlace The number of decimal places to round.
    * @return A new {@link Expression} representing the round operation.
    */
-  @BetaApi
   public static Expression roundToPrecision(String numericField, int decimalPlace) {
     return roundToPrecision(field(numericField), decimalPlace);
   }
@@ -5112,7 +4735,6 @@ public abstract class Expression {
    * @param decimalPlace The number of decimal places to round.
    * @return A new {@link Expression} representing the round operation.
    */
-  @BetaApi
   public static Expression roundToPrecision(Expression numericExpr, Expression decimalPlace) {
     return new FunctionExpression("round", ImmutableList.of(numericExpr, decimalPlace));
   }
@@ -5126,7 +4748,6 @@ public abstract class Expression {
    * @param decimalPlace The number of decimal places to round.
    * @return A new {@link Expression} representing the round operation.
    */
-  @BetaApi
   public static Expression roundToPrecision(String numericField, Expression decimalPlace) {
     return roundToPrecision(field(numericField), decimalPlace);
   }
@@ -5136,7 +4757,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing a random double result from the rand operation.
    */
-  @BetaApi
   public static Expression rand() {
     return new FunctionExpression("rand", ImmutableList.of());
   }
@@ -5147,7 +4767,6 @@ public abstract class Expression {
    * @param numericExpr An expression that returns number when evaluated.
    * @return A new {@link Expression} representing the trunc operation.
    */
-  @BetaApi
   public static Expression trunc(Expression numericExpr) {
     return new FunctionExpression("trunc", ImmutableList.of(numericExpr));
   }
@@ -5158,7 +4777,6 @@ public abstract class Expression {
    * @param numericField Name of field that returns number when evaluated.
    * @return A new {@link Expression} representing the trunc operation.
    */
-  @BetaApi
   public static Expression trunc(String numericField) {
     return trunc(field(numericField));
   }
@@ -5172,7 +4790,6 @@ public abstract class Expression {
    * @param decimalPlace The number of decimal places to truncate.
    * @return A new {@link Expression} representing the trunc operation.
    */
-  @BetaApi
   public static Expression truncToPrecision(Expression numericExpr, int decimalPlace) {
     return new FunctionExpression("trunc", ImmutableList.of(numericExpr, constant(decimalPlace)));
   }
@@ -5186,7 +4803,6 @@ public abstract class Expression {
    * @param decimalPlace The number of decimal places to truncate.
    * @return A new {@link Expression} representing the trunc operation.
    */
-  @BetaApi
   public static Expression truncToPrecision(String numericField, int decimalPlace) {
     return truncToPrecision(field(numericField), decimalPlace);
   }
@@ -5200,7 +4816,6 @@ public abstract class Expression {
    * @param decimalPlace The number of decimal places to truncate.
    * @return A new {@link Expression} representing the trunc operation.
    */
-  @BetaApi
   public static Expression truncToPrecision(Expression numericExpr, Expression decimalPlace) {
     return new FunctionExpression("trunc", ImmutableList.of(numericExpr, decimalPlace));
   }
@@ -5214,7 +4829,6 @@ public abstract class Expression {
    * @param decimalPlace The number of decimal places to truncate.
    * @return A new {@link Expression} representing the trunc operation.
    */
-  @BetaApi
   public static Expression truncToPrecision(String numericField, Expression decimalPlace) {
     return truncToPrecision(field(numericField), decimalPlace);
   }
@@ -5226,7 +4840,6 @@ public abstract class Expression {
    * @param numericExpr An expression that returns number when evaluated.
    * @return A new {@link Expression} representing an integer result from the ceil operation.
    */
-  @BetaApi
   public static Expression ceil(Expression numericExpr) {
     return new FunctionExpression("ceil", ImmutableList.of(numericExpr));
   }
@@ -5238,7 +4851,6 @@ public abstract class Expression {
    * @param numericField Name of field that returns number when evaluated.
    * @return A new {@link Expression} representing an integer result from the ceil operation.
    */
-  @BetaApi
   public static Expression ceil(String numericField) {
     return ceil(field(numericField));
   }
@@ -5250,7 +4862,6 @@ public abstract class Expression {
    * @param numericExpr An expression that returns number when evaluated.
    * @return A new {@link Expression} representing an integer result from the floor operation.
    */
-  @BetaApi
   public static Expression floor(Expression numericExpr) {
     return new FunctionExpression("floor", ImmutableList.of(numericExpr));
   }
@@ -5262,7 +4873,6 @@ public abstract class Expression {
    * @param numericField Name of field that returns number when evaluated.
    * @return A new {@link Expression} representing an integer result from the floor operation.
    */
-  @BetaApi
   public static Expression floor(String numericField) {
     return floor(field(numericField));
   }
@@ -5276,7 +4886,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing a numeric result from raising {@code numericExpr}
    *     to the power of {@code exponent}.
    */
-  @BetaApi
   public static Expression pow(Expression numericExpr, Number exponent) {
     return new FunctionExpression("pow", ImmutableList.of(numericExpr, constant(exponent)));
   }
@@ -5290,7 +4899,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing a numeric result from raising {@code
    *     numericField} to the power of {@code exponent}.
    */
-  @BetaApi
   public static Expression pow(String numericField, Number exponent) {
     return pow(field(numericField), exponent);
   }
@@ -5304,7 +4912,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing a numeric result from raising {@code numericExpr}
    *     to the power of {@code exponent}.
    */
-  @BetaApi
   public static Expression pow(Expression numericExpr, Expression exponent) {
     return new FunctionExpression("pow", ImmutableList.of(numericExpr, exponent));
   }
@@ -5318,7 +4925,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing a numeric result from raising {@code
    *     numericField} to the power of {@code exponent}.
    */
-  @BetaApi
   public static Expression pow(String numericField, Expression exponent) {
     return pow(field(numericField), exponent);
   }
@@ -5330,7 +4936,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing the numeric result of the absolute value
    *     operation.
    */
-  @BetaApi
   public static Expression abs(Expression numericExpr) {
     return new FunctionExpression("abs", ImmutableList.of(numericExpr));
   }
@@ -5342,7 +4947,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing the numeric result of the absolute value
    *     operation.
    */
-  @BetaApi
   public static Expression abs(String numericField) {
     return abs(field(numericField));
   }
@@ -5353,7 +4957,6 @@ public abstract class Expression {
    * @param numericExpr An expression that returns number when evaluated.
    * @return A new {@link Expression} representing the numeric result of the exponentiation.
    */
-  @BetaApi
   public static Expression exp(Expression numericExpr) {
     return new FunctionExpression("exp", ImmutableList.of(numericExpr));
   }
@@ -5365,7 +4968,6 @@ public abstract class Expression {
    * @param numericField Name of field that returns number when evaluated.
    * @return A new {@link Expression} representing the numeric result of the exponentiation.
    */
-  @BetaApi
   public static Expression exp(String numericField) {
     return exp(field(numericField));
   }
@@ -5376,7 +4978,6 @@ public abstract class Expression {
    * @param numericExpr An expression that returns number when evaluated.
    * @return A new {@link Expression} representing the numeric result of the natural logarithm.
    */
-  @BetaApi
   public static Expression ln(Expression numericExpr) {
     return new FunctionExpression("ln", ImmutableList.of(numericExpr));
   }
@@ -5387,7 +4988,6 @@ public abstract class Expression {
    * @param numericField Name of field that returns number when evaluated.
    * @return A new {@link Expression} representing the numeric result of the natural logarithm.
    */
-  @BetaApi
   public static Expression ln(String numericField) {
     return ln(field(numericField));
   }
@@ -5401,7 +5001,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing a numeric result from the logarithm of {@code
    *     numericExpr} with a given {@code base}.
    */
-  @BetaApi
   public static Expression log(Expression numericExpr, Number base) {
     return new FunctionExpression("log", ImmutableList.of(numericExpr, constant(base)));
   }
@@ -5415,7 +5014,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing a numeric result from the logarithm of {@code
    *     numericField} with a given {@code base}.
    */
-  @BetaApi
   public static Expression log(String numericField, Number base) {
     return log(field(numericField), base);
   }
@@ -5429,7 +5027,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing a numeric result from the logarithm of {@code
    *     numericExpr} with a given {@code base}.
    */
-  @BetaApi
   public static Expression log(Expression numericExpr, Expression base) {
     return new FunctionExpression("log", ImmutableList.of(numericExpr, base));
   }
@@ -5443,7 +5040,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing a numeric result from the logarithm of {@code
    *     numericField} with a given {@code base}.
    */
-  @BetaApi
   public static Expression log(String numericField, Expression base) {
     return log(field(numericField), base);
   }
@@ -5454,7 +5050,6 @@ public abstract class Expression {
    * @param numericExpr An expression that returns number when evaluated.
    * @return A new {@link Expression} representing the numeric result of the base 10 logarithm.
    */
-  @BetaApi
   public static Expression log10(Expression numericExpr) {
     return new FunctionExpression("log10", ImmutableList.of(numericExpr));
   }
@@ -5465,7 +5060,6 @@ public abstract class Expression {
    * @param numericField Name of field that returns number when evaluated.
    * @return A new {@link Expression} representing the numeric result of the base 10 logarithm.
    */
-  @BetaApi
   public static Expression log10(String numericField) {
     return log10(field(numericField));
   }
@@ -5476,7 +5070,6 @@ public abstract class Expression {
    * @param numericExpr An expression that returns number when evaluated.
    * @return A new {@link Expression} representing the numeric result of the square root operation.
    */
-  @BetaApi
   public static Expression sqrt(Expression numericExpr) {
     return new FunctionExpression("sqrt", ImmutableList.of(numericExpr));
   }
@@ -5487,7 +5080,6 @@ public abstract class Expression {
    * @param numericField Name of field that returns number when evaluated.
    * @return A new {@link Expression} representing the numeric result of the square root operation.
    */
-  @BetaApi
   public static Expression sqrt(String numericField) {
     return sqrt(field(numericField));
   }
@@ -5499,7 +5091,6 @@ public abstract class Expression {
    * @param expr The expression to check.
    * @return A new {@link BooleanExpression} representing the isNotNan operation.
    */
-  @BetaApi
   public static BooleanExpression isNotNaN(Expression expr) {
     return new BooleanFunctionExpression("is_not_nan", expr);
   }
@@ -5511,7 +5102,6 @@ public abstract class Expression {
    * @param fieldName The field to check.
    * @return A new {@link BooleanExpression} representing the isNotNan operation.
    */
-  @BetaApi
   public static BooleanExpression isNotNaN(String fieldName) {
     return isNotNaN(field(fieldName));
   }
@@ -5524,7 +5114,6 @@ public abstract class Expression {
    * @param others Optional additional expressions or literals.
    * @return A new {@link Expression} representing the logical maximum operation.
    */
-  @BetaApi
   public static Expression logicalMaximum(Expression expr, Object... others) {
     ImmutableList.Builder<Expression> builder = ImmutableList.builder();
     builder.add(expr);
@@ -5540,7 +5129,6 @@ public abstract class Expression {
    * @param others Optional additional expressions or literals.
    * @return A new {@link Expression} representing the logical maximum operation.
    */
-  @BetaApi
   public static Expression logicalMaximum(String fieldName, Object... others) {
     return logicalMaximum(field(fieldName), others);
   }
@@ -5553,7 +5141,6 @@ public abstract class Expression {
    * @param others Optional additional expressions or literals.
    * @return A new {@link Expression} representing the logical minimum operation.
    */
-  @BetaApi
   public static Expression logicalMinimum(Expression expr, Object... others) {
     ImmutableList.Builder<Expression> builder = ImmutableList.builder();
     builder.add(expr);
@@ -5569,7 +5156,6 @@ public abstract class Expression {
    * @param others Optional additional expressions or literals.
    * @return A new {@link Expression} representing the logical minimum operation.
    */
-  @BetaApi
   public static Expression logicalMinimum(String fieldName, Object... others) {
     return logicalMinimum(field(fieldName), others);
   }
@@ -5580,7 +5166,6 @@ public abstract class Expression {
    * @param others Optional additional expressions or constants to concatenate.
    * @return A new {@link Expression} representing the concatenated value.
    */
-  @BetaApi
   public Expression concat(Object... others) {
     return Expression.concat(this, others);
   }
@@ -5592,7 +5177,6 @@ public abstract class Expression {
    * @param elseValue The default value.
    * @return A new {@link Expression} representing the ifAbsent operation.
    */
-  @BetaApi
   public Expression ifAbsent(Object elseValue) {
     return Expression.ifAbsent(this, elseValue);
   }
@@ -5606,7 +5190,6 @@ public abstract class Expression {
    * @param elseValue The default value that will be returned.
    * @return A new {@link Expression} representing the ifNull operation.
    */
-  @BetaApi
   public Expression ifNull(Object elseValue) {
     return Expression.ifNull(this, elseValue);
   }
@@ -5619,7 +5202,6 @@ public abstract class Expression {
    * @param others Additional expressions or literals to evaluate.
    * @return A new {@link Expression} representing the coalesce operation.
    */
-  @BetaApi
   public Expression coalesce(Object second, Object... others) {
     return Expression.coalesce(this, second, others);
   }
@@ -5630,7 +5212,6 @@ public abstract class Expression {
    * @param delimiter The delimiter to use.
    * @return A new {@link Expression} representing the join operation.
    */
-  @BetaApi
   public Expression join(String delimiter) {
     return Expression.join(this, delimiter);
   }
@@ -5641,7 +5222,6 @@ public abstract class Expression {
    * @param delimiter The delimiter to use.
    * @return A new {@link Expression} representing the join operation.
    */
-  @BetaApi
   public Expression join(Expression delimiter) {
     return Expression.join(this, delimiter);
   }
@@ -5652,7 +5232,6 @@ public abstract class Expression {
    *
    * @return A new {@link BooleanExpression} representing the isNotNan operation.
    */
-  @BetaApi
   public final BooleanExpression isNotNaN() {
     return isNotNaN(this);
   }
@@ -5664,7 +5243,6 @@ public abstract class Expression {
    * @param others Optional additional expressions or literals.
    * @return A new {@link Expression} representing the logical maximum operation.
    */
-  @BetaApi
   public final Expression logicalMaximum(Object... others) {
     return logicalMaximum(this, others);
   }
@@ -5676,7 +5254,6 @@ public abstract class Expression {
    * @param others Optional additional expressions or literals.
    * @return A new {@link Expression} representing the logical minimum operation.
    */
-  @BetaApi
   public final Expression logicalMinimum(Object... others) {
     return logicalMinimum(this, others);
   }
@@ -5688,7 +5265,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing an integer result from the round operation.
    */
-  @BetaApi
   public final Expression round() {
     return round(this);
   }
@@ -5701,7 +5277,6 @@ public abstract class Expression {
    * @param decimalPlace The number of decimal places to round.
    * @return A new {@link Expression} representing the round operation.
    */
-  @BetaApi
   public final Expression roundToPrecision(int decimalPlace) {
     return roundToPrecision(this, decimalPlace);
   }
@@ -5714,7 +5289,6 @@ public abstract class Expression {
    * @param decimalPlace The number of decimal places to round.
    * @return A new {@link Expression} representing the round operation.
    */
-  @BetaApi
   public final Expression roundToPrecision(Expression decimalPlace) {
     return roundToPrecision(this, decimalPlace);
   }
@@ -5724,7 +5298,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the trunc operation.
    */
-  @BetaApi
   public final Expression trunc() {
     return trunc(this);
   }
@@ -5737,7 +5310,6 @@ public abstract class Expression {
    * @param decimalPlace The number of decimal places to truncate.
    * @return A new {@link Expression} representing the trunc operation.
    */
-  @BetaApi
   public final Expression truncToPrecision(int decimalPlace) {
     return truncToPrecision(this, decimalPlace);
   }
@@ -5750,7 +5322,6 @@ public abstract class Expression {
    * @param decimalPlace The number of decimal places to truncate.
    * @return A new {@link Expression} representing the trunc operation.
    */
-  @BetaApi
   public final Expression truncToPrecision(Expression decimalPlace) {
     return truncToPrecision(this, decimalPlace);
   }
@@ -5761,7 +5332,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing an integer result from the ceil operation.
    */
-  @BetaApi
   public final Expression ceil() {
     return ceil(this);
   }
@@ -5772,7 +5342,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing an integer result from the floor operation.
    */
-  @BetaApi
   public final Expression floor() {
     return floor(this);
   }
@@ -5785,7 +5354,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing a numeric result from raising this numeric
    *     expression to the power of {@code exponent}.
    */
-  @BetaApi
   public final Expression pow(Number exponent) {
     return pow(this, exponent);
   }
@@ -5798,7 +5366,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing a numeric result from raising this numeric
    *     expression to the power of {@code exponent}.
    */
-  @BetaApi
   public final Expression pow(Expression exponent) {
     return pow(this, exponent);
   }
@@ -5809,7 +5376,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing the numeric result of the absolute value
    *     operation.
    */
-  @BetaApi
   public final Expression abs() {
     return abs(this);
   }
@@ -5820,7 +5386,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the numeric result of the exponentiation.
    */
-  @BetaApi
   public final Expression exp() {
     return exp(this);
   }
@@ -5830,7 +5395,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the numeric result of the natural logarithm.
    */
-  @BetaApi
   public final Expression ln() {
     return ln(this);
   }
@@ -5840,7 +5404,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the numeric result of the base 10 logarithm.
    */
-  @BetaApi
   public Expression log10() {
     return Expression.log10(this);
   }
@@ -5850,7 +5413,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the sum of the elements of the array.
    */
-  @BetaApi
   public Expression arraySum() {
     return Expression.arraySum(this);
   }
@@ -5860,7 +5422,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the numeric result of the square root operation.
    */
-  @BetaApi
   public final Expression sqrt() {
     return sqrt(this);
   }
@@ -5872,7 +5433,6 @@ public abstract class Expression {
    * @param other Numeric expression to add.
    * @return A new {@link Expression} representing the addition operation.
    */
-  @BetaApi
   public final Expression add(Object other) {
     return add(this, toExprOrConstant(other));
   }
@@ -5883,7 +5443,6 @@ public abstract class Expression {
    * @param other Constant to subtract.
    * @return A new {@link Expression} representing the subtract operation.
    */
-  @BetaApi
   public final Expression subtract(Object other) {
     return subtract(this, toExprOrConstant(other));
   }
@@ -5894,7 +5453,6 @@ public abstract class Expression {
    * @param other Numeric expression to multiply.
    * @return A new {@link Expression} representing the multiplication operation.
    */
-  @BetaApi
   public final Expression multiply(Object other) {
     return multiply(this, toExprOrConstant(other));
   }
@@ -5905,7 +5463,6 @@ public abstract class Expression {
    * @param other Numeric expression to divide this numeric expression by.
    * @return A new {@link Expression} representing the division operation.
    */
-  @BetaApi
   public final Expression divide(Object other) {
     return divide(this, toExprOrConstant(other));
   }
@@ -5917,7 +5474,6 @@ public abstract class Expression {
    * @param other The numeric expression to divide this expression by.
    * @return A new {@link Expression} representing the modulo operation.
    */
-  @BetaApi
   public final Expression mod(Object other) {
     return mod(this, toExprOrConstant(other));
   }
@@ -5928,7 +5484,6 @@ public abstract class Expression {
    * @param other The value to compare to.
    * @return A new {@link BooleanExpression} representing the equality comparison.
    */
-  @BetaApi
   public final BooleanExpression equal(Object other) {
     return equal(this, toExprOrConstant(other));
   }
@@ -5939,7 +5494,6 @@ public abstract class Expression {
    * @param other The value to compare to.
    * @return A new {@link BooleanExpression} representing the inequality comparison.
    */
-  @BetaApi
   public final BooleanExpression notEqual(Object other) {
     return notEqual(this, toExprOrConstant(other));
   }
@@ -5950,7 +5504,6 @@ public abstract class Expression {
    * @param other The value to compare to.
    * @return A new {@link BooleanExpression} representing the greater than comparison.
    */
-  @BetaApi
   public final BooleanExpression greaterThan(Object other) {
     return greaterThan(this, toExprOrConstant(other));
   }
@@ -5962,7 +5515,6 @@ public abstract class Expression {
    * @param other The value to compare to.
    * @return A new {@link BooleanExpression} representing the greater than or equal to comparison.
    */
-  @BetaApi
   public final BooleanExpression greaterThanOrEqual(Object other) {
     return greaterThanOrEqual(this, toExprOrConstant(other));
   }
@@ -5973,7 +5525,6 @@ public abstract class Expression {
    * @param other The value to compare to.
    * @return A new {@link BooleanExpression} representing the less than comparison.
    */
-  @BetaApi
   public final BooleanExpression lessThan(Object other) {
     return lessThan(this, toExprOrConstant(other));
   }
@@ -5984,7 +5535,6 @@ public abstract class Expression {
    * @param other The value to compare to.
    * @return A new {@link BooleanExpression} representing the less than or equal to comparison.
    */
-  @BetaApi
   public final BooleanExpression lessThanOrEqual(Object other) {
     return lessThanOrEqual(this, toExprOrConstant(other));
   }
@@ -5996,7 +5546,6 @@ public abstract class Expression {
    * @param other The values to check against.
    * @return A new {@link BooleanExpression} representing the 'IN' comparison.
    */
-  @BetaApi
   public final BooleanExpression equalAny(List<Object> other) {
     return equalAny(this, other);
   }
@@ -6008,7 +5557,6 @@ public abstract class Expression {
    * @param other The values to check against.
    * @return A new {@link BooleanExpression} representing the 'NOT IN' comparison.
    */
-  @BetaApi
   public final BooleanExpression notEqualAny(List<Object> other) {
     return notEqualAny(this, other);
   }
@@ -6018,7 +5566,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the charLength operation.
    */
-  @BetaApi
   public final Expression charLength() {
     return charLength(this);
   }
@@ -6029,7 +5576,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the length of the string in bytes.
    */
-  @BetaApi
   public final Expression byteLength() {
     return byteLength(this);
   }
@@ -6040,7 +5586,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the length of the expression.
    */
-  @BetaApi
   public final Expression length() {
     return length(this);
   }
@@ -6051,7 +5596,6 @@ public abstract class Expression {
    * @param pattern The pattern to search for. You can use "%" as a wildcard character.
    * @return A new {@link BooleanExpression} representing the like operation.
    */
-  @BetaApi
   public final BooleanExpression like(Object pattern) {
     return like(this, toExprOrConstant(pattern));
   }
@@ -6064,7 +5608,6 @@ public abstract class Expression {
    * @return A new {@link BooleanExpression} representing the contains regular expression
    *     comparison.
    */
-  @BetaApi
   public final BooleanExpression regexContains(Object pattern) {
     return regexContains(this, toExprOrConstant(pattern));
   }
@@ -6079,7 +5622,6 @@ public abstract class Expression {
    * @param pattern The regular expression to search for.
    * @return A new {@link Expression} representing the regular expression find function.
    */
-  @BetaApi
   public final Expression regexFind(Object pattern) {
     return regexFind(this, toExprOrConstant(pattern));
   }
@@ -6094,7 +5636,6 @@ public abstract class Expression {
    * @param pattern The regular expression to search for.
    * @return A new {@link Expression} that evaluates to a list of matched substrings.
    */
-  @BetaApi
   public final Expression regexFindAll(Object pattern) {
     return regexFindAll(this, toExprOrConstant(pattern));
   }
@@ -6106,7 +5647,6 @@ public abstract class Expression {
    * @param pattern The regular expression to use for the match.
    * @return A new {@link BooleanExpression} representing the regular expression match comparison.
    */
-  @BetaApi
   public final BooleanExpression regexMatch(Object pattern) {
     return regexMatch(this, toExprOrConstant(pattern));
   }
@@ -6117,7 +5657,6 @@ public abstract class Expression {
    * @param substring The expression representing the substring to search for.
    * @return A new {@link BooleanExpression} representing the contains comparison.
    */
-  @BetaApi
   public final BooleanExpression stringContains(Object substring) {
     return stringContains(this, toExprOrConstant(substring));
   }
@@ -6128,7 +5667,6 @@ public abstract class Expression {
    * @param prefix The prefix string expression to check for.
    * @return A new {@link Expression} representing the the 'starts with' comparison.
    */
-  @BetaApi
   public final BooleanExpression startsWith(Object prefix) {
     return startsWith(this, toExprOrConstant(prefix));
   }
@@ -6139,7 +5677,6 @@ public abstract class Expression {
    * @param suffix The suffix string expression to check for.
    * @return A new {@link Expression} representing the 'ends with' comparison.
    */
-  @BetaApi
   public final BooleanExpression endsWith(Object suffix) {
     return endsWith(this, toExprOrConstant(suffix));
   }
@@ -6151,7 +5688,6 @@ public abstract class Expression {
    * @param length The length of the substring.
    * @return A new {@link Expression} representing the substring.
    */
-  @BetaApi
   public final Expression substring(Object index, Object length) {
     return substring(this, toExprOrConstant(index), toExprOrConstant(length));
   }
@@ -6161,7 +5697,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the lowercase string.
    */
-  @BetaApi
   public final Expression toLower() {
     return toLower(this);
   }
@@ -6171,7 +5706,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the lowercase string.
    */
-  @BetaApi
   public final Expression toUpper() {
     return toUpper(this);
   }
@@ -6181,7 +5715,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the trimmed string.
    */
-  @BetaApi
   public final Expression trim() {
     return trim(this);
   }
@@ -6193,7 +5726,6 @@ public abstract class Expression {
    * @param characters The characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public Expression trimValue(String characters) {
     return trimValue(this, characters);
   }
@@ -6205,7 +5737,6 @@ public abstract class Expression {
    * @param characters The expression representing the characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public Expression trimValue(Expression characters) {
     return trimValue(this, characters);
   }
@@ -6216,7 +5747,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public Expression ltrim() {
     return ltrim(this);
   }
@@ -6228,7 +5758,6 @@ public abstract class Expression {
    * @param characters The characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public Expression ltrimValue(String characters) {
     return ltrimValue(this, characters);
   }
@@ -6240,7 +5769,6 @@ public abstract class Expression {
    * @param characters The expression representing the characters or bytes to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public Expression ltrimValue(Expression characters) {
     return ltrimValue(this, characters);
   }
@@ -6250,7 +5778,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public Expression rtrim() {
     return rtrim(this);
   }
@@ -6262,7 +5789,6 @@ public abstract class Expression {
    * @param characters The characters to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public Expression rtrimValue(String characters) {
     return rtrimValue(this, characters);
   }
@@ -6274,7 +5800,6 @@ public abstract class Expression {
    * @param characters The expression representing the characters or bytes to remove.
    * @return A new {@link Expression} representing the trimmed string or blob.
    */
-  @BetaApi
   public Expression rtrimValue(Expression characters) {
     return rtrimValue(this, characters);
   }
@@ -6285,7 +5810,6 @@ public abstract class Expression {
    * @param repetitions The number of times to repeat the string or blob.
    * @return A new {@link Expression} representing the repeated string or blob.
    */
-  @BetaApi
   public Expression stringRepeat(Number repetitions) {
     return stringRepeat(this, repetitions);
   }
@@ -6296,7 +5820,6 @@ public abstract class Expression {
    * @param repetitions The expression representing the number of times to repeat.
    * @return A new {@link Expression} representing the repeated string or blob.
    */
-  @BetaApi
   public Expression stringRepeat(Expression repetitions) {
     return stringRepeat(this, repetitions);
   }
@@ -6308,7 +5831,6 @@ public abstract class Expression {
    * @param replacement The replacement string/bytes.
    * @return A new {@link Expression} representing the replaced value.
    */
-  @BetaApi
   public Expression stringReplaceAll(String find, String replacement) {
     return stringReplaceAll(this, find, replacement);
   }
@@ -6320,7 +5842,6 @@ public abstract class Expression {
    * @param replacement The expression representing the replacement value.
    * @return A new {@link Expression} representing the replaced value.
    */
-  @BetaApi
   public Expression stringReplaceAll(Expression find, Expression replacement) {
     return stringReplaceAll(this, find, replacement);
   }
@@ -6332,7 +5853,6 @@ public abstract class Expression {
    * @param replacement The replacement string/bytes.
    * @return A new {@link Expression} representing the replaced value.
    */
-  @BetaApi
   public Expression stringReplaceOne(String find, String replacement) {
     return stringReplaceOne(this, find, replacement);
   }
@@ -6344,7 +5864,6 @@ public abstract class Expression {
    * @param replacement The expression representing the replacement value.
    * @return A new {@link Expression} representing the replaced value.
    */
-  @BetaApi
   public Expression stringReplaceOne(Expression find, Expression replacement) {
     return stringReplaceOne(this, find, replacement);
   }
@@ -6355,7 +5874,6 @@ public abstract class Expression {
    * @param search The search pattern.
    * @return A new {@link Expression} representing the index.
    */
-  @BetaApi
   public Expression stringIndexOf(String search) {
     return stringIndexOf(this, search);
   }
@@ -6366,7 +5884,6 @@ public abstract class Expression {
    * @param search The expression representing the search pattern.
    * @return A new {@link Expression} representing the index.
    */
-  @BetaApi
   public Expression stringIndexOf(Expression search) {
     return stringIndexOf(this, search);
   }
@@ -6377,7 +5894,6 @@ public abstract class Expression {
    * @param delimiter The delimiter to split by.
    * @return A new {@link Expression} representing the split string or blob as an array.
    */
-  @BetaApi
   public Expression split(Expression delimiter) {
     return split(this, delimiter);
   }
@@ -6388,7 +5904,6 @@ public abstract class Expression {
    * @param delimiter The delimiter to split by.
    * @return A new {@link Expression} representing the split string or blob as an array.
    */
-  @BetaApi
   public Expression split(String delimiter) {
     return split(this, delimiter);
   }
@@ -6399,7 +5914,6 @@ public abstract class Expression {
    * @param others The string expressions or string constants to concatenate.
    * @return A new {@link Expression} representing the concatenated string.
    */
-  @BetaApi
   public final Expression stringConcat(String... others) {
     return stringConcat(this, others);
   }
@@ -6410,7 +5924,6 @@ public abstract class Expression {
    * @param others The string expressions or string constants to concatenate.
    * @return A new {@link Expression} representing the concatenated string.
    */
-  @BetaApi
   public final Expression stringConcat(Expression... others) {
     return stringConcat(this, others);
   }
@@ -6422,7 +5935,6 @@ public abstract class Expression {
    * @return A new {@link Expression} representing the value associated with the given key in the
    *     map.
    */
-  @BetaApi
   public final Expression mapGet(Object key) {
     return mapGet(this, toExprOrConstant(key));
   }
@@ -6433,7 +5945,6 @@ public abstract class Expression {
    *
    * @return A new {@link BooleanExpression} representing the isAbsent operation.
    */
-  @BetaApi
   public final BooleanExpression isAbsent() {
     return isAbsent(this);
   }
@@ -6443,7 +5954,6 @@ public abstract class Expression {
    *
    * @return A new {@link BooleanExpression} representing the isNan operation.
    */
-  @BetaApi
   public final BooleanExpression isNaN() {
     return isNaN(this);
   }
@@ -6453,7 +5963,6 @@ public abstract class Expression {
    *
    * @return A new {@link BooleanExpression} representing the isNull operation.
    */
-  @BetaApi
   public final BooleanExpression isNull() {
     return isNull(this);
   }
@@ -6463,7 +5972,6 @@ public abstract class Expression {
    *
    * @return A new {@link BooleanExpression} representing the isNotNull operation.
    */
-  @BetaApi
   public final BooleanExpression isNotNull() {
     return isNotNull(this);
   }
@@ -6474,7 +5982,6 @@ public abstract class Expression {
    *
    * @return A new {@link AggregateFunction} representing the sum aggregation.
    */
-  @BetaApi
   public final AggregateFunction sum() {
     return AggregateFunction.sum(this);
   }
@@ -6485,7 +5992,6 @@ public abstract class Expression {
    *
    * @return A new {@link AggregateFunction} representing the average aggregation.
    */
-  @BetaApi
   public final AggregateFunction average() {
     return AggregateFunction.average(this);
   }
@@ -6496,7 +6002,6 @@ public abstract class Expression {
    *
    * @return A new {@link AggregateFunction} representing the minimum aggregation.
    */
-  @BetaApi
   public final AggregateFunction minimum() {
     return AggregateFunction.minimum(this);
   }
@@ -6507,7 +6012,6 @@ public abstract class Expression {
    *
    * @return A new {@link AggregateFunction} representing the maximum aggregation.
    */
-  @BetaApi
   public final AggregateFunction maximum() {
     return AggregateFunction.maximum(this);
   }
@@ -6518,7 +6022,6 @@ public abstract class Expression {
    *
    * @return A new {@link AggregateFunction} representing the count aggregation.
    */
-  @BetaApi
   public final AggregateFunction count() {
     return AggregateFunction.count(this);
   }
@@ -6528,7 +6031,6 @@ public abstract class Expression {
    *
    * @return A new {@link AggregateFunction} representing the count distinct aggregation.
    */
-  @BetaApi
   public final AggregateFunction countDistinct() {
     return AggregateFunction.countDistinct(this);
   }
@@ -6539,7 +6041,6 @@ public abstract class Expression {
    *
    * @return A new {@link AggregateFunction} representing the first aggregation.
    */
-  @BetaApi
   public final AggregateFunction first() {
     return AggregateFunction.first(this);
   }
@@ -6550,7 +6051,6 @@ public abstract class Expression {
    *
    * @return A new {@link AggregateFunction} representing the last aggregation.
    */
-  @BetaApi
   public final AggregateFunction last() {
     return AggregateFunction.last(this);
   }
@@ -6564,7 +6064,6 @@ public abstract class Expression {
    *
    * @return A new {@link AggregateFunction} representing the array_agg aggregation.
    */
-  @BetaApi
   public final AggregateFunction arrayAgg() {
     return AggregateFunction.arrayAgg(this);
   }
@@ -6578,7 +6077,6 @@ public abstract class Expression {
    *
    * @return A new {@link AggregateFunction} representing the array_agg_distinct aggregation.
    */
-  @BetaApi
   public final AggregateFunction arrayAggDistinct() {
     return AggregateFunction.arrayAggDistinct(this);
   }
@@ -6589,7 +6087,6 @@ public abstract class Expression {
    *
    * @return A new {@link Ordering} object with ascending sort by this expression.
    */
-  @BetaApi
   public final Ordering ascending() {
     return Ordering.ascending(this);
   }
@@ -6600,7 +6097,6 @@ public abstract class Expression {
    *
    * @return A new {@link Ordering} object with descending sort by this expression.
    */
-  @BetaApi
   public final Ordering descending() {
     return Ordering.descending(this);
   }
@@ -6615,7 +6111,6 @@ public abstract class Expression {
    * @return A new {@link AliasedExpression} that wraps this expression and associates it with the
    *     provided alias.
    */
-  @BetaApi
   public AliasedExpression as(String alias) {
     return new AliasedExpression(this, alias);
   }
@@ -6629,7 +6124,6 @@ public abstract class Expression {
    * @param otherMaps Additional maps to merge.
    * @return A new {@link Expression} representing the mapMerge operation.
    */
-  @BetaApi
   public final Expression mapMerge(Expression secondMap, Expression... otherMaps) {
     return mapMerge(this, secondMap, otherMaps);
   }
@@ -6640,7 +6134,6 @@ public abstract class Expression {
    * @param key The name of the key to remove from this map expression.
    * @return A new {@link Expression} that evaluates to a modified map.
    */
-  @BetaApi
   public final Expression mapRemove(Expression key) {
     return mapRemove(this, key);
   }
@@ -6651,7 +6144,6 @@ public abstract class Expression {
    * @param key The name of the key to remove from this map expression.
    * @return A new {@link Expression} that evaluates to a modified map.
    */
-  @BetaApi
   public final Expression mapRemove(String key) {
     return mapRemove(this, key);
   }
@@ -6668,7 +6160,6 @@ public abstract class Expression {
    * @param moreKeyValues Additional key-value pairs to set.
    * @return A new {@link Expression} representing the map with the entries set.
    */
-  @BetaApi
   public final Expression mapSet(Expression key, Expression value, Expression... moreKeyValues) {
     return mapSet(this, key, value, moreKeyValues);
   }
@@ -6681,7 +6172,6 @@ public abstract class Expression {
    * @param moreKeyValues Additional key-value pairs to set.
    * @return A new {@link Expression} representing the map with the entries set.
    */
-  @BetaApi
   public final Expression mapSet(String key, Object value, Object... moreKeyValues) {
     return mapSet(
         this,
@@ -6698,7 +6188,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the keys of the map.
    */
-  @BetaApi
   public final Expression mapKeys() {
     return mapKeys(this);
   }
@@ -6711,7 +6200,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the values of the map.
    */
-  @BetaApi
   public final Expression mapValues() {
     return mapValues(this);
   }
@@ -6725,7 +6213,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the entries of the map.
    */
-  @BetaApi
   public final Expression mapEntries() {
     return mapEntries(this);
   }
@@ -6735,7 +6222,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the reversed value.
    */
-  @BetaApi
   public final Expression reverse() {
     return reverse(this);
   }
@@ -6746,7 +6232,6 @@ public abstract class Expression {
    * @param otherArrays Optional additional array expressions or array literals to concatenate.
    * @return A new {@link Expression} representing the arrayConcat operation.
    */
-  @BetaApi
   public final Expression arrayConcat(Expression... otherArrays) {
     return arrayConcat(this, otherArrays);
   }
@@ -6756,7 +6241,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the first element of the array.
    */
-  @BetaApi
   public final Expression arrayFirst() {
     return arrayFirst(this);
   }
@@ -6767,7 +6251,6 @@ public abstract class Expression {
    * @param n The number of elements to return.
    * @return A new {@link Expression} representing the first n elements of the array.
    */
-  @BetaApi
   public final Expression arrayFirstN(int n) {
     return arrayFirstN(this, n);
   }
@@ -6778,7 +6261,6 @@ public abstract class Expression {
    * @param n The Expression evaluates to the number of elements to return.
    * @return A new {@link Expression} representing the first n elements of the array.
    */
-  @BetaApi
   public final Expression arrayFirstN(Expression n) {
     return arrayFirstN(this, n);
   }
@@ -6788,7 +6270,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the last element of the array.
    */
-  @BetaApi
   public final Expression arrayLast() {
     return arrayLast(this);
   }
@@ -6799,7 +6280,6 @@ public abstract class Expression {
    * @param n The number of elements to return.
    * @return A new {@link Expression} representing the last n elements of the array.
    */
-  @BetaApi
   public final Expression arrayLastN(int n) {
     return arrayLastN(this, n);
   }
@@ -6810,7 +6290,6 @@ public abstract class Expression {
    * @param n The Expression evaluates to the number of elements to return.
    * @return A new {@link Expression} representing the last n elements of the array.
    */
-  @BetaApi
   public final Expression arrayLastN(Expression n) {
     return arrayLastN(this, n);
   }
@@ -6820,7 +6299,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the minimum value of the array.
    */
-  @BetaApi
   public final Expression arrayMinimum() {
     return arrayMinimum(this);
   }
@@ -6834,7 +6312,6 @@ public abstract class Expression {
    * @param n The number of elements to return.
    * @return A new {@link Expression} representing the n minimum values of the array.
    */
-  @BetaApi
   public final Expression arrayMinimumN(int n) {
     return arrayMinimumN(this, n);
   }
@@ -6848,7 +6325,6 @@ public abstract class Expression {
    * @param n The Expression evaluates to the number of elements to return.
    * @return A new {@link Expression} representing the n minimum values of the array.
    */
-  @BetaApi
   public final Expression arrayMinimumN(Expression n) {
     return arrayMinimumN(this, n);
   }
@@ -6858,7 +6334,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the maximum value of the array.
    */
-  @BetaApi
   public final Expression arrayMaximum() {
     return arrayMaximum(this);
   }
@@ -6872,7 +6347,6 @@ public abstract class Expression {
    * @param n The number of elements to return.
    * @return A new {@link Expression} representing the n maximum values of the array.
    */
-  @BetaApi
   public final Expression arrayMaximumN(int n) {
     return arrayMaximumN(this, n);
   }
@@ -6886,7 +6360,6 @@ public abstract class Expression {
    * @param n The Expression evaluates to the number of elements to return.
    * @return A new {@link Expression} representing the n maximum values of the array.
    */
-  @BetaApi
   public final Expression arrayMaximumN(Expression n) {
     return arrayMaximumN(this, n);
   }
@@ -6897,7 +6370,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the index.
    */
-  @BetaApi
   public final Expression arrayIndexOf(Object value) {
     return arrayIndexOf(this, value);
   }
@@ -6908,7 +6380,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the index.
    */
-  @BetaApi
   public final Expression arrayIndexOf(Expression value) {
     return arrayIndexOf(this, value);
   }
@@ -6919,7 +6390,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the last index.
    */
-  @BetaApi
   public final Expression arrayLastIndexOf(Object value) {
     return arrayLastIndexOf(this, value);
   }
@@ -6930,7 +6400,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the last index.
    */
-  @BetaApi
   public final Expression arrayLastIndexOf(Expression value) {
     return arrayLastIndexOf(this, value);
   }
@@ -6941,7 +6410,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the indices.
    */
-  @BetaApi
   public final Expression arrayIndexOfAll(Object value) {
     return arrayIndexOfAll(this, value);
   }
@@ -6952,7 +6420,6 @@ public abstract class Expression {
    * @param value The value to search for.
    * @return A new {@link Expression} representing the indices.
    */
-  @BetaApi
   public final Expression arrayIndexOfAll(Expression value) {
     return arrayIndexOfAll(this, value);
   }
@@ -6962,7 +6429,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the arrayReverse operation.
    */
-  @BetaApi
   public final Expression arrayReverse() {
     return arrayReverse(this);
   }
@@ -6974,7 +6440,6 @@ public abstract class Expression {
    * @param filter The predicate boolean expression used to filter the elements.
    * @return A new {@link Expression} representing the filtered array.
    */
-  @BetaApi
   public final Expression arrayFilter(String alias, BooleanExpression filter) {
     return arrayFilter(this, alias, filter);
   }
@@ -6986,7 +6451,6 @@ public abstract class Expression {
    * @param transform The expression used to transform the elements.
    * @return A new {@link Expression} representing the transformed array.
    */
-  @BetaApi
   public final Expression arrayTransform(String elementAlias, Expression transform) {
     return arrayTransform(this, elementAlias, transform);
   }
@@ -7000,7 +6464,6 @@ public abstract class Expression {
    * @param transform The expression used to transform the elements.
    * @return A new {@link Expression} representing the transformed array.
    */
-  @BetaApi
   public final Expression arrayTransformWithIndex(
       String elementAlias, String indexAlias, Expression transform) {
     return arrayTransformWithIndex(this, elementAlias, indexAlias, transform);
@@ -7013,7 +6476,6 @@ public abstract class Expression {
    * @param length The number of elements to return.
    * @return A new {@link Expression} representing the array slice.
    */
-  @BetaApi
   public final Expression arraySlice(int offset, int length) {
     return arraySlice(this, offset, length);
   }
@@ -7025,7 +6487,6 @@ public abstract class Expression {
    * @param length The number of elements to return expressed as an Expression.
    * @return A new {@link Expression} representing the array slice.
    */
-  @BetaApi
   public final Expression arraySlice(Expression offset, Expression length) {
     return arraySlice(this, offset, length);
   }
@@ -7036,7 +6497,6 @@ public abstract class Expression {
    * @param offset The starting index.
    * @return A new {@link Expression} representing the array slice.
    */
-  @BetaApi
   public final Expression arraySliceToEnd(int offset) {
     return arraySliceToEnd(this, offset);
   }
@@ -7047,7 +6507,6 @@ public abstract class Expression {
    * @param offset The starting index expressed as an Expression.
    * @return A new {@link Expression} representing the array slice.
    */
-  @BetaApi
   public final Expression arraySliceToEnd(Expression offset) {
     return arraySliceToEnd(this, offset);
   }
@@ -7058,7 +6517,6 @@ public abstract class Expression {
    * @param element The element to search for in the array.
    * @return A new {@link BooleanExpression} representing the arrayContains operation.
    */
-  @BetaApi
   public final BooleanExpression arrayContains(Object element) {
     return arrayContains(this, element);
   }
@@ -7069,7 +6527,6 @@ public abstract class Expression {
    * @param values The elements to check for in the array.
    * @return A new {@link BooleanExpression} representing the arrayContainsAll operation.
    */
-  @BetaApi
   public final BooleanExpression arrayContainsAll(List<Object> values) {
     return arrayContainsAll(this, values);
   }
@@ -7080,7 +6537,6 @@ public abstract class Expression {
    * @param arrayExpression The elements to check for in the array.
    * @return A new {@link BooleanExpression} representing the arrayContainsAll operation.
    */
-  @BetaApi
   public final BooleanExpression arrayContainsAll(Expression arrayExpression) {
     return arrayContainsAll(this, arrayExpression);
   }
@@ -7091,7 +6547,6 @@ public abstract class Expression {
    * @param values The elements to check for in the array.
    * @return A new {@link BooleanExpression} representing the arrayContainsAny operation.
    */
-  @BetaApi
   public final BooleanExpression arrayContainsAny(List<Object> values) {
     return arrayContainsAny(this, values);
   }
@@ -7102,7 +6557,6 @@ public abstract class Expression {
    * @param arrayExpression The elements to check for in the array.
    * @return A new {@link BooleanExpression} representing the arrayContainsAny operation.
    */
-  @BetaApi
   public final BooleanExpression arrayContainsAny(Expression arrayExpression) {
     return arrayContainsAny(this, arrayExpression);
   }
@@ -7112,7 +6566,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the length of the array.
    */
-  @BetaApi
   public final Expression arrayLength() {
     return arrayLength(this);
   }
@@ -7125,7 +6578,6 @@ public abstract class Expression {
    * @param offset An Expression evaluating to the index of the element to return.
    * @return A new {@link Expression} representing the arrayGet operation.
    */
-  @BetaApi
   public final Expression arrayGet(Expression offset) {
     return arrayGet(this, offset);
   }
@@ -7138,7 +6590,6 @@ public abstract class Expression {
    * @param offset An Expression evaluating to the index of the element to return.
    * @return A new {@link Expression} representing the arrayOffset operation.
    */
-  @BetaApi
   public final Expression arrayGet(int offset) {
     return arrayGet(this, offset);
   }
@@ -7149,7 +6600,6 @@ public abstract class Expression {
    * @param vector The other vector (represented as an Expression) to compare against.
    * @return A new {@link Expression} representing the cosine distance between the two vectors.
    */
-  @BetaApi
   public final Expression cosineDistance(Expression vector) {
     return cosineDistance(this, vector);
   }
@@ -7160,7 +6610,6 @@ public abstract class Expression {
    * @param vector The other vector (as an array of doubles) to compare against.
    * @return A new {@link Expression} representing the cosine distance between the two vectors.
    */
-  @BetaApi
   public final Expression cosineDistance(double[] vector) {
     return cosineDistance(this, vector);
   }
@@ -7171,7 +6620,6 @@ public abstract class Expression {
    * @param vector The other vector (represented as an Expression) to compare against.
    * @return A new {@link Expression} representing the dot product distance between the two vectors.
    */
-  @BetaApi
   public final Expression dotProduct(Expression vector) {
     return dotProduct(this, vector);
   }
@@ -7182,7 +6630,6 @@ public abstract class Expression {
    * @param vector The other vector (as an array of doubles) to compare against.
    * @return A new {@link Expression} representing the dot product distance between the two vectors.
    */
-  @BetaApi
   public final Expression dotProduct(double[] vector) {
     return dotProduct(this, vector);
   }
@@ -7193,7 +6640,6 @@ public abstract class Expression {
    * @param vector The other vector (represented as an Expression) to compare against.
    * @return A new {@link Expression} representing the Euclidean distance between the two vectors.
    */
-  @BetaApi
   public final Expression euclideanDistance(Expression vector) {
     return euclideanDistance(this, vector);
   }
@@ -7204,7 +6650,6 @@ public abstract class Expression {
    * @param vector The other vector (as an array of doubles) to compare against.
    * @return A new {@link Expression} representing the Euclidean distance between the two vectors.
    */
-  @BetaApi
   public final Expression euclideanDistance(double[] vector) {
     return euclideanDistance(this, vector);
   }
@@ -7214,7 +6659,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the length (dimension) of the vector.
    */
-  @BetaApi
   public final Expression vectorLength() {
     return vectorLength(this);
   }
@@ -7225,7 +6669,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the timestamp.
    */
-  @BetaApi
   public final Expression unixMicrosToTimestamp() {
     return unixMicrosToTimestamp(this);
   }
@@ -7236,7 +6679,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the number of microseconds since epoch.
    */
-  @BetaApi
   public final Expression timestampToUnixMicros() {
     return timestampToUnixMicros(this);
   }
@@ -7247,7 +6689,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the timestamp.
    */
-  @BetaApi
   public final Expression unixMillisToTimestamp() {
     return unixMillisToTimestamp(this);
   }
@@ -7258,7 +6699,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the number of milliseconds since epoch.
    */
-  @BetaApi
   public final Expression timestampToUnixMillis() {
     return timestampToUnixMillis(this);
   }
@@ -7269,7 +6709,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the timestamp.
    */
-  @BetaApi
   public final Expression unixSecondsToTimestamp() {
     return unixSecondsToTimestamp(this);
   }
@@ -7280,7 +6719,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the number of seconds since epoch.
    */
-  @BetaApi
   public final Expression timestampToUnixSeconds() {
     return timestampToUnixSeconds(this);
   }
@@ -7293,7 +6731,6 @@ public abstract class Expression {
    * @param amount The expression representing the amount of time to add.
    * @return A new {@link Expression} representing the resulting timestamp.
    */
-  @BetaApi
   public final Expression timestampAdd(Expression unit, Expression amount) {
     return timestampAdd(this, unit, amount);
   }
@@ -7306,7 +6743,6 @@ public abstract class Expression {
    * @param amount The amount of time to add.
    * @return A new {@link Expression} representing the resulting timestamp.
    */
-  @BetaApi
   public final Expression timestampAdd(String unit, long amount) {
     return timestampAdd(this, unit, amount);
   }
@@ -7319,7 +6755,6 @@ public abstract class Expression {
    * @param amount The expression representing the amount of time to subtract.
    * @return A new {@link Expression} representing the resulting timestamp.
    */
-  @BetaApi
   public final Expression timestampSubtract(Expression unit, Expression amount) {
     return timestampSubtract(this, unit, amount);
   }
@@ -7332,7 +6767,6 @@ public abstract class Expression {
    * @param amount The amount of time to subtract.
    * @return A new {@link Expression} representing the resulting timestamp.
    */
-  @BetaApi
   public final Expression timestampSubtract(String unit, long amount) {
     return timestampSubtract(this, unit, amount);
   }
@@ -7346,7 +6780,6 @@ public abstract class Expression {
    *     "isoweek", "month", "quarter", "year", and "isoyear".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public final Expression timestampTruncate(String granularity) {
     return timestampTruncate(this, granularity);
   }
@@ -7360,7 +6793,6 @@ public abstract class Expression {
    *     "isoweek", "month", "quarter", "year", and "isoyear".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public final Expression timestampTruncate(Expression granularity) {
     return timestampTruncate(this, granularity);
   }
@@ -7378,7 +6810,6 @@ public abstract class Expression {
    *     specified.
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public final Expression timestampTruncateWithTimezone(String granularity, String timezone) {
     return timestampTruncateWithTimezone(this, granularity, timezone);
   }
@@ -7395,7 +6826,6 @@ public abstract class Expression {
    *     (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public final Expression timestampTruncateWithTimezone(Expression granularity, String timezone) {
     return timestampTruncateWithTimezone(this, granularity, timezone);
   }
@@ -7412,7 +6842,6 @@ public abstract class Expression {
    *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public final Expression timestampTruncateWithTimezone(String granularity, Expression timezone) {
     return timestampTruncateWithTimezone(this, granularity, timezone);
   }
@@ -7429,7 +6858,6 @@ public abstract class Expression {
    *     database (e.g., "America/Los_Angeles") or in the format "Etc/GMT-1".
    * @return A new {@link Expression} representing the truncated timestamp.
    */
-  @BetaApi
   public final Expression timestampTruncateWithTimezone(
       Expression granularity, Expression timezone) {
     return timestampTruncateWithTimezone(this, granularity, timezone);
@@ -7443,7 +6871,6 @@ public abstract class Expression {
    *     "millisecond", "second", "minute", "hour" and "day".
    * @return A new {@link Expression} representing the difference.
    */
-  @BetaApi
   public final Expression timestampDiff(Expression start, Expression unit) {
     return timestampDiff(this, start, unit);
   }
@@ -7456,7 +6883,6 @@ public abstract class Expression {
    *     "millisecond", "second", "minute", "hour" and "day".
    * @return A new {@link Expression} representing the difference.
    */
-  @BetaApi
   public final Expression timestampDiff(Expression start, String unit) {
     return timestampDiff(this, start, unit);
   }
@@ -7469,7 +6895,6 @@ public abstract class Expression {
    *     "millisecond", "second", "minute", "hour" and "day".
    * @return A new {@link Expression} representing the difference.
    */
-  @BetaApi
   public final Expression timestampDiff(String startFieldName, String unit) {
     return timestampDiff(this, startFieldName, unit);
   }
@@ -7483,7 +6908,6 @@ public abstract class Expression {
    *     "isoweek", "month", "quarter", "year", and "isoyear".
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public final Expression timestampExtract(Expression part) {
     return timestampExtract(this, part);
   }
@@ -7497,7 +6921,6 @@ public abstract class Expression {
    *     "isoweek", "month", "quarter", "year", and "isoyear".
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public final Expression timestampExtract(String part) {
     return timestampExtract(this, part);
   }
@@ -7515,7 +6938,6 @@ public abstract class Expression {
    *     specified.
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public final Expression timestampExtractWithTimezone(Expression part, String timezone) {
     return timestampExtractWithTimezone(this, part, timezone);
   }
@@ -7533,7 +6955,6 @@ public abstract class Expression {
    *     specified.
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public final Expression timestampExtractWithTimezone(String part, String timezone) {
     return timestampExtractWithTimezone(this, part, timezone);
   }
@@ -7551,7 +6972,6 @@ public abstract class Expression {
    *     not specified.
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public final Expression timestampExtractWithTimezone(Expression part, Expression timezone) {
     return timestampExtractWithTimezone(this, part, timezone);
   }
@@ -7569,7 +6989,6 @@ public abstract class Expression {
    *     not specified.
    * @return A new {@link Expression} representing the extracted part.
    */
-  @BetaApi
   public final Expression timestampExtractWithTimezone(String part, Expression timezone) {
     return timestampExtractWithTimezone(this, part, timezone);
   }
@@ -7580,7 +6999,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the exists check.
    */
-  @BetaApi
   public final BooleanExpression exists() {
     return exists(this);
   }
@@ -7593,7 +7011,6 @@ public abstract class Expression {
    *     expression produces an error.
    * @return A new {@link Expression} representing the ifError operation.
    */
-  @BetaApi
   public final Expression ifError(Expression catchExpr) {
     return ifError(this, catchExpr);
   }
@@ -7605,7 +7022,6 @@ public abstract class Expression {
    * @param catchValue The value that will be returned if this expression produces an error.
    * @return A new {@link Expression} representing the ifError operation.
    */
-  @BetaApi
   public final Expression ifError(Object catchValue) {
     return ifError(this, catchValue);
   }
@@ -7615,7 +7031,6 @@ public abstract class Expression {
    *
    * @return A new {@link BooleanExpression} representing the `isError` check.
    */
-  @BetaApi
   public final BooleanExpression isError() {
     return isError(this);
   }
@@ -7625,7 +7040,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the documentId operation.
    */
-  @BetaApi
   public final Expression documentId() {
     return documentId(this);
   }
@@ -7635,7 +7049,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the collectionId operation.
    */
-  @BetaApi
   public final Expression collectionId() {
     return collectionId(this);
   }
@@ -7645,7 +7058,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the parent operation.
    */
-  @BetaApi
   public final Expression parent() {
     return parent(this);
   }
@@ -7656,7 +7068,6 @@ public abstract class Expression {
    *
    * @return A new {@link Expression} representing the type operation.
    */
-  @BetaApi
   public final Expression type() {
     return type(this);
   }
@@ -7778,7 +7189,6 @@ public abstract class Expression {
    * @return A new {@link BooleanExpression} that evaluates to true if the expression's result is of
    *     the given type, false otherwise.
    */
-  @BetaApi
   public final BooleanExpression isType(String type) {
     return isType(this, type);
   }

@@ -16,7 +16,6 @@
 
 package com.google.cloud.firestore;
 
-import com.google.api.core.BetaApi;
 import io.opentelemetry.api.OpenTelemetry;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -25,7 +24,6 @@ import javax.annotation.Nullable;
  * Represents the options that are used to configure the use of OpenTelemetry for telemetry
  * collection in the Firestore SDK.
  */
-@BetaApi
 public class FirestoreOpenTelemetryOptions {
   private final boolean exportBuiltinMetricsToGoogleCloudMonitoring;
   private final @Nullable OpenTelemetry openTelemetry;

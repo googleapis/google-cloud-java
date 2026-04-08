@@ -16,13 +16,11 @@
 
 package com.google.cloud.firestore.pipeline.expressions;
 
-import com.google.api.core.BetaApi;
 import com.google.common.collect.ImmutableList;
 import com.google.firestore.v1.Value;
 import java.util.stream.Collectors;
 
 /** A class that represents an aggregate function. */
-@BetaApi
 public class AggregateFunction {
   private final String name;
   private final ImmutableList<Expression> params;
@@ -46,7 +44,6 @@ public class AggregateFunction {
    * @param expr The expressions to pass as arguments to the function.
    * @return A new {@link AggregateFunction} for the specified function.
    */
-  @BetaApi
   public static AggregateFunction rawAggregate(String name, Expression... expr) {
     return new AggregateFunction(name, expr);
   }
@@ -56,7 +53,6 @@ public class AggregateFunction {
    *
    * @return A new {@link AggregateFunction} representing the countAll aggregation.
    */
-  @BetaApi
   public static AggregateFunction countAll() {
     return new AggregateFunction("count");
   }
@@ -67,7 +63,6 @@ public class AggregateFunction {
    * @param fieldName The name of the field to count.
    * @return A new {@link AggregateFunction} representing the 'count' aggregation.
    */
-  @BetaApi
   public static AggregateFunction count(String fieldName) {
     return new AggregateFunction("count", fieldName);
   }
@@ -79,7 +74,6 @@ public class AggregateFunction {
    * @param expression The expression to count.
    * @return A new {@link AggregateFunction} representing the 'count' aggregation.
    */
-  @BetaApi
   public static AggregateFunction count(Expression expression) {
     return new AggregateFunction("count", expression);
   }
@@ -91,7 +85,6 @@ public class AggregateFunction {
    * @param fieldName The name of the field to count the distinct values of.
    * @return A new {@link AggregateFunction} representing the count distinct aggregation.
    */
-  @BetaApi
   public static AggregateFunction countDistinct(String fieldName) {
     return new AggregateFunction("count_distinct", fieldName);
   }
@@ -103,7 +96,6 @@ public class AggregateFunction {
    * @param expression The expression to count the distinct values of.
    * @return A new {@link AggregateFunction} representing the count distinct aggregation.
    */
-  @BetaApi
   public static AggregateFunction countDistinct(Expression expression) {
     return new AggregateFunction("count_distinct", expression);
   }
@@ -115,7 +107,6 @@ public class AggregateFunction {
    * @param condition The boolean expression to evaluate on each input.
    * @return A new {@link AggregateFunction} representing the count aggregation.
    */
-  @BetaApi
   public static AggregateFunction countIf(BooleanExpression condition) {
     return new AggregateFunction("count_if", condition);
   }
@@ -127,7 +118,6 @@ public class AggregateFunction {
    * @param fieldName The name of the field containing numeric values to sum up.
    * @return A new {@link AggregateFunction} representing the sum aggregation.
    */
-  @BetaApi
   public static AggregateFunction sum(String fieldName) {
     return new AggregateFunction("sum", fieldName);
   }
@@ -139,7 +129,6 @@ public class AggregateFunction {
    * @param expression The expression to sum up.
    * @return A new {@link AggregateFunction} representing the sum aggregation.
    */
-  @BetaApi
   public static AggregateFunction sum(Expression expression) {
     return new AggregateFunction("sum", expression);
   }
@@ -151,7 +140,6 @@ public class AggregateFunction {
    * @param fieldName The name of the field containing numeric values to average.
    * @return A new {@link AggregateFunction} representing the average aggregation.
    */
-  @BetaApi
   public static AggregateFunction average(String fieldName) {
     return new AggregateFunction("average", fieldName);
   }
@@ -163,7 +151,6 @@ public class AggregateFunction {
    * @param expression The expression representing the values to average.
    * @return A new {@link AggregateFunction} representing the average aggregation.
    */
-  @BetaApi
   public static AggregateFunction average(Expression expression) {
     return new AggregateFunction("average", expression);
   }
@@ -174,7 +161,6 @@ public class AggregateFunction {
    * @param fieldName The name of the field to find the minimum value of.
    * @return A new {@link AggregateFunction} representing the minimum aggregation.
    */
-  @BetaApi
   public static AggregateFunction minimum(String fieldName) {
     return new AggregateFunction("minimum", fieldName);
   }
@@ -186,7 +172,6 @@ public class AggregateFunction {
    * @param expression The expression to find the minimum value of.
    * @return A new {@link AggregateFunction} representing the minimum aggregation.
    */
-  @BetaApi
   public static AggregateFunction minimum(Expression expression) {
     return new AggregateFunction("minimum", expression);
   }
@@ -197,7 +182,6 @@ public class AggregateFunction {
    * @param fieldName The name of the field to find the maximum value of.
    * @return A new {@link AggregateFunction} representing the maximum aggregation.
    */
-  @BetaApi
   public static AggregateFunction maximum(String fieldName) {
     return new AggregateFunction("maximum", fieldName);
   }
@@ -209,7 +193,6 @@ public class AggregateFunction {
    * @param expression The expression to find the maximum value of.
    * @return A new {@link AggregateFunction} representing the maximum aggregation.
    */
-  @BetaApi
   public static AggregateFunction maximum(Expression expression) {
     return new AggregateFunction("maximum", expression);
   }
@@ -220,7 +203,6 @@ public class AggregateFunction {
    * @param fieldName The name of the field to find the first value of.
    * @return A new {@link AggregateFunction} representing the first aggregation.
    */
-  @BetaApi
   public static AggregateFunction first(String fieldName) {
     return new AggregateFunction("first", fieldName);
   }
@@ -232,7 +214,6 @@ public class AggregateFunction {
    * @param expression The expression to find the first value of.
    * @return A new {@link AggregateFunction} representing the first aggregation.
    */
-  @BetaApi
   public static AggregateFunction first(Expression expression) {
     return new AggregateFunction("first", expression);
   }
@@ -243,7 +224,6 @@ public class AggregateFunction {
    * @param fieldName The name of the field to find the last value of.
    * @return A new {@link AggregateFunction} representing the last aggregation.
    */
-  @BetaApi
   public static AggregateFunction last(String fieldName) {
     return new AggregateFunction("last", fieldName);
   }
@@ -254,7 +234,6 @@ public class AggregateFunction {
    * @param expression The expression to find the last value of.
    * @return A new {@link AggregateFunction} representing the last aggregation.
    */
-  @BetaApi
   public static AggregateFunction last(Expression expression) {
     return new AggregateFunction("last", expression);
   }
@@ -269,7 +248,6 @@ public class AggregateFunction {
    * @param fieldName The name of the field to collect values from.
    * @return A new {@link AggregateFunction} representing the array_agg aggregation.
    */
-  @BetaApi
   public static AggregateFunction arrayAgg(String fieldName) {
     return new AggregateFunction("array_agg", fieldName);
   }
@@ -284,7 +262,6 @@ public class AggregateFunction {
    * @param expression The expression to collect values from.
    * @return A new {@link AggregateFunction} representing the array_agg aggregation.
    */
-  @BetaApi
   public static AggregateFunction arrayAgg(Expression expression) {
     return new AggregateFunction("array_agg", expression);
   }
@@ -299,7 +276,6 @@ public class AggregateFunction {
    * @param fieldName The name of the field to collect values from.
    * @return A new {@link AggregateFunction} representing the array_agg_distinct aggregation.
    */
-  @BetaApi
   public static AggregateFunction arrayAggDistinct(String fieldName) {
     return new AggregateFunction("array_agg_distinct", fieldName);
   }
@@ -314,7 +290,6 @@ public class AggregateFunction {
    * @param expression The expression to collect values from.
    * @return A new {@link AggregateFunction} representing the array_agg_distinct aggregation.
    */
-  @BetaApi
   public static AggregateFunction arrayAggDistinct(Expression expression) {
     return new AggregateFunction("array_agg_distinct", expression);
   }
@@ -326,7 +301,6 @@ public class AggregateFunction {
    * @return A new {@link AliasedAggregate} that wraps this aggregate and associates it with the
    *     provided alias.
    */
-  @BetaApi
   public AliasedAggregate as(String alias) {
     return new AliasedAggregate(alias, this);
   }

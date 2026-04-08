@@ -16,7 +16,6 @@
 
 package com.google.cloud.firestore;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.grpc.BaseGrpcServiceException;
@@ -58,7 +57,6 @@ public class FirestoreException extends BaseGrpcServiceException {
    *
    * @return The FirestoreException
    */
-  @BetaApi
   public static FirestoreException forInvalidArgument(String message, Object... params) {
     return new FirestoreException(String.format(message, params), Status.INVALID_ARGUMENT);
   }
@@ -69,7 +67,6 @@ public class FirestoreException extends BaseGrpcServiceException {
    *
    * @return The FirestoreException
    */
-  @BetaApi
   public static FirestoreException forServerRejection(
       Status status, String message, Object... params) {
     return forServerRejection(status, null, message, params);
@@ -81,7 +78,6 @@ public class FirestoreException extends BaseGrpcServiceException {
    *
    * @return The FirestoreException
    */
-  @BetaApi
   public static FirestoreException forServerRejection(
       Status status, @Nullable Throwable cause, String message, Object... params) {
     return new FirestoreException(String.format(message, params), status, cause);
@@ -92,7 +88,6 @@ public class FirestoreException extends BaseGrpcServiceException {
    *
    * @return The FirestoreException
    */
-  @BetaApi
   public static FirestoreException forIOException(IOException exception, boolean retryable) {
     return new FirestoreException(exception, retryable);
   }
@@ -102,7 +97,6 @@ public class FirestoreException extends BaseGrpcServiceException {
    *
    * @return The FirestoreException
    */
-  @BetaApi
   public static FirestoreException forApiException(ApiException exception) {
     return new FirestoreException(exception.getMessage(), exception);
   }
@@ -112,12 +106,10 @@ public class FirestoreException extends BaseGrpcServiceException {
    *
    * @return The FirestoreException
    */
-  @BetaApi
   public static FirestoreException forApiException(ApiException exception, String message) {
     return new FirestoreException(message, exception);
   }
 
-  @BetaApi
   @Nullable
   public Status getStatus() {
     return status;

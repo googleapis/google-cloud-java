@@ -138,13 +138,11 @@ import javax.annotation.Nullable;
  *     .get();
  * }</pre>
  */
-@BetaApi
 public final class Pipeline {
   /**
    * A Snapshot contains the results of a pipeline execution. It can be used to access the
    * documents, execution time, and explain stats.
    */
-  @BetaApi
   public static final class Snapshot {
 
     private final Pipeline pipeline;
@@ -269,7 +267,6 @@ public final class Pipeline {
    *     Selectable} expressions.
    * @return A new Pipeline object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline addFields(Selectable field, Selectable... additionalFields) {
     return append(
         new AddFields(
@@ -503,7 +500,6 @@ public final class Pipeline {
    * @param additionalFields The additional fields to remove.
    * @return A new Pipeline object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline removeFields(String field, String... additionalFields) {
     return append(
         new RemoveFields(
@@ -528,7 +524,6 @@ public final class Pipeline {
    * @param additionalFields The additional fields to remove.
    * @return A new Pipeline object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline removeFields(Field field, Field... additionalFields) {
     return append(
         new RemoveFields(
@@ -568,7 +563,6 @@ public final class Pipeline {
    * @param additionalSelections The additional fields to include in the output documents,
    * @return A new Pipeline object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline select(Selectable selection, Selectable... additionalSelections) {
     return append(
         new Select(
@@ -602,7 +596,6 @@ public final class Pipeline {
    * @param additionalFields The additional fields to include in the output documents.
    * @return A new Pipeline object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline select(String field, String... additionalFields) {
     return append(
         new Select(
@@ -646,7 +639,6 @@ public final class Pipeline {
    * @param condition The {@link BooleanExpression} to apply.
    * @return A new Pipeline object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline where(BooleanExpression condition) {
     return append(new Where(condition));
   }
@@ -671,7 +663,6 @@ public final class Pipeline {
    * @param offset The number of documents to skip.
    * @return A new Pipeline object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline offset(int offset) {
     return append(new Offset(offset));
   }
@@ -701,7 +692,6 @@ public final class Pipeline {
    * @param limit The maximum number of documents to return.
    * @return A new Pipeline object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline limit(int limit) {
     return append(new Limit(limit));
   }
@@ -727,7 +717,6 @@ public final class Pipeline {
    *     AggregateFunction} and provide a name for the accumulated results.
    * @return A new Pipeline object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline aggregate(AliasedAggregate... accumulators) {
     return append(Aggregate.withAccumulators(accumulators));
   }
@@ -765,12 +754,10 @@ public final class Pipeline {
    *     the aggregation operations to perform.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline aggregate(Aggregate aggregate) {
     return append(aggregate);
   }
 
-  @BetaApi
   public Pipeline aggregate(Aggregate aggregate, AggregateOptions options) {
     return append(aggregate.withOptions(options));
   }
@@ -792,7 +779,6 @@ public final class Pipeline {
    * @param fields The fields to consider when determining distinct values.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline distinct(String... fields) {
     return append(new Distinct(PipelineUtils.fieldNamesToMap(fields)));
   }
@@ -824,7 +810,6 @@ public final class Pipeline {
    *     value combinations.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline distinct(Selectable... selectables) {
     return append(new Distinct(PipelineUtils.selectablesToMap(selectables)));
   }
@@ -855,7 +840,6 @@ public final class Pipeline {
    *     distance field name.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline findNearest(
       String fieldName,
       double[] vector,
@@ -893,7 +877,6 @@ public final class Pipeline {
    *     distance field name.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline findNearest(
       Expression property,
       double[] vector,
@@ -926,7 +909,6 @@ public final class Pipeline {
    * @param orders One or more {@link Ordering} instances specifying the sorting criteria.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline sort(Ordering... orders) {
     return append(new Sort(ImmutableList.copyOf(orders)));
   }
@@ -962,7 +944,6 @@ public final class Pipeline {
    * @param fieldName The name of the field containing the nested map.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline replaceWith(String fieldName) {
     return replaceWith(field(fieldName));
   }
@@ -998,7 +979,6 @@ public final class Pipeline {
    * @param expr The {@link Expression} field containing the nested map.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline replaceWith(Expression expr) {
     return append(new ReplaceWith(expr));
   }
@@ -1021,7 +1001,6 @@ public final class Pipeline {
    * @param limit The number of documents to emit, if possible.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline sample(int limit) {
     return sample(Sample.withDocLimit(limit));
   }
@@ -1047,7 +1026,6 @@ public final class Pipeline {
    * @param sample The {@code Sample} specifies how sampling is performed.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline sample(Sample sample) {
     return append(sample);
   }
@@ -1110,7 +1088,6 @@ public final class Pipeline {
    * @param fieldName The name of the field containing the array.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline unnest(String fieldName, String alias) {
     //    return unnest(field(fieldName));
     return append(new Unnest(field(fieldName), alias));
@@ -1148,7 +1125,6 @@ public final class Pipeline {
    * @param options The {@code UnnestOptions} options.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline unnest(String fieldName, String alias, UnnestOptions options) {
     return append(new Unnest(field(fieldName), alias, options));
   }
@@ -1184,7 +1160,6 @@ public final class Pipeline {
    * @param expr The name of the expression containing the array.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline unnest(Selectable expr) {
     return append(new Unnest(expr));
   }
@@ -1221,7 +1196,6 @@ public final class Pipeline {
    * @param options The {@code UnnestOptions} options.
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline unnest(Selectable field, UnnestOptions options) {
     return append(new Unnest(field, options));
   }
@@ -1359,7 +1333,6 @@ public final class Pipeline {
    *
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
-  @BetaApi
   public Pipeline rawStage(RawStage stage) {
     return append(stage);
   }
@@ -1395,12 +1368,10 @@ public final class Pipeline {
    *
    * @return An {@link ApiFuture} representing the asynchronous pipeline execution.
    */
-  @BetaApi
   public ApiFuture<Snapshot> execute() {
     return execute(new PipelineExecuteOptions(), null, null);
   }
 
-  @BetaApi
   public ApiFuture<Snapshot> execute(PipelineExecuteOptions options) {
     return execute(options, null, null);
   }
@@ -1454,7 +1425,6 @@ public final class Pipeline {
    *
    * @param observer The {@link ApiStreamObserver} to receive pipeline results and events.
    */
-  @BetaApi
   public void execute(ApiStreamObserver<PipelineResult> observer) {
     if (this.rpcContext == null) {
       throw new IllegalStateException(

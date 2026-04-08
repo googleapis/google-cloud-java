@@ -18,14 +18,12 @@ package com.google.cloud.firestore.pipeline.stages;
 
 import static com.google.cloud.firestore.PipelineUtils.encodeValue;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.VectorValue;
 import com.google.cloud.firestore.pipeline.expressions.Expression;
 import com.google.common.collect.ImmutableList;
 import com.google.firestore.v1.Value;
 
-@BetaApi
 public final class FindNearest extends Stage {
 
   public static final class DistanceMeasure {

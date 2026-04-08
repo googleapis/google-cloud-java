@@ -16,7 +16,6 @@
 
 package com.google.cloud.firestore;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.pipeline.stages.Collection;
 import com.google.cloud.firestore.pipeline.stages.CollectionGroup;
@@ -49,7 +48,6 @@ import javax.annotation.Nonnull;
  *   .select("name"); // Add stages to the pipeline
  * }</pre>
  */
-@BetaApi
 public final class PipelineSource {
   private final FirestoreRpcContext<?> rpcContext;
 
@@ -65,19 +63,16 @@ public final class PipelineSource {
    * @return A new {@code Pipeline} instance targeting the specified collection.
    */
   @Nonnull
-  @BetaApi
   public Pipeline collection(@Nonnull String path) {
     return collection(path, new CollectionOptions());
   }
 
   @Nonnull
-  @BetaApi
   public Pipeline collection(@Nonnull String path, CollectionOptions options) {
     return new Pipeline(this.rpcContext, new Collection(path, options));
   }
 
   @Nonnull
-  @BetaApi
   public Pipeline collection(@Nonnull CollectionReference ref) {
     if (!this.rpcContext.getFirestore().equals(ref.getFirestore())) {
       throw new IllegalArgumentException(
@@ -99,13 +94,11 @@ public final class PipelineSource {
    * @return A new {@code Pipeline} instance targeting the specified collection group.
    */
   @Nonnull
-  @BetaApi
   public Pipeline collectionGroup(@Nonnull String collectionId) {
     return collectionGroup(collectionId, new CollectionGroupOptions());
   }
 
   @Nonnull
-  @BetaApi
   public Pipeline collectionGroup(@Nonnull String collectionId, CollectionGroupOptions options) {
     Preconditions.checkArgument(
         !collectionId.contains("/"),
@@ -123,7 +116,6 @@ public final class PipelineSource {
    * @return A new {@code Pipeline} instance targeting all documents in the database.
    */
   @Nonnull
-  @BetaApi
   public Pipeline database() {
     return new Pipeline(this.rpcContext, new Database());
   }
@@ -136,7 +128,6 @@ public final class PipelineSource {
    * @return A new {@code Pipeline} instance targeting the specified documents.
    */
   @Nonnull
-  @BetaApi
   public Pipeline documents(DocumentReference... docs) {
     return new Pipeline(this.rpcContext, Documents.of(docs));
   }
@@ -149,7 +140,6 @@ public final class PipelineSource {
    * @return A new {@code Pipeline} instance targeting the specified documents.
    */
   @Nonnull
-  @BetaApi
   public Pipeline documents(String... docs) {
     return new Pipeline(
         this.rpcContext,
@@ -180,7 +170,6 @@ public final class PipelineSource {
    * @return A new {@code Pipeline} instance with a literals source.
    */
   @Nonnull
-  @BetaApi
   public final Pipeline literals(java.util.Map<String, Object>... data) {
     return new Pipeline(this.rpcContext, new Literals(data));
   }
@@ -193,7 +182,6 @@ public final class PipelineSource {
    * @return A new {@code Pipeline} that is equivalent to the given query.
    */
   @Nonnull
-  @BetaApi
   public Pipeline createFrom(Query query) {
     return query.pipeline();
   }
@@ -206,7 +194,6 @@ public final class PipelineSource {
    * @return A new {@code Pipeline} that is equivalent to the given query.
    */
   @Nonnull
-  @BetaApi
   public Pipeline createFrom(AggregateQuery query) {
     return query.pipeline();
   }

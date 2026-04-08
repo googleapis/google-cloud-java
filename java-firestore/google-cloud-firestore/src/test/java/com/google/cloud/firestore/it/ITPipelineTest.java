@@ -4613,143 +4613,82 @@ public class ITPipelineTest extends ITBaseTest {
   @Test
   public void testDeleteStage() throws Exception {
     CollectionReference dmlCol = testCollectionWithDocs(bookDocs);
-    if ("NIGHTLY".equals(getTargetBackend())) {
-      List<PipelineResult> results =
-          firestore
-              .pipeline()
-              .collection(dmlCol.getPath())
-              .where(equal(field("__name__").documentId(), "book1"))
-              .delete()
-              .execute()
-              .get()
-              .getResults();
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(dmlCol.getPath())
+            .where(equal(field("__name__").documentId(), "book1"))
+            .delete()
+            .execute()
+            .get()
+            .getResults();
 
-      assertThat(results).hasSize(1);
-      assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(1L);
-      assertThat(dmlCol.document("book1").get().get().exists()).isFalse();
-    } else {
-      assertThrows(
-          ExecutionException.class,
-          () -> {
-            firestore
-                .pipeline()
-                .collection(dmlCol.getPath())
-                .where(equal(field("__name__").documentId(), "book1"))
-                .delete()
-                .execute()
-                .get()
-                .getResults();
-          });
-    }
+    assertThat(results).hasSize(1);
+    assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(1L);
+    assertThat(dmlCol.document("book1").get().get().exists()).isFalse();
   }
 
   @Test
   public void testDeleteMultipleDocuments() throws Exception {
     CollectionReference dmlCol = testCollectionWithDocs(bookDocs);
-    if ("NIGHTLY".equals(getTargetBackend())) {
-      List<PipelineResult> results =
-          firestore
-              .pipeline()
-              .collection(dmlCol.getPath())
-              .where(equal(field("genre"), "Science Fiction"))
-              .delete()
-              .execute()
-              .get()
-              .getResults();
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(dmlCol.getPath())
+            .where(equal(field("genre"), "Science Fiction"))
+            .delete()
+            .execute()
+            .get()
+            .getResults();
 
-      assertThat(results).hasSize(1);
-      assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(2L);
-      assertThat(dmlCol.document("book1").get().get().exists()).isFalse();
-      assertThat(dmlCol.document("book10").get().get().exists()).isFalse();
-    } else {
-      assertThrows(
-          ExecutionException.class,
-          () -> {
-            firestore
-                .pipeline()
-                .collection(dmlCol.getPath())
-                .where(equal(field("genre"), "Science Fiction"))
-                .delete()
-                .execute()
-                .get();
-          });
-    }
+    assertThat(results).hasSize(1);
+    assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(2L);
+    assertThat(dmlCol.document("book1").get().get().exists()).isFalse();
+    assertThat(dmlCol.document("book10").get().get().exists()).isFalse();
   }
 
   @Test
   public void testUpdateMultipleDocuments() throws Exception {
     CollectionReference dmlCol = testCollectionWithDocs(bookDocs);
-    if ("NIGHTLY".equals(getTargetBackend())) {
-      List<PipelineResult> results =
-          firestore
-              .pipeline()
-              .collection(dmlCol.getPath())
-              .where(equal(field("genre"), "Science Fiction"))
-              .removeFields("awards")
-              .update(constant("Updated").as("status"))
-              .execute()
-              .get()
-              .getResults();
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(dmlCol.getPath())
+            .where(equal(field("genre"), "Science Fiction"))
+            .removeFields("awards")
+            .update(constant("Updated").as("status"))
+            .execute()
+            .get()
+            .getResults();
 
-      assertThat(results).hasSize(1);
-      assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(2L);
-      assertThat(dmlCol.document("book1").get().get().get("status")).isEqualTo("Updated");
-      assertThat(dmlCol.document("book1").get().get().get("awards")).isNull();
+    assertThat(results).hasSize(1);
+    assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(2L);
+    assertThat(dmlCol.document("book1").get().get().get("status")).isEqualTo("Updated");
+    assertThat(dmlCol.document("book1").get().get().get("awards")).isNull();
 
-      assertThat(dmlCol.document("book10").get().get().get("status")).isEqualTo("Updated");
-      assertThat(dmlCol.document("book10").get().get().get("awards")).isNull();
-    } else {
-      assertThrows(
-          ExecutionException.class,
-          () -> {
-            firestore
-                .pipeline()
-                .collection(dmlCol.getPath())
-                .where(equal(field("genre"), "Science Fiction"))
-                .removeFields("awards")
-                .update(constant("Updated").as("status"))
-                .execute()
-                .get();
-          });
-    }
+    assertThat(dmlCol.document("book10").get().get().get("status")).isEqualTo("Updated");
+    assertThat(dmlCol.document("book10").get().get().get("awards")).isNull();
   }
 
   @Test
   public void testUpdateWithExpressions() throws Exception {
     CollectionReference dmlCol = testCollectionWithDocs(bookDocs);
-    if ("NIGHTLY".equals(getTargetBackend())) {
-      List<PipelineResult> results =
-          firestore
-              .pipeline()
-              .collection(dmlCol.getPath())
-              .where(equal(field("__name__").documentId(), "book1"))
-              .update(
-                  com.google.cloud.firestore.pipeline.expressions.Expression.add(
-                          field("rating"), constant(1.0))
-                      .as("rating"))
-              .execute()
-              .get()
-              .getResults();
+    List<PipelineResult> results =
+        firestore
+            .pipeline()
+            .collection(dmlCol.getPath())
+            .where(equal(field("__name__").documentId(), "book1"))
+            .update(
+                com.google.cloud.firestore.pipeline.expressions.Expression.add(
+                        field("rating"), constant(1.0))
+                    .as("rating"))
+            .execute()
+            .get()
+            .getResults();
 
-      assertThat(results).hasSize(1);
-      DocumentSnapshot doc = dmlCol.document("book1").get().get();
-      assertThat(doc.get("rating")).isEqualTo(5.2);
-    } else {
-      assertThrows(
-          ExecutionException.class,
-          () -> {
-            firestore
-                .pipeline()
-                .collection(dmlCol.getPath())
-                .where(equal(field("__name__").documentId(), "book1"))
-                .update(
-                    com.google.cloud.firestore.pipeline.expressions.Expression.add(
-                            field("rating"), constant(1.0))
-                        .as("rating"))
-                .execute()
-                .get();
-          });
-    }
+    assertThat(results).hasSize(1);
+    DocumentSnapshot doc = dmlCol.document("book1").get().get();
+    assertThat(doc.get("rating")).isEqualTo(5.2);
   }
 
   @Test
@@ -4760,19 +4699,11 @@ public class ITPipelineTest extends ITBaseTest {
     book.put("title", "Non Existing");
     book.put("__name__", dmlCol.document("nonExisting"));
 
-    if ("NIGHTLY".equals(getTargetBackend())) {
-      List<PipelineResult> results =
-          firestore.pipeline().literals(book).update().execute().get().getResults();
+    List<PipelineResult> results =
+        firestore.pipeline().literals(book).update().execute().get().getResults();
 
-      assertThat(results).hasSize(1);
-      assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(0L);
-    } else {
-      assertThrows(
-          ExecutionException.class,
-          () -> {
-            firestore.pipeline().literals(book).update().execute().get();
-          });
-    }
+    assertThat(results).hasSize(1);
+    assertThat(results.get(0).getData().get("documents_modified")).isEqualTo(0L);
   }
 
   @Test

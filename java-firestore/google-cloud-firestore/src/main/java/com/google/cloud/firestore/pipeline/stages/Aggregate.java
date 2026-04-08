@@ -18,7 +18,6 @@ package com.google.cloud.firestore.pipeline.stages;
 
 import static com.google.cloud.firestore.PipelineUtils.encodeValue;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.PipelineUtils;
 import com.google.cloud.firestore.pipeline.expressions.AggregateFunction;
@@ -32,25 +31,21 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.Nonnull;
 
-@BetaApi
 public final class Aggregate extends Stage {
 
   private final Map<String, Expression> groups;
   private final Map<String, AggregateFunction> accumulators;
 
-  @BetaApi
   public Aggregate withGroups(String... fields) {
     return new Aggregate(
         PipelineUtils.fieldNamesToMap(fields), this.accumulators, new AggregateOptions());
   }
 
-  @BetaApi
   public Aggregate withGroups(Selectable... selectables) {
     return new Aggregate(
         PipelineUtils.selectablesToMap(selectables), this.accumulators, new AggregateOptions());
   }
 
-  @BetaApi
   public static Aggregate withAccumulators(AliasedAggregate... accumulators) {
     Map<String, AggregateFunction> accumulatorMap = new HashMap<>();
     for (AliasedAggregate accumulator : accumulators) {

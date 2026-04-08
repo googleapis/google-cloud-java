@@ -16,7 +16,6 @@
 
 package com.google.cloud.firestore.pipeline.stages;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.firestore.PipelineUtils;
 import com.google.firestore.v1.Value;
@@ -30,7 +29,6 @@ public final class Literals extends Stage {
 
   private final List<Map<String, Object>> data;
 
-  @BetaApi
   public Literals(Map<String, Object>... data) {
     super("literals", InternalOptions.EMPTY);
     this.data = Arrays.asList(data);
