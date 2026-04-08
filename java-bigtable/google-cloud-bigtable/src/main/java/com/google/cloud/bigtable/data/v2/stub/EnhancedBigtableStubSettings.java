@@ -182,7 +182,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
   @InternalApi
   public DirectPathConfig getDirectPathConfig() {
-    return DIRECT_PATH_CONFIG;
+    return this.directPathConfig;
   }
 
   /** Returns the target instance id. */
@@ -637,7 +637,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
       // TODO: flip the bit setDirectAccessRequested and setTrafficDirectorEnabled  once we make
       // client compatible by default.
-      boolean isDirectPathRequested = directPathConfig == DirectPathConfig.FORCED_ON;
+      boolean isDirectPathRequested = directPathConfig != DirectPathConfig.FORCED_OFF;
       featureFlags =
           FeatureFlags.newBuilder()
               .setReverseScans(true)

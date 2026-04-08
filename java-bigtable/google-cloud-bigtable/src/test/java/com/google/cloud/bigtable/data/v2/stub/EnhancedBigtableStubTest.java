@@ -549,11 +549,14 @@ public class EnhancedBigtableStubTest {
     // TODO: remove the suppression once setRefreshingChannel can be removed
     @SuppressWarnings("deprecation")
     EnhancedBigtableStubSettings settings =
-        defaultSettings.toBuilder().setRefreshingChannel(true).build();
+        defaultSettings.toBuilder()
+            .setRefreshingChannel(true)
+            .setDirectPathConfig(EnhancedBigtableStubSettings.DirectPathConfig.DEFAULT)
+            .build();
 
     try (EnhancedBigtableStub ignored = EnhancedBigtableStub.create(settings)) {
       // direct access checker ping
-      assertThat(fakeDataService.pingRequests).hasSize(1);
+      assertThat(fakeDataService.pingRequests).hasSize(2);
     }
   }
 
