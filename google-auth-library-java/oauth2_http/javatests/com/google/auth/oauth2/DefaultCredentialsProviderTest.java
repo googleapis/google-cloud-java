@@ -85,7 +85,7 @@ class DefaultCredentialsProviderTest {
   private static final String SA_PRIVATE_KEY_ID = "d84a4fefcf50791d4a90f2d7af17469d6282df9d";
   private static final String SA_PRIVATE_KEY_PKCS8 =
       ServiceAccountCredentialsTest.PRIVATE_KEY_PKCS8;
-  private static final String GDCH_SA_FORMAT_VERSION = GdchCredentials.SUPPORTED_FORMAT_VERSION;
+
   private static final String GDCH_SA_PROJECT_ID = "gdch-service-account-project-id";
   private static final String GDCH_SA_PRIVATE_KEY_ID = "d84a4fefcf50791d4a90f2d7af17469d6282df9d";
   private static final String GDCH_SA_PRIVATE_KEY_PKC8 = GdchCredentialsTest.PRIVATE_KEY_PKCS8;
@@ -96,7 +96,7 @@ class DefaultCredentialsProviderTest {
   private static final String GDCH_SA_CA_CERT_FILE_NAME = "cert.pem";
   private static final String GDCH_SA_CA_CERT_PATH =
       GdchCredentialsTest.class.getClassLoader().getResource(GDCH_SA_CA_CERT_FILE_NAME).getPath();
-  private static final URI GDCH_SA_API_AUDIENCE = URI.create("https://gdch-api-audience");
+  private static final String GDCH_SA_API_AUDIENCE = "https://gdch-api-audience";
   private static final Collection<String> SCOPES = Collections.singletonList("dummy.scope");
   private static final URI CALL_URI = URI.create("http://googleapis.com/testapi/v1/foo");
   private static final String QUOTA_PROJECT = "sample-quota-project-id";
@@ -166,43 +166,32 @@ class DefaultCredentialsProviderTest {
 
   @Test
   void getDefaultCredentials_noCredentials_linuxNotGce() {
-    TestDefaultCredentialsProvider testProvider = new TestDefaultCredentialsProvider();
-    testProvider.setProperty("os.name", "Linux");
-    InputStream productStream = new ByteArrayInputStream("test".getBytes());
-    testProvider.addFile(SMBIOS_PATH_LINUX, productStream);
-
-    assertFalse(ComputeEngineCredentials.checkStaticGceDetection(testProvider));
+    checkStaticGceDetection("linux", "test", false);
   }
 
   @Test
   void getDefaultCredentials_static_linux() {
-    TestDefaultCredentialsProvider testProvider = new TestDefaultCredentialsProvider();
-    testProvider.setProperty("os.name", "Linux");
-    File productFile = new File(SMBIOS_PATH_LINUX);
-    InputStream productStream = new ByteArrayInputStream("Googlekdjsfhg".getBytes());
-    testProvider.addFile(productFile.getAbsolutePath(), productStream);
-
-    assertTrue(ComputeEngineCredentials.checkStaticGceDetection(testProvider));
+    checkStaticGceDetection("linux", "Googlekdjsfhg", true);
   }
 
   @Test
   void getDefaultCredentials_static_windows_configuredAsLinux_notGce() {
-    TestDefaultCredentialsProvider testProvider = new TestDefaultCredentialsProvider();
-    testProvider.setProperty("os.name", "windows");
-    InputStream productStream = new ByteArrayInputStream("Googlekdjsfhg".getBytes());
-    testProvider.addFile(SMBIOS_PATH_LINUX, productStream);
-
-    assertFalse(ComputeEngineCredentials.checkStaticGceDetection(testProvider));
+    checkStaticGceDetection("windows", "Googlekdjsfhg", false);
   }
 
   @Test
   void getDefaultCredentials_static_unsupportedPlatform_notGce() {
-    TestDefaultCredentialsProvider testProvider = new TestDefaultCredentialsProvider();
-    testProvider.setProperty("os.name", "macos");
-    InputStream productStream = new ByteArrayInputStream("Googlekdjsfhg".getBytes());
-    testProvider.addFile(SMBIOS_PATH_LINUX, productStream);
+    checkStaticGceDetection("macos", "Googlekdjsfhg", false);
+  }
 
-    assertFalse(ComputeEngineCredentials.checkStaticGceDetection(testProvider));
+  private void checkStaticGceDetection(String osName, String productContent, boolean expected) {
+    TestDefaultCredentialsProvider testProvider = new TestDefaultCredentialsProvider();
+    testProvider.setProperty("os.name", osName);
+    String productFilePath = SMBIOS_PATH_LINUX;
+    InputStream productStream = new ByteArrayInputStream(productContent.getBytes());
+    testProvider.addFile(productFilePath, productStream);
+
+    assertEquals(expected, ComputeEngineCredentials.checkStaticGceDetection(testProvider));
   }
 
   @Test
@@ -359,7 +348,7 @@ class DefaultCredentialsProviderTest {
     MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
     InputStream gdchServiceAccountStream =
         GdchCredentialsTest.writeGdchServiceAccountStream(
-            GDCH_SA_FORMAT_VERSION,
+            GdchCredentials.SUPPORTED_JSON_FORMAT_VERSION,
             GDCH_SA_PROJECT_ID,
             GDCH_SA_PRIVATE_KEY_ID,
             GDCH_SA_PRIVATE_KEY_PKC8,

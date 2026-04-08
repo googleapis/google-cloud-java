@@ -40,10 +40,13 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.json.GenericJson;
+import com.google.api.client.json.Json;
 import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.json.webtoken.JsonWebSignature;
 import com.google.api.client.json.webtoken.JsonWebToken;
 import com.google.api.client.testing.http.FixedClock;
+import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.client.util.Clock;
 import com.google.auth.TestUtils;
 import com.google.auth.oauth2.GoogleCredentials.GoogleCredentialsInfo;
@@ -52,27 +55,35 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.nio.file.Files;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.PrivateKey;
+import java.security.Signature;
+import java.security.spec.ECGenParameterSpec;
+import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 
 /** Test case for {@link GdchCredentials}. */
 class GdchCredentialsTest extends BaseSerializationTest {
-  private static final String FORMAT_VERSION = GdchCredentials.SUPPORTED_FORMAT_VERSION;
+  private static final String FORMAT_VERSION = GdchCredentials.SUPPORTED_JSON_FORMAT_VERSION;
   private static final String PRIVATE_KEY_ID = "d84a4fefcf50791d4a90f2d7af17469d6282df9d";
   static final String PRIVATE_KEY_PKCS8 =
       "-----BEGIN PRIVATE KEY-----\n"
-          + "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBALX0PQoe1igW12i"
-          + "kv1bN/r9lN749y2ijmbc/mFHPyS3hNTyOCjDvBbXYbDhQJzWVUikh4mvGBA07qTj79Xc3yBDfKP2IeyYQIFe0t0"
-          + "zkd7R9Zdn98Y2rIQC47aAbDfubtkU1U72t4zL11kHvoa0/RuFZjncvlr42X7be7lYh4p3NAgMBAAECgYASk5wDw"
-          + "4Az2ZkmeuN6Fk/y9H+Lcb2pskJIXjrL533vrDWGOC48LrsThMQPv8cxBky8HFSEklPpkfTF95tpD43iVwJRB/Gr"
-          + "CtGTw65IfJ4/tI09h6zGc4yqvIo1cHX/LQ+SxKLGyir/dQM925rGt/VojxY5ryJR7GLbCzxPnJm/oQJBANwOCO6"
-          + "D2hy1LQYJhXh7O+RLtA/tSnT1xyMQsGT+uUCMiKS2bSKx2wxo9k7h3OegNJIu1q6nZ6AbxDK8H3+d0dUCQQDTrP"
-          + "SXagBxzp8PecbaCHjzNRSQE2in81qYnrAFNB4o3DpHyMMY6s5ALLeHKscEWnqP8Ur6X4PvzZecCWU9BKAZAkAut"
-          + "LPknAuxSCsUOvUfS1i87ex77Ot+w6POp34pEX+UWb+u5iFn2cQacDTHLV1LtE80L8jVLSbrbrlH43H0DjU5AkEA"
-          + "gidhycxS86dxpEljnOMCw8CKoUBd5I880IUahEiUltk7OLJYS/Ts1wbn3kPOVX3wyJs8WBDtBkFrDHW2ezth2QJ"
-          + "ADj3e1YhMVdjJW5jqwlD/VNddGjgzyunmiZg0uOXsHXbytYmsA545S8KRQFaJKFXYYFo2kOjqOiC1T2cAzMDjCQ"
-          + "==\n-----END PRIVATE KEY-----\n";
+          + "MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgyITXsUvRm1C3lnyz\n"
+          + "OaMY7TNXZois4NH0bkMwqTAnVbqhRANCAASk5+U9skHVTo+sEVd2/yKY7A2eYn8K\n"
+          + "Cygd3bQalfWs533aTu93XwVx0YNN310aFquv3/VIiFofm1JEBAhUiG8e\n"
+          + "-----END PRIVATE KEY-----";
+
+  // Generated using OpenSSL:
+  // openssl ecparam -name prime256v1 -genkey -noout -out ec-sec1.pem
+  static final String PRIVATE_KEY_SEC1 =
+      "-----BEGIN EC PRIVATE KEY-----\n"
+          + "MHcCAQEEIK+G0KyJyJPDK/tyYsF0RyFW+X1GMsWbrlWn8TbLAI0doAoGCCqGSM49\n"
+          + "AwEHoUQDQgAEmGMJNcYyb9IfS4ngfvSf+c0sxOdcRfPNnZajry4bLgs++2VpQn8e\n"
+          + "l27zuFvF8jrM2/XyG5y9heE8YSjfLMy0Rw==\n"
+          + "-----END EC PRIVATE KEY-----";
   private static final String PROJECT_ID = "project-id";
   private static final String SERVICE_IDENTITY_NAME = "service-identity-name";
   private static final String ACCESS_TOKEN = "1/MkSJoj1xsli0AccessToken_NKPY2";
@@ -81,7 +92,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
   private static final String CA_CERT_FILE_NAME = "cert.pem";
   private static final String CA_CERT_PATH =
       GdchCredentialsTest.class.getClassLoader().getResource(CA_CERT_FILE_NAME).getPath();
-  private static final URI API_AUDIENCE = URI.create("https://gdch-api-audience");
+  private static final String API_AUDIENCE = "https://gdch-api-audience";
   private static final URI CALL_URI = URI.create("http://googleapis.com/testapi/v1/foo");
 
   @Test
@@ -97,6 +108,23 @@ class GdchCredentialsTest extends BaseSerializationTest {
             TOKEN_SERVER_URI);
     GdchCredentials credentials = GdchCredentials.fromJson(json);
 
+    assertEquals(PROJECT_ID, credentials.getProjectId());
+  }
+
+  @Test
+  void fromJSON_sec1Key() throws IOException {
+    GenericJson json =
+        writeGdchServiceAccountJson(
+            FORMAT_VERSION,
+            PROJECT_ID,
+            PRIVATE_KEY_ID,
+            PRIVATE_KEY_SEC1,
+            SERVICE_IDENTITY_NAME,
+            CA_CERT_PATH,
+            TOKEN_SERVER_URI);
+    GdchCredentials credentials = GdchCredentials.fromJson(json);
+
+    assertNotNull(credentials);
     assertEquals(PROJECT_ID, credentials.getProjectId());
   }
 
@@ -383,6 +411,73 @@ class GdchCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
+  void fromStream_correct() throws IOException {
+    InputStream stream =
+        writeGdchServiceAccountStream(
+            FORMAT_VERSION,
+            PROJECT_ID,
+            PRIVATE_KEY_ID,
+            PRIVATE_KEY_PKCS8,
+            SERVICE_IDENTITY_NAME,
+            CA_CERT_PATH,
+            TOKEN_SERVER_URI);
+    GdchCredentials credentials = GdchCredentials.fromStream(stream);
+
+    assertEquals(PROJECT_ID, credentials.getProjectId());
+    assertEquals(SERVICE_IDENTITY_NAME, credentials.getServiceIdentityName());
+  }
+
+  @Test
+  void fromStream_invalidType() throws IOException {
+    GenericJson json =
+        writeGdchServiceAccountJson(
+            FORMAT_VERSION,
+            PROJECT_ID,
+            PRIVATE_KEY_ID,
+            PRIVATE_KEY_PKCS8,
+            SERVICE_IDENTITY_NAME,
+            CA_CERT_PATH,
+            TOKEN_SERVER_URI);
+    json.put("type", "invalid_type");
+    InputStream stream = TestUtils.jsonToInputStream(json);
+
+    IOException ex = assertThrows(IOException.class, () -> GdchCredentials.fromStream(stream));
+    assertTrue(ex.getMessage().contains("not recognized"));
+  }
+
+  @Test
+  void fromStream_withTransportFactory() throws IOException {
+    MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
+    InputStream stream =
+        writeGdchServiceAccountStream(
+            FORMAT_VERSION,
+            PROJECT_ID,
+            PRIVATE_KEY_ID,
+            PRIVATE_KEY_PKCS8,
+            SERVICE_IDENTITY_NAME,
+            CA_CERT_PATH,
+            TOKEN_SERVER_URI);
+    GdchCredentials credentials = GdchCredentials.fromStream(stream, transportFactory);
+
+    assertEquals(transportFactory, credentials.getTransportFactory());
+  }
+
+  @Test
+  void fromPem_correct() throws IOException {
+    GdchCredentials.Builder builder =
+        GdchCredentials.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setPrivateKeyId(PRIVATE_KEY_ID)
+            .setServiceIdentityName(SERVICE_IDENTITY_NAME)
+            .setTokenServerUri(TOKEN_SERVER_URI)
+            .setHttpTransportFactory(new MockTokenServerTransportFactory());
+
+    GdchCredentials credentials = GdchCredentials.fromPem(PRIVATE_KEY_PKCS8, builder);
+    assertNotNull(credentials.getPrivateKey());
+    assertEquals(PROJECT_ID, credentials.getProjectId());
+  }
+
+  @Test
   void createWithGdchAudience_correct() throws IOException {
     GenericJson json =
         writeGdchServiceAccountJson(
@@ -407,7 +502,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
     assertEquals(SERVICE_IDENTITY_NAME, gdchWithAudience.getServiceIdentityName());
     assertEquals(TOKEN_SERVER_URI, gdchWithAudience.getTokenServerUri());
     assertEquals(CA_CERT_PATH, credentials.getCaCertPath());
-    assertEquals(API_AUDIENCE, gdchWithAudience.getApiAudience());
+    assertEquals(API_AUDIENCE, gdchWithAudience.getGdchAudience());
   }
 
   @Test
@@ -423,9 +518,55 @@ class GdchCredentialsTest extends BaseSerializationTest {
             TOKEN_SERVER_URI);
     GdchCredentials credentials = GdchCredentials.fromJson(json);
 
-    NullPointerException ex =
-        assertThrows(NullPointerException.class, () -> credentials.createWithGdchAudience(null));
-    assertTrue(ex.getMessage().contains("Audience are not configured for GDCH service account"));
+    IllegalArgumentException ex =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> credentials.createWithGdchAudience((String) null));
+    assertTrue(
+        ex.getMessage().contains("Audience cannot be null or empty for GDCH service account"));
+  }
+
+  @Test
+  void createWithGdchAudience_emptyApiAudience() throws IOException {
+    GenericJson json =
+        writeGdchServiceAccountJson(
+            FORMAT_VERSION,
+            PROJECT_ID,
+            PRIVATE_KEY_ID,
+            PRIVATE_KEY_PKCS8,
+            SERVICE_IDENTITY_NAME,
+            CA_CERT_PATH,
+            TOKEN_SERVER_URI);
+    GdchCredentials credentials = GdchCredentials.fromJson(json);
+
+    IllegalArgumentException ex =
+        assertThrows(IllegalArgumentException.class, () -> credentials.createWithGdchAudience(""));
+    assertTrue(
+        ex.getMessage().contains("Audience cannot be null or empty for GDCH service account"));
+  }
+
+  @Test
+  void getGdchAudience_vs_getApiAudience() throws IOException {
+    GenericJson json =
+        writeGdchServiceAccountJson(
+            FORMAT_VERSION,
+            PROJECT_ID,
+            PRIVATE_KEY_ID,
+            PRIVATE_KEY_PKCS8,
+            SERVICE_IDENTITY_NAME,
+            CA_CERT_PATH,
+            TOKEN_SERVER_URI);
+    GdchCredentials credentials = GdchCredentials.fromJson(json);
+
+    String validUri = "https://valid-audience.com";
+    GdchCredentials validCredentials = credentials.createWithGdchAudience(validUri);
+    assertEquals(validUri, validCredentials.getGdchAudience());
+    assertEquals(URI.create(validUri), validCredentials.getApiAudience());
+
+    String invalidUri = "invalid uri ^";
+    GdchCredentials invalidCredentials = credentials.createWithGdchAudience(invalidUri);
+    assertEquals(invalidUri, invalidCredentials.getGdchAudience());
+    assertNull(invalidCredentials.getApiAudience());
   }
 
   @Test
@@ -442,7 +583,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
     GdchCredentials credentials = GdchCredentials.fromJson(json);
     JsonFactory jsonFactory = OAuth2Utils.JSON_FACTORY;
     long currentTimeMillis = Clock.SYSTEM.currentTimeMillis();
-    String assertion = credentials.createAssertion(jsonFactory, currentTimeMillis, API_AUDIENCE);
+    String assertion = credentials.createAssertion(jsonFactory, currentTimeMillis);
 
     JsonWebSignature signature = JsonWebSignature.parse(jsonFactory, assertion);
     JsonWebToken.Payload payload = signature.getPayload();
@@ -514,12 +655,12 @@ class GdchCredentialsTest extends BaseSerializationTest {
         GdchCredentials.getIssuerSubjectValue(PROJECT_ID, SERVICE_IDENTITY_NAME), tokenString);
     transportFactory.transport.setTokenServerUri(TOKEN_SERVER_URI);
     NullPointerException ex =
-        assertThrows(NullPointerException.class, credentials::refreshAccessToken);
+        assertThrows(NullPointerException.class, () -> credentials.refreshAccessToken());
     assertTrue(
         ex.getMessage()
             .contains(
-                "Audience are not configured for GDCH service account. Specify the "
-                    + "audience by calling createWithGDCHAudience"));
+                "Audience cannot be null or empty for GDCH service account credentials. "
+                    + "Specify the audience by calling createWithGdchAudience"));
   }
 
   @Test
@@ -723,7 +864,7 @@ class GdchCredentialsTest extends BaseSerializationTest {
 
   @Test
   void equals_false_apiAudience() throws IOException {
-    URI otherApiAudience = URI.create("https://foo1.com/bar");
+    String otherApiAudience = URI.create("https://foo1.com/bar").toString();
 
     GenericJson json =
         writeGdchServiceAccountJson(
@@ -831,6 +972,258 @@ class GdchCredentialsTest extends BaseSerializationTest {
     assertEquals(
         MockTokenServerTransportFactory.class,
         deserializedCredentials.toBuilder().getHttpTransportFactory().getClass());
+  }
+
+  @Test
+  void refreshAccessToken_invalidResponse_missingAccessToken() throws IOException {
+    MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
+    GenericJson json =
+        writeGdchServiceAccountJson(
+            FORMAT_VERSION,
+            PROJECT_ID,
+            PRIVATE_KEY_ID,
+            PRIVATE_KEY_PKCS8,
+            SERVICE_IDENTITY_NAME,
+            CA_CERT_PATH,
+            TOKEN_SERVER_URI);
+    GdchCredentials credentials = GdchCredentials.fromJson(json, transportFactory);
+    GdchCredentials gdchWithAudience = credentials.createWithGdchAudience(API_AUDIENCE);
+
+    transportFactory.transport.addGdchServiceAccount(
+        GdchCredentials.getIssuerSubjectValue(PROJECT_ID, SERVICE_IDENTITY_NAME), null);
+    transportFactory.transport.setTokenServerUri(TOKEN_SERVER_URI);
+
+    IOException ex = assertThrows(IOException.class, () -> gdchWithAudience.refreshAccessToken());
+    assertEquals(
+        "Error parsing token refresh response. Expected value access_token not found.",
+        ex.getMessage());
+  }
+
+  @Test
+  void refreshAccessToken_invalidResponse_wrongTypeAccessToken() throws IOException {
+    refreshAccessToken_invalidResponse(
+        "{\"access_token\": 123, \"expires_in\": 3600}",
+        "Error parsing token refresh response. Expected string value access_token of wrong type.");
+  }
+
+  @Test
+  void refreshAccessToken_invalidResponse_missingExpiresIn() throws IOException {
+    refreshAccessToken_invalidResponse(
+        "{\"access_token\": \"token\"}",
+        "Error parsing token refresh response. Expected value expires_in not found.");
+  }
+
+  @Test
+  void refreshAccessToken_invalidResponse_wrongTypeExpiresIn() throws IOException {
+    refreshAccessToken_invalidResponse(
+        "{\"access_token\": \"token\", \"expires_in\": \"3600\"}",
+        "Error parsing token refresh response. Expected integer value expires_in of wrong type.");
+  }
+
+  private void refreshAccessToken_invalidResponse(
+      String responseContent, String expectedErrorMessage) throws IOException {
+    MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
+    GenericJson json =
+        writeGdchServiceAccountJson(
+            FORMAT_VERSION,
+            PROJECT_ID,
+            PRIVATE_KEY_ID,
+            PRIVATE_KEY_PKCS8,
+            SERVICE_IDENTITY_NAME,
+            CA_CERT_PATH,
+            TOKEN_SERVER_URI);
+    GdchCredentials credentials = GdchCredentials.fromJson(json, transportFactory);
+    GdchCredentials gdchWithAudience = credentials.createWithGdchAudience(API_AUDIENCE);
+
+    transportFactory.transport.addResponseSequence(
+        new MockLowLevelHttpResponse().setContentType(Json.MEDIA_TYPE).setContent(responseContent));
+
+    IOException ex = assertThrows(IOException.class, () -> gdchWithAudience.refreshAccessToken());
+    assertEquals(expectedErrorMessage, ex.getMessage());
+  }
+
+  @Test
+  void refreshAccessToken_serverError() throws IOException {
+    MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
+    GenericJson json =
+        writeGdchServiceAccountJson(
+            FORMAT_VERSION,
+            PROJECT_ID,
+            PRIVATE_KEY_ID,
+            PRIVATE_KEY_PKCS8,
+            SERVICE_IDENTITY_NAME,
+            CA_CERT_PATH,
+            TOKEN_SERVER_URI);
+    GdchCredentials credentials = GdchCredentials.fromJson(json, transportFactory);
+    GdchCredentials gdchWithAudience = credentials.createWithGdchAudience(API_AUDIENCE);
+
+    transportFactory.transport.addResponseSequence(
+        new MockLowLevelHttpResponse().setStatusCode(400).setReasonPhrase("Bad Request"));
+
+    GoogleAuthException ex =
+        assertThrows(GoogleAuthException.class, () -> gdchWithAudience.refreshAccessToken());
+    assertTrue(ex.getMessage().contains("Error getting access token for GDCH service account"));
+    assertTrue(ex.getMessage().contains("400 Bad Request"));
+  }
+
+  @Test
+  void refreshAccessToken_ioException() throws IOException {
+    MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
+    GenericJson json =
+        writeGdchServiceAccountJson(
+            FORMAT_VERSION,
+            PROJECT_ID,
+            PRIVATE_KEY_ID,
+            PRIVATE_KEY_PKCS8,
+            SERVICE_IDENTITY_NAME,
+            CA_CERT_PATH,
+            TOKEN_SERVER_URI);
+    GdchCredentials credentials = GdchCredentials.fromJson(json, transportFactory);
+    GdchCredentials gdchWithAudience = credentials.createWithGdchAudience(API_AUDIENCE);
+
+    transportFactory.transport.addResponseErrorSequence(new IOException("Connection reset"));
+
+    GoogleAuthException ex =
+        assertThrows(GoogleAuthException.class, () -> gdchWithAudience.refreshAccessToken());
+    assertTrue(ex.getMessage().contains("Error getting access token for GDCH service account"));
+    assertTrue(ex.getMessage().contains("Connection reset"));
+  }
+
+  @Test
+  void transcodeDerToConcat_withGeneratedSignature() throws Exception {
+    // Generate a new key pair and a signature.
+    KeyPairGenerator keyGen = KeyPairGenerator.getInstance("EC");
+    keyGen.initialize(new ECGenParameterSpec("secp256r1"));
+    KeyPair keyPair = keyGen.generateKeyPair();
+    Signature signer = Signature.getInstance("SHA256withECDSA");
+    signer.initSign(keyPair.getPrivate());
+    signer.update(new byte[] {1, 2, 3, 4});
+    byte[] derSignature = signer.sign();
+
+    // Transcode the signature and check length.
+    byte[] jwsSignature = GdchCredentials.transcodeDerToConcat(derSignature, 64);
+    assertEquals(64, jwsSignature.length);
+  }
+
+  @Test
+  void transcodeDerToConcat_invalidDerFormat() {
+    byte[] invalidDer = new byte[] {0x31, 0x00}; // Not a SEQUENCE
+    GoogleAuthException e =
+        assertThrows(
+            GoogleAuthException.class, () -> GdchCredentials.transcodeDerToConcat(invalidDer, 64));
+    assertEquals("Invalid DER signature format.", e.getMessage());
+  }
+
+  @Test
+  void transcodeDerToConcat_invalidLength() {
+    // SEQUENCE length doesn't match actual length
+    byte[] invalidDer = new byte[] {0x30, 0x05, 0x02, 0x01, 0x01, 0x02, 0x01, 0x02};
+    GoogleAuthException e =
+        assertThrows(
+            GoogleAuthException.class, () -> GdchCredentials.transcodeDerToConcat(invalidDer, 64));
+    assertEquals("Invalid DER signature length.", e.getMessage());
+  }
+
+  @Test
+  void transcodeDerToConcat_invalidRInteger() {
+    // Uses BIT STRING (0x03) instead of INTEGER (0x02) for R
+    byte[] invalidDer = new byte[] {0x30, 0x06, 0x03, 0x01, 0x01, 0x02, 0x01, 0x02};
+    GoogleAuthException e =
+        assertThrows(
+            GoogleAuthException.class, () -> GdchCredentials.transcodeDerToConcat(invalidDer, 64));
+    assertEquals("Expected INTEGER for R.", e.getMessage());
+  }
+
+  @Test
+  void transcodeDerToConcat_invalidSInteger() {
+    // Uses BIT STRING (0x03) instead of INTEGER (0x02) for S
+    byte[] invalidDer = new byte[] {0x30, 0x06, 0x02, 0x01, 0x01, 0x03, 0x01, 0x01};
+    GoogleAuthException e =
+        assertThrows(
+            GoogleAuthException.class, () -> GdchCredentials.transcodeDerToConcat(invalidDer, 64));
+    assertEquals("Expected INTEGER for S.", e.getMessage());
+  }
+
+  @Test
+  void signUsingEsSha256_producesVerifiableSignature() throws Exception {
+    KeyPairGenerator keyGen = KeyPairGenerator.getInstance("EC");
+    keyGen.initialize(new ECGenParameterSpec("secp256r1"));
+    KeyPair keyPair = keyGen.generateKeyPair();
+
+    JsonFactory jsonFactory = GsonFactory.getDefaultInstance();
+
+    JsonWebSignature.Header header = new JsonWebSignature.Header();
+    header.setAlgorithm("ES256");
+    header.setType("JWT");
+    header.setKeyId("test-key-id");
+
+    JsonWebToken.Payload payload = new JsonWebToken.Payload();
+    payload.setIssuer("test-issuer");
+    payload.setAudience("test-audience");
+
+    String signedJws =
+        GdchCredentials.signUsingEsSha256(keyPair.getPrivate(), jsonFactory, header, payload);
+
+    // Verify the signature.
+    JsonWebSignature jws = JsonWebSignature.parse(jsonFactory, signedJws);
+    assertTrue(jws.verifySignature(keyPair.getPublic()));
+  }
+
+  @Test
+  void signUsingEsSha256_validStructure() throws Exception {
+    PrivateKey privateKey =
+        OAuth2Utils.privateKeyFromPkcs8(PRIVATE_KEY_PKCS8, OAuth2Utils.Pkcs8Algorithm.EC);
+    JsonFactory jsonFactory = GsonFactory.getDefaultInstance();
+
+    JsonWebSignature.Header header = new JsonWebSignature.Header();
+    header.setAlgorithm("ES256");
+    header.setType("JWT");
+    header.setKeyId(PRIVATE_KEY_ID);
+
+    JsonWebToken.Payload payload = new JsonWebToken.Payload();
+    payload.setIssuer("test-issuer");
+    payload.setAudience("test-audience");
+    payload.setSubject("test-subject");
+    payload.setIssuedAtTimeSeconds(1000L);
+    payload.setExpirationTimeSeconds(2000L);
+
+    String signedJws = GdchCredentials.signUsingEsSha256(privateKey, jsonFactory, header, payload);
+
+    // Verify JWS structure
+    String[] parts = signedJws.split("\\.");
+    assertEquals(3, parts.length);
+
+    // Verify header
+    JsonWebSignature.Header decodedHeader =
+        jsonFactory.fromInputStream(
+            new java.io.ByteArrayInputStream(Base64.getUrlDecoder().decode(parts[0])),
+            JsonWebSignature.Header.class);
+    assertEquals("ES256", decodedHeader.getAlgorithm());
+    assertEquals("JWT", decodedHeader.getType());
+    assertEquals(PRIVATE_KEY_ID, decodedHeader.getKeyId());
+
+    // Verify payload
+    JsonWebToken.Payload decodedPayload =
+        jsonFactory.fromInputStream(
+            new java.io.ByteArrayInputStream(Base64.getUrlDecoder().decode(parts[1])),
+            JsonWebToken.Payload.class);
+    assertEquals("test-issuer", decodedPayload.getIssuer());
+    assertEquals("test-audience", decodedPayload.getAudience());
+    assertEquals("test-subject", decodedPayload.getSubject());
+
+    // Verify signature format (64 bytes for ES256)
+    byte[] signatureBytes = Base64.getUrlDecoder().decode(parts[2]);
+    assertEquals(64, signatureBytes.length);
+  }
+
+  @Test
+  void builder_setGdchAudience_nullString() {
+    GdchCredentials.Builder builder = GdchCredentials.newBuilder();
+    IllegalArgumentException ex =
+        assertThrows(IllegalArgumentException.class, () -> builder.setGdchAudience((String) null));
+    assertTrue(
+        ex.getMessage()
+            .contains("Audience cannot be null or empty for GDCH service account credentials."));
   }
 
   static GenericJson writeGdchServiceAccountJson(

@@ -71,7 +71,7 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   private static final String SA_PRIVATE_KEY_ID = "d84a4fefcf50791d4a90f2d7af17469d6282df9d";
   private static final String SA_PRIVATE_KEY_PKCS8 =
       ServiceAccountCredentialsTest.PRIVATE_KEY_PKCS8;
-  private static final String GDCH_SA_FORMAT_VERSION = GdchCredentials.SUPPORTED_FORMAT_VERSION;
+
   private static final String GDCH_SA_PROJECT_ID = "gdch-service-account-project-id";
   private static final String GDCH_SA_PRIVATE_KEY_ID = "d84a4fefcf50791d4a90f2d7af17469d6282df9d";
   private static final String GDCH_SA_PRIVATE_KEY_PKC8 = GdchCredentialsTest.PRIVATE_KEY_PKCS8;
@@ -82,7 +82,7 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   private static final String GDCH_SA_CA_CERT_FILE_NAME = "cert.pem";
   private static final String GDCH_SA_CA_CERT_PATH =
       GdchCredentialsTest.class.getClassLoader().getResource(GDCH_SA_CA_CERT_FILE_NAME).getPath();
-  private static final URI GDCH_API_AUDIENCE = URI.create("https://gdch-api-audience");
+  private static final String GDCH_API_AUDIENCE = "https://gdch-api-audience";
   private static final String USER_CLIENT_SECRET = "jakuaL9YyieakhECKL2SwZcu";
   private static final String USER_CLIENT_ID = "ya29.1.AADtN_UtlxN3PuGAxrN2XQnZTVRvDyVWnYq4I6dws";
   private static final String REFRESH_TOKEN = "1/Tl6awhpFjkMkSJoj1xsli0H2eL5YsMgU_NKPY2TyGWY";
@@ -248,7 +248,7 @@ class GoogleCredentialsTest extends BaseSerializationTest {
     MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
     InputStream gdchServiceAccountStream =
         GdchCredentialsTest.writeGdchServiceAccountStream(
-            GDCH_SA_FORMAT_VERSION,
+            GdchCredentials.SUPPORTED_JSON_FORMAT_VERSION,
             GDCH_SA_PROJECT_ID,
             GDCH_SA_PRIVATE_KEY_ID,
             GDCH_SA_PRIVATE_KEY_PKC8,
@@ -303,7 +303,7 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   void fromStream_gdchServiceAccountNoProjectId_throws() throws IOException {
     try (InputStream gdchServiceAccountStream =
         GdchCredentialsTest.writeGdchServiceAccountStream(
-            GDCH_SA_FORMAT_VERSION,
+            GdchCredentials.SUPPORTED_JSON_FORMAT_VERSION,
             null,
             GDCH_SA_PRIVATE_KEY_ID,
             GDCH_SA_PRIVATE_KEY_PKC8,
@@ -323,7 +323,7 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   void fromStream_gdchServiceAccountNoPrivateKeyId_throws() throws IOException {
     try (InputStream gdchServiceAccountStream =
         GdchCredentialsTest.writeGdchServiceAccountStream(
-            GDCH_SA_FORMAT_VERSION,
+            GdchCredentials.SUPPORTED_JSON_FORMAT_VERSION,
             GDCH_SA_PROJECT_ID,
             null,
             GDCH_SA_PRIVATE_KEY_PKC8,
@@ -343,7 +343,7 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   void fromStream_gdchServiceAccountNoPrivateKey_throws() throws IOException {
     try (InputStream gdchServiceAccountStream =
         GdchCredentialsTest.writeGdchServiceAccountStream(
-            GDCH_SA_FORMAT_VERSION,
+            GdchCredentials.SUPPORTED_JSON_FORMAT_VERSION,
             GDCH_SA_PROJECT_ID,
             GDCH_SA_PRIVATE_KEY_ID,
             null,
@@ -363,7 +363,7 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   void fromStream_gdchServiceAccountNoServiceIdentityName_throws() throws IOException {
     try (InputStream gdchServiceAccountStream =
         GdchCredentialsTest.writeGdchServiceAccountStream(
-            GDCH_SA_FORMAT_VERSION,
+            GdchCredentials.SUPPORTED_JSON_FORMAT_VERSION,
             GDCH_SA_PROJECT_ID,
             GDCH_SA_PRIVATE_KEY_ID,
             GDCH_SA_PRIVATE_KEY_PKC8,
@@ -383,7 +383,7 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   void fromStream_gdchServiceAccountNoTokenServerUri_throws() throws IOException {
     try (InputStream gdchServiceAccountStream =
         GdchCredentialsTest.writeGdchServiceAccountStream(
-            GDCH_SA_FORMAT_VERSION,
+            GdchCredentials.SUPPORTED_JSON_FORMAT_VERSION,
             GDCH_SA_PROJECT_ID,
             GDCH_SA_PRIVATE_KEY_ID,
             GDCH_SA_PRIVATE_KEY_PKC8,
@@ -419,7 +419,9 @@ class GoogleCredentialsTest extends BaseSerializationTest {
           exception
               .getMessage()
               .contains(
-                  String.format("Only format version %s is supported", GDCH_SA_FORMAT_VERSION)));
+                  String.format(
+                      "Only format version %s is supported",
+                      GdchCredentials.SUPPORTED_JSON_FORMAT_VERSION)));
     }
   }
 
@@ -427,7 +429,7 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   void fromStream_gdchServiceAccountInvalidCaCertPath_throws() throws IOException {
     try (InputStream gdchServiceAccountStream =
         GdchCredentialsTest.writeGdchServiceAccountStream(
-            GDCH_SA_FORMAT_VERSION,
+            GdchCredentials.SUPPORTED_JSON_FORMAT_VERSION,
             GDCH_SA_PROJECT_ID,
             GDCH_SA_PRIVATE_KEY_ID,
             GDCH_SA_PRIVATE_KEY_PKC8,
@@ -900,7 +902,7 @@ class GoogleCredentialsTest extends BaseSerializationTest {
   void getCredentialInfo_gdchCredentials() throws IOException {
     InputStream gdchServiceAccountStream =
         GdchCredentialsTest.writeGdchServiceAccountStream(
-            GDCH_SA_FORMAT_VERSION,
+            GdchCredentials.SUPPORTED_JSON_FORMAT_VERSION,
             GDCH_SA_PROJECT_ID,
             GDCH_SA_PRIVATE_KEY_ID,
             GDCH_SA_PRIVATE_KEY_PKC8,
