@@ -18,7 +18,6 @@ package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.util.concurrent.MoreExecutors;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CacheUpdate;
 import com.google.spanner.v1.CommitRequest;
@@ -36,11 +35,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
@@ -64,8 +63,7 @@ public final class ChannelFinder {
   private final AtomicLong databaseId = new AtomicLong();
   private final KeyRecipeCache recipeCache = new KeyRecipeCache();
   private final KeyRangeCache rangeCache;
-  private final Executor cacheUpdateExecutor =
-      MoreExecutors.newSequentialExecutor(CACHE_UPDATE_POOL);
+  private final AtomicReference<CacheUpdate> pendingUpdate = new AtomicReference<>();
   @Nullable private final EndpointLifecycleManager lifecycleManager;
   @Nullable private final String finderKey;
 
@@ -127,13 +125,31 @@ public final class ChannelFinder {
   }
 
   public void updateAsync(CacheUpdate update) {
-    cacheUpdateExecutor.execute(() -> update(update));
+    // Replace any pending update atomically. Each CacheUpdate contains the full current state,
+    // so intermediate updates can be safely dropped to prevent unbounded queue growth.
+    if (pendingUpdate.getAndSet(update) == null) {
+      // No previous pending update means no drain task is scheduled yet — submit one.
+      CACHE_UPDATE_POOL.execute(this::drainPendingUpdate);
+    }
+  }
+
+  private void drainPendingUpdate() {
+    CacheUpdate toApply;
+    while ((toApply = pendingUpdate.getAndSet(null)) != null) {
+      update(toApply);
+    }
   }
 
   @VisibleForTesting
   void awaitPendingUpdates() throws InterruptedException {
+    // Spin until no pending update remains and the drain task has completed.
+    long deadline = System.nanoTime() + java.util.concurrent.TimeUnit.SECONDS.toNanos(5);
+    while (pendingUpdate.get() != null && System.nanoTime() < deadline) {
+      Thread.sleep(1);
+    }
+    // Submit a barrier task to ensure any in-flight drainPendingUpdate() has finished.
     java.util.concurrent.CountDownLatch latch = new java.util.concurrent.CountDownLatch(1);
-    cacheUpdateExecutor.execute(latch::countDown);
+    CACHE_UPDATE_POOL.execute(latch::countDown);
     latch.await(5, java.util.concurrent.TimeUnit.SECONDS);
   }
 
