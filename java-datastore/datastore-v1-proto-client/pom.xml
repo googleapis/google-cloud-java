@@ -64,6 +64,12 @@
       <artifactId>google-api-client</artifactId>
     </dependency>
 
+    <!-- force dependency due to transitive dependency -->
+    <dependency>
+      <groupId>com.google.auth</groupId>
+      <artifactId>google-auth-library-oauth2-http</artifactId>
+    </dependency>
+
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
