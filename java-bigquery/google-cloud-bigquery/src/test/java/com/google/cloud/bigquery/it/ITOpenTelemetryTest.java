@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigquery.it;
 
-import static com.google.cloud.bigquery.telemetry.ErrorTypeUtil.ErrorType;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -215,7 +214,7 @@ public class ITOpenTelemetryTest {
         assertEquals(
             "java.net.UnknownHostException", attrs.get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
         assertEquals(
-            ErrorType.CLIENT_CONNECTION_ERROR.toString(),
+            "CLIENT_CONNECTION_ERROR",
             attrs.get(BigQueryTelemetryTracer.ERROR_TYPE));
         assertEquals(
             "UnknownHostException: invalid-host-name-12345.com",
