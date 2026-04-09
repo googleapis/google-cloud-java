@@ -1180,6 +1180,34 @@ public class GapicSpannerRpcTest {
     assertEquals(cleanupInterval, grpcGcpOptions.getChannelPoolOptions().getCleanupInterval());
   }
 
+  @Test
+  public void testBuiltInMetricsDisabledSkipsGrpcBuiltInMetricsConfigurator() {
+    try {
+      SpannerOptions.useEnvironment(
+          new SpannerOptions.SpannerEnvironment() {
+            @Override
+            public boolean isEnableGRPCBuiltInMetrics() {
+              return true;
+            }
+          });
+
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("[PROJECT]")
+              .setCredentials(STATIC_CREDENTIALS)
+              .setBuiltInMetricsEnabled(false)
+              .build();
+      InstantiatingGrpcChannelProvider.Builder channelProviderBuilder =
+          InstantiatingGrpcChannelProvider.newBuilder();
+
+      options.enablegRPCMetrics(channelProviderBuilder);
+
+      assertNull(channelProviderBuilder.getChannelConfigurator());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
   private static final class RecordingTransportChannelProvider implements TransportChannelProvider {
     private final String host;
     private final int port;
