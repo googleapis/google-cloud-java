@@ -29,6 +29,8 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.google.api.core.ApiFutures;
+import com.google.cloud.NoCredentials;
+import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.SessionClient.SessionConsumer;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -37,6 +39,9 @@ import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Map;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import org.junit.After;
@@ -309,68 +314,58 @@ public class MultiplexedSessionDatabaseClientTest {
 
   @Test
   public void testCloseRemovesChannelUsageEntryWhenLastClientCloses() throws Exception {
-    SessionClient sessionClient = createSessionClient();
+    try (SpannerImpl spanner = createTestSpanner();
+        SessionClient sessionClient = createSessionClient(spanner)) {
+      MultiplexedSessionDatabaseClient client =
+          new MultiplexedSessionDatabaseClient(sessionClient, Clock.systemUTC());
 
-    MultiplexedSessionDatabaseClient client =
-        new MultiplexedSessionDatabaseClient(sessionClient, Clock.systemUTC());
+      assertEquals(1, getChannelUsage().size());
 
-    assertEquals(1, getChannelUsage().size());
+      client.close();
 
-    client.close();
-
-    assertEquals(0, getChannelUsage().size());
+      assertEquals(0, getChannelUsage().size());
+    }
   }
 
   @Test
   public void testCloseKeepsChannelUsageEntryWhileAnotherClientIsUsingSameSpanner()
       throws Exception {
-    SpannerImpl spanner = mock(SpannerImpl.class);
-    SessionClient firstSessionClient = createSessionClient(spanner);
-    SessionClient secondSessionClient = createSessionClient(spanner);
+    try (SpannerImpl spanner = createTestSpanner();
+        SessionClient firstSessionClient = createSessionClient(spanner);
+        SessionClient secondSessionClient = createSessionClient(spanner)) {
+      MultiplexedSessionDatabaseClient firstClient =
+          new MultiplexedSessionDatabaseClient(firstSessionClient, Clock.systemUTC());
+      MultiplexedSessionDatabaseClient secondClient =
+          new MultiplexedSessionDatabaseClient(secondSessionClient, Clock.systemUTC());
 
-    MultiplexedSessionDatabaseClient firstClient =
-        new MultiplexedSessionDatabaseClient(firstSessionClient, Clock.systemUTC());
-    MultiplexedSessionDatabaseClient secondClient =
-        new MultiplexedSessionDatabaseClient(secondSessionClient, Clock.systemUTC());
+      assertEquals(1, getChannelUsage().size());
 
-    assertEquals(1, getChannelUsage().size());
+      firstClient.close();
+      assertEquals(1, getChannelUsage().size());
 
-    firstClient.close();
-    assertEquals(1, getChannelUsage().size());
-
-    secondClient.close();
-    assertEquals(0, getChannelUsage().size());
-  }
-
-  private SessionClient createSessionClient() {
-    return createSessionClient(mock(SpannerImpl.class));
+      secondClient.close();
+      assertEquals(0, getChannelUsage().size());
+    }
   }
 
   private SessionClient createSessionClient(SpannerImpl spanner) {
-    SessionClient sessionClient = mock(SessionClient.class);
-    SpannerOptions spannerOptions = mock(SpannerOptions.class);
-    SessionPoolOptions sessionPoolOptions = mock(SessionPoolOptions.class);
+    return new FailingMultiplexedSessionClient(spanner);
+  }
 
-    when(sessionClient.getSpanner()).thenReturn(spanner);
-    when(spanner.getOptions()).thenReturn(spannerOptions);
-    when(spannerOptions.getNumChannels()).thenReturn(4);
-    when(spannerOptions.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
-    when(sessionPoolOptions.getMultiplexedSessionMaintenanceDuration())
-        .thenReturn(Duration.ofDays(7));
-    when(sessionPoolOptions.getWaitForMinSessions()).thenReturn(Duration.ZERO);
-    doAnswer(
-            (Answer<?>)
-                invocationOnMock -> {
-                  SessionConsumer consumer = invocationOnMock.getArgument(0);
-                  consumer.onSessionCreateFailure(
-                      SpannerExceptionFactory.newSpannerException(
-                          ErrorCode.UNAUTHENTICATED, "test"),
-                      1);
-                  return null;
-                })
-        .when(sessionClient)
-        .asyncCreateMultiplexedSession(any(SessionConsumer.class));
-    return sessionClient;
+  private SpannerImpl createTestSpanner() {
+    SessionPoolOptions sessionPoolOptions =
+        SessionPoolOptions.newBuilder()
+            .setMultiplexedSessionMaintenanceDuration(Duration.ofDays(7))
+            .setWaitForMinSessionsDuration(Duration.ZERO)
+            .build();
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setNumChannels(4)
+            .setSessionPoolOption(sessionPoolOptions)
+            .build();
+    return new SpannerImpl(options);
   }
 
   @SuppressWarnings("unchecked")
@@ -390,5 +385,38 @@ public class MultiplexedSessionDatabaseClientTest {
 
   private boolean isWindows() {
     return System.getProperty("os.name").toLowerCase().contains("windows");
+  }
+
+  private static final class TestExecutorFactory
+      implements ExecutorFactory<ScheduledExecutorService> {
+    @Override
+    public ScheduledExecutorService get() {
+      return Executors.newSingleThreadScheduledExecutor();
+    }
+
+    @Override
+    public void release(ScheduledExecutorService executor) {
+      executor.shutdown();
+      try {
+        executor.awaitTermination(10L, TimeUnit.SECONDS);
+      } catch (InterruptedException e) {
+        throw new RuntimeException(e);
+      }
+    }
+  }
+
+  private static final class FailingMultiplexedSessionClient extends SessionClient {
+    private static final DatabaseId TEST_DATABASE_ID =
+        DatabaseId.of("test-project", "test-instance", "test-database");
+
+    private FailingMultiplexedSessionClient(SpannerImpl spanner) {
+      super(spanner, TEST_DATABASE_ID, new TestExecutorFactory());
+    }
+
+    @Override
+    void asyncCreateMultiplexedSession(SessionConsumer consumer) {
+      consumer.onSessionCreateFailure(
+          SpannerExceptionFactory.newSpannerException(ErrorCode.UNAUTHENTICATED, "test"), 1);
+    }
   }
 }
