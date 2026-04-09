@@ -18,6 +18,7 @@ package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CacheUpdate;
 import com.google.spanner.v1.CommitRequest;
@@ -36,8 +37,10 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Predicate;
@@ -51,13 +54,9 @@ import javax.annotation.Nullable;
 @InternalApi
 public final class ChannelFinder {
   private static final Predicate<String> NO_EXCLUDED_ENDPOINTS = address -> false;
-  private static final ExecutorService CACHE_UPDATE_POOL =
-      Executors.newCachedThreadPool(
-          r -> {
-            Thread t = new Thread(r, "spanner-cache-update");
-            t.setDaemon(true);
-            return t;
-          });
+  private static final int MAX_CACHE_UPDATE_THREADS =
+      Math.max(2, Runtime.getRuntime().availableProcessors());
+  private static final ExecutorService CACHE_UPDATE_POOL = createCacheUpdatePool();
 
   private final Object updateLock = new Object();
   private final AtomicLong databaseId = new AtomicLong();
@@ -88,6 +87,22 @@ public final class ChannelFinder {
 
   void useDeterministicRandom() {
     rangeCache.useDeterministicRandom();
+  }
+
+  private static ExecutorService createCacheUpdatePool() {
+    ThreadPoolExecutor executor =
+        new ThreadPoolExecutor(
+            MAX_CACHE_UPDATE_THREADS,
+            MAX_CACHE_UPDATE_THREADS,
+            30L,
+            TimeUnit.SECONDS,
+            new LinkedBlockingQueue<>(),
+            new ThreadFactoryBuilder()
+                .setDaemon(true)
+                .setNameFormat("spanner-cache-update-%d")
+                .build());
+    executor.allowCoreThreadTimeOut(true);
+    return executor;
   }
 
   public void update(CacheUpdate update) {

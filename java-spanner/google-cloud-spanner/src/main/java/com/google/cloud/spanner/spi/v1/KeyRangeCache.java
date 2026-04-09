@@ -114,16 +114,24 @@ public final class KeyRangeCache {
       touchedGroups.get(i).update(cacheUpdate.getGroup(i));
     }
 
-    writeLock.lock();
     try {
-      for (Range rangeIn : cacheUpdate.getRangeList()) {
-        replaceRangeIfNewer(rangeIn);
-      }
-      for (CachedGroup group : touchedGroups) {
-        unref(group);
+      writeLock.lock();
+      try {
+        for (Range rangeIn : cacheUpdate.getRangeList()) {
+          replaceRangeIfNewer(rangeIn);
+        }
+      } finally {
+        writeLock.unlock();
       }
     } finally {
-      writeLock.unlock();
+      writeLock.lock();
+      try {
+        for (int i = touchedGroups.size() - 1; i >= 0; i--) {
+          unref(touchedGroups.get(i));
+        }
+      } finally {
+        writeLock.unlock();
+      }
     }
   }
 
