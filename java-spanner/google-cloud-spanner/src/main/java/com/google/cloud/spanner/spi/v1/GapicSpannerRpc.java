@@ -619,7 +619,6 @@ public class GapicSpannerRpc implements SpannerRpc {
       keyAwareChannel.clearTransactionAndChannelAffinity(transactionId, channelHint);
       return;
     }
-    clearTransactionAffinity(transactionId);
     GrpcGcpAffinityUtil.clearChannelHintAffinity(grpcGcpChannel, channelHint);
   }
 

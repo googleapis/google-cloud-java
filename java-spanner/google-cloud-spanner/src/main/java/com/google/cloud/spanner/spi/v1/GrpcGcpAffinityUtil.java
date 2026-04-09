@@ -33,6 +33,8 @@ final class GrpcGcpAffinityUtil {
     if (!(channel instanceof GcpManagedChannel) || channelHint == null) {
       return;
     }
+    // TODO: Replace this synthetic call once grpc-gcp exposes a direct API for unbinding
+    // affinity keys without creating and immediately cancelling a ClientCall.
     ClientCall<ExecuteSqlRequest, ResultSet> call =
         channel.newCall(
             SpannerGrpc.getExecuteSqlMethod(),

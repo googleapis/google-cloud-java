@@ -305,9 +305,10 @@ final class KeyAwareChannel extends ManagedChannel {
   }
 
   void clearTransactionAndChannelAffinity(ByteString transactionId, @Nullable Long channelHint) {
+    String address = transactionAffinities.remove(transactionId);
+    readOnlyTxPreferLeader.invalidate(transactionId);
     if (channelHint != null) {
       ManagedChannel channel = defaultChannel;
-      String address = transactionAffinities.get(transactionId);
       if (address != null) {
         ChannelEndpoint endpoint = endpointCache.getIfPresent(address);
         if (endpoint != null) {
@@ -316,7 +317,6 @@ final class KeyAwareChannel extends ManagedChannel {
       }
       GrpcGcpAffinityUtil.clearChannelHintAffinity(channel, channelHint);
     }
-    clearAffinity(transactionId);
   }
 
   private void maybeExcludeEndpointOnNextCall(
