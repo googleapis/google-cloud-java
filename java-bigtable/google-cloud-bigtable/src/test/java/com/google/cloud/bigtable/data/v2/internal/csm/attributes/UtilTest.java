@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,10 +38,7 @@ class UtilTest {
 
   @Test
   public void testOk() {
-    TagValue tagValue =
-        TagValue.create(
-            com.google.cloud.bigtable.data.v2.internal.csm.attributes.Util.extractStatus(null)
-                .name());
+    TagValue tagValue = TagValue.create(Util.extractStatus(null).name());
     assertThat(tagValue.asString()).isEqualTo("OK");
   }
 

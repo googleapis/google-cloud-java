@@ -511,6 +511,180 @@ public final class BigtableGrpc {
     return getExecuteQueryMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.v2.GetClientConfigurationRequest,
+          com.google.bigtable.v2.ClientConfiguration>
+      getGetClientConfigurationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetClientConfiguration",
+      requestType = com.google.bigtable.v2.GetClientConfigurationRequest.class,
+      responseType = com.google.bigtable.v2.ClientConfiguration.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.v2.GetClientConfigurationRequest,
+          com.google.bigtable.v2.ClientConfiguration>
+      getGetClientConfigurationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.v2.GetClientConfigurationRequest,
+            com.google.bigtable.v2.ClientConfiguration>
+        getGetClientConfigurationMethod;
+    if ((getGetClientConfigurationMethod = BigtableGrpc.getGetClientConfigurationMethod) == null) {
+      synchronized (BigtableGrpc.class) {
+        if ((getGetClientConfigurationMethod = BigtableGrpc.getGetClientConfigurationMethod)
+            == null) {
+          BigtableGrpc.getGetClientConfigurationMethod =
+              getGetClientConfigurationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.v2.GetClientConfigurationRequest,
+                          com.google.bigtable.v2.ClientConfiguration>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetClientConfiguration"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.v2.GetClientConfigurationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.v2.ClientConfiguration.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableMethodDescriptorSupplier("GetClientConfiguration"))
+                      .build();
+        }
+      }
+    }
+    return getGetClientConfigurationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.v2.SessionRequest, com.google.bigtable.v2.SessionResponse>
+      getOpenTableMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "OpenTable",
+      requestType = com.google.bigtable.v2.SessionRequest.class,
+      responseType = com.google.bigtable.v2.SessionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.v2.SessionRequest, com.google.bigtable.v2.SessionResponse>
+      getOpenTableMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.v2.SessionRequest, com.google.bigtable.v2.SessionResponse>
+        getOpenTableMethod;
+    if ((getOpenTableMethod = BigtableGrpc.getOpenTableMethod) == null) {
+      synchronized (BigtableGrpc.class) {
+        if ((getOpenTableMethod = BigtableGrpc.getOpenTableMethod) == null) {
+          BigtableGrpc.getOpenTableMethod =
+              getOpenTableMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.v2.SessionRequest,
+                          com.google.bigtable.v2.SessionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "OpenTable"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.v2.SessionRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.v2.SessionResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new BigtableMethodDescriptorSupplier("OpenTable"))
+                      .build();
+        }
+      }
+    }
+    return getOpenTableMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.v2.SessionRequest, com.google.bigtable.v2.SessionResponse>
+      getOpenAuthorizedViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "OpenAuthorizedView",
+      requestType = com.google.bigtable.v2.SessionRequest.class,
+      responseType = com.google.bigtable.v2.SessionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.v2.SessionRequest, com.google.bigtable.v2.SessionResponse>
+      getOpenAuthorizedViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.v2.SessionRequest, com.google.bigtable.v2.SessionResponse>
+        getOpenAuthorizedViewMethod;
+    if ((getOpenAuthorizedViewMethod = BigtableGrpc.getOpenAuthorizedViewMethod) == null) {
+      synchronized (BigtableGrpc.class) {
+        if ((getOpenAuthorizedViewMethod = BigtableGrpc.getOpenAuthorizedViewMethod) == null) {
+          BigtableGrpc.getOpenAuthorizedViewMethod =
+              getOpenAuthorizedViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.v2.SessionRequest,
+                          com.google.bigtable.v2.SessionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "OpenAuthorizedView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.v2.SessionRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.v2.SessionResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableMethodDescriptorSupplier("OpenAuthorizedView"))
+                      .build();
+        }
+      }
+    }
+    return getOpenAuthorizedViewMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.bigtable.v2.SessionRequest, com.google.bigtable.v2.SessionResponse>
+      getOpenMaterializedViewMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "OpenMaterializedView",
+      requestType = com.google.bigtable.v2.SessionRequest.class,
+      responseType = com.google.bigtable.v2.SessionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<
+          com.google.bigtable.v2.SessionRequest, com.google.bigtable.v2.SessionResponse>
+      getOpenMaterializedViewMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.bigtable.v2.SessionRequest, com.google.bigtable.v2.SessionResponse>
+        getOpenMaterializedViewMethod;
+    if ((getOpenMaterializedViewMethod = BigtableGrpc.getOpenMaterializedViewMethod) == null) {
+      synchronized (BigtableGrpc.class) {
+        if ((getOpenMaterializedViewMethod = BigtableGrpc.getOpenMaterializedViewMethod) == null) {
+          BigtableGrpc.getOpenMaterializedViewMethod =
+              getOpenMaterializedViewMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.bigtable.v2.SessionRequest,
+                          com.google.bigtable.v2.SessionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "OpenMaterializedView"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.v2.SessionRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.bigtable.v2.SessionResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new BigtableMethodDescriptorSupplier("OpenMaterializedView"))
+                      .build();
+        }
+      }
+    }
+    return getOpenMaterializedViewMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static BigtableStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<BigtableStub> factory =
@@ -750,6 +924,67 @@ public final class BigtableGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getExecuteQueryMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * This RPC is only intended to be used by the official Cloud Bigtable client
+     * libraries to implement the Bigtable Session based protocol. It is subject
+     * to change without notice.
+     * </pre>
+     */
+    default void getClientConfiguration(
+        com.google.bigtable.v2.GetClientConfigurationRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.v2.ClientConfiguration> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetClientConfigurationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This RPC is only intended to be used by the official Cloud Bigtable client
+     * libraries to implement the Bigtable Session based protocol. It is subject
+     * to change without notice.
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<com.google.bigtable.v2.SessionRequest> openTable(
+        io.grpc.stub.StreamObserver<com.google.bigtable.v2.SessionResponse> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getOpenTableMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This RPC is only intended to be used by the official Cloud Bigtable client
+     * libraries to implement the Bigtable Session based protocol. It is subject
+     * to change without notice.
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<com.google.bigtable.v2.SessionRequest> openAuthorizedView(
+        io.grpc.stub.StreamObserver<com.google.bigtable.v2.SessionResponse> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getOpenAuthorizedViewMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This RPC is only intended to be used by the official Cloud Bigtable client
+     * libraries to implement the Bigtable Session based protocol. It is subject
+     * to change without notice.
+     * </pre>
+     */
+    default io.grpc.stub.StreamObserver<com.google.bigtable.v2.SessionRequest> openMaterializedView(
+        io.grpc.stub.StreamObserver<com.google.bigtable.v2.SessionResponse> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(
+          getOpenMaterializedViewMethod(), responseObserver);
+    }
   }
 
   /**
@@ -980,6 +1215,70 @@ public final class BigtableGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * This RPC is only intended to be used by the official Cloud Bigtable client
+     * libraries to implement the Bigtable Session based protocol. It is subject
+     * to change without notice.
+     * </pre>
+     */
+    public void getClientConfiguration(
+        com.google.bigtable.v2.GetClientConfigurationRequest request,
+        io.grpc.stub.StreamObserver<com.google.bigtable.v2.ClientConfiguration> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetClientConfigurationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This RPC is only intended to be used by the official Cloud Bigtable client
+     * libraries to implement the Bigtable Session based protocol. It is subject
+     * to change without notice.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.google.bigtable.v2.SessionRequest> openTable(
+        io.grpc.stub.StreamObserver<com.google.bigtable.v2.SessionResponse> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getOpenTableMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This RPC is only intended to be used by the official Cloud Bigtable client
+     * libraries to implement the Bigtable Session based protocol. It is subject
+     * to change without notice.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.google.bigtable.v2.SessionRequest> openAuthorizedView(
+        io.grpc.stub.StreamObserver<com.google.bigtable.v2.SessionResponse> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getOpenAuthorizedViewMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This RPC is only intended to be used by the official Cloud Bigtable client
+     * libraries to implement the Bigtable Session based protocol. It is subject
+     * to change without notice.
+     * </pre>
+     */
+    public io.grpc.stub.StreamObserver<com.google.bigtable.v2.SessionRequest> openMaterializedView(
+        io.grpc.stub.StreamObserver<com.google.bigtable.v2.SessionResponse> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getOpenMaterializedViewMethod(), getCallOptions()),
+          responseObserver);
+    }
   }
 
   /**
@@ -1175,6 +1474,73 @@ public final class BigtableGrpc {
       return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
           getChannel(), getExecuteQueryMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * This RPC is only intended to be used by the official Cloud Bigtable client
+     * libraries to implement the Bigtable Session based protocol. It is subject
+     * to change without notice.
+     * </pre>
+     */
+    public com.google.bigtable.v2.ClientConfiguration getClientConfiguration(
+        com.google.bigtable.v2.GetClientConfigurationRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetClientConfigurationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This RPC is only intended to be used by the official Cloud Bigtable client
+     * libraries to implement the Bigtable Session based protocol. It is subject
+     * to change without notice.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.bigtable.v2.SessionRequest, com.google.bigtable.v2.SessionResponse>
+        openTable() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getOpenTableMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This RPC is only intended to be used by the official Cloud Bigtable client
+     * libraries to implement the Bigtable Session based protocol. It is subject
+     * to change without notice.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.bigtable.v2.SessionRequest, com.google.bigtable.v2.SessionResponse>
+        openAuthorizedView() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getOpenAuthorizedViewMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This RPC is only intended to be used by the official Cloud Bigtable client
+     * libraries to implement the Bigtable Session based protocol. It is subject
+     * to change without notice.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.bigtable.v2.SessionRequest, com.google.bigtable.v2.SessionResponse>
+        openMaterializedView() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getOpenMaterializedViewMethod(), getCallOptions());
+    }
   }
 
   /**
@@ -1362,6 +1728,21 @@ public final class BigtableGrpc {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getExecuteQueryMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * This RPC is only intended to be used by the official Cloud Bigtable client
+     * libraries to implement the Bigtable Session based protocol. It is subject
+     * to change without notice.
+     * </pre>
+     */
+    public com.google.bigtable.v2.ClientConfiguration getClientConfiguration(
+        com.google.bigtable.v2.GetClientConfigurationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetClientConfigurationMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1457,6 +1838,22 @@ public final class BigtableGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getPrepareQueryMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * This RPC is only intended to be used by the official Cloud Bigtable client
+     * libraries to implement the Bigtable Session based protocol. It is subject
+     * to change without notice.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.bigtable.v2.ClientConfiguration>
+        getClientConfiguration(com.google.bigtable.v2.GetClientConfigurationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetClientConfigurationMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_READ_ROWS = 0;
@@ -1470,6 +1867,10 @@ public final class BigtableGrpc {
   private static final int METHODID_READ_CHANGE_STREAM = 8;
   private static final int METHODID_PREPARE_QUERY = 9;
   private static final int METHODID_EXECUTE_QUERY = 10;
+  private static final int METHODID_GET_CLIENT_CONFIGURATION = 11;
+  private static final int METHODID_OPEN_TABLE = 12;
+  private static final int METHODID_OPEN_AUTHORIZED_VIEW = 13;
+  private static final int METHODID_OPEN_MATERIALIZED_VIEW = 14;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1555,6 +1956,12 @@ public final class BigtableGrpc {
               (io.grpc.stub.StreamObserver<com.google.bigtable.v2.ExecuteQueryResponse>)
                   responseObserver);
           break;
+        case METHODID_GET_CLIENT_CONFIGURATION:
+          serviceImpl.getClientConfiguration(
+              (com.google.bigtable.v2.GetClientConfigurationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.bigtable.v2.ClientConfiguration>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -1565,6 +1972,21 @@ public final class BigtableGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_OPEN_TABLE:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.openTable(
+                  (io.grpc.stub.StreamObserver<com.google.bigtable.v2.SessionResponse>)
+                      responseObserver);
+        case METHODID_OPEN_AUTHORIZED_VIEW:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.openAuthorizedView(
+                  (io.grpc.stub.StreamObserver<com.google.bigtable.v2.SessionResponse>)
+                      responseObserver);
+        case METHODID_OPEN_MATERIALIZED_VIEW:
+          return (io.grpc.stub.StreamObserver<Req>)
+              serviceImpl.openMaterializedView(
+                  (io.grpc.stub.StreamObserver<com.google.bigtable.v2.SessionResponse>)
+                      responseObserver);
         default:
           throw new AssertionError();
       }
@@ -1644,6 +2066,31 @@ public final class BigtableGrpc {
                 new MethodHandlers<
                     com.google.bigtable.v2.ExecuteQueryRequest,
                     com.google.bigtable.v2.ExecuteQueryResponse>(service, METHODID_EXECUTE_QUERY)))
+        .addMethod(
+            getGetClientConfigurationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.bigtable.v2.GetClientConfigurationRequest,
+                    com.google.bigtable.v2.ClientConfiguration>(
+                    service, METHODID_GET_CLIENT_CONFIGURATION)))
+        .addMethod(
+            getOpenTableMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.bigtable.v2.SessionRequest, com.google.bigtable.v2.SessionResponse>(
+                    service, METHODID_OPEN_TABLE)))
+        .addMethod(
+            getOpenAuthorizedViewMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.bigtable.v2.SessionRequest, com.google.bigtable.v2.SessionResponse>(
+                    service, METHODID_OPEN_AUTHORIZED_VIEW)))
+        .addMethod(
+            getOpenMaterializedViewMethod(),
+            io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+                new MethodHandlers<
+                    com.google.bigtable.v2.SessionRequest, com.google.bigtable.v2.SessionResponse>(
+                    service, METHODID_OPEN_MATERIALIZED_VIEW)))
         .build();
   }
 
@@ -1704,6 +2151,10 @@ public final class BigtableGrpc {
                       .addMethod(getReadChangeStreamMethod())
                       .addMethod(getPrepareQueryMethod())
                       .addMethod(getExecuteQueryMethod())
+                      .addMethod(getGetClientConfigurationMethod())
+                      .addMethod(getOpenTableMethod())
+                      .addMethod(getOpenAuthorizedViewMethod())
+                      .addMethod(getOpenMaterializedViewMethod())
                       .build();
         }
       }

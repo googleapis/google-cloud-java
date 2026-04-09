@@ -20,6 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.Mutation.SetCell;
+import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.common.primitives.Longs;
@@ -29,6 +30,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -279,5 +281,23 @@ public class RowMutationTest {
     assertThat(overriddenRequest.getAuthorizedViewName())
         .matches(NameUtil.formatAuthorizedViewName(projectId, instanceId, AUTHORIZED_VIEW_ID));
     assertThat(overriddenRequest.getAppProfileId()).matches(appProfile);
+  }
+
+  @Test
+  public void toSessionProtoTest() {
+    RowMutation rowMutation =
+        RowMutation.create(TABLE_ID, TEST_KEY)
+            .setCell("cf1", "q1", "v1")
+            .setCell("cf2", "q2", "v2");
+
+    List<com.google.bigtable.v2.Mutation> mutations =
+        rowMutation.toProto(REQUEST_CONTEXT).getMutationsList();
+
+    SessionMutateRowRequest expected =
+        SessionMutateRowRequest.newBuilder().setKey(TEST_KEY).addAllMutations(mutations).build();
+
+    SessionMutateRowRequest sessionProto = rowMutation.toSessionProto();
+
+    assertThat(sessionProto).isEqualTo(expected);
   }
 }

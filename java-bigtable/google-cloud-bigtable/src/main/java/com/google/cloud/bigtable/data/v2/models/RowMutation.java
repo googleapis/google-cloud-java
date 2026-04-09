@@ -20,6 +20,7 @@ import com.google.api.core.InternalApi;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowsRequest;
 import com.google.bigtable.v2.MutateRowsRequest.Entry;
+import com.google.bigtable.v2.SessionMutateRowRequest;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
 import com.google.cloud.bigtable.data.v2.models.Range.TimestampRange;
@@ -253,6 +254,19 @@ public final class RowMutation implements MutationApi<RowMutation>, Serializable
       @Nonnull Value input) {
     mutation.mergeToCell(familyName, qualifier, timestamp, input);
     return this;
+  }
+
+  @InternalApi
+  public TargetId getTargetId() {
+    return targetId;
+  }
+
+  @InternalApi
+  public SessionMutateRowRequest toSessionProto() {
+    return SessionMutateRowRequest.newBuilder()
+        .setKey(key)
+        .addAllMutations(mutation.getMutations())
+        .build();
   }
 
   @InternalApi

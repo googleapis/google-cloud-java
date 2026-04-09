@@ -54,24 +54,25 @@ public final class PeerInfoProto extends com.google.protobuf.GeneratedFile {
   static {
     java.lang.String[] descriptorData = {
       "\n\"google/bigtable/v2/peer_info.proto\022\022go"
-          + "ogle.bigtable.v2\"\372\003\n\010PeerInfo\022\032\n\022google_"
+          + "ogle.bigtable.v2\"\243\004\n\010PeerInfo\022\032\n\022google_"
           + "frontend_id\030\001 \001(\003\022\037\n\027application_fronten"
-          + "d_id\030\002 \001(\003\022!\n\031application_frontend_zone\030"
-          + "\003 \001(\t\022$\n\034application_frontend_subzone\030\004 "
-          + "\001(\t\022B\n\016transport_type\030\005 \001(\0162*.google.big"
-          + "table.v2.PeerInfo.TransportType\"\243\002\n\rTran"
-          + "sportType\022\032\n\026TRANSPORT_TYPE_UNKNOWN\020\000\022\033\n"
-          + "\027TRANSPORT_TYPE_EXTERNAL\020\001\022\035\n\031TRANSPORT_"
-          + "TYPE_CLOUD_PATH\020\002\022 \n\034TRANSPORT_TYPE_DIRE"
-          + "CT_ACCESS\020\003\022\"\n\036TRANSPORT_TYPE_SESSION_UN"
-          + "KNOWN\020\004\022#\n\037TRANSPORT_TYPE_SESSION_EXTERN"
-          + "AL\020\005\022%\n!TRANSPORT_TYPE_SESSION_CLOUD_PAT"
-          + "H\020\006\022(\n$TRANSPORT_TYPE_SESSION_DIRECT_ACC"
-          + "ESS\020\007B\267\001\n\026com.google.bigtable.v2B\rPeerIn"
-          + "foProtoP\001Z8cloud.google.com/go/bigtable/"
-          + "apiv2/bigtablepb;bigtablepb\252\002\030Google.Clo"
-          + "ud.Bigtable.V2\312\002\030Google\\Cloud\\Bigtable\\V"
-          + "2\352\002\033Google::Cloud::Bigtable::V2b\006proto3"
+          + "d_id\030\002 \001(\003\022#\n\033application_frontend_regio"
+          + "n\030\006 \001(\t\022%\n\031application_frontend_zone\030\003 \001"
+          + "(\tB\002\030\001\022$\n\034application_frontend_subzone\030\004"
+          + " \001(\t\022B\n\016transport_type\030\005 \001(\0162*.google.bi"
+          + "gtable.v2.PeerInfo.TransportType\"\243\002\n\rTra"
+          + "nsportType\022\032\n\026TRANSPORT_TYPE_UNKNOWN\020\000\022\033"
+          + "\n\027TRANSPORT_TYPE_EXTERNAL\020\001\022\035\n\031TRANSPORT"
+          + "_TYPE_CLOUD_PATH\020\002\022 \n\034TRANSPORT_TYPE_DIR"
+          + "ECT_ACCESS\020\003\022\"\n\036TRANSPORT_TYPE_SESSION_U"
+          + "NKNOWN\020\004\022#\n\037TRANSPORT_TYPE_SESSION_EXTER"
+          + "NAL\020\005\022%\n!TRANSPORT_TYPE_SESSION_CLOUD_PA"
+          + "TH\020\006\022(\n$TRANSPORT_TYPE_SESSION_DIRECT_AC"
+          + "CESS\020\007B\267\001\n\026com.google.bigtable.v2B\rPeerI"
+          + "nfoProtoP\001Z8cloud.google.com/go/bigtable"
+          + "/apiv2/bigtablepb;bigtablepb\252\002\030Google.Cl"
+          + "oud.Bigtable.V2\312\002\030Google\\Cloud\\Bigtable\\"
+          + "V2\352\002\033Google::Cloud::Bigtable::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -83,6 +84,7 @@ public final class PeerInfoProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "GoogleFrontendId",
               "ApplicationFrontendId",
+              "ApplicationFrontendRegion",
               "ApplicationFrontendZone",
               "ApplicationFrontendSubzone",
               "TransportType",

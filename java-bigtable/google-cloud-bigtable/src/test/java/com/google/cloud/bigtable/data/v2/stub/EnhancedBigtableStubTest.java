@@ -333,6 +333,8 @@ public class EnhancedBigtableStubTest {
       assertThat(featureFlags.getLastScannedRowResponses()).isTrue();
       assertThat(featureFlags.getRoutingCookie()).isTrue();
       assertThat(featureFlags.getRetryInfo()).isTrue();
+      assertThat(featureFlags.getPeerInfo()).isTrue();
+      assertThat(featureFlags.getSessionsCompatible()).isTrue();
     }
   }
 

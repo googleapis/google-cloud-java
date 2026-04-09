@@ -19,6 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.core.SettableApiFuture;
 import com.google.bigtable.v2.PingAndWarmResponse;
+import com.google.cloud.bigtable.data.v2.internal.session.fake.FakeClock;
 import com.google.cloud.bigtable.data.v2.stub.BigtableChannelPrimer;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPool.Entry;
 import com.google.cloud.bigtable.gaxx.grpc.ChannelPoolHealthChecker.ProbeResult;
@@ -26,7 +27,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.ListeningScheduledExecutorService;
 import com.google.common.util.concurrent.testing.TestingExecutors;
 import io.grpc.ManagedChannel;
-import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -49,7 +49,7 @@ public class ChannelPoolHealthCheckerTest {
   @Rule public MockitoRule mockitoRule = MockitoJUnit.rule();
   @Mock private BigtableChannelPrimer mockPrimer;
   private ListeningScheduledExecutorService executor;
-  @Mock private Clock mockClock;
+  private FakeClock fakeClock;
   private ChannelPoolHealthChecker healthChecker;
   private List<Entry> channelList;
 
@@ -59,10 +59,8 @@ public class ChannelPoolHealthCheckerTest {
     channelList = new ArrayList<>();
     Supplier<ImmutableList<Entry>> entrySupplier = () -> ImmutableList.copyOf(channelList);
 
-    healthChecker = new ChannelPoolHealthChecker(entrySupplier, mockPrimer, executor, mockClock);
-
-    // Default the clock to a fixed time
-    Mockito.when(mockClock.instant()).thenReturn(Instant.parse("2025-08-01T10:00:00Z"));
+    fakeClock = new FakeClock(Instant.parse("2025-08-01T10:00:00Z"));
+    healthChecker = new ChannelPoolHealthChecker(entrySupplier, mockPrimer, executor, fakeClock);
   }
 
   // Helper method to create test entries
@@ -113,11 +111,10 @@ public class ChannelPoolHealthCheckerTest {
   @Test
   public void testPruning_removesOldProbesAndCounters() {
     Entry entry = createTestEntry();
-    healthChecker.addProbeResult(entry, ProbeResult.create(mockClock.instant(), false));
+    healthChecker.addProbeResult(entry, ProbeResult.create(fakeClock.instant(), false));
     assertThat(entry.failedProbesInWindow.get()).isEqualTo(1);
 
-    Instant newTime = mockClock.instant().plus(Duration.ofMinutes(6));
-    Mockito.when(mockClock.instant()).thenReturn(newTime);
+    fakeClock.increment(Duration.ofMinutes(6));
     healthChecker.pruneHistory(entry); // Manually call for direct testing
 
     assertThat(entry.probeHistory).isEmpty();

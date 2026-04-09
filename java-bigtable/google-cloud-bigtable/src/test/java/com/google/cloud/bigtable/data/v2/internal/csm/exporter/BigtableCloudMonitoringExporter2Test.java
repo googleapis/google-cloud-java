@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.bigtable.v2.TableName;
-import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
+import com.google.cloud.bigtable.data.v2.internal.api.TableName;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.EnvInfo;
@@ -102,7 +101,7 @@ class BigtableCloudMonitoringExporter2Test {
 
     clientInfo =
         ClientInfo.builder()
-            .setInstanceName(InstanceName.of(tableName.getProject(), tableName.getInstance()))
+            .setInstanceName(tableName.getInstanceName())
             .setAppProfileId(appProfileId)
             .build();
 
@@ -113,9 +112,9 @@ class BigtableCloudMonitoringExporter2Test {
 
     attributes =
         Attributes.builder()
-            .put(TableSchema.BIGTABLE_PROJECT_ID_KEY, tableName.getProject())
-            .put(TableSchema.INSTANCE_ID_KEY, tableName.getInstance())
-            .put(TableSchema.TABLE_ID_KEY, tableName.getTable())
+            .put(TableSchema.BIGTABLE_PROJECT_ID_KEY, tableName.getProjectId())
+            .put(TableSchema.INSTANCE_ID_KEY, tableName.getInstanceId())
+            .put(TableSchema.TABLE_ID_KEY, tableName.getTableId())
             .put(TableSchema.CLUSTER_ID_KEY, cluster)
             .put(TableSchema.ZONE_ID_KEY, zone)
             .put(MetricLabels.APP_PROFILE_KEY, appProfileId)
@@ -158,9 +157,9 @@ class BigtableCloudMonitoringExporter2Test {
 
     assertThat(timeSeries.getResource().getLabelsMap())
         .containsExactly(
-            TableSchema.BIGTABLE_PROJECT_ID_KEY.getKey(), tableName.getProject(),
-            TableSchema.INSTANCE_ID_KEY.getKey(), tableName.getInstance(),
-            TableSchema.TABLE_ID_KEY.getKey(), tableName.getTable(),
+            TableSchema.BIGTABLE_PROJECT_ID_KEY.getKey(), tableName.getProjectId(),
+            TableSchema.INSTANCE_ID_KEY.getKey(), tableName.getInstanceId(),
+            TableSchema.TABLE_ID_KEY.getKey(), tableName.getTableId(),
             TableSchema.CLUSTER_ID_KEY.getKey(), cluster,
             TableSchema.ZONE_ID_KEY.getKey(), zone);
 
@@ -215,9 +214,9 @@ class BigtableCloudMonitoringExporter2Test {
 
     assertThat(timeSeries.getResource().getLabelsMap())
         .containsExactly(
-            TableSchema.BIGTABLE_PROJECT_ID_KEY.getKey(), tableName.getProject(),
-            TableSchema.INSTANCE_ID_KEY.getKey(), tableName.getInstance(),
-            TableSchema.TABLE_ID_KEY.getKey(), tableName.getTable(),
+            TableSchema.BIGTABLE_PROJECT_ID_KEY.getKey(), tableName.getProjectId(),
+            TableSchema.INSTANCE_ID_KEY.getKey(), tableName.getInstanceId(),
+            TableSchema.TABLE_ID_KEY.getKey(), tableName.getTableId(),
             TableSchema.CLUSTER_ID_KEY.getKey(), cluster,
             TableSchema.ZONE_ID_KEY.getKey(), zone);
 
@@ -245,9 +244,9 @@ class BigtableCloudMonitoringExporter2Test {
     for (int i = 0; i < 250; i++) {
       Attributes testAttributes =
           Attributes.builder()
-              .put(TableSchema.BIGTABLE_PROJECT_ID_KEY, tableName.getProject())
-              .put(TableSchema.INSTANCE_ID_KEY, tableName.getInstance())
-              .put(TableSchema.TABLE_ID_KEY, tableName.getTable() + i)
+              .put(TableSchema.BIGTABLE_PROJECT_ID_KEY, tableName.getProjectId())
+              .put(TableSchema.INSTANCE_ID_KEY, tableName.getInstanceId())
+              .put(TableSchema.TABLE_ID_KEY, tableName.getTableId() + i)
               .put(TableSchema.CLUSTER_ID_KEY, cluster)
               .put(TableSchema.ZONE_ID_KEY, zone)
               .put(MetricLabels.APP_PROFILE_KEY, appProfileId)
@@ -287,11 +286,11 @@ class BigtableCloudMonitoringExporter2Test {
       assertThat(timeSeries.getResource().getLabelsMap())
           .containsExactly(
               TableSchema.BIGTABLE_PROJECT_ID_KEY.getKey(),
-              tableName.getProject(),
+              tableName.getProjectId(),
               TableSchema.INSTANCE_ID_KEY.getKey(),
-              tableName.getInstance(),
+              tableName.getInstanceId(),
               TableSchema.TABLE_ID_KEY.getKey(),
-              tableName.getTable() + i,
+              tableName.getTableId() + i,
               TableSchema.CLUSTER_ID_KEY.getKey(),
               cluster,
               TableSchema.ZONE_ID_KEY.getKey(),
@@ -326,7 +325,7 @@ class BigtableCloudMonitoringExporter2Test {
 
     ClientInfo clientInfo =
         ClientInfo.builder()
-            .setInstanceName(InstanceName.of(tableName.getProject(), tableName.getInstance()))
+            .setInstanceName(tableName.getInstanceName())
             .setAppProfileId(appProfileId)
             .build();
 
@@ -343,9 +342,9 @@ class BigtableCloudMonitoringExporter2Test {
             endEpoch,
             Attributes.of(
                 ClientSchema.BIGTABLE_PROJECT_ID_KEY,
-                tableName.getProject(),
+                tableName.getProjectId(),
                 ClientSchema.INSTANCE_ID_KEY,
-                tableName.getInstance(),
+                tableName.getInstanceId(),
                 ClientSchema.APP_PROFILE_KEY,
                 appProfileId,
                 ClientSchema.CLIENT_NAME,
@@ -372,7 +371,7 @@ class BigtableCloudMonitoringExporter2Test {
 
     CreateTimeSeriesRequest request = mockMetricServiceStub.requests.poll(1, TimeUnit.MINUTES);
 
-    assertThat(request.getName()).isEqualTo("projects/" + tableName.getProject());
+    assertThat(request.getName()).isEqualTo("projects/" + tableName.getProjectId());
     assertThat(request.getTimeSeriesList()).hasSize(1);
 
     TimeSeries timeSeries = request.getTimeSeriesList().get(0);
@@ -380,8 +379,8 @@ class BigtableCloudMonitoringExporter2Test {
     assertThat(timeSeries.getResource().getLabelsMap())
         .isEqualTo(
             ImmutableMap.<String, String>builder()
-                .put("project_id", tableName.getProject())
-                .put("instance", tableName.getInstance())
+                .put("project_id", tableName.getProjectId())
+                .put("instance", tableName.getInstanceId())
                 .put("app_profile", appProfileId)
                 .put("client_project", gceProjectId)
                 .put("region", "cleint-region")
@@ -395,8 +394,8 @@ class BigtableCloudMonitoringExporter2Test {
     assertThat(timeSeries.getMetric().getLabelsMap())
         .isEqualTo(
             ImmutableMap.builder()
-                .put(ClientSchema.BIGTABLE_PROJECT_ID_KEY.getKey(), tableName.getProject())
-                .put(ClientSchema.INSTANCE_ID_KEY.getKey(), tableName.getInstance())
+                .put(ClientSchema.BIGTABLE_PROJECT_ID_KEY.getKey(), tableName.getProjectId())
+                .put(ClientSchema.INSTANCE_ID_KEY.getKey(), tableName.getInstanceId())
                 .put(ClientSchema.APP_PROFILE_KEY.getKey(), appProfileId)
                 .put(ClientSchema.CLIENT_NAME.getKey(), clientInfo.getClientName())
                 .put(MetricLabels.CLIENT_UID.getKey(), envInfo.getUid())
@@ -483,11 +482,11 @@ class BigtableCloudMonitoringExporter2Test {
         .containsExactly(
             ImmutableMap.of(
                 TableSchema.BIGTABLE_PROJECT_ID_KEY.getKey(),
-                tableName.getProject(),
+                tableName.getProjectId(),
                 TableSchema.INSTANCE_ID_KEY.getKey(),
-                tableName.getInstance(),
+                tableName.getInstanceId(),
                 TableSchema.TABLE_ID_KEY.getKey(),
-                tableName.getTable(),
+                tableName.getTableId(),
                 TableSchema.CLUSTER_ID_KEY.getKey(),
                 cluster,
                 TableSchema.ZONE_ID_KEY.getKey(),
@@ -496,9 +495,9 @@ class BigtableCloudMonitoringExporter2Test {
                 TableSchema.BIGTABLE_PROJECT_ID_KEY.getKey(),
                 "another-project",
                 TableSchema.INSTANCE_ID_KEY.getKey(),
-                tableName.getInstance(),
+                tableName.getInstanceId(),
                 TableSchema.TABLE_ID_KEY.getKey(),
-                tableName.getTable(),
+                tableName.getTableId(),
                 TableSchema.CLUSTER_ID_KEY.getKey(),
                 cluster,
                 TableSchema.ZONE_ID_KEY.getKey(),

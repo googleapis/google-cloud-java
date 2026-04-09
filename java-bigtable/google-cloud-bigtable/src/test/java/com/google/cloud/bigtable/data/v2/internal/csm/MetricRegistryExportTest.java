@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,16 +26,21 @@ import com.google.api.MonitoredResource;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
+import com.google.bigtable.v2.CloseSessionRequest.CloseSessionReason;
+import com.google.bigtable.v2.ClusterInformation;
 import com.google.bigtable.v2.PeerInfo;
 import com.google.bigtable.v2.PeerInfo.TransportType;
-import com.google.bigtable.v2.ResponseParams;
 import com.google.cloud.bigtable.data.v2.FakeServiceBuilder;
 import com.google.cloud.bigtable.data.v2.internal.api.InstanceName;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry.RecorderRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.EnvInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.MethodInfo;
+import com.google.cloud.bigtable.data.v2.internal.csm.attributes.Util;
 import com.google.cloud.bigtable.data.v2.internal.csm.exporter.BigtableCloudMonitoringExporter;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientSessionDuration.SessionCloseVRpcState;
+import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolInfo;
+import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableChannelPoolSettings.LoadBalancingStrategy;
 import com.google.cloud.monitoring.v3.MetricServiceClient;
 import com.google.cloud.monitoring.v3.MetricServiceSettings;
@@ -87,8 +92,9 @@ public class MetricRegistryExportTest {
   private EnvInfo envInfo;
   private ClientInfo clientInfo =
       ClientInfo.builder().setInstanceName(INSTANCE_NAME).setAppProfileId(appProfileId).build();
+  private SessionPoolInfo poolInfo;
   private MethodInfo methodInfo;
-  private ResponseParams clusterInfo;
+  private ClusterInformation clusterInfo;
   private PeerInfo peerInfo;
 
   private MonitoredResource expectedTableMonitoredResource;
@@ -107,6 +113,8 @@ public class MetricRegistryExportTest {
             .setHostId("123456")
             .setHostName("my-vm")
             .build();
+
+    poolInfo = SessionPoolInfo.create(clientInfo, VRpcDescriptor.TABLE_SESSION, tableId);
 
     fakeServiceChannel =
         ManagedChannelBuilder.forAddress("localhost", server.getPort()).usePlaintext().build();
@@ -127,17 +135,17 @@ public class MetricRegistryExportTest {
     metricReader = PeriodicMetricReader.create(exporter);
     meterProvider = SdkMeterProvider.builder().registerMetricReader(metricReader).build();
 
-    registry = metricRegistry.newRecorderRegistry(meterProvider);
+    registry = metricRegistry.newInternalRecorderRegistry(meterProvider);
 
     methodInfo = MethodInfo.builder().setName("Bigtable.ReadRow").setStreaming(false).build();
 
     clusterInfo =
-        ResponseParams.newBuilder().setZoneId(clusterZone).setClusterId(clusterId).build();
+        ClusterInformation.newBuilder().setZoneId(clusterZone).setClusterId(clusterId).build();
     peerInfo =
         PeerInfo.newBuilder()
             .setTransportType(TransportType.TRANSPORT_TYPE_SESSION_CLOUD_PATH)
             .setGoogleFrontendId(123)
-            .setApplicationFrontendZone("us-east1-c")
+            .setApplicationFrontendRegion("us-east1")
             .setApplicationFrontendSubzone("ab")
             .build();
 
@@ -269,8 +277,8 @@ public class MetricRegistryExportTest {
             "transport_type", "session_cloudpath",
             "status", "UNAVAILABLE",
             "client_uid", envInfo.getUid(),
-            "transport_region", "",
-            "transport_zone", peerInfo.getApplicationFrontendZone(),
+            "transport_region", Util.formatTransportRegion(peerInfo),
+            "transport_zone", "",
             "transport_subzone", peerInfo.getApplicationFrontendSubzone(),
             "client_name", clientInfo.getClientName(),
             "app_profile", clientInfo.getAppProfileId(),
@@ -636,6 +644,110 @@ public class MetricRegistryExportTest {
         .containsExactly(
             Point.newBuilder()
                 .setValue(TypedValue.newBuilder().setDoubleValue(123.0).build())
+                .build());
+  }
+
+  @Test
+  void testSessionDuration() {
+    registry.sessionDuration.record(
+        poolInfo,
+        peerInfo,
+        Status.Code.DATA_LOSS,
+        CloseSessionReason.CLOSE_SESSION_REASON_USER,
+        SessionCloseVRpcState.SomeOk,
+        true,
+        Duration.ofMinutes(5));
+    metricReader.forceFlush().join(1, TimeUnit.MINUTES);
+
+    TimeSeries timeSeries =
+        metricService.getSingleTimeSeriesByName(
+            "bigtable.googleapis.com/internal/client/session/durations");
+
+    Truth.assertThat(timeSeries.getResource()).isEqualTo(expectedClientMonitoredResource);
+
+    assertThat(timeSeries.getMetric().getLabelsMap())
+        .containsExactly(
+            "session_type", "table", // derived from SessionType
+            "session_name", poolInfo.getName(),
+            "afe_location", peerInfo.getApplicationFrontendSubzone(),
+            "transport_type", "session_cloudpath",
+            "closing_reason", "CLOSE_SESSION_REASON_USER",
+            "vrpcs", "some_ok",
+            "ready", "true",
+            "status", "DATA_LOSS");
+
+    assertThat(timeSeries.getPointsList())
+        .comparingExpectedFieldsOnly()
+        .containsExactly(
+            Point.newBuilder()
+                .setValue(
+                    TypedValue.newBuilder()
+                        .setDistributionValue(
+                            Distribution.newBuilder()
+                                .setCount(1)
+                                .setMean((double) Duration.ofMinutes(5).toMillis())))
+                .build());
+  }
+
+  @Test
+  void testSessionOpenLatency() {
+    registry.sessionOpenLatency.record(
+        poolInfo, peerInfo, Status.Code.DATA_LOSS, Duration.ofMillis(10));
+    metricReader.forceFlush().join(1, TimeUnit.MINUTES);
+
+    TimeSeries timeSeries =
+        metricService.getSingleTimeSeriesByName(
+            "bigtable.googleapis.com/internal/client/session/open_latencies");
+
+    Truth.assertThat(timeSeries.getResource()).isEqualTo(expectedClientMonitoredResource);
+
+    assertThat(timeSeries.getMetric().getLabelsMap())
+        .containsExactly(
+            "session_type", "table", // derived from SessionType
+            "session_name", poolInfo.getName(),
+            "afe_location", peerInfo.getApplicationFrontendSubzone(),
+            "transport_type", "session_cloudpath",
+            "status", "DATA_LOSS");
+
+    assertThat(timeSeries.getPointsList())
+        .comparingExpectedFieldsOnly()
+        .containsExactly(
+            Point.newBuilder()
+                .setValue(
+                    TypedValue.newBuilder()
+                        .setDistributionValue(Distribution.newBuilder().setCount(1).setMean(10)))
+                .build());
+  }
+
+  @Test
+  void testSessionUptime() {
+    registry.sessionUptime.record(poolInfo, peerInfo, true, Duration.ofMinutes(10));
+    metricReader.forceFlush().join(1, TimeUnit.MINUTES);
+
+    TimeSeries timeSeries =
+        metricService.getSingleTimeSeriesByName(
+            "bigtable.googleapis.com/internal/client/session/uptime");
+
+    assertThat(timeSeries.getResource()).isEqualTo(expectedClientMonitoredResource);
+
+    assertThat(timeSeries.getMetric().getLabelsMap())
+        .containsExactly(
+            "session_type", "table", // derived from SessionType
+            "session_name", poolInfo.getName(),
+            "afe_location", peerInfo.getApplicationFrontendSubzone(),
+            "transport_type", "session_cloudpath",
+            "ready", "true");
+
+    assertThat(timeSeries.getPointsList())
+        .comparingExpectedFieldsOnly()
+        .containsExactly(
+            Point.newBuilder()
+                .setValue(
+                    TypedValue.newBuilder()
+                        .setDistributionValue(
+                            Distribution.newBuilder()
+                                .setCount(1)
+                                .setMean((double) Duration.ofMinutes(10).toMillis())))
                 .build());
   }
 

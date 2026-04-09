@@ -299,14 +299,19 @@ public class EnhancedBigtableStub implements AutoCloseable {
             (query) -> query.limit(1).toProto(requestContext),
             Functions.identity());
 
-    return new BigtableUnaryOperationCallable<>(
-        readRowCallable,
-        clientContext
-            .getDefaultCallContext()
-            .withRetrySettings(perOpSettings.readRowSettings.getRetrySettings()),
-        clientContext.getTracerFactory(),
-        getSpanName("ReadRow"),
-        /* allowNoResponse= */ true);
+    BigtableUnaryOperationCallable<Query, RowT> classic =
+        new BigtableUnaryOperationCallable<>(
+            readRowCallable,
+            clientContext
+                .getDefaultCallContext()
+                .withRetrySettings(perOpSettings.readRowSettings.getRetrySettings()),
+            clientContext.getTracerFactory(),
+            getSpanName("ReadRow"),
+            /* allowNoResponse= */ true);
+
+    return bigtableClientContext
+        .getSessionShim()
+        .decorateReadRow(classic, rowAdapter, perOpSettings.readRowSettings);
   }
 
   private <ReqT, RowT> ServerStreamingCallable<ReadRowsRequest, RowT> createReadRowsBaseCallable(
@@ -600,14 +605,19 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<RowMutation, Void> createMutateRowCallable() {
-    return createUnaryCallable(
-        BigtableGrpc.getMutateRowMethod(),
-        req ->
-            composeRequestParams(
-                req.getAppProfileId(), req.getTableName(), req.getAuthorizedViewName()),
-        perOpSettings.mutateRowSettings,
-        req -> req.toProto(requestContext),
-        resp -> null);
+    UnaryCallable<RowMutation, Void> classic =
+        createUnaryCallable(
+            BigtableGrpc.getMutateRowMethod(),
+            req ->
+                composeRequestParams(
+                    req.getAppProfileId(), req.getTableName(), req.getAuthorizedViewName()),
+            perOpSettings.mutateRowSettings,
+            req -> req.toProto(requestContext),
+            resp -> null);
+
+    return bigtableClientContext
+        .getSessionShim()
+        .decorateMutateRow(classic, perOpSettings.mutateRowSettings);
   }
 
   /**

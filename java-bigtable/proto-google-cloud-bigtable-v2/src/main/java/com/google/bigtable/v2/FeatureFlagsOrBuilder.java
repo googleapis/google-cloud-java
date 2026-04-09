@@ -163,4 +163,30 @@ public interface FeatureFlagsOrBuilder
    * @return The peerInfo.
    */
   boolean getPeerInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the client supports the Bigtable Sessions API.
+   * </pre>
+   *
+   * <code>bool sessions_compatible = 12;</code>
+   *
+   * @return The sessionsCompatible.
+   */
+  boolean getSessionsCompatible();
+
+  /**
+   *
+   *
+   * <pre>
+   * Internal flag to force sessions for internal projects.
+   * </pre>
+   *
+   * <code>bool sessions_required = 13;</code>
+   *
+   * @return The sessionsRequired.
+   */
+  boolean getSessionsRequired();
 }

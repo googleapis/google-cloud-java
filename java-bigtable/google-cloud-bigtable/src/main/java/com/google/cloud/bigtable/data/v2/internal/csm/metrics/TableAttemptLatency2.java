@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,8 +15,8 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.csm.metrics;
 
+import com.google.bigtable.v2.ClusterInformation;
 import com.google.bigtable.v2.PeerInfo;
-import com.google.bigtable.v2.ResponseParams;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.EnvInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.MethodInfo;
@@ -70,7 +70,7 @@ public class TableAttemptLatency2 extends MetricWrapper<TableSchema> {
         ClientInfo clientInfo,
         String tableId,
         @Nullable PeerInfo peerInfo,
-        @Nullable ResponseParams clusterInfo,
+        @Nullable ClusterInformation clusterInfo,
         MethodInfo methodInfo,
         Status.Code code,
         Duration latency) {
@@ -80,7 +80,7 @@ public class TableAttemptLatency2 extends MetricWrapper<TableSchema> {
               .createResourceAttrs(clientInfo, tableId, clusterInfo)
               .put(MetricLabels.TRANSPORT_TYPE, Util.formatTransportType(peerInfo))
               .put(MetricLabels.STATUS_KEY, code.name())
-              .put(MetricLabels.TRANSPORT_REGION, "")
+              .put(MetricLabels.TRANSPORT_REGION, Util.formatTransportRegion(peerInfo))
               // To maintain backwards compat CLIENT_UID is set using sideband data in the exporter
               .put(MetricLabels.TRANSPORT_ZONE, Util.formatTransportZone(peerInfo))
               .put(MetricLabels.TRANSPORT_SUBZONE, Util.formatTransportSubzone(peerInfo))

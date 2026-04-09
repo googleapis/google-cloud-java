@@ -21,6 +21,7 @@ import com.google.bigtable.v2.ReadRowsRequest;
 import com.google.bigtable.v2.RowFilter;
 import com.google.bigtable.v2.RowRange;
 import com.google.bigtable.v2.RowSet;
+import com.google.bigtable.v2.SessionReadRowRequest;
 import com.google.cloud.bigtable.data.v2.internal.ByteStringComparator;
 import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 import com.google.cloud.bigtable.data.v2.internal.RequestContext;
@@ -310,6 +311,19 @@ public final class Query implements Serializable {
   /** Get the minimal range that encloses all of the row keys and ranges in this Query. */
   public ByteStringRange getBound() {
     return RowSetUtil.getBound(builder.getRows());
+  }
+
+  @InternalApi
+  public TargetId getTargetId() {
+    return targetId;
+  }
+
+  @InternalApi
+  public SessionReadRowRequest toSessionPointProto() {
+    return SessionReadRowRequest.newBuilder()
+        .setKey(this.builder.getRows().getRowKeysList().get(0))
+        .setFilter(this.builder.getFilter())
+        .build();
   }
 
   /**

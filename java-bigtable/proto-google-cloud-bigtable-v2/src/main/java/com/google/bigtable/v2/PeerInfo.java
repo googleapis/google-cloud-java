@@ -53,6 +53,7 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
   }
 
   private PeerInfo() {
+    applicationFrontendRegion_ = "";
     applicationFrontendZone_ = "";
     applicationFrontendSubzone_ = "";
     transportType_ = 0;
@@ -404,6 +405,59 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
     return applicationFrontendId_;
   }
 
+  public static final int APPLICATION_FRONTEND_REGION_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object applicationFrontendRegion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud region of the application frontend that served this request.
+   * </pre>
+   *
+   * <code>string application_frontend_region = 6;</code>
+   *
+   * @return The applicationFrontendRegion.
+   */
+  @java.lang.Override
+  public java.lang.String getApplicationFrontendRegion() {
+    java.lang.Object ref = applicationFrontendRegion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      applicationFrontendRegion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud region of the application frontend that served this request.
+   * </pre>
+   *
+   * <code>string application_frontend_region = 6;</code>
+   *
+   * @return The bytes for applicationFrontendRegion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getApplicationFrontendRegionBytes() {
+    java.lang.Object ref = applicationFrontendRegion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      applicationFrontendRegion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int APPLICATION_FRONTEND_ZONE_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -416,11 +470,14 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
    * The Cloud zone of the application frontend that served this request.
    * </pre>
    *
-   * <code>string application_frontend_zone = 3;</code>
+   * <code>string application_frontend_zone = 3 [deprecated = true];</code>
    *
+   * @deprecated google.bigtable.v2.PeerInfo.application_frontend_zone is deprecated. See
+   *     google/bigtable/v2/peer_info.proto;l=72
    * @return The applicationFrontendZone.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getApplicationFrontendZone() {
     java.lang.Object ref = applicationFrontendZone_;
     if (ref instanceof java.lang.String) {
@@ -440,11 +497,14 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
    * The Cloud zone of the application frontend that served this request.
    * </pre>
    *
-   * <code>string application_frontend_zone = 3;</code>
+   * <code>string application_frontend_zone = 3 [deprecated = true];</code>
    *
+   * @deprecated google.bigtable.v2.PeerInfo.application_frontend_zone is deprecated. See
+   *     google/bigtable/v2/peer_info.proto;l=72
    * @return The bytes for applicationFrontendZone.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getApplicationFrontendZoneBytes() {
     java.lang.Object ref = applicationFrontendZone_;
     if (ref instanceof java.lang.String) {
@@ -467,7 +527,8 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The subzone of the application frontend that served this request, e.g. an
-   * identifier for where within the zone the application frontend is.
+   * identifier for where within a zone (within the reported region) the
+   * application frontend is.
    * </pre>
    *
    * <code>string application_frontend_subzone = 4;</code>
@@ -492,7 +553,8 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The subzone of the application frontend that served this request, e.g. an
-   * identifier for where within the zone the application frontend is.
+   * identifier for where within a zone (within the reported region) the
+   * application frontend is.
    * </pre>
    *
    * <code>string application_frontend_subzone = 4;</code>
@@ -567,6 +629,9 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
         != com.google.bigtable.v2.PeerInfo.TransportType.TRANSPORT_TYPE_UNKNOWN.getNumber()) {
       output.writeEnum(5, transportType_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(applicationFrontendRegion_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, applicationFrontendRegion_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -593,6 +658,9 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
         != com.google.bigtable.v2.PeerInfo.TransportType.TRANSPORT_TYPE_UNKNOWN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, transportType_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(applicationFrontendRegion_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(6, applicationFrontendRegion_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -610,6 +678,7 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
 
     if (getGoogleFrontendId() != other.getGoogleFrontendId()) return false;
     if (getApplicationFrontendId() != other.getApplicationFrontendId()) return false;
+    if (!getApplicationFrontendRegion().equals(other.getApplicationFrontendRegion())) return false;
     if (!getApplicationFrontendZone().equals(other.getApplicationFrontendZone())) return false;
     if (!getApplicationFrontendSubzone().equals(other.getApplicationFrontendSubzone()))
       return false;
@@ -629,6 +698,8 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getGoogleFrontendId());
     hash = (37 * hash) + APPLICATION_FRONTEND_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getApplicationFrontendId());
+    hash = (37 * hash) + APPLICATION_FRONTEND_REGION_FIELD_NUMBER;
+    hash = (53 * hash) + getApplicationFrontendRegion().hashCode();
     hash = (37 * hash) + APPLICATION_FRONTEND_ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getApplicationFrontendZone().hashCode();
     hash = (37 * hash) + APPLICATION_FRONTEND_SUBZONE_FIELD_NUMBER;
@@ -776,6 +847,7 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
       bitField0_ = 0;
       googleFrontendId_ = 0L;
       applicationFrontendId_ = 0L;
+      applicationFrontendRegion_ = "";
       applicationFrontendZone_ = "";
       applicationFrontendSubzone_ = "";
       transportType_ = 0;
@@ -821,12 +893,15 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
         result.applicationFrontendId_ = applicationFrontendId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.applicationFrontendZone_ = applicationFrontendZone_;
+        result.applicationFrontendRegion_ = applicationFrontendRegion_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.applicationFrontendSubzone_ = applicationFrontendSubzone_;
+        result.applicationFrontendZone_ = applicationFrontendZone_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.applicationFrontendSubzone_ = applicationFrontendSubzone_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.transportType_ = transportType_;
       }
     }
@@ -849,14 +924,19 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
       if (other.getApplicationFrontendId() != 0L) {
         setApplicationFrontendId(other.getApplicationFrontendId());
       }
+      if (!other.getApplicationFrontendRegion().isEmpty()) {
+        applicationFrontendRegion_ = other.applicationFrontendRegion_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.getApplicationFrontendZone().isEmpty()) {
         applicationFrontendZone_ = other.applicationFrontendZone_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getApplicationFrontendSubzone().isEmpty()) {
         applicationFrontendSubzone_ = other.applicationFrontendSubzone_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.transportType_ != 0) {
@@ -903,21 +983,27 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
             case 26:
               {
                 applicationFrontendZone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 applicationFrontendSubzone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 40:
               {
                 transportType_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
+            case 50:
+              {
+                applicationFrontendRegion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1055,6 +1141,117 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object applicationFrontendRegion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud region of the application frontend that served this request.
+     * </pre>
+     *
+     * <code>string application_frontend_region = 6;</code>
+     *
+     * @return The applicationFrontendRegion.
+     */
+    public java.lang.String getApplicationFrontendRegion() {
+      java.lang.Object ref = applicationFrontendRegion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        applicationFrontendRegion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud region of the application frontend that served this request.
+     * </pre>
+     *
+     * <code>string application_frontend_region = 6;</code>
+     *
+     * @return The bytes for applicationFrontendRegion.
+     */
+    public com.google.protobuf.ByteString getApplicationFrontendRegionBytes() {
+      java.lang.Object ref = applicationFrontendRegion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        applicationFrontendRegion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud region of the application frontend that served this request.
+     * </pre>
+     *
+     * <code>string application_frontend_region = 6;</code>
+     *
+     * @param value The applicationFrontendRegion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplicationFrontendRegion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      applicationFrontendRegion_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud region of the application frontend that served this request.
+     * </pre>
+     *
+     * <code>string application_frontend_region = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearApplicationFrontendRegion() {
+      applicationFrontendRegion_ = getDefaultInstance().getApplicationFrontendRegion();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud region of the application frontend that served this request.
+     * </pre>
+     *
+     * <code>string application_frontend_region = 6;</code>
+     *
+     * @param value The bytes for applicationFrontendRegion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setApplicationFrontendRegionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      applicationFrontendRegion_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object applicationFrontendZone_ = "";
 
     /**
@@ -1064,10 +1261,13 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
      * The Cloud zone of the application frontend that served this request.
      * </pre>
      *
-     * <code>string application_frontend_zone = 3;</code>
+     * <code>string application_frontend_zone = 3 [deprecated = true];</code>
      *
+     * @deprecated google.bigtable.v2.PeerInfo.application_frontend_zone is deprecated. See
+     *     google/bigtable/v2/peer_info.proto;l=72
      * @return The applicationFrontendZone.
      */
+    @java.lang.Deprecated
     public java.lang.String getApplicationFrontendZone() {
       java.lang.Object ref = applicationFrontendZone_;
       if (!(ref instanceof java.lang.String)) {
@@ -1087,10 +1287,13 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
      * The Cloud zone of the application frontend that served this request.
      * </pre>
      *
-     * <code>string application_frontend_zone = 3;</code>
+     * <code>string application_frontend_zone = 3 [deprecated = true];</code>
      *
+     * @deprecated google.bigtable.v2.PeerInfo.application_frontend_zone is deprecated. See
+     *     google/bigtable/v2/peer_info.proto;l=72
      * @return The bytes for applicationFrontendZone.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getApplicationFrontendZoneBytes() {
       java.lang.Object ref = applicationFrontendZone_;
       if (ref instanceof String) {
@@ -1110,17 +1313,20 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
      * The Cloud zone of the application frontend that served this request.
      * </pre>
      *
-     * <code>string application_frontend_zone = 3;</code>
+     * <code>string application_frontend_zone = 3 [deprecated = true];</code>
      *
+     * @deprecated google.bigtable.v2.PeerInfo.application_frontend_zone is deprecated. See
+     *     google/bigtable/v2/peer_info.proto;l=72
      * @param value The applicationFrontendZone to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setApplicationFrontendZone(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
       applicationFrontendZone_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1132,13 +1338,16 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
      * The Cloud zone of the application frontend that served this request.
      * </pre>
      *
-     * <code>string application_frontend_zone = 3;</code>
+     * <code>string application_frontend_zone = 3 [deprecated = true];</code>
      *
+     * @deprecated google.bigtable.v2.PeerInfo.application_frontend_zone is deprecated. See
+     *     google/bigtable/v2/peer_info.proto;l=72
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearApplicationFrontendZone() {
       applicationFrontendZone_ = getDefaultInstance().getApplicationFrontendZone();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1150,18 +1359,21 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
      * The Cloud zone of the application frontend that served this request.
      * </pre>
      *
-     * <code>string application_frontend_zone = 3;</code>
+     * <code>string application_frontend_zone = 3 [deprecated = true];</code>
      *
+     * @deprecated google.bigtable.v2.PeerInfo.application_frontend_zone is deprecated. See
+     *     google/bigtable/v2/peer_info.proto;l=72
      * @param value The bytes for applicationFrontendZone to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setApplicationFrontendZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
       applicationFrontendZone_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1173,7 +1385,8 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The subzone of the application frontend that served this request, e.g. an
-     * identifier for where within the zone the application frontend is.
+     * identifier for where within a zone (within the reported region) the
+     * application frontend is.
      * </pre>
      *
      * <code>string application_frontend_subzone = 4;</code>
@@ -1197,7 +1410,8 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The subzone of the application frontend that served this request, e.g. an
-     * identifier for where within the zone the application frontend is.
+     * identifier for where within a zone (within the reported region) the
+     * application frontend is.
      * </pre>
      *
      * <code>string application_frontend_subzone = 4;</code>
@@ -1221,7 +1435,8 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The subzone of the application frontend that served this request, e.g. an
-     * identifier for where within the zone the application frontend is.
+     * identifier for where within a zone (within the reported region) the
+     * application frontend is.
      * </pre>
      *
      * <code>string application_frontend_subzone = 4;</code>
@@ -1234,7 +1449,7 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       applicationFrontendSubzone_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1244,7 +1459,8 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The subzone of the application frontend that served this request, e.g. an
-     * identifier for where within the zone the application frontend is.
+     * identifier for where within a zone (within the reported region) the
+     * application frontend is.
      * </pre>
      *
      * <code>string application_frontend_subzone = 4;</code>
@@ -1253,7 +1469,7 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearApplicationFrontendSubzone() {
       applicationFrontendSubzone_ = getDefaultInstance().getApplicationFrontendSubzone();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1263,7 +1479,8 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The subzone of the application frontend that served this request, e.g. an
-     * identifier for where within the zone the application frontend is.
+     * identifier for where within a zone (within the reported region) the
+     * application frontend is.
      * </pre>
      *
      * <code>string application_frontend_subzone = 4;</code>
@@ -1277,7 +1494,7 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       applicationFrontendSubzone_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1302,7 +1519,7 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
      */
     public Builder setTransportTypeValue(int value) {
       transportType_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1329,7 +1546,7 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       transportType_ = value.getNumber();
       onChanged();
       return this;
@@ -1341,7 +1558,7 @@ public final class PeerInfo extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearTransportType() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       transportType_ = 0;
       onChanged();
       return this;

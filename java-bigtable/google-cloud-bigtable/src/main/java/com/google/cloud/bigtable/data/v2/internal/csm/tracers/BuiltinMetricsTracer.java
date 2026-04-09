@@ -20,7 +20,7 @@ import static com.google.cloud.bigtable.data.v2.internal.csm.attributes.Util.ext
 
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.retrying.ServerStreamingAttemptException;
-import com.google.bigtable.v2.ResponseParams;
+import com.google.bigtable.v2.PeerInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.MetricRegistry;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.MethodInfo;
@@ -296,19 +296,14 @@ class BuiltinMetricsTracer extends BigtableTracer {
     // graph will be less confusing
     if (attemptCount > 1) {
       recorder.retryCount.record(
-          clientInfo,
-          tableId,
-          methodInfo,
-          sidebandData.getResponseParams(),
-          code,
-          attemptCount - 1);
+          clientInfo, tableId, methodInfo, sidebandData.getClusterInfo(), code, attemptCount - 1);
     }
 
     recorder.operationLatency.record(
         clientInfo,
         tableId,
         methodInfo,
-        sidebandData.getResponseParams(),
+        sidebandData.getClusterInfo(),
         code,
         Duration.ofNanos(operationLatencyNano));
 
@@ -318,7 +313,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
         clientInfo,
         tableId,
         methodInfo,
-        sidebandData.getResponseParams(),
+        sidebandData.getClusterInfo(),
         Duration.ofNanos(applicationLatencyNano));
 
     if (methodInfo.equals(READ_ROWS)) {
@@ -326,7 +321,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
           clientInfo,
           tableId,
           methodInfo,
-          sidebandData.getResponseParams(),
+          sidebandData.getClusterInfo(),
           code,
           firstResponsePerOpTimer.elapsed());
     }
@@ -360,13 +355,13 @@ class BuiltinMetricsTracer extends BigtableTracer {
         clientInfo,
         tableId,
         methodInfo,
-        sidebandData.getResponseParams(),
+        sidebandData.getClusterInfo(),
         Duration.ofNanos(totalClientBlockingTime.get()));
 
     recorder.attemptLatency.record(
         clientInfo,
         tableId,
-        sidebandData.getResponseParams(),
+        sidebandData.getClusterInfo(),
         methodInfo,
         code,
         attemptTimer.elapsed());
@@ -375,7 +370,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
         clientInfo,
         tableId,
         sidebandData.getPeerInfo(),
-        sidebandData.getResponseParams(),
+        sidebandData.getClusterInfo(),
         methodInfo,
         code,
         attemptTimer.elapsed());
@@ -387,7 +382,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
           clientInfo,
           tableId,
           methodInfo,
-          sidebandData.getResponseParams(),
+          sidebandData.getClusterInfo(),
           code,
           Comparators.max(remainingDeadlineAtAttemptStart, Duration.ZERO));
     }
@@ -397,7 +392,7 @@ class BuiltinMetricsTracer extends BigtableTracer {
           clientInfo,
           tableId,
           methodInfo,
-          sidebandData.getResponseParams(),
+          sidebandData.getClusterInfo(),
           code,
           sidebandData.getGfeTiming());
     }
@@ -409,18 +404,18 @@ class BuiltinMetricsTracer extends BigtableTracer {
 
     seenServer =
         seenServer
-            || Optional.ofNullable(sidebandData.getResponseParams())
-                .map(rp -> !ResponseParams.getDefaultInstance().equals(rp))
+            || Optional.ofNullable(sidebandData.getPeerInfo())
+                .map(rp -> !PeerInfo.getDefaultInstance().equals(rp))
                 .orElse(false);
 
     seenServer = seenServer || (sidebandData.getGfeTiming() != null);
 
     if (seenServer) {
       recorder.connectivityErrorCount.record(
-          clientInfo, tableId, methodInfo, sidebandData.getResponseParams(), code, 0);
+          clientInfo, tableId, methodInfo, sidebandData.getClusterInfo(), code, 0);
     } else {
       recorder.connectivityErrorCount.record(
-          clientInfo, tableId, methodInfo, sidebandData.getResponseParams(), code, 1);
+          clientInfo, tableId, methodInfo, sidebandData.getClusterInfo(), code, 1);
     }
   }
 

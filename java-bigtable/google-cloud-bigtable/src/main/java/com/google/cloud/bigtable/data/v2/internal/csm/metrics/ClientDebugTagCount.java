@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,32 +16,19 @@
 
 package com.google.cloud.bigtable.data.v2.internal.csm.metrics;
 
-import com.google.bigtable.v2.ResponseParams;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
-import com.google.cloud.bigtable.data.v2.internal.csm.attributes.EnvInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.Constants.MetricLabels;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.Constants.Units;
-import com.google.cloud.bigtable.data.v2.internal.csm.schema.TableSchema;
-import com.google.common.collect.ImmutableMap;
+import com.google.cloud.bigtable.data.v2.internal.csm.schema.ClientSchema;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.metrics.LongCounter;
 import io.opentelemetry.api.metrics.Meter;
-import javax.annotation.Nullable;
 
-public class TableDebugTagCount extends MetricWrapper<TableSchema> {
+public class ClientDebugTagCount extends MetricWrapper<ClientSchema> {
   private static final String NAME = "bigtable.googleapis.com/internal/client/debug_tags";
 
-  public TableDebugTagCount() {
-    super(TableSchema.INSTANCE, NAME);
-  }
-
-  @Override
-  public ImmutableMap<String, String> extractMetricLabels(
-      Attributes metricAttrs, EnvInfo envInfo, ClientInfo clientInfo) {
-    return ImmutableMap.<String, String>builder()
-        .putAll(super.extractMetricLabels(metricAttrs, envInfo, clientInfo))
-        .put(MetricLabels.CLIENT_UID.getKey(), envInfo.getUid())
-        .build();
+  public ClientDebugTagCount() {
+    super(ClientSchema.INSTANCE, NAME);
   }
 
   public Recorder newRecorder(Meter meter) {
@@ -60,15 +47,10 @@ public class TableDebugTagCount extends MetricWrapper<TableSchema> {
               .build();
     }
 
-    public void record(
-        ClientInfo clientInfo,
-        String tableId,
-        String tag,
-        @Nullable ResponseParams clusterInfo,
-        long amount) {
+    public void record(ClientInfo clientInfo, String tag, long amount) {
       Attributes attributes =
           getSchema()
-              .createResourceAttrs(clientInfo, tableId, clusterInfo)
+              .createResourceAttrs(clientInfo)
               // To maintain backwards compat CLIENT_UID is set using sideband data in the exporter
               .put(MetricLabels.CLIENT_NAME, clientInfo.getClientName())
               .put(MetricLabels.DEBUG_TAG_KEY, tag)

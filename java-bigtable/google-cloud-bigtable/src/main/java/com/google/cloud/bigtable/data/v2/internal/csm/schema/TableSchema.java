@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 package com.google.cloud.bigtable.data.v2.internal.csm.schema;
 
-import com.google.bigtable.v2.ResponseParams;
+import com.google.bigtable.v2.ClusterInformation;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.EnvInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.Util;
@@ -54,7 +54,7 @@ public final class TableSchema extends Schema {
   }
 
   public AttributesBuilder createResourceAttrs(
-      ClientInfo clientInfo, String tableId, @Nullable ResponseParams clusterInfo) {
+      ClientInfo clientInfo, String tableId, @Nullable ClusterInformation clusterInfo) {
     return Attributes.builder()
         .put(BIGTABLE_PROJECT_ID_KEY, clientInfo.getInstanceName().getProjectId())
         .put(INSTANCE_ID_KEY, clientInfo.getInstanceName().getInstanceId())

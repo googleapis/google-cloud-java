@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,15 @@ package com.google.cloud.bigtable.data.v2.internal.csm;
 
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientBatchWriteFlowControlFactor;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientBatchWriteFlowControlTargetQps;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientChannelPoolFallbackCount;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientChannelPoolOutstandingRpcs;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientDebugTagCount;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientDpCompatGuage;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientPerConnectionErrorCount;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientSessionDuration;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientSessionOpenLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientSessionUptime;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientTransportLatency;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.GrpcMetric;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.MetricWrapper;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.PacemakerDelay;
@@ -29,7 +35,6 @@ import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableAttemptLatenc
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableAttemptLatency2;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableClientBlockingLatency;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableConnectivityErrorCount;
-import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableDebugTagCount;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableFirstResponseLatency;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableOperationLatency;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.TableRemainingDeadline;
@@ -71,8 +76,16 @@ public class MetricRegistry {
   final ClientBatchWriteFlowControlFactor batchWriteFlowControlFactorMetric;
   final ClientBatchWriteFlowControlTargetQps batchWriteFlowControlTargetQpsMetric;
 
-  final TableDebugTagCount debugTagCountMetric;
+  final ClientTransportLatency transportLatencyMetric;
+
+  final ClientSessionUptime sessionUptimeMetric;
+  final ClientSessionDuration sessionDurationMetric;
+  final ClientSessionOpenLatency sessionOpenLatencyMetric;
+
+  final ClientDebugTagCount debugTagCountMetric;
   final PacemakerDelay pacemakerDelayMetric;
+
+  final ClientChannelPoolFallbackCount channelFallbackCountMetric;
 
   private final Map<String, MetricWrapper<?>> metrics = new HashMap<>();
   private final List<String> grpcMetricNames = new ArrayList<>();
@@ -94,8 +107,15 @@ public class MetricRegistry {
     batchWriteFlowControlFactorMetric = register(new ClientBatchWriteFlowControlFactor());
     batchWriteFlowControlTargetQpsMetric = register(new ClientBatchWriteFlowControlTargetQps());
 
-    debugTagCountMetric = register(new TableDebugTagCount());
+    sessionUptimeMetric = register(new ClientSessionUptime());
+    sessionDurationMetric = register(new ClientSessionDuration());
+    sessionOpenLatencyMetric = register(new ClientSessionOpenLatency());
+    transportLatencyMetric = register(new ClientTransportLatency());
+
+    debugTagCountMetric = register(new ClientDebugTagCount());
     pacemakerDelayMetric = register(new PacemakerDelay());
+
+    channelFallbackCountMetric = register(new ClientChannelPoolFallbackCount());
 
     // From
     // https://github.com/grpc/grpc-java/blob/31fdb6c2268b4b1c8ba6c995ee46c58e84a831aa/rls/src/main/java/io/grpc/rls/CachingRlsLbClient.java#L138-L165
@@ -169,8 +189,12 @@ public class MetricRegistry {
     return metrics.get(name);
   }
 
-  public RecorderRegistry newRecorderRegistry(MeterProvider meterProvider) {
-    return new RecorderRegistry(meterProvider.get(METER_NAME));
+  public RecorderRegistry newInternalRecorderRegistry(MeterProvider meterProvider) {
+    return new RecorderRegistry(meterProvider.get(METER_NAME), false);
+  }
+
+  public RecorderRegistry newUserRecorderRegistry(MeterProvider meterProvider) {
+    return new RecorderRegistry(meterProvider.get(METER_NAME), true);
   }
 
   public class RecorderRegistry {
@@ -190,29 +214,52 @@ public class MetricRegistry {
     public final ClientBatchWriteFlowControlTargetQps.Recorder batchWriteFlowControlTargetQps;
     public final ClientBatchWriteFlowControlFactor.Recorder batchWriteFlowControlFactor;
 
-    public final TableDebugTagCount.Recorder debugTagCount;
+    public final ClientTransportLatency.Recorder transportLatency;
+
+    public final ClientSessionUptime.Recorder sessionUptime;
+    public final ClientSessionDuration.Recorder sessionDuration;
+    public final ClientSessionOpenLatency.Recorder sessionOpenLatency;
+
+    public final ClientDebugTagCount.Recorder debugTagCount;
 
     public final PacemakerDelay.Recorder pacemakerDelay;
 
-    private RecorderRegistry(Meter meter) {
+    public final ClientChannelPoolFallbackCount.Recorder channelFallbackCount;
+
+    private RecorderRegistry(Meter meter, boolean disableInternalMetrics) {
+      // Public metrics
       operationLatency = operationLatencyMetric.newRecorder(meter);
       attemptLatency = attemptLatencyMetric.newRecorder(meter);
-      attemptLatency2 = attemptLatency2Metric.newRecorder(meter);
       retryCount = retryCountMetric.newRecorder(meter);
       firstResponseLantency = firstResponseLantencyMetric.newRecorder(meter);
       serverLatency = serverLatencyMetric.newRecorder(meter);
-      channelPoolOutstandingRpcs = channelPoolOutstandingRpcsMetric.newRecorder(meter);
       connectivityErrorCount = connectivityErrorCountMetric.newRecorder(meter);
-      dpCompatGuage = dpCompatGuageMetric.newRecorder(meter);
       applicationBlockingLatency = applicationBlockingLatencyMetric.newRecorder(meter);
       clientBlockingLatency = clientBlockingLatencyMetric.newRecorder(meter);
+
+      // Internal Metrics - only recorded by internalOtel, when configuring userOtel instances,
+      // internal metrics get registered on a noop provider
+      if (disableInternalMetrics) {
+        meter = MeterProvider.noop().get(METER_NAME);
+      }
+      attemptLatency2 = attemptLatency2Metric.newRecorder(meter);
+      channelPoolOutstandingRpcs = channelPoolOutstandingRpcsMetric.newRecorder(meter);
+      dpCompatGuage = dpCompatGuageMetric.newRecorder(meter);
       perConnectionErrorCount = perConnectionErrorCountMetric.newRecorder(meter);
       remainingDeadline = remainingDeadlineMetric.newRecorder(meter);
       batchWriteFlowControlTargetQps = batchWriteFlowControlTargetQpsMetric.newRecorder(meter);
       batchWriteFlowControlFactor = batchWriteFlowControlFactorMetric.newRecorder(meter);
 
+      transportLatency = transportLatencyMetric.newRecorder(meter);
+
+      sessionUptime = sessionUptimeMetric.newRecorder(meter);
+      sessionDuration = sessionDurationMetric.newRecorder(meter);
+      sessionOpenLatency = sessionOpenLatencyMetric.newRecorder(meter);
+
       debugTagCount = debugTagCountMetric.newRecorder(meter);
       pacemakerDelay = pacemakerDelayMetric.newRecorder(meter);
+
+      channelFallbackCount = channelFallbackCountMetric.newRecorder(meter);
     }
   }
 }

@@ -231,6 +231,12 @@ public class RetryInfoTest {
     methods.add("PingAndWarm");
     methods.add("ExecuteQuery"); // TODO remove when retries are implemented
 
+    // Session APIs. RetryInfo is handled differently
+    methods.add("OpenAuthorizedView");
+    methods.add("OpenMaterializedView");
+    methods.add("GetClientConfiguration");
+    methods.add("OpenTable");
+
     assertThat(methods).containsExactlyElementsIn(expected);
   }
 

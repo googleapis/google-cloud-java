@@ -159,15 +159,9 @@
       <artifactId>google-http-client-gson</artifactId>
       <scope>runtime</scope>
     </dependency>
-    <!--
-      grpc-stub is needed directly by our tests and transitively by grpc-alts at runtime.
-      So it has to be declared as a direct dependency and to avoid overriding grpc-alts'
-      runtime requirement it has to be promoted to the runtime scope.
-    -->
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>
-      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
@@ -224,6 +218,10 @@
     <dependency>
       <groupId>io.opentelemetry</groupId>
       <artifactId>opentelemetry-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.opentelemetry</groupId>
+      <artifactId>opentelemetry-context</artifactId>
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>

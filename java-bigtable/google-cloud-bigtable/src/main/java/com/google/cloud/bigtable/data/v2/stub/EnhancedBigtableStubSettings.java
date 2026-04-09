@@ -110,6 +110,9 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   private static final boolean DIRECT_PATH_BOUND_TOKEN_DISABLED =
       Boolean.parseBoolean(System.getenv("CBT_DISABLE_DIRECTPATH_BOUND_TOKEN"));
 
+  private static final boolean SESSIONS_DISABLE_ENV_VAR =
+      Boolean.parseBoolean(System.getenv("CBT_DISABLE_SESSIONS"));
+
   /**
    * Scopes that are equivalent to JWT's audience.
    *
@@ -153,6 +156,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
   private final DirectPathConfig directPathConfig;
 
+  private final boolean sessionsEnabled;
+
   private EnhancedBigtableStubSettings(Builder builder) {
     super(builder);
 
@@ -165,6 +170,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     metricsEndpoint = builder.metricsEndpoint;
     areInternalMetricsEnabled = builder.areInternalMetricsEnabled;
     jwtAudience = builder.jwtAudience;
+
+    this.sessionsEnabled = builder.sessionsEnabled;
 
     perOpSettings = new ClientOperationSettings(builder.perOpSettings);
     featureFlags = builder.featureFlags.build();
@@ -280,6 +287,10 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         .setKeepAliveTime(Duration.ofSeconds(30)) // sends ping in this interval
         .setKeepAliveTimeout(
             Duration.ofSeconds(10)); // wait this long before considering the connection dead
+  }
+
+  boolean isSessionsEnabled() {
+    return sessionsEnabled;
   }
 
   /** Applies Direct Access traits to an existing builder. */
@@ -597,6 +608,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     private String appProfileId;
     private boolean isRefreshingChannel;
     private String jwtAudience;
+    private boolean sessionsEnabled = true;
 
     private final ClientOperationSettings.Builder perOpSettings;
 
@@ -624,6 +636,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       metricsProvider = DefaultMetricsProvider.INSTANCE;
       this.areInternalMetricsEnabled = true;
       this.jwtAudience = DEFAULT_DATA_JWT_AUDIENCE;
+      this.sessionsEnabled = !SESSIONS_DISABLE_ENV_VAR;
 
       // Defaults provider
       BigtableStubSettings.Builder baseDefaults = BigtableStubSettings.newBuilder();
@@ -644,7 +657,8 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
               .setLastScannedRowResponses(true)
               .setDirectAccessRequested(isDirectPathRequested)
               .setTrafficDirectorEnabled(isDirectPathRequested)
-              .setPeerInfo(true);
+              .setPeerInfo(true)
+              .setSessionsCompatible(true);
     }
 
     private Builder(EnhancedBigtableStubSettings settings) {
@@ -658,6 +672,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       areInternalMetricsEnabled = settings.areInternalMetricsEnabled;
       jwtAudience = settings.jwtAudience;
       this.directPathConfig = settings.getDirectPathConfig();
+      sessionsEnabled = settings.sessionsEnabled;
 
       this.perOpSettings = new ClientOperationSettings.Builder(settings.perOpSettings);
 
@@ -791,6 +806,12 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     @InternalApi("Used for internal testing")
     public Builder setJwtAudience(String audience) {
       this.jwtAudience = audience;
+      return this;
+    }
+
+    @InternalApi
+    public Builder setSessionsEnabled(boolean enabled) {
+      this.sessionsEnabled = enabled;
       return this;
     }
 
@@ -1031,6 +1052,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
         .add("areInternalMetricsEnabled", areInternalMetricsEnabled)
         .add("jwtAudience", jwtAudience)
         .add("directPathConfig", getDirectPathConfig().toString())
+        .add("sessionsEnabled", sessionsEnabled)
         .add("parent", super.toString())
         .toString();
   }

@@ -54,7 +54,7 @@ public final class FeatureFlagsProto extends com.google.protobuf.GeneratedFile {
   static {
     java.lang.String[] descriptorData = {
       "\n&google/bigtable/v2/feature_flags.proto"
-          + "\022\022google.bigtable.v2\"\261\002\n\014FeatureFlags\022\025\n"
+          + "\022\022google.bigtable.v2\"\351\002\n\014FeatureFlags\022\025\n"
           + "\rreverse_scans\030\001 \001(\010\022\036\n\026mutate_rows_rate"
           + "_limit\030\003 \001(\010\022\037\n\027mutate_rows_rate_limit2\030"
           + "\005 \001(\010\022\"\n\032last_scanned_row_responses\030\004 \001("
@@ -62,12 +62,13 @@ public final class FeatureFlagsProto extends com.google.protobuf.GeneratedFile {
           + "\007 \001(\010\022#\n\033client_side_metrics_enabled\030\010 \001"
           + "(\010\022 \n\030traffic_director_enabled\030\t \001(\010\022\037\n\027"
           + "direct_access_requested\030\n \001(\010\022\021\n\tpeer_in"
-          + "fo\030\013 \001(\010B\273\001\n\026com.google.bigtable.v2B\021Fea"
-          + "tureFlagsProtoP\001Z8cloud.google.com/go/bi"
-          + "gtable/apiv2/bigtablepb;bigtablepb\252\002\030Goo"
-          + "gle.Cloud.Bigtable.V2\312\002\030Google\\Cloud\\Big"
-          + "table\\V2\352\002\033Google::Cloud::Bigtable::V2b\006"
-          + "proto3"
+          + "fo\030\013 \001(\010\022\033\n\023sessions_compatible\030\014 \001(\010\022\031\n"
+          + "\021sessions_required\030\r \001(\010B\273\001\n\026com.google."
+          + "bigtable.v2B\021FeatureFlagsProtoP\001Z8cloud."
+          + "google.com/go/bigtable/apiv2/bigtablepb;"
+          + "bigtablepb\252\002\030Google.Cloud.Bigtable.V2\312\002\030"
+          + "Google\\Cloud\\Bigtable\\V2\352\002\033Google::Cloud"
+          + "::Bigtable::V2b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -87,6 +88,8 @@ public final class FeatureFlagsProto extends com.google.protobuf.GeneratedFile {
               "TrafficDirectorEnabled",
               "DirectAccessRequested",
               "PeerInfo",
+              "SessionsCompatible",
+              "SessionsRequired",
             });
     descriptor.resolveAllFeaturesImmutable();
   }

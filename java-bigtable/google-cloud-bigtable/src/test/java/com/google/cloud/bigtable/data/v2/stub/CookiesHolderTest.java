@@ -623,6 +623,12 @@ public class CookiesHolderTest {
     methods.add("PingAndWarm");
     methods.add("ExecuteQuery"); // TODO remove when retries are implemented
 
+    // Session APIs. Routing cookie is handled differently
+    methods.add("OpenAuthorizedView");
+    methods.add("OpenMaterializedView");
+    methods.add("GetClientConfiguration");
+    methods.add("OpenTable");
+
     assertThat(methods).containsExactlyElementsIn(expected);
   }
 

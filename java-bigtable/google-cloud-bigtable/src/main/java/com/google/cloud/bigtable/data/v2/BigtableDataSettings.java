@@ -133,6 +133,7 @@ public final class BigtableDataSettings {
             .setMetricsProvider(
                 NoopMetricsProvider.INSTANCE) // disable exporting metrics for emulator
             .disableInternalMetrics()
+            .setSessionsEnabled(false)
             .setTransportChannelProvider(
                 InstantiatingGrpcChannelProvider.newBuilder()
                     .setMaxInboundMessageSize(256 * 1024 * 1024)

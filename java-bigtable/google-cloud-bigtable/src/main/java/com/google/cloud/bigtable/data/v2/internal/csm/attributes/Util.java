@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.rpc.ApiException;
 import com.google.bigtable.v2.AuthorizedViewName;
 import com.google.bigtable.v2.CheckAndMutateRowRequest;
+import com.google.bigtable.v2.ClusterInformation;
 import com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest;
 import com.google.bigtable.v2.MaterializedViewName;
 import com.google.bigtable.v2.MutateRowRequest;
@@ -29,7 +30,6 @@ import com.google.bigtable.v2.PeerInfo.TransportType;
 import com.google.bigtable.v2.ReadChangeStreamRequest;
 import com.google.bigtable.v2.ReadModifyWriteRowRequest;
 import com.google.bigtable.v2.ReadRowsRequest;
-import com.google.bigtable.v2.ResponseParams;
 import com.google.bigtable.v2.SampleRowKeysRequest;
 import com.google.bigtable.v2.TableName;
 import com.google.common.annotations.VisibleForTesting;
@@ -58,6 +58,12 @@ public class Util {
 
   static final String TRANSPORT_TYPE_PREFIX = "TRANSPORT_TYPE_";
 
+  public static String formatTransportRegion(@Nullable PeerInfo peerInfo) {
+    return Optional.ofNullable(peerInfo).map(PeerInfo::getApplicationFrontendRegion).orElse("");
+  }
+
+  @SuppressWarnings("deprecation")
+  // TODO: server is still sending back zone instead of region. Update this after server is updated
   public static String formatTransportZone(@Nullable PeerInfo peerInfo) {
     return Optional.ofNullable(peerInfo).map(PeerInfo::getApplicationFrontendZone).orElse("");
   }
@@ -118,16 +124,16 @@ public class Util {
     }
   }
 
-  public static String formatClusterIdMetricLabel(@Nullable ResponseParams clusterInfo) {
+  public static String formatClusterIdMetricLabel(@Nullable ClusterInformation clusterInfo) {
     return Optional.ofNullable(clusterInfo)
-        .map(ResponseParams::getClusterId)
+        .map(ClusterInformation::getClusterId)
         .filter(s -> !s.isEmpty())
         .orElse("<unspecified>");
   }
 
-  public static String formatZoneIdMetricLabel(@Nullable ResponseParams clusterInfo) {
+  public static String formatZoneIdMetricLabel(@Nullable ClusterInformation clusterInfo) {
     return Optional.ofNullable(clusterInfo)
-        .map(ResponseParams::getZoneId)
+        .map(ClusterInformation::getZoneId)
         .filter(s -> !s.isEmpty())
         .orElse("global");
   }

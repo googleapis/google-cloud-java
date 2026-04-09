@@ -273,6 +273,44 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
     return peerInfo_;
   }
 
+  public static final int SESSIONS_COMPATIBLE_FIELD_NUMBER = 12;
+  private boolean sessionsCompatible_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether the client supports the Bigtable Sessions API.
+   * </pre>
+   *
+   * <code>bool sessions_compatible = 12;</code>
+   *
+   * @return The sessionsCompatible.
+   */
+  @java.lang.Override
+  public boolean getSessionsCompatible() {
+    return sessionsCompatible_;
+  }
+
+  public static final int SESSIONS_REQUIRED_FIELD_NUMBER = 13;
+  private boolean sessionsRequired_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Internal flag to force sessions for internal projects.
+   * </pre>
+   *
+   * <code>bool sessions_required = 13;</code>
+   *
+   * @return The sessionsRequired.
+   */
+  @java.lang.Override
+  public boolean getSessionsRequired() {
+    return sessionsRequired_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -317,6 +355,12 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
     if (peerInfo_ != false) {
       output.writeBool(11, peerInfo_);
     }
+    if (sessionsCompatible_ != false) {
+      output.writeBool(12, sessionsCompatible_);
+    }
+    if (sessionsRequired_ != false) {
+      output.writeBool(13, sessionsRequired_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -356,6 +400,12 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
     if (peerInfo_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, peerInfo_);
     }
+    if (sessionsCompatible_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, sessionsCompatible_);
+    }
+    if (sessionsRequired_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, sessionsRequired_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -381,6 +431,8 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
     if (getTrafficDirectorEnabled() != other.getTrafficDirectorEnabled()) return false;
     if (getDirectAccessRequested() != other.getDirectAccessRequested()) return false;
     if (getPeerInfo() != other.getPeerInfo()) return false;
+    if (getSessionsCompatible() != other.getSessionsCompatible()) return false;
+    if (getSessionsRequired() != other.getSessionsRequired()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -412,6 +464,10 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDirectAccessRequested());
     hash = (37 * hash) + PEER_INFO_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPeerInfo());
+    hash = (37 * hash) + SESSIONS_COMPATIBLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSessionsCompatible());
+    hash = (37 * hash) + SESSIONS_REQUIRED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSessionsRequired());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -568,6 +624,8 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
       trafficDirectorEnabled_ = false;
       directAccessRequested_ = false;
       peerInfo_ = false;
+      sessionsCompatible_ = false;
+      sessionsRequired_ = false;
       return this;
     }
 
@@ -633,6 +691,12 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.peerInfo_ = peerInfo_;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.sessionsCompatible_ = sessionsCompatible_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.sessionsRequired_ = sessionsRequired_;
+      }
     }
 
     @java.lang.Override
@@ -676,6 +740,12 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
       }
       if (other.getPeerInfo() != false) {
         setPeerInfo(other.getPeerInfo());
+      }
+      if (other.getSessionsCompatible() != false) {
+        setSessionsCompatible(other.getSessionsCompatible());
+      }
+      if (other.getSessionsRequired() != false) {
+        setSessionsRequired(other.getSessionsRequired());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -763,6 +833,18 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 88
+            case 96:
+              {
+                sessionsCompatible_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 96
+            case 104:
+              {
+                sessionsRequired_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 104
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1362,6 +1444,118 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessage
     public Builder clearPeerInfo() {
       bitField0_ = (bitField0_ & ~0x00000200);
       peerInfo_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean sessionsCompatible_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the client supports the Bigtable Sessions API.
+     * </pre>
+     *
+     * <code>bool sessions_compatible = 12;</code>
+     *
+     * @return The sessionsCompatible.
+     */
+    @java.lang.Override
+    public boolean getSessionsCompatible() {
+      return sessionsCompatible_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the client supports the Bigtable Sessions API.
+     * </pre>
+     *
+     * <code>bool sessions_compatible = 12;</code>
+     *
+     * @param value The sessionsCompatible to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSessionsCompatible(boolean value) {
+
+      sessionsCompatible_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether the client supports the Bigtable Sessions API.
+     * </pre>
+     *
+     * <code>bool sessions_compatible = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSessionsCompatible() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      sessionsCompatible_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean sessionsRequired_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Internal flag to force sessions for internal projects.
+     * </pre>
+     *
+     * <code>bool sessions_required = 13;</code>
+     *
+     * @return The sessionsRequired.
+     */
+    @java.lang.Override
+    public boolean getSessionsRequired() {
+      return sessionsRequired_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Internal flag to force sessions for internal projects.
+     * </pre>
+     *
+     * <code>bool sessions_required = 13;</code>
+     *
+     * @param value The sessionsRequired to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSessionsRequired(boolean value) {
+
+      sessionsRequired_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Internal flag to force sessions for internal projects.
+     * </pre>
+     *
+     * <code>bool sessions_required = 13;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSessionsRequired() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      sessionsRequired_ = false;
       onChanged();
       return this;
     }

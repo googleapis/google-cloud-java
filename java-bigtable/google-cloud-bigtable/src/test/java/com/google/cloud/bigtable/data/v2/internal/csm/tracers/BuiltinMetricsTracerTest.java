@@ -197,7 +197,7 @@ public class BuiltinMetricsTracerTest {
 
     BuiltinMetricsTracerFactory facotry =
         new BuiltinMetricsTracerFactory(
-            mr.newRecorderRegistry(otel.getMeterProvider()), clientInfo);
+            mr.newInternalRecorderRegistry(otel.getMeterProvider()), clientInfo);
 
     // Add an interceptor to add server-timing in headers
     ServerInterceptor trailersInterceptor =

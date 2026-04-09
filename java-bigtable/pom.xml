@@ -209,6 +209,7 @@
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-bom</artifactId>
+                <!-- >= 5.0 requires java 11 -->
                 <version>4.11.0</version>
                 <type>pom</type>
                 <scope>import</scope>

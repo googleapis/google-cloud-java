@@ -158,6 +158,9 @@ public class BigtableChannelPrimer implements ChannelPrimer {
     return future;
   }
 
+  // Internal headers (bigtable-features and user-agent) are merged in ClientContext and set on
+  // the transport channel. So when primeChannel is called from gax, the managed channel already has
+  // those headers. This is tested in EnhancedBigtableStubTest.
   private static Metadata createMetadata(Map<String, String> headers, PingAndWarmRequest request) {
     Metadata metadata = new Metadata();
 

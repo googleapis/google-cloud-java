@@ -18,21 +18,36 @@ package com.google.cloud.bigtable.data.v2.internal.csm;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.ChannelPoolMetricsTracer;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DirectPathCompatibleTracer;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.PoolFallbackListener;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.SessionTracer;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracer;
+import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolInfo;
+import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
+import io.grpc.Deadline;
 import io.grpc.ManagedChannelBuilder;
 import java.io.Closeable;
 import java.io.IOException;
 import javax.annotation.Nullable;
 
 public interface Metrics extends Closeable {
-  ApiTracerFactory createTracerFactory(ClientInfo clientInfo) throws IOException;
-
-  <T extends ManagedChannelBuilder<?>> T configureGrpcChannel(T channelBuilder);
-
   @Nullable
   ChannelPoolMetricsTracer getChannelPoolMetricsTracer();
 
   DirectPathCompatibleTracer getDirectPathCompatibleTracer();
+
+  VRpcTracer newTableTracer(SessionPoolInfo poolInfo, VRpcDescriptor descriptor, Deadline deadline);
+
+  SessionTracer newSessionTracer(SessionPoolInfo poolInfo);
+
+  PoolFallbackListener getPoolFallbackListener();
+
+  ApiTracerFactory createTracerFactory(ClientInfo clientInfo) throws IOException;
+
+  <T extends ManagedChannelBuilder<?>> T configureGrpcChannel(T channelBuilder);
+
+  DebugTagTracer getDebugTagTracer();
 
   void start();
 

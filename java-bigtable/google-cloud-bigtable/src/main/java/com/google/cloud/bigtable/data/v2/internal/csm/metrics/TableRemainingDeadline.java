@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Google LLC
+ * Copyright 2026 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 package com.google.cloud.bigtable.data.v2.internal.csm.metrics;
 
-import com.google.bigtable.v2.ResponseParams;
+import com.google.bigtable.v2.ClusterInformation;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.EnvInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.MethodInfo;
@@ -30,6 +30,7 @@ import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.metrics.DoubleHistogram;
 import io.opentelemetry.api.metrics.Meter;
 import java.time.Duration;
+import javax.annotation.Nullable;
 
 public class TableRemainingDeadline extends MetricWrapper<TableSchema> {
   public static final String NAME = "bigtable.googleapis.com/internal/client/remaining_deadline";
@@ -71,7 +72,7 @@ public class TableRemainingDeadline extends MetricWrapper<TableSchema> {
         ClientInfo clientInfo,
         String tableId,
         MethodInfo methodInfo,
-        ResponseParams clusterInfo,
+        @Nullable ClusterInformation clusterInfo,
         Status.Code code,
         Duration duration) {
       Attributes attributes =

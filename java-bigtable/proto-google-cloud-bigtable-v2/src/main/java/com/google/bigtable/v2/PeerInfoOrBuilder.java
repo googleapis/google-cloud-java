@@ -58,13 +58,42 @@ public interface PeerInfoOrBuilder
    *
    *
    * <pre>
+   * The Cloud region of the application frontend that served this request.
+   * </pre>
+   *
+   * <code>string application_frontend_region = 6;</code>
+   *
+   * @return The applicationFrontendRegion.
+   */
+  java.lang.String getApplicationFrontendRegion();
+
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud region of the application frontend that served this request.
+   * </pre>
+   *
+   * <code>string application_frontend_region = 6;</code>
+   *
+   * @return The bytes for applicationFrontendRegion.
+   */
+  com.google.protobuf.ByteString getApplicationFrontendRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The Cloud zone of the application frontend that served this request.
    * </pre>
    *
-   * <code>string application_frontend_zone = 3;</code>
+   * <code>string application_frontend_zone = 3 [deprecated = true];</code>
    *
+   * @deprecated google.bigtable.v2.PeerInfo.application_frontend_zone is deprecated. See
+   *     google/bigtable/v2/peer_info.proto;l=72
    * @return The applicationFrontendZone.
    */
+  @java.lang.Deprecated
   java.lang.String getApplicationFrontendZone();
 
   /**
@@ -74,10 +103,13 @@ public interface PeerInfoOrBuilder
    * The Cloud zone of the application frontend that served this request.
    * </pre>
    *
-   * <code>string application_frontend_zone = 3;</code>
+   * <code>string application_frontend_zone = 3 [deprecated = true];</code>
    *
+   * @deprecated google.bigtable.v2.PeerInfo.application_frontend_zone is deprecated. See
+   *     google/bigtable/v2/peer_info.proto;l=72
    * @return The bytes for applicationFrontendZone.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getApplicationFrontendZoneBytes();
 
   /**
@@ -85,7 +117,8 @@ public interface PeerInfoOrBuilder
    *
    * <pre>
    * The subzone of the application frontend that served this request, e.g. an
-   * identifier for where within the zone the application frontend is.
+   * identifier for where within a zone (within the reported region) the
+   * application frontend is.
    * </pre>
    *
    * <code>string application_frontend_subzone = 4;</code>
@@ -99,7 +132,8 @@ public interface PeerInfoOrBuilder
    *
    * <pre>
    * The subzone of the application frontend that served this request, e.g. an
-   * identifier for where within the zone the application frontend is.
+   * identifier for where within a zone (within the reported region) the
+   * application frontend is.
    * </pre>
    *
    * <code>string application_frontend_subzone = 4;</code>

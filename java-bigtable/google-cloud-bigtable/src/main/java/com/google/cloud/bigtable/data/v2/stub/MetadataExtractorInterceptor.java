@@ -17,6 +17,7 @@ package com.google.cloud.bigtable.data.v2.stub;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.GrpcCallContext;
+import com.google.bigtable.v2.ClusterInformation;
 import com.google.bigtable.v2.PeerInfo;
 import com.google.bigtable.v2.ResponseParams;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.Util;
@@ -108,15 +109,15 @@ public class MetadataExtractorInterceptor implements ClientInterceptor {
     private static final Metadata.Key<String> PEER_INFO_KEY =
         Metadata.Key.of("bigtable-peer-info", Metadata.ASCII_STRING_MARSHALLER);
 
-    @Nullable private volatile ResponseParams responseParams;
+    @Nullable private volatile ClusterInformation clusterInfo;
     @Nullable private volatile PeerInfo peerInfo;
     @Nullable private volatile Duration gfeTiming;
     @Nullable private volatile Util.IpProtocol ipProtocol;
-    private boolean isAlts = false;
+    private volatile boolean isAlts = false;
 
     @Nullable
-    public ResponseParams getResponseParams() {
-      return responseParams;
+    public ClusterInformation getClusterInfo() {
+      return clusterInfo;
     }
 
     @Nullable
@@ -139,14 +140,14 @@ public class MetadataExtractorInterceptor implements ClientInterceptor {
     }
 
     private void reset() {
-      responseParams = null;
+      clusterInfo = null;
       peerInfo = null;
       gfeTiming = null;
       ipProtocol = Util.IpProtocol.UNKNOWN;
     }
 
     void onResponseHeaders(Metadata md, Attributes attributes) {
-      responseParams = extractResponseParams(md);
+      clusterInfo = extractClusterInfo(md);
       gfeTiming = extractGfeLatency(md);
       peerInfo = extractPeerInfo(md, gfeTiming, attributes);
       ipProtocol = extractIpProtocol(attributes);
@@ -157,8 +158,8 @@ public class MetadataExtractorInterceptor implements ClientInterceptor {
       if (ipProtocol == null) {
         ipProtocol = extractIpProtocol(attributes);
       }
-      if (responseParams == null) {
-        responseParams = extractResponseParams(trailers);
+      if (clusterInfo == null) {
+        clusterInfo = extractClusterInfo(trailers);
       }
     }
 
@@ -193,44 +194,54 @@ public class MetadataExtractorInterceptor implements ClientInterceptor {
     private static PeerInfo extractPeerInfo(
         Metadata metadata, Duration gfeTiming, Attributes attributes) {
       String encodedStr = metadata.get(PEER_INFO_KEY);
-      if (Strings.isNullOrEmpty(encodedStr)) {
-        return null;
+      PeerInfo peerInfo = PeerInfo.newBuilder().build();
+      if (!Strings.isNullOrEmpty(encodedStr)) {
+        try {
+          byte[] decoded = Base64.getUrlDecoder().decode(encodedStr);
+          peerInfo = PeerInfo.parseFrom(decoded);
+        } catch (Exception e) {
+          throw new IllegalArgumentException(
+              "Failed to parse "
+                  + PEER_INFO_KEY.name()
+                  + " from the response header value: "
+                  + encodedStr);
+        }
       }
 
-      try {
-        byte[] decoded = Base64.getUrlDecoder().decode(encodedStr);
-        PeerInfo peerInfo = PeerInfo.parseFrom(decoded);
-        PeerInfo.TransportType effectiveTransport = peerInfo.getTransportType();
-
-        // TODO: remove this once transport_type is being sent by the server
-        //  This is a temporary workaround to detect directpath until its available from the server
-        if (effectiveTransport == PeerInfo.TransportType.TRANSPORT_TYPE_UNKNOWN) {
-          boolean isAlts = AltsContextUtil.check(attributes);
-          if (isAlts) {
-            effectiveTransport = PeerInfo.TransportType.TRANSPORT_TYPE_DIRECT_ACCESS;
-          } else if (gfeTiming != null) {
-            effectiveTransport = PeerInfo.TransportType.TRANSPORT_TYPE_CLOUD_PATH;
-          }
-        }
-        if (effectiveTransport != PeerInfo.TransportType.TRANSPORT_TYPE_UNKNOWN) {
-          peerInfo = peerInfo.toBuilder().setTransportType(effectiveTransport).build();
-        }
-        return peerInfo;
-      } catch (Exception e) {
-        throw new IllegalArgumentException(
-            "Failed to parse "
-                + PEER_INFO_KEY.name()
-                + " from the response header value: "
-                + encodedStr);
+      // TODO: remove this once transport_type is being sent by the server
+      // This is a temporary workaround to detect directpath until its available from
+      // the server
+      if (peerInfo.getTransportType() == PeerInfo.TransportType.TRANSPORT_TYPE_UNKNOWN) {
+        peerInfo =
+            peerInfo.toBuilder()
+                .setTransportType(inferTransportType(gfeTiming, attributes))
+                .build();
       }
+
+      return peerInfo;
+    }
+
+    private static PeerInfo.TransportType inferTransportType(
+        Duration gfeTiming, Attributes attributes) {
+      boolean isAlts = AltsContextUtil.check(attributes);
+      if (isAlts) {
+        return PeerInfo.TransportType.TRANSPORT_TYPE_DIRECT_ACCESS;
+      } else if (gfeTiming != null) {
+        return PeerInfo.TransportType.TRANSPORT_TYPE_CLOUD_PATH;
+      }
+      return PeerInfo.TransportType.TRANSPORT_TYPE_UNKNOWN;
     }
 
     @Nullable
-    private static ResponseParams extractResponseParams(Metadata metadata) {
-      byte[] responseParams = metadata.get(LOCATION_METADATA_KEY);
-      if (responseParams != null) {
+    private static ClusterInformation extractClusterInfo(Metadata metadata) {
+      byte[] encoded = metadata.get(LOCATION_METADATA_KEY);
+      if (encoded != null) {
         try {
-          return ResponseParams.parseFrom(responseParams);
+          ResponseParams responseParams = ResponseParams.parseFrom(encoded);
+          return ClusterInformation.newBuilder()
+              .setZoneId(responseParams.getZoneId())
+              .setClusterId(responseParams.getClusterId())
+              .build();
         } catch (InvalidProtocolBufferException e) {
           // Fail silently and return null
         }
