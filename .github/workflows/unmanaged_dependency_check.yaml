@@ -12,7 +12,7 @@ jobs:
         java-version: 11
     - name: Install modules
       shell: bash
-      run: mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip -Denforcer.skip
+      run: mvn install -B -ntp -T 1C -DskipTests -Pquick-build
     - name: Unmanaged dependency check
       uses: ./sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check
       with:

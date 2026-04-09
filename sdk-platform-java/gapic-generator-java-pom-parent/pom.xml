@@ -77,6 +77,23 @@
 
   <profiles>
     <profile>
+      <!-- skips all plugins that would have been activated by the Maven lifecycle -->
+      <id>quick-build</id>
+      <properties>
+        <checkstyle.skip>true</checkstyle.skip>
+        <enforcer.skip>true</enforcer.skip>
+        <jacoco.skip>true</jacoco.skip>
+        <clirr.skip>true</clirr.skip>
+        <spotbugs.skip>true</spotbugs.skip>
+        <pmd.skip>true</pmd.skip>
+        <animal.sniffer.skip>true</animal.sniffer.skip>
+        <fmt.skip>true</fmt.skip>
+        <flatten.skip>true</flatten.skip>
+        <mdep.analyze.skip>true</mdep.analyze.skip>
+      </properties>
+    </profile>
+
+    <profile>
       <!-- Only run checkstyle plugin on Java 11+ (checkstyle artifact only supports Java 11+) -->
       <id>checkstyle-tests</id>
       <activation>
@@ -96,6 +113,7 @@
                 </goals>
                 <configuration>
                   <headerLocation>${checkstyle.header.file}</headerLocation>
+                  <skip>${checkstyle.skip}</skip>
                 </configuration>
               </execution>
             </executions>
