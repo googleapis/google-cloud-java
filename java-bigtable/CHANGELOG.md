@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.77.0](https://github.com/googleapis/java-bigtable/compare/v2.76.0...v2.77.0) (2026-04-09)
+
+
+### Features
+
+* Add new session based protocol stack ([#2862](https://github.com/googleapis/java-bigtable/issues/2862)) ([d5565b5](https://github.com/googleapis/java-bigtable/commit/d5565b5a3e7bfe56d799b9db3f1d90821694fc67))
+
 ## [2.76.0](https://github.com/googleapis/java-bigtable/compare/v2.75.1...v2.76.0) (2026-04-09)
 
 
