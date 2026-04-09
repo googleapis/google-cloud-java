@@ -503,9 +503,10 @@ public class ClientSideCredentialAccessBoundaryFactory {
               finishRefreshTask(task);
               RefreshTask.this.set(Futures.getDone(task));
             } catch (ExecutionException e) {
-              RefreshTask.this.setException(e.getCause());
-            } catch (Exception e) {
-              RefreshTask.this.setException(e);
+              Throwable cause = e.getCause();
+              RefreshTask.this.setException(cause != null ? cause : e);
+            } catch (Throwable t) {
+              RefreshTask.this.setException(t);
             }
           },
           MoreExecutors.directExecutor());
