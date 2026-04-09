@@ -186,6 +186,16 @@ final class KeyAwareChannel extends ManagedChannel {
     return finder;
   }
 
+  @com.google.common.annotations.VisibleForTesting
+  void awaitPendingCacheUpdates() throws InterruptedException {
+    for (ChannelFinderReference ref : channelFinders.values()) {
+      ChannelFinder finder = ref.get();
+      if (finder != null) {
+        finder.awaitPendingUpdates();
+      }
+    }
+  }
+
   /** Records real traffic to the selected endpoint for idle eviction tracking. */
   private void onRequestRouted(@Nullable ChannelEndpoint selectedEndpoint) {
     if (lifecycleManager == null) {
@@ -828,25 +838,25 @@ final class KeyAwareChannel extends ManagedChannel {
       if (message instanceof PartialResultSet) {
         PartialResultSet response = (PartialResultSet) message;
         if (response.hasCacheUpdate() && call.channelFinder != null) {
-          call.channelFinder.update(response.getCacheUpdate());
+          call.channelFinder.updateAsync(response.getCacheUpdate());
         }
         transactionId = transactionIdFromMetadata(response);
       } else if (message instanceof ResultSet) {
         ResultSet response = (ResultSet) message;
         if (response.hasCacheUpdate() && call.channelFinder != null) {
-          call.channelFinder.update(response.getCacheUpdate());
+          call.channelFinder.updateAsync(response.getCacheUpdate());
         }
         transactionId = transactionIdFromMetadata(response);
       } else if (message instanceof Transaction) {
         Transaction response = (Transaction) message;
         if (response.hasCacheUpdate() && call.channelFinder != null) {
-          call.channelFinder.update(response.getCacheUpdate());
+          call.channelFinder.updateAsync(response.getCacheUpdate());
         }
         transactionId = transactionIdFromTransaction(response);
       } else if (message instanceof CommitResponse) {
         CommitResponse response = (CommitResponse) message;
         if (response.hasCacheUpdate() && call.channelFinder != null) {
-          call.channelFinder.update(response.getCacheUpdate());
+          call.channelFinder.updateAsync(response.getCacheUpdate());
         }
       }
       if (transactionId != null) {
