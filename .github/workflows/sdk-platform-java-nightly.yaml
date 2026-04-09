@@ -30,7 +30,7 @@ jobs:
           BUILD_SUBDIR: sdk-platform-java
           JOB_TYPE: install
       - name: Install
-        run: mvn install --errors --batch-mode --no-transfer-progress -Dcheckstyle.skip -Dfmt.skip
+        run: mvn install --errors --batch-mode --no-transfer-progress -Pquick-build
         working-directory: sdk-platform-java
       - name: Create issue if previous step fails
         if: ${{ failure() }}
