@@ -102,7 +102,7 @@ After verifying the changes:
 ```bash
 git checkout -b "new-library/[API_SHORTNAME]"
 git add generation_config.yaml
-git commit -m "feat: [API_SHORTNAME] new module for [API_SHORTNAME]"
+git commit -m "feat: new module for [API_SHORTNAME]"
 ```
 
 Then open a pull request. The Pull Request body must only contain the `add-new-library` command used.
