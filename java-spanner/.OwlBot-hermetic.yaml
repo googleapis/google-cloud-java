@@ -18,7 +18,7 @@ deep-remove-regex:
 - /java-spanner/google-cloud-spanner/src/main/java/com/google/cloud/spanner/v1
 - /java-spanner/google-cloud-spanner/src/main/java/com/google/cloud/spanner/admin
 deep-preserve-regex:
-- "/java-spanner/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
+- /java-spanner/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java
 - /java-spanner/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
 - /java-spanner/proto-google-cloud-spanner-admin-database-v1/src/main/java/com/google/spanner/admin/database/v1/CryptoKeyName.java
 - /java-spanner/proto-google-cloud-spanner-admin-database-v1/src/main/java/com/google/spanner/admin/database/v1/CryptoKeyVersionName.java

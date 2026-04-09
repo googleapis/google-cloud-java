@@ -13,7 +13,7 @@
 # limitations under the License.
 
 deep-preserve-regex:
-- "/java-storage/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
+- /java-storage/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java
 - /java-storage/google-.*/src/test/java/com/google/storage/control/v2/ITFoldersTest.java
 deep-remove-regex:
 - /java-storage/grpc-google-.*/src

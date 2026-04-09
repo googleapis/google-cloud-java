@@ -17,7 +17,7 @@ deep-remove-regex:
 - /java-logging/proto-google-.*/src
 - /java-logging/google-.*/src/v.*
 deep-preserve-regex:
-- "/java-logging/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
+- /java-logging/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java
 - /java-logging/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
 deep-copy-regex:
 - source: /google/logging/(v.*)/.*-java/proto-google-.*/src
