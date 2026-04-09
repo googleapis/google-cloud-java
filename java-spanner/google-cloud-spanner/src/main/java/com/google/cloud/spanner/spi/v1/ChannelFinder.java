@@ -165,6 +165,10 @@ public final class ChannelFinder {
     }
   }
 
+  /**
+   * Test-only hook used by {@link KeyAwareChannel#awaitPendingCacheUpdates()} to wait until the
+   * async cache update worker has finished applying the latest pending update.
+   */
   @VisibleForTesting
   void awaitPendingUpdates() throws InterruptedException {
     // Spin until no pending update remains.

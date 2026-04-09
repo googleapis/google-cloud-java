@@ -111,8 +111,8 @@ class EndpointLifecycleManager {
    * stable database-id key instead of a strong ChannelFinder reference. KeyAwareChannel unregisters
    * stale entries when a finder is cleared.
    *
-   * <p>All reads and writes to this map, and stale-endpoint eviction based on it, are synchronized
-   * on {@link #activeAddressLock}.
+   * <p>All reads and writes to this map, and all updates to {@link
+   * #transientFailureEvictedAddresses}, are synchronized on {@link #activeAddressLock}.
    */
   private final Map<String, Set<String>> activeAddressesPerFinder = new ConcurrentHashMap<>();
 
@@ -195,6 +195,24 @@ class EndpointLifecycleManager {
     return created[0];
   }
 
+  private void retainTransientFailureEvictionMarkers(Set<String> activeAddresses) {
+    synchronized (activeAddressLock) {
+      transientFailureEvictedAddresses.retainAll(activeAddresses);
+    }
+  }
+
+  private void markTransientFailureEvicted(String address) {
+    synchronized (activeAddressLock) {
+      transientFailureEvictedAddresses.add(address);
+    }
+  }
+
+  private void clearTransientFailureEvictionMarker(String address) {
+    synchronized (activeAddressLock) {
+      transientFailureEvictedAddresses.remove(address);
+    }
+  }
+
   /**
    * Records that real (non-probe) traffic was routed to an endpoint. This refreshes the idle
    * eviction timer for this endpoint.
@@ -243,7 +261,7 @@ class EndpointLifecycleManager {
       for (Set<String> addresses : activeAddressesPerFinder.values()) {
         allActive.addAll(addresses);
       }
-      transientFailureEvictedAddresses.retainAll(allActive);
+      retainTransientFailureEvictionMarkers(allActive);
 
       // Evict managed endpoints not referenced by any finder.
       List<String> stale = new ArrayList<>();
@@ -285,7 +303,7 @@ class EndpointLifecycleManager {
       for (Set<String> addresses : activeAddressesPerFinder.values()) {
         allActive.addAll(addresses);
       }
-      transientFailureEvictedAddresses.retainAll(allActive);
+      retainTransientFailureEvictionMarkers(allActive);
 
       List<String> stale = new ArrayList<>();
       for (String address : endpoints.keySet()) {
@@ -422,7 +440,7 @@ class EndpointLifecycleManager {
         case READY:
           state.lastReadyAt = clock.instant();
           state.consecutiveTransientFailures = 0;
-          transientFailureEvictedAddresses.remove(address);
+          clearTransientFailureEvictionMarker(address);
           break;
 
         case IDLE:
@@ -509,9 +527,9 @@ class EndpointLifecycleManager {
     stopProbing(address);
     endpoints.remove(address);
     if (reason == EvictionReason.TRANSIENT_FAILURE) {
-      transientFailureEvictedAddresses.add(address);
+      markTransientFailureEvicted(address);
     } else {
-      transientFailureEvictedAddresses.remove(address);
+      clearTransientFailureEvictionMarker(address);
     }
     endpointCache.evict(address);
   }
