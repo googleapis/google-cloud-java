@@ -4,6 +4,9 @@ CONTAINER_NAME=jdbc
 PACKAGE_DESTINATION=$(PWD)/drivers
 SRC="$(PWD)"
 skipSurefire ?= true
+JDBC_DRIVER_VERSION = $(shell mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+JDBC_JAR = $(PACKAGE_DESTINATION)/google-cloud-bigquery-jdbc-$(JDBC_DRIVER_VERSION)-all.jar
+
 
 # no indendation for ifndef\endif due to their evaluation before execution
 .check-env: |
@@ -59,14 +62,15 @@ package:
 	mvn clean package \
 		-DincludeScope=runtime \
 		-Dmaven.test.skip=true
-	mvn dependency:copy-dependencies \
-		-DincludeScope=runtime
-	${MAKE} generate-dependency-list
+	mkdir -p $(PACKAGE_DESTINATION)
+	cp target/google-cloud-bigquery-jdbc-*-all.jar $(PACKAGE_DESTINATION)/
 
-generate-dependency-list:
-	mvn -B dependency:list \
-		-f pom.xml \
-		-DincludeScope=runtime | grep :jar: | sed -E "s/^.* ([^: ]+):([^:]+):([^:]+):([^:]+).*/<dependency><groupId>\1<\/groupId><artifactId>\2<\/artifactId><version>\4<\/version><\/dependency>/g" > dependencies.txt
+build-it-standalone:
+	mvn -Dmaven.test.skip=true package -f pom-it.xml
+
+run-it-standalone:
+	java -cp $(JDBC_JAR):target-it/* org.junit.platform.console.ConsoleLauncher --select-class com.google.cloud.bigquery.jdbc.it.suites.ITDriverAgnosticTests
+
 
 # Commands for dockerized environments
 .docker-run: | 

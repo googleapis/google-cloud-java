@@ -241,6 +241,55 @@ public class EndpointLifecycleManagerTest {
   }
 
   @Test
+  public void transientFailureEvictionTrackedUntilEndpointReadyAgain() throws Exception {
+    KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
+    manager =
+        new EndpointLifecycleManager(
+            cache, /* probeIntervalSeconds= */ 1, Duration.ofMinutes(30), Clock.systemUTC());
+
+    registerAddresses(manager, "server1");
+    awaitCondition(
+        "endpoint should be created in background", () -> cache.getIfPresent("server1") != null);
+
+    cache.setState("server1", KeyRangeCacheTest.EndpointHealthState.TRANSIENT_FAILURE);
+    awaitCondition(
+        "endpoint should be evicted after repeated transient failures",
+        () ->
+            !manager.isManaged("server1")
+                && manager.wasRecentlyEvictedTransientFailure("server1")
+                && cache.getIfPresent("server1") == null);
+
+    manager.requestEndpointRecreation("server1");
+    awaitCondition(
+        "endpoint should be recreated in background", () -> cache.getIfPresent("server1") != null);
+    awaitCondition(
+        "recent transient failure marker should clear once endpoint is READY again",
+        () -> !manager.wasRecentlyEvictedTransientFailure("server1"));
+  }
+
+  @Test
+  public void transientFailureEvictionMarkerRemovedWhenAddressNoLongerActive() throws Exception {
+    KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
+    manager =
+        new EndpointLifecycleManager(
+            cache, /* probeIntervalSeconds= */ 1, Duration.ofMinutes(30), Clock.systemUTC());
+
+    String finder = registerAddresses(manager, "server1");
+    awaitCondition(
+        "endpoint should be created in background", () -> cache.getIfPresent("server1") != null);
+
+    cache.setState("server1", KeyRangeCacheTest.EndpointHealthState.TRANSIENT_FAILURE);
+    awaitCondition(
+        "endpoint should be evicted after repeated transient failures",
+        () ->
+            !manager.isManaged("server1") && manager.wasRecentlyEvictedTransientFailure("server1"));
+
+    manager.updateActiveAddresses(finder, Collections.emptySet());
+
+    assertFalse(manager.wasRecentlyEvictedTransientFailure("server1"));
+  }
+
+  @Test
   public void shutdownStopsAllProbing() throws Exception {
     KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
     manager =

@@ -199,6 +199,15 @@ public interface SpannerRpc extends ServiceRpc {
   /** Clears any client-side affinity associated with the given transaction id. */
   default void clearTransactionAffinity(ByteString transactionId) {}
 
+  /**
+   * Clears any client-side transaction affinity and transport-level channel affinity associated
+   * with the given transaction.
+   */
+  default void clearTransactionAndChannelAffinity(
+      ByteString transactionId, @Nullable Long channelHint) {
+    clearTransactionAffinity(transactionId);
+  }
+
   // Instance admin APIs.
   Paginated<InstanceConfig> listInstanceConfigs(int pageSize, @Nullable String pageToken)
       throws SpannerException;

@@ -41,8 +41,8 @@ jobs:
       # The `envVarTest` profile runs tests that require an environment variable
       - name: Env Var Tests
         run: |
-          mvn test --batch-mode --no-transfer-progress -Dcheckstyle.skip \
-              -Dfmt.skip -DenableTestCoverage -PenvVarTest
+          mvn test --batch-mode --no-transfer-progress -Pquick-build \
+              -DenableTestCoverage -PenvVarTest
         # Set the Env Var for this step only
         env:
           GOOGLE_CLOUD_UNIVERSE_DOMAIN: random.com
@@ -191,8 +191,7 @@ jobs:
           export PATH=${JAVA_HOME}/bin:$PATH
           # Maven surefire plugin lets us to specify the JVM when running tests via
           # the "jvm" system property.
-          mvn verify --batch-mode --no-transfer-progress -Dcheckstyle.skip \
-              -Dfmt.skip \
+          mvn verify --batch-mode --no-transfer-progress -Pquick-build \
               -Djvm="${JAVA8_HOME}/bin/java"
         working-directory: sdk-platform-java
       # The `envVarTest` profile runs tests that require an environment variable
@@ -205,8 +204,8 @@ jobs:
           # Maven surefire plugin lets us to specify the JVM when running tests via
           # the "jvm" system property.
           export GOOGLE_CLOUD_UNIVERSE_DOMAIN=random.com
-          mvn test --batch-mode --no-transfer-progress -Dcheckstyle.skip \
-              -Dfmt.skip -DenableTestCoverage -Dsurefire.failIfNoSpecifiedTests=false \
+          mvn test --batch-mode --no-transfer-progress -Pquick-build \
+              -DenableTestCoverage -Dsurefire.failIfNoSpecifiedTests=false \
               -PenvVarTest
         # Set the Env Var for this step only
         env:
