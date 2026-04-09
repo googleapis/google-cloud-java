@@ -31,13 +31,12 @@ class DynamicPicker extends Picker {
   private final SessionList sessions;
 
   private volatile Picker delegate;
-  private LoadBalancingOptions.LoadBalancingStrategyCase currentStrategy;
+  private volatile LoadBalancingOptions currentOptions;
 
-  public DynamicPicker(
-      SessionList sessions, LoadBalancingOptions.LoadBalancingStrategyCase initialStrategy) {
+  public DynamicPicker(SessionList sessions, LoadBalancingOptions initialOptions) {
     this.sessions = sessions;
-    this.currentStrategy = initialStrategy;
-    this.delegate = createPicker(initialStrategy);
+    this.currentOptions = initialOptions;
+    this.delegate = createPicker(initialOptions);
   }
 
   @Override
@@ -46,25 +45,28 @@ class DynamicPicker extends Picker {
   }
 
   public void updateConfig(SessionClientConfiguration.SessionPoolConfiguration config) {
-    LoadBalancingOptions.LoadBalancingStrategyCase newStrategy =
-        config.getLoadBalancingOptions().getLoadBalancingStrategyCase();
-    if (newStrategy != currentStrategy) {
-      delegate = createPicker(newStrategy);
-      currentStrategy = newStrategy;
+    LoadBalancingOptions newOptions = config.getLoadBalancingOptions();
+    if (!newOptions.equals(currentOptions)) {
+      delegate = createPicker(newOptions);
+      currentOptions = newOptions;
     }
   }
 
-  private Picker createPicker(LoadBalancingOptions.LoadBalancingStrategyCase strategy) {
-    switch (strategy) {
+  private Picker createPicker(LoadBalancingOptions options) {
+    switch (options.getLoadBalancingStrategyCase()) {
       case RANDOM:
-        return new SimplePicker(sessions);
+        return new SimplePicker(sessions, options.getRandom());
       case LEAST_IN_FLIGHT:
-        return new LeastInFlightPicker(sessions);
+        return new LeastInFlightPicker(sessions, options.getLeastInFlight());
+      case PEAK_EWMA:
+        return new LeastLatencyPicker(sessions, options.getPeakEwma());
       default:
         LOGGER.log(
-            Level.FINE, "got load balancing strategy {0} which was not implemented", strategy);
-        // TODO: implement PeakEwma
-        return new LeastInFlightPicker(sessions);
+            Level.FINE,
+            "got load balancing strategy {0} which was not implemented",
+            options.getLoadBalancingStrategyCase());
+        return new LeastInFlightPicker(
+            sessions, LoadBalancingOptions.LeastInFlight.getDefaultInstance());
     }
   }
 }

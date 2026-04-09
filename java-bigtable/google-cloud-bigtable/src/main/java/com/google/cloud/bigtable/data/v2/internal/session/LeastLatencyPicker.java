@@ -25,12 +25,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
-/** Pick the AFE with the fewest in-flight requests. */
-class LeastInFlightPicker extends Picker {
+/** Pick the AFE with the least latency. Experimental for now. */
+class LeastLatencyPicker extends Picker {
   private final SessionList sessionList;
-  private final LoadBalancingOptions.LeastInFlight options;
+  private final LoadBalancingOptions.PeakEwma options;
 
-  public LeastInFlightPicker(SessionList sessionList, LoadBalancingOptions.LeastInFlight options) {
+  public LeastLatencyPicker(SessionList sessionList, LoadBalancingOptions.PeakEwma options) {
     this.sessionList = sessionList;
     this.options = options;
   }
@@ -44,9 +44,10 @@ class LeastInFlightPicker extends Picker {
 
     ThreadLocalRandom rng = ThreadLocalRandom.current();
     List<AfeHandle> candidates = new ArrayList<>(readyAfes);
-    int bestCost = Integer.MAX_VALUE;
+    double bestCost = Double.MAX_VALUE;
     AfeHandle bestAfe = null;
     long iterations = readyAfes.size();
+
     if (options.getRandomSubsetSize() > 0) {
       iterations = Math.min(options.getRandomSubsetSize(), iterations);
     }
@@ -55,8 +56,8 @@ class LeastInFlightPicker extends Picker {
     for (int i = 0; i < iterations; i++) {
       int randomIndex = i + rng.nextInt(candidates.size() - i);
       AfeHandle picked = candidates.get(randomIndex);
-      if (picked.getNumOutstanding() < bestCost) {
-        bestCost = picked.getNumOutstanding();
+      if (picked.getE2eCost() < bestCost) {
+        bestCost = picked.getE2eCost();
         bestAfe = picked;
       }
       // Move candidate to the `i`th entry so that it's not picked again.

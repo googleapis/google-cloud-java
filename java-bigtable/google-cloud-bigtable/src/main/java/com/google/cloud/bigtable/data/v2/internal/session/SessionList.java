@@ -413,8 +413,8 @@ class SessionList {
   }
 
   static class PeakEwma {
-    // Use the last 100ms as a look back window
-    private final double decayNs = TimeUnit.MILLISECONDS.toNanos(100);
+    // Use the last 10s as a look back window
+    private final double decayNs = TimeUnit.SECONDS.toNanos(10);
     private long timestamp = System.nanoTime();
     private double cost;
 

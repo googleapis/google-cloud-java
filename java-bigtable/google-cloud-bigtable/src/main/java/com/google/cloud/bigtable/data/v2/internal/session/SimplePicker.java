@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigtable.data.v2.internal.session;
 
+import com.google.bigtable.v2.LoadBalancingOptions;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionList.AfeHandle;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionList.SessionHandle;
 import java.util.List;
@@ -24,10 +25,12 @@ import java.util.Random;
 
 class SimplePicker extends Picker {
   private final SessionList sessionList;
+  private final LoadBalancingOptions.Random options;
   private final Random random = new Random();
 
-  public SimplePicker(SessionList sessionList) {
+  public SimplePicker(SessionList sessionList, LoadBalancingOptions.Random options) {
     this.sessionList = sessionList;
+    this.options = options;
   }
 
   @Override
