@@ -275,6 +275,7 @@ public class KeyAwareChannelTest {
             .build();
 
     firstDelegate.emitOnMessage(ResultSet.newBuilder().setCacheUpdate(cacheUpdate).build());
+    harness.channel.awaitPendingCacheUpdates();
 
     ClientCall<ExecuteSqlRequest, ResultSet> secondCall =
         harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), CallOptions.DEFAULT);
@@ -329,6 +330,7 @@ public class KeyAwareChannelTest {
             .setCacheUpdate(createMutationRoutingCacheUpdate())
             .build());
     beginDelegate.emitOnClose(Status.OK, new Metadata());
+    harness.channel.awaitPendingCacheUpdates();
 
     ClientCall<CommitRequest, CommitResponse> commitCall =
         harness.channel.newCall(SpannerGrpc.getCommitMethod(), CallOptions.DEFAULT);
@@ -710,6 +712,7 @@ public class KeyAwareChannelTest {
     commitDelegate.emitOnMessage(
         CommitResponse.newBuilder().setCacheUpdate(createMutationRoutingCacheUpdate()).build());
     commitDelegate.emitOnClose(Status.OK, new Metadata());
+    harness.channel.awaitPendingCacheUpdates();
 
     Mutation mutation = createInsertMutation("b");
     ClientCall<BeginTransactionRequest, Transaction> secondBeginCall =
@@ -815,6 +818,7 @@ public class KeyAwareChannelTest {
         (RecordingClientCall<ExecuteSqlRequest, ResultSet>)
             harness.defaultManagedChannel.latestCall();
     seedDelegate.emitOnMessage(ResultSet.newBuilder().setCacheUpdate(cacheUpdate).build());
+    harness.channel.awaitPendingCacheUpdates();
 
     // 3. Send a streaming read with key in range [a, m) → should go to server-a.
     ClientCall<ReadRequest, PartialResultSet> readCallA =
@@ -1188,6 +1192,12 @@ public class KeyAwareChannelTest {
         (RecordingClientCall<ExecuteSqlRequest, ResultSet>)
             harness.defaultManagedChannel.latestCall();
     seedDelegate.emitOnMessage(ResultSet.newBuilder().setCacheUpdate(cacheUpdate).build());
+    try {
+      harness.channel.awaitPendingCacheUpdates();
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new RuntimeException(e);
+    }
   }
 
   private static Mutation createInsertMutation(String keyValue) {

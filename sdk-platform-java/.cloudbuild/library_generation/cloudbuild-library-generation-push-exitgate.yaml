@@ -14,7 +14,7 @@
 
 timeout: 7200s # 2 hours
 substitutions:
-  _GAPIC_GENERATOR_JAVA_VERSION: '2.57.1-SNAPSHOT' # {x-version-update:gapic-generator-java:current}
+  _GAPIC_GENERATOR_JAVA_VERSION: '2.69.0' # {x-version-update:gapic-generator-java:current}
   _IMAGE_NAME: "us-central1-docker.pkg.dev/cloud-sdk-production-pipeline/images-dev/java-library-generation"
   _SHA_IMAGE_ID: "${_IMAGE_NAME}:${COMMIT_SHA}"
   _VERSIONED_IMAGE_ID: "${_IMAGE_NAME}:${_GAPIC_GENERATOR_JAVA_VERSION}"

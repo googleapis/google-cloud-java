@@ -3,6 +3,6 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-tasks-bom</artifactId>
-  <version>2.35.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-tasks:current} -->
+  <version>2.89.0</version><!-- {x-version-update:google-cloud-tasks:current} -->
   <packaging>pom</packaging>
 </project>

@@ -303,20 +303,14 @@ function run_integration_tests() {
   parse_all_submodules "$1"
   printf "Running integration tests for submodules:\n%s\n" "$all_submodules"
 
-  mvn verify -Penable-integration-tests --projects "$all_submodules" \
+  mvn verify -Penable-integration-tests -Pquick-build --projects "$all_submodules" \
     ${INTEGRATION_TEST_ARGS} \
     -B -ntp -fae \
     --also-make \
     -PbulkTests \
     -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
     -Dorg.slf4j.simpleLogger.showDateTime=true \
     -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true \
-    -Djacoco.skip=true \
     -DskipUnitTests=true \
     -Dmaven.wagon.http.retryHandler.count=5 \
     -T 1C
@@ -330,17 +324,12 @@ function run_graalvm_tests() {
   parse_all_submodules "$1"
   printf "Running GraalVM ITs for submodules:\n%s\n" "$all_submodules"
 
-  mvn test -Pnative --projects "$all_submodules" \
+  mvn test -Pnative -Pquick-build --projects "$all_submodules" \
     ${INTEGRATION_TEST_ARGS} \
     -B -ntp -fae \
     -DtrimStackTrace=false \
-    -Dclirr.skip=true \
-    -Denforcer.skip=true \
     -Dorg.slf4j.simpleLogger.showDateTime=true \
-    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-    -Dcheckstyle.skip=true \
-    -Dflatten.skip=true \
-    -Danimal.sniffer.skip=true
+    -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS
 
   RETURN_CODE=$?
   printf "Finished GraalVM ITs for modules:\n%s\n" "$1"
@@ -405,16 +394,11 @@ function install_modules() {
   if [ -z "$1" ]; then
     mvn install \
       -B -ntp \
+      -Pquick-build \
       -DtrimStackTrace=false \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-      -Dcheckstyle.skip=true \
-      -Dflatten.skip=true \
-      -Danimal.sniffer.skip=true \
       -DskipTests=true \
-      -Djacoco.skip=true \
       -T 1C
   else
     printf "Installing modules:\n%s\n" "$1"
@@ -472,16 +456,11 @@ function install_modules() {
     #      Correctly builds dependencies without building dependents.
     mvn install --projects "$all_submodules,$always_install_deps" --also-make \
       -B -ntp \
+      -Pquick-build \
       -DtrimStackTrace=false \
-      -Dclirr.skip=true \
-      -Denforcer.skip=true \
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-      -Dcheckstyle.skip=true \
-      -Dflatten.skip=true \
-      -Danimal.sniffer.skip=true \
       -DskipTests=true \
-      -Djacoco.skip=true \
       -T 1C
   fi
 }
