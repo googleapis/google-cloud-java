@@ -37,9 +37,9 @@ import io.grpc.ServerCallHandler;
 import io.grpc.ServerInterceptor;
 import io.grpc.netty.shaded.io.grpc.netty.NettyServerBuilder;
 import java.net.InetSocketAddress;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 import java.util.Set;
@@ -241,8 +241,7 @@ public class ChannelUsageTest {
                   }));
         }
         assertTrue(
-            "Timed out while preparing concurrent transactions",
-            ready.await(10, TimeUnit.SECONDS));
+            "Timed out while preparing concurrent transactions", ready.await(10, TimeUnit.SECONDS));
         start.countDown();
         for (Future<?> future : futures) {
           future.get(20, TimeUnit.SECONDS);
