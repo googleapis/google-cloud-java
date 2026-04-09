@@ -123,7 +123,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-trace</artifactId>
-      <version>2.89.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
+      <version>2.89.0</version><!-- {x-version-update:google-cloud-trace:current} -->
       <scope>test</scope>
     </dependency>
     <dependency>
