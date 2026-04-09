@@ -425,7 +425,7 @@ abstract class AbstractReadContext
     public void close() {
       ByteString id = getTransactionId();
       if (id != null && !id.isEmpty()) {
-        rpc.clearTransactionAffinity(id);
+        rpc.clearTransactionAndChannelAffinity(id, Option.CHANNEL_HINT.getLong(channelHint));
       }
       super.close();
     }

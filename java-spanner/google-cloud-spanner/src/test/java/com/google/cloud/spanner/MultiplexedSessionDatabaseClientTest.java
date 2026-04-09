@@ -39,6 +39,7 @@ import java.time.Instant;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -46,6 +47,10 @@ import org.mockito.stubbing.Answer;
 
 @RunWith(JUnit4.class)
 public class MultiplexedSessionDatabaseClientTest {
+  @After
+  public void tearDown() throws Exception {
+    clearChannelUsage();
+  }
 
   @Test
   public void testMaintainer() {
@@ -300,6 +305,83 @@ public class MultiplexedSessionDatabaseClientTest {
     field.setAccessible(true);
     AtomicInteger counter = (AtomicInteger) field.get(client);
     assertEquals(0, counter.get());
+  }
+
+  @Test
+  public void testCloseRemovesChannelUsageEntryWhenLastClientCloses() throws Exception {
+    SessionClient sessionClient = createSessionClient();
+
+    MultiplexedSessionDatabaseClient client =
+        new MultiplexedSessionDatabaseClient(sessionClient, Clock.systemUTC());
+
+    assertEquals(1, getChannelUsage().size());
+
+    client.close();
+
+    assertEquals(0, getChannelUsage().size());
+  }
+
+  @Test
+  public void testCloseKeepsChannelUsageEntryWhileAnotherClientIsUsingSameSpanner()
+      throws Exception {
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SessionClient firstSessionClient = createSessionClient(spanner);
+    SessionClient secondSessionClient = createSessionClient(spanner);
+
+    MultiplexedSessionDatabaseClient firstClient =
+        new MultiplexedSessionDatabaseClient(firstSessionClient, Clock.systemUTC());
+    MultiplexedSessionDatabaseClient secondClient =
+        new MultiplexedSessionDatabaseClient(secondSessionClient, Clock.systemUTC());
+
+    assertEquals(1, getChannelUsage().size());
+
+    firstClient.close();
+    assertEquals(1, getChannelUsage().size());
+
+    secondClient.close();
+    assertEquals(0, getChannelUsage().size());
+  }
+
+  private SessionClient createSessionClient() {
+    return createSessionClient(mock(SpannerImpl.class));
+  }
+
+  private SessionClient createSessionClient(SpannerImpl spanner) {
+    SessionClient sessionClient = mock(SessionClient.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    SessionPoolOptions sessionPoolOptions = mock(SessionPoolOptions.class);
+
+    when(sessionClient.getSpanner()).thenReturn(spanner);
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(spannerOptions.getNumChannels()).thenReturn(4);
+    when(spannerOptions.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
+    when(sessionPoolOptions.getMultiplexedSessionMaintenanceDuration())
+        .thenReturn(Duration.ofDays(7));
+    when(sessionPoolOptions.getWaitForMinSessions()).thenReturn(Duration.ZERO);
+    doAnswer(
+            (Answer<?>)
+                invocationOnMock -> {
+                  SessionConsumer consumer = invocationOnMock.getArgument(0);
+                  consumer.onSessionCreateFailure(
+                      SpannerExceptionFactory.newSpannerException(
+                          ErrorCode.UNAUTHENTICATED, "test"),
+                      1);
+                  return null;
+                })
+        .when(sessionClient)
+        .asyncCreateMultiplexedSession(any(SessionConsumer.class));
+    return sessionClient;
+  }
+
+  @SuppressWarnings("unchecked")
+  private Map<?, ?> getChannelUsage() throws Exception {
+    Field field = MultiplexedSessionDatabaseClient.class.getDeclaredField("CHANNEL_USAGE");
+    field.setAccessible(true);
+    return (Map<?, ?>) field.get(null);
+  }
+
+  private void clearChannelUsage() throws Exception {
+    getChannelUsage().clear();
   }
 
   private boolean isJava8() {

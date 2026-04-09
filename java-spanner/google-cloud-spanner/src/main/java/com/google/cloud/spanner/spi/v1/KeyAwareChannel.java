@@ -20,6 +20,7 @@ import static com.google.cloud.spanner.XGoogSpannerRequestId.REQUEST_ID_CALL_OPT
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.cloud.grpc.GcpManagedChannel;
 import com.google.cloud.spanner.XGoogSpannerRequestId;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
@@ -32,6 +33,7 @@ import com.google.spanner.v1.PartialResultSet;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.ResultSet;
 import com.google.spanner.v1.RollbackRequest;
+import com.google.spanner.v1.SpannerGrpc;
 import com.google.spanner.v1.Transaction;
 import com.google.spanner.v1.TransactionSelector;
 import io.grpc.CallOptions;
@@ -292,6 +294,34 @@ final class KeyAwareChannel extends ManagedChannel {
 
   void clearTransactionAffinity(ByteString transactionId) {
     clearAffinity(transactionId);
+  }
+
+  void clearTransactionAndChannelAffinity(ByteString transactionId, @Nullable Long channelHint) {
+    if (channelHint != null) {
+      ManagedChannel channel = defaultChannel;
+      String address = transactionAffinities.get(transactionId);
+      if (address != null) {
+        ChannelEndpoint endpoint = endpointCache.getIfPresent(address);
+        if (endpoint != null) {
+          channel = endpoint.getChannel();
+        }
+      }
+      clearChannelHintAffinity(channel, channelHint);
+    }
+    clearAffinity(transactionId);
+  }
+
+  private static void clearChannelHintAffinity(ManagedChannel channel, long channelHint) {
+    if (!(channel instanceof GcpManagedChannel)) {
+      return;
+    }
+    ClientCall<ExecuteSqlRequest, ResultSet> call =
+        channel.newCall(
+            SpannerGrpc.getExecuteSqlMethod(),
+            CallOptions.DEFAULT
+                .withOption(GcpManagedChannel.AFFINITY_KEY, String.valueOf(channelHint))
+                .withOption(GcpManagedChannel.UNBIND_AFFINITY_KEY, true));
+    call.cancel("Cloud Spanner transaction closed", null);
   }
 
   private void maybeExcludeEndpointOnNextCall(
