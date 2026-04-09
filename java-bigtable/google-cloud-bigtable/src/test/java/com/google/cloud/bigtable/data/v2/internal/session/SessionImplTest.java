@@ -19,6 +19,7 @@ package com.google.cloud.bigtable.data.v2.internal.session;
 import static com.google.cloud.bigtable.data.v2.internal.test_helpers.StatusSubject.assertThat;
 import static com.google.cloud.bigtable.data.v2.internal.test_helpers.VRpcResultSubject.assertThat;
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.bigtable.v2.CloseSessionRequest;
@@ -201,6 +202,8 @@ public class SessionImplTest {
 
     // Send vRPCs until after a goaway time
     Stopwatch stopwatch = Stopwatch.createStarted();
+    int numUncommittedErrors = 0;
+    int numOk = 0;
     while (stopwatch.elapsed(TimeUnit.MILLISECONDS) < goAwayDelay.toMillis()) {
       VRpc<SessionFakeScriptedRequest, SessionFakeScriptedResponse> rpc =
           session.newCall(FakeDescriptor.SCRIPTED);
@@ -209,8 +212,22 @@ public class SessionImplTest {
           SessionFakeScriptedRequest.newBuilder().setTag(0).build(),
           VRpcCallContext.create(Deadline.after(1, TimeUnit.MINUTES), true, tracer),
           f);
-      f.get();
+      try {
+        f.get();
+        numOk++;
+      } catch (VRpcException e) {
+        if (e.getResult().getState() == State.UNCOMMITED) {
+          numUncommittedErrors++;
+        }
+      }
     }
+
+    assertWithMessage("Ensure that some vRpcs succeeded prior to the goaway")
+        .that(numOk)
+        .isGreaterThan(0);
+    assertWithMessage("Ensure that only the last vRpc could be rejected with an uncommited error")
+        .that(numUncommittedErrors)
+        .isAtMost(1);
 
     assertThat(sessionListener.popUntil(GoAwayResponse.class)).isInstanceOf(GoAwayResponse.class);
 
