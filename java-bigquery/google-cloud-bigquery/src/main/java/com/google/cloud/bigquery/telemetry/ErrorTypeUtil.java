@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigquery.telemetry;
 
-
 /**
  * Utility class for identifying exception types for telemetry tracking. TODO: this class should get
  * replaced with gax version when ready work tracked in
