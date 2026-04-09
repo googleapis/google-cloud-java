@@ -1,5 +1,26 @@
 # Changelog
 
+## [2.76.0](https://github.com/googleapis/java-bigtable/compare/v2.75.1...v2.76.0) (2026-04-09)
+
+
+### Features
+
+* Add locations field to AutomatedBackupPolicy ([9345b35](https://github.com/googleapis/java-bigtable/commit/9345b359a1ee2e6f03cc26d50358bf0937b113a4))
+* **bigtable:** Classic direct access checker and it's implementation ([#2840](https://github.com/googleapis/java-bigtable/issues/2840)) ([c2ccda1](https://github.com/googleapis/java-bigtable/commit/c2ccda188e5ec5ec3004d0535efbc45a804f24f0))
+* **bigtable:** Enable direct access by default ([#2857](https://github.com/googleapis/java-bigtable/issues/2857)) ([bffd892](https://github.com/googleapis/java-bigtable/commit/bffd892185fba3f4cf59077201288796f620e389))
+
+
+### Bug Fixes
+
+* Check alts if we return permission denied for pingandwarm ([#2860](https://github.com/googleapis/java-bigtable/issues/2860)) ([3926275](https://github.com/googleapis/java-bigtable/commit/3926275d4eb84aeb07459abd1b6e70dd65f6beb8))
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.68.0 ([9345b35](https://github.com/googleapis/java-bigtable/commit/9345b359a1ee2e6f03cc26d50358bf0937b113a4))
+* Logic to suppress failed metric export during client shutdown ([#2858](https://github.com/googleapis/java-bigtable/issues/2858)) ([ae0f0ef](https://github.com/googleapis/java-bigtable/commit/ae0f0efb483d04f56d456366a4d21ba5a949993c))
+
+
+### Dependencies
+
+* Manually update dependency com.google.cloud:sdk-platform-java-config to v3.59.0 ([#2865](https://github.com/googleapis/java-bigtable/issues/2865)) ([21c1833](https://github.com/googleapis/java-bigtable/commit/21c183368e3287472f5d3d755d6f1ce73a4d6e32))
+
 ## [2.75.1](https://github.com/googleapis/java-bigtable/compare/v2.75.0...v2.75.1) (2026-03-26)
 
 
