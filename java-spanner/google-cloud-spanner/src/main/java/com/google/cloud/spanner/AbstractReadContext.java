@@ -60,6 +60,7 @@ import java.util.Collections;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Condition;
@@ -414,26 +415,54 @@ abstract class AbstractReadContext
       return selector;
     }
 
+    private void decrementPendingStartsAndSignal() {
+      if (pendingStarts.decrementAndGet() == 0) {
+        txnLock.lock();
+        try {
+          hasNoPendingStarts.signalAll();
+        } finally {
+          txnLock.unlock();
+        }
+      }
+    }
+
     private ListenableAsyncResultSet createAsyncResultSet(
         Supplier<ResultSet> resultSetSupplier, int bufferRows) {
       pendingStarts.incrementAndGet();
-      return new AsyncResultSetImpl(
-          executorProvider,
-          () -> {
-            try {
-              return resultSetSupplier.get();
-            } finally {
-              if (pendingStarts.decrementAndGet() == 0) {
-                txnLock.lock();
-                try {
-                  hasNoPendingStarts.signalAll();
-                } finally {
-                  txnLock.unlock();
+      // Make sure that we decrement the counter exactly once, either
+      // when the query is actually executed, or when the result set is closed,
+      // or if something goes wrong when creating the result set.
+      final AtomicBoolean decremented = new AtomicBoolean(false);
+      try {
+        return new AsyncResultSetImpl(
+            executorProvider,
+            () -> {
+              try {
+                return resultSetSupplier.get();
+              } finally {
+                if (decremented.compareAndSet(false, true)) {
+                  decrementPendingStartsAndSignal();
                 }
               }
+            },
+            bufferRows) {
+          @Override
+          public void close() {
+            try {
+              super.close();
+            } finally {
+              if (!isUsed() && decremented.compareAndSet(false, true)) {
+                decrementPendingStartsAndSignal();
+              }
             }
-          },
-          bufferRows);
+          }
+        };
+      } catch (Throwable t) {
+        if (decremented.compareAndSet(false, true)) {
+          decrementPendingStartsAndSignal();
+        }
+        throw t;
+      }
     }
 
     @Override
