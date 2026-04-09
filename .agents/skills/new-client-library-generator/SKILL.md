@@ -11,7 +11,10 @@ This skill automates the process of adding a new client library to the `google-c
 
 ### 1. Retrieve Service Information from Buganizer
 
-Use the available Buganizer MCP server to fetch the ticket content. The ticket will contain a link to a Service YAML file. Parse this YAML file to extract the following fields:
+Use the available Buganizer MCP server to fetch the ticket content. The ticket will contain a link to a Service YAML file. Parse this YAML file to extract the fields below.
+
+> [!IMPORTANT]
+> Not all fields in the Service YAML file may exist. You must ensure that all **Required** fields are identified and populated before executing the generation script.
 
 **Required:**
 - `api_shortname`: Unique service identifier (e.g., `alloydb`).
@@ -56,7 +59,7 @@ where `<api_short_name>` is the value from the Service YAML.
 If the library does not exist yet, run the script with the gathered information:
 
 ```bash
-python3 generation/new_client_hermetic_build/add-new-client-config.py generate \
+python3 generation/new_client_hermetic_build/add-new-client-config.py add-new-library \
   --api-shortname="[API_SHORTNAME]" \
   --name-pretty="[NAME_PRETTY]" \
   --proto-path="[PROTO_PATH]" \
@@ -69,7 +72,7 @@ The script modifies `generation_config.yaml` and sorts the `libraries` list alph
 
 To see all available flags:
 ```bash
-python3 generation/new_client_hermetic_build/add-new-client-config.py generate --help
+python3 generation/new_client_hermetic_build/add-new-client-config.py add-new-library --help
 ```
 
 #### Adding a new version to an existing library
@@ -102,4 +105,20 @@ git add generation_config.yaml
 git commit -m "feat: [API_SHORTNAME] new module for [API_SHORTNAME]"
 ```
 
-Then open a pull request. Include the exact `generate` command and arguments used (if applicable) in the PR body. The hermetic library generation workflow will be triggered automatically upon changes to `generation_config.yaml`.
+Then open a pull request. The Pull Request body must only contain the `add-new-library` command used.
+
+**PR Body Template:**
+
+```text
+Command used:
+
+python3 generation/new_client_hermetic_build/add-new-client-config.py add-new-library \
+  --api-shortname="[API_SHORTNAME]" \
+  --name-pretty="[NAME_PRETTY]" \
+  --proto-path="[PROTO_PATH]" \
+  --product-docs="[PRODUCT_DOCS]" \
+  --api-description="[API_DESCRIPTION]" \
+  [OPTIONAL_FLAGS]
+```
+
+The hermetic library generation workflow will be triggered automatically upon changes to `generation_config.yaml`.

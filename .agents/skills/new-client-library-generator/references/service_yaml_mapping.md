@@ -30,7 +30,7 @@ documentation:
 
 **Generated Command:**
 ```bash
-python3 generation/new_client_hermetic_build/add-new-client-config.py generate \
+python3 generation/new_client_hermetic_build/add-new-client-config.py add-new-library \
   --api-shortname="discoveryengine" \
   --name-pretty="Discovery Engine API" \
   --proto-path="google/cloud/discoveryengine/v1" \
