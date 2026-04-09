@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-parametermanager/samples/snippets/generated"
 
 deep-preserve-regex:
+- "/java-parametermanager/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-parametermanager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:

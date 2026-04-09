@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-dlp/samples/snippets/generated"
 
 deep-preserve-regex:
+- "/java-dlp/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-dlp/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/DeidentifyTemplateNames.java"
 - "/java-dlp/proto-google-cloud-dlp-v2/src/main/java/com/google/privacy/dlp/v2/InspectFindingName.java"

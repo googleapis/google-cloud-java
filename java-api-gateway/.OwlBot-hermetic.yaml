@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-api-gateway/google-.*/src"
 
 deep-preserve-regex:
+- "/java-api-gateway/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-api-gateway/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:

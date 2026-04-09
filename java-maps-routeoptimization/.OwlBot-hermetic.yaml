@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-maps-routeoptimization/samples/snippets/generated"
 
 deep-preserve-regex:
+- "/java-maps-routeoptimization/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-maps-routeoptimization/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:

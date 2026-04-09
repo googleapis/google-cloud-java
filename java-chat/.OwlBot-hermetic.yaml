@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-chat/samples/snippets/generated"
 
 deep-preserve-regex:
+- "/java-chat/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-chat/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:

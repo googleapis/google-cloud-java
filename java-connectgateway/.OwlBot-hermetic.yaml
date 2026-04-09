@@ -19,6 +19,7 @@ deep-remove-regex:
 - "/java-connectgateway/samples/snippets/generated"
 
 deep-preserve-regex:
+- "/java-connectgateway/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-connectgateway/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:

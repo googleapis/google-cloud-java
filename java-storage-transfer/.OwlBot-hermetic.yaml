@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-storage-transfer/samples/snippets/generated"
 
 deep-preserve-regex:
+- "/java-storage-transfer/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-storage-transfer/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:

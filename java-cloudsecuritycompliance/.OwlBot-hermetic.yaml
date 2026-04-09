@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-cloudsecuritycompliance/samples/snippets/generated"
 
 deep-preserve-regex:
+- "/java-cloudsecuritycompliance/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-cloudsecuritycompliance/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:

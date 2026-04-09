@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-container/samples/snippets/generated"
 
 deep-preserve-regex:
+- "/java-container/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-container/google-cloud-container/src/main/java/com/google/cloud/container/v1/SampleApp.java"
 - "/java-container/google-cloud-container/src/test/java/com/google/cloud/container/v1/it/ITSystemTest.java"
 - "/java-container/google-cloud-container/src/test/java/com/google/cloud/container/v1/it/Util.java"

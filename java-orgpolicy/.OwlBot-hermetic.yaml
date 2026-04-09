@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-orgpolicy/google-.*/src"
 
 deep-preserve-regex:
+- "/java-orgpolicy/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-orgpolicy/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:

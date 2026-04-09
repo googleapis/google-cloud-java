@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-datacatalog/google-.*/src"
 
 deep-preserve-regex:
+- "/java-datacatalog/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-datacatalog/google-cloud-datacatalog/src/test/java/com/google/cloud/datacatalog/v1beta1/it/ITSystemTest.java"
 - "/java-datacatalog/proto-google-cloud-datacatalog-v1beta1/src/main/java/com/google/cloud/datacatalog/v1beta1/FieldName.java"
 

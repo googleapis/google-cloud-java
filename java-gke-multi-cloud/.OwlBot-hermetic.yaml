@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-gke-multi-cloud/google-.*/src"
 
 deep-preserve-regex:
+- "/java-gke-multi-cloud/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-gke-multi-cloud/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:

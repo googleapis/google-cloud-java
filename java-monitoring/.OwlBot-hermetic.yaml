@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-monitoring/samples/snippets/generated"
 
 deep-preserve-regex:
+- "/java-monitoring/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-monitoring/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/java-monitoring/google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/ITVPCServiceControlTest.java"
 

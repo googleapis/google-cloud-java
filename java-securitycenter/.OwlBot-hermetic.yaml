@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-securitycenter/google-.*/src"
 
 deep-preserve-regex:
+- "/java-securitycenter/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-securitycenter/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/java-securitycenter/proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/UntypedSecuritymarksName.java"
 - "/java-securitycenter/proto-google-cloud-securitycenter-v1beta1/src/main/java/com/google/cloud/securitycenter/v1beta1/SecuritymarksNames.java"

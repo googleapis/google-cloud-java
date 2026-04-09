@@ -17,6 +17,7 @@ deep-remove-regex:
 - /java-bigquerystorage/proto-google-.*/src
 - /java-bigquerystorage/google-.*/src
 deep-preserve-regex:
+- "/java-bigquerystorage/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - /java-bigquerystorage/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
 - /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/SchemaAwareStreamWriter.java
 - /java-bigquerystorage/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/ToProtoConverter.java

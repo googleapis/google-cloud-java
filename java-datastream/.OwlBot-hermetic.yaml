@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-datastream/google-.*/src"
 
 deep-preserve-regex:
+- "/java-datastream/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-datastream/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:

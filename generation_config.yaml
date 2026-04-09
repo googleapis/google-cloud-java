@@ -2997,3 +2997,4 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/workstations/v1
   - proto_path: google/cloud/workstations/v1beta
+

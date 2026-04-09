@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-kmsinventory/samples/snippets/generated"
 
 deep-preserve-regex:
+- "/java-kmsinventory/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-kmsinventory/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:

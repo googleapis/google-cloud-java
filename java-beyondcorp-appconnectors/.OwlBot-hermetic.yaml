@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-beyondcorp-appconnectors/samples/snippets/generated"
 
 deep-preserve-regex:
+- "/java-beyondcorp-appconnectors/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-beyondcorp-appconnectors/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:

@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-tasks/google-.*/src"
 
 deep-preserve-regex:
+- "/java-tasks/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-tasks/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/java-tasks/google-cloud-tasks/src/test/java/com/google/cloud/tasks/v2beta3/CloudTasksSmokeTest.java"
 - "/java-tasks/proto-google-cloud-tasks-v2/src/main/java/com/google/cloud/tasks/v2/ProjectName.java"

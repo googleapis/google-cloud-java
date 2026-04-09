@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-geminidataanalytics/samples/snippets/generated"
 
 deep-preserve-regex:
+- "/java-geminidataanalytics/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-geminidataanalytics/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:

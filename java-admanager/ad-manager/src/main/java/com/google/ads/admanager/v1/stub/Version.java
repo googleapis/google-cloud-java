@@ -21,7 +21,7 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 final class Version {
   // {x-version-update-start:ad-manager:current}
-  static final String VERSION = "0.0.0-SNAPSHOT";
+  static final String VERSION = "0.48.0";
   // {x-version-update-end}
 
 }

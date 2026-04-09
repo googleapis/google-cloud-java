@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-asset/google-.*/src"
 
 deep-preserve-regex:
+- "/java-asset/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-asset/google-cloud-.*/src/test/java/com/google/cloud/.*/it"
 - "/java-asset/google-cloud-asset/src/test/java/com/google/cloud/asset/v1/VPCServiceControlTest.java"
 - "/java-asset/proto-google-cloud-asset-v1/src/main/java/com/google/cloud/asset/v1/ProjectName.java"

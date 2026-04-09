@@ -20,6 +20,7 @@ deep-remove-regex:
 - "/java-telcoautomation/samples/snippets/generated"
 
 deep-preserve-regex:
+- "/java-telcoautomation/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
 - "/java-telcoautomation/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
