@@ -443,7 +443,15 @@ public class SessionImplTest {
                         SessionParametersResponse.newBuilder()
                             .setKeepAlive(Durations.fromMillis(keepAliveDurationMs))
                             .build())
-                    .putVrpcActions(0, ActionList.getDefaultInstance())
+                    .putVrpcActions(
+                        0,
+                        ActionList.newBuilder()
+                            .addActions(
+                                Action.newBuilder()
+                                    .setDelay(Durations.fromMillis(500))
+                                    .setResponse(VirtualRpcResponse.getDefaultInstance())
+                                    .build())
+                            .build())
                     .build()
                     .toByteString())
             .build();
