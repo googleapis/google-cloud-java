@@ -518,7 +518,7 @@ public class GapicSpannerRpcTest {
                 Mockito.eq(SpannerGrpc.getExecuteSqlMethod()), callOptionsCaptor.capture()))
         .thenReturn(call);
 
-    GapicSpannerRpc.clearChannelHintAffinity(channel, 7L);
+    GrpcGcpAffinityUtil.clearChannelHintAffinity(channel, 7L);
 
     assertEquals("7", callOptionsCaptor.getValue().getOption(GcpManagedChannel.AFFINITY_KEY));
     assertEquals(

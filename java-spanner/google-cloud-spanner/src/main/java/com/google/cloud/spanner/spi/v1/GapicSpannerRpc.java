@@ -620,22 +620,7 @@ public class GapicSpannerRpc implements SpannerRpc {
       return;
     }
     clearTransactionAffinity(transactionId);
-    clearChannelHintAffinity(grpcGcpChannel, channelHint);
-  }
-
-  @VisibleForTesting
-  static void clearChannelHintAffinity(
-      @Nullable ManagedChannel channel, @Nullable Long channelHint) {
-    if (!(channel instanceof GcpManagedChannel) || channelHint == null) {
-      return;
-    }
-    ClientCall<ExecuteSqlRequest, ResultSet> call =
-        channel.newCall(
-            SpannerGrpc.getExecuteSqlMethod(),
-            CallOptions.DEFAULT
-                .withOption(GcpManagedChannel.AFFINITY_KEY, String.valueOf(channelHint))
-                .withOption(GcpManagedChannel.UNBIND_AFFINITY_KEY, true));
-    call.cancel("Cloud Spanner transaction closed", null);
+    GrpcGcpAffinityUtil.clearChannelHintAffinity(grpcGcpChannel, channelHint);
   }
 
   private static String parseGrpcGcpApiConfig() {
