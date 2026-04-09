@@ -2275,30 +2275,12 @@ public class GapicSpannerRpc implements SpannerRpc {
     Long affinity = options == null ? null : Option.CHANNEL_HINT.getLong(options);
     if (affinity != null) {
       if (this.isGrpcGcpExtensionEnabled) {
-        // Set channel affinity in gRPC-GCP.
-        String affinityKey;
-        if (this.isDynamicChannelPoolEnabled) {
-          // When dynamic channel pooling is enabled, we use the raw affinity value as the key.
-          // This allows grpc-gcp to use round-robin for new keys, enabling new channels
-          // (created during scale-up) to receive requests. The affinity key lifetime setting
-          // ensures the affinity map doesn't grow unbounded.
-          affinityKey = String.valueOf(affinity);
-        } else {
-          // When DCP is disabled, compute bounded channel hint to prevent
-          // gRPC-GCP affinity map from getting unbounded.
-          int boundedChannelHint = affinity.intValue() % this.numChannels;
-          affinityKey = String.valueOf(boundedChannelHint);
-        }
-        context =
-            context.withCallOptions(
-                context.getCallOptions().withOption(GcpManagedChannel.AFFINITY_KEY, affinityKey));
-        // Check if the caller wants to unbind the affinity key after this call completes.
-        Boolean unbind = Option.UNBIND_CHANNEL_HINT.get(options);
-        if (Boolean.TRUE.equals(unbind)) {
-          context =
-              context.withCallOptions(
-                  context.getCallOptions().withOption(GcpManagedChannel.UNBIND_AFFINITY_KEY, true));
-        }
+        // Do not set AFFINITY_KEY under grpc-gcp. Multiplexed sessions get no backend-locality
+        // benefit from sticky per-transaction channel affinity, and setting one causes
+        // GcpManagedChannel.pickLeastBusyChannel to permanently bind keys to channel 0 under a
+        // concurrent warmup burst (it reads activeStreamsCount before any caller's start() has
+        // incremented it). With no key, getChannelRef(null) does a fresh per-call least-busy pick
+        // with no sticky binding and no affinity-map growth.
       } else {
         // Set channel affinity in GAX.
         context = context.withChannelAffinity(affinity.intValue());
