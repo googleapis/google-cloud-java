@@ -213,9 +213,7 @@ public class ITOpenTelemetryTest {
         // Error attributes
         assertEquals(
             "java.net.UnknownHostException", attrs.get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
-        assertEquals(
-            "CLIENT_CONNECTION_ERROR",
-            attrs.get(BigQueryTelemetryTracer.ERROR_TYPE));
+        assertEquals("CLIENT_CONNECTION_ERROR", attrs.get(BigQueryTelemetryTracer.ERROR_TYPE));
         assertEquals(
             "UnknownHostException: invalid-host-name-12345.com",
             attrs.get(BigQueryTelemetryTracer.STATUS_MESSAGE));

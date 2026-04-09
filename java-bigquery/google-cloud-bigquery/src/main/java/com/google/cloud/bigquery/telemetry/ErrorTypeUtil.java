@@ -15,7 +15,6 @@
  */
 package com.google.cloud.bigquery.telemetry;
 
-import com.google.common.annotations.VisibleForTesting;
 
 /**
  * Utility class for identifying exception types for telemetry tracking. TODO: this class should get
