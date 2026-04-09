@@ -52,13 +52,9 @@ case ${JOB_TYPE} in
     retry_with_backoff 3 10 \
       mvn install \
         -B -ntp \
+        -Pquick-build \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
         --also-make \
         ${SUREFIRE_JVM_OPT} "${EXTRA_PROFILE_OPTS[@]}"
@@ -80,13 +76,9 @@ case ${JOB_TYPE} in
       install_modules "sdk-platform-java"
       mvn install \
         -B -ntp \
+        -Pquick-build \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
         -DskipTests=true \
         --also-make \
@@ -143,19 +135,13 @@ case ${JOB_TYPE} in
 
       echo "SUREFIRE_JVM_OPT: ${SUREFIRE_JVM_OPT}"
       echo "INTEGRATION_TEST_ARGS: ${INTEGRATION_TEST_ARGS}"
-      mvn verify -Penable-integration-tests \
+      mvn verify -Penable-integration-tests -Pquick-build \
         --also-make \
         ${INTEGRATION_TEST_ARGS} \
         -B -ntp -fae \
         -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
         -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true \
-        -Djacoco.skip=true \
         -DskipUnitTests=true \
         -Dmaven.wagon.http.retryHandler.count=5 \
         ${SUREFIRE_JVM_OPT}
@@ -202,18 +188,13 @@ case ${JOB_TYPE} in
       echo "Running in subdir: ${BUILD_SUBDIR}"
       pushd "${BUILD_SUBDIR}"
       echo "INTEGRATION_TEST_ARGS: ${INTEGRATION_TEST_ARGS}"
-      mvn test -Pnative \
+      mvn test -Pnative -Pquick-build \
         --also-make \
         ${INTEGRATION_TEST_ARGS} \
         -B -ntp -fae \
         -DtrimStackTrace=false \
-        -Dclirr.skip=true \
-        -Denforcer.skip=true \
         -Dorg.slf4j.simpleLogger.showDateTime=true \
-        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-        -Dcheckstyle.skip=true \
-        -Dflatten.skip=true \
-        -Danimal.sniffer.skip=true
+        -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS
 
       RETURN_CODE=$?
       popd
