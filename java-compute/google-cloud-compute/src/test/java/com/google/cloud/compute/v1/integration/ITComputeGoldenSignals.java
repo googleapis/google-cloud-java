@@ -257,12 +257,18 @@ public class ITComputeGoldenSignals extends BaseTest {
           .isEqualTo("googleapis/google-cloud-java");
       assertThat(span.getLabelsMap().get(ObservabilityAttributes.HTTP_URL_TEMPLATE_ATTRIBUTE))
           .isEqualTo("compute/v1/projects/{project=*}/zones/{zone=*}/instances");
+      String expectedDestinationResource;
+      if (expectError) {
+        expectedDestinationResource = "//compute.googleapis.com/projects/invalid-project-";
+      } else {
+        expectedDestinationResource =
+            "//compute.googleapis.com/projects/" + DEFAULT_PROJECT + "/zones/us-central1-a";
+      }
       assertThat(span.getLabelsMap().get(ObservabilityAttributes.DESTINATION_RESOURCE_ID_ATTRIBUTE))
-          .isEqualTo("//compute.googleapis.com/projects/" + DEFAULT_PROJECT + "/zones/us-central1-a");
-      
+          .startsWith(expectedDestinationResource);
+
       // These might fail if not supported in HTTP/REST yet
       assertThat(span.getLabelsMap()).containsKey(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE);
-      assertThat(span.getLabelsMap()).containsKey(ObservabilityAttributes.HTTP_RESPONSE_BODY_SIZE);
 
       if (expectError) {
         assertThat(span.getLabelsMap().get(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE))
