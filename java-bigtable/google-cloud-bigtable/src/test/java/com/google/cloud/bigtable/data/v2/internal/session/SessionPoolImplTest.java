@@ -206,9 +206,9 @@ public class SessionPoolImplTest {
     assertThat(exception)
         .hasMessageThat()
         .contains(
-            "UNAVAILABLE: Session failed with consecutive failures."
-                + " Most recent server status: Status{code=INTERNAL, "
-                + "description=fake internal error. PeerInfo: transport_type: TRANSPORT_TYPE_SESSION_UNKNOWN, cause=null}");
+            "UNAVAILABLE: Session failed with consecutive failures. Most recent server status:"
+                + " Status{code=INTERNAL, description=fake internal error. PeerInfo:"
+                + " transport_type: TRANSPORT_TYPE_SESSION_UNKNOWN, cause=null}");
   }
 
   @Test

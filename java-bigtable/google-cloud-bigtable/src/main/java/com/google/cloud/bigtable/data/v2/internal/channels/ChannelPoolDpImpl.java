@@ -178,7 +178,8 @@ public class ChannelPoolDpImpl implements ChannelPool {
             () -> {
               log(
                   Level.FINE,
-                  "Couldn't find an existing channel with capacity, num outstanding streams across all channel groups: %d, num groups: %d",
+                  "Couldn't find an existing channel with capacity, num outstanding streams across"
+                      + " all channel groups: %d, num groups: %d",
                   channelGroups.stream().mapToInt(g -> g.numStreams).sum(),
                   channelGroups.size());
 

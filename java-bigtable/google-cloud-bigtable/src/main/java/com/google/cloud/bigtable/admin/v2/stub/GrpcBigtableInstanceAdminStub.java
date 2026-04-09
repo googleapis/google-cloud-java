@@ -563,6 +563,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetInstanceRequest, Instance> getInstanceTransportSettings =
         GrpcCallSettings.<GetInstanceRequest, Instance>newBuilder()
@@ -573,6 +574,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListInstancesRequest, ListInstancesResponse> listInstancesTransportSettings =
         GrpcCallSettings.<ListInstancesRequest, ListInstancesResponse>newBuilder()
@@ -583,6 +585,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<Instance, Instance> updateInstanceTransportSettings =
         GrpcCallSettings.<Instance, Instance>newBuilder()
@@ -593,6 +596,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PartialUpdateInstanceRequest, Operation>
         partialUpdateInstanceTransportSettings =
@@ -614,6 +618,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateClusterRequest, Operation> createClusterTransportSettings =
         GrpcCallSettings.<CreateClusterRequest, Operation>newBuilder()
@@ -624,6 +629,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetClusterRequest, Cluster> getClusterTransportSettings =
         GrpcCallSettings.<GetClusterRequest, Cluster>newBuilder()
@@ -634,6 +640,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListClustersRequest, ListClustersResponse> listClustersTransportSettings =
         GrpcCallSettings.<ListClustersRequest, ListClustersResponse>newBuilder()
@@ -644,6 +651,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<Cluster, Operation> updateClusterTransportSettings =
         GrpcCallSettings.<Cluster, Operation>newBuilder()
@@ -654,6 +662,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<PartialUpdateClusterRequest, Operation> partialUpdateClusterTransportSettings =
         GrpcCallSettings.<PartialUpdateClusterRequest, Operation>newBuilder()
@@ -674,6 +683,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateAppProfileRequest, AppProfile> createAppProfileTransportSettings =
         GrpcCallSettings.<CreateAppProfileRequest, AppProfile>newBuilder()
@@ -684,6 +694,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetAppProfileRequest, AppProfile> getAppProfileTransportSettings =
         GrpcCallSettings.<GetAppProfileRequest, AppProfile>newBuilder()
@@ -694,6 +705,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListAppProfilesRequest, ListAppProfilesResponse>
         listAppProfilesTransportSettings =
@@ -705,6 +717,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateAppProfileRequest, Operation> updateAppProfileTransportSettings =
         GrpcCallSettings.<UpdateAppProfileRequest, Operation>newBuilder()
@@ -726,6 +739,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -736,6 +750,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -746,6 +761,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -757,6 +773,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
     GrpcCallSettings<ListHotTabletsRequest, ListHotTabletsResponse>
         listHotTabletsTransportSettings =
@@ -768,6 +785,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<CreateLogicalViewRequest, Operation> createLogicalViewTransportSettings =
         GrpcCallSettings.<CreateLogicalViewRequest, Operation>newBuilder()
@@ -778,6 +796,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetLogicalViewRequest, LogicalView> getLogicalViewTransportSettings =
         GrpcCallSettings.<GetLogicalViewRequest, LogicalView>newBuilder()
@@ -788,6 +807,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListLogicalViewsRequest, ListLogicalViewsResponse>
         listLogicalViewsTransportSettings =
@@ -799,6 +819,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateLogicalViewRequest, Operation> updateLogicalViewTransportSettings =
         GrpcCallSettings.<UpdateLogicalViewRequest, Operation>newBuilder()
@@ -820,6 +841,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateMaterializedViewRequest, Operation>
         createMaterializedViewTransportSettings =
@@ -831,6 +853,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetMaterializedViewRequest, MaterializedView>
         getMaterializedViewTransportSettings =
@@ -842,6 +865,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     GrpcCallSettings<ListMaterializedViewsRequest, ListMaterializedViewsResponse>
         listMaterializedViewsTransportSettings =
@@ -854,6 +878,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateMaterializedViewRequest, Operation>
         updateMaterializedViewTransportSettings =
@@ -877,6 +902,7 @@ public class GrpcBigtableInstanceAdminStub extends BigtableInstanceAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
 
     this.createInstanceCallable =

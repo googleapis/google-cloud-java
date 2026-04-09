@@ -66,7 +66,8 @@ public abstract class MaterializedViewName {
         name);
     Preconditions.checkArgument(
         "materializedViews".equals(parts.get(4)),
-        "Invalid materialized view name: %s, must start with projects/$PROJECT_ID/instances/$INSTANCE_ID/materializedViews",
+        "Invalid materialized view name: %s, must start with"
+            + " projects/$PROJECT_ID/instances/$INSTANCE_ID/materializedViews",
         name);
     Preconditions.checkArgument(
         !parts.get(5).isEmpty(), "Invalid materialized view name %s, must have table id", name);

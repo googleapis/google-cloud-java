@@ -281,7 +281,8 @@ public class SessionImpl implements Session, VRpcSessionApi {
     debugTagTracer.checkPrecondition(
         state == SessionState.CLOSING,
         "session_graceful_close_wrong_state",
-        "Session error: %s tried to actuate session closing when not in the correct state. State: %s",
+        "Session error: %s tried to actuate session closing when not in the correct state. State:"
+            + " %s",
         info.getLogName(),
         state);
 
@@ -454,7 +455,8 @@ public class SessionImpl implements Session, VRpcSessionApi {
             TelemetryConfiguration.Level.WARN, "session_closed_discard_vrpc_response");
         logger.warning(
             String.format(
-                "%s Discarding vRPC error because session is past the CLOSING phase with the reason: %s",
+                "%s Discarding vRPC error because session is past the CLOSING phase with the"
+                    + " reason: %s",
                 info.getLogName(), closeReason));
         return;
       }
@@ -531,7 +533,8 @@ public class SessionImpl implements Session, VRpcSessionApi {
             TelemetryConfiguration.Level.WARN, "session_closed_discard_vrpc_response");
         logger.warning(
             String.format(
-                "%s Discarding vRPC error because session is past the CLOSING phase with the reason: %s, error was: %s",
+                "%s Discarding vRPC error because session is past the CLOSING phase with the"
+                    + " reason: %s, error was: %s",
                 info.getLogName(), closeReason, error));
         return;
       }
@@ -663,7 +666,8 @@ public class SessionImpl implements Session, VRpcSessionApi {
         logger.log(
             Level.WARNING,
             String.format(
-                "Session error: %s Unhandled exception while notifying vRpc of session closure status %s",
+                "Session error: %s Unhandled exception while notifying vRpc of session closure"
+                    + " status %s",
                 info.getLogName(), status),
             t);
       }

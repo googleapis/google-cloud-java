@@ -297,7 +297,9 @@ public class SessionImplTest {
         .hasMessageThat()
         .isEqualTo(
             "UNAVAILABLE: vRPC failed due to transport error\n"
-                + "Transport error: INTERNAL: fake internal error. PeerInfo: application_frontend_subzone: \"ll\" transport_type: TRANSPORT_TYPE_SESSION_DIRECT_ACCESS application_frontend_region: \"local\"");
+                + "Transport error: INTERNAL: fake internal error. PeerInfo:"
+                + " application_frontend_subzone: \"ll\" transport_type:"
+                + " TRANSPORT_TYPE_SESSION_DIRECT_ACCESS application_frontend_region: \"local\"");
     assertThat(error.getResult()).state().isEqualTo(State.TRANSPORT_FAILURE);
     // TODO: fix server Latency definition - need to split node latency from transport latency
     assertThat(error.getResult()).backendLatency().isEqualTo(Duration.ZERO);
@@ -308,7 +310,8 @@ public class SessionImplTest {
         .description()
         .isEqualTo(
             actualSessionStatusProto.getMessage()
-                + ". PeerInfo: application_frontend_subzone: \"ll\" transport_type: TRANSPORT_TYPE_SESSION_DIRECT_ACCESS application_frontend_region: \"local\"");
+                + ". PeerInfo: application_frontend_subzone: \"ll\" transport_type:"
+                + " TRANSPORT_TYPE_SESSION_DIRECT_ACCESS application_frontend_region: \"local\"");
   }
 
   @Test

@@ -82,13 +82,15 @@ public abstract class AuthorizedViewName {
         !parts.get(3).isEmpty(), "Invalid authorized view name %s, must have an instance id", name);
     Preconditions.checkArgument(
         "tables".equals(parts.get(4)),
-        "Invalid authorized view name: %s, must start with projects/$PROJECT_ID/instances/$INSTANCE_ID/tables",
+        "Invalid authorized view name: %s, must start with"
+            + " projects/$PROJECT_ID/instances/$INSTANCE_ID/tables",
         name);
     Preconditions.checkArgument(
         !parts.get(5).isEmpty(), "Invalid authorized view name %s, must have table id", name);
     Preconditions.checkArgument(
         "authorizedViews".equals(parts.get(6)),
-        "Invalid authorized view name: %s, must start with projects/$PROJECT_ID/instances/$INSTANCE_ID/tables/$TABLE_ID/authorizedViews",
+        "Invalid authorized view name: %s, must start with"
+            + " projects/$PROJECT_ID/instances/$INSTANCE_ID/tables/$TABLE_ID/authorizedViews",
         name);
     Preconditions.checkArgument(
         !parts.get(7).isEmpty(),

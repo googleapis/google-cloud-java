@@ -328,7 +328,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       debugTagTracer.record(TelemetryConfiguration.Level.DEBUG, "session_pool_no_budget");
       logger.fine(
           String.format(
-              "Refusing to add a new session due to exhausted %s concurrent create session requests",
+              "Refusing to add a new session due to exhausted %s concurrent create session"
+                  + " requests",
               budget.getMaxConcurrentRequest()));
       // Retry create session if we run out of budget. In the edge case where we get a new VRpc
       // after failing to create any sessions and exhausting all the budget, we'll retry session
@@ -508,7 +509,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
           VRpcResult.createRejectedError(
               Status.UNAVAILABLE.withDescription(
                   String.format(
-                      "Session failed with consecutive failures. Most recent server status: %s, metadata: %s.",
+                      "Session failed with consecutive failures. Most recent server status: %s,"
+                          + " metadata: %s.",
                       status, trailers)));
       for (PendingVRpc<?, ?> vrpc : toBeClosed) {
         try {
@@ -803,7 +805,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
         debugTagTracer.record(TelemetryConfiguration.Level.WARN, "watchdog_close_session");
         LOG.fine(
             String.format(
-                "Found session %s that lingered too long in WAIT_SERVER_CLOSE state, canceling session",
+                "Found session %s that lingered too long in WAIT_SERVER_CLOSE state, canceling"
+                    + " session",
                 handle.getSession().getLogName()));
         handle
             .getSession()
@@ -812,7 +815,8 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
                     .setReason(CloseSessionReason.CLOSE_SESSION_REASON_ERROR)
                     .setDescription(
                         String.format(
-                            "Watchdog found session %s in awaiting close for too long. Last activity was %s ago.",
+                            "Watchdog found session %s in awaiting close for too long. Last"
+                                + " activity was %s ago.",
                             handle.getSession().getLogName(),
                             Duration.between(
                                 handle.getSession().getLastStateChange(), Instant.now(clock))))

@@ -874,6 +874,7 @@ public class BigtableInstanceAdminStubSettings
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-bigtable")
         .setRepository("googleapis/java-bigtable")
+        .setVersion(Version.VERSION)
         .build();
   }
 

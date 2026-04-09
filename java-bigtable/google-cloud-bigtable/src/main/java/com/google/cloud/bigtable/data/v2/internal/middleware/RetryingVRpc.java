@@ -67,7 +67,8 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
         new SynchronizationContext(
             (t, e) -> {
               this.cancel(
-                  "Unexpected error while notifying the caller of RetryingVRpc. Trying to cancel vRpc to ensure consistent state",
+                  "Unexpected error while notifying the caller of RetryingVRpc. Trying to cancel"
+                      + " vRpc to ensure consistent state",
                   e);
             });
 
@@ -203,7 +204,8 @@ public class RetryingVRpc<ReqT, RespT> implements VRpc<ReqT, RespT> {
                     if (currentState != Active.this) {
                       LOG.log(
                           Level.FINE,
-                          "Discarding server close with result {0} because the the attempt is no longer active.",
+                          "Discarding server close with result {0} because the the attempt is no"
+                              + " longer active.",
                           result);
                       return;
                     }
