@@ -1109,7 +1109,7 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
-  public void testGrpcGcpOptionsIncludeChannelPoolCleanupSettingsWithoutDcp() throws Exception {
+  public void testGrpcGcpOptionsIncludeStaticChannelPoolSettingsWithoutDcp() throws Exception {
     Duration affinityKeyLifetime = Duration.ofMinutes(10);
     Duration cleanupInterval = Duration.ofMinutes(5);
     GcpChannelPoolOptions channelPoolOptions =
@@ -1117,11 +1117,13 @@ public class GapicSpannerRpcTest {
             .setAffinityKeyLifetime(affinityKeyLifetime)
             .setCleanupInterval(cleanupInterval)
             .build();
+    int numChannels = 7;
     SpannerOptions options =
         SpannerOptions.newBuilder()
             .setProjectId("[PROJECT]")
             .enableGrpcGcpExtension()
             .disableDynamicChannelPool()
+            .setNumChannels(numChannels)
             .setGcpChannelPoolOptions(channelPoolOptions)
             .build();
 
@@ -1132,6 +1134,9 @@ public class GapicSpannerRpcTest {
     GcpManagedChannelOptions grpcGcpOptions =
         (GcpManagedChannelOptions) method.invoke(null, options);
 
+    assertEquals(numChannels, grpcGcpOptions.getChannelPoolOptions().getMaxSize());
+    assertEquals(numChannels, grpcGcpOptions.getChannelPoolOptions().getMinSize());
+    assertEquals(numChannels, grpcGcpOptions.getChannelPoolOptions().getInitSize());
     assertEquals(
         affinityKeyLifetime, grpcGcpOptions.getChannelPoolOptions().getAffinityKeyLifetime());
     assertEquals(cleanupInterval, grpcGcpOptions.getChannelPoolOptions().getCleanupInterval());

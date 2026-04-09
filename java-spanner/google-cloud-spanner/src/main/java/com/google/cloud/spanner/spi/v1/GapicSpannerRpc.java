@@ -831,7 +831,12 @@ public class GapicSpannerRpc implements SpannerRpc {
       return channelPoolOptions;
     }
 
+    // When DCP is disabled, Spanner's numChannels should still produce a fixed grpc-gcp channel
+    // pool instead of only capping the pool's maximum size.
     return GcpChannelPoolOptions.newBuilder()
+        .setMaxSize(options.getNumChannels())
+        .setMinSize(options.getNumChannels())
+        .setInitSize(options.getNumChannels())
         .disableDynamicScaling()
         .setAffinityKeyLifetime(channelPoolOptions.getAffinityKeyLifetime())
         .setCleanupInterval(channelPoolOptions.getCleanupInterval())
@@ -849,10 +854,6 @@ public class GapicSpannerRpc implements SpannerRpc {
     final String jsonApiConfig = parseGrpcGcpApiConfig();
     final GcpManagedChannelOptions grpcGcpOptions = grpcGcpOptionsWithMetricsAndDcp(options);
 
-    // When dynamic channel pool is enabled, use the DCP initial size as the pool size.
-    // When disabled, use the explicitly configured numChannels.
-    final int poolSize = options.isDynamicChannelPoolEnabled() ? 0 : options.getNumChannels();
-
     ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> baseConfigurator =
         defaultChannelProviderBuilder.getChannelConfigurator();
     ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> apiFunction =
@@ -860,10 +861,12 @@ public class GapicSpannerRpc implements SpannerRpc {
           if (baseConfigurator != null) {
             channelBuilder = baseConfigurator.apply(channelBuilder);
           }
+          // The grpc-gcp pool is configured entirely through GcpChannelPoolOptions above. Avoid
+          // the deprecated setPoolSize path, which only adjusts maxSize and does not eagerly create
+          // a fixed-size pool.
           return GcpManagedChannelBuilder.forDelegateBuilder(channelBuilder)
               .withApiConfigJsonString(jsonApiConfig)
-              .withOptions(grpcGcpOptions)
-              .setPoolSize(poolSize);
+              .withOptions(grpcGcpOptions);
         };
 
     // Disable the GAX channel pooling functionality by setting the GAX channel pool size to 1.
