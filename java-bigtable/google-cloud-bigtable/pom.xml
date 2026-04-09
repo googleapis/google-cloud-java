@@ -206,6 +206,14 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-opentelemetry</artifactId>
+      <exclusions>
+        <!-- TODO: remove this once grpc is aligned with google-cloud-shared-dependencies -->
+        <!-- Exclude grpc otel version to avoid conflicts -->
+        <exclusion>
+          <groupId>io.opentelemetry</groupId>
+          <artifactId>opentelemetry-api</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
