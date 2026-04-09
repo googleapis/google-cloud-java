@@ -30,7 +30,7 @@ file as an example.
 
 
 :warning: **IMPORTANT:**
-Not all the `new-client.py` arguments are available in the Github Action.
+Not all the add-new-client-config.py arguments are available in the Github Action.
 Please refer to
 [this
 section](/generation/new_client_hermetic_build/README.md#advanced-options)
