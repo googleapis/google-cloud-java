@@ -64,6 +64,7 @@ public final class ChannelFinder {
   private final KeyRecipeCache recipeCache = new KeyRecipeCache();
   private final KeyRangeCache rangeCache;
   private final AtomicReference<CacheUpdate> pendingUpdate = new AtomicReference<>();
+  private volatile java.util.concurrent.CountDownLatch drainingLatch;
   @Nullable private final EndpointLifecycleManager lifecycleManager;
   @Nullable private final String finderKey;
 
@@ -129,7 +130,16 @@ public final class ChannelFinder {
     // so intermediate updates can be safely dropped to prevent unbounded queue growth.
     if (pendingUpdate.getAndSet(update) == null) {
       // No previous pending update means no drain task is scheduled yet — submit one.
-      CACHE_UPDATE_POOL.execute(this::drainPendingUpdate);
+      java.util.concurrent.CountDownLatch latch = new java.util.concurrent.CountDownLatch(1);
+      drainingLatch = latch;
+      CACHE_UPDATE_POOL.execute(
+          () -> {
+            try {
+              drainPendingUpdate();
+            } finally {
+              latch.countDown();
+            }
+          });
     }
   }
 
@@ -142,15 +152,16 @@ public final class ChannelFinder {
 
   @VisibleForTesting
   void awaitPendingUpdates() throws InterruptedException {
-    // Spin until no pending update remains and the drain task has completed.
+    // Spin until no pending update remains.
     long deadline = System.nanoTime() + java.util.concurrent.TimeUnit.SECONDS.toNanos(5);
     while (pendingUpdate.get() != null && System.nanoTime() < deadline) {
       Thread.sleep(1);
     }
-    // Submit a barrier task to ensure any in-flight drainPendingUpdate() has finished.
-    java.util.concurrent.CountDownLatch latch = new java.util.concurrent.CountDownLatch(1);
-    CACHE_UPDATE_POOL.execute(latch::countDown);
-    latch.await(5, java.util.concurrent.TimeUnit.SECONDS);
+    // Wait for the drain task to fully complete (including the update() call).
+    java.util.concurrent.CountDownLatch latch = drainingLatch;
+    if (latch != null) {
+      latch.await(5, java.util.concurrent.TimeUnit.SECONDS);
+    }
   }
 
   public ChannelEndpoint findServer(ReadRequest.Builder reqBuilder) {
