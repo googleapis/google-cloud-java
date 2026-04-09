@@ -408,6 +408,47 @@ abstract class AbstractReadContext
     }
 
     @Override
+    public ListenableAsyncResultSet readAsync(
+        String table, KeySet keys, Iterable<String> columns, ReadOption... options) {
+      Options readOptions = Options.fromReadOptions(options);
+      final int bufferRows =
+          readOptions.hasBufferRows()
+              ? readOptions.bufferRows()
+              : AsyncResultSetImpl.DEFAULT_BUFFER_SIZE;
+      return new AsyncResultSetImpl(
+          executorProvider, () -> readInternal(table, null, keys, columns, options), bufferRows);
+    }
+
+    @Override
+    public ListenableAsyncResultSet readUsingIndexAsync(
+        String table, String index, KeySet keys, Iterable<String> columns, ReadOption... options) {
+      Options readOptions = Options.fromReadOptions(options);
+      final int bufferRows =
+          readOptions.hasBufferRows()
+              ? readOptions.bufferRows()
+              : AsyncResultSetImpl.DEFAULT_BUFFER_SIZE;
+      return new AsyncResultSetImpl(
+          executorProvider,
+          () -> readInternal(table, checkNotNull(index), keys, columns, options),
+          bufferRows);
+    }
+
+    @Override
+    public ListenableAsyncResultSet executeQueryAsync(Statement statement, QueryOption... options) {
+      Options readOptions = Options.fromQueryOptions(options);
+      final int bufferRows =
+          readOptions.hasBufferRows()
+              ? readOptions.bufferRows()
+              : AsyncResultSetImpl.DEFAULT_BUFFER_SIZE;
+      return new AsyncResultSetImpl(
+          executorProvider,
+          () ->
+              executeQueryInternal(
+                  statement, com.google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL, options),
+          bufferRows);
+    }
+
+    @Override
     public Timestamp getReadTimestamp() {
       synchronized (txnLock) {
         assertTimestampAvailable(timestamp != null);
@@ -679,7 +720,7 @@ abstract class AbstractReadContext
     }
   }
 
-  private ResultSet executeQueryInternal(
+  ResultSet executeQueryInternal(
       Statement statement,
       com.google.spanner.v1.ExecuteSqlRequest.QueryMode queryMode,
       QueryOption... options) {
@@ -987,7 +1028,7 @@ abstract class AbstractReadContext
   @Override
   public void onPrecommitToken(MultiplexedSessionPrecommitToken token) {}
 
-  private ResultSet readInternal(
+  ResultSet readInternal(
       String table,
       @Nullable String index,
       KeySet keys,
