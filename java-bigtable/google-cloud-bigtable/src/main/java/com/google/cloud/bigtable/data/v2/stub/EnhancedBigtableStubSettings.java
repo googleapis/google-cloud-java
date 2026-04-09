@@ -100,8 +100,10 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
 
   // TODO change this to true when enabling directpath by default
   // For now, Only runs Direct Access Checker if user explicitly sets CBT_ENABLE_DIRECTPATH=true
-  private static final DirectPathConfig DIRECT_PATH_CONFIG =
-      Optional.ofNullable(System.getenv("CBT_ENABLE_DIRECTPATH"))
+  private static DirectPathConfig DIRECT_PATH_CONFIG =
+      Optional.ofNullable(
+              Optional.ofNullable(System.getenv("CBT_ENABLE_DIRECTPATH"))
+                  .orElse(System.getProperty("bigtable.internal.enable-directpath")))
           .map(Boolean::parseBoolean)
           .map(b -> b ? DirectPathConfig.FORCED_ON : DirectPathConfig.FORCED_OFF)
           .orElse(DirectPathConfig.DEFAULT);
