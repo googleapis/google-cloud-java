@@ -146,6 +146,9 @@ public class ITComputeGoldenSignals extends BaseTest {
 
   @After
   public void tearDown() throws Exception {
+    if (testAppender != null) {
+      testAppender.clearEvents();
+    }
     if (traceClient != null) {
       traceClient.close();
     }
@@ -374,7 +377,6 @@ public class ITComputeGoldenSignals extends BaseTest {
 
     @Override
     protected void append(ILoggingEvent eventObject) {
-      eventObject.getMDCPropertyMap();
       events.add(eventObject);
     }
 
