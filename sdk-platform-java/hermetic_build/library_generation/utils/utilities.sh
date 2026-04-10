@@ -335,14 +335,14 @@ error_if_not_exists() {
 }
 
 normalize_owlbot_yaml() {
-  local input_file=$1
-  local output_file=$2
-  local library_name=$3
+  local input_file="$1"
+  local output_file="$2"
+  local library_name="$3"
   
   # Step 1: Remove library name prefix and normalize indentation for matching lines.
   # Step 2: Normalize indentation for lines that didn't have the prefix.
-  cat "${input_file}" \
-    | sed -e "s/^[[:space:]]*- \"\/${library_name}/- \"/" \
-          -e "s/^[[:space:]]*- \"/- \"/" \
-    > "${output_file}"
+  # Using | as sed delimiter to avoid escaping forward slashes.
+  sed -e "s|^\s*- \"/${library_name}|- \"|" \
+      -e "s|^\s*- \"|- \"|" \
+      "${input_file}" > "${output_file}"
 }
