@@ -36,13 +36,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
@@ -62,8 +63,11 @@ public final class ChannelFinder {
   private final AtomicLong databaseId = new AtomicLong();
   private final KeyRecipeCache recipeCache = new KeyRecipeCache();
   private final KeyRangeCache rangeCache;
-  private final AtomicReference<CacheUpdate> pendingUpdate = new AtomicReference<>();
-  private volatile java.util.concurrent.CountDownLatch drainingLatch;
+  private final ConcurrentLinkedQueue<PendingCacheUpdate> pendingUpdates =
+      new ConcurrentLinkedQueue<>();
+  private final AtomicBoolean drainScheduled = new AtomicBoolean();
+  private volatile java.util.concurrent.CountDownLatch drainingLatch =
+      new java.util.concurrent.CountDownLatch(0);
   @Nullable private final EndpointLifecycleManager lifecycleManager;
   @Nullable private final String finderKey;
 
@@ -105,15 +109,24 @@ public final class ChannelFinder {
     return executor;
   }
 
+  private static final class PendingCacheUpdate {
+    private final CacheUpdate update;
+
+    private PendingCacheUpdate(CacheUpdate update) {
+      this.update = update;
+    }
+  }
+
   public void update(CacheUpdate update) {
     synchronized (updateLock) {
       long currentId = databaseId.get();
-      if (currentId != update.getDatabaseId()) {
+      long updateDatabaseId = update.getDatabaseId();
+      if (updateDatabaseId != 0 && currentId != updateDatabaseId) {
         if (currentId != 0) {
           recipeCache.clear();
           rangeCache.clear();
         }
-        databaseId.set(update.getDatabaseId());
+        databaseId.set(updateDatabaseId);
       }
       if (update.hasKeyRecipes()) {
         recipeCache.addRecipes(update.getKeyRecipes());
@@ -141,10 +154,8 @@ public final class ChannelFinder {
   }
 
   public void updateAsync(CacheUpdate update) {
-    // Replace any pending update atomically. Each CacheUpdate contains the full current state,
-    // so intermediate updates can be safely dropped to prevent unbounded queue growth.
-    if (pendingUpdate.getAndSet(update) == null) {
-      // No previous pending update means no drain task is scheduled yet — submit one.
+    pendingUpdates.add(new PendingCacheUpdate(update));
+    if (drainScheduled.compareAndSet(false, true)) {
       java.util.concurrent.CountDownLatch latch = new java.util.concurrent.CountDownLatch(1);
       drainingLatch = latch;
       CACHE_UPDATE_POOL.execute(
@@ -159,9 +170,15 @@ public final class ChannelFinder {
   }
 
   private void drainPendingUpdate() {
-    CacheUpdate toApply;
-    while ((toApply = pendingUpdate.getAndSet(null)) != null) {
-      update(toApply);
+    while (true) {
+      PendingCacheUpdate toApply;
+      while ((toApply = pendingUpdates.poll()) != null) {
+        update(toApply.update);
+      }
+      drainScheduled.set(false);
+      if (pendingUpdates.isEmpty() || !drainScheduled.compareAndSet(false, true)) {
+        return;
+      }
     }
   }
 
@@ -171,15 +188,19 @@ public final class ChannelFinder {
    */
   @VisibleForTesting
   void awaitPendingUpdates() throws InterruptedException {
-    // Spin until no pending update remains.
     long deadline = System.nanoTime() + java.util.concurrent.TimeUnit.SECONDS.toNanos(5);
-    while (pendingUpdate.get() != null && System.nanoTime() < deadline) {
-      Thread.sleep(1);
-    }
-    // Wait for the drain task to fully complete (including the update() call).
-    java.util.concurrent.CountDownLatch latch = drainingLatch;
-    if (latch != null) {
-      latch.await(5, java.util.concurrent.TimeUnit.SECONDS);
+    while (System.nanoTime() < deadline) {
+      java.util.concurrent.CountDownLatch latch = drainingLatch;
+      if (latch != null) {
+        long remainingNanos = deadline - System.nanoTime();
+        if (remainingNanos <= 0) {
+          break;
+        }
+        latch.await(remainingNanos, java.util.concurrent.TimeUnit.NANOSECONDS);
+      }
+      if (pendingUpdates.isEmpty() && !drainScheduled.get()) {
+        return;
+      }
     }
   }
 
