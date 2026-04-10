@@ -18,11 +18,9 @@ package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
-import com.google.common.base.MoreObjects;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.function.Function;
 
 /** Implementation of {@link ReplicaSelector} using the "Power of 2 Random Choices" strategy. */
 @InternalApi
@@ -30,8 +28,7 @@ import java.util.function.Function;
 public class PowerOfTwoReplicaSelector implements ReplicaSelector {
 
   @Override
-  public ChannelEndpoint select(
-      List<ChannelEndpoint> candidates, Function<ChannelEndpoint, Double> scoreLookup) {
+  public ChannelEndpoint select(List<ChannelEndpoint> candidates) {
     if (candidates == null || candidates.isEmpty()) {
       return null;
     }
@@ -49,12 +46,11 @@ public class PowerOfTwoReplicaSelector implements ReplicaSelector {
     ChannelEndpoint c1 = candidates.get(index1);
     ChannelEndpoint c2 = candidates.get(index2);
 
-    Double score1 = scoreLookup.apply(c1);
-    Double score2 = scoreLookup.apply(c2);
+    LatencyTracker t1 = c1.getLatencyTracker();
+    LatencyTracker t2 = c2.getLatencyTracker();
 
-    // Handle null scores by treating them as Double.MAX_VALUE (lowest priority)
-    double s1 = MoreObjects.firstNonNull(score1, Double.MAX_VALUE);
-    double s2 = MoreObjects.firstNonNull(score2, Double.MAX_VALUE);
+    double s1 = t1 != null ? t1.getScore() : Double.MAX_VALUE;
+    double s2 = t2 != null ? t2.getScore() : Double.MAX_VALUE;
 
     return s1 <= s2 ? c1 : c2;
   }
