@@ -283,7 +283,8 @@ class CompositeTracerTest {
   @Test
   void testRequestUrlResolved() {
     compositeTracer.requestUrlResolved("the-url");
-    verify(child1).requestUrlResolved("the-url");
-    verify(child2).requestUrlResolved("the-url");
+    InOrder inOrder = inOrder(child1, child2);
+    inOrder.verify(child1).requestUrlResolved("the-url");
+    inOrder.verify(child2).requestUrlResolved("the-url");
   }
 }
