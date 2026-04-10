@@ -32,6 +32,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import org.junit.Test;
@@ -110,6 +112,28 @@ public class ChannelFinderTest {
 
     assertThat(databaseId(finder)).isEqualTo(9L);
     assertThat(rangeCache(finder).size()).isEqualTo(0);
+  }
+
+  @Test
+  public void updateDoesNotBlockOnLifecycleManagerAddressReconciliation() throws Exception {
+    BlockingLifecycleManager lifecycleManager =
+        new BlockingLifecycleManager(new FakeEndpointCache());
+    ChannelFinder finder = new ChannelFinder(new FakeEndpointCache(), lifecycleManager, "db-1");
+    ExecutorService executor = Executors.newSingleThreadExecutor();
+    try {
+      Future<?> future = executor.submit(() -> finder.update(singleRangeUpdate(0)));
+
+      future.get(1, TimeUnit.SECONDS);
+      assertThat(lifecycleManager.updateStarted.await(5, TimeUnit.SECONDS)).isTrue();
+      assertThat(rangeCache(finder).size()).isEqualTo(1);
+
+      lifecycleManager.releaseUpdate.countDown();
+      assertThat(lifecycleManager.updateFinished.await(5, TimeUnit.SECONDS)).isTrue();
+    } finally {
+      lifecycleManager.releaseUpdate.countDown();
+      lifecycleManager.shutdown();
+      executor.shutdownNow();
+    }
   }
 
   private static CacheUpdate singleRangeUpdate(int index) {
@@ -260,6 +284,28 @@ public class ChannelFinderTest {
     @Override
     public String authority() {
       return "fake";
+    }
+  }
+
+  private static final class BlockingLifecycleManager extends EndpointLifecycleManager {
+    private final CountDownLatch updateStarted = new CountDownLatch(1);
+    private final CountDownLatch releaseUpdate = new CountDownLatch(1);
+    private final CountDownLatch updateFinished = new CountDownLatch(1);
+
+    private BlockingLifecycleManager(ChannelEndpointCache endpointCache) {
+      super(endpointCache);
+    }
+
+    @Override
+    void updateActiveAddresses(String finderKey, java.util.Set<String> activeAddresses) {
+      updateStarted.countDown();
+      try {
+        releaseUpdate.await(5, TimeUnit.SECONDS);
+      } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
+      } finally {
+        updateFinished.countDown();
+      }
     }
   }
 }

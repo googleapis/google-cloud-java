@@ -24,15 +24,12 @@ import com.google.spanner.v1.CacheUpdate;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.DirectedReadOptions;
 import com.google.spanner.v1.ExecuteSqlRequest;
-import com.google.spanner.v1.Group;
 import com.google.spanner.v1.Mutation;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.RoutingHint;
-import com.google.spanner.v1.Tablet;
 import com.google.spanner.v1.TransactionOptions;
 import com.google.spanner.v1.TransactionSelector;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -55,6 +52,7 @@ import javax.annotation.Nullable;
 @InternalApi
 public final class ChannelFinder {
   private static final Predicate<String> NO_EXCLUDED_ENDPOINTS = address -> false;
+  private static final int CACHE_UPDATE_DRAIN_BATCH_SIZE = 64;
   private static final int MAX_CACHE_UPDATE_THREADS =
       Math.max(2, Runtime.getRuntime().availableProcessors());
   private static final ExecutorService CACHE_UPDATE_POOL = createCacheUpdatePool();
@@ -132,39 +130,12 @@ public final class ChannelFinder {
   }
 
   public void update(CacheUpdate update) {
+    Set<String> currentAddresses;
     synchronized (updateLock) {
-      long currentId = databaseId.get();
-      long updateDatabaseId = update.getDatabaseId();
-      if (updateDatabaseId != 0 && currentId != updateDatabaseId) {
-        if (currentId != 0) {
-          recipeCache.clear();
-          rangeCache.clear();
-        }
-        databaseId.set(updateDatabaseId);
-      }
-      if (update.hasKeyRecipes()) {
-        recipeCache.addRecipes(update.getKeyRecipes());
-      }
-      rangeCache.addRanges(update);
-
-      // Notify the lifecycle manager about server addresses so it can create endpoints
-      // in the background and start probing, and evict stale endpoints atomically.
-      if (lifecycleManager != null && finderKey != null) {
-        Set<String> currentAddresses = new HashSet<>();
-        for (Group group : update.getGroupList()) {
-          for (Tablet tablet : group.getTabletsList()) {
-            String addr = tablet.getServerAddress();
-            if (!addr.isEmpty()) {
-              currentAddresses.add(addr);
-            }
-          }
-        }
-        // Also include addresses from existing cached tablets not in this update.
-        currentAddresses.addAll(rangeCache.getActiveAddresses());
-        // Atomically ensure endpoints exist and evict stale ones.
-        lifecycleManager.updateActiveAddresses(finderKey, currentAddresses);
-      }
+      applyUpdateLocked(update);
+      currentAddresses = snapshotActiveAddressesLocked();
     }
+    publishLifecycleUpdate(currentAddresses);
   }
 
   public void updateAsync(CacheUpdate update) {
@@ -187,16 +158,68 @@ public final class ChannelFinder {
   }
 
   private void drainPendingUpdate() {
+    List<PendingCacheUpdate> batch = new ArrayList<>(CACHE_UPDATE_DRAIN_BATCH_SIZE);
     while (true) {
-      PendingCacheUpdate toApply;
-      while ((toApply = pendingUpdates.poll()) != null) {
-        update(toApply.update);
+      drainBatch(batch);
+      if (!batch.isEmpty()) {
+        applyBatch(batch);
+        batch.clear();
       }
       drainScheduled.set(false);
       if (pendingUpdates.isEmpty() || !drainScheduled.compareAndSet(false, true)) {
         return;
       }
     }
+  }
+
+  private void drainBatch(List<PendingCacheUpdate> batch) {
+    PendingCacheUpdate toApply;
+    while (batch.size() < CACHE_UPDATE_DRAIN_BATCH_SIZE
+        && (toApply = pendingUpdates.poll()) != null) {
+      batch.add(toApply);
+    }
+  }
+
+  private void applyBatch(List<PendingCacheUpdate> batch) {
+    Set<String> currentAddresses;
+    synchronized (updateLock) {
+      for (PendingCacheUpdate pendingUpdate : batch) {
+        applyUpdateLocked(pendingUpdate.update);
+      }
+      currentAddresses = snapshotActiveAddressesLocked();
+    }
+    publishLifecycleUpdate(currentAddresses);
+  }
+
+  private void applyUpdateLocked(CacheUpdate update) {
+    long currentId = databaseId.get();
+    long updateDatabaseId = update.getDatabaseId();
+    if (updateDatabaseId != 0 && currentId != updateDatabaseId) {
+      if (currentId != 0) {
+        recipeCache.clear();
+        rangeCache.clear();
+      }
+      databaseId.set(updateDatabaseId);
+    }
+    if (update.hasKeyRecipes()) {
+      recipeCache.addRecipes(update.getKeyRecipes());
+    }
+    rangeCache.addRanges(update);
+  }
+
+  @Nullable
+  private Set<String> snapshotActiveAddressesLocked() {
+    if (lifecycleManager == null || finderKey == null) {
+      return null;
+    }
+    return rangeCache.getActiveAddresses();
+  }
+
+  private void publishLifecycleUpdate(@Nullable Set<String> currentAddresses) {
+    if (currentAddresses == null) {
+      return;
+    }
+    lifecycleManager.updateActiveAddressesAsync(finderKey, currentAddresses);
   }
 
   /**
