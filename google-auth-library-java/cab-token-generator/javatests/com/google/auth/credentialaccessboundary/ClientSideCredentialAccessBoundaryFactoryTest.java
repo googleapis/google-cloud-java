@@ -1011,30 +1011,30 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
               .build();
 
       int numThreads = 5;
-      Thread[] threads = new Thread[numThreads];
       CountDownLatch latch = new CountDownLatch(numThreads);
       java.util.concurrent.atomic.AtomicInteger npeCount =
           new java.util.concurrent.atomic.AtomicInteger();
+      java.util.concurrent.ExecutorService executor =
+          java.util.concurrent.Executors.newFixedThreadPool(numThreads);
 
-      for (int i = 0; i < numThreads; i++) {
-        threads[i] =
-            new Thread(
-                () -> {
-                  try {
-                    latch.countDown();
-                    latch.await();
-                    factory.generateToken(accessBoundary);
-                  } catch (NullPointerException e) {
-                    npeCount.incrementAndGet();
-                  } catch (Exception e) {
-                    // Ignore other exceptions for the sake of the race reproduction
-                  }
-                });
-        threads[i].start();
-      }
-
-      for (Thread thread : threads) {
-        thread.join();
+      try {
+        for (int i = 0; i < numThreads; i++) {
+          executor.submit(
+              () -> {
+                try {
+                  latch.countDown();
+                  latch.await();
+                  factory.generateToken(accessBoundary);
+                } catch (NullPointerException e) {
+                  npeCount.incrementAndGet();
+                } catch (Exception e) {
+                  // Ignore other exceptions for the sake of the race reproduction
+                }
+              });
+        }
+      } finally {
+        executor.shutdown();
+        executor.awaitTermination(5, java.util.concurrent.TimeUnit.SECONDS);
       }
 
       org.junit.jupiter.api.Assertions.assertEquals(
