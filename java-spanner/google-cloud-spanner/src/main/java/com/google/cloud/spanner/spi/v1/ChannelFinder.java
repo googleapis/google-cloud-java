@@ -17,6 +17,8 @@
 package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.core.InternalApi;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CacheUpdate;
 import com.google.spanner.v1.CommitRequest;
@@ -34,8 +36,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
@@ -47,11 +54,16 @@ import javax.annotation.Nullable;
 @InternalApi
 public final class ChannelFinder {
   private static final Predicate<String> NO_EXCLUDED_ENDPOINTS = address -> false;
+  private static final int MAX_CACHE_UPDATE_THREADS =
+      Math.max(2, Runtime.getRuntime().availableProcessors());
+  private static final ExecutorService CACHE_UPDATE_POOL = createCacheUpdatePool();
 
   private final Object updateLock = new Object();
   private final AtomicLong databaseId = new AtomicLong();
   private final KeyRecipeCache recipeCache = new KeyRecipeCache();
   private final KeyRangeCache rangeCache;
+  private final AtomicReference<CacheUpdate> pendingUpdate = new AtomicReference<>();
+  private volatile java.util.concurrent.CountDownLatch drainingLatch;
   @Nullable private final EndpointLifecycleManager lifecycleManager;
   @Nullable private final String finderKey;
 
@@ -75,6 +87,22 @@ public final class ChannelFinder {
 
   void useDeterministicRandom() {
     rangeCache.useDeterministicRandom();
+  }
+
+  private static ExecutorService createCacheUpdatePool() {
+    ThreadPoolExecutor executor =
+        new ThreadPoolExecutor(
+            MAX_CACHE_UPDATE_THREADS,
+            MAX_CACHE_UPDATE_THREADS,
+            30L,
+            TimeUnit.SECONDS,
+            new LinkedBlockingQueue<>(),
+            new ThreadFactoryBuilder()
+                .setDaemon(true)
+                .setNameFormat("spanner-cache-update-%d")
+                .build());
+    executor.allowCoreThreadTimeOut(true);
+    return executor;
   }
 
   public void update(CacheUpdate update) {
@@ -109,6 +137,49 @@ public final class ChannelFinder {
         // Atomically ensure endpoints exist and evict stale ones.
         lifecycleManager.updateActiveAddresses(finderKey, currentAddresses);
       }
+    }
+  }
+
+  public void updateAsync(CacheUpdate update) {
+    // Replace any pending update atomically. Each CacheUpdate contains the full current state,
+    // so intermediate updates can be safely dropped to prevent unbounded queue growth.
+    if (pendingUpdate.getAndSet(update) == null) {
+      // No previous pending update means no drain task is scheduled yet — submit one.
+      java.util.concurrent.CountDownLatch latch = new java.util.concurrent.CountDownLatch(1);
+      drainingLatch = latch;
+      CACHE_UPDATE_POOL.execute(
+          () -> {
+            try {
+              drainPendingUpdate();
+            } finally {
+              latch.countDown();
+            }
+          });
+    }
+  }
+
+  private void drainPendingUpdate() {
+    CacheUpdate toApply;
+    while ((toApply = pendingUpdate.getAndSet(null)) != null) {
+      update(toApply);
+    }
+  }
+
+  /**
+   * Test-only hook used by {@link KeyAwareChannel#awaitPendingCacheUpdates()} to wait until the
+   * async cache update worker has finished applying the latest pending update.
+   */
+  @VisibleForTesting
+  void awaitPendingUpdates() throws InterruptedException {
+    // Spin until no pending update remains.
+    long deadline = System.nanoTime() + java.util.concurrent.TimeUnit.SECONDS.toNanos(5);
+    while (pendingUpdate.get() != null && System.nanoTime() < deadline) {
+      Thread.sleep(1);
+    }
+    // Wait for the drain task to fully complete (including the update() call).
+    java.util.concurrent.CountDownLatch latch = drainingLatch;
+    if (latch != null) {
+      latch.await(5, java.util.concurrent.TimeUnit.SECONDS);
     }
   }
 
