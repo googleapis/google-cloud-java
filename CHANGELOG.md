@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.10.0 (2026-04-10)
+
+### Fixes
+
+* Use power-of-two random choices for channel selection to avoid thundering herd
+
+
 ## 1.9.2 (2026-03-21)
 
 ### Fixes
