@@ -42,7 +42,7 @@ import io.opentelemetry.api.OpenTelemetry;
 @InternalApi
 public class OpenTelemetryMetricsFactory implements ApiTracerFactory {
 
-  private ApiTracerContext clientLevelTracerContext;
+  private final ApiTracerContext clientLevelTracerContext;
   private final OpenTelemetry openTelemetry;
   private GoldenSignalsMetricsRecorder metricsRecorder;
 

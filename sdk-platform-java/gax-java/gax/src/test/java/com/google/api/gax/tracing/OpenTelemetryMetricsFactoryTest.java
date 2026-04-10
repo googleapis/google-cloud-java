@@ -56,6 +56,7 @@ class OpenTelemetryMetricsFactoryTest {
         factoryWithContext.newTracer(
             mock(ApiTracer.class), mock(SpanName.class), ApiTracerFactory.OperationType.Unary);
     assertThat(actual).isInstanceOf(OpenTelemetryMetricsTracer.class);
+    assertThat(factoryWithContext).isNotEqualTo(tracerFactory);
   }
 
   @Test
