@@ -8,9 +8,9 @@
 
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-pom-parent</artifactId>
-    <version>1.83.0</version><!-- {x-version-update:google-cloud-java:current} -->
-    <relativePath>../../google-cloud-pom-parent/pom.xml</relativePath>
+    <artifactId>google-cloud-shared-config</artifactId>
+    <!-- Do not depend on the version in this monorepo. It causes the publication order problem. --> 
+    <version>1.17.0</version>
   </parent>
 
   <name>Google Auth Library for Java BOM</name>
