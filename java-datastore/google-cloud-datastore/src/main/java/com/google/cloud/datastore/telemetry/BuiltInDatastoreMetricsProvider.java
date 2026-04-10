@@ -81,11 +81,8 @@ public final class BuiltInDatastoreMetricsProvider {
    * DatastoreCloudMonitoringExporter}. No global or shared state is modified.
    *
    * <p><b>Lifecycle:</b> The returned instance is owned by the caller. It should be closed by
-   * calling {@link OpenTelemetrySdk#close()} (or via {@link
+   * calling {@link io.opentelemetry.sdk.OpenTelemetrySdk#close()} (or via {@link
    * OpenTelemetryDatastoreMetricsRecorder#close()}) when the associated Datastore client is closed.
-   * A JVM shutdown hook is also registered as a last-resort safety net for cases where the caller
-   * does not explicitly close the client. Note that each call to this method adds a new shutdown
-   * hook; callers should avoid creating an unbounded number of short-lived clients.
    *
    * <p>No caching is performed here; callers are responsible for holding the returned instance for
    * the lifetime of their Datastore client.
@@ -107,8 +104,6 @@ public final class BuiltInDatastoreMetricsProvider {
       sdkMeterProviderBuilder.setResource(
           Resource.create(createResourceAttributes(projectId, databaseId)));
       SdkMeterProvider sdkMeterProvider = sdkMeterProviderBuilder.build();
-      // Ensure cleanup on shutdown.
-      Runtime.getRuntime().addShutdownHook(new Thread(sdkMeterProvider::close));
       return OpenTelemetrySdk.builder().setMeterProvider(sdkMeterProvider).build();
     } catch (IOException ex) {
       logger.log(

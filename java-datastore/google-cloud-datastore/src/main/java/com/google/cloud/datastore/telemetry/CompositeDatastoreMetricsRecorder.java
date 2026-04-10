@@ -18,6 +18,8 @@ package com.google.cloud.datastore.telemetry;
 
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * A {@link DatastoreMetricsRecorder} implementation that fans out recording calls to multiple
@@ -27,6 +29,9 @@ import java.util.Map;
  * (user-provided) OpenTelemetry backends.
  */
 class CompositeDatastoreMetricsRecorder implements DatastoreMetricsRecorder {
+
+  private static final Logger logger =
+      Logger.getLogger(CompositeDatastoreMetricsRecorder.class.getName());
 
   private final List<DatastoreMetricsRecorder> recorders;
 
@@ -86,8 +91,12 @@ class CompositeDatastoreMetricsRecorder implements DatastoreMetricsRecorder {
    */
   @Override
   public void close() {
-    for (DatastoreMetricsRecorder recorder : recorders) {
-      recorder.close();
+    for (int i = recorders.size() - 1; i >= 0; i--) {
+      try {
+        recorders.get(i).close();
+      } catch (Exception e) {
+        logger.log(Level.WARNING, "Failed to close metrics recorder", e);
+      }
     }
   }
 }

@@ -168,10 +168,9 @@ public class DatastoreOpenTelemetryOptions {
     /**
      * Sets whether built-in metrics should be exported to Google Cloud Monitoring.
      *
-     * <p>When enabled (the default), client-side metrics are automatically exported to Google Cloud
-     * Monitoring using the Cloud Monitoring API. This can be disabled to prevent metrics from being
-     * sent to Cloud Monitoring while still allowing metrics to flow to a custom OpenTelemetry
-     * backend.
+     * <p>When enabled, client-side metrics are automatically exported to Google Cloud Monitoring
+     * using the Cloud Monitoring API. This can be disabled to prevent metrics from being sent to
+     * Cloud Monitoring while still allowing metrics to flow to a custom OpenTelemetry backend.
      *
      * @param exportBuiltinMetrics Whether built-in metrics should be exported to Cloud Monitoring.
      * @return this builder instance.
