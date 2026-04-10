@@ -20,7 +20,7 @@ deep-remove-regex:
 - "/java-trace/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/.*google-.*/src/main/java/com/google/[^/]+/.*/v.*/stub/Version.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
 - "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/.*google-cloud-trace/src/test/java/com/google/cloud/trace/v1/VPCServiceControlTest.java"
 - "/.*google-cloud-trace/src/test/java/com/google/cloud/trace/v2/VPCServiceControlTest.java"

@@ -20,7 +20,7 @@ deep-remove-regex:
 - "/java-vision/google-.*/src"
 
 deep-preserve-regex:
-- "/.*google-.*/src/main/java/com/google/[^/]+/.*/v.*/stub/Version.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
 - "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/.*proto-google-cloud-vision-v1/src/main/java/com/google/cloud/vision/v1/ImageName.java"
 - "/.*google-cloud-vision/src/test/java/com/google/cloud/vision/it/ITSystemTest.java"

@@ -20,7 +20,7 @@ deep-remove-regex:
 - "/java-iot/google-.*/src"
 
 deep-preserve-regex:
-- "/.*google-.*/src/main/java/com/google/[^/]+/.*/v.*/stub/Version.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
 - "/.*google-cloud-iot/src/test/java/com/google/cloud/iot/v1/it/ITSystemTest.java"
 
 deep-copy-regex:

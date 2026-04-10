@@ -20,7 +20,7 @@ deep-remove-regex:
 - "/java-bigqueryconnection/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/.*google-.*/src/main/java/com/google/[^/]+/.*/v.*/stub/Version.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
 - "/.*google-cloud-bigqueryconnection/src/test/java/com/google/cloud/bigqueryconnection/v.*/it/ITSystemTest.java"
 
 deep-copy-regex:

@@ -13,7 +13,7 @@
 # limitations under the License.
 
 deep-preserve-regex:
-- "/.*google-.*/src/main/java/com/google/[^/]+/.*/v.*/stub/Version.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
 - "/.*google-cloud-billing/src/test/java/com/google/cloud/billing/v1/CloudBillingClientHttpJsonTest.java"
 
 deep-remove-regex:
