@@ -45,6 +45,7 @@ public class BackgroundResourceAggregation implements BackgroundResource {
   public void shutdown() {
     for (BackgroundResource resource : resources) {
       resource.shutdown();
+      // testing
     }
   }
 
