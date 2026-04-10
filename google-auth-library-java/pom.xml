@@ -14,12 +14,10 @@
   <url>https://github.com/googleapis/google-cloud-java</url>
 
   <parent>
-    <!-- Because we cannot release com.google.auth and com.google.cloud together,
-      we skip the deployment of this module <maven.deploy.skip>true</maven.deploy.skip> -->
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-jar-parent</artifactId>
-    <version>1.83.0</version><!-- {x-version-update:google-cloud-java:current} -->
-    <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
+    <artifactId>google-cloud-shared-config</artifactId>
+    <!-- Do not depend on the version in this monorepo. It causes the publication order problem. --> 
+    <version>1.17.0</version>
   </parent>
 
   <distributionManagement>
@@ -82,19 +80,73 @@
     <project.appengine.version>2.0.33</project.appengine.version>
     <project.findbugs.version>3.0.2</project.findbugs.version>
     <deploy.autorelease>false</deploy.autorelease>
-    <project.error-prone.version>2.38.0</project.error-prone.version>
+    <project.error-prone.version>2.42.0</project.error-prone.version>
     <project.protobuf.version>4.33.2</project.protobuf.version>
     <project.cel.version>0.9.0-proto3</project.cel.version>
     <project.tink.version>1.15.0</project.tink.version>
     <project.slf4j.version>2.0.17</project.slf4j.version>
     <project.gson.version>2.12.1</project.gson.version>
     <project.api-common.version>2.53.0</project.api-common.version>
+    <surefire.version>3.5.2</surefire.version>
     <clirr.skip>true</clirr.skip>
-    <maven.deploy.skip>true</maven.deploy.skip>
   </properties>
 
   <dependencyManagement>
+    <!-- Do not import BOMs in this monorepo. Maven Central publication
+      does not allow uploads of multiple artifacts with different group IDs. -->
     <dependencies>
+      <dependency>
+        <groupId>com.google.http-client</groupId>
+        <artifactId>google-http-client-bom</artifactId>
+        <version>${project.google.http.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava-bom</artifactId>
+        <version>${project.guava.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.protobuf</groupId>
+        <artifactId>protobuf-bom</artifactId>
+        <version>${project.protobuf.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>${project.junit.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.auth</groupId>
+        <artifactId>google-auth-library-credentials</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.auth</groupId>
+        <artifactId>google-auth-library-oauth2-http</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.auth</groupId>
+        <artifactId>google-auth-library-oauth2-http</artifactId>
+        <version>${project.version}</version>
+        <type>test-jar</type>
+        <classifier>testlib</classifier>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>4.11.0</version>
+        <scope>test</scope>
+      </dependency>
       <dependency>
         <groupId>org.mockito</groupId>
         <artifactId>mockito-junit-jupiter</artifactId>
@@ -107,11 +159,29 @@
         <version>${project.appengine.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.junit</groupId>
-        <artifactId>junit-bom</artifactId>
-        <version>${project.junit.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
+        <groupId>com.google.api</groupId>
+        <artifactId>api-common</artifactId>
+        <version>${project.api-common.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>dev.cel</groupId>
+        <artifactId>cel</artifactId>
+        <version>${project.cel.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.crypto.tink</groupId>
+        <artifactId>tink</artifactId>
+        <version>${project.tink.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.code.findbugs</groupId>
+        <artifactId>jsr305</artifactId>
+        <version>${project.findbugs.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.errorprone</groupId>
+        <artifactId>error_prone_annotations</artifactId>
+        <version>${project.error-prone.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
