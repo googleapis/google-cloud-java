@@ -19,6 +19,7 @@ package com.google.cloud.spanner.spi.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -28,6 +29,19 @@ import java.util.function.Function;
 @InternalApi
 @BetaApi
 public class PowerOfTwoReplicaSelector implements ReplicaSelector {
+
+  public static final double DEFAULT_EPSILON = 0.1;
+
+  private final double epsilon;
+
+  public PowerOfTwoReplicaSelector() {
+    this(DEFAULT_EPSILON);
+  }
+
+  public PowerOfTwoReplicaSelector(double epsilon) {
+    Preconditions.checkArgument(epsilon >= 0.0 && epsilon <= 1.0, "epsilon must be in [0, 1]");
+    this.epsilon = epsilon;
+  }
 
   @Override
   public ChannelEndpoint select(
@@ -40,6 +54,11 @@ public class PowerOfTwoReplicaSelector implements ReplicaSelector {
     }
 
     Random random = ThreadLocalRandom.current();
+
+    // Epsilon-greedy exploration: with probability epsilon, pick a random candidate.
+    if (random.nextDouble() < epsilon) {
+      return candidates.get(random.nextInt(candidates.size()));
+    }
     int index1 = random.nextInt(candidates.size());
     int index2 = random.nextInt(candidates.size() - 1);
     if (index2 >= index1) {
