@@ -79,7 +79,7 @@ public abstract class ApiTracerContext {
    * @return the server port, or {@code null} if not set
    */
   @Nullable
-  public abstract Integer serverPort();
+  abstract Integer serverPort();
 
   /**
    * Returns the library metadata associated with the RPC.
@@ -135,7 +135,7 @@ public abstract class ApiTracerContext {
    * @return the operation type, or {@code null} if not set
    */
   @Nullable
-  public abstract OperationType operationType();
+  abstract OperationType operationType();
 
   /**
    * Returns the HTTP method used for the RPC, in case the RPC is an HttpJson method.
@@ -159,11 +159,11 @@ public abstract class ApiTracerContext {
 
   /** The service name of a client (e.g. "bigtable", "spanner"). */
   @Nullable
-  public abstract String serviceName();
+  abstract String serviceName();
 
   /** The url domain of the request (e.g. "pubsub.googleapis.com"). */
   @Nullable
-  public abstract String urlDomain();
+  abstract String urlDomain();
 
   @Nullable
   protected abstract Supplier<String> destinationResourceIdSupplier();
@@ -173,7 +173,7 @@ public abstract class ApiTracerContext {
    * //pubsub.googleapis.com/projects/p/locations/l/topics/t).
    */
   @Nullable
-  public String destinationResourceId() {
+  String destinationResourceId() {
     Supplier<String> supplier = destinationResourceIdSupplier();
     if (supplier == null) {
       return null;
@@ -209,7 +209,7 @@ public abstract class ApiTracerContext {
   /**
    * @return a map of attributes to be included in attempt-level spans
    */
-  public Map<String, Object> getAttemptAttributes() {
+  Map<String, Object> getAttemptAttributes() {
     Map<String, Object> attributes = new HashMap<>();
     if (!Strings.isNullOrEmpty(serverAddress())) {
       attributes.put(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE, serverAddress());
@@ -322,7 +322,7 @@ public abstract class ApiTracerContext {
     return builder.build();
   }
 
-  public static ApiTracerContext empty() {
+  static ApiTracerContext empty() {
     return newBuilder().setLibraryMetadata(LibraryMetadata.empty()).build();
   }
 
@@ -330,7 +330,7 @@ public abstract class ApiTracerContext {
     return new AutoValue_ApiTracerContext.Builder();
   }
 
-  public abstract Builder toBuilder();
+  abstract Builder toBuilder();
 
   @AutoValue.Builder
   public abstract static class Builder {
@@ -342,7 +342,7 @@ public abstract class ApiTracerContext {
 
     public abstract Builder setTransport(@Nullable Transport transport);
 
-    public abstract Builder setOperationType(@Nullable OperationType operationType);
+    abstract Builder setOperationType(@Nullable OperationType operationType);
 
     public abstract Builder setServerPort(@Nullable Integer serverPort);
 
@@ -354,7 +354,7 @@ public abstract class ApiTracerContext {
 
     public abstract Builder setUrlDomain(@Nullable String urlDomain);
 
-    public abstract Builder setDestinationResourceIdSupplier(
+    abstract Builder setDestinationResourceIdSupplier(
         @Nullable Supplier<String> destinationResourceIdSupplier);
 
     public abstract ApiTracerContext build();
