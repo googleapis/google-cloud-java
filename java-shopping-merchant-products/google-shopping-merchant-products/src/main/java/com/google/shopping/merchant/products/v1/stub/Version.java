@@ -21,7 +21,7 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 final class Version {
   // {x-version-update-start:google-shopping-merchant-products:current}
-  static final String VERSION = "1.18.0-SNAPSHOT";
+  static final String VERSION = "1.18.0";
   // {x-version-update-end}
 
 }
