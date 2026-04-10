@@ -55,18 +55,22 @@ public final class MachineConfigProto extends com.google.protobuf.GeneratedFile 
     java.lang.String[] descriptorData = {
       "\n"
           + "7google/cloud/databasecenter/v1beta/machine_config.proto\022\"google.cloud.database"
-          + "center.v1beta\032\037google/api/field_behavior.proto\"\206\001\n\r"
+          + "center.v1beta\032\037google/api/field_behavior.proto\"\222\002\n\r"
           + "MachineConfig\022\031\n"
           + "\021memory_size_bytes\030\002 \001(\003\022\035\n"
           + "\013shard_count\030\003 \001(\005B\003\340A\001H\000\210\001\001\022\034\n\n"
-          + "vcpu_count\030\004 \001(\001B\003\340A\001H\001\210\001\001B\016\n"
+          + "vcpu_count\030\004 \001(\001B\003\340A\001H\001\210\001\001\022%\n"
+          + "\023baseline_slot_count\030\005 \001(\003B\003\340A\001H\002\210\001\001\022,\n"
+          + "\032max_reservation_slot_count\030\006 \001(\003B\003\340A\001H\003\210\001\001B\016\n"
           + "\014_shard_countB\r\n"
-          + "\013_vcpu_countB\200\002\n"
-          + "&com.google.cloud.databasecenter.v1betaB\022MachineConfi"
-          + "gProtoP\001ZNcloud.google.com/go/databasecenter/apiv1beta/databasecenterpb;database"
-          + "centerpb\252\002\"Google.Cloud.DatabaseCenter.V"
-          + "1Beta\312\002\"Google\\Cloud\\DatabaseCenter\\V1be"
-          + "ta\352\002%Google::Cloud::DatabaseCenter::V1betab\006proto3"
+          + "\013_vcpu_countB\026\n"
+          + "\024_baseline_slot_countB\035\n"
+          + "\033_max_reservation_slot_countB\200\002\n"
+          + "&com.google.cloud.databasecenter.v1betaB\022MachineConfigProtoP\001ZNcloud.goog"
+          + "le.com/go/databasecenter/apiv1beta/datab"
+          + "asecenterpb;databasecenterpb\252\002\"Google.Cl"
+          + "oud.DatabaseCenter.V1Beta\312\002\"Google\\Cloud"
+          + "\\DatabaseCenter\\V1beta\352\002%Google::Cloud::DatabaseCenter::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -80,7 +84,11 @@ public final class MachineConfigProto extends com.google.protobuf.GeneratedFile 
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_MachineConfig_descriptor,
             new java.lang.String[] {
-              "MemorySizeBytes", "ShardCount", "VcpuCount",
+              "MemorySizeBytes",
+              "ShardCount",
+              "VcpuCount",
+              "BaselineSlotCount",
+              "MaxReservationSlotCount",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

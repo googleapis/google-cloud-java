@@ -49,6 +49,10 @@ public final class MaintenanceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_databasecenter_v1beta_ResourceMaintenanceDenySchedule_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_databasecenter_v1beta_UpcomingMaintenance_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_databasecenter_v1beta_UpcomingMaintenance_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_databasecenter_v1beta_MaintenanceInfo_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_databasecenter_v1beta_MaintenanceInfo_fieldAccessorTable;
@@ -64,39 +68,62 @@ public final class MaintenanceProto extends com.google.protobuf.GeneratedFile {
       "\n4google/cloud/databasecenter/v1beta/mai"
           + "ntenance.proto\022\"google.cloud.databasecen"
           + "ter.v1beta\032\037google/api/field_behavior.pr"
-          + "oto\032\026google/type/date.proto\032\033google/type"
-          + "/dayofweek.proto\032\033google/type/timeofday."
-          + "proto\"\267\001\n\033ResourceMaintenanceSchedule\022/\n"
-          + "\nstart_time\030\001 \001(\0132\026.google.type.TimeOfDa"
-          + "yB\003\340A\001\022(\n\003day\030\002 \001(\0162\026.google.type.DayOfW"
-          + "eekB\003\340A\001\022=\n\005phase\030\003 \001(\0162).google.cloud.d"
-          + "atabasecenter.v1beta.PhaseB\003\340A\001\"\242\001\n\037Reso"
-          + "urceMaintenanceDenySchedule\022*\n\nstart_dat"
-          + "e\030\001 \001(\0132\021.google.type.DateB\003\340A\001\022(\n\010end_d"
-          + "ate\030\002 \001(\0132\021.google.type.DateB\003\340A\001\022)\n\004tim"
-          + "e\030\003 \001(\0132\026.google.type.TimeOfDayB\003\340A\001\"\205\002\n"
+          + "oto\032\037google/protobuf/timestamp.proto\032\026go"
+          + "ogle/type/date.proto\032\033google/type/dayofw"
+          + "eek.proto\032\033google/type/timeofday.proto\"\267"
+          + "\001\n\033ResourceMaintenanceSchedule\022/\n\nstart_"
+          + "time\030\001 \001(\0132\026.google.type.TimeOfDayB\003\340A\001\022"
+          + "(\n\003day\030\002 \001(\0162\026.google.type.DayOfWeekB\003\340A"
+          + "\001\022=\n\005phase\030\003 \001(\0162).google.cloud.database"
+          + "center.v1beta.PhaseB\003\340A\001\"\242\001\n\037ResourceMai"
+          + "ntenanceDenySchedule\022*\n\nstart_date\030\001 \001(\013"
+          + "2\021.google.type.DateB\003\340A\001\022(\n\010end_date\030\002 \001"
+          + "(\0132\021.google.type.DateB\003\340A\001\022)\n\004time\030\003 \001(\013"
+          + "2\026.google.type.TimeOfDayB\003\340A\001\"}\n\023Upcomin"
+          + "gMaintenance\0223\n\nstart_time\030\001 \001(\0132\032.googl"
+          + "e.protobuf.TimestampB\003\340A\003\0221\n\010end_time\030\002 "
+          + "\001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\366\004\n"
           + "\017MaintenanceInfo\022b\n\024maintenance_schedule"
           + "\030\001 \001(\0132?.google.cloud.databasecenter.v1b"
           + "eta.ResourceMaintenanceScheduleB\003\340A\001\022l\n\032"
           + "deny_maintenance_schedules\030\002 \003(\0132C.googl"
           + "e.cloud.databasecenter.v1beta.ResourceMa"
           + "intenanceDenyScheduleB\003\340A\001\022 \n\023maintenanc"
-          + "e_version\030\003 \001(\tB\003\340A\003*`\n\005Phase\022\025\n\021PHASE_U"
-          + "NSPECIFIED\020\000\022\017\n\013PHASE_WEEK1\020\001\022\017\n\013PHASE_W"
-          + "EEK2\020\002\022\017\n\013PHASE_WEEK5\020\003\022\r\n\tPHASE_ANY\020\004B\376"
-          + "\001\n&com.google.cloud.databasecenter.v1bet"
-          + "aB\020MaintenanceProtoP\001ZNcloud.google.com/"
-          + "go/databasecenter/apiv1beta/databasecent"
-          + "erpb;databasecenterpb\252\002\"Google.Cloud.Dat"
-          + "abaseCenter.V1Beta\312\002\"Google\\Cloud\\Databa"
-          + "seCenter\\V1beta\352\002%Google::Cloud::Databas"
-          + "eCenter::V1betab\006proto3"
+          + "e_version\030\003 \001(\tB\003\340A\003\022<\n\034current_version_"
+          + "release_date\030\004 \001(\0132\021.google.type.DateB\003\340"
+          + "A\003\022Z\n\024upcoming_maintenance\030\005 \001(\01327.googl"
+          + "e.cloud.databasecenter.v1beta.UpcomingMa"
+          + "intenanceB\003\340A\003\022H\n\005state\030\006 \001(\01624.google.c"
+          + "loud.databasecenter.v1beta.MaintenanceSt"
+          + "ateB\003\340A\003\022`\n\030possible_failure_reasons\030\007 \003"
+          + "(\01629.google.cloud.databasecenter.v1beta."
+          + "PossibleFailureReasonB\003\340A\003\022)\n\034previous_m"
+          + "aintenance_version\030\010 \001(\tB\003\340A\003*`\n\005Phase\022\025"
+          + "\n\021PHASE_UNSPECIFIED\020\000\022\017\n\013PHASE_WEEK1\020\001\022\017"
+          + "\n\013PHASE_WEEK2\020\002\022\017\n\013PHASE_WEEK5\020\003\022\r\n\tPHAS"
+          + "E_ANY\020\004*\270\001\n\020MaintenanceState\022!\n\035MAINTENA"
+          + "NCE_STATE_UNSPECIFIED\020\000\022\037\n\033MAINTENANCE_S"
+          + "TATE_SCHEDULED\020\001\022!\n\035MAINTENANCE_STATE_IN"
+          + "_PROGRESS\020\002\022\037\n\033MAINTENANCE_STATE_COMPLET"
+          + "ED\020\003\022\034\n\030MAINTENANCE_STATE_FAILED\020\004*\251\001\n\025P"
+          + "ossibleFailureReason\022\'\n#POSSIBLE_FAILURE"
+          + "_REASON_UNSPECIFIED\020\000\0220\n,POSSIBLE_FAILUR"
+          + "E_REASON_DENY_POLICY_CONFLICT\020\001\0225\n1POSSI"
+          + "BLE_FAILURE_REASON_INSTANCE_IN_STOPPED_S"
+          + "TATE\020\002B\376\001\n&com.google.cloud.databasecent"
+          + "er.v1betaB\020MaintenanceProtoP\001ZNcloud.goo"
+          + "gle.com/go/databasecenter/apiv1beta/data"
+          + "basecenterpb;databasecenterpb\252\002\"Google.C"
+          + "loud.DatabaseCenter.V1Beta\312\002\"Google\\Clou"
+          + "d\\DatabaseCenter\\V1beta\352\002%Google::Cloud:"
+          + ":DatabaseCenter::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.DateProto.getDescriptor(),
               com.google.type.DayOfWeekProto.getDescriptor(),
               com.google.type.TimeOfDayProto.getDescriptor(),
@@ -117,16 +144,32 @@ public final class MaintenanceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "StartDate", "EndDate", "Time",
             });
-    internal_static_google_cloud_databasecenter_v1beta_MaintenanceInfo_descriptor =
+    internal_static_google_cloud_databasecenter_v1beta_UpcomingMaintenance_descriptor =
         getDescriptor().getMessageType(2);
+    internal_static_google_cloud_databasecenter_v1beta_UpcomingMaintenance_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_databasecenter_v1beta_UpcomingMaintenance_descriptor,
+            new java.lang.String[] {
+              "StartTime", "EndTime",
+            });
+    internal_static_google_cloud_databasecenter_v1beta_MaintenanceInfo_descriptor =
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_databasecenter_v1beta_MaintenanceInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_databasecenter_v1beta_MaintenanceInfo_descriptor,
             new java.lang.String[] {
-              "MaintenanceSchedule", "DenyMaintenanceSchedules", "MaintenanceVersion",
+              "MaintenanceSchedule",
+              "DenyMaintenanceSchedules",
+              "MaintenanceVersion",
+              "CurrentVersionReleaseDate",
+              "UpcomingMaintenance",
+              "State",
+              "PossibleFailureReasons",
+              "PreviousMaintenanceVersion",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.DateProto.getDescriptor();
     com.google.type.DayOfWeekProto.getDescriptor();
     com.google.type.TimeOfDayProto.getDescriptor();

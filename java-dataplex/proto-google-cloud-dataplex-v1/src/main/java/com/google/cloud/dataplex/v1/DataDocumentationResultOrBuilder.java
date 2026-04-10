@@ -30,7 +30,51 @@ public interface DataDocumentationResultOrBuilder
    *
    *
    * <pre>
-   * Output only. Table result for insights.
+   * Output only. Insights for a Dataset resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult dataset_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the datasetResult field is set.
+   */
+  boolean hasDatasetResult();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Insights for a Dataset resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult dataset_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The datasetResult.
+   */
+  com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult getDatasetResult();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Insights for a Dataset resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult dataset_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResultOrBuilder
+      getDatasetResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Insights for a Table resource.
    * </pre>
    *
    * <code>
@@ -45,7 +89,7 @@ public interface DataDocumentationResultOrBuilder
    *
    *
    * <pre>
-   * Output only. Table result for insights.
+   * Output only. Insights for a Table resource.
    * </pre>
    *
    * <code>
@@ -60,7 +104,7 @@ public interface DataDocumentationResultOrBuilder
    *
    *
    * <pre>
-   * Output only. Table result for insights.
+   * Output only. Insights for a Table resource.
    * </pre>
    *
    * <code>
