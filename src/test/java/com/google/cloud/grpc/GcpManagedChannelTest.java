@@ -67,6 +67,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 import java.util.logging.Handler;
@@ -295,8 +296,20 @@ public final class GcpManagedChannelTest {
 
   @Test
   public void testGetChannelRefPickUpSmallest() {
-    // All channels have max number of streams
+    // This test verifies deterministic smallest-stream selection (LINEAR_SCAN behavior).
     resetGcpChannel();
+    gcpChannel =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                .withOptions(
+                    GcpManagedChannelOptions.newBuilder()
+                        .withChannelPoolOptions(
+                            GcpChannelPoolOptions.newBuilder()
+                                .setChannelPickStrategy(
+                                    GcpManagedChannelOptions.ChannelPickStrategy.LINEAR_SCAN)
+                                .build())
+                        .build())
+                .build();
     for (int i = 0; i < 5; i++) {
       ManagedChannel channel = builder.build();
       gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(channel, i, MAX_STREAM));
@@ -313,6 +326,283 @@ public final class GcpManagedChannelTest {
     }
     assertEquals(10, gcpChannel.channelRefs.size());
     assertEquals(6, gcpChannel.getChannelRef(null).getAffinityCount());
+  }
+
+  /**
+   * Proves that when all channels have the same stream count (e.g., all zero during a burst),
+   * pickLeastBusyChannel distributes requests across channels rather than always picking channel 0.
+   *
+   * <p>Without power-of-two random choices, the deterministic scan always picks the first channel
+   * in the list when there's a tie, causing a thundering herd on channel 0.
+   */
+  @Test
+  public void testPickLeastBusyDistributesAcrossChannelsOnTie() {
+    resetGcpChannel();
+    final int numChannels = 10;
+    // Create channels all with 0 active streams (simulates burst where no stream counts
+    // have been incremented yet).
+    for (int i = 0; i < numChannels; i++) {
+      ManagedChannel channel = builder.build();
+      gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(channel, i, 0));
+    }
+    assertEquals(numChannels, gcpChannel.channelRefs.size());
+
+    // Simulate a burst: pick a channel many times without incrementing stream counts in between
+    // (the TOCTOU race window). Track which channels get picked.
+    final int numPicks = 1000;
+    int[] pickCounts = new int[numChannels];
+    for (int i = 0; i < numPicks; i++) {
+      ChannelRef picked = gcpChannel.getChannelRef(null);
+      // Find the index of the picked channel in channelRefs.
+      for (int j = 0; j < numChannels; j++) {
+        if (gcpChannel.channelRefs.get(j) == picked) {
+          pickCounts[j]++;
+          break;
+        }
+      }
+    }
+
+    // With proper load distribution, no single channel should get ALL the picks.
+    // Without the fix, channel 0 gets 100% of picks (1000/1000).
+    // With power-of-two, the distribution should be roughly uniform.
+    // Assert that no channel gets more than 30% of picks (generous threshold for randomness).
+    int maxPicks = 0;
+    for (int count : pickCounts) {
+      maxPicks = Math.max(maxPicks, count);
+    }
+    assertThat(maxPicks).isLessThan(numPicks * 30 / 100);
+
+    // Assert that at least half the channels were used (with 10 channels and 1000 picks,
+    // power-of-two should use all of them).
+    int usedChannels = 0;
+    for (int count : pickCounts) {
+      if (count > 0) {
+        usedChannels++;
+      }
+    }
+    assertThat(usedChannels).isAtLeast(numChannels / 2);
+  }
+
+  /**
+   * Verifies that when channels have different stream counts, pickLeastBusyChannel still
+   * consistently picks the less busy channel (power-of-two doesn't break correctness).
+   */
+  @Test
+  public void testPickLeastBusyStillPrefersLessBusyChannels() {
+    resetGcpChannel();
+    // Channel 0: 50 streams (busy), Channels 1-9: 0 streams (idle).
+    ManagedChannel busyChannel = builder.build();
+    gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(busyChannel, 0, 50));
+    for (int i = 1; i < 10; i++) {
+      ManagedChannel channel = builder.build();
+      gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(channel, i, 0));
+    }
+
+    // Pick 100 times. Channel 0 (50 streams) should almost never be picked because
+    // any random pair that includes an idle channel will prefer the idle one.
+    int busyPicks = 0;
+    for (int i = 0; i < 100; i++) {
+      ChannelRef picked = gcpChannel.getChannelRef(null);
+      if (gcpChannel.channelRefs.get(0) == picked) {
+        busyPicks++;
+      }
+    }
+    // Power-of-two guarantees distinct indices, so channel 0 (50 streams) is always
+    // paired with an idle channel (0 streams) and can never win.
+    assertEquals(0, busyPicks);
+  }
+
+  /**
+   * Verifies that power-of-two works correctly with dynamic channel pool scale-up. When the pool
+   * scales up, the new channel should participate in the random selection.
+   */
+  @Test
+  public void testPickLeastBusyWithDynamicScaleUp() throws InterruptedException {
+    final int minSize = 2;
+    final int maxSize = 6;
+    final int minRpcPerChannel = 2;
+    final int maxRpcPerChannel = 5;
+    final Duration scaleDownInterval = Duration.ofMillis(50);
+    final ExecutorService executorService = Executors.newSingleThreadExecutor();
+
+    FakeManagedChannelBuilder fmcb =
+        new FakeManagedChannelBuilder(() -> new FakeManagedChannel(executorService));
+
+    final GcpManagedChannel pool =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(fmcb)
+                .withOptions(
+                    GcpManagedChannelOptions.newBuilder()
+                        .withChannelPoolOptions(
+                            GcpChannelPoolOptions.newBuilder()
+                                .setMinSize(minSize)
+                                .setMaxSize(maxSize)
+                                .setDynamicScaling(
+                                    minRpcPerChannel, maxRpcPerChannel, scaleDownInterval)
+                                .build())
+                        .build())
+                .build();
+
+    assertThat(pool.getNumberOfChannels()).isEqualTo(minSize);
+
+    // Mark channels as READY.
+    for (ChannelRef channelRef : pool.channelRefs) {
+      ((FakeManagedChannel) channelRef.getChannel()).setState(ConnectivityState.READY);
+    }
+
+    // Load up channels to trigger scale-up.
+    for (int i = 0; i < minSize * maxRpcPerChannel; i++) {
+      pool.getChannelRef(null).activeStreamsCountIncr();
+    }
+    assertThat(pool.getNumberOfChannels()).isEqualTo(minSize);
+
+    // One more call triggers scale-up.
+    pool.getChannelRef(null).activeStreamsCountIncr();
+    assertThat(pool.getNumberOfChannels()).isEqualTo(minSize + 1);
+
+    // Mark the new channel as READY.
+    ((FakeManagedChannel) pool.channelRefs.get(minSize).getChannel())
+        .setState(ConnectivityState.READY);
+
+    // Now pick many times without incrementing. The new (less busy) channel should be favored,
+    // but picks should still be distributed across channels.
+    int[] pickCounts = new int[pool.getNumberOfChannels()];
+    final int numPicks = 300;
+    for (int i = 0; i < numPicks; i++) {
+      ChannelRef picked = pool.getChannelRef(null);
+      for (int j = 0; j < pool.channelRefs.size(); j++) {
+        if (pool.channelRefs.get(j) == picked) {
+          pickCounts[j]++;
+          break;
+        }
+      }
+    }
+
+    // The new channel (index 2) with 0 streams should get the most picks, but the key thing
+    // is that it doesn't monopolize ALL picks — demonstrating randomness works with scale-up.
+    assertThat(pickCounts[minSize]).isGreaterThan(0);
+
+    // Also, at least one of the original channels should occasionally be picked when
+    // both random indices happen to land on the original channels.
+    int originalPicks = 0;
+    for (int i = 0; i < minSize; i++) {
+      originalPicks += pickCounts[i];
+    }
+    // This can be 0 in rare cases with only 2 loaded + 1 empty, but with 300 picks it's
+    // very unlikely. The loaded channels have equal load so when both randoms hit them, either
+    // works.
+    assertThat(originalPicks).isGreaterThan(0);
+
+    pool.shutdownNow();
+    executorService.shutdownNow();
+  }
+
+  /** With only 1 channel in the pool, power-of-two must always return that channel. */
+  @Test
+  public void testPickLeastBusySingleChannel() {
+    resetGcpChannel();
+    ManagedChannel channel = builder.build();
+    gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(channel, 0, 5));
+
+    for (int i = 0; i < 100; i++) {
+      ChannelRef picked = gcpChannel.getChannelRef(null);
+      assertThat(picked).isEqualTo(gcpChannel.channelRefs.get(0));
+    }
+  }
+
+  /**
+   * With only 2 channels, power-of-two degenerates to comparing both — should always pick the less
+   * busy one.
+   */
+  @Test
+  public void testPickLeastBusyTwoChannels() {
+    resetGcpChannel();
+    ManagedChannel ch0 = builder.build();
+    ManagedChannel ch1 = builder.build();
+    gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(ch0, 0, 10));
+    gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(ch1, 1, 3));
+
+    // With 2 channels, both are always selected, so the one with fewer streams always wins.
+    for (int i = 0; i < 100; i++) {
+      ChannelRef picked = gcpChannel.getChannelRef(null);
+      assertThat(picked).isEqualTo(gcpChannel.channelRefs.get(1));
+    }
+  }
+
+  /**
+   * Verifies that LINEAR_SCAN strategy preserves the legacy behavior: always picks channel 0 on tie
+   * (thundering herd). This is the opt-in escape hatch for users who prefer deterministic
+   * selection.
+   */
+  @Test
+  public void testLinearScanStrategyAlwaysPicksFirstOnTie() {
+    resetGcpChannel();
+    gcpChannel =
+        (GcpManagedChannel)
+            GcpManagedChannelBuilder.forDelegateBuilder(builder)
+                .withOptions(
+                    GcpManagedChannelOptions.newBuilder()
+                        .withChannelPoolOptions(
+                            GcpChannelPoolOptions.newBuilder()
+                                .setChannelPickStrategy(
+                                    GcpManagedChannelOptions.ChannelPickStrategy.LINEAR_SCAN)
+                                .build())
+                        .build())
+                .build();
+
+    final int numChannels = 5;
+    for (int i = 0; i < numChannels; i++) {
+      ManagedChannel channel = builder.build();
+      gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(channel, i, 0));
+    }
+
+    // With LINEAR_SCAN and all channels at 0 streams, channel 0 should win every time.
+    for (int i = 0; i < 100; i++) {
+      ChannelRef picked = gcpChannel.getChannelRef(null);
+      assertThat(picked).isEqualTo(gcpChannel.channelRefs.get(0));
+    }
+  }
+
+  /**
+   * Verifies that under low traffic with POWER_OF_TWO, the warm channel (most recently active) is
+   * preferred when stream counts are tied. This preserves connection warmth without the thundering
+   * herd problem.
+   */
+  @Test
+  public void testPowerOfTwoPrefersWarmChannelOnTie() throws Exception {
+    resetGcpChannel();
+    // Use a fake clock to deterministically control lastResponseNanos.
+    final AtomicLong fakeNanos = new AtomicLong(1_000_000_000L);
+    gcpChannel.setNanoClock(fakeNanos::get);
+
+    final int numChannels = 10;
+    for (int i = 0; i < numChannels; i++) {
+      ManagedChannel channel = builder.build();
+      gcpChannel.channelRefs.add(gcpChannel.new ChannelRef(channel, i, 0));
+    }
+
+    // Advance the clock, then simulate channel 5 receiving a message.
+    // This gives channel 5 a clearly more recent lastResponseNanos than the others.
+    fakeNanos.set(2_000_000_000L);
+    ChannelRef warmChannel = gcpChannel.channelRefs.get(5);
+    warmChannel.messageReceived();
+
+    // Pick many times. The warm channel should be picked more often than average because
+    // whenever it appears in a random pair with another 0-stream channel, it wins the tie.
+    int warmPicks = 0;
+    final int numPicks = 1000;
+    for (int i = 0; i < numPicks; i++) {
+      ChannelRef picked = gcpChannel.getChannelRef(null);
+      if (picked == warmChannel) {
+        warmPicks++;
+      }
+    }
+
+    // Without warmth bias, channel 5 would get ~10% (100/1000) picks.
+    // With warmth bias, it should get significantly more because it wins every tie.
+    // P(channel 5 in sample of 2) = 1 - (9/10)*(8/9) -- wait, it's 1-(9/10)^2 = 19%.
+    // It wins tie with any other cold channel, so ~19% of picks. Allow some variance.
+    assertThat(warmPicks).isGreaterThan(numPicks * 14 / 100);
   }
 
   private void assertFallbacksMetric(
@@ -1502,6 +1792,8 @@ public final class GcpManagedChannelTest {
                                 .setMinSize(3)
                                 .setMaxSize(3)
                                 .setAffinityKeyLifetime(Duration.ofMillis(200))
+                                .setChannelPickStrategy(
+                                    GcpManagedChannelOptions.ChannelPickStrategy.LINEAR_SCAN)
                                 .build())
                         .build())
                 .build();
@@ -1570,7 +1862,7 @@ public final class GcpManagedChannelTest {
     FakeManagedChannelBuilder fmcb =
         new FakeManagedChannelBuilder(() -> new FakeManagedChannel(executorService));
 
-    // Creating a pool with dynamic sizing.
+    // Creating a pool with dynamic sizing and LINEAR_SCAN for deterministic assertions.
     final GcpManagedChannel pool =
         (GcpManagedChannel)
             GcpManagedChannelBuilder.forDelegateBuilder(fmcb)
@@ -1582,6 +1874,8 @@ public final class GcpManagedChannelTest {
                                 .setMaxSize(maxSize)
                                 .setDynamicScaling(
                                     minRpcPerChannel, maxRpcPerChannel, scaleDownInterval)
+                                .setChannelPickStrategy(
+                                    GcpManagedChannelOptions.ChannelPickStrategy.LINEAR_SCAN)
                                 .build())
                         .build())
                 .build();
@@ -1794,7 +2088,7 @@ public final class GcpManagedChannelTest {
     FakeManagedChannelBuilder fmcb =
         new FakeManagedChannelBuilder(() -> new FakeManagedChannel(executorService));
 
-    // Creating a pool with dynamic sizing.
+    // Creating a pool with dynamic sizing and LINEAR_SCAN for deterministic assertions.
     final GcpManagedChannel pool =
         (GcpManagedChannel)
             GcpManagedChannelBuilder.forDelegateBuilder(fmcb)
@@ -1806,6 +2100,8 @@ public final class GcpManagedChannelTest {
                                 .setMaxSize(maxSize)
                                 .setDynamicScaling(
                                     minRpcPerChannel, maxRpcPerChannel, scaleDownInterval)
+                                .setChannelPickStrategy(
+                                    GcpManagedChannelOptions.ChannelPickStrategy.LINEAR_SCAN)
                                 .build())
                         .build())
                 .build();

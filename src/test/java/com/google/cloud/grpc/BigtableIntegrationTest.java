@@ -228,18 +228,21 @@ public class BigtableIntegrationTest {
       AsyncResponseObserver<MutateRowResponse> responseObserver =
           new AsyncResponseObserver<MutateRowResponse>();
       stub.mutateRow(request, responseObserver);
-      // Test the number of channels.
-      assertEquals(
-          Math.min(i / NEW_MAX_STREAM + 1, NEW_MAX_CHANNEL), gcpChannel.channelRefs.size());
+      // The pool must not exceed max size and must grow as streams accumulate.
+      assertThat(gcpChannel.channelRefs.size()).isAtMost(NEW_MAX_CHANNEL);
+      assertThat(gcpChannel.channelRefs.size()).isAtLeast(1);
       clearObservers.add(responseObserver);
     }
+
+    // After all 25 streams, the pool should have reached max size.
+    assertEquals(NEW_MAX_CHANNEL, gcpChannel.channelRefs.size());
 
     // The number of streams is 26, new channel won't be created.
     MutateRowRequest request = getMutateRequest("test-mutation-async", 100, "test-row-async");
     AsyncResponseObserver<MutateRowResponse> responseObserver =
         new AsyncResponseObserver<MutateRowResponse>();
     stub.mutateRow(request, responseObserver);
-    assertEquals(5, gcpChannel.channelRefs.size());
+    assertEquals(NEW_MAX_CHANNEL, gcpChannel.channelRefs.size());
     clearObservers.add(responseObserver);
 
     // Clear the streams and check the channels.

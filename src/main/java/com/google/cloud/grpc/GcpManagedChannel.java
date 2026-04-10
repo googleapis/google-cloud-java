@@ -68,7 +68,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.RejectedExecutionException;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
@@ -122,6 +124,8 @@ public class GcpManagedChannel extends ManagedChannel {
   private Duration scaleDownInterval = Duration.ZERO;
   private boolean isDynamicScalingEnabled = false;
   private int maxConcurrentStreamsLowWatermark = DEFAULT_MAX_STREAM;
+  private GcpManagedChannelOptions.ChannelPickStrategy channelPickStrategy =
+      GcpManagedChannelOptions.ChannelPickStrategy.POWER_OF_TWO;
   private Duration affinityKeyLifetime = Duration.ZERO;
 
   @VisibleForTesting final Map<String, AffinityConfig> methodToAffinity = new HashMap<>();
@@ -179,8 +183,12 @@ public class GcpManagedChannel extends ManagedChannel {
   private final String metricPoolIndex =
       String.format("pool-%d", channelPoolIndex.incrementAndGet());
   private final Map<String, Long> cumulativeMetricValues = new ConcurrentHashMap<>();
-  private final ScheduledExecutorService backgroundService =
-      Executors.newSingleThreadScheduledExecutor(GcpThreadFactory.newThreadFactory("gcp-mc-bg-%d"));
+  private static final ScheduledThreadPoolExecutor SHARED_BACKGROUND_SERVICE =
+      createSharedBackgroundService();
+
+  private ScheduledFuture<?> cleanupTask;
+  private ScheduledFuture<?> scaleDownTask;
+  private ScheduledFuture<?> logMetricsTask;
 
   // Metrics counters.
   private final AtomicInteger readyChannels = new AtomicInteger();
@@ -222,6 +230,25 @@ public class GcpManagedChannel extends ManagedChannel {
   private AtomicLong maxUnresponsiveDrops = new AtomicLong();
   private AtomicLong scaleUpCount = new AtomicLong();
   private AtomicLong scaleDownCount = new AtomicLong();
+
+  // Clock supplier for nanoTime, injectable for testing.
+  private Supplier<Long> nanoClock = System::nanoTime;
+
+  @VisibleForTesting
+  void setNanoClock(Supplier<Long> nanoClock) {
+    this.nanoClock = nanoClock;
+  }
+
+  private static ScheduledThreadPoolExecutor createSharedBackgroundService() {
+    ScheduledThreadPoolExecutor executor =
+        new ScheduledThreadPoolExecutor(
+            Math.max(2, Math.min(4, Runtime.getRuntime().availableProcessors() / 2)),
+            GcpThreadFactory.newThreadFactory("gcp-mc-bg-%d"));
+    executor.setRemoveOnCancelPolicy(true);
+    executor.setExecuteExistingDelayedTasksAfterShutdownPolicy(false);
+    executor.setContinueExistingPeriodicTasksAfterShutdownPolicy(false);
+    return executor;
+  }
 
   /**
    * Constructor for GcpManagedChannel.
@@ -396,6 +423,7 @@ public class GcpManagedChannel extends ManagedChannel {
       scaleDownInterval = poolOptions.getScaleDownInterval();
       isDynamicScalingEnabled =
           minRpcPerChannel > 0 && maxRpcPerChannel > 0 && !scaleDownInterval.isZero();
+      channelPickStrategy = poolOptions.getChannelPickStrategy();
     }
     initMetrics();
   }
@@ -404,11 +432,12 @@ public class GcpManagedChannel extends ManagedChannel {
     if (cleanupInterval.isZero()) {
       return;
     }
-    backgroundService.scheduleAtFixedRate(
-        this::cleanupAffinityKeys,
-        cleanupInterval.toMillis(),
-        cleanupInterval.toMillis(),
-        MILLISECONDS);
+    cleanupTask =
+        SHARED_BACKGROUND_SERVICE.scheduleAtFixedRate(
+            this::cleanupAffinityKeys,
+            cleanupInterval.toMillis(),
+            cleanupInterval.toMillis(),
+            MILLISECONDS);
   }
 
   private synchronized void initScaleDownChecker(Duration scaleDownInterval) {
@@ -416,15 +445,17 @@ public class GcpManagedChannel extends ManagedChannel {
       return;
     }
 
-    backgroundService.scheduleAtFixedRate(
-        this::checkScaleDown,
-        scaleDownInterval.toMillis(),
-        scaleDownInterval.toMillis(),
-        MILLISECONDS);
+    scaleDownTask =
+        SHARED_BACKGROUND_SERVICE.scheduleAtFixedRate(
+            this::checkScaleDown,
+            scaleDownInterval.toMillis(),
+            scaleDownInterval.toMillis(),
+            MILLISECONDS);
   }
 
   private synchronized void initLogMetrics() {
-    backgroundService.scheduleAtFixedRate(this::logMetrics, 60, 60, SECONDS);
+    logMetricsTask =
+        SHARED_BACKGROUND_SERVICE.scheduleAtFixedRate(this::logMetrics, 60, 60, SECONDS);
   }
 
   private void logMetricsOptions() {
@@ -1757,43 +1788,83 @@ public class GcpManagedChannel extends ManagedChannel {
       return first;
     }
 
-    // Pick the least busy channel and the least busy ready and not overloaded channel (this could
-    // be the same channel or different or no channel).
-    ChannelRef channelCandidate = channelRefs.get(0);
-    int minStreams = channelCandidate.getActiveStreamsCount();
-    ChannelRef readyCandidate = null;
-    int readyMinStreams = Integer.MAX_VALUE;
-
-    for (ChannelRef channelRef : channelRefs) {
-      int cnt = channelRef.getActiveStreamsCount();
-      if (cnt < minStreams) {
-        minStreams = cnt;
-        channelCandidate = channelRef;
-      }
-      if (cnt < readyMinStreams
-          && !fallbackMap.containsKey(channelRef.getId())
-          && cnt < DEFAULT_MAX_STREAM) {
-        readyMinStreams = cnt;
-        readyCandidate = channelRef;
-      }
+    if (!fallbackEnabled) {
+      return pickLeastBusyNoFallback();
     }
 
-    if (!fallbackEnabled) {
-      if (shouldScaleUp(minStreams)) {
-        ChannelRef newChannel = tryCreateNewChannel();
-        if (newChannel != null) {
-          scaleUpCount.incrementAndGet();
-          return newChannel;
+    return pickLeastBusyWithFallback(forFallback);
+  }
+
+  /**
+   * Non-fallback channel selection. Uses the configured {@link
+   * GcpManagedChannelOptions.ChannelPickStrategy}.
+   */
+  private ChannelRef pickLeastBusyNoFallback() {
+    ChannelRef channelCandidate;
+    int minStreams;
+
+    if (channelPickStrategy == GcpManagedChannelOptions.ChannelPickStrategy.POWER_OF_TWO) {
+      channelCandidate = pickFromCandidates(channelRefs);
+      // With power-of-two, streams distribute approximately (not exactly) evenly.
+      // Use max streams for scale-up: if ANY channel hits the watermark, it's overloaded now
+      // and we should add capacity before other channels follow. This preserves the original
+      // per-channel watermark semantics (with LINEAR_SCAN, min == max so it didn't matter).
+      // Global min would delay scale-up; sampled min would be noisy.
+      minStreams = getMaxActiveStreams();
+    } else {
+      channelCandidate = channelRefs.get(0);
+      minStreams = channelCandidate.getActiveStreamsCount();
+      for (ChannelRef channelRef : channelRefs) {
+        int cnt = channelRef.getActiveStreamsCount();
+        if (cnt < minStreams) {
+          minStreams = cnt;
+          channelCandidate = channelRef;
         }
       }
-      return channelCandidate;
     }
 
-    if (shouldScaleUp(readyMinStreams)) {
+    if (shouldScaleUp(minStreams)) {
       ChannelRef newChannel = tryCreateNewChannel();
       if (newChannel != null) {
         scaleUpCount.incrementAndGet();
-        if (!forFallback && readyCandidate == null) {
+        return newChannel;
+      }
+    }
+    return channelCandidate;
+  }
+
+  /**
+   * Fallback-enabled channel selection. Always uses a full linear scan because the fallback logic
+   * needs to filter channels by readiness state and max stream limits.
+   */
+  private ChannelRef pickLeastBusyWithFallback(boolean forFallback) {
+    // Full scan to collect eligible ("ready") channels not in fallbackMap and under max streams.
+    List<ChannelRef> readyCandidates = new ArrayList<>();
+    ChannelRef overallCandidate = channelRefs.get(0);
+    int overallMinStreams = overallCandidate.getActiveStreamsCount();
+    int readyMaxStreams = 0;
+
+    for (ChannelRef channelRef : channelRefs) {
+      int cnt = channelRef.getActiveStreamsCount();
+      if (cnt < overallMinStreams) {
+        overallMinStreams = cnt;
+        overallCandidate = channelRef;
+      }
+      if (!fallbackMap.containsKey(channelRef.getId()) && cnt < DEFAULT_MAX_STREAM) {
+        readyCandidates.add(channelRef);
+        if (cnt > readyMaxStreams) {
+          readyMaxStreams = cnt;
+        }
+      }
+    }
+
+    // For scale-up, use maxStreams among ready channels (consistent with non-fallback path).
+    int scaleUpStreams = readyCandidates.isEmpty() ? Integer.MAX_VALUE : readyMaxStreams;
+    if (shouldScaleUp(scaleUpStreams)) {
+      ChannelRef newChannel = tryCreateNewChannel();
+      if (newChannel != null) {
+        scaleUpCount.incrementAndGet();
+        if (!forFallback && readyCandidates.isEmpty()) {
           if (logger.isLoggable(Level.FINEST)) {
             logger.finest(log("Fallback to newly created channel %d", newChannel.getId()));
           }
@@ -1803,13 +1874,15 @@ public class GcpManagedChannel extends ManagedChannel {
       }
     }
 
-    if (readyCandidate != null) {
-      if (!forFallback && readyCandidate.getId() != channelCandidate.getId()) {
+    if (!readyCandidates.isEmpty()) {
+      // Apply power-of-two among eligible channels to avoid thundering herd.
+      ChannelRef readyCandidate = pickFromCandidates(readyCandidates);
+      if (!forFallback && readyCandidate.getId() != overallCandidate.getId()) {
         if (logger.isLoggable(Level.FINEST)) {
           logger.finest(
               log(
                   "Picking fallback channel: %d -> %d",
-                  channelCandidate.getId(), readyCandidate.getId()));
+                  overallCandidate.getId(), readyCandidate.getId()));
         }
         fallbacksSucceeded.incrementAndGet();
       }
@@ -1818,11 +1891,53 @@ public class GcpManagedChannel extends ManagedChannel {
 
     if (!forFallback) {
       if (logger.isLoggable(Level.FINEST)) {
-        logger.finest(log("Failed to find fallback for channel %d", channelCandidate.getId()));
+        logger.finest(log("Failed to find fallback for channel %d", overallCandidate.getId()));
       }
       fallbacksFailed.incrementAndGet();
     }
-    return channelCandidate;
+    return overallCandidate;
+  }
+
+  /**
+   * Picks a channel from the given candidate list using the configured strategy.
+   *
+   * <p>For {@code POWER_OF_TWO}: samples two distinct random candidates and picks the less busy
+   * one. On tie, prefers the channel with more recent activity (warmer) to preserve connection
+   * warmth under low traffic.
+   *
+   * <p>For {@code LINEAR_SCAN}: deterministic scan picking the first least-busy channel.
+   */
+  private ChannelRef pickFromCandidates(List<ChannelRef> candidates) {
+    if (candidates.size() == 1) {
+      return candidates.get(0);
+    }
+    if (channelPickStrategy == GcpManagedChannelOptions.ChannelPickStrategy.POWER_OF_TWO) {
+      ThreadLocalRandom random = ThreadLocalRandom.current();
+      int i = random.nextInt(candidates.size());
+      int j = random.nextInt(candidates.size() - 1);
+      if (j >= i) {
+        j++;
+      }
+      ChannelRef a = candidates.get(i);
+      ChannelRef b = candidates.get(j);
+      int aStreams = a.getActiveStreamsCount();
+      int bStreams = b.getActiveStreamsCount();
+      if (aStreams < bStreams) return a;
+      if (bStreams < aStreams) return b;
+      // Tie: prefer the warmer channel (more recent activity).
+      return a.lastResponseNanos >= b.lastResponseNanos ? a : b;
+    }
+    // LINEAR_SCAN: pick the least busy.
+    ChannelRef best = candidates.get(0);
+    int bestStreams = best.getActiveStreamsCount();
+    for (int k = 1; k < candidates.size(); k++) {
+      int cnt = candidates.get(k).getActiveStreamsCount();
+      if (cnt < bestStreams) {
+        bestStreams = cnt;
+        best = candidates.get(k);
+      }
+    }
+    return best;
   }
 
   @Override
@@ -1882,6 +1997,21 @@ public class GcpManagedChannel extends ManagedChannel {
     return key;
   }
 
+  private synchronized void cancelBackgroundTasks() {
+    if (cleanupTask != null) {
+      cleanupTask.cancel(false);
+      cleanupTask = null;
+    }
+    if (scaleDownTask != null) {
+      scaleDownTask.cancel(false);
+      scaleDownTask = null;
+    }
+    if (logMetricsTask != null) {
+      logMetricsTask.cancel(false);
+      logMetricsTask = null;
+    }
+  }
+
   @Override
   public ManagedChannel shutdownNow() {
     logger.finer(log("Shutdown now started."));
@@ -1895,9 +2025,7 @@ public class GcpManagedChannel extends ManagedChannel {
         channelRef.getChannel().shutdownNow();
       }
     }
-    if (backgroundService != null && !backgroundService.isTerminated()) {
-      backgroundService.shutdownNow();
-    }
+    cancelBackgroundTasks();
     if (!stateNotificationExecutor.isTerminated()) {
       stateNotificationExecutor.shutdownNow();
     }
@@ -1913,9 +2041,7 @@ public class GcpManagedChannel extends ManagedChannel {
     for (ChannelRef channelRef : removedChannelRefs) {
       channelRef.getChannel().shutdown();
     }
-    if (backgroundService != null) {
-      backgroundService.shutdown();
-    }
+    cancelBackgroundTasks();
     stateNotificationExecutor.shutdown();
     return this;
   }
@@ -1936,10 +2062,6 @@ public class GcpManagedChannel extends ManagedChannel {
       channelRef.getChannel().awaitTermination(awaitTimeNanos, NANOSECONDS);
     }
     long awaitTimeNanos = endTimeNanos - System.nanoTime();
-    if (backgroundService != null && awaitTimeNanos > 0) {
-      //noinspection ResultOfMethodCallIgnored
-      backgroundService.awaitTermination(awaitTimeNanos, NANOSECONDS);
-    }
     awaitTimeNanos = endTimeNanos - System.nanoTime();
     if (awaitTimeNanos > 0) {
       // noinspection ResultOfMethodCallIgnored
@@ -1957,10 +2079,10 @@ public class GcpManagedChannel extends ManagedChannel {
         return false;
       }
     }
-    if (backgroundService != null && !backgroundService.isShutdown()) {
-      return false;
-    }
-    return stateNotificationExecutor.isShutdown();
+    return cleanupTask == null
+        && scaleDownTask == null
+        && logMetricsTask == null
+        && stateNotificationExecutor.isShutdown();
   }
 
   @Override
@@ -1972,10 +2094,10 @@ public class GcpManagedChannel extends ManagedChannel {
         return false;
       }
     }
-    if (backgroundService != null && !backgroundService.isTerminated()) {
-      return false;
-    }
-    return stateNotificationExecutor.isTerminated();
+    return cleanupTask == null
+        && scaleDownTask == null
+        && logMetricsTask == null
+        && stateNotificationExecutor.isTerminated();
   }
 
   /** Get the current connectivity state of the channel pool. */
@@ -2187,7 +2309,7 @@ public class GcpManagedChannel extends ManagedChannel {
     // activeStreamsCount are mutated from the GcpClientCall concurrently using the
     // `activeStreamsCountIncr()` and `activeStreamsCountDecr()` methods.
     private final AtomicInteger activeStreamsCount;
-    private long lastResponseNanos = System.nanoTime();
+    private long lastResponseNanos = nanoClock.get();
     private final AtomicInteger deadlineExceededCount = new AtomicInteger();
     private final AtomicLong okCalls = new AtomicLong();
     private final AtomicLong errCalls = new AtomicLong();
@@ -2263,7 +2385,7 @@ public class GcpManagedChannel extends ManagedChannel {
     }
 
     protected void messageReceived() {
-      lastResponseNanos = System.nanoTime();
+      lastResponseNanos = nanoClock.get();
       deadlineExceededCount.set(0);
     }
 
@@ -2298,13 +2420,13 @@ public class GcpManagedChannel extends ManagedChannel {
       }
       if (!fromClientSide) {
         // If not a deadline exceeded and not coming from the client side then reset time and count.
-        lastResponseNanos = System.nanoTime();
+        lastResponseNanos = nanoClock.get();
         deadlineExceededCount.set(0);
       }
     }
 
     private long msSinceLastResponse() {
-      return (System.nanoTime() - lastResponseNanos) / 1000000;
+      return (nanoClock.get() - lastResponseNanos) / 1000000;
     }
 
     private synchronized void maybeReconnectUnresponsive() {
@@ -2312,14 +2434,14 @@ public class GcpManagedChannel extends ManagedChannel {
       if (deadlineExceededCount.get() >= unresponsiveDropCount
           && msSinceLastResponse >= unresponsiveMs) {
         recordUnresponsiveDetection(
-            System.nanoTime() - lastResponseNanos, deadlineExceededCount.get());
+            nanoClock.get() - lastResponseNanos, deadlineExceededCount.get());
         logger.finer(
             log(
                 "Channel %d connection is unresponsive for %d ms and %d deadline exceeded calls. "
                     + "Forcing channel to idle state.",
                 channelId, msSinceLastResponse, deadlineExceededCount.get()));
         delegate.enterIdle();
-        lastResponseNanos = System.nanoTime();
+        lastResponseNanos = nanoClock.get();
         deadlineExceededCount.set(0);
       }
     }

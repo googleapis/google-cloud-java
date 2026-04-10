@@ -30,6 +30,36 @@ import javax.annotation.Nullable;
 
 /** Options for the {@link GcpManagedChannel}. */
 public class GcpManagedChannelOptions {
+
+  /**
+   * Strategy for picking the least busy channel from the pool.
+   *
+   * <p>This controls how a channel is selected when there is no affinity key or when a new affinity
+   * binding is being established.
+   */
+  public enum ChannelPickStrategy {
+    /**
+     * Scans all channels and picks the one with the fewest active streams. Ties are broken by
+     * iteration order (lowest index wins). This is the legacy behavior.
+     *
+     * <p>This strategy finds the global minimum but is susceptible to the thundering herd problem:
+     * under burst traffic, all concurrent callers observe the same minimum and pile onto the same
+     * channel.
+     */
+    LINEAR_SCAN,
+
+    /**
+     * Picks two channels at random and returns the one with fewer active streams. Ties are broken
+     * by preferring the more recently active channel (warmth-preserving).
+     *
+     * <p>This is the default strategy. It avoids the thundering herd problem while keeping warm
+     * channels preferred under low traffic. The trade-off is that it may not always find the global
+     * minimum, but in practice the difference is negligible because stream counts are inherently
+     * racy.
+     */
+    POWER_OF_TWO,
+  }
+
   private static final Logger logger = Logger.getLogger(GcpManagedChannelOptions.class.getName());
 
   @Nullable private final GcpChannelPoolOptions channelPoolOptions;
@@ -189,6 +219,8 @@ public class GcpManagedChannelOptions {
     private final Duration affinityKeyLifetime;
     // How frequently affinity key cleanup process runs.
     private final Duration cleanupInterval;
+    // Strategy for picking the least busy channel.
+    private final ChannelPickStrategy channelPickStrategy;
 
     public GcpChannelPoolOptions(Builder builder) {
       maxSize = builder.maxSize;
@@ -201,6 +233,7 @@ public class GcpManagedChannelOptions {
       useRoundRobinOnBind = builder.useRoundRobinOnBind;
       affinityKeyLifetime = builder.affinityKeyLifetime;
       cleanupInterval = builder.cleanupInterval;
+      channelPickStrategy = builder.channelPickStrategy;
     }
 
     public int getMaxSize() {
@@ -243,6 +276,10 @@ public class GcpManagedChannelOptions {
       return cleanupInterval;
     }
 
+    public ChannelPickStrategy getChannelPickStrategy() {
+      return channelPickStrategy;
+    }
+
     /** Creates a new GcpChannelPoolOptions.Builder. */
     public static GcpChannelPoolOptions.Builder newBuilder() {
       return new GcpChannelPoolOptions.Builder();
@@ -271,6 +308,7 @@ public class GcpManagedChannelOptions {
       private boolean useRoundRobinOnBind = false;
       private Duration affinityKeyLifetime = Duration.ZERO;
       private Duration cleanupInterval = Duration.ZERO;
+      private ChannelPickStrategy channelPickStrategy = ChannelPickStrategy.POWER_OF_TWO;
 
       public Builder() {}
 
@@ -289,6 +327,7 @@ public class GcpManagedChannelOptions {
         this.useRoundRobinOnBind = options.isUseRoundRobinOnBind();
         this.affinityKeyLifetime = options.getAffinityKeyLifetime();
         this.cleanupInterval = options.getCleanupInterval();
+        this.channelPickStrategy = options.getChannelPickStrategy();
       }
 
       public GcpChannelPoolOptions build() {
@@ -436,6 +475,24 @@ public class GcpManagedChannelOptions {
             !cleanupInterval.isZero() || this.affinityKeyLifetime.isZero(),
             "Cleanup interval must not be zero when affinity key interval is above zero.");
         this.cleanupInterval = cleanupInterval;
+        return this;
+      }
+
+      /**
+       * Sets the strategy for picking the least busy channel from the pool.
+       *
+       * <p>Defaults to {@link ChannelPickStrategy#POWER_OF_TWO} which avoids the thundering herd
+       * problem by randomly sampling two channels and picking the less busy one, with ties broken
+       * by channel warmth (most recently active).
+       *
+       * <p>Use {@link ChannelPickStrategy#LINEAR_SCAN} to restore the legacy behavior of scanning
+       * all channels and always picking the one with the fewest active streams.
+       *
+       * @param strategy the channel pick strategy to use.
+       */
+      public Builder setChannelPickStrategy(ChannelPickStrategy strategy) {
+        Preconditions.checkNotNull(strategy, "Channel pick strategy must not be null.");
+        this.channelPickStrategy = strategy;
         return this;
       }
     }
