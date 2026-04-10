@@ -65,6 +65,7 @@ public final class DatabaseResource extends com.google.protobuf.GeneratedMessage
     resourceCategory_ = 0;
     resourceName_ = "";
     edition_ = 0;
+    affiliations_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1131,6 +1132,93 @@ public final class DatabaseResource extends com.google.protobuf.GeneratedMessage
         : maintenanceInfo_;
   }
 
+  public static final int AFFILIATIONS_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.databasecenter.v1beta.Affiliation> affiliations_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Affiliation details of the resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.databasecenter.v1beta.Affiliation> getAffiliationsList() {
+    return affiliations_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Affiliation details of the resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.databasecenter.v1beta.AffiliationOrBuilder>
+      getAffiliationsOrBuilderList() {
+    return affiliations_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Affiliation details of the resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAffiliationsCount() {
+    return affiliations_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Affiliation details of the resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.databasecenter.v1beta.Affiliation getAffiliations(int index) {
+    return affiliations_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Affiliation details of the resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.databasecenter.v1beta.AffiliationOrBuilder getAffiliationsOrBuilder(
+      int index) {
+    return affiliations_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1201,6 +1289,9 @@ public final class DatabaseResource extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(19, getMaintenanceInfo());
     }
+    for (int i = 0; i < affiliations_.size(); i++) {
+      output.writeMessage(20, affiliations_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1266,6 +1357,9 @@ public final class DatabaseResource extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getMaintenanceInfo());
     }
+    for (int i = 0; i < affiliations_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, affiliations_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1314,6 +1408,7 @@ public final class DatabaseResource extends com.google.protobuf.GeneratedMessage
     if (hasMaintenanceInfo()) {
       if (!getMaintenanceInfo().equals(other.getMaintenanceInfo())) return false;
     }
+    if (!getAffiliationsList().equals(other.getAffiliationsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1376,6 +1471,10 @@ public final class DatabaseResource extends com.google.protobuf.GeneratedMessage
     if (hasMaintenanceInfo()) {
       hash = (37 * hash) + MAINTENANCE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getMaintenanceInfo().hashCode();
+    }
+    if (getAffiliationsCount() > 0) {
+      hash = (37 * hash) + AFFILIATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getAffiliationsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1529,6 +1628,7 @@ public final class DatabaseResource extends com.google.protobuf.GeneratedMessage
         internalGetMetricsFieldBuilder();
         internalGetBackupdrConfigFieldBuilder();
         internalGetMaintenanceInfoFieldBuilder();
+        internalGetAffiliationsFieldBuilder();
       }
     }
 
@@ -1597,6 +1697,13 @@ public final class DatabaseResource extends com.google.protobuf.GeneratedMessage
         maintenanceInfoBuilder_.dispose();
         maintenanceInfoBuilder_ = null;
       }
+      if (affiliationsBuilder_ == null) {
+        affiliations_ = java.util.Collections.emptyList();
+      } else {
+        affiliations_ = null;
+        affiliationsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00020000);
       return this;
     }
 
@@ -1669,6 +1776,15 @@ public final class DatabaseResource extends com.google.protobuf.GeneratedMessage
         result.signalGroups_ = signalGroups_;
       } else {
         result.signalGroups_ = signalGroupsBuilder_.build();
+      }
+      if (affiliationsBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)) {
+          affiliations_ = java.util.Collections.unmodifiableList(affiliations_);
+          bitField0_ = (bitField0_ & ~0x00020000);
+        }
+        result.affiliations_ = affiliations_;
+      } else {
+        result.affiliations_ = affiliationsBuilder_.build();
       }
     }
 
@@ -1895,6 +2011,33 @@ public final class DatabaseResource extends com.google.protobuf.GeneratedMessage
       if (other.hasMaintenanceInfo()) {
         mergeMaintenanceInfo(other.getMaintenanceInfo());
       }
+      if (affiliationsBuilder_ == null) {
+        if (!other.affiliations_.isEmpty()) {
+          if (affiliations_.isEmpty()) {
+            affiliations_ = other.affiliations_;
+            bitField0_ = (bitField0_ & ~0x00020000);
+          } else {
+            ensureAffiliationsIsMutable();
+            affiliations_.addAll(other.affiliations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.affiliations_.isEmpty()) {
+          if (affiliationsBuilder_.isEmpty()) {
+            affiliationsBuilder_.dispose();
+            affiliationsBuilder_ = null;
+            affiliations_ = other.affiliations_;
+            bitField0_ = (bitField0_ & ~0x00020000);
+            affiliationsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetAffiliationsFieldBuilder()
+                    : null;
+          } else {
+            affiliationsBuilder_.addAllMessages(other.affiliations_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2056,6 +2199,20 @@ public final class DatabaseResource extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00010000;
                 break;
               } // case 154
+            case 162:
+              {
+                com.google.cloud.databasecenter.v1beta.Affiliation m =
+                    input.readMessage(
+                        com.google.cloud.databasecenter.v1beta.Affiliation.parser(),
+                        extensionRegistry);
+                if (affiliationsBuilder_ == null) {
+                  ensureAffiliationsIsMutable();
+                  affiliations_.add(m);
+                } else {
+                  affiliationsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5685,6 +5842,418 @@ public final class DatabaseResource extends com.google.protobuf.GeneratedMessage
         maintenanceInfo_ = null;
       }
       return maintenanceInfoBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.databasecenter.v1beta.Affiliation> affiliations_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAffiliationsIsMutable() {
+      if (!((bitField0_ & 0x00020000) != 0)) {
+        affiliations_ =
+            new java.util.ArrayList<com.google.cloud.databasecenter.v1beta.Affiliation>(
+                affiliations_);
+        bitField0_ |= 0x00020000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.databasecenter.v1beta.Affiliation,
+            com.google.cloud.databasecenter.v1beta.Affiliation.Builder,
+            com.google.cloud.databasecenter.v1beta.AffiliationOrBuilder>
+        affiliationsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.databasecenter.v1beta.Affiliation>
+        getAffiliationsList() {
+      if (affiliationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(affiliations_);
+      } else {
+        return affiliationsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getAffiliationsCount() {
+      if (affiliationsBuilder_ == null) {
+        return affiliations_.size();
+      } else {
+        return affiliationsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.databasecenter.v1beta.Affiliation getAffiliations(int index) {
+      if (affiliationsBuilder_ == null) {
+        return affiliations_.get(index);
+      } else {
+        return affiliationsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAffiliations(
+        int index, com.google.cloud.databasecenter.v1beta.Affiliation value) {
+      if (affiliationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAffiliationsIsMutable();
+        affiliations_.set(index, value);
+        onChanged();
+      } else {
+        affiliationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAffiliations(
+        int index, com.google.cloud.databasecenter.v1beta.Affiliation.Builder builderForValue) {
+      if (affiliationsBuilder_ == null) {
+        ensureAffiliationsIsMutable();
+        affiliations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        affiliationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAffiliations(com.google.cloud.databasecenter.v1beta.Affiliation value) {
+      if (affiliationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAffiliationsIsMutable();
+        affiliations_.add(value);
+        onChanged();
+      } else {
+        affiliationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAffiliations(
+        int index, com.google.cloud.databasecenter.v1beta.Affiliation value) {
+      if (affiliationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAffiliationsIsMutable();
+        affiliations_.add(index, value);
+        onChanged();
+      } else {
+        affiliationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAffiliations(
+        com.google.cloud.databasecenter.v1beta.Affiliation.Builder builderForValue) {
+      if (affiliationsBuilder_ == null) {
+        ensureAffiliationsIsMutable();
+        affiliations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        affiliationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAffiliations(
+        int index, com.google.cloud.databasecenter.v1beta.Affiliation.Builder builderForValue) {
+      if (affiliationsBuilder_ == null) {
+        ensureAffiliationsIsMutable();
+        affiliations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        affiliationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllAffiliations(
+        java.lang.Iterable<? extends com.google.cloud.databasecenter.v1beta.Affiliation> values) {
+      if (affiliationsBuilder_ == null) {
+        ensureAffiliationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, affiliations_);
+        onChanged();
+      } else {
+        affiliationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAffiliations() {
+      if (affiliationsBuilder_ == null) {
+        affiliations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00020000);
+        onChanged();
+      } else {
+        affiliationsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeAffiliations(int index) {
+      if (affiliationsBuilder_ == null) {
+        ensureAffiliationsIsMutable();
+        affiliations_.remove(index);
+        onChanged();
+      } else {
+        affiliationsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.databasecenter.v1beta.Affiliation.Builder getAffiliationsBuilder(
+        int index) {
+      return internalGetAffiliationsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.databasecenter.v1beta.AffiliationOrBuilder getAffiliationsOrBuilder(
+        int index) {
+      if (affiliationsBuilder_ == null) {
+        return affiliations_.get(index);
+      } else {
+        return affiliationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.databasecenter.v1beta.AffiliationOrBuilder>
+        getAffiliationsOrBuilderList() {
+      if (affiliationsBuilder_ != null) {
+        return affiliationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(affiliations_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.databasecenter.v1beta.Affiliation.Builder addAffiliationsBuilder() {
+      return internalGetAffiliationsFieldBuilder()
+          .addBuilder(com.google.cloud.databasecenter.v1beta.Affiliation.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.databasecenter.v1beta.Affiliation.Builder addAffiliationsBuilder(
+        int index) {
+      return internalGetAffiliationsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.databasecenter.v1beta.Affiliation.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Affiliation details of the resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.databasecenter.v1beta.Affiliation.Builder>
+        getAffiliationsBuilderList() {
+      return internalGetAffiliationsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.databasecenter.v1beta.Affiliation,
+            com.google.cloud.databasecenter.v1beta.Affiliation.Builder,
+            com.google.cloud.databasecenter.v1beta.AffiliationOrBuilder>
+        internalGetAffiliationsFieldBuilder() {
+      if (affiliationsBuilder_ == null) {
+        affiliationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.databasecenter.v1beta.Affiliation,
+                com.google.cloud.databasecenter.v1beta.Affiliation.Builder,
+                com.google.cloud.databasecenter.v1beta.AffiliationOrBuilder>(
+                affiliations_, ((bitField0_ & 0x00020000) != 0), getParentForChildren(), isClean());
+        affiliations_ = null;
+      }
+      return affiliationsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.databasecenter.v1beta.DatabaseResource)
