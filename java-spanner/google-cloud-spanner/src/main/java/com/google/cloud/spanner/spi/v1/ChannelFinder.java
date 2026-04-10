@@ -117,6 +117,20 @@ public final class ChannelFinder {
     }
   }
 
+  private boolean isMaterialUpdate(CacheUpdate update) {
+    return update.getGroupCount() > 0
+        || update.getRangeCount() > 0
+        || (update.hasKeyRecipes() && update.getKeyRecipes().getRecipeCount() > 0);
+  }
+
+  private boolean shouldProcessUpdate(CacheUpdate update) {
+    if (isMaterialUpdate(update)) {
+      return true;
+    }
+    long updateDatabaseId = update.getDatabaseId();
+    return updateDatabaseId != 0 && databaseId.get() != updateDatabaseId;
+  }
+
   public void update(CacheUpdate update) {
     synchronized (updateLock) {
       long currentId = databaseId.get();
@@ -154,6 +168,9 @@ public final class ChannelFinder {
   }
 
   public void updateAsync(CacheUpdate update) {
+    if (!shouldProcessUpdate(update)) {
+      return;
+    }
     pendingUpdates.add(new PendingCacheUpdate(update));
     if (drainScheduled.compareAndSet(false, true)) {
       java.util.concurrent.CountDownLatch latch = new java.util.concurrent.CountDownLatch(1);

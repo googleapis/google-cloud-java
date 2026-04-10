@@ -88,6 +88,30 @@ public class ChannelFinderTest {
     assertThat(rangeCache(finder).size()).isEqualTo(1);
   }
 
+  @Test
+  public void updateAsyncSkipsTrulyEmptyUpdateForCurrentDatabase() throws Exception {
+    ChannelFinder finder = new ChannelFinder(new FakeEndpointCache());
+    finder.update(singleRangeUpdate(0));
+
+    finder.updateAsync(CacheUpdate.newBuilder().setDatabaseId(7L).build());
+    finder.awaitPendingUpdates();
+
+    assertThat(databaseId(finder)).isEqualTo(7L);
+    assertThat(rangeCache(finder).size()).isEqualTo(1);
+  }
+
+  @Test
+  public void updateAsyncProcessesDatabaseTransitionWithoutRangesOrGroups() throws Exception {
+    ChannelFinder finder = new ChannelFinder(new FakeEndpointCache());
+    finder.update(singleRangeUpdate(0));
+
+    finder.updateAsync(CacheUpdate.newBuilder().setDatabaseId(9L).build());
+    finder.awaitPendingUpdates();
+
+    assertThat(databaseId(finder)).isEqualTo(9L);
+    assertThat(rangeCache(finder).size()).isEqualTo(0);
+  }
+
   private static CacheUpdate singleRangeUpdate(int index) {
     String startKey = String.format("k%05d", index);
     String limitKey = String.format("k%05d", index + 1);
