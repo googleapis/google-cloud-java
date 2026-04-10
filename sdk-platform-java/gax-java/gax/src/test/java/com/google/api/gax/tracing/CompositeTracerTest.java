@@ -279,4 +279,11 @@ class CompositeTracerTest {
     inOrder.verify(child1).injectTraceContext(carrier);
     inOrder.verify(child2).injectTraceContext(carrier);
   }
+
+  @Test
+  void testRequestUrlResolved() {
+    compositeTracer.requestUrlResolved("the-url");
+    verify(child1).requestUrlResolved("the-url");
+    verify(child2).requestUrlResolved("the-url");
+  }
 }
