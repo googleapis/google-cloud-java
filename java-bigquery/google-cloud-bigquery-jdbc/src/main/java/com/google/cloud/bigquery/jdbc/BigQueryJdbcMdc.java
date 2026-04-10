@@ -32,6 +32,8 @@ public class BigQueryJdbcMdc {
       new ConcurrentHashMap<>();
 
   /** Allocates an exclusive InheritableThreadLocal and registers the connection mapping. */
+  private static final InheritableThreadLocal<String> currentConnectionId = new InheritableThreadLocal<>();
+
   public static void registerInstance(BigQueryConnection connection, String id) {
     if (connection != null) {
       String cleanId =
@@ -44,6 +46,7 @@ public class BigQueryJdbcMdc {
                 return "JdbcConnection-" + numericPart;
               });
 
+      currentConnectionId.set(cleanId);
       InheritableThreadLocal<String> threadLocal =
           instanceLocals.computeIfAbsent(connection, k -> new InheritableThreadLocal<>());
       threadLocal.set(cleanId);
@@ -69,19 +72,26 @@ public class BigQueryJdbcMdc {
    * Returns the connection ID carried by any registered active connection on the current thread.
    */
   public static String getConnectionId() {
-    for (InheritableThreadLocal<String> local : instanceLocals.values()) {
-      String val = local.get();
-      if (val != null) {
-        return val;
-      }
-    }
-    return null;
+    return currentConnectionId.get();
   }
 
   /** Clears the connection ID context from all active connection contexts on the current thread. */
+  public static void removeInstance(BigQueryConnection connection) {
+    if (connection != null) {
+      InheritableThreadLocal<String> local = instanceLocals.remove(connection);
+      if (local != null) {
+        local.remove();
+      }
+      instanceIds.remove(connection);
+    }
+  }
+
   public static void clear() {
+    currentConnectionId.remove();
     for (InheritableThreadLocal<String> local : instanceLocals.values()) {
       local.remove();
     }
+    instanceLocals.clear();
+    instanceIds.clear();
   }
 }
