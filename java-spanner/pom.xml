@@ -55,6 +55,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-spanner-parent</site.installationModule>
+    <grpc-gcp.version>1.9.3-SNAPSHOT</grpc-gcp.version>
   </properties>
 
   <dependencyManagement>
@@ -104,6 +105,11 @@
         <artifactId>google-cloud-spanner</artifactId>
         <version>6.114.0</version><!-- {x-version-update:google-cloud-spanner:current} -->
       </dependency>
+      <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>grpc-gcp</artifactId>
+        <version>${grpc-gcp.version}</version>
+      </dependency>
 
       <dependency>
         <groupId>com.google.truth</groupId>
@@ -121,6 +127,7 @@
   </dependencyManagement>
 
   <modules>
+    <module>grpc-gcp</module>
     <module>google-cloud-spanner</module>
     <module>grpc-google-cloud-spanner-v1</module>
     <module>grpc-google-cloud-spanner-admin-instance-v1</module>

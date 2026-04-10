@@ -189,6 +189,16 @@
   <dependencies>
 
     <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>grpc-gcp</artifactId>
+      <exclusions>
+         <exclusion>
+            <groupId>io.opentelemetry</groupId>
+            <artifactId>opentelemetry-api</artifactId>
+         </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-api</artifactId>
     </dependency>
@@ -369,10 +379,6 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.auto.value</groupId>
-      <artifactId>auto-value-annotations</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
