@@ -19,6 +19,8 @@ package com.google.cloud.spanner.spi.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.common.base.Preconditions;
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 import javax.annotation.concurrent.GuardedBy;
 
 /**
@@ -66,20 +68,28 @@ public class EwmaLatencyTracker implements LatencyTracker {
   }
 
   @Override
-  public void update(long latencyMillis) {
+  public void update(Duration latency) {
+    long latencyMicros;
+    try {
+      latencyMicros = TimeUnit.MICROSECONDS.convert(latency.toNanos(), TimeUnit.NANOSECONDS);
+    } catch (ArithmeticException e) {
+      // Duration is too large to fit in nanoseconds (292+ years).
+      // Use Long.MAX_VALUE to give it the lowest possible priority.
+      latencyMicros = Long.MAX_VALUE;
+    }
     synchronized (lock) {
       if (!initialized) {
-        score = latencyMillis;
+        score = latencyMicros;
         initialized = true;
       } else {
-        score = alpha * latencyMillis + (1 - alpha) * score;
+        score = alpha * latencyMicros + (1 - alpha) * score;
       }
     }
   }
 
   @Override
-  public void recordError(long penaltyMillis) {
+  public void recordError(Duration penalty) {
     // Treat the error as a sample with high latency (penalty)
-    update(penaltyMillis);
+    update(penalty);
   }
 }

@@ -18,6 +18,7 @@ package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import java.time.Duration;
 
 /**
  * Interface for tracking latency scores of Spanner servers.
@@ -39,14 +40,14 @@ public interface LatencyTracker {
   /**
    * Updates the latency score with a new observation.
    *
-   * @param latencyMillis the observed latency in milliseconds.
+   * @param latency the observed latency.
    */
-  void update(long latencyMillis);
+  void update(Duration latency);
 
   /**
    * Records an error and applies a latency penalty.
    *
-   * @param penaltyMillis the penalty in milliseconds to apply.
+   * @param penalty the penalty to apply.
    */
-  void recordError(long penaltyMillis);
+  void recordError(Duration penalty);
 }
