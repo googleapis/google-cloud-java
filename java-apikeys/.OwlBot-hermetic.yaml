@@ -20,8 +20,8 @@ deep-remove-regex:
 - "/java-apikeys/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-apikeys/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
-- "/java-apikeys/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/api/apikeys/(v.*)/.*-java/proto-google-.*/src"

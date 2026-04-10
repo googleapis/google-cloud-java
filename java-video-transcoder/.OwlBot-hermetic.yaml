@@ -20,8 +20,8 @@ deep-remove-regex:
 - "/java-video-transcoder/google-.*/src"
 
 deep-preserve-regex:
-- "/java-video-transcoder/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
-- "/java-video-transcoder/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/video/transcoder/(v.*)/.*-java/proto-google-.*/src"

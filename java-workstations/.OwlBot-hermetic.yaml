@@ -20,8 +20,8 @@ deep-remove-regex:
 - "/java-workstations/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-workstations/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
-- "/java-workstations/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/workstations/(v.*)/.*-java/proto-google-.*/src"
