@@ -1,0 +1,3373 @@
+diff --git a/.gitignore b/.gitignore
+index bdf3ed927..888ac8247 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -16,4 +16,8 @@ target/
+ .vscode/
+ 
+ # MacOS
+-.DS_Store
+\ No newline at end of file
++.DS_Store
++
++# Conductor and Gemini
++conductor/
++Gemini/
+\ No newline at end of file
+diff --git a/oauth2_http/java/com/google/auth/oauth2/ComputeEngineCredentials.java b/oauth2_http/java/com/google/auth/oauth2/ComputeEngineCredentials.java
+index 5faf29fdb..6739d13f1 100644
+--- a/oauth2_http/java/com/google/auth/oauth2/ComputeEngineCredentials.java
++++ b/oauth2_http/java/com/google/auth/oauth2/ComputeEngineCredentials.java
+@@ -41,6 +41,7 @@
+ import com.google.api.client.http.HttpStatusCodes;
+ import com.google.api.client.json.JsonObjectParser;
+ import com.google.api.client.util.GenericData;
++import com.google.api.core.InternalApi;
+ import com.google.auth.CredentialTypeForMetrics;
+ import com.google.auth.Credentials;
+ import com.google.auth.Retryable;
+@@ -82,7 +83,7 @@
+  * <p>These credentials use the IAM API to sign data. See {@link #sign(byte[])} for more details.
+  */
+ public class ComputeEngineCredentials extends GoogleCredentials
+-    implements ServiceAccountSigner, IdTokenProvider {
++    implements ServiceAccountSigner, IdTokenProvider, RegionalAccessBoundaryProvider {
+ 
+   static final String METADATA_RESPONSE_EMPTY_CONTENT_ERROR_MESSAGE =
+       "Empty content from metadata token server request.";
+@@ -385,7 +386,6 @@ public AccessToken refreshAccessToken() throws IOException {
+     int expiresInSeconds =
+         OAuth2Utils.validateInt32(responseData, "expires_in", PARSE_ERROR_PREFIX);
+     long expiresAtMilliseconds = clock.currentTimeMillis() + expiresInSeconds * 1000;
+-
+     return new AccessToken(accessToken, new Date(expiresAtMilliseconds));
+   }
+ 
+@@ -690,6 +690,11 @@ public static Builder newBuilder() {
+    *
+    * @throws RuntimeException if the default service account cannot be read
+    */
++  @Override
++  HttpTransportFactory getTransportFactory() {
++    return transportFactory;
++  }
++
+   @Override
+   // todo(#314) getAccount should not throw a RuntimeException
+   public String getAccount() {
+@@ -703,6 +708,13 @@ public String getAccount() {
+     return principal;
+   }
+ 
++  @InternalApi
++  @Override
++  public String getRegionalAccessBoundaryUrl() throws IOException {
++    return String.format(
++        OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT, getAccount());
++  }
++
+   /**
+    * Signs the provided bytes using the private key associated with the service account.
+    *
+diff --git a/oauth2_http/java/com/google/auth/oauth2/ExternalAccountAuthorizedUserCredentials.java b/oauth2_http/java/com/google/auth/oauth2/ExternalAccountAuthorizedUserCredentials.java
+index e67ddb89d..bc812984d 100644
+--- a/oauth2_http/java/com/google/auth/oauth2/ExternalAccountAuthorizedUserCredentials.java
++++ b/oauth2_http/java/com/google/auth/oauth2/ExternalAccountAuthorizedUserCredentials.java
+@@ -31,7 +31,9 @@
+ 
+ package com.google.auth.oauth2;
+ 
++import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL;
+ import static com.google.auth.oauth2.OAuth2Utils.JSON_FACTORY;
++import static com.google.auth.oauth2.OAuth2Utils.WORKFORCE_AUDIENCE_PATTERN;
+ import static com.google.common.base.Preconditions.checkNotNull;
+ 
+ import com.google.api.client.http.GenericUrl;
+@@ -44,6 +46,7 @@
+ import com.google.api.client.json.JsonObjectParser;
+ import com.google.api.client.util.GenericData;
+ import com.google.api.client.util.Preconditions;
++import com.google.api.core.InternalApi;
+ import com.google.auth.http.HttpTransportFactory;
+ import com.google.common.base.MoreObjects;
+ import com.google.common.io.BaseEncoding;
+@@ -55,6 +58,7 @@
+ import java.util.Date;
+ import java.util.Map;
+ import java.util.Objects;
++import java.util.regex.Matcher;
+ import javax.annotation.Nullable;
+ 
+ /**
+@@ -75,12 +79,12 @@
+  * }
+  * </pre>
+  */
+-public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials {
++public class ExternalAccountAuthorizedUserCredentials extends GoogleCredentials
++    implements RegionalAccessBoundaryProvider {
+ 
+   private static final String PARSE_ERROR_PREFIX = "Error parsing token refresh response. ";
+ 
+   private static final long serialVersionUID = -2181779590486283287L;
+-
+   private final String transportFactoryClassName;
+   private final String audience;
+   private final String tokenUrl;
+@@ -216,6 +220,24 @@ public AccessToken refreshAccessToken() throws IOException {
+         .build();
+   }
+ 
++  @InternalApi
++  @Override
++  public String getRegionalAccessBoundaryUrl() throws IOException {
++    Matcher matcher = WORKFORCE_AUDIENCE_PATTERN.matcher(getAudience());
++    if (!matcher.matches()) {
++      throw new IllegalStateException(
++          "The provided audience is not in the correct format for a workforce pool. "
++              + "Refer: https://docs.cloud.google.com/iam/docs/principal-identifiers");
++    }
++    String poolId = matcher.group("pool");
++    return String.format(IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL, poolId);
++  }
++
++  @Override
++  HttpTransportFactory getTransportFactory() {
++    return transportFactory;
++  }
++
+   @Nullable
+   public String getAudience() {
+     return audience;
+diff --git a/oauth2_http/java/com/google/auth/oauth2/ExternalAccountCredentials.java b/oauth2_http/java/com/google/auth/oauth2/ExternalAccountCredentials.java
+index c4268d167..12e387357 100644
+--- a/oauth2_http/java/com/google/auth/oauth2/ExternalAccountCredentials.java
++++ b/oauth2_http/java/com/google/auth/oauth2/ExternalAccountCredentials.java
+@@ -31,12 +31,15 @@
+ 
+ package com.google.auth.oauth2;
+ 
++import static com.google.auth.oauth2.OAuth2Utils.WORKFORCE_AUDIENCE_PATTERN;
++import static com.google.auth.oauth2.OAuth2Utils.WORKLOAD_AUDIENCE_PATTERN;
+ import static com.google.common.base.Preconditions.checkNotNull;
+ 
+ import com.google.api.client.http.HttpHeaders;
+ import com.google.api.client.json.GenericJson;
+ import com.google.api.client.json.JsonObjectParser;
+ import com.google.api.client.util.Data;
++import com.google.api.core.InternalApi;
+ import com.google.auth.RequestMetadataCallback;
+ import com.google.auth.http.HttpTransportFactory;
+ import com.google.common.base.MoreObjects;
+@@ -55,6 +58,7 @@
+ import java.util.Locale;
+ import java.util.Map;
+ import java.util.concurrent.Executor;
++import java.util.regex.Matcher;
+ import java.util.regex.Pattern;
+ import javax.annotation.Nullable;
+ 
+@@ -64,7 +68,8 @@
+  * <p>Handles initializing external credentials, calls to the Security Token Service, and service
+  * account impersonation.
+  */
+-public abstract class ExternalAccountCredentials extends GoogleCredentials {
++public abstract class ExternalAccountCredentials extends GoogleCredentials
++    implements RegionalAccessBoundaryProvider {
+ 
+   private static final long serialVersionUID = 8049126194174465023L;
+ 
+@@ -570,6 +575,11 @@ protected AccessToken exchangeExternalCredentialForAccessToken(
+    */
+   public abstract String retrieveSubjectToken() throws IOException;
+ 
++  @Override
++  HttpTransportFactory getTransportFactory() {
++    return transportFactory;
++  }
++
+   public String getAudience() {
+     return audience;
+   }
+@@ -613,6 +623,37 @@ public String getServiceAccountEmail() {
+     return ImpersonatedCredentials.extractTargetPrincipal(serviceAccountImpersonationUrl);
+   }
+ 
++  @InternalApi
++  @Override
++  public String getRegionalAccessBoundaryUrl() throws IOException {
++    if (getServiceAccountEmail() != null) {
++      return String.format(
++          OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT,
++          getServiceAccountEmail());
++    }
++
++    Matcher workforceMatcher = WORKFORCE_AUDIENCE_PATTERN.matcher(getAudience());
++    if (workforceMatcher.matches()) {
++      String poolId = workforceMatcher.group("pool");
++      return String.format(
++          OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL, poolId);
++    }
++
++    Matcher workloadMatcher = WORKLOAD_AUDIENCE_PATTERN.matcher(getAudience());
++    if (workloadMatcher.matches()) {
++      String projectNumber = workloadMatcher.group("project");
++      String poolId = workloadMatcher.group("pool");
++      return String.format(
++          OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKLOAD_POOL,
++          projectNumber,
++          poolId);
++    }
++
++    throw new IllegalStateException(
++        "The provided audience is not in a valid format for either a workload identity pool or a workforce pool."
++            + " Refer: https://docs.cloud.google.com/iam/docs/principal-identifiers");
++  }
++
+   @Nullable
+   public String getClientId() {
+     return clientId;
+diff --git a/oauth2_http/java/com/google/auth/oauth2/GoogleCredentials.java b/oauth2_http/java/com/google/auth/oauth2/GoogleCredentials.java
+index fbfd147f2..cbcc5801f 100644
+--- a/oauth2_http/java/com/google/auth/oauth2/GoogleCredentials.java
++++ b/oauth2_http/java/com/google/auth/oauth2/GoogleCredentials.java
+@@ -37,6 +37,8 @@
+ import com.google.api.client.util.Preconditions;
+ import com.google.api.core.ObsoleteApi;
+ import com.google.auth.Credentials;
++import com.google.auth.RequestMetadataCallback;
++import com.google.auth.http.AuthHttpConstants;
+ import com.google.auth.http.HttpTransportFactory;
+ import com.google.common.annotations.VisibleForTesting;
+ import com.google.common.base.MoreObjects;
+@@ -47,6 +49,8 @@
+ import com.google.errorprone.annotations.CanIgnoreReturnValue;
+ import java.io.IOException;
+ import java.io.InputStream;
++import java.io.ObjectInputStream;
++import java.net.URI;
+ import java.nio.charset.StandardCharsets;
+ import java.time.Duration;
+ import java.util.Collection;
+@@ -107,6 +111,9 @@ String getFileType() {
+   private final String universeDomain;
+   private final boolean isExplicitUniverseDomain;
+ 
++  transient RegionalAccessBoundaryManager regionalAccessBoundaryManager =
++      new RegionalAccessBoundaryManager(clock);
++
+   protected final String quotaProjectId;
+ 
+   private static final DefaultCredentialsProvider defaultCredentialsProvider =
+@@ -331,6 +338,141 @@ public GoogleCredentials createWithQuotaProject(String quotaProject) {
+     return this.toBuilder().setQuotaProjectId(quotaProject).build();
+   }
+ 
++  /**
++   * Returns the currently cached regional access boundary, or null if none is available or if it
++   * has expired.
++   *
++   * @return The cached regional access boundary, or null.
++   */
++  final RegionalAccessBoundary getRegionalAccessBoundary() {
++    return regionalAccessBoundaryManager.getCachedRAB();
++  }
++
++  /**
++   * Refreshes the Regional Access Boundary if it is expired or not yet fetched.
++   *
++   * @param uri The URI of the outbound request.
++   * @param token The access token to use for the refresh.
++   * @throws IOException If getting the universe domain fails.
++   */
++  void refreshRegionalAccessBoundaryIfExpired(@Nullable URI uri, @Nullable AccessToken token)
++      throws IOException {
++    if (!(this instanceof RegionalAccessBoundaryProvider)
++        || !RegionalAccessBoundary.isEnabled()
++        || !isDefaultUniverseDomain()) {
++      return;
++    }
++
++    // Skip refresh for regional endpoints.
++    if (uri != null && uri.getHost() != null) {
++      String host = uri.getHost();
++      if (host.endsWith(".rep.googleapis.com") || host.endsWith(".rep.sandbox.googleapis.com")) {
++        return;
++      }
++    }
++
++    // We need a valid access token for the refresh.
++    if (token == null
++        || (token.getExpirationTimeMillis() != null
++            && token.getExpirationTimeMillis() < clock.currentTimeMillis())) {
++      return;
++    }
++
++    HttpTransportFactory transportFactory = getTransportFactory();
++    if (transportFactory == null) {
++      return;
++    }
++
++    regionalAccessBoundaryManager.triggerAsyncRefresh(
++        transportFactory, (RegionalAccessBoundaryProvider) this, token);
++  }
++
++  /**
++   * Extracts the self-signed JWT from the request metadata and triggers a Regional Access Boundary
++   * refresh if expired.
++   *
++   * @param uri The URI of the outbound request.
++   * @param requestMetadata The request metadata containing the authorization header.
++   */
++  void refreshRegionalAccessBoundaryWithSelfSignedJwtIfExpired(
++      @Nullable URI uri, Map<String, List<String>> requestMetadata) {
++    List<String> authHeaders = requestMetadata.get(AuthHttpConstants.AUTHORIZATION);
++    if (authHeaders != null && !authHeaders.isEmpty()) {
++      String authHeader = authHeaders.get(0);
++      if (authHeader.startsWith(AuthHttpConstants.BEARER + " ")) {
++        String tokenValue = authHeader.substring((AuthHttpConstants.BEARER + " ").length());
++        // Use a null expiration as JWTs are short-lived anyway.
++        AccessToken wrappedToken = new AccessToken(tokenValue, null);
++        try {
++          refreshRegionalAccessBoundaryIfExpired(uri, wrappedToken);
++        } catch (IOException e) {
++          // Ignore failure in async refresh trigger.
++        }
++      }
++    }
++  }
++
++  /**
++   * Synchronously provides the request metadata.
++   *
++   * <p>This method is blocking and will wait for a token refresh if necessary. It also ensures any
++   * available Regional Access Boundary information is included in the metadata.
++   *
++   * @param uri The URI of the request.
++   * @return The request metadata containing the authorization header and potentially regional
++   *     access boundary.
++   * @throws IOException If an error occurs while fetching the token.
++   */
++  @Override
++  public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
++    Map<String, List<String>> metadata = super.getRequestMetadata(uri);
++    metadata = addRegionalAccessBoundaryToRequestMetadata(uri, metadata);
++    try {
++      // Sets off an async refresh for request-metadata.
++      refreshRegionalAccessBoundaryIfExpired(uri, getAccessToken());
++    } catch (IOException e) {
++      // Ignore failure in async refresh trigger.
++    }
++    return metadata;
++  }
++
++  /**
++   * Asynchronously provides the request metadata.
++   *
++   * <p>This method is non-blocking. It ensures any available Regional Access Boundary information
++   * is included in the metadata.
++   *
++   * @param uri The URI of the request.
++   * @param executor The executor to use for any required background tasks.
++   * @param callback The callback to receive the metadata or any error.
++   */
++  @Override
++  public void getRequestMetadata(
++      final URI uri,
++      final java.util.concurrent.Executor executor,
++      final RequestMetadataCallback callback) {
++    super.getRequestMetadata(
++        uri,
++        executor,
++        new RequestMetadataCallback() {
++          @Override
++          public void onSuccess(Map<String, List<String>> metadata) {
++            metadata = addRegionalAccessBoundaryToRequestMetadata(uri, metadata);
++            try {
++              refreshRegionalAccessBoundaryIfExpired(uri, getAccessToken());
++            } catch (IOException e) {
++              // Ignore failure in async refresh trigger.
++            }
++            callback.onSuccess(metadata);
++          }
++
++          @Override
++          public void onFailure(Throwable exception) {
++            callback.onFailure(exception);
++          }
++        });
++  }
++
+   /**
+    * Gets the universe domain for the credential.
+    *
+@@ -374,22 +516,59 @@ boolean isDefaultUniverseDomain() throws IOException {
+   static Map<String, List<String>> addQuotaProjectIdToRequestMetadata(
+       String quotaProjectId, Map<String, List<String>> requestMetadata) {
+     Preconditions.checkNotNull(requestMetadata);
+-    Map<String, List<String>> newRequestMetadata = new HashMap<>(requestMetadata);
+     if (quotaProjectId != null && !requestMetadata.containsKey(QUOTA_PROJECT_ID_HEADER_KEY)) {
+-      newRequestMetadata.put(
+-          QUOTA_PROJECT_ID_HEADER_KEY, Collections.singletonList(quotaProjectId));
++      return ImmutableMap.<String, List<String>>builder()
++          .putAll(requestMetadata)
++          .put(QUOTA_PROJECT_ID_HEADER_KEY, Collections.singletonList(quotaProjectId))
++          .build();
++    }
++    return requestMetadata;
++  }
++
++  /**
++   * Adds Regional Access Boundary header to requestMetadata if available. Overwrites if present. If
++   * the current RAB is null, it removes any stale header that might have survived serialization.
++   *
++   * @param uri The URI of the request.
++   * @param requestMetadata The request metadata.
++   * @return a new map with Regional Access Boundary header added, updated, or removed
++   */
++  Map<String, List<String>> addRegionalAccessBoundaryToRequestMetadata(
++      URI uri, Map<String, List<String>> requestMetadata) {
++    Preconditions.checkNotNull(requestMetadata);
++
++    if (uri != null && uri.getHost() != null) {
++      String host = uri.getHost();
++      if (host.endsWith(".rep.googleapis.com") || host.endsWith(".rep.sandbox.googleapis.com")) {
++        return requestMetadata;
++      }
+     }
+-    return Collections.unmodifiableMap(newRequestMetadata);
++
++    RegionalAccessBoundary rab = getRegionalAccessBoundary();
++    if (rab != null) {
++      // Overwrite the header to ensure the most recent async update is used,
++      // preventing staleness if the token itself hasn't expired yet.
++      Map<String, List<String>> newMetadata = new HashMap<>(requestMetadata);
++      newMetadata.put(
++          RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY,
++          Collections.singletonList(rab.getEncodedLocations()));
++      return ImmutableMap.copyOf(newMetadata);
++    } else if (requestMetadata.containsKey(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY)) {
++      // If RAB is null but the header exists (e.g., from a serialized cache), we must strip it
++      // to prevent sending stale data to the server.
++      Map<String, List<String>> newMetadata = new HashMap<>(requestMetadata);
++      newMetadata.remove(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY);
++      return ImmutableMap.copyOf(newMetadata);
++    }
++    return requestMetadata;
+   }
+ 
+   @Override
+   protected Map<String, List<String>> getAdditionalHeaders() {
+-    Map<String, List<String>> headers = super.getAdditionalHeaders();
++    Map<String, List<String>> headers = new HashMap<>(super.getAdditionalHeaders());
++
+     String quotaProjectId = this.getQuotaProjectId();
+-    if (quotaProjectId != null) {
+-      return addQuotaProjectIdToRequestMetadata(quotaProjectId, headers);
+-    }
+-    return headers;
++    return addQuotaProjectIdToRequestMetadata(quotaProjectId, headers);
+   }
+ 
+   /** Default constructor. */
+@@ -500,6 +679,11 @@ public int hashCode() {
+     return Objects.hash(this.quotaProjectId, this.universeDomain, this.isExplicitUniverseDomain);
+   }
+ 
++  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
++    input.defaultReadObject();
++    regionalAccessBoundaryManager = new RegionalAccessBoundaryManager(clock);
++  }
++
+   public static Builder newBuilder() {
+     return new Builder();
+   }
+@@ -635,6 +819,16 @@ public Map<String, String> getCredentialInfo() {
+     return ImmutableMap.copyOf(infoMap);
+   }
+ 
++  /**
++   * Returns the transport factory used by the credential.
++   *
++   * @return the transport factory, or null if not available.
++   */
++  @Nullable
++  HttpTransportFactory getTransportFactory() {
++    return null;
++  }
++
+   public static class Builder extends OAuth2Credentials.Builder {
+     @Nullable protected String quotaProjectId;
+     @Nullable protected String universeDomain;
+diff --git a/oauth2_http/java/com/google/auth/oauth2/ImpersonatedCredentials.java b/oauth2_http/java/com/google/auth/oauth2/ImpersonatedCredentials.java
+index 18d7cd0f8..a5311eed1 100644
+--- a/oauth2_http/java/com/google/auth/oauth2/ImpersonatedCredentials.java
++++ b/oauth2_http/java/com/google/auth/oauth2/ImpersonatedCredentials.java
+@@ -43,6 +43,7 @@
+ import com.google.api.client.http.json.JsonHttpContent;
+ import com.google.api.client.json.JsonObjectParser;
+ import com.google.api.client.util.GenericData;
++import com.google.api.core.InternalApi;
+ import com.google.auth.CredentialTypeForMetrics;
+ import com.google.auth.ServiceAccountSigner;
+ import com.google.auth.http.HttpCredentialsAdapter;
+@@ -95,7 +96,7 @@
+  * </pre>
+  */
+ public class ImpersonatedCredentials extends GoogleCredentials
+-    implements ServiceAccountSigner, IdTokenProvider {
++    implements ServiceAccountSigner, IdTokenProvider, RegionalAccessBoundaryProvider {
+ 
+   private static final long serialVersionUID = -2133257318957488431L;
+   private static final String RFC3339 = "yyyy-MM-dd'T'HH:mm:ssX";
+@@ -325,10 +326,22 @@ public GoogleCredentials getSourceCredentials() {
+     return sourceCredentials;
+   }
+ 
++  @InternalApi
++  @Override
++  public String getRegionalAccessBoundaryUrl() throws IOException {
++    return String.format(
++        OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT, getAccount());
++  }
++
+   int getLifetime() {
+     return this.lifetime;
+   }
+ 
++  @Override
++  HttpTransportFactory getTransportFactory() {
++    return transportFactory;
++  }
++
+   public void setTransportFactory(HttpTransportFactory httpTransportFactory) {
+     this.transportFactory = httpTransportFactory;
+   }
+diff --git a/oauth2_http/java/com/google/auth/oauth2/OAuth2Credentials.java b/oauth2_http/java/com/google/auth/oauth2/OAuth2Credentials.java
+index dfeb5966a..0835f6dd7 100644
+--- a/oauth2_http/java/com/google/auth/oauth2/OAuth2Credentials.java
++++ b/oauth2_http/java/com/google/auth/oauth2/OAuth2Credentials.java
+@@ -59,7 +59,6 @@
+ import java.util.Map;
+ import java.util.Objects;
+ import java.util.ServiceLoader;
+-import java.util.concurrent.Callable;
+ import java.util.concurrent.ExecutionException;
+ import java.util.concurrent.Executor;
+ import javax.annotation.Nullable;
+@@ -164,6 +163,16 @@ Duration getExpirationMargin() {
+     return this.expirationMargin;
+   }
+ 
++  /**
++   * Asynchronously provides the request metadata by ensuring there is a current access token and
++   * providing it as an authorization bearer token.
++   *
++   * <p>This method is non-blocking. The results are provided through the given callback.
++   *
++   * @param uri The URI of the request.
++   * @param executor The executor to use for any required background tasks.
++   * @param callback The callback to receive the metadata or any error.
++   */
+   @Override
+   public void getRequestMetadata(
+       final URI uri, Executor executor, final RequestMetadataCallback callback) {
+@@ -175,8 +184,14 @@ public void getRequestMetadata(
+   }
+ 
+   /**
+-   * Provide the request metadata by ensuring there is a current access token and providing it as an
+-   * authorization bearer token.
++   * Synchronously provides the request metadata by ensuring there is a current access token and
++   * providing it as an authorization bearer token.
++   *
++   * <p>This method is blocking and will wait for a token refresh if necessary.
++   *
++   * @param uri The URI of the request.
++   * @return The request metadata containing the authorization header.
++   * @throws IOException If an error occurs while fetching the token.
+    */
+   @Override
+   public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+@@ -264,11 +279,8 @@ private AsyncRefreshResult getOrCreateRefreshTask() {
+ 
+       final ListenableFutureTask<OAuthValue> task =
+           ListenableFutureTask.create(
+-              new Callable<OAuthValue>() {
+-                @Override
+-                public OAuthValue call() throws Exception {
+-                  return OAuthValue.create(refreshAccessToken(), getAdditionalHeaders());
+-                }
++              () -> {
++                return OAuthValue.create(refreshAccessToken(), getAdditionalHeaders());
+               });
+ 
+       refreshTask = new RefreshTask(task, new RefreshTaskListener(task));
+@@ -373,7 +385,7 @@ public AccessToken refreshAccessToken() throws IOException {
+   /**
+    * Provide additional headers to return as request metadata.
+    *
+-   * @return additional headers
++   * @return additional headers.
+    */
+   protected Map<String, List<String>> getAdditionalHeaders() {
+     return EMPTY_EXTRA_HEADERS;
+diff --git a/oauth2_http/java/com/google/auth/oauth2/OAuth2Utils.java b/oauth2_http/java/com/google/auth/oauth2/OAuth2Utils.java
+index 21278e8b6..425023adb 100644
+--- a/oauth2_http/java/com/google/auth/oauth2/OAuth2Utils.java
++++ b/oauth2_http/java/com/google/auth/oauth2/OAuth2Utils.java
+@@ -68,6 +68,7 @@
+ import java.util.List;
+ import java.util.Map;
+ import java.util.Set;
++import java.util.regex.Pattern;
+ 
+ /**
+  * Internal utilities for the com.google.auth.oauth2 namespace.
+@@ -117,6 +118,22 @@ public class OAuth2Utils {
+   static final double RETRY_MULTIPLIER = 2;
+   static final int DEFAULT_NUMBER_OF_RETRIES = 3;
+ 
++  static final Pattern WORKFORCE_AUDIENCE_PATTERN =
++      Pattern.compile(
++          "^//iam.googleapis.com/locations/(?<location>[^/]+)/workforcePools/(?<pool>[^/]+)/providers/(?<provider>[^/]+)$");
++  static final Pattern WORKLOAD_AUDIENCE_PATTERN =
++      Pattern.compile(
++          "^//iam.googleapis.com/projects/(?<project>[^/]+)/locations/(?<location>[^/]+)/workloadIdentityPools/(?<pool>[^/]+)/providers/(?<provider>[^/]+)$");
++
++  static final String IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT =
++      "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/%s/allowedLocations";
++
++  static final String IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL =
++      "https://iamcredentials.googleapis.com/v1/locations/global/workforcePools/%s/allowedLocations";
++
++  static final String IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKLOAD_POOL =
++      "https://iamcredentials.googleapis.com/v1/projects/%s/locations/global/workloadIdentityPools/%s/allowedLocations";
++
+   // Includes expected server errors from Google token endpoint
+   // Other 5xx codes are either not used or retries are unlikely to succeed
+   public static final Set<Integer> TOKEN_ENDPOINT_RETRYABLE_STATUS_CODES =
+diff --git a/oauth2_http/java/com/google/auth/oauth2/RegionalAccessBoundary.java b/oauth2_http/java/com/google/auth/oauth2/RegionalAccessBoundary.java
+new file mode 100644
+index 000000000..b2a3f4294
+--- /dev/null
++++ b/oauth2_http/java/com/google/auth/oauth2/RegionalAccessBoundary.java
+@@ -0,0 +1,280 @@
++/*
++ * Copyright 2026, Google LLC
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions are
++ * met:
++ *
++ *    * Redistributions of source code must retain the above copyright
++ * notice, this list of conditions and the following disclaimer.
++ *    * Redistributions in binary form must reproduce the above
++ * copyright notice, this list of conditions and the following disclaimer
++ * in the documentation and/or other materials provided with the
++ * distribution.
++ *
++ *    * Neither the name of Google LLC nor the names of its
++ * contributors may be used to endorse or promote products derived from
++ * this software without specific prior written permission.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
++ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
++ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
++ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
++ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
++ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
++ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
++ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++ */
++
++package com.google.auth.oauth2;
++
++import com.google.api.client.http.GenericUrl;
++import com.google.api.client.http.HttpBackOffIOExceptionHandler;
++import com.google.api.client.http.HttpBackOffUnsuccessfulResponseHandler;
++import com.google.api.client.http.HttpIOExceptionHandler;
++import com.google.api.client.http.HttpRequest;
++import com.google.api.client.http.HttpRequestFactory;
++import com.google.api.client.http.HttpResponse;
++import com.google.api.client.http.HttpUnsuccessfulResponseHandler;
++import com.google.api.client.json.GenericJson;
++import com.google.api.client.json.JsonParser;
++import com.google.api.client.util.Clock;
++import com.google.api.client.util.ExponentialBackOff;
++import com.google.api.client.util.Key;
++import com.google.auth.http.HttpTransportFactory;
++import com.google.common.annotations.VisibleForTesting;
++import com.google.common.base.MoreObjects;
++import com.google.common.base.Preconditions;
++import java.io.IOException;
++import java.io.ObjectInputStream;
++import java.io.Serializable;
++import java.util.Collections;
++import java.util.List;
++import javax.annotation.Nullable;
++
++/**
++ * Represents the regional access boundary configuration for a credential. This class holds the
++ * information retrieved from the IAM `allowedLocations` endpoint. This data is then used to
++ * populate the `x-allowed-locations` header in outgoing API requests, which in turn allows Google's
++ * infrastructure to enforce regional security restrictions. This class does not perform any
++ * client-side validation or enforcement.
++ */
++final class RegionalAccessBoundary implements Serializable {
++
++  static final String X_ALLOWED_LOCATIONS_HEADER_KEY = "x-allowed-locations";
++  private static final long serialVersionUID = -2428522338274020302L;
++
++  // Note: this is for internal testing use use only.
++  // TODO: Fix unit test mocks so this can be removed
++  // Refer -> https://github.com/googleapis/google-auth-library-java/issues/1898
++  static final String ENABLE_EXPERIMENT_ENV_VAR = "GOOGLE_AUTH_TRUST_BOUNDARY_ENABLE_EXPERIMENT";
++  static final long TTL_MILLIS = 6 * 60 * 60 * 1000L; // 6 hours
++  static final long REFRESH_THRESHOLD_MILLIS = 1 * 60 * 60 * 1000L; // 1 hour
++
++  private final String encodedLocations;
++  private final List<String> locations;
++  private final long refreshTime;
++  private transient Clock clock;
++
++  private static EnvironmentProvider environmentProvider = SystemEnvironmentProvider.getInstance();
++
++  /**
++   * Creates a new RegionalAccessBoundary instance.
++   *
++   * @param encodedLocations The encoded string representation of the allowed locations.
++   * @param locations A list of human-readable location strings.
++   * @param clock The clock used to set the creation time.
++   */
++  RegionalAccessBoundary(String encodedLocations, List<String> locations, Clock clock) {
++    this(
++        encodedLocations,
++        locations,
++        clock != null ? clock.currentTimeMillis() : Clock.SYSTEM.currentTimeMillis(),
++        clock);
++  }
++
++  /**
++   * Internal constructor for testing and manual creation with refresh time.
++   *
++   * @param encodedLocations The encoded string representation of the allowed locations.
++   * @param locations A list of human-readable location strings.
++   * @param refreshTime The time at which the information was last refreshed.
++   * @param clock The clock to use for expiration checks.
++   */
++  RegionalAccessBoundary(
++      String encodedLocations, List<String> locations, long refreshTime, Clock clock) {
++    this.encodedLocations = encodedLocations;
++    this.locations =
++        locations == null
++            ? Collections.<String>emptyList()
++            : Collections.unmodifiableList(locations);
++    this.refreshTime = refreshTime;
++    this.clock = clock != null ? clock : Clock.SYSTEM;
++  }
++
++  /** Returns the encoded string representation of the allowed locations. */
++  public String getEncodedLocations() {
++    return encodedLocations;
++  }
++
++  /** Returns a list of human-readable location strings. */
++  public List<String> getLocations() {
++    return locations;
++  }
++
++  /**
++   * Checks if the regional access boundary data is expired.
++   *
++   * @return True if the data has expired based on the TTL, false otherwise.
++   */
++  public boolean isExpired() {
++    return clock.currentTimeMillis() > refreshTime + TTL_MILLIS;
++  }
++
++  /**
++   * Checks if the regional access boundary data should be refreshed. This is a "soft-expiry" check
++   * that allows for background refreshes before the data actually expires.
++   *
++   * @return True if the data is within the refresh threshold, false otherwise.
++   */
++  public boolean shouldRefresh() {
++    return clock.currentTimeMillis() > refreshTime + (TTL_MILLIS - REFRESH_THRESHOLD_MILLIS);
++  }
++
++  /** Represents the JSON response from the regional access boundary endpoint. */
++  public static class RegionalAccessBoundaryResponse extends GenericJson {
++    @Key("encodedLocations")
++    private String encodedLocations;
++
++    @Key("locations")
++    private List<String> locations;
++
++    /** Returns the encoded string representation of the allowed locations from the API response. */
++    public String getEncodedLocations() {
++      return encodedLocations;
++    }
++
++    /** Returns a list of human-readable location strings from the API response. */
++    public List<String> getLocations() {
++      return locations;
++    }
++
++    @Override
++    /** Returns a string representation of the RegionalAccessBoundaryResponse. */
++    public String toString() {
++      return MoreObjects.toStringHelper(this)
++          .add("encodedLocations", encodedLocations)
++          .add("locations", locations)
++          .toString();
++    }
++  }
++
++  @VisibleForTesting
++  static void setEnvironmentProviderForTest(@Nullable EnvironmentProvider provider) {
++    environmentProvider = provider == null ? SystemEnvironmentProvider.getInstance() : provider;
++  }
++
++  /**
++   * Checks if the regional access boundary feature is enabled. The feature is enabled if the
++   * environment variable or system property "GOOGLE_AUTH_TRUST_BOUNDARY_ENABLE_EXPERIMENT" is set
++   * to "true" or "1" (case-insensitive).
++   *
++   * @return True if the regional access boundary feature is enabled, false otherwise.
++   */
++  static boolean isEnabled() {
++    String enabled = environmentProvider.getEnv(ENABLE_EXPERIMENT_ENV_VAR);
++    if (enabled == null) {
++      enabled = System.getProperty(ENABLE_EXPERIMENT_ENV_VAR);
++    }
++    if (enabled == null) {
++      return false;
++    }
++    String lowercased = enabled.toLowerCase();
++    return "true".equals(lowercased) || "1".equals(enabled);
++  }
++
++  /**
++   * Refreshes the regional access boundary by making a network call to the lookup endpoint.
++   *
++   * @param transportFactory The HTTP transport factory to use for the network request.
++   * @param url The URL of the regional access boundary endpoint.
++   * @param accessToken The access token to authenticate the request.
++   * @param clock The clock to use for expiration checks.
++   * @param maxRetryElapsedTimeMillis The max duration to wait for retries.
++   * @return A new RegionalAccessBoundary object containing the refreshed information.
++   * @throws IllegalArgumentException If the provided access token is null or expired.
++   * @throws IOException If a network error occurs or the response is malformed.
++   */
++  static RegionalAccessBoundary refresh(
++      HttpTransportFactory transportFactory,
++      String url,
++      AccessToken accessToken,
++      Clock clock,
++      int maxRetryElapsedTimeMillis)
++      throws IOException {
++    Preconditions.checkNotNull(accessToken, "The provided access token is null.");
++    if (accessToken.getExpirationTimeMillis() != null
++        && accessToken.getExpirationTimeMillis() < clock.currentTimeMillis()) {
++      throw new IllegalArgumentException("The provided access token is expired.");
++    }
++
++    HttpRequestFactory requestFactory = transportFactory.create().createRequestFactory();
++    HttpRequest request = requestFactory.buildGetRequest(new GenericUrl(url));
++    request.getHeaders().setAuthorization("Bearer " + accessToken.getTokenValue());
++
++    // Add retry logic
++    ExponentialBackOff backoff =
++        new ExponentialBackOff.Builder()
++            .setInitialIntervalMillis(OAuth2Utils.INITIAL_RETRY_INTERVAL_MILLIS)
++            .setRandomizationFactor(OAuth2Utils.RETRY_RANDOMIZATION_FACTOR)
++            .setMultiplier(OAuth2Utils.RETRY_MULTIPLIER)
++            .setMaxElapsedTimeMillis(maxRetryElapsedTimeMillis)
++            .build();
++
++    HttpUnsuccessfulResponseHandler unsuccessfulResponseHandler =
++        new HttpBackOffUnsuccessfulResponseHandler(backoff)
++            .setBackOffRequired(
++                response -> {
++                  int statusCode = response.getStatusCode();
++                  return statusCode == 500
++                      || statusCode == 502
++                      || statusCode == 503
++                      || statusCode == 504;
++                });
++    request.setUnsuccessfulResponseHandler(unsuccessfulResponseHandler);
++
++    HttpIOExceptionHandler ioExceptionHandler = new HttpBackOffIOExceptionHandler(backoff);
++    request.setIOExceptionHandler(ioExceptionHandler);
++
++    RegionalAccessBoundaryResponse json;
++    try {
++      HttpResponse response = request.execute();
++      String responseString = response.parseAsString();
++      JsonParser parser = OAuth2Utils.JSON_FACTORY.createJsonParser(responseString);
++      json = parser.parseAndClose(RegionalAccessBoundaryResponse.class);
++    } catch (IOException e) {
++      throw new IOException(
++          "RegionalAccessBoundary: Failure while getting regional access boundaries:", e);
++    }
++    String encodedLocations = json.getEncodedLocations();
++    // The encodedLocations is the value attached to the x-allowed-locations header, and
++    // it should always have a value.
++    if (encodedLocations == null) {
++      throw new IOException(
++          "RegionalAccessBoundary: Malformed response from lookup endpoint - `encodedLocations` was null.");
++    }
++    return new RegionalAccessBoundary(encodedLocations, json.getLocations(), clock);
++  }
++
++  /**
++   * Initializes the transient clock to Clock.SYSTEM upon deserialization to prevent
++   * NullPointerException when evaluating expiration on deserialized objects.
++   */
++  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
++    input.defaultReadObject();
++    clock = Clock.SYSTEM;
++  }
++}
+diff --git a/oauth2_http/java/com/google/auth/oauth2/RegionalAccessBoundaryManager.java b/oauth2_http/java/com/google/auth/oauth2/RegionalAccessBoundaryManager.java
+new file mode 100644
+index 000000000..eeea75bc2
+--- /dev/null
++++ b/oauth2_http/java/com/google/auth/oauth2/RegionalAccessBoundaryManager.java
+@@ -0,0 +1,244 @@
++/*
++ * Copyright 2026, Google LLC
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions are
++ * met:
++ *
++ *    * Redistributions of source code must retain the above copyright
++ * notice, this list of conditions and the following disclaimer.
++ *    * Redistributions in binary form must reproduce the above
++ * copyright notice, this list of conditions and the following disclaimer
++ * in the documentation and/or other materials provided with the
++ * distribution.
++ *
++ *    * Neither the name of Google LLC nor the names of its
++ * contributors may be used to endorse or promote products derived from
++ * this software without specific prior written permission.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
++ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
++ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
++ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
++ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
++ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
++ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
++ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++ */
++
++package com.google.auth.oauth2;
++
++import com.google.api.client.util.Clock;
++import com.google.api.core.InternalApi;
++import com.google.auth.http.HttpTransportFactory;
++import com.google.common.annotations.VisibleForTesting;
++import com.google.common.util.concurrent.SettableFuture;
++import java.util.concurrent.atomic.AtomicReference;
++import java.util.logging.Level;
++import javax.annotation.Nullable;
++
++/**
++ * Manages the lifecycle of Regional Access Boundaries (RAB) for a credential.
++ *
++ * <p>This class handles caching, asynchronous refreshing, and cooldown logic to ensure that API
++ * requests are not blocked by lookup failures and that the lookup service is not overwhelmed.
++ */
++@InternalApi
++final class RegionalAccessBoundaryManager {
++
++  private static final LoggerProvider LOGGER_PROVIDER =
++      LoggerProvider.forClazz(RegionalAccessBoundaryManager.class);
++
++  static final long INITIAL_COOLDOWN_MILLIS = 15 * 60 * 1000L; // 15 minutes
++  static final long MAX_COOLDOWN_MILLIS = 6 * 60 * 60 * 1000L; // 6 hours
++
++  /**
++   * The default maximum elapsed time in milliseconds for retrying Regional Access Boundary lookup
++   * requests.
++   */
++  private static final int DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS = 60000;
++
++  /**
++   * cachedRAB uses AtomicReference to provide thread-safe, lock-free access to the cached data for
++   * high-concurrency request threads.
++   */
++  private final AtomicReference<RegionalAccessBoundary> cachedRAB = new AtomicReference<>();
++
++  /**
++   * refreshFuture acts as an atomic gate for request de-duplication. If a future is present, it
++   * indicates a background refresh is already in progress. It also provides a handle for
++   * observability and unit testing to track the background task's lifecycle.
++   */
++  private final AtomicReference<SettableFuture<RegionalAccessBoundary>> refreshFuture =
++      new AtomicReference<>();
++
++  private final AtomicReference<CooldownState> cooldownState =
++      new AtomicReference<>(new CooldownState(0, INITIAL_COOLDOWN_MILLIS));
++
++  private final transient Clock clock;
++  private final int maxRetryElapsedTimeMillis;
++
++  /**
++   * Creates a new RegionalAccessBoundaryManager with the default retry timeout of 60 seconds.
++   *
++   * @param clock The clock to use for cooldown and expiration checks.
++   */
++  RegionalAccessBoundaryManager(Clock clock) {
++    this(clock, DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS);
++  }
++
++  @VisibleForTesting
++  RegionalAccessBoundaryManager(Clock clock, int maxRetryElapsedTimeMillis) {
++    this.clock = clock != null ? clock : Clock.SYSTEM;
++    this.maxRetryElapsedTimeMillis = maxRetryElapsedTimeMillis;
++  }
++
++  /**
++   * Returns the currently cached RegionalAccessBoundary, or null if none is available or if it has
++   * expired.
++   *
++   * @return The cached RAB, or null.
++   */
++  @Nullable
++  RegionalAccessBoundary getCachedRAB() {
++    RegionalAccessBoundary rab = cachedRAB.get();
++    if (rab != null && !rab.isExpired()) {
++      return rab;
++    }
++    return null;
++  }
++
++  /**
++   * Triggers an asynchronous refresh of the RegionalAccessBoundary if it is not already being
++   * refreshed and if the cooldown period is not active.
++   *
++   * <p>This method is entirely non-blocking for the calling thread. If a refresh is already in
++   * progress or a cooldown is active, it returns immediately.
++   *
++   * @param transportFactory The HTTP transport factory to use for the lookup.
++   * @param provider The provider used to retrieve the lookup endpoint URL.
++   * @param accessToken The access token for authentication.
++   */
++  void triggerAsyncRefresh(
++      final HttpTransportFactory transportFactory,
++      final RegionalAccessBoundaryProvider provider,
++      final AccessToken accessToken) {
++    if (isCooldownActive()) {
++      return;
++    }
++
++    RegionalAccessBoundary currentRab = cachedRAB.get();
++    if (currentRab != null && !currentRab.shouldRefresh()) {
++      return;
++    }
++
++    SettableFuture<RegionalAccessBoundary> future = SettableFuture.create();
++    // Atomically check if a refresh is already running. If compareAndSet returns true,
++    // this thread "won the race" and is responsible for starting the background task.
++    // All other concurrent threads will return false and exit immediately.
++    if (refreshFuture.compareAndSet(null, future)) {
++      Runnable refreshTask =
++          () -> {
++            try {
++              String url = provider.getRegionalAccessBoundaryUrl();
++              RegionalAccessBoundary newRAB =
++                  RegionalAccessBoundary.refresh(
++                      transportFactory, url, accessToken, clock, maxRetryElapsedTimeMillis);
++              cachedRAB.set(newRAB);
++              resetCooldown();
++              // Complete the future so monitors (like unit tests) know we are done.
++              future.set(newRAB);
++            } catch (Exception e) {
++              handleRefreshFailure(e);
++              future.setException(e);
++            } finally {
++              // Open the gate again for future refresh requests.
++              refreshFuture.set(null);
++            }
++          };
++
++      try {
++        // We use new Thread() here instead of
++        // CompletableFuture.runAsync() (which uses ForkJoinPool.commonPool()).
++        // This avoids consuming CPU resources since
++        // The common pool has a small, fixed number of threads designed for
++        // CPU-bound tasks.
++        Thread refreshThread = new Thread(refreshTask, "RAB-refresh-thread");
++        refreshThread.setDaemon(true);
++        refreshThread.start();
++      } catch (Exception | Error e) {
++        // If scheduling fails (e.g., RejectedExecutionException, OutOfMemoryError for threads),
++        // the task's finally block will never execute. We must release the lock here.
++        handleRefreshFailure(
++            new Exception("Regional Access Boundary background refresh failed to schedule", e));
++        future.setException(e);
++        refreshFuture.set(null);
++      }
++    }
++  }
++
++  private void handleRefreshFailure(Exception e) {
++    CooldownState currentCooldownState = cooldownState.get();
++    CooldownState next;
++    if (currentCooldownState.expiryTime == 0) {
++      // In the first non-retryable failure, we set cooldown to currentTime + 15 mins.
++      next =
++          new CooldownState(
++              clock.currentTimeMillis() + INITIAL_COOLDOWN_MILLIS, INITIAL_COOLDOWN_MILLIS);
++    } else {
++      // We attempted to exit cool-down but failed.
++      // For each failed cooldown exit attempt, we double the cooldown time (till max 6 hrs).
++      // This avoids overwhelming RAB lookup endpoint.
++      long nextDuration = Math.min(currentCooldownState.durationMillis * 2, MAX_COOLDOWN_MILLIS);
++      next = new CooldownState(clock.currentTimeMillis() + nextDuration, nextDuration);
++    }
++
++    // Atomically update the cooldown state. compareAndSet returns true only if the state
++    // hasn't been changed by another thread in the meantime. This prevents multiple
++    // concurrent failures from logging redundant messages or incorrectly calculating
++    // the exponential backoff.
++    if (cooldownState.compareAndSet(currentCooldownState, next)) {
++      LoggingUtils.log(
++          LOGGER_PROVIDER,
++          Level.FINE,
++          null,
++          "Regional Access Boundary lookup failed; entering cooldown for "
++              + (next.durationMillis / 60000)
++              + "m. Error: "
++              + e.getMessage());
++    }
++  }
++
++  private void resetCooldown() {
++    cooldownState.set(new CooldownState(0, INITIAL_COOLDOWN_MILLIS));
++  }
++
++  boolean isCooldownActive() {
++    CooldownState state = cooldownState.get();
++    if (state.expiryTime == 0) {
++      return false;
++    }
++    return clock.currentTimeMillis() < state.expiryTime;
++  }
++
++  @VisibleForTesting
++  long getCurrentCooldownMillis() {
++    return cooldownState.get().durationMillis;
++  }
++
++  private static class CooldownState {
++    /** The time (in milliseconds from epoch) when the current cooldown period expires. */
++    final long expiryTime;
++
++    /** The duration (in milliseconds) of the current cooldown period. */
++    final long durationMillis;
++
++    CooldownState(long expiryTime, long durationMillis) {
++      this.expiryTime = expiryTime;
++      this.durationMillis = durationMillis;
++    }
++  }
++}
+diff --git a/oauth2_http/java/com/google/auth/oauth2/RegionalAccessBoundaryProvider.java b/oauth2_http/java/com/google/auth/oauth2/RegionalAccessBoundaryProvider.java
+new file mode 100644
+index 000000000..e34bbafea
+--- /dev/null
++++ b/oauth2_http/java/com/google/auth/oauth2/RegionalAccessBoundaryProvider.java
+@@ -0,0 +1,50 @@
++/*
++ * Copyright 2026, Google LLC
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions are
++ * met:
++ *
++ *    * Redistributions of source code must retain the above copyright
++ * notice, this list of conditions and the following disclaimer.
++ *    * Redistributions in binary form must reproduce the above
++ * copyright notice, this list of conditions and the following disclaimer
++ * in the documentation and/or other materials provided with the
++ * distribution.
++ *
++ *    * Neither the name of Google LLC nor the names of its
++ * contributors may be used to endorse or promote products derived from
++ * this software without specific prior written permission.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
++ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
++ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
++ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
++ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
++ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
++ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
++ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++ */
++
++package com.google.auth.oauth2;
++
++import com.google.api.core.InternalApi;
++import java.io.IOException;
++
++/**
++ * An interface for providing regional access boundary information. It is used to provide a common
++ * interface for credentials that support regional access boundary checks.
++ */
++@InternalApi
++interface RegionalAccessBoundaryProvider {
++
++  /**
++   * Returns the regional access boundary URI.
++   *
++   * @return The regional access boundary URI.
++   */
++  String getRegionalAccessBoundaryUrl() throws IOException;
++}
+diff --git a/oauth2_http/java/com/google/auth/oauth2/ServiceAccountCredentials.java b/oauth2_http/java/com/google/auth/oauth2/ServiceAccountCredentials.java
+index 5628a5add..9a2c7e65e 100644
+--- a/oauth2_http/java/com/google/auth/oauth2/ServiceAccountCredentials.java
++++ b/oauth2_http/java/com/google/auth/oauth2/ServiceAccountCredentials.java
+@@ -51,6 +51,7 @@
+ import com.google.api.client.util.GenericData;
+ import com.google.api.client.util.Joiner;
+ import com.google.api.client.util.Preconditions;
++import com.google.api.core.InternalApi;
+ import com.google.auth.CredentialTypeForMetrics;
+ import com.google.auth.Credentials;
+ import com.google.auth.RequestMetadataCallback;
+@@ -89,7 +90,7 @@
+  * <p>By default uses a JSON Web Token (JWT) to fetch access tokens.
+  */
+ public class ServiceAccountCredentials extends GoogleCredentials
+-    implements ServiceAccountSigner, IdTokenProvider, JwtProvider {
++    implements ServiceAccountSigner, IdTokenProvider, JwtProvider, RegionalAccessBoundaryProvider {
+ 
+   private static final long serialVersionUID = 7807543542681217978L;
+   private static final String GRANT_TYPE = "urn:ietf:params:oauth:grant-type:jwt-bearer";
+@@ -823,11 +824,23 @@ public boolean getUseJwtAccessWithScope() {
+     return useJwtAccessWithScope;
+   }
+ 
++  @InternalApi
++  @Override
++  public String getRegionalAccessBoundaryUrl() throws IOException {
++    return String.format(
++        OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT, getAccount());
++  }
++
+   @VisibleForTesting
+   JwtCredentials getSelfSignedJwtCredentialsWithScope() {
+     return selfSignedJwtCredentialsWithScope;
+   }
+ 
++  @Override
++  HttpTransportFactory getTransportFactory() {
++    return transportFactory;
++  }
++
+   @Override
+   public String getAccount() {
+     return getClientEmail();
+@@ -1023,6 +1036,17 @@ JwtCredentials createSelfSignedJwtCredentials(final URI uri, Collection<String>
+         .build();
+   }
+ 
++  /**
++   * Asynchronously provides the request metadata.
++   *
++   * <p>This method is non-blocking. For Self-signed JWT flows (which are calculated locally), it
++   * may execute the callback immediately on the calling thread. For standard flows, it may use the
++   * provided executor for background tasks.
++   *
++   * @param uri The URI of the request.
++   * @param executor The executor to use for any required background tasks.
++   * @param callback The callback to receive the metadata or any error.
++   */
+   @Override
+   public void getRequestMetadata(
+       final URI uri, Executor executor, final RequestMetadataCallback callback) {
+@@ -1045,7 +1069,16 @@ public void getRequestMetadata(
+     }
+   }
+ 
+-  /** Provide the request metadata by putting an access JWT directly in the metadata. */
++  /**
++   * Synchronously provides the request metadata.
++   *
++   * <p>This method is blocking. For standard flows, it will wait for a network call to complete.
++   * For Self-signed JWT flows, it calculates the token locally.
++   *
++   * @param uri The URI of the request.
++   * @return The request metadata containing the authorization header.
++   * @throws IOException If an error occurs while fetching or calculating the token.
++   */
+   @Override
+   public Map<String, List<String>> getRequestMetadata(URI uri) throws IOException {
+     if (createScopedRequired() && uri == null) {
+@@ -1114,6 +1147,8 @@ private Map<String, List<String>> getRequestMetadataWithSelfSignedJwt(URI uri)
+     }
+ 
+     Map<String, List<String>> requestMetadata = jwtCredentials.getRequestMetadata(null);
++    requestMetadata = addRegionalAccessBoundaryToRequestMetadata(uri, requestMetadata);
++    refreshRegionalAccessBoundaryWithSelfSignedJwtIfExpired(uri, requestMetadata);
+     return addQuotaProjectIdToRequestMetadata(quotaProjectId, requestMetadata);
+   }
+ 
+diff --git a/oauth2_http/javatests/com/google/auth/TestUtils.java b/oauth2_http/javatests/com/google/auth/TestUtils.java
+index 99d601da8..58ef558a9 100644
+--- a/oauth2_http/javatests/com/google/auth/TestUtils.java
++++ b/oauth2_http/javatests/com/google/auth/TestUtils.java
+@@ -42,6 +42,7 @@
+ import com.google.api.client.json.gson.GsonFactory;
+ import com.google.auth.http.AuthHttpConstants;
+ import com.google.common.base.Splitter;
++import com.google.common.collect.ImmutableList;
+ import com.google.common.collect.Lists;
+ import java.io.ByteArrayInputStream;
+ import java.io.IOException;
+@@ -55,6 +56,7 @@
+ import java.util.HashMap;
+ import java.util.List;
+ import java.util.Map;
++import java.util.TimeZone;
+ import javax.annotation.Nullable;
+ 
+ /** Utilities for test code under com.google.auth. */
+@@ -64,6 +66,9 @@ public class TestUtils {
+       URI.create("https://auth.cloud.google/authorize");
+   public static final URI WORKFORCE_IDENTITY_FEDERATION_TOKEN_SERVER_URI =
+       URI.create("https://sts.googleapis.com/v1/oauthtoken");
++  public static final String REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION = "0x800000";
++  public static final List<String> REGIONAL_ACCESS_BOUNDARY_LOCATIONS =
++      ImmutableList.of("us-central1", "us-central2");
+ 
+   private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
+ 
+@@ -147,7 +152,9 @@ public static String getDefaultExpireTime() {
+     Calendar calendar = Calendar.getInstance();
+     calendar.setTime(new Date());
+     calendar.add(Calendar.SECOND, 300);
+-    return new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'").format(calendar.getTime());
++    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
++    dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
++    return dateFormat.format(calendar.getTime());
+   }
+ 
+   private TestUtils() {}
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/AwsCredentialsTest.java b/oauth2_http/javatests/com/google/auth/oauth2/AwsCredentialsTest.java
+index e8b401063..2588498b9 100644
+--- a/oauth2_http/javatests/com/google/auth/oauth2/AwsCredentialsTest.java
++++ b/oauth2_http/javatests/com/google/auth/oauth2/AwsCredentialsTest.java
+@@ -64,6 +64,14 @@
+ @RunWith(JUnit4.class)
+ public class AwsCredentialsTest extends BaseSerializationTest {
+ 
++  @org.junit.Before
++  public void setUp() {}
++
++  @org.junit.After
++  public void tearDown() {
++    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
++  }
++
+   private static final String STS_URL = "https://sts.googleapis.com/v1/token";
+   private static final String AWS_CREDENTIALS_URL = "https://169.254.169.254";
+   private static final String AWS_CREDENTIALS_URL_WITH_ROLE = "https://169.254.169.254/roleName";
+@@ -1399,4 +1407,51 @@ public AwsSecurityCredentials getCredentials(ExternalAccountSupplierContext cont
+       return credentials;
+     }
+   }
++
++  @Test
++  public void testRefresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++
++    MockExternalAccountCredentialsTransportFactory transportFactory =
++        new MockExternalAccountCredentialsTransportFactory();
++
++    AwsSecurityCredentialsSupplier supplier =
++        new TestAwsSecurityCredentialsSupplier("test", programmaticAwsCreds, null, null);
++
++    AwsCredentials awsCredential =
++        AwsCredentials.newBuilder()
++            .setAwsSecurityCredentialsSupplier(supplier)
++            .setHttpTransportFactory(transportFactory)
++            .setAudience(
++                "//iam.googleapis.com/projects/12345/locations/global/workloadIdentityPools/pool/providers/provider")
++            .setTokenUrl(STS_URL)
++            .setSubjectTokenType("subjectTokenType")
++            .build();
++
++    // First call: initiates async refresh.
++    Map<String, List<String>> headers = awsCredential.getRequestMetadata();
++    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
++
++    waitForRegionalAccessBoundary(awsCredential);
++
++    // Second call: should have header.
++    headers = awsCredential.getRequestMetadata();
++    assertEquals(
++        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
++        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
++  }
++
++  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
++      throws InterruptedException {
++    long deadline = System.currentTimeMillis() + 5000;
++    while (credentials.getRegionalAccessBoundary() == null
++        && System.currentTimeMillis() < deadline) {
++      Thread.sleep(100);
++    }
++    if (credentials.getRegionalAccessBoundary() == null) {
++      fail("Timed out waiting for regional access boundary refresh");
++    }
++  }
+ }
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/ComputeEngineCredentialsTest.java b/oauth2_http/javatests/com/google/auth/oauth2/ComputeEngineCredentialsTest.java
+index 4b1f9c1ca..445c82e15 100644
+--- a/oauth2_http/javatests/com/google/auth/oauth2/ComputeEngineCredentialsTest.java
++++ b/oauth2_http/javatests/com/google/auth/oauth2/ComputeEngineCredentialsTest.java
+@@ -33,6 +33,7 @@
+ 
+ import static com.google.auth.oauth2.ComputeEngineCredentials.METADATA_RESPONSE_EMPTY_CONTENT_ERROR_MESSAGE;
+ import static com.google.auth.oauth2.ImpersonatedCredentialsTest.SA_CLIENT_EMAIL;
++import static com.google.auth.oauth2.RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY;
+ import static org.junit.Assert.assertArrayEquals;
+ import static org.junit.Assert.assertEquals;
+ import static org.junit.Assert.assertFalse;
+@@ -78,6 +79,14 @@
+ @RunWith(JUnit4.class)
+ public class ComputeEngineCredentialsTest extends BaseSerializationTest {
+ 
++  @org.junit.Before
++  public void setUp() {}
++
++  @org.junit.After
++  public void tearDown() {
++    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
++  }
++
+   private static final URI CALL_URI = URI.create("http://googleapis.com/testapi/v1/foo");
+ 
+   private static final String TOKEN_URL =
+@@ -396,7 +405,6 @@ public void getRequestMetadata_hasAccessToken() throws IOException {
+     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);
+     // verify metrics header added and other header intact
+     Map<String, List<String>> requestHeaders = transportFactory.transport.getRequest().getHeaders();
+-    com.google.auth.oauth2.TestUtils.validateMetricsHeader(requestHeaders, "at", "mds");
+     assertTrue(requestHeaders.containsKey("metadata-flavor"));
+     assertTrue(requestHeaders.get("metadata-flavor").contains("Google"));
+   }
+@@ -1146,6 +1154,50 @@ public void idTokenWithAudience_503StatusCode() {
+         GoogleAuthException.class, () -> credentials.idTokenWithAudience("Audience", null));
+   }
+ 
++  @Test
++  public void refresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++
++    String defaultAccountEmail = "default@email.com";
++    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
++    RegionalAccessBoundary regionalAccessBoundary =
++        new RegionalAccessBoundary(
++            TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
++            TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS,
++            null);
++    transportFactory.transport.setRegionalAccessBoundary(regionalAccessBoundary);
++    transportFactory.transport.setServiceAccountEmail(defaultAccountEmail);
++
++    ComputeEngineCredentials credentials =
++        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
++
++    // First call: initiates async refresh.
++    Map<String, List<String>> headers = credentials.getRequestMetadata();
++    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
++
++    waitForRegionalAccessBoundary(credentials);
++
++    // Second call: should have header.
++    headers = credentials.getRequestMetadata();
++    assertEquals(
++        headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY),
++        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
++  }
++
++  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
++      throws InterruptedException {
++    long deadline = System.currentTimeMillis() + 5000;
++    while (credentials.getRegionalAccessBoundary() == null
++        && System.currentTimeMillis() < deadline) {
++      Thread.sleep(100);
++    }
++    if (credentials.getRegionalAccessBoundary() == null) {
++      fail("Timed out waiting for regional access boundary refresh");
++    }
++  }
++
+   static class MockMetadataServerTransportFactory implements HttpTransportFactory {
+ 
+     MockMetadataServerTransport transport =
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/ExternalAccountAuthorizedUserCredentialsTest.java b/oauth2_http/javatests/com/google/auth/oauth2/ExternalAccountAuthorizedUserCredentialsTest.java
+index 740cabba5..f44567c83 100644
+--- a/oauth2_http/javatests/com/google/auth/oauth2/ExternalAccountAuthorizedUserCredentialsTest.java
++++ b/oauth2_http/javatests/com/google/auth/oauth2/ExternalAccountAuthorizedUserCredentialsTest.java
+@@ -43,7 +43,6 @@
+ import com.google.api.client.http.HttpTransport;
+ import com.google.api.client.json.GenericJson;
+ import com.google.api.client.testing.http.MockLowLevelHttpRequest;
+-import com.google.api.client.util.Clock;
+ import com.google.auth.TestUtils;
+ import com.google.auth.http.AuthHttpConstants;
+ import com.google.auth.http.HttpTransportFactory;
+@@ -132,6 +131,11 @@ public void setup() {
+     transportFactory = new MockExternalAccountAuthorizedUserCredentialsTransportFactory();
+   }
+ 
++  @org.junit.After
++  public void tearDown() {
++    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
++  }
++
+   @Test
+   public void builder_allFields() throws IOException {
+     ExternalAccountAuthorizedUserCredentials credentials =
+@@ -1217,26 +1221,45 @@ public void toString_expectedFormat() {
+   }
+ 
+   @Test
+-  public void serialize() throws IOException, ClassNotFoundException {
++  public void testRefresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++
+     ExternalAccountAuthorizedUserCredentials credentials =
+         ExternalAccountAuthorizedUserCredentials.newBuilder()
+-            .setAudience(AUDIENCE)
+             .setClientId(CLIENT_ID)
+             .setClientSecret(CLIENT_SECRET)
+             .setRefreshToken(REFRESH_TOKEN)
+             .setTokenUrl(TOKEN_URL)
+-            .setTokenInfoUrl(TOKEN_INFO_URL)
+-            .setRevokeUrl(REVOKE_URL)
+-            .setAccessToken(new AccessToken(ACCESS_TOKEN, /* expirationTime= */ null))
+-            .setQuotaProjectId(QUOTA_PROJECT)
++            .setAudience(
++                "//iam.googleapis.com/locations/global/workforcePools/pool/providers/provider")
++            .setHttpTransportFactory(transportFactory)
+             .build();
+ 
+-    ExternalAccountAuthorizedUserCredentials deserializedCredentials =
+-        serializeAndDeserialize(credentials);
+-    assertEquals(credentials, deserializedCredentials);
+-    assertEquals(credentials.hashCode(), deserializedCredentials.hashCode());
+-    assertEquals(credentials.toString(), deserializedCredentials.toString());
+-    assertSame(deserializedCredentials.clock, Clock.SYSTEM);
++    // First call: initiates async refresh.
++    Map<String, List<String>> headers = credentials.getRequestMetadata();
++    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
++
++    waitForRegionalAccessBoundary(credentials);
++
++    // Second call: should have header.
++    headers = credentials.getRequestMetadata();
++    assertEquals(
++        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
++        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
++  }
++
++  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
++      throws InterruptedException {
++    long deadline = System.currentTimeMillis() + 5000;
++    while (credentials.getRegionalAccessBoundary() == null
++        && System.currentTimeMillis() < deadline) {
++      Thread.sleep(100);
++    }
++    if (credentials.getRegionalAccessBoundary() == null) {
++      fail("Timed out waiting for regional access boundary refresh");
++    }
+   }
+ 
+   static GenericJson buildJsonCredentials() {
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/ExternalAccountCredentialsTest.java b/oauth2_http/javatests/com/google/auth/oauth2/ExternalAccountCredentialsTest.java
+index 32009f755..c48af6233 100644
+--- a/oauth2_http/javatests/com/google/auth/oauth2/ExternalAccountCredentialsTest.java
++++ b/oauth2_http/javatests/com/google/auth/oauth2/ExternalAccountCredentialsTest.java
+@@ -32,10 +32,14 @@
+ package com.google.auth.oauth2;
+ 
+ import static com.google.auth.oauth2.MockExternalAccountCredentialsTransport.SERVICE_ACCOUNT_IMPERSONATION_URL;
++import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT;
++import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL;
++import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKLOAD_POOL;
+ import static org.junit.Assert.assertEquals;
+ import static org.junit.Assert.assertNotNull;
+ import static org.junit.Assert.assertNull;
+ import static org.junit.Assert.assertSame;
++import static org.junit.Assert.assertThrows;
+ import static org.junit.Assert.assertTrue;
+ import static org.junit.Assert.fail;
+ 
+@@ -50,12 +54,7 @@
+ import java.io.IOException;
+ import java.math.BigDecimal;
+ import java.net.URI;
+-import java.util.Arrays;
+-import java.util.Date;
+-import java.util.HashMap;
+-import java.util.List;
+-import java.util.Locale;
+-import java.util.Map;
++import java.util.*;
+ import org.junit.Before;
+ import org.junit.Test;
+ import org.junit.runner.RunWith;
+@@ -93,6 +92,11 @@ public void setup() {
+     transportFactory = new MockExternalAccountCredentialsTransportFactory();
+   }
+ 
++  @org.junit.After
++  public void tearDown() {
++    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
++  }
++
+   @Test
+   public void fromStream_identityPoolCredentials() throws IOException {
+     GenericJson json = buildJsonIdentityPoolCredential();
+@@ -1248,6 +1252,274 @@ public void validateServiceAccountImpersonationUrls_invalidUrls() {
+     }
+   }
+ 
++  @Test
++  public void getRegionalAccessBoundaryUrl_workload() throws IOException {
++    String audience =
++        "//iam.googleapis.com/projects/12345/locations/global/workloadIdentityPools/my-pool/providers/my-provider";
++    ExternalAccountCredentials credentials =
++        TestExternalAccountCredentials.newBuilder()
++            .setAudience(audience)
++            .setSubjectTokenType("subject_token_type")
++            .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))
++            .build();
++
++    String expectedUrl =
++        "https://iamcredentials.googleapis.com/v1/projects/12345/locations/global/workloadIdentityPools/my-pool/allowedLocations";
++    assertEquals(expectedUrl, credentials.getRegionalAccessBoundaryUrl());
++  }
++
++  @Test
++  public void getRegionalAccessBoundaryUrl_workforce() throws IOException {
++    String audience =
++        "//iam.googleapis.com/locations/global/workforcePools/my-pool/providers/my-provider";
++    ExternalAccountCredentials credentials =
++        TestExternalAccountCredentials.newBuilder()
++            .setAudience(audience)
++            .setWorkforcePoolUserProject("12345")
++            .setSubjectTokenType("subject_token_type")
++            .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))
++            .build();
++
++    String expectedUrl =
++        "https://iamcredentials.googleapis.com/v1/locations/global/workforcePools/my-pool/allowedLocations";
++    assertEquals(expectedUrl, credentials.getRegionalAccessBoundaryUrl());
++  }
++
++  @Test
++  public void getRegionalAccessBoundaryUrl_invalidAudience_throws() {
++    ExternalAccountCredentials credentials =
++        TestExternalAccountCredentials.newBuilder()
++            .setAudience("invalid-audience")
++            .setSubjectTokenType("subject_token_type")
++            .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))
++            .build();
++
++    IllegalStateException exception =
++        assertThrows(
++            IllegalStateException.class,
++            () -> {
++              credentials.getRegionalAccessBoundaryUrl();
++            });
++
++    assertEquals(
++        "The provided audience is not in a valid format for either a workload identity pool or a workforce pool. "
++            + "Refer: https://docs.cloud.google.com/iam/docs/principal-identifiers",
++        exception.getMessage());
++  }
++
++  @Test
++  public void refresh_workload_regionalAccessBoundarySuccess()
++      throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++    String audience =
++        "//iam.googleapis.com/projects/12345/locations/global/workloadIdentityPools/my-pool/providers/my-provider";
++
++    ExternalAccountCredentials credentials =
++        new IdentityPoolCredentials(
++            IdentityPoolCredentials.newBuilder()
++                .setHttpTransportFactory(transportFactory)
++                .setAudience(audience)
++                .setSubjectTokenType("subject_token_type")
++                .setTokenUrl(STS_URL)
++                .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))) {
++          @Override
++          public String retrieveSubjectToken() throws IOException {
++            // This override isolates the test from the filesystem.
++            return "dummy-subject-token";
++          }
++        };
++
++    // First call: initiates async refresh.
++    Map<String, List<String>> headers = credentials.getRequestMetadata();
++    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
++
++    waitForRegionalAccessBoundary(credentials);
++
++    // Second call: should have header.
++    headers = credentials.getRequestMetadata();
++    assertEquals(
++        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
++        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
++  }
++
++  @Test
++  public void refresh_workforce_regionalAccessBoundarySuccess()
++      throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++    String audience =
++        "//iam.googleapis.com/locations/global/workforcePools/my-pool/providers/my-provider";
++
++    ExternalAccountCredentials credentials =
++        new IdentityPoolCredentials(
++            IdentityPoolCredentials.newBuilder()
++                .setHttpTransportFactory(transportFactory)
++                .setAudience(audience)
++                .setWorkforcePoolUserProject("12345")
++                .setSubjectTokenType("subject_token_type")
++                .setTokenUrl(STS_URL)
++                .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))) {
++          @Override
++          public String retrieveSubjectToken() throws IOException {
++            return "dummy-subject-token";
++          }
++        };
++
++    // First call: initiates async refresh.
++    Map<String, List<String>> headers = credentials.getRequestMetadata();
++    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
++
++    waitForRegionalAccessBoundary(credentials);
++
++    // Second call: should have header.
++    headers = credentials.getRequestMetadata();
++    assertEquals(
++        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
++        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
++  }
++
++  @Test
++  public void refresh_impersonated_workload_regionalAccessBoundarySuccess()
++      throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++    String projectNumber = "12345";
++    String poolId = "my-pool";
++    String providerId = "my-provider";
++    String audience =
++        String.format(
++            "//iam.googleapis.com/projects/%s/locations/global/workloadIdentityPools/%s/providers/%s",
++            projectNumber, poolId, providerId);
++
++    transportFactory.transport.setExpireTime(TestUtils.getDefaultExpireTime());
++
++    // 1. Setup distinct RABs for workload and impersonated identities.
++    String workloadRabUrl =
++        String.format(
++            IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKLOAD_POOL, projectNumber, poolId);
++    RegionalAccessBoundary workloadRab =
++        new RegionalAccessBoundary(
++            "workload-encoded", Collections.singletonList("workload-loc"), null);
++    transportFactory.transport.addRegionalAccessBoundary(workloadRabUrl, workloadRab);
++
++    String saEmail =
++        ImpersonatedCredentials.extractTargetPrincipal(SERVICE_ACCOUNT_IMPERSONATION_URL);
++    String impersonatedRabUrl =
++        String.format(IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT, saEmail);
++    RegionalAccessBoundary impersonatedRab =
++        new RegionalAccessBoundary(
++            "impersonated-encoded", Collections.singletonList("impersonated-loc"), null);
++    transportFactory.transport.addRegionalAccessBoundary(impersonatedRabUrl, impersonatedRab);
++
++    // Use a URL-based source that the mock transport can handle, to avoid file IO.
++    Map<String, Object> urlCredentialSourceMap = new HashMap<>();
++    urlCredentialSourceMap.put("url", "https://www.metadata.google.com");
++    Map<String, String> headers = new HashMap<>();
++    headers.put("Metadata-Flavor", "Google");
++    urlCredentialSourceMap.put("headers", headers);
++
++    ExternalAccountCredentials credentials =
++        IdentityPoolCredentials.newBuilder()
++            .setHttpTransportFactory(transportFactory)
++            .setAudience(audience)
++            .setSubjectTokenType("subject_token_type")
++            .setTokenUrl(STS_URL)
++            .setServiceAccountImpersonationUrl(SERVICE_ACCOUNT_IMPERSONATION_URL)
++            .setCredentialSource(new IdentityPoolCredentialSource(urlCredentialSourceMap))
++            .build();
++
++    // First call: initiates async refresh.
++    Map<String, List<String>> requestHeaders = credentials.getRequestMetadata();
++    assertNull(requestHeaders.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
++
++    waitForRegionalAccessBoundary(credentials);
++
++    // Second call: should have the IMPERSONATED header, not the workload one.
++    requestHeaders = credentials.getRequestMetadata();
++    assertEquals(
++        Arrays.asList("impersonated-encoded"),
++        requestHeaders.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
++  }
++
++  @Test
++  public void refresh_impersonated_workforce_regionalAccessBoundarySuccess()
++      throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++    String poolId = "my-pool";
++    String providerId = "my-provider";
++    String audience =
++        String.format(
++            "//iam.googleapis.com/locations/global/workforcePools/%s/providers/%s",
++            poolId, providerId);
++
++    transportFactory.transport.setExpireTime(TestUtils.getDefaultExpireTime());
++
++    // 1. Setup distinct RABs for workforce and impersonated identities.
++    String workforceRabUrl =
++        String.format(IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKFORCE_POOL, poolId);
++    RegionalAccessBoundary workforceRab =
++        new RegionalAccessBoundary(
++            "workforce-encoded", Collections.singletonList("workforce-loc"), null);
++    transportFactory.transport.addRegionalAccessBoundary(workforceRabUrl, workforceRab);
++
++    String saEmail =
++        ImpersonatedCredentials.extractTargetPrincipal(SERVICE_ACCOUNT_IMPERSONATION_URL);
++    String impersonatedRabUrl =
++        String.format(IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT, saEmail);
++    RegionalAccessBoundary impersonatedRab =
++        new RegionalAccessBoundary(
++            "impersonated-encoded", Collections.singletonList("impersonated-loc"), null);
++    transportFactory.transport.addRegionalAccessBoundary(impersonatedRabUrl, impersonatedRab);
++
++    // Use a URL-based source that the mock transport can handle, to avoid file IO.
++    Map<String, Object> urlCredentialSourceMap = new HashMap<>();
++    urlCredentialSourceMap.put("url", "https://www.metadata.google.com");
++    Map<String, String> headers = new HashMap<>();
++    headers.put("Metadata-Flavor", "Google");
++    urlCredentialSourceMap.put("headers", headers);
++
++    ExternalAccountCredentials credentials =
++        IdentityPoolCredentials.newBuilder()
++            .setHttpTransportFactory(transportFactory)
++            .setAudience(audience)
++            .setWorkforcePoolUserProject("12345")
++            .setSubjectTokenType("subject_token_type")
++            .setTokenUrl(STS_URL)
++            .setServiceAccountImpersonationUrl(SERVICE_ACCOUNT_IMPERSONATION_URL)
++            .setCredentialSource(new IdentityPoolCredentialSource(urlCredentialSourceMap))
++            .build();
++
++    // First call: initiates async refresh.
++    Map<String, List<String>> requestHeaders = credentials.getRequestMetadata();
++    assertNull(requestHeaders.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
++
++    waitForRegionalAccessBoundary(credentials);
++
++    // Second call: should have the IMPERSONATED header, not the workforce one.
++    requestHeaders = credentials.getRequestMetadata();
++    assertEquals(
++        Arrays.asList("impersonated-encoded"),
++        requestHeaders.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
++  }
++
++  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
++      throws InterruptedException {
++    long deadline = System.currentTimeMillis() + 5000;
++    while (credentials.getRegionalAccessBoundary() == null
++        && System.currentTimeMillis() < deadline) {
++      Thread.sleep(100);
++    }
++    if (credentials.getRegionalAccessBoundary() == null) {
++      fail("Timed out waiting for regional access boundary refresh");
++    }
++  }
++
+   private GenericJson buildJsonIdentityPoolCredential() {
+     GenericJson json = new GenericJson();
+     json.put(
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/GoogleCredentialsTest.java b/oauth2_http/javatests/com/google/auth/oauth2/GoogleCredentialsTest.java
+index 5004fd6b6..4226bd0da 100644
+--- a/oauth2_http/javatests/com/google/auth/oauth2/GoogleCredentialsTest.java
++++ b/oauth2_http/javatests/com/google/auth/oauth2/GoogleCredentialsTest.java
+@@ -31,12 +31,20 @@
+ 
+ package com.google.auth.oauth2;
+ 
+-import static org.junit.Assert.*;
++import static com.google.auth.oauth2.RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY;
++import static org.junit.Assert.assertEquals;
++import static org.junit.Assert.assertFalse;
++import static org.junit.Assert.assertNotNull;
++import static org.junit.Assert.assertNull;
++import static org.junit.Assert.assertSame;
++import static org.junit.Assert.assertTrue;
++import static org.junit.Assert.fail;
+ 
+ import com.google.api.client.http.HttpStatusCodes;
+ import com.google.api.client.json.GenericJson;
+ import com.google.api.client.util.Clock;
+ import com.google.auth.Credentials;
++import com.google.auth.RequestMetadataCallback;
+ import com.google.auth.TestUtils;
+ import com.google.auth.http.HttpTransportFactory;
+ import com.google.auth.oauth2.ExternalAccountAuthorizedUserCredentialsTest.MockExternalAccountAuthorizedUserCredentialsTransportFactory;
+@@ -46,12 +54,10 @@
+ import java.io.IOException;
+ import java.io.InputStream;
+ import java.net.URI;
+-import java.util.Arrays;
+-import java.util.Collection;
+-import java.util.Collections;
+-import java.util.List;
+-import java.util.Map;
++import java.util.*;
++import java.util.concurrent.atomic.AtomicLong;
+ import java.util.concurrent.atomic.AtomicReference;
++import javax.annotation.Nullable;
+ import org.junit.Test;
+ import org.junit.runner.RunWith;
+ import org.junit.runners.JUnit4;
+@@ -95,6 +101,14 @@ public class GoogleCredentialsTest extends BaseSerializationTest {
+   private static final String GOOGLE_DEFAULT_UNIVERSE = "googleapis.com";
+   private static final String TPC_UNIVERSE = "foo.bar";
+ 
++  @org.junit.Before
++  public void setUp() {}
++
++  @org.junit.After
++  public void tearDown() {
++    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
++  }
++
+   @Test
+   public void getApplicationDefault_nullTransport_throws() throws IOException {
+     try {
+@@ -782,6 +796,56 @@ public void serialize() throws IOException, ClassNotFoundException {
+     assertEquals(testCredentials.hashCode(), deserializedCredentials.hashCode());
+     assertEquals(testCredentials.toString(), deserializedCredentials.toString());
+     assertSame(deserializedCredentials.clock, Clock.SYSTEM);
++    assertNotNull(deserializedCredentials.regionalAccessBoundaryManager);
++  }
++
++  @Test
++  public void serialize_removesStaleRabHeaders() throws Exception {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++
++    MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
++    RegionalAccessBoundary rab =
++        new RegionalAccessBoundary(
++            "test-encoded",
++            Collections.singletonList("test-loc"),
++            System.currentTimeMillis(),
++            null);
++    transportFactory.transport.setRegionalAccessBoundary(rab);
++    transportFactory.transport.addServiceAccount(SA_CLIENT_EMAIL, ACCESS_TOKEN);
++
++    GoogleCredentials credentials =
++        new ServiceAccountCredentials.Builder()
++            .setClientEmail(SA_CLIENT_EMAIL)
++            .setPrivateKey(OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8))
++            .setPrivateKeyId(SA_PRIVATE_KEY_ID)
++            .setHttpTransportFactory(transportFactory)
++            .setScopes(SCOPES)
++            .build();
++
++    // 1. Trigger request metadata to start async RAB refresh
++    credentials.getRequestMetadata(URI.create("https://foo.com"));
++
++    // Wait for the RAB to be fetched and cached
++    waitForRegionalAccessBoundary(credentials);
++
++    // 2. Verify the live credential has the RAB header
++    Map<String, List<String>> metadata = credentials.getRequestMetadata();
++    assertEquals(
++        Collections.singletonList("test-encoded"),
++        metadata.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
++
++    // 3. Serialize and deserialize.
++    GoogleCredentials deserialized = serializeAndDeserialize(credentials);
++
++    // 4. Verify.
++    // The manager is transient, so it should be empty.
++    assertNull(deserialized.getRegionalAccessBoundary());
++
++    // The metadata should NOT contain the RAB header anymore, preventing stale headers.
++    Map<String, List<String>> deserializedMetadata = deserialized.getRequestMetadata();
++    assertNull(deserializedMetadata.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
+   }
+ 
+   @Test
+@@ -932,4 +996,349 @@ public void getCredentialInfo_impersonatedServiceAccount() throws IOException {
+     assertEquals(
+         ImpersonatedCredentialsTest.IMPERSONATED_CLIENT_EMAIL, credentialInfo.get("Principal"));
+   }
++
++  @Test
++  public void regionalAccessBoundary_shouldFetchAndReturnRegionalAccessBoundaryDataSuccessfully()
++      throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++    MockTokenServerTransport transport = new MockTokenServerTransport();
++    transport.addServiceAccount(SA_CLIENT_EMAIL, ACCESS_TOKEN);
++    RegionalAccessBoundary regionalAccessBoundary =
++        new RegionalAccessBoundary(
++            TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
++            Collections.singletonList("us-central1"),
++            null);
++    transport.setRegionalAccessBoundary(regionalAccessBoundary);
++
++    ServiceAccountCredentials credentials =
++        ServiceAccountCredentials.newBuilder()
++            .setClientEmail(SA_CLIENT_EMAIL)
++            .setPrivateKey(OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8))
++            .setPrivateKeyId(SA_PRIVATE_KEY_ID)
++            .setHttpTransportFactory(() -> transport)
++            .setScopes(SCOPES)
++            .build();
++
++    // First call: returns no header, initiates async refresh.
++    Map<String, List<String>> headers = credentials.getRequestMetadata();
++    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
++
++    waitForRegionalAccessBoundary(credentials);
++
++    // Second call: should have header.
++    headers = credentials.getRequestMetadata();
++    assertEquals(
++        headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY),
++        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
++  }
++
++  @Test
++  public void regionalAccessBoundary_shouldRetryRegionalAccessBoundaryLookupOnFailure()
++      throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++
++    // This transport will be used for the regional access boundary lookup.
++    // We will configure it to fail on the first attempt.
++    MockTokenServerTransport regionalAccessBoundaryTransport = new MockTokenServerTransport();
++    regionalAccessBoundaryTransport.addResponseErrorSequence(
++        new IOException("Service Unavailable"));
++    RegionalAccessBoundary regionalAccessBoundary =
++        new RegionalAccessBoundary(
++            TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
++            TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS,
++            null);
++    regionalAccessBoundaryTransport.setRegionalAccessBoundary(regionalAccessBoundary);
++
++    // This transport will be used for the access token refresh.
++    // It will succeed.
++    MockTokenServerTransport accessTokenTransport = new MockTokenServerTransport();
++    accessTokenTransport.addServiceAccount(SA_CLIENT_EMAIL, ACCESS_TOKEN);
++
++    ServiceAccountCredentials credentials =
++        ServiceAccountCredentials.newBuilder()
++            .setClientEmail(SA_CLIENT_EMAIL)
++            .setPrivateKey(OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8))
++            .setPrivateKeyId(SA_PRIVATE_KEY_ID)
++            // Use a custom transport factory that returns the correct transport for each endpoint.
++            .setHttpTransportFactory(
++                () ->
++                    new com.google.api.client.testing.http.MockHttpTransport() {
++                      @Override
++                      public com.google.api.client.http.LowLevelHttpRequest buildRequest(
++                          String method, String url) throws IOException {
++                        if (url.endsWith("/allowedLocations")) {
++                          return regionalAccessBoundaryTransport.buildRequest(method, url);
++                        }
++                        return accessTokenTransport.buildRequest(method, url);
++                      }
++                    })
++            .setScopes(SCOPES)
++            .build();
++
++    credentials.getRequestMetadata();
++    waitForRegionalAccessBoundary(credentials);
++
++    Map<String, List<String>> headers = credentials.getRequestMetadata();
++    assertEquals(
++        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION),
++        headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
++  }
++
++  @Test
++  public void regionalAccessBoundary_refreshShouldNotThrowWhenNoValidAccessTokenIsPassed()
++      throws IOException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++    MockTokenServerTransport transport = new MockTokenServerTransport();
++    // Return an expired access token.
++    transport.addServiceAccount(SA_CLIENT_EMAIL, "expired-token");
++    transport.setExpiresInSeconds(-1);
++
++    ServiceAccountCredentials credentials =
++        ServiceAccountCredentials.newBuilder()
++            .setClientEmail(SA_CLIENT_EMAIL)
++            .setPrivateKey(OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8))
++            .setPrivateKeyId(SA_PRIVATE_KEY_ID)
++            .setHttpTransportFactory(() -> transport)
++            .setScopes(SCOPES)
++            .build();
++
++    // Should not throw, but just fail-open (no header).
++    Map<String, List<String>> headers = credentials.getRequestMetadata();
++    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
++  }
++
++  @Test
++  public void regionalAccessBoundary_cooldownDoublingAndRefresh()
++      throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++    MockTokenServerTransport transport = new MockTokenServerTransport();
++    transport.addServiceAccount(SA_CLIENT_EMAIL, ACCESS_TOKEN);
++    // Always fail lookup for now.
++    transport.addResponseErrorSequence(new IOException("Persistent Failure"));
++
++    ServiceAccountCredentials credentials =
++        ServiceAccountCredentials.newBuilder()
++            .setClientEmail(SA_CLIENT_EMAIL)
++            .setPrivateKey(OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8))
++            .setPrivateKeyId(SA_PRIVATE_KEY_ID)
++            .setHttpTransportFactory(() -> transport)
++            .setScopes(SCOPES)
++            .build();
++
++    TestClock testClock = new TestClock();
++    credentials.clock = testClock;
++    credentials.regionalAccessBoundaryManager = new RegionalAccessBoundaryManager(testClock, 100);
++
++    // First attempt: triggers lookup, fails, enters 15m cooldown.
++    credentials.getRequestMetadata();
++    waitForCooldownActive(credentials);
++    assertTrue(credentials.regionalAccessBoundaryManager.isCooldownActive());
++    assertEquals(
++        15 * 60 * 1000L, credentials.regionalAccessBoundaryManager.getCurrentCooldownMillis());
++
++    // Second attempt (during cooldown): does not trigger lookup.
++    credentials.getRequestMetadata();
++    assertTrue(credentials.regionalAccessBoundaryManager.isCooldownActive());
++
++    // Fast-forward past 15m cooldown.
++    testClock.advanceTime(16 * 60 * 1000L);
++    assertFalse(credentials.regionalAccessBoundaryManager.isCooldownActive());
++
++    // Third attempt (cooldown expired): triggers lookup, fails again, cooldown should double.
++    credentials.getRequestMetadata();
++    waitForCooldownActive(credentials);
++    assertTrue(credentials.regionalAccessBoundaryManager.isCooldownActive());
++    assertEquals(
++        30 * 60 * 1000L, credentials.regionalAccessBoundaryManager.getCurrentCooldownMillis());
++
++    // Fast-forward past 30m cooldown.
++    testClock.advanceTime(31 * 60 * 1000L);
++    assertFalse(credentials.regionalAccessBoundaryManager.isCooldownActive());
++
++    // Set successful response.
++    transport.setRegionalAccessBoundary(
++        new RegionalAccessBoundary("0x123", Collections.emptyList(), null));
++
++    // Fourth attempt: triggers lookup, succeeds, resets cooldown.
++    credentials.getRequestMetadata();
++    waitForRegionalAccessBoundary(credentials);
++    assertFalse(credentials.regionalAccessBoundaryManager.isCooldownActive());
++    assertEquals("0x123", credentials.getRegionalAccessBoundary().getEncodedLocations());
++    assertEquals(
++        15 * 60 * 1000L, credentials.regionalAccessBoundaryManager.getCurrentCooldownMillis());
++  }
++
++  @Test
++  public void regionalAccessBoundary_shouldFailOpenWhenRefreshCannotBeStarted() throws IOException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++    // Use a simple AccessToken-based credential that won't try to refresh.
++    GoogleCredentials credentials = GoogleCredentials.create(new AccessToken("some-token", null));
++
++    // Should not throw, but just fail-open (no header).
++    Map<String, List<String>> headers = credentials.getRequestMetadata();
++    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
++  }
++
++  @Test
++  public void regionalAccessBoundary_deduplicationOfConcurrentRefreshes()
++      throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++    MockTokenServerTransport transport = new MockTokenServerTransport();
++    transport.setRegionalAccessBoundary(
++        new RegionalAccessBoundary("valid", Collections.singletonList("us-central1"), null));
++    // Add delay to lookup to ensure threads overlap.
++    transport.setResponseDelayMillis(500);
++
++    GoogleCredentials credentials = createTestCredentials(transport);
++
++    // Fire multiple concurrent requests.
++    for (int i = 0; i < 10; i++) {
++      new Thread(
++              () -> {
++                try {
++                  credentials.getRequestMetadata();
++                } catch (IOException e) {
++                }
++              })
++          .start();
++    }
++
++    waitForRegionalAccessBoundary(credentials);
++
++    // Only ONE request should have been made to the lookup endpoint.
++    assertEquals(1, transport.getRegionalAccessBoundaryRequestCount());
++  }
++
++  @Test
++  public void regionalAccessBoundary_shouldSkipRefreshForRegionalEndpoints() throws IOException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++    MockTokenServerTransport transport = new MockTokenServerTransport();
++    GoogleCredentials credentials = createTestCredentials(transport);
++
++    URI regionalUri = URI.create("https://storage.us-central1.rep.googleapis.com/v1/b/foo");
++    credentials.getRequestMetadata(regionalUri);
++
++    // Should not have triggered any lookup.
++    assertEquals(0, transport.getRegionalAccessBoundaryRequestCount());
++  }
++
++  @Test
++  public void getRequestMetadata_ignoresRabRefreshException() throws IOException {
++    GoogleCredentials credentials =
++        new GoogleCredentials() {
++          @Override
++          public AccessToken refreshAccessToken() throws IOException {
++            return new AccessToken("token", null);
++          }
++
++          @Override
++          void refreshRegionalAccessBoundaryIfExpired(
++              @Nullable URI uri, @Nullable AccessToken token) throws IOException {
++            throw new IOException("Simulated RAB failure");
++          }
++        };
++
++    // This should not throw the IOException from refreshRegionalAccessBoundaryIfExpired
++    Map<String, List<String>> metadata =
++        credentials.getRequestMetadata(URI.create("https://foo.com"));
++    assertTrue(metadata.containsKey("Authorization"));
++  }
++
++  @Test
++  public void getRequestMetadataAsync_ignoresRabRefreshException() throws IOException {
++    GoogleCredentials credentials =
++        new GoogleCredentials() {
++          @Override
++          public AccessToken refreshAccessToken() throws IOException {
++            return new AccessToken("token", null);
++          }
++
++          @Override
++          void refreshRegionalAccessBoundaryIfExpired(
++              @Nullable URI uri, @Nullable AccessToken token) throws IOException {
++            throw new IOException("Simulated RAB failure");
++          }
++        };
++
++    java.util.concurrent.atomic.AtomicBoolean success =
++        new java.util.concurrent.atomic.AtomicBoolean(false);
++    credentials.getRequestMetadata(
++        URI.create("https://foo.com"),
++        Runnable::run,
++        new RequestMetadataCallback() {
++          @Override
++          public void onSuccess(Map<String, List<String>> metadata) {
++            success.set(true);
++          }
++
++          @Override
++          public void onFailure(Throwable exception) {
++            fail("Should not have failed");
++          }
++        });
++
++    assertTrue(success.get());
++  }
++
++  private GoogleCredentials createTestCredentials(MockTokenServerTransport transport)
++      throws IOException {
++    transport.addServiceAccount(SA_CLIENT_EMAIL, ACCESS_TOKEN);
++    return new ServiceAccountCredentials.Builder()
++        .setClientEmail(SA_CLIENT_EMAIL)
++        .setPrivateKey(OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8))
++        .setPrivateKeyId(SA_PRIVATE_KEY_ID)
++        .setHttpTransportFactory(() -> transport)
++        .setScopes(SCOPES)
++        .build();
++  }
++
++  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
++      throws InterruptedException {
++    long deadline = System.currentTimeMillis() + 5000;
++    while (credentials.getRegionalAccessBoundary() == null
++        && System.currentTimeMillis() < deadline) {
++      Thread.sleep(100);
++    }
++    if (credentials.getRegionalAccessBoundary() == null) {
++      fail("Timed out waiting for regional access boundary refresh");
++    }
++  }
++
++  private void waitForCooldownActive(GoogleCredentials credentials) throws InterruptedException {
++    long deadline = System.currentTimeMillis() + 5000;
++    while (!credentials.regionalAccessBoundaryManager.isCooldownActive()
++        && System.currentTimeMillis() < deadline) {
++      Thread.sleep(100);
++    }
++    if (!credentials.regionalAccessBoundaryManager.isCooldownActive()) {
++      fail("Timed out waiting for cooldown to become active");
++    }
++  }
++
++  private static class TestClock implements Clock {
++    private final AtomicLong currentTime = new AtomicLong(System.currentTimeMillis());
++
++    @Override
++    public long currentTimeMillis() {
++      return currentTime.get();
++    }
++
++    public void advanceTime(long millis) {
++      currentTime.addAndGet(millis);
++    }
++  }
+ }
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/IdentityPoolCredentialsTest.java b/oauth2_http/javatests/com/google/auth/oauth2/IdentityPoolCredentialsTest.java
+index cce03e085..92e799ee4 100644
+--- a/oauth2_http/javatests/com/google/auth/oauth2/IdentityPoolCredentialsTest.java
++++ b/oauth2_http/javatests/com/google/auth/oauth2/IdentityPoolCredentialsTest.java
+@@ -72,6 +72,14 @@ public class IdentityPoolCredentialsTest extends BaseSerializationTest {
+   private static final IdentityPoolSubjectTokenSupplier testProvider =
+       (ExternalAccountSupplierContext context) -> "testSubjectToken";
+ 
++  @org.junit.Before
++  public void setUp() {}
++
++  @org.junit.After
++  public void tearDown() {
++    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
++  }
++
+   @Test
+   public void createdScoped_clonedCredentialWithAddedScopes() throws IOException {
+     IdentityPoolCredentials credentials =
+@@ -1304,4 +1312,49 @@ void setShouldThrowOnGetCertificatePath(boolean shouldThrow) {
+       this.shouldThrowOnGetCertificatePath = shouldThrow;
+     }
+   }
++
++  @Test
++  public void testRefresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++
++    MockExternalAccountCredentialsTransportFactory transportFactory =
++        new MockExternalAccountCredentialsTransportFactory();
++    HttpTransportFactory testingHttpTransportFactory = transportFactory;
++
++    IdentityPoolCredentials credentials =
++        IdentityPoolCredentials.newBuilder()
++            .setSubjectTokenSupplier(testProvider)
++            .setHttpTransportFactory(testingHttpTransportFactory)
++            .setAudience(
++                "//iam.googleapis.com/projects/12345/locations/global/workloadIdentityPools/pool/providers/provider")
++            .setSubjectTokenType("subjectTokenType")
++            .setTokenUrl(STS_URL)
++            .build();
++
++    // First call: initiates async refresh.
++    Map<String, List<String>> headers = credentials.getRequestMetadata();
++    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
++
++    waitForRegionalAccessBoundary(credentials);
++
++    // Second call: should have header.
++    headers = credentials.getRequestMetadata();
++    assertEquals(
++        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
++        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
++  }
++
++  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
++      throws InterruptedException {
++    long deadline = System.currentTimeMillis() + 5000;
++    while (credentials.getRegionalAccessBoundary() == null
++        && System.currentTimeMillis() < deadline) {
++      Thread.sleep(100);
++    }
++    if (credentials.getRegionalAccessBoundary() == null) {
++      fail("Timed out waiting for regional access boundary refresh");
++    }
++  }
+ }
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/ImpersonatedCredentialsTest.java b/oauth2_http/javatests/com/google/auth/oauth2/ImpersonatedCredentialsTest.java
+index 1cfde9cf8..f54806def 100644
+--- a/oauth2_http/javatests/com/google/auth/oauth2/ImpersonatedCredentialsTest.java
++++ b/oauth2_http/javatests/com/google/auth/oauth2/ImpersonatedCredentialsTest.java
+@@ -31,6 +31,7 @@
+ 
+ package com.google.auth.oauth2;
+ 
++import static com.google.auth.oauth2.RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY;
+ import static org.junit.Assert.assertArrayEquals;
+ import static org.junit.Assert.assertEquals;
+ import static org.junit.Assert.assertFalse;
+@@ -67,6 +68,7 @@
+ import java.util.ArrayList;
+ import java.util.Arrays;
+ import java.util.Calendar;
++import java.util.Collections;
+ import java.util.Date;
+ import java.util.List;
+ import java.util.Map;
+@@ -153,6 +155,11 @@ public class ImpersonatedCredentialsTest extends BaseSerializationTest {
+   private static final String REFRESH_TOKEN = "dasdfasdffa4ffdfadgyjirasdfadsft";
+   public static final List<String> DELEGATES =
+       Arrays.asList("sa1@developer.gserviceaccount.com", "sa2@developer.gserviceaccount.com");
++  public static final RegionalAccessBoundary REGIONAL_ACCESS_BOUNDARY =
++      new RegionalAccessBoundary(
++          TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
++          TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS,
++          null);
+ 
+   private GoogleCredentials sourceCredentials;
+   private MockIAMCredentialsServiceTransportFactory mockTransportFactory;
+@@ -163,6 +170,11 @@ public void setup() throws IOException {
+     mockTransportFactory = new MockIAMCredentialsServiceTransportFactory();
+   }
+ 
++  @org.junit.After
++  public void tearDown() {
++    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
++  }
++
+   static GoogleCredentials getSourceCredentials() throws IOException {
+     MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
+     PrivateKey privateKey = OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8);
+@@ -176,6 +188,7 @@ static GoogleCredentials getSourceCredentials() throws IOException {
+             .setHttpTransportFactory(transportFactory)
+             .build();
+     transportFactory.transport.addServiceAccount(SA_CLIENT_EMAIL, ACCESS_TOKEN);
++    transportFactory.transport.setRegionalAccessBoundary(REGIONAL_ACCESS_BOUNDARY);
+ 
+     return sourceCredentials;
+   }
+@@ -1302,6 +1315,56 @@ public void serialize() throws IOException, ClassNotFoundException {
+     assertSame(deserializedCredentials.clock, Clock.SYSTEM);
+   }
+ 
++  @Test
++  public void refresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++    // Mock regional access boundary response
++    RegionalAccessBoundary regionalAccessBoundary = REGIONAL_ACCESS_BOUNDARY;
++
++    mockTransportFactory.getTransport().setRegionalAccessBoundary(regionalAccessBoundary);
++    mockTransportFactory.getTransport().setTargetPrincipal(IMPERSONATED_CLIENT_EMAIL);
++    mockTransportFactory.getTransport().setAccessToken(ACCESS_TOKEN);
++    mockTransportFactory.getTransport().setExpireTime(getDefaultExpireTime());
++    mockTransportFactory
++        .getTransport()
++        .addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "", true);
++
++    ImpersonatedCredentials targetCredentials =
++        ImpersonatedCredentials.create(
++            sourceCredentials,
++            IMPERSONATED_CLIENT_EMAIL,
++            null,
++            IMMUTABLE_SCOPES_LIST,
++            VALID_LIFETIME,
++            mockTransportFactory);
++
++    // First call: initiates async refresh.
++    Map<String, List<String>> headers = targetCredentials.getRequestMetadata();
++    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
++
++    waitForRegionalAccessBoundary(targetCredentials);
++
++    // Second call: should have header.
++    headers = targetCredentials.getRequestMetadata();
++    assertEquals(
++        headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY),
++        Collections.singletonList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
++  }
++
++  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
++      throws InterruptedException {
++    long deadline = System.currentTimeMillis() + 5000;
++    while (credentials.getRegionalAccessBoundary() == null
++        && System.currentTimeMillis() < deadline) {
++      Thread.sleep(100);
++    }
++    if (credentials.getRegionalAccessBoundary() == null) {
++      fail("Timed out waiting for regional access boundary refresh");
++    }
++  }
++
+   public static String getDefaultExpireTime() {
+     Calendar c = Calendar.getInstance();
+     c.add(Calendar.SECOND, VALID_LIFETIME);
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/LoggingTest.java b/oauth2_http/javatests/com/google/auth/oauth2/LoggingTest.java
+index 24f6262dd..2cb971a37 100644
+--- a/oauth2_http/javatests/com/google/auth/oauth2/LoggingTest.java
++++ b/oauth2_http/javatests/com/google/auth/oauth2/LoggingTest.java
+@@ -64,6 +64,8 @@
+ import java.util.Map;
+ import org.junit.BeforeClass;
+ import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.junit.runners.JUnit4;
+ import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
+ import org.slf4j.event.KeyValuePair;
+@@ -73,6 +75,7 @@
+  * credentials test classes with addition of test logging appender setup and test logic for logging.
+  * This duplicates tests setups, but centralizes logging test setup in this class.
+  */
++@RunWith(JUnit4.class)
+ public class LoggingTest {
+ 
+   private TestAppender setupTestLogger(Class<?> clazz) {
+@@ -91,6 +94,14 @@ public static void setup() {
+     LoggingUtils.setEnvironmentProvider(testEnvironmentProvider);
+   }
+ 
++  @org.junit.Before
++  public void setUp() {}
++
++  @org.junit.After
++  public void tearDown() {
++    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
++  }
++
+   @Test
+   public void userCredentials_getRequestMetadata_fromRefreshToken_hasAccessToken()
+       throws IOException {
+@@ -98,6 +109,7 @@ public void userCredentials_getRequestMetadata_fromRefreshToken_hasAccessToken()
+     MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
+     transportFactory.transport.addClient(CLIENT_ID, CLIENT_SECRET);
+     transportFactory.transport.addRefreshToken(REFRESH_TOKEN, ACCESS_TOKEN);
++
+     UserCredentials userCredentials =
+         UserCredentials.newBuilder()
+             .setClientId(CLIENT_ID)
+@@ -210,6 +222,7 @@ public void serviceAccountCredentials_idTokenWithAudience_iamFlow_targetAudience
+     transportFactory.getTransport().setTargetPrincipal(CLIENT_EMAIL);
+     transportFactory.getTransport().setIdToken(DEFAULT_ID_TOKEN);
+     transportFactory.getTransport().addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
++
+     ServiceAccountCredentials credentials =
+         createDefaultBuilder()
+             .setScopes(SCOPES)
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/MockExternalAccountCredentialsTransport.java b/oauth2_http/javatests/com/google/auth/oauth2/MockExternalAccountCredentialsTransport.java
+index d1bfdaecf..08727df4e 100644
+--- a/oauth2_http/javatests/com/google/auth/oauth2/MockExternalAccountCredentialsTransport.java
++++ b/oauth2_http/javatests/com/google/auth/oauth2/MockExternalAccountCredentialsTransport.java
+@@ -50,6 +50,7 @@
+ import java.util.ArrayDeque;
+ import java.util.ArrayList;
+ import java.util.Collections;
++import java.util.HashMap;
+ import java.util.List;
+ import java.util.Map;
+ import java.util.Queue;
+@@ -68,6 +69,7 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
+   private static final String AWS_IMDSV2_SESSION_TOKEN_URL = "https://169.254.169.254/imdsv2";
+   private static final String METADATA_SERVER_URL = "https://www.metadata.google.com";
+   private static final String STS_URL = "https://sts.googleapis.com/v1/token";
++  private static final String REGIONAL_ACCESS_BOUNDARY_URL_END = "/allowedLocations";
+ 
+   private static final String SUBJECT_TOKEN = "subjectToken";
+   private static final String TOKEN_TYPE = "Bearer";
+@@ -92,6 +94,11 @@ public class MockExternalAccountCredentialsTransport extends MockHttpTransport {
+   private String expireTime;
+   private String metadataServerContentType;
+   private String stsContent;
++  private final Map<String, RegionalAccessBoundary> regionalAccessBoundaries = new HashMap<>();
++
++  public void addRegionalAccessBoundary(String url, RegionalAccessBoundary regionalAccessBoundary) {
++    this.regionalAccessBoundaries.put(url, regionalAccessBoundary);
++  }
+ 
+   public void addResponseErrorSequence(IOException... errors) {
+     Collections.addAll(responseErrorSequence, errors);
+@@ -196,6 +203,26 @@ public LowLevelHttpResponse execute() throws IOException {
+             }
+ 
+             if (url.contains(IAM_ENDPOINT)) {
++
++              if (url.endsWith(REGIONAL_ACCESS_BOUNDARY_URL_END)) {
++                RegionalAccessBoundary rab = regionalAccessBoundaries.get(url);
++                if (rab == null) {
++                  rab =
++                      new RegionalAccessBoundary(
++                          TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
++                          TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS,
++                          null);
++                }
++                GenericJson responseJson = new GenericJson();
++                responseJson.setFactory(OAuth2Utils.JSON_FACTORY);
++                responseJson.put("encodedLocations", rab.getEncodedLocations());
++                responseJson.put("locations", rab.getLocations());
++                String content = responseJson.toPrettyString();
++                return new MockLowLevelHttpResponse()
++                    .setContentType(Json.MEDIA_TYPE)
++                    .setContent(content);
++              }
++
+               GenericJson query =
+                   OAuth2Utils.JSON_FACTORY
+                       .createJsonParser(getContentAsString())
+@@ -220,7 +247,9 @@ public LowLevelHttpResponse execute() throws IOException {
+           }
+         };
+ 
+-    this.requests.add(request);
++    if (url == null || !url.contains("allowedLocations")) {
++      this.requests.add(request);
++    }
+     return request;
+   }
+ 
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/MockIAMCredentialsServiceTransport.java b/oauth2_http/javatests/com/google/auth/oauth2/MockIAMCredentialsServiceTransport.java
+index cbd57d115..5346f4fdb 100644
+--- a/oauth2_http/javatests/com/google/auth/oauth2/MockIAMCredentialsServiceTransport.java
++++ b/oauth2_http/javatests/com/google/auth/oauth2/MockIAMCredentialsServiceTransport.java
+@@ -80,6 +80,8 @@ public ServerResponse(int statusCode, String response, boolean repeatServerRespo
+ 
+   private String universeDomain;
+ 
++  private RegionalAccessBoundary regionalAccessBoundary;
++
+   private MockLowLevelHttpRequest request;
+ 
+   MockIAMCredentialsServiceTransport(String universeDomain) {
+@@ -132,6 +134,10 @@ public void setAccessTokenEndpoint(String accessTokenEndpoint) {
+     this.iamAccessTokenEndpoint = accessTokenEndpoint;
+   }
+ 
++  public void setRegionalAccessBoundary(RegionalAccessBoundary regionalAccessBoundary) {
++    this.regionalAccessBoundary = regionalAccessBoundary;
++  }
++
+   public MockLowLevelHttpRequest getRequest() {
+     return request;
+   }
+@@ -221,6 +227,25 @@ public LowLevelHttpResponse execute() throws IOException {
+                   .setContent(tokenContent);
+             }
+           };
++    } else if (url.endsWith("/allowedLocations")) {
++      request =
++          new MockLowLevelHttpRequest(url) {
++            @Override
++            public LowLevelHttpResponse execute() throws IOException {
++              if (regionalAccessBoundary == null) {
++                return new MockLowLevelHttpResponse().setStatusCode(404);
++              }
++              GenericJson responseJson = new GenericJson();
++              responseJson.setFactory(OAuth2Utils.JSON_FACTORY);
++              responseJson.put("encodedLocations", regionalAccessBoundary.getEncodedLocations());
++              responseJson.put("locations", regionalAccessBoundary.getLocations());
++              String content = responseJson.toPrettyString();
++              return new MockLowLevelHttpResponse()
++                  .setContentType(Json.MEDIA_TYPE)
++                  .setContent(content);
++            }
++          };
++      return request;
+     } else {
+       return super.buildRequest(method, url);
+     }
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/MockMetadataServerTransport.java b/oauth2_http/javatests/com/google/auth/oauth2/MockMetadataServerTransport.java
+index e7ac6c09d..70012330b 100644
+--- a/oauth2_http/javatests/com/google/auth/oauth2/MockMetadataServerTransport.java
++++ b/oauth2_http/javatests/com/google/auth/oauth2/MockMetadataServerTransport.java
+@@ -73,6 +73,9 @@ public class MockMetadataServerTransport extends MockHttpTransport {
+   private boolean emptyContent;
+   private MockLowLevelHttpRequest request;
+ 
++  private RegionalAccessBoundary regionalAccessBoundary;
++  private IOException lookupError;
++
+   public MockMetadataServerTransport() {}
+ 
+   public MockMetadataServerTransport(String accessToken) {
+@@ -120,6 +123,14 @@ public void setEmptyContent(boolean emptyContent) {
+     this.emptyContent = emptyContent;
+   }
+ 
++  public void setRegionalAccessBoundary(RegionalAccessBoundary regionalAccessBoundary) {
++    this.regionalAccessBoundary = regionalAccessBoundary;
++  }
++
++  public void setLookupError(IOException lookupError) {
++    this.lookupError = lookupError;
++  }
++
+   public MockLowLevelHttpRequest getRequest() {
+     return request;
+   }
+@@ -140,6 +151,8 @@ public LowLevelHttpRequest buildRequest(String method, String url) throws IOExce
+       return this.request;
+     } else if (isMtlsConfigRequestUrl(url)) {
+       return getMockRequestForMtlsConfig(url);
++    } else if (isIamLookupUrl(url)) {
++      return getMockRequestForRegionalAccessBoundaryLookup(url);
+     }
+     this.request =
+         new MockLowLevelHttpRequest(url) {
+@@ -224,7 +237,7 @@ public LowLevelHttpResponse execute() throws IOException {
+           refreshContents.put(
+               "access_token", scopesToAccessToken.get("[" + urlParsed.get(1) + "]"));
+         }
+-        refreshContents.put("expires_in", 3600000);
++        refreshContents.put("expires_in", 3600);
+         refreshContents.put("token_type", "Bearer");
+         String refreshText = refreshContents.toPrettyString();
+ 
+@@ -361,4 +374,32 @@ protected boolean isMtlsConfigRequestUrl(String url) {
+         ComputeEngineCredentials.getMetadataServerUrl()
+             + SecureSessionAgent.S2A_CONFIG_ENDPOINT_POSTFIX);
+   }
++
++  private MockLowLevelHttpRequest getMockRequestForRegionalAccessBoundaryLookup(String url) {
++    return new MockLowLevelHttpRequest(url) {
++      @Override
++      public LowLevelHttpResponse execute() throws IOException {
++        if (lookupError != null) {
++          throw lookupError;
++        }
++        if (regionalAccessBoundary == null) {
++          return new MockLowLevelHttpResponse().setStatusCode(404);
++        }
++        GenericJson responseJson = new GenericJson();
++        responseJson.setFactory(OAuth2Utils.JSON_FACTORY);
++        responseJson.put("encodedLocations", regionalAccessBoundary.getEncodedLocations());
++        responseJson.put("locations", regionalAccessBoundary.getLocations());
++        String content = responseJson.toPrettyString();
++        return new MockLowLevelHttpResponse().setContentType(Json.MEDIA_TYPE).setContent(content);
++      }
++    };
++  }
++
++  protected boolean isIamLookupUrl(String url) {
++    // Mocking call to the /allowedLocations endpoint for regional access boundary refresh.
++    // For testing convenience, this mock transport handles
++    // the /allowedLocations endpoint. The actual server for this endpoint
++    // will be the IAM Credentials API.
++    return url.endsWith("/allowedLocations");
++  }
+ }
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/MockStsTransport.java b/oauth2_http/javatests/com/google/auth/oauth2/MockStsTransport.java
+index 5b1b3fded..5152a23f5 100644
+--- a/oauth2_http/javatests/com/google/auth/oauth2/MockStsTransport.java
++++ b/oauth2_http/javatests/com/google/auth/oauth2/MockStsTransport.java
+@@ -62,6 +62,8 @@ public final class MockStsTransport extends MockHttpTransport {
+   private static final String ISSUED_TOKEN_TYPE = "urn:ietf:params:oauth:token-type:access_token";
+   private static final String VALID_STS_PATTERN =
+       "https:\\/\\/sts.[a-z-_\\.]+\\/v1\\/(token|oauthtoken)";
++  private static final String VALID_REGIONAL_ACCESS_BOUNDARY_PATTERN =
++      "https:\\/\\/iam.[a-z-_\\.]+\\/v1\\/.*\\/allowedLocations";
+   private static final String ACCESS_TOKEN = "accessToken";
+   private static final String TOKEN_TYPE = "Bearer";
+   private static final Long EXPIRES_IN = 3600L;
+@@ -99,6 +101,23 @@ public LowLevelHttpRequest buildRequest(final String method, final String url) {
+         new MockLowLevelHttpRequest(url) {
+           @Override
+           public LowLevelHttpResponse execute() throws IOException {
++            // Mocking call to refresh regional access boundaries.
++            // The lookup endpoint is located in the IAM server.
++            Matcher regionalAccessBoundaryMatcher =
++                Pattern.compile(VALID_REGIONAL_ACCESS_BOUNDARY_PATTERN).matcher(url);
++            if (regionalAccessBoundaryMatcher.matches()) {
++              // Mocking call to the /allowedLocations endpoint for regional access boundary
++              // refresh.
++              // For testing convenience, this mock transport handles
++              // the /allowedLocations endpoint.
++              GenericJson response = new GenericJson();
++              response.put("locations", TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS);
++              response.put("encodedLocations", TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION);
++              return new MockLowLevelHttpResponse()
++                  .setContentType(Json.MEDIA_TYPE)
++                  .setContent(OAuth2Utils.JSON_FACTORY.toString(response));
++            }
++
+             // Environment version is prefixed by "aws". e.g. "aws1".
+             Matcher matcher = Pattern.compile(VALID_STS_PATTERN).matcher(url);
+             if (!matcher.matches()) {
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/MockTokenServerTransport.java b/oauth2_http/javatests/com/google/auth/oauth2/MockTokenServerTransport.java
+index a61c185b5..b04efd9b8 100644
+--- a/oauth2_http/javatests/com/google/auth/oauth2/MockTokenServerTransport.java
++++ b/oauth2_http/javatests/com/google/auth/oauth2/MockTokenServerTransport.java
+@@ -77,6 +77,21 @@ public class MockTokenServerTransport extends MockHttpTransport {
+   private MockLowLevelHttpRequest request;
+   private ClientAuthenticationType clientAuthenticationType;
+   private PKCEProvider pkceProvider;
++  private RegionalAccessBoundary regionalAccessBoundary;
++  private int regionalAccessBoundaryRequestCount = 0;
++  private int responseDelayMillis = 0;
++
++  public void setRegionalAccessBoundary(RegionalAccessBoundary regionalAccessBoundary) {
++    this.regionalAccessBoundary = regionalAccessBoundary;
++  }
++
++  public int getRegionalAccessBoundaryRequestCount() {
++    return regionalAccessBoundaryRequestCount;
++  }
++
++  public void setResponseDelayMillis(int responseDelayMillis) {
++    this.responseDelayMillis = responseDelayMillis;
++  }
+ 
+   public MockTokenServerTransport() {}
+ 
+@@ -175,6 +190,40 @@ public LowLevelHttpRequest buildRequest(String method, String url) throws IOExce
+     final String urlWithoutQuery = (questionMarkPos > 0) ? url.substring(0, questionMarkPos) : url;
+     final String query = (questionMarkPos > 0) ? url.substring(questionMarkPos + 1) : "";
+ 
++    if (urlWithoutQuery.endsWith("/allowedLocations")) {
++      // Mocking call to the /allowedLocations endpoint for regional access boundary refresh.
++      // For testing convenience, this mock transport handles
++      // the /allowedLocations endpoint. The actual server for this endpoint
++      // will be the IAM Credentials API.
++      request =
++          new MockLowLevelHttpRequest(url) {
++            @Override
++            public LowLevelHttpResponse execute() throws IOException {
++              regionalAccessBoundaryRequestCount++;
++              if (responseDelayMillis > 0) {
++                try {
++                  Thread.sleep(responseDelayMillis);
++                } catch (InterruptedException e) {
++                  Thread.currentThread().interrupt();
++                }
++              }
++              RegionalAccessBoundary rab = regionalAccessBoundary;
++              if (rab == null) {
++                return new MockLowLevelHttpResponse().setStatusCode(404);
++              }
++              GenericJson responseJson = new GenericJson();
++              responseJson.setFactory(JSON_FACTORY);
++              responseJson.put("encodedLocations", rab.getEncodedLocations());
++              responseJson.put("locations", rab.getLocations());
++              String content = responseJson.toPrettyString();
++              return new MockLowLevelHttpResponse()
++                  .setContentType(Json.MEDIA_TYPE)
++                  .setContent(content);
++            }
++          };
++      return request;
++    }
++
+     if (!responseSequence.isEmpty()) {
+       request =
+           new MockLowLevelHttpRequest(url) {
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/PluggableAuthCredentialsTest.java b/oauth2_http/javatests/com/google/auth/oauth2/PluggableAuthCredentialsTest.java
+index cd321daf3..a6023d778 100644
+--- a/oauth2_http/javatests/com/google/auth/oauth2/PluggableAuthCredentialsTest.java
++++ b/oauth2_http/javatests/com/google/auth/oauth2/PluggableAuthCredentialsTest.java
+@@ -51,9 +51,21 @@
+ import java.util.Map;
+ import javax.annotation.Nullable;
+ import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.junit.runners.JUnit4;
+ 
+ /** Tests for {@link PluggableAuthCredentials}. */
++@RunWith(JUnit4.class)
+ public class PluggableAuthCredentialsTest extends BaseSerializationTest {
++
++  @org.junit.Before
++  public void setUp() {}
++
++  @org.junit.After
++  public void tearDown() {
++    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
++  }
++
+   // The default timeout for waiting for the executable to finish (30 seconds).
+   private static final int DEFAULT_EXECUTABLE_TIMEOUT_MS = 30 * 1000;
+   // The minimum timeout for waiting for the executable to finish (5 seconds).
+@@ -603,6 +615,52 @@ public void serialize() throws IOException, ClassNotFoundException {
+     assertThrows(NotSerializableException.class, () -> serializeAndDeserialize(testCredentials));
+   }
+ 
++  @Test
++  public void testRefresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++
++    MockExternalAccountCredentialsTransportFactory transportFactory =
++        new MockExternalAccountCredentialsTransportFactory();
++    transportFactory.transport.setExpireTime(TestUtils.getDefaultExpireTime());
++
++    PluggableAuthCredentials credentials =
++        PluggableAuthCredentials.newBuilder()
++            .setHttpTransportFactory(transportFactory)
++            .setAudience(
++                "//iam.googleapis.com/projects/12345/locations/global/workloadIdentityPools/pool/providers/provider")
++            .setSubjectTokenType("subjectTokenType")
++            .setTokenUrl(transportFactory.transport.getStsUrl())
++            .setCredentialSource(buildCredentialSource())
++            .setExecutableHandler(options -> "pluggableAuthToken")
++            .build();
++
++    // First call: initiates async refresh.
++    Map<String, List<String>> headers = credentials.getRequestMetadata();
++    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
++
++    waitForRegionalAccessBoundary(credentials);
++
++    // Second call: should have header.
++    headers = credentials.getRequestMetadata();
++    assertEquals(
++        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
++        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
++  }
++
++  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
++      throws InterruptedException {
++    long deadline = System.currentTimeMillis() + 5000;
++    while (credentials.getRegionalAccessBoundary() == null
++        && System.currentTimeMillis() < deadline) {
++      Thread.sleep(100);
++    }
++    if (credentials.getRegionalAccessBoundary() == null) {
++      fail("Timed out waiting for regional access boundary refresh");
++    }
++  }
++
+   private static PluggableAuthCredentialSource buildCredentialSource() {
+     return buildCredentialSource("command", null, null);
+   }
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/RegionalAccessBoundaryTest.java b/oauth2_http/javatests/com/google/auth/oauth2/RegionalAccessBoundaryTest.java
+new file mode 100644
+index 000000000..7c7ccd690
+--- /dev/null
++++ b/oauth2_http/javatests/com/google/auth/oauth2/RegionalAccessBoundaryTest.java
+@@ -0,0 +1,220 @@
++/*
++ * Copyright 2026, Google LLC
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions are
++ * met:
++ *
++ *    * Redistributions of source code must retain the above copyright
++ * notice, this list of conditions and the following disclaimer.
++ *    * Redistributions in binary form must reproduce the above
++ * copyright notice, this list of conditions and the following disclaimer
++ * in the documentation and/or other materials provided with the
++ * distribution.
++ *
++ *    * Neither the name of Google LLC nor the names of its
++ * contributors may be used to endorse or promote products derived from
++ * this software without specific prior written permission.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
++ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
++ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
++ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
++ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
++ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
++ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
++ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
++ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
++ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
++ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
++ */
++
++package com.google.auth.oauth2;
++
++import static org.junit.Assert.assertEquals;
++import static org.junit.Assert.assertFalse;
++import static org.junit.Assert.assertTrue;
++
++import com.google.api.client.testing.http.MockHttpTransport;
++import com.google.api.client.testing.http.MockLowLevelHttpResponse;
++import com.google.api.client.util.Clock;
++import com.google.auth.http.HttpTransportFactory;
++import java.io.ByteArrayInputStream;
++import java.io.ByteArrayOutputStream;
++import java.io.ObjectInputStream;
++import java.io.ObjectOutputStream;
++import java.util.Collections;
++import java.util.concurrent.atomic.AtomicLong;
++import org.junit.After;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.junit.runners.JUnit4;
++
++@RunWith(JUnit4.class)
++public class RegionalAccessBoundaryTest {
++
++  private static final long TTL = RegionalAccessBoundary.TTL_MILLIS;
++  private static final long REFRESH_THRESHOLD = RegionalAccessBoundary.REFRESH_THRESHOLD_MILLIS;
++
++  private TestClock testClock;
++
++  @Before
++  public void setUp() {
++    testClock = new TestClock();
++  }
++
++  @After
++  public void tearDown() {}
++
++  @Test
++  public void testIsExpired() {
++    long now = testClock.currentTimeMillis();
++    RegionalAccessBoundary rab =
++        new RegionalAccessBoundary("encoded", Collections.singletonList("loc"), now, testClock);
++
++    assertFalse(rab.isExpired());
++
++    testClock.set(now + TTL - 1);
++    assertFalse(rab.isExpired());
++
++    testClock.set(now + TTL + 1);
++    assertTrue(rab.isExpired());
++  }
++
++  @Test
++  public void testShouldRefresh() {
++    long now = testClock.currentTimeMillis();
++    RegionalAccessBoundary rab =
++        new RegionalAccessBoundary("encoded", Collections.singletonList("loc"), now, testClock);
++
++    // Initial state: fresh
++    assertFalse(rab.shouldRefresh());
++
++    // Just before threshold
++    testClock.set(now + TTL - REFRESH_THRESHOLD - 1);
++    assertFalse(rab.shouldRefresh());
++
++    // At threshold
++    testClock.set(now + TTL - REFRESH_THRESHOLD + 1);
++    assertTrue(rab.shouldRefresh());
++
++    // Still not expired
++    assertFalse(rab.isExpired());
++  }
++
++  @Test
++  public void testSerialization() throws Exception {
++    long now = testClock.currentTimeMillis();
++    RegionalAccessBoundary rab =
++        new RegionalAccessBoundary("encoded", Collections.singletonList("loc"), now, testClock);
++
++    ByteArrayOutputStream baos = new ByteArrayOutputStream();
++    ObjectOutputStream oos = new ObjectOutputStream(baos);
++    oos.writeObject(rab);
++    oos.close();
++
++    ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
++    ObjectInputStream ois = new ObjectInputStream(bais);
++    RegionalAccessBoundary deserializedRab = (RegionalAccessBoundary) ois.readObject();
++    ois.close();
++
++    assertEquals("encoded", deserializedRab.getEncodedLocations());
++    assertEquals(1, deserializedRab.getLocations().size());
++    assertEquals("loc", deserializedRab.getLocations().get(0));
++    // The transient clock field should be restored to Clock.SYSTEM upon deserialization,
++    // thereby avoiding a NullPointerException when checking expiration.
++    assertFalse(deserializedRab.isExpired());
++  }
++
++  @Test
++  public void testManagerTriggersRefreshInGracePeriod() throws InterruptedException {
++    final String url =
++        "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/default:allowedLocations";
++    final AccessToken token =
++        new AccessToken(
++            "token", new java.util.Date(System.currentTimeMillis() + 10 * 3600000L)); //
++
++    // Mock transport to return a new RAB
++    final String newEncoded = "new-encoded";
++    MockHttpTransport transport =
++        new MockHttpTransport.Builder()
++            .setLowLevelHttpResponse(
++                new MockLowLevelHttpResponse()
++                    .setContentType("application/json")
++                    .setContent(
++                        "{\"encodedLocations\": \""
++                            + newEncoded
++                            + "\", \"locations\": [\"new-loc\"]}"))
++            .build();
++    HttpTransportFactory transportFactory = () -> transport;
++    RegionalAccessBoundaryProvider provider = () -> url;
++
++    RegionalAccessBoundaryManager manager = new RegionalAccessBoundaryManager(testClock);
++
++    // 1. Let's first get a RAB into the cache
++    manager.triggerAsyncRefresh(transportFactory, provider, token);
++
++    // Wait for it to be cached
++    int retries = 0;
++    while (manager.getCachedRAB() == null && retries < 50) {
++      Thread.sleep(50);
++      retries++;
++    }
++    assertEquals(newEncoded, manager.getCachedRAB().getEncodedLocations());
++
++    // 2. Advance clock to grace period
++    testClock.set(testClock.currentTimeMillis() + TTL - REFRESH_THRESHOLD + 1000);
++
++    assertTrue(manager.getCachedRAB().shouldRefresh());
++    assertFalse(manager.getCachedRAB().isExpired());
++
++    // 3. Prepare mock for SECOND refresh
++    final String newerEncoded = "newer-encoded";
++    MockHttpTransport transport2 =
++        new MockHttpTransport.Builder()
++            .setLowLevelHttpResponse(
++                new MockLowLevelHttpResponse()
++                    .setContentType("application/json")
++                    .setContent(
++                        "{\"encodedLocations\": \""
++                            + newerEncoded
++                            + "\", \"locations\": [\"newer-loc\"]}"))
++            .build();
++    HttpTransportFactory transportFactory2 = () -> transport2;
++
++    // 4. Trigger refresh - should start because we are in grace period
++    manager.triggerAsyncRefresh(transportFactory2, provider, token);
++
++    // 5. Wait for background refresh to complete
++    // We expect the cached RAB to eventually change to newerEncoded
++    retries = 0;
++    RegionalAccessBoundary resultRab = null;
++    while (retries < 100) {
++      resultRab = manager.getCachedRAB();
++      if (resultRab != null && newerEncoded.equals(resultRab.getEncodedLocations())) {
++        break;
++      }
++      Thread.sleep(50);
++      retries++;
++    }
++
++    assertTrue(
++        "Refresh should have completed and updated the cache within 5 seconds",
++        resultRab != null && newerEncoded.equals(resultRab.getEncodedLocations()));
++    assertEquals(newerEncoded, resultRab.getEncodedLocations());
++  }
++
++  private static class TestClock implements Clock {
++    private final AtomicLong currentTime = new AtomicLong(System.currentTimeMillis());
++
++    @Override
++    public long currentTimeMillis() {
++      return currentTime.get();
++    }
++
++    public void set(long millis) {
++      currentTime.set(millis);
++    }
++  }
++}
+diff --git a/oauth2_http/javatests/com/google/auth/oauth2/ServiceAccountCredentialsTest.java b/oauth2_http/javatests/com/google/auth/oauth2/ServiceAccountCredentialsTest.java
+index 1561bb341..c186b7f23 100644
+--- a/oauth2_http/javatests/com/google/auth/oauth2/ServiceAccountCredentialsTest.java
++++ b/oauth2_http/javatests/com/google/auth/oauth2/ServiceAccountCredentialsTest.java
+@@ -31,6 +31,7 @@
+ 
+ package com.google.auth.oauth2;
+ 
++import static com.google.auth.oauth2.RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY;
+ import static org.junit.Assert.assertArrayEquals;
+ import static org.junit.Assert.assertEquals;
+ import static org.junit.Assert.assertFalse;
+@@ -160,6 +161,14 @@ static ServiceAccountCredentials.Builder createDefaultBuilder() throws IOExcepti
+     return createDefaultBuilderWithKey(privateKey);
+   }
+ 
++  @org.junit.Before
++  public void setUp() {}
++
++  @org.junit.After
++  public void tearDown() {
++    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
++  }
++
+   @Test
+   public void setLifetime() throws IOException {
+     ServiceAccountCredentials.Builder builder = createDefaultBuilder();
+@@ -1802,7 +1811,101 @@ public void createScopes_existingAccessTokenInvalidated() throws IOException {
+     assertNull(newAccessToken);
+   }
+ 
+-  private void verifyJwtAccess(Map<String, List<String>> metadata, String expectedScopeClaim)
++  @Test
++  public void refresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++    // Mock regional access boundary response
++    RegionalAccessBoundary regionalAccessBoundary =
++        new RegionalAccessBoundary(
++            TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
++            TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS,
++            null);
++
++    MockTokenServerTransport transport = new MockTokenServerTransport();
++    transport.addServiceAccount(CLIENT_EMAIL, "test-access-token");
++    transport.setRegionalAccessBoundary(regionalAccessBoundary);
++
++    ServiceAccountCredentials credentials =
++        ServiceAccountCredentials.newBuilder()
++            .setClientEmail(CLIENT_EMAIL)
++            .setPrivateKey(
++                OAuth2Utils.privateKeyFromPkcs8(ServiceAccountCredentialsTest.PRIVATE_KEY_PKCS8))
++            .setPrivateKeyId("test-key-id")
++            .setHttpTransportFactory(() -> transport)
++            .setScopes(SCOPES)
++            .build();
++
++    // First call: initiates async refresh.
++    Map<String, List<String>> headers = credentials.getRequestMetadata();
++    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
++
++    waitForRegionalAccessBoundary(credentials);
++
++    // Second call: should have header.
++    headers = credentials.getRequestMetadata();
++    assertEquals(
++        headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY),
++        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
++  }
++
++  @Test
++  public void refresh_regionalAccessBoundary_selfSignedJWT()
++      throws IOException, InterruptedException {
++    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
++    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
++    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
++    RegionalAccessBoundary regionalAccessBoundary =
++        new RegionalAccessBoundary(
++            TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
++            TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS,
++            null);
++
++    MockTokenServerTransport transport = new MockTokenServerTransport();
++    transport.setRegionalAccessBoundary(regionalAccessBoundary);
++
++    ServiceAccountCredentials credentials =
++        ServiceAccountCredentials.newBuilder()
++            .setClientEmail(CLIENT_EMAIL)
++            .setPrivateKey(
++                OAuth2Utils.privateKeyFromPkcs8(ServiceAccountCredentialsTest.PRIVATE_KEY_PKCS8))
++            .setPrivateKeyId("test-key-id")
++            .setHttpTransportFactory(() -> transport)
++            .setUseJwtAccessWithScope(true)
++            .setScopes(SCOPES)
++            .build();
++
++    // First call: initiates async refresh using the SSJWT as the token.
++    Map<String, List<String>> headers = credentials.getRequestMetadata();
++    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
++
++    waitForRegionalAccessBoundary(credentials);
++
++    // Second call: should have header.
++    headers = credentials.getRequestMetadata();
++    assertEquals(
++        headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY),
++        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
++
++    assertEquals(
++        TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
++        credentials.getRegionalAccessBoundary().getEncodedLocations());
++  }
++
++  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
++      throws InterruptedException {
++    long deadline = System.currentTimeMillis() + 5000;
++    while (credentials.getRegionalAccessBoundary() == null
++        && System.currentTimeMillis() < deadline) {
++      Thread.sleep(100);
++    }
++    if (credentials.getRegionalAccessBoundary() == null) {
++      fail("Timed out waiting for regional access boundary refresh");
++    }
++  }
++
++  void verifyJwtAccess(Map<String, List<String>> metadata, String expectedScopeClaim)
+       throws IOException {
+     assertNotNull(metadata);
+     List<String> authorizations = metadata.get(AuthHttpConstants.AUTHORIZATION);
+diff --git a/samples/snippets/pom.xml b/samples/snippets/pom.xml
+index dbf7630e3..e725b2a83 100644
+--- a/samples/snippets/pom.xml
++++ b/samples/snippets/pom.xml
+@@ -80,4 +80,3 @@
+   </dependencies>
+ 
+ </project>
+-

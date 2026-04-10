@@ -1,0 +1,33 @@
+diff a/google-auth-library-java/oauth2_http/javatests/com/google/auth/oauth2/LoggingTest.java b/google-auth-library-java/oauth2_http/javatests/com/google/auth/oauth2/LoggingTest.java	(rejected hunks)
+@@ -64,6 +64,8 @@
+ import java.util.Map;
+ import org.junit.BeforeClass;
+ import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.junit.runners.JUnit4;
+ import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
+ import org.slf4j.event.KeyValuePair;
+@@ -73,6 +75,7 @@
+  * credentials test classes with addition of test logging appender setup and test logic for logging.
+  * This duplicates tests setups, but centralizes logging test setup in this class.
+  */
++@RunWith(JUnit4.class)
+ public class LoggingTest {
+ 
+   private TestAppender setupTestLogger(Class<?> clazz) {
+@@ -91,6 +94,14 @@ public static void setup() {
+     LoggingUtils.setEnvironmentProvider(testEnvironmentProvider);
+   }
+ 
++  @org.junit.Before
++  public void setUp() {}
++
++  @org.junit.After
++  public void tearDown() {
++    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
++  }
++
+   @Test
+   public void userCredentials_getRequestMetadata_fromRefreshToken_hasAccessToken()
+       throws IOException {

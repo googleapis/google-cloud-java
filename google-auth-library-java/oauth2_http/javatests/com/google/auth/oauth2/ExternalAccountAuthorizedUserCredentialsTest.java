@@ -1283,6 +1283,48 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
     }
   }
 
+  @org.junit.jupiter.api.Test
+  void testRefresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
+    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
+    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
+    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+
+    ExternalAccountAuthorizedUserCredentials credentials =
+        ExternalAccountAuthorizedUserCredentials.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setClientSecret(CLIENT_SECRET)
+            .setRefreshToken(REFRESH_TOKEN)
+            .setTokenUrl(TOKEN_URL)
+            .setAudience(
+                "//iam.googleapis.com/locations/global/workforcePools/pool/providers/provider")
+            .setHttpTransportFactory(transportFactory)
+            .build();
+
+    // First call: initiates async refresh.
+    Map<String, List<String>> headers = credentials.getRequestMetadata();
+    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
+
+    waitForRegionalAccessBoundary(credentials);
+
+    // Second call: should have header.
+    headers = credentials.getRequestMetadata();
+    assertEquals(
+        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
+        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
+  }
+
+  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
+      throws InterruptedException {
+    long deadline = System.currentTimeMillis() + 5000;
+    while (credentials.getRegionalAccessBoundary() == null
+        && System.currentTimeMillis() < deadline) {
+      Thread.sleep(100);
+    }
+    if (credentials.getRegionalAccessBoundary() == null) {
+      fail("Timed out waiting for regional access boundary refresh");
+    }
+  }
+
   static GenericJson buildJsonCredentials() {
     GenericJson json = new GenericJson();
     json.put(

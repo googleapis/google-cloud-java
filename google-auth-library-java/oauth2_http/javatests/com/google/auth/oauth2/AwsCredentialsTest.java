@@ -1410,7 +1410,7 @@ class AwsCredentialsTest extends BaseSerializationTest {
       Thread.sleep(100);
     }
     if (credentials.getRegionalAccessBoundary() == null) {
-      Assertions.fail("Timed out waiting for regional access boundary refresh");
+      fail("Timed out waiting for regional access boundary refresh");
     }
   }
 }

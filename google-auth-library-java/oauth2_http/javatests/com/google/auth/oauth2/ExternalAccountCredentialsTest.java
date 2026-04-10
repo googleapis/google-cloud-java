@@ -37,11 +37,11 @@ import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIO
 import static com.google.auth.oauth2.OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_WORKLOAD_POOL;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.http.HttpTransport;
