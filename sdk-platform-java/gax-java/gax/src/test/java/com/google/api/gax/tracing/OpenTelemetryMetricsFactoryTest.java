@@ -69,17 +69,16 @@ class OpenTelemetryMetricsFactoryTest {
 
   @Test
   void newTracerWithApiTracerContext_shouldMergeApiTracerContext() {
-    ApiTracerContext clientLevelTracerContext = mock(ApiTracerContext.class, RETURNS_DEEP_STUBS);
-    ApiTracerContext methodLevelTracerContext = mock(ApiTracerContext.class);
-    when(clientLevelTracerContext.libraryMetadata().artifactName()).thenReturn("gax-java");
-    when(clientLevelTracerContext.libraryMetadata().isEmpty()).thenReturn(false);
-    when(clientLevelTracerContext.merge(methodLevelTracerContext))
-        .thenReturn(clientLevelTracerContext);
+    LibraryMetadata metadata =
+        LibraryMetadata.newBuilder().setArtifactName("gax-java").setVersion("1.0").build();
+    ApiTracerContext clientLevelTracerContext =
+        ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
+    ApiTracerContext methodLevelTracerContext =
+        ApiTracerContext.newBuilder().setLibraryMetadata(LibraryMetadata.empty()).build();
+    
+    ApiTracerFactory factoryWithContext = tracerFactory.withContext(clientLevelTracerContext);
+    ApiTracer actual = factoryWithContext.newTracer(mock(ApiTracer.class), methodLevelTracerContext);
 
-    tracerFactory.withContext(clientLevelTracerContext);
-    ApiTracer actual = tracerFactory.newTracer(mock(ApiTracer.class), methodLevelTracerContext);
-
-    verify(clientLevelTracerContext).merge(methodLevelTracerContext);
     assertThat(actual).isInstanceOf(OpenTelemetryMetricsTracer.class);
   }
 

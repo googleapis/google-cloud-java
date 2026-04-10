@@ -30,8 +30,6 @@
 
 package com.google.api.gax.tracing;
 
-import com.google.api.core.BetaApi;
-import com.google.api.core.InternalApi;
 import com.google.api.gax.logging.LoggerProvider;
 import com.google.api.gax.logging.LoggingUtils;
 import com.google.common.annotations.VisibleForTesting;
@@ -44,8 +42,6 @@ import java.util.Map;
  * An {@link ApiTracer} that logs actionable errors using {@link LoggingUtils} when an RPC attempt
  * fails.
  */
-@BetaApi
-@InternalApi
 class LoggingTracer extends BaseApiTracer {
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(LoggingTracer.class);
