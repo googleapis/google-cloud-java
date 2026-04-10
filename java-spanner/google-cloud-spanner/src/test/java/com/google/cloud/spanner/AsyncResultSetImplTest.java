@@ -33,6 +33,7 @@ import com.google.cloud.spanner.AsyncResultSet.CallbackResponse;
 import com.google.cloud.spanner.AsyncResultSet.CursorState;
 import com.google.cloud.spanner.AsyncResultSet.ReadyCallback;
 import com.google.common.base.Function;
+import com.google.common.base.Stopwatch;
 import com.google.common.collect.Range;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Value;
@@ -50,7 +51,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mockito;
@@ -59,6 +62,8 @@ import org.mockito.stubbing.Answer;
 
 @RunWith(JUnit4.class)
 public class AsyncResultSetImplTest {
+  @Rule public final Timeout globalTimeout = Timeout.seconds(60);
+
   private ExecutorProvider mockedProvider;
   private ExecutorProvider simpleProvider;
 
@@ -198,7 +203,7 @@ public class AsyncResultSetImplTest {
             return CallbackResponse.CONTINUE;
           });
     }
-    finishedLatch.await();
+    assertThat(finishedLatch.await(10, TimeUnit.SECONDS)).isTrue();
     // There should be between 1 and 5 callbacks, depending on the timing of the threads.
     // Normally, there should be just 1 callback.
     assertThat(callbackCounter.get()).isIn(Range.closed(1, 5));
@@ -228,7 +233,8 @@ public class AsyncResultSetImplTest {
             return CallbackResponse.DONE;
           });
     }
-    Exception e = receivedErr.take();
+    Exception e = receivedErr.poll(10, TimeUnit.SECONDS);
+    assertThat(e).isNotNull();
     assertThat(e).isInstanceOf(SpannerException.class);
     SpannerException se = (SpannerException) e;
     assertThat(se.getErrorCode()).isEqualTo(ErrorCode.INVALID_ARGUMENT);
@@ -263,7 +269,8 @@ public class AsyncResultSetImplTest {
             return CallbackResponse.DONE;
           });
     }
-    Exception e = receivedErr.take();
+    Exception e = receivedErr.poll(10, TimeUnit.SECONDS);
+    assertThat(e).isNotNull();
     assertThat(e).isInstanceOf(SpannerException.class);
     SpannerException se = (SpannerException) e;
     assertThat(se.getErrorCode()).isEqualTo(ErrorCode.INVALID_ARGUMENT);
@@ -300,8 +307,12 @@ public class AsyncResultSetImplTest {
             return CallbackResponse.DONE;
           });
       int rowCounter = 0;
+      Stopwatch stopwatch = Stopwatch.createStarted();
       while (!finished.get()) {
-        Object o = queue.poll(1L, TimeUnit.MILLISECONDS);
+        if (stopwatch.elapsed(TimeUnit.SECONDS) > 10) {
+          throw new RuntimeException("Test timed out waiting for finished");
+        }
+        Object o = queue.poll(10L, TimeUnit.MILLISECONDS);
         if (o != null) {
           rowCounter++;
         }
@@ -359,8 +370,12 @@ public class AsyncResultSetImplTest {
                 }
               });
       int rowCounter = 0;
+      Stopwatch stopwatch = Stopwatch.createStarted();
       while (!callbackResult.isDone()) {
-        Object o = queue.poll(1L, TimeUnit.MILLISECONDS);
+        if (stopwatch.elapsed(TimeUnit.SECONDS) > 10) {
+          throw new RuntimeException("Test timed out waiting for callbackResult");
+        }
+        Object o = queue.poll(10L, TimeUnit.MILLISECONDS);
         if (o != null) {
           rowCounter++;
         }
@@ -453,8 +468,12 @@ public class AsyncResultSetImplTest {
             return CallbackResponse.DONE;
           });
       int rowCounter = 0;
+      Stopwatch stopwatch = Stopwatch.createStarted();
       while (!finished.get()) {
-        Object o = queue.poll(1L, TimeUnit.MILLISECONDS);
+        if (stopwatch.elapsed(TimeUnit.SECONDS) > 10) {
+          throw new RuntimeException("Test timed out waiting for finished");
+        }
+        Object o = queue.poll(10L, TimeUnit.MILLISECONDS);
         if (o != null) {
           rowCounter++;
         }
