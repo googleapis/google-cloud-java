@@ -18,9 +18,24 @@ package com.google.cloud.bigquery.jdbc.it.suites;
 
 import com.google.cloud.bigquery.jdbc.it.ITAuthTests;
 import com.google.cloud.bigquery.jdbc.it.ITBigQueryJDBCTest;
+import com.google.cloud.bigquery.jdbc.it.ITCallableStatementTest;
+import com.google.cloud.bigquery.jdbc.it.ITConnectionPoolingTest;
+import com.google.cloud.bigquery.jdbc.it.ITConnectionTest;
+import com.google.cloud.bigquery.jdbc.it.ITDatabaseMetadataTest;
+import com.google.cloud.bigquery.jdbc.it.ITDriverTest;
+import com.google.cloud.bigquery.jdbc.it.ITResultSetMetadataTest;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 
 @Suite
-@SelectClasses({ITAuthTests.class, ITBigQueryJDBCTest.class})
+@SelectClasses({
+  ITAuthTests.class,
+  ITBigQueryJDBCTest.class,
+  ITCallableStatementTest.class,
+  ITConnectionTest.class,
+  ITConnectionPoolingTest.class,
+  ITDatabaseMetadataTest.class,
+  ITDriverTest.class,
+  ITResultSetMetadataTest.class
+})
 public class ITPresubmitTests {}

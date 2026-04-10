@@ -184,6 +184,7 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
+      - name: Compile with Java 17 and run tests with Java 8
         shell: bash
         run: |
           set -x
