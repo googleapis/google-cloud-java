@@ -19,7 +19,7 @@ deep-remove-regex:
 - "/java-compute/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/.*google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
+- "/.*google-.*/src/main/java/com/google/[^/]+/.*/v.*/stub/Version.java"
 - "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/.*google-cloud-compute/src/test/java/com/google/cloud/compute/v1/integration"
 

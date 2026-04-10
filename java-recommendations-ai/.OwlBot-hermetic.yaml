@@ -20,7 +20,7 @@ deep-remove-regex:
 - "/java-recommendations-ai/google-.*/src"
 
 deep-preserve-regex:
-- "/.*google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
+- "/.*google-.*/src/main/java/com/google/[^/]+/.*/v.*/stub/Version.java"
 - "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
