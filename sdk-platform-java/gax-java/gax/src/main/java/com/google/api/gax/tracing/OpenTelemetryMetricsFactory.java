@@ -51,7 +51,10 @@ public class OpenTelemetryMetricsFactory implements ApiTracerFactory {
     this.clientLevelTracerContext = ApiTracerContext.empty();
   }
 
-  private OpenTelemetryMetricsFactory(ApiTracerContext clientLevelTracerContext, OpenTelemetry openTelemetry, GoldenSignalsMetricsRecorder metricsRecorder) {
+  private OpenTelemetryMetricsFactory(
+      ApiTracerContext clientLevelTracerContext,
+      OpenTelemetry openTelemetry,
+      GoldenSignalsMetricsRecorder metricsRecorder) {
     this.clientLevelTracerContext = clientLevelTracerContext;
     this.openTelemetry = openTelemetry;
     this.metricsRecorder = metricsRecorder;
@@ -89,11 +92,11 @@ public class OpenTelemetryMetricsFactory implements ApiTracerFactory {
     if (context == null) {
       return new BaseApiTracerFactory();
     }
-    metricsRecorder =
-        GoldenSignalsMetricsRecorder.create(openTelemetry, context.libraryMetadata());
+    metricsRecorder = GoldenSignalsMetricsRecorder.create(openTelemetry, context.libraryMetadata());
     if (metricsRecorder == null) {
       return new BaseApiTracerFactory();
     }
-    return new OpenTelemetryMetricsFactory(clientLevelTracerContext.merge(context), openTelemetry, metricsRecorder);
+    return new OpenTelemetryMetricsFactory(
+        clientLevelTracerContext.merge(context), openTelemetry, metricsRecorder);
   }
 }

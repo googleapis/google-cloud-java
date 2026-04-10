@@ -30,7 +30,6 @@
 package com.google.api.gax.tracing;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.mockito.Answers.RETURNS_DEEP_STUBS;
 import static org.mockito.Mockito.*;
 
 import com.google.api.gax.rpc.LibraryMetadata;
@@ -75,9 +74,10 @@ class OpenTelemetryMetricsFactoryTest {
         ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
     ApiTracerContext methodLevelTracerContext =
         ApiTracerContext.newBuilder().setLibraryMetadata(LibraryMetadata.empty()).build();
-    
+
     ApiTracerFactory factoryWithContext = tracerFactory.withContext(clientLevelTracerContext);
-    ApiTracer actual = factoryWithContext.newTracer(mock(ApiTracer.class), methodLevelTracerContext);
+    ApiTracer actual =
+        factoryWithContext.newTracer(mock(ApiTracer.class), methodLevelTracerContext);
 
     assertThat(actual).isInstanceOf(OpenTelemetryMetricsTracer.class);
   }
