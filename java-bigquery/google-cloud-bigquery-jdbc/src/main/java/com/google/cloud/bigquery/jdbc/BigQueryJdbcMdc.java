@@ -32,7 +32,8 @@ public class BigQueryJdbcMdc {
       new ConcurrentHashMap<>();
 
   /** Allocates an exclusive InheritableThreadLocal and registers the connection mapping. */
-  private static final InheritableThreadLocal<String> currentConnectionId = new InheritableThreadLocal<>();
+  private static final InheritableThreadLocal<String> currentConnectionId =
+      new InheritableThreadLocal<>();
 
   public static void registerInstance(BigQueryConnection connection, String id) {
     if (connection != null) {
