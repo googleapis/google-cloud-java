@@ -197,8 +197,9 @@ public class KeyAwareChannelTest {
     commitCall.sendMessage(
         CommitRequest.newBuilder().setSession(SESSION).setTransactionId(transactionId).build());
 
-    // affinityEndpoint now uses getIfPresent (non-creating), so getCount stays at 0.
-    assertThat(harness.endpointCache.getCount(DEFAULT_ADDRESS)).isEqualTo(0);
+    // Affinity lookup now uses get(), which can lazily create or fetch the endpoint before
+    // falling back to default when it is not ready.
+    assertThat(harness.endpointCache.getCount(DEFAULT_ADDRESS)).isEqualTo(1);
 
     @SuppressWarnings("unchecked")
     RecordingClientCall<CommitRequest, CommitResponse> commitDelegate =
@@ -212,8 +213,8 @@ public class KeyAwareChannelTest {
     rollbackCall.sendMessage(
         RollbackRequest.newBuilder().setSession(SESSION).setTransactionId(transactionId).build());
 
-    // Rollback also uses getIfPresent for affinity, so getCount remains 0.
-    assertThat(harness.endpointCache.getCount(DEFAULT_ADDRESS)).isEqualTo(0);
+    // The deadline-exceeded close clears affinity, so rollback does not trigger another lookup.
+    assertThat(harness.endpointCache.getCount(DEFAULT_ADDRESS)).isEqualTo(1);
   }
 
   @Test

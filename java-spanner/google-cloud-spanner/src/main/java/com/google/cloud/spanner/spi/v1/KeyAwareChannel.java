@@ -155,9 +155,7 @@ final class KeyAwareChannel extends ManagedChannel {
   private void cleanupStaleChannelFinders() {
     ChannelFinderReference reference;
     while ((reference = (ChannelFinderReference) channelFinderReferenceQueue.poll()) != null) {
-      if (channelFinders.remove(reference.databaseId, reference) && lifecycleManager != null) {
-        lifecycleManager.unregisterFinder(reference.databaseId);
-      }
+      channelFinders.remove(reference.databaseId, reference);
     }
   }
 
@@ -173,7 +171,7 @@ final class KeyAwareChannel extends ManagedChannel {
         if (finder == null) {
           finder =
               lifecycleManager != null
-                  ? new ChannelFinder(endpointCache, lifecycleManager, databaseId)
+                  ? new ChannelFinder(endpointCache, lifecycleManager)
                   : new ChannelFinder(endpointCache);
           channelFinders.put(
               databaseId,
@@ -273,19 +271,14 @@ final class KeyAwareChannel extends ManagedChannel {
     if (address == null || excludedEndpoints.test(address)) {
       return null;
     }
-    // Use non-creating lookup and require READY state for location-aware routing.
-    ChannelEndpoint endpoint = endpointCache.getIfPresent(address);
-    if (endpoint == null) {
-      logger.log(
-          Level.FINE,
-          "Affinity endpoint for address {0} not present in cache, falling back to default",
-          address);
-      return null;
-    }
+    ChannelEndpoint endpoint = endpointCache.get(address);
     if (!endpoint.isHealthy()) {
+      if (lifecycleManager != null) {
+        lifecycleManager.requestEndpointRecreation(address);
+      }
       logger.log(
           Level.FINE,
-          "Affinity endpoint for address {0} not READY, falling back to default",
+          "Affinity endpoint for address {0} is not READY, falling back to default",
           address);
       return null;
     }

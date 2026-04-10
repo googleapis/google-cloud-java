@@ -565,9 +565,9 @@ public final class KeyRangeCache {
      *       skipped_tablets.
      *   <li>Endpoint exists and READY: usable, do not skip.
      *   <li>Endpoint exists and TRANSIENT_FAILURE: skip and report in skipped_tablets.
-     *   <li>Endpoint absent, IDLE, CONNECTING, SHUTDOWN, or unsupported: skip silently unless the
-     *       lifecycle manager recently evicted the address for repeated TRANSIENT_FAILURE, in which
-     *       case report it in skipped_tablets.
+     *   <li>Endpoint absent, IDLE, CONNECTING, SHUTDOWN, or unsupported: create or register it for
+     *       background warmup, then skip silently unless the lifecycle manager recently evicted the
+     *       address for repeated TRANSIENT_FAILURE, in which case report it in skipped_tablets.
      * </ul>
      */
     boolean shouldSkip(
@@ -590,32 +590,18 @@ public final class KeyRangeCache {
         endpoint = null;
       }
 
-      // Lookup without creating: location-aware routing should not trigger foreground endpoint
-      // creation.
       if (endpoint == null) {
-        endpoint = endpointCache.getIfPresent(serverAddress);
+        endpoint = endpointCache.get(serverAddress);
       }
 
-      // No endpoint exists yet - skip silently, request background recreation so the
-      // endpoint becomes available for future requests.
-      if (endpoint == null) {
-        logger.log(
-            Level.FINE,
-            "Tablet {0} at {1}: no endpoint present, skipping silently",
-            new Object[] {tabletUid, serverAddress});
-        maybeAddRecentTransientFailureSkip(hintBuilder, skippedTabletUids);
-        if (lifecycleManager != null) {
-          lifecycleManager.requestEndpointRecreation(serverAddress);
-        }
-        return true;
-      }
-
-      // READY - usable for location-aware routing.
       if (endpoint.isHealthy()) {
         return false;
       }
 
-      // TRANSIENT_FAILURE - skip and report so server can refresh client cache.
+      if (lifecycleManager != null) {
+        lifecycleManager.requestEndpointRecreation(serverAddress);
+      }
+
       if (endpoint.isTransientFailure()) {
         logger.log(
             Level.FINE,
@@ -625,7 +611,6 @@ public final class KeyRangeCache {
         return true;
       }
 
-      // IDLE, CONNECTING, SHUTDOWN, or unsupported - skip silently.
       logger.log(
           Level.FINE,
           "Tablet {0} at {1}: endpoint not ready, skipping silently",
@@ -677,7 +662,7 @@ public final class KeyRangeCache {
 
     ChannelEndpoint pick(RoutingHint.Builder hintBuilder) {
       hintBuilder.setTabletUid(tabletUid);
-      // Endpoint must already exist and be READY if shouldSkip returned false.
+      // Endpoint is already cached on the tablet and READY if shouldSkip returned false.
       return endpoint;
     }
 
@@ -763,10 +748,9 @@ public final class KeyRangeCache {
           directedReadOptions.getReplicasCase()
               != DirectedReadOptions.ReplicasCase.REPLICAS_NOT_SET;
 
-      // Select a tablet while holding the lock. With state-aware routing, only READY
-      // endpoints pass shouldSkip(), so the selected tablet always has a cached
-      // endpoint. No foreground endpoint creation is needed — the lifecycle manager
-      // creates endpoints in the background.
+      // Select a tablet while holding the lock. shouldSkip() creates missing endpoints on
+      // demand, registers them for background warmup if needed, and only accepts READY tablets
+      // for the foreground RPC.
       synchronized (this) {
         CachedTablet selected =
             selectTabletLocked(

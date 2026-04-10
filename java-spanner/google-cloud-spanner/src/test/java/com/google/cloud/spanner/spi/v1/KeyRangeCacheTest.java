@@ -218,7 +218,6 @@ public class KeyRangeCacheTest {
             DirectedReadOptions.getDefaultInstance(),
             hint);
 
-    // IDLE causes silent skip — falls back to null (default host), no skipped_tablets.
     assertNull(server);
     assertEquals(0, hint.getSkippedTabletUidCount());
   }
@@ -284,16 +283,14 @@ public class KeyRangeCacheTest {
             DirectedReadOptions.getDefaultInstance(),
             hint);
 
-    // Unsupported state: skip silently, no skipped_tablets.
     assertNull(server);
     assertEquals(0, hint.getSkippedTabletUidCount());
   }
 
   @Test
-  public void missingEndpointCausesDefaultHostFallbackWithoutSkippedTablet() {
-    // Endpoint not in cache at all — getIfPresent returns null.
+  public void missingEndpointCreatesPoolAndFallsBackToDefaultUntilReady() {
     FakeEndpointCache endpointCache = new FakeEndpointCache();
-    endpointCache.setCreateOnGet(false);
+    endpointCache.setDefaultCreatedState(EndpointHealthState.IDLE);
     KeyRangeCache cache = new KeyRangeCache(endpointCache);
     cache.addRanges(singleReplicaUpdate("server1"));
 
@@ -306,6 +303,7 @@ public class KeyRangeCacheTest {
             hint);
 
     assertNull(server);
+    assertNotNull(endpointCache.getIfPresent("server1"));
     assertEquals(0, hint.getSkippedTabletUidCount());
   }
 
@@ -376,6 +374,7 @@ public class KeyRangeCacheTest {
   @Test
   public void recentlyEvictedTransientFailureEndpointStillAddsSkippedTablet() {
     FakeEndpointCache endpointCache = new FakeEndpointCache();
+    endpointCache.setDefaultCreatedState(EndpointHealthState.IDLE);
     RecentTransientFailureLifecycleManager lifecycleManager =
         new RecentTransientFailureLifecycleManager(endpointCache);
     try {
@@ -424,7 +423,6 @@ public class KeyRangeCacheTest {
 
     assertNotNull(server);
     assertEquals("server2", server.getAddress());
-    // server1 was IDLE, so no skipped_tablets for it.
     assertEquals(0, hint.getSkippedTabletUidCount());
   }
 
@@ -585,15 +583,13 @@ public class KeyRangeCacheTest {
 
   @Test
   public void missingEndpointTriggersRecreationViaLifecycleManager() {
-    // Bug 2 regression: when a routing lookup finds no endpoint, it should call
-    // requestEndpointRecreation so the endpoint becomes available for future requests.
     FakeEndpointCache endpointCache = new FakeEndpointCache();
+    endpointCache.setDefaultCreatedState(EndpointHealthState.IDLE);
     TrackingLifecycleManager tracking = new TrackingLifecycleManager(endpointCache);
     try {
       KeyRangeCache cache = new KeyRangeCache(endpointCache, tracking);
       cache.addRanges(singleReplicaUpdate("server1"));
 
-      // No endpoint exists in cache.
       RoutingHint.Builder hint = RoutingHint.newBuilder().setKey(bytes("a"));
       ChannelEndpoint server =
           cache.fillRoutingHint(
@@ -602,10 +598,8 @@ public class KeyRangeCacheTest {
               DirectedReadOptions.getDefaultInstance(),
               hint);
 
-      // Should fall back to default.
       assertNull(server);
-
-      // Lifecycle manager should have been asked to recreate the endpoint.
+      assertNotNull(endpointCache.getIfPresent("server1"));
       assertTrue(
           "requestEndpointRecreation should have been called for server1",
           tracking.recreationRequested.contains("server1"));
@@ -625,6 +619,7 @@ public class KeyRangeCacheTest {
     @Override
     void requestEndpointRecreation(String address) {
       recreationRequested.add(address);
+      super.requestEndpointRecreation(address);
     }
   }
 
@@ -777,7 +772,7 @@ public class KeyRangeCacheTest {
   static final class FakeEndpointCache implements ChannelEndpointCache {
     private final Map<String, FakeEndpoint> endpoints = new HashMap<>();
     private final FakeEndpoint defaultEndpoint = new FakeEndpoint("default");
-    private boolean createOnGet = true;
+    private EndpointHealthState defaultCreatedState = EndpointHealthState.READY;
 
     @Override
     public ChannelEndpoint defaultChannel() {
@@ -786,7 +781,13 @@ public class KeyRangeCacheTest {
 
     @Override
     public ChannelEndpoint get(String address) {
-      return endpoints.computeIfAbsent(address, FakeEndpoint::new);
+      return endpoints.computeIfAbsent(
+          address,
+          key -> {
+            FakeEndpoint endpoint = new FakeEndpoint(key);
+            endpoint.setState(defaultCreatedState);
+            return endpoint;
+          });
     }
 
     @Override
@@ -805,8 +806,8 @@ public class KeyRangeCacheTest {
       endpoints.clear();
     }
 
-    void setCreateOnGet(boolean createOnGet) {
-      this.createOnGet = createOnGet;
+    void setDefaultCreatedState(EndpointHealthState defaultCreatedState) {
+      this.defaultCreatedState = defaultCreatedState;
     }
 
     void setState(String address, EndpointHealthState state) {

@@ -27,13 +27,8 @@ import io.grpc.CallOptions;
 import io.grpc.ClientCall;
 import io.grpc.ManagedChannel;
 import io.grpc.MethodDescriptor;
-import java.lang.reflect.Field;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import org.junit.Test;
@@ -44,39 +39,16 @@ import org.junit.runners.JUnit4;
 public class ChannelFinderTest {
 
   @Test
-  public void updateAsyncDrainsQueuedUpdatesInOrderWithoutDroppingAny() throws Exception {
-    ExecutorService executor = cacheUpdatePool();
-    int threadCount = maxCacheUpdateThreads();
-    CountDownLatch workersStarted = new CountDownLatch(threadCount);
-    CountDownLatch releaseWorkers = new CountDownLatch(1);
-
-    try {
-      for (int i = 0; i < threadCount; i++) {
-        executor.execute(
-            () -> {
-              workersStarted.countDown();
-              try {
-                releaseWorkers.await(5, TimeUnit.SECONDS);
-              } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-              }
-            });
-      }
-      assertThat(workersStarted.await(5, TimeUnit.SECONDS)).isTrue();
-
-      ChannelFinder finder = new ChannelFinder(new FakeEndpointCache());
-      int updateCount = 64;
-      for (int i = 0; i < updateCount; i++) {
-        finder.updateAsync(singleRangeUpdate(i));
-      }
-
-      releaseWorkers.countDown();
-      finder.awaitPendingUpdates();
-
-      assertThat(rangeCache(finder).size()).isEqualTo(updateCount);
-    } finally {
-      releaseWorkers.countDown();
+  public void updateAsyncAppliesUpdatesInlineWithoutDroppingAny() throws Exception {
+    ChannelFinder finder = new ChannelFinder(new FakeEndpointCache());
+    int updateCount = 64;
+    for (int i = 0; i < updateCount; i++) {
+      finder.updateAsync(singleRangeUpdate(i));
     }
+
+    finder.awaitPendingUpdates();
+
+    assertThat(rangeCache(finder).size()).isEqualTo(updateCount);
   }
 
   @Test
@@ -114,28 +86,6 @@ public class ChannelFinderTest {
     assertThat(rangeCache(finder).size()).isEqualTo(0);
   }
 
-  @Test
-  public void updateDoesNotBlockOnLifecycleManagerAddressReconciliation() throws Exception {
-    BlockingLifecycleManager lifecycleManager =
-        new BlockingLifecycleManager(new FakeEndpointCache());
-    ChannelFinder finder = new ChannelFinder(new FakeEndpointCache(), lifecycleManager, "db-1");
-    ExecutorService executor = Executors.newSingleThreadExecutor();
-    try {
-      Future<?> future = executor.submit(() -> finder.update(singleRangeUpdate(0)));
-
-      future.get(1, TimeUnit.SECONDS);
-      assertThat(lifecycleManager.updateStarted.await(5, TimeUnit.SECONDS)).isTrue();
-      assertThat(rangeCache(finder).size()).isEqualTo(1);
-
-      lifecycleManager.releaseUpdate.countDown();
-      assertThat(lifecycleManager.updateFinished.await(5, TimeUnit.SECONDS)).isTrue();
-    } finally {
-      lifecycleManager.releaseUpdate.countDown();
-      lifecycleManager.shutdown();
-      executor.shutdownNow();
-    }
-  }
-
   private static CacheUpdate singleRangeUpdate(int index) {
     String startKey = String.format("k%05d", index);
     String limitKey = String.format("k%05d", index + 1);
@@ -166,26 +116,14 @@ public class ChannelFinderTest {
     return ByteString.copyFromUtf8(value);
   }
 
-  private static ExecutorService cacheUpdatePool() throws Exception {
-    Field field = ChannelFinder.class.getDeclaredField("CACHE_UPDATE_POOL");
-    field.setAccessible(true);
-    return (ExecutorService) field.get(null);
-  }
-
-  private static int maxCacheUpdateThreads() throws Exception {
-    Field field = ChannelFinder.class.getDeclaredField("MAX_CACHE_UPDATE_THREADS");
-    field.setAccessible(true);
-    return field.getInt(null);
-  }
-
   private static long databaseId(ChannelFinder finder) throws Exception {
-    Field field = ChannelFinder.class.getDeclaredField("databaseId");
+    java.lang.reflect.Field field = ChannelFinder.class.getDeclaredField("databaseId");
     field.setAccessible(true);
     return ((AtomicLong) field.get(finder)).get();
   }
 
   private static KeyRangeCache rangeCache(ChannelFinder finder) throws Exception {
-    Field field = ChannelFinder.class.getDeclaredField("rangeCache");
+    java.lang.reflect.Field field = ChannelFinder.class.getDeclaredField("rangeCache");
     field.setAccessible(true);
     return (KeyRangeCache) field.get(finder);
   }
@@ -206,7 +144,7 @@ public class ChannelFinderTest {
 
     @Override
     public ChannelEndpoint getIfPresent(String address) {
-      return endpoints.computeIfAbsent(address, FakeEndpoint::new);
+      return endpoints.get(address);
     }
 
     @Override
@@ -284,28 +222,6 @@ public class ChannelFinderTest {
     @Override
     public String authority() {
       return "fake";
-    }
-  }
-
-  private static final class BlockingLifecycleManager extends EndpointLifecycleManager {
-    private final CountDownLatch updateStarted = new CountDownLatch(1);
-    private final CountDownLatch releaseUpdate = new CountDownLatch(1);
-    private final CountDownLatch updateFinished = new CountDownLatch(1);
-
-    private BlockingLifecycleManager(ChannelEndpointCache endpointCache) {
-      super(endpointCache);
-    }
-
-    @Override
-    void updateActiveAddresses(String finderKey, java.util.Set<String> activeAddresses) {
-      updateStarted.countDown();
-      try {
-        releaseUpdate.await(5, TimeUnit.SECONDS);
-      } catch (InterruptedException e) {
-        Thread.currentThread().interrupt();
-      } finally {
-        updateFinished.countDown();
-      }
     }
   }
 }

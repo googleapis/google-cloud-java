@@ -227,10 +227,6 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
       if (channel.isShutdown() || channel.isTerminated()) {
         return false;
       }
-      // Check connectivity state without triggering a connection attempt.
-      // Only READY channels are considered healthy for location-aware routing.
-      // Some channel implementations don't support getState(), in which case
-      // we treat the endpoint as not ready for location-aware routing (defensive).
       try {
         ConnectivityState state = channel.getState(false);
         boolean ready = state == ConnectivityState.READY;
