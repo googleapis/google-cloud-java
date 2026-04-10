@@ -38,13 +38,22 @@ import io.opentelemetry.api.OpenTelemetry;
  */
 public class OpenTelemetryMetricsFactory implements ApiTracerFactory {
 
-  private ApiTracerContext clientLevelTracerContext;
+  private final ApiTracerContext clientLevelTracerContext;
   private final OpenTelemetry openTelemetry;
   private GoldenSignalsMetricsRecorder metricsRecorder;
 
   public OpenTelemetryMetricsFactory(OpenTelemetry openTelemetry) {
     this.openTelemetry = openTelemetry;
     this.clientLevelTracerContext = ApiTracerContext.empty();
+  }
+
+  private OpenTelemetryMetricsFactory(
+      ApiTracerContext clientLevelTracerContext,
+      OpenTelemetry openTelemetry,
+      GoldenSignalsMetricsRecorder metricsRecorder) {
+    this.clientLevelTracerContext = clientLevelTracerContext;
+    this.openTelemetry = openTelemetry;
+    this.metricsRecorder = metricsRecorder;
   }
 
   @Override
@@ -79,12 +88,11 @@ public class OpenTelemetryMetricsFactory implements ApiTracerFactory {
     if (context == null) {
       return new BaseApiTracerFactory();
     }
-    this.metricsRecorder =
-        GoldenSignalsMetricsRecorder.create(openTelemetry, context.libraryMetadata());
-    if (this.metricsRecorder == null) {
+    metricsRecorder = GoldenSignalsMetricsRecorder.create(openTelemetry, context.libraryMetadata());
+    if (metricsRecorder == null) {
       return new BaseApiTracerFactory();
     }
-    this.clientLevelTracerContext = context;
-    return this;
+    return new OpenTelemetryMetricsFactory(
+        clientLevelTracerContext.merge(context), openTelemetry, metricsRecorder);
   }
 }
