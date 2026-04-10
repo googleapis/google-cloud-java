@@ -342,7 +342,7 @@ public abstract class ApiTracerContext {
 
     public abstract Builder setTransport(@Nullable Transport transport);
 
-    public abstract Builder setOperationType(@Nullable OperationType operationType);
+    abstract Builder setOperationType(@Nullable OperationType operationType);
 
     public abstract Builder setServerPort(@Nullable Integer serverPort);
 
@@ -354,7 +354,7 @@ public abstract class ApiTracerContext {
 
     public abstract Builder setUrlDomain(@Nullable String urlDomain);
 
-    public abstract Builder setDestinationResourceIdSupplier(
+    abstract Builder setDestinationResourceIdSupplier(
         @Nullable Supplier<String> destinationResourceIdSupplier);
 
     public abstract ApiTracerContext build();
