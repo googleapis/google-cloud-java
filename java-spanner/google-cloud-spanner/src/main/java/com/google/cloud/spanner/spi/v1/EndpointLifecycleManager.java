@@ -24,11 +24,11 @@ import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -104,20 +104,6 @@ class EndpointLifecycleManager {
   private final Map<String, EndpointState> endpoints = new ConcurrentHashMap<>();
   private final Set<String> transientFailureEvictedAddresses = ConcurrentHashMap.newKeySet();
 
-  /**
-   * Active addresses reported by each ChannelFinder, keyed by database id.
-   *
-   * <p>ChannelFinder instances are held via SoftReference in KeyAwareChannel, so this map uses a
-   * stable database-id key instead of a strong ChannelFinder reference. KeyAwareChannel unregisters
-   * stale entries when a finder is cleared.
-   *
-   * <p>All reads and writes to this map, and all updates to {@link
-   * #transientFailureEvictedAddresses}, are synchronized on {@link #activeAddressLock}.
-   */
-  private final Map<String, Set<String>> activeAddressesPerFinder = new ConcurrentHashMap<>();
-
-  private final Object activeAddressLock = new Object();
-
   private final ScheduledExecutorService scheduler;
   private final AtomicBoolean isShutdown = new AtomicBoolean(false);
   private final long probeIntervalSeconds;
@@ -164,52 +150,23 @@ class EndpointLifecycleManager {
             TimeUnit.SECONDS);
   }
 
-  /**
-   * Ensures an endpoint state exists for the given address.
-   *
-   * <p>This is only called from {@link #updateActiveAddresses} under {@link #activeAddressLock} to
-   * guarantee that newly created endpoints are registered as active before any stale-eviction check
-   * can see them. Background creation tasks are scheduled by the caller after {@code
-   * computeIfAbsent} returns, so the entry is visible in the map before the scheduler thread checks
-   * it.
-   *
-   * @return true if a new endpoint state was created (caller should schedule background creation)
-   */
-  private boolean ensureEndpointExists(String address) {
-    if (isShutdown.get() || address == null || address.isEmpty()) {
-      return false;
-    }
-    // Don't manage the default endpoint.
-    if (defaultEndpointAddress.equals(address)) {
-      return false;
-    }
-
-    boolean[] created = {false};
-    endpoints.computeIfAbsent(
-        address,
-        addr -> {
-          logger.log(Level.FINE, "Creating endpoint state for address: {0}", addr);
-          created[0] = true;
-          return new EndpointState(addr, clock.instant());
-        });
-    return created[0];
-  }
-
-  private void retainTransientFailureEvictionMarkers(Set<String> activeAddresses) {
-    synchronized (activeAddressLock) {
-      transientFailureEvictedAddresses.retainAll(activeAddresses);
-    }
-  }
-
   private void markTransientFailureEvicted(String address) {
-    synchronized (activeAddressLock) {
-      transientFailureEvictedAddresses.add(address);
-    }
+    transientFailureEvictedAddresses.add(address);
   }
 
   private void clearTransientFailureEvictionMarker(String address) {
-    synchronized (activeAddressLock) {
-      transientFailureEvictedAddresses.remove(address);
+    transientFailureEvictedAddresses.remove(address);
+  }
+
+  private void submitLifecycleTask(String description, Runnable task) {
+    try {
+      scheduler.submit(task);
+    } catch (RejectedExecutionException e) {
+      logger.log(
+          Level.FINE,
+          String.format(
+              "Skipping lifecycle task '%s': lifecycle manager is shutting down", description),
+          e);
     }
   }
 
@@ -234,102 +191,7 @@ class EndpointLifecycleManager {
             });
     state.lastRealTrafficAt = now;
     if (created[0]) {
-      scheduler.submit(() -> startProbing(address));
-    }
-  }
-
-  /**
-   * Atomically ensures endpoints exist for all active addresses and evicts any managed endpoints
-   * that are no longer referenced by any finder. This handles the case where a tablet's server
-   * address changes (e.g. from server1:15000 to server2:15000) — the old endpoint is shut down
-   * promptly instead of lingering until idle eviction.
-   *
-   * <p>Both endpoint creation and stale-eviction are performed under the same lock to prevent a
-   * race condition where a newly created endpoint could be evicted by a concurrent call from
-   * another finder before it is registered as active.
-   *
-   * @param finderKey stable identifier of the ChannelFinder reporting its active addresses
-   * @param activeAddresses server addresses currently referenced by tablets in this finder
-   */
-  void updateActiveAddresses(String finderKey, Set<String> activeAddresses) {
-    if (isShutdown.get() || finderKey == null || finderKey.isEmpty()) {
-      return;
-    }
-    List<String> newlyCreated = new ArrayList<>();
-    synchronized (activeAddressLock) {
-      // Ensure endpoints exist for all active addresses while holding the lock.
-      // This guarantees the addresses are in the endpoints map before we compute stale entries.
-      for (String address : activeAddresses) {
-        if (ensureEndpointExists(address)) {
-          newlyCreated.add(address);
-        }
-      }
-
-      activeAddressesPerFinder.put(finderKey, activeAddresses);
-
-      // Compute the union of all active addresses across all finders.
-      Set<String> allActive = new HashSet<>();
-      for (Set<String> addresses : activeAddressesPerFinder.values()) {
-        allActive.addAll(addresses);
-      }
-      retainTransientFailureEvictionMarkers(allActive);
-
-      // Evict managed endpoints not referenced by any finder.
-      List<String> stale = new ArrayList<>();
-      for (String address : endpoints.keySet()) {
-        if (!allActive.contains(address)) {
-          stale.add(address);
-        }
-      }
-
-      for (String address : stale) {
-        logger.log(
-            Level.FINE, "Evicting stale endpoint {0}: no longer referenced by any tablet", address);
-        evictEndpoint(address);
-      }
-    }
-
-    // Schedule background creation tasks AFTER computeIfAbsent has returned and the entries
-    // are visible to other threads. Submitting from inside computeIfAbsent creates a race
-    // where the scheduler thread can run before the entry is published in the map.
-    for (String address : newlyCreated) {
-      scheduler.submit(() -> createAndStartProbing(address));
-    }
-  }
-
-  /**
-   * Unregisters a finder and evicts any managed endpoints that are no longer referenced by the
-   * remaining finders.
-   */
-  void unregisterFinder(String finderKey) {
-    if (isShutdown.get() || finderKey == null || finderKey.isEmpty()) {
-      return;
-    }
-    synchronized (activeAddressLock) {
-      if (activeAddressesPerFinder.remove(finderKey) == null) {
-        return;
-      }
-
-      Set<String> allActive = new HashSet<>();
-      for (Set<String> addresses : activeAddressesPerFinder.values()) {
-        allActive.addAll(addresses);
-      }
-      retainTransientFailureEvictionMarkers(allActive);
-
-      List<String> stale = new ArrayList<>();
-      for (String address : endpoints.keySet()) {
-        if (!allActive.contains(address)) {
-          stale.add(address);
-        }
-      }
-
-      for (String address : stale) {
-        logger.log(
-            Level.FINE,
-            "Evicting stale endpoint {0}: finder {1} was unregistered",
-            new Object[] {address, finderKey});
-        evictEndpoint(address);
-      }
+      submitLifecycleTask("startProbing", () -> startProbing(address));
     }
   }
 
@@ -567,7 +429,7 @@ class EndpointLifecycleManager {
     EndpointState state = new EndpointState(address, clock.instant());
     if (endpoints.putIfAbsent(address, state) == null) {
       // Schedule after putIfAbsent returns so the entry is visible to the scheduler thread.
-      scheduler.submit(() -> createAndStartProbing(address));
+      submitLifecycleTask("createAndStartProbing", () -> createAndStartProbing(address));
     }
   }
 

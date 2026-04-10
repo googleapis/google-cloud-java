@@ -26,11 +26,7 @@ import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.ZoneId;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.LockSupport;
 import java.util.function.BooleanSupplier;
 import org.junit.After;
@@ -43,9 +39,6 @@ public class EndpointLifecycleManagerTest {
 
   private EndpointLifecycleManager manager;
 
-  /** Counter for generating unique finder keys in tests. */
-  private static final AtomicLong TEST_FINDER_ID = new AtomicLong(1000);
-
   @After
   public void tearDown() {
     if (manager != null) {
@@ -53,16 +46,10 @@ public class EndpointLifecycleManagerTest {
     }
   }
 
-  /**
-   * Registers addresses with the lifecycle manager via updateActiveAddresses, which atomically
-   * creates endpoints and registers them as active. This mirrors how ChannelFinder.update() works.
-   */
-  private static String registerAddresses(EndpointLifecycleManager mgr, String... addresses) {
-    String finderId = "finder-" + TEST_FINDER_ID.incrementAndGet();
-    Set<String> addressSet = new HashSet<>();
-    Collections.addAll(addressSet, addresses);
-    mgr.updateActiveAddresses(finderId, addressSet);
-    return finderId;
+  private static void registerAddresses(EndpointLifecycleManager mgr, String... addresses) {
+    for (String address : addresses) {
+      mgr.requestEndpointRecreation(address);
+    }
   }
 
   private static void awaitCondition(String message, BooleanSupplier condition) {
@@ -103,10 +90,9 @@ public class EndpointLifecycleManagerTest {
         new EndpointLifecycleManager(
             cache, /* probeIntervalSeconds= */ 60, Duration.ofMinutes(30), Clock.systemUTC());
 
-    String finderId = registerAddresses(manager, "server1");
-    // Re-register with the same finder ID — should not create duplicate state.
-    manager.updateActiveAddresses(finderId, Collections.singleton("server1"));
-    manager.updateActiveAddresses(finderId, Collections.singleton("server1"));
+    registerAddresses(manager, "server1");
+    manager.requestEndpointRecreation("server1");
+    manager.requestEndpointRecreation("server1");
 
     assertEquals(1, manager.managedEndpointCount());
   }
@@ -118,7 +104,7 @@ public class EndpointLifecycleManagerTest {
         new EndpointLifecycleManager(
             cache, /* probeIntervalSeconds= */ 60, Duration.ofMinutes(30), Clock.systemUTC());
 
-    registerAddresses(manager, "default");
+    manager.requestEndpointRecreation("default");
 
     assertFalse(manager.isManaged("default"));
     assertEquals(0, manager.managedEndpointCount());
@@ -154,8 +140,6 @@ public class EndpointLifecycleManagerTest {
     manager =
         new EndpointLifecycleManager(
             cache, /* probeIntervalSeconds= */ 60, Duration.ofMinutes(30), clock);
-
-    registerAddresses(manager, "server1");
 
     Instant before = clock.instant();
     clock.advance(Duration.ofMinutes(5));
@@ -268,28 +252,6 @@ public class EndpointLifecycleManagerTest {
   }
 
   @Test
-  public void transientFailureEvictionMarkerRemovedWhenAddressNoLongerActive() throws Exception {
-    KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
-    manager =
-        new EndpointLifecycleManager(
-            cache, /* probeIntervalSeconds= */ 1, Duration.ofMinutes(30), Clock.systemUTC());
-
-    String finder = registerAddresses(manager, "server1");
-    awaitCondition(
-        "endpoint should be created in background", () -> cache.getIfPresent("server1") != null);
-
-    cache.setState("server1", KeyRangeCacheTest.EndpointHealthState.TRANSIENT_FAILURE);
-    awaitCondition(
-        "endpoint should be evicted after repeated transient failures",
-        () ->
-            !manager.isManaged("server1") && manager.wasRecentlyEvictedTransientFailure("server1"));
-
-    manager.updateActiveAddresses(finder, Collections.emptySet());
-
-    assertFalse(manager.wasRecentlyEvictedTransientFailure("server1"));
-  }
-
-  @Test
   public void shutdownStopsAllProbing() throws Exception {
     KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
     manager =
@@ -312,8 +274,8 @@ public class EndpointLifecycleManagerTest {
         new EndpointLifecycleManager(
             cache, /* probeIntervalSeconds= */ 60, Duration.ofMinutes(30), Clock.systemUTC());
 
-    manager.updateActiveAddresses("finder-1", Collections.singleton(""));
-    manager.updateActiveAddresses("finder-2", Collections.emptySet());
+    manager.requestEndpointRecreation("");
+    manager.requestEndpointRecreation(null);
 
     assertEquals(0, manager.managedEndpointCount());
   }
@@ -328,66 +290,6 @@ public class EndpointLifecycleManagerTest {
     // Should not throw or create state.
     manager.recordRealTraffic("default");
     manager.recordRealTraffic(null);
-    assertEquals(0, manager.managedEndpointCount());
-  }
-
-  @Test
-  public void staleEndpointEvictedWhenNoLongerActive() throws Exception {
-    KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
-    manager =
-        new EndpointLifecycleManager(
-            cache, /* probeIntervalSeconds= */ 60, Duration.ofMinutes(30), Clock.systemUTC());
-
-    // Finder 1 reports server1 and server2.
-    String finder1 = registerAddresses(manager, "server1", "server2");
-    assertEquals(2, manager.managedEndpointCount());
-
-    // Finder 1 updates: server1 is gone, only server2 remains.
-    manager.updateActiveAddresses(finder1, Collections.singleton("server2"));
-
-    // server1 should be evicted since no finder references it.
-    assertFalse(manager.isManaged("server1"));
-    assertTrue(manager.isManaged("server2"));
-    assertEquals(1, manager.managedEndpointCount());
-  }
-
-  @Test
-  public void endpointKeptIfReferencedByAnotherFinder() throws Exception {
-    KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
-    manager =
-        new EndpointLifecycleManager(
-            cache, /* probeIntervalSeconds= */ 60, Duration.ofMinutes(30), Clock.systemUTC());
-
-    // Finder 1 reports server1.
-    String finder1 = registerAddresses(manager, "server1");
-    // Finder 2 also reports server1.
-    registerAddresses(manager, "server1");
-
-    // Finder 1 drops server1, but finder 2 still references it.
-    manager.updateActiveAddresses(finder1, Collections.emptySet());
-
-    assertTrue(manager.isManaged("server1"));
-    assertEquals(1, manager.managedEndpointCount());
-  }
-
-  @Test
-  public void unregisterFinderEvictsEndpointsNoLongerReferenced() throws Exception {
-    KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
-    manager =
-        new EndpointLifecycleManager(
-            cache, /* probeIntervalSeconds= */ 60, Duration.ofMinutes(30), Clock.systemUTC());
-
-    String finder1 = registerAddresses(manager, "server1");
-    String finder2 = registerAddresses(manager, "server2");
-
-    manager.unregisterFinder(finder1);
-
-    assertFalse(manager.isManaged("server1"));
-    assertTrue(manager.isManaged("server2"));
-    assertEquals(1, manager.managedEndpointCount());
-
-    manager.unregisterFinder(finder2);
-
     assertEquals(0, manager.managedEndpointCount());
   }
 
