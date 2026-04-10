@@ -19,6 +19,8 @@ package com.google.cloud.spanner.spi.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.common.base.Preconditions;
+import com.google.spanner.v1.PartialResultSet;
+import io.grpc.MethodDescriptor;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.concurrent.GuardedBy;
@@ -67,8 +69,7 @@ public class EwmaLatencyTracker implements LatencyTracker {
     }
   }
 
-  @Override
-  public void update(Duration latency) {
+  void update(Duration latency) {
     long latencyMicros;
     try {
       latencyMicros = TimeUnit.MICROSECONDS.convert(latency.toNanos(), TimeUnit.NANOSECONDS);
@@ -91,5 +92,22 @@ public class EwmaLatencyTracker implements LatencyTracker {
   public void recordError(Duration penalty) {
     // Treat the error as a sample with high latency (penalty)
     update(penalty);
+  }
+
+  @Override
+  public boolean isEligible(MethodDescriptor<?, ?> methodDescriptor) {
+    String methodName = methodDescriptor.getFullMethodName();
+    return KeyAwareChannel.STREAMING_READ_METHOD.equals(methodName)
+        || KeyAwareChannel.STREAMING_SQL_METHOD.equals(methodName);
+  }
+
+  @Override
+  public void maybeUpdate(Object message, Duration latency) {
+    if (message instanceof PartialResultSet) {
+      PartialResultSet response = (PartialResultSet) message;
+      if (response.getLast()) {
+        update(latency);
+      }
+    }
   }
 }

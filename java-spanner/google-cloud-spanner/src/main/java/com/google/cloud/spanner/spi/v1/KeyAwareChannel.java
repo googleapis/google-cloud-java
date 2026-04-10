@@ -46,6 +46,7 @@ import io.opentelemetry.api.trace.Span;
 import java.io.IOException;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
+import java.time.Duration;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -72,9 +73,8 @@ final class KeyAwareChannel extends ManagedChannel {
   private static final long MAX_TRACKED_READ_ONLY_TRANSACTIONS = 100_000L;
   private static final long MAX_TRACKED_EXCLUDED_LOGICAL_REQUESTS = 100_000L;
   private static final long EXCLUDED_LOGICAL_REQUEST_TTL_MINUTES = 10L;
-  private static final String STREAMING_READ_METHOD = "google.spanner.v1.Spanner/StreamingRead";
-  private static final String STREAMING_SQL_METHOD =
-      "google.spanner.v1.Spanner/ExecuteStreamingSql";
+  static final String STREAMING_READ_METHOD = "google.spanner.v1.Spanner/StreamingRead";
+  static final String STREAMING_SQL_METHOD = "google.spanner.v1.Spanner/ExecuteStreamingSql";
   private static final String UNARY_SQL_METHOD = "google.spanner.v1.Spanner/ExecuteSql";
   private static final String BEGIN_TRANSACTION_METHOD =
       "google.spanner.v1.Spanner/BeginTransaction";
@@ -462,6 +462,7 @@ final class KeyAwareChannel extends ManagedChannel {
     private boolean isReadOnlyBegin;
     private boolean readOnlyIsStrong;
     private final Object lock = new Object();
+    volatile long startTimeNanos;
 
     KeyAwareClientCall(
         KeyAwareChannel parentChannel,
@@ -610,6 +611,7 @@ final class KeyAwareChannel extends ManagedChannel {
         }
         delegate.start(responseListener, headers);
         drainPendingRequests();
+        startTimeNanos = System.nanoTime();
         delegate.sendMessage(message);
         if (pendingHalfClose) {
           delegate.halfClose();
@@ -810,6 +812,7 @@ final class KeyAwareChannel extends ManagedChannel {
   static final class KeyAwareClientCallListener<ResponseT>
       extends SimpleForwardingClientCallListener<ResponseT> {
     private final KeyAwareClientCall<?, ResponseT> call;
+    private boolean firstMessageReceived = false;
 
     KeyAwareClientCallListener(
         ClientCall.Listener<ResponseT> responseListener, KeyAwareClientCall<?, ResponseT> call) {
@@ -819,6 +822,18 @@ final class KeyAwareChannel extends ManagedChannel {
 
     @Override
     public void onMessage(ResponseT message) {
+      if (!firstMessageReceived) {
+        firstMessageReceived = true;
+        // call.selectedEndpoint will in real usage never be null when we reach this
+        // point.
+        if (call.selectedEndpoint != null) {
+          LatencyTracker tracker = call.selectedEndpoint.getLatencyTracker();
+          if (tracker != null && tracker.isEligible(call.methodDescriptor)) {
+            Duration latency = Duration.ofNanos(System.nanoTime() - call.startTimeNanos);
+            tracker.maybeUpdate(message, latency);
+          }
+        }
+      }
       ByteString transactionId = null;
       if (message instanceof PartialResultSet) {
         PartialResultSet response = (PartialResultSet) message;
