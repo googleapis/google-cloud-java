@@ -943,8 +943,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(procedureFetcher, "getProcedures-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(
-            resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
 
     fetcherThread.start();
     LOG.info("Started background thread for getProcedures");
@@ -1206,8 +1205,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     Thread fetcherThread =
         new Thread(procedureColumnFetcher, "getProcedureColumns-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(
-            resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
 
     fetcherThread.start();
     LOG.info("Started background thread for getProcedureColumns for catalog: " + catalog);
@@ -1868,8 +1866,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(tableFetcher, "getTables-fetcher-" + effectiveCatalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(
-            resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
 
     fetcherThread.start();
     LOG.info("Started background thread for getTables");
@@ -2009,8 +2006,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     populateQueue(catalogRows, queue, schemaFields);
     signalEndOfData(queue, schemaFields);
 
-    return BigQueryJsonResultSet.of(
-        catalogsSchema, catalogRows.size(), queue, null, new Thread[0]);
+    return BigQueryJsonResultSet.of(catalogsSchema, catalogRows.size(), queue, null, new Thread[0]);
   }
 
   Schema defineGetCatalogsSchema() {
@@ -2635,7 +2631,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getPrimaryKeys(String catalog, String schema, String table) throws SQLException {
     String sql = readSqlFromFile(GET_PRIMARY_KEYS_SQL);
-    try(Statement stmt = this.connection.createStatement()) {
+    try {
+      Statement stmt = this.connection.createStatement();
+      stmt.closeOnCompletion();
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
       return stmt.executeQuery(formattedSql);
     } catch (SQLException e) {
@@ -2647,7 +2645,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   public ResultSet getImportedKeys(String catalog, String schema, String table)
       throws SQLException {
     String sql = readSqlFromFile(GET_IMPORTED_KEYS_SQL);
-    try(Statement stmt = this.connection.createStatement()) {
+    try {
+      Statement stmt = this.connection.createStatement();
+      stmt.closeOnCompletion();
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
       return stmt.executeQuery(formattedSql);
     } catch (SQLException e) {
@@ -2659,7 +2659,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   public ResultSet getExportedKeys(String catalog, String schema, String table)
       throws SQLException {
     String sql = readSqlFromFile(GET_EXPORTED_KEYS_SQL);
-    try(Statement stmt = this.connection.createStatement()) {
+    try {
+      Statement stmt = this.connection.createStatement();
+      stmt.closeOnCompletion();
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
       return stmt.executeQuery(formattedSql);
     } catch (SQLException e) {
@@ -2677,7 +2679,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String foreignTable)
       throws SQLException {
     String sql = readSqlFromFile(GET_CROSS_REFERENCE_SQL);
-    try(Statement stmt = this.connection.createStatement()) {
+    try {
+      Statement stmt = this.connection.createStatement();
+      stmt.closeOnCompletion();
       String formattedSql =
           replaceSqlParameters(
               sql,
@@ -3704,8 +3708,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(schemaFetcher, "getSchemas-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(
-            resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
 
     fetcherThread.start();
     LOG.info("Started background thread for getSchemas");
@@ -3999,8 +4002,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread = new Thread(functionFetcher, "getFunctions-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(
-            resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
 
     fetcherThread.start();
     LOG.info("Started background thread for getFunctions");
@@ -4254,8 +4256,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     Thread fetcherThread =
         new Thread(functionColumnFetcher, "getFunctionColumns-fetcher-" + catalog);
     BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(
-            resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
 
     fetcherThread.start();
     LOG.info("Started background thread for getFunctionColumns for catalog: " + catalog);
