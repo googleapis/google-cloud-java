@@ -173,12 +173,6 @@ jobs:
           java-version: 8
           distribution: temurin
           cache: maven
-      - name: Compile with Java 17 and run tests with Java 8
-        shell: bash
-        run: .kokoro/build.sh
-        env:
-          BUILD_SUBDIR: sdk-platform-java
-          JOB_TYPE: install
       - run: echo "JAVA8_HOME=${JAVA_HOME}" >> $GITHUB_ENV
       - uses: actions/setup-java@v3
         with:
