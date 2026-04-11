@@ -47,7 +47,6 @@ import org.slf4j.spi.LoggingEventBuilder;
 class Slf4jUtils {
 
   private static final Logger NO_OP_LOGGER = org.slf4j.helpers.NOPLogger.NOP_LOGGER;
-  private static final boolean loggingEnabled = LoggingUtils.isLoggingEnabled();
 
   private static final boolean isSLF4J2x;
 
@@ -70,7 +69,7 @@ class Slf4jUtils {
 
   // constructor with LoggerFactoryProvider to make testing easier
   static Logger getLogger(Class<?> clazz, LoggerFactoryProvider factoryProvider) {
-    if (loggingEnabled) {
+    if (LoggingUtils.isLoggingEnabled()) {
       ILoggerFactory loggerFactory = factoryProvider.getLoggerFactory();
       return loggerFactory.getLogger(clazz.getName());
     } else {

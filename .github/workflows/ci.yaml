@@ -147,6 +147,16 @@ jobs:
         BUILD_SUBDIR: ${{matrix.package}}
         JOB_TYPE: test
         JOB_NAME: units-${{matrix.package}}-${{matrix.java}}
+    - name: Env Var Tests
+      if: matrix.package == 'sdk-platform-java'
+      run: .kokoro/build.sh
+      env:
+        BUILD_SUBDIR: ${{matrix.package}}
+        JOB_TYPE: test
+        SUREFIRE_JVM_OPT: '-PenvVarTest'
+        GOOGLE_CLOUD_UNIVERSE_DOMAIN: random.com
+        GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS: true
+        GOOGLE_SDK_JAVA_LOGGING: true
   split-units-8:
     runs-on: ubuntu-latest
     name: "split-units"
@@ -197,6 +207,25 @@ jobs:
         BUILD_SUBDIR: ${{matrix.package}}
         JOB_TYPE: test
         JOB_NAME: units-8-runtime-${{matrix.java}}
+      working-directory: ${{matrix.package}}
+    - name: Run Env Var Tests in Java ${{matrix.java}} with the source compiled in Java 11
+      if: matrix.package == 'sdk-platform-java'
+      run: |
+        mvn test \
+          -B -ntp \
+          -Pquick-build \
+          -PenvVarTest \
+          -Dorg.slf4j.simpleLogger.showDateTime=true \
+          -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
+          -Dmaven.wagon.http.retryHandler.count=5 \
+          --also-make \
+          -T 1C
+      env:
+        BUILD_SUBDIR: ${{matrix.package}}
+        JOB_TYPE: test
+        GOOGLE_CLOUD_UNIVERSE_DOMAIN: random.com
+        GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS: true
+        GOOGLE_SDK_JAVA_LOGGING: true
       working-directory: ${{matrix.package}}
   windows:
     runs-on: windows-latest

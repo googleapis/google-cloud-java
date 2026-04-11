@@ -57,10 +57,16 @@ class Slf4jUtilsTest {
   // This test should only run GOOGLE_SDK_JAVA_LOGGING != true
   @Test
   void testGetLogger_loggingDisabled_shouldGetNOPLogger() {
-    Logger logger = Slf4jUtils.getLogger(Slf4jUtilsTest.class);
-    assertEquals(NOPLogger.class, logger.getClass());
-    assertFalse(logger.isInfoEnabled());
-    assertFalse(logger.isDebugEnabled());
+    boolean originalValue = LoggingUtils.isLoggingEnabled();
+    try {
+      LoggingUtils.setLoggingEnabled(false);
+      Logger logger = Slf4jUtils.getLogger(Slf4jUtilsTest.class);
+      assertEquals(NOPLogger.class, logger.getClass());
+      assertFalse(logger.isInfoEnabled());
+      assertFalse(logger.isDebugEnabled());
+    } finally {
+      LoggingUtils.setLoggingEnabled(originalValue);
+    }
   }
 
   // These tests does not require GOOGLE_SDK_JAVA_LOGGING
