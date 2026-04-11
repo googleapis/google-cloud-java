@@ -161,12 +161,14 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
 
   @BeforeEach
   void setup() throws IOException {
+    RegionalAccessBoundary.disableForTests();
     sourceCredentials = getSourceCredentials();
     mockTransportFactory = new MockIAMCredentialsServiceTransportFactory();
   }
 
-  @org.junit.After
-  public void tearDown() {
+  @org.junit.jupiter.api.AfterEach
+  void tearDown() {
+    RegionalAccessBoundary.resetForTests();
     RegionalAccessBoundary.setEnvironmentProviderForTest(null);
   }
 
@@ -1319,9 +1321,9 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
 
   @Test
   void refresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
+    RegionalAccessBoundary.enableForTests();
     TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
     RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
     // Mock regional access boundary response
     RegionalAccessBoundary regionalAccessBoundary = REGIONAL_ACCESS_BOUNDARY;
 

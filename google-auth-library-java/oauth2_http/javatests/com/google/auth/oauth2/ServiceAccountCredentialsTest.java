@@ -159,10 +159,13 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
   }
 
   @org.junit.jupiter.api.BeforeEach
-  void setUp() {}
+  void setUp() {
+    RegionalAccessBoundary.disableForTests();
+  }
 
   @org.junit.jupiter.api.AfterEach
   void tearDown() {
+    RegionalAccessBoundary.resetForTests();
     RegionalAccessBoundary.setEnvironmentProviderForTest(null);
   }
 
@@ -1808,9 +1811,9 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
 
   @Test
   public void refresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
+    RegionalAccessBoundary.enableForTests();
     TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
     RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
     // Mock regional access boundary response
     RegionalAccessBoundary regionalAccessBoundary =
         new RegionalAccessBoundary(
@@ -1848,9 +1851,9 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
   @Test
   public void refresh_regionalAccessBoundary_selfSignedJWT()
       throws IOException, InterruptedException {
+    RegionalAccessBoundary.enableForTests();
     TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
     RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
     RegionalAccessBoundary regionalAccessBoundary =
         new RegionalAccessBoundary(
             TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,

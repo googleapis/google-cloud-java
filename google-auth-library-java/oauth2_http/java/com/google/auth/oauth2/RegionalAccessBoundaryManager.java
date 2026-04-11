@@ -36,6 +36,9 @@ import com.google.api.core.InternalApi;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.SettableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import javax.annotation.Nullable;
@@ -51,6 +54,17 @@ final class RegionalAccessBoundaryManager {
 
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(RegionalAccessBoundaryManager.class);
+
+  private static final ExecutorService REFRESH_EXECUTOR =
+      Executors.newCachedThreadPool(
+          new ThreadFactory() {
+            @Override
+            public Thread newThread(Runnable r) {
+              Thread t = new Thread(r, "RAB-refresh-thread");
+              t.setDaemon(true);
+              return t;
+            }
+          });
 
   static final long INITIAL_COOLDOWN_MILLIS = 15 * 60 * 1000L; // 15 minutes
   static final long MAX_COOLDOWN_MILLIS = 6 * 60 * 60 * 1000L; // 6 hours
@@ -161,14 +175,7 @@ final class RegionalAccessBoundaryManager {
           };
 
       try {
-        // We use new Thread() here instead of
-        // CompletableFuture.runAsync() (which uses ForkJoinPool.commonPool()).
-        // This avoids consuming CPU resources since
-        // The common pool has a small, fixed number of threads designed for
-        // CPU-bound tasks.
-        Thread refreshThread = new Thread(refreshTask, "RAB-refresh-thread");
-        refreshThread.setDaemon(true);
-        refreshThread.start();
+        REFRESH_EXECUTOR.execute(refreshTask);
       } catch (Exception | Error e) {
         // If scheduling fails (e.g., RejectedExecutionException, OutOfMemoryError for threads),
         // the task's finally block will never execute. We must release the lock here.

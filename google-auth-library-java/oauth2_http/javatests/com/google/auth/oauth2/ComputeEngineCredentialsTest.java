@@ -76,10 +76,13 @@ import org.junit.jupiter.api.Test;
 class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
   @org.junit.jupiter.api.BeforeEach
-  void setUp() {}
+  void setUp() {
+    RegionalAccessBoundary.disableForTests();
+  }
 
   @org.junit.jupiter.api.AfterEach
   void tearDown() {
+    RegionalAccessBoundary.resetForTests();
     RegionalAccessBoundary.setEnvironmentProviderForTest(null);
   }
 
@@ -1205,9 +1208,9 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
   @org.junit.jupiter.api.Test
   void refresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
+    RegionalAccessBoundary.enableForTests();
     TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
     RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
 
     String defaultAccountEmail = "default@email.com";
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();

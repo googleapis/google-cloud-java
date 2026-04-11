@@ -36,6 +36,7 @@ import static com.google.auth.oauth2.MockExternalAccountCredentialsTransport.SER
 import static com.google.auth.oauth2.OAuth2Utils.JSON_FACTORY;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -78,10 +79,13 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
       (ExternalAccountSupplierContext context) -> "testSubjectToken";
 
   @org.junit.jupiter.api.BeforeEach
-  void setUp() {}
+  void setUp() {
+    RegionalAccessBoundary.disableForTests();
+  }
 
   @org.junit.jupiter.api.AfterEach
   void tearDown() {
+    RegionalAccessBoundary.resetForTests();
     RegionalAccessBoundary.setEnvironmentProviderForTest(null);
   }
 
@@ -1319,9 +1323,9 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
   @Test
   public void testRefresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
+    RegionalAccessBoundary.enableForTests();
     TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
     RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
 
     MockExternalAccountCredentialsTransportFactory transportFactory =
         new MockExternalAccountCredentialsTransportFactory();

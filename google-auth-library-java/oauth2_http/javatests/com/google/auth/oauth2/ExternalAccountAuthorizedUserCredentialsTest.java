@@ -44,6 +44,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
+import com.google.api.client.util.Clock;
 import com.google.auth.TestUtils;
 import com.google.auth.http.AuthHttpConstants;
 import com.google.auth.http.HttpTransportFactory;
@@ -126,11 +127,13 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
 
   @BeforeEach
   void setup() {
+    RegionalAccessBoundary.disableForTests();
     transportFactory = new MockExternalAccountAuthorizedUserCredentialsTransportFactory();
   }
 
   @org.junit.jupiter.api.AfterEach
   void tearDown() {
+    RegionalAccessBoundary.resetForTests();
     RegionalAccessBoundary.setEnvironmentProviderForTest(null);
   }
 
@@ -1247,9 +1250,9 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
 
   @org.junit.jupiter.api.Test
   void testRefresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
+    RegionalAccessBoundary.enableForTests();
     TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
     RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
 
     ExternalAccountAuthorizedUserCredentials credentials =
         ExternalAccountAuthorizedUserCredentials.newBuilder()

@@ -67,10 +67,6 @@ final class RegionalAccessBoundary implements Serializable {
   static final String X_ALLOWED_LOCATIONS_HEADER_KEY = "x-allowed-locations";
   private static final long serialVersionUID = -2428522338274020302L;
 
-  // Note: this is for internal testing use use only.
-  // TODO: Fix unit test mocks so this can be removed
-  // Refer -> https://github.com/googleapis/google-auth-library-java/issues/1898
-  static final String ENABLE_EXPERIMENT_ENV_VAR = "GOOGLE_AUTH_TRUST_BOUNDARY_ENABLE_EXPERIMENT";
   static final long TTL_MILLIS = 6 * 60 * 60 * 1000L; // 6 hours
   static final long REFRESH_THRESHOLD_MILLIS = 1 * 60 * 60 * 1000L; // 1 hour
 
@@ -80,6 +76,25 @@ final class RegionalAccessBoundary implements Serializable {
   private transient Clock clock;
 
   private static EnvironmentProvider environmentProvider = SystemEnvironmentProvider.getInstance();
+
+  // Static thread-isolated flag for granular testing setups
+  private static final ThreadLocal<Boolean> DISABLE_RAB_FOR_TESTS =
+      ThreadLocal.withInitial(() -> false);
+
+  @VisibleForTesting
+  static void disableForTests() {
+    DISABLE_RAB_FOR_TESTS.set(true);
+  }
+
+  @VisibleForTesting
+  static void enableForTests() {
+    DISABLE_RAB_FOR_TESTS.set(false);
+  }
+
+  @VisibleForTesting
+  static void resetForTests() {
+    DISABLE_RAB_FOR_TESTS.remove();
+  }
 
   /**
    * Creates a new RegionalAccessBoundary instance.
@@ -178,22 +193,17 @@ final class RegionalAccessBoundary implements Serializable {
   }
 
   /**
-   * Checks if the regional access boundary feature is enabled. The feature is enabled if the
-   * environment variable or system property "GOOGLE_AUTH_TRUST_BOUNDARY_ENABLE_EXPERIMENT" is set
-   * to "true" or "1" (case-insensitive).
+   * Checks if the regional access boundary feature is enabled.
    *
    * @return True if the regional access boundary feature is enabled, false otherwise.
    */
   static boolean isEnabled() {
-    String enabled = environmentProvider.getEnv(ENABLE_EXPERIMENT_ENV_VAR);
-    if (enabled == null) {
-      enabled = System.getProperty(ENABLE_EXPERIMENT_ENV_VAR);
-    }
-    if (enabled == null) {
+    // 1. Check if granular opt-out flag is active for THIS thread
+    if (DISABLE_RAB_FOR_TESTS.get()) {
       return false;
     }
-    String lowercased = enabled.toLowerCase();
-    return "true".equals(lowercased) || "1".equals(enabled);
+    // 2. Fallback to standard GA behavior (enabled by default)
+    return true;
   }
 
   /**
