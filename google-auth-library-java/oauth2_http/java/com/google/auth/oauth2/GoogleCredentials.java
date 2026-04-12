@@ -581,10 +581,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
 
   @Override
   protected Map<String, List<String>> getAdditionalHeaders() {
-    Map<String, List<String>> headers = new HashMap<>(super.getAdditionalHeaders());
-
-    String quotaProjectId = this.getQuotaProjectId();
-    return addQuotaProjectIdToRequestMetadata(quotaProjectId, headers);
+    return addQuotaProjectIdToRequestMetadata(getQuotaProjectId(), super.getAdditionalHeaders());
   }
 
   /** Default constructor. */

@@ -38,7 +38,11 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.SettableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import javax.annotation.Nullable;
@@ -55,8 +59,24 @@ final class RegionalAccessBoundaryManager {
   private static final LoggerProvider LOGGER_PROVIDER =
       LoggerProvider.forClazz(RegionalAccessBoundaryManager.class);
 
+  private static final int CORE_POOL_SIZE = 0;
+  private static final int MAX_POOL_SIZE = 100;
+  private static final long KEEP_ALIVE_TIME_SECONDS = 60L;
+  private static final int QUEUE_CAPACITY = 100;
+
+  /**
+   * Globally shared bounded thread pool across all independent credential instances to protect JVM native 
+   * thread limits and avoid the risks of unbounded thread pools. Uses a finite delay queue to hold parallel 
+   * expiration bursts. If concurrency exceeds the capacity of MAX_POOL_SIZE + QUEUE_CAPACITY, tasks are 
+   * instantly rejected and the specific credential instance enters backoff cooldown.
+   */
   private static final ExecutorService REFRESH_EXECUTOR =
-      Executors.newCachedThreadPool(
+      new ThreadPoolExecutor(
+          CORE_POOL_SIZE, 
+          MAX_POOL_SIZE, 
+          KEEP_ALIVE_TIME_SECONDS, 
+          TimeUnit.SECONDS,
+          new LinkedBlockingQueue<>(QUEUE_CAPACITY), 
           new ThreadFactory() {
             @Override
             public Thread newThread(Runnable r) {
@@ -64,7 +84,8 @@ final class RegionalAccessBoundaryManager {
               t.setDaemon(true);
               return t;
             }
-          });
+          },
+          new ThreadPoolExecutor.AbortPolicy());
 
   static final long INITIAL_COOLDOWN_MILLIS = 15 * 60 * 1000L; // 15 minutes
   static final long MAX_COOLDOWN_MILLIS = 6 * 60 * 60 * 1000L; // 6 hours
