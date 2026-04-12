@@ -1476,7 +1476,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-iam-policy-bom</artifactId>
-        <version>1.64.0</version><!-- {x-version-update:google-iam-policy:current} -->
+        <version>1.87.0</version><!-- {x-version-update:google-iam-policy:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
