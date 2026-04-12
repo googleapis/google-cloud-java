@@ -587,7 +587,7 @@ grpc-google-cloud-tpu-v2:2.91.0:2.91.0
 google-cloud-datalineage:0.82.0:0.82.0
 proto-google-cloud-datalineage-v1:0.82.0:0.82.0
 grpc-google-cloud-datalineage-v1:0.82.0:0.82.0
-google-iam-policy:1.64.0:1.64.0
+google-iam-policy:1.87.0:1.87.0
 proto-google-cloud-build-v2:3.92.0:3.92.0
 grpc-google-cloud-build-v2:3.92.0:3.92.0
 google-cloud-advisorynotifications:0.79.0:0.79.0
