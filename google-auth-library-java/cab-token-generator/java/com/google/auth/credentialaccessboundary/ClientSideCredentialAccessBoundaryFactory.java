@@ -53,6 +53,7 @@ import com.google.auth.oauth2.StsTokenExchangeResponse;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Strings;
 import com.google.common.util.concurrent.AbstractFuture;
+import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.ListenableFutureTask;
@@ -78,6 +79,7 @@ import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Nullable;
 
 /**
  * A factory for generating downscoped access tokens using a client-side approach.
@@ -246,7 +248,7 @@ public class ClientSideCredentialAccessBoundaryFactory {
         }
         try {
           // Wait for the refresh task to complete.
-          currentRefreshTask.get();
+          currentRefreshTask.task.get();
         } catch (InterruptedException e) {
           // Restore the interrupted status and throw an exception.
           Thread.currentThread().interrupt();
@@ -493,18 +495,31 @@ public class ClientSideCredentialAccessBoundaryFactory {
       this.task = task;
       this.isNew = isNew;
 
-      // Single listener to guarantee that finishRefreshTask updates the internal state BEFORE
-      // the outer future completes and unblocks waiters.
+      // Add listener to update factory's credentials when the task completes.
       task.addListener(
           () -> {
             try {
               finishRefreshTask(task);
-              RefreshTask.this.set(Futures.getDone(task));
             } catch (ExecutionException e) {
               Throwable cause = e.getCause();
-              RefreshTask.this.setException(cause != null ? cause : e);
-            } catch (Throwable t) {
-              RefreshTask.this.setException(t);
+              RefreshTask.this.setException(cause);
+            }
+          },
+          MoreExecutors.directExecutor());
+
+      // Add callback to set the result or exception based on the outcome.
+      Futures.addCallback(
+          task,
+          new FutureCallback<IntermediateCredentials>() {
+            @Override
+            public void onSuccess(IntermediateCredentials result) {
+              RefreshTask.this.set(result);
+            }
+
+            @Override
+            public void onFailure(@Nullable Throwable t) {
+              RefreshTask.this.setException(
+                  t != null ? t : new IOException("Refresh failed with null Throwable."));
             }
           },
           MoreExecutors.directExecutor());
