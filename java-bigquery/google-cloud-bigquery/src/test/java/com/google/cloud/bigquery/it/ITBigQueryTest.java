@@ -7895,6 +7895,8 @@ class ITBigQueryTest {
       assertNotNull(tableResult.getJobId());
       assertEquals(tableResult.getQueryId(), tableResult.getJobId().getJob());
       assertEquals(JobCreationReason.Code.OTHER, tableResult.getJobCreationReason().getCode());
+    } else {
+      assertNull(tableResult.getJobId());
     }
 
     assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.queryRpc"));
