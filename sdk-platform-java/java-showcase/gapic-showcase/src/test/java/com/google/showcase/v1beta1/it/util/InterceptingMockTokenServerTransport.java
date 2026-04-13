@@ -39,10 +39,7 @@ public class InterceptingMockTokenServerTransport extends MockTokenServerTranspo
 
   public String getLastAudienceSent() throws IOException {
     String contentString = lastRequest.getContentAsString();
-    Map<String, String> query = TestUtils.parseQuery(contentString);
-    String assertion = query.get("assertion");
-    JsonWebSignature signature = JsonWebSignature.parse(JSON_FACTORY, assertion);
-    String foundTargetAudience = (String) signature.getPayload().get("api_audience");
-    return foundTargetAudience;
+    Map<String, Object> json = JSON_FACTORY.createJsonParser(contentString).parse(Map.class);
+    return (String) json.get("audience");
   }
 }
