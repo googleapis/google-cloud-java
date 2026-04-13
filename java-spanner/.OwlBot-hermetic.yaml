@@ -28,7 +28,7 @@ deep-copy-regex:
 - source: /google/spanner/(v.*)/.*-java/grpc-google-.*/src
   dest: /owl-bot-staging/java-spanner/$1/grpc-google-cloud-spanner-$1/src
 - source: /google/spanner/(v.*)/.*-java/gapic-google-.*/src
-  dest: /owl-bot-staging/java-spanner/$1/google-cloud-spanner/src/
+  dest: /owl-bot-staging/java-spanner/$1/google-cloud-spanner/src
 - source: /google/spanner/admin/database/(v.*)/.*-java/proto-google-.*/src
   dest: /owl-bot-staging/java-spanner/$1/proto-google-cloud-spanner-admin-database-$1/src
 - source: /google/spanner/admin/database/(v.*)/.*-java/grpc-google-.*/src
