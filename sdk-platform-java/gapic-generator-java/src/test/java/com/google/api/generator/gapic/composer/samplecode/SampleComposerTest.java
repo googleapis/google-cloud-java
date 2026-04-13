@@ -54,6 +54,8 @@ class SampleComposerTest {
             "// - It may require correct/in-range values for request initialization.\n",
             "// - It may require specifying regional endpoints when creating the service client as shown in\n",
             "// https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library\n",
+            "// - For more information on client lifecycle, see\n",
+            "// https://docs.cloud.google.com/java/docs/client-lifecycle\n",
             "System.out.println(\"testing\");");
 
     assertEquals(expected, sampleResult);
@@ -88,6 +90,8 @@ class SampleComposerTest {
             "    // - It may require correct/in-range values for request initialization.\n",
             "    // - It may require specifying regional endpoints when creating the service client as shown in\n",
             "    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library\n",
+            "    // - For more information on client lifecycle, see\n",
+            "    // https://docs.cloud.google.com/java/docs/client-lifecycle\n",
             "  }\n",
             "}\n",
             "// [END apiname_generated_Echo_CreateExecutableSample_EmptyStatementSample_sync]\n");
@@ -127,6 +131,8 @@ class SampleComposerTest {
             "    // - It may require correct/in-range values for request initialization.\n",
             "    // - It may require specifying regional endpoints when creating the service client as shown in\n",
             "    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library\n",
+            "    // - For more information on client lifecycle, see\n",
+            "    // https://docs.cloud.google.com/java/docs/client-lifecycle\n",
             "    System.out.println(\"Testing CreateExecutableSampleMethodArgsNoVar\");\n",
             "  }\n",
             "}\n",
@@ -176,6 +182,8 @@ class SampleComposerTest {
             "    // - It may require correct/in-range values for request initialization.\n",
             "    // - It may require specifying regional endpoints when creating the service client as shown in\n",
             "    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library\n",
+            "    // - For more information on client lifecycle, see\n",
+            "    // https://docs.cloud.google.com/java/docs/client-lifecycle\n",
             "    System.out.println(content);\n",
             "  }\n",
             "}\n",
@@ -265,6 +273,8 @@ class SampleComposerTest {
             "    // - It may require correct/in-range values for request initialization.\n",
             "    // - It may require specifying regional endpoints when creating the service client as shown in\n",
             "    // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library\n",
+            "    // - For more information on client lifecycle, see\n",
+            "    // https://docs.cloud.google.com/java/docs/client-lifecycle\n",
             "    System.out.println(content);\n",
             "    System.out.println(num);\n",
             "    System.out.println(thing.response());\n",

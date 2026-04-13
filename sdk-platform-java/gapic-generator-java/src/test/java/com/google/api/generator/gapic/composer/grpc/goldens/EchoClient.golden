@@ -44,9 +44,10 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (EchoClient echoClient = EchoClient.create()) {
- *   EchoResponse response = echoClient.echo();
- * }
+ * // - For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
+ * EchoClient echoClient = EchoClient.create();
+ * EchoResponse response = echoClient.echo();
  * }</pre>
  *
  * <p>Note: close() needs to be called on the EchoClient object to clean up resources such as
@@ -239,6 +240,8 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // - For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * EchoSettings echoSettings =
  *     EchoSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -254,6 +257,8 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // - For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * EchoSettings echoSettings = EchoSettings.newBuilder().setEndpoint(myEndpoint).build();
  * EchoClient echoClient = EchoClient.create(echoSettings);
  * }</pre>
@@ -330,9 +335,10 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   EchoResponse response = echoClient.echo();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * EchoResponse response = echoClient.echo();
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -353,10 +359,11 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   ResourceName parent = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]");
-   *   EchoResponse response = echoClient.echo(parent);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * ResourceName parent = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]");
+   * EchoResponse response = echoClient.echo(parent);
    * }</pre>
    *
    * @param parent
@@ -378,10 +385,11 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   Status error = Status.newBuilder().build();
-   *   EchoResponse response = echoClient.echo(error);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * Status error = Status.newBuilder().build();
+   * EchoResponse response = echoClient.echo(error);
    * }</pre>
    *
    * @param error
@@ -402,10 +410,11 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   FoobarName name = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]");
-   *   EchoResponse response = echoClient.echo(name);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * FoobarName name = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]");
+   * EchoResponse response = echoClient.echo(name);
    * }</pre>
    *
    * @param name
@@ -427,10 +436,11 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   String content = "content951530617";
-   *   EchoResponse response = echoClient.echo(content);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * String content = "content951530617";
+   * EchoResponse response = echoClient.echo(content);
    * }</pre>
    *
    * @param content
@@ -451,10 +461,11 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   String name = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString();
-   *   EchoResponse response = echoClient.echo(name);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * String name = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString();
+   * EchoResponse response = echoClient.echo(name);
    * }</pre>
    *
    * @param name
@@ -475,10 +486,11 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   String parent = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString();
-   *   EchoResponse response = echoClient.echo(parent);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * String parent = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString();
+   * EchoResponse response = echoClient.echo(parent);
    * }</pre>
    *
    * @param parent
@@ -499,11 +511,12 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   String content = "content951530617";
-   *   Severity severity = Severity.forNumber(0);
-   *   EchoResponse response = echoClient.echo(content, severity);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * String content = "content951530617";
+   * Severity severity = Severity.forNumber(0);
+   * EchoResponse response = echoClient.echo(content, severity);
    * }</pre>
    *
    * @param content
@@ -526,16 +539,17 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   EchoRequest request =
-   *       EchoRequest.newBuilder()
-   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-   *           .setSeverity(Severity.forNumber(0))
-   *           .setFoobar(Foobar.newBuilder().build())
-   *           .build();
-   *   EchoResponse response = echoClient.echo(request);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * EchoRequest request =
+   *     EchoRequest.newBuilder()
+   *         .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *         .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *         .setSeverity(Severity.forNumber(0))
+   *         .setFoobar(Foobar.newBuilder().build())
+   *         .build();
+   * EchoResponse response = echoClient.echo(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -555,18 +569,19 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   EchoRequest request =
-   *       EchoRequest.newBuilder()
-   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-   *           .setSeverity(Severity.forNumber(0))
-   *           .setFoobar(Foobar.newBuilder().build())
-   *           .build();
-   *   ApiFuture<EchoResponse> future = echoClient.echoCallable().futureCall(request);
-   *   // Do something.
-   *   EchoResponse response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * EchoRequest request =
+   *     EchoRequest.newBuilder()
+   *         .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *         .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *         .setSeverity(Severity.forNumber(0))
+   *         .setFoobar(Foobar.newBuilder().build())
+   *         .build();
+   * ApiFuture<EchoResponse> future = echoClient.echoCallable().futureCall(request);
+   * // Do something.
+   * EchoResponse response = future.get();
    * }</pre>
    */
   public final UnaryCallable<EchoRequest, EchoResponse> echoCallable() {
@@ -583,13 +598,14 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   ExpandRequest request =
-   *       ExpandRequest.newBuilder().setContent("content951530617").setInfo("info3237038").build();
-   *   ServerStream<EchoResponse> stream = echoClient.expandCallable().call(request);
-   *   for (EchoResponse response : stream) {
-   *     // Do something when a response is received.
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * ExpandRequest request =
+   *     ExpandRequest.newBuilder().setContent("content951530617").setInfo("info3237038").build();
+   * ServerStream<EchoResponse> stream = echoClient.expandCallable().call(request);
+   * for (EchoResponse response : stream) {
+   *   // Do something when a response is received.
    * }
    * }</pre>
    */
@@ -607,35 +623,36 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   ApiStreamObserver<EchoRequest> responseObserver =
-   *       new ApiStreamObserver<EchoRequest>() {
-   *         {@literal @}Override
-   *         public void onNext(EchoResponse response) {
-   *           // Do something when a response is received.
-   *         }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * ApiStreamObserver<EchoRequest> responseObserver =
+   *     new ApiStreamObserver<EchoRequest>() {
+   *       {@literal @}Override
+   *       public void onNext(EchoResponse response) {
+   *         // Do something when a response is received.
+   *       }
    *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
+   *       {@literal @}Override
+   *       public void onError(Throwable t) {
+   *         // Add error-handling
+   *       }
    *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *   ApiStreamObserver<EchoRequest> requestObserver =
-   *       echoClient.collect().clientStreamingCall(responseObserver);
-   *   EchoRequest request =
-   *       EchoRequest.newBuilder()
-   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-   *           .setSeverity(Severity.forNumber(0))
-   *           .setFoobar(Foobar.newBuilder().build())
-   *           .build();
-   *   requestObserver.onNext(request);
-   * }
+   *       {@literal @}Override
+   *       public void onCompleted() {
+   *         // Do something when complete.
+   *       }
+   *     };
+   * ApiStreamObserver<EchoRequest> requestObserver =
+   *     echoClient.collect().clientStreamingCall(responseObserver);
+   * EchoRequest request =
+   *     EchoRequest.newBuilder()
+   *         .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *         .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *         .setSeverity(Severity.forNumber(0))
+   *         .setFoobar(Foobar.newBuilder().build())
+   *         .build();
+   * requestObserver.onNext(request);
    * }</pre>
    */
   public final ClientStreamingCallable<EchoRequest, EchoResponse> collectCallable() {
@@ -652,19 +669,20 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   BidiStream<EchoRequest, EchoResponse> bidiStream = echoClient.chatCallable().call();
-   *   EchoRequest request =
-   *       EchoRequest.newBuilder()
-   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-   *           .setSeverity(Severity.forNumber(0))
-   *           .setFoobar(Foobar.newBuilder().build())
-   *           .build();
-   *   bidiStream.send(request);
-   *   for (EchoResponse response : bidiStream) {
-   *     // Do something when a response is received.
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * BidiStream<EchoRequest, EchoResponse> bidiStream = echoClient.chatCallable().call();
+   * EchoRequest request =
+   *     EchoRequest.newBuilder()
+   *         .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *         .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *         .setSeverity(Severity.forNumber(0))
+   *         .setFoobar(Foobar.newBuilder().build())
+   *         .build();
+   * bidiStream.send(request);
+   * for (EchoResponse response : bidiStream) {
+   *   // Do something when a response is received.
    * }
    * }</pre>
    */
@@ -682,19 +700,20 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   BidiStream<EchoRequest, EchoResponse> bidiStream = echoClient.chatAgainCallable().call();
-   *   EchoRequest request =
-   *       EchoRequest.newBuilder()
-   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-   *           .setSeverity(Severity.forNumber(0))
-   *           .setFoobar(Foobar.newBuilder().build())
-   *           .build();
-   *   bidiStream.send(request);
-   *   for (EchoResponse response : bidiStream) {
-   *     // Do something when a response is received.
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * BidiStream<EchoRequest, EchoResponse> bidiStream = echoClient.chatAgainCallable().call();
+   * EchoRequest request =
+   *     EchoRequest.newBuilder()
+   *         .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *         .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *         .setSeverity(Severity.forNumber(0))
+   *         .setFoobar(Foobar.newBuilder().build())
+   *         .build();
+   * bidiStream.send(request);
+   * for (EchoResponse response : bidiStream) {
+   *   // Do something when a response is received.
    * }
    * }</pre>
    */
@@ -712,16 +731,17 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   PagedExpandRequest request =
-   *       PagedExpandRequest.newBuilder()
-   *           .setContent("content951530617")
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   for (EchoResponse element : echoClient.pagedExpand(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * PagedExpandRequest request =
+   *     PagedExpandRequest.newBuilder()
+   *         .setContent("content951530617")
+   *         .setPageSize(883849137)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * for (EchoResponse element : echoClient.pagedExpand(request).iterateAll()) {
+   *   // doThingsWith(element);
    * }
    * }</pre>
    *
@@ -742,18 +762,19 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   PagedExpandRequest request =
-   *       PagedExpandRequest.newBuilder()
-   *           .setContent("content951530617")
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   ApiFuture<EchoResponse> future = echoClient.pagedExpandPagedCallable().futureCall(request);
-   *   // Do something.
-   *   for (EchoResponse element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * PagedExpandRequest request =
+   *     PagedExpandRequest.newBuilder()
+   *         .setContent("content951530617")
+   *         .setPageSize(883849137)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * ApiFuture<EchoResponse> future = echoClient.pagedExpandPagedCallable().futureCall(request);
+   * // Do something.
+   * for (EchoResponse element : future.get().iterateAll()) {
+   *   // doThingsWith(element);
    * }
    * }</pre>
    */
@@ -772,24 +793,25 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   PagedExpandRequest request =
-   *       PagedExpandRequest.newBuilder()
-   *           .setContent("content951530617")
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   while (true) {
-   *     PagedExpandResponse response = echoClient.pagedExpandCallable().call(request);
-   *     for (EchoResponse element : response.getResponsesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * PagedExpandRequest request =
+   *     PagedExpandRequest.newBuilder()
+   *         .setContent("content951530617")
+   *         .setPageSize(883849137)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * while (true) {
+   *   PagedExpandResponse response = echoClient.pagedExpandCallable().call(request);
+   *   for (EchoResponse element : response.getResponsesList()) {
+   *     // doThingsWith(element);
+   *   }
+   *   String nextPageToken = response.getNextPageToken();
+   *   if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *     request = request.toBuilder().setPageToken(nextPageToken).build();
+   *   } else {
+   *     break;
    *   }
    * }
    * }</pre>
@@ -808,10 +830,11 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   for (EchoResponse element : echoClient.simplePagedExpand().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * for (EchoResponse element : echoClient.simplePagedExpand().iterateAll()) {
+   *   // doThingsWith(element);
    * }
    * }</pre>
    *
@@ -833,16 +856,17 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   PagedExpandRequest request =
-   *       PagedExpandRequest.newBuilder()
-   *           .setContent("content951530617")
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   for (EchoResponse element : echoClient.simplePagedExpand(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * PagedExpandRequest request =
+   *     PagedExpandRequest.newBuilder()
+   *         .setContent("content951530617")
+   *         .setPageSize(883849137)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * for (EchoResponse element : echoClient.simplePagedExpand(request).iterateAll()) {
+   *   // doThingsWith(element);
    * }
    * }</pre>
    *
@@ -863,19 +887,20 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   PagedExpandRequest request =
-   *       PagedExpandRequest.newBuilder()
-   *           .setContent("content951530617")
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   ApiFuture<EchoResponse> future =
-   *       echoClient.simplePagedExpandPagedCallable().futureCall(request);
-   *   // Do something.
-   *   for (EchoResponse element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * PagedExpandRequest request =
+   *     PagedExpandRequest.newBuilder()
+   *         .setContent("content951530617")
+   *         .setPageSize(883849137)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * ApiFuture<EchoResponse> future =
+   *     echoClient.simplePagedExpandPagedCallable().futureCall(request);
+   * // Do something.
+   * for (EchoResponse element : future.get().iterateAll()) {
+   *   // doThingsWith(element);
    * }
    * }</pre>
    */
@@ -894,24 +919,25 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   PagedExpandRequest request =
-   *       PagedExpandRequest.newBuilder()
-   *           .setContent("content951530617")
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   while (true) {
-   *     PagedExpandResponse response = echoClient.simplePagedExpandCallable().call(request);
-   *     for (EchoResponse element : response.getResponsesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * PagedExpandRequest request =
+   *     PagedExpandRequest.newBuilder()
+   *         .setContent("content951530617")
+   *         .setPageSize(883849137)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * while (true) {
+   *   PagedExpandResponse response = echoClient.simplePagedExpandCallable().call(request);
+   *   for (EchoResponse element : response.getResponsesList()) {
+   *     // doThingsWith(element);
+   *   }
+   *   String nextPageToken = response.getNextPageToken();
+   *   if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *     request = request.toBuilder().setPageToken(nextPageToken).build();
+   *   } else {
+   *     break;
    *   }
    * }
    * }</pre>
@@ -930,10 +956,11 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   Duration ttl = Duration.newBuilder().build();
-   *   WaitResponse response = echoClient.waitAsync(ttl).get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * Duration ttl = Duration.newBuilder().build();
+   * WaitResponse response = echoClient.waitAsync(ttl).get();
    * }</pre>
    *
    * @param ttl
@@ -954,10 +981,11 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   Timestamp endTime = Timestamp.newBuilder().build();
-   *   WaitResponse response = echoClient.waitAsync(endTime).get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * Timestamp endTime = Timestamp.newBuilder().build();
+   * WaitResponse response = echoClient.waitAsync(endTime).get();
    * }</pre>
    *
    * @param endTime
@@ -978,10 +1006,11 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   WaitRequest request = WaitRequest.newBuilder().build();
-   *   WaitResponse response = echoClient.waitAsync(request).get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * WaitRequest request = WaitRequest.newBuilder().build();
+   * WaitResponse response = echoClient.waitAsync(request).get();
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -1001,13 +1030,14 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   WaitRequest request = WaitRequest.newBuilder().build();
-   *   OperationFuture<WaitResponse, WaitMetadata> future =
-   *       echoClient.waitOperationCallable().futureCall(request);
-   *   // Do something.
-   *   WaitResponse response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * WaitRequest request = WaitRequest.newBuilder().build();
+   * OperationFuture<WaitResponse, WaitMetadata> future =
+   *     echoClient.waitOperationCallable().futureCall(request);
+   * // Do something.
+   * WaitResponse response = future.get();
    * }</pre>
    */
   public final OperationCallable<WaitRequest, WaitResponse, WaitMetadata> waitOperationCallable() {
@@ -1024,12 +1054,13 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   WaitRequest request = WaitRequest.newBuilder().build();
-   *   ApiFuture<Operation> future = echoClient.waitCallable().futureCall(request);
-   *   // Do something.
-   *   Operation response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * WaitRequest request = WaitRequest.newBuilder().build();
+   * ApiFuture<Operation> future = echoClient.waitCallable().futureCall(request);
+   * // Do something.
+   * Operation response = future.get();
    * }</pre>
    */
   public final UnaryCallable<WaitRequest, Operation> waitCallable() {
@@ -1046,10 +1077,11 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   BlockRequest request = BlockRequest.newBuilder().build();
-   *   BlockResponse response = echoClient.block(request);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * BlockRequest request = BlockRequest.newBuilder().build();
+   * BlockResponse response = echoClient.block(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -1069,12 +1101,13 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   BlockRequest request = BlockRequest.newBuilder().build();
-   *   ApiFuture<BlockResponse> future = echoClient.blockCallable().futureCall(request);
-   *   // Do something.
-   *   BlockResponse response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * BlockRequest request = BlockRequest.newBuilder().build();
+   * ApiFuture<BlockResponse> future = echoClient.blockCallable().futureCall(request);
+   * // Do something.
+   * BlockResponse response = future.get();
    * }</pre>
    */
   public final UnaryCallable<BlockRequest, BlockResponse> blockCallable() {
@@ -1091,16 +1124,17 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   EchoRequest request =
-   *       EchoRequest.newBuilder()
-   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-   *           .setSeverity(Severity.forNumber(0))
-   *           .setFoobar(Foobar.newBuilder().build())
-   *           .build();
-   *   Object response = echoClient.collideName(request);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * EchoRequest request =
+   *     EchoRequest.newBuilder()
+   *         .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *         .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *         .setSeverity(Severity.forNumber(0))
+   *         .setFoobar(Foobar.newBuilder().build())
+   *         .build();
+   * Object response = echoClient.collideName(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -1120,18 +1154,19 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   EchoRequest request =
-   *       EchoRequest.newBuilder()
-   *           .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-   *           .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
-   *           .setSeverity(Severity.forNumber(0))
-   *           .setFoobar(Foobar.newBuilder().build())
-   *           .build();
-   *   ApiFuture<Object> future = echoClient.collideNameCallable().futureCall(request);
-   *   // Do something.
-   *   Object response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * EchoRequest request =
+   *     EchoRequest.newBuilder()
+   *         .setName(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *         .setParent(FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString())
+   *         .setSeverity(Severity.forNumber(0))
+   *         .setFoobar(Foobar.newBuilder().build())
+   *         .build();
+   * ApiFuture<Object> future = echoClient.collideNameCallable().futureCall(request);
+   * // Do something.
+   * Object response = future.get();
    * }</pre>
    */
   public final UnaryCallable<EchoRequest, Object> collideNameCallable() {
@@ -1148,15 +1183,16 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   PagedExpandLegacyRequest request =
-   *       PagedExpandLegacyRequest.newBuilder()
-   *           .setContent("content951530617")
-   *           .setMaxResults(1128457243)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   PagedExpandResponse response = echoClient.pagedExpandLegacy(request);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * PagedExpandLegacyRequest request =
+   *     PagedExpandLegacyRequest.newBuilder()
+   *         .setContent("content951530617")
+   *         .setMaxResults(1128457243)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * PagedExpandResponse response = echoClient.pagedExpandLegacy(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -1176,18 +1212,19 @@ public class EchoClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (EchoClient echoClient = EchoClient.create()) {
-   *   PagedExpandLegacyRequest request =
-   *       PagedExpandLegacyRequest.newBuilder()
-   *           .setContent("content951530617")
-   *           .setMaxResults(1128457243)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   ApiFuture<PagedExpandResponse> future =
-   *       echoClient.pagedExpandLegacyCallable().futureCall(request);
-   *   // Do something.
-   *   PagedExpandResponse response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * EchoClient echoClient = EchoClient.create();
+   * PagedExpandLegacyRequest request =
+   *     PagedExpandLegacyRequest.newBuilder()
+   *         .setContent("content951530617")
+   *         .setMaxResults(1128457243)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * ApiFuture<PagedExpandResponse> future =
+   *     echoClient.pagedExpandLegacyCallable().futureCall(request);
+   * // Do something.
+   * PagedExpandResponse response = future.get();
    * }</pre>
    */
   public final UnaryCallable<PagedExpandLegacyRequest, PagedExpandResponse>
