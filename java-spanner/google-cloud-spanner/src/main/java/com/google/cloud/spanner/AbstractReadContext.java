@@ -39,6 +39,7 @@ import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Option;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
@@ -59,7 +60,11 @@ import java.util.Collections;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
@@ -345,13 +350,16 @@ abstract class AbstractReadContext
     }
 
     private TimestampBound bound;
-    private final Object txnLock = new Object();
+    private final ReentrantLock txnLock = new ReentrantLock();
+    private final Condition hasNoPendingStarts = txnLock.newCondition();
 
     @GuardedBy("txnLock")
     private Timestamp timestamp;
 
     @GuardedBy("txnLock")
     private ByteString transactionId;
+
+    private final AtomicInteger pendingStarts = new AtomicInteger(0);
 
     private final Map<SpannerRpc.Option, ?> channelHint;
 
@@ -407,6 +415,56 @@ abstract class AbstractReadContext
       return selector;
     }
 
+    private void decrementPendingStartsAndSignal() {
+      if (pendingStarts.decrementAndGet() == 0) {
+        txnLock.lock();
+        try {
+          hasNoPendingStarts.signalAll();
+        } finally {
+          txnLock.unlock();
+        }
+      }
+    }
+
+    private ListenableAsyncResultSet createAsyncResultSet(
+        Supplier<ResultSet> resultSetSupplier, int bufferRows) {
+      pendingStarts.incrementAndGet();
+      // Make sure that we decrement the counter exactly once, either
+      // when the query is actually executed, or when the result set is closed,
+      // or if something goes wrong when creating the result set.
+      final AtomicBoolean decremented = new AtomicBoolean(false);
+      try {
+        return new AsyncResultSetImpl(
+            executorProvider,
+            () -> {
+              try {
+                return resultSetSupplier.get();
+              } finally {
+                if (decremented.compareAndSet(false, true)) {
+                  decrementPendingStartsAndSignal();
+                }
+              }
+            },
+            bufferRows) {
+          @Override
+          public void close() {
+            try {
+              super.close();
+            } finally {
+              if (!isUsed() && decremented.compareAndSet(false, true)) {
+                decrementPendingStartsAndSignal();
+              }
+            }
+          }
+        };
+      } catch (Throwable t) {
+        if (decremented.compareAndSet(false, true)) {
+          decrementPendingStartsAndSignal();
+        }
+        throw t;
+      }
+    }
+
     @Override
     public ListenableAsyncResultSet readAsync(
         String table, KeySet keys, Iterable<String> columns, ReadOption... options) {
@@ -415,8 +473,8 @@ abstract class AbstractReadContext
           readOptions.hasBufferRows()
               ? readOptions.bufferRows()
               : AsyncResultSetImpl.DEFAULT_BUFFER_SIZE;
-      return new AsyncResultSetImpl(
-          executorProvider, () -> readInternal(table, null, keys, columns, options), bufferRows);
+      return createAsyncResultSet(
+          () -> readInternal(table, null, keys, columns, options), bufferRows);
     }
 
     @Override
@@ -427,10 +485,8 @@ abstract class AbstractReadContext
           readOptions.hasBufferRows()
               ? readOptions.bufferRows()
               : AsyncResultSetImpl.DEFAULT_BUFFER_SIZE;
-      return new AsyncResultSetImpl(
-          executorProvider,
-          () -> readInternal(table, checkNotNull(index), keys, columns, options),
-          bufferRows);
+      return createAsyncResultSet(
+          () -> readInternal(table, checkNotNull(index), keys, columns, options), bufferRows);
     }
 
     @Override
@@ -440,8 +496,7 @@ abstract class AbstractReadContext
           readOptions.hasBufferRows()
               ? readOptions.bufferRows()
               : AsyncResultSetImpl.DEFAULT_BUFFER_SIZE;
-      return new AsyncResultSetImpl(
-          executorProvider,
+      return createAsyncResultSet(
           () ->
               executeQueryInternal(
                   statement, com.google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL, options),
@@ -450,20 +505,38 @@ abstract class AbstractReadContext
 
     @Override
     public Timestamp getReadTimestamp() {
-      synchronized (txnLock) {
+      txnLock.lock();
+      try {
         assertTimestampAvailable(timestamp != null);
         return timestamp;
+      } finally {
+        txnLock.unlock();
       }
     }
 
     ByteString getTransactionId() {
-      synchronized (txnLock) {
+      txnLock.lock();
+      try {
         return transactionId;
+      } finally {
+        txnLock.unlock();
       }
     }
 
     @Override
     public void close() {
+      txnLock.lock();
+      try {
+        while (pendingStarts.get() > 0) {
+          try {
+            hasNoPendingStarts.await();
+          } catch (InterruptedException e) {
+            throw SpannerExceptionFactory.propagateInterrupt(e);
+          }
+        }
+      } finally {
+        txnLock.unlock();
+      }
       ByteString id = getTransactionId();
       if (id != null && !id.isEmpty()) {
         rpc.clearTransactionAndChannelAffinity(id, Option.CHANNEL_HINT.getLong(channelHint));
@@ -477,7 +550,8 @@ abstract class AbstractReadContext
      * Multiplexed Session.
      */
     void initFallbackTransaction() {
-      synchronized (txnLock) {
+      txnLock.lock();
+      try {
         span.addAnnotation("Creating Transaction");
         TransactionOptions.Builder options = TransactionOptions.newBuilder();
         if (timestamp != null) {
@@ -494,6 +568,8 @@ abstract class AbstractReadContext
                 .setOptions(options)
                 .build();
         initTransactionInternal(request);
+      } finally {
+        txnLock.unlock();
       }
     }
 
@@ -507,7 +583,8 @@ abstract class AbstractReadContext
       // RTT, but optimal if the first read is slow. As the client library is now using streaming
       // reads, a possible optimization could be to use the first read in the transaction to begin
       // it implicitly.
-      synchronized (txnLock) {
+      txnLock.lock();
+      try {
         if (transactionId != null) {
           return;
         }
@@ -520,6 +597,8 @@ abstract class AbstractReadContext
                 .setOptions(options)
                 .build();
         initTransactionInternal(request);
+      } finally {
+        txnLock.unlock();
       }
     }
 

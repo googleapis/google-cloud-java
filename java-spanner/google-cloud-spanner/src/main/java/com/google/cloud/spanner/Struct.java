@@ -17,7 +17,6 @@
 package com.google.cloud.spanner;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static com.google.common.base.Preconditions.checkState;
 
 import com.google.cloud.ByteArray;
 import com.google.cloud.Date;
@@ -125,7 +124,9 @@ public abstract class Struct extends AbstractStructReader implements Serializabl
 
     private void checkBindingInProgress(boolean expectInProgress) {
       if (expectInProgress) {
-        checkState(currentField != null, "No binding currently active");
+        if (currentField == null) {
+          throw new IllegalStateException("No binding currently active");
+        }
       } else if (currentField != null) {
         throw new IllegalStateException("Incomplete binding for column " + currentField);
       }
@@ -139,7 +140,7 @@ public abstract class Struct extends AbstractStructReader implements Serializabl
 
   /* Public methods for accessing struct-typed fields */
   public Struct getStruct(int columnIndex) {
-    checkNonNullStruct(columnIndex, columnIndex);
+    checkNonNullStruct(columnIndex);
     return getStructInternal(columnIndex);
   }
 
@@ -152,14 +153,26 @@ public abstract class Struct extends AbstractStructReader implements Serializabl
   /* Sub-classes must implement this method */
   protected abstract Struct getStructInternal(int columnIndex);
 
-  private void checkNonNullStruct(int columnIndex, Object columnNameForError) {
+  private void checkNonNullStruct(int columnIndex, String columnNameForError) {
     Type actualType = getColumnType(columnIndex);
-    checkState(
-        actualType.getCode() == Code.STRUCT,
-        "Column %s is not of correct type: expected STRUCT<...> but was %s",
-        columnNameForError,
-        actualType);
+    if (actualType.getCode() != Code.STRUCT) {
+      throw new IllegalStateException(
+          String.format(
+              "Column %s is not of correct type: expected STRUCT<...> but was %s",
+              columnNameForError, actualType));
+    }
     checkNonNull(columnIndex, columnNameForError);
+  }
+
+  private void checkNonNullStruct(int columnIndex) {
+    Type actualType = getColumnType(columnIndex);
+    if (actualType.getCode() != Code.STRUCT) {
+      throw new IllegalStateException(
+          String.format(
+              "Column %d is not of correct type: expected STRUCT<...> but was %s",
+              columnIndex, actualType));
+    }
+    checkNonNull(columnIndex);
   }
 
   /** Default implementation for value structs produced by {@link Builder}. */
