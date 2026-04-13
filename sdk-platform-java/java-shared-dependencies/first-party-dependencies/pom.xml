@@ -21,7 +21,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <site.installationModule>${project.artifactId}</site.installationModule>
-    <grpc-gcp.version>1.9.2</grpc-gcp.version>
+    <grpc-gcp.version>1.10.0</grpc-gcp.version>
     <google.oauth-client.version>1.39.0</google.oauth-client.version>
     <google.api-client.version>2.7.2</google.api-client.version>
   </properties>
