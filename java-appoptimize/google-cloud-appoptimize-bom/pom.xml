@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-appoptimize-bom</artifactId>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-appoptimize:current} -->
+  <version>0.0.1</version><!-- {x-version-update:google-cloud-appoptimize:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -26,17 +26,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-appoptimize</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-appoptimize:current} -->
+        <version>0.0.1</version><!-- {x-version-update:google-cloud-appoptimize:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-appoptimize-v1beta</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-appoptimize-v1beta:current} -->
+        <version>0.0.1</version><!-- {x-version-update:grpc-google-cloud-appoptimize-v1beta:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-appoptimize-v1beta</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-appoptimize-v1beta:current} -->
+        <version>0.0.1</version><!-- {x-version-update:proto-google-cloud-appoptimize-v1beta:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

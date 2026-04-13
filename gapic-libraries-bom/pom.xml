@@ -136,7 +136,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-appoptimize-bom</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-appoptimize:current} -->
+        <version>0.0.1</version><!-- {x-version-update:google-cloud-appoptimize:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
