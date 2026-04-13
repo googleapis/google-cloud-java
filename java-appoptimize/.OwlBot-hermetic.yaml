@@ -21,7 +21,7 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-appoptimize/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-#- "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
 
 deep-copy-regex:
 - source: "/google/cloud/appoptimize/(v.*)/.*-java/proto-google-.*/src"
