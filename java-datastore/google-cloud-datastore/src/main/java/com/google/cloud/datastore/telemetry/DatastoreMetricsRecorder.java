@@ -91,12 +91,9 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
     // Default provider: export built-in metrics to Cloud Monitoring
     String emulatorHost = System.getenv(DatastoreOptions.LOCAL_HOST_ENV_VAR);
     boolean emulatorEnabled = emulatorHost != null && !emulatorHost.isEmpty();
-    String metricsEnvVar = System.getenv(TelemetryConstants.ENABLE_METRICS_ENV_VAR);
-    boolean metricsDisabledViaEnv = "false".equalsIgnoreCase(metricsEnvVar);
 
-    if (otelOptions.isExportBuiltinMetricsToGoogleCloudMonitoring()
-        && !emulatorEnabled
-        && !metricsDisabledViaEnv) {
+    // When using a local emulator, there is no need to configure a built-in Otel instance
+    if (otelOptions.isExportBuiltinMetricsToGoogleCloudMonitoring() && !emulatorEnabled) {
       try {
         OpenTelemetry builtInOtel =
             BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(

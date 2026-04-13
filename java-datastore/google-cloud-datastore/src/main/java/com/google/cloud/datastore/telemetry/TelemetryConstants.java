@@ -126,9 +126,6 @@ public class TelemetryConstants {
   public static final Set<AttributeKey<?>> COMMON_ATTRIBUTES =
       ImmutableSet.of(CLIENT_UID_KEY, METHOD_KEY, STATUS_KEY, SERVICE_KEY);
 
-  // Environment variable to enable/disable built-in metrics
-  public static final String ENABLE_METRICS_ENV_VAR = "DATASTORE_ENABLE_METRICS";
-
   /** Metric name for the total latency of a transaction. */
   public static final String METRIC_NAME_TRANSACTION_LATENCY =
       METRIC_PREFIX + "/transaction_latencies";
