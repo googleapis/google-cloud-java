@@ -42,26 +42,26 @@ public class SampleComposer {
   }
 
   static List<Statement> composeInlineSample(Sample sample) {
-    return bodyWithComment(
-        sample.sampleComment() != null
-            ? sample.sampleComment()
-            : CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT,
-        sample.body());
+    return composeInlineSample(sample, CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT);
+  }
+
+  static List<Statement> composeInlineSample(Sample sample, List<Statement> sampleComment) {
+    return bodyWithComment(sampleComment, sample.body());
   }
 
   //  "Executable" meaning it includes the necessary code to execute java code,
   //  still may require additional configuration to actually execute generated sample code
   static ClassDefinition composeExecutableSample(Sample sample, String pakkage) {
+    return composeExecutableSample(sample, pakkage, CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT);
+  }
+
+  static ClassDefinition composeExecutableSample(Sample sample, String pakkage, List<Statement> sampleComment) {
     return createExecutableSample(
         sample.fileHeader(),
         pakkage,
         sample.name(),
         sample.variableAssignments(),
-        bodyWithComment(
-            sample.sampleComment() != null
-                ? sample.sampleComment()
-                : CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT,
-            sample.body()),
+        bodyWithComment(sampleComment, sample.body()),
         sample.regionTag());
   }
 

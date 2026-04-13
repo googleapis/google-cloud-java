@@ -34,8 +34,16 @@ public final class SampleCodeWriter {
     return write(SampleComposer.composeInlineSample(sample));
   }
 
+  public static String writeInlineSample(Sample sample, List<Statement> sampleComment) {
+    return write(SampleComposer.composeInlineSample(sample, sampleComment));
+  }
+
   public static String writeExecutableSample(Sample sample, String packkage) {
     return write(SampleComposer.composeExecutableSample(sample, packkage));
+  }
+
+  public static String writeExecutableSample(Sample sample, String packkage, List<Statement> sampleComment) {
+    return write(SampleComposer.composeExecutableSample(sample, packkage, sampleComment));
   }
 
   @VisibleForTesting
