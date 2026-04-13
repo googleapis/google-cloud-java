@@ -85,19 +85,11 @@ public class CommentComposer {
       Arrays.asList(
           CommentStatement.withComment(
               LineComment.withComment(
-                  "- The samples create a client that can be re-used for multiple requests")),
-          CommentStatement.withComment(
-              LineComment.withComment(
-                  "  and are expected to be long-lived.")),
-          CommentStatement.withComment(
-              LineComment.withComment(
-                  "  The clients should be resource managed properly and eventually closed.")),
-          CommentStatement.withComment(
-              LineComment.withComment(
-                  "- For more information on client lifecycle, see")),
-          CommentStatement.withComment(
-              LineComment.withComment(
-                  "https://docs.cloud.google.com/java/docs/client-lifecycle")));
+                  "- The samples create a client that can be re-used for multiple requests\n"
+                      + "   and are expected to be long-lived.\n"
+                      + "   The clients should be resource managed properly and eventually closed.\n"
+                      + "- For more information on client lifecycle, see\n"
+                      + "https://docs.cloud.google.com/java/docs/client-lifecycle")));
 
   public static final List<Statement> AUTO_GENERATED_SAMPLE_COMMENT =
       ImmutableList.<Statement>builder()
