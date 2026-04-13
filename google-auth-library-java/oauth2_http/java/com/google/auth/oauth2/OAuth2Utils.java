@@ -40,7 +40,6 @@ import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.util.PemReader;
 import com.google.api.client.util.PemReader.Section;
-import com.google.api.client.util.SecurityUtils;
 import com.google.api.core.InternalApi;
 import com.google.auth.http.AuthHttpConstants;
 import com.google.auth.http.HttpTransportFactory;
@@ -81,6 +80,11 @@ import java.util.Set;
  */
 @InternalApi
 public class OAuth2Utils {
+
+  enum Pkcs8Algorithm {
+    RSA,
+    EC
+  }
 
   static final String SIGNATURE_ALGORITHM = "SHA256withRSA";
 
@@ -269,6 +273,24 @@ public class OAuth2Utils {
    *     key creation.
    */
   public static PrivateKey privateKeyFromPkcs8(String privateKeyPkcs8) throws IOException {
+    return privateKeyFromPkcs8(privateKeyPkcs8, Pkcs8Algorithm.RSA);
+  }
+
+  /**
+   * Reads a private key from a PKCS#8 encoded string.
+   *
+   * <p>If the key is labeled with "-----BEGIN PRIVATE KEY-----", it is parsed as PKCS#8 as per RFC
+   * 7468 Section 10.
+   *
+   * @see <a href="https://datatracker.ietf.org/doc/html/rfc7468#section-10">RFC 7468 Section 10</a>
+   * @param privateKeyPkcs8 base64 encoded private key string
+   * @param algorithm expected algorithm of the private key
+   * @return the private key.
+   * @throws IOException if the private key data is invalid or if an unexpected exception occurs
+   *     during key creation.
+   */
+  public static PrivateKey privateKeyFromPkcs8(String privateKeyPkcs8, Pkcs8Algorithm algorithm)
+      throws IOException {
     Reader reader = new StringReader(privateKeyPkcs8);
     Section section = PemReader.readFirstSectionAndClose(reader, "PRIVATE KEY");
     if (section == null) {
@@ -278,7 +300,7 @@ public class OAuth2Utils {
     PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(bytes);
     Exception unexpectedException;
     try {
-      KeyFactory keyFactory = SecurityUtils.getRsaKeyFactory();
+      KeyFactory keyFactory = KeyFactory.getInstance(algorithm.toString());
       return keyFactory.generatePrivate(keySpec);
     } catch (NoSuchAlgorithmException | InvalidKeySpecException exception) {
       unexpectedException = exception;

@@ -46,9 +46,9 @@ import com.google.common.collect.Lists;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -90,17 +90,20 @@ public class TestUtils {
   public static InputStream jsonToInputStream(GenericJson json) throws IOException {
     json.setFactory(JSON_FACTORY);
     String text = json.toPrettyString();
-    return new ByteArrayInputStream(text.getBytes("UTF-8"));
+    return new ByteArrayInputStream(text.getBytes(StandardCharsets.UTF_8));
   }
 
   public static InputStream stringToInputStream(String text) {
-    try {
-      return new ByteArrayInputStream(text.getBytes("UTF-8"));
-    } catch (UnsupportedEncodingException e) {
-      throw new RuntimeException("Unexpected encoding exception", e);
-    }
+    return new ByteArrayInputStream(text.getBytes(StandardCharsets.UTF_8));
   }
 
+  /**
+   * Parses a URI query string into a map of key-value pairs.
+   *
+   * @param query The URI query string (e.g., "key1=val1&key2=val2").
+   * @return A map of decoded keys to decoded values.
+   * @throws IOException If the query string is malformed.
+   */
   public static Map<String, String> parseQuery(String query) throws IOException {
     Map<String, String> map = new HashMap<>();
     Iterable<String> entries = Splitter.on('&').split(query);
@@ -112,6 +115,23 @@ public class TestUtils {
       String key = URLDecoder.decode(sides.get(0), "UTF-8");
       String value = URLDecoder.decode(sides.get(1), "UTF-8");
       map.put(key, value);
+    }
+    return map;
+  }
+
+  /**
+   * Parses a JSON string into a map of key-value pairs.
+   *
+   * @param content The JSON string representation of a flat object.
+   * @return A map of keys to string representations of their values.
+   * @throws IOException If the JSON is malformed.
+   */
+  public static Map<String, String> parseJson(String content) throws IOException {
+    GenericJson json = JSON_FACTORY.fromString(content, GenericJson.class);
+    Map<String, String> map = new HashMap<>();
+    for (Map.Entry<String, Object> entry : json.entrySet()) {
+      Object value = entry.getValue();
+      map.put(entry.getKey(), value == null ? null : value.toString());
     }
     return map;
   }

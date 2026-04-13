@@ -35,7 +35,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.gson.GsonFactory;
@@ -95,51 +95,38 @@ class JwtCredentialsTest extends BaseSerializationTest {
     assertEquals(credentials, deserializedCredentials);
     assertEquals(credentials.hashCode(), deserializedCredentials.hashCode());
     assertEquals(credentials.toString(), deserializedCredentials.toString());
-    assertSame(deserializedCredentials.getClock(), Clock.SYSTEM);
+    assertSame(Clock.SYSTEM, deserializedCredentials.getClock());
   }
 
   @Test
   void builder_requiresPrivateKey() {
-    try {
-      JwtClaims claims =
-          JwtClaims.newBuilder()
-              .setAudience("some-audience")
-              .setIssuer("some-issuer")
-              .setSubject("some-subject")
-              .build();
-      JwtCredentials.newBuilder().setJwtClaims(claims).setPrivateKeyId(PRIVATE_KEY_ID).build();
-      fail("Should throw exception");
-    } catch (NullPointerException ex) {
-      // expected
-    }
+    JwtClaims claims =
+        JwtClaims.newBuilder()
+            .setAudience("some-audience")
+            .setIssuer("some-issuer")
+            .setSubject("some-subject")
+            .build();
+    JwtCredentials.Builder builder =
+        JwtCredentials.newBuilder().setJwtClaims(claims).setPrivateKeyId(PRIVATE_KEY_ID);
+    assertThrows(NullPointerException.class, builder::build);
   }
 
   @Test
   void builder_requiresClaims() {
-    try {
-      JwtCredentials.newBuilder()
-          .setPrivateKeyId(PRIVATE_KEY_ID)
-          .setPrivateKey(getPrivateKey())
-          .build();
-      fail("Should throw exception");
-    } catch (NullPointerException ex) {
-      // expected
-    }
+    JwtCredentials.Builder builder =
+        JwtCredentials.newBuilder().setPrivateKeyId(PRIVATE_KEY_ID).setPrivateKey(getPrivateKey());
+    assertThrows(NullPointerException.class, builder::build);
   }
 
   @Test
   void builder_requiresCompleteClaims() {
-    try {
-      JwtClaims claims = JwtClaims.newBuilder().build();
-      JwtCredentials.newBuilder()
-          .setJwtClaims(claims)
-          .setPrivateKeyId(PRIVATE_KEY_ID)
-          .setPrivateKey(getPrivateKey())
-          .build();
-      fail("Should throw exception");
-    } catch (IllegalStateException ex) {
-      // expected
-    }
+    JwtClaims claims = JwtClaims.newBuilder().build();
+    JwtCredentials.Builder builder =
+        JwtCredentials.newBuilder()
+            .setJwtClaims(claims)
+            .setPrivateKeyId(PRIVATE_KEY_ID)
+            .setPrivateKey(getPrivateKey());
+    assertThrows(IllegalStateException.class, builder::build);
   }
 
   @Test

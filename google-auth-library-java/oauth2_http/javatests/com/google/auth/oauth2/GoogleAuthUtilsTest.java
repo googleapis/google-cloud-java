@@ -47,8 +47,9 @@ class GoogleAuthUtilsTest {
     // the base folder will be an empty string using.
     File homeDir = new File("");
     File configDir = new File(homeDir, ".config");
-    File cloudConfigDir = new File(configDir, provider.CLOUDSDK_CONFIG_DIRECTORY);
-    File wellKnownFile = new File(cloudConfigDir, provider.WELL_KNOWN_CREDENTIALS_FILE);
+    File cloudConfigDir = new File(configDir, DefaultCredentialsProvider.CLOUDSDK_CONFIG_DIRECTORY);
+    File wellKnownFile =
+        new File(cloudConfigDir, DefaultCredentialsProvider.WELL_KNOWN_CREDENTIALS_FILE);
 
     String obtainedPath = GoogleAuthUtils.getWellKnownCredentialsPath(provider);
 
