@@ -890,16 +890,16 @@ class ClientContextTest {
     assertThat(transportChannel.getExecutor()).isSameInstanceAs(executorProvider.getExecutor());
   }
 
-  private GdchCredentials getMockGdchCredentials() throws IOException {
+  private GdchCredentials getMockGdchCredentials() {
     GdchCredentials creds = Mockito.mock(GdchCredentials.class);
 
     // GdchCredentials builder is mocked to accept a well-formed uri
     GdchCredentials.Builder gdchCredsBuilder = Mockito.mock(GdchCredentials.Builder.class);
-    Mockito.when(gdchCredsBuilder.setGdchAudience(Mockito.any(URI.class)))
+    Mockito.when(gdchCredsBuilder.setGdchAudience(Mockito.anyString()))
         .thenReturn(gdchCredsBuilder);
     Mockito.when(gdchCredsBuilder.build()).thenReturn(creds);
     Mockito.when(creds.toBuilder()).thenReturn(gdchCredsBuilder);
-    Mockito.when(creds.createWithGdchAudience(Mockito.any()))
+    Mockito.when(creds.createWithGdchAudience(Mockito.anyString()))
         .thenAnswer((uri) -> getMockGdchCredentials());
     return creds;
   }
@@ -939,7 +939,7 @@ class ClientContextTest {
     assertThat(fromProvider).isInstanceOf(GdchCredentials.class);
     assertNotSame(fromContext, fromProvider);
     verify((GdchCredentials) fromProvider, times(1))
-        .createWithGdchAudience(URI.create("test.googleapis.com:443"));
+        .createWithGdchAudience("test.googleapis.com:443");
   }
 
   @Test
@@ -995,7 +995,7 @@ class ClientContextTest {
     assertThat(fromProvider).isInstanceOf(GdchCredentials.class);
     assertNotSame(fromContext, fromProvider);
     verify((GdchCredentials) fromProvider, times(1))
-        .createWithGdchAudience(URI.create("test-endpoint"));
+        .createWithGdchAudience("test-endpoint");
   }
 
   @Test
@@ -1022,9 +1022,9 @@ class ClientContextTest {
     // using an audience should have made the context to recreate the credentials
     assertNotSame(fromContext, fromProvider);
     verify((GdchCredentials) fromProvider, times(1))
-        .createWithGdchAudience(URI.create("valid-uri"));
+        .createWithGdchAudience("valid-uri");
     verify((GdchCredentials) fromProvider, times(0))
-        .createWithGdchAudience(URI.create("test-endpoint"));
+        .createWithGdchAudience("test-endpoint");
   }
 
   @Test

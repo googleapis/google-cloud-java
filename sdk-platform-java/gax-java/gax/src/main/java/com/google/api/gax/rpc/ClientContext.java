@@ -362,7 +362,7 @@ public abstract class ClientContext {
     } catch (IllegalArgumentException ex) { // thrown when passing a malformed uri string
       throw new IllegalArgumentException("The GDC-H API audience string is not a valid URI", ex);
     }
-    return ((GdchCredentials) credentials).createWithGdchAudience(gdchAudienceUri);
+    return ((GdchCredentials) credentials).createWithGdchAudience(audienceString);
   }
 
   /**
