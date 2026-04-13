@@ -34,6 +34,8 @@ import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
 import java.time.Duration;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionException;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ThreadLocalRandom;
 
 /** A callable to fork traffic between classic and session based operations. */
@@ -110,15 +112,25 @@ public class DivertingUnaryCallable<ReqT, RespT> extends UnaryCallable<ReqT, Res
   }
 
   ApiException translateException(Throwable e) {
+    Throwable cause = e;
+    while (cause instanceof CompletionException || cause instanceof ExecutionException) {
+      if (cause.getCause() != null) {
+        cause = cause.getCause();
+      } else {
+        break;
+      }
+    }
+
     Status.Code code = Status.Code.UNKNOWN;
 
-    if (e instanceof StatusRuntimeException) {
-      code = ((StatusRuntimeException) e).getStatus().getCode();
+    if (cause instanceof StatusRuntimeException) {
+      code = ((StatusRuntimeException) cause).getStatus().getCode();
     }
-    if (e instanceof StatusException) {
-      code = ((StatusException) e).getStatus().getCode();
+    if (cause instanceof StatusException) {
+      code = ((StatusException) cause).getStatus().getCode();
     }
 
-    return ApiExceptionFactory.createException(e.getMessage(), e, GrpcStatusCode.of(code), false);
+    return ApiExceptionFactory.createException(
+        cause.getMessage(), e, GrpcStatusCode.of(code), false);
   }
 }
