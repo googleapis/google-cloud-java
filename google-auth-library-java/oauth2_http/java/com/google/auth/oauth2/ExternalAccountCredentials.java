@@ -97,6 +97,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
   @Nullable protected ImpersonatedCredentials impersonatedCredentials;
 
   private EnvironmentProvider environmentProvider;
+  private PropertyProvider propertyProvider;
 
   private int connectTimeout;
   private int readTimeout;
@@ -205,6 +206,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
             : scopes;
     this.environmentProvider =
         environmentProvider == null ? SystemEnvironmentProvider.getInstance() : environmentProvider;
+    this.propertyProvider = SystemPropertyProvider.getInstance();
     this.workforcePoolUserProject = null;
     this.serviceAccountImpersonationOptions =
         new ServiceAccountImpersonationOptions(new HashMap<String, Object>());
@@ -253,6 +255,10 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
         builder.environmentProvider == null
             ? SystemEnvironmentProvider.getInstance()
             : builder.environmentProvider;
+    this.propertyProvider =
+        builder.propertyProvider == null
+            ? SystemPropertyProvider.getInstance()
+            : builder.propertyProvider;
     this.serviceAccountImpersonationOptions =
         builder.serviceAccountImpersonationOptions == null
             ? new ServiceAccountImpersonationOptions(new HashMap<String, Object>())
@@ -657,6 +663,10 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     return environmentProvider;
   }
 
+  PropertyProvider getPropertyProvider() {
+    return propertyProvider;
+  }
+
   /**
    * @return whether the current configuration is for Workforce Pools (which enable 3p user
    *     identities, rather than workloads)
@@ -772,6 +782,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     protected String tokenInfoUrl;
     protected CredentialSource credentialSource;
     protected EnvironmentProvider environmentProvider;
+    protected PropertyProvider propertyProvider;
     protected HttpTransportFactory transportFactory;
 
     @Nullable protected String serviceAccountImpersonationUrl;
@@ -806,6 +817,7 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
       this.clientSecret = credentials.clientSecret;
       this.scopes = credentials.scopes;
       this.environmentProvider = credentials.environmentProvider;
+      this.propertyProvider = credentials.propertyProvider;
       this.workforcePoolUserProject = credentials.workforcePoolUserProject;
       this.serviceAccountImpersonationOptions = credentials.serviceAccountImpersonationOptions;
       this.metricsHandler = credentials.metricsHandler;
@@ -1026,6 +1038,18 @@ public abstract class ExternalAccountCredentials extends GoogleCredentials {
     @CanIgnoreReturnValue
     Builder setEnvironmentProvider(EnvironmentProvider environmentProvider) {
       this.environmentProvider = environmentProvider;
+      return this;
+    }
+
+    /**
+     * Sets the optional Property Provider.
+     *
+     * @param propertyProvider the {@code PropertyProvider} to set
+     * @return this {@code Builder} object
+     */
+    @CanIgnoreReturnValue
+    Builder setPropertyProvider(PropertyProvider propertyProvider) {
+      this.propertyProvider = propertyProvider;
       return this;
     }
 
