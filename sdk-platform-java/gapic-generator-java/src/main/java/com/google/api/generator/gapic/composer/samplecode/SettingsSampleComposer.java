@@ -26,6 +26,7 @@ import com.google.api.generator.engine.ast.VaporReference;
 import com.google.api.generator.engine.ast.Variable;
 import com.google.api.generator.engine.ast.VariableExpr;
 import com.google.api.generator.gapic.model.RegionTag;
+import com.google.api.generator.gapic.composer.comment.CommentComposer;
 import com.google.api.generator.gapic.model.Sample;
 import com.google.api.generator.gapic.utils.JavaStyle;
 import java.time.Duration;
@@ -247,7 +248,7 @@ public final class SettingsSampleComposer {
         Sample.builder()
             .setBody(statements)
             .setRegionTag(regionTag)
-            .setIsClientLifecycleRelevant(false)
+            .setSampleComment(CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT_BASE)
             .build());
   }
 
@@ -443,7 +444,7 @@ public final class SettingsSampleComposer {
         Sample.builder()
             .setBody(statements)
             .setRegionTag(regionTag)
-            .setIsClientLifecycleRelevant(false)
+            .setSampleComment(CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT_BASE)
             .build());
   }
 }

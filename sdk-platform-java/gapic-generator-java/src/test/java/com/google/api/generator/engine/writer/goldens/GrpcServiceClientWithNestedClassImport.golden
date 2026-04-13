@@ -21,8 +21,8 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * // - The samples create a client that can be re-used for multiple requests
- * //   and are expected to be long-lived.
- * //   The clients should be resource managed properly and eventually closed.
+ * // and are expected to be long-lived.
+ * // The clients should be resource managed properly and eventually closed.
  * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * NestedMessageServiceClient nestedMessageServiceClient = NestedMessageServiceClient.create();
@@ -75,8 +75,8 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * // - The samples create a client that can be re-used for multiple requests
- * //   and are expected to be long-lived.
- * //   The clients should be resource managed properly and eventually closed.
+ * // and are expected to be long-lived.
+ * // The clients should be resource managed properly and eventually closed.
  * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * NestedMessageServiceSettings nestedMessageServiceSettings =
@@ -96,8 +96,8 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * // - The samples create a client that can be re-used for multiple requests
- * //   and are expected to be long-lived.
- * //   The clients should be resource managed properly and eventually closed.
+ * // and are expected to be long-lived.
+ * // The clients should be resource managed properly and eventually closed.
  * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * NestedMessageServiceSettings nestedMessageServiceSettings =
@@ -169,8 +169,8 @@ public class NestedMessageServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * // - The samples create a client that can be re-used for multiple requests
-   * //   and are expected to be long-lived.
-   * //   The clients should be resource managed properly and eventually closed.
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
    * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * NestedMessageServiceClient nestedMessageServiceClient = NestedMessageServiceClient.create();
@@ -196,8 +196,8 @@ public class NestedMessageServiceClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * // - The samples create a client that can be re-used for multiple requests
-   * //   and are expected to be long-lived.
-   * //   The clients should be resource managed properly and eventually closed.
+   * // and are expected to be long-lived.
+   * // The clients should be resource managed properly and eventually closed.
    * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * NestedMessageServiceClient nestedMessageServiceClient = NestedMessageServiceClient.create();

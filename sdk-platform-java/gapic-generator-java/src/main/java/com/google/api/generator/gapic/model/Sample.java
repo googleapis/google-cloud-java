@@ -20,6 +20,7 @@ import com.google.api.generator.engine.ast.Statement;
 import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
+import javax.annotation.Nullable;
 
 /**
  * This model represents a generated code sample. It contains the information needed to generate a
@@ -39,15 +40,15 @@ public abstract class Sample {
 
   public abstract boolean isCanonical();
 
-  public abstract boolean isClientLifecycleRelevant();
+  @Nullable
+  public abstract List<Statement> sampleComment();
 
   public static Builder builder() {
     return new AutoValue_Sample.Builder()
         .setBody(ImmutableList.of())
         .setVariableAssignments(ImmutableList.of())
         .setFileHeader(ImmutableList.of())
-        .setIsCanonical(false)
-        .setIsClientLifecycleRelevant(true);
+        .setIsCanonical(false);
   }
 
   public abstract Builder toBuilder();
@@ -91,7 +92,7 @@ public abstract class Sample {
 
     public abstract Builder setIsCanonical(boolean isCanonical);
 
-    public abstract Builder setIsClientLifecycleRelevant(boolean isClientLifecycleRelevant);
+    public abstract Builder setSampleComment(List<Statement> sampleComment);
 
     abstract Builder setName(String name);
 

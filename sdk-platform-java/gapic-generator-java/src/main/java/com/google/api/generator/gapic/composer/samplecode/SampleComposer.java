@@ -43,9 +43,9 @@ public class SampleComposer {
 
   static List<Statement> composeInlineSample(Sample sample) {
     return bodyWithComment(
-        sample.isClientLifecycleRelevant()
-            ? CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT
-            : CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT_BASE,
+        sample.sampleComment() != null
+            ? sample.sampleComment()
+            : CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT,
         sample.body());
   }
 
@@ -58,9 +58,9 @@ public class SampleComposer {
         sample.name(),
         sample.variableAssignments(),
         bodyWithComment(
-            sample.isClientLifecycleRelevant()
-                ? CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT
-                : CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT_BASE,
+            sample.sampleComment() != null
+                ? sample.sampleComment()
+                : CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT,
             sample.body()),
         sample.regionTag());
   }
