@@ -15,6 +15,7 @@
  */
 package com.google.cloud.bigtable.data.v2.internal.compat;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.auth.Credentials;
 import com.google.bigtable.v2.FeatureFlags;
@@ -26,6 +27,10 @@ import javax.annotation.Nullable;
 
 public class GaxDirectAccessChannelProvider implements ChannelProvider {
   private final InstantiatingGrpcChannelProvider inner;
+
+  @SuppressWarnings("rawtypes")
+  private final ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator;
+
   private final Optional<ChannelProvider> fallback;
 
   public static ChannelProvider create(
@@ -67,6 +72,9 @@ public class GaxDirectAccessChannelProvider implements ChannelProvider {
       @SuppressWarnings("unused") @Nullable Credentials credentials,
       Optional<ChannelProvider> fallback) {
     this.inner = directAccessProvider;
+    this.channelConfigurator =
+        Optional.ofNullable(directAccessProvider.toBuilder().getChannelConfigurator())
+            .orElse(b -> b);
     this.fallback = fallback;
   }
 
@@ -81,7 +89,7 @@ public class GaxDirectAccessChannelProvider implements ChannelProvider {
   @Override
   public ManagedChannelBuilder<?> newChannelBuilder() {
     try {
-      return inner.createChannelBuilder();
+      return channelConfigurator.apply(inner.createChannelBuilder());
     } catch (IOException e) {
       throw new RuntimeException("Gax channel provider failed to provide a channel builder", e);
     }
