@@ -17,6 +17,7 @@
 package com.google.cloud.datastore.telemetry;
 
 import com.google.auth.Credentials;
+import com.google.cloud.NoCredentials;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
@@ -24,7 +25,6 @@ import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import io.opentelemetry.sdk.resources.Resource;
-import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.lang.reflect.Method;
 import java.net.InetAddress;
@@ -56,7 +56,6 @@ public final class BuiltInDatastoreMetricsProvider {
   private static final Logger logger =
       Logger.getLogger(BuiltInDatastoreMetricsProvider.class.getName());
 
-  private static volatile String taskId;
   private static volatile String location;
   private static final String DEFAULT_LOCATION = "global";
 
@@ -94,25 +93,34 @@ public final class BuiltInDatastoreMetricsProvider {
    */
   @Nullable
   public OpenTelemetry createOpenTelemetry(
-      @Nonnull String projectId, @Nonnull String databaseId, @Nullable Credentials credentials) {
-    try {
-      SdkMeterProviderBuilder sdkMeterProviderBuilder = SdkMeterProvider.builder();
-      // Register Datastore-specific views and the PeriodicMetricReader.
-      DatastoreBuiltInMetricsView.registerBuiltinMetrics(
-          DatastoreCloudMonitoringExporter.create(projectId, credentials), sdkMeterProviderBuilder);
-      // Configure the monitored resource attributes for this specific client.
-      sdkMeterProviderBuilder.setResource(
-          Resource.create(createResourceAttributes(projectId, databaseId)));
-      SdkMeterProvider sdkMeterProvider = sdkMeterProviderBuilder.build();
-      return OpenTelemetrySdk.builder().setMeterProvider(sdkMeterProvider).build();
-    } catch (IOException ex) {
+      @Nonnull String projectId, @Nonnull String databaseId, @Nonnull Credentials credentials) {
+    SdkMeterProviderBuilder sdkMeterProviderBuilder = SdkMeterProvider.builder();
+
+    // Generate unique client attributes (including unique taskId) for this specific client
+    // instance.
+    Map<String, String> clientAttributes = buildClientAttributes();
+
+    if (credentials instanceof NoCredentials) {
       logger.log(
           Level.WARNING,
-          "Unable to create OpenTelemetry instance for client side metrics, will skip exporting"
-              + " built-in metrics",
-          ex);
+          "Built-in metrics exporting is disabled when using NoCredentials (emulator).");
       return null;
     }
+
+    DatastoreCloudMonitoringExporter exporter =
+        DatastoreCloudMonitoringExporter.create(
+            projectId, databaseId, credentials, clientAttributes);
+    if (exporter == null) {
+      return null;
+    }
+
+    // Register Datastore-specific views and the PeriodicMetricReader.
+    DatastoreBuiltInMetricsView.registerBuiltinMetrics(exporter, sdkMeterProviderBuilder);
+    // Configure the monitored resource attributes for this specific client.
+    sdkMeterProviderBuilder.setResource(
+        Resource.create(createResourceAttributes(projectId, databaseId)));
+    SdkMeterProvider sdkMeterProvider = sdkMeterProviderBuilder.build();
+    return OpenTelemetrySdk.builder().setMeterProvider(sdkMeterProvider).build();
   }
 
   /**
@@ -173,22 +181,23 @@ public final class BuiltInDatastoreMetricsProvider {
    * <p>For Java 9 and later, the PID is obtained using the ProcessHandle API. For Java 8, the PID
    * is extracted from ManagementFactory.getRuntimeMXBean().getName().
    *
+   * <p><b>Note</b>: This method generates a new value every time it is called to ensure that each
+   * client instance gets a unique ID. It should be called sparingly (e.g., once per client
+   * creation) to avoid performance overhead from UUID generation and hostname lookup.
+   *
    * @return a unique identifier string.
    */
   private static String getDefaultTaskValue() {
-    if (taskId == null) {
-      String identifier = UUID.randomUUID().toString();
-      String pid = getProcessId();
+    String identifier = UUID.randomUUID().toString();
+    String pid = getProcessId();
 
-      try {
-        String hostname = InetAddress.getLocalHost().getHostName();
-        taskId = identifier + "@" + pid + "@" + hostname;
-      } catch (UnknownHostException e) {
-        logger.log(Level.INFO, "Unable to get the hostname.", e);
-        taskId = identifier + "@" + pid + "@localhost";
-      }
+    try {
+      String hostname = InetAddress.getLocalHost().getHostName();
+      return identifier + "@" + pid + "@" + hostname;
+    } catch (UnknownHostException e) {
+      logger.log(Level.CONFIG, "Unable to get the hostname.", e);
+      return identifier + "@" + pid + "@localhost";
     }
-    return taskId;
   }
 
   private static String getProcessId() {

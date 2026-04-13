@@ -70,10 +70,10 @@ public class DatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void defaultOptionsWithBuiltInMetricsEnabled_returnsOpenTelemetryRecorder() {
+  public void defaultOptionsWithBuiltInMetricsEnabled_butNoCredentials_returnsNoOpRecorder() {
     // Explicitly enable built-in metrics export
     DatastoreOptions options =
-        baseOptions()
+        baseOptions() // Uses NoCredentials by default
             .setOpenTelemetryOptions(
                 DatastoreOpenTelemetryOptions.newBuilder()
                     .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
@@ -81,14 +81,9 @@ public class DatastoreMetricsRecorderTest {
             .build();
     DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options);
 
-    // If we're not in an emulator, it should return a OpenTelemetryDatastoreMetricsRecorder
-    // (Note: System.getenv() is hard to mock, but we assume it's not set in test environment)
-    String emulatorHost = System.getenv(DatastoreOptions.LOCAL_HOST_ENV_VAR);
-    if (emulatorHost == null || emulatorHost.isEmpty()) {
-      assertThat(recorder).isInstanceOf(OpenTelemetryDatastoreMetricsRecorder.class);
-    } else {
-      assertThat(recorder).isInstanceOf(NoOpDatastoreMetricsRecorder.class);
-    }
+    // Since baseOptions() uses NoCredentials, it should return NoOpDatastoreMetricsRecorder
+    // as we don't want to send metrics for local emulator logic.
+    assertThat(recorder).isInstanceOf(NoOpDatastoreMetricsRecorder.class);
   }
 
   @Test
