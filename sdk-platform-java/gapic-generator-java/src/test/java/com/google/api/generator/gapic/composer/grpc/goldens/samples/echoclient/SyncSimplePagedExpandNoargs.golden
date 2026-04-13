@@ -32,10 +32,11 @@ public class SyncSimplePagedExpandNoargs {
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (EchoClient echoClient = EchoClient.create()) {
-      for (EchoResponse element : echoClient.simplePagedExpand().iterateAll()) {
-        // doThingsWith(element);
-      }
+    // - For more information on client lifecycle, see
+    // https://docs.cloud.google.com/java/docs/client-lifecycle
+    EchoClient echoClient = EchoClient.create();
+    for (EchoResponse element : echoClient.simplePagedExpand().iterateAll()) {
+      // doThingsWith(element);
     }
   }
 }

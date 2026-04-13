@@ -34,13 +34,14 @@ public class AsyncUpdateUser {
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (IdentityClient identityClient = IdentityClient.create()) {
-      UpdateUserRequest request =
-          UpdateUserRequest.newBuilder().setUser(User.newBuilder().build()).build();
-      ApiFuture<User> future = identityClient.updateUserCallable().futureCall(request);
-      // Do something.
-      User response = future.get();
-    }
+    // - For more information on client lifecycle, see
+    // https://docs.cloud.google.com/java/docs/client-lifecycle
+    IdentityClient identityClient = IdentityClient.create();
+    UpdateUserRequest request =
+        UpdateUserRequest.newBuilder().setUser(User.newBuilder().build()).build();
+    ApiFuture<User> future = identityClient.updateUserCallable().futureCall(request);
+    // Do something.
+    User response = future.get();
   }
 }
 // [END goldensample_generated_Identity_UpdateUser_async]

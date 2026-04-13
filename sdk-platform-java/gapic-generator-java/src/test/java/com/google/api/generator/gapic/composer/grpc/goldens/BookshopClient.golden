@@ -21,11 +21,12 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (BookshopClient bookshopClient = BookshopClient.create()) {
- *   int booksCount = 1618425911;
- *   List<Book> books = new ArrayList<>();
- *   Book response = bookshopClient.getBook(booksCount, books);
- * }
+ * // - For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
+ * BookshopClient bookshopClient = BookshopClient.create();
+ * int booksCount = 1618425911;
+ * List<Book> books = new ArrayList<>();
+ * Book response = bookshopClient.getBook(booksCount, books);
  * }</pre>
  *
  * <p>Note: close() needs to be called on the BookshopClient object to clean up resources such as
@@ -76,6 +77,8 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // - For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * BookshopSettings bookshopSettings =
  *     BookshopSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -91,6 +94,8 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // - For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * BookshopSettings bookshopSettings =
  *     BookshopSettings.newBuilder().setEndpoint(myEndpoint).build();
  * BookshopClient bookshopClient = BookshopClient.create(bookshopSettings);
@@ -157,11 +162,12 @@ public class BookshopClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BookshopClient bookshopClient = BookshopClient.create()) {
-   *   int booksCount = 1618425911;
-   *   List<Book> books = new ArrayList<>();
-   *   Book response = bookshopClient.getBook(booksCount, books);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * BookshopClient bookshopClient = BookshopClient.create();
+   * int booksCount = 1618425911;
+   * List<Book> books = new ArrayList<>();
+   * Book response = bookshopClient.getBook(booksCount, books);
    * }</pre>
    *
    * @param booksCount
@@ -184,11 +190,12 @@ public class BookshopClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BookshopClient bookshopClient = BookshopClient.create()) {
-   *   String booksList = "booksList2-1119589686";
-   *   List<Book> books = new ArrayList<>();
-   *   Book response = bookshopClient.getBook(booksList, books);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * BookshopClient bookshopClient = BookshopClient.create();
+   * String booksList = "booksList2-1119589686";
+   * List<Book> books = new ArrayList<>();
+   * Book response = bookshopClient.getBook(booksList, books);
    * }</pre>
    *
    * @param booksList
@@ -211,15 +218,16 @@ public class BookshopClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BookshopClient bookshopClient = BookshopClient.create()) {
-   *   GetBookRequest request =
-   *       GetBookRequest.newBuilder()
-   *           .setBooksCount1(1618425911)
-   *           .setBooksList2("booksList2-1119589686")
-   *           .addAllBooks3(new ArrayList<Book>())
-   *           .build();
-   *   Book response = bookshopClient.getBook(request);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * BookshopClient bookshopClient = BookshopClient.create();
+   * GetBookRequest request =
+   *     GetBookRequest.newBuilder()
+   *         .setBooksCount1(1618425911)
+   *         .setBooksList2("booksList2-1119589686")
+   *         .addAllBooks3(new ArrayList<Book>())
+   *         .build();
+   * Book response = bookshopClient.getBook(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -239,17 +247,18 @@ public class BookshopClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (BookshopClient bookshopClient = BookshopClient.create()) {
-   *   GetBookRequest request =
-   *       GetBookRequest.newBuilder()
-   *           .setBooksCount1(1618425911)
-   *           .setBooksList2("booksList2-1119589686")
-   *           .addAllBooks3(new ArrayList<Book>())
-   *           .build();
-   *   ApiFuture<Book> future = bookshopClient.getBookCallable().futureCall(request);
-   *   // Do something.
-   *   Book response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * BookshopClient bookshopClient = BookshopClient.create();
+   * GetBookRequest request =
+   *     GetBookRequest.newBuilder()
+   *         .setBooksCount1(1618425911)
+   *         .setBooksList2("booksList2-1119589686")
+   *         .addAllBooks3(new ArrayList<Book>())
+   *         .build();
+   * ApiFuture<Book> future = bookshopClient.getBookCallable().futureCall(request);
+   * // Do something.
+   * Book response = future.get();
    * }</pre>
    */
   public final UnaryCallable<GetBookRequest, Book> getBookCallable() {

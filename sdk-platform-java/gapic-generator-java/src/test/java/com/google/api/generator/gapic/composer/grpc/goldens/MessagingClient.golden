@@ -37,11 +37,12 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (MessagingClient messagingClient = MessagingClient.create()) {
- *   String displayName = "displayName1714148973";
- *   String description = "description-1724546052";
- *   Room response = messagingClient.createRoom(displayName, description);
- * }
+ * // - For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
+ * MessagingClient messagingClient = MessagingClient.create();
+ * String displayName = "displayName1714148973";
+ * String description = "description-1724546052";
+ * Room response = messagingClient.createRoom(displayName, description);
  * }</pre>
  *
  * <p>Note: close() needs to be called on the MessagingClient object to clean up resources such as
@@ -303,6 +304,8 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // - For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * MessagingSettings messagingSettings =
  *     MessagingSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -318,6 +321,8 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // - For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * MessagingSettings messagingSettings =
  *     MessagingSettings.newBuilder().setEndpoint(myEndpoint).build();
  * MessagingClient messagingClient = MessagingClient.create(messagingSettings);
@@ -395,11 +400,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   String displayName = "displayName1714148973";
-   *   String description = "description-1724546052";
-   *   Room response = messagingClient.createRoom(displayName, description);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * String displayName = "displayName1714148973";
+   * String description = "description-1724546052";
+   * Room response = messagingClient.createRoom(displayName, description);
    * }</pre>
    *
    * @param displayName
@@ -425,11 +431,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   CreateRoomRequest request =
-   *       CreateRoomRequest.newBuilder().setRoom(Room.newBuilder().build()).build();
-   *   Room response = messagingClient.createRoom(request);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * CreateRoomRequest request =
+   *     CreateRoomRequest.newBuilder().setRoom(Room.newBuilder().build()).build();
+   * Room response = messagingClient.createRoom(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -449,13 +456,14 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   CreateRoomRequest request =
-   *       CreateRoomRequest.newBuilder().setRoom(Room.newBuilder().build()).build();
-   *   ApiFuture<Room> future = messagingClient.createRoomCallable().futureCall(request);
-   *   // Do something.
-   *   Room response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * CreateRoomRequest request =
+   *     CreateRoomRequest.newBuilder().setRoom(Room.newBuilder().build()).build();
+   * ApiFuture<Room> future = messagingClient.createRoomCallable().futureCall(request);
+   * // Do something.
+   * Room response = future.get();
    * }</pre>
    */
   public final UnaryCallable<CreateRoomRequest, Room> createRoomCallable() {
@@ -472,10 +480,11 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   RoomName name = RoomName.of("[ROOM]");
-   *   Room response = messagingClient.getRoom(name);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * RoomName name = RoomName.of("[ROOM]");
+   * Room response = messagingClient.getRoom(name);
    * }</pre>
    *
    * @param name
@@ -497,10 +506,11 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   String name = RoomName.of("[ROOM]").toString();
-   *   Room response = messagingClient.getRoom(name);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * String name = RoomName.of("[ROOM]").toString();
+   * Room response = messagingClient.getRoom(name);
    * }</pre>
    *
    * @param name
@@ -521,11 +531,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   GetRoomRequest request =
-   *       GetRoomRequest.newBuilder().setName(RoomName.of("[ROOM]").toString()).build();
-   *   Room response = messagingClient.getRoom(request);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * GetRoomRequest request =
+   *     GetRoomRequest.newBuilder().setName(RoomName.of("[ROOM]").toString()).build();
+   * Room response = messagingClient.getRoom(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -545,13 +556,14 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   GetRoomRequest request =
-   *       GetRoomRequest.newBuilder().setName(RoomName.of("[ROOM]").toString()).build();
-   *   ApiFuture<Room> future = messagingClient.getRoomCallable().futureCall(request);
-   *   // Do something.
-   *   Room response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * GetRoomRequest request =
+   *     GetRoomRequest.newBuilder().setName(RoomName.of("[ROOM]").toString()).build();
+   * ApiFuture<Room> future = messagingClient.getRoomCallable().futureCall(request);
+   * // Do something.
+   * Room response = future.get();
    * }</pre>
    */
   public final UnaryCallable<GetRoomRequest, Room> getRoomCallable() {
@@ -568,11 +580,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   UpdateRoomRequest request =
-   *       UpdateRoomRequest.newBuilder().setRoom(Room.newBuilder().build()).build();
-   *   Room response = messagingClient.updateRoom(request);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * UpdateRoomRequest request =
+   *     UpdateRoomRequest.newBuilder().setRoom(Room.newBuilder().build()).build();
+   * Room response = messagingClient.updateRoom(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -592,13 +605,14 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   UpdateRoomRequest request =
-   *       UpdateRoomRequest.newBuilder().setRoom(Room.newBuilder().build()).build();
-   *   ApiFuture<Room> future = messagingClient.updateRoomCallable().futureCall(request);
-   *   // Do something.
-   *   Room response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * UpdateRoomRequest request =
+   *     UpdateRoomRequest.newBuilder().setRoom(Room.newBuilder().build()).build();
+   * ApiFuture<Room> future = messagingClient.updateRoomCallable().futureCall(request);
+   * // Do something.
+   * Room response = future.get();
    * }</pre>
    */
   public final UnaryCallable<UpdateRoomRequest, Room> updateRoomCallable() {
@@ -615,10 +629,11 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   RoomName name = RoomName.of("[ROOM]");
-   *   messagingClient.deleteRoom(name);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * RoomName name = RoomName.of("[ROOM]");
+   * messagingClient.deleteRoom(name);
    * }</pre>
    *
    * @param name
@@ -640,10 +655,11 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   String name = RoomName.of("[ROOM]").toString();
-   *   messagingClient.deleteRoom(name);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * String name = RoomName.of("[ROOM]").toString();
+   * messagingClient.deleteRoom(name);
    * }</pre>
    *
    * @param name
@@ -664,11 +680,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   DeleteRoomRequest request =
-   *       DeleteRoomRequest.newBuilder().setName(RoomName.of("[ROOM]").toString()).build();
-   *   messagingClient.deleteRoom(request);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * DeleteRoomRequest request =
+   *     DeleteRoomRequest.newBuilder().setName(RoomName.of("[ROOM]").toString()).build();
+   * messagingClient.deleteRoom(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -688,13 +705,14 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   DeleteRoomRequest request =
-   *       DeleteRoomRequest.newBuilder().setName(RoomName.of("[ROOM]").toString()).build();
-   *   ApiFuture<Empty> future = messagingClient.deleteRoomCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * DeleteRoomRequest request =
+   *     DeleteRoomRequest.newBuilder().setName(RoomName.of("[ROOM]").toString()).build();
+   * ApiFuture<Empty> future = messagingClient.deleteRoomCallable().futureCall(request);
+   * // Do something.
+   * future.get();
    * }</pre>
    */
   public final UnaryCallable<DeleteRoomRequest, Empty> deleteRoomCallable() {
@@ -711,15 +729,16 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   ListRoomsRequest request =
-   *       ListRoomsRequest.newBuilder()
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   for (Room element : messagingClient.listRooms(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * ListRoomsRequest request =
+   *     ListRoomsRequest.newBuilder()
+   *         .setPageSize(883849137)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * for (Room element : messagingClient.listRooms(request).iterateAll()) {
+   *   // doThingsWith(element);
    * }
    * }</pre>
    *
@@ -740,17 +759,18 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   ListRoomsRequest request =
-   *       ListRoomsRequest.newBuilder()
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   ApiFuture<Room> future = messagingClient.listRoomsPagedCallable().futureCall(request);
-   *   // Do something.
-   *   for (Room element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * ListRoomsRequest request =
+   *     ListRoomsRequest.newBuilder()
+   *         .setPageSize(883849137)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * ApiFuture<Room> future = messagingClient.listRoomsPagedCallable().futureCall(request);
+   * // Do something.
+   * for (Room element : future.get().iterateAll()) {
+   *   // doThingsWith(element);
    * }
    * }</pre>
    */
@@ -768,23 +788,24 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   ListRoomsRequest request =
-   *       ListRoomsRequest.newBuilder()
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   while (true) {
-   *     ListRoomsResponse response = messagingClient.listRoomsCallable().call(request);
-   *     for (Room element : response.getRoomsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * ListRoomsRequest request =
+   *     ListRoomsRequest.newBuilder()
+   *         .setPageSize(883849137)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * while (true) {
+   *   ListRoomsResponse response = messagingClient.listRoomsCallable().call(request);
+   *   for (Room element : response.getRoomsList()) {
+   *     // doThingsWith(element);
+   *   }
+   *   String nextPageToken = response.getNextPageToken();
+   *   if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *     request = request.toBuilder().setPageToken(nextPageToken).build();
+   *   } else {
+   *     break;
    *   }
    * }
    * }</pre>
@@ -803,11 +824,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   ProfileName parent = ProfileName.of("[USER]");
-   *   ByteString image = ByteString.EMPTY;
-   *   Blurb response = messagingClient.createBlurb(parent, image);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * ProfileName parent = ProfileName.of("[USER]");
+   * ByteString image = ByteString.EMPTY;
+   * Blurb response = messagingClient.createBlurb(parent, image);
    * }</pre>
    *
    * @param parent
@@ -833,11 +855,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   ProfileName parent = ProfileName.of("[USER]");
-   *   String text = "text3556653";
-   *   Blurb response = messagingClient.createBlurb(parent, text);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * ProfileName parent = ProfileName.of("[USER]");
+   * String text = "text3556653";
+   * Blurb response = messagingClient.createBlurb(parent, text);
    * }</pre>
    *
    * @param parent
@@ -863,11 +886,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   RoomName parent = RoomName.of("[ROOM]");
-   *   ByteString image = ByteString.EMPTY;
-   *   Blurb response = messagingClient.createBlurb(parent, image);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * RoomName parent = RoomName.of("[ROOM]");
+   * ByteString image = ByteString.EMPTY;
+   * Blurb response = messagingClient.createBlurb(parent, image);
    * }</pre>
    *
    * @param parent
@@ -893,11 +917,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   RoomName parent = RoomName.of("[ROOM]");
-   *   String text = "text3556653";
-   *   Blurb response = messagingClient.createBlurb(parent, text);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * RoomName parent = RoomName.of("[ROOM]");
+   * String text = "text3556653";
+   * Blurb response = messagingClient.createBlurb(parent, text);
    * }</pre>
    *
    * @param parent
@@ -923,11 +948,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   String parent = ProfileName.of("[USER]").toString();
-   *   ByteString image = ByteString.EMPTY;
-   *   Blurb response = messagingClient.createBlurb(parent, image);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * String parent = ProfileName.of("[USER]").toString();
+   * ByteString image = ByteString.EMPTY;
+   * Blurb response = messagingClient.createBlurb(parent, image);
    * }</pre>
    *
    * @param parent
@@ -953,11 +979,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   String parent = ProfileName.of("[USER]").toString();
-   *   String text = "text3556653";
-   *   Blurb response = messagingClient.createBlurb(parent, text);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * String parent = ProfileName.of("[USER]").toString();
+   * String text = "text3556653";
+   * Blurb response = messagingClient.createBlurb(parent, text);
    * }</pre>
    *
    * @param parent
@@ -983,14 +1010,15 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   CreateBlurbRequest request =
-   *       CreateBlurbRequest.newBuilder()
-   *           .setParent(ProfileName.of("[USER]").toString())
-   *           .setBlurb(Blurb.newBuilder().build())
-   *           .build();
-   *   Blurb response = messagingClient.createBlurb(request);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * CreateBlurbRequest request =
+   *     CreateBlurbRequest.newBuilder()
+   *         .setParent(ProfileName.of("[USER]").toString())
+   *         .setBlurb(Blurb.newBuilder().build())
+   *         .build();
+   * Blurb response = messagingClient.createBlurb(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -1010,16 +1038,17 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   CreateBlurbRequest request =
-   *       CreateBlurbRequest.newBuilder()
-   *           .setParent(ProfileName.of("[USER]").toString())
-   *           .setBlurb(Blurb.newBuilder().build())
-   *           .build();
-   *   ApiFuture<Blurb> future = messagingClient.createBlurbCallable().futureCall(request);
-   *   // Do something.
-   *   Blurb response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * CreateBlurbRequest request =
+   *     CreateBlurbRequest.newBuilder()
+   *         .setParent(ProfileName.of("[USER]").toString())
+   *         .setBlurb(Blurb.newBuilder().build())
+   *         .build();
+   * ApiFuture<Blurb> future = messagingClient.createBlurbCallable().futureCall(request);
+   * // Do something.
+   * Blurb response = future.get();
    * }</pre>
    */
   public final UnaryCallable<CreateBlurbRequest, Blurb> createBlurbCallable() {
@@ -1036,10 +1065,11 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   BlurbName name = BlurbName.ofRoomBlurbName("[ROOM]", "[BLURB]");
-   *   Blurb response = messagingClient.getBlurb(name);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * BlurbName name = BlurbName.ofRoomBlurbName("[ROOM]", "[BLURB]");
+   * Blurb response = messagingClient.getBlurb(name);
    * }</pre>
    *
    * @param name
@@ -1061,11 +1091,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   String name =
-   *       BlurbName.ofUserLegacyUserBlurbName("[USER]", "[LEGACY_USER]", "[BLURB]").toString();
-   *   Blurb response = messagingClient.getBlurb(name);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * String name =
+   *     BlurbName.ofUserLegacyUserBlurbName("[USER]", "[LEGACY_USER]", "[BLURB]").toString();
+   * Blurb response = messagingClient.getBlurb(name);
    * }</pre>
    *
    * @param name
@@ -1086,13 +1117,14 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   GetBlurbRequest request =
-   *       GetBlurbRequest.newBuilder()
-   *           .setName(BlurbName.ofRoomBlurbName("[ROOM]", "[BLURB]").toString())
-   *           .build();
-   *   Blurb response = messagingClient.getBlurb(request);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * GetBlurbRequest request =
+   *     GetBlurbRequest.newBuilder()
+   *         .setName(BlurbName.ofRoomBlurbName("[ROOM]", "[BLURB]").toString())
+   *         .build();
+   * Blurb response = messagingClient.getBlurb(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -1112,15 +1144,16 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   GetBlurbRequest request =
-   *       GetBlurbRequest.newBuilder()
-   *           .setName(BlurbName.ofRoomBlurbName("[ROOM]", "[BLURB]").toString())
-   *           .build();
-   *   ApiFuture<Blurb> future = messagingClient.getBlurbCallable().futureCall(request);
-   *   // Do something.
-   *   Blurb response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * GetBlurbRequest request =
+   *     GetBlurbRequest.newBuilder()
+   *         .setName(BlurbName.ofRoomBlurbName("[ROOM]", "[BLURB]").toString())
+   *         .build();
+   * ApiFuture<Blurb> future = messagingClient.getBlurbCallable().futureCall(request);
+   * // Do something.
+   * Blurb response = future.get();
    * }</pre>
    */
   public final UnaryCallable<GetBlurbRequest, Blurb> getBlurbCallable() {
@@ -1137,11 +1170,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   UpdateBlurbRequest request =
-   *       UpdateBlurbRequest.newBuilder().setBlurb(Blurb.newBuilder().build()).build();
-   *   Blurb response = messagingClient.updateBlurb(request);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * UpdateBlurbRequest request =
+   *     UpdateBlurbRequest.newBuilder().setBlurb(Blurb.newBuilder().build()).build();
+   * Blurb response = messagingClient.updateBlurb(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -1161,13 +1195,14 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   UpdateBlurbRequest request =
-   *       UpdateBlurbRequest.newBuilder().setBlurb(Blurb.newBuilder().build()).build();
-   *   ApiFuture<Blurb> future = messagingClient.updateBlurbCallable().futureCall(request);
-   *   // Do something.
-   *   Blurb response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * UpdateBlurbRequest request =
+   *     UpdateBlurbRequest.newBuilder().setBlurb(Blurb.newBuilder().build()).build();
+   * ApiFuture<Blurb> future = messagingClient.updateBlurbCallable().futureCall(request);
+   * // Do something.
+   * Blurb response = future.get();
    * }</pre>
    */
   public final UnaryCallable<UpdateBlurbRequest, Blurb> updateBlurbCallable() {
@@ -1184,10 +1219,11 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   BlurbName name = BlurbName.ofRoomBlurbName("[ROOM]", "[BLURB]");
-   *   messagingClient.deleteBlurb(name);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * BlurbName name = BlurbName.ofRoomBlurbName("[ROOM]", "[BLURB]");
+   * messagingClient.deleteBlurb(name);
    * }</pre>
    *
    * @param name
@@ -1209,11 +1245,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   String name =
-   *       BlurbName.ofUserLegacyUserBlurbName("[USER]", "[LEGACY_USER]", "[BLURB]").toString();
-   *   messagingClient.deleteBlurb(name);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * String name =
+   *     BlurbName.ofUserLegacyUserBlurbName("[USER]", "[LEGACY_USER]", "[BLURB]").toString();
+   * messagingClient.deleteBlurb(name);
    * }</pre>
    *
    * @param name
@@ -1234,13 +1271,14 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   DeleteBlurbRequest request =
-   *       DeleteBlurbRequest.newBuilder()
-   *           .setName(BlurbName.ofRoomBlurbName("[ROOM]", "[BLURB]").toString())
-   *           .build();
-   *   messagingClient.deleteBlurb(request);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * DeleteBlurbRequest request =
+   *     DeleteBlurbRequest.newBuilder()
+   *         .setName(BlurbName.ofRoomBlurbName("[ROOM]", "[BLURB]").toString())
+   *         .build();
+   * messagingClient.deleteBlurb(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -1260,15 +1298,16 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   DeleteBlurbRequest request =
-   *       DeleteBlurbRequest.newBuilder()
-   *           .setName(BlurbName.ofRoomBlurbName("[ROOM]", "[BLURB]").toString())
-   *           .build();
-   *   ApiFuture<Empty> future = messagingClient.deleteBlurbCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * DeleteBlurbRequest request =
+   *     DeleteBlurbRequest.newBuilder()
+   *         .setName(BlurbName.ofRoomBlurbName("[ROOM]", "[BLURB]").toString())
+   *         .build();
+   * ApiFuture<Empty> future = messagingClient.deleteBlurbCallable().futureCall(request);
+   * // Do something.
+   * future.get();
    * }</pre>
    */
   public final UnaryCallable<DeleteBlurbRequest, Empty> deleteBlurbCallable() {
@@ -1285,11 +1324,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   ProfileName parent = ProfileName.of("[USER]");
-   *   for (Blurb element : messagingClient.listBlurbs(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * ProfileName parent = ProfileName.of("[USER]");
+   * for (Blurb element : messagingClient.listBlurbs(parent).iterateAll()) {
+   *   // doThingsWith(element);
    * }
    * }</pre>
    *
@@ -1312,11 +1352,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   RoomName parent = RoomName.of("[ROOM]");
-   *   for (Blurb element : messagingClient.listBlurbs(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * RoomName parent = RoomName.of("[ROOM]");
+   * for (Blurb element : messagingClient.listBlurbs(parent).iterateAll()) {
+   *   // doThingsWith(element);
    * }
    * }</pre>
    *
@@ -1339,11 +1380,12 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   String parent = ProfileName.of("[USER]").toString();
-   *   for (Blurb element : messagingClient.listBlurbs(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * String parent = ProfileName.of("[USER]").toString();
+   * for (Blurb element : messagingClient.listBlurbs(parent).iterateAll()) {
+   *   // doThingsWith(element);
    * }
    * }</pre>
    *
@@ -1365,16 +1407,17 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   ListBlurbsRequest request =
-   *       ListBlurbsRequest.newBuilder()
-   *           .setParent(ProfileName.of("[USER]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   for (Blurb element : messagingClient.listBlurbs(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * ListBlurbsRequest request =
+   *     ListBlurbsRequest.newBuilder()
+   *         .setParent(ProfileName.of("[USER]").toString())
+   *         .setPageSize(883849137)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * for (Blurb element : messagingClient.listBlurbs(request).iterateAll()) {
+   *   // doThingsWith(element);
    * }
    * }</pre>
    *
@@ -1395,18 +1438,19 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   ListBlurbsRequest request =
-   *       ListBlurbsRequest.newBuilder()
-   *           .setParent(ProfileName.of("[USER]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   ApiFuture<Blurb> future = messagingClient.listBlurbsPagedCallable().futureCall(request);
-   *   // Do something.
-   *   for (Blurb element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * ListBlurbsRequest request =
+   *     ListBlurbsRequest.newBuilder()
+   *         .setParent(ProfileName.of("[USER]").toString())
+   *         .setPageSize(883849137)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * ApiFuture<Blurb> future = messagingClient.listBlurbsPagedCallable().futureCall(request);
+   * // Do something.
+   * for (Blurb element : future.get().iterateAll()) {
+   *   // doThingsWith(element);
    * }
    * }</pre>
    */
@@ -1424,24 +1468,25 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   ListBlurbsRequest request =
-   *       ListBlurbsRequest.newBuilder()
-   *           .setParent(ProfileName.of("[USER]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   while (true) {
-   *     ListBlurbsResponse response = messagingClient.listBlurbsCallable().call(request);
-   *     for (Blurb element : response.getBlurbsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * ListBlurbsRequest request =
+   *     ListBlurbsRequest.newBuilder()
+   *         .setParent(ProfileName.of("[USER]").toString())
+   *         .setPageSize(883849137)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * while (true) {
+   *   ListBlurbsResponse response = messagingClient.listBlurbsCallable().call(request);
+   *   for (Blurb element : response.getBlurbsList()) {
+   *     // doThingsWith(element);
+   *   }
+   *   String nextPageToken = response.getNextPageToken();
+   *   if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *     request = request.toBuilder().setPageToken(nextPageToken).build();
+   *   } else {
+   *     break;
    *   }
    * }
    * }</pre>
@@ -1460,10 +1505,11 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   String query = "query107944136";
-   *   SearchBlurbsResponse response = messagingClient.searchBlurbsAsync(query).get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * String query = "query107944136";
+   * SearchBlurbsResponse response = messagingClient.searchBlurbsAsync(query).get();
    * }</pre>
    *
    * @param query
@@ -1485,16 +1531,17 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   SearchBlurbsRequest request =
-   *       SearchBlurbsRequest.newBuilder()
-   *           .setQuery("query107944136")
-   *           .setParent(ProfileName.of("[USER]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   SearchBlurbsResponse response = messagingClient.searchBlurbsAsync(request).get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * SearchBlurbsRequest request =
+   *     SearchBlurbsRequest.newBuilder()
+   *         .setQuery("query107944136")
+   *         .setParent(ProfileName.of("[USER]").toString())
+   *         .setPageSize(883849137)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * SearchBlurbsResponse response = messagingClient.searchBlurbsAsync(request).get();
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -1515,19 +1562,20 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   SearchBlurbsRequest request =
-   *       SearchBlurbsRequest.newBuilder()
-   *           .setQuery("query107944136")
-   *           .setParent(ProfileName.of("[USER]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   OperationFuture<SearchBlurbsResponse, SearchBlurbsMetadata> future =
-   *       messagingClient.searchBlurbsOperationCallable().futureCall(request);
-   *   // Do something.
-   *   SearchBlurbsResponse response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * SearchBlurbsRequest request =
+   *     SearchBlurbsRequest.newBuilder()
+   *         .setQuery("query107944136")
+   *         .setParent(ProfileName.of("[USER]").toString())
+   *         .setPageSize(883849137)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * OperationFuture<SearchBlurbsResponse, SearchBlurbsMetadata> future =
+   *     messagingClient.searchBlurbsOperationCallable().futureCall(request);
+   * // Do something.
+   * SearchBlurbsResponse response = future.get();
    * }</pre>
    */
   public final OperationCallable<SearchBlurbsRequest, SearchBlurbsResponse, SearchBlurbsMetadata>
@@ -1545,18 +1593,19 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   SearchBlurbsRequest request =
-   *       SearchBlurbsRequest.newBuilder()
-   *           .setQuery("query107944136")
-   *           .setParent(ProfileName.of("[USER]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   ApiFuture<Operation> future = messagingClient.searchBlurbsCallable().futureCall(request);
-   *   // Do something.
-   *   Operation response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * SearchBlurbsRequest request =
+   *     SearchBlurbsRequest.newBuilder()
+   *         .setQuery("query107944136")
+   *         .setParent(ProfileName.of("[USER]").toString())
+   *         .setPageSize(883849137)
+   *         .setPageToken("pageToken873572522")
+   *         .build();
+   * ApiFuture<Operation> future = messagingClient.searchBlurbsCallable().futureCall(request);
+   * // Do something.
+   * Operation response = future.get();
    * }</pre>
    */
   public final UnaryCallable<SearchBlurbsRequest, Operation> searchBlurbsCallable() {
@@ -1573,14 +1622,15 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   StreamBlurbsRequest request =
-   *       StreamBlurbsRequest.newBuilder().setName(ProfileName.of("[USER]").toString()).build();
-   *   ServerStream<StreamBlurbsResponse> stream =
-   *       messagingClient.streamBlurbsCallable().call(request);
-   *   for (StreamBlurbsResponse response : stream) {
-   *     // Do something when a response is received.
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * StreamBlurbsRequest request =
+   *     StreamBlurbsRequest.newBuilder().setName(ProfileName.of("[USER]").toString()).build();
+   * ServerStream<StreamBlurbsResponse> stream =
+   *     messagingClient.streamBlurbsCallable().call(request);
+   * for (StreamBlurbsResponse response : stream) {
+   *   // Do something when a response is received.
    * }
    * }</pre>
    */
@@ -1599,33 +1649,34 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   ApiStreamObserver<CreateBlurbRequest> responseObserver =
-   *       new ApiStreamObserver<CreateBlurbRequest>() {
-   *         {@literal @}Override
-   *         public void onNext(SendBlurbsResponse response) {
-   *           // Do something when a response is received.
-   *         }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * ApiStreamObserver<CreateBlurbRequest> responseObserver =
+   *     new ApiStreamObserver<CreateBlurbRequest>() {
+   *       {@literal @}Override
+   *       public void onNext(SendBlurbsResponse response) {
+   *         // Do something when a response is received.
+   *       }
    *
-   *         {@literal @}Override
-   *         public void onError(Throwable t) {
-   *           // Add error-handling
-   *         }
+   *       {@literal @}Override
+   *       public void onError(Throwable t) {
+   *         // Add error-handling
+   *       }
    *
-   *         {@literal @}Override
-   *         public void onCompleted() {
-   *           // Do something when complete.
-   *         }
-   *       };
-   *   ApiStreamObserver<CreateBlurbRequest> requestObserver =
-   *       messagingClient.sendBlurbs().clientStreamingCall(responseObserver);
-   *   CreateBlurbRequest request =
-   *       CreateBlurbRequest.newBuilder()
-   *           .setParent(ProfileName.of("[USER]").toString())
-   *           .setBlurb(Blurb.newBuilder().build())
-   *           .build();
-   *   requestObserver.onNext(request);
-   * }
+   *       {@literal @}Override
+   *       public void onCompleted() {
+   *         // Do something when complete.
+   *       }
+   *     };
+   * ApiStreamObserver<CreateBlurbRequest> requestObserver =
+   *     messagingClient.sendBlurbs().clientStreamingCall(responseObserver);
+   * CreateBlurbRequest request =
+   *     CreateBlurbRequest.newBuilder()
+   *         .setParent(ProfileName.of("[USER]").toString())
+   *         .setBlurb(Blurb.newBuilder().build())
+   *         .build();
+   * requestObserver.onNext(request);
    * }</pre>
    */
   public final ClientStreamingCallable<CreateBlurbRequest, SendBlurbsResponse>
@@ -1643,14 +1694,15 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (MessagingClient messagingClient = MessagingClient.create()) {
-   *   BidiStream<ConnectRequest, StreamBlurbsResponse> bidiStream =
-   *       messagingClient.connectCallable().call();
-   *   ConnectRequest request = ConnectRequest.newBuilder().build();
-   *   bidiStream.send(request);
-   *   for (StreamBlurbsResponse response : bidiStream) {
-   *     // Do something when a response is received.
-   *   }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * MessagingClient messagingClient = MessagingClient.create();
+   * BidiStream<ConnectRequest, StreamBlurbsResponse> bidiStream =
+   *     messagingClient.connectCallable().call();
+   * ConnectRequest request = ConnectRequest.newBuilder().build();
+   * bidiStream.send(request);
+   * for (StreamBlurbsResponse response : bidiStream) {
+   *   // Do something when a response is received.
    * }
    * }</pre>
    */

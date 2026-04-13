@@ -20,11 +20,11 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (NestedMessageServiceClient nestedMessageServiceClient =
- *     NestedMessageServiceClient.create()) {
- *   Outer.Middle request = Outer.Middle.newBuilder().setX(120).build();
- *   Outer.Middle.Inner response = nestedMessageServiceClient.nestedMessageMethod(request);
- * }
+ * // - For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
+ * NestedMessageServiceClient nestedMessageServiceClient = NestedMessageServiceClient.create();
+ * Outer.Middle request = Outer.Middle.newBuilder().setX(120).build();
+ * Outer.Middle.Inner response = nestedMessageServiceClient.nestedMessageMethod(request);
  * }</pre>
  *
  * <p>Note: close() needs to be called on the NestedMessageServiceClient object to clean up
@@ -71,6 +71,8 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // - For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * NestedMessageServiceSettings nestedMessageServiceSettings =
  *     NestedMessageServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
@@ -87,6 +89,8 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * // - For more information on client lifecycle, see
+ * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * NestedMessageServiceSettings nestedMessageServiceSettings =
  *     NestedMessageServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * NestedMessageServiceClient nestedMessageServiceClient =
@@ -155,11 +159,11 @@ public class NestedMessageServiceClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (NestedMessageServiceClient nestedMessageServiceClient =
-   *     NestedMessageServiceClient.create()) {
-   *   Outer.Middle request = Outer.Middle.newBuilder().setX(120).build();
-   *   Outer.Middle.Inner response = nestedMessageServiceClient.nestedMessageMethod(request);
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * NestedMessageServiceClient nestedMessageServiceClient = NestedMessageServiceClient.create();
+   * Outer.Middle request = Outer.Middle.newBuilder().setX(120).build();
+   * Outer.Middle.Inner response = nestedMessageServiceClient.nestedMessageMethod(request);
    * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
@@ -179,14 +183,14 @@ public class NestedMessageServiceClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (NestedMessageServiceClient nestedMessageServiceClient =
-   *     NestedMessageServiceClient.create()) {
-   *   Outer.Middle request = Outer.Middle.newBuilder().setX(120).build();
-   *   ApiFuture<Outer.Middle.Inner> future =
-   *       nestedMessageServiceClient.nestedMessageMethodCallable().futureCall(request);
-   *   // Do something.
-   *   Outer.Middle.Inner response = future.get();
-   * }
+   * // - For more information on client lifecycle, see
+   * // https://docs.cloud.google.com/java/docs/client-lifecycle
+   * NestedMessageServiceClient nestedMessageServiceClient = NestedMessageServiceClient.create();
+   * Outer.Middle request = Outer.Middle.newBuilder().setX(120).build();
+   * ApiFuture<Outer.Middle.Inner> future =
+   *     nestedMessageServiceClient.nestedMessageMethodCallable().futureCall(request);
+   * // Do something.
+   * Outer.Middle.Inner response = future.get();
    * }</pre>
    */
   public final UnaryCallable<Outer.Middle, Outer.Middle.Inner> nestedMessageMethodCallable() {
