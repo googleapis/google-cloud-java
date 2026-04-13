@@ -169,7 +169,7 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
     Optional<String> docSampleCode = Optional.empty();
     if (sampleCode.isPresent()) {
       samples.add(sampleCode.get());
-      docSampleCode = Optional.of(SampleCodeWriter.writeInlineSample(sampleCode.get().body()));
+      docSampleCode = Optional.of(SampleCodeWriter.writeInlineSample(sampleCode.get()));
     }
     // Create a sample for a LRO method using LRO-specific RetrySettings, if one exists in the
     // service.
@@ -188,7 +188,7 @@ public abstract class AbstractServiceSettingsClassComposer implements ClassCompo
     if (lroSampleCode.isPresent()) {
       samples.add(lroSampleCode.get());
       lroDocSampleCode =
-          Optional.of(SampleCodeWriter.writeInlineSample(lroSampleCode.get().body()));
+          Optional.of(SampleCodeWriter.writeInlineSample(lroSampleCode.get()));
     }
 
     return SettingsCommentComposer.createClassHeaderComments(

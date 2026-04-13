@@ -39,12 +39,15 @@ public abstract class Sample {
 
   public abstract boolean isCanonical();
 
+  public abstract boolean isClientLifecycleRelevant();
+
   public static Builder builder() {
     return new AutoValue_Sample.Builder()
         .setBody(ImmutableList.of())
         .setVariableAssignments(ImmutableList.of())
         .setFileHeader(ImmutableList.of())
-        .setIsCanonical(false);
+        .setIsCanonical(false)
+        .setIsClientLifecycleRelevant(true);
   }
 
   public abstract Builder toBuilder();
@@ -87,6 +90,8 @@ public abstract class Sample {
     public abstract Builder setRegionTag(RegionTag regionTag);
 
     public abstract Builder setIsCanonical(boolean isCanonical);
+
+    public abstract Builder setIsClientLifecycleRelevant(boolean isClientLifecycleRelevant);
 
     abstract Builder setName(String name);
 

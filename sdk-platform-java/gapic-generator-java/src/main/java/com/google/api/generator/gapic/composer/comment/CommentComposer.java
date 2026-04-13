@@ -19,6 +19,7 @@ import com.google.api.generator.engine.ast.CommentStatement;
 import com.google.api.generator.engine.ast.LineComment;
 import com.google.api.generator.engine.ast.Statement;
 import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
@@ -63,7 +64,7 @@ public class CommentComposer {
       CommentStatement.withComment(
           LineComment.withComment(AUTO_GENERATED_METHOD_DISCLAIMER_STRING));
 
-  public static final List<Statement> AUTO_GENERATED_SAMPLE_COMMENT =
+  public static final List<Statement> AUTO_GENERATED_SAMPLE_COMMENT_BASE =
       Arrays.asList(
           CommentStatement.withComment(
               LineComment.withComment(
@@ -78,10 +79,18 @@ public class CommentComposer {
                   "- It may require specifying regional endpoints when creating the service client as shown in")),
           CommentStatement.withComment(
               LineComment.withComment(
-                  "https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library")),
-          CommentStatement.withComment(
-              LineComment.withComment(
-                  "- For more information on client lifecycle, see https://docs.cloud.google.com/java/docs/client-lifecycle")));
+                  "https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library")));
+
+  public static final CommentStatement CLIENT_LIFECYCLE_COMMENT =
+      CommentStatement.withComment(
+          LineComment.withComment(
+              "- For more information on client lifecycle, see https://docs.cloud.google.com/java/docs/client-lifecycle"));
+
+  public static final List<Statement> AUTO_GENERATED_SAMPLE_COMMENT =
+      ImmutableList.<Statement>builder()
+          .addAll(AUTO_GENERATED_SAMPLE_COMMENT_BASE)
+          .add(CLIENT_LIFECYCLE_COMMENT)
+          .build();
 
   // This environment variable is mainly used to override the current year to a fixed year in tests
   // so we don't have to update golden tests every year.

@@ -41,6 +41,14 @@ public class SampleComposer {
     return bodyWithComment(CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT, sampleBody);
   }
 
+  static List<Statement> composeInlineSample(Sample sample) {
+    return bodyWithComment(
+        sample.isClientLifecycleRelevant()
+            ? CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT
+            : CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT_BASE,
+        sample.body());
+  }
+
   //  "Executable" meaning it includes the necessary code to execute java code,
   //  still may require additional configuration to actually execute generated sample code
   static ClassDefinition composeExecutableSample(Sample sample, String pakkage) {
@@ -49,7 +57,11 @@ public class SampleComposer {
         pakkage,
         sample.name(),
         sample.variableAssignments(),
-        bodyWithComment(CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT, sample.body()),
+        bodyWithComment(
+            sample.isClientLifecycleRelevant()
+                ? CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT
+                : CommentComposer.AUTO_GENERATED_SAMPLE_COMMENT_BASE,
+            sample.body()),
         sample.regionTag());
   }
 
