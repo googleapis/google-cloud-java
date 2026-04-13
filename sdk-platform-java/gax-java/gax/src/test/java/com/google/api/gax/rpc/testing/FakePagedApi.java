@@ -133,7 +133,7 @@ public class FakePagedApi {
     }
   }
 
-  private static class ListIntegersPage
+  public static class ListIntegersPage
       extends AbstractPage<Integer, List<Integer>, Integer, ListIntegersPage> {
 
     public ListIntegersPage(
@@ -148,7 +148,7 @@ public class FakePagedApi {
     }
   }
 
-  private static class ListIntegersSizedPage
+  public static class ListIntegersSizedPage
       extends AbstractFixedSizeCollection<
           Integer, List<Integer>, Integer, ListIntegersPage, ListIntegersSizedPage> {
 
