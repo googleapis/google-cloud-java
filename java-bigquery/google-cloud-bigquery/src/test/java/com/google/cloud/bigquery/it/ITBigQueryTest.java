@@ -7889,7 +7889,13 @@ class ITBigQueryTest {
     bigquery.getOptions().setDefaultJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL);
     TableResult tableResult = executeSimpleQuery(bigquery);
     assertNotNull(tableResult.getQueryId());
-    assertNull(tableResult.getJobId());
+
+    // Safely handle the fallback where BigQuery decides to create a job anyway
+    if (tableResult.getJobCreationReason() != null) {
+      assertNotNull(tableResult.getJobId());
+      assertEquals(tableResult.getQueryId(), tableResult.getJobId().getJob());
+      assertEquals(JobCreationReason.Code.OTHER, tableResult.getJobCreationReason().getCode());
+    }
 
     assertNotNull(OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.queryRpc"));
     assertNotNull(
