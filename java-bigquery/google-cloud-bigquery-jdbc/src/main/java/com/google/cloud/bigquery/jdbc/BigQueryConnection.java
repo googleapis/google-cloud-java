@@ -138,6 +138,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Long connectionPoolSize;
   Long listenerPoolSize;
   String partnerToken;
+  private static DatabaseMetaData databaseMetaData;
 
   BigQueryConnection(String url) throws IOException {
     this(url, DataSource.fromUrl(url));
@@ -771,7 +772,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public DatabaseMetaData getMetaData() throws SQLException {
-    return new BigQueryDatabaseMetaData(this);
+    if (databaseMetaData == null) {
+      databaseMetaData = new BigQueryDatabaseMetaData(this);
+    }
+    return databaseMetaData;
   }
 
   @Override
