@@ -8,19 +8,9 @@
   "packages": {
     ".": {
       "extra-files": [
-        {
-					"type": "generic",
-					"path": "java-*/**/Version.java",
-					"glob": true
-				},
-        {
-					"type": "generic",
-					"path": "sdk-platform-java/java-showcase*/Version.java",
-					"glob": true
-				},
+        "WORKSPACE",
         ".github/workflows/generated_files_sync.yaml",
         ".github/workflows/hermetic_library_generation.yaml",
-        "sdk-platform-java/WORKSPACE",
         "sdk-platform-java/.cloudbuild/graalvm/cloudbuild.yaml",
         "sdk-platform-java/.cloudbuild/graalvm/cloudbuild-test-a.yaml",
         "sdk-platform-java/.cloudbuild/graalvm/cloudbuild-test-b.yaml",

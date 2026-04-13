@@ -197,11 +197,6 @@ public class AwsCredentials extends ExternalAccountCredentials {
   }
 
   @VisibleForTesting
-  String getEnv(String name) {
-    return System.getenv(name);
-  }
-
-  @VisibleForTesting
   AwsSecurityCredentialsSupplier getAwsSecurityCredentialsSupplier() {
     return this.awsSecurityCredentialsSupplier;
   }

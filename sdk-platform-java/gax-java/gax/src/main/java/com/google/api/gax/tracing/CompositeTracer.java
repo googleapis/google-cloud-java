@@ -220,4 +220,11 @@ class CompositeTracer extends BaseApiTracer {
       child.injectTraceContext(carrier);
     }
   }
+
+  @Override
+  public void requestUrlResolved(String requestUrl) {
+    for (ApiTracer child : children) {
+      child.requestUrlResolved(requestUrl);
+    }
+  }
 }
