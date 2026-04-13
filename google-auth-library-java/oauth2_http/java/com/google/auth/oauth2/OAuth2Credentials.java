@@ -86,7 +86,7 @@ public class OAuth2Credentials extends Credentials {
   // Change listeners are not serialized
   private transient List<CredentialsChangedListener> changeListeners;
   // Until we expose this to the users it can remain transient and non-serializable
-  @VisibleForTesting transient Clock clock = Clock.SYSTEM;
+  transient Clock clock = Clock.SYSTEM;
 
   /**
    * Returns the credentials instance from the given access token.

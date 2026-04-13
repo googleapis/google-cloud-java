@@ -33,6 +33,7 @@ package com.google.auth.oauth2;
 
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.mtls.MtlsHttpTransportFactory;
+import com.google.auth.mtls.MtlsUtils;
 import com.google.auth.mtls.X509Provider;
 import com.google.auth.oauth2.IdentityPoolCredentialSource.IdentityPoolCredentialSourceType;
 import com.google.common.annotations.VisibleForTesting;
@@ -166,26 +167,35 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
     this.transportFactory = new MtlsHttpTransportFactory(mtlsKeyStore);
 
     // Initialize the subject token supplier with the certificate path.
-    credentialSource.setCredentialLocation(x509Provider.getCertificatePath());
+    String explicitCertConfigPath = getExplicitCertConfigPath(credentialSource);
+    credentialSource.setCredentialLocation(
+        MtlsUtils.getCertificatePath(
+            getEnvironmentProvider(), getPropertyProvider(), explicitCertConfigPath));
     return new CertificateIdentityPoolSubjectTokenSupplier(credentialSource);
   }
 
   private X509Provider getX509Provider(
       Builder builder, IdentityPoolCredentialSource credentialSource) {
-    final IdentityPoolCredentialSource.CertificateConfig certConfig =
-        credentialSource.getCertificateConfig();
-
     // Use the provided X509Provider if available, otherwise initialize a default one.
     X509Provider x509Provider = builder.x509Provider;
     if (x509Provider == null) {
       // Determine the certificate path based on the configuration.
-      String explicitCertConfigPath =
-          certConfig.useDefaultCertificateConfig()
-              ? null
-              : certConfig.getCertificateConfigLocation();
-      x509Provider = new X509Provider(explicitCertConfigPath);
+      String explicitCertConfigPath = getExplicitCertConfigPath(credentialSource);
+      x509Provider =
+          new X509Provider(getEnvironmentProvider(), getPropertyProvider(), explicitCertConfigPath);
     }
     return x509Provider;
+  }
+
+  private static String getExplicitCertConfigPath(IdentityPoolCredentialSource credentialSource) {
+    IdentityPoolCredentialSource.CertificateConfig certConfig =
+        credentialSource.getCertificateConfig();
+    if (certConfig == null) {
+      return null;
+    }
+    return certConfig.useDefaultCertificateConfig()
+        ? null
+        : certConfig.getCertificateConfigLocation();
   }
 
   public static class Builder extends ExternalAccountCredentials.Builder {
@@ -212,6 +222,7 @@ public class IdentityPoolCredentials extends ExternalAccountCredentials {
      * @return this {@code Builder} object
      */
     @CanIgnoreReturnValue
+    @VisibleForTesting
     Builder setX509Provider(X509Provider x509Provider) {
       this.x509Provider = x509Provider;
       return this;
