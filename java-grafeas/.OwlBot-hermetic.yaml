@@ -17,8 +17,8 @@ deep-remove-regex:
 - "/src"
 
 deep-preserve-regex:
-- "/.*google-.*/src/main/java/.*/stub/Version.java"
-- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*src/main/java/.*/stub/Version.java"
+- "/.*src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/.*samples/snippets/generated"
 
 deep-copy-regex:
