@@ -740,7 +740,8 @@ public abstract class AbstractStructReader implements StructReader {
     if (!expectedCodes.contains(arrayElementType.getCode())) {
       throw new IllegalStateException(
           String.format(
-              "Array element for Column %s is not of correct type code: expected one of [%s] but was %s",
+              "Array element for Column %s is not of correct type code: expected one of [%s] but"
+                  + " was %s",
               columnNameForError, expectedCodes, Type.array(arrayElementType)));
     }
   }
@@ -750,7 +751,8 @@ public abstract class AbstractStructReader implements StructReader {
     if (!expectedCodes.contains(arrayElementType.getCode())) {
       throw new IllegalStateException(
           String.format(
-              "Array element for Column %d is not of correct type code: expected one of [%s] but was %s",
+              "Array element for Column %d is not of correct type code: expected one of [%s] but"
+                  + " was %s",
               columnIndex, expectedCodes, Type.array(arrayElementType)));
     }
   }
