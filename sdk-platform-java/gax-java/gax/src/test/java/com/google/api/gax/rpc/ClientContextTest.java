@@ -994,8 +994,7 @@ class ClientContextTest {
     assertThat(fromContext).isInstanceOf(GdchCredentials.class);
     assertThat(fromProvider).isInstanceOf(GdchCredentials.class);
     assertNotSame(fromContext, fromProvider);
-    verify((GdchCredentials) fromProvider, times(1))
-        .createWithGdchAudience("test-endpoint");
+    verify((GdchCredentials) fromProvider, times(1)).createWithGdchAudience("test-endpoint");
   }
 
   @Test
@@ -1021,10 +1020,8 @@ class ClientContextTest {
     assertNotNull(fromContext);
     // using an audience should have made the context to recreate the credentials
     assertNotSame(fromContext, fromProvider);
-    verify((GdchCredentials) fromProvider, times(1))
-        .createWithGdchAudience("valid-uri");
-    verify((GdchCredentials) fromProvider, times(0))
-        .createWithGdchAudience("test-endpoint");
+    verify((GdchCredentials) fromProvider, times(1)).createWithGdchAudience("valid-uri");
+    verify((GdchCredentials) fromProvider, times(0)).createWithGdchAudience("test-endpoint");
   }
 
   @Test
