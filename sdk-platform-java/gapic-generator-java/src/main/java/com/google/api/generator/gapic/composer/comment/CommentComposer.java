@@ -81,15 +81,19 @@ public class CommentComposer {
               LineComment.withComment(
                   "https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library")));
 
-  public static final CommentStatement CLIENT_LIFECYCLE_COMMENT =
-      CommentStatement.withComment(
-          LineComment.withComment(
-              "- For more information on client lifecycle, see https://docs.cloud.google.com/java/docs/client-lifecycle"));
+  public static final List<Statement> CLIENT_LIFECYCLE_COMMENT =
+      Arrays.asList(
+          CommentStatement.withComment(
+              LineComment.withComment(
+                  "- For more information on client lifecycle and reusing clients for multiple requests, see")),
+          CommentStatement.withComment(
+              LineComment.withComment(
+                  "https://docs.cloud.google.com/java/docs/client-lifecycle")));
 
   public static final List<Statement> AUTO_GENERATED_SAMPLE_COMMENT =
       ImmutableList.<Statement>builder()
           .addAll(AUTO_GENERATED_SAMPLE_COMMENT_BASE)
-          .add(CLIENT_LIFECYCLE_COMMENT)
+          .addAll(CLIENT_LIFECYCLE_COMMENT)
           .build();
 
   // This environment variable is mainly used to override the current year to a fixed year in tests

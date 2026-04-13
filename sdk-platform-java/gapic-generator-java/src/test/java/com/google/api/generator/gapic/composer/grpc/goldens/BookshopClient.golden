@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * // - For more information on client lifecycle, see
+ * // - For more information on client lifecycle and reusing clients for multiple requests, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * BookshopClient bookshopClient = BookshopClient.create();
  * int booksCount = 1618425911;
@@ -77,7 +77,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * // - For more information on client lifecycle, see
+ * // - For more information on client lifecycle and reusing clients for multiple requests, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * BookshopSettings bookshopSettings =
  *     BookshopSettings.newBuilder()
@@ -94,7 +94,7 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * // - For more information on client lifecycle, see
+ * // - For more information on client lifecycle and reusing clients for multiple requests, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * BookshopSettings bookshopSettings =
  *     BookshopSettings.newBuilder().setEndpoint(myEndpoint).build();
@@ -162,7 +162,7 @@ public class BookshopClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle, see
+   * // - For more information on client lifecycle and reusing clients for multiple requests, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * BookshopClient bookshopClient = BookshopClient.create();
    * int booksCount = 1618425911;
@@ -190,7 +190,7 @@ public class BookshopClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle, see
+   * // - For more information on client lifecycle and reusing clients for multiple requests, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * BookshopClient bookshopClient = BookshopClient.create();
    * String booksList = "booksList2-1119589686";
@@ -218,7 +218,7 @@ public class BookshopClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle, see
+   * // - For more information on client lifecycle and reusing clients for multiple requests, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * BookshopClient bookshopClient = BookshopClient.create();
    * GetBookRequest request =
@@ -247,7 +247,7 @@ public class BookshopClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle, see
+   * // - For more information on client lifecycle and reusing clients for multiple requests, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * BookshopClient bookshopClient = BookshopClient.create();
    * GetBookRequest request =
