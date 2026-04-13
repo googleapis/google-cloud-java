@@ -85,7 +85,16 @@ public class CommentComposer {
       Arrays.asList(
           CommentStatement.withComment(
               LineComment.withComment(
-                  "- For more information on client lifecycle and reusing clients for multiple requests, see")),
+                  "- The samples create a client that can be re-used for multiple requests")),
+          CommentStatement.withComment(
+              LineComment.withComment(
+                  "  and are expected to be long-lived.")),
+          CommentStatement.withComment(
+              LineComment.withComment(
+                  "  The clients should be resource managed properly and eventually closed.")),
+          CommentStatement.withComment(
+              LineComment.withComment(
+                  "- For more information on client lifecycle, see")),
           CommentStatement.withComment(
               LineComment.withComment(
                   "https://docs.cloud.google.com/java/docs/client-lifecycle")));

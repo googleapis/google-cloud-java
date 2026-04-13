@@ -20,7 +20,10 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * // - For more information on client lifecycle and reusing clients for multiple requests, see
+ * // - The samples create a client that can be re-used for multiple requests
+ * //   and are expected to be long-lived.
+ * //   The clients should be resource managed properly and eventually closed.
+ * // - For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * NestedMessageServiceClient nestedMessageServiceClient = NestedMessageServiceClient.create();
  * Outer.Middle request = Outer.Middle.newBuilder().setX(120).build();
@@ -71,7 +74,10 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * // - For more information on client lifecycle and reusing clients for multiple requests, see
+ * // - The samples create a client that can be re-used for multiple requests
+ * //   and are expected to be long-lived.
+ * //   The clients should be resource managed properly and eventually closed.
+ * // - For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * NestedMessageServiceSettings nestedMessageServiceSettings =
  *     NestedMessageServiceSettings.newBuilder()
@@ -89,7 +95,10 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * // - For more information on client lifecycle and reusing clients for multiple requests, see
+ * // - The samples create a client that can be re-used for multiple requests
+ * //   and are expected to be long-lived.
+ * //   The clients should be resource managed properly and eventually closed.
+ * // - For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * NestedMessageServiceSettings nestedMessageServiceSettings =
  *     NestedMessageServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
@@ -159,7 +168,10 @@ public class NestedMessageServiceClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * NestedMessageServiceClient nestedMessageServiceClient = NestedMessageServiceClient.create();
    * Outer.Middle request = Outer.Middle.newBuilder().setX(120).build();
@@ -183,7 +195,10 @@ public class NestedMessageServiceClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * NestedMessageServiceClient nestedMessageServiceClient = NestedMessageServiceClient.create();
    * Outer.Middle request = Outer.Middle.newBuilder().setX(120).build();

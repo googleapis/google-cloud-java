@@ -37,7 +37,10 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * // - For more information on client lifecycle and reusing clients for multiple requests, see
+ * // - The samples create a client that can be re-used for multiple requests
+ * //   and are expected to be long-lived.
+ * //   The clients should be resource managed properly and eventually closed.
+ * // - For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * MessagingClient messagingClient = MessagingClient.create();
  * String displayName = "displayName1714148973";
@@ -304,7 +307,10 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * // - For more information on client lifecycle and reusing clients for multiple requests, see
+ * // - The samples create a client that can be re-used for multiple requests
+ * //   and are expected to be long-lived.
+ * //   The clients should be resource managed properly and eventually closed.
+ * // - For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * MessagingSettings messagingSettings =
  *     MessagingSettings.newBuilder()
@@ -321,7 +327,10 @@ import javax.annotation.Generated;
  * // - It may require correct/in-range values for request initialization.
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * // - For more information on client lifecycle and reusing clients for multiple requests, see
+ * // - The samples create a client that can be re-used for multiple requests
+ * //   and are expected to be long-lived.
+ * //   The clients should be resource managed properly and eventually closed.
+ * // - For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * MessagingSettings messagingSettings =
  *     MessagingSettings.newBuilder().setEndpoint(myEndpoint).build();
@@ -400,7 +409,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * String displayName = "displayName1714148973";
@@ -431,7 +443,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * CreateRoomRequest request =
@@ -456,7 +471,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * CreateRoomRequest request =
@@ -480,7 +498,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * RoomName name = RoomName.of("[ROOM]");
@@ -506,7 +527,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * String name = RoomName.of("[ROOM]").toString();
@@ -531,7 +555,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * GetRoomRequest request =
@@ -556,7 +583,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * GetRoomRequest request =
@@ -580,7 +610,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * UpdateRoomRequest request =
@@ -605,7 +638,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * UpdateRoomRequest request =
@@ -629,7 +665,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * RoomName name = RoomName.of("[ROOM]");
@@ -655,7 +694,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * String name = RoomName.of("[ROOM]").toString();
@@ -680,7 +722,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * DeleteRoomRequest request =
@@ -705,7 +750,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * DeleteRoomRequest request =
@@ -729,7 +777,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * ListRoomsRequest request =
@@ -759,7 +810,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * ListRoomsRequest request =
@@ -788,7 +842,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * ListRoomsRequest request =
@@ -824,7 +881,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * ProfileName parent = ProfileName.of("[USER]");
@@ -855,7 +915,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * ProfileName parent = ProfileName.of("[USER]");
@@ -886,7 +949,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * RoomName parent = RoomName.of("[ROOM]");
@@ -917,7 +983,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * RoomName parent = RoomName.of("[ROOM]");
@@ -948,7 +1017,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * String parent = ProfileName.of("[USER]").toString();
@@ -979,7 +1051,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * String parent = ProfileName.of("[USER]").toString();
@@ -1010,7 +1085,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * CreateBlurbRequest request =
@@ -1038,7 +1116,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * CreateBlurbRequest request =
@@ -1065,7 +1146,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * BlurbName name = BlurbName.ofRoomBlurbName("[ROOM]", "[BLURB]");
@@ -1091,7 +1175,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * String name =
@@ -1117,7 +1204,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * GetBlurbRequest request =
@@ -1144,7 +1234,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * GetBlurbRequest request =
@@ -1170,7 +1263,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * UpdateBlurbRequest request =
@@ -1195,7 +1291,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * UpdateBlurbRequest request =
@@ -1219,7 +1318,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * BlurbName name = BlurbName.ofRoomBlurbName("[ROOM]", "[BLURB]");
@@ -1245,7 +1347,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * String name =
@@ -1271,7 +1376,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * DeleteBlurbRequest request =
@@ -1298,7 +1406,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * DeleteBlurbRequest request =
@@ -1324,7 +1435,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * ProfileName parent = ProfileName.of("[USER]");
@@ -1352,7 +1466,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * RoomName parent = RoomName.of("[ROOM]");
@@ -1380,7 +1497,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * String parent = ProfileName.of("[USER]").toString();
@@ -1407,7 +1527,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * ListBlurbsRequest request =
@@ -1438,7 +1561,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * ListBlurbsRequest request =
@@ -1468,7 +1594,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * ListBlurbsRequest request =
@@ -1505,7 +1634,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * String query = "query107944136";
@@ -1531,7 +1663,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * SearchBlurbsRequest request =
@@ -1562,7 +1697,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * SearchBlurbsRequest request =
@@ -1593,7 +1731,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * SearchBlurbsRequest request =
@@ -1622,7 +1763,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * StreamBlurbsRequest request =
@@ -1649,7 +1793,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * ApiStreamObserver<CreateBlurbRequest> responseObserver =
@@ -1694,7 +1841,10 @@ public class MessagingClient implements BackgroundResource {
    * // - It may require correct/in-range values for request initialization.
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * // - For more information on client lifecycle and reusing clients for multiple requests, see
+   * // - The samples create a client that can be re-used for multiple requests
+   * //   and are expected to be long-lived.
+   * //   The clients should be resource managed properly and eventually closed.
+   * // - For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * MessagingClient messagingClient = MessagingClient.create();
    * BidiStream<ConnectRequest, StreamBlurbsResponse> bidiStream =
