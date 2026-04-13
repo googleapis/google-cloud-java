@@ -215,6 +215,7 @@ public class HsmManagementClientTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setUnrefreshedDurationUntilDisable(Duration.newBuilder().build())
             .setDisableTime(Timestamp.newBuilder().build())
+            .setKeyPortabilityEnabled(true)
             .build();
     mockHsmManagement.addResponse(expectedResponse);
 
@@ -264,6 +265,7 @@ public class HsmManagementClientTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setUnrefreshedDurationUntilDisable(Duration.newBuilder().build())
             .setDisableTime(Timestamp.newBuilder().build())
+            .setKeyPortabilityEnabled(true)
             .build();
     mockHsmManagement.addResponse(expectedResponse);
 
@@ -311,6 +313,7 @@ public class HsmManagementClientTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setUnrefreshedDurationUntilDisable(Duration.newBuilder().build())
             .setDisableTime(Timestamp.newBuilder().build())
+            .setKeyPortabilityEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -380,6 +383,7 @@ public class HsmManagementClientTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setUnrefreshedDurationUntilDisable(Duration.newBuilder().build())
             .setDisableTime(Timestamp.newBuilder().build())
+            .setKeyPortabilityEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -168,7 +168,7 @@ public enum ManagementType implements com.google.protobuf.ProtocolMessageEnum {
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.databasecenter.v1beta.ServiceProto.getDescriptor()
         .getEnumTypes()
-        .get(3);
+        .get(2);
   }
 
   private static final ManagementType[] VALUES = values();

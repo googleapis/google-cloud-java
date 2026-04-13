@@ -65,6 +65,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
 
   private Product() {
     name_ = "";
+    base64EncodedName_ = "";
     offerId_ = "";
     contentLanguage_ = "";
     feedLabel_ = "";
@@ -153,6 +154,77 @@ public final class Product extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BASE64_ENCODED_NAME_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object base64EncodedName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The **unpadded base64url encoded name** of the product.
+   * Format:
+   * `accounts/{account}/products/{product}` where the last
+   * section `product` is the unpadded base64url encoding of the
+   * `content_language~feed_label~offer_id` name.
+   * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded product
+   * name `accounts/123/products/en~US~sku/123`. This field can be used directly
+   * as input to the API methods that require the product name to be encoded if
+   * it contains special characters, for example
+   * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The base64EncodedName.
+   */
+  @java.lang.Override
+  public java.lang.String getBase64EncodedName() {
+    java.lang.Object ref = base64EncodedName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      base64EncodedName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The **unpadded base64url encoded name** of the product.
+   * Format:
+   * `accounts/{account}/products/{product}` where the last
+   * section `product` is the unpadded base64url encoding of the
+   * `content_language~feed_label~offer_id` name.
+   * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded product
+   * name `accounts/123/products/en~US~sku/123`. This field can be used directly
+   * as input to the API methods that require the product name to be encoded if
+   * it contains special characters, for example
+   * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for base64EncodedName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBase64EncodedNameBytes() {
+    java.lang.Object ref = base64EncodedName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      base64EncodedName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -815,6 +887,9 @@ public final class Product extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(13, getProductAttributes());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(base64EncodedName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 15, base64EncodedName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -857,6 +932,9 @@ public final class Product extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getProductAttributes());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(base64EncodedName_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(15, base64EncodedName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -874,6 +952,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         (com.google.shopping.merchant.products.v1.Product) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getBase64EncodedName().equals(other.getBase64EncodedName())) return false;
     if (getLegacyLocal() != other.getLegacyLocal()) return false;
     if (!getOfferId().equals(other.getOfferId())) return false;
     if (!getContentLanguage().equals(other.getContentLanguage())) return false;
@@ -909,6 +988,8 @@ public final class Product extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + BASE64_ENCODED_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getBase64EncodedName().hashCode();
     hash = (37 * hash) + LEGACY_LOCAL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLegacyLocal());
     hash = (37 * hash) + OFFER_ID_FIELD_NUMBER;
@@ -1104,6 +1185,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      base64EncodedName_ = "";
       legacyLocal_ = false;
       offerId_ = "";
       contentLanguage_ = "";
@@ -1121,7 +1203,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         customAttributes_ = null;
         customAttributesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       productStatus_ = null;
       if (productStatusBuilder_ != null) {
         productStatusBuilder_.dispose();
@@ -1170,9 +1252,9 @@ public final class Product extends com.google.protobuf.GeneratedMessage
     private void buildPartialRepeatedFields(
         com.google.shopping.merchant.products.v1.Product result) {
       if (customAttributesBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           customAttributes_ = java.util.Collections.unmodifiableList(customAttributes_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.customAttributes_ = customAttributes_;
       } else {
@@ -1186,38 +1268,41 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.legacyLocal_ = legacyLocal_;
+        result.base64EncodedName_ = base64EncodedName_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.offerId_ = offerId_;
+        result.legacyLocal_ = legacyLocal_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.contentLanguage_ = contentLanguage_;
+        result.offerId_ = offerId_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.feedLabel_ = feedLabel_;
+        result.contentLanguage_ = contentLanguage_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.feedLabel_ = feedLabel_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.dataSource_ = dataSource_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.versionNumber_ = versionNumber_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.productAttributes_ =
             productAttributesBuilder_ == null
                 ? productAttributes_
                 : productAttributesBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.productStatus_ =
             productStatusBuilder_ == null ? productStatus_ : productStatusBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.automatedDiscounts_ =
             automatedDiscountsBuilder_ == null
                 ? automatedDiscounts_
@@ -1245,27 +1330,32 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getBase64EncodedName().isEmpty()) {
+        base64EncodedName_ = other.base64EncodedName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (other.getLegacyLocal() != false) {
         setLegacyLocal(other.getLegacyLocal());
       }
       if (!other.getOfferId().isEmpty()) {
         offerId_ = other.offerId_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getContentLanguage().isEmpty()) {
         contentLanguage_ = other.contentLanguage_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getFeedLabel().isEmpty()) {
         feedLabel_ = other.feedLabel_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getDataSource().isEmpty()) {
         dataSource_ = other.dataSource_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasVersionNumber()) {
@@ -1278,7 +1368,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         if (!other.customAttributes_.isEmpty()) {
           if (customAttributes_.isEmpty()) {
             customAttributes_ = other.customAttributes_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureCustomAttributesIsMutable();
             customAttributes_.addAll(other.customAttributes_);
@@ -1291,7 +1381,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
             customAttributesBuilder_.dispose();
             customAttributesBuilder_ = null;
             customAttributes_ = other.customAttributes_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
             customAttributesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetCustomAttributesFieldBuilder()
@@ -1342,31 +1432,31 @@ public final class Product extends com.google.protobuf.GeneratedMessage
             case 26:
               {
                 offerId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 contentLanguage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 feedLabel_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 50:
               {
                 dataSource_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 56:
               {
                 versionNumber_ = input.readInt64();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 56
             case 74:
@@ -1386,29 +1476,35 @@ public final class Product extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetProductStatusFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 82
             case 88:
               {
                 legacyLocal_ = input.readBool();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 88
             case 98:
               {
                 input.readMessage(
                     internalGetAutomatedDiscountsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(
                     internalGetProductAttributesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 106
+            case 122:
+              {
+                base64EncodedName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1584,6 +1680,162 @@ public final class Product extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.lang.Object base64EncodedName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The **unpadded base64url encoded name** of the product.
+     * Format:
+     * `accounts/{account}/products/{product}` where the last
+     * section `product` is the unpadded base64url encoding of the
+     * `content_language~feed_label~offer_id` name.
+     * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded product
+     * name `accounts/123/products/en~US~sku/123`. This field can be used directly
+     * as input to the API methods that require the product name to be encoded if
+     * it contains special characters, for example
+     * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The base64EncodedName.
+     */
+    public java.lang.String getBase64EncodedName() {
+      java.lang.Object ref = base64EncodedName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        base64EncodedName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The **unpadded base64url encoded name** of the product.
+     * Format:
+     * `accounts/{account}/products/{product}` where the last
+     * section `product` is the unpadded base64url encoding of the
+     * `content_language~feed_label~offer_id` name.
+     * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded product
+     * name `accounts/123/products/en~US~sku/123`. This field can be used directly
+     * as input to the API methods that require the product name to be encoded if
+     * it contains special characters, for example
+     * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for base64EncodedName.
+     */
+    public com.google.protobuf.ByteString getBase64EncodedNameBytes() {
+      java.lang.Object ref = base64EncodedName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        base64EncodedName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The **unpadded base64url encoded name** of the product.
+     * Format:
+     * `accounts/{account}/products/{product}` where the last
+     * section `product` is the unpadded base64url encoding of the
+     * `content_language~feed_label~offer_id` name.
+     * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded product
+     * name `accounts/123/products/en~US~sku/123`. This field can be used directly
+     * as input to the API methods that require the product name to be encoded if
+     * it contains special characters, for example
+     * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The base64EncodedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBase64EncodedName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      base64EncodedName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The **unpadded base64url encoded name** of the product.
+     * Format:
+     * `accounts/{account}/products/{product}` where the last
+     * section `product` is the unpadded base64url encoding of the
+     * `content_language~feed_label~offer_id` name.
+     * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded product
+     * name `accounts/123/products/en~US~sku/123`. This field can be used directly
+     * as input to the API methods that require the product name to be encoded if
+     * it contains special characters, for example
+     * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBase64EncodedName() {
+      base64EncodedName_ = getDefaultInstance().getBase64EncodedName();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The **unpadded base64url encoded name** of the product.
+     * Format:
+     * `accounts/{account}/products/{product}` where the last
+     * section `product` is the unpadded base64url encoding of the
+     * `content_language~feed_label~offer_id` name.
+     * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded product
+     * name `accounts/123/products/en~US~sku/123`. This field can be used directly
+     * as input to the API methods that require the product name to be encoded if
+     * it contains special characters, for example
+     * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for base64EncodedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBase64EncodedNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      base64EncodedName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private boolean legacyLocal_;
 
     /**
@@ -1623,7 +1875,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
     public Builder setLegacyLocal(boolean value) {
 
       legacyLocal_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1643,7 +1895,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLegacyLocal() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       legacyLocal_ = false;
       onChanged();
       return this;
@@ -1729,7 +1981,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       offerId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1752,7 +2004,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearOfferId() {
       offerId_ = getDefaultInstance().getOfferId();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1780,7 +2032,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       offerId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1856,7 +2108,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       contentLanguage_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1876,7 +2128,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearContentLanguage() {
       contentLanguage_ = getDefaultInstance().getContentLanguage();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1901,7 +2153,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       contentLanguage_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1983,7 +2235,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       feedLabel_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2005,7 +2257,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearFeedLabel() {
       feedLabel_ = getDefaultInstance().getFeedLabel();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2032,7 +2284,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       feedLabel_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2102,7 +2354,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       dataSource_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2120,7 +2372,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDataSource() {
       dataSource_ = getDefaultInstance().getDataSource();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2143,7 +2395,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       dataSource_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2175,7 +2427,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasVersionNumber() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2233,7 +2485,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
     public Builder setVersionNumber(long value) {
 
       versionNumber_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2262,7 +2514,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearVersionNumber() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       versionNumber_ = 0L;
       onChanged();
       return this;
@@ -2289,7 +2541,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      * @return Whether the productAttributes field is set.
      */
     public boolean hasProductAttributes() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2336,7 +2588,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
       } else {
         productAttributesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2359,7 +2611,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
       } else {
         productAttributesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2378,7 +2630,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
     public Builder mergeProductAttributes(
         com.google.shopping.merchant.products.v1.ProductAttributes value) {
       if (productAttributesBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && productAttributes_ != null
             && productAttributes_
                 != com.google.shopping.merchant.products.v1.ProductAttributes
@@ -2391,7 +2643,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         productAttributesBuilder_.mergeFrom(value);
       }
       if (productAttributes_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2409,7 +2661,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearProductAttributes() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       productAttributes_ = null;
       if (productAttributesBuilder_ != null) {
         productAttributesBuilder_.dispose();
@@ -2432,7 +2684,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      */
     public com.google.shopping.merchant.products.v1.ProductAttributes.Builder
         getProductAttributesBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return internalGetProductAttributesFieldBuilder().getBuilder();
     }
@@ -2491,10 +2743,10 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureCustomAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         customAttributes_ =
             new java.util.ArrayList<com.google.shopping.type.CustomAttribute>(customAttributes_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -2797,7 +3049,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
     public Builder clearCustomAttributes() {
       if (customAttributesBuilder_ == null) {
         customAttributes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         customAttributesBuilder_.clear();
@@ -2977,7 +3229,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
                 com.google.shopping.type.CustomAttribute.Builder,
                 com.google.shopping.type.CustomAttributeOrBuilder>(
                 customAttributes_,
-                ((bitField0_ & 0x00000100) != 0),
+                ((bitField0_ & 0x00000200) != 0),
                 getParentForChildren(),
                 isClean());
         customAttributes_ = null;
@@ -3007,7 +3259,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      * @return Whether the productStatus field is set.
      */
     public boolean hasProductStatus() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3055,7 +3307,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
       } else {
         productStatusBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3079,7 +3331,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
       } else {
         productStatusBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3099,7 +3351,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
     public Builder mergeProductStatus(
         com.google.shopping.merchant.products.v1.ProductStatus value) {
       if (productStatusBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && productStatus_ != null
             && productStatus_
                 != com.google.shopping.merchant.products.v1.ProductStatus.getDefaultInstance()) {
@@ -3111,7 +3363,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         productStatusBuilder_.mergeFrom(value);
       }
       if (productStatus_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -3130,7 +3382,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearProductStatus() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       productStatus_ = null;
       if (productStatusBuilder_ != null) {
         productStatusBuilder_.dispose();
@@ -3154,7 +3406,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      */
     public com.google.shopping.merchant.products.v1.ProductStatus.Builder
         getProductStatusBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return internalGetProductStatusFieldBuilder().getBuilder();
     }
@@ -3232,7 +3484,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      * @return Whether the automatedDiscounts field is set.
      */
     public boolean hasAutomatedDiscounts() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -3279,7 +3531,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
       } else {
         automatedDiscountsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3302,7 +3554,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
       } else {
         automatedDiscountsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3321,7 +3573,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
     public Builder mergeAutomatedDiscounts(
         com.google.shopping.merchant.products.v1.AutomatedDiscounts value) {
       if (automatedDiscountsBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && automatedDiscounts_ != null
             && automatedDiscounts_
                 != com.google.shopping.merchant.products.v1.AutomatedDiscounts
@@ -3334,7 +3586,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
         automatedDiscountsBuilder_.mergeFrom(value);
       }
       if (automatedDiscounts_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -3352,7 +3604,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearAutomatedDiscounts() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       automatedDiscounts_ = null;
       if (automatedDiscountsBuilder_ != null) {
         automatedDiscountsBuilder_.dispose();
@@ -3375,7 +3627,7 @@ public final class Product extends com.google.protobuf.GeneratedMessage
      */
     public com.google.shopping.merchant.products.v1.AutomatedDiscounts.Builder
         getAutomatedDiscountsBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return internalGetAutomatedDiscountsFieldBuilder().getBuilder();
     }

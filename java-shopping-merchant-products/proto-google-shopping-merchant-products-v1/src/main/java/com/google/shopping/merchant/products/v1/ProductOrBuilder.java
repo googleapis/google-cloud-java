@@ -74,6 +74,50 @@ public interface ProductOrBuilder
    *
    *
    * <pre>
+   * Output only. The **unpadded base64url encoded name** of the product.
+   * Format:
+   * `accounts/{account}/products/{product}` where the last
+   * section `product` is the unpadded base64url encoding of the
+   * `content_language~feed_label~offer_id` name.
+   * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded product
+   * name `accounts/123/products/en~US~sku/123`. This field can be used directly
+   * as input to the API methods that require the product name to be encoded if
+   * it contains special characters, for example
+   * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The base64EncodedName.
+   */
+  java.lang.String getBase64EncodedName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The **unpadded base64url encoded name** of the product.
+   * Format:
+   * `accounts/{account}/products/{product}` where the last
+   * section `product` is the unpadded base64url encoding of the
+   * `content_language~feed_label~offer_id` name.
+   * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded product
+   * name `accounts/123/products/en~US~sku/123`. This field can be used directly
+   * as input to the API methods that require the product name to be encoded if
+   * it contains special characters, for example
+   * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for base64EncodedName.
+   */
+  com.google.protobuf.ByteString getBase64EncodedNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Determines whether the product is **only** targeting
    * local destinations and whether the product name should be distinguished
    * with a `local~` prefix. For example,
