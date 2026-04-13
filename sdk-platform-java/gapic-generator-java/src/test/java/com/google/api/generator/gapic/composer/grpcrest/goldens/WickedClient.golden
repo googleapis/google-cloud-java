@@ -25,7 +25,7 @@ import javax.annotation.Generated;
  * // - The samples create a client that can be re-used for multiple requests
  * //   and are expected to be long-lived.
  * //   The clients should be resource managed properly and eventually closed.
- * // - For more information on client lifecycle, see
+ * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * WickedClient wickedClient = WickedClient.create();
  * EvilRequest request =
@@ -99,7 +99,7 @@ import javax.annotation.Generated;
  * // - The samples create a client that can be re-used for multiple requests
  * //   and are expected to be long-lived.
  * //   The clients should be resource managed properly and eventually closed.
- * // - For more information on client lifecycle, see
+ * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * WickedSettings wickedSettings =
  *     WickedSettings.newBuilder()
@@ -119,7 +119,7 @@ import javax.annotation.Generated;
  * // - The samples create a client that can be re-used for multiple requests
  * //   and are expected to be long-lived.
  * //   The clients should be resource managed properly and eventually closed.
- * // - For more information on client lifecycle, see
+ * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * WickedSettings wickedSettings = WickedSettings.newBuilder().setEndpoint(myEndpoint).build();
  * WickedClient wickedClient = WickedClient.create(wickedSettings);
@@ -189,7 +189,7 @@ public class WickedClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * WickedClient wickedClient = WickedClient.create();
    * EvilRequest request =
@@ -217,7 +217,7 @@ public class WickedClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * WickedClient wickedClient = WickedClient.create();
    * EvilRequest request =
@@ -244,7 +244,7 @@ public class WickedClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * WickedClient wickedClient = WickedClient.create();
    * BidiStream<EvilRequest, EvilResponse> bidiStream =
@@ -274,7 +274,7 @@ public class WickedClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * WickedClient wickedClient = WickedClient.create();
    * ApiStreamObserver<EvilRequest> responseObserver =

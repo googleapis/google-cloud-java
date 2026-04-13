@@ -38,7 +38,7 @@ public class AsyncWaitLRO {
     // - The samples create a client that can be re-used for multiple requests
     //   and are expected to be long-lived.
     //   The clients should be resource managed properly and eventually closed.
-    // - For more information on client lifecycle, see
+    // For more information on client lifecycle, see
     // https://docs.cloud.google.com/java/docs/client-lifecycle
     EchoClient echoClient = EchoClient.create();
     WaitRequest request = WaitRequest.newBuilder().build();

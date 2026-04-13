@@ -23,7 +23,7 @@ import javax.annotation.Generated;
  * // - The samples create a client that can be re-used for multiple requests
  * //   and are expected to be long-lived.
  * //   The clients should be resource managed properly and eventually closed.
- * // - For more information on client lifecycle, see
+ * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create();
  * FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
@@ -91,7 +91,7 @@ import javax.annotation.Generated;
  * // - The samples create a client that can be re-used for multiple requests
  * //   and are expected to be long-lived.
  * //   The clients should be resource managed properly and eventually closed.
- * // - For more information on client lifecycle, see
+ * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * DeprecatedServiceSettings deprecatedServiceSettings =
  *     DeprecatedServiceSettings.newBuilder()
@@ -112,7 +112,7 @@ import javax.annotation.Generated;
  * // - The samples create a client that can be re-used for multiple requests
  * //   and are expected to be long-lived.
  * //   The clients should be resource managed properly and eventually closed.
- * // - For more information on client lifecycle, see
+ * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * DeprecatedServiceSettings deprecatedServiceSettings =
  *     DeprecatedServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
@@ -188,7 +188,7 @@ public class DeprecatedServiceClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create();
    * FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
@@ -215,7 +215,7 @@ public class DeprecatedServiceClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create();
    * FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
@@ -241,7 +241,7 @@ public class DeprecatedServiceClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create();
    * FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();
@@ -270,7 +270,7 @@ public class DeprecatedServiceClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * DeprecatedServiceClient deprecatedServiceClient = DeprecatedServiceClient.create();
    * FibonacciRequest request = FibonacciRequest.newBuilder().setValue(111972721).build();

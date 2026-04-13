@@ -32,7 +32,7 @@ import javax.annotation.Generated;
  * // - The samples create a client that can be re-used for multiple requests
  * //   and are expected to be long-lived.
  * //   The clients should be resource managed properly and eventually closed.
- * // - For more information on client lifecycle, see
+ * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * IdentityClient identityClient = IdentityClient.create();
  * String parent = UserName.of("[USER]").toString();
@@ -160,7 +160,7 @@ import javax.annotation.Generated;
  * // - The samples create a client that can be re-used for multiple requests
  * //   and are expected to be long-lived.
  * //   The clients should be resource managed properly and eventually closed.
- * // - For more information on client lifecycle, see
+ * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * IdentitySettings identitySettings =
  *     IdentitySettings.newBuilder()
@@ -180,7 +180,7 @@ import javax.annotation.Generated;
  * // - The samples create a client that can be re-used for multiple requests
  * //   and are expected to be long-lived.
  * //   The clients should be resource managed properly and eventually closed.
- * // - For more information on client lifecycle, see
+ * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * IdentitySettings identitySettings =
  *     IdentitySettings.newBuilder().setEndpoint(myEndpoint).build();
@@ -251,7 +251,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * String parent = UserName.of("[USER]").toString();
@@ -287,7 +287,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * String parent = UserName.of("[USER]").toString();
@@ -348,7 +348,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * String parent = UserName.of("[USER]").toString();
@@ -442,7 +442,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * CreateUserRequest request =
@@ -473,7 +473,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * CreateUserRequest request =
@@ -503,7 +503,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * UserName name = UserName.of("[USER]");
@@ -532,7 +532,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * String name = UserName.of("[USER]").toString();
@@ -560,7 +560,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * GetUserRequest request =
@@ -588,7 +588,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * GetUserRequest request =
@@ -615,7 +615,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * UpdateUserRequest request =
@@ -643,7 +643,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * UpdateUserRequest request =
@@ -670,7 +670,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * UserName name = UserName.of("[USER]");
@@ -699,7 +699,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * String name = UserName.of("[USER]").toString();
@@ -727,7 +727,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * DeleteUserRequest request =
@@ -755,7 +755,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * DeleteUserRequest request =
@@ -782,7 +782,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * ListUsersRequest request =
@@ -815,7 +815,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * ListUsersRequest request =
@@ -847,7 +847,7 @@ public class IdentityClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * IdentityClient identityClient = IdentityClient.create();
    * ListUsersRequest request =

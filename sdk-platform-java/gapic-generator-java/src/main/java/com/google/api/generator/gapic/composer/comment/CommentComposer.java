@@ -88,7 +88,7 @@ public class CommentComposer {
                   "- The samples create a client that can be re-used for multiple requests\n"
                       + "   and are expected to be long-lived.\n"
                       + "   The clients should be resource managed properly and eventually closed.\n"
-                      + "- For more information on client lifecycle, see\n"
+                      + "For more information on client lifecycle, see\n"
                       + "https://docs.cloud.google.com/java/docs/client-lifecycle")));
 
   public static final List<Statement> AUTO_GENERATED_SAMPLE_COMMENT =

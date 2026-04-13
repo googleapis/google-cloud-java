@@ -44,7 +44,7 @@ import javax.annotation.Generated;
  * // - The samples create a client that can be re-used for multiple requests
  * //   and are expected to be long-lived.
  * //   The clients should be resource managed properly and eventually closed.
- * // - For more information on client lifecycle, see
+ * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * EchoClient echoClient = EchoClient.create();
  * EchoResponse response = echoClient.echo();
@@ -255,7 +255,7 @@ import javax.annotation.Generated;
  * // - The samples create a client that can be re-used for multiple requests
  * //   and are expected to be long-lived.
  * //   The clients should be resource managed properly and eventually closed.
- * // - For more information on client lifecycle, see
+ * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * EchoSettings echoSettings =
  *     EchoSettings.newBuilder()
@@ -275,7 +275,7 @@ import javax.annotation.Generated;
  * // - The samples create a client that can be re-used for multiple requests
  * //   and are expected to be long-lived.
  * //   The clients should be resource managed properly and eventually closed.
- * // - For more information on client lifecycle, see
+ * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * EchoSettings echoSettings = EchoSettings.newBuilder().setEndpoint(myEndpoint).build();
  * EchoClient echoClient = EchoClient.create(echoSettings);
@@ -293,7 +293,7 @@ import javax.annotation.Generated;
  * // - The samples create a client that can be re-used for multiple requests
  * //   and are expected to be long-lived.
  * //   The clients should be resource managed properly and eventually closed.
- * // - For more information on client lifecycle, see
+ * // For more information on client lifecycle, see
  * // https://docs.cloud.google.com/java/docs/client-lifecycle
  * EchoSettings echoSettings = EchoSettings.newHttpJsonBuilder().build();
  * EchoClient echoClient = EchoClient.create(echoSettings);
@@ -388,7 +388,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * EchoResponse response = echoClient.echo();
@@ -415,7 +415,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * ResourceName parent = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]");
@@ -444,7 +444,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * Status error = Status.newBuilder().build();
@@ -472,7 +472,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * FoobarName name = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]");
@@ -501,7 +501,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * String content = "content951530617";
@@ -529,7 +529,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * String name = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString();
@@ -557,7 +557,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * String parent = FoobarName.ofProjectFoobarName("[PROJECT]", "[FOOBAR]").toString();
@@ -585,7 +585,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * String content = "content951530617";
@@ -616,7 +616,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * EchoRequest request =
@@ -649,7 +649,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * EchoRequest request =
@@ -681,7 +681,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * ExpandRequest request =
@@ -712,7 +712,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * PagedExpandRequest request =
@@ -746,7 +746,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * PagedExpandRequest request =
@@ -780,7 +780,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * PagedExpandRequest request =
@@ -820,7 +820,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * for (EchoResponse element : echoClient.simplePagedExpand().iterateAll()) {
@@ -849,7 +849,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * PagedExpandRequest request =
@@ -883,7 +883,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * PagedExpandRequest request =
@@ -918,7 +918,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * PagedExpandRequest request =
@@ -958,7 +958,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * Duration ttl = Duration.newBuilder().build();
@@ -986,7 +986,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * Timestamp endTime = Timestamp.newBuilder().build();
@@ -1014,7 +1014,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * WaitRequest request = WaitRequest.newBuilder().build();
@@ -1041,7 +1041,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * WaitRequest request = WaitRequest.newBuilder().build();
@@ -1068,7 +1068,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * WaitRequest request = WaitRequest.newBuilder().build();
@@ -1094,7 +1094,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * BlockRequest request = BlockRequest.newBuilder().build();
@@ -1121,7 +1121,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * BlockRequest request = BlockRequest.newBuilder().build();
@@ -1147,7 +1147,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * EchoRequest request =
@@ -1180,7 +1180,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * EchoRequest request =
@@ -1212,7 +1212,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * EchoRequest request =
@@ -1245,7 +1245,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * EchoRequest request =
@@ -1277,7 +1277,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * BidiStream<EchoRequest, EchoResponse> bidiStream = echoClient.chatCallable().call();
@@ -1311,7 +1311,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * EchoRequest request =
@@ -1344,7 +1344,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * EchoRequest request =
@@ -1376,7 +1376,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * Case case_ = Case.newBuilder().build();
@@ -1407,7 +1407,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * UpdateCaseRequest request =
@@ -1435,7 +1435,7 @@ public class EchoClient implements BackgroundResource {
    * // - The samples create a client that can be re-used for multiple requests
    * //   and are expected to be long-lived.
    * //   The clients should be resource managed properly and eventually closed.
-   * // - For more information on client lifecycle, see
+   * // For more information on client lifecycle, see
    * // https://docs.cloud.google.com/java/docs/client-lifecycle
    * EchoClient echoClient = EchoClient.create();
    * UpdateCaseRequest request =
