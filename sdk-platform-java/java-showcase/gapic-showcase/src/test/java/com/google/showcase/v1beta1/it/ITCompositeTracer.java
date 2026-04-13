@@ -33,8 +33,8 @@ package com.google.showcase.v1beta1.it;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.gax.tracing.CompositeTracerFactory;
-import com.google.api.gax.tracing.OpenTelemetryMetricsFactory;
 import com.google.api.gax.tracing.ObservabilityAttributes;
+import com.google.api.gax.tracing.OpenTelemetryMetricsFactory;
 import com.google.api.gax.tracing.OpenTelemetryTracingFactory;
 import com.google.showcase.v1beta1.EchoClient;
 import com.google.showcase.v1beta1.EchoRequest;
@@ -92,11 +92,13 @@ class ITCompositeTracer {
   }
 
   private CompositeTracerFactory createCompositeTracerFactory() {
-    OpenTelemetryTracingFactory openTelemetryTracingFactory = new OpenTelemetryTracingFactory(openTelemetrySdk);
+    OpenTelemetryTracingFactory openTelemetryTracingFactory =
+        new OpenTelemetryTracingFactory(openTelemetrySdk);
     OpenTelemetryMetricsFactory metricsTracerFactory =
         new OpenTelemetryMetricsFactory(openTelemetrySdk);
 
-    return new CompositeTracerFactory(Arrays.asList(openTelemetryTracingFactory, metricsTracerFactory));
+    return new CompositeTracerFactory(
+        Arrays.asList(openTelemetryTracingFactory, metricsTracerFactory));
   }
 
   @Test
