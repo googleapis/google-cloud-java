@@ -124,7 +124,6 @@ jobs:
           java-logging: java-logging/**
           java-spanner: java-spanner/**
           java-storage: java-storage/**
-          sdk-platform-java: sdk-platform-java/**
   split-units:
     runs-on: ubuntu-latest
     needs: changes
