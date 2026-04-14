@@ -348,6 +348,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionTransportSettings =
         GrpcCallSettings.<GetSubscriptionRequest, Subscription>newBuilder()
@@ -358,6 +359,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   builder.add("subscription", String.valueOf(request.getSubscription()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSubscription())
             .build();
     GrpcCallSettings<UpdateSubscriptionRequest, Subscription> updateSubscriptionTransportSettings =
         GrpcCallSettings.<UpdateSubscriptionRequest, Subscription>newBuilder()
@@ -380,6 +382,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProject())
                 .build();
     GrpcCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionTransportSettings =
         GrpcCallSettings.<DeleteSubscriptionRequest, Empty>newBuilder()
@@ -390,6 +393,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   builder.add("subscription", String.valueOf(request.getSubscription()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSubscription())
             .build();
     GrpcCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineTransportSettings =
         GrpcCallSettings.<ModifyAckDeadlineRequest, Empty>newBuilder()
@@ -400,6 +404,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   builder.add("subscription", String.valueOf(request.getSubscription()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSubscription())
             .build();
     GrpcCallSettings<AcknowledgeRequest, Empty> acknowledgeTransportSettings =
         GrpcCallSettings.<AcknowledgeRequest, Empty>newBuilder()
@@ -410,6 +415,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   builder.add("subscription", String.valueOf(request.getSubscription()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSubscription())
             .build();
     GrpcCallSettings<PullRequest, PullResponse> pullTransportSettings =
         GrpcCallSettings.<PullRequest, PullResponse>newBuilder()
@@ -420,10 +426,12 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   builder.add("subscription", String.valueOf(request.getSubscription()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSubscription())
             .build();
     GrpcCallSettings<StreamingPullRequest, StreamingPullResponse> streamingPullTransportSettings =
         GrpcCallSettings.<StreamingPullRequest, StreamingPullResponse>newBuilder()
             .setMethodDescriptor(streamingPullMethodDescriptor)
+            .setResourceNameExtractor(request -> request.getSubscription())
             .build();
     GrpcCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigTransportSettings =
         GrpcCallSettings.<ModifyPushConfigRequest, Empty>newBuilder()
@@ -434,6 +442,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   builder.add("subscription", String.valueOf(request.getSubscription()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSubscription())
             .build();
     GrpcCallSettings<GetSnapshotRequest, Snapshot> getSnapshotTransportSettings =
         GrpcCallSettings.<GetSnapshotRequest, Snapshot>newBuilder()
@@ -444,6 +453,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   builder.add("snapshot", String.valueOf(request.getSnapshot()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSnapshot())
             .build();
     GrpcCallSettings<ListSnapshotsRequest, ListSnapshotsResponse> listSnapshotsTransportSettings =
         GrpcCallSettings.<ListSnapshotsRequest, ListSnapshotsResponse>newBuilder()
@@ -454,6 +464,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProject())
             .build();
     GrpcCallSettings<CreateSnapshotRequest, Snapshot> createSnapshotTransportSettings =
         GrpcCallSettings.<CreateSnapshotRequest, Snapshot>newBuilder()
@@ -464,6 +475,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateSnapshotRequest, Snapshot> updateSnapshotTransportSettings =
         GrpcCallSettings.<UpdateSnapshotRequest, Snapshot>newBuilder()
@@ -484,6 +496,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   builder.add("snapshot", String.valueOf(request.getSnapshot()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSnapshot())
             .build();
     GrpcCallSettings<SeekRequest, SeekResponse> seekTransportSettings =
         GrpcCallSettings.<SeekRequest, SeekResponse>newBuilder()
@@ -494,6 +507,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   builder.add("subscription", String.valueOf(request.getSubscription()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSubscription())
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -504,6 +518,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -514,6 +529,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -525,6 +541,7 @@ public class GrpcSubscriberStub extends SubscriberStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createSubscriptionCallable =

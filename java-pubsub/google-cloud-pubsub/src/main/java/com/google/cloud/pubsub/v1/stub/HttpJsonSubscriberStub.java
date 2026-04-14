@@ -818,6 +818,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionTransportSettings =
         HttpJsonCallSettings.<GetSubscriptionRequest, Subscription>newBuilder()
@@ -829,6 +830,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   builder.add("subscription", String.valueOf(request.getSubscription()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSubscription())
             .build();
     HttpJsonCallSettings<UpdateSubscriptionRequest, Subscription>
         updateSubscriptionTransportSettings =
@@ -854,6 +856,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProject())
                 .build();
     HttpJsonCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionTransportSettings =
         HttpJsonCallSettings.<DeleteSubscriptionRequest, Empty>newBuilder()
@@ -865,6 +868,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   builder.add("subscription", String.valueOf(request.getSubscription()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSubscription())
             .build();
     HttpJsonCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineTransportSettings =
         HttpJsonCallSettings.<ModifyAckDeadlineRequest, Empty>newBuilder()
@@ -876,6 +880,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   builder.add("subscription", String.valueOf(request.getSubscription()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSubscription())
             .build();
     HttpJsonCallSettings<AcknowledgeRequest, Empty> acknowledgeTransportSettings =
         HttpJsonCallSettings.<AcknowledgeRequest, Empty>newBuilder()
@@ -887,6 +892,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   builder.add("subscription", String.valueOf(request.getSubscription()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSubscription())
             .build();
     HttpJsonCallSettings<PullRequest, PullResponse> pullTransportSettings =
         HttpJsonCallSettings.<PullRequest, PullResponse>newBuilder()
@@ -898,6 +904,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   builder.add("subscription", String.valueOf(request.getSubscription()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSubscription())
             .build();
     HttpJsonCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigTransportSettings =
         HttpJsonCallSettings.<ModifyPushConfigRequest, Empty>newBuilder()
@@ -909,6 +916,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   builder.add("subscription", String.valueOf(request.getSubscription()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSubscription())
             .build();
     HttpJsonCallSettings<GetSnapshotRequest, Snapshot> getSnapshotTransportSettings =
         HttpJsonCallSettings.<GetSnapshotRequest, Snapshot>newBuilder()
@@ -920,6 +928,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   builder.add("snapshot", String.valueOf(request.getSnapshot()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSnapshot())
             .build();
     HttpJsonCallSettings<ListSnapshotsRequest, ListSnapshotsResponse>
         listSnapshotsTransportSettings =
@@ -932,6 +941,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getProject())
                 .build();
     HttpJsonCallSettings<CreateSnapshotRequest, Snapshot> createSnapshotTransportSettings =
         HttpJsonCallSettings.<CreateSnapshotRequest, Snapshot>newBuilder()
@@ -943,6 +953,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateSnapshotRequest, Snapshot> updateSnapshotTransportSettings =
         HttpJsonCallSettings.<UpdateSnapshotRequest, Snapshot>newBuilder()
@@ -965,6 +976,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   builder.add("snapshot", String.valueOf(request.getSnapshot()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSnapshot())
             .build();
     HttpJsonCallSettings<SeekRequest, SeekResponse> seekTransportSettings =
         HttpJsonCallSettings.<SeekRequest, SeekResponse>newBuilder()
@@ -976,6 +988,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   builder.add("subscription", String.valueOf(request.getSubscription()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getSubscription())
             .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -987,6 +1000,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -998,6 +1012,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -1010,6 +1025,7 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createSubscriptionCallable =

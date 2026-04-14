@@ -517,6 +517,7 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-pubsub")
         .setRepository("googleapis/java-pubsub")
+        .setVersion(Version.VERSION)
         .build();
   }
 
@@ -630,10 +631,10 @@ public class SubscriberStubSettings extends StubSettings<SubscriberStubSettings>
               .setInitialRetryDelayDuration(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(4.0)
               .setMaxRetryDelayDuration(Duration.ofMillis(60000L))
-              .setInitialRpcTimeoutDuration(Duration.ofMillis(900000L))
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(1800000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeoutDuration(Duration.ofMillis(900000L))
-              .setTotalTimeoutDuration(Duration.ofMillis(900000L))
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(1800000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(1800000L))
               .build();
       definitions.put("retry_policy_3_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();

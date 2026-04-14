@@ -582,6 +582,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateTopicRequest, Topic> updateTopicTransportSettings =
         HttpJsonCallSettings.<UpdateTopicRequest, Topic>newBuilder()
@@ -604,6 +605,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                   builder.add("topic", String.valueOf(request.getTopic()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getTopic())
             .build();
     HttpJsonCallSettings<GetTopicRequest, Topic> getTopicTransportSettings =
         HttpJsonCallSettings.<GetTopicRequest, Topic>newBuilder()
@@ -615,6 +617,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                   builder.add("topic", String.valueOf(request.getTopic()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getTopic())
             .build();
     HttpJsonCallSettings<ListTopicsRequest, ListTopicsResponse> listTopicsTransportSettings =
         HttpJsonCallSettings.<ListTopicsRequest, ListTopicsResponse>newBuilder()
@@ -626,6 +629,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getProject())
             .build();
     HttpJsonCallSettings<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
         listTopicSubscriptionsTransportSettings =
@@ -639,6 +643,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                       builder.add("topic", String.valueOf(request.getTopic()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTopic())
                 .build();
     HttpJsonCallSettings<ListTopicSnapshotsRequest, ListTopicSnapshotsResponse>
         listTopicSnapshotsTransportSettings =
@@ -651,6 +656,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                       builder.add("topic", String.valueOf(request.getTopic()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getTopic())
                 .build();
     HttpJsonCallSettings<DeleteTopicRequest, Empty> deleteTopicTransportSettings =
         HttpJsonCallSettings.<DeleteTopicRequest, Empty>newBuilder()
@@ -662,6 +668,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                   builder.add("topic", String.valueOf(request.getTopic()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getTopic())
             .build();
     HttpJsonCallSettings<DetachSubscriptionRequest, DetachSubscriptionResponse>
         detachSubscriptionTransportSettings =
@@ -674,6 +681,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                       builder.add("subscription", String.valueOf(request.getSubscription()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getSubscription())
                 .build();
     HttpJsonCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         HttpJsonCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
@@ -685,6 +693,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
@@ -696,6 +705,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getResource())
             .build();
     HttpJsonCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -708,6 +718,7 @@ public class HttpJsonPublisherStub extends PublisherStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getResource())
                 .build();
 
     this.createTopicCallable =
