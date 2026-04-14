@@ -61,36 +61,33 @@ public final class FieldProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "%google/firestore/admin/v1/field.proto\022"
+      "\n%google/firestore/admin/v1/field.proto\022"
           + "\031google.firestore.admin.v1\032\037google/api/f"
           + "ield_behavior.proto\032\031google/api/resource"
-          + ".proto\032%google/firestore/admin/v1/index.proto\"\305\004\n"
-          + "\005Field\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\022B\n"
-          + "\014index_config\030\002"
-          + " \001(\0132,.google.firestore.admin.v1.Field.IndexConfig\022>\n\n"
-          + "ttl_config\030\003 \001(\0132*.google.firestore.admin.v1.Field.TtlConfig\032\211\001\n"
-          + "\013IndexConfig\0221\n"
-          + "\007indexes\030\001 \003(\0132 .google.firestore.admin.v1.Index\022\034\n"
-          + "\024uses_ancestor_config\030\002 \001(\010\022\026\n"
-          + "\016ancestor_field\030\003 \001(\t\022\021\n"
-          + "\treverting\030\004 \001(\010\032\235\001\n"
-          + "\tTtlConfig\022D\n"
-          + "\005state\030\001"
-          + " \001(\01620.google.firestore.admin.v1.Field.TtlConfig.StateB\003\340A\003\"J\n"
-          + "\005State\022\025\n"
-          + "\021STATE_UNSPECIFIED\020\000\022\014\n"
-          + "\010CREATING\020\001\022\n\n"
-          + "\006ACTIVE\020\002\022\020\n"
-          + "\014NEEDS_REPAIR\020\003:y\352Av\n"
-          + "\036firestore.googleapis.com/Field\022Tprojects/{proje"
-          + "ct}/databases/{database}/collectionGroups/{collection}/fields/{field}B\331\001\n"
-          + "\035com.google.firestore.admin.v1B\n"
-          + "FieldProtoP\001Z9cloud.google.com/go/firestore/apiv1/admin"
-          + "/adminpb;adminpb\242\002\004GCFS\252\002\037Google.Cloud.F"
-          + "irestore.Admin.V1\312\002\037Google\\Cloud\\Firesto"
-          + "re\\Admin\\V1\352\002#Google::Cloud::Firestore::Admin::V1b\006proto3"
+          + ".proto\032%google/firestore/admin/v1/index."
+          + "proto\032\036google/protobuf/duration.proto\"\200\005"
+          + "\n\005Field\022\021\n\004name\030\001 \001(\tB\003\340A\002\022B\n\014index_conf"
+          + "ig\030\002 \001(\0132,.google.firestore.admin.v1.Fie"
+          + "ld.IndexConfig\022>\n\nttl_config\030\003 \001(\0132*.goo"
+          + "gle.firestore.admin.v1.Field.TtlConfig\032\211"
+          + "\001\n\013IndexConfig\0221\n\007indexes\030\001 \003(\0132 .google"
+          + ".firestore.admin.v1.Index\022\034\n\024uses_ancest"
+          + "or_config\030\002 \001(\010\022\026\n\016ancestor_field\030\003 \001(\t\022"
+          + "\021\n\treverting\030\004 \001(\010\032\330\001\n\tTtlConfig\022D\n\005stat"
+          + "e\030\001 \001(\01620.google.firestore.admin.v1.Fiel"
+          + "d.TtlConfig.StateB\003\340A\003\0229\n\021expiration_off"
+          + "set\030\003 \001(\0132\031.google.protobuf.DurationB\003\340A"
+          + "\001\"J\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CRE"
+          + "ATING\020\001\022\n\n\006ACTIVE\020\002\022\020\n\014NEEDS_REPAIR\020\003:y\352"
+          + "Av\n\036firestore.googleapis.com/Field\022Tproj"
+          + "ects/{project}/databases/{database}/coll"
+          + "ectionGroups/{collection}/fields/{field}"
+          + "B\331\001\n\035com.google.firestore.admin.v1B\nFiel"
+          + "dProtoP\001Z9cloud.google.com/go/firestore/"
+          + "apiv1/admin/adminpb;adminpb\242\002\004GCFS\252\002\037Goo"
+          + "gle.Cloud.Firestore.Admin.V1\312\002\037Google\\Cl"
+          + "oud\\Firestore\\Admin\\V1\352\002#Google::Cloud::"
+          + "Firestore::Admin::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -99,6 +96,7 @@ public final class FieldProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.firestore.admin.v1.IndexProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
             });
     internal_static_google_firestore_admin_v1_Field_descriptor = getDescriptor().getMessageType(0);
     internal_static_google_firestore_admin_v1_Field_fieldAccessorTable =
@@ -121,12 +119,13 @@ public final class FieldProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_firestore_admin_v1_Field_TtlConfig_descriptor,
             new java.lang.String[] {
-              "State",
+              "State", "ExpirationOffset",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.firestore.admin.v1.IndexProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

@@ -1561,6 +1561,70 @@ public final class Field extends com.google.protobuf.GeneratedMessage
      * @return The state.
      */
     com.google.firestore.admin.v1.Field.TtlConfig.State getState();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The offset, relative to the timestamp value from the
+     * TTL-enabled field, used to determine the document's expiration time.
+     *
+     * `expiration_offset.seconds` must be between 0 and 2,147,483,647
+     * inclusive. Values more precise than seconds are rejected.
+     *
+     * If unset, defaults to 0, in which case the expiration time is the same
+     * as the timestamp value from the TTL-enabled field.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration expiration_offset = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the expirationOffset field is set.
+     */
+    boolean hasExpirationOffset();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The offset, relative to the timestamp value from the
+     * TTL-enabled field, used to determine the document's expiration time.
+     *
+     * `expiration_offset.seconds` must be between 0 and 2,147,483,647
+     * inclusive. Values more precise than seconds are rejected.
+     *
+     * If unset, defaults to 0, in which case the expiration time is the same
+     * as the timestamp value from the TTL-enabled field.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration expiration_offset = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The expirationOffset.
+     */
+    com.google.protobuf.Duration getExpirationOffset();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The offset, relative to the timestamp value from the
+     * TTL-enabled field, used to determine the document's expiration time.
+     *
+     * `expiration_offset.seconds` must be between 0 and 2,147,483,647
+     * inclusive. Values more precise than seconds are rejected.
+     *
+     * If unset, defaults to 0, in which case the expiration time is the same
+     * as the timestamp value from the TTL-enabled field.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration expiration_offset = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.DurationOrBuilder getExpirationOffsetOrBuilder();
   }
 
   /**
@@ -1570,12 +1634,14 @@ public final class Field extends com.google.protobuf.GeneratedMessage
    * The TTL (time-to-live) configuration for documents that have this `Field`
    * set.
    *
-   * Storing a timestamp value into a TTL-enabled field will be treated as
-   * the document's absolute expiration time. For Enterprise edition databases,
-   * the timestamp value may also be stored in an array value in the
-   * TTL-enabled field.
+   * A timestamp stored in a TTL-enabled field will be used to determine the
+   * expiration time of the document. The expiration time is the sum
+   * of the timestamp value and the `expiration_offset`.
    *
-   * Timestamp values in the past indicate that the document is eligible for
+   * For Enterprise edition databases, the timestamp value may alternatively be
+   * stored in an array value in the TTL-enabled field.
+   *
+   * An expiration time in the past indicates that the document is eligible for
    * immediate expiration. Using any other data type or leaving the field absent
    * will disable expiration for the individual document.
    * </pre>
@@ -1828,6 +1894,7 @@ public final class Field extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(enum_scope:google.firestore.admin.v1.Field.TtlConfig.State)
     }
 
+    private int bitField0_;
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
 
@@ -1871,6 +1938,86 @@ public final class Field extends com.google.protobuf.GeneratedMessage
           : result;
     }
 
+    public static final int EXPIRATION_OFFSET_FIELD_NUMBER = 3;
+    private com.google.protobuf.Duration expirationOffset_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The offset, relative to the timestamp value from the
+     * TTL-enabled field, used to determine the document's expiration time.
+     *
+     * `expiration_offset.seconds` must be between 0 and 2,147,483,647
+     * inclusive. Values more precise than seconds are rejected.
+     *
+     * If unset, defaults to 0, in which case the expiration time is the same
+     * as the timestamp value from the TTL-enabled field.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration expiration_offset = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the expirationOffset field is set.
+     */
+    @java.lang.Override
+    public boolean hasExpirationOffset() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The offset, relative to the timestamp value from the
+     * TTL-enabled field, used to determine the document's expiration time.
+     *
+     * `expiration_offset.seconds` must be between 0 and 2,147,483,647
+     * inclusive. Values more precise than seconds are rejected.
+     *
+     * If unset, defaults to 0, in which case the expiration time is the same
+     * as the timestamp value from the TTL-enabled field.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration expiration_offset = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The expirationOffset.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getExpirationOffset() {
+      return expirationOffset_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : expirationOffset_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The offset, relative to the timestamp value from the
+     * TTL-enabled field, used to determine the document's expiration time.
+     *
+     * `expiration_offset.seconds` must be between 0 and 2,147,483,647
+     * inclusive. Values more precise than seconds are rejected.
+     *
+     * If unset, defaults to 0, in which case the expiration time is the same
+     * as the timestamp value from the TTL-enabled field.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration expiration_offset = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getExpirationOffsetOrBuilder() {
+      return expirationOffset_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : expirationOffset_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1889,6 +2036,9 @@ public final class Field extends com.google.protobuf.GeneratedMessage
           != com.google.firestore.admin.v1.Field.TtlConfig.State.STATE_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, state_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getExpirationOffset());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1901,6 +2051,9 @@ public final class Field extends com.google.protobuf.GeneratedMessage
       if (state_
           != com.google.firestore.admin.v1.Field.TtlConfig.State.STATE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getExpirationOffset());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1919,6 +2072,10 @@ public final class Field extends com.google.protobuf.GeneratedMessage
           (com.google.firestore.admin.v1.Field.TtlConfig) obj;
 
       if (state_ != other.state_) return false;
+      if (hasExpirationOffset() != other.hasExpirationOffset()) return false;
+      if (hasExpirationOffset()) {
+        if (!getExpirationOffset().equals(other.getExpirationOffset())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1932,6 +2089,10 @@ public final class Field extends com.google.protobuf.GeneratedMessage
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
+      if (hasExpirationOffset()) {
+        hash = (37 * hash) + EXPIRATION_OFFSET_FIELD_NUMBER;
+        hash = (53 * hash) + getExpirationOffset().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2040,12 +2201,14 @@ public final class Field extends com.google.protobuf.GeneratedMessage
      * The TTL (time-to-live) configuration for documents that have this `Field`
      * set.
      *
-     * Storing a timestamp value into a TTL-enabled field will be treated as
-     * the document's absolute expiration time. For Enterprise edition databases,
-     * the timestamp value may also be stored in an array value in the
-     * TTL-enabled field.
+     * A timestamp stored in a TTL-enabled field will be used to determine the
+     * expiration time of the document. The expiration time is the sum
+     * of the timestamp value and the `expiration_offset`.
      *
-     * Timestamp values in the past indicate that the document is eligible for
+     * For Enterprise edition databases, the timestamp value may alternatively be
+     * stored in an array value in the TTL-enabled field.
+     *
+     * An expiration time in the past indicates that the document is eligible for
      * immediate expiration. Using any other data type or leaving the field absent
      * will disable expiration for the individual document.
      * </pre>
@@ -2072,10 +2235,19 @@ public final class Field extends com.google.protobuf.GeneratedMessage
       }
 
       // Construct using com.google.firestore.admin.v1.Field.TtlConfig.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetExpirationOffsetFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -2083,6 +2255,11 @@ public final class Field extends com.google.protobuf.GeneratedMessage
         super.clear();
         bitField0_ = 0;
         state_ = 0;
+        expirationOffset_ = null;
+        if (expirationOffsetBuilder_ != null) {
+          expirationOffsetBuilder_.dispose();
+          expirationOffsetBuilder_ = null;
+        }
         return this;
       }
 
@@ -2122,6 +2299,15 @@ public final class Field extends com.google.protobuf.GeneratedMessage
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.state_ = state_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.expirationOffset_ =
+              expirationOffsetBuilder_ == null
+                  ? expirationOffset_
+                  : expirationOffsetBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -2139,6 +2325,9 @@ public final class Field extends com.google.protobuf.GeneratedMessage
           return this;
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
+        }
+        if (other.hasExpirationOffset()) {
+          mergeExpirationOffset(other.getExpirationOffset());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2172,6 +2361,13 @@ public final class Field extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 8
+              case 26:
+                {
+                  input.readMessage(
+                      internalGetExpirationOffsetFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2296,6 +2492,281 @@ public final class Field extends com.google.protobuf.GeneratedMessage
         state_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.Duration expirationOffset_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          expirationOffsetBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset, relative to the timestamp value from the
+       * TTL-enabled field, used to determine the document's expiration time.
+       *
+       * `expiration_offset.seconds` must be between 0 and 2,147,483,647
+       * inclusive. Values more precise than seconds are rejected.
+       *
+       * If unset, defaults to 0, in which case the expiration time is the same
+       * as the timestamp value from the TTL-enabled field.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration expiration_offset = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the expirationOffset field is set.
+       */
+      public boolean hasExpirationOffset() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset, relative to the timestamp value from the
+       * TTL-enabled field, used to determine the document's expiration time.
+       *
+       * `expiration_offset.seconds` must be between 0 and 2,147,483,647
+       * inclusive. Values more precise than seconds are rejected.
+       *
+       * If unset, defaults to 0, in which case the expiration time is the same
+       * as the timestamp value from the TTL-enabled field.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration expiration_offset = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The expirationOffset.
+       */
+      public com.google.protobuf.Duration getExpirationOffset() {
+        if (expirationOffsetBuilder_ == null) {
+          return expirationOffset_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : expirationOffset_;
+        } else {
+          return expirationOffsetBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset, relative to the timestamp value from the
+       * TTL-enabled field, used to determine the document's expiration time.
+       *
+       * `expiration_offset.seconds` must be between 0 and 2,147,483,647
+       * inclusive. Values more precise than seconds are rejected.
+       *
+       * If unset, defaults to 0, in which case the expiration time is the same
+       * as the timestamp value from the TTL-enabled field.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration expiration_offset = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setExpirationOffset(com.google.protobuf.Duration value) {
+        if (expirationOffsetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          expirationOffset_ = value;
+        } else {
+          expirationOffsetBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset, relative to the timestamp value from the
+       * TTL-enabled field, used to determine the document's expiration time.
+       *
+       * `expiration_offset.seconds` must be between 0 and 2,147,483,647
+       * inclusive. Values more precise than seconds are rejected.
+       *
+       * If unset, defaults to 0, in which case the expiration time is the same
+       * as the timestamp value from the TTL-enabled field.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration expiration_offset = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setExpirationOffset(com.google.protobuf.Duration.Builder builderForValue) {
+        if (expirationOffsetBuilder_ == null) {
+          expirationOffset_ = builderForValue.build();
+        } else {
+          expirationOffsetBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset, relative to the timestamp value from the
+       * TTL-enabled field, used to determine the document's expiration time.
+       *
+       * `expiration_offset.seconds` must be between 0 and 2,147,483,647
+       * inclusive. Values more precise than seconds are rejected.
+       *
+       * If unset, defaults to 0, in which case the expiration time is the same
+       * as the timestamp value from the TTL-enabled field.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration expiration_offset = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeExpirationOffset(com.google.protobuf.Duration value) {
+        if (expirationOffsetBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && expirationOffset_ != null
+              && expirationOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getExpirationOffsetBuilder().mergeFrom(value);
+          } else {
+            expirationOffset_ = value;
+          }
+        } else {
+          expirationOffsetBuilder_.mergeFrom(value);
+        }
+        if (expirationOffset_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset, relative to the timestamp value from the
+       * TTL-enabled field, used to determine the document's expiration time.
+       *
+       * `expiration_offset.seconds` must be between 0 and 2,147,483,647
+       * inclusive. Values more precise than seconds are rejected.
+       *
+       * If unset, defaults to 0, in which case the expiration time is the same
+       * as the timestamp value from the TTL-enabled field.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration expiration_offset = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearExpirationOffset() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        expirationOffset_ = null;
+        if (expirationOffsetBuilder_ != null) {
+          expirationOffsetBuilder_.dispose();
+          expirationOffsetBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset, relative to the timestamp value from the
+       * TTL-enabled field, used to determine the document's expiration time.
+       *
+       * `expiration_offset.seconds` must be between 0 and 2,147,483,647
+       * inclusive. Values more precise than seconds are rejected.
+       *
+       * If unset, defaults to 0, in which case the expiration time is the same
+       * as the timestamp value from the TTL-enabled field.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration expiration_offset = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Duration.Builder getExpirationOffsetBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetExpirationOffsetFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset, relative to the timestamp value from the
+       * TTL-enabled field, used to determine the document's expiration time.
+       *
+       * `expiration_offset.seconds` must be between 0 and 2,147,483,647
+       * inclusive. Values more precise than seconds are rejected.
+       *
+       * If unset, defaults to 0, in which case the expiration time is the same
+       * as the timestamp value from the TTL-enabled field.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration expiration_offset = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.DurationOrBuilder getExpirationOffsetOrBuilder() {
+        if (expirationOffsetBuilder_ != null) {
+          return expirationOffsetBuilder_.getMessageOrBuilder();
+        } else {
+          return expirationOffset_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : expirationOffset_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The offset, relative to the timestamp value from the
+       * TTL-enabled field, used to determine the document's expiration time.
+       *
+       * `expiration_offset.seconds` must be between 0 and 2,147,483,647
+       * inclusive. Values more precise than seconds are rejected.
+       *
+       * If unset, defaults to 0, in which case the expiration time is the same
+       * as the timestamp value from the TTL-enabled field.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Duration expiration_offset = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          internalGetExpirationOffsetFieldBuilder() {
+        if (expirationOffsetBuilder_ == null) {
+          expirationOffsetBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getExpirationOffset(), getParentForChildren(), isClean());
+          expirationOffset_ = null;
+        }
+        return expirationOffsetBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.firestore.admin.v1.Field.TtlConfig)

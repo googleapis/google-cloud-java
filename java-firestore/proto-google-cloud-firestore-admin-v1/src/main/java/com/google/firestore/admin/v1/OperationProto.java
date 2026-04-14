@@ -97,36 +97,39 @@ public final class OperationProto extends com.google.protobuf.GeneratedFile {
           + ")google/firestore/admin/v1/operation.pr"
           + "oto\022\031google.firestore.admin.v1\032\031google/a"
           + "pi/resource.proto\032%google/firestore/admin/v1/index.proto\032(google/firestore/admin"
-          + "/v1/snapshot.proto\032\037google/protobuf/timestamp.proto\"\275\002\n"
+          + "/v1/snapshot.proto\032\036google/protobuf/dura"
+          + "tion.proto\032\037google/protobuf/timestamp.proto\"\275\002\n"
           + "\026IndexOperationMetadata\022.\n\n"
           + "start_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timestamp\022\r\n"
           + "\005index\030\003 \001(\t\0228\n"
           + "\005state\030\004 \001(\0162).google.firestore.admin.v1.OperationState\022?\n"
           + "\022progress_documents\030\005 \001(\0132#.google.firestore.admin.v1.Progress\022;\n"
-          + "\016progress_bytes\030\006 \001(\0132#.google.firestore.admin.v1.Progress\"\231\007\n"
+          + "\016progress_bytes\030\006 \001(\0132#.google.firestore.admin.v1.Progress\"\317\007\n"
           + "\026FieldOperationMetadata\022.\n\n"
           + "start_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timestamp\022\r\n"
           + "\005field\030\003 \001(\t\022_\n"
-          + "\023index_config_deltas\030\004 \003(\0132B.google.firestore.admi"
-          + "n.v1.FieldOperationMetadata.IndexConfigDelta\0228\n"
+          + "\023index_config_deltas\030\004"
+          + " \003(\0132B.google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDelta\0228\n"
           + "\005state\030\005 \001(\0162).google.firestore.admin.v1.OperationState\022?\n"
           + "\022progress_documents\030\006 \001(\0132#.google.firestore.admin.v1.Progress\022;\n"
           + "\016progress_bytes\030\007 \001(\0132#.google.firestore.admin.v1.Progress\022Z\n"
-          + "\020ttl_config_delta\030\010 \001(\0132@.google.firestore.admin."
-          + "v1.FieldOperationMetadata.TtlConfigDelta\032\347\001\n"
+          + "\020ttl_config_delta\030\010"
+          + " \001(\0132@.google.firestore.admin.v1.FieldOperationMetadata.TtlConfigDelta\032\347\001\n"
           + "\020IndexConfigDelta\022b\n"
-          + "\013change_type\030\001 \001(\0162M.google.firestore.admin.v1.FieldOper"
-          + "ationMetadata.IndexConfigDelta.ChangeType\022/\n"
+          + "\013change_type\030\001 \001(\0162M.goo"
+          + "gle.firestore.admin.v1.FieldOperationMetadata.IndexConfigDelta.ChangeType\022/\n"
           + "\005index\030\002 \001(\0132 .google.firestore.admin.v1.Index\">\n\n"
           + "ChangeType\022\033\n"
           + "\027CHANGE_TYPE_UNSPECIFIED\020\000\022\007\n"
           + "\003ADD\020\001\022\n\n"
-          + "\006REMOVE\020\002\032\262\001\n"
+          + "\006REMOVE\020\002\032\350\001\n"
           + "\016TtlConfigDelta\022`\n"
-          + "\013change_type\030\001 \001(\0162K.goo"
-          + "gle.firestore.admin.v1.FieldOperationMetadata.TtlConfigDelta.ChangeType\">\n\n"
+          + "\013change_type\030\001 \001(\0162K.google.fire"
+          + "store.admin.v1.FieldOperationMetadata.TtlConfigDelta.ChangeType\0224\n"
+          + "\021expiration_offset\030\003 \001(\0132\031.google.protobuf.Duration\">\n"
+          + "\n"
           + "ChangeType\022\033\n"
           + "\027CHANGE_TYPE_UNSPECIFIED\020\000\022\007\n"
           + "\003ADD\020\001\022\n\n"
@@ -134,8 +137,8 @@ public final class OperationProto extends com.google.protobuf.GeneratedFile {
           + "\027ExportDocumentsMetadata\022.\n\n"
           + "start_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timestamp\022B\n"
-          + "\017operation_state\030\003 \001"
-          + "(\0162).google.firestore.admin.v1.OperationState\022?\n"
+          + "\017operation_state\030\003"
+          + " \001(\0162).google.firestore.admin.v1.OperationState\022?\n"
           + "\022progress_documents\030\004 \001(\0132#.google.firestore.admin.v1.Progress\022;\n"
           + "\016progress_bytes\030\005 \001(\0132#.google.firestore.admin.v1.Progress\022\026\n"
           + "\016collection_ids\030\006 \003(\t\022\031\n"
@@ -145,19 +148,18 @@ public final class OperationProto extends com.google.protobuf.GeneratedFile {
           + "\027ImportDocumentsMetadata\022.\n\n"
           + "start_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timestamp\022B\n"
-          + "\017operation_state\030\003 "
-          + "\001(\0162).google.firestore.admin.v1.OperationState\022?\n"
+          + "\017operation_state\030\003"
+          + " \001(\0162).google.firestore.admin.v1.OperationState\022?\n"
           + "\022progress_documents\030\004 \001(\0132#.google.firestore.admin.v1.Progress\022;\n"
           + "\016progress_bytes\030\005 \001(\0132#.google.firestore.admin.v1.Progress\022\026\n"
           + "\016collection_ids\030\006 \003(\t\022\030\n"
           + "\020input_uri_prefix\030\007 \001(\t\022\025\n\r"
           + "namespace_ids\030\010 \003(\t\"\237\003\n"
-          + "\033BulkDeleteDocumentsMetadata\022.\n"
-          + "\n"
+          + "\033BulkDeleteDocumentsMetadata\022.\n\n"
           + "start_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timestamp\022B\n"
-          + "\017operation_state\030\003 \001(\0162).g"
-          + "oogle.firestore.admin.v1.OperationState\022?\n"
+          + "\017operation_state\030\003 \001"
+          + "(\0162).google.firestore.admin.v1.OperationState\022?\n"
           + "\022progress_documents\030\004 \001(\0132#.google.firestore.admin.v1.Progress\022;\n"
           + "\016progress_bytes\030\005 \001(\0132#.google.firestore.admin.v1.Progress\022\026\n"
           + "\016collection_ids\030\006 \003(\t\022\025\n\r"
@@ -176,11 +178,12 @@ public final class OperationProto extends com.google.protobuf.GeneratedFile {
           + "\037firestore.googleapis.com/Backup\022@\n"
           + "\023progress_percentage\030\010"
           + " \001(\0132#.google.firestore.admin.v1.Progress\"\365\002\n"
-          + "\025CloneDatabaseMetadata\022.\n\n"
+          + "\025CloneDatabaseMetadata\022.\n"
+          + "\n"
           + "start_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timestamp\022B\n"
-          + "\017operation_state\030\003"
-          + " \001(\0162).google.firestore.admin.v1.OperationState\0228\n"
+          + "\017operation_state\030\003 \001(\0162).g"
+          + "oogle.firestore.admin.v1.OperationState\0228\n"
           + "\010database\030\004 \001(\tB&\372A#\n"
           + "!firestore.googleapis.com/Database\022>\n\r"
           + "pitr_snapshot\030\007 \001(\0132\'.google.firestore.admin.v1.PitrSnapshot\022@\n"
@@ -190,18 +193,19 @@ public final class OperationProto extends com.google.protobuf.GeneratedFile {
           + "\016completed_work\030\002 \001(\003*\236\001\n"
           + "\016OperationState\022\037\n"
           + "\033OPERATION_STATE_UNSPECIFIED\020\000\022\020\n"
-          + "\014INITIALIZING\020\001\022\016\n\n"
+          + "\014INITIALIZING\020\001\022\016\n"
+          + "\n"
           + "PROCESSING\020\002\022\016\n\n"
           + "CANCELLING\020\003\022\016\n\n"
           + "FINALIZING\020\004\022\016\n\n"
           + "SUCCESSFUL\020\005\022\n\n"
           + "\006FAILED\020\006\022\r\n"
           + "\tCANCELLED\020\007B\335\001\n"
-          + "\035com.google.firestore.admin.v1B\016OperationProtoP\001Z9cloud.google.com/go/fire"
-          + "store/apiv1/admin/adminpb;adminpb\242\002\004GCFS"
-          + "\252\002\037Google.Cloud.Firestore.Admin.V1\312\002\037Goo"
-          + "gle\\Cloud\\Firestore\\Admin\\V1\352\002#Google::C"
-          + "loud::Firestore::Admin::V1b\006proto3"
+          + "\035com.google.firestore.admin.v1B\016OperationProtoP\001Z9cloud.google.com/g"
+          + "o/firestore/apiv1/admin/adminpb;adminpb\242"
+          + "\002\004GCFS\252\002\037Google.Cloud.Firestore.Admin.V1"
+          + "\312\002\037Google\\Cloud\\Firestore\\Admin\\V1\352\002#Goo"
+          + "gle::Cloud::Firestore::Admin::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -210,6 +214,7 @@ public final class OperationProto extends com.google.protobuf.GeneratedFile {
               com.google.api.ResourceProto.getDescriptor(),
               com.google.firestore.admin.v1.IndexProto.getDescriptor(),
               com.google.firestore.admin.v1.PitrSnapshotProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_firestore_admin_v1_IndexOperationMetadata_descriptor =
@@ -251,7 +256,7 @@ public final class OperationProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_firestore_admin_v1_FieldOperationMetadata_TtlConfigDelta_descriptor,
             new java.lang.String[] {
-              "ChangeType",
+              "ChangeType", "ExpirationOffset",
             });
     internal_static_google_firestore_admin_v1_ExportDocumentsMetadata_descriptor =
         getDescriptor().getMessageType(2);
@@ -340,6 +345,7 @@ public final class OperationProto extends com.google.protobuf.GeneratedFile {
     com.google.api.ResourceProto.getDescriptor();
     com.google.firestore.admin.v1.IndexProto.getDescriptor();
     com.google.firestore.admin.v1.PitrSnapshotProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

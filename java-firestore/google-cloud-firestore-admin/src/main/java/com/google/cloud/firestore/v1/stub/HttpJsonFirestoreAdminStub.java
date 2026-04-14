@@ -1458,6 +1458,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ListIndexesRequest, ListIndexesResponse> listIndexesTransportSettings =
         HttpJsonCallSettings.<ListIndexesRequest, ListIndexesResponse>newBuilder()
@@ -1469,6 +1470,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetIndexRequest, Index> getIndexTransportSettings =
         HttpJsonCallSettings.<GetIndexRequest, Index>newBuilder()
@@ -1480,6 +1482,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteIndexRequest, Empty> deleteIndexTransportSettings =
         HttpJsonCallSettings.<DeleteIndexRequest, Empty>newBuilder()
@@ -1491,6 +1494,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetFieldRequest, Field> getFieldTransportSettings =
         HttpJsonCallSettings.<GetFieldRequest, Field>newBuilder()
@@ -1502,6 +1506,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<UpdateFieldRequest, Operation> updateFieldTransportSettings =
         HttpJsonCallSettings.<UpdateFieldRequest, Operation>newBuilder()
@@ -1524,6 +1529,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<ExportDocumentsRequest, Operation> exportDocumentsTransportSettings =
         HttpJsonCallSettings.<ExportDocumentsRequest, Operation>newBuilder()
@@ -1535,6 +1541,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ImportDocumentsRequest, Operation> importDocumentsTransportSettings =
         HttpJsonCallSettings.<ImportDocumentsRequest, Operation>newBuilder()
@@ -1546,6 +1553,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<BulkDeleteDocumentsRequest, Operation>
         bulkDeleteDocumentsTransportSettings =
@@ -1558,6 +1566,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<CreateDatabaseRequest, Operation> createDatabaseTransportSettings =
         HttpJsonCallSettings.<CreateDatabaseRequest, Operation>newBuilder()
@@ -1569,6 +1578,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetDatabaseRequest, Database> getDatabaseTransportSettings =
         HttpJsonCallSettings.<GetDatabaseRequest, Database>newBuilder()
@@ -1580,6 +1590,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListDatabasesRequest, ListDatabasesResponse>
         listDatabasesTransportSettings =
@@ -1592,6 +1603,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateDatabaseRequest, Operation> updateDatabaseTransportSettings =
         HttpJsonCallSettings.<UpdateDatabaseRequest, Operation>newBuilder()
@@ -1614,6 +1626,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CreateUserCredsRequest, UserCreds> createUserCredsTransportSettings =
         HttpJsonCallSettings.<CreateUserCredsRequest, UserCreds>newBuilder()
@@ -1625,6 +1638,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<GetUserCredsRequest, UserCreds> getUserCredsTransportSettings =
         HttpJsonCallSettings.<GetUserCredsRequest, UserCreds>newBuilder()
@@ -1636,6 +1650,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListUserCredsRequest, ListUserCredsResponse>
         listUserCredsTransportSettings =
@@ -1648,6 +1663,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<EnableUserCredsRequest, UserCreds> enableUserCredsTransportSettings =
         HttpJsonCallSettings.<EnableUserCredsRequest, UserCreds>newBuilder()
@@ -1659,6 +1675,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DisableUserCredsRequest, UserCreds> disableUserCredsTransportSettings =
         HttpJsonCallSettings.<DisableUserCredsRequest, UserCreds>newBuilder()
@@ -1670,6 +1687,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ResetUserPasswordRequest, UserCreds> resetUserPasswordTransportSettings =
         HttpJsonCallSettings.<ResetUserPasswordRequest, UserCreds>newBuilder()
@@ -1681,6 +1699,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<DeleteUserCredsRequest, Empty> deleteUserCredsTransportSettings =
         HttpJsonCallSettings.<DeleteUserCredsRequest, Empty>newBuilder()
@@ -1692,6 +1711,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         HttpJsonCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -1703,6 +1723,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         HttpJsonCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -1714,6 +1735,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<DeleteBackupRequest, Empty> deleteBackupTransportSettings =
         HttpJsonCallSettings.<DeleteBackupRequest, Empty>newBuilder()
@@ -1725,6 +1747,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<RestoreDatabaseRequest, Operation> restoreDatabaseTransportSettings =
         HttpJsonCallSettings.<RestoreDatabaseRequest, Operation>newBuilder()
@@ -1736,6 +1759,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     HttpJsonCallSettings<CreateBackupScheduleRequest, BackupSchedule>
         createBackupScheduleTransportSettings =
@@ -1748,6 +1772,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<GetBackupScheduleRequest, BackupSchedule>
         getBackupScheduleTransportSettings =
@@ -1760,6 +1785,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                       builder.add("name", String.valueOf(request.getName()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getName())
                 .build();
     HttpJsonCallSettings<ListBackupSchedulesRequest, ListBackupSchedulesResponse>
         listBackupSchedulesTransportSettings =
@@ -1773,6 +1799,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     HttpJsonCallSettings<UpdateBackupScheduleRequest, BackupSchedule>
         updateBackupScheduleTransportSettings =
@@ -1798,6 +1825,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     HttpJsonCallSettings<CloneDatabaseRequest, Operation> cloneDatabaseTransportSettings =
         HttpJsonCallSettings.<CloneDatabaseRequest, Operation>newBuilder()
@@ -1820,6 +1848,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   }
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createIndexCallable =

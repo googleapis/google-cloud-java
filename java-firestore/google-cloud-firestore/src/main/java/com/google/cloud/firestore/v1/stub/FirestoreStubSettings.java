@@ -563,6 +563,7 @@ public class FirestoreStubSettings extends StubSettings<FirestoreStubSettings> {
     return LibraryMetadata.newBuilder()
         .setArtifactName("com.google.cloud:google-cloud-firestore")
         .setRepository("googleapis/java-firestore")
+        .setVersion(Version.VERSION)
         .build();
   }
 

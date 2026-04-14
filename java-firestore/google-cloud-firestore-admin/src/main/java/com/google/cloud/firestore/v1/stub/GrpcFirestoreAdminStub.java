@@ -557,6 +557,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ListIndexesRequest, ListIndexesResponse> listIndexesTransportSettings =
         GrpcCallSettings.<ListIndexesRequest, ListIndexesResponse>newBuilder()
@@ -567,6 +568,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetIndexRequest, Index> getIndexTransportSettings =
         GrpcCallSettings.<GetIndexRequest, Index>newBuilder()
@@ -577,6 +579,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteIndexRequest, Empty> deleteIndexTransportSettings =
         GrpcCallSettings.<DeleteIndexRequest, Empty>newBuilder()
@@ -587,6 +590,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetFieldRequest, Field> getFieldTransportSettings =
         GrpcCallSettings.<GetFieldRequest, Field>newBuilder()
@@ -597,6 +601,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<UpdateFieldRequest, Operation> updateFieldTransportSettings =
         GrpcCallSettings.<UpdateFieldRequest, Operation>newBuilder()
@@ -617,6 +622,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<ExportDocumentsRequest, Operation> exportDocumentsTransportSettings =
         GrpcCallSettings.<ExportDocumentsRequest, Operation>newBuilder()
@@ -627,6 +633,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ImportDocumentsRequest, Operation> importDocumentsTransportSettings =
         GrpcCallSettings.<ImportDocumentsRequest, Operation>newBuilder()
@@ -637,6 +644,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<BulkDeleteDocumentsRequest, Operation> bulkDeleteDocumentsTransportSettings =
         GrpcCallSettings.<BulkDeleteDocumentsRequest, Operation>newBuilder()
@@ -647,6 +655,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateDatabaseRequest, Operation> createDatabaseTransportSettings =
         GrpcCallSettings.<CreateDatabaseRequest, Operation>newBuilder()
@@ -657,6 +666,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetDatabaseRequest, Database> getDatabaseTransportSettings =
         GrpcCallSettings.<GetDatabaseRequest, Database>newBuilder()
@@ -667,6 +677,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListDatabasesRequest, ListDatabasesResponse> listDatabasesTransportSettings =
         GrpcCallSettings.<ListDatabasesRequest, ListDatabasesResponse>newBuilder()
@@ -677,6 +688,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<UpdateDatabaseRequest, Operation> updateDatabaseTransportSettings =
         GrpcCallSettings.<UpdateDatabaseRequest, Operation>newBuilder()
@@ -697,6 +709,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CreateUserCredsRequest, UserCreds> createUserCredsTransportSettings =
         GrpcCallSettings.<CreateUserCredsRequest, UserCreds>newBuilder()
@@ -707,6 +720,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<GetUserCredsRequest, UserCreds> getUserCredsTransportSettings =
         GrpcCallSettings.<GetUserCredsRequest, UserCreds>newBuilder()
@@ -717,6 +731,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListUserCredsRequest, ListUserCredsResponse> listUserCredsTransportSettings =
         GrpcCallSettings.<ListUserCredsRequest, ListUserCredsResponse>newBuilder()
@@ -727,6 +742,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<EnableUserCredsRequest, UserCreds> enableUserCredsTransportSettings =
         GrpcCallSettings.<EnableUserCredsRequest, UserCreds>newBuilder()
@@ -737,6 +753,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DisableUserCredsRequest, UserCreds> disableUserCredsTransportSettings =
         GrpcCallSettings.<DisableUserCredsRequest, UserCreds>newBuilder()
@@ -747,6 +764,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ResetUserPasswordRequest, UserCreds> resetUserPasswordTransportSettings =
         GrpcCallSettings.<ResetUserPasswordRequest, UserCreds>newBuilder()
@@ -757,6 +775,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<DeleteUserCredsRequest, Empty> deleteUserCredsTransportSettings =
         GrpcCallSettings.<DeleteUserCredsRequest, Empty>newBuilder()
@@ -767,6 +786,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
@@ -777,6 +797,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBackupsRequest, ListBackupsResponse> listBackupsTransportSettings =
         GrpcCallSettings.<ListBackupsRequest, ListBackupsResponse>newBuilder()
@@ -787,6 +808,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<DeleteBackupRequest, Empty> deleteBackupTransportSettings =
         GrpcCallSettings.<DeleteBackupRequest, Empty>newBuilder()
@@ -797,6 +819,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<RestoreDatabaseRequest, Operation> restoreDatabaseTransportSettings =
         GrpcCallSettings.<RestoreDatabaseRequest, Operation>newBuilder()
@@ -807,6 +830,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
     GrpcCallSettings<CreateBackupScheduleRequest, BackupSchedule>
         createBackupScheduleTransportSettings =
@@ -818,6 +842,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<GetBackupScheduleRequest, BackupSchedule> getBackupScheduleTransportSettings =
         GrpcCallSettings.<GetBackupScheduleRequest, BackupSchedule>newBuilder()
@@ -828,6 +853,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<ListBackupSchedulesRequest, ListBackupSchedulesResponse>
         listBackupSchedulesTransportSettings =
@@ -839,6 +865,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                       builder.add("parent", String.valueOf(request.getParent()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(request -> request.getParent())
                 .build();
     GrpcCallSettings<UpdateBackupScheduleRequest, BackupSchedule>
         updateBackupScheduleTransportSettings =
@@ -862,6 +889,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getName())
             .build();
     GrpcCallSettings<CloneDatabaseRequest, Operation> cloneDatabaseTransportSettings =
         GrpcCallSettings.<CloneDatabaseRequest, Operation>newBuilder()
@@ -883,6 +911,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   }
                   return builder.build();
                 })
+            .setResourceNameExtractor(request -> request.getParent())
             .build();
 
     this.createIndexCallable =

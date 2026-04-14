@@ -1225,6 +1225,46 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
      * @return The changeType.
      */
     com.google.firestore.admin.v1.FieldOperationMetadata.TtlConfigDelta.ChangeType getChangeType();
+
+    /**
+     *
+     *
+     * <pre>
+     * The offset, relative to the timestamp value in the TTL-enabled field,
+     * used determine the document's expiration time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration expiration_offset = 3;</code>
+     *
+     * @return Whether the expirationOffset field is set.
+     */
+    boolean hasExpirationOffset();
+
+    /**
+     *
+     *
+     * <pre>
+     * The offset, relative to the timestamp value in the TTL-enabled field,
+     * used determine the document's expiration time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration expiration_offset = 3;</code>
+     *
+     * @return The expirationOffset.
+     */
+    com.google.protobuf.Duration getExpirationOffset();
+
+    /**
+     *
+     *
+     * <pre>
+     * The offset, relative to the timestamp value in the TTL-enabled field,
+     * used determine the document's expiration time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration expiration_offset = 3;</code>
+     */
+    com.google.protobuf.DurationOrBuilder getExpirationOffsetOrBuilder();
   }
 
   /**
@@ -1448,6 +1488,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(enum_scope:google.firestore.admin.v1.FieldOperationMetadata.TtlConfigDelta.ChangeType)
     }
 
+    private int bitField0_;
     public static final int CHANGE_TYPE_FIELD_NUMBER = 1;
     private int changeType_ = 0;
 
@@ -1494,6 +1535,62 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
           : result;
     }
 
+    public static final int EXPIRATION_OFFSET_FIELD_NUMBER = 3;
+    private com.google.protobuf.Duration expirationOffset_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The offset, relative to the timestamp value in the TTL-enabled field,
+     * used determine the document's expiration time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration expiration_offset = 3;</code>
+     *
+     * @return Whether the expirationOffset field is set.
+     */
+    @java.lang.Override
+    public boolean hasExpirationOffset() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The offset, relative to the timestamp value in the TTL-enabled field,
+     * used determine the document's expiration time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration expiration_offset = 3;</code>
+     *
+     * @return The expirationOffset.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getExpirationOffset() {
+      return expirationOffset_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : expirationOffset_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The offset, relative to the timestamp value in the TTL-enabled field,
+     * used determine the document's expiration time.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration expiration_offset = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getExpirationOffsetOrBuilder() {
+      return expirationOffset_ == null
+          ? com.google.protobuf.Duration.getDefaultInstance()
+          : expirationOffset_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1514,6 +1611,9 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
               .getNumber()) {
         output.writeEnum(1, changeType_);
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getExpirationOffset());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1528,6 +1628,9 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
               .CHANGE_TYPE_UNSPECIFIED
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, changeType_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getExpirationOffset());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1546,6 +1649,10 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
           (com.google.firestore.admin.v1.FieldOperationMetadata.TtlConfigDelta) obj;
 
       if (changeType_ != other.changeType_) return false;
+      if (hasExpirationOffset() != other.hasExpirationOffset()) return false;
+      if (hasExpirationOffset()) {
+        if (!getExpirationOffset().equals(other.getExpirationOffset())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1559,6 +1666,10 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CHANGE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + changeType_;
+      if (hasExpirationOffset()) {
+        hash = (37 * hash) + EXPIRATION_OFFSET_FIELD_NUMBER;
+        hash = (53 * hash) + getExpirationOffset().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1692,10 +1803,19 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
 
       // Construct using
       // com.google.firestore.admin.v1.FieldOperationMetadata.TtlConfigDelta.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetExpirationOffsetFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -1703,6 +1823,11 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         super.clear();
         bitField0_ = 0;
         changeType_ = 0;
+        expirationOffset_ = null;
+        if (expirationOffsetBuilder_ != null) {
+          expirationOffsetBuilder_.dispose();
+          expirationOffsetBuilder_ = null;
+        }
         return this;
       }
 
@@ -1745,6 +1870,15 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.changeType_ = changeType_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.expirationOffset_ =
+              expirationOffsetBuilder_ == null
+                  ? expirationOffset_
+                  : expirationOffsetBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -1765,6 +1899,9 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
                 .getDefaultInstance()) return this;
         if (other.changeType_ != 0) {
           setChangeTypeValue(other.getChangeTypeValue());
+        }
+        if (other.hasExpirationOffset()) {
+          mergeExpirationOffset(other.getExpirationOffset());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1798,6 +1935,13 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 8
+              case 26:
+                {
+                  input.readMessage(
+                      internalGetExpirationOffsetFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1926,6 +2070,209 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         changeType_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.Duration expirationOffset_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          expirationOffsetBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The offset, relative to the timestamp value in the TTL-enabled field,
+       * used determine the document's expiration time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expiration_offset = 3;</code>
+       *
+       * @return Whether the expirationOffset field is set.
+       */
+      public boolean hasExpirationOffset() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The offset, relative to the timestamp value in the TTL-enabled field,
+       * used determine the document's expiration time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expiration_offset = 3;</code>
+       *
+       * @return The expirationOffset.
+       */
+      public com.google.protobuf.Duration getExpirationOffset() {
+        if (expirationOffsetBuilder_ == null) {
+          return expirationOffset_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : expirationOffset_;
+        } else {
+          return expirationOffsetBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The offset, relative to the timestamp value in the TTL-enabled field,
+       * used determine the document's expiration time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expiration_offset = 3;</code>
+       */
+      public Builder setExpirationOffset(com.google.protobuf.Duration value) {
+        if (expirationOffsetBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          expirationOffset_ = value;
+        } else {
+          expirationOffsetBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The offset, relative to the timestamp value in the TTL-enabled field,
+       * used determine the document's expiration time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expiration_offset = 3;</code>
+       */
+      public Builder setExpirationOffset(com.google.protobuf.Duration.Builder builderForValue) {
+        if (expirationOffsetBuilder_ == null) {
+          expirationOffset_ = builderForValue.build();
+        } else {
+          expirationOffsetBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The offset, relative to the timestamp value in the TTL-enabled field,
+       * used determine the document's expiration time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expiration_offset = 3;</code>
+       */
+      public Builder mergeExpirationOffset(com.google.protobuf.Duration value) {
+        if (expirationOffsetBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && expirationOffset_ != null
+              && expirationOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            getExpirationOffsetBuilder().mergeFrom(value);
+          } else {
+            expirationOffset_ = value;
+          }
+        } else {
+          expirationOffsetBuilder_.mergeFrom(value);
+        }
+        if (expirationOffset_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The offset, relative to the timestamp value in the TTL-enabled field,
+       * used determine the document's expiration time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expiration_offset = 3;</code>
+       */
+      public Builder clearExpirationOffset() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        expirationOffset_ = null;
+        if (expirationOffsetBuilder_ != null) {
+          expirationOffsetBuilder_.dispose();
+          expirationOffsetBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The offset, relative to the timestamp value in the TTL-enabled field,
+       * used determine the document's expiration time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expiration_offset = 3;</code>
+       */
+      public com.google.protobuf.Duration.Builder getExpirationOffsetBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetExpirationOffsetFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The offset, relative to the timestamp value in the TTL-enabled field,
+       * used determine the document's expiration time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expiration_offset = 3;</code>
+       */
+      public com.google.protobuf.DurationOrBuilder getExpirationOffsetOrBuilder() {
+        if (expirationOffsetBuilder_ != null) {
+          return expirationOffsetBuilder_.getMessageOrBuilder();
+        } else {
+          return expirationOffset_ == null
+              ? com.google.protobuf.Duration.getDefaultInstance()
+              : expirationOffset_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The offset, relative to the timestamp value in the TTL-enabled field,
+       * used determine the document's expiration time.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration expiration_offset = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          internalGetExpirationOffsetFieldBuilder() {
+        if (expirationOffsetBuilder_ == null) {
+          expirationOffsetBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  getExpirationOffset(), getParentForChildren(), isClean());
+          expirationOffset_ = null;
+        }
+        return expirationOffsetBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.firestore.admin.v1.FieldOperationMetadata.TtlConfigDelta)
