@@ -5,14 +5,14 @@
     <groupId>com.google.api</groupId>
     <artifactId>api-common</artifactId>
     <packaging>jar</packaging>
-    <version>2.62.0</version><!-- {x-version-update:api-common:current} -->
+    <version>2.63.0-SNAPSHOT</version><!-- {x-version-update:api-common:current} -->
     <name>API Common</name>
     <description>Common utilities for Google APIs in Java</description>
 
     <parent>
         <groupId>com.google.api</groupId>
         <artifactId>gapic-generator-java-pom-parent</artifactId>
-        <version>2.71.0</version><!-- {x-version-update:gapic-generator-java:current} -->
+        <version>2.72.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
         <relativePath>../gapic-generator-java-pom-parent</relativePath>
     </parent>
 

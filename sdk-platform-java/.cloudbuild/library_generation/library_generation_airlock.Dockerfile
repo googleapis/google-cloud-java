@@ -21,7 +21,7 @@ FROM us-docker.pkg.dev/artifact-foundry-prod/docker-3p-trusted/maven@sha256:d3f0
 WORKDIR /sdk-platform-java
 COPY sdk-platform-java/ .
 # {x-version-update-start:gapic-generator-java:current}
-ENV DOCKER_GAPIC_GENERATOR_VERSION="2.71.0"
+ENV DOCKER_GAPIC_GENERATOR_VERSION="2.72.0-SNAPSHOT"
 # {x-version-update-end}
 
 # Download the java formatter
