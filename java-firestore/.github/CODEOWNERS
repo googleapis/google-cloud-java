@@ -8,7 +8,7 @@
 *                       @googleapis/cloud-sdk-java-team @googleapis/firestore-team
 
 # for handwritten libraries, keep codeowner_team in .repo-metadata.json as owner
-**/*.java               @googleapis/firestore-team
+**/*.java               @googleapis/cloud-sdk-java-team @googleapis/firestore-team
 
 # For generated Java code
 proto-*/                    @googleapis/cloud-sdk-java-team @googleapis/firestore-team
