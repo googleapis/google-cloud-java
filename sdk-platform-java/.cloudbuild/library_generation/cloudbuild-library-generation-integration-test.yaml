@@ -23,7 +23,7 @@ steps:
       # Use a fixed protoc version so that the generation result stays the same
       "--build-arg", "PROTOC_VERSION=25.8",
       "-t", "${_TEST_IMAGE}",
-      "-f", ".cloudbuild/library_generation/library_generation_airlock.Dockerfile",
+      "-f", "sdk-platform-java/.cloudbuild/library_generation/library_generation_airlock.Dockerfile",
       "."
   ]
   id: build-image
