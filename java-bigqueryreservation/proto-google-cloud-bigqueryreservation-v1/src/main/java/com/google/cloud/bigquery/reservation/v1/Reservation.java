@@ -143,7 +143,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
      * reservation will scale up to 1000 slots with 200 baseline and 800 idle
      * slots.
      * 2. if there are 500 idle slots available in other reservations, the
-     * reservation will scale up to 700 slots with 200 baseline and 300 idle
+     * reservation will scale up to 700 slots with 200 baseline and 500 idle
      * slots.
      * Please note, in this mode, the reservation might not be able to scale up
      * to max_slots.
@@ -241,7 +241,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessage
      * reservation will scale up to 1000 slots with 200 baseline and 800 idle
      * slots.
      * 2. if there are 500 idle slots available in other reservations, the
-     * reservation will scale up to 700 slots with 200 baseline and 300 idle
+     * reservation will scale up to 700 slots with 200 baseline and 500 idle
      * slots.
      * Please note, in this mode, the reservation might not be able to scale up
      * to max_slots.
