@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>gapic-libraries-bom</artifactId>
   <packaging>pom</packaging>
-  <version>1.85.0</version><!-- {x-version-update:google-cloud-java:current} -->
+  <version>1.85.1</version><!-- {x-version-update:google-cloud-java:current} -->
   <name>Google Cloud Java BOM</name>
   <description>
     BOM for the libraries in google-cloud-java repository. Users should not
@@ -1364,7 +1364,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-vectorsearch-bom</artifactId>
-        <version>0.12.0</version><!-- {x-version-update:google-cloud-vectorsearch:current} -->
+        <version>0.13.0</version><!-- {x-version-update:google-cloud-vectorsearch:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
