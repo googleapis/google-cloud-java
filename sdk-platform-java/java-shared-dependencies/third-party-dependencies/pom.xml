@@ -170,6 +170,11 @@
       </dependency>
       <dependency>
         <groupId>com.google.cloud.opentelemetry</groupId>
+        <artifactId>exporter-trace</artifactId>
+        <version>${google.cloud.opentelemetry.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.cloud.opentelemetry</groupId>
         <artifactId>shared-resourcemapping</artifactId>
         <version>${google.cloud.opentelemetry.version}</version>
       </dependency>
