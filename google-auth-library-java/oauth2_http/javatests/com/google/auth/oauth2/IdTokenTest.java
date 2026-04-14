@@ -32,8 +32,7 @@
 package com.google.auth.oauth2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.io.IOException;
 import java.util.Date;
@@ -61,16 +60,16 @@ class IdTokenTest extends BaseSerializationTest {
   void equals_true() throws IOException {
     IdToken accessToken = IdToken.create(TOKEN_1);
     IdToken otherAccessToken = IdToken.create(TOKEN_1);
-    assertTrue(accessToken.equals(otherAccessToken));
-    assertTrue(otherAccessToken.equals(accessToken));
+    assertEquals(accessToken, otherAccessToken);
+    assertEquals(otherAccessToken, accessToken);
   }
 
   @Test
   void equals_false_token() throws IOException {
     IdToken accessToken = IdToken.create(TOKEN_1);
     IdToken otherAccessToken = IdToken.create(TOKEN_2);
-    assertFalse(accessToken.equals(otherAccessToken));
-    assertFalse(otherAccessToken.equals(accessToken));
+    assertNotEquals(accessToken, otherAccessToken);
+    assertNotEquals(otherAccessToken, accessToken);
   }
 
   @Test

@@ -206,4 +206,163 @@ public interface RegionalInventoryAttributesOrBuilder
    */
   com.google.shopping.merchant.inventories.v1.RegionalInventoryAttributes.Availability
       getAvailability();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional list of loyalty programs containing applicable
+   * loyalty member prices for this product in this region.
+   *
+   * This field is used to show region-specific member prices on Product
+   * Listing Ads (PLA).
+   *
+   * To use this, the loyalty program must be configured in Google Merchant
+   * Center, and the merchant must be using the Regional Availability and
+   * Pricing (RAAP) feature. The benefits provided must match the merchant's
+   * website and be clear to members. This is only applicable for merchants in
+   * supported countries.
+   *
+   * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+   * for details on supported countries and loyalty program configuration.
+   * Also see [Regional availability and
+   * pricing](https://support.google.com/merchants/answer/14644124) and [How to
+   * set up regional member
+   * pricing](https://support.google.com/merchants/answer/16388178) for more
+   * information.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram>
+      getLoyaltyProgramsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional list of loyalty programs containing applicable
+   * loyalty member prices for this product in this region.
+   *
+   * This field is used to show region-specific member prices on Product
+   * Listing Ads (PLA).
+   *
+   * To use this, the loyalty program must be configured in Google Merchant
+   * Center, and the merchant must be using the Regional Availability and
+   * Pricing (RAAP) feature. The benefits provided must match the merchant's
+   * website and be clear to members. This is only applicable for merchants in
+   * supported countries.
+   *
+   * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+   * for details on supported countries and loyalty program configuration.
+   * Also see [Regional availability and
+   * pricing](https://support.google.com/merchants/answer/14644124) and [How to
+   * set up regional member
+   * pricing](https://support.google.com/merchants/answer/16388178) for more
+   * information.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram getLoyaltyPrograms(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional list of loyalty programs containing applicable
+   * loyalty member prices for this product in this region.
+   *
+   * This field is used to show region-specific member prices on Product
+   * Listing Ads (PLA).
+   *
+   * To use this, the loyalty program must be configured in Google Merchant
+   * Center, and the merchant must be using the Regional Availability and
+   * Pricing (RAAP) feature. The benefits provided must match the merchant's
+   * website and be clear to members. This is only applicable for merchants in
+   * supported countries.
+   *
+   * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+   * for details on supported countries and loyalty program configuration.
+   * Also see [Regional availability and
+   * pricing](https://support.google.com/merchants/answer/14644124) and [How to
+   * set up regional member
+   * pricing](https://support.google.com/merchants/answer/16388178) for more
+   * information.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getLoyaltyProgramsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional list of loyalty programs containing applicable
+   * loyalty member prices for this product in this region.
+   *
+   * This field is used to show region-specific member prices on Product
+   * Listing Ads (PLA).
+   *
+   * To use this, the loyalty program must be configured in Google Merchant
+   * Center, and the merchant must be using the Regional Availability and
+   * Pricing (RAAP) feature. The benefits provided must match the merchant's
+   * website and be clear to members. This is only applicable for merchants in
+   * supported countries.
+   *
+   * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+   * for details on supported countries and loyalty program configuration.
+   * Also see [Regional availability and
+   * pricing](https://support.google.com/merchants/answer/14644124) and [How to
+   * set up regional member
+   * pricing](https://support.google.com/merchants/answer/16388178) for more
+   * information.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgramOrBuilder>
+      getLoyaltyProgramsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional list of loyalty programs containing applicable
+   * loyalty member prices for this product in this region.
+   *
+   * This field is used to show region-specific member prices on Product
+   * Listing Ads (PLA).
+   *
+   * To use this, the loyalty program must be configured in Google Merchant
+   * Center, and the merchant must be using the Regional Availability and
+   * Pricing (RAAP) feature. The benefits provided must match the merchant's
+   * website and be clear to members. This is only applicable for merchants in
+   * supported countries.
+   *
+   * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+   * for details on supported countries and loyalty program configuration.
+   * Also see [Regional availability and
+   * pricing](https://support.google.com/merchants/answer/14644124) and [How to
+   * set up regional member
+   * pricing](https://support.google.com/merchants/answer/16388178) for more
+   * information.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgramOrBuilder
+      getLoyaltyProgramsOrBuilder(int index);
 }

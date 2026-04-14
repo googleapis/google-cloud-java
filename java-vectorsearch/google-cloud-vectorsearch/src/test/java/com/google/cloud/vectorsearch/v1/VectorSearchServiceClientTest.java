@@ -198,6 +198,7 @@ public class VectorSearchServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllVectorSchema(new HashMap<String, VectorField>())
             .setDataSchema(Struct.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockVectorSearchService.addResponse(expectedResponse);
 
@@ -243,6 +244,7 @@ public class VectorSearchServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllVectorSchema(new HashMap<String, VectorField>())
             .setDataSchema(Struct.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockVectorSearchService.addResponse(expectedResponse);
 
@@ -288,6 +290,7 @@ public class VectorSearchServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllVectorSchema(new HashMap<String, VectorField>())
             .setDataSchema(Struct.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -348,6 +351,7 @@ public class VectorSearchServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllVectorSchema(new HashMap<String, VectorField>())
             .setDataSchema(Struct.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -408,6 +412,7 @@ public class VectorSearchServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .putAllVectorSchema(new HashMap<String, VectorField>())
             .setDataSchema(Struct.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -832,6 +837,64 @@ public class VectorSearchServiceClientTest {
       Index index = Index.newBuilder().build();
       String indexId = "indexId1943291277";
       client.createIndexAsync(parent, index, indexId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void updateIndexTest() throws Exception {
+    Index expectedResponse =
+        Index.newBuilder()
+            .setName(IndexName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[INDEX]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDistanceMetric(DistanceMetric.forNumber(0))
+            .setIndexField("indexField723729224")
+            .addAllFilterFields(new ArrayList<String>())
+            .addAllStoreFields(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateIndexTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVectorSearchService.addResponse(resultOperation);
+
+    Index index = Index.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Index actualResponse = client.updateIndexAsync(index, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVectorSearchService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateIndexRequest actualRequest = ((UpdateIndexRequest) actualRequests.get(0));
+
+    Assert.assertEquals(index, actualRequest.getIndex());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateIndexExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVectorSearchService.addException(exception);
+
+    try {
+      Index index = Index.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateIndexAsync(index, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

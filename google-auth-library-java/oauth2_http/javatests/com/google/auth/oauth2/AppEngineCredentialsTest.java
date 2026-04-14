@@ -37,8 +37,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.common.collect.ImmutableMap;
 import java.io.IOException;
@@ -77,18 +77,15 @@ class AppEngineCredentialsTest extends BaseSerializationTest {
 
   @Test
   void constructor_noAppEngineRuntime_throwsHelpfulLoadError() {
-    try {
-      new TestAppEngineCredentialsNoSdk();
-      fail("Credential expected to fail to load if credential class not present.");
-    } catch (IOException e) {
-      String message = e.getMessage();
-      assertTrue(message.contains("Check that the App Engine SDK is deployed."));
-      assertInstanceOf(ClassNotFoundException.class, e.getCause());
-      assertTrue(
-          e.getCause()
-              .getMessage()
-              .contains(AppEngineCredentials.APP_IDENTITY_SERVICE_FACTORY_CLASS));
-    }
+    IOException exception = assertThrows(IOException.class, TestAppEngineCredentialsNoSdk::new);
+    String message = exception.getMessage();
+    assertTrue(message.contains("Check that the App Engine SDK is deployed."));
+    assertInstanceOf(ClassNotFoundException.class, exception.getCause());
+    assertTrue(
+        exception
+            .getCause()
+            .getMessage()
+            .contains(AppEngineCredentials.APP_IDENTITY_SERVICE_FACTORY_CLASS));
   }
 
   @Test
@@ -115,12 +112,7 @@ class AppEngineCredentialsTest extends BaseSerializationTest {
   void createScoped_clonesWithScopes() throws IOException {
     TestAppEngineCredentials credentials = new TestAppEngineCredentials(null);
     assertTrue(credentials.createScopedRequired());
-    try {
-      credentials.refreshAccessToken();
-      fail("Should not be able to use credential without scopes.");
-    } catch (Exception expected) {
-      // Expected
-    }
+    assertThrows(IOException.class, credentials::refreshAccessToken);
 
     GoogleCredentials scopedCredentials = credentials.createScoped(SCOPES);
     assertNotSame(credentials, scopedCredentials);

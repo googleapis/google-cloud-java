@@ -75,6 +75,7 @@ import com.google.cloud.vectorsearch.v1.ListIndexesRequest;
 import com.google.cloud.vectorsearch.v1.ListIndexesResponse;
 import com.google.cloud.vectorsearch.v1.OperationMetadata;
 import com.google.cloud.vectorsearch.v1.UpdateCollectionRequest;
+import com.google.cloud.vectorsearch.v1.UpdateIndexRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -189,6 +190,9 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
   private final UnaryCallSettings<CreateIndexRequest, Operation> createIndexSettings;
   private final OperationCallSettings<CreateIndexRequest, Index, OperationMetadata>
       createIndexOperationSettings;
+  private final UnaryCallSettings<UpdateIndexRequest, Operation> updateIndexSettings;
+  private final OperationCallSettings<UpdateIndexRequest, Index, OperationMetadata>
+      updateIndexOperationSettings;
   private final UnaryCallSettings<DeleteIndexRequest, Operation> deleteIndexSettings;
   private final OperationCallSettings<DeleteIndexRequest, Empty, OperationMetadata>
       deleteIndexOperationSettings;
@@ -428,6 +432,17 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
     return createIndexOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateIndex. */
+  public UnaryCallSettings<UpdateIndexRequest, Operation> updateIndexSettings() {
+    return updateIndexSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateIndex. */
+  public OperationCallSettings<UpdateIndexRequest, Index, OperationMetadata>
+      updateIndexOperationSettings() {
+    return updateIndexOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteIndex. */
   public UnaryCallSettings<DeleteIndexRequest, Operation> deleteIndexSettings() {
     return deleteIndexSettings;
@@ -597,6 +612,8 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
     getIndexSettings = settingsBuilder.getIndexSettings().build();
     createIndexSettings = settingsBuilder.createIndexSettings().build();
     createIndexOperationSettings = settingsBuilder.createIndexOperationSettings().build();
+    updateIndexSettings = settingsBuilder.updateIndexSettings().build();
+    updateIndexOperationSettings = settingsBuilder.updateIndexOperationSettings().build();
     deleteIndexSettings = settingsBuilder.deleteIndexSettings().build();
     deleteIndexOperationSettings = settingsBuilder.deleteIndexOperationSettings().build();
     importDataObjectsSettings = settingsBuilder.importDataObjectsSettings().build();
@@ -647,6 +664,9 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
     private final UnaryCallSettings.Builder<CreateIndexRequest, Operation> createIndexSettings;
     private final OperationCallSettings.Builder<CreateIndexRequest, Index, OperationMetadata>
         createIndexOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateIndexRequest, Operation> updateIndexSettings;
+    private final OperationCallSettings.Builder<UpdateIndexRequest, Index, OperationMetadata>
+        updateIndexOperationSettings;
     private final UnaryCallSettings.Builder<DeleteIndexRequest, Operation> deleteIndexSettings;
     private final OperationCallSettings.Builder<DeleteIndexRequest, Empty, OperationMetadata>
         deleteIndexOperationSettings;
@@ -731,6 +751,8 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
       getIndexSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createIndexSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createIndexOperationSettings = OperationCallSettings.newBuilder();
+      updateIndexSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateIndexOperationSettings = OperationCallSettings.newBuilder();
       deleteIndexSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteIndexOperationSettings = OperationCallSettings.newBuilder();
       importDataObjectsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -750,6 +772,7 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
               listIndexesSettings,
               getIndexSettings,
               createIndexSettings,
+              updateIndexSettings,
               deleteIndexSettings,
               importDataObjectsSettings,
               exportDataObjectsSettings,
@@ -773,6 +796,8 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
       getIndexSettings = settings.getIndexSettings.toBuilder();
       createIndexSettings = settings.createIndexSettings.toBuilder();
       createIndexOperationSettings = settings.createIndexOperationSettings.toBuilder();
+      updateIndexSettings = settings.updateIndexSettings.toBuilder();
+      updateIndexOperationSettings = settings.updateIndexOperationSettings.toBuilder();
       deleteIndexSettings = settings.deleteIndexSettings.toBuilder();
       deleteIndexOperationSettings = settings.deleteIndexOperationSettings.toBuilder();
       importDataObjectsSettings = settings.importDataObjectsSettings.toBuilder();
@@ -792,6 +817,7 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
               listIndexesSettings,
               getIndexSettings,
               createIndexSettings,
+              updateIndexSettings,
               deleteIndexSettings,
               importDataObjectsSettings,
               exportDataObjectsSettings,
@@ -863,6 +889,11 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
           .createIndexSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
+
+      builder
+          .updateIndexSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .deleteIndexSettings()
@@ -967,6 +998,29 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
               UnaryCallSettings.<CreateIndexRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Index.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateIndexOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<UpdateIndexRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Index.class))
@@ -1146,6 +1200,17 @@ public class VectorSearchServiceStubSettings extends StubSettings<VectorSearchSe
     public OperationCallSettings.Builder<CreateIndexRequest, Index, OperationMetadata>
         createIndexOperationSettings() {
       return createIndexOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateIndex. */
+    public UnaryCallSettings.Builder<UpdateIndexRequest, Operation> updateIndexSettings() {
+      return updateIndexSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateIndex. */
+    public OperationCallSettings.Builder<UpdateIndexRequest, Index, OperationMetadata>
+        updateIndexOperationSettings() {
+      return updateIndexOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to deleteIndex. */

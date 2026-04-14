@@ -674,4 +674,204 @@ public class MockConfigImpl extends ConfigImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getDeploymentGroup(
+      GetDeploymentGroupRequest request, StreamObserver<DeploymentGroup> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DeploymentGroup) {
+      requests.add(request);
+      responseObserver.onNext(((DeploymentGroup) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDeploymentGroup, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DeploymentGroup.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createDeploymentGroup(
+      CreateDeploymentGroupRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDeploymentGroup, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateDeploymentGroup(
+      UpdateDeploymentGroupRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDeploymentGroup, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteDeploymentGroup(
+      DeleteDeploymentGroupRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDeploymentGroup, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDeploymentGroups(
+      ListDeploymentGroupsRequest request,
+      StreamObserver<ListDeploymentGroupsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDeploymentGroupsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDeploymentGroupsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDeploymentGroups, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDeploymentGroupsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void provisionDeploymentGroup(
+      ProvisionDeploymentGroupRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ProvisionDeploymentGroup, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deprovisionDeploymentGroup(
+      DeprovisionDeploymentGroupRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeprovisionDeploymentGroup, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDeploymentGroupRevision(
+      GetDeploymentGroupRevisionRequest request,
+      StreamObserver<DeploymentGroupRevision> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DeploymentGroupRevision) {
+      requests.add(request);
+      responseObserver.onNext(((DeploymentGroupRevision) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDeploymentGroupRevision, expected %s"
+                      + " or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DeploymentGroupRevision.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listDeploymentGroupRevisions(
+      ListDeploymentGroupRevisionsRequest request,
+      StreamObserver<ListDeploymentGroupRevisionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListDeploymentGroupRevisionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListDeploymentGroupRevisionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDeploymentGroupRevisions, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListDeploymentGroupRevisionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

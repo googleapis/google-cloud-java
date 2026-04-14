@@ -64,7 +64,7 @@ public interface ParameterDefinitionOrBuilder
    * </code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.ParameterDefinition.type is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=59
+   *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=60
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Deprecated
@@ -82,7 +82,7 @@ public interface ParameterDefinitionOrBuilder
    * </code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.ParameterDefinition.type is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=59
+   *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=60
    * @return The type.
    */
   @java.lang.Deprecated

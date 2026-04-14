@@ -16,6 +16,8 @@
 
 package com.google.cloud.config.v1.stub;
 
+import static com.google.cloud.config.v1.ConfigClient.ListDeploymentGroupRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListDeploymentGroupsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
@@ -29,18 +31,25 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.config.v1.AutoMigrationConfig;
+import com.google.cloud.config.v1.CreateDeploymentGroupRequest;
 import com.google.cloud.config.v1.CreateDeploymentRequest;
 import com.google.cloud.config.v1.CreatePreviewRequest;
+import com.google.cloud.config.v1.DeleteDeploymentGroupRequest;
 import com.google.cloud.config.v1.DeleteDeploymentRequest;
 import com.google.cloud.config.v1.DeletePreviewRequest;
 import com.google.cloud.config.v1.DeleteStatefileRequest;
 import com.google.cloud.config.v1.Deployment;
+import com.google.cloud.config.v1.DeploymentGroup;
+import com.google.cloud.config.v1.DeploymentGroupRevision;
+import com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest;
 import com.google.cloud.config.v1.ExportDeploymentStatefileRequest;
 import com.google.cloud.config.v1.ExportLockInfoRequest;
 import com.google.cloud.config.v1.ExportPreviewResultRequest;
 import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
 import com.google.cloud.config.v1.GetAutoMigrationConfigRequest;
+import com.google.cloud.config.v1.GetDeploymentGroupRequest;
+import com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceChangeRequest;
@@ -49,6 +58,10 @@ import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
 import com.google.cloud.config.v1.GetTerraformVersionRequest;
 import com.google.cloud.config.v1.ImportStatefileRequest;
+import com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest;
+import com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse;
+import com.google.cloud.config.v1.ListDeploymentGroupsRequest;
+import com.google.cloud.config.v1.ListDeploymentGroupsResponse;
 import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
 import com.google.cloud.config.v1.ListPreviewsRequest;
@@ -67,6 +80,7 @@ import com.google.cloud.config.v1.LockDeploymentRequest;
 import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
 import com.google.cloud.config.v1.Preview;
+import com.google.cloud.config.v1.ProvisionDeploymentGroupRequest;
 import com.google.cloud.config.v1.Resource;
 import com.google.cloud.config.v1.ResourceChange;
 import com.google.cloud.config.v1.ResourceDrift;
@@ -75,6 +89,7 @@ import com.google.cloud.config.v1.Statefile;
 import com.google.cloud.config.v1.TerraformVersion;
 import com.google.cloud.config.v1.UnlockDeploymentRequest;
 import com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest;
+import com.google.cloud.config.v1.UpdateDeploymentGroupRequest;
 import com.google.cloud.config.v1.UpdateDeploymentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -305,6 +320,92 @@ public abstract class ConfigStub implements BackgroundResource {
   public UnaryCallable<UpdateAutoMigrationConfigRequest, Operation>
       updateAutoMigrationConfigCallable() {
     throw new UnsupportedOperationException("Not implemented: updateAutoMigrationConfigCallable()");
+  }
+
+  public UnaryCallable<GetDeploymentGroupRequest, DeploymentGroup> getDeploymentGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDeploymentGroupCallable()");
+  }
+
+  public OperationCallable<CreateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      createDeploymentGroupOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createDeploymentGroupOperationCallable()");
+  }
+
+  public UnaryCallable<CreateDeploymentGroupRequest, Operation> createDeploymentGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDeploymentGroupCallable()");
+  }
+
+  public OperationCallable<UpdateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      updateDeploymentGroupOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateDeploymentGroupOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateDeploymentGroupRequest, Operation> updateDeploymentGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDeploymentGroupCallable()");
+  }
+
+  public OperationCallable<DeleteDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deleteDeploymentGroupOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteDeploymentGroupOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteDeploymentGroupRequest, Operation> deleteDeploymentGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDeploymentGroupCallable()");
+  }
+
+  public UnaryCallable<ListDeploymentGroupsRequest, ListDeploymentGroupsPagedResponse>
+      listDeploymentGroupsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDeploymentGroupsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse>
+      listDeploymentGroupsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDeploymentGroupsCallable()");
+  }
+
+  public OperationCallable<ProvisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      provisionDeploymentGroupOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: provisionDeploymentGroupOperationCallable()");
+  }
+
+  public UnaryCallable<ProvisionDeploymentGroupRequest, Operation>
+      provisionDeploymentGroupCallable() {
+    throw new UnsupportedOperationException("Not implemented: provisionDeploymentGroupCallable()");
+  }
+
+  public OperationCallable<DeprovisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deprovisionDeploymentGroupOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deprovisionDeploymentGroupOperationCallable()");
+  }
+
+  public UnaryCallable<DeprovisionDeploymentGroupRequest, Operation>
+      deprovisionDeploymentGroupCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deprovisionDeploymentGroupCallable()");
+  }
+
+  public UnaryCallable<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+      getDeploymentGroupRevisionCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getDeploymentGroupRevisionCallable()");
+  }
+
+  public UnaryCallable<
+          ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsPagedResponse>
+      listDeploymentGroupRevisionsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDeploymentGroupRevisionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsResponse>
+      listDeploymentGroupRevisionsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDeploymentGroupRevisionsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
