@@ -2924,7 +2924,7 @@ libraries:
   product_documentation: https://cloud.google.com/web-risk/docs/
   api_description: is a Google Cloud service that lets client applications check URLs
     against Google's constantly updated lists of unsafe web resources. Unsafe web
-    resources include social engineering sites-such as phishing and deceptive sites-and
+    resources include social engineering sites - such as phishing and deceptive sites - and
     sites that host malware or unwanted software. With the Web Risk API, you can quickly
     identify known bad sites, warn users before they click infected links, and prevent
     users from posting links to known infected pages from your site. The Web Risk
