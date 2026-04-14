@@ -1,5 +1,37 @@
 # Changelog
 
+## [1.85.0](https://github.com/googleapis/google-cloud-java/compare/v1.84.0...v1.85.0) (2026-04-14)
+
+
+### Features
+
+* [appoptimize] new module for appoptimize ([#12768](https://github.com/googleapis/google-cloud-java/issues/12768)) ([050187d](https://github.com/googleapis/google-cloud-java/commit/050187d934fc78139ec2790c04dd4c1e256591d4))
+* [chronicle] Add DataTableService to Chronicle v1 Client Libraries ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* [databasecenter] Add support for BigQuery datasets and ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* [dataplex] Allow Data Documentation DataScans to support BigQuery ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* [dataproc] Add `Engine` field to support LightningEngine in ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* [discoveryengine] add AUTO condition to SearchAsYouTypeSpec in ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* [infra-manager] adding DeploymentGroups, you can now manage ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* [kms] add a variable to SingleTenantHsmInstanceCreate to control ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* [kms] support external-μ in the Digest ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* [shopping-merchant-products] a new field `base64_encoded_name` is ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* [vectorsearch] Added CMEK support ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+
+
+### Bug Fixes
+
+* **auth:** Address ClientSideCredentialAccessBoundary RefreshTask race condition ([#12681](https://github.com/googleapis/google-cloud-java/issues/12681)) ([30088d2](https://github.com/googleapis/google-cloud-java/commit/30088d2140184b64e841b9864a2b9518f797a686))
+* **bqjdbc:** lazily instantiate Statement in BigQueryDatabaseMetaData ([#12752](https://github.com/googleapis/google-cloud-java/issues/12752)) ([72e5508](https://github.com/googleapis/google-cloud-java/commit/72e5508669ea48cde28f02adfeedfb05cd73fc57))
+* **deps:** update the Java code generator (gapic-generator-java) to ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* **gdch:** support EC private keys ([#1896](https://github.com/googleapis/google-cloud-java/issues/1896)) ([bf926fb](https://github.com/googleapis/google-cloud-java/commit/bf926fb23a0ee32b5563af7671af3776ca670126))
+* update appoptimize version to 0.0.1 to match released repo ([#12782](https://github.com/googleapis/google-cloud-java/issues/12782)) ([80dfac6](https://github.com/googleapis/google-cloud-java/commit/80dfac6773bfe7e41e1d3f659fa5c9953a4fd83b))
+
+
+### Documentation
+
+* [network-management] Update comment for the `region` field in ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+* [shopping-merchant-inventories] A comment for field `name` in ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
+
 ## [1.84.0](https://github.com/googleapis/google-cloud-java/compare/v1.83.0...v1.84.0) (2026-04-10)
 
 
