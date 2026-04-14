@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import static com.google.auth.Credentials.GOOGLE_DEFAULT_UNIVERSE;
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -43,6 +44,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
+import com.google.api.client.util.Clock;
 import com.google.auth.TestUtils;
 import com.google.auth.http.AuthHttpConstants;
 import com.google.auth.http.HttpTransportFactory;
@@ -61,6 +63,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -1237,7 +1241,7 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
     assertEquals(credentials, deserializedCredentials);
     assertEquals(credentials.hashCode(), deserializedCredentials.hashCode());
     assertEquals(credentials.toString(), deserializedCredentials.toString());
-    assertSame(Clock.SYSTEM, deserializedCredentials.clock);
+    assertSame(com.google.api.client.util.Clock.SYSTEM, deserializedCredentials.clock);
   }
 
   @org.junit.jupiter.api.Test
@@ -1278,7 +1282,7 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
       Thread.sleep(100);
     }
     if (credentials.getRegionalAccessBoundary() == null) {
-      fail("Timed out waiting for regional access boundary refresh");
+      Assertions.fail("Timed out waiting for regional access boundary refresh");
     }
   }
 
