@@ -21,7 +21,7 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 final class Version {
   // {x-version-update-start:google-maps-places:current}
-  static final String VERSION = "0.63.0-SNAPSHOT";
+  static final String VERSION = "0.62.0";
   // {x-version-update-end}
 
 }
