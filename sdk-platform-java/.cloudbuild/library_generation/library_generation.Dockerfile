@@ -22,7 +22,7 @@ WORKDIR /google-cloud-java
 
 COPY . .
 # {x-version-update-start:gapic-generator-java:current}
-ENV DOCKER_GAPIC_GENERATOR_VERSION="2.71.0"
+ENV DOCKER_GAPIC_GENERATOR_VERSION="2.72.0-SNAPSHOT"
 # {x-version-update-end}
 
 # Download the java formatter
