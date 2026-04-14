@@ -3046,7 +3046,7 @@ libraries:
   - proto_path: google/rpc/context
   - proto_path: google/shopping/type
   - proto_path: google/type
-- api_shortname: iam
+- api_shortname: common-iam
   name_pretty: IAM
   product_documentation: https://cloud.google.com/iam
   api_description: Manages access control for Google Cloud Platform resources
