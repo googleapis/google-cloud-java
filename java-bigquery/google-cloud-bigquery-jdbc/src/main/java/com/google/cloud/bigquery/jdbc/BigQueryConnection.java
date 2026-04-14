@@ -138,7 +138,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Long connectionPoolSize;
   Long listenerPoolSize;
   String partnerToken;
-  private static DatabaseMetaData databaseMetaData;
+  DatabaseMetaData databaseMetaData;
 
   BigQueryConnection(String url) throws IOException {
     this(url, DataSource.fromUrl(url));
