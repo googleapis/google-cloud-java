@@ -40,6 +40,14 @@ jobs:
           src:
             - '**/*.java'
             - '**/pom.xml'
+            - '!java-bigquery/**'
+            - '!java-bigquerystorage/**'
+            - '!java-datastore/**'
+            - '!java-logging-logback/**'
+            - '!java-logging/**'
+            - '!java-spanner/**'
+            - '!java-storage/**'
+            - '!google-auth-library-java/**'
           ci:
             - '.github/workflows/ci.yaml'
             - '.kokoro/**'
@@ -121,6 +129,8 @@ jobs:
         # 2. Java code changes in upstream modules: Auth Library and Sdk-Platform-Java
         # 3. Upstream dependency version changes: Shared-Deps and Gapic-Generator-Pom-Parent
         filters: |
+          google-auth-library-java:
+            - 'google-auth-library-java/**'
           java-bigquery:
             - 'java-bigquery/**'
             - 'google-auth-library-java/**/*.java'
