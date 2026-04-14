@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.150.1](https://github.com/googleapis/java-pubsub/compare/v1.150.0...v1.150.1) (2026-04-14)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.71.0 ([49cb97f](https://github.com/googleapis/java-pubsub/commit/49cb97ff6d8f1a12abc6689cadc04c888baab723))
+* Increase streaming pull timeout ([49cb97f](https://github.com/googleapis/java-pubsub/commit/49cb97ff6d8f1a12abc6689cadc04c888baab723))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.61.0 ([#2714](https://github.com/googleapis/java-pubsub/issues/2714)) ([7f6dbcc](https://github.com/googleapis/java-pubsub/commit/7f6dbcc11c41c682bee16818436d036a1df68512))
+
+
+### Documentation
+
+* Fix documentation URL AIInference MessageTransform service_account_email field ([49cb97f](https://github.com/googleapis/java-pubsub/commit/49cb97ff6d8f1a12abc6689cadc04c888baab723))
+
 ## [1.150.0](https://github.com/googleapis/java-pubsub/compare/v1.149.0...v1.150.0) (2026-03-23)
 
 

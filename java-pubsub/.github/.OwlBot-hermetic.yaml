@@ -18,6 +18,7 @@ deep-remove-regex:
 
 #Args=--initialize-at-build-time=org.junit.runners.model.FrameworkField
 deep-preserve-regex:
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
 - "/google-cloud-pubsub/src/test/resources/META-INF/native-image/.*"
 - "/google-cloud-pubsub/src/main/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
