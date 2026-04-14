@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.77.1](https://github.com/googleapis/java-bigtable/compare/v2.77.0...v2.77.1) (2026-04-13)
+
+
+### Bug Fixes
+
+* Bump reported admin versions ([#2876](https://github.com/googleapis/java-bigtable/issues/2876)) ([cb56060](https://github.com/googleapis/java-bigtable/commit/cb5606071e083642946ddbd87e914c5e8ec896ea))
+* Fix translate exception in compat layer ([#2879](https://github.com/googleapis/java-bigtable/issues/2879)) ([2742460](https://github.com/googleapis/java-bigtable/commit/274246016802bf92ac372d1f9c866b487f5900e2))
+
 ## [2.77.0](https://github.com/googleapis/java-bigtable/compare/v2.76.0...v2.77.0) (2026-04-09)
 
 
