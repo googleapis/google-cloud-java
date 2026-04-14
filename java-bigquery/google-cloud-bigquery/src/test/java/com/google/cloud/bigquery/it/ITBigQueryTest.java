@@ -7890,7 +7890,9 @@ class ITBigQueryTest {
     TableResult tableResult = executeSimpleQuery(bigquery);
     assertNotNull(tableResult.getQueryId());
 
-    // Safely handle the fallback where BigQuery decides to create a job anyway
+    // Safely handle the fallback where BigQuery determines a job must be created
+    // even if the mode is optional. Most requests will be stateless, but it is still
+    // possible that the BQ engine will create a job even for tiny requests.
     if (tableResult.getJobCreationReason() != null) {
       assertNotNull(tableResult.getJobId());
       assertEquals(tableResult.getQueryId(), tableResult.getJobId().getJob());
