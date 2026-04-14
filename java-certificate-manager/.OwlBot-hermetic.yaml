@@ -20,7 +20,8 @@ deep-remove-regex:
 - "/java-certificate-manager/google-.*/src"
 
 deep-preserve-regex:
-- "/java-certificate-manager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/certificatemanager/(v.*)/.*-java/proto-google-.*/src"

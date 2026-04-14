@@ -23,7 +23,7 @@ org.slf4j:slf4j-api,slf4j=2.0.17
 
 # 1P Shared-Deps
 # These dependencies are declared: https://github.com/googleapis/sdk-platform-java/blob/main/java-shared-dependencies/first-party-dependencies/pom.xml
-com.google.cloud:grpc-gcp,grpc-gcp=1.9.2
+com.google.cloud:grpc-gcp,grpc-gcp=1.10.0
 com.google.oauth-client:google-oauth-client,google.oauth-client=1.39.0
 com.google.api-client:google-api-client,google.api-client=2.9.0
 

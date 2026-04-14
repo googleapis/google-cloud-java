@@ -18,6 +18,7 @@ package com.google.showcase.v1beta1.it.util;
 
 import com.google.api.client.http.LowLevelHttpRequest;
 import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.JsonParser;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.json.webtoken.JsonWebSignature;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
@@ -39,10 +40,8 @@ public class InterceptingMockTokenServerTransport extends MockTokenServerTranspo
 
   public String getLastAudienceSent() throws IOException {
     String contentString = lastRequest.getContentAsString();
-    Map<String, String> query = TestUtils.parseQuery(contentString);
-    String assertion = query.get("assertion");
-    JsonWebSignature signature = JsonWebSignature.parse(JSON_FACTORY, assertion);
-    String foundTargetAudience = (String) signature.getPayload().get("api_audience");
-    return foundTargetAudience;
+    JsonParser jsonParser = JSON_FACTORY.createJsonParser(contentString);
+    Map<String, Object> json = jsonParser.parseAndClose(Map.class);
+    return (String) json.get("audience");
   }
 }

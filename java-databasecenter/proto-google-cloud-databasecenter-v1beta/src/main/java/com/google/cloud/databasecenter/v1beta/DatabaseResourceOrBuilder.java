@@ -737,4 +737,70 @@ public interface DatabaseResourceOrBuilder
    * </code>
    */
   com.google.cloud.databasecenter.v1beta.MaintenanceInfoOrBuilder getMaintenanceInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Affiliation details of the resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.databasecenter.v1beta.Affiliation> getAffiliationsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Affiliation details of the resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.databasecenter.v1beta.Affiliation getAffiliations(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Affiliation details of the resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getAffiliationsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Affiliation details of the resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.databasecenter.v1beta.AffiliationOrBuilder>
+      getAffiliationsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Affiliation details of the resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.Affiliation affiliations = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.databasecenter.v1beta.AffiliationOrBuilder getAffiliationsOrBuilder(int index);
 }

@@ -2288,8 +2288,9 @@ public interface ProductAttributesOrBuilder
    *
    *
    * <pre>
-   * The shipping label of the product, used to group product in account-level
-   * shipping rules.
+   * The shipping label of the product, used to group products in account-level
+   * shipping rules. Max. 100 characters. For more information, see
+   * [Shipping label](https://support.google.com/merchants/answer/6324504).
    * </pre>
    *
    * <code>optional string shipping_label = 46;</code>
@@ -2302,8 +2303,9 @@ public interface ProductAttributesOrBuilder
    *
    *
    * <pre>
-   * The shipping label of the product, used to group product in account-level
-   * shipping rules.
+   * The shipping label of the product, used to group products in account-level
+   * shipping rules. Max. 100 characters. For more information, see
+   * [Shipping label](https://support.google.com/merchants/answer/6324504).
    * </pre>
    *
    * <code>optional string shipping_label = 46;</code>
@@ -2316,8 +2318,9 @@ public interface ProductAttributesOrBuilder
    *
    *
    * <pre>
-   * The shipping label of the product, used to group product in account-level
-   * shipping rules.
+   * The shipping label of the product, used to group products in account-level
+   * shipping rules. Max. 100 characters. For more information, see
+   * [Shipping label](https://support.google.com/merchants/answer/6324504).
    * </pre>
    *
    * <code>optional string shipping_label = 46;</code>
@@ -2325,6 +2328,51 @@ public interface ProductAttributesOrBuilder
    * @return The bytes for shippingLabel.
    */
   com.google.protobuf.ByteString getShippingLabelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The return label of the product, used to group products in account-level
+   * return policies. Max. 100 characters. For more information, see
+   * [Return policy label](https://support.google.com/merchants/answer/9445425).
+   * </pre>
+   *
+   * <code>optional string return_policy_label = 170;</code>
+   *
+   * @return Whether the returnPolicyLabel field is set.
+   */
+  boolean hasReturnPolicyLabel();
+
+  /**
+   *
+   *
+   * <pre>
+   * The return label of the product, used to group products in account-level
+   * return policies. Max. 100 characters. For more information, see
+   * [Return policy label](https://support.google.com/merchants/answer/9445425).
+   * </pre>
+   *
+   * <code>optional string return_policy_label = 170;</code>
+   *
+   * @return The returnPolicyLabel.
+   */
+  java.lang.String getReturnPolicyLabel();
+
+  /**
+   *
+   *
+   * <pre>
+   * The return label of the product, used to group products in account-level
+   * return policies. Max. 100 characters. For more information, see
+   * [Return policy label](https://support.google.com/merchants/answer/9445425).
+   * </pre>
+   *
+   * <code>optional string return_policy_label = 170;</code>
+   *
+   * @return The bytes for returnPolicyLabel.
+   */
+  com.google.protobuf.ByteString getReturnPolicyLabelBytes();
 
   /**
    *

@@ -116,6 +116,51 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
+   * Output only. Metadata about ProvisionDeploymentGroup operation state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata provision_deployment_group_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the provisionDeploymentGroupMetadata field is set.
+   */
+  boolean hasProvisionDeploymentGroupMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about ProvisionDeploymentGroup operation state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata provision_deployment_group_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The provisionDeploymentGroupMetadata.
+   */
+  com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata
+      getProvisionDeploymentGroupMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about ProvisionDeploymentGroup operation state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata provision_deployment_group_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadataOrBuilder
+      getProvisionDeploymentGroupMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Time when the operation was created.
    * </pre>
    *

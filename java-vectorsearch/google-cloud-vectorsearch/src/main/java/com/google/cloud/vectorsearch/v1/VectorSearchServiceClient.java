@@ -234,6 +234,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> UpdateIndex</td>
+ *      <td><p> Updates the parameters of a single Index.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateIndexAsync(UpdateIndexRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateIndexAsync(Index index, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateIndexOperationCallable()
+ *           <li><p> updateIndexCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> DeleteIndex</td>
  *      <td><p> Deletes a single Index.</td>
  *      <td>
@@ -285,8 +304,10 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.This method can be called in two ways:
- * <p> &#42;   &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;   &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or other locations specifically visibleto the project.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
+ * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1634,6 +1655,136 @@ public class VectorSearchServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Updates the parameters of a single Index.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VectorSearchServiceClient vectorSearchServiceClient = VectorSearchServiceClient.create()) {
+   *   Index index = Index.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Index response = vectorSearchServiceClient.updateIndexAsync(index, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param index Required. The resource being updated.
+   * @param updateMask Optional. Specifies the fields to be overwritten in the Index resource by the
+   *     update. The fields specified in the update_mask are relative to the resource, not the full
+   *     request. A field will be overwritten if it is in the mask. If the user does not provide a
+   *     mask then all fields present in the request with non-empty values will be overwritten.
+   *     <p>The following fields support update: &#42; `display_name` &#42; `description` &#42;
+   *     `labels` &#42; `dedicated_infrastructure.autoscaling_spec.min_replica_count` &#42;
+   *     `dedicated_infrastructure.autoscaling_spec.max_replica_count`
+   *     <p>If `&#42;` is provided in the `update_mask`, full replacement of mutable fields will be
+   *     performed.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Index, OperationMetadata> updateIndexAsync(
+      Index index, FieldMask updateMask) {
+    UpdateIndexRequest request =
+        UpdateIndexRequest.newBuilder().setIndex(index).setUpdateMask(updateMask).build();
+    return updateIndexAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single Index.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VectorSearchServiceClient vectorSearchServiceClient = VectorSearchServiceClient.create()) {
+   *   UpdateIndexRequest request =
+   *       UpdateIndexRequest.newBuilder()
+   *           .setIndex(Index.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Index response = vectorSearchServiceClient.updateIndexAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Index, OperationMetadata> updateIndexAsync(
+      UpdateIndexRequest request) {
+    return updateIndexOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single Index.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VectorSearchServiceClient vectorSearchServiceClient = VectorSearchServiceClient.create()) {
+   *   UpdateIndexRequest request =
+   *       UpdateIndexRequest.newBuilder()
+   *           .setIndex(Index.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Index, OperationMetadata> future =
+   *       vectorSearchServiceClient.updateIndexOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Index response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateIndexRequest, Index, OperationMetadata>
+      updateIndexOperationCallable() {
+    return stub.updateIndexOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the parameters of a single Index.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (VectorSearchServiceClient vectorSearchServiceClient = VectorSearchServiceClient.create()) {
+   *   UpdateIndexRequest request =
+   *       UpdateIndexRequest.newBuilder()
+   *           .setIndex(Index.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       vectorSearchServiceClient.updateIndexCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateIndexRequest, Operation> updateIndexCallable() {
+    return stub.updateIndexCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a single Index.
    *
    * <p>Sample code:
@@ -1957,13 +2108,20 @@ public class VectorSearchServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1996,13 +2154,20 @@ public class VectorSearchServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -2036,13 +2201,20 @@ public class VectorSearchServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists information about the supported locations for this service.This method can be called in
-   * two ways:
+   * Lists information about the supported locations for this service.
    *
-   * <p>&#42; &#42;&#42;List all public locations:&#42;&#42; Use the path `GET /v1/locations`.&#42;
-   * &#42;&#42;List project-visible locations:&#42;&#42; Use the path`GET
-   * /v1/projects/{project_id}/locations`. This may include publiclocations as well as private or
-   * other locations specifically visibleto the project.
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

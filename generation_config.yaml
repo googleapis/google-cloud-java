@@ -1,5 +1,5 @@
-gapic_generator_version: 2.68.0
-googleapis_commitish: cd090841ab172574e740c214c99df00aef9c0dee
+gapic_generator_version: 2.69.0
+googleapis_commitish:  e182cf5152967047b763fd88f03094cfc836d194
 libraries_bom_version: 26.79.0
 libraries:
 - api_shortname: accessapproval
@@ -3014,3 +3014,4 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/workstations/v1
   - proto_path: google/cloud/workstations/v1beta
+
