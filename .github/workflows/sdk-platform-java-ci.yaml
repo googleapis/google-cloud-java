@@ -17,6 +17,7 @@ jobs:
         filters: |
           library:
             - 'sdk-platform-java/**'
+            - 'google-auth-library-java/**'
   build:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}

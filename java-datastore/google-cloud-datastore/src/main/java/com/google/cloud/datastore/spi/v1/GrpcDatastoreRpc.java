@@ -75,20 +75,22 @@ public class GrpcDatastoreRpc implements DatastoreRpc {
               ? getClientContextForEmulator(datastoreOptions)
               : getClientContext(datastoreOptions);
 
-      /* For grpc transport options, configure default gRPC Connection pool with minChannelCount = 1 */
-      DatastoreStubSettings.Builder builder =
+      /* For non-emulator, configure default gRPC Connection pool with minChannelCount = 1 */
+      DatastoreStubSettings.Builder datastoreStubSettingsBuilder =
           DatastoreStubSettings.newBuilder(clientContext)
-              .applyToAllUnaryMethods(retrySettingSetter(datastoreOptions))
-              .setTransportChannelProvider(
-                  DatastoreSettings.defaultGrpcTransportProviderBuilder()
-                      .setChannelPoolSettings(
-                          ChannelPoolSettings.builder()
-                              .setInitialChannelCount(DatastoreOptions.INIT_CHANNEL_COUNT)
-                              .setMinChannelCount(DatastoreOptions.MIN_CHANNEL_COUNT)
-                              .build())
-                      .build());
+              .applyToAllUnaryMethods(retrySettingSetter(datastoreOptions));
+      if (!isEmulator(datastoreOptions)) {
+        datastoreStubSettingsBuilder.setTransportChannelProvider(
+            DatastoreSettings.defaultGrpcTransportProviderBuilder()
+                .setChannelPoolSettings(
+                    ChannelPoolSettings.builder()
+                        .setInitialChannelCount(DatastoreOptions.INIT_CHANNEL_COUNT)
+                        .setMinChannelCount(DatastoreOptions.MIN_CHANNEL_COUNT)
+                        .build())
+                .build());
+      }
 
-      datastoreStub = GrpcDatastoreStub.create(builder.build());
+      datastoreStub = GrpcDatastoreStub.create(datastoreStubSettingsBuilder.build());
     } catch (IOException e) {
       throw new IOException(e);
     }

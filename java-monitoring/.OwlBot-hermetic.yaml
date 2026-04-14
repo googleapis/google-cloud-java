@@ -20,8 +20,9 @@ deep-remove-regex:
 - "/java-monitoring/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-monitoring/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/java-monitoring/google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/ITVPCServiceControlTest.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/ITVPCServiceControlTest.java"
 
 deep-copy-regex:
 - source: "/google/monitoring/(v.*)/.*-java/proto-google-.*/src"

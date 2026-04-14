@@ -31,8 +31,6 @@
 package com.google.api.gax.tracing;
 
 import com.google.api.client.util.Strings;
-import com.google.api.core.BetaApi;
-import com.google.api.core.InternalApi;
 import com.google.api.gax.rpc.LibraryMetadata;
 import com.google.common.annotations.VisibleForTesting;
 import io.opentelemetry.api.OpenTelemetry;
@@ -46,8 +44,6 @@ import io.opentelemetry.api.trace.Tracer;
  *
  * <p>This class is expected to be initialized once during client initialization.
  */
-@BetaApi
-@InternalApi
 public class OpenTelemetryTracingFactory implements ApiTracerFactory {
   private final Tracer tracer;
   private final OpenTelemetry openTelemetry;

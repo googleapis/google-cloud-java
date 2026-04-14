@@ -16,6 +16,8 @@
 
 package com.google.cloud.config.v1.stub;
 
+import static com.google.cloud.config.v1.ConfigClient.ListDeploymentGroupRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListDeploymentGroupsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
@@ -34,18 +36,25 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.config.v1.AutoMigrationConfig;
+import com.google.cloud.config.v1.CreateDeploymentGroupRequest;
 import com.google.cloud.config.v1.CreateDeploymentRequest;
 import com.google.cloud.config.v1.CreatePreviewRequest;
+import com.google.cloud.config.v1.DeleteDeploymentGroupRequest;
 import com.google.cloud.config.v1.DeleteDeploymentRequest;
 import com.google.cloud.config.v1.DeletePreviewRequest;
 import com.google.cloud.config.v1.DeleteStatefileRequest;
 import com.google.cloud.config.v1.Deployment;
+import com.google.cloud.config.v1.DeploymentGroup;
+import com.google.cloud.config.v1.DeploymentGroupRevision;
+import com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest;
 import com.google.cloud.config.v1.ExportDeploymentStatefileRequest;
 import com.google.cloud.config.v1.ExportLockInfoRequest;
 import com.google.cloud.config.v1.ExportPreviewResultRequest;
 import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
 import com.google.cloud.config.v1.GetAutoMigrationConfigRequest;
+import com.google.cloud.config.v1.GetDeploymentGroupRequest;
+import com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceChangeRequest;
@@ -54,6 +63,10 @@ import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
 import com.google.cloud.config.v1.GetTerraformVersionRequest;
 import com.google.cloud.config.v1.ImportStatefileRequest;
+import com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest;
+import com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse;
+import com.google.cloud.config.v1.ListDeploymentGroupsRequest;
+import com.google.cloud.config.v1.ListDeploymentGroupsResponse;
 import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
 import com.google.cloud.config.v1.ListPreviewsRequest;
@@ -72,6 +85,7 @@ import com.google.cloud.config.v1.LockDeploymentRequest;
 import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
 import com.google.cloud.config.v1.Preview;
+import com.google.cloud.config.v1.ProvisionDeploymentGroupRequest;
 import com.google.cloud.config.v1.Resource;
 import com.google.cloud.config.v1.ResourceChange;
 import com.google.cloud.config.v1.ResourceDrift;
@@ -80,6 +94,7 @@ import com.google.cloud.config.v1.Statefile;
 import com.google.cloud.config.v1.TerraformVersion;
 import com.google.cloud.config.v1.UnlockDeploymentRequest;
 import com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest;
+import com.google.cloud.config.v1.UpdateDeploymentGroupRequest;
 import com.google.cloud.config.v1.UpdateDeploymentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -428,6 +443,111 @@ public class GrpcConfigStub extends ConfigStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<GetDeploymentGroupRequest, DeploymentGroup>
+      getDeploymentGroupMethodDescriptor =
+          MethodDescriptor.<GetDeploymentGroupRequest, DeploymentGroup>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/GetDeploymentGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDeploymentGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DeploymentGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateDeploymentGroupRequest, Operation>
+      createDeploymentGroupMethodDescriptor =
+          MethodDescriptor.<CreateDeploymentGroupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/CreateDeploymentGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateDeploymentGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateDeploymentGroupRequest, Operation>
+      updateDeploymentGroupMethodDescriptor =
+          MethodDescriptor.<UpdateDeploymentGroupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/UpdateDeploymentGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDeploymentGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteDeploymentGroupRequest, Operation>
+      deleteDeploymentGroupMethodDescriptor =
+          MethodDescriptor.<DeleteDeploymentGroupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/DeleteDeploymentGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDeploymentGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse>
+      listDeploymentGroupsMethodDescriptor =
+          MethodDescriptor.<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/ListDeploymentGroups")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDeploymentGroupsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDeploymentGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ProvisionDeploymentGroupRequest, Operation>
+      provisionDeploymentGroupMethodDescriptor =
+          MethodDescriptor.<ProvisionDeploymentGroupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/ProvisionDeploymentGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ProvisionDeploymentGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeprovisionDeploymentGroupRequest, Operation>
+      deprovisionDeploymentGroupMethodDescriptor =
+          MethodDescriptor.<DeprovisionDeploymentGroupRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/DeprovisionDeploymentGroup")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeprovisionDeploymentGroupRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+      getDeploymentGroupRevisionMethodDescriptor =
+          MethodDescriptor.<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/GetDeploymentGroupRevision")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDeploymentGroupRevisionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DeploymentGroupRevision.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsResponse>
+      listDeploymentGroupRevisionsMethodDescriptor =
+          MethodDescriptor
+              .<ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.config.v1.Config/ListDeploymentGroupRevisions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDeploymentGroupRevisionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDeploymentGroupRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -549,6 +669,42 @@ public class GrpcConfigStub extends ConfigStub {
   private final OperationCallable<
           UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
       updateAutoMigrationConfigOperationCallable;
+  private final UnaryCallable<GetDeploymentGroupRequest, DeploymentGroup>
+      getDeploymentGroupCallable;
+  private final UnaryCallable<CreateDeploymentGroupRequest, Operation>
+      createDeploymentGroupCallable;
+  private final OperationCallable<CreateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      createDeploymentGroupOperationCallable;
+  private final UnaryCallable<UpdateDeploymentGroupRequest, Operation>
+      updateDeploymentGroupCallable;
+  private final OperationCallable<UpdateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      updateDeploymentGroupOperationCallable;
+  private final UnaryCallable<DeleteDeploymentGroupRequest, Operation>
+      deleteDeploymentGroupCallable;
+  private final OperationCallable<DeleteDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deleteDeploymentGroupOperationCallable;
+  private final UnaryCallable<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse>
+      listDeploymentGroupsCallable;
+  private final UnaryCallable<ListDeploymentGroupsRequest, ListDeploymentGroupsPagedResponse>
+      listDeploymentGroupsPagedCallable;
+  private final UnaryCallable<ProvisionDeploymentGroupRequest, Operation>
+      provisionDeploymentGroupCallable;
+  private final OperationCallable<
+          ProvisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      provisionDeploymentGroupOperationCallable;
+  private final UnaryCallable<DeprovisionDeploymentGroupRequest, Operation>
+      deprovisionDeploymentGroupCallable;
+  private final OperationCallable<
+          DeprovisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deprovisionDeploymentGroupOperationCallable;
+  private final UnaryCallable<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+      getDeploymentGroupRevisionCallable;
+  private final UnaryCallable<
+          ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsResponse>
+      listDeploymentGroupRevisionsCallable;
+  private final UnaryCallable<
+          ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsPagedResponse>
+      listDeploymentGroupRevisionsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -927,6 +1083,118 @@ public class GrpcConfigStub extends ConfigStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<GetDeploymentGroupRequest, DeploymentGroup>
+        getDeploymentGroupTransportSettings =
+            GrpcCallSettings.<GetDeploymentGroupRequest, DeploymentGroup>newBuilder()
+                .setMethodDescriptor(getDeploymentGroupMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<CreateDeploymentGroupRequest, Operation>
+        createDeploymentGroupTransportSettings =
+            GrpcCallSettings.<CreateDeploymentGroupRequest, Operation>newBuilder()
+                .setMethodDescriptor(createDeploymentGroupMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<UpdateDeploymentGroupRequest, Operation>
+        updateDeploymentGroupTransportSettings =
+            GrpcCallSettings.<UpdateDeploymentGroupRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateDeploymentGroupMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "deployment_group.name",
+                          String.valueOf(request.getDeploymentGroup().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteDeploymentGroupRequest, Operation>
+        deleteDeploymentGroupTransportSettings =
+            GrpcCallSettings.<DeleteDeploymentGroupRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteDeploymentGroupMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse>
+        listDeploymentGroupsTransportSettings =
+            GrpcCallSettings.<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse>newBuilder()
+                .setMethodDescriptor(listDeploymentGroupsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
+    GrpcCallSettings<ProvisionDeploymentGroupRequest, Operation>
+        provisionDeploymentGroupTransportSettings =
+            GrpcCallSettings.<ProvisionDeploymentGroupRequest, Operation>newBuilder()
+                .setMethodDescriptor(provisionDeploymentGroupMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<DeprovisionDeploymentGroupRequest, Operation>
+        deprovisionDeploymentGroupTransportSettings =
+            GrpcCallSettings.<DeprovisionDeploymentGroupRequest, Operation>newBuilder()
+                .setMethodDescriptor(deprovisionDeploymentGroupMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+        getDeploymentGroupRevisionTransportSettings =
+            GrpcCallSettings
+                .<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>newBuilder()
+                .setMethodDescriptor(getDeploymentGroupRevisionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsResponse>
+        listDeploymentGroupRevisionsTransportSettings =
+            GrpcCallSettings
+                .<ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listDeploymentGroupRevisionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getParent())
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1164,6 +1432,91 @@ public class GrpcConfigStub extends ConfigStub {
             settings.updateAutoMigrationConfigOperationSettings(),
             clientContext,
             operationsStub);
+    this.getDeploymentGroupCallable =
+        callableFactory.createUnaryCallable(
+            getDeploymentGroupTransportSettings,
+            settings.getDeploymentGroupSettings(),
+            clientContext);
+    this.createDeploymentGroupCallable =
+        callableFactory.createUnaryCallable(
+            createDeploymentGroupTransportSettings,
+            settings.createDeploymentGroupSettings(),
+            clientContext);
+    this.createDeploymentGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            createDeploymentGroupTransportSettings,
+            settings.createDeploymentGroupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateDeploymentGroupCallable =
+        callableFactory.createUnaryCallable(
+            updateDeploymentGroupTransportSettings,
+            settings.updateDeploymentGroupSettings(),
+            clientContext);
+    this.updateDeploymentGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDeploymentGroupTransportSettings,
+            settings.updateDeploymentGroupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteDeploymentGroupCallable =
+        callableFactory.createUnaryCallable(
+            deleteDeploymentGroupTransportSettings,
+            settings.deleteDeploymentGroupSettings(),
+            clientContext);
+    this.deleteDeploymentGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDeploymentGroupTransportSettings,
+            settings.deleteDeploymentGroupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listDeploymentGroupsCallable =
+        callableFactory.createUnaryCallable(
+            listDeploymentGroupsTransportSettings,
+            settings.listDeploymentGroupsSettings(),
+            clientContext);
+    this.listDeploymentGroupsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDeploymentGroupsTransportSettings,
+            settings.listDeploymentGroupsSettings(),
+            clientContext);
+    this.provisionDeploymentGroupCallable =
+        callableFactory.createUnaryCallable(
+            provisionDeploymentGroupTransportSettings,
+            settings.provisionDeploymentGroupSettings(),
+            clientContext);
+    this.provisionDeploymentGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            provisionDeploymentGroupTransportSettings,
+            settings.provisionDeploymentGroupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deprovisionDeploymentGroupCallable =
+        callableFactory.createUnaryCallable(
+            deprovisionDeploymentGroupTransportSettings,
+            settings.deprovisionDeploymentGroupSettings(),
+            clientContext);
+    this.deprovisionDeploymentGroupOperationCallable =
+        callableFactory.createOperationCallable(
+            deprovisionDeploymentGroupTransportSettings,
+            settings.deprovisionDeploymentGroupOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getDeploymentGroupRevisionCallable =
+        callableFactory.createUnaryCallable(
+            getDeploymentGroupRevisionTransportSettings,
+            settings.getDeploymentGroupRevisionSettings(),
+            clientContext);
+    this.listDeploymentGroupRevisionsCallable =
+        callableFactory.createUnaryCallable(
+            listDeploymentGroupRevisionsTransportSettings,
+            settings.listDeploymentGroupRevisionsSettings(),
+            clientContext);
+    this.listDeploymentGroupRevisionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDeploymentGroupRevisionsTransportSettings,
+            settings.listDeploymentGroupRevisionsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1433,6 +1786,99 @@ public class GrpcConfigStub extends ConfigStub {
   public OperationCallable<UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
       updateAutoMigrationConfigOperationCallable() {
     return updateAutoMigrationConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDeploymentGroupRequest, DeploymentGroup> getDeploymentGroupCallable() {
+    return getDeploymentGroupCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDeploymentGroupRequest, Operation> createDeploymentGroupCallable() {
+    return createDeploymentGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      createDeploymentGroupOperationCallable() {
+    return createDeploymentGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDeploymentGroupRequest, Operation> updateDeploymentGroupCallable() {
+    return updateDeploymentGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      updateDeploymentGroupOperationCallable() {
+    return updateDeploymentGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDeploymentGroupRequest, Operation> deleteDeploymentGroupCallable() {
+    return deleteDeploymentGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deleteDeploymentGroupOperationCallable() {
+    return deleteDeploymentGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse>
+      listDeploymentGroupsCallable() {
+    return listDeploymentGroupsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeploymentGroupsRequest, ListDeploymentGroupsPagedResponse>
+      listDeploymentGroupsPagedCallable() {
+    return listDeploymentGroupsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ProvisionDeploymentGroupRequest, Operation>
+      provisionDeploymentGroupCallable() {
+    return provisionDeploymentGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<ProvisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      provisionDeploymentGroupOperationCallable() {
+    return provisionDeploymentGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeprovisionDeploymentGroupRequest, Operation>
+      deprovisionDeploymentGroupCallable() {
+    return deprovisionDeploymentGroupCallable;
+  }
+
+  @Override
+  public OperationCallable<DeprovisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deprovisionDeploymentGroupOperationCallable() {
+    return deprovisionDeploymentGroupOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+      getDeploymentGroupRevisionCallable() {
+    return getDeploymentGroupRevisionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsResponse>
+      listDeploymentGroupRevisionsCallable() {
+    return listDeploymentGroupRevisionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsPagedResponse>
+      listDeploymentGroupRevisionsPagedCallable() {
+    return listDeploymentGroupRevisionsPagedCallable;
   }
 
   @Override
