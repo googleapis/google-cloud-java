@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.41.0](https://github.com/googleapis/java-firestore/compare/v3.40.0...v3.41.0) (2026-04-14)
+
+
+### Features
+
+* Add `expiration_offset` to `Field` ([c29d25d](https://github.com/googleapis/java-firestore/commit/c29d25db9dcbfbee4eda2db21528f99d63e5cb6e))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.71.0 ([c29d25d](https://github.com/googleapis/java-firestore/commit/c29d25db9dcbfbee4eda2db21528f99d63e5cb6e))
+
+
+### Dependencies
+
+* Update sdk-platform-java-config to 3.61.0 ([#2359](https://github.com/googleapis/java-firestore/issues/2359)) ([33e33fa](https://github.com/googleapis/java-firestore/commit/33e33fa0c55c0f210cd148bb0ed0fbeb1a883228))
+
 ## [3.40.0](https://github.com/googleapis/java-firestore/compare/v3.39.0...v3.40.0) (2026-04-08)
 
 
