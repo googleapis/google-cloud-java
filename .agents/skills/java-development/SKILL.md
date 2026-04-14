@@ -51,7 +51,7 @@ Code formatting is enforced using the `fmt-maven-plugin`.
 Follow these general rules to maintain code quality and consistency:
 
 1.  **Minimize Visibility**: Default to the most restrictive access level possible. Avoid using `public` unless the class or method is intended to be part of the public API.
-2.  **Short Names**: Prefer short names over fully qualified names when importing classes.
+2.  Avoid Fully Qualified Names: Use imports to keep class names short and readable, rather than using fully qualified names in the code.
 3.  **Avoid Obsolete APIs**: Do not call methods marked with `@ObsoleteApi` or `@Deprecated` unless there are no viable alternatives.
 4.  **Clean Diffs**: Avoid unnecessary formatting changes or whitespace modifications to keep diffs clean and easy to review.
 
