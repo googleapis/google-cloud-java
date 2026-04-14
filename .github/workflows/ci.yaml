@@ -122,39 +122,50 @@ jobs:
             - 'google-auth-library-java/**/*.java'
             - 'sdk-platform-java/gax-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/java-core/**/*.java'
+            - 'sdk-platform-java/api-common-java/**/*java'
           java-bigquerystorage:
             - 'java-bigquerystorage/**'
             - 'google-auth-library-java/**/*.java'
             - 'sdk-platform-java/gax-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/java-core/**/*.java'
+            - 'sdk-platform-java/api-common-java/**/*java'
           java-datastore:
             - 'java-datastore/**'
             - 'google-auth-library-java/**/*.java'
             - 'sdk-platform-java/gax-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/java-core/**/*.java'
+            - 'sdk-platform-java/api-common-java/**/*java'
           java-logging-logback:
             - 'java-logging-logback/**'
             - 'google-auth-library-java/**/*.java'
             - 'sdk-platform-java/gax-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/java-core/**/*.java'
+            - 'sdk-platform-java/api-common-java/**/*java'
           java-logging:
             - 'java-logging/**'
             - 'google-auth-library-java/**/*.java'
             - 'sdk-platform-java/gax-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/java-core/**/*.java'
+            - 'sdk-platform-java/api-common-java/**/*java'
           java-spanner:
             - 'java-spanner/**'
             - 'google-auth-library-java/**/*.java'
             - 'sdk-platform-java/gax-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/java-core/**/*.java'
+            - 'sdk-platform-java/api-common-java/**/*java'
           java-storage:
             - 'java-storage/**'
             - 'google-auth-library-java/**/*.java'
             - 'sdk-platform-java/gax-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
-          sdk-platform-java:
-            - 'sdk-platform-java/**'
-            - 'google-auth-library-java/**/*.java'
+            - 'sdk-platform-java/java-core/**/*.java'
+            - 'sdk-platform-java/api-common-java/**/*java'
   split-units:
     runs-on: ubuntu-latest
     needs: changes
