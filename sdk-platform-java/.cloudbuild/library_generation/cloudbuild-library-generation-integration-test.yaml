@@ -82,7 +82,7 @@ steps:
     "run",
     "--rm",
     "-v", "/workspace/google-cloud-java:/workspace",
-    "-v", "/workspace/hermetic_build/library_generation/tests/resources/integration/google-cloud-java:/workspace/config",
+    "-v", "/workspace/sdk-platform-java/hermetic_build/library_generation/tests/resources/integration/google-cloud-java:/workspace/config",
     "-v", "/workspace/googleapis:/workspace/apis",
     # Fix gapic-generator-java so that the generation result stays
     # the same.
