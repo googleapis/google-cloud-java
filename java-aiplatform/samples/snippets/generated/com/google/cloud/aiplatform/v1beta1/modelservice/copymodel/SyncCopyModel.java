@@ -42,6 +42,7 @@ public class SyncCopyModel {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setSourceModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
               .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+              .setCustomServiceAccount("customServiceAccount-2110106743")
               .build();
       CopyModelResponse response = modelServiceClient.copyModelAsync(request).get();
     }

@@ -174,11 +174,12 @@ public final class AppOptimizeProto extends com.google.protobuf.GeneratedFile {
           + "1beta.ReadReportResponse\"F\332A\004name\202\323\344\223\0029\""
           + "4/v1beta/{name=projects/*/locations/*/re"
           + "ports/*}:read:\001*\032N\312A\032appoptimize.googlea"
-          + "pis.com\322A.https://www.googleapis.com/auth/cloud-platformB\352\001\n"
+          + "pis.com\322A.https://www.googleapis.com/auth/cloud-platformB\214\002\n"
           + "#com.google.cloud.appoptimize.v1betaB\020AppOptimizeProtoP\001ZEcl"
-          + "oud.google.com/go/appoptimize/apiv1beta/appoptimizepb;appoptimizepb\352Ag\n"
-          + "!apphub.googleapis.com/Application\022Bprojects/{pro"
-          + "ject}/locations/{location}/applications/{application}b\006proto3"
+          + "oud.google.com/go/appoptimize/apiv1beta/"
+          + "appoptimizepb;appoptimizepb\252\002\037Google.Cloud.AppOptimize.V1Beta\352Ag\n"
+          + "!apphub.googleapis.com/Application\022Bprojects/{project}/"
+          + "locations/{location}/applications/{application}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
