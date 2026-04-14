@@ -70,7 +70,7 @@ public class WorkerProxy {
   public static int proxyPort = 0;
   public static String cert = "";
   public static String serviceKeyFile = "";
-  public static double multiplexedSessionOperationsRatio = 0.0;
+  public static double multiplexedSessionOperationsRatio = 1.0;
   public static boolean usePlainTextChannel = false;
   public static boolean enableGrpcFaultInjector = false;
   public static OpenTelemetrySdk openTelemetrySdk;
