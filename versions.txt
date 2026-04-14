@@ -915,9 +915,9 @@ grpc-google-cloud-capacityplanner-v1beta:0.14.0:0.14.0
 data-manager:0.12.0:0.12.0
 proto-data-manager-v1:0.12.0:0.12.0
 grpc-data-manager-v1:0.12.0:0.12.0
-google-cloud-vectorsearch:0.12.0:0.12.0
-proto-google-cloud-vectorsearch-v1beta:0.12.0:0.12.0
-grpc-google-cloud-vectorsearch-v1beta:0.12.0:0.12.0
+google-cloud-vectorsearch:0.13.0:0.13.0
+proto-google-cloud-vectorsearch-v1beta:0.13.0:0.13.0
+grpc-google-cloud-vectorsearch-v1beta:0.13.0:0.13.0
 google-cloud-databasecenter:0.12.0:0.12.0
 proto-google-cloud-databasecenter-v1beta:0.12.0:0.12.0
 grpc-google-cloud-databasecenter-v1beta:0.12.0:0.12.0
@@ -967,8 +967,8 @@ grpc-google-cloud-datastore-v1:2.40.0:2.40.0
 google-cloud-logging-logback:0.140.0-alpha:0.140.0-alpha
 proto-google-cloud-ces-v1beta:0.7.0:0.7.0
 grpc-google-cloud-ces-v1beta:0.7.0:0.7.0
-proto-google-cloud-vectorsearch-v1:0.12.0:0.12.0
-grpc-google-cloud-vectorsearch-v1:0.12.0:0.12.0
+proto-google-cloud-vectorsearch-v1:0.13.0:0.13.0
+grpc-google-cloud-vectorsearch-v1:0.13.0:0.13.0
 google-cloud-bigquery:2.65.0:2.65.0
 google-cloud-bigquery-jdbc:0.9.0:0.9.0
 proto-google-cloud-networkconnectivity-v1beta:1.90.0:1.90.0
