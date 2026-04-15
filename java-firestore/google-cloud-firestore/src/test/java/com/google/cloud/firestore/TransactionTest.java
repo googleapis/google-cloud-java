@@ -961,6 +961,27 @@ public class TransactionTest {
   }
 
   @Test
+  public void executeShouldThrowWhenInvokedAfterAWrite() throws Exception {
+    doReturn(beginResponse())
+        .when(firestoreMock)
+        .sendRequest(ArgumentMatchers.any(), ArgumentMatchers.any());
+
+    ApiFuture<Void> transaction =
+        firestoreMock.runTransaction(
+            t -> {
+              t.set(documentReference, LocalFirestoreHelper.SINGLE_FIELD_MAP);
+              t.execute(firestoreMock.pipeline().collection("test"));
+              return null;
+            });
+
+    ExecutionException executionException =
+        assertThrows(ExecutionException.class, transaction::get);
+    assertThat(executionException.getCause()).isInstanceOf(IllegalStateException.class);
+    assertThat(executionException.getCause().getMessage())
+        .contains("Firestore transactions require all reads to be executed before all writes");
+  }
+
+  @Test
   public void givesProperErrorMessageForCommittedTransaction() throws Exception {
     doReturn(beginResponse())
         .doReturn(commitResponse(0, 0))

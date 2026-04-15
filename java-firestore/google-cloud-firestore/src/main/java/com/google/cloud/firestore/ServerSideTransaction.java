@@ -271,6 +271,7 @@ final class ServerSideTransaction extends Transaction {
   @Nonnull
   @Override
   public ApiFuture<Pipeline.Snapshot> execute(@Nonnull Pipeline pipeline) {
+    Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
     return execute(pipeline, new PipelineExecuteOptions());
   }
 
@@ -278,6 +279,7 @@ final class ServerSideTransaction extends Transaction {
   @Override
   public ApiFuture<Pipeline.Snapshot> execute(
       @Nonnull Pipeline pipeline, @Nonnull PipelineExecuteOptions options) {
+    Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
     try (TraceUtil.Scope ignored = transactionTraceContext.makeCurrent()) {
       return pipeline.execute(new PipelineExecuteOptions(), transactionId, null);
     }
