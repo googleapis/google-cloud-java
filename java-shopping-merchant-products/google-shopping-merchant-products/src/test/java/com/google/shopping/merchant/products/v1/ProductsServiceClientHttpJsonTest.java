@@ -82,6 +82,7 @@ public class ProductsServiceClientHttpJsonTest {
     Product expectedResponse =
         Product.newBuilder()
             .setName(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
+            .setBase64EncodedName("base64EncodedName-1991168022")
             .setLegacyLocal(true)
             .setOfferId("offerId-1548813161")
             .setContentLanguage("contentLanguage810066673")
@@ -136,6 +137,7 @@ public class ProductsServiceClientHttpJsonTest {
     Product expectedResponse =
         Product.newBuilder()
             .setName(ProductName.of("[ACCOUNT]", "[PRODUCT]").toString())
+            .setBase64EncodedName("base64EncodedName-1991168022")
             .setLegacyLocal(true)
             .setOfferId("offerId-1548813161")
             .setContentLanguage("contentLanguage810066673")

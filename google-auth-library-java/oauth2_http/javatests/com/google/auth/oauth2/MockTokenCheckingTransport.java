@@ -44,8 +44,8 @@ public class MockTokenCheckingTransport extends HttpTransport {
 
   public static final String SUCCESS_CONTENT = "{\"key\":\"value\"}";
 
-  private MockTokenServerTransport tokenServer;
-  private String refreshToken;
+  private final MockTokenServerTransport tokenServer;
+  private final String refreshToken;
 
   public MockTokenCheckingTransport(MockTokenServerTransport tokenServer, String refreshToken) {
     this.tokenServer = tokenServer;

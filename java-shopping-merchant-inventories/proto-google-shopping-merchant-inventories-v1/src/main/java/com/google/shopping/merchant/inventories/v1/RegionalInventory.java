@@ -58,6 +58,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
 
   private RegionalInventory() {
     name_ = "";
+    base64EncodedName_ = "";
     region_ = "";
   }
 
@@ -88,7 +89,39 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Output only. The name of the `RegionalInventory` resource.
    * Format:
-   * `{regional_inventory.name=accounts/{account}/products/{product}/regionalInventories/{region}`
+   * `accounts/{account}/products/{product}/regionalInventories/{region}`
+   *
+   * The `{product}` segment is a unique identifier for the product.
+   * This identifier must be unique within a merchant account and generally
+   * follows the structure: `content_language~feed_label~offer_id`. Example:
+   * `en~US~sku123` For legacy local products, the structure is:
+   * `local~content_language~feed_label~offer_id`. Example: `local~en~US~sku123`
+   *
+   * The format of the `{product}` segment in the URL is automatically detected
+   * by the server, supporting two options:
+   *
+   * 1.  **Encoded Format**: The `{product}` segment is an
+   * **unpadded base64url** encoded string (RFC 4648 Section 5). The
+   * decoded string
+   * must result in the `content_language~feed_label~offer_id` structure.
+   * This encoding MUST be used if any part of the product identifier
+   * (like `offer_id`) contains characters such as `/`, `%`, or `~`.
+   * *   Example: To represent the product ID `en~US~sku/123` for
+   * `region` "region123", the `{product}` segment must be the
+   * unpadded base64url encoding of this string, which is
+   * `ZW5-VVN-c2t1LzEyMw`. The full resource name for the regional
+   * inventory would be
+   * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/regionalInventories/region123`.
+   *
+   * 2.  **Plain Format**: The `{product}` segment is the tilde-separated string
+   * `content_language~feed_label~offer_id`. This format is suitable only
+   * when `content_language`, `feed_label`, and `offer_id` do not contain
+   * URL-problematic characters like `/`, `%`, or `~`.
+   *
+   * We recommend using the **Encoded Format** for all product IDs to ensure
+   * correct parsing, especially those containing special characters. The
+   * presence of tilde (`~`) characters in the `{product}` segment is used to
+   * differentiate between the two formats.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -114,7 +147,39 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Output only. The name of the `RegionalInventory` resource.
    * Format:
-   * `{regional_inventory.name=accounts/{account}/products/{product}/regionalInventories/{region}`
+   * `accounts/{account}/products/{product}/regionalInventories/{region}`
+   *
+   * The `{product}` segment is a unique identifier for the product.
+   * This identifier must be unique within a merchant account and generally
+   * follows the structure: `content_language~feed_label~offer_id`. Example:
+   * `en~US~sku123` For legacy local products, the structure is:
+   * `local~content_language~feed_label~offer_id`. Example: `local~en~US~sku123`
+   *
+   * The format of the `{product}` segment in the URL is automatically detected
+   * by the server, supporting two options:
+   *
+   * 1.  **Encoded Format**: The `{product}` segment is an
+   * **unpadded base64url** encoded string (RFC 4648 Section 5). The
+   * decoded string
+   * must result in the `content_language~feed_label~offer_id` structure.
+   * This encoding MUST be used if any part of the product identifier
+   * (like `offer_id`) contains characters such as `/`, `%`, or `~`.
+   * *   Example: To represent the product ID `en~US~sku/123` for
+   * `region` "region123", the `{product}` segment must be the
+   * unpadded base64url encoding of this string, which is
+   * `ZW5-VVN-c2t1LzEyMw`. The full resource name for the regional
+   * inventory would be
+   * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/regionalInventories/region123`.
+   *
+   * 2.  **Plain Format**: The `{product}` segment is the tilde-separated string
+   * `content_language~feed_label~offer_id`. This format is suitable only
+   * when `content_language`, `feed_label`, and `offer_id` do not contain
+   * URL-problematic characters like `/`, `%`, or `~`.
+   *
+   * We recommend using the **Encoded Format** for all product IDs to ensure
+   * correct parsing, especially those containing special characters. The
+   * presence of tilde (`~`) characters in the `{product}` segment is used to
+   * differentiate between the two formats.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -128,6 +193,79 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BASE64_ENCODED_NAME_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object base64EncodedName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The unpadded base64url encoded name of the `RegionalInventory`
+   * resource. Format:
+   * `accounts/{account}/products/{product}/regionalInventories/{region}`
+   * where the `{product}` segment is the unpadded base64url encoded value of
+   * the identifier of the form `content_language~feed_label~offer_id`. Example:
+   * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/regionalInventories/region123`
+   * for the decoded product ID `en~US~sku/123` and `region` "region123".
+   * Can be used directly as input to the API methods that require the product
+   * identifier within the regional inventory name to be encoded if it contains
+   * special characters, for example
+   * [`GetRegionalInventory`](https://developers.google.com/merchant/api/reference/rest/inventories_v1/accounts.products.regionalInventories/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The base64EncodedName.
+   */
+  @java.lang.Override
+  public java.lang.String getBase64EncodedName() {
+    java.lang.Object ref = base64EncodedName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      base64EncodedName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The unpadded base64url encoded name of the `RegionalInventory`
+   * resource. Format:
+   * `accounts/{account}/products/{product}/regionalInventories/{region}`
+   * where the `{product}` segment is the unpadded base64url encoded value of
+   * the identifier of the form `content_language~feed_label~offer_id`. Example:
+   * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/regionalInventories/region123`
+   * for the decoded product ID `en~US~sku/123` and `region` "region123".
+   * Can be used directly as input to the API methods that require the product
+   * identifier within the regional inventory name to be encoded if it contains
+   * special characters, for example
+   * [`GetRegionalInventory`](https://developers.google.com/merchant/api/reference/rest/inventories_v1/accounts.products.regionalInventories/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for base64EncodedName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBase64EncodedNameBytes() {
+    java.lang.Object ref = base64EncodedName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      base64EncodedName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -307,6 +445,9 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(9, getRegionalInventoryAttributes());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(base64EncodedName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, base64EncodedName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -330,6 +471,9 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, getRegionalInventoryAttributes());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(base64EncodedName_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, base64EncodedName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -347,6 +491,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
         (com.google.shopping.merchant.inventories.v1.RegionalInventory) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getBase64EncodedName().equals(other.getBase64EncodedName())) return false;
     if (getAccount() != other.getAccount()) return false;
     if (!getRegion().equals(other.getRegion())) return false;
     if (hasRegionalInventoryAttributes() != other.hasRegionalInventoryAttributes()) return false;
@@ -367,6 +512,8 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + BASE64_ENCODED_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getBase64EncodedName().hashCode();
     hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAccount());
     hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -531,6 +678,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      base64EncodedName_ = "";
       account_ = 0L;
       region_ = "";
       regionalInventoryAttributes_ = null;
@@ -580,13 +728,16 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
         result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.account_ = account_;
+        result.base64EncodedName_ = base64EncodedName_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.account_ = account_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.region_ = region_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.regionalInventoryAttributes_ =
             regionalInventoryAttributesBuilder_ == null
                 ? regionalInventoryAttributes_
@@ -615,12 +766,17 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getBase64EncodedName().isEmpty()) {
+        base64EncodedName_ = other.base64EncodedName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (other.getAccount() != 0L) {
         setAccount(other.getAccount());
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasRegionalInventoryAttributes()) {
@@ -661,13 +817,13 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
             case 16:
               {
                 account_ = input.readInt64();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
             case 26:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 74:
@@ -675,9 +831,15 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
                 input.readMessage(
                     internalGetRegionalInventoryAttributesFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 74
+            case 82:
+              {
+                base64EncodedName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -705,7 +867,39 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. The name of the `RegionalInventory` resource.
      * Format:
-     * `{regional_inventory.name=accounts/{account}/products/{product}/regionalInventories/{region}`
+     * `accounts/{account}/products/{product}/regionalInventories/{region}`
+     *
+     * The `{product}` segment is a unique identifier for the product.
+     * This identifier must be unique within a merchant account and generally
+     * follows the structure: `content_language~feed_label~offer_id`. Example:
+     * `en~US~sku123` For legacy local products, the structure is:
+     * `local~content_language~feed_label~offer_id`. Example: `local~en~US~sku123`
+     *
+     * The format of the `{product}` segment in the URL is automatically detected
+     * by the server, supporting two options:
+     *
+     * 1.  **Encoded Format**: The `{product}` segment is an
+     * **unpadded base64url** encoded string (RFC 4648 Section 5). The
+     * decoded string
+     * must result in the `content_language~feed_label~offer_id` structure.
+     * This encoding MUST be used if any part of the product identifier
+     * (like `offer_id`) contains characters such as `/`, `%`, or `~`.
+     * *   Example: To represent the product ID `en~US~sku/123` for
+     * `region` "region123", the `{product}` segment must be the
+     * unpadded base64url encoding of this string, which is
+     * `ZW5-VVN-c2t1LzEyMw`. The full resource name for the regional
+     * inventory would be
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/regionalInventories/region123`.
+     *
+     * 2.  **Plain Format**: The `{product}` segment is the tilde-separated string
+     * `content_language~feed_label~offer_id`. This format is suitable only
+     * when `content_language`, `feed_label`, and `offer_id` do not contain
+     * URL-problematic characters like `/`, `%`, or `~`.
+     *
+     * We recommend using the **Encoded Format** for all product IDs to ensure
+     * correct parsing, especially those containing special characters. The
+     * presence of tilde (`~`) characters in the `{product}` segment is used to
+     * differentiate between the two formats.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -730,7 +924,39 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. The name of the `RegionalInventory` resource.
      * Format:
-     * `{regional_inventory.name=accounts/{account}/products/{product}/regionalInventories/{region}`
+     * `accounts/{account}/products/{product}/regionalInventories/{region}`
+     *
+     * The `{product}` segment is a unique identifier for the product.
+     * This identifier must be unique within a merchant account and generally
+     * follows the structure: `content_language~feed_label~offer_id`. Example:
+     * `en~US~sku123` For legacy local products, the structure is:
+     * `local~content_language~feed_label~offer_id`. Example: `local~en~US~sku123`
+     *
+     * The format of the `{product}` segment in the URL is automatically detected
+     * by the server, supporting two options:
+     *
+     * 1.  **Encoded Format**: The `{product}` segment is an
+     * **unpadded base64url** encoded string (RFC 4648 Section 5). The
+     * decoded string
+     * must result in the `content_language~feed_label~offer_id` structure.
+     * This encoding MUST be used if any part of the product identifier
+     * (like `offer_id`) contains characters such as `/`, `%`, or `~`.
+     * *   Example: To represent the product ID `en~US~sku/123` for
+     * `region` "region123", the `{product}` segment must be the
+     * unpadded base64url encoding of this string, which is
+     * `ZW5-VVN-c2t1LzEyMw`. The full resource name for the regional
+     * inventory would be
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/regionalInventories/region123`.
+     *
+     * 2.  **Plain Format**: The `{product}` segment is the tilde-separated string
+     * `content_language~feed_label~offer_id`. This format is suitable only
+     * when `content_language`, `feed_label`, and `offer_id` do not contain
+     * URL-problematic characters like `/`, `%`, or `~`.
+     *
+     * We recommend using the **Encoded Format** for all product IDs to ensure
+     * correct parsing, especially those containing special characters. The
+     * presence of tilde (`~`) characters in the `{product}` segment is used to
+     * differentiate between the two formats.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -755,7 +981,39 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. The name of the `RegionalInventory` resource.
      * Format:
-     * `{regional_inventory.name=accounts/{account}/products/{product}/regionalInventories/{region}`
+     * `accounts/{account}/products/{product}/regionalInventories/{region}`
+     *
+     * The `{product}` segment is a unique identifier for the product.
+     * This identifier must be unique within a merchant account and generally
+     * follows the structure: `content_language~feed_label~offer_id`. Example:
+     * `en~US~sku123` For legacy local products, the structure is:
+     * `local~content_language~feed_label~offer_id`. Example: `local~en~US~sku123`
+     *
+     * The format of the `{product}` segment in the URL is automatically detected
+     * by the server, supporting two options:
+     *
+     * 1.  **Encoded Format**: The `{product}` segment is an
+     * **unpadded base64url** encoded string (RFC 4648 Section 5). The
+     * decoded string
+     * must result in the `content_language~feed_label~offer_id` structure.
+     * This encoding MUST be used if any part of the product identifier
+     * (like `offer_id`) contains characters such as `/`, `%`, or `~`.
+     * *   Example: To represent the product ID `en~US~sku/123` for
+     * `region` "region123", the `{product}` segment must be the
+     * unpadded base64url encoding of this string, which is
+     * `ZW5-VVN-c2t1LzEyMw`. The full resource name for the regional
+     * inventory would be
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/regionalInventories/region123`.
+     *
+     * 2.  **Plain Format**: The `{product}` segment is the tilde-separated string
+     * `content_language~feed_label~offer_id`. This format is suitable only
+     * when `content_language`, `feed_label`, and `offer_id` do not contain
+     * URL-problematic characters like `/`, `%`, or `~`.
+     *
+     * We recommend using the **Encoded Format** for all product IDs to ensure
+     * correct parsing, especially those containing special characters. The
+     * presence of tilde (`~`) characters in the `{product}` segment is used to
+     * differentiate between the two formats.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -779,7 +1037,39 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. The name of the `RegionalInventory` resource.
      * Format:
-     * `{regional_inventory.name=accounts/{account}/products/{product}/regionalInventories/{region}`
+     * `accounts/{account}/products/{product}/regionalInventories/{region}`
+     *
+     * The `{product}` segment is a unique identifier for the product.
+     * This identifier must be unique within a merchant account and generally
+     * follows the structure: `content_language~feed_label~offer_id`. Example:
+     * `en~US~sku123` For legacy local products, the structure is:
+     * `local~content_language~feed_label~offer_id`. Example: `local~en~US~sku123`
+     *
+     * The format of the `{product}` segment in the URL is automatically detected
+     * by the server, supporting two options:
+     *
+     * 1.  **Encoded Format**: The `{product}` segment is an
+     * **unpadded base64url** encoded string (RFC 4648 Section 5). The
+     * decoded string
+     * must result in the `content_language~feed_label~offer_id` structure.
+     * This encoding MUST be used if any part of the product identifier
+     * (like `offer_id`) contains characters such as `/`, `%`, or `~`.
+     * *   Example: To represent the product ID `en~US~sku/123` for
+     * `region` "region123", the `{product}` segment must be the
+     * unpadded base64url encoding of this string, which is
+     * `ZW5-VVN-c2t1LzEyMw`. The full resource name for the regional
+     * inventory would be
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/regionalInventories/region123`.
+     *
+     * 2.  **Plain Format**: The `{product}` segment is the tilde-separated string
+     * `content_language~feed_label~offer_id`. This format is suitable only
+     * when `content_language`, `feed_label`, and `offer_id` do not contain
+     * URL-problematic characters like `/`, `%`, or `~`.
+     *
+     * We recommend using the **Encoded Format** for all product IDs to ensure
+     * correct parsing, especially those containing special characters. The
+     * presence of tilde (`~`) characters in the `{product}` segment is used to
+     * differentiate between the two formats.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -799,7 +1089,39 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. The name of the `RegionalInventory` resource.
      * Format:
-     * `{regional_inventory.name=accounts/{account}/products/{product}/regionalInventories/{region}`
+     * `accounts/{account}/products/{product}/regionalInventories/{region}`
+     *
+     * The `{product}` segment is a unique identifier for the product.
+     * This identifier must be unique within a merchant account and generally
+     * follows the structure: `content_language~feed_label~offer_id`. Example:
+     * `en~US~sku123` For legacy local products, the structure is:
+     * `local~content_language~feed_label~offer_id`. Example: `local~en~US~sku123`
+     *
+     * The format of the `{product}` segment in the URL is automatically detected
+     * by the server, supporting two options:
+     *
+     * 1.  **Encoded Format**: The `{product}` segment is an
+     * **unpadded base64url** encoded string (RFC 4648 Section 5). The
+     * decoded string
+     * must result in the `content_language~feed_label~offer_id` structure.
+     * This encoding MUST be used if any part of the product identifier
+     * (like `offer_id`) contains characters such as `/`, `%`, or `~`.
+     * *   Example: To represent the product ID `en~US~sku/123` for
+     * `region` "region123", the `{product}` segment must be the
+     * unpadded base64url encoding of this string, which is
+     * `ZW5-VVN-c2t1LzEyMw`. The full resource name for the regional
+     * inventory would be
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/regionalInventories/region123`.
+     *
+     * 2.  **Plain Format**: The `{product}` segment is the tilde-separated string
+     * `content_language~feed_label~offer_id`. This format is suitable only
+     * when `content_language`, `feed_label`, and `offer_id` do not contain
+     * URL-problematic characters like `/`, `%`, or `~`.
+     *
+     * We recommend using the **Encoded Format** for all product IDs to ensure
+     * correct parsing, especially those containing special characters. The
+     * presence of tilde (`~`) characters in the `{product}` segment is used to
+     * differentiate between the two formats.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -814,6 +1136,167 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object base64EncodedName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unpadded base64url encoded name of the `RegionalInventory`
+     * resource. Format:
+     * `accounts/{account}/products/{product}/regionalInventories/{region}`
+     * where the `{product}` segment is the unpadded base64url encoded value of
+     * the identifier of the form `content_language~feed_label~offer_id`. Example:
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/regionalInventories/region123`
+     * for the decoded product ID `en~US~sku/123` and `region` "region123".
+     * Can be used directly as input to the API methods that require the product
+     * identifier within the regional inventory name to be encoded if it contains
+     * special characters, for example
+     * [`GetRegionalInventory`](https://developers.google.com/merchant/api/reference/rest/inventories_v1/accounts.products.regionalInventories/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The base64EncodedName.
+     */
+    public java.lang.String getBase64EncodedName() {
+      java.lang.Object ref = base64EncodedName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        base64EncodedName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unpadded base64url encoded name of the `RegionalInventory`
+     * resource. Format:
+     * `accounts/{account}/products/{product}/regionalInventories/{region}`
+     * where the `{product}` segment is the unpadded base64url encoded value of
+     * the identifier of the form `content_language~feed_label~offer_id`. Example:
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/regionalInventories/region123`
+     * for the decoded product ID `en~US~sku/123` and `region` "region123".
+     * Can be used directly as input to the API methods that require the product
+     * identifier within the regional inventory name to be encoded if it contains
+     * special characters, for example
+     * [`GetRegionalInventory`](https://developers.google.com/merchant/api/reference/rest/inventories_v1/accounts.products.regionalInventories/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for base64EncodedName.
+     */
+    public com.google.protobuf.ByteString getBase64EncodedNameBytes() {
+      java.lang.Object ref = base64EncodedName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        base64EncodedName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unpadded base64url encoded name of the `RegionalInventory`
+     * resource. Format:
+     * `accounts/{account}/products/{product}/regionalInventories/{region}`
+     * where the `{product}` segment is the unpadded base64url encoded value of
+     * the identifier of the form `content_language~feed_label~offer_id`. Example:
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/regionalInventories/region123`
+     * for the decoded product ID `en~US~sku/123` and `region` "region123".
+     * Can be used directly as input to the API methods that require the product
+     * identifier within the regional inventory name to be encoded if it contains
+     * special characters, for example
+     * [`GetRegionalInventory`](https://developers.google.com/merchant/api/reference/rest/inventories_v1/accounts.products.regionalInventories/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The base64EncodedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBase64EncodedName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      base64EncodedName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unpadded base64url encoded name of the `RegionalInventory`
+     * resource. Format:
+     * `accounts/{account}/products/{product}/regionalInventories/{region}`
+     * where the `{product}` segment is the unpadded base64url encoded value of
+     * the identifier of the form `content_language~feed_label~offer_id`. Example:
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/regionalInventories/region123`
+     * for the decoded product ID `en~US~sku/123` and `region` "region123".
+     * Can be used directly as input to the API methods that require the product
+     * identifier within the regional inventory name to be encoded if it contains
+     * special characters, for example
+     * [`GetRegionalInventory`](https://developers.google.com/merchant/api/reference/rest/inventories_v1/accounts.products.regionalInventories/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBase64EncodedName() {
+      base64EncodedName_ = getDefaultInstance().getBase64EncodedName();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unpadded base64url encoded name of the `RegionalInventory`
+     * resource. Format:
+     * `accounts/{account}/products/{product}/regionalInventories/{region}`
+     * where the `{product}` segment is the unpadded base64url encoded value of
+     * the identifier of the form `content_language~feed_label~offer_id`. Example:
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/regionalInventories/region123`
+     * for the decoded product ID `en~US~sku/123` and `region` "region123".
+     * Can be used directly as input to the API methods that require the product
+     * identifier within the regional inventory name to be encoded if it contains
+     * special characters, for example
+     * [`GetRegionalInventory`](https://developers.google.com/merchant/api/reference/rest/inventories_v1/accounts.products.regionalInventories/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for base64EncodedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBase64EncodedNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      base64EncodedName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -853,7 +1336,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
     public Builder setAccount(long value) {
 
       account_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -871,7 +1354,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAccount() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       account_ = 0L;
       onChanged();
       return this;
@@ -957,7 +1440,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       region_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -980,7 +1463,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1008,7 +1491,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1035,7 +1518,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      * @return Whether the regionalInventoryAttributes field is set.
      */
     public boolean hasRegionalInventoryAttributes() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1084,7 +1567,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
       } else {
         regionalInventoryAttributesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1108,7 +1591,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
       } else {
         regionalInventoryAttributesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1127,7 +1610,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
     public Builder mergeRegionalInventoryAttributes(
         com.google.shopping.merchant.inventories.v1.RegionalInventoryAttributes value) {
       if (regionalInventoryAttributesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && regionalInventoryAttributes_ != null
             && regionalInventoryAttributes_
                 != com.google.shopping.merchant.inventories.v1.RegionalInventoryAttributes
@@ -1140,7 +1623,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
         regionalInventoryAttributesBuilder_.mergeFrom(value);
       }
       if (regionalInventoryAttributes_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1158,7 +1641,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearRegionalInventoryAttributes() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       regionalInventoryAttributes_ = null;
       if (regionalInventoryAttributesBuilder_ != null) {
         regionalInventoryAttributesBuilder_.dispose();
@@ -1181,7 +1664,7 @@ public final class RegionalInventory extends com.google.protobuf.GeneratedMessag
      */
     public com.google.shopping.merchant.inventories.v1.RegionalInventoryAttributes.Builder
         getRegionalInventoryAttributesBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetRegionalInventoryAttributesFieldBuilder().getBuilder();
     }

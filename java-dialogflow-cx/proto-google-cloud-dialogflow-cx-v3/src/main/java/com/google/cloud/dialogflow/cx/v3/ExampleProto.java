@@ -148,11 +148,12 @@ public final class ExampleProto extends com.google.protobuf.GeneratedFile {
           + "laybooks/*/examples/*}:\007example\032x\312A\031dial"
           + "ogflow.googleapis.com\322AYhttps://www.goog"
           + "leapis.com/auth/cloud-platform,https://w"
-          + "ww.googleapis.com/auth/dialogflowB\213\001\n!co"
+          + "ww.googleapis.com/auth/dialogflowB\257\001\n!co"
           + "m.google.cloud.dialogflow.cx.v3B\014Example"
           + "ProtoP\001Z1cloud.google.com/go/dialogflow/"
           + "cx/apiv3/cxpb;cxpb\242\002\002DF\252\002\035Google.Cloud.D"
-          + "ialogflow.Cx.V3b\006proto3"
+          + "ialogflow.Cx.V3\352\002!Google::Cloud::Dialogf"
+          + "low::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

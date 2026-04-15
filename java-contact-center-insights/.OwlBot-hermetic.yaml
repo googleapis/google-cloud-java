@@ -19,6 +19,9 @@ deep-remove-regex:
 - "/java-contact-center-insights/google-.*/src"
 - "/java-contact-center-insights/samples/snippets/generated"
 
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+
 deep-copy-regex:
 - source: "/google/cloud/contactcenterinsights/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-contact-center-insights/$1/proto-google-cloud-contact-center-insights-$1/src"

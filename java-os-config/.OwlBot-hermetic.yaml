@@ -19,6 +19,9 @@ deep-remove-regex:
 - "/java-os-config/proto-google-.*/src"
 - "/java-os-config/google-.*/src"
 
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+
 deep-copy-regex:
 - source: "/google/cloud/osconfig/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-os-config/$1/proto-google-cloud-os-config-$1/src"

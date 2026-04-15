@@ -1,5 +1,5 @@
-gapic_generator_version: 2.68.0
-googleapis_commitish: cd090841ab172574e740c214c99df00aef9c0dee
+gapic_generator_version: 2.70.0
+googleapis_commitish: 62e4ecb2f4390728990514fea14aad0431881a52
 libraries_bom_version: 26.79.0
 libraries:
 - api_shortname: accessapproval
@@ -183,6 +183,23 @@ libraries:
   rpc_documentation: https://cloud.google.com/app-hub/docs/reference/rpc
   GAPICs:
   - proto_path: google/cloud/apphub/v1
+- api_shortname: appoptimize
+  name_pretty: App Optimize API
+  product_documentation: https://docs.cloud.google.com/app-optimize/overview
+  api_description: The App Optimize API provides developers and platform teams with
+    tools to monitor, analyze, and improve the performance and cost-efficiency of
+    their cloud applications. 
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-appoptimize/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-appoptimize
+  api_id: appoptimize.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/appoptimize/v1beta
+  requires_billing: true
 - api_shortname: area120tables
   name_pretty: Area 120 Tables
   product_documentation: https://area120.google.com/
@@ -2997,3 +3014,4 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/workstations/v1
   - proto_path: google/cloud/workstations/v1beta
+
