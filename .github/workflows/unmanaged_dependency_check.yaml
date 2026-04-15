@@ -16,7 +16,6 @@ jobs:
       env:
         BUILD_SUBDIR: sdk-platform-java
         JOB_TYPE: install
-      shell: bash
     - name: Unmanaged dependency check
       uses: ./sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check
       with:
