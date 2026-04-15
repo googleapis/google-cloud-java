@@ -17,11 +17,20 @@
 package com.google.cloud.spanner;
 
 import static com.google.cloud.spanner.MockSpannerTestUtil.READ_ONE_KEY_VALUE_STATEMENT;
+import static com.google.cloud.spanner.MockSpannerTestUtil.TEST_DATABASE;
+import static com.google.cloud.spanner.MockSpannerTestUtil.TEST_INSTANCE;
+import static com.google.cloud.spanner.MockSpannerTestUtil.TEST_PROJECT;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
+import com.google.cloud.NoCredentials;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
+import io.grpc.ManagedChannelBuilder;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import org.junit.Test;
@@ -146,6 +155,41 @@ public class AsyncReadOnlyTransactionTest extends AbstractAsyncTransactionTest {
       assertThat(mockSpanner.getRequestTypes())
           .containsExactly(
               BeginTransactionRequest.class, ExecuteSqlRequest.class, ExecuteSqlRequest.class);
+    }
+  }
+
+  @Test(timeout = 5000)
+  public void createAsyncResultSet_handlesExceptionCorrectly() throws Exception {
+    SpannerOptions.CloseableExecutorProvider mockExecutorProvider =
+        mock(SpannerOptions.CloseableExecutorProvider.class);
+    when(mockExecutorProvider.getExecutor())
+        .thenThrow(new RuntimeException("Failed to get executor"));
+
+    String endpoint = address.getHostString() + ":" + server.getPort();
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId(TEST_PROJECT)
+            .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+            .setHost("http://" + endpoint)
+            .setCredentials(NoCredentials.getInstance())
+            .setAsyncExecutorProvider(mockExecutorProvider)
+            .setSessionPoolOption(
+                SessionPoolOptions.newBuilder()
+                    .setFailOnSessionLeak()
+                    .setWaitForMinSessions(org.threeten.bp.Duration.ofSeconds(2))
+                    .build())
+            .build();
+
+    try (Spanner testSpanner = options.getService()) {
+      DatabaseClient client =
+          testSpanner.getDatabaseClient(DatabaseId.of(TEST_PROJECT, TEST_INSTANCE, TEST_DATABASE));
+      try (ReadOnlyTransaction transaction = client.readOnlyTransaction()) {
+        RuntimeException e =
+            assertThrows(
+                RuntimeException.class,
+                () -> transaction.executeQueryAsync(READ_ONE_KEY_VALUE_STATEMENT));
+        assertEquals("Failed to get executor", e.getMessage());
+      }
     }
   }
 }

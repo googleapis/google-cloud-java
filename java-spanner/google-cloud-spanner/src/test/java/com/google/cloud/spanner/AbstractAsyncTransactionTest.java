@@ -47,8 +47,8 @@ import org.junit.BeforeClass;
 /** Base class for {@link AsyncRunnerTest} and {@link AsyncTransactionManagerTest}. */
 public abstract class AbstractAsyncTransactionTest {
   static MockSpannerServiceImpl mockSpanner;
-  private static Server server;
-  private static InetSocketAddress address;
+  static Server server;
+  static InetSocketAddress address;
   static ExecutorService executor;
 
   Spanner spanner;

@@ -11,6 +11,6 @@
 /java-bigquery/ @googleapis/bigquery-team @googleapis/cloud-sdk-java-team
 /java-spanner/ @googleapis/spanner-team @googleapis/cloud-sdk-java-team
 /java-spanner-jdbc/ @googleapis/spanner-team @googleapis/cloud-sdk-java-team
-/google-auth-library-java/ @googleapis/cloud-sdk-auth-team @googleapis/cloud-sdk-java-team
+/google-auth-library-java/ @googleapis/cloud-sdk-auth-team @googleapis/cloud-sdk-java-team @googleapis/aion-team
 /java-storage/ @googleapis/gcs-team @googleapis/cloud-sdk-java-team
 /java-storage-nio/ @googleapis/gcs-team @googleapis/cloud-sdk-java-team

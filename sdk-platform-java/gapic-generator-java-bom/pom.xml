@@ -24,10 +24,23 @@
       <!-- Major external dependencies -->
       <dependency>
         <groupId>com.google.auth</groupId>
-        <artifactId>google-auth-library-bom</artifactId>
-        <version>1.43.0</version><!-- {x-version-update:google-auth-library:current} -->
-        <type>pom</type>
-        <scope>import</scope>
+        <artifactId>google-auth-library-credentials</artifactId>
+        <version>1.44.0</version><!-- {x-version-update:google-auth-library:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.auth</groupId>
+        <artifactId>google-auth-library-oauth2-http</artifactId>
+        <version>1.44.0</version><!-- {x-version-update:google-auth-library:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.auth</groupId>
+        <artifactId>google-auth-library-appengine</artifactId>
+        <version>1.44.0</version><!-- {x-version-update:google-auth-library:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.auth</groupId>
+        <artifactId>google-auth-library-cab-token-generator</artifactId>
+        <version>1.44.0</version><!-- {x-version-update:google-auth-library:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.auth</groupId>

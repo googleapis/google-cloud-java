@@ -21,7 +21,7 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-bare-metal-solution/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-- "/java-bare-metal-solution/google-.*/src/main/java/com/google/cloud/.*/v.*/stub/Version.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
 
 deep-copy-regex:
 - source: "/google/cloud/baremetalsolution/(v.*)/.*-java/proto-google-.*/src"
