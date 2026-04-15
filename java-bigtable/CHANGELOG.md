@@ -45,6 +45,7 @@
 
 ## [2.75.0](https://github.com/googleapis/java-bigtable/compare/v2.74.0...v2.75.0) (2026-03-24)
 
+### WARNING: This release contains a known bug with clientside metrics which was fixed in v2.75.1
 
 ### Features
 
@@ -72,6 +73,7 @@
 
 ## [2.74.0](https://github.com/googleapis/java-bigtable/compare/v2.73.1...v2.74.0) (2026-03-02)
 
+### WARNING: This release contains a known bug with clientside metrics which was fixed in v2.75.1
 
 ### Features
 
