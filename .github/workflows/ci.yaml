@@ -131,56 +131,48 @@ jobs:
         filters: |
           google-auth-library-java:
             - 'google-auth-library-java/**'
-            - '.github/workflows/ci.yaml'
           java-bigquery:
             - 'java-bigquery/**'
             - 'google-auth-library-java/**/*.java'
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
-            - '.github/workflows/ci.yaml'
           java-bigquerystorage:
             - 'java-bigquerystorage/**'
             - 'google-auth-library-java/**/*.java'
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
-            - '.github/workflows/ci.yaml'
           java-datastore:
             - 'java-datastore/**'
             - 'google-auth-library-java/**/*.java'
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
-            - '.github/workflows/ci.yaml'
           java-logging-logback:
             - 'java-logging-logback/**'
             - 'google-auth-library-java/**/*.java'
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
-            - '.github/workflows/ci.yaml'
           java-logging:
             - 'java-logging/**'
             - 'google-auth-library-java/**/*.java'
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
-            - '.github/workflows/ci.yaml'
           java-spanner:
             - 'java-spanner/**'
             - 'google-auth-library-java/**/*.java'
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
-            - '.github/workflows/ci.yaml'
           java-storage:
             - 'java-storage/**'
             - 'google-auth-library-java/**/*.java'
             - 'sdk-platform-java/**/*.java'
             - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
             - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
-            - '.github/workflows/ci.yaml'
   split-units:
     runs-on: ubuntu-latest
     needs: changes
