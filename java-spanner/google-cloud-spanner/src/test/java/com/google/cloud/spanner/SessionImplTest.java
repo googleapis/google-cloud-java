@@ -381,6 +381,34 @@ public class SessionImplTest {
 
   @SuppressWarnings("unchecked")
   @Test
+  public void multiUseReadOnlyTransactionCloseClearsGrpcGcpAffinityWhenEnabled()
+      throws ParseException {
+    when(spannerOptions.isGrpcGcpExtensionEnabled()).thenReturn(true);
+    ArgumentCaptor<Map<SpannerRpc.Option, Object>> beginOptionsCaptor =
+        ArgumentCaptor.forClass((Class) Map.class);
+    Transaction txnMetadata =
+        Transaction.newBuilder()
+            .setId(ByteString.copyFromUtf8("x"))
+            .setReadTimestamp(Timestamps.parse("2015-10-01T10:54:20.021Z"))
+            .build();
+    Mockito.when(rpc.beginTransaction(Mockito.any(), beginOptionsCaptor.capture(), eq(false)))
+        .thenReturn(txnMetadata);
+    mockRead(
+        PartialResultSet.newBuilder()
+            .setMetadata(newMetadata(Type.struct(Type.StructField.of("C", Type.string()))))
+            .build());
+
+    ReadOnlyTransaction txn = session.readOnlyTransaction(TimestampBound.strong());
+    txn.readRow("Dummy", Key.of(), Collections.singletonList("C"));
+    txn.close();
+
+    Long channelHint = SpannerRpc.Option.CHANNEL_HINT.getLong(beginOptionsCaptor.getValue());
+    Mockito.verify(rpc)
+        .clearTransactionAndChannelAffinity(ByteString.copyFromUtf8("x"), channelHint);
+  }
+
+  @SuppressWarnings("unchecked")
+  @Test
   public void readWriteTransactionUsesRandomChannelHintWhenGrpcGcpEnabled() {
     when(spannerOptions.isGrpcGcpExtensionEnabled()).thenReturn(true);
     ArgumentCaptor<Map<SpannerRpc.Option, Object>> beginOptionsCaptor =

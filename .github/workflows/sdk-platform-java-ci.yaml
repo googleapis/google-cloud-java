@@ -17,6 +17,7 @@ jobs:
         filters: |
           library:
             - 'sdk-platform-java/**'
+            - 'google-auth-library-java/**'
   build:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
@@ -33,15 +34,16 @@ jobs:
           cache: maven
       - run: java -version
       - name: Unit Tests
-        run: |
-          mvn test --batch-mode --no-transfer-progress -Dcheckstyle.skip \
-              -Dfmt.skip -DenableTestCoverage
-        working-directory: sdk-platform-java
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: test
       # The `envVarTest` profile runs tests that require an environment variable
       - name: Env Var Tests
         run: |
-          mvn test --batch-mode --no-transfer-progress -Dcheckstyle.skip \
-              -Dfmt.skip -DenableTestCoverage -PenvVarTest
+          mvn test --batch-mode --no-transfer-progress -Pquick-build \
+              -DenableTestCoverage -PenvVarTest
         # Set the Env Var for this step only
         env:
           GOOGLE_CLOUD_UNIVERSE_DOMAIN: random.com
@@ -49,10 +51,12 @@ jobs:
           GOOGLE_SDK_JAVA_LOGGING: true
         working-directory: sdk-platform-java
       - run: bazelisk version
-      - name: Install Maven modules
-        run: |
-          mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip -Dfmt.skip
-        working-directory: sdk-platform-java
+      - name: Install all modules using Java 11
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
       - name: Integration Tests
         run: |
           bazelisk --batch test //sdk-platform-java/test/integration/...
@@ -89,26 +93,29 @@ jobs:
           cache: maven
       - run: java -version
       - name: Unit Tests
-        run: |
-          mvn test --batch-mode --no-transfer-progress -Dcheckstyle.skip \
-              -Dfmt.skip -DenableTestCoverage
-        working-directory: sdk-platform-java
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: test
       # The `envVarTest` profile runs tests that require an environment variable
       - name: Env Var Tests
-        run: |
-          mvn test --batch-mode --no-transfer-progress -Dcheckstyle.skip \
-              -Dfmt.skip -DenableTestCoverage -PenvVarTest
-        # Set the Env Var for this step only
+        shell: bash
+        run: .kokoro/build.sh
         env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: test
+          SUREFIRE_JVM_OPT: '-PenvVarTest'
           GOOGLE_CLOUD_UNIVERSE_DOMAIN: random.com
           GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS: true
           GOOGLE_SDK_JAVA_LOGGING: true
-        working-directory: sdk-platform-java
       - run: bazelisk version
-      - name: Install Maven modules
-        run: |
-          mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip
-        working-directory: sdk-platform-java
+      - name: Install all modules using Java 11
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
       - name: Integration Tests
         run: |
           bazelisk --batch test //sdk-platform-java/test/integration/...
@@ -127,26 +134,29 @@ jobs:
           cache: maven
       - run: java -version
       - name: Unit Tests
-        run: |
-          mvn test --batch-mode --no-transfer-progress -Dcheckstyle.skip \
-              -Dfmt.skip -DenableTestCoverage
-        working-directory: sdk-platform-java
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: test
       # The `envVarTest` profile runs tests that require an environment variable
       - name: Env Var Tests
-        run: |
-          mvn test --batch-mode --no-transfer-progress -Dcheckstyle.skip \
-              -Dfmt.skip -DenableTestCoverage -PenvVarTest
-        # Set the Env Var for this step only
+        shell: bash
+        run: .kokoro/build.sh
         env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: test
+          SUREFIRE_JVM_OPT: '-PenvVarTest'
           GOOGLE_CLOUD_UNIVERSE_DOMAIN: random.com
           GOOGLE_CLOUD_ENABLE_DIRECT_PATH_XDS: true
           GOOGLE_SDK_JAVA_LOGGING: true
-        working-directory: sdk-platform-java
       - run: bazelisk version
-      - name: Install Maven modules
-        run: |
-          mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip -Dfmt.skip
-        working-directory: sdk-platform-java
+      - name: Install all modules using Java 11
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
       - name: Integration Tests
         # note need to set shouldInstallTestSecurityManager=false due to https://github.com/bazelbuild/bazel/issues/24354
         run: |
@@ -177,8 +187,7 @@ jobs:
           export PATH=${JAVA_HOME}/bin:$PATH
           # Maven surefire plugin lets us to specify the JVM when running tests via
           # the "jvm" system property.
-          mvn verify --batch-mode --no-transfer-progress -Dcheckstyle.skip \
-              -Dfmt.skip \
+          mvn verify --batch-mode --no-transfer-progress -Pquick-build \
               -Djvm="${JAVA8_HOME}/bin/java"
         working-directory: sdk-platform-java
       # The `envVarTest` profile runs tests that require an environment variable
@@ -191,8 +200,8 @@ jobs:
           # Maven surefire plugin lets us to specify the JVM when running tests via
           # the "jvm" system property.
           export GOOGLE_CLOUD_UNIVERSE_DOMAIN=random.com
-          mvn test --batch-mode --no-transfer-progress -Dcheckstyle.skip \
-              -Dfmt.skip -DenableTestCoverage -Dsurefire.failIfNoSpecifiedTests=false \
+          mvn test --batch-mode --no-transfer-progress -Pquick-build \
+              -DenableTestCoverage -Dsurefire.failIfNoSpecifiedTests=false \
               -PenvVarTest
         # Set the Env Var for this step only
         env:
@@ -215,9 +224,10 @@ jobs:
           cache: maven
       - name: Install all modules using Java 11
         shell: bash
-        run: |
-          mvn -V -B -ntp clean install -DskipTests -Dfmt.skip -Dcheckstyle.skip
-        working-directory: sdk-platform-java
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
       - uses: actions/setup-java@v3
         with:
           java-version: 8
@@ -265,9 +275,10 @@ jobs:
           cache: maven
       - name: Install all modules using Java 11
         shell: bash
-        run: |
-          mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip -Dfmt.skip
-        working-directory: sdk-platform-java
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
       - uses: actions/setup-java@v3
         with:
           java-version: 8
@@ -339,9 +350,11 @@ jobs:
           distribution: temurin
       - run: mvn -version
       - name: Install Maven modules
-        run: |
-          mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip -Dfmt.skip
-        working-directory: sdk-platform-java        
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: test      
       - name: Showcase golden tests
         working-directory: sdk-platform-java/java-showcase
         run: |
@@ -418,9 +431,11 @@ jobs:
           distribution: temurin
           cache: maven
       - name: Install Maven modules
-        run: |
-          mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip -Dfmt.skip
-        working-directory: sdk-platform-java
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
       - name: Install showcase to local maven repository
         run: |
           mvn install -B -ntp -T 1C -DskipTests
@@ -454,20 +469,11 @@ jobs:
         distribution: temurin
         cache: maven
     - name: Install Maven modules to local Maven repository
-      run: |
-        mvn install \
-          -B -ntp \
-          -Dorg.slf4j.simpleLogger.showDateTime=true \
-          -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-          -DskipTests \
-          -Dclirr.skip=true \
-          -Denforcer.skip=true \
-          -Dcheckstyle.skip=true \
-          -Dflatten.skip=true \
-          -Danimal.sniffer.skip=true \
-          -Dmaven.wagon.http.retryHandler.count=5 \
-          -T 1C
-      working-directory: sdk-platform-java
+      shell: bash
+      run: .kokoro/build.sh
+      env:
+        BUILD_SUBDIR: sdk-platform-java
+        JOB_TYPE: install
     - name: Validate gapic-generator-java-bom
       uses: googleapis/java-cloud-bom/tests/validate-bom@47ad868794c5d38ee7eb95d69371a7a79f84d890
       with:
@@ -491,9 +497,11 @@ jobs:
         mvn test --batch-mode --no-transfer-progress
       working-directory: sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check
     - name: Install Maven modules
-      run: |
-        mvn install -B -ntp -DskipTests -Dclirr.skip -Dcheckstyle.skip -Dfmt.skip
-      working-directory: sdk-platform-java
+      shell: bash
+      run: .kokoro/build.sh
+      env:
+        BUILD_SUBDIR: sdk-platform-java
+        JOB_TYPE: test
     - name: Unmanaged dependency check
       uses: ./sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check
       with:

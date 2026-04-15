@@ -335,4 +335,22 @@ public interface SingleTenantHsmInstanceOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getDisableTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Indicates whether key portability is enabled for the
+   * [SingleTenantHsmInstance][google.cloud.kms.v1.SingleTenantHsmInstance].
+   * This can only be set at creation time. Key portability features are
+   * disabled by default and not yet available in GA.
+   * </pre>
+   *
+   * <code>
+   * bool key_portability_enabled = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The keyPortabilityEnabled.
+   */
+  boolean getKeyPortabilityEnabled();
 }

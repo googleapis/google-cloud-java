@@ -16,11 +16,12 @@
 deep-remove-regex:
 - "/java-marketingplatformadminapi/grpc-google-.*/src"
 - "/java-marketingplatformadminapi/proto-google-.*/src"
-- "/java-marketingplatformadminapi/google-.*/src"
+- "/java-marketingplatformadminapi/admin/src"
 - "/java-marketingplatformadminapi/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-marketingplatformadminapi/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*admin.*/src/main/java/.*/stub/Version.java"
+- "/.*admin.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/marketingplatform/admin/(v.*)/.*-java/proto-google-.*/src"

@@ -7,7 +7,7 @@
   <parent>
     <groupId>com.google.auth</groupId>
     <artifactId>google-auth-library-parent</artifactId>
-    <version>1.43.1-SNAPSHOT</version><!-- {x-version-update:google-auth-library-parent:current} -->
+    <version>1.46.0</version><!-- {x-version-update:google-auth-library-parent:current} -->
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -238,6 +238,10 @@
 
   <dependencies>
     <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+    <dependency>
       <groupId>com.google.auto.value</groupId>
       <artifactId>auto-value-annotations</artifactId>
     </dependency>
@@ -256,10 +260,6 @@
     <dependency>
       <groupId>com.google.http-client</groupId>
       <artifactId>google-http-client-gson</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.errorprone</groupId>

@@ -17,24 +17,29 @@
 package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.core.InternalApi;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.CacheUpdate;
 import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.DirectedReadOptions;
 import com.google.spanner.v1.ExecuteSqlRequest;
-import com.google.spanner.v1.Group;
 import com.google.spanner.v1.Mutation;
 import com.google.spanner.v1.ReadRequest;
 import com.google.spanner.v1.RoutingHint;
-import com.google.spanner.v1.Tablet;
 import com.google.spanner.v1.TransactionOptions;
 import com.google.spanner.v1.TransactionSelector;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
@@ -47,11 +52,20 @@ import javax.annotation.Nullable;
 @InternalApi
 public final class ChannelFinder {
   private static final Predicate<String> NO_EXCLUDED_ENDPOINTS = address -> false;
+  private static final int CACHE_UPDATE_DRAIN_BATCH_SIZE = 64;
+  private static final int MAX_CACHE_UPDATE_THREADS =
+      Math.max(2, Runtime.getRuntime().availableProcessors());
+  private static final ExecutorService CACHE_UPDATE_POOL = createCacheUpdatePool();
 
   private final Object updateLock = new Object();
   private final AtomicLong databaseId = new AtomicLong();
   private final KeyRecipeCache recipeCache = new KeyRecipeCache();
   private final KeyRangeCache rangeCache;
+  private final ConcurrentLinkedQueue<PendingCacheUpdate> pendingUpdates =
+      new ConcurrentLinkedQueue<>();
+  private final AtomicBoolean drainScheduled = new AtomicBoolean();
+  private volatile java.util.concurrent.CountDownLatch drainingLatch =
+      new java.util.concurrent.CountDownLatch(0);
   @Nullable private final EndpointLifecycleManager lifecycleManager;
   @Nullable private final String finderKey;
 
@@ -77,37 +91,155 @@ public final class ChannelFinder {
     rangeCache.useDeterministicRandom();
   }
 
-  public void update(CacheUpdate update) {
-    synchronized (updateLock) {
-      long currentId = databaseId.get();
-      if (currentId != update.getDatabaseId()) {
-        if (currentId != 0) {
-          recipeCache.clear();
-          rangeCache.clear();
-        }
-        databaseId.set(update.getDatabaseId());
-      }
-      if (update.hasKeyRecipes()) {
-        recipeCache.addRecipes(update.getKeyRecipes());
-      }
-      rangeCache.addRanges(update);
+  private static ExecutorService createCacheUpdatePool() {
+    ThreadPoolExecutor executor =
+        new ThreadPoolExecutor(
+            MAX_CACHE_UPDATE_THREADS,
+            MAX_CACHE_UPDATE_THREADS,
+            30L,
+            TimeUnit.SECONDS,
+            new LinkedBlockingQueue<>(),
+            new ThreadFactoryBuilder()
+                .setDaemon(true)
+                .setNameFormat("spanner-cache-update-%d")
+                .build());
+    executor.allowCoreThreadTimeOut(true);
+    return executor;
+  }
 
-      // Notify the lifecycle manager about server addresses so it can create endpoints
-      // in the background and start probing, and evict stale endpoints atomically.
-      if (lifecycleManager != null && finderKey != null) {
-        Set<String> currentAddresses = new HashSet<>();
-        for (Group group : update.getGroupList()) {
-          for (Tablet tablet : group.getTabletsList()) {
-            String addr = tablet.getServerAddress();
-            if (!addr.isEmpty()) {
-              currentAddresses.add(addr);
+  private static final class PendingCacheUpdate {
+    private final CacheUpdate update;
+
+    private PendingCacheUpdate(CacheUpdate update) {
+      this.update = update;
+    }
+  }
+
+  private boolean isMaterialUpdate(CacheUpdate update) {
+    return update.getGroupCount() > 0
+        || update.getRangeCount() > 0
+        || (update.hasKeyRecipes() && update.getKeyRecipes().getRecipeCount() > 0);
+  }
+
+  private boolean shouldProcessUpdate(CacheUpdate update) {
+    if (isMaterialUpdate(update)) {
+      return true;
+    }
+    long updateDatabaseId = update.getDatabaseId();
+    return updateDatabaseId != 0 && databaseId.get() != updateDatabaseId;
+  }
+
+  public void update(CacheUpdate update) {
+    Set<String> currentAddresses;
+    synchronized (updateLock) {
+      applyUpdateLocked(update);
+      currentAddresses = snapshotActiveAddressesLocked();
+    }
+    publishLifecycleUpdate(currentAddresses);
+  }
+
+  public void updateAsync(CacheUpdate update) {
+    if (!shouldProcessUpdate(update)) {
+      return;
+    }
+    pendingUpdates.add(new PendingCacheUpdate(update));
+    if (drainScheduled.compareAndSet(false, true)) {
+      java.util.concurrent.CountDownLatch latch = new java.util.concurrent.CountDownLatch(1);
+      drainingLatch = latch;
+      CACHE_UPDATE_POOL.execute(
+          () -> {
+            try {
+              drainPendingUpdate();
+            } finally {
+              latch.countDown();
             }
-          }
+          });
+    }
+  }
+
+  private void drainPendingUpdate() {
+    List<PendingCacheUpdate> batch = new ArrayList<>(CACHE_UPDATE_DRAIN_BATCH_SIZE);
+    while (true) {
+      drainBatch(batch);
+      if (!batch.isEmpty()) {
+        applyBatch(batch);
+        batch.clear();
+      }
+      drainScheduled.set(false);
+      if (pendingUpdates.isEmpty() || !drainScheduled.compareAndSet(false, true)) {
+        return;
+      }
+    }
+  }
+
+  private void drainBatch(List<PendingCacheUpdate> batch) {
+    PendingCacheUpdate toApply;
+    while (batch.size() < CACHE_UPDATE_DRAIN_BATCH_SIZE
+        && (toApply = pendingUpdates.poll()) != null) {
+      batch.add(toApply);
+    }
+  }
+
+  private void applyBatch(List<PendingCacheUpdate> batch) {
+    Set<String> currentAddresses;
+    synchronized (updateLock) {
+      for (PendingCacheUpdate pendingUpdate : batch) {
+        applyUpdateLocked(pendingUpdate.update);
+      }
+      currentAddresses = snapshotActiveAddressesLocked();
+    }
+    publishLifecycleUpdate(currentAddresses);
+  }
+
+  private void applyUpdateLocked(CacheUpdate update) {
+    long currentId = databaseId.get();
+    long updateDatabaseId = update.getDatabaseId();
+    if (updateDatabaseId != 0 && currentId != updateDatabaseId) {
+      if (currentId != 0) {
+        recipeCache.clear();
+        rangeCache.clear();
+      }
+      databaseId.set(updateDatabaseId);
+    }
+    if (update.hasKeyRecipes()) {
+      recipeCache.addRecipes(update.getKeyRecipes());
+    }
+    rangeCache.addRanges(update);
+  }
+
+  @Nullable
+  private Set<String> snapshotActiveAddressesLocked() {
+    if (lifecycleManager == null || finderKey == null) {
+      return null;
+    }
+    return rangeCache.getActiveAddresses();
+  }
+
+  private void publishLifecycleUpdate(@Nullable Set<String> currentAddresses) {
+    if (currentAddresses == null) {
+      return;
+    }
+    lifecycleManager.updateActiveAddressesAsync(finderKey, currentAddresses);
+  }
+
+  /**
+   * Test-only hook used by {@link KeyAwareChannel#awaitPendingCacheUpdates()} to wait until the
+   * async cache update worker has finished applying the latest pending update.
+   */
+  @VisibleForTesting
+  void awaitPendingUpdates() throws InterruptedException {
+    long deadline = System.nanoTime() + java.util.concurrent.TimeUnit.SECONDS.toNanos(5);
+    while (System.nanoTime() < deadline) {
+      java.util.concurrent.CountDownLatch latch = drainingLatch;
+      if (latch != null) {
+        long remainingNanos = deadline - System.nanoTime();
+        if (remainingNanos <= 0) {
+          break;
         }
-        // Also include addresses from existing cached tablets not in this update.
-        currentAddresses.addAll(rangeCache.getActiveAddresses());
-        // Atomically ensure endpoints exist and evict stale ones.
-        lifecycleManager.updateActiveAddresses(finderKey, currentAddresses);
+        latch.await(remainingNanos, java.util.concurrent.TimeUnit.NANOSECONDS);
+      }
+      if (pendingUpdates.isEmpty() && !drainScheduled.get()) {
+        return;
       }
     }
   }

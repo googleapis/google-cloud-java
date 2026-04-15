@@ -34,8 +34,8 @@ package com.google.auth.oauth2.functional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
@@ -50,7 +50,6 @@ import com.google.auth.oauth2.IdToken;
 import com.google.auth.oauth2.IdTokenCredentials;
 import com.google.auth.oauth2.IdTokenProvider;
 import com.google.auth.oauth2.OAuth2Utils;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.junit.jupiter.api.Test;
 
@@ -135,36 +134,35 @@ final class FTServiceAccountCredentialsTest {
   }
 
   @Test
-  void WrongScopeComputeTest() throws Exception {
+  void WrongScopeComputeTest() {
     executeRequestWrongScope(computeUrl);
   }
 
   @Test
-  void WrongScopeStorageTest() throws Exception {
+  void WrongScopeStorageTest() {
     executeRequestWrongScope(storageUrl);
   }
 
   @Test
-  void WrongScopeBigQueryTest() throws Exception {
+  void WrongScopeBigQueryTest() {
     executeRequestWrongScope(bigQueryUrl);
   }
 
   @Test
-  void WrongScopeOnePlatformTest() throws Exception {
+  void WrongScopeOnePlatformTest() {
     executeRequestWrongScope(cloudTasksUrl);
   }
 
-  private void executeRequestWrongScope(String serviceUri)
-      throws FileNotFoundException, IOException {
+  private void executeRequestWrongScope(String serviceUri) {
     String expectedMessage = "403 Forbidden";
 
-    try {
-      executeRequestWithCredentialsWithScope(
-          serviceUri, "https://www.googleapis.com/auth/adexchange.buyer");
-      fail("Should throw exception: " + expectedMessage);
-    } catch (IOException expected) {
-      assertTrue(expected.getMessage().contains(expectedMessage));
-    }
+    IOException expected =
+        assertThrows(
+            IOException.class,
+            () ->
+                executeRequestWithCredentialsWithScope(
+                    serviceUri, "https://www.googleapis.com/auth/adexchange.buyer"));
+    assertTrue(expected.getMessage().contains(expectedMessage));
   }
 
   private HttpResponse executeRequestWithCredentialsWithoutScope(String serviceUrl)

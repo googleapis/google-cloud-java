@@ -20,7 +20,8 @@ deep-remove-regex:
 - "/java-profiler/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-profiler/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/devtools/cloudprofiler/(v.*)/.*-java/proto-google-.*/src"

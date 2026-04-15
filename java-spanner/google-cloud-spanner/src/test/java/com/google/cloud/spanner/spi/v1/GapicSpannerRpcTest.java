@@ -40,7 +40,9 @@ import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.OAuth2Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.grpc.GcpManagedChannel;
 import com.google.cloud.grpc.GcpManagedChannelOptions;
+import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.cloud.grpc.fallback.GcpFallbackChannelOptions;
 import com.google.cloud.grpc.fallback.GcpFallbackOpenTelemetry;
@@ -73,6 +75,8 @@ import com.google.spanner.v1.SpannerGrpc;
 import com.google.spanner.v1.StructType;
 import com.google.spanner.v1.StructType.Field;
 import com.google.spanner.v1.TypeCode;
+import io.grpc.CallOptions;
+import io.grpc.ClientCall;
 import io.grpc.Context;
 import io.grpc.Contexts;
 import io.grpc.ManagedChannelBuilder;
@@ -115,6 +119,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Mockito;
 
 @RunWith(Parameterized.class)
 public class GapicSpannerRpcTest {
@@ -447,6 +453,78 @@ public class GapicSpannerRpcTest {
     GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
     assertNotNull(rpc.newCallContext(optionsMap, "/some/resource", null, null));
     rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextWithGrpcGcpUsesRawAffinityKeyWithoutDcp() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .enableGrpcGcpExtension()
+            .disableDynamicChannelPool()
+            .setNumChannels(4)
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    Map<SpannerRpc.Option, Object> grpcGcpOptions = new HashMap<>();
+    grpcGcpOptions.put(Option.CHANNEL_HINT, 7L);
+    grpcGcpOptions.put(Option.UNBIND_CHANNEL_HINT, Boolean.TRUE);
+
+    GrpcCallContext callContext =
+        rpc.newCallContext(
+            grpcGcpOptions,
+            "/some/resource",
+            ExecuteSqlRequest.getDefaultInstance(),
+            SpannerGrpc.getExecuteSqlMethod());
+
+    assertEquals("7", callContext.getCallOptions().getOption(GcpManagedChannel.AFFINITY_KEY));
+    assertEquals(
+        Boolean.TRUE,
+        callContext.getCallOptions().getOption(GcpManagedChannel.UNBIND_AFFINITY_KEY));
+    rpc.shutdown();
+  }
+
+  @Test
+  public void testNewCallContextWithGrpcGcpUsesRawAffinityKeyWithDcp() {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("some-project")
+            .enableGrpcGcpExtension()
+            .enableDynamicChannelPool()
+            .build();
+    GapicSpannerRpc rpc = new GapicSpannerRpc(options, false);
+    Map<SpannerRpc.Option, Object> grpcGcpOptions = new HashMap<>();
+    grpcGcpOptions.put(Option.CHANNEL_HINT, 7L);
+
+    GrpcCallContext callContext =
+        rpc.newCallContext(
+            grpcGcpOptions,
+            "/some/resource",
+            ExecuteSqlRequest.getDefaultInstance(),
+            SpannerGrpc.getExecuteSqlMethod());
+
+    assertEquals("7", callContext.getCallOptions().getOption(GcpManagedChannel.AFFINITY_KEY));
+    rpc.shutdown();
+  }
+
+  @SuppressWarnings("unchecked")
+  @Test
+  public void testClearChannelHintAffinityCancelsSyntheticGrpcGcpCall() {
+    GcpManagedChannel channel = Mockito.mock(GcpManagedChannel.class);
+    ClientCall<ExecuteSqlRequest, com.google.spanner.v1.ResultSet> call =
+        Mockito.mock(ClientCall.class);
+    ArgumentCaptor<CallOptions> callOptionsCaptor = ArgumentCaptor.forClass(CallOptions.class);
+    Mockito.when(
+            channel.newCall(
+                Mockito.eq(SpannerGrpc.getExecuteSqlMethod()), callOptionsCaptor.capture()))
+        .thenReturn(call);
+
+    GrpcGcpAffinityUtil.clearChannelHintAffinity(channel, 7L);
+
+    assertEquals("7", callOptionsCaptor.getValue().getOption(GcpManagedChannel.AFFINITY_KEY));
+    assertEquals(
+        Boolean.TRUE,
+        callOptionsCaptor.getValue().getOption(GcpManagedChannel.UNBIND_AFFINITY_KEY));
+    Mockito.verify(call).cancel("Cloud Spanner transaction closed", null);
   }
 
   @Test
@@ -1028,6 +1106,111 @@ public class GapicSpannerRpcTest {
 
     assertNotNull(metricsOptions);
     assertNull(metricsOptions.getOpenTelemetryMeter());
+  }
+
+  @Test
+  public void testGrpcGcpOptionsIncludeStaticChannelPoolSettingsWithoutDcp() throws Exception {
+    Duration affinityKeyLifetime = Duration.ofMinutes(10);
+    Duration cleanupInterval = Duration.ofMinutes(5);
+    GcpChannelPoolOptions channelPoolOptions =
+        GcpChannelPoolOptions.newBuilder()
+            .setAffinityKeyLifetime(affinityKeyLifetime)
+            .setCleanupInterval(cleanupInterval)
+            .build();
+    int numChannels = 7;
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .enableGrpcGcpExtension()
+            .disableDynamicChannelPool()
+            .setNumChannels(numChannels)
+            .setGcpChannelPoolOptions(channelPoolOptions)
+            .build();
+
+    java.lang.reflect.Method method =
+        GapicSpannerRpc.class.getDeclaredMethod(
+            "grpcGcpOptionsWithMetricsAndDcp", SpannerOptions.class);
+    method.setAccessible(true);
+    GcpManagedChannelOptions grpcGcpOptions =
+        (GcpManagedChannelOptions) method.invoke(null, options);
+
+    assertEquals(numChannels, grpcGcpOptions.getChannelPoolOptions().getMaxSize());
+    assertEquals(numChannels, grpcGcpOptions.getChannelPoolOptions().getMinSize());
+    assertEquals(numChannels, grpcGcpOptions.getChannelPoolOptions().getInitSize());
+    assertEquals(
+        affinityKeyLifetime, grpcGcpOptions.getChannelPoolOptions().getAffinityKeyLifetime());
+    assertEquals(cleanupInterval, grpcGcpOptions.getChannelPoolOptions().getCleanupInterval());
+    assertEquals(0, grpcGcpOptions.getChannelPoolOptions().getMinRpcPerChannel());
+    assertEquals(0, grpcGcpOptions.getChannelPoolOptions().getMaxRpcPerChannel());
+    assertEquals(Duration.ZERO, grpcGcpOptions.getChannelPoolOptions().getScaleDownInterval());
+  }
+
+  @Test
+  public void testGrpcGcpOptionsRetainDynamicChannelPoolSettingsWithDcp() throws Exception {
+    Duration affinityKeyLifetime = Duration.ofMinutes(10);
+    Duration cleanupInterval = Duration.ofMinutes(5);
+    Duration scaleDownInterval = Duration.ofMinutes(3);
+    GcpChannelPoolOptions channelPoolOptions =
+        GcpChannelPoolOptions.newBuilder()
+            .setInitSize(6)
+            .setMaxSize(15)
+            .setMinSize(3)
+            .setDynamicScaling(10, 50, scaleDownInterval)
+            .setAffinityKeyLifetime(affinityKeyLifetime)
+            .setCleanupInterval(cleanupInterval)
+            .build();
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("[PROJECT]")
+            .enableGrpcGcpExtension()
+            .enableDynamicChannelPool()
+            .setGcpChannelPoolOptions(channelPoolOptions)
+            .build();
+
+    java.lang.reflect.Method method =
+        GapicSpannerRpc.class.getDeclaredMethod(
+            "grpcGcpOptionsWithMetricsAndDcp", SpannerOptions.class);
+    method.setAccessible(true);
+    GcpManagedChannelOptions grpcGcpOptions =
+        (GcpManagedChannelOptions) method.invoke(null, options);
+
+    assertEquals(6, grpcGcpOptions.getChannelPoolOptions().getInitSize());
+    assertEquals(15, grpcGcpOptions.getChannelPoolOptions().getMaxSize());
+    assertEquals(3, grpcGcpOptions.getChannelPoolOptions().getMinSize());
+    assertEquals(10, grpcGcpOptions.getChannelPoolOptions().getMinRpcPerChannel());
+    assertEquals(50, grpcGcpOptions.getChannelPoolOptions().getMaxRpcPerChannel());
+    assertEquals(scaleDownInterval, grpcGcpOptions.getChannelPoolOptions().getScaleDownInterval());
+    assertEquals(
+        affinityKeyLifetime, grpcGcpOptions.getChannelPoolOptions().getAffinityKeyLifetime());
+    assertEquals(cleanupInterval, grpcGcpOptions.getChannelPoolOptions().getCleanupInterval());
+  }
+
+  @Test
+  public void testBuiltInMetricsDisabledSkipsGrpcBuiltInMetricsConfigurator() {
+    try {
+      SpannerOptions.useEnvironment(
+          new SpannerOptions.SpannerEnvironment() {
+            @Override
+            public boolean isEnableGRPCBuiltInMetrics() {
+              return true;
+            }
+          });
+
+      SpannerOptions options =
+          SpannerOptions.newBuilder()
+              .setProjectId("[PROJECT]")
+              .setCredentials(STATIC_CREDENTIALS)
+              .setBuiltInMetricsEnabled(false)
+              .build();
+      InstantiatingGrpcChannelProvider.Builder channelProviderBuilder =
+          InstantiatingGrpcChannelProvider.newBuilder();
+
+      options.enablegRPCMetrics(channelProviderBuilder);
+
+      assertNull(channelProviderBuilder.getChannelConfigurator());
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
   }
 
   private static final class RecordingTransportChannelProvider implements TransportChannelProvider {

@@ -44,8 +44,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.io.BaseEncoding;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.URI;
 import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.List;
@@ -168,10 +167,9 @@ public class MockMetadataServerTransport extends MockHttpTransport {
         GenericJson signContents = new GenericJson();
         signContents.setFactory(OAuth2Utils.JSON_FACTORY);
         signContents.put("signedBlob", BaseEncoding.base64().encode(signature));
-
-        String signature = signContents.toPrettyString();
-
-        return new MockLowLevelHttpResponse().setContentType(Json.MEDIA_TYPE).setContent(signature);
+        return new MockLowLevelHttpResponse()
+            .setContentType(Json.MEDIA_TYPE)
+            .setContent(signContents.toPrettyString());
       }
     };
   }
@@ -228,7 +226,7 @@ public class MockMetadataServerTransport extends MockHttpTransport {
   }
 
   private MockLowLevelHttpRequest getMockRequestForIdentityDocument(String url)
-      throws MalformedURLException, UnsupportedEncodingException {
+      throws UnsupportedEncodingException {
     if (statusCode != null && statusCode != HttpStatusCodes.STATUS_CODE_OK) {
       return new MockLowLevelHttpRequest(url) {
         @Override
@@ -254,7 +252,7 @@ public class MockMetadataServerTransport extends MockHttpTransport {
 
     // https://cloud.google.com/compute/docs/instances/verifying-instance-identity#token_format
     Map<String, String> queryPairs = new HashMap<String, String>();
-    String query = (new URL(url)).getQuery();
+    String query = (URI.create(url)).getQuery();
     String[] pairs = query.split("&");
     for (String pair : pairs) {
       int idx = pair.indexOf("=");
@@ -263,33 +261,29 @@ public class MockMetadataServerTransport extends MockHttpTransport {
           URLDecoder.decode(pair.substring(idx + 1), "UTF-8"));
     }
 
-    if (queryPairs.containsKey("format")) {
-      if (((String) queryPairs.get("format")).equals("full")) {
-
-        // return licenses only if format=full is set
-        if (queryPairs.containsKey("licenses")) {
-          // The metadata server defaults to false and matches "on", "off" and ::absl::SimpleAtob.
-          // See https://abseil.io/docs/cpp/guides/strings#numericConversion for more information.
-          if (BOOL_PARAMETER_VALUE.matcher((String) queryPairs.get("licenses")).matches()) {
-            return new MockLowLevelHttpRequest(url) {
-              @Override
-              public LowLevelHttpResponse execute() throws IOException {
-                return new MockLowLevelHttpResponse()
-                    .setContent(ComputeEngineCredentialsTest.FULL_ID_TOKEN_WITH_LICENSES);
-              }
-            };
-          }
-        }
-        // otherwise return full format
+    if (queryPairs.containsKey("format") && queryPairs.get("format").equals("full")) {
+      // return licenses only if format=full is set
+      if (queryPairs.containsKey("licenses")
+          && BOOL_PARAMETER_VALUE.matcher(queryPairs.get("licenses")).matches()) {
         return new MockLowLevelHttpRequest(url) {
           @Override
           public LowLevelHttpResponse execute() throws IOException {
             return new MockLowLevelHttpResponse()
-                .setContent(ComputeEngineCredentialsTest.FULL_ID_TOKEN);
+                .setContent(ComputeEngineCredentialsTest.FULL_ID_TOKEN_WITH_LICENSES);
           }
         };
       }
+
+      // otherwise return full format
+      return new MockLowLevelHttpRequest(url) {
+        @Override
+        public LowLevelHttpResponse execute() throws IOException {
+          return new MockLowLevelHttpResponse()
+              .setContent(ComputeEngineCredentialsTest.FULL_ID_TOKEN);
+        }
+      };
     }
+
     // Return default format if nothing is set
     return new MockLowLevelHttpRequest(url) {
       @Override

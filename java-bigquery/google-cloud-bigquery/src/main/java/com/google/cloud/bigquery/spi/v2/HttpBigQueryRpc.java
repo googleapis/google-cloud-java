@@ -88,8 +88,6 @@ public class HttpBigQueryRpc implements BigQueryRpc {
 
   public static final String DEFAULT_PROJECTION = "full";
   private static final String BASE_RESUMABLE_URI = "upload/bigquery/v2/projects/";
-  static final String HTTP_TRACING_DEV_GATE_PROPERTY =
-      "com.google.cloud.bigquery.http.tracing.dev.enabled";
   static final String RESOURCE_PROJECT_PREFIX = "//bigquery.googleapis.com/projects/";
   // see:
   // https://cloud.google.com/bigquery/loading-data-post-request#resume-upload
@@ -120,9 +118,7 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     this.options = options;
     this.urlDomain = new GenericUrl(options.getResolvedApiaryHost("bigquery")).getHost();
 
-    if (options.isOpenTelemetryTracingEnabled()
-        && options.getOpenTelemetryTracer() != null
-        && isHttpTracingEnabled()) {
+    if (options.isOpenTelemetryTracingEnabled() && options.getOpenTelemetryTracer() != null) {
       initializer =
           new HttpTracingRequestInitializer(initializer, options.getOpenTelemetryTracer());
     }
@@ -2146,14 +2142,11 @@ public class HttpBigQueryRpc implements BigQueryRpc {
             .setSpanKind(SpanKind.CLIENT)
             .setAttribute("bq.rpc.service", service)
             .setAttribute("bq.rpc.method", method)
-            .setAttribute("bq.rpc.system", "http");
-    if (isHttpTracingEnabled()) {
-      builder
-          .setAttribute(
-              BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID, gcpResourceDestinationId)
-          .setAttribute(BigQueryTelemetryTracer.URL_TEMPLATE, urlTemplate)
-          .setAttribute(BigQueryTelemetryTracer.URL_DOMAIN, this.urlDomain);
-    }
+            .setAttribute("bq.rpc.system", "http")
+            .setAttribute(
+                BigQueryTelemetryTracer.GCP_RESOURCE_DESTINATION_ID, gcpResourceDestinationId)
+            .setAttribute(BigQueryTelemetryTracer.URL_TEMPLATE, urlTemplate)
+            .setAttribute(BigQueryTelemetryTracer.URL_DOMAIN, this.urlDomain);
 
     if (options != null) {
       builder.setAllAttributes(otelAttributesFromOptions(options));
@@ -2175,13 +2168,11 @@ public class HttpBigQueryRpc implements BigQueryRpc {
     try (Scope scope = span.makeCurrent()) {
       return operation.execute(span);
     } catch (Exception e) {
-      if (isHttpTracingEnabled()) {
-        if (e instanceof GoogleJsonResponseException) {
-          BigQueryTelemetryTracer.addServerErrorResponseToSpan(
-              ((GoogleJsonResponseException) e), span);
-        } else {
-          BigQueryTelemetryTracer.addExceptionToSpan(e, span);
-        }
+      if (e instanceof GoogleJsonResponseException) {
+        BigQueryTelemetryTracer.addServerErrorResponseToSpan(
+            ((GoogleJsonResponseException) e), span);
+      } else {
+        BigQueryTelemetryTracer.addExceptionToSpan(e, span);
       }
       throw e;
     } finally {
@@ -2201,14 +2192,5 @@ public class HttpBigQueryRpc implements BigQueryRpc {
       builder.put(entry.getKey().toString(), entry.getValue().toString());
     }
     return builder.build();
-  }
-
-  /**
-   * Temporary development gate for HttpTracingRequestInitializer rollout: must be explicitly
-   * enabled with the system property. tracking ticket for removal:
-   * https://github.com/googleapis/google-cloud-java/issues/12100
-   */
-  static boolean isHttpTracingEnabled() {
-    return Boolean.parseBoolean(System.getProperty(HTTP_TRACING_DEV_GATE_PROPERTY));
   }
 }
