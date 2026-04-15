@@ -209,13 +209,6 @@ jobs:
       id: date
       run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@v4
-    # Java 8 tests use JDK 11 to compile and JDK 8 to run tests.
-    # Setting up Java 8 first to capture JAVA8_HOME.
-    - uses: actions/setup-java@v4
-      with:
-        java-version: ${{matrix.java}}
-        distribution: temurin
-    - run: echo "JAVA8_HOME=${JAVA_HOME}" >> $GITHUB_ENV
     - uses: actions/setup-java@v4
       with:
         java-version: 11
@@ -233,7 +226,11 @@ jobs:
       env:
         BUILD_SUBDIR: ${{matrix.package}}
         JOB_TYPE: install
-
+    - uses: actions/setup-java@v4
+      with:
+        java-version: ${{matrix.java}}
+        distribution: temurin
+    - run: java -version
     - name: Run tests in Java ${{matrix.java}} with the source compiled in Java 11
       run: |
         mvn test \
@@ -243,8 +240,7 @@ jobs:
           -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
           -Dmaven.wagon.http.retryHandler.count=5 \
           --also-make \
-          -T 1C \
-          -Djvm="${JAVA8_HOME}/bin/java"
+          -T 1C
       env:
         BUILD_SUBDIR: ${{matrix.package}}
         JOB_TYPE: test
