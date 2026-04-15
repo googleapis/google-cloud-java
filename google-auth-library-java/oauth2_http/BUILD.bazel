@@ -11,6 +11,7 @@ java_library(
         "@com_google_errorprone_error_prone_annotations//jar",
         "@com_google_code_findbugs_jsr305//jar",
         "@com_google_auto_value_auto_value_annotations//jar",
+        "@org_slf4j_slf4j_api//jar",
     ],
     visibility = ["//visibility:public"],
 )
