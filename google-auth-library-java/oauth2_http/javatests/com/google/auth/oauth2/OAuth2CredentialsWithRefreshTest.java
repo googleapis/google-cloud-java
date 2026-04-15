@@ -33,8 +33,9 @@ package com.google.auth.oauth2;
 
 import static com.google.auth.oauth2.OAuth2Credentials.DEFAULT_EXPIRATION_MARGIN;
 import static com.google.auth.oauth2.OAuth2Credentials.DEFAULT_REFRESH_MARGIN;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.auth.TestUtils;
 import java.io.IOException;
@@ -150,37 +151,24 @@ class OAuth2CredentialsWithRefreshTest {
 
   @Test
   void builder_noAccessToken() {
-    OAuth2CredentialsWithRefresh.newBuilder()
-        .setRefreshHandler(
-            new OAuth2CredentialsWithRefresh.OAuth2RefreshHandler() {
-              @Override
-              public AccessToken refreshAccessToken() {
-                return null;
-              }
-            })
-        .build();
+    OAuth2CredentialsWithRefresh.Builder builder =
+        OAuth2CredentialsWithRefresh.newBuilder().setRefreshHandler(() -> null);
+    assertDoesNotThrow(builder::build);
   }
 
   @Test
   void builder_noRefreshHandler_throws() {
-    try {
-      OAuth2CredentialsWithRefresh.newBuilder().setAccessToken(ACCESS_TOKEN).build();
-      fail("Should fail as a refresh handler must be provided.");
-    } catch (NullPointerException e) {
-      // Expected.
-    }
+    OAuth2CredentialsWithRefresh.Builder builder =
+        OAuth2CredentialsWithRefresh.newBuilder().setAccessToken(ACCESS_TOKEN);
+    assertThrows(NullPointerException.class, builder::build);
   }
 
   @Test
   void builder_noExpirationTimeInAccessToken_throws() {
-    try {
-      OAuth2CredentialsWithRefresh.newBuilder()
-          .setAccessToken(new AccessToken("accessToken", null))
-          .build();
-      fail("Should fail as a refresh handler must be provided.");
-    } catch (IllegalArgumentException e) {
-      // Expected.
-    }
+    OAuth2CredentialsWithRefresh.Builder builder =
+        OAuth2CredentialsWithRefresh.newBuilder()
+            .setAccessToken(new AccessToken("accessToken", null));
+    assertThrows(IllegalArgumentException.class, builder::build);
   }
 
   @Test
@@ -189,13 +177,7 @@ class OAuth2CredentialsWithRefreshTest {
     OAuth2CredentialsWithRefresh credentials =
         OAuth2CredentialsWithRefresh.newBuilder()
             .setAccessToken(ACCESS_TOKEN)
-            .setRefreshHandler(
-                new OAuth2CredentialsWithRefresh.OAuth2RefreshHandler() {
-                  @Override
-                  public AccessToken refreshAccessToken() {
-                    return refreshedToken;
-                  }
-                })
+            .setRefreshHandler(() -> refreshedToken)
             .build();
 
     AccessToken accessToken = credentials.refreshAccessToken();
@@ -210,13 +192,7 @@ class OAuth2CredentialsWithRefreshTest {
     OAuth2CredentialsWithRefresh credentials =
         OAuth2CredentialsWithRefresh.newBuilder()
             .setAccessToken(ACCESS_TOKEN)
-            .setRefreshHandler(
-                new OAuth2CredentialsWithRefresh.OAuth2RefreshHandler() {
-                  @Override
-                  public AccessToken refreshAccessToken() {
-                    return refreshedToken;
-                  }
-                })
+            .setRefreshHandler(() -> refreshedToken)
             .build();
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(uri);

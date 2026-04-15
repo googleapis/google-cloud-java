@@ -176,7 +176,7 @@ final class StsRequestHandlerTest {
         TestUtils.buildHttpResponseException(
             "invalidRequest", /* errorDescription= */ null, /* errorUri= */ null));
 
-    OAuthException e = assertThrows(OAuthException.class, () -> requestHandler.exchangeToken());
+    OAuthException e = assertThrows(OAuthException.class, requestHandler::exchangeToken);
 
     assertEquals("invalidRequest", e.getErrorCode());
     assertNull(e.getErrorDescription());
@@ -196,7 +196,7 @@ final class StsRequestHandlerTest {
     transport.addResponseErrorSequence(
         TestUtils.buildHttpResponseException("invalidRequest", "errorDescription", "errorUri"));
 
-    OAuthException e = assertThrows(OAuthException.class, () -> requestHandler.exchangeToken());
+    OAuthException e = assertThrows(OAuthException.class, requestHandler::exchangeToken);
 
     assertEquals("invalidRequest", e.getErrorCode());
     assertEquals("errorDescription", e.getErrorDescription());
@@ -216,8 +216,7 @@ final class StsRequestHandlerTest {
     IOException e = new IOException();
     transport.addResponseErrorSequence(e);
 
-    IOException thrownException =
-        assertThrows(IOException.class, () -> requestHandler.exchangeToken());
+    IOException thrownException = assertThrows(IOException.class, requestHandler::exchangeToken);
     assertEquals(e, thrownException);
   }
 

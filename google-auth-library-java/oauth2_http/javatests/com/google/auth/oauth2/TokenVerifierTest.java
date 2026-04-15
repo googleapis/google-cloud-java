@@ -32,8 +32,8 @@ package com.google.auth.oauth2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.LowLevelHttpRequest;
@@ -84,12 +84,9 @@ class TokenVerifierTest {
   void verifyExpiredToken() {
     for (String token : ALL_TOKENS) {
       TokenVerifier tokenVerifier = TokenVerifier.newBuilder().build();
-      try {
-        tokenVerifier.verify(token);
-        fail("Should have thrown a VerificationException");
-      } catch (TokenVerifier.VerificationException e) {
-        assertTrue(e.getMessage().contains("expired"));
-      }
+      VerificationException e =
+          assertThrows(VerificationException.class, () -> tokenVerifier.verify(token));
+      assertTrue(e.getMessage().contains("expired"));
     }
   }
 
@@ -98,12 +95,9 @@ class TokenVerifierTest {
     TokenVerifier tokenVerifier =
         TokenVerifier.newBuilder().setAudience("expected audience").build();
     for (String token : ALL_TOKENS) {
-      try {
-        tokenVerifier.verify(token);
-        fail("Should have thrown a VerificationException");
-      } catch (TokenVerifier.VerificationException e) {
-        assertTrue(e.getMessage().contains("audience does not match"));
-      }
+      VerificationException e =
+          assertThrows(VerificationException.class, () -> tokenVerifier.verify(token));
+      assertTrue(e.getMessage().contains("audience does not match"));
     }
   }
 
@@ -111,12 +105,9 @@ class TokenVerifierTest {
   void verifyExpectedIssuer() {
     TokenVerifier tokenVerifier = TokenVerifier.newBuilder().setIssuer("expected issuer").build();
     for (String token : ALL_TOKENS) {
-      try {
-        tokenVerifier.verify(token);
-        fail("Should have thrown a VerificationException");
-      } catch (TokenVerifier.VerificationException e) {
-        assertTrue(e.getMessage().contains("issuer does not match"));
-      }
+      VerificationException e =
+          assertThrows(VerificationException.class, () -> tokenVerifier.verify(token));
+      assertTrue(e.getMessage().contains("issuer does not match"));
     }
   }
 
@@ -151,13 +142,10 @@ class TokenVerifierTest {
             .setHttpTransportFactory(httpTransportFactory)
             .build();
 
-    try {
-      tokenVerifier.verify(ES256_TOKEN);
-      fail("Should not be able to continue without exception.");
-    } catch (TokenVerifier.VerificationException exception) {
-      assertTrue(
-          exception.getMessage().contains("Error fetching PublicKey from certificate location"));
-    }
+    VerificationException exception =
+        assertThrows(VerificationException.class, () -> tokenVerifier.verify(ES256_TOKEN));
+    assertTrue(
+        exception.getMessage().contains("Error fetching PublicKey from certificate location"));
   }
 
   @Test
@@ -189,12 +177,9 @@ class TokenVerifierTest {
             .setClock(FIXED_CLOCK)
             .setHttpTransportFactory(httpTransportFactory)
             .build();
-    try {
-      tokenVerifier.verify(ES256_TOKEN);
-      fail("Should have failed verification");
-    } catch (TokenVerifier.VerificationException e) {
-      assertTrue(e.getMessage().contains("Error fetching PublicKey"));
-    }
+    VerificationException e =
+        assertThrows(VerificationException.class, () -> tokenVerifier.verify(ES256_TOKEN));
+    assertTrue(e.getMessage().contains("Error fetching PublicKey"));
   }
 
   @Test
@@ -230,19 +215,12 @@ class TokenVerifierTest {
             .setHttpTransportFactory(transportFactory)
             .build();
 
-    try {
-      tokenVerifier.verify(ES256_TOKEN);
-      fail("Should not be able to continue without exception.");
-    } catch (TokenVerifier.VerificationException exception) {
-      assertTrue(exception.getMessage().contains("Error fetching PublicKey"));
-    }
+    VerificationException exception =
+        assertThrows(VerificationException.class, () -> tokenVerifier.verify(ES256_TOKEN));
+    assertTrue(exception.getMessage().contains("Error fetching PublicKey"));
 
-    try {
-      tokenVerifier.verify(ES256_TOKEN);
-      fail("Should not be able to continue without exception.");
-    } catch (TokenVerifier.VerificationException exception) {
-      assertTrue(exception.getCause().getMessage().contains("No valid public key"));
-    }
+    exception = assertThrows(VerificationException.class, () -> tokenVerifier.verify(ES256_TOKEN));
+    assertTrue(exception.getCause().getMessage().contains("No valid public key"));
 
     assertNotNull(tokenVerifier.verify(ES256_TOKEN));
   }

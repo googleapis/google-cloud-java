@@ -187,5 +187,85 @@ public interface TerraformBlueprintOrBuilder
    */
   com.google.cloud.config.v1.TerraformVariable getInputValuesOrThrow(java.lang.String key);
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of input variable names in this blueprint to configurations
+   * for importing values from external sources.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getExternalValuesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of input variable names in this blueprint to configurations
+   * for importing values from external sources.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsExternalValues(java.lang.String key);
+
+  /** Use {@link #getExternalValuesMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.cloud.config.v1.ExternalValueSource>
+      getExternalValues();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of input variable names in this blueprint to configurations
+   * for importing values from external sources.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, com.google.cloud.config.v1.ExternalValueSource>
+      getExternalValuesMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of input variable names in this blueprint to configurations
+   * for importing values from external sources.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  com.google.cloud.config.v1.ExternalValueSource getExternalValuesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.config.v1.ExternalValueSource defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of input variable names in this blueprint to configurations
+   * for importing values from external sources.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.config.v1.ExternalValueSource getExternalValuesOrThrow(java.lang.String key);
+
   com.google.cloud.config.v1.TerraformBlueprint.SourceCase getSourceCase();
 }

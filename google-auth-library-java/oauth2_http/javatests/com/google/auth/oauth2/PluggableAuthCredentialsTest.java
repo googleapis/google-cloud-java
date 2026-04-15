@@ -36,7 +36,6 @@ import static com.google.auth.oauth2.MockExternalAccountCredentialsTransport.SER
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
@@ -94,7 +93,7 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
             .setExecutableHandler(options -> "pluggableAuthToken")
             .build();
     String subjectToken = credential.retrieveSubjectToken();
-    assertEquals(subjectToken, "pluggableAuthToken");
+    assertEquals("pluggableAuthToken", subjectToken);
   }
 
   @Test
@@ -119,24 +118,24 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
 
     String subjectToken = credential.retrieveSubjectToken();
 
-    assertEquals(subjectToken, "pluggableAuthToken");
+    assertEquals("pluggableAuthToken", subjectToken);
 
     // Validate that the correct options were passed to the executable handler.
     ExecutableOptions options = providedOptions[0];
-    assertEquals(options.getExecutableCommand(), command);
+    assertEquals(command, options.getExecutableCommand());
     assertEquals(options.getExecutableTimeoutMs(), Integer.parseInt(timeout));
-    assertEquals(options.getOutputFilePath(), outputFile);
+    assertEquals(outputFile, options.getOutputFilePath());
 
     Map<String, String> envMap = options.getEnvironmentMap();
-    assertEquals(envMap.size(), 5);
+    assertEquals(5, envMap.size());
     assertEquals(envMap.get("GOOGLE_EXTERNAL_ACCOUNT_AUDIENCE"), credential.getAudience());
     assertEquals(
         envMap.get("GOOGLE_EXTERNAL_ACCOUNT_TOKEN_TYPE"), credential.getSubjectTokenType());
-    assertEquals(envMap.get("GOOGLE_EXTERNAL_ACCOUNT_INTERACTIVE"), "0");
+    assertEquals("0", envMap.get("GOOGLE_EXTERNAL_ACCOUNT_INTERACTIVE"));
     assertEquals(
         envMap.get("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL"),
         credential.getServiceAccountEmail());
-    assertEquals(envMap.get("GOOGLE_EXTERNAL_ACCOUNT_OUTPUT_FILE"), outputFile);
+    assertEquals(outputFile, envMap.get("GOOGLE_EXTERNAL_ACCOUNT_OUTPUT_FILE"));
   }
 
   @Test
@@ -159,20 +158,20 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
 
     String subjectToken = credential.retrieveSubjectToken();
 
-    assertEquals(subjectToken, "pluggableAuthToken");
+    assertEquals("pluggableAuthToken", subjectToken);
 
     // Validate that the correct options were passed to the executable handler.
     ExecutableOptions options = providedOptions[0];
-    assertEquals(options.getExecutableCommand(), command);
-    assertEquals(options.getExecutableTimeoutMs(), DEFAULT_EXECUTABLE_TIMEOUT_MS);
+    assertEquals(command, options.getExecutableCommand());
+    assertEquals(DEFAULT_EXECUTABLE_TIMEOUT_MS, options.getExecutableTimeoutMs());
     assertNull(options.getOutputFilePath());
 
     Map<String, String> envMap = options.getEnvironmentMap();
-    assertEquals(envMap.size(), 3);
+    assertEquals(3, envMap.size());
     assertEquals(envMap.get("GOOGLE_EXTERNAL_ACCOUNT_AUDIENCE"), credential.getAudience());
     assertEquals(
         envMap.get("GOOGLE_EXTERNAL_ACCOUNT_TOKEN_TYPE"), credential.getSubjectTokenType());
-    assertEquals(envMap.get("GOOGLE_EXTERNAL_ACCOUNT_INTERACTIVE"), "0");
+    assertEquals("0", envMap.get("GOOGLE_EXTERNAL_ACCOUNT_INTERACTIVE"));
     assertNull(envMap.get("GOOGLE_EXTERNAL_ACCOUNT_IMPERSONATED_EMAIL"));
     assertNull(envMap.get("GOOGLE_EXTERNAL_ACCOUNT_OUTPUT_FILE"));
   }
@@ -198,7 +197,7 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
     // Validate that the correct subject token was passed to STS.
     Map<String, String> query =
         TestUtils.parseQuery(transportFactory.transport.getRequests().get(0).getContentAsString());
-    assertEquals(query.get("subject_token"), "pluggableAuthToken");
+    assertEquals("pluggableAuthToken", query.get("subject_token"));
 
     // Validate metrics header is set correctly on the sts request.
     Map<String, List<String>> headers =
@@ -239,7 +238,7 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
     // Validate that the correct subject token was passed to STS.
     Map<String, String> query =
         TestUtils.parseQuery(transportFactory.transport.getRequests().get(0).getContentAsString());
-    assertEquals(query.get("subject_token"), "pluggableAuthToken");
+    assertEquals("pluggableAuthToken", query.get("subject_token"));
 
     // Validate metrics header is set correctly on the sts request.
     Map<String, List<String>> headers =
@@ -265,7 +264,7 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
             .setServiceAccountImpersonationUrl(
                 transportFactory.transport.getServiceAccountImpersonationUrl())
             .setServiceAccountImpersonationOptions(
-                ExternalAccountCredentialsTest.buildServiceAccountImpersonationOptions(2800))
+                ExternalAccountCredentialsTest.buildServiceAccountImpersonationOptions())
             .setHttpTransportFactory(transportFactory)
             .build();
 
@@ -304,9 +303,9 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
 
     PluggableAuthCredentialSource credentialSource = new PluggableAuthCredentialSource(source);
 
-    assertEquals(credentialSource.getCommand(), "/path/to/executable");
-    assertEquals(credentialSource.getTimeoutMs(), 10000);
-    assertEquals(credentialSource.getOutputFilePath(), "/path/to/output/file");
+    assertEquals("/path/to/executable", credentialSource.getCommand());
+    assertEquals(10000, credentialSource.getTimeoutMs());
+    assertEquals("/path/to/output/file", credentialSource.getOutputFilePath());
   }
 
   @Test
@@ -317,8 +316,8 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
     executable.put("command", "command");
     PluggableAuthCredentialSource credentialSource = new PluggableAuthCredentialSource(source);
 
-    assertEquals(credentialSource.getCommand(), "command");
-    assertEquals(credentialSource.getTimeoutMs(), DEFAULT_EXECUTABLE_TIMEOUT_MS);
+    assertEquals("command", credentialSource.getCommand());
+    assertEquals(DEFAULT_EXECUTABLE_TIMEOUT_MS, credentialSource.getTimeoutMs());
     assertNull(credentialSource.getOutputFilePath());
   }
 
@@ -335,16 +334,14 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
     for (int value : possibleOutOfRangeValues) {
       executable.put("timeout_millis", value);
 
-      try {
-        new PluggableAuthCredentialSource(source);
-        fail("Should not be able to continue without exception.");
-      } catch (IllegalArgumentException exception) {
-        assertEquals(
-            String.format(
-                "The executable timeout must be between %s and %s milliseconds.",
-                MINIMUM_EXECUTABLE_TIMEOUT_MS, MAXIMUM_EXECUTABLE_TIMEOUT_MS),
-            exception.getMessage());
-      }
+      IllegalArgumentException exception =
+          assertThrows(
+              IllegalArgumentException.class, () -> new PluggableAuthCredentialSource(source));
+      assertEquals(
+          String.format(
+              "The executable timeout must be between %s and %s milliseconds.",
+              MINIMUM_EXECUTABLE_TIMEOUT_MS, MAXIMUM_EXECUTABLE_TIMEOUT_MS),
+          exception.getMessage());
     }
   }
 
@@ -362,21 +359,21 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
       executable.put("timeout_millis", value);
       PluggableAuthCredentialSource credentialSource = new PluggableAuthCredentialSource(source);
 
-      assertEquals(credentialSource.getCommand(), "command");
-      assertEquals(credentialSource.getTimeoutMs(), 10000);
+      assertEquals("command", credentialSource.getCommand());
+      assertEquals(10000, credentialSource.getTimeoutMs());
       assertNull(credentialSource.getOutputFilePath());
     }
   }
 
   @Test
   void pluggableAuthCredentialSource_missingExecutableField_throws() {
-    try {
-      new PluggableAuthCredentialSource(new HashMap<>());
-      fail("Should not be able to continue without exception.");
-    } catch (IllegalArgumentException exception) {
-      assertEquals(
-          "Invalid credential source for PluggableAuth credentials.", exception.getMessage());
-    }
+    HashMap<String, Object> credentialSourceMap = new HashMap<>();
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> new PluggableAuthCredentialSource(credentialSourceMap));
+    assertEquals(
+        "Invalid credential source for PluggableAuth credentials.", exception.getMessage());
   }
 
   @Test
@@ -385,18 +382,16 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
     Map<String, Object> executable = new HashMap<>();
     source.put("executable", executable);
 
-    try {
-      new PluggableAuthCredentialSource(source);
-      fail("Should not be able to continue without exception.");
-    } catch (IllegalArgumentException exception) {
-      assertEquals(
-          "The PluggableAuthCredentialSource is missing the required 'command' field.",
-          exception.getMessage());
-    }
+    IllegalArgumentException exception =
+        assertThrows(
+            IllegalArgumentException.class, () -> new PluggableAuthCredentialSource(source));
+    assertEquals(
+        "The PluggableAuthCredentialSource is missing the required 'command' field.",
+        exception.getMessage());
   }
 
   @Test
-  void builder_allFields() throws IOException {
+  void builder_allFields() {
     List<String> scopes = Arrays.asList("scope1", "scope2");
 
     PluggableAuthCredentialSource source = buildCredentialSource();
@@ -436,7 +431,7 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void builder_missingUniverseDomain_defaults() throws IOException {
+  void builder_missingUniverseDomain_defaults() {
     List<String> scopes = Arrays.asList("scope1", "scope2");
 
     PluggableAuthCredentialSource source = buildCredentialSource();
@@ -475,7 +470,7 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void newBuilder_allFields() throws IOException {
+  void newBuilder_allFields() {
     List<String> scopes = Arrays.asList("scope1", "scope2");
 
     PluggableAuthCredentialSource source = buildCredentialSource();
@@ -517,7 +512,7 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void newBuilder_noUniverseDomain_defaults() throws IOException {
+  void newBuilder_noUniverseDomain_defaults() {
     List<String> scopes = Arrays.asList("scope1", "scope2");
 
     PluggableAuthCredentialSource source = buildCredentialSource();
@@ -558,7 +553,7 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void createdScoped_clonedCredentialWithAddedScopes() throws IOException {
+  void createdScoped_clonedCredentialWithAddedScopes() {
     PluggableAuthCredentials credentials =
         PluggableAuthCredentials.newBuilder(CREDENTIAL)
             .setExecutableHandler(options -> "pluggableAuthToken")
@@ -591,7 +586,7 @@ class PluggableAuthCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void serialize() throws IOException, ClassNotFoundException {
+  void serialize() {
     PluggableAuthCredentials testCredentials =
         PluggableAuthCredentials.newBuilder(CREDENTIAL)
             .setExecutableHandler(options -> "pluggableAuthToken")

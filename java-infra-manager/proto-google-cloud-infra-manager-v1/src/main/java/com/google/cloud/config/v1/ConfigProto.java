@@ -61,9 +61,21 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_config_v1_TerraformBlueprint_InputValuesEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_TerraformBlueprint_ExternalValuesEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_TerraformBlueprint_ExternalValuesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_config_v1_TerraformVariable_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_config_v1_TerraformVariable_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ExternalValueSource_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ExternalValueSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_DeploymentSource_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_DeploymentSource_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_config_v1_ApplyResults_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -104,6 +116,18 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_config_v1_CreateDeploymentRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_config_v1_CreateDeploymentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_CreateDeploymentGroupRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_CreateDeploymentGroupRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_UpdateDeploymentGroupRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_UpdateDeploymentGroupRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_DeleteDeploymentGroupRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_DeleteDeploymentGroupRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_config_v1_UpdateDeploymentRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -328,6 +352,78 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_cloud_config_v1_UpdateAutoMigrationConfigRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_config_v1_UpdateAutoMigrationConfigRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_DeploymentGroup_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_DeploymentGroup_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_DeploymentGroup_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_DeploymentGroup_LabelsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_DeploymentGroup_AnnotationsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_DeploymentGroup_AnnotationsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_DeploymentUnit_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_DeploymentUnit_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_DeploymentSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_DeploymentSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_GetDeploymentGroupRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_GetDeploymentGroupRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ListDeploymentGroupsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ListDeploymentGroupsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ListDeploymentGroupsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ListDeploymentGroupsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ProvisionDeploymentGroupRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ProvisionDeploymentGroupRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ProvisionDeploymentGroupRequest_DeploymentSpecsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ProvisionDeploymentGroupRequest_DeploymentSpecsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_DeprovisionDeploymentGroupRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_DeprovisionDeploymentGroupRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_DeploymentOperationSummary_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_DeploymentOperationSummary_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_DeploymentUnitProgress_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_DeploymentUnitProgress_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ProvisionDeploymentGroupOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ProvisionDeploymentGroupOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_DeploymentGroupRevision_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_DeploymentGroupRevision_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_GetDeploymentGroupRevisionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_GetDeploymentGroupRevisionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ListDeploymentGroupRevisionsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ListDeploymentGroupRevisionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_config_v1_ListDeploymentGroupRevisionsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_config_v1_ListDeploymentGroupRevisionsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -423,24 +519,38 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "\020_service_accountB\034\n"
           + "\032_import_existing_resourcesB\016\n"
           + "\014_worker_poolB\030\n"
-          + "\026_tf_version_constraint\"\244\002\n"
+          + "\026_tf_version_constraint\"\346\003\n"
           + "\022TerraformBlueprint\022\024\n\n"
           + "gcs_source\030\001 \001(\tH\000\0227\n\n"
           + "git_source\030\002 \001(\0132!.google.cloud.config.v1.GitSourceH\000\022V\n"
           + "\014input_values\030\004 \003("
-          + "\0132;.google.cloud.config.v1.TerraformBlueprint.InputValuesEntryB\003\340A\001\032]\n"
+          + "\0132;.google.cloud.config.v1.TerraformBlueprint.InputValuesEntryB\003\340A\001\022\\\n"
+          + "\017external_values\030\005 \003(\0132>.google.cloud.config.v1.Te"
+          + "rraformBlueprint.ExternalValuesEntryB\003\340A\001\032]\n"
           + "\020InputValuesEntry\022\013\n"
           + "\003key\030\001 \001(\t\0228\n"
-          + "\005value\030\002 \001(\0132).go"
-          + "ogle.cloud.config.v1.TerraformVariable:\0028\001B\010\n"
+          + "\005value\030\002"
+          + " \001(\0132).google.cloud.config.v1.TerraformVariable:\0028\001\032b\n"
+          + "\023ExternalValuesEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022:\n"
+          + "\005value\030\002"
+          + " \001(\0132+.google.cloud.config.v1.ExternalValueSource:\0028\001B\010\n"
           + "\006source\"E\n"
           + "\021TerraformVariable\0220\n"
-          + "\013input_value\030\005 \001(\0132\026.google.protobuf.ValueB\003\340A\001\"\317\001\n"
+          + "\013input_value\030\005 \001(\0132\026.google.protobuf.ValueB\003\340A\001\"f\n"
+          + "\023ExternalValueSource\022E\n"
+          + "\021deployment_source\030\001"
+          + " \001(\0132(.google.cloud.config.v1.DeploymentSourceH\000B\010\n"
+          + "\006source\"j\n"
+          + "\020DeploymentSource\022<\n\n"
+          + "deployment\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " config.googleapis.com/Deployment\022\030\n"
+          + "\013output_name\030\002 \001(\tB\003\340A\002\"\317\001\n"
           + "\014ApplyResults\022\017\n"
           + "\007content\030\001 \001(\t\022\021\n"
           + "\tartifacts\030\002 \001(\t\022B\n"
-          + "\007outputs\030\003 \003(\01321.goog"
-          + "le.cloud.config.v1.ApplyResults.OutputsEntry\032W\n"
+          + "\007outputs\030\003 \003(\0132"
+          + "1.google.cloud.config.v1.ApplyResults.OutputsEntry\032W\n"
           + "\014OutputsEntry\022\013\n"
           + "\003key\030\001 \001(\t\0226\n"
           + "\005value\030\002 \001(\0132\'.google.cloud.config.v1.TerraformOutput:\0028\001\"K\n"
@@ -479,9 +589,33 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
           + "!locations.googleapis.com/Location\022\032\n\r"
           + "deployment_id\030\002 \001(\tB\003\340A\002\022;\n\n"
-          + "deployment\030\003"
-          + " \001(\0132\".google.cloud.config.v1.DeploymentB\003\340A\002\022\027\n\n"
-          + "request_id\030\004 \001(\tB\003\340A\001\"\245\001\n"
+          + "deployment\030\003 \001(\0132\"."
+          + "google.cloud.config.v1.DeploymentB\003\340A\002\022\027\n\n"
+          + "request_id\030\004 \001(\tB\003\340A\001\"\344\001\n"
+          + "\034CreateDeploymentGroupRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022 \n"
+          + "\023deployment_group_id\030\002 \001(\tB\003\340A\002\022F\n"
+          + "\020deployment_group\030\003"
+          + " \001(\0132\'.google.cloud.config.v1.DeploymentGroupB\003\340A\002\022\037\n\n"
+          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\275\001\n"
+          + "\034UpdateDeploymentGroupRequest\0224\n"
+          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022F\n"
+          + "\020deployment_group\030\002"
+          + " \001(\0132\'.google.cloud.config.v1.DeploymentGroupB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\300\003\n"
+          + "\034DeleteDeploymentGroupRequest\022;\n"
+          + "\004name\030\001 \001(\tB-\340A\002\372A\'\n"
+          + "%config.googleapis.com/DeploymentGroup\022\037\n\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\022\n"
+          + "\005force\030\003 \001(\010B\003\340A\001\022x\n"
+          + "\033deployment_reference_policy\030\004 \001(\0162N.google."
+          + "cloud.config.v1.DeleteDeploymentGroupRequest.DeploymentReferencePolicyB\003\340A\001\"\263\001\n"
+          + "\031DeploymentReferencePolicy\022+\n"
+          + "\'DEPLOYMENT_REFERENCE_POLICY_UNSPECIFIED\020\000\022 \n"
+          + "\034FAIL_IF_ANY_REFERENCES_EXIST\020\001\022%\n"
+          + "!FAIL_IF_METADATA_REFERENCES_EXIST\020\002\022 \n"
+          + "\034IGNORE_DEPLOYMENT_REFERENCES\020\003\"\245\001\n"
           + "\027UpdateDeploymentRequest\0224\n"
           + "\013update_mask\030\001"
           + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022;\n\n"
@@ -498,12 +632,15 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "\014DeletePolicy\022\035\n"
           + "\031DELETE_POLICY_UNSPECIFIED\020\000\022\n\n"
           + "\006DELETE\020\001\022\013\n"
-          + "\007ABANDON\020\002\"\301\003\n"
+          + "\007ABANDON\020\002\"\270\004\n"
           + "\021OperationMetadata\022W\n"
           + "\023deployment_metadata\030\010"
           + " \001(\01323.google.cloud.config.v1.DeploymentOperationMetadataB\003\340A\003H\000\022Q\n"
           + "\020preview_metadata\030\t"
-          + " \001(\01320.google.cloud.config.v1.PreviewOperationMetadataB\003\340A\003H\000\0224\n"
+          + " \001(\01320.google.cloud.config.v1.PreviewOperationMetadataB\003\340A\003H\000\022u\n"
+          + "#provision_deployment_group_metadata\030\n"
+          + " \001(\0132A.go"
+          + "ogle.cloud.config.v1.ProvisionDeploymentGroupOperationMetadataB\003\340A\003H\000\0224\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
           + "\006target\030\003 \001(\tB\003\340A\003\022\021\n"
@@ -518,13 +655,14 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\001 \001(\t\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022<\n"
-          + "\006action\030\004 \001(\0162"
-          + "\'.google.cloud.config.v1.Revision.ActionB\003\340A\003\022:\n"
+          + "\006action\030\004 \001(\0162\'"
+          + ".google.cloud.config.v1.Revision.ActionB\003\340A\003\022:\n"
           + "\005state\030\005"
           + " \001(\0162&.google.cloud.config.v1.Revision.StateB\003\340A\003\022@\n\r"
           + "apply_results\030\007"
           + " \001(\0132$.google.cloud.config.v1.ApplyResultsB\003\340A\003\022\031\n"
-          + "\014state_detail\030\010 \001(\tB\003\340A\003\022C\n\n"
+          + "\014state_detail\030\010 \001(\tB\003\340A\003\022C\n"
+          + "\n"
           + "error_code\030\t"
           + " \001(\0162*.google.cloud.config.v1.Revision.ErrorCodeB\003\340A\003\022\022\n"
           + "\005build\030\n"
@@ -563,8 +701,8 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "\026APPLY_BUILD_RUN_FAILED\020\005\022\033\n"
           + "\027QUOTA_VALIDATION_FAILED\020\007\022\'\n"
           + "#EXTERNAL_VALUE_SOURCE_IMPORT_FAILED\020\010:z\352Aw\n"
-          + "\036config.googleapis.com/Revision\022Uprojects/{project}/locations/{location}/deplo"
-          + "yments/{deployment}/revisions/{revision}B\013\n"
+          + "\036config.googleapis.com/Revision\022Uprojects/{project}/locations/{location}/deploy"
+          + "ments/{deployment}/revisions/{revision}B\013\n"
           + "\tblueprint\"\211\001\n"
           + "\016TerraformError\022\030\n"
           + "\020resource_address\030\001 \001(\t\022\032\n"
@@ -579,8 +717,8 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "_directoryB\006\n"
           + "\004_ref\"\237\004\n"
           + "\033DeploymentOperationMetadata\022P\n"
-          + "\004step\030\001 \001(\0162"
-          + "B.google.cloud.config.v1.DeploymentOperationMetadata.DeploymentStep\022;\n\r"
+          + "\004step\030\001 \001(\0162B"
+          + ".google.cloud.config.v1.DeploymentOperationMetadata.DeploymentStep\022;\n\r"
           + "apply_results\030\002 \001(\0132$.google.cloud.config.v1.ApplyResults\022\022\n"
           + "\005build\030\003 \001(\tB\003\340A\003\022\021\n"
           + "\004logs\030\004 \001(\tB\003\340A\003\"\311\002\n"
@@ -601,14 +739,14 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "\030RUNNING_QUOTA_VALIDATION\020\014\"\330\005\n"
           + "\010Resource\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022J\n"
-          + "\016terraform_info\030\002 \001(\0132-.go"
-          + "ogle.cloud.config.v1.ResourceTerraformInfoB\003\340A\003\022H\n\n"
-          + "cai_assets\030\003 \003(\0132/.google.clo"
-          + "ud.config.v1.Resource.CaiAssetsEntryB\003\340A\003\022<\n"
+          + "\016terraform_info\030\002 \001(\0132-.goo"
+          + "gle.cloud.config.v1.ResourceTerraformInfoB\003\340A\003\022H\n\n"
+          + "cai_assets\030\003 \003(\0132/.google.clou"
+          + "d.config.v1.Resource.CaiAssetsEntryB\003\340A\003\022<\n"
           + "\006intent\030\004"
           + " \001(\0162\'.google.cloud.config.v1.Resource.IntentB\003\340A\003\022:\n"
-          + "\005state\030\005 \001(\0162&"
-          + ".google.cloud.config.v1.Resource.StateB\003\340A\003\032Y\n"
+          + "\005state\030\005 \001(\0162&."
+          + "google.cloud.config.v1.Resource.StateB\003\340A\003\032Y\n"
           + "\016CaiAssetsEntry\022\013\n"
           + "\003key\030\001 \001(\t\0226\n"
           + "\005value\030\002 \001(\0132\'.google.cloud.config.v1.ResourceCAIInfo:\0028\001\"a\n"
@@ -625,8 +763,8 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "\013IN_PROGRESS\020\002\022\016\n\n"
           + "RECONCILED\020\003\022\n\n"
           + "\006FAILED\020\004:\220\001\352A\214\001\n"
-          + "\036config.googleapis.com/Resource\022jprojects/{project}/locations/{locati"
-          + "on}/deployments/{deployment}/revisions/{revision}/resources/{resource}\"B\n"
+          + "\036config.googleapis.com/Resource\022jprojects/{project}/locations/{locatio"
+          + "n}/deployments/{deployment}/revisions/{revision}/resources/{resource}\"B\n"
           + "\025ResourceTerraformInfo\022\017\n"
           + "\007address\030\001 \001(\t\022\014\n"
           + "\004type\030\002 \001(\t\022\n\n"
@@ -687,14 +825,14 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + " \001(\0132*.google.cloud.config.v1.TerraformBlueprintH\000\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022@\n"
-          + "\006labels\030\003 \003"
-          + "(\0132+.google.cloud.config.v1.Preview.LabelsEntryB\003\340A\001\0229\n"
+          + "\006labels\030\003 \003("
+          + "\0132+.google.cloud.config.v1.Preview.LabelsEntryB\003\340A\001\0229\n"
           + "\005state\030\004"
           + " \001(\0162%.google.cloud.config.v1.Preview.StateB\003\340A\003\022<\n\n"
           + "deployment\030\005 \001(\tB(\340A\001\372A\"\n"
           + " config.googleapis.com/Deployment\022F\n"
-          + "\014preview_mode\030\017 \001(\0162+.go"
-          + "ogle.cloud.config.v1.Preview.PreviewModeB\003\340A\001\022B\n"
+          + "\014preview_mode\030\017 \001(\0162+.goo"
+          + "gle.cloud.config.v1.Preview.PreviewModeB\003\340A\001\022B\n"
           + "\017service_account\030\007 \001(\tB)\340A\002\372A#\n"
           + "!iam.googleapis.com/ServiceAccount\022&\n"
           + "\024artifacts_gcs_bucket\030\010 \001(\tB\003\340A\001H\001\210\001\001\022F\n"
@@ -707,13 +845,13 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "\ttf_errors\030\r"
           + " \003(\0132&.google.cloud.config.v1.TerraformErrorB\003\340A\003\022\027\n\n"
           + "error_logs\030\016 \001(\tB\003\340A\003\022H\n"
-          + "\021preview_artifacts\030\020 \001(\0132(.g"
-          + "oogle.cloud.config.v1.PreviewArtifactsB\003\340A\003\022\021\n"
+          + "\021preview_artifacts\030\020 \001(\0132(.go"
+          + "ogle.cloud.config.v1.PreviewArtifactsB\003\340A\003\022\021\n"
           + "\004logs\030\021 \001(\tB\003\340A\003\022\027\n\n"
           + "tf_version\030\022 \001(\tB\003\340A\003\022\'\n"
           + "\025tf_version_constraint\030\023 \001(\tB\003\340A\001H\003\210\001\001\022J\n"
-          + "\013annotations\030\024 \003(\01320.google.c"
-          + "loud.config.v1.Preview.AnnotationsEntryB\003\340A\001\022D\n"
+          + "\013annotations\030\024 \003(\01320.google.cl"
+          + "oud.config.v1.Preview.AnnotationsEntryB\003\340A\001\022D\n"
           + "\017provider_config\030\025"
           + " \001(\0132&.google.cloud.config.v1.ProviderConfigB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
@@ -744,8 +882,8 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "\030PREVIEW_BUILD_API_FAILED\020\005\022\034\n"
           + "\030PREVIEW_BUILD_RUN_FAILED\020\006\022\'\n"
           + "#EXTERNAL_VALUE_SOURCE_IMPORT_FAILED\020\007:q\352An\n"
-          + "\035config.googleapis.com/Preview\022:projects/{project}/locations/{loc"
-          + "ation}/previews/{preview}*\010previews2\007previewB\013\n"
+          + "\035config.googleapis.com/Preview\022:projects/{project}/locations/{loca"
+          + "tion}/previews/{preview}*\010previews2\007previewB\013\n"
           + "\tblueprintB\027\n"
           + "\025_artifacts_gcs_bucketB\016\n"
           + "\014_worker_poolB\030\n"
@@ -777,8 +915,8 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
           + "!locations.googleapis.com/Location\022\027\n\n"
           + "preview_id\030\002 \001(\tB\003\340A\001\0225\n"
-          + "\007preview\030\003 "
-          + "\001(\0132\037.google.cloud.config.v1.PreviewB\003\340A\002\022\037\n\n"
+          + "\007preview\030\003 \001"
+          + "(\0132\037.google.cloud.config.v1.PreviewB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"H\n"
           + "\021GetPreviewRequest\0223\n"
           + "\004name\030\001 \001(\tB%\340A\002\372A\037\n"
@@ -836,9 +974,9 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "\006ACTIVE\020\001\022\016\n\n"
           + "DEPRECATED\020\002\022\014\n"
           + "\010OBSOLETE\020\003:\240\001\352A\234\001\n"
-          + "&config.googleapis.com/TerraformVersion\022Mprojects/{project}/locations/{loca"
-          + "tion}/terraformVersions/{terraform_versi"
-          + "on}*\021terraformVersions2\020terraformVersionB\021\n"
+          + "&config.googleapis.com/TerraformVersion\022Mprojects/{project}/locations/{locat"
+          + "ion}/terraformVersions/{terraform_versio"
+          + "n}*\021terraformVersions2\020terraformVersionB\021\n"
           + "\017_deprecate_timeB\020\n"
           + "\016_obsolete_time\"\217\001\n"
           + "\033ResourceChangeTerraformInfo\022\024\n"
@@ -851,10 +989,10 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\001 \001(\tB\003\340A\010\022P\n"
           + "\016terraform_info\030\002"
           + " \001(\01323.google.cloud.config.v1.ResourceChangeTerraformInfoB\003\340A\003\022B\n"
-          + "\006intent\030\003 \001(\0162"
-          + "-.google.cloud.config.v1.ResourceChange.IntentB\003\340A\003\022E\n"
-          + "\020property_changes\030\004 \003(\0132&."
-          + "google.cloud.config.v1.PropertyChangeB\003\340A\003\"a\n"
+          + "\006intent\030\003 \001(\0162-"
+          + ".google.cloud.config.v1.ResourceChange.IntentB\003\340A\003\022E\n"
+          + "\020property_changes\030\004 \003(\0132&.g"
+          + "oogle.cloud.config.v1.PropertyChangeB\003\340A\003\"a\n"
           + "\006Intent\022\026\n"
           + "\022INTENT_UNSPECIFIED\020\000\022\n\n"
           + "\006CREATE\020\001\022\n\n"
@@ -862,14 +1000,15 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "\006DELETE\020\003\022\014\n"
           + "\010RECREATE\020\004\022\r\n"
           + "\tUNCHANGED\020\005:\251\001\352A\245\001\n"
-          + "$config.googleapis.com/ResourceChange\022\\projects/{pr"
-          + "oject}/locations/{location}/previews/{pr"
-          + "eview}/resourceChanges/{resource_change}*\017resourceChanges2\016resourceChange\"\305\001\n"
+          + "$config.googleapis.com/ResourceChange\022\\projects/{pro"
+          + "ject}/locations/{location}/previews/{pre"
+          + "view}/resourceChanges/{resource_change}*\017resourceChanges2\016resourceChange\"\305\001\n"
           + "\016PropertyChange\022\021\n"
           + "\004path\030\001 \001(\tB\003\340A\003\022#\n"
           + "\026before_sensitive_paths\030\002 \003(\tB\003\340A\003\022+\n"
           + "\006before\030\003 \001(\0132\026.google.protobuf.ValueB\003\340A\003\022\"\n"
-          + "\025after_sensitive_paths\030\004 \003(\tB\003\340A\003\022*\n"
+          + "\025afte",
+      "r_sensitive_paths\030\004 \003(\tB\003\340A\003\022*\n"
           + "\005after\030\005 \001(\0132\026.google.protobuf.ValueB\003\340A\003\"\260\001\n"
           + "\032ListResourceChangesRequest\0225\n"
           + "\006parent\030\001 \001(\tB%\340A\002\372A\037\n"
@@ -893,12 +1032,12 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "\010provider\030\004 \001(\tB\003\340A\003\"\337\002\n\r"
           + "ResourceDrift\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022O\n"
-          + "\016terraform_info\030\002 \001(\01322.google.clo"
-          + "ud.config.v1.ResourceDriftTerraformInfoB\003\340A\003\022C\n"
-          + "\017property_drifts\030\003 \003(\0132%.google.c"
-          + "loud.config.v1.PropertyDriftB\003\340A\003:\244\001\352A\240\001\n"
-          + "#config.googleapis.com/ResourceDrift\022Zprojects/{project}/locations/{location}/p"
-          + "reviews/{preview}/resourceDrifts/{resource_drift}*\016resourceDrifts2\r"
+          + "\016terraform_info\030\002 \001(\01322.google.clou"
+          + "d.config.v1.ResourceDriftTerraformInfoB\003\340A\003\022C\n"
+          + "\017property_drifts\030\003"
+          + " \003(\0132%.google.cloud.config.v1.PropertyDriftB\003\340A\003:\244\001\352A\240\001\n"
+          + "#config.googleapis.com/ResourceDrift\022Zprojects/{project}/locations/{location}/pr"
+          + "eviews/{preview}/resourceDrifts/{resource_drift}*\016resourceDrifts2\r"
           + "resourceDrift\"\304\001\n\r"
           + "PropertyDrift\022\021\n"
           + "\004path\030\001 \001(\tB\003\340A\003\022#\n"
@@ -914,188 +1053,356 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\212\001\n"
           + "\032ListResourceDriftsResponse\022>\n"
-          + "\017resource_drifts\030\001 \003(\0132%.goog",
-      "le.cloud.config.v1.ResourceDrift\022\027\n\017next"
-          + "_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"T"
-          + "\n\027GetResourceDriftRequest\0229\n\004name\030\001 \001(\tB"
-          + "+\340A\002\372A%\n#config.googleapis.com/ResourceD"
-          + "rift\"\301\001\n\016ProviderConfig\022T\n\013source_type\030\001"
-          + " \001(\01625.google.cloud.config.v1.ProviderCo"
-          + "nfig.ProviderSourceB\003\340A\001H\000\210\001\001\"I\n\016Provide"
-          + "rSource\022\037\n\033PROVIDER_SOURCE_UNSPECIFIED\020\000"
-          + "\022\026\n\022SERVICE_MAINTAINED\020\001B\016\n\014_source_type"
-          + "\"`\n\035GetAutoMigrationConfigRequest\022?\n\004nam"
-          + "e\030\001 \001(\tB1\340A\002\372A+\n)config.googleapis.com/A"
-          + "utoMigrationConfig\"\235\002\n\023AutoMigrationConf"
-          + "ig\022\021\n\004name\030\001 \001(\tB\003\340A\010\0224\n\013update_time\030\002 \001"
-          + "(\0132\032.google.protobuf.TimestampB\003\340A\003\022#\n\026a"
-          + "uto_migration_enabled\030\003 \001(\010B\003\340A\001:\227\001\352A\223\001\n"
-          + ")config.googleapis.com/AutoMigrationConf"
-          + "ig\022;projects/{project}/locations/{locati"
-          + "on}/autoMigrationConfig*\024autoMigrationCo"
-          + "nfigs2\023autoMigrationConfig\"\251\001\n UpdateAut"
-          + "oMigrationConfigRequest\0224\n\013update_mask\030\001"
-          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022O\n"
-          + "\025auto_migration_config\030\002 \001(\0132+.google.cl"
-          + "oud.config.v1.AutoMigrationConfigB\003\340A\002*N"
-          + "\n\017QuotaValidation\022 \n\034QUOTA_VALIDATION_UN"
-          + "SPECIFIED\020\000\022\013\n\007ENABLED\020\001\022\014\n\010ENFORCED\020\0022\271"
-          + "-\n\006Config\022\264\001\n\017ListDeployments\022..google.c"
-          + "loud.config.v1.ListDeploymentsRequest\032/."
-          + "google.cloud.config.v1.ListDeploymentsRe"
-          + "sponse\"@\332A\006parent\202\323\344\223\0021\022//v1/{parent=pro"
-          + "jects/*/locations/*}/deployments\022\241\001\n\rGet"
-          + "Deployment\022,.google.cloud.config.v1.GetD"
-          + "eploymentRequest\032\".google.cloud.config.v"
-          + "1.Deployment\">\332A\004name\202\323\344\223\0021\022//v1/{name=p"
-          + "rojects/*/locations/*/deployments/*}\022\354\001\n"
-          + "\020CreateDeployment\022/.google.cloud.config."
-          + "v1.CreateDeploymentRequest\032\035.google.long"
-          + "running.Operation\"\207\001\312A\037\n\nDeployment\022\021Ope"
-          + "rationMetadata\332A\037parent,deployment,deplo"
-          + "yment_id\202\323\344\223\002=\"//v1/{parent=projects/*/l"
-          + "ocations/*}/deployments:\ndeployment\022\356\001\n\020"
-          + "UpdateDeployment\022/.google.cloud.config.v"
-          + "1.UpdateDeploymentRequest\032\035.google.longr"
-          + "unning.Operation\"\211\001\312A\037\n\nDeployment\022\021Oper"
-          + "ationMetadata\332A\026deployment,update_mask\202\323"
-          + "\344\223\002H2:/v1/{deployment.name=projects/*/lo"
-          + "cations/*/deployments/*}:\ndeployment\022\304\001\n"
-          + "\020DeleteDeployment\022/.google.cloud.config."
-          + "v1.DeleteDeploymentRequest\032\035.google.long"
-          + "running.Operation\"`\312A\037\n\nDeployment\022\021Oper"
-          + "ationMetadata\332A\004name\202\323\344\223\0021*//v1/{name=pr"
-          + "ojects/*/locations/*/deployments/*}\022\272\001\n\r"
-          + "ListRevisions\022,.google.cloud.config.v1.L"
-          + "istRevisionsRequest\032-.google.cloud.confi"
-          + "g.v1.ListRevisionsResponse\"L\332A\006parent\202\323\344"
-          + "\223\002=\022;/v1/{parent=projects/*/locations/*/"
-          + "deployments/*}/revisions\022\247\001\n\013GetRevision"
-          + "\022*.google.cloud.config.v1.GetRevisionReq"
-          + "uest\032 .google.cloud.config.v1.Revision\"J"
-          + "\332A\004name\202\323\344\223\002=\022;/v1/{name=projects/*/loca"
-          + "tions/*/deployments/*/revisions/*}\022\263\001\n\013G"
-          + "etResource\022*.google.cloud.config.v1.GetR"
-          + "esourceRequest\032 .google.cloud.config.v1."
-          + "Resource\"V\332A\004name\202\323\344\223\002I\022G/v1/{name=proje"
-          + "cts/*/locations/*/deployments/*/revision"
-          + "s/*/resources/*}\022\306\001\n\rListResources\022,.goo"
-          + "gle.cloud.config.v1.ListResourcesRequest"
-          + "\032-.google.cloud.config.v1.ListResourcesR"
-          + "esponse\"X\332A\006parent\202\323\344\223\002I\022G/v1/{parent=pr"
-          + "ojects/*/locations/*/deployments/*/revis"
-          + "ions/*}/resources\022\302\001\n\031ExportDeploymentSt"
-          + "atefile\0228.google.cloud.config.v1.ExportD"
-          + "eploymentStatefileRequest\032!.google.cloud"
-          + ".config.v1.Statefile\"H\202\323\344\223\002B\"=/v1/{paren"
-          + "t=projects/*/locations/*/deployments/*}:"
-          + "exportState:\001*\022\312\001\n\027ExportRevisionStatefi"
-          + "le\0226.google.cloud.config.v1.ExportRevisi"
-          + "onStatefileRequest\032!.google.cloud.config"
-          + ".v1.Statefile\"T\202\323\344\223\002N\"I/v1/{parent=proje"
-          + "cts/*/locations/*/deployments/*/revision"
-          + "s/*}:exportState:\001*\022\277\001\n\017ImportStatefile\022"
-          + "..google.cloud.config.v1.ImportStatefile"
-          + "Request\032!.google.cloud.config.v1.Statefi"
-          + "le\"Y\332A\016parent,lock_id\202\323\344\223\002B\"=/v1/{parent"
-          + "=projects/*/locations/*/deployments/*}:i"
-          + "mportState:\001*\022\250\001\n\017DeleteStatefile\022..goog"
-          + "le.cloud.config.v1.DeleteStatefileReques"
-          + "t\032\026.google.protobuf.Empty\"M\332A\004name\202\323\344\223\002@"
-          + "\";/v1/{name=projects/*/locations/*/deplo"
-          + "yments/*}:deleteState:\001*\022\310\001\n\016LockDeploym"
-          + "ent\022-.google.cloud.config.v1.LockDeploym"
-          + "entRequest\032\035.google.longrunning.Operatio"
-          + "n\"h\312A\037\n\nDeployment\022\021OperationMetadata\332A\004"
-          + "name\202\323\344\223\0029\"4/v1/{name=projects/*/locatio"
-          + "ns/*/deployments/*}:lock:\001*\022\326\001\n\020UnlockDe"
-          + "ployment\022/.google.cloud.config.v1.Unlock"
-          + "DeploymentRequest\032\035.google.longrunning.O"
-          + "peration\"r\312A\037\n\nDeployment\022\021OperationMeta"
-          + "data\332A\014name,lock_id\202\323\344\223\002;\"6/v1/{name=pro"
-          + "jects/*/locations/*/deployments/*}:unloc"
-          + "k:\001*\022\254\001\n\016ExportLockInfo\022-.google.cloud.c"
-          + "onfig.v1.ExportLockInfoRequest\032 .google."
-          + "cloud.config.v1.LockInfo\"I\332A\004name\202\323\344\223\002<\022"
-          + ":/v1/{name=projects/*/locations/*/deploy"
-          + "ments/*}:exportLock\022\313\001\n\rCreatePreview\022,."
-          + "google.cloud.config.v1.CreatePreviewRequ"
-          + "est\032\035.google.longrunning.Operation\"m\312A\034\n"
-          + "\007Preview\022\021OperationMetadata\332A\016parent,pre"
-          + "view\202\323\344\223\0027\",/v1/{parent=projects/*/locat"
-          + "ions/*}/previews:\007preview\022\225\001\n\nGetPreview"
-          + "\022).google.cloud.config.v1.GetPreviewRequ"
-          + "est\032\037.google.cloud.config.v1.Preview\";\332A"
-          + "\004name\202\323\344\223\002.\022,/v1/{name=projects/*/locati"
-          + "ons/*/previews/*}\022\250\001\n\014ListPreviews\022+.goo"
-          + "gle.cloud.config.v1.ListPreviewsRequest\032"
-          + ",.google.cloud.config.v1.ListPreviewsRes"
-          + "ponse\"=\332A\006parent\202\323\344\223\002.\022,/v1/{parent=proj"
-          + "ects/*/locations/*}/previews\022\270\001\n\rDeleteP"
-          + "review\022,.google.cloud.config.v1.DeletePr"
-          + "eviewRequest\032\035.google.longrunning.Operat"
-          + "ion\"Z\312A\034\n\007Preview\022\021OperationMetadata\332A\004n"
-          + "ame\202\323\344\223\002.*,/v1/{name=projects/*/location"
-          + "s/*/previews/*}\022\300\001\n\023ExportPreviewResult\022"
-          + "2.google.cloud.config.v1.ExportPreviewRe"
-          + "sultRequest\0323.google.cloud.config.v1.Exp"
-          + "ortPreviewResultResponse\"@\202\323\344\223\002:\"5/v1/{p"
-          + "arent=projects/*/locations/*/previews/*}"
-          + ":export:\001*\022\314\001\n\025ListTerraformVersions\0224.g"
-          + "oogle.cloud.config.v1.ListTerraformVersi"
-          + "onsRequest\0325.google.cloud.config.v1.List"
-          + "TerraformVersionsResponse\"F\332A\006parent\202\323\344\223"
-          + "\0027\0225/v1/{parent=projects/*/locations/*}/"
-          + "terraformVersions\022\271\001\n\023GetTerraformVersio"
-          + "n\0222.google.cloud.config.v1.GetTerraformV"
-          + "ersionRequest\032(.google.cloud.config.v1.T"
-          + "erraformVersion\"D\332A\004name\202\323\344\223\0027\0225/v1/{nam"
-          + "e=projects/*/locations/*/terraformVersio"
-          + "ns/*}\022\317\001\n\023ListResourceChanges\0222.google.c"
-          + "loud.config.v1.ListResourceChangesReques"
-          + "t\0323.google.cloud.config.v1.ListResourceC"
-          + "hangesResponse\"O\332A\006parent\202\323\344\223\002@\022>/v1/{pa"
-          + "rent=projects/*/locations/*/previews/*}/"
-          + "resourceChanges\022\274\001\n\021GetResourceChange\0220."
-          + "google.cloud.config.v1.GetResourceChange"
-          + "Request\032&.google.cloud.config.v1.Resourc"
-          + "eChange\"M\332A\004name\202\323\344\223\002@\022>/v1/{name=projec"
-          + "ts/*/locations/*/previews/*/resourceChan"
-          + "ges/*}\022\313\001\n\022ListResourceDrifts\0221.google.c"
-          + "loud.config.v1.ListResourceDriftsRequest"
-          + "\0322.google.cloud.config.v1.ListResourceDr"
-          + "iftsResponse\"N\332A\006parent\202\323\344\223\002?\022=/v1/{pare"
-          + "nt=projects/*/locations/*/previews/*}/re"
-          + "sourceDrifts\022\270\001\n\020GetResourceDrift\022/.goog"
-          + "le.cloud.config.v1.GetResourceDriftReque"
-          + "st\032%.google.cloud.config.v1.ResourceDrif"
-          + "t\"L\332A\004name\202\323\344\223\002?\022=/v1/{name=projects/*/l"
-          + "ocations/*/previews/*/resourceDrifts/*}\022"
-          + "\302\001\n\026GetAutoMigrationConfig\0225.google.clou"
-          + "d.config.v1.GetAutoMigrationConfigReques"
-          + "t\032+.google.cloud.config.v1.AutoMigration"
-          + "Config\"D\332A\004name\202\323\344\223\0027\0225/v1/{name=project"
-          + "s/*/locations/*/autoMigrationConfig}\022\260\002\n"
-          + "\031UpdateAutoMigrationConfig\0228.google.clou"
-          + "d.config.v1.UpdateAutoMigrationConfigReq"
-          + "uest\032\035.google.longrunning.Operation\"\271\001\312A"
-          + "(\n\023AutoMigrationConfig\022\021OperationMetadat"
-          + "a\332A!auto_migration_config,update_mask\202\323\344"
-          + "\223\002d2K/v1/{auto_migration_config.name=pro"
-          + "jects/*/locations/*/autoMigrationConfig}"
-          + ":\025auto_migration_config\032I\312A\025config.googl"
-          + "eapis.com\322A.https://www.googleapis.com/a"
-          + "uth/cloud-platformB\374\002\n\032com.google.cloud."
-          + "config.v1B\013ConfigProtoP\001Z2cloud.google.c"
-          + "om/go/config/apiv1/configpb;configpb\252\002\026G"
-          + "oogle.Cloud.Config.V1\312\002\026Google\\Cloud\\Con"
-          + "fig\\V1\352\002 Google::Cloud::ConfigService::V"
-          + "1\352AY\n!iam.googleapis.com/ServiceAccount\022"
-          + "4projects/{project}/serviceAccounts/{ser"
-          + "vice_account}\352Ai\n$cloudbuild.googleapis."
-          + "com/WorkerPool\022Aprojects/{project}/locat"
-          + "ions/{location}/workerPools/{worker_pool"
-          + "}b\006proto3"
+          + "\017resource_drifts\030\001 \003(\0132%.google.cloud.config.v1.ResourceDrift\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"T\n"
+          + "\027GetResourceDriftRequest\0229\n"
+          + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#config.googleapis.com/ResourceDrift\"\301\001\n"
+          + "\016ProviderConfig\022T\n"
+          + "\013source_type\030\001 "
+          + "\001(\01625.google.cloud.config.v1.ProviderConfig.ProviderSourceB\003\340A\001H\000\210\001\001\"I\n"
+          + "\016ProviderSource\022\037\n"
+          + "\033PROVIDER_SOURCE_UNSPECIFIED\020\000\022\026\n"
+          + "\022SERVICE_MAINTAINED\020\001B\016\n"
+          + "\014_source_type\"`\n"
+          + "\035GetAutoMigrationConfigRequest\022?\n"
+          + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
+          + ")config.googleapis.com/AutoMigrationConfig\"\235\002\n"
+          + "\023AutoMigrationConfig\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
+          + "\013update_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022#\n"
+          + "\026auto_migration_enabled\030\003 \001(\010B\003\340A\001:\227\001\352A\223\001\n"
+          + ")config.googleapis.com/AutoMigrationConfig\022;projects/{project}/locations/{locatio"
+          + "n}/autoMigrationConfig*\024autoMigrationConfigs2\023autoMigrationConfig\"\251\001\n"
+          + " UpdateAutoMigrationConfigRequest\0224\n"
+          + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022O\n"
+          + "\025auto_migration_config\030\002"
+          + " \001(\0132+.google.cloud.config.v1.AutoMigrationConfigB\003\340A\002\"\310\t\n"
+          + "\017DeploymentGroup\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\0224\n"
+          + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022H\n"
+          + "\006labels\030\004 \003(\013"
+          + "23.google.cloud.config.v1.DeploymentGroup.LabelsEntryB\003\340A\001\022R\n"
+          + "\013annotations\030\005 \003(\0132"
+          + "8.google.cloud.config.v1.DeploymentGroup.AnnotationsEntryB\003\340A\001\022A\n"
+          + "\005state\030\006 \001(\0162-."
+          + "google.cloud.config.v1.DeploymentGroup.StateB\003\340A\003\022\036\n"
+          + "\021state_description\030\007 \001(\tB\003\340A\003\022@\n"
+          + "\020deployment_units\030\010 \003(\0132&.google.cloud.config.v1.DeploymentUnit\022Z\n"
+          + "\022provisioning_state\030\t \001(\01629.google.cloud.config.v1"
+          + ".DeploymentGroup.ProvisioningStateB\003\340A\003\022+\n"
+          + "\036provisioning_state_description\030\n"
+          + " \001(\tB\003\340A\003\0223\n"
+          + "\022provisioning_error\030\013 \001(\0132\022.google.rpc.StatusB\003\340A\003\032-\n"
+          + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\0322\n"
+          + "\020AnnotationsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"|\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\014\n"
+          + "\010CREATING\020\001\022\n\n"
+          + "\006ACTIVE\020\002\022\014\n"
+          + "\010UPDATING\020\003\022\014\n"
+          + "\010DELETING\020\004\022\n\n"
+          + "\006FAILED\020\005\022\r\n"
+          + "\tSUSPENDED\020\006\022\013\n"
+          + "\007DELETED\020\007\"\265\001\n"
+          + "\021ProvisioningState\022\"\n"
+          + "\036PROVISIONING_STATE_UNSPECIFIED\020\000\022\020\n"
+          + "\014PROVISIONING\020\001\022\017\n"
+          + "\013PROVISIONED\020\002\022\027\n"
+          + "\023FAILED_TO_PROVISION\020\003\022\022\n"
+          + "\016DEPROVISIONING\020\004\022\021\n\r"
+          + "DEPROVISIONED\020\005\022\031\n"
+          + "\025FAILED_TO_DEPROVISION\020\006:\233\001\352A\227\001\n"
+          + "%config.googleapis.com/DeploymentGroup\022Kprojec"
+          + "ts/{project}/locations/{location}/deploy"
+          + "mentGroups/{deployment_group}*\020deploymentGroups2\017deploymentGroup\"\211\001\n"
+          + "\016DeploymentUnit\022\n\n"
+          + "\002id\030\001 \001(\t\022A\n\n"
+          + "deployment\030\002 \001(\tB(\340A\001\372A\"\n"
+          + " config.googleapis.com/DeploymentH\000\210\001\001\022\031\n"
+          + "\014dependencies\030\003 \003(\tB\003\340A\002B\r\n"
+          + "\013_deployment\"i\n"
+          + "\016DeploymentSpec\022\032\n\r"
+          + "deployment_id\030\001 \001(\tB\003\340A\002\022;\n\n"
+          + "deployment\030\002 \001(\0132\".google.cloud.config.v1.DeploymentB\003\340A\002\"X\n"
+          + "\031GetDeploymentGroupRequest\022;\n"
+          + "\004name\030\001 \001(\tB-\340A\002\372A\'\n"
+          + "%config.googleapis.com/DeploymentGroup\"\265\001\n"
+          + "\033ListDeploymentGroupsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\220\001\n"
+          + "\034ListDeploymentGroupsResponse\022B\n"
+          + "\021deployment_groups\030\001"
+          + " \003(\0132\'.google.cloud.config.v1.DeploymentGroup\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"\253\002\n"
+          + "\037ProvisionDeploymentGroupRequest\022;\n"
+          + "\004name\030\001 \001(\tB-\340A\002\372A\'\n"
+          + "%config.googleapis.com/DeploymentGroup\022k\n"
+          + "\020deployment_specs\030\003 \003(\0132L.google.cloud.config.v1"
+          + ".ProvisionDeploymentGroupRequest.DeploymentSpecsEntryB\003\340A\001\032^\n"
+          + "\024DeploymentSpecsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\0225\n"
+          + "\005value\030\002"
+          + " \001(\0132&.google.cloud.config.v1.DeploymentSpec:\0028\001\"\316\001\n"
+          + "!DeprovisionDeploymentGroupRequest\022;\n"
+          + "\004name\030\001 \001(\tB-\340A\002\372A\'\n"
+          + "%config.googleapis.com/DeploymentGroup\022\022\n"
+          + "\005force\030\002 \001(\010B\003\340A\001\022X\n\r"
+          + "delete_policy\030\003 \001(\0162<.google.cloud.config.v"
+          + "1.DeleteDeploymentRequest.DeletePolicyB\003\340A\001\"\333\001\n"
+          + "\032DeploymentOperationSummary\022`\n"
+          + "\017deployment_step\030\001 \001(\0162B.google.cloud.confi"
+          + "g.v1.DeploymentOperationMetadata.DeploymentStepB\003\340A\003\022\032\n"
+          + "\005build\030\002 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\021\n"
+          + "\004logs\030\003 \001(\tB\003\340A\003\022\024\n"
+          + "\007content\030\004 \001(\tB\003\340A\003\022\026\n"
+          + "\tartifacts\030\005 \001(\tB\003\340A\003\"\366\005\n"
+          + "\026DeploymentUnitProgress\022\024\n"
+          + "\007unit_id\030\001 \001(\tB\003\340A\003\022<\n\n"
+          + "deployment\030\002 \001(\tB(\340A\003\372A\"\n"
+          + " config.googleapis.com/Deployment\022H\n"
+          + "\005state\030\003 \001(\01624.google"
+          + ".cloud.config.v1.DeploymentUnitProgress.StateB\003\340A\003\022\036\n"
+          + "\021state_description\030\004 \001(\tB\003\340A\003\022]\n"
+          + "\034deployment_operation_summary\030\005 \001(\013"
+          + "22.google.cloud.config.v1.DeploymentOperationSummaryB\003\340A\003\022&\n"
+          + "\005error\030\006 \001(\0132\022.google.rpc.StatusB\003\340A\003\022J\n"
+          + "\006intent\030\007 \001(\01625.goog"
+          + "le.cloud.config.v1.DeploymentUnitProgress.IntentB\003\340A\003\"\254\001\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\n\n"
+          + "\006QUEUED\020\001\022\027\n"
+          + "\023APPLYING_DEPLOYMENT\020\002\022\r\n"
+          + "\tSUCCEEDED\020\004\022\n\n"
+          + "\006FAILED\020\005\022\013\n"
+          + "\007ABORTED\020\006\022\013\n"
+          + "\007SKIPPED\020\007\022\027\n"
+          + "\023DELETING_DEPLOYMENT\020\010\022\031\n"
+          + "\025PREVIEWING_DEPLOYMENT\020\t\"\233\001\n"
+          + "\006Intent\022\026\n"
+          + "\022INTENT_UNSPECIFIED\020\000\022\025\n"
+          + "\021CREATE_DEPLOYMENT\020\001\022\025\n"
+          + "\021UPDATE_DEPLOYMENT\020\002\022\025\n"
+          + "\021DELETE_DEPLOYMENT\020\003\022\027\n"
+          + "\023RECREATE_DEPLOYMENT\020\004\022\014\n"
+          + "\010CLEAN_UP\020\005\022\r\n"
+          + "\tUNCHANGED\020\006\"\264\004\n"
+          + ")ProvisionDeploymentGroupOperationMetadata\022q\n"
+          + "\004step\030\001 \001(\0162^.google.cloud.config.v1.Provisio"
+          + "nDeploymentGroupOperationMetadata.ProvisionDeploymentGroupStepB\003\340A\003\022W\n"
+          + "\032deployment_unit_progresses\030\002"
+          + " \003(\0132..google.cloud.config.v1.DeploymentUnitProgressB\003\340A\003\"\272\002\n"
+          + "\034ProvisionDeploymentGroupStep\022/\n"
+          + "+PROVISION_DEPLOYMENT_GROUP_STEP_UNSPECIFIED\020\000\022\037\n"
+          + "\033VALIDATING_DEPLOYMENT_GROUP\020\001\022/\n"
+          + "+ASSOCIATING_DEPLOYMENTS_TO_DEPLOYMENT_GROUP\020\002\022!\n"
+          + "\035PROVISIONING_DEPLOYMENT_UNITS\020\003\0224\n"
+          + "0DISASSOCIATING_DEPLOYMENTS_FROM_DEPLOYMENT_GROUP\020\004\022\r\n"
+          + "\tSUCCEEDED\020\005\022\n\n"
+          + "\006FAILED\020\006\022#\n"
+          + "\037DEPROVISIONING_DEPLOYMENT_UNITS\020\007\"\213\003\n"
+          + "\027DeploymentGroupRevision\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022>\n"
+          + "\010snapshot\030\002"
+          + " \001(\0132\'.google.cloud.config.v1.DeploymentGroupB\003\340A\003\0224\n"
+          + "\013create_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\034\n"
+          + "\017alternative_ids\030\004 \003(\tB\003\340A\003:\310\001\352A\304\001\n"
+          + "-config.googleapis.com/DeploymentGroupRevisi"
+          + "on\022`projects/{project}/locations/{location}/deploymentGroups/{deployment_group}/"
+          + "revisions/{revision}*\030deploymentGroupRevisions2\027deploymentGroupRevision\"h\n"
+          + "!GetDeploymentGroupRevisionRequest\022C\n"
+          + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
+          + "-config.googleapis.com/DeploymentGroupRevision\"\225\001\n"
+          + "#ListDeploymentGroupRevisionsRequest\022=\n"
+          + "\006parent\030\001 \001(\tB-\340A\002\372A\'\n"
+          + "%config.googleapis.com/DeploymentGroup\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\"\256\001\n"
+          + "$ListDeploymentGroupRevisionsResponse\022S\n"
+          + "\032deployment_group_revisions\030\001"
+          + " \003(\0132/.google.cloud.config.v1.DeploymentGroupRevision\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\030\n"
+          + "\013unreachable\030\003 \003(\tB\003\340A\006*N\n"
+          + "\017QuotaValidation\022 \n"
+          + "\034QUOTA_VALIDATION_UNSPECIFIED\020\000\022\013\n"
+          + "\007ENABLED\020\001\022\014\n"
+          + "\010ENFORCED\020\0022\360=\n"
+          + "\006Config\022\264\001\n"
+          + "\017ListDeployments\022..google.cloud.config."
+          + "v1.ListDeploymentsRequest\032/.google.cloud"
+          + ".config.v1.ListDeploymentsResponse\"@\332A\006p"
+          + "arent\202\323\344\223\0021\022//v1/{parent=projects/*/locations/*}/deployments\022\241\001\n\r"
+          + "GetDeployment\022,.google.cloud.config.v1.GetDeploymentReq"
+          + "uest\032\".google.cloud.config.v1.Deployment"
+          + "\">\332A\004name\202\323\344\223\0021\022//v1/{name=projects/*/locations/*/deployments/*}\022\354\001\n"
+          + "\020CreateDeployment\022/.google.cloud.config.v1.CreateDep"
+          + "loymentRequest\032\035.google.longrunning.Operation\"\207\001\312A\037\n\n"
+          + "Deployment\022\021OperationMetada"
+          + "ta\332A\037parent,deployment,deployment_id\202\323\344\223"
+          + "\002=\"//v1/{parent=projects/*/locations/*}/deployments:\n"
+          + "deployment\022\356\001\n"
+          + "\020UpdateDeployment\022/.google.cloud.config.v1.UpdateDepl"
+          + "oymentRequest\032\035.google.longrunning.Operation\"\211\001\312A\037\n\n"
+          + "Deployment\022\021OperationMetadat"
+          + "a\332A\026deployment,update_mask\202\323\344\223\002H2:/v1/{d"
+          + "eployment.name=projects/*/locations/*/deployments/*}:\n"
+          + "deployment\022\304\001\n"
+          + "\020DeleteDeployment\022/.google.cloud.config.v1.DeleteDep"
+          + "loymentRequest\032\035.google.longrunning.Operation\"`\312A\037\n\n"
+          + "Deployment\022\021OperationMetadat"
+          + "a\332A\004name\202\323\344\223\0021*//v1/{name=projects/*/locations/*/deployments/*}\022\272\001\n\r"
+          + "ListRevisions\022,.google.cloud.config.v1.ListRevisions"
+          + "Request\032-.google.cloud.config.v1.ListRev"
+          + "isionsResponse\"L\332A\006parent\202\323\344\223\002=\022;/v1/{pa"
+          + "rent=projects/*/locations/*/deployments/*}/revisions\022\247\001\n"
+          + "\013GetRevision\022*.google.cloud.config.v1.GetRevisionRequest\032 .googl"
+          + "e.cloud.config.v1.Revision\"J\332A\004name\202\323\344\223\002"
+          + "=\022;/v1/{name=projects/*/locations/*/deployments/*/revisions/*}\022\263\001\n"
+          + "\013GetResource\022*.google.cloud.config.v1.GetResourceRequest\032"
+          + " .google.cloud.config.v1.Resource\"V\332A"
+          + "\004name\202\323\344\223\002I\022G/v1/{name=projects/*/locati"
+          + "ons/*/deployments/*/revisions/*/resources/*}\022\306\001\n\r"
+          + "ListResources\022,.google.cloud.config.v1.ListResourcesRequest\032-.google.cl"
+          + "oud.config.v1.ListResourcesResponse\"X\332A\006"
+          + "parent\202\323\344\223\002I\022G/v1/{parent=projects/*/loc"
+          + "ations/*/deployments/*/revisions/*}/resources\022\302\001\n"
+          + "\031ExportDeploymentStatefile\0228.google.cloud.config.v1.ExportDeploymentSta"
+          + "tefileRequest\032!.google.cloud.config.v1.S"
+          + "tatefile\"H\202\323\344\223\002B\"=/v1/{parent=projects/*"
+          + "/locations/*/deployments/*}:exportState:\001*\022\312\001\n"
+          + "\027ExportRevisionStatefile\0226.google.cloud.config.v1.ExportRevisionStatefileR"
+          + "equest\032!.google.cloud.config.v1.Statefil"
+          + "e\"T\202\323\344\223\002N\"I/v1/{parent=projects/*/locati"
+          + "ons/*/deployments/*/revisions/*}:exportState:\001*\022\277\001\n"
+          + "\017ImportStatefile\022..google.cloud.config.v1.ImportStatefileRequest\032!.go"
+          + "ogle.cloud.config.v1.Statefile\"Y\332A\016paren"
+          + "t,lock_id\202\323\344\223\002B\"=/v1/{parent=projects/*/"
+          + "locations/*/deployments/*}:importState:\001*\022\250\001\n"
+          + "\017DeleteStatefile\022..google.cloud.con"
+          + "fig.v1.DeleteStatefileRequest\032\026.google.p"
+          + "rotobuf.Empty\"M\332A\004name\202\323\344\223\002@\";/v1/{name="
+          + "projects/*/locations/*/deployments/*}:deleteState:\001*\022\310\001\n"
+          + "\016LockDeployment\022-.google"
+          + ".cloud.config.v1.LockDeploymentRequest\032\035.google.longrunning.Operation\"h\312A\037\n\n"
+          + "Deployment\022\021OperationMetadata\332A\004name\202\323\344\223\0029\"4"
+          + "/v1/{name=projects/*/locations/*/deployments/*}:lock:\001*\022\326\001\n"
+          + "\020UnlockDeployment\022/.google.cloud.config.v1.UnlockDeploymentRe"
+          + "quest\032\035.google.longrunning.Operation\"r\312A\037\n\n"
+          + "Deployment\022\021OperationMetadata\332A\014name,"
+          + "lock_id\202\323\344\223\002;\"6/v1/{name=projects/*/locations/*/deployments/*}:unlock:\001*\022\254\001\n"
+          + "\016ExportLockInfo\022-.google.cloud.config.v1.ExportLockInfoRequest\032"
+          + " .google.cloud.config.v1.LockInfo\"I\332A\004name\202\323\344\223\002<\022:/v1/{name=p"
+          + "rojects/*/locations/*/deployments/*}:exportLock\022\313\001\n\r"
+          + "CreatePreview\022,.google.cloud"
+          + ".config.v1.CreatePreviewRequest\032\035.google.longrunning.Operation\"m\312A\034\n"
+          + "\007Preview\022\021OperationMetadata\332A\016parent,preview\202\323\344\223\0027\","
+          + "/v1/{parent=projects/*/locations/*}/previews:\007preview\022\225\001\n\n"
+          + "GetPreview\022).google.cloud.config.v1.GetPreviewRequest\032\037.google"
+          + ".cloud.config.v1.Preview\";\332A\004name\202\323\344\223\002.\022"
+          + ",/v1/{name=projects/*/locations/*/previews/*}\022\250\001\n"
+          + "\014ListPreviews\022+.google.cloud.config.v1.ListPreviewsRequest\032,.google.clo"
+          + "ud.config.v1.ListPreviewsResponse\"=\332A\006pa"
+          + "rent\202\323\344\223\002.\022,/v1/{parent=projects/*/locations/*}/previews\022\270\001\n\r"
+          + "DeletePreview\022,.goo"
+          + "gle.cloud.config.v1.DeletePreviewRequest\032\035.google.longrunning.Operation\"Z\312A\034\n"
+          + "\007Preview\022\021OperationMetadata\332A\004name\202\323\344\223\002.*,/"
+          + "v1/{name=projects/*/locations/*/previews/*}\022\300\001\n"
+          + "\023ExportPreviewResult\0222.google.cloud.config.v1.ExportPreviewResultRequest\032"
+          + "3.google.cloud.config.v1.ExportPreviewRe"
+          + "sultResponse\"@\202\323\344\223\002:\"5/v1/{parent=projec"
+          + "ts/*/locations/*/previews/*}:export:\001*\022\314\001\n"
+          + "\025ListTerraformVersions\0224.google.cloud."
+          + "config.v1.ListTerraformVersionsRequest\0325.google.cloud.config.v1.ListTerraformVer"
+          + "sionsResponse\"F\332A\006parent\202\323\344\223\0027\0225/v1/{par"
+          + "ent=projects/*/locations/*}/terraformVersions\022\271\001\n"
+          + "\023GetTerraformVersion\0222.google.cloud.config.v1.GetTerraformVersionReques"
+          + "t\032(.google.cloud.config.v1.TerraformVers"
+          + "ion\"D\332A\004name\202\323\344\223\0027\0225/v1/{name=projects/*/locations/*/terraformVersions/*}\022\317\001\n"
+          + "\023ListResourceChanges\0222.google.cloud.config."
+          + "v1.ListResourceChangesRequest\0323.google.cloud.config.v1.ListResourceChangesRespon"
+          + "se\"O\332A\006parent\202\323\344\223\002@\022>/v1/{parent=project"
+          + "s/*/locations/*/previews/*}/resourceChanges\022\274\001\n"
+          + "\021GetResourceChange\0220.google.cloud.config.v1.GetResourceChangeRequest\032&.go"
+          + "ogle.cloud.config.v1.ResourceChange\"M\332A\004"
+          + "name\202\323\344\223\002@\022>/v1/{name=projects/*/locations/*/previews/*/resourceChanges/*}\022\313\001\n"
+          + "\022ListResourceDrifts\0221.google.cloud.config."
+          + "v1.ListResourceDriftsRequest\0322.google.cloud.config.v1.ListResourceDriftsResponse"
+          + "\"N\332A\006parent\202\323\344\223\002?\022=/v1/{parent=projects/"
+          + "*/locations/*/previews/*}/resourceDrifts\022\270\001\n"
+          + "\020GetResourceDrift\022/.google.cloud.config.v1.GetResourceDriftRequest\032%.google."
+          + "cloud.config.v1.ResourceDrift\"L\332A\004name\202\323"
+          + "\344\223\002?\022=/v1/{name=projects/*/locations/*/previews/*/resourceDrifts/*}\022\302\001\n"
+          + "\026GetAutoMigrationConfig\0225.google.cloud.config.v1."
+          + "GetAutoMigrationConfigRequest\032+.google.c"
+          + "loud.config.v1.AutoMigrationConfig\"D\332A\004n"
+          + "ame\202\323\344\223\0027\0225/v1/{name=projects/*/locations/*/autoMigrationConfig}\022\260\002\n"
+          + "\031UpdateAutoMigrationConfig\0228.google.cloud.config.v1."
+          + "UpdateAutoMigrationConfigRequest\032\035.google.longrunning.Operation\"\271\001\312A(\n"
+          + "\023AutoMigrationConfig\022\021OperationMetadata\332A!auto_mig"
+          + "ration_config,update_mask\202\323\344\223\002d2K/v1/{au"
+          + "to_migration_config.name=projects/*/loca"
+          + "tions/*/autoMigrationConfig}:\025auto_migration_config\022\265\001\n"
+          + "\022GetDeploymentGroup\0221.google.cloud.config.v1.GetDeploymentGroupRe"
+          + "quest\032\'.google.cloud.config.v1.Deploymen"
+          + "tGroup\"C\332A\004name\202\323\344\223\0026\0224/v1/{name=projects/*/locations/*/deploymentGroups/*}\022\222\002\n"
+          + "\025CreateDeploymentGroup\0224.google.cloud.con"
+          + "fig.v1.CreateDeploymentGroupRequest\032\035.google.longrunning.Operation\"\243\001\312A$\n"
+          + "\017DeploymentGroup\022\021OperationMetadata\332A+parent,de"
+          + "ployment_group,deployment_group_id\202\323\344\223\002H"
+          + "\"4/v1/{parent=projects/*/locations/*}/deploymentGroups:\020deployment_group\022\224\002\n"
+          + "\025UpdateDeploymentGroup\0224.google.cloud.config"
+          + ".v1.UpdateDeploymentGroupRequest\032\035.google.longrunning.Operation\"\245\001\312A$\n"
+          + "\017DeploymentGroup\022\021OperationMetadata\332A\034deployment_g"
+          + "roup,update_mask\202\323\344\223\002Y2E/v1/{deployment_"
+          + "group.name=projects/*/locations/*/deploymentGroups/*}:\020deployment_group\022\330\001\n"
+          + "\025DeleteDeploymentGroup\0224.google.cloud.config."
+          + "v1.DeleteDeploymentGroupRequest\032\035.google.longrunning.Operation\"j\312A$\n"
+          + "\017DeploymentGroup\022\021OperationMetadata\332A\004name\202\323\344\223\0026*4/v"
+          + "1/{name=projects/*/locations/*/deploymentGroups/*}\022\310\001\n"
+          + "\024ListDeploymentGroups\0223.google.cloud.config.v1.ListDeploymentGroup"
+          + "sRequest\0324.google.cloud.config.v1.ListDe"
+          + "ploymentGroupsResponse\"E\332A\006parent\202\323\344\223\0026\022"
+          + "4/v1/{parent=projects/*/locations/*}/deploymentGroups\022\353\001\n"
+          + "\030ProvisionDeploymentGroup\0227.google.cloud.config.v1.ProvisionDep"
+          + "loymentGroupRequest\032\035.google.longrunning.Operation\"w\312A$\n"
+          + "\017DeploymentGroup\022\021Operat"
+          + "ionMetadata\332A\004name\202\323\344\223\002C\">/v1/{name=proj"
+          + "ects/*/locations/*/deploymentGroups/*}:provision:\001*\022\361\001\n"
+          + "\032DeprovisionDeploymentGroup\0229.google.cloud.config.v1.DeprovisionD"
+          + "eploymentGroupRequest\032\035.google.longrunning.Operation\"y\312A$\n"
+          + "\017DeploymentGroup\022\021Oper"
+          + "ationMetadata\332A\004name\202\323\344\223\002E\"@/v1/{name=pr"
+          + "ojects/*/locations/*/deploymentGroups/*}:deprovision:\001*\022\331\001\n"
+          + "\032GetDeploymentGroupRevision\0229.google.cloud.config.v1.GetDeplo"
+          + "ymentGroupRevisionRequest\032/.google.cloud"
+          + ".config.v1.DeploymentGroupRevision\"O\332A\004n"
+          + "ame\202\323\344\223\002B\022@/v1/{name=projects/*/locations/*/deploymentGroups/*/revisions/*}\022\354\001\n"
+          + "\034ListDeploymentGroupRevisions\022;.google.cl"
+          + "oud.config.v1.ListDeploymentGroupRevisionsRequest\032<.google.cloud.config.v1.ListD"
+          + "eploymentGroupRevisionsResponse\"Q\332A\006pare"
+          + "nt\202\323\344\223\002B\022@/v1/{parent=projects/*/locatio"
+          + "ns/*/deploymentGroups/*}/revisions\032I\312A\025c"
+          + "onfig.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\374\002\n"
+          + "\032com.google.cloud.config.v1B\013ConfigProtoP\001Z2clo"
+          + "ud.google.com/go/config/apiv1/configpb;c"
+          + "onfigpb\252\002\026Google.Cloud.Config.V1\312\002\026Google\\Cloud\\Config\\V1\352\002"
+          + " Google::Cloud::ConfigService::V1\352AY\n"
+          + "!iam.googleapis.com/Serv"
+          + "iceAccount\0224projects/{project}/serviceAccounts/{service_account}\352Ai\n"
+          + "$cloudbuild.googleapis.com/WorkerPool\022Aprojects/{pro"
+          + "ject}/locations/{location}/workerPools/{worker_pool}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -1167,13 +1474,21 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_TerraformBlueprint_descriptor,
             new java.lang.String[] {
-              "GcsSource", "GitSource", "InputValues", "Source",
+              "GcsSource", "GitSource", "InputValues", "ExternalValues", "Source",
             });
     internal_static_google_cloud_config_v1_TerraformBlueprint_InputValuesEntry_descriptor =
         internal_static_google_cloud_config_v1_TerraformBlueprint_descriptor.getNestedType(0);
     internal_static_google_cloud_config_v1_TerraformBlueprint_InputValuesEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_TerraformBlueprint_InputValuesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_config_v1_TerraformBlueprint_ExternalValuesEntry_descriptor =
+        internal_static_google_cloud_config_v1_TerraformBlueprint_descriptor.getNestedType(1);
+    internal_static_google_cloud_config_v1_TerraformBlueprint_ExternalValuesEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_TerraformBlueprint_ExternalValuesEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });
@@ -1185,8 +1500,24 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "InputValue",
             });
-    internal_static_google_cloud_config_v1_ApplyResults_descriptor =
+    internal_static_google_cloud_config_v1_ExternalValueSource_descriptor =
         getDescriptor().getMessageType(3);
+    internal_static_google_cloud_config_v1_ExternalValueSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ExternalValueSource_descriptor,
+            new java.lang.String[] {
+              "DeploymentSource", "Source",
+            });
+    internal_static_google_cloud_config_v1_DeploymentSource_descriptor =
+        getDescriptor().getMessageType(4);
+    internal_static_google_cloud_config_v1_DeploymentSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_DeploymentSource_descriptor,
+            new java.lang.String[] {
+              "Deployment", "OutputName",
+            });
+    internal_static_google_cloud_config_v1_ApplyResults_descriptor =
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_config_v1_ApplyResults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ApplyResults_descriptor,
@@ -1202,7 +1533,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_config_v1_TerraformOutput_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_config_v1_TerraformOutput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_TerraformOutput_descriptor,
@@ -1210,7 +1541,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Sensitive", "Value",
             });
     internal_static_google_cloud_config_v1_ListDeploymentsRequest_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(7);
     internal_static_google_cloud_config_v1_ListDeploymentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ListDeploymentsRequest_descriptor,
@@ -1218,7 +1549,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_config_v1_ListDeploymentsResponse_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_config_v1_ListDeploymentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ListDeploymentsResponse_descriptor,
@@ -1226,7 +1557,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Deployments", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_config_v1_GetDeploymentRequest_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_config_v1_GetDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_GetDeploymentRequest_descriptor,
@@ -1234,7 +1565,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_config_v1_ListRevisionsRequest_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_config_v1_ListRevisionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ListRevisionsRequest_descriptor,
@@ -1242,7 +1573,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_config_v1_ListRevisionsResponse_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_config_v1_ListRevisionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ListRevisionsResponse_descriptor,
@@ -1250,7 +1581,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Revisions", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_config_v1_GetRevisionRequest_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_config_v1_GetRevisionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_GetRevisionRequest_descriptor,
@@ -1258,15 +1589,39 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_config_v1_CreateDeploymentRequest_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_config_v1_CreateDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_CreateDeploymentRequest_descriptor,
             new java.lang.String[] {
               "Parent", "DeploymentId", "Deployment", "RequestId",
             });
+    internal_static_google_cloud_config_v1_CreateDeploymentGroupRequest_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_cloud_config_v1_CreateDeploymentGroupRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_CreateDeploymentGroupRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "DeploymentGroupId", "DeploymentGroup", "RequestId",
+            });
+    internal_static_google_cloud_config_v1_UpdateDeploymentGroupRequest_descriptor =
+        getDescriptor().getMessageType(15);
+    internal_static_google_cloud_config_v1_UpdateDeploymentGroupRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_UpdateDeploymentGroupRequest_descriptor,
+            new java.lang.String[] {
+              "UpdateMask", "DeploymentGroup", "RequestId",
+            });
+    internal_static_google_cloud_config_v1_DeleteDeploymentGroupRequest_descriptor =
+        getDescriptor().getMessageType(16);
+    internal_static_google_cloud_config_v1_DeleteDeploymentGroupRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_DeleteDeploymentGroupRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId", "Force", "DeploymentReferencePolicy",
+            });
     internal_static_google_cloud_config_v1_UpdateDeploymentRequest_descriptor =
-        getDescriptor().getMessageType(12);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_config_v1_UpdateDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_UpdateDeploymentRequest_descriptor,
@@ -1274,7 +1629,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "UpdateMask", "Deployment", "RequestId",
             });
     internal_static_google_cloud_config_v1_DeleteDeploymentRequest_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_config_v1_DeleteDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_DeleteDeploymentRequest_descriptor,
@@ -1282,13 +1637,14 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name", "RequestId", "Force", "DeletePolicy",
             });
     internal_static_google_cloud_config_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(19);
     internal_static_google_cloud_config_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_OperationMetadata_descriptor,
             new java.lang.String[] {
               "DeploymentMetadata",
               "PreviewMetadata",
+              "ProvisionDeploymentGroupMetadata",
               "CreateTime",
               "EndTime",
               "Target",
@@ -1298,7 +1654,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "ApiVersion",
               "ResourceMetadata",
             });
-    internal_static_google_cloud_config_v1_Revision_descriptor = getDescriptor().getMessageType(15);
+    internal_static_google_cloud_config_v1_Revision_descriptor = getDescriptor().getMessageType(20);
     internal_static_google_cloud_config_v1_Revision_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_Revision_descriptor,
@@ -1327,7 +1683,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Blueprint",
             });
     internal_static_google_cloud_config_v1_TerraformError_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(21);
     internal_static_google_cloud_config_v1_TerraformError_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_TerraformError_descriptor,
@@ -1335,7 +1691,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "ResourceAddress", "HttpResponseCode", "ErrorDescription", "Error",
             });
     internal_static_google_cloud_config_v1_GitSource_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(22);
     internal_static_google_cloud_config_v1_GitSource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_GitSource_descriptor,
@@ -1343,14 +1699,14 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Repo", "Directory", "Ref",
             });
     internal_static_google_cloud_config_v1_DeploymentOperationMetadata_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(23);
     internal_static_google_cloud_config_v1_DeploymentOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_DeploymentOperationMetadata_descriptor,
             new java.lang.String[] {
               "Step", "ApplyResults", "Build", "Logs",
             });
-    internal_static_google_cloud_config_v1_Resource_descriptor = getDescriptor().getMessageType(19);
+    internal_static_google_cloud_config_v1_Resource_descriptor = getDescriptor().getMessageType(24);
     internal_static_google_cloud_config_v1_Resource_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_Resource_descriptor,
@@ -1366,7 +1722,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_config_v1_ResourceTerraformInfo_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(25);
     internal_static_google_cloud_config_v1_ResourceTerraformInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ResourceTerraformInfo_descriptor,
@@ -1374,7 +1730,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Address", "Type", "Id",
             });
     internal_static_google_cloud_config_v1_ResourceCAIInfo_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(26);
     internal_static_google_cloud_config_v1_ResourceCAIInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ResourceCAIInfo_descriptor,
@@ -1382,7 +1738,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "FullResourceName",
             });
     internal_static_google_cloud_config_v1_GetResourceRequest_descriptor =
-        getDescriptor().getMessageType(22);
+        getDescriptor().getMessageType(27);
     internal_static_google_cloud_config_v1_GetResourceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_GetResourceRequest_descriptor,
@@ -1390,7 +1746,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_config_v1_ListResourcesRequest_descriptor =
-        getDescriptor().getMessageType(23);
+        getDescriptor().getMessageType(28);
     internal_static_google_cloud_config_v1_ListResourcesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ListResourcesRequest_descriptor,
@@ -1398,7 +1754,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_config_v1_ListResourcesResponse_descriptor =
-        getDescriptor().getMessageType(24);
+        getDescriptor().getMessageType(29);
     internal_static_google_cloud_config_v1_ListResourcesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ListResourcesResponse_descriptor,
@@ -1406,7 +1762,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Resources", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_config_v1_Statefile_descriptor =
-        getDescriptor().getMessageType(25);
+        getDescriptor().getMessageType(30);
     internal_static_google_cloud_config_v1_Statefile_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_Statefile_descriptor,
@@ -1414,7 +1770,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "SignedUri",
             });
     internal_static_google_cloud_config_v1_ExportDeploymentStatefileRequest_descriptor =
-        getDescriptor().getMessageType(26);
+        getDescriptor().getMessageType(31);
     internal_static_google_cloud_config_v1_ExportDeploymentStatefileRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ExportDeploymentStatefileRequest_descriptor,
@@ -1422,7 +1778,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Parent", "Draft",
             });
     internal_static_google_cloud_config_v1_ExportRevisionStatefileRequest_descriptor =
-        getDescriptor().getMessageType(27);
+        getDescriptor().getMessageType(32);
     internal_static_google_cloud_config_v1_ExportRevisionStatefileRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ExportRevisionStatefileRequest_descriptor,
@@ -1430,7 +1786,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Parent",
             });
     internal_static_google_cloud_config_v1_ImportStatefileRequest_descriptor =
-        getDescriptor().getMessageType(28);
+        getDescriptor().getMessageType(33);
     internal_static_google_cloud_config_v1_ImportStatefileRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ImportStatefileRequest_descriptor,
@@ -1438,7 +1794,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Parent", "LockId", "SkipDraft",
             });
     internal_static_google_cloud_config_v1_DeleteStatefileRequest_descriptor =
-        getDescriptor().getMessageType(29);
+        getDescriptor().getMessageType(34);
     internal_static_google_cloud_config_v1_DeleteStatefileRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_DeleteStatefileRequest_descriptor,
@@ -1446,7 +1802,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name", "LockId",
             });
     internal_static_google_cloud_config_v1_LockDeploymentRequest_descriptor =
-        getDescriptor().getMessageType(30);
+        getDescriptor().getMessageType(35);
     internal_static_google_cloud_config_v1_LockDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_LockDeploymentRequest_descriptor,
@@ -1454,7 +1810,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_config_v1_UnlockDeploymentRequest_descriptor =
-        getDescriptor().getMessageType(31);
+        getDescriptor().getMessageType(36);
     internal_static_google_cloud_config_v1_UnlockDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_UnlockDeploymentRequest_descriptor,
@@ -1462,21 +1818,21 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name", "LockId",
             });
     internal_static_google_cloud_config_v1_ExportLockInfoRequest_descriptor =
-        getDescriptor().getMessageType(32);
+        getDescriptor().getMessageType(37);
     internal_static_google_cloud_config_v1_ExportLockInfoRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ExportLockInfoRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_config_v1_LockInfo_descriptor = getDescriptor().getMessageType(33);
+    internal_static_google_cloud_config_v1_LockInfo_descriptor = getDescriptor().getMessageType(38);
     internal_static_google_cloud_config_v1_LockInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_LockInfo_descriptor,
             new java.lang.String[] {
               "LockId", "Operation", "Info", "Who", "Version", "CreateTime",
             });
-    internal_static_google_cloud_config_v1_Preview_descriptor = getDescriptor().getMessageType(34);
+    internal_static_google_cloud_config_v1_Preview_descriptor = getDescriptor().getMessageType(39);
     internal_static_google_cloud_config_v1_Preview_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_Preview_descriptor,
@@ -1521,7 +1877,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Key", "Value",
             });
     internal_static_google_cloud_config_v1_PreviewOperationMetadata_descriptor =
-        getDescriptor().getMessageType(35);
+        getDescriptor().getMessageType(40);
     internal_static_google_cloud_config_v1_PreviewOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_PreviewOperationMetadata_descriptor,
@@ -1529,7 +1885,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Step", "PreviewArtifacts", "Logs", "Build",
             });
     internal_static_google_cloud_config_v1_PreviewArtifacts_descriptor =
-        getDescriptor().getMessageType(36);
+        getDescriptor().getMessageType(41);
     internal_static_google_cloud_config_v1_PreviewArtifacts_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_PreviewArtifacts_descriptor,
@@ -1537,7 +1893,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Content", "Artifacts",
             });
     internal_static_google_cloud_config_v1_CreatePreviewRequest_descriptor =
-        getDescriptor().getMessageType(37);
+        getDescriptor().getMessageType(42);
     internal_static_google_cloud_config_v1_CreatePreviewRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_CreatePreviewRequest_descriptor,
@@ -1545,7 +1901,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PreviewId", "Preview", "RequestId",
             });
     internal_static_google_cloud_config_v1_GetPreviewRequest_descriptor =
-        getDescriptor().getMessageType(38);
+        getDescriptor().getMessageType(43);
     internal_static_google_cloud_config_v1_GetPreviewRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_GetPreviewRequest_descriptor,
@@ -1553,7 +1909,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_config_v1_ListPreviewsRequest_descriptor =
-        getDescriptor().getMessageType(39);
+        getDescriptor().getMessageType(44);
     internal_static_google_cloud_config_v1_ListPreviewsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ListPreviewsRequest_descriptor,
@@ -1561,7 +1917,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_config_v1_ListPreviewsResponse_descriptor =
-        getDescriptor().getMessageType(40);
+        getDescriptor().getMessageType(45);
     internal_static_google_cloud_config_v1_ListPreviewsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ListPreviewsResponse_descriptor,
@@ -1569,7 +1925,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Previews", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_config_v1_DeletePreviewRequest_descriptor =
-        getDescriptor().getMessageType(41);
+        getDescriptor().getMessageType(46);
     internal_static_google_cloud_config_v1_DeletePreviewRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_DeletePreviewRequest_descriptor,
@@ -1577,7 +1933,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name", "RequestId",
             });
     internal_static_google_cloud_config_v1_ExportPreviewResultRequest_descriptor =
-        getDescriptor().getMessageType(42);
+        getDescriptor().getMessageType(47);
     internal_static_google_cloud_config_v1_ExportPreviewResultRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ExportPreviewResultRequest_descriptor,
@@ -1585,7 +1941,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Parent",
             });
     internal_static_google_cloud_config_v1_ExportPreviewResultResponse_descriptor =
-        getDescriptor().getMessageType(43);
+        getDescriptor().getMessageType(48);
     internal_static_google_cloud_config_v1_ExportPreviewResultResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ExportPreviewResultResponse_descriptor,
@@ -1593,7 +1949,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Result",
             });
     internal_static_google_cloud_config_v1_PreviewResult_descriptor =
-        getDescriptor().getMessageType(44);
+        getDescriptor().getMessageType(49);
     internal_static_google_cloud_config_v1_PreviewResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_PreviewResult_descriptor,
@@ -1601,7 +1957,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "BinarySignedUri", "JsonSignedUri",
             });
     internal_static_google_cloud_config_v1_GetTerraformVersionRequest_descriptor =
-        getDescriptor().getMessageType(45);
+        getDescriptor().getMessageType(50);
     internal_static_google_cloud_config_v1_GetTerraformVersionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_GetTerraformVersionRequest_descriptor,
@@ -1609,7 +1965,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_config_v1_ListTerraformVersionsRequest_descriptor =
-        getDescriptor().getMessageType(46);
+        getDescriptor().getMessageType(51);
     internal_static_google_cloud_config_v1_ListTerraformVersionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ListTerraformVersionsRequest_descriptor,
@@ -1617,7 +1973,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_config_v1_ListTerraformVersionsResponse_descriptor =
-        getDescriptor().getMessageType(47);
+        getDescriptor().getMessageType(52);
     internal_static_google_cloud_config_v1_ListTerraformVersionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ListTerraformVersionsResponse_descriptor,
@@ -1625,7 +1981,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "TerraformVersions", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_config_v1_TerraformVersion_descriptor =
-        getDescriptor().getMessageType(48);
+        getDescriptor().getMessageType(53);
     internal_static_google_cloud_config_v1_TerraformVersion_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_TerraformVersion_descriptor,
@@ -1633,7 +1989,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name", "State", "SupportTime", "DeprecateTime", "ObsoleteTime",
             });
     internal_static_google_cloud_config_v1_ResourceChangeTerraformInfo_descriptor =
-        getDescriptor().getMessageType(49);
+        getDescriptor().getMessageType(54);
     internal_static_google_cloud_config_v1_ResourceChangeTerraformInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ResourceChangeTerraformInfo_descriptor,
@@ -1641,7 +1997,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Address", "Type", "ResourceName", "Provider", "Actions",
             });
     internal_static_google_cloud_config_v1_ResourceChange_descriptor =
-        getDescriptor().getMessageType(50);
+        getDescriptor().getMessageType(55);
     internal_static_google_cloud_config_v1_ResourceChange_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ResourceChange_descriptor,
@@ -1649,7 +2005,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name", "TerraformInfo", "Intent", "PropertyChanges",
             });
     internal_static_google_cloud_config_v1_PropertyChange_descriptor =
-        getDescriptor().getMessageType(51);
+        getDescriptor().getMessageType(56);
     internal_static_google_cloud_config_v1_PropertyChange_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_PropertyChange_descriptor,
@@ -1657,7 +2013,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Path", "BeforeSensitivePaths", "Before", "AfterSensitivePaths", "After",
             });
     internal_static_google_cloud_config_v1_ListResourceChangesRequest_descriptor =
-        getDescriptor().getMessageType(52);
+        getDescriptor().getMessageType(57);
     internal_static_google_cloud_config_v1_ListResourceChangesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ListResourceChangesRequest_descriptor,
@@ -1665,7 +2021,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_config_v1_ListResourceChangesResponse_descriptor =
-        getDescriptor().getMessageType(53);
+        getDescriptor().getMessageType(58);
     internal_static_google_cloud_config_v1_ListResourceChangesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ListResourceChangesResponse_descriptor,
@@ -1673,7 +2029,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "ResourceChanges", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_config_v1_GetResourceChangeRequest_descriptor =
-        getDescriptor().getMessageType(54);
+        getDescriptor().getMessageType(59);
     internal_static_google_cloud_config_v1_GetResourceChangeRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_GetResourceChangeRequest_descriptor,
@@ -1681,7 +2037,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_config_v1_ResourceDriftTerraformInfo_descriptor =
-        getDescriptor().getMessageType(55);
+        getDescriptor().getMessageType(60);
     internal_static_google_cloud_config_v1_ResourceDriftTerraformInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ResourceDriftTerraformInfo_descriptor,
@@ -1689,7 +2045,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Address", "Type", "ResourceName", "Provider",
             });
     internal_static_google_cloud_config_v1_ResourceDrift_descriptor =
-        getDescriptor().getMessageType(56);
+        getDescriptor().getMessageType(61);
     internal_static_google_cloud_config_v1_ResourceDrift_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ResourceDrift_descriptor,
@@ -1697,7 +2053,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name", "TerraformInfo", "PropertyDrifts",
             });
     internal_static_google_cloud_config_v1_PropertyDrift_descriptor =
-        getDescriptor().getMessageType(57);
+        getDescriptor().getMessageType(62);
     internal_static_google_cloud_config_v1_PropertyDrift_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_PropertyDrift_descriptor,
@@ -1705,7 +2061,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Path", "BeforeSensitivePaths", "Before", "AfterSensitivePaths", "After",
             });
     internal_static_google_cloud_config_v1_ListResourceDriftsRequest_descriptor =
-        getDescriptor().getMessageType(58);
+        getDescriptor().getMessageType(63);
     internal_static_google_cloud_config_v1_ListResourceDriftsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ListResourceDriftsRequest_descriptor,
@@ -1713,7 +2069,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_config_v1_ListResourceDriftsResponse_descriptor =
-        getDescriptor().getMessageType(59);
+        getDescriptor().getMessageType(64);
     internal_static_google_cloud_config_v1_ListResourceDriftsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ListResourceDriftsResponse_descriptor,
@@ -1721,7 +2077,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "ResourceDrifts", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_config_v1_GetResourceDriftRequest_descriptor =
-        getDescriptor().getMessageType(60);
+        getDescriptor().getMessageType(65);
     internal_static_google_cloud_config_v1_GetResourceDriftRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_GetResourceDriftRequest_descriptor,
@@ -1729,7 +2085,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_config_v1_ProviderConfig_descriptor =
-        getDescriptor().getMessageType(61);
+        getDescriptor().getMessageType(66);
     internal_static_google_cloud_config_v1_ProviderConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_ProviderConfig_descriptor,
@@ -1737,7 +2093,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "SourceType",
             });
     internal_static_google_cloud_config_v1_GetAutoMigrationConfigRequest_descriptor =
-        getDescriptor().getMessageType(62);
+        getDescriptor().getMessageType(67);
     internal_static_google_cloud_config_v1_GetAutoMigrationConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_GetAutoMigrationConfigRequest_descriptor,
@@ -1745,7 +2101,7 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_cloud_config_v1_AutoMigrationConfig_descriptor =
-        getDescriptor().getMessageType(63);
+        getDescriptor().getMessageType(68);
     internal_static_google_cloud_config_v1_AutoMigrationConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_AutoMigrationConfig_descriptor,
@@ -1753,12 +2109,173 @@ public final class ConfigProto extends com.google.protobuf.GeneratedFile {
               "Name", "UpdateTime", "AutoMigrationEnabled",
             });
     internal_static_google_cloud_config_v1_UpdateAutoMigrationConfigRequest_descriptor =
-        getDescriptor().getMessageType(64);
+        getDescriptor().getMessageType(69);
     internal_static_google_cloud_config_v1_UpdateAutoMigrationConfigRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_config_v1_UpdateAutoMigrationConfigRequest_descriptor,
             new java.lang.String[] {
               "UpdateMask", "AutoMigrationConfig",
+            });
+    internal_static_google_cloud_config_v1_DeploymentGroup_descriptor =
+        getDescriptor().getMessageType(70);
+    internal_static_google_cloud_config_v1_DeploymentGroup_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_DeploymentGroup_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "CreateTime",
+              "UpdateTime",
+              "Labels",
+              "Annotations",
+              "State",
+              "StateDescription",
+              "DeploymentUnits",
+              "ProvisioningState",
+              "ProvisioningStateDescription",
+              "ProvisioningError",
+            });
+    internal_static_google_cloud_config_v1_DeploymentGroup_LabelsEntry_descriptor =
+        internal_static_google_cloud_config_v1_DeploymentGroup_descriptor.getNestedType(0);
+    internal_static_google_cloud_config_v1_DeploymentGroup_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_DeploymentGroup_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_config_v1_DeploymentGroup_AnnotationsEntry_descriptor =
+        internal_static_google_cloud_config_v1_DeploymentGroup_descriptor.getNestedType(1);
+    internal_static_google_cloud_config_v1_DeploymentGroup_AnnotationsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_DeploymentGroup_AnnotationsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_config_v1_DeploymentUnit_descriptor =
+        getDescriptor().getMessageType(71);
+    internal_static_google_cloud_config_v1_DeploymentUnit_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_DeploymentUnit_descriptor,
+            new java.lang.String[] {
+              "Id", "Deployment", "Dependencies",
+            });
+    internal_static_google_cloud_config_v1_DeploymentSpec_descriptor =
+        getDescriptor().getMessageType(72);
+    internal_static_google_cloud_config_v1_DeploymentSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_DeploymentSpec_descriptor,
+            new java.lang.String[] {
+              "DeploymentId", "Deployment",
+            });
+    internal_static_google_cloud_config_v1_GetDeploymentGroupRequest_descriptor =
+        getDescriptor().getMessageType(73);
+    internal_static_google_cloud_config_v1_GetDeploymentGroupRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_GetDeploymentGroupRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_config_v1_ListDeploymentGroupsRequest_descriptor =
+        getDescriptor().getMessageType(74);
+    internal_static_google_cloud_config_v1_ListDeploymentGroupsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ListDeploymentGroupsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_config_v1_ListDeploymentGroupsResponse_descriptor =
+        getDescriptor().getMessageType(75);
+    internal_static_google_cloud_config_v1_ListDeploymentGroupsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ListDeploymentGroupsResponse_descriptor,
+            new java.lang.String[] {
+              "DeploymentGroups", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_config_v1_ProvisionDeploymentGroupRequest_descriptor =
+        getDescriptor().getMessageType(76);
+    internal_static_google_cloud_config_v1_ProvisionDeploymentGroupRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ProvisionDeploymentGroupRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "DeploymentSpecs",
+            });
+    internal_static_google_cloud_config_v1_ProvisionDeploymentGroupRequest_DeploymentSpecsEntry_descriptor =
+        internal_static_google_cloud_config_v1_ProvisionDeploymentGroupRequest_descriptor
+            .getNestedType(0);
+    internal_static_google_cloud_config_v1_ProvisionDeploymentGroupRequest_DeploymentSpecsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ProvisionDeploymentGroupRequest_DeploymentSpecsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_config_v1_DeprovisionDeploymentGroupRequest_descriptor =
+        getDescriptor().getMessageType(77);
+    internal_static_google_cloud_config_v1_DeprovisionDeploymentGroupRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_DeprovisionDeploymentGroupRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Force", "DeletePolicy",
+            });
+    internal_static_google_cloud_config_v1_DeploymentOperationSummary_descriptor =
+        getDescriptor().getMessageType(78);
+    internal_static_google_cloud_config_v1_DeploymentOperationSummary_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_DeploymentOperationSummary_descriptor,
+            new java.lang.String[] {
+              "DeploymentStep", "Build", "Logs", "Content", "Artifacts",
+            });
+    internal_static_google_cloud_config_v1_DeploymentUnitProgress_descriptor =
+        getDescriptor().getMessageType(79);
+    internal_static_google_cloud_config_v1_DeploymentUnitProgress_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_DeploymentUnitProgress_descriptor,
+            new java.lang.String[] {
+              "UnitId",
+              "Deployment",
+              "State",
+              "StateDescription",
+              "DeploymentOperationSummary",
+              "Error",
+              "Intent",
+            });
+    internal_static_google_cloud_config_v1_ProvisionDeploymentGroupOperationMetadata_descriptor =
+        getDescriptor().getMessageType(80);
+    internal_static_google_cloud_config_v1_ProvisionDeploymentGroupOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ProvisionDeploymentGroupOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "Step", "DeploymentUnitProgresses",
+            });
+    internal_static_google_cloud_config_v1_DeploymentGroupRevision_descriptor =
+        getDescriptor().getMessageType(81);
+    internal_static_google_cloud_config_v1_DeploymentGroupRevision_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_DeploymentGroupRevision_descriptor,
+            new java.lang.String[] {
+              "Name", "Snapshot", "CreateTime", "AlternativeIds",
+            });
+    internal_static_google_cloud_config_v1_GetDeploymentGroupRevisionRequest_descriptor =
+        getDescriptor().getMessageType(82);
+    internal_static_google_cloud_config_v1_GetDeploymentGroupRevisionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_GetDeploymentGroupRevisionRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_config_v1_ListDeploymentGroupRevisionsRequest_descriptor =
+        getDescriptor().getMessageType(83);
+    internal_static_google_cloud_config_v1_ListDeploymentGroupRevisionsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ListDeploymentGroupRevisionsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_config_v1_ListDeploymentGroupRevisionsResponse_descriptor =
+        getDescriptor().getMessageType(84);
+    internal_static_google_cloud_config_v1_ListDeploymentGroupRevisionsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_config_v1_ListDeploymentGroupRevisionsResponse_descriptor,
+            new java.lang.String[] {
+              "DeploymentGroupRevisions", "NextPageToken", "Unreachable",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();

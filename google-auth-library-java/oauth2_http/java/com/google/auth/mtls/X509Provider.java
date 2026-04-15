@@ -31,15 +31,17 @@
 package com.google.auth.mtls;
 
 import com.google.api.client.util.SecurityUtils;
-import com.google.common.base.Strings;
+import com.google.api.core.InternalApi;
+import com.google.auth.oauth2.EnvironmentProvider;
+import com.google.auth.oauth2.PropertyProvider;
+import com.google.auth.oauth2.SystemEnvironmentProvider;
+import com.google.auth.oauth2.SystemPropertyProvider;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.SequenceInputStream;
 import java.security.KeyStore;
-import java.util.Locale;
 
 /**
  * This class implements {@link MtlsProvider} for the Google Auth library transport layer via {@link
@@ -47,11 +49,10 @@ import java.util.Locale;
  * libraries, and the public facing methods may be changed without notice, and have no guarantee of
  * backwards compatibility.
  */
+@InternalApi
 public class X509Provider implements MtlsProvider {
-  static final String CERTIFICATE_CONFIGURATION_ENV_VARIABLE = "GOOGLE_API_CERTIFICATE_CONFIG";
-  static final String WELL_KNOWN_CERTIFICATE_CONFIG_FILE = "certificate_config.json";
-  static final String CLOUDSDK_CONFIG_DIRECTORY = "gcloud";
-
+  private final EnvironmentProvider envProvider;
+  private final PropertyProvider propProvider;
   private final String certConfigPathOverride;
 
   /**
@@ -59,10 +60,30 @@ public class X509Provider implements MtlsProvider {
    * normal checks for the well known certificate configuration file path and environment variable.
    * This is meant for internal Google Cloud usage and behavior may be changed without warning.
    *
+   * @param envProvider environment provider used for environment variables
+   * @param propProvider property provider used for system properties
+   * @param certConfigPathOverride the path to read the certificate configuration from.
+   */
+  @InternalApi
+  public X509Provider(
+      EnvironmentProvider envProvider,
+      PropertyProvider propProvider,
+      String certConfigPathOverride) {
+    this.envProvider = envProvider;
+    this.propProvider = propProvider;
+    this.certConfigPathOverride = certConfigPathOverride;
+  }
+
+  /**
+   * Creates an X509 provider with an override path for the certificate configuration.
+   *
    * @param certConfigPathOverride the path to read the certificate configuration from.
    */
   public X509Provider(String certConfigPathOverride) {
-    this.certConfigPathOverride = certConfigPathOverride;
+    this(
+        SystemEnvironmentProvider.getInstance(),
+        SystemPropertyProvider.getInstance(),
+        certConfigPathOverride);
   }
 
   /**
@@ -72,29 +93,6 @@ public class X509Provider implements MtlsProvider {
    */
   public X509Provider() {
     this(null);
-  }
-
-  /**
-   * Returns the path to the client certificate file specified by the loaded workload certificate
-   * configuration.
-   *
-   * <p>If the configuration has not been loaded yet (e.g., if {@link #getKeyStore()} has not been
-   * called), this method will attempt to load it first by searching the override path, environment
-   * variable, and well-known locations.
-   *
-   * @return The path to the certificate file.
-   * @throws IOException if the certificate configuration cannot be found or loaded, or if the
-   *     configuration file does not specify a certificate path.
-   * @throws CertificateSourceUnavailableException if the configuration file is not found.
-   */
-  public String getCertificatePath() throws IOException {
-    String certPath = getWorkloadCertificateConfiguration().getCertPath();
-    if (Strings.isNullOrEmpty(certPath)) {
-      // Ensure the loaded configuration actually contains the required path.
-      throw new CertificateSourceUnavailableException(
-          "Certificate configuration loaded successfully, but does not contain a 'certificate_file' path.");
-    }
-    return certPath;
   }
 
   /**
@@ -115,12 +113,14 @@ public class X509Provider implements MtlsProvider {
    */
   @Override
   public KeyStore getKeyStore() throws CertificateSourceUnavailableException, IOException {
-    WorkloadCertificateConfiguration workloadCertConfig = getWorkloadCertificateConfiguration();
+    WorkloadCertificateConfiguration workloadCertConfig =
+        MtlsUtils.getWorkloadCertificateConfiguration(
+            envProvider, propProvider, certConfigPathOverride);
 
     // Read the certificate and private key file paths into streams.
-    try (InputStream certStream = createInputStream(new File(workloadCertConfig.getCertPath()));
+    try (InputStream certStream = new FileInputStream(new File(workloadCertConfig.getCertPath()));
         InputStream privateKeyStream =
-            createInputStream(new File(workloadCertConfig.getPrivateKeyPath()));
+            new FileInputStream(new File(workloadCertConfig.getPrivateKeyPath()));
         SequenceInputStream certAndPrivateKeyStream =
             new SequenceInputStream(certStream, privateKeyStream)) {
 
@@ -148,75 +148,5 @@ public class X509Provider implements MtlsProvider {
       return false;
     }
     return true;
-  }
-
-  private WorkloadCertificateConfiguration getWorkloadCertificateConfiguration()
-      throws IOException {
-    File certConfig;
-    if (this.certConfigPathOverride != null) {
-      certConfig = new File(certConfigPathOverride);
-    } else {
-      String envCredentialsPath = getEnv(CERTIFICATE_CONFIGURATION_ENV_VARIABLE);
-      if (!Strings.isNullOrEmpty(envCredentialsPath)) {
-        certConfig = new File(envCredentialsPath);
-      } else {
-        certConfig = getWellKnownCertificateConfigFile();
-      }
-    }
-    InputStream certConfigStream = null;
-    try {
-      if (!isFile(certConfig)) {
-        // Path will be put in the message from the catch block below
-        throw new CertificateSourceUnavailableException("File does not exist.");
-      }
-      certConfigStream = createInputStream(certConfig);
-      return WorkloadCertificateConfiguration.fromCertificateConfigurationStream(certConfigStream);
-    } finally {
-      if (certConfigStream != null) {
-        certConfigStream.close();
-      }
-    }
-  }
-
-  /*
-   * Start of methods to allow overriding in the test code to isolate from the environment.
-   */
-  boolean isFile(File file) {
-    return file.isFile();
-  }
-
-  InputStream createInputStream(File file) throws FileNotFoundException {
-    return new FileInputStream(file);
-  }
-
-  String getEnv(String name) {
-    return System.getenv(name);
-  }
-
-  String getOsName() {
-    return getProperty("os.name", "").toLowerCase(Locale.US);
-  }
-
-  String getProperty(String property, String def) {
-    return System.getProperty(property, def);
-  }
-
-  /*
-   * End of methods to allow overriding in the test code to isolate from the environment.
-   */
-
-  private File getWellKnownCertificateConfigFile() {
-    File cloudConfigPath;
-    String envPath = getEnv("CLOUDSDK_CONFIG");
-    if (envPath != null) {
-      cloudConfigPath = new File(envPath);
-    } else if (getOsName().indexOf("windows") >= 0) {
-      File appDataPath = new File(getEnv("APPDATA"));
-      cloudConfigPath = new File(appDataPath, CLOUDSDK_CONFIG_DIRECTORY);
-    } else {
-      File configPath = new File(getProperty("user.home", ""), ".config");
-      cloudConfigPath = new File(configPath, CLOUDSDK_CONFIG_DIRECTORY);
-    }
-    return new File(cloudConfigPath, WELL_KNOWN_CERTIFICATE_CONFIG_FILE);
   }
 }

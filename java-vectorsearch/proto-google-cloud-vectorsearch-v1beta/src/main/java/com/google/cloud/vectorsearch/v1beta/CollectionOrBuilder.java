@@ -259,7 +259,7 @@ public interface CollectionOrBuilder
    * </code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.Collection.schema is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=206
+   *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=220
    * @return Whether the schema field is set.
    */
   @java.lang.Deprecated
@@ -277,7 +277,7 @@ public interface CollectionOrBuilder
    * </code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.Collection.schema is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=206
+   *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=220
    * @return The schema.
    */
   @java.lang.Deprecated
@@ -389,6 +389,8 @@ public interface CollectionOrBuilder
    * Optional. JSON Schema for data.
    * Field names must contain only alphanumeric characters,
    * underscores, and hyphens.
+   * The schema must be compliant with
+   * [JSON Schema Draft 7](https://json-schema.org/draft-07/schema).
    * </pre>
    *
    * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -405,6 +407,8 @@ public interface CollectionOrBuilder
    * Optional. JSON Schema for data.
    * Field names must contain only alphanumeric characters,
    * underscores, and hyphens.
+   * The schema must be compliant with
+   * [JSON Schema Draft 7](https://json-schema.org/draft-07/schema).
    * </pre>
    *
    * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -421,10 +425,61 @@ public interface CollectionOrBuilder
    * Optional. JSON Schema for data.
    * Field names must contain only alphanumeric characters,
    * underscores, and hyphens.
+   * The schema must be compliant with
+   * [JSON Schema Draft 7](https://json-schema.org/draft-07/schema).
    * </pre>
    *
    * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.protobuf.StructOrBuilder getDataSchemaOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies the customer-managed encryption key spec for
+   * a Collection. If set, this Collection and all sub-resources of this
+   * Collection will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.EncryptionSpec encryption_spec = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies the customer-managed encryption key spec for
+   * a Collection. If set, this Collection and all sub-resources of this
+   * Collection will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.EncryptionSpec encryption_spec = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.vectorsearch.v1beta.EncryptionSpec getEncryptionSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies the customer-managed encryption key spec for
+   * a Collection. If set, this Collection and all sub-resources of this
+   * Collection will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.EncryptionSpec encryption_spec = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vectorsearch.v1beta.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 }
