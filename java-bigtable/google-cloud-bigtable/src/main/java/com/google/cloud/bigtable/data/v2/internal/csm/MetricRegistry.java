@@ -27,6 +27,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientSessionDurat
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientSessionOpenLatency;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientSessionUptime;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.ClientTransportLatency;
+import com.google.cloud.bigtable.data.v2.internal.csm.metrics.CustomAttemptLatency;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.GrpcMetric;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.MetricWrapper;
 import com.google.cloud.bigtable.data.v2.internal.csm.metrics.PacemakerDelay;
@@ -87,6 +88,8 @@ public class MetricRegistry {
 
   final ClientChannelPoolFallbackCount channelFallbackCountMetric;
 
+  final CustomAttemptLatency customAttemptLatencyMetric;
+
   private final Map<String, MetricWrapper<?>> metrics = new HashMap<>();
   private final List<String> grpcMetricNames = new ArrayList<>();
 
@@ -116,6 +119,8 @@ public class MetricRegistry {
     pacemakerDelayMetric = register(new PacemakerDelay());
 
     channelFallbackCountMetric = register(new ClientChannelPoolFallbackCount());
+
+    customAttemptLatencyMetric = register(new CustomAttemptLatency());
 
     // From
     // https://github.com/grpc/grpc-java/blob/31fdb6c2268b4b1c8ba6c995ee46c58e84a831aa/rls/src/main/java/io/grpc/rls/CachingRlsLbClient.java#L138-L165
@@ -226,6 +231,8 @@ public class MetricRegistry {
 
     public final ClientChannelPoolFallbackCount.Recorder channelFallbackCount;
 
+    public final CustomAttemptLatency.Recorder customAttemptLatency;
+
     private RecorderRegistry(Meter meter, boolean disableInternalMetrics) {
       // Public metrics
       operationLatency = operationLatencyMetric.newRecorder(meter);
@@ -260,6 +267,8 @@ public class MetricRegistry {
       pacemakerDelay = pacemakerDelayMetric.newRecorder(meter);
 
       channelFallbackCount = channelFallbackCountMetric.newRecorder(meter);
+
+      customAttemptLatency = customAttemptLatencyMetric.newRecorder(meter);
     }
   }
 }

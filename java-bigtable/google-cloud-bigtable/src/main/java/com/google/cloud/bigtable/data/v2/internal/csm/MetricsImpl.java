@@ -30,6 +30,7 @@ import com.google.cloud.bigtable.data.v2.internal.csm.NoopMetrics.NoopVrpcTracer
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.ClientInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.attributes.EnvInfo;
 import com.google.cloud.bigtable.data.v2.internal.csm.exporter.BigtableCloudMonitoringExporter;
+import com.google.cloud.bigtable.data.v2.internal.csm.exporter.BigtableFilteringExporter;
 import com.google.cloud.bigtable.data.v2.internal.csm.exporter.BigtablePeriodicReader;
 import com.google.cloud.bigtable.data.v2.internal.csm.opencensus.MetricsTracerFactory;
 import com.google.cloud.bigtable.data.v2.internal.csm.opencensus.RpcMeasureConstants;
@@ -52,6 +53,8 @@ import com.google.cloud.bigtable.data.v2.internal.csm.tracers.VRpcTracerImpl;
 import com.google.cloud.bigtable.data.v2.internal.session.SessionPoolInfo;
 import com.google.cloud.bigtable.data.v2.internal.session.VRpcDescriptor;
 import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
+import com.google.cloud.opentelemetry.metric.GoogleCloudMetricExporter;
+import com.google.cloud.opentelemetry.metric.MetricConfiguration;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Splitter;
 import com.google.common.base.Suppliers;
@@ -68,10 +71,13 @@ import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
+import io.opentelemetry.sdk.metrics.export.PeriodicMetricReader;
 import java.io.Closeable;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -79,6 +85,14 @@ import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 
 public class MetricsImpl implements Metrics, Closeable {
+
+  public static final String CUSTOM_METRIC = "bigtable.internal.enable-custom-metric";
+
+  private static final boolean enableCustomMetric =
+      Optional.ofNullable(System.getProperty(CUSTOM_METRIC))
+          .map(Boolean::parseBoolean)
+          .orElse(false);
+
   private final ApiTracerFactory userTracerFactory;
   private final @Nullable OpenTelemetrySdk internalOtel;
   private final @Nullable MetricRegistry.RecorderRegistry internalRecorder;
@@ -196,7 +210,8 @@ public class MetricsImpl implements Metrics, Closeable {
     }
     ImmutableList.Builder<VRpcTracer> builder = ImmutableList.builder();
     builder.add(
-        new VRpcTracerImpl(internalRecorder, poolInfo, descriptor.getMethodInfo(), deadline));
+        new VRpcTracerImpl(
+            internalRecorder, poolInfo, descriptor.getMethodInfo(), deadline, enableCustomMetric));
     if (userRecorder != null) {
       builder.add(new VRpcTracerImpl(userRecorder, poolInfo, descriptor.getMethodInfo(), deadline));
     }
@@ -300,8 +315,28 @@ public class MetricsImpl implements Metrics, Closeable {
             metricsEndpoint,
             universeDomain);
 
-    meterProvider.registerMetricReader(new BigtablePeriodicReader(exporter, executor));
+    meterProvider.registerMetricReader(
+        new BigtablePeriodicReader(
+            new BigtableFilteringExporter(
+                exporter,
+                input -> input.getName().startsWith("bigtable.googleapis.com/internal/client")),
+            executor));
 
+    if (enableCustomMetric) {
+      // Monitored resource and project id are detected at export time
+      MetricConfiguration metricConfig =
+          MetricConfiguration.builder()
+              .setCredentials(credentials)
+              .setInstrumentationLibraryLabelsEnabled(false)
+              .build();
+      meterProvider.registerMetricReader(
+          PeriodicMetricReader.builder(
+                  new BigtableFilteringExporter(
+                      GoogleCloudMetricExporter.createWithConfiguration(metricConfig),
+                      input -> input.getName().startsWith("bigtable.custom")))
+              .setInterval(Duration.ofMinutes(1))
+              .build());
+    }
     return OpenTelemetrySdk.builder().setMeterProvider(meterProvider.build()).build();
   }
 

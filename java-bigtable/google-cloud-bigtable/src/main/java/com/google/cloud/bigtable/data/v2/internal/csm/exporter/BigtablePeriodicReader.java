@@ -34,10 +34,10 @@ import java.util.concurrent.ScheduledExecutorService;
  */
 public class BigtablePeriodicReader implements MetricReader {
   private final MetricReader delegate;
-  private final BigtableCloudMonitoringExporter exporter;
+  private final BigtableFilteringExporter exporter;
 
   public BigtablePeriodicReader(
-      BigtableCloudMonitoringExporter exporter, ScheduledExecutorService executor) {
+      BigtableFilteringExporter exporter, ScheduledExecutorService executor) {
     delegate = PeriodicMetricReader.builder(exporter).setExecutor(executor).build();
     this.exporter = exporter;
   }

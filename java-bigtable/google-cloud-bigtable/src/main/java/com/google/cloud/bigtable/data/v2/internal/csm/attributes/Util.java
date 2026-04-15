@@ -79,6 +79,10 @@ public class Util {
             .orElse(TransportType.TRANSPORT_TYPE_UNKNOWN));
   }
 
+  public static long formatAfeId(@Nullable PeerInfo peerInfo) {
+    return Optional.ofNullable(peerInfo).map(PeerInfo::getApplicationFrontendId).orElse(0L);
+  }
+
   public static String transportTypeToString(TransportType transportType) {
     String label = transportTypeToStringWithoutFallback(transportType);
     if (label != null) {

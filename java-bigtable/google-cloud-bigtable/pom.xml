@@ -253,6 +253,12 @@
       <artifactId>proto-google-cloud-monitoring-v3</artifactId>
     </dependency>
 
+    <!-- export custom metrics to cloud console -->
+    <dependency>
+      <groupId>com.google.cloud.opentelemetry</groupId>
+      <artifactId>exporter-metrics</artifactId>
+    </dependency>
+
     <!-- Test dependencies -->
     <dependency>
       <groupId>com.google.api.grpc</groupId>
