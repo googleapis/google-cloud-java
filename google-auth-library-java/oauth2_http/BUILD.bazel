@@ -3,6 +3,7 @@ java_library(
     srcs = glob(["java/**/*.java"]),
     deps = [
         "@com_google_guava_guava//jar",
+        "@com_google_guava_failureaccess//jar",
         "//google-auth-library-java/credentials:credentials",
         "@com_google_http_client_google_http_client//jar",
         "@com_google_http_client_google_http_client_gson//jar",
@@ -11,7 +12,9 @@ java_library(
         "@com_google_errorprone_error_prone_annotations//jar",
         "@com_google_code_findbugs_jsr305//jar",
         "@com_google_auto_value_auto_value_annotations//jar",
+        "@com_google_auto_value_auto_value//jar",
         "@org_slf4j_slf4j_api//jar",
     ],
+    plugins = ["@com_google_api_gax_java//:auto_value_plugin"],
     visibility = ["//visibility:public"],
 )
