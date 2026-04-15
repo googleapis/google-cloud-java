@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.iam.v2",
+  "libraryPackage": "com.google.iam.v2",
+  "services": {
+    "Policies": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PoliciesClient",
+          "rpcs": {
+            "CreatePolicy": {
+              "methods": ["createPolicyAsync", "createPolicyAsync", "createPolicyOperationCallable", "createPolicyCallable"]
+            },
+            "DeletePolicy": {
+              "methods": ["deletePolicyAsync", "deletePolicyAsync", "deletePolicyOperationCallable", "deletePolicyCallable"]
+            },
+            "GetPolicy": {
+              "methods": ["getPolicy", "getPolicy", "getPolicyCallable"]
+            },
+            "ListPolicies": {
+              "methods": ["listPolicies", "listPolicies", "listPoliciesPagedCallable", "listPoliciesCallable"]
+            },
+            "UpdatePolicy": {
+              "methods": ["updatePolicyAsync", "updatePolicyOperationCallable", "updatePolicyCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

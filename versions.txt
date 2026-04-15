@@ -1029,3 +1029,14 @@ google-cloud-nio:0.131.0:0.131.0
 google-cloud-appoptimize:0.1.0:0.1.0
 proto-google-cloud-appoptimize-v1beta:0.1.0:0.1.0
 grpc-google-cloud-appoptimize-v1beta:0.1.0:0.1.0
+proto-proto-google-common-protos-v1:2.70.0:2.70.0
+proto-proto-google-iam-v1-v3:1.65.0:1.65.0
+proto-proto-google-iam-v1-v2:1.65.0:1.65.0
+proto-proto-google-iam-v1-v3beta:1.65.0:1.65.0
+proto-proto-google-iam-v1-v1:1.65.0:1.65.0
+proto-proto-google-iam-v1-v2beta:1.65.0:1.65.0
+grpc-proto-google-iam-v1-v1:1.65.0:1.65.0
+grpc-proto-google-iam-v1-v3beta:1.65.0:1.65.0
+grpc-proto-google-iam-v1-v3:1.65.0:1.65.0
+grpc-proto-google-iam-v1-v2:1.65.0:1.65.0
+grpc-proto-google-iam-v1-v2beta:1.65.0:1.65.0

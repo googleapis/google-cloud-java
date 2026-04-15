@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.api.grpc.api.grpc</groupId>
+  <artifactId>proto-google-iam-v1-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>1.65.0</version><!-- {x-version-update:proto-google-iam-v1:current} -->
+  <name>Google IAM Parent</name>
+  <description>
+    Java idiomatic client for Google Cloud Platform services.
+  </description>
+
+  <parent>
+    <groupId>com.google.cloud</groupId>
+    <artifactId>google-cloud-jar-parent</artifactId>
+    <version>1.85.0</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
+  </parent>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <github.global.server>github</github.global.server>
+    <site.installationModule>proto-google-iam-v1-parent</site.installationModule>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.api.grpc.api.grpc</groupId>
+        <artifactId>proto-google-iam-v1</artifactId>
+        <version>1.65.0</version><!-- {x-version-update:proto-google-iam-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc.api.grpc</groupId>
+        <artifactId>grpc-proto-google-iam-v1-v1</artifactId>
+        <version>1.65.0</version><!-- {x-version-update:grpc-proto-google-iam-v1-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc.api.grpc</groupId>
+        <artifactId>grpc-proto-google-iam-v1-v3beta</artifactId>
+        <version>1.65.0</version><!-- {x-version-update:grpc-proto-google-iam-v1-v3beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc.api.grpc</groupId>
+        <artifactId>grpc-proto-google-iam-v1-v3</artifactId>
+        <version>1.65.0</version><!-- {x-version-update:grpc-proto-google-iam-v1-v3:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc.api.grpc</groupId>
+        <artifactId>grpc-proto-google-iam-v1-v2</artifactId>
+        <version>1.65.0</version><!-- {x-version-update:grpc-proto-google-iam-v1-v2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc.api.grpc</groupId>
+        <artifactId>grpc-proto-google-iam-v1-v2beta</artifactId>
+        <version>1.65.0</version><!-- {x-version-update:grpc-proto-google-iam-v1-v2beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc.api.grpc</groupId>
+        <artifactId>proto-proto-google-iam-v1-v3</artifactId>
+        <version>1.65.0</version><!-- {x-version-update:proto-proto-google-iam-v1-v3:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc.api.grpc</groupId>
+        <artifactId>proto-proto-google-iam-v1-v2</artifactId>
+        <version>1.65.0</version><!-- {x-version-update:proto-proto-google-iam-v1-v2:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc.api.grpc</groupId>
+        <artifactId>proto-proto-google-iam-v1-v3beta</artifactId>
+        <version>1.65.0</version><!-- {x-version-update:proto-proto-google-iam-v1-v3beta:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc.api.grpc</groupId>
+        <artifactId>proto-proto-google-iam-v1-v1</artifactId>
+        <version>1.65.0</version><!-- {x-version-update:proto-proto-google-iam-v1-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc.api.grpc</groupId>
+        <artifactId>proto-proto-google-iam-v1-v2beta</artifactId>
+        <version>1.65.0</version><!-- {x-version-update:proto-proto-google-iam-v1-v2beta:current} -->
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>proto-google-iam-v1</module>
+    <module>grpc-proto-google-iam-v1-v1</module>
+    <module>grpc-proto-google-iam-v1-v3beta</module>
+    <module>grpc-proto-google-iam-v1-v3</module>
+    <module>grpc-proto-google-iam-v1-v2</module>
+    <module>grpc-proto-google-iam-v1-v2beta</module>
+    <module>proto-proto-google-iam-v1-v3</module>
+    <module>proto-proto-google-iam-v1-v2</module>
+    <module>proto-proto-google-iam-v1-v3beta</module>
+    <module>proto-proto-google-iam-v1-v1</module>
+    <module>proto-proto-google-iam-v1-v2beta</module>
+    <module>proto-google-iam-v1-bom</module>
+  </modules>
+
+</project>
