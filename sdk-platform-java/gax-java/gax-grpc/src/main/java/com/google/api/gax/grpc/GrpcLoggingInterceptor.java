@@ -31,6 +31,7 @@
 package com.google.api.gax.grpc;
 
 import static com.google.api.gax.logging.LoggingUtils.executeWithTryCatch;
+import static com.google.api.gax.logging.LoggingUtils.isLoggingEnabled;
 import static com.google.api.gax.logging.LoggingUtils.logRequest;
 import static com.google.api.gax.logging.LoggingUtils.logResponse;
 import static com.google.api.gax.logging.LoggingUtils.recordResponseHeaders;
@@ -70,19 +71,23 @@ public class GrpcLoggingInterceptor implements ClientInterceptor {
 
       @Override
       public void start(Listener<RespT> responseListener, Metadata headers) {
-        recordServiceRpcAndRequestHeaders(
-            method.getServiceName(),
-            method.getFullMethodName(),
-            null, // endpoint is for http request only
-            metadataHeadersToMap(headers),
-            logDataBuilder,
-            LOGGER_PROVIDER);
+        if (isLoggingEnabled()) {
+          recordServiceRpcAndRequestHeaders(
+              method.getServiceName(),
+              method.getFullMethodName(),
+              null, // endpoint is for http request only
+              metadataHeadersToMap(headers),
+              logDataBuilder,
+              LOGGER_PROVIDER);
+        }
         SimpleForwardingClientCallListener<RespT> responseLoggingListener =
             new SimpleForwardingClientCallListener<RespT>(responseListener) {
               @Override
               public void onHeaders(Metadata headers) {
-                recordResponseHeaders(
-                    metadataHeadersToMap(headers), logDataBuilder, LOGGER_PROVIDER);
+                if (isLoggingEnabled()) {
+                  recordResponseHeaders(
+                      metadataHeadersToMap(headers), logDataBuilder, LOGGER_PROVIDER);
+                }
                 super.onHeaders(headers);
               }
 

@@ -30,6 +30,7 @@
 
 package com.google.api.gax.grpc;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
@@ -44,6 +45,8 @@ import io.grpc.ClientInterceptors;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
+import java.lang.reflect.Method;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -57,6 +60,11 @@ class GrpcLoggingInterceptorTest {
   @Mock private ClientCall<String, Integer> call;
 
   private static final MethodDescriptor<String, Integer> method = FakeMethodDescriptor.create();
+
+  @AfterEach
+  void tearDown() throws Exception {
+    setLoggingEnabled(false);
+  }
 
   @Test
   void testInterceptor_basic() {
@@ -100,5 +108,37 @@ class GrpcLoggingInterceptorTest {
 
     Status status = Status.OK;
     interceptor.currentListener.onClose(status, new Metadata());
+  }
+
+  @Test
+  void testInterceptor_skipsMetadataMaterializationWhenLoggingDisabled() throws Exception {
+    setLoggingEnabled(false);
+    when(channel.newCall(Mockito.<MethodDescriptor<String, Integer>>any(), any(CallOptions.class)))
+        .thenReturn(call);
+
+    GrpcLoggingInterceptor interceptor = new GrpcLoggingInterceptor();
+    Channel intercepted = ClientInterceptors.intercept(channel, interceptor);
+
+    @SuppressWarnings("unchecked")
+    ClientCall.Listener<Integer> listener = mock(ClientCall.Listener.class);
+
+    Metadata requestHeaders = mock(Metadata.class);
+    when(requestHeaders.keys()).thenThrow(new AssertionError("request headers should not be read"));
+    ClientCall<String, Integer> interceptedCall = intercepted.newCall(method, CallOptions.DEFAULT);
+
+    assertDoesNotThrow(() -> interceptedCall.start(listener, requestHeaders));
+
+    Metadata responseHeaders = mock(Metadata.class);
+    when(responseHeaders.keys())
+        .thenThrow(new AssertionError("response headers should not be read"));
+
+    assertDoesNotThrow(() -> interceptor.currentListener.onHeaders(responseHeaders));
+  }
+
+  private static void setLoggingEnabled(boolean enabled) throws Exception {
+    Class<?> loggingUtils = Class.forName("com.google.api.gax.logging.LoggingUtils");
+    Method method = loggingUtils.getDeclaredMethod("setLoggingEnabled", boolean.class);
+    method.setAccessible(true);
+    method.invoke(null, enabled);
   }
 }
