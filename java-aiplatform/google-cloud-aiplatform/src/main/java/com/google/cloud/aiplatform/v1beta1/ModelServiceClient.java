@@ -2521,6 +2521,7 @@ public class ModelServiceClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setSourceModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
    *           .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+   *           .setCustomServiceAccount("customServiceAccount-2110106743")
    *           .build();
    *   CopyModelResponse response = modelServiceClient.copyModelAsync(request).get();
    * }
@@ -2555,6 +2556,7 @@ public class ModelServiceClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setSourceModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
    *           .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+   *           .setCustomServiceAccount("customServiceAccount-2110106743")
    *           .build();
    *   OperationFuture<CopyModelResponse, CopyModelOperationMetadata> future =
    *       modelServiceClient.copyModelOperationCallable().futureCall(request);
@@ -2589,6 +2591,7 @@ public class ModelServiceClient implements BackgroundResource {
    *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setSourceModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
    *           .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+   *           .setCustomServiceAccount("customServiceAccount-2110106743")
    *           .build();
    *   ApiFuture<Operation> future = modelServiceClient.copyModelCallable().futureCall(request);
    *   // Do something.
