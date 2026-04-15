@@ -60,10 +60,16 @@ class GrpcLoggingInterceptorTest {
   @Mock private ClientCall<String, Integer> call;
 
   private static final MethodDescriptor<String, Integer> method = FakeMethodDescriptor.create();
+  private boolean originalLoggingEnabled;
+
+  @org.junit.jupiter.api.BeforeEach
+  void setUpLoggingState() throws Exception {
+    originalLoggingEnabled = isLoggingEnabled();
+  }
 
   @AfterEach
   void tearDown() throws Exception {
-    setLoggingEnabled(false);
+    setLoggingEnabled(originalLoggingEnabled);
   }
 
   @Test
@@ -140,5 +146,12 @@ class GrpcLoggingInterceptorTest {
     Method method = loggingUtils.getDeclaredMethod("setLoggingEnabled", boolean.class);
     method.setAccessible(true);
     method.invoke(null, enabled);
+  }
+
+  private static boolean isLoggingEnabled() throws Exception {
+    Class<?> loggingUtils = Class.forName("com.google.api.gax.logging.LoggingUtils");
+    Method method = loggingUtils.getDeclaredMethod("isLoggingEnabled");
+    method.setAccessible(true);
+    return (boolean) method.invoke(null);
   }
 }
