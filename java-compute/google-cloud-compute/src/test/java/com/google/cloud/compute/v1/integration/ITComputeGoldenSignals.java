@@ -26,17 +26,23 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.gax.tracing.CompositeTracerFactory;
-import com.google.api.gax.tracing.LoggingTracerFactory;
 import com.google.api.gax.tracing.ObservabilityAttributes;
 import com.google.api.gax.tracing.OpenTelemetryMetricsFactory;
 import com.google.api.gax.tracing.OpenTelemetryTracingFactory;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.compute.v1.InstancesClient;
 import com.google.cloud.compute.v1.InstancesSettings;
+import com.google.cloud.monitoring.v3.MetricServiceClient;
 import com.google.cloud.trace.v1.TraceServiceClient;
 import com.google.cloud.trace.v1.TraceServiceSettings;
+import com.google.common.base.Stopwatch;
 import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.devtools.cloudtrace.v1.TraceSpan;
+import com.google.monitoring.v3.ListTimeSeriesRequest;
+import com.google.monitoring.v3.ListTimeSeriesResponse;
+import com.google.monitoring.v3.ProjectName;
+import com.google.monitoring.v3.TimeInterval;
+import com.google.protobuf.util.Timestamps;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
@@ -46,15 +52,18 @@ import io.opentelemetry.api.trace.TraceState;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
+import io.opentelemetry.exporter.otlp.metrics.OtlpGrpcMetricExporter;
 import io.opentelemetry.exporter.otlp.trace.OtlpGrpcSpanExporter;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.data.MetricData;
+import io.opentelemetry.sdk.metrics.export.PeriodicMetricReader;
 import io.opentelemetry.sdk.resources.Resource;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import io.opentelemetry.sdk.trace.SdkTracerProvider;
 import io.opentelemetry.sdk.trace.export.BatchSpanProcessor;
 import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -76,18 +85,32 @@ public class ITComputeGoldenSignals extends BaseTest {
   private static final Logger logger =
       (Logger) LoggerFactory.getLogger(ITComputeGoldenSignals.class);
   private static final String TELEMETRY_ENDPOINT = "https://telemetry.googleapis.com";
+  private static final String CLIENT_REQUEST_DURATION_METRIC = "gcp.client.request.duration";
+  private static final String CLOUD_AVAILABILITY_ZONE = "cloud.availability_zone";
+  private static final String CLOUD_REGION = "cloud.region";
+  private static final String TEST_AVAILABILITY_ZONE = "us-central1-a";
+  private static final String TEST_REGION = "us-central1";
+  private static final String INSTANCE_NAME = "compute-test-instance";
+  private static final String SERVICE_NAME_PREFIX = "compute-golden-signals-test-";
+  // Test run ID used to isolate metrics in parallel CI runs.
+  private static final String METRIC_FILTER_TEMPLATE =
+      "metric.type=\"prometheus.googleapis.com/%s/histogram\" AND resource.type=\"prometheus_target\" AND resource.labels.job=\""
+          + SERVICE_NAME_PREFIX
+          + "%s\"";
 
   private OpenTelemetrySdk openTelemetrySdk;
   private TraceServiceClient traceClient;
   private String rootSpanName;
+  private String testRunId;
   private Tracer tracer;
   private CompositeTracerFactory compositeFactory;
-  private InMemoryMetricReader metricReader;
+  private InMemoryMetricReader inMemoryReader;
   private TestAppender testAppender;
 
   @Before
   public void setUp() throws Exception {
     rootSpanName = "ComputeRootSpan-" + generateRandomHexString(8);
+    testRunId = generateRandomHexString(8);
 
     GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
     credentials.refreshIfExpired();
@@ -106,9 +129,26 @@ public class ITComputeGoldenSignals extends BaseTest {
         Resource.getDefault()
             .merge(
                 Resource.create(
-                    Attributes.of(AttributeKey.stringKey("gcp.project_id"), DEFAULT_PROJECT)));
+                    Attributes.builder()
+                        .put("gcp.project_id", DEFAULT_PROJECT)
+                        .put("test_run_id", testRunId)
+                        .put("instance", INSTANCE_NAME)
+                        .put("service.name", SERVICE_NAME_PREFIX + testRunId)
+                        .put(CLOUD_AVAILABILITY_ZONE, TEST_AVAILABILITY_ZONE)
+                        .put(CLOUD_REGION, TEST_REGION)
+                        .build()));
 
-    metricReader = InMemoryMetricReader.create();
+    inMemoryReader = InMemoryMetricReader.create();
+    // Note: The standard OTel OTLP exporter does not support passing GoogleCredentials directly.
+    OtlpGrpcMetricExporter metricExporter =
+        OtlpGrpcMetricExporter.builder()
+            .setEndpoint(TELEMETRY_ENDPOINT)
+            .addHeader("Authorization", "Bearer " + token)
+            .addHeader("x-goog-user-project", DEFAULT_PROJECT)
+            .build();
+    PeriodicMetricReader exportedMetricsReader =
+        PeriodicMetricReader.builder(metricExporter).build();
+
     openTelemetrySdk =
         OpenTelemetrySdk.builder()
             .setTracerProvider(
@@ -118,7 +158,8 @@ public class ITComputeGoldenSignals extends BaseTest {
                     .build())
             .setMeterProvider(
                 SdkMeterProvider.builder()
-                    .registerMetricReader(metricReader)
+                    .registerMetricReader(inMemoryReader)
+                    .registerMetricReader(exportedMetricsReader)
                     .setResource(resource)
                     .build())
             .build();
@@ -147,8 +188,7 @@ public class ITComputeGoldenSignals extends BaseTest {
     List<ApiTracerFactory> factories =
         Arrays.asList(
             new OpenTelemetryTracingFactory(openTelemetrySdk),
-            new OpenTelemetryMetricsFactory(openTelemetrySdk),
-            new LoggingTracerFactory());
+            new OpenTelemetryMetricsFactory(openTelemetrySdk));
     compositeFactory = new CompositeTracerFactory(factories);
 
     // Initialize and attach TestAppender
@@ -215,8 +255,9 @@ public class ITComputeGoldenSignals extends BaseTest {
     }
 
     openTelemetrySdk.getSdkTracerProvider().forceFlush();
+    openTelemetrySdk.getSdkMeterProvider().forceFlush();
     fetchAndValidateTrace(localTraceId, false);
-    validateMetrics();
+    verifyMetrics(false);
     validateLogging(false);
   }
 
@@ -232,7 +273,7 @@ public class ITComputeGoldenSignals extends BaseTest {
 
       try (InstancesClient client = InstancesClient.create(settingsBuilder.build())) {
         logger.info("Triggering error by listing instances in invalid project...");
-        client.list("invalid-project-" + UUID.randomUUID().toString(), DEFAULT_ZONE);
+        client.list("invalid-project-id", DEFAULT_ZONE);
         fail("Expected exception not thrown");
       } catch (Exception e) {
         logger.info("Caught expected exception: " + e.getMessage());
@@ -242,8 +283,10 @@ public class ITComputeGoldenSignals extends BaseTest {
     }
 
     openTelemetrySdk.getSdkTracerProvider().forceFlush();
+    openTelemetrySdk.getSdkMeterProvider().forceFlush();
+
     fetchAndValidateTrace(localTraceId, true);
-    validateMetrics();
+    verifyMetrics(true);
     validateLogging(true);
   }
 
@@ -278,7 +321,7 @@ public class ITComputeGoldenSignals extends BaseTest {
           .isEqualTo("compute/v1/projects/{project=*}/zones/{zone=*}/instances");
       String expectedDestinationResource;
       if (expectError) {
-        expectedDestinationResource = "//compute.googleapis.com/projects/invalid-project-";
+        expectedDestinationResource = "//compute.googleapis.com/projects/invalid-project-id";
       } else {
         expectedDestinationResource =
             "//compute.googleapis.com/projects/" + DEFAULT_PROJECT + "/zones/us-central1-a";
@@ -286,30 +329,38 @@ public class ITComputeGoldenSignals extends BaseTest {
       assertThat(span.getLabelsMap().get(ObservabilityAttributes.DESTINATION_RESOURCE_ID_ATTRIBUTE))
           .startsWith(expectedDestinationResource);
 
-      // These might fail if not supported in HTTP/REST yet
-      assertThat(span.getLabelsMap()).containsKey(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE);
+      String expectedUrl;
+      if (expectError) {
+        expectedUrl =
+            "https://compute.googleapis.com:443/compute/v1/projects/invalid-project-id/zones/us-central1-a/instances";
+      } else {
+        expectedUrl =
+            "https://compute.googleapis.com:443/compute/v1/projects/"
+                + DEFAULT_PROJECT
+                + "/zones/us-central1-a/instances";
+      }
+      assertThat(span.getLabelsMap().get(ObservabilityAttributes.HTTP_URL_FULL_ATTRIBUTE))
+          .isEqualTo(expectedUrl);
 
       if (expectError) {
         assertThat(span.getLabelsMap().get(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE))
             .isEqualTo("404");
+        // Verify error attributes
+        assertThat(span.getLabelsMap().get(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE))
+            .isEqualTo("404");
+        assertThat(span.getLabelsMap().get(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE))
+            .contains("NotFoundException");
+        assertThat(span.getLabelsMap().get(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE))
+            .contains("was not found");
       } else {
         assertThat(span.getLabelsMap().get(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE))
             .isEqualTo("200");
       }
-
-      if (expectError) {
-        // Verify error attributes
-        assertThat(span.getLabelsMap()).containsKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE);
-        assertThat(span.getLabelsMap())
-            .containsKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE);
-        assertThat(span.getLabelsMap())
-            .containsKey(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE);
-      }
     }
   }
 
-  private void validateMetrics() {
-    Collection<MetricData> metrics = metricReader.collectAllMetrics();
+  private void validateMetrics(boolean expectError) {
+    Collection<MetricData> metrics = inMemoryReader.collectAllMetrics();
     logger.info("Collected " + metrics.size() + " metrics");
 
     // GoldenSignalsMetricsRecorder.CLIENT_REQUEST_DURATION_METRIC_NAME is package-private
@@ -340,6 +391,139 @@ public class ITComputeGoldenSignals extends BaseTest {
     assertThat(
             attributes.get(AttributeKey.stringKey(ObservabilityAttributes.URL_TEMPLATE_ATTRIBUTE)))
         .isEqualTo("compute/v1/projects/{project=*}/zones/{zone=*}/instances");
+
+    // New assertions
+    String expectedProject = expectError ? "invalid-project-id" : DEFAULT_PROJECT;
+    String expectedStatus = expectError ? "404" : "200";
+
+    assertThat(
+            attributes.get(
+                AttributeKey.longKey(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE)))
+        .isEqualTo(Long.valueOf(expectedStatus));
+
+    assertThat(attributes.get(AttributeKey.stringKey(ObservabilityAttributes.REPO_ATTRIBUTE)))
+        .isEqualTo("googleapis/google-cloud-java");
+  }
+
+  private void validateMetricsInCloudMonitoring(boolean expectError) throws Exception {
+    MetricServiceClient metricClient = MetricServiceClient.create();
+    try {
+      // Use filter for the specific metric and project, isolated by testRunId
+      String filter =
+          String.format(METRIC_FILTER_TEMPLATE, CLIENT_REQUEST_DURATION_METRIC, testRunId);
+
+      ProjectName name = ProjectName.of(DEFAULT_PROJECT);
+
+      Instant start = Instant.now().minus(Duration.ofMinutes(5));
+      Instant end = Instant.now().plus(Duration.ofMinutes(5));
+
+      TimeInterval interval =
+          TimeInterval.newBuilder()
+              .setStartTime(Timestamps.fromMillis(start.toEpochMilli()))
+              .setEndTime(Timestamps.fromMillis(end.toEpochMilli()))
+              .build();
+
+      ListTimeSeriesRequest request =
+          ListTimeSeriesRequest.newBuilder()
+              .setName(name.toString())
+              .setFilter(filter)
+              .setInterval(interval)
+              .setView(ListTimeSeriesRequest.TimeSeriesView.FULL)
+              .build();
+
+      RetrySettings retrySettings =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelayDuration(Duration.ofSeconds(10))
+              .setRetryDelayMultiplier(2.0)
+              .setMaxRetryDelayDuration(Duration.ofSeconds(60))
+              .setTotalTimeoutDuration(Duration.ofMinutes(10))
+              .build();
+
+      com.google.monitoring.v3.TimeSeries targetTs =
+          pollForTimeSeries(metricClient, request, retrySettings);
+
+      assertThat(targetTs).isNotNull();
+      logger.info("Found target metrics in Cloud Monitoring!");
+
+      com.google.monitoring.v3.TimeSeries ts = targetTs;
+      Map<String, String> metricLabels = ts.getMetric().getLabelsMap();
+      logger.info("Metric labels from Cloud Monitoring: " + metricLabels);
+
+      String expectedStatus = expectError ? "404" : "200";
+
+      // Verify attributes (Prometheus metrics retain dots in keys)
+      assertThat(metricLabels.get(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE))
+          .isEqualTo("compute");
+      assertThat(metricLabels.get(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE))
+          .isEqualTo("http");
+      assertThat(metricLabels.get(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE))
+          .isEqualTo("compute.googleapis.com");
+      assertThat(metricLabels.get(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE))
+          .isEqualTo("compute.googleapis.com");
+      assertThat(metricLabels.get(ObservabilityAttributes.REPO_ATTRIBUTE))
+          .isEqualTo("googleapis/google-cloud-java");
+
+      assertThat(metricLabels.get(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE))
+          .isEqualTo(expectedStatus);
+
+      if (metricLabels.containsKey("url_template")) {
+        assertThat(metricLabels.get("url_template")).startsWith("/compute/v1/projects/");
+      }
+
+    } finally {
+      metricClient.close();
+    }
+  }
+
+  private com.google.monitoring.v3.TimeSeries pollForTimeSeries(
+      MetricServiceClient metricClient, ListTimeSeriesRequest request, RetrySettings retrySettings)
+      throws InterruptedException {
+    Stopwatch metricsPollingStopwatch = Stopwatch.createStarted();
+    Duration currentDelay = retrySettings.getInitialRetryDelayDuration();
+    com.google.monitoring.v3.TimeSeries targetTs = null;
+
+    while (metricsPollingStopwatch.elapsed().compareTo(retrySettings.getTotalTimeoutDuration())
+        < 0) {
+      try {
+        ListTimeSeriesResponse response = metricClient.listTimeSeriesCallable().call(request);
+        for (com.google.monitoring.v3.TimeSeries ts : response.getTimeSeriesList()) {
+          Map<String, String> resourceLabels = ts.getResource().getLabelsMap();
+          if ((SERVICE_NAME_PREFIX + testRunId).equals(resourceLabels.get("job"))) {
+            targetTs = ts;
+            break;
+          }
+        }
+        if (targetTs != null) {
+          break;
+        }
+      } catch (com.google.api.gax.rpc.NotFoundException e) {
+        logger.info("Metric not found yet (NotFoundException): " + e.getMessage());
+      } catch (io.grpc.StatusRuntimeException e) {
+        if (e.getStatus().getCode() == io.grpc.Status.Code.NOT_FOUND) {
+          logger.info("Metric not found yet (gRPC NOT_FOUND): " + e.getMessage());
+        } else {
+          throw e;
+        }
+      }
+      logger.info(
+          "Waiting for metrics in Cloud Monitoring, retrying in "
+              + currentDelay.getSeconds()
+              + " seconds...");
+      Thread.sleep(currentDelay.toMillis());
+
+      currentDelay =
+          Duration.ofMillis(
+              (long) (currentDelay.toMillis() * retrySettings.getRetryDelayMultiplier()));
+      if (currentDelay.compareTo(retrySettings.getMaxRetryDelayDuration()) > 0) {
+        currentDelay = retrySettings.getMaxRetryDelayDuration();
+      }
+    }
+    return targetTs;
+  }
+
+  private void verifyMetrics(boolean expectError) throws Exception {
+    validateMetrics(expectError);
+    validateMetricsInCloudMonitoring(expectError);
   }
 
   private void validateLogging(boolean expectError) {
