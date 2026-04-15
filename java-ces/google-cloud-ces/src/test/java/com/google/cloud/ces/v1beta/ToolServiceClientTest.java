@@ -102,6 +102,7 @@ public class ToolServiceClientTest {
         ExecuteToolRequest.newBuilder()
             .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
             .setArgs(Struct.newBuilder().build())
+            .setMockConfig(MockConfig.newBuilder().build())
             .build();
 
     ExecuteToolResponse actualResponse = client.executeTool(request);
@@ -117,6 +118,7 @@ public class ToolServiceClientTest {
     Assert.assertEquals(request.getContext(), actualRequest.getContext());
     Assert.assertEquals(request.getParent(), actualRequest.getParent());
     Assert.assertEquals(request.getArgs(), actualRequest.getArgs());
+    Assert.assertEquals(request.getMockConfig(), actualRequest.getMockConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -133,6 +135,7 @@ public class ToolServiceClientTest {
           ExecuteToolRequest.newBuilder()
               .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
               .setArgs(Struct.newBuilder().build())
+              .setMockConfig(MockConfig.newBuilder().build())
               .build();
       client.executeTool(request);
       Assert.fail("No exception raised");

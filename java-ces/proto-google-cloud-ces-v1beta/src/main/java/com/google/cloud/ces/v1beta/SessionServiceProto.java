@@ -41,6 +41,10 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_MockConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_MockConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_ces_v1beta_InputAudioConfig_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_InputAudioConfig_fieldAccessorTable;
@@ -139,24 +143,34 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "/api/annotations.proto\032\027google/api/clien"
           + "t.proto\032\037google/api/field_behavior.proto"
           + "\032\031google/api/resource.proto\032$google/clou"
-          + "d/ces/v1beta/common.proto\032%google/cloud/ces/v1beta/example.proto\0320google/cloud/c"
-          + "es/v1beta/search_suggestions.proto\032\034google/protobuf/struct.proto\"\235\001\n"
+          + "d/ces/v1beta/common.proto\032%google/cloud/ces/v1beta/example.proto\032#google/cloud/c"
+          + "es/v1beta/mocks.proto\0320google/cloud/ces/"
+          + "v1beta/search_suggestions.proto\032\034google/protobuf/struct.proto\"\246\002\n\n"
+          + "MockConfig\022G\n"
+          + "\021mocked_tool_calls\030\001"
+          + " \003(\0132\'.google.cloud.ces.v1beta.MockedToolCallB\003\340A\001\022h\n"
+          + "\034unmatched_tool_call_behavior\030\002 \001(\0162=.google.clo"
+          + "ud.ces.v1beta.MockConfig.UnmatchedToolCallBehaviorB\003\340A\002\"e\n"
+          + "\031UnmatchedToolCallBehavior\022,\n"
+          + "(UNMATCHED_TOOL_CALL_BEHAVIOR_UNSPECIFIED\020\000\022\010\n"
+          + "\004FAIL\020\001\022\020\n"
+          + "\014PASS_THROUGH\020\002\"\235\001\n"
           + "\020InputAudioConfig\022C\n"
-          + "\016audio_encoding\030\001"
-          + " \001(\0162&.google.cloud.ces.v1beta.AudioEncodingB\003\340A\002\022\036\n"
+          + "\016audio_encoding\030\001 "
+          + "\001(\0162&.google.cloud.ces.v1beta.AudioEncodingB\003\340A\002\022\036\n"
           + "\021sample_rate_hertz\030\002 \001(\005B\003\340A\002\022$\n"
           + "\027noise_suppression_level\030\006 \001(\tB\003\340A\001\"x\n"
           + "\021OutputAudioConfig\022C\n"
-          + "\016audio_encoding\030\001"
-          + " \001(\0162&.google.cloud.ces.v1beta.AudioEncodingB\003\340A\002\022\036\n"
+          + "\016audio_encoding\030\001 "
+          + "\001(\0162&.google.cloud.ces.v1beta.AudioEncodingB\003\340A\002\022\036\n"
           + "\021sample_rate_hertz\030\002 \001(\005B\003\340A\002\"\201\007\n\r"
           + "SessionConfig\0223\n"
           + "\007session\030\001 \001(\tB\"\340A\002\372A\034\n"
           + "\032ces.googleapis.com/Session\022J\n"
           + "\022input_audio_config\030\002"
           + " \001(\0132).google.cloud.ces.v1beta.InputAudioConfigB\003\340A\001\022L\n"
-          + "\023output_audio_config\030\003 \001"
-          + "(\0132*.google.cloud.ces.v1beta.OutputAudioConfigB\003\340A\001\022B\n"
+          + "\023output_audio_config\030\003"
+          + " \001(\0132*.google.cloud.ces.v1beta.OutputAudioConfigB\003\340A\001\022B\n"
           + "\023historical_contexts\030\005 \003(\0132"
           + " .google.cloud.ces.v1beta.MessageB\003\340A\001\0225\n"
           + "\013entry_agent\030\014 \001(\tB \340A\001\372A\032\n"
@@ -164,13 +178,12 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "deployment\030\010 \001(\tB\003\340A\001\022\026\n"
           + "\ttime_zone\030\013 \001(\tB\003\340A\001\022\033\n"
           + "\016use_tool_fakes\030\016 \001(\010B\003\340A\001\022w\n"
-          + "\"remote_dialogflow_query_parameters\030\017 \001(\0132F.google.cloud.ces.v1be"
-          + "ta.SessionConfig.RemoteDialogflowQueryParametersB\003\340A\001\022\"\n"
+          + "\"remote_dialogflow_query_parameters\030\017 \001(\0132F.google."
+          + "cloud.ces.v1beta.SessionConfig.RemoteDialogflowQueryParametersB\003\340A\001\022\"\n"
           + "\025enable_text_streaming\030\022 \001(\010B\003\340A\001\032\272\002\n"
           + "\037RemoteDialogflowQueryParameters\022x\n"
-          + "\017webhook_headers\030\001 \003(\0132Z.google."
-          + "cloud.ces.v1beta.SessionConfig.RemoteDia"
-          + "logflowQueryParameters.WebhookHeadersEntryB\003\340A\001\022-\n"
+          + "\017webhook_headers\030\001 \003(\0132Z.google.cloud.ces.v1beta.SessionCo"
+          + "nfig.RemoteDialogflowQueryParameters.WebhookHeadersEntryB\003\340A\001\022-\n"
           + "\007payload\030\002 \001(\0132\027.google.protobuf.StructB\003\340A\001\0227\n"
           + "\021end_user_metadata\030\003"
           + " \001(\0132\027.google.protobuf.StructB\003\340A\001\0325\n"
@@ -180,11 +193,11 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "\tToolCalls\022:\n\n"
           + "tool_calls\030\001 \003(\0132!.google.cloud.ces.v1beta.ToolCallB\003\340A\001\"S\n\r"
           + "ToolResponses\022B\n"
-          + "\016tool_responses\030\001 \003(\013"
-          + "2%.google.cloud.ces.v1beta.ToolResponseB\003\340A\001\"\210\001\n"
+          + "\016tool_responses\030\001"
+          + " \003(\0132%.google.cloud.ces.v1beta.ToolResponseB\003\340A\001\"\210\001\n"
           + "\tCitations\022C\n"
-          + "\014cited_chunks\030\001 \003(\013"
-          + "2-.google.cloud.ces.v1beta.Citations.CitedChunk\0326\n\n"
+          + "\014cited_chunks\030\001"
+          + " \003(\0132-.google.cloud.ces.v1beta.Citations.CitedChunk\0326\n\n"
           + "CitedChunk\022\013\n"
           + "\003uri\030\001 \001(\t\022\r\n"
           + "\005title\030\002 \001(\t\022\014\n"
@@ -195,8 +208,8 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "\004text\030\001 \001(\tB\003\340A\001H\000\022\023\n"
           + "\004dtmf\030\006 \001(\tB\003\340A\001H\000\022\024\n"
           + "\005audio\030\002 \001(\014B\003\340A\001H\000\022E\n"
-          + "\016tool_responses\030\003 \001(\0132&."
-          + "google.cloud.ces.v1beta.ToolResponsesB\003\340A\001H\000\0224\n"
+          + "\016tool_responses\030\003"
+          + " \001(\0132&.google.cloud.ces.v1beta.ToolResponsesB\003\340A\001H\000\0224\n"
           + "\005image\030\004"
           + " \001(\0132\036.google.cloud.ces.v1beta.ImageB\003\340A\001H\000\0222\n"
           + "\004blob\030\007 \001(\0132\035.google.cloud.ces.v1beta.BlobB\003\340A\001H\000\0221\n"
@@ -216,8 +229,8 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "\007payload\030\013 \001(\0132\027.google.protobuf.StructH\000\022\022\n\n"
           + "turn_index\030\006 \001(\005\022\026\n"
           + "\016turn_completed\030\004 \001(\010\022S\n"
-          + "\017diagnostic_info\030\007 "
-          + "\001(\01325.google.cloud.ces.v1beta.SessionOutput.DiagnosticInfoB\003\340A\001\032v\n"
+          + "\017diagnostic_info\030\007"
+          + " \001(\01325.google.cloud.ces.v1beta.SessionOutput.DiagnosticInfoB\003\340A\001\032v\n"
           + "\016DiagnosticInfo\0222\n"
           + "\010messages\030\001 \003(\0132 .google.cloud.ces.v1beta.Message\0220\n"
           + "\troot_span\030\003 \001(\0132\035.google.cloud.ces.v1beta.SpanB\r\n"
@@ -230,14 +243,14 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "\010metadata\030\001 \001(\0132\027.google.protobuf.StructB\003\340A\001\"\010\n"
           + "\006GoAway\"\214\001\n"
           + "\021RunSessionRequest\022;\n"
-          + "\006config\030\001 \001(\0132&.goo"
-          + "gle.cloud.ces.v1beta.SessionConfigB\003\340A\002\022:\n"
+          + "\006config\030\001"
+          + " \001(\0132&.google.cloud.ces.v1beta.SessionConfigB\003\340A\002\022:\n"
           + "\006inputs\030\003 \003(\0132%.google.cloud.ces.v1beta.SessionInputB\003\340A\002\"M\n"
           + "\022RunSessionResponse\0227\n"
           + "\007outputs\030\001 \003(\0132&.google.cloud.ces.v1beta.SessionOutput\"\257\001\n"
           + "\030BidiSessionClientMessage\022=\n"
-          + "\006config\030\001"
-          + " \001(\0132&.google.cloud.ces.v1beta.SessionConfigB\003\340A\001H\000\022D\n"
+          + "\006config\030\001 \001(\0132&."
+          + "google.cloud.ces.v1beta.SessionConfigB\003\340A\001H\000\022D\n"
           + "\016realtime_input\030\002"
           + " \001(\0132%.google.cloud.ces.v1beta.SessionInputB\003\340A\001H\000B\016\n"
           + "\014message_type\"\213\003\n"
@@ -248,8 +261,8 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + " \001(\0132*.google.cloud.ces.v1beta.RecognitionResultB\003\340A\001H\000\022O\n"
           + "\023interruption_signal\030\003"
           + " \001(\0132+.google.cloud.ces.v1beta.InterruptionSignalB\003\340A\001H\000\022?\n"
-          + "\013end_session\030\005 \001(\0132#."
-          + "google.cloud.ces.v1beta.EndSessionB\003\340A\001H\000\0227\n"
+          + "\013end_session\030\005"
+          + " \001(\0132#.google.cloud.ces.v1beta.EndSessionB\003\340A\001H\000\0227\n"
           + "\007go_away\030\006"
           + " \001(\0132\037.google.cloud.ces.v1beta.GoAwayB\003\340A\001H\000B\016\n"
           + "\014message_type*R\n\r"
@@ -259,23 +272,23 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
           + "\005MULAW\020\002\022\010\n"
           + "\004ALAW\020\0032\212\005\n"
           + "\016SessionService\022\276\001\n\n"
-          + "RunSession\022*.google.cloud.ces.v1beta.RunSessionRequest\032+.g"
-          + "oogle.cloud.ces.v1beta.RunSessionRespons"
-          + "e\"W\202\323\344\223\002Q\"L/v1beta/{config.session=proje"
-          + "cts/*/locations/*/apps/*/sessions/*}:runSession:\001*\022\314\001\n"
-          + "\020StreamRunSession\022*.google.cloud.ces.v1beta.RunSessionRequest\032+.go"
-          + "ogle.cloud.ces.v1beta.RunSessionResponse"
-          + "\"]\202\323\344\223\002W\"R/v1beta/{config.session=projec"
-          + "ts/*/locations/*/apps/*/sessions/*}:streamRunSession:\001*0\001\022|\n"
-          + "\016BidiRunSession\0221.google.cloud.ces.v1beta.BidiSessionClientM"
-          + "essage\0321.google.cloud.ces.v1beta.BidiSes"
-          + "sionServerMessage\"\000(\0010\001\032j\312A\022ces.googleap"
-          + "is.com\322ARhttps://www.googleapis.com/auth"
-          + "/ces,https://www.googleapis.com/auth/cloud-platformB\311\001\n"
-          + "\033com.google.cloud.ces.v1b"
-          + "etaB\023SessionServiceProtoP\001Z-cloud.google.com/go/ces/apiv1beta/cespb;cespb\352Ac\n"
-          + "\032ces.googleapis.com/Session\022Eprojects/{proj"
-          + "ect}/locations/{location}/apps/{app}/sessions/{session}b\006proto3"
+          + "RunSession\022*.google.cloud.ces.v1beta.RunSess"
+          + "ionRequest\032+.google.cloud.ces.v1beta.Run"
+          + "SessionResponse\"W\202\323\344\223\002Q\"L/v1beta/{config"
+          + ".session=projects/*/locations/*/apps/*/sessions/*}:runSession:\001*\022\314\001\n"
+          + "\020StreamRunSession\022*.google.cloud.ces.v1beta.RunSessi"
+          + "onRequest\032+.google.cloud.ces.v1beta.RunS"
+          + "essionResponse\"]\202\323\344\223\002W\"R/v1beta/{config."
+          + "session=projects/*/locations/*/apps/*/sessions/*}:streamRunSession:\001*0\001\022|\n"
+          + "\016BidiRunSession\0221.google.cloud.ces.v1beta.Bidi"
+          + "SessionClientMessage\0321.google.cloud.ces."
+          + "v1beta.BidiSessionServerMessage\"\000(\0010\001\032j\312"
+          + "A\022ces.googleapis.com\322ARhttps://www.googl"
+          + "eapis.com/auth/ces,https://www.googleapis.com/auth/cloud-platformB\311\001\n"
+          + "\033com.google.cloud.ces.v1betaB\023SessionServiceProtoP\001"
+          + "Z-cloud.google.com/go/ces/apiv1beta/cespb;cespb\352Ac\n"
+          + "\032ces.googleapis.com/Session\022Eprojects/{project}/locations/{location}/"
+          + "apps/{app}/sessions/{session}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -287,11 +300,20 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.ces.v1beta.CommonProto.getDescriptor(),
               com.google.cloud.ces.v1beta.ExampleProto.getDescriptor(),
+              com.google.cloud.ces.v1beta.MocksProto.getDescriptor(),
               com.google.cloud.ces.v1beta.SearchSuggestionsProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
             });
-    internal_static_google_cloud_ces_v1beta_InputAudioConfig_descriptor =
+    internal_static_google_cloud_ces_v1beta_MockConfig_descriptor =
         getDescriptor().getMessageType(0);
+    internal_static_google_cloud_ces_v1beta_MockConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_MockConfig_descriptor,
+            new java.lang.String[] {
+              "MockedToolCalls", "UnmatchedToolCallBehavior",
+            });
+    internal_static_google_cloud_ces_v1beta_InputAudioConfig_descriptor =
+        getDescriptor().getMessageType(1);
     internal_static_google_cloud_ces_v1beta_InputAudioConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_InputAudioConfig_descriptor,
@@ -299,7 +321,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "AudioEncoding", "SampleRateHertz", "NoiseSuppressionLevel",
             });
     internal_static_google_cloud_ces_v1beta_OutputAudioConfig_descriptor =
-        getDescriptor().getMessageType(1);
+        getDescriptor().getMessageType(2);
     internal_static_google_cloud_ces_v1beta_OutputAudioConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_OutputAudioConfig_descriptor,
@@ -307,7 +329,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "AudioEncoding", "SampleRateHertz",
             });
     internal_static_google_cloud_ces_v1beta_SessionConfig_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(3);
     internal_static_google_cloud_ces_v1beta_SessionConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_SessionConfig_descriptor,
@@ -341,7 +363,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "Key", "Value",
             });
     internal_static_google_cloud_ces_v1beta_ToolCalls_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(4);
     internal_static_google_cloud_ces_v1beta_ToolCalls_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_ToolCalls_descriptor,
@@ -349,7 +371,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "ToolCalls",
             });
     internal_static_google_cloud_ces_v1beta_ToolResponses_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(5);
     internal_static_google_cloud_ces_v1beta_ToolResponses_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_ToolResponses_descriptor,
@@ -357,7 +379,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "ToolResponses",
             });
     internal_static_google_cloud_ces_v1beta_Citations_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(6);
     internal_static_google_cloud_ces_v1beta_Citations_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_Citations_descriptor,
@@ -372,7 +394,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
             new java.lang.String[] {
               "Uri", "Title", "Text",
             });
-    internal_static_google_cloud_ces_v1beta_Event_descriptor = getDescriptor().getMessageType(6);
+    internal_static_google_cloud_ces_v1beta_Event_descriptor = getDescriptor().getMessageType(7);
     internal_static_google_cloud_ces_v1beta_Event_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_Event_descriptor,
@@ -380,7 +402,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "Event",
             });
     internal_static_google_cloud_ces_v1beta_SessionInput_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(8);
     internal_static_google_cloud_ces_v1beta_SessionInput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_SessionInput_descriptor,
@@ -397,7 +419,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "InputType",
             });
     internal_static_google_cloud_ces_v1beta_SessionOutput_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(9);
     internal_static_google_cloud_ces_v1beta_SessionOutput_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_SessionOutput_descriptor,
@@ -423,7 +445,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "Messages", "RootSpan",
             });
     internal_static_google_cloud_ces_v1beta_RecognitionResult_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(10);
     internal_static_google_cloud_ces_v1beta_RecognitionResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_RecognitionResult_descriptor,
@@ -431,7 +453,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "Transcript",
             });
     internal_static_google_cloud_ces_v1beta_InterruptionSignal_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(11);
     internal_static_google_cloud_ces_v1beta_InterruptionSignal_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_InterruptionSignal_descriptor,
@@ -439,19 +461,19 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "BargeIn",
             });
     internal_static_google_cloud_ces_v1beta_EndSession_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(12);
     internal_static_google_cloud_ces_v1beta_EndSession_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_EndSession_descriptor,
             new java.lang.String[] {
               "Metadata",
             });
-    internal_static_google_cloud_ces_v1beta_GoAway_descriptor = getDescriptor().getMessageType(12);
+    internal_static_google_cloud_ces_v1beta_GoAway_descriptor = getDescriptor().getMessageType(13);
     internal_static_google_cloud_ces_v1beta_GoAway_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_GoAway_descriptor, new java.lang.String[] {});
     internal_static_google_cloud_ces_v1beta_RunSessionRequest_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_ces_v1beta_RunSessionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_RunSessionRequest_descriptor,
@@ -459,7 +481,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "Config", "Inputs",
             });
     internal_static_google_cloud_ces_v1beta_RunSessionResponse_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_ces_v1beta_RunSessionResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_RunSessionResponse_descriptor,
@@ -467,7 +489,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "Outputs",
             });
     internal_static_google_cloud_ces_v1beta_BidiSessionClientMessage_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_ces_v1beta_BidiSessionClientMessage_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_BidiSessionClientMessage_descriptor,
@@ -475,7 +497,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
               "Config", "RealtimeInput", "MessageType",
             });
     internal_static_google_cloud_ces_v1beta_BidiSessionServerMessage_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_ces_v1beta_BidiSessionServerMessage_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_BidiSessionServerMessage_descriptor,
@@ -494,6 +516,7 @@ public final class SessionServiceProto extends com.google.protobuf.GeneratedFile
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.ces.v1beta.CommonProto.getDescriptor();
     com.google.cloud.ces.v1beta.ExampleProto.getDescriptor();
+    com.google.cloud.ces.v1beta.MocksProto.getDescriptor();
     com.google.cloud.ces.v1beta.SearchSuggestionsProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.ExtensionRegistry registry =

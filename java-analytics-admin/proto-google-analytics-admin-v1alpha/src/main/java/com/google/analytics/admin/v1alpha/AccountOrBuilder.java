@@ -30,12 +30,12 @@ public interface AccountOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of this account.
+   * Identifier. Resource name of this account.
    * Format: accounts/{account}
    * Example: "accounts/100"
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -45,12 +45,12 @@ public interface AccountOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of this account.
+   * Identifier. Resource name of this account.
    * Format: accounts/{account}
    * Example: "accounts/100"
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

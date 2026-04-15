@@ -73,71 +73,70 @@ public final class ToolServiceProto extends com.google.protobuf.GeneratedFile {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n"
-          + "*google/cloud/ces/v1beta/tool_service.p"
+      "\n*google/cloud/ces/v1beta/tool_service.p"
           + "roto\022\027google.cloud.ces.v1beta\032\034google/ap"
           + "i/annotations.proto\032\027google/api/client.p"
           + "roto\032\037google/api/field_behavior.proto\032\031g"
           + "oogle/api/resource.proto\032$google/cloud/c"
-          + "es/v1beta/schema.proto\032\"google/cloud/ces"
-          + "/v1beta/tool.proto\032*google/cloud/ces/v1b"
-          + "eta/toolset_tool.proto\032\034google/protobuf/struct.proto\"\365\002\n"
-          + "\022ExecuteToolRequest\022/\n"
-          + "\004tool\030\001 \001(\tB\037\340A\001\372A\031\n"
-          + "\027ces.googleapis.com/ToolH\000\022A\n"
-          + "\014toolset_tool\030\003"
-          + " \001(\0132$.google.cloud.ces.v1beta.ToolsetToolB\003\340A\001H\000\0221\n"
-          + "\tvariables\030\005 \001(\0132\027.google.protobuf.StructB\003\340A\001H\001\022/\n"
-          + "\007context\030\006 \001(\0132\027.google.protobuf.StructB\003\340A\001H\001\022.\n"
-          + "\006parent\030\004 \001(\tB\036\340A\002\372A\030\n"
-          + "\026ces.googleapis.com/App\022*\n"
-          + "\004args\030\002 \001(\0132\027.google.protobuf.StructB\003\340A\001B\021\n"
-          + "\017tool_identifierB\030\n"
-          + "\026tool_execution_context\"\353\001\n"
-          + "\023ExecuteToolResponse\022,\n"
-          + "\004tool\030\001 \001(\tB\034\372A\031\n"
-          + "\027ces.googleapis.com/ToolH\000\022<\n"
-          + "\014toolset_tool\030\003 \001(\0132$.google.cloud.ces.v1beta.ToolsetToolH\000\022)\n"
-          + "\010response\030\002 \001(\0132\027.google.protobuf.Struct\022*\n"
-          + "\tvariables\030\004 \001(\0132\027.google.protobuf.StructB\021\n"
-          + "\017tool_identifier\"\322\001\n"
-          + "\031RetrieveToolSchemaRequest\022/\n"
-          + "\004tool\030\001 \001(\tB\037\340A\001\372A\031\n"
-          + "\027ces.googleapis.com/ToolH\000\022A\n"
-          + "\014toolset_tool\030\002"
-          + " \001(\0132$.google.cloud.ces.v1beta.ToolsetToolB\003\340A\001H\000\022.\n"
-          + "\006parent\030\003 \001(\tB\036\340A\002\372A\030\n"
-          + "\026ces.googleapis.com/AppB\021\n"
-          + "\017tool_identifier\"\212\002\n"
-          + "\032RetrieveToolSchemaResponse\022,\n"
-          + "\004tool\030\001 \001(\tB\034\372A\031\n"
-          + "\027ces.googleapis.com/ToolH\000\022<\n"
-          + "\014toolset_tool\030\002 \001(\0132$.google.cloud.ces.v1beta.ToolsetToolH\000\0225\n"
-          + "\014input_schema\030\003 \001(\0132\037.google.cloud.ces.v1beta.Schema\0226\n\r"
-          + "output_schema\030\004 \001(\0132\037.google.cloud.ces.v1beta.SchemaB\021\n"
-          + "\017tool_identifier\"b\n"
-          + "\024RetrieveToolsRequest\0223\n"
-          + "\007toolset\030\001 \001(\tB\"\340A\002\372A\034\n"
-          + "\032ces.googleapis.com/Toolset\022\025\n"
-          + "\010tool_ids\030\003 \003(\tB\003\340A\001\"E\n"
-          + "\025RetrieveToolsResponse\022,\n"
-          + "\005tools\030\001 \003(\0132\035.google.cloud.ces.v1beta.Tool2\277\005\n"
-          + "\013ToolService\022\257\001\n"
-          + "\013ExecuteTool\022+.google.cloud.ces.v1beta.ExecuteToolRequest\032,.g"
-          + "oogle.cloud.ces.v1beta.ExecuteToolRespon"
-          + "se\"E\202\323\344\223\002?\":/v1beta/{parent=projects/*/locations/*/apps/*}:executeTool:\001*\022\313\001\n"
-          + "\022RetrieveToolSchema\0222.google.cloud.ces.v1be"
-          + "ta.RetrieveToolSchemaRequest\0323.google.cloud.ces.v1beta.RetrieveToolSchemaRespons"
-          + "e\"L\202\323\344\223\002F\"A/v1beta/{parent=projects/*/lo"
-          + "cations/*/apps/*}:retrieveToolSchema:\001*\022\303\001\n\r"
-          + "RetrieveTools\022-.google.cloud.ces.v1beta.RetrieveToolsRequest\032..google.cloud."
-          + "ces.v1beta.RetrieveToolsResponse\"S\202\323\344\223\002M"
-          + "\"H/v1beta/{toolset=projects/*/locations/"
-          + "*/apps/*/toolsets/*}:retrieveTools:\001*\032j\312"
-          + "A\022ces.googleapis.com\322ARhttps://www.googl"
-          + "eapis.com/auth/ces,https://www.googleapis.com/auth/cloud-platformB`\n"
-          + "\033com.google.cloud.ces.v1betaB\020ToolServiceProtoP\001Z-cl"
-          + "oud.google.com/go/ces/apiv1beta/cespb;cespbb\006proto3"
+          + "es/v1beta/schema.proto\032-google/cloud/ces"
+          + "/v1beta/session_service.proto\032\"google/cl"
+          + "oud/ces/v1beta/tool.proto\032*google/cloud/"
+          + "ces/v1beta/toolset_tool.proto\032\034google/pr"
+          + "otobuf/struct.proto\"\264\003\n\022ExecuteToolReque"
+          + "st\022/\n\004tool\030\001 \001(\tB\037\340A\001\372A\031\n\027ces.googleapis"
+          + ".com/ToolH\000\022A\n\014toolset_tool\030\003 \001(\0132$.goog"
+          + "le.cloud.ces.v1beta.ToolsetToolB\003\340A\001H\000\0221"
+          + "\n\tvariables\030\005 \001(\0132\027.google.protobuf.Stru"
+          + "ctB\003\340A\001H\001\022/\n\007context\030\006 \001(\0132\027.google.prot"
+          + "obuf.StructB\003\340A\001H\001\022.\n\006parent\030\004 \001(\tB\036\340A\002\372"
+          + "A\030\n\026ces.googleapis.com/App\022*\n\004args\030\002 \001(\013"
+          + "2\027.google.protobuf.StructB\003\340A\001\022=\n\013mock_c"
+          + "onfig\030\007 \001(\0132#.google.cloud.ces.v1beta.Mo"
+          + "ckConfigB\003\340A\001B\021\n\017tool_identifierB\030\n\026tool"
+          + "_execution_context\"\353\001\n\023ExecuteToolRespon"
+          + "se\022,\n\004tool\030\001 \001(\tB\034\372A\031\n\027ces.googleapis.co"
+          + "m/ToolH\000\022<\n\014toolset_tool\030\003 \001(\0132$.google."
+          + "cloud.ces.v1beta.ToolsetToolH\000\022)\n\010respon"
+          + "se\030\002 \001(\0132\027.google.protobuf.Struct\022*\n\tvar"
+          + "iables\030\004 \001(\0132\027.google.protobuf.StructB\021\n"
+          + "\017tool_identifier\"\322\001\n\031RetrieveToolSchemaR"
+          + "equest\022/\n\004tool\030\001 \001(\tB\037\340A\001\372A\031\n\027ces.google"
+          + "apis.com/ToolH\000\022A\n\014toolset_tool\030\002 \001(\0132$."
+          + "google.cloud.ces.v1beta.ToolsetToolB\003\340A\001"
+          + "H\000\022.\n\006parent\030\003 \001(\tB\036\340A\002\372A\030\n\026ces.googleap"
+          + "is.com/AppB\021\n\017tool_identifier\"\212\002\n\032Retrie"
+          + "veToolSchemaResponse\022,\n\004tool\030\001 \001(\tB\034\372A\031\n"
+          + "\027ces.googleapis.com/ToolH\000\022<\n\014toolset_to"
+          + "ol\030\002 \001(\0132$.google.cloud.ces.v1beta.Tools"
+          + "etToolH\000\0225\n\014input_schema\030\003 \001(\0132\037.google."
+          + "cloud.ces.v1beta.Schema\0226\n\routput_schema"
+          + "\030\004 \001(\0132\037.google.cloud.ces.v1beta.SchemaB"
+          + "\021\n\017tool_identifier\"b\n\024RetrieveToolsReque"
+          + "st\0223\n\007toolset\030\001 \001(\tB\"\340A\002\372A\034\n\032ces.googlea"
+          + "pis.com/Toolset\022\025\n\010tool_ids\030\003 \003(\tB\003\340A\001\"E"
+          + "\n\025RetrieveToolsResponse\022,\n\005tools\030\001 \003(\0132\035"
+          + ".google.cloud.ces.v1beta.Tool2\277\005\n\013ToolSe"
+          + "rvice\022\257\001\n\013ExecuteTool\022+.google.cloud.ces"
+          + ".v1beta.ExecuteToolRequest\032,.google.clou"
+          + "d.ces.v1beta.ExecuteToolResponse\"E\202\323\344\223\002?"
+          + "\":/v1beta/{parent=projects/*/locations/*"
+          + "/apps/*}:executeTool:\001*\022\313\001\n\022RetrieveTool"
+          + "Schema\0222.google.cloud.ces.v1beta.Retriev"
+          + "eToolSchemaRequest\0323.google.cloud.ces.v1"
+          + "beta.RetrieveToolSchemaResponse\"L\202\323\344\223\002F\""
+          + "A/v1beta/{parent=projects/*/locations/*/"
+          + "apps/*}:retrieveToolSchema:\001*\022\303\001\n\rRetrie"
+          + "veTools\022-.google.cloud.ces.v1beta.Retrie"
+          + "veToolsRequest\032..google.cloud.ces.v1beta"
+          + ".RetrieveToolsResponse\"S\202\323\344\223\002M\"H/v1beta/"
+          + "{toolset=projects/*/locations/*/apps/*/t"
+          + "oolsets/*}:retrieveTools:\001*\032j\312A\022ces.goog"
+          + "leapis.com\322ARhttps://www.googleapis.com/"
+          + "auth/ces,https://www.googleapis.com/auth"
+          + "/cloud-platformB`\n\033com.google.cloud.ces."
+          + "v1betaB\020ToolServiceProtoP\001Z-cloud.google"
+          + ".com/go/ces/apiv1beta/cespb;cespbb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -148,6 +147,7 @@ public final class ToolServiceProto extends com.google.protobuf.GeneratedFile {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.ces.v1beta.SchemaProto.getDescriptor(),
+              com.google.cloud.ces.v1beta.SessionServiceProto.getDescriptor(),
               com.google.cloud.ces.v1beta.ToolProto.getDescriptor(),
               com.google.cloud.ces.v1beta.ToolsetToolProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
@@ -164,6 +164,7 @@ public final class ToolServiceProto extends com.google.protobuf.GeneratedFile {
               "Context",
               "Parent",
               "Args",
+              "MockConfig",
               "ToolIdentifier",
               "ToolExecutionContext",
             });
@@ -213,6 +214,7 @@ public final class ToolServiceProto extends com.google.protobuf.GeneratedFile {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.ces.v1beta.SchemaProto.getDescriptor();
+    com.google.cloud.ces.v1beta.SessionServiceProto.getDescriptor();
     com.google.cloud.ces.v1beta.ToolProto.getDescriptor();
     com.google.cloud.ces.v1beta.ToolsetToolProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
