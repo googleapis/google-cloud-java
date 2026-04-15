@@ -113,6 +113,9 @@ public class ITComputeGoldenSignals extends BaseTest {
     testRunId = generateRandomHexString(8);
 
     GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
+    // We explicitly refresh the credentials here to guarantee a valid token is extracted.
+    // The standard OTLP exporter does not automatically manage OAuth token lifecycles 
+    // when they are passed as static header strings.
     credentials.refreshIfExpired();
     String token = credentials.getAccessToken().getTokenValue();
 
