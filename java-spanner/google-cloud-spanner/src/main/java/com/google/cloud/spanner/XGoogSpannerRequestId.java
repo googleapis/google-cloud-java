@@ -126,7 +126,7 @@ public class XGoogSpannerRequestId {
 
   /** Returns the string representation of this RequestId as it should be sent to Spanner. */
   public String getHeaderValue() {
-    return new StringBuilder(64)
+    return new StringBuilder(this.instancePrefix.length() + 48)
         .append(this.instancePrefix)
         .append(this.nthChannelId)
         .append('.')
@@ -138,7 +138,7 @@ public class XGoogSpannerRequestId {
 
   @Override
   public String toString() {
-    StringBuilder sb = new StringBuilder(64);
+    StringBuilder sb = new StringBuilder(this.instancePrefix.length() + 48);
     sb.append(this.instancePrefix);
     if (this.nthChannelId < 0) {
       sb.append('x');
