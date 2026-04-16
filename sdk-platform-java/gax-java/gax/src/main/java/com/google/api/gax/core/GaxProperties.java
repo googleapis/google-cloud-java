@@ -45,7 +45,7 @@ import java.util.jar.JarFile;
 @InternalApi
 public class GaxProperties {
 
-  private static final String DEFAULT_VERSION = "0.0";
+  private static final String DEFAULT_VERSION = "";
   private static final String GAX_VERSION = getLibraryVersion(GaxProperties.class, "version.gax");
   private static final String JAVA_VERSION = getRuntimeVersion();
   private static final String PROTOBUF_VERSION =
@@ -57,6 +57,7 @@ public class GaxProperties {
   /** Returns the version of the library that the {@code libraryClass} belongs to */
   public static String getLibraryVersion(Class<?> libraryClass) {
     String version = libraryClass.getPackage().getImplementationVersion();
+    System.out.println(version);
     return version != null ? version : DEFAULT_VERSION;
   }
 
