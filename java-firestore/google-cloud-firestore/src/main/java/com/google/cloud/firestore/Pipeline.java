@@ -1049,11 +1049,6 @@ public final class Pipeline {
    * @return A new {@code Pipeline} object with this stage appended to the stage list.
    */
   public Pipeline union(Pipeline other) {
-    if (other.rpcContext == null) {
-      throw new IllegalArgumentException(
-          "Union only supports combining root pipelines, doesn't support relative scope Pipeline"
-              + " like relative subcollection pipeline");
-    }
     return append(new Union(other));
   }
 
