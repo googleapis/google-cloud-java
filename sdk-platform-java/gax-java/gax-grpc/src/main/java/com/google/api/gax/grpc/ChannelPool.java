@@ -68,7 +68,7 @@ import javax.annotation.Nullable;
  *
  * <p>Package-private for internal use.
  */
-class ChannelPool extends ManagedChannel {
+public class ChannelPool extends ManagedChannel {
   @VisibleForTesting static final Logger LOG = Logger.getLogger(ChannelPool.class.getName());
   private static final java.time.Duration REFRESH_PERIOD = java.time.Duration.ofMinutes(50);
 
@@ -80,7 +80,7 @@ class ChannelPool extends ManagedChannel {
   private ScheduledFuture<?> resizeFuture = null;
 
   private final Object entryWriteLock = new Object();
-  @VisibleForTesting final AtomicReference<ImmutableList<Entry>> entries = new AtomicReference<>();
+  public final AtomicReference<ImmutableList<Entry>> entries = new AtomicReference<>();
   private final AtomicInteger indexTicker = new AtomicInteger();
   private final String authority;
 
@@ -453,8 +453,8 @@ class ChannelPool extends ManagedChannel {
   }
 
   /** Bundles a gRPC {@link ManagedChannel} with some usage accounting. */
-  static class Entry {
-    private final ManagedChannel channel;
+  public static class Entry {
+    public final ManagedChannel channel;
 
     /**
      * The primary purpose of keeping a count for outstanding RPCs is to track when a channel is
@@ -470,9 +470,9 @@ class ChannelPool extends ManagedChannel {
      * outstanding RPCs has to happen when the ClientCall is closed or the ClientCall failed to
      * start.
      */
-    @VisibleForTesting final AtomicInteger outstandingRpcs = new AtomicInteger(0);
+    public final AtomicInteger outstandingRpcs = new AtomicInteger(0);
 
-    private final AtomicInteger maxOutstanding = new AtomicInteger();
+    public final AtomicInteger maxOutstanding = new AtomicInteger();
 
     // Flag that the channel should be closed once all of the outstanding RPC complete.
     private final AtomicBoolean shutdownRequested = new AtomicBoolean();

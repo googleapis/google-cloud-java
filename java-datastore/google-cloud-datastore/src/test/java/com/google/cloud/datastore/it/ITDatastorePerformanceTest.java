@@ -16,6 +16,9 @@
 
 package com.google.cloud.datastore.it;
 
+import com.google.api.gax.grpc.ChannelPool;
+import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.rpc.TransportChannel;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Key;
@@ -23,13 +26,11 @@ import com.google.cloud.datastore.KeyFactory;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.common.base.Strings;
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicReference;
 import org.junit.Test;
 
 public class ITDatastorePerformanceTest {
@@ -50,17 +51,12 @@ public class ITDatastorePerformanceTest {
   private void runPhase(int threadCount, long durationMillis) throws Exception {
     System.out.println("\n--- STARTING PHASE: " + threadCount + " threads ---");
 
-    // Force gRPC transport but keep DEFAULT channel pool settings
     DatastoreOptions options = DatastoreOptions.newBuilder()
         .setTransportOptions(GrpcTransportOptions.newBuilder().build())
         .build();
 
-    System.out.println("Project ID: " + options.getProjectId());
-    System.out.println("Transport: gRPC (forced for pooling test)");
-
     Datastore datastore = options.getService();
     
-    // Ensure a real entity exists to fetch
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("PerfTestKind");
     Key key = keyFactory.newKey("perf-test-entity");
     datastore.put(com.google.cloud.datastore.Entity.newBuilder(key)
@@ -117,7 +113,7 @@ public class ITDatastorePerformanceTest {
     }
   }
 
-  private Object getChannelPool(Datastore datastore) {
+  private ChannelPool getChannelPool(Datastore datastore) {
     try {
       Field rpcField = datastore.getClass().getDeclaredField("datastoreRpc");
       rpcField.setAccessible(true);
@@ -127,71 +123,49 @@ public class ITDatastorePerformanceTest {
       stubField.setAccessible(true);
       Object stub = stubField.get(rpc);
 
-      // Search backgroundResources for the channel
       Field resourcesField = stub.getClass().getSuperclass().getDeclaredField("backgroundResources");
       resourcesField.setAccessible(true);
       List<?> resources = (List<?>) resourcesField.get(stub);
       
       for (Object res : resources) {
-          if (res.getClass().getName().contains("GrpcTransportChannel")) {
-              Field channelField = res.getClass().getDeclaredField("channel");
-              channelField.setAccessible(true);
-              return findChannelPool(channelField.get(res));
+          if (res instanceof GrpcTransportChannel) {
+              Object channel = ((GrpcTransportChannel) res).getManagedChannel();
+              return findChannelPool(channel);
           }
       }
     } catch (Exception ignored) {}
     return null;
   }
 
-  private Object findChannelPool(Object channel) {
+  private ChannelPool findChannelPool(Object channel) {
       if (channel == null) return null;
-      String className = channel.getClass().getName();
-      if (className.contains("ChannelPool")) return channel;
-      
-      // Try common wrapper fields
-      for (String fieldName : new String[]{"delegate", "channel", "managedChannel"}) {
-          try {
-              Field f = channel.getClass().getDeclaredField(fieldName);
-              f.setAccessible(true);
-              Object sub = f.get(channel);
-              Object result = findChannelPool(sub);
-              if (result != null) return result;
-          } catch (Exception ignored) {}
+      if (channel instanceof ChannelPool) {
+          return (ChannelPool) channel;
       }
-      
-      // Try superclass fields if it's a wrapper
-      Class<?> superclass = channel.getClass().getSuperclass();
-      while (superclass != null && !superclass.equals(Object.class)) {
-          for (String fieldName : new String[]{"delegate", "channel"}) {
-              try {
-                  Field f = superclass.getDeclaredField(fieldName);
-                  f.setAccessible(true);
-                  Object sub = f.get(channel);
-                  Object result = findChannelPool(sub);
-                  if (result != null) return result;
-              } catch (Exception ignored) {}
-          }
-          superclass = superclass.getSuperclass();
+      try {
+          Field delegateField = channel.getClass().getDeclaredField("delegate");
+          delegateField.setAccessible(true);
+          return findChannelPool(delegateField.get(channel));
+      } catch (Exception e) {
+          try {
+              Field subChannelField = channel.getClass().getDeclaredField("channel");
+              subChannelField.setAccessible(true);
+              return findChannelPool(subChannelField.get(channel));
+          } catch (Exception ignored) {}
       }
       return null;
   }
 
   private int getActualOutstanding(Datastore datastore) {
-    try {
-      Object pool = getChannelPool(datastore);
-      if (pool != null) {
-        Field entriesField = pool.getClass().getDeclaredField("entries");
-        entriesField.setAccessible(true);
-        List<?> entries = (List<?>) ((AtomicReference<?>) entriesField.get(pool)).get();
-        int total = 0;
-        for (Object entry : entries) {
-          Field outstandingField = entry.getClass().getDeclaredField("outstandingRpcs");
-          outstandingField.setAccessible(true);
-          total += ((AtomicInteger) outstandingField.get(entry)).get();
-        }
-        return total;
+    ChannelPool pool = getChannelPool(datastore);
+    if (pool != null) {
+      List<ChannelPool.Entry> entries = pool.entries.get();
+      int total = 0;
+      for (ChannelPool.Entry entry : entries) {
+        total += entry.outstandingRpcs.get();
       }
-    } catch (Exception ignored) {}
+      return total;
+    }
     return 0;
   }
 
@@ -204,23 +178,17 @@ public class ITDatastorePerformanceTest {
           requestsInInterval, requestsInInterval/60.0, observedPeak));
       if (errorsInInterval > 0) System.out.println("Errors in last minute: " + errorsInInterval);
 
-      Object pool = getChannelPool(datastore);
+      ChannelPool pool = getChannelPool(datastore);
       if (pool != null) {
-        Field entriesField = pool.getClass().getDeclaredField("entries");
-        entriesField.setAccessible(true);
-        List<?> entries = (List<?>) ((AtomicReference<?>) entriesField.get(pool)).get();
+        List<ChannelPool.Entry> entries = pool.entries.get();
 
         int poolSize = entries.size();
         int overwhelmedCount = 0;
         StringBuilder channelDetails = new StringBuilder("Channel Saturation:\n");
         for (int i = 0; i < poolSize; i++) {
-          Object entry = entries.get(i);
-          Field outstandingField = entry.getClass().getDeclaredField("outstandingRpcs");
-          outstandingField.setAccessible(true);
-          int count = ((AtomicInteger) outstandingField.get(entry)).get();
-          Field maxField = entry.getClass().getDeclaredField("maxOutstanding");
-          maxField.setAccessible(true);
-          int poolInternalMax = ((AtomicInteger) maxField.get(entry)).get();
+          ChannelPool.Entry entry = entries.get(i);
+          int count = entry.outstandingRpcs.get();
+          int poolInternalMax = entry.maxOutstanding.get();
           
           if (count > 100 || poolInternalMax > 100) overwhelmedCount++;
           if (poolSize <= 10 || i < 5 || i >= poolSize - 2) {
@@ -232,10 +200,9 @@ public class ITDatastorePerformanceTest {
         }
         System.out.println("Current Pool Size: " + poolSize);
         System.out.print(channelDetails.toString());
-        if (overwhelmedCount > 0) System.out.println(String.format("WARNING: %d/%d channels saturated!", overwhelmedCount, poolSize));
+        if (overwhelmedCount > 0) System.out.println(String.format("WARNING: %d/%d channels saturated (>=100 streams)!", overwhelmedCount, poolSize));
       } else {
-        System.out.println("Underlying channel is NOT a ChannelPool. This is likely because Datastore defaulted to HTTP or a single ManagedChannel.");
-        System.out.println("Class detected: " + datastore.getClass().getName());
+        System.out.println("Underlying channel is NOT a ChannelPool. Check if gRPC is enabled.");
       }
     } catch (Exception e) {
       System.err.println("Failed to report: " + e.getMessage());
