@@ -146,12 +146,16 @@ public class ITDatastorePerformanceTest {
           outstandingField.setAccessible(true);
           int count = ((AtomicInteger) outstandingField.get(entry)).get();
           
+          Field maxField = entry.getClass().getDeclaredField("maxOutstanding");
+          maxField.setAccessible(true);
+          int maxSeenByPool = ((AtomicInteger) maxField.get(entry)).get();
+          
           totalOutstanding += count;
           if (count > 100) overwhelmedCount++;
 
           if (poolSize <= 10 || i < 5 || i >= poolSize - 2) {
             String status = count > 100 ? "!! OVERWHELMED !!" : (count > 50 ? "Scaling" : "OK");
-            channelDetails.append(String.format("  Ch %02d: %3d RPCs [%s]\n", i, count, status));
+            channelDetails.append(String.format("  Ch %02d: %3d RPCs (Peak %d) [%s]\n", i, count, maxSeenByPool, status));
           } else if (i == 5) {
             channelDetails.append("  ... (hiding middle channels)\n");
           }
