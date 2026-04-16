@@ -64,7 +64,7 @@ public class ClientDpCompatGuage extends MetricWrapper<ClientSchema> {
     public void recordFailure(
         ClientInfo clientInfo, DirectAccessInvestigator.FailureReason reason) {
       instrument.set(
-          1,
+          0,
           getSchema()
               .createResourceAttrs(clientInfo)
               .put(MetricLabels.DP_REASON_KEY, reason.getValue())
