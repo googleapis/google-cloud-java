@@ -174,10 +174,22 @@ import traceback
 
 
 def library_generation_worker(config, library_path, library, repo_config):
+    buffer = StringIO()
+    has_local = hasattr(sys.stdout, "local")
+    if has_local:
+        sys.stdout.local.buffer = buffer
+        sys.stderr.local.buffer = buffer
     error_msg = None
     try:
         generate_composed_library(config, library_path, library, repo_config)
     except Exception as e:
         error_msg = f"{e}\n{traceback.format_exc()}"
-
-    return "", error_msg
+    finally:
+        logs = buffer.getvalue()
+        buffer.close()
+        if has_local:
+            if hasattr(sys.stdout.local, "buffer"):
+                del sys.stdout.local.buffer
+            if hasattr(sys.stderr.local, "buffer"):
+                del sys.stderr.local.buffer
+    return logs, error_msg

@@ -13,7 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import copy
+import os
 import shutil
+import sys
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Optional
 import library_generation.utils.utilities as util
@@ -152,11 +156,6 @@ def _get_target_libraries_from_api_path(
     return []
 
 
-import os
-import sys
-import threading
-from concurrent.futures import ThreadPoolExecutor, as_completed
-
 
 class ThreadLocalStream:
     """
@@ -192,30 +191,26 @@ def _print_worker_result(lib_name, logs, err):
     Atomically prints the buffered output of a worker thread directly to original_stdout,
     preventing output interleaving in the console.
     """
-    print_lock.acquire()
-    status = "[FAILURE]" if err else "[SUCCESS]"
-    original_stdout.write(f"\n{'='*40}\n{status} Logs for {lib_name}:\n{'='*40}\n")
-    original_stdout.write(logs)
-    if err:
-        original_stdout.write(f"\nError details:\n{err}\n")
-    original_stdout.flush()
-    print_lock.release()
+    with print_lock:
+        status = "[FAILURE]" if err else "[SUCCESS]"
+        original_stdout.write(f"\n{'='*40}\n{status} Logs for {lib_name}:\n{'='*40}\n")
+        original_stdout.write(logs)
+        if err:
+            original_stdout.write(f"\nError details:\n{err}\n")
+        original_stdout.flush()
 
 
 def _generate_libraries_in_parallel(config, repo_config):
     cores = os.cpu_count() or 4
-    executor = ThreadPoolExecutor(max_workers=min(cores, 5))
+    with ThreadPoolExecutor(max_workers=min(cores, 5)) as executor:
+        futures = {
+            executor.submit(
+                library_generation_worker, config, path, lib, repo_config
+            ): lib.get_library_name()
+            for path, lib in repo_config.get_libraries().items()
+        }
 
-    futures = {
-        executor.submit(
-            library_generation_worker, config, path, lib, repo_config
-        ): lib.get_library_name()
-        for path, lib in repo_config.get_libraries().items()
-    }
-
-    for future in as_completed(futures):
-        lib_name = futures[future]
-        logs, err = future.result()
-        _print_worker_result(lib_name, logs, err)
-
-    executor.shutdown()
+        for future in as_completed(futures):
+            lib_name = futures[future]
+            logs, err = future.result()
+            _print_worker_result(lib_name, logs, err)
