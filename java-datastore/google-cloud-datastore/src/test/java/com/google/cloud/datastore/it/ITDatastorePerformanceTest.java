@@ -47,13 +47,13 @@ public class ITDatastorePerformanceTest {
     for (int load : loadSteps) {
       runPhase(load, phaseDurationMillis);
       System.out.println("\n\n" + Strings.repeat("=", 50));
-      System.out.println("COMPLETED PHASE WITH " + load + " CONCURRENT RPCs");
+      System.out.println("COMPLETED PHASE WITH " + load + " THREADS");
       System.out.println(Strings.repeat("=", 50) + "\n\n");
     }
   }
 
   private void runPhase(int threadCount, long durationMillis) throws Exception {
-    System.out.println("\n--- STARTING PHASE: " + threadCount + " concurrent RPCs ---");
+    System.out.println("\n--- STARTING PHASE: " + threadCount + " threads ---");
 
     // Configure Dynamic Resizing: max 50 RPCs per channel, max 100 channels
     TransportChannelProvider channelProvider = DatastoreSettings.defaultGrpcTransportProviderBuilder()
@@ -99,7 +99,7 @@ public class ITDatastorePerformanceTest {
                     currentPeak = activePeak.get();
                     if (current <= currentPeak) break;
                 } while (!activePeak.compareAndSet(currentPeak, current));
-                Thread.sleep(10); // Sample every 10ms
+                Thread.sleep(5); // Sample every 10ms
             }
         } catch (InterruptedException ignored) {}
     });
@@ -135,12 +135,13 @@ public class ITDatastorePerformanceTest {
     }
   }
 
-  private int getActualOutstanding(Datastore datastore) {
-    try {
+  private Object getChannelPool(Datastore datastore) throws Exception {
+      // DatastoreImpl -> datastoreRpc (GrpcDatastoreRpc)
       Field rpcField = datastore.getClass().getDeclaredField("datastoreRpc");
       rpcField.setAccessible(true);
       Object rpc = rpcField.get(datastore);
 
+      // GrpcDatastoreRpc -> clientContext
       Field contextField = rpc.getClass().getDeclaredField("clientContext");
       contextField.setAccessible(true);
       ClientContext clientContext = (ClientContext) contextField.get(rpc);
@@ -148,11 +149,20 @@ public class ITDatastorePerformanceTest {
       TransportChannel transportChannel = clientContext.getTransportChannel();
       Method getChannelMethod = transportChannel.getClass().getMethod("getChannel");
       Object managedChannel = getChannelMethod.invoke(transportChannel);
-
+      
       if (managedChannel.getClass().getName().contains("ChannelPool")) {
-        Field entriesField = managedChannel.getClass().getDeclaredField("entries");
+          return managedChannel;
+      }
+      return null;
+  }
+
+  private int getActualOutstanding(Datastore datastore) {
+    try {
+      Object pool = getChannelPool(datastore);
+      if (pool != null) {
+        Field entriesField = pool.getClass().getDeclaredField("entries");
         entriesField.setAccessible(true);
-        AtomicReference<?> entriesRef = (AtomicReference<?>) entriesField.get(managedChannel);
+        AtomicReference<?> entriesRef = (AtomicReference<?>) entriesField.get(pool);
         List<?> entries = (List<?>) entriesRef.get();
 
         int total = 0;
@@ -176,22 +186,11 @@ public class ITDatastorePerformanceTest {
           requestsInInterval, requestsInInterval/60.0, observedPeak));
       if (errorsInInterval > 0) System.out.println("Errors in last minute: " + errorsInInterval);
 
-      Field rpcField = datastore.getClass().getDeclaredField("datastoreRpc");
-      rpcField.setAccessible(true);
-      Object rpc = rpcField.get(datastore);
-
-      Field contextField = rpc.getClass().getDeclaredField("clientContext");
-      contextField.setAccessible(true);
-      ClientContext clientContext = (ClientContext) contextField.get(rpc);
-
-      TransportChannel transportChannel = clientContext.getTransportChannel();
-      Method getChannelMethod = transportChannel.getClass().getMethod("getChannel");
-      Object managedChannel = getChannelMethod.invoke(transportChannel);
-
-      if (managedChannel.getClass().getName().contains("ChannelPool")) {
-        Field entriesField = managedChannel.getClass().getDeclaredField("entries");
+      Object pool = getChannelPool(datastore);
+      if (pool != null) {
+        Field entriesField = pool.getClass().getDeclaredField("entries");
         entriesField.setAccessible(true);
-        AtomicReference<?> entriesRef = (AtomicReference<?>) entriesField.get(managedChannel);
+        AtomicReference<?> entriesRef = (AtomicReference<?>) entriesField.get(pool);
         List<?> entries = (List<?>) entriesRef.get();
 
         int poolSize = entries.size();
@@ -225,7 +224,7 @@ public class ITDatastorePerformanceTest {
           System.out.println(String.format("WARNING: %d/%d channels saturated (>=100 streams)!", overwhelmedCount, poolSize));
         }
       } else {
-        System.out.println("Underlying channel is not a ChannelPool: " + managedChannel.getClass().getName());
+        System.out.println("Underlying channel is not a ChannelPool.");
       }
     } catch (Exception e) {
       System.err.println("Failed to report: " + e.getMessage());
