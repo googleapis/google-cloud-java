@@ -84,6 +84,7 @@ jobs:
               -Dsonar.projectKey=googleapis_gapic-generator-java \
               -Dsonar.organization=googleapis \
               -Dsonar.host.url=https://sonarcloud.io
+        working-directory: sdk-platform-java
       - name: Build and analyze Showcase Integration Tests Coverage
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
@@ -98,3 +99,4 @@ jobs:
               -Dsonar.organization=googleapis \
               -Dsonar.host.url=https://sonarcloud.io \
               -Dsonar.projectName=java_showcase_integration_tests
+        working-directory: sdk-platform-java
