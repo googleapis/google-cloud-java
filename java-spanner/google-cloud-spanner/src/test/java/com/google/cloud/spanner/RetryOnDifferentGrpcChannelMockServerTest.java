@@ -32,6 +32,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.spanner.v1.BatchCreateSessionsRequest;
 import com.google.spanner.v1.BeginTransactionRequest;
 import com.google.spanner.v1.ExecuteSqlRequest;
+import com.google.spanner.v1.SpannerGrpc;
 import io.grpc.CallOptions;
 import io.grpc.Channel;
 import io.grpc.ClientCall;
@@ -64,6 +65,9 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
   /** Tracks the logical affinity keys before grpc-gcp routes the request. */
   private static final Map<String, Set<String>> LOGICAL_AFFINITY_KEYS = new HashMap<>();
 
+  /** Tracks how many calls explicitly request grpc-gcp affinity unbind. */
+  private static final Map<String, Integer> UNBIND_AFFINITY_CALL_COUNTS = new HashMap<>();
+
   @BeforeClass
   public static void setupAndStartServer() throws Exception {
     System.setProperty("spanner.retry_deadline_exceeded_on_different_channel", "true");
@@ -79,6 +83,7 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
   @After
   public void clearRequests() {
     LOGICAL_AFFINITY_KEYS.clear();
+    UNBIND_AFFINITY_CALL_COUNTS.clear();
     mockSpanner.clearRequests();
     mockSpanner.removeAllExecutionTimes();
   }
@@ -95,14 +100,20 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
               @Override
               public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(
                   MethodDescriptor<ReqT, RespT> method, CallOptions callOptions, Channel next) {
-                // Capture the AFFINITY_KEY before grpc-gcp processes it
+                String methodName = method.getFullMethodName();
+                // Capture the AFFINITY_KEY before grpc-gcp processes it.
                 String affinityKey = callOptions.getOption(GcpManagedChannel.AFFINITY_KEY);
                 if (affinityKey != null) {
-                  String methodName = method.getFullMethodName();
                   synchronized (LOGICAL_AFFINITY_KEYS) {
                     Set<String> keys =
                         LOGICAL_AFFINITY_KEYS.computeIfAbsent(methodName, k -> new HashSet<>());
                     keys.add(affinityKey);
+                  }
+                }
+                if (Boolean.TRUE.equals(
+                    callOptions.getOption(GcpManagedChannel.UNBIND_AFFINITY_KEY))) {
+                  synchronized (UNBIND_AFFINITY_CALL_COUNTS) {
+                    UNBIND_AFFINITY_CALL_COUNTS.merge(methodName, 1, Integer::sum);
                   }
                 }
                 return next.newCall(method, callOptions);
@@ -311,6 +322,11 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
         LOGICAL_AFFINITY_KEYS
             .getOrDefault("google.spanner.v1.Spanner/ExecuteStreamingSql", new HashSet<>())
             .size());
+    assertEquals(
+        2,
+        UNBIND_AFFINITY_CALL_COUNTS
+            .getOrDefault(SpannerGrpc.getExecuteStreamingSqlMethod().getFullMethodName(), 0)
+            .intValue());
   }
 
   @Test
@@ -344,6 +360,11 @@ public class RetryOnDifferentGrpcChannelMockServerTest extends AbstractMockServe
               .getOrDefault("google.spanner.v1.Spanner/ExecuteStreamingSql", new HashSet<>())
               .size();
       assertEquals(totalRequests, distinctLogicalKeys);
+      assertEquals(
+          totalRequests,
+          UNBIND_AFFINITY_CALL_COUNTS
+              .getOrDefault(SpannerGrpc.getExecuteStreamingSqlMethod().getFullMethodName(), 0)
+              .intValue());
     }
   }
 

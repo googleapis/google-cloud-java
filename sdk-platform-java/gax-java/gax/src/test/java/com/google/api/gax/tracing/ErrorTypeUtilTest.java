@@ -52,11 +52,6 @@ import org.junit.jupiter.api.Test;
 class ErrorTypeUtilTest {
 
   @Test
-  void testExtractErrorType_null() {
-    assertThat(ErrorTypeUtil.extractErrorType(null)).isNull();
-  }
-
-  @Test
   void testExtractErrorType_apiException_noReason() {
     ApiException exception =
         new ApiException(

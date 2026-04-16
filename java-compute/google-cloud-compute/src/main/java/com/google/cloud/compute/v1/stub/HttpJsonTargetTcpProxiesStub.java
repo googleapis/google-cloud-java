@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListTargetTcpProxiesRequest;
 import com.google.cloud.compute.v1.DeleteTargetTcpProxyRequest;
 import com.google.cloud.compute.v1.GetTargetTcpProxyRequest;
@@ -504,6 +505,23 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetTcpProxies/{target_tcp_proxy}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetTcpProxies/{target_tcp_proxy}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate SET_BACKEND_SERVICE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetTcpProxies/{target_tcp_proxy}");
+  private static final PathTemplate SET_PROXY_HEADER_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetTcpProxies/{target_tcp_proxy}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetTcpProxies/{resource}");
+
   public static final HttpJsonTargetTcpProxiesStub create(TargetTcpProxiesStubSettings settings)
       throws IOException {
     return new HttpJsonTargetTcpProxiesStub(settings, ClientContext.create(settings));
@@ -557,6 +575,13 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteTargetTcpProxyRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteTargetTcpProxyRequest, Operation>newBuilder()
@@ -568,6 +593,14 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("target_tcp_proxy", String.valueOf(request.getTargetTcpProxy()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_tcp_proxy", String.valueOf(request.getTargetTcpProxy()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetTargetTcpProxyRequest, TargetTcpProxy> getTransportSettings =
@@ -581,6 +614,14 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                   builder.add("target_tcp_proxy", String.valueOf(request.getTargetTcpProxy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_tcp_proxy", String.valueOf(request.getTargetTcpProxy()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertTargetTcpProxyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertTargetTcpProxyRequest, Operation>newBuilder()
@@ -592,6 +633,12 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListTargetTcpProxiesRequest, TargetTcpProxyList> listTransportSettings =
         HttpJsonCallSettings.<ListTargetTcpProxiesRequest, TargetTcpProxyList>newBuilder()
@@ -602,6 +649,12 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetBackendServiceTargetTcpProxyRequest, Operation>
@@ -616,6 +669,15 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                       builder.add("target_tcp_proxy", String.valueOf(request.getTargetTcpProxy()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "target_tcp_proxy", String.valueOf(request.getTargetTcpProxy()));
+                      return SET_BACKEND_SERVICE_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetProxyHeaderTargetTcpProxyRequest, Operation>
         setProxyHeaderTransportSettings =
@@ -628,6 +690,15 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("target_tcp_proxy", String.valueOf(request.getTargetTcpProxy()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put(
+                          "target_tcp_proxy", String.valueOf(request.getTargetTcpProxy()));
+                      return SET_PROXY_HEADER_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<TestIamPermissionsTargetTcpProxyRequest, TestPermissionsResponse>
@@ -642,6 +713,14 @@ public class HttpJsonTargetTcpProxiesStub extends TargetTcpProxiesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 

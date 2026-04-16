@@ -157,11 +157,29 @@ class AsyncResultSetImpl extends ForwardingStructReader
 
   AsyncResultSetImpl(
       ExecutorProvider executorProvider, Supplier<ResultSet> delegate, int bufferSize) {
-    super(delegate);
+    this(
+        executorProvider,
+        Suppliers.memoize(Preconditions.checkNotNull(delegate)),
+        bufferSize,
+        true);
+  }
+
+  private AsyncResultSetImpl(
+      ExecutorProvider executorProvider,
+      Supplier<ResultSet> memoizedDelegate,
+      int bufferSize,
+      boolean dummy) {
+    super(memoizedDelegate);
     this.executorProvider = Preconditions.checkNotNull(executorProvider);
-    this.delegateResultSet = Preconditions.checkNotNull(delegate);
+    this.delegateResultSet = memoizedDelegate;
     this.service = MoreExecutors.listeningDecorator(executorProvider.getExecutor());
     this.buffer = new LinkedBlockingDeque<>(bufferSize);
+  }
+
+  boolean isUsed() {
+    synchronized (monitor) {
+      return state != State.INITIALIZED;
+    }
   }
 
   /**

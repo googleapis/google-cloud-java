@@ -2,20 +2,47 @@ primaryBranch: main
 releaseType: java-yoshi
 manifest: true
 handleGHRelease: true
+onDemand: true
+local: true
+localCloneDepth: 200
 branches:
     - branch: 1.0.x
       releaseType: java-backport
       bumpMinorPreMajor: true
+      onDemand: true
+      local: true
+      localCloneDepth: 200
     - branch: 1.13.x
       releaseType: java-backport
+      onDemand: true
+      local: true
+      localCloneDepth: 200
     - branch: 1.25.x
       releaseType: java-backport
+      onDemand: true
+      local: true
+      localCloneDepth: 200
     - branch: 1.37.x
       releaseType: java-backport
+      onDemand: true
+      local: true
+      localCloneDepth: 200
     - branch: 1.53.x
       releaseType: java-backport
+      onDemand: true
+      local: true
+      localCloneDepth: 200
     - branch: 1.61.x
       releaseType: java-backport
+      onDemand: true
+      local: true
+      localCloneDepth: 200
     - branch: 1.58.x
       releaseType: java-backport
+      onDemand: true
+      local: true
+      localCloneDepth: 200
     - branch: protobuf-4.x-rc
+      onDemand: true
+      local: true
+      localCloneDepth: 200

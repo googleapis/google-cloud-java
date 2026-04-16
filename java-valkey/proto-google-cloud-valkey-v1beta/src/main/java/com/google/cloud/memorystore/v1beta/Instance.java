@@ -63,6 +63,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     pscAutoConnections_ = java.util.Collections.emptyList();
     endpoints_ = java.util.Collections.emptyList();
     mode_ = 0;
+    serverCaMode_ = 0;
+    serverCaPool_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1061,6 +1063,280 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.memorystore.v1beta.Instance.Mode)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The Server CA mode for the instance.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.memorystore.v1beta.Instance.ServerCaMode}
+   */
+  public enum ServerCaMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Server CA mode not specified.
+     * </pre>
+     *
+     * <code>SERVER_CA_MODE_UNSPECIFIED = 0;</code>
+     */
+    SERVER_CA_MODE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Each instance has its own Google-managed CA.
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_PER_INSTANCE_CA = 1;</code>
+     */
+    GOOGLE_MANAGED_PER_INSTANCE_CA(1),
+    /**
+     *
+     *
+     * <pre>
+     * The instance uses a Google-managed shared CA for the instance's region.
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SHARED_CA = 2;</code>
+     */
+    GOOGLE_MANAGED_SHARED_CA(2),
+    /**
+     *
+     *
+     * <pre>
+     * The instance uses a customer-managed CA from CAS.
+     * </pre>
+     *
+     * <code>CUSTOMER_MANAGED_CAS_CA = 3;</code>
+     */
+    CUSTOMER_MANAGED_CAS_CA(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "ServerCaMode");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use GOOGLE_MANAGED_PER_INSTANCE_CA instead.
+     * </pre>
+     *
+     * <code>SERVER_CA_MODE_GOOGLE_MANAGED_PER_INSTANCE_CA = 1 [deprecated = true];</code>
+     */
+    public static final ServerCaMode SERVER_CA_MODE_GOOGLE_MANAGED_PER_INSTANCE_CA =
+        GOOGLE_MANAGED_PER_INSTANCE_CA;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use GOOGLE_MANAGED_SHARED_CA instead.
+     * </pre>
+     *
+     * <code>SERVER_CA_MODE_GOOGLE_MANAGED_SHARED_CA = 2 [deprecated = true];</code>
+     */
+    public static final ServerCaMode SERVER_CA_MODE_GOOGLE_MANAGED_SHARED_CA =
+        GOOGLE_MANAGED_SHARED_CA;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use CUSTOMER_MANAGED_CAS_CA instead.
+     * </pre>
+     *
+     * <code>SERVER_CA_MODE_CUSTOMER_MANAGED_CAS_CA = 3 [deprecated = true];</code>
+     */
+    public static final ServerCaMode SERVER_CA_MODE_CUSTOMER_MANAGED_CAS_CA =
+        CUSTOMER_MANAGED_CAS_CA;
+
+    /**
+     *
+     *
+     * <pre>
+     * Server CA mode not specified.
+     * </pre>
+     *
+     * <code>SERVER_CA_MODE_UNSPECIFIED = 0;</code>
+     */
+    public static final int SERVER_CA_MODE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Each instance has its own Google-managed CA.
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_PER_INSTANCE_CA = 1;</code>
+     */
+    public static final int GOOGLE_MANAGED_PER_INSTANCE_CA_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance uses a Google-managed shared CA for the instance's region.
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SHARED_CA = 2;</code>
+     */
+    public static final int GOOGLE_MANAGED_SHARED_CA_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance uses a customer-managed CA from CAS.
+     * </pre>
+     *
+     * <code>CUSTOMER_MANAGED_CAS_CA = 3;</code>
+     */
+    public static final int CUSTOMER_MANAGED_CAS_CA_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use GOOGLE_MANAGED_PER_INSTANCE_CA instead.
+     * </pre>
+     *
+     * <code>SERVER_CA_MODE_GOOGLE_MANAGED_PER_INSTANCE_CA = 1 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated
+    public static final int SERVER_CA_MODE_GOOGLE_MANAGED_PER_INSTANCE_CA_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use GOOGLE_MANAGED_SHARED_CA instead.
+     * </pre>
+     *
+     * <code>SERVER_CA_MODE_GOOGLE_MANAGED_SHARED_CA = 2 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int SERVER_CA_MODE_GOOGLE_MANAGED_SHARED_CA_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated: Use CUSTOMER_MANAGED_CAS_CA instead.
+     * </pre>
+     *
+     * <code>SERVER_CA_MODE_CUSTOMER_MANAGED_CAS_CA = 3 [deprecated = true];</code>
+     */
+    @java.lang.Deprecated public static final int SERVER_CA_MODE_CUSTOMER_MANAGED_CAS_CA_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ServerCaMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ServerCaMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return SERVER_CA_MODE_UNSPECIFIED;
+        case 1:
+          return GOOGLE_MANAGED_PER_INSTANCE_CA;
+        case 2:
+          return GOOGLE_MANAGED_SHARED_CA;
+        case 3:
+          return CUSTOMER_MANAGED_CAS_CA;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ServerCaMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ServerCaMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ServerCaMode>() {
+          public ServerCaMode findValueByNumber(int number) {
+            return ServerCaMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.memorystore.v1beta.Instance.getDescriptor().getEnumTypes().get(5);
+    }
+
+    private static final ServerCaMode[] VALUES = getStaticValuesArray();
+
+    private static ServerCaMode[] getStaticValuesArray() {
+      return new ServerCaMode[] {
+        SERVER_CA_MODE_UNSPECIFIED,
+        GOOGLE_MANAGED_PER_INSTANCE_CA,
+        GOOGLE_MANAGED_SHARED_CA,
+        CUSTOMER_MANAGED_CAS_CA,
+        SERVER_CA_MODE_GOOGLE_MANAGED_PER_INSTANCE_CA,
+        SERVER_CA_MODE_GOOGLE_MANAGED_SHARED_CA,
+        SERVER_CA_MODE_CUSTOMER_MANAGED_CAS_CA,
+      };
+    }
+
+    public static ServerCaMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ServerCaMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.memorystore.v1beta.Instance.ServerCaMode)
   }
 
   public interface StateInfoOrBuilder
@@ -6286,6 +6562,187 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     return result == null ? com.google.cloud.memorystore.v1beta.Instance.Mode.UNRECOGNIZED : result;
   }
 
+  public static final int SERVER_CA_MODE_FIELD_NUMBER = 56;
+  private int serverCaMode_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Server CA mode for the instance.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.memorystore.v1beta.Instance.ServerCaMode server_ca_mode = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the serverCaMode field is set.
+   */
+  @java.lang.Override
+  public boolean hasServerCaMode() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Server CA mode for the instance.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.memorystore.v1beta.Instance.ServerCaMode server_ca_mode = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for serverCaMode.
+   */
+  @java.lang.Override
+  public int getServerCaModeValue() {
+    return serverCaMode_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The Server CA mode for the instance.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.memorystore.v1beta.Instance.ServerCaMode server_ca_mode = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The serverCaMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.memorystore.v1beta.Instance.ServerCaMode getServerCaMode() {
+    com.google.cloud.memorystore.v1beta.Instance.ServerCaMode result =
+        com.google.cloud.memorystore.v1beta.Instance.ServerCaMode.forNumber(serverCaMode_);
+    return result == null
+        ? com.google.cloud.memorystore.v1beta.Instance.ServerCaMode.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int SERVER_CA_POOL_FIELD_NUMBER = 57;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serverCaPool_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The customer-managed CA pool for the instance. Only
+   * applicable if the Server CA mode is CUSTOMER_MANAGED_CAS_CA. Format:
+   * "projects/{project}/locations/{region}/caPools/{ca_pool}".
+   * </pre>
+   *
+   * <code>
+   * optional string server_ca_pool = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the serverCaPool field is set.
+   */
+  @java.lang.Override
+  public boolean hasServerCaPool() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The customer-managed CA pool for the instance. Only
+   * applicable if the Server CA mode is CUSTOMER_MANAGED_CAS_CA. Format:
+   * "projects/{project}/locations/{region}/caPools/{ca_pool}".
+   * </pre>
+   *
+   * <code>
+   * optional string server_ca_pool = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The serverCaPool.
+   */
+  @java.lang.Override
+  public java.lang.String getServerCaPool() {
+    java.lang.Object ref = serverCaPool_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serverCaPool_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The customer-managed CA pool for the instance. Only
+   * applicable if the Server CA mode is CUSTOMER_MANAGED_CAS_CA. Format:
+   * "projects/{project}/locations/{region}/caPools/{ca_pool}".
+   * </pre>
+   *
+   * <code>
+   * optional string server_ca_pool = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for serverCaPool.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServerCaPoolBytes() {
+    java.lang.Object ref = serverCaPool_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serverCaPool_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ROTATE_SERVER_CERTIFICATE_FIELD_NUMBER = 58;
+  private boolean rotateServerCertificate_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Rotate the server certificates.
+   * </pre>
+   *
+   * <code>
+   * optional bool rotate_server_certificate = 58 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the rotateServerCertificate field is set.
+   */
+  @java.lang.Override
+  public boolean hasRotateServerCertificate() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Rotate the server certificates.
+   * </pre>
+   *
+   * <code>
+   * optional bool rotate_server_certificate = 58 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The rotateServerCertificate.
+   */
+  @java.lang.Override
+  public boolean getRotateServerCertificate() {
+    return rotateServerCertificate_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6372,6 +6829,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
     if (mode_ != com.google.cloud.memorystore.v1beta.Instance.Mode.MODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(26, mode_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeEnum(56, serverCaMode_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 57, serverCaPool_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeBool(58, rotateServerCertificate_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -6474,6 +6940,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (mode_ != com.google.cloud.memorystore.v1beta.Instance.Mode.MODE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(26, mode_);
     }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(56, serverCaMode_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(57, serverCaPool_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(58, rotateServerCertificate_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6536,6 +7011,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (!getPscAutoConnectionsList().equals(other.getPscAutoConnectionsList())) return false;
     if (!getEndpointsList().equals(other.getEndpointsList())) return false;
     if (mode_ != other.mode_) return false;
+    if (hasServerCaMode() != other.hasServerCaMode()) return false;
+    if (hasServerCaMode()) {
+      if (serverCaMode_ != other.serverCaMode_) return false;
+    }
+    if (hasServerCaPool() != other.hasServerCaPool()) return false;
+    if (hasServerCaPool()) {
+      if (!getServerCaPool().equals(other.getServerCaPool())) return false;
+    }
+    if (hasRotateServerCertificate() != other.hasRotateServerCertificate()) return false;
+    if (hasRotateServerCertificate()) {
+      if (getRotateServerCertificate() != other.getRotateServerCertificate()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -6617,6 +7104,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + MODE_FIELD_NUMBER;
     hash = (53 * hash) + mode_;
+    if (hasServerCaMode()) {
+      hash = (37 * hash) + SERVER_CA_MODE_FIELD_NUMBER;
+      hash = (53 * hash) + serverCaMode_;
+    }
+    if (hasServerCaPool()) {
+      hash = (37 * hash) + SERVER_CA_POOL_FIELD_NUMBER;
+      hash = (53 * hash) + getServerCaPool().hashCode();
+    }
+    if (hasRotateServerCertificate()) {
+      hash = (37 * hash) + ROTATE_SERVER_CERTIFICATE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRotateServerCertificate());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6864,6 +7363,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ = (bitField0_ & ~0x00100000);
       mode_ = 0;
+      serverCaMode_ = 0;
+      serverCaPool_ = "";
+      rotateServerCertificate_ = false;
       return this;
     }
 
@@ -7004,6 +7506,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
         result.mode_ = mode_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.serverCaMode_ = serverCaMode_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.serverCaPool_ = serverCaPool_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.rotateServerCertificate_ = rotateServerCertificate_;
+        to_bitField0_ |= 0x00000400;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -7161,6 +7675,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       }
       if (other.mode_ != 0) {
         setModeValue(other.getModeValue());
+      }
+      if (other.hasServerCaMode()) {
+        setServerCaModeValue(other.getServerCaModeValue());
+      }
+      if (other.hasServerCaPool()) {
+        serverCaPool_ = other.serverCaPool_;
+        bitField0_ |= 0x00800000;
+        onChanged();
+      }
+      if (other.hasRotateServerCertificate()) {
+        setRotateServerCertificate(other.getRotateServerCertificate());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -7363,6 +7888,24 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00200000;
                 break;
               } // case 208
+            case 448:
+              {
+                serverCaMode_ = input.readEnum();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 448
+            case 458:
+              {
+                serverCaPool_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 458
+            case 464:
+              {
+                rotateServerCertificate_ = input.readBool();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 464
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11438,6 +11981,362 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder clearMode() {
       bitField0_ = (bitField0_ & ~0x00200000);
       mode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int serverCaMode_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Server CA mode for the instance.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.memorystore.v1beta.Instance.ServerCaMode server_ca_mode = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return Whether the serverCaMode field is set.
+     */
+    @java.lang.Override
+    public boolean hasServerCaMode() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Server CA mode for the instance.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.memorystore.v1beta.Instance.ServerCaMode server_ca_mode = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for serverCaMode.
+     */
+    @java.lang.Override
+    public int getServerCaModeValue() {
+      return serverCaMode_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Server CA mode for the instance.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.memorystore.v1beta.Instance.ServerCaMode server_ca_mode = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for serverCaMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServerCaModeValue(int value) {
+      serverCaMode_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Server CA mode for the instance.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.memorystore.v1beta.Instance.ServerCaMode server_ca_mode = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The serverCaMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.memorystore.v1beta.Instance.ServerCaMode getServerCaMode() {
+      com.google.cloud.memorystore.v1beta.Instance.ServerCaMode result =
+          com.google.cloud.memorystore.v1beta.Instance.ServerCaMode.forNumber(serverCaMode_);
+      return result == null
+          ? com.google.cloud.memorystore.v1beta.Instance.ServerCaMode.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Server CA mode for the instance.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.memorystore.v1beta.Instance.ServerCaMode server_ca_mode = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The serverCaMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServerCaMode(
+        com.google.cloud.memorystore.v1beta.Instance.ServerCaMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00400000;
+      serverCaMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The Server CA mode for the instance.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.memorystore.v1beta.Instance.ServerCaMode server_ca_mode = 56 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServerCaMode() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      serverCaMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serverCaPool_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The customer-managed CA pool for the instance. Only
+     * applicable if the Server CA mode is CUSTOMER_MANAGED_CAS_CA. Format:
+     * "projects/{project}/locations/{region}/caPools/{ca_pool}".
+     * </pre>
+     *
+     * <code>
+     * optional string server_ca_pool = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the serverCaPool field is set.
+     */
+    public boolean hasServerCaPool() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The customer-managed CA pool for the instance. Only
+     * applicable if the Server CA mode is CUSTOMER_MANAGED_CAS_CA. Format:
+     * "projects/{project}/locations/{region}/caPools/{ca_pool}".
+     * </pre>
+     *
+     * <code>
+     * optional string server_ca_pool = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The serverCaPool.
+     */
+    public java.lang.String getServerCaPool() {
+      java.lang.Object ref = serverCaPool_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serverCaPool_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The customer-managed CA pool for the instance. Only
+     * applicable if the Server CA mode is CUSTOMER_MANAGED_CAS_CA. Format:
+     * "projects/{project}/locations/{region}/caPools/{ca_pool}".
+     * </pre>
+     *
+     * <code>
+     * optional string server_ca_pool = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for serverCaPool.
+     */
+    public com.google.protobuf.ByteString getServerCaPoolBytes() {
+      java.lang.Object ref = serverCaPool_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serverCaPool_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The customer-managed CA pool for the instance. Only
+     * applicable if the Server CA mode is CUSTOMER_MANAGED_CAS_CA. Format:
+     * "projects/{project}/locations/{region}/caPools/{ca_pool}".
+     * </pre>
+     *
+     * <code>
+     * optional string server_ca_pool = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The serverCaPool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServerCaPool(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serverCaPool_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The customer-managed CA pool for the instance. Only
+     * applicable if the Server CA mode is CUSTOMER_MANAGED_CAS_CA. Format:
+     * "projects/{project}/locations/{region}/caPools/{ca_pool}".
+     * </pre>
+     *
+     * <code>
+     * optional string server_ca_pool = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServerCaPool() {
+      serverCaPool_ = getDefaultInstance().getServerCaPool();
+      bitField0_ = (bitField0_ & ~0x00800000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The customer-managed CA pool for the instance. Only
+     * applicable if the Server CA mode is CUSTOMER_MANAGED_CAS_CA. Format:
+     * "projects/{project}/locations/{region}/caPools/{ca_pool}".
+     * </pre>
+     *
+     * <code>
+     * optional string server_ca_pool = 57 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for serverCaPool to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServerCaPoolBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serverCaPool_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    private boolean rotateServerCertificate_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Rotate the server certificates.
+     * </pre>
+     *
+     * <code>
+     * optional bool rotate_server_certificate = 58 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the rotateServerCertificate field is set.
+     */
+    @java.lang.Override
+    public boolean hasRotateServerCertificate() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Rotate the server certificates.
+     * </pre>
+     *
+     * <code>
+     * optional bool rotate_server_certificate = 58 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return The rotateServerCertificate.
+     */
+    @java.lang.Override
+    public boolean getRotateServerCertificate() {
+      return rotateServerCertificate_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Rotate the server certificates.
+     * </pre>
+     *
+     * <code>
+     * optional bool rotate_server_certificate = 58 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @param value The rotateServerCertificate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRotateServerCertificate(boolean value) {
+
+      rotateServerCertificate_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input only. Rotate the server certificates.
+     * </pre>
+     *
+     * <code>
+     * optional bool rotate_server_certificate = 58 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRotateServerCertificate() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      rotateServerCertificate_ = false;
       onChanged();
       return this;
     }

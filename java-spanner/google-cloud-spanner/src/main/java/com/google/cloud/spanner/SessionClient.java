@@ -89,6 +89,10 @@ class SessionClient implements AutoCloseable {
       return new SessionOption(SpannerRpc.Option.CHANNEL_HINT, hint);
     }
 
+    static SessionOption unbindChannelHint() {
+      return new SessionOption(SpannerRpc.Option.UNBIND_CHANNEL_HINT, Boolean.TRUE);
+    }
+
     SpannerRpc.Option rpcOption() {
       return rpcOption;
     }

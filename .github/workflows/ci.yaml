@@ -40,6 +40,14 @@ jobs:
           src:
             - '**/*.java'
             - '**/pom.xml'
+            - '!java-bigquery/**'
+            - '!java-bigquerystorage/**'
+            - '!java-datastore/**'
+            - '!java-logging-logback/**'
+            - '!java-logging/**'
+            - '!java-spanner/**'
+            - '!java-storage/**'
+            - '!google-auth-library-java/**'
           ci:
             - '.github/workflows/ci.yaml'
             - '.kokoro/**'
@@ -116,15 +124,55 @@ jobs:
     - uses: dorny/paths-filter@v4
       id: filter
       with:
+        # For each library, run CI in split repos where there are changes in:
+        # 1. Changes inside the split repo's module
+        # 2. Java code changes in upstream modules: Auth Library and Sdk-Platform-Java
+        # 3. Upstream dependency version changes: Shared-Deps and Gapic-Generator-Pom-Parent
         filters: |
-          java-bigquery: java-bigquery/**
-          java-bigquerystorage: java-bigquerystorage/**
-          java-datastore: java-datastore/**
-          java-logging-logback: java-logging-logback/**
-          java-logging: java-logging/**
-          java-spanner: java-spanner/**
-          java-storage: java-storage/**
-          sdk-platform-java: sdk-platform-java/**
+          google-auth-library-java:
+            - 'google-auth-library-java/**'
+          java-bigquery:
+            - 'java-bigquery/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-bigquerystorage:
+            - 'java-bigquerystorage/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-datastore:
+            - 'java-datastore/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-logging-logback:
+            - 'java-logging-logback/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-logging:
+            - 'java-logging/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-spanner:
+            - 'java-spanner/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-storage:
+            - 'java-storage/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
   split-units:
     runs-on: ubuntu-latest
     needs: changes
@@ -187,13 +235,9 @@ jobs:
       run: |
         mvn test \
           -B -ntp \
+          -Pquick-build \
           -Dorg.slf4j.simpleLogger.showDateTime=true \
           -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-          -Dclirr.skip=true \
-          -Denforcer.skip=true \
-          -Dcheckstyle.skip=true \
-          -Dflatten.skip=true \
-          -Danimal.sniffer.skip=true \
           -Dmaven.wagon.http.retryHandler.count=5 \
           --also-make \
           -T 1C

@@ -211,6 +211,30 @@ public class AbstractReadContextTest {
   }
 
   @Test
+  public void getChannelHintOptionsPrefersSessionHintWhenGrpcGcpDisabled() {
+    Map<SpannerRpc.Option, ?> sessionHint =
+        SessionClient.optionMap(SessionClient.SessionOption.channelHint(7L));
+
+    Map<SpannerRpc.Option, ?> result =
+        AbstractReadContext.getChannelHintOptions(sessionHint, 11L, false);
+
+    assertThat(result).isSameInstanceAs(sessionHint);
+    assertEquals(Long.valueOf(7L), Option.CHANNEL_HINT.getLong(result));
+  }
+
+  @Test
+  public void getChannelHintOptionsPrefersTransactionHintWhenGrpcGcpEnabled() {
+    Map<SpannerRpc.Option, ?> sessionHint =
+        SessionClient.optionMap(SessionClient.SessionOption.channelHint(7L));
+
+    Map<SpannerRpc.Option, ?> result =
+        AbstractReadContext.getChannelHintOptions(sessionHint, 11L, true);
+
+    assertThat(result).isNotSameInstanceAs(sessionHint);
+    assertEquals(Long.valueOf(11L), Option.CHANNEL_HINT.getLong(result));
+  }
+
+  @Test
   public void testGetExecuteSqlRequestBuilderWithPriority() {
     ExecuteSqlRequest.Builder request =
         context.getExecuteSqlRequestBuilder(

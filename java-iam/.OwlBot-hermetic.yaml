@@ -18,8 +18,9 @@ deep-remove-regex:
   - "/java-iam/proto-google-.*/src"
 
 deep-preserve-regex:
-  - "/java-iam/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
-  - "/java-iam/samples/snippets/generated"
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+  - "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+  - "/.*samples/snippets/generated"
 
 deep-copy-regex:
   - source: "/google/iam/v2beta/.*-java/gapic-google-.*/src"

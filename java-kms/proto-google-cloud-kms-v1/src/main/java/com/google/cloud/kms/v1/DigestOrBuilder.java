@@ -104,5 +104,37 @@ public interface DigestOrBuilder
    */
   com.google.protobuf.ByteString getSha512();
 
+  /**
+   *
+   *
+   * <pre>
+   * A message digest produced with SHAKE-256, to be used with ML-DSA
+   * external-μ algorithms only. See "message representative" note in
+   * section 6.2, algorithm 7 of the FIPS-204 standard:
+   * https://doi.org/10.6028/nist.fips.204
+   * </pre>
+   *
+   * <code>bytes external_mu = 4;</code>
+   *
+   * @return Whether the externalMu field is set.
+   */
+  boolean hasExternalMu();
+
+  /**
+   *
+   *
+   * <pre>
+   * A message digest produced with SHAKE-256, to be used with ML-DSA
+   * external-μ algorithms only. See "message representative" note in
+   * section 6.2, algorithm 7 of the FIPS-204 standard:
+   * https://doi.org/10.6028/nist.fips.204
+   * </pre>
+   *
+   * <code>bytes external_mu = 4;</code>
+   *
+   * @return The externalMu.
+   */
+  com.google.protobuf.ByteString getExternalMu();
+
   com.google.cloud.kms.v1.Digest.DigestCase getDigestCase();
 }

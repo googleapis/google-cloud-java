@@ -115,36 +115,36 @@ class ObservabilityUtilsTest {
   }
 
   @Test
-  void testPopulateStatusAttributes_grpc_success() {
-    Map<String, Object> attributes = new java.util.HashMap<>();
-    ObservabilityUtils.populateStatusAttributes(attributes, null, ApiTracerContext.Transport.GRPC);
+  void testGetResponseAttributes_grpc_success() {
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(null, ApiTracerContext.Transport.GRPC);
     assertThat(attributes)
         .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "OK");
   }
 
   @Test
-  void testPopulateStatusAttributes_grpc_apiException() {
-    Map<String, Object> attributes = new java.util.HashMap<>();
+  void testGetResponseAttributes_grpc_apiException() {
     ApiException error =
         new ApiException("fake_error", null, new FakeStatusCode(StatusCode.Code.NOT_FOUND), false);
-    ObservabilityUtils.populateStatusAttributes(attributes, error, ApiTracerContext.Transport.GRPC);
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.GRPC);
     assertThat(attributes)
         .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "NOT_FOUND");
   }
 
   @Test
-  void testPopulateStatusAttributes_grpc_cancellationException() {
-    Map<String, Object> attributes = new java.util.HashMap<>();
+  void testGetResponseAttributes_grpc_cancellationException() {
     Throwable error = new java.util.concurrent.CancellationException();
-    ObservabilityUtils.populateStatusAttributes(attributes, error, ApiTracerContext.Transport.GRPC);
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.GRPC);
     assertThat(attributes)
         .containsEntry(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE, "CANCELLED");
   }
 
   @Test
-  void testPopulateStatusAttributes_http_success() {
-    Map<String, Object> attributes = new java.util.HashMap<>();
-    ObservabilityUtils.populateStatusAttributes(attributes, null, ApiTracerContext.Transport.HTTP);
+  void testGetResponseAttributes_http_success() {
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(null, ApiTracerContext.Transport.HTTP);
     assertThat(attributes)
         .containsEntry(
             ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
@@ -152,8 +152,7 @@ class ObservabilityUtilsTest {
   }
 
   @Test
-  void testPopulateStatusAttributes_http_apiExceptionWithIntegerTransportCode() {
-    Map<String, Object> attributes = new java.util.HashMap<>();
+  void testGetResponseAttributes_http_apiExceptionWithIntegerTransportCode() {
     ApiException error =
         new ApiException(
             "fake_error",
@@ -170,7 +169,8 @@ class ObservabilityUtilsTest {
               }
             },
             false);
-    ObservabilityUtils.populateStatusAttributes(attributes, error, ApiTracerContext.Transport.HTTP);
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.HTTP);
     assertThat(attributes)
         .containsEntry(
             ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
@@ -178,8 +178,7 @@ class ObservabilityUtilsTest {
   }
 
   @Test
-  void testPopulateStatusAttributes_http_apiExceptionWithNonIntegerTransportCode() {
-    Map<String, Object> attributes = new java.util.HashMap<>();
+  void testGetResponseAttributes_http_apiExceptionWithNonIntegerTransportCode() {
     ApiException error =
         new ApiException(
             "fake_error",
@@ -196,7 +195,8 @@ class ObservabilityUtilsTest {
               }
             },
             false);
-    ObservabilityUtils.populateStatusAttributes(attributes, error, ApiTracerContext.Transport.HTTP);
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.HTTP);
     assertThat(attributes)
         .containsEntry(
             ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,
@@ -204,10 +204,10 @@ class ObservabilityUtilsTest {
   }
 
   @Test
-  void testPopulateStatusAttributes_http_cancellationException() {
-    Map<String, Object> attributes = new java.util.HashMap<>();
+  void testGetResponseAttributes_http_cancellationException() {
     Throwable error = new java.util.concurrent.CancellationException();
-    ObservabilityUtils.populateStatusAttributes(attributes, error, ApiTracerContext.Transport.HTTP);
+    Map<String, Object> attributes =
+        ObservabilityUtils.getResponseAttributes(error, ApiTracerContext.Transport.HTTP);
     assertThat(attributes)
         .containsEntry(
             ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE,

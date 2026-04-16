@@ -28,6 +28,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.GetLicenseCodeRequest;
 import com.google.cloud.compute.v1.LicenseCode;
 import com.google.cloud.compute.v1.TestIamPermissionsLicenseCodeRequest;
@@ -133,6 +134,11 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/licenseCodes/{license_code}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/licenseCodes/{resource}");
+
   public static final HttpJsonLicenseCodesStub create(LicenseCodesStubSettings settings)
       throws IOException {
     return new HttpJsonLicenseCodesStub(settings, ClientContext.create(settings));
@@ -183,6 +189,14 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "license_code", String.valueOf(request.getLicenseCode()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<TestIamPermissionsLicenseCodeRequest, TestPermissionsResponse>
         testIamPermissionsTransportSettings =
@@ -196,6 +210,14 @@ public class HttpJsonLicenseCodesStub extends LicenseCodesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 

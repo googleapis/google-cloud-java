@@ -16,8 +16,11 @@
 
 package com.google.cloud.spanner.spi.v1;
 
+import static com.google.cloud.spanner.XGoogSpannerRequestId.REQUEST_ID_CALL_OPTIONS_KEY;
+
 import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.cloud.spanner.XGoogSpannerRequestId;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.protobuf.ByteString;
@@ -38,11 +41,19 @@ import io.grpc.ForwardingClientCallListener.SimpleForwardingClientCallListener;
 import io.grpc.ManagedChannel;
 import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
+import io.opentelemetry.api.common.Attributes;
+import io.opentelemetry.api.trace.Span;
 import java.io.IOException;
+import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Predicate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
 /**
@@ -55,7 +66,12 @@ import javax.annotation.Nullable;
  */
 @InternalApi
 final class KeyAwareChannel extends ManagedChannel {
+
+  private static final Logger logger = Logger.getLogger(KeyAwareChannel.class.getName());
+
   private static final long MAX_TRACKED_READ_ONLY_TRANSACTIONS = 100_000L;
+  private static final long MAX_TRACKED_EXCLUDED_LOGICAL_REQUESTS = 100_000L;
+  private static final long EXCLUDED_LOGICAL_REQUEST_TTL_MINUTES = 10L;
   private static final String STREAMING_READ_METHOD = "google.spanner.v1.Spanner/StreamingRead";
   private static final String STREAMING_SQL_METHOD =
       "google.spanner.v1.Spanner/ExecuteStreamingSql";
@@ -67,16 +83,25 @@ final class KeyAwareChannel extends ManagedChannel {
 
   private final ManagedChannel defaultChannel;
   private final ChannelEndpointCache endpointCache;
+  @Nullable private final EndpointLifecycleManager lifecycleManager;
   private final String authority;
   private final String defaultEndpointAddress;
-  private final Map<String, SoftReference<ChannelFinder>> channelFinders =
-      new ConcurrentHashMap<>();
+  private final ReferenceQueue<ChannelFinder> channelFinderReferenceQueue = new ReferenceQueue<>();
+  private final Map<String, ChannelFinderReference> channelFinders = new ConcurrentHashMap<>();
   private final Map<ByteString, String> transactionAffinities = new ConcurrentHashMap<>();
   // Maps read-only transaction IDs to their preferLeader value.
   // Strong reads → true (prefer leader), Stale reads → false (any replica).
   // Bounded to prevent unbounded growth if application code does not close read-only transactions.
   private final Cache<ByteString, Boolean> readOnlyTxPreferLeader =
       CacheBuilder.newBuilder().maximumSize(MAX_TRACKED_READ_ONLY_TRANSACTIONS).build();
+  // If a routed endpoint returns RESOURCE_EXHAUSTED, the next retry attempt of that same logical
+  // request should avoid that endpoint once so other requests are unaffected. Bound and age out
+  // entries in case a caller gives up and never issues a retry.
+  private final Cache<String, Set<String>> excludedEndpointsForLogicalRequest =
+      CacheBuilder.newBuilder()
+          .maximumSize(MAX_TRACKED_EXCLUDED_LOGICAL_REQUESTS)
+          .expireAfterWrite(EXCLUDED_LOGICAL_REQUEST_TTL_MINUTES, TimeUnit.MINUTES)
+          .build();
 
   private KeyAwareChannel(
       InstantiatingGrpcChannelProvider channelProvider,
@@ -90,6 +115,11 @@ final class KeyAwareChannel extends ManagedChannel {
     this.defaultChannel = endpointCache.defaultChannel().getChannel();
     this.defaultEndpointAddress = endpointCache.defaultChannel().getAddress();
     this.authority = this.defaultChannel.authority();
+    // Only create lifecycle manager for production (non-factory) path.
+    // Factory path is used by tests with custom caches where background probing
+    // would interfere with test assertions.
+    this.lifecycleManager =
+        (endpointCacheFactory == null) ? new EndpointLifecycleManager(endpointCache) : null;
   }
 
   static KeyAwareChannel create(
@@ -97,6 +127,18 @@ final class KeyAwareChannel extends ManagedChannel {
       @Nullable ChannelEndpointCacheFactory endpointCacheFactory)
       throws IOException {
     return new KeyAwareChannel(channelProvider, endpointCacheFactory);
+  }
+
+  private static final class ChannelFinderReference extends SoftReference<ChannelFinder> {
+    final String databaseId;
+
+    ChannelFinderReference(
+        String databaseId,
+        ChannelFinder referent,
+        ReferenceQueue<? super ChannelFinder> referenceQueue) {
+      super(referent, referenceQueue);
+      this.databaseId = databaseId;
+    }
   }
 
   private String extractDatabaseIdFromSession(String session) {
@@ -110,30 +152,74 @@ final class KeyAwareChannel extends ManagedChannel {
     return session.substring(0, sessionsIndex);
   }
 
+  private void cleanupStaleChannelFinders() {
+    ChannelFinderReference reference;
+    while ((reference = (ChannelFinderReference) channelFinderReferenceQueue.poll()) != null) {
+      if (channelFinders.remove(reference.databaseId, reference) && lifecycleManager != null) {
+        lifecycleManager.unregisterFinder(reference.databaseId);
+      }
+    }
+  }
+
   private ChannelFinder getOrCreateChannelFinder(String databaseId) {
-    SoftReference<ChannelFinder> ref = channelFinders.get(databaseId);
+    cleanupStaleChannelFinders();
+    ChannelFinderReference ref = channelFinders.get(databaseId);
     ChannelFinder finder = (ref != null) ? ref.get() : null;
     if (finder == null) {
       synchronized (channelFinders) {
+        cleanupStaleChannelFinders();
         ref = channelFinders.get(databaseId);
         finder = (ref != null) ? ref.get() : null;
         if (finder == null) {
-          finder = new ChannelFinder(endpointCache);
-          channelFinders.put(databaseId, new SoftReference<>(finder));
+          finder =
+              lifecycleManager != null
+                  ? new ChannelFinder(endpointCache, lifecycleManager, databaseId)
+                  : new ChannelFinder(endpointCache);
+          channelFinders.put(
+              databaseId,
+              new ChannelFinderReference(databaseId, finder, channelFinderReferenceQueue));
         }
       }
     }
     return finder;
   }
 
+  @com.google.common.annotations.VisibleForTesting
+  void awaitPendingCacheUpdates() throws InterruptedException {
+    for (ChannelFinderReference ref : channelFinders.values()) {
+      ChannelFinder finder = ref.get();
+      if (finder != null) {
+        finder.awaitPendingUpdates();
+      }
+    }
+  }
+
+  /** Records real traffic to the selected endpoint for idle eviction tracking. */
+  private void onRequestRouted(@Nullable ChannelEndpoint selectedEndpoint) {
+    if (lifecycleManager == null) {
+      return;
+    }
+    if (selectedEndpoint != null && !defaultEndpointAddress.equals(selectedEndpoint.getAddress())) {
+      lifecycleManager.recordRealTraffic(selectedEndpoint.getAddress());
+    }
+  }
+
   @Override
   public ManagedChannel shutdown() {
+    cleanupStaleChannelFinders();
+    if (lifecycleManager != null) {
+      lifecycleManager.shutdown();
+    }
     endpointCache.shutdown();
     return this;
   }
 
   @Override
   public ManagedChannel shutdownNow() {
+    cleanupStaleChannelFinders();
+    if (lifecycleManager != null) {
+      lifecycleManager.shutdown();
+    }
     endpointCache.shutdown();
     return this;
   }
@@ -178,15 +264,32 @@ final class KeyAwareChannel extends ManagedChannel {
   }
 
   @Nullable
-  private ChannelEndpoint affinityEndpoint(ByteString transactionId) {
+  private ChannelEndpoint affinityEndpoint(
+      ByteString transactionId, Predicate<String> excludedEndpoints) {
     if (transactionId == null || transactionId.isEmpty()) {
       return null;
     }
     String address = transactionAffinities.get(transactionId);
-    if (address == null) {
+    if (address == null || excludedEndpoints.test(address)) {
       return null;
     }
-    return endpointCache.get(address);
+    // Use non-creating lookup and require READY state for location-aware routing.
+    ChannelEndpoint endpoint = endpointCache.getIfPresent(address);
+    if (endpoint == null) {
+      logger.log(
+          Level.FINE,
+          "Affinity endpoint for address {0} not present in cache, falling back to default",
+          address);
+      return null;
+    }
+    if (!endpoint.isHealthy()) {
+      logger.log(
+          Level.FINE,
+          "Affinity endpoint for address {0} not READY, falling back to default",
+          address);
+      return null;
+    }
+    return endpoint;
   }
 
   private void clearAffinity(ByteString transactionId) {
@@ -199,6 +302,55 @@ final class KeyAwareChannel extends ManagedChannel {
 
   void clearTransactionAffinity(ByteString transactionId) {
     clearAffinity(transactionId);
+  }
+
+  void clearTransactionAndChannelAffinity(ByteString transactionId, @Nullable Long channelHint) {
+    String address = transactionAffinities.remove(transactionId);
+    readOnlyTxPreferLeader.invalidate(transactionId);
+    if (channelHint != null) {
+      ManagedChannel channel = defaultChannel;
+      if (address != null) {
+        ChannelEndpoint endpoint = endpointCache.getIfPresent(address);
+        if (endpoint != null) {
+          channel = endpoint.getChannel();
+        }
+      }
+      GrpcGcpAffinityUtil.clearChannelHintAffinity(channel, channelHint);
+    }
+  }
+
+  private void maybeExcludeEndpointOnNextCall(
+      @Nullable ChannelEndpoint endpoint, @Nullable String logicalRequestKey) {
+    if (endpoint == null || logicalRequestKey == null) {
+      return;
+    }
+    String address = endpoint.getAddress();
+    if (!defaultEndpointAddress.equals(address)) {
+      excludedEndpointsForLogicalRequest
+          .asMap()
+          .compute(
+              logicalRequestKey,
+              (ignored, excludedEndpoints) -> {
+                Set<String> updated =
+                    excludedEndpoints == null ? ConcurrentHashMap.newKeySet() : excludedEndpoints;
+                updated.add(address);
+                return updated;
+              });
+    }
+  }
+
+  private Predicate<String> consumeExcludedEndpointsForCurrentCall(
+      @Nullable String logicalRequestKey) {
+    if (logicalRequestKey == null) {
+      return address -> false;
+    }
+    Set<String> excludedEndpoints =
+        excludedEndpointsForLogicalRequest.asMap().remove(logicalRequestKey);
+    if (excludedEndpoints == null || excludedEndpoints.isEmpty()) {
+      return address -> false;
+    }
+    excludedEndpoints = new HashSet<>(excludedEndpoints);
+    return excludedEndpoints::contains;
   }
 
   private boolean isReadOnlyTransaction(ByteString transactionId) {
@@ -265,15 +417,40 @@ final class KeyAwareChannel extends ManagedChannel {
     return null;
   }
 
+  private static void recordRouteSelectionTrace(
+      MethodDescriptor<?, ?> methodDescriptor,
+      String target,
+      boolean usedDefaultEndpoint,
+      boolean hasChannelFinder) {
+    Span span = Span.current();
+    if (!span.getSpanContext().isValid()) {
+      return;
+    }
+    span.setAttribute("spanner.target", target);
+    span.setAttribute("spanner.route.used_default_endpoint", usedDefaultEndpoint);
+    span.setAttribute("spanner.route.has_channel_finder", hasChannelFinder);
+    span.setAttribute("spanner.route.method", methodDescriptor.getFullMethodName());
+    span.addEvent(
+        "spanner.route.selected",
+        Attributes.builder()
+            .put("spanner.target", target)
+            .put("spanner.route.used_default_endpoint", usedDefaultEndpoint)
+            .put("spanner.route.has_channel_finder", hasChannelFinder)
+            .put("spanner.route.method", methodDescriptor.getFullMethodName())
+            .build());
+  }
+
   static final class KeyAwareClientCall<RequestT, ResponseT>
       extends ForwardingClientCall<RequestT, ResponseT> {
     private final KeyAwareChannel parentChannel;
     private final MethodDescriptor<RequestT, ResponseT> methodDescriptor;
     private final CallOptions callOptions;
+    @Nullable private final String logicalRequestKey;
     private Listener<ResponseT> responseListener;
     private Metadata headers;
     @Nullable private ClientCall<RequestT, ResponseT> delegate;
     private ChannelFinder channelFinder;
+    @Nullable private Predicate<String> excludedEndpoints;
     @Nullable private ChannelEndpoint selectedEndpoint;
     @Nullable private ByteString transactionIdToClear;
     private boolean allowDefaultAffinity;
@@ -293,6 +470,8 @@ final class KeyAwareChannel extends ManagedChannel {
       this.parentChannel = parentChannel;
       this.methodDescriptor = methodDescriptor;
       this.callOptions = callOptions;
+      XGoogSpannerRequestId requestId = callOptions.getOption(REQUEST_ID_CALL_OPTIONS_KEY);
+      this.logicalRequestKey = requestId == null ? null : requestId.getLogicalRequestKey();
     }
 
     @Override
@@ -336,6 +515,7 @@ final class KeyAwareChannel extends ManagedChannel {
         if (responseListener == null || headers == null) {
           throw new IllegalStateException("start must be called before sendMessage");
         }
+        Predicate<String> excludedEndpoints = excludedEndpoints();
         ChannelEndpoint endpoint = null;
         ChannelFinder finder = null;
 
@@ -361,7 +541,7 @@ final class KeyAwareChannel extends ManagedChannel {
             finder = parentChannel.getOrCreateChannelFinder(databaseId);
           }
           if (finder != null && reqBuilder.hasMutationKey()) {
-            endpoint = finder.findServer(reqBuilder);
+            endpoint = finder.findServer(reqBuilder, excludedEndpoints);
           }
           if (reqBuilder.hasOptions() && reqBuilder.getOptions().hasReadOnly()) {
             isReadOnlyBegin = true;
@@ -379,12 +559,12 @@ final class KeyAwareChannel extends ManagedChannel {
           CommitRequest.Builder reqBuilder = null;
           if (finder != null && request.getMutationsCount() > 0) {
             reqBuilder = request.toBuilder();
-            endpoint = finder.fillRoutingHint(reqBuilder);
+            endpoint = finder.fillRoutingHint(reqBuilder, excludedEndpoints);
             request = reqBuilder.build();
           }
           if (!request.getTransactionId().isEmpty()) {
             ChannelEndpoint affinityEndpoint =
-                parentChannel.affinityEndpoint(request.getTransactionId());
+                parentChannel.affinityEndpoint(request.getTransactionId(), excludedEndpoints);
             if (affinityEndpoint != null) {
               endpoint = affinityEndpoint;
             }
@@ -396,7 +576,8 @@ final class KeyAwareChannel extends ManagedChannel {
         } else if (message instanceof RollbackRequest) {
           RollbackRequest request = (RollbackRequest) message;
           if (!request.getTransactionId().isEmpty()) {
-            endpoint = parentChannel.affinityEndpoint(request.getTransactionId());
+            endpoint =
+                parentChannel.affinityEndpoint(request.getTransactionId(), excludedEndpoints);
             transactionIdToClear = request.getTransactionId();
           }
         } else {
@@ -408,9 +589,20 @@ final class KeyAwareChannel extends ManagedChannel {
         if (endpoint == null) {
           endpoint = parentChannel.endpointCache.defaultChannel();
         }
+        if (endpoint == null) {
+          throw new IllegalStateException("No default endpoint available for key-aware call");
+        }
         selectedEndpoint = endpoint;
         this.channelFinder = finder;
 
+        // Record real traffic for idle eviction tracking.
+        parentChannel.onRequestRouted(endpoint);
+
+        recordRouteSelectionTrace(
+            methodDescriptor,
+            endpoint.getAddress(),
+            parentChannel.defaultEndpointAddress.equals(endpoint.getAddress()),
+            finder != null);
         delegate = endpoint.getChannel().newCall(methodDescriptor, callOptions);
         if (pendingMessageCompression != null) {
           delegate.setMessageCompression(pendingMessageCompression);
@@ -551,12 +743,21 @@ final class KeyAwareChannel extends ManagedChannel {
       }
     }
 
+    private Predicate<String> excludedEndpoints() {
+      if (excludedEndpoints == null) {
+        excludedEndpoints = parentChannel.consumeExcludedEndpointsForCurrentCall(logicalRequestKey);
+      }
+      return excludedEndpoints;
+    }
+
     private RoutingDecision routeFromRequest(ReadRequest.Builder reqBuilder) {
       String databaseId = parentChannel.extractDatabaseIdFromSession(reqBuilder.getSession());
       ByteString transactionId = transactionIdFromSelector(reqBuilder.getTransaction());
       // Skip affinity for read-only transactions so each read routes independently.
       boolean isReadOnly = parentChannel.isReadOnlyTransaction(transactionId);
-      ChannelEndpoint endpoint = isReadOnly ? null : parentChannel.affinityEndpoint(transactionId);
+      Predicate<String> excludedEndpoints = excludedEndpoints();
+      ChannelEndpoint endpoint =
+          isReadOnly ? null : parentChannel.affinityEndpoint(transactionId, excludedEndpoints);
       ChannelFinder finder = null;
       if (databaseId != null) {
         finder = parentChannel.getOrCreateChannelFinder(databaseId);
@@ -565,8 +766,8 @@ final class KeyAwareChannel extends ManagedChannel {
         Boolean preferLeaderOverride = parentChannel.readOnlyPreferLeader(transactionId);
         ChannelEndpoint routed =
             preferLeaderOverride != null
-                ? finder.findServer(reqBuilder, preferLeaderOverride)
-                : finder.findServer(reqBuilder);
+                ? finder.findServer(reqBuilder, preferLeaderOverride, excludedEndpoints)
+                : finder.findServer(reqBuilder, excludedEndpoints);
         endpoint = routed;
       }
       return new RoutingDecision(finder, endpoint);
@@ -577,7 +778,9 @@ final class KeyAwareChannel extends ManagedChannel {
       ByteString transactionId = transactionIdFromSelector(reqBuilder.getTransaction());
       // Skip affinity for read-only transactions so each query routes independently.
       boolean isReadOnly = parentChannel.isReadOnlyTransaction(transactionId);
-      ChannelEndpoint endpoint = isReadOnly ? null : parentChannel.affinityEndpoint(transactionId);
+      Predicate<String> excludedEndpoints = excludedEndpoints();
+      ChannelEndpoint endpoint =
+          isReadOnly ? null : parentChannel.affinityEndpoint(transactionId, excludedEndpoints);
       ChannelFinder finder = null;
       if (databaseId != null) {
         finder = parentChannel.getOrCreateChannelFinder(databaseId);
@@ -586,8 +789,8 @@ final class KeyAwareChannel extends ManagedChannel {
         Boolean preferLeaderOverride = parentChannel.readOnlyPreferLeader(transactionId);
         ChannelEndpoint routed =
             preferLeaderOverride != null
-                ? finder.findServer(reqBuilder, preferLeaderOverride)
-                : finder.findServer(reqBuilder);
+                ? finder.findServer(reqBuilder, preferLeaderOverride, excludedEndpoints)
+                : finder.findServer(reqBuilder, excludedEndpoints);
         endpoint = routed;
       }
       return new RoutingDecision(finder, endpoint);
@@ -620,25 +823,25 @@ final class KeyAwareChannel extends ManagedChannel {
       if (message instanceof PartialResultSet) {
         PartialResultSet response = (PartialResultSet) message;
         if (response.hasCacheUpdate() && call.channelFinder != null) {
-          call.channelFinder.update(response.getCacheUpdate());
+          call.channelFinder.updateAsync(response.getCacheUpdate());
         }
         transactionId = transactionIdFromMetadata(response);
       } else if (message instanceof ResultSet) {
         ResultSet response = (ResultSet) message;
         if (response.hasCacheUpdate() && call.channelFinder != null) {
-          call.channelFinder.update(response.getCacheUpdate());
+          call.channelFinder.updateAsync(response.getCacheUpdate());
         }
         transactionId = transactionIdFromMetadata(response);
       } else if (message instanceof Transaction) {
         Transaction response = (Transaction) message;
         if (response.hasCacheUpdate() && call.channelFinder != null) {
-          call.channelFinder.update(response.getCacheUpdate());
+          call.channelFinder.updateAsync(response.getCacheUpdate());
         }
         transactionId = transactionIdFromTransaction(response);
       } else if (message instanceof CommitResponse) {
         CommitResponse response = (CommitResponse) message;
         if (response.hasCacheUpdate() && call.channelFinder != null) {
-          call.channelFinder.update(response.getCacheUpdate());
+          call.channelFinder.updateAsync(response.getCacheUpdate());
         }
       }
       if (transactionId != null) {
@@ -655,6 +858,10 @@ final class KeyAwareChannel extends ManagedChannel {
 
     @Override
     public void onClose(io.grpc.Status status, Metadata trailers) {
+      if (status.getCode() == io.grpc.Status.Code.RESOURCE_EXHAUSTED) {
+        call.parentChannel.maybeExcludeEndpointOnNextCall(
+            call.selectedEndpoint, call.logicalRequestKey);
+      }
       call.maybeClearAffinity();
       super.onClose(status, trailers);
     }

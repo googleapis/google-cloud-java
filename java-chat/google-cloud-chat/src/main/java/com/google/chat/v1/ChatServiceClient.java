@@ -98,7 +98,7 @@ import javax.annotation.Generated;
  *      <td><p> ListMessages</td>
  *      <td><p> Lists messages in a space that the caller is a member of, including messages from blocked members and spaces. System messages, like those announcing new space members, aren't included. If you list messages from a space with no messages, the response is an empty object. When using a REST/HTTP interface, the response contains an empty JSON object, `{}`. For an example, see [List messages](https://developers.google.com/workspace/chat/api/guides/v1/messages/list).
  * <p>  Supports the following types of [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
- * <p>  - [App authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer Preview](https://developers.google.com/workspace/preview)  with the authorization scope:     - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When     using this authentication scope, this method only returns public     messages in a space. It doesn't include private messages.
+ * <p>  - [App authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) with [administrator approval](https://support.google.com/a?p=chat-app-auth) with the authorization scope:     - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When     using this authentication scope, this method only returns public     messages in a space. It doesn't include private messages.
  * <p>  - [User authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following authorization scopes:     - `https://www.googleapis.com/auth/chat.messages.readonly`     - `https://www.googleapis.com/auth/chat.messages`     - `https://www.googleapis.com/auth/chat.import` (import mode spaces     only)</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
@@ -166,7 +166,7 @@ import javax.annotation.Generated;
  *      <td><p> GetMessage</td>
  *      <td><p> Returns details about a message. For an example, see [Get details about a message](https://developers.google.com/workspace/chat/get-messages).
  * <p>  Supports the following types of [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
- * <p>  - [App authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) with one of the following authorization scopes:     - `https://www.googleapis.com/auth/chat.bot`: When using this     authorization scope, this method returns details about a message the     Chat app has access to, like direct messages and [slash     commands](https://developers.google.com/workspace/chat/slash-commands)     that invoke the Chat app.     - `https://www.googleapis.com/auth/chat.app.messages.readonly`     with [administrator     approval](https://support.google.com/a?p=chat-app-auth) (available in     [Developer Preview](https://developers.google.com/workspace/preview)).     When using this authentication scope,     this method returns details about a public message in a space.
+ * <p>  - [App authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) with one of the following authorization scopes:     - `https://www.googleapis.com/auth/chat.bot`: When using this     authorization scope, this method returns details about a message the     Chat app has access to, like direct messages and [slash     commands](https://developers.google.com/workspace/chat/slash-commands)     that invoke the Chat app.     - `https://www.googleapis.com/auth/chat.app.messages.readonly`     with [administrator     approval](https://support.google.com/a?p=chat-app-auth).     When using this authentication scope,     this method returns details about a public message in a space.
  * <p>  - [User authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following authorization scopes:     - `https://www.googleapis.com/auth/chat.messages.readonly`     - `https://www.googleapis.com/auth/chat.messages`
  * <p>  Note: Might return a message from a blocked member or space.</td>
  *      <td>
@@ -760,7 +760,7 @@ import javax.annotation.Generated;
  *      <td><p> Returns an event from a Google Chat space. The [event payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload) contains the most recent version of the resource that changed. For example, if you request an event about a new message but the message was later updated, the server returns the updated `Message` resource in the event payload.
  * <p>  Note: The `permissionSettings` field is not returned in the Space object of the Space event data for this request.
  * <p>  Supports the following types of [authentication](https://developers.google.com/workspace/chat/authenticate-authorize) with an [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes) appropriate for reading the requested data:
- * <p>  - [App authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer Preview](https://developers.google.com/workspace/preview)  with one of the following authorization scopes:     - `https://www.googleapis.com/auth/chat.app.spaces`     - `https://www.googleapis.com/auth/chat.app.messages.readonly`     - `https://www.googleapis.com/auth/chat.app.memberships`
+ * <p>  - [App authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) with [administrator approval](https://support.google.com/a?p=chat-app-auth) with one of the following authorization scopes:     - `https://www.googleapis.com/auth/chat.app.spaces`     - `https://www.googleapis.com/auth/chat.app.spaces.readonly`     - `https://www.googleapis.com/auth/chat.app.messages.readonly`     - `https://www.googleapis.com/auth/chat.app.memberships`     - `https://www.googleapis.com/auth/chat.app.memberships.readonly`
  * <p>  - [User authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following authorization scopes:     - `https://www.googleapis.com/auth/chat.spaces.readonly`     - `https://www.googleapis.com/auth/chat.spaces`     - `https://www.googleapis.com/auth/chat.messages.readonly`     - `https://www.googleapis.com/auth/chat.messages`     - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`     - `https://www.googleapis.com/auth/chat.messages.reactions`     - `https://www.googleapis.com/auth/chat.memberships.readonly`     - `https://www.googleapis.com/auth/chat.memberships`
  * <p>  To get an event, the authenticated caller must be a member of the space.
  * <p>  For an example, see [Get details about an event from a Google Chat space](https://developers.google.com/workspace/chat/get-space-event).</td>
@@ -784,7 +784,7 @@ import javax.annotation.Generated;
  *      <td><p> ListSpaceEvents</td>
  *      <td><p> Lists events from a Google Chat space. For each event, the [payload](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.spaceEvents#SpaceEvent.FIELDS.oneof_payload) contains the most recent version of the Chat resource. For example, if you list events about new space members, the server returns `Membership` resources that contain the latest membership details. If new members were removed during the requested period, the event payload contains an empty `Membership` resource.
  * <p>  Supports the following types of [authentication](https://developers.google.com/workspace/chat/authenticate-authorize) with an [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes) appropriate for reading the requested data:
- * <p>  - [App authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer Preview](https://developers.google.com/workspace/preview)  with one of the following authorization scopes:     - `https://www.googleapis.com/auth/chat.app.spaces`     - `https://www.googleapis.com/auth/chat.app.messages.readonly`     - `https://www.googleapis.com/auth/chat.app.memberships`
+ * <p>  - [App authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app) with [administrator approval](https://support.google.com/a?p=chat-app-auth) with one of the following authorization scopes:     - `https://www.googleapis.com/auth/chat.app.spaces`     - `https://www.googleapis.com/auth/chat.app.spaces.readonly`     - `https://www.googleapis.com/auth/chat.app.messages.readonly`     - `https://www.googleapis.com/auth/chat.app.memberships`     - `https://www.googleapis.com/auth/chat.app.memberships.readonly`
  * <p>  - [User authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following authorization scopes:     - `https://www.googleapis.com/auth/chat.spaces.readonly`     - `https://www.googleapis.com/auth/chat.spaces`     - `https://www.googleapis.com/auth/chat.messages.readonly`     - `https://www.googleapis.com/auth/chat.messages`     - `https://www.googleapis.com/auth/chat.messages.reactions.readonly`     - `https://www.googleapis.com/auth/chat.messages.reactions`     - `https://www.googleapis.com/auth/chat.memberships.readonly`     - `https://www.googleapis.com/auth/chat.memberships`
  * <p>  To list events, the authenticated caller must be a member of the space.
  * <p>  For an example, see [List events from a Google Chat space](https://developers.google.com/workspace/chat/list-space-events).</td>
@@ -843,6 +843,154 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> updateSpaceNotificationSettingCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateSection</td>
+ *      <td><p> Creates a section in Google Chat. Sections help users group conversations and customize the list of spaces displayed in Chat navigation panel. Only sections of type `CUSTOM_SECTION` can be created. For details, see [Create and organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with the [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.sections`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSection(CreateSectionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createSection(UserName parent, Section section)
+ *           <li><p> createSection(String parent, Section section)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteSection</td>
+ *      <td><p> Deletes a section of type `CUSTOM_SECTION`.
+ * <p>  If the section contains items, such as spaces, the items are moved to Google Chat's default sections and are not deleted.
+ * <p>  For details, see [Create and organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with the [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.sections`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSection(DeleteSectionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteSection(SectionName name)
+ *           <li><p> deleteSection(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSection</td>
+ *      <td><p> Updates a section. Only sections of type `CUSTOM_SECTION` can be updated. For details, see [Create and organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with the [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.sections`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSection(UpdateSectionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateSection(Section section, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSections</td>
+ *      <td><p> Lists sections available to the Chat user. Sections help users group their conversations and customize the list of spaces displayed in Chat navigation panel. For details, see [Create and organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with the [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.sections`   - `https://www.googleapis.com/auth/chat.users.sections.readonly`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSections(ListSectionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSections(UserName parent)
+ *           <li><p> listSections(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSectionsPagedCallable()
+ *           <li><p> listSectionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> PositionSection</td>
+ *      <td><p> Changes the sort order of a section. For details, see [Create and organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with the [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.sections`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> positionSection(PositionSectionRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> positionSectionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSectionItems</td>
+ *      <td><p> Lists items in a section.
+ * <p>  Only spaces can be section items. For details, see [Create and organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with the [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.sections`   - `https://www.googleapis.com/auth/chat.users.sections.readonly`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSectionItems(ListSectionItemsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSectionItems(SectionName parent)
+ *           <li><p> listSectionItems(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSectionItemsPagedCallable()
+ *           <li><p> listSectionItemsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> MoveSectionItem</td>
+ *      <td><p> Moves an item from one section to another. For example, if a section contains spaces, this method can be used to move a space to a different section. For details, see [Create and organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with the [authorization scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.users.sections`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> moveSectionItem(MoveSectionItemRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> moveSectionItem(SectionItemName name, SectionName targetSection)
+ *           <li><p> moveSectionItem(SectionItemName name, String targetSection)
+ *           <li><p> moveSectionItem(String name, SectionName targetSection)
+ *           <li><p> moveSectionItem(String name, String targetSection)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> moveSectionItemCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1265,11 +1413,10 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>- [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer
-   * Preview](https://developers.google.com/workspace/preview) with the authorization scope: -
-   * `https://www.googleapis.com/auth/chat.app.messages.readonly`. When using this authentication
-   * scope, this method only returns public messages in a space. It doesn't include private
-   * messages.
+   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) with the
+   * authorization scope: - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When using
+   * this authentication scope, this method only returns public messages in a space. It doesn't
+   * include private messages.
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -1319,11 +1466,10 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>- [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer
-   * Preview](https://developers.google.com/workspace/preview) with the authorization scope: -
-   * `https://www.googleapis.com/auth/chat.app.messages.readonly`. When using this authentication
-   * scope, this method only returns public messages in a space. It doesn't include private
-   * messages.
+   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) with the
+   * authorization scope: - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When using
+   * this authentication scope, this method only returns public messages in a space. It doesn't
+   * include private messages.
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -1370,11 +1516,10 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>- [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer
-   * Preview](https://developers.google.com/workspace/preview) with the authorization scope: -
-   * `https://www.googleapis.com/auth/chat.app.messages.readonly`. When using this authentication
-   * scope, this method only returns public messages in a space. It doesn't include private
-   * messages.
+   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) with the
+   * authorization scope: - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When using
+   * this authentication scope, this method only returns public messages in a space. It doesn't
+   * include private messages.
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -1427,11 +1572,10 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>- [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer
-   * Preview](https://developers.google.com/workspace/preview) with the authorization scope: -
-   * `https://www.googleapis.com/auth/chat.app.messages.readonly`. When using this authentication
-   * scope, this method only returns public messages in a space. It doesn't include private
-   * messages.
+   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) with the
+   * authorization scope: - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When using
+   * this authentication scope, this method only returns public messages in a space. It doesn't
+   * include private messages.
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -1484,11 +1628,10 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>- [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer
-   * Preview](https://developers.google.com/workspace/preview) with the authorization scope: -
-   * `https://www.googleapis.com/auth/chat.app.messages.readonly`. When using this authentication
-   * scope, this method only returns public messages in a space. It doesn't include private
-   * messages.
+   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) with the
+   * authorization scope: - `https://www.googleapis.com/auth/chat.app.messages.readonly`. When using
+   * this authentication scope, this method only returns public messages in a space. It doesn't
+   * include private messages.
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -2066,9 +2209,8 @@ public class ChatServiceClient implements BackgroundResource {
    * has access to, like direct messages and [slash
    * commands](https://developers.google.com/workspace/chat/slash-commands) that invoke the Chat
    * app. - `https://www.googleapis.com/auth/chat.app.messages.readonly` with [administrator
-   * approval](https://support.google.com/a?p=chat-app-auth) (available in [Developer
-   * Preview](https://developers.google.com/workspace/preview)). When using this authentication
-   * scope, this method returns details about a public message in a space.
+   * approval](https://support.google.com/a?p=chat-app-auth). When using this authentication scope,
+   * this method returns details about a public message in a space.
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -2120,9 +2262,8 @@ public class ChatServiceClient implements BackgroundResource {
    * has access to, like direct messages and [slash
    * commands](https://developers.google.com/workspace/chat/slash-commands) that invoke the Chat
    * app. - `https://www.googleapis.com/auth/chat.app.messages.readonly` with [administrator
-   * approval](https://support.google.com/a?p=chat-app-auth) (available in [Developer
-   * Preview](https://developers.google.com/workspace/preview)). When using this authentication
-   * scope, this method returns details about a public message in a space.
+   * approval](https://support.google.com/a?p=chat-app-auth). When using this authentication scope,
+   * this method returns details about a public message in a space.
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -2173,9 +2314,8 @@ public class ChatServiceClient implements BackgroundResource {
    * has access to, like direct messages and [slash
    * commands](https://developers.google.com/workspace/chat/slash-commands) that invoke the Chat
    * app. - `https://www.googleapis.com/auth/chat.app.messages.readonly` with [administrator
-   * approval](https://support.google.com/a?p=chat-app-auth) (available in [Developer
-   * Preview](https://developers.google.com/workspace/preview)). When using this authentication
-   * scope, this method returns details about a public message in a space.
+   * approval](https://support.google.com/a?p=chat-app-auth). When using this authentication scope,
+   * this method returns details about a public message in a space.
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -2224,9 +2364,8 @@ public class ChatServiceClient implements BackgroundResource {
    * has access to, like direct messages and [slash
    * commands](https://developers.google.com/workspace/chat/slash-commands) that invoke the Chat
    * app. - `https://www.googleapis.com/auth/chat.app.messages.readonly` with [administrator
-   * approval](https://support.google.com/a?p=chat-app-auth) (available in [Developer
-   * Preview](https://developers.google.com/workspace/preview)). When using this authentication
-   * scope, this method returns details about a public message in a space.
+   * approval](https://support.google.com/a?p=chat-app-auth). When using this authentication scope,
+   * this method returns details about a public message in a space.
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -6749,11 +6888,12 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>- [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer
-   * Preview](https://developers.google.com/workspace/preview) with one of the following
-   * authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) with one of the
+   * following authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * `https://www.googleapis.com/auth/chat.app.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.app.messages.readonly` -
-   * `https://www.googleapis.com/auth/chat.app.memberships`
+   * `https://www.googleapis.com/auth/chat.app.memberships` -
+   * `https://www.googleapis.com/auth/chat.app.memberships.readonly`
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -6815,11 +6955,12 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>- [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer
-   * Preview](https://developers.google.com/workspace/preview) with one of the following
-   * authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) with one of the
+   * following authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * `https://www.googleapis.com/auth/chat.app.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.app.messages.readonly` -
-   * `https://www.googleapis.com/auth/chat.app.memberships`
+   * `https://www.googleapis.com/auth/chat.app.memberships` -
+   * `https://www.googleapis.com/auth/chat.app.memberships.readonly`
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -6880,11 +7021,12 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>- [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer
-   * Preview](https://developers.google.com/workspace/preview) with one of the following
-   * authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) with one of the
+   * following authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * `https://www.googleapis.com/auth/chat.app.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.app.messages.readonly` -
-   * `https://www.googleapis.com/auth/chat.app.memberships`
+   * `https://www.googleapis.com/auth/chat.app.memberships` -
+   * `https://www.googleapis.com/auth/chat.app.memberships.readonly`
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -6946,11 +7088,12 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>- [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer
-   * Preview](https://developers.google.com/workspace/preview) with one of the following
-   * authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) with one of the
+   * following authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * `https://www.googleapis.com/auth/chat.app.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.app.messages.readonly` -
-   * `https://www.googleapis.com/auth/chat.app.memberships`
+   * `https://www.googleapis.com/auth/chat.app.memberships` -
+   * `https://www.googleapis.com/auth/chat.app.memberships.readonly`
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -7009,11 +7152,12 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>- [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer
-   * Preview](https://developers.google.com/workspace/preview) with one of the following
-   * authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) with one of the
+   * following authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * `https://www.googleapis.com/auth/chat.app.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.app.messages.readonly` -
-   * `https://www.googleapis.com/auth/chat.app.memberships`
+   * `https://www.googleapis.com/auth/chat.app.memberships` -
+   * `https://www.googleapis.com/auth/chat.app.memberships.readonly`
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -7110,11 +7254,12 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>- [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer
-   * Preview](https://developers.google.com/workspace/preview) with one of the following
-   * authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) with one of the
+   * following authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * `https://www.googleapis.com/auth/chat.app.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.app.messages.readonly` -
-   * `https://www.googleapis.com/auth/chat.app.memberships`
+   * `https://www.googleapis.com/auth/chat.app.memberships` -
+   * `https://www.googleapis.com/auth/chat.app.memberships.readonly`
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -7208,11 +7353,12 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>- [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer
-   * Preview](https://developers.google.com/workspace/preview) with one of the following
-   * authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) with one of the
+   * following authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * `https://www.googleapis.com/auth/chat.app.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.app.messages.readonly` -
-   * `https://www.googleapis.com/auth/chat.app.memberships`
+   * `https://www.googleapis.com/auth/chat.app.memberships` -
+   * `https://www.googleapis.com/auth/chat.app.memberships.readonly`
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -7277,11 +7423,12 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>- [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer
-   * Preview](https://developers.google.com/workspace/preview) with one of the following
-   * authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) with one of the
+   * following authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * `https://www.googleapis.com/auth/chat.app.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.app.messages.readonly` -
-   * `https://www.googleapis.com/auth/chat.app.memberships`
+   * `https://www.googleapis.com/auth/chat.app.memberships` -
+   * `https://www.googleapis.com/auth/chat.app.memberships.readonly`
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -7347,11 +7494,12 @@ public class ChatServiceClient implements BackgroundResource {
    *
    * <p>- [App
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
-   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) in [Developer
-   * Preview](https://developers.google.com/workspace/preview) with one of the following
-   * authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * with [administrator approval](https://support.google.com/a?p=chat-app-auth) with one of the
+   * following authorization scopes: - `https://www.googleapis.com/auth/chat.app.spaces` -
+   * `https://www.googleapis.com/auth/chat.app.spaces.readonly` -
    * `https://www.googleapis.com/auth/chat.app.messages.readonly` -
-   * `https://www.googleapis.com/auth/chat.app.memberships`
+   * `https://www.googleapis.com/auth/chat.app.memberships` -
+   * `https://www.googleapis.com/auth/chat.app.memberships.readonly`
    *
    * <p>- [User
    * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
@@ -7686,6 +7834,1214 @@ public class ChatServiceClient implements BackgroundResource {
   public final UnaryCallable<UpdateSpaceNotificationSettingRequest, SpaceNotificationSetting>
       updateSpaceNotificationSettingCallable() {
     return stub.updateSpaceNotificationSettingCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a section in Google Chat. Sections help users group conversations and customize the
+   * list of spaces displayed in Chat navigation panel. Only sections of type `CUSTOM_SECTION` can
+   * be created. For details, see [Create and organize sections in Google
+   * Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UserName parent = UserName.of("[USER]");
+   *   Section section = Section.newBuilder().build();
+   *   Section response = chatServiceClient.createSection(parent, section);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name where the section is created.
+   *     <p>Format: `users/{user}`
+   * @param section Required. The section to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Section createSection(UserName parent, Section section) {
+    CreateSectionRequest request =
+        CreateSectionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSection(section)
+            .build();
+    return createSection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a section in Google Chat. Sections help users group conversations and customize the
+   * list of spaces displayed in Chat navigation panel. Only sections of type `CUSTOM_SECTION` can
+   * be created. For details, see [Create and organize sections in Google
+   * Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String parent = UserName.of("[USER]").toString();
+   *   Section section = Section.newBuilder().build();
+   *   Section response = chatServiceClient.createSection(parent, section);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name where the section is created.
+   *     <p>Format: `users/{user}`
+   * @param section Required. The section to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Section createSection(String parent, Section section) {
+    CreateSectionRequest request =
+        CreateSectionRequest.newBuilder().setParent(parent).setSection(section).build();
+    return createSection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a section in Google Chat. Sections help users group conversations and customize the
+   * list of spaces displayed in Chat navigation panel. Only sections of type `CUSTOM_SECTION` can
+   * be created. For details, see [Create and organize sections in Google
+   * Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   CreateSectionRequest request =
+   *       CreateSectionRequest.newBuilder()
+   *           .setParent(UserName.of("[USER]").toString())
+   *           .setSection(Section.newBuilder().build())
+   *           .build();
+   *   Section response = chatServiceClient.createSection(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Section createSection(CreateSectionRequest request) {
+    return createSectionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a section in Google Chat. Sections help users group conversations and customize the
+   * list of spaces displayed in Chat navigation panel. Only sections of type `CUSTOM_SECTION` can
+   * be created. For details, see [Create and organize sections in Google
+   * Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   CreateSectionRequest request =
+   *       CreateSectionRequest.newBuilder()
+   *           .setParent(UserName.of("[USER]").toString())
+   *           .setSection(Section.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Section> future = chatServiceClient.createSectionCallable().futureCall(request);
+   *   // Do something.
+   *   Section response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateSectionRequest, Section> createSectionCallable() {
+    return stub.createSectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a section of type `CUSTOM_SECTION`.
+   *
+   * <p>If the section contains items, such as spaces, the items are moved to Google Chat's default
+   * sections and are not deleted.
+   *
+   * <p>For details, see [Create and organize sections in Google
+   * Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SectionName name = SectionName.of("[USER]", "[SECTION]");
+   *   chatServiceClient.deleteSection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the section to delete.
+   *     <p>Format: `users/{user}/sections/{section}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSection(SectionName name) {
+    DeleteSectionRequest request =
+        DeleteSectionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    deleteSection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a section of type `CUSTOM_SECTION`.
+   *
+   * <p>If the section contains items, such as spaces, the items are moved to Google Chat's default
+   * sections and are not deleted.
+   *
+   * <p>For details, see [Create and organize sections in Google
+   * Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String name = SectionName.of("[USER]", "[SECTION]").toString();
+   *   chatServiceClient.deleteSection(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the section to delete.
+   *     <p>Format: `users/{user}/sections/{section}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSection(String name) {
+    DeleteSectionRequest request = DeleteSectionRequest.newBuilder().setName(name).build();
+    deleteSection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a section of type `CUSTOM_SECTION`.
+   *
+   * <p>If the section contains items, such as spaces, the items are moved to Google Chat's default
+   * sections and are not deleted.
+   *
+   * <p>For details, see [Create and organize sections in Google
+   * Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   DeleteSectionRequest request =
+   *       DeleteSectionRequest.newBuilder()
+   *           .setName(SectionName.of("[USER]", "[SECTION]").toString())
+   *           .build();
+   *   chatServiceClient.deleteSection(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSection(DeleteSectionRequest request) {
+    deleteSectionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a section of type `CUSTOM_SECTION`.
+   *
+   * <p>If the section contains items, such as spaces, the items are moved to Google Chat's default
+   * sections and are not deleted.
+   *
+   * <p>For details, see [Create and organize sections in Google
+   * Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   DeleteSectionRequest request =
+   *       DeleteSectionRequest.newBuilder()
+   *           .setName(SectionName.of("[USER]", "[SECTION]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = chatServiceClient.deleteSectionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSectionRequest, Empty> deleteSectionCallable() {
+    return stub.deleteSectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a section. Only sections of type `CUSTOM_SECTION` can be updated. For details, see
+   * [Create and organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   Section section = Section.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Section response = chatServiceClient.updateSection(section, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param section Required. The section to update.
+   * @param updateMask Required. The mask to specify which fields to update.
+   *     <p>Currently supported field paths:
+   *     <p>- `display_name`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Section updateSection(Section section, FieldMask updateMask) {
+    UpdateSectionRequest request =
+        UpdateSectionRequest.newBuilder().setSection(section).setUpdateMask(updateMask).build();
+    return updateSection(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a section. Only sections of type `CUSTOM_SECTION` can be updated. For details, see
+   * [Create and organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateSectionRequest request =
+   *       UpdateSectionRequest.newBuilder()
+   *           .setSection(Section.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Section response = chatServiceClient.updateSection(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Section updateSection(UpdateSectionRequest request) {
+    return updateSectionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a section. Only sections of type `CUSTOM_SECTION` can be updated. For details, see
+   * [Create and organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UpdateSectionRequest request =
+   *       UpdateSectionRequest.newBuilder()
+   *           .setSection(Section.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Section> future = chatServiceClient.updateSectionCallable().futureCall(request);
+   *   // Do something.
+   *   Section response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSectionRequest, Section> updateSectionCallable() {
+    return stub.updateSectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists sections available to the Chat user. Sections help users group their conversations and
+   * customize the list of spaces displayed in Chat navigation panel. For details, see [Create and
+   * organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections` -
+   * `https://www.googleapis.com/auth/chat.users.sections.readonly`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   UserName parent = UserName.of("[USER]");
+   *   for (Section element : chatServiceClient.listSections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which is the user resource name that owns this collection
+   *     of sections. Only supports listing sections for the calling user. To refer to the calling
+   *     user, set one of the following:
+   *     <p>- The `me` alias. For example, `users/me`.
+   *     <p>- Their Workspace email address. For example, `users/user{@literal @}example.com`.
+   *     <p>- Their user id. For example, `users/123456789`.
+   *     <p>Format: `users/{user}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSectionsPagedResponse listSections(UserName parent) {
+    ListSectionsRequest request =
+        ListSectionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists sections available to the Chat user. Sections help users group their conversations and
+   * customize the list of spaces displayed in Chat navigation panel. For details, see [Create and
+   * organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections` -
+   * `https://www.googleapis.com/auth/chat.users.sections.readonly`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String parent = UserName.of("[USER]").toString();
+   *   for (Section element : chatServiceClient.listSections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which is the user resource name that owns this collection
+   *     of sections. Only supports listing sections for the calling user. To refer to the calling
+   *     user, set one of the following:
+   *     <p>- The `me` alias. For example, `users/me`.
+   *     <p>- Their Workspace email address. For example, `users/user{@literal @}example.com`.
+   *     <p>- Their user id. For example, `users/123456789`.
+   *     <p>Format: `users/{user}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSectionsPagedResponse listSections(String parent) {
+    ListSectionsRequest request = ListSectionsRequest.newBuilder().setParent(parent).build();
+    return listSections(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists sections available to the Chat user. Sections help users group their conversations and
+   * customize the list of spaces displayed in Chat navigation panel. For details, see [Create and
+   * organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections` -
+   * `https://www.googleapis.com/auth/chat.users.sections.readonly`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ListSectionsRequest request =
+   *       ListSectionsRequest.newBuilder()
+   *           .setParent(UserName.of("[USER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Section element : chatServiceClient.listSections(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSectionsPagedResponse listSections(ListSectionsRequest request) {
+    return listSectionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists sections available to the Chat user. Sections help users group their conversations and
+   * customize the list of spaces displayed in Chat navigation panel. For details, see [Create and
+   * organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections` -
+   * `https://www.googleapis.com/auth/chat.users.sections.readonly`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ListSectionsRequest request =
+   *       ListSectionsRequest.newBuilder()
+   *           .setParent(UserName.of("[USER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Section> future = chatServiceClient.listSectionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Section element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSectionsRequest, ListSectionsPagedResponse>
+      listSectionsPagedCallable() {
+    return stub.listSectionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists sections available to the Chat user. Sections help users group their conversations and
+   * customize the list of spaces displayed in Chat navigation panel. For details, see [Create and
+   * organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections` -
+   * `https://www.googleapis.com/auth/chat.users.sections.readonly`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ListSectionsRequest request =
+   *       ListSectionsRequest.newBuilder()
+   *           .setParent(UserName.of("[USER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSectionsResponse response = chatServiceClient.listSectionsCallable().call(request);
+   *     for (Section element : response.getSectionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSectionsRequest, ListSectionsResponse> listSectionsCallable() {
+    return stub.listSectionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Changes the sort order of a section. For details, see [Create and organize sections in Google
+   * Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   PositionSectionRequest request =
+   *       PositionSectionRequest.newBuilder()
+   *           .setName(SectionName.of("[USER]", "[SECTION]").toString())
+   *           .build();
+   *   PositionSectionResponse response = chatServiceClient.positionSection(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final PositionSectionResponse positionSection(PositionSectionRequest request) {
+    return positionSectionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Changes the sort order of a section. For details, see [Create and organize sections in Google
+   * Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   PositionSectionRequest request =
+   *       PositionSectionRequest.newBuilder()
+   *           .setName(SectionName.of("[USER]", "[SECTION]").toString())
+   *           .build();
+   *   ApiFuture<PositionSectionResponse> future =
+   *       chatServiceClient.positionSectionCallable().futureCall(request);
+   *   // Do something.
+   *   PositionSectionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<PositionSectionRequest, PositionSectionResponse>
+      positionSectionCallable() {
+    return stub.positionSectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists items in a section.
+   *
+   * <p>Only spaces can be section items. For details, see [Create and organize sections in Google
+   * Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections` -
+   * `https://www.googleapis.com/auth/chat.users.sections.readonly`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SectionName parent = SectionName.of("[USER]", "[SECTION]");
+   *   for (SectionItem element : chatServiceClient.listSectionItems(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which is the section resource name that owns this
+   *     collection of section items. Only supports listing section items for the calling user.
+   *     <p>When you're filtering by space, use the wildcard `-` to search across all sections. For
+   *     example, `users/{user}/sections/-`.
+   *     <p>Format: `users/{user}/sections/{section}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSectionItemsPagedResponse listSectionItems(SectionName parent) {
+    ListSectionItemsRequest request =
+        ListSectionItemsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSectionItems(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists items in a section.
+   *
+   * <p>Only spaces can be section items. For details, see [Create and organize sections in Google
+   * Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections` -
+   * `https://www.googleapis.com/auth/chat.users.sections.readonly`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String parent = SectionName.of("[USER]", "[SECTION]").toString();
+   *   for (SectionItem element : chatServiceClient.listSectionItems(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which is the section resource name that owns this
+   *     collection of section items. Only supports listing section items for the calling user.
+   *     <p>When you're filtering by space, use the wildcard `-` to search across all sections. For
+   *     example, `users/{user}/sections/-`.
+   *     <p>Format: `users/{user}/sections/{section}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSectionItemsPagedResponse listSectionItems(String parent) {
+    ListSectionItemsRequest request =
+        ListSectionItemsRequest.newBuilder().setParent(parent).build();
+    return listSectionItems(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists items in a section.
+   *
+   * <p>Only spaces can be section items. For details, see [Create and organize sections in Google
+   * Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections` -
+   * `https://www.googleapis.com/auth/chat.users.sections.readonly`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ListSectionItemsRequest request =
+   *       ListSectionItemsRequest.newBuilder()
+   *           .setParent(SectionName.of("[USER]", "[SECTION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (SectionItem element : chatServiceClient.listSectionItems(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSectionItemsPagedResponse listSectionItems(ListSectionItemsRequest request) {
+    return listSectionItemsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists items in a section.
+   *
+   * <p>Only spaces can be section items. For details, see [Create and organize sections in Google
+   * Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections` -
+   * `https://www.googleapis.com/auth/chat.users.sections.readonly`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ListSectionItemsRequest request =
+   *       ListSectionItemsRequest.newBuilder()
+   *           .setParent(SectionName.of("[USER]", "[SECTION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<SectionItem> future =
+   *       chatServiceClient.listSectionItemsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SectionItem element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSectionItemsRequest, ListSectionItemsPagedResponse>
+      listSectionItemsPagedCallable() {
+    return stub.listSectionItemsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists items in a section.
+   *
+   * <p>Only spaces can be section items. For details, see [Create and organize sections in Google
+   * Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections` -
+   * `https://www.googleapis.com/auth/chat.users.sections.readonly`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   ListSectionItemsRequest request =
+   *       ListSectionItemsRequest.newBuilder()
+   *           .setParent(SectionName.of("[USER]", "[SECTION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   while (true) {
+   *     ListSectionItemsResponse response =
+   *         chatServiceClient.listSectionItemsCallable().call(request);
+   *     for (SectionItem element : response.getSectionItemsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSectionItemsRequest, ListSectionItemsResponse>
+      listSectionItemsCallable() {
+    return stub.listSectionItemsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves an item from one section to another. For example, if a section contains spaces, this
+   * method can be used to move a space to a different section. For details, see [Create and
+   * organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SectionItemName name = SectionItemName.of("[USER]", "[SECTION]", "[ITEM]");
+   *   SectionName targetSection = SectionName.of("[USER]", "[SECTION]");
+   *   MoveSectionItemResponse response = chatServiceClient.moveSectionItem(name, targetSection);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the section item to move.
+   *     <p>Format: `users/{user}/sections/{section}/items/{item}`
+   * @param targetSection Required. The resource name of the section to move the section item to.
+   *     <p>Format: `users/{user}/sections/{section}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MoveSectionItemResponse moveSectionItem(
+      SectionItemName name, SectionName targetSection) {
+    MoveSectionItemRequest request =
+        MoveSectionItemRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setTargetSection(targetSection == null ? null : targetSection.toString())
+            .build();
+    return moveSectionItem(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves an item from one section to another. For example, if a section contains spaces, this
+   * method can be used to move a space to a different section. For details, see [Create and
+   * organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   SectionItemName name = SectionItemName.of("[USER]", "[SECTION]", "[ITEM]");
+   *   String targetSection = SectionName.of("[USER]", "[SECTION]").toString();
+   *   MoveSectionItemResponse response = chatServiceClient.moveSectionItem(name, targetSection);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the section item to move.
+   *     <p>Format: `users/{user}/sections/{section}/items/{item}`
+   * @param targetSection Required. The resource name of the section to move the section item to.
+   *     <p>Format: `users/{user}/sections/{section}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MoveSectionItemResponse moveSectionItem(SectionItemName name, String targetSection) {
+    MoveSectionItemRequest request =
+        MoveSectionItemRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setTargetSection(targetSection)
+            .build();
+    return moveSectionItem(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves an item from one section to another. For example, if a section contains spaces, this
+   * method can be used to move a space to a different section. For details, see [Create and
+   * organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String name = SectionItemName.of("[USER]", "[SECTION]", "[ITEM]").toString();
+   *   SectionName targetSection = SectionName.of("[USER]", "[SECTION]");
+   *   MoveSectionItemResponse response = chatServiceClient.moveSectionItem(name, targetSection);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the section item to move.
+   *     <p>Format: `users/{user}/sections/{section}/items/{item}`
+   * @param targetSection Required. The resource name of the section to move the section item to.
+   *     <p>Format: `users/{user}/sections/{section}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MoveSectionItemResponse moveSectionItem(String name, SectionName targetSection) {
+    MoveSectionItemRequest request =
+        MoveSectionItemRequest.newBuilder()
+            .setName(name)
+            .setTargetSection(targetSection == null ? null : targetSection.toString())
+            .build();
+    return moveSectionItem(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves an item from one section to another. For example, if a section contains spaces, this
+   * method can be used to move a space to a different section. For details, see [Create and
+   * organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   String name = SectionItemName.of("[USER]", "[SECTION]", "[ITEM]").toString();
+   *   String targetSection = SectionName.of("[USER]", "[SECTION]").toString();
+   *   MoveSectionItemResponse response = chatServiceClient.moveSectionItem(name, targetSection);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the section item to move.
+   *     <p>Format: `users/{user}/sections/{section}/items/{item}`
+   * @param targetSection Required. The resource name of the section to move the section item to.
+   *     <p>Format: `users/{user}/sections/{section}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MoveSectionItemResponse moveSectionItem(String name, String targetSection) {
+    MoveSectionItemRequest request =
+        MoveSectionItemRequest.newBuilder().setName(name).setTargetSection(targetSection).build();
+    return moveSectionItem(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves an item from one section to another. For example, if a section contains spaces, this
+   * method can be used to move a space to a different section. For details, see [Create and
+   * organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   MoveSectionItemRequest request =
+   *       MoveSectionItemRequest.newBuilder()
+   *           .setName(SectionItemName.of("[USER]", "[SECTION]", "[ITEM]").toString())
+   *           .setTargetSection(SectionName.of("[USER]", "[SECTION]").toString())
+   *           .build();
+   *   MoveSectionItemResponse response = chatServiceClient.moveSectionItem(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final MoveSectionItemResponse moveSectionItem(MoveSectionItemRequest request) {
+    return moveSectionItemCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Moves an item from one section to another. For example, if a section contains spaces, this
+   * method can be used to move a space to a different section. For details, see [Create and
+   * organize sections in Google Chat](https://support.google.com/chat/answer/16059854).
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with the [authorization
+   * scope](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.users.sections`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   MoveSectionItemRequest request =
+   *       MoveSectionItemRequest.newBuilder()
+   *           .setName(SectionItemName.of("[USER]", "[SECTION]", "[ITEM]").toString())
+   *           .setTargetSection(SectionName.of("[USER]", "[SECTION]").toString())
+   *           .build();
+   *   ApiFuture<MoveSectionItemResponse> future =
+   *       chatServiceClient.moveSectionItemCallable().futureCall(request);
+   *   // Do something.
+   *   MoveSectionItemResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MoveSectionItemRequest, MoveSectionItemResponse>
+      moveSectionItemCallable() {
+    return stub.moveSectionItemCallable();
   }
 
   @Override
@@ -8245,6 +9601,158 @@ public class ChatServiceClient implements BackgroundResource {
     protected ListSpaceEventsFixedSizeCollection createCollection(
         List<ListSpaceEventsPage> pages, int collectionSize) {
       return new ListSpaceEventsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSectionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSectionsRequest,
+          ListSectionsResponse,
+          Section,
+          ListSectionsPage,
+          ListSectionsFixedSizeCollection> {
+
+    public static ApiFuture<ListSectionsPagedResponse> createAsync(
+        PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
+        ApiFuture<ListSectionsResponse> futureResponse) {
+      ApiFuture<ListSectionsPage> futurePage =
+          ListSectionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSectionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSectionsPagedResponse(ListSectionsPage page) {
+      super(page, ListSectionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSectionsPage
+      extends AbstractPage<ListSectionsRequest, ListSectionsResponse, Section, ListSectionsPage> {
+
+    private ListSectionsPage(
+        PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
+        ListSectionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSectionsPage createEmptyPage() {
+      return new ListSectionsPage(null, null);
+    }
+
+    @Override
+    protected ListSectionsPage createPage(
+        PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
+        ListSectionsResponse response) {
+      return new ListSectionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSectionsPage> createPageAsync(
+        PageContext<ListSectionsRequest, ListSectionsResponse, Section> context,
+        ApiFuture<ListSectionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSectionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSectionsRequest,
+          ListSectionsResponse,
+          Section,
+          ListSectionsPage,
+          ListSectionsFixedSizeCollection> {
+
+    private ListSectionsFixedSizeCollection(List<ListSectionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSectionsFixedSizeCollection createEmptyCollection() {
+      return new ListSectionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSectionsFixedSizeCollection createCollection(
+        List<ListSectionsPage> pages, int collectionSize) {
+      return new ListSectionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSectionItemsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSectionItemsRequest,
+          ListSectionItemsResponse,
+          SectionItem,
+          ListSectionItemsPage,
+          ListSectionItemsFixedSizeCollection> {
+
+    public static ApiFuture<ListSectionItemsPagedResponse> createAsync(
+        PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem> context,
+        ApiFuture<ListSectionItemsResponse> futureResponse) {
+      ApiFuture<ListSectionItemsPage> futurePage =
+          ListSectionItemsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSectionItemsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSectionItemsPagedResponse(ListSectionItemsPage page) {
+      super(page, ListSectionItemsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSectionItemsPage
+      extends AbstractPage<
+          ListSectionItemsRequest, ListSectionItemsResponse, SectionItem, ListSectionItemsPage> {
+
+    private ListSectionItemsPage(
+        PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem> context,
+        ListSectionItemsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSectionItemsPage createEmptyPage() {
+      return new ListSectionItemsPage(null, null);
+    }
+
+    @Override
+    protected ListSectionItemsPage createPage(
+        PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem> context,
+        ListSectionItemsResponse response) {
+      return new ListSectionItemsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSectionItemsPage> createPageAsync(
+        PageContext<ListSectionItemsRequest, ListSectionItemsResponse, SectionItem> context,
+        ApiFuture<ListSectionItemsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSectionItemsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSectionItemsRequest,
+          ListSectionItemsResponse,
+          SectionItem,
+          ListSectionItemsPage,
+          ListSectionItemsFixedSizeCollection> {
+
+    private ListSectionItemsFixedSizeCollection(
+        List<ListSectionItemsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSectionItemsFixedSizeCollection createEmptyCollection() {
+      return new ListSectionItemsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSectionItemsFixedSizeCollection createCollection(
+        List<ListSectionItemsPage> pages, int collectionSize) {
+      return new ListSectionItemsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

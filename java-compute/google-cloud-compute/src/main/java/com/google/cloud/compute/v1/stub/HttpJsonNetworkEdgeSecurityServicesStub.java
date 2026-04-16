@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListNetworkEdgeSecurityServicesRequest;
 import com.google.cloud.compute.v1.DeleteNetworkEdgeSecurityServiceRequest;
 import com.google.cloud.compute.v1.GetNetworkEdgeSecurityServiceRequest;
@@ -375,6 +376,20 @@ public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurity
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/networkEdgeSecurityServices/{network_edge_security_service}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/networkEdgeSecurityServices/{network_edge_security_service}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/networkEdgeSecurityServices/{network_edge_security_service}");
+
   public static final HttpJsonNetworkEdgeSecurityServicesStub create(
       NetworkEdgeSecurityServicesStubSettings settings) throws IOException {
     return new HttpJsonNetworkEdgeSecurityServicesStub(settings, ClientContext.create(settings));
@@ -435,6 +450,13 @@ public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurity
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteNetworkEdgeSecurityServiceRequest, Operation>
         deleteTransportSettings =
@@ -450,6 +472,16 @@ public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurity
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "network_edge_security_service",
+                          String.valueOf(request.getNetworkEdgeSecurityService()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<GetNetworkEdgeSecurityServiceRequest, NetworkEdgeSecurityService>
@@ -468,6 +500,16 @@ public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurity
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "network_edge_security_service",
+                          String.valueOf(request.getNetworkEdgeSecurityService()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertNetworkEdgeSecurityServiceRequest, Operation>
         insertTransportSettings =
@@ -480,6 +522,13 @@ public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurity
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<PatchNetworkEdgeSecurityServiceRequest, Operation> patchTransportSettings =
@@ -495,6 +544,16 @@ public class HttpJsonNetworkEdgeSecurityServicesStub extends NetworkEdgeSecurity
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "network_edge_security_service",
+                      String.valueOf(request.getNetworkEdgeSecurityService()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

@@ -39,8 +39,6 @@ import org.junit.jupiter.api.Test;
 /** Tests for {@link PluggableAuthException}. */
 class PluggableAuthExceptionTest {
 
-  private static final String MESSAGE_FORMAT = "Error code %s: %s";
-
   @Test
   void constructor() {
     PluggableAuthException e = new PluggableAuthException("errorCode", "errorDescription");

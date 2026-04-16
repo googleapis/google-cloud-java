@@ -90,4 +90,62 @@ public interface MachineConfigOrBuilder
    * @return The vcpuCount.
    */
   double getVcpuCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Baseline slots for BigQuery Reservations. Baseline slots are in
+   * increments of 50.
+   * </pre>
+   *
+   * <code>optional int64 baseline_slot_count = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the baselineSlotCount field is set.
+   */
+  boolean hasBaselineSlotCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Baseline slots for BigQuery Reservations. Baseline slots are in
+   * increments of 50.
+   * </pre>
+   *
+   * <code>optional int64 baseline_slot_count = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The baselineSlotCount.
+   */
+  long getBaselineSlotCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Max slots for BigQuery Reservations. Max slots are in increments
+   * of 50.
+   * </pre>
+   *
+   * <code>optional int64 max_reservation_slot_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maxReservationSlotCount field is set.
+   */
+  boolean hasMaxReservationSlotCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Max slots for BigQuery Reservations. Max slots are in increments
+   * of 50.
+   * </pre>
+   *
+   * <code>optional int64 max_reservation_slot_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maxReservationSlotCount.
+   */
+  long getMaxReservationSlotCount();
 }

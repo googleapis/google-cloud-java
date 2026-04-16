@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api</groupId>
   <artifactId>gapic-generator-java-pom-parent</artifactId>
-  <version>2.68.1-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
+  <version>2.71.0</version><!-- {x-version-update:gapic-generator-java:current} -->
   <packaging>pom</packaging>
   <name>GAPIC Generator Java POM Parent</name>
   <url>https://github.com/googleapis/sdk-platform-java</url>
@@ -27,7 +27,6 @@
         consistent across modules in this repository -->
     <javax.annotation-api.version>1.3.2</javax.annotation-api.version>
     <grpc.version>1.80.0</grpc.version>
-    <google.auth.version>1.43.0</google.auth.version>
     <google.http-client.version>2.1.0</google.http-client.version>
     <gson.version>2.12.1</gson.version>
     <guava.version>33.5.0-jre</guava.version>
@@ -78,6 +77,23 @@
 
   <profiles>
     <profile>
+      <!-- skips all plugins that would have been activated by the Maven lifecycle -->
+      <id>quick-build</id>
+      <properties>
+        <checkstyle.skip>true</checkstyle.skip>
+        <enforcer.skip>true</enforcer.skip>
+        <jacoco.skip>true</jacoco.skip>
+        <clirr.skip>true</clirr.skip>
+        <spotbugs.skip>true</spotbugs.skip>
+        <pmd.skip>true</pmd.skip>
+        <animal.sniffer.skip>true</animal.sniffer.skip>
+        <fmt.skip>true</fmt.skip>
+        <flatten.skip>true</flatten.skip>
+        <mdep.analyze.skip>true</mdep.analyze.skip>
+      </properties>
+    </profile>
+
+    <profile>
       <!-- Only run checkstyle plugin on Java 11+ (checkstyle artifact only supports Java 11+) -->
       <id>checkstyle-tests</id>
       <activation>
@@ -97,6 +113,7 @@
                 </goals>
                 <configuration>
                   <headerLocation>${checkstyle.header.file}</headerLocation>
+                  <skip>${checkstyle.skip}</skip>
                 </configuration>
               </execution>
             </executions>

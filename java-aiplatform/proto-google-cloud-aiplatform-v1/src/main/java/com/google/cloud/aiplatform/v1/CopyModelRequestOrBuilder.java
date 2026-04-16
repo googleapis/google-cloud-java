@@ -234,5 +234,49 @@ public interface CopyModelRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-provided custom service account to use to do the copy
+   * model. If empty, [Vertex AI Service
+   * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+   * will be used to access resources needed to upload the model. This account
+   * must belong to the destination project where the model is copied to,
+   * i.e., the project specified in the `parent` field of this request and
+   * have the Vertex AI Service Agent role in the source project.
+   *
+   * Requires the user copying the Model to have the
+   * `iam.serviceAccounts.actAs` permission on this service account.
+   * </pre>
+   *
+   * <code>string custom_service_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The customServiceAccount.
+   */
+  java.lang.String getCustomServiceAccount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-provided custom service account to use to do the copy
+   * model. If empty, [Vertex AI Service
+   * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+   * will be used to access resources needed to upload the model. This account
+   * must belong to the destination project where the model is copied to,
+   * i.e., the project specified in the `parent` field of this request and
+   * have the Vertex AI Service Agent role in the source project.
+   *
+   * Requires the user copying the Model to have the
+   * `iam.serviceAccounts.actAs` permission on this service account.
+   * </pre>
+   *
+   * <code>string custom_service_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for customServiceAccount.
+   */
+  com.google.protobuf.ByteString getCustomServiceAccountBytes();
+
   com.google.cloud.aiplatform.v1.CopyModelRequest.DestinationModelCase getDestinationModelCase();
 }

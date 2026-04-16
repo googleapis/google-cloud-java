@@ -64,6 +64,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
     entityRelations_ = java.util.Collections.emptyList();
     textChanges_ = java.util.Collections.emptyList();
     revisions_ = java.util.Collections.emptyList();
+    blobAssets_ = java.util.Collections.emptyList();
     entitiesRevisions_ = java.util.Collections.emptyList();
     entitiesRevisionId_ = "";
   }
@@ -4660,7 +4661,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -4674,7 +4675,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -4687,7 +4688,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -4700,7 +4701,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -4714,7 +4715,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -5013,7 +5014,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=548
+     *     google/cloud/documentai/v1/document.proto;l=549
      * @return Whether the provenance field is set.
      */
     @java.lang.Deprecated
@@ -5030,7 +5031,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=548
+     *     google/cloud/documentai/v1/document.proto;l=549
      * @return The provenance.
      */
     @java.lang.Deprecated
@@ -7808,9 +7809,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Confidence of the current
        * [Layout][google.cloud.documentai.v1.Document.Page.Layout] within
-       * context of the object this layout is for. e.g. confidence can be for a
-       * single token, a table, a visual element, etc. depending on context.
-       * Range `[0, 1]`.
+       * context of the object this layout is for. For example, confidence can
+       * be for a single token, a table, a visual element, etc. depending on
+       * context. Range `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 2;</code>
@@ -8229,9 +8230,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * Confidence of the current
        * [Layout][google.cloud.documentai.v1.Document.Page.Layout] within
-       * context of the object this layout is for. e.g. confidence can be for a
-       * single token, a table, a visual element, etc. depending on context.
-       * Range `[0, 1]`.
+       * context of the object this layout is for. For example, confidence can
+       * be for a single token, a table, a visual element, etc. depending on
+       * context. Range `[0, 1]`.
        * </pre>
        *
        * <code>float confidence = 2;</code>
@@ -8974,9 +8975,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <pre>
          * Confidence of the current
          * [Layout][google.cloud.documentai.v1.Document.Page.Layout] within
-         * context of the object this layout is for. e.g. confidence can be for a
-         * single token, a table, a visual element, etc. depending on context.
-         * Range `[0, 1]`.
+         * context of the object this layout is for. For example, confidence can
+         * be for a single token, a table, a visual element, etc. depending on
+         * context. Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -8994,9 +8995,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <pre>
          * Confidence of the current
          * [Layout][google.cloud.documentai.v1.Document.Page.Layout] within
-         * context of the object this layout is for. e.g. confidence can be for a
-         * single token, a table, a visual element, etc. depending on context.
-         * Range `[0, 1]`.
+         * context of the object this layout is for. For example, confidence can
+         * be for a single token, a table, a visual element, etc. depending on
+         * context. Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -9018,9 +9019,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <pre>
          * Confidence of the current
          * [Layout][google.cloud.documentai.v1.Document.Page.Layout] within
-         * context of the object this layout is for. e.g. confidence can be for a
-         * single token, a table, a visual element, etc. depending on context.
-         * Range `[0, 1]`.
+         * context of the object this layout is for. For example, confidence can
+         * be for a single token, a table, a visual element, etc. depending on
+         * context. Range `[0, 1]`.
          * </pre>
          *
          * <code>float confidence = 2;</code>
@@ -9525,7 +9526,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=207
+       *     google/cloud/documentai/v1/document.proto;l=208
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -9542,7 +9543,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=207
+       *     google/cloud/documentai/v1/document.proto;l=208
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -9774,7 +9775,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=207
+       *     google/cloud/documentai/v1/document.proto;l=208
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -9794,7 +9795,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=207
+       *     google/cloud/documentai/v1/document.proto;l=208
        * @return The provenance.
        */
       @java.lang.Override
@@ -10919,7 +10920,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=207
+         *     google/cloud/documentai/v1/document.proto;l=208
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -10938,7 +10939,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Block.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=207
+         *     google/cloud/documentai/v1/document.proto;l=208
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -11296,7 +11297,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=220
+       *     See google/cloud/documentai/v1/document.proto;l=221
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -11313,7 +11314,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=220
+       *     See google/cloud/documentai/v1/document.proto;l=221
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -11544,7 +11545,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=220
+       *     See google/cloud/documentai/v1/document.proto;l=221
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -11564,7 +11565,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=220
+       *     See google/cloud/documentai/v1/document.proto;l=221
        * @return The provenance.
        */
       @java.lang.Override
@@ -12688,7 +12689,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-         *     See google/cloud/documentai/v1/document.proto;l=220
+         *     See google/cloud/documentai/v1/document.proto;l=221
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -12707,7 +12708,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Paragraph.provenance is deprecated.
-         *     See google/cloud/documentai/v1/document.proto;l=220
+         *     See google/cloud/documentai/v1/document.proto;l=221
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -13065,7 +13066,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=234
+       *     google/cloud/documentai/v1/document.proto;l=235
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -13082,7 +13083,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=234
+       *     google/cloud/documentai/v1/document.proto;l=235
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -13314,7 +13315,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=234
+       *     google/cloud/documentai/v1/document.proto;l=235
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -13334,7 +13335,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=234
+       *     google/cloud/documentai/v1/document.proto;l=235
        * @return The provenance.
        */
       @java.lang.Override
@@ -14459,7 +14460,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=234
+         *     google/cloud/documentai/v1/document.proto;l=235
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -14478,7 +14479,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Line.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=234
+         *     google/cloud/documentai/v1/document.proto;l=235
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -14880,7 +14881,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=326
+       *     google/cloud/documentai/v1/document.proto;l=327
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -14897,7 +14898,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=326
+       *     google/cloud/documentai/v1/document.proto;l=327
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -18650,7 +18651,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=326
+       *     google/cloud/documentai/v1/document.proto;l=327
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -18670,7 +18671,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=326
+       *     google/cloud/documentai/v1/document.proto;l=327
        * @return The provenance.
        */
       @java.lang.Override
@@ -20139,7 +20140,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=326
+         *     google/cloud/documentai/v1/document.proto;l=327
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -20158,7 +20159,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Token.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=326
+         *     google/cloud/documentai/v1/document.proto;l=327
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -22145,8 +22146,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Detected non-text visual elements e.g. checkbox, signature etc. on the
-     * page.
+     * Detected non-text visual elements, for example, checkbox, signature etc.
+     * on the page.
      * </pre>
      *
      * Protobuf type {@code google.cloud.documentai.v1.Document.Page.VisualElement}
@@ -22588,8 +22589,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Detected non-text visual elements e.g. checkbox, signature etc. on the
-       * page.
+       * Detected non-text visual elements, for example, checkbox, signature etc.
+       * on the page.
        * </pre>
        *
        * Protobuf type {@code google.cloud.documentai.v1.Document.Page.VisualElement}
@@ -23886,7 +23887,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Table.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=395
+       *     google/cloud/documentai/v1/document.proto;l=396
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -23903,7 +23904,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Table.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=395
+       *     google/cloud/documentai/v1/document.proto;l=396
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -26986,7 +26987,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Table.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=395
+       *     google/cloud/documentai/v1/document.proto;l=396
        * @return Whether the provenance field is set.
        */
       @java.lang.Override
@@ -27006,7 +27007,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.Table.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=395
+       *     google/cloud/documentai/v1/document.proto;l=396
        * @return The provenance.
        */
       @java.lang.Override
@@ -29078,7 +29079,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Table.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=395
+         *     google/cloud/documentai/v1/document.proto;l=396
          * @return Whether the provenance field is set.
          */
         @java.lang.Deprecated
@@ -29097,7 +29098,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Page.Table.provenance is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=395
+         *     google/cloud/documentai/v1/document.proto;l=396
          * @return The provenance.
          */
         @java.lang.Deprecated
@@ -29341,7 +29342,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
        * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
-       * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+       * For example, `Address`, `Email`, `Grand total`, `Phone number`, etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -29356,7 +29357,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
        * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
-       * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+       * For example, `Address`, `Email`, `Grand total`, `Phone number`, etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -29371,7 +29372,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
        * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
-       * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+       * For example, `Address`, `Email`, `Grand total`, `Phone number`, etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -29755,7 +29756,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
        * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
-       * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+       * For example, `Address`, `Email`, `Grand total`, `Phone number`, etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -29773,7 +29774,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
        * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
-       * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+       * For example, `Address`, `Email`, `Grand total`, `Phone number`, etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -29793,7 +29794,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <pre>
        * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
        * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
-       * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+       * For example, `Address`, `Email`, `Grand total`, `Phone number`, etc.
        * </pre>
        *
        * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -30912,7 +30913,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <pre>
          * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
-         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * For example, `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -30929,7 +30930,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <pre>
          * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
-         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * For example, `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -30952,7 +30953,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <pre>
          * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
-         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * For example, `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -30977,7 +30978,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <pre>
          * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
-         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * For example, `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -31000,7 +31001,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <pre>
          * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
-         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * For example, `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -31031,7 +31032,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <pre>
          * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
-         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * For example, `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -31053,7 +31054,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <pre>
          * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
-         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * For example, `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -31070,7 +31071,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <pre>
          * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
-         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * For example, `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -31092,7 +31093,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <pre>
          * [Layout][google.cloud.documentai.v1.Document.Page.Layout] for the
          * [FormField][google.cloud.documentai.v1.Document.Page.FormField] name.
-         * e.g. `Address`, `Email`, `Grand total`, `Phone number`, etc.
+         * For example, `Address`, `Email`, `Grand total`, `Phone number`, etc.
          * </pre>
          *
          * <code>.google.cloud.documentai.v1.Document.Page.Layout field_name = 1;</code>
@@ -37393,7 +37394,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -37410,7 +37411,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -37428,7 +37429,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -37444,7 +37445,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -37460,7 +37461,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * A list of detected non-text visual elements e.g. checkbox,
+     * A list of detected non-text visual elements, for example, checkbox,
      * signature etc. on the page.
      * </pre>
      *
@@ -37867,7 +37868,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=548
+     *     google/cloud/documentai/v1/document.proto;l=549
      * @return Whether the provenance field is set.
      */
     @java.lang.Override
@@ -37887,7 +37888,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=548
+     *     google/cloud/documentai/v1/document.proto;l=549
      * @return The provenance.
      */
     @java.lang.Override
@@ -42261,7 +42262,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42281,7 +42282,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42300,7 +42301,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42320,7 +42321,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42346,7 +42347,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42370,7 +42371,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42396,7 +42397,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42422,7 +42423,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42445,7 +42446,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42469,7 +42470,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42493,7 +42494,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42515,7 +42516,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42537,7 +42538,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42553,7 +42554,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42573,7 +42574,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42594,7 +42595,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42612,7 +42613,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -42631,7 +42632,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * A list of detected non-text visual elements e.g. checkbox,
+       * A list of detected non-text visual elements, for example, checkbox,
        * signature etc. on the page.
        * </pre>
        *
@@ -44456,7 +44457,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=548
+       *     google/cloud/documentai/v1/document.proto;l=549
        * @return Whether the provenance field is set.
        */
       @java.lang.Deprecated
@@ -44475,7 +44476,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Page.provenance is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=548
+       *     google/cloud/documentai/v1/document.proto;l=549
        * @return The provenance.
        */
       @java.lang.Deprecated
@@ -44765,7 +44766,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema, for example, `Address`.
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -44778,7 +44779,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema, for example, `Address`.
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -44791,7 +44792,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value of the entity, for example, `1600 Amphitheatre
+     * Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -44804,7 +44806,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value of the entity, for example, `1600 Amphitheatre
+     * Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -44931,9 +44934,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Normalized entity value. Absent if the extracted value could
-     * not be converted or the type (e.g. address) is not supported for certain
-     * parsers. This field is also only populated for certain supported document
-     * types.
+     * not be converted or the type (for example, address) is not supported for
+     * certain parsers. This field is also only populated for certain supported
+     * document types.
      * </pre>
      *
      * <code>
@@ -44949,9 +44952,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Normalized entity value. Absent if the extracted value could
-     * not be converted or the type (e.g. address) is not supported for certain
-     * parsers. This field is also only populated for certain supported document
-     * types.
+     * not be converted or the type (for example, address) is not supported for
+     * certain parsers. This field is also only populated for certain supported
+     * document types.
      * </pre>
      *
      * <code>
@@ -44967,9 +44970,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Normalized entity value. Absent if the extracted value could
-     * not be converted or the type (e.g. address) is not supported for certain
-     * parsers. This field is also only populated for certain supported document
-     * types.
+     * not be converted or the type (for example, address) is not supported for
+     * certain parsers. This field is also only populated for certain supported
+     * document types.
      * </pre>
      *
      * <code>
@@ -45613,6 +45616,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       float getFloatValue();
 
       /**
+       *
+       *
+       * <pre>
+       * A signature - a graphical representation of a person's name,
+       * often used to sign a document.
+       * </pre>
+       *
        * <code>bool signature_value = 10;</code>
        *
        * @return Whether the signatureValue field is set.
@@ -45620,6 +45630,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       boolean hasSignatureValue();
 
       /**
+       *
+       *
+       * <pre>
+       * A signature - a graphical representation of a person's name,
+       * often used to sign a document.
+       * </pre>
+       *
        * <code>bool signature_value = 10;</code>
        *
        * @return The signatureValue.
@@ -46137,6 +46154,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       public static final int SIGNATURE_VALUE_FIELD_NUMBER = 10;
 
       /**
+       *
+       *
+       * <pre>
+       * A signature - a graphical representation of a person's name,
+       * often used to sign a document.
+       * </pre>
+       *
        * <code>bool signature_value = 10;</code>
        *
        * @return Whether the signatureValue field is set.
@@ -46147,6 +46171,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       }
 
       /**
+       *
+       *
+       * <pre>
+       * A signature - a graphical representation of a person's name,
+       * often used to sign a document.
+       * </pre>
+       *
        * <code>bool signature_value = 10;</code>
        *
        * @return The signatureValue.
@@ -47944,6 +47975,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         }
 
         /**
+         *
+         *
+         * <pre>
+         * A signature - a graphical representation of a person's name,
+         * often used to sign a document.
+         * </pre>
+         *
          * <code>bool signature_value = 10;</code>
          *
          * @return Whether the signatureValue field is set.
@@ -47953,6 +47991,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         }
 
         /**
+         *
+         *
+         * <pre>
+         * A signature - a graphical representation of a person's name,
+         * often used to sign a document.
+         * </pre>
+         *
          * <code>bool signature_value = 10;</code>
          *
          * @return The signatureValue.
@@ -47965,6 +48010,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         }
 
         /**
+         *
+         *
+         * <pre>
+         * A signature - a graphical representation of a person's name,
+         * often used to sign a document.
+         * </pre>
+         *
          * <code>bool signature_value = 10;</code>
          *
          * @param value The signatureValue to set.
@@ -47979,6 +48031,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         }
 
         /**
+         *
+         *
+         * <pre>
+         * A signature - a graphical representation of a person's name,
+         * often used to sign a document.
+         * </pre>
+         *
          * <code>bool signature_value = 10;</code>
          *
          * @return This builder for chaining.
@@ -48283,7 +48342,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema, for example, `Address`.
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -48307,7 +48366,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Entity type from a schema e.g. `Address`.
+     * Required. Entity type from a schema, for example, `Address`.
      * </pre>
      *
      * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -48336,7 +48395,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value of the entity, for example, `1600 Amphitheatre
+     * Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -48360,7 +48420,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+     * Optional. Text value of the entity, for example, `1600 Amphitheatre
+     * Pkwy`.
      * </pre>
      *
      * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -48577,9 +48638,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Normalized entity value. Absent if the extracted value could
-     * not be converted or the type (e.g. address) is not supported for certain
-     * parsers. This field is also only populated for certain supported document
-     * types.
+     * not be converted or the type (for example, address) is not supported for
+     * certain parsers. This field is also only populated for certain supported
+     * document types.
      * </pre>
      *
      * <code>
@@ -48598,9 +48659,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Normalized entity value. Absent if the extracted value could
-     * not be converted or the type (e.g. address) is not supported for certain
-     * parsers. This field is also only populated for certain supported document
-     * types.
+     * not be converted or the type (for example, address) is not supported for
+     * certain parsers. This field is also only populated for certain supported
+     * document types.
      * </pre>
      *
      * <code>
@@ -48621,9 +48682,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Normalized entity value. Absent if the extracted value could
-     * not be converted or the type (e.g. address) is not supported for certain
-     * parsers. This field is also only populated for certain supported document
-     * types.
+     * not be converted or the type (for example, address) is not supported for
+     * certain parsers. This field is also only populated for certain supported
+     * document types.
      * </pre>
      *
      * <code>
@@ -49767,7 +49828,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema, for example, `Address`.
        * </pre>
        *
        * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -49790,7 +49851,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema, for example, `Address`.
        * </pre>
        *
        * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -49813,7 +49874,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema, for example, `Address`.
        * </pre>
        *
        * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -49835,7 +49896,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema, for example, `Address`.
        * </pre>
        *
        * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -49853,7 +49914,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Required. Entity type from a schema e.g. `Address`.
+       * Required. Entity type from a schema, for example, `Address`.
        * </pre>
        *
        * <code>string type = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -49878,7 +49939,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value of the entity, for example, `1600 Amphitheatre
+       * Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -49901,7 +49963,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value of the entity, for example, `1600 Amphitheatre
+       * Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -49924,7 +49987,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value of the entity, for example, `1600 Amphitheatre
+       * Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -49946,7 +50010,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value of the entity, for example, `1600 Amphitheatre
+       * Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -49964,7 +50029,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Optional. Text value of the entity e.g. `1600 Amphitheatre Pkwy`.
+       * Optional. Text value of the entity, for example, `1600 Amphitheatre
+       * Pkwy`.
        * </pre>
        *
        * <code>string mention_text = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -50501,9 +50567,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -50521,9 +50587,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -50547,9 +50613,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -50576,9 +50642,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -50602,9 +50668,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -50638,9 +50704,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -50663,9 +50729,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -50684,9 +50750,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -50709,9 +50775,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Optional. Normalized entity value. Absent if the extracted value could
-       * not be converted or the type (e.g. address) is not supported for certain
-       * parsers. This field is also only populated for certain supported document
-       * types.
+       * not be converted or the type (for example, address) is not supported for
+       * certain parsers. This field is also only populated for certain supported
+       * document types.
        * </pre>
        *
        * <code>
@@ -54777,7 +54843,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=771
+       *     See google/cloud/documentai/v1/document.proto;l=775
        * @return The layoutId.
        */
       @java.lang.Deprecated
@@ -54796,7 +54862,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=771
+       *     See google/cloud/documentai/v1/document.proto;l=775
        * @return The bytes for layoutId.
        */
       @java.lang.Deprecated
@@ -55318,7 +55384,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=771
+       *     See google/cloud/documentai/v1/document.proto;l=775
        * @return The layoutId.
        */
       @java.lang.Override
@@ -55348,7 +55414,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=771
+       *     See google/cloud/documentai/v1/document.proto;l=775
        * @return The bytes for layoutId.
        */
       @java.lang.Override
@@ -56085,7 +56151,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=771
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=775
          * @return The layoutId.
          */
         @java.lang.Deprecated
@@ -56114,7 +56180,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=771
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=775
          * @return The bytes for layoutId.
          */
         @java.lang.Deprecated
@@ -56143,7 +56209,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=771
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=775
          * @param value The layoutId to set.
          * @return This builder for chaining.
          */
@@ -56171,7 +56237,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=771
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=775
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -56195,7 +56261,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=771
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=775
          * @param value The bytes for layoutId to set.
          * @return This builder for chaining.
          */
@@ -57466,7 +57532,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>int32 revision = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=839
+     *     google/cloud/documentai/v1/document.proto;l=843
      * @return The revision.
      */
     @java.lang.Deprecated
@@ -57483,7 +57549,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=843
+     *     google/cloud/documentai/v1/document.proto;l=847
      * @return The id.
      */
     @java.lang.Deprecated
@@ -57969,7 +58035,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=802
+       *     google/cloud/documentai/v1/document.proto;l=806
        * @return The id.
        */
       @java.lang.Deprecated
@@ -58076,7 +58142,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=802
+       *     google/cloud/documentai/v1/document.proto;l=806
        * @return The id.
        */
       @java.lang.Override
@@ -58571,7 +58637,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=802
+         *     google/cloud/documentai/v1/document.proto;l=806
          * @return The id.
          */
         @java.lang.Override
@@ -58590,7 +58656,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=802
+         *     google/cloud/documentai/v1/document.proto;l=806
          * @param value The id to set.
          * @return This builder for chaining.
          */
@@ -58613,7 +58679,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=802
+         *     google/cloud/documentai/v1/document.proto;l=806
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -58690,7 +58756,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>int32 revision = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=839
+     *     google/cloud/documentai/v1/document.proto;l=843
      * @return The revision.
      */
     @java.lang.Override
@@ -58713,7 +58779,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=843
+     *     google/cloud/documentai/v1/document.proto;l=847
      * @return The id.
      */
     @java.lang.Override
@@ -59284,7 +59350,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=839
+       *     google/cloud/documentai/v1/document.proto;l=843
        * @return The revision.
        */
       @java.lang.Override
@@ -59303,7 +59369,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=839
+       *     google/cloud/documentai/v1/document.proto;l=843
        * @param value The revision to set.
        * @return This builder for chaining.
        */
@@ -59326,7 +59392,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=839
+       *     google/cloud/documentai/v1/document.proto;l=843
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -59350,7 +59416,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=843
+       *     google/cloud/documentai/v1/document.proto;l=847
        * @return The id.
        */
       @java.lang.Override
@@ -59370,7 +59436,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=843
+       *     google/cloud/documentai/v1/document.proto;l=847
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -59394,7 +59460,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=843
+       *     google/cloud/documentai/v1/document.proto;l=847
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -60066,7 +60132,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=882
+     *     google/cloud/documentai/v1/document.proto;l=886
      * @return A list containing the parent.
      */
     @java.lang.Deprecated
@@ -60084,7 +60150,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=882
+     *     google/cloud/documentai/v1/document.proto;l=886
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -60102,7 +60168,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=882
+     *     google/cloud/documentai/v1/document.proto;l=886
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -60311,7 +60377,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+       * Human review state. For example, `requested`, `succeeded`, `rejected`.
        * </pre>
        *
        * <code>string state = 1;</code>
@@ -60324,7 +60390,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+       * Human review state. For example, `requested`, `succeeded`, `rejected`.
        * </pre>
        *
        * <code>string state = 1;</code>
@@ -60421,7 +60487,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+       * Human review state. For example, `requested`, `succeeded`, `rejected`.
        * </pre>
        *
        * <code>string state = 1;</code>
@@ -60445,7 +60511,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+       * Human review state. For example, `requested`, `succeeded`, `rejected`.
        * </pre>
        *
        * <code>string state = 1;</code>
@@ -60867,7 +60933,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+         * Human review state. For example, `requested`, `succeeded`, `rejected`.
          * </pre>
          *
          * <code>string state = 1;</code>
@@ -60890,7 +60956,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+         * Human review state. For example, `requested`, `succeeded`, `rejected`.
          * </pre>
          *
          * <code>string state = 1;</code>
@@ -60913,7 +60979,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+         * Human review state. For example, `requested`, `succeeded`, `rejected`.
          * </pre>
          *
          * <code>string state = 1;</code>
@@ -60935,7 +61001,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+         * Human review state. For example, `requested`, `succeeded`, `rejected`.
          * </pre>
          *
          * <code>string state = 1;</code>
@@ -60953,7 +61019,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          *
          *
          * <pre>
-         * Human review state. e.g. `requested`, `succeeded`, `rejected`.
+         * Human review state. For example, `requested`, `succeeded`, `rejected`.
          * </pre>
          *
          * <code>string state = 1;</code>
@@ -61418,7 +61484,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=882
+     *     google/cloud/documentai/v1/document.proto;l=886
      * @return A list containing the parent.
      */
     @java.lang.Override
@@ -61439,7 +61505,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=882
+     *     google/cloud/documentai/v1/document.proto;l=886
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -61459,7 +61525,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=882
+     *     google/cloud/documentai/v1/document.proto;l=886
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -62658,7 +62724,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=882
+       *     google/cloud/documentai/v1/document.proto;l=886
        * @return A list containing the parent.
        */
       @java.lang.Deprecated
@@ -62679,7 +62745,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=882
+       *     google/cloud/documentai/v1/document.proto;l=886
        * @return The count of parent.
        */
       @java.lang.Deprecated
@@ -62699,7 +62765,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=882
+       *     google/cloud/documentai/v1/document.proto;l=886
        * @param index The index of the element to return.
        * @return The parent at the given index.
        */
@@ -62720,7 +62786,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=882
+       *     google/cloud/documentai/v1/document.proto;l=886
        * @param index The index to set the value at.
        * @param value The parent to set.
        * @return This builder for chaining.
@@ -62747,7 +62813,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=882
+       *     google/cloud/documentai/v1/document.proto;l=886
        * @param value The parent to add.
        * @return This builder for chaining.
        */
@@ -62773,7 +62839,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=882
+       *     google/cloud/documentai/v1/document.proto;l=886
        * @param values The parent to add.
        * @return This builder for chaining.
        */
@@ -62798,7 +62864,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=882
+       *     google/cloud/documentai/v1/document.proto;l=886
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -65148,6 +65214,614 @@ public final class Document extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface AnnotationsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.Document.Annotations)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The description of the content with this annotation.
+     * </pre>
+     *
+     * <code>string description = 1;</code>
+     *
+     * @return The description.
+     */
+    java.lang.String getDescription();
+
+    /**
+     *
+     *
+     * <pre>
+     * The description of the content with this annotation.
+     * </pre>
+     *
+     * <code>string description = 1;</code>
+     *
+     * @return The bytes for description.
+     */
+    com.google.protobuf.ByteString getDescriptionBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents the annotation of a block or a chunk.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.documentai.v1.Document.Annotations}
+   */
+  public static final class Annotations extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.Document.Annotations)
+      AnnotationsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "Annotations");
+    }
+
+    // Use Annotations.newBuilder() to construct.
+    private Annotations(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Annotations() {
+      description_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.documentai.v1.DocumentProto
+          .internal_static_google_cloud_documentai_v1_Document_Annotations_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.documentai.v1.DocumentProto
+          .internal_static_google_cloud_documentai_v1_Document_Annotations_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.documentai.v1.Document.Annotations.class,
+              com.google.cloud.documentai.v1.Document.Annotations.Builder.class);
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object description_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The description of the content with this annotation.
+     * </pre>
+     *
+     * <code>string description = 1;</code>
+     *
+     * @return The description.
+     */
+    @java.lang.Override
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The description of the content with this annotation.
+     * </pre>
+     *
+     * <code>string description = 1;</code>
+     *
+     * @return The bytes for description.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, description_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(description_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, description_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.documentai.v1.Document.Annotations)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.documentai.v1.Document.Annotations other =
+          (com.google.cloud.documentai.v1.Document.Annotations) obj;
+
+      if (!getDescription().equals(other.getDescription())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.documentai.v1.Document.Annotations parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.Annotations parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.Annotations parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.Annotations parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.Annotations parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.Annotations parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.Annotations parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.Annotations parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.Annotations parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.Annotations parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.Annotations parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.Annotations parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.documentai.v1.Document.Annotations prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents the annotation of a block or a chunk.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.documentai.v1.Document.Annotations}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1.Document.Annotations)
+        com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1.DocumentProto
+            .internal_static_google_cloud_documentai_v1_Document_Annotations_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1.DocumentProto
+            .internal_static_google_cloud_documentai_v1_Document_Annotations_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1.Document.Annotations.class,
+                com.google.cloud.documentai.v1.Document.Annotations.Builder.class);
+      }
+
+      // Construct using com.google.cloud.documentai.v1.Document.Annotations.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        description_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.documentai.v1.DocumentProto
+            .internal_static_google_cloud_documentai_v1_Document_Annotations_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.Annotations getDefaultInstanceForType() {
+        return com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.Annotations build() {
+        com.google.cloud.documentai.v1.Document.Annotations result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.Annotations buildPartial() {
+        com.google.cloud.documentai.v1.Document.Annotations result =
+            new com.google.cloud.documentai.v1.Document.Annotations(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.documentai.v1.Document.Annotations result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.description_ = description_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.documentai.v1.Document.Annotations) {
+          return mergeFrom((com.google.cloud.documentai.v1.Document.Annotations) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.documentai.v1.Document.Annotations other) {
+        if (other == com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance())
+          return this;
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  description_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object description_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The description of the content with this annotation.
+       * </pre>
+       *
+       * <code>string description = 1;</code>
+       *
+       * @return The description.
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The description of the content with this annotation.
+       * </pre>
+       *
+       * <code>string description = 1;</code>
+       *
+       * @return The bytes for description.
+       */
+      public com.google.protobuf.ByteString getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The description of the content with this annotation.
+       * </pre>
+       *
+       * <code>string description = 1;</code>
+       *
+       * @param value The description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescription(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        description_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The description of the content with this annotation.
+       * </pre>
+       *
+       * <code>string description = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDescription() {
+        description_ = getDefaultInstance().getDescription();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The description of the content with this annotation.
+       * </pre>
+       *
+       * <code>string description = 1;</code>
+       *
+       * @param value The bytes for description to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        description_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.Document.Annotations)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1.Document.Annotations)
+    private static final com.google.cloud.documentai.v1.Document.Annotations DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.documentai.v1.Document.Annotations();
+    }
+
+    public static com.google.cloud.documentai.v1.Document.Annotations getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Annotations> PARSER =
+        new com.google.protobuf.AbstractParser<Annotations>() {
+          @java.lang.Override
+          public Annotations parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Annotations> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Annotations> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.Document.Annotations getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface DocumentLayoutOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.Document.DocumentLayout)
@@ -65416,6 +66090,52 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
               .LayoutListBlockOrBuilder
           getListBlockOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of image content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock image_block = 7;
+       * </code>
+       *
+       * @return Whether the imageBlock field is set.
+       */
+      boolean hasImageBlock();
+
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of image content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock image_block = 7;
+       * </code>
+       *
+       * @return The imageBlock.
+       */
+      com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock
+          getImageBlock();
+
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of image content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock image_block = 7;
+       * </code>
+       */
+      com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutImageBlockOrBuilder
+          getImageBlockOrBuilder();
 
       /**
        *
@@ -66403,6 +67123,43 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          */
         com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlockOrBuilder
             getBlocksOrBuilder(int index);
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the text block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         *
+         * @return Whether the annotations field is set.
+         */
+        boolean hasAnnotations();
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the text block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         *
+         * @return The annotations.
+         */
+        com.google.cloud.documentai.v1.Document.Annotations getAnnotations();
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the text block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         */
+        com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder getAnnotationsOrBuilder();
       }
 
       /**
@@ -66459,6 +67216,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                       .LayoutTextBlock.Builder.class);
         }
 
+        private int bitField0_;
         public static final int TEXT_FIELD_NUMBER = 1;
 
         @SuppressWarnings("serial")
@@ -66669,6 +67427,60 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           return blocks_.get(index);
         }
 
+        public static final int ANNOTATIONS_FIELD_NUMBER = 4;
+        private com.google.cloud.documentai.v1.Document.Annotations annotations_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the text block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         *
+         * @return Whether the annotations field is set.
+         */
+        @java.lang.Override
+        public boolean hasAnnotations() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the text block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         *
+         * @return The annotations.
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.Annotations getAnnotations() {
+          return annotations_ == null
+              ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+              : annotations_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the text block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder
+            getAnnotationsOrBuilder() {
+          return annotations_ == null
+              ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+              : annotations_;
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -66693,6 +67505,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           for (int i = 0; i < blocks_.size(); i++) {
             output.writeMessage(3, blocks_.get(i));
           }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            output.writeMessage(4, getAnnotations());
+          }
           getUnknownFields().writeTo(output);
         }
 
@@ -66710,6 +67525,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           }
           for (int i = 0; i < blocks_.size(); i++) {
             size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, blocks_.get(i));
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAnnotations());
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -66736,6 +67554,10 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           if (!getText().equals(other.getText())) return false;
           if (!getType().equals(other.getType())) return false;
           if (!getBlocksList().equals(other.getBlocksList())) return false;
+          if (hasAnnotations() != other.hasAnnotations()) return false;
+          if (hasAnnotations()) {
+            if (!getAnnotations().equals(other.getAnnotations())) return false;
+          }
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -66754,6 +67576,10 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           if (getBlocksCount() > 0) {
             hash = (37 * hash) + BLOCKS_FIELD_NUMBER;
             hash = (53 * hash) + getBlocksList().hashCode();
+          }
+          if (hasAnnotations()) {
+            hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
+            hash = (53 * hash) + getAnnotations().hashCode();
           }
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
@@ -66916,10 +67742,20 @@ public final class Document extends com.google.protobuf.GeneratedMessage
 
           // Construct using
           // com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock.newBuilder()
-          private Builder() {}
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
 
           private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+              internalGetBlocksFieldBuilder();
+              internalGetAnnotationsFieldBuilder();
+            }
           }
 
           @java.lang.Override
@@ -66935,6 +67771,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
               blocksBuilder_.clear();
             }
             bitField0_ = (bitField0_ & ~0x00000004);
+            annotations_ = null;
+            if (annotationsBuilder_ != null) {
+              annotationsBuilder_.dispose();
+              annotationsBuilder_ = null;
+            }
             return this;
           }
 
@@ -67008,6 +67849,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             if (((from_bitField0_ & 0x00000002) != 0)) {
               result.type_ = type_;
             }
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.annotations_ =
+                  annotationsBuilder_ == null ? annotations_ : annotationsBuilder_.build();
+              to_bitField0_ |= 0x00000001;
+            }
+            result.bitField0_ |= to_bitField0_;
           }
 
           @java.lang.Override
@@ -67070,6 +67918,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                 }
               }
             }
+            if (other.hasAnnotations()) {
+              mergeAnnotations(other.getAnnotations());
+            }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
@@ -67123,6 +67974,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                       }
                       break;
                     } // case 26
+                  case 34:
+                    {
+                      input.readMessage(
+                          internalGetAnnotationsFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000008;
+                      break;
+                    } // case 34
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -67836,6 +68694,205 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             return blocksBuilder_;
           }
 
+          private com.google.cloud.documentai.v1.Document.Annotations annotations_;
+          private com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.documentai.v1.Document.Annotations,
+                  com.google.cloud.documentai.v1.Document.Annotations.Builder,
+                  com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder>
+              annotationsBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the text block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           *
+           * @return Whether the annotations field is set.
+           */
+          public boolean hasAnnotations() {
+            return ((bitField0_ & 0x00000008) != 0);
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the text block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           *
+           * @return The annotations.
+           */
+          public com.google.cloud.documentai.v1.Document.Annotations getAnnotations() {
+            if (annotationsBuilder_ == null) {
+              return annotations_ == null
+                  ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+                  : annotations_;
+            } else {
+              return annotationsBuilder_.getMessage();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the text block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public Builder setAnnotations(com.google.cloud.documentai.v1.Document.Annotations value) {
+            if (annotationsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              annotations_ = value;
+            } else {
+              annotationsBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the text block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public Builder setAnnotations(
+              com.google.cloud.documentai.v1.Document.Annotations.Builder builderForValue) {
+            if (annotationsBuilder_ == null) {
+              annotations_ = builderForValue.build();
+            } else {
+              annotationsBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the text block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public Builder mergeAnnotations(
+              com.google.cloud.documentai.v1.Document.Annotations value) {
+            if (annotationsBuilder_ == null) {
+              if (((bitField0_ & 0x00000008) != 0)
+                  && annotations_ != null
+                  && annotations_
+                      != com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()) {
+                getAnnotationsBuilder().mergeFrom(value);
+              } else {
+                annotations_ = value;
+              }
+            } else {
+              annotationsBuilder_.mergeFrom(value);
+            }
+            if (annotations_ != null) {
+              bitField0_ |= 0x00000008;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the text block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public Builder clearAnnotations() {
+            bitField0_ = (bitField0_ & ~0x00000008);
+            annotations_ = null;
+            if (annotationsBuilder_ != null) {
+              annotationsBuilder_.dispose();
+              annotationsBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the text block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public com.google.cloud.documentai.v1.Document.Annotations.Builder
+              getAnnotationsBuilder() {
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return internalGetAnnotationsFieldBuilder().getBuilder();
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the text block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder
+              getAnnotationsOrBuilder() {
+            if (annotationsBuilder_ != null) {
+              return annotationsBuilder_.getMessageOrBuilder();
+            } else {
+              return annotations_ == null
+                  ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+                  : annotations_;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the text block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.documentai.v1.Document.Annotations,
+                  com.google.cloud.documentai.v1.Document.Annotations.Builder,
+                  com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder>
+              internalGetAnnotationsFieldBuilder() {
+            if (annotationsBuilder_ == null) {
+              annotationsBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilder<
+                      com.google.cloud.documentai.v1.Document.Annotations,
+                      com.google.cloud.documentai.v1.Document.Annotations.Builder,
+                      com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder>(
+                      getAnnotations(), getParentForChildren(), isClean());
+              annotations_ = null;
+            }
+            return annotationsBuilder_;
+          }
+
           // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutTextBlock)
         }
 
@@ -68076,6 +69133,43 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * @return The bytes for caption.
          */
         com.google.protobuf.ByteString getCaptionBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the table block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         *
+         * @return Whether the annotations field is set.
+         */
+        boolean hasAnnotations();
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the table block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         *
+         * @return The annotations.
+         */
+        com.google.cloud.documentai.v1.Document.Annotations getAnnotations();
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the table block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         */
+        com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder getAnnotationsOrBuilder();
       }
 
       /**
@@ -68132,6 +69226,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                       .LayoutTableBlock.Builder.class);
         }
 
+        private int bitField0_;
         public static final int HEADER_ROWS_FIELD_NUMBER = 1;
 
         @SuppressWarnings("serial")
@@ -68383,6 +69478,60 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           }
         }
 
+        public static final int ANNOTATIONS_FIELD_NUMBER = 4;
+        private com.google.cloud.documentai.v1.Document.Annotations annotations_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the table block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         *
+         * @return Whether the annotations field is set.
+         */
+        @java.lang.Override
+        public boolean hasAnnotations() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the table block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         *
+         * @return The annotations.
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.Annotations getAnnotations() {
+          return annotations_ == null
+              ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+              : annotations_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the table block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder
+            getAnnotationsOrBuilder() {
+          return annotations_ == null
+              ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+              : annotations_;
+        }
+
         private byte memoizedIsInitialized = -1;
 
         @java.lang.Override
@@ -68407,6 +69556,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           if (!com.google.protobuf.GeneratedMessage.isStringEmpty(caption_)) {
             com.google.protobuf.GeneratedMessage.writeString(output, 3, caption_);
           }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            output.writeMessage(4, getAnnotations());
+          }
           getUnknownFields().writeTo(output);
         }
 
@@ -68424,6 +69576,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           }
           if (!com.google.protobuf.GeneratedMessage.isStringEmpty(caption_)) {
             size += com.google.protobuf.GeneratedMessage.computeStringSize(3, caption_);
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAnnotations());
           }
           size += getUnknownFields().getSerializedSize();
           memoizedSize = size;
@@ -68451,6 +69606,10 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           if (!getHeaderRowsList().equals(other.getHeaderRowsList())) return false;
           if (!getBodyRowsList().equals(other.getBodyRowsList())) return false;
           if (!getCaption().equals(other.getCaption())) return false;
+          if (hasAnnotations() != other.hasAnnotations()) return false;
+          if (hasAnnotations()) {
+            if (!getAnnotations().equals(other.getAnnotations())) return false;
+          }
           if (!getUnknownFields().equals(other.getUnknownFields())) return false;
           return true;
         }
@@ -68472,6 +69631,10 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           }
           hash = (37 * hash) + CAPTION_FIELD_NUMBER;
           hash = (53 * hash) + getCaption().hashCode();
+          if (hasAnnotations()) {
+            hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
+            hash = (53 * hash) + getAnnotations().hashCode();
+          }
           hash = (29 * hash) + getUnknownFields().hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -68633,10 +69796,21 @@ public final class Document extends com.google.protobuf.GeneratedMessage
 
           // Construct using
           // com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock.newBuilder()
-          private Builder() {}
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
 
           private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+              internalGetHeaderRowsFieldBuilder();
+              internalGetBodyRowsFieldBuilder();
+              internalGetAnnotationsFieldBuilder();
+            }
           }
 
           @java.lang.Override
@@ -68658,6 +69832,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             }
             bitField0_ = (bitField0_ & ~0x00000002);
             caption_ = "";
+            annotations_ = null;
+            if (annotationsBuilder_ != null) {
+              annotationsBuilder_.dispose();
+              annotationsBuilder_ = null;
+            }
             return this;
           }
 
@@ -68737,6 +69916,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             if (((from_bitField0_ & 0x00000004) != 0)) {
               result.caption_ = caption_;
             }
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.annotations_ =
+                  annotationsBuilder_ == null ? annotations_ : annotationsBuilder_.build();
+              to_bitField0_ |= 0x00000001;
+            }
+            result.bitField0_ |= to_bitField0_;
           }
 
           @java.lang.Override
@@ -68821,6 +70007,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
               bitField0_ |= 0x00000004;
               onChanged();
             }
+            if (other.hasAnnotations()) {
+              mergeAnnotations(other.getAnnotations());
+            }
             this.mergeUnknownFields(other.getUnknownFields());
             onChanged();
             return this;
@@ -68887,6 +70076,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                       bitField0_ |= 0x00000004;
                       break;
                     } // case 26
+                  case 34:
+                    {
+                      input.readMessage(
+                          internalGetAnnotationsFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000008;
+                      break;
+                    } // case 34
                   default:
                     {
                       if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -69947,6 +71143,205 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             bitField0_ |= 0x00000004;
             onChanged();
             return this;
+          }
+
+          private com.google.cloud.documentai.v1.Document.Annotations annotations_;
+          private com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.documentai.v1.Document.Annotations,
+                  com.google.cloud.documentai.v1.Document.Annotations.Builder,
+                  com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder>
+              annotationsBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           *
+           * @return Whether the annotations field is set.
+           */
+          public boolean hasAnnotations() {
+            return ((bitField0_ & 0x00000008) != 0);
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           *
+           * @return The annotations.
+           */
+          public com.google.cloud.documentai.v1.Document.Annotations getAnnotations() {
+            if (annotationsBuilder_ == null) {
+              return annotations_ == null
+                  ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+                  : annotations_;
+            } else {
+              return annotationsBuilder_.getMessage();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public Builder setAnnotations(com.google.cloud.documentai.v1.Document.Annotations value) {
+            if (annotationsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              annotations_ = value;
+            } else {
+              annotationsBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public Builder setAnnotations(
+              com.google.cloud.documentai.v1.Document.Annotations.Builder builderForValue) {
+            if (annotationsBuilder_ == null) {
+              annotations_ = builderForValue.build();
+            } else {
+              annotationsBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public Builder mergeAnnotations(
+              com.google.cloud.documentai.v1.Document.Annotations value) {
+            if (annotationsBuilder_ == null) {
+              if (((bitField0_ & 0x00000008) != 0)
+                  && annotations_ != null
+                  && annotations_
+                      != com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()) {
+                getAnnotationsBuilder().mergeFrom(value);
+              } else {
+                annotations_ = value;
+              }
+            } else {
+              annotationsBuilder_.mergeFrom(value);
+            }
+            if (annotations_ != null) {
+              bitField0_ |= 0x00000008;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public Builder clearAnnotations() {
+            bitField0_ = (bitField0_ & ~0x00000008);
+            annotations_ = null;
+            if (annotationsBuilder_ != null) {
+              annotationsBuilder_.dispose();
+              annotationsBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public com.google.cloud.documentai.v1.Document.Annotations.Builder
+              getAnnotationsBuilder() {
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return internalGetAnnotationsFieldBuilder().getBuilder();
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder
+              getAnnotationsOrBuilder() {
+            if (annotationsBuilder_ != null) {
+              return annotationsBuilder_.getMessageOrBuilder();
+            } else {
+              return annotations_ == null
+                  ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+                  : annotations_;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.documentai.v1.Document.Annotations,
+                  com.google.cloud.documentai.v1.Document.Annotations.Builder,
+                  com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder>
+              internalGetAnnotationsFieldBuilder() {
+            if (annotationsBuilder_ == null) {
+              annotationsBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilder<
+                      com.google.cloud.documentai.v1.Document.Annotations,
+                      com.google.cloud.documentai.v1.Document.Annotations.Builder,
+                      com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder>(
+                      getAnnotations(), getParentForChildren(), isClean());
+              annotations_ = null;
+            }
+            return annotationsBuilder_;
           }
 
           // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutTableBlock)
@@ -75185,6 +76580,2248 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         }
       }
 
+      public interface LayoutImageBlockOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Asset id of the inline image. If set, find the image
+         * content in the blob_assets field.
+         * </pre>
+         *
+         * <code>string blob_asset_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the blobAssetId field is set.
+         */
+        boolean hasBlobAssetId();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Asset id of the inline image. If set, find the image
+         * content in the blob_assets field.
+         * </pre>
+         *
+         * <code>string blob_asset_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The blobAssetId.
+         */
+        java.lang.String getBlobAssetId();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Asset id of the inline image. If set, find the image
+         * content in the blob_assets field.
+         * </pre>
+         *
+         * <code>string blob_asset_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for blobAssetId.
+         */
+        com.google.protobuf.ByteString getBlobAssetIdBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Google Cloud Storage uri of the image.
+         * </pre>
+         *
+         * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the gcsUri field is set.
+         */
+        boolean hasGcsUri();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Google Cloud Storage uri of the image.
+         * </pre>
+         *
+         * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The gcsUri.
+         */
+        java.lang.String getGcsUri();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Google Cloud Storage uri of the image.
+         * </pre>
+         *
+         * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for gcsUri.
+         */
+        com.google.protobuf.ByteString getGcsUriBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data uri of the image.
+         * It is composed of four parts: a prefix (data:), a MIME type
+         * indicating the type of data, an optional base64 token if
+         * non-textual, and the data itself:
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * </pre>
+         *
+         * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the dataUri field is set.
+         */
+        boolean hasDataUri();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data uri of the image.
+         * It is composed of four parts: a prefix (data:), a MIME type
+         * indicating the type of data, an optional base64 token if
+         * non-textual, and the data itself:
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * </pre>
+         *
+         * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The dataUri.
+         */
+        java.lang.String getDataUri();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data uri of the image.
+         * It is composed of four parts: a prefix (data:), a MIME type
+         * indicating the type of data, an optional base64 token if
+         * non-textual, and the data itself:
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * </pre>
+         *
+         * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for dataUri.
+         */
+        com.google.protobuf.ByteString getDataUriBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Mime type of the image. An IANA published [media type (MIME type)]
+         * (https://www.iana.org/assignments/media-types/media-types.xhtml).
+         * </pre>
+         *
+         * <code>string mime_type = 1;</code>
+         *
+         * @return The mimeType.
+         */
+        java.lang.String getMimeType();
+
+        /**
+         *
+         *
+         * <pre>
+         * Mime type of the image. An IANA published [media type (MIME type)]
+         * (https://www.iana.org/assignments/media-types/media-types.xhtml).
+         * </pre>
+         *
+         * <code>string mime_type = 1;</code>
+         *
+         * @return The bytes for mimeType.
+         */
+        com.google.protobuf.ByteString getMimeTypeBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Text extracted from the image using OCR or alt text describing the
+         * image.
+         * </pre>
+         *
+         * <code>string image_text = 2;</code>
+         *
+         * @return The imageText.
+         */
+        java.lang.String getImageText();
+
+        /**
+         *
+         *
+         * <pre>
+         * Text extracted from the image using OCR or alt text describing the
+         * image.
+         * </pre>
+         *
+         * <code>string image_text = 2;</code>
+         *
+         * @return The bytes for imageText.
+         */
+        com.google.protobuf.ByteString getImageTextBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the image block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 3;</code>
+         *
+         * @return Whether the annotations field is set.
+         */
+        boolean hasAnnotations();
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the image block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 3;</code>
+         *
+         * @return The annotations.
+         */
+        com.google.cloud.documentai.v1.Document.Annotations getAnnotations();
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the image block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 3;</code>
+         */
+        com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder getAnnotationsOrBuilder();
+
+        com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock
+                .ImageSourceCase
+            getImageSourceCase();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Represents an image type block.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock}
+       */
+      public static final class LayoutImageBlock extends com.google.protobuf.GeneratedMessage
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock)
+          LayoutImageBlockOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "LayoutImageBlock");
+        }
+
+        // Use LayoutImageBlock.newBuilder() to construct.
+        private LayoutImageBlock(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+
+        private LayoutImageBlock() {
+          mimeType_ = "";
+          imageText_ = "";
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1.DocumentProto
+              .internal_static_google_cloud_documentai_v1_Document_DocumentLayout_DocumentLayoutBlock_LayoutImageBlock_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1.DocumentProto
+              .internal_static_google_cloud_documentai_v1_Document_DocumentLayout_DocumentLayoutBlock_LayoutImageBlock_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutImageBlock.class,
+                  com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutImageBlock.Builder.class);
+        }
+
+        private int bitField0_;
+        private int imageSourceCase_ = 0;
+
+        @SuppressWarnings("serial")
+        private java.lang.Object imageSource_;
+
+        public enum ImageSourceCase
+            implements
+                com.google.protobuf.Internal.EnumLite,
+                com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+          BLOB_ASSET_ID(4),
+          GCS_URI(5),
+          DATA_URI(6),
+          IMAGESOURCE_NOT_SET(0);
+          private final int value;
+
+          private ImageSourceCase(int value) {
+            this.value = value;
+          }
+
+          /**
+           * @param value The number of the enum to look for.
+           * @return The enum associated with the given number.
+           * @deprecated Use {@link #forNumber(int)} instead.
+           */
+          @java.lang.Deprecated
+          public static ImageSourceCase valueOf(int value) {
+            return forNumber(value);
+          }
+
+          public static ImageSourceCase forNumber(int value) {
+            switch (value) {
+              case 4:
+                return BLOB_ASSET_ID;
+              case 5:
+                return GCS_URI;
+              case 6:
+                return DATA_URI;
+              case 0:
+                return IMAGESOURCE_NOT_SET;
+              default:
+                return null;
+            }
+          }
+
+          public int getNumber() {
+            return this.value;
+          }
+        };
+
+        public ImageSourceCase getImageSourceCase() {
+          return ImageSourceCase.forNumber(imageSourceCase_);
+        }
+
+        public static final int BLOB_ASSET_ID_FIELD_NUMBER = 4;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Asset id of the inline image. If set, find the image
+         * content in the blob_assets field.
+         * </pre>
+         *
+         * <code>string blob_asset_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the blobAssetId field is set.
+         */
+        public boolean hasBlobAssetId() {
+          return imageSourceCase_ == 4;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Asset id of the inline image. If set, find the image
+         * content in the blob_assets field.
+         * </pre>
+         *
+         * <code>string blob_asset_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The blobAssetId.
+         */
+        public java.lang.String getBlobAssetId() {
+          java.lang.Object ref = "";
+          if (imageSourceCase_ == 4) {
+            ref = imageSource_;
+          }
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (imageSourceCase_ == 4) {
+              imageSource_ = s;
+            }
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Asset id of the inline image. If set, find the image
+         * content in the blob_assets field.
+         * </pre>
+         *
+         * <code>string blob_asset_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for blobAssetId.
+         */
+        public com.google.protobuf.ByteString getBlobAssetIdBytes() {
+          java.lang.Object ref = "";
+          if (imageSourceCase_ == 4) {
+            ref = imageSource_;
+          }
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            if (imageSourceCase_ == 4) {
+              imageSource_ = b;
+            }
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int GCS_URI_FIELD_NUMBER = 5;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Google Cloud Storage uri of the image.
+         * </pre>
+         *
+         * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the gcsUri field is set.
+         */
+        public boolean hasGcsUri() {
+          return imageSourceCase_ == 5;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Google Cloud Storage uri of the image.
+         * </pre>
+         *
+         * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The gcsUri.
+         */
+        public java.lang.String getGcsUri() {
+          java.lang.Object ref = "";
+          if (imageSourceCase_ == 5) {
+            ref = imageSource_;
+          }
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (imageSourceCase_ == 5) {
+              imageSource_ = s;
+            }
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Google Cloud Storage uri of the image.
+         * </pre>
+         *
+         * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for gcsUri.
+         */
+        public com.google.protobuf.ByteString getGcsUriBytes() {
+          java.lang.Object ref = "";
+          if (imageSourceCase_ == 5) {
+            ref = imageSource_;
+          }
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            if (imageSourceCase_ == 5) {
+              imageSource_ = b;
+            }
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int DATA_URI_FIELD_NUMBER = 6;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data uri of the image.
+         * It is composed of four parts: a prefix (data:), a MIME type
+         * indicating the type of data, an optional base64 token if
+         * non-textual, and the data itself:
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * </pre>
+         *
+         * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the dataUri field is set.
+         */
+        public boolean hasDataUri() {
+          return imageSourceCase_ == 6;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data uri of the image.
+         * It is composed of four parts: a prefix (data:), a MIME type
+         * indicating the type of data, an optional base64 token if
+         * non-textual, and the data itself:
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * </pre>
+         *
+         * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The dataUri.
+         */
+        public java.lang.String getDataUri() {
+          java.lang.Object ref = "";
+          if (imageSourceCase_ == 6) {
+            ref = imageSource_;
+          }
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (imageSourceCase_ == 6) {
+              imageSource_ = s;
+            }
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data uri of the image.
+         * It is composed of four parts: a prefix (data:), a MIME type
+         * indicating the type of data, an optional base64 token if
+         * non-textual, and the data itself:
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * </pre>
+         *
+         * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for dataUri.
+         */
+        public com.google.protobuf.ByteString getDataUriBytes() {
+          java.lang.Object ref = "";
+          if (imageSourceCase_ == 6) {
+            ref = imageSource_;
+          }
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            if (imageSourceCase_ == 6) {
+              imageSource_ = b;
+            }
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int MIME_TYPE_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object mimeType_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Mime type of the image. An IANA published [media type (MIME type)]
+         * (https://www.iana.org/assignments/media-types/media-types.xhtml).
+         * </pre>
+         *
+         * <code>string mime_type = 1;</code>
+         *
+         * @return The mimeType.
+         */
+        @java.lang.Override
+        public java.lang.String getMimeType() {
+          java.lang.Object ref = mimeType_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            mimeType_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Mime type of the image. An IANA published [media type (MIME type)]
+         * (https://www.iana.org/assignments/media-types/media-types.xhtml).
+         * </pre>
+         *
+         * <code>string mime_type = 1;</code>
+         *
+         * @return The bytes for mimeType.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getMimeTypeBytes() {
+          java.lang.Object ref = mimeType_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            mimeType_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int IMAGE_TEXT_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object imageText_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Text extracted from the image using OCR or alt text describing the
+         * image.
+         * </pre>
+         *
+         * <code>string image_text = 2;</code>
+         *
+         * @return The imageText.
+         */
+        @java.lang.Override
+        public java.lang.String getImageText() {
+          java.lang.Object ref = imageText_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            imageText_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Text extracted from the image using OCR or alt text describing the
+         * image.
+         * </pre>
+         *
+         * <code>string image_text = 2;</code>
+         *
+         * @return The bytes for imageText.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getImageTextBytes() {
+          java.lang.Object ref = imageText_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            imageText_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int ANNOTATIONS_FIELD_NUMBER = 3;
+        private com.google.cloud.documentai.v1.Document.Annotations annotations_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the image block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 3;</code>
+         *
+         * @return Whether the annotations field is set.
+         */
+        @java.lang.Override
+        public boolean hasAnnotations() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the image block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 3;</code>
+         *
+         * @return The annotations.
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.Annotations getAnnotations() {
+          return annotations_ == null
+              ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+              : annotations_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the image block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 3;</code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder
+            getAnnotationsOrBuilder() {
+          return annotations_ == null
+              ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+              : annotations_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mimeType_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 1, mimeType_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(imageText_)) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 2, imageText_);
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            output.writeMessage(3, getAnnotations());
+          }
+          if (imageSourceCase_ == 4) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 4, imageSource_);
+          }
+          if (imageSourceCase_ == 5) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 5, imageSource_);
+          }
+          if (imageSourceCase_ == 6) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 6, imageSource_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mimeType_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(1, mimeType_);
+          }
+          if (!com.google.protobuf.GeneratedMessage.isStringEmpty(imageText_)) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(2, imageText_);
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAnnotations());
+          }
+          if (imageSourceCase_ == 4) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(4, imageSource_);
+          }
+          if (imageSourceCase_ == 5) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(5, imageSource_);
+          }
+          if (imageSourceCase_ == 6) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(6, imageSource_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutImageBlock)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutImageBlock
+              other =
+                  (com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutImageBlock)
+                      obj;
+
+          if (!getMimeType().equals(other.getMimeType())) return false;
+          if (!getImageText().equals(other.getImageText())) return false;
+          if (hasAnnotations() != other.hasAnnotations()) return false;
+          if (hasAnnotations()) {
+            if (!getAnnotations().equals(other.getAnnotations())) return false;
+          }
+          if (!getImageSourceCase().equals(other.getImageSourceCase())) return false;
+          switch (imageSourceCase_) {
+            case 4:
+              if (!getBlobAssetId().equals(other.getBlobAssetId())) return false;
+              break;
+            case 5:
+              if (!getGcsUri().equals(other.getGcsUri())) return false;
+              break;
+            case 6:
+              if (!getDataUri().equals(other.getDataUri())) return false;
+              break;
+            case 0:
+            default:
+          }
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + MIME_TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + getMimeType().hashCode();
+          hash = (37 * hash) + IMAGE_TEXT_FIELD_NUMBER;
+          hash = (53 * hash) + getImageText().hashCode();
+          if (hasAnnotations()) {
+            hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
+            hash = (53 * hash) + getAnnotations().hashCode();
+          }
+          switch (imageSourceCase_) {
+            case 4:
+              hash = (37 * hash) + BLOB_ASSET_ID_FIELD_NUMBER;
+              hash = (53 * hash) + getBlobAssetId().hashCode();
+              break;
+            case 5:
+              hash = (37 * hash) + GCS_URI_FIELD_NUMBER;
+              hash = (53 * hash) + getGcsUri().hashCode();
+              break;
+            case 6:
+              hash = (37 * hash) + DATA_URI_FIELD_NUMBER;
+              hash = (53 * hash) + getDataUri().hashCode();
+              break;
+            case 0:
+            default:
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutImageBlock
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Represents an image type block.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock)
+            com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlockOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.documentai.v1.DocumentProto
+                .internal_static_google_cloud_documentai_v1_Document_DocumentLayout_DocumentLayoutBlock_LayoutImageBlock_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.documentai.v1.DocumentProto
+                .internal_static_google_cloud_documentai_v1_Document_DocumentLayout_DocumentLayoutBlock_LayoutImageBlock_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutImageBlock.class,
+                    com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutImageBlock.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+              internalGetAnnotationsFieldBuilder();
+            }
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            mimeType_ = "";
+            imageText_ = "";
+            annotations_ = null;
+            if (annotationsBuilder_ != null) {
+              annotationsBuilder_.dispose();
+              annotationsBuilder_ = null;
+            }
+            imageSourceCase_ = 0;
+            imageSource_ = null;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.documentai.v1.DocumentProto
+                .internal_static_google_cloud_documentai_v1_Document_DocumentLayout_DocumentLayoutBlock_LayoutImageBlock_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutImageBlock
+              getDefaultInstanceForType() {
+            return com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutImageBlock
+              build() {
+            com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutImageBlock
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutImageBlock
+              buildPartial() {
+            com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutImageBlock
+                result =
+                    new com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutImageBlock(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            buildPartialOneofs(result);
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutImageBlock
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.mimeType_ = mimeType_;
+            }
+            if (((from_bitField0_ & 0x00000010) != 0)) {
+              result.imageText_ = imageText_;
+            }
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000020) != 0)) {
+              result.annotations_ =
+                  annotationsBuilder_ == null ? annotations_ : annotationsBuilder_.build();
+              to_bitField0_ |= 0x00000001;
+            }
+            result.bitField0_ |= to_bitField0_;
+          }
+
+          private void buildPartialOneofs(
+              com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutImageBlock
+                  result) {
+            result.imageSourceCase_ = imageSourceCase_;
+            result.imageSource_ = this.imageSource_;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutImageBlock) {
+              return mergeFrom(
+                  (com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutImageBlock)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutImageBlock
+                  other) {
+            if (other
+                == com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutImageBlock.getDefaultInstance()) return this;
+            if (!other.getMimeType().isEmpty()) {
+              mimeType_ = other.mimeType_;
+              bitField0_ |= 0x00000008;
+              onChanged();
+            }
+            if (!other.getImageText().isEmpty()) {
+              imageText_ = other.imageText_;
+              bitField0_ |= 0x00000010;
+              onChanged();
+            }
+            if (other.hasAnnotations()) {
+              mergeAnnotations(other.getAnnotations());
+            }
+            switch (other.getImageSourceCase()) {
+              case BLOB_ASSET_ID:
+                {
+                  imageSourceCase_ = 4;
+                  imageSource_ = other.imageSource_;
+                  onChanged();
+                  break;
+                }
+              case GCS_URI:
+                {
+                  imageSourceCase_ = 5;
+                  imageSource_ = other.imageSource_;
+                  onChanged();
+                  break;
+                }
+              case DATA_URI:
+                {
+                  imageSourceCase_ = 6;
+                  imageSource_ = other.imageSource_;
+                  onChanged();
+                  break;
+                }
+              case IMAGESOURCE_NOT_SET:
+                {
+                  break;
+                }
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      mimeType_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000008;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      imageText_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000010;
+                      break;
+                    } // case 18
+                  case 26:
+                    {
+                      input.readMessage(
+                          internalGetAnnotationsFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000020;
+                      break;
+                    } // case 26
+                  case 34:
+                    {
+                      java.lang.String s = input.readStringRequireUtf8();
+                      imageSourceCase_ = 4;
+                      imageSource_ = s;
+                      break;
+                    } // case 34
+                  case 42:
+                    {
+                      java.lang.String s = input.readStringRequireUtf8();
+                      imageSourceCase_ = 5;
+                      imageSource_ = s;
+                      break;
+                    } // case 42
+                  case 50:
+                    {
+                      java.lang.String s = input.readStringRequireUtf8();
+                      imageSourceCase_ = 6;
+                      imageSource_ = s;
+                      break;
+                    } // case 50
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int imageSourceCase_ = 0;
+          private java.lang.Object imageSource_;
+
+          public ImageSourceCase getImageSourceCase() {
+            return ImageSourceCase.forNumber(imageSourceCase_);
+          }
+
+          public Builder clearImageSource() {
+            imageSourceCase_ = 0;
+            imageSource_ = null;
+            onChanged();
+            return this;
+          }
+
+          private int bitField0_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Asset id of the inline image. If set, find the image
+           * content in the blob_assets field.
+           * </pre>
+           *
+           * <code>string blob_asset_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return Whether the blobAssetId field is set.
+           */
+          @java.lang.Override
+          public boolean hasBlobAssetId() {
+            return imageSourceCase_ == 4;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Asset id of the inline image. If set, find the image
+           * content in the blob_assets field.
+           * </pre>
+           *
+           * <code>string blob_asset_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The blobAssetId.
+           */
+          @java.lang.Override
+          public java.lang.String getBlobAssetId() {
+            java.lang.Object ref = "";
+            if (imageSourceCase_ == 4) {
+              ref = imageSource_;
+            }
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (imageSourceCase_ == 4) {
+                imageSource_ = s;
+              }
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Asset id of the inline image. If set, find the image
+           * content in the blob_assets field.
+           * </pre>
+           *
+           * <code>string blob_asset_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for blobAssetId.
+           */
+          @java.lang.Override
+          public com.google.protobuf.ByteString getBlobAssetIdBytes() {
+            java.lang.Object ref = "";
+            if (imageSourceCase_ == 4) {
+              ref = imageSource_;
+            }
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              if (imageSourceCase_ == 4) {
+                imageSource_ = b;
+              }
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Asset id of the inline image. If set, find the image
+           * content in the blob_assets field.
+           * </pre>
+           *
+           * <code>string blob_asset_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The blobAssetId to set.
+           * @return This builder for chaining.
+           */
+          public Builder setBlobAssetId(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            imageSourceCase_ = 4;
+            imageSource_ = value;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Asset id of the inline image. If set, find the image
+           * content in the blob_assets field.
+           * </pre>
+           *
+           * <code>string blob_asset_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearBlobAssetId() {
+            if (imageSourceCase_ == 4) {
+              imageSourceCase_ = 0;
+              imageSource_ = null;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Asset id of the inline image. If set, find the image
+           * content in the blob_assets field.
+           * </pre>
+           *
+           * <code>string blob_asset_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for blobAssetId to set.
+           * @return This builder for chaining.
+           */
+          public Builder setBlobAssetIdBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            imageSourceCase_ = 4;
+            imageSource_ = value;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Google Cloud Storage uri of the image.
+           * </pre>
+           *
+           * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return Whether the gcsUri field is set.
+           */
+          @java.lang.Override
+          public boolean hasGcsUri() {
+            return imageSourceCase_ == 5;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Google Cloud Storage uri of the image.
+           * </pre>
+           *
+           * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The gcsUri.
+           */
+          @java.lang.Override
+          public java.lang.String getGcsUri() {
+            java.lang.Object ref = "";
+            if (imageSourceCase_ == 5) {
+              ref = imageSource_;
+            }
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (imageSourceCase_ == 5) {
+                imageSource_ = s;
+              }
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Google Cloud Storage uri of the image.
+           * </pre>
+           *
+           * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for gcsUri.
+           */
+          @java.lang.Override
+          public com.google.protobuf.ByteString getGcsUriBytes() {
+            java.lang.Object ref = "";
+            if (imageSourceCase_ == 5) {
+              ref = imageSource_;
+            }
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              if (imageSourceCase_ == 5) {
+                imageSource_ = b;
+              }
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Google Cloud Storage uri of the image.
+           * </pre>
+           *
+           * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The gcsUri to set.
+           * @return This builder for chaining.
+           */
+          public Builder setGcsUri(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            imageSourceCase_ = 5;
+            imageSource_ = value;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Google Cloud Storage uri of the image.
+           * </pre>
+           *
+           * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearGcsUri() {
+            if (imageSourceCase_ == 5) {
+              imageSourceCase_ = 0;
+              imageSource_ = null;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Google Cloud Storage uri of the image.
+           * </pre>
+           *
+           * <code>string gcs_uri = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for gcsUri to set.
+           * @return This builder for chaining.
+           */
+          public Builder setGcsUriBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            imageSourceCase_ = 5;
+            imageSource_ = value;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Data uri of the image.
+           * It is composed of four parts: a prefix (data:), a MIME type
+           * indicating the type of data, an optional base64 token if
+           * non-textual, and the data itself:
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * </pre>
+           *
+           * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return Whether the dataUri field is set.
+           */
+          @java.lang.Override
+          public boolean hasDataUri() {
+            return imageSourceCase_ == 6;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Data uri of the image.
+           * It is composed of four parts: a prefix (data:), a MIME type
+           * indicating the type of data, an optional base64 token if
+           * non-textual, and the data itself:
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * </pre>
+           *
+           * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The dataUri.
+           */
+          @java.lang.Override
+          public java.lang.String getDataUri() {
+            java.lang.Object ref = "";
+            if (imageSourceCase_ == 6) {
+              ref = imageSource_;
+            }
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (imageSourceCase_ == 6) {
+                imageSource_ = s;
+              }
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Data uri of the image.
+           * It is composed of four parts: a prefix (data:), a MIME type
+           * indicating the type of data, an optional base64 token if
+           * non-textual, and the data itself:
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * </pre>
+           *
+           * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for dataUri.
+           */
+          @java.lang.Override
+          public com.google.protobuf.ByteString getDataUriBytes() {
+            java.lang.Object ref = "";
+            if (imageSourceCase_ == 6) {
+              ref = imageSource_;
+            }
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              if (imageSourceCase_ == 6) {
+                imageSource_ = b;
+              }
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Data uri of the image.
+           * It is composed of four parts: a prefix (data:), a MIME type
+           * indicating the type of data, an optional base64 token if
+           * non-textual, and the data itself:
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * </pre>
+           *
+           * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The dataUri to set.
+           * @return This builder for chaining.
+           */
+          public Builder setDataUri(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            imageSourceCase_ = 6;
+            imageSource_ = value;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Data uri of the image.
+           * It is composed of four parts: a prefix (data:), a MIME type
+           * indicating the type of data, an optional base64 token if
+           * non-textual, and the data itself:
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * </pre>
+           *
+           * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearDataUri() {
+            if (imageSourceCase_ == 6) {
+              imageSourceCase_ = 0;
+              imageSource_ = null;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Data uri of the image.
+           * It is composed of four parts: a prefix (data:), a MIME type
+           * indicating the type of data, an optional base64 token if
+           * non-textual, and the data itself:
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * </pre>
+           *
+           * <code>string data_uri = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for dataUri to set.
+           * @return This builder for chaining.
+           */
+          public Builder setDataUriBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            imageSourceCase_ = 6;
+            imageSource_ = value;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object mimeType_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Mime type of the image. An IANA published [media type (MIME type)]
+           * (https://www.iana.org/assignments/media-types/media-types.xhtml).
+           * </pre>
+           *
+           * <code>string mime_type = 1;</code>
+           *
+           * @return The mimeType.
+           */
+          public java.lang.String getMimeType() {
+            java.lang.Object ref = mimeType_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              mimeType_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Mime type of the image. An IANA published [media type (MIME type)]
+           * (https://www.iana.org/assignments/media-types/media-types.xhtml).
+           * </pre>
+           *
+           * <code>string mime_type = 1;</code>
+           *
+           * @return The bytes for mimeType.
+           */
+          public com.google.protobuf.ByteString getMimeTypeBytes() {
+            java.lang.Object ref = mimeType_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              mimeType_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Mime type of the image. An IANA published [media type (MIME type)]
+           * (https://www.iana.org/assignments/media-types/media-types.xhtml).
+           * </pre>
+           *
+           * <code>string mime_type = 1;</code>
+           *
+           * @param value The mimeType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setMimeType(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            mimeType_ = value;
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Mime type of the image. An IANA published [media type (MIME type)]
+           * (https://www.iana.org/assignments/media-types/media-types.xhtml).
+           * </pre>
+           *
+           * <code>string mime_type = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearMimeType() {
+            mimeType_ = getDefaultInstance().getMimeType();
+            bitField0_ = (bitField0_ & ~0x00000008);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Mime type of the image. An IANA published [media type (MIME type)]
+           * (https://www.iana.org/assignments/media-types/media-types.xhtml).
+           * </pre>
+           *
+           * <code>string mime_type = 1;</code>
+           *
+           * @param value The bytes for mimeType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            mimeType_ = value;
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object imageText_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Text extracted from the image using OCR or alt text describing the
+           * image.
+           * </pre>
+           *
+           * <code>string image_text = 2;</code>
+           *
+           * @return The imageText.
+           */
+          public java.lang.String getImageText() {
+            java.lang.Object ref = imageText_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              imageText_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Text extracted from the image using OCR or alt text describing the
+           * image.
+           * </pre>
+           *
+           * <code>string image_text = 2;</code>
+           *
+           * @return The bytes for imageText.
+           */
+          public com.google.protobuf.ByteString getImageTextBytes() {
+            java.lang.Object ref = imageText_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              imageText_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Text extracted from the image using OCR or alt text describing the
+           * image.
+           * </pre>
+           *
+           * <code>string image_text = 2;</code>
+           *
+           * @param value The imageText to set.
+           * @return This builder for chaining.
+           */
+          public Builder setImageText(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            imageText_ = value;
+            bitField0_ |= 0x00000010;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Text extracted from the image using OCR or alt text describing the
+           * image.
+           * </pre>
+           *
+           * <code>string image_text = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearImageText() {
+            imageText_ = getDefaultInstance().getImageText();
+            bitField0_ = (bitField0_ & ~0x00000010);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Text extracted from the image using OCR or alt text describing the
+           * image.
+           * </pre>
+           *
+           * <code>string image_text = 2;</code>
+           *
+           * @param value The bytes for imageText to set.
+           * @return This builder for chaining.
+           */
+          public Builder setImageTextBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            imageText_ = value;
+            bitField0_ |= 0x00000010;
+            onChanged();
+            return this;
+          }
+
+          private com.google.cloud.documentai.v1.Document.Annotations annotations_;
+          private com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.documentai.v1.Document.Annotations,
+                  com.google.cloud.documentai.v1.Document.Annotations.Builder,
+                  com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder>
+              annotationsBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 3;</code>
+           *
+           * @return Whether the annotations field is set.
+           */
+          public boolean hasAnnotations() {
+            return ((bitField0_ & 0x00000020) != 0);
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 3;</code>
+           *
+           * @return The annotations.
+           */
+          public com.google.cloud.documentai.v1.Document.Annotations getAnnotations() {
+            if (annotationsBuilder_ == null) {
+              return annotations_ == null
+                  ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+                  : annotations_;
+            } else {
+              return annotationsBuilder_.getMessage();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 3;</code>
+           */
+          public Builder setAnnotations(com.google.cloud.documentai.v1.Document.Annotations value) {
+            if (annotationsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              annotations_ = value;
+            } else {
+              annotationsBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000020;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 3;</code>
+           */
+          public Builder setAnnotations(
+              com.google.cloud.documentai.v1.Document.Annotations.Builder builderForValue) {
+            if (annotationsBuilder_ == null) {
+              annotations_ = builderForValue.build();
+            } else {
+              annotationsBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000020;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 3;</code>
+           */
+          public Builder mergeAnnotations(
+              com.google.cloud.documentai.v1.Document.Annotations value) {
+            if (annotationsBuilder_ == null) {
+              if (((bitField0_ & 0x00000020) != 0)
+                  && annotations_ != null
+                  && annotations_
+                      != com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()) {
+                getAnnotationsBuilder().mergeFrom(value);
+              } else {
+                annotations_ = value;
+              }
+            } else {
+              annotationsBuilder_.mergeFrom(value);
+            }
+            if (annotations_ != null) {
+              bitField0_ |= 0x00000020;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 3;</code>
+           */
+          public Builder clearAnnotations() {
+            bitField0_ = (bitField0_ & ~0x00000020);
+            annotations_ = null;
+            if (annotationsBuilder_ != null) {
+              annotationsBuilder_.dispose();
+              annotationsBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 3;</code>
+           */
+          public com.google.cloud.documentai.v1.Document.Annotations.Builder
+              getAnnotationsBuilder() {
+            bitField0_ |= 0x00000020;
+            onChanged();
+            return internalGetAnnotationsFieldBuilder().getBuilder();
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 3;</code>
+           */
+          public com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder
+              getAnnotationsOrBuilder() {
+            if (annotationsBuilder_ != null) {
+              return annotationsBuilder_.getMessageOrBuilder();
+            } else {
+              return annotations_ == null
+                  ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+                  : annotations_;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image block.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 3;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.documentai.v1.Document.Annotations,
+                  com.google.cloud.documentai.v1.Document.Annotations.Builder,
+                  com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder>
+              internalGetAnnotationsFieldBuilder() {
+            if (annotationsBuilder_ == null) {
+              annotationsBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilder<
+                      com.google.cloud.documentai.v1.Document.Annotations,
+                      com.google.cloud.documentai.v1.Document.Annotations.Builder,
+                      com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder>(
+                      getAnnotations(), getParentForChildren(), isClean());
+              annotations_ = null;
+            }
+            return annotationsBuilder_;
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock)
+        private static final com.google.cloud.documentai.v1.Document.DocumentLayout
+                .DocumentLayoutBlock.LayoutImageBlock
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutImageBlock();
+        }
+
+        public static com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<LayoutImageBlock> PARSER =
+            new com.google.protobuf.AbstractParser<LayoutImageBlock>() {
+              @java.lang.Override
+              public LayoutImageBlock parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<LayoutImageBlock> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<LayoutImageBlock> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
       private int bitField0_;
       private int blockCase_ = 0;
 
@@ -75198,6 +78835,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         TEXT_BLOCK(2),
         TABLE_BLOCK(3),
         LIST_BLOCK(4),
+        IMAGE_BLOCK(7),
         BLOCK_NOT_SET(0);
         private final int value;
 
@@ -75223,6 +78861,8 @@ public final class Document extends com.google.protobuf.GeneratedMessage
               return TABLE_BLOCK;
             case 4:
               return LIST_BLOCK;
+            case 7:
+              return IMAGE_BLOCK;
             case 0:
               return BLOCK_NOT_SET;
             default:
@@ -75449,6 +79089,76 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             .LayoutListBlock.getDefaultInstance();
       }
 
+      public static final int IMAGE_BLOCK_FIELD_NUMBER = 7;
+
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of image content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock image_block = 7;
+       * </code>
+       *
+       * @return Whether the imageBlock field is set.
+       */
+      @java.lang.Override
+      public boolean hasImageBlock() {
+        return blockCase_ == 7;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of image content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock image_block = 7;
+       * </code>
+       *
+       * @return The imageBlock.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutImageBlock
+          getImageBlock() {
+        if (blockCase_ == 7) {
+          return (com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutImageBlock)
+              block_;
+        }
+        return com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+            .LayoutImageBlock.getDefaultInstance();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Block consisting of image content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock image_block = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+              .LayoutImageBlockOrBuilder
+          getImageBlockOrBuilder() {
+        if (blockCase_ == 7) {
+          return (com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                  .LayoutImageBlock)
+              block_;
+        }
+        return com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+            .LayoutImageBlock.getDefaultInstance();
+      }
+
       public static final int BLOCK_ID_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
@@ -75666,6 +79376,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         if (((bitField0_ & 0x00000002) != 0)) {
           output.writeMessage(6, getBoundingBox());
         }
+        if (blockCase_ == 7) {
+          output.writeMessage(
+              7,
+              (com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutImageBlock)
+                  block_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -75708,6 +79425,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         if (((bitField0_ & 0x00000002) != 0)) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getBoundingBox());
         }
+        if (blockCase_ == 7) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(
+                  7,
+                  (com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                          .LayoutImageBlock)
+                      block_);
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -75746,6 +79471,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           case 4:
             if (!getListBlock().equals(other.getListBlock())) return false;
             break;
+          case 7:
+            if (!getImageBlock().equals(other.getImageBlock())) return false;
+            break;
           case 0:
           default:
         }
@@ -75782,6 +79510,10 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           case 4:
             hash = (37 * hash) + LIST_BLOCK_FIELD_NUMBER;
             hash = (53 * hash) + getListBlock().hashCode();
+            break;
+          case 7:
+            hash = (37 * hash) + IMAGE_BLOCK_FIELD_NUMBER;
+            hash = (53 * hash) + getImageBlock().hashCode();
             break;
           case 0:
           default:
@@ -75960,6 +79692,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           if (listBlockBuilder_ != null) {
             listBlockBuilder_.clear();
           }
+          if (imageBlockBuilder_ != null) {
+            imageBlockBuilder_.clear();
+          }
           blockId_ = "";
           pageSpan_ = null;
           if (pageSpanBuilder_ != null) {
@@ -76015,15 +79750,15 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         private void buildPartial0(
             com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock result) {
           int from_bitField0_ = bitField0_;
-          if (((from_bitField0_ & 0x00000008) != 0)) {
+          if (((from_bitField0_ & 0x00000010) != 0)) {
             result.blockId_ = blockId_;
           }
           int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000010) != 0)) {
+          if (((from_bitField0_ & 0x00000020) != 0)) {
             result.pageSpan_ = pageSpanBuilder_ == null ? pageSpan_ : pageSpanBuilder_.build();
             to_bitField0_ |= 0x00000001;
           }
-          if (((from_bitField0_ & 0x00000020) != 0)) {
+          if (((from_bitField0_ & 0x00000040) != 0)) {
             result.boundingBox_ =
                 boundingBoxBuilder_ == null ? boundingBox_ : boundingBoxBuilder_.build();
             to_bitField0_ |= 0x00000002;
@@ -76043,6 +79778,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           }
           if (blockCase_ == 4 && listBlockBuilder_ != null) {
             result.block_ = listBlockBuilder_.build();
+          }
+          if (blockCase_ == 7 && imageBlockBuilder_ != null) {
+            result.block_ = imageBlockBuilder_.build();
           }
         }
 
@@ -76066,7 +79804,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                   .getDefaultInstance()) return this;
           if (!other.getBlockId().isEmpty()) {
             blockId_ = other.blockId_;
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
             onChanged();
           }
           if (other.hasPageSpan()) {
@@ -76089,6 +79827,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             case LIST_BLOCK:
               {
                 mergeListBlock(other.getListBlock());
+                break;
+              }
+            case IMAGE_BLOCK:
+              {
+                mergeImageBlock(other.getImageBlock());
                 break;
               }
             case BLOCK_NOT_SET:
@@ -76125,7 +79868,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                 case 10:
                   {
                     blockId_ = input.readStringRequireUtf8();
-                    bitField0_ |= 0x00000008;
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 10
                 case 18:
@@ -76153,16 +79896,23 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                   {
                     input.readMessage(
                         internalGetPageSpanFieldBuilder().getBuilder(), extensionRegistry);
-                    bitField0_ |= 0x00000010;
+                    bitField0_ |= 0x00000020;
                     break;
                   } // case 42
                 case 50:
                   {
                     input.readMessage(
                         internalGetBoundingBoxFieldBuilder().getBuilder(), extensionRegistry);
-                    bitField0_ |= 0x00000020;
+                    bitField0_ |= 0x00000040;
                     break;
                   } // case 50
+                case 58:
+                  {
+                    input.readMessage(
+                        internalGetImageBlockFieldBuilder().getBuilder(), extensionRegistry);
+                    blockCase_ = 7;
+                    break;
+                  } // case 58
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -77021,6 +80771,281 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           return listBlockBuilder_;
         }
 
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutImageBlock,
+                com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutImageBlock.Builder,
+                com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutImageBlockOrBuilder>
+            imageBlockBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of image content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock image_block = 7;
+         * </code>
+         *
+         * @return Whether the imageBlock field is set.
+         */
+        @java.lang.Override
+        public boolean hasImageBlock() {
+          return blockCase_ == 7;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of image content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock image_block = 7;
+         * </code>
+         *
+         * @return The imageBlock.
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock
+            getImageBlock() {
+          if (imageBlockBuilder_ == null) {
+            if (blockCase_ == 7) {
+              return (com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutImageBlock)
+                  block_;
+            }
+            return com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock.getDefaultInstance();
+          } else {
+            if (blockCase_ == 7) {
+              return imageBlockBuilder_.getMessage();
+            }
+            return com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of image content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock image_block = 7;
+         * </code>
+         */
+        public Builder setImageBlock(
+            com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutImageBlock
+                value) {
+          if (imageBlockBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            block_ = value;
+            onChanged();
+          } else {
+            imageBlockBuilder_.setMessage(value);
+          }
+          blockCase_ = 7;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of image content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock image_block = 7;
+         * </code>
+         */
+        public Builder setImageBlock(
+            com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutImageBlock.Builder
+                builderForValue) {
+          if (imageBlockBuilder_ == null) {
+            block_ = builderForValue.build();
+            onChanged();
+          } else {
+            imageBlockBuilder_.setMessage(builderForValue.build());
+          }
+          blockCase_ = 7;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of image content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock image_block = 7;
+         * </code>
+         */
+        public Builder mergeImageBlock(
+            com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutImageBlock
+                value) {
+          if (imageBlockBuilder_ == null) {
+            if (blockCase_ == 7
+                && block_
+                    != com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutImageBlock.getDefaultInstance()) {
+              block_ =
+                  com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutImageBlock.newBuilder(
+                          (com.google.cloud.documentai.v1.Document.DocumentLayout
+                                  .DocumentLayoutBlock.LayoutImageBlock)
+                              block_)
+                      .mergeFrom(value)
+                      .buildPartial();
+            } else {
+              block_ = value;
+            }
+            onChanged();
+          } else {
+            if (blockCase_ == 7) {
+              imageBlockBuilder_.mergeFrom(value);
+            } else {
+              imageBlockBuilder_.setMessage(value);
+            }
+          }
+          blockCase_ = 7;
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of image content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock image_block = 7;
+         * </code>
+         */
+        public Builder clearImageBlock() {
+          if (imageBlockBuilder_ == null) {
+            if (blockCase_ == 7) {
+              blockCase_ = 0;
+              block_ = null;
+              onChanged();
+            }
+          } else {
+            if (blockCase_ == 7) {
+              blockCase_ = 0;
+              block_ = null;
+            }
+            imageBlockBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of image content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock image_block = 7;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock.Builder
+            getImageBlockBuilder() {
+          return internalGetImageBlockFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of image content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock image_block = 7;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlockOrBuilder
+            getImageBlockOrBuilder() {
+          if ((blockCase_ == 7) && (imageBlockBuilder_ != null)) {
+            return imageBlockBuilder_.getMessageOrBuilder();
+          } else {
+            if (blockCase_ == 7) {
+              return (com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutImageBlock)
+                  block_;
+            }
+            return com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                .LayoutImageBlock.getDefaultInstance();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Block consisting of image content.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.LayoutImageBlock image_block = 7;
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutImageBlock,
+                com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutImageBlock.Builder,
+                com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                    .LayoutImageBlockOrBuilder>
+            internalGetImageBlockFieldBuilder() {
+          if (imageBlockBuilder_ == null) {
+            if (!(blockCase_ == 7)) {
+              block_ =
+                  com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                      .LayoutImageBlock.getDefaultInstance();
+            }
+            imageBlockBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutImageBlock,
+                    com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutImageBlock.Builder,
+                    com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                        .LayoutImageBlockOrBuilder>(
+                    (com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
+                            .LayoutImageBlock)
+                        block_,
+                    getParentForChildren(),
+                    isClean());
+            block_ = null;
+          }
+          blockCase_ = 7;
+          onChanged();
+          return imageBlockBuilder_;
+        }
+
         private java.lang.Object blockId_ = "";
 
         /**
@@ -77086,7 +81111,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             throw new NullPointerException();
           }
           blockId_ = value;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -77104,7 +81129,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          */
         public Builder clearBlockId() {
           blockId_ = getDefaultInstance().getBlockId();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
           return this;
         }
@@ -77127,7 +81152,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           }
           checkByteStringIsUtf8(value);
           blockId_ = value;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -77158,7 +81183,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * @return Whether the pageSpan field is set.
          */
         public boolean hasPageSpan() {
-          return ((bitField0_ & 0x00000010) != 0);
+          return ((bitField0_ & 0x00000020) != 0);
         }
 
         /**
@@ -77210,7 +81235,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           } else {
             pageSpanBuilder_.setMessage(value);
           }
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -77235,7 +81260,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           } else {
             pageSpanBuilder_.setMessage(builderForValue.build());
           }
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -77256,7 +81281,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                     .LayoutPageSpan
                 value) {
           if (pageSpanBuilder_ == null) {
-            if (((bitField0_ & 0x00000010) != 0)
+            if (((bitField0_ & 0x00000020) != 0)
                 && pageSpan_ != null
                 && pageSpan_
                     != com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
@@ -77269,7 +81294,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             pageSpanBuilder_.mergeFrom(value);
           }
           if (pageSpan_ != null) {
-            bitField0_ |= 0x00000010;
+            bitField0_ |= 0x00000020;
             onChanged();
           }
           return this;
@@ -77287,7 +81312,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * </code>
          */
         public Builder clearPageSpan() {
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           pageSpan_ = null;
           if (pageSpanBuilder_ != null) {
             pageSpanBuilder_.dispose();
@@ -77311,7 +81336,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         public com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock
                 .LayoutPageSpan.Builder
             getPageSpanBuilder() {
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return internalGetPageSpanFieldBuilder().getBuilder();
         }
@@ -77392,7 +81417,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * @return Whether the boundingBox field is set.
          */
         public boolean hasBoundingBox() {
-          return ((bitField0_ & 0x00000020) != 0);
+          return ((bitField0_ & 0x00000040) != 0);
         }
 
         /**
@@ -77434,7 +81459,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           } else {
             boundingBoxBuilder_.setMessage(value);
           }
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -77455,7 +81480,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           } else {
             boundingBoxBuilder_.setMessage(builderForValue.build());
           }
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -77471,7 +81496,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          */
         public Builder mergeBoundingBox(com.google.cloud.documentai.v1.BoundingPoly value) {
           if (boundingBoxBuilder_ == null) {
-            if (((bitField0_ & 0x00000020) != 0)
+            if (((bitField0_ & 0x00000040) != 0)
                 && boundingBox_ != null
                 && boundingBox_
                     != com.google.cloud.documentai.v1.BoundingPoly.getDefaultInstance()) {
@@ -77483,7 +81508,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             boundingBoxBuilder_.mergeFrom(value);
           }
           if (boundingBox_ != null) {
-            bitField0_ |= 0x00000020;
+            bitField0_ |= 0x00000040;
             onChanged();
           }
           return this;
@@ -77499,7 +81524,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
          */
         public Builder clearBoundingBox() {
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
           boundingBox_ = null;
           if (boundingBoxBuilder_ != null) {
             boundingBoxBuilder_.dispose();
@@ -77519,7 +81544,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
          * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
          */
         public com.google.cloud.documentai.v1.BoundingPoly.Builder getBoundingBoxBuilder() {
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
           return internalGetBoundingBoxFieldBuilder().getBuilder();
         }
@@ -78982,6 +83007,77 @@ public final class Document extends com.google.protobuf.GeneratedMessage
        */
       com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkPageFooterOrBuilder
           getPageFootersOrBuilder(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Chunk fields inside this chunk.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+       * </code>
+       */
+      java.util.List<com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField>
+          getChunkFieldsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Chunk fields inside this chunk.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+       * </code>
+       */
+      com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField getChunkFields(
+          int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Chunk fields inside this chunk.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+       * </code>
+       */
+      int getChunkFieldsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Chunk fields inside this chunk.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkFieldOrBuilder>
+          getChunkFieldsOrBuilderList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Chunk fields inside this chunk.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+       * </code>
+       */
+      com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkFieldOrBuilder
+          getChunkFieldsOrBuilder(int index);
     }
 
     /**
@@ -79020,6 +83116,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         content_ = "";
         pageHeaders_ = java.util.Collections.emptyList();
         pageFooters_ = java.util.Collections.emptyList();
+        chunkFields_ = java.util.Collections.emptyList();
       }
 
       public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -81753,6 +85850,3884 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         }
       }
 
+      public interface ImageChunkFieldOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Asset id of the inline image. If set, find the image
+         * content in the blob_assets field.
+         * </pre>
+         *
+         * <code>string blob_asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the blobAssetId field is set.
+         */
+        boolean hasBlobAssetId();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Asset id of the inline image. If set, find the image
+         * content in the blob_assets field.
+         * </pre>
+         *
+         * <code>string blob_asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The blobAssetId.
+         */
+        java.lang.String getBlobAssetId();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Asset id of the inline image. If set, find the image
+         * content in the blob_assets field.
+         * </pre>
+         *
+         * <code>string blob_asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for blobAssetId.
+         */
+        com.google.protobuf.ByteString getBlobAssetIdBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Google Cloud Storage uri of the image.
+         * </pre>
+         *
+         * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the gcsUri field is set.
+         */
+        boolean hasGcsUri();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Google Cloud Storage uri of the image.
+         * </pre>
+         *
+         * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The gcsUri.
+         */
+        java.lang.String getGcsUri();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Google Cloud Storage uri of the image.
+         * </pre>
+         *
+         * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for gcsUri.
+         */
+        com.google.protobuf.ByteString getGcsUriBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data uri of the image.
+         * It is composed of four parts: a prefix (data:), a MIME type
+         * indicating the type of data, an optional base64 token if
+         * non-textual, and the data itself:
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * </pre>
+         *
+         * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the dataUri field is set.
+         */
+        boolean hasDataUri();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data uri of the image.
+         * It is composed of four parts: a prefix (data:), a MIME type
+         * indicating the type of data, an optional base64 token if
+         * non-textual, and the data itself:
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * </pre>
+         *
+         * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The dataUri.
+         */
+        java.lang.String getDataUri();
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data uri of the image.
+         * It is composed of four parts: a prefix (data:), a MIME type
+         * indicating the type of data, an optional base64 token if
+         * non-textual, and the data itself:
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * </pre>
+         *
+         * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for dataUri.
+         */
+        com.google.protobuf.ByteString getDataUriBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the image chunk field.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         *
+         * @return Whether the annotations field is set.
+         */
+        boolean hasAnnotations();
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the image chunk field.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         *
+         * @return The annotations.
+         */
+        com.google.cloud.documentai.v1.Document.Annotations getAnnotations();
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the image chunk field.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         */
+        com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder getAnnotationsOrBuilder();
+
+        com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                .ImageSourceCase
+            getImageSourceCase();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The image chunk field in the chunk.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField}
+       */
+      public static final class ImageChunkField extends com.google.protobuf.GeneratedMessage
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField)
+          ImageChunkFieldOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "ImageChunkField");
+        }
+
+        // Use ImageChunkField.newBuilder() to construct.
+        private ImageChunkField(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+
+        private ImageChunkField() {}
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1.DocumentProto
+              .internal_static_google_cloud_documentai_v1_Document_ChunkedDocument_Chunk_ImageChunkField_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1.DocumentProto
+              .internal_static_google_cloud_documentai_v1_Document_ChunkedDocument_Chunk_ImageChunkField_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                      .class,
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                      .Builder.class);
+        }
+
+        private int bitField0_;
+        private int imageSourceCase_ = 0;
+
+        @SuppressWarnings("serial")
+        private java.lang.Object imageSource_;
+
+        public enum ImageSourceCase
+            implements
+                com.google.protobuf.Internal.EnumLite,
+                com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+          BLOB_ASSET_ID(1),
+          GCS_URI(2),
+          DATA_URI(3),
+          IMAGESOURCE_NOT_SET(0);
+          private final int value;
+
+          private ImageSourceCase(int value) {
+            this.value = value;
+          }
+
+          /**
+           * @param value The number of the enum to look for.
+           * @return The enum associated with the given number.
+           * @deprecated Use {@link #forNumber(int)} instead.
+           */
+          @java.lang.Deprecated
+          public static ImageSourceCase valueOf(int value) {
+            return forNumber(value);
+          }
+
+          public static ImageSourceCase forNumber(int value) {
+            switch (value) {
+              case 1:
+                return BLOB_ASSET_ID;
+              case 2:
+                return GCS_URI;
+              case 3:
+                return DATA_URI;
+              case 0:
+                return IMAGESOURCE_NOT_SET;
+              default:
+                return null;
+            }
+          }
+
+          public int getNumber() {
+            return this.value;
+          }
+        };
+
+        public ImageSourceCase getImageSourceCase() {
+          return ImageSourceCase.forNumber(imageSourceCase_);
+        }
+
+        public static final int BLOB_ASSET_ID_FIELD_NUMBER = 1;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Asset id of the inline image. If set, find the image
+         * content in the blob_assets field.
+         * </pre>
+         *
+         * <code>string blob_asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the blobAssetId field is set.
+         */
+        public boolean hasBlobAssetId() {
+          return imageSourceCase_ == 1;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Asset id of the inline image. If set, find the image
+         * content in the blob_assets field.
+         * </pre>
+         *
+         * <code>string blob_asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The blobAssetId.
+         */
+        public java.lang.String getBlobAssetId() {
+          java.lang.Object ref = "";
+          if (imageSourceCase_ == 1) {
+            ref = imageSource_;
+          }
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (imageSourceCase_ == 1) {
+              imageSource_ = s;
+            }
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Asset id of the inline image. If set, find the image
+         * content in the blob_assets field.
+         * </pre>
+         *
+         * <code>string blob_asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for blobAssetId.
+         */
+        public com.google.protobuf.ByteString getBlobAssetIdBytes() {
+          java.lang.Object ref = "";
+          if (imageSourceCase_ == 1) {
+            ref = imageSource_;
+          }
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            if (imageSourceCase_ == 1) {
+              imageSource_ = b;
+            }
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int GCS_URI_FIELD_NUMBER = 2;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Google Cloud Storage uri of the image.
+         * </pre>
+         *
+         * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the gcsUri field is set.
+         */
+        public boolean hasGcsUri() {
+          return imageSourceCase_ == 2;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Google Cloud Storage uri of the image.
+         * </pre>
+         *
+         * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The gcsUri.
+         */
+        public java.lang.String getGcsUri() {
+          java.lang.Object ref = "";
+          if (imageSourceCase_ == 2) {
+            ref = imageSource_;
+          }
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (imageSourceCase_ == 2) {
+              imageSource_ = s;
+            }
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Google Cloud Storage uri of the image.
+         * </pre>
+         *
+         * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for gcsUri.
+         */
+        public com.google.protobuf.ByteString getGcsUriBytes() {
+          java.lang.Object ref = "";
+          if (imageSourceCase_ == 2) {
+            ref = imageSource_;
+          }
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            if (imageSourceCase_ == 2) {
+              imageSource_ = b;
+            }
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int DATA_URI_FIELD_NUMBER = 3;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data uri of the image.
+         * It is composed of four parts: a prefix (data:), a MIME type
+         * indicating the type of data, an optional base64 token if
+         * non-textual, and the data itself:
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * </pre>
+         *
+         * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the dataUri field is set.
+         */
+        public boolean hasDataUri() {
+          return imageSourceCase_ == 3;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data uri of the image.
+         * It is composed of four parts: a prefix (data:), a MIME type
+         * indicating the type of data, an optional base64 token if
+         * non-textual, and the data itself:
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * </pre>
+         *
+         * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The dataUri.
+         */
+        public java.lang.String getDataUri() {
+          java.lang.Object ref = "";
+          if (imageSourceCase_ == 3) {
+            ref = imageSource_;
+          }
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (imageSourceCase_ == 3) {
+              imageSource_ = s;
+            }
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Data uri of the image.
+         * It is composed of four parts: a prefix (data:), a MIME type
+         * indicating the type of data, an optional base64 token if
+         * non-textual, and the data itself:
+         * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+         * </pre>
+         *
+         * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for dataUri.
+         */
+        public com.google.protobuf.ByteString getDataUriBytes() {
+          java.lang.Object ref = "";
+          if (imageSourceCase_ == 3) {
+            ref = imageSource_;
+          }
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            if (imageSourceCase_ == 3) {
+              imageSource_ = b;
+            }
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int ANNOTATIONS_FIELD_NUMBER = 4;
+        private com.google.cloud.documentai.v1.Document.Annotations annotations_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the image chunk field.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         *
+         * @return Whether the annotations field is set.
+         */
+        @java.lang.Override
+        public boolean hasAnnotations() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the image chunk field.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         *
+         * @return The annotations.
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.Annotations getAnnotations() {
+          return annotations_ == null
+              ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+              : annotations_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the image chunk field.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder
+            getAnnotationsOrBuilder() {
+          return annotations_ == null
+              ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+              : annotations_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (imageSourceCase_ == 1) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 1, imageSource_);
+          }
+          if (imageSourceCase_ == 2) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 2, imageSource_);
+          }
+          if (imageSourceCase_ == 3) {
+            com.google.protobuf.GeneratedMessage.writeString(output, 3, imageSource_);
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            output.writeMessage(4, getAnnotations());
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (imageSourceCase_ == 1) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(1, imageSource_);
+          }
+          if (imageSourceCase_ == 2) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(2, imageSource_);
+          }
+          if (imageSourceCase_ == 3) {
+            size += com.google.protobuf.GeneratedMessage.computeStringSize(3, imageSource_);
+          }
+          if (((bitField0_ & 0x00000001) != 0)) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAnnotations());
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField other =
+              (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField) obj;
+
+          if (hasAnnotations() != other.hasAnnotations()) return false;
+          if (hasAnnotations()) {
+            if (!getAnnotations().equals(other.getAnnotations())) return false;
+          }
+          if (!getImageSourceCase().equals(other.getImageSourceCase())) return false;
+          switch (imageSourceCase_) {
+            case 1:
+              if (!getBlobAssetId().equals(other.getBlobAssetId())) return false;
+              break;
+            case 2:
+              if (!getGcsUri().equals(other.getGcsUri())) return false;
+              break;
+            case 3:
+              if (!getDataUri().equals(other.getDataUri())) return false;
+              break;
+            case 0:
+            default:
+          }
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (hasAnnotations()) {
+            hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
+            hash = (53 * hash) + getAnnotations().hashCode();
+          }
+          switch (imageSourceCase_) {
+            case 1:
+              hash = (37 * hash) + BLOB_ASSET_ID_FIELD_NUMBER;
+              hash = (53 * hash) + getBlobAssetId().hashCode();
+              break;
+            case 2:
+              hash = (37 * hash) + GCS_URI_FIELD_NUMBER;
+              hash = (53 * hash) + getGcsUri().hashCode();
+              break;
+            case 3:
+              hash = (37 * hash) + DATA_URI_FIELD_NUMBER;
+              hash = (53 * hash) + getDataUri().hashCode();
+              break;
+            case 0:
+            default:
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The image chunk field in the chunk.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField)
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkFieldOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.documentai.v1.DocumentProto
+                .internal_static_google_cloud_documentai_v1_Document_ChunkedDocument_Chunk_ImageChunkField_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.documentai.v1.DocumentProto
+                .internal_static_google_cloud_documentai_v1_Document_ChunkedDocument_Chunk_ImageChunkField_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                        .class,
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                        .Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+              internalGetAnnotationsFieldBuilder();
+            }
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            annotations_ = null;
+            if (annotationsBuilder_ != null) {
+              annotationsBuilder_.dispose();
+              annotationsBuilder_ = null;
+            }
+            imageSourceCase_ = 0;
+            imageSource_ = null;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.documentai.v1.DocumentProto
+                .internal_static_google_cloud_documentai_v1_Document_ChunkedDocument_Chunk_ImageChunkField_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+              getDefaultInstanceForType() {
+            return com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+              build() {
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField result =
+                buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+              buildPartial() {
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField result =
+                new com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField(
+                    this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            buildPartialOneofs(result);
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                  result) {
+            int from_bitField0_ = bitField0_;
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000008) != 0)) {
+              result.annotations_ =
+                  annotationsBuilder_ == null ? annotations_ : annotationsBuilder_.build();
+              to_bitField0_ |= 0x00000001;
+            }
+            result.bitField0_ |= to_bitField0_;
+          }
+
+          private void buildPartialOneofs(
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                  result) {
+            result.imageSourceCase_ = imageSourceCase_;
+            result.imageSource_ = this.imageSource_;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField) {
+              return mergeFrom(
+                  (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField other) {
+            if (other
+                == com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                    .getDefaultInstance()) return this;
+            if (other.hasAnnotations()) {
+              mergeAnnotations(other.getAnnotations());
+            }
+            switch (other.getImageSourceCase()) {
+              case BLOB_ASSET_ID:
+                {
+                  imageSourceCase_ = 1;
+                  imageSource_ = other.imageSource_;
+                  onChanged();
+                  break;
+                }
+              case GCS_URI:
+                {
+                  imageSourceCase_ = 2;
+                  imageSource_ = other.imageSource_;
+                  onChanged();
+                  break;
+                }
+              case DATA_URI:
+                {
+                  imageSourceCase_ = 3;
+                  imageSource_ = other.imageSource_;
+                  onChanged();
+                  break;
+                }
+              case IMAGESOURCE_NOT_SET:
+                {
+                  break;
+                }
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      java.lang.String s = input.readStringRequireUtf8();
+                      imageSourceCase_ = 1;
+                      imageSource_ = s;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      java.lang.String s = input.readStringRequireUtf8();
+                      imageSourceCase_ = 2;
+                      imageSource_ = s;
+                      break;
+                    } // case 18
+                  case 26:
+                    {
+                      java.lang.String s = input.readStringRequireUtf8();
+                      imageSourceCase_ = 3;
+                      imageSource_ = s;
+                      break;
+                    } // case 26
+                  case 34:
+                    {
+                      input.readMessage(
+                          internalGetAnnotationsFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000008;
+                      break;
+                    } // case 34
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int imageSourceCase_ = 0;
+          private java.lang.Object imageSource_;
+
+          public ImageSourceCase getImageSourceCase() {
+            return ImageSourceCase.forNumber(imageSourceCase_);
+          }
+
+          public Builder clearImageSource() {
+            imageSourceCase_ = 0;
+            imageSource_ = null;
+            onChanged();
+            return this;
+          }
+
+          private int bitField0_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Asset id of the inline image. If set, find the image
+           * content in the blob_assets field.
+           * </pre>
+           *
+           * <code>string blob_asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return Whether the blobAssetId field is set.
+           */
+          @java.lang.Override
+          public boolean hasBlobAssetId() {
+            return imageSourceCase_ == 1;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Asset id of the inline image. If set, find the image
+           * content in the blob_assets field.
+           * </pre>
+           *
+           * <code>string blob_asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The blobAssetId.
+           */
+          @java.lang.Override
+          public java.lang.String getBlobAssetId() {
+            java.lang.Object ref = "";
+            if (imageSourceCase_ == 1) {
+              ref = imageSource_;
+            }
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (imageSourceCase_ == 1) {
+                imageSource_ = s;
+              }
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Asset id of the inline image. If set, find the image
+           * content in the blob_assets field.
+           * </pre>
+           *
+           * <code>string blob_asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for blobAssetId.
+           */
+          @java.lang.Override
+          public com.google.protobuf.ByteString getBlobAssetIdBytes() {
+            java.lang.Object ref = "";
+            if (imageSourceCase_ == 1) {
+              ref = imageSource_;
+            }
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              if (imageSourceCase_ == 1) {
+                imageSource_ = b;
+              }
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Asset id of the inline image. If set, find the image
+           * content in the blob_assets field.
+           * </pre>
+           *
+           * <code>string blob_asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The blobAssetId to set.
+           * @return This builder for chaining.
+           */
+          public Builder setBlobAssetId(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            imageSourceCase_ = 1;
+            imageSource_ = value;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Asset id of the inline image. If set, find the image
+           * content in the blob_assets field.
+           * </pre>
+           *
+           * <code>string blob_asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearBlobAssetId() {
+            if (imageSourceCase_ == 1) {
+              imageSourceCase_ = 0;
+              imageSource_ = null;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Asset id of the inline image. If set, find the image
+           * content in the blob_assets field.
+           * </pre>
+           *
+           * <code>string blob_asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for blobAssetId to set.
+           * @return This builder for chaining.
+           */
+          public Builder setBlobAssetIdBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            imageSourceCase_ = 1;
+            imageSource_ = value;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Google Cloud Storage uri of the image.
+           * </pre>
+           *
+           * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return Whether the gcsUri field is set.
+           */
+          @java.lang.Override
+          public boolean hasGcsUri() {
+            return imageSourceCase_ == 2;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Google Cloud Storage uri of the image.
+           * </pre>
+           *
+           * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The gcsUri.
+           */
+          @java.lang.Override
+          public java.lang.String getGcsUri() {
+            java.lang.Object ref = "";
+            if (imageSourceCase_ == 2) {
+              ref = imageSource_;
+            }
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (imageSourceCase_ == 2) {
+                imageSource_ = s;
+              }
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Google Cloud Storage uri of the image.
+           * </pre>
+           *
+           * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for gcsUri.
+           */
+          @java.lang.Override
+          public com.google.protobuf.ByteString getGcsUriBytes() {
+            java.lang.Object ref = "";
+            if (imageSourceCase_ == 2) {
+              ref = imageSource_;
+            }
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              if (imageSourceCase_ == 2) {
+                imageSource_ = b;
+              }
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Google Cloud Storage uri of the image.
+           * </pre>
+           *
+           * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The gcsUri to set.
+           * @return This builder for chaining.
+           */
+          public Builder setGcsUri(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            imageSourceCase_ = 2;
+            imageSource_ = value;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Google Cloud Storage uri of the image.
+           * </pre>
+           *
+           * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearGcsUri() {
+            if (imageSourceCase_ == 2) {
+              imageSourceCase_ = 0;
+              imageSource_ = null;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Google Cloud Storage uri of the image.
+           * </pre>
+           *
+           * <code>string gcs_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for gcsUri to set.
+           * @return This builder for chaining.
+           */
+          public Builder setGcsUriBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            imageSourceCase_ = 2;
+            imageSource_ = value;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Data uri of the image.
+           * It is composed of four parts: a prefix (data:), a MIME type
+           * indicating the type of data, an optional base64 token if
+           * non-textual, and the data itself:
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * </pre>
+           *
+           * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return Whether the dataUri field is set.
+           */
+          @java.lang.Override
+          public boolean hasDataUri() {
+            return imageSourceCase_ == 3;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Data uri of the image.
+           * It is composed of four parts: a prefix (data:), a MIME type
+           * indicating the type of data, an optional base64 token if
+           * non-textual, and the data itself:
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * </pre>
+           *
+           * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The dataUri.
+           */
+          @java.lang.Override
+          public java.lang.String getDataUri() {
+            java.lang.Object ref = "";
+            if (imageSourceCase_ == 3) {
+              ref = imageSource_;
+            }
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              if (imageSourceCase_ == 3) {
+                imageSource_ = s;
+              }
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Data uri of the image.
+           * It is composed of four parts: a prefix (data:), a MIME type
+           * indicating the type of data, an optional base64 token if
+           * non-textual, and the data itself:
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * </pre>
+           *
+           * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for dataUri.
+           */
+          @java.lang.Override
+          public com.google.protobuf.ByteString getDataUriBytes() {
+            java.lang.Object ref = "";
+            if (imageSourceCase_ == 3) {
+              ref = imageSource_;
+            }
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              if (imageSourceCase_ == 3) {
+                imageSource_ = b;
+              }
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Data uri of the image.
+           * It is composed of four parts: a prefix (data:), a MIME type
+           * indicating the type of data, an optional base64 token if
+           * non-textual, and the data itself:
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * </pre>
+           *
+           * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The dataUri to set.
+           * @return This builder for chaining.
+           */
+          public Builder setDataUri(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            imageSourceCase_ = 3;
+            imageSource_ = value;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Data uri of the image.
+           * It is composed of four parts: a prefix (data:), a MIME type
+           * indicating the type of data, an optional base64 token if
+           * non-textual, and the data itself:
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * </pre>
+           *
+           * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearDataUri() {
+            if (imageSourceCase_ == 3) {
+              imageSourceCase_ = 0;
+              imageSource_ = null;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Data uri of the image.
+           * It is composed of four parts: a prefix (data:), a MIME type
+           * indicating the type of data, an optional base64 token if
+           * non-textual, and the data itself:
+           * data:[&lt;mediatype&gt;][;base64],&lt;data&gt;
+           * </pre>
+           *
+           * <code>string data_uri = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for dataUri to set.
+           * @return This builder for chaining.
+           */
+          public Builder setDataUriBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            imageSourceCase_ = 3;
+            imageSource_ = value;
+            onChanged();
+            return this;
+          }
+
+          private com.google.cloud.documentai.v1.Document.Annotations annotations_;
+          private com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.documentai.v1.Document.Annotations,
+                  com.google.cloud.documentai.v1.Document.Annotations.Builder,
+                  com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder>
+              annotationsBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           *
+           * @return Whether the annotations field is set.
+           */
+          public boolean hasAnnotations() {
+            return ((bitField0_ & 0x00000008) != 0);
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           *
+           * @return The annotations.
+           */
+          public com.google.cloud.documentai.v1.Document.Annotations getAnnotations() {
+            if (annotationsBuilder_ == null) {
+              return annotations_ == null
+                  ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+                  : annotations_;
+            } else {
+              return annotationsBuilder_.getMessage();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public Builder setAnnotations(com.google.cloud.documentai.v1.Document.Annotations value) {
+            if (annotationsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              annotations_ = value;
+            } else {
+              annotationsBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public Builder setAnnotations(
+              com.google.cloud.documentai.v1.Document.Annotations.Builder builderForValue) {
+            if (annotationsBuilder_ == null) {
+              annotations_ = builderForValue.build();
+            } else {
+              annotationsBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public Builder mergeAnnotations(
+              com.google.cloud.documentai.v1.Document.Annotations value) {
+            if (annotationsBuilder_ == null) {
+              if (((bitField0_ & 0x00000008) != 0)
+                  && annotations_ != null
+                  && annotations_
+                      != com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()) {
+                getAnnotationsBuilder().mergeFrom(value);
+              } else {
+                annotations_ = value;
+              }
+            } else {
+              annotationsBuilder_.mergeFrom(value);
+            }
+            if (annotations_ != null) {
+              bitField0_ |= 0x00000008;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public Builder clearAnnotations() {
+            bitField0_ = (bitField0_ & ~0x00000008);
+            annotations_ = null;
+            if (annotationsBuilder_ != null) {
+              annotationsBuilder_.dispose();
+              annotationsBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public com.google.cloud.documentai.v1.Document.Annotations.Builder
+              getAnnotationsBuilder() {
+            bitField0_ |= 0x00000008;
+            onChanged();
+            return internalGetAnnotationsFieldBuilder().getBuilder();
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          public com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder
+              getAnnotationsOrBuilder() {
+            if (annotationsBuilder_ != null) {
+              return annotationsBuilder_.getMessageOrBuilder();
+            } else {
+              return annotations_ == null
+                  ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+                  : annotations_;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the image chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 4;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.documentai.v1.Document.Annotations,
+                  com.google.cloud.documentai.v1.Document.Annotations.Builder,
+                  com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder>
+              internalGetAnnotationsFieldBuilder() {
+            if (annotationsBuilder_ == null) {
+              annotationsBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilder<
+                      com.google.cloud.documentai.v1.Document.Annotations,
+                      com.google.cloud.documentai.v1.Document.Annotations.Builder,
+                      com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder>(
+                      getAnnotations(), getParentForChildren(), isClean());
+              annotations_ = null;
+            }
+            return annotationsBuilder_;
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField)
+        private static final com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                .ImageChunkField
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField();
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ImageChunkField> PARSER =
+            new com.google.protobuf.AbstractParser<ImageChunkField>() {
+              @java.lang.Override
+              public ImageChunkField parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<ImageChunkField> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ImageChunkField> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface TableChunkFieldOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the table chunk field.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 1;</code>
+         *
+         * @return Whether the annotations field is set.
+         */
+        boolean hasAnnotations();
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the table chunk field.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 1;</code>
+         *
+         * @return The annotations.
+         */
+        com.google.cloud.documentai.v1.Document.Annotations getAnnotations();
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the table chunk field.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 1;</code>
+         */
+        com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder getAnnotationsOrBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The table chunk field in the chunk.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField}
+       */
+      public static final class TableChunkField extends com.google.protobuf.GeneratedMessage
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField)
+          TableChunkFieldOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "TableChunkField");
+        }
+
+        // Use TableChunkField.newBuilder() to construct.
+        private TableChunkField(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+
+        private TableChunkField() {}
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1.DocumentProto
+              .internal_static_google_cloud_documentai_v1_Document_ChunkedDocument_Chunk_TableChunkField_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1.DocumentProto
+              .internal_static_google_cloud_documentai_v1_Document_ChunkedDocument_Chunk_TableChunkField_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                      .class,
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                      .Builder.class);
+        }
+
+        private int bitField0_;
+        public static final int ANNOTATIONS_FIELD_NUMBER = 1;
+        private com.google.cloud.documentai.v1.Document.Annotations annotations_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the table chunk field.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 1;</code>
+         *
+         * @return Whether the annotations field is set.
+         */
+        @java.lang.Override
+        public boolean hasAnnotations() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the table chunk field.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 1;</code>
+         *
+         * @return The annotations.
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.Annotations getAnnotations() {
+          return annotations_ == null
+              ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+              : annotations_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Annotation of the table chunk field.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 1;</code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder
+            getAnnotationsOrBuilder() {
+          return annotations_ == null
+              ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+              : annotations_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            output.writeMessage(1, getAnnotations());
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (((bitField0_ & 0x00000001) != 0)) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getAnnotations());
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField other =
+              (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField) obj;
+
+          if (hasAnnotations() != other.hasAnnotations()) return false;
+          if (hasAnnotations()) {
+            if (!getAnnotations().equals(other.getAnnotations())) return false;
+          }
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (hasAnnotations()) {
+            hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
+            hash = (53 * hash) + getAnnotations().hashCode();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The table chunk field in the chunk.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField)
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkFieldOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.documentai.v1.DocumentProto
+                .internal_static_google_cloud_documentai_v1_Document_ChunkedDocument_Chunk_TableChunkField_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.documentai.v1.DocumentProto
+                .internal_static_google_cloud_documentai_v1_Document_ChunkedDocument_Chunk_TableChunkField_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                        .class,
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                        .Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField.newBuilder()
+          private Builder() {
+            maybeForceBuilderInitialization();
+          }
+
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+            maybeForceBuilderInitialization();
+          }
+
+          private void maybeForceBuilderInitialization() {
+            if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+              internalGetAnnotationsFieldBuilder();
+            }
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            annotations_ = null;
+            if (annotationsBuilder_ != null) {
+              annotationsBuilder_.dispose();
+              annotationsBuilder_ = null;
+            }
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.documentai.v1.DocumentProto
+                .internal_static_google_cloud_documentai_v1_Document_ChunkedDocument_Chunk_TableChunkField_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+              getDefaultInstanceForType() {
+            return com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+              build() {
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField result =
+                buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+              buildPartial() {
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField result =
+                new com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField(
+                    this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                  result) {
+            int from_bitField0_ = bitField0_;
+            int to_bitField0_ = 0;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.annotations_ =
+                  annotationsBuilder_ == null ? annotations_ : annotationsBuilder_.build();
+              to_bitField0_ |= 0x00000001;
+            }
+            result.bitField0_ |= to_bitField0_;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField) {
+              return mergeFrom(
+                  (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField other) {
+            if (other
+                == com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                    .getDefaultInstance()) return this;
+            if (other.hasAnnotations()) {
+              mergeAnnotations(other.getAnnotations());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      input.readMessage(
+                          internalGetAnnotationsFieldBuilder().getBuilder(), extensionRegistry);
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private com.google.cloud.documentai.v1.Document.Annotations annotations_;
+          private com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.documentai.v1.Document.Annotations,
+                  com.google.cloud.documentai.v1.Document.Annotations.Builder,
+                  com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder>
+              annotationsBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 1;</code>
+           *
+           * @return Whether the annotations field is set.
+           */
+          public boolean hasAnnotations() {
+            return ((bitField0_ & 0x00000001) != 0);
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 1;</code>
+           *
+           * @return The annotations.
+           */
+          public com.google.cloud.documentai.v1.Document.Annotations getAnnotations() {
+            if (annotationsBuilder_ == null) {
+              return annotations_ == null
+                  ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+                  : annotations_;
+            } else {
+              return annotationsBuilder_.getMessage();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 1;</code>
+           */
+          public Builder setAnnotations(com.google.cloud.documentai.v1.Document.Annotations value) {
+            if (annotationsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              annotations_ = value;
+            } else {
+              annotationsBuilder_.setMessage(value);
+            }
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 1;</code>
+           */
+          public Builder setAnnotations(
+              com.google.cloud.documentai.v1.Document.Annotations.Builder builderForValue) {
+            if (annotationsBuilder_ == null) {
+              annotations_ = builderForValue.build();
+            } else {
+              annotationsBuilder_.setMessage(builderForValue.build());
+            }
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 1;</code>
+           */
+          public Builder mergeAnnotations(
+              com.google.cloud.documentai.v1.Document.Annotations value) {
+            if (annotationsBuilder_ == null) {
+              if (((bitField0_ & 0x00000001) != 0)
+                  && annotations_ != null
+                  && annotations_
+                      != com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()) {
+                getAnnotationsBuilder().mergeFrom(value);
+              } else {
+                annotations_ = value;
+              }
+            } else {
+              annotationsBuilder_.mergeFrom(value);
+            }
+            if (annotations_ != null) {
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 1;</code>
+           */
+          public Builder clearAnnotations() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            annotations_ = null;
+            if (annotationsBuilder_ != null) {
+              annotationsBuilder_.dispose();
+              annotationsBuilder_ = null;
+            }
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 1;</code>
+           */
+          public com.google.cloud.documentai.v1.Document.Annotations.Builder
+              getAnnotationsBuilder() {
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return internalGetAnnotationsFieldBuilder().getBuilder();
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 1;</code>
+           */
+          public com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder
+              getAnnotationsOrBuilder() {
+            if (annotationsBuilder_ != null) {
+              return annotationsBuilder_.getMessageOrBuilder();
+            } else {
+              return annotations_ == null
+                  ? com.google.cloud.documentai.v1.Document.Annotations.getDefaultInstance()
+                  : annotations_;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Annotation of the table chunk field.
+           * </pre>
+           *
+           * <code>.google.cloud.documentai.v1.Document.Annotations annotations = 1;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.documentai.v1.Document.Annotations,
+                  com.google.cloud.documentai.v1.Document.Annotations.Builder,
+                  com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder>
+              internalGetAnnotationsFieldBuilder() {
+            if (annotationsBuilder_ == null) {
+              annotationsBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilder<
+                      com.google.cloud.documentai.v1.Document.Annotations,
+                      com.google.cloud.documentai.v1.Document.Annotations.Builder,
+                      com.google.cloud.documentai.v1.Document.AnnotationsOrBuilder>(
+                      getAnnotations(), getParentForChildren(), isClean());
+              annotations_ = null;
+            }
+            return annotationsBuilder_;
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField)
+        private static final com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                .TableChunkField
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField();
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<TableChunkField> PARSER =
+            new com.google.protobuf.AbstractParser<TableChunkField>() {
+              @java.lang.Override
+              public TableChunkField parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<TableChunkField> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<TableChunkField> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface ChunkFieldOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * The image chunk field in the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField image_chunk_field = 1;
+         * </code>
+         *
+         * @return Whether the imageChunkField field is set.
+         */
+        boolean hasImageChunkField();
+
+        /**
+         *
+         *
+         * <pre>
+         * The image chunk field in the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField image_chunk_field = 1;
+         * </code>
+         *
+         * @return The imageChunkField.
+         */
+        com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            getImageChunkField();
+
+        /**
+         *
+         *
+         * <pre>
+         * The image chunk field in the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField image_chunk_field = 1;
+         * </code>
+         */
+        com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkFieldOrBuilder
+            getImageChunkFieldOrBuilder();
+
+        /**
+         *
+         *
+         * <pre>
+         * The table chunk field in the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField table_chunk_field = 2;
+         * </code>
+         *
+         * @return Whether the tableChunkField field is set.
+         */
+        boolean hasTableChunkField();
+
+        /**
+         *
+         *
+         * <pre>
+         * The table chunk field in the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField table_chunk_field = 2;
+         * </code>
+         *
+         * @return The tableChunkField.
+         */
+        com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            getTableChunkField();
+
+        /**
+         *
+         *
+         * <pre>
+         * The table chunk field in the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField table_chunk_field = 2;
+         * </code>
+         */
+        com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkFieldOrBuilder
+            getTableChunkFieldOrBuilder();
+
+        com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField.FieldTypeCase
+            getFieldTypeCase();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The chunk field in the chunk. A chunk field could be one of the various
+       * types (for example, image, table) supported.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField}
+       */
+      public static final class ChunkField extends com.google.protobuf.GeneratedMessage
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField)
+          ChunkFieldOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "ChunkField");
+        }
+
+        // Use ChunkField.newBuilder() to construct.
+        private ChunkField(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+
+        private ChunkField() {}
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.documentai.v1.DocumentProto
+              .internal_static_google_cloud_documentai_v1_Document_ChunkedDocument_Chunk_ChunkField_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.documentai.v1.DocumentProto
+              .internal_static_google_cloud_documentai_v1_Document_ChunkedDocument_Chunk_ChunkField_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField.class,
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField.Builder
+                      .class);
+        }
+
+        private int fieldTypeCase_ = 0;
+
+        @SuppressWarnings("serial")
+        private java.lang.Object fieldType_;
+
+        public enum FieldTypeCase
+            implements
+                com.google.protobuf.Internal.EnumLite,
+                com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+          IMAGE_CHUNK_FIELD(1),
+          TABLE_CHUNK_FIELD(2),
+          FIELDTYPE_NOT_SET(0);
+          private final int value;
+
+          private FieldTypeCase(int value) {
+            this.value = value;
+          }
+
+          /**
+           * @param value The number of the enum to look for.
+           * @return The enum associated with the given number.
+           * @deprecated Use {@link #forNumber(int)} instead.
+           */
+          @java.lang.Deprecated
+          public static FieldTypeCase valueOf(int value) {
+            return forNumber(value);
+          }
+
+          public static FieldTypeCase forNumber(int value) {
+            switch (value) {
+              case 1:
+                return IMAGE_CHUNK_FIELD;
+              case 2:
+                return TABLE_CHUNK_FIELD;
+              case 0:
+                return FIELDTYPE_NOT_SET;
+              default:
+                return null;
+            }
+          }
+
+          public int getNumber() {
+            return this.value;
+          }
+        };
+
+        public FieldTypeCase getFieldTypeCase() {
+          return FieldTypeCase.forNumber(fieldTypeCase_);
+        }
+
+        public static final int IMAGE_CHUNK_FIELD_FIELD_NUMBER = 1;
+
+        /**
+         *
+         *
+         * <pre>
+         * The image chunk field in the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField image_chunk_field = 1;
+         * </code>
+         *
+         * @return Whether the imageChunkField field is set.
+         */
+        @java.lang.Override
+        public boolean hasImageChunkField() {
+          return fieldTypeCase_ == 1;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The image chunk field in the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField image_chunk_field = 1;
+         * </code>
+         *
+         * @return The imageChunkField.
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+            getImageChunkField() {
+          if (fieldTypeCase_ == 1) {
+            return (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField)
+                fieldType_;
+          }
+          return com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+              .getDefaultInstance();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The image chunk field in the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField image_chunk_field = 1;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                .ImageChunkFieldOrBuilder
+            getImageChunkFieldOrBuilder() {
+          if (fieldTypeCase_ == 1) {
+            return (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField)
+                fieldType_;
+          }
+          return com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+              .getDefaultInstance();
+        }
+
+        public static final int TABLE_CHUNK_FIELD_FIELD_NUMBER = 2;
+
+        /**
+         *
+         *
+         * <pre>
+         * The table chunk field in the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField table_chunk_field = 2;
+         * </code>
+         *
+         * @return Whether the tableChunkField field is set.
+         */
+        @java.lang.Override
+        public boolean hasTableChunkField() {
+          return fieldTypeCase_ == 2;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The table chunk field in the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField table_chunk_field = 2;
+         * </code>
+         *
+         * @return The tableChunkField.
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+            getTableChunkField() {
+          if (fieldTypeCase_ == 2) {
+            return (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField)
+                fieldType_;
+          }
+          return com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+              .getDefaultInstance();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The table chunk field in the chunk.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField table_chunk_field = 2;
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                .TableChunkFieldOrBuilder
+            getTableChunkFieldOrBuilder() {
+          if (fieldTypeCase_ == 2) {
+            return (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField)
+                fieldType_;
+          }
+          return com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+              .getDefaultInstance();
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (fieldTypeCase_ == 1) {
+            output.writeMessage(
+                1,
+                (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField)
+                    fieldType_);
+          }
+          if (fieldTypeCase_ == 2) {
+            output.writeMessage(
+                2,
+                (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField)
+                    fieldType_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (fieldTypeCase_ == 1) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(
+                    1,
+                    (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField)
+                        fieldType_);
+          }
+          if (fieldTypeCase_ == 2) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeMessageSize(
+                    2,
+                    (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField)
+                        fieldType_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField other =
+              (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField) obj;
+
+          if (!getFieldTypeCase().equals(other.getFieldTypeCase())) return false;
+          switch (fieldTypeCase_) {
+            case 1:
+              if (!getImageChunkField().equals(other.getImageChunkField())) return false;
+              break;
+            case 2:
+              if (!getTableChunkField().equals(other.getTableChunkField())) return false;
+              break;
+            case 0:
+            default:
+          }
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          switch (fieldTypeCase_) {
+            case 1:
+              hash = (37 * hash) + IMAGE_CHUNK_FIELD_FIELD_NUMBER;
+              hash = (53 * hash) + getImageChunkField().hashCode();
+              break;
+            case 2:
+              hash = (37 * hash) + TABLE_CHUNK_FIELD_FIELD_NUMBER;
+              hash = (53 * hash) + getTableChunkField().hashCode();
+              break;
+            case 0:
+            default:
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The chunk field in the chunk. A chunk field could be one of the various
+         * types (for example, image, table) supported.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField)
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkFieldOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.documentai.v1.DocumentProto
+                .internal_static_google_cloud_documentai_v1_Document_ChunkedDocument_Chunk_ChunkField_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.documentai.v1.DocumentProto
+                .internal_static_google_cloud_documentai_v1_Document_ChunkedDocument_Chunk_ChunkField_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField.class,
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField.Builder
+                        .class);
+          }
+
+          // Construct using
+          // com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            if (imageChunkFieldBuilder_ != null) {
+              imageChunkFieldBuilder_.clear();
+            }
+            if (tableChunkFieldBuilder_ != null) {
+              tableChunkFieldBuilder_.clear();
+            }
+            fieldTypeCase_ = 0;
+            fieldType_ = null;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.documentai.v1.DocumentProto
+                .internal_static_google_cloud_documentai_v1_Document_ChunkedDocument_Chunk_ChunkField_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+              getDefaultInstanceForType() {
+            return com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField build() {
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField result =
+                buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+              buildPartial() {
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField result =
+                new com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            buildPartialOneofs(result);
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField result) {
+            int from_bitField0_ = bitField0_;
+          }
+
+          private void buildPartialOneofs(
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField result) {
+            result.fieldTypeCase_ = fieldTypeCase_;
+            result.fieldType_ = this.fieldType_;
+            if (fieldTypeCase_ == 1 && imageChunkFieldBuilder_ != null) {
+              result.fieldType_ = imageChunkFieldBuilder_.build();
+            }
+            if (fieldTypeCase_ == 2 && tableChunkFieldBuilder_ != null) {
+              result.fieldType_ = tableChunkFieldBuilder_.build();
+            }
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField) {
+              return mergeFrom(
+                  (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField) other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField other) {
+            if (other
+                == com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+                    .getDefaultInstance()) return this;
+            switch (other.getFieldTypeCase()) {
+              case IMAGE_CHUNK_FIELD:
+                {
+                  mergeImageChunkField(other.getImageChunkField());
+                  break;
+                }
+              case TABLE_CHUNK_FIELD:
+                {
+                  mergeTableChunkField(other.getTableChunkField());
+                  break;
+                }
+              case FIELDTYPE_NOT_SET:
+                {
+                  break;
+                }
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      input.readMessage(
+                          internalGetImageChunkFieldFieldBuilder().getBuilder(), extensionRegistry);
+                      fieldTypeCase_ = 1;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      input.readMessage(
+                          internalGetTableChunkFieldFieldBuilder().getBuilder(), extensionRegistry);
+                      fieldTypeCase_ = 2;
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int fieldTypeCase_ = 0;
+          private java.lang.Object fieldType_;
+
+          public FieldTypeCase getFieldTypeCase() {
+            return FieldTypeCase.forNumber(fieldTypeCase_);
+          }
+
+          public Builder clearFieldType() {
+            fieldTypeCase_ = 0;
+            fieldType_ = null;
+            onChanged();
+            return this;
+          }
+
+          private int bitField0_;
+
+          private com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField,
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                      .Builder,
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                      .ImageChunkFieldOrBuilder>
+              imageChunkFieldBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * The image chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField image_chunk_field = 1;
+           * </code>
+           *
+           * @return Whether the imageChunkField field is set.
+           */
+          @java.lang.Override
+          public boolean hasImageChunkField() {
+            return fieldTypeCase_ == 1;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The image chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField image_chunk_field = 1;
+           * </code>
+           *
+           * @return The imageChunkField.
+           */
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+              getImageChunkField() {
+            if (imageChunkFieldBuilder_ == null) {
+              if (fieldTypeCase_ == 1) {
+                return (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                        .ImageChunkField)
+                    fieldType_;
+              }
+              return com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                  .getDefaultInstance();
+            } else {
+              if (fieldTypeCase_ == 1) {
+                return imageChunkFieldBuilder_.getMessage();
+              }
+              return com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                  .getDefaultInstance();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The image chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField image_chunk_field = 1;
+           * </code>
+           */
+          public Builder setImageChunkField(
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField value) {
+            if (imageChunkFieldBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              fieldType_ = value;
+              onChanged();
+            } else {
+              imageChunkFieldBuilder_.setMessage(value);
+            }
+            fieldTypeCase_ = 1;
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The image chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField image_chunk_field = 1;
+           * </code>
+           */
+          public Builder setImageChunkField(
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField.Builder
+                  builderForValue) {
+            if (imageChunkFieldBuilder_ == null) {
+              fieldType_ = builderForValue.build();
+              onChanged();
+            } else {
+              imageChunkFieldBuilder_.setMessage(builderForValue.build());
+            }
+            fieldTypeCase_ = 1;
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The image chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField image_chunk_field = 1;
+           * </code>
+           */
+          public Builder mergeImageChunkField(
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField value) {
+            if (imageChunkFieldBuilder_ == null) {
+              if (fieldTypeCase_ == 1
+                  && fieldType_
+                      != com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                          .ImageChunkField.getDefaultInstance()) {
+                fieldType_ =
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                        .newBuilder(
+                            (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                                    .ImageChunkField)
+                                fieldType_)
+                        .mergeFrom(value)
+                        .buildPartial();
+              } else {
+                fieldType_ = value;
+              }
+              onChanged();
+            } else {
+              if (fieldTypeCase_ == 1) {
+                imageChunkFieldBuilder_.mergeFrom(value);
+              } else {
+                imageChunkFieldBuilder_.setMessage(value);
+              }
+            }
+            fieldTypeCase_ = 1;
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The image chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField image_chunk_field = 1;
+           * </code>
+           */
+          public Builder clearImageChunkField() {
+            if (imageChunkFieldBuilder_ == null) {
+              if (fieldTypeCase_ == 1) {
+                fieldTypeCase_ = 0;
+                fieldType_ = null;
+                onChanged();
+              }
+            } else {
+              if (fieldTypeCase_ == 1) {
+                fieldTypeCase_ = 0;
+                fieldType_ = null;
+              }
+              imageChunkFieldBuilder_.clear();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The image chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField image_chunk_field = 1;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                  .Builder
+              getImageChunkFieldBuilder() {
+            return internalGetImageChunkFieldFieldBuilder().getBuilder();
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The image chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField image_chunk_field = 1;
+           * </code>
+           */
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                  .ImageChunkFieldOrBuilder
+              getImageChunkFieldOrBuilder() {
+            if ((fieldTypeCase_ == 1) && (imageChunkFieldBuilder_ != null)) {
+              return imageChunkFieldBuilder_.getMessageOrBuilder();
+            } else {
+              if (fieldTypeCase_ == 1) {
+                return (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                        .ImageChunkField)
+                    fieldType_;
+              }
+              return com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                  .getDefaultInstance();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The image chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField image_chunk_field = 1;
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField,
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                      .Builder,
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                      .ImageChunkFieldOrBuilder>
+              internalGetImageChunkFieldFieldBuilder() {
+            if (imageChunkFieldBuilder_ == null) {
+              if (!(fieldTypeCase_ == 1)) {
+                fieldType_ =
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                        .getDefaultInstance();
+              }
+              imageChunkFieldBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilder<
+                      com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField,
+                      com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ImageChunkField
+                          .Builder,
+                      com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                          .ImageChunkFieldOrBuilder>(
+                      (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                              .ImageChunkField)
+                          fieldType_,
+                      getParentForChildren(),
+                      isClean());
+              fieldType_ = null;
+            }
+            fieldTypeCase_ = 1;
+            onChanged();
+            return imageChunkFieldBuilder_;
+          }
+
+          private com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField,
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                      .Builder,
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                      .TableChunkFieldOrBuilder>
+              tableChunkFieldBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * The table chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField table_chunk_field = 2;
+           * </code>
+           *
+           * @return Whether the tableChunkField field is set.
+           */
+          @java.lang.Override
+          public boolean hasTableChunkField() {
+            return fieldTypeCase_ == 2;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The table chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField table_chunk_field = 2;
+           * </code>
+           *
+           * @return The tableChunkField.
+           */
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+              getTableChunkField() {
+            if (tableChunkFieldBuilder_ == null) {
+              if (fieldTypeCase_ == 2) {
+                return (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                        .TableChunkField)
+                    fieldType_;
+              }
+              return com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                  .getDefaultInstance();
+            } else {
+              if (fieldTypeCase_ == 2) {
+                return tableChunkFieldBuilder_.getMessage();
+              }
+              return com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                  .getDefaultInstance();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The table chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField table_chunk_field = 2;
+           * </code>
+           */
+          public Builder setTableChunkField(
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField value) {
+            if (tableChunkFieldBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              fieldType_ = value;
+              onChanged();
+            } else {
+              tableChunkFieldBuilder_.setMessage(value);
+            }
+            fieldTypeCase_ = 2;
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The table chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField table_chunk_field = 2;
+           * </code>
+           */
+          public Builder setTableChunkField(
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField.Builder
+                  builderForValue) {
+            if (tableChunkFieldBuilder_ == null) {
+              fieldType_ = builderForValue.build();
+              onChanged();
+            } else {
+              tableChunkFieldBuilder_.setMessage(builderForValue.build());
+            }
+            fieldTypeCase_ = 2;
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The table chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField table_chunk_field = 2;
+           * </code>
+           */
+          public Builder mergeTableChunkField(
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField value) {
+            if (tableChunkFieldBuilder_ == null) {
+              if (fieldTypeCase_ == 2
+                  && fieldType_
+                      != com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                          .TableChunkField.getDefaultInstance()) {
+                fieldType_ =
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                        .newBuilder(
+                            (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                                    .TableChunkField)
+                                fieldType_)
+                        .mergeFrom(value)
+                        .buildPartial();
+              } else {
+                fieldType_ = value;
+              }
+              onChanged();
+            } else {
+              if (fieldTypeCase_ == 2) {
+                tableChunkFieldBuilder_.mergeFrom(value);
+              } else {
+                tableChunkFieldBuilder_.setMessage(value);
+              }
+            }
+            fieldTypeCase_ = 2;
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The table chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField table_chunk_field = 2;
+           * </code>
+           */
+          public Builder clearTableChunkField() {
+            if (tableChunkFieldBuilder_ == null) {
+              if (fieldTypeCase_ == 2) {
+                fieldTypeCase_ = 0;
+                fieldType_ = null;
+                onChanged();
+              }
+            } else {
+              if (fieldTypeCase_ == 2) {
+                fieldTypeCase_ = 0;
+                fieldType_ = null;
+              }
+              tableChunkFieldBuilder_.clear();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The table chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField table_chunk_field = 2;
+           * </code>
+           */
+          public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                  .Builder
+              getTableChunkFieldBuilder() {
+            return internalGetTableChunkFieldFieldBuilder().getBuilder();
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The table chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField table_chunk_field = 2;
+           * </code>
+           */
+          @java.lang.Override
+          public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                  .TableChunkFieldOrBuilder
+              getTableChunkFieldOrBuilder() {
+            if ((fieldTypeCase_ == 2) && (tableChunkFieldBuilder_ != null)) {
+              return tableChunkFieldBuilder_.getMessageOrBuilder();
+            } else {
+              if (fieldTypeCase_ == 2) {
+                return (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                        .TableChunkField)
+                    fieldType_;
+              }
+              return com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                  .getDefaultInstance();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * The table chunk field in the chunk.
+           * </pre>
+           *
+           * <code>
+           * .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField table_chunk_field = 2;
+           * </code>
+           */
+          private com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField,
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                      .Builder,
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                      .TableChunkFieldOrBuilder>
+              internalGetTableChunkFieldFieldBuilder() {
+            if (tableChunkFieldBuilder_ == null) {
+              if (!(fieldTypeCase_ == 2)) {
+                fieldType_ =
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                        .getDefaultInstance();
+              }
+              tableChunkFieldBuilder_ =
+                  new com.google.protobuf.SingleFieldBuilder<
+                      com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField,
+                      com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.TableChunkField
+                          .Builder,
+                      com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                          .TableChunkFieldOrBuilder>(
+                      (com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                              .TableChunkField)
+                          fieldType_,
+                      getParentForChildren(),
+                      isClean());
+              fieldType_ = null;
+            }
+            fieldTypeCase_ = 2;
+            onChanged();
+            return tableChunkFieldBuilder_;
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField)
+        private static final com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                .ChunkField
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField();
+        }
+
+        public static com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ChunkField> PARSER =
+            new com.google.protobuf.AbstractParser<ChunkField>() {
+              @java.lang.Override
+              public ChunkField parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<ChunkField> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ChunkField> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
       private int bitField0_;
       public static final int CHUNK_ID_FIELD_NUMBER = 1;
 
@@ -82181,6 +90156,100 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         return pageFooters_.get(index);
       }
 
+      public static final int CHUNK_FIELDS_FIELD_NUMBER = 7;
+
+      @SuppressWarnings("serial")
+      private java.util.List<
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField>
+          chunkFields_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Chunk fields inside this chunk.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField>
+          getChunkFieldsList() {
+        return chunkFields_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Chunk fields inside this chunk.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkFieldOrBuilder>
+          getChunkFieldsOrBuilderList() {
+        return chunkFields_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Chunk fields inside this chunk.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public int getChunkFieldsCount() {
+        return chunkFields_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Chunk fields inside this chunk.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+          getChunkFields(int index) {
+        return chunkFields_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Chunk fields inside this chunk.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkFieldOrBuilder
+          getChunkFieldsOrBuilder(int index) {
+        return chunkFields_.get(index);
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -82212,6 +90281,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         }
         for (int i = 0; i < pageFooters_.size(); i++) {
           output.writeMessage(6, pageFooters_.get(i));
+        }
+        for (int i = 0; i < chunkFields_.size(); i++) {
+          output.writeMessage(7, chunkFields_.get(i));
         }
         getUnknownFields().writeTo(output);
       }
@@ -82245,6 +90317,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         for (int i = 0; i < pageFooters_.size(); i++) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, pageFooters_.get(i));
         }
+        for (int i = 0; i < chunkFields_.size(); i++) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, chunkFields_.get(i));
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -82270,6 +90345,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         }
         if (!getPageHeadersList().equals(other.getPageHeadersList())) return false;
         if (!getPageFootersList().equals(other.getPageFootersList())) return false;
+        if (!getChunkFieldsList().equals(other.getChunkFieldsList())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -82300,6 +90376,10 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         if (getPageFootersCount() > 0) {
           hash = (37 * hash) + PAGE_FOOTERS_FIELD_NUMBER;
           hash = (53 * hash) + getPageFootersList().hashCode();
+        }
+        if (getChunkFieldsCount() > 0) {
+          hash = (37 * hash) + CHUNK_FIELDS_FIELD_NUMBER;
+          hash = (53 * hash) + getChunkFieldsList().hashCode();
         }
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
@@ -82451,6 +90531,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             internalGetPageSpanFieldBuilder();
             internalGetPageHeadersFieldBuilder();
             internalGetPageFootersFieldBuilder();
+            internalGetChunkFieldsFieldBuilder();
           }
         }
 
@@ -82480,6 +90561,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             pageFootersBuilder_.clear();
           }
           bitField0_ = (bitField0_ & ~0x00000020);
+          if (chunkFieldsBuilder_ == null) {
+            chunkFields_ = java.util.Collections.emptyList();
+          } else {
+            chunkFields_ = null;
+            chunkFieldsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000040);
           return this;
         }
 
@@ -82535,6 +90623,15 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             result.pageFooters_ = pageFooters_;
           } else {
             result.pageFooters_ = pageFootersBuilder_.build();
+          }
+          if (chunkFieldsBuilder_ == null) {
+            if (((bitField0_ & 0x00000040) != 0)) {
+              chunkFields_ = java.util.Collections.unmodifiableList(chunkFields_);
+              bitField0_ = (bitField0_ & ~0x00000040);
+            }
+            result.chunkFields_ = chunkFields_;
+          } else {
+            result.chunkFields_ = chunkFieldsBuilder_.build();
           }
         }
 
@@ -82651,6 +90748,33 @@ public final class Document extends com.google.protobuf.GeneratedMessage
               }
             }
           }
+          if (chunkFieldsBuilder_ == null) {
+            if (!other.chunkFields_.isEmpty()) {
+              if (chunkFields_.isEmpty()) {
+                chunkFields_ = other.chunkFields_;
+                bitField0_ = (bitField0_ & ~0x00000040);
+              } else {
+                ensureChunkFieldsIsMutable();
+                chunkFields_.addAll(other.chunkFields_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.chunkFields_.isEmpty()) {
+              if (chunkFieldsBuilder_.isEmpty()) {
+                chunkFieldsBuilder_.dispose();
+                chunkFieldsBuilder_ = null;
+                chunkFields_ = other.chunkFields_;
+                bitField0_ = (bitField0_ & ~0x00000040);
+                chunkFieldsBuilder_ =
+                    com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                        ? internalGetChunkFieldsFieldBuilder()
+                        : null;
+              } else {
+                chunkFieldsBuilder_.addAllMessages(other.chunkFields_);
+              }
+            }
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -82735,6 +90859,21 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                     }
                     break;
                   } // case 50
+                case 58:
+                  {
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField m =
+                        input.readMessage(
+                            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+                                .parser(),
+                            extensionRegistry);
+                    if (chunkFieldsBuilder_ == null) {
+                      ensureChunkFieldsIsMutable();
+                      chunkFields_.add(m);
+                    } else {
+                      chunkFieldsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 58
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -84282,6 +92421,447 @@ public final class Document extends com.google.protobuf.GeneratedMessage
           return pageFootersBuilder_;
         }
 
+        private java.util.List<
+                com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField>
+            chunkFields_ = java.util.Collections.emptyList();
+
+        private void ensureChunkFieldsIsMutable() {
+          if (!((bitField0_ & 0x00000040) != 0)) {
+            chunkFields_ =
+                new java.util.ArrayList<
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField>(
+                    chunkFields_);
+            bitField0_ |= 0x00000040;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField,
+                com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField.Builder,
+                com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkFieldOrBuilder>
+            chunkFieldsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField>
+            getChunkFieldsList() {
+          if (chunkFieldsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(chunkFields_);
+          } else {
+            return chunkFieldsBuilder_.getMessageList();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public int getChunkFieldsCount() {
+          if (chunkFieldsBuilder_ == null) {
+            return chunkFields_.size();
+          } else {
+            return chunkFieldsBuilder_.getCount();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+            getChunkFields(int index) {
+          if (chunkFieldsBuilder_ == null) {
+            return chunkFields_.get(index);
+          } else {
+            return chunkFieldsBuilder_.getMessage(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public Builder setChunkFields(
+            int index,
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField value) {
+          if (chunkFieldsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureChunkFieldsIsMutable();
+            chunkFields_.set(index, value);
+            onChanged();
+          } else {
+            chunkFieldsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public Builder setChunkFields(
+            int index,
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField.Builder
+                builderForValue) {
+          if (chunkFieldsBuilder_ == null) {
+            ensureChunkFieldsIsMutable();
+            chunkFields_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            chunkFieldsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public Builder addChunkFields(
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField value) {
+          if (chunkFieldsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureChunkFieldsIsMutable();
+            chunkFields_.add(value);
+            onChanged();
+          } else {
+            chunkFieldsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public Builder addChunkFields(
+            int index,
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField value) {
+          if (chunkFieldsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureChunkFieldsIsMutable();
+            chunkFields_.add(index, value);
+            onChanged();
+          } else {
+            chunkFieldsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public Builder addChunkFields(
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField.Builder
+                builderForValue) {
+          if (chunkFieldsBuilder_ == null) {
+            ensureChunkFieldsIsMutable();
+            chunkFields_.add(builderForValue.build());
+            onChanged();
+          } else {
+            chunkFieldsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public Builder addChunkFields(
+            int index,
+            com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField.Builder
+                builderForValue) {
+          if (chunkFieldsBuilder_ == null) {
+            ensureChunkFieldsIsMutable();
+            chunkFields_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            chunkFieldsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public Builder addAllChunkFields(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField>
+                values) {
+          if (chunkFieldsBuilder_ == null) {
+            ensureChunkFieldsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, chunkFields_);
+            onChanged();
+          } else {
+            chunkFieldsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public Builder clearChunkFields() {
+          if (chunkFieldsBuilder_ == null) {
+            chunkFields_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000040);
+            onChanged();
+          } else {
+            chunkFieldsBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public Builder removeChunkFields(int index) {
+          if (chunkFieldsBuilder_ == null) {
+            ensureChunkFieldsIsMutable();
+            chunkFields_.remove(index);
+            onChanged();
+          } else {
+            chunkFieldsBuilder_.remove(index);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField.Builder
+            getChunkFieldsBuilder(int index) {
+          return internalGetChunkFieldsFieldBuilder().getBuilder(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkFieldOrBuilder
+            getChunkFieldsOrBuilder(int index) {
+          if (chunkFieldsBuilder_ == null) {
+            return chunkFields_.get(index);
+          } else {
+            return chunkFieldsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                        .ChunkFieldOrBuilder>
+            getChunkFieldsOrBuilderList() {
+          if (chunkFieldsBuilder_ != null) {
+            return chunkFieldsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(chunkFields_);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField.Builder
+            addChunkFieldsBuilder() {
+          return internalGetChunkFieldsFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+                      .getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField.Builder
+            addChunkFieldsBuilder(int index) {
+          return internalGetChunkFieldsFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+                      .getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Chunk fields inside this chunk.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField chunk_fields = 7;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField.Builder>
+            getChunkFieldsBuilderList() {
+          return internalGetChunkFieldsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField,
+                com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField.Builder,
+                com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkFieldOrBuilder>
+            internalGetChunkFieldsFieldBuilder() {
+          if (chunkFieldsBuilder_ == null) {
+            chunkFieldsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilder<
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField,
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk.ChunkField
+                        .Builder,
+                    com.google.cloud.documentai.v1.Document.ChunkedDocument.Chunk
+                        .ChunkFieldOrBuilder>(
+                    chunkFields_,
+                    ((bitField0_ & 0x00000040) != 0),
+                    getParentForChildren(),
+                    isClean());
+            chunkFields_ = null;
+          }
+          return chunkFieldsBuilder_;
+        }
+
         // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.Document.ChunkedDocument.Chunk)
       }
 
@@ -85227,6 +93807,963 @@ public final class Document extends com.google.protobuf.GeneratedMessage
 
     @java.lang.Override
     public com.google.cloud.documentai.v1.Document.ChunkedDocument getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface BlobAssetOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1.Document.BlobAsset)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The id of the blob asset.
+     * </pre>
+     *
+     * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The assetId.
+     */
+    java.lang.String getAssetId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The id of the blob asset.
+     * </pre>
+     *
+     * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for assetId.
+     */
+    com.google.protobuf.ByteString getAssetIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The content of the blob asset, for example, image bytes.
+     * </pre>
+     *
+     * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The content.
+     */
+    com.google.protobuf.ByteString getContent();
+
+    /**
+     *
+     *
+     * <pre>
+     * The mime type of the blob asset.
+     * An IANA published [media type (MIME
+     * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
+     * </pre>
+     *
+     * <code>string mime_type = 3;</code>
+     *
+     * @return The mimeType.
+     */
+    java.lang.String getMimeType();
+
+    /**
+     *
+     *
+     * <pre>
+     * The mime type of the blob asset.
+     * An IANA published [media type (MIME
+     * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
+     * </pre>
+     *
+     * <code>string mime_type = 3;</code>
+     *
+     * @return The bytes for mimeType.
+     */
+    com.google.protobuf.ByteString getMimeTypeBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Represents a blob asset. It's used to store the content of the inline blob
+   * in this document, for example, image bytes, such that it can be referenced
+   * by other fields in the document via asset ID.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.documentai.v1.Document.BlobAsset}
+   */
+  public static final class BlobAsset extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.Document.BlobAsset)
+      BlobAssetOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "BlobAsset");
+    }
+
+    // Use BlobAsset.newBuilder() to construct.
+    private BlobAsset(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private BlobAsset() {
+      assetId_ = "";
+      content_ = com.google.protobuf.ByteString.EMPTY;
+      mimeType_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.documentai.v1.DocumentProto
+          .internal_static_google_cloud_documentai_v1_Document_BlobAsset_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.documentai.v1.DocumentProto
+          .internal_static_google_cloud_documentai_v1_Document_BlobAsset_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.documentai.v1.Document.BlobAsset.class,
+              com.google.cloud.documentai.v1.Document.BlobAsset.Builder.class);
+    }
+
+    public static final int ASSET_ID_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object assetId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The id of the blob asset.
+     * </pre>
+     *
+     * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The assetId.
+     */
+    @java.lang.Override
+    public java.lang.String getAssetId() {
+      java.lang.Object ref = assetId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        assetId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The id of the blob asset.
+     * </pre>
+     *
+     * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for assetId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getAssetIdBytes() {
+      java.lang.Object ref = assetId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        assetId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The content of the blob asset, for example, image bytes.
+     * </pre>
+     *
+     * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The content.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getContent() {
+      return content_;
+    }
+
+    public static final int MIME_TYPE_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object mimeType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The mime type of the blob asset.
+     * An IANA published [media type (MIME
+     * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
+     * </pre>
+     *
+     * <code>string mime_type = 3;</code>
+     *
+     * @return The mimeType.
+     */
+    @java.lang.Override
+    public java.lang.String getMimeType() {
+      java.lang.Object ref = mimeType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mimeType_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The mime type of the blob asset.
+     * An IANA published [media type (MIME
+     * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
+     * </pre>
+     *
+     * <code>string mime_type = 3;</code>
+     *
+     * @return The bytes for mimeType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMimeTypeBytes() {
+      java.lang.Object ref = mimeType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        mimeType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(assetId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, assetId_);
+      }
+      if (!content_.isEmpty()) {
+        output.writeBytes(2, content_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mimeType_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, mimeType_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(assetId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, assetId_);
+      }
+      if (!content_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream.computeBytesSize(2, content_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mimeType_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, mimeType_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.documentai.v1.Document.BlobAsset)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.documentai.v1.Document.BlobAsset other =
+          (com.google.cloud.documentai.v1.Document.BlobAsset) obj;
+
+      if (!getAssetId().equals(other.getAssetId())) return false;
+      if (!getContent().equals(other.getContent())) return false;
+      if (!getMimeType().equals(other.getMimeType())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ASSET_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getAssetId().hashCode();
+      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getContent().hashCode();
+      hash = (37 * hash) + MIME_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getMimeType().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.documentai.v1.Document.BlobAsset parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.BlobAsset parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.BlobAsset parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.BlobAsset parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.BlobAsset parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.BlobAsset parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.BlobAsset parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.BlobAsset parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.BlobAsset parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.BlobAsset parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.BlobAsset parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.documentai.v1.Document.BlobAsset parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.documentai.v1.Document.BlobAsset prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents a blob asset. It's used to store the content of the inline blob
+     * in this document, for example, image bytes, such that it can be referenced
+     * by other fields in the document via asset ID.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.documentai.v1.Document.BlobAsset}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1.Document.BlobAsset)
+        com.google.cloud.documentai.v1.Document.BlobAssetOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.documentai.v1.DocumentProto
+            .internal_static_google_cloud_documentai_v1_Document_BlobAsset_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.documentai.v1.DocumentProto
+            .internal_static_google_cloud_documentai_v1_Document_BlobAsset_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.documentai.v1.Document.BlobAsset.class,
+                com.google.cloud.documentai.v1.Document.BlobAsset.Builder.class);
+      }
+
+      // Construct using com.google.cloud.documentai.v1.Document.BlobAsset.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        assetId_ = "";
+        content_ = com.google.protobuf.ByteString.EMPTY;
+        mimeType_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.documentai.v1.DocumentProto
+            .internal_static_google_cloud_documentai_v1_Document_BlobAsset_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.BlobAsset getDefaultInstanceForType() {
+        return com.google.cloud.documentai.v1.Document.BlobAsset.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.BlobAsset build() {
+        com.google.cloud.documentai.v1.Document.BlobAsset result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.BlobAsset buildPartial() {
+        com.google.cloud.documentai.v1.Document.BlobAsset result =
+            new com.google.cloud.documentai.v1.Document.BlobAsset(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.documentai.v1.Document.BlobAsset result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.assetId_ = assetId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.content_ = content_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.mimeType_ = mimeType_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.documentai.v1.Document.BlobAsset) {
+          return mergeFrom((com.google.cloud.documentai.v1.Document.BlobAsset) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.documentai.v1.Document.BlobAsset other) {
+        if (other == com.google.cloud.documentai.v1.Document.BlobAsset.getDefaultInstance())
+          return this;
+        if (!other.getAssetId().isEmpty()) {
+          assetId_ = other.assetId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getContent().isEmpty()) {
+          setContent(other.getContent());
+        }
+        if (!other.getMimeType().isEmpty()) {
+          mimeType_ = other.mimeType_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  assetId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  content_ = input.readBytes();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  mimeType_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object assetId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The id of the blob asset.
+       * </pre>
+       *
+       * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The assetId.
+       */
+      public java.lang.String getAssetId() {
+        java.lang.Object ref = assetId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          assetId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The id of the blob asset.
+       * </pre>
+       *
+       * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for assetId.
+       */
+      public com.google.protobuf.ByteString getAssetIdBytes() {
+        java.lang.Object ref = assetId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          assetId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The id of the blob asset.
+       * </pre>
+       *
+       * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The assetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAssetId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        assetId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The id of the blob asset.
+       * </pre>
+       *
+       * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAssetId() {
+        assetId_ = getDefaultInstance().getAssetId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The id of the blob asset.
+       * </pre>
+       *
+       * <code>string asset_id = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for assetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAssetIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        assetId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The content of the blob asset, for example, image bytes.
+       * </pre>
+       *
+       * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The content.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getContent() {
+        return content_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The content of the blob asset, for example, image bytes.
+       * </pre>
+       *
+       * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The content to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContent(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        content_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The content of the blob asset, for example, image bytes.
+       * </pre>
+       *
+       * <code>bytes content = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearContent() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        content_ = getDefaultInstance().getContent();
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object mimeType_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The mime type of the blob asset.
+       * An IANA published [media type (MIME
+       * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
+       * </pre>
+       *
+       * <code>string mime_type = 3;</code>
+       *
+       * @return The mimeType.
+       */
+      public java.lang.String getMimeType() {
+        java.lang.Object ref = mimeType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mimeType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The mime type of the blob asset.
+       * An IANA published [media type (MIME
+       * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
+       * </pre>
+       *
+       * <code>string mime_type = 3;</code>
+       *
+       * @return The bytes for mimeType.
+       */
+      public com.google.protobuf.ByteString getMimeTypeBytes() {
+        java.lang.Object ref = mimeType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          mimeType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The mime type of the blob asset.
+       * An IANA published [media type (MIME
+       * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
+       * </pre>
+       *
+       * <code>string mime_type = 3;</code>
+       *
+       * @param value The mimeType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMimeType(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        mimeType_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The mime type of the blob asset.
+       * An IANA published [media type (MIME
+       * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
+       * </pre>
+       *
+       * <code>string mime_type = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMimeType() {
+        mimeType_ = getDefaultInstance().getMimeType();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The mime type of the blob asset.
+       * An IANA published [media type (MIME
+       * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
+       * </pre>
+       *
+       * <code>string mime_type = 3;</code>
+       *
+       * @param value The bytes for mimeType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        mimeType_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1.Document.BlobAsset)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1.Document.BlobAsset)
+    private static final com.google.cloud.documentai.v1.Document.BlobAsset DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.documentai.v1.Document.BlobAsset();
+    }
+
+    public static com.google.cloud.documentai.v1.Document.BlobAsset getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BlobAsset> PARSER =
+        new com.google.protobuf.AbstractParser<BlobAsset>() {
+          @java.lang.Override
+          public BlobAsset parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<BlobAsset> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BlobAsset> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.Document.BlobAsset getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
   }
@@ -90582,6 +100119,108 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         : chunkedDocument_;
   }
 
+  public static final int BLOB_ASSETS_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.documentai.v1.Document.BlobAsset> blobAssets_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The blob assets in this document. This is used to store the
+   * content of the inline blobs in this document, for example, image bytes,
+   * such that it can be referenced by other fields in the document via asset
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.documentai.v1.Document.BlobAsset> getBlobAssetsList() {
+    return blobAssets_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The blob assets in this document. This is used to store the
+   * content of the inline blobs in this document, for example, image bytes,
+   * such that it can be referenced by other fields in the document via asset
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.documentai.v1.Document.BlobAssetOrBuilder>
+      getBlobAssetsOrBuilderList() {
+    return blobAssets_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The blob assets in this document. This is used to store the
+   * content of the inline blobs in this document, for example, image bytes,
+   * such that it can be referenced by other fields in the document via asset
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getBlobAssetsCount() {
+    return blobAssets_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The blob assets in this document. This is used to store the
+   * content of the inline blobs in this document, for example, image bytes,
+   * such that it can be referenced by other fields in the document via asset
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1.Document.BlobAsset getBlobAssets(int index) {
+    return blobAssets_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The blob assets in this document. This is used to store the
+   * content of the inline blobs in this document, for example, image bytes,
+   * such that it can be referenced by other fields in the document via asset
+   * id.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1.Document.BlobAssetOrBuilder getBlobAssetsOrBuilder(
+      int index) {
+    return blobAssets_.get(index);
+  }
+
   public static final int ENTITY_VALIDATION_OUTPUT_FIELD_NUMBER = 21;
   private com.google.cloud.documentai.v1.Document.EntityValidationOutput entityValidationOutput_;
 
@@ -90752,7 +100391,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    * The entity revision ID that `document.entities` field is based on.
    * If this field is set and `entities_revisions` is not empty, the entities in
    * `document.entities` field are the entities in the entity revision with this
-   * ID and `document.entity_validation_output` field is the
+   * id and `document.entity_validation_output` field is the
    * `entity_validation_output` field in this entity revision.
    * </pre>
    *
@@ -90780,7 +100419,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
    * The entity revision ID that `document.entities` field is based on.
    * If this field is set and `entities_revisions` is not empty, the entities in
    * `document.entities` field are the entities in the entity revision with this
-   * ID and `document.entity_validation_output` field is the
+   * id and `document.entity_validation_output` field is the
    * `entity_validation_output` field in this entity revision.
    * </pre>
    *
@@ -90860,6 +100499,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(18, getChunkedDocument());
     }
+    for (int i = 0; i < blobAssets_.size(); i++) {
+      output.writeMessage(19, blobAssets_.get(i));
+    }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(21, getEntityValidationOutput());
     }
@@ -90925,6 +100567,9 @@ public final class Document extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getChunkedDocument());
     }
+    for (int i = 0; i < blobAssets_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, blobAssets_.get(i));
+    }
     if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(21, getEntityValidationOutput());
@@ -90976,6 +100621,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
     if (hasChunkedDocument()) {
       if (!getChunkedDocument().equals(other.getChunkedDocument())) return false;
     }
+    if (!getBlobAssetsList().equals(other.getBlobAssetsList())) return false;
     if (hasEntityValidationOutput() != other.hasEntityValidationOutput()) return false;
     if (hasEntityValidationOutput()) {
       if (!getEntityValidationOutput().equals(other.getEntityValidationOutput())) return false;
@@ -91049,6 +100695,10 @@ public final class Document extends com.google.protobuf.GeneratedMessage
     if (hasChunkedDocument()) {
       hash = (37 * hash) + CHUNKED_DOCUMENT_FIELD_NUMBER;
       hash = (53 * hash) + getChunkedDocument().hashCode();
+    }
+    if (getBlobAssetsCount() > 0) {
+      hash = (37 * hash) + BLOB_ASSETS_FIELD_NUMBER;
+      hash = (53 * hash) + getBlobAssetsList().hashCode();
     }
     if (hasEntityValidationOutput()) {
       hash = (37 * hash) + ENTITY_VALIDATION_OUTPUT_FIELD_NUMBER;
@@ -91226,6 +100876,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         internalGetRevisionsFieldBuilder();
         internalGetDocumentLayoutFieldBuilder();
         internalGetChunkedDocumentFieldBuilder();
+        internalGetBlobAssetsFieldBuilder();
         internalGetEntityValidationOutputFieldBuilder();
         internalGetEntitiesRevisionsFieldBuilder();
       }
@@ -91300,6 +100951,13 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         chunkedDocumentBuilder_.dispose();
         chunkedDocumentBuilder_ = null;
       }
+      if (blobAssetsBuilder_ == null) {
+        blobAssets_ = java.util.Collections.emptyList();
+      } else {
+        blobAssets_ = null;
+        blobAssetsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00008000);
       entityValidationOutput_ = null;
       if (entityValidationOutputBuilder_ != null) {
         entityValidationOutputBuilder_.dispose();
@@ -91311,7 +100969,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         entitiesRevisions_ = null;
         entitiesRevisionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       entitiesRevisionId_ = "";
       sourceCase_ = 0;
       source_ = null;
@@ -91406,10 +101064,19 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       } else {
         result.revisions_ = revisionsBuilder_.build();
       }
+      if (blobAssetsBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)) {
+          blobAssets_ = java.util.Collections.unmodifiableList(blobAssets_);
+          bitField0_ = (bitField0_ & ~0x00008000);
+        }
+        result.blobAssets_ = blobAssets_;
+      } else {
+        result.blobAssets_ = blobAssetsBuilder_.build();
+      }
       if (entitiesRevisionsBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)) {
+        if (((bitField0_ & 0x00020000) != 0)) {
           entitiesRevisions_ = java.util.Collections.unmodifiableList(entitiesRevisions_);
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ = (bitField0_ & ~0x00020000);
         }
         result.entitiesRevisions_ = entitiesRevisions_;
       } else {
@@ -91447,14 +101114,14 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             chunkedDocumentBuilder_ == null ? chunkedDocument_ : chunkedDocumentBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.entityValidationOutput_ =
             entityValidationOutputBuilder_ == null
                 ? entityValidationOutput_
                 : entityValidationOutputBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.entitiesRevisionId_ = entitiesRevisionId_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -91666,6 +101333,33 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       if (other.hasChunkedDocument()) {
         mergeChunkedDocument(other.getChunkedDocument());
       }
+      if (blobAssetsBuilder_ == null) {
+        if (!other.blobAssets_.isEmpty()) {
+          if (blobAssets_.isEmpty()) {
+            blobAssets_ = other.blobAssets_;
+            bitField0_ = (bitField0_ & ~0x00008000);
+          } else {
+            ensureBlobAssetsIsMutable();
+            blobAssets_.addAll(other.blobAssets_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.blobAssets_.isEmpty()) {
+          if (blobAssetsBuilder_.isEmpty()) {
+            blobAssetsBuilder_.dispose();
+            blobAssetsBuilder_ = null;
+            blobAssets_ = other.blobAssets_;
+            bitField0_ = (bitField0_ & ~0x00008000);
+            blobAssetsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetBlobAssetsFieldBuilder()
+                    : null;
+          } else {
+            blobAssetsBuilder_.addAllMessages(other.blobAssets_);
+          }
+        }
+      }
       if (other.hasEntityValidationOutput()) {
         mergeEntityValidationOutput(other.getEntityValidationOutput());
       }
@@ -91673,7 +101367,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         if (!other.entitiesRevisions_.isEmpty()) {
           if (entitiesRevisions_.isEmpty()) {
             entitiesRevisions_ = other.entitiesRevisions_;
-            bitField0_ = (bitField0_ & ~0x00010000);
+            bitField0_ = (bitField0_ & ~0x00020000);
           } else {
             ensureEntitiesRevisionsIsMutable();
             entitiesRevisions_.addAll(other.entitiesRevisions_);
@@ -91686,7 +101380,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             entitiesRevisionsBuilder_.dispose();
             entitiesRevisionsBuilder_ = null;
             entitiesRevisions_ = other.entitiesRevisions_;
-            bitField0_ = (bitField0_ & ~0x00010000);
+            bitField0_ = (bitField0_ & ~0x00020000);
             entitiesRevisionsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetEntitiesRevisionsFieldBuilder()
@@ -91698,7 +101392,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getEntitiesRevisionId().isEmpty()) {
         entitiesRevisionId_ = other.entitiesRevisionId_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       switch (other.getSourceCase()) {
@@ -91884,12 +101578,26 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00004000;
                 break;
               } // case 146
+            case 154:
+              {
+                com.google.cloud.documentai.v1.Document.BlobAsset m =
+                    input.readMessage(
+                        com.google.cloud.documentai.v1.Document.BlobAsset.parser(),
+                        extensionRegistry);
+                if (blobAssetsBuilder_ == null) {
+                  ensureBlobAssetsIsMutable();
+                  blobAssets_.add(m);
+                } else {
+                  blobAssetsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 154
             case 170:
               {
                 input.readMessage(
                     internalGetEntityValidationOutputFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 170
             case 178:
@@ -91909,7 +101617,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
             case 186:
               {
                 entitiesRevisionId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 186
             default:
@@ -95721,6 +105429,470 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       return chunkedDocumentBuilder_;
     }
 
+    private java.util.List<com.google.cloud.documentai.v1.Document.BlobAsset> blobAssets_ =
+        java.util.Collections.emptyList();
+
+    private void ensureBlobAssetsIsMutable() {
+      if (!((bitField0_ & 0x00008000) != 0)) {
+        blobAssets_ =
+            new java.util.ArrayList<com.google.cloud.documentai.v1.Document.BlobAsset>(blobAssets_);
+        bitField0_ |= 0x00008000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.documentai.v1.Document.BlobAsset,
+            com.google.cloud.documentai.v1.Document.BlobAsset.Builder,
+            com.google.cloud.documentai.v1.Document.BlobAssetOrBuilder>
+        blobAssetsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.documentai.v1.Document.BlobAsset> getBlobAssetsList() {
+      if (blobAssetsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(blobAssets_);
+      } else {
+        return blobAssetsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getBlobAssetsCount() {
+      if (blobAssetsBuilder_ == null) {
+        return blobAssets_.size();
+      } else {
+        return blobAssetsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1.Document.BlobAsset getBlobAssets(int index) {
+      if (blobAssetsBuilder_ == null) {
+        return blobAssets_.get(index);
+      } else {
+        return blobAssetsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBlobAssets(
+        int index, com.google.cloud.documentai.v1.Document.BlobAsset value) {
+      if (blobAssetsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBlobAssetsIsMutable();
+        blobAssets_.set(index, value);
+        onChanged();
+      } else {
+        blobAssetsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setBlobAssets(
+        int index, com.google.cloud.documentai.v1.Document.BlobAsset.Builder builderForValue) {
+      if (blobAssetsBuilder_ == null) {
+        ensureBlobAssetsIsMutable();
+        blobAssets_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        blobAssetsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addBlobAssets(com.google.cloud.documentai.v1.Document.BlobAsset value) {
+      if (blobAssetsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBlobAssetsIsMutable();
+        blobAssets_.add(value);
+        onChanged();
+      } else {
+        blobAssetsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addBlobAssets(
+        int index, com.google.cloud.documentai.v1.Document.BlobAsset value) {
+      if (blobAssetsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureBlobAssetsIsMutable();
+        blobAssets_.add(index, value);
+        onChanged();
+      } else {
+        blobAssetsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addBlobAssets(
+        com.google.cloud.documentai.v1.Document.BlobAsset.Builder builderForValue) {
+      if (blobAssetsBuilder_ == null) {
+        ensureBlobAssetsIsMutable();
+        blobAssets_.add(builderForValue.build());
+        onChanged();
+      } else {
+        blobAssetsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addBlobAssets(
+        int index, com.google.cloud.documentai.v1.Document.BlobAsset.Builder builderForValue) {
+      if (blobAssetsBuilder_ == null) {
+        ensureBlobAssetsIsMutable();
+        blobAssets_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        blobAssetsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllBlobAssets(
+        java.lang.Iterable<? extends com.google.cloud.documentai.v1.Document.BlobAsset> values) {
+      if (blobAssetsBuilder_ == null) {
+        ensureBlobAssetsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blobAssets_);
+        onChanged();
+      } else {
+        blobAssetsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearBlobAssets() {
+      if (blobAssetsBuilder_ == null) {
+        blobAssets_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00008000);
+        onChanged();
+      } else {
+        blobAssetsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeBlobAssets(int index) {
+      if (blobAssetsBuilder_ == null) {
+        ensureBlobAssetsIsMutable();
+        blobAssets_.remove(index);
+        onChanged();
+      } else {
+        blobAssetsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1.Document.BlobAsset.Builder getBlobAssetsBuilder(
+        int index) {
+      return internalGetBlobAssetsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1.Document.BlobAssetOrBuilder getBlobAssetsOrBuilder(
+        int index) {
+      if (blobAssetsBuilder_ == null) {
+        return blobAssets_.get(index);
+      } else {
+        return blobAssetsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.documentai.v1.Document.BlobAssetOrBuilder>
+        getBlobAssetsOrBuilderList() {
+      if (blobAssetsBuilder_ != null) {
+        return blobAssetsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(blobAssets_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1.Document.BlobAsset.Builder addBlobAssetsBuilder() {
+      return internalGetBlobAssetsFieldBuilder()
+          .addBuilder(com.google.cloud.documentai.v1.Document.BlobAsset.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1.Document.BlobAsset.Builder addBlobAssetsBuilder(
+        int index) {
+      return internalGetBlobAssetsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.documentai.v1.Document.BlobAsset.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The blob assets in this document. This is used to store the
+     * content of the inline blobs in this document, for example, image bytes,
+     * such that it can be referenced by other fields in the document via asset
+     * id.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1.Document.BlobAsset blob_assets = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.documentai.v1.Document.BlobAsset.Builder>
+        getBlobAssetsBuilderList() {
+      return internalGetBlobAssetsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.documentai.v1.Document.BlobAsset,
+            com.google.cloud.documentai.v1.Document.BlobAsset.Builder,
+            com.google.cloud.documentai.v1.Document.BlobAssetOrBuilder>
+        internalGetBlobAssetsFieldBuilder() {
+      if (blobAssetsBuilder_ == null) {
+        blobAssetsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.documentai.v1.Document.BlobAsset,
+                com.google.cloud.documentai.v1.Document.BlobAsset.Builder,
+                com.google.cloud.documentai.v1.Document.BlobAssetOrBuilder>(
+                blobAssets_, ((bitField0_ & 0x00008000) != 0), getParentForChildren(), isClean());
+        blobAssets_ = null;
+      }
+      return blobAssetsBuilder_;
+    }
+
     private com.google.cloud.documentai.v1.Document.EntityValidationOutput entityValidationOutput_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.documentai.v1.Document.EntityValidationOutput,
@@ -95743,7 +105915,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * @return Whether the entityValidationOutput field is set.
      */
     public boolean hasEntityValidationOutput() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -95793,7 +105965,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       } else {
         entityValidationOutputBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -95817,7 +105989,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       } else {
         entityValidationOutputBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -95837,7 +106009,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
     public Builder mergeEntityValidationOutput(
         com.google.cloud.documentai.v1.Document.EntityValidationOutput value) {
       if (entityValidationOutputBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && entityValidationOutput_ != null
             && entityValidationOutput_
                 != com.google.cloud.documentai.v1.Document.EntityValidationOutput
@@ -95850,7 +106022,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         entityValidationOutputBuilder_.mergeFrom(value);
       }
       if (entityValidationOutput_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -95869,7 +106041,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearEntityValidationOutput() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       entityValidationOutput_ = null;
       if (entityValidationOutputBuilder_ != null) {
         entityValidationOutputBuilder_.dispose();
@@ -95893,7 +106065,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.documentai.v1.Document.EntityValidationOutput.Builder
         getEntityValidationOutputBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return internalGetEntityValidationOutputFieldBuilder().getBuilder();
     }
@@ -95954,11 +106126,11 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         entitiesRevisions_ = java.util.Collections.emptyList();
 
     private void ensureEntitiesRevisionsIsMutable() {
-      if (!((bitField0_ & 0x00010000) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         entitiesRevisions_ =
             new java.util.ArrayList<com.google.cloud.documentai.v1.Document.EntitiesRevision>(
                 entitiesRevisions_);
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
       }
     }
 
@@ -96225,7 +106397,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
     public Builder clearEntitiesRevisions() {
       if (entitiesRevisionsBuilder_ == null) {
         entitiesRevisions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
       } else {
         entitiesRevisionsBuilder_.clear();
@@ -96383,7 +106555,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.documentai.v1.Document.EntitiesRevision.Builder,
                 com.google.cloud.documentai.v1.Document.EntitiesRevisionOrBuilder>(
                 entitiesRevisions_,
-                ((bitField0_ & 0x00010000) != 0),
+                ((bitField0_ & 0x00020000) != 0),
                 getParentForChildren(),
                 isClean());
         entitiesRevisions_ = null;
@@ -96400,7 +106572,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * The entity revision ID that `document.entities` field is based on.
      * If this field is set and `entities_revisions` is not empty, the entities in
      * `document.entities` field are the entities in the entity revision with this
-     * ID and `document.entity_validation_output` field is the
+     * id and `document.entity_validation_output` field is the
      * `entity_validation_output` field in this entity revision.
      * </pre>
      *
@@ -96427,7 +106599,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * The entity revision ID that `document.entities` field is based on.
      * If this field is set and `entities_revisions` is not empty, the entities in
      * `document.entities` field are the entities in the entity revision with this
-     * ID and `document.entity_validation_output` field is the
+     * id and `document.entity_validation_output` field is the
      * `entity_validation_output` field in this entity revision.
      * </pre>
      *
@@ -96454,7 +106626,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * The entity revision ID that `document.entities` field is based on.
      * If this field is set and `entities_revisions` is not empty, the entities in
      * `document.entities` field are the entities in the entity revision with this
-     * ID and `document.entity_validation_output` field is the
+     * id and `document.entity_validation_output` field is the
      * `entity_validation_output` field in this entity revision.
      * </pre>
      *
@@ -96468,7 +106640,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       entitiesRevisionId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -96480,7 +106652,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * The entity revision ID that `document.entities` field is based on.
      * If this field is set and `entities_revisions` is not empty, the entities in
      * `document.entities` field are the entities in the entity revision with this
-     * ID and `document.entity_validation_output` field is the
+     * id and `document.entity_validation_output` field is the
      * `entity_validation_output` field in this entity revision.
      * </pre>
      *
@@ -96490,7 +106662,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearEntitiesRevisionId() {
       entitiesRevisionId_ = getDefaultInstance().getEntitiesRevisionId();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -96502,7 +106674,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
      * The entity revision ID that `document.entities` field is based on.
      * If this field is set and `entities_revisions` is not empty, the entities in
      * `document.entities` field are the entities in the entity revision with this
-     * ID and `document.entity_validation_output` field is the
+     * id and `document.entity_validation_output` field is the
      * `entity_validation_output` field in this entity revision.
      * </pre>
      *
@@ -96517,7 +106689,7 @@ public final class Document extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       entitiesRevisionId_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }

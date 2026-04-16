@@ -68,6 +68,7 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
             com.google.privacy.dlp.v2.ContentItem.Builder.class);
   }
 
+  private int bitField0_;
   private int dataItemCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -308,6 +309,59 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
     return com.google.privacy.dlp.v2.ByteContentItem.getDefaultInstance();
   }
 
+  public static final int CONTENT_METADATA_FIELD_NUMBER = 6;
+  private com.google.privacy.dlp.v2.ContentMetadata contentMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * User provided metadata for the content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
+   *
+   * @return Whether the contentMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasContentMetadata() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * User provided metadata for the content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
+   *
+   * @return The contentMetadata.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ContentMetadata getContentMetadata() {
+    return contentMetadata_ == null
+        ? com.google.privacy.dlp.v2.ContentMetadata.getDefaultInstance()
+        : contentMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * User provided metadata for the content.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ContentMetadataOrBuilder getContentMetadataOrBuilder() {
+    return contentMetadata_ == null
+        ? com.google.privacy.dlp.v2.ContentMetadata.getDefaultInstance()
+        : contentMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -331,6 +385,9 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
     if (dataItemCase_ == 5) {
       output.writeMessage(5, (com.google.privacy.dlp.v2.ByteContentItem) dataItem_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(6, getContentMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -353,6 +410,9 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               5, (com.google.privacy.dlp.v2.ByteContentItem) dataItem_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getContentMetadata());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -368,6 +428,10 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
     }
     com.google.privacy.dlp.v2.ContentItem other = (com.google.privacy.dlp.v2.ContentItem) obj;
 
+    if (hasContentMetadata() != other.hasContentMetadata()) return false;
+    if (hasContentMetadata()) {
+      if (!getContentMetadata().equals(other.getContentMetadata())) return false;
+    }
     if (!getDataItemCase().equals(other.getDataItemCase())) return false;
     switch (dataItemCase_) {
       case 3:
@@ -393,6 +457,10 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasContentMetadata()) {
+      hash = (37 * hash) + CONTENT_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getContentMetadata().hashCode();
+    }
     switch (dataItemCase_) {
       case 3:
         hash = (37 * hash) + VALUE_FIELD_NUMBER;
@@ -538,10 +606,19 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.privacy.dlp.v2.ContentItem.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetContentMetadataFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -553,6 +630,11 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
       }
       if (byteItemBuilder_ != null) {
         byteItemBuilder_.clear();
+      }
+      contentMetadata_ = null;
+      if (contentMetadataBuilder_ != null) {
+        contentMetadataBuilder_.dispose();
+        contentMetadataBuilder_ = null;
       }
       dataItemCase_ = 0;
       dataItem_ = null;
@@ -593,6 +675,13 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.privacy.dlp.v2.ContentItem result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.contentMetadata_ =
+            contentMetadataBuilder_ == null ? contentMetadata_ : contentMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.google.privacy.dlp.v2.ContentItem result) {
@@ -618,6 +707,9 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.privacy.dlp.v2.ContentItem other) {
       if (other == com.google.privacy.dlp.v2.ContentItem.getDefaultInstance()) return this;
+      if (other.hasContentMetadata()) {
+        mergeContentMetadata(other.getContentMetadata());
+      }
       switch (other.getDataItemCase()) {
         case VALUE:
           {
@@ -687,6 +779,13 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
                 dataItemCase_ = 5;
                 break;
               } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    internalGetContentMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1307,6 +1406,201 @@ public final class ContentItem extends com.google.protobuf.GeneratedMessage
       dataItemCase_ = 5;
       onChanged();
       return byteItemBuilder_;
+    }
+
+    private com.google.privacy.dlp.v2.ContentMetadata contentMetadata_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.ContentMetadata,
+            com.google.privacy.dlp.v2.ContentMetadata.Builder,
+            com.google.privacy.dlp.v2.ContentMetadataOrBuilder>
+        contentMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * User provided metadata for the content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
+     *
+     * @return Whether the contentMetadata field is set.
+     */
+    public boolean hasContentMetadata() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * User provided metadata for the content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
+     *
+     * @return The contentMetadata.
+     */
+    public com.google.privacy.dlp.v2.ContentMetadata getContentMetadata() {
+      if (contentMetadataBuilder_ == null) {
+        return contentMetadata_ == null
+            ? com.google.privacy.dlp.v2.ContentMetadata.getDefaultInstance()
+            : contentMetadata_;
+      } else {
+        return contentMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * User provided metadata for the content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
+     */
+    public Builder setContentMetadata(com.google.privacy.dlp.v2.ContentMetadata value) {
+      if (contentMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        contentMetadata_ = value;
+      } else {
+        contentMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * User provided metadata for the content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
+     */
+    public Builder setContentMetadata(
+        com.google.privacy.dlp.v2.ContentMetadata.Builder builderForValue) {
+      if (contentMetadataBuilder_ == null) {
+        contentMetadata_ = builderForValue.build();
+      } else {
+        contentMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * User provided metadata for the content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
+     */
+    public Builder mergeContentMetadata(com.google.privacy.dlp.v2.ContentMetadata value) {
+      if (contentMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && contentMetadata_ != null
+            && contentMetadata_ != com.google.privacy.dlp.v2.ContentMetadata.getDefaultInstance()) {
+          getContentMetadataBuilder().mergeFrom(value);
+        } else {
+          contentMetadata_ = value;
+        }
+      } else {
+        contentMetadataBuilder_.mergeFrom(value);
+      }
+      if (contentMetadata_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * User provided metadata for the content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
+     */
+    public Builder clearContentMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      contentMetadata_ = null;
+      if (contentMetadataBuilder_ != null) {
+        contentMetadataBuilder_.dispose();
+        contentMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * User provided metadata for the content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
+     */
+    public com.google.privacy.dlp.v2.ContentMetadata.Builder getContentMetadataBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetContentMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * User provided metadata for the content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
+     */
+    public com.google.privacy.dlp.v2.ContentMetadataOrBuilder getContentMetadataOrBuilder() {
+      if (contentMetadataBuilder_ != null) {
+        return contentMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return contentMetadata_ == null
+            ? com.google.privacy.dlp.v2.ContentMetadata.getDefaultInstance()
+            : contentMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * User provided metadata for the content.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ContentMetadata content_metadata = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.privacy.dlp.v2.ContentMetadata,
+            com.google.privacy.dlp.v2.ContentMetadata.Builder,
+            com.google.privacy.dlp.v2.ContentMetadataOrBuilder>
+        internalGetContentMetadataFieldBuilder() {
+      if (contentMetadataBuilder_ == null) {
+        contentMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.privacy.dlp.v2.ContentMetadata,
+                com.google.privacy.dlp.v2.ContentMetadata.Builder,
+                com.google.privacy.dlp.v2.ContentMetadataOrBuilder>(
+                getContentMetadata(), getParentForChildren(), isClean());
+        contentMetadata_ = null;
+      }
+      return contentMetadataBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.ContentItem)

@@ -1,5 +1,5 @@
-gapic_generator_version: 2.68.0
-googleapis_commitish: 456866bff20ee005cbc248b3478c577d28304e60
+gapic_generator_version: 2.70.0
+googleapis_commitish: 62e4ecb2f4390728990514fea14aad0431881a52
 libraries_bom_version: 26.79.0
 libraries:
 - api_shortname: accessapproval
@@ -183,6 +183,23 @@ libraries:
   rpc_documentation: https://cloud.google.com/app-hub/docs/reference/rpc
   GAPICs:
   - proto_path: google/cloud/apphub/v1
+- api_shortname: appoptimize
+  name_pretty: App Optimize API
+  product_documentation: https://docs.cloud.google.com/app-optimize/overview
+  api_description: The App Optimize API provides developers and platform teams with
+    tools to monitor, analyze, and improve the performance and cost-efficiency of
+    their cloud applications. 
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-appoptimize/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-appoptimize
+  api_id: appoptimize.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/appoptimize/v1beta
+  requires_billing: true
 - api_shortname: area120tables
   name_pretty: Area 120 Tables
   product_documentation: https://area120.google.com/
@@ -218,7 +235,7 @@ libraries:
   library_name: asset
   release_level: stable
   api_reference: https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview
-  issue_tracker: https://issuetracker.google.com/issues/new?component=187210&template=0
+  issue_tracker: https://issuetracker.google.com/issues/new?component=187210
   GAPICs:
   - proto_path: google/cloud/asset/v1
   - proto_path: google/cloud/asset/v1p1beta1
@@ -755,7 +772,7 @@ libraries:
   api_description: Database Center provides an organization-wide, cross-product fleet
     health platform to eliminate the overhead, complexity, and risk associated with
     aggregating and summarizing health signals through custom dashboards. Through
-    Database Center’s fleet health dashboard and API, database platform teams that
+    Database Center's fleet health dashboard and API, database platform teams that
     are responsible for reliability, compliance, security, cost, and administration
     of database fleets will now have a single pane of glass that pinpoints issues
     relevant to each team.
@@ -1314,7 +1331,7 @@ libraries:
     accounts.
   release_level: stable
   requires_billing: false
-  issue_tracker: https://issuetracker.google.com/issues/new?component=187161&template=0
+  issue_tracker: https://issuetracker.google.com/issues/new?component=187161
   GAPICs:
   - proto_path: google/iam/credentials/v1
 - api_shortname: iap
@@ -2907,7 +2924,7 @@ libraries:
   product_documentation: https://cloud.google.com/web-risk/docs/
   api_description: is a Google Cloud service that lets client applications check URLs
     against Google's constantly updated lists of unsafe web resources. Unsafe web
-    resources include social engineering sites—such as phishing and deceptive sites—and
+    resources include social engineering sites - such as phishing and deceptive sites - and
     sites that host malware or unwanted software. With the Web Risk API, you can quickly
     identify known bad sites, warn users before they click infected links, and prevent
     users from posting links to known infected pages from your site. The Web Risk
@@ -2997,3 +3014,4 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/workstations/v1
   - proto_path: google/cloud/workstations/v1beta
+

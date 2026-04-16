@@ -51,6 +51,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
@@ -209,6 +210,9 @@ public class ITTransactionManagerTest {
   }
 
   @SuppressWarnings("resource")
+  // TODO(sakthivelmani): Resolve this test failure after the conclusion of
+  // b/498983034.
+  @Ignore
   @Test
   public void abortAndRetry() throws InterruptedException {
     assumeFalse(

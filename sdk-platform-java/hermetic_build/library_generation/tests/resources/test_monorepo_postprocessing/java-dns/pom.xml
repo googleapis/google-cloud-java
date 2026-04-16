@@ -4,6 +4,6 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dns</artifactId>
   <packaging>jar</packaging>
-  <version>2.33.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-dns:current} -->
+  <version>2.89.0</version><!-- {x-version-update:google-cloud-dns:current} -->
   <name>Google Cloud DNS Parent</name>
 </project>

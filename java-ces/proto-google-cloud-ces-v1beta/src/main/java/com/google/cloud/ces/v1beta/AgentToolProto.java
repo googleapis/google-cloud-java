@@ -56,12 +56,13 @@ public final class AgentToolProto extends com.google.protobuf.GeneratedFile {
       "\n(google/cloud/ces/v1beta/agent_tool.pro"
           + "to\022\027google.cloud.ces.v1beta\032\037google/api/"
           + "field_behavior.proto\032\031google/api/resourc"
-          + "e.proto\"n\n\tAgentTool\022\021\n\004name\030\001 \001(\tB\003\340A\002\022"
-          + "\030\n\013description\030\002 \001(\tB\003\340A\001\0224\n\nroot_agent\030"
-          + "\003 \001(\tB \340A\001\372A\032\n\030ces.googleapis.com/AgentB"
-          + "^\n\033com.google.cloud.ces.v1betaB\016AgentToo"
-          + "lProtoP\001Z-cloud.google.com/go/ces/apiv1b"
-          + "eta/cespb;cespbb\006proto3"
+          + "e.proto\"\241\001\n\tAgentTool\022\021\n\004name\030\001 \001(\tB\003\340A\002"
+          + "\022\030\n\013description\030\002 \001(\tB\003\340A\001\0226\n\nroot_agent"
+          + "\030\003 \001(\tB\"\030\001\340A\001\372A\032\n\030ces.googleapis.com/Age"
+          + "nt\022/\n\005agent\030\004 \001(\tB \340A\001\372A\032\n\030ces.googleapi"
+          + "s.com/AgentB^\n\033com.google.cloud.ces.v1be"
+          + "taB\016AgentToolProtoP\001Z-cloud.google.com/g"
+          + "o/ces/apiv1beta/cespb;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -76,7 +77,7 @@ public final class AgentToolProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_AgentTool_descriptor,
             new java.lang.String[] {
-              "Name", "Description", "RootAgent",
+              "Name", "Description", "RootAgent", "Agent",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
