@@ -16,16 +16,13 @@
 
 package com.google.cloud.datastore.it;
 
-import com.google.api.gax.grpc.ChannelPoolSettings;
-import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
-import com.google.cloud.datastore.v1.DatastoreSettings;
-import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.common.base.Strings;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -52,24 +49,15 @@ public class ITDatastorePerformanceTest {
   private void runPhase(int threadCount, long durationMillis) throws Exception {
     System.out.println("\n--- STARTING PHASE: " + threadCount + " threads ---");
 
-    // Configure Dynamic Resizing
-    TransportChannelProvider channelProvider = DatastoreSettings.defaultGrpcTransportProviderBuilder()
-        .setChannelPoolSettings(ChannelPoolSettings.builder()
-            .setInitialChannelCount(1)
-            .setMinChannelCount(1)
-            .setMaxChannelCount(100)
-            .setMaxRpcsPerChannel(50)
-            .setMinRpcsPerChannel(10)
-            .build())
-        .build();
+    // Using Datastore DEFAULT channel pool configuration as requested
+    DatastoreOptions options = DatastoreOptions.getDefaultInstance();
 
-    DatastoreOptions options = DatastoreOptions.newBuilder()
-        .setTransportOptions(GrpcTransportOptions.newBuilder().build())
-        .setChannelProvider(channelProvider)
-        .build();
+    System.out.println("Project ID: " + options.getProjectId());
+    System.out.println("Host: " + options.getHost());
 
     Datastore datastore = options.getService();
     
+    // Ensure a real entity exists to fetch
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("PerfTestKind");
     Key key = keyFactory.newKey("perf-test-entity");
     datastore.put(com.google.cloud.datastore.Entity.newBuilder(key)
@@ -129,18 +117,14 @@ public class ITDatastorePerformanceTest {
 
   private Object getChannelPool(Datastore datastore) {
     try {
-      // 1. DatastoreImpl -> DatastoreRpc datastoreRpc
       Field rpcField = datastore.getClass().getDeclaredField("datastoreRpc");
       rpcField.setAccessible(true);
       Object rpc = rpcField.get(datastore);
 
-      // 2. GrpcDatastoreRpc -> GrpcDatastoreStub datastoreStub
       Field stubField = rpc.getClass().getDeclaredField("datastoreStub");
       stubField.setAccessible(true);
       Object stub = stubField.get(rpc);
 
-      // 3. GrpcDatastoreStub (AbstractStub) -> ClientContext clientContext (not directly accessible usually)
-      // BUT GrpcDatastoreStub has backgroundResources which contains the channel
       Field resourcesField = stub.getClass().getSuperclass().getDeclaredField("backgroundResources");
       resourcesField.setAccessible(true);
       List<?> resources = (List<?>) resourcesField.get(stub);
@@ -155,9 +139,7 @@ public class ITDatastorePerformanceTest {
               }
           }
       }
-    } catch (Exception e) {
-        // e.printStackTrace();
-    }
+    } catch (Exception ignored) {}
     return null;
   }
 
@@ -188,7 +170,7 @@ public class ITDatastorePerformanceTest {
       System.out.println(String.format("[PHASE: %d threads] Minute %d/15", targetLoad, minute));
       System.out.println(String.format("Throughput: %d req/min (~%.2f req/s) | Observed Peak Concurrency: %d", 
           requestsInInterval, requestsInInterval/60.0, observedPeak));
-      if (errorsInInterval > 0) System.out.println("Errors: " + errorsInInterval);
+      if (errorsInInterval > 0) System.out.println("Errors in last minute: " + errorsInInterval);
 
       Object pool = getChannelPool(datastore);
       if (pool != null) {
@@ -210,7 +192,7 @@ public class ITDatastorePerformanceTest {
           
           if (count > 100 || poolInternalMax > 100) overwhelmedCount++;
           if (poolSize <= 10 || i < 5 || i >= poolSize - 2) {
-            String status = (count > 100 || poolInternalMax > 100) ? "!! OVERWHELMED !!" : (poolInternalMax > 50 ? "Scaling" : "OK");
+            String status = (count > 100 || poolInternalMax > 100) ? "!! OVERWHELMED !!" : "OK";
             channelDetails.append(String.format("  Ch %02d: Current %3d, InternalPeak %3d [%s]\n", i, count, poolInternalMax, status));
           } else if (i == 5) {
             channelDetails.append("  ... (hiding middle channels)\n");
@@ -218,9 +200,9 @@ public class ITDatastorePerformanceTest {
         }
         System.out.println("Current Pool Size: " + poolSize);
         System.out.print(channelDetails.toString());
-        if (overwhelmedCount > 0) System.out.println(String.format("WARNING: %d/%d channels saturated!", overwhelmedCount, poolSize));
+        if (overwhelmedCount > 0) System.out.println(String.format("WARNING: %d/%d channels saturated (>=100 streams)!", overwhelmedCount, poolSize));
       } else {
-        System.out.println("Underlying channel is NOT a ChannelPool. Monitoring may be incorrect.");
+        System.out.println("Underlying channel is NOT a ChannelPool. This is expected if Datastore is not using gRPC or is using a single ManagedChannel.");
       }
     } catch (Exception e) {
       System.err.println("Failed to report: " + e.getMessage());
