@@ -772,7 +772,7 @@ libraries:
   api_description: Database Center provides an organization-wide, cross-product fleet
     health platform to eliminate the overhead, complexity, and risk associated with
     aggregating and summarizing health signals through custom dashboards. Through
-    Database Center’s fleet health dashboard and API, database platform teams that
+    Database Center's fleet health dashboard and API, database platform teams that
     are responsible for reliability, compliance, security, cost, and administration
     of database fleets will now have a single pane of glass that pinpoints issues
     relevant to each team.
@@ -2924,7 +2924,7 @@ libraries:
   product_documentation: https://cloud.google.com/web-risk/docs/
   api_description: is a Google Cloud service that lets client applications check URLs
     against Google's constantly updated lists of unsafe web resources. Unsafe web
-    resources include social engineering sites—such as phishing and deceptive sites—and
+    resources include social engineering sites - such as phishing and deceptive sites - and
     sites that host malware or unwanted software. With the Web Risk API, you can quickly
     identify known bad sites, warn users before they click infected links, and prevent
     users from posting links to known infected pages from your site. The Web Risk
