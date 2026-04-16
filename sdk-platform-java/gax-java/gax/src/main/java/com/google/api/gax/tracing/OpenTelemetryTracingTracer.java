@@ -31,7 +31,6 @@
 package com.google.api.gax.tracing;
 
 import com.google.api.client.util.Strings;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanBuilder;
@@ -42,8 +41,6 @@ import java.util.Map;
 import java.util.concurrent.CancellationException;
 
 /** An implementation of {@link ApiTracer} that uses OpenTelemetry to record traces. */
-@BetaApi
-@InternalApi
 class OpenTelemetryTracingTracer implements ApiTracer {
 
   static final String CONTENT_LENGTH_KEY = "Content-Length";

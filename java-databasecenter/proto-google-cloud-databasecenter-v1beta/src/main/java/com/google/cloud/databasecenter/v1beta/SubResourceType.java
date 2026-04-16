@@ -306,7 +306,7 @@ public enum SubResourceType implements com.google.protobuf.ProtocolMessageEnum {
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.databasecenter.v1beta.ServiceProto.getDescriptor()
         .getEnumTypes()
-        .get(2);
+        .get(1);
   }
 
   private static final SubResourceType[] VALUES = values();

@@ -57,7 +57,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 import java.io.IOException;
-import java.net.URI;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -355,14 +354,7 @@ public abstract class ClientContext {
     } else {
       throw new IllegalArgumentException("Could not infer GDCH api audience from settings");
     }
-
-    URI gdchAudienceUri;
-    try {
-      gdchAudienceUri = URI.create(audienceString);
-    } catch (IllegalArgumentException ex) { // thrown when passing a malformed uri string
-      throw new IllegalArgumentException("The GDC-H API audience string is not a valid URI", ex);
-    }
-    return ((GdchCredentials) credentials).createWithGdchAudience(gdchAudienceUri);
+    return ((GdchCredentials) credentials).createWithGdchAudience(audienceString);
   }
 
   /**

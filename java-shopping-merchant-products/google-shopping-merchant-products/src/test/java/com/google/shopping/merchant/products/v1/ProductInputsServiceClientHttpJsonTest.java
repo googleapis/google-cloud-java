@@ -80,7 +80,9 @@ public class ProductInputsServiceClientHttpJsonTest {
     ProductInput expectedResponse =
         ProductInput.newBuilder()
             .setName(ProductInputName.of("[ACCOUNT]", "[PRODUCTINPUT]").toString())
+            .setBase64EncodedName("base64EncodedName-1991168022")
             .setProduct("product-309474065")
+            .setBase64EncodedProduct("base64EncodedProduct1170417456")
             .setLegacyLocal(true)
             .setOfferId("offerId-1548813161")
             .setContentLanguage("contentLanguage810066673")
@@ -142,7 +144,9 @@ public class ProductInputsServiceClientHttpJsonTest {
     ProductInput expectedResponse =
         ProductInput.newBuilder()
             .setName(ProductInputName.of("[ACCOUNT]", "[PRODUCTINPUT]").toString())
+            .setBase64EncodedName("base64EncodedName-1991168022")
             .setProduct("product-309474065")
+            .setBase64EncodedProduct("base64EncodedProduct1170417456")
             .setLegacyLocal(true)
             .setOfferId("offerId-1548813161")
             .setContentLanguage("contentLanguage810066673")
@@ -156,7 +160,9 @@ public class ProductInputsServiceClientHttpJsonTest {
     ProductInput productInput =
         ProductInput.newBuilder()
             .setName(ProductInputName.of("[ACCOUNT]", "[PRODUCTINPUT]").toString())
+            .setBase64EncodedName("base64EncodedName-1991168022")
             .setProduct("product-309474065")
+            .setBase64EncodedProduct("base64EncodedProduct1170417456")
             .setLegacyLocal(true)
             .setOfferId("offerId-1548813161")
             .setContentLanguage("contentLanguage810066673")
@@ -196,7 +202,9 @@ public class ProductInputsServiceClientHttpJsonTest {
       ProductInput productInput =
           ProductInput.newBuilder()
               .setName(ProductInputName.of("[ACCOUNT]", "[PRODUCTINPUT]").toString())
+              .setBase64EncodedName("base64EncodedName-1991168022")
               .setProduct("product-309474065")
+              .setBase64EncodedProduct("base64EncodedProduct1170417456")
               .setLegacyLocal(true)
               .setOfferId("offerId-1548813161")
               .setContentLanguage("contentLanguage810066673")

@@ -119,6 +119,56 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
     return TtlCase.forNumber(ttlCase_);
   }
 
+  private int stopTtlCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object stopTtl_;
+
+  public enum StopTtlCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    AUTO_STOP_TIME(6),
+    AUTO_STOP_TTL(7),
+    STOPTTL_NOT_SET(0);
+    private final int value;
+
+    private StopTtlCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static StopTtlCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static StopTtlCase forNumber(int value) {
+      switch (value) {
+        case 6:
+          return AUTO_STOP_TIME;
+        case 7:
+          return AUTO_STOP_TTL;
+        case 0:
+          return STOPTTL_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public StopTtlCase getStopTtlCase() {
+    return StopTtlCase.forNumber(stopTtlCase_);
+  }
+
   public static final int IDLE_DELETE_TTL_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration idleDeleteTtl_;
 
@@ -319,6 +369,202 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
     return com.google.protobuf.Duration.getDefaultInstance();
   }
 
+  public static final int IDLE_STOP_TTL_FIELD_NUMBER = 5;
+  private com.google.protobuf.Duration idleStopTtl_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The duration to keep the cluster started while idling (when no
+   * jobs are running). Passing this threshold will cause the cluster to be
+   * stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+   * representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration idle_stop_ttl = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the idleStopTtl field is set.
+   */
+  @java.lang.Override
+  public boolean hasIdleStopTtl() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The duration to keep the cluster started while idling (when no
+   * jobs are running). Passing this threshold will cause the cluster to be
+   * stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+   * representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration idle_stop_ttl = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The idleStopTtl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getIdleStopTtl() {
+    return idleStopTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : idleStopTtl_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The duration to keep the cluster started while idling (when no
+   * jobs are running). Passing this threshold will cause the cluster to be
+   * stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+   * representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration idle_stop_ttl = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getIdleStopTtlOrBuilder() {
+    return idleStopTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : idleStopTtl_;
+  }
+
+  public static final int AUTO_STOP_TIME_FIELD_NUMBER = 6;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The time when cluster will be auto-stopped (see JSON
+   * representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp auto_stop_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoStopTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoStopTime() {
+    return stopTtlCase_ == 6;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The time when cluster will be auto-stopped (see JSON
+   * representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp auto_stop_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoStopTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getAutoStopTime() {
+    if (stopTtlCase_ == 6) {
+      return (com.google.protobuf.Timestamp) stopTtl_;
+    }
+    return com.google.protobuf.Timestamp.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The time when cluster will be auto-stopped (see JSON
+   * representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp auto_stop_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getAutoStopTimeOrBuilder() {
+    if (stopTtlCase_ == 6) {
+      return (com.google.protobuf.Timestamp) stopTtl_;
+    }
+    return com.google.protobuf.Timestamp.getDefaultInstance();
+  }
+
+  public static final int AUTO_STOP_TTL_FIELD_NUMBER = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The lifetime duration of the cluster. The cluster will be
+   * auto-stopped at the end of this period, calculated from the time of
+   * submission of the create or update cluster request. Minimum value is 10
+   * minutes; maximum value is 14 days (see JSON representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration auto_stop_ttl = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoStopTtl field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoStopTtl() {
+    return stopTtlCase_ == 7;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The lifetime duration of the cluster. The cluster will be
+   * auto-stopped at the end of this period, calculated from the time of
+   * submission of the create or update cluster request. Minimum value is 10
+   * minutes; maximum value is 14 days (see JSON representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration auto_stop_ttl = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoStopTtl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getAutoStopTtl() {
+    if (stopTtlCase_ == 7) {
+      return (com.google.protobuf.Duration) stopTtl_;
+    }
+    return com.google.protobuf.Duration.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The lifetime duration of the cluster. The cluster will be
+   * auto-stopped at the end of this period, calculated from the time of
+   * submission of the create or update cluster request. Minimum value is 10
+   * minutes; maximum value is 14 days (see JSON representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration auto_stop_ttl = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getAutoStopTtlOrBuilder() {
+    if (stopTtlCase_ == 7) {
+      return (com.google.protobuf.Duration) stopTtl_;
+    }
+    return com.google.protobuf.Duration.getDefaultInstance();
+  }
+
   public static final int IDLE_START_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp idleStartTime_;
 
@@ -340,7 +586,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasIdleStartTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -410,8 +656,17 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
     if (ttlCase_ == 3) {
       output.writeMessage(3, (com.google.protobuf.Duration) ttl_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getIdleStartTime());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(5, getIdleStopTtl());
+    }
+    if (stopTtlCase_ == 6) {
+      output.writeMessage(6, (com.google.protobuf.Timestamp) stopTtl_);
+    }
+    if (stopTtlCase_ == 7) {
+      output.writeMessage(7, (com.google.protobuf.Duration) stopTtl_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -435,8 +690,21 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.protobuf.Duration) ttl_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getIdleStartTime());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getIdleStopTtl());
+    }
+    if (stopTtlCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.protobuf.Timestamp) stopTtl_);
+    }
+    if (stopTtlCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.protobuf.Duration) stopTtl_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -458,6 +726,10 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
     if (hasIdleDeleteTtl()) {
       if (!getIdleDeleteTtl().equals(other.getIdleDeleteTtl())) return false;
     }
+    if (hasIdleStopTtl() != other.hasIdleStopTtl()) return false;
+    if (hasIdleStopTtl()) {
+      if (!getIdleStopTtl().equals(other.getIdleStopTtl())) return false;
+    }
     if (hasIdleStartTime() != other.hasIdleStartTime()) return false;
     if (hasIdleStartTime()) {
       if (!getIdleStartTime().equals(other.getIdleStartTime())) return false;
@@ -469,6 +741,17 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
         break;
       case 3:
         if (!getAutoDeleteTtl().equals(other.getAutoDeleteTtl())) return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getStopTtlCase().equals(other.getStopTtlCase())) return false;
+    switch (stopTtlCase_) {
+      case 6:
+        if (!getAutoStopTime().equals(other.getAutoStopTime())) return false;
+        break;
+      case 7:
+        if (!getAutoStopTtl().equals(other.getAutoStopTtl())) return false;
         break;
       case 0:
       default:
@@ -488,6 +771,10 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + IDLE_DELETE_TTL_FIELD_NUMBER;
       hash = (53 * hash) + getIdleDeleteTtl().hashCode();
     }
+    if (hasIdleStopTtl()) {
+      hash = (37 * hash) + IDLE_STOP_TTL_FIELD_NUMBER;
+      hash = (53 * hash) + getIdleStopTtl().hashCode();
+    }
     if (hasIdleStartTime()) {
       hash = (37 * hash) + IDLE_START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getIdleStartTime().hashCode();
@@ -500,6 +787,18 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
       case 3:
         hash = (37 * hash) + AUTO_DELETE_TTL_FIELD_NUMBER;
         hash = (53 * hash) + getAutoDeleteTtl().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (stopTtlCase_) {
+      case 6:
+        hash = (37 * hash) + AUTO_STOP_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getAutoStopTime().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + AUTO_STOP_TTL_FIELD_NUMBER;
+        hash = (53 * hash) + getAutoStopTtl().hashCode();
         break;
       case 0:
       default:
@@ -646,6 +945,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetIdleDeleteTtlFieldBuilder();
+        internalGetIdleStopTtlFieldBuilder();
         internalGetIdleStartTimeFieldBuilder();
       }
     }
@@ -665,6 +965,17 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
       if (autoDeleteTtlBuilder_ != null) {
         autoDeleteTtlBuilder_.clear();
       }
+      idleStopTtl_ = null;
+      if (idleStopTtlBuilder_ != null) {
+        idleStopTtlBuilder_.dispose();
+        idleStopTtlBuilder_ = null;
+      }
+      if (autoStopTimeBuilder_ != null) {
+        autoStopTimeBuilder_.clear();
+      }
+      if (autoStopTtlBuilder_ != null) {
+        autoStopTtlBuilder_.clear();
+      }
       idleStartTime_ = null;
       if (idleStartTimeBuilder_ != null) {
         idleStartTimeBuilder_.dispose();
@@ -672,6 +983,8 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
       }
       ttlCase_ = 0;
       ttl_ = null;
+      stopTtlCase_ = 0;
+      stopTtl_ = null;
       return this;
     }
 
@@ -716,9 +1029,14 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.idleStopTtl_ =
+            idleStopTtlBuilder_ == null ? idleStopTtl_ : idleStopTtlBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.idleStartTime_ =
             idleStartTimeBuilder_ == null ? idleStartTime_ : idleStartTimeBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -731,6 +1049,14 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
       }
       if (ttlCase_ == 3 && autoDeleteTtlBuilder_ != null) {
         result.ttl_ = autoDeleteTtlBuilder_.build();
+      }
+      result.stopTtlCase_ = stopTtlCase_;
+      result.stopTtl_ = this.stopTtl_;
+      if (stopTtlCase_ == 6 && autoStopTimeBuilder_ != null) {
+        result.stopTtl_ = autoStopTimeBuilder_.build();
+      }
+      if (stopTtlCase_ == 7 && autoStopTtlBuilder_ != null) {
+        result.stopTtl_ = autoStopTtlBuilder_.build();
       }
     }
 
@@ -749,6 +1075,9 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
       if (other.hasIdleDeleteTtl()) {
         mergeIdleDeleteTtl(other.getIdleDeleteTtl());
       }
+      if (other.hasIdleStopTtl()) {
+        mergeIdleStopTtl(other.getIdleStopTtl());
+      }
       if (other.hasIdleStartTime()) {
         mergeIdleStartTime(other.getIdleStartTime());
       }
@@ -764,6 +1093,22 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
             break;
           }
         case TTL_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getStopTtlCase()) {
+        case AUTO_STOP_TIME:
+          {
+            mergeAutoStopTime(other.getAutoStopTime());
+            break;
+          }
+        case AUTO_STOP_TTL:
+          {
+            mergeAutoStopTtl(other.getAutoStopTtl());
+            break;
+          }
+        case STOPTTL_NOT_SET:
           {
             break;
           }
@@ -819,9 +1164,30 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetIdleStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    internalGetIdleStopTtlFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(
+                    internalGetAutoStopTimeFieldBuilder().getBuilder(), extensionRegistry);
+                stopTtlCase_ = 6;
+                break;
+              } // case 50
+            case 58:
+              {
+                input.readMessage(
+                    internalGetAutoStopTtlFieldBuilder().getBuilder(), extensionRegistry);
+                stopTtlCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -849,6 +1215,20 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearTtl() {
       ttlCase_ = 0;
       ttl_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int stopTtlCase_ = 0;
+    private java.lang.Object stopTtl_;
+
+    public StopTtlCase getStopTtlCase() {
+      return StopTtlCase.forNumber(stopTtlCase_);
+    }
+
+    public Builder clearStopTtl() {
+      stopTtlCase_ = 0;
+      stopTtl_ = null;
       onChanged();
       return this;
     }
@@ -1610,6 +1990,752 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
       return autoDeleteTtlBuilder_;
     }
 
+    private com.google.protobuf.Duration idleStopTtl_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        idleStopTtlBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration to keep the cluster started while idling (when no
+     * jobs are running). Passing this threshold will cause the cluster to be
+     * stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration idle_stop_ttl = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the idleStopTtl field is set.
+     */
+    public boolean hasIdleStopTtl() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration to keep the cluster started while idling (when no
+     * jobs are running). Passing this threshold will cause the cluster to be
+     * stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration idle_stop_ttl = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The idleStopTtl.
+     */
+    public com.google.protobuf.Duration getIdleStopTtl() {
+      if (idleStopTtlBuilder_ == null) {
+        return idleStopTtl_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : idleStopTtl_;
+      } else {
+        return idleStopTtlBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration to keep the cluster started while idling (when no
+     * jobs are running). Passing this threshold will cause the cluster to be
+     * stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration idle_stop_ttl = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIdleStopTtl(com.google.protobuf.Duration value) {
+      if (idleStopTtlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        idleStopTtl_ = value;
+      } else {
+        idleStopTtlBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration to keep the cluster started while idling (when no
+     * jobs are running). Passing this threshold will cause the cluster to be
+     * stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration idle_stop_ttl = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setIdleStopTtl(com.google.protobuf.Duration.Builder builderForValue) {
+      if (idleStopTtlBuilder_ == null) {
+        idleStopTtl_ = builderForValue.build();
+      } else {
+        idleStopTtlBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration to keep the cluster started while idling (when no
+     * jobs are running). Passing this threshold will cause the cluster to be
+     * stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration idle_stop_ttl = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeIdleStopTtl(com.google.protobuf.Duration value) {
+      if (idleStopTtlBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && idleStopTtl_ != null
+            && idleStopTtl_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getIdleStopTtlBuilder().mergeFrom(value);
+        } else {
+          idleStopTtl_ = value;
+        }
+      } else {
+        idleStopTtlBuilder_.mergeFrom(value);
+      }
+      if (idleStopTtl_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration to keep the cluster started while idling (when no
+     * jobs are running). Passing this threshold will cause the cluster to be
+     * stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration idle_stop_ttl = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearIdleStopTtl() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      idleStopTtl_ = null;
+      if (idleStopTtlBuilder_ != null) {
+        idleStopTtlBuilder_.dispose();
+        idleStopTtlBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration to keep the cluster started while idling (when no
+     * jobs are running). Passing this threshold will cause the cluster to be
+     * stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration idle_stop_ttl = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getIdleStopTtlBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetIdleStopTtlFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration to keep the cluster started while idling (when no
+     * jobs are running). Passing this threshold will cause the cluster to be
+     * stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration idle_stop_ttl = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getIdleStopTtlOrBuilder() {
+      if (idleStopTtlBuilder_ != null) {
+        return idleStopTtlBuilder_.getMessageOrBuilder();
+      } else {
+        return idleStopTtl_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : idleStopTtl_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The duration to keep the cluster started while idling (when no
+     * jobs are running). Passing this threshold will cause the cluster to be
+     * stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+     * representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration idle_stop_ttl = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        internalGetIdleStopTtlFieldBuilder() {
+      if (idleStopTtlBuilder_ == null) {
+        idleStopTtlBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getIdleStopTtl(), getParentForChildren(), isClean());
+        idleStopTtl_ = null;
+      }
+      return idleStopTtlBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        autoStopTimeBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when cluster will be auto-stopped (see JSON
+     * representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_stop_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the autoStopTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutoStopTime() {
+      return stopTtlCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when cluster will be auto-stopped (see JSON
+     * representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_stop_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autoStopTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getAutoStopTime() {
+      if (autoStopTimeBuilder_ == null) {
+        if (stopTtlCase_ == 6) {
+          return (com.google.protobuf.Timestamp) stopTtl_;
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      } else {
+        if (stopTtlCase_ == 6) {
+          return autoStopTimeBuilder_.getMessage();
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when cluster will be auto-stopped (see JSON
+     * representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_stop_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoStopTime(com.google.protobuf.Timestamp value) {
+      if (autoStopTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stopTtl_ = value;
+        onChanged();
+      } else {
+        autoStopTimeBuilder_.setMessage(value);
+      }
+      stopTtlCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when cluster will be auto-stopped (see JSON
+     * representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_stop_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoStopTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (autoStopTimeBuilder_ == null) {
+        stopTtl_ = builderForValue.build();
+        onChanged();
+      } else {
+        autoStopTimeBuilder_.setMessage(builderForValue.build());
+      }
+      stopTtlCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when cluster will be auto-stopped (see JSON
+     * representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_stop_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAutoStopTime(com.google.protobuf.Timestamp value) {
+      if (autoStopTimeBuilder_ == null) {
+        if (stopTtlCase_ == 6 && stopTtl_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          stopTtl_ =
+              com.google.protobuf.Timestamp.newBuilder((com.google.protobuf.Timestamp) stopTtl_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stopTtl_ = value;
+        }
+        onChanged();
+      } else {
+        if (stopTtlCase_ == 6) {
+          autoStopTimeBuilder_.mergeFrom(value);
+        } else {
+          autoStopTimeBuilder_.setMessage(value);
+        }
+      }
+      stopTtlCase_ = 6;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when cluster will be auto-stopped (see JSON
+     * representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_stop_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAutoStopTime() {
+      if (autoStopTimeBuilder_ == null) {
+        if (stopTtlCase_ == 6) {
+          stopTtlCase_ = 0;
+          stopTtl_ = null;
+          onChanged();
+        }
+      } else {
+        if (stopTtlCase_ == 6) {
+          stopTtlCase_ = 0;
+          stopTtl_ = null;
+        }
+        autoStopTimeBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when cluster will be auto-stopped (see JSON
+     * representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_stop_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getAutoStopTimeBuilder() {
+      return internalGetAutoStopTimeFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when cluster will be auto-stopped (see JSON
+     * representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_stop_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getAutoStopTimeOrBuilder() {
+      if ((stopTtlCase_ == 6) && (autoStopTimeBuilder_ != null)) {
+        return autoStopTimeBuilder_.getMessageOrBuilder();
+      } else {
+        if (stopTtlCase_ == 6) {
+          return (com.google.protobuf.Timestamp) stopTtl_;
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The time when cluster will be auto-stopped (see JSON
+     * representation of
+     * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp auto_stop_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        internalGetAutoStopTimeFieldBuilder() {
+      if (autoStopTimeBuilder_ == null) {
+        if (!(stopTtlCase_ == 6)) {
+          stopTtl_ = com.google.protobuf.Timestamp.getDefaultInstance();
+        }
+        autoStopTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                (com.google.protobuf.Timestamp) stopTtl_, getParentForChildren(), isClean());
+        stopTtl_ = null;
+      }
+      stopTtlCase_ = 6;
+      onChanged();
+      return autoStopTimeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        autoStopTtlBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The lifetime duration of the cluster. The cluster will be
+     * auto-stopped at the end of this period, calculated from the time of
+     * submission of the create or update cluster request. Minimum value is 10
+     * minutes; maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration auto_stop_ttl = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the autoStopTtl field is set.
+     */
+    @java.lang.Override
+    public boolean hasAutoStopTtl() {
+      return stopTtlCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The lifetime duration of the cluster. The cluster will be
+     * auto-stopped at the end of this period, calculated from the time of
+     * submission of the create or update cluster request. Minimum value is 10
+     * minutes; maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration auto_stop_ttl = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autoStopTtl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getAutoStopTtl() {
+      if (autoStopTtlBuilder_ == null) {
+        if (stopTtlCase_ == 7) {
+          return (com.google.protobuf.Duration) stopTtl_;
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      } else {
+        if (stopTtlCase_ == 7) {
+          return autoStopTtlBuilder_.getMessage();
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The lifetime duration of the cluster. The cluster will be
+     * auto-stopped at the end of this period, calculated from the time of
+     * submission of the create or update cluster request. Minimum value is 10
+     * minutes; maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration auto_stop_ttl = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoStopTtl(com.google.protobuf.Duration value) {
+      if (autoStopTtlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        stopTtl_ = value;
+        onChanged();
+      } else {
+        autoStopTtlBuilder_.setMessage(value);
+      }
+      stopTtlCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The lifetime duration of the cluster. The cluster will be
+     * auto-stopped at the end of this period, calculated from the time of
+     * submission of the create or update cluster request. Minimum value is 10
+     * minutes; maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration auto_stop_ttl = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoStopTtl(com.google.protobuf.Duration.Builder builderForValue) {
+      if (autoStopTtlBuilder_ == null) {
+        stopTtl_ = builderForValue.build();
+        onChanged();
+      } else {
+        autoStopTtlBuilder_.setMessage(builderForValue.build());
+      }
+      stopTtlCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The lifetime duration of the cluster. The cluster will be
+     * auto-stopped at the end of this period, calculated from the time of
+     * submission of the create or update cluster request. Minimum value is 10
+     * minutes; maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration auto_stop_ttl = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAutoStopTtl(com.google.protobuf.Duration value) {
+      if (autoStopTtlBuilder_ == null) {
+        if (stopTtlCase_ == 7 && stopTtl_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          stopTtl_ =
+              com.google.protobuf.Duration.newBuilder((com.google.protobuf.Duration) stopTtl_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          stopTtl_ = value;
+        }
+        onChanged();
+      } else {
+        if (stopTtlCase_ == 7) {
+          autoStopTtlBuilder_.mergeFrom(value);
+        } else {
+          autoStopTtlBuilder_.setMessage(value);
+        }
+      }
+      stopTtlCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The lifetime duration of the cluster. The cluster will be
+     * auto-stopped at the end of this period, calculated from the time of
+     * submission of the create or update cluster request. Minimum value is 10
+     * minutes; maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration auto_stop_ttl = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAutoStopTtl() {
+      if (autoStopTtlBuilder_ == null) {
+        if (stopTtlCase_ == 7) {
+          stopTtlCase_ = 0;
+          stopTtl_ = null;
+          onChanged();
+        }
+      } else {
+        if (stopTtlCase_ == 7) {
+          stopTtlCase_ = 0;
+          stopTtl_ = null;
+        }
+        autoStopTtlBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The lifetime duration of the cluster. The cluster will be
+     * auto-stopped at the end of this period, calculated from the time of
+     * submission of the create or update cluster request. Minimum value is 10
+     * minutes; maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration auto_stop_ttl = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getAutoStopTtlBuilder() {
+      return internalGetAutoStopTtlFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The lifetime duration of the cluster. The cluster will be
+     * auto-stopped at the end of this period, calculated from the time of
+     * submission of the create or update cluster request. Minimum value is 10
+     * minutes; maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration auto_stop_ttl = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getAutoStopTtlOrBuilder() {
+      if ((stopTtlCase_ == 7) && (autoStopTtlBuilder_ != null)) {
+        return autoStopTtlBuilder_.getMessageOrBuilder();
+      } else {
+        if (stopTtlCase_ == 7) {
+          return (com.google.protobuf.Duration) stopTtl_;
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The lifetime duration of the cluster. The cluster will be
+     * auto-stopped at the end of this period, calculated from the time of
+     * submission of the create or update cluster request. Minimum value is 10
+     * minutes; maximum value is 14 days (see JSON representation of
+     * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration auto_stop_ttl = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        internalGetAutoStopTtlFieldBuilder() {
+      if (autoStopTtlBuilder_ == null) {
+        if (!(stopTtlCase_ == 7)) {
+          stopTtl_ = com.google.protobuf.Duration.getDefaultInstance();
+        }
+        autoStopTtlBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                (com.google.protobuf.Duration) stopTtl_, getParentForChildren(), isClean());
+        stopTtl_ = null;
+      }
+      stopTtlCase_ = 7;
+      onChanged();
+      return autoStopTtlBuilder_;
+    }
+
     private com.google.protobuf.Timestamp idleStartTime_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -1634,7 +2760,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the idleStartTime field is set.
      */
     public boolean hasIdleStartTime() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -1686,7 +2812,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
       } else {
         idleStartTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1711,7 +2837,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
       } else {
         idleStartTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1732,7 +2858,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeIdleStartTime(com.google.protobuf.Timestamp value) {
       if (idleStartTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && idleStartTime_ != null
             && idleStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getIdleStartTimeBuilder().mergeFrom(value);
@@ -1743,7 +2869,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
         idleStartTimeBuilder_.mergeFrom(value);
       }
       if (idleStartTime_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1764,7 +2890,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearIdleStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000040);
       idleStartTime_ = null;
       if (idleStartTimeBuilder_ != null) {
         idleStartTimeBuilder_.dispose();
@@ -1789,7 +2915,7 @@ public final class LifecycleConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getIdleStartTimeBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetIdleStartTimeFieldBuilder().getBuilder();
     }

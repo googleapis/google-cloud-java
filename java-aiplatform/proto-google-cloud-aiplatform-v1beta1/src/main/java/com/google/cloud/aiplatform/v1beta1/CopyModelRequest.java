@@ -55,6 +55,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
   private CopyModelRequest() {
     parent_ = "";
     sourceModel_ = "";
+    customServiceAccount_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -469,6 +470,77 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
         : encryptionSpec_;
   }
 
+  public static final int CUSTOM_SERVICE_ACCOUNT_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customServiceAccount_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-provided custom service account to use to do the copy
+   * model. If empty, [Vertex AI Service
+   * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+   * will be used to access resources needed to upload the model. This account
+   * must belong to the destination project where the model is copied to,
+   * i.e., the project specified in the `parent` field of this request and
+   * have the Vertex AI Service Agent role in the source project.
+   *
+   * Requires the user copying the Model to have the
+   * `iam.serviceAccounts.actAs` permission on this service account.
+   * </pre>
+   *
+   * <code>string custom_service_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The customServiceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getCustomServiceAccount() {
+    java.lang.Object ref = customServiceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      customServiceAccount_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-provided custom service account to use to do the copy
+   * model. If empty, [Vertex AI Service
+   * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+   * will be used to access resources needed to upload the model. This account
+   * must belong to the destination project where the model is copied to,
+   * i.e., the project specified in the `parent` field of this request and
+   * have the Vertex AI Service Agent role in the source project.
+   *
+   * Requires the user copying the Model to have the
+   * `iam.serviceAccounts.actAs` permission on this service account.
+   * </pre>
+   *
+   * <code>string custom_service_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for customServiceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCustomServiceAccountBytes() {
+    java.lang.Object ref = customServiceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      customServiceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -498,6 +570,9 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
     if (destinationModelCase_ == 5) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, destinationModel_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(customServiceAccount_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, customServiceAccount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -522,6 +597,9 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
     if (destinationModelCase_ == 5) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, destinationModel_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(customServiceAccount_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, customServiceAccount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -544,6 +622,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
     if (hasEncryptionSpec()) {
       if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
+    if (!getCustomServiceAccount().equals(other.getCustomServiceAccount())) return false;
     if (!getDestinationModelCase().equals(other.getDestinationModelCase())) return false;
     switch (destinationModelCase_) {
       case 4:
@@ -574,6 +653,8 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
+    hash = (37 * hash) + CUSTOM_SERVICE_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getCustomServiceAccount().hashCode();
     switch (destinationModelCase_) {
       case 4:
         hash = (37 * hash) + MODEL_ID_FIELD_NUMBER;
@@ -743,6 +824,7 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
         encryptionSpecBuilder_.dispose();
         encryptionSpecBuilder_ = null;
       }
+      customServiceAccount_ = "";
       destinationModelCase_ = 0;
       destinationModel_ = null;
       return this;
@@ -794,6 +876,9 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
             encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.customServiceAccount_ = customServiceAccount_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -827,6 +912,11 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasEncryptionSpec()) {
         mergeEncryptionSpec(other.getEncryptionSpec());
+      }
+      if (!other.getCustomServiceAccount().isEmpty()) {
+        customServiceAccount_ = other.customServiceAccount_;
+        bitField0_ |= 0x00000020;
+        onChanged();
       }
       switch (other.getDestinationModelCase()) {
         case MODEL_ID:
@@ -907,6 +997,12 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
                 destinationModel_ = s;
                 break;
               } // case 42
+            case 58:
+              {
+                customServiceAccount_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1727,6 +1823,162 @@ public final class CopyModelRequest extends com.google.protobuf.GeneratedMessage
         encryptionSpec_ = null;
       }
       return encryptionSpecBuilder_;
+    }
+
+    private java.lang.Object customServiceAccount_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-provided custom service account to use to do the copy
+     * model. If empty, [Vertex AI Service
+     * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+     * will be used to access resources needed to upload the model. This account
+     * must belong to the destination project where the model is copied to,
+     * i.e., the project specified in the `parent` field of this request and
+     * have the Vertex AI Service Agent role in the source project.
+     *
+     * Requires the user copying the Model to have the
+     * `iam.serviceAccounts.actAs` permission on this service account.
+     * </pre>
+     *
+     * <code>string custom_service_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The customServiceAccount.
+     */
+    public java.lang.String getCustomServiceAccount() {
+      java.lang.Object ref = customServiceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customServiceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-provided custom service account to use to do the copy
+     * model. If empty, [Vertex AI Service
+     * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+     * will be used to access resources needed to upload the model. This account
+     * must belong to the destination project where the model is copied to,
+     * i.e., the project specified in the `parent` field of this request and
+     * have the Vertex AI Service Agent role in the source project.
+     *
+     * Requires the user copying the Model to have the
+     * `iam.serviceAccounts.actAs` permission on this service account.
+     * </pre>
+     *
+     * <code>string custom_service_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for customServiceAccount.
+     */
+    public com.google.protobuf.ByteString getCustomServiceAccountBytes() {
+      java.lang.Object ref = customServiceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        customServiceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-provided custom service account to use to do the copy
+     * model. If empty, [Vertex AI Service
+     * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+     * will be used to access resources needed to upload the model. This account
+     * must belong to the destination project where the model is copied to,
+     * i.e., the project specified in the `parent` field of this request and
+     * have the Vertex AI Service Agent role in the source project.
+     *
+     * Requires the user copying the Model to have the
+     * `iam.serviceAccounts.actAs` permission on this service account.
+     * </pre>
+     *
+     * <code>string custom_service_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The customServiceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      customServiceAccount_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-provided custom service account to use to do the copy
+     * model. If empty, [Vertex AI Service
+     * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+     * will be used to access resources needed to upload the model. This account
+     * must belong to the destination project where the model is copied to,
+     * i.e., the project specified in the `parent` field of this request and
+     * have the Vertex AI Service Agent role in the source project.
+     *
+     * Requires the user copying the Model to have the
+     * `iam.serviceAccounts.actAs` permission on this service account.
+     * </pre>
+     *
+     * <code>string custom_service_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomServiceAccount() {
+      customServiceAccount_ = getDefaultInstance().getCustomServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The user-provided custom service account to use to do the copy
+     * model. If empty, [Vertex AI Service
+     * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+     * will be used to access resources needed to upload the model. This account
+     * must belong to the destination project where the model is copied to,
+     * i.e., the project specified in the `parent` field of this request and
+     * have the Vertex AI Service Agent role in the source project.
+     *
+     * Requires the user copying the Model to have the
+     * `iam.serviceAccounts.actAs` permission on this service account.
+     * </pre>
+     *
+     * <code>string custom_service_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for customServiceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      customServiceAccount_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.CopyModelRequest)
