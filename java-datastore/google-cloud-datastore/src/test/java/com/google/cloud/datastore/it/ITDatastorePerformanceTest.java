@@ -76,12 +76,35 @@ public class ITDatastorePerformanceTest {
     System.out.println("Host: " + options.getHost());
 
     Datastore datastore = options.getService();
+    
+    // Ensure a real entity exists to fetch (increases latency vs "Not Found")
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("PerfTestKind");
+    Key key = keyFactory.newKey("perf-test-entity");
+    datastore.put(com.google.cloud.datastore.Entity.newBuilder(key)
+        .set("payload", Strings.repeat("a", 1024)) // 1KB payload
+        .build());
+
     ExecutorService executor = Executors.newFixedThreadPool(threadCount);
     AtomicInteger intervalRequests = new AtomicInteger(0);
     AtomicInteger errorCount = new AtomicInteger(0);
+    AtomicInteger activePeak = new AtomicInteger(0);
 
-    KeyFactory keyFactory = datastore.newKeyFactory().setKind("PerfTestKind");
-    Key key = keyFactory.newKey("non-existent-key");
+    // Background thread to track the true peak concurrency
+    Thread peakTracker = new Thread(() -> {
+        try {
+            while (!Thread.currentThread().isInterrupted()) {
+                int current = getActualOutstanding(datastore);
+                int currentPeak;
+                do {
+                    currentPeak = activePeak.get();
+                    if (current <= currentPeak) break;
+                } while (!activePeak.compareAndSet(currentPeak, current));
+                Thread.sleep(10); // Sample every 10ms
+            }
+        } catch (InterruptedException ignored) {}
+    });
+    peakTracker.setDaemon(true);
+    peakTracker.start();
 
     for (int i = 0; i < threadCount; i++) {
       executor.submit(() -> {
@@ -101,21 +124,57 @@ public class ITDatastorePerformanceTest {
       int minute = 1;
       while (System.currentTimeMillis() - startTime < durationMillis) {
         Thread.sleep(60000); // Wait 1 minute
-        reportChannels(datastore, threadCount, minute++, intervalRequests.getAndSet(0), errorCount.getAndSet(0));
+        reportChannels(datastore, threadCount, minute++, intervalRequests.getAndSet(0), 
+            errorCount.getAndSet(0), activePeak.getAndSet(0));
       }
     } finally {
+      peakTracker.interrupt();
       executor.shutdownNow();
       executor.awaitTermination(10, TimeUnit.SECONDS);
       datastore.close();
     }
   }
 
-  private void reportChannels(Datastore datastore, int targetLoad, int minute, int requestsInInterval, int errorsInInterval) {
+  private int getActualOutstanding(Datastore datastore) {
+    try {
+      Field rpcField = datastore.getClass().getDeclaredField("datastoreRpc");
+      rpcField.setAccessible(true);
+      Object rpc = rpcField.get(datastore);
+
+      Field contextField = rpc.getClass().getDeclaredField("clientContext");
+      contextField.setAccessible(true);
+      ClientContext clientContext = (ClientContext) contextField.get(rpc);
+
+      TransportChannel transportChannel = clientContext.getTransportChannel();
+      Method getChannelMethod = transportChannel.getClass().getMethod("getChannel");
+      Object managedChannel = getChannelMethod.invoke(transportChannel);
+
+      if (managedChannel.getClass().getName().contains("ChannelPool")) {
+        Field entriesField = managedChannel.getClass().getDeclaredField("entries");
+        entriesField.setAccessible(true);
+        AtomicReference<?> entriesRef = (AtomicReference<?>) entriesField.get(managedChannel);
+        List<?> entries = (List<?>) entriesRef.get();
+
+        int total = 0;
+        for (Object entry : entries) {
+          Field outstandingField = entry.getClass().getDeclaredField("outstandingRpcs");
+          outstandingField.setAccessible(true);
+          total += ((AtomicInteger) outstandingField.get(entry)).get();
+        }
+        return total;
+      }
+    } catch (Exception ignored) {}
+    return 0;
+  }
+
+  private void reportChannels(Datastore datastore, int targetLoad, int minute, int requestsInInterval, 
+      int errorsInInterval, int observedPeak) {
     try {
       System.out.println("\n" + Strings.repeat("-", 30));
-      System.out.println(String.format("[PHASE: %d RPCs] Minute %d/15", targetLoad, minute));
-      System.out.println(String.format("Throughput: %d total requests in last minute (~%.2f req/s)", requestsInInterval, requestsInInterval/60.0));
-      if (errorsInInterval > 0) System.out.println("Errors: " + errorsInInterval);
+      System.out.println(String.format("[PHASE: %d threads] Minute %d/15", targetLoad, minute));
+      System.out.println(String.format("Throughput: %d req/min (~%.2f req/s) | Observed Peak Concurrency: %d", 
+          requestsInInterval, requestsInInterval/60.0, observedPeak));
+      if (errorsInInterval > 0) System.out.println("Errors in last minute: " + errorsInInterval);
 
       Field rpcField = datastore.getClass().getDeclaredField("datastoreRpc");
       rpcField.setAccessible(true);
@@ -136,7 +195,6 @@ public class ITDatastorePerformanceTest {
         List<?> entries = (List<?>) entriesRef.get();
 
         int poolSize = entries.size();
-        int totalOutstanding = 0;
         int overwhelmedCount = 0;
         
         StringBuilder channelDetails = new StringBuilder("Channel Saturation:\n");
@@ -148,25 +206,26 @@ public class ITDatastorePerformanceTest {
           
           Field maxField = entry.getClass().getDeclaredField("maxOutstanding");
           maxField.setAccessible(true);
-          int maxSeenByPool = ((AtomicInteger) maxField.get(entry)).get();
+          int poolInternalMax = ((AtomicInteger) maxField.get(entry)).get();
           
-          totalOutstanding += count;
-          if (count > 100) overwhelmedCount++;
+          if (count > 100 || poolInternalMax > 100) overwhelmedCount++;
 
           if (poolSize <= 10 || i < 5 || i >= poolSize - 2) {
-            String status = count > 100 ? "!! OVERWHELMED !!" : (count > 50 ? "Scaling" : "OK");
-            channelDetails.append(String.format("  Ch %02d: %3d RPCs (Peak %d) [%s]\n", i, count, maxSeenByPool, status));
+            String status = (count > 100 || poolInternalMax > 100) ? "!! OVERWHELMED !!" : (poolInternalMax > 50 ? "Scaling" : "OK");
+            channelDetails.append(String.format("  Ch %02d: Current %3d, InternalPeak %3d [%s]\n", i, count, poolInternalMax, status));
           } else if (i == 5) {
             channelDetails.append("  ... (hiding middle channels)\n");
           }
         }
 
-        System.out.println("Pool Size: " + poolSize + " | Total Outstanding: " + totalOutstanding);
+        System.out.println("Current Pool Size: " + poolSize);
         System.out.print(channelDetails.toString());
         
         if (overwhelmedCount > 0) {
-          System.out.println(String.format("WARNING: %d/%d channels exceed 100 concurrent streams!", overwhelmedCount, poolSize));
+          System.out.println(String.format("WARNING: %d/%d channels saturated (>=100 streams)!", overwhelmedCount, poolSize));
         }
+      } else {
+        System.out.println("Underlying channel is not a ChannelPool: " + managedChannel.getClass().getName());
       }
     } catch (Exception e) {
       System.err.println("Failed to report: " + e.getMessage());
