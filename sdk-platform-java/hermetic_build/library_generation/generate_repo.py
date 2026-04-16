@@ -64,9 +64,13 @@ def generate_from_yaml(
     )
     # copy api definition to output folder.
     shutil.copytree(api_definitions_path, repo_config.output_folder, dirs_exist_ok=True)
-    _generate_libraries_in_parallel(config, repo_config)
-    sys.stdout = original_stdout
-    sys.stderr = original_stderr
+    sys.stdout = ThreadLocalStream(original_stdout)
+    sys.stderr = ThreadLocalStream(original_stderr)
+    try:
+        _generate_libraries_in_parallel(config, repo_config)
+    finally:
+        sys.stdout = original_stdout
+        sys.stderr = original_stderr
 
     if not config.is_monorepo() or config.contains_common_protos():
         return
