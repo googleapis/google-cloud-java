@@ -46,13 +46,18 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: Install modules to local maven
-        run: |
-          mvn install -T 1C -DskipTests -ntp -B
-          cd java-showcase
-          mvn install -T 1C -DskipTests -ntp -B
+      - name: Install sdk-platform-modules
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
+      - name: Install java-showcase
+        shell: bash
+        run: mvn install -T 1C -DskipTests -ntp -B
+        working-directory: sdk-platform-java/java-showcase
       - name: Parse showcase version
-        working-directory: java-showcase/gapic-showcase
+        working-directory: sdk-platform-java/java-showcase/gapic-showcase
         run: echo "SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)" >> "$GITHUB_ENV"
       - name: Install showcase server
         run: |
