@@ -49,15 +49,9 @@ public class ITDatastorePerformanceTest {
   private void runPhase(int threadCount, long durationMillis) throws Exception {
     System.out.println("\n--- STARTING PHASE: " + threadCount + " threads ---");
 
-    // Using Datastore DEFAULT channel pool configuration as requested
     DatastoreOptions options = DatastoreOptions.getDefaultInstance();
-
-    System.out.println("Project ID: " + options.getProjectId());
-    System.out.println("Host: " + options.getHost());
-
     Datastore datastore = options.getService();
     
-    // Ensure a real entity exists to fetch
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("PerfTestKind");
     Key key = keyFactory.newKey("perf-test-entity");
     datastore.put(com.google.cloud.datastore.Entity.newBuilder(key)
@@ -69,7 +63,6 @@ public class ITDatastorePerformanceTest {
     AtomicInteger errorCount = new AtomicInteger(0);
     AtomicInteger activePeak = new AtomicInteger(0);
 
-    // Background thread to track the true peak concurrency
     Thread peakTracker = new Thread(() -> {
         try {
             while (!Thread.currentThread().isInterrupted()) {
@@ -134,13 +127,32 @@ public class ITDatastorePerformanceTest {
               Field channelField = res.getClass().getDeclaredField("channel");
               channelField.setAccessible(true);
               Object channel = channelField.get(res);
-              if (channel.getClass().getName().contains("ChannelPool")) {
-                  return channel;
-              }
+              return findChannelPool(channel);
           }
       }
     } catch (Exception ignored) {}
     return null;
+  }
+
+  private Object findChannelPool(Object channel) {
+      if (channel == null) return null;
+      if (channel.getClass().getName().contains("ChannelPool")) {
+          return channel;
+      }
+      // Recursively look for ChannelPool in wrappers (like ForwardingManagedChannel)
+      try {
+          Field delegateField = channel.getClass().getDeclaredField("delegate");
+          delegateField.setAccessible(true);
+          return findChannelPool(delegateField.get(channel));
+      } catch (Exception e) {
+          try {
+              // Try 'channel' field in some other common wrappers
+              Field subChannelField = channel.getClass().getDeclaredField("channel");
+              subChannelField.setAccessible(true);
+              return findChannelPool(subChannelField.get(channel));
+          } catch (Exception ignored) {}
+      }
+      return null;
   }
 
   private int getActualOutstanding(Datastore datastore) {
@@ -200,9 +212,9 @@ public class ITDatastorePerformanceTest {
         }
         System.out.println("Current Pool Size: " + poolSize);
         System.out.print(channelDetails.toString());
-        if (overwhelmedCount > 0) System.out.println(String.format("WARNING: %d/%d channels saturated (>=100 streams)!", overwhelmedCount, poolSize));
+        if (overwhelmedCount > 0) System.out.println(String.format("WARNING: %d/%d channels saturated!", overwhelmedCount, poolSize));
       } else {
-        System.out.println("Underlying channel is NOT a ChannelPool. This is expected if Datastore is not using gRPC or is using a single ManagedChannel.");
+        System.out.println("Underlying channel is NOT a ChannelPool. Monitoring failed to locate the pool.");
       }
     } catch (Exception e) {
       System.err.println("Failed to report: " + e.getMessage());
