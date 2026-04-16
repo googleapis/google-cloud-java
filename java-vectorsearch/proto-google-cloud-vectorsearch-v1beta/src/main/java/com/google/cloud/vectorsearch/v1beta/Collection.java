@@ -472,7 +472,7 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.Collection.schema is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=206
+   *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=220
    * @return Whether the schema field is set.
    */
   @java.lang.Override
@@ -493,7 +493,7 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.vectorsearch.v1beta.Collection.schema is deprecated. See
-   *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=206
+   *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=220
    * @return The schema.
    */
   @java.lang.Override
@@ -666,6 +666,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
    * Optional. JSON Schema for data.
    * Field names must contain only alphanumeric characters,
    * underscores, and hyphens.
+   * The schema must be compliant with
+   * [JSON Schema Draft 7](https://json-schema.org/draft-07/schema).
    * </pre>
    *
    * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -685,6 +687,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
    * Optional. JSON Schema for data.
    * Field names must contain only alphanumeric characters,
    * underscores, and hyphens.
+   * The schema must be compliant with
+   * [JSON Schema Draft 7](https://json-schema.org/draft-07/schema).
    * </pre>
    *
    * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -704,6 +708,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
    * Optional. JSON Schema for data.
    * Field names must contain only alphanumeric characters,
    * underscores, and hyphens.
+   * The schema must be compliant with
+   * [JSON Schema Draft 7](https://json-schema.org/draft-07/schema).
    * </pre>
    *
    * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -712,6 +718,71 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getDataSchemaOrBuilder() {
     return dataSchema_ == null ? com.google.protobuf.Struct.getDefaultInstance() : dataSchema_;
+  }
+
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 11;
+  private com.google.cloud.vectorsearch.v1beta.EncryptionSpec encryptionSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies the customer-managed encryption key spec for
+   * a Collection. If set, this Collection and all sub-resources of this
+   * Collection will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.EncryptionSpec encryption_spec = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies the customer-managed encryption key spec for
+   * a Collection. If set, this Collection and all sub-resources of this
+   * Collection will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.EncryptionSpec encryption_spec = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.vectorsearch.v1beta.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies the customer-managed encryption key spec for
+   * a Collection. If set, this Collection and all sub-resources of this
+   * Collection will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vectorsearch.v1beta.EncryptionSpec encryption_spec = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vectorsearch.v1beta.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.vectorsearch.v1beta.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -752,6 +823,9 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(10, getDataSchema());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(11, getEncryptionSpec());
     }
     getUnknownFields().writeTo(output);
   }
@@ -805,6 +879,9 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getDataSchema());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEncryptionSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -841,6 +918,10 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
     if (hasDataSchema() != other.hasDataSchema()) return false;
     if (hasDataSchema()) {
       if (!getDataSchema().equals(other.getDataSchema())) return false;
+    }
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -882,6 +963,10 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
     if (hasDataSchema()) {
       hash = (37 * hash) + DATA_SCHEMA_FIELD_NUMBER;
       hash = (53 * hash) + getDataSchema().hashCode();
+    }
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1054,6 +1139,7 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
         internalGetUpdateTimeFieldBuilder();
         internalGetSchemaFieldBuilder();
         internalGetDataSchemaFieldBuilder();
+        internalGetEncryptionSpecFieldBuilder();
       }
     }
 
@@ -1085,6 +1171,11 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
       if (dataSchemaBuilder_ != null) {
         dataSchemaBuilder_.dispose();
         dataSchemaBuilder_ = null;
+      }
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
       }
       return this;
     }
@@ -1156,6 +1247,11 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
         result.dataSchema_ = dataSchemaBuilder_ == null ? dataSchema_ : dataSchemaBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+        to_bitField0_ |= 0x00000010;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1202,6 +1298,9 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000080;
       if (other.hasDataSchema()) {
         mergeDataSchema(other.getDataSchema());
+      }
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1300,6 +1399,13 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000100;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    internalGetEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2267,7 +2373,7 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Collection.schema is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=206
+     *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=220
      * @return Whether the schema field is set.
      */
     @java.lang.Deprecated
@@ -2287,7 +2393,7 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.vectorsearch.v1beta.Collection.schema is deprecated. See
-     *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=206
+     *     google/cloud/vectorsearch/v1beta/vectorsearch_service.proto;l=220
      * @return The schema.
      */
     @java.lang.Deprecated
@@ -2761,6 +2867,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      * Optional. JSON Schema for data.
      * Field names must contain only alphanumeric characters,
      * underscores, and hyphens.
+     * The schema must be compliant with
+     * [JSON Schema Draft 7](https://json-schema.org/draft-07/schema).
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2779,6 +2887,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      * Optional. JSON Schema for data.
      * Field names must contain only alphanumeric characters,
      * underscores, and hyphens.
+     * The schema must be compliant with
+     * [JSON Schema Draft 7](https://json-schema.org/draft-07/schema).
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2801,6 +2911,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      * Optional. JSON Schema for data.
      * Field names must contain only alphanumeric characters,
      * underscores, and hyphens.
+     * The schema must be compliant with
+     * [JSON Schema Draft 7](https://json-schema.org/draft-07/schema).
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2827,6 +2939,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      * Optional. JSON Schema for data.
      * Field names must contain only alphanumeric characters,
      * underscores, and hyphens.
+     * The schema must be compliant with
+     * [JSON Schema Draft 7](https://json-schema.org/draft-07/schema).
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2850,6 +2964,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      * Optional. JSON Schema for data.
      * Field names must contain only alphanumeric characters,
      * underscores, and hyphens.
+     * The schema must be compliant with
+     * [JSON Schema Draft 7](https://json-schema.org/draft-07/schema).
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2881,6 +2997,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      * Optional. JSON Schema for data.
      * Field names must contain only alphanumeric characters,
      * underscores, and hyphens.
+     * The schema must be compliant with
+     * [JSON Schema Draft 7](https://json-schema.org/draft-07/schema).
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2904,6 +3022,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      * Optional. JSON Schema for data.
      * Field names must contain only alphanumeric characters,
      * underscores, and hyphens.
+     * The schema must be compliant with
+     * [JSON Schema Draft 7](https://json-schema.org/draft-07/schema).
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2922,6 +3042,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      * Optional. JSON Schema for data.
      * Field names must contain only alphanumeric characters,
      * underscores, and hyphens.
+     * The schema must be compliant with
+     * [JSON Schema Draft 7](https://json-schema.org/draft-07/schema).
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2942,6 +3064,8 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
      * Optional. JSON Schema for data.
      * Field names must contain only alphanumeric characters,
      * underscores, and hyphens.
+     * The schema must be compliant with
+     * [JSON Schema Draft 7](https://json-schema.org/draft-07/schema).
      * </pre>
      *
      * <code>.google.protobuf.Struct data_schema = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -2962,6 +3086,239 @@ public final class Collection extends com.google.protobuf.GeneratedMessage
         dataSchema_ = null;
       }
       return dataSchemaBuilder_;
+    }
+
+    private com.google.cloud.vectorsearch.v1beta.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.EncryptionSpec,
+            com.google.cloud.vectorsearch.v1beta.EncryptionSpec.Builder,
+            com.google.cloud.vectorsearch.v1beta.EncryptionSpecOrBuilder>
+        encryptionSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the customer-managed encryption key spec for
+     * a Collection. If set, this Collection and all sub-resources of this
+     * Collection will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.EncryptionSpec encryption_spec = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the customer-managed encryption key spec for
+     * a Collection. If set, this Collection and all sub-resources of this
+     * Collection will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.EncryptionSpec encryption_spec = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.vectorsearch.v1beta.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null
+            ? com.google.cloud.vectorsearch.v1beta.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the customer-managed encryption key spec for
+     * a Collection. If set, this Collection and all sub-resources of this
+     * Collection will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.EncryptionSpec encryption_spec = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.vectorsearch.v1beta.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the customer-managed encryption key spec for
+     * a Collection. If set, this Collection and all sub-resources of this
+     * Collection will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.EncryptionSpec encryption_spec = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.vectorsearch.v1beta.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the customer-managed encryption key spec for
+     * a Collection. If set, this Collection and all sub-resources of this
+     * Collection will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.EncryptionSpec encryption_spec = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.vectorsearch.v1beta.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && encryptionSpec_ != null
+            && encryptionSpec_
+                != com.google.cloud.vectorsearch.v1beta.EncryptionSpec.getDefaultInstance()) {
+          getEncryptionSpecBuilder().mergeFrom(value);
+        } else {
+          encryptionSpec_ = value;
+        }
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+      if (encryptionSpec_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the customer-managed encryption key spec for
+     * a Collection. If set, this Collection and all sub-resources of this
+     * Collection will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.EncryptionSpec encryption_spec = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEncryptionSpec() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the customer-managed encryption key spec for
+     * a Collection. If set, this Collection and all sub-resources of this
+     * Collection will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.EncryptionSpec encryption_spec = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return internalGetEncryptionSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the customer-managed encryption key spec for
+     * a Collection. If set, this Collection and all sub-resources of this
+     * Collection will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.EncryptionSpec encryption_spec = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vectorsearch.v1beta.EncryptionSpecOrBuilder
+        getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null
+            ? com.google.cloud.vectorsearch.v1beta.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the customer-managed encryption key spec for
+     * a Collection. If set, this Collection and all sub-resources of this
+     * Collection will be secured by this key.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vectorsearch.v1beta.EncryptionSpec encryption_spec = 11 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.vectorsearch.v1beta.EncryptionSpec,
+            com.google.cloud.vectorsearch.v1beta.EncryptionSpec.Builder,
+            com.google.cloud.vectorsearch.v1beta.EncryptionSpecOrBuilder>
+        internalGetEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.vectorsearch.v1beta.EncryptionSpec,
+                com.google.cloud.vectorsearch.v1beta.EncryptionSpec.Builder,
+                com.google.cloud.vectorsearch.v1beta.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(), getParentForChildren(), isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.vectorsearch.v1beta.Collection)

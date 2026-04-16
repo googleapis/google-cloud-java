@@ -111,6 +111,9 @@
             },
             "UpdateCollection": {
               "methods": ["updateCollectionAsync", "updateCollectionAsync", "updateCollectionOperationCallable", "updateCollectionCallable"]
+            },
+            "UpdateIndex": {
+              "methods": ["updateIndexAsync", "updateIndexAsync", "updateIndexOperationCallable", "updateIndexCallable"]
             }
           }
         }

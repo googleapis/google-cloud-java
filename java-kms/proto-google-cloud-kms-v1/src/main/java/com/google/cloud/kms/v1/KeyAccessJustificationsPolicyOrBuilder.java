@@ -31,10 +31,12 @@ public interface KeyAccessJustificationsPolicyOrBuilder
    *
    * <pre>
    * The list of allowed reasons for access to a
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. Zero allowed access reasons
-   * means all encrypt, decrypt, and sign operations for the
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] associated with this policy will
-   * fail.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. Note that empty
+   * allowed_access_reasons has a different meaning depending on where this
+   * message appears. If this is under
+   * [KeyAccessJustificationsPolicyConfig][google.cloud.kms.v1.KeyAccessJustificationsPolicyConfig],
+   * it means allow-all. If this is under
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey], it means deny-all.
    * </pre>
    *
    * <code>repeated .google.cloud.kms.v1.AccessReason allowed_access_reasons = 1;</code>
@@ -48,10 +50,12 @@ public interface KeyAccessJustificationsPolicyOrBuilder
    *
    * <pre>
    * The list of allowed reasons for access to a
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. Zero allowed access reasons
-   * means all encrypt, decrypt, and sign operations for the
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] associated with this policy will
-   * fail.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. Note that empty
+   * allowed_access_reasons has a different meaning depending on where this
+   * message appears. If this is under
+   * [KeyAccessJustificationsPolicyConfig][google.cloud.kms.v1.KeyAccessJustificationsPolicyConfig],
+   * it means allow-all. If this is under
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey], it means deny-all.
    * </pre>
    *
    * <code>repeated .google.cloud.kms.v1.AccessReason allowed_access_reasons = 1;</code>
@@ -65,10 +69,12 @@ public interface KeyAccessJustificationsPolicyOrBuilder
    *
    * <pre>
    * The list of allowed reasons for access to a
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. Zero allowed access reasons
-   * means all encrypt, decrypt, and sign operations for the
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] associated with this policy will
-   * fail.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. Note that empty
+   * allowed_access_reasons has a different meaning depending on where this
+   * message appears. If this is under
+   * [KeyAccessJustificationsPolicyConfig][google.cloud.kms.v1.KeyAccessJustificationsPolicyConfig],
+   * it means allow-all. If this is under
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey], it means deny-all.
    * </pre>
    *
    * <code>repeated .google.cloud.kms.v1.AccessReason allowed_access_reasons = 1;</code>
@@ -83,10 +89,12 @@ public interface KeyAccessJustificationsPolicyOrBuilder
    *
    * <pre>
    * The list of allowed reasons for access to a
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. Zero allowed access reasons
-   * means all encrypt, decrypt, and sign operations for the
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] associated with this policy will
-   * fail.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. Note that empty
+   * allowed_access_reasons has a different meaning depending on where this
+   * message appears. If this is under
+   * [KeyAccessJustificationsPolicyConfig][google.cloud.kms.v1.KeyAccessJustificationsPolicyConfig],
+   * it means allow-all. If this is under
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey], it means deny-all.
    * </pre>
    *
    * <code>repeated .google.cloud.kms.v1.AccessReason allowed_access_reasons = 1;</code>
@@ -100,10 +108,12 @@ public interface KeyAccessJustificationsPolicyOrBuilder
    *
    * <pre>
    * The list of allowed reasons for access to a
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. Zero allowed access reasons
-   * means all encrypt, decrypt, and sign operations for the
-   * [CryptoKey][google.cloud.kms.v1.CryptoKey] associated with this policy will
-   * fail.
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey]. Note that empty
+   * allowed_access_reasons has a different meaning depending on where this
+   * message appears. If this is under
+   * [KeyAccessJustificationsPolicyConfig][google.cloud.kms.v1.KeyAccessJustificationsPolicyConfig],
+   * it means allow-all. If this is under
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey], it means deny-all.
    * </pre>
    *
    * <code>repeated .google.cloud.kms.v1.AccessReason allowed_access_reasons = 1;</code>

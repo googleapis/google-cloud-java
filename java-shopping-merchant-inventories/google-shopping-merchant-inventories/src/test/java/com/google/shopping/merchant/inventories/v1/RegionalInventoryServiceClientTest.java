@@ -175,6 +175,7 @@ public class RegionalInventoryServiceClientTest {
     RegionalInventory expectedResponse =
         RegionalInventory.newBuilder()
             .setName(RegionalInventoryName.of("[ACCOUNT]", "[PRODUCT]", "[REGION]").toString())
+            .setBase64EncodedName("base64EncodedName-1991168022")
             .setAccount(-1177318867)
             .setRegion("region-934795532")
             .setRegionalInventoryAttributes(RegionalInventoryAttributes.newBuilder().build())

@@ -1395,6 +1395,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .setPrincipal("principal-1812041682")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1446,6 +1447,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .setPrincipal("principal-1812041682")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1891,6 +1893,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .setPrincipal("principal-1812041682")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1945,6 +1948,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .setPrincipal("principal-1812041682")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1998,6 +2002,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .setPrincipal("principal-1812041682")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2052,6 +2057,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .setPrincipal("principal-1812041682")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2105,6 +2111,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .setPrincipal("principal-1812041682")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2116,6 +2123,7 @@ public class ReservationServiceClientHttpJsonTest {
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .setPrincipal("principal-1812041682")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2153,6 +2161,7 @@ public class ReservationServiceClientHttpJsonTest {
               .setAssignee("assignee-369881649")
               .setEnableGeminiInBigquery(true)
               .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+              .setPrincipal("principal-1812041682")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAssignment(assignment, updateMask);

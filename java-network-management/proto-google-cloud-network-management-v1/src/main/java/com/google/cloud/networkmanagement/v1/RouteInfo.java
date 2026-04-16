@@ -1261,7 +1261,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
    * routes only. If set for POLICY_BASED route, this is a region of VLAN
-   * attachments for Cloud Interconnect the route applies to.
+   * attachments for Cloud Interconnect the route applies to. If set to "all"
+   * for POLICY_BASED route, the route applies to VLAN attachments of Cloud
+   * Interconnect in all regions.
    * </pre>
    *
    * <code>string region = 19;</code>
@@ -1287,7 +1289,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
    * routes only. If set for POLICY_BASED route, this is a region of VLAN
-   * attachments for Cloud Interconnect the route applies to.
+   * attachments for Cloud Interconnect the route applies to. If set to "all"
+   * for POLICY_BASED route, the route applies to VLAN attachments of Cloud
+   * Interconnect in all regions.
    * </pre>
    *
    * <code>string region = 19;</code>
@@ -1377,7 +1381,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <code>string next_hop = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=693
+   *     google/cloud/networkmanagement/v1/trace.proto;l=695
    * @return The nextHop.
    */
   @java.lang.Override
@@ -1406,7 +1410,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <code>string next_hop = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-   *     google/cloud/networkmanagement/v1/trace.proto;l=693
+   *     google/cloud/networkmanagement/v1/trace.proto;l=695
    * @return The bytes for nextHop.
    */
   @java.lang.Override
@@ -2055,7 +2059,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=733
+   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
    * @return Whether the advertisedRouteNextHopUri field is set.
    */
   @java.lang.Override
@@ -2078,7 +2082,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=733
+   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
    * @return The advertisedRouteNextHopUri.
    */
   @java.lang.Override
@@ -2109,7 +2113,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
    * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=733
+   *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
    * @return The bytes for advertisedRouteNextHopUri.
    */
   @java.lang.Override
@@ -3910,7 +3914,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
      * routes only. If set for POLICY_BASED route, this is a region of VLAN
-     * attachments for Cloud Interconnect the route applies to.
+     * attachments for Cloud Interconnect the route applies to. If set to "all"
+     * for POLICY_BASED route, the route applies to VLAN attachments of Cloud
+     * Interconnect in all regions.
      * </pre>
      *
      * <code>string region = 19;</code>
@@ -3935,7 +3941,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
      * routes only. If set for POLICY_BASED route, this is a region of VLAN
-     * attachments for Cloud Interconnect the route applies to.
+     * attachments for Cloud Interconnect the route applies to. If set to "all"
+     * for POLICY_BASED route, the route applies to VLAN attachments of Cloud
+     * Interconnect in all regions.
      * </pre>
      *
      * <code>string region = 19;</code>
@@ -3960,7 +3968,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
      * routes only. If set for POLICY_BASED route, this is a region of VLAN
-     * attachments for Cloud Interconnect the route applies to.
+     * attachments for Cloud Interconnect the route applies to. If set to "all"
+     * for POLICY_BASED route, the route applies to VLAN attachments of Cloud
+     * Interconnect in all regions.
      * </pre>
      *
      * <code>string region = 19;</code>
@@ -3984,7 +3994,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
      * routes only. If set for POLICY_BASED route, this is a region of VLAN
-     * attachments for Cloud Interconnect the route applies to.
+     * attachments for Cloud Interconnect the route applies to. If set to "all"
+     * for POLICY_BASED route, the route applies to VLAN attachments of Cloud
+     * Interconnect in all regions.
      * </pre>
      *
      * <code>string region = 19;</code>
@@ -4004,7 +4016,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
      * routes only. If set for POLICY_BASED route, this is a region of VLAN
-     * attachments for Cloud Interconnect the route applies to.
+     * attachments for Cloud Interconnect the route applies to. If set to "all"
+     * for POLICY_BASED route, the route applies to VLAN attachments of Cloud
+     * Interconnect in all regions.
      * </pre>
      *
      * <code>string region = 19;</code>
@@ -4148,7 +4162,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>string next_hop = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=693
+     *     google/cloud/networkmanagement/v1/trace.proto;l=695
      * @return The nextHop.
      */
     @java.lang.Deprecated
@@ -4176,7 +4190,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>string next_hop = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=693
+     *     google/cloud/networkmanagement/v1/trace.proto;l=695
      * @return The bytes for nextHop.
      */
     @java.lang.Deprecated
@@ -4204,7 +4218,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>string next_hop = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=693
+     *     google/cloud/networkmanagement/v1/trace.proto;l=695
      * @param value The nextHop to set.
      * @return This builder for chaining.
      */
@@ -4231,7 +4245,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>string next_hop = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=693
+     *     google/cloud/networkmanagement/v1/trace.proto;l=695
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4254,7 +4268,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>string next_hop = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.next_hop is deprecated. See
-     *     google/cloud/networkmanagement/v1/trace.proto;l=693
+     *     google/cloud/networkmanagement/v1/trace.proto;l=695
      * @param value The bytes for nextHop to set.
      * @return This builder for chaining.
      */
@@ -5692,7 +5706,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=733
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
      * @return Whether the advertisedRouteNextHopUri field is set.
      */
     @java.lang.Deprecated
@@ -5714,7 +5728,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=733
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
      * @return The advertisedRouteNextHopUri.
      */
     @java.lang.Deprecated
@@ -5744,7 +5758,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=733
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
      * @return The bytes for advertisedRouteNextHopUri.
      */
     @java.lang.Deprecated
@@ -5774,7 +5788,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=733
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
      * @param value The advertisedRouteNextHopUri to set.
      * @return This builder for chaining.
      */
@@ -5803,7 +5817,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=733
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -5828,7 +5842,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessage
      * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.networkmanagement.v1.RouteInfo.advertised_route_next_hop_uri is
-     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=733
+     *     deprecated. See google/cloud/networkmanagement/v1/trace.proto;l=735
      * @param value The bytes for advertisedRouteNextHopUri to set.
      * @return This builder for chaining.
      */

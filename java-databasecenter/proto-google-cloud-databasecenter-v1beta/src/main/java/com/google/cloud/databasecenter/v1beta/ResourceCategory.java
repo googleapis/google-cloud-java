@@ -71,6 +71,26 @@ public enum ResourceCategory implements com.google.protobuf.ProtocolMessageEnum 
    * <code>DATABASE = 3;</code>
    */
   DATABASE(3),
+  /**
+   *
+   *
+   * <pre>
+   * A resource that is a Dataset.
+   * </pre>
+   *
+   * <code>DATASET = 4;</code>
+   */
+  DATASET(4),
+  /**
+   *
+   *
+   * <pre>
+   * A resource that is a Reservation.
+   * </pre>
+   *
+   * <code>RESERVATION = 5;</code>
+   */
+  RESERVATION(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -128,6 +148,28 @@ public enum ResourceCategory implements com.google.protobuf.ProtocolMessageEnum 
    */
   public static final int DATABASE_VALUE = 3;
 
+  /**
+   *
+   *
+   * <pre>
+   * A resource that is a Dataset.
+   * </pre>
+   *
+   * <code>DATASET = 4;</code>
+   */
+  public static final int DATASET_VALUE = 4;
+
+  /**
+   *
+   *
+   * <pre>
+   * A resource that is a Reservation.
+   * </pre>
+   *
+   * <code>RESERVATION = 5;</code>
+   */
+  public static final int RESERVATION_VALUE = 5;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -160,6 +202,10 @@ public enum ResourceCategory implements com.google.protobuf.ProtocolMessageEnum 
         return CLUSTER;
       case 3:
         return DATABASE;
+      case 4:
+        return DATASET;
+      case 5:
+        return RESERVATION;
       default:
         return null;
     }
@@ -191,7 +237,7 @@ public enum ResourceCategory implements com.google.protobuf.ProtocolMessageEnum 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.databasecenter.v1beta.ServiceProto.getDescriptor()
         .getEnumTypes()
-        .get(0);
+        .get(3);
   }
 
   private static final ResourceCategory[] VALUES = values();

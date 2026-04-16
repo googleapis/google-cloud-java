@@ -66,6 +66,8 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
     switch (number) {
       case 4:
         return internalGetInputValues();
+      case 5:
+        return internalGetExternalValues();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
     }
@@ -396,6 +398,139 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
     return map.get(key);
   }
 
+  public static final int EXTERNAL_VALUES_FIELD_NUMBER = 5;
+
+  private static final class ExternalValuesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+            java.lang.String, com.google.cloud.config.v1.ExternalValueSource>
+        defaultEntry =
+            com.google.protobuf.MapEntry
+                .<java.lang.String, com.google.cloud.config.v1.ExternalValueSource>
+                    newDefaultInstance(
+                        com.google.cloud.config.v1.ConfigProto
+                            .internal_static_google_cloud_config_v1_TerraformBlueprint_ExternalValuesEntry_descriptor,
+                        com.google.protobuf.WireFormat.FieldType.STRING,
+                        "",
+                        com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                        com.google.cloud.config.v1.ExternalValueSource.getDefaultInstance());
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.config.v1.ExternalValueSource>
+      externalValues_;
+
+  private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.config.v1.ExternalValueSource>
+      internalGetExternalValues() {
+    if (externalValues_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ExternalValuesDefaultEntryHolder.defaultEntry);
+    }
+    return externalValues_;
+  }
+
+  public int getExternalValuesCount() {
+    return internalGetExternalValues().getMap().size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of input variable names in this blueprint to configurations
+   * for importing values from external sources.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsExternalValues(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetExternalValues().getMap().containsKey(key);
+  }
+
+  /** Use {@link #getExternalValuesMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.cloud.config.v1.ExternalValueSource>
+      getExternalValues() {
+    return getExternalValuesMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of input variable names in this blueprint to configurations
+   * for importing values from external sources.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, com.google.cloud.config.v1.ExternalValueSource>
+      getExternalValuesMap() {
+    return internalGetExternalValues().getMap();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of input variable names in this blueprint to configurations
+   * for importing values from external sources.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ com.google.cloud.config.v1.ExternalValueSource getExternalValuesOrDefault(
+      java.lang.String key,
+      /* nullable */
+      com.google.cloud.config.v1.ExternalValueSource defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.config.v1.ExternalValueSource> map =
+        internalGetExternalValues().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Map of input variable names in this blueprint to configurations
+   * for importing values from external sources.
+   * </pre>
+   *
+   * <code>
+   * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.config.v1.ExternalValueSource getExternalValuesOrThrow(
+      java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, com.google.cloud.config.v1.ExternalValueSource> map =
+        internalGetExternalValues().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -418,6 +553,8 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetInputValues(), InputValuesDefaultEntryHolder.defaultEntry, 4);
+    com.google.protobuf.GeneratedMessage.serializeStringMapTo(
+        output, internalGetExternalValues(), ExternalValuesDefaultEntryHolder.defaultEntry, 5);
     getUnknownFields().writeTo(output);
   }
 
@@ -446,6 +583,17 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, inputValues__);
     }
+    for (java.util.Map.Entry<java.lang.String, com.google.cloud.config.v1.ExternalValueSource>
+        entry : internalGetExternalValues().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.config.v1.ExternalValueSource>
+          externalValues__ =
+              ExternalValuesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, externalValues__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -463,6 +611,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
         (com.google.cloud.config.v1.TerraformBlueprint) obj;
 
     if (!internalGetInputValues().equals(other.internalGetInputValues())) return false;
+    if (!internalGetExternalValues().equals(other.internalGetExternalValues())) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 1:
@@ -488,6 +637,10 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
     if (!internalGetInputValues().getMap().isEmpty()) {
       hash = (37 * hash) + INPUT_VALUES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetInputValues().hashCode();
+    }
+    if (!internalGetExternalValues().getMap().isEmpty()) {
+      hash = (37 * hash) + EXTERNAL_VALUES_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetExternalValues().hashCode();
     }
     switch (sourceCase_) {
       case 1:
@@ -627,6 +780,8 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       switch (number) {
         case 4:
           return internalGetInputValues();
+        case 5:
+          return internalGetExternalValues();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -638,6 +793,8 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       switch (number) {
         case 4:
           return internalGetMutableInputValues();
+        case 5:
+          return internalGetMutableExternalValues();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -668,6 +825,7 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
         gitSourceBuilder_.clear();
       }
       internalGetMutableInputValues().clear();
+      internalGetMutableExternalValues().clear();
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -711,6 +869,10 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
         result.inputValues_ =
             internalGetInputValues().build(InputValuesDefaultEntryHolder.defaultEntry);
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.externalValues_ =
+            internalGetExternalValues().build(ExternalValuesDefaultEntryHolder.defaultEntry);
+      }
     }
 
     private void buildPartialOneofs(com.google.cloud.config.v1.TerraformBlueprint result) {
@@ -735,6 +897,8 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
       if (other == com.google.cloud.config.v1.TerraformBlueprint.getDefaultInstance()) return this;
       internalGetMutableInputValues().mergeFrom(other.internalGetInputValues());
       bitField0_ |= 0x00000004;
+      internalGetMutableExternalValues().mergeFrom(other.internalGetExternalValues());
+      bitField0_ |= 0x00000008;
       switch (other.getSourceCase()) {
         case GCS_SOURCE:
           {
@@ -807,6 +971,20 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000004;
                 break;
               } // case 34
+            case 42:
+              {
+                com.google.protobuf.MapEntry<
+                        java.lang.String, com.google.cloud.config.v1.ExternalValueSource>
+                    externalValues__ =
+                        input.readMessage(
+                            ExternalValuesDefaultEntryHolder.defaultEntry.getParserForType(),
+                            extensionRegistry);
+                internalGetMutableExternalValues()
+                    .ensureBuilderMap()
+                    .put(externalValues__.getKey(), externalValues__.getValue());
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1479,6 +1657,278 @@ public final class TerraformBlueprint extends com.google.protobuf.GeneratedMessa
         builderMap.put(key, entry);
       }
       return (com.google.cloud.config.v1.TerraformVariable.Builder) entry;
+    }
+
+    private static final class ExternalValuesConverter
+        implements com.google.protobuf.MapFieldBuilder.Converter<
+            java.lang.String,
+            com.google.cloud.config.v1.ExternalValueSourceOrBuilder,
+            com.google.cloud.config.v1.ExternalValueSource> {
+      @java.lang.Override
+      public com.google.cloud.config.v1.ExternalValueSource build(
+          com.google.cloud.config.v1.ExternalValueSourceOrBuilder val) {
+        if (val instanceof com.google.cloud.config.v1.ExternalValueSource) {
+          return (com.google.cloud.config.v1.ExternalValueSource) val;
+        }
+        return ((com.google.cloud.config.v1.ExternalValueSource.Builder) val).build();
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.config.v1.ExternalValueSource>
+          defaultEntry() {
+        return ExternalValuesDefaultEntryHolder.defaultEntry;
+      }
+    }
+    ;
+
+    private static final ExternalValuesConverter externalValuesConverter =
+        new ExternalValuesConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.config.v1.ExternalValueSourceOrBuilder,
+            com.google.cloud.config.v1.ExternalValueSource,
+            com.google.cloud.config.v1.ExternalValueSource.Builder>
+        externalValues_;
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.config.v1.ExternalValueSourceOrBuilder,
+            com.google.cloud.config.v1.ExternalValueSource,
+            com.google.cloud.config.v1.ExternalValueSource.Builder>
+        internalGetExternalValues() {
+      if (externalValues_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(externalValuesConverter);
+      }
+      return externalValues_;
+    }
+
+    private com.google.protobuf.MapFieldBuilder<
+            java.lang.String,
+            com.google.cloud.config.v1.ExternalValueSourceOrBuilder,
+            com.google.cloud.config.v1.ExternalValueSource,
+            com.google.cloud.config.v1.ExternalValueSource.Builder>
+        internalGetMutableExternalValues() {
+      if (externalValues_ == null) {
+        externalValues_ = new com.google.protobuf.MapFieldBuilder<>(externalValuesConverter);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return externalValues_;
+    }
+
+    public int getExternalValuesCount() {
+      return internalGetExternalValues().ensureBuilderMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of input variable names in this blueprint to configurations
+     * for importing values from external sources.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsExternalValues(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetExternalValues().ensureBuilderMap().containsKey(key);
+    }
+
+    /** Use {@link #getExternalValuesMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.config.v1.ExternalValueSource>
+        getExternalValues() {
+      return getExternalValuesMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of input variable names in this blueprint to configurations
+     * for importing values from external sources.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.config.v1.ExternalValueSource>
+        getExternalValuesMap() {
+      return internalGetExternalValues().getImmutableMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of input variable names in this blueprint to configurations
+     * for importing values from external sources.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.config.v1.ExternalValueSource getExternalValuesOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.config.v1.ExternalValueSource defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.config.v1.ExternalValueSourceOrBuilder> map =
+          internalGetMutableExternalValues().ensureBuilderMap();
+      return map.containsKey(key) ? externalValuesConverter.build(map.get(key)) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of input variable names in this blueprint to configurations
+     * for importing values from external sources.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.config.v1.ExternalValueSource getExternalValuesOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.config.v1.ExternalValueSourceOrBuilder> map =
+          internalGetMutableExternalValues().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return externalValuesConverter.build(map.get(key));
+    }
+
+    public Builder clearExternalValues() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      internalGetMutableExternalValues().clear();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of input variable names in this blueprint to configurations
+     * for importing values from external sources.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeExternalValues(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableExternalValues().ensureBuilderMap().remove(key);
+      return this;
+    }
+
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.config.v1.ExternalValueSource>
+        getMutableExternalValues() {
+      bitField0_ |= 0x00000008;
+      return internalGetMutableExternalValues().ensureMessageMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of input variable names in this blueprint to configurations
+     * for importing values from external sources.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putExternalValues(
+        java.lang.String key, com.google.cloud.config.v1.ExternalValueSource value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableExternalValues().ensureBuilderMap().put(key, value);
+      bitField0_ |= 0x00000008;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of input variable names in this blueprint to configurations
+     * for importing values from external sources.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder putAllExternalValues(
+        java.util.Map<java.lang.String, com.google.cloud.config.v1.ExternalValueSource> values) {
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.config.v1.ExternalValueSource> e :
+          values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
+      }
+      internalGetMutableExternalValues().ensureBuilderMap().putAll(values);
+      bitField0_ |= 0x00000008;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Map of input variable names in this blueprint to configurations
+     * for importing values from external sources.
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, .google.cloud.config.v1.ExternalValueSource&gt; external_values = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.config.v1.ExternalValueSource.Builder putExternalValuesBuilderIfAbsent(
+        java.lang.String key) {
+      java.util.Map<java.lang.String, com.google.cloud.config.v1.ExternalValueSourceOrBuilder>
+          builderMap = internalGetMutableExternalValues().ensureBuilderMap();
+      com.google.cloud.config.v1.ExternalValueSourceOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.cloud.config.v1.ExternalValueSource.newBuilder();
+        builderMap.put(key, entry);
+      }
+      if (entry instanceof com.google.cloud.config.v1.ExternalValueSource) {
+        entry = ((com.google.cloud.config.v1.ExternalValueSource) entry).toBuilder();
+        builderMap.put(key, entry);
+      }
+      return (com.google.cloud.config.v1.ExternalValueSource.Builder) entry;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.config.v1.TerraformBlueprint)

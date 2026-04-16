@@ -85,6 +85,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DEPLOYMENT_METADATA(8),
     PREVIEW_METADATA(9),
+    PROVISION_DEPLOYMENT_GROUP_METADATA(10),
     RESOURCEMETADATA_NOT_SET(0);
     private final int value;
 
@@ -108,6 +109,8 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           return DEPLOYMENT_METADATA;
         case 9:
           return PREVIEW_METADATA;
+        case 10:
+          return PROVISION_DEPLOYMENT_GROUP_METADATA;
         case 0:
           return RESOURCEMETADATA_NOT_SET;
         default:
@@ -244,6 +247,72 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return (com.google.cloud.config.v1.PreviewOperationMetadata) resourceMetadata_;
     }
     return com.google.cloud.config.v1.PreviewOperationMetadata.getDefaultInstance();
+  }
+
+  public static final int PROVISION_DEPLOYMENT_GROUP_METADATA_FIELD_NUMBER = 10;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about ProvisionDeploymentGroup operation state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata provision_deployment_group_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the provisionDeploymentGroupMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasProvisionDeploymentGroupMetadata() {
+    return resourceMetadataCase_ == 10;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about ProvisionDeploymentGroup operation state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata provision_deployment_group_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The provisionDeploymentGroupMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata
+      getProvisionDeploymentGroupMetadata() {
+    if (resourceMetadataCase_ == 10) {
+      return (com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata)
+          resourceMetadata_;
+    }
+    return com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata about ProvisionDeploymentGroup operation state.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata provision_deployment_group_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadataOrBuilder
+      getProvisionDeploymentGroupMetadataOrBuilder() {
+    if (resourceMetadataCase_ == 10) {
+      return (com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata)
+          resourceMetadata_;
+    }
+    return com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata
+        .getDefaultInstance();
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
@@ -628,6 +697,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       output.writeMessage(
           9, (com.google.cloud.config.v1.PreviewOperationMetadata) resourceMetadata_);
     }
+    if (resourceMetadataCase_ == 10) {
+      output.writeMessage(
+          10,
+          (com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata) resourceMetadata_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -668,6 +742,13 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, (com.google.cloud.config.v1.PreviewOperationMetadata) resourceMetadata_);
     }
+    if (resourceMetadataCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10,
+              (com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata)
+                  resourceMetadata_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -704,6 +785,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         break;
       case 9:
         if (!getPreviewMetadata().equals(other.getPreviewMetadata())) return false;
+        break;
+      case 10:
+        if (!getProvisionDeploymentGroupMetadata()
+            .equals(other.getProvisionDeploymentGroupMetadata())) return false;
         break;
       case 0:
       default:
@@ -745,6 +830,10 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       case 9:
         hash = (37 * hash) + PREVIEW_METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getPreviewMetadata().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + PROVISION_DEPLOYMENT_GROUP_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getProvisionDeploymentGroupMetadata().hashCode();
         break;
       case 0:
       default:
@@ -905,6 +994,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       if (previewMetadataBuilder_ != null) {
         previewMetadataBuilder_.clear();
       }
+      if (provisionDeploymentGroupMetadataBuilder_ != null) {
+        provisionDeploymentGroupMetadataBuilder_.clear();
+      }
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -960,27 +1052,27 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     private void buildPartial0(com.google.cloud.config.v1.OperationMetadata result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.target_ = target_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.verb_ = verb_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.statusMessage_ = statusMessage_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.requestedCancellation_ = requestedCancellation_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.apiVersion_ = apiVersion_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -994,6 +1086,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       if (resourceMetadataCase_ == 9 && previewMetadataBuilder_ != null) {
         result.resourceMetadata_ = previewMetadataBuilder_.build();
+      }
+      if (resourceMetadataCase_ == 10 && provisionDeploymentGroupMetadataBuilder_ != null) {
+        result.resourceMetadata_ = provisionDeploymentGroupMetadataBuilder_.build();
       }
     }
 
@@ -1017,17 +1112,17 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getTarget().isEmpty()) {
         target_ = other.target_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getVerb().isEmpty()) {
         verb_ = other.verb_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getStatusMessage().isEmpty()) {
         statusMessage_ = other.statusMessage_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.getRequestedCancellation() != false) {
@@ -1035,7 +1130,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       if (!other.getApiVersion().isEmpty()) {
         apiVersion_ = other.apiVersion_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       switch (other.getResourceMetadataCase()) {
@@ -1047,6 +1142,11 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         case PREVIEW_METADATA:
           {
             mergePreviewMetadata(other.getPreviewMetadata());
+            break;
+          }
+        case PROVISION_DEPLOYMENT_GROUP_METADATA:
+          {
+            mergeProvisionDeploymentGroupMetadata(other.getProvisionDeploymentGroupMetadata());
             break;
           }
         case RESOURCEMETADATA_NOT_SET:
@@ -1084,43 +1184,43 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(internalGetEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 26:
               {
                 target_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 26
             case 34:
               {
                 verb_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
             case 42:
               {
                 statusMessage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 42
             case 48:
               {
                 requestedCancellation_ = input.readBool();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 48
             case 58:
               {
                 apiVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 58
             case 66:
@@ -1137,6 +1237,14 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
                 resourceMetadataCase_ = 9;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetProvisionDeploymentGroupMetadataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                resourceMetadataCase_ = 10;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1651,6 +1759,259 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       return previewMetadataBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata,
+            com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata.Builder,
+            com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadataOrBuilder>
+        provisionDeploymentGroupMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about ProvisionDeploymentGroup operation state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata provision_deployment_group_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the provisionDeploymentGroupMetadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasProvisionDeploymentGroupMetadata() {
+      return resourceMetadataCase_ == 10;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about ProvisionDeploymentGroup operation state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata provision_deployment_group_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The provisionDeploymentGroupMetadata.
+     */
+    @java.lang.Override
+    public com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata
+        getProvisionDeploymentGroupMetadata() {
+      if (provisionDeploymentGroupMetadataBuilder_ == null) {
+        if (resourceMetadataCase_ == 10) {
+          return (com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata)
+              resourceMetadata_;
+        }
+        return com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata
+            .getDefaultInstance();
+      } else {
+        if (resourceMetadataCase_ == 10) {
+          return provisionDeploymentGroupMetadataBuilder_.getMessage();
+        }
+        return com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about ProvisionDeploymentGroup operation state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata provision_deployment_group_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setProvisionDeploymentGroupMetadata(
+        com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata value) {
+      if (provisionDeploymentGroupMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resourceMetadata_ = value;
+        onChanged();
+      } else {
+        provisionDeploymentGroupMetadataBuilder_.setMessage(value);
+      }
+      resourceMetadataCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about ProvisionDeploymentGroup operation state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata provision_deployment_group_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setProvisionDeploymentGroupMetadata(
+        com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata.Builder
+            builderForValue) {
+      if (provisionDeploymentGroupMetadataBuilder_ == null) {
+        resourceMetadata_ = builderForValue.build();
+        onChanged();
+      } else {
+        provisionDeploymentGroupMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      resourceMetadataCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about ProvisionDeploymentGroup operation state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata provision_deployment_group_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeProvisionDeploymentGroupMetadata(
+        com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata value) {
+      if (provisionDeploymentGroupMetadataBuilder_ == null) {
+        if (resourceMetadataCase_ == 10
+            && resourceMetadata_
+                != com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata
+                    .getDefaultInstance()) {
+          resourceMetadata_ =
+              com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata.newBuilder(
+                      (com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata)
+                          resourceMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          resourceMetadata_ = value;
+        }
+        onChanged();
+      } else {
+        if (resourceMetadataCase_ == 10) {
+          provisionDeploymentGroupMetadataBuilder_.mergeFrom(value);
+        } else {
+          provisionDeploymentGroupMetadataBuilder_.setMessage(value);
+        }
+      }
+      resourceMetadataCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about ProvisionDeploymentGroup operation state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata provision_deployment_group_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearProvisionDeploymentGroupMetadata() {
+      if (provisionDeploymentGroupMetadataBuilder_ == null) {
+        if (resourceMetadataCase_ == 10) {
+          resourceMetadataCase_ = 0;
+          resourceMetadata_ = null;
+          onChanged();
+        }
+      } else {
+        if (resourceMetadataCase_ == 10) {
+          resourceMetadataCase_ = 0;
+          resourceMetadata_ = null;
+        }
+        provisionDeploymentGroupMetadataBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about ProvisionDeploymentGroup operation state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata provision_deployment_group_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata.Builder
+        getProvisionDeploymentGroupMetadataBuilder() {
+      return internalGetProvisionDeploymentGroupMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about ProvisionDeploymentGroup operation state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata provision_deployment_group_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadataOrBuilder
+        getProvisionDeploymentGroupMetadataOrBuilder() {
+      if ((resourceMetadataCase_ == 10) && (provisionDeploymentGroupMetadataBuilder_ != null)) {
+        return provisionDeploymentGroupMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        if (resourceMetadataCase_ == 10) {
+          return (com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata)
+              resourceMetadata_;
+        }
+        return com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata about ProvisionDeploymentGroup operation state.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata provision_deployment_group_metadata = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata,
+            com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata.Builder,
+            com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadataOrBuilder>
+        internalGetProvisionDeploymentGroupMetadataFieldBuilder() {
+      if (provisionDeploymentGroupMetadataBuilder_ == null) {
+        if (!(resourceMetadataCase_ == 10)) {
+          resourceMetadata_ =
+              com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata
+                  .getDefaultInstance();
+        }
+        provisionDeploymentGroupMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata,
+                com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata.Builder,
+                com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadataOrBuilder>(
+                (com.google.cloud.config.v1.ProvisionDeploymentGroupOperationMetadata)
+                    resourceMetadata_,
+                getParentForChildren(),
+                isClean());
+        resourceMetadata_ = null;
+      }
+      resourceMetadataCase_ = 10;
+      onChanged();
+      return provisionDeploymentGroupMetadataBuilder_;
+    }
+
     private com.google.protobuf.Timestamp createTime_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.protobuf.Timestamp,
@@ -1672,7 +2033,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1718,7 +2079,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1740,7 +2101,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1758,7 +2119,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -1769,7 +2130,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1787,7 +2148,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1809,7 +2170,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -1883,7 +2244,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1925,7 +2286,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         endTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1946,7 +2307,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1963,7 +2324,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && endTime_ != null
             && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getEndTimeBuilder().mergeFrom(value);
@@ -1974,7 +2335,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         endTimeBuilder_.mergeFrom(value);
       }
       if (endTime_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1991,7 +2352,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearEndTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       endTime_ = null;
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
@@ -2012,7 +2373,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetEndTimeFieldBuilder().getBuilder();
     }
@@ -2127,7 +2488,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       target_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2145,7 +2506,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearTarget() {
       target_ = getDefaultInstance().getTarget();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2168,7 +2529,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       target_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2238,7 +2599,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       verb_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2256,7 +2617,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearVerb() {
       verb_ = getDefaultInstance().getVerb();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2279,7 +2640,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       verb_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2349,7 +2710,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       statusMessage_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2367,7 +2728,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearStatusMessage() {
       statusMessage_ = getDefaultInstance().getStatusMessage();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2390,7 +2751,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       statusMessage_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2436,7 +2797,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
     public Builder setRequestedCancellation(boolean value) {
 
       requestedCancellation_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2457,7 +2818,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearRequestedCancellation() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       requestedCancellation_ = false;
       onChanged();
       return this;
@@ -2528,7 +2889,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       apiVersion_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2546,7 +2907,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearApiVersion() {
       apiVersion_ = getDefaultInstance().getApiVersion();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -2569,7 +2930,7 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       apiVersion_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

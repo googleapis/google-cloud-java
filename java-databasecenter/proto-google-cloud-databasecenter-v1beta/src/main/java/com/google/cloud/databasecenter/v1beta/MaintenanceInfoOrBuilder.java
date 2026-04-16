@@ -167,4 +167,263 @@ public interface MaintenanceInfoOrBuilder
    * @return The bytes for maintenanceVersion.
    */
   com.google.protobuf.ByteString getMaintenanceVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date when the maintenance version was released.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date current_version_release_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the currentVersionReleaseDate field is set.
+   */
+  boolean hasCurrentVersionReleaseDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date when the maintenance version was released.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date current_version_release_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The currentVersionReleaseDate.
+   */
+  com.google.type.Date getCurrentVersionReleaseDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date when the maintenance version was released.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date current_version_release_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.type.DateOrBuilder getCurrentVersionReleaseDateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Upcoming maintenance window for the database resource. This is
+   * only populated for an engine, if upcoming maintenance is scheduled for the
+   * resource. This schedule is generated per engine and engine version, and
+   * there is only one upcoming maintenance window at any given time. In case of
+   * upcoming maintenance, the maintenance_state will be set to SCHEDULED first,
+   * and then IN_PROGRESS when the maintenance window starts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.databasecenter.v1beta.UpcomingMaintenance upcoming_maintenance = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the upcomingMaintenance field is set.
+   */
+  boolean hasUpcomingMaintenance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Upcoming maintenance window for the database resource. This is
+   * only populated for an engine, if upcoming maintenance is scheduled for the
+   * resource. This schedule is generated per engine and engine version, and
+   * there is only one upcoming maintenance window at any given time. In case of
+   * upcoming maintenance, the maintenance_state will be set to SCHEDULED first,
+   * and then IN_PROGRESS when the maintenance window starts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.databasecenter.v1beta.UpcomingMaintenance upcoming_maintenance = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The upcomingMaintenance.
+   */
+  com.google.cloud.databasecenter.v1beta.UpcomingMaintenance getUpcomingMaintenance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Upcoming maintenance window for the database resource. This is
+   * only populated for an engine, if upcoming maintenance is scheduled for the
+   * resource. This schedule is generated per engine and engine version, and
+   * there is only one upcoming maintenance window at any given time. In case of
+   * upcoming maintenance, the maintenance_state will be set to SCHEDULED first,
+   * and then IN_PROGRESS when the maintenance window starts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.databasecenter.v1beta.UpcomingMaintenance upcoming_maintenance = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.databasecenter.v1beta.UpcomingMaintenanceOrBuilder
+      getUpcomingMaintenanceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource maintenance state. This is to capture the current
+   * state of the maintenance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.databasecenter.v1beta.MaintenanceState state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource maintenance state. This is to capture the current
+   * state of the maintenance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.databasecenter.v1beta.MaintenanceState state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  com.google.cloud.databasecenter.v1beta.MaintenanceState getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of possible reasons why the maintenance is not completed.
+   * This is an optional field and is only populated if there are any
+   * reasons for failures recorded for the maintenance by DB Center.
+   * FAILURE maintenance status may not always have a failure reason.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the possibleFailureReasons.
+   */
+  java.util.List<com.google.cloud.databasecenter.v1beta.PossibleFailureReason>
+      getPossibleFailureReasonsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of possible reasons why the maintenance is not completed.
+   * This is an optional field and is only populated if there are any
+   * reasons for failures recorded for the maintenance by DB Center.
+   * FAILURE maintenance status may not always have a failure reason.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of possibleFailureReasons.
+   */
+  int getPossibleFailureReasonsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of possible reasons why the maintenance is not completed.
+   * This is an optional field and is only populated if there are any
+   * reasons for failures recorded for the maintenance by DB Center.
+   * FAILURE maintenance status may not always have a failure reason.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The possibleFailureReasons at the given index.
+   */
+  com.google.cloud.databasecenter.v1beta.PossibleFailureReason getPossibleFailureReasons(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of possible reasons why the maintenance is not completed.
+   * This is an optional field and is only populated if there are any
+   * reasons for failures recorded for the maintenance by DB Center.
+   * FAILURE maintenance status may not always have a failure reason.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for possibleFailureReasons.
+   */
+  java.util.List<java.lang.Integer> getPossibleFailureReasonsValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of possible reasons why the maintenance is not completed.
+   * This is an optional field and is only populated if there are any
+   * reasons for failures recorded for the maintenance by DB Center.
+   * FAILURE maintenance status may not always have a failure reason.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of possibleFailureReasons at the given index.
+   */
+  int getPossibleFailureReasonsValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Previous maintenance version of the database resource.
+   * Example: "MYSQL_8_0_41.R20250531.01_15". This is available once a minor
+   * version maintenance is complete on a database resource.
+   * </pre>
+   *
+   * <code>string previous_maintenance_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The previousMaintenanceVersion.
+   */
+  java.lang.String getPreviousMaintenanceVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Previous maintenance version of the database resource.
+   * Example: "MYSQL_8_0_41.R20250531.01_15". This is available once a minor
+   * version maintenance is complete on a database resource.
+   * </pre>
+   *
+   * <code>string previous_maintenance_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for previousMaintenanceVersion.
+   */
+  com.google.protobuf.ByteString getPreviousMaintenanceVersionBytes();
 }

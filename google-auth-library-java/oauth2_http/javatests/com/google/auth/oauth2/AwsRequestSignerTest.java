@@ -49,8 +49,9 @@ import org.junit.jupiter.api.Test;
 /**
  * Tests for {@link AwsRequestSigner}.
  *
- * <p>Examples of sigv4 signed requests:
- * https://docs.aws.amazon.com/general/latest/gr/sigv4-signed-request-examples.html
+ * <p><a
+ * href="https://docs.aws.amazon.com/general/latest/gr/sigv4-signed-request-examples.html">Examples
+ * of sigv4 signed requests</a>
  */
 class AwsRequestSignerTest {
 

@@ -30,7 +30,6 @@
 package com.google.api.gax.tracing;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.mockito.Answers.RETURNS_DEEP_STUBS;
 import static org.mockito.Mockito.*;
 
 import com.google.api.gax.rpc.LibraryMetadata;
@@ -52,11 +51,12 @@ class OpenTelemetryMetricsFactoryTest {
     LibraryMetadata metadata =
         LibraryMetadata.newBuilder().setArtifactName("gax-java").setVersion("1.0").build();
     ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
-    tracerFactory.withContext(context);
+    ApiTracerFactory factoryWithContext = tracerFactory.withContext(context);
     ApiTracer actual =
-        tracerFactory.newTracer(
+        factoryWithContext.newTracer(
             mock(ApiTracer.class), mock(SpanName.class), ApiTracerFactory.OperationType.Unary);
     assertThat(actual).isInstanceOf(OpenTelemetryMetricsTracer.class);
+    assertThat(factoryWithContext).isNotEqualTo(tracerFactory);
   }
 
   @Test
@@ -69,17 +69,17 @@ class OpenTelemetryMetricsFactoryTest {
 
   @Test
   void newTracerWithApiTracerContext_shouldMergeApiTracerContext() {
-    ApiTracerContext clientLevelTracerContext = mock(ApiTracerContext.class, RETURNS_DEEP_STUBS);
-    ApiTracerContext methodLevelTracerContext = mock(ApiTracerContext.class);
-    when(clientLevelTracerContext.libraryMetadata().artifactName()).thenReturn("gax-java");
-    when(clientLevelTracerContext.libraryMetadata().isEmpty()).thenReturn(false);
-    when(clientLevelTracerContext.merge(methodLevelTracerContext))
-        .thenReturn(clientLevelTracerContext);
+    LibraryMetadata metadata =
+        LibraryMetadata.newBuilder().setArtifactName("gax-java").setVersion("1.0").build();
+    ApiTracerContext clientLevelTracerContext =
+        ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
+    ApiTracerContext methodLevelTracerContext =
+        ApiTracerContext.newBuilder().setLibraryMetadata(LibraryMetadata.empty()).build();
 
-    tracerFactory.withContext(clientLevelTracerContext);
-    ApiTracer actual = tracerFactory.newTracer(mock(ApiTracer.class), methodLevelTracerContext);
+    ApiTracerFactory factoryWithContext = tracerFactory.withContext(clientLevelTracerContext);
+    ApiTracer actual =
+        factoryWithContext.newTracer(mock(ApiTracer.class), methodLevelTracerContext);
 
-    verify(clientLevelTracerContext).merge(methodLevelTracerContext);
     assertThat(actual).isInstanceOf(OpenTelemetryMetricsTracer.class);
   }
 
@@ -140,8 +140,8 @@ class OpenTelemetryMetricsFactoryTest {
         LibraryMetadata.newBuilder().setArtifactName("gax-java").setVersion("1.0").build();
     ApiTracerContext context = ApiTracerContext.newBuilder().setLibraryMetadata(metadata).build();
 
-    tracerFactory.withContext(context);
+    ApiTracerFactory factoryWithContext = tracerFactory.withContext(context);
 
-    assertThat(tracerFactory.needsContext()).isFalse();
+    assertThat(factoryWithContext.needsContext()).isFalse();
   }
 }

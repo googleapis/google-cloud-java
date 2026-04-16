@@ -44,6 +44,60 @@
         }
       }
     },
+    "DataTableService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "DataTableServiceClient",
+          "rpcs": {
+            "BulkCreateDataTableRows": {
+              "methods": ["bulkCreateDataTableRows", "bulkCreateDataTableRows", "bulkCreateDataTableRows", "bulkCreateDataTableRowsCallable"]
+            },
+            "BulkGetDataTableRows": {
+              "methods": ["bulkGetDataTableRows", "bulkGetDataTableRows", "bulkGetDataTableRows", "bulkGetDataTableRowsCallable"]
+            },
+            "BulkReplaceDataTableRows": {
+              "methods": ["bulkReplaceDataTableRows", "bulkReplaceDataTableRows", "bulkReplaceDataTableRows", "bulkReplaceDataTableRowsCallable"]
+            },
+            "BulkUpdateDataTableRows": {
+              "methods": ["bulkUpdateDataTableRows", "bulkUpdateDataTableRows", "bulkUpdateDataTableRows", "bulkUpdateDataTableRowsCallable"]
+            },
+            "CreateDataTable": {
+              "methods": ["createDataTable", "createDataTable", "createDataTable", "createDataTableCallable"]
+            },
+            "CreateDataTableRow": {
+              "methods": ["createDataTableRow", "createDataTableRow", "createDataTableRow", "createDataTableRowCallable"]
+            },
+            "DeleteDataTable": {
+              "methods": ["deleteDataTable", "deleteDataTable", "deleteDataTable", "deleteDataTableCallable"]
+            },
+            "DeleteDataTableRow": {
+              "methods": ["deleteDataTableRow", "deleteDataTableRow", "deleteDataTableRow", "deleteDataTableRowCallable"]
+            },
+            "GetDataTable": {
+              "methods": ["getDataTable", "getDataTable", "getDataTable", "getDataTableCallable"]
+            },
+            "GetDataTableOperationErrors": {
+              "methods": ["getDataTableOperationErrors", "getDataTableOperationErrors", "getDataTableOperationErrors", "getDataTableOperationErrorsCallable"]
+            },
+            "GetDataTableRow": {
+              "methods": ["getDataTableRow", "getDataTableRow", "getDataTableRow", "getDataTableRowCallable"]
+            },
+            "ListDataTableRows": {
+              "methods": ["listDataTableRows", "listDataTableRows", "listDataTableRows", "listDataTableRowsPagedCallable", "listDataTableRowsCallable"]
+            },
+            "ListDataTables": {
+              "methods": ["listDataTables", "listDataTables", "listDataTables", "listDataTablesPagedCallable", "listDataTablesCallable"]
+            },
+            "UpdateDataTable": {
+              "methods": ["updateDataTable", "updateDataTable", "updateDataTableCallable"]
+            },
+            "UpdateDataTableRow": {
+              "methods": ["updateDataTableRow", "updateDataTableRow", "updateDataTableRowCallable"]
+            }
+          }
+        }
+      }
+    },
     "EntityService": {
       "clients": {
         "grpc": {
