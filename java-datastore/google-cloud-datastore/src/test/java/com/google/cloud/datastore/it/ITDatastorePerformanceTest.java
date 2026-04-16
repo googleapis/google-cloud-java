@@ -113,7 +113,7 @@ public class ITDatastorePerformanceTest {
 
   private void reportChannels(Datastore datastore, int targetLoad, int minute, int requestsInInterval, int errorsInInterval) {
     try {
-      System.out.println("\n" + "-".repeat(30));
+      System.out.println("\n" + Strings.repeat("-", 30));
       System.out.println(String.format("[PHASE: %d RPCs] Minute %d/15", targetLoad, minute));
       System.out.println(String.format("Throughput: %d total requests in last minute (~%.2f req/s)", requestsInInterval, requestsInInterval/60.0));
       if (errorsInInterval > 0) System.out.println("Errors: " + errorsInInterval);
@@ -167,6 +167,10 @@ public class ITDatastorePerformanceTest {
       }
     } catch (Exception e) {
       System.err.println("Failed to report: " + e.getMessage());
+    }
+  }
+}
+ e.getMessage());
     }
   }
 }
