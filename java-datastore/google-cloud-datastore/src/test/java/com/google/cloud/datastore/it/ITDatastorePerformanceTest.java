@@ -25,6 +25,7 @@ import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 import com.google.cloud.datastore.v1.DatastoreSettings;
+import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.common.base.Strings;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -65,16 +66,15 @@ public class ITDatastorePerformanceTest {
             .build())
         .build();
 
+    // Use default credentials and real endpoint (hit Google Cloud)
     DatastoreOptions options = DatastoreOptions.newBuilder()
         .setTransportOptions(GrpcTransportOptions.newBuilder().build())
         .setChannelProvider(channelProvider)
         .build();
 
-    if (options.getProjectId() == null || options.getProjectId().isEmpty()) {
-        System.out.println("No project ID found. Skipping phase.");
-        return;
-    }
-    
+    System.out.println("Project ID: " + options.getProjectId());
+    System.out.println("Host: " + options.getHost());
+
     Datastore datastore = options.getService();
     ExecutorService executor = Executors.newFixedThreadPool(threadCount);
     AtomicInteger intervalRequests = new AtomicInteger(0);
