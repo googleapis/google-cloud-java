@@ -195,7 +195,7 @@ public class BigtableCloudMonitoringExporter implements MetricExporter {
               RuntimeException asyncWrapper = new RuntimeException("export failed", throwable);
               asyncWrapper.setStackTrace(stackTrace);
 
-              if (state.get() != State.Closing || state.get() != State.Closed) {
+              if (state.get() != State.Closing && state.get() != State.Closed) {
                 // ignore the export warning when client is shutting down
                 LOGGER.log(Level.WARNING, msg, asyncWrapper);
               }
