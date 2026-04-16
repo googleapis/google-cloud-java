@@ -16,9 +16,9 @@
 
 package com.google.cloud.datastore.it;
 
+import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.grpc.ChannelPool;
 import com.google.api.gax.grpc.GrpcTransportChannel;
-import com.google.api.gax.rpc.TransportChannel;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Key;
@@ -115,6 +115,7 @@ public class ITDatastorePerformanceTest {
 
   private ChannelPool getChannelPool(Datastore datastore) {
     try {
+      // Navigate to the Stub
       Field rpcField = datastore.getClass().getDeclaredField("datastoreRpc");
       rpcField.setAccessible(true);
       Object rpc = rpcField.get(datastore);
@@ -123,35 +124,51 @@ public class ITDatastorePerformanceTest {
       stubField.setAccessible(true);
       Object stub = stubField.get(rpc);
 
-      Field resourcesField = stub.getClass().getSuperclass().getDeclaredField("backgroundResources");
-      resourcesField.setAccessible(true);
-      List<?> resources = (List<?>) resourcesField.get(stub);
+      // stub is GrpcDatastoreStub, find its backgroundResources
+      Class<?> stubClass = stub.getClass();
+      Field resourcesField = null;
+      while (stubClass != null) {
+          try {
+              resourcesField = stubClass.getDeclaredField("backgroundResources");
+              break;
+          } catch (NoSuchFieldException e) {
+              stubClass = stubClass.getSuperclass();
+          }
+      }
       
-      for (Object res : resources) {
-          if (res instanceof GrpcTransportChannel) {
-              Object channel = ((GrpcTransportChannel) res).getManagedChannel();
-              return findChannelPool(channel);
+      if (resourcesField != null) {
+          resourcesField.setAccessible(true);
+          List<?> resources = (List<?>) resourcesField.get(stub);
+          for (Object res : resources) {
+              if (res instanceof GrpcTransportChannel) {
+                  return findChannelPool(((GrpcTransportChannel) res).getManagedChannel());
+              }
+              // Sometimes it's buried in other BackgroundResource implementations
+              Object pool = findChannelPool(res);
+              if (pool != null) return (ChannelPool) pool;
           }
       }
     } catch (Exception ignored) {}
     return null;
   }
 
-  private ChannelPool findChannelPool(Object channel) {
-      if (channel == null) return null;
-      if (channel instanceof ChannelPool) {
-          return (ChannelPool) channel;
-      }
-      try {
-          Field delegateField = channel.getClass().getDeclaredField("delegate");
-          delegateField.setAccessible(true);
-          return findChannelPool(delegateField.get(channel));
-      } catch (Exception e) {
-          try {
-              Field subChannelField = channel.getClass().getDeclaredField("channel");
-              subChannelField.setAccessible(true);
-              return findChannelPool(subChannelField.get(channel));
-          } catch (Exception ignored) {}
+  private ChannelPool findChannelPool(Object obj) {
+      if (obj == null) return null;
+      if (obj instanceof ChannelPool) return (ChannelPool) obj;
+      
+      // Try to find a 'delegate' or 'channel' field in the object or its hierarchy
+      Class<?> clazz = obj.getClass();
+      while (clazz != null && !clazz.equals(Object.class)) {
+          for (Field f : clazz.getDeclaredFields()) {
+              if (f.getName().equals("delegate") || f.getName().equals("channel") || f.getName().equals("managedChannel")) {
+                  try {
+                      f.setAccessible(true);
+                      ChannelPool result = findChannelPool(f.get(obj));
+                      if (result != null) return result;
+                  } catch (Exception ignored) {}
+              }
+          }
+          clazz = clazz.getSuperclass();
       }
       return null;
   }
@@ -161,8 +178,10 @@ public class ITDatastorePerformanceTest {
     if (pool != null) {
       List<ChannelPool.Entry> entries = pool.entries.get();
       int total = 0;
-      for (ChannelPool.Entry entry : entries) {
-        total += entry.outstandingRpcs.get();
+      if (entries != null) {
+          for (ChannelPool.Entry entry : entries) {
+            total += entry.outstandingRpcs.get();
+          }
       }
       return total;
     }
@@ -181,6 +200,10 @@ public class ITDatastorePerformanceTest {
       ChannelPool pool = getChannelPool(datastore);
       if (pool != null) {
         List<ChannelPool.Entry> entries = pool.entries.get();
+        if (entries == null) {
+            System.out.println("Pool entries are null.");
+            return;
+        }
 
         int poolSize = entries.size();
         int overwhelmedCount = 0;
@@ -202,7 +225,7 @@ public class ITDatastorePerformanceTest {
         System.out.print(channelDetails.toString());
         if (overwhelmedCount > 0) System.out.println(String.format("WARNING: %d/%d channels saturated (>=100 streams)!", overwhelmedCount, poolSize));
       } else {
-        System.out.println("Underlying channel is NOT a ChannelPool. Check if gRPC is enabled.");
+        System.out.println("Underlying channel is NOT a ChannelPool. (Check for proxy/interceptors)");
       }
     } catch (Exception e) {
       System.err.println("Failed to report: " + e.getMessage());
