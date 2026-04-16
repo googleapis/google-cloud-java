@@ -60,7 +60,9 @@ echo "...done"
 
 # write or restore pom.xml files
 echo "Generating missing pom.xml..."
-python3 "${scripts_root}/owlbot/src/fix_poms.py" "${versions_file}" "${is_monorepo}"
+# Under parallel multi-library generation, fix_poms.py modifies the shared versions_file.
+# We use flock to serialize edits safely across concurrent processes.
+flock "${versions_file}" python3 "${scripts_root}/owlbot/src/fix_poms.py" "${versions_file}" "${is_monorepo}"
 echo "...done"
 
 # write or restore clirr-ignored-differences.xml

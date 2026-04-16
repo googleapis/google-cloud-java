@@ -166,3 +166,18 @@ def _construct_effective_arg(
     arguments += ["--destination_path", temp_destination_path]
 
     return arguments
+
+
+import sys
+from io import StringIO
+import traceback
+
+
+def library_generation_worker(config, library_path, library, repo_config):
+    error_msg = None
+    try:
+        generate_composed_library(config, library_path, library, repo_config)
+    except Exception as e:
+        error_msg = f"{e}\n{traceback.format_exc()}"
+
+    return "", error_msg

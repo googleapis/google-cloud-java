@@ -51,7 +51,7 @@ steps:
     cd /workspace
     git clone https://github.com/googleapis/google-cloud-java
     cd google-cloud-java
-    git checkout chore/test-hermetic-build
+    git checkout chore/test-hermetic-build-parallel
     mkdir ../golden
     cd ../golden
     cp -r ../google-cloud-java/java-apigee-connect .

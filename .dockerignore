@@ -1,0 +1,9 @@
+.git/
+.github/
+.kokoro/
+.vscode/
+bazel-*/
+googleapis/
+**/output/
+**/target/
+**/*.jar
