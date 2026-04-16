@@ -37,6 +37,10 @@ public class BackgroundResourceAggregation implements BackgroundResource {
 
   private final List<BackgroundResource> resources;
 
+  public List<BackgroundResource> getResources() {
+    return resources;
+  }
+
   public BackgroundResourceAggregation(List<BackgroundResource> resources) {
     this.resources = resources;
   }

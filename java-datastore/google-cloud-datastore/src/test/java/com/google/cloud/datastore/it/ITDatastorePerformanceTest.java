@@ -17,15 +17,19 @@
 package com.google.cloud.datastore.it;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.ChannelPool;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreImpl;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
+import com.google.cloud.datastore.spi.v1.DatastoreRpc;
+import com.google.cloud.datastore.spi.v1.GrpcDatastoreRpc;
+import com.google.cloud.datastore.v1.stub.GrpcDatastoreStub;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.common.base.Strings;
-import java.lang.reflect.Field;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -114,41 +118,19 @@ public class ITDatastorePerformanceTest {
   }
 
   private ChannelPool getChannelPool(Datastore datastore) {
-    try {
-      // Navigate to the Stub
-      Field rpcField = datastore.getClass().getDeclaredField("datastoreRpc");
-      rpcField.setAccessible(true);
-      Object rpc = rpcField.get(datastore);
-
-      Field stubField = rpc.getClass().getDeclaredField("datastoreStub");
-      stubField.setAccessible(true);
-      Object stub = stubField.get(rpc);
-
-      // stub is GrpcDatastoreStub, find its backgroundResources
-      Class<?> stubClass = stub.getClass();
-      Field resourcesField = null;
-      while (stubClass != null) {
-          try {
-              resourcesField = stubClass.getDeclaredField("backgroundResources");
-              break;
-          } catch (NoSuchFieldException e) {
-              stubClass = stubClass.getSuperclass();
-          }
-      }
-      
-      if (resourcesField != null) {
-          resourcesField.setAccessible(true);
-          List<?> resources = (List<?>) resourcesField.get(stub);
-          for (Object res : resources) {
-              if (res instanceof GrpcTransportChannel) {
-                  return findChannelPool(((GrpcTransportChannel) res).getManagedChannel());
-              }
-              // Sometimes it's buried in other BackgroundResource implementations
-              Object pool = findChannelPool(res);
-              if (pool != null) return (ChannelPool) pool;
-          }
-      }
-    } catch (Exception ignored) {}
+    if (!(datastore instanceof DatastoreImpl)) return null;
+    DatastoreRpc rpc = ((DatastoreImpl) datastore).getDatastoreRpc();
+    if (!(rpc instanceof GrpcDatastoreRpc)) return null;
+    GrpcDatastoreStub stub = ((GrpcDatastoreRpc) rpc).getDatastoreStub();
+    BackgroundResource resources = stub.getBackgroundResources();
+    
+    if (resources instanceof BackgroundResourceAggregation) {
+        for (BackgroundResource res : ((BackgroundResourceAggregation) resources).getResources()) {
+            if (res instanceof GrpcTransportChannel) {
+                return findChannelPool(((GrpcTransportChannel) res).getManagedChannel());
+            }
+        }
+    }
     return null;
   }
 
@@ -156,21 +138,9 @@ public class ITDatastorePerformanceTest {
       if (obj == null) return null;
       if (obj instanceof ChannelPool) return (ChannelPool) obj;
       
-      // Try to find a 'delegate' or 'channel' field in the object or its hierarchy
-      Class<?> clazz = obj.getClass();
-      while (clazz != null && !clazz.equals(Object.class)) {
-          for (Field f : clazz.getDeclaredFields()) {
-              if (f.getName().equals("delegate") || f.getName().equals("channel") || f.getName().equals("managedChannel")) {
-                  try {
-                      f.setAccessible(true);
-                      ChannelPool result = findChannelPool(f.get(obj));
-                      if (result != null) return result;
-                  } catch (Exception ignored) {}
-              }
-          }
-          clazz = clazz.getSuperclass();
-      }
-      return null;
+      // If we still encounter wrappers we don't own, we can add them here
+      // But since we own most of the path now, this should be cleaner.
+      return null; 
   }
 
   private int getActualOutstanding(Datastore datastore) {
@@ -211,7 +181,7 @@ public class ITDatastorePerformanceTest {
         for (int i = 0; i < poolSize; i++) {
           ChannelPool.Entry entry = entries.get(i);
           int count = entry.outstandingRpcs.get();
-          int poolInternalMax = entry.maxOutstanding.get();
+          int poolInternalMax = entry.getAndResetMaxOutstanding();
           
           if (count > 100 || poolInternalMax > 100) overwhelmedCount++;
           if (poolSize <= 10 || i < 5 || i >= poolSize - 2) {
@@ -225,7 +195,7 @@ public class ITDatastorePerformanceTest {
         System.out.print(channelDetails.toString());
         if (overwhelmedCount > 0) System.out.println(String.format("WARNING: %d/%d channels saturated (>=100 streams)!", overwhelmedCount, poolSize));
       } else {
-        System.out.println("Underlying channel is NOT a ChannelPool. (Check for proxy/interceptors)");
+        System.out.println("Underlying channel is NOT a ChannelPool. Monitoring failed.");
       }
     } catch (Exception e) {
       System.err.println("Failed to report: " + e.getMessage());

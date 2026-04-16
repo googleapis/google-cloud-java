@@ -483,7 +483,7 @@ public class ChannelPool extends ManagedChannel {
       this.channel = channel;
     }
 
-    int getAndResetMaxOutstanding() {
+    public int getAndResetMaxOutstanding() {
       return maxOutstanding.getAndSet(outstandingRpcs.get());
     }
 

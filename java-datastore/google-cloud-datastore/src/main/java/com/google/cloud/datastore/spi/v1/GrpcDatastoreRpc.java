@@ -61,10 +61,14 @@ import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import java.util.Collections;
 
-@InternalApi
 public class GrpcDatastoreRpc implements DatastoreRpc {
 
   private final GrpcDatastoreStub datastoreStub;
+
+  public GrpcDatastoreStub getDatastoreStub() {
+    return datastoreStub;
+  }
+
   private final ClientContext clientContext;
   private boolean closed;
 

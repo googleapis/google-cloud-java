@@ -90,6 +90,11 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   Logger logger = Logger.getLogger(Datastore.class.getName());
   private final DatastoreRpc datastoreRpc;
+
+  public DatastoreRpc getDatastoreRpc() {
+    return datastoreRpc;
+  }
+
   private final RetrySettings retrySettings;
   private static final ExceptionHandler TRANSACTION_EXCEPTION_HANDLER =
       TransactionExceptionHandler.build();

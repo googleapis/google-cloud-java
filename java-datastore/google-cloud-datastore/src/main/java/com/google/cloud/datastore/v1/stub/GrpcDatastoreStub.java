@@ -150,6 +150,11 @@ public class GrpcDatastoreStub extends DatastoreStub {
   private final UnaryCallable<ReserveIdsRequest, ReserveIdsResponse> reserveIdsCallable;
 
   private final BackgroundResource backgroundResources;
+
+  public BackgroundResource getBackgroundResources() {
+    return backgroundResources;
+  }
+
   private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
