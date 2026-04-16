@@ -181,7 +181,7 @@ class ThreadLocalStream:
 
     def flush(self):
         if self.buffer is not None:
-            return
+            self.buffer.flush()
         self.original_stream.flush()
 
 
