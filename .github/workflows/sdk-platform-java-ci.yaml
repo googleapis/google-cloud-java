@@ -18,6 +18,7 @@ jobs:
           library:
             - 'sdk-platform-java/**'
             - 'google-auth-library-java/**'
+            - '.github/workflows/ci.yaml'
   build:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
