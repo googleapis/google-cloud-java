@@ -86,7 +86,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
 
-final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datastore {
+public final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datastore {
 
   Logger logger = Logger.getLogger(Datastore.class.getName());
   private final DatastoreRpc datastoreRpc;
