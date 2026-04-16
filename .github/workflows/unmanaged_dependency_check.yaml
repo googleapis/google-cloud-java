@@ -10,9 +10,12 @@ jobs:
       with:
         distribution: temurin
         java-version: 11
-    - name: Install modules
+    - name: Install all modules first
       shell: bash
-      run: mvn install -B -ntp -T 1C -DskipTests -Pquick-build
+      run: .kokoro/build.sh
+      env:
+        BUILD_SUBDIR: sdk-platform-java
+        JOB_TYPE: install
     - name: Unmanaged dependency check
       uses: ./sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check
       with:

@@ -204,6 +204,7 @@ public class VectorSearchServiceClientHttpJsonTest {
             .setSchema(Struct.newBuilder().build())
             .putAllVectorSchema(new HashMap<String, VectorField>())
             .setDataSchema(Struct.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -256,6 +257,7 @@ public class VectorSearchServiceClientHttpJsonTest {
             .setSchema(Struct.newBuilder().build())
             .putAllVectorSchema(new HashMap<String, VectorField>())
             .setDataSchema(Struct.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -308,6 +310,7 @@ public class VectorSearchServiceClientHttpJsonTest {
             .setSchema(Struct.newBuilder().build())
             .putAllVectorSchema(new HashMap<String, VectorField>())
             .setDataSchema(Struct.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -370,6 +373,7 @@ public class VectorSearchServiceClientHttpJsonTest {
             .setSchema(Struct.newBuilder().build())
             .putAllVectorSchema(new HashMap<String, VectorField>())
             .setDataSchema(Struct.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -432,6 +436,7 @@ public class VectorSearchServiceClientHttpJsonTest {
             .setSchema(Struct.newBuilder().build())
             .putAllVectorSchema(new HashMap<String, VectorField>())
             .setDataSchema(Struct.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -452,6 +457,7 @@ public class VectorSearchServiceClientHttpJsonTest {
             .setSchema(Struct.newBuilder().build())
             .putAllVectorSchema(new HashMap<String, VectorField>())
             .setDataSchema(Struct.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -492,6 +498,7 @@ public class VectorSearchServiceClientHttpJsonTest {
               .setSchema(Struct.newBuilder().build())
               .putAllVectorSchema(new HashMap<String, VectorField>())
               .setDataSchema(Struct.newBuilder().build())
+              .setEncryptionSpec(EncryptionSpec.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateCollectionAsync(collection, updateMask).get();
@@ -917,6 +924,91 @@ public class VectorSearchServiceClientHttpJsonTest {
       Index index = Index.newBuilder().build();
       String indexId = "indexId1943291277";
       client.createIndexAsync(parent, index, indexId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void updateIndexTest() throws Exception {
+    Index expectedResponse =
+        Index.newBuilder()
+            .setName(IndexName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[INDEX]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDistanceMetric(DistanceMetric.forNumber(0))
+            .setIndexField("indexField723729224")
+            .addAllFilterFields(new ArrayList<String>())
+            .addAllStoreFields(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateIndexTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    Index index =
+        Index.newBuilder()
+            .setName(IndexName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[INDEX]").toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .putAllLabels(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDistanceMetric(DistanceMetric.forNumber(0))
+            .setIndexField("indexField723729224")
+            .addAllFilterFields(new ArrayList<String>())
+            .addAllStoreFields(new ArrayList<String>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    Index actualResponse = client.updateIndexAsync(index, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateIndexExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      Index index =
+          Index.newBuilder()
+              .setName(
+                  IndexName.of("[PROJECT]", "[LOCATION]", "[COLLECTION]", "[INDEX]").toString())
+              .setDisplayName("displayName1714148973")
+              .setDescription("description-1724546052")
+              .putAllLabels(new HashMap<String, String>())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .setDistanceMetric(DistanceMetric.forNumber(0))
+              .setIndexField("indexField723729224")
+              .addAllFilterFields(new ArrayList<String>())
+              .addAllStoreFields(new ArrayList<String>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateIndexAsync(index, updateMask).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

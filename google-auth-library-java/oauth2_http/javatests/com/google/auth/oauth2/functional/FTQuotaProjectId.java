@@ -39,7 +39,7 @@ import com.google.auth.oauth2.GoogleCredentials;
 import java.io.IOException;
 import org.junit.jupiter.api.Test;
 
-public final class FTQuotaProjectId {
+final class FTQuotaProjectId {
 
   @Test
   void validate_quota_from_environment_used() throws IOException {

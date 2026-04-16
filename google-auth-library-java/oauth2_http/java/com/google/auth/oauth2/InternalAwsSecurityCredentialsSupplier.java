@@ -235,12 +235,8 @@ class InternalAwsSecurityCredentialsSupplier implements AwsSecurityCredentialsSu
     // Both flows work for IDMS v1 and v2. But if IDMSv2 is enabled, then if
     // session token is not present, Unauthorized exception will be thrown.
     if (awsCredentialSource.imdsv2SessionTokenUrl != null) {
-      Map<String, Object> tokenRequestHeaders =
-          new HashMap<String, Object>() {
-            {
-              put(AWS_IMDSV2_SESSION_TOKEN_TTL_HEADER, AWS_IMDSV2_SESSION_TOKEN_TTL);
-            }
-          };
+      Map<String, Object> tokenRequestHeaders = new HashMap<>();
+      tokenRequestHeaders.put(AWS_IMDSV2_SESSION_TOKEN_TTL_HEADER, AWS_IMDSV2_SESSION_TOKEN_TTL);
 
       String imdsv2SessionToken =
           retrieveResource(

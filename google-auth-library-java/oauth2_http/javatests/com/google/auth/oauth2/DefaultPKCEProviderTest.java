@@ -54,11 +54,11 @@ final class DefaultPKCEProviderTest {
     String expectedCodeChallengeMethod = "S256";
 
     assertEquals(pkce.getCodeChallenge(), expectedCodeChallenge);
-    assertEquals(pkce.getCodeChallengeMethod(), expectedCodeChallengeMethod);
+    assertEquals(expectedCodeChallengeMethod, pkce.getCodeChallengeMethod());
   }
 
   @Test
-  void testNoBase64Padding() throws NoSuchAlgorithmException {
+  void testNoBase64Padding() {
     PKCEProvider pkce = new DefaultPKCEProvider();
     assertFalse(pkce.getCodeChallenge().endsWith("="));
     assertFalse(pkce.getCodeChallenge().contains("="));

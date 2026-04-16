@@ -34,14 +34,12 @@ package com.google.auth.oauth2;
 import static com.google.auth.Credentials.GOOGLE_DEFAULT_UNIVERSE;
 import static com.google.auth.oauth2.MockExternalAccountCredentialsTransport.SERVICE_ACCOUNT_IMPERSONATION_URL;
 import static com.google.auth.oauth2.OAuth2Utils.JSON_FACTORY;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.verify;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
@@ -78,7 +76,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
       (ExternalAccountSupplierContext context) -> "testSubjectToken";
 
   @Test
-  void createdScoped_clonedCredentialWithAddedScopes() throws IOException {
+  void createdScoped_clonedCredentialWithAddedScopes() {
     IdentityPoolCredentials credentials =
         IdentityPoolCredentials.newBuilder(createBaseFileSourcedCredentials())
             .setServiceAccountImpersonationUrl(SERVICE_ACCOUNT_IMPERSONATION_URL)
@@ -188,12 +186,11 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     credentialSourceMap.put("file", file.getAbsolutePath());
     credentialSourceMap.put("format", formatMap);
 
-    try {
-      new IdentityPoolCredentialSource(credentialSourceMap);
-      fail("Exception should be thrown due to null format.");
-    } catch (IllegalArgumentException e) {
-      assertEquals("Invalid credential source format type: null.", e.getMessage());
-    }
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> new IdentityPoolCredentialSource(credentialSourceMap));
+    assertEquals("Invalid credential source format type: null.", e.getMessage());
   }
 
   @Test
@@ -209,14 +206,10 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(credentialSource)
             .build();
 
-    try {
-      credentials.retrieveSubjectToken();
-      fail("Exception should be thrown.");
-    } catch (IOException e) {
-      assertEquals(
-          String.format("Invalid credential location. The file at %s does not exist.", path),
-          e.getMessage());
-    }
+    IOException e = assertThrows(IOException.class, credentials::retrieveSubjectToken);
+    assertEquals(
+        String.format("Invalid credential location. The file at %s does not exist.", path),
+        e.getMessage());
   }
 
   @Test
@@ -276,15 +269,11 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
                 buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl()))
             .build();
 
-    try {
-      credential.retrieveSubjectToken();
-      fail("Exception should be thrown.");
-    } catch (IOException e) {
-      assertEquals(
-          String.format(
-              "Error getting subject token from metadata server: %s", response.getMessage()),
-          e.getMessage());
-    }
+    IOException e = assertThrows(IOException.class, credential::retrieveSubjectToken);
+    assertEquals(
+        String.format(
+            "Error getting subject token from metadata server: %s", response.getMessage()),
+        e.getMessage());
   }
 
   @Test
@@ -303,7 +292,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void retrieveSubjectToken_providerThrowsError() throws IOException {
+  void retrieveSubjectToken_providerThrowsError() {
     IOException testException = new IOException("test");
 
     IdentityPoolSubjectTokenSupplier errorProvider =
@@ -316,12 +305,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setSubjectTokenSupplier(errorProvider)
             .build();
 
-    try {
-      String subjectToken = credentials.retrieveSubjectToken();
-      fail("retrieveSubjectToken should fail.");
-    } catch (IOException e) {
-      assertEquals("test", e.getMessage());
-    }
+    IOException e = assertThrows(IOException.class, credentials::retrieveSubjectToken);
+    assertEquals("test", e.getMessage());
   }
 
   @Test
@@ -458,7 +443,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(
                 buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl()))
             .setServiceAccountImpersonationOptions(
-                ExternalAccountCredentialsTest.buildServiceAccountImpersonationOptions(2800))
+                ExternalAccountCredentialsTest.buildServiceAccountImpersonationOptions())
             .build();
 
     AccessToken accessToken = credential.refreshAccessToken();
@@ -590,7 +575,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
                 buildUrlBasedCredentialSource(transportFactory.transport.getMetadataUrl()))
             .setWorkforcePoolUserProject("userProject")
             .setServiceAccountImpersonationOptions(
-                ExternalAccountCredentialsTest.buildServiceAccountImpersonationOptions(2800))
+                ExternalAccountCredentialsTest.buildServiceAccountImpersonationOptions())
             .build();
 
     AccessToken accessToken = credential.refreshAccessToken();
@@ -646,7 +631,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             credentialSourceMapWithUrlJsonTextSource);
     for (Map<String, Object> source : sources) {
       // Should not throw.
-      new IdentityPoolCredentialSource(source);
+      assertDoesNotThrow(() -> new IdentityPoolCredentialSource(source));
     }
   }
 
@@ -689,20 +674,20 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             credentialSourceMapWithUrlJsonTextSource);
     for (Map<String, Object> source : sources) {
       // Should not throw.
-      new IdentityPoolCredentialSource(source);
+      assertDoesNotThrow(() -> new IdentityPoolCredentialSource(source));
     }
   }
 
   @Test
   void identityPoolCredentialSource_invalidSourceType() {
-    try {
-      new IdentityPoolCredentialSource(new HashMap<>());
-      fail("Should not be able to continue without exception.");
-    } catch (IllegalArgumentException exception) {
-      assertEquals(
-          "Missing credential source file location, URL, or certificate. At least one must be specified.",
-          exception.getMessage());
-    }
+    HashMap<String, Object> credentialSourceMap = new HashMap<>();
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> new IdentityPoolCredentialSource(credentialSourceMap));
+    assertEquals(
+        "Missing credential source file location, URL, or certificate. At least one must be specified.",
+        e.getMessage());
   }
 
   @Test
@@ -714,12 +699,11 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     format.put("type", "unsupportedType");
     credentialSourceMap.put("format", format);
 
-    try {
-      new IdentityPoolCredentialSource(credentialSourceMap);
-      fail("Exception should be thrown.");
-    } catch (IllegalArgumentException e) {
-      assertEquals("Invalid credential source format type: unsupportedType.", e.getMessage());
-    }
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> new IdentityPoolCredentialSource(credentialSourceMap));
+    assertEquals("Invalid credential source format type: unsupportedType.", e.getMessage());
   }
 
   @Test
@@ -731,12 +715,11 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     format.put("type", null);
     credentialSourceMap.put("format", format);
 
-    try {
-      new IdentityPoolCredentialSource(credentialSourceMap);
-      fail("Exception should be thrown.");
-    } catch (IllegalArgumentException e) {
-      assertEquals("Invalid credential source format type: null.", e.getMessage());
-    }
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> new IdentityPoolCredentialSource(credentialSourceMap));
+    assertEquals("Invalid credential source format type: null.", e.getMessage());
   }
 
   @Test
@@ -748,18 +731,17 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     format.put("type", "json");
     credentialSourceMap.put("format", format);
 
-    try {
-      new IdentityPoolCredentialSource(credentialSourceMap);
-      fail("Exception should be thrown.");
-    } catch (IllegalArgumentException e) {
-      assertEquals(
-          "When specifying a JSON credential type, the subject_token_field_name must be set.",
-          e.getMessage());
-    }
+    IllegalArgumentException e =
+        assertThrows(
+            IllegalArgumentException.class,
+            () -> new IdentityPoolCredentialSource(credentialSourceMap));
+    assertEquals(
+        "When specifying a JSON credential type, the subject_token_field_name must be set.",
+        e.getMessage());
   }
 
   @Test
-  void builder_allFields() throws IOException {
+  void builder_allFields() {
     List<String> scopes = Arrays.asList("scope1", "scope2");
     IdentityPoolCredentialSource credentialSource = createFileCredentialSource();
 
@@ -831,23 +813,20 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             "//iam.googleapis.com/locations/global/workforce/providers");
 
     for (String audience : invalidAudiences) {
-      try {
-        IdentityPoolCredentials.newBuilder()
-            .setWorkforcePoolUserProject("workforcePoolUserProject")
-            .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
-            .setAudience(audience)
-            .setSubjectTokenType("subjectTokenType")
-            .setTokenUrl(STS_URL)
-            .setTokenInfoUrl("tokenInfoUrl")
-            .setCredentialSource(createFileCredentialSource())
-            .setQuotaProjectId("quotaProjectId")
-            .build();
-        fail("Exception should be thrown.");
-      } catch (IllegalArgumentException e) {
-        assertEquals(
-            "The workforce_pool_user_project parameter should only be provided for a Workforce Pool configuration.",
-            e.getMessage());
-      }
+      IdentityPoolCredentials.Builder builder =
+          IdentityPoolCredentials.newBuilder()
+              .setWorkforcePoolUserProject("workforcePoolUserProject")
+              .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
+              .setAudience(audience)
+              .setSubjectTokenType("subjectTokenType")
+              .setTokenUrl(STS_URL)
+              .setTokenInfoUrl("tokenInfoUrl")
+              .setCredentialSource(createFileCredentialSource())
+              .setQuotaProjectId("quotaProjectId");
+      IllegalArgumentException e = assertThrows(IllegalArgumentException.class, builder::build);
+      assertEquals(
+          "The workforce_pool_user_project parameter should only be provided for a Workforce Pool configuration.",
+          e.getMessage());
     }
   }
 
@@ -872,44 +851,37 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
   @Test
   void builder_supplierAndCredSourceThrows() {
-    try {
-      IdentityPoolCredentials credentials =
-          IdentityPoolCredentials.newBuilder()
-              .setSubjectTokenSupplier(testProvider)
-              .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
-              .setAudience("audience")
-              .setSubjectTokenType("subjectTokenType")
-              .setTokenUrl(STS_URL)
-              .setCredentialSource(createFileCredentialSource())
-              .build();
-      fail("Should not be able to continue without exception.");
-    } catch (IllegalArgumentException exception) {
-      assertEquals(
-          "IdentityPoolCredentials cannot have both a subjectTokenSupplier and a credentialSource.",
-          exception.getMessage());
-    }
+    IdentityPoolCredentials.Builder builder =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(testProvider)
+            .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl(STS_URL)
+            .setCredentialSource(createFileCredentialSource());
+    IllegalArgumentException exception =
+        assertThrows(IllegalArgumentException.class, builder::build);
+    assertEquals(
+        "IdentityPoolCredentials cannot have both a subjectTokenSupplier and a credentialSource.",
+        exception.getMessage());
   }
 
   @Test
-  void builder_noSupplierOrCredSourceThrows() throws IOException {
-
-    try {
-      IdentityPoolCredentials credentials =
-          IdentityPoolCredentials.newBuilder()
-              .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
-              .setAudience("audience")
-              .setSubjectTokenType("subjectTokenType")
-              .setTokenUrl(STS_URL)
-              .build();
-      fail("Should not be able to continue without exception.");
-    } catch (IllegalArgumentException exception) {
-      assertEquals(
-          "A subjectTokenSupplier or a credentialSource must be provided.", exception.getMessage());
-    }
+  void builder_noSupplierOrCredSourceThrows() {
+    IdentityPoolCredentials.Builder builder =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(OAuth2Utils.HTTP_TRANSPORT_FACTORY)
+            .setAudience("audience")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl(STS_URL);
+    IllegalArgumentException exception =
+        assertThrows(IllegalArgumentException.class, builder::build);
+    assertEquals(
+        "A subjectTokenSupplier or a credentialSource must be provided.", exception.getMessage());
   }
 
   @Test
-  void builder_missingUniverseDomain_defaults() throws IOException {
+  void builder_missingUniverseDomain_defaults() {
     List<String> scopes = Arrays.asList("scope1", "scope2");
     IdentityPoolCredentialSource credentialSource = createFileCredentialSource();
 
@@ -944,7 +916,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void newBuilder_allFields() throws IOException {
+  void newBuilder_allFields() {
     List<String> scopes = Arrays.asList("scope1", "scope2");
 
     IdentityPoolCredentials credentials =
@@ -986,7 +958,7 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void newBuilder_noUniverseDomain_defaults() throws IOException {
+  void newBuilder_noUniverseDomain_defaults() {
     List<String> scopes = Arrays.asList("scope1", "scope2");
 
     IdentityPoolCredentials credentials =
@@ -1045,17 +1017,11 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void build_withCertificateSourceAndCustomX509Provider_success()
-      throws IOException, KeyStoreException, CertificateException, NoSuchAlgorithmException {
-    // Create an empty KeyStore and a spy on a custom X509Provider.
-    KeyStore keyStore = KeyStore.getInstance("JKS");
-    keyStore.load(null, null);
-    TestX509Provider x509Provider =
-        spy(new TestX509Provider(keyStore, "/path/to/certificate.json"));
-
+  void build_withCertificateSource_succeeds() throws Exception {
     // Set up credential source for certificate type.
     Map<String, Object> certificateMap = new HashMap<>();
-    certificateMap.put("use_default_certificate_config", true);
+    certificateMap.put("use_default_certificate_config", false);
+    certificateMap.put("certificate_config_location", "testresources/mtls/certificate_config.json");
     Map<String, Object> credentialSourceMap = new HashMap<>();
     credentialSourceMap.put("certificate", certificateMap);
     IdentityPoolCredentialSource credentialSource =
@@ -1063,10 +1029,9 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     MockExternalAccountCredentialsTransportFactory mockTransportFactory =
         new MockExternalAccountCredentialsTransportFactory();
 
-    // Build credentials with the custom provider.
+    // Build credentials.
     IdentityPoolCredentials credentials =
         IdentityPoolCredentials.newBuilder()
-            .setX509Provider(x509Provider)
             .setHttpTransportFactory(mockTransportFactory)
             .setAudience("test-audience")
             .setSubjectTokenType("test-token-type")
@@ -1083,10 +1048,48 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
         IdentityPoolCredentials.CERTIFICATE_METRICS_HEADER_VALUE,
         credentials.getCredentialSourceType(),
         "Metrics header should indicate certificate source");
+  }
 
-    // Verify the custom provider methods were called during build.
-    verify(x509Provider).getKeyStore();
-    verify(x509Provider).getCertificatePath();
+  @Test
+  void build_withDefaultCertificateConfig_success()
+      throws IOException, KeyStoreException, CertificateException, NoSuchAlgorithmException {
+    // Set up credential source for certificate type.
+    Map<String, Object> certificateMap = new HashMap<>();
+    certificateMap.put("use_default_certificate_config", true);
+    Map<String, Object> credentialSourceMap = new HashMap<>();
+    credentialSourceMap.put("certificate", certificateMap);
+    IdentityPoolCredentialSource credentialSource =
+        new IdentityPoolCredentialSource(credentialSourceMap);
+    MockExternalAccountCredentialsTransportFactory mockTransportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    // Use the pre-existing test configuration file to bypass well-known path resolution.
+    EnvironmentProvider mockEnvProvider =
+        name ->
+            "GOOGLE_API_CERTIFICATE_CONFIG".equals(name)
+                ? new File("testresources/mtls/certificate_config.json").getAbsolutePath()
+                : null;
+
+    // Build credentials using the default provider (no setX509Provider).
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setHttpTransportFactory(mockTransportFactory)
+            .setEnvironmentProvider(mockEnvProvider)
+            .setAudience("test-audience")
+            .setSubjectTokenType("test-token-type")
+            .setCredentialSource(credentialSource)
+            .build();
+
+    // Verify successful creation and correct internal setup.
+    assertNotNull(credentials, "Credentials should be successfully created");
+    assertTrue(
+        credentials.getIdentityPoolSubjectTokenSupplier()
+            instanceof CertificateIdentityPoolSubjectTokenSupplier,
+        "Subject token supplier should be for certificates");
+    assertEquals(
+        IdentityPoolCredentials.CERTIFICATE_METRICS_HEADER_VALUE,
+        credentials.getCredentialSourceType(),
+        "Metrics header should indicate certificate source");
   }
 
   @Test
@@ -1148,15 +1151,17 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
   @Test
   void build_withCustomProvider_throwsOnGetCertificatePath()
       throws IOException, KeyStoreException, CertificateException, NoSuchAlgorithmException {
-    // Simulate a scenario where the X509Provider cannot access or read the certificate
-    // configuration file needed to determine the certificate path, resulting in an IOException.
+    // Simulate a scenario where path resolution fails during build with a custom
+    // provider.
+    // We achieve this by passing a non-existent configuration path which causes
+    // MtlsUtils to throw
+    // IOException.
     KeyStore keyStore = KeyStore.getInstance("JKS");
     keyStore.load(null, null);
     TestX509Provider x509Provider = new TestX509Provider(keyStore, "/path/to/certificate.json");
-    x509Provider.setShouldThrowOnGetCertificatePath(true); // Configure to throw
 
     Map<String, Object> certificateMap = new HashMap<>();
-    certificateMap.put("certificate_config_location", "/path/to/certificate.json");
+    certificateMap.put("certificate_config_location", "/non/existent/path.json");
 
     // Expect RuntimeException because the constructor wraps the IOException.
     RuntimeException exception =
@@ -1164,10 +1169,9 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
             RuntimeException.class,
             () -> createCredentialsWithCertificate(x509Provider, certificateMap));
 
-    // Verify the cause is the expected IOException from the mock.
+    // Verify the cause is the expected IOException (or subclass) from MtlsUtils.
     assertNotNull(exception.getCause());
     assertTrue(exception.getCause() instanceof IOException);
-    assertEquals("Simulated IOException on certificate path", exception.getCause().getMessage());
 
     // Verify the wrapper exception message
     assertEquals(
@@ -1276,7 +1280,6 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
     private final KeyStore keyStore;
     private final String certificatePath;
     private boolean shouldThrowOnGetKeyStore = false;
-    private boolean shouldThrowOnGetCertificatePath = false;
 
     TestX509Provider(KeyStore keyStore, String certificatePath) {
       super();
@@ -1292,20 +1295,8 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
       return keyStore;
     }
 
-    @Override
-    public String getCertificatePath() throws IOException {
-      if (shouldThrowOnGetCertificatePath) {
-        throw new IOException("Simulated IOException on certificate path");
-      }
-      return certificatePath;
-    }
-
     void setShouldThrowOnGetKeyStore(boolean shouldThrow) {
       this.shouldThrowOnGetKeyStore = shouldThrow;
-    }
-
-    void setShouldThrowOnGetCertificatePath(boolean shouldThrow) {
-      this.shouldThrowOnGetCertificatePath = shouldThrow;
     }
   }
 }

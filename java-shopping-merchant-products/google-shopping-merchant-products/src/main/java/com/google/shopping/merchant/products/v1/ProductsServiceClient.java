@@ -245,8 +245,8 @@ public class ProductsServiceClient implements BackgroundResource {
    *     `content_language~feed_label~offer_id` structure. This encoding MUST be used if any part of
    *     the product identifier (like `offer_id`) contains characters such as `/`, `%`, or `~`.
    *     &#42; Example: To represent the product ID `en~US~sku/123`, the `{product}` segment must be
-   *     the base64url encoding of this string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource
-   *     name for the product would be `accounts/123/products/ZW5-VVMtc2t1LzEyMw`.
+   *     the unpadded base64url encoding of this string, which is `ZW5-VVN-c2t1LzEyMw`. The full
+   *     resource name for the product would be `accounts/123/products/ZW5-VVN-c2t1LzEyMw`.
    *     <p>2. &#42;&#42;Plain Format&#42;&#42;: The `{product}` segment is the tilde-separated
    *     string `content_language~feed_label~offer_id`. This format is suitable only when
    *     `content_language`, `feed_label`, and `offer_id` do not contain URL-problematic characters
@@ -300,8 +300,8 @@ public class ProductsServiceClient implements BackgroundResource {
    *     `content_language~feed_label~offer_id` structure. This encoding MUST be used if any part of
    *     the product identifier (like `offer_id`) contains characters such as `/`, `%`, or `~`.
    *     &#42; Example: To represent the product ID `en~US~sku/123`, the `{product}` segment must be
-   *     the base64url encoding of this string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource
-   *     name for the product would be `accounts/123/products/ZW5-VVMtc2t1LzEyMw`.
+   *     the unpadded base64url encoding of this string, which is `ZW5-VVN-c2t1LzEyMw`. The full
+   *     resource name for the product would be `accounts/123/products/ZW5-VVN-c2t1LzEyMw`.
    *     <p>2. &#42;&#42;Plain Format&#42;&#42;: The `{product}` segment is the tilde-separated
    *     string `content_language~feed_label~offer_id`. This format is suitable only when
    *     `content_language`, `feed_label`, and `offer_id` do not contain URL-problematic characters

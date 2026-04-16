@@ -101,6 +101,10 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_vectorsearch_v1_CreateIndexRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_vectorsearch_v1_UpdateIndexRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_vectorsearch_v1_UpdateIndexRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_vectorsearch_v1_DeleteIndexRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_vectorsearch_v1_DeleteIndexRequest_fieldAccessorTable;
@@ -180,9 +184,10 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
           + "_behavior.proto\032\033google/api/field_info.p"
           + "roto\032\031google/api/resource.proto\032)google/"
           + "cloud/vectorsearch/v1/common.proto\0323google/cloud/vectorsearch/v1/embedding_confi"
-          + "g.proto\032#google/longrunning/operations.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032\034google/prot"
-          + "obuf/struct.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\257\005\n\n"
+          + "g.proto\0322google/cloud/vectorsearch/v1/encryption_spec.proto\032#google/longrunning/"
+          + "operations.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf/field_mask.proto\032\034google/protobuf/struct.proto\032\037google/pr"
+          + "otobuf/timestamp.proto\032\027google/rpc/status.proto\"\376\005\n\n"
           + "Collection\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
           + "\014display_name\030\010 \001(\tB\003\340A\001\022\030\n"
@@ -190,35 +195,38 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
           + "\013create_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022I\n"
           + "\006labels\030\004"
-          + " \003(\01324.google.cloud.vectorsearch.v1.Collection.LabelsEntryB\003\340A\001\022V\n\r"
-          + "vector_schema\030\007"
-          + " \003(\0132:.google.cloud.vectorsearch.v1.Collection.VectorSchemaEntryB\003\340A\001\0221\n"
+          + " \003(\01324.google.cloud.vectorsearch.v1.Collection.LabelsEntryB\003\340A\001\022V\n"
+          + "\r"
+          + "vector_schema\030\007 \003(\0132:.google.cloud.vect"
+          + "orsearch.v1.Collection.VectorSchemaEntryB\003\340A\001\0221\n"
           + "\013data_schema\030\n"
-          + " \001(\0132\027.google.protobuf.StructB\003\340A\001\032-\n"
+          + " \001(\0132\027.google.protobuf.StructB\003\340A\001\022M\n"
+          + "\017encryption_spec\030\013 \001("
+          + "\0132,.google.cloud.vectorsearch.v1.EncryptionSpecB\006\340A\005\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032^\n"
           + "\021VectorSchemaEntry\022\013\n"
           + "\003key\030\001 \001(\t\0228\n"
-          + "\005value\030\002"
-          + " \001(\0132).google.cloud.vectorsearch.v1.VectorField:\0028\001:\207\001\352A\203\001\n"
-          + "&vectorsearch.googleapis.com/Collection\022@proj"
-          + "ects/{project}/locations/{location}/collections/{collection}*\013collections2\n"
+          + "\005value\030\002 \001(\0132).google"
+          + ".cloud.vectorsearch.v1.VectorField:\0028\001:\207\001\352A\203\001\n"
+          + "&vectorsearch.googleapis.com/Collection\022@projects/{project}/locations/{loc"
+          + "ation}/collections/{collection}*\013collections2\n"
           + "collection\"\265\001\n"
           + "\013VectorField\022F\n"
-          + "\014dense_vector\030\003 "
-          + "\001(\0132..google.cloud.vectorsearch.v1.DenseVectorFieldH\000\022H\n\r"
-          + "sparse_vector\030\004 \001(\0132/.g"
-          + "oogle.cloud.vectorsearch.v1.SparseVectorFieldH\000B\024\n"
+          + "\014dense_vector\030\003"
+          + " \001(\0132..google.cloud.vectorsearch.v1.DenseVectorFieldH\000\022H\n\r"
+          + "sparse_vector\030\004"
+          + " \001(\0132/.google.cloud.vectorsearch.v1.SparseVectorFieldH\000B\024\n"
           + "\022vector_type_config\"\201\001\n"
           + "\020DenseVectorField\022\022\n\n"
           + "dimensions\030\001 \001(\005\022Y\n"
-          + "\027vertex_embedding_config\030\003 \001(\01323.google.cloud.v"
-          + "ectorsearch.v1.VertexEmbeddingConfigB\003\340A\001\"\023\n"
+          + "\027vertex_embedding_config\030\003 \001(\01323.goo"
+          + "gle.cloud.vectorsearch.v1.VertexEmbeddingConfigB\003\340A\001\"\023\n"
           + "\021SparseVectorField\"\265\001\n"
           + "\026ListCollectionsRequest\022>\n"
-          + "\006parent\030\001 \001("
-          + "\tB.\340A\002\372A(\022&vectorsearch.googleapis.com/Collection\022\026\n"
+          + "\006parent\030\001 \001(\tB.\340A"
+          + "\002\372A(\022&vectorsearch.googleapis.com/Collection\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
@@ -231,8 +239,8 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
           + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
           + "&vectorsearch.googleapis.com/Collection\"\331\001\n"
           + "\027CreateCollectionRequest\022>\n"
-          + "\006parent\030\001 \001(\tB."
-          + "\340A\002\372A(\022&vectorsearch.googleapis.com/Collection\022\032\n\r"
+          + "\006parent\030\001 \001("
+          + "\tB.\340A\002\372A(\022&vectorsearch.googleapis.com/Collection\022\032\n\r"
           + "collection_id\030\002 \001(\tB\003\340A\002\022A\n\n"
           + "collection\030\003"
           + " \001(\0132(.google.cloud.vectorsearch.v1.CollectionB\003\340A\002\022\037\n\n"
@@ -240,16 +248,16 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
           + "\027UpdateCollectionRequest\0224\n"
           + "\013update_mask\030\001"
           + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022A\n\n"
-          + "collection\030\002 \001(\0132(.g"
-          + "oogle.cloud.vectorsearch.v1.CollectionB\003\340A\002\022\037\n\n"
+          + "collection\030\002"
+          + " \001(\0132(.google.cloud.vectorsearch.v1.CollectionB\003\340A\002\022\037\n\n"
           + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"x\n"
           + "\027DeleteCollectionRequest\022<\n"
           + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
           + "&vectorsearch.googleapis.com/Collection\022\037\n\n"
           + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\240\006\n"
           + "\005Index\022^\n"
-          + "\030dedicated_infrastructure\030\013 \001"
-          + "(\01325.google.cloud.vectorsearch.v1.DedicatedInfrastructureB\003\340A\001H\000\022I\n"
+          + "\030dedicated_infrastructure\030\013"
+          + " \001(\01325.google.cloud.vectorsearch.v1.DedicatedInfrastructureB\003\340A\001H\000\022I\n"
           + "\013dense_scann\030\014"
           + " \001(\0132-.google.cloud.vectorsearch.v1.DenseScannIndexB\003\340A\001H\001\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
@@ -267,8 +275,8 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001:\211\001\352A\205\001\n"
-          + "!vectorsearch.googleapis.com/Index\022Pprojects/{project}/locations/{location}/col"
-          + "lections/{collection}/indexes/{index}*\007indexes2\005indexB\014\n\n"
+          + "!vectorsearch.googleapis.com/Index\022Pprojects/{project}/locations/{lo"
+          + "cation}/collections/{collection}/indexes/{index}*\007indexes2\005indexB\014\n\n"
           + "infra_typeB\014\n\n"
           + "index_type\"\305\001\n"
           + "\022CreateIndexRequest\022>\n"
@@ -277,7 +285,12 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
           + "\010index_id\030\002 \001(\tB\003\340A\002\0227\n"
           + "\005index\030\003"
           + " \001(\0132#.google.cloud.vectorsearch.v1.IndexB\003\340A\002\022\037\n\n"
-          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"n\n"
+          + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\244\001\n"
+          + "\022UpdateIndexRequest\0227\n"
+          + "\005index\030\001 \001(\0132#.google.cloud.vectorsearch.v1.IndexB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"n\n"
           + "\022DeleteIndexRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
           + "!vectorsearch.googleapis.com/Index\022\037\n\n"
@@ -285,7 +298,8 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
           + "\022ListIndexesRequest\0229\n"
           + "\006parent\030\001 \001("
           + "\tB)\340A\002\372A#\022!vectorsearch.googleapis.com/Index\022\026\n"
-          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n"
+          + "\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"d\n"
@@ -304,8 +318,8 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
           + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
           + "\013api_version\030\007 \001(\tB\003\340A\003\"\237\002\n"
           + "\030ImportDataObjectsRequest\022\\\n\n"
-          + "gcs_import\030\002 \001(\0132F.google.cloud.vectorsear"
-          + "ch.v1.ImportDataObjectsRequest.GcsImportConfigH\000\022<\n"
+          + "gcs_import\030\002 \001(\0132F.googl"
+          + "e.cloud.vectorsearch.v1.ImportDataObjectsRequest.GcsImportConfigH\000\022<\n"
           + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
           + "&vectorsearch.googleapis.com/Collection\032]\n"
           + "\017GcsImportConfig\022\031\n"
@@ -322,14 +336,14 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
           + "\031ImportDataObjectsResponse\022\"\n"
           + "\006status\030\001 \001(\0132\022.google.rpc.Status\"\227\003\n"
           + "\030ExportDataObjectsRequest\022f\n"
-          + "\017gcs_destination\030\002 \001(\0132K.google.cloud.vectorsearch.v1."
-          + "ExportDataObjectsRequest.GcsExportDestinationH\000\022<\n"
+          + "\017gcs_destination\030\002 \001(\0132K.google.clou"
+          + "d.vectorsearch.v1.ExportDataObjectsRequest.GcsExportDestinationH\000\022<\n"
           + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
           + "&vectorsearch.googleapis.com/Collection\032\305\001\n"
           + "\024GcsExportDestination\022\027\n\n"
           + "export_uri\030\001 \001(\tB\003\340A\002\022g\n"
-          + "\006format\030\002 \001(\0162R.google.cloud.vectorsea"
-          + "rch.v1.ExportDataObjectsRequest.GcsExportDestination.FormatB\003\340A\002\"+\n"
+          + "\006format\030\002 \001(\0162R.google.cloud.vectorsearch.v1.ExportDataObjec"
+          + "tsRequest.GcsExportDestination.FormatB\003\340A\002\"+\n"
           + "\006Format\022\026\n"
           + "\022FORMAT_UNSPECIFIED\020\000\022\t\n"
           + "\005JSONL\020\002B\r\n"
@@ -339,10 +353,10 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
           + "\013finish_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\033\n"
           + "\031ExportDataObjectsResponse\"\377\002\n"
           + "\027DedicatedInfrastructure\022R\n"
-          + "\004mode\030\001 \001(\0162:.google.cloud.vectorsearc"
-          + "h.v1.DedicatedInfrastructure.ModeB\003\340A\001H\000\210\001\001\022d\n"
-          + "\020autoscaling_spec\030\002 \001(\0132E.google.c"
-          + "loud.vectorsearch.v1.DedicatedInfrastructure.AutoscalingSpecB\003\340A\001\032Q\n"
+          + "\004mode\030\001 \001(\0162:.google"
+          + ".cloud.vectorsearch.v1.DedicatedInfrastructure.ModeB\003\340A\001H\000\210\001\001\022d\n"
+          + "\020autoscaling_spec\030\002 \001(\0132E.google.cloud.vectorsearch.v1.D"
+          + "edicatedInfrastructure.AutoscalingSpecB\003\340A\001\032Q\n"
           + "\017AutoscalingSpec\022\036\n"
           + "\021min_replica_count\030\001 \001(\005B\003\340A\001\022\036\n"
           + "\021max_replica_count\030\002 \001(\005B\003\340A\001\"N\n"
@@ -352,66 +366,73 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
           + "\025PERFORMANCE_OPTIMIZED\020\002B\007\n"
           + "\005_mode\"\302\001\n"
           + "\017DenseScannIndex\022]\n"
-          + "\021feature_norm_type\030\002"
-          + " \001(\0162=.google.cloud.vectorsearch.v1.DenseScannIndex.FeatureNormTypeB\003\340A\001\"P\n"
+          + "\021feature_norm_type\030\002 \001(\0162=.google.cloud.ve"
+          + "ctorsearch.v1.DenseScannIndex.FeatureNormTypeB\003\340A\001\"P\n"
           + "\017FeatureNormType\022!\n"
           + "\035FEATURE_NORM_TYPE_UNSPECIFIED\020\000\022\010\n"
           + "\004NONE\020\001\022\020\n"
-          + "\014UNIT_L2_NORM\020\0022\253\023\n"
+          + "\014UNIT_L2_NORM\020\0022\215\025\n"
           + "\023VectorSearchService\022\300\001\n"
-          + "\017ListCollections\0224.google.cloud.vectorsearch.v1.ListCollec"
-          + "tionsRequest\0325.google.cloud.vectorsearch"
-          + ".v1.ListCollectionsResponse\"@\332A\006parent\202\323"
-          + "\344\223\0021\022//v1/{parent=projects/*/locations/*}/collections\022\255\001\n\r"
-          + "GetCollection\0222.google.cloud.vectorsearch.v1.GetCollectionRequ"
-          + "est\032(.google.cloud.vectorsearch.v1.Colle"
-          + "ction\">\332A\004name\202\323\344\223\0021\022//v1/{name=projects/*/locations/*/collections/*}\022\362\001\n"
-          + "\020CreateCollection\0225.google.cloud.vectorsearch.v"
-          + "1.CreateCollectionRequest\032\035.google.longrunning.Operation\"\207\001\312A\037\n\n"
-          + "Collection\022\021OperationMetadata\332A\037parent,collection,collec"
-          + "tion_id\202\323\344\223\002=\"//v1/{parent=projects/*/locations/*}/collections:\n"
+          + "\017ListCollections\0224.google.cloud.vectorse"
+          + "arch.v1.ListCollectionsRequest\0325.google.cloud.vectorsearch.v1.ListCollectionsRes"
+          + "ponse\"@\332A\006parent\202\323\344\223\0021\022//v1/{parent=projects/*/locations/*}/collections\022\255\001\n\r"
+          + "GetCollection\0222.google.cloud.vectorsearch.v1"
+          + ".GetCollectionRequest\032(.google.cloud.vec"
+          + "torsearch.v1.Collection\">\332A\004name\202\323\344\223\0021\022/"
+          + "/v1/{name=projects/*/locations/*/collections/*}\022\362\001\n"
+          + "\020CreateCollection\0225.google.cloud.vectorsearch.v1.CreateCollectionRequ"
+          + "est\032\035.google.longrunning.Operation\"\207\001\312A\037\n\n"
+          + "Collection\022\021OperationMetadata\332A\037parent"
+          + ",collection,collection_id\202\323\344\223\002=\"//v1/{pa"
+          + "rent=projects/*/locations/*}/collections:\n"
           + "collection\022\364\001\n"
-          + "\020UpdateCollection\0225.google.cloud.vectorsea"
-          + "rch.v1.UpdateCollectionRequest\032\035.google.longrunning.Operation\"\211\001\312A\037\n\n"
-          + "Collection\022\021OperationMetadata\332A\026collection,update_m"
-          + "ask\202\323\344\223\002H2:/v1/{collection.name=projects/*/locations/*/collections/*}:\n"
+          + "\020UpdateCollection\0225.google.cloud.vectorsearch.v1.UpdateCollectio"
+          + "nRequest\032\035.google.longrunning.Operation\"\211\001\312A\037\n\n"
+          + "Collection\022\021OperationMetadata\332A\026c"
+          + "ollection,update_mask\202\323\344\223\002H2:/v1/{collec"
+          + "tion.name=projects/*/locations/*/collections/*}:\n"
           + "collection\022\325\001\n"
-          + "\020DeleteCollection\0225.google.cloud.ve"
-          + "ctorsearch.v1.DeleteCollectionRequest\032\035.google.longrunning.Operation\"k\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004na"
-          + "me\202\323\344\223\0021*//v1/{name=projects/*/locations/*/collections/*}\022\276\001\n"
-          + "\013ListIndexes\0220.google.cloud.vectorsearch.v1.ListIndexesRequ"
-          + "est\0321.google.cloud.vectorsearch.v1.ListI"
-          + "ndexesResponse\"J\332A\006parent\202\323\344\223\002;\0229/v1/{pa"
-          + "rent=projects/*/locations/*/collections/*}/indexes\022\250\001\n"
-          + "\010GetIndex\022-.google.cloud.vectorsearch.v1.GetIndexRequest\032#.google."
-          + "cloud.vectorsearch.v1.Index\"H\332A\004name\202\323\344\223"
-          + "\002;\0229/v1/{name=projects/*/locations/*/collections/*/indexes/*}\022\335\001\n"
-          + "\013CreateIndex\0220.google.cloud.vectorsearch.v1.CreateIndex"
-          + "Request\032\035.google.longrunning.Operation\"}\312A\032\n"
-          + "\005Index\022\021OperationMetadata\332A\025parent,i"
-          + "ndex,index_id\202\323\344\223\002B\"9/v1/{parent=project"
-          + "s/*/locations/*/collections/*}/indexes:\005index\022\325\001\n"
-          + "\013DeleteIndex\0220.google.cloud.vec"
-          + "torsearch.v1.DeleteIndexRequest\032\035.google.longrunning.Operation\"u\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223"
-          + "\002;*9/v1/{name=projects/*/locations/*/collections/*/indexes/*}\022\362\001\n"
-          + "\021ImportDataObjects\0226.google.cloud.vectorsearch.v1.Impor"
-          + "tDataObjectsRequest\032\035.google.longrunning.Operation\"\205\001\312A6\n"
-          + "\031ImportDataObjectsRespo"
-          + "nse\022\031ImportDataObjectsMetadata\202\323\344\223\002F\"A/v"
-          + "1/{name=projects/*/locations/*/collections/*}:importDataObjects:\001*\022\362\001\n"
-          + "\021ExportDataObjects\0226.google.cloud.vectorsearch.v1."
-          + "ExportDataObjectsRequest\032\035.google.longrunning.Operation\"\205\001\312A6\n"
-          + "\031ExportDataObjectsResponse\022\031ExportDataObjectsMetadata\202\323\344\223\002"
-          + "F\"A/v1/{name=projects/*/locations/*/coll"
-          + "ections/*}:exportDataObjects:\001*\032O\312A\033vect"
-          + "orsearch.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\344\001\n"
-          + " com.google.cloud.vectorsearch.v1B\030VectorSea"
-          + "rchServiceProtoP\001ZDcloud.google.com/go/vectorsearch/apiv1/vectorsearchpb;vectors"
-          + "earchpb\252\002\034Google.Cloud.VectorSearch.V1\312\002"
-          + "\034Google\\Cloud\\VectorSearch\\V1\352\002\037Google::"
-          + "Cloud::VectorSearch::V1b\006proto3"
+          + "\020DeleteCollection\0225.google.cloud.vectorsearch.v1.DeleteCo"
+          + "llectionRequest\032\035.google.longrunning.Operation\"k\312A*\n"
+          + "\025google.protobuf.Empty\022\021Oper"
+          + "ationMetadata\332A\004name\202\323\344\223\0021*//v1/{name=projects/*/locations/*/collections/*}\022\276\001\n"
+          + "\013ListIndexes\0220.google.cloud.vectorsearch."
+          + "v1.ListIndexesRequest\0321.google.cloud.vec"
+          + "torsearch.v1.ListIndexesResponse\"J\332A\006par"
+          + "ent\202\323\344\223\002;\0229/v1/{parent=projects/*/locations/*/collections/*}/indexes\022\250\001\n"
+          + "\010GetIndex\022-.google.cloud.vectorsearch.v1.GetInde"
+          + "xRequest\032#.google.cloud.vectorsearch.v1."
+          + "Index\"H\332A\004name\202\323\344\223\002;\0229/v1/{name=projects"
+          + "/*/locations/*/collections/*/indexes/*}\022\335\001\n"
+          + "\013CreateIndex\0220.google.cloud.vectorsea"
+          + "rch.v1.CreateIndexRequest\032\035.google.longrunning.Operation\"}\312A\032\n"
+          + "\005Index\022\021OperationM"
+          + "etadata\332A\025parent,index,index_id\202\323\344\223\002B\"9/"
+          + "v1/{parent=projects/*/locations/*/collections/*}/indexes:\005index\022\337\001\n"
+          + "\013UpdateIndex\0220.google.cloud.vectorsearch.v1.UpdateInd"
+          + "exRequest\032\035.google.longrunning.Operation\"\177\312A\032\n"
+          + "\005Index\022\021OperationMetadata\332A\021index,"
+          + "update_mask\202\323\344\223\002H2?/v1/{index.name=proje"
+          + "cts/*/locations/*/collections/*/indexes/*}:\005index\022\325\001\n"
+          + "\013DeleteIndex\0220.google.cloud"
+          + ".vectorsearch.v1.DeleteIndexRequest\032\035.google.longrunning.Operation\"u\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name"
+          + "\202\323\344\223\002;*9/v1/{name=projects/*/locations/*/collections/*/indexes/*}\022\362\001\n"
+          + "\021ImportDataObjects\0226.google.cloud.vectorsearch.v1.I"
+          + "mportDataObjectsRequest\032\035.google.longrunning.Operation\"\205\001\312A6\n"
+          + "\031ImportDataObjectsResponse\022\031ImportDataObjectsMetadata\202\323\344\223\002F"
+          + "\"A/v1/{name=projects/*/locations/*/collections/*}:importDataObjects:\001*\022\362\001\n"
+          + "\021ExportDataObjects\0226.google.cloud.vectorsearch"
+          + ".v1.ExportDataObjectsRequest\032\035.google.longrunning.Operation\"\205\001\312A6\n"
+          + "\031ExportDataObjectsResponse\022\031ExportDataObjectsMetadata\202"
+          + "\323\344\223\002F\"A/v1/{name=projects/*/locations/*/"
+          + "collections/*}:exportDataObjects:\001*\032O\312A\033"
+          + "vectorsearch.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\344\001\n"
+          + " com.google.cloud.vectorsearch.v1B\030VectorSearchServiceProtoP\001ZDcloud.google.com/"
+          + "go/vectorsearch/apiv1/vectorsearchpb;vec"
+          + "torsearchpb\252\002\034Google.Cloud.VectorSearch."
+          + "V1\312\002\034Google\\Cloud\\VectorSearch\\V1\352\002\037Goog"
+          + "le::Cloud::VectorSearch::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -424,6 +445,7 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.vectorsearch.v1.CommonProto.getDescriptor(),
               com.google.cloud.vectorsearch.v1.EmbeddingConfigProto.getDescriptor(),
+              com.google.cloud.vectorsearch.v1.EncryptionSpecProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -445,6 +467,7 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
               "Labels",
               "VectorSchema",
               "DataSchema",
+              "EncryptionSpec",
             });
     internal_static_google_cloud_vectorsearch_v1_Collection_LabelsEntry_descriptor =
         internal_static_google_cloud_vectorsearch_v1_Collection_descriptor.getNestedType(0);
@@ -569,8 +592,16 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
             new java.lang.String[] {
               "Parent", "IndexId", "Index", "RequestId",
             });
-    internal_static_google_cloud_vectorsearch_v1_DeleteIndexRequest_descriptor =
+    internal_static_google_cloud_vectorsearch_v1_UpdateIndexRequest_descriptor =
         getDescriptor().getMessageType(12);
+    internal_static_google_cloud_vectorsearch_v1_UpdateIndexRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_vectorsearch_v1_UpdateIndexRequest_descriptor,
+            new java.lang.String[] {
+              "Index", "UpdateMask", "RequestId",
+            });
+    internal_static_google_cloud_vectorsearch_v1_DeleteIndexRequest_descriptor =
+        getDescriptor().getMessageType(13);
     internal_static_google_cloud_vectorsearch_v1_DeleteIndexRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_DeleteIndexRequest_descriptor,
@@ -578,7 +609,7 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
               "Name", "RequestId",
             });
     internal_static_google_cloud_vectorsearch_v1_ListIndexesRequest_descriptor =
-        getDescriptor().getMessageType(13);
+        getDescriptor().getMessageType(14);
     internal_static_google_cloud_vectorsearch_v1_ListIndexesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_ListIndexesRequest_descriptor,
@@ -586,7 +617,7 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_vectorsearch_v1_ListIndexesResponse_descriptor =
-        getDescriptor().getMessageType(14);
+        getDescriptor().getMessageType(15);
     internal_static_google_cloud_vectorsearch_v1_ListIndexesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_ListIndexesResponse_descriptor,
@@ -594,7 +625,7 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
               "Indexes", "NextPageToken",
             });
     internal_static_google_cloud_vectorsearch_v1_GetIndexRequest_descriptor =
-        getDescriptor().getMessageType(15);
+        getDescriptor().getMessageType(16);
     internal_static_google_cloud_vectorsearch_v1_GetIndexRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_GetIndexRequest_descriptor,
@@ -602,7 +633,7 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
               "Name",
             });
     internal_static_google_cloud_vectorsearch_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageType(16);
+        getDescriptor().getMessageType(17);
     internal_static_google_cloud_vectorsearch_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_OperationMetadata_descriptor,
@@ -616,7 +647,7 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
               "ApiVersion",
             });
     internal_static_google_cloud_vectorsearch_v1_ImportDataObjectsRequest_descriptor =
-        getDescriptor().getMessageType(17);
+        getDescriptor().getMessageType(18);
     internal_static_google_cloud_vectorsearch_v1_ImportDataObjectsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_ImportDataObjectsRequest_descriptor,
@@ -633,7 +664,7 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
               "ContentsUri", "ErrorUri", "OutputUri",
             });
     internal_static_google_cloud_vectorsearch_v1_ImportDataObjectsMetadata_descriptor =
-        getDescriptor().getMessageType(18);
+        getDescriptor().getMessageType(19);
     internal_static_google_cloud_vectorsearch_v1_ImportDataObjectsMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_ImportDataObjectsMetadata_descriptor,
@@ -641,7 +672,7 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
               "CreateTime", "UpdateTime", "SuccessCount", "FailureCount",
             });
     internal_static_google_cloud_vectorsearch_v1_ImportDataObjectsResponse_descriptor =
-        getDescriptor().getMessageType(19);
+        getDescriptor().getMessageType(20);
     internal_static_google_cloud_vectorsearch_v1_ImportDataObjectsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_ImportDataObjectsResponse_descriptor,
@@ -649,7 +680,7 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
               "Status",
             });
     internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsRequest_descriptor =
-        getDescriptor().getMessageType(20);
+        getDescriptor().getMessageType(21);
     internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsRequest_descriptor,
@@ -666,7 +697,7 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
               "ExportUri", "Format",
             });
     internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsMetadata_descriptor =
-        getDescriptor().getMessageType(21);
+        getDescriptor().getMessageType(22);
     internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsMetadata_descriptor,
@@ -674,13 +705,13 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
               "CreateTime", "FinishTime",
             });
     internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsResponse_descriptor =
-        getDescriptor().getMessageType(22);
+        getDescriptor().getMessageType(23);
     internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_ExportDataObjectsResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_vectorsearch_v1_DedicatedInfrastructure_descriptor =
-        getDescriptor().getMessageType(23);
+        getDescriptor().getMessageType(24);
     internal_static_google_cloud_vectorsearch_v1_DedicatedInfrastructure_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_DedicatedInfrastructure_descriptor,
@@ -697,7 +728,7 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
               "MinReplicaCount", "MaxReplicaCount",
             });
     internal_static_google_cloud_vectorsearch_v1_DenseScannIndex_descriptor =
-        getDescriptor().getMessageType(24);
+        getDescriptor().getMessageType(25);
     internal_static_google_cloud_vectorsearch_v1_DenseScannIndex_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_vectorsearch_v1_DenseScannIndex_descriptor,
@@ -712,6 +743,7 @@ public final class VectorSearchServiceProto extends com.google.protobuf.Generate
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.vectorsearch.v1.CommonProto.getDescriptor();
     com.google.cloud.vectorsearch.v1.EmbeddingConfigProto.getDescriptor();
+    com.google.cloud.vectorsearch.v1.EncryptionSpecProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
