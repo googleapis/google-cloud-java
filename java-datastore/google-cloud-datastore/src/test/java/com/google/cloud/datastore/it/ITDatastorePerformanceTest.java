@@ -66,6 +66,7 @@ public class ITDatastorePerformanceTest {
         .build();
 
     DatastoreOptions options = DatastoreOptions.newBuilder()
+        .setTransportOptions(GrpcTransportOptions.newBuilder().build())
         .setChannelProvider(channelProvider)
         .build();
 
