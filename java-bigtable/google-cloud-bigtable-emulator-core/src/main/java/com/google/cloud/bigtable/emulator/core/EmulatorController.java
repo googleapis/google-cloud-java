@@ -129,8 +129,8 @@ public class EmulatorController {
         throw e;
       }
     }
-    Thread stdoutThread = pipeStreamToLog(process.getInputStream(), Level.INFO);
-    Thread stderrThread = pipeStreamToLog(process.getErrorStream(), Level.WARNING);
+    stdoutThread = pipeStreamToLog(process.getInputStream(), Level.INFO);
+    stderrThread = pipeStreamToLog(process.getErrorStream(), Level.WARNING);
     isStopped = false;
 
     shutdownHook =

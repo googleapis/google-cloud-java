@@ -154,7 +154,7 @@ public class PreparedStatementImpl implements PreparedStatement {
    * Check the expiry of the current plan, if it's future is resolved. If we are within 1s of
    * expiry, call startBackgroundRefresh with the version of the latest PrepareQuery.
    */
-  void backgroundRefreshIfNeeded() {
+  synchronized void backgroundRefreshIfNeeded() {
     PrepareQueryState localState = this.currentState.get();
     if (localState.maybeBackgroundRefresh().isPresent()) {
       // We already have an ongoing refresh
@@ -183,7 +183,7 @@ public class PreparedStatementImpl implements PreparedStatement {
    * Returns the most recently refreshed PreparedQueryData. It may still be refreshing if the
    * previous plan has expired.
    */
-  public PreparedQueryData getLatestPrepareResponse() {
+  public synchronized PreparedQueryData getLatestPrepareResponse() {
     PrepareQueryState localState = currentState.get();
     if (localState.maybeBackgroundRefresh().isPresent()
         && localState.maybeBackgroundRefresh().get().prepareFuture().isDone()) {

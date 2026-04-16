@@ -94,7 +94,7 @@ final class DynamicFlowControlStats {
       weightedCount += weight;
     }
 
-    double getMean() {
+    synchronized double getMean() {
       return mean;
     }
 

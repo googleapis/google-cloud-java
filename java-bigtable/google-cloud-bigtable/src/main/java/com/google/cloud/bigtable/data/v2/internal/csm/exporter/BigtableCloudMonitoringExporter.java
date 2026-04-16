@@ -79,7 +79,7 @@ public class BigtableCloudMonitoringExporter implements MetricExporter {
   private final MetricServiceClient client;
 
   private final AtomicReference<State> state;
-  private CompletableResultCode lastExportCode;
+  private AtomicReference<CompletableResultCode> lastExportCode = new AtomicReference<>();
   private final AtomicBoolean exportFailureLogged = new AtomicBoolean(false);
 
   private enum State {
@@ -149,8 +149,9 @@ public class BigtableCloudMonitoringExporter implements MetricExporter {
   public CompletableResultCode export(Collection<MetricData> metricData) {
     Preconditions.checkState(state.get() != State.Closed, "Exporter is closed");
 
-    lastExportCode = doExport(metricData);
-    return lastExportCode;
+    CompletableResultCode result = doExport(metricData);
+    lastExportCode.set(result);
+    return result;
   }
 
   private CompletableResultCode doExport(Collection<MetricData> metricData) {
@@ -194,7 +195,7 @@ public class BigtableCloudMonitoringExporter implements MetricExporter {
               RuntimeException asyncWrapper = new RuntimeException("export failed", throwable);
               asyncWrapper.setStackTrace(stackTrace);
 
-              if (state.get() != State.Closing && state.get() != State.Closed) {
+              if (state.get() != State.Closing || state.get() != State.Closed) {
                 // ignore the export warning when client is shutting down
                 LOGGER.log(Level.WARNING, msg, asyncWrapper);
               }
@@ -231,8 +232,8 @@ public class BigtableCloudMonitoringExporter implements MetricExporter {
 
   @Override
   public CompletableResultCode flush() {
-    if (lastExportCode != null) {
-      return lastExportCode;
+    if (lastExportCode.get() != null) {
+      return lastExportCode.get();
     }
     return CompletableResultCode.ofSuccess();
   }
