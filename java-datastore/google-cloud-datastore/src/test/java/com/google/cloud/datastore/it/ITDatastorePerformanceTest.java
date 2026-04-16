@@ -28,7 +28,6 @@ import com.google.cloud.datastore.v1.DatastoreSettings;
 import com.google.common.base.Strings;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
