@@ -156,7 +156,9 @@ class ITGdch {
     NullPointerException expectedEx =
         assertThrows(NullPointerException.class, () -> initialCredentials.refresh());
     assertTrue(
-        expectedEx.getMessage().contains("Audience are not configured for GDCH service account"));
+        expectedEx
+            .getMessage()
+            .contains("Audience cannot be null or empty for GDCH service account credentials"));
 
     // However, the credentials prepared in ClientContext should be able to refresh since the
     // audience would be
@@ -201,7 +203,7 @@ class ITGdch {
     assertTrue(
         thrownByClientCreds
             .getMessage()
-            .contains("Audience are not configured for GDCH service account"));
+            .contains("Audience cannot be null or empty for GDCH service account credentials"));
 
     // But the credentials prepared in ClientContext should be able to refresh since the audience
     // would be internally

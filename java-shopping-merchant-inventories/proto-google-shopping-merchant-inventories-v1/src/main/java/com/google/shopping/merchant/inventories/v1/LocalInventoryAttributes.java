@@ -56,6 +56,7 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
     pickupMethod_ = 0;
     pickupSla_ = 0;
     instoreProductLocation_ = "";
+    loyaltyPrograms_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1344,6 +1345,167 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
     }
   }
 
+  public static final int LOYALTY_PROGRAMS_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram>
+      loyaltyPrograms_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional list of loyalty programs containing applicable
+   * loyalty member prices for this product at this store.
+   *
+   * This field is used to show store-specific member prices on Local
+   * Inventory Ads (LIA).
+   *
+   * To use this, the loyalty program must be configured in Google Merchant
+   * Center. The benefits provided must match the merchant's website and be
+   * clear to members. This is only applicable for merchants in supported
+   * countries.
+   *
+   * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+   * for details on supported countries and loyalty program configuration.
+   * For local inventory specific details, see the [Local inventory data
+   * specification](https://support.google.com/merchants/answer/3061342).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram>
+      getLoyaltyProgramsList() {
+    return loyaltyPrograms_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional list of loyalty programs containing applicable
+   * loyalty member prices for this product at this store.
+   *
+   * This field is used to show store-specific member prices on Local
+   * Inventory Ads (LIA).
+   *
+   * To use this, the loyalty program must be configured in Google Merchant
+   * Center. The benefits provided must match the merchant's website and be
+   * clear to members. This is only applicable for merchants in supported
+   * countries.
+   *
+   * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+   * for details on supported countries and loyalty program configuration.
+   * For local inventory specific details, see the [Local inventory data
+   * specification](https://support.google.com/merchants/answer/3061342).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgramOrBuilder>
+      getLoyaltyProgramsOrBuilderList() {
+    return loyaltyPrograms_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional list of loyalty programs containing applicable
+   * loyalty member prices for this product at this store.
+   *
+   * This field is used to show store-specific member prices on Local
+   * Inventory Ads (LIA).
+   *
+   * To use this, the loyalty program must be configured in Google Merchant
+   * Center. The benefits provided must match the merchant's website and be
+   * clear to members. This is only applicable for merchants in supported
+   * countries.
+   *
+   * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+   * for details on supported countries and loyalty program configuration.
+   * For local inventory specific details, see the [Local inventory data
+   * specification](https://support.google.com/merchants/answer/3061342).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getLoyaltyProgramsCount() {
+    return loyaltyPrograms_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional list of loyalty programs containing applicable
+   * loyalty member prices for this product at this store.
+   *
+   * This field is used to show store-specific member prices on Local
+   * Inventory Ads (LIA).
+   *
+   * To use this, the loyalty program must be configured in Google Merchant
+   * Center. The benefits provided must match the merchant's website and be
+   * clear to members. This is only applicable for merchants in supported
+   * countries.
+   *
+   * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+   * for details on supported countries and loyalty program configuration.
+   * For local inventory specific details, see the [Local inventory data
+   * specification](https://support.google.com/merchants/answer/3061342).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram getLoyaltyPrograms(
+      int index) {
+    return loyaltyPrograms_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An optional list of loyalty programs containing applicable
+   * loyalty member prices for this product at this store.
+   *
+   * This field is used to show store-specific member prices on Local
+   * Inventory Ads (LIA).
+   *
+   * To use this, the loyalty program must be configured in Google Merchant
+   * Center. The benefits provided must match the merchant's website and be
+   * clear to members. This is only applicable for merchants in supported
+   * countries.
+   *
+   * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+   * for details on supported countries and loyalty program configuration.
+   * For local inventory specific details, see the [Local inventory data
+   * specification](https://support.google.com/merchants/answer/3061342).
+   * </pre>
+   *
+   * <code>
+   * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgramOrBuilder
+      getLoyaltyProgramsOrBuilder(int index) {
+    return loyaltyPrograms_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1382,6 +1544,9 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, instoreProductLocation_);
     }
+    for (int i = 0; i < loyaltyPrograms_.size(); i++) {
+      output.writeMessage(10, loyaltyPrograms_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1415,6 +1580,9 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, instoreProductLocation_);
+    }
+    for (int i = 0; i < loyaltyPrograms_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, loyaltyPrograms_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1464,6 +1632,7 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
     if (hasInstoreProductLocation()) {
       if (!getInstoreProductLocation().equals(other.getInstoreProductLocation())) return false;
     }
+    if (!getLoyaltyProgramsList().equals(other.getLoyaltyProgramsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1506,6 +1675,10 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
     if (hasInstoreProductLocation()) {
       hash = (37 * hash) + INSTORE_PRODUCT_LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getInstoreProductLocation().hashCode();
+    }
+    if (getLoyaltyProgramsCount() > 0) {
+      hash = (37 * hash) + LOYALTY_PROGRAMS_FIELD_NUMBER;
+      hash = (53 * hash) + getLoyaltyProgramsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1654,6 +1827,7 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
         internalGetPriceFieldBuilder();
         internalGetSalePriceFieldBuilder();
         internalGetSalePriceEffectiveDateFieldBuilder();
+        internalGetLoyaltyProgramsFieldBuilder();
       }
     }
 
@@ -1681,6 +1855,13 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
       pickupMethod_ = 0;
       pickupSla_ = 0;
       instoreProductLocation_ = "";
+      if (loyaltyProgramsBuilder_ == null) {
+        loyaltyPrograms_ = java.util.Collections.emptyList();
+      } else {
+        loyaltyPrograms_ = null;
+        loyaltyProgramsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -1710,11 +1891,25 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
     public com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes buildPartial() {
       com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes result =
           new com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes result) {
+      if (loyaltyProgramsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)) {
+          loyaltyPrograms_ = java.util.Collections.unmodifiableList(loyaltyPrograms_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.loyaltyPrograms_ = loyaltyPrograms_;
+      } else {
+        result.loyaltyPrograms_ = loyaltyProgramsBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -1801,6 +1996,33 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (loyaltyProgramsBuilder_ == null) {
+        if (!other.loyaltyPrograms_.isEmpty()) {
+          if (loyaltyPrograms_.isEmpty()) {
+            loyaltyPrograms_ = other.loyaltyPrograms_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureLoyaltyProgramsIsMutable();
+            loyaltyPrograms_.addAll(other.loyaltyPrograms_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.loyaltyPrograms_.isEmpty()) {
+          if (loyaltyProgramsBuilder_.isEmpty()) {
+            loyaltyProgramsBuilder_.dispose();
+            loyaltyProgramsBuilder_ = null;
+            loyaltyPrograms_ = other.loyaltyPrograms_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            loyaltyProgramsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetLoyaltyProgramsFieldBuilder()
+                    : null;
+          } else {
+            loyaltyProgramsBuilder_.addAllMessages(other.loyaltyPrograms_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1878,6 +2100,21 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 82:
+              {
+                com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram m =
+                    input.readMessage(
+                        com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram
+                            .parser(),
+                        extensionRegistry);
+                if (loyaltyProgramsBuilder_ == null) {
+                  ensureLoyaltyProgramsIsMutable();
+                  loyaltyPrograms_.add(m);
+                } else {
+                  loyaltyProgramsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3170,6 +3407,690 @@ public final class LocalInventoryAttributes extends com.google.protobuf.Generate
       bitField0_ |= 0x00000080;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram>
+        loyaltyPrograms_ = java.util.Collections.emptyList();
+
+    private void ensureLoyaltyProgramsIsMutable() {
+      if (!((bitField0_ & 0x00000100) != 0)) {
+        loyaltyPrograms_ =
+            new java.util.ArrayList<
+                com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram>(
+                loyaltyPrograms_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram,
+            com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram.Builder,
+            com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgramOrBuilder>
+        loyaltyProgramsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram>
+        getLoyaltyProgramsList() {
+      if (loyaltyProgramsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(loyaltyPrograms_);
+      } else {
+        return loyaltyProgramsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getLoyaltyProgramsCount() {
+      if (loyaltyProgramsBuilder_ == null) {
+        return loyaltyPrograms_.size();
+      } else {
+        return loyaltyProgramsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram getLoyaltyPrograms(
+        int index) {
+      if (loyaltyProgramsBuilder_ == null) {
+        return loyaltyPrograms_.get(index);
+      } else {
+        return loyaltyProgramsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLoyaltyPrograms(
+        int index, com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram value) {
+      if (loyaltyProgramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLoyaltyProgramsIsMutable();
+        loyaltyPrograms_.set(index, value);
+        onChanged();
+      } else {
+        loyaltyProgramsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLoyaltyPrograms(
+        int index,
+        com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram.Builder
+            builderForValue) {
+      if (loyaltyProgramsBuilder_ == null) {
+        ensureLoyaltyProgramsIsMutable();
+        loyaltyPrograms_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        loyaltyProgramsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLoyaltyPrograms(
+        com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram value) {
+      if (loyaltyProgramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLoyaltyProgramsIsMutable();
+        loyaltyPrograms_.add(value);
+        onChanged();
+      } else {
+        loyaltyProgramsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLoyaltyPrograms(
+        int index, com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram value) {
+      if (loyaltyProgramsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureLoyaltyProgramsIsMutable();
+        loyaltyPrograms_.add(index, value);
+        onChanged();
+      } else {
+        loyaltyProgramsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLoyaltyPrograms(
+        com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram.Builder
+            builderForValue) {
+      if (loyaltyProgramsBuilder_ == null) {
+        ensureLoyaltyProgramsIsMutable();
+        loyaltyPrograms_.add(builderForValue.build());
+        onChanged();
+      } else {
+        loyaltyProgramsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addLoyaltyPrograms(
+        int index,
+        com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram.Builder
+            builderForValue) {
+      if (loyaltyProgramsBuilder_ == null) {
+        ensureLoyaltyProgramsIsMutable();
+        loyaltyPrograms_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        loyaltyProgramsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllLoyaltyPrograms(
+        java.lang.Iterable<
+                ? extends com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram>
+            values) {
+      if (loyaltyProgramsBuilder_ == null) {
+        ensureLoyaltyProgramsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, loyaltyPrograms_);
+        onChanged();
+      } else {
+        loyaltyProgramsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLoyaltyPrograms() {
+      if (loyaltyProgramsBuilder_ == null) {
+        loyaltyPrograms_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        loyaltyProgramsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeLoyaltyPrograms(int index) {
+      if (loyaltyProgramsBuilder_ == null) {
+        ensureLoyaltyProgramsIsMutable();
+        loyaltyPrograms_.remove(index);
+        onChanged();
+      } else {
+        loyaltyProgramsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram.Builder
+        getLoyaltyProgramsBuilder(int index) {
+      return internalGetLoyaltyProgramsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgramOrBuilder
+        getLoyaltyProgramsOrBuilder(int index) {
+      if (loyaltyProgramsBuilder_ == null) {
+        return loyaltyPrograms_.get(index);
+      } else {
+        return loyaltyProgramsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgramOrBuilder>
+        getLoyaltyProgramsOrBuilderList() {
+      if (loyaltyProgramsBuilder_ != null) {
+        return loyaltyProgramsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(loyaltyPrograms_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram.Builder
+        addLoyaltyProgramsBuilder() {
+      return internalGetLoyaltyProgramsFieldBuilder()
+          .addBuilder(
+              com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram.Builder
+        addLoyaltyProgramsBuilder(int index) {
+      return internalGetLoyaltyProgramsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An optional list of loyalty programs containing applicable
+     * loyalty member prices for this product at this store.
+     *
+     * This field is used to show store-specific member prices on Local
+     * Inventory Ads (LIA).
+     *
+     * To use this, the loyalty program must be configured in Google Merchant
+     * Center. The benefits provided must match the merchant's website and be
+     * clear to members. This is only applicable for merchants in supported
+     * countries.
+     *
+     * See [Loyalty program](https://support.google.com/merchants/answer/12922446)
+     * for details on supported countries and loyalty program configuration.
+     * For local inventory specific details, see the [Local inventory data
+     * specification](https://support.google.com/merchants/answer/3061342).
+     * </pre>
+     *
+     * <code>
+     * repeated .google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram loyalty_programs = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram.Builder>
+        getLoyaltyProgramsBuilderList() {
+      return internalGetLoyaltyProgramsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram,
+            com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram.Builder,
+            com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgramOrBuilder>
+        internalGetLoyaltyProgramsFieldBuilder() {
+      if (loyaltyProgramsBuilder_ == null) {
+        loyaltyProgramsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram,
+                com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgram.Builder,
+                com.google.shopping.merchant.inventories.v1.InventoryLoyaltyProgramOrBuilder>(
+                loyaltyPrograms_,
+                ((bitField0_ & 0x00000100) != 0),
+                getParentForChildren(),
+                isClean());
+        loyaltyPrograms_ = null;
+      }
+      return loyaltyProgramsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.shopping.merchant.inventories.v1.LocalInventoryAttributes)

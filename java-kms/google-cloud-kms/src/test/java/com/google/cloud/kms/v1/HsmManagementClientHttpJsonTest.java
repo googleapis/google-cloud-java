@@ -216,6 +216,7 @@ public class HsmManagementClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setUnrefreshedDurationUntilDisable(Duration.newBuilder().build())
             .setDisableTime(Timestamp.newBuilder().build())
+            .setKeyPortabilityEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -270,6 +271,7 @@ public class HsmManagementClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setUnrefreshedDurationUntilDisable(Duration.newBuilder().build())
             .setDisableTime(Timestamp.newBuilder().build())
+            .setKeyPortabilityEnabled(true)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -324,6 +326,7 @@ public class HsmManagementClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setUnrefreshedDurationUntilDisable(Duration.newBuilder().build())
             .setDisableTime(Timestamp.newBuilder().build())
+            .setKeyPortabilityEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -393,6 +396,7 @@ public class HsmManagementClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .setUnrefreshedDurationUntilDisable(Duration.newBuilder().build())
             .setDisableTime(Timestamp.newBuilder().build())
+            .setKeyPortabilityEnabled(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

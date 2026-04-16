@@ -16,6 +16,8 @@
 
 package com.google.cloud.config.v1.stub;
 
+import static com.google.cloud.config.v1.ConfigClient.ListDeploymentGroupRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListDeploymentGroupsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
@@ -57,18 +59,25 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.config.v1.AutoMigrationConfig;
+import com.google.cloud.config.v1.CreateDeploymentGroupRequest;
 import com.google.cloud.config.v1.CreateDeploymentRequest;
 import com.google.cloud.config.v1.CreatePreviewRequest;
+import com.google.cloud.config.v1.DeleteDeploymentGroupRequest;
 import com.google.cloud.config.v1.DeleteDeploymentRequest;
 import com.google.cloud.config.v1.DeletePreviewRequest;
 import com.google.cloud.config.v1.DeleteStatefileRequest;
 import com.google.cloud.config.v1.Deployment;
+import com.google.cloud.config.v1.DeploymentGroup;
+import com.google.cloud.config.v1.DeploymentGroupRevision;
+import com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest;
 import com.google.cloud.config.v1.ExportDeploymentStatefileRequest;
 import com.google.cloud.config.v1.ExportLockInfoRequest;
 import com.google.cloud.config.v1.ExportPreviewResultRequest;
 import com.google.cloud.config.v1.ExportPreviewResultResponse;
 import com.google.cloud.config.v1.ExportRevisionStatefileRequest;
 import com.google.cloud.config.v1.GetAutoMigrationConfigRequest;
+import com.google.cloud.config.v1.GetDeploymentGroupRequest;
+import com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest;
 import com.google.cloud.config.v1.GetDeploymentRequest;
 import com.google.cloud.config.v1.GetPreviewRequest;
 import com.google.cloud.config.v1.GetResourceChangeRequest;
@@ -77,6 +86,10 @@ import com.google.cloud.config.v1.GetResourceRequest;
 import com.google.cloud.config.v1.GetRevisionRequest;
 import com.google.cloud.config.v1.GetTerraformVersionRequest;
 import com.google.cloud.config.v1.ImportStatefileRequest;
+import com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest;
+import com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse;
+import com.google.cloud.config.v1.ListDeploymentGroupsRequest;
+import com.google.cloud.config.v1.ListDeploymentGroupsResponse;
 import com.google.cloud.config.v1.ListDeploymentsRequest;
 import com.google.cloud.config.v1.ListDeploymentsResponse;
 import com.google.cloud.config.v1.ListPreviewsRequest;
@@ -95,6 +108,7 @@ import com.google.cloud.config.v1.LockDeploymentRequest;
 import com.google.cloud.config.v1.LockInfo;
 import com.google.cloud.config.v1.OperationMetadata;
 import com.google.cloud.config.v1.Preview;
+import com.google.cloud.config.v1.ProvisionDeploymentGroupRequest;
 import com.google.cloud.config.v1.Resource;
 import com.google.cloud.config.v1.ResourceChange;
 import com.google.cloud.config.v1.ResourceDrift;
@@ -103,6 +117,7 @@ import com.google.cloud.config.v1.Statefile;
 import com.google.cloud.config.v1.TerraformVersion;
 import com.google.cloud.config.v1.UnlockDeploymentRequest;
 import com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest;
+import com.google.cloud.config.v1.UpdateDeploymentGroupRequest;
 import com.google.cloud.config.v1.UpdateDeploymentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -274,6 +289,45 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
   private final OperationCallSettings<
           UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
       updateAutoMigrationConfigOperationSettings;
+  private final UnaryCallSettings<GetDeploymentGroupRequest, DeploymentGroup>
+      getDeploymentGroupSettings;
+  private final UnaryCallSettings<CreateDeploymentGroupRequest, Operation>
+      createDeploymentGroupSettings;
+  private final OperationCallSettings<
+          CreateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      createDeploymentGroupOperationSettings;
+  private final UnaryCallSettings<UpdateDeploymentGroupRequest, Operation>
+      updateDeploymentGroupSettings;
+  private final OperationCallSettings<
+          UpdateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      updateDeploymentGroupOperationSettings;
+  private final UnaryCallSettings<DeleteDeploymentGroupRequest, Operation>
+      deleteDeploymentGroupSettings;
+  private final OperationCallSettings<
+          DeleteDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deleteDeploymentGroupOperationSettings;
+  private final PagedCallSettings<
+          ListDeploymentGroupsRequest,
+          ListDeploymentGroupsResponse,
+          ListDeploymentGroupsPagedResponse>
+      listDeploymentGroupsSettings;
+  private final UnaryCallSettings<ProvisionDeploymentGroupRequest, Operation>
+      provisionDeploymentGroupSettings;
+  private final OperationCallSettings<
+          ProvisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      provisionDeploymentGroupOperationSettings;
+  private final UnaryCallSettings<DeprovisionDeploymentGroupRequest, Operation>
+      deprovisionDeploymentGroupSettings;
+  private final OperationCallSettings<
+          DeprovisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deprovisionDeploymentGroupOperationSettings;
+  private final UnaryCallSettings<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+      getDeploymentGroupRevisionSettings;
+  private final PagedCallSettings<
+          ListDeploymentGroupRevisionsRequest,
+          ListDeploymentGroupRevisionsResponse,
+          ListDeploymentGroupRevisionsPagedResponse>
+      listDeploymentGroupRevisionsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -537,6 +591,92 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<
+          ListDeploymentGroupsRequest, ListDeploymentGroupsResponse, DeploymentGroup>
+      LIST_DEPLOYMENT_GROUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDeploymentGroupsRequest, ListDeploymentGroupsResponse, DeploymentGroup>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDeploymentGroupsRequest injectToken(
+                ListDeploymentGroupsRequest payload, String token) {
+              return ListDeploymentGroupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDeploymentGroupsRequest injectPageSize(
+                ListDeploymentGroupsRequest payload, int pageSize) {
+              return ListDeploymentGroupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDeploymentGroupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDeploymentGroupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DeploymentGroup> extractResources(
+                ListDeploymentGroupsResponse payload) {
+              return payload.getDeploymentGroupsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDeploymentGroupRevisionsRequest,
+          ListDeploymentGroupRevisionsResponse,
+          DeploymentGroupRevision>
+      LIST_DEPLOYMENT_GROUP_REVISIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDeploymentGroupRevisionsRequest,
+              ListDeploymentGroupRevisionsResponse,
+              DeploymentGroupRevision>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDeploymentGroupRevisionsRequest injectToken(
+                ListDeploymentGroupRevisionsRequest payload, String token) {
+              return ListDeploymentGroupRevisionsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListDeploymentGroupRevisionsRequest injectPageSize(
+                ListDeploymentGroupRevisionsRequest payload, int pageSize) {
+              return ListDeploymentGroupRevisionsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDeploymentGroupRevisionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDeploymentGroupRevisionsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DeploymentGroupRevision> extractResources(
+                ListDeploymentGroupRevisionsResponse payload) {
+              return payload.getDeploymentGroupRevisionsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -702,6 +842,62 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
                       PageContext.create(
                           callable, LIST_RESOURCE_DRIFTS_PAGE_STR_DESC, request, context);
               return ListResourceDriftsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDeploymentGroupsRequest,
+          ListDeploymentGroupsResponse,
+          ListDeploymentGroupsPagedResponse>
+      LIST_DEPLOYMENT_GROUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDeploymentGroupsRequest,
+              ListDeploymentGroupsResponse,
+              ListDeploymentGroupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDeploymentGroupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse> callable,
+                ListDeploymentGroupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDeploymentGroupsResponse> futureResponse) {
+              PageContext<
+                      ListDeploymentGroupsRequest, ListDeploymentGroupsResponse, DeploymentGroup>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_DEPLOYMENT_GROUPS_PAGE_STR_DESC, request, context);
+              return ListDeploymentGroupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDeploymentGroupRevisionsRequest,
+          ListDeploymentGroupRevisionsResponse,
+          ListDeploymentGroupRevisionsPagedResponse>
+      LIST_DEPLOYMENT_GROUP_REVISIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDeploymentGroupRevisionsRequest,
+              ListDeploymentGroupRevisionsResponse,
+              ListDeploymentGroupRevisionsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDeploymentGroupRevisionsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<
+                        ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsResponse>
+                    callable,
+                ListDeploymentGroupRevisionsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDeploymentGroupRevisionsResponse> futureResponse) {
+              PageContext<
+                      ListDeploymentGroupRevisionsRequest,
+                      ListDeploymentGroupRevisionsResponse,
+                      DeploymentGroupRevision>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_DEPLOYMENT_GROUP_REVISIONS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListDeploymentGroupRevisionsPagedResponse.createAsync(
+                  pageContext, futureResponse);
             }
           };
 
@@ -935,6 +1131,97 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     return updateAutoMigrationConfigOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to getDeploymentGroup. */
+  public UnaryCallSettings<GetDeploymentGroupRequest, DeploymentGroup>
+      getDeploymentGroupSettings() {
+    return getDeploymentGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDeploymentGroup. */
+  public UnaryCallSettings<CreateDeploymentGroupRequest, Operation>
+      createDeploymentGroupSettings() {
+    return createDeploymentGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDeploymentGroup. */
+  public OperationCallSettings<CreateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      createDeploymentGroupOperationSettings() {
+    return createDeploymentGroupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDeploymentGroup. */
+  public UnaryCallSettings<UpdateDeploymentGroupRequest, Operation>
+      updateDeploymentGroupSettings() {
+    return updateDeploymentGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDeploymentGroup. */
+  public OperationCallSettings<UpdateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      updateDeploymentGroupOperationSettings() {
+    return updateDeploymentGroupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDeploymentGroup. */
+  public UnaryCallSettings<DeleteDeploymentGroupRequest, Operation>
+      deleteDeploymentGroupSettings() {
+    return deleteDeploymentGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDeploymentGroup. */
+  public OperationCallSettings<DeleteDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deleteDeploymentGroupOperationSettings() {
+    return deleteDeploymentGroupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDeploymentGroups. */
+  public PagedCallSettings<
+          ListDeploymentGroupsRequest,
+          ListDeploymentGroupsResponse,
+          ListDeploymentGroupsPagedResponse>
+      listDeploymentGroupsSettings() {
+    return listDeploymentGroupsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to provisionDeploymentGroup. */
+  public UnaryCallSettings<ProvisionDeploymentGroupRequest, Operation>
+      provisionDeploymentGroupSettings() {
+    return provisionDeploymentGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to provisionDeploymentGroup. */
+  public OperationCallSettings<ProvisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      provisionDeploymentGroupOperationSettings() {
+    return provisionDeploymentGroupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deprovisionDeploymentGroup. */
+  public UnaryCallSettings<DeprovisionDeploymentGroupRequest, Operation>
+      deprovisionDeploymentGroupSettings() {
+    return deprovisionDeploymentGroupSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deprovisionDeploymentGroup. */
+  public OperationCallSettings<
+          DeprovisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deprovisionDeploymentGroupOperationSettings() {
+    return deprovisionDeploymentGroupOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDeploymentGroupRevision. */
+  public UnaryCallSettings<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+      getDeploymentGroupRevisionSettings() {
+    return getDeploymentGroupRevisionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDeploymentGroupRevisions. */
+  public PagedCallSettings<
+          ListDeploymentGroupRevisionsRequest,
+          ListDeploymentGroupRevisionsResponse,
+          ListDeploymentGroupRevisionsPagedResponse>
+      listDeploymentGroupRevisionsSettings() {
+    return listDeploymentGroupRevisionsSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1109,6 +1396,28 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     updateAutoMigrationConfigSettings = settingsBuilder.updateAutoMigrationConfigSettings().build();
     updateAutoMigrationConfigOperationSettings =
         settingsBuilder.updateAutoMigrationConfigOperationSettings().build();
+    getDeploymentGroupSettings = settingsBuilder.getDeploymentGroupSettings().build();
+    createDeploymentGroupSettings = settingsBuilder.createDeploymentGroupSettings().build();
+    createDeploymentGroupOperationSettings =
+        settingsBuilder.createDeploymentGroupOperationSettings().build();
+    updateDeploymentGroupSettings = settingsBuilder.updateDeploymentGroupSettings().build();
+    updateDeploymentGroupOperationSettings =
+        settingsBuilder.updateDeploymentGroupOperationSettings().build();
+    deleteDeploymentGroupSettings = settingsBuilder.deleteDeploymentGroupSettings().build();
+    deleteDeploymentGroupOperationSettings =
+        settingsBuilder.deleteDeploymentGroupOperationSettings().build();
+    listDeploymentGroupsSettings = settingsBuilder.listDeploymentGroupsSettings().build();
+    provisionDeploymentGroupSettings = settingsBuilder.provisionDeploymentGroupSettings().build();
+    provisionDeploymentGroupOperationSettings =
+        settingsBuilder.provisionDeploymentGroupOperationSettings().build();
+    deprovisionDeploymentGroupSettings =
+        settingsBuilder.deprovisionDeploymentGroupSettings().build();
+    deprovisionDeploymentGroupOperationSettings =
+        settingsBuilder.deprovisionDeploymentGroupOperationSettings().build();
+    getDeploymentGroupRevisionSettings =
+        settingsBuilder.getDeploymentGroupRevisionSettings().build();
+    listDeploymentGroupRevisionsSettings =
+        settingsBuilder.listDeploymentGroupRevisionsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -1211,6 +1520,46 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
     private final OperationCallSettings.Builder<
             UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
         updateAutoMigrationConfigOperationSettings;
+    private final UnaryCallSettings.Builder<GetDeploymentGroupRequest, DeploymentGroup>
+        getDeploymentGroupSettings;
+    private final UnaryCallSettings.Builder<CreateDeploymentGroupRequest, Operation>
+        createDeploymentGroupSettings;
+    private final OperationCallSettings.Builder<
+            CreateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+        createDeploymentGroupOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateDeploymentGroupRequest, Operation>
+        updateDeploymentGroupSettings;
+    private final OperationCallSettings.Builder<
+            UpdateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+        updateDeploymentGroupOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteDeploymentGroupRequest, Operation>
+        deleteDeploymentGroupSettings;
+    private final OperationCallSettings.Builder<
+            DeleteDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+        deleteDeploymentGroupOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListDeploymentGroupsRequest,
+            ListDeploymentGroupsResponse,
+            ListDeploymentGroupsPagedResponse>
+        listDeploymentGroupsSettings;
+    private final UnaryCallSettings.Builder<ProvisionDeploymentGroupRequest, Operation>
+        provisionDeploymentGroupSettings;
+    private final OperationCallSettings.Builder<
+            ProvisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+        provisionDeploymentGroupOperationSettings;
+    private final UnaryCallSettings.Builder<DeprovisionDeploymentGroupRequest, Operation>
+        deprovisionDeploymentGroupSettings;
+    private final OperationCallSettings.Builder<
+            DeprovisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+        deprovisionDeploymentGroupOperationSettings;
+    private final UnaryCallSettings.Builder<
+            GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+        getDeploymentGroupRevisionSettings;
+    private final PagedCallSettings.Builder<
+            ListDeploymentGroupRevisionsRequest,
+            ListDeploymentGroupRevisionsResponse,
+            ListDeploymentGroupRevisionsPagedResponse>
+        listDeploymentGroupRevisionsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1296,6 +1645,22 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       getAutoMigrationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateAutoMigrationConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateAutoMigrationConfigOperationSettings = OperationCallSettings.newBuilder();
+      getDeploymentGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDeploymentGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDeploymentGroupOperationSettings = OperationCallSettings.newBuilder();
+      updateDeploymentGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDeploymentGroupOperationSettings = OperationCallSettings.newBuilder();
+      deleteDeploymentGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteDeploymentGroupOperationSettings = OperationCallSettings.newBuilder();
+      listDeploymentGroupsSettings =
+          PagedCallSettings.newBuilder(LIST_DEPLOYMENT_GROUPS_PAGE_STR_FACT);
+      provisionDeploymentGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      provisionDeploymentGroupOperationSettings = OperationCallSettings.newBuilder();
+      deprovisionDeploymentGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deprovisionDeploymentGroupOperationSettings = OperationCallSettings.newBuilder();
+      getDeploymentGroupRevisionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDeploymentGroupRevisionsSettings =
+          PagedCallSettings.newBuilder(LIST_DEPLOYMENT_GROUP_REVISIONS_PAGE_STR_FACT);
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1333,6 +1698,15 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
               getResourceDriftSettings,
               getAutoMigrationConfigSettings,
               updateAutoMigrationConfigSettings,
+              getDeploymentGroupSettings,
+              createDeploymentGroupSettings,
+              updateDeploymentGroupSettings,
+              deleteDeploymentGroupSettings,
+              listDeploymentGroupsSettings,
+              provisionDeploymentGroupSettings,
+              deprovisionDeploymentGroupSettings,
+              getDeploymentGroupRevisionSettings,
+              listDeploymentGroupRevisionsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1382,6 +1756,26 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
       updateAutoMigrationConfigSettings = settings.updateAutoMigrationConfigSettings.toBuilder();
       updateAutoMigrationConfigOperationSettings =
           settings.updateAutoMigrationConfigOperationSettings.toBuilder();
+      getDeploymentGroupSettings = settings.getDeploymentGroupSettings.toBuilder();
+      createDeploymentGroupSettings = settings.createDeploymentGroupSettings.toBuilder();
+      createDeploymentGroupOperationSettings =
+          settings.createDeploymentGroupOperationSettings.toBuilder();
+      updateDeploymentGroupSettings = settings.updateDeploymentGroupSettings.toBuilder();
+      updateDeploymentGroupOperationSettings =
+          settings.updateDeploymentGroupOperationSettings.toBuilder();
+      deleteDeploymentGroupSettings = settings.deleteDeploymentGroupSettings.toBuilder();
+      deleteDeploymentGroupOperationSettings =
+          settings.deleteDeploymentGroupOperationSettings.toBuilder();
+      listDeploymentGroupsSettings = settings.listDeploymentGroupsSettings.toBuilder();
+      provisionDeploymentGroupSettings = settings.provisionDeploymentGroupSettings.toBuilder();
+      provisionDeploymentGroupOperationSettings =
+          settings.provisionDeploymentGroupOperationSettings.toBuilder();
+      deprovisionDeploymentGroupSettings = settings.deprovisionDeploymentGroupSettings.toBuilder();
+      deprovisionDeploymentGroupOperationSettings =
+          settings.deprovisionDeploymentGroupOperationSettings.toBuilder();
+      getDeploymentGroupRevisionSettings = settings.getDeploymentGroupRevisionSettings.toBuilder();
+      listDeploymentGroupRevisionsSettings =
+          settings.listDeploymentGroupRevisionsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -1419,6 +1813,15 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
               getResourceDriftSettings,
               getAutoMigrationConfigSettings,
               updateAutoMigrationConfigSettings,
+              getDeploymentGroupSettings,
+              createDeploymentGroupSettings,
+              updateDeploymentGroupSettings,
+              deleteDeploymentGroupSettings,
+              listDeploymentGroupsSettings,
+              provisionDeploymentGroupSettings,
+              deprovisionDeploymentGroupSettings,
+              getDeploymentGroupRevisionSettings,
+              listDeploymentGroupRevisionsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -1593,6 +1996,51 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
 
       builder
           .updateAutoMigrationConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDeploymentGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createDeploymentGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateDeploymentGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteDeploymentGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listDeploymentGroupsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .provisionDeploymentGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deprovisionDeploymentGroupSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDeploymentGroupRevisionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listDeploymentGroupRevisionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -1800,6 +2248,127 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(AutoMigrationConfig.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createDeploymentGroupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateDeploymentGroupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DeploymentGroup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateDeploymentGroupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateDeploymentGroupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DeploymentGroup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteDeploymentGroupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteDeploymentGroupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DeploymentGroup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .provisionDeploymentGroupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ProvisionDeploymentGroupRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DeploymentGroup.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deprovisionDeploymentGroupOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeprovisionDeploymentGroupRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DeploymentGroup.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
@@ -2054,6 +2623,101 @@ public class ConfigStubSettings extends StubSettings<ConfigStubSettings> {
             UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
         updateAutoMigrationConfigOperationSettings() {
       return updateAutoMigrationConfigOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDeploymentGroup. */
+    public UnaryCallSettings.Builder<GetDeploymentGroupRequest, DeploymentGroup>
+        getDeploymentGroupSettings() {
+      return getDeploymentGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDeploymentGroup. */
+    public UnaryCallSettings.Builder<CreateDeploymentGroupRequest, Operation>
+        createDeploymentGroupSettings() {
+      return createDeploymentGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDeploymentGroup. */
+    public OperationCallSettings.Builder<
+            CreateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+        createDeploymentGroupOperationSettings() {
+      return createDeploymentGroupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDeploymentGroup. */
+    public UnaryCallSettings.Builder<UpdateDeploymentGroupRequest, Operation>
+        updateDeploymentGroupSettings() {
+      return updateDeploymentGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDeploymentGroup. */
+    public OperationCallSettings.Builder<
+            UpdateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+        updateDeploymentGroupOperationSettings() {
+      return updateDeploymentGroupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDeploymentGroup. */
+    public UnaryCallSettings.Builder<DeleteDeploymentGroupRequest, Operation>
+        deleteDeploymentGroupSettings() {
+      return deleteDeploymentGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDeploymentGroup. */
+    public OperationCallSettings.Builder<
+            DeleteDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+        deleteDeploymentGroupOperationSettings() {
+      return deleteDeploymentGroupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDeploymentGroups. */
+    public PagedCallSettings.Builder<
+            ListDeploymentGroupsRequest,
+            ListDeploymentGroupsResponse,
+            ListDeploymentGroupsPagedResponse>
+        listDeploymentGroupsSettings() {
+      return listDeploymentGroupsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to provisionDeploymentGroup. */
+    public UnaryCallSettings.Builder<ProvisionDeploymentGroupRequest, Operation>
+        provisionDeploymentGroupSettings() {
+      return provisionDeploymentGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to provisionDeploymentGroup. */
+    public OperationCallSettings.Builder<
+            ProvisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+        provisionDeploymentGroupOperationSettings() {
+      return provisionDeploymentGroupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deprovisionDeploymentGroup. */
+    public UnaryCallSettings.Builder<DeprovisionDeploymentGroupRequest, Operation>
+        deprovisionDeploymentGroupSettings() {
+      return deprovisionDeploymentGroupSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deprovisionDeploymentGroup. */
+    public OperationCallSettings.Builder<
+            DeprovisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+        deprovisionDeploymentGroupOperationSettings() {
+      return deprovisionDeploymentGroupOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDeploymentGroupRevision. */
+    public UnaryCallSettings.Builder<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+        getDeploymentGroupRevisionSettings() {
+      return getDeploymentGroupRevisionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDeploymentGroupRevisions. */
+    public PagedCallSettings.Builder<
+            ListDeploymentGroupRevisionsRequest,
+            ListDeploymentGroupRevisionsResponse,
+            ListDeploymentGroupRevisionsPagedResponse>
+        listDeploymentGroupRevisionsSettings() {
+      return listDeploymentGroupRevisionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

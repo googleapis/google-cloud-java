@@ -43,6 +43,7 @@ public class AsyncCopyModel {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setSourceModel(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
               .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+              .setCustomServiceAccount("customServiceAccount-2110106743")
               .build();
       ApiFuture<Operation> future = modelServiceClient.copyModelCallable().futureCall(request);
       // Do something.

@@ -45,6 +45,10 @@ public final class InventoriesCommonProto extends com.google.protobuf.GeneratedF
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_shopping_merchant_inventories_v1_LocalInventoryAttributes_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_inventories_v1_InventoryLoyaltyProgram_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_shopping_merchant_inventories_v1_InventoryLoyaltyProgram_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_merchant_inventories_v1_RegionalInventoryAttributes_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_shopping_merchant_inventories_v1_RegionalInventoryAttributes_fieldAccessorTable;
@@ -57,57 +61,90 @@ public final class InventoriesCommonProto extends com.google.protobuf.GeneratedF
 
   static {
     java.lang.String[] descriptorData = {
-      "\n@google/shopping/merchant/inventories/v"
-          + "1/inventories_common.proto\022\'google.shopp"
-          + "ing.merchant.inventories.v1\032\037google/api/"
-          + "field_behavior.proto\032 google/shopping/ty"
-          + "pe/types.proto\032\032google/type/interval.pro"
-          + "to\"\322\010\n\030LocalInventoryAttributes\022/\n\005price"
-          + "\030\001 \001(\0132\033.google.shopping.type.PriceB\003\340A\001"
-          + "\0224\n\nsale_price\030\002 \001(\0132\033.google.shopping.t"
-          + "ype.PriceB\003\340A\001\022=\n\031sale_price_effective_d"
-          + "ate\030\003 \001(\0132\025.google.type.IntervalB\003\340A\001\022i\n"
+      "\n"
+          + "@google/shopping/merchant/inventories/v1/inventories_common.proto\022\'google.shopp"
+          + "ing.merchant.inventories.v1\032\037google/api/field_behavior.proto\032"
+          + " google/shopping/type/types.proto\032\032google/type/interval.proto\"\263\t\n"
+          + "\030LocalInventoryAttributes\022/\n"
+          + "\005price\030\001 \001(\0132\033.google.shopping.type.PriceB\003\340A\001\0224\n\n"
+          + "sale_price\030\002 \001(\0132\033.google.shopping.type.PriceB\003\340A\001\022=\n"
+          + "\031sale_price_effective_date\030\003"
+          + " \001(\0132\025.google.type.IntervalB\003\340A\001\022i\n"
           + "\014availability\030\004 \001(\0162N.google.shopping.me"
-          + "rchant.inventories.v1.LocalInventoryAttr"
-          + "ibutes.AvailabilityH\000\210\001\001\022\032\n\010quantity\030\005 \001"
-          + "(\003B\003\340A\001H\001\210\001\001\022o\n\rpickup_method\030\006 \001(\0162N.go"
-          + "ogle.shopping.merchant.inventories.v1.Lo"
-          + "calInventoryAttributes.PickupMethodB\003\340A\001"
-          + "H\002\210\001\001\022i\n\npickup_sla\030\007 \001(\0162K.google.shopp"
-          + "ing.merchant.inventories.v1.LocalInvento"
-          + "ryAttributes.PickupSlaB\003\340A\001H\003\210\001\001\022*\n\030inst"
-          + "ore_product_location\030\010 \001(\tB\003\340A\001H\004\210\001\001\"\217\001\n"
-          + "\014Availability\022,\n(LOCAL_INVENTORY_AVAILAB"
-          + "ILITY_UNSPECIFIED\020\000\022\014\n\010IN_STOCK\020\001\022\030\n\024LIM"
-          + "ITED_AVAILABILITY\020\002\022\027\n\023ON_DISPLAY_TO_ORD"
-          + "ER\020\003\022\020\n\014OUT_OF_STOCK\020\004\"i\n\014PickupMethod\022\035"
-          + "\n\031PICKUP_METHOD_UNSPECIFIED\020\000\022\007\n\003BUY\020\001\022\013"
-          + "\n\007RESERVE\020\002\022\021\n\rSHIP_TO_STORE\020\003\022\021\n\rNOT_SU"
-          + "PPORTED\020\004\"\247\001\n\tPickupSla\022\032\n\026PICKUP_SLA_UN"
-          + "SPECIFIED\020\000\022\014\n\010SAME_DAY\020\001\022\014\n\010NEXT_DAY\020\002\022"
-          + "\013\n\007TWO_DAY\020\003\022\r\n\tTHREE_DAY\020\004\022\014\n\010FOUR_DAY\020"
-          + "\005\022\014\n\010FIVE_DAY\020\006\022\013\n\007SIX_DAY\020\007\022\r\n\tSEVEN_DA"
-          + "Y\020\010\022\016\n\nMULTI_WEEK\020\tB\017\n\r_availabilityB\013\n\t"
-          + "_quantityB\020\n\016_pickup_methodB\r\n\013_pickup_s"
-          + "laB\033\n\031_instore_product_location\"\250\003\n\033Regi"
-          + "onalInventoryAttributes\022/\n\005price\030\001 \001(\0132\033"
-          + ".google.shopping.type.PriceB\003\340A\001\0224\n\nsale"
-          + "_price\030\002 \001(\0132\033.google.shopping.type.Pric"
-          + "eB\003\340A\001\022=\n\031sale_price_effective_date\030\003 \001("
-          + "\0132\025.google.type.IntervalB\003\340A\001\022q\n\014availab"
-          + "ility\030\004 \001(\0162Q.google.shopping.merchant.i"
-          + "nventories.v1.RegionalInventoryAttribute"
-          + "s.AvailabilityB\003\340A\001H\000\210\001\001\"_\n\014Availability"
-          + "\022/\n+REGIONAL_INVENTORY_AVAILABILITY_UNSP"
-          + "ECIFIED\020\000\022\014\n\010IN_STOCK\020\001\022\020\n\014OUT_OF_STOCK\020"
-          + "\002B\017\n\r_availabilityB\236\002\n+com.google.shoppi"
-          + "ng.merchant.inventories.v1B\026InventoriesC"
-          + "ommonProtoP\001ZScloud.google.com/go/shoppi"
-          + "ng/merchant/inventories/apiv1/inventorie"
-          + "spb;inventoriespb\252\002\'Google.Shopping.Merc"
-          + "hant.Inventories.V1\312\002\'Google\\Shopping\\Me"
-          + "rchant\\Inventories\\V1\352\002+Google::Shopping"
-          + "::Merchant::Inventories::V1b\006proto3"
+          + "rchant.inventories.v1.LocalInventoryAttributes.AvailabilityH\000\210\001\001\022\032\n"
+          + "\010quantity\030\005 \001(\003B\003\340A\001H\001\210\001\001\022o\n\r"
+          + "pickup_method\030\006 \001(\0162N.google.shopping.merchant.inventories.v1.Lo"
+          + "calInventoryAttributes.PickupMethodB\003\340A\001H\002\210\001\001\022i\n\n"
+          + "pickup_sla\030\007 \001(\0162K.google.shopp"
+          + "ing.merchant.inventories.v1.LocalInventoryAttributes.PickupSlaB\003\340A\001H\003\210\001\001\022*\n"
+          + "\030instore_product_location\030\010 \001(\tB\003\340A\001H\004\210\001\001\022_\n"
+          + "\020loyalty_programs\030\n"
+          + " \003(\0132@.google.shopping"
+          + ".merchant.inventories.v1.InventoryLoyaltyProgramB\003\340A\001\"\217\001\n"
+          + "\014Availability\022,\n"
+          + "(LOCAL_INVENTORY_AVAILABILITY_UNSPECIFIED\020\000\022\014\n"
+          + "\010IN_STOCK\020\001\022\030\n"
+          + "\024LIMITED_AVAILABILITY\020\002\022\027\n"
+          + "\023ON_DISPLAY_TO_ORDER\020\003\022\020\n"
+          + "\014OUT_OF_STOCK\020\004\"i\n"
+          + "\014PickupMethod\022\035\n"
+          + "\031PICKUP_METHOD_UNSPECIFIED\020\000\022\007\n"
+          + "\003BUY\020\001\022\013\n"
+          + "\007RESERVE\020\002\022\021\n\r"
+          + "SHIP_TO_STORE\020\003\022\021\n\r"
+          + "NOT_SUPPORTED\020\004\"\247\001\n"
+          + "\tPickupSla\022\032\n"
+          + "\026PICKUP_SLA_UNSPECIFIED\020\000\022\014\n"
+          + "\010SAME_DAY\020\001\022\014\n"
+          + "\010NEXT_DAY\020\002\022\013\n"
+          + "\007TWO_DAY\020\003\022\r\n"
+          + "\tTHREE_DAY\020\004\022\014\n"
+          + "\010FOUR_DAY\020\005\022\014\n"
+          + "\010FIVE_DAY\020\006\022\013\n"
+          + "\007SIX_DAY\020\007\022\r\n"
+          + "\tSEVEN_DAY\020\010\022\016\n\n"
+          + "MULTI_WEEK\020\tB\017\n\r"
+          + "_availabilityB\013\n"
+          + "\t_quantityB\020\n"
+          + "\016_pickup_methodB\r\n"
+          + "\013_pickup_slaB\033\n"
+          + "\031_instore_product_location\"\322\003\n"
+          + "\027InventoryLoyaltyProgram\022\032\n\r"
+          + "program_label\030\001 \001(\tH\000\210\001\001\022\027\n\n"
+          + "tier_label\030\002 \001(\tH\001\210\001\001\022/\n"
+          + "\005price\030\003 \001(\0132\033.google.shopping.type.PriceH\002\210\001\001\022A\n"
+          + "\027cashback_for_future_use\030\004"
+          + " \001(\0132\033.google.shopping.type.PriceH\003\210\001\001\022\033\n"
+          + "\016loyalty_points\030\005 \001(\003H\004\210\001\001\022C\n"
+          + "\037member_price_effective_interval\030\006"
+          + " \001(\0132\025.google.type.IntervalH\005\210\001\001\022\033\n"
+          + "\016shipping_label\030\007 \001(\tH\006\210\001\001B\020\n"
+          + "\016_program_labelB\r\n"
+          + "\013_tier_labelB\010\n"
+          + "\006_priceB\032\n"
+          + "\030_cashback_for_future_useB\021\n"
+          + "\017_loyalty_pointsB\"\n"
+          + " _member_price_effective_intervalB\021\n"
+          + "\017_shipping_label\"\211\004\n"
+          + "\033RegionalInventoryAttributes\022/\n"
+          + "\005price\030\001 \001(\0132\033.google.shopping.type.PriceB\003\340A\001\0224\n\n"
+          + "sale_price\030\002 \001(\0132\033.google.shopping.type.PriceB\003\340A\001\022=\n"
+          + "\031sale_price_effective_date\030\003"
+          + " \001(\0132\025.google.type.IntervalB\003\340A\001\022q\n"
+          + "\014availability\030\004 \001(\0162Q.google.shopping.merc"
+          + "hant.inventories.v1.RegionalInventoryAttributes.AvailabilityB\003\340A\001H\000\210\001\001\022_\n"
+          + "\020loyalty_programs\030\005 \003(\0132@.google.shopping.merch"
+          + "ant.inventories.v1.InventoryLoyaltyProgramB\003\340A\001\"_\n"
+          + "\014Availability\022/\n"
+          + "+REGIONAL_INVENTORY_AVAILABILITY_UNSPECIFIED\020\000\022\014\n"
+          + "\010IN_STOCK\020\001\022\020\n"
+          + "\014OUT_OF_STOCK\020\002B\017\n\r"
+          + "_availabilityB\236\002\n"
+          + "+com.google.shopping.merchant.inventories.v1B\026InventoriesCommonProtoP\001ZSclo"
+          + "ud.google.com/go/shopping/merchant/inventories/apiv1/inventoriespb;inventoriespb"
+          + "\252\002\'Google.Shopping.Merchant.Inventories."
+          + "V1\312\002\'Google\\Shopping\\Merchant\\Inventorie"
+          + "s\\V1\352\002+Google::Shopping::Merchant::Inventories::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -131,14 +168,29 @@ public final class InventoriesCommonProto extends com.google.protobuf.GeneratedF
               "PickupMethod",
               "PickupSla",
               "InstoreProductLocation",
+              "LoyaltyPrograms",
+            });
+    internal_static_google_shopping_merchant_inventories_v1_InventoryLoyaltyProgram_descriptor =
+        getDescriptor().getMessageType(1);
+    internal_static_google_shopping_merchant_inventories_v1_InventoryLoyaltyProgram_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_shopping_merchant_inventories_v1_InventoryLoyaltyProgram_descriptor,
+            new java.lang.String[] {
+              "ProgramLabel",
+              "TierLabel",
+              "Price",
+              "CashbackForFutureUse",
+              "LoyaltyPoints",
+              "MemberPriceEffectiveInterval",
+              "ShippingLabel",
             });
     internal_static_google_shopping_merchant_inventories_v1_RegionalInventoryAttributes_descriptor =
-        getDescriptor().getMessageType(1);
+        getDescriptor().getMessageType(2);
     internal_static_google_shopping_merchant_inventories_v1_RegionalInventoryAttributes_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_shopping_merchant_inventories_v1_RegionalInventoryAttributes_descriptor,
             new java.lang.String[] {
-              "Price", "SalePrice", "SalePriceEffectiveDate", "Availability",
+              "Price", "SalePrice", "SalePriceEffectiveDate", "Availability", "LoyaltyPrograms",
             });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();

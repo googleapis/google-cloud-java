@@ -38,7 +38,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.security.GeneralSecurityException;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
@@ -70,7 +69,7 @@ class SecureConnectProviderTest {
     }
 
     @Override
-    public int waitFor() throws InterruptedException {
+    public int waitFor() {
       return 0;
     }
 
@@ -83,7 +82,9 @@ class SecureConnectProviderTest {
     }
 
     @Override
-    public void destroy() {}
+    public void destroy() {
+      // Nothing was initialized and nothing needs to be destroyed
+    }
   }
 
   static class TestProcessProvider implements SecureConnectProvider.ProcessProvider {
@@ -102,19 +103,22 @@ class SecureConnectProviderTest {
 
   @Test
   void testGetKeyStoreNonZeroExitCode() {
-    InputStream metadata =
+    try (InputStream metadata =
         this.getClass()
             .getClassLoader()
-            .getResourceAsStream("com/google/api/gax/rpc/mtls/mtlsCertAndKey.pem");
-    IOException actual =
-        assertThrows(
-            IOException.class,
-            () -> SecureConnectProvider.getKeyStore(metadata, new TestProcessProvider(1)));
-    assertTrue(
-        actual
-            .getMessage()
-            .contains("SecureConnect: Cert provider command failed with exit code: 1"),
-        "expected to fail with nonzero exit code");
+            .getResourceAsStream("com/google/api/gax/rpc/mtls/mtlsCertAndKey.pem")) {
+      IOException actual =
+          assertThrows(
+              IOException.class,
+              () -> SecureConnectProvider.getKeyStore(metadata, new TestProcessProvider(1)));
+      assertTrue(
+          actual
+              .getMessage()
+              .contains("SecureConnect: Cert provider command failed with exit code: 1"),
+          "expected to fail with nonzero exit code");
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   @Test
@@ -147,8 +151,7 @@ class SecureConnectProviderTest {
   }
 
   @Test
-  void testGetKeyStore_FileNotFoundException()
-      throws IOException, GeneralSecurityException, InterruptedException {
+  void testGetKeyStore_FileNotFoundException() {
     SecureConnectProvider provider =
         new SecureConnectProvider(new TestProcessProvider(0), "/invalid/metadata/path.json");
 

@@ -194,6 +194,17 @@ public class VectorSearchServiceSettings extends ClientSettings<VectorSearchServ
     return ((VectorSearchServiceStubSettings) getStubSettings()).createIndexOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateIndex. */
+  public UnaryCallSettings<UpdateIndexRequest, Operation> updateIndexSettings() {
+    return ((VectorSearchServiceStubSettings) getStubSettings()).updateIndexSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateIndex. */
+  public OperationCallSettings<UpdateIndexRequest, Index, OperationMetadata>
+      updateIndexOperationSettings() {
+    return ((VectorSearchServiceStubSettings) getStubSettings()).updateIndexOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteIndex. */
   public UnaryCallSettings<DeleteIndexRequest, Operation> deleteIndexSettings() {
     return ((VectorSearchServiceStubSettings) getStubSettings()).deleteIndexSettings();
@@ -423,6 +434,17 @@ public class VectorSearchServiceSettings extends ClientSettings<VectorSearchServ
     public OperationCallSettings.Builder<CreateIndexRequest, Index, OperationMetadata>
         createIndexOperationSettings() {
       return getStubSettingsBuilder().createIndexOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateIndex. */
+    public UnaryCallSettings.Builder<UpdateIndexRequest, Operation> updateIndexSettings() {
+      return getStubSettingsBuilder().updateIndexSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateIndex. */
+    public OperationCallSettings.Builder<UpdateIndexRequest, Index, OperationMetadata>
+        updateIndexOperationSettings() {
+      return getStubSettingsBuilder().updateIndexOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to deleteIndex. */

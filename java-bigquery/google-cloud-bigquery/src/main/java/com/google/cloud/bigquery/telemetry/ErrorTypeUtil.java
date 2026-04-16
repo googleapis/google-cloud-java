@@ -15,20 +15,14 @@
  */
 package com.google.cloud.bigquery.telemetry;
 
-import com.google.api.core.BetaApi;
-import com.google.common.annotations.VisibleForTesting;
-
 /**
  * Utility class for identifying exception types for telemetry tracking. TODO: this class should get
  * replaced with gax version when ready work tracked in
  * https://github.com/googleapis/google-cloud-java/issues/12105
  */
-@BetaApi
-@VisibleForTesting
-public class ErrorTypeUtil {
+class ErrorTypeUtil {
 
-  @VisibleForTesting
-  public enum ErrorType {
+  enum ErrorType {
     CLIENT_TIMEOUT,
     CLIENT_CONNECTION_ERROR,
     CLIENT_REQUEST_ERROR,
