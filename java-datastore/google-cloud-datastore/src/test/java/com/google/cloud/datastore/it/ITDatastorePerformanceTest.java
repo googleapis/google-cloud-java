@@ -25,6 +25,7 @@ import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 import com.google.cloud.datastore.v1.DatastoreSettings;
+import com.google.common.base.Strings;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Date;
@@ -45,9 +46,9 @@ public class ITDatastorePerformanceTest {
     
     for (int load : loadSteps) {
       runPhase(load, phaseDurationMillis);
-      System.out.println("\n\n" + "=".repeat(50));
+      System.out.println("\n\n" + Strings.repeat("=", 50));
       System.out.println("COMPLETED PHASE WITH " + load + " CONCURRENT RPCs");
-      System.out.println("=".repeat(50) + "\n\n");
+      System.out.println(Strings.repeat("=", 50) + "\n\n");
     }
   }
 
@@ -76,7 +77,6 @@ public class ITDatastorePerformanceTest {
     
     Datastore datastore = options.getService();
     ExecutorService executor = Executors.newFixedThreadPool(threadCount);
-    AtomicInteger totalRequests = new AtomicInteger(0);
     AtomicInteger intervalRequests = new AtomicInteger(0);
     AtomicInteger errorCount = new AtomicInteger(0);
 
@@ -88,7 +88,6 @@ public class ITDatastorePerformanceTest {
         while (!Thread.currentThread().isInterrupted()) {
           try {
             datastore.get(key);
-            totalRequests.incrementAndGet();
             intervalRequests.incrementAndGet();
           } catch (Exception e) {
             errorCount.incrementAndGet();
@@ -167,10 +166,6 @@ public class ITDatastorePerformanceTest {
       }
     } catch (Exception e) {
       System.err.println("Failed to report: " + e.getMessage());
-    }
-  }
-}
- e.getMessage());
     }
   }
 }
