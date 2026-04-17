@@ -321,6 +321,9 @@ class ChannelPool extends ManagedChannel {
       dampenedTarget = currentSize + (int) Math.copySign(settings.getMaxResizeDelta(), delta);
     }
 
+    // We only count as "resized" if the thresholds are crossed and we actually attempt to scale.
+    // Checking (dampenedTarget != currentSize) would cause false positives when the pool is within
+    // bounds but not at the target, because the target aims for the middle of the bounds.
     boolean resized = (localEntries.size() < minChannels || localEntries.size() > maxChannels);
     if (resized) {
       consecutiveResizes++;
