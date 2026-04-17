@@ -356,7 +356,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         "redactedClientSecret",
         properties.get(BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME));
     assertEquals(
-        "1", properties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
+        "true", properties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
   }
 
   @Test
@@ -369,7 +369,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         BigQueryJdbcOAuthUtility.parseOAuthProperties(
             DataSource.fromUrl(url), this.getClass().getName());
     assertEquals(
-        "0", properties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
+        "false", properties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
   }
 
   @Test
@@ -381,7 +381,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         BigQueryJdbcOAuthUtility.parseOAuthProperties(
             DataSource.fromUrl(url), this.getClass().getName());
     assertEquals(
-        String.valueOf(BigQueryJdbcUrlUtility.DEFAULT_REQUEST_GOOGLE_DRIVE_SCOPE_VALUE),
+        "false",
         properties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
   }
 
@@ -391,7 +391,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     authProperties.put(BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME, "redactedClientId");
     authProperties.put(
         BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME, "redactedClientSecret");
-    authProperties.put(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME, "1");
+    authProperties.put(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME, "true");
 
     UserAuthorizer authorizer =
         BigQueryJdbcOAuthUtility.getUserAuthorizer(
@@ -430,6 +430,35 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         BigQueryJdbcOAuthUtility.getUserAuthorizer(
             authProperties, Collections.emptyMap(), 12345, this.getClass().getName());
     assertFalse(authorizer.getScopes().contains("https://www.googleapis.com/auth/drive.readonly"));
+  }
+
+  @Test
+  public void testParseOAuthProperties_ServiceAccount_RequestDriveScopeEnabled() {
+    String url =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "OAuthType=0;OAuthServiceAcctEmail=dummy@email.com;OAuthPvtKey=key;"
+            + "RequestGoogleDriveScope=1;";
+    Map<String, String> properties =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(
+            DataSource.fromUrl(url), this.getClass().getName());
+    assertEquals(
+        "true", properties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
+  }
+
+  @Test
+  public void testGetCredentialsForPreGeneratedToken_WithDriveScope() {
+    Map<String, String> authProperties =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(
+            DataSource.fromUrl(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                    + "OAuthType=2;ProjectId=MyBigQueryProject;"
+                    + "OAuthAccessToken=RedactedToken;"
+                    + "RequestGoogleDriveScope=1;"),
+            null);
+
+    GoogleCredentials credentials =
+        BigQueryJdbcOAuthUtility.getCredentials(authProperties, Collections.EMPTY_MAP, null);
+    assertThat(credentials).isNotNull();
   }
 
   @Test
