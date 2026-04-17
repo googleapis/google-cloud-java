@@ -251,7 +251,10 @@ def generate_postprocessing_prerequisite_files(
         "distribution_name": library.get_maven_coordinate(),
     }
 
-    if library.get_library_name() not in LIBRARIES_WITHOUT_API_ID and library.library_type != "OTHER":
+    if (
+        library.get_library_name() not in LIBRARIES_WITHOUT_API_ID
+        and library.library_type != "OTHER"
+    ):
         repo_metadata["api_id"] = api_id
 
     repo_metadata["library_type"] = library.library_type
