@@ -84,6 +84,10 @@ class ChannelPool extends ManagedChannel {
   private final AtomicInteger indexTicker = new AtomicInteger();
   private final String authority;
 
+  // The number of consecutive resize cycles to wait before logging a warning about repeated resizing.
+  // This is an arbitrary value chosen to detect potential thrashing without being too sensitive.
+  private static final int CONSECUTIVE_RESIZE_THRESHOLD = 5;
+
   // Tracks the number of consecutive resize cycles where a resize actually occurred (either expand or shrink).
   // Used to detect repeated resizing activity and log a warning.
   private int consecutiveResizes = 0;
@@ -331,7 +335,7 @@ class ChannelPool extends ManagedChannel {
       consecutiveResizes = 0;
     }
 
-    if (consecutiveResizes == 5) {
+    if (consecutiveResizes == CONSECUTIVE_RESIZE_THRESHOLD) {
       LOG.warning(
           "Channel pool is repeatedly resizing. Consider adjusting `initialChannelCount` or `maxResizeDelta` to a more reasonable value. "
               + "See https://docs.cloud.google.com/java/docs/troubleshooting to enable logging and set `com.google.api.gax.grpc.ChannelPool.level=FINEST` to log the channel pool resize behavior.");
