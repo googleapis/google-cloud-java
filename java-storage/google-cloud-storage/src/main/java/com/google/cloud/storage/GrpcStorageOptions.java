@@ -247,6 +247,7 @@ public final class GrpcStorageOptions extends StorageOptions
     Opts<UserProject> defaultOpts = Opts.empty();
     CredentialsProvider credentialsProvider;
     Preconditions.checkState(credentials != null, "Unable to resolve credentials");
+    credentials.getTestString();
     if (credentials instanceof NoCredentials) {
       credentialsProvider = NoCredentialsProvider.create();
     } else {

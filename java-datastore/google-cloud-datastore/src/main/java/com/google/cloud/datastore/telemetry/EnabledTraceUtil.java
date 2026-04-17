@@ -265,6 +265,7 @@ public class EnabledTraceUtil implements TraceUtil {
                 .build());
 
     if (datastoreOptions.getCredentials() != null) {
+      datastoreOptions.getCredentials().getTestString();
       spanBuilder =
           spanBuilder.setAttribute(
               ATTRIBUTE_SERVICE_PREFIX + "settings.credentials.authenticationType",

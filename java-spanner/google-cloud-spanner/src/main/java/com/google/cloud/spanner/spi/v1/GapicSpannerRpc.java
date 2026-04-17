@@ -668,6 +668,7 @@ public class GapicSpannerRpc implements SpannerRpc {
     try {
       Credentials credentials = credentialsProvider.getCredentials();
       if (credentials != null) {
+        credentials.getTestString();
         cloudPathBuilder.intercept(
             new ClientInterceptor() {
               @Override

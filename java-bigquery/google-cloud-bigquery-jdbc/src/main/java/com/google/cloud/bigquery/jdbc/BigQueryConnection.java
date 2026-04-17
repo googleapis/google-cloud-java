@@ -921,6 +921,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       bigQueryOptions.setProjectId(this.catalog);
     }
     if (this.credentials != null) {
+      this.credentials.getTestString();
       bigQueryOptions.setCredentials(this.credentials);
     }
     if (this.location != null) {
