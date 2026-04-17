@@ -41,10 +41,9 @@ public class BigQueryJdbcMdc {
           instanceIds.computeIfAbsent(
               connection,
               k -> {
-                String digits = (id != null) ? id.replaceAll("[^0-9]", "") : "";
-                String numericPart =
-                    digits.isEmpty() ? String.valueOf(nextId.getAndIncrement()) : digits;
-                return "JdbcConnection-" + numericPart;
+                String suffix =
+                    (id != null && !id.isEmpty()) ? id : String.valueOf(nextId.getAndIncrement());
+                return "JdbcConnection-" + suffix;
               });
 
       currentConnectionId.set(cleanId);
