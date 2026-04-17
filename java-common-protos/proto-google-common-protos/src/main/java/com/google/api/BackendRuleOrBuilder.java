@@ -167,6 +167,15 @@ public interface BackendRuleOrBuilder
   double getOperationDeadline();
 
   /**
+   *
+   *
+   * <pre>
+   * Path translation specifies how to combine the backend address with the
+   * request path in order to produce the appropriate forwarding URL for the
+   * request. See [PathTranslation][google.api.BackendRule.PathTranslation] for
+   * more details.
+   * </pre>
+   *
    * <code>.google.api.BackendRule.PathTranslation path_translation = 6;</code>
    *
    * @return The enum numeric value on the wire for pathTranslation.
@@ -174,6 +183,15 @@ public interface BackendRuleOrBuilder
   int getPathTranslationValue();
 
   /**
+   *
+   *
+   * <pre>
+   * Path translation specifies how to combine the backend address with the
+   * request path in order to produce the appropriate forwarding URL for the
+   * request. See [PathTranslation][google.api.BackendRule.PathTranslation] for
+   * more details.
+   * </pre>
+   *
    * <code>.google.api.BackendRule.PathTranslation path_translation = 6;</code>
    *
    * @return The pathTranslation.
@@ -385,6 +403,40 @@ public interface BackendRuleOrBuilder
    * <code>map&lt;string, .google.api.BackendRule&gt; overrides_by_request_protocol = 10;</code>
    */
   com.google.api.BackendRule getOverridesByRequestProtocolOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * The load balancing policy used for connection to the application backend.
+   *
+   * Defined as an arbitrary string to accomondate custom load balancing
+   * policies supported by the underlying channel, but suggest most users use
+   * one of the standard policies, such as the default, "RoundRobin".
+   * </pre>
+   *
+   * <code>string load_balancing_policy = 11;</code>
+   *
+   * @return The loadBalancingPolicy.
+   */
+  java.lang.String getLoadBalancingPolicy();
+
+  /**
+   *
+   *
+   * <pre>
+   * The load balancing policy used for connection to the application backend.
+   *
+   * Defined as an arbitrary string to accomondate custom load balancing
+   * policies supported by the underlying channel, but suggest most users use
+   * one of the standard policies, such as the default, "RoundRobin".
+   * </pre>
+   *
+   * <code>string load_balancing_policy = 11;</code>
+   *
+   * @return The bytes for loadBalancingPolicy.
+   */
+  com.google.protobuf.ByteString getLoadBalancingPolicyBytes();
 
   com.google.api.BackendRule.AuthenticationCase getAuthenticationCase();
 }

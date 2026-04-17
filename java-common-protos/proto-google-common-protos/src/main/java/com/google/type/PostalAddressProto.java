@@ -60,10 +60,10 @@ public final class PostalAddressProto extends com.google.protobuf.GeneratedFile 
           + "code\030\005 \001(\t\022\033\n\023administrative_area\030\006 \001(\t\022"
           + "\020\n\010locality\030\007 \001(\t\022\023\n\013sublocality\030\010 \001(\t\022\025"
           + "\n\raddress_lines\030\t \003(\t\022\022\n\nrecipients\030\n \003("
-          + "\t\022\024\n\014organization\030\013 \001(\tBx\n\017com.google.ty"
+          + "\t\022\024\n\014organization\030\013 \001(\tBu\n\017com.google.ty"
           + "peB\022PostalAddressProtoP\001ZFgoogle.golang."
           + "org/genproto/googleapis/type/postaladdre"
-          + "ss;postaladdress\370\001\001\242\002\003GTPb\006proto3"
+          + "ss;postaladdress\242\002\003GTPb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

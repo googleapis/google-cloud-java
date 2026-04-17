@@ -7,7 +7,7 @@
   "release_level": "stable",
   "transport": "grpc",
   "language": "java",
-  "repo": "googleapis/sdk-platform-java",
+  "repo": "googleapis/google-cloud-java",
   "repo_short": "java-common-protos",
   "distribution_name": "com.google.api.grpc:proto-google-common-protos",
   "library_type": "OTHER",

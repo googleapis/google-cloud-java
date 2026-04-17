@@ -54,10 +54,10 @@ public final class DecimalProto extends com.google.protobuf.GeneratedFile {
   static {
     java.lang.String[] descriptorData = {
       "\n\031google/type/decimal.proto\022\013google.type"
-          + "\"\030\n\007Decimal\022\r\n\005value\030\001 \001(\tBf\n\017com.google"
+          + "\"\030\n\007Decimal\022\r\n\005value\030\001 \001(\tBc\n\017com.google"
           + ".typeB\014DecimalProtoP\001Z:google.golang.org"
           + "/genproto/googleapis/type/decimal;decima"
-          + "l\370\001\001\242\002\003GTPb\006proto3"
+          + "l\242\002\003GTPb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

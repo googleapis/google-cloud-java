@@ -164,6 +164,8 @@ public final class GoSettings extends com.google.protobuf.GeneratedMessage
    * service names and values are the name to be used for the service client
    * and call options.
    *
+   * Example:
+   *
    * publishing:
    * go_settings:
    * renamed_services:
@@ -195,6 +197,8 @@ public final class GoSettings extends com.google.protobuf.GeneratedMessage
    * service names and values are the name to be used for the service client
    * and call options.
    *
+   * Example:
+   *
    * publishing:
    * go_settings:
    * renamed_services:
@@ -215,6 +219,8 @@ public final class GoSettings extends com.google.protobuf.GeneratedMessage
    * Map of service names to renamed services. Keys are the package relative
    * service names and values are the name to be used for the service client
    * and call options.
+   *
+   * Example:
    *
    * publishing:
    * go_settings:
@@ -243,6 +249,8 @@ public final class GoSettings extends com.google.protobuf.GeneratedMessage
    * Map of service names to renamed services. Keys are the package relative
    * service names and values are the name to be used for the service client
    * and call options.
+   *
+   * Example:
    *
    * publishing:
    * go_settings:
@@ -875,6 +883,8 @@ public final class GoSettings extends com.google.protobuf.GeneratedMessage
      * service names and values are the name to be used for the service client
      * and call options.
      *
+     * Example:
+     *
      * publishing:
      * go_settings:
      * renamed_services:
@@ -906,6 +916,8 @@ public final class GoSettings extends com.google.protobuf.GeneratedMessage
      * service names and values are the name to be used for the service client
      * and call options.
      *
+     * Example:
+     *
      * publishing:
      * go_settings:
      * renamed_services:
@@ -926,6 +938,8 @@ public final class GoSettings extends com.google.protobuf.GeneratedMessage
      * Map of service names to renamed services. Keys are the package relative
      * service names and values are the name to be used for the service client
      * and call options.
+     *
+     * Example:
      *
      * publishing:
      * go_settings:
@@ -954,6 +968,8 @@ public final class GoSettings extends com.google.protobuf.GeneratedMessage
      * Map of service names to renamed services. Keys are the package relative
      * service names and values are the name to be used for the service client
      * and call options.
+     *
+     * Example:
      *
      * publishing:
      * go_settings:
@@ -989,6 +1005,8 @@ public final class GoSettings extends com.google.protobuf.GeneratedMessage
      * service names and values are the name to be used for the service client
      * and call options.
      *
+     * Example:
+     *
      * publishing:
      * go_settings:
      * renamed_services:
@@ -1020,6 +1038,8 @@ public final class GoSettings extends com.google.protobuf.GeneratedMessage
      * service names and values are the name to be used for the service client
      * and call options.
      *
+     * Example:
+     *
      * publishing:
      * go_settings:
      * renamed_services:
@@ -1047,6 +1067,8 @@ public final class GoSettings extends com.google.protobuf.GeneratedMessage
      * Map of service names to renamed services. Keys are the package relative
      * service names and values are the name to be used for the service client
      * and call options.
+     *
+     * Example:
      *
      * publishing:
      * go_settings:

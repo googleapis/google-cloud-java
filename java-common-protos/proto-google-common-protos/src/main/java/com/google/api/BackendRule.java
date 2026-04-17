@@ -56,6 +56,7 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
     address_ = "";
     pathTranslation_ = 0;
     protocol_ = "";
+    loadBalancingPolicy_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -589,6 +590,15 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
   private int pathTranslation_ = 0;
 
   /**
+   *
+   *
+   * <pre>
+   * Path translation specifies how to combine the backend address with the
+   * request path in order to produce the appropriate forwarding URL for the
+   * request. See [PathTranslation][google.api.BackendRule.PathTranslation] for
+   * more details.
+   * </pre>
+   *
    * <code>.google.api.BackendRule.PathTranslation path_translation = 6;</code>
    *
    * @return The enum numeric value on the wire for pathTranslation.
@@ -599,6 +609,15 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
   }
 
   /**
+   *
+   *
+   * <pre>
+   * Path translation specifies how to combine the backend address with the
+   * request path in order to produce the appropriate forwarding URL for the
+   * request. See [PathTranslation][google.api.BackendRule.PathTranslation] for
+   * more details.
+   * </pre>
+   *
    * <code>.google.api.BackendRule.PathTranslation path_translation = 6;</code>
    *
    * @return The pathTranslation.
@@ -941,6 +960,67 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
     return map.get(key);
   }
 
+  public static final int LOAD_BALANCING_POLICY_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object loadBalancingPolicy_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The load balancing policy used for connection to the application backend.
+   *
+   * Defined as an arbitrary string to accomondate custom load balancing
+   * policies supported by the underlying channel, but suggest most users use
+   * one of the standard policies, such as the default, "RoundRobin".
+   * </pre>
+   *
+   * <code>string load_balancing_policy = 11;</code>
+   *
+   * @return The loadBalancingPolicy.
+   */
+  @java.lang.Override
+  public java.lang.String getLoadBalancingPolicy() {
+    java.lang.Object ref = loadBalancingPolicy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      loadBalancingPolicy_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The load balancing policy used for connection to the application backend.
+   *
+   * Defined as an arbitrary string to accomondate custom load balancing
+   * policies supported by the underlying channel, but suggest most users use
+   * one of the standard policies, such as the default, "RoundRobin".
+   * </pre>
+   *
+   * <code>string load_balancing_policy = 11;</code>
+   *
+   * @return The bytes for loadBalancingPolicy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLoadBalancingPolicyBytes() {
+    java.lang.Object ref = loadBalancingPolicy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      loadBalancingPolicy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -988,6 +1068,9 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
         internalGetOverridesByRequestProtocol(),
         OverridesByRequestProtocolDefaultEntryHolder.defaultEntry,
         10);
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(loadBalancingPolicy_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 11, loadBalancingPolicy_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1040,6 +1123,9 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, overridesByRequestProtocol__);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(loadBalancingPolicy_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, loadBalancingPolicy_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1067,6 +1153,7 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
     if (!getProtocol().equals(other.getProtocol())) return false;
     if (!internalGetOverridesByRequestProtocol()
         .equals(other.internalGetOverridesByRequestProtocol())) return false;
+    if (!getLoadBalancingPolicy().equals(other.getLoadBalancingPolicy())) return false;
     if (!getAuthenticationCase().equals(other.getAuthenticationCase())) return false;
     switch (authenticationCase_) {
       case 7:
@@ -1116,6 +1203,8 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + OVERRIDES_BY_REQUEST_PROTOCOL_FIELD_NUMBER;
       hash = (53 * hash) + internalGetOverridesByRequestProtocol().hashCode();
     }
+    hash = (37 * hash) + LOAD_BALANCING_POLICY_FIELD_NUMBER;
+    hash = (53 * hash) + getLoadBalancingPolicy().hashCode();
     switch (authenticationCase_) {
       case 7:
         hash = (37 * hash) + JWT_AUDIENCE_FIELD_NUMBER;
@@ -1294,6 +1383,7 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
       pathTranslation_ = 0;
       protocol_ = "";
       internalGetMutableOverridesByRequestProtocol().clear();
+      loadBalancingPolicy_ = "";
       authenticationCase_ = 0;
       authentication_ = null;
       return this;
@@ -1357,6 +1447,9 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
             internalGetOverridesByRequestProtocol()
                 .build(OverridesByRequestProtocolDefaultEntryHolder.defaultEntry);
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.loadBalancingPolicy_ = loadBalancingPolicy_;
+      }
     }
 
     private void buildPartialOneofs(com.google.api.BackendRule result) {
@@ -1406,6 +1499,11 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
       internalGetMutableOverridesByRequestProtocol()
           .mergeFrom(other.internalGetOverridesByRequestProtocol());
       bitField0_ |= 0x00000200;
+      if (!other.getLoadBalancingPolicy().isEmpty()) {
+        loadBalancingPolicy_ = other.loadBalancingPolicy_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
       switch (other.getAuthenticationCase()) {
         case JWT_AUDIENCE:
           {
@@ -1521,6 +1619,12 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000200;
                 break;
               } // case 82
+            case 90:
+              {
+                loadBalancingPolicy_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2072,6 +2176,15 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
     private int pathTranslation_ = 0;
 
     /**
+     *
+     *
+     * <pre>
+     * Path translation specifies how to combine the backend address with the
+     * request path in order to produce the appropriate forwarding URL for the
+     * request. See [PathTranslation][google.api.BackendRule.PathTranslation] for
+     * more details.
+     * </pre>
+     *
      * <code>.google.api.BackendRule.PathTranslation path_translation = 6;</code>
      *
      * @return The enum numeric value on the wire for pathTranslation.
@@ -2082,6 +2195,15 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Path translation specifies how to combine the backend address with the
+     * request path in order to produce the appropriate forwarding URL for the
+     * request. See [PathTranslation][google.api.BackendRule.PathTranslation] for
+     * more details.
+     * </pre>
+     *
      * <code>.google.api.BackendRule.PathTranslation path_translation = 6;</code>
      *
      * @param value The enum numeric value on the wire for pathTranslation to set.
@@ -2095,6 +2217,15 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Path translation specifies how to combine the backend address with the
+     * request path in order to produce the appropriate forwarding URL for the
+     * request. See [PathTranslation][google.api.BackendRule.PathTranslation] for
+     * more details.
+     * </pre>
+     *
      * <code>.google.api.BackendRule.PathTranslation path_translation = 6;</code>
      *
      * @return The pathTranslation.
@@ -2107,6 +2238,15 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Path translation specifies how to combine the backend address with the
+     * request path in order to produce the appropriate forwarding URL for the
+     * request. See [PathTranslation][google.api.BackendRule.PathTranslation] for
+     * more details.
+     * </pre>
+     *
      * <code>.google.api.BackendRule.PathTranslation path_translation = 6;</code>
      *
      * @param value The pathTranslation to set.
@@ -2123,6 +2263,15 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
     }
 
     /**
+     *
+     *
+     * <pre>
+     * Path translation specifies how to combine the backend address with the
+     * request path in order to produce the appropriate forwarding URL for the
+     * request. See [PathTranslation][google.api.BackendRule.PathTranslation] for
+     * more details.
+     * </pre>
+     *
      * <code>.google.api.BackendRule.PathTranslation path_translation = 6;</code>
      *
      * @return This builder for chaining.
@@ -2825,6 +2974,137 @@ public final class BackendRule extends com.google.protobuf.GeneratedMessage
         builderMap.put(key, entry);
       }
       return (com.google.api.BackendRule.Builder) entry;
+    }
+
+    private java.lang.Object loadBalancingPolicy_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The load balancing policy used for connection to the application backend.
+     *
+     * Defined as an arbitrary string to accomondate custom load balancing
+     * policies supported by the underlying channel, but suggest most users use
+     * one of the standard policies, such as the default, "RoundRobin".
+     * </pre>
+     *
+     * <code>string load_balancing_policy = 11;</code>
+     *
+     * @return The loadBalancingPolicy.
+     */
+    public java.lang.String getLoadBalancingPolicy() {
+      java.lang.Object ref = loadBalancingPolicy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        loadBalancingPolicy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The load balancing policy used for connection to the application backend.
+     *
+     * Defined as an arbitrary string to accomondate custom load balancing
+     * policies supported by the underlying channel, but suggest most users use
+     * one of the standard policies, such as the default, "RoundRobin".
+     * </pre>
+     *
+     * <code>string load_balancing_policy = 11;</code>
+     *
+     * @return The bytes for loadBalancingPolicy.
+     */
+    public com.google.protobuf.ByteString getLoadBalancingPolicyBytes() {
+      java.lang.Object ref = loadBalancingPolicy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        loadBalancingPolicy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The load balancing policy used for connection to the application backend.
+     *
+     * Defined as an arbitrary string to accomondate custom load balancing
+     * policies supported by the underlying channel, but suggest most users use
+     * one of the standard policies, such as the default, "RoundRobin".
+     * </pre>
+     *
+     * <code>string load_balancing_policy = 11;</code>
+     *
+     * @param value The loadBalancingPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoadBalancingPolicy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      loadBalancingPolicy_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The load balancing policy used for connection to the application backend.
+     *
+     * Defined as an arbitrary string to accomondate custom load balancing
+     * policies supported by the underlying channel, but suggest most users use
+     * one of the standard policies, such as the default, "RoundRobin".
+     * </pre>
+     *
+     * <code>string load_balancing_policy = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLoadBalancingPolicy() {
+      loadBalancingPolicy_ = getDefaultInstance().getLoadBalancingPolicy();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The load balancing policy used for connection to the application backend.
+     *
+     * Defined as an arbitrary string to accomondate custom load balancing
+     * policies supported by the underlying channel, but suggest most users use
+     * one of the standard policies, such as the default, "RoundRobin".
+     * </pre>
+     *
+     * <code>string load_balancing_policy = 11;</code>
+     *
+     * @param value The bytes for loadBalancingPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoadBalancingPolicyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      loadBalancingPolicy_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.api.BackendRule)

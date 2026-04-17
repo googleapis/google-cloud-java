@@ -101,7 +101,7 @@ public final class AttributeContextProto extends com.google.protobuf.GeneratedFi
           + "*google/rpc/context/attribute_context.p"
           + "roto\022\022google.rpc.context\032\031google/protobu"
           + "f/any.proto\032\036google/protobuf/duration.pr"
-          + "oto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\203\020\n"
+          + "oto\032\034google/protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\223\020\n"
           + "\020AttributeContext\0229\n"
           + "\006origin\030\007 \001(\0132).google.rpc.context.AttributeContext.Peer\0229\n"
           + "\006source\030\001 \001(\0132).google.rpc.context.AttributeContext.Peer\022>\n"
@@ -132,7 +132,7 @@ public final class AttributeContextProto extends com.google.protobuf.GeneratedFi
           + "\taudiences\030\002 \003(\t\022\021\n"
           + "\tpresenter\030\003 \001(\t\022\'\n"
           + "\006claims\030\004 \001(\0132\027.google.protobuf.Struct\022\025\n\r"
-          + "access_levels\030\005 \003(\t\032\357\002\n"
+          + "access_levels\030\005 \003(\t\032\377\002\n"
           + "\007Request\022\n\n"
           + "\002id\030\001 \001(\t\022\016\n"
           + "\006method\030\002 \001(\t\022J\n"
@@ -148,15 +148,16 @@ public final class AttributeContextProto extends com.google.protobuf.GeneratedFi
           + "\010protocol\030\013 \001(\t\022\016\n"
           + "\006reason\030\014 \001(\t\0227\n"
           + "\004auth\030\r"
-          + " \001(\0132).google.rpc.context.AttributeContext.Auth\032.\n"
+          + " \001(\0132).google.rpc.context.AttributeContext.Auth\022\016\n"
+          + "\006origin\030\016 \001(\t\032.\n"
           + "\014HeadersEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\032\201\002\n"
           + "\010Response\022\014\n"
           + "\004code\030\001 \001(\003\022\014\n"
           + "\004size\030\002 \001(\003\022K\n"
-          + "\007headers\030\003 \003(\0132:.google.rpc"
-          + ".context.AttributeContext.Response.HeadersEntry\022(\n"
+          + "\007headers\030\003 "
+          + "\003(\0132:.google.rpc.context.AttributeContext.Response.HeadersEntry\022(\n"
           + "\004time\030\004 \001(\0132\032.google.protobuf.Timestamp\0222\n"
           + "\017backend_latency\030\005 \001(\0132\031.google.protobuf.Duration\032.\n"
           + "\014HeadersEntry\022\013\n"
@@ -166,11 +167,11 @@ public final class AttributeContextProto extends com.google.protobuf.GeneratedFi
           + "\007service\030\001 \001(\t\022\014\n"
           + "\004name\030\002 \001(\t\022\014\n"
           + "\004type\030\003 \001(\t\022I\n"
-          + "\006labels\030\004 \003(\01329.google.rpc.con"
-          + "text.AttributeContext.Resource.LabelsEntry\022\013\n"
+          + "\006labels\030\004 \003(\0132"
+          + "9.google.rpc.context.AttributeContext.Resource.LabelsEntry\022\013\n"
           + "\003uid\030\005 \001(\t\022S\n"
-          + "\013annotations\030\006 \003(\0132>.g"
-          + "oogle.rpc.context.AttributeContext.Resource.AnnotationsEntry\022\024\n"
+          + "\013annotations\030\006"
+          + " \003(\0132>.google.rpc.context.AttributeContext.Resource.AnnotationsEntry\022\024\n"
           + "\014display_name\030\007 \001(\t\022/\n"
           + "\013create_time\030\010 \001(\0132\032.google.protobuf.Timestamp\022/\n"
           + "\013update_time\030\t \001(\0132\032.google.protobuf.Timestamp\022/\n"
@@ -183,9 +184,9 @@ public final class AttributeContextProto extends com.google.protobuf.GeneratedFi
           + "\005value\030\002 \001(\t:\0028\001\0322\n"
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001B\213\001\n"
-          + "\026com.google.rpc.contextB\025AttributeContextProtoP\001ZUgoogle.golang.org/genproto"
-          + "/googleapis/rpc/context/attribute_context;attribute_context\370\001\001b\006proto3"
+          + "\005value\030\002 \001(\t:\0028\001B\210\001\n"
+          + "\026com.google.rpc.contextB\025AttributeContextProtoP\001ZUgoogle.gol"
+          + "ang.org/genproto/googleapis/rpc/context/attribute_context;attribute_contextb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -261,6 +262,7 @@ public final class AttributeContextProto extends com.google.protobuf.GeneratedFi
               "Protocol",
               "Reason",
               "Auth",
+              "Origin",
             });
     internal_static_google_rpc_context_AttributeContext_Request_HeadersEntry_descriptor =
         internal_static_google_rpc_context_AttributeContext_Request_descriptor.getNestedType(0);

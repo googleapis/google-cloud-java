@@ -263,6 +263,18 @@ public final class ClientProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_api_SelectiveGapicGeneration_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_api_SelectiveGapicGeneration_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_api_BatchingConfigProto_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_api_BatchingConfigProto_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_api_BatchingSettingsProto_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_api_BatchingSettingsProto_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_api_BatchingDescriptorProto_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_api_BatchingDescriptorProto_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -314,13 +326,14 @@ public final class ClientProto extends com.google.protobuf.GeneratedFile {
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"A\n"
           + "\013CppSettings\0222\n"
-          + "\006common\030\001 \001(\0132\".google.api.CommonLanguageSettings\"A\n"
+          + "\006common\030\001 \001(\0132\".google.api.CommonLanguageSettings\"Z\n"
           + "\013PhpSettings\0222\n"
-          + "\006common\030\001 \001(\0132\".google.api.CommonLanguageSettings\"\233\002\n"
+          + "\006common\030\001 \001(\0132\".google.api.CommonLanguageSettings\022\027\n"
+          + "\017library_package\030\002 \001(\t\"\233\002\n"
           + "\016PythonSettings\0222\n"
           + "\006common\030\001 \001(\0132\".google.api.CommonLanguageSettings\022N\n"
-          + "\025experimental_features\030\002"
-          + " \001(\0132/.google.api.PythonSettings.ExperimentalFeatures\032\204\001\n"
+          + "\025experimental_features\030\002 \001(\0132/.go"
+          + "ogle.api.PythonSettings.ExperimentalFeatures\032\204\001\n"
           + "\024ExperimentalFeatures\022\035\n"
           + "\025rest_async_io_enabled\030\001 \001(\010\022\'\n"
           + "\037protobuf_pythonic_types_enabled\030\002 \001(\010\022$\n"
@@ -329,10 +342,10 @@ public final class ClientProto extends com.google.protobuf.GeneratedFile {
           + "\006common\030\001 \001(\0132\".google.api.CommonLanguageSettings\"\252\003\n"
           + "\016DotnetSettings\0222\n"
           + "\006common\030\001 \001(\0132\".google.api.CommonLanguageSettings\022I\n"
-          + "\020renamed_services\030\002 \003(\0132"
-          + "/.google.api.DotnetSettings.RenamedServicesEntry\022K\n"
-          + "\021renamed_resources\030\003 \003(\01320.go"
-          + "ogle.api.DotnetSettings.RenamedResourcesEntry\022\031\n"
+          + "\020renamed_services\030\002"
+          + " \003(\0132/.google.api.DotnetSettings.RenamedServicesEntry\022K\n"
+          + "\021renamed_resources\030\003"
+          + " \003(\01320.google.api.DotnetSettings.RenamedResourcesEntry\022\031\n"
           + "\021ignored_resources\030\004 \003(\t\022 \n"
           + "\030forced_namespace_aliases\030\005 \003(\t\022\036\n"
           + "\026handwritten_signatures\030\006 \003(\t\0326\n"
@@ -346,15 +359,16 @@ public final class ClientProto extends com.google.protobuf.GeneratedFile {
           + "\006common\030\001 \001(\0132\".google.api.CommonLanguageSettings\"\277\001\n\n"
           + "GoSettings\0222\n"
           + "\006common\030\001 \001(\0132\".google.api.CommonLanguageSettings\022E\n"
-          + "\020renamed_services\030\002"
-          + " \003(\0132+.google.api.GoSettings.RenamedServicesEntry\0326\n"
+          + "\020renamed_services\030\002 \003(\0132+."
+          + "google.api.GoSettings.RenamedServicesEntry\0326\n"
           + "\024RenamedServicesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"\317\002\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\202\003\n"
           + "\016MethodSettings\022\020\n"
           + "\010selector\030\001 \001(\t\022<\n"
           + "\014long_running\030\002 \001(\0132&.google.api.MethodSettings.LongRunning\022\035\n"
-          + "\025auto_populated_fields\030\003 \003(\t\032\315\001\n"
+          + "\025auto_populated_fields\030\003 \003(\t\0221\n"
+          + "\010batching\030\004 \001(\0132\037.google.api.BatchingConfigProto\032\315\001\n"
           + "\013LongRunning\0225\n"
           + "\022initial_poll_delay\030\001 \001(\0132\031.google.protobuf.Duration\022\035\n"
           + "\025poll_delay_multiplier\030\002 \001(\002\0221\n"
@@ -362,7 +376,25 @@ public final class ClientProto extends com.google.protobuf.GeneratedFile {
           + "\022total_poll_timeout\030\004 \001(\0132\031.google.protobuf.Duration\"Q\n"
           + "\030SelectiveGapicGeneration\022\017\n"
           + "\007methods\030\001 \003(\t\022$\n"
-          + "\034generate_omitted_as_internal\030\002 \001(\010*\243\001\n"
+          + "\034generate_omitted_as_internal\030\002 \001(\010\"\213\001\n"
+          + "\023BatchingConfigProto\0225\n\n"
+          + "thresholds\030\001 \001(\0132!.google.api.BatchingSettingsProto\022=\n"
+          + "\020batch_descriptor\030\002"
+          + " \001(\0132#.google.api.BatchingDescriptorProto\"\353\002\n"
+          + "\025BatchingSettingsProto\022\037\n"
+          + "\027element_count_threshold\030\001 \001(\005\022\036\n"
+          + "\026request_byte_threshold\030\002 \001(\003\0222\n"
+          + "\017delay_threshold\030\003 \001(\0132\031.google.protobuf.Duration\022\033\n"
+          + "\023element_count_limit\030\004 \001(\005\022\032\n"
+          + "\022request_byte_limit\030\005 \001(\005\022\"\n"
+          + "\032flow_control_element_limit\030\006 \001(\005\022\037\n"
+          + "\027flow_control_byte_limit\030\007 \001(\005\022_\n"
+          + "$flow_control_limit_exceeded_behavior\030\010 \001(\01621.google.api"
+          + ".FlowControlLimitExceededBehaviorProto\"i\n"
+          + "\027BatchingDescriptorProto\022\025\n\r"
+          + "batched_field\030\001 \001(\t\022\034\n"
+          + "\024discriminator_fields\030\002 \003(\t\022\031\n"
+          + "\021subresponse_field\030\003 \001(\t*\243\001\n"
           + "\031ClientLibraryOrganization\022+\n"
           + "\'CLIENT_LIBRARY_ORGANIZATION_UNSPECIFIED\020\000\022\t\n"
           + "\005CLOUD\020\001\022\007\n"
@@ -376,14 +408,19 @@ public final class ClientProto extends com.google.protobuf.GeneratedFile {
           + "&CLIENT_LIBRARY_DESTINATION_UNSPECIFIED\020\000\022\n\n"
           + "\006GITHUB\020\n"
           + "\022\023\n"
-          + "\017PACKAGE_MANAGER\020\024:9\n"
+          + "\017PACKAGE_MANAGER\020\024*g\n"
+          + "%FlowControlLimitExceededBehaviorProto\022\022\n"
+          + "\016UNSET_BEHAVIOR\020\000\022\023\n"
+          + "\017THROW_EXCEPTION\020\001\022\t\n"
+          + "\005BLOCK\020\002\022\n\n"
+          + "\006IGNORE\020\003:9\n"
           + "\020method_signature\022\036.google.protobuf.MethodOptions\030\233\010 \003(\t:6\n"
           + "\014default_host\022\037.google.protobuf.ServiceOptions\030\231\010 \001(\t:6\n"
           + "\014oauth_scopes\022\037.google.protobuf.ServiceOptions\030\232\010 \001(\t:8\n"
           + "\013api_version\022\037.google.protobuf.ServiceOptions\030\301\272\253\372\001 \001("
           + "\tBi\n"
-          + "\016com.google.apiB\013ClientProtoP\001ZAgoogle.gola"
-          + "ng.org/genproto/googleapis/api/annotations;annotations\242\002\004GAPIb\006proto3"
+          + "\016com.google.apiB\013ClientProtoP\001ZAgoogle.golang.o"
+          + "rg/genproto/googleapis/api/annotations;annotations\242\002\004GAPIb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -462,7 +499,7 @@ public final class ClientProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_api_PhpSettings_descriptor,
             new java.lang.String[] {
-              "Common",
+              "Common", "LibraryPackage",
             });
     internal_static_google_api_PythonSettings_descriptor = getDescriptor().getMessageType(6);
     internal_static_google_api_PythonSettings_fieldAccessorTable =
@@ -541,7 +578,7 @@ public final class ClientProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_api_MethodSettings_descriptor,
             new java.lang.String[] {
-              "Selector", "LongRunning", "AutoPopulatedFields",
+              "Selector", "LongRunning", "AutoPopulatedFields", "Batching",
             });
     internal_static_google_api_MethodSettings_LongRunning_descriptor =
         internal_static_google_api_MethodSettings_descriptor.getNestedType(0);
@@ -558,6 +595,36 @@ public final class ClientProto extends com.google.protobuf.GeneratedFile {
             internal_static_google_api_SelectiveGapicGeneration_descriptor,
             new java.lang.String[] {
               "Methods", "GenerateOmittedAsInternal",
+            });
+    internal_static_google_api_BatchingConfigProto_descriptor = getDescriptor().getMessageType(13);
+    internal_static_google_api_BatchingConfigProto_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_api_BatchingConfigProto_descriptor,
+            new java.lang.String[] {
+              "Thresholds", "BatchDescriptor",
+            });
+    internal_static_google_api_BatchingSettingsProto_descriptor =
+        getDescriptor().getMessageType(14);
+    internal_static_google_api_BatchingSettingsProto_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_api_BatchingSettingsProto_descriptor,
+            new java.lang.String[] {
+              "ElementCountThreshold",
+              "RequestByteThreshold",
+              "DelayThreshold",
+              "ElementCountLimit",
+              "RequestByteLimit",
+              "FlowControlElementLimit",
+              "FlowControlByteLimit",
+              "FlowControlLimitExceededBehavior",
+            });
+    internal_static_google_api_BatchingDescriptorProto_descriptor =
+        getDescriptor().getMessageType(15);
+    internal_static_google_api_BatchingDescriptorProto_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_api_BatchingDescriptorProto_descriptor,
+            new java.lang.String[] {
+              "BatchedField", "DiscriminatorFields", "SubresponseField",
             });
     methodSignature.internalInit(descriptor.getExtension(0));
     defaultHost.internalInit(descriptor.getExtension(1));

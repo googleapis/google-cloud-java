@@ -55,10 +55,10 @@ public final class LocalizedTextProto extends com.google.protobuf.GeneratedFile 
     java.lang.String[] descriptorData = {
       "\n google/type/localized_text.proto\022\013goog"
           + "le.type\"4\n\rLocalizedText\022\014\n\004text\030\001 \001(\t\022\025"
-          + "\n\rlanguage_code\030\002 \001(\tBz\n\017com.google.type"
+          + "\n\rlanguage_code\030\002 \001(\tBw\n\017com.google.type"
           + "B\022LocalizedTextProtoP\001ZHgoogle.golang.or"
           + "g/genproto/googleapis/type/localized_tex"
-          + "t;localized_text\370\001\001\242\002\003GTPb\006proto3"
+          + "t;localized_text\242\002\003GTPb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

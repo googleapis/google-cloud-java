@@ -55,9 +55,9 @@ public final class LatLngProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n\030google/type/latlng.proto\022\013google.type\""
           + "-\n\006LatLng\022\020\n\010latitude\030\001 \001(\001\022\021\n\tlongitude"
-          + "\030\002 \001(\001Bc\n\017com.google.typeB\013LatLngProtoP\001"
+          + "\030\002 \001(\001B`\n\017com.google.typeB\013LatLngProtoP\001"
           + "Z8google.golang.org/genproto/googleapis/"
-          + "type/latlng;latlng\370\001\001\242\002\003GTPb\006proto3"
+          + "type/latlng;latlng\242\002\003GTPb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

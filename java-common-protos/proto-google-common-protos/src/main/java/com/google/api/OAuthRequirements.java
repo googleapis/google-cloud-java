@@ -96,6 +96,7 @@ public final class OAuthRequirements extends com.google.protobuf.GeneratedMessag
    * The list of publicly documented OAuth scopes that are allowed access. An
    * OAuth token containing any of these scopes will be accepted.
    *
+   *
    * Example:
    *
    * canonical_scopes: https://www.googleapis.com/auth/calendar,
@@ -125,6 +126,7 @@ public final class OAuthRequirements extends com.google.protobuf.GeneratedMessag
    * <pre>
    * The list of publicly documented OAuth scopes that are allowed access. An
    * OAuth token containing any of these scopes will be accepted.
+   *
    *
    * Example:
    *
@@ -479,6 +481,7 @@ public final class OAuthRequirements extends com.google.protobuf.GeneratedMessag
      * The list of publicly documented OAuth scopes that are allowed access. An
      * OAuth token containing any of these scopes will be accepted.
      *
+     *
      * Example:
      *
      * canonical_scopes: https://www.googleapis.com/auth/calendar,
@@ -507,6 +510,7 @@ public final class OAuthRequirements extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The list of publicly documented OAuth scopes that are allowed access. An
      * OAuth token containing any of these scopes will be accepted.
+     *
      *
      * Example:
      *
@@ -537,6 +541,7 @@ public final class OAuthRequirements extends com.google.protobuf.GeneratedMessag
      * The list of publicly documented OAuth scopes that are allowed access. An
      * OAuth token containing any of these scopes will be accepted.
      *
+     *
      * Example:
      *
      * canonical_scopes: https://www.googleapis.com/auth/calendar,
@@ -565,6 +570,7 @@ public final class OAuthRequirements extends com.google.protobuf.GeneratedMessag
      * The list of publicly documented OAuth scopes that are allowed access. An
      * OAuth token containing any of these scopes will be accepted.
      *
+     *
      * Example:
      *
      * canonical_scopes: https://www.googleapis.com/auth/calendar,
@@ -588,6 +594,7 @@ public final class OAuthRequirements extends com.google.protobuf.GeneratedMessag
      * <pre>
      * The list of publicly documented OAuth scopes that are allowed access. An
      * OAuth token containing any of these scopes will be accepted.
+     *
      *
      * Example:
      *

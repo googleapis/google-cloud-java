@@ -62,4 +62,52 @@ public interface PhpSettingsOrBuilder
    * <code>.google.api.CommonLanguageSettings common = 1;</code>
    */
   com.google.api.CommonLanguageSettingsOrBuilder getCommonOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The package name to use in Php. Clobbers the php_namespace option
+   * set in the protobuf. This should be used **only** by APIs
+   * who have already set the language_settings.php.package_name" field
+   * in gapic.yaml. API teams should use the protobuf php_namespace option
+   * where possible.
+   *
+   * Example of a YAML configuration::
+   *
+   * publishing:
+   * library_settings:
+   * php_settings:
+   * library_package: Google&#92;Cloud&#92;PubSub&#92;V1
+   * </pre>
+   *
+   * <code>string library_package = 2;</code>
+   *
+   * @return The libraryPackage.
+   */
+  java.lang.String getLibraryPackage();
+
+  /**
+   *
+   *
+   * <pre>
+   * The package name to use in Php. Clobbers the php_namespace option
+   * set in the protobuf. This should be used **only** by APIs
+   * who have already set the language_settings.php.package_name" field
+   * in gapic.yaml. API teams should use the protobuf php_namespace option
+   * where possible.
+   *
+   * Example of a YAML configuration::
+   *
+   * publishing:
+   * library_settings:
+   * php_settings:
+   * library_package: Google&#92;Cloud&#92;PubSub&#92;V1
+   * </pre>
+   *
+   * <code>string library_package = 2;</code>
+   *
+   * @return The bytes for libraryPackage.
+   */
+  com.google.protobuf.ByteString getLibraryPackageBytes();
 }

@@ -39,6 +39,7 @@ public interface JavaSettingsOrBuilder
    * Example of a YAML configuration::
    *
    * publishing:
+   * library_settings:
    * java_settings:
    * library_package: com.google.cloud.pubsub.v1
    * </pre>
@@ -62,6 +63,7 @@ public interface JavaSettingsOrBuilder
    * Example of a YAML configuration::
    *
    * publishing:
+   * library_settings:
    * java_settings:
    * library_package: com.google.cloud.pubsub.v1
    * </pre>

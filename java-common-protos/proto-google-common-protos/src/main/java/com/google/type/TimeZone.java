@@ -78,7 +78,7 @@ public final class TimeZone extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * IANA Time Zone Database time zone, e.g. "America/New_York".
+   * IANA Time Zone Database time zone. For example "America/New_York".
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -102,7 +102,7 @@ public final class TimeZone extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * IANA Time Zone Database time zone, e.g. "America/New_York".
+   * IANA Time Zone Database time zone. For example "America/New_York".
    * </pre>
    *
    * <code>string id = 1;</code>
@@ -131,7 +131,7 @@ public final class TimeZone extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. IANA Time Zone Database version number, e.g. "2019a".
+   * Optional. IANA Time Zone Database version number. For example "2019a".
    * </pre>
    *
    * <code>string version = 2;</code>
@@ -155,7 +155,7 @@ public final class TimeZone extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. IANA Time Zone Database version number, e.g. "2019a".
+   * Optional. IANA Time Zone Database version number. For example "2019a".
    * </pre>
    *
    * <code>string version = 2;</code>
@@ -508,7 +508,7 @@ public final class TimeZone extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * IANA Time Zone Database time zone, e.g. "America/New_York".
+     * IANA Time Zone Database time zone. For example "America/New_York".
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -531,7 +531,7 @@ public final class TimeZone extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * IANA Time Zone Database time zone, e.g. "America/New_York".
+     * IANA Time Zone Database time zone. For example "America/New_York".
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -554,7 +554,7 @@ public final class TimeZone extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * IANA Time Zone Database time zone, e.g. "America/New_York".
+     * IANA Time Zone Database time zone. For example "America/New_York".
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -576,7 +576,7 @@ public final class TimeZone extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * IANA Time Zone Database time zone, e.g. "America/New_York".
+     * IANA Time Zone Database time zone. For example "America/New_York".
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -594,7 +594,7 @@ public final class TimeZone extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * IANA Time Zone Database time zone, e.g. "America/New_York".
+     * IANA Time Zone Database time zone. For example "America/New_York".
      * </pre>
      *
      * <code>string id = 1;</code>
@@ -619,7 +619,7 @@ public final class TimeZone extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. IANA Time Zone Database version number, e.g. "2019a".
+     * Optional. IANA Time Zone Database version number. For example "2019a".
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -642,7 +642,7 @@ public final class TimeZone extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. IANA Time Zone Database version number, e.g. "2019a".
+     * Optional. IANA Time Zone Database version number. For example "2019a".
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -665,7 +665,7 @@ public final class TimeZone extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. IANA Time Zone Database version number, e.g. "2019a".
+     * Optional. IANA Time Zone Database version number. For example "2019a".
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -687,7 +687,7 @@ public final class TimeZone extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. IANA Time Zone Database version number, e.g. "2019a".
+     * Optional. IANA Time Zone Database version number. For example "2019a".
      * </pre>
      *
      * <code>string version = 2;</code>
@@ -705,7 +705,7 @@ public final class TimeZone extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. IANA Time Zone Database version number, e.g. "2019a".
+     * Optional. IANA Time Zone Database version number. For example "2019a".
      * </pre>
      *
      * <code>string version = 2;</code>

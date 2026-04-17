@@ -1874,6 +1874,85 @@ public final class MethodSettings extends com.google.protobuf.GeneratedMessage
     return autoPopulatedFields_.getByteString(index);
   }
 
+  public static final int BATCHING_FIELD_NUMBER = 4;
+  private com.google.api.BatchingConfigProto batching_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Batching configuration for an API method in client libraries.
+   *
+   * Example of a YAML configuration:
+   *
+   * publishing:
+   * method_settings:
+   * - selector: google.example.v1.ExampleService.BatchCreateExample
+   * batching:
+   * element_count_threshold: 1000
+   * request_byte_threshold: 100000000
+   * delay_threshold_millis: 10
+   * </pre>
+   *
+   * <code>.google.api.BatchingConfigProto batching = 4;</code>
+   *
+   * @return Whether the batching field is set.
+   */
+  @java.lang.Override
+  public boolean hasBatching() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Batching configuration for an API method in client libraries.
+   *
+   * Example of a YAML configuration:
+   *
+   * publishing:
+   * method_settings:
+   * - selector: google.example.v1.ExampleService.BatchCreateExample
+   * batching:
+   * element_count_threshold: 1000
+   * request_byte_threshold: 100000000
+   * delay_threshold_millis: 10
+   * </pre>
+   *
+   * <code>.google.api.BatchingConfigProto batching = 4;</code>
+   *
+   * @return The batching.
+   */
+  @java.lang.Override
+  public com.google.api.BatchingConfigProto getBatching() {
+    return batching_ == null ? com.google.api.BatchingConfigProto.getDefaultInstance() : batching_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Batching configuration for an API method in client libraries.
+   *
+   * Example of a YAML configuration:
+   *
+   * publishing:
+   * method_settings:
+   * - selector: google.example.v1.ExampleService.BatchCreateExample
+   * batching:
+   * element_count_threshold: 1000
+   * request_byte_threshold: 100000000
+   * delay_threshold_millis: 10
+   * </pre>
+   *
+   * <code>.google.api.BatchingConfigProto batching = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.api.BatchingConfigProtoOrBuilder getBatchingOrBuilder() {
+    return batching_ == null ? com.google.api.BatchingConfigProto.getDefaultInstance() : batching_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1896,6 +1975,9 @@ public final class MethodSettings extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < autoPopulatedFields_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, autoPopulatedFields_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getBatching());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1920,6 +2002,9 @@ public final class MethodSettings extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 1 * getAutoPopulatedFieldsList().size();
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getBatching());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1941,6 +2026,10 @@ public final class MethodSettings extends com.google.protobuf.GeneratedMessage
       if (!getLongRunning().equals(other.getLongRunning())) return false;
     }
     if (!getAutoPopulatedFieldsList().equals(other.getAutoPopulatedFieldsList())) return false;
+    if (hasBatching() != other.hasBatching()) return false;
+    if (hasBatching()) {
+      if (!getBatching().equals(other.getBatching())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1961,6 +2050,10 @@ public final class MethodSettings extends com.google.protobuf.GeneratedMessage
     if (getAutoPopulatedFieldsCount() > 0) {
       hash = (37 * hash) + AUTO_POPULATED_FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getAutoPopulatedFieldsList().hashCode();
+    }
+    if (hasBatching()) {
+      hash = (37 * hash) + BATCHING_FIELD_NUMBER;
+      hash = (53 * hash) + getBatching().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2100,6 +2193,7 @@ public final class MethodSettings extends com.google.protobuf.GeneratedMessage
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetLongRunningFieldBuilder();
+        internalGetBatchingFieldBuilder();
       }
     }
 
@@ -2114,6 +2208,11 @@ public final class MethodSettings extends com.google.protobuf.GeneratedMessage
         longRunningBuilder_ = null;
       }
       autoPopulatedFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      batching_ = null;
+      if (batchingBuilder_ != null) {
+        batchingBuilder_.dispose();
+        batchingBuilder_ = null;
+      }
       return this;
     }
 
@@ -2161,6 +2260,10 @@ public final class MethodSettings extends com.google.protobuf.GeneratedMessage
         autoPopulatedFields_.makeImmutable();
         result.autoPopulatedFields_ = autoPopulatedFields_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.batching_ = batchingBuilder_ == null ? batching_ : batchingBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2193,6 +2296,9 @@ public final class MethodSettings extends com.google.protobuf.GeneratedMessage
           autoPopulatedFields_.addAll(other.autoPopulatedFields_);
         }
         onChanged();
+      }
+      if (other.hasBatching()) {
+        mergeBatching(other.getBatching());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2240,6 +2346,13 @@ public final class MethodSettings extends com.google.protobuf.GeneratedMessage
                 autoPopulatedFields_.add(s);
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetBatchingFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2993,6 +3106,290 @@ public final class MethodSettings extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.api.BatchingConfigProto batching_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.api.BatchingConfigProto,
+            com.google.api.BatchingConfigProto.Builder,
+            com.google.api.BatchingConfigProtoOrBuilder>
+        batchingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Batching configuration for an API method in client libraries.
+     *
+     * Example of a YAML configuration:
+     *
+     * publishing:
+     * method_settings:
+     * - selector: google.example.v1.ExampleService.BatchCreateExample
+     * batching:
+     * element_count_threshold: 1000
+     * request_byte_threshold: 100000000
+     * delay_threshold_millis: 10
+     * </pre>
+     *
+     * <code>.google.api.BatchingConfigProto batching = 4;</code>
+     *
+     * @return Whether the batching field is set.
+     */
+    public boolean hasBatching() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batching configuration for an API method in client libraries.
+     *
+     * Example of a YAML configuration:
+     *
+     * publishing:
+     * method_settings:
+     * - selector: google.example.v1.ExampleService.BatchCreateExample
+     * batching:
+     * element_count_threshold: 1000
+     * request_byte_threshold: 100000000
+     * delay_threshold_millis: 10
+     * </pre>
+     *
+     * <code>.google.api.BatchingConfigProto batching = 4;</code>
+     *
+     * @return The batching.
+     */
+    public com.google.api.BatchingConfigProto getBatching() {
+      if (batchingBuilder_ == null) {
+        return batching_ == null
+            ? com.google.api.BatchingConfigProto.getDefaultInstance()
+            : batching_;
+      } else {
+        return batchingBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batching configuration for an API method in client libraries.
+     *
+     * Example of a YAML configuration:
+     *
+     * publishing:
+     * method_settings:
+     * - selector: google.example.v1.ExampleService.BatchCreateExample
+     * batching:
+     * element_count_threshold: 1000
+     * request_byte_threshold: 100000000
+     * delay_threshold_millis: 10
+     * </pre>
+     *
+     * <code>.google.api.BatchingConfigProto batching = 4;</code>
+     */
+    public Builder setBatching(com.google.api.BatchingConfigProto value) {
+      if (batchingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        batching_ = value;
+      } else {
+        batchingBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batching configuration for an API method in client libraries.
+     *
+     * Example of a YAML configuration:
+     *
+     * publishing:
+     * method_settings:
+     * - selector: google.example.v1.ExampleService.BatchCreateExample
+     * batching:
+     * element_count_threshold: 1000
+     * request_byte_threshold: 100000000
+     * delay_threshold_millis: 10
+     * </pre>
+     *
+     * <code>.google.api.BatchingConfigProto batching = 4;</code>
+     */
+    public Builder setBatching(com.google.api.BatchingConfigProto.Builder builderForValue) {
+      if (batchingBuilder_ == null) {
+        batching_ = builderForValue.build();
+      } else {
+        batchingBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batching configuration for an API method in client libraries.
+     *
+     * Example of a YAML configuration:
+     *
+     * publishing:
+     * method_settings:
+     * - selector: google.example.v1.ExampleService.BatchCreateExample
+     * batching:
+     * element_count_threshold: 1000
+     * request_byte_threshold: 100000000
+     * delay_threshold_millis: 10
+     * </pre>
+     *
+     * <code>.google.api.BatchingConfigProto batching = 4;</code>
+     */
+    public Builder mergeBatching(com.google.api.BatchingConfigProto value) {
+      if (batchingBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && batching_ != null
+            && batching_ != com.google.api.BatchingConfigProto.getDefaultInstance()) {
+          getBatchingBuilder().mergeFrom(value);
+        } else {
+          batching_ = value;
+        }
+      } else {
+        batchingBuilder_.mergeFrom(value);
+      }
+      if (batching_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batching configuration for an API method in client libraries.
+     *
+     * Example of a YAML configuration:
+     *
+     * publishing:
+     * method_settings:
+     * - selector: google.example.v1.ExampleService.BatchCreateExample
+     * batching:
+     * element_count_threshold: 1000
+     * request_byte_threshold: 100000000
+     * delay_threshold_millis: 10
+     * </pre>
+     *
+     * <code>.google.api.BatchingConfigProto batching = 4;</code>
+     */
+    public Builder clearBatching() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      batching_ = null;
+      if (batchingBuilder_ != null) {
+        batchingBuilder_.dispose();
+        batchingBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batching configuration for an API method in client libraries.
+     *
+     * Example of a YAML configuration:
+     *
+     * publishing:
+     * method_settings:
+     * - selector: google.example.v1.ExampleService.BatchCreateExample
+     * batching:
+     * element_count_threshold: 1000
+     * request_byte_threshold: 100000000
+     * delay_threshold_millis: 10
+     * </pre>
+     *
+     * <code>.google.api.BatchingConfigProto batching = 4;</code>
+     */
+    public com.google.api.BatchingConfigProto.Builder getBatchingBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetBatchingFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batching configuration for an API method in client libraries.
+     *
+     * Example of a YAML configuration:
+     *
+     * publishing:
+     * method_settings:
+     * - selector: google.example.v1.ExampleService.BatchCreateExample
+     * batching:
+     * element_count_threshold: 1000
+     * request_byte_threshold: 100000000
+     * delay_threshold_millis: 10
+     * </pre>
+     *
+     * <code>.google.api.BatchingConfigProto batching = 4;</code>
+     */
+    public com.google.api.BatchingConfigProtoOrBuilder getBatchingOrBuilder() {
+      if (batchingBuilder_ != null) {
+        return batchingBuilder_.getMessageOrBuilder();
+      } else {
+        return batching_ == null
+            ? com.google.api.BatchingConfigProto.getDefaultInstance()
+            : batching_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Batching configuration for an API method in client libraries.
+     *
+     * Example of a YAML configuration:
+     *
+     * publishing:
+     * method_settings:
+     * - selector: google.example.v1.ExampleService.BatchCreateExample
+     * batching:
+     * element_count_threshold: 1000
+     * request_byte_threshold: 100000000
+     * delay_threshold_millis: 10
+     * </pre>
+     *
+     * <code>.google.api.BatchingConfigProto batching = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.api.BatchingConfigProto,
+            com.google.api.BatchingConfigProto.Builder,
+            com.google.api.BatchingConfigProtoOrBuilder>
+        internalGetBatchingFieldBuilder() {
+      if (batchingBuilder_ == null) {
+        batchingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.api.BatchingConfigProto,
+                com.google.api.BatchingConfigProto.Builder,
+                com.google.api.BatchingConfigProtoOrBuilder>(
+                getBatching(), getParentForChildren(), isClean());
+        batching_ = null;
+      }
+      return batchingBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.api.MethodSettings)

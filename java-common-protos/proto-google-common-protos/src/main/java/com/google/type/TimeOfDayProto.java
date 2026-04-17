@@ -59,10 +59,9 @@ public final class TimeOfDayProto extends com.google.protobuf.GeneratedFile {
           + "\005hours\030\001 \001(\005\022\017\n"
           + "\007minutes\030\002 \001(\005\022\017\n"
           + "\007seconds\030\003 \001(\005\022\r\n"
-          + "\005nanos\030\004 \001(\005Bl\n"
+          + "\005nanos\030\004 \001(\005Bi\n"
           + "\017com.google.typeB\016TimeOfDayProtoP\001Z>go"
-          + "ogle.golang.org/genproto/googleapis/type"
-          + "/timeofday;timeofday\370\001\001\242\002\003GTPb\006proto3"
+          + "ogle.golang.org/genproto/googleapis/type/timeofday;timeofday\242\002\003GTPb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

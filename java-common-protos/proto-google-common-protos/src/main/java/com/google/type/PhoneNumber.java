@@ -137,7 +137,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The short code digits, without a leading plus ('+') or country
-     * calling code, e.g. "611".
+     * calling code. For example "611".
      * </pre>
      *
      * <code>string number = 2;</code>
@@ -151,7 +151,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The short code digits, without a leading plus ('+') or country
-     * calling code, e.g. "611".
+     * calling code. For example "611".
      * </pre>
      *
      * <code>string number = 2;</code>
@@ -168,12 +168,13 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
    * An object representing a short code, which is a phone number that is
    * typically much shorter than regular phone numbers and can be used to
    * address messages in MMS and SMS systems, as well as for abbreviated dialing
-   * (e.g. "Text 611 to see how many minutes you have remaining on your plan.").
+   * (For example "Text 611 to see how many minutes you have remaining on your
+   * plan.").
    *
    * Short codes are restricted to a region and are not internationally
    * dialable, which means the same short code can exist in different regions,
    * with different usage and pricing, even if those regions share the same
-   * country calling code (e.g. US and CA).
+   * country calling code (For example: US and CA).
    * </pre>
    *
    * Protobuf type {@code google.type.PhoneNumber.ShortCode}
@@ -290,7 +291,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The short code digits, without a leading plus ('+') or country
-     * calling code, e.g. "611".
+     * calling code. For example "611".
      * </pre>
      *
      * <code>string number = 2;</code>
@@ -315,7 +316,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The short code digits, without a leading plus ('+') or country
-     * calling code, e.g. "611".
+     * calling code. For example "611".
      * </pre>
      *
      * <code>string number = 2;</code>
@@ -510,12 +511,13 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * An object representing a short code, which is a phone number that is
      * typically much shorter than regular phone numbers and can be used to
      * address messages in MMS and SMS systems, as well as for abbreviated dialing
-     * (e.g. "Text 611 to see how many minutes you have remaining on your plan.").
+     * (For example "Text 611 to see how many minutes you have remaining on your
+     * plan.").
      *
      * Short codes are restricted to a region and are not internationally
      * dialable, which means the same short code can exist in different regions,
      * with different usage and pricing, even if those regions share the same
-     * country calling code (e.g. US and CA).
+     * country calling code (For example: US and CA).
      * </pre>
      *
      * Protobuf type {@code google.type.PhoneNumber.ShortCode}
@@ -813,7 +815,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The short code digits, without a leading plus ('+') or country
-       * calling code, e.g. "611".
+       * calling code. For example "611".
        * </pre>
        *
        * <code>string number = 2;</code>
@@ -837,7 +839,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The short code digits, without a leading plus ('+') or country
-       * calling code, e.g. "611".
+       * calling code. For example "611".
        * </pre>
        *
        * <code>string number = 2;</code>
@@ -861,7 +863,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The short code digits, without a leading plus ('+') or country
-       * calling code, e.g. "611".
+       * calling code. For example "611".
        * </pre>
        *
        * <code>string number = 2;</code>
@@ -884,7 +886,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The short code digits, without a leading plus ('+') or country
-       * calling code, e.g. "611".
+       * calling code. For example "611".
        * </pre>
        *
        * <code>string number = 2;</code>
@@ -903,7 +905,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
        *
        * <pre>
        * Required. The short code digits, without a leading plus ('+') or country
-       * calling code, e.g. "611".
+       * calling code. For example "611".
        * </pre>
        *
        * <code>string number = 2;</code>
@@ -1033,17 +1035,22 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
    * The phone number, represented as a leading plus sign ('+'), followed by a
    * phone number that uses a relaxed ITU E.164 format consisting of the
    * country calling code (1 to 3 digits) and the subscriber number, with no
-   * additional spaces or formatting, e.g.:
+   * additional spaces or formatting. For example:
+   *
    * - correct: "+15552220123"
-   * - incorrect: "+1 (555) 222-01234 x123".
+   *
+   * - incorrect: "+1 (555) 222-01234 x123"
    *
    * The ITU E.164 format limits the latter to 12 digits, but in practice not
    * all countries respect that, so we relax that restriction here.
    * National-only numbers are not allowed.
    *
    * References:
+   *
    * - https://www.itu.int/rec/T-REC-E.164-201011-I
+   *
    * - https://en.wikipedia.org/wiki/E.164.
+   *
    * - https://en.wikipedia.org/wiki/List_of_country_calling_codes
    * </pre>
    *
@@ -1062,17 +1069,22 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
    * The phone number, represented as a leading plus sign ('+'), followed by a
    * phone number that uses a relaxed ITU E.164 format consisting of the
    * country calling code (1 to 3 digits) and the subscriber number, with no
-   * additional spaces or formatting, e.g.:
+   * additional spaces or formatting. For example:
+   *
    * - correct: "+15552220123"
-   * - incorrect: "+1 (555) 222-01234 x123".
+   *
+   * - incorrect: "+1 (555) 222-01234 x123"
    *
    * The ITU E.164 format limits the latter to 12 digits, but in practice not
    * all countries respect that, so we relax that restriction here.
    * National-only numbers are not allowed.
    *
    * References:
+   *
    * - https://www.itu.int/rec/T-REC-E.164-201011-I
+   *
    * - https://en.wikipedia.org/wiki/E.164.
+   *
    * - https://en.wikipedia.org/wiki/List_of_country_calling_codes
    * </pre>
    *
@@ -1104,17 +1116,22 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
    * The phone number, represented as a leading plus sign ('+'), followed by a
    * phone number that uses a relaxed ITU E.164 format consisting of the
    * country calling code (1 to 3 digits) and the subscriber number, with no
-   * additional spaces or formatting, e.g.:
+   * additional spaces or formatting. For example:
+   *
    * - correct: "+15552220123"
-   * - incorrect: "+1 (555) 222-01234 x123".
+   *
+   * - incorrect: "+1 (555) 222-01234 x123"
    *
    * The ITU E.164 format limits the latter to 12 digits, but in practice not
    * all countries respect that, so we relax that restriction here.
    * National-only numbers are not allowed.
    *
    * References:
+   *
    * - https://www.itu.int/rec/T-REC-E.164-201011-I
+   *
    * - https://en.wikipedia.org/wiki/E.164.
+   *
    * - https://en.wikipedia.org/wiki/List_of_country_calling_codes
    * </pre>
    *
@@ -1148,7 +1165,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
    * A short code.
    *
    * Reference(s):
-   * - https://en.wikipedia.org/wiki/Short_code
+   * - https://wikipedia.org/wiki/Short_code
    * </pre>
    *
    * <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code>
@@ -1167,7 +1184,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
    * A short code.
    *
    * Reference(s):
-   * - https://en.wikipedia.org/wiki/Short_code
+   * - https://wikipedia.org/wiki/Short_code
    * </pre>
    *
    * <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code>
@@ -1189,7 +1206,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
    * A short code.
    *
    * Reference(s):
-   * - https://en.wikipedia.org/wiki/Short_code
+   * - https://wikipedia.org/wiki/Short_code
    * </pre>
    *
    * <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code>
@@ -1703,17 +1720,22 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * The phone number, represented as a leading plus sign ('+'), followed by a
      * phone number that uses a relaxed ITU E.164 format consisting of the
      * country calling code (1 to 3 digits) and the subscriber number, with no
-     * additional spaces or formatting, e.g.:
+     * additional spaces or formatting. For example:
+     *
      * - correct: "+15552220123"
-     * - incorrect: "+1 (555) 222-01234 x123".
+     *
+     * - incorrect: "+1 (555) 222-01234 x123"
      *
      * The ITU E.164 format limits the latter to 12 digits, but in practice not
      * all countries respect that, so we relax that restriction here.
      * National-only numbers are not allowed.
      *
      * References:
+     *
      * - https://www.itu.int/rec/T-REC-E.164-201011-I
+     *
      * - https://en.wikipedia.org/wiki/E.164.
+     *
      * - https://en.wikipedia.org/wiki/List_of_country_calling_codes
      * </pre>
      *
@@ -1733,17 +1755,22 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * The phone number, represented as a leading plus sign ('+'), followed by a
      * phone number that uses a relaxed ITU E.164 format consisting of the
      * country calling code (1 to 3 digits) and the subscriber number, with no
-     * additional spaces or formatting, e.g.:
+     * additional spaces or formatting. For example:
+     *
      * - correct: "+15552220123"
-     * - incorrect: "+1 (555) 222-01234 x123".
+     *
+     * - incorrect: "+1 (555) 222-01234 x123"
      *
      * The ITU E.164 format limits the latter to 12 digits, but in practice not
      * all countries respect that, so we relax that restriction here.
      * National-only numbers are not allowed.
      *
      * References:
+     *
      * - https://www.itu.int/rec/T-REC-E.164-201011-I
+     *
      * - https://en.wikipedia.org/wiki/E.164.
+     *
      * - https://en.wikipedia.org/wiki/List_of_country_calling_codes
      * </pre>
      *
@@ -1776,17 +1803,22 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * The phone number, represented as a leading plus sign ('+'), followed by a
      * phone number that uses a relaxed ITU E.164 format consisting of the
      * country calling code (1 to 3 digits) and the subscriber number, with no
-     * additional spaces or formatting, e.g.:
+     * additional spaces or formatting. For example:
+     *
      * - correct: "+15552220123"
-     * - incorrect: "+1 (555) 222-01234 x123".
+     *
+     * - incorrect: "+1 (555) 222-01234 x123"
      *
      * The ITU E.164 format limits the latter to 12 digits, but in practice not
      * all countries respect that, so we relax that restriction here.
      * National-only numbers are not allowed.
      *
      * References:
+     *
      * - https://www.itu.int/rec/T-REC-E.164-201011-I
+     *
      * - https://en.wikipedia.org/wiki/E.164.
+     *
      * - https://en.wikipedia.org/wiki/List_of_country_calling_codes
      * </pre>
      *
@@ -1819,17 +1851,22 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * The phone number, represented as a leading plus sign ('+'), followed by a
      * phone number that uses a relaxed ITU E.164 format consisting of the
      * country calling code (1 to 3 digits) and the subscriber number, with no
-     * additional spaces or formatting, e.g.:
+     * additional spaces or formatting. For example:
+     *
      * - correct: "+15552220123"
-     * - incorrect: "+1 (555) 222-01234 x123".
+     *
+     * - incorrect: "+1 (555) 222-01234 x123"
      *
      * The ITU E.164 format limits the latter to 12 digits, but in practice not
      * all countries respect that, so we relax that restriction here.
      * National-only numbers are not allowed.
      *
      * References:
+     *
      * - https://www.itu.int/rec/T-REC-E.164-201011-I
+     *
      * - https://en.wikipedia.org/wiki/E.164.
+     *
      * - https://en.wikipedia.org/wiki/List_of_country_calling_codes
      * </pre>
      *
@@ -1855,17 +1892,22 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * The phone number, represented as a leading plus sign ('+'), followed by a
      * phone number that uses a relaxed ITU E.164 format consisting of the
      * country calling code (1 to 3 digits) and the subscriber number, with no
-     * additional spaces or formatting, e.g.:
+     * additional spaces or formatting. For example:
+     *
      * - correct: "+15552220123"
-     * - incorrect: "+1 (555) 222-01234 x123".
+     *
+     * - incorrect: "+1 (555) 222-01234 x123"
      *
      * The ITU E.164 format limits the latter to 12 digits, but in practice not
      * all countries respect that, so we relax that restriction here.
      * National-only numbers are not allowed.
      *
      * References:
+     *
      * - https://www.itu.int/rec/T-REC-E.164-201011-I
+     *
      * - https://en.wikipedia.org/wiki/E.164.
+     *
      * - https://en.wikipedia.org/wiki/List_of_country_calling_codes
      * </pre>
      *
@@ -1889,17 +1931,22 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * The phone number, represented as a leading plus sign ('+'), followed by a
      * phone number that uses a relaxed ITU E.164 format consisting of the
      * country calling code (1 to 3 digits) and the subscriber number, with no
-     * additional spaces or formatting, e.g.:
+     * additional spaces or formatting. For example:
+     *
      * - correct: "+15552220123"
-     * - incorrect: "+1 (555) 222-01234 x123".
+     *
+     * - incorrect: "+1 (555) 222-01234 x123"
      *
      * The ITU E.164 format limits the latter to 12 digits, but in practice not
      * all countries respect that, so we relax that restriction here.
      * National-only numbers are not allowed.
      *
      * References:
+     *
      * - https://www.itu.int/rec/T-REC-E.164-201011-I
+     *
      * - https://en.wikipedia.org/wiki/E.164.
+     *
      * - https://en.wikipedia.org/wiki/List_of_country_calling_codes
      * </pre>
      *
@@ -1932,7 +1979,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * A short code.
      *
      * Reference(s):
-     * - https://en.wikipedia.org/wiki/Short_code
+     * - https://wikipedia.org/wiki/Short_code
      * </pre>
      *
      * <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code>
@@ -1951,7 +1998,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * A short code.
      *
      * Reference(s):
-     * - https://en.wikipedia.org/wiki/Short_code
+     * - https://wikipedia.org/wiki/Short_code
      * </pre>
      *
      * <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code>
@@ -1980,7 +2027,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * A short code.
      *
      * Reference(s):
-     * - https://en.wikipedia.org/wiki/Short_code
+     * - https://wikipedia.org/wiki/Short_code
      * </pre>
      *
      * <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code>
@@ -2006,7 +2053,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * A short code.
      *
      * Reference(s):
-     * - https://en.wikipedia.org/wiki/Short_code
+     * - https://wikipedia.org/wiki/Short_code
      * </pre>
      *
      * <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code>
@@ -2029,7 +2076,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * A short code.
      *
      * Reference(s):
-     * - https://en.wikipedia.org/wiki/Short_code
+     * - https://wikipedia.org/wiki/Short_code
      * </pre>
      *
      * <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code>
@@ -2064,7 +2111,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * A short code.
      *
      * Reference(s):
-     * - https://en.wikipedia.org/wiki/Short_code
+     * - https://wikipedia.org/wiki/Short_code
      * </pre>
      *
      * <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code>
@@ -2093,7 +2140,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * A short code.
      *
      * Reference(s):
-     * - https://en.wikipedia.org/wiki/Short_code
+     * - https://wikipedia.org/wiki/Short_code
      * </pre>
      *
      * <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code>
@@ -2109,7 +2156,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * A short code.
      *
      * Reference(s):
-     * - https://en.wikipedia.org/wiki/Short_code
+     * - https://wikipedia.org/wiki/Short_code
      * </pre>
      *
      * <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code>
@@ -2133,7 +2180,7 @@ public final class PhoneNumber extends com.google.protobuf.GeneratedMessage
      * A short code.
      *
      * Reference(s):
-     * - https://en.wikipedia.org/wiki/Short_code
+     * - https://wikipedia.org/wiki/Short_code
      * </pre>
      *
      * <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code>

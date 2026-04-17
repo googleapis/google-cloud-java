@@ -58,9 +58,9 @@ public final class DateProto extends com.google.protobuf.GeneratedFile {
           + "\004Date\022\014\n"
           + "\004year\030\001 \001(\005\022\r\n"
           + "\005month\030\002 \001(\005\022\013\n"
-          + "\003day\030\003 \001(\005B]\n"
+          + "\003day\030\003 \001(\005BZ\n"
           + "\017com.google.typeB\tDateProtoP\001Z4google.golang.org/genproto/googleapis/t"
-          + "ype/date;date\370\001\001\242\002\003GTPb\006proto3"
+          + "ype/date;date\242\002\003GTPb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

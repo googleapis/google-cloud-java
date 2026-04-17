@@ -26,6 +26,8 @@ package com.google.api;
  * <pre>
  * This message is used to configure the generation of a subset of the RPCs in
  * a service for client libraries.
+ *
+ * Note: This feature should not be used in most cases.
  * </pre>
  *
  * Protobuf type {@code google.api.SelectiveGapicGeneration}
@@ -348,6 +350,8 @@ public final class SelectiveGapicGeneration extends com.google.protobuf.Generate
    * <pre>
    * This message is used to configure the generation of a subset of the RPCs in
    * a service for client libraries.
+   *
+   * Note: This feature should not be used in most cases.
    * </pre>
    *
    * Protobuf type {@code google.api.SelectiveGapicGeneration}

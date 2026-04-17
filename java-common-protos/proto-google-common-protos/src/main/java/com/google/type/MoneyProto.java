@@ -55,10 +55,10 @@ public final class MoneyProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n\027google/type/money.proto\022\013google.type\"<"
           + "\n\005Money\022\025\n\rcurrency_code\030\001 \001(\t\022\r\n\005units\030"
-          + "\002 \001(\003\022\r\n\005nanos\030\003 \001(\005B`\n\017com.google.typeB"
+          + "\002 \001(\003\022\r\n\005nanos\030\003 \001(\005B]\n\017com.google.typeB"
           + "\nMoneyProtoP\001Z6google.golang.org/genprot"
-          + "o/googleapis/type/money;money\370\001\001\242\002\003GTPb\006"
-          + "proto3"
+          + "o/googleapis/type/money;money\242\002\003GTPb\006pro"
+          + "to3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

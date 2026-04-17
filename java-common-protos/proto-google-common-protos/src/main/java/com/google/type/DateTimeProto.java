@@ -72,10 +72,10 @@ public final class DateTimeProto extends com.google.protobuf.GeneratedFile {
           + "\013time_offset\"\'\n"
           + "\010TimeZone\022\n\n"
           + "\002id\030\001 \001(\t\022\017\n"
-          + "\007version\030\002 \001(\tBi\n"
+          + "\007version\030\002 \001(\tBf\n"
           + "\017com.google.typeB\r"
-          + "DateTimeProtoP\001Z<google.golang.org/genproto/googleapis/type/datetime;datetime\370"
-          + "\001\001\242\002\003GTPb\006proto3"
+          + "DateTimeProtoP\001Z<google.golang.org/genproto/googleapis/type/datetime;datetime\242"
+          + "\002\003GTPb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

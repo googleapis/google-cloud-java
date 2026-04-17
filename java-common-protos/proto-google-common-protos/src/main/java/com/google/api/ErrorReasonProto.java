@@ -49,7 +49,7 @@ public final class ErrorReasonProto extends com.google.protobuf.GeneratedFile {
   static {
     java.lang.String[] descriptorData = {
       "\n\035google/api/error_reason.proto\022\ngoogle."
-          + "api*\272\007\n\013ErrorReason\022\034\n\030ERROR_REASON_UNSP"
+          + "api*\222\n\n\013ErrorReason\022\034\n\030ERROR_REASON_UNSP"
           + "ECIFIED\020\000\022\024\n\020SERVICE_DISABLED\020\001\022\024\n\020BILLI"
           + "NG_DISABLED\020\002\022\023\n\017API_KEY_INVALID\020\003\022\033\n\027AP"
           + "I_KEY_SERVICE_BLOCKED\020\004\022!\n\035API_KEY_HTTP_"
@@ -73,10 +73,18 @@ public final class ErrorReasonProto extends com.google.protobuf.GeneratedFile {
           + "\n\023SERVICE_NOT_VISIBLE\020\035\022\021\n\rGCP_SUSPENDED"
           + "\020\036\022\034\n\030LOCATION_POLICY_VIOLATED\020\037\022\022\n\016MISS"
           + "ING_ORIGIN\020!\022\032\n\026OVERLOADED_CREDENTIALS\020\""
-          + "Bp\n\016com.google.apiB\020ErrorReasonProtoP\001ZC"
-          + "google.golang.org/genproto/googleapis/ap"
-          + "i/error_reason;error_reason\242\002\004GAPIb\006prot"
-          + "o3"
+          + "\022 \n\034LOCATION_ORG_POLICY_VIOLATED\020#\022\033\n\027TL"
+          + "S_ORG_POLICY_VIOLATED\020$\022\033\n\027EMULATOR_QUOT"
+          + "A_EXCEEDED\020&\022\"\n\036CREDENTIAL_ANDROID_APP_I"
+          + "NVALID\020\'\022\031\n\025IAM_PERMISSION_DENIED\020)\022\025\n\021J"
+          + "WT_TOKEN_INVALID\020*\022\037\n\033CREDENTIAL_TYPE_UN"
+          + "SUPPORTED\020+\022\034\n\030ACCOUNT_TYPE_UNSUPPORTED\020"
+          + ",\022\'\n#ENDPOINT_USAGE_RESTRICTION_VIOLATED"
+          + "\020-\022#\n\037TLS_CIPHER_RESTRICTION_VIOLATED\020.\022"
+          + "\027\n\023MCP_SERVER_DISABLED\020/Bp\n\016com.google.a"
+          + "piB\020ErrorReasonProtoP\001ZCgoogle.golang.or"
+          + "g/genproto/googleapis/api/error_reason;e"
+          + "rror_reason\242\002\004GAPIb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

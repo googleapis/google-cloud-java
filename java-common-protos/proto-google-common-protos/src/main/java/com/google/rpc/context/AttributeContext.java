@@ -5817,6 +5817,38 @@ public final class AttributeContext extends com.google.protobuf.GeneratedMessage
      * <code>.google.rpc.context.AttributeContext.Auth auth = 13;</code>
      */
     com.google.rpc.context.AttributeContext.AuthOrBuilder getAuthOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * The values from Origin header from the HTTP request, such as
+     * "https://console.cloud.google.com". Modern browsers can only have one
+     * origin. Special browsers and/or HTTP clients may require multiple
+     * origins.
+     * </pre>
+     *
+     * <code>string origin = 14;</code>
+     *
+     * @return The origin.
+     */
+    java.lang.String getOrigin();
+
+    /**
+     *
+     *
+     * <pre>
+     * The values from Origin header from the HTTP request, such as
+     * "https://console.cloud.google.com". Modern browsers can only have one
+     * origin. Special browsers and/or HTTP clients may require multiple
+     * origins.
+     * </pre>
+     *
+     * <code>string origin = 14;</code>
+     *
+     * @return The bytes for origin.
+     */
+    com.google.protobuf.ByteString getOriginBytes();
   }
 
   /**
@@ -5860,6 +5892,7 @@ public final class AttributeContext extends com.google.protobuf.GeneratedMessage
       query_ = "";
       protocol_ = "";
       reason_ = "";
+      origin_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -6570,6 +6603,65 @@ public final class AttributeContext extends com.google.protobuf.GeneratedMessage
           : auth_;
     }
 
+    public static final int ORIGIN_FIELD_NUMBER = 14;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object origin_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The values from Origin header from the HTTP request, such as
+     * "https://console.cloud.google.com". Modern browsers can only have one
+     * origin. Special browsers and/or HTTP clients may require multiple
+     * origins.
+     * </pre>
+     *
+     * <code>string origin = 14;</code>
+     *
+     * @return The origin.
+     */
+    @java.lang.Override
+    public java.lang.String getOrigin() {
+      java.lang.Object ref = origin_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        origin_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The values from Origin header from the HTTP request, such as
+     * "https://console.cloud.google.com". Modern browsers can only have one
+     * origin. Special browsers and/or HTTP clients may require multiple
+     * origins.
+     * </pre>
+     *
+     * <code>string origin = 14;</code>
+     *
+     * @return The bytes for origin.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getOriginBytes() {
+      java.lang.Object ref = origin_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        origin_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -6618,6 +6710,9 @@ public final class AttributeContext extends com.google.protobuf.GeneratedMessage
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(13, getAuth());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(origin_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 14, origin_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -6671,6 +6766,9 @@ public final class AttributeContext extends com.google.protobuf.GeneratedMessage
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getAuth());
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(origin_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(14, origin_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -6705,6 +6803,7 @@ public final class AttributeContext extends com.google.protobuf.GeneratedMessage
       if (hasAuth()) {
         if (!getAuth().equals(other.getAuth())) return false;
       }
+      if (!getOrigin().equals(other.getOrigin())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -6746,6 +6845,8 @@ public final class AttributeContext extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + AUTH_FIELD_NUMBER;
         hash = (53 * hash) + getAuth().hashCode();
       }
+      hash = (37 * hash) + ORIGIN_FIELD_NUMBER;
+      hash = (53 * hash) + getOrigin().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6940,6 +7041,7 @@ public final class AttributeContext extends com.google.protobuf.GeneratedMessage
           authBuilder_.dispose();
           authBuilder_ = null;
         }
+        origin_ = "";
         return this;
       }
 
@@ -7016,6 +7118,9 @@ public final class AttributeContext extends com.google.protobuf.GeneratedMessage
           result.auth_ = authBuilder_ == null ? auth_ : authBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.origin_ = origin_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -7082,6 +7187,11 @@ public final class AttributeContext extends com.google.protobuf.GeneratedMessage
         }
         if (other.hasAuth()) {
           mergeAuth(other.getAuth());
+        }
+        if (!other.getOrigin().isEmpty()) {
+          origin_ = other.origin_;
+          bitField0_ |= 0x00001000;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -7187,6 +7297,12 @@ public final class AttributeContext extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000800;
                   break;
                 } // case 106
+              case 114:
+                {
+                  origin_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00001000;
+                  break;
+                } // case 114
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8773,6 +8889,132 @@ public final class AttributeContext extends com.google.protobuf.GeneratedMessage
           auth_ = null;
         }
         return authBuilder_;
+      }
+
+      private java.lang.Object origin_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * The values from Origin header from the HTTP request, such as
+       * "https://console.cloud.google.com". Modern browsers can only have one
+       * origin. Special browsers and/or HTTP clients may require multiple
+       * origins.
+       * </pre>
+       *
+       * <code>string origin = 14;</code>
+       *
+       * @return The origin.
+       */
+      public java.lang.String getOrigin() {
+        java.lang.Object ref = origin_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          origin_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The values from Origin header from the HTTP request, such as
+       * "https://console.cloud.google.com". Modern browsers can only have one
+       * origin. Special browsers and/or HTTP clients may require multiple
+       * origins.
+       * </pre>
+       *
+       * <code>string origin = 14;</code>
+       *
+       * @return The bytes for origin.
+       */
+      public com.google.protobuf.ByteString getOriginBytes() {
+        java.lang.Object ref = origin_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          origin_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The values from Origin header from the HTTP request, such as
+       * "https://console.cloud.google.com". Modern browsers can only have one
+       * origin. Special browsers and/or HTTP clients may require multiple
+       * origins.
+       * </pre>
+       *
+       * <code>string origin = 14;</code>
+       *
+       * @param value The origin to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrigin(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        origin_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The values from Origin header from the HTTP request, such as
+       * "https://console.cloud.google.com". Modern browsers can only have one
+       * origin. Special browsers and/or HTTP clients may require multiple
+       * origins.
+       * </pre>
+       *
+       * <code>string origin = 14;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOrigin() {
+        origin_ = getDefaultInstance().getOrigin();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The values from Origin header from the HTTP request, such as
+       * "https://console.cloud.google.com". Modern browsers can only have one
+       * origin. Special browsers and/or HTTP clients may require multiple
+       * origins.
+       * </pre>
+       *
+       * <code>string origin = 14;</code>
+       *
+       * @param value The bytes for origin to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOriginBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        origin_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:google.rpc.context.AttributeContext.Request)

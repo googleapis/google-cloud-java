@@ -858,6 +858,268 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OVERLOADED_CREDENTIALS = 34;</code>
    */
   OVERLOADED_CREDENTIALS(34),
+  /**
+   *
+   *
+   * <pre>
+   * The request whose associated location violates the location org policy
+   * restrictions when creating resources in the restricted region.
+   *
+   * Example of an ErrorInfo when creating the Cloud Storage Bucket in the
+   * container "projects/123" under a restricted region
+   * "locations/asia-northeast3":
+   *
+   * {
+   * "reason": "LOCATION_ORG_POLICY_VIOLATED",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "resource": "projects/123",
+   * "location": "locations/asia-northeast3"
+   * }
+   * }
+   *
+   * This response indicates creating the Cloud Storage Bucket in
+   * "locations/asia-northeast3" violates the location org policy restriction.
+   * </pre>
+   *
+   * <code>LOCATION_ORG_POLICY_VIOLATED = 35;</code>
+   */
+  LOCATION_ORG_POLICY_VIOLATED(35),
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because it access data of regulated customers using
+   * TLS 1.0 and 1.1.
+   *
+   * Example of an ErrorInfo when accessing a GCP resource "projects/123" that
+   * is restricted by TLS Version Restriction for "pubsub.googleapis.com"
+   * service.
+   *
+   * {
+   * "reason": "TLS_ORG_POLICY_VIOLATED",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "service": "pubsub.googleapis.com"
+   * "resource": "projects/123",
+   * "policyName": "constraints/gcp.restrictTLSVersion",
+   * "tlsVersion": "TLS_VERSION_1"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>TLS_ORG_POLICY_VIOLATED = 36;</code>
+   */
+  TLS_ORG_POLICY_VIOLATED(36),
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because the associated project has exceeded the
+   * emulator quota limit.
+   *
+   * Example of an ErrorInfo when the associated "projects/123" has exceeded the
+   * emulator quota limit.
+   *
+   * {
+   * "reason": "EMULATOR_QUOTA_EXCEEDED",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "service": "pubsub.googleapis.com"
+   * "consumer": "projects/123"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>EMULATOR_QUOTA_EXCEEDED = 38;</code>
+   */
+  EMULATOR_QUOTA_EXCEEDED(38),
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because the associated application credential header
+   * is invalid for an Android applications.
+   *
+   * Example of an ErrorInfo when the request from an Android application to the
+   * "pubsub.googleapis.com" with an invalid application credential header.
+   *
+   * {
+   * "reason": "CREDENTIAL_ANDROID_APP_INVALID",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "service": "pubsub.googleapis.com"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>CREDENTIAL_ANDROID_APP_INVALID = 39;</code>
+   */
+  CREDENTIAL_ANDROID_APP_INVALID(39),
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because IAM permission on resource is denied.
+   *
+   * Example of an ErrorInfo when the IAM permission `aiplatform.datasets.list`
+   * is denied on resource `projects/123`.
+   *
+   * {
+   * "reason": "IAM_PERMISSION_DENIED",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "resource": "projects/123"
+   * "permission": "aiplatform.datasets.list"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>IAM_PERMISSION_DENIED = 41;</code>
+   */
+  IAM_PERMISSION_DENIED(41),
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because it contains the invalid JWT token.
+   *
+   * Example of an ErrorInfo when the request contains an invalid JWT token for
+   * service `storage.googleapis.com`.
+   *
+   * {
+   * "reason": "JWT_TOKEN_INVALID",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "service": "storage.googleapis.com"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>JWT_TOKEN_INVALID = 42;</code>
+   */
+  JWT_TOKEN_INVALID(42),
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because it contains credential with type that is
+   * unsupported.
+   *
+   * Example of an ErrorInfo when the request contains an unsupported credential
+   * type for service `storage.googleapis.com`.
+   *
+   * {
+   * "reason": "CREDENTIAL_TYPE_UNSUPPORTED",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "service": "storage.googleapis.com"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>CREDENTIAL_TYPE_UNSUPPORTED = 43;</code>
+   */
+  CREDENTIAL_TYPE_UNSUPPORTED(43),
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because it contains unsupported account type.
+   *
+   * Example of an ErrorInfo when the request contains an unsupported account
+   * type for service `storage.googleapis.com`.
+   *
+   * {
+   * "reason": "ACCOUNT_TYPE_UNSUPPORTED",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "service": "storage.googleapis.com"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>ACCOUNT_TYPE_UNSUPPORTED = 44;</code>
+   */
+  ACCOUNT_TYPE_UNSUPPORTED(44),
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because the API endpoint is restricted by
+   * administrators according to the organization policy constraint.
+   * For more information see
+   * https://cloud.google.com/assured-workloads/docs/restrict-endpoint-usage.
+   *
+   * Example of an ErrorInfo when access to Google Cloud Storage service is
+   * restricted by Restrict Endpoint Usage policy:
+   *
+   * {
+   * "reason": "ENDPOINT_USAGE_RESTRICTION_VIOLATED",
+   * "domain": "googleapis.com/policies/endpointUsageRestriction",
+   * "metadata": {
+   * "policy_name": "constraints/gcp.restrictEndpointUsage",
+   * "checked_value": "storage.googleapis.com"
+   * "consumer": "organization/123"
+   * "service": "storage.googleapis.com"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>ENDPOINT_USAGE_RESTRICTION_VIOLATED = 45;</code>
+   */
+  ENDPOINT_USAGE_RESTRICTION_VIOLATED(45),
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because the TLS Cipher Suite is restricted by
+   * administrators according to the organization policy constraint.
+   * For more information see
+   * https://cloud.google.com/assured-workloads/docs/restrict-tls-cipher-suites
+   *
+   * Example of an ErrorInfo when access to Google Cloud BigQuery service is
+   * restricted by Restrict TLS Cipher Suites policy:
+   *
+   * {
+   * "reason": "TLS_CIPHER_RESTRICTION_VIOLATED",
+   * "domain": "googleapis.com/policies/tlsCipherRestriction",
+   * "metadata": {
+   * "policy_name": "constraints/gcp.restrictTLSCipherSuites",
+   * "checked_value": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+   * "consumer": "organization/123"
+   * "service": "bigquery.googleapis.com"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>TLS_CIPHER_RESTRICTION_VIOLATED = 46;</code>
+   */
+  TLS_CIPHER_RESTRICTION_VIOLATED(46),
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because the MCP activation check fails.
+   *
+   * Example of an ErrorInfo when the container "projects/123" contacting
+   * "pubsub.googleapis.com" service which is disabled by MCP:
+   *
+   * { "reason": "MCP_SERVER_DISABLED",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "consumer": "projects/123",
+   * "service": "pubsub.googleapis.com"
+   * }
+   * }
+   *
+   * This response indicates the "pubsub.googleapis.com" has been disabled in
+   * "projects/123" for MCP.
+   * </pre>
+   *
+   * <code>MCP_SERVER_DISABLED = 47;</code>
+   */
+  MCP_SERVER_DISABLED(47),
   UNRECOGNIZED(-1),
   ;
 
@@ -1722,6 +1984,279 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int OVERLOADED_CREDENTIALS_VALUE = 34;
 
+  /**
+   *
+   *
+   * <pre>
+   * The request whose associated location violates the location org policy
+   * restrictions when creating resources in the restricted region.
+   *
+   * Example of an ErrorInfo when creating the Cloud Storage Bucket in the
+   * container "projects/123" under a restricted region
+   * "locations/asia-northeast3":
+   *
+   * {
+   * "reason": "LOCATION_ORG_POLICY_VIOLATED",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "resource": "projects/123",
+   * "location": "locations/asia-northeast3"
+   * }
+   * }
+   *
+   * This response indicates creating the Cloud Storage Bucket in
+   * "locations/asia-northeast3" violates the location org policy restriction.
+   * </pre>
+   *
+   * <code>LOCATION_ORG_POLICY_VIOLATED = 35;</code>
+   */
+  public static final int LOCATION_ORG_POLICY_VIOLATED_VALUE = 35;
+
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because it access data of regulated customers using
+   * TLS 1.0 and 1.1.
+   *
+   * Example of an ErrorInfo when accessing a GCP resource "projects/123" that
+   * is restricted by TLS Version Restriction for "pubsub.googleapis.com"
+   * service.
+   *
+   * {
+   * "reason": "TLS_ORG_POLICY_VIOLATED",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "service": "pubsub.googleapis.com"
+   * "resource": "projects/123",
+   * "policyName": "constraints/gcp.restrictTLSVersion",
+   * "tlsVersion": "TLS_VERSION_1"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>TLS_ORG_POLICY_VIOLATED = 36;</code>
+   */
+  public static final int TLS_ORG_POLICY_VIOLATED_VALUE = 36;
+
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because the associated project has exceeded the
+   * emulator quota limit.
+   *
+   * Example of an ErrorInfo when the associated "projects/123" has exceeded the
+   * emulator quota limit.
+   *
+   * {
+   * "reason": "EMULATOR_QUOTA_EXCEEDED",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "service": "pubsub.googleapis.com"
+   * "consumer": "projects/123"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>EMULATOR_QUOTA_EXCEEDED = 38;</code>
+   */
+  public static final int EMULATOR_QUOTA_EXCEEDED_VALUE = 38;
+
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because the associated application credential header
+   * is invalid for an Android applications.
+   *
+   * Example of an ErrorInfo when the request from an Android application to the
+   * "pubsub.googleapis.com" with an invalid application credential header.
+   *
+   * {
+   * "reason": "CREDENTIAL_ANDROID_APP_INVALID",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "service": "pubsub.googleapis.com"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>CREDENTIAL_ANDROID_APP_INVALID = 39;</code>
+   */
+  public static final int CREDENTIAL_ANDROID_APP_INVALID_VALUE = 39;
+
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because IAM permission on resource is denied.
+   *
+   * Example of an ErrorInfo when the IAM permission `aiplatform.datasets.list`
+   * is denied on resource `projects/123`.
+   *
+   * {
+   * "reason": "IAM_PERMISSION_DENIED",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "resource": "projects/123"
+   * "permission": "aiplatform.datasets.list"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>IAM_PERMISSION_DENIED = 41;</code>
+   */
+  public static final int IAM_PERMISSION_DENIED_VALUE = 41;
+
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because it contains the invalid JWT token.
+   *
+   * Example of an ErrorInfo when the request contains an invalid JWT token for
+   * service `storage.googleapis.com`.
+   *
+   * {
+   * "reason": "JWT_TOKEN_INVALID",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "service": "storage.googleapis.com"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>JWT_TOKEN_INVALID = 42;</code>
+   */
+  public static final int JWT_TOKEN_INVALID_VALUE = 42;
+
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because it contains credential with type that is
+   * unsupported.
+   *
+   * Example of an ErrorInfo when the request contains an unsupported credential
+   * type for service `storage.googleapis.com`.
+   *
+   * {
+   * "reason": "CREDENTIAL_TYPE_UNSUPPORTED",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "service": "storage.googleapis.com"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>CREDENTIAL_TYPE_UNSUPPORTED = 43;</code>
+   */
+  public static final int CREDENTIAL_TYPE_UNSUPPORTED_VALUE = 43;
+
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because it contains unsupported account type.
+   *
+   * Example of an ErrorInfo when the request contains an unsupported account
+   * type for service `storage.googleapis.com`.
+   *
+   * {
+   * "reason": "ACCOUNT_TYPE_UNSUPPORTED",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "service": "storage.googleapis.com"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>ACCOUNT_TYPE_UNSUPPORTED = 44;</code>
+   */
+  public static final int ACCOUNT_TYPE_UNSUPPORTED_VALUE = 44;
+
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because the API endpoint is restricted by
+   * administrators according to the organization policy constraint.
+   * For more information see
+   * https://cloud.google.com/assured-workloads/docs/restrict-endpoint-usage.
+   *
+   * Example of an ErrorInfo when access to Google Cloud Storage service is
+   * restricted by Restrict Endpoint Usage policy:
+   *
+   * {
+   * "reason": "ENDPOINT_USAGE_RESTRICTION_VIOLATED",
+   * "domain": "googleapis.com/policies/endpointUsageRestriction",
+   * "metadata": {
+   * "policy_name": "constraints/gcp.restrictEndpointUsage",
+   * "checked_value": "storage.googleapis.com"
+   * "consumer": "organization/123"
+   * "service": "storage.googleapis.com"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>ENDPOINT_USAGE_RESTRICTION_VIOLATED = 45;</code>
+   */
+  public static final int ENDPOINT_USAGE_RESTRICTION_VIOLATED_VALUE = 45;
+
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because the TLS Cipher Suite is restricted by
+   * administrators according to the organization policy constraint.
+   * For more information see
+   * https://cloud.google.com/assured-workloads/docs/restrict-tls-cipher-suites
+   *
+   * Example of an ErrorInfo when access to Google Cloud BigQuery service is
+   * restricted by Restrict TLS Cipher Suites policy:
+   *
+   * {
+   * "reason": "TLS_CIPHER_RESTRICTION_VIOLATED",
+   * "domain": "googleapis.com/policies/tlsCipherRestriction",
+   * "metadata": {
+   * "policy_name": "constraints/gcp.restrictTLSCipherSuites",
+   * "checked_value": "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+   * "consumer": "organization/123"
+   * "service": "bigquery.googleapis.com"
+   * }
+   * }
+   * </pre>
+   *
+   * <code>TLS_CIPHER_RESTRICTION_VIOLATED = 46;</code>
+   */
+  public static final int TLS_CIPHER_RESTRICTION_VIOLATED_VALUE = 46;
+
+  /**
+   *
+   *
+   * <pre>
+   * The request is denied because the MCP activation check fails.
+   *
+   * Example of an ErrorInfo when the container "projects/123" contacting
+   * "pubsub.googleapis.com" service which is disabled by MCP:
+   *
+   * { "reason": "MCP_SERVER_DISABLED",
+   * "domain": "googleapis.com",
+   * "metadata": {
+   * "consumer": "projects/123",
+   * "service": "pubsub.googleapis.com"
+   * }
+   * }
+   *
+   * This response indicates the "pubsub.googleapis.com" has been disabled in
+   * "projects/123" for MCP.
+   * </pre>
+   *
+   * <code>MCP_SERVER_DISABLED = 47;</code>
+   */
+  public static final int MCP_SERVER_DISABLED_VALUE = 47;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -1812,6 +2347,28 @@ public enum ErrorReason implements com.google.protobuf.ProtocolMessageEnum {
         return MISSING_ORIGIN;
       case 34:
         return OVERLOADED_CREDENTIALS;
+      case 35:
+        return LOCATION_ORG_POLICY_VIOLATED;
+      case 36:
+        return TLS_ORG_POLICY_VIOLATED;
+      case 38:
+        return EMULATOR_QUOTA_EXCEEDED;
+      case 39:
+        return CREDENTIAL_ANDROID_APP_INVALID;
+      case 41:
+        return IAM_PERMISSION_DENIED;
+      case 42:
+        return JWT_TOKEN_INVALID;
+      case 43:
+        return CREDENTIAL_TYPE_UNSUPPORTED;
+      case 44:
+        return ACCOUNT_TYPE_UNSUPPORTED;
+      case 45:
+        return ENDPOINT_USAGE_RESTRICTION_VIOLATED;
+      case 46:
+        return TLS_CIPHER_RESTRICTION_VIOLATED;
+      case 47:
+        return MCP_SERVER_DISABLED;
       default:
         return null;
     }

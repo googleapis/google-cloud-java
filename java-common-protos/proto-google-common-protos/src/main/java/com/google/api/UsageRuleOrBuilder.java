@@ -64,8 +64,12 @@ public interface UsageRuleOrBuilder
    *
    *
    * <pre>
-   * If true, the selected method allows unregistered calls, e.g. calls
-   * that don't identify any user or application.
+   * Use this rule to configure unregistered calls for the service. Unregistered
+   * calls are calls that do not contain consumer project identity.
+   * (Example: calls that do not contain an API key).
+   *
+   * WARNING: By default, API methods do not allow unregistered calls, and each
+   * method call must be identified by a consumer project identity.
    * </pre>
    *
    * <code>bool allow_unregistered_calls = 2;</code>

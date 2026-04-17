@@ -65,7 +65,7 @@ public final class BackendProto extends com.google.protobuf.GeneratedFile {
           + "\030google/api/backend.proto\022\n"
           + "google.api\"1\n"
           + "\007Backend\022&\n"
-          + "\005rules\030\001 \003(\0132\027.google.api.BackendRule\"\262\004\n"
+          + "\005rules\030\001 \003(\0132\027.google.api.BackendRule\"\321\004\n"
           + "\013BackendRule\022\020\n"
           + "\010selector\030\001 \001(\t\022\017\n"
           + "\007address\030\002 \001(\t\022\020\n"
@@ -78,7 +78,8 @@ public final class BackendProto extends com.google.protobuf.GeneratedFile {
           + "\014disable_auth\030\010 \001(\010H\000\022\020\n"
           + "\010protocol\030\t \001(\t\022^\n"
           + "\035overrides_by_request_protocol\030\n"
-          + " \003(\01327.google.api.BackendRule.OverridesByRequestProtocolEntry\032Z\n"
+          + " \003(\01327.google.api.BackendRule.OverridesByRequestProtocolEntry\022\035\n"
+          + "\025load_balancing_policy\030\013 \001(\t\032Z\n"
           + "\037OverridesByRequestProtocolEntry\022\013\n"
           + "\003key\030\001 \001(\t\022&\n"
           + "\005value\030\002 \001(\0132\027.google.api.BackendRule:\0028\001\"e\n"
@@ -87,8 +88,8 @@ public final class BackendProto extends com.google.protobuf.GeneratedFile {
           + "\020CONSTANT_ADDRESS\020\001\022\032\n"
           + "\026APPEND_PATH_TO_ADDRESS\020\002B\020\n"
           + "\016authenticationBn\n"
-          + "\016com.google.apiB\014BackendProtoP\001ZEgoogle.golang.org/genproto/goo"
-          + "gleapis/api/serviceconfig;serviceconfig\242\002\004GAPIb\006proto3"
+          + "\016com.google.apiB\014BackendProtoP\001ZEgoogle.golang.org/genproto/googleapis/a"
+          + "pi/serviceconfig;serviceconfig\242\002\004GAPIb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -115,6 +116,7 @@ public final class BackendProto extends com.google.protobuf.GeneratedFile {
               "DisableAuth",
               "Protocol",
               "OverridesByRequestProtocol",
+              "LoadBalancingPolicy",
               "Authentication",
             });
     internal_static_google_api_BackendRule_OverridesByRequestProtocolEntry_descriptor =

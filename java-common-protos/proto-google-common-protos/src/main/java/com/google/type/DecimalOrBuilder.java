@@ -35,7 +35,7 @@ public interface DecimalOrBuilder
    * The string representation consists of an optional sign, `+` (`U+002B`)
    * or `-` (`U+002D`), followed by a sequence of zero or more decimal digits
    * ("the integer"), optionally followed by a fraction, optionally followed
-   * by an exponent.
+   * by an exponent. An empty string **should** be interpreted as `0`.
    *
    * The fraction consists of a decimal point followed by zero or more decimal
    * digits. The string must contain at least one digit in either the integer
@@ -49,12 +49,13 @@ public interface DecimalOrBuilder
    *
    * - Removing an explicitly-provided `+` sign (`+2.5` -&gt; `2.5`).
    * - Replacing a zero-length integer value with `0` (`.5` -&gt; `0.5`).
-   * - Coercing the exponent character to lower-case (`2.5E8` -&gt; `2.5e8`).
-   * - Removing an explicitly-provided zero exponent (`2.5e0` -&gt; `2.5`).
+   * - Coercing the exponent character to upper-case, with explicit sign
+   * (`2.5e8` -&gt; `2.5E+8`).
+   * - Removing an explicitly-provided zero exponent (`2.5E0` -&gt; `2.5`).
    *
    * Services **may** perform additional normalization based on its own needs
    * and the internal decimal implementation selected, such as shifting the
-   * decimal point and exponent value together (example: `2.5e-1` &lt;-&gt; `0.25`).
+   * decimal point and exponent value together (example: `2.5E-1` &lt;-&gt; `0.25`).
    * Additionally, services **may** preserve trailing zeroes in the fraction
    * to indicate increased precision, but are not required to do so.
    *
@@ -66,7 +67,7 @@ public interface DecimalOrBuilder
    * The ENBF grammar is:
    *
    * DecimalString =
-   * [Sign] Significand [Exponent];
+   * '' | [Sign] Significand [Exponent];
    *
    * Sign = '+' | '-';
    *
@@ -107,7 +108,7 @@ public interface DecimalOrBuilder
    * The string representation consists of an optional sign, `+` (`U+002B`)
    * or `-` (`U+002D`), followed by a sequence of zero or more decimal digits
    * ("the integer"), optionally followed by a fraction, optionally followed
-   * by an exponent.
+   * by an exponent. An empty string **should** be interpreted as `0`.
    *
    * The fraction consists of a decimal point followed by zero or more decimal
    * digits. The string must contain at least one digit in either the integer
@@ -121,12 +122,13 @@ public interface DecimalOrBuilder
    *
    * - Removing an explicitly-provided `+` sign (`+2.5` -&gt; `2.5`).
    * - Replacing a zero-length integer value with `0` (`.5` -&gt; `0.5`).
-   * - Coercing the exponent character to lower-case (`2.5E8` -&gt; `2.5e8`).
-   * - Removing an explicitly-provided zero exponent (`2.5e0` -&gt; `2.5`).
+   * - Coercing the exponent character to upper-case, with explicit sign
+   * (`2.5e8` -&gt; `2.5E+8`).
+   * - Removing an explicitly-provided zero exponent (`2.5E0` -&gt; `2.5`).
    *
    * Services **may** perform additional normalization based on its own needs
    * and the internal decimal implementation selected, such as shifting the
-   * decimal point and exponent value together (example: `2.5e-1` &lt;-&gt; `0.25`).
+   * decimal point and exponent value together (example: `2.5E-1` &lt;-&gt; `0.25`).
    * Additionally, services **may** preserve trailing zeroes in the fraction
    * to indicate increased precision, but are not required to do so.
    *
@@ -138,7 +140,7 @@ public interface DecimalOrBuilder
    * The ENBF grammar is:
    *
    * DecimalString =
-   * [Sign] Significand [Exponent];
+   * '' | [Sign] Significand [Exponent];
    *
    * Sign = '+' | '-';
    *

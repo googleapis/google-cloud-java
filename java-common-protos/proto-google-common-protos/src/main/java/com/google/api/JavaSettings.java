@@ -98,6 +98,7 @@ public final class JavaSettings extends com.google.protobuf.GeneratedMessage
    * Example of a YAML configuration::
    *
    * publishing:
+   * library_settings:
    * java_settings:
    * library_package: com.google.cloud.pubsub.v1
    * </pre>
@@ -132,6 +133,7 @@ public final class JavaSettings extends com.google.protobuf.GeneratedMessage
    * Example of a YAML configuration::
    *
    * publishing:
+   * library_settings:
    * java_settings:
    * library_package: com.google.cloud.pubsub.v1
    * </pre>
@@ -785,6 +787,7 @@ public final class JavaSettings extends com.google.protobuf.GeneratedMessage
      * Example of a YAML configuration::
      *
      * publishing:
+     * library_settings:
      * java_settings:
      * library_package: com.google.cloud.pubsub.v1
      * </pre>
@@ -818,6 +821,7 @@ public final class JavaSettings extends com.google.protobuf.GeneratedMessage
      * Example of a YAML configuration::
      *
      * publishing:
+     * library_settings:
      * java_settings:
      * library_package: com.google.cloud.pubsub.v1
      * </pre>
@@ -851,6 +855,7 @@ public final class JavaSettings extends com.google.protobuf.GeneratedMessage
      * Example of a YAML configuration::
      *
      * publishing:
+     * library_settings:
      * java_settings:
      * library_package: com.google.cloud.pubsub.v1
      * </pre>
@@ -883,6 +888,7 @@ public final class JavaSettings extends com.google.protobuf.GeneratedMessage
      * Example of a YAML configuration::
      *
      * publishing:
+     * library_settings:
      * java_settings:
      * library_package: com.google.cloud.pubsub.v1
      * </pre>
@@ -911,6 +917,7 @@ public final class JavaSettings extends com.google.protobuf.GeneratedMessage
      * Example of a YAML configuration::
      *
      * publishing:
+     * library_settings:
      * java_settings:
      * library_package: com.google.cloud.pubsub.v1
      * </pre>

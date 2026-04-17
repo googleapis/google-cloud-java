@@ -242,6 +242,8 @@ public final class CommonLanguageSettings extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Configuration for which RPCs should be generated in the GAPIC client.
+   *
+   * Note: This field should not be used in most cases.
    * </pre>
    *
    * <code>.google.api.SelectiveGapicGeneration selective_gapic_generation = 3;</code>
@@ -258,6 +260,8 @@ public final class CommonLanguageSettings extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Configuration for which RPCs should be generated in the GAPIC client.
+   *
+   * Note: This field should not be used in most cases.
    * </pre>
    *
    * <code>.google.api.SelectiveGapicGeneration selective_gapic_generation = 3;</code>
@@ -276,6 +280,8 @@ public final class CommonLanguageSettings extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Configuration for which RPCs should be generated in the GAPIC client.
+   *
+   * Note: This field should not be used in most cases.
    * </pre>
    *
    * <code>.google.api.SelectiveGapicGeneration selective_gapic_generation = 3;</code>
@@ -1080,6 +1086,8 @@ public final class CommonLanguageSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Configuration for which RPCs should be generated in the GAPIC client.
+     *
+     * Note: This field should not be used in most cases.
      * </pre>
      *
      * <code>.google.api.SelectiveGapicGeneration selective_gapic_generation = 3;</code>
@@ -1095,6 +1103,8 @@ public final class CommonLanguageSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Configuration for which RPCs should be generated in the GAPIC client.
+     *
+     * Note: This field should not be used in most cases.
      * </pre>
      *
      * <code>.google.api.SelectiveGapicGeneration selective_gapic_generation = 3;</code>
@@ -1116,6 +1126,8 @@ public final class CommonLanguageSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Configuration for which RPCs should be generated in the GAPIC client.
+     *
+     * Note: This field should not be used in most cases.
      * </pre>
      *
      * <code>.google.api.SelectiveGapicGeneration selective_gapic_generation = 3;</code>
@@ -1139,6 +1151,8 @@ public final class CommonLanguageSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Configuration for which RPCs should be generated in the GAPIC client.
+     *
+     * Note: This field should not be used in most cases.
      * </pre>
      *
      * <code>.google.api.SelectiveGapicGeneration selective_gapic_generation = 3;</code>
@@ -1160,6 +1174,8 @@ public final class CommonLanguageSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Configuration for which RPCs should be generated in the GAPIC client.
+     *
+     * Note: This field should not be used in most cases.
      * </pre>
      *
      * <code>.google.api.SelectiveGapicGeneration selective_gapic_generation = 3;</code>
@@ -1189,6 +1205,8 @@ public final class CommonLanguageSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Configuration for which RPCs should be generated in the GAPIC client.
+     *
+     * Note: This field should not be used in most cases.
      * </pre>
      *
      * <code>.google.api.SelectiveGapicGeneration selective_gapic_generation = 3;</code>
@@ -1209,6 +1227,8 @@ public final class CommonLanguageSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Configuration for which RPCs should be generated in the GAPIC client.
+     *
+     * Note: This field should not be used in most cases.
      * </pre>
      *
      * <code>.google.api.SelectiveGapicGeneration selective_gapic_generation = 3;</code>
@@ -1224,6 +1244,8 @@ public final class CommonLanguageSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Configuration for which RPCs should be generated in the GAPIC client.
+     *
+     * Note: This field should not be used in most cases.
      * </pre>
      *
      * <code>.google.api.SelectiveGapicGeneration selective_gapic_generation = 3;</code>
@@ -1243,6 +1265,8 @@ public final class CommonLanguageSettings extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Configuration for which RPCs should be generated in the GAPIC client.
+     *
+     * Note: This field should not be used in most cases.
      * </pre>
      *
      * <code>.google.api.SelectiveGapicGeneration selective_gapic_generation = 3;</code>

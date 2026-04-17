@@ -59,9 +59,9 @@ public final class StatusProto extends com.google.protobuf.GeneratedFile {
           + "\006Status\022\014\n"
           + "\004code\030\001 \001(\005\022\017\n"
           + "\007message\030\002 \001(\t\022%\n"
-          + "\007details\030\003 \003(\0132\024.google.protobuf.AnyBa\n"
+          + "\007details\030\003 \003(\0132\024.google.protobuf.AnyB^\n"
           + "\016com.google.rpcB\013StatusProtoP\001Z7google.golang.org/gen"
-          + "proto/googleapis/rpc/status;status\370\001\001\242\002\003RPCb\006proto3"
+          + "proto/googleapis/rpc/status;status\242\002\003RPCb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

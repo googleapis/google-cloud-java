@@ -55,10 +55,10 @@ public final class QuaternionProto extends com.google.protobuf.GeneratedFile {
     java.lang.String[] descriptorData = {
       "\n\034google/type/quaternion.proto\022\013google.t"
           + "ype\"8\n\nQuaternion\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022"
-          + "\t\n\001z\030\003 \001(\001\022\t\n\001w\030\004 \001(\001Bo\n\017com.google.type"
+          + "\t\n\001z\030\003 \001(\001\022\t\n\001w\030\004 \001(\001Bl\n\017com.google.type"
           + "B\017QuaternionProtoP\001Z@google.golang.org/g"
           + "enproto/googleapis/type/quaternion;quate"
-          + "rnion\370\001\001\242\002\003GTPb\006proto3"
+          + "rnion\242\002\003GTPb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

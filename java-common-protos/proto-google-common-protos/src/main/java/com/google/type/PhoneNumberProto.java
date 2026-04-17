@@ -62,10 +62,10 @@ public final class PhoneNumberProto extends com.google.protobuf.GeneratedFile {
           + "(\tH\000\0228\n\nshort_code\030\002 \001(\0132\".google.type.P"
           + "honeNumber.ShortCodeH\000\022\021\n\textension\030\003 \001("
           + "\t\0320\n\tShortCode\022\023\n\013region_code\030\001 \001(\t\022\016\n\006n"
-          + "umber\030\002 \001(\tB\006\n\004kindBt\n\017com.google.typeB\020"
+          + "umber\030\002 \001(\tB\006\n\004kindBq\n\017com.google.typeB\020"
           + "PhoneNumberProtoP\001ZDgoogle.golang.org/ge"
           + "nproto/googleapis/type/phone_number;phon"
-          + "e_number\370\001\001\242\002\003GTPb\006proto3"
+          + "e_number\242\002\003GTPb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

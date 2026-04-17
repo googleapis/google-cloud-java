@@ -54,9 +54,13 @@ package com.google.api;
  * app_profile_id: profiles/prof_qux
  * }
  *
- * The routing header consists of one or multiple key-value pairs. Every key
- * and value must be percent-encoded, and joined together in the format of
- * `key1=value1&amp;key2=value2`.
+ * The routing header consists of one or multiple key-value pairs. The order of
+ * the key-value pairs is undefined, the order of the `routing_parameters` in
+ * the `RoutingRule` only matters for the evaluation order of the path
+ * templates when `field` is the same. See the examples below for more details.
+ *
+ * Every key and value in the routing header must be percent-encoded,
+ * and joined together in the following format: `key1=value1&amp;key2=value2`.
  * The examples below skip the percent-encoding for readability.
  *
  * Example 1
@@ -721,9 +725,13 @@ public final class RoutingRule extends com.google.protobuf.GeneratedMessage
    * app_profile_id: profiles/prof_qux
    * }
    *
-   * The routing header consists of one or multiple key-value pairs. Every key
-   * and value must be percent-encoded, and joined together in the format of
-   * `key1=value1&amp;key2=value2`.
+   * The routing header consists of one or multiple key-value pairs. The order of
+   * the key-value pairs is undefined, the order of the `routing_parameters` in
+   * the `RoutingRule` only matters for the evaluation order of the path
+   * templates when `field` is the same. See the examples below for more details.
+   *
+   * Every key and value in the routing header must be percent-encoded,
+   * and joined together in the following format: `key1=value1&amp;key2=value2`.
    * The examples below skip the percent-encoding for readability.
    *
    * Example 1

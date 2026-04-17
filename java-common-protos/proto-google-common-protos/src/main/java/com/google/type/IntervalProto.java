@@ -57,10 +57,10 @@ public final class IntervalProto extends com.google.protobuf.GeneratedFile {
           + "e\032\037google/protobuf/timestamp.proto\"h\n\010In"
           + "terval\022.\n\nstart_time\030\001 \001(\0132\032.google.prot"
           + "obuf.Timestamp\022,\n\010end_time\030\002 \001(\0132\032.googl"
-          + "e.protobuf.TimestampBi\n\017com.google.typeB"
+          + "e.protobuf.TimestampBf\n\017com.google.typeB"
           + "\rIntervalProtoP\001Z<google.golang.org/genp"
-          + "roto/googleapis/type/interval;interval\370\001"
-          + "\001\242\002\003GTPb\006proto3"
+          + "roto/googleapis/type/interval;interval\242\002"
+          + "\003GTPb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

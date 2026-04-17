@@ -33,17 +33,22 @@ public interface PhoneNumberOrBuilder
    * The phone number, represented as a leading plus sign ('+'), followed by a
    * phone number that uses a relaxed ITU E.164 format consisting of the
    * country calling code (1 to 3 digits) and the subscriber number, with no
-   * additional spaces or formatting, e.g.:
+   * additional spaces or formatting. For example:
+   *
    * - correct: "+15552220123"
-   * - incorrect: "+1 (555) 222-01234 x123".
+   *
+   * - incorrect: "+1 (555) 222-01234 x123"
    *
    * The ITU E.164 format limits the latter to 12 digits, but in practice not
    * all countries respect that, so we relax that restriction here.
    * National-only numbers are not allowed.
    *
    * References:
+   *
    * - https://www.itu.int/rec/T-REC-E.164-201011-I
+   *
    * - https://en.wikipedia.org/wiki/E.164.
+   *
    * - https://en.wikipedia.org/wiki/List_of_country_calling_codes
    * </pre>
    *
@@ -60,17 +65,22 @@ public interface PhoneNumberOrBuilder
    * The phone number, represented as a leading plus sign ('+'), followed by a
    * phone number that uses a relaxed ITU E.164 format consisting of the
    * country calling code (1 to 3 digits) and the subscriber number, with no
-   * additional spaces or formatting, e.g.:
+   * additional spaces or formatting. For example:
+   *
    * - correct: "+15552220123"
-   * - incorrect: "+1 (555) 222-01234 x123".
+   *
+   * - incorrect: "+1 (555) 222-01234 x123"
    *
    * The ITU E.164 format limits the latter to 12 digits, but in practice not
    * all countries respect that, so we relax that restriction here.
    * National-only numbers are not allowed.
    *
    * References:
+   *
    * - https://www.itu.int/rec/T-REC-E.164-201011-I
+   *
    * - https://en.wikipedia.org/wiki/E.164.
+   *
    * - https://en.wikipedia.org/wiki/List_of_country_calling_codes
    * </pre>
    *
@@ -87,17 +97,22 @@ public interface PhoneNumberOrBuilder
    * The phone number, represented as a leading plus sign ('+'), followed by a
    * phone number that uses a relaxed ITU E.164 format consisting of the
    * country calling code (1 to 3 digits) and the subscriber number, with no
-   * additional spaces or formatting, e.g.:
+   * additional spaces or formatting. For example:
+   *
    * - correct: "+15552220123"
-   * - incorrect: "+1 (555) 222-01234 x123".
+   *
+   * - incorrect: "+1 (555) 222-01234 x123"
    *
    * The ITU E.164 format limits the latter to 12 digits, but in practice not
    * all countries respect that, so we relax that restriction here.
    * National-only numbers are not allowed.
    *
    * References:
+   *
    * - https://www.itu.int/rec/T-REC-E.164-201011-I
+   *
    * - https://en.wikipedia.org/wiki/E.164.
+   *
    * - https://en.wikipedia.org/wiki/List_of_country_calling_codes
    * </pre>
    *
@@ -114,7 +129,7 @@ public interface PhoneNumberOrBuilder
    * A short code.
    *
    * Reference(s):
-   * - https://en.wikipedia.org/wiki/Short_code
+   * - https://wikipedia.org/wiki/Short_code
    * </pre>
    *
    * <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code>
@@ -130,7 +145,7 @@ public interface PhoneNumberOrBuilder
    * A short code.
    *
    * Reference(s):
-   * - https://en.wikipedia.org/wiki/Short_code
+   * - https://wikipedia.org/wiki/Short_code
    * </pre>
    *
    * <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code>
@@ -146,7 +161,7 @@ public interface PhoneNumberOrBuilder
    * A short code.
    *
    * Reference(s):
-   * - https://en.wikipedia.org/wiki/Short_code
+   * - https://wikipedia.org/wiki/Short_code
    * </pre>
    *
    * <code>.google.type.PhoneNumber.ShortCode short_code = 2;</code>

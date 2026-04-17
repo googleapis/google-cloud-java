@@ -26,9 +26,9 @@ package com.google.type;
  * <pre>
  * An object that represents a latitude/longitude pair. This is expressed as a
  * pair of doubles to represent degrees latitude and degrees longitude. Unless
- * specified otherwise, this must conform to the
- * &lt;a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf"&gt;WGS84
- * standard&lt;/a&gt;. Values must be within normalized ranges.
+ * specified otherwise, this object must conform to the
+ * &lt;a href="https://en.wikipedia.org/wiki/World_Geodetic_System#1984_version"&gt;
+ * WGS84 standard&lt;/a&gt;. Values must be within normalized ranges.
  * </pre>
  *
  * Protobuf type {@code google.type.LatLng}
@@ -288,9 +288,9 @@ public final class LatLng extends com.google.protobuf.GeneratedMessage
    * <pre>
    * An object that represents a latitude/longitude pair. This is expressed as a
    * pair of doubles to represent degrees latitude and degrees longitude. Unless
-   * specified otherwise, this must conform to the
-   * &lt;a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf"&gt;WGS84
-   * standard&lt;/a&gt;. Values must be within normalized ranges.
+   * specified otherwise, this object must conform to the
+   * &lt;a href="https://en.wikipedia.org/wiki/World_Geodetic_System#1984_version"&gt;
+   * WGS84 standard&lt;/a&gt;. Values must be within normalized ranges.
    * </pre>
    *
    * Protobuf type {@code google.type.LatLng}

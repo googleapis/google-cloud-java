@@ -237,4 +237,71 @@ public interface MethodSettingsOrBuilder
    * @return The bytes of the autoPopulatedFields at the given index.
    */
   com.google.protobuf.ByteString getAutoPopulatedFieldsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Batching configuration for an API method in client libraries.
+   *
+   * Example of a YAML configuration:
+   *
+   * publishing:
+   * method_settings:
+   * - selector: google.example.v1.ExampleService.BatchCreateExample
+   * batching:
+   * element_count_threshold: 1000
+   * request_byte_threshold: 100000000
+   * delay_threshold_millis: 10
+   * </pre>
+   *
+   * <code>.google.api.BatchingConfigProto batching = 4;</code>
+   *
+   * @return Whether the batching field is set.
+   */
+  boolean hasBatching();
+
+  /**
+   *
+   *
+   * <pre>
+   * Batching configuration for an API method in client libraries.
+   *
+   * Example of a YAML configuration:
+   *
+   * publishing:
+   * method_settings:
+   * - selector: google.example.v1.ExampleService.BatchCreateExample
+   * batching:
+   * element_count_threshold: 1000
+   * request_byte_threshold: 100000000
+   * delay_threshold_millis: 10
+   * </pre>
+   *
+   * <code>.google.api.BatchingConfigProto batching = 4;</code>
+   *
+   * @return The batching.
+   */
+  com.google.api.BatchingConfigProto getBatching();
+
+  /**
+   *
+   *
+   * <pre>
+   * Batching configuration for an API method in client libraries.
+   *
+   * Example of a YAML configuration:
+   *
+   * publishing:
+   * method_settings:
+   * - selector: google.example.v1.ExampleService.BatchCreateExample
+   * batching:
+   * element_count_threshold: 1000
+   * request_byte_threshold: 100000000
+   * delay_threshold_millis: 10
+   * </pre>
+   *
+   * <code>.google.api.BatchingConfigProto batching = 4;</code>
+   */
+  com.google.api.BatchingConfigProtoOrBuilder getBatchingOrBuilder();
 }
