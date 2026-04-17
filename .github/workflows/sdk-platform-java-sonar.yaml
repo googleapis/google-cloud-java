@@ -70,19 +70,20 @@ jobs:
       - name: Build and analyze for full test coverage
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FOR_GENERATOR }}
         run: |
           mvn -B verify -Pquick-build \
               -DenableFullTestCoverage \
               -Penable-integration-tests \
               org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-              -Dsonar.projectKey=googleapis_gapic-generator-java \
+              -Dsonar.projectKey=googleapis_google-cloud-java_generator \
               -Dsonar.organization=googleapis \
               -Dsonar.host.url=https://sonarcloud.io
+              -Dsonar.projectBaseDir=sdk-platform-java
       - name: Build and analyze Showcase Integration Tests Coverage
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FOR_SHOWCASE }}
         run: |
           mvn -B clean verify -Pquick-build \
               -DskipUnitTests \
@@ -92,4 +93,5 @@ jobs:
               -Dsonar.projectKey=googleapis_gapic-generator-java_integration_tests \
               -Dsonar.organization=googleapis \
               -Dsonar.host.url=https://sonarcloud.io \
-              -Dsonar.projectName=java_showcase_integration_tests
+              -Dsonar.projectName=googleapis_google-cloud-java_showcase
+              -Dsonar.projectBaseDir=sdk-platform-java
