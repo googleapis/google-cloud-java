@@ -84,7 +84,7 @@ to add `google-cloud-webrisk` as a dependency in your code.
 ## About Web Risk
 
 
-[Web Risk][product-docs] is a Google Cloud service that lets client applications check URLs against Google's constantly updated lists of unsafe web resources. Unsafe web resources include social engineering sites—such as phishing and deceptive sites—and sites that host malware or unwanted software. With the Web Risk API, you can quickly identify known bad sites, warn users before they click infected links, and prevent users from posting links to known infected pages from your site. The Web Risk API includes data on more than a million unsafe URLs and stays up to date by examining billions of URLs each day.
+[Web Risk][product-docs] is a Google Cloud service that lets client applications check URLs against Google's constantly updated lists of unsafe web resources. Unsafe web resources include social engineering sites - such as phishing and deceptive sites - and sites that host malware or unwanted software. With the Web Risk API, you can quickly identify known bad sites, warn users before they click infected links, and prevent users from posting links to known infected pages from your site. The Web Risk API includes data on more than a million unsafe URLs and stays up to date by examining billions of URLs each day.
 
 See the [Web Risk client library docs][javadocs] to learn how to
 use this Web Risk Client Library.
