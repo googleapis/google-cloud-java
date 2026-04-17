@@ -1,0 +1,180 @@
+package com.google.auth.oauth2;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class AgentIdentityUtilsTest {
+
+  private static final String VALID_SPIFFE_ORG =
+      "spiffe://agents.global.org-12345.system.id.goog/path/to/resource";
+  private static final String VALID_SPIFFE_PROJ =
+      "spiffe://agents.global.proj-98765.system.id.goog/another/path";
+  private static final String INVALID_SPIFFE_DOMAIN = "spiffe://example.com/workload";
+  private static final String INVALID_SPIFFE_FORMAT =
+      "spiffe://agents.global.org-INVALID.system.id.goog/path";
+
+  private TestEnvironmentProvider envProvider;
+  private Path tempDir;
+
+  @BeforeEach
+  void setUp() throws IOException {
+    envProvider = new TestEnvironmentProvider();
+    AgentIdentityUtils.setEnvReader(envProvider::getEnv);
+    tempDir = Files.createTempDirectory("agent_identity_test");
+  }
+
+  @AfterEach
+  void tearDown() throws IOException {
+    AgentIdentityUtils.resetTimeService();
+    if (tempDir != null) {
+      Files.walk(tempDir)
+          .sorted(java.util.Comparator.reverseOrder())
+          .map(Path::toFile)
+          .forEach(File::delete);
+    }
+  }
+
+  @Test
+  public void shouldRequestBoundToken_validOrgSpiffe_returnsTrue() throws CertificateException {
+    assertTrue(AgentIdentityUtils.shouldRequestBoundToken(mockCertWithSanUri(VALID_SPIFFE_ORG)));
+  }
+
+  @Test
+  public void shouldRequestBoundToken_validProjSpiffe_returnsTrue() throws CertificateException {
+    assertTrue(AgentIdentityUtils.shouldRequestBoundToken(mockCertWithSanUri(VALID_SPIFFE_PROJ)));
+  }
+
+  @Test
+  public void shouldRequestBoundToken_invalidDomain_returnsFalse() throws CertificateException {
+    assertFalse(
+        AgentIdentityUtils.shouldRequestBoundToken(mockCertWithSanUri(INVALID_SPIFFE_DOMAIN)));
+  }
+
+  @Test
+  public void shouldRequestBoundToken_invalidFormat_returnsFalse() throws CertificateException {
+    assertFalse(
+        AgentIdentityUtils.shouldRequestBoundToken(mockCertWithSanUri(INVALID_SPIFFE_FORMAT)));
+  }
+
+  @Test
+  public void shouldRequestBoundToken_noSan_returnsFalse() throws CertificateException {
+    X509Certificate mockCert = mock(X509Certificate.class);
+    when(mockCert.getSubjectAlternativeNames()).thenReturn(null);
+    assertFalse(AgentIdentityUtils.shouldRequestBoundToken(mockCert));
+  }
+
+  private X509Certificate mockCertWithSanUri(String uri) throws CertificateException {
+    X509Certificate mockCert = mock(X509Certificate.class);
+    List<?> spiffeEntry = Arrays.asList(6, uri);
+    Collection<List<?>> sans = Collections.singletonList(spiffeEntry);
+    when(mockCert.getSubjectAlternativeNames()).thenReturn(sans);
+    return mockCert;
+  }
+
+  @Test
+  public void calculateCertificateFingerprint_knownInput_returnsExpectedOutput() throws Exception {
+    X509Certificate mockCert = mock(X509Certificate.class);
+    byte[] fakeDer = new byte[] {0x01, 0x02, 0x03, 0x04, (byte) 0xFF};
+    when(mockCert.getEncoded()).thenReturn(fakeDer);
+    String expectedFingerprint = "%2FEAuXk1xSDxtU3mEowwrTIsGVTmkvRsCbGESkmulJ5M";
+    String actualFingerprint = AgentIdentityUtils.calculateCertificateFingerprint(mockCert);
+    assertEquals(expectedFingerprint, actualFingerprint);
+  }
+
+  @Test
+  public void getAgentIdentityCertificate_optedOut_returnsNullImmediately() throws IOException {
+    envProvider.setEnv("GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES", "false");
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", "/non/existent/path");
+    assertNull(AgentIdentityUtils.getAgentIdentityCertificate());
+  }
+
+  @Test
+  public void getAgentIdentityCertificate_noConfigEnvVar_returnsNull() throws IOException {
+    assertNull(AgentIdentityUtils.getAgentIdentityCertificate());
+  }
+
+  @Test
+  public void getAgentIdentityCertificate_happyPath_loadsCertificate() throws IOException {
+    URL certUrl = getClass().getClassLoader().getResource("x509_leaf_certificate.pem");
+    assertNotNull(certUrl, "Test resource x509_leaf_certificate.pem not found");
+    String certPath = new File(certUrl.getFile()).getAbsolutePath();
+    File configFile = tempDir.resolve("config.json").toFile();
+    String configJson =
+        "{"
+            + " \"cert_configs\": {"
+            + " \"workload\": {"
+            + " \"cert_path\": \""
+            + certPath.replace("\\", "\\\\")
+            + "\""
+            + " }"
+            + " }"
+            + "}";
+    try (FileOutputStream fos = new FileOutputStream(configFile)) {
+      fos.write(configJson.getBytes(StandardCharsets.UTF_8));
+    }
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", configFile.getAbsolutePath());
+    X509Certificate cert = AgentIdentityUtils.getAgentIdentityCertificate();
+    assertNotNull(cert);
+    assertTrue(cert.getIssuerDN().getName().contains("unit-tests"));
+  }
+
+  @Test
+  public void getAgentIdentityCertificate_timeout_throwsIOException() {
+    envProvider.setEnv(
+        "GOOGLE_API_CERTIFICATE_CONFIG",
+        tempDir.resolve("missing.json").toAbsolutePath().toString());
+    AgentIdentityUtils.setTimeService(new FakeTimeService());
+    IOException e =
+        assertThrows(IOException.class, AgentIdentityUtils::getAgentIdentityCertificate);
+    assertTrue(
+        e.getMessage()
+            .contains(
+                "Unable to find Agent Identity certificate config or file for bound token request after multiple retries."));
+  }
+
+  private static class FakeTimeService implements AgentIdentityUtils.TimeService {
+    private final AtomicLong currentTime = new AtomicLong(0);
+    @Override
+    public long currentTimeMillis() {
+      return currentTime.get();
+    }
+    @Override
+    public void sleep(long millis) throws InterruptedException {
+      currentTime.addAndGet(millis);
+    }
+  }
+
+  private static class TestEnvironmentProvider {
+    private final java.util.Map<String, String> env = new java.util.HashMap<>();
+    void setEnv(String key, String value) {
+      env.put(key, value);
+    }
+    String getEnv(String key) {
+      return env.get(key);
+    }
+  }
+}
