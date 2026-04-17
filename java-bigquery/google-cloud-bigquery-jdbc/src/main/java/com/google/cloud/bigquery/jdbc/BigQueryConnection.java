@@ -844,8 +844,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       throw new BigQueryJdbcException(ex);
     } catch (InterruptedException e) {
       throw new BigQueryJdbcRuntimeException(e);
-    } finally {
-      BigQueryJdbcMdc.removeInstance(this);
     }
     this.isClosed = true;
   }
