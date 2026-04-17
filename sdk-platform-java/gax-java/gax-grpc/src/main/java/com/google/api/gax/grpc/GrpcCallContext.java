@@ -729,6 +729,9 @@ public final class GrpcCallContext implements ApiCallContext {
   @InternalApi
   public void validateUniverseDomain() {
     try {
+      if (credentials != null) {
+        credentials.getTestString();
+      }
       endpointContext.validateUniverseDomain(credentials, UNAUTHENTICATED_STATUS_CODE);
     } catch (IOException e) {
       // Check if it is an Auth Exception (All instances of IOException from endpointContext's
