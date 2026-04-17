@@ -56,6 +56,10 @@ import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
 import java.io.IOException;
+import java.time.Clock;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -458,9 +462,11 @@ public class KeyAwareChannelTest {
 
   @Test
   public void resourceExhaustedRoutedEndpointIsAvoidedOnRetry() throws Exception {
-    TestHarness harness = createHarness();
+    TestHarness harness = createHarness(createDeterministicCooldownTracker());
     seedCache(harness, createLeaderAndReplicaCacheUpdate());
-    CallOptions retryCallOptions = retryCallOptions(1L);
+    XGoogSpannerRequestId requestId = retryRequestId(1L);
+    CallOptions retryCallOptions = retryCallOptions(requestId);
+    String logicalRequestKey = requestId.getLogicalRequestKey();
 
     ExecuteSqlRequest request =
         ExecuteSqlRequest.newBuilder()
@@ -481,6 +487,12 @@ public class KeyAwareChannelTest {
             harness.endpointCache.latestCallForAddress("server-a:1234");
     firstDelegate.emitOnClose(Status.RESOURCE_EXHAUSTED, new Metadata());
 
+    assertThat(harness.channel.isCoolingDown("server-a:1234")).isTrue();
+    assertThat(
+            harness.channel.hasExcludedEndpointForLogicalRequest(
+                logicalRequestKey, "server-a:1234"))
+        .isTrue();
+
     ClientCall<ExecuteSqlRequest, ResultSet> secondCall =
         harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), retryCallOptions);
     secondCall.start(new CapturingListener<ResultSet>(), new Metadata());
@@ -488,6 +500,11 @@ public class KeyAwareChannelTest {
 
     assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(1);
     assertThat(harness.endpointCache.callCountForAddress("server-b:1234")).isEqualTo(1);
+    assertThat(harness.channel.isCoolingDown("server-a:1234")).isTrue();
+    assertThat(
+            harness.channel.hasExcludedEndpointForLogicalRequest(
+                logicalRequestKey, "server-a:1234"))
+        .isFalse();
   }
 
   @Test
@@ -590,11 +607,16 @@ public class KeyAwareChannelTest {
   }
 
   @Test
-  public void resourceExhaustedSkipDoesNotAffectDifferentLogicalRequest() throws Exception {
-    TestHarness harness = createHarness();
+  public void resourceExhaustedCooldownAffectsDifferentLogicalRequestButExclusionDoesNot()
+      throws Exception {
+    TestHarness harness = createHarness(createDeterministicCooldownTracker());
     seedCache(harness, createLeaderAndReplicaCacheUpdate());
-    CallOptions firstLogicalRequest = retryCallOptions(4L);
-    CallOptions secondLogicalRequest = retryCallOptions(5L);
+    XGoogSpannerRequestId firstRequestId = retryRequestId(4L);
+    XGoogSpannerRequestId secondRequestId = retryRequestId(5L);
+    CallOptions firstLogicalRequest = retryCallOptions(firstRequestId);
+    CallOptions secondLogicalRequest = retryCallOptions(secondRequestId);
+    String firstLogicalRequestKey = firstRequestId.getLogicalRequestKey();
+    String secondLogicalRequestKey = secondRequestId.getLogicalRequestKey();
 
     ExecuteSqlRequest request =
         ExecuteSqlRequest.newBuilder()
@@ -613,21 +635,47 @@ public class KeyAwareChannelTest {
             harness.endpointCache.latestCallForAddress("server-a:1234");
     firstDelegate.emitOnClose(Status.RESOURCE_EXHAUSTED, new Metadata());
 
+    assertThat(harness.channel.isCoolingDown("server-a:1234")).isTrue();
+    assertThat(
+            harness.channel.hasExcludedEndpointForLogicalRequest(
+                firstLogicalRequestKey, "server-a:1234"))
+        .isTrue();
+    assertThat(
+            harness.channel.hasExcludedEndpointForLogicalRequest(
+                secondLogicalRequestKey, "server-a:1234"))
+        .isFalse();
+
     ClientCall<ExecuteSqlRequest, ResultSet> unrelatedCall =
         harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), secondLogicalRequest);
     unrelatedCall.start(new CapturingListener<ResultSet>(), new Metadata());
     unrelatedCall.sendMessage(request);
 
-    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(2);
-    assertThat(harness.endpointCache.callCountForAddress("server-b:1234")).isEqualTo(0);
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(1);
+    assertThat(harness.endpointCache.callCountForAddress("server-b:1234")).isEqualTo(1);
+    assertThat(
+            harness.channel.hasExcludedEndpointForLogicalRequest(
+                firstLogicalRequestKey, "server-a:1234"))
+        .isTrue();
+    assertThat(
+            harness.channel.hasExcludedEndpointForLogicalRequest(
+                secondLogicalRequestKey, "server-a:1234"))
+        .isFalse();
 
     ClientCall<ExecuteSqlRequest, ResultSet> retriedFirstCall =
         harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), firstLogicalRequest);
     retriedFirstCall.start(new CapturingListener<ResultSet>(), new Metadata());
     retriedFirstCall.sendMessage(request);
 
-    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(2);
-    assertThat(harness.endpointCache.callCountForAddress("server-b:1234")).isEqualTo(1);
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(1);
+    assertThat(harness.endpointCache.callCountForAddress("server-b:1234")).isEqualTo(2);
+    assertThat(
+            harness.channel.hasExcludedEndpointForLogicalRequest(
+                firstLogicalRequestKey, "server-a:1234"))
+        .isFalse();
+    assertThat(
+            harness.channel.hasExcludedEndpointForLogicalRequest(
+                secondLogicalRequestKey, "server-a:1234"))
+        .isFalse();
   }
 
   @Test
@@ -1235,11 +1283,26 @@ public class KeyAwareChannelTest {
   }
 
   private static TestHarness createHarness() throws IOException {
+    return createHarness(new EndpointOverloadCooldownTracker());
+  }
+
+  private static TestHarness createHarness(EndpointOverloadCooldownTracker tracker)
+      throws IOException {
     FakeEndpointCache endpointCache = new FakeEndpointCache(DEFAULT_ADDRESS);
     InstantiatingGrpcChannelProvider provider =
         InstantiatingGrpcChannelProvider.newBuilder().setEndpoint("localhost:9999").build();
-    KeyAwareChannel channel = KeyAwareChannel.create(provider, baseProvider -> endpointCache);
+    KeyAwareChannel channel =
+        KeyAwareChannel.create(provider, baseProvider -> endpointCache, tracker);
     return new TestHarness(channel, endpointCache, endpointCache.defaultManagedChannel());
+  }
+
+  private static EndpointOverloadCooldownTracker createDeterministicCooldownTracker() {
+    return new EndpointOverloadCooldownTracker(
+        Duration.ofMinutes(1),
+        Duration.ofMinutes(1),
+        Duration.ofMinutes(10),
+        Clock.fixed(Instant.ofEpochSecond(100), ZoneOffset.UTC),
+        bound -> bound - 1L);
   }
 
   private static final class TestHarness {
@@ -1483,9 +1546,16 @@ public class KeyAwareChannelTest {
     return ByteString.copyFromUtf8(value);
   }
 
+  private static XGoogSpannerRequestId retryRequestId(long nthRequest) {
+    return XGoogSpannerRequestId.of(1L, 0L, nthRequest, 0L);
+  }
+
   private static CallOptions retryCallOptions(long nthRequest) {
+    return retryCallOptions(retryRequestId(nthRequest));
+  }
+
+  private static CallOptions retryCallOptions(XGoogSpannerRequestId requestId) {
     return CallOptions.DEFAULT.withOption(
-        XGoogSpannerRequestId.REQUEST_ID_CALL_OPTIONS_KEY,
-        XGoogSpannerRequestId.of(1L, 0L, nthRequest, 0L));
+        XGoogSpannerRequestId.REQUEST_ID_CALL_OPTIONS_KEY, requestId);
   }
 }

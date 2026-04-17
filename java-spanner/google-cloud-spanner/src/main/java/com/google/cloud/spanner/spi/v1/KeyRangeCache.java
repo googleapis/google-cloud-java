@@ -28,6 +28,7 @@ import com.google.spanner.v1.RoutingHint;
 import com.google.spanner.v1.Tablet;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -185,11 +186,10 @@ public final class KeyRangeCache {
     readLock.lock();
     try {
       for (CachedGroup group : groups.values()) {
-        synchronized (group) {
-          for (CachedTablet tablet : group.tablets) {
-            if (!tablet.serverAddress.isEmpty()) {
-              addresses.add(tablet.serverAddress);
-            }
+        GroupSnapshot snapshot = group.snapshot;
+        for (TabletSnapshot tablet : snapshot.tablets) {
+          if (!tablet.serverAddress.isEmpty()) {
+            addresses.add(tablet.serverAddress);
           }
         }
       }
@@ -487,34 +487,27 @@ public final class KeyRangeCache {
     return ByteString.unsignedLexicographicalComparator().compare(left, right);
   }
 
-  /** Represents a single tablet within a group. */
-  private class CachedTablet {
-    long tabletUid = 0;
-    ByteString incarnation = ByteString.EMPTY;
-    String serverAddress = "";
-    int distance = 0;
-    boolean skip = false;
-    Tablet.Role role = Tablet.Role.ROLE_UNSPECIFIED;
-    String location = "";
+  private static final GroupSnapshot EMPTY_GROUP_SNAPSHOT =
+      new GroupSnapshot(ByteString.EMPTY, -1, Collections.<TabletSnapshot>emptyList());
 
-    ChannelEndpoint endpoint = null;
+  /** Immutable tablet metadata used by the read path without per-group locking. */
+  private static final class TabletSnapshot {
+    final long tabletUid;
+    final ByteString incarnation;
+    final String serverAddress;
+    final int distance;
+    final boolean skip;
+    final Tablet.Role role;
+    final String location;
 
-    void update(Tablet tabletIn) {
-      if (tabletUid > 0 && compare(incarnation, tabletIn.getIncarnation()) > 0) {
-        return;
-      }
-
-      tabletUid = tabletIn.getTabletUid();
-      incarnation = tabletIn.getIncarnation();
-      distance = tabletIn.getDistance();
-      skip = tabletIn.getSkip();
-      role = tabletIn.getRole();
-      location = tabletIn.getLocation();
-
-      if (!serverAddress.equals(tabletIn.getServerAddress())) {
-        serverAddress = tabletIn.getServerAddress();
-        endpoint = null;
-      }
+    private TabletSnapshot(Tablet tabletIn) {
+      this.tabletUid = tabletIn.getTabletUid();
+      this.incarnation = tabletIn.getIncarnation();
+      this.serverAddress = tabletIn.getServerAddress();
+      this.distance = tabletIn.getDistance();
+      this.skip = tabletIn.getSkip();
+      this.role = tabletIn.getRole();
+      this.location = tabletIn.getLocation();
     }
 
     boolean matches(DirectedReadOptions directedReadOptions) {
@@ -555,132 +548,6 @@ public final class KeyRangeCache {
       }
     }
 
-    /**
-     * Evaluates whether this tablet should be skipped for location-aware routing.
-     *
-     * <p>State-aware skip logic:
-     *
-     * <ul>
-     *   <li>Server-marked skip, empty address, or excluded endpoint: skip and report in
-     *       skipped_tablets.
-     *   <li>Endpoint exists and READY: usable, do not skip.
-     *   <li>Endpoint exists and TRANSIENT_FAILURE: skip and report in skipped_tablets.
-     *   <li>Endpoint absent, IDLE, CONNECTING, SHUTDOWN, or unsupported: skip silently unless the
-     *       lifecycle manager recently evicted the address for repeated TRANSIENT_FAILURE, in which
-     *       case report it in skipped_tablets.
-     * </ul>
-     */
-    boolean shouldSkip(
-        RoutingHint.Builder hintBuilder,
-        Predicate<String> excludedEndpoints,
-        Set<Long> skippedTabletUids) {
-      // Server-marked skip, no address, or excluded endpoint: always report.
-      if (skip || serverAddress.isEmpty() || excludedEndpoints.test(serverAddress)) {
-        addSkippedTablet(hintBuilder, skippedTabletUids);
-        return true;
-      }
-
-      // If the cached endpoint's channel has been shut down (e.g. after idle eviction),
-      // discard the stale reference so we re-lookup from the cache below.
-      if (endpoint != null && endpoint.getChannel().isShutdown()) {
-        logger.log(
-            Level.FINE,
-            "Tablet {0} at {1}: cached endpoint is shutdown, clearing stale reference",
-            new Object[] {tabletUid, serverAddress});
-        endpoint = null;
-      }
-
-      // Lookup without creating: location-aware routing should not trigger foreground endpoint
-      // creation.
-      if (endpoint == null) {
-        endpoint = endpointCache.getIfPresent(serverAddress);
-      }
-
-      // No endpoint exists yet - skip silently, request background recreation so the
-      // endpoint becomes available for future requests.
-      if (endpoint == null) {
-        logger.log(
-            Level.FINE,
-            "Tablet {0} at {1}: no endpoint present, skipping silently",
-            new Object[] {tabletUid, serverAddress});
-        maybeAddRecentTransientFailureSkip(hintBuilder, skippedTabletUids);
-        if (lifecycleManager != null) {
-          lifecycleManager.requestEndpointRecreation(serverAddress);
-        }
-        return true;
-      }
-
-      // READY - usable for location-aware routing.
-      if (endpoint.isHealthy()) {
-        return false;
-      }
-
-      // TRANSIENT_FAILURE - skip and report so server can refresh client cache.
-      if (endpoint.isTransientFailure()) {
-        logger.log(
-            Level.FINE,
-            "Tablet {0} at {1}: endpoint in TRANSIENT_FAILURE, adding to skipped_tablets",
-            new Object[] {tabletUid, serverAddress});
-        addSkippedTablet(hintBuilder, skippedTabletUids);
-        return true;
-      }
-
-      // IDLE, CONNECTING, SHUTDOWN, or unsupported - skip silently.
-      logger.log(
-          Level.FINE,
-          "Tablet {0} at {1}: endpoint not ready, skipping silently",
-          new Object[] {tabletUid, serverAddress});
-      maybeAddRecentTransientFailureSkip(hintBuilder, skippedTabletUids);
-      return true;
-    }
-
-    private void addSkippedTablet(RoutingHint.Builder hintBuilder, Set<Long> skippedTabletUids) {
-      if (!skippedTabletUids.add(tabletUid)) {
-        return;
-      }
-      RoutingHint.SkippedTablet.Builder skipped = hintBuilder.addSkippedTabletUidBuilder();
-      skipped.setTabletUid(tabletUid);
-      skipped.setIncarnation(incarnation);
-    }
-
-    private void recordKnownTransientFailure(
-        RoutingHint.Builder hintBuilder,
-        Predicate<String> excludedEndpoints,
-        Set<Long> skippedTabletUids) {
-      if (skip || serverAddress.isEmpty() || excludedEndpoints.test(serverAddress)) {
-        return;
-      }
-
-      if (endpoint != null && endpoint.getChannel().isShutdown()) {
-        endpoint = null;
-      }
-
-      if (endpoint == null) {
-        endpoint = endpointCache.getIfPresent(serverAddress);
-      }
-
-      if (endpoint != null && endpoint.isTransientFailure()) {
-        addSkippedTablet(hintBuilder, skippedTabletUids);
-        return;
-      }
-
-      maybeAddRecentTransientFailureSkip(hintBuilder, skippedTabletUids);
-    }
-
-    private void maybeAddRecentTransientFailureSkip(
-        RoutingHint.Builder hintBuilder, Set<Long> skippedTabletUids) {
-      if (lifecycleManager != null
-          && lifecycleManager.wasRecentlyEvictedTransientFailure(serverAddress)) {
-        addSkippedTablet(hintBuilder, skippedTabletUids);
-      }
-    }
-
-    ChannelEndpoint pick(RoutingHint.Builder hintBuilder) {
-      hintBuilder.setTabletUid(tabletUid);
-      // Endpoint must already exist and be READY if shouldSkip returned false.
-      return endpoint;
-    }
-
     String debugString() {
       return tabletUid
           + ":"
@@ -698,19 +565,40 @@ public final class KeyRangeCache {
     }
   }
 
+  private static final class GroupSnapshot {
+    final ByteString generation;
+    final int leaderIndex;
+    final List<TabletSnapshot> tablets;
+
+    private GroupSnapshot(ByteString generation, int leaderIndex, List<TabletSnapshot> tablets) {
+      this.generation = generation;
+      this.leaderIndex = leaderIndex;
+      this.tablets = Collections.unmodifiableList(new ArrayList<>(tablets));
+    }
+
+    boolean hasLeader() {
+      return leaderIndex >= 0 && leaderIndex < tablets.size();
+    }
+
+    TabletSnapshot leader() {
+      return tablets.get(leaderIndex);
+    }
+  }
+
   /** Represents a paxos group with its tablets. */
   private class CachedGroup {
     final long groupUid;
-    ByteString generation = ByteString.EMPTY;
-    List<CachedTablet> tablets = new ArrayList<>();
-    int leaderIndex = -1;
+    volatile GroupSnapshot snapshot = EMPTY_GROUP_SNAPSHOT;
     int refs = 1;
 
     CachedGroup(long groupUid) {
       this.groupUid = groupUid;
     }
 
-    synchronized void update(Group groupIn) {
+    void update(Group groupIn) {
+      GroupSnapshot current = snapshot;
+      ByteString generation = current.generation;
+      int leaderIndex = current.leaderIndex;
       if (compare(groupIn.getGeneration(), generation) > 0) {
         generation = groupIn.getGeneration();
         if (groupIn.getLeaderIndex() >= 0 && groupIn.getLeaderIndex() < groupIn.getTabletsCount()) {
@@ -720,37 +608,11 @@ public final class KeyRangeCache {
         }
       }
 
-      if (tablets.size() == groupIn.getTabletsCount()) {
-        boolean mismatch = false;
-        for (int t = 0; t < groupIn.getTabletsCount(); t++) {
-          if (tablets.get(t).tabletUid != groupIn.getTablets(t).getTabletUid()) {
-            mismatch = true;
-            break;
-          }
-        }
-        if (!mismatch) {
-          for (int t = 0; t < groupIn.getTabletsCount(); t++) {
-            tablets.get(t).update(groupIn.getTablets(t));
-          }
-          return;
-        }
-      }
-
-      Map<Long, CachedTablet> tabletsByUid = new HashMap<>(tablets.size());
-      for (CachedTablet tablet : tablets) {
-        tabletsByUid.put(tablet.tabletUid, tablet);
-      }
-      List<CachedTablet> newTablets = new ArrayList<>(groupIn.getTabletsCount());
+      List<TabletSnapshot> tablets = new ArrayList<>(groupIn.getTabletsCount());
       for (int t = 0; t < groupIn.getTabletsCount(); t++) {
-        Tablet tabletIn = groupIn.getTablets(t);
-        CachedTablet tablet = tabletsByUid.get(tabletIn.getTabletUid());
-        if (tablet == null) {
-          tablet = new CachedTablet();
-        }
-        tablet.update(tabletIn);
-        newTablets.add(tablet);
+        tablets.add(new TabletSnapshot(groupIn.getTablets(t)));
       }
-      tablets = newTablets;
+      snapshot = new GroupSnapshot(generation, leaderIndex, tablets);
     }
 
     ChannelEndpoint fillRoutingHint(
@@ -758,59 +620,72 @@ public final class KeyRangeCache {
         DirectedReadOptions directedReadOptions,
         RoutingHint.Builder hintBuilder,
         Predicate<String> excludedEndpoints) {
+      GroupSnapshot snapshot = this.snapshot;
       Set<Long> skippedTabletUids = skippedTabletUids(hintBuilder);
       boolean hasDirectedReadOptions =
           directedReadOptions.getReplicasCase()
               != DirectedReadOptions.ReplicasCase.REPLICAS_NOT_SET;
+      Map<String, ChannelEndpoint> resolvedEndpoints = new HashMap<>();
 
-      // Select a tablet while holding the lock. With state-aware routing, only READY
-      // endpoints pass shouldSkip(), so the selected tablet always has a cached
-      // endpoint. No foreground endpoint creation is needed — the lifecycle manager
-      // creates endpoints in the background.
-      synchronized (this) {
-        CachedTablet selected =
-            selectTabletLocked(
-                preferLeader,
-                hasDirectedReadOptions,
-                hintBuilder,
-                directedReadOptions,
-                excludedEndpoints,
-                skippedTabletUids);
-        if (selected == null) {
-          return null;
-        }
-        recordKnownTransientFailuresLocked(
-            selected, directedReadOptions, hintBuilder, excludedEndpoints, skippedTabletUids);
-        return selected.pick(hintBuilder);
+      TabletSnapshot selected =
+          selectTablet(
+              snapshot,
+              preferLeader,
+              hasDirectedReadOptions,
+              hintBuilder,
+              directedReadOptions,
+              excludedEndpoints,
+              skippedTabletUids,
+              resolvedEndpoints);
+      if (selected == null) {
+        return null;
       }
+      recordKnownTransientFailures(
+          snapshot,
+          selected,
+          directedReadOptions,
+          hintBuilder,
+          excludedEndpoints,
+          skippedTabletUids,
+          resolvedEndpoints);
+      hintBuilder.setTabletUid(selected.tabletUid);
+      return resolveEndpoint(selected, resolvedEndpoints);
     }
 
-    private CachedTablet selectTabletLocked(
+    private TabletSnapshot selectTablet(
+        GroupSnapshot snapshot,
         boolean preferLeader,
         boolean hasDirectedReadOptions,
         RoutingHint.Builder hintBuilder,
         DirectedReadOptions directedReadOptions,
         Predicate<String> excludedEndpoints,
-        Set<Long> skippedTabletUids) {
+        Set<Long> skippedTabletUids,
+        Map<String, ChannelEndpoint> resolvedEndpoints) {
       boolean checkedLeader = false;
       if (preferLeader
           && !hasDirectedReadOptions
-          && hasLeader()
-          && leader().distance <= MAX_LOCAL_REPLICA_DISTANCE) {
+          && snapshot.hasLeader()
+          && snapshot.leader().distance <= MAX_LOCAL_REPLICA_DISTANCE) {
         checkedLeader = true;
-        if (!leader().shouldSkip(hintBuilder, excludedEndpoints, skippedTabletUids)) {
-          return leader();
+        if (!shouldSkip(
+            snapshot.leader(),
+            hintBuilder,
+            excludedEndpoints,
+            skippedTabletUids,
+            resolvedEndpoints)) {
+          return snapshot.leader();
         }
       }
-      for (int index = 0; index < tablets.size(); index++) {
-        if (checkedLeader && index == leaderIndex) {
+      for (int index = 0; index < snapshot.tablets.size(); index++) {
+        if (checkedLeader && index == snapshot.leaderIndex) {
           continue;
         }
-        CachedTablet tablet = tablets.get(index);
+        TabletSnapshot tablet = snapshot.tablets.get(index);
         if (!tablet.matches(directedReadOptions)) {
           continue;
         }
-        if (tablet.shouldSkip(hintBuilder, excludedEndpoints, skippedTabletUids)) {
+        if (shouldSkip(
+            tablet, hintBuilder, excludedEndpoints, skippedTabletUids, resolvedEndpoints)) {
           continue;
         }
         return tablet;
@@ -818,17 +693,20 @@ public final class KeyRangeCache {
       return null;
     }
 
-    private void recordKnownTransientFailuresLocked(
-        CachedTablet selected,
+    private void recordKnownTransientFailures(
+        GroupSnapshot snapshot,
+        TabletSnapshot selected,
         DirectedReadOptions directedReadOptions,
         RoutingHint.Builder hintBuilder,
         Predicate<String> excludedEndpoints,
-        Set<Long> skippedTabletUids) {
-      for (CachedTablet tablet : tablets) {
+        Set<Long> skippedTabletUids,
+        Map<String, ChannelEndpoint> resolvedEndpoints) {
+      for (TabletSnapshot tablet : snapshot.tablets) {
         if (tablet == selected || !tablet.matches(directedReadOptions)) {
           continue;
         }
-        tablet.recordKnownTransientFailure(hintBuilder, excludedEndpoints, skippedTabletUids);
+        recordKnownTransientFailure(
+            tablet, hintBuilder, excludedEndpoints, skippedTabletUids, resolvedEndpoints);
       }
     }
 
@@ -840,27 +718,124 @@ public final class KeyRangeCache {
       return skippedTabletUids;
     }
 
-    boolean hasLeader() {
-      return leaderIndex >= 0 && leaderIndex < tablets.size();
+    private boolean shouldSkip(
+        TabletSnapshot tablet,
+        RoutingHint.Builder hintBuilder,
+        Predicate<String> excludedEndpoints,
+        Set<Long> skippedTabletUids,
+        Map<String, ChannelEndpoint> resolvedEndpoints) {
+      if (tablet.skip
+          || tablet.serverAddress.isEmpty()
+          || excludedEndpoints.test(tablet.serverAddress)) {
+        addSkippedTablet(tablet, hintBuilder, skippedTabletUids);
+        return true;
+      }
+
+      ChannelEndpoint endpoint = resolveEndpoint(tablet, resolvedEndpoints);
+      if (endpoint == null) {
+        logger.log(
+            Level.FINE,
+            "Tablet {0} at {1}: no endpoint present, skipping silently",
+            new Object[] {tablet.tabletUid, tablet.serverAddress});
+        maybeAddRecentTransientFailureSkip(tablet, hintBuilder, skippedTabletUids);
+        if (lifecycleManager != null) {
+          lifecycleManager.requestEndpointRecreation(tablet.serverAddress);
+        }
+        return true;
+      }
+      if (endpoint.isHealthy()) {
+        return false;
+      }
+      if (endpoint.isTransientFailure()) {
+        logger.log(
+            Level.FINE,
+            "Tablet {0} at {1}: endpoint in TRANSIENT_FAILURE, adding to skipped_tablets",
+            new Object[] {tablet.tabletUid, tablet.serverAddress});
+        addSkippedTablet(tablet, hintBuilder, skippedTabletUids);
+        return true;
+      }
+
+      logger.log(
+          Level.FINE,
+          "Tablet {0} at {1}: endpoint not ready, skipping silently",
+          new Object[] {tablet.tabletUid, tablet.serverAddress});
+      maybeAddRecentTransientFailureSkip(tablet, hintBuilder, skippedTabletUids);
+      return true;
     }
 
-    CachedTablet leader() {
-      return tablets.get(leaderIndex);
+    private void recordKnownTransientFailure(
+        TabletSnapshot tablet,
+        RoutingHint.Builder hintBuilder,
+        Predicate<String> excludedEndpoints,
+        Set<Long> skippedTabletUids,
+        Map<String, ChannelEndpoint> resolvedEndpoints) {
+      if (tablet.skip
+          || tablet.serverAddress.isEmpty()
+          || excludedEndpoints.test(tablet.serverAddress)) {
+        return;
+      }
+
+      ChannelEndpoint endpoint = resolveEndpoint(tablet, resolvedEndpoints);
+      if (endpoint != null && endpoint.isTransientFailure()) {
+        addSkippedTablet(tablet, hintBuilder, skippedTabletUids);
+        return;
+      }
+
+      maybeAddRecentTransientFailureSkip(tablet, hintBuilder, skippedTabletUids);
+    }
+
+    private ChannelEndpoint resolveEndpoint(
+        TabletSnapshot tablet, Map<String, ChannelEndpoint> resolvedEndpoints) {
+      if (tablet.serverAddress.isEmpty()) {
+        return null;
+      }
+      if (resolvedEndpoints.containsKey(tablet.serverAddress)) {
+        return resolvedEndpoints.get(tablet.serverAddress);
+      }
+      ChannelEndpoint endpoint = endpointCache.getIfPresent(tablet.serverAddress);
+      if (endpoint != null && endpoint.getChannel().isShutdown()) {
+        logger.log(
+            Level.FINE,
+            "Tablet {0} at {1}: cached endpoint is shutdown, clearing stale reference",
+            new Object[] {tablet.tabletUid, tablet.serverAddress});
+        endpoint = null;
+      }
+      resolvedEndpoints.put(tablet.serverAddress, endpoint);
+      return endpoint;
+    }
+
+    private void maybeAddRecentTransientFailureSkip(
+        TabletSnapshot tablet, RoutingHint.Builder hintBuilder, Set<Long> skippedTabletUids) {
+      if (lifecycleManager != null
+          && lifecycleManager.wasRecentlyEvictedTransientFailure(tablet.serverAddress)) {
+        addSkippedTablet(tablet, hintBuilder, skippedTabletUids);
+      }
+    }
+
+    private void addSkippedTablet(
+        TabletSnapshot tablet, RoutingHint.Builder hintBuilder, Set<Long> skippedTabletUids) {
+      if (!skippedTabletUids.add(tablet.tabletUid)) {
+        return;
+      }
+      RoutingHint.SkippedTablet.Builder skipped = hintBuilder.addSkippedTabletUidBuilder();
+      skipped.setTabletUid(tablet.tabletUid);
+      skipped.setIncarnation(tablet.incarnation);
     }
 
     String debugString() {
+      GroupSnapshot snapshot = this.snapshot;
       StringBuilder sb = new StringBuilder();
       sb.append(groupUid).append(":[");
-      for (int i = 0; i < tablets.size(); i++) {
-        sb.append(tablets.get(i).debugString());
-        if (hasLeader() && i == leaderIndex) {
+      for (int i = 0; i < snapshot.tablets.size(); i++) {
+        sb.append(snapshot.tablets.get(i).debugString());
+        if (snapshot.hasLeader() && i == snapshot.leaderIndex) {
           sb.append(" (leader)");
         }
-        if (i < tablets.size() - 1) {
+        if (i < snapshot.tablets.size() - 1) {
           sb.append(", ");
         }
       }
-      sb.append("]@").append(generation.toStringUtf8());
+      sb.append("]@").append(snapshot.generation.toStringUtf8());
       sb.append("#").append(refs);
       return sb.toString();
     }

@@ -21,6 +21,7 @@ import static com.google.cloud.spanner.XGoogSpannerRequestId.REQUEST_ID_CALL_OPT
 import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.spanner.XGoogSpannerRequestId;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.google.protobuf.ByteString;
@@ -102,10 +103,19 @@ final class KeyAwareChannel extends ManagedChannel {
           .maximumSize(MAX_TRACKED_EXCLUDED_LOGICAL_REQUESTS)
           .expireAfterWrite(EXCLUDED_LOGICAL_REQUEST_TTL_MINUTES, TimeUnit.MINUTES)
           .build();
+  private final EndpointOverloadCooldownTracker endpointOverloadCooldowns;
 
   private KeyAwareChannel(
       InstantiatingGrpcChannelProvider channelProvider,
       @Nullable ChannelEndpointCacheFactory endpointCacheFactory)
+      throws IOException {
+    this(channelProvider, endpointCacheFactory, new EndpointOverloadCooldownTracker());
+  }
+
+  private KeyAwareChannel(
+      InstantiatingGrpcChannelProvider channelProvider,
+      @Nullable ChannelEndpointCacheFactory endpointCacheFactory,
+      EndpointOverloadCooldownTracker endpointOverloadCooldowns)
       throws IOException {
     if (endpointCacheFactory == null) {
       this.endpointCache = new GrpcChannelEndpointCache(channelProvider);
@@ -120,6 +130,7 @@ final class KeyAwareChannel extends ManagedChannel {
     // would interfere with test assertions.
     this.lifecycleManager =
         (endpointCacheFactory == null) ? new EndpointLifecycleManager(endpointCache) : null;
+    this.endpointOverloadCooldowns = endpointOverloadCooldowns;
   }
 
   static KeyAwareChannel create(
@@ -127,6 +138,15 @@ final class KeyAwareChannel extends ManagedChannel {
       @Nullable ChannelEndpointCacheFactory endpointCacheFactory)
       throws IOException {
     return new KeyAwareChannel(channelProvider, endpointCacheFactory);
+  }
+
+  @VisibleForTesting
+  static KeyAwareChannel create(
+      InstantiatingGrpcChannelProvider channelProvider,
+      @Nullable ChannelEndpointCacheFactory endpointCacheFactory,
+      EndpointOverloadCooldownTracker endpointOverloadCooldowns)
+      throws IOException {
+    return new KeyAwareChannel(channelProvider, endpointCacheFactory, endpointOverloadCooldowns);
   }
 
   private static final class ChannelFinderReference extends SoftReference<ChannelFinder> {
@@ -321,36 +341,56 @@ final class KeyAwareChannel extends ManagedChannel {
 
   private void maybeExcludeEndpointOnNextCall(
       @Nullable ChannelEndpoint endpoint, @Nullable String logicalRequestKey) {
-    if (endpoint == null || logicalRequestKey == null) {
+    if (endpoint == null) {
       return;
     }
     String address = endpoint.getAddress();
-    if (!defaultEndpointAddress.equals(address)) {
-      excludedEndpointsForLogicalRequest
-          .asMap()
-          .compute(
-              logicalRequestKey,
-              (ignored, excludedEndpoints) -> {
-                Set<String> updated =
-                    excludedEndpoints == null ? ConcurrentHashMap.newKeySet() : excludedEndpoints;
-                updated.add(address);
-                return updated;
-              });
+    if (defaultEndpointAddress.equals(address)) {
+      return;
     }
+    endpointOverloadCooldowns.recordFailure(address);
+    if (logicalRequestKey == null) {
+      return;
+    }
+    excludedEndpointsForLogicalRequest
+        .asMap()
+        .compute(
+            logicalRequestKey,
+            (ignored, excludedEndpoints) -> {
+              Set<String> updated =
+                  excludedEndpoints == null ? ConcurrentHashMap.newKeySet() : excludedEndpoints;
+              updated.add(address);
+              return updated;
+            });
   }
 
   private Predicate<String> consumeExcludedEndpointsForCurrentCall(
       @Nullable String logicalRequestKey) {
-    if (logicalRequestKey == null) {
-      return address -> false;
+    Predicate<String> requestScopedExcluded = address -> false;
+    if (logicalRequestKey != null) {
+      Set<String> excludedEndpoints =
+          excludedEndpointsForLogicalRequest.asMap().remove(logicalRequestKey);
+      if (excludedEndpoints != null && !excludedEndpoints.isEmpty()) {
+        excludedEndpoints = new HashSet<>(excludedEndpoints);
+        requestScopedExcluded = excludedEndpoints::contains;
+      }
     }
+    Predicate<String> finalRequestScopedExcluded = requestScopedExcluded;
+    return address ->
+        finalRequestScopedExcluded.test(address)
+            || endpointOverloadCooldowns.isCoolingDown(address);
+  }
+
+  @VisibleForTesting
+  boolean isCoolingDown(String address) {
+    return endpointOverloadCooldowns.isCoolingDown(address);
+  }
+
+  @VisibleForTesting
+  boolean hasExcludedEndpointForLogicalRequest(String logicalRequestKey, String address) {
     Set<String> excludedEndpoints =
-        excludedEndpointsForLogicalRequest.asMap().remove(logicalRequestKey);
-    if (excludedEndpoints == null || excludedEndpoints.isEmpty()) {
-      return address -> false;
-    }
-    excludedEndpoints = new HashSet<>(excludedEndpoints);
-    return excludedEndpoints::contains;
+        excludedEndpointsForLogicalRequest.getIfPresent(logicalRequestKey);
+    return excludedEndpoints != null && excludedEndpoints.contains(address);
   }
 
   private boolean isReadOnlyTransaction(ByteString transactionId) {
