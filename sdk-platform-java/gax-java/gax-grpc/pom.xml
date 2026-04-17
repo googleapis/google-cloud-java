@@ -142,6 +142,11 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <!-- These tests require an Env Var to be set. Use -PenvVarTest to ONLY run these tests -->
+          <test>!InstantiatingGrpcChannelProviderTest#testLogDirectPathMisconfig_AttemptDirectPathNotSetAndAttemptDirectPathXdsSetViaEnv_warns,!InstantiatingGrpcChannelProviderTest#canUseDirectPath_directPathEnvVarNotSet_attemptDirectPathIsTrue,InstantiatingGrpcChannelProviderTest#testLogDirectPathMisconfigWrongCredential</test>
+          <!-- <test>!InstantiatingGrpcChannelProviderTest#testLogDirectPathMisconfig_AttemptDirectPathNotSetAndAttemptDirectPathXdsSetViaEnv_warns</test> -->
+        </configuration>
       </plugin>
     </plugins>
   </build>
