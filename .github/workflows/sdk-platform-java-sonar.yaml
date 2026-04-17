@@ -20,6 +20,7 @@ jobs:
         filters: |
           library:
             - 'sdk-platform-java/**'
+            - '.github/workflows/sdk-platform-java-sonar.yaml'
   build:
     needs: filter
     if: needs.filter.outputs.library == 'true' && (github.event.pull_request.head.repo.full_name == github.repository || github.event_name != 'pull_request')
