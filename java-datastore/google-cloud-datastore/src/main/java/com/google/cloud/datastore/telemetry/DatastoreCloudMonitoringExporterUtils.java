@@ -132,7 +132,7 @@ class DatastoreCloudMonitoringExporterUtils {
    * <p>{@code clientAttributes} (e.g. {@code client_name}, {@code client_uid}) are injected here
    * rather than being looked up from a singleton so that this method is testable in isolation. The
    * caller ({@link DatastoreCloudMonitoringExporter}) is responsible for supplying them from {@link
-   * BuiltInDatastoreMetricsProvider#getClientAttributes()}.
+   * BuiltInDatastoreMetricsProvider#buildClientAttributes()}.
    */
   private static TimeSeries convertPointToDatastoreTimeSeries(
       MetricData metricData,
@@ -179,7 +179,6 @@ class DatastoreCloudMonitoringExporterUtils {
   private static MetricKind convertMetricKind(MetricData metricData) {
     switch (metricData.getType()) {
       case HISTOGRAM:
-      case EXPONENTIAL_HISTOGRAM:
         return convertHistogramType(metricData.getHistogramData());
       case LONG_GAUGE:
       case DOUBLE_GAUGE:
@@ -235,7 +234,6 @@ class DatastoreCloudMonitoringExporterUtils {
       case DOUBLE_SUM:
         return DOUBLE;
       case HISTOGRAM:
-      case EXPONENTIAL_HISTOGRAM:
         return DISTRIBUTION;
       default:
         return ValueType.UNRECOGNIZED;
@@ -248,7 +246,6 @@ class DatastoreCloudMonitoringExporterUtils {
     Point.Builder builder = Point.newBuilder().setInterval(timeInterval);
     switch (type) {
       case HISTOGRAM:
-      case EXPONENTIAL_HISTOGRAM:
         return builder
             .setValue(
                 TypedValue.newBuilder()

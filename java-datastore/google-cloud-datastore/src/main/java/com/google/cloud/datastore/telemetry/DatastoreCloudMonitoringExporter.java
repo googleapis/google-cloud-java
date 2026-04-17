@@ -85,15 +85,19 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
   }
 
   /**
-   * Shared cache for {@link MetricServiceClient} instances, keyed by "projectId:databaseId". This
-   * prevents creating a new gRPC client for every exporter instance, reducing resource usage.
-   * Reference counting is used to safely shut down the client when no longer needed.
+   * Shared cache for {@link MetricServiceClient} instances, keyed by
+   * "projectId:databaseId:credentialsHashCode". Sharing a single gRPC channel across exporter
+   * instances that target the same project, database, and credentials avoids per-client channel
+   * overhead (threads, connections, memory). The credentials hash ensures that clients using
+   * different credentials get their own isolated channel. Reference counting is used to safely shut
+   * down the client when no longer needed.
    */
   static final ConcurrentHashMap<String, CachedMetricsClient> METRICS_CLIENT_CACHE =
       new ConcurrentHashMap<>();
 
   private final MetricServiceClient client;
   private final Map<String, String> clientAttributes;
+  private final String cacheKey;
 
   // This is the quota limit from Cloud Monitoring. More details in
   // https://cloud.google.com/monitoring/quotas#custom_metrics_quotas.
@@ -132,7 +136,8 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
       String databaseId,
       Credentials credentials,
       Map<String, String> clientAttributes) {
-    String key = projectId + ":" + databaseId;
+    int credHash = credentials != null ? credentials.hashCode() : 0;
+    String key = projectId + ":" + databaseId + ":" + credHash;
 
     // Use compute to acquire or create the client atomically with reference counting.
     // If creation fails, we log the error and return null so it's not added to the map.
@@ -161,7 +166,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
     }
 
     return new DatastoreCloudMonitoringExporter(
-        projectId, databaseId, cachedMetricsClient.client, clientAttributes);
+        key, projectId, databaseId, cachedMetricsClient.client, clientAttributes);
   }
 
   private static MetricServiceClient createMetricServiceClient(Credentials credentials)
@@ -185,10 +190,12 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
 
   @VisibleForTesting
   DatastoreCloudMonitoringExporter(
+      String cacheKey,
       String projectId,
       String databaseId,
       MetricServiceClient client,
       Map<String, String> clientAttributes) {
+    this.cacheKey = cacheKey;
     this.client = client;
     this.projectId = projectId;
     this.databaseId = databaseId;
@@ -307,10 +314,9 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
     }
     CompletableResultCode shutdownResult = new CompletableResultCode();
     try {
-      String key = projectId + ":" + databaseId;
       // Atomically decrement reference count and cleanup if zero.
       METRICS_CLIENT_CACHE.compute(
-          key,
+          cacheKey,
           (k, v) -> {
             if (v != null && v.refCount.decrementAndGet() == 0) {
               v.client.shutdown();

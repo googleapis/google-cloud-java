@@ -30,8 +30,8 @@ public class BuiltInDatastoreMetricsProviderTest {
   private static final String PROJECT_ID = "project-id";
 
   @Test
-  public void testGetClientAttributes() {
-    Map<String, String> attributes = BuiltInDatastoreMetricsProvider.INSTANCE.getClientAttributes();
+  public void testBuildClientAttributes() {
+    Map<String, String> attributes = BuiltInDatastoreMetricsProvider.buildClientAttributes();
     assertThat(attributes).containsKey(TelemetryConstants.CLIENT_UID_KEY.getKey());
     assertThat(attributes.get(TelemetryConstants.CLIENT_UID_KEY.getKey())).contains("@");
     assertThat(attributes).containsKey(TelemetryConstants.SERVICE_KEY.getKey());

@@ -105,7 +105,6 @@ public class TelemetryConstants {
 
   // Metric attribute keys (used on metric data points)
   public static final AttributeKey<String> CLIENT_UID_KEY = AttributeKey.stringKey("client_uid");
-  public static final AttributeKey<String> CLIENT_NAME_KEY = AttributeKey.stringKey("client_name");
   public static final AttributeKey<String> METHOD_KEY = AttributeKey.stringKey("method");
   public static final AttributeKey<String> STATUS_KEY = AttributeKey.stringKey("status");
   public static final AttributeKey<String> SERVICE_KEY = AttributeKey.stringKey("service");
