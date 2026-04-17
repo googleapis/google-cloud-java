@@ -1029,3 +1029,5 @@ google-cloud-nio:0.131.0:0.131.0
 google-cloud-appoptimize:0.1.0:0.1.0
 proto-google-cloud-appoptimize-v1beta:0.1.0:0.1.0
 grpc-google-cloud-appoptimize-v1beta:0.1.0:0.1.0
+proto-google-cloud-os-login-v1beta:2.90.0:2.90.0
+grpc-google-cloud-os-login-v1beta:2.90.0:2.90.0
