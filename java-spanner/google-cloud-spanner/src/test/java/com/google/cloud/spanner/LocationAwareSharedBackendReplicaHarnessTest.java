@@ -249,6 +249,156 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
   }
 
   @Test
+  public void singleUseReadReroutesOnUnavailableForBypassTraffic() throws Exception {
+    try (SharedBackendReplicaHarness harness = SharedBackendReplicaHarness.create(2);
+        Spanner spanner = createSpanner(harness)) {
+      configureBackend(harness, singleRowReadResultSet("b"));
+      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
+
+      seedLocationMetadata(client);
+      waitForReplicaRoutedRead(client, harness, 0);
+      harness.clearRequests();
+
+      harness
+          .replicas
+          .get(0)
+          .putMethodErrors(
+              SharedBackendReplicaHarness.METHOD_STREAMING_READ, unavailable("isolated-replica"));
+
+      try (ResultSet resultSet =
+          client
+              .singleUse()
+              .read(
+                  TABLE,
+                  KeySet.singleKey(Key.of("b")),
+                  Arrays.asList("k"),
+                  Options.directedRead(DIRECTED_READ_OPTIONS))) {
+        assertTrue(resultSet.next());
+      }
+
+      assertEquals(
+          1,
+          harness
+              .replicas
+              .get(0)
+              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+              .size());
+      assertEquals(
+          1,
+          harness
+              .replicas
+              .get(1)
+              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+              .size());
+      assertEquals(
+          0,
+          harness
+              .defaultReplica
+              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+              .size());
+      ReadRequest replicaARequest =
+          (ReadRequest)
+              harness
+                  .replicas
+                  .get(0)
+                  .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+                  .get(0);
+      assertTrue(replicaARequest.getResumeToken().isEmpty());
+      assertRetriedOnSameLogicalRequest(
+          harness
+              .replicas
+              .get(0)
+              .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+              .get(0),
+          harness
+              .replicas
+              .get(1)
+              .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+              .get(0));
+    }
+  }
+
+  @Test
+  public void singleUseReadCooldownSkipsUnavailableReplicaOnNextRequestForBypassTraffic()
+      throws Exception {
+    try (SharedBackendReplicaHarness harness = SharedBackendReplicaHarness.create(2);
+        Spanner spanner = createSpanner(harness)) {
+      configureBackend(harness, singleRowReadResultSet("b"));
+      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
+
+      seedLocationMetadata(client);
+      waitForReplicaRoutedRead(client, harness, 0);
+      harness.clearRequests();
+
+      harness
+          .replicas
+          .get(0)
+          .putMethodErrors(
+              SharedBackendReplicaHarness.METHOD_STREAMING_READ, unavailable("isolated-replica"));
+
+      try (ResultSet firstRead =
+          client
+              .singleUse()
+              .read(
+                  TABLE,
+                  KeySet.singleKey(Key.of("b")),
+                  Arrays.asList("k"),
+                  Options.directedRead(DIRECTED_READ_OPTIONS))) {
+        assertTrue(firstRead.next());
+      }
+
+      try (ResultSet secondRead =
+          client
+              .singleUse()
+              .read(
+                  TABLE,
+                  KeySet.singleKey(Key.of("b")),
+                  Arrays.asList("k"),
+                  Options.directedRead(DIRECTED_READ_OPTIONS))) {
+        assertTrue(secondRead.next());
+      }
+
+      assertEquals(
+          1,
+          harness
+              .replicas
+              .get(0)
+              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+              .size());
+      assertEquals(
+          2,
+          harness
+              .replicas
+              .get(1)
+              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+              .size());
+      assertEquals(
+          0,
+          harness
+              .defaultReplica
+              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+              .size());
+      List<AbstractMessage> replicaBRequests =
+          harness.replicas.get(1).getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
+      for (AbstractMessage request : replicaBRequests) {
+        assertTrue(((ReadRequest) request).getResumeToken().isEmpty());
+      }
+      List<String> replicaBRequestIds =
+          harness.replicas.get(1).getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
+      assertRetriedOnSameLogicalRequest(
+          harness
+              .replicas
+              .get(0)
+              .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+              .get(0),
+          replicaBRequestIds.get(0));
+      assertNotEquals(
+          XGoogSpannerRequestId.of(replicaBRequestIds.get(0)).getLogicalRequestKey(),
+          XGoogSpannerRequestId.of(replicaBRequestIds.get(1)).getLogicalRequestKey());
+    }
+  }
+
+  @Test
   public void singleUseReadMidStreamRecvFailureWithoutRetryInfoRetriesForBypassTraffic()
       throws Exception {
     try (SharedBackendReplicaHarness harness = SharedBackendReplicaHarness.create(2);
@@ -484,6 +634,10 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
 
   private static StatusRuntimeException resourceExhausted(String description) {
     return Status.RESOURCE_EXHAUSTED.withDescription(description).asRuntimeException();
+  }
+
+  private static StatusRuntimeException unavailable(String description) {
+    return Status.UNAVAILABLE.withDescription(description).asRuntimeException();
   }
 
   private static void assertRetriedOnSameLogicalRequest(

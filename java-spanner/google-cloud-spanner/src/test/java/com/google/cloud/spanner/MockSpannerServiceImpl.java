@@ -208,7 +208,9 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
         ByteString resumeToken) {
       this.resultSet = resultSet;
       this.currentRow = parseResumeToken(resumeToken);
-      this.hasNext = currentRow < resultSet.getRowsCount();
+      this.hasNext =
+          currentRow < resultSet.getRowsCount()
+              || (currentRow == 0 && resultSet.getRowsCount() == 0);
       this.setPrecommitToken = setPrecommitToken;
       this.transactionId = transactionId;
     }

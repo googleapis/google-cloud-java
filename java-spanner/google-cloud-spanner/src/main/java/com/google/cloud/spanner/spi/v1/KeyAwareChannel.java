@@ -95,9 +95,9 @@ final class KeyAwareChannel extends ManagedChannel {
   // Bounded to prevent unbounded growth if application code does not close read-only transactions.
   private final Cache<ByteString, Boolean> readOnlyTxPreferLeader =
       CacheBuilder.newBuilder().maximumSize(MAX_TRACKED_READ_ONLY_TRANSACTIONS).build();
-  // If a routed endpoint returns RESOURCE_EXHAUSTED, the next retry attempt of that same logical
-  // request should avoid that endpoint once so other requests are unaffected. Bound and age out
-  // entries in case a caller gives up and never issues a retry.
+  // If a routed endpoint returns RESOURCE_EXHAUSTED or UNAVAILABLE, the next retry attempt of
+  // that same logical request should avoid that endpoint once so other requests are unaffected.
+  // Bound and age out entries in case a caller gives up and never issues a retry.
   private final Cache<String, Set<String>> excludedEndpointsForLogicalRequest =
       CacheBuilder.newBuilder()
           .maximumSize(MAX_TRACKED_EXCLUDED_LOGICAL_REQUESTS)
@@ -362,6 +362,11 @@ final class KeyAwareChannel extends ManagedChannel {
               updated.add(address);
               return updated;
             });
+  }
+
+  private static boolean shouldExcludeEndpointOnRetry(io.grpc.Status.Code statusCode) {
+    return statusCode == io.grpc.Status.Code.RESOURCE_EXHAUSTED
+        || statusCode == io.grpc.Status.Code.UNAVAILABLE;
   }
 
   private Predicate<String> consumeExcludedEndpointsForCurrentCall(
@@ -898,7 +903,7 @@ final class KeyAwareChannel extends ManagedChannel {
 
     @Override
     public void onClose(io.grpc.Status status, Metadata trailers) {
-      if (status.getCode() == io.grpc.Status.Code.RESOURCE_EXHAUSTED) {
+      if (shouldExcludeEndpointOnRetry(status.getCode())) {
         call.parentChannel.maybeExcludeEndpointOnNextCall(
             call.selectedEndpoint, call.logicalRequestKey);
       }
