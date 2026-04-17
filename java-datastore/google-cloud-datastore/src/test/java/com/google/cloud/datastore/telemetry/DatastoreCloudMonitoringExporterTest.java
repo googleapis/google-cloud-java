@@ -83,7 +83,7 @@ public class DatastoreCloudMonitoringExporterTest {
 
     exporter =
         new DatastoreCloudMonitoringExporter(
-            PROJECT_ID + ":" + DATABASE_ID + ":0",
+            PROJECT_ID + ":" + DATABASE_ID,
             PROJECT_ID,
             DATABASE_ID,
             fakeMetricServiceClient,
@@ -166,14 +166,15 @@ public class DatastoreCloudMonitoringExporterTest {
     EasyMock.expectLastCall(); // Expect shutdown when refCount reaches 0
     replay(mockClient);
 
-    String key = PROJECT_ID + ":" + DATABASE_ID + ":0";
+    String key = PROJECT_ID + ":" + DATABASE_ID;
     DatastoreCloudMonitoringExporter.CachedMetricsClient cachedMetricsClient =
         new DatastoreCloudMonitoringExporter.CachedMetricsClient(mockClient);
     cachedMetricsClient.refCount.set(2); // Simulate 2 references
     DatastoreCloudMonitoringExporter.METRICS_CLIENT_CACHE.put(key, cachedMetricsClient);
 
     DatastoreCloudMonitoringExporter exporter1 =
-        new DatastoreCloudMonitoringExporter(key, PROJECT_ID, DATABASE_ID, mockClient, Collections.emptyMap());
+        new DatastoreCloudMonitoringExporter(
+            key, PROJECT_ID, DATABASE_ID, mockClient, Collections.emptyMap());
 
     // First shutdown should decrement refCount to 1, but not close client
     exporter1.shutdown();
@@ -181,7 +182,8 @@ public class DatastoreCloudMonitoringExporterTest {
     assertThat(DatastoreCloudMonitoringExporter.METRICS_CLIENT_CACHE.containsKey(key)).isTrue();
 
     DatastoreCloudMonitoringExporter exporter2 =
-        new DatastoreCloudMonitoringExporter(key, PROJECT_ID, DATABASE_ID, mockClient, Collections.emptyMap());
+        new DatastoreCloudMonitoringExporter(
+            key, PROJECT_ID, DATABASE_ID, mockClient, Collections.emptyMap());
 
     // Second shutdown should decrement refCount to 0, close client, and remove from cache
     exporter2.shutdown();

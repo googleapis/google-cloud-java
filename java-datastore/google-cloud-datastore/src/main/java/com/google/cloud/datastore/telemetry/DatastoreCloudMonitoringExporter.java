@@ -85,12 +85,10 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
   }
 
   /**
-   * Shared cache for {@link MetricServiceClient} instances, keyed by
-   * "projectId:databaseId:credentialsHashCode". Sharing a single gRPC channel across exporter
-   * instances that target the same project, database, and credentials avoids per-client channel
-   * overhead (threads, connections, memory). The credentials hash ensures that clients using
-   * different credentials get their own isolated channel. Reference counting is used to safely shut
-   * down the client when no longer needed.
+   * Shared cache for {@link MetricServiceClient} instances, keyed by "projectId:databaseId".
+   * Sharing a single gRPC channel across exporter instances that target the same project and
+   * database avoids per-client channel overhead (threads, connections, memory). Reference counting
+   * is used to safely shut down the client when no longer needed.
    */
   static final ConcurrentHashMap<String, CachedMetricsClient> METRICS_CLIENT_CACHE =
       new ConcurrentHashMap<>();
@@ -136,8 +134,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
       String databaseId,
       Credentials credentials,
       Map<String, String> clientAttributes) {
-    int credHash = credentials != null ? credentials.hashCode() : 0;
-    String key = projectId + ":" + databaseId + ":" + credHash;
+    String key = projectId + ":" + databaseId;
 
     // Use compute to acquire or create the client atomically with reference counting.
     // If creation fails, we log the error and return null so it's not added to the map.
