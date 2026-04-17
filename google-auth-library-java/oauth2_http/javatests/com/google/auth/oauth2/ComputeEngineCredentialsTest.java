@@ -59,10 +59,18 @@ import com.google.auth.TestUtils;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.auth.oauth2.DefaultCredentialsProviderTest.MockRequestCountingTransportFactory;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.concurrent.atomic.AtomicLong;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -76,6 +84,24 @@ import org.junit.jupiter.api.Test;
 class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
   private static final URI CALL_URI = URI.create("http://googleapis.com/testapi/v1/foo");
+
+  private TestEnvironmentProvider envProvider;
+  private Path tempDir;
+
+  @BeforeEach
+  void setUp() throws IOException {
+    envProvider = new TestEnvironmentProvider();
+    // Inject our test environment reader into AgentIdentityUtils
+    AgentIdentityUtils.setEnvReader(envProvider::getEnv);
+    tempDir = Files.createTempDirectory("compute_engine_creds_test");
+  }
+
+  @AfterEach
+  void tearDown() {
+    // Reset the mocks
+    AgentIdentityUtils.resetTimeService();
+    AgentIdentityUtils.setEnvReader(System::getenv);
+  }
 
   private static final String TOKEN_URL =
       "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token";
@@ -1175,6 +1201,121 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
     assertEquals("explicit.project_id", credentials.getProjectId());
     assertEquals(0, transportFactory.transport.getRequestCount());
+  }
+
+  @Test
+  void refreshAccessToken_noAgentConfig_requestsNormalToken() throws IOException {
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", null);
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+    transportFactory.transport.setAccessToken("default", ACCESS_TOKEN);
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    AccessToken token = credentials.refreshAccessToken();
+    assertNotNull(token);
+    assertEquals(ACCESS_TOKEN, token.getTokenValue());
+    String requestUrl = transportFactory.transport.getRequest().getUrl().toString();
+    assertFalse(requestUrl.contains("bindCertificateFingerprint"));
+  }
+
+  @Test
+  void refreshAccessToken_withStandardCert_requestsNormalToken() throws IOException {
+    setupCertConfig("x509_leaf_certificate.pem");
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+    transportFactory.transport.setAccessToken("default", ACCESS_TOKEN);
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    AccessToken token = credentials.refreshAccessToken();
+    assertNotNull(token);
+    assertEquals(ACCESS_TOKEN, token.getTokenValue());
+    String requestUrl = transportFactory.transport.getRequest().getUrl().toString();
+    assertFalse(requestUrl.contains("bindCertificateFingerprint"));
+  }
+
+  @Test
+  void refreshAccessToken_withAgentCert_requestsBoundToken() throws IOException {
+    setupCertConfig("agent_spiffe_cert.pem");
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+    transportFactory.transport.setAccessToken("default", ACCESS_TOKEN);
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    AccessToken token = credentials.refreshAccessToken();
+    assertNotNull(token);
+    assertEquals(ACCESS_TOKEN, token.getTokenValue());
+    String requestUrl = transportFactory.transport.getRequest().getUrl().toString();
+    assertTrue(requestUrl.contains("bindCertificateFingerprint"));
+  }
+
+  @Test
+  void refreshAccessToken_withAgentCert_optedOut_requestsNormalToken() throws IOException {
+    setupCertConfig("agent_spiffe_cert.pem");
+    envProvider.setEnv("GOOGLE_API_PREVENT_AGENT_TOKEN_SHARING_FOR_GCP_SERVICES", "false");
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+    transportFactory.transport.setAccessToken("default", ACCESS_TOKEN);
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    AccessToken token = credentials.refreshAccessToken();
+    assertNotNull(token);
+    assertEquals(ACCESS_TOKEN, token.getTokenValue());
+    String requestUrl = transportFactory.transport.getRequest().getUrl().toString();
+    assertFalse(requestUrl.contains("bindCertificateFingerprint"));
+  }
+
+  @Test
+  void refreshAccessToken_agentConfigMissingFile_throws() throws IOException {
+    envProvider.setEnv(
+        AgentIdentityUtils.GOOGLE_API_CERTIFICATE_CONFIG,
+        tempDir.resolve("missing_config.json").toAbsolutePath().toString());
+    final AtomicLong currentTime = new AtomicLong(0);
+    AgentIdentityUtils.setTimeService(
+        new AgentIdentityUtils.TimeService() {
+          @Override
+          public long currentTimeMillis() {
+            return currentTime.get();
+          }
+          @Override
+          public void sleep(long millis) {
+            currentTime.addAndGet(millis);
+          }
+        });
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    transportFactory.transport.setServiceAccountEmail(SA_CLIENT_EMAIL);
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    IOException e = assertThrows(IOException.class, credentials::refreshAccessToken);
+    assertTrue(
+        e.getMessage()
+            .contains(
+                "Unable to find Agent Identity certificate config or file for bound token request after multiple retries."));
+  }
+
+  private void setupCertConfig(String certResourceName) throws IOException {
+    Path certPath = tempDir.resolve("cert.pem");
+    try (InputStream certStream =
+        getClass().getClassLoader().getResourceAsStream(certResourceName)) {
+      assertNotNull(certStream, "Test resource " + certResourceName + " not found");
+      Files.copy(certStream, certPath);
+    }
+    Path configPath = tempDir.resolve("config.json");
+    String configContent =
+        "{\"cert_configs\": {\"workload\": {\"cert_path\": \""
+            + certPath.toAbsolutePath().toString().replace("\\", "\\\\")
+            + "\"}}}";
+    Files.write(configPath, configContent.getBytes(StandardCharsets.UTF_8));
+    envProvider.setEnv("GOOGLE_API_CERTIFICATE_CONFIG", configPath.toAbsolutePath().toString());
+  }
+
+  private static class TestEnvironmentProvider {
+    private final Map<String, String> env = new HashMap<>();
+    void setEnv(String key, String value) {
+      env.put(key, value);
+    }
+    String getEnv(String key) {
+      return env.get(key);
+    }
   }
 
   static class MockMetadataServerTransportFactory implements HttpTransportFactory {
