@@ -49,10 +49,10 @@ public interface ProductInputOrBuilder
    * MUST be used if any part of the product identifier (like `offer_id`)
    * contains characters such as `/`, `%`, or `~`.
    * *   Example: To represent the product ID `en~US~sku/123`, the
-   * `{productinput}` segment must be the base64url encoding of this
-   * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+   * `{productinput}` segment must be the unpadded base64url encoding of
+   * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
    * for the product would be
-   * `accounts/123/productinputs/ZW5-VVMtc2t1LzEyMw`.
+   * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
    *
    * 2.  **Plain Format**: The `{productinput}` segment is the tilde-separated
    * string
@@ -64,10 +64,6 @@ public interface ProductInputOrBuilder
    * correct parsing, especially those containing special characters. The
    * presence of tilde (`~`) characters in the `{productinput}` segment is used
    * to differentiate between the two formats.
-   *
-   * Note: For calls to the v1beta version, the plain format is
-   * `channel~content_language~feed_label~offer_id`, for example:
-   * `accounts/123/productinputs/online~en~US~sku123`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -99,10 +95,10 @@ public interface ProductInputOrBuilder
    * MUST be used if any part of the product identifier (like `offer_id`)
    * contains characters such as `/`, `%`, or `~`.
    * *   Example: To represent the product ID `en~US~sku/123`, the
-   * `{productinput}` segment must be the base64url encoding of this
-   * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+   * `{productinput}` segment must be the unpadded base64url encoding of
+   * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
    * for the product would be
-   * `accounts/123/productinputs/ZW5-VVMtc2t1LzEyMw`.
+   * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
    *
    * 2.  **Plain Format**: The `{productinput}` segment is the tilde-separated
    * string
@@ -114,10 +110,6 @@ public interface ProductInputOrBuilder
    * correct parsing, especially those containing special characters. The
    * presence of tilde (`~`) characters in the `{productinput}` segment is used
    * to differentiate between the two formats.
-   *
-   * Note: For calls to the v1beta version, the plain format is
-   * `channel~content_language~feed_label~offer_id`, for example:
-   * `accounts/123/productinputs/online~en~US~sku123`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -125,6 +117,50 @@ public interface ProductInputOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The **unpadded base64url encoded name** of the product input.
+   * Format:
+   * `accounts/{account}/productInputs/{productinput}` where the last
+   * section `productinput` is the unpadded base64url encoding of the
+   * `content_language~feed_label~offer_id` name.
+   * Example: `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw` for the decoded
+   * product input name `accounts/123/productInputs/en~US~sku/123`. This field
+   * can be used directly as input to the API methods that require the product
+   * input name to be encoded if it contains special characters, for example
+   * [`GetProductInput`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.productInputs/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The base64EncodedName.
+   */
+  java.lang.String getBase64EncodedName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The **unpadded base64url encoded name** of the product input.
+   * Format:
+   * `accounts/{account}/productInputs/{productinput}` where the last
+   * section `productinput` is the unpadded base64url encoding of the
+   * `content_language~feed_label~offer_id` name.
+   * Example: `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw` for the decoded
+   * product input name `accounts/123/productInputs/en~US~sku/123`. This field
+   * can be used directly as input to the API methods that require the product
+   * input name to be encoded if it contains special characters, for example
+   * [`GetProductInput`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.productInputs/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for base64EncodedName.
+   */
+  com.google.protobuf.ByteString getBase64EncodedNameBytes();
 
   /**
    *
@@ -153,6 +189,48 @@ public interface ProductInputOrBuilder
    * @return The bytes for product.
    */
   com.google.protobuf.ByteString getProductBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The **unpadded base64url encoded name** of the processed
+   * product. Format: `accounts/{account}/products/{product}` where the last
+   * section `product` is the unpadded base64url encoding of the
+   * `content_language~feed_label~offer_id` name.
+   * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded
+   * product name `accounts/123/products/en~US~sku/123`. This field can be used
+   * directly as input to the API methods that require the product name to be
+   * encoded if it contains special characters, for example
+   * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_product = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The base64EncodedProduct.
+   */
+  java.lang.String getBase64EncodedProduct();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The **unpadded base64url encoded name** of the processed
+   * product. Format: `accounts/{account}/products/{product}` where the last
+   * section `product` is the unpadded base64url encoding of the
+   * `content_language~feed_label~offer_id` name.
+   * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded
+   * product name `accounts/123/products/en~US~sku/123`. This field can be used
+   * directly as input to the API methods that require the product name to be
+   * encoded if it contains special characters, for example
+   * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_product = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for base64EncodedProduct.
+   */
+  com.google.protobuf.ByteString getBase64EncodedProductBytes();
 
   /**
    *

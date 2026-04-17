@@ -1901,6 +1901,30 @@ public final class SingleTenantHsmInstance extends com.google.protobuf.Generated
     return disableTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : disableTime_;
   }
 
+  public static final int KEY_PORTABILITY_ENABLED_FIELD_NUMBER = 8;
+  private boolean keyPortabilityEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Indicates whether key portability is enabled for the
+   * [SingleTenantHsmInstance][google.cloud.kms.v1.SingleTenantHsmInstance].
+   * This can only be set at creation time. Key portability features are
+   * disabled by default and not yet available in GA.
+   * </pre>
+   *
+   * <code>
+   * bool key_portability_enabled = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The keyPortabilityEnabled.
+   */
+  @java.lang.Override
+  public boolean getKeyPortabilityEnabled() {
+    return keyPortabilityEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1937,6 +1961,9 @@ public final class SingleTenantHsmInstance extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(7, getDisableTime());
     }
+    if (keyPortabilityEnabled_ != false) {
+      output.writeBool(8, keyPortabilityEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1969,6 +1996,9 @@ public final class SingleTenantHsmInstance extends com.google.protobuf.Generated
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getDisableTime());
+    }
+    if (keyPortabilityEnabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, keyPortabilityEnabled_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2010,6 +2040,7 @@ public final class SingleTenantHsmInstance extends com.google.protobuf.Generated
     if (hasDisableTime()) {
       if (!getDisableTime().equals(other.getDisableTime())) return false;
     }
+    if (getKeyPortabilityEnabled() != other.getKeyPortabilityEnabled()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2045,6 +2076,8 @@ public final class SingleTenantHsmInstance extends com.google.protobuf.Generated
       hash = (37 * hash) + DISABLE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getDisableTime().hashCode();
     }
+    hash = (37 * hash) + KEY_PORTABILITY_ENABLED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getKeyPortabilityEnabled());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2231,6 +2264,7 @@ public final class SingleTenantHsmInstance extends com.google.protobuf.Generated
         disableTimeBuilder_.dispose();
         disableTimeBuilder_ = null;
       }
+      keyPortabilityEnabled_ = false;
       return this;
     }
 
@@ -2298,6 +2332,9 @@ public final class SingleTenantHsmInstance extends com.google.protobuf.Generated
             disableTimeBuilder_ == null ? disableTime_ : disableTimeBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.keyPortabilityEnabled_ = keyPortabilityEnabled_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2336,6 +2373,9 @@ public final class SingleTenantHsmInstance extends com.google.protobuf.Generated
       }
       if (other.hasDisableTime()) {
         mergeDisableTime(other.getDisableTime());
+      }
+      if (other.getKeyPortabilityEnabled() != false) {
+        setKeyPortabilityEnabled(other.getKeyPortabilityEnabled());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2411,6 +2451,12 @@ public final class SingleTenantHsmInstance extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+            case 64:
+              {
+                keyPortabilityEnabled_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3855,6 +3901,77 @@ public final class SingleTenantHsmInstance extends com.google.protobuf.Generated
         disableTime_ = null;
       }
       return disableTimeBuilder_;
+    }
+
+    private boolean keyPortabilityEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Indicates whether key portability is enabled for the
+     * [SingleTenantHsmInstance][google.cloud.kms.v1.SingleTenantHsmInstance].
+     * This can only be set at creation time. Key portability features are
+     * disabled by default and not yet available in GA.
+     * </pre>
+     *
+     * <code>
+     * bool key_portability_enabled = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The keyPortabilityEnabled.
+     */
+    @java.lang.Override
+    public boolean getKeyPortabilityEnabled() {
+      return keyPortabilityEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Indicates whether key portability is enabled for the
+     * [SingleTenantHsmInstance][google.cloud.kms.v1.SingleTenantHsmInstance].
+     * This can only be set at creation time. Key portability features are
+     * disabled by default and not yet available in GA.
+     * </pre>
+     *
+     * <code>
+     * bool key_portability_enabled = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The keyPortabilityEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setKeyPortabilityEnabled(boolean value) {
+
+      keyPortabilityEnabled_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Indicates whether key portability is enabled for the
+     * [SingleTenantHsmInstance][google.cloud.kms.v1.SingleTenantHsmInstance].
+     * This can only be set at creation time. Key portability features are
+     * disabled by default and not yet available in GA.
+     * </pre>
+     *
+     * <code>
+     * bool key_portability_enabled = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearKeyPortabilityEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      keyPortabilityEnabled_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.kms.v1.SingleTenantHsmInstance)

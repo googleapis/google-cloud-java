@@ -23,6 +23,7 @@ jobs:
         filters: |
           library:
             - 'sdk-platform-java/**'
+            - .kokoro/downstream-compatibility.sh
   downstream-compatibility:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}

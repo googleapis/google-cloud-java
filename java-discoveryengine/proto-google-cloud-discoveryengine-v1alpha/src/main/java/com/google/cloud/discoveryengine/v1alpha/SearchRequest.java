@@ -27095,6 +27095,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
        * <code>ENABLED = 2;</code>
        */
       ENABLED(2),
+      /**
+       *
+       *
+       * <pre>
+       * Automatic switching between search-as-you-type and standard search
+       * modes, ideal for single-API implementations (e.g., debouncing).
+       * </pre>
+       *
+       * <code>AUTO = 3;</code>
+       */
+      AUTO(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -27142,6 +27153,18 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
        */
       public static final int ENABLED_VALUE = 2;
 
+      /**
+       *
+       *
+       * <pre>
+       * Automatic switching between search-as-you-type and standard search
+       * modes, ideal for single-API implementations (e.g., debouncing).
+       * </pre>
+       *
+       * <code>AUTO = 3;</code>
+       */
+      public static final int AUTO_VALUE = 3;
+
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
           throw new java.lang.IllegalArgumentException(
@@ -27172,6 +27195,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessage
             return DISABLED;
           case 2:
             return ENABLED;
+          case 3:
+            return AUTO;
           default:
             return null;
         }
