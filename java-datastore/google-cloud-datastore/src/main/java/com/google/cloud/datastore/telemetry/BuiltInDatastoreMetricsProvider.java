@@ -29,7 +29,6 @@ import java.lang.management.ManagementFactory;
 import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -59,13 +58,12 @@ public final class BuiltInDatastoreMetricsProvider {
   private static volatile String location;
   private static final String DEFAULT_LOCATION = "global";
 
-  private final Map<String, String> cachedClientAttributes;
+  // Pre-computed once per JVM; hostname lookup can block, so we pay the cost at class-init time.
+  private static final String PID_AND_HOSTNAME = getProcessId() + "@" + getHostnameSafely();
 
-  private BuiltInDatastoreMetricsProvider() {
-    cachedClientAttributes = Collections.unmodifiableMap(buildClientAttributes());
-  }
+  private BuiltInDatastoreMetricsProvider() {}
 
-  private Map<String, String> buildClientAttributes() {
+  static Map<String, String> buildClientAttributes() {
     Map<String, String> attrs = new HashMap<>();
     attrs.put(TelemetryConstants.CLIENT_UID_KEY.getKey(), getDefaultTaskValue());
     attrs.put(TelemetryConstants.SERVICE_KEY.getKey(), TelemetryConstants.SERVICE_VALUE);
@@ -96,8 +94,6 @@ public final class BuiltInDatastoreMetricsProvider {
       @Nonnull String projectId, @Nonnull String databaseId, @Nonnull Credentials credentials) {
     SdkMeterProviderBuilder sdkMeterProviderBuilder = SdkMeterProvider.builder();
 
-    // Generate unique client attributes (including unique taskId) for this specific client
-    // instance.
     Map<String, String> clientAttributes = buildClientAttributes();
 
     if (credentials instanceof NoCredentials) {
@@ -159,44 +155,24 @@ public final class BuiltInDatastoreMetricsProvider {
   }
 
   /**
-   * Returns common client attributes added to every exported metric data point.
-   *
-   * <p>The returned map is pre-computed at construction time and shared across all export calls,
-   * since {@code client_name}, {@code client_uid}, and {@code service} are stable for the lifetime
-   * of the process.
-   *
-   * @return an unmodifiable map of client attributes.
-   */
-  Map<String, String> getClientAttributes() {
-    return cachedClientAttributes;
-  }
-
-  /**
    * Generates a unique identifier for the {@code client_uid} metric field.
    *
-   * <p>Combines a random UUID with {@code RuntimeMXBean.getName()} (typically {@code
+   * <p>Combines a random UUID with the pre-computed {@code PID_AND_HOSTNAME} (typically {@code
    * pid@hostname}). The UUID prefix ensures uniqueness across process restarts that reuse the same
    * PID, preventing Cloud Monitoring from conflating time series from different process lifecycles.
-   *
-   * <p>For Java 9 and later, the PID is obtained using the ProcessHandle API. For Java 8, the PID
-   * is extracted from ManagementFactory.getRuntimeMXBean().getName().
-   *
-   * <p><b>Note</b>: This method generates a new value every time it is called to ensure that each
-   * client instance gets a unique ID. It should be called sparingly (e.g., once per client
-   * creation) to avoid performance overhead from UUID generation and hostname lookup.
    *
    * @return a unique identifier string.
    */
   private static String getDefaultTaskValue() {
-    String identifier = UUID.randomUUID().toString();
-    String pid = getProcessId();
+    return UUID.randomUUID().toString() + "@" + PID_AND_HOSTNAME;
+  }
 
+  private static String getHostnameSafely() {
     try {
-      String hostname = InetAddress.getLocalHost().getHostName();
-      return identifier + "@" + pid + "@" + hostname;
+      return InetAddress.getLocalHost().getHostName();
     } catch (UnknownHostException e) {
       logger.log(Level.CONFIG, "Unable to get the hostname.", e);
-      return identifier + "@" + pid + "@localhost";
+      return "localhost";
     }
   }
 
