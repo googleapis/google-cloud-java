@@ -97,7 +97,6 @@ jobs:
               -Penable-integration-tests \
               -DenableShowcaseTestCoverage \
               org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-              -Dsonar.projectKey=googleapis_gapic-generator-java_integration_tests \
+              -Dsonar.projectKey=googleapis_google-cloud-java_showcase \
               -Dsonar.organization=googleapis \
-              -Dsonar.host.url=https://sonarcloud.io \
-              -Dsonar.projectName=googleapis_google-cloud-java_showcase
+              -Dsonar.host.url=https://sonarcloud.io
