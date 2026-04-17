@@ -44,7 +44,8 @@ integration-test:
 		-Denforcer.skip=true \
 		-Dit.failIfNoSpecifiedTests=true \
 		-Dit.test=$(test) \
-		integration-test
+		integration-test \
+		verify
 
 unit-test-coverage:
 	$(MAKE) unittest

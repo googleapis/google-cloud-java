@@ -191,7 +191,7 @@ public enum Edition implements com.google.protobuf.ProtocolMessageEnum {
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.databasecenter.v1beta.ServiceProto.getDescriptor()
         .getEnumTypes()
-        .get(1);
+        .get(0);
   }
 
   private static final Edition[] VALUES = values();

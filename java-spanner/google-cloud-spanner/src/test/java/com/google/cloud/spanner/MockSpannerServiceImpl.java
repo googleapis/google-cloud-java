@@ -219,6 +219,9 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
       PartialResultSet.Builder builder = PartialResultSet.newBuilder();
       if (first) {
         builder.setMetadata(resultSet.getMetadata());
+        if (resultSet.hasCacheUpdate()) {
+          builder.setCacheUpdate(resultSet.getCacheUpdate());
+        }
         first = false;
       }
       int recordCount = 0;
@@ -380,9 +383,6 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
       int keys = 0;
       for (Key key : keySet.getKeys()) {
         keys++;
-        if (key.size() != 0) {
-          return false;
-        }
       }
       return keys == 1;
     }

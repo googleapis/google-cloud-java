@@ -78,7 +78,9 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
 
   private ProductInput() {
     name_ = "";
+    base64EncodedName_ = "";
     product_ = "";
+    base64EncodedProduct_ = "";
     offerId_ = "";
     contentLanguage_ = "";
     feedLabel_ = "";
@@ -129,10 +131,10 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
    * MUST be used if any part of the product identifier (like `offer_id`)
    * contains characters such as `/`, `%`, or `~`.
    * *   Example: To represent the product ID `en~US~sku/123`, the
-   * `{productinput}` segment must be the base64url encoding of this
-   * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+   * `{productinput}` segment must be the unpadded base64url encoding of
+   * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
    * for the product would be
-   * `accounts/123/productinputs/ZW5-VVMtc2t1LzEyMw`.
+   * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
    *
    * 2.  **Plain Format**: The `{productinput}` segment is the tilde-separated
    * string
@@ -144,10 +146,6 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
    * correct parsing, especially those containing special characters. The
    * presence of tilde (`~`) characters in the `{productinput}` segment is used
    * to differentiate between the two formats.
-   *
-   * Note: For calls to the v1beta version, the plain format is
-   * `channel~content_language~feed_label~offer_id`, for example:
-   * `accounts/123/productinputs/online~en~US~sku123`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -190,10 +188,10 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
    * MUST be used if any part of the product identifier (like `offer_id`)
    * contains characters such as `/`, `%`, or `~`.
    * *   Example: To represent the product ID `en~US~sku/123`, the
-   * `{productinput}` segment must be the base64url encoding of this
-   * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+   * `{productinput}` segment must be the unpadded base64url encoding of
+   * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
    * for the product would be
-   * `accounts/123/productinputs/ZW5-VVMtc2t1LzEyMw`.
+   * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
    *
    * 2.  **Plain Format**: The `{productinput}` segment is the tilde-separated
    * string
@@ -205,10 +203,6 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
    * correct parsing, especially those containing special characters. The
    * presence of tilde (`~`) characters in the `{productinput}` segment is used
    * to differentiate between the two formats.
-   *
-   * Note: For calls to the v1beta version, the plain format is
-   * `channel~content_language~feed_label~offer_id`, for example:
-   * `accounts/123/productinputs/online~en~US~sku123`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -222,6 +216,77 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BASE64_ENCODED_NAME_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object base64EncodedName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The **unpadded base64url encoded name** of the product input.
+   * Format:
+   * `accounts/{account}/productInputs/{productinput}` where the last
+   * section `productinput` is the unpadded base64url encoding of the
+   * `content_language~feed_label~offer_id` name.
+   * Example: `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw` for the decoded
+   * product input name `accounts/123/productInputs/en~US~sku/123`. This field
+   * can be used directly as input to the API methods that require the product
+   * input name to be encoded if it contains special characters, for example
+   * [`GetProductInput`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.productInputs/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The base64EncodedName.
+   */
+  @java.lang.Override
+  public java.lang.String getBase64EncodedName() {
+    java.lang.Object ref = base64EncodedName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      base64EncodedName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The **unpadded base64url encoded name** of the product input.
+   * Format:
+   * `accounts/{account}/productInputs/{productinput}` where the last
+   * section `productinput` is the unpadded base64url encoding of the
+   * `content_language~feed_label~offer_id` name.
+   * Example: `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw` for the decoded
+   * product input name `accounts/123/productInputs/en~US~sku/123`. This field
+   * can be used directly as input to the API methods that require the product
+   * input name to be encoded if it contains special characters, for example
+   * [`GetProductInput`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.productInputs/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for base64EncodedName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBase64EncodedNameBytes() {
+    java.lang.Object ref = base64EncodedName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      base64EncodedName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -277,6 +342,75 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       product_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BASE64_ENCODED_PRODUCT_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object base64EncodedProduct_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The **unpadded base64url encoded name** of the processed
+   * product. Format: `accounts/{account}/products/{product}` where the last
+   * section `product` is the unpadded base64url encoding of the
+   * `content_language~feed_label~offer_id` name.
+   * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded
+   * product name `accounts/123/products/en~US~sku/123`. This field can be used
+   * directly as input to the API methods that require the product name to be
+   * encoded if it contains special characters, for example
+   * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_product = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The base64EncodedProduct.
+   */
+  @java.lang.Override
+  public java.lang.String getBase64EncodedProduct() {
+    java.lang.Object ref = base64EncodedProduct_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      base64EncodedProduct_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The **unpadded base64url encoded name** of the processed
+   * product. Format: `accounts/{account}/products/{product}` where the last
+   * section `product` is the unpadded base64url encoding of the
+   * `content_language~feed_label~offer_id` name.
+   * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded
+   * product name `accounts/123/products/en~US~sku/123`. This field can be used
+   * directly as input to the API methods that require the product name to be
+   * encoded if it contains special characters, for example
+   * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_product = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for base64EncodedProduct.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBase64EncodedProductBytes() {
+    java.lang.Object ref = base64EncodedProduct_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      base64EncodedProduct_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -805,6 +939,12 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(11, getProductAttributes());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(base64EncodedName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 12, base64EncodedName_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(base64EncodedProduct_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 13, base64EncodedProduct_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -841,6 +981,12 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getProductAttributes());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(base64EncodedName_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(12, base64EncodedName_);
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(base64EncodedProduct_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(13, base64EncodedProduct_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -858,7 +1004,9 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
         (com.google.shopping.merchant.products.v1.ProductInput) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getBase64EncodedName().equals(other.getBase64EncodedName())) return false;
     if (!getProduct().equals(other.getProduct())) return false;
+    if (!getBase64EncodedProduct().equals(other.getBase64EncodedProduct())) return false;
     if (getLegacyLocal() != other.getLegacyLocal()) return false;
     if (!getOfferId().equals(other.getOfferId())) return false;
     if (!getContentLanguage().equals(other.getContentLanguage())) return false;
@@ -885,8 +1033,12 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + BASE64_ENCODED_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getBase64EncodedName().hashCode();
     hash = (37 * hash) + PRODUCT_FIELD_NUMBER;
     hash = (53 * hash) + getProduct().hashCode();
+    hash = (37 * hash) + BASE64_ENCODED_PRODUCT_FIELD_NUMBER;
+    hash = (53 * hash) + getBase64EncodedProduct().hashCode();
     hash = (37 * hash) + LEGACY_LOCAL_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLegacyLocal());
     hash = (37 * hash) + OFFER_ID_FIELD_NUMBER;
@@ -1084,7 +1236,9 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      base64EncodedName_ = "";
       product_ = "";
+      base64EncodedProduct_ = "";
       legacyLocal_ = false;
       offerId_ = "";
       contentLanguage_ = "";
@@ -1101,7 +1255,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
         customAttributes_ = null;
         customAttributesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       return this;
     }
 
@@ -1140,9 +1294,9 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
     private void buildPartialRepeatedFields(
         com.google.shopping.merchant.products.v1.ProductInput result) {
       if (customAttributesBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           customAttributes_ = java.util.Collections.unmodifiableList(customAttributes_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.customAttributes_ = customAttributes_;
       } else {
@@ -1156,26 +1310,32 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
         result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.product_ = product_;
+        result.base64EncodedName_ = base64EncodedName_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.legacyLocal_ = legacyLocal_;
+        result.product_ = product_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.offerId_ = offerId_;
+        result.base64EncodedProduct_ = base64EncodedProduct_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.contentLanguage_ = contentLanguage_;
+        result.legacyLocal_ = legacyLocal_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.offerId_ = offerId_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.contentLanguage_ = contentLanguage_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.feedLabel_ = feedLabel_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.versionNumber_ = versionNumber_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.productAttributes_ =
             productAttributesBuilder_ == null
                 ? productAttributes_
@@ -1203,9 +1363,19 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getBase64EncodedName().isEmpty()) {
+        base64EncodedName_ = other.base64EncodedName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (!other.getProduct().isEmpty()) {
         product_ = other.product_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getBase64EncodedProduct().isEmpty()) {
+        base64EncodedProduct_ = other.base64EncodedProduct_;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.getLegacyLocal() != false) {
@@ -1213,17 +1383,17 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getOfferId().isEmpty()) {
         offerId_ = other.offerId_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getContentLanguage().isEmpty()) {
         contentLanguage_ = other.contentLanguage_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getFeedLabel().isEmpty()) {
         feedLabel_ = other.feedLabel_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (other.hasVersionNumber()) {
@@ -1236,7 +1406,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
         if (!other.customAttributes_.isEmpty()) {
           if (customAttributes_.isEmpty()) {
             customAttributes_ = other.customAttributes_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureCustomAttributesIsMutable();
             customAttributes_.addAll(other.customAttributes_);
@@ -1249,7 +1419,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
             customAttributesBuilder_.dispose();
             customAttributesBuilder_ = null;
             customAttributes_ = other.customAttributes_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000400);
             customAttributesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetCustomAttributesFieldBuilder()
@@ -1294,31 +1464,31 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
             case 18:
               {
                 product_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 18
             case 34:
               {
                 offerId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
             case 42:
               {
                 contentLanguage_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 42
             case 50:
               {
                 feedLabel_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 50
             case 56:
               {
                 versionNumber_ = input.readInt64();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 56
             case 74:
@@ -1337,16 +1507,28 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
             case 80:
               {
                 legacyLocal_ = input.readBool();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 80
             case 90:
               {
                 input.readMessage(
                     internalGetProductAttributesFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
+            case 98:
+              {
+                base64EncodedName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 98
+            case 106:
+              {
+                base64EncodedProduct_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1391,10 +1573,10 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      * MUST be used if any part of the product identifier (like `offer_id`)
      * contains characters such as `/`, `%`, or `~`.
      * *   Example: To represent the product ID `en~US~sku/123`, the
-     * `{productinput}` segment must be the base64url encoding of this
-     * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+     * `{productinput}` segment must be the unpadded base64url encoding of
+     * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
      * for the product would be
-     * `accounts/123/productinputs/ZW5-VVMtc2t1LzEyMw`.
+     * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
      *
      * 2.  **Plain Format**: The `{productinput}` segment is the tilde-separated
      * string
@@ -1406,10 +1588,6 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      * correct parsing, especially those containing special characters. The
      * presence of tilde (`~`) characters in the `{productinput}` segment is used
      * to differentiate between the two formats.
-     *
-     * Note: For calls to the v1beta version, the plain format is
-     * `channel~content_language~feed_label~offer_id`, for example:
-     * `accounts/123/productinputs/online~en~US~sku123`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1451,10 +1629,10 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      * MUST be used if any part of the product identifier (like `offer_id`)
      * contains characters such as `/`, `%`, or `~`.
      * *   Example: To represent the product ID `en~US~sku/123`, the
-     * `{productinput}` segment must be the base64url encoding of this
-     * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+     * `{productinput}` segment must be the unpadded base64url encoding of
+     * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
      * for the product would be
-     * `accounts/123/productinputs/ZW5-VVMtc2t1LzEyMw`.
+     * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
      *
      * 2.  **Plain Format**: The `{productinput}` segment is the tilde-separated
      * string
@@ -1466,10 +1644,6 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      * correct parsing, especially those containing special characters. The
      * presence of tilde (`~`) characters in the `{productinput}` segment is used
      * to differentiate between the two formats.
-     *
-     * Note: For calls to the v1beta version, the plain format is
-     * `channel~content_language~feed_label~offer_id`, for example:
-     * `accounts/123/productinputs/online~en~US~sku123`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1511,10 +1685,10 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      * MUST be used if any part of the product identifier (like `offer_id`)
      * contains characters such as `/`, `%`, or `~`.
      * *   Example: To represent the product ID `en~US~sku/123`, the
-     * `{productinput}` segment must be the base64url encoding of this
-     * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+     * `{productinput}` segment must be the unpadded base64url encoding of
+     * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
      * for the product would be
-     * `accounts/123/productinputs/ZW5-VVMtc2t1LzEyMw`.
+     * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
      *
      * 2.  **Plain Format**: The `{productinput}` segment is the tilde-separated
      * string
@@ -1526,10 +1700,6 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      * correct parsing, especially those containing special characters. The
      * presence of tilde (`~`) characters in the `{productinput}` segment is used
      * to differentiate between the two formats.
-     *
-     * Note: For calls to the v1beta version, the plain format is
-     * `channel~content_language~feed_label~offer_id`, for example:
-     * `accounts/123/productinputs/online~en~US~sku123`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1570,10 +1740,10 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      * MUST be used if any part of the product identifier (like `offer_id`)
      * contains characters such as `/`, `%`, or `~`.
      * *   Example: To represent the product ID `en~US~sku/123`, the
-     * `{productinput}` segment must be the base64url encoding of this
-     * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+     * `{productinput}` segment must be the unpadded base64url encoding of
+     * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
      * for the product would be
-     * `accounts/123/productinputs/ZW5-VVMtc2t1LzEyMw`.
+     * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
      *
      * 2.  **Plain Format**: The `{productinput}` segment is the tilde-separated
      * string
@@ -1585,10 +1755,6 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      * correct parsing, especially those containing special characters. The
      * presence of tilde (`~`) characters in the `{productinput}` segment is used
      * to differentiate between the two formats.
-     *
-     * Note: For calls to the v1beta version, the plain format is
-     * `channel~content_language~feed_label~offer_id`, for example:
-     * `accounts/123/productinputs/online~en~US~sku123`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1625,10 +1791,10 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      * MUST be used if any part of the product identifier (like `offer_id`)
      * contains characters such as `/`, `%`, or `~`.
      * *   Example: To represent the product ID `en~US~sku/123`, the
-     * `{productinput}` segment must be the base64url encoding of this
-     * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+     * `{productinput}` segment must be the unpadded base64url encoding of
+     * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
      * for the product would be
-     * `accounts/123/productinputs/ZW5-VVMtc2t1LzEyMw`.
+     * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
      *
      * 2.  **Plain Format**: The `{productinput}` segment is the tilde-separated
      * string
@@ -1640,10 +1806,6 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      * correct parsing, especially those containing special characters. The
      * presence of tilde (`~`) characters in the `{productinput}` segment is used
      * to differentiate between the two formats.
-     *
-     * Note: For calls to the v1beta version, the plain format is
-     * `channel~content_language~feed_label~offer_id`, for example:
-     * `accounts/123/productinputs/online~en~US~sku123`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1658,6 +1820,162 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object base64EncodedName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The **unpadded base64url encoded name** of the product input.
+     * Format:
+     * `accounts/{account}/productInputs/{productinput}` where the last
+     * section `productinput` is the unpadded base64url encoding of the
+     * `content_language~feed_label~offer_id` name.
+     * Example: `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw` for the decoded
+     * product input name `accounts/123/productInputs/en~US~sku/123`. This field
+     * can be used directly as input to the API methods that require the product
+     * input name to be encoded if it contains special characters, for example
+     * [`GetProductInput`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.productInputs/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The base64EncodedName.
+     */
+    public java.lang.String getBase64EncodedName() {
+      java.lang.Object ref = base64EncodedName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        base64EncodedName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The **unpadded base64url encoded name** of the product input.
+     * Format:
+     * `accounts/{account}/productInputs/{productinput}` where the last
+     * section `productinput` is the unpadded base64url encoding of the
+     * `content_language~feed_label~offer_id` name.
+     * Example: `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw` for the decoded
+     * product input name `accounts/123/productInputs/en~US~sku/123`. This field
+     * can be used directly as input to the API methods that require the product
+     * input name to be encoded if it contains special characters, for example
+     * [`GetProductInput`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.productInputs/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for base64EncodedName.
+     */
+    public com.google.protobuf.ByteString getBase64EncodedNameBytes() {
+      java.lang.Object ref = base64EncodedName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        base64EncodedName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The **unpadded base64url encoded name** of the product input.
+     * Format:
+     * `accounts/{account}/productInputs/{productinput}` where the last
+     * section `productinput` is the unpadded base64url encoding of the
+     * `content_language~feed_label~offer_id` name.
+     * Example: `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw` for the decoded
+     * product input name `accounts/123/productInputs/en~US~sku/123`. This field
+     * can be used directly as input to the API methods that require the product
+     * input name to be encoded if it contains special characters, for example
+     * [`GetProductInput`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.productInputs/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The base64EncodedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBase64EncodedName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      base64EncodedName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The **unpadded base64url encoded name** of the product input.
+     * Format:
+     * `accounts/{account}/productInputs/{productinput}` where the last
+     * section `productinput` is the unpadded base64url encoding of the
+     * `content_language~feed_label~offer_id` name.
+     * Example: `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw` for the decoded
+     * product input name `accounts/123/productInputs/en~US~sku/123`. This field
+     * can be used directly as input to the API methods that require the product
+     * input name to be encoded if it contains special characters, for example
+     * [`GetProductInput`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.productInputs/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBase64EncodedName() {
+      base64EncodedName_ = getDefaultInstance().getBase64EncodedName();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The **unpadded base64url encoded name** of the product input.
+     * Format:
+     * `accounts/{account}/productInputs/{productinput}` where the last
+     * section `productinput` is the unpadded base64url encoding of the
+     * `content_language~feed_label~offer_id` name.
+     * Example: `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw` for the decoded
+     * product input name `accounts/123/productInputs/en~US~sku/123`. This field
+     * can be used directly as input to the API methods that require the product
+     * input name to be encoded if it contains special characters, for example
+     * [`GetProductInput`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.productInputs/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for base64EncodedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBase64EncodedNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      base64EncodedName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1730,7 +2048,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       product_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1749,7 +2067,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearProduct() {
       product_ = getDefaultInstance().getProduct();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1773,7 +2091,158 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       product_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object base64EncodedProduct_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The **unpadded base64url encoded name** of the processed
+     * product. Format: `accounts/{account}/products/{product}` where the last
+     * section `product` is the unpadded base64url encoding of the
+     * `content_language~feed_label~offer_id` name.
+     * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded
+     * product name `accounts/123/products/en~US~sku/123`. This field can be used
+     * directly as input to the API methods that require the product name to be
+     * encoded if it contains special characters, for example
+     * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_product = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The base64EncodedProduct.
+     */
+    public java.lang.String getBase64EncodedProduct() {
+      java.lang.Object ref = base64EncodedProduct_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        base64EncodedProduct_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The **unpadded base64url encoded name** of the processed
+     * product. Format: `accounts/{account}/products/{product}` where the last
+     * section `product` is the unpadded base64url encoding of the
+     * `content_language~feed_label~offer_id` name.
+     * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded
+     * product name `accounts/123/products/en~US~sku/123`. This field can be used
+     * directly as input to the API methods that require the product name to be
+     * encoded if it contains special characters, for example
+     * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_product = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for base64EncodedProduct.
+     */
+    public com.google.protobuf.ByteString getBase64EncodedProductBytes() {
+      java.lang.Object ref = base64EncodedProduct_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        base64EncodedProduct_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The **unpadded base64url encoded name** of the processed
+     * product. Format: `accounts/{account}/products/{product}` where the last
+     * section `product` is the unpadded base64url encoding of the
+     * `content_language~feed_label~offer_id` name.
+     * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded
+     * product name `accounts/123/products/en~US~sku/123`. This field can be used
+     * directly as input to the API methods that require the product name to be
+     * encoded if it contains special characters, for example
+     * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_product = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The base64EncodedProduct to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBase64EncodedProduct(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      base64EncodedProduct_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The **unpadded base64url encoded name** of the processed
+     * product. Format: `accounts/{account}/products/{product}` where the last
+     * section `product` is the unpadded base64url encoding of the
+     * `content_language~feed_label~offer_id` name.
+     * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded
+     * product name `accounts/123/products/en~US~sku/123`. This field can be used
+     * directly as input to the API methods that require the product name to be
+     * encoded if it contains special characters, for example
+     * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_product = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBase64EncodedProduct() {
+      base64EncodedProduct_ = getDefaultInstance().getBase64EncodedProduct();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The **unpadded base64url encoded name** of the processed
+     * product. Format: `accounts/{account}/products/{product}` where the last
+     * section `product` is the unpadded base64url encoding of the
+     * `content_language~feed_label~offer_id` name.
+     * Example: `accounts/123/products/ZW5-VVN-c2t1LzEyMw` for the decoded
+     * product name `accounts/123/products/en~US~sku/123`. This field can be used
+     * directly as input to the API methods that require the product name to be
+     * encoded if it contains special characters, for example
+     * [`GetProduct`](https://developers.google.com/merchant/api/reference/rest/products_v1/accounts.products/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_product = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for base64EncodedProduct to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBase64EncodedProductBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      base64EncodedProduct_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1823,7 +2292,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
     public Builder setLegacyLocal(boolean value) {
 
       legacyLocal_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1846,7 +2315,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearLegacyLocal() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000010);
       legacyLocal_ = false;
       onChanged();
       return this;
@@ -1938,7 +2407,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       offerId_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1963,7 +2432,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearOfferId() {
       offerId_ = getDefaultInstance().getOfferId();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -1993,7 +2462,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       offerId_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2075,7 +2544,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       contentLanguage_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2097,7 +2566,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearContentLanguage() {
       contentLanguage_ = getDefaultInstance().getContentLanguage();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2124,7 +2593,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       contentLanguage_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2212,7 +2681,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       feedLabel_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2236,7 +2705,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearFeedLabel() {
       feedLabel_ = getDefaultInstance().getFeedLabel();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -2265,7 +2734,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       feedLabel_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2301,7 +2770,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasVersionNumber() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2367,7 +2836,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
     public Builder setVersionNumber(long value) {
 
       versionNumber_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2400,7 +2869,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearVersionNumber() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       versionNumber_ = 0L;
       onChanged();
       return this;
@@ -2427,7 +2896,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      * @return Whether the productAttributes field is set.
      */
     public boolean hasProductAttributes() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -2474,7 +2943,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
       } else {
         productAttributesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2497,7 +2966,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
       } else {
         productAttributesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2516,7 +2985,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
     public Builder mergeProductAttributes(
         com.google.shopping.merchant.products.v1.ProductAttributes value) {
       if (productAttributesBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && productAttributes_ != null
             && productAttributes_
                 != com.google.shopping.merchant.products.v1.ProductAttributes
@@ -2529,7 +2998,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
         productAttributesBuilder_.mergeFrom(value);
       }
       if (productAttributes_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -2547,7 +3016,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearProductAttributes() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       productAttributes_ = null;
       if (productAttributesBuilder_ != null) {
         productAttributesBuilder_.dispose();
@@ -2570,7 +3039,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
      */
     public com.google.shopping.merchant.products.v1.ProductAttributes.Builder
         getProductAttributesBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return internalGetProductAttributesFieldBuilder().getBuilder();
     }
@@ -2629,10 +3098,10 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
         java.util.Collections.emptyList();
 
     private void ensureCustomAttributesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         customAttributes_ =
             new java.util.ArrayList<com.google.shopping.type.CustomAttribute>(customAttributes_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -2990,7 +3459,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
     public Builder clearCustomAttributes() {
       if (customAttributesBuilder_ == null) {
         customAttributes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         customAttributesBuilder_.clear();
@@ -3205,7 +3674,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessage
                 com.google.shopping.type.CustomAttribute.Builder,
                 com.google.shopping.type.CustomAttributeOrBuilder>(
                 customAttributes_,
-                ((bitField0_ & 0x00000100) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         customAttributes_ = null;

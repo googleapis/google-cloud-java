@@ -99,10 +99,10 @@ public final class DeleteProductInputRequest extends com.google.protobuf.Generat
    * MUST be used if any part of the product identifier (like `offer_id`)
    * contains characters such as `/`, `%`, or `~`.
    * *   Example: To represent the product ID `en~US~sku/123`, the
-   * `{productInput}` segment must be the base64url encoding of this
-   * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+   * `{productInput}` segment must be the unpadded base64url encoding of
+   * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
    * for the product would be
-   * `accounts/123/productInputs/ZW5-VVMtc2t1LzEyMw`.
+   * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
    *
    * 2.  **Plain Format**: The `{productInput}` segment is the tilde-separated
    * string
@@ -114,10 +114,6 @@ public final class DeleteProductInputRequest extends com.google.protobuf.Generat
    * correct parsing, especially those containing special characters. The
    * presence of tilde (`~`) characters in the `{productInput}` segment is used
    * to differentiate between the two formats.
-   *
-   * Note: For calls to the v1beta version, the plain format is
-   * `channel~content_language~feed_label~offer_id`, for example:
-   * `accounts/123/productinputs/online~en~US~sku123`.
    * </pre>
    *
    * <code>
@@ -162,10 +158,10 @@ public final class DeleteProductInputRequest extends com.google.protobuf.Generat
    * MUST be used if any part of the product identifier (like `offer_id`)
    * contains characters such as `/`, `%`, or `~`.
    * *   Example: To represent the product ID `en~US~sku/123`, the
-   * `{productInput}` segment must be the base64url encoding of this
-   * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+   * `{productInput}` segment must be the unpadded base64url encoding of
+   * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
    * for the product would be
-   * `accounts/123/productInputs/ZW5-VVMtc2t1LzEyMw`.
+   * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
    *
    * 2.  **Plain Format**: The `{productInput}` segment is the tilde-separated
    * string
@@ -177,10 +173,6 @@ public final class DeleteProductInputRequest extends com.google.protobuf.Generat
    * correct parsing, especially those containing special characters. The
    * presence of tilde (`~`) characters in the `{productInput}` segment is used
    * to differentiate between the two formats.
-   *
-   * Note: For calls to the v1beta version, the plain format is
-   * `channel~content_language~feed_label~offer_id`, for example:
-   * `accounts/123/productinputs/online~en~US~sku123`.
    * </pre>
    *
    * <code>
@@ -629,10 +621,10 @@ public final class DeleteProductInputRequest extends com.google.protobuf.Generat
      * MUST be used if any part of the product identifier (like `offer_id`)
      * contains characters such as `/`, `%`, or `~`.
      * *   Example: To represent the product ID `en~US~sku/123`, the
-     * `{productInput}` segment must be the base64url encoding of this
-     * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+     * `{productInput}` segment must be the unpadded base64url encoding of
+     * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
      * for the product would be
-     * `accounts/123/productInputs/ZW5-VVMtc2t1LzEyMw`.
+     * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
      *
      * 2.  **Plain Format**: The `{productInput}` segment is the tilde-separated
      * string
@@ -644,10 +636,6 @@ public final class DeleteProductInputRequest extends com.google.protobuf.Generat
      * correct parsing, especially those containing special characters. The
      * presence of tilde (`~`) characters in the `{productInput}` segment is used
      * to differentiate between the two formats.
-     *
-     * Note: For calls to the v1beta version, the plain format is
-     * `channel~content_language~feed_label~offer_id`, for example:
-     * `accounts/123/productinputs/online~en~US~sku123`.
      * </pre>
      *
      * <code>
@@ -691,10 +679,10 @@ public final class DeleteProductInputRequest extends com.google.protobuf.Generat
      * MUST be used if any part of the product identifier (like `offer_id`)
      * contains characters such as `/`, `%`, or `~`.
      * *   Example: To represent the product ID `en~US~sku/123`, the
-     * `{productInput}` segment must be the base64url encoding of this
-     * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+     * `{productInput}` segment must be the unpadded base64url encoding of
+     * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
      * for the product would be
-     * `accounts/123/productInputs/ZW5-VVMtc2t1LzEyMw`.
+     * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
      *
      * 2.  **Plain Format**: The `{productInput}` segment is the tilde-separated
      * string
@@ -706,10 +694,6 @@ public final class DeleteProductInputRequest extends com.google.protobuf.Generat
      * correct parsing, especially those containing special characters. The
      * presence of tilde (`~`) characters in the `{productInput}` segment is used
      * to differentiate between the two formats.
-     *
-     * Note: For calls to the v1beta version, the plain format is
-     * `channel~content_language~feed_label~offer_id`, for example:
-     * `accounts/123/productinputs/online~en~US~sku123`.
      * </pre>
      *
      * <code>
@@ -753,10 +737,10 @@ public final class DeleteProductInputRequest extends com.google.protobuf.Generat
      * MUST be used if any part of the product identifier (like `offer_id`)
      * contains characters such as `/`, `%`, or `~`.
      * *   Example: To represent the product ID `en~US~sku/123`, the
-     * `{productInput}` segment must be the base64url encoding of this
-     * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+     * `{productInput}` segment must be the unpadded base64url encoding of
+     * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
      * for the product would be
-     * `accounts/123/productInputs/ZW5-VVMtc2t1LzEyMw`.
+     * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
      *
      * 2.  **Plain Format**: The `{productInput}` segment is the tilde-separated
      * string
@@ -768,10 +752,6 @@ public final class DeleteProductInputRequest extends com.google.protobuf.Generat
      * correct parsing, especially those containing special characters. The
      * presence of tilde (`~`) characters in the `{productInput}` segment is used
      * to differentiate between the two formats.
-     *
-     * Note: For calls to the v1beta version, the plain format is
-     * `channel~content_language~feed_label~offer_id`, for example:
-     * `accounts/123/productinputs/online~en~US~sku123`.
      * </pre>
      *
      * <code>
@@ -814,10 +794,10 @@ public final class DeleteProductInputRequest extends com.google.protobuf.Generat
      * MUST be used if any part of the product identifier (like `offer_id`)
      * contains characters such as `/`, `%`, or `~`.
      * *   Example: To represent the product ID `en~US~sku/123`, the
-     * `{productInput}` segment must be the base64url encoding of this
-     * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+     * `{productInput}` segment must be the unpadded base64url encoding of
+     * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
      * for the product would be
-     * `accounts/123/productInputs/ZW5-VVMtc2t1LzEyMw`.
+     * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
      *
      * 2.  **Plain Format**: The `{productInput}` segment is the tilde-separated
      * string
@@ -829,10 +809,6 @@ public final class DeleteProductInputRequest extends com.google.protobuf.Generat
      * correct parsing, especially those containing special characters. The
      * presence of tilde (`~`) characters in the `{productInput}` segment is used
      * to differentiate between the two formats.
-     *
-     * Note: For calls to the v1beta version, the plain format is
-     * `channel~content_language~feed_label~offer_id`, for example:
-     * `accounts/123/productinputs/online~en~US~sku123`.
      * </pre>
      *
      * <code>
@@ -871,10 +847,10 @@ public final class DeleteProductInputRequest extends com.google.protobuf.Generat
      * MUST be used if any part of the product identifier (like `offer_id`)
      * contains characters such as `/`, `%`, or `~`.
      * *   Example: To represent the product ID `en~US~sku/123`, the
-     * `{productInput}` segment must be the base64url encoding of this
-     * string, which is `ZW5-VVMtc2t1LzEyMw`. The full resource name
+     * `{productInput}` segment must be the unpadded base64url encoding of
+     * this string, which is `ZW5-VVN-c2t1LzEyMw`. The full resource name
      * for the product would be
-     * `accounts/123/productInputs/ZW5-VVMtc2t1LzEyMw`.
+     * `accounts/123/productInputs/ZW5-VVN-c2t1LzEyMw`.
      *
      * 2.  **Plain Format**: The `{productInput}` segment is the tilde-separated
      * string
@@ -886,10 +862,6 @@ public final class DeleteProductInputRequest extends com.google.protobuf.Generat
      * correct parsing, especially those containing special characters. The
      * presence of tilde (`~`) characters in the `{productInput}` segment is used
      * to differentiate between the two formats.
-     *
-     * Note: For calls to the v1beta version, the plain format is
-     * `channel~content_language~feed_label~offer_id`, for example:
-     * `accounts/123/productinputs/online~en~US~sku123`.
      * </pre>
      *
      * <code>

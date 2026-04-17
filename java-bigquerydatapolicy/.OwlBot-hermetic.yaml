@@ -20,7 +20,8 @@ deep-remove-regex:
 - "/java-bigquerydatapolicy/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-bigquerydatapolicy/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/bigquery/datapolicies/(v.*)/.*-java/proto-google-.*/src"

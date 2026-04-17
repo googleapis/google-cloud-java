@@ -32,14 +32,15 @@
 package com.google.auth.oauth2;
 
 import static java.util.concurrent.TimeUnit.HOURS;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.client.util.Clock;
 import com.google.auth.TestClock;
@@ -100,7 +101,7 @@ class OAuth2CredentialsTest extends BaseSerializationTest {
   void constructor_storesAccessToken() {
     OAuth2Credentials credentials =
         OAuth2Credentials.newBuilder().setAccessToken(new AccessToken(ACCESS_TOKEN, null)).build();
-    assertEquals(credentials.getAccessToken().getTokenValue(), ACCESS_TOKEN);
+    assertEquals(ACCESS_TOKEN, credentials.getAccessToken().getTokenValue());
   }
 
   @Test
@@ -169,7 +170,7 @@ class OAuth2CredentialsTest extends BaseSerializationTest {
     assertEquals(lastMetadata, callback.awaitResult());
     waitForRefreshTaskCompletion(credentials);
     assertEquals(1, refreshCount.get());
-    lastMetadata = credentials.getRequestMetadata();
+    credentials.getRequestMetadata();
     refreshCount.set(0);
 
     // Fast forward to expired
@@ -181,7 +182,7 @@ class OAuth2CredentialsTest extends BaseSerializationTest {
     TestUtils.assertContainsBearerToken(callback.awaitResult(), newToken.getTokenValue());
     assertEquals(1, refreshCount.get());
     waitForRefreshTaskCompletion(credentials);
-    lastMetadata = credentials.getRequestMetadata();
+    credentials.getRequestMetadata();
   }
 
   @Test
@@ -192,7 +193,7 @@ class OAuth2CredentialsTest extends BaseSerializationTest {
             .setClientSecret(CLIENT_SECRET)
             .setRefreshToken(REFRESH_TOKEN)
             .build();
-    assertEquals(credentials.getAuthenticationType(), "OAuth2");
+    assertEquals("OAuth2", credentials.getAuthenticationType());
   }
 
   @Test
@@ -214,7 +215,7 @@ class OAuth2CredentialsTest extends BaseSerializationTest {
             .setClientSecret(CLIENT_SECRET)
             .setRefreshToken(REFRESH_TOKEN)
             .build();
-    assertTrue(credentials.hasRequestMetadata());
+    assertTrue(credentials.hasRequestMetadataOnly());
   }
 
   @Test
@@ -331,13 +332,9 @@ class OAuth2CredentialsTest extends BaseSerializationTest {
     clock.addToCurrentTime(60 * 60 * 1000);
     assertEquals(0, transportFactory.transport.buildRequestCount);
 
-    try {
-      credentials.getRequestMetadata(CALL_URI);
-      fail("Should throw");
-    } catch (IOException e) {
-      assertSame(error, e.getCause());
-      assertEquals(1, transportFactory.transport.buildRequestCount--);
-    }
+    IOException e = assertThrows(IOException.class, () -> credentials.getRequestMetadata(CALL_URI));
+    assertSame(error, e.getCause());
+    assertEquals(1, transportFactory.transport.buildRequestCount--);
 
     // Reset the error and try again
     transportFactory.transport.setError(null);
@@ -347,7 +344,7 @@ class OAuth2CredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void getRequestMetadata_async() throws IOException {
+  void getRequestMetadata_async() {
     final String accessToken1 = "1/MkSJoj1xsli0AccessToken_NKPY2";
     final String accessToken2 = "2/MkSJoj1xsli0AccessToken_NKPY2";
     MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
@@ -668,12 +665,12 @@ class OAuth2CredentialsTest extends BaseSerializationTest {
 
     // Get the error that getRequestMetadata(uri) created
     Throwable actualBlockingError =
-        assertThrows(ExecutionException.class, () -> blockingCall.get()).getCause();
+        assertThrows(ExecutionException.class, blockingCall::get).getCause();
 
     assertEquals(error, actualBlockingError);
 
     RuntimeException actualAsyncError =
-        assertThrows(RuntimeException.class, () -> callback1.awaitResult());
+        assertThrows(RuntimeException.class, callback1::awaitResult);
     assertEquals(error, actualAsyncError);
   }
 
@@ -692,12 +689,9 @@ class OAuth2CredentialsTest extends BaseSerializationTest {
     expectedStacktrace = expectedStacktrace.subList(1, expectedStacktrace.size());
 
     AtomicReference<Exception> actualError = new AtomicReference<>();
-    try {
-      creds.getRequestMetadata(CALL_URI);
-      fail("Should not be able to use credential without exception.");
-    } catch (Exception refreshError) {
-      actualError.set(refreshError);
-    }
+    Exception refreshError =
+        assertThrows(RuntimeException.class, () -> creds.getRequestMetadata(CALL_URI));
+    actualError.set(refreshError);
 
     List<StackTraceElement> actualStacktrace = Arrays.asList(actualError.get().getStackTrace());
     actualStacktrace =
@@ -789,37 +783,37 @@ class OAuth2CredentialsTest extends BaseSerializationTest {
   }
 
   @Test
-  void refresh_temporaryToken_throws() throws IOException {
+  void refresh_temporaryToken_throws() {
     OAuth2Credentials credentials =
         OAuth2Credentials.newBuilder().setAccessToken(new AccessToken(ACCESS_TOKEN, null)).build();
-    assertThrows(IllegalStateException.class, () -> credentials.refresh());
+    assertThrows(IllegalStateException.class, credentials::refresh);
   }
 
   @Test
-  void equals_true() throws IOException {
+  void equals_true() {
     final String accessToken1 = "1/MkSJoj1xsli0AccessToken_NKPY2";
     OAuth2Credentials credentials =
         OAuth2Credentials.newBuilder().setAccessToken(new AccessToken(accessToken1, null)).build();
     OAuth2Credentials otherCredentials =
         OAuth2Credentials.newBuilder().setAccessToken(new AccessToken(accessToken1, null)).build();
-    assertTrue(credentials.equals(otherCredentials));
-    assertTrue(otherCredentials.equals(credentials));
+    assertEquals(credentials, otherCredentials);
+    assertEquals(otherCredentials, credentials);
   }
 
   @Test
-  void equals_false_accessToken() throws IOException {
+  void equals_false_accessToken() {
     final String accessToken1 = "1/MkSJoj1xsli0AccessToken_NKPY2";
     final String accessToken2 = "2/MkSJoj1xsli0AccessToken_NKPY2";
     OAuth2Credentials credentials =
         OAuth2Credentials.newBuilder().setAccessToken(new AccessToken(accessToken1, null)).build();
     OAuth2Credentials otherCredentials =
         OAuth2Credentials.newBuilder().setAccessToken(new AccessToken(accessToken2, null)).build();
-    assertFalse(credentials.equals(otherCredentials));
-    assertFalse(otherCredentials.equals(credentials));
+    assertNotEquals(credentials, otherCredentials);
+    assertNotEquals(otherCredentials, credentials);
   }
 
   @Test
-  void toString_containsFields() throws IOException {
+  void toString_containsFields() {
     AccessToken accessToken = new AccessToken("1/MkSJoj1xsli0AccessToken_NKPY2", null);
     OAuth2Credentials credentials =
         OAuth2Credentials.newBuilder().setAccessToken(accessToken).build();
@@ -829,12 +823,12 @@ class OAuth2CredentialsTest extends BaseSerializationTest {
             ImmutableMap.of(
                 AuthHttpConstants.AUTHORIZATION,
                 ImmutableList.of(OAuth2Utils.BEARER_PREFIX + accessToken.getTokenValue())),
-            accessToken.toString());
+            accessToken);
     assertEquals(expectedToString, credentials.toString());
   }
 
   @Test
-  void hashCode_equals() throws IOException {
+  void hashCode_equals() {
     final String accessToken = "1/MkSJoj1xsli0AccessToken_NKPY2";
     OAuth2Credentials credentials =
         OAuth2Credentials.newBuilder().setAccessToken(new AccessToken(accessToken, null)).build();
@@ -852,7 +846,7 @@ class OAuth2CredentialsTest extends BaseSerializationTest {
     assertEquals(credentials, deserializedCredentials);
     assertEquals(credentials.hashCode(), deserializedCredentials.hashCode());
     assertEquals(credentials.toString(), deserializedCredentials.toString());
-    assertSame(deserializedCredentials.clock, Clock.SYSTEM);
+    assertSame(Clock.SYSTEM, deserializedCredentials.clock);
   }
 
   @Test
@@ -862,65 +856,16 @@ class OAuth2CredentialsTest extends BaseSerializationTest {
     AccessToken refreshedToken = new AccessToken("2/MkSJoj1xsli0AccessToken_NKPY2", null);
     refreshedTokenFuture.set(refreshedToken);
 
-    final ListenableFutureTask<OAuthValue> task =
-        ListenableFutureTask.create(
-            new Callable<OAuthValue>() {
-              @Override
-              public OAuthValue call() throws Exception {
-                return OAuthValue.create(refreshedToken, new HashMap<>());
-              }
-            });
-
-    OAuth2Credentials creds =
-        new OAuth2Credentials() {
-          @Override
-          public AccessToken refreshAccessToken() {
-            synchronized (this) {
-              // Wake up the main thread. This is done now because the child thread (t) is known to
-              // have the refresh task. Now we want the main thread to wake up and create a future
-              // in order to wait for the refresh to complete.
-              this.notify();
-            }
-            RefreshTaskListener listener =
-                new RefreshTaskListener(task) {
-                  @Override
-                  public void run() {
-                    try {
-                      // Sleep before setting accessToken to new accessToken. Refresh should not
-                      // complete before this, and the accessToken is `null` until it is.
-                      Thread.sleep(300);
-                      super.run();
-                    } catch (Exception e) {
-                      fail("Unexpected error. Exception: " + e);
-                    }
-                  }
-                };
-
-            this.refreshTask = new RefreshTask(task, listener);
-
-            try {
-              // Sleep for 100 milliseconds to give parent thread time to create a refresh future.
-              Thread.sleep(100);
-              return refreshedTokenFuture.get();
-            } catch (Exception e) {
-              throw new RuntimeException(e);
-            }
-          }
-        };
+    OAuth2Credentials creds = getOAuth2Credentials(refreshedToken, refreshedTokenFuture);
 
     Thread t =
         new Thread(
-            new Runnable() {
-              @Override
-              public void run() {
-                try {
-                  creds.refresh();
-                  assertNotNull(creds.getAccessToken());
-                } catch (Exception e) {
-                  fail("Unexpected error. Exception: " + e);
-                }
-              }
-            });
+            () ->
+                assertDoesNotThrow(
+                    () -> {
+                      creds.refresh();
+                      assertNotNull(creds.getAccessToken());
+                    }));
     t.start();
 
     synchronized (creds) {
@@ -939,6 +884,47 @@ class OAuth2CredentialsTest extends BaseSerializationTest {
     // completing and the task listener updating the value of the access token.
     assertNotNull(token);
     t.join();
+  }
+
+  private OAuth2Credentials getOAuth2Credentials(
+      AccessToken refreshedToken, SettableFuture<AccessToken> refreshedTokenFuture) {
+    final ListenableFutureTask<OAuthValue> task =
+        ListenableFutureTask.create(() -> OAuthValue.create(refreshedToken, new HashMap<>()));
+
+    return new OAuth2Credentials() {
+      @Override
+      public AccessToken refreshAccessToken() {
+        synchronized (this) {
+          // Wake up the main thread. This is done now because the child thread (t) is known to
+          // have the refresh task. Now we want the main thread to wake up and create a future
+          // in order to wait for the refresh to complete.
+          this.notify();
+        }
+        RefreshTaskListener listener =
+            new RefreshTaskListener(task) {
+              @Override
+              public void run() {
+                assertDoesNotThrow(
+                    () -> {
+                      // Sleep before setting accessToken to new accessToken. Refresh should not
+                      // complete before this, and the accessToken is `null` until it is.
+                      Thread.sleep(300);
+                      super.run();
+                    });
+              }
+            };
+
+        this.refreshTask = new RefreshTask(task, listener);
+
+        try {
+          // Sleep for 100 milliseconds to give parent thread time to create a refresh future.
+          Thread.sleep(100);
+          return refreshedTokenFuture.get();
+        } catch (Exception e) {
+          throw new RuntimeException(e);
+        }
+      }
+    };
   }
 
   private void waitForRefreshTaskCompletion(OAuth2Credentials credentials)

@@ -409,6 +409,50 @@ public final class VectorSearchServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.vectorsearch.v1beta.UpdateIndexRequest, com.google.longrunning.Operation>
+      getUpdateIndexMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateIndex",
+      requestType = com.google.cloud.vectorsearch.v1beta.UpdateIndexRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.vectorsearch.v1beta.UpdateIndexRequest, com.google.longrunning.Operation>
+      getUpdateIndexMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.vectorsearch.v1beta.UpdateIndexRequest,
+            com.google.longrunning.Operation>
+        getUpdateIndexMethod;
+    if ((getUpdateIndexMethod = VectorSearchServiceGrpc.getUpdateIndexMethod) == null) {
+      synchronized (VectorSearchServiceGrpc.class) {
+        if ((getUpdateIndexMethod = VectorSearchServiceGrpc.getUpdateIndexMethod) == null) {
+          VectorSearchServiceGrpc.getUpdateIndexMethod =
+              getUpdateIndexMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.vectorsearch.v1beta.UpdateIndexRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateIndex"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.vectorsearch.v1beta.UpdateIndexRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new VectorSearchServiceMethodDescriptorSupplier("UpdateIndex"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateIndexMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.vectorsearch.v1beta.DeleteIndexRequest, com.google.longrunning.Operation>
       getDeleteIndexMethod;
 
@@ -731,6 +775,20 @@ public final class VectorSearchServiceGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single Index.
+     * </pre>
+     */
+    default void updateIndex(
+        com.google.cloud.vectorsearch.v1beta.UpdateIndexRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateIndexMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Index.
      * </pre>
      */
@@ -946,6 +1004,22 @@ public final class VectorSearchServiceGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single Index.
+     * </pre>
+     */
+    public void updateIndex(
+        com.google.cloud.vectorsearch.v1beta.UpdateIndexRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateIndexMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Index.
      * </pre>
      */
@@ -1131,6 +1205,20 @@ public final class VectorSearchServiceGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single Index.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateIndex(
+        com.google.cloud.vectorsearch.v1beta.UpdateIndexRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Index.
      * </pre>
      */
@@ -1296,6 +1384,19 @@ public final class VectorSearchServiceGrpc {
         com.google.cloud.vectorsearch.v1beta.CreateIndexRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Index.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateIndex(
+        com.google.cloud.vectorsearch.v1beta.UpdateIndexRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateIndexMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1474,6 +1575,19 @@ public final class VectorSearchServiceGrpc {
      *
      *
      * <pre>
+     * Updates the parameters of a single Index.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateIndex(com.google.cloud.vectorsearch.v1beta.UpdateIndexRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateIndexMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a single Index.
      * </pre>
      */
@@ -1518,9 +1632,10 @@ public final class VectorSearchServiceGrpc {
   private static final int METHODID_LIST_INDEXES = 5;
   private static final int METHODID_GET_INDEX = 6;
   private static final int METHODID_CREATE_INDEX = 7;
-  private static final int METHODID_DELETE_INDEX = 8;
-  private static final int METHODID_IMPORT_DATA_OBJECTS = 9;
-  private static final int METHODID_EXPORT_DATA_OBJECTS = 10;
+  private static final int METHODID_UPDATE_INDEX = 8;
+  private static final int METHODID_DELETE_INDEX = 9;
+  private static final int METHODID_IMPORT_DATA_OBJECTS = 10;
+  private static final int METHODID_EXPORT_DATA_OBJECTS = 11;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1583,6 +1698,11 @@ public final class VectorSearchServiceGrpc {
         case METHODID_CREATE_INDEX:
           serviceImpl.createIndex(
               (com.google.cloud.vectorsearch.v1beta.CreateIndexRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_INDEX:
+          serviceImpl.updateIndex(
+              (com.google.cloud.vectorsearch.v1beta.UpdateIndexRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_INDEX:
@@ -1670,6 +1790,12 @@ public final class VectorSearchServiceGrpc {
                     com.google.cloud.vectorsearch.v1beta.CreateIndexRequest,
                     com.google.longrunning.Operation>(service, METHODID_CREATE_INDEX)))
         .addMethod(
+            getUpdateIndexMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.vectorsearch.v1beta.UpdateIndexRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_INDEX)))
+        .addMethod(
             getDeleteIndexMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1746,6 +1872,7 @@ public final class VectorSearchServiceGrpc {
                       .addMethod(getListIndexesMethod())
                       .addMethod(getGetIndexMethod())
                       .addMethod(getCreateIndexMethod())
+                      .addMethod(getUpdateIndexMethod())
                       .addMethod(getDeleteIndexMethod())
                       .addMethod(getImportDataObjectsMethod())
                       .addMethod(getExportDataObjectsMethod())

@@ -312,13 +312,13 @@ final class ITWorkloadIdentityFederationTest {
   private GenericJson buildPluggableCredentialConfig() throws IOException {
     String idToken = generateGoogleIdToken(OIDC_AUDIENCE);
 
-    Instant expiration_time = Instant.now().plusSeconds(60 * 60);
+    Instant expirationTime = Instant.now().plusSeconds(60 * 60);
 
     GenericJson executableJson = new GenericJson();
     executableJson.setFactory(OAuth2Utils.JSON_FACTORY);
     executableJson.put("success", true);
     executableJson.put("version", 1);
-    executableJson.put("expiration_time", expiration_time.toEpochMilli());
+    executableJson.put("expirationTime", expirationTime.toEpochMilli());
     executableJson.put("token_type", "urn:ietf:params:oauth:token-type:jwt");
     executableJson.put("id_token", idToken);
 
@@ -403,8 +403,8 @@ final class ITWorkloadIdentityFederationTest {
   }
 
   /**
-   * Generates a Google ID token using the iamcredentials generateIdToken API.
-   * https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentials#sa-credentials-oidc
+   * Generates a Google ID token using the iamcredentials generateIdToken API. <a
+   * href="https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentials#sa-credentials-oidc">...</a>
    */
   private String generateGoogleIdToken(String audience) throws IOException {
     GoogleCredentials googleCredentials =
@@ -451,10 +451,10 @@ final class ITWorkloadIdentityFederationTest {
     return null;
   }
 
-  private class ITAwsSecurityCredentialsProvider implements AwsSecurityCredentialsSupplier {
+  private static class ITAwsSecurityCredentialsProvider implements AwsSecurityCredentialsSupplier {
 
-    private String region;
-    private AwsSecurityCredentials credentials;
+    private final String region;
+    private final AwsSecurityCredentials credentials;
 
     ITAwsSecurityCredentialsProvider(String region, AwsSecurityCredentials credentials) {
       this.region = region;
