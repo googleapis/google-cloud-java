@@ -43,7 +43,7 @@ import java.util.Set;
 
 public class GrpcRestTestProtoLoader extends TestProtoLoader {
   private static final GrpcRestTestProtoLoader INSTANCE = new GrpcRestTestProtoLoader();
-  private static final String ECHO_SERVICE_REPOSITORY = "googleapis/sdk-platform-java";
+  private static final String ECHO_SERVICE_REPOSITORY = "googleapis/google-cloud-java";
   private static final String ECHO_SERVICE_ARTIFACT = "com.google.cloud:gapic-showcase";
 
   protected GrpcRestTestProtoLoader() {

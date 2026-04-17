@@ -73,7 +73,7 @@ public class TestProtoLoader {
           + " service also exposes methods that explicitly implement server delay, and\n"
           + " paginated calls. Set the 'showcase-trailer' metadata key on any method\n"
           + " to have the values echoed in the response trailers.";
-  private static final String ECHO_SERVICE_REPOSITORY = "googleapis/sdk-platform-java";
+  private static final String ECHO_SERVICE_REPOSITORY = "googleapis/google-cloud-java";
   private static final String ECHO_SERVICE_ARTIFACT = "com.google.cloud:gapic-showcase";
   private static final String LOGGING_SERVICE_ARTIFACT = "com.google.cloud:google-cloud-logging";
   private final String testFilesDirectory;
