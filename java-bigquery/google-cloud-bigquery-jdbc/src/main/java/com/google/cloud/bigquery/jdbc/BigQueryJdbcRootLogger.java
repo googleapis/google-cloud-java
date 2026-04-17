@@ -22,8 +22,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
@@ -62,7 +63,8 @@ class BigQueryJdbcRootLogger {
 
   public static Formatter getFormatter() {
     return new Formatter() {
-      private static final String PATTERN = "yyyy-MM-dd HH:mm:ss.SSS";
+      private final DateTimeFormatter dateFormatter =
+          DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS").withZone(ZoneId.systemDefault());
       private static final String FORMAT =
           "%1$s %2$5s %3$d --- [%4$-7.15s] %5$-50s %6$-20s: %7$s%8$s";
       private static final int MAX_THREAD_NAME_LENGTH = 15;
@@ -81,7 +83,9 @@ class BigQueryJdbcRootLogger {
 
       @Override
       public String format(LogRecord record) {
-        String date = new SimpleDateFormat(PATTERN).format(new Date(record.getMillis()));
+
+        String date = dateFormatter.format(Instant.ofEpochMilli(record.getMillis()));
+
         String threadName =
             getThread(record.getThreadID())
                 .map(Thread::getName)
