@@ -26,7 +26,16 @@ from library_generation.utils.file_render import render
 from library_generation.utils.proto_path_utils import remove_version_from
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
-SDK_PLATFORM_JAVA = "googleapis/sdk-platform-java"
+
+LIBRARIES_WITHOUT_API_ID = {
+    "google-auth-library",
+    "showcase",
+    "iam",
+    "api-common",
+    "common-protos",
+    "gax",
+    "core",
+}
 
 
 def create_argument(arg_key: str, arg_container: object) -> List[str]:
@@ -179,9 +188,7 @@ def get_library_repository(
 
     :return: string representing the repository
     """
-    if config.contains_common_protos():
-        repo = SDK_PLATFORM_JAVA
-    elif config.is_monorepo():
+    if config.is_monorepo() or config.contains_common_protos():
         repo = "googleapis/google-cloud-java"
     else:
         repo = f"googleapis/{language}-{library.get_library_name()}"
@@ -242,15 +249,16 @@ def generate_postprocessing_prerequisite_files(
         "repo": repo,
         "repo_short": f"{language}-{library_name}",
         "distribution_name": library.get_maven_coordinate(),
-        "api_id": api_id,
-        "library_type": library.library_type,
-        "requires_billing": library.requires_billing,
     }
 
-    # this removal is for java-common-protos and java-iam in
-    # sdk-platform-java
-    if repo == SDK_PLATFORM_JAVA:
-        repo_metadata.pop("api_id")
+    if (
+        library.get_library_name() not in LIBRARIES_WITHOUT_API_ID
+        and library.library_type != "OTHER"
+    ):
+        repo_metadata["api_id"] = api_id
+
+    repo_metadata["library_type"] = library.library_type
+    repo_metadata["requires_billing"] = library.requires_billing
 
     if library.api_reference:
         repo_metadata["api_reference"] = library.api_reference
