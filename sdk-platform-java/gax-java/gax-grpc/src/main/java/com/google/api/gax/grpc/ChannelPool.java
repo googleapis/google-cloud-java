@@ -84,13 +84,17 @@ class ChannelPool extends ManagedChannel {
   private final AtomicInteger indexTicker = new AtomicInteger();
   private final String authority;
 
-  // The number of consecutive resize cycles to wait before logging a warning about repeated resizing.
-  // This is an arbitrary value chosen to detect repeated requests for changes (multiple continuous increase or decrease attempts) without being too sensitive.
+  // The number of consecutive resize cycles to wait before logging a warning about repeated
+  // resizing.
+  // This is an arbitrary value chosen to detect repeated requests for changes (multiple continuous
+  // increase or decrease attempts) without being too sensitive.
   private static final int CONSECUTIVE_RESIZE_THRESHOLD = 5;
 
-  // Tracks the number of consecutive resize cycles where a resize actually occurred (either expand or shrink).
+  // Tracks the number of consecutive resize cycles where a resize actually occurred (either expand
+  // or shrink).
   // Used to detect repeated resizing activity and log a warning.
-  // Note: This field is only accessed within the synchronized resize() method, so it does not need to be atomic.
+  // Note: This field is only accessed within the synchronized resize() method, so it does not need
+  // to be atomic.
   private int consecutiveResizes = 0;
 
   static ChannelPool create(
@@ -341,9 +345,11 @@ class ChannelPool extends ManagedChannel {
     if (consecutiveResizes == CONSECUTIVE_RESIZE_THRESHOLD) {
       StringBuilder sb = new StringBuilder();
       sb.append("Channel pool is repeatedly resizing. ");
-      sb.append("Consider adjusting `initialChannelCount` or `maxResizeDelta` to a more reasonable value. ");
+      sb.append(
+          "Consider adjusting `initialChannelCount` or `maxResizeDelta` to a more reasonable value. ");
       sb.append("See https://docs.cloud.google.com/java/docs/troubleshooting to enable logging ");
-      sb.append("and set `com.google.api.gax.grpc.ChannelPool.level=FINEST` to log the channel pool resize behavior.");
+      sb.append(
+          "and set `com.google.api.gax.grpc.ChannelPool.level=FINEST` to log the channel pool resize behavior.");
       LOG.warning(sb.toString());
     }
 
