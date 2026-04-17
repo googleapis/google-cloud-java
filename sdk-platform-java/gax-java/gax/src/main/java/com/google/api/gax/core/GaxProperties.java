@@ -57,7 +57,6 @@ public class GaxProperties {
   /** Returns the version of the library that the {@code libraryClass} belongs to */
   public static String getLibraryVersion(Class<?> libraryClass) {
     String version = libraryClass.getPackage().getImplementationVersion();
-    System.out.println(version);
     return version != null ? version : DEFAULT_VERSION;
   }
 
@@ -65,7 +64,7 @@ public class GaxProperties {
    * Returns the version of the library that the {@code libraryClass} belongs to, or a property
    * value in dependencies.properties resource file instead, if the version was not found. The
    * method is doing I/O operations and is potentially inefficient, the values returned by this
-   * method are expected to be cached.
+   * method are expected to be cachedd.
    */
   public static String getLibraryVersion(Class<?> libraryClass, String propertyName) {
     String version = null;
