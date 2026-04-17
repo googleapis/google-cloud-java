@@ -80,6 +80,12 @@ final class BigQueryJdbcOAuthUtility {
           + "Thank you for using JDBC Driver for Google BigQuery!\n"
           + "You may now close the window.</body></html>";
 
+  static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
+  static final String DRIVE_READONLY_SCOPE = "https://www.googleapis.com/auth/drive.readonly";
+
+  static final List<String> DEFAULT_SCOPES = Arrays.asList(BIGQUERY_SCOPE);
+  static final List<String> DRIVE_SCOPES = Arrays.asList(BIGQUERY_SCOPE, DRIVE_READONLY_SCOPE);
+
   private static final int USER_AUTH_TIMEOUT_MS = 120000;
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcOAuthUtility.class.getName());
@@ -119,14 +125,16 @@ final class BigQueryJdbcOAuthUtility {
     oauthProperties.put(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME, String.valueOf(authType));
 
     Integer reqGoogleDriveScope = ds.getRequestGoogleDriveScope();
-    if( reqGoogleDriveScope != null){
-      Boolean reqGoogleDriveScopeBool = BigQueryJdbcUrlUtility.convertIntToBoolean(String.valueOf(reqGoogleDriveScope), BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME);
+    if (reqGoogleDriveScope != null) {
+      Boolean reqGoogleDriveScopeBool =
+          BigQueryJdbcUrlUtility.convertIntToBoolean(
+              String.valueOf(reqGoogleDriveScope),
+              BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME);
       oauthProperties.put(
           BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME,
           String.valueOf(reqGoogleDriveScopeBool));
       LOG.fine("RequestGoogleDriveScope parsed.");
     }
-
 
     switch (authType) {
       case GOOGLE_SERVICE_ACCOUNT:
@@ -245,7 +253,7 @@ final class BigQueryJdbcOAuthUtility {
           BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_SCOPES_PROPERTY_NAME,
           ds.getOAuthSAImpersonationScopes() != null
               ? ds.getOAuthSAImpersonationScopes()
-              : BigQueryJdbcUrlUtility.DEFAULT_OAUTH_SA_IMPERSONATION_SCOPES_VALUE);
+              : BIGQUERY_SCOPE);
       oauthProperties.put(
           BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_PROPERTY_NAME,
           ds.getOAuthSAImpersonationTokenLifetime() != null
@@ -379,11 +387,11 @@ final class BigQueryJdbcOAuthUtility {
         builder.setUniverseDomain(
             overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
       }
-      if ("true".equals(authProperties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))){
-        builder.setScopes(
-            Arrays.asList(
-                "https://www.googleapis.com/auth/bigquery",
-                "https://www.googleapis.com/auth/drive.readonly"));
+      if ("true"
+          .equals(
+              authProperties.get(
+                  BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
+        builder.setScopes(DRIVE_SCOPES);
         LOG.fine("Added Google Drive read-only scope to Service Account builder.");
       }
     } catch (URISyntaxException | IOException e) {
@@ -418,11 +426,12 @@ final class BigQueryJdbcOAuthUtility {
       userAuthorizerBuilder.setTokenServerUri(
           new URI(overrideProperties.get(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)));
     }
-    List<String> scopes = new ArrayList<>();
-    scopes.add("https://www.googleapis.com/auth/bigquery");
+    List<String> scopes = new java.util.ArrayList<>(DEFAULT_SCOPES);
 
-    if ("true".equals(authProperties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
-      scopes.add("https://www.googleapis.com/auth/drive.readonly");
+    if ("true"
+        .equals(
+            authProperties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
+      scopes.add(DRIVE_READONLY_SCOPE);
       LOG.fine("Added Google Drive read-only scope to User Account builder.");
     }
 
@@ -501,22 +510,19 @@ final class BigQueryJdbcOAuthUtility {
     }
 
     LOG.info("Connection established. Auth Method: Pre-generated Access Token.");
-    GoogleCredentials credentials =  builder
-        .setAccessToken(
-            AccessToken.newBuilder()
-                .setTokenValue(
-                    authProperties.get(BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_PROPERTY_NAME))
-                .build())
-        .build();
+    GoogleCredentials credentials =
+        builder
+            .setAccessToken(
+                AccessToken.newBuilder()
+                    .setTokenValue(
+                        authProperties.get(BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_PROPERTY_NAME))
+                    .build())
+            .build();
 
-
-    if ("true".equals(authProperties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
-      credentials = credentials.createScoped(
-          Arrays.asList(
-              "https://www.googleapis.com/auth/bigquery",
-              "https://www.googleapis.com/auth/drive.readonly"
-          )
-      );
+    if ("true"
+        .equals(
+            authProperties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
+      credentials = credentials.createScoped(DRIVE_SCOPES);
     }
 
     return credentials;
@@ -567,19 +573,17 @@ final class BigQueryJdbcOAuthUtility {
 
     UserCredentials userCredentials = userCredentialsBuilder.build();
 
-    if ("true".equals(authProperties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
-      userCredentials =  (UserCredentials) userCredentials.createScoped(
-          Arrays.asList(
-              "https://www.googleapis.com/auth/bigquery",
-              "https://www.googleapis.com/auth/drive.readonly"
-          )
-      );
+    if ("true"
+        .equals(
+            authProperties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
+      userCredentials = (UserCredentials) userCredentials.createScoped(DRIVE_SCOPES);
     }
     LOG.info("Connection established. Auth Method: Pre-generated Refresh Token.");
     return userCredentials;
   }
 
-  private static GoogleCredentials getApplicationDefaultCredentials(Map<String, String> authProperties, String callerClassName) {
+  private static GoogleCredentials getApplicationDefaultCredentials(
+      Map<String, String> authProperties, String callerClassName) {
     LOG.finest("++enter++\t" + callerClassName);
     try {
       GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
@@ -595,13 +599,11 @@ final class BigQueryJdbcOAuthUtility {
           "Connection established. Auth Method: Application Default Credentials, Principal: %s.",
           principal);
 
-      if ("true".equals(authProperties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
-        credentials = credentials.createScoped(
-            Arrays.asList(
-                "https://www.googleapis.com/auth/bigquery",
-                "https://www.googleapis.com/auth/drive.readonly"
-            )
-        );
+      if ("true"
+          .equals(
+              authProperties.get(
+                  BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
+        credentials = credentials.createScoped(DRIVE_SCOPES);
         LOG.fine("Added Google Drive read-only scope to ADC credentials.");
       }
 
@@ -652,23 +654,22 @@ final class BigQueryJdbcOAuthUtility {
 
       GoogleCredentials credentials;
       if (credentialsPath != null) {
-        credentials = ExternalAccountCredentials.fromStream(
-            Files.newInputStream(Paths.get(credentialsPath)));
+        credentials =
+            ExternalAccountCredentials.fromStream(Files.newInputStream(Paths.get(credentialsPath)));
       } else if (jsonObject != null) {
-        credentials = ExternalAccountCredentials.fromStream(
-            new ByteArrayInputStream(jsonObject.toString().getBytes()));
+        credentials =
+            ExternalAccountCredentials.fromStream(
+                new ByteArrayInputStream(jsonObject.toString().getBytes()));
       } else {
         throw new IllegalArgumentException(
             "Insufficient info provided for external authentication");
       }
 
-      if ("true".equals(authProperties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
-        credentials = credentials.createScoped(
-            Arrays.asList(
-                "https://www.googleapis.com/auth/bigquery",
-                "https://www.googleapis.com/auth/drive.readonly"
-            )
-        );
+      if ("true"
+          .equals(
+              authProperties.get(
+                  BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
+        credentials = credentials.createScoped(DRIVE_SCOPES);
         LOG.fine("Added Google Drive read-only scope to External Account credentials.");
       }
 
@@ -706,9 +707,11 @@ final class BigQueryJdbcOAuthUtility {
                     .get(BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_SCOPES_PROPERTY_NAME)
                     .split(",")));
 
-    if ("true".equals(authProperties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
-      if (!impersonationScopes.contains("https://www.googleapis.com/auth/drive.readonly")) {
-        impersonationScopes.add("https://www.googleapis.com/auth/drive.readonly");
+    if ("true"
+        .equals(
+            authProperties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
+      if (!impersonationScopes.contains(DRIVE_READONLY_SCOPE)) {
+        impersonationScopes.add(DRIVE_READONLY_SCOPE);
         LOG.fine("Added Google Drive read-only scope to impersonation scopes.");
       }
     }

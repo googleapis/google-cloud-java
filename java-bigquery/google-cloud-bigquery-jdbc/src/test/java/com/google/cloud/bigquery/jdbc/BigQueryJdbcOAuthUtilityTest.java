@@ -381,8 +381,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         BigQueryJdbcOAuthUtility.parseOAuthProperties(
             DataSource.fromUrl(url), this.getClass().getName());
     assertEquals(
-        "false",
-        properties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
+        "false", properties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
   }
 
   @Test
@@ -473,7 +472,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         "impersonated",
         result.get(BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_EMAIL_PROPERTY_NAME));
     assertEquals(
-        BigQueryJdbcUrlUtility.DEFAULT_OAUTH_SA_IMPERSONATION_SCOPES_VALUE,
+        BigQueryJdbcOAuthUtility.BIGQUERY_SCOPE,
         result.get(BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_SCOPES_PROPERTY_NAME));
     assertEquals(
         BigQueryJdbcUrlUtility.DEFAULT_OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_VALUE,
