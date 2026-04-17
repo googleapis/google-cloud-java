@@ -26,7 +26,7 @@ from library_generation.utils.file_render import render
 from library_generation.utils.proto_path_utils import remove_version_from
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
-SDK_PLATFORM_JAVA = "googleapis/sdk-platform-java"
+SDK_PLATFORM_JAVA = "googleapis/google-cloud-java"
 
 
 def create_argument(arg_key: str, arg_container: object) -> List[str]:
