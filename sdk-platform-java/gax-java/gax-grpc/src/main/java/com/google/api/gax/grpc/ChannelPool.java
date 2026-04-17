@@ -84,6 +84,8 @@ class ChannelPool extends ManagedChannel {
   private final AtomicInteger indexTicker = new AtomicInteger();
   private final String authority;
 
+  // Tracks the number of consecutive resize cycles where a resize actually occurred (either expand or shrink).
+  // Used to detect repeated resizing activity and log a warning.
   private int consecutiveResizes = 0;
 
   static ChannelPool create(

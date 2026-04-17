@@ -141,7 +141,7 @@ public abstract class ChannelPoolSettings {
         .setMaxRpcsPerChannel(Integer.MAX_VALUE)
         .setMinChannelCount(size)
         .setMaxChannelCount(size)
-        .setMaxResizeDelta(Math.min(2, size))
+        .setMaxResizeDelta(Math.min(MAX_RESIZE_DELTA, size))
         .build();
   }
 
@@ -153,7 +153,7 @@ public abstract class ChannelPoolSettings {
         .setMinRpcsPerChannel(0)
         .setMaxRpcsPerChannel(Integer.MAX_VALUE)
         .setPreemptiveRefreshEnabled(false)
-        .setMaxResizeDelta(2);
+        .setMaxResizeDelta(MAX_RESIZE_DELTA);
   }
 
   @AutoValue.Builder
