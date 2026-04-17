@@ -1375,6 +1375,9 @@
         "grpc": {
           "libraryClient": "ReasoningEngineExecutionServiceClient",
           "rpcs": {
+            "AsyncQueryReasoningEngine": {
+              "methods": ["asyncQueryReasoningEngineAsync", "asyncQueryReasoningEngineOperationCallable", "asyncQueryReasoningEngineCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
