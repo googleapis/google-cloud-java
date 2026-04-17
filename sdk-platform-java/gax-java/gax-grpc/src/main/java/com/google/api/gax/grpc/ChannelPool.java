@@ -85,7 +85,7 @@ class ChannelPool extends ManagedChannel {
   private final String authority;
 
   // The number of consecutive resize cycles to wait before logging a warning about repeated resizing.
-  // This is an arbitrary value chosen to detect potential thrashing without being too sensitive.
+  // This is an arbitrary value chosen to detect repeated requests for changes (multiple continuous increase or decrease attempts) without being too sensitive.
   private static final int CONSECUTIVE_RESIZE_THRESHOLD = 5;
 
   // Tracks the number of consecutive resize cycles where a resize actually occurred (either expand or shrink).

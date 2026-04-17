@@ -96,8 +96,9 @@ public abstract class ChannelPoolSettings {
    * The maximum number of channels that can be added or removed at a time.
    *
    * <p>This setting limits the rate at which the channel pool can grow or shrink in a single resize
-   * period. The default value is 2. Regardless of this setting, the number of channels will never
-   * exceed {@link #getMaxChannelCount()}.
+   * period. The default value is 2. Increasing this value can help the pool better handle sudden
+   * bursts or spikes in requests by allowing it to scale up faster. Regardless of this setting, the
+   * number of channels will never exceed {@link #getMaxChannelCount()}.
    */
   public abstract int getMaxResizeDelta();
 
