@@ -431,12 +431,15 @@ public class GapicSpannerRpc implements SpannerRpc {
                 && isEnableDirectAccess;
         this.readRetrySettings =
             options.getSpannerStubSettings().streamingReadSettings().getRetrySettings();
+        Set<Code> streamingReadRetryableCodes =
+            options.getSpannerStubSettings().streamingReadSettings().getRetryableCodes();
         this.readRetryableCodes =
-            ImmutableSet.<Code>builder()
-                .addAll(
-                    options.getSpannerStubSettings().streamingReadSettings().getRetryableCodes())
-                .add(Code.RESOURCE_EXHAUSTED)
-                .build();
+            enableLocationApi
+                ? ImmutableSet.<Code>builder()
+                    .addAll(streamingReadRetryableCodes)
+                    .add(Code.RESOURCE_EXHAUSTED)
+                    .build()
+                : streamingReadRetryableCodes;
         this.executeQueryRetrySettings =
             options.getSpannerStubSettings().executeStreamingSqlSettings().getRetrySettings();
         this.executeQueryRetryableCodes =
