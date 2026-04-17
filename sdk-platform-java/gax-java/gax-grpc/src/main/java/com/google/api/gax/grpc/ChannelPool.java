@@ -338,6 +338,8 @@ class ChannelPool extends ManagedChannel {
       consecutiveResizes = 0;
     }
 
+    // Log warning only once when the threshold is reached to avoid spamming logs.
+    // Using == instead of >= ensures we don't log on every subsequent resize cycle.
     if (consecutiveResizes == CONSECUTIVE_RESIZE_THRESHOLD) {
       LOG.warning(
           "Channel pool is repeatedly resizing. Consider adjusting `initialChannelCount` or `maxResizeDelta` to a more reasonable value. "
