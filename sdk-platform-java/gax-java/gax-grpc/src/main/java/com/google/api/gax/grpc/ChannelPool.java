@@ -84,6 +84,8 @@ class ChannelPool extends ManagedChannel {
   private final AtomicInteger indexTicker = new AtomicInteger();
   private final String authority;
 
+  private int consecutiveResizes = 0;
+
   static ChannelPool create(
       ChannelPoolSettings settings,
       ChannelFactory channelFactory,
@@ -313,9 +315,21 @@ class ChannelPool extends ManagedChannel {
     int currentSize = localEntries.size();
     int delta = tentativeTarget - currentSize;
     int dampenedTarget = tentativeTarget;
-    if (Math.abs(delta) > ChannelPoolSettings.MAX_RESIZE_DELTA) {
-      dampenedTarget =
-          currentSize + (int) Math.copySign(ChannelPoolSettings.MAX_RESIZE_DELTA, delta);
+    if (Math.abs(delta) > settings.getMaxResizeDelta()) {
+      dampenedTarget = currentSize + (int) Math.copySign(settings.getMaxResizeDelta(), delta);
+    }
+
+    boolean resized = (localEntries.size() < minChannels || localEntries.size() > maxChannels);
+    if (resized) {
+      consecutiveResizes++;
+    } else {
+      consecutiveResizes = 0;
+    }
+
+    if (consecutiveResizes == 5) {
+      LOG.warning(
+          "Channel pool is repeatedly resizing. Consider adjusting `initialChannelCount` or `maxResizeDelta` to a more reasonable value. "
+              + "See https://docs.cloud.google.com/java/docs/troubleshooting to enable logging and set `com.google.api.gax.grpc.ChannelPool.level=FINEST` to log the channel pool resize behavior.");
     }
 
     // Only resize the pool when thresholds are crossed

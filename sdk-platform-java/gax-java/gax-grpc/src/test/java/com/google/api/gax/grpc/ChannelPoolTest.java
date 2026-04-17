@@ -524,6 +524,53 @@ class ChannelPoolTest {
   }
 
   @Test
+  void customResizeDeltaIsRespected() throws Exception {
+    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
+
+    List<ManagedChannel> channels = new ArrayList<>();
+    List<ClientCall<Object, Object>> startedCalls = new ArrayList<>();
+
+    ChannelFactory channelFactory =
+        () -> {
+          ManagedChannel channel = Mockito.mock(ManagedChannel.class);
+          Mockito.when(channel.newCall(Mockito.any(), Mockito.any()))
+              .thenAnswer(
+                  invocation -> {
+                    @SuppressWarnings("unchecked")
+                    ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
+                    startedCalls.add(clientCall);
+                    return clientCall;
+                  });
+
+          channels.add(channel);
+          return channel;
+        };
+
+    pool =
+        new ChannelPool(
+            ChannelPoolSettings.builder()
+                .setInitialChannelCount(2)
+                .setMinRpcsPerChannel(1)
+                .setMaxRpcsPerChannel(2)
+                .setMaxResizeDelta(5)
+                .build(),
+            channelFactory,
+            provider);
+    assertThat(pool.entries.get()).hasSize(2);
+
+    // Add 20 RPCs to push expansion
+    for (int i = 0; i < 20; i++) {
+      ClientCalls.futureUnaryCall(
+          pool.newCall(METHOD_RECOGNIZE, CallOptions.DEFAULT), Color.getDefaultInstance());
+    }
+    pool.resize();
+    // delta is 15 - 2 = 13. Capped at maxResizeDelta = 5.
+    // Expected size = 2 + 5 = 7.
+    assertThat(pool.entries.get()).hasSize(7);
+  }
+
+  @Test
   void removedIdleChannelsAreShutdown() throws Exception {
     ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
@@ -677,6 +724,125 @@ class ChannelPoolTest {
                     }));
     assertThat(e.getCause()).isInstanceOf(CancellationException.class);
     assertThat(e.getMessage()).isEqualTo("Call is already cancelled");
+  }
+
+  @Test
+  void repeatedResizingLogsWarningOnExpand() throws Exception {
+    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
+
+    List<ManagedChannel> channels = new ArrayList<>();
+    List<ClientCall<Object, Object>> startedCalls = new ArrayList<>();
+
+    ChannelFactory channelFactory =
+        () -> {
+          ManagedChannel channel = Mockito.mock(ManagedChannel.class);
+          Mockito.when(channel.newCall(Mockito.any(), Mockito.any()))
+              .thenAnswer(
+                  invocation -> {
+                    @SuppressWarnings("unchecked")
+                    ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
+                    startedCalls.add(clientCall);
+                    return clientCall;
+                  });
+
+          channels.add(channel);
+          return channel;
+        };
+
+    pool =
+        new ChannelPool(
+            ChannelPoolSettings.builder()
+                .setInitialChannelCount(1)
+                .setMinRpcsPerChannel(1)
+                .setMaxRpcsPerChannel(2)
+                .setMaxResizeDelta(1)
+                .setMinChannelCount(1)
+                .setMaxChannelCount(10)
+                .build(),
+            channelFactory,
+            provider);
+    assertThat(pool.entries.get()).hasSize(1);
+
+    FakeLogHandler logHandler = new FakeLogHandler();
+    ChannelPool.LOG.addHandler(logHandler);
+
+    try {
+      // Add 20 RPCs to push expansion
+      for (int i = 0; i < 20; i++) {
+        ClientCalls.futureUnaryCall(
+            pool.newCall(METHOD_RECOGNIZE, CallOptions.DEFAULT), Color.getDefaultInstance());
+      }
+
+      // Resize 4 times, should not log warning yet
+      for (int i = 0; i < 4; i++) {
+        pool.resize();
+      }
+      assertThat(logHandler.getAllMessages()).isEmpty();
+
+      // 5th resize, should log warning
+      pool.resize();
+      assertThat(logHandler.getAllMessages()).hasSize(1);
+      assertThat(logHandler.getAllMessages())
+          .contains(
+              "Channel pool is repeatedly resizing. Consider adjusting `initialChannelCount` or `maxResizeDelta` to a more reasonable value. "
+                  + "See https://docs.cloud.google.com/java/docs/troubleshooting to enable logging and set `com.google.api.gax.grpc.ChannelPool.level=FINEST` to log the channel pool resize behavior.");
+
+      // 6th resize, should not log again
+      pool.resize();
+      assertThat(logHandler.getAllMessages()).hasSize(1);
+    } finally {
+      ChannelPool.LOG.removeHandler(logHandler);
+    }
+  }
+
+  @Test
+  void repeatedResizingLogsWarningOnShrink() throws Exception {
+    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
+
+    List<ManagedChannel> channels = new ArrayList<>();
+    ChannelFactory channelFactory =
+        () -> {
+          ManagedChannel channel = Mockito.mock(ManagedChannel.class);
+          channels.add(channel);
+          return channel;
+        };
+
+    pool =
+        new ChannelPool(
+            ChannelPoolSettings.builder()
+                .setInitialChannelCount(10)
+                .setMinRpcsPerChannel(1)
+                .setMaxRpcsPerChannel(2)
+                .setMaxResizeDelta(1)
+                .setMinChannelCount(1)
+                .setMaxChannelCount(10)
+                .build(),
+            channelFactory,
+            provider);
+    assertThat(pool.entries.get()).hasSize(10);
+
+    FakeLogHandler logHandler = new FakeLogHandler();
+    ChannelPool.LOG.addHandler(logHandler);
+
+    try {
+      // 0 RPCs, should shrink every cycle
+      // Resize 4 times, should not log warning yet
+      for (int i = 0; i < 4; i++) {
+        pool.resize();
+      }
+      assertThat(logHandler.getAllMessages()).isEmpty();
+
+      // 5th resize, should log warning
+      pool.resize();
+      assertThat(logHandler.getAllMessages())
+          .contains(
+              "Channel pool is repeatedly resizing. Consider adjusting `initialChannelCount` or `maxResizeDelta` to a more reasonable value. "
+                  + "See https://docs.cloud.google.com/java/docs/troubleshooting to enable logging and set `com.google.api.gax.grpc.ChannelPool.level=FINEST` to log the channel pool resize behavior.");
+    } finally {
+      ChannelPool.LOG.removeHandler(logHandler);
+    }
   }
 
   @Test

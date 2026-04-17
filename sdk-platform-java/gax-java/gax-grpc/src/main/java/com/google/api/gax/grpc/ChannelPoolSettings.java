@@ -93,6 +93,15 @@ public abstract class ChannelPoolSettings {
   public abstract int getMaxChannelCount();
 
   /**
+   * The maximum number of channels that can be added or removed at a time.
+   *
+   * <p>This setting limits the rate at which the channel pool can grow or shrink in a single resize
+   * period. The default value is 2. Regardless of this setting, the number of channels will never
+   * exceed {@link #getMaxChannelCount()}.
+   */
+  public abstract int getMaxResizeDelta();
+
+  /**
    * The initial size of the channel pool.
    *
    * <p>During client construction the client open this many connections. This will be scaled up or
@@ -132,6 +141,7 @@ public abstract class ChannelPoolSettings {
         .setMaxRpcsPerChannel(Integer.MAX_VALUE)
         .setMinChannelCount(size)
         .setMaxChannelCount(size)
+        .setMaxResizeDelta(Math.min(2, size))
         .build();
   }
 
@@ -142,7 +152,8 @@ public abstract class ChannelPoolSettings {
         .setMaxChannelCount(200)
         .setMinRpcsPerChannel(0)
         .setMaxRpcsPerChannel(Integer.MAX_VALUE)
-        .setPreemptiveRefreshEnabled(false);
+        .setPreemptiveRefreshEnabled(false)
+        .setMaxResizeDelta(2);
   }
 
   @AutoValue.Builder
@@ -158,6 +169,8 @@ public abstract class ChannelPoolSettings {
     public abstract Builder setInitialChannelCount(int count);
 
     public abstract Builder setPreemptiveRefreshEnabled(boolean enabled);
+
+    public abstract Builder setMaxResizeDelta(int count);
 
     abstract ChannelPoolSettings autoBuild();
 
@@ -178,6 +191,11 @@ public abstract class ChannelPoolSettings {
           "initial channel count must be less than maxChannelCount");
       Preconditions.checkState(
           s.getInitialChannelCount() > 0, "Initial channel count must be greater than 0");
+      Preconditions.checkState(
+          s.getMaxResizeDelta() > 0, "Max resize delta must be greater than 0");
+      Preconditions.checkState(
+          s.getMaxResizeDelta() <= s.getMaxChannelCount(),
+          "Max resize delta cannot be greater than max channel count");
       return s;
     }
   }
