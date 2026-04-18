@@ -27,6 +27,7 @@ set -exo pipefail
 # the default value is generation_config.yaml in the repository root.
 # 5. [optional] showcase_mode, true if we wish to download the showcase api
 # definitions, which are necessary for generating the showcase library.
+IMAGE_NAME="gcr.io/cloud-devrel-public-resources/java-library-generation"
 while [[ $# -gt 0 ]]; do
 key="$1"
 case "${key}" in
@@ -126,7 +127,7 @@ echo "Changed libraries are: ${changed_libraries:-"No changed library"}."
 # Attempt to pull the image to see if it exists on release PRs.
 if [[ "$current_branch" =~ ^release-please-- ]]; then
   echo "Detected release PR branch: $current_branch"
-  if ! docker pull gcr.io/cloud-devrel-public-resources/java-library-generation:"${image_tag}"; then
+  if ! docker pull "${IMAGE_NAME}:${image_tag}"; then
     echo "Image not found for version ${image_tag}. Falling back to previous version from ${target_branch}."
     previous_tag=$(git show "${target_branch}":.github/workflows/hermetic_library_generation.yaml | grep "image_tag:" | cut -d ':' -f 2 | cut -d '#' -f 1 | xargs)
     if [ -n "$previous_tag" ]; then
@@ -144,7 +145,7 @@ docker run \
   -v "$(pwd):${workspace_name}" \
   -v "${api_def_dir}:${workspace_name}/googleapis" \
   -e GENERATOR_VERSION="${image_tag}" \
-  gcr.io/cloud-devrel-public-resources/java-library-generation:"${image_tag}" \
+  "${IMAGE_NAME}:${image_tag}" \
   --generation-config-path="${workspace_name}/${generation_config}" \
   --library-names="${changed_libraries}" \
   --api-definitions-path="${workspace_name}/googleapis"
