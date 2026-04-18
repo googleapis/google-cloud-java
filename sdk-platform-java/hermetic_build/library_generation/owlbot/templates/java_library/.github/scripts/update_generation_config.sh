@@ -147,7 +147,7 @@ latest_version=$(get_latest_released_version "com.google.api" "gapic-generator-j
 update_config "gapic_generator_version" "${latest_version}" "${generation_config}"
 
 # Update composite action version to latest gapic-generator-java version
-update_action "googleapis/sdk-platform-java/.github/scripts" \
+update_action "googleapis/google-cloud-java/sdk-platform-java/.github/scripts" \
   "${latest_version}" \
   "${workflow}"
 

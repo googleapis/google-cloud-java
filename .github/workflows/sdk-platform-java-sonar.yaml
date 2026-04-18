@@ -20,6 +20,7 @@ jobs:
         filters: |
           library:
             - 'sdk-platform-java/**'
+            - '.github/workflows/sdk-platform-java-sonar.yaml'
   build:
     needs: filter
     if: needs.filter.outputs.library == 'true' && (github.event.pull_request.head.repo.full_name == github.repository || github.event_name != 'pull_request')
@@ -46,13 +47,18 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: Install modules to local maven
-        run: |
-          mvn install -T 1C -DskipTests -ntp -B
-          cd java-showcase
-          mvn install -T 1C -DskipTests -ntp -B
+      - name: Install sdk-platform-modules
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
+      - name: Install java-showcase
+        shell: bash
+        run: mvn install -T 1C -DskipTests -ntp -B
+        working-directory: sdk-platform-java/java-showcase
       - name: Parse showcase version
-        working-directory: java-showcase/gapic-showcase
+        working-directory: sdk-platform-java/java-showcase/gapic-showcase
         run: echo "SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)" >> "$GITHUB_ENV"
       - name: Install showcase server
         run: |
@@ -68,28 +74,29 @@ jobs:
       # step for a few tests (env var tests) may be overkill and should be better covered
       # when we can upgrade to JUnit 5 (https://github.com/googleapis/sdk-platform-java/issues/1611#issuecomment-1970079325)
       - name: Build and analyze for full test coverage
+        working-directory: sdk-platform-java
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FOR_GENERATOR }}
         run: |
           mvn -B verify -Pquick-build \
               -DenableFullTestCoverage \
               -Penable-integration-tests \
               org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-              -Dsonar.projectKey=googleapis_gapic-generator-java \
+              -Dsonar.projectKey=googleapis_google-cloud-java_generator \
               -Dsonar.organization=googleapis \
               -Dsonar.host.url=https://sonarcloud.io
       - name: Build and analyze Showcase Integration Tests Coverage
+        working-directory: sdk-platform-java
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_FOR_SHOWCASE }}
         run: |
           mvn -B clean verify -Pquick-build \
               -DskipUnitTests \
               -Penable-integration-tests \
               -DenableShowcaseTestCoverage \
               org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-              -Dsonar.projectKey=googleapis_gapic-generator-java_integration_tests \
+              -Dsonar.projectKey=googleapis_google-cloud-java_showcase \
               -Dsonar.organization=googleapis \
-              -Dsonar.host.url=https://sonarcloud.io \
-              -Dsonar.projectName=java_showcase_integration_tests
+              -Dsonar.host.url=https://sonarcloud.io
