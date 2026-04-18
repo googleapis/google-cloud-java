@@ -16,8 +16,8 @@
 
 package com.google.cloud.modelarmor.v1beta.samples;
 
-// [START modelarmor_v1beta_generated_ModelArmor_SanitizeUserPrompt_async]
-import com.google.api.core.ApiFuture;
+// [START modelarmor_v1beta_generated_ModelArmor_StreamSanitizeUserPrompt_async]
+import com.google.api.gax.rpc.BidiStream;
 import com.google.cloud.modelarmor.v1beta.DataItem;
 import com.google.cloud.modelarmor.v1beta.ModelArmorClient;
 import com.google.cloud.modelarmor.v1beta.MultiLanguageDetectionMetadata;
@@ -26,19 +26,21 @@ import com.google.cloud.modelarmor.v1beta.SanitizeUserPromptResponse;
 import com.google.cloud.modelarmor.v1beta.StreamingMode;
 import com.google.cloud.modelarmor.v1beta.TemplateName;
 
-public class AsyncSanitizeUserPrompt {
+public class AsyncStreamSanitizeUserPrompt {
 
   public static void main(String[] args) throws Exception {
-    asyncSanitizeUserPrompt();
+    asyncStreamSanitizeUserPrompt();
   }
 
-  public static void asyncSanitizeUserPrompt() throws Exception {
+  public static void asyncStreamSanitizeUserPrompt() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ModelArmorClient modelArmorClient = ModelArmorClient.create()) {
+      BidiStream<SanitizeUserPromptRequest, SanitizeUserPromptResponse> bidiStream =
+          modelArmorClient.streamSanitizeUserPromptCallable().call();
       SanitizeUserPromptRequest request =
           SanitizeUserPromptRequest.newBuilder()
               .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
@@ -47,11 +49,11 @@ public class AsyncSanitizeUserPrompt {
                   MultiLanguageDetectionMetadata.newBuilder().build())
               .setStreamingMode(StreamingMode.forNumber(0))
               .build();
-      ApiFuture<SanitizeUserPromptResponse> future =
-          modelArmorClient.sanitizeUserPromptCallable().futureCall(request);
-      // Do something.
-      SanitizeUserPromptResponse response = future.get();
+      bidiStream.send(request);
+      for (SanitizeUserPromptResponse response : bidiStream) {
+        // Do something when a response is received.
+      }
     }
   }
 }
-// [END modelarmor_v1beta_generated_ModelArmor_SanitizeUserPrompt_async]
+// [END modelarmor_v1beta_generated_ModelArmor_StreamSanitizeUserPrompt_async]
