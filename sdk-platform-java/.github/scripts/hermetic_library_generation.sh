@@ -123,6 +123,21 @@ changed_libraries="$(cat "${changed_libraries_file}")"
 echo "Changed libraries are: ${changed_libraries:-"No changed library"}."
 
 # run hermetic code generation docker image.
+# Attempt to pull the image to see if it exists on release PRs.
+if [[ "$current_branch" =~ ^release-please-- ]]; then
+  echo "Detected release PR branch: $current_branch"
+  if ! docker pull gcr.io/cloud-devrel-public-resources/java-library-generation:"${image_tag}"; then
+    echo "Image not found for version ${image_tag}. Falling back to previous version from ${target_branch}."
+    previous_tag=$(git show "${target_branch}":.github/workflows/hermetic_library_generation.yaml | grep "image_tag:" | cut -d ':' -f 2 | cut -d '#' -f 1 | xargs)
+    if [ -n "$previous_tag" ]; then
+      echo "Using previous image version: $previous_tag"
+      image_tag="$previous_tag"
+    else
+      echo "Failed to extract previous version from ${target_branch}. Proceeding with original tag."
+    fi
+  fi
+fi
+
 docker run \
   --rm \
   -u "$(id -u):$(id -g)" \
