@@ -17,6 +17,7 @@
 package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.core.InternalApi;
+import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder;
 import com.google.cloud.spanner.ErrorCode;
@@ -54,6 +55,7 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
   private final Map<String, GrpcChannelEndpoint> servers = new ConcurrentHashMap<>();
   private final GrpcChannelEndpoint defaultEndpoint;
   private final String defaultAuthority;
+  @Nullable private final GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator;
   private final AtomicBoolean isShutdown = new AtomicBoolean(false);
 
   /**
@@ -65,7 +67,15 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
    */
   public GrpcChannelEndpointCache(InstantiatingGrpcChannelProvider channelProvider)
       throws IOException {
+    this(channelProvider, null);
+  }
+
+  public GrpcChannelEndpointCache(
+      InstantiatingGrpcChannelProvider channelProvider,
+      @Nullable GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator)
+      throws IOException {
     this.baseProvider = channelProvider;
+    this.endpointChannelConfigurator = endpointChannelConfigurator;
     String defaultEndpoint = channelProvider.getEndpoint();
     this.defaultEndpoint = new GrpcChannelEndpoint(defaultEndpoint, channelProvider);
     this.defaultAuthority = this.defaultEndpoint.getChannel().authority();
@@ -110,19 +120,25 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
     return servers.get(address);
   }
 
-  private InstantiatingGrpcChannelProvider createProviderWithAuthorityOverride(String address) {
+  @VisibleForTesting
+  InstantiatingGrpcChannelProvider createProviderWithAuthorityOverride(String address) {
     InstantiatingGrpcChannelProvider endpointProvider =
         (InstantiatingGrpcChannelProvider) baseProvider.withEndpoint(address);
     if (Objects.equals(defaultAuthority, address)) {
       return endpointProvider;
     }
     Builder builder = endpointProvider.toBuilder();
+    builder.setChannelPoolSettings(ChannelPoolSettings.staticallySized(1));
+    builder.setKeepAliveWithoutCalls(Boolean.TRUE);
     final com.google.api.core.ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>
-        baseConfigurator = builder.getChannelConfigurator();
+        baseConfigurator =
+            endpointChannelConfigurator == null ? builder.getChannelConfigurator() : null;
     builder.setChannelConfigurator(
         channelBuilder -> {
           ManagedChannelBuilder effectiveBuilder = channelBuilder;
-          if (baseConfigurator != null) {
+          if (endpointChannelConfigurator != null) {
+            effectiveBuilder = endpointChannelConfigurator.configure(effectiveBuilder);
+          } else if (baseConfigurator != null) {
             effectiveBuilder = baseConfigurator.apply(effectiveBuilder);
           }
           return effectiveBuilder.overrideAuthority(defaultAuthority);

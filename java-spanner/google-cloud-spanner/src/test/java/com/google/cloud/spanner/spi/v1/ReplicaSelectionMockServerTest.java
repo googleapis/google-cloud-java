@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner.spi.v1;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -23,11 +24,13 @@ import static org.junit.Assert.assertTrue;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.DatabaseId;
 import com.google.cloud.spanner.MockSpannerServiceImpl;
+import com.google.cloud.spanner.MockSpannerServiceImpl.SimulatedExecutionTime;
 import com.google.cloud.spanner.MockSpannerServiceImpl.StatementResult;
 import com.google.cloud.spanner.Options;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.SpannerOptions;
 import com.google.cloud.spanner.Statement;
+import com.google.cloud.spanner.TimestampBound;
 import com.google.common.base.Stopwatch;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.ListValue;
@@ -149,6 +152,8 @@ public class ReplicaSelectionMockServerTest {
 
   @After
   public void tearDown() throws InterruptedException {
+    EndpointLatencyRegistry.clear();
+    RequestIdTargetTracker.clear();
     for (ServerInstance si : servers) {
       si.server.shutdown();
     }
@@ -329,5 +334,207 @@ public class ReplicaSelectionMockServerTest {
           "Server 1 should have received Read with the successful key",
           server1ReceivedSuccessfulRead);
     }
+  }
+
+  @Test
+  public void testStaleSingleUseReadBootstrapsScoresAndConvergesToLowerLatencyReplica()
+      throws Exception {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .usePlainText()
+            .setExperimentalHost("localhost:" + servers.get(0).port)
+            .setProjectId("fake-project")
+            .setChannelEndpointCacheFactory(null)
+            .build();
+
+    RecipeList.Builder recipeListBuilder = RecipeList.newBuilder();
+    try {
+      TextFormat.merge(
+          "recipe {\n"
+              + "  table_name: \"Table\"\n"
+              + "  part { tag: 1 }\n"
+              + "  part {\n"
+              + "    order: ASCENDING\n"
+              + "    null_order: NULLS_FIRST\n"
+              + "    type { code: STRING }\n"
+              + "  }\n"
+              + "}\n",
+          recipeListBuilder);
+    } catch (TextFormat.ParseException e) {
+      throw new RuntimeException(e);
+    }
+
+    CacheUpdate cacheUpdate =
+        CacheUpdate.newBuilder()
+            .setDatabaseId(12345L)
+            .setKeyRecipes(recipeListBuilder.build())
+            .addGroup(
+                Group.newBuilder()
+                    .setGroupUid(1L)
+                    .addTablets(
+                        Tablet.newBuilder()
+                            .setTabletUid(101L)
+                            .setServerAddress("localhost:" + servers.get(0).port)
+                            .setRole(Tablet.Role.READ_ONLY)
+                            .setDistance(0)
+                            .build())
+                    .addTablets(
+                        Tablet.newBuilder()
+                            .setTabletUid(102L)
+                            .setServerAddress("localhost:" + servers.get(1).port)
+                            .setRole(Tablet.Role.READ_ONLY)
+                            .setDistance(0)
+                            .build())
+                    .build())
+            .addRange(
+                Range.newBuilder()
+                    .setStartKey(ByteString.EMPTY)
+                    .setLimitKey(ByteString.copyFromUtf8("\u00FF"))
+                    .setGroupUid(1L)
+                    .setSplitId(1L)
+                    .setGeneration(ByteString.copyFromUtf8("gen1"))
+                    .build())
+            .build();
+
+    ResultSet resultSetWithUpdate =
+        SELECT1_RESULTSET.toBuilder().setCacheUpdate(cacheUpdate).build();
+
+    servers
+        .get(0)
+        .mockSpanner
+        .putStatementResult(StatementResult.query(Statement.of("SELECT 1"), resultSetWithUpdate));
+
+    com.google.cloud.spanner.Statement readStatement =
+        StatementResult.createReadStatement(
+            "Table",
+            com.google.cloud.spanner.KeySet.singleKey(com.google.cloud.spanner.Key.of()),
+            Arrays.asList("Column"));
+
+    servers
+        .get(0)
+        .mockSpanner
+        .putStatementResult(StatementResult.query(readStatement, SELECT1_RESULTSET));
+    servers
+        .get(1)
+        .mockSpanner
+        .putStatementResult(StatementResult.query(readStatement, SELECT1_RESULTSET));
+    servers
+        .get(0)
+        .mockSpanner
+        .setStreamingReadExecutionTime(SimulatedExecutionTime.ofMinimumAndRandomTime(40, 0));
+    servers
+        .get(1)
+        .mockSpanner
+        .setStreamingReadExecutionTime(SimulatedExecutionTime.ofMinimumAndRandomTime(0, 0));
+
+    try (Spanner spanner = options.getService()) {
+      DatabaseClient client =
+          spanner.getDatabaseClient(
+              DatabaseId.of("fake-project", "fake-instance", "fake-database"));
+
+      try (com.google.cloud.spanner.ResultSet rs =
+          client.singleUse().executeQuery(Statement.of("SELECT 1"))) {
+        while (rs.next()) {
+          /* consume */
+        }
+      }
+
+      clearServerRequests();
+      boolean sampledServer0 = false;
+      boolean sampledServer1 = false;
+      Stopwatch watch = Stopwatch.createStarted();
+      int attempt = 0;
+      long operationUid = 0L;
+
+      while (watch.elapsed(TimeUnit.SECONDS) < 10 && (!sampledServer0 || !sampledServer1)) {
+        attempt++;
+        String key = "bootstrap-key-" + attempt;
+        try (com.google.cloud.spanner.ResultSet rs =
+            client
+                .singleUse(TimestampBound.ofExactStaleness(15L, TimeUnit.SECONDS))
+                .read(
+                    "Table",
+                    com.google.cloud.spanner.KeySet.singleKey(com.google.cloud.spanner.Key.of(key)),
+                    Arrays.asList("Column"))) {
+          while (rs.next()) {
+            /* consume */
+          }
+        }
+
+        long currentOperationUid = findReadOperationUid(key);
+        assertTrue("Expected stale read to carry operation_uid", currentOperationUid > 0L);
+        if (operationUid == 0L) {
+          operationUid = currentOperationUid;
+        } else {
+          assertEquals(
+              "Expected stale reads to reuse the same operation_uid",
+              operationUid,
+              currentOperationUid);
+        }
+        sampledServer0 = hasReadRequestForKey(servers.get(0).mockSpanner, key) || sampledServer0;
+        sampledServer1 = hasReadRequestForKey(servers.get(1).mockSpanner, key) || sampledServer1;
+      }
+
+      assertTrue("Expected bootstrap exploration to sample server0", sampledServer0);
+      assertTrue("Expected bootstrap exploration to sample server1", sampledServer1);
+      assertTrue("Expected stale reads to reuse the same operation_uid", operationUid > 0L);
+
+      clearServerRequests();
+      boolean routedToLowerLatencyReplica = false;
+      int convergenceAttempt = 0;
+      while (watch.elapsed(TimeUnit.SECONDS) < 10 && !routedToLowerLatencyReplica) {
+        convergenceAttempt++;
+        String key = "convergence-key-" + convergenceAttempt;
+        try (com.google.cloud.spanner.ResultSet rs =
+            client
+                .singleUse(TimestampBound.ofExactStaleness(15L, TimeUnit.SECONDS))
+                .read(
+                    "Table",
+                    com.google.cloud.spanner.KeySet.singleKey(com.google.cloud.spanner.Key.of(key)),
+                    Arrays.asList("Column"))) {
+          while (rs.next()) {
+            /* consume */
+          }
+        }
+
+        routedToLowerLatencyReplica =
+            hasReadRequestForKey(servers.get(1).mockSpanner, key)
+                && !hasReadRequestForKey(servers.get(0).mockSpanner, key);
+      }
+
+      assertTrue(
+          "Expected latency-aware routing to converge to the faster replica",
+          routedToLowerLatencyReplica);
+    }
+  }
+
+  private void clearServerRequests() {
+    for (ServerInstance server : servers) {
+      server.mockSpanner.clearRequests();
+    }
+  }
+
+  private long findReadOperationUid(String key) {
+    for (ServerInstance server : servers) {
+      for (ReadRequest request : server.mockSpanner.getRequestsOfType(ReadRequest.class)) {
+        if (request.getKeySet().getKeysCount() == 0
+            || request.getKeySet().getKeys(0).getValuesCount() == 0) {
+          continue;
+        }
+        if (key.equals(request.getKeySet().getKeys(0).getValues(0).getStringValue())) {
+          return request.getRoutingHint().getOperationUid();
+        }
+      }
+    }
+    return 0L;
+  }
+
+  private boolean hasReadRequestForKey(MockSpannerServiceImpl mockSpanner, String key) {
+    return mockSpanner.getRequestsOfType(ReadRequest.class).stream()
+        .anyMatch(
+            request ->
+                request.getKeySet().getKeysCount() > 0
+                    && request.getKeySet().getKeys(0).getValuesCount() > 0
+                    && key.equals(request.getKeySet().getKeys(0).getValues(0).getStringValue()));
   }
 }

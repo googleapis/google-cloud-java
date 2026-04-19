@@ -508,6 +508,13 @@ public class KeyAwareChannelTest {
   }
 
   @Test
+  public void resourceExhaustedOrUnavailableRoutedEndpointRecordsErrorPenalty() throws Exception {
+    assertRoutedEndpointErrorPenaltyRecorded(Status.RESOURCE_EXHAUSTED, 101L);
+    EndpointLatencyRegistry.clear();
+    assertRoutedEndpointErrorPenaltyRecorded(Status.UNAVAILABLE, 102L);
+  }
+
+  @Test
   public void resourceExhaustedAffinityEndpointIsAvoidedForSubsequentTransactionRequest()
       throws Exception {
     TestHarness harness = createHarness();
@@ -572,7 +579,7 @@ public class KeyAwareChannelTest {
   }
 
   @Test
-  public void resourceExhaustedRoutedEndpointFallsBackToDefaultWhenNoReplicaExists()
+  public void resourceExhaustedRoutedEndpointRetriesSameReplicaWhenSingleReplicaIsExcluded()
       throws Exception {
     TestHarness harness = createHarness();
     CallOptions retryCallOptions = retryCallOptions(3L);
@@ -602,8 +609,84 @@ public class KeyAwareChannelTest {
     secondCall.start(new CapturingListener<ResultSet>(), new Metadata());
     secondCall.sendMessage(request);
 
-    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(1);
-    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(2);
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(2);
+    assertThat(harness.defaultManagedChannel.callCount()).isEqualTo(1);
+  }
+
+  @Test
+  public void resourceExhaustedRoutedEndpointRetriesRandomExcludedReplicaWhenAllReplicasExcluded()
+      throws Exception {
+    boolean selectedServerAOnThirdAttempt = false;
+    boolean selectedServerBOnThirdAttempt = false;
+
+    for (int attempt = 0;
+        attempt < 20 && (!selectedServerAOnThirdAttempt || !selectedServerBOnThirdAttempt);
+        attempt++) {
+      TestHarness harness = createHarness();
+      seedCache(harness, createLeaderAndReplicaCacheUpdate());
+      CallOptions retryCallOptions = retryCallOptions(100L + attempt);
+      ExecuteSqlRequest request =
+          ExecuteSqlRequest.newBuilder()
+              .setSession(SESSION)
+              .setRoutingHint(RoutingHint.newBuilder().setKey(bytes("a")).build())
+              .build();
+
+      ClientCall<ExecuteSqlRequest, ResultSet> firstCall =
+          harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), retryCallOptions);
+      firstCall.start(new CapturingListener<ResultSet>(), new Metadata());
+      firstCall.sendMessage(request);
+
+      assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(1);
+      assertThat(harness.endpointCache.callCountForAddress("server-b:1234")).isEqualTo(0);
+
+      @SuppressWarnings("unchecked")
+      RecordingClientCall<ExecuteSqlRequest, ResultSet> firstDelegate =
+          (RecordingClientCall<ExecuteSqlRequest, ResultSet>)
+              harness.endpointCache.latestCallForAddress("server-a:1234");
+      firstDelegate.emitOnClose(Status.RESOURCE_EXHAUSTED, new Metadata());
+
+      ClientCall<ExecuteSqlRequest, ResultSet> secondCall =
+          harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), retryCallOptions);
+      secondCall.start(new CapturingListener<ResultSet>(), new Metadata());
+      secondCall.sendMessage(request);
+
+      assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(1);
+      assertThat(harness.endpointCache.callCountForAddress("server-b:1234")).isEqualTo(1);
+
+      @SuppressWarnings("unchecked")
+      RecordingClientCall<ExecuteSqlRequest, ResultSet> secondDelegate =
+          (RecordingClientCall<ExecuteSqlRequest, ResultSet>)
+              harness.endpointCache.latestCallForAddress("server-b:1234");
+      secondDelegate.emitOnClose(Status.RESOURCE_EXHAUSTED, new Metadata());
+
+      int serverACallCountBeforeThirdAttempt =
+          harness.endpointCache.callCountForAddress("server-a:1234");
+      int serverBCallCountBeforeThirdAttempt =
+          harness.endpointCache.callCountForAddress("server-b:1234");
+
+      ClientCall<ExecuteSqlRequest, ResultSet> thirdCall =
+          harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), retryCallOptions);
+      thirdCall.start(new CapturingListener<ResultSet>(), new Metadata());
+      thirdCall.sendMessage(request);
+
+      int serverACallCountAfterThirdAttempt =
+          harness.endpointCache.callCountForAddress("server-a:1234");
+      int serverBCallCountAfterThirdAttempt =
+          harness.endpointCache.callCountForAddress("server-b:1234");
+
+      assertThat(
+              (serverACallCountAfterThirdAttempt - serverACallCountBeforeThirdAttempt)
+                  + (serverBCallCountAfterThirdAttempt - serverBCallCountBeforeThirdAttempt))
+          .isEqualTo(1);
+
+      selectedServerAOnThirdAttempt |=
+          serverACallCountAfterThirdAttempt == serverACallCountBeforeThirdAttempt + 1;
+      selectedServerBOnThirdAttempt |=
+          serverBCallCountAfterThirdAttempt == serverBCallCountBeforeThirdAttempt + 1;
+    }
+
+    assertThat(selectedServerAOnThirdAttempt).isTrue();
+    assertThat(selectedServerBOnThirdAttempt).isTrue();
   }
 
   @Test
@@ -1557,5 +1640,39 @@ public class KeyAwareChannelTest {
   private static CallOptions retryCallOptions(XGoogSpannerRequestId requestId) {
     return CallOptions.DEFAULT.withOption(
         XGoogSpannerRequestId.REQUEST_ID_CALL_OPTIONS_KEY, requestId);
+  }
+
+  private static void assertRoutedEndpointErrorPenaltyRecorded(Status status, long operationUid)
+      throws Exception {
+    EndpointLatencyRegistry.clear();
+    TestHarness harness = createHarness();
+    seedCache(harness, createLeaderAndReplicaCacheUpdate());
+
+    ExecuteSqlRequest request =
+        ExecuteSqlRequest.newBuilder()
+            .setSession(SESSION)
+            .setRoutingHint(
+                RoutingHint.newBuilder().setKey(bytes("b")).setOperationUid(operationUid).build())
+            .build();
+
+    ClientCall<ExecuteSqlRequest, ResultSet> call =
+        harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), retryCallOptions(operationUid));
+    call.start(new CapturingListener<ResultSet>(), new Metadata());
+    call.sendMessage(request);
+
+    assertThat(harness.endpointCache.callCountForAddress("server-a:1234")).isEqualTo(1);
+
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteSqlRequest, ResultSet> delegate =
+        (RecordingClientCall<ExecuteSqlRequest, ResultSet>)
+            harness.endpointCache.latestCallForAddress("server-a:1234");
+    long routedOperationUid = delegate.lastMessage.getRoutingHint().getOperationUid();
+    assertThat(routedOperationUid).isGreaterThan(0L);
+    delegate.emitOnClose(status, new Metadata());
+
+    assertThat(EndpointLatencyRegistry.hasScore(routedOperationUid, "server-a:1234")).isTrue();
+    assertThat(EndpointLatencyRegistry.getSelectionCost(routedOperationUid, "server-a:1234"))
+        .isEqualTo((double) EndpointLatencyRegistry.DEFAULT_ERROR_PENALTY.toNanos() / 1_000D);
+    assertThat(EndpointLatencyRegistry.hasScore(routedOperationUid, "server-b:1234")).isFalse();
   }
 }

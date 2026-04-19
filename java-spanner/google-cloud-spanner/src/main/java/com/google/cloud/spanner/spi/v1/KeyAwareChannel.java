@@ -107,18 +107,25 @@ final class KeyAwareChannel extends ManagedChannel {
 
   private KeyAwareChannel(
       InstantiatingGrpcChannelProvider channelProvider,
-      @Nullable ChannelEndpointCacheFactory endpointCacheFactory)
+      @Nullable ChannelEndpointCacheFactory endpointCacheFactory,
+      @Nullable GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator)
       throws IOException {
-    this(channelProvider, endpointCacheFactory, new EndpointOverloadCooldownTracker());
+    this(
+        channelProvider,
+        endpointCacheFactory,
+        endpointChannelConfigurator,
+        new EndpointOverloadCooldownTracker());
   }
 
   private KeyAwareChannel(
       InstantiatingGrpcChannelProvider channelProvider,
       @Nullable ChannelEndpointCacheFactory endpointCacheFactory,
+      @Nullable GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator,
       EndpointOverloadCooldownTracker endpointOverloadCooldowns)
       throws IOException {
     if (endpointCacheFactory == null) {
-      this.endpointCache = new GrpcChannelEndpointCache(channelProvider);
+      this.endpointCache =
+          new GrpcChannelEndpointCache(channelProvider, endpointChannelConfigurator);
     } else {
       this.endpointCache = endpointCacheFactory.create(channelProvider);
     }
@@ -137,7 +144,15 @@ final class KeyAwareChannel extends ManagedChannel {
       InstantiatingGrpcChannelProvider channelProvider,
       @Nullable ChannelEndpointCacheFactory endpointCacheFactory)
       throws IOException {
-    return new KeyAwareChannel(channelProvider, endpointCacheFactory);
+    return new KeyAwareChannel(channelProvider, endpointCacheFactory, null);
+  }
+
+  static KeyAwareChannel create(
+      InstantiatingGrpcChannelProvider channelProvider,
+      @Nullable ChannelEndpointCacheFactory endpointCacheFactory,
+      @Nullable GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator)
+      throws IOException {
+    return new KeyAwareChannel(channelProvider, endpointCacheFactory, endpointChannelConfigurator);
   }
 
   @VisibleForTesting
@@ -146,7 +161,8 @@ final class KeyAwareChannel extends ManagedChannel {
       @Nullable ChannelEndpointCacheFactory endpointCacheFactory,
       EndpointOverloadCooldownTracker endpointOverloadCooldowns)
       throws IOException {
-    return new KeyAwareChannel(channelProvider, endpointCacheFactory, endpointOverloadCooldowns);
+    return new KeyAwareChannel(
+        channelProvider, endpointCacheFactory, null, endpointOverloadCooldowns);
   }
 
   private static final class ChannelFinderReference extends SoftReference<ChannelFinder> {
@@ -364,6 +380,18 @@ final class KeyAwareChannel extends ManagedChannel {
             });
   }
 
+  private void maybeRecordErrorPenalty(
+      @Nullable ChannelEndpoint endpoint, io.grpc.Status.Code statusCode, long operationUid) {
+    if (!shouldExcludeEndpointOnRetry(statusCode) || endpoint == null || operationUid <= 0L) {
+      return;
+    }
+    String address = endpoint.getAddress();
+    if (defaultEndpointAddress.equals(address)) {
+      return;
+    }
+    EndpointLatencyRegistry.recordError(operationUid, address);
+  }
+
   private static boolean shouldExcludeEndpointOnRetry(io.grpc.Status.Code statusCode) {
     return statusCode == io.grpc.Status.Code.RESOURCE_EXHAUSTED
         || statusCode == io.grpc.Status.Code.UNAVAILABLE;
@@ -497,6 +525,8 @@ final class KeyAwareChannel extends ManagedChannel {
     private ChannelFinder channelFinder;
     @Nullable private Predicate<String> excludedEndpoints;
     @Nullable private ChannelEndpoint selectedEndpoint;
+    @Nullable private String selectedTargetEndpoint;
+    private long selectedOperationUid;
     @Nullable private ByteString transactionIdToClear;
     private boolean allowDefaultAffinity;
     private long pendingRequests;
@@ -563,6 +593,7 @@ final class KeyAwareChannel extends ManagedChannel {
         Predicate<String> excludedEndpoints = excludedEndpoints();
         ChannelEndpoint endpoint = null;
         ChannelFinder finder = null;
+        long operationUid = 0L;
 
         if (message instanceof ReadRequest) {
           ReadRequest.Builder reqBuilder = ((ReadRequest) message).toBuilder();
@@ -570,6 +601,7 @@ final class KeyAwareChannel extends ManagedChannel {
           RoutingDecision routing = routeFromRequest(reqBuilder);
           finder = routing.finder;
           endpoint = routing.endpoint;
+          operationUid = routing.operationUid;
           message = (RequestT) reqBuilder.build();
         } else if (message instanceof ExecuteSqlRequest) {
           ExecuteSqlRequest.Builder reqBuilder = ((ExecuteSqlRequest) message).toBuilder();
@@ -577,6 +609,7 @@ final class KeyAwareChannel extends ManagedChannel {
           RoutingDecision routing = routeFromRequest(reqBuilder);
           finder = routing.finder;
           endpoint = routing.endpoint;
+          operationUid = routing.operationUid;
           message = (RequestT) reqBuilder.build();
         } else if (message instanceof BeginTransactionRequest) {
           BeginTransactionRequest.Builder reqBuilder =
@@ -638,7 +671,15 @@ final class KeyAwareChannel extends ManagedChannel {
           throw new IllegalStateException("No default endpoint available for key-aware call");
         }
         selectedEndpoint = endpoint;
+        selectedTargetEndpoint = endpoint.getAddress();
+        selectedOperationUid = operationUid;
         this.channelFinder = finder;
+        EndpointLatencyRegistry.beginRequest(selectedTargetEndpoint);
+        XGoogSpannerRequestId requestId = callOptions.getOption(REQUEST_ID_CALL_OPTIONS_KEY);
+        if (requestId != null) {
+          RequestIdTargetTracker.record(
+              requestId.getHeaderValue(), selectedTargetEndpoint, operationUid);
+        }
 
         // Record real traffic for idle eviction tracking.
         parentChannel.onRequestRouted(endpoint);
@@ -815,7 +856,7 @@ final class KeyAwareChannel extends ManagedChannel {
                 : finder.findServer(reqBuilder, excludedEndpoints);
         endpoint = routed;
       }
-      return new RoutingDecision(finder, endpoint);
+      return new RoutingDecision(finder, endpoint, operationUid(reqBuilder.getRoutingHint()));
     }
 
     private RoutingDecision routeFromRequest(ExecuteSqlRequest.Builder reqBuilder) {
@@ -838,18 +879,25 @@ final class KeyAwareChannel extends ManagedChannel {
                 : finder.findServer(reqBuilder, excludedEndpoints);
         endpoint = routed;
       }
-      return new RoutingDecision(finder, endpoint);
+      return new RoutingDecision(finder, endpoint, operationUid(reqBuilder.getRoutingHint()));
     }
   }
 
   private static final class RoutingDecision {
     @Nullable private final ChannelFinder finder;
     @Nullable private final ChannelEndpoint endpoint;
+    private final long operationUid;
 
-    private RoutingDecision(@Nullable ChannelFinder finder, @Nullable ChannelEndpoint endpoint) {
+    private RoutingDecision(
+        @Nullable ChannelFinder finder, @Nullable ChannelEndpoint endpoint, long operationUid) {
       this.finder = finder;
       this.endpoint = endpoint;
+      this.operationUid = operationUid;
     }
+  }
+
+  private static long operationUid(com.google.spanner.v1.RoutingHint routingHint) {
+    return routingHint == null ? 0L : routingHint.getOperationUid();
   }
 
   static final class KeyAwareClientCallListener<ResponseT>
@@ -904,9 +952,13 @@ final class KeyAwareChannel extends ManagedChannel {
     @Override
     public void onClose(io.grpc.Status status, Metadata trailers) {
       if (shouldExcludeEndpointOnRetry(status.getCode())) {
+        call.parentChannel.maybeRecordErrorPenalty(
+            call.selectedEndpoint, status.getCode(), call.selectedOperationUid);
         call.parentChannel.maybeExcludeEndpointOnNextCall(
             call.selectedEndpoint, call.logicalRequestKey);
       }
+      EndpointLatencyRegistry.finishRequest(call.selectedTargetEndpoint);
+      RequestIdTargetTracker.remove(call.logicalRequestKey);
       call.maybeClearAffinity();
       super.onClose(status, trailers);
     }

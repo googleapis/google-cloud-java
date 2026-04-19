@@ -24,6 +24,7 @@ import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -70,8 +71,9 @@ class EndpointLifecycleManager {
   private static final long EVICTION_CHECK_INTERVAL_SECONDS = 300;
 
   /**
-   * Maximum consecutive TRANSIENT_FAILURE probes before evicting an endpoint. Gives the channel
-   * time to recover from transient network issues before we tear it down and recreate.
+   * Maximum observed TRANSIENT_FAILURE probes before evicting an endpoint. The counter resets only
+   * after the channel reaches READY, so CONNECTING/IDLE oscillation does not hide a persistently
+   * unhealthy endpoint.
    */
   private static final int MAX_TRANSIENT_FAILURE_COUNT = 3;
 
@@ -104,6 +106,7 @@ class EndpointLifecycleManager {
 
   private final ChannelEndpointCache endpointCache;
   private final Map<String, EndpointState> endpoints = new ConcurrentHashMap<>();
+  private final Set<String> evictedAddresses = ConcurrentHashMap.newKeySet();
   private final Set<String> transientFailureEvictedAddresses = ConcurrentHashMap.newKeySet();
   private final Map<String, Long> finderGenerations = new ConcurrentHashMap<>();
   private final Map<String, PendingActiveAddressUpdate> pendingActiveAddressUpdates =
@@ -215,6 +218,7 @@ class EndpointLifecycleManager {
         address,
         addr -> {
           logger.log(Level.FINE, "Creating endpoint state for address: {0}", addr);
+          evictedAddresses.remove(addr);
           created[0] = true;
           return new EndpointState(addr, clock.instant());
         });
@@ -493,7 +497,8 @@ class EndpointLifecycleManager {
    * <p>All exceptions are caught to prevent {@link ScheduledExecutorService} from cancelling future
    * runs of this task.
    */
-  private void probe(String address) {
+  @VisibleForTesting
+  void probe(String address) {
     try {
       if (isShutdown.get()) {
         return;
@@ -530,25 +535,24 @@ class EndpointLifecycleManager {
           logger.log(
               Level.FINE, "Probe for {0}: channel IDLE, requesting connection (warmup)", address);
           channel.getState(true);
-          state.consecutiveTransientFailures = 0;
           break;
 
         case CONNECTING:
-          state.consecutiveTransientFailures = 0;
           break;
 
         case TRANSIENT_FAILURE:
           state.consecutiveTransientFailures++;
           logger.log(
               Level.FINE,
-              "Probe for {0}: channel in TRANSIENT_FAILURE ({1}/{2})",
+              "Probe for {0}: channel in TRANSIENT_FAILURE ({1}/{2} observed failures since last"
+                  + " READY)",
               new Object[] {
                 address, state.consecutiveTransientFailures, MAX_TRANSIENT_FAILURE_COUNT
               });
           if (state.consecutiveTransientFailures >= MAX_TRANSIENT_FAILURE_COUNT) {
             logger.log(
                 Level.FINE,
-                "Evicting endpoint {0}: {1} consecutive TRANSIENT_FAILURE probes",
+                "Evicting endpoint {0}: {1} TRANSIENT_FAILURE probes without reaching READY",
                 new Object[] {address, state.consecutiveTransientFailures});
             evictEndpoint(address, EvictionReason.TRANSIENT_FAILURE);
           }
@@ -608,6 +612,7 @@ class EndpointLifecycleManager {
 
     stopProbing(address);
     endpoints.remove(address);
+    evictedAddresses.add(address);
     if (reason == EvictionReason.TRANSIENT_FAILURE) {
       markTransientFailureEvicted(address);
     } else {
@@ -636,6 +641,7 @@ class EndpointLifecycleManager {
 
     logger.log(Level.FINE, "Recreating previously evicted endpoint for address: {0}", address);
     EndpointState state = new EndpointState(address, clock.instant());
+    evictedAddresses.remove(address);
     if (endpoints.putIfAbsent(address, state) == null) {
       // Schedule after putIfAbsent returns so the entry is visible to the scheduler thread.
       scheduler.submit(() -> createAndStartProbing(address));
@@ -663,6 +669,32 @@ class EndpointLifecycleManager {
     return endpoints.size();
   }
 
+  Map<String, Long> snapshotEndpointStateCounts() {
+    Map<String, Long> counts = new HashMap<>();
+    snapshotEndpointStates().values().forEach(state -> counts.merge(state, 1L, Long::sum));
+    return counts;
+  }
+
+  Map<String, String> snapshotEndpointStates() {
+    Map<String, String> states = new HashMap<>();
+    for (String address : endpoints.keySet()) {
+      ChannelEndpoint endpoint = endpointCache.getIfPresent(address);
+      String stateName = "unknown";
+      if (endpoint != null) {
+        ConnectivityState state = endpoint.getChannel().getState(false);
+        stateName =
+            state == ConnectivityState.TRANSIENT_FAILURE
+                ? "transient_failure"
+                : state.name().toLowerCase();
+      }
+      states.put(address, stateName);
+    }
+    for (String address : evictedAddresses) {
+      states.putIfAbsent(address, "evicted");
+    }
+    return states;
+  }
+
   /** Shuts down the lifecycle manager and all probing. */
   void shutdown() {
     if (!isShutdown.compareAndSet(false, true)) {
@@ -684,6 +716,7 @@ class EndpointLifecycleManager {
       }
     }
     endpoints.clear();
+    evictedAddresses.clear();
     transientFailureEvictedAddresses.clear();
     pendingActiveAddressUpdates.clear();
     queuedFinderKeys.clear();
