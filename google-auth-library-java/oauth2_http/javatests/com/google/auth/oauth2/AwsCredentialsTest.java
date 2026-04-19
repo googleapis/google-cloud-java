@@ -56,10 +56,19 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /** Tests for {@link AwsCredentials}. */
 class AwsCredentialsTest extends BaseSerializationTest {
+
+  @org.junit.jupiter.api.BeforeEach
+  void setUp() {}
+
+  @org.junit.jupiter.api.AfterEach
+  void tearDown() {
+    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
+  }
 
   private static final String STS_URL = "https://sts.googleapis.com/v1/token";
   private static final String AWS_CREDENTIALS_URL = "https://169.254.169.254";
@@ -1355,6 +1364,53 @@ class AwsCredentialsTest extends BaseSerializationTest {
         assertEquals(expectedContext.getSubjectTokenType(), context.getSubjectTokenType());
       }
       return credentials;
+    }
+  }
+
+  @Test
+  public void testRefresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
+    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
+    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
+    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+
+    AwsSecurityCredentialsSupplier supplier =
+        new TestAwsSecurityCredentialsSupplier("test", programmaticAwsCreds, null, null);
+
+    AwsCredentials awsCredential =
+        AwsCredentials.newBuilder()
+            .setAwsSecurityCredentialsSupplier(supplier)
+            .setHttpTransportFactory(transportFactory)
+            .setAudience(
+                "//iam.googleapis.com/projects/12345/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setTokenUrl(STS_URL)
+            .setSubjectTokenType("subjectTokenType")
+            .build();
+
+    // First call: initiates async refresh.
+    Map<String, List<String>> headers = awsCredential.getRequestMetadata();
+    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
+
+    waitForRegionalAccessBoundary(awsCredential);
+
+    // Second call: should have header.
+    headers = awsCredential.getRequestMetadata();
+    assertEquals(
+        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
+        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
+  }
+
+  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
+      throws InterruptedException {
+    long deadline = System.currentTimeMillis() + 5000;
+    while (credentials.getRegionalAccessBoundary() == null
+        && System.currentTimeMillis() < deadline) {
+      Thread.sleep(100);
+    }
+    if (credentials.getRegionalAccessBoundary() == null) {
+      Assertions.fail("Timed out waiting for regional access boundary refresh");
     }
   }
 }

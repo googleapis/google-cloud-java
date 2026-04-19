@@ -43,7 +43,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.testing.http.MockLowLevelHttpRequest;
-import com.google.api.client.util.Clock;
 import com.google.auth.TestUtils;
 import com.google.auth.http.AuthHttpConstants;
 import com.google.auth.http.HttpTransportFactory;
@@ -62,6 +61,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -127,6 +127,11 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
   @BeforeEach
   void setup() {
     transportFactory = new MockExternalAccountAuthorizedUserCredentialsTransportFactory();
+  }
+
+  @org.junit.jupiter.api.AfterEach
+  void tearDown() {
+    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
   }
 
   @Test
@@ -1233,7 +1238,49 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
     assertEquals(credentials, deserializedCredentials);
     assertEquals(credentials.hashCode(), deserializedCredentials.hashCode());
     assertEquals(credentials.toString(), deserializedCredentials.toString());
-    assertSame(Clock.SYSTEM, deserializedCredentials.clock);
+    assertSame(com.google.api.client.util.Clock.SYSTEM, deserializedCredentials.clock);
+  }
+
+  @org.junit.jupiter.api.Test
+  void testRefresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
+    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
+    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
+    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+
+    ExternalAccountAuthorizedUserCredentials credentials =
+        ExternalAccountAuthorizedUserCredentials.newBuilder()
+            .setClientId(CLIENT_ID)
+            .setClientSecret(CLIENT_SECRET)
+            .setRefreshToken(REFRESH_TOKEN)
+            .setTokenUrl(TOKEN_URL)
+            .setAudience(
+                "//iam.googleapis.com/locations/global/workforcePools/pool/providers/provider")
+            .setHttpTransportFactory(transportFactory)
+            .build();
+
+    // First call: initiates async refresh.
+    Map<String, List<String>> headers = credentials.getRequestMetadata();
+    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
+
+    waitForRegionalAccessBoundary(credentials);
+
+    // Second call: should have header.
+    headers = credentials.getRequestMetadata();
+    assertEquals(
+        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
+        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
+  }
+
+  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
+      throws InterruptedException {
+    long deadline = System.currentTimeMillis() + 5000;
+    while (credentials.getRegionalAccessBoundary() == null
+        && System.currentTimeMillis() < deadline) {
+      Thread.sleep(100);
+    }
+    if (credentials.getRegionalAccessBoundary() == null) {
+      Assertions.fail("Timed out waiting for regional access boundary refresh");
+    }
   }
 
   static GenericJson buildJsonCredentials() {

@@ -98,7 +98,7 @@ import java.util.Objects;
  * </pre>
  */
 public class ImpersonatedCredentials extends GoogleCredentials
-    implements ServiceAccountSigner, IdTokenProvider {
+    implements ServiceAccountSigner, IdTokenProvider, RegionalAccessBoundaryProvider {
 
   private static final long serialVersionUID = -2133257318957488431L;
   private static final int TWELVE_HOURS_IN_SECONDS = 43200;
@@ -327,8 +327,20 @@ public class ImpersonatedCredentials extends GoogleCredentials
     return sourceCredentials;
   }
 
+  @InternalApi
+  @Override
+  public String getRegionalAccessBoundaryUrl() throws IOException {
+    return String.format(
+        OAuth2Utils.IAM_CREDENTIALS_ALLOWED_LOCATIONS_URL_FORMAT_SERVICE_ACCOUNT, getAccount());
+  }
+
   int getLifetime() {
     return this.lifetime;
+  }
+
+  @Override
+  HttpTransportFactory getTransportFactory() {
+    return transportFactory;
   }
 
   public void setTransportFactory(HttpTransportFactory httpTransportFactory) {

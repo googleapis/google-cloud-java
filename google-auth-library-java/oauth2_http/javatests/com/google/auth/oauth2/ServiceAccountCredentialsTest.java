@@ -31,6 +31,7 @@
 
 package com.google.auth.oauth2;
 
+import static com.google.auth.oauth2.RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -153,6 +154,14 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
   static ServiceAccountCredentials.Builder createDefaultBuilder() throws IOException {
     PrivateKey privateKey = OAuth2Utils.privateKeyFromPkcs8(PRIVATE_KEY_PKCS8);
     return createDefaultBuilderWithKey(privateKey);
+  }
+
+  @org.junit.jupiter.api.BeforeEach
+  void setUp() {}
+
+  @org.junit.jupiter.api.AfterEach
+  void tearDown() {
+    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
   }
 
   @Test
@@ -1771,6 +1780,100 @@ class ServiceAccountCredentialsTest extends BaseSerializationTest {
             .setUseJwtAccessWithScope(true)
             .build();
     verifyJwtAccess(credentials.getRequestMetadata(CALL_URI), "scope1 scope2");
+  }
+
+  @Test
+  public void refresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
+    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
+    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
+    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+    // Mock regional access boundary response
+    RegionalAccessBoundary regionalAccessBoundary =
+        new RegionalAccessBoundary(
+            TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
+            TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS,
+            null);
+
+    MockTokenServerTransport transport = new MockTokenServerTransport();
+    transport.addServiceAccount(CLIENT_EMAIL, "test-access-token");
+    transport.setRegionalAccessBoundary(regionalAccessBoundary);
+
+    ServiceAccountCredentials credentials =
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(CLIENT_EMAIL)
+            .setPrivateKey(
+                OAuth2Utils.privateKeyFromPkcs8(ServiceAccountCredentialsTest.PRIVATE_KEY_PKCS8))
+            .setPrivateKeyId("test-key-id")
+            .setHttpTransportFactory(() -> transport)
+            .setScopes(SCOPES)
+            .build();
+
+    // First call: initiates async refresh.
+    Map<String, List<String>> headers = credentials.getRequestMetadata();
+    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
+
+    waitForRegionalAccessBoundary(credentials);
+
+    // Second call: should have header.
+    headers = credentials.getRequestMetadata();
+    assertEquals(
+        headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY),
+        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
+  }
+
+  @Test
+  public void refresh_regionalAccessBoundary_selfSignedJWT()
+      throws IOException, InterruptedException {
+    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
+    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
+    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+    RegionalAccessBoundary regionalAccessBoundary =
+        new RegionalAccessBoundary(
+            TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
+            TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS,
+            null);
+
+    MockTokenServerTransport transport = new MockTokenServerTransport();
+    transport.setRegionalAccessBoundary(regionalAccessBoundary);
+
+    ServiceAccountCredentials credentials =
+        ServiceAccountCredentials.newBuilder()
+            .setClientEmail(CLIENT_EMAIL)
+            .setPrivateKey(
+                OAuth2Utils.privateKeyFromPkcs8(ServiceAccountCredentialsTest.PRIVATE_KEY_PKCS8))
+            .setPrivateKeyId("test-key-id")
+            .setHttpTransportFactory(() -> transport)
+            .setUseJwtAccessWithScope(true)
+            .setScopes(SCOPES)
+            .build();
+
+    // First call: initiates async refresh using the SSJWT as the token.
+    Map<String, List<String>> headers = credentials.getRequestMetadata();
+    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
+
+    waitForRegionalAccessBoundary(credentials);
+
+    // Second call: should have header.
+    headers = credentials.getRequestMetadata();
+    assertEquals(
+        headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY),
+        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
+
+    assertEquals(
+        TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
+        credentials.getRegionalAccessBoundary().getEncodedLocations());
+  }
+
+  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
+      throws InterruptedException {
+    long deadline = System.currentTimeMillis() + 5000;
+    while (credentials.getRegionalAccessBoundary() == null
+        && System.currentTimeMillis() < deadline) {
+      Thread.sleep(100);
+    }
+    if (credentials.getRegionalAccessBoundary() == null) {
+      fail("Timed out waiting for regional access boundary refresh");
+    }
   }
 
   private void verifyJwtAccess(Map<String, List<String>> metadata, String expectedScopeClaim)

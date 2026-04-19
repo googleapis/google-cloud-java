@@ -94,12 +94,21 @@ class LoggingTest {
     LoggingUtils.setEnvironmentProvider(testEnvironmentProvider);
   }
 
+  @org.junit.jupiter.api.BeforeEach
+  void setUp() {}
+
+  @org.junit.jupiter.api.AfterEach
+  void tearDown() {
+    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
+  }
+
   @Test
   void userCredentials_getRequestMetadata_fromRefreshToken_hasAccessToken() throws IOException {
     TestAppender testAppender = setupTestLogger(UserCredentials.class);
     MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
     transportFactory.transport.addClient(CLIENT_ID, CLIENT_SECRET);
     transportFactory.transport.addRefreshToken(REFRESH_TOKEN, ACCESS_TOKEN);
+
     UserCredentials userCredentials =
         UserCredentials.newBuilder()
             .setClientId(CLIENT_ID)
@@ -212,6 +221,7 @@ class LoggingTest {
     transportFactory.getTransport().setTargetPrincipal(CLIENT_EMAIL);
     transportFactory.getTransport().setIdToken(DEFAULT_ID_TOKEN);
     transportFactory.getTransport().addStatusCodeAndMessage(HttpStatusCodes.STATUS_CODE_OK, "");
+
     ServiceAccountCredentials credentials =
         createDefaultBuilder()
             .setScopes(SCOPES)

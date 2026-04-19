@@ -37,9 +37,11 @@ import static com.google.auth.oauth2.OAuth2Utils.JSON_FACTORY;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.GenericJson;
@@ -74,6 +76,14 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
   private static final IdentityPoolSubjectTokenSupplier testProvider =
       (ExternalAccountSupplierContext context) -> "testSubjectToken";
+
+  @org.junit.jupiter.api.BeforeEach
+  void setUp() {}
+
+  @org.junit.jupiter.api.AfterEach
+  void tearDown() {
+    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
+  }
 
   @Test
   void createdScoped_clonedCredentialWithAddedScopes() {
@@ -1297,6 +1307,51 @@ class IdentityPoolCredentialsTest extends BaseSerializationTest {
 
     void setShouldThrowOnGetKeyStore(boolean shouldThrow) {
       this.shouldThrowOnGetKeyStore = shouldThrow;
+    }
+  }
+
+  @Test
+  public void testRefresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
+    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
+    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
+    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+
+    MockExternalAccountCredentialsTransportFactory transportFactory =
+        new MockExternalAccountCredentialsTransportFactory();
+    HttpTransportFactory testingHttpTransportFactory = transportFactory;
+
+    IdentityPoolCredentials credentials =
+        IdentityPoolCredentials.newBuilder()
+            .setSubjectTokenSupplier(testProvider)
+            .setHttpTransportFactory(testingHttpTransportFactory)
+            .setAudience(
+                "//iam.googleapis.com/projects/12345/locations/global/workloadIdentityPools/pool/providers/provider")
+            .setSubjectTokenType("subjectTokenType")
+            .setTokenUrl(STS_URL)
+            .build();
+
+    // First call: initiates async refresh.
+    Map<String, List<String>> headers = credentials.getRequestMetadata();
+    assertNull(headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY));
+
+    waitForRegionalAccessBoundary(credentials);
+
+    // Second call: should have header.
+    headers = credentials.getRequestMetadata();
+    assertEquals(
+        headers.get(RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY),
+        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
+  }
+
+  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
+      throws InterruptedException {
+    long deadline = System.currentTimeMillis() + 5000;
+    while (credentials.getRegionalAccessBoundary() == null
+        && System.currentTimeMillis() < deadline) {
+      Thread.sleep(100);
+    }
+    if (credentials.getRegionalAccessBoundary() == null) {
+      fail("Timed out waiting for regional access boundary refresh");
     }
   }
 }
