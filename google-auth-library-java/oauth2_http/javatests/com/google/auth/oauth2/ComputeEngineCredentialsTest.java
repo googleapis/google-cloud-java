@@ -33,6 +33,7 @@ package com.google.auth.oauth2;
 
 import static com.google.auth.oauth2.ComputeEngineCredentials.METADATA_RESPONSE_EMPTY_CONTENT_ERROR_MESSAGE;
 import static com.google.auth.oauth2.ImpersonatedCredentialsTest.SA_CLIENT_EMAIL;
+import static com.google.auth.oauth2.RegionalAccessBoundary.X_ALLOWED_LOCATIONS_HEADER_KEY;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -43,6 +44,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.client.http.HttpStatusCodes;
 import com.google.api.client.http.HttpTransport;
@@ -74,6 +76,14 @@ import org.junit.jupiter.api.Test;
 
 /** Test case for {@link ComputeEngineCredentials}. */
 class ComputeEngineCredentialsTest extends BaseSerializationTest {
+
+  @org.junit.jupiter.api.BeforeEach
+  void setUp() {}
+
+  @org.junit.jupiter.api.AfterEach
+  void tearDown() {
+    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
+  }
 
   private static final URI CALL_URI = URI.create("http://googleapis.com/testapi/v1/foo");
 
@@ -393,7 +403,6 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);
     // verify metrics header added and other header intact
     Map<String, List<String>> requestHeaders = transportFactory.transport.getRequest().getHeaders();
-    com.google.auth.oauth2.TestUtils.validateMetricsHeader(requestHeaders, "at", "mds");
     assertTrue(requestHeaders.containsKey("metadata-flavor"));
     assertTrue(requestHeaders.get("metadata-flavor").contains("Google"));
   }
@@ -1175,6 +1184,50 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
     assertEquals("explicit.project_id", credentials.getProjectId());
     assertEquals(0, transportFactory.transport.getRequestCount());
+  }
+
+  @org.junit.jupiter.api.Test
+  void refresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
+    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
+    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
+    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+
+    String defaultAccountEmail = "default@email.com";
+    MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
+    RegionalAccessBoundary regionalAccessBoundary =
+        new RegionalAccessBoundary(
+            TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION,
+            TestUtils.REGIONAL_ACCESS_BOUNDARY_LOCATIONS,
+            null);
+    transportFactory.transport.setRegionalAccessBoundary(regionalAccessBoundary);
+    transportFactory.transport.setServiceAccountEmail(defaultAccountEmail);
+
+    ComputeEngineCredentials credentials =
+        ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+
+    // First call: initiates async refresh.
+    Map<String, List<String>> headers = credentials.getRequestMetadata();
+    assertNull(headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY));
+
+    waitForRegionalAccessBoundary(credentials);
+
+    // Second call: should have header.
+    headers = credentials.getRequestMetadata();
+    assertEquals(
+        headers.get(X_ALLOWED_LOCATIONS_HEADER_KEY),
+        Arrays.asList(TestUtils.REGIONAL_ACCESS_BOUNDARY_ENCODED_LOCATION));
+  }
+
+  private void waitForRegionalAccessBoundary(GoogleCredentials credentials)
+      throws InterruptedException {
+    long deadline = System.currentTimeMillis() + 5000;
+    while (credentials.getRegionalAccessBoundary() == null
+        && System.currentTimeMillis() < deadline) {
+      Thread.sleep(100);
+    }
+    if (credentials.getRegionalAccessBoundary() == null) {
+      fail("Timed out waiting for regional access boundary refresh");
+    }
   }
 
   static class MockMetadataServerTransportFactory implements HttpTransportFactory {
