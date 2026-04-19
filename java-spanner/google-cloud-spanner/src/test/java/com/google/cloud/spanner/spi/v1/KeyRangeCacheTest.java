@@ -656,7 +656,7 @@ public class KeyRangeCacheTest {
   }
 
   @Test
-  public void preferLeaderTrueIgnoresLatencyScoresForLeaderSelection() {
+  public void preferLeaderTrueUsesLatencyScoresWhenOperationUidAvailable() {
     FakeEndpointCache endpointCache = new FakeEndpointCache();
     KeyRangeCache cache = new KeyRangeCache(endpointCache);
     cache.useDeterministicRandom();
@@ -672,6 +672,33 @@ public class KeyRangeCacheTest {
 
     RoutingHint.Builder hint =
         RoutingHint.newBuilder().setKey(bytes("a")).setOperationUid(TEST_OPERATION_UID);
+    ChannelEndpoint server =
+        cache.fillRoutingHint(
+            true,
+            KeyRangeCache.RangeMode.COVERING_SPLIT,
+            DirectedReadOptions.getDefaultInstance(),
+            hint);
+
+    assertNotNull(server);
+    assertEquals("server2", server.getAddress());
+  }
+
+  @Test
+  public void preferLeaderTrueWithoutOperationUidKeepsLeaderSelection() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    cache.useDeterministicRandom();
+    cache.addRanges(threeReplicaUpdate());
+
+    endpointCache.get("server1");
+    endpointCache.get("server2");
+    endpointCache.get("server3");
+
+    cache.recordReplicaLatency(TEST_OPERATION_UID, "server1", Duration.ofNanos(300_000L));
+    cache.recordReplicaLatency(TEST_OPERATION_UID, "server2", Duration.ofNanos(100_000L));
+    cache.recordReplicaLatency(TEST_OPERATION_UID, "server3", Duration.ofNanos(200_000L));
+
+    RoutingHint.Builder hint = RoutingHint.newBuilder().setKey(bytes("a"));
     ChannelEndpoint server =
         cache.fillRoutingHint(
             true,

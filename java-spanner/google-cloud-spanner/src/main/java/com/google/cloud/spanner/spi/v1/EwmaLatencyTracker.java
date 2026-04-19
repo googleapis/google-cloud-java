@@ -29,9 +29,8 @@ import javax.annotation.concurrent.GuardedBy;
 /**
  * Implementation of {@link LatencyTracker} using Exponentially Weighted Moving Average (EWMA).
  *
- * <p>By default, this tracker uses a time-decayed EWMA:
- * $S_{i+1} = \alpha(\Delta t) * new\_latency + (1 - \alpha(\Delta t)) * S_i$, where $\alpha(\Delta
- * t) = 1 - e^{-\Delta t / \tau}$.
+ * <p>By default, this tracker uses a time-decayed EWMA: $S_{i+1} = \alpha(\Delta t) * new\_latency
+ * + (1 - \alpha(\Delta t)) * S_i$, where $\alpha(\Delta t) = 1 - e^{-\Delta t / \tau}$.
  *
  * <p>A fixed-alpha constructor is retained for focused tests.
  */

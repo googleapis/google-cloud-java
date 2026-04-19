@@ -44,6 +44,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.function.Predicate;
+import java.util.function.ToDoubleFunction;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.IntStream;
@@ -57,6 +58,7 @@ public final class KeyRangeCache {
 
   private static final int MAX_LOCAL_REPLICA_DISTANCE = 5;
   private static final int DEFAULT_MIN_ENTRIES_FOR_RANDOM_PICK = 1000;
+  private static final double LOCAL_LEADER_SELECTION_COST_MULTIPLIER = 0.5D;
 
   /** Determines how to handle ranges that span multiple splits. */
   public enum RangeMode {
@@ -828,8 +830,10 @@ public final class KeyRangeCache {
         List<SkippedTabletDetail> skippedTabletDetails,
         Map<String, ChannelEndpoint> resolvedEndpoints,
         SelectionStats selectionStats) {
-      if (!preferLeader) {
-        return selectLatencyAwareTablet(
+      if (!preferLeader || hintBuilder.getOperationUid() > 0L) {
+        TabletSnapshot preferredLeader =
+            preferLeader ? localLeaderForScoreBias(snapshot, hasDirectedReadOptions) : null;
+        return selectScoreAwareTablet(
             snapshot,
             directedReadOptions,
             hintBuilder,
@@ -837,7 +841,9 @@ public final class KeyRangeCache {
             skippedTabletUids,
             skippedTabletDetails,
             resolvedEndpoints,
-            selectionStats);
+            selectionStats,
+            preferredLeader,
+            preferLeader ? "leader_preferred_latency_score" : "latency_score");
       }
 
       boolean checkedLeader = false;
@@ -884,7 +890,18 @@ public final class KeyRangeCache {
       return null;
     }
 
-    private TabletSnapshot selectLatencyAwareTablet(
+    @javax.annotation.Nullable
+    private TabletSnapshot localLeaderForScoreBias(
+        GroupSnapshot snapshot, boolean hasDirectedReadOptions) {
+      if (!hasDirectedReadOptions
+          && snapshot.hasLeader()
+          && snapshot.leader().distance <= MAX_LOCAL_REPLICA_DISTANCE) {
+        return snapshot.leader();
+      }
+      return null;
+    }
+
+    private TabletSnapshot selectScoreAwareTablet(
         GroupSnapshot snapshot,
         DirectedReadOptions directedReadOptions,
         RoutingHint.Builder hintBuilder,
@@ -892,10 +909,13 @@ public final class KeyRangeCache {
         Set<Long> skippedTabletUids,
         List<SkippedTabletDetail> skippedTabletDetails,
         Map<String, ChannelEndpoint> resolvedEndpoints,
-        SelectionStats selectionStats) {
+        SelectionStats selectionStats,
+        @javax.annotation.Nullable TabletSnapshot preferredLeader,
+        String selectionReason) {
       long operationUid = hintBuilder.getOperationUid();
       List<TabletSnapshot> eligibleTablets = new ArrayList<>();
       List<ChannelEndpoint> eligibleEndpoints = new ArrayList<>();
+      Map<String, TabletSnapshot> endpointByAddress = new HashMap<>();
       int scoredCandidates = 0;
 
       for (TabletSnapshot tablet : snapshot.tablets) {
@@ -921,6 +941,7 @@ public final class KeyRangeCache {
         }
         eligibleTablets.add(tablet);
         eligibleEndpoints.add(endpoint);
+        endpointByAddress.put(endpoint.getAddress(), tablet);
         if (EndpointLatencyRegistry.hasScore(operationUid, tablet.serverAddress)) {
           scoredCandidates++;
         }
@@ -936,6 +957,7 @@ public final class KeyRangeCache {
                 snapshot,
                 eligibleTablets,
                 operationUid,
+                selectionCostLookup(operationUid, preferredLeader),
                 "single_candidate",
                 selected,
                 scoredCandidates);
@@ -946,16 +968,15 @@ public final class KeyRangeCache {
             eligibleTablets.stream()
                 .min(
                     Comparator.comparingDouble(
-                        tablet ->
-                            EndpointLatencyRegistry.getSelectionCost(
-                                operationUid, tablet.serverAddress)))
+                        tablet -> selectionCost(operationUid, tablet, preferredLeader)))
                 .orElse(eligibleTablets.get(0));
         selectionStats.selectionDetail =
             buildSelectionDetail(
                 snapshot,
                 eligibleTablets,
                 operationUid,
-                "latency_score",
+                selectionCostLookup(operationUid, preferredLeader),
+                selectionReason,
                 selected,
                 scoredCandidates);
         return selected;
@@ -965,7 +986,8 @@ public final class KeyRangeCache {
           replicaSelector.select(
               eligibleEndpoints,
               endpoint ->
-                  EndpointLatencyRegistry.getSelectionCost(operationUid, endpoint.getAddress()));
+                  selectionCost(
+                      operationUid, endpointByAddress.get(endpoint.getAddress()), preferredLeader));
       if (selectedEndpoint == null) {
         TabletSnapshot selected = eligibleTablets.get(0);
         selectionStats.selectionDetail =
@@ -973,7 +995,8 @@ public final class KeyRangeCache {
                 snapshot,
                 eligibleTablets,
                 operationUid,
-                "latency_score",
+                selectionCostLookup(operationUid, preferredLeader),
+                selectionReason,
                 selected,
                 scoredCandidates);
         return selected;
@@ -986,7 +1009,8 @@ public final class KeyRangeCache {
                   snapshot,
                   eligibleTablets,
                   operationUid,
-                  "latency_score",
+                  selectionCostLookup(operationUid, preferredLeader),
+                  selectionReason,
                   selected,
                   scoredCandidates);
           return selected;
@@ -995,8 +1019,33 @@ public final class KeyRangeCache {
       TabletSnapshot selected = eligibleTablets.get(0);
       selectionStats.selectionDetail =
           buildSelectionDetail(
-              snapshot, eligibleTablets, operationUid, "latency_score", selected, scoredCandidates);
+              snapshot,
+              eligibleTablets,
+              operationUid,
+              selectionCostLookup(operationUid, preferredLeader),
+              selectionReason,
+              selected,
+              scoredCandidates);
       return selected;
+    }
+
+    private ToDoubleFunction<TabletSnapshot> selectionCostLookup(
+        long operationUid, @javax.annotation.Nullable TabletSnapshot preferredLeader) {
+      return tablet -> selectionCost(operationUid, tablet, preferredLeader);
+    }
+
+    private double selectionCost(
+        long operationUid,
+        @javax.annotation.Nullable TabletSnapshot tablet,
+        @javax.annotation.Nullable TabletSnapshot preferredLeader) {
+      if (tablet == null) {
+        return Double.MAX_VALUE;
+      }
+      double cost = EndpointLatencyRegistry.getSelectionCost(operationUid, tablet.serverAddress);
+      if (preferredLeader != null && tablet == preferredLeader) {
+        return cost * LOCAL_LEADER_SELECTION_COST_MULTIPLIER;
+      }
+      return cost;
     }
 
     @javax.annotation.Nullable
@@ -1166,21 +1215,18 @@ public final class KeyRangeCache {
         GroupSnapshot snapshot,
         List<TabletSnapshot> eligibleTablets,
         long operationUid,
+        ToDoubleFunction<TabletSnapshot> selectionCostLookup,
         String selectionReason,
         TabletSnapshot selected,
         int scoredCandidates) {
       double bestScore = Double.MAX_VALUE;
       for (TabletSnapshot tablet : eligibleTablets) {
-        bestScore =
-            Math.min(
-                bestScore,
-                EndpointLatencyRegistry.getSelectionCost(operationUid, tablet.serverAddress));
+        bestScore = Math.min(bestScore, selectionCostLookup.applyAsDouble(tablet));
       }
 
       StringBuilder alternatives = new StringBuilder();
       int appended = 0;
-      double selectedScore =
-          EndpointLatencyRegistry.getSelectionCost(operationUid, selected.serverAddress);
+      double selectedScore = selectionCostLookup.applyAsDouble(selected);
       for (TabletSnapshot tablet : eligibleTablets) {
         if (tablet == selected || appended >= 4) {
           continue;
@@ -1188,8 +1234,7 @@ public final class KeyRangeCache {
         if (alternatives.length() > 0) {
           alternatives.append(", ");
         }
-        double candidateScore =
-            EndpointLatencyRegistry.getSelectionCost(operationUid, tablet.serverAddress);
+        double candidateScore = selectionCostLookup.applyAsDouble(tablet);
         alternatives
             .append(endpointLabel(snapshot, tablet))
             .append("=")

@@ -40,6 +40,7 @@ import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DirectedReadOptions;
 import com.google.spanner.v1.DirectedReadOptions.IncludeReplicas;
 import com.google.spanner.v1.DirectedReadOptions.ReplicaSelection;
+import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.Group;
 import com.google.spanner.v1.Range;
 import com.google.spanner.v1.ReadRequest;
@@ -88,6 +89,8 @@ public class ReplicaSelectionMockServerTest {
                   .build())
           .setMetadata(SELECT1_METADATA)
           .build();
+  private static final String QUERY_SQL = "SELECT * FROM Table WHERE Column = @p1";
+  private static final String QUERY_PARAM = "p1";
 
   private List<ServerInstance> servers;
   private final int numServers = 2;
@@ -508,9 +511,297 @@ public class ReplicaSelectionMockServerTest {
     }
   }
 
+  @Test
+  public void testStrongSingleUseReadConvergesToLowerLatencyReplica() throws Exception {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .usePlainText()
+            .setExperimentalHost("localhost:" + servers.get(0).port)
+            .setProjectId("fake-project")
+            .setChannelEndpointCacheFactory(null)
+            .build();
+
+    ResultSet resultSetWithUpdate =
+        SELECT1_RESULTSET.toBuilder()
+            .setCacheUpdate(createReplicaCacheUpdate(readRecipeList()))
+            .build();
+
+    servers
+        .get(0)
+        .mockSpanner
+        .putStatementResult(StatementResult.query(Statement.of("SELECT 1"), resultSetWithUpdate));
+
+    com.google.cloud.spanner.Statement readStatement =
+        StatementResult.createReadStatement(
+            "Table",
+            com.google.cloud.spanner.KeySet.singleKey(com.google.cloud.spanner.Key.of()),
+            Arrays.asList("Column"));
+
+    servers
+        .get(0)
+        .mockSpanner
+        .putStatementResult(StatementResult.query(readStatement, SELECT1_RESULTSET));
+    servers
+        .get(1)
+        .mockSpanner
+        .putStatementResult(StatementResult.query(readStatement, SELECT1_RESULTSET));
+    servers
+        .get(0)
+        .mockSpanner
+        .setStreamingReadExecutionTime(SimulatedExecutionTime.ofMinimumAndRandomTime(40, 0));
+    servers
+        .get(1)
+        .mockSpanner
+        .setStreamingReadExecutionTime(SimulatedExecutionTime.ofMinimumAndRandomTime(0, 0));
+
+    try (Spanner spanner = options.getService()) {
+      DatabaseClient client =
+          spanner.getDatabaseClient(
+              DatabaseId.of("fake-project", "fake-instance", "fake-database"));
+
+      try (com.google.cloud.spanner.ResultSet rs =
+          client.singleUse().executeQuery(Statement.of("SELECT 1"))) {
+        while (rs.next()) {
+          /* consume */
+        }
+      }
+
+      clearServerRequests();
+      long operationUid = 0L;
+
+      for (int attempt = 1; attempt <= 3; attempt++) {
+        String key = "strong-read-bootstrap-" + attempt;
+        try (com.google.cloud.spanner.ResultSet rs =
+            client
+                .singleUse()
+                .read(
+                    "Table",
+                    com.google.cloud.spanner.KeySet.singleKey(com.google.cloud.spanner.Key.of(key)),
+                    Arrays.asList("Column"))) {
+          while (rs.next()) {
+            /* consume */
+          }
+        }
+
+        long currentOperationUid = findReadOperationUid(key);
+        assertTrue("Expected strong read to carry operation_uid", currentOperationUid > 0L);
+        if (operationUid == 0L) {
+          operationUid = currentOperationUid;
+        } else {
+          assertEquals(
+              "Expected strong reads to reuse the same operation_uid",
+              operationUid,
+              currentOperationUid);
+        }
+      }
+
+      assertTrue("Expected strong reads to reuse the same operation_uid", operationUid > 0L);
+
+      clearServerRequests();
+      Stopwatch watch = Stopwatch.createStarted();
+      boolean routedToLowerLatencyReplica = false;
+      int convergenceAttempt = 0;
+      while (watch.elapsed(TimeUnit.SECONDS) < 10 && !routedToLowerLatencyReplica) {
+        convergenceAttempt++;
+        String key = "strong-read-convergence-" + convergenceAttempt;
+        try (com.google.cloud.spanner.ResultSet rs =
+            client
+                .singleUse()
+                .read(
+                    "Table",
+                    com.google.cloud.spanner.KeySet.singleKey(com.google.cloud.spanner.Key.of(key)),
+                    Arrays.asList("Column"))) {
+          while (rs.next()) {
+            /* consume */
+          }
+        }
+
+        routedToLowerLatencyReplica =
+            hasReadRequestForKey(servers.get(1).mockSpanner, key)
+                && !hasReadRequestForKey(servers.get(0).mockSpanner, key);
+      }
+
+      assertTrue(
+          "Expected strong read routing to converge to the faster replica",
+          routedToLowerLatencyReplica);
+    }
+  }
+
+  @Test
+  public void testStrongSingleUseQueryConvergesToLowerLatencyReplica() throws Exception {
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .usePlainText()
+            .setExperimentalHost("localhost:" + servers.get(0).port)
+            .setProjectId("fake-project")
+            .setChannelEndpointCacheFactory(null)
+            .build();
+
+    servers
+        .get(0)
+        .mockSpanner
+        .setExecuteStreamingSqlExecutionTime(SimulatedExecutionTime.ofMinimumAndRandomTime(40, 0));
+    servers
+        .get(1)
+        .mockSpanner
+        .setExecuteStreamingSqlExecutionTime(SimulatedExecutionTime.ofMinimumAndRandomTime(0, 0));
+
+    try (Spanner spanner = options.getService()) {
+      DatabaseClient client =
+          spanner.getDatabaseClient(
+              DatabaseId.of("fake-project", "fake-instance", "fake-database"));
+      assertStrongQueryConvergesToLowerLatencyReplica(
+          statement -> {
+            try (com.google.cloud.spanner.ResultSet rs =
+                client.singleUse().executeQuery(statement)) {
+              while (rs.next()) {
+                /* consume */
+              }
+            }
+          });
+    }
+  }
+
+  @FunctionalInterface
+  private interface QueryExecutor {
+    void execute(Statement statement) throws Exception;
+  }
+
+  private void assertStrongQueryConvergesToLowerLatencyReplica(QueryExecutor queryExecutor)
+      throws Exception {
+    String seedKey = "query-seed";
+    installQueryResultOnAllServers(seedKey, SELECT1_RESULTSET);
+
+    queryExecutor.execute(queryStatement(seedKey));
+    long operationUid = findQueryOperationUid(seedKey);
+    assertTrue("Expected strong query to carry operation_uid", operationUid > 0L);
+
+    installQueryResultOnAllServers(
+        seedKey,
+        SELECT1_RESULTSET.toBuilder()
+            .setCacheUpdate(createReplicaCacheUpdate(queryRecipeList(operationUid)))
+            .build());
+    queryExecutor.execute(queryStatement(seedKey));
+    clearServerRequests();
+
+    for (int attempt = 1; attempt <= 3; attempt++) {
+      String key = "strong-query-bootstrap-" + attempt;
+      installQueryResultOnAllServers(key, SELECT1_RESULTSET);
+      queryExecutor.execute(queryStatement(key));
+
+      long currentOperationUid = findQueryOperationUid(key);
+      assertEquals(
+          "Expected strong queries to reuse the same operation_uid",
+          operationUid,
+          currentOperationUid);
+    }
+
+    clearServerRequests();
+    Stopwatch watch = Stopwatch.createStarted();
+    boolean routedToLowerLatencyReplica = false;
+    int convergenceAttempt = 0;
+    while (watch.elapsed(TimeUnit.SECONDS) < 10 && !routedToLowerLatencyReplica) {
+      convergenceAttempt++;
+      String key = "strong-query-convergence-" + convergenceAttempt;
+      installQueryResultOnAllServers(key, SELECT1_RESULTSET);
+      queryExecutor.execute(queryStatement(key));
+
+      routedToLowerLatencyReplica =
+          hasQueryRequestForKey(servers.get(1).mockSpanner, key)
+              && !hasQueryRequestForKey(servers.get(0).mockSpanner, key);
+    }
+
+    assertTrue(
+        "Expected strong query routing to converge to the faster replica",
+        routedToLowerLatencyReplica);
+  }
+
   private void clearServerRequests() {
     for (ServerInstance server : servers) {
       server.mockSpanner.clearRequests();
+    }
+  }
+
+  private CacheUpdate createReplicaCacheUpdate(RecipeList keyRecipes) {
+    return CacheUpdate.newBuilder()
+        .setDatabaseId(12345L)
+        .setKeyRecipes(keyRecipes)
+        .addGroup(
+            Group.newBuilder()
+                .setGroupUid(1L)
+                .setLeaderIndex(0)
+                .addTablets(
+                    Tablet.newBuilder()
+                        .setTabletUid(101L)
+                        .setServerAddress("localhost:" + servers.get(0).port)
+                        .setRole(Tablet.Role.READ_ONLY)
+                        .setDistance(0)
+                        .build())
+                .addTablets(
+                    Tablet.newBuilder()
+                        .setTabletUid(102L)
+                        .setServerAddress("localhost:" + servers.get(1).port)
+                        .setRole(Tablet.Role.READ_ONLY)
+                        .setDistance(0)
+                        .build())
+                .build())
+        .addRange(
+            Range.newBuilder()
+                .setStartKey(ByteString.EMPTY)
+                .setLimitKey(ByteString.copyFromUtf8("\u00FF"))
+                .setGroupUid(1L)
+                .setSplitId(1L)
+                .setGeneration(ByteString.copyFromUtf8("gen1"))
+                .build())
+        .build();
+  }
+
+  private RecipeList readRecipeList() throws TextFormat.ParseException {
+    RecipeList.Builder recipeListBuilder = RecipeList.newBuilder();
+    TextFormat.merge(
+        "recipe {\n"
+            + "  table_name: \"Table\"\n"
+            + "  part { tag: 1 }\n"
+            + "  part {\n"
+            + "    order: ASCENDING\n"
+            + "    null_order: NULLS_FIRST\n"
+            + "    type { code: STRING }\n"
+            + "    identifier: \"k\"\n"
+            + "  }\n"
+            + "}\n",
+        recipeListBuilder);
+    return recipeListBuilder.build();
+  }
+
+  private RecipeList queryRecipeList(long operationUid) throws TextFormat.ParseException {
+    RecipeList.Builder recipeListBuilder = RecipeList.newBuilder();
+    TextFormat.merge(
+        "recipe {\n"
+            + "  operation_uid: "
+            + operationUid
+            + "\n"
+            + "  part { tag: 1 }\n"
+            + "  part {\n"
+            + "    order: ASCENDING\n"
+            + "    null_order: NULLS_FIRST\n"
+            + "    type { code: STRING }\n"
+            + "    identifier: \""
+            + QUERY_PARAM
+            + "\"\n"
+            + "  }\n"
+            + "}\n",
+        recipeListBuilder);
+    return recipeListBuilder.build();
+  }
+
+  private Statement queryStatement(String key) {
+    return Statement.newBuilder(QUERY_SQL).bind(QUERY_PARAM).to(key).build();
+  }
+
+  private void installQueryResultOnAllServers(String key, ResultSet resultSet) {
+    Statement statement = queryStatement(key);
+    for (ServerInstance server : servers) {
+      server.mockSpanner.putStatementResult(StatementResult.query(statement, resultSet));
     }
   }
 
@@ -529,6 +820,19 @@ public class ReplicaSelectionMockServerTest {
     return 0L;
   }
 
+  private long findQueryOperationUid(String key) {
+    for (ServerInstance server : servers) {
+      for (ExecuteSqlRequest request :
+          server.mockSpanner.getRequestsOfType(ExecuteSqlRequest.class)) {
+        if (request.getParams().getFieldsMap().containsKey(QUERY_PARAM)
+            && key.equals(request.getParams().getFieldsOrThrow(QUERY_PARAM).getStringValue())) {
+          return request.getRoutingHint().getOperationUid();
+        }
+      }
+    }
+    return 0L;
+  }
+
   private boolean hasReadRequestForKey(MockSpannerServiceImpl mockSpanner, String key) {
     return mockSpanner.getRequestsOfType(ReadRequest.class).stream()
         .anyMatch(
@@ -536,5 +840,14 @@ public class ReplicaSelectionMockServerTest {
                 request.getKeySet().getKeysCount() > 0
                     && request.getKeySet().getKeys(0).getValuesCount() > 0
                     && key.equals(request.getKeySet().getKeys(0).getValues(0).getStringValue()));
+  }
+
+  private boolean hasQueryRequestForKey(MockSpannerServiceImpl mockSpanner, String key) {
+    return mockSpanner.getRequestsOfType(ExecuteSqlRequest.class).stream()
+        .anyMatch(
+            request ->
+                request.getParams().getFieldsMap().containsKey(QUERY_PARAM)
+                    && key.equals(
+                        request.getParams().getFieldsOrThrow(QUERY_PARAM).getStringValue()));
   }
 }
