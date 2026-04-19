@@ -66,6 +66,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -75,6 +76,12 @@ public class KeyAwareChannelTest {
   private static final String DEFAULT_ADDRESS = "default:1234";
   private static final String SESSION =
       "projects/p/instances/i/databases/d/sessions/test-session-id";
+
+  @After
+  public void clearSharedRoutingState() {
+    EndpointLatencyRegistry.clear();
+    RequestIdTargetTracker.clear();
+  }
 
   @Test
   public void cancelBeforeStartPreservesTrailersAndSkipsDelegateCreation() throws Exception {

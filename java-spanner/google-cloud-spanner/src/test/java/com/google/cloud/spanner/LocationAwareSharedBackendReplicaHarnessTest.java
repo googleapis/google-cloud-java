@@ -105,12 +105,13 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
       seedLocationMetadata(client);
-      waitForReplicaRoutedRead(client, harness, 0);
+      int firstReplicaIndex = waitForReplicaRoutedRead(client, harness);
+      int secondReplicaIndex = 1 - firstReplicaIndex;
       harness.clearRequests();
 
       harness
           .replicas
-          .get(0)
+          .get(firstReplicaIndex)
           .putMethodErrors(
               SharedBackendReplicaHarness.METHOD_STREAMING_READ,
               resourceExhausted("busy-routed-replica"));
@@ -130,14 +131,14 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
           1,
           harness
               .replicas
-              .get(0)
+              .get(firstReplicaIndex)
               .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .size());
       assertEquals(
           1,
           harness
               .replicas
-              .get(1)
+              .get(secondReplicaIndex)
               .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .size());
       assertEquals(
@@ -150,19 +151,19 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
           (ReadRequest)
               harness
                   .replicas
-                  .get(0)
+                  .get(firstReplicaIndex)
                   .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
                   .get(0);
       assertTrue(replicaARequest.getResumeToken().isEmpty());
       assertRetriedOnSameLogicalRequest(
           harness
               .replicas
-              .get(0)
+              .get(firstReplicaIndex)
               .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .get(0),
           harness
               .replicas
-              .get(1)
+              .get(secondReplicaIndex)
               .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .get(0));
     }
@@ -176,12 +177,13 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
       seedLocationMetadata(client);
-      waitForReplicaRoutedRead(client, harness, 0);
+      int firstReplicaIndex = waitForReplicaRoutedRead(client, harness);
+      int secondReplicaIndex = 1 - firstReplicaIndex;
       harness.clearRequests();
 
       harness
           .replicas
-          .get(0)
+          .get(firstReplicaIndex)
           .putMethodErrors(
               SharedBackendReplicaHarness.METHOD_STREAMING_READ,
               resourceExhaustedWithRetryInfo("busy-routed-replica"));
@@ -212,14 +214,14 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
           1,
           harness
               .replicas
-              .get(0)
+              .get(firstReplicaIndex)
               .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .size());
       assertEquals(
           2,
           harness
               .replicas
-              .get(1)
+              .get(secondReplicaIndex)
               .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .size());
       assertEquals(
@@ -229,16 +231,22 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
               .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .size());
       List<AbstractMessage> replicaBRequests =
-          harness.replicas.get(1).getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
+          harness
+              .replicas
+              .get(secondReplicaIndex)
+              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
       for (AbstractMessage request : replicaBRequests) {
         assertTrue(((ReadRequest) request).getResumeToken().isEmpty());
       }
       List<String> replicaBRequestIds =
-          harness.replicas.get(1).getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
+          harness
+              .replicas
+              .get(secondReplicaIndex)
+              .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
       assertRetriedOnSameLogicalRequest(
           harness
               .replicas
-              .get(0)
+              .get(firstReplicaIndex)
               .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .get(0),
           replicaBRequestIds.get(0));
@@ -256,12 +264,13 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
       seedLocationMetadata(client);
-      waitForReplicaRoutedRead(client, harness, 0);
+      int firstReplicaIndex = waitForReplicaRoutedRead(client, harness);
+      int secondReplicaIndex = 1 - firstReplicaIndex;
       harness.clearRequests();
 
       harness
           .replicas
-          .get(0)
+          .get(firstReplicaIndex)
           .putMethodErrors(
               SharedBackendReplicaHarness.METHOD_STREAMING_READ, unavailable("isolated-replica"));
 
@@ -280,14 +289,14 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
           1,
           harness
               .replicas
-              .get(0)
+              .get(firstReplicaIndex)
               .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .size());
       assertEquals(
           1,
           harness
               .replicas
-              .get(1)
+              .get(secondReplicaIndex)
               .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .size());
       assertEquals(
@@ -300,19 +309,19 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
           (ReadRequest)
               harness
                   .replicas
-                  .get(0)
+                  .get(firstReplicaIndex)
                   .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
                   .get(0);
       assertTrue(replicaARequest.getResumeToken().isEmpty());
       assertRetriedOnSameLogicalRequest(
           harness
               .replicas
-              .get(0)
+              .get(firstReplicaIndex)
               .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .get(0),
           harness
               .replicas
-              .get(1)
+              .get(secondReplicaIndex)
               .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .get(0));
     }
@@ -327,12 +336,13 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
       seedLocationMetadata(client);
-      waitForReplicaRoutedRead(client, harness, 0);
+      int firstReplicaIndex = waitForReplicaRoutedRead(client, harness);
+      int secondReplicaIndex = 1 - firstReplicaIndex;
       harness.clearRequests();
 
       harness
           .replicas
-          .get(0)
+          .get(firstReplicaIndex)
           .putMethodErrors(
               SharedBackendReplicaHarness.METHOD_STREAMING_READ, unavailable("isolated-replica"));
 
@@ -362,14 +372,14 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
           1,
           harness
               .replicas
-              .get(0)
+              .get(firstReplicaIndex)
               .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .size());
       assertEquals(
           2,
           harness
               .replicas
-              .get(1)
+              .get(secondReplicaIndex)
               .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .size());
       assertEquals(
@@ -379,16 +389,22 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
               .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .size());
       List<AbstractMessage> replicaBRequests =
-          harness.replicas.get(1).getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
+          harness
+              .replicas
+              .get(secondReplicaIndex)
+              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
       for (AbstractMessage request : replicaBRequests) {
         assertTrue(((ReadRequest) request).getResumeToken().isEmpty());
       }
       List<String> replicaBRequestIds =
-          harness.replicas.get(1).getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
+          harness
+              .replicas
+              .get(secondReplicaIndex)
+              .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ);
       assertRetriedOnSameLogicalRequest(
           harness
               .replicas
-              .get(0)
+              .get(firstReplicaIndex)
               .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .get(0),
           replicaBRequestIds.get(0));
@@ -407,7 +423,8 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
       seedLocationMetadata(client);
-      waitForReplicaRoutedRead(client, harness, 0);
+      int firstReplicaIndex = waitForReplicaRoutedRead(client, harness);
+      int secondReplicaIndex = 1 - firstReplicaIndex;
       harness.clearRequests();
 
       harness.backend.setStreamingReadExecutionTime(
@@ -432,14 +449,14 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
           1,
           harness
               .replicas
-              .get(0)
+              .get(firstReplicaIndex)
               .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .size());
       assertEquals(
           1,
           harness
               .replicas
-              .get(1)
+              .get(secondReplicaIndex)
               .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .size());
       assertEquals(
@@ -453,14 +470,14 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
           (ReadRequest)
               harness
                   .replicas
-                  .get(0)
+                  .get(firstReplicaIndex)
                   .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
                   .get(0);
       ReadRequest replicaBRequest =
           (ReadRequest)
               harness
                   .replicas
-                  .get(1)
+                  .get(secondReplicaIndex)
                   .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
                   .get(0);
       assertTrue(replicaARequest.getResumeToken().isEmpty());
@@ -468,12 +485,12 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       assertRetriedOnSameLogicalRequest(
           harness
               .replicas
-              .get(0)
+              .get(firstReplicaIndex)
               .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .get(0),
           harness
               .replicas
-              .get(1)
+              .get(secondReplicaIndex)
               .getRequestIds(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
               .get(0));
     }
@@ -514,9 +531,8 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
     }
   }
 
-  private static void waitForReplicaRoutedRead(
-      DatabaseClient client, SharedBackendReplicaHarness harness, int replicaIndex)
-      throws InterruptedException {
+  private static int waitForReplicaRoutedRead(
+      DatabaseClient client, SharedBackendReplicaHarness harness) throws InterruptedException {
     long deadlineNanos = System.nanoTime() + TimeUnit.SECONDS.toNanos(10);
     while (System.nanoTime() < deadlineNanos) {
       try (ResultSet resultSet =
@@ -527,13 +543,16 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
                   KeySet.singleKey(Key.of("b")),
                   Arrays.asList("k"),
                   Options.directedRead(DIRECTED_READ_OPTIONS))) {
-        if (resultSet.next()
-            && !harness
+        if (resultSet.next()) {
+          for (int replicaIndex = 0; replicaIndex < harness.replicas.size(); replicaIndex++) {
+            if (!harness
                 .replicas
                 .get(replicaIndex)
                 .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
                 .isEmpty()) {
-          return;
+              return replicaIndex;
+            }
+          }
         }
       }
       Thread.sleep(50L);
