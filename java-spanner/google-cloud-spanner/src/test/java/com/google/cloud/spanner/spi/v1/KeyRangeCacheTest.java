@@ -827,9 +827,14 @@ public class KeyRangeCacheTest {
     private final String address;
     private final FakeManagedChannel channel = new FakeManagedChannel();
     private EndpointHealthState state = EndpointHealthState.READY;
+    private LatencyTracker latencyTracker = null;
 
     FakeEndpoint(String address) {
       this.address = address;
+    }
+
+    void setLatencyTracker(LatencyTracker tracker) {
+      this.latencyTracker = tracker;
     }
 
     @Override
@@ -850,6 +855,11 @@ public class KeyRangeCacheTest {
     @Override
     public ManagedChannel getChannel() {
       return channel;
+    }
+
+    @Override
+    public LatencyTracker getLatencyTracker() {
+      return latencyTracker;
     }
 
     void setState(EndpointHealthState state) {
@@ -925,5 +935,89 @@ public class KeyRangeCacheTest {
     public String authority() {
       return "fake";
     }
+  }
+
+  @Test
+  public void usesReplicaSelectorWhenEnabled() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+
+    ReplicaSelector mockSelector =
+        (candidates) -> {
+          for (ChannelEndpoint candidate : candidates) {
+            if (candidate.getAddress().equals("server2")) {
+              return candidate;
+            }
+          }
+          return null;
+        };
+
+    KeyRangeCache cache = new KeyRangeCache(endpointCache, null, mockSelector);
+    cache.addRanges(twoReplicaUpdate());
+
+    endpointCache.get("server1");
+    endpointCache.get("server2");
+
+    RoutingHint.Builder hint = RoutingHint.newBuilder().setKey(bytes("a"));
+    ChannelEndpoint server =
+        cache.fillRoutingHint(
+            false,
+            KeyRangeCache.RangeMode.COVERING_SPLIT,
+            DirectedReadOptions.getDefaultInstance(),
+            hint);
+
+    assertNotNull(server);
+    assertEquals("server2", server.getAddress());
+  }
+
+  @Test
+  public void usesLatencyTrackerInSelector() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+
+    FakeEndpoint e1 = (FakeEndpoint) endpointCache.get("server1");
+    FakeEndpoint e2 = (FakeEndpoint) endpointCache.get("server2");
+
+    e1.setLatencyTracker(
+        new LatencyTracker() {
+          @Override
+          public double getScore() {
+            return 100.0;
+          }
+
+          @Override
+          public void update(java.time.Duration latency) {}
+
+          @Override
+          public void recordError(java.time.Duration penalty) {}
+        });
+
+    e2.setLatencyTracker(
+        new LatencyTracker() {
+          @Override
+          public double getScore() {
+            return 10.0;
+          }
+
+          @Override
+          public void update(java.time.Duration latency) {}
+
+          @Override
+          public void recordError(java.time.Duration penalty) {}
+        });
+
+    ReplicaSelector selector = new PowerOfTwoReplicaSelector();
+
+    KeyRangeCache cache = new KeyRangeCache(endpointCache, null, selector);
+    cache.addRanges(twoReplicaUpdate());
+
+    RoutingHint.Builder hint = RoutingHint.newBuilder().setKey(bytes("a"));
+    ChannelEndpoint server =
+        cache.fillRoutingHint(
+            false,
+            KeyRangeCache.RangeMode.COVERING_SPLIT,
+            DirectedReadOptions.getDefaultInstance(),
+            hint);
+
+    assertNotNull(server);
+    assertEquals("server2", server.getAddress());
   }
 }

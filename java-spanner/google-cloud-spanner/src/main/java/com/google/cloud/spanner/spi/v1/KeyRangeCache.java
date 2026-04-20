@@ -18,6 +18,7 @@ package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.Lists;
 import com.google.common.hash.Hashing;
 import com.google.protobuf.ByteString;
 import com.google.spanner.v1.CacheUpdate;
@@ -66,6 +67,7 @@ public final class KeyRangeCache {
 
   private final ChannelEndpointCache endpointCache;
   @javax.annotation.Nullable private final EndpointLifecycleManager lifecycleManager;
+  @javax.annotation.Nullable private final ReplicaSelector replicaSelector;
   private final NavigableMap<ByteString, CachedRange> ranges =
       new TreeMap<>(ByteString.unsignedLexicographicalComparator());
   private final Map<Long, CachedGroup> groups = new HashMap<>();
@@ -78,14 +80,22 @@ public final class KeyRangeCache {
   private volatile int minCacheEntriesForRandomPick = DEFAULT_MIN_ENTRIES_FOR_RANDOM_PICK;
 
   public KeyRangeCache(ChannelEndpointCache endpointCache) {
-    this(endpointCache, null);
+    this(endpointCache, null, null);
   }
 
   public KeyRangeCache(
       ChannelEndpointCache endpointCache,
       @javax.annotation.Nullable EndpointLifecycleManager lifecycleManager) {
+    this(endpointCache, lifecycleManager, null);
+  }
+
+  public KeyRangeCache(
+      ChannelEndpointCache endpointCache,
+      @javax.annotation.Nullable EndpointLifecycleManager lifecycleManager,
+      @javax.annotation.Nullable ReplicaSelector replicaSelector) {
     this.endpointCache = Objects.requireNonNull(endpointCache);
     this.lifecycleManager = lifecycleManager;
+    this.replicaSelector = replicaSelector;
   }
 
   @VisibleForTesting
@@ -802,6 +812,8 @@ public final class KeyRangeCache {
           return leader();
         }
       }
+      List<CachedTablet> eligibleTablets =
+          replicaSelector != null ? new ArrayList<>(tablets.size()) : null;
       for (int index = 0; index < tablets.size(); index++) {
         if (checkedLeader && index == leaderIndex) {
           continue;
@@ -813,7 +825,31 @@ public final class KeyRangeCache {
         if (tablet.shouldSkip(hintBuilder, excludedEndpoints, skippedTabletUids)) {
           continue;
         }
-        return tablet;
+        if (replicaSelector == null) {
+          return tablet;
+        }
+        eligibleTablets.add(tablet);
+      }
+
+      if (replicaSelector != null) {
+        return selectReplicaLocked(eligibleTablets);
+      }
+      return null;
+    }
+
+    private CachedTablet selectReplicaLocked(final List<CachedTablet> eligibleTablets) {
+      if (eligibleTablets.isEmpty()) {
+        return null;
+      }
+      List<ChannelEndpoint> candidates =
+          Lists.transform(eligibleTablets, tablet -> tablet.endpoint);
+      ChannelEndpoint selectedEndpoint = replicaSelector.select(candidates);
+
+      // The number of eligible tablets is always small, so a linear search is more efficient.
+      for (CachedTablet tablet : eligibleTablets) {
+        if (tablet.endpoint.equals(selectedEndpoint)) {
+          return tablet;
+        }
       }
       return null;
     }

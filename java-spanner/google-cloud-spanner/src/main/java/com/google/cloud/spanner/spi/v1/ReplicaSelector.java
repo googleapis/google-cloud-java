@@ -19,7 +19,6 @@ package com.google.cloud.spanner.spi.v1;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import java.util.List;
-import java.util.function.Function;
 
 /** Interface for selecting a replica from a list of candidates. */
 @InternalApi
@@ -30,9 +29,7 @@ public interface ReplicaSelector {
    * Selects a replica from the given list of candidates.
    *
    * @param candidates the list of eligible candidates.
-   * @param scoreLookup a function to look up the latency score for a candidate.
    * @return the selected candidate, or null if the list is empty.
    */
-  ChannelEndpoint select(
-      List<ChannelEndpoint> candidates, Function<ChannelEndpoint, Double> scoreLookup);
+  ChannelEndpoint select(List<ChannelEndpoint> candidates);
 }
