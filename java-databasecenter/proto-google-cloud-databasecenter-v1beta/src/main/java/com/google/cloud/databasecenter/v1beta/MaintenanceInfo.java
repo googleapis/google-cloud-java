@@ -54,6 +54,9 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
   private MaintenanceInfo() {
     denyMaintenanceSchedules_ = java.util.Collections.emptyList();
     maintenanceVersion_ = "";
+    state_ = 0;
+    possibleFailureReasons_ = emptyIntList();
+    previousMaintenanceVersion_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -279,6 +282,376 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int CURRENT_VERSION_RELEASE_DATE_FIELD_NUMBER = 4;
+  private com.google.type.Date currentVersionReleaseDate_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date when the maintenance version was released.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date current_version_release_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the currentVersionReleaseDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasCurrentVersionReleaseDate() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date when the maintenance version was released.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date current_version_release_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The currentVersionReleaseDate.
+   */
+  @java.lang.Override
+  public com.google.type.Date getCurrentVersionReleaseDate() {
+    return currentVersionReleaseDate_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : currentVersionReleaseDate_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date when the maintenance version was released.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date current_version_release_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.type.DateOrBuilder getCurrentVersionReleaseDateOrBuilder() {
+    return currentVersionReleaseDate_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : currentVersionReleaseDate_;
+  }
+
+  public static final int UPCOMING_MAINTENANCE_FIELD_NUMBER = 5;
+  private com.google.cloud.databasecenter.v1beta.UpcomingMaintenance upcomingMaintenance_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Upcoming maintenance window for the database resource. This is
+   * only populated for an engine, if upcoming maintenance is scheduled for the
+   * resource. This schedule is generated per engine and engine version, and
+   * there is only one upcoming maintenance window at any given time. In case of
+   * upcoming maintenance, the maintenance_state will be set to SCHEDULED first,
+   * and then IN_PROGRESS when the maintenance window starts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.databasecenter.v1beta.UpcomingMaintenance upcoming_maintenance = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the upcomingMaintenance field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpcomingMaintenance() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Upcoming maintenance window for the database resource. This is
+   * only populated for an engine, if upcoming maintenance is scheduled for the
+   * resource. This schedule is generated per engine and engine version, and
+   * there is only one upcoming maintenance window at any given time. In case of
+   * upcoming maintenance, the maintenance_state will be set to SCHEDULED first,
+   * and then IN_PROGRESS when the maintenance window starts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.databasecenter.v1beta.UpcomingMaintenance upcoming_maintenance = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The upcomingMaintenance.
+   */
+  @java.lang.Override
+  public com.google.cloud.databasecenter.v1beta.UpcomingMaintenance getUpcomingMaintenance() {
+    return upcomingMaintenance_ == null
+        ? com.google.cloud.databasecenter.v1beta.UpcomingMaintenance.getDefaultInstance()
+        : upcomingMaintenance_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Upcoming maintenance window for the database resource. This is
+   * only populated for an engine, if upcoming maintenance is scheduled for the
+   * resource. This schedule is generated per engine and engine version, and
+   * there is only one upcoming maintenance window at any given time. In case of
+   * upcoming maintenance, the maintenance_state will be set to SCHEDULED first,
+   * and then IN_PROGRESS when the maintenance window starts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.databasecenter.v1beta.UpcomingMaintenance upcoming_maintenance = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.databasecenter.v1beta.UpcomingMaintenanceOrBuilder
+      getUpcomingMaintenanceOrBuilder() {
+    return upcomingMaintenance_ == null
+        ? com.google.cloud.databasecenter.v1beta.UpcomingMaintenance.getDefaultInstance()
+        : upcomingMaintenance_;
+  }
+
+  public static final int STATE_FIELD_NUMBER = 6;
+  private int state_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource maintenance state. This is to capture the current
+   * state of the maintenance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.databasecenter.v1beta.MaintenanceState state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Resource maintenance state. This is to capture the current
+   * state of the maintenance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.databasecenter.v1beta.MaintenanceState state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.cloud.databasecenter.v1beta.MaintenanceState getState() {
+    com.google.cloud.databasecenter.v1beta.MaintenanceState result =
+        com.google.cloud.databasecenter.v1beta.MaintenanceState.forNumber(state_);
+    return result == null
+        ? com.google.cloud.databasecenter.v1beta.MaintenanceState.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int POSSIBLE_FAILURE_REASONS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList possibleFailureReasons_ = emptyIntList();
+
+  private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+          com.google.cloud.databasecenter.v1beta.PossibleFailureReason>
+      possibleFailureReasons_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.google.cloud.databasecenter.v1beta.PossibleFailureReason>() {
+            public com.google.cloud.databasecenter.v1beta.PossibleFailureReason convert(int from) {
+              com.google.cloud.databasecenter.v1beta.PossibleFailureReason result =
+                  com.google.cloud.databasecenter.v1beta.PossibleFailureReason.forNumber(from);
+              return result == null
+                  ? com.google.cloud.databasecenter.v1beta.PossibleFailureReason.UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of possible reasons why the maintenance is not completed.
+   * This is an optional field and is only populated if there are any
+   * reasons for failures recorded for the maintenance by DB Center.
+   * FAILURE maintenance status may not always have a failure reason.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the possibleFailureReasons.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.databasecenter.v1beta.PossibleFailureReason>
+      getPossibleFailureReasonsList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.google.cloud.databasecenter.v1beta.PossibleFailureReason>(
+        possibleFailureReasons_, possibleFailureReasons_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of possible reasons why the maintenance is not completed.
+   * This is an optional field and is only populated if there are any
+   * reasons for failures recorded for the maintenance by DB Center.
+   * FAILURE maintenance status may not always have a failure reason.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of possibleFailureReasons.
+   */
+  @java.lang.Override
+  public int getPossibleFailureReasonsCount() {
+    return possibleFailureReasons_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of possible reasons why the maintenance is not completed.
+   * This is an optional field and is only populated if there are any
+   * reasons for failures recorded for the maintenance by DB Center.
+   * FAILURE maintenance status may not always have a failure reason.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The possibleFailureReasons at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.databasecenter.v1beta.PossibleFailureReason getPossibleFailureReasons(
+      int index) {
+    return possibleFailureReasons_converter_.convert(possibleFailureReasons_.getInt(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of possible reasons why the maintenance is not completed.
+   * This is an optional field and is only populated if there are any
+   * reasons for failures recorded for the maintenance by DB Center.
+   * FAILURE maintenance status may not always have a failure reason.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for possibleFailureReasons.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getPossibleFailureReasonsValueList() {
+    return possibleFailureReasons_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of possible reasons why the maintenance is not completed.
+   * This is an optional field and is only populated if there are any
+   * reasons for failures recorded for the maintenance by DB Center.
+   * FAILURE maintenance status may not always have a failure reason.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of possibleFailureReasons at the given index.
+   */
+  @java.lang.Override
+  public int getPossibleFailureReasonsValue(int index) {
+    return possibleFailureReasons_.getInt(index);
+  }
+
+  private int possibleFailureReasonsMemoizedSerializedSize;
+
+  public static final int PREVIOUS_MAINTENANCE_VERSION_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object previousMaintenanceVersion_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Previous maintenance version of the database resource.
+   * Example: "MYSQL_8_0_41.R20250531.01_15". This is available once a minor
+   * version maintenance is complete on a database resource.
+   * </pre>
+   *
+   * <code>string previous_maintenance_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The previousMaintenanceVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getPreviousMaintenanceVersion() {
+    java.lang.Object ref = previousMaintenanceVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      previousMaintenanceVersion_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Previous maintenance version of the database resource.
+   * Example: "MYSQL_8_0_41.R20250531.01_15". This is available once a minor
+   * version maintenance is complete on a database resource.
+   * </pre>
+   *
+   * <code>string previous_maintenance_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for previousMaintenanceVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPreviousMaintenanceVersionBytes() {
+    java.lang.Object ref = previousMaintenanceVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      previousMaintenanceVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -293,6 +666,7 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    getSerializedSize();
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getMaintenanceSchedule());
     }
@@ -301,6 +675,27 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(maintenanceVersion_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, maintenanceVersion_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getCurrentVersionReleaseDate());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(5, getUpcomingMaintenance());
+    }
+    if (state_
+        != com.google.cloud.databasecenter.v1beta.MaintenanceState.MAINTENANCE_STATE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, state_);
+    }
+    if (getPossibleFailureReasonsList().size() > 0) {
+      output.writeUInt32NoTag(58);
+      output.writeUInt32NoTag(possibleFailureReasonsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < possibleFailureReasons_.size(); i++) {
+      output.writeEnumNoTag(possibleFailureReasons_.getInt(i));
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(previousMaintenanceVersion_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, previousMaintenanceVersion_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -321,6 +716,37 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(maintenanceVersion_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, maintenanceVersion_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, getCurrentVersionReleaseDate());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getUpcomingMaintenance());
+    }
+    if (state_
+        != com.google.cloud.databasecenter.v1beta.MaintenanceState.MAINTENANCE_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, state_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < possibleFailureReasons_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                possibleFailureReasons_.getInt(i));
+      }
+      size += dataSize;
+      if (!getPossibleFailureReasonsList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      possibleFailureReasonsMemoizedSerializedSize = dataSize;
+    }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(previousMaintenanceVersion_)) {
+      size +=
+          com.google.protobuf.GeneratedMessage.computeStringSize(8, previousMaintenanceVersion_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -345,6 +771,19 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
     if (!getDenyMaintenanceSchedulesList().equals(other.getDenyMaintenanceSchedulesList()))
       return false;
     if (!getMaintenanceVersion().equals(other.getMaintenanceVersion())) return false;
+    if (hasCurrentVersionReleaseDate() != other.hasCurrentVersionReleaseDate()) return false;
+    if (hasCurrentVersionReleaseDate()) {
+      if (!getCurrentVersionReleaseDate().equals(other.getCurrentVersionReleaseDate()))
+        return false;
+    }
+    if (hasUpcomingMaintenance() != other.hasUpcomingMaintenance()) return false;
+    if (hasUpcomingMaintenance()) {
+      if (!getUpcomingMaintenance().equals(other.getUpcomingMaintenance())) return false;
+    }
+    if (state_ != other.state_) return false;
+    if (!possibleFailureReasons_.equals(other.possibleFailureReasons_)) return false;
+    if (!getPreviousMaintenanceVersion().equals(other.getPreviousMaintenanceVersion()))
+      return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -366,6 +805,22 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + MAINTENANCE_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getMaintenanceVersion().hashCode();
+    if (hasCurrentVersionReleaseDate()) {
+      hash = (37 * hash) + CURRENT_VERSION_RELEASE_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrentVersionReleaseDate().hashCode();
+    }
+    if (hasUpcomingMaintenance()) {
+      hash = (37 * hash) + UPCOMING_MAINTENANCE_FIELD_NUMBER;
+      hash = (53 * hash) + getUpcomingMaintenance().hashCode();
+    }
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
+    if (getPossibleFailureReasonsCount() > 0) {
+      hash = (37 * hash) + POSSIBLE_FAILURE_REASONS_FIELD_NUMBER;
+      hash = (53 * hash) + possibleFailureReasons_.hashCode();
+    }
+    hash = (37 * hash) + PREVIOUS_MAINTENANCE_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getPreviousMaintenanceVersion().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -510,6 +965,8 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetMaintenanceScheduleFieldBuilder();
         internalGetDenyMaintenanceSchedulesFieldBuilder();
+        internalGetCurrentVersionReleaseDateFieldBuilder();
+        internalGetUpcomingMaintenanceFieldBuilder();
       }
     }
 
@@ -530,6 +987,19 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ = (bitField0_ & ~0x00000002);
       maintenanceVersion_ = "";
+      currentVersionReleaseDate_ = null;
+      if (currentVersionReleaseDateBuilder_ != null) {
+        currentVersionReleaseDateBuilder_.dispose();
+        currentVersionReleaseDateBuilder_ = null;
+      }
+      upcomingMaintenance_ = null;
+      if (upcomingMaintenanceBuilder_ != null) {
+        upcomingMaintenanceBuilder_.dispose();
+        upcomingMaintenanceBuilder_ = null;
+      }
+      state_ = 0;
+      possibleFailureReasons_ = emptyIntList();
+      previousMaintenanceVersion_ = "";
       return this;
     }
 
@@ -592,6 +1062,30 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.maintenanceVersion_ = maintenanceVersion_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.currentVersionReleaseDate_ =
+            currentVersionReleaseDateBuilder_ == null
+                ? currentVersionReleaseDate_
+                : currentVersionReleaseDateBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.upcomingMaintenance_ =
+            upcomingMaintenanceBuilder_ == null
+                ? upcomingMaintenance_
+                : upcomingMaintenanceBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        possibleFailureReasons_.makeImmutable();
+        result.possibleFailureReasons_ = possibleFailureReasons_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.previousMaintenanceVersion_ = previousMaintenanceVersion_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -641,6 +1135,31 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
       if (!other.getMaintenanceVersion().isEmpty()) {
         maintenanceVersion_ = other.maintenanceVersion_;
         bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (other.hasCurrentVersionReleaseDate()) {
+        mergeCurrentVersionReleaseDate(other.getCurrentVersionReleaseDate());
+      }
+      if (other.hasUpcomingMaintenance()) {
+        mergeUpcomingMaintenance(other.getUpcomingMaintenance());
+      }
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
+      }
+      if (!other.possibleFailureReasons_.isEmpty()) {
+        if (possibleFailureReasons_.isEmpty()) {
+          possibleFailureReasons_ = other.possibleFailureReasons_;
+          possibleFailureReasons_.makeImmutable();
+          bitField0_ |= 0x00000040;
+        } else {
+          ensurePossibleFailureReasonsIsMutable();
+          possibleFailureReasons_.addAll(other.possibleFailureReasons_);
+        }
+        onChanged();
+      }
+      if (!other.getPreviousMaintenanceVersion().isEmpty()) {
+        previousMaintenanceVersion_ = other.previousMaintenanceVersion_;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -697,6 +1216,51 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetCurrentVersionReleaseDateFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    internalGetUpcomingMaintenanceFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+            case 48:
+              {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+            case 56:
+              {
+                int tmpRaw = input.readEnum();
+                ensurePossibleFailureReasonsIsMutable();
+                possibleFailureReasons_.addInt(tmpRaw);
+                break;
+              } // case 56
+            case 58:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensurePossibleFailureReasonsIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  possibleFailureReasons_.addInt(input.readEnum());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 58
+            case 66:
+              {
+                previousMaintenanceVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1484,6 +2048,1013 @@ public final class MaintenanceInfo extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       maintenanceVersion_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.type.Date currentVersionReleaseDate_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        currentVersionReleaseDateBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date when the maintenance version was released.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date current_version_release_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the currentVersionReleaseDate field is set.
+     */
+    public boolean hasCurrentVersionReleaseDate() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date when the maintenance version was released.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date current_version_release_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The currentVersionReleaseDate.
+     */
+    public com.google.type.Date getCurrentVersionReleaseDate() {
+      if (currentVersionReleaseDateBuilder_ == null) {
+        return currentVersionReleaseDate_ == null
+            ? com.google.type.Date.getDefaultInstance()
+            : currentVersionReleaseDate_;
+      } else {
+        return currentVersionReleaseDateBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date when the maintenance version was released.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date current_version_release_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCurrentVersionReleaseDate(com.google.type.Date value) {
+      if (currentVersionReleaseDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        currentVersionReleaseDate_ = value;
+      } else {
+        currentVersionReleaseDateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date when the maintenance version was released.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date current_version_release_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCurrentVersionReleaseDate(com.google.type.Date.Builder builderForValue) {
+      if (currentVersionReleaseDateBuilder_ == null) {
+        currentVersionReleaseDate_ = builderForValue.build();
+      } else {
+        currentVersionReleaseDateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date when the maintenance version was released.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date current_version_release_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCurrentVersionReleaseDate(com.google.type.Date value) {
+      if (currentVersionReleaseDateBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && currentVersionReleaseDate_ != null
+            && currentVersionReleaseDate_ != com.google.type.Date.getDefaultInstance()) {
+          getCurrentVersionReleaseDateBuilder().mergeFrom(value);
+        } else {
+          currentVersionReleaseDate_ = value;
+        }
+      } else {
+        currentVersionReleaseDateBuilder_.mergeFrom(value);
+      }
+      if (currentVersionReleaseDate_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date when the maintenance version was released.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date current_version_release_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCurrentVersionReleaseDate() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      currentVersionReleaseDate_ = null;
+      if (currentVersionReleaseDateBuilder_ != null) {
+        currentVersionReleaseDateBuilder_.dispose();
+        currentVersionReleaseDateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date when the maintenance version was released.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date current_version_release_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.type.Date.Builder getCurrentVersionReleaseDateBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetCurrentVersionReleaseDateFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date when the maintenance version was released.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date current_version_release_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.type.DateOrBuilder getCurrentVersionReleaseDateOrBuilder() {
+      if (currentVersionReleaseDateBuilder_ != null) {
+        return currentVersionReleaseDateBuilder_.getMessageOrBuilder();
+      } else {
+        return currentVersionReleaseDate_ == null
+            ? com.google.type.Date.getDefaultInstance()
+            : currentVersionReleaseDate_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The date when the maintenance version was released.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date current_version_release_date = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        internalGetCurrentVersionReleaseDateFieldBuilder() {
+      if (currentVersionReleaseDateBuilder_ == null) {
+        currentVersionReleaseDateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                getCurrentVersionReleaseDate(), getParentForChildren(), isClean());
+        currentVersionReleaseDate_ = null;
+      }
+      return currentVersionReleaseDateBuilder_;
+    }
+
+    private com.google.cloud.databasecenter.v1beta.UpcomingMaintenance upcomingMaintenance_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.databasecenter.v1beta.UpcomingMaintenance,
+            com.google.cloud.databasecenter.v1beta.UpcomingMaintenance.Builder,
+            com.google.cloud.databasecenter.v1beta.UpcomingMaintenanceOrBuilder>
+        upcomingMaintenanceBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upcoming maintenance window for the database resource. This is
+     * only populated for an engine, if upcoming maintenance is scheduled for the
+     * resource. This schedule is generated per engine and engine version, and
+     * there is only one upcoming maintenance window at any given time. In case of
+     * upcoming maintenance, the maintenance_state will be set to SCHEDULED first,
+     * and then IN_PROGRESS when the maintenance window starts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.databasecenter.v1beta.UpcomingMaintenance upcoming_maintenance = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the upcomingMaintenance field is set.
+     */
+    public boolean hasUpcomingMaintenance() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upcoming maintenance window for the database resource. This is
+     * only populated for an engine, if upcoming maintenance is scheduled for the
+     * resource. This schedule is generated per engine and engine version, and
+     * there is only one upcoming maintenance window at any given time. In case of
+     * upcoming maintenance, the maintenance_state will be set to SCHEDULED first,
+     * and then IN_PROGRESS when the maintenance window starts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.databasecenter.v1beta.UpcomingMaintenance upcoming_maintenance = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The upcomingMaintenance.
+     */
+    public com.google.cloud.databasecenter.v1beta.UpcomingMaintenance getUpcomingMaintenance() {
+      if (upcomingMaintenanceBuilder_ == null) {
+        return upcomingMaintenance_ == null
+            ? com.google.cloud.databasecenter.v1beta.UpcomingMaintenance.getDefaultInstance()
+            : upcomingMaintenance_;
+      } else {
+        return upcomingMaintenanceBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upcoming maintenance window for the database resource. This is
+     * only populated for an engine, if upcoming maintenance is scheduled for the
+     * resource. This schedule is generated per engine and engine version, and
+     * there is only one upcoming maintenance window at any given time. In case of
+     * upcoming maintenance, the maintenance_state will be set to SCHEDULED first,
+     * and then IN_PROGRESS when the maintenance window starts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.databasecenter.v1beta.UpcomingMaintenance upcoming_maintenance = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpcomingMaintenance(
+        com.google.cloud.databasecenter.v1beta.UpcomingMaintenance value) {
+      if (upcomingMaintenanceBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        upcomingMaintenance_ = value;
+      } else {
+        upcomingMaintenanceBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upcoming maintenance window for the database resource. This is
+     * only populated for an engine, if upcoming maintenance is scheduled for the
+     * resource. This schedule is generated per engine and engine version, and
+     * there is only one upcoming maintenance window at any given time. In case of
+     * upcoming maintenance, the maintenance_state will be set to SCHEDULED first,
+     * and then IN_PROGRESS when the maintenance window starts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.databasecenter.v1beta.UpcomingMaintenance upcoming_maintenance = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUpcomingMaintenance(
+        com.google.cloud.databasecenter.v1beta.UpcomingMaintenance.Builder builderForValue) {
+      if (upcomingMaintenanceBuilder_ == null) {
+        upcomingMaintenance_ = builderForValue.build();
+      } else {
+        upcomingMaintenanceBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upcoming maintenance window for the database resource. This is
+     * only populated for an engine, if upcoming maintenance is scheduled for the
+     * resource. This schedule is generated per engine and engine version, and
+     * there is only one upcoming maintenance window at any given time. In case of
+     * upcoming maintenance, the maintenance_state will be set to SCHEDULED first,
+     * and then IN_PROGRESS when the maintenance window starts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.databasecenter.v1beta.UpcomingMaintenance upcoming_maintenance = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUpcomingMaintenance(
+        com.google.cloud.databasecenter.v1beta.UpcomingMaintenance value) {
+      if (upcomingMaintenanceBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && upcomingMaintenance_ != null
+            && upcomingMaintenance_
+                != com.google.cloud.databasecenter.v1beta.UpcomingMaintenance
+                    .getDefaultInstance()) {
+          getUpcomingMaintenanceBuilder().mergeFrom(value);
+        } else {
+          upcomingMaintenance_ = value;
+        }
+      } else {
+        upcomingMaintenanceBuilder_.mergeFrom(value);
+      }
+      if (upcomingMaintenance_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upcoming maintenance window for the database resource. This is
+     * only populated for an engine, if upcoming maintenance is scheduled for the
+     * resource. This schedule is generated per engine and engine version, and
+     * there is only one upcoming maintenance window at any given time. In case of
+     * upcoming maintenance, the maintenance_state will be set to SCHEDULED first,
+     * and then IN_PROGRESS when the maintenance window starts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.databasecenter.v1beta.UpcomingMaintenance upcoming_maintenance = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUpcomingMaintenance() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      upcomingMaintenance_ = null;
+      if (upcomingMaintenanceBuilder_ != null) {
+        upcomingMaintenanceBuilder_.dispose();
+        upcomingMaintenanceBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upcoming maintenance window for the database resource. This is
+     * only populated for an engine, if upcoming maintenance is scheduled for the
+     * resource. This schedule is generated per engine and engine version, and
+     * there is only one upcoming maintenance window at any given time. In case of
+     * upcoming maintenance, the maintenance_state will be set to SCHEDULED first,
+     * and then IN_PROGRESS when the maintenance window starts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.databasecenter.v1beta.UpcomingMaintenance upcoming_maintenance = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.databasecenter.v1beta.UpcomingMaintenance.Builder
+        getUpcomingMaintenanceBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetUpcomingMaintenanceFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upcoming maintenance window for the database resource. This is
+     * only populated for an engine, if upcoming maintenance is scheduled for the
+     * resource. This schedule is generated per engine and engine version, and
+     * there is only one upcoming maintenance window at any given time. In case of
+     * upcoming maintenance, the maintenance_state will be set to SCHEDULED first,
+     * and then IN_PROGRESS when the maintenance window starts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.databasecenter.v1beta.UpcomingMaintenance upcoming_maintenance = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.databasecenter.v1beta.UpcomingMaintenanceOrBuilder
+        getUpcomingMaintenanceOrBuilder() {
+      if (upcomingMaintenanceBuilder_ != null) {
+        return upcomingMaintenanceBuilder_.getMessageOrBuilder();
+      } else {
+        return upcomingMaintenance_ == null
+            ? com.google.cloud.databasecenter.v1beta.UpcomingMaintenance.getDefaultInstance()
+            : upcomingMaintenance_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Upcoming maintenance window for the database resource. This is
+     * only populated for an engine, if upcoming maintenance is scheduled for the
+     * resource. This schedule is generated per engine and engine version, and
+     * there is only one upcoming maintenance window at any given time. In case of
+     * upcoming maintenance, the maintenance_state will be set to SCHEDULED first,
+     * and then IN_PROGRESS when the maintenance window starts.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.databasecenter.v1beta.UpcomingMaintenance upcoming_maintenance = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.databasecenter.v1beta.UpcomingMaintenance,
+            com.google.cloud.databasecenter.v1beta.UpcomingMaintenance.Builder,
+            com.google.cloud.databasecenter.v1beta.UpcomingMaintenanceOrBuilder>
+        internalGetUpcomingMaintenanceFieldBuilder() {
+      if (upcomingMaintenanceBuilder_ == null) {
+        upcomingMaintenanceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.databasecenter.v1beta.UpcomingMaintenance,
+                com.google.cloud.databasecenter.v1beta.UpcomingMaintenance.Builder,
+                com.google.cloud.databasecenter.v1beta.UpcomingMaintenanceOrBuilder>(
+                getUpcomingMaintenance(), getParentForChildren(), isClean());
+        upcomingMaintenance_ = null;
+      }
+      return upcomingMaintenanceBuilder_;
+    }
+
+    private int state_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource maintenance state. This is to capture the current
+     * state of the maintenance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.databasecenter.v1beta.MaintenanceState state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource maintenance state. This is to capture the current
+     * state of the maintenance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.databasecenter.v1beta.MaintenanceState state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+      state_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource maintenance state. This is to capture the current
+     * state of the maintenance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.databasecenter.v1beta.MaintenanceState state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.databasecenter.v1beta.MaintenanceState getState() {
+      com.google.cloud.databasecenter.v1beta.MaintenanceState result =
+          com.google.cloud.databasecenter.v1beta.MaintenanceState.forNumber(state_);
+      return result == null
+          ? com.google.cloud.databasecenter.v1beta.MaintenanceState.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource maintenance state. This is to capture the current
+     * state of the maintenance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.databasecenter.v1beta.MaintenanceState state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(com.google.cloud.databasecenter.v1beta.MaintenanceState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Resource maintenance state. This is to capture the current
+     * state of the maintenance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.databasecenter.v1beta.MaintenanceState state = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList possibleFailureReasons_ = emptyIntList();
+
+    private void ensurePossibleFailureReasonsIsMutable() {
+      if (!possibleFailureReasons_.isModifiable()) {
+        possibleFailureReasons_ = makeMutableCopy(possibleFailureReasons_);
+      }
+      bitField0_ |= 0x00000040;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of possible reasons why the maintenance is not completed.
+     * This is an optional field and is only populated if there are any
+     * reasons for failures recorded for the maintenance by DB Center.
+     * FAILURE maintenance status may not always have a failure reason.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the possibleFailureReasons.
+     */
+    public java.util.List<com.google.cloud.databasecenter.v1beta.PossibleFailureReason>
+        getPossibleFailureReasonsList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.cloud.databasecenter.v1beta.PossibleFailureReason>(
+          possibleFailureReasons_, possibleFailureReasons_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of possible reasons why the maintenance is not completed.
+     * This is an optional field and is only populated if there are any
+     * reasons for failures recorded for the maintenance by DB Center.
+     * FAILURE maintenance status may not always have a failure reason.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of possibleFailureReasons.
+     */
+    public int getPossibleFailureReasonsCount() {
+      return possibleFailureReasons_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of possible reasons why the maintenance is not completed.
+     * This is an optional field and is only populated if there are any
+     * reasons for failures recorded for the maintenance by DB Center.
+     * FAILURE maintenance status may not always have a failure reason.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The possibleFailureReasons at the given index.
+     */
+    public com.google.cloud.databasecenter.v1beta.PossibleFailureReason getPossibleFailureReasons(
+        int index) {
+      return possibleFailureReasons_converter_.convert(possibleFailureReasons_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of possible reasons why the maintenance is not completed.
+     * This is an optional field and is only populated if there are any
+     * reasons for failures recorded for the maintenance by DB Center.
+     * FAILURE maintenance status may not always have a failure reason.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The possibleFailureReasons to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPossibleFailureReasons(
+        int index, com.google.cloud.databasecenter.v1beta.PossibleFailureReason value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePossibleFailureReasonsIsMutable();
+      possibleFailureReasons_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of possible reasons why the maintenance is not completed.
+     * This is an optional field and is only populated if there are any
+     * reasons for failures recorded for the maintenance by DB Center.
+     * FAILURE maintenance status may not always have a failure reason.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The possibleFailureReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPossibleFailureReasons(
+        com.google.cloud.databasecenter.v1beta.PossibleFailureReason value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensurePossibleFailureReasonsIsMutable();
+      possibleFailureReasons_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of possible reasons why the maintenance is not completed.
+     * This is an optional field and is only populated if there are any
+     * reasons for failures recorded for the maintenance by DB Center.
+     * FAILURE maintenance status may not always have a failure reason.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The possibleFailureReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPossibleFailureReasons(
+        java.lang.Iterable<? extends com.google.cloud.databasecenter.v1beta.PossibleFailureReason>
+            values) {
+      ensurePossibleFailureReasonsIsMutable();
+      for (com.google.cloud.databasecenter.v1beta.PossibleFailureReason value : values) {
+        possibleFailureReasons_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of possible reasons why the maintenance is not completed.
+     * This is an optional field and is only populated if there are any
+     * reasons for failures recorded for the maintenance by DB Center.
+     * FAILURE maintenance status may not always have a failure reason.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPossibleFailureReasons() {
+      possibleFailureReasons_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of possible reasons why the maintenance is not completed.
+     * This is an optional field and is only populated if there are any
+     * reasons for failures recorded for the maintenance by DB Center.
+     * FAILURE maintenance status may not always have a failure reason.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for possibleFailureReasons.
+     */
+    public java.util.List<java.lang.Integer> getPossibleFailureReasonsValueList() {
+      possibleFailureReasons_.makeImmutable();
+      return possibleFailureReasons_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of possible reasons why the maintenance is not completed.
+     * This is an optional field and is only populated if there are any
+     * reasons for failures recorded for the maintenance by DB Center.
+     * FAILURE maintenance status may not always have a failure reason.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of possibleFailureReasons at the given index.
+     */
+    public int getPossibleFailureReasonsValue(int index) {
+      return possibleFailureReasons_.getInt(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of possible reasons why the maintenance is not completed.
+     * This is an optional field and is only populated if there are any
+     * reasons for failures recorded for the maintenance by DB Center.
+     * FAILURE maintenance status may not always have a failure reason.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for possibleFailureReasons to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPossibleFailureReasonsValue(int index, int value) {
+      ensurePossibleFailureReasonsIsMutable();
+      possibleFailureReasons_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of possible reasons why the maintenance is not completed.
+     * This is an optional field and is only populated if there are any
+     * reasons for failures recorded for the maintenance by DB Center.
+     * FAILURE maintenance status may not always have a failure reason.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for possibleFailureReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addPossibleFailureReasonsValue(int value) {
+      ensurePossibleFailureReasonsIsMutable();
+      possibleFailureReasons_.addInt(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of possible reasons why the maintenance is not completed.
+     * This is an optional field and is only populated if there are any
+     * reasons for failures recorded for the maintenance by DB Center.
+     * FAILURE maintenance status may not always have a failure reason.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.databasecenter.v1beta.PossibleFailureReason possible_failure_reasons = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for possibleFailureReasons to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllPossibleFailureReasonsValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensurePossibleFailureReasonsIsMutable();
+      for (int value : values) {
+        possibleFailureReasons_.addInt(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object previousMaintenanceVersion_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Previous maintenance version of the database resource.
+     * Example: "MYSQL_8_0_41.R20250531.01_15". This is available once a minor
+     * version maintenance is complete on a database resource.
+     * </pre>
+     *
+     * <code>string previous_maintenance_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The previousMaintenanceVersion.
+     */
+    public java.lang.String getPreviousMaintenanceVersion() {
+      java.lang.Object ref = previousMaintenanceVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        previousMaintenanceVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Previous maintenance version of the database resource.
+     * Example: "MYSQL_8_0_41.R20250531.01_15". This is available once a minor
+     * version maintenance is complete on a database resource.
+     * </pre>
+     *
+     * <code>string previous_maintenance_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for previousMaintenanceVersion.
+     */
+    public com.google.protobuf.ByteString getPreviousMaintenanceVersionBytes() {
+      java.lang.Object ref = previousMaintenanceVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        previousMaintenanceVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Previous maintenance version of the database resource.
+     * Example: "MYSQL_8_0_41.R20250531.01_15". This is available once a minor
+     * version maintenance is complete on a database resource.
+     * </pre>
+     *
+     * <code>string previous_maintenance_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The previousMaintenanceVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreviousMaintenanceVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      previousMaintenanceVersion_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Previous maintenance version of the database resource.
+     * Example: "MYSQL_8_0_41.R20250531.01_15". This is available once a minor
+     * version maintenance is complete on a database resource.
+     * </pre>
+     *
+     * <code>string previous_maintenance_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPreviousMaintenanceVersion() {
+      previousMaintenanceVersion_ = getDefaultInstance().getPreviousMaintenanceVersion();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Previous maintenance version of the database resource.
+     * Example: "MYSQL_8_0_41.R20250531.01_15". This is available once a minor
+     * version maintenance is complete on a database resource.
+     * </pre>
+     *
+     * <code>string previous_maintenance_version = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for previousMaintenanceVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPreviousMaintenanceVersionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      previousMaintenanceVersion_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

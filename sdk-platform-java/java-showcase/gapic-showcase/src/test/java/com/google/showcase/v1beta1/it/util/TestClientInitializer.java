@@ -369,7 +369,8 @@ public class TestClientInitializer {
       ApiTracerFactory metricsTracerFactory,
       RetrySettings retrySettings,
       Set<StatusCode.Code> retryableCodes,
-      List<ClientInterceptor> interceptorList) throws Exception {
+      List<ClientInterceptor> interceptorList)
+      throws Exception {
     EchoStubSettings.Builder grpcEchoSettingsBuilder = EchoStubSettings.newBuilder();
     grpcEchoSettingsBuilder
         .echoSettings()
@@ -394,7 +395,8 @@ public class TestClientInitializer {
       ApiTracerFactory metricsTracerFactory,
       RetrySettings retrySettings,
       Set<StatusCode.Code> retryableCodes,
-      com.google.api.client.http.HttpTransport transport) throws Exception {
+      com.google.api.client.http.HttpTransport transport)
+      throws Exception {
     EchoStubSettings.Builder httpJsonEchoSettingsBuilder = EchoStubSettings.newHttpJsonBuilder();
     httpJsonEchoSettingsBuilder
         .echoSettings()

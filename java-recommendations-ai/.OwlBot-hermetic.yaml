@@ -20,7 +20,8 @@ deep-remove-regex:
 - "/java-recommendations-ai/google-.*/src"
 
 deep-preserve-regex:
-- "/java-recommendations-ai/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/recommendationengine/(v.*)/.*-java/proto-google-.*/src"

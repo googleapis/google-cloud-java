@@ -16,11 +16,12 @@
 deep-remove-regex:
 - "/java-datamanager/grpc-google-.*/src"
 - "/java-datamanager/proto-google-.*/src"
-- "/java-datamanager/google-.*/src"
+- "/java-datamanager/data-manager.*/src"
 - "/java-datamanager/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-datamanager/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*data-manager.*/src/main/java/.*/stub/Version.java"
+- "/.*data-manager.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/ads/datamanager/(v.*)/.*-java/proto-google-.*/src"

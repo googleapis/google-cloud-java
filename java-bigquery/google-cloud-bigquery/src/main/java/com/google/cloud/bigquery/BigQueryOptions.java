@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.api.core.BetaApi;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.cloud.ServiceDefaults;
@@ -127,9 +126,21 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     /**
      * Enables OpenTelemetry tracing functionality for this BigQuery instance
      *
+     * <p><div class="warning"> Traces may contain sensitive data such as resource names, full URLs,
+     * and error messages.
+     *
+     * <p>Before configuring subscribers or exporters for traces, review the contents of the spans
+     * and consult the <a
+     * href="https://opentelemetry.io/docs/security/handling-sensitive-data/">OpenTelemetry
+     * documentation</a> to set up filters and formatters to prevent leaking sensitive information,
+     * depending on your intended use case.
+     *
+     * <p>See also: <a
+     * href="https://opentelemetry.io/docs/concepts/semantic-conventions/">OpenTelemetry Semantic
+     * Conventions</a> </div>
+     *
      * @param enableOpenTelemetryTracing enables OpenTelemetry tracing if true
      */
-    @BetaApi
     public Builder setEnableOpenTelemetryTracing(boolean enableOpenTelemetryTracing) {
       this.enableOpenTelemetryTracing = enableOpenTelemetryTracing;
       return this;
@@ -140,7 +151,6 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
      *
      * @param tracer OpenTelemetry tracer to be used
      */
-    @BetaApi
     public Builder setOpenTelemetryTracer(Tracer tracer) {
       this.openTelemetryTracer = tracer;
       return this;
@@ -282,7 +292,6 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
    *
    * @return true if tracing is enabled, false if not
    */
-  @BetaApi("Span names and attributes are subject to change without notice")
   public boolean isOpenTelemetryTracingEnabled() {
     return enableOpenTelemetryTracing;
   }
@@ -292,7 +301,6 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
    *
    * @return OpenTelemetry tracer object or {@code null} if not set
    */
-  @BetaApi("Span names and attributes are subject to change without notice")
   public Tracer getOpenTelemetryTracer() {
     return openTelemetryTracer;
   }

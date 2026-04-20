@@ -19,6 +19,9 @@ deep-remove-regex:
 - "/java-gsuite-addons/proto-google-.*/src"
 - "/java-gsuite-addons/google-.*/src"
 
+deep-preserve-regex:
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+
 deep-copy-regex:
 - source: "/google/cloud/gsuiteaddons/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/java-gsuite-addons/$1/proto-google-cloud-gsuite-addons-$1/src"

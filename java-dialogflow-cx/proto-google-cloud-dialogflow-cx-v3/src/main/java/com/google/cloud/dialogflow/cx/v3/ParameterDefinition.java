@@ -408,7 +408,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.ParameterDefinition.type is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=59
+   *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=60
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override
@@ -429,7 +429,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
    * </code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.ParameterDefinition.type is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=59
+   *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=60
    * @return The type.
    */
   @java.lang.Override
@@ -1088,7 +1088,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ParameterDefinition.type is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=59
+     *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=60
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override
@@ -1109,7 +1109,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ParameterDefinition.type is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=59
+     *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=60
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -1133,7 +1133,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ParameterDefinition.type is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=59
+     *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=60
      * @return The type.
      */
     @java.lang.Override
@@ -1158,7 +1158,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ParameterDefinition.type is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=59
+     *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=60
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -1186,7 +1186,7 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * </code>
      *
      * @deprecated google.cloud.dialogflow.cx.v3.ParameterDefinition.type is deprecated. See
-     *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=59
+     *     google/cloud/dialogflow/cx/v3/parameter_definition.proto;l=60
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

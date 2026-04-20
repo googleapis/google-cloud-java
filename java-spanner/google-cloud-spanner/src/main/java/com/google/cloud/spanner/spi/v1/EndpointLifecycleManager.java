@@ -29,6 +29,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -68,8 +70,9 @@ class EndpointLifecycleManager {
   private static final long EVICTION_CHECK_INTERVAL_SECONDS = 300;
 
   /**
-   * Maximum consecutive TRANSIENT_FAILURE probes before evicting an endpoint. Gives the channel
-   * time to recover from transient network issues before we tear it down and recreate.
+   * Maximum observed TRANSIENT_FAILURE probes before evicting an endpoint. The counter resets only
+   * after the channel reaches READY, so CONNECTING/IDLE oscillation does not hide a persistently
+   * unhealthy endpoint.
    */
   private static final int MAX_TRANSIENT_FAILURE_COUNT = 3;
 
@@ -103,6 +106,11 @@ class EndpointLifecycleManager {
   private final ChannelEndpointCache endpointCache;
   private final Map<String, EndpointState> endpoints = new ConcurrentHashMap<>();
   private final Set<String> transientFailureEvictedAddresses = ConcurrentHashMap.newKeySet();
+  private final Map<String, Long> finderGenerations = new ConcurrentHashMap<>();
+  private final Map<String, PendingActiveAddressUpdate> pendingActiveAddressUpdates =
+      new ConcurrentHashMap<>();
+  private final Set<String> queuedFinderKeys = ConcurrentHashMap.newKeySet();
+  private final ConcurrentLinkedQueue<String> queuedFinders = new ConcurrentLinkedQueue<>();
 
   /**
    * Active addresses reported by each ChannelFinder, keyed by database id.
@@ -118,14 +126,26 @@ class EndpointLifecycleManager {
 
   private final Object activeAddressLock = new Object();
 
+  private final ExecutorService activeAddressUpdateExecutor;
   private final ScheduledExecutorService scheduler;
   private final AtomicBoolean isShutdown = new AtomicBoolean(false);
+  private final AtomicBoolean activeAddressDrainScheduled = new AtomicBoolean(false);
   private final long probeIntervalSeconds;
   private final Duration idleEvictionDuration;
   private final Clock clock;
   private final String defaultEndpointAddress;
 
   private ScheduledFuture<?> evictionFuture;
+
+  private static final class PendingActiveAddressUpdate {
+    private final Set<String> activeAddresses;
+    private final long generation;
+
+    private PendingActiveAddressUpdate(Set<String> activeAddresses, long generation) {
+      this.activeAddresses = activeAddresses;
+      this.generation = generation;
+    }
+  }
 
   EndpointLifecycleManager(ChannelEndpointCache endpointCache) {
     this(
@@ -146,6 +166,13 @@ class EndpointLifecycleManager {
     this.idleEvictionDuration = idleEvictionDuration;
     this.clock = clock;
     this.defaultEndpointAddress = endpointCache.defaultChannel().getAddress();
+    this.activeAddressUpdateExecutor =
+        Executors.newSingleThreadExecutor(
+            r -> {
+              Thread t = new Thread(r, "spanner-active-address-update");
+              t.setDaemon(true);
+              return t;
+            });
     this.scheduler =
         Executors.newScheduledThreadPool(
             2,
@@ -210,6 +237,59 @@ class EndpointLifecycleManager {
   private void clearTransientFailureEvictionMarker(String address) {
     synchronized (activeAddressLock) {
       transientFailureEvictedAddresses.remove(address);
+    }
+  }
+
+  /**
+   * Enqueues active-address reconciliation on a dedicated worker so cache-map updates do not block
+   * on endpoint lifecycle bookkeeping.
+   */
+  void updateActiveAddressesAsync(String finderKey, Set<String> activeAddresses) {
+    if (isShutdown.get() || finderKey == null || finderKey.isEmpty()) {
+      return;
+    }
+    synchronized (activeAddressLock) {
+      long generation = finderGenerations.getOrDefault(finderKey, 0L);
+      pendingActiveAddressUpdates.put(
+          finderKey, new PendingActiveAddressUpdate(new HashSet<>(activeAddresses), generation));
+      if (queuedFinderKeys.add(finderKey)) {
+        queuedFinders.add(finderKey);
+      }
+    }
+    scheduleActiveAddressDrain();
+  }
+
+  private void scheduleActiveAddressDrain() {
+    if (!activeAddressDrainScheduled.compareAndSet(false, true)) {
+      return;
+    }
+    activeAddressUpdateExecutor.execute(this::drainPendingActiveAddressUpdates);
+  }
+
+  private void drainPendingActiveAddressUpdates() {
+    while (true) {
+      String finderKey = queuedFinders.poll();
+      if (finderKey == null) {
+        activeAddressDrainScheduled.set(false);
+        if (queuedFinders.isEmpty() || !activeAddressDrainScheduled.compareAndSet(false, true)) {
+          return;
+        }
+        continue;
+      }
+
+      queuedFinderKeys.remove(finderKey);
+      PendingActiveAddressUpdate pendingUpdate = pendingActiveAddressUpdates.remove(finderKey);
+      if (pendingUpdate == null) {
+        continue;
+      }
+
+      synchronized (activeAddressLock) {
+        long currentGeneration = finderGenerations.getOrDefault(finderKey, 0L);
+        if (currentGeneration != pendingUpdate.generation) {
+          continue;
+        }
+      }
+      updateActiveAddresses(finderKey, pendingUpdate.activeAddresses);
     }
   }
 
@@ -295,6 +375,9 @@ class EndpointLifecycleManager {
       return;
     }
     synchronized (activeAddressLock) {
+      finderGenerations.merge(finderKey, 1L, Long::sum);
+      pendingActiveAddressUpdates.remove(finderKey);
+      queuedFinderKeys.remove(finderKey);
       if (activeAddressesPerFinder.remove(finderKey) == null) {
         return;
       }
@@ -411,7 +494,8 @@ class EndpointLifecycleManager {
    * <p>All exceptions are caught to prevent {@link ScheduledExecutorService} from cancelling future
    * runs of this task.
    */
-  private void probe(String address) {
+  @VisibleForTesting
+  void probe(String address) {
     try {
       if (isShutdown.get()) {
         return;
@@ -448,25 +532,24 @@ class EndpointLifecycleManager {
           logger.log(
               Level.FINE, "Probe for {0}: channel IDLE, requesting connection (warmup)", address);
           channel.getState(true);
-          state.consecutiveTransientFailures = 0;
           break;
 
         case CONNECTING:
-          state.consecutiveTransientFailures = 0;
           break;
 
         case TRANSIENT_FAILURE:
           state.consecutiveTransientFailures++;
           logger.log(
               Level.FINE,
-              "Probe for {0}: channel in TRANSIENT_FAILURE ({1}/{2})",
+              "Probe for {0}: channel in TRANSIENT_FAILURE ({1}/{2} observed failures since last"
+                  + " READY)",
               new Object[] {
                 address, state.consecutiveTransientFailures, MAX_TRANSIENT_FAILURE_COUNT
               });
           if (state.consecutiveTransientFailures >= MAX_TRANSIENT_FAILURE_COUNT) {
             logger.log(
                 Level.FINE,
-                "Evicting endpoint {0}: {1} consecutive TRANSIENT_FAILURE probes",
+                "Evicting endpoint {0}: {1} TRANSIENT_FAILURE probes without reaching READY",
                 new Object[] {address, state.consecutiveTransientFailures});
             evictEndpoint(address, EvictionReason.TRANSIENT_FAILURE);
           }
@@ -588,6 +671,7 @@ class EndpointLifecycleManager {
     }
 
     logger.log(Level.FINE, "Shutting down endpoint lifecycle manager");
+    activeAddressUpdateExecutor.shutdownNow();
 
     if (evictionFuture != null) {
       evictionFuture.cancel(false);
@@ -602,6 +686,9 @@ class EndpointLifecycleManager {
     }
     endpoints.clear();
     transientFailureEvictedAddresses.clear();
+    pendingActiveAddressUpdates.clear();
+    queuedFinderKeys.clear();
+    queuedFinders.clear();
 
     scheduler.shutdown();
     try {

@@ -13,17 +13,26 @@
             "CreateDeployment": {
               "methods": ["createDeploymentAsync", "createDeploymentAsync", "createDeploymentAsync", "createDeploymentOperationCallable", "createDeploymentCallable"]
             },
+            "CreateDeploymentGroup": {
+              "methods": ["createDeploymentGroupAsync", "createDeploymentGroupAsync", "createDeploymentGroupAsync", "createDeploymentGroupOperationCallable", "createDeploymentGroupCallable"]
+            },
             "CreatePreview": {
               "methods": ["createPreviewAsync", "createPreviewAsync", "createPreviewAsync", "createPreviewOperationCallable", "createPreviewCallable"]
             },
             "DeleteDeployment": {
               "methods": ["deleteDeploymentAsync", "deleteDeploymentAsync", "deleteDeploymentAsync", "deleteDeploymentOperationCallable", "deleteDeploymentCallable"]
             },
+            "DeleteDeploymentGroup": {
+              "methods": ["deleteDeploymentGroupAsync", "deleteDeploymentGroupAsync", "deleteDeploymentGroupAsync", "deleteDeploymentGroupOperationCallable", "deleteDeploymentGroupCallable"]
+            },
             "DeletePreview": {
               "methods": ["deletePreviewAsync", "deletePreviewAsync", "deletePreviewAsync", "deletePreviewOperationCallable", "deletePreviewCallable"]
             },
             "DeleteStatefile": {
               "methods": ["deleteStatefile", "deleteStatefile", "deleteStatefile", "deleteStatefileCallable"]
+            },
+            "DeprovisionDeploymentGroup": {
+              "methods": ["deprovisionDeploymentGroupAsync", "deprovisionDeploymentGroupAsync", "deprovisionDeploymentGroupAsync", "deprovisionDeploymentGroupOperationCallable", "deprovisionDeploymentGroupCallable"]
             },
             "ExportDeploymentStatefile": {
               "methods": ["exportDeploymentStatefile", "exportDeploymentStatefileCallable"]
@@ -42,6 +51,12 @@
             },
             "GetDeployment": {
               "methods": ["getDeployment", "getDeployment", "getDeployment", "getDeploymentCallable"]
+            },
+            "GetDeploymentGroup": {
+              "methods": ["getDeploymentGroup", "getDeploymentGroup", "getDeploymentGroup", "getDeploymentGroupCallable"]
+            },
+            "GetDeploymentGroupRevision": {
+              "methods": ["getDeploymentGroupRevision", "getDeploymentGroupRevision", "getDeploymentGroupRevision", "getDeploymentGroupRevisionCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -70,6 +85,12 @@
             "ImportStatefile": {
               "methods": ["importStatefile", "importStatefile", "importStatefile", "importStatefileCallable"]
             },
+            "ListDeploymentGroupRevisions": {
+              "methods": ["listDeploymentGroupRevisions", "listDeploymentGroupRevisions", "listDeploymentGroupRevisions", "listDeploymentGroupRevisionsPagedCallable", "listDeploymentGroupRevisionsCallable"]
+            },
+            "ListDeploymentGroups": {
+              "methods": ["listDeploymentGroups", "listDeploymentGroups", "listDeploymentGroups", "listDeploymentGroupsPagedCallable", "listDeploymentGroupsCallable"]
+            },
             "ListDeployments": {
               "methods": ["listDeployments", "listDeployments", "listDeployments", "listDeploymentsPagedCallable", "listDeploymentsCallable"]
             },
@@ -97,6 +118,9 @@
             "LockDeployment": {
               "methods": ["lockDeploymentAsync", "lockDeploymentAsync", "lockDeploymentAsync", "lockDeploymentOperationCallable", "lockDeploymentCallable"]
             },
+            "ProvisionDeploymentGroup": {
+              "methods": ["provisionDeploymentGroupAsync", "provisionDeploymentGroupAsync", "provisionDeploymentGroupAsync", "provisionDeploymentGroupOperationCallable", "provisionDeploymentGroupCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
@@ -111,6 +135,9 @@
             },
             "UpdateDeployment": {
               "methods": ["updateDeploymentAsync", "updateDeploymentAsync", "updateDeploymentOperationCallable", "updateDeploymentCallable"]
+            },
+            "UpdateDeploymentGroup": {
+              "methods": ["updateDeploymentGroupAsync", "updateDeploymentGroupAsync", "updateDeploymentGroupOperationCallable", "updateDeploymentGroupCallable"]
             }
           }
         }

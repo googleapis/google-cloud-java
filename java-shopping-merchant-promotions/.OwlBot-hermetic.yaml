@@ -20,7 +20,8 @@ deep-remove-regex:
 - "/java-shopping-merchant-promotions/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-shopping-merchant-promotions/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/shopping/merchant/promotions/(v.*)/.*-java/proto-google-.*/src"

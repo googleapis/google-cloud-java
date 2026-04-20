@@ -11,12 +11,14 @@ jobs:
       library: ${{ steps.filter.outputs.library }}
     steps:
     - uses: actions/checkout@v4
-    - uses: dorny/paths-filter@v3
+    - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
       id: filter
       with:
         filters: |
           library:
             - 'sdk-platform-java/**'
+            - 'google-auth-library-java/**'
+            - '.github/workflows/ci.yaml'
   build:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
@@ -173,17 +175,18 @@ jobs:
           java-version: 8
           distribution: temurin
           cache: maven
-      - name: Compile with Java 17 and run tests with Java 8
-        shell: bash
-        run: .kokoro/build.sh
-        env:
-          BUILD_SUBDIR: sdk-platform-java
-          JOB_TYPE: install
       - run: echo "JAVA8_HOME=${JAVA_HOME}" >> $GITHUB_ENV
       - uses: actions/setup-java@v3
         with:
           java-version: 17
           distribution: temurin
+      - name: Install all modules using Java 17
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
+      - name: Run tests with Java 8
         shell: bash
         run: |
           set -x
@@ -195,7 +198,7 @@ jobs:
               -Djvm="${JAVA8_HOME}/bin/java"
         working-directory: sdk-platform-java
       # The `envVarTest` profile runs tests that require an environment variable
-      - name: Compile with Java 17 and run tests with Java 8 (Env Var Tests)
+      - name: Run tests with Java 8 (Env Var Tests)
         shell: bash
         run: |
           set -x

@@ -108,7 +108,7 @@ download_protoc() {
   "protoc-${protoc_version}.zip" \
   "GitHub"
   unzip -o -q "protoc-${protoc_version}.zip"
-  rm "protoc-${protoc_version}.zip" "readme.txt"
+  rm -f "protoc-${protoc_version}.zip" "readme.txt"
 }
 
 download_grpc_plugin() {
@@ -343,12 +343,10 @@ backup_version_java() {
   local backup_directory=$2
 
   pushd "${target_directory}" > /dev/null
-  for file in $(find */src src -path "*/stub/Version.java" -type f 2>/dev/null); do
-    if [[ -n "$file" ]]; then
-      local backup_path="${backup_directory}/${file}"
-      mkdir -p "$(dirname "${backup_path}")"
-      cp "$file" "${backup_path}"
-    fi
+  find . -type f -path "*/src/*/stub/Version.java" -print0 | while IFS= read -r -d '' file; do
+    local backup_path="${backup_directory}/${file#./}"
+    mkdir -p "$(dirname "${backup_path}")"
+    cp "$file" "${backup_path}"
   done
   popd > /dev/null
 }
@@ -366,13 +364,24 @@ restore_version_java() {
   fi
 
   pushd "${backup_directory}" > /dev/null
-  for file in $(find . -type f 2>/dev/null); do
-    if [[ -n "$file" ]]; then
-      local relative_path="${file#./}"
-      local target_path="${target_directory}/${relative_path}"
-      mkdir -p "$(dirname "${target_path}")"
-      mv "$file" "${target_path}"
-    fi
+  find . -type f -print0 | while IFS= read -r -d '' file; do
+    local relative_path="${file#./}"
+    local target_path="${target_directory}/${relative_path}"
+    mkdir -p "$(dirname "${target_path}")"
+    mv "$file" "${target_path}"
   done
   popd > /dev/null
+}
+
+normalize_owlbot_yaml() {
+  local input_file="$1"
+  local output_file="$2"
+  local library_name="$3"
+  
+  # Step 1: Remove library name prefix and normalize indentation for matching lines.
+  # Step 2: Normalize indentation for lines that didn't have the prefix.
+  # Using | as sed delimiter to avoid escaping forward slashes.
+  sed -e "s|^\s*- \"/${library_name}|- \"|" \
+      -e "s|^\s*- \"|- \"|" \
+      "${input_file}" > "${output_file}"
 }

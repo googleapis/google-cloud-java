@@ -17,7 +17,6 @@
 package com.google.cloud.bigquery.telemetry;
 
 import com.google.api.client.http.*;
-import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.cloud.bigquery.BigQueryRetryHelper;
 import com.google.common.annotations.VisibleForTesting;
@@ -33,7 +32,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  * HttpRequestInitializer that wraps a delegate initializer, intercepts all HTTP requests, adds
  * OpenTelemetry tracing and then invokes delegate interceptor.
  */
-@BetaApi
 @InternalApi
 public class HttpTracingRequestInitializer implements HttpRequestInitializer {
 

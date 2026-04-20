@@ -234,6 +234,35 @@ backup_and_restore_version_java_succeeds() {
   rm -rf "${target_dir}" "${backup_dir}"
 }
 
+normalize_owlbot_yaml_test() {
+  local temp_dir=$(mktemp -d)
+  local input_file="${temp_dir}/input.yaml"
+  local output_file="${temp_dir}/output.yaml"
+  
+  cat <<EOF > "${input_file}"
+deep-remove-regex:
+- "/java-accesscontextmanager/proto-google-.*/src"
+  - "/java-accesscontextmanager/samples/snippets/generated"
+  - "/.*google-.*/src/main/java/.*/stub/Version.java"
+EOF
+
+  normalize_owlbot_yaml "${input_file}" "${output_file}" "java-accesscontextmanager"
+  
+  # Verify content
+  local expected_content
+  expected_content=$(cat <<EOF
+deep-remove-regex:
+- "/proto-google-.*/src"
+- "/samples/snippets/generated"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
+EOF
+)
+  local actual_content=$(cat "${output_file}")
+  assertEquals "${expected_content}" "${actual_content}"
+  
+  rm -rf "${temp_dir}"
+}
+
 # Execute tests.
 # One line per test.
 test_list=(
@@ -259,6 +288,7 @@ test_list=(
   get_proto_path_from_preprocessed_sources_empty_library_fails
   get_proto_path_from_preprocessed_sources_multiple_proto_dirs_fails
   backup_and_restore_version_java_succeeds
+  normalize_owlbot_yaml_test
 )
 
 pushd "${script_dir}"

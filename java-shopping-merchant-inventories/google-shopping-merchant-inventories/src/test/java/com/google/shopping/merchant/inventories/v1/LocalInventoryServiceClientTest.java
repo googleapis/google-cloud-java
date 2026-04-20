@@ -175,6 +175,7 @@ public class LocalInventoryServiceClientTest {
     LocalInventory expectedResponse =
         LocalInventory.newBuilder()
             .setName(LocalInventoryName.of("[ACCOUNT]", "[PRODUCT]", "[STORE_CODE]").toString())
+            .setBase64EncodedName("base64EncodedName-1991168022")
             .setAccount(-1177318867)
             .setStoreCode("storeCode1691468398")
             .setLocalInventoryAttributes(LocalInventoryAttributes.newBuilder().build())

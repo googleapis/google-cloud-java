@@ -214,12 +214,23 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * The exported Data Objects will be in JSON format.
+       * Deprecated: Exports Data Objects in `JSON` format. Use `JSONL` instead.
        * </pre>
        *
-       * <code>JSON = 1;</code>
+       * <code>JSON = 1 [deprecated = true];</code>
        */
+      @java.lang.Deprecated
       JSON(1),
+      /**
+       *
+       *
+       * <pre>
+       * Exports Data Objects in `JSONL` format.
+       * </pre>
+       *
+       * <code>JSONL = 2;</code>
+       */
+      JSONL(2),
       UNRECOGNIZED(-1),
       ;
 
@@ -248,12 +259,23 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
        *
        *
        * <pre>
-       * The exported Data Objects will be in JSON format.
+       * Deprecated: Exports Data Objects in `JSON` format. Use `JSONL` instead.
        * </pre>
        *
-       * <code>JSON = 1;</code>
+       * <code>JSON = 1 [deprecated = true];</code>
        */
-      public static final int JSON_VALUE = 1;
+      @java.lang.Deprecated public static final int JSON_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Exports Data Objects in `JSONL` format.
+       * </pre>
+       *
+       * <code>JSONL = 2;</code>
+       */
+      public static final int JSONL_VALUE = 2;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -283,6 +305,8 @@ public final class ExportDataObjectsRequest extends com.google.protobuf.Generate
             return FORMAT_UNSPECIFIED;
           case 1:
             return JSON;
+          case 2:
+            return JSONL;
           default:
             return null;
         }

@@ -33,6 +33,7 @@ import static com.google.api.gax.util.TimeConversionTestUtils.testDurationMethod
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -63,7 +64,6 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.truth.Truth;
 import java.io.IOException;
-import java.net.URI;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -890,16 +890,16 @@ class ClientContextTest {
     assertThat(transportChannel.getExecutor()).isSameInstanceAs(executorProvider.getExecutor());
   }
 
-  private GdchCredentials getMockGdchCredentials() throws IOException {
+  private GdchCredentials getMockGdchCredentials() {
     GdchCredentials creds = Mockito.mock(GdchCredentials.class);
 
     // GdchCredentials builder is mocked to accept a well-formed uri
     GdchCredentials.Builder gdchCredsBuilder = Mockito.mock(GdchCredentials.Builder.class);
-    Mockito.when(gdchCredsBuilder.setGdchAudience(Mockito.any(URI.class)))
+    Mockito.when(gdchCredsBuilder.setGdchAudience(Mockito.anyString()))
         .thenReturn(gdchCredsBuilder);
     Mockito.when(gdchCredsBuilder.build()).thenReturn(creds);
     Mockito.when(creds.toBuilder()).thenReturn(gdchCredsBuilder);
-    Mockito.when(creds.createWithGdchAudience(Mockito.any()))
+    Mockito.when(creds.createWithGdchAudience(Mockito.anyString()))
         .thenAnswer((uri) -> getMockGdchCredentials());
     return creds;
   }
@@ -939,7 +939,7 @@ class ClientContextTest {
     assertThat(fromProvider).isInstanceOf(GdchCredentials.class);
     assertNotSame(fromContext, fromProvider);
     verify((GdchCredentials) fromProvider, times(1))
-        .createWithGdchAudience(URI.create("test.googleapis.com:443"));
+        .createWithGdchAudience("test.googleapis.com:443");
   }
 
   @Test
@@ -994,8 +994,7 @@ class ClientContextTest {
     assertThat(fromContext).isInstanceOf(GdchCredentials.class);
     assertThat(fromProvider).isInstanceOf(GdchCredentials.class);
     assertNotSame(fromContext, fromProvider);
-    verify((GdchCredentials) fromProvider, times(1))
-        .createWithGdchAudience(URI.create("test-endpoint"));
+    verify((GdchCredentials) fromProvider, times(1)).createWithGdchAudience("test-endpoint");
   }
 
   @Test
@@ -1021,14 +1020,13 @@ class ClientContextTest {
     assertNotNull(fromContext);
     // using an audience should have made the context to recreate the credentials
     assertNotSame(fromContext, fromProvider);
-    verify((GdchCredentials) fromProvider, times(1))
-        .createWithGdchAudience(URI.create("valid-uri"));
-    verify((GdchCredentials) fromProvider, times(0))
-        .createWithGdchAudience(URI.create("test-endpoint"));
+    verify((GdchCredentials) fromProvider, times(1)).createWithGdchAudience("valid-uri");
+    verify((GdchCredentials) fromProvider, times(0)).createWithGdchAudience("test-endpoint");
   }
 
   @Test
-  void testCreateClientContext_withGdchCredentialAndInvalidAudience_throws() throws IOException {
+  void testCreateClientContext_withGdchCredentialAndInvalidAudience_doesNotThrow()
+      throws IOException {
     TransportChannelProvider transportChannelProvider = getFakeTransportChannelProvider();
     Credentials creds = getMockGdchCredentials();
     CredentialsProvider provider = FixedCredentialsProvider.create(creds);
@@ -1044,17 +1042,14 @@ class ClientContextTest {
     clientSettingsBuilder.setCredentialsProvider(provider);
     clientSettingsBuilder.setTransportChannelProvider(transportChannelProvider);
     final ClientSettings withGdchCredentialsAndMalformedApiAudience = clientSettingsBuilder.build();
-    // should throw
-    String exMessage =
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> ClientContext.create(withGdchCredentialsAndMalformedApiAudience))
-            .getMessage();
-    assertThat(exMessage).contains("The GDC-H API audience string is not a valid URI");
+
+    // There is an invalid URI for the GDCH audience, but we do not validate the URI
+    // There are some use cases where there the GDCH audience is not a URI.
+    ClientContext clientContext = ClientContext.create(withGdchCredentialsAndMalformedApiAudience);
+    assertInstanceOf(GdchCredentials.class, clientContext.getCredentials());
 
     Credentials fromProvider = provider.getCredentials();
-    verify((GdchCredentials) fromProvider, times(0))
-        .createWithGdchAudience(URI.create("test-endpoint"));
+    verify((GdchCredentials) fromProvider, times(0)).createWithGdchAudience("test-endpoint");
   }
 
   @Test

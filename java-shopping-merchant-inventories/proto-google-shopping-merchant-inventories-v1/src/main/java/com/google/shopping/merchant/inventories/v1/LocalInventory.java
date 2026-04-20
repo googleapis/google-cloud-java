@@ -57,6 +57,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
 
   private LocalInventory() {
     name_ = "";
+    base64EncodedName_ = "";
     storeCode_ = "";
   }
 
@@ -88,6 +89,36 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
    * Output only. The name of the `LocalInventory` resource.
    * Format:
    * `accounts/{account}/products/{product}/localInventories/{store_code}`
+   *
+   * The `{product}` segment is a unique identifier for the product.
+   * This identifier must be unique within a merchant account and generally
+   * follows the structure: `content_language~feed_label~offer_id`. Example:
+   * `en~US~sku123` For legacy local products, the structure is:
+   * `local~content_language~feed_label~offer_id`. Example: `local~en~US~sku123`
+   *
+   * The format of the `{product}` segment in the URL is automatically detected
+   * by the server, supporting two options:
+   *
+   * 1.  **Encoded Format**: The `{product}` segment is an unpadded base64url
+   * encoded string (RFC 4648 Section 5). The decoded string must result
+   * in the `content_language~feed_label~offer_id` structure. This encoding
+   * MUST be used if any part of the product identifier (like `offer_id`)
+   * contains characters such as `/`, `%`, or `~`.
+   * *   Example: To represent the product ID `en~US~sku/123` for
+   * `store_code` "store123", the `{product}` segment must be the
+   * base64url encoding of this string, which is `ZW5-VVN-c2t1LzEyMw`.
+   * The full resource name for the local inventory would be
+   * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/localInventories/store123`.
+   *
+   * 2.  **Plain Format**: The `{product}` segment is the tilde-separated string
+   * `content_language~feed_label~offer_id`. This format is suitable only
+   * when `content_language`, `feed_label`, and `offer_id` do not contain
+   * URL-problematic characters like `/`, `%`, or `~`.
+   *
+   * We recommend using the **Encoded Format** for all product IDs to ensure
+   * correct parsing, especially those containing special characters. The
+   * presence of tilde (`~`) characters in the `{product}` segment is used to
+   * differentiate between the two formats.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -114,6 +145,36 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
    * Output only. The name of the `LocalInventory` resource.
    * Format:
    * `accounts/{account}/products/{product}/localInventories/{store_code}`
+   *
+   * The `{product}` segment is a unique identifier for the product.
+   * This identifier must be unique within a merchant account and generally
+   * follows the structure: `content_language~feed_label~offer_id`. Example:
+   * `en~US~sku123` For legacy local products, the structure is:
+   * `local~content_language~feed_label~offer_id`. Example: `local~en~US~sku123`
+   *
+   * The format of the `{product}` segment in the URL is automatically detected
+   * by the server, supporting two options:
+   *
+   * 1.  **Encoded Format**: The `{product}` segment is an unpadded base64url
+   * encoded string (RFC 4648 Section 5). The decoded string must result
+   * in the `content_language~feed_label~offer_id` structure. This encoding
+   * MUST be used if any part of the product identifier (like `offer_id`)
+   * contains characters such as `/`, `%`, or `~`.
+   * *   Example: To represent the product ID `en~US~sku/123` for
+   * `store_code` "store123", the `{product}` segment must be the
+   * base64url encoding of this string, which is `ZW5-VVN-c2t1LzEyMw`.
+   * The full resource name for the local inventory would be
+   * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/localInventories/store123`.
+   *
+   * 2.  **Plain Format**: The `{product}` segment is the tilde-separated string
+   * `content_language~feed_label~offer_id`. This format is suitable only
+   * when `content_language`, `feed_label`, and `offer_id` do not contain
+   * URL-problematic characters like `/`, `%`, or `~`.
+   *
+   * We recommend using the **Encoded Format** for all product IDs to ensure
+   * correct parsing, especially those containing special characters. The
+   * presence of tilde (`~`) characters in the `{product}` segment is used to
+   * differentiate between the two formats.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -127,6 +188,79 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BASE64_ENCODED_NAME_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object base64EncodedName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The unpadded base64url encoded name of the `LocalInventory`
+   * resource. Format:
+   * `accounts/{account}/products/{product}/localInventories/{store_code}`
+   * where the `{product}` segment is the unpadded base64url encoded value of
+   * the identifier of the form `content_language~feed_label~offer_id`. Example:
+   * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/localInventories/store123` for
+   * the decoded product ID `en~US~sku/123` and `store_code` "store123".
+   * Can be used directly as input to the API methods that require the local
+   * product identifier within the local inventory name to be encoded if it
+   * contains special characters, for example
+   * [`GetLocalInventory`](https://developers.google.com/merchant/api/reference/rest/inventories_v1/accounts.products.localInventories/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The base64EncodedName.
+   */
+  @java.lang.Override
+  public java.lang.String getBase64EncodedName() {
+    java.lang.Object ref = base64EncodedName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      base64EncodedName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The unpadded base64url encoded name of the `LocalInventory`
+   * resource. Format:
+   * `accounts/{account}/products/{product}/localInventories/{store_code}`
+   * where the `{product}` segment is the unpadded base64url encoded value of
+   * the identifier of the form `content_language~feed_label~offer_id`. Example:
+   * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/localInventories/store123` for
+   * the decoded product ID `en~US~sku/123` and `store_code` "store123".
+   * Can be used directly as input to the API methods that require the local
+   * product identifier within the local inventory name to be encoded if it
+   * contains special characters, for example
+   * [`GetLocalInventory`](https://developers.google.com/merchant/api/reference/rest/inventories_v1/accounts.products.localInventories/get).
+   * </pre>
+   *
+   * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for base64EncodedName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBase64EncodedNameBytes() {
+    java.lang.Object ref = base64EncodedName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      base64EncodedName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -306,6 +440,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(14, getLocalInventoryAttributes());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(base64EncodedName_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 15, base64EncodedName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -329,6 +466,9 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               14, getLocalInventoryAttributes());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(base64EncodedName_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(15, base64EncodedName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -346,6 +486,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
         (com.google.shopping.merchant.inventories.v1.LocalInventory) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getBase64EncodedName().equals(other.getBase64EncodedName())) return false;
     if (getAccount() != other.getAccount()) return false;
     if (!getStoreCode().equals(other.getStoreCode())) return false;
     if (hasLocalInventoryAttributes() != other.hasLocalInventoryAttributes()) return false;
@@ -365,6 +506,8 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + BASE64_ENCODED_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getBase64EncodedName().hashCode();
     hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAccount());
     hash = (37 * hash) + STORE_CODE_FIELD_NUMBER;
@@ -528,6 +671,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      base64EncodedName_ = "";
       account_ = 0L;
       storeCode_ = "";
       localInventoryAttributes_ = null;
@@ -575,13 +719,16 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
         result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.account_ = account_;
+        result.base64EncodedName_ = base64EncodedName_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.account_ = account_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.storeCode_ = storeCode_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.localInventoryAttributes_ =
             localInventoryAttributesBuilder_ == null
                 ? localInventoryAttributes_
@@ -609,12 +756,17 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getBase64EncodedName().isEmpty()) {
+        base64EncodedName_ = other.base64EncodedName_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (other.getAccount() != 0L) {
         setAccount(other.getAccount());
       }
       if (!other.getStoreCode().isEmpty()) {
         storeCode_ = other.storeCode_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasLocalInventoryAttributes()) {
@@ -655,13 +807,13 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
             case 16:
               {
                 account_ = input.readInt64();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 16
             case 26:
               {
                 storeCode_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 114:
@@ -669,9 +821,15 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
                 input.readMessage(
                     internalGetLocalInventoryAttributesFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 114
+            case 122:
+              {
+                base64EncodedName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -700,6 +858,36 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
      * Output only. The name of the `LocalInventory` resource.
      * Format:
      * `accounts/{account}/products/{product}/localInventories/{store_code}`
+     *
+     * The `{product}` segment is a unique identifier for the product.
+     * This identifier must be unique within a merchant account and generally
+     * follows the structure: `content_language~feed_label~offer_id`. Example:
+     * `en~US~sku123` For legacy local products, the structure is:
+     * `local~content_language~feed_label~offer_id`. Example: `local~en~US~sku123`
+     *
+     * The format of the `{product}` segment in the URL is automatically detected
+     * by the server, supporting two options:
+     *
+     * 1.  **Encoded Format**: The `{product}` segment is an unpadded base64url
+     * encoded string (RFC 4648 Section 5). The decoded string must result
+     * in the `content_language~feed_label~offer_id` structure. This encoding
+     * MUST be used if any part of the product identifier (like `offer_id`)
+     * contains characters such as `/`, `%`, or `~`.
+     * *   Example: To represent the product ID `en~US~sku/123` for
+     * `store_code` "store123", the `{product}` segment must be the
+     * base64url encoding of this string, which is `ZW5-VVN-c2t1LzEyMw`.
+     * The full resource name for the local inventory would be
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/localInventories/store123`.
+     *
+     * 2.  **Plain Format**: The `{product}` segment is the tilde-separated string
+     * `content_language~feed_label~offer_id`. This format is suitable only
+     * when `content_language`, `feed_label`, and `offer_id` do not contain
+     * URL-problematic characters like `/`, `%`, or `~`.
+     *
+     * We recommend using the **Encoded Format** for all product IDs to ensure
+     * correct parsing, especially those containing special characters. The
+     * presence of tilde (`~`) characters in the `{product}` segment is used to
+     * differentiate between the two formats.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -725,6 +913,36 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
      * Output only. The name of the `LocalInventory` resource.
      * Format:
      * `accounts/{account}/products/{product}/localInventories/{store_code}`
+     *
+     * The `{product}` segment is a unique identifier for the product.
+     * This identifier must be unique within a merchant account and generally
+     * follows the structure: `content_language~feed_label~offer_id`. Example:
+     * `en~US~sku123` For legacy local products, the structure is:
+     * `local~content_language~feed_label~offer_id`. Example: `local~en~US~sku123`
+     *
+     * The format of the `{product}` segment in the URL is automatically detected
+     * by the server, supporting two options:
+     *
+     * 1.  **Encoded Format**: The `{product}` segment is an unpadded base64url
+     * encoded string (RFC 4648 Section 5). The decoded string must result
+     * in the `content_language~feed_label~offer_id` structure. This encoding
+     * MUST be used if any part of the product identifier (like `offer_id`)
+     * contains characters such as `/`, `%`, or `~`.
+     * *   Example: To represent the product ID `en~US~sku/123` for
+     * `store_code` "store123", the `{product}` segment must be the
+     * base64url encoding of this string, which is `ZW5-VVN-c2t1LzEyMw`.
+     * The full resource name for the local inventory would be
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/localInventories/store123`.
+     *
+     * 2.  **Plain Format**: The `{product}` segment is the tilde-separated string
+     * `content_language~feed_label~offer_id`. This format is suitable only
+     * when `content_language`, `feed_label`, and `offer_id` do not contain
+     * URL-problematic characters like `/`, `%`, or `~`.
+     *
+     * We recommend using the **Encoded Format** for all product IDs to ensure
+     * correct parsing, especially those containing special characters. The
+     * presence of tilde (`~`) characters in the `{product}` segment is used to
+     * differentiate between the two formats.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -750,6 +968,36 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
      * Output only. The name of the `LocalInventory` resource.
      * Format:
      * `accounts/{account}/products/{product}/localInventories/{store_code}`
+     *
+     * The `{product}` segment is a unique identifier for the product.
+     * This identifier must be unique within a merchant account and generally
+     * follows the structure: `content_language~feed_label~offer_id`. Example:
+     * `en~US~sku123` For legacy local products, the structure is:
+     * `local~content_language~feed_label~offer_id`. Example: `local~en~US~sku123`
+     *
+     * The format of the `{product}` segment in the URL is automatically detected
+     * by the server, supporting two options:
+     *
+     * 1.  **Encoded Format**: The `{product}` segment is an unpadded base64url
+     * encoded string (RFC 4648 Section 5). The decoded string must result
+     * in the `content_language~feed_label~offer_id` structure. This encoding
+     * MUST be used if any part of the product identifier (like `offer_id`)
+     * contains characters such as `/`, `%`, or `~`.
+     * *   Example: To represent the product ID `en~US~sku/123` for
+     * `store_code` "store123", the `{product}` segment must be the
+     * base64url encoding of this string, which is `ZW5-VVN-c2t1LzEyMw`.
+     * The full resource name for the local inventory would be
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/localInventories/store123`.
+     *
+     * 2.  **Plain Format**: The `{product}` segment is the tilde-separated string
+     * `content_language~feed_label~offer_id`. This format is suitable only
+     * when `content_language`, `feed_label`, and `offer_id` do not contain
+     * URL-problematic characters like `/`, `%`, or `~`.
+     *
+     * We recommend using the **Encoded Format** for all product IDs to ensure
+     * correct parsing, especially those containing special characters. The
+     * presence of tilde (`~`) characters in the `{product}` segment is used to
+     * differentiate between the two formats.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -774,6 +1022,36 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
      * Output only. The name of the `LocalInventory` resource.
      * Format:
      * `accounts/{account}/products/{product}/localInventories/{store_code}`
+     *
+     * The `{product}` segment is a unique identifier for the product.
+     * This identifier must be unique within a merchant account and generally
+     * follows the structure: `content_language~feed_label~offer_id`. Example:
+     * `en~US~sku123` For legacy local products, the structure is:
+     * `local~content_language~feed_label~offer_id`. Example: `local~en~US~sku123`
+     *
+     * The format of the `{product}` segment in the URL is automatically detected
+     * by the server, supporting two options:
+     *
+     * 1.  **Encoded Format**: The `{product}` segment is an unpadded base64url
+     * encoded string (RFC 4648 Section 5). The decoded string must result
+     * in the `content_language~feed_label~offer_id` structure. This encoding
+     * MUST be used if any part of the product identifier (like `offer_id`)
+     * contains characters such as `/`, `%`, or `~`.
+     * *   Example: To represent the product ID `en~US~sku/123` for
+     * `store_code` "store123", the `{product}` segment must be the
+     * base64url encoding of this string, which is `ZW5-VVN-c2t1LzEyMw`.
+     * The full resource name for the local inventory would be
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/localInventories/store123`.
+     *
+     * 2.  **Plain Format**: The `{product}` segment is the tilde-separated string
+     * `content_language~feed_label~offer_id`. This format is suitable only
+     * when `content_language`, `feed_label`, and `offer_id` do not contain
+     * URL-problematic characters like `/`, `%`, or `~`.
+     *
+     * We recommend using the **Encoded Format** for all product IDs to ensure
+     * correct parsing, especially those containing special characters. The
+     * presence of tilde (`~`) characters in the `{product}` segment is used to
+     * differentiate between the two formats.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -794,6 +1072,36 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
      * Output only. The name of the `LocalInventory` resource.
      * Format:
      * `accounts/{account}/products/{product}/localInventories/{store_code}`
+     *
+     * The `{product}` segment is a unique identifier for the product.
+     * This identifier must be unique within a merchant account and generally
+     * follows the structure: `content_language~feed_label~offer_id`. Example:
+     * `en~US~sku123` For legacy local products, the structure is:
+     * `local~content_language~feed_label~offer_id`. Example: `local~en~US~sku123`
+     *
+     * The format of the `{product}` segment in the URL is automatically detected
+     * by the server, supporting two options:
+     *
+     * 1.  **Encoded Format**: The `{product}` segment is an unpadded base64url
+     * encoded string (RFC 4648 Section 5). The decoded string must result
+     * in the `content_language~feed_label~offer_id` structure. This encoding
+     * MUST be used if any part of the product identifier (like `offer_id`)
+     * contains characters such as `/`, `%`, or `~`.
+     * *   Example: To represent the product ID `en~US~sku/123` for
+     * `store_code` "store123", the `{product}` segment must be the
+     * base64url encoding of this string, which is `ZW5-VVN-c2t1LzEyMw`.
+     * The full resource name for the local inventory would be
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/localInventories/store123`.
+     *
+     * 2.  **Plain Format**: The `{product}` segment is the tilde-separated string
+     * `content_language~feed_label~offer_id`. This format is suitable only
+     * when `content_language`, `feed_label`, and `offer_id` do not contain
+     * URL-problematic characters like `/`, `%`, or `~`.
+     *
+     * We recommend using the **Encoded Format** for all product IDs to ensure
+     * correct parsing, especially those containing special characters. The
+     * presence of tilde (`~`) characters in the `{product}` segment is used to
+     * differentiate between the two formats.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -808,6 +1116,167 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object base64EncodedName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unpadded base64url encoded name of the `LocalInventory`
+     * resource. Format:
+     * `accounts/{account}/products/{product}/localInventories/{store_code}`
+     * where the `{product}` segment is the unpadded base64url encoded value of
+     * the identifier of the form `content_language~feed_label~offer_id`. Example:
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/localInventories/store123` for
+     * the decoded product ID `en~US~sku/123` and `store_code` "store123".
+     * Can be used directly as input to the API methods that require the local
+     * product identifier within the local inventory name to be encoded if it
+     * contains special characters, for example
+     * [`GetLocalInventory`](https://developers.google.com/merchant/api/reference/rest/inventories_v1/accounts.products.localInventories/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The base64EncodedName.
+     */
+    public java.lang.String getBase64EncodedName() {
+      java.lang.Object ref = base64EncodedName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        base64EncodedName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unpadded base64url encoded name of the `LocalInventory`
+     * resource. Format:
+     * `accounts/{account}/products/{product}/localInventories/{store_code}`
+     * where the `{product}` segment is the unpadded base64url encoded value of
+     * the identifier of the form `content_language~feed_label~offer_id`. Example:
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/localInventories/store123` for
+     * the decoded product ID `en~US~sku/123` and `store_code` "store123".
+     * Can be used directly as input to the API methods that require the local
+     * product identifier within the local inventory name to be encoded if it
+     * contains special characters, for example
+     * [`GetLocalInventory`](https://developers.google.com/merchant/api/reference/rest/inventories_v1/accounts.products.localInventories/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for base64EncodedName.
+     */
+    public com.google.protobuf.ByteString getBase64EncodedNameBytes() {
+      java.lang.Object ref = base64EncodedName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        base64EncodedName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unpadded base64url encoded name of the `LocalInventory`
+     * resource. Format:
+     * `accounts/{account}/products/{product}/localInventories/{store_code}`
+     * where the `{product}` segment is the unpadded base64url encoded value of
+     * the identifier of the form `content_language~feed_label~offer_id`. Example:
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/localInventories/store123` for
+     * the decoded product ID `en~US~sku/123` and `store_code` "store123".
+     * Can be used directly as input to the API methods that require the local
+     * product identifier within the local inventory name to be encoded if it
+     * contains special characters, for example
+     * [`GetLocalInventory`](https://developers.google.com/merchant/api/reference/rest/inventories_v1/accounts.products.localInventories/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The base64EncodedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBase64EncodedName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      base64EncodedName_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unpadded base64url encoded name of the `LocalInventory`
+     * resource. Format:
+     * `accounts/{account}/products/{product}/localInventories/{store_code}`
+     * where the `{product}` segment is the unpadded base64url encoded value of
+     * the identifier of the form `content_language~feed_label~offer_id`. Example:
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/localInventories/store123` for
+     * the decoded product ID `en~US~sku/123` and `store_code` "store123".
+     * Can be used directly as input to the API methods that require the local
+     * product identifier within the local inventory name to be encoded if it
+     * contains special characters, for example
+     * [`GetLocalInventory`](https://developers.google.com/merchant/api/reference/rest/inventories_v1/accounts.products.localInventories/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBase64EncodedName() {
+      base64EncodedName_ = getDefaultInstance().getBase64EncodedName();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The unpadded base64url encoded name of the `LocalInventory`
+     * resource. Format:
+     * `accounts/{account}/products/{product}/localInventories/{store_code}`
+     * where the `{product}` segment is the unpadded base64url encoded value of
+     * the identifier of the form `content_language~feed_label~offer_id`. Example:
+     * `accounts/123/products/ZW5-VVN-c2t1LzEyMw/localInventories/store123` for
+     * the decoded product ID `en~US~sku/123` and `store_code` "store123".
+     * Can be used directly as input to the API methods that require the local
+     * product identifier within the local inventory name to be encoded if it
+     * contains special characters, for example
+     * [`GetLocalInventory`](https://developers.google.com/merchant/api/reference/rest/inventories_v1/accounts.products.localInventories/get).
+     * </pre>
+     *
+     * <code>string base64_encoded_name = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for base64EncodedName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBase64EncodedNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      base64EncodedName_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -847,7 +1316,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
     public Builder setAccount(long value) {
 
       account_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -865,7 +1334,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearAccount() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       account_ = 0L;
       onChanged();
       return this;
@@ -954,7 +1423,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       storeCode_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -978,7 +1447,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearStoreCode() {
       storeCode_ = getDefaultInstance().getStoreCode();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1007,7 +1476,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       storeCode_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1034,7 +1503,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
      * @return Whether the localInventoryAttributes field is set.
      */
     public boolean hasLocalInventoryAttributes() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1083,7 +1552,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
       } else {
         localInventoryAttributesBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1107,7 +1576,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
       } else {
         localInventoryAttributesBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1126,7 +1595,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
     public Builder mergeLocalInventoryAttributes(
         com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes value) {
       if (localInventoryAttributesBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && localInventoryAttributes_ != null
             && localInventoryAttributes_
                 != com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes
@@ -1139,7 +1608,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
         localInventoryAttributesBuilder_.mergeFrom(value);
       }
       if (localInventoryAttributes_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1157,7 +1626,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearLocalInventoryAttributes() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       localInventoryAttributes_ = null;
       if (localInventoryAttributesBuilder_ != null) {
         localInventoryAttributesBuilder_.dispose();
@@ -1180,7 +1649,7 @@ public final class LocalInventory extends com.google.protobuf.GeneratedMessage
      */
     public com.google.shopping.merchant.inventories.v1.LocalInventoryAttributes.Builder
         getLocalInventoryAttributesBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetLocalInventoryAttributesFieldBuilder().getBuilder();
     }

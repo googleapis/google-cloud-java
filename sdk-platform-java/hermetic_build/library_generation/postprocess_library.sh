@@ -73,9 +73,7 @@ if [[ "${is_monorepo}" == "true" ]]; then
   # - "/google-.*/src"
 
   library_name=$(basename "${postprocessing_target}")
-  cat "${postprocessing_target}/${owlbot_yaml_file_name}" \
-    | sed "s/- \"\/${library_name}/ - \"/" \
-    > "${postprocessing_target}/.OwlBot.hermetic.yaml"
+  normalize_owlbot_yaml "${postprocessing_target}/${owlbot_yaml_file_name}" "${postprocessing_target}/.OwlBot.hermetic.yaml" "${library_name}"
   owlbot_yaml_relative_path=".OwlBot.hermetic.yaml"
 else
   owlbot_yaml_relative_path=".github/${owlbot_yaml_file_name}"

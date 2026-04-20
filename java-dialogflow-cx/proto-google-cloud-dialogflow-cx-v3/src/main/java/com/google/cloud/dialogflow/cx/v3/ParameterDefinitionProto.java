@@ -100,9 +100,10 @@ public final class ParameterDefinitionProto extends com.google.protobuf.Generate
           + "\006STRING\020\001\022\n\n"
           + "\006NUMBER\020\002\022\013\n"
           + "\007BOOLEAN\020\003\022\t\n"
-          + "\005ARRAY\020\006Br\n"
-          + "!com.google.cloud.dialogflow.cx.v3B\030ParameterDefiniti"
-          + "onProtoP\001Z1cloud.google.com/go/dialogflow/cx/apiv3/cxpb;cxpbb\006proto3"
+          + "\005ARRAY\020\006B\226\001\n"
+          + "!com.google.cloud.dialogflow.cx.v3B\030ParameterDefinit"
+          + "ionProtoP\001Z1cloud.google.com/go/dialogfl"
+          + "ow/cx/apiv3/cxpb;cxpb\352\002!Google::Cloud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
