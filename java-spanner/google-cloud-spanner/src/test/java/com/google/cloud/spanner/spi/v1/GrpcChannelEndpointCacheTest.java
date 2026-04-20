@@ -25,6 +25,9 @@ import io.grpc.ManagedChannelBuilder;
 import org.junit.Test;
 
 public class GrpcChannelEndpointCacheTest {
+  private static final String DEFAULT_ENDPOINT = "default.invalid:1234";
+  private static final String ROUTED_ENDPOINT_A = "replica-a.invalid:1111";
+  private static final String ROUTED_ENDPOINT_B = "replica-b.invalid:2222";
 
   private static InstantiatingGrpcChannelProvider createProvider(String endpoint) {
     return InstantiatingGrpcChannelProvider.newBuilder()
@@ -35,7 +38,7 @@ public class GrpcChannelEndpointCacheTest {
 
   @Test
   public void defaultChannelIsCached() throws Exception {
-    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider("localhost:1234"));
+    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider(DEFAULT_ENDPOINT));
     try {
       ChannelEndpoint defaultChannel = cache.defaultChannel();
       ChannelEndpoint server = cache.get(defaultChannel.getAddress());
@@ -47,11 +50,11 @@ public class GrpcChannelEndpointCacheTest {
 
   @Test
   public void getCachesPerAddress() throws Exception {
-    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider("localhost:1234"));
+    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider(DEFAULT_ENDPOINT));
     try {
-      ChannelEndpoint first = cache.get("localhost:1111");
-      ChannelEndpoint second = cache.get("localhost:1111");
-      ChannelEndpoint third = cache.get("localhost:2222");
+      ChannelEndpoint first = cache.get(ROUTED_ENDPOINT_A);
+      ChannelEndpoint second = cache.get(ROUTED_ENDPOINT_A);
+      ChannelEndpoint third = cache.get(ROUTED_ENDPOINT_B);
 
       assertThat(second).isSameInstanceAs(first);
       assertThat(third).isNotSameInstanceAs(first);
@@ -62,11 +65,63 @@ public class GrpcChannelEndpointCacheTest {
 
   @Test
   public void routedChannelsReuseDefaultAuthority() throws Exception {
-    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider("localhost:1234"));
+    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider(DEFAULT_ENDPOINT));
     try {
-      ChannelEndpoint routed = cache.get("localhost:1111");
+      ChannelEndpoint routed = cache.get(ROUTED_ENDPOINT_A);
 
-      assertThat(routed.getChannel().authority()).isEqualTo("localhost:1234");
+      assertThat(routed.getChannel().authority()).isEqualTo(DEFAULT_ENDPOINT);
+    } finally {
+      cache.shutdown();
+    }
+  }
+
+  @Test
+  public void routedChannelsUseSingleUnderlyingChannel() throws Exception {
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setPoolSize(4)
+            .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+            .build();
+    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(provider);
+    try {
+      InstantiatingGrpcChannelProvider routedProvider =
+          cache.createProviderWithAuthorityOverride(ROUTED_ENDPOINT_A);
+
+      assertThat(provider.toBuilder().getPoolSize()).isEqualTo(4);
+      assertThat(routedProvider.getChannelPoolSettings().getInitialChannelCount()).isEqualTo(1);
+      assertThat(routedProvider.getChannelPoolSettings().getMinChannelCount()).isEqualTo(1);
+      assertThat(routedProvider.getChannelPoolSettings().getMaxChannelCount()).isEqualTo(1);
+    } finally {
+      cache.shutdown();
+    }
+  }
+
+  @Test
+  public void routedChannelsOverrideKeepAliveSettingsOnlyForEndpointProvider() throws Exception {
+    InstantiatingGrpcChannelProvider provider =
+        InstantiatingGrpcChannelProvider.newBuilder()
+            .setEndpoint(DEFAULT_ENDPOINT)
+            .setPoolSize(4)
+            .setKeepAliveTimeDuration(java.time.Duration.ofSeconds(120))
+            .setKeepAliveTimeoutDuration(java.time.Duration.ofSeconds(60))
+            .setKeepAliveWithoutCalls(Boolean.FALSE)
+            .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
+            .build();
+    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(provider);
+    try {
+      InstantiatingGrpcChannelProvider routedProvider =
+          cache.createProviderWithAuthorityOverride(ROUTED_ENDPOINT_A);
+
+      assertThat(provider.getKeepAliveWithoutCalls()).isFalse();
+      assertThat(provider.getKeepAliveTimeDuration()).isEqualTo(java.time.Duration.ofSeconds(120));
+      assertThat(provider.getKeepAliveTimeoutDuration())
+          .isEqualTo(java.time.Duration.ofSeconds(60));
+      assertThat(routedProvider.getKeepAliveWithoutCalls()).isTrue();
+      assertThat(routedProvider.getKeepAliveTimeDuration())
+          .isEqualTo(GrpcChannelEndpointCache.ROUTED_KEEPALIVE_TIME);
+      assertThat(routedProvider.getKeepAliveTimeoutDuration())
+          .isEqualTo(GrpcChannelEndpointCache.ROUTED_KEEPALIVE_TIMEOUT);
     } finally {
       cache.shutdown();
     }
@@ -74,11 +129,11 @@ public class GrpcChannelEndpointCacheTest {
 
   @Test
   public void evictRemovesNonDefaultServer() throws Exception {
-    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider("localhost:1234"));
+    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider(DEFAULT_ENDPOINT));
     try {
-      ChannelEndpoint first = cache.get("localhost:1111");
-      cache.evict("localhost:1111");
-      ChannelEndpoint second = cache.get("localhost:1111");
+      ChannelEndpoint first = cache.get(ROUTED_ENDPOINT_A);
+      cache.evict(ROUTED_ENDPOINT_A);
+      ChannelEndpoint second = cache.get(ROUTED_ENDPOINT_A);
 
       assertThat(second).isNotSameInstanceAs(first);
     } finally {
@@ -88,7 +143,7 @@ public class GrpcChannelEndpointCacheTest {
 
   @Test
   public void evictIgnoresDefaultChannel() throws Exception {
-    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider("localhost:1234"));
+    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider(DEFAULT_ENDPOINT));
     try {
       ChannelEndpoint defaultChannel = cache.defaultChannel();
       cache.evict(defaultChannel.getAddress());
@@ -102,18 +157,18 @@ public class GrpcChannelEndpointCacheTest {
 
   @Test
   public void shutdownPreventsNewServers() throws Exception {
-    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider("localhost:1234"));
+    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider(DEFAULT_ENDPOINT));
     cache.shutdown();
 
-    assertThrows(SpannerException.class, () -> cache.get("localhost:1111"));
+    assertThrows(SpannerException.class, () -> cache.get(ROUTED_ENDPOINT_A));
     assertThat(cache.defaultChannel().getChannel().isShutdown()).isTrue();
   }
 
   @Test
   public void healthReflectsChannelShutdown() throws Exception {
-    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider("localhost:1234"));
+    GrpcChannelEndpointCache cache = new GrpcChannelEndpointCache(createProvider(DEFAULT_ENDPOINT));
     try {
-      ChannelEndpoint server = cache.get("localhost:1111");
+      ChannelEndpoint server = cache.get(ROUTED_ENDPOINT_A);
       // Newly created channel is not READY (likely IDLE), so isHealthy is false for location aware.
       // isHealthy now requires READY state for location aware routing.
       assertThat(server.isHealthy()).isFalse();

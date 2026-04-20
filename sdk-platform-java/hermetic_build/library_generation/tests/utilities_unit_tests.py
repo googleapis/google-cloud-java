@@ -183,7 +183,7 @@ class UtilitiesTest(unittest.TestCase):
         config = self.__get_a_gen_config(3)
         library = common_protos
         result = util.get_library_repository(config, library)
-        self.assertEqual("googleapis/sdk-platform-java", result)
+        self.assertEqual("googleapis/google-cloud-java", result)
 
     def test_get_library_repository_with_monorepo_returns_google_cloud_java(self):
         config = self.__get_a_gen_config(2)
