@@ -10,6 +10,7 @@
   "repo": "googleapis/google-cloud-java",
   "repo_short": "java-iam-policy",
   "distribution_name": "com.google.cloud:google-iam-policy",
+  "api_id": "iam.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true,
   "excluded_dependencies": "google-iam-policy",
