@@ -503,7 +503,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       throws Exception {
     try (SharedBackendReplicaHarness harness = SharedBackendReplicaHarness.create(2);
         Spanner spanner = createSpanner(harness)) {
-      configureBackend(harness, singleRowReadResultSet("b"));
+      configureBackend(harness, singleRowReadResultSet("b"), /* leaderReplicaIndex= */ 1);
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
       seedLocationMetadata(client);
@@ -538,17 +538,11 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
                               .withDescription("commit aborted on routed replica")
                               .asRuntimeException());
                 }
-
-                transaction.buffer(
-                    Mutation.newInsertOrUpdateBuilder("NoRecipeTable")
-                        .set("id")
-                        .to("row-1")
-                        .build());
                 return null;
               });
 
       assertEquals(2, attempts.get());
-      assertTrue(firstReplicaIndex.get() >= 0);
+      assertEquals(1, firstReplicaIndex.get());
       int secondReplicaIndex = 1 - firstReplicaIndex.get();
       assertEquals(
           2,
@@ -603,6 +597,14 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
   private static void configureBackend(
       SharedBackendReplicaHarness harness, com.google.spanner.v1.ResultSet readResultSet)
       throws TextFormat.ParseException {
+    configureBackend(harness, readResultSet, /* leaderReplicaIndex= */ 0);
+  }
+
+  private static void configureBackend(
+      SharedBackendReplicaHarness harness,
+      com.google.spanner.v1.ResultSet readResultSet,
+      int leaderReplicaIndex)
+      throws TextFormat.ParseException {
     Statement readStatement =
         StatementResult.createReadStatement(
             TABLE, KeySet.singleKey(Key.of("b")), Arrays.asList("k"));
@@ -611,7 +613,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
         StatementResult.query(
             SEED_QUERY,
             singleRowReadResultSet("seed").toBuilder()
-                .setCacheUpdate(cacheUpdate(harness))
+                .setCacheUpdate(cacheUpdate(harness, leaderReplicaIndex))
                 .build()));
   }
 
@@ -664,6 +666,12 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
 
   private static CacheUpdate cacheUpdate(SharedBackendReplicaHarness harness)
       throws TextFormat.ParseException {
+    return cacheUpdate(harness, /* leaderReplicaIndex= */ 0);
+  }
+
+  private static CacheUpdate cacheUpdate(
+      SharedBackendReplicaHarness harness, int leaderReplicaIndex)
+      throws TextFormat.ParseException {
     RecipeList recipes = readRecipeList();
     RoutingHint routingHint = exactReadRoutingHint(recipes);
     ByteString limitKey = routingHint.getLimitKey();
@@ -685,7 +693,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
             Group.newBuilder()
                 .setGroupUid(1L)
                 .setGeneration(com.google.protobuf.ByteString.copyFromUtf8("gen1"))
-                .setLeaderIndex(0)
+                .setLeaderIndex(leaderReplicaIndex)
                 .addTablets(
                     Tablet.newBuilder()
                         .setTabletUid(11L)
