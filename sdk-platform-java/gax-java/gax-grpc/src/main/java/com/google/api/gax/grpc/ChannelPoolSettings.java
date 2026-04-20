@@ -179,6 +179,13 @@ public abstract class ChannelPoolSettings {
 
     public abstract Builder setPreemptiveRefreshEnabled(boolean enabled);
 
+    /**
+     * Sets the maximum number of channels that can be added or removed in a single resize cycle.
+     * This acts as a rate limiter to prevent wild fluctuations.
+     *
+     * <p><b>Warning:</b> Higher values for resize delta may still result in performance degradation
+     * during spikes due to rapid scaling.
+     */
     public abstract Builder setMaxResizeDelta(int count);
 
     abstract ChannelPoolSettings autoBuild();
