@@ -100,6 +100,11 @@ public abstract class ChannelPoolSettings {
    * the pool better handle sudden bursts or spikes in requests by allowing it to scale up faster.
    * Regardless of this setting, the number of channels will never exceed {@link
    * #getMaxChannelCount()}.
+   *
+   * <p>Note: This value can be greater than {@link #getMaxChannelCount()}. The resizing logic
+   * naturally clamps adjustments to never exceed the min or max channel bounds, so a larger delta
+   * simply means the pool can reach its required size in fewer steps without risk of exceeding
+   * bounds.
    */
   public abstract int getMaxResizeDelta();
 
@@ -190,9 +195,6 @@ public abstract class ChannelPoolSettings {
           s.getInitialChannelCount() > 0, "Initial channel count must be greater than 0");
       Preconditions.checkState(
           s.getMaxResizeDelta() > 0, "Max resize delta must be greater than 0");
-      Preconditions.checkState(
-          s.getMaxResizeDelta() <= s.getMaxChannelCount(),
-          "Max resize delta cannot be greater than max channel count");
       return s;
     }
   }
