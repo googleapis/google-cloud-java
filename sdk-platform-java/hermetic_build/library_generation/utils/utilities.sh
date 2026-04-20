@@ -366,13 +366,11 @@ restore_version_java() {
   fi
 
   pushd "${backup_directory}" > /dev/null
-  for file in $(find . -type f 2>/dev/null); do
-    if [[ -n "$file" ]]; then
-      local relative_path="${file#./}"
-      local target_path="${target_directory}/${relative_path}"
-      mkdir -p "$(dirname "${target_path}")"
-      mv "$file" "${target_path}"
-    fi
+  find . -type f -print0 | while IFS= read -r -d '' file; do
+    local relative_path="${file#./}"
+    local target_path="${target_directory}/${relative_path}"
+    mkdir -p "$(dirname "${target_path}")"
+    mv "$file" "${target_path}"
   done
   popd > /dev/null
 }
