@@ -130,9 +130,7 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
   }
 
   @org.junit.jupiter.api.AfterEach
-  void tearDown() {
-    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
-  }
+  void tearDown() {}
 
   @Test
   void builder_allFields() throws IOException {
@@ -1243,9 +1241,6 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
 
   @org.junit.jupiter.api.Test
   void testRefresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
-    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
-    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
 
     ExternalAccountAuthorizedUserCredentials credentials =
         ExternalAccountAuthorizedUserCredentials.newBuilder()

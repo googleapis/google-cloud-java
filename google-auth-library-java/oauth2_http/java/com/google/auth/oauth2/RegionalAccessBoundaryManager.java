@@ -36,6 +36,9 @@ import com.google.api.core.InternalApi;
 import com.google.auth.http.HttpTransportFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.SettableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
 import javax.annotation.Nullable;
@@ -77,6 +80,20 @@ final class RegionalAccessBoundaryManager {
 
   private final AtomicReference<CooldownState> cooldownState =
       new AtomicReference<>(new CooldownState(0, INITIAL_COOLDOWN_MILLIS));
+
+  // Unbounded thread creation is discouraged in library code to avoid resource
+  // exhaustion. A shared, bounded executor service ensures a hard limit (5)
+  // on concurrent refresh tasks, while threadCount provides unique names
+  // for easier debugging.
+  private static final AtomicInteger threadCount = new AtomicInteger(0);
+  private static final ExecutorService EXECUTOR =
+      Executors.newFixedThreadPool(
+          5,
+          r -> {
+            Thread t = new Thread(r, "RAB-refresh-" + threadCount.getAndIncrement());
+            t.setDaemon(true);
+            return t;
+          });
 
   private final transient Clock clock;
   private final int maxRetryElapsedTimeMillis;
@@ -161,14 +178,7 @@ final class RegionalAccessBoundaryManager {
           };
 
       try {
-        // We use new Thread() here instead of
-        // CompletableFuture.runAsync() (which uses ForkJoinPool.commonPool()).
-        // This avoids consuming CPU resources since
-        // The common pool has a small, fixed number of threads designed for
-        // CPU-bound tasks.
-        Thread refreshThread = new Thread(refreshTask, "RAB-refresh-thread");
-        refreshThread.setDaemon(true);
-        refreshThread.start();
+        EXECUTOR.submit(refreshTask);
       } catch (Exception | Error e) {
         // If scheduling fails (e.g., RejectedExecutionException, OutOfMemoryError for threads),
         // the task's finally block will never execute. We must release the lock here.

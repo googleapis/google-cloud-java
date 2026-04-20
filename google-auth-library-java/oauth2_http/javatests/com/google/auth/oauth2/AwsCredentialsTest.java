@@ -65,11 +65,6 @@ class AwsCredentialsTest extends BaseSerializationTest {
   @org.junit.jupiter.api.BeforeEach
   void setUp() {}
 
-  @org.junit.jupiter.api.AfterEach
-  void tearDown() {
-    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
-  }
-
   private static final String STS_URL = "https://sts.googleapis.com/v1/token";
   private static final String AWS_CREDENTIALS_URL = "https://169.254.169.254";
   private static final String AWS_CREDENTIALS_URL_WITH_ROLE = "https://169.254.169.254/roleName";
@@ -1369,9 +1364,6 @@ class AwsCredentialsTest extends BaseSerializationTest {
 
   @Test
   public void testRefresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
-    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
-    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
 
     MockExternalAccountCredentialsTransportFactory transportFactory =
         new MockExternalAccountCredentialsTransportFactory();
