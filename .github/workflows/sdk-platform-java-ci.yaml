@@ -361,7 +361,7 @@ jobs:
         run: .kokoro/build.sh
         env:
           BUILD_SUBDIR: sdk-platform-java
-          JOB_TYPE: test      
+          JOB_TYPE: install
       - name: Showcase golden tests
         working-directory: sdk-platform-java/java-showcase
         run: |
