@@ -784,9 +784,7 @@ class ChannelPoolTest {
       pool.resize();
       assertThat(logHandler.getAllMessages()).hasSize(1);
       assertThat(logHandler.getAllMessages())
-          .contains(
-              "Channel pool is repeatedly resizing. Consider adjusting `initialChannelCount` or `maxResizeDelta` to a more reasonable value. "
-                  + "See https://docs.cloud.google.com/java/docs/troubleshooting to enable logging and set `com.google.api.gax.grpc.ChannelPool.level=FINEST` to log the channel pool resize behavior.");
+          .contains(ChannelPool.CHANNEL_POOL_CONSECUTIVE_RESIZING_WARNING);
 
       // 6th resize, should not log again
       pool.resize();
@@ -837,9 +835,7 @@ class ChannelPoolTest {
       // 5th resize, should log warning
       pool.resize();
       assertThat(logHandler.getAllMessages())
-          .contains(
-              "Channel pool is repeatedly resizing. Consider adjusting `initialChannelCount` or `maxResizeDelta` to a more reasonable value. "
-                  + "See https://docs.cloud.google.com/java/docs/troubleshooting to enable logging and set `com.google.api.gax.grpc.ChannelPool.level=FINEST` to log the channel pool resize behavior.");
+          .contains(ChannelPool.CHANNEL_POOL_CONSECUTIVE_RESIZING_WARNING);
     } finally {
       ChannelPool.LOG.removeHandler(logHandler);
     }

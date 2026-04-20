@@ -59,7 +59,7 @@ public abstract class ChannelPoolSettings {
   static final Duration RESIZE_INTERVAL = Duration.ofMinutes(1);
 
   /** The maximum number of channels that can be added or removed at a time. */
-  static final int MAX_RESIZE_DELTA = 2;
+  static final int DEFAULT_MAX_RESIZE_DELTA = 2;
 
   /**
    * Threshold to start scaling down the channel pool.
@@ -96,8 +96,8 @@ public abstract class ChannelPoolSettings {
    * The maximum number of channels that can be added or removed at a time.
    *
    * <p>This setting limits the rate at which the channel pool can grow or shrink in a single resize
-   * period. The default value is {@value #MAX_RESIZE_DELTA}. Increasing this value can help the
-   * pool better handle sudden bursts or spikes in requests by allowing it to scale up faster.
+   * period. The default value is {@value #DEFAULT_MAX_RESIZE_DELTA}. Increasing this value can help
+   * the pool better handle sudden bursts or spikes in requests by allowing it to scale up faster.
    * Regardless of this setting, the number of channels will never exceed {@link
    * #getMaxChannelCount()}.
    */
@@ -127,11 +127,7 @@ public abstract class ChannelPoolSettings {
       return true;
     }
     // When the scaling threshold are not set
-    if (getMinRpcsPerChannel() == 0 && getMaxRpcsPerChannel() == Integer.MAX_VALUE) {
-      return true;
-    }
-
-    return false;
+    return getMinRpcsPerChannel() == 0 && getMaxRpcsPerChannel() == Integer.MAX_VALUE;
   }
 
   public abstract Builder toBuilder();
@@ -143,7 +139,6 @@ public abstract class ChannelPoolSettings {
         .setMaxRpcsPerChannel(Integer.MAX_VALUE)
         .setMinChannelCount(size)
         .setMaxChannelCount(size)
-        .setMaxResizeDelta(Math.min(MAX_RESIZE_DELTA, size))
         .build();
   }
 
@@ -155,7 +150,7 @@ public abstract class ChannelPoolSettings {
         .setMinRpcsPerChannel(0)
         .setMaxRpcsPerChannel(Integer.MAX_VALUE)
         .setPreemptiveRefreshEnabled(false)
-        .setMaxResizeDelta(MAX_RESIZE_DELTA);
+        .setMaxResizeDelta(DEFAULT_MAX_RESIZE_DELTA);
   }
 
   @AutoValue.Builder
