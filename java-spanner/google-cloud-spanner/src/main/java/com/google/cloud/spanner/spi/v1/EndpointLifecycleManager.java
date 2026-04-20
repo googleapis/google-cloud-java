@@ -70,8 +70,9 @@ class EndpointLifecycleManager {
   private static final long EVICTION_CHECK_INTERVAL_SECONDS = 300;
 
   /**
-   * Maximum consecutive TRANSIENT_FAILURE probes before evicting an endpoint. Gives the channel
-   * time to recover from transient network issues before we tear it down and recreate.
+   * Maximum observed TRANSIENT_FAILURE probes before evicting an endpoint. The counter resets only
+   * after the channel reaches READY, so CONNECTING/IDLE oscillation does not hide a persistently
+   * unhealthy endpoint.
    */
   private static final int MAX_TRANSIENT_FAILURE_COUNT = 3;
 
@@ -493,7 +494,8 @@ class EndpointLifecycleManager {
    * <p>All exceptions are caught to prevent {@link ScheduledExecutorService} from cancelling future
    * runs of this task.
    */
-  private void probe(String address) {
+  @VisibleForTesting
+  void probe(String address) {
     try {
       if (isShutdown.get()) {
         return;
@@ -530,25 +532,24 @@ class EndpointLifecycleManager {
           logger.log(
               Level.FINE, "Probe for {0}: channel IDLE, requesting connection (warmup)", address);
           channel.getState(true);
-          state.consecutiveTransientFailures = 0;
           break;
 
         case CONNECTING:
-          state.consecutiveTransientFailures = 0;
           break;
 
         case TRANSIENT_FAILURE:
           state.consecutiveTransientFailures++;
           logger.log(
               Level.FINE,
-              "Probe for {0}: channel in TRANSIENT_FAILURE ({1}/{2})",
+              "Probe for {0}: channel in TRANSIENT_FAILURE ({1}/{2} observed failures since last"
+                  + " READY)",
               new Object[] {
                 address, state.consecutiveTransientFailures, MAX_TRANSIENT_FAILURE_COUNT
               });
           if (state.consecutiveTransientFailures >= MAX_TRANSIENT_FAILURE_COUNT) {
             logger.log(
                 Level.FINE,
-                "Evicting endpoint {0}: {1} consecutive TRANSIENT_FAILURE probes",
+                "Evicting endpoint {0}: {1} TRANSIENT_FAILURE probes without reaching READY",
                 new Object[] {address, state.consecutiveTransientFailures});
             evictEndpoint(address, EvictionReason.TRANSIENT_FAILURE);
           }
