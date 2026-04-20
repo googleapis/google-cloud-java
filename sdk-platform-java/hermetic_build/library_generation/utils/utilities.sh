@@ -343,12 +343,10 @@ backup_version_java() {
   local backup_directory=$2
 
   pushd "${target_directory}" > /dev/null
-  for file in $(find */src src -path "*/stub/Version.java" -type f 2>/dev/null); do
-    if [[ -n "$file" ]]; then
-      local backup_path="${backup_directory}/${file}"
-      mkdir -p "$(dirname "${backup_path}")"
-      cp "$file" "${backup_path}"
-    fi
+  find . -type f -path "*/src/*/stub/Version.java" -print0 | while IFS= read -r -d '' file; do
+    local backup_path="${backup_directory}/${file#./}"
+    mkdir -p "$(dirname "${backup_path}")"
+    cp "$file" "${backup_path}"
   done
   popd > /dev/null
 }
