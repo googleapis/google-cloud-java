@@ -16,10 +16,12 @@ jobs:
           library:
             - 'sdk-platform-java/hermetic_build/**'
             - 'sdk-platform-java/.cloudbuild/library_generation/**'
+            - '.github/workflows/hermetic-build-scripts-ci.yaml'
   library-generation-unit-tests:
     needs: filter
     if: needs.filter.outputs.library == 'true'
     runs-on: ubuntu-22.04
+    name: hermetic build units (python)
     defaults:
       run:
         working-directory: sdk-platform-java
@@ -51,6 +53,7 @@ jobs:
     needs: filter
     if: needs.filter.outputs.library == 'true'
     runs-on: ubuntu-22.04
+    name: hermetic build lint (shell)
     defaults:
       run:
         working-directory: sdk-platform-java
@@ -68,6 +71,7 @@ jobs:
     needs: filter
     if: needs.filter.outputs.library == 'true'
     runs-on: ubuntu-22.04
+    name: hermetic build lint (python)
     defaults:
       run:
         working-directory: sdk-platform-java
