@@ -23,8 +23,10 @@ import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;
 import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.tracing.ApiTracerFactory;
+import com.google.api.gax.tracing.BaseApiTracerFactory;
 import com.google.api.gax.tracing.CompositeTracerFactory;
 import com.google.api.gax.tracing.ObservabilityAttributes;
 import com.google.api.gax.tracing.OpenTelemetryMetricsFactory;
@@ -42,7 +44,10 @@ import com.google.monitoring.v3.ListTimeSeriesRequest;
 import com.google.monitoring.v3.ListTimeSeriesResponse;
 import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.TimeInterval;
+import com.google.monitoring.v3.TimeSeries;
 import com.google.protobuf.util.Timestamps;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.trace.Span;
@@ -185,7 +190,7 @@ public class ITComputeGoldenSignals extends BaseTest {
 
     settingsBuilder
         .getStubSettingsBuilder()
-        .setTracerFactory(com.google.api.gax.tracing.BaseApiTracerFactory.getInstance());
+        .setTracerFactory(BaseApiTracerFactory.getInstance());
 
     traceClient = TraceServiceClient.create(settingsBuilder.build());
 
@@ -436,21 +441,13 @@ public class ITComputeGoldenSignals extends BaseTest {
               .setView(ListTimeSeriesRequest.TimeSeriesView.FULL)
               .build();
 
-      RetrySettings retrySettings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelayDuration(Duration.ofSeconds(10))
-              .setRetryDelayMultiplier(2.0)
-              .setMaxRetryDelayDuration(Duration.ofSeconds(60))
-              .setTotalTimeoutDuration(Duration.ofMinutes(10))
-              .build();
-
-      com.google.monitoring.v3.TimeSeries targetTs =
-          pollForTimeSeries(metricClient, request, retrySettings);
+      TimeSeries targetTs =
+          pollForTimeSeries(metricClient, request);
 
       assertThat(targetTs).isNotNull();
       logger.info("Found target metrics in Cloud Monitoring!");
 
-      com.google.monitoring.v3.TimeSeries ts = targetTs;
+      TimeSeries ts = targetTs;
       Map<String, String> metricLabels = ts.getMetric().getLabelsMap();
       logger.info("Metric labels from Cloud Monitoring: " + metricLabels);
 
@@ -480,18 +477,23 @@ public class ITComputeGoldenSignals extends BaseTest {
     }
   }
 
-  private com.google.monitoring.v3.TimeSeries pollForTimeSeries(
-      MetricServiceClient metricClient, ListTimeSeriesRequest request, RetrySettings retrySettings)
+  private TimeSeries pollForTimeSeries(
+      MetricServiceClient metricClient, ListTimeSeriesRequest request)
       throws InterruptedException {
-    Stopwatch metricsPollingStopwatch = Stopwatch.createStarted();
-    Duration currentDelay = retrySettings.getInitialRetryDelayDuration();
-    com.google.monitoring.v3.TimeSeries targetTs = null;
+    
+    long initialSleepMs = Duration.ofMinutes(3).toMillis();
+    logger.info("Sleeping for " + (initialSleepMs / 1000) + " seconds to allow metrics ingestion...");
+    Thread.sleep(initialSleepMs);
 
-    while (metricsPollingStopwatch.elapsed().compareTo(retrySettings.getTotalTimeoutDuration())
-        < 0) {
+    Stopwatch metricsPollingStopwatch = Stopwatch.createStarted();
+    Duration totalTimeout = Duration.ofMinutes(10);
+    Duration pollInterval = Duration.ofSeconds(30);
+    TimeSeries targetTs = null;
+
+    while (metricsPollingStopwatch.elapsed().compareTo(totalTimeout) < 0) {
       try {
         ListTimeSeriesResponse response = metricClient.listTimeSeriesCallable().call(request);
-        for (com.google.monitoring.v3.TimeSeries ts : response.getTimeSeriesList()) {
+        for (TimeSeries ts : response.getTimeSeriesList()) {
           Map<String, String> resourceLabels = ts.getResource().getLabelsMap();
           if ((SERVICE_NAME_PREFIX + testRunId).equals(resourceLabels.get("job"))) {
             targetTs = ts;
@@ -501,27 +503,17 @@ public class ITComputeGoldenSignals extends BaseTest {
         if (targetTs != null) {
           break;
         }
-      } catch (com.google.api.gax.rpc.NotFoundException e) {
+      } catch (NotFoundException e) {
         logger.info("Metric not found yet (NotFoundException): " + e.getMessage());
-      } catch (io.grpc.StatusRuntimeException e) {
-        if (e.getStatus().getCode() == io.grpc.Status.Code.NOT_FOUND) {
+      } catch (StatusRuntimeException e) {
+        if (e.getStatus().getCode() == Status.Code.NOT_FOUND) {
           logger.info("Metric not found yet (gRPC NOT_FOUND): " + e.getMessage());
         } else {
           throw e;
         }
       }
-      logger.info(
-          "Waiting for metrics in Cloud Monitoring, retrying in "
-              + currentDelay.getSeconds()
-              + " seconds...");
-      Thread.sleep(currentDelay.toMillis());
-
-      currentDelay =
-          Duration.ofMillis(
-              (long) (currentDelay.toMillis() * retrySettings.getRetryDelayMultiplier()));
-      if (currentDelay.compareTo(retrySettings.getMaxRetryDelayDuration()) > 0) {
-        currentDelay = retrySettings.getMaxRetryDelayDuration();
-      }
+      logger.info("Waiting for metrics in Cloud Monitoring, retrying in 30 seconds...");
+      Thread.sleep(pollInterval.toMillis());
     }
     return targetTs;
   }
