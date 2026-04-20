@@ -285,7 +285,7 @@ final class BigQueryJdbcOAuthUtility {
       case APPLICATION_DEFAULT_CREDENTIALS:
         // This auth method doesn't support service account impersonation
 
-        credentials = getApplicationDefaultCredentials(authProperties, callerClassName);
+        credentials = getApplicationDefaultCredentials(callerClassName);
         break;
       case EXTERNAL_ACCOUNT_AUTH:
         // This auth method doesn't support service account impersonation
@@ -402,6 +402,9 @@ final class BigQueryJdbcOAuthUtility {
       throws URISyntaxException {
     LOG.finest("++enter++\t" + callerClassName);
 
+    List<String> scopes = new ArrayList<>();
+    scopes.add("https://www.googleapis.com/auth/bigquery");
+
     List<String> responseTypes = new ArrayList<>();
     responseTypes.add("code");
 
@@ -412,6 +415,7 @@ final class BigQueryJdbcOAuthUtility {
     UserAuthorizer.Builder userAuthorizerBuilder =
         UserAuthorizer.newBuilder()
             .setClientId(clientId)
+            .setScopes(scopes)
             .setCallbackUri(URI.create("http://localhost:" + port));
 
     if (overrideProperties.containsKey(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)) {

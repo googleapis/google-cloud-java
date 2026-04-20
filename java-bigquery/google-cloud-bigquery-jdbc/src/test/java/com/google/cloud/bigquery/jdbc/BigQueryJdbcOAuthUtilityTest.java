@@ -18,7 +18,6 @@ package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -336,128 +335,6 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     assertThat(result.get("BYOID_SubjectTokenType"))
         .isEqualTo("urn:ietf:params:oauth:tokentype:jwt");
     assertThat(result.get("BYOID_TokenUri")).isEqualTo("https://testuri.com/v1/token");
-  }
-
-  @Test
-  public void testParseOAuthProperties_UserAccount_RequestDriveScopeEnabled() {
-    String url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=1;OAuthClientId=redactedClientId;OAuthClientSecret=redactedClientSecret;"
-            + "RequestGoogleDriveScope=1;";
-    Map<String, String> properties =
-        BigQueryJdbcOAuthUtility.parseOAuthProperties(
-            DataSource.fromUrl(url), this.getClass().getName());
-    assertEquals(
-        String.valueOf(BigQueryJdbcOAuthUtility.AuthType.GOOGLE_USER_ACCOUNT),
-        properties.get(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME));
-    assertEquals(
-        "redactedClientId", properties.get(BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME));
-    assertEquals(
-        "redactedClientSecret",
-        properties.get(BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME));
-    assertEquals(
-        "true", properties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
-  }
-
-  @Test
-  public void testParseOAuthProperties_UserAccount_RequestDriveScopeDisabled() {
-    String url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=1;OAuthClientId=redactedClientId;OAuthClientSecret=redactedClientSecret;"
-            + "RequestGoogleDriveScope=0;";
-    Map<String, String> properties =
-        BigQueryJdbcOAuthUtility.parseOAuthProperties(
-            DataSource.fromUrl(url), this.getClass().getName());
-    assertEquals(
-        "false", properties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
-  }
-
-  @Test
-  public void testParseOAuthProperties_UserAccount_RequestDriveScopeDefault() {
-    String url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=1;OAuthClientId=redactedClientId;OAuthClientSecret=redactedClientSecret;";
-    Map<String, String> properties =
-        BigQueryJdbcOAuthUtility.parseOAuthProperties(
-            DataSource.fromUrl(url), this.getClass().getName());
-    assertEquals(
-        "false", properties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
-  }
-
-  @Test
-  public void testGetUserAuthorizer_WithDriveScope() throws URISyntaxException {
-    Map<String, String> authProperties = new HashMap<>();
-    authProperties.put(BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME, "redactedClientId");
-    authProperties.put(
-        BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME, "redactedClientSecret");
-    authProperties.put(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME, "true");
-
-    UserAuthorizer authorizer =
-        BigQueryJdbcOAuthUtility.getUserAuthorizer(
-            authProperties, Collections.emptyMap(), 12345, this.getClass().getName());
-
-    assertTrue(authorizer.getScopes().contains("https://www.googleapis.com/auth/bigquery"));
-    assertTrue(authorizer.getScopes().contains("https://www.googleapis.com/auth/drive.readonly"));
-    assertEquals(2, authorizer.getScopes().size());
-  }
-
-  @Test
-  public void testGetUserAuthorizer_WithoutDriveScope() throws URISyntaxException {
-    Map<String, String> authProperties = new HashMap<>();
-    authProperties.put(BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME, "redactedClientId");
-    authProperties.put(
-        BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME, "redactedClientSecret");
-    authProperties.put(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME, "0");
-
-    UserAuthorizer authorizer =
-        BigQueryJdbcOAuthUtility.getUserAuthorizer(
-            authProperties, Collections.emptyMap(), 12345, this.getClass().getName());
-    assertTrue(authorizer.getScopes().contains("https://www.googleapis.com/auth/bigquery"));
-    assertFalse(authorizer.getScopes().contains("https://www.googleapis.com/auth/drive.readonly"));
-    assertEquals(1, authorizer.getScopes().size());
-  }
-
-  @Test
-  public void testGetUserAuthorizer_InvalidDriveScopeValue() throws URISyntaxException {
-    Map<String, String> authProperties = new HashMap<>();
-    authProperties.put(BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME, "redactedClientId");
-    authProperties.put(
-        BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME, "redactedClientSecret");
-    authProperties.put(
-        BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME, "invalid_value");
-    UserAuthorizer authorizer =
-        BigQueryJdbcOAuthUtility.getUserAuthorizer(
-            authProperties, Collections.emptyMap(), 12345, this.getClass().getName());
-    assertFalse(authorizer.getScopes().contains("https://www.googleapis.com/auth/drive.readonly"));
-  }
-
-  @Test
-  public void testParseOAuthProperties_ServiceAccount_RequestDriveScopeEnabled() {
-    String url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=0;OAuthServiceAcctEmail=dummy@email.com;OAuthPvtKey=key;"
-            + "RequestGoogleDriveScope=1;";
-    Map<String, String> properties =
-        BigQueryJdbcOAuthUtility.parseOAuthProperties(
-            DataSource.fromUrl(url), this.getClass().getName());
-    assertEquals(
-        "true", properties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
-  }
-
-  @Test
-  public void testGetCredentialsForPreGeneratedToken_WithDriveScope() {
-    Map<String, String> authProperties =
-        BigQueryJdbcOAuthUtility.parseOAuthProperties(
-            DataSource.fromUrl(
-                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-                    + "OAuthType=2;ProjectId=MyBigQueryProject;"
-                    + "OAuthAccessToken=RedactedToken;"
-                    + "RequestGoogleDriveScope=1;"),
-            null);
-
-    GoogleCredentials credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(authProperties, Collections.EMPTY_MAP, true, null);
-    assertThat(credentials).isNotNull();
   }
 
   @Test
