@@ -83,8 +83,9 @@ final class BigQueryJdbcOAuthUtility {
   static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
   static final String DRIVE_READONLY_SCOPE = "https://www.googleapis.com/auth/drive.readonly";
 
-  static final List<String> DEFAULT_SCOPES = Arrays.asList(BIGQUERY_SCOPE);
-  static final List<String> DRIVE_SCOPES = Arrays.asList(BIGQUERY_SCOPE, DRIVE_READONLY_SCOPE);
+  static final List<String> DEFAULT_BIGQUERY_SCOPES = Arrays.asList(BIGQUERY_SCOPE);
+  static final List<String> BIGQUERY_WITH_DRIVE_SCOPES =
+      Arrays.asList(BIGQUERY_SCOPE, DRIVE_READONLY_SCOPE);
 
   private static final int USER_AUTH_TIMEOUT_MS = 120000;
   private static final BigQueryJdbcCustomLogger LOG =
@@ -272,6 +273,7 @@ final class BigQueryJdbcOAuthUtility {
   static GoogleCredentials getCredentials(
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
+      Boolean reqGoogleDriveScopeBool,
       String callerClassName) {
     LOG.finest("++enter++\t" + callerClassName);
 
@@ -294,15 +296,24 @@ final class BigQueryJdbcOAuthUtility {
         break;
       case APPLICATION_DEFAULT_CREDENTIALS:
         // This auth method doesn't support service account impersonation
-        return getApplicationDefaultCredentials(authProperties, callerClassName);
+
+        credentials = getApplicationDefaultCredentials(authProperties, callerClassName);
+        break;
       case EXTERNAL_ACCOUNT_AUTH:
         // This auth method doesn't support service account impersonation
-        return getExternalAccountAuthCredentials(authProperties, callerClassName);
+        credentials = getExternalAccountAuthCredentials(authProperties, callerClassName);
+        break;
       default:
         throw new IllegalStateException(OAUTH_TYPE_ERROR_MESSAGE);
     }
 
-    return getServiceAccountImpersonatedCredentials(credentials, authProperties);
+    if (reqGoogleDriveScopeBool) {
+      credentials = credentials.createScoped(BIGQUERY_WITH_DRIVE_SCOPES);
+      LOG.fine("Added Google Drive read-only scope centrally to GoogleCredentials.");
+    }
+
+    return getServiceAccountImpersonatedCredentials(
+        credentials, reqGoogleDriveScopeBool, authProperties);
   }
 
   private static boolean isFileExists(String filename) {
@@ -387,13 +398,6 @@ final class BigQueryJdbcOAuthUtility {
         builder.setUniverseDomain(
             overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
       }
-      if ("true"
-          .equals(
-              authProperties.get(
-                  BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
-        builder.setScopes(DRIVE_SCOPES);
-        LOG.fine("Added Google Drive read-only scope to Service Account builder.");
-      }
     } catch (URISyntaxException | IOException e) {
       LOG.severe("Validation failure for Service Account credentials.");
       throw new BigQueryJdbcRuntimeException(e);
@@ -426,7 +430,7 @@ final class BigQueryJdbcOAuthUtility {
       userAuthorizerBuilder.setTokenServerUri(
           new URI(overrideProperties.get(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)));
     }
-    List<String> scopes = new java.util.ArrayList<>(DEFAULT_SCOPES);
+    List<String> scopes = new java.util.ArrayList<>(DEFAULT_BIGQUERY_SCOPES);
 
     if ("true"
         .equals(
@@ -519,12 +523,6 @@ final class BigQueryJdbcOAuthUtility {
                     .build())
             .build();
 
-    if ("true"
-        .equals(
-            authProperties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
-      credentials = credentials.createScoped(DRIVE_SCOPES);
-    }
-
     return credentials;
   }
 
@@ -573,11 +571,6 @@ final class BigQueryJdbcOAuthUtility {
 
     UserCredentials userCredentials = userCredentialsBuilder.build();
 
-    if ("true"
-        .equals(
-            authProperties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
-      userCredentials = (UserCredentials) userCredentials.createScoped(DRIVE_SCOPES);
-    }
     LOG.info("Connection established. Auth Method: Pre-generated Refresh Token.");
     return userCredentials;
   }
@@ -598,14 +591,6 @@ final class BigQueryJdbcOAuthUtility {
       LOG.info(
           "Connection established. Auth Method: Application Default Credentials, Principal: %s.",
           principal);
-
-      if ("true"
-          .equals(
-              authProperties.get(
-                  BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
-        credentials = credentials.createScoped(DRIVE_SCOPES);
-        LOG.fine("Added Google Drive read-only scope to ADC credentials.");
-      }
 
       return credentials;
     } catch (IOException exception) {
@@ -665,14 +650,6 @@ final class BigQueryJdbcOAuthUtility {
             "Insufficient info provided for external authentication");
       }
 
-      if ("true"
-          .equals(
-              authProperties.get(
-                  BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
-        credentials = credentials.createScoped(DRIVE_SCOPES);
-        LOG.fine("Added Google Drive read-only scope to External Account credentials.");
-      }
-
       return credentials;
     } catch (IOException e) {
       throw new BigQueryJdbcRuntimeException(e);
@@ -684,7 +661,9 @@ final class BigQueryJdbcOAuthUtility {
   // If impersonated service account is provided, returns Credentials object
   // accommodating this information.
   private static GoogleCredentials getServiceAccountImpersonatedCredentials(
-      GoogleCredentials credentials, Map<String, String> authProperties) {
+      GoogleCredentials credentials,
+      Boolean reqGoogleDriveScopeBool,
+      Map<String, String> authProperties) {
 
     String impersonationEmail =
         authProperties.get(BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_EMAIL_PROPERTY_NAME);
@@ -707,9 +686,7 @@ final class BigQueryJdbcOAuthUtility {
                     .get(BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_SCOPES_PROPERTY_NAME)
                     .split(",")));
 
-    if ("true"
-        .equals(
-            authProperties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
+    if (reqGoogleDriveScopeBool) {
       if (!impersonationScopes.contains(DRIVE_READONLY_SCOPE)) {
         impersonationScopes.add(DRIVE_READONLY_SCOPE);
         LOG.fine("Added Google Drive read-only scope to impersonation scopes.");
