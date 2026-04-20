@@ -1082,6 +1082,27 @@ public class GapicSpannerRpcTest {
   }
 
   @Test
+  public void testExecuteQueryRetryableCodesIncludeResourceExhaustedWhenLocationApiEnabled() {
+    try {
+      SpannerOptions.useEnvironment(
+          new SpannerOptions.SpannerEnvironment() {
+            @Override
+            public boolean isEnableLocationApi() {
+              return true;
+            }
+          });
+      GapicSpannerRpc rpc = new GapicSpannerRpc(createSpannerOptions(), true);
+      try {
+        assertThat(rpc.getExecuteQueryRetryableCodes()).contains(Code.RESOURCE_EXHAUSTED);
+      } finally {
+        rpc.shutdown();
+      }
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
   public void testReadRetryableCodesDoNotAddResourceExhaustedWhenLocationApiDisabled() {
     try {
       SpannerOptions.useEnvironment(
@@ -1098,6 +1119,32 @@ public class GapicSpannerRpcTest {
                 createSpannerOptions()
                     .getSpannerStubSettings()
                     .streamingReadSettings()
+                    .getRetryableCodes());
+      } finally {
+        rpc.shutdown();
+      }
+    } finally {
+      SpannerOptions.useDefaultEnvironment();
+    }
+  }
+
+  @Test
+  public void testExecuteQueryRetryableCodesDoNotAddResourceExhaustedWhenLocationApiDisabled() {
+    try {
+      SpannerOptions.useEnvironment(
+          new SpannerOptions.SpannerEnvironment() {
+            @Override
+            public boolean isEnableLocationApi() {
+              return false;
+            }
+          });
+      GapicSpannerRpc rpc = new GapicSpannerRpc(createSpannerOptions(), true);
+      try {
+        assertThat(rpc.getExecuteQueryRetryableCodes())
+            .isEqualTo(
+                createSpannerOptions()
+                    .getSpannerStubSettings()
+                    .executeStreamingSqlSettings()
                     .getRetryableCodes());
       } finally {
         rpc.shutdown();
