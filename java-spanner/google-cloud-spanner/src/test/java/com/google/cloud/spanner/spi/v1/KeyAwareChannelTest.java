@@ -287,6 +287,93 @@ public class KeyAwareChannelTest {
   }
 
   @Test
+  public void callTracksLatencyOnMessage() throws Exception {
+    TestHarness harness = createHarness();
+    ExecuteSqlRequest request = ExecuteSqlRequest.newBuilder().setSession(SESSION).build();
+
+    ClientCall<ExecuteSqlRequest, PartialResultSet> call =
+        harness.channel.newCall(SpannerGrpc.getExecuteStreamingSqlMethod(), CallOptions.DEFAULT);
+    CapturingListener<PartialResultSet> listener = new CapturingListener<>();
+    call.start(listener, new Metadata());
+    call.sendMessage(request);
+
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteSqlRequest, PartialResultSet> delegate =
+        (RecordingClientCall<ExecuteSqlRequest, PartialResultSet>)
+            harness.defaultManagedChannel.latestCall();
+
+    FakeEndpoint defaultEndpoint = harness.endpointCache.defaultEndpoint;
+    LatencyTracker tracker = defaultEndpoint.getLatencyTracker();
+
+    double initialScore = tracker.getScore();
+
+    // Emit a message with last=true to trigger onMessage and latency update.
+    delegate.emitOnMessage(PartialResultSet.newBuilder().setLast(true).build());
+
+    // Verify that the score has been updated (it should not be equal to the initial score).
+    double newScore = tracker.getScore();
+    assertThat(newScore).isNotEqualTo(initialScore);
+  }
+
+  @Test
+  public void callDoesNotTrackLatencyForNonEligibleRpc() throws Exception {
+    TestHarness harness = createHarness();
+    ExecuteSqlRequest request = ExecuteSqlRequest.newBuilder().setSession(SESSION).build();
+
+    ClientCall<ExecuteSqlRequest, ResultSet> call =
+        harness.channel.newCall(SpannerGrpc.getExecuteSqlMethod(), CallOptions.DEFAULT);
+    CapturingListener<ResultSet> listener = new CapturingListener<>();
+    call.start(listener, new Metadata());
+    call.sendMessage(request);
+
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteSqlRequest, ResultSet> delegate =
+        (RecordingClientCall<ExecuteSqlRequest, ResultSet>)
+            harness.defaultManagedChannel.latestCall();
+
+    FakeEndpoint defaultEndpoint = harness.endpointCache.defaultEndpoint;
+    LatencyTracker tracker = defaultEndpoint.getLatencyTracker();
+
+    double initialScore = tracker.getScore();
+
+    // Emit a message.
+    delegate.emitOnMessage(ResultSet.newBuilder().build());
+
+    // Verify that the score has not been updated.
+    double newScore = tracker.getScore();
+    assertThat(newScore).isEqualTo(initialScore);
+  }
+
+  @Test
+  public void callDoesNotTrackLatencyForNonLastPartialResultSet() throws Exception {
+    TestHarness harness = createHarness();
+    ExecuteSqlRequest request = ExecuteSqlRequest.newBuilder().setSession(SESSION).build();
+
+    ClientCall<ExecuteSqlRequest, PartialResultSet> call =
+        harness.channel.newCall(SpannerGrpc.getExecuteStreamingSqlMethod(), CallOptions.DEFAULT);
+    CapturingListener<PartialResultSet> listener = new CapturingListener<>();
+    call.start(listener, new Metadata());
+    call.sendMessage(request);
+
+    @SuppressWarnings("unchecked")
+    RecordingClientCall<ExecuteSqlRequest, PartialResultSet> delegate =
+        (RecordingClientCall<ExecuteSqlRequest, PartialResultSet>)
+            harness.defaultManagedChannel.latestCall();
+
+    FakeEndpoint defaultEndpoint = harness.endpointCache.defaultEndpoint;
+    LatencyTracker tracker = defaultEndpoint.getLatencyTracker();
+
+    double initialScore = tracker.getScore();
+
+    // Emit a message with last=false.
+    delegate.emitOnMessage(PartialResultSet.newBuilder().setLast(false).build());
+
+    // Verify that the score has not been updated.
+    double newScore = tracker.getScore();
+    assertThat(newScore).isEqualTo(initialScore);
+  }
+
+  @Test
   public void beginTransactionWithMutationKeyAddsRoutingHint() throws Exception {
     TestHarness harness = createHarness();
     seedCache(harness, createMutationRoutingCacheUpdate());
@@ -1350,10 +1437,16 @@ public class KeyAwareChannelTest {
   private static final class FakeEndpoint implements ChannelEndpoint {
     private final String address;
     private final FakeManagedChannel channel;
+    private final LatencyTracker latencyTracker = new EwmaLatencyTracker();
 
     private FakeEndpoint(String address) {
       this.address = address;
       this.channel = new FakeManagedChannel(address);
+    }
+
+    @Override
+    public LatencyTracker getLatencyTracker() {
+      return latencyTracker;
     }
 
     @Override

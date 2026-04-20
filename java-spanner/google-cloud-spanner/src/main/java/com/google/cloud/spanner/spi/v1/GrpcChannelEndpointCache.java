@@ -67,7 +67,8 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
       throws IOException {
     this.baseProvider = channelProvider;
     String defaultEndpoint = channelProvider.getEndpoint();
-    this.defaultEndpoint = new GrpcChannelEndpoint(defaultEndpoint, channelProvider);
+    this.defaultEndpoint =
+        new GrpcChannelEndpoint(defaultEndpoint, channelProvider, new EwmaLatencyTracker());
     this.defaultAuthority = this.defaultEndpoint.getChannel().authority();
     this.servers.put(defaultEndpoint, this.defaultEndpoint);
   }
@@ -92,7 +93,8 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
             // This is thread-safe as withEndpoint() returns a new provider instance.
             InstantiatingGrpcChannelProvider newProvider =
                 createProviderWithAuthorityOverride(addr);
-            GrpcChannelEndpoint endpoint = new GrpcChannelEndpoint(addr, newProvider);
+            GrpcChannelEndpoint endpoint =
+                new GrpcChannelEndpoint(addr, newProvider, new EwmaLatencyTracker());
             logger.log(Level.FINE, "Location-aware endpoint created for address: {0}", addr);
             return endpoint;
           } catch (IOException e) {
@@ -178,10 +180,10 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
     }
   }
 
-  /** gRPC implementation of {@link ChannelEndpoint}. */
   static class GrpcChannelEndpoint implements ChannelEndpoint {
     private final String address;
     private final ManagedChannel channel;
+    private final LatencyTracker latencyTracker;
 
     /**
      * Creates a server from a channel provider.
@@ -190,7 +192,8 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
      * @param provider the channel provider (must be a gRPC provider)
      * @throws IOException if the channel cannot be created
      */
-    GrpcChannelEndpoint(String address, InstantiatingGrpcChannelProvider provider)
+    GrpcChannelEndpoint(
+        String address, InstantiatingGrpcChannelProvider provider, LatencyTracker latencyTracker)
         throws IOException {
       this.address = address;
       // Build a raw ManagedChannel directly instead of going through getTransportChannel(),
@@ -203,6 +206,7 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
                 provider.withHeaders(java.util.Collections.emptyMap());
       }
       this.channel = readyProvider.createDecoratedChannelBuilder().build();
+      this.latencyTracker = latencyTracker;
     }
 
     /**
@@ -212,9 +216,10 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
      * @param channel the managed channel
      */
     @VisibleForTesting
-    GrpcChannelEndpoint(String address, ManagedChannel channel) {
+    GrpcChannelEndpoint(String address, ManagedChannel channel, LatencyTracker latencyTracker) {
       this.address = address;
       this.channel = channel;
+      this.latencyTracker = latencyTracker;
     }
 
     @Override
@@ -266,6 +271,11 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
     @Override
     public ManagedChannel getChannel() {
       return channel;
+    }
+
+    @Override
+    public LatencyTracker getLatencyTracker() {
+      return latencyTracker;
     }
   }
 }

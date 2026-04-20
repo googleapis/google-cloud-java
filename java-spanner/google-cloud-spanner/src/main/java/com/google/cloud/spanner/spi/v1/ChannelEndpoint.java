@@ -71,4 +71,13 @@ public interface ChannelEndpoint {
    * @return the managed channel for this server
    */
   ManagedChannel getChannel();
+
+  /**
+   * Returns the latency tracker for this endpoint, or null if not supported.
+   *
+   * @return the latency tracker or null
+   */
+  default LatencyTracker getLatencyTracker() {
+    return null;
+  }
 }
