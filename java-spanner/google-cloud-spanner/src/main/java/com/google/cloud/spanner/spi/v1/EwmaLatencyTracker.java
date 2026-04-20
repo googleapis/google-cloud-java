@@ -127,7 +127,7 @@ public class EwmaLatencyTracker implements LatencyTracker {
   private double calculateTimeBasedAlpha(long nowNanos) {
     long deltaNanos = nowNanos - lastUpdatedAtNanos;
     if (deltaNanos <= 0L) {
-      // concurrent or future samples get full weight.
+      // Concurrent or future samples get full weight
       return 1.0;
     }
     double alpha = 1.0 - Math.exp(-(double) deltaNanos / (double) tauNanos);
