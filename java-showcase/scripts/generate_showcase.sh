@@ -5,9 +5,9 @@ set -ex
 
 trap cleanup ERR
 
-readonly ROOT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/../../.."
+readonly ROOT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/../.."
 pushd "${ROOT_DIR}"
-source "${ROOT_DIR}/sdk-platform-java/java-showcase/scripts/showcase_utilities.sh"
+source "${ROOT_DIR}/java-showcase/scripts/showcase_utilities.sh"
 
 cleanup() {
   if [[ -z "${api_def_dir}" ]]; then
@@ -65,7 +65,7 @@ else
   # we prepare the temp folder with the minimal setup to perform an incremental
   # generation.
   pushd "${ROOT_DIR}"
-  cp -r generation_config.yaml sdk-platform-java/java-showcase/ versions.txt "${generated_files_dir}"
+  cp -r generation_config.yaml java-showcase/ versions.txt "${generated_files_dir}"
   popd #ROOT_DIR
 fi
 
