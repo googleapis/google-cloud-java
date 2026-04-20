@@ -408,6 +408,7 @@ function install_modules() {
     always_install_deps_list=(
       'google-auth-library-java/appengine'
       'google-auth-library-java/bom'
+      'google-auth-library-java/cab-token-generator'
       'google-auth-library-java/credentials'
       'google-auth-library-java/oauth2_http'
       'sdk-platform-java/java-shared-dependencies'
