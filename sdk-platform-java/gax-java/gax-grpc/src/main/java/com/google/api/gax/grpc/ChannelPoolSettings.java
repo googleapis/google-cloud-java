@@ -61,6 +61,10 @@ public abstract class ChannelPoolSettings {
   /** The maximum number of channels that can be added or removed at a time. */
   static final int DEFAULT_MAX_RESIZE_DELTA = 2;
 
+  // Arbitrary limit to prevent unbounded growth and protect server/client resources.
+  // Capping at 25 ensures we don't scale too aggressively in a single cycle.
+  private static final int MAX_ALLOWED_RESIZE_DELTA = 25;
+
   /**
    * Threshold to start scaling down the channel pool.
    *
@@ -100,6 +104,8 @@ public abstract class ChannelPoolSettings {
    * the pool better handle sudden bursts or spikes in requests by allowing it to scale up faster.
    * Regardless of this setting, the number of channels will never exceed {@link
    * #getMaxChannelCount()}.
+   *
+   * <p><b>Note:</b> This value cannot exceed {@value #MAX_ALLOWED_RESIZE_DELTA}.
    */
   public abstract int getMaxResizeDelta();
 
@@ -193,6 +199,9 @@ public abstract class ChannelPoolSettings {
           s.getInitialChannelCount() > 0, "Initial channel count must be greater than 0");
       Preconditions.checkState(
           s.getMaxResizeDelta() > 0, "Max resize delta must be greater than 0");
+      Preconditions.checkState(
+          s.getMaxResizeDelta() <= MAX_ALLOWED_RESIZE_DELTA,
+          "Max resize delta cannot be greater than " + MAX_ALLOWED_RESIZE_DELTA);
       Preconditions.checkState(
           s.getMaxResizeDelta() <= s.getMaxChannelCount(),
           "Max resize delta cannot be greater than max channel count");

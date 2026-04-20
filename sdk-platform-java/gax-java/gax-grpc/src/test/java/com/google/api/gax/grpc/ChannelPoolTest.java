@@ -899,4 +899,12 @@ class ChannelPoolTest {
       ChannelPool.LOG.removeHandler(logHandler);
     }
   }
+
+  @Test
+  void settingsValidationFailsWhenMaxResizeDeltaExceedsLimit() {
+    ChannelPoolSettings.Builder builder =
+        ChannelPoolSettings.builder().setMaxResizeDelta(26).setMaxChannelCount(30);
+    org.junit.jupiter.api.Assertions.assertThrows(
+        IllegalStateException.class, () -> builder.build());
+  }
 }
