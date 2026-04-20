@@ -125,18 +125,6 @@ final class BigQueryJdbcOAuthUtility {
     }
     oauthProperties.put(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME, String.valueOf(authType));
 
-    Integer reqGoogleDriveScope = ds.getRequestGoogleDriveScope();
-    if (reqGoogleDriveScope != null) {
-      Boolean reqGoogleDriveScopeBool =
-          BigQueryJdbcUrlUtility.convertIntToBoolean(
-              String.valueOf(reqGoogleDriveScope),
-              BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME);
-      oauthProperties.put(
-          BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME,
-          String.valueOf(reqGoogleDriveScopeBool));
-      LOG.fine("RequestGoogleDriveScope parsed.");
-    }
-
     switch (authType) {
       case GOOGLE_SERVICE_ACCOUNT:
         // For using a Google Service Account (OAuth Type 0)
@@ -431,13 +419,6 @@ final class BigQueryJdbcOAuthUtility {
           new URI(overrideProperties.get(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)));
     }
     List<String> scopes = new java.util.ArrayList<>(DEFAULT_BIGQUERY_SCOPES);
-
-    if ("true"
-        .equals(
-            authProperties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME))) {
-      scopes.add(DRIVE_READONLY_SCOPE);
-      LOG.fine("Added Google Drive read-only scope to User Account builder.");
-    }
 
     userAuthorizerBuilder.setScopes(scopes);
 
