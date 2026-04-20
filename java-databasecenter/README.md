@@ -87,7 +87,7 @@ to add `google-cloud-databasecenter` as a dependency in your code.
 ## About Database Center API
 
 
-[Database Center API][product-docs] Database Center provides an organization-wide, cross-product fleet health platform to eliminate the overhead, complexity, and risk associated with aggregating and summarizing health signals through custom dashboards. Through Database Center’s fleet health dashboard and API, database platform teams that are responsible for reliability, compliance, security, cost, and administration of database fleets will now have a single pane of glass that pinpoints issues relevant to each team.
+[Database Center API][product-docs] Database Center provides an organization-wide, cross-product fleet health platform to eliminate the overhead, complexity, and risk associated with aggregating and summarizing health signals through custom dashboards. Through Database Center's fleet health dashboard and API, database platform teams that are responsible for reliability, compliance, security, cost, and administration of database fleets will now have a single pane of glass that pinpoints issues relevant to each team.
 
 See the [Database Center API client library docs][javadocs] to learn how to
 use this Database Center API Client Library.
