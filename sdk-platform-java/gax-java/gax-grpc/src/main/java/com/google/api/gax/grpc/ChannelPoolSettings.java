@@ -106,6 +106,9 @@ public abstract class ChannelPoolSettings {
    * #getMaxChannelCount()}.
    *
    * <p><b>Note:</b> This value cannot exceed {@value #MAX_ALLOWED_RESIZE_DELTA}.
+   *
+   * <p><b>Warning:</b> Higher values for resize delta may still result in performance degradation
+   * during spikes due to rapid scaling.
    */
   public abstract int getMaxResizeDelta();
 
