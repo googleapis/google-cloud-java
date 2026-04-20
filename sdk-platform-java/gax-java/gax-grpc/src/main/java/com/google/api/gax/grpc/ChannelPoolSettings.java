@@ -101,10 +101,9 @@ public abstract class ChannelPoolSettings {
    * Regardless of this setting, the number of channels will never exceed {@link
    * #getMaxChannelCount()}.
    *
-   * <p>Note: This value can be greater than {@link #getMaxChannelCount()}. The resizing logic
-   * naturally clamps adjustments to never exceed the min or max channel bounds, so a larger delta
-   * simply means the pool can reach its required size in fewer steps without risk of exceeding
-   * bounds.
+   * <p><b>Warning:</b> It is not recommended to configure this value to exceed {@link
+   * #getMaxChannelCount()}. While the resizing logic safely handles larger values by clamping
+   * adjustments to the bounds, setting it excessively high may obscure configuration intent.
    */
   public abstract int getMaxResizeDelta();
 
