@@ -91,7 +91,5 @@ public class BigQueryJdbcMdc {
     for (InheritableThreadLocal<String> local : instanceLocals.values()) {
       local.remove();
     }
-    instanceLocals.clear();
-    instanceIds.clear();
   }
 }
