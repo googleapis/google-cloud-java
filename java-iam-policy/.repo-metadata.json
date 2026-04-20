@@ -1,5 +1,5 @@
 {
-  "api_shortname": "iam",
+  "api_shortname": "iam-policy",
   "name_pretty": "IAM",
   "product_documentation": "n/a",
   "api_description": "n/a",
@@ -8,7 +8,7 @@
   "transport": "both",
   "language": "java",
   "repo": "googleapis/google-cloud-java",
-  "repo_short": "java-iam",
+  "repo_short": "java-iam-policy",
   "distribution_name": "com.google.cloud:google-iam-policy",
   "api_id": "iam.googleapis.com",
   "library_type": "GAPIC_AUTO",
