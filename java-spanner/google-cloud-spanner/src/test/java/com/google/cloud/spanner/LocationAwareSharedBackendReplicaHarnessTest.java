@@ -19,6 +19,7 @@ package com.google.cloud.spanner;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.cloud.NoCredentials;
 import com.google.cloud.spanner.MockSpannerServiceImpl.SimulatedExecutionTime;
@@ -52,6 +53,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -496,10 +498,101 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
     }
   }
 
+  @Test
+  public void readWriteTransactionAbortedCommitUsesReadAffinityReplicaForBypassTraffic()
+      throws Exception {
+    try (SharedBackendReplicaHarness harness = SharedBackendReplicaHarness.create(2);
+        Spanner spanner = createSpanner(harness)) {
+      configureBackend(harness, singleRowReadResultSet("b"));
+      DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
+
+      seedLocationMetadata(client);
+      harness.clearRequests();
+      AtomicInteger attempts = new AtomicInteger();
+      AtomicInteger firstReplicaIndex = new AtomicInteger(-1);
+
+      client
+          .readWriteTransaction()
+          .run(
+              transaction -> {
+                int attempt = attempts.incrementAndGet();
+                try (ResultSet resultSet =
+                    transaction.read(TABLE, KeySet.singleKey(Key.of("b")), Arrays.asList("k"))) {
+                  assertTrue(resultSet.next());
+                }
+
+                if (attempt == 1) {
+                  int routedReplicaIndex =
+                      findReplicaWithRequest(
+                          harness, SharedBackendReplicaHarness.METHOD_STREAMING_READ);
+                  if (routedReplicaIndex < 0) {
+                    fail("Expected read-write transaction read to route to a bypass replica");
+                  }
+                  firstReplicaIndex.set(routedReplicaIndex);
+                  harness
+                      .replicas
+                      .get(routedReplicaIndex)
+                      .putMethodErrors(
+                          SharedBackendReplicaHarness.METHOD_COMMIT,
+                          Status.ABORTED
+                              .withDescription("commit aborted on routed replica")
+                              .asRuntimeException());
+                }
+
+                transaction.buffer(
+                    Mutation.newInsertOrUpdateBuilder("NoRecipeTable")
+                        .set("id")
+                        .to("row-1")
+                        .build());
+                return null;
+              });
+
+      assertEquals(2, attempts.get());
+      assertTrue(firstReplicaIndex.get() >= 0);
+      int secondReplicaIndex = 1 - firstReplicaIndex.get();
+      assertEquals(
+          2,
+          harness
+              .replicas
+              .get(firstReplicaIndex.get())
+              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+              .size());
+      assertEquals(
+          0,
+          harness
+              .replicas
+              .get(secondReplicaIndex)
+              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+              .size());
+      assertEquals(
+          2,
+          harness
+              .replicas
+              .get(firstReplicaIndex.get())
+              .getRequests(SharedBackendReplicaHarness.METHOD_COMMIT)
+              .size());
+      assertEquals(
+          0,
+          harness
+              .replicas
+              .get(secondReplicaIndex)
+              .getRequests(SharedBackendReplicaHarness.METHOD_COMMIT)
+              .size());
+      assertEquals(
+          0, harness.defaultReplica.getRequests(SharedBackendReplicaHarness.METHOD_COMMIT).size());
+    }
+  }
+
   private static Spanner createSpanner(SharedBackendReplicaHarness harness) {
     return SpannerOptions.newBuilder()
         .usePlainText()
         .setExperimentalHost(harness.defaultAddress)
+        .setSessionPoolOption(
+            SessionPoolOptions.newBuilder()
+                .setExperimentalHost()
+                .setUseMultiplexedSession(true)
+                .setUseMultiplexedSessionForRW(true)
+                .build())
         .setProjectId(PROJECT)
         .setCredentials(NoCredentials.getInstance())
         .setChannelEndpointCacheFactory(null)
@@ -558,6 +651,15 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       Thread.sleep(50L);
     }
     throw new AssertionError("Timed out waiting for location-aware read to route to replica");
+  }
+
+  private static int findReplicaWithRequest(SharedBackendReplicaHarness harness, String method) {
+    for (int replicaIndex = 0; replicaIndex < harness.replicas.size(); replicaIndex++) {
+      if (!harness.replicas.get(replicaIndex).getRequests(method).isEmpty()) {
+        return replicaIndex;
+      }
+    }
+    return -1;
   }
 
   private static CacheUpdate cacheUpdate(SharedBackendReplicaHarness harness)

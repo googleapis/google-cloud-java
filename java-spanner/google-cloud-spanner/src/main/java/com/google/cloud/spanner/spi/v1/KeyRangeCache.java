@@ -179,6 +179,7 @@ public final class KeyRangeCache {
 
   private final ChannelEndpointCache endpointCache;
   @javax.annotation.Nullable private final EndpointLifecycleManager lifecycleManager;
+  @javax.annotation.Nullable private final String databaseScope;
   private final NavigableMap<ByteString, CachedRange> ranges =
       new TreeMap<>(ByteString.unsignedLexicographicalComparator());
   private final Map<Long, CachedGroup> groups = new HashMap<>();
@@ -192,14 +193,22 @@ public final class KeyRangeCache {
   private volatile int minCacheEntriesForRandomPick = DEFAULT_MIN_ENTRIES_FOR_RANDOM_PICK;
 
   public KeyRangeCache(ChannelEndpointCache endpointCache) {
-    this(endpointCache, null);
+    this(endpointCache, null, null);
   }
 
   public KeyRangeCache(
       ChannelEndpointCache endpointCache,
       @javax.annotation.Nullable EndpointLifecycleManager lifecycleManager) {
+    this(endpointCache, lifecycleManager, null);
+  }
+
+  KeyRangeCache(
+      ChannelEndpointCache endpointCache,
+      @javax.annotation.Nullable EndpointLifecycleManager lifecycleManager,
+      @javax.annotation.Nullable String databaseScope) {
     this.endpointCache = Objects.requireNonNull(endpointCache);
     this.lifecycleManager = lifecycleManager;
+    this.databaseScope = databaseScope;
   }
 
   @VisibleForTesting
@@ -214,12 +223,12 @@ public final class KeyRangeCache {
 
   @VisibleForTesting
   void recordReplicaLatency(long operationUid, String address, Duration latency) {
-    EndpointLatencyRegistry.recordLatency(operationUid, address, latency);
+    EndpointLatencyRegistry.recordLatency(databaseScope, operationUid, address, latency);
   }
 
   @VisibleForTesting
   void recordReplicaError(long operationUid, String address) {
-    EndpointLatencyRegistry.recordError(operationUid, address);
+    EndpointLatencyRegistry.recordError(databaseScope, operationUid, address);
   }
 
   /** Applies cache updates. Tablets are processed inside group updates. */
@@ -942,7 +951,7 @@ public final class KeyRangeCache {
         eligibleTablets.add(tablet);
         eligibleEndpoints.add(endpoint);
         endpointByAddress.put(endpoint.getAddress(), tablet);
-        if (EndpointLatencyRegistry.hasScore(operationUid, tablet.serverAddress)) {
+        if (EndpointLatencyRegistry.hasScore(databaseScope, operationUid, tablet.serverAddress)) {
           scoredCandidates++;
         }
       }
@@ -1041,7 +1050,9 @@ public final class KeyRangeCache {
       if (tablet == null) {
         return Double.MAX_VALUE;
       }
-      double cost = EndpointLatencyRegistry.getSelectionCost(operationUid, tablet.serverAddress);
+      double cost =
+          EndpointLatencyRegistry.getSelectionCost(
+              databaseScope, operationUid, tablet.serverAddress);
       if (preferredLeader != null && tablet == preferredLeader) {
         return cost * LOCAL_LEADER_SELECTION_COST_MULTIPLIER;
       }

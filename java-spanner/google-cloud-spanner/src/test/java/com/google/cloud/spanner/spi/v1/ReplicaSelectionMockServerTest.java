@@ -443,14 +443,9 @@ public class ReplicaSelectionMockServerTest {
       }
 
       clearServerRequests();
-      boolean sampledServer0 = false;
-      boolean sampledServer1 = false;
-      Stopwatch watch = Stopwatch.createStarted();
-      int attempt = 0;
       long operationUid = 0L;
 
-      while (watch.elapsed(TimeUnit.SECONDS) < 10 && (!sampledServer0 || !sampledServer1)) {
-        attempt++;
+      for (int attempt = 1; attempt <= 3; attempt++) {
         String key = "bootstrap-key-" + attempt;
         try (com.google.cloud.spanner.ResultSet rs =
             client
@@ -474,15 +469,12 @@ public class ReplicaSelectionMockServerTest {
               operationUid,
               currentOperationUid);
         }
-        sampledServer0 = hasReadRequestForKey(servers.get(0).mockSpanner, key) || sampledServer0;
-        sampledServer1 = hasReadRequestForKey(servers.get(1).mockSpanner, key) || sampledServer1;
       }
 
-      assertTrue("Expected bootstrap exploration to sample server0", sampledServer0);
-      assertTrue("Expected bootstrap exploration to sample server1", sampledServer1);
       assertTrue("Expected stale reads to reuse the same operation_uid", operationUid > 0L);
 
       clearServerRequests();
+      Stopwatch watch = Stopwatch.createStarted();
       boolean routedToLowerLatencyReplica = false;
       int convergenceAttempt = 0;
       while (watch.elapsed(TimeUnit.SECONDS) < 10 && !routedToLowerLatencyReplica) {

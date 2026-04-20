@@ -207,10 +207,7 @@ final class KeyAwareChannel extends ManagedChannel {
         ref = channelFinders.get(databaseId);
         finder = (ref != null) ? ref.get() : null;
         if (finder == null) {
-          finder =
-              lifecycleManager != null
-                  ? new ChannelFinder(endpointCache, lifecycleManager, databaseId)
-                  : new ChannelFinder(endpointCache);
+          finder = new ChannelFinder(endpointCache, lifecycleManager, databaseId);
           channelFinders.put(
               databaseId,
               new ChannelFinderReference(databaseId, finder, channelFinderReferenceQueue));
@@ -381,7 +378,10 @@ final class KeyAwareChannel extends ManagedChannel {
   }
 
   private void maybeRecordErrorPenalty(
-      @Nullable ChannelEndpoint endpoint, io.grpc.Status.Code statusCode, long operationUid) {
+      @Nullable String databaseScope,
+      @Nullable ChannelEndpoint endpoint,
+      io.grpc.Status.Code statusCode,
+      long operationUid) {
     if (!shouldExcludeEndpointOnRetry(statusCode) || endpoint == null || operationUid <= 0L) {
       return;
     }
@@ -389,7 +389,7 @@ final class KeyAwareChannel extends ManagedChannel {
     if (defaultEndpointAddress.equals(address)) {
       return;
     }
-    EndpointLatencyRegistry.recordError(operationUid, address);
+    EndpointLatencyRegistry.recordError(databaseScope, operationUid, address);
   }
 
   private static boolean shouldExcludeEndpointOnRetry(io.grpc.Status.Code statusCode) {
@@ -526,6 +526,7 @@ final class KeyAwareChannel extends ManagedChannel {
     @Nullable private Predicate<String> excludedEndpoints;
     @Nullable private ChannelEndpoint selectedEndpoint;
     @Nullable private String selectedTargetEndpoint;
+    @Nullable private String selectedDatabaseScope;
     private long selectedOperationUid;
     @Nullable private ByteString transactionIdToClear;
     private boolean allowDefaultAffinity;
@@ -593,6 +594,7 @@ final class KeyAwareChannel extends ManagedChannel {
         Predicate<String> excludedEndpoints = excludedEndpoints();
         ChannelEndpoint endpoint = null;
         ChannelFinder finder = null;
+        String databaseScope = null;
         long operationUid = 0L;
 
         if (message instanceof ReadRequest) {
@@ -601,6 +603,7 @@ final class KeyAwareChannel extends ManagedChannel {
           RoutingDecision routing = routeFromRequest(reqBuilder);
           finder = routing.finder;
           endpoint = routing.endpoint;
+          databaseScope = routing.databaseScope;
           operationUid = routing.operationUid;
           message = (RequestT) reqBuilder.build();
         } else if (message instanceof ExecuteSqlRequest) {
@@ -609,6 +612,7 @@ final class KeyAwareChannel extends ManagedChannel {
           RoutingDecision routing = routeFromRequest(reqBuilder);
           finder = routing.finder;
           endpoint = routing.endpoint;
+          databaseScope = routing.databaseScope;
           operationUid = routing.operationUid;
           message = (RequestT) reqBuilder.build();
         } else if (message instanceof BeginTransactionRequest) {
@@ -617,6 +621,7 @@ final class KeyAwareChannel extends ManagedChannel {
           String databaseId = parentChannel.extractDatabaseIdFromSession(reqBuilder.getSession());
           if (databaseId != null) {
             finder = parentChannel.getOrCreateChannelFinder(databaseId);
+            databaseScope = databaseId;
           }
           if (finder != null && reqBuilder.hasMutationKey()) {
             endpoint = finder.findServer(reqBuilder, excludedEndpoints);
@@ -633,6 +638,7 @@ final class KeyAwareChannel extends ManagedChannel {
           String databaseId = parentChannel.extractDatabaseIdFromSession(request.getSession());
           if (databaseId != null) {
             finder = parentChannel.getOrCreateChannelFinder(databaseId);
+            databaseScope = databaseId;
           }
           CommitRequest.Builder reqBuilder = null;
           if (finder != null && request.getMutationsCount() > 0) {
@@ -672,13 +678,17 @@ final class KeyAwareChannel extends ManagedChannel {
         }
         selectedEndpoint = endpoint;
         selectedTargetEndpoint = endpoint.getAddress();
+        selectedDatabaseScope = databaseScope != null ? databaseScope : routingScope(finder);
         selectedOperationUid = operationUid;
         this.channelFinder = finder;
         EndpointLatencyRegistry.beginRequest(selectedTargetEndpoint);
         XGoogSpannerRequestId requestId = callOptions.getOption(REQUEST_ID_CALL_OPTIONS_KEY);
         if (requestId != null) {
           RequestIdTargetTracker.record(
-              requestId.getHeaderValue(), selectedTargetEndpoint, operationUid);
+              requestId.getHeaderValue(),
+              selectedDatabaseScope,
+              selectedTargetEndpoint,
+              operationUid);
         }
 
         // Record real traffic for idle eviction tracking.
@@ -856,7 +866,8 @@ final class KeyAwareChannel extends ManagedChannel {
                 : finder.findServer(reqBuilder, excludedEndpoints);
         endpoint = routed;
       }
-      return new RoutingDecision(finder, endpoint, operationUid(reqBuilder.getRoutingHint()));
+      return new RoutingDecision(
+          finder, endpoint, databaseId, operationUid(reqBuilder.getRoutingHint()));
     }
 
     private RoutingDecision routeFromRequest(ExecuteSqlRequest.Builder reqBuilder) {
@@ -879,21 +890,32 @@ final class KeyAwareChannel extends ManagedChannel {
                 : finder.findServer(reqBuilder, excludedEndpoints);
         endpoint = routed;
       }
-      return new RoutingDecision(finder, endpoint, operationUid(reqBuilder.getRoutingHint()));
+      return new RoutingDecision(
+          finder, endpoint, databaseId, operationUid(reqBuilder.getRoutingHint()));
     }
   }
 
   private static final class RoutingDecision {
     @Nullable private final ChannelFinder finder;
     @Nullable private final ChannelEndpoint endpoint;
+    @Nullable private final String databaseScope;
     private final long operationUid;
 
     private RoutingDecision(
-        @Nullable ChannelFinder finder, @Nullable ChannelEndpoint endpoint, long operationUid) {
+        @Nullable ChannelFinder finder,
+        @Nullable ChannelEndpoint endpoint,
+        @Nullable String databaseScope,
+        long operationUid) {
       this.finder = finder;
       this.endpoint = endpoint;
+      this.databaseScope = databaseScope;
       this.operationUid = operationUid;
     }
+  }
+
+  @Nullable
+  private static String routingScope(@Nullable ChannelFinder finder) {
+    return finder == null ? null : finder.finderKey();
   }
 
   private static long operationUid(com.google.spanner.v1.RoutingHint routingHint) {
@@ -953,7 +975,10 @@ final class KeyAwareChannel extends ManagedChannel {
     public void onClose(io.grpc.Status status, Metadata trailers) {
       if (shouldExcludeEndpointOnRetry(status.getCode())) {
         call.parentChannel.maybeRecordErrorPenalty(
-            call.selectedEndpoint, status.getCode(), call.selectedOperationUid);
+            call.selectedDatabaseScope,
+            call.selectedEndpoint,
+            status.getCode(),
+            call.selectedOperationUid);
         call.parentChannel.maybeExcludeEndpointOnNextCall(
             call.selectedEndpoint, call.logicalRequestKey);
       }

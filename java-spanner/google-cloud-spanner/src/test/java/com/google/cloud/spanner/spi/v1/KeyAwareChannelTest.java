@@ -629,6 +629,8 @@ public class KeyAwareChannelTest {
     for (int attempt = 0;
         attempt < 20 && (!selectedServerAOnThirdAttempt || !selectedServerBOnThirdAttempt);
         attempt++) {
+      EndpointLatencyRegistry.clear();
+      RequestIdTargetTracker.clear();
       TestHarness harness = createHarness();
       seedCache(harness, createLeaderAndReplicaCacheUpdate());
       CallOptions retryCallOptions = retryCallOptions(100L + attempt);
@@ -1677,9 +1679,14 @@ public class KeyAwareChannelTest {
     assertThat(routedOperationUid).isGreaterThan(0L);
     delegate.emitOnClose(status, new Metadata());
 
-    assertThat(EndpointLatencyRegistry.hasScore(routedOperationUid, "server-a:1234")).isTrue();
-    assertThat(EndpointLatencyRegistry.getSelectionCost(routedOperationUid, "server-a:1234"))
+    String databaseScope = "projects/p/instances/i/databases/d";
+    assertThat(EndpointLatencyRegistry.hasScore(databaseScope, routedOperationUid, "server-a:1234"))
+        .isTrue();
+    assertThat(
+            EndpointLatencyRegistry.getSelectionCost(
+                databaseScope, routedOperationUid, "server-a:1234"))
         .isEqualTo((double) EndpointLatencyRegistry.DEFAULT_ERROR_PENALTY.toNanos() / 1_000D);
-    assertThat(EndpointLatencyRegistry.hasScore(routedOperationUid, "server-b:1234")).isFalse();
+    assertThat(EndpointLatencyRegistry.hasScore(databaseScope, routedOperationUid, "server-b:1234"))
+        .isFalse();
   }
 }

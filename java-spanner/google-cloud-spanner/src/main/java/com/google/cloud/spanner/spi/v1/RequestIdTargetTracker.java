@@ -24,21 +24,23 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Nullable;
 
 final class RequestIdTargetTracker {
+  @VisibleForTesting static final long MAX_TRACKED_TARGETS = 1_000_000L;
 
   private static final Cache<String, RoutingTarget> TARGETS =
       CacheBuilder.newBuilder()
-          .maximumSize(100_000_000L)
+          .maximumSize(MAX_TRACKED_TARGETS)
           .expireAfterWrite(10, TimeUnit.MINUTES)
           .build();
 
   private RequestIdTargetTracker() {}
 
-  static void record(String requestId, String targetEndpoint, long operationUid) {
+  static void record(
+      String requestId, @Nullable String databaseScope, String targetEndpoint, long operationUid) {
     String trackingKey = normalizeRequestKey(requestId);
     if (trackingKey == null || targetEndpoint == null || targetEndpoint.isEmpty()) {
       return;
     }
-    TARGETS.put(trackingKey, new RoutingTarget(targetEndpoint, operationUid));
+    TARGETS.put(trackingKey, new RoutingTarget(databaseScope, targetEndpoint, operationUid));
   }
 
   @Nullable
@@ -76,10 +78,13 @@ final class RequestIdTargetTracker {
   }
 
   static final class RoutingTarget {
+    @Nullable final String databaseScope;
     final String targetEndpoint;
     final long operationUid;
 
-    private RoutingTarget(String targetEndpoint, long operationUid) {
+    private RoutingTarget(
+        @Nullable String databaseScope, String targetEndpoint, long operationUid) {
+      this.databaseScope = databaseScope;
       this.targetEndpoint = targetEndpoint;
       this.operationUid = operationUid;
     }

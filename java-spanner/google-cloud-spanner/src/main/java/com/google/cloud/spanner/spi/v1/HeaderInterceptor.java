@@ -232,7 +232,10 @@ class HeaderInterceptor implements ClientInterceptor {
     }
     long latencyNanos = Math.max(0L, System.nanoTime() - startedAtNanos);
     EndpointLatencyRegistry.recordLatency(
-        routingTarget.operationUid, routingTarget.targetEndpoint, Duration.ofNanos(latencyNanos));
+        routingTarget.databaseScope,
+        routingTarget.operationUid,
+        routingTarget.targetEndpoint,
+        Duration.ofNanos(latencyNanos));
   }
 
   private Map<String, Float> parseServerTimingHeader(String serverTiming) {
