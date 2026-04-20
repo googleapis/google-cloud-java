@@ -188,9 +188,7 @@ public class ITComputeGoldenSignals extends BaseTest {
                 .build())
         .setRetryableCodes(StatusCode.Code.NOT_FOUND);
 
-    settingsBuilder
-        .getStubSettingsBuilder()
-        .setTracerFactory(BaseApiTracerFactory.getInstance());
+    settingsBuilder.getStubSettingsBuilder().setTracerFactory(BaseApiTracerFactory.getInstance());
 
     traceClient = TraceServiceClient.create(settingsBuilder.build());
 
@@ -441,8 +439,7 @@ public class ITComputeGoldenSignals extends BaseTest {
               .setView(ListTimeSeriesRequest.TimeSeriesView.FULL)
               .build();
 
-      TimeSeries targetTs =
-          pollForTimeSeries(metricClient, request);
+      TimeSeries targetTs = pollForTimeSeries(metricClient, request);
 
       assertThat(targetTs).isNotNull();
       logger.info("Found target metrics in Cloud Monitoring!");
@@ -478,11 +475,11 @@ public class ITComputeGoldenSignals extends BaseTest {
   }
 
   private TimeSeries pollForTimeSeries(
-      MetricServiceClient metricClient, ListTimeSeriesRequest request)
-      throws InterruptedException {
-    
+      MetricServiceClient metricClient, ListTimeSeriesRequest request) throws InterruptedException {
+
     long initialSleepMs = Duration.ofMinutes(3).toMillis();
-    logger.info("Sleeping for " + (initialSleepMs / 1000) + " seconds to allow metrics ingestion...");
+    logger.info(
+        "Sleeping for " + (initialSleepMs / 1000) + " seconds to allow metrics ingestion...");
     Thread.sleep(initialSleepMs);
 
     Stopwatch metricsPollingStopwatch = Stopwatch.createStarted();
