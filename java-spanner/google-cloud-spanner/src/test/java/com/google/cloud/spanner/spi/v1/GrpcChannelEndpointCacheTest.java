@@ -98,12 +98,13 @@ public class GrpcChannelEndpointCacheTest {
   }
 
   @Test
-  public void routedChannelsEnableKeepAliveWithoutCallsOnlyForEndpointProvider() throws Exception {
+  public void routedChannelsOverrideKeepAliveSettingsOnlyForEndpointProvider() throws Exception {
     InstantiatingGrpcChannelProvider provider =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setEndpoint(DEFAULT_ENDPOINT)
             .setPoolSize(4)
             .setKeepAliveTimeDuration(java.time.Duration.ofSeconds(120))
+            .setKeepAliveTimeoutDuration(java.time.Duration.ofSeconds(60))
             .setKeepAliveWithoutCalls(Boolean.FALSE)
             .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
             .build();
@@ -113,9 +114,14 @@ public class GrpcChannelEndpointCacheTest {
           cache.createProviderWithAuthorityOverride(ROUTED_ENDPOINT_A);
 
       assertThat(provider.getKeepAliveWithoutCalls()).isFalse();
+      assertThat(provider.getKeepAliveTimeDuration()).isEqualTo(java.time.Duration.ofSeconds(120));
+      assertThat(provider.getKeepAliveTimeoutDuration())
+          .isEqualTo(java.time.Duration.ofSeconds(60));
       assertThat(routedProvider.getKeepAliveWithoutCalls()).isTrue();
       assertThat(routedProvider.getKeepAliveTimeDuration())
-          .isEqualTo(provider.getKeepAliveTimeDuration());
+          .isEqualTo(GrpcChannelEndpointCache.ROUTED_KEEPALIVE_TIME);
+      assertThat(routedProvider.getKeepAliveTimeoutDuration())
+          .isEqualTo(GrpcChannelEndpointCache.ROUTED_KEEPALIVE_TIMEOUT);
     } finally {
       cache.shutdown();
     }

@@ -27,6 +27,7 @@ import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
@@ -50,6 +51,9 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
 
   /** Timeout for graceful channel shutdown. */
   private static final long SHUTDOWN_TIMEOUT_SECONDS = 5;
+
+  @VisibleForTesting static final Duration ROUTED_KEEPALIVE_TIME = Duration.ofSeconds(2);
+  @VisibleForTesting static final Duration ROUTED_KEEPALIVE_TIMEOUT = Duration.ofSeconds(20);
 
   private final InstantiatingGrpcChannelProvider baseProvider;
   private final Map<String, GrpcChannelEndpoint> servers = new ConcurrentHashMap<>();
@@ -129,6 +133,8 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
     }
     Builder builder = endpointProvider.toBuilder();
     builder.setChannelPoolSettings(ChannelPoolSettings.staticallySized(1));
+    builder.setKeepAliveTimeDuration(ROUTED_KEEPALIVE_TIME);
+    builder.setKeepAliveTimeoutDuration(ROUTED_KEEPALIVE_TIMEOUT);
     builder.setKeepAliveWithoutCalls(Boolean.TRUE);
     final com.google.api.core.ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>
         baseConfigurator =

@@ -507,6 +507,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
       seedLocationMetadata(client);
+      waitForReplicaRoutedStrongRead(client, harness, /* expectedReplicaIndex= */ 1);
       harness.clearRequests();
       AtomicInteger attempts = new AtomicInteger();
       AtomicInteger firstReplicaIndex = new AtomicInteger(-1);
@@ -653,6 +654,30 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
       Thread.sleep(50L);
     }
     throw new AssertionError("Timed out waiting for location-aware read to route to replica");
+  }
+
+  private static void waitForReplicaRoutedStrongRead(
+      DatabaseClient client, SharedBackendReplicaHarness harness, int expectedReplicaIndex)
+      throws InterruptedException {
+    long deadlineNanos = System.nanoTime() + TimeUnit.SECONDS.toNanos(10);
+    while (System.nanoTime() < deadlineNanos) {
+      harness.clearRequests();
+      try (ResultSet resultSet =
+          client.singleUse().read(TABLE, KeySet.singleKey(Key.of("b")), Arrays.asList("k"))) {
+        if (resultSet.next()) {
+          if (!harness
+              .replicas
+              .get(expectedReplicaIndex)
+              .getRequests(SharedBackendReplicaHarness.METHOD_STREAMING_READ)
+              .isEmpty()) {
+            return;
+          }
+        }
+      }
+      Thread.sleep(50L);
+    }
+    throw new AssertionError(
+        "Timed out waiting for strong read to route to replica " + expectedReplicaIndex);
   }
 
   private static int findReplicaWithRequest(SharedBackendReplicaHarness harness, String method) {
