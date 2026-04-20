@@ -333,3 +333,46 @@ error_if_not_exists() {
     exit 1
   fi
 }
+
+# Backups existing Version.java files in the specified target directory
+# Arguments:
+# 1 - target_directory: The directory where to search for Version.java
+# 2 - backup_directory: The directory where the backups will be stored
+backup_version_java() {
+  local target_directory=$1
+  local backup_directory=$2
+
+  pushd "${target_directory}" > /dev/null
+  for file in $(find */src src -path "*/stub/Version.java" -type f 2>/dev/null); do
+    if [[ -n "$file" ]]; then
+      local backup_path="${backup_directory}/${file}"
+      mkdir -p "$(dirname "${backup_path}")"
+      cp "$file" "${backup_path}"
+    fi
+  done
+  popd > /dev/null
+}
+
+# Restores Version.java files from the backup directory to the target directory
+# Arguments:
+# 1 - target_directory: The directory where to restore Version.java
+# 2 - backup_directory: The directory where the backups are stored
+restore_version_java() {
+  local target_directory=$1
+  local backup_directory=$2
+
+  if [[ ! -d "${backup_directory}" ]]; then
+    return 0
+  fi
+
+  pushd "${backup_directory}" > /dev/null
+  for file in $(find . -type f 2>/dev/null); do
+    if [[ -n "$file" ]]; then
+      local relative_path="${file#./}"
+      local target_path="${target_directory}/${relative_path}"
+      mkdir -p "$(dirname "${target_path}")"
+      mv "$file" "${target_path}"
+    fi
+  done
+  popd > /dev/null
+}
