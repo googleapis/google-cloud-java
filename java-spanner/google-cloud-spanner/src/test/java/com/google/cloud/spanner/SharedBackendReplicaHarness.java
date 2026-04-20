@@ -97,6 +97,10 @@ final class SharedBackendReplicaHarness implements Closeable {
       requestIds.clear();
     }
 
+    synchronized void clearMethodErrors() {
+      methodErrors.clear();
+    }
+
     private synchronized void recordRequest(String method, AbstractMessage request) {
       requests.computeIfAbsent(method, ignored -> new ArrayList<>()).add(request);
     }
@@ -284,6 +288,18 @@ final class SharedBackendReplicaHarness implements Closeable {
     defaultReplica.clearRequests();
     for (HookedReplicaSpannerService replica : replicas) {
       replica.clearRequests();
+    }
+  }
+
+  void reset() {
+    backend.reset();
+    backend.removeAllExecutionTimes();
+    backend.setAbortProbability(0.0D);
+    defaultReplica.clearRequests();
+    defaultReplica.clearMethodErrors();
+    for (HookedReplicaSpannerService replica : replicas) {
+      replica.clearRequests();
+      replica.clearMethodErrors();
     }
   }
 

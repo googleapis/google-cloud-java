@@ -55,6 +55,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -82,9 +83,10 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
                           .build())
                   .build())
           .build();
+  private static SharedBackendReplicaHarness harness;
 
   @BeforeClass
-  public static void enableLocationAwareRouting() {
+  public static void enableLocationAwareRouting() throws Exception {
     SpannerOptions.useEnvironment(
         new SpannerOptions.SpannerEnvironment() {
           @Override
@@ -92,17 +94,29 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
             return true;
           }
         });
+    harness = SharedBackendReplicaHarness.create(2);
+  }
+
+  @Before
+  public void resetHarness() {
+    harness.reset();
   }
 
   @AfterClass
-  public static void restoreEnvironment() {
-    SpannerOptions.useDefaultEnvironment();
+  public static void restoreEnvironment() throws Exception {
+    try {
+      if (harness != null) {
+        harness.close();
+      }
+    } finally {
+      harness = null;
+      SpannerOptions.useDefaultEnvironment();
+    }
   }
 
   @Test
   public void singleUseReadReroutesOnResourceExhaustedForBypassTraffic() throws Exception {
-    try (SharedBackendReplicaHarness harness = SharedBackendReplicaHarness.create(2);
-        Spanner spanner = createSpanner(harness)) {
+    try (Spanner spanner = createSpanner(harness)) {
       configureBackend(harness, singleRowReadResultSet("b"));
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
@@ -173,8 +187,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
 
   @Test
   public void singleUseReadCooldownSkipsReplicaOnNextRequestForBypassTraffic() throws Exception {
-    try (SharedBackendReplicaHarness harness = SharedBackendReplicaHarness.create(2);
-        Spanner spanner = createSpanner(harness)) {
+    try (Spanner spanner = createSpanner(harness)) {
       configureBackend(harness, singleRowReadResultSet("b"));
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
@@ -260,8 +273,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
 
   @Test
   public void singleUseReadReroutesOnUnavailableForBypassTraffic() throws Exception {
-    try (SharedBackendReplicaHarness harness = SharedBackendReplicaHarness.create(2);
-        Spanner spanner = createSpanner(harness)) {
+    try (Spanner spanner = createSpanner(harness)) {
       configureBackend(harness, singleRowReadResultSet("b"));
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
@@ -332,8 +344,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
   @Test
   public void singleUseReadCooldownSkipsUnavailableReplicaOnNextRequestForBypassTraffic()
       throws Exception {
-    try (SharedBackendReplicaHarness harness = SharedBackendReplicaHarness.create(2);
-        Spanner spanner = createSpanner(harness)) {
+    try (Spanner spanner = createSpanner(harness)) {
       configureBackend(harness, singleRowReadResultSet("b"));
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
@@ -419,8 +430,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
   @Test
   public void singleUseReadMidStreamRecvFailureWithoutRetryInfoRetriesForBypassTraffic()
       throws Exception {
-    try (SharedBackendReplicaHarness harness = SharedBackendReplicaHarness.create(2);
-        Spanner spanner = createSpanner(harness)) {
+    try (Spanner spanner = createSpanner(harness)) {
       configureBackend(harness, multiRowReadResultSet("b", "c", "d"));
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
@@ -501,8 +511,7 @@ public class LocationAwareSharedBackendReplicaHarnessTest {
   @Test
   public void readWriteTransactionAbortedCommitUsesReadAffinityReplicaForBypassTraffic()
       throws Exception {
-    try (SharedBackendReplicaHarness harness = SharedBackendReplicaHarness.create(2);
-        Spanner spanner = createSpanner(harness)) {
+    try (Spanner spanner = createSpanner(harness)) {
       configureBackend(harness, singleRowReadResultSet("b"), /* leaderReplicaIndex= */ 1);
       DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of(PROJECT, INSTANCE, DATABASE));
 
