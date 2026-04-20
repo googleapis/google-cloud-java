@@ -141,8 +141,10 @@ final class EndpointOverloadCooldownTracker {
       }
       cooldown = cooldown.multipliedBy(2);
     }
-    long bound = Math.max(1L, cooldown.toMillis() + 1L);
-    return Duration.ofMillis(randomLong.applyAsLong(bound));
+    long cooldownMillis = Math.max(1L, cooldown.toMillis());
+    long floorMillis = Math.max(1L, cooldownMillis / 2L);
+    long rangeSize = Math.max(1L, cooldownMillis - floorMillis + 1L);
+    return Duration.ofMillis(floorMillis + randomLong.applyAsLong(rangeSize));
   }
 
   @VisibleForTesting

@@ -20,8 +20,10 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.common.base.Ticker;
 import com.google.common.testing.FakeTicker;
+import io.grpc.ManagedChannel;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,6 +32,45 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class EndpointLatencyRegistryTest {
   private static final String DATABASE_SCOPE = "projects/p/instances/i/databases/d";
+
+  private static final class TestEndpoint implements ChannelEndpoint {
+    private final AtomicInteger activeRequests = new AtomicInteger();
+
+    @Override
+    public String getAddress() {
+      return "test";
+    }
+
+    @Override
+    public boolean isHealthy() {
+      return true;
+    }
+
+    @Override
+    public boolean isTransientFailure() {
+      return false;
+    }
+
+    @Override
+    public ManagedChannel getChannel() {
+      return null;
+    }
+
+    @Override
+    public void incrementActiveRequests() {
+      activeRequests.incrementAndGet();
+    }
+
+    @Override
+    public void decrementActiveRequests() {
+      activeRequests.updateAndGet(current -> current > 0 ? current - 1 : 0);
+    }
+
+    @Override
+    public int getActiveRequestCount() {
+      return Math.max(0, activeRequests.get());
+    }
+  }
 
   @After
   public void tearDown() {
@@ -88,17 +129,29 @@ public class EndpointLatencyRegistryTest {
   }
 
   @Test
+  public void trackersAreIsolatedByPreferLeader() {
+    EndpointLatencyRegistry.recordLatency(
+        DATABASE_SCOPE, 404L, true, "server-a:1234", Duration.ofMillis(9));
+
+    assertThat(EndpointLatencyRegistry.hasScore(DATABASE_SCOPE, 404L, true, "server-a:1234"))
+        .isTrue();
+    assertThat(EndpointLatencyRegistry.hasScore(DATABASE_SCOPE, 404L, false, "server-a:1234"))
+        .isFalse();
+  }
+
+  @Test
   public void inflightCountDoesNotGoNegativeAndCanBeReusedAfterZero() {
-    EndpointLatencyRegistry.beginRequest("server-c:1234");
-    assertThat(EndpointLatencyRegistry.getInflight("server-c:1234")).isEqualTo(1);
+    TestEndpoint endpoint = new TestEndpoint();
+    endpoint.incrementActiveRequests();
+    assertThat(endpoint.getActiveRequestCount()).isEqualTo(1);
 
-    EndpointLatencyRegistry.finishRequest("server-c:1234");
-    assertThat(EndpointLatencyRegistry.getInflight("server-c:1234")).isEqualTo(0);
+    endpoint.decrementActiveRequests();
+    assertThat(endpoint.getActiveRequestCount()).isEqualTo(0);
 
-    EndpointLatencyRegistry.finishRequest("server-c:1234");
-    assertThat(EndpointLatencyRegistry.getInflight("server-c:1234")).isEqualTo(0);
+    endpoint.decrementActiveRequests();
+    assertThat(endpoint.getActiveRequestCount()).isEqualTo(0);
 
-    EndpointLatencyRegistry.beginRequest("server-c:1234");
-    assertThat(EndpointLatencyRegistry.getInflight("server-c:1234")).isEqualTo(1);
+    endpoint.incrementActiveRequests();
+    assertThat(endpoint.getActiveRequestCount()).isEqualTo(1);
   }
 }

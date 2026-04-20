@@ -35,12 +35,17 @@ final class RequestIdTargetTracker {
   private RequestIdTargetTracker() {}
 
   static void record(
-      String requestId, @Nullable String databaseScope, String targetEndpoint, long operationUid) {
+      String requestId,
+      @Nullable String databaseScope,
+      String targetEndpoint,
+      long operationUid,
+      boolean preferLeader) {
     String trackingKey = normalizeRequestKey(requestId);
     if (trackingKey == null || targetEndpoint == null || targetEndpoint.isEmpty()) {
       return;
     }
-    TARGETS.put(trackingKey, new RoutingTarget(databaseScope, targetEndpoint, operationUid));
+    TARGETS.put(
+        trackingKey, new RoutingTarget(databaseScope, targetEndpoint, operationUid, preferLeader));
   }
 
   @Nullable
@@ -81,12 +86,17 @@ final class RequestIdTargetTracker {
     @Nullable final String databaseScope;
     final String targetEndpoint;
     final long operationUid;
+    final boolean preferLeader;
 
     private RoutingTarget(
-        @Nullable String databaseScope, String targetEndpoint, long operationUid) {
+        @Nullable String databaseScope,
+        String targetEndpoint,
+        long operationUid,
+        boolean preferLeader) {
       this.databaseScope = databaseScope;
       this.targetEndpoint = targetEndpoint;
       this.operationUid = operationUid;
+      this.preferLeader = preferLeader;
     }
   }
 }

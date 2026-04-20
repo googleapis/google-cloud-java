@@ -37,6 +37,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.Nullable;
 import org.junit.After;
 import org.junit.Test;
@@ -177,6 +178,39 @@ public class KeyRangeCacheTest {
 
     assertNotNull(result.endpoint);
     assertEquals("server1", result.endpoint.getAddress());
+    assertEquals(KeyRangeCache.RouteFailureReason.NONE, result.failureReason);
+  }
+
+  @Test
+  public void lookupRoutingHintUsesLowestScoreWhenAllCandidatesAreExcludedOrCoolingDown() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    cache.useDeterministicRandom();
+    cache.addRanges(threeReplicaUpdate());
+
+    endpointCache.get("server1");
+    endpointCache.get("server2");
+    endpointCache.get("server3");
+
+    EndpointLatencyRegistry.recordLatency(
+        null, TEST_OPERATION_UID, false, "server1", Duration.ofNanos(300_000L));
+    EndpointLatencyRegistry.recordLatency(
+        null, TEST_OPERATION_UID, false, "server2", Duration.ofNanos(100_000L));
+    EndpointLatencyRegistry.recordLatency(
+        null, TEST_OPERATION_UID, false, "server3", Duration.ofNanos(200_000L));
+
+    RoutingHint.Builder hint =
+        RoutingHint.newBuilder().setKey(bytes("a")).setOperationUid(TEST_OPERATION_UID);
+    KeyRangeCache.RouteLookupResult result =
+        cache.lookupRoutingHint(
+            false,
+            KeyRangeCache.RangeMode.COVERING_SPLIT,
+            DirectedReadOptions.getDefaultInstance(),
+            hint,
+            address -> true);
+
+    assertNotNull(result.endpoint);
+    assertEquals("server2", result.endpoint.getAddress());
     assertEquals(KeyRangeCache.RouteFailureReason.NONE, result.failureReason);
   }
 
@@ -638,9 +672,12 @@ public class KeyRangeCacheTest {
     endpointCache.get("server2");
     endpointCache.get("server3");
 
-    cache.recordReplicaLatency(TEST_OPERATION_UID, "server1", Duration.ofNanos(300_000L));
-    cache.recordReplicaLatency(TEST_OPERATION_UID, "server2", Duration.ofNanos(100_000L));
-    cache.recordReplicaLatency(TEST_OPERATION_UID, "server3", Duration.ofNanos(200_000L));
+    EndpointLatencyRegistry.recordLatency(
+        null, TEST_OPERATION_UID, false, "server1", Duration.ofNanos(300_000L));
+    EndpointLatencyRegistry.recordLatency(
+        null, TEST_OPERATION_UID, false, "server2", Duration.ofNanos(100_000L));
+    EndpointLatencyRegistry.recordLatency(
+        null, TEST_OPERATION_UID, false, "server3", Duration.ofNanos(200_000L));
 
     RoutingHint.Builder hint =
         RoutingHint.newBuilder().setKey(bytes("a")).setOperationUid(TEST_OPERATION_UID);
@@ -666,9 +703,12 @@ public class KeyRangeCacheTest {
     endpointCache.get("server2");
     endpointCache.get("server3");
 
-    cache.recordReplicaLatency(TEST_OPERATION_UID, "server1", Duration.ofNanos(300_000L));
-    cache.recordReplicaLatency(TEST_OPERATION_UID, "server2", Duration.ofNanos(100_000L));
-    cache.recordReplicaLatency(TEST_OPERATION_UID, "server3", Duration.ofNanos(200_000L));
+    EndpointLatencyRegistry.recordLatency(
+        null, TEST_OPERATION_UID, true, "server1", Duration.ofNanos(300_000L));
+    EndpointLatencyRegistry.recordLatency(
+        null, TEST_OPERATION_UID, true, "server2", Duration.ofNanos(100_000L));
+    EndpointLatencyRegistry.recordLatency(
+        null, TEST_OPERATION_UID, true, "server3", Duration.ofNanos(200_000L));
 
     RoutingHint.Builder hint =
         RoutingHint.newBuilder().setKey(bytes("a")).setOperationUid(TEST_OPERATION_UID);
@@ -787,7 +827,7 @@ public class KeyRangeCacheTest {
     endpointCache.get("server2");
     endpointCache.get("server3");
 
-    EndpointLatencyRegistry.beginRequest("server1");
+    endpointCache.get("server1").incrementActiveRequests();
 
     ChannelEndpoint server =
         cache.fillRoutingHint(
@@ -820,11 +860,6 @@ public class KeyRangeCacheTest {
             address -> false);
 
     assertNotNull(result.endpoint);
-    assertNotNull(result.selectionDetail);
-    assertEquals("latency_score", result.selectionDetail.selectionReason);
-    assertEquals(10_000.0D, result.selectionDetail.selectedScore, 0.0D);
-    assertTrue(Double.isFinite(result.selectionDetail.scoreGap()));
-    assertEquals(0.0D, result.selectionDetail.scoreGap(), 0.0D);
   }
 
   @Test
@@ -840,9 +875,9 @@ public class KeyRangeCacheTest {
 
     cache.recordReplicaLatency(TEST_OPERATION_UID, "server1", Duration.ofNanos(100_000L));
     cache.recordReplicaLatency(TEST_OPERATION_UID, "server2", Duration.ofNanos(300_000L));
-    EndpointLatencyRegistry.beginRequest("server1");
-    EndpointLatencyRegistry.beginRequest("server1");
-    EndpointLatencyRegistry.beginRequest("server1");
+    endpointCache.get("server1").incrementActiveRequests();
+    endpointCache.get("server1").incrementActiveRequests();
+    endpointCache.get("server1").incrementActiveRequests();
 
     ChannelEndpoint server =
         cache.fillRoutingHint(
@@ -896,6 +931,30 @@ public class KeyRangeCacheTest {
 
     assertNotNull(penalizedSelection);
     assertTrue(!baselineServer.getAddress().equals(penalizedSelection.getAddress()));
+  }
+
+  @Test
+  public void preferLeaderFalseIgnoresPreferLeaderTrueScoreBucket() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    cache.useDeterministicRandom();
+    cache.addRanges(twoReplicaUpdate());
+
+    endpointCache.get("server1");
+    endpointCache.get("server2");
+
+    EndpointLatencyRegistry.recordLatency(
+        null, TEST_OPERATION_UID, true, "server2", Duration.ofMillis(1));
+
+    ChannelEndpoint server =
+        cache.fillRoutingHint(
+            false,
+            KeyRangeCache.RangeMode.COVERING_SPLIT,
+            DirectedReadOptions.getDefaultInstance(),
+            RoutingHint.newBuilder().setKey(bytes("a")).setOperationUid(TEST_OPERATION_UID));
+
+    assertNotNull(server);
+    assertEquals("server1", server.getAddress());
   }
 
   // --- Eviction and recreation tests ---
@@ -1189,6 +1248,7 @@ public class KeyRangeCacheTest {
   static final class FakeEndpoint implements ChannelEndpoint {
     private final String address;
     private final FakeManagedChannel channel = new FakeManagedChannel();
+    private final AtomicInteger activeRequests = new AtomicInteger();
     private EndpointHealthState state = EndpointHealthState.READY;
 
     FakeEndpoint(String address) {
@@ -1213,6 +1273,21 @@ public class KeyRangeCacheTest {
     @Override
     public ManagedChannel getChannel() {
       return channel;
+    }
+
+    @Override
+    public void incrementActiveRequests() {
+      activeRequests.incrementAndGet();
+    }
+
+    @Override
+    public void decrementActiveRequests() {
+      activeRequests.updateAndGet(current -> current > 0 ? current - 1 : 0);
+    }
+
+    @Override
+    public int getActiveRequestCount() {
+      return Math.max(0, activeRequests.get());
     }
 
     void setState(EndpointHealthState state) {

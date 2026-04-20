@@ -35,6 +35,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -223,6 +224,7 @@ public class ChannelFinderTest {
   private static final class FakeEndpoint implements ChannelEndpoint {
     private final String address;
     private final ManagedChannel channel = new FakeManagedChannel();
+    private final AtomicInteger activeRequests = new AtomicInteger();
 
     private FakeEndpoint(String address) {
       this.address = address;
@@ -246,6 +248,21 @@ public class ChannelFinderTest {
     @Override
     public ManagedChannel getChannel() {
       return channel;
+    }
+
+    @Override
+    public void incrementActiveRequests() {
+      activeRequests.incrementAndGet();
+    }
+
+    @Override
+    public void decrementActiveRequests() {
+      activeRequests.updateAndGet(current -> current > 0 ? current - 1 : 0);
+    }
+
+    @Override
+    public int getActiveRequestCount() {
+      return Math.max(0, activeRequests.get());
     }
   }
 

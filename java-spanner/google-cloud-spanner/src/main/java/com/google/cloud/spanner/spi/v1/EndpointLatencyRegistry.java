@@ -22,10 +22,8 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import java.time.Duration;
 import java.util.Objects;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /** Shared process-local latency scores for routed Spanner endpoints. */
 final class EndpointLatencyRegistry {
@@ -39,8 +37,6 @@ final class EndpointLatencyRegistry {
 
   private static volatile Cache<TrackerKey, LatencyTracker> TRACKERS =
       newTrackerCache(Ticker.systemTicker());
-  private static final ConcurrentHashMap<String, AtomicInteger> INFLIGHT_REQUESTS =
-      new ConcurrentHashMap<>();
 
   private EndpointLatencyRegistry() {}
 
@@ -48,7 +44,16 @@ final class EndpointLatencyRegistry {
       @javax.annotation.Nullable String databaseScope,
       long operationUid,
       String endpointLabelOrAddress) {
-    TrackerKey trackerKey = trackerKey(databaseScope, operationUid, endpointLabelOrAddress);
+    return hasScore(databaseScope, operationUid, false, endpointLabelOrAddress);
+  }
+
+  static boolean hasScore(
+      @javax.annotation.Nullable String databaseScope,
+      long operationUid,
+      boolean preferLeader,
+      String endpointLabelOrAddress) {
+    TrackerKey trackerKey =
+        trackerKey(databaseScope, operationUid, preferLeader, endpointLabelOrAddress);
     return trackerKey != null && TRACKERS.getIfPresent(trackerKey) != null;
   }
 
@@ -56,11 +61,38 @@ final class EndpointLatencyRegistry {
       @javax.annotation.Nullable String databaseScope,
       long operationUid,
       String endpointLabelOrAddress) {
-    TrackerKey trackerKey = trackerKey(databaseScope, operationUid, endpointLabelOrAddress);
+    return getSelectionCost(databaseScope, operationUid, false, null, endpointLabelOrAddress);
+  }
+
+  static double getSelectionCost(
+      @javax.annotation.Nullable String databaseScope,
+      long operationUid,
+      boolean preferLeader,
+      String endpointLabelOrAddress) {
+    return getSelectionCost(
+        databaseScope, operationUid, preferLeader, null, endpointLabelOrAddress);
+  }
+
+  static double getSelectionCost(
+      @javax.annotation.Nullable String databaseScope,
+      long operationUid,
+      @javax.annotation.Nullable ChannelEndpoint endpoint,
+      String endpointLabelOrAddress) {
+    return getSelectionCost(databaseScope, operationUid, false, endpoint, endpointLabelOrAddress);
+  }
+
+  static double getSelectionCost(
+      @javax.annotation.Nullable String databaseScope,
+      long operationUid,
+      boolean preferLeader,
+      @javax.annotation.Nullable ChannelEndpoint endpoint,
+      String endpointLabelOrAddress) {
+    TrackerKey trackerKey =
+        trackerKey(databaseScope, operationUid, preferLeader, endpointLabelOrAddress);
     if (trackerKey == null) {
       return Double.MAX_VALUE;
     }
-    double activeRequests = getInflight(endpointLabelOrAddress);
+    double activeRequests = endpoint == null ? 0.0 : endpoint.getActiveRequestCount();
     LatencyTracker tracker = TRACKERS.getIfPresent(trackerKey);
     if (tracker != null) {
       return tracker.getScore() * (activeRequests + 1.0);
@@ -76,7 +108,17 @@ final class EndpointLatencyRegistry {
       long operationUid,
       String endpointLabelOrAddress,
       Duration latency) {
-    TrackerKey trackerKey = trackerKey(databaseScope, operationUid, endpointLabelOrAddress);
+    recordLatency(databaseScope, operationUid, false, endpointLabelOrAddress, latency);
+  }
+
+  static void recordLatency(
+      @javax.annotation.Nullable String databaseScope,
+      long operationUid,
+      boolean preferLeader,
+      String endpointLabelOrAddress,
+      Duration latency) {
+    TrackerKey trackerKey =
+        trackerKey(databaseScope, operationUid, preferLeader, endpointLabelOrAddress);
     if (trackerKey == null || latency == null) {
       return;
     }
@@ -87,7 +129,16 @@ final class EndpointLatencyRegistry {
       @javax.annotation.Nullable String databaseScope,
       long operationUid,
       String endpointLabelOrAddress) {
-    recordError(databaseScope, operationUid, endpointLabelOrAddress, DEFAULT_ERROR_PENALTY);
+    recordError(databaseScope, operationUid, false, endpointLabelOrAddress, DEFAULT_ERROR_PENALTY);
+  }
+
+  static void recordError(
+      @javax.annotation.Nullable String databaseScope,
+      long operationUid,
+      boolean preferLeader,
+      String endpointLabelOrAddress) {
+    recordError(
+        databaseScope, operationUid, preferLeader, endpointLabelOrAddress, DEFAULT_ERROR_PENALTY);
   }
 
   static void recordError(
@@ -95,46 +146,26 @@ final class EndpointLatencyRegistry {
       long operationUid,
       String endpointLabelOrAddress,
       Duration penalty) {
-    TrackerKey trackerKey = trackerKey(databaseScope, operationUid, endpointLabelOrAddress);
+    recordError(databaseScope, operationUid, false, endpointLabelOrAddress, penalty);
+  }
+
+  static void recordError(
+      @javax.annotation.Nullable String databaseScope,
+      long operationUid,
+      boolean preferLeader,
+      String endpointLabelOrAddress,
+      Duration penalty) {
+    TrackerKey trackerKey =
+        trackerKey(databaseScope, operationUid, preferLeader, endpointLabelOrAddress);
     if (trackerKey == null || penalty == null) {
       return;
     }
     getOrCreateTracker(trackerKey).recordError(penalty);
   }
 
-  static void beginRequest(String endpointLabelOrAddress) {
-    String address = normalizeAddress(endpointLabelOrAddress);
-    if (address == null) {
-      return;
-    }
-    INFLIGHT_REQUESTS.computeIfAbsent(address, ignored -> new AtomicInteger()).incrementAndGet();
-  }
-
-  static void finishRequest(String endpointLabelOrAddress) {
-    String address = normalizeAddress(endpointLabelOrAddress);
-    if (address == null) {
-      return;
-    }
-    AtomicInteger counter = INFLIGHT_REQUESTS.get(address);
-    if (counter == null) {
-      return;
-    }
-    counter.updateAndGet(current -> current > 0 ? current - 1 : 0);
-  }
-
-  static int getInflight(String endpointLabelOrAddress) {
-    String address = normalizeAddress(endpointLabelOrAddress);
-    if (address == null) {
-      return 0;
-    }
-    AtomicInteger counter = INFLIGHT_REQUESTS.get(address);
-    return counter == null ? 0 : Math.max(0, counter.get());
-  }
-
   @VisibleForTesting
   static void clear() {
     TRACKERS.invalidateAll();
-    INFLIGHT_REQUESTS.clear();
   }
 
   @VisibleForTesting
@@ -155,11 +186,20 @@ final class EndpointLatencyRegistry {
       @javax.annotation.Nullable String databaseScope,
       long operationUid,
       String endpointLabelOrAddress) {
+    return trackerKey(databaseScope, operationUid, false, endpointLabelOrAddress);
+  }
+
+  @VisibleForTesting
+  static TrackerKey trackerKey(
+      @javax.annotation.Nullable String databaseScope,
+      long operationUid,
+      boolean preferLeader,
+      String endpointLabelOrAddress) {
     String address = normalizeAddress(endpointLabelOrAddress);
     if (operationUid <= 0 || address == null) {
       return null;
     }
-    return new TrackerKey(normalizeScope(databaseScope), operationUid, address);
+    return new TrackerKey(normalizeScope(databaseScope), operationUid, preferLeader, address);
   }
 
   private static long defaultRttMicros() {
@@ -190,11 +230,14 @@ final class EndpointLatencyRegistry {
   static final class TrackerKey {
     private final String databaseScope;
     private final long operationUid;
+    private final boolean preferLeader;
     private final String address;
 
-    private TrackerKey(String databaseScope, long operationUid, String address) {
+    private TrackerKey(
+        String databaseScope, long operationUid, boolean preferLeader, String address) {
       this.databaseScope = databaseScope;
       this.operationUid = operationUid;
+      this.preferLeader = preferLeader;
       this.address = address;
     }
 
@@ -208,18 +251,19 @@ final class EndpointLatencyRegistry {
       }
       TrackerKey that = (TrackerKey) other;
       return operationUid == that.operationUid
+          && preferLeader == that.preferLeader
           && Objects.equals(databaseScope, that.databaseScope)
           && Objects.equals(address, that.address);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(databaseScope, operationUid, address);
+      return Objects.hash(databaseScope, operationUid, preferLeader, address);
     }
 
     @Override
     public String toString() {
-      return databaseScope + ":" + operationUid + "@" + address;
+      return databaseScope + ":" + operationUid + ":" + preferLeader + "@" + address;
     }
   }
 }

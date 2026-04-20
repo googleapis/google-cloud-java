@@ -33,6 +33,7 @@ import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -204,6 +205,7 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
   static class GrpcChannelEndpoint implements ChannelEndpoint {
     private final String address;
     private final ManagedChannel channel;
+    private final AtomicInteger activeRequests = new AtomicInteger();
 
     /**
      * Creates a server from a channel provider.
@@ -288,6 +290,21 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
     @Override
     public ManagedChannel getChannel() {
       return channel;
+    }
+
+    @Override
+    public void incrementActiveRequests() {
+      activeRequests.incrementAndGet();
+    }
+
+    @Override
+    public void decrementActiveRequests() {
+      activeRequests.updateAndGet(current -> current > 0 ? current - 1 : 0);
+    }
+
+    @Override
+    public int getActiveRequestCount() {
+      return Math.max(0, activeRequests.get());
     }
   }
 }

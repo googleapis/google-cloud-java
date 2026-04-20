@@ -234,6 +234,7 @@ class HeaderInterceptor implements ClientInterceptor {
     EndpointLatencyRegistry.recordLatency(
         routingTarget.databaseScope,
         routingTarget.operationUid,
+        routingTarget.preferLeader,
         routingTarget.targetEndpoint,
         Duration.ofNanos(latencyNanos));
   }
