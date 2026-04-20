@@ -48,13 +48,14 @@ function update_config() {
 }
 
 # Update an action to a new version in GitHub action.
+# the second argument must have the git tag (including "v").
 function update_action() {
     local key_word=$1
     local new_value=$2
     local file=$3
     echo "Update ${key_word} to ${new_value} in ${file}"
     # use a different delimiter because the key_word contains "/".
-    sed -i -e "s|${key_word}@v.*$|${key_word}@v${new_value}|" "${file}"
+    sed -i -e "s|${key_word}@[^ ]*$|${key_word}@${new_value}|" "${file}"
 }
 
 # The parameters of this script is:
@@ -143,12 +144,16 @@ rm -rf tmp-googleapis
 update_config "googleapis_commitish" "${latest_commit}" "${generation_config}"
 
 # Update gapic-generator-java version to the latest
-latest_version=$(get_latest_released_version "com.google.api" "gapic-generator-java")
-update_config "gapic_generator_version" "${latest_version}" "${generation_config}"
+latest_gapic_generator_version=$(get_latest_released_version "com.google.api" "gapic-generator-java")
+update_config "gapic_generator_version" "${latest_gapic_generator_version}" "${generation_config}"
 
-# Update composite action version to latest gapic-generator-java version
+# Update the GitHub Actions reference to the latest.
+# After the google-cloud-java monorepo migration of sdk-platform-java,
+# we cannot rely on the gapic-generator-java version tag. Let's use
+# the shared dependencies BOM version
+latest_shared_dependencies_bom_version=$(get_latest_released_version "com.google.cloud" "google-cloud-shared-dependencies")
 update_action "googleapis/google-cloud-java/sdk-platform-java/.github/scripts" \
-  "${latest_version}" \
+  "google-cloud-shared-dependencies/v${latest_shared_dependencies_bom_version}" \
   "${workflow}"
 
 # Update libraries-bom version to the latest
