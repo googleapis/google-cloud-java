@@ -418,9 +418,6 @@ final class BigQueryJdbcOAuthUtility {
       userAuthorizerBuilder.setTokenServerUri(
           new URI(overrideProperties.get(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)));
     }
-    List<String> scopes = new java.util.ArrayList<>(DEFAULT_BIGQUERY_SCOPES);
-
-    userAuthorizerBuilder.setScopes(scopes);
 
     return userAuthorizerBuilder.build();
   }
@@ -550,14 +547,11 @@ final class BigQueryJdbcOAuthUtility {
           overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
     }
 
-    UserCredentials userCredentials = userCredentialsBuilder.build();
-
     LOG.info("Connection established. Auth Method: Pre-generated Refresh Token.");
-    return userCredentials;
+    return userCredentialsBuilder.build();
   }
 
-  private static GoogleCredentials getApplicationDefaultCredentials(
-      Map<String, String> authProperties, String callerClassName) {
+  private static GoogleCredentials getApplicationDefaultCredentials(String callerClassName) {
     LOG.finest("++enter++\t" + callerClassName);
     try {
       GoogleCredentials credentials = GoogleCredentials.getApplicationDefault();
@@ -620,18 +614,15 @@ final class BigQueryJdbcOAuthUtility {
 
       GoogleCredentials credentials;
       if (credentialsPath != null) {
-        credentials =
-            ExternalAccountCredentials.fromStream(Files.newInputStream(Paths.get(credentialsPath)));
+        return ExternalAccountCredentials.fromStream(
+            Files.newInputStream(Paths.get(credentialsPath)));
       } else if (jsonObject != null) {
-        credentials =
-            ExternalAccountCredentials.fromStream(
-                new ByteArrayInputStream(jsonObject.toString().getBytes()));
+        return ExternalAccountCredentials.fromStream(
+            new ByteArrayInputStream(jsonObject.toString().getBytes()));
       } else {
         throw new IllegalArgumentException(
             "Insufficient info provided for external authentication");
       }
-
-      return credentials;
     } catch (IOException e) {
       throw new BigQueryJdbcRuntimeException(e);
     }
