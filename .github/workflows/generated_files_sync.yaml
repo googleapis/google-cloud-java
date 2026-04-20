@@ -17,7 +17,7 @@ on:
   pull_request:
 name: generation diff
 env:
-  library_generation_image_tag: 2.71.0  # {x-version-update:gapic-generator-java:current}
+  library_generation_image_tag: 2.72.0-SNAPSHOT  # {x-version-update:gapic-generator-java:current}
 jobs:
   root-pom:
     # root pom.xml does not have diff from generated one

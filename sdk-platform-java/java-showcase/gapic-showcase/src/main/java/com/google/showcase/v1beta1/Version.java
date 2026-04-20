@@ -21,7 +21,7 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 public final class Version {
   // {x-version-update-start:gapic-showcase:current}
-  public static final String VERSION = "0.17.0";
+  public static final String VERSION = "0.18.0-SNAPSHOT";
   // {x-version-update-end}
 
 }
