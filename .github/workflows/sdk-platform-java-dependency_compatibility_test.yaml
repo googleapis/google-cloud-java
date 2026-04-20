@@ -91,6 +91,6 @@ jobs:
           if [[ -n "${{ env.DEPENDENCIES_LIST }}" ]]; then
             ../sdk-platform-java/.github/scripts/test_dependency_compatibility.sh -l ${{ env.DEPENDENCIES_LIST }}
           else
-            ../sdk-platform-java/.github/scripts/test_dependency_compatibility.sh -f ../dependencies.txt
+            ../sdk-platform-java/.github/scripts/test_dependency_compatibility.sh -f ../sdk-platform-java/dependencies.txt
           fi
         working-directory: java-showcase
