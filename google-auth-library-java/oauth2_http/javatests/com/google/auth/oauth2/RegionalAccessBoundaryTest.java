@@ -31,9 +31,9 @@
 
 package com.google.auth.oauth2;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.client.testing.http.MockHttpTransport;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
@@ -41,17 +41,15 @@ import com.google.api.client.util.Clock;
 import com.google.auth.http.HttpTransportFactory;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Collections;
 import java.util.concurrent.atomic.AtomicLong;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
 public class RegionalAccessBoundaryTest {
 
   private static final long TTL = RegionalAccessBoundary.TTL_MILLIS;
@@ -59,12 +57,12 @@ public class RegionalAccessBoundaryTest {
 
   private TestClock testClock;
 
-  @Before
+  @BeforeEach
   public void setUp() {
     testClock = new TestClock();
   }
 
-  @After
+  @AfterEach
   public void tearDown() {}
 
   @Test
@@ -125,6 +123,27 @@ public class RegionalAccessBoundaryTest {
     // The transient clock field should be restored to Clock.SYSTEM upon deserialization,
     // thereby avoiding a NullPointerException when checking expiration.
     assertFalse(deserializedRab.isExpired());
+  }
+
+  @Test
+  public void testRefreshClosesResponse() throws Exception {
+    final String url = "https://example.com/rab";
+    final AccessToken token =
+        new AccessToken("token", new java.util.Date(System.currentTimeMillis() + 3600000L));
+
+    TrackingMockLowLevelHttpResponse mockResponse = new TrackingMockLowLevelHttpResponse();
+    mockResponse.setContentType("application/json");
+    mockResponse.setContent("{\"encodedLocations\": \"encoded\", \"locations\": [\"loc\"]}");
+
+    MockHttpTransport transport =
+        new MockHttpTransport.Builder().setLowLevelHttpResponse(mockResponse).build();
+    HttpTransportFactory transportFactory = () -> transport;
+
+    RegionalAccessBoundary rab =
+        RegionalAccessBoundary.refresh(transportFactory, url, token, testClock, 1000);
+
+    assertEquals("encoded", rab.getEncodedLocations());
+    assertTrue(mockResponse.isDisconnected(), "Response should have been disconnected");
   }
 
   @Test
@@ -200,8 +219,8 @@ public class RegionalAccessBoundaryTest {
     }
 
     assertTrue(
-        "Refresh should have completed and updated the cache within 5 seconds",
-        resultRab != null && newerEncoded.equals(resultRab.getEncodedLocations()));
+        resultRab != null && newerEncoded.equals(resultRab.getEncodedLocations()),
+        "Refresh should have completed and updated the cache within 5 seconds");
     assertEquals(newerEncoded, resultRab.getEncodedLocations());
   }
 
@@ -215,6 +234,20 @@ public class RegionalAccessBoundaryTest {
 
     public void set(long millis) {
       currentTime.set(millis);
+    }
+  }
+
+  private static class TrackingMockLowLevelHttpResponse extends MockLowLevelHttpResponse {
+    private boolean disconnected = false;
+
+    @Override
+    public void disconnect() throws IOException {
+      super.disconnect();
+      disconnected = true;
+    }
+
+    public boolean isDisconnected() {
+      return disconnected;
     }
   }
 }

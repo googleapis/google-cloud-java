@@ -92,11 +92,6 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
     transportFactory = new MockExternalAccountCredentialsTransportFactory();
   }
 
-  @org.junit.jupiter.api.AfterEach
-  void tearDown() {
-    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
-  }
-
   @Test
   void fromStream_identityPoolCredentials() throws IOException {
     GenericJson json = buildJsonIdentityPoolCredential();
@@ -1302,9 +1297,7 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
   @Test
   public void refresh_workload_regionalAccessBoundarySuccess()
       throws IOException, InterruptedException {
-    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
-    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+
     String audience =
         "//iam.googleapis.com/projects/12345/locations/global/workloadIdentityPools/my-pool/providers/my-provider";
 
@@ -1339,9 +1332,7 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
   @Test
   public void refresh_workforce_regionalAccessBoundarySuccess()
       throws IOException, InterruptedException {
-    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
-    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+
     String audience =
         "//iam.googleapis.com/locations/global/workforcePools/my-pool/providers/my-provider";
 
@@ -1376,9 +1367,7 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
   @Test
   public void refresh_impersonated_workload_regionalAccessBoundarySuccess()
       throws IOException, InterruptedException {
-    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
-    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+
     String projectNumber = "12345";
     String poolId = "my-pool";
     String providerId = "my-provider";
@@ -1440,9 +1429,7 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
   @Test
   public void refresh_impersonated_workforce_regionalAccessBoundarySuccess()
       throws IOException, InterruptedException {
-    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
-    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+
     String poolId = "my-pool";
     String providerId = "my-provider";
     String audience =

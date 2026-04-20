@@ -163,11 +163,6 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
     mockTransportFactory = new MockIAMCredentialsServiceTransportFactory();
   }
 
-  @org.junit.After
-  public void tearDown() {
-    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
-  }
-
   static GoogleCredentials getSourceCredentials() throws IOException {
     MockTokenServerTransportFactory transportFactory = new MockTokenServerTransportFactory();
     PrivateKey privateKey = OAuth2Utils.privateKeyFromPkcs8(SA_PRIVATE_KEY_PKCS8);
@@ -1276,9 +1271,7 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
 
   @Test
   void refresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
-    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
-    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
+
     // Mock regional access boundary response
     RegionalAccessBoundary regionalAccessBoundary = REGIONAL_ACCESS_BOUNDARY;
 

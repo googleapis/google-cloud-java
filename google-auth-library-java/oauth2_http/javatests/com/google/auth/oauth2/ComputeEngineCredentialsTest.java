@@ -80,11 +80,6 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
   @org.junit.jupiter.api.BeforeEach
   void setUp() {}
 
-  @org.junit.jupiter.api.AfterEach
-  void tearDown() {
-    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
-  }
-
   private static final URI CALL_URI = URI.create("http://googleapis.com/testapi/v1/foo");
 
   private static final String TOKEN_URL =
@@ -1188,9 +1183,6 @@ class ComputeEngineCredentialsTest extends BaseSerializationTest {
 
   @org.junit.jupiter.api.Test
   void refresh_regionalAccessBoundarySuccess() throws IOException, InterruptedException {
-    TestEnvironmentProvider environmentProvider = new TestEnvironmentProvider();
-    RegionalAccessBoundary.setEnvironmentProviderForTest(environmentProvider);
-    environmentProvider.setEnv(RegionalAccessBoundary.ENABLE_EXPERIMENT_ENV_VAR, "1");
 
     String defaultAccountEmail = "default@email.com";
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
