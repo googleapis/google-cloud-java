@@ -100,10 +100,6 @@ public abstract class ChannelPoolSettings {
    * the pool better handle sudden bursts or spikes in requests by allowing it to scale up faster.
    * Regardless of this setting, the number of channels will never exceed {@link
    * #getMaxChannelCount()}.
-   *
-   * <p><b>Warning:</b> It is not recommended to configure this value to exceed {@link
-   * #getMaxChannelCount()}. While the resizing logic safely handles larger values by clamping
-   * adjustments to the bounds, setting it excessively high may obscure configuration intent.
    */
   public abstract int getMaxResizeDelta();
 
@@ -143,6 +139,7 @@ public abstract class ChannelPoolSettings {
         .setMaxRpcsPerChannel(Integer.MAX_VALUE)
         .setMinChannelCount(size)
         .setMaxChannelCount(size)
+        .setMaxResizeDelta(Math.min(DEFAULT_MAX_RESIZE_DELTA, size))
         .build();
   }
 
@@ -194,6 +191,9 @@ public abstract class ChannelPoolSettings {
           s.getInitialChannelCount() > 0, "Initial channel count must be greater than 0");
       Preconditions.checkState(
           s.getMaxResizeDelta() > 0, "Max resize delta must be greater than 0");
+      Preconditions.checkState(
+          s.getMaxResizeDelta() <= s.getMaxChannelCount(),
+          "Max resize delta cannot be greater than max channel count");
       return s;
     }
   }
