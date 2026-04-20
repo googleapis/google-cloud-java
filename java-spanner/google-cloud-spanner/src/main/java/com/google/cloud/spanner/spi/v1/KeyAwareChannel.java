@@ -413,11 +413,6 @@ final class KeyAwareChannel extends ManagedChannel {
         || statusCode == io.grpc.Status.Code.UNAVAILABLE;
   }
 
-  private Predicate<String> consumeExcludedEndpointsForCurrentCall(
-      @Nullable String logicalRequestKey) {
-    return endpointOverloadCooldowns::isCoolingDown;
-  }
-
   @VisibleForTesting
   boolean isCoolingDown(String address) {
     return endpointOverloadCooldowns.isCoolingDown(address);
@@ -844,7 +839,7 @@ final class KeyAwareChannel extends ManagedChannel {
 
     private Predicate<String> excludedEndpoints() {
       if (excludedEndpoints == null) {
-        excludedEndpoints = parentChannel.consumeExcludedEndpointsForCurrentCall(logicalRequestKey);
+        excludedEndpoints = parentChannel.endpointOverloadCooldowns::isCoolingDown;
       }
       return excludedEndpoints;
     }

@@ -18,6 +18,7 @@ package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.Lists;
 import com.google.common.hash.Hashing;
 import com.google.protobuf.ByteString;
 import com.google.spanner.v1.CacheUpdate;
@@ -27,7 +28,6 @@ import com.google.spanner.v1.Range;
 import com.google.spanner.v1.RoutingHint;
 import com.google.spanner.v1.Tablet;
 import java.time.Duration;
-import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -740,7 +740,7 @@ public final class KeyRangeCache {
           directedReadOptions.getReplicasCase()
               != DirectedReadOptions.ReplicasCase.REPLICAS_NOT_SET;
       Map<String, ChannelEndpoint> resolvedEndpoints = new HashMap<>();
-      SelectionStats selectionStats = new SelectionStats();
+      SelectionState selectionStats = new SelectionState();
 
       TabletSnapshot selected =
           selectTablet(
@@ -812,7 +812,7 @@ public final class KeyRangeCache {
         Set<Long> skippedTabletUids,
         List<SkippedTabletDetail> skippedTabletDetails,
         Map<String, ChannelEndpoint> resolvedEndpoints,
-        SelectionStats selectionStats) {
+        SelectionState selectionStats) {
       if (!preferLeader || hintBuilder.getOperationUid() > 0L) {
         TabletSnapshot preferredLeader =
             preferLeader ? localLeaderForScoreBias(snapshot, hasDirectedReadOptions) : null;
@@ -893,7 +893,7 @@ public final class KeyRangeCache {
         Set<Long> skippedTabletUids,
         List<SkippedTabletDetail> skippedTabletDetails,
         Map<String, ChannelEndpoint> resolvedEndpoints,
-        SelectionStats selectionStats,
+        SelectionState selectionStats,
         @javax.annotation.Nullable TabletSnapshot preferredLeader) {
       long operationUid = hintBuilder.getOperationUid();
       List<EligibleReplica> eligibleReplicas =
@@ -924,7 +924,7 @@ public final class KeyRangeCache {
         Set<Long> skippedTabletUids,
         List<SkippedTabletDetail> skippedTabletDetails,
         Map<String, ChannelEndpoint> resolvedEndpoints,
-        SelectionStats selectionStats,
+        SelectionState selectionStats,
         long operationUid,
         boolean preferLeader,
         @javax.annotation.Nullable TabletSnapshot preferredLeader) {
@@ -991,17 +991,7 @@ public final class KeyRangeCache {
     }
 
     private List<ChannelEndpoint> endpointView(List<EligibleReplica> eligibleReplicas) {
-      return new AbstractList<ChannelEndpoint>() {
-        @Override
-        public ChannelEndpoint get(int index) {
-          return eligibleReplicas.get(index).endpoint;
-        }
-
-        @Override
-        public int size() {
-          return eligibleReplicas.size();
-        }
-      };
+      return Lists.transform(eligibleReplicas, candidate -> candidate.endpoint);
     }
 
     private double selectionCostForEndpoint(
@@ -1109,7 +1099,7 @@ public final class KeyRangeCache {
         Set<Long> skippedTabletUids,
         List<SkippedTabletDetail> skippedTabletDetails,
         Map<String, ChannelEndpoint> resolvedEndpoints,
-        SelectionStats selectionStats) {
+        SelectionState selectionStats) {
       String targetEndpointLabel = endpointLabel(snapshot, tablet);
       if (tablet.skip) {
         selectionStats.sawNonExcludedReplica = true;
@@ -1179,7 +1169,7 @@ public final class KeyRangeCache {
       return true;
     }
 
-    private final class SelectionStats {
+    private final class SelectionState {
       private boolean sawMatchingReplica;
       private boolean sawExcludedReplica;
       private boolean sawNonExcludedReplica;

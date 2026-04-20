@@ -26,8 +26,13 @@ import javax.annotation.Nullable;
 final class RequestIdTargetTracker {
   @VisibleForTesting static final long MAX_TRACKED_TARGETS = 1_000_000L;
 
+  @VisibleForTesting
+  static final int TARGET_CACHE_CONCURRENCY =
+      Math.max(4, Runtime.getRuntime().availableProcessors());
+
   private static final Cache<String, RoutingTarget> TARGETS =
       CacheBuilder.newBuilder()
+          .concurrencyLevel(TARGET_CACHE_CONCURRENCY)
           .maximumSize(MAX_TRACKED_TARGETS)
           .expireAfterWrite(10, TimeUnit.MINUTES)
           .build();
