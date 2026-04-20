@@ -84,14 +84,16 @@ public class EndpointLatencyRegistryTest {
     EndpointLatencyRegistry.useTrackerTicker(ticker);
 
     EndpointLatencyRegistry.recordLatency(
-        DATABASE_SCOPE, 101L, "server-a:1234", Duration.ofMillis(5));
+        DATABASE_SCOPE, 101L, false, "server-a:1234", Duration.ofMillis(5));
 
-    assertThat(EndpointLatencyRegistry.hasScore(DATABASE_SCOPE, 101L, "server-a:1234")).isTrue();
+    assertThat(EndpointLatencyRegistry.hasScore(DATABASE_SCOPE, 101L, false, "server-a:1234"))
+        .isTrue();
 
     ticker.advance(
         EndpointLatencyRegistry.TRACKER_EXPIRE_AFTER_ACCESS.toNanos() + 1L, TimeUnit.NANOSECONDS);
 
-    assertThat(EndpointLatencyRegistry.hasScore(DATABASE_SCOPE, 101L, "server-a:1234")).isFalse();
+    assertThat(EndpointLatencyRegistry.hasScore(DATABASE_SCOPE, 101L, false, "server-a:1234"))
+        .isFalse();
   }
 
   @Test
@@ -100,31 +102,37 @@ public class EndpointLatencyRegistryTest {
     EndpointLatencyRegistry.useTrackerTicker(ticker);
 
     EndpointLatencyRegistry.recordLatency(
-        DATABASE_SCOPE, 202L, "server-b:1234", Duration.ofMillis(7));
+        DATABASE_SCOPE, 202L, false, "server-b:1234", Duration.ofMillis(7));
 
     ticker.advance(
         EndpointLatencyRegistry.TRACKER_EXPIRE_AFTER_ACCESS.toNanos() / 2L, TimeUnit.NANOSECONDS);
-    assertThat(EndpointLatencyRegistry.getSelectionCost(DATABASE_SCOPE, 202L, "server-b:1234"))
+    assertThat(
+            EndpointLatencyRegistry.getSelectionCost(DATABASE_SCOPE, 202L, false, "server-b:1234"))
         .isGreaterThan(0.0);
 
     ticker.advance(
         EndpointLatencyRegistry.TRACKER_EXPIRE_AFTER_ACCESS.toNanos() / 2L, TimeUnit.NANOSECONDS);
 
-    assertThat(EndpointLatencyRegistry.hasScore(DATABASE_SCOPE, 202L, "server-b:1234")).isTrue();
+    assertThat(EndpointLatencyRegistry.hasScore(DATABASE_SCOPE, 202L, false, "server-b:1234"))
+        .isTrue();
   }
 
   @Test
   public void trackersAreIsolatedByDatabaseScope() {
     EndpointLatencyRegistry.recordLatency(
-        "projects/p1/instances/i1/databases/d1", 303L, "server-a:1234", Duration.ofMillis(9));
+        "projects/p1/instances/i1/databases/d1",
+        303L,
+        false,
+        "server-a:1234",
+        Duration.ofMillis(9));
 
     assertThat(
             EndpointLatencyRegistry.hasScore(
-                "projects/p1/instances/i1/databases/d1", 303L, "server-a:1234"))
+                "projects/p1/instances/i1/databases/d1", 303L, false, "server-a:1234"))
         .isTrue();
     assertThat(
             EndpointLatencyRegistry.hasScore(
-                "projects/p2/instances/i2/databases/d2", 303L, "server-a:1234"))
+                "projects/p2/instances/i2/databases/d2", 303L, false, "server-a:1234"))
         .isFalse();
   }
 

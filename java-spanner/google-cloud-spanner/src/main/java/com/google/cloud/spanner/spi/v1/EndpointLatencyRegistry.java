@@ -43,13 +43,6 @@ final class EndpointLatencyRegistry {
   static boolean hasScore(
       @javax.annotation.Nullable String databaseScope,
       long operationUid,
-      String endpointLabelOrAddress) {
-    return hasScore(databaseScope, operationUid, false, endpointLabelOrAddress);
-  }
-
-  static boolean hasScore(
-      @javax.annotation.Nullable String databaseScope,
-      long operationUid,
       boolean preferLeader,
       String endpointLabelOrAddress) {
     TrackerKey trackerKey =
@@ -60,25 +53,10 @@ final class EndpointLatencyRegistry {
   static double getSelectionCost(
       @javax.annotation.Nullable String databaseScope,
       long operationUid,
-      String endpointLabelOrAddress) {
-    return getSelectionCost(databaseScope, operationUid, false, null, endpointLabelOrAddress);
-  }
-
-  static double getSelectionCost(
-      @javax.annotation.Nullable String databaseScope,
-      long operationUid,
       boolean preferLeader,
       String endpointLabelOrAddress) {
     return getSelectionCost(
         databaseScope, operationUid, preferLeader, null, endpointLabelOrAddress);
-  }
-
-  static double getSelectionCost(
-      @javax.annotation.Nullable String databaseScope,
-      long operationUid,
-      @javax.annotation.Nullable ChannelEndpoint endpoint,
-      String endpointLabelOrAddress) {
-    return getSelectionCost(databaseScope, operationUid, false, endpoint, endpointLabelOrAddress);
   }
 
   static double getSelectionCost(
@@ -106,14 +84,6 @@ final class EndpointLatencyRegistry {
   static void recordLatency(
       @javax.annotation.Nullable String databaseScope,
       long operationUid,
-      String endpointLabelOrAddress,
-      Duration latency) {
-    recordLatency(databaseScope, operationUid, false, endpointLabelOrAddress, latency);
-  }
-
-  static void recordLatency(
-      @javax.annotation.Nullable String databaseScope,
-      long operationUid,
       boolean preferLeader,
       String endpointLabelOrAddress,
       Duration latency) {
@@ -128,25 +98,10 @@ final class EndpointLatencyRegistry {
   static void recordError(
       @javax.annotation.Nullable String databaseScope,
       long operationUid,
-      String endpointLabelOrAddress) {
-    recordError(databaseScope, operationUid, false, endpointLabelOrAddress, DEFAULT_ERROR_PENALTY);
-  }
-
-  static void recordError(
-      @javax.annotation.Nullable String databaseScope,
-      long operationUid,
       boolean preferLeader,
       String endpointLabelOrAddress) {
     recordError(
         databaseScope, operationUid, preferLeader, endpointLabelOrAddress, DEFAULT_ERROR_PENALTY);
-  }
-
-  static void recordError(
-      @javax.annotation.Nullable String databaseScope,
-      long operationUid,
-      String endpointLabelOrAddress,
-      Duration penalty) {
-    recordError(databaseScope, operationUid, false, endpointLabelOrAddress, penalty);
   }
 
   static void recordError(

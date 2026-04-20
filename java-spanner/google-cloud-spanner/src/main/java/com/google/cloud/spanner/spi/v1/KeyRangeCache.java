@@ -192,12 +192,12 @@ public final class KeyRangeCache {
 
   @VisibleForTesting
   void recordReplicaLatency(long operationUid, String address, Duration latency) {
-    EndpointLatencyRegistry.recordLatency(databaseScope, operationUid, address, latency);
+    EndpointLatencyRegistry.recordLatency(databaseScope, operationUid, false, address, latency);
   }
 
   @VisibleForTesting
   void recordReplicaError(long operationUid, String address) {
-    EndpointLatencyRegistry.recordError(databaseScope, operationUid, address);
+    EndpointLatencyRegistry.recordError(databaseScope, operationUid, false, address);
   }
 
   /** Applies cache updates. Tablets are processed inside group updates. */
