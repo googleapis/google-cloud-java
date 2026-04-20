@@ -180,6 +180,156 @@ public interface LifecycleConfigOrBuilder
    *
    *
    * <pre>
+   * Optional. The duration to keep the cluster started while idling (when no
+   * jobs are running). Passing this threshold will cause the cluster to be
+   * stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+   * representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration idle_stop_ttl = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the idleStopTtl field is set.
+   */
+  boolean hasIdleStopTtl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The duration to keep the cluster started while idling (when no
+   * jobs are running). Passing this threshold will cause the cluster to be
+   * stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+   * representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration idle_stop_ttl = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The idleStopTtl.
+   */
+  com.google.protobuf.Duration getIdleStopTtl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The duration to keep the cluster started while idling (when no
+   * jobs are running). Passing this threshold will cause the cluster to be
+   * stopped. Minimum value is 5 minutes; maximum value is 14 days (see JSON
+   * representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration idle_stop_ttl = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getIdleStopTtlOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The time when cluster will be auto-stopped (see JSON
+   * representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp auto_stop_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoStopTime field is set.
+   */
+  boolean hasAutoStopTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The time when cluster will be auto-stopped (see JSON
+   * representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp auto_stop_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoStopTime.
+   */
+  com.google.protobuf.Timestamp getAutoStopTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The time when cluster will be auto-stopped (see JSON
+   * representation of
+   * [Timestamp](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp auto_stop_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getAutoStopTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The lifetime duration of the cluster. The cluster will be
+   * auto-stopped at the end of this period, calculated from the time of
+   * submission of the create or update cluster request. Minimum value is 10
+   * minutes; maximum value is 14 days (see JSON representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration auto_stop_ttl = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoStopTtl field is set.
+   */
+  boolean hasAutoStopTtl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The lifetime duration of the cluster. The cluster will be
+   * auto-stopped at the end of this period, calculated from the time of
+   * submission of the create or update cluster request. Minimum value is 10
+   * minutes; maximum value is 14 days (see JSON representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration auto_stop_ttl = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoStopTtl.
+   */
+  com.google.protobuf.Duration getAutoStopTtl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The lifetime duration of the cluster. The cluster will be
+   * auto-stopped at the end of this period, calculated from the time of
+   * submission of the create or update cluster request. Minimum value is 10
+   * minutes; maximum value is 14 days (see JSON representation of
+   * [Duration](https://developers.google.com/protocol-buffers/docs/proto3#json)).
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration auto_stop_ttl = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getAutoStopTtlOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The time when cluster became idle (most recent job finished)
    * and became eligible for deletion due to idleness (see JSON representation
    * of
@@ -229,4 +379,6 @@ public interface LifecycleConfigOrBuilder
   com.google.protobuf.TimestampOrBuilder getIdleStartTimeOrBuilder();
 
   com.google.cloud.dataproc.v1.LifecycleConfig.TtlCase getTtlCase();
+
+  com.google.cloud.dataproc.v1.LifecycleConfig.StopTtlCase getStopTtlCase();
 }

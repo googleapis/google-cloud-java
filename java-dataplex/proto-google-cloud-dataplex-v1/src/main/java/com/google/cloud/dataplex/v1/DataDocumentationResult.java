@@ -68,6 +68,1973 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
             com.google.cloud.dataplex.v1.DataDocumentationResult.Builder.class);
   }
 
+  public interface DatasetResultOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Generated Dataset description.
+     * </pre>
+     *
+     * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The overview.
+     */
+    java.lang.String getOverview();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Generated Dataset description.
+     * </pre>
+     *
+     * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for overview.
+     */
+    com.google.protobuf.ByteString getOverviewBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Relationships suggesting how tables in the dataset are
+     * related to each other, based on their schema.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship>
+        getSchemaRelationshipsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Relationships suggesting how tables in the dataset are
+     * related to each other, based on their schema.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship getSchemaRelationships(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Relationships suggesting how tables in the dataset are
+     * related to each other, based on their schema.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getSchemaRelationshipsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Relationships suggesting how tables in the dataset are
+     * related to each other, based on their schema.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationshipOrBuilder>
+        getSchemaRelationshipsOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Relationships suggesting how tables in the dataset are
+     * related to each other, based on their schema.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationshipOrBuilder
+        getSchemaRelationshipsOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sample SQL queries for the dataset.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.Query> getQueriesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sample SQL queries for the dataset.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataDocumentationResult.Query getQueries(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sample SQL queries for the dataset.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getQueriesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sample SQL queries for the dataset.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<? extends com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder>
+        getQueriesOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sample SQL queries for the dataset.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder getQueriesOrBuilder(
+        int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Insights for a dataset resource.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult}
+   */
+  public static final class DatasetResult extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult)
+      DatasetResultOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "DatasetResult");
+    }
+
+    // Use DatasetResult.newBuilder() to construct.
+    private DatasetResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DatasetResult() {
+      overview_ = "";
+      schemaRelationships_ = java.util.Collections.emptyList();
+      queries_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.DataDocumentationProto
+          .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_DatasetResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.DataDocumentationProto
+          .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_DatasetResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult.class,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult.Builder.class);
+    }
+
+    public static final int OVERVIEW_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object overview_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Generated Dataset description.
+     * </pre>
+     *
+     * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The overview.
+     */
+    @java.lang.Override
+    public java.lang.String getOverview() {
+      java.lang.Object ref = overview_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        overview_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Generated Dataset description.
+     * </pre>
+     *
+     * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for overview.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getOverviewBytes() {
+      java.lang.Object ref = overview_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        overview_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SCHEMA_RELATIONSHIPS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship>
+        schemaRelationships_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Relationships suggesting how tables in the dataset are
+     * related to each other, based on their schema.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship>
+        getSchemaRelationshipsList() {
+      return schemaRelationships_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Relationships suggesting how tables in the dataset are
+     * related to each other, based on their schema.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationshipOrBuilder>
+        getSchemaRelationshipsOrBuilderList() {
+      return schemaRelationships_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Relationships suggesting how tables in the dataset are
+     * related to each other, based on their schema.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getSchemaRelationshipsCount() {
+      return schemaRelationships_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Relationships suggesting how tables in the dataset are
+     * related to each other, based on their schema.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+        getSchemaRelationships(int index) {
+      return schemaRelationships_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Relationships suggesting how tables in the dataset are
+     * related to each other, based on their schema.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationshipOrBuilder
+        getSchemaRelationshipsOrBuilder(int index) {
+      return schemaRelationships_.get(index);
+    }
+
+    public static final int QUERIES_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.Query> queries_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sample SQL queries for the dataset.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.Query>
+        getQueriesList() {
+      return queries_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sample SQL queries for the dataset.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder>
+        getQueriesOrBuilderList() {
+      return queries_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sample SQL queries for the dataset.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getQueriesCount() {
+      return queries_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sample SQL queries for the dataset.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.Query getQueries(int index) {
+      return queries_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sample SQL queries for the dataset.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder getQueriesOrBuilder(
+        int index) {
+      return queries_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(overview_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, overview_);
+      }
+      for (int i = 0; i < schemaRelationships_.size(); i++) {
+        output.writeMessage(3, schemaRelationships_.get(i));
+      }
+      for (int i = 0; i < queries_.size(); i++) {
+        output.writeMessage(4, queries_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(overview_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, overview_);
+      }
+      for (int i = 0; i < schemaRelationships_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, schemaRelationships_.get(i));
+      }
+      for (int i = 0; i < queries_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, queries_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult other =
+          (com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult) obj;
+
+      if (!getOverview().equals(other.getOverview())) return false;
+      if (!getSchemaRelationshipsList().equals(other.getSchemaRelationshipsList())) return false;
+      if (!getQueriesList().equals(other.getQueriesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OVERVIEW_FIELD_NUMBER;
+      hash = (53 * hash) + getOverview().hashCode();
+      if (getSchemaRelationshipsCount() > 0) {
+        hash = (37 * hash) + SCHEMA_RELATIONSHIPS_FIELD_NUMBER;
+        hash = (53 * hash) + getSchemaRelationshipsList().hashCode();
+      }
+      if (getQueriesCount() > 0) {
+        hash = (37 * hash) + QUERIES_FIELD_NUMBER;
+        hash = (53 * hash) + getQueriesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Insights for a dataset resource.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult)
+        com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataDocumentationProto
+            .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_DatasetResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataDocumentationProto
+            .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_DatasetResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult.class,
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        overview_ = "";
+        if (schemaRelationshipsBuilder_ == null) {
+          schemaRelationships_ = java.util.Collections.emptyList();
+        } else {
+          schemaRelationships_ = null;
+          schemaRelationshipsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (queriesBuilder_ == null) {
+          queries_ = java.util.Collections.emptyList();
+        } else {
+          queries_ = null;
+          queriesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.DataDocumentationProto
+            .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_DatasetResult_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult build() {
+        com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult buildPartial() {
+        com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult result =
+            new com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult result) {
+        if (schemaRelationshipsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            schemaRelationships_ = java.util.Collections.unmodifiableList(schemaRelationships_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.schemaRelationships_ = schemaRelationships_;
+        } else {
+          result.schemaRelationships_ = schemaRelationshipsBuilder_.build();
+        }
+        if (queriesBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            queries_ = java.util.Collections.unmodifiableList(queries_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.queries_ = queries_;
+        } else {
+          result.queries_ = queriesBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.overview_ = overview_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult) {
+          return mergeFrom(
+              (com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult other) {
+        if (other
+            == com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult
+                .getDefaultInstance()) return this;
+        if (!other.getOverview().isEmpty()) {
+          overview_ = other.overview_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (schemaRelationshipsBuilder_ == null) {
+          if (!other.schemaRelationships_.isEmpty()) {
+            if (schemaRelationships_.isEmpty()) {
+              schemaRelationships_ = other.schemaRelationships_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureSchemaRelationshipsIsMutable();
+              schemaRelationships_.addAll(other.schemaRelationships_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.schemaRelationships_.isEmpty()) {
+            if (schemaRelationshipsBuilder_.isEmpty()) {
+              schemaRelationshipsBuilder_.dispose();
+              schemaRelationshipsBuilder_ = null;
+              schemaRelationships_ = other.schemaRelationships_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              schemaRelationshipsBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetSchemaRelationshipsFieldBuilder()
+                      : null;
+            } else {
+              schemaRelationshipsBuilder_.addAllMessages(other.schemaRelationships_);
+            }
+          }
+        }
+        if (queriesBuilder_ == null) {
+          if (!other.queries_.isEmpty()) {
+            if (queries_.isEmpty()) {
+              queries_ = other.queries_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureQueriesIsMutable();
+              queries_.addAll(other.queries_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.queries_.isEmpty()) {
+            if (queriesBuilder_.isEmpty()) {
+              queriesBuilder_.dispose();
+              queriesBuilder_ = null;
+              queries_ = other.queries_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              queriesBuilder_ =
+                  com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                      ? internalGetQueriesFieldBuilder()
+                      : null;
+            } else {
+              queriesBuilder_.addAllMessages(other.queries_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  overview_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 26:
+                {
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship m =
+                      input.readMessage(
+                          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                              .parser(),
+                          extensionRegistry);
+                  if (schemaRelationshipsBuilder_ == null) {
+                    ensureSchemaRelationshipsIsMutable();
+                    schemaRelationships_.add(m);
+                  } else {
+                    schemaRelationshipsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 26
+              case 34:
+                {
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.Query m =
+                      input.readMessage(
+                          com.google.cloud.dataplex.v1.DataDocumentationResult.Query.parser(),
+                          extensionRegistry);
+                  if (queriesBuilder_ == null) {
+                    ensureQueriesIsMutable();
+                    queries_.add(m);
+                  } else {
+                    queriesBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 34
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object overview_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Generated Dataset description.
+       * </pre>
+       *
+       * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The overview.
+       */
+      public java.lang.String getOverview() {
+        java.lang.Object ref = overview_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          overview_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Generated Dataset description.
+       * </pre>
+       *
+       * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for overview.
+       */
+      public com.google.protobuf.ByteString getOverviewBytes() {
+        java.lang.Object ref = overview_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          overview_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Generated Dataset description.
+       * </pre>
+       *
+       * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The overview to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOverview(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        overview_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Generated Dataset description.
+       * </pre>
+       *
+       * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearOverview() {
+        overview_ = getDefaultInstance().getOverview();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Generated Dataset description.
+       * </pre>
+       *
+       * <code>string overview = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for overview to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOverviewBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        overview_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship>
+          schemaRelationships_ = java.util.Collections.emptyList();
+
+      private void ensureSchemaRelationshipsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          schemaRelationships_ =
+              new java.util.ArrayList<
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship>(
+                  schemaRelationships_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Builder,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationshipOrBuilder>
+          schemaRelationshipsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship>
+          getSchemaRelationshipsList() {
+        if (schemaRelationshipsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(schemaRelationships_);
+        } else {
+          return schemaRelationshipsBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getSchemaRelationshipsCount() {
+        if (schemaRelationshipsBuilder_ == null) {
+          return schemaRelationships_.size();
+        } else {
+          return schemaRelationshipsBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+          getSchemaRelationships(int index) {
+        if (schemaRelationshipsBuilder_ == null) {
+          return schemaRelationships_.get(index);
+        } else {
+          return schemaRelationshipsBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setSchemaRelationships(
+          int index,
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship value) {
+        if (schemaRelationshipsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSchemaRelationshipsIsMutable();
+          schemaRelationships_.set(index, value);
+          onChanged();
+        } else {
+          schemaRelationshipsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setSchemaRelationships(
+          int index,
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Builder
+              builderForValue) {
+        if (schemaRelationshipsBuilder_ == null) {
+          ensureSchemaRelationshipsIsMutable();
+          schemaRelationships_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          schemaRelationshipsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addSchemaRelationships(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship value) {
+        if (schemaRelationshipsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSchemaRelationshipsIsMutable();
+          schemaRelationships_.add(value);
+          onChanged();
+        } else {
+          schemaRelationshipsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addSchemaRelationships(
+          int index,
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship value) {
+        if (schemaRelationshipsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSchemaRelationshipsIsMutable();
+          schemaRelationships_.add(index, value);
+          onChanged();
+        } else {
+          schemaRelationshipsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addSchemaRelationships(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Builder
+              builderForValue) {
+        if (schemaRelationshipsBuilder_ == null) {
+          ensureSchemaRelationshipsIsMutable();
+          schemaRelationships_.add(builderForValue.build());
+          onChanged();
+        } else {
+          schemaRelationshipsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addSchemaRelationships(
+          int index,
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Builder
+              builderForValue) {
+        if (schemaRelationshipsBuilder_ == null) {
+          ensureSchemaRelationshipsIsMutable();
+          schemaRelationships_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          schemaRelationshipsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllSchemaRelationships(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship>
+              values) {
+        if (schemaRelationshipsBuilder_ == null) {
+          ensureSchemaRelationshipsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, schemaRelationships_);
+          onChanged();
+        } else {
+          schemaRelationshipsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearSchemaRelationships() {
+        if (schemaRelationshipsBuilder_ == null) {
+          schemaRelationships_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          schemaRelationshipsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removeSchemaRelationships(int index) {
+        if (schemaRelationshipsBuilder_ == null) {
+          ensureSchemaRelationshipsIsMutable();
+          schemaRelationships_.remove(index);
+          onChanged();
+        } else {
+          schemaRelationshipsBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Builder
+          getSchemaRelationshipsBuilder(int index) {
+        return internalGetSchemaRelationshipsFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationshipOrBuilder
+          getSchemaRelationshipsOrBuilder(int index) {
+        if (schemaRelationshipsBuilder_ == null) {
+          return schemaRelationships_.get(index);
+        } else {
+          return schemaRelationshipsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationshipOrBuilder>
+          getSchemaRelationshipsOrBuilderList() {
+        if (schemaRelationshipsBuilder_ != null) {
+          return schemaRelationshipsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(schemaRelationships_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Builder
+          addSchemaRelationshipsBuilder() {
+        return internalGetSchemaRelationshipsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Builder
+          addSchemaRelationshipsBuilder(int index) {
+        return internalGetSchemaRelationshipsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Relationships suggesting how tables in the dataset are
+       * related to each other, based on their schema.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship schema_relationships = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Builder>
+          getSchemaRelationshipsBuilderList() {
+        return internalGetSchemaRelationshipsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Builder,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationshipOrBuilder>
+          internalGetSchemaRelationshipsFieldBuilder() {
+        if (schemaRelationshipsBuilder_ == null) {
+          schemaRelationshipsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship,
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Builder,
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationshipOrBuilder>(
+                  schemaRelationships_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          schemaRelationships_ = null;
+        }
+        return schemaRelationshipsBuilder_;
+      }
+
+      private java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.Query> queries_ =
+          java.util.Collections.emptyList();
+
+      private void ensureQueriesIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          queries_ =
+              new java.util.ArrayList<com.google.cloud.dataplex.v1.DataDocumentationResult.Query>(
+                  queries_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.Query,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder>
+          queriesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.Query>
+          getQueriesList() {
+        if (queriesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(queries_);
+        } else {
+          return queriesBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getQueriesCount() {
+        if (queriesBuilder_ == null) {
+          return queries_.size();
+        } else {
+          return queriesBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.Query getQueries(int index) {
+        if (queriesBuilder_ == null) {
+          return queries_.get(index);
+        } else {
+          return queriesBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setQueries(
+          int index, com.google.cloud.dataplex.v1.DataDocumentationResult.Query value) {
+        if (queriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureQueriesIsMutable();
+          queries_.set(index, value);
+          onChanged();
+        } else {
+          queriesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setQueries(
+          int index,
+          com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder builderForValue) {
+        if (queriesBuilder_ == null) {
+          ensureQueriesIsMutable();
+          queries_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          queriesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addQueries(com.google.cloud.dataplex.v1.DataDocumentationResult.Query value) {
+        if (queriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureQueriesIsMutable();
+          queries_.add(value);
+          onChanged();
+        } else {
+          queriesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addQueries(
+          int index, com.google.cloud.dataplex.v1.DataDocumentationResult.Query value) {
+        if (queriesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureQueriesIsMutable();
+          queries_.add(index, value);
+          onChanged();
+        } else {
+          queriesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addQueries(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder builderForValue) {
+        if (queriesBuilder_ == null) {
+          ensureQueriesIsMutable();
+          queries_.add(builderForValue.build());
+          onChanged();
+        } else {
+          queriesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addQueries(
+          int index,
+          com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder builderForValue) {
+        if (queriesBuilder_ == null) {
+          ensureQueriesIsMutable();
+          queries_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          queriesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllQueries(
+          java.lang.Iterable<? extends com.google.cloud.dataplex.v1.DataDocumentationResult.Query>
+              values) {
+        if (queriesBuilder_ == null) {
+          ensureQueriesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queries_);
+          onChanged();
+        } else {
+          queriesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearQueries() {
+        if (queriesBuilder_ == null) {
+          queries_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          queriesBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removeQueries(int index) {
+        if (queriesBuilder_ == null) {
+          ensureQueriesIsMutable();
+          queries_.remove(index);
+          onChanged();
+        } else {
+          queriesBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder getQueriesBuilder(
+          int index) {
+        return internalGetQueriesFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder
+          getQueriesOrBuilder(int index) {
+        if (queriesBuilder_ == null) {
+          return queries_.get(index);
+        } else {
+          return queriesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              ? extends com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder>
+          getQueriesOrBuilderList() {
+        if (queriesBuilder_ != null) {
+          return queriesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(queries_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder
+          addQueriesBuilder() {
+        return internalGetQueriesFieldBuilder()
+            .addBuilder(
+                com.google.cloud.dataplex.v1.DataDocumentationResult.Query.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder addQueriesBuilder(
+          int index) {
+        return internalGetQueriesFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.dataplex.v1.DataDocumentationResult.Query.getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sample SQL queries for the dataset.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.Query queries = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder>
+          getQueriesBuilderList() {
+        return internalGetQueriesFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.Query,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder>
+          internalGetQueriesFieldBuilder() {
+        if (queriesBuilder_ == null) {
+          queriesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.Query,
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.Query.Builder,
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.QueryOrBuilder>(
+                  queries_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+          queries_ = null;
+        }
+        return queriesBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult)
+    private static final com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult();
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DatasetResult> PARSER =
+        new com.google.protobuf.AbstractParser<DatasetResult>() {
+          @java.lang.Override
+          public DatasetResult parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DatasetResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DatasetResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface TableResultOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataDocumentationResult.TableResult)
@@ -247,7 +2214,7 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Generated metadata about the table.
+   * Insights for a table resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.DataDocumentationResult.TableResult}
@@ -757,7 +2724,7 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Generated metadata about the table.
+     * Insights for a table resource.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataplex.v1.DataDocumentationResult.TableResult}
@@ -1946,6 +3913,3457 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
 
     @java.lang.Override
     public com.google.cloud.dataplex.v1.DataDocumentationResult.TableResult
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface SchemaRelationshipOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An ordered list of fields for the join from the first table.
+     * The size of this list must be the same as `right_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `right_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths left_schema_paths = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the leftSchemaPaths field is set.
+     */
+    boolean hasLeftSchemaPaths();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An ordered list of fields for the join from the first table.
+     * The size of this list must be the same as `right_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `right_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths left_schema_paths = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The leftSchemaPaths.
+     */
+    com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+        getLeftSchemaPaths();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An ordered list of fields for the join from the first table.
+     * The size of this list must be the same as `right_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `right_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths left_schema_paths = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPathsOrBuilder
+        getLeftSchemaPathsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An ordered list of fields for the join from the second
+     * table. The size of this list must be the same as `left_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `left_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths right_schema_paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the rightSchemaPaths field is set.
+     */
+    boolean hasRightSchemaPaths();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An ordered list of fields for the join from the second
+     * table. The size of this list must be the same as `left_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `left_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths right_schema_paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The rightSchemaPaths.
+     */
+    com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+        getRightSchemaPaths();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An ordered list of fields for the join from the second
+     * table. The size of this list must be the same as `left_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `left_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths right_schema_paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPathsOrBuilder
+        getRightSchemaPathsOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the sources.
+     */
+    java.util.List<com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source>
+        getSourcesList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of sources.
+     */
+    int getSourcesCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The sources at the given index.
+     */
+    com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source getSources(
+        int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for sources.
+     */
+    java.util.List<java.lang.Integer> getSourcesValueList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of sources at the given index.
+     */
+    int getSourcesValue(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of relationship between the schema paths.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of relationship between the schema paths.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The type.
+     */
+    com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type getType();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of the relationship between the schema of two resources.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship}
+   */
+  public static final class SchemaRelationship extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship)
+      SchemaRelationshipOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "SchemaRelationship");
+    }
+
+    // Use SchemaRelationship.newBuilder() to construct.
+    private SchemaRelationship(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SchemaRelationship() {
+      sources_ = emptyIntList();
+      type_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.DataDocumentationProto
+          .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_SchemaRelationship_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.DataDocumentationProto
+          .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_SchemaRelationship_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.class,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Builder
+                  .class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Source which generated the schema relation edge.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source}
+     */
+    public enum Source implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is unspecified.
+       * </pre>
+       *
+       * <code>SOURCE_UNSPECIFIED = 0;</code>
+       */
+      SOURCE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is agent.
+       * </pre>
+       *
+       * <code>AGENT = 4;</code>
+       */
+      AGENT(4),
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is query history from the source
+       * system.
+       * </pre>
+       *
+       * <code>QUERY_HISTORY = 5;</code>
+       */
+      QUERY_HISTORY(5),
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is table constraints added in
+       * the source system.
+       * </pre>
+       *
+       * <code>TABLE_CONSTRAINTS = 6;</code>
+       */
+      TABLE_CONSTRAINTS(6),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "Source");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is unspecified.
+       * </pre>
+       *
+       * <code>SOURCE_UNSPECIFIED = 0;</code>
+       */
+      public static final int SOURCE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is agent.
+       * </pre>
+       *
+       * <code>AGENT = 4;</code>
+       */
+      public static final int AGENT_VALUE = 4;
+
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is query history from the source
+       * system.
+       * </pre>
+       *
+       * <code>QUERY_HISTORY = 5;</code>
+       */
+      public static final int QUERY_HISTORY_VALUE = 5;
+
+      /**
+       *
+       *
+       * <pre>
+       * The source of the schema relationship is table constraints added in
+       * the source system.
+       * </pre>
+       *
+       * <code>TABLE_CONSTRAINTS = 6;</code>
+       */
+      public static final int TABLE_CONSTRAINTS_VALUE = 6;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Source valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Source forNumber(int value) {
+        switch (value) {
+          case 0:
+            return SOURCE_UNSPECIFIED;
+          case 4:
+            return AGENT;
+          case 5:
+            return QUERY_HISTORY;
+          case 6:
+            return TABLE_CONSTRAINTS;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Source> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Source> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Source>() {
+            public Source findValueByNumber(int number) {
+              return Source.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+            .getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Source[] VALUES = values();
+
+      public static Source valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Source(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The type of relationship.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type}
+     */
+    public enum Type implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * The type of the schema relationship is unspecified.
+       * </pre>
+       *
+       * <code>TYPE_UNSPECIFIED = 0;</code>
+       */
+      TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Indicates a join relationship between the schema fields.
+       * </pre>
+       *
+       * <code>SCHEMA_JOIN = 1;</code>
+       */
+      SCHEMA_JOIN(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "Type");
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The type of the schema relationship is unspecified.
+       * </pre>
+       *
+       * <code>TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates a join relationship between the schema fields.
+       * </pre>
+       *
+       * <code>SCHEMA_JOIN = 1;</code>
+       */
+      public static final int SCHEMA_JOIN_VALUE = 1;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Type valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Type forNumber(int value) {
+        switch (value) {
+          case 0:
+            return TYPE_UNSPECIFIED;
+          case 1:
+            return SCHEMA_JOIN;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+            public Type findValueByNumber(int number) {
+              return Type.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+            .getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final Type[] VALUES = values();
+
+      public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Type(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type)
+    }
+
+    public interface SchemaPathsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The service-qualified full resource name of the table
+       * Ex:
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string table_fqn = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The tableFqn.
+       */
+      java.lang.String getTableFqn();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The service-qualified full resource name of the table
+       * Ex:
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string table_fqn = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for tableFqn.
+       */
+      com.google.protobuf.ByteString getTableFqnBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered set of Paths to fields within the schema of the
+       * table. For fields nested within a top level field of type record, use
+       * '.' to separate field names. Examples: Top level field - `top_level`
+       * Nested field - `top_level.child.sub_field`
+       * </pre>
+       *
+       * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return A list containing the paths.
+       */
+      java.util.List<java.lang.String> getPathsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered set of Paths to fields within the schema of the
+       * table. For fields nested within a top level field of type record, use
+       * '.' to separate field names. Examples: Top level field - `top_level`
+       * Nested field - `top_level.child.sub_field`
+       * </pre>
+       *
+       * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The count of paths.
+       */
+      int getPathsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered set of Paths to fields within the schema of the
+       * table. For fields nested within a top level field of type record, use
+       * '.' to separate field names. Examples: Top level field - `top_level`
+       * Nested field - `top_level.child.sub_field`
+       * </pre>
+       *
+       * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The paths at the given index.
+       */
+      java.lang.String getPaths(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered set of Paths to fields within the schema of the
+       * table. For fields nested within a top level field of type record, use
+       * '.' to separate field names. Examples: Top level field - `top_level`
+       * Nested field - `top_level.child.sub_field`
+       * </pre>
+       *
+       * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the paths at the given index.
+       */
+      com.google.protobuf.ByteString getPathsBytes(int index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents an ordered set of paths within a table's schema.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths}
+     */
+    public static final class SchemaPaths extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths)
+        SchemaPathsOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "SchemaPaths");
+      }
+
+      // Use SchemaPaths.newBuilder() to construct.
+      private SchemaPaths(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SchemaPaths() {
+        tableFqn_ = "";
+        paths_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataDocumentationProto
+            .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_SchemaRelationship_SchemaPaths_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataDocumentationProto
+            .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_SchemaRelationship_SchemaPaths_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+                    .class,
+                com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+                    .Builder.class);
+      }
+
+      public static final int TABLE_FQN_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object tableFqn_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The service-qualified full resource name of the table
+       * Ex:
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string table_fqn = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The tableFqn.
+       */
+      @java.lang.Override
+      public java.lang.String getTableFqn() {
+        java.lang.Object ref = tableFqn_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tableFqn_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The service-qualified full resource name of the table
+       * Ex:
+       * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * </pre>
+       *
+       * <code>string table_fqn = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for tableFqn.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getTableFqnBytes() {
+        java.lang.Object ref = tableFqn_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          tableFqn_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int PATHS_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList paths_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered set of Paths to fields within the schema of the
+       * table. For fields nested within a top level field of type record, use
+       * '.' to separate field names. Examples: Top level field - `top_level`
+       * Nested field - `top_level.child.sub_field`
+       * </pre>
+       *
+       * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return A list containing the paths.
+       */
+      public com.google.protobuf.ProtocolStringList getPathsList() {
+        return paths_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered set of Paths to fields within the schema of the
+       * table. For fields nested within a top level field of type record, use
+       * '.' to separate field names. Examples: Top level field - `top_level`
+       * Nested field - `top_level.child.sub_field`
+       * </pre>
+       *
+       * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The count of paths.
+       */
+      public int getPathsCount() {
+        return paths_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered set of Paths to fields within the schema of the
+       * table. For fields nested within a top level field of type record, use
+       * '.' to separate field names. Examples: Top level field - `top_level`
+       * Nested field - `top_level.child.sub_field`
+       * </pre>
+       *
+       * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The paths at the given index.
+       */
+      public java.lang.String getPaths(int index) {
+        return paths_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered set of Paths to fields within the schema of the
+       * table. For fields nested within a top level field of type record, use
+       * '.' to separate field names. Examples: Top level field - `top_level`
+       * Nested field - `top_level.child.sub_field`
+       * </pre>
+       *
+       * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the paths at the given index.
+       */
+      public com.google.protobuf.ByteString getPathsBytes(int index) {
+        return paths_.getByteString(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tableFqn_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, tableFqn_);
+        }
+        for (int i = 0; i < paths_.size(); i++) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 2, paths_.getRaw(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(tableFqn_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, tableFqn_);
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < paths_.size(); i++) {
+            dataSize += computeStringSizeNoTag(paths_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getPathsList().size();
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths other =
+            (com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths)
+                obj;
+
+        if (!getTableFqn().equals(other.getTableFqn())) return false;
+        if (!getPathsList().equals(other.getPathsList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + TABLE_FQN_FIELD_NUMBER;
+        hash = (53 * hash) + getTableFqn().hashCode();
+        if (getPathsCount() > 0) {
+          hash = (37 * hash) + PATHS_FIELD_NUMBER;
+          hash = (53 * hash) + getPathsList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPaths
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPaths
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPaths
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPaths
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPaths
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPaths
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPaths
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPaths
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPaths
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPaths
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPaths
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPaths
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Represents an ordered set of paths within a table's schema.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths)
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPathsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.DataDocumentationProto
+              .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_SchemaRelationship_SchemaPaths_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataplex.v1.DataDocumentationProto
+              .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_SchemaRelationship_SchemaPaths_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                      .SchemaPaths.class,
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                      .SchemaPaths.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          tableFqn_ = "";
+          paths_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataplex.v1.DataDocumentationProto
+              .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_SchemaRelationship_SchemaPaths_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+            build() {
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+            buildPartial() {
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+              result =
+                  new com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                      .SchemaPaths(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.tableFqn_ = tableFqn_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            paths_.makeImmutable();
+            result.paths_ = paths_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths) {
+            return mergeFrom(
+                (com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                        .SchemaPaths)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+                other) {
+          if (other
+              == com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+                  .getDefaultInstance()) return this;
+          if (!other.getTableFqn().isEmpty()) {
+            tableFqn_ = other.tableFqn_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.paths_.isEmpty()) {
+            if (paths_.isEmpty()) {
+              paths_ = other.paths_;
+              bitField0_ |= 0x00000002;
+            } else {
+              ensurePathsIsMutable();
+              paths_.addAll(other.paths_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    tableFqn_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensurePathsIsMutable();
+                    paths_.add(s);
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object tableFqn_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The service-qualified full resource name of the table
+         * Ex:
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string table_fqn = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The tableFqn.
+         */
+        public java.lang.String getTableFqn() {
+          java.lang.Object ref = tableFqn_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            tableFqn_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The service-qualified full resource name of the table
+         * Ex:
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string table_fqn = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for tableFqn.
+         */
+        public com.google.protobuf.ByteString getTableFqnBytes() {
+          java.lang.Object ref = tableFqn_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            tableFqn_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The service-qualified full resource name of the table
+         * Ex:
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string table_fqn = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The tableFqn to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTableFqn(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          tableFqn_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The service-qualified full resource name of the table
+         * Ex:
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string table_fqn = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTableFqn() {
+          tableFqn_ = getDefaultInstance().getTableFqn();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The service-qualified full resource name of the table
+         * Ex:
+         * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * </pre>
+         *
+         * <code>string table_fqn = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The bytes for tableFqn to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTableFqnBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          tableFqn_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList paths_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensurePathsIsMutable() {
+          if (!paths_.isModifiable()) {
+            paths_ = new com.google.protobuf.LazyStringArrayList(paths_);
+          }
+          bitField0_ |= 0x00000002;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. An ordered set of Paths to fields within the schema of the
+         * table. For fields nested within a top level field of type record, use
+         * '.' to separate field names. Examples: Top level field - `top_level`
+         * Nested field - `top_level.child.sub_field`
+         * </pre>
+         *
+         * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return A list containing the paths.
+         */
+        public com.google.protobuf.ProtocolStringList getPathsList() {
+          paths_.makeImmutable();
+          return paths_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. An ordered set of Paths to fields within the schema of the
+         * table. For fields nested within a top level field of type record, use
+         * '.' to separate field names. Examples: Top level field - `top_level`
+         * Nested field - `top_level.child.sub_field`
+         * </pre>
+         *
+         * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The count of paths.
+         */
+        public int getPathsCount() {
+          return paths_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. An ordered set of Paths to fields within the schema of the
+         * table. For fields nested within a top level field of type record, use
+         * '.' to separate field names. Examples: Top level field - `top_level`
+         * Nested field - `top_level.child.sub_field`
+         * </pre>
+         *
+         * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param index The index of the element to return.
+         * @return The paths at the given index.
+         */
+        public java.lang.String getPaths(int index) {
+          return paths_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. An ordered set of Paths to fields within the schema of the
+         * table. For fields nested within a top level field of type record, use
+         * '.' to separate field names. Examples: Top level field - `top_level`
+         * Nested field - `top_level.child.sub_field`
+         * </pre>
+         *
+         * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the paths at the given index.
+         */
+        public com.google.protobuf.ByteString getPathsBytes(int index) {
+          return paths_.getByteString(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. An ordered set of Paths to fields within the schema of the
+         * table. For fields nested within a top level field of type record, use
+         * '.' to separate field names. Examples: Top level field - `top_level`
+         * Nested field - `top_level.child.sub_field`
+         * </pre>
+         *
+         * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The paths to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPaths(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePathsIsMutable();
+          paths_.set(index, value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. An ordered set of Paths to fields within the schema of the
+         * table. For fields nested within a top level field of type record, use
+         * '.' to separate field names. Examples: Top level field - `top_level`
+         * Nested field - `top_level.child.sub_field`
+         * </pre>
+         *
+         * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The paths to add.
+         * @return This builder for chaining.
+         */
+        public Builder addPaths(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePathsIsMutable();
+          paths_.add(value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. An ordered set of Paths to fields within the schema of the
+         * table. For fields nested within a top level field of type record, use
+         * '.' to separate field names. Examples: Top level field - `top_level`
+         * Nested field - `top_level.child.sub_field`
+         * </pre>
+         *
+         * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param values The paths to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllPaths(java.lang.Iterable<java.lang.String> values) {
+          ensurePathsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, paths_);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. An ordered set of Paths to fields within the schema of the
+         * table. For fields nested within a top level field of type record, use
+         * '.' to separate field names. Examples: Top level field - `top_level`
+         * Nested field - `top_level.child.sub_field`
+         * </pre>
+         *
+         * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPaths() {
+          paths_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          ;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. An ordered set of Paths to fields within the schema of the
+         * table. For fields nested within a top level field of type record, use
+         * '.' to separate field names. Examples: Top level field - `top_level`
+         * Nested field - `top_level.child.sub_field`
+         * </pre>
+         *
+         * <code>repeated string paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The bytes of the paths to add.
+         * @return This builder for chaining.
+         */
+        public Builder addPathsBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensurePathsIsMutable();
+          paths_.add(value);
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths)
+      private static final com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPaths
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                .SchemaPaths();
+      }
+
+      public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPaths
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SchemaPaths> PARSER =
+          new com.google.protobuf.AbstractParser<SchemaPaths>() {
+            @java.lang.Override
+            public SchemaPaths parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SchemaPaths> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SchemaPaths> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
+    public static final int LEFT_SCHEMA_PATHS_FIELD_NUMBER = 1;
+    private com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+        leftSchemaPaths_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An ordered list of fields for the join from the first table.
+     * The size of this list must be the same as `right_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `right_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths left_schema_paths = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the leftSchemaPaths field is set.
+     */
+    @java.lang.Override
+    public boolean hasLeftSchemaPaths() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An ordered list of fields for the join from the first table.
+     * The size of this list must be the same as `right_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `right_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths left_schema_paths = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The leftSchemaPaths.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+        getLeftSchemaPaths() {
+      return leftSchemaPaths_ == null
+          ? com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+              .getDefaultInstance()
+          : leftSchemaPaths_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An ordered list of fields for the join from the first table.
+     * The size of this list must be the same as `right_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `right_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths left_schema_paths = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+            .SchemaPathsOrBuilder
+        getLeftSchemaPathsOrBuilder() {
+      return leftSchemaPaths_ == null
+          ? com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+              .getDefaultInstance()
+          : leftSchemaPaths_;
+    }
+
+    public static final int RIGHT_SCHEMA_PATHS_FIELD_NUMBER = 2;
+    private com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+        rightSchemaPaths_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An ordered list of fields for the join from the second
+     * table. The size of this list must be the same as `left_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `left_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths right_schema_paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the rightSchemaPaths field is set.
+     */
+    @java.lang.Override
+    public boolean hasRightSchemaPaths() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An ordered list of fields for the join from the second
+     * table. The size of this list must be the same as `left_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `left_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths right_schema_paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The rightSchemaPaths.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+        getRightSchemaPaths() {
+      return rightSchemaPaths_ == null
+          ? com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+              .getDefaultInstance()
+          : rightSchemaPaths_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An ordered list of fields for the join from the second
+     * table. The size of this list must be the same as `left_schema_paths`.
+     * Each field at index i in this list must correspond to a field at the same
+     * index in the `left_schema_paths` list.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths right_schema_paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+            .SchemaPathsOrBuilder
+        getRightSchemaPathsOrBuilder() {
+      return rightSchemaPaths_ == null
+          ? com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+              .getDefaultInstance()
+          : rightSchemaPaths_;
+    }
+
+    public static final int SOURCES_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.Internal.IntList sources_ = emptyIntList();
+
+    private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+            com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source>
+        sources_converter_ =
+            new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+                com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source>() {
+              public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source
+                  convert(int from) {
+                com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source
+                    result =
+                        com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                            .Source.forNumber(from);
+                return result == null
+                    ? com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source
+                        .UNRECOGNIZED
+                    : result;
+              }
+            };
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the sources.
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source>
+        getSourcesList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source>(
+          sources_, sources_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of sources.
+     */
+    @java.lang.Override
+    public int getSourcesCount() {
+      return sources_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The sources at the given index.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source
+        getSources(int index) {
+      return sources_converter_.convert(sources_.getInt(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for sources.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer> getSourcesValueList() {
+      return sources_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Sources which generated the schema relation edge.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of sources at the given index.
+     */
+    @java.lang.Override
+    public int getSourcesValue(int index) {
+      return sources_.getInt(index);
+    }
+
+    private int sourcesMemoizedSerializedSize;
+
+    public static final int TYPE_FIELD_NUMBER = 6;
+    private int type_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of relationship between the schema paths.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override
+    public int getTypeValue() {
+      return type_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The type of relationship between the schema paths.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The type.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type getType() {
+      com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type result =
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type.forNumber(
+              type_);
+      return result == null
+          ? com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getLeftSchemaPaths());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(2, getRightSchemaPaths());
+      }
+      if (getSourcesList().size() > 0) {
+        output.writeUInt32NoTag(34);
+        output.writeUInt32NoTag(sourcesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < sources_.size(); i++) {
+        output.writeEnumNoTag(sources_.getInt(i));
+      }
+      if (type_
+          != com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type
+              .TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(6, type_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getLeftSchemaPaths());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRightSchemaPaths());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < sources_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(sources_.getInt(i));
+        }
+        size += dataSize;
+        if (!getSourcesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+        }
+        sourcesMemoizedSerializedSize = dataSize;
+      }
+      if (type_
+          != com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type
+              .TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, type_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship other =
+          (com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship) obj;
+
+      if (hasLeftSchemaPaths() != other.hasLeftSchemaPaths()) return false;
+      if (hasLeftSchemaPaths()) {
+        if (!getLeftSchemaPaths().equals(other.getLeftSchemaPaths())) return false;
+      }
+      if (hasRightSchemaPaths() != other.hasRightSchemaPaths()) return false;
+      if (hasRightSchemaPaths()) {
+        if (!getRightSchemaPaths().equals(other.getRightSchemaPaths())) return false;
+      }
+      if (!sources_.equals(other.sources_)) return false;
+      if (type_ != other.type_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasLeftSchemaPaths()) {
+        hash = (37 * hash) + LEFT_SCHEMA_PATHS_FIELD_NUMBER;
+        hash = (53 * hash) + getLeftSchemaPaths().hashCode();
+      }
+      if (hasRightSchemaPaths()) {
+        hash = (37 * hash) + RIGHT_SCHEMA_PATHS_FIELD_NUMBER;
+        hash = (53 * hash) + getRightSchemaPaths().hashCode();
+      }
+      if (getSourcesCount() > 0) {
+        hash = (37 * hash) + SOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + sources_.hashCode();
+      }
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details of the relationship between the schema of two resources.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship)
+        com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationshipOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.DataDocumentationProto
+            .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_SchemaRelationship_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.DataDocumentationProto
+            .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_SchemaRelationship_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.class,
+                com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          internalGetLeftSchemaPathsFieldBuilder();
+          internalGetRightSchemaPathsFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        leftSchemaPaths_ = null;
+        if (leftSchemaPathsBuilder_ != null) {
+          leftSchemaPathsBuilder_.dispose();
+          leftSchemaPathsBuilder_ = null;
+        }
+        rightSchemaPaths_ = null;
+        if (rightSchemaPathsBuilder_ != null) {
+          rightSchemaPathsBuilder_.dispose();
+          rightSchemaPathsBuilder_ = null;
+        }
+        sources_ = emptyIntList();
+        type_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.DataDocumentationProto
+            .internal_static_google_cloud_dataplex_v1_DataDocumentationResult_SchemaRelationship_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship build() {
+        com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+          buildPartial() {
+        com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship result =
+            new com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.leftSchemaPaths_ =
+              leftSchemaPathsBuilder_ == null ? leftSchemaPaths_ : leftSchemaPathsBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rightSchemaPaths_ =
+              rightSchemaPathsBuilder_ == null
+                  ? rightSchemaPaths_
+                  : rightSchemaPathsBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          sources_.makeImmutable();
+          result.sources_ = sources_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.type_ = type_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship) {
+          return mergeFrom(
+              (com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship other) {
+        if (other
+            == com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                .getDefaultInstance()) return this;
+        if (other.hasLeftSchemaPaths()) {
+          mergeLeftSchemaPaths(other.getLeftSchemaPaths());
+        }
+        if (other.hasRightSchemaPaths()) {
+          mergeRightSchemaPaths(other.getRightSchemaPaths());
+        }
+        if (!other.sources_.isEmpty()) {
+          if (sources_.isEmpty()) {
+            sources_ = other.sources_;
+            sources_.makeImmutable();
+            bitField0_ |= 0x00000004;
+          } else {
+            ensureSourcesIsMutable();
+            sources_.addAll(other.sources_);
+          }
+          onChanged();
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      internalGetLeftSchemaPathsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  input.readMessage(
+                      internalGetRightSchemaPathsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 32:
+                {
+                  int tmpRaw = input.readEnum();
+                  ensureSourcesIsMutable();
+                  sources_.addInt(tmpRaw);
+                  break;
+                } // case 32
+              case 34:
+                {
+                  int length = input.readRawVarint32();
+                  int limit = input.pushLimit(length);
+                  ensureSourcesIsMutable();
+                  while (input.getBytesUntilLimit() > 0) {
+                    sources_.addInt(input.readEnum());
+                  }
+                  input.popLimit(limit);
+                  break;
+                } // case 34
+              case 48:
+                {
+                  type_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 48
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+          leftSchemaPaths_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+                  .Builder,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                  .SchemaPathsOrBuilder>
+          leftSchemaPathsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths left_schema_paths = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the leftSchemaPaths field is set.
+       */
+      public boolean hasLeftSchemaPaths() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths left_schema_paths = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The leftSchemaPaths.
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+          getLeftSchemaPaths() {
+        if (leftSchemaPathsBuilder_ == null) {
+          return leftSchemaPaths_ == null
+              ? com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+                  .getDefaultInstance()
+              : leftSchemaPaths_;
+        } else {
+          return leftSchemaPathsBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths left_schema_paths = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setLeftSchemaPaths(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+              value) {
+        if (leftSchemaPathsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          leftSchemaPaths_ = value;
+        } else {
+          leftSchemaPathsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths left_schema_paths = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setLeftSchemaPaths(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+                  .Builder
+              builderForValue) {
+        if (leftSchemaPathsBuilder_ == null) {
+          leftSchemaPaths_ = builderForValue.build();
+        } else {
+          leftSchemaPathsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths left_schema_paths = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeLeftSchemaPaths(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+              value) {
+        if (leftSchemaPathsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && leftSchemaPaths_ != null
+              && leftSchemaPaths_
+                  != com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                      .SchemaPaths.getDefaultInstance()) {
+            getLeftSchemaPathsBuilder().mergeFrom(value);
+          } else {
+            leftSchemaPaths_ = value;
+          }
+        } else {
+          leftSchemaPathsBuilder_.mergeFrom(value);
+        }
+        if (leftSchemaPaths_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths left_schema_paths = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearLeftSchemaPaths() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        leftSchemaPaths_ = null;
+        if (leftSchemaPathsBuilder_ != null) {
+          leftSchemaPathsBuilder_.dispose();
+          leftSchemaPathsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths left_schema_paths = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+              .Builder
+          getLeftSchemaPathsBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return internalGetLeftSchemaPathsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths left_schema_paths = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPathsOrBuilder
+          getLeftSchemaPathsOrBuilder() {
+        if (leftSchemaPathsBuilder_ != null) {
+          return leftSchemaPathsBuilder_.getMessageOrBuilder();
+        } else {
+          return leftSchemaPaths_ == null
+              ? com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+                  .getDefaultInstance()
+              : leftSchemaPaths_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the first table.
+       * The size of this list must be the same as `right_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `right_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths left_schema_paths = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+                  .Builder,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                  .SchemaPathsOrBuilder>
+          internalGetLeftSchemaPathsFieldBuilder() {
+        if (leftSchemaPathsBuilder_ == null) {
+          leftSchemaPathsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                      .SchemaPaths,
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                      .SchemaPaths.Builder,
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                      .SchemaPathsOrBuilder>(
+                  getLeftSchemaPaths(), getParentForChildren(), isClean());
+          leftSchemaPaths_ = null;
+        }
+        return leftSchemaPathsBuilder_;
+      }
+
+      private com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+          rightSchemaPaths_;
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+                  .Builder,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                  .SchemaPathsOrBuilder>
+          rightSchemaPathsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the second
+       * table. The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths right_schema_paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the rightSchemaPaths field is set.
+       */
+      public boolean hasRightSchemaPaths() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the second
+       * table. The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths right_schema_paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The rightSchemaPaths.
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+          getRightSchemaPaths() {
+        if (rightSchemaPathsBuilder_ == null) {
+          return rightSchemaPaths_ == null
+              ? com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+                  .getDefaultInstance()
+              : rightSchemaPaths_;
+        } else {
+          return rightSchemaPathsBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the second
+       * table. The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths right_schema_paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setRightSchemaPaths(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+              value) {
+        if (rightSchemaPathsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rightSchemaPaths_ = value;
+        } else {
+          rightSchemaPathsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the second
+       * table. The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths right_schema_paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setRightSchemaPaths(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+                  .Builder
+              builderForValue) {
+        if (rightSchemaPathsBuilder_ == null) {
+          rightSchemaPaths_ = builderForValue.build();
+        } else {
+          rightSchemaPathsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the second
+       * table. The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths right_schema_paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeRightSchemaPaths(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+              value) {
+        if (rightSchemaPathsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && rightSchemaPaths_ != null
+              && rightSchemaPaths_
+                  != com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                      .SchemaPaths.getDefaultInstance()) {
+            getRightSchemaPathsBuilder().mergeFrom(value);
+          } else {
+            rightSchemaPaths_ = value;
+          }
+        } else {
+          rightSchemaPathsBuilder_.mergeFrom(value);
+        }
+        if (rightSchemaPaths_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the second
+       * table. The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths right_schema_paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearRightSchemaPaths() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rightSchemaPaths_ = null;
+        if (rightSchemaPathsBuilder_ != null) {
+          rightSchemaPathsBuilder_.dispose();
+          rightSchemaPathsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the second
+       * table. The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths right_schema_paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+              .Builder
+          getRightSchemaPathsBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetRightSchemaPathsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the second
+       * table. The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths right_schema_paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+              .SchemaPathsOrBuilder
+          getRightSchemaPathsOrBuilder() {
+        if (rightSchemaPathsBuilder_ != null) {
+          return rightSchemaPathsBuilder_.getMessageOrBuilder();
+        } else {
+          return rightSchemaPaths_ == null
+              ? com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+                  .getDefaultInstance()
+              : rightSchemaPaths_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. An ordered list of fields for the join from the second
+       * table. The size of this list must be the same as `left_schema_paths`.
+       * Each field at index i in this list must correspond to a field at the same
+       * index in the `left_schema_paths` list.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths right_schema_paths = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.SchemaPaths
+                  .Builder,
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                  .SchemaPathsOrBuilder>
+          internalGetRightSchemaPathsFieldBuilder() {
+        if (rightSchemaPathsBuilder_ == null) {
+          rightSchemaPathsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                      .SchemaPaths,
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                      .SchemaPaths.Builder,
+                  com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                      .SchemaPathsOrBuilder>(
+                  getRightSchemaPaths(), getParentForChildren(), isClean());
+          rightSchemaPaths_ = null;
+        }
+        return rightSchemaPathsBuilder_;
+      }
+
+      private com.google.protobuf.Internal.IntList sources_ = emptyIntList();
+
+      private void ensureSourcesIsMutable() {
+        if (!sources_.isModifiable()) {
+          sources_ = makeMutableCopy(sources_);
+        }
+        bitField0_ |= 0x00000004;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return A list containing the sources.
+       */
+      public java.util.List<
+              com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source>
+          getSourcesList() {
+        return new com.google.protobuf.Internal.IntListAdapter<
+            com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source>(
+            sources_, sources_converter_);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The count of sources.
+       */
+      public int getSourcesCount() {
+        return sources_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The sources at the given index.
+       */
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source
+          getSources(int index) {
+        return sources_converter_.convert(sources_.getInt(index));
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The sources to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSources(
+          int index,
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourcesIsMutable();
+        sources_.setInt(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The sources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSources(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourcesIsMutable();
+        sources_.addInt(value.getNumber());
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param values The sources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSources(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+                          .Source>
+              values) {
+        ensureSourcesIsMutable();
+        for (com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source value :
+            values) {
+          sources_.addInt(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSources() {
+        sources_ = emptyIntList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for sources.
+       */
+      public java.util.List<java.lang.Integer> getSourcesValueList() {
+        sources_.makeImmutable();
+        return sources_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of sources at the given index.
+       */
+      public int getSourcesValue(int index) {
+        return sources_.getInt(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for sources to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSourcesValue(int index, int value) {
+        ensureSourcesIsMutable();
+        sources_.setInt(index, value);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for sources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSourcesValue(int value) {
+        ensureSourcesIsMutable();
+        sources_.addInt(value);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Sources which generated the schema relation edge.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Source sources = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param values The enum numeric values on the wire for sources to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSourcesValue(java.lang.Iterable<java.lang.Integer> values) {
+        ensureSourcesIsMutable();
+        for (int value : values) {
+          sources_.addInt(value);
+        }
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The type of relationship between the schema paths.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override
+      public int getTypeValue() {
+        return type_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The type of relationship between the schema paths.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The type of relationship between the schema paths.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type
+          getType() {
+        com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type result =
+            com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type.forNumber(
+                type_);
+        return result == null
+            ? com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type
+                .UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The type of relationship between the schema paths.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The type of relationship between the schema paths.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship.Type type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship)
+    private static final com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship();
+    }
+
+    public static com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SchemaRelationship> PARSER =
+        new com.google.protobuf.AbstractParser<SchemaRelationship>() {
+          @java.lang.Override
+          public SchemaRelationship parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SchemaRelationship> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SchemaRelationship> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.SchemaRelationship
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5307,6 +10725,7 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    DATASET_RESULT(7),
     TABLE_RESULT(8),
     RESULT_NOT_SET(0);
     private final int value;
@@ -5327,6 +10746,8 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
 
     public static ResultCase forNumber(int value) {
       switch (value) {
+        case 7:
+          return DATASET_RESULT;
         case 8:
           return TABLE_RESULT;
         case 0:
@@ -5345,13 +10766,74 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
     return ResultCase.forNumber(resultCase_);
   }
 
+  public static final int DATASET_RESULT_FIELD_NUMBER = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Insights for a Dataset resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult dataset_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the datasetResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasDatasetResult() {
+    return resultCase_ == 7;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Insights for a Dataset resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult dataset_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The datasetResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult getDatasetResult() {
+    if (resultCase_ == 7) {
+      return (com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult) result_;
+    }
+    return com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Insights for a Dataset resource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult dataset_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResultOrBuilder
+      getDatasetResultOrBuilder() {
+    if (resultCase_ == 7) {
+      return (com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult) result_;
+    }
+    return com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult.getDefaultInstance();
+  }
+
   public static final int TABLE_RESULT_FIELD_NUMBER = 8;
 
   /**
    *
    *
    * <pre>
-   * Output only. Table result for insights.
+   * Output only. Insights for a Table resource.
    * </pre>
    *
    * <code>
@@ -5369,7 +10851,7 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Table result for insights.
+   * Output only. Insights for a Table resource.
    * </pre>
    *
    * <code>
@@ -5390,7 +10872,7 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Output only. Table result for insights.
+   * Output only. Insights for a Table resource.
    * </pre>
    *
    * <code>
@@ -5420,6 +10902,10 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (resultCase_ == 7) {
+      output.writeMessage(
+          7, (com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult) result_);
+    }
     if (resultCase_ == 8) {
       output.writeMessage(
           8, (com.google.cloud.dataplex.v1.DataDocumentationResult.TableResult) result_);
@@ -5433,6 +10919,11 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
+    if (resultCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult) result_);
+    }
     if (resultCase_ == 8) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -5456,6 +10947,9 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
 
     if (!getResultCase().equals(other.getResultCase())) return false;
     switch (resultCase_) {
+      case 7:
+        if (!getDatasetResult().equals(other.getDatasetResult())) return false;
+        break;
       case 8:
         if (!getTableResult().equals(other.getTableResult())) return false;
         break;
@@ -5474,6 +10968,10 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     switch (resultCase_) {
+      case 7:
+        hash = (37 * hash) + DATASET_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getDatasetResult().hashCode();
+        break;
       case 8:
         hash = (37 * hash) + TABLE_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getTableResult().hashCode();
@@ -5621,6 +11119,9 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (datasetResultBuilder_ != null) {
+        datasetResultBuilder_.clear();
+      }
       if (tableResultBuilder_ != null) {
         tableResultBuilder_.clear();
       }
@@ -5668,6 +11169,9 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
     private void buildPartialOneofs(com.google.cloud.dataplex.v1.DataDocumentationResult result) {
       result.resultCase_ = resultCase_;
       result.result_ = this.result_;
+      if (resultCase_ == 7 && datasetResultBuilder_ != null) {
+        result.result_ = datasetResultBuilder_.build();
+      }
       if (resultCase_ == 8 && tableResultBuilder_ != null) {
         result.result_ = tableResultBuilder_.build();
       }
@@ -5687,6 +11191,11 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
       if (other == com.google.cloud.dataplex.v1.DataDocumentationResult.getDefaultInstance())
         return this;
       switch (other.getResultCase()) {
+        case DATASET_RESULT:
+          {
+            mergeDatasetResult(other.getDatasetResult());
+            break;
+          }
         case TABLE_RESULT:
           {
             mergeTableResult(other.getTableResult());
@@ -5723,6 +11232,13 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
             case 0:
               done = true;
               break;
+            case 58:
+              {
+                input.readMessage(
+                    internalGetDatasetResultFieldBuilder().getBuilder(), extensionRegistry);
+                resultCase_ = 7;
+                break;
+              } // case 58
             case 66:
               {
                 input.readMessage(
@@ -5764,6 +11280,254 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
     private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult,
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult.Builder,
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResultOrBuilder>
+        datasetResultBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a Dataset resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult dataset_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the datasetResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasDatasetResult() {
+      return resultCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a Dataset resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult dataset_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The datasetResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult getDatasetResult() {
+      if (datasetResultBuilder_ == null) {
+        if (resultCase_ == 7) {
+          return (com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult) result_;
+        }
+        return com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult
+            .getDefaultInstance();
+      } else {
+        if (resultCase_ == 7) {
+          return datasetResultBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a Dataset resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult dataset_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDatasetResult(
+        com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult value) {
+      if (datasetResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        result_ = value;
+        onChanged();
+      } else {
+        datasetResultBuilder_.setMessage(value);
+      }
+      resultCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a Dataset resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult dataset_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDatasetResult(
+        com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult.Builder
+            builderForValue) {
+      if (datasetResultBuilder_ == null) {
+        result_ = builderForValue.build();
+        onChanged();
+      } else {
+        datasetResultBuilder_.setMessage(builderForValue.build());
+      }
+      resultCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a Dataset resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult dataset_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDatasetResult(
+        com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult value) {
+      if (datasetResultBuilder_ == null) {
+        if (resultCase_ == 7
+            && result_
+                != com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult
+                    .getDefaultInstance()) {
+          result_ =
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult.newBuilder(
+                      (com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult) result_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          result_ = value;
+        }
+        onChanged();
+      } else {
+        if (resultCase_ == 7) {
+          datasetResultBuilder_.mergeFrom(value);
+        } else {
+          datasetResultBuilder_.setMessage(value);
+        }
+      }
+      resultCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a Dataset resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult dataset_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDatasetResult() {
+      if (datasetResultBuilder_ == null) {
+        if (resultCase_ == 7) {
+          resultCase_ = 0;
+          result_ = null;
+          onChanged();
+        }
+      } else {
+        if (resultCase_ == 7) {
+          resultCase_ = 0;
+          result_ = null;
+        }
+        datasetResultBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a Dataset resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult dataset_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult.Builder
+        getDatasetResultBuilder() {
+      return internalGetDatasetResultFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a Dataset resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult dataset_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResultOrBuilder
+        getDatasetResultOrBuilder() {
+      if ((resultCase_ == 7) && (datasetResultBuilder_ != null)) {
+        return datasetResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (resultCase_ == 7) {
+          return (com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult) result_;
+        }
+        return com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Insights for a Dataset resource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult dataset_result = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult,
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult.Builder,
+            com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResultOrBuilder>
+        internalGetDatasetResultFieldBuilder() {
+      if (datasetResultBuilder_ == null) {
+        if (!(resultCase_ == 7)) {
+          result_ =
+              com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult
+                  .getDefaultInstance();
+        }
+        datasetResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult,
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult.Builder,
+                com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResultOrBuilder>(
+                (com.google.cloud.dataplex.v1.DataDocumentationResult.DatasetResult) result_,
+                getParentForChildren(),
+                isClean());
+        result_ = null;
+      }
+      resultCase_ = 7;
+      onChanged();
+      return datasetResultBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.dataplex.v1.DataDocumentationResult.TableResult,
             com.google.cloud.dataplex.v1.DataDocumentationResult.TableResult.Builder,
             com.google.cloud.dataplex.v1.DataDocumentationResult.TableResultOrBuilder>
@@ -5773,7 +11537,7 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Table result for insights.
+     * Output only. Insights for a Table resource.
      * </pre>
      *
      * <code>
@@ -5791,7 +11555,7 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Table result for insights.
+     * Output only. Insights for a Table resource.
      * </pre>
      *
      * <code>
@@ -5821,7 +11585,7 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Table result for insights.
+     * Output only. Insights for a Table resource.
      * </pre>
      *
      * <code>
@@ -5847,7 +11611,7 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Table result for insights.
+     * Output only. Insights for a Table resource.
      * </pre>
      *
      * <code>
@@ -5870,7 +11634,7 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Table result for insights.
+     * Output only. Insights for a Table resource.
      * </pre>
      *
      * <code>
@@ -5908,7 +11672,7 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Table result for insights.
+     * Output only. Insights for a Table resource.
      * </pre>
      *
      * <code>
@@ -5936,7 +11700,7 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Table result for insights.
+     * Output only. Insights for a Table resource.
      * </pre>
      *
      * <code>
@@ -5952,7 +11716,7 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Table result for insights.
+     * Output only. Insights for a Table resource.
      * </pre>
      *
      * <code>
@@ -5977,7 +11741,7 @@ public final class DataDocumentationResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Output only. Table result for insights.
+     * Output only. Insights for a Table resource.
      * </pre>
      *
      * <code>

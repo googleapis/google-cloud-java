@@ -628,8 +628,196 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetDeploymentGroup</td>
+ *      <td><p> Get a DeploymentGroup for a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDeploymentGroup(GetDeploymentGroupRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDeploymentGroup(DeploymentGroupName name)
+ *           <li><p> getDeploymentGroup(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDeploymentGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateDeploymentGroup</td>
+ *      <td><p> Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] The newly created DeploymentGroup will be in the `CREATING` state and can be retrieved via Get and List calls.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createDeploymentGroupAsync(CreateDeploymentGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createDeploymentGroupAsync(LocationName parent, DeploymentGroup deploymentGroup, String deploymentGroupId)
+ *           <li><p> createDeploymentGroupAsync(String parent, DeploymentGroup deploymentGroup, String deploymentGroupId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createDeploymentGroupOperationCallable()
+ *           <li><p> createDeploymentGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateDeploymentGroup</td>
+ *      <td><p> Updates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateDeploymentGroupAsync(UpdateDeploymentGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> updateDeploymentGroupAsync(DeploymentGroup deploymentGroup, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateDeploymentGroupOperationCallable()
+ *           <li><p> updateDeploymentGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteDeploymentGroup</td>
+ *      <td><p> Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteDeploymentGroupAsync(DeleteDeploymentGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteDeploymentGroupAsync(DeploymentGroupName name)
+ *           <li><p> deleteDeploymentGroupAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteDeploymentGroupOperationCallable()
+ *           <li><p> deleteDeploymentGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDeploymentGroups</td>
+ *      <td><p> List DeploymentGroups for a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDeploymentGroups(ListDeploymentGroupsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDeploymentGroups(LocationName parent)
+ *           <li><p> listDeploymentGroups(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDeploymentGroupsPagedCallable()
+ *           <li><p> listDeploymentGroupsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ProvisionDeploymentGroup</td>
+ *      <td><p> Provisions a deployment group.
+ * <p>  NOTE: As a first step of this operation, Infra Manager will automatically delete any Deployments that were part of the
+ * <ul>
+ * <li> last successful&#42; [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision] but are &#42;no longer&#42; included in the &#42;current&#42; [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g., following an `UpdateDeploymentGroup` call), along with their actuated resources.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> provisionDeploymentGroupAsync(ProvisionDeploymentGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> provisionDeploymentGroupAsync(DeploymentGroupName name)
+ *           <li><p> provisionDeploymentGroupAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> provisionDeploymentGroupOperationCallable()
+ *           <li><p> provisionDeploymentGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeprovisionDeploymentGroup</td>
+ *      <td><p> Deprovisions a deployment group.
+ * <p>  NOTE: As a first step of this operation, Infra Manager will automatically delete any Deployments that were part of the
+ * <ul>
+ * <li> last successful&#42; [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision] but are &#42;no longer&#42; included in the &#42;current&#42; [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g., following an `UpdateDeploymentGroup` call), along with their actuated resources.
+ * </ul></td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deprovisionDeploymentGroupAsync(DeprovisionDeploymentGroupRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deprovisionDeploymentGroupAsync(DeploymentGroupName name)
+ *           <li><p> deprovisionDeploymentGroupAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deprovisionDeploymentGroupOperationCallable()
+ *           <li><p> deprovisionDeploymentGroupCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetDeploymentGroupRevision</td>
+ *      <td><p> Gets details about a [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getDeploymentGroupRevision(GetDeploymentGroupRevisionRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getDeploymentGroupRevision(DeploymentGroupRevisionName name)
+ *           <li><p> getDeploymentGroupRevision(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getDeploymentGroupRevisionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListDeploymentGroupRevisions</td>
+ *      <td><p> Lists [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s in a given [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listDeploymentGroupRevisions(ListDeploymentGroupRevisionsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listDeploymentGroupRevisions(DeploymentGroupName parent)
+ *           <li><p> listDeploymentGroupRevisions(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listDeploymentGroupRevisionsPagedCallable()
+ *           <li><p> listDeploymentGroupRevisionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
+ * <p> &#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -4669,7 +4857,1531 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Get a DeploymentGroup for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeploymentGroupName name =
+   *       DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]");
+   *   DeploymentGroup response = configClient.getDeploymentGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the deployment group to retrieve. Format:
+   *     'projects/{project_id}/locations/{location}/deploymentGroups/{deployment_group}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeploymentGroup getDeploymentGroup(DeploymentGroupName name) {
+    GetDeploymentGroupRequest request =
+        GetDeploymentGroupRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDeploymentGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a DeploymentGroup for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String name =
+   *       DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString();
+   *   DeploymentGroup response = configClient.getDeploymentGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the deployment group to retrieve. Format:
+   *     'projects/{project_id}/locations/{location}/deploymentGroups/{deployment_group}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeploymentGroup getDeploymentGroup(String name) {
+    GetDeploymentGroupRequest request =
+        GetDeploymentGroupRequest.newBuilder().setName(name).build();
+    return getDeploymentGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a DeploymentGroup for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetDeploymentGroupRequest request =
+   *       GetDeploymentGroupRequest.newBuilder()
+   *           .setName(
+   *               DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]")
+   *                   .toString())
+   *           .build();
+   *   DeploymentGroup response = configClient.getDeploymentGroup(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeploymentGroup getDeploymentGroup(GetDeploymentGroupRequest request) {
+    return getDeploymentGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get a DeploymentGroup for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetDeploymentGroupRequest request =
+   *       GetDeploymentGroupRequest.newBuilder()
+   *           .setName(
+   *               DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<DeploymentGroup> future =
+   *       configClient.getDeploymentGroupCallable().futureCall(request);
+   *   // Do something.
+   *   DeploymentGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDeploymentGroupRequest, DeploymentGroup>
+      getDeploymentGroupCallable() {
+    return stub.getDeploymentGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] The newly created
+   * DeploymentGroup will be in the `CREATING` state and can be retrieved via Get and List calls.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   DeploymentGroup deploymentGroup = DeploymentGroup.newBuilder().build();
+   *   String deploymentGroupId = "deploymentGroupId717062517";
+   *   DeploymentGroup response =
+   *       configClient.createDeploymentGroupAsync(parent, deploymentGroup, deploymentGroupId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent in whose context the Deployment Group is created. The parent
+   *     value is in the format: 'projects/{project_id}/locations/{location}'
+   * @param deploymentGroup Required. [Deployment Group][] resource to create
+   * @param deploymentGroupId Required. The deployment group ID.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeploymentGroup, OperationMetadata> createDeploymentGroupAsync(
+      LocationName parent, DeploymentGroup deploymentGroup, String deploymentGroupId) {
+    CreateDeploymentGroupRequest request =
+        CreateDeploymentGroupRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDeploymentGroup(deploymentGroup)
+            .setDeploymentGroupId(deploymentGroupId)
+            .build();
+    return createDeploymentGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] The newly created
+   * DeploymentGroup will be in the `CREATING` state and can be retrieved via Get and List calls.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   DeploymentGroup deploymentGroup = DeploymentGroup.newBuilder().build();
+   *   String deploymentGroupId = "deploymentGroupId717062517";
+   *   DeploymentGroup response =
+   *       configClient.createDeploymentGroupAsync(parent, deploymentGroup, deploymentGroupId).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent in whose context the Deployment Group is created. The parent
+   *     value is in the format: 'projects/{project_id}/locations/{location}'
+   * @param deploymentGroup Required. [Deployment Group][] resource to create
+   * @param deploymentGroupId Required. The deployment group ID.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeploymentGroup, OperationMetadata> createDeploymentGroupAsync(
+      String parent, DeploymentGroup deploymentGroup, String deploymentGroupId) {
+    CreateDeploymentGroupRequest request =
+        CreateDeploymentGroupRequest.newBuilder()
+            .setParent(parent)
+            .setDeploymentGroup(deploymentGroup)
+            .setDeploymentGroupId(deploymentGroupId)
+            .build();
+    return createDeploymentGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] The newly created
+   * DeploymentGroup will be in the `CREATING` state and can be retrieved via Get and List calls.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   CreateDeploymentGroupRequest request =
+   *       CreateDeploymentGroupRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDeploymentGroupId("deploymentGroupId717062517")
+   *           .setDeploymentGroup(DeploymentGroup.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DeploymentGroup response = configClient.createDeploymentGroupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeploymentGroup, OperationMetadata> createDeploymentGroupAsync(
+      CreateDeploymentGroupRequest request) {
+    return createDeploymentGroupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] The newly created
+   * DeploymentGroup will be in the `CREATING` state and can be retrieved via Get and List calls.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   CreateDeploymentGroupRequest request =
+   *       CreateDeploymentGroupRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDeploymentGroupId("deploymentGroupId717062517")
+   *           .setDeploymentGroup(DeploymentGroup.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<DeploymentGroup, OperationMetadata> future =
+   *       configClient.createDeploymentGroupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeploymentGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      createDeploymentGroupOperationCallable() {
+    return stub.createDeploymentGroupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] The newly created
+   * DeploymentGroup will be in the `CREATING` state and can be retrieved via Get and List calls.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   CreateDeploymentGroupRequest request =
+   *       CreateDeploymentGroupRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDeploymentGroupId("deploymentGroupId717062517")
+   *           .setDeploymentGroup(DeploymentGroup.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       configClient.createDeploymentGroupCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateDeploymentGroupRequest, Operation>
+      createDeploymentGroupCallable() {
+    return stub.createDeploymentGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeploymentGroup deploymentGroup = DeploymentGroup.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DeploymentGroup response =
+   *       configClient.updateDeploymentGroupAsync(deploymentGroup, updateMask).get();
+   * }
+   * }</pre>
+   *
+   * @param deploymentGroup Required. [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] to
+   *     update.
+   *     <p>The deployment group's `name` field is used to identify the resource to be updated.
+   *     Format: `projects/{project}/locations/{location}/deploymentGroups/{deployment_group_id}`
+   * @param updateMask Optional. Field mask used to specify the fields to be overwritten in the
+   *     Deployment Group resource by the update.
+   *     <p>The fields specified in the update_mask are relative to the resource, not the full
+   *     request. A field will be overwritten if it is in the mask. If the user does not provide a
+   *     mask then all fields will be overwritten.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeploymentGroup, OperationMetadata> updateDeploymentGroupAsync(
+      DeploymentGroup deploymentGroup, FieldMask updateMask) {
+    UpdateDeploymentGroupRequest request =
+        UpdateDeploymentGroupRequest.newBuilder()
+            .setDeploymentGroup(deploymentGroup)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDeploymentGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   UpdateDeploymentGroupRequest request =
+   *       UpdateDeploymentGroupRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDeploymentGroup(DeploymentGroup.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   DeploymentGroup response = configClient.updateDeploymentGroupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeploymentGroup, OperationMetadata> updateDeploymentGroupAsync(
+      UpdateDeploymentGroupRequest request) {
+    return updateDeploymentGroupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   UpdateDeploymentGroupRequest request =
+   *       UpdateDeploymentGroupRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDeploymentGroup(DeploymentGroup.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<DeploymentGroup, OperationMetadata> future =
+   *       configClient.updateDeploymentGroupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeploymentGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<UpdateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      updateDeploymentGroupOperationCallable() {
+    return stub.updateDeploymentGroupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   UpdateDeploymentGroupRequest request =
+   *       UpdateDeploymentGroupRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setDeploymentGroup(DeploymentGroup.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       configClient.updateDeploymentGroupCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDeploymentGroupRequest, Operation>
+      updateDeploymentGroupCallable() {
+    return stub.updateDeploymentGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeploymentGroupName name =
+   *       DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]");
+   *   DeploymentGroup response = configClient.deleteDeploymentGroupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of DeploymentGroup in the format
+   *     projects/{project_id}/locations/{location_id}/deploymentGroups/{deploymentGroup}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeploymentGroup, OperationMetadata> deleteDeploymentGroupAsync(
+      DeploymentGroupName name) {
+    DeleteDeploymentGroupRequest request =
+        DeleteDeploymentGroupRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteDeploymentGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String name =
+   *       DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString();
+   *   DeploymentGroup response = configClient.deleteDeploymentGroupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of DeploymentGroup in the format
+   *     projects/{project_id}/locations/{location_id}/deploymentGroups/{deploymentGroup}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeploymentGroup, OperationMetadata> deleteDeploymentGroupAsync(
+      String name) {
+    DeleteDeploymentGroupRequest request =
+        DeleteDeploymentGroupRequest.newBuilder().setName(name).build();
+    return deleteDeploymentGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeleteDeploymentGroupRequest request =
+   *       DeleteDeploymentGroupRequest.newBuilder()
+   *           .setName(
+   *               DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   DeploymentGroup response = configClient.deleteDeploymentGroupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeploymentGroup, OperationMetadata> deleteDeploymentGroupAsync(
+      DeleteDeploymentGroupRequest request) {
+    return deleteDeploymentGroupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeleteDeploymentGroupRequest request =
+   *       DeleteDeploymentGroupRequest.newBuilder()
+   *           .setName(
+   *               DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<DeploymentGroup, OperationMetadata> future =
+   *       configClient.deleteDeploymentGroupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeploymentGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deleteDeploymentGroupOperationCallable() {
+    return stub.deleteDeploymentGroupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeleteDeploymentGroupRequest request =
+   *       DeleteDeploymentGroupRequest.newBuilder()
+   *           .setName(
+   *               DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       configClient.deleteDeploymentGroupCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteDeploymentGroupRequest, Operation>
+      deleteDeploymentGroupCallable() {
+    return stub.deleteDeploymentGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List DeploymentGroups for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (DeploymentGroup element : configClient.listDeploymentGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of deployment groups. Format:
+   *     'projects/{project_id}/locations/{location}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeploymentGroupsPagedResponse listDeploymentGroups(LocationName parent) {
+    ListDeploymentGroupsRequest request =
+        ListDeploymentGroupsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDeploymentGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List DeploymentGroups for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (DeploymentGroup element : configClient.listDeploymentGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of deployment groups. Format:
+   *     'projects/{project_id}/locations/{location}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeploymentGroupsPagedResponse listDeploymentGroups(String parent) {
+    ListDeploymentGroupsRequest request =
+        ListDeploymentGroupsRequest.newBuilder().setParent(parent).build();
+    return listDeploymentGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List DeploymentGroups for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListDeploymentGroupsRequest request =
+   *       ListDeploymentGroupsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (DeploymentGroup element : configClient.listDeploymentGroups(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeploymentGroupsPagedResponse listDeploymentGroups(
+      ListDeploymentGroupsRequest request) {
+    return listDeploymentGroupsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List DeploymentGroups for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListDeploymentGroupsRequest request =
+   *       ListDeploymentGroupsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<DeploymentGroup> future =
+   *       configClient.listDeploymentGroupsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DeploymentGroup element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDeploymentGroupsRequest, ListDeploymentGroupsPagedResponse>
+      listDeploymentGroupsPagedCallable() {
+    return stub.listDeploymentGroupsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List DeploymentGroups for a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListDeploymentGroupsRequest request =
+   *       ListDeploymentGroupsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListDeploymentGroupsResponse response =
+   *         configClient.listDeploymentGroupsCallable().call(request);
+   *     for (DeploymentGroup element : response.getDeploymentGroupsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse>
+      listDeploymentGroupsCallable() {
+    return stub.listDeploymentGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Provisions a deployment group.
+   *
+   * <p>NOTE: As a first step of this operation, Infra Manager will automatically delete any
+   * Deployments that were part of the
+   *
+   * <ul>
+   *   <li>last successful&#42;
+   *       [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision] but are &#42;no
+   *       longer&#42; included in the &#42;current&#42;
+   *       [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g., following an
+   *       `UpdateDeploymentGroup` call), along with their actuated resources.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeploymentGroupName name =
+   *       DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]");
+   *   DeploymentGroup response = configClient.provisionDeploymentGroupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the deployment group to provision. Format:
+   *     'projects/{project_id}/locations/{location}/deploymentGroups/{deployment_group}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeploymentGroup, OperationMetadata> provisionDeploymentGroupAsync(
+      DeploymentGroupName name) {
+    ProvisionDeploymentGroupRequest request =
+        ProvisionDeploymentGroupRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return provisionDeploymentGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Provisions a deployment group.
+   *
+   * <p>NOTE: As a first step of this operation, Infra Manager will automatically delete any
+   * Deployments that were part of the
+   *
+   * <ul>
+   *   <li>last successful&#42;
+   *       [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision] but are &#42;no
+   *       longer&#42; included in the &#42;current&#42;
+   *       [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g., following an
+   *       `UpdateDeploymentGroup` call), along with their actuated resources.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String name =
+   *       DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString();
+   *   DeploymentGroup response = configClient.provisionDeploymentGroupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the deployment group to provision. Format:
+   *     'projects/{project_id}/locations/{location}/deploymentGroups/{deployment_group}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeploymentGroup, OperationMetadata> provisionDeploymentGroupAsync(
+      String name) {
+    ProvisionDeploymentGroupRequest request =
+        ProvisionDeploymentGroupRequest.newBuilder().setName(name).build();
+    return provisionDeploymentGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Provisions a deployment group.
+   *
+   * <p>NOTE: As a first step of this operation, Infra Manager will automatically delete any
+   * Deployments that were part of the
+   *
+   * <ul>
+   *   <li>last successful&#42;
+   *       [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision] but are &#42;no
+   *       longer&#42; included in the &#42;current&#42;
+   *       [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g., following an
+   *       `UpdateDeploymentGroup` call), along with their actuated resources.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ProvisionDeploymentGroupRequest request =
+   *       ProvisionDeploymentGroupRequest.newBuilder()
+   *           .setName(
+   *               DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]")
+   *                   .toString())
+   *           .putAllDeploymentSpecs(new HashMap<String, DeploymentSpec>())
+   *           .build();
+   *   DeploymentGroup response = configClient.provisionDeploymentGroupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeploymentGroup, OperationMetadata> provisionDeploymentGroupAsync(
+      ProvisionDeploymentGroupRequest request) {
+    return provisionDeploymentGroupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Provisions a deployment group.
+   *
+   * <p>NOTE: As a first step of this operation, Infra Manager will automatically delete any
+   * Deployments that were part of the
+   *
+   * <ul>
+   *   <li>last successful&#42;
+   *       [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision] but are &#42;no
+   *       longer&#42; included in the &#42;current&#42;
+   *       [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g., following an
+   *       `UpdateDeploymentGroup` call), along with their actuated resources.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ProvisionDeploymentGroupRequest request =
+   *       ProvisionDeploymentGroupRequest.newBuilder()
+   *           .setName(
+   *               DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]")
+   *                   .toString())
+   *           .putAllDeploymentSpecs(new HashMap<String, DeploymentSpec>())
+   *           .build();
+   *   OperationFuture<DeploymentGroup, OperationMetadata> future =
+   *       configClient.provisionDeploymentGroupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeploymentGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ProvisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      provisionDeploymentGroupOperationCallable() {
+    return stub.provisionDeploymentGroupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Provisions a deployment group.
+   *
+   * <p>NOTE: As a first step of this operation, Infra Manager will automatically delete any
+   * Deployments that were part of the
+   *
+   * <ul>
+   *   <li>last successful&#42;
+   *       [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision] but are &#42;no
+   *       longer&#42; included in the &#42;current&#42;
+   *       [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g., following an
+   *       `UpdateDeploymentGroup` call), along with their actuated resources.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ProvisionDeploymentGroupRequest request =
+   *       ProvisionDeploymentGroupRequest.newBuilder()
+   *           .setName(
+   *               DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]")
+   *                   .toString())
+   *           .putAllDeploymentSpecs(new HashMap<String, DeploymentSpec>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       configClient.provisionDeploymentGroupCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ProvisionDeploymentGroupRequest, Operation>
+      provisionDeploymentGroupCallable() {
+    return stub.provisionDeploymentGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deprovisions a deployment group.
+   *
+   * <p>NOTE: As a first step of this operation, Infra Manager will automatically delete any
+   * Deployments that were part of the
+   *
+   * <ul>
+   *   <li>last successful&#42;
+   *       [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision] but are &#42;no
+   *       longer&#42; included in the &#42;current&#42;
+   *       [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g., following an
+   *       `UpdateDeploymentGroup` call), along with their actuated resources.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeploymentGroupName name =
+   *       DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]");
+   *   DeploymentGroup response = configClient.deprovisionDeploymentGroupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the deployment group to deprovision. Format:
+   *     'projects/{project_id}/locations/{location}/deploymentGroups/{deployment_group}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeploymentGroup, OperationMetadata> deprovisionDeploymentGroupAsync(
+      DeploymentGroupName name) {
+    DeprovisionDeploymentGroupRequest request =
+        DeprovisionDeploymentGroupRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deprovisionDeploymentGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deprovisions a deployment group.
+   *
+   * <p>NOTE: As a first step of this operation, Infra Manager will automatically delete any
+   * Deployments that were part of the
+   *
+   * <ul>
+   *   <li>last successful&#42;
+   *       [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision] but are &#42;no
+   *       longer&#42; included in the &#42;current&#42;
+   *       [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g., following an
+   *       `UpdateDeploymentGroup` call), along with their actuated resources.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String name =
+   *       DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString();
+   *   DeploymentGroup response = configClient.deprovisionDeploymentGroupAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the deployment group to deprovision. Format:
+   *     'projects/{project_id}/locations/{location}/deploymentGroups/{deployment_group}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeploymentGroup, OperationMetadata> deprovisionDeploymentGroupAsync(
+      String name) {
+    DeprovisionDeploymentGroupRequest request =
+        DeprovisionDeploymentGroupRequest.newBuilder().setName(name).build();
+    return deprovisionDeploymentGroupAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deprovisions a deployment group.
+   *
+   * <p>NOTE: As a first step of this operation, Infra Manager will automatically delete any
+   * Deployments that were part of the
+   *
+   * <ul>
+   *   <li>last successful&#42;
+   *       [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision] but are &#42;no
+   *       longer&#42; included in the &#42;current&#42;
+   *       [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g., following an
+   *       `UpdateDeploymentGroup` call), along with their actuated resources.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeprovisionDeploymentGroupRequest request =
+   *       DeprovisionDeploymentGroupRequest.newBuilder()
+   *           .setName(
+   *               DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]")
+   *                   .toString())
+   *           .setForce(true)
+   *           .build();
+   *   DeploymentGroup response = configClient.deprovisionDeploymentGroupAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DeploymentGroup, OperationMetadata> deprovisionDeploymentGroupAsync(
+      DeprovisionDeploymentGroupRequest request) {
+    return deprovisionDeploymentGroupOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deprovisions a deployment group.
+   *
+   * <p>NOTE: As a first step of this operation, Infra Manager will automatically delete any
+   * Deployments that were part of the
+   *
+   * <ul>
+   *   <li>last successful&#42;
+   *       [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision] but are &#42;no
+   *       longer&#42; included in the &#42;current&#42;
+   *       [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g., following an
+   *       `UpdateDeploymentGroup` call), along with their actuated resources.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeprovisionDeploymentGroupRequest request =
+   *       DeprovisionDeploymentGroupRequest.newBuilder()
+   *           .setName(
+   *               DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]")
+   *                   .toString())
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<DeploymentGroup, OperationMetadata> future =
+   *       configClient.deprovisionDeploymentGroupOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeploymentGroup response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          DeprovisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deprovisionDeploymentGroupOperationCallable() {
+    return stub.deprovisionDeploymentGroupOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deprovisions a deployment group.
+   *
+   * <p>NOTE: As a first step of this operation, Infra Manager will automatically delete any
+   * Deployments that were part of the
+   *
+   * <ul>
+   *   <li>last successful&#42;
+   *       [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision] but are &#42;no
+   *       longer&#42; included in the &#42;current&#42;
+   *       [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g., following an
+   *       `UpdateDeploymentGroup` call), along with their actuated resources.
+   * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeprovisionDeploymentGroupRequest request =
+   *       DeprovisionDeploymentGroupRequest.newBuilder()
+   *           .setName(
+   *               DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]")
+   *                   .toString())
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       configClient.deprovisionDeploymentGroupCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeprovisionDeploymentGroupRequest, Operation>
+      deprovisionDeploymentGroupCallable() {
+    return stub.deprovisionDeploymentGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeploymentGroupRevisionName name =
+   *       DeploymentGroupRevisionName.of(
+   *           "[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]", "[REVISION]");
+   *   DeploymentGroupRevision response = configClient.getDeploymentGroupRevision(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the deployment group revision to retrieve. Format:
+   *     'projects/{project_id}/locations/{location}/deploymentGroups/{deployment_group}/revisions/{revision}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeploymentGroupRevision getDeploymentGroupRevision(
+      DeploymentGroupRevisionName name) {
+    GetDeploymentGroupRevisionRequest request =
+        GetDeploymentGroupRevisionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDeploymentGroupRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String name =
+   *       DeploymentGroupRevisionName.of(
+   *               "[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]", "[REVISION]")
+   *           .toString();
+   *   DeploymentGroupRevision response = configClient.getDeploymentGroupRevision(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the deployment group revision to retrieve. Format:
+   *     'projects/{project_id}/locations/{location}/deploymentGroups/{deployment_group}/revisions/{revision}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeploymentGroupRevision getDeploymentGroupRevision(String name) {
+    GetDeploymentGroupRevisionRequest request =
+        GetDeploymentGroupRevisionRequest.newBuilder().setName(name).build();
+    return getDeploymentGroupRevision(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetDeploymentGroupRevisionRequest request =
+   *       GetDeploymentGroupRevisionRequest.newBuilder()
+   *           .setName(
+   *               DeploymentGroupRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]", "[REVISION]")
+   *                   .toString())
+   *           .build();
+   *   DeploymentGroupRevision response = configClient.getDeploymentGroupRevision(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DeploymentGroupRevision getDeploymentGroupRevision(
+      GetDeploymentGroupRevisionRequest request) {
+    return getDeploymentGroupRevisionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   GetDeploymentGroupRevisionRequest request =
+   *       GetDeploymentGroupRevisionRequest.newBuilder()
+   *           .setName(
+   *               DeploymentGroupRevisionName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]", "[REVISION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<DeploymentGroupRevision> future =
+   *       configClient.getDeploymentGroupRevisionCallable().futureCall(request);
+   *   // Do something.
+   *   DeploymentGroupRevision response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+      getDeploymentGroupRevisionCallable() {
+    return stub.getDeploymentGroupRevisionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s in a given
+   * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   DeploymentGroupName parent =
+   *       DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]");
+   *   for (DeploymentGroupRevision element :
+   *       configClient.listDeploymentGroupRevisions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of deployment group revisions.
+   *     Format: 'projects/{project_id}/locations/{location}/deploymentGroups/{deployment_group}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeploymentGroupRevisionsPagedResponse listDeploymentGroupRevisions(
+      DeploymentGroupName parent) {
+    ListDeploymentGroupRevisionsRequest request =
+        ListDeploymentGroupRevisionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDeploymentGroupRevisions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s in a given
+   * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   String parent =
+   *       DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]").toString();
+   *   for (DeploymentGroupRevision element :
+   *       configClient.listDeploymentGroupRevisions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent, which owns this collection of deployment group revisions.
+   *     Format: 'projects/{project_id}/locations/{location}/deploymentGroups/{deployment_group}'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeploymentGroupRevisionsPagedResponse listDeploymentGroupRevisions(
+      String parent) {
+    ListDeploymentGroupRevisionsRequest request =
+        ListDeploymentGroupRevisionsRequest.newBuilder().setParent(parent).build();
+    return listDeploymentGroupRevisions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s in a given
+   * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListDeploymentGroupRevisionsRequest request =
+   *       ListDeploymentGroupRevisionsRequest.newBuilder()
+   *           .setParent(
+   *               DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (DeploymentGroupRevision element :
+   *       configClient.listDeploymentGroupRevisions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDeploymentGroupRevisionsPagedResponse listDeploymentGroupRevisions(
+      ListDeploymentGroupRevisionsRequest request) {
+    return listDeploymentGroupRevisionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s in a given
+   * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListDeploymentGroupRevisionsRequest request =
+   *       ListDeploymentGroupRevisionsRequest.newBuilder()
+   *           .setParent(
+   *               DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<DeploymentGroupRevision> future =
+   *       configClient.listDeploymentGroupRevisionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DeploymentGroupRevision element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsPagedResponse>
+      listDeploymentGroupRevisionsPagedCallable() {
+    return stub.listDeploymentGroupRevisionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s in a given
+   * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
+   *   ListDeploymentGroupRevisionsRequest request =
+   *       ListDeploymentGroupRevisionsRequest.newBuilder()
+   *           .setParent(
+   *               DeploymentGroupName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT_GROUP]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListDeploymentGroupRevisionsResponse response =
+   *         configClient.listDeploymentGroupRevisionsCallable().call(request);
+   *     for (DeploymentGroupRevision element : response.getDeploymentGroupRevisionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListDeploymentGroupRevisionsRequest, ListDeploymentGroupRevisionsResponse>
+      listDeploymentGroupRevisionsCallable() {
+    return stub.listDeploymentGroupRevisionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -4704,6 +6416,19 @@ public class ConfigClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -4736,6 +6461,19 @@ public class ConfigClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name] field:
+   *
+   * <p>&#42; &#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -5591,6 +7329,187 @@ public class ConfigClient implements BackgroundResource {
     protected ListResourceDriftsFixedSizeCollection createCollection(
         List<ListResourceDriftsPage> pages, int collectionSize) {
       return new ListResourceDriftsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDeploymentGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDeploymentGroupsRequest,
+          ListDeploymentGroupsResponse,
+          DeploymentGroup,
+          ListDeploymentGroupsPage,
+          ListDeploymentGroupsFixedSizeCollection> {
+
+    public static ApiFuture<ListDeploymentGroupsPagedResponse> createAsync(
+        PageContext<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse, DeploymentGroup>
+            context,
+        ApiFuture<ListDeploymentGroupsResponse> futureResponse) {
+      ApiFuture<ListDeploymentGroupsPage> futurePage =
+          ListDeploymentGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDeploymentGroupsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDeploymentGroupsPagedResponse(ListDeploymentGroupsPage page) {
+      super(page, ListDeploymentGroupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDeploymentGroupsPage
+      extends AbstractPage<
+          ListDeploymentGroupsRequest,
+          ListDeploymentGroupsResponse,
+          DeploymentGroup,
+          ListDeploymentGroupsPage> {
+
+    private ListDeploymentGroupsPage(
+        PageContext<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse, DeploymentGroup>
+            context,
+        ListDeploymentGroupsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDeploymentGroupsPage createEmptyPage() {
+      return new ListDeploymentGroupsPage(null, null);
+    }
+
+    @Override
+    protected ListDeploymentGroupsPage createPage(
+        PageContext<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse, DeploymentGroup>
+            context,
+        ListDeploymentGroupsResponse response) {
+      return new ListDeploymentGroupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDeploymentGroupsPage> createPageAsync(
+        PageContext<ListDeploymentGroupsRequest, ListDeploymentGroupsResponse, DeploymentGroup>
+            context,
+        ApiFuture<ListDeploymentGroupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDeploymentGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDeploymentGroupsRequest,
+          ListDeploymentGroupsResponse,
+          DeploymentGroup,
+          ListDeploymentGroupsPage,
+          ListDeploymentGroupsFixedSizeCollection> {
+
+    private ListDeploymentGroupsFixedSizeCollection(
+        List<ListDeploymentGroupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDeploymentGroupsFixedSizeCollection createEmptyCollection() {
+      return new ListDeploymentGroupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDeploymentGroupsFixedSizeCollection createCollection(
+        List<ListDeploymentGroupsPage> pages, int collectionSize) {
+      return new ListDeploymentGroupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDeploymentGroupRevisionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDeploymentGroupRevisionsRequest,
+          ListDeploymentGroupRevisionsResponse,
+          DeploymentGroupRevision,
+          ListDeploymentGroupRevisionsPage,
+          ListDeploymentGroupRevisionsFixedSizeCollection> {
+
+    public static ApiFuture<ListDeploymentGroupRevisionsPagedResponse> createAsync(
+        PageContext<
+                ListDeploymentGroupRevisionsRequest,
+                ListDeploymentGroupRevisionsResponse,
+                DeploymentGroupRevision>
+            context,
+        ApiFuture<ListDeploymentGroupRevisionsResponse> futureResponse) {
+      ApiFuture<ListDeploymentGroupRevisionsPage> futurePage =
+          ListDeploymentGroupRevisionsPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDeploymentGroupRevisionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDeploymentGroupRevisionsPagedResponse(ListDeploymentGroupRevisionsPage page) {
+      super(page, ListDeploymentGroupRevisionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDeploymentGroupRevisionsPage
+      extends AbstractPage<
+          ListDeploymentGroupRevisionsRequest,
+          ListDeploymentGroupRevisionsResponse,
+          DeploymentGroupRevision,
+          ListDeploymentGroupRevisionsPage> {
+
+    private ListDeploymentGroupRevisionsPage(
+        PageContext<
+                ListDeploymentGroupRevisionsRequest,
+                ListDeploymentGroupRevisionsResponse,
+                DeploymentGroupRevision>
+            context,
+        ListDeploymentGroupRevisionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDeploymentGroupRevisionsPage createEmptyPage() {
+      return new ListDeploymentGroupRevisionsPage(null, null);
+    }
+
+    @Override
+    protected ListDeploymentGroupRevisionsPage createPage(
+        PageContext<
+                ListDeploymentGroupRevisionsRequest,
+                ListDeploymentGroupRevisionsResponse,
+                DeploymentGroupRevision>
+            context,
+        ListDeploymentGroupRevisionsResponse response) {
+      return new ListDeploymentGroupRevisionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDeploymentGroupRevisionsPage> createPageAsync(
+        PageContext<
+                ListDeploymentGroupRevisionsRequest,
+                ListDeploymentGroupRevisionsResponse,
+                DeploymentGroupRevision>
+            context,
+        ApiFuture<ListDeploymentGroupRevisionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDeploymentGroupRevisionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDeploymentGroupRevisionsRequest,
+          ListDeploymentGroupRevisionsResponse,
+          DeploymentGroupRevision,
+          ListDeploymentGroupRevisionsPage,
+          ListDeploymentGroupRevisionsFixedSizeCollection> {
+
+    private ListDeploymentGroupRevisionsFixedSizeCollection(
+        List<ListDeploymentGroupRevisionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDeploymentGroupRevisionsFixedSizeCollection createEmptyCollection() {
+      return new ListDeploymentGroupRevisionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDeploymentGroupRevisionsFixedSizeCollection createCollection(
+        List<ListDeploymentGroupRevisionsPage> pages, int collectionSize) {
+      return new ListDeploymentGroupRevisionsFixedSizeCollection(pages, collectionSize);
     }
   }
 

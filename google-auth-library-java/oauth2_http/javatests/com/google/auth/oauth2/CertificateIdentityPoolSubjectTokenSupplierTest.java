@@ -32,6 +32,7 @@
 package com.google.auth.oauth2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -254,8 +255,9 @@ class CertificateIdentityPoolSubjectTokenSupplierTest {
 
     Throwable cause = exception.getCause();
     assertNotNull(cause, "Exception cause should not be null");
-    assertTrue(
-        cause instanceof IllegalArgumentException,
+    assertInstanceOf(
+        IllegalArgumentException.class,
+        cause,
         "Exception cause should be an IllegalArgumentException");
     assertEquals(expectedRootErrorMessage, cause.getMessage());
   }
@@ -301,7 +303,7 @@ class CertificateIdentityPoolSubjectTokenSupplierTest {
         assertThrows(IOException.class, () -> supplier.getSubjectToken(mockContext));
 
     // Check that the cause is NoSuchFileException from readTrustChain.
-    assertTrue(exception.getCause() instanceof NoSuchFileException);
+    assertInstanceOf(NoSuchFileException.class, exception.getCause());
 
     // Check the outer exception message added in getSubjectToken.
     assertEquals("Trust chain file not found: " + nonExistentPath, exception.getMessage());
@@ -328,7 +330,7 @@ class CertificateIdentityPoolSubjectTokenSupplierTest {
         exception.getMessage());
 
     // Check that the cause is CertificateException from readTrustChain
-    assertTrue(exception.getCause() instanceof CertificateException);
+    assertInstanceOf(CertificateException.class, exception.getCause());
 
     // Verify the cause's message specifically points to the trust chain parsing failure
     // and includes the path of the invalid trust chain file.
@@ -357,8 +359,8 @@ class CertificateIdentityPoolSubjectTokenSupplierTest {
 
     // Check that the cause is the original NoSuchFileException.
     assertNotNull(exception.getCause(), "Exception should have a cause");
-    assertTrue(
-        exception.getCause() instanceof NoSuchFileException, "Cause should be NoSuchFileException");
+    assertInstanceOf(
+        NoSuchFileException.class, exception.getCause(), "Cause should be NoSuchFileException");
 
     // Check the message of the cause (which is the path) in a platform-agnostic way.
     Path expectedCausePath = Paths.get(nonExistentPath);
@@ -385,7 +387,7 @@ class CertificateIdentityPoolSubjectTokenSupplierTest {
 
     // Check that the cause is CertificateException from parseCertificate (via
     // loadLeafCertificate)
-    assertTrue(exception.getCause() instanceof CertificateException);
+    assertInstanceOf(CertificateException.class, exception.getCause());
     assertEquals("Failed to parse X.509 certificate data.", exception.getCause().getMessage());
 
     // Check the outer exception message

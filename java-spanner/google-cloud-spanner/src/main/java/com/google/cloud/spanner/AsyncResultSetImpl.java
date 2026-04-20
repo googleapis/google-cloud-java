@@ -176,6 +176,12 @@ class AsyncResultSetImpl extends ForwardingStructReader
     this.buffer = new LinkedBlockingDeque<>(bufferSize);
   }
 
+  boolean isUsed() {
+    synchronized (monitor) {
+      return state != State.INITIALIZED;
+    }
+  }
+
   /**
    * Closes the {@link AsyncResultSet}. {@link #close()} is non-blocking and may be called multiple
    * times without side effects. An {@link AsyncResultSet} may be closed before all rows have been

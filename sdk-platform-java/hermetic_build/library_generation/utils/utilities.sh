@@ -108,7 +108,7 @@ download_protoc() {
   "protoc-${protoc_version}.zip" \
   "GitHub"
   unzip -o -q "protoc-${protoc_version}.zip"
-  rm "protoc-${protoc_version}.zip" "readme.txt"
+  rm -f "protoc-${protoc_version}.zip" "readme.txt"
 }
 
 download_grpc_plugin() {
@@ -371,4 +371,17 @@ restore_version_java() {
     mv "$file" "${target_path}"
   done
   popd > /dev/null
+}
+
+normalize_owlbot_yaml() {
+  local input_file="$1"
+  local output_file="$2"
+  local library_name="$3"
+  
+  # Step 1: Remove library name prefix and normalize indentation for matching lines.
+  # Step 2: Normalize indentation for lines that didn't have the prefix.
+  # Using | as sed delimiter to avoid escaping forward slashes.
+  sed -e "s|^\s*- \"/${library_name}|- \"|" \
+      -e "s|^\s*- \"|- \"|" \
+      "${input_file}" > "${output_file}"
 }

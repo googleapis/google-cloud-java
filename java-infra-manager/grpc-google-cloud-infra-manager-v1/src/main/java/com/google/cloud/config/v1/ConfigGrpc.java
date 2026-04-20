@@ -1316,6 +1316,433 @@ public final class ConfigGrpc {
     return getUpdateAutoMigrationConfigMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetDeploymentGroupRequest,
+          com.google.cloud.config.v1.DeploymentGroup>
+      getGetDeploymentGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDeploymentGroup",
+      requestType = com.google.cloud.config.v1.GetDeploymentGroupRequest.class,
+      responseType = com.google.cloud.config.v1.DeploymentGroup.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetDeploymentGroupRequest,
+          com.google.cloud.config.v1.DeploymentGroup>
+      getGetDeploymentGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.GetDeploymentGroupRequest,
+            com.google.cloud.config.v1.DeploymentGroup>
+        getGetDeploymentGroupMethod;
+    if ((getGetDeploymentGroupMethod = ConfigGrpc.getGetDeploymentGroupMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getGetDeploymentGroupMethod = ConfigGrpc.getGetDeploymentGroupMethod) == null) {
+          ConfigGrpc.getGetDeploymentGroupMethod =
+              getGetDeploymentGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.GetDeploymentGroupRequest,
+                          com.google.cloud.config.v1.DeploymentGroup>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDeploymentGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.GetDeploymentGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.DeploymentGroup.getDefaultInstance()))
+                      .setSchemaDescriptor(new ConfigMethodDescriptorSupplier("GetDeploymentGroup"))
+                      .build();
+        }
+      }
+    }
+    return getGetDeploymentGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.CreateDeploymentGroupRequest, com.google.longrunning.Operation>
+      getCreateDeploymentGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDeploymentGroup",
+      requestType = com.google.cloud.config.v1.CreateDeploymentGroupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.CreateDeploymentGroupRequest, com.google.longrunning.Operation>
+      getCreateDeploymentGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.CreateDeploymentGroupRequest,
+            com.google.longrunning.Operation>
+        getCreateDeploymentGroupMethod;
+    if ((getCreateDeploymentGroupMethod = ConfigGrpc.getCreateDeploymentGroupMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getCreateDeploymentGroupMethod = ConfigGrpc.getCreateDeploymentGroupMethod) == null) {
+          ConfigGrpc.getCreateDeploymentGroupMethod =
+              getCreateDeploymentGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.CreateDeploymentGroupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateDeploymentGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.CreateDeploymentGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("CreateDeploymentGroup"))
+                      .build();
+        }
+      }
+    }
+    return getCreateDeploymentGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.UpdateDeploymentGroupRequest, com.google.longrunning.Operation>
+      getUpdateDeploymentGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDeploymentGroup",
+      requestType = com.google.cloud.config.v1.UpdateDeploymentGroupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.UpdateDeploymentGroupRequest, com.google.longrunning.Operation>
+      getUpdateDeploymentGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.UpdateDeploymentGroupRequest,
+            com.google.longrunning.Operation>
+        getUpdateDeploymentGroupMethod;
+    if ((getUpdateDeploymentGroupMethod = ConfigGrpc.getUpdateDeploymentGroupMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getUpdateDeploymentGroupMethod = ConfigGrpc.getUpdateDeploymentGroupMethod) == null) {
+          ConfigGrpc.getUpdateDeploymentGroupMethod =
+              getUpdateDeploymentGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.UpdateDeploymentGroupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateDeploymentGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.UpdateDeploymentGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("UpdateDeploymentGroup"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateDeploymentGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.DeleteDeploymentGroupRequest, com.google.longrunning.Operation>
+      getDeleteDeploymentGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDeploymentGroup",
+      requestType = com.google.cloud.config.v1.DeleteDeploymentGroupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.DeleteDeploymentGroupRequest, com.google.longrunning.Operation>
+      getDeleteDeploymentGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.DeleteDeploymentGroupRequest,
+            com.google.longrunning.Operation>
+        getDeleteDeploymentGroupMethod;
+    if ((getDeleteDeploymentGroupMethod = ConfigGrpc.getDeleteDeploymentGroupMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getDeleteDeploymentGroupMethod = ConfigGrpc.getDeleteDeploymentGroupMethod) == null) {
+          ConfigGrpc.getDeleteDeploymentGroupMethod =
+              getDeleteDeploymentGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.DeleteDeploymentGroupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteDeploymentGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.DeleteDeploymentGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("DeleteDeploymentGroup"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteDeploymentGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListDeploymentGroupsRequest,
+          com.google.cloud.config.v1.ListDeploymentGroupsResponse>
+      getListDeploymentGroupsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDeploymentGroups",
+      requestType = com.google.cloud.config.v1.ListDeploymentGroupsRequest.class,
+      responseType = com.google.cloud.config.v1.ListDeploymentGroupsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListDeploymentGroupsRequest,
+          com.google.cloud.config.v1.ListDeploymentGroupsResponse>
+      getListDeploymentGroupsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.ListDeploymentGroupsRequest,
+            com.google.cloud.config.v1.ListDeploymentGroupsResponse>
+        getListDeploymentGroupsMethod;
+    if ((getListDeploymentGroupsMethod = ConfigGrpc.getListDeploymentGroupsMethod) == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getListDeploymentGroupsMethod = ConfigGrpc.getListDeploymentGroupsMethod) == null) {
+          ConfigGrpc.getListDeploymentGroupsMethod =
+              getListDeploymentGroupsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.ListDeploymentGroupsRequest,
+                          com.google.cloud.config.v1.ListDeploymentGroupsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListDeploymentGroups"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListDeploymentGroupsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListDeploymentGroupsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("ListDeploymentGroups"))
+                      .build();
+        }
+      }
+    }
+    return getListDeploymentGroupsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ProvisionDeploymentGroupRequest,
+          com.google.longrunning.Operation>
+      getProvisionDeploymentGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ProvisionDeploymentGroup",
+      requestType = com.google.cloud.config.v1.ProvisionDeploymentGroupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ProvisionDeploymentGroupRequest,
+          com.google.longrunning.Operation>
+      getProvisionDeploymentGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.ProvisionDeploymentGroupRequest,
+            com.google.longrunning.Operation>
+        getProvisionDeploymentGroupMethod;
+    if ((getProvisionDeploymentGroupMethod = ConfigGrpc.getProvisionDeploymentGroupMethod)
+        == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getProvisionDeploymentGroupMethod = ConfigGrpc.getProvisionDeploymentGroupMethod)
+            == null) {
+          ConfigGrpc.getProvisionDeploymentGroupMethod =
+              getProvisionDeploymentGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.ProvisionDeploymentGroupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ProvisionDeploymentGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ProvisionDeploymentGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("ProvisionDeploymentGroup"))
+                      .build();
+        }
+      }
+    }
+    return getProvisionDeploymentGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest,
+          com.google.longrunning.Operation>
+      getDeprovisionDeploymentGroupMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeprovisionDeploymentGroup",
+      requestType = com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest,
+          com.google.longrunning.Operation>
+      getDeprovisionDeploymentGroupMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest,
+            com.google.longrunning.Operation>
+        getDeprovisionDeploymentGroupMethod;
+    if ((getDeprovisionDeploymentGroupMethod = ConfigGrpc.getDeprovisionDeploymentGroupMethod)
+        == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getDeprovisionDeploymentGroupMethod = ConfigGrpc.getDeprovisionDeploymentGroupMethod)
+            == null) {
+          ConfigGrpc.getDeprovisionDeploymentGroupMethod =
+              getDeprovisionDeploymentGroupMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeprovisionDeploymentGroup"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("DeprovisionDeploymentGroup"))
+                      .build();
+        }
+      }
+    }
+    return getDeprovisionDeploymentGroupMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest,
+          com.google.cloud.config.v1.DeploymentGroupRevision>
+      getGetDeploymentGroupRevisionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDeploymentGroupRevision",
+      requestType = com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest.class,
+      responseType = com.google.cloud.config.v1.DeploymentGroupRevision.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest,
+          com.google.cloud.config.v1.DeploymentGroupRevision>
+      getGetDeploymentGroupRevisionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest,
+            com.google.cloud.config.v1.DeploymentGroupRevision>
+        getGetDeploymentGroupRevisionMethod;
+    if ((getGetDeploymentGroupRevisionMethod = ConfigGrpc.getGetDeploymentGroupRevisionMethod)
+        == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getGetDeploymentGroupRevisionMethod = ConfigGrpc.getGetDeploymentGroupRevisionMethod)
+            == null) {
+          ConfigGrpc.getGetDeploymentGroupRevisionMethod =
+              getGetDeploymentGroupRevisionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest,
+                          com.google.cloud.config.v1.DeploymentGroupRevision>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetDeploymentGroupRevision"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.DeploymentGroupRevision
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("GetDeploymentGroupRevision"))
+                      .build();
+        }
+      }
+    }
+    return getGetDeploymentGroupRevisionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest,
+          com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>
+      getListDeploymentGroupRevisionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDeploymentGroupRevisions",
+      requestType = com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest.class,
+      responseType = com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest,
+          com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>
+      getListDeploymentGroupRevisionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest,
+            com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>
+        getListDeploymentGroupRevisionsMethod;
+    if ((getListDeploymentGroupRevisionsMethod = ConfigGrpc.getListDeploymentGroupRevisionsMethod)
+        == null) {
+      synchronized (ConfigGrpc.class) {
+        if ((getListDeploymentGroupRevisionsMethod =
+                ConfigGrpc.getListDeploymentGroupRevisionsMethod)
+            == null) {
+          ConfigGrpc.getListDeploymentGroupRevisionsMethod =
+              getListDeploymentGroupRevisionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest,
+                          com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListDeploymentGroupRevisions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConfigMethodDescriptorSupplier("ListDeploymentGroupRevisions"))
+                      .build();
+        }
+      }
+    }
+    return getListDeploymentGroupRevisionsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConfigStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConfigStub> factory =
@@ -1797,6 +2224,156 @@ public final class ConfigGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateAutoMigrationConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a DeploymentGroup for a given project and location.
+     * </pre>
+     */
+    default void getDeploymentGroup(
+        com.google.cloud.config.v1.GetDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.DeploymentGroup> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDeploymentGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * The newly created DeploymentGroup will be in the `CREATING` state
+     * and can be retrieved via Get and List calls.
+     * </pre>
+     */
+    default void createDeploymentGroup(
+        com.google.cloud.config.v1.CreateDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDeploymentGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    default void updateDeploymentGroup(
+        com.google.cloud.config.v1.UpdateDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateDeploymentGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    default void deleteDeploymentGroup(
+        com.google.cloud.config.v1.DeleteDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDeploymentGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List DeploymentGroups for a given project and location.
+     * </pre>
+     */
+    default void listDeploymentGroups(
+        com.google.cloud.config.v1.ListDeploymentGroupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListDeploymentGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDeploymentGroupsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    default void provisionDeploymentGroup(
+        com.google.cloud.config.v1.ProvisionDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getProvisionDeploymentGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprovisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    default void deprovisionDeploymentGroup(
+        com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeprovisionDeploymentGroupMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision].
+     * </pre>
+     */
+    default void getDeploymentGroupRevision(
+        com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.DeploymentGroupRevision>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDeploymentGroupRevisionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s
+     * in a given [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].
+     * </pre>
+     */
+    default void listDeploymentGroupRevisions(
+        com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDeploymentGroupRevisionsMethod(), responseObserver);
     }
   }
 
@@ -2310,6 +2887,174 @@ public final class ConfigGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a DeploymentGroup for a given project and location.
+     * </pre>
+     */
+    public void getDeploymentGroup(
+        com.google.cloud.config.v1.GetDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.DeploymentGroup> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDeploymentGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * The newly created DeploymentGroup will be in the `CREATING` state
+     * and can be retrieved via Get and List calls.
+     * </pre>
+     */
+    public void createDeploymentGroup(
+        com.google.cloud.config.v1.CreateDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDeploymentGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public void updateDeploymentGroup(
+        com.google.cloud.config.v1.UpdateDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDeploymentGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public void deleteDeploymentGroup(
+        com.google.cloud.config.v1.DeleteDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDeploymentGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List DeploymentGroups for a given project and location.
+     * </pre>
+     */
+    public void listDeploymentGroups(
+        com.google.cloud.config.v1.ListDeploymentGroupsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListDeploymentGroupsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDeploymentGroupsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public void provisionDeploymentGroup(
+        com.google.cloud.config.v1.ProvisionDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getProvisionDeploymentGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprovisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public void deprovisionDeploymentGroup(
+        com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeprovisionDeploymentGroupMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision].
+     * </pre>
+     */
+    public void getDeploymentGroupRevision(
+        com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.DeploymentGroupRevision>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDeploymentGroupRevisionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s
+     * in a given [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].
+     * </pre>
+     */
+    public void listDeploymentGroupRevisions(
+        com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDeploymentGroupRevisionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -2723,6 +3468,154 @@ public final class ConfigGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getUpdateAutoMigrationConfigMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a DeploymentGroup for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.DeploymentGroup getDeploymentGroup(
+        com.google.cloud.config.v1.GetDeploymentGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * The newly created DeploymentGroup will be in the `CREATING` state
+     * and can be retrieved via Get and List calls.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDeploymentGroup(
+        com.google.cloud.config.v1.CreateDeploymentGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getCreateDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDeploymentGroup(
+        com.google.cloud.config.v1.UpdateDeploymentGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getUpdateDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDeploymentGroup(
+        com.google.cloud.config.v1.DeleteDeploymentGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeleteDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List DeploymentGroups for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListDeploymentGroupsResponse listDeploymentGroups(
+        com.google.cloud.config.v1.ListDeploymentGroupsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDeploymentGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public com.google.longrunning.Operation provisionDeploymentGroup(
+        com.google.cloud.config.v1.ProvisionDeploymentGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getProvisionDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprovisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deprovisionDeploymentGroup(
+        com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getDeprovisionDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.DeploymentGroupRevision getDeploymentGroupRevision(
+        com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetDeploymentGroupRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s
+     * in a given [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse
+        listDeploymentGroupRevisions(
+            com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest request)
+            throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getListDeploymentGroupRevisionsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -3125,6 +4018,145 @@ public final class ConfigGrpc {
         com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateAutoMigrationConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a DeploymentGroup for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.DeploymentGroup getDeploymentGroup(
+        com.google.cloud.config.v1.GetDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * The newly created DeploymentGroup will be in the `CREATING` state
+     * and can be retrieved via Get and List calls.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDeploymentGroup(
+        com.google.cloud.config.v1.CreateDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDeploymentGroup(
+        com.google.cloud.config.v1.UpdateDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDeploymentGroup(
+        com.google.cloud.config.v1.DeleteDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List DeploymentGroups for a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListDeploymentGroupsResponse listDeploymentGroups(
+        com.google.cloud.config.v1.ListDeploymentGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDeploymentGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public com.google.longrunning.Operation provisionDeploymentGroup(
+        com.google.cloud.config.v1.ProvisionDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getProvisionDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprovisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deprovisionDeploymentGroup(
+        com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeprovisionDeploymentGroupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.DeploymentGroupRevision getDeploymentGroupRevision(
+        com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDeploymentGroupRevisionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s
+     * in a given [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].
+     * </pre>
+     */
+    public com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse
+        listDeploymentGroupRevisions(
+            com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDeploymentGroupRevisionsMethod(), getCallOptions(), request);
     }
   }
 
@@ -3543,6 +4575,152 @@ public final class ConfigGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateAutoMigrationConfigMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a DeploymentGroup for a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.DeploymentGroup>
+        getDeploymentGroup(com.google.cloud.config.v1.GetDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDeploymentGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * The newly created DeploymentGroup will be in the `CREATING` state
+     * and can be retrieved via Get and List calls.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createDeploymentGroup(com.google.cloud.config.v1.CreateDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateDeploymentGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        updateDeploymentGroup(com.google.cloud.config.v1.UpdateDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDeploymentGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a [DeploymentGroup][google.cloud.config.v1.DeploymentGroup]
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteDeploymentGroup(com.google.cloud.config.v1.DeleteDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDeploymentGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List DeploymentGroups for a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.ListDeploymentGroupsResponse>
+        listDeploymentGroups(com.google.cloud.config.v1.ListDeploymentGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDeploymentGroupsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Provisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        provisionDeploymentGroup(
+            com.google.cloud.config.v1.ProvisionDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getProvisionDeploymentGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deprovisions a deployment group.
+     * NOTE: As a first step of this operation, Infra Manager will
+     * automatically delete any Deployments that were part of the
+     * *last successful*
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]
+     * but are *no longer* included in the *current*
+     * [DeploymentGroup][google.cloud.config.v1.DeploymentGroup] definition (e.g.,
+     * following an `UpdateDeploymentGroup` call), along with their actuated
+     * resources.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deprovisionDeploymentGroup(
+            com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeprovisionDeploymentGroupMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details about a
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.DeploymentGroupRevision>
+        getDeploymentGroupRevision(
+            com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDeploymentGroupRevisionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists
+     * [DeploymentGroupRevision][google.cloud.config.v1.DeploymentGroupRevision]s
+     * in a given [DeploymentGroup][google.cloud.config.v1.DeploymentGroup].
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>
+        listDeploymentGroupRevisions(
+            com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDeploymentGroupRevisionsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_DEPLOYMENTS = 0;
@@ -3574,6 +4752,15 @@ public final class ConfigGrpc {
   private static final int METHODID_GET_RESOURCE_DRIFT = 26;
   private static final int METHODID_GET_AUTO_MIGRATION_CONFIG = 27;
   private static final int METHODID_UPDATE_AUTO_MIGRATION_CONFIG = 28;
+  private static final int METHODID_GET_DEPLOYMENT_GROUP = 29;
+  private static final int METHODID_CREATE_DEPLOYMENT_GROUP = 30;
+  private static final int METHODID_UPDATE_DEPLOYMENT_GROUP = 31;
+  private static final int METHODID_DELETE_DEPLOYMENT_GROUP = 32;
+  private static final int METHODID_LIST_DEPLOYMENT_GROUPS = 33;
+  private static final int METHODID_PROVISION_DEPLOYMENT_GROUP = 34;
+  private static final int METHODID_DEPROVISION_DEPLOYMENT_GROUP = 35;
+  private static final int METHODID_GET_DEPLOYMENT_GROUP_REVISION = 36;
+  private static final int METHODID_LIST_DEPLOYMENT_GROUP_REVISIONS = 37;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3750,6 +4937,56 @@ public final class ConfigGrpc {
           serviceImpl.updateAutoMigrationConfig(
               (com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_DEPLOYMENT_GROUP:
+          serviceImpl.getDeploymentGroup(
+              (com.google.cloud.config.v1.GetDeploymentGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.DeploymentGroup>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_DEPLOYMENT_GROUP:
+          serviceImpl.createDeploymentGroup(
+              (com.google.cloud.config.v1.CreateDeploymentGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_DEPLOYMENT_GROUP:
+          serviceImpl.updateDeploymentGroup(
+              (com.google.cloud.config.v1.UpdateDeploymentGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_DEPLOYMENT_GROUP:
+          serviceImpl.deleteDeploymentGroup(
+              (com.google.cloud.config.v1.DeleteDeploymentGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_LIST_DEPLOYMENT_GROUPS:
+          serviceImpl.listDeploymentGroups(
+              (com.google.cloud.config.v1.ListDeploymentGroupsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.ListDeploymentGroupsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_PROVISION_DEPLOYMENT_GROUP:
+          serviceImpl.provisionDeploymentGroup(
+              (com.google.cloud.config.v1.ProvisionDeploymentGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DEPROVISION_DEPLOYMENT_GROUP:
+          serviceImpl.deprovisionDeploymentGroup(
+              (com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_DEPLOYMENT_GROUP_REVISION:
+          serviceImpl.getDeploymentGroupRevision(
+              (com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.config.v1.DeploymentGroupRevision>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_DEPLOYMENT_GROUP_REVISIONS:
+          serviceImpl.listDeploymentGroupRevisions(
+              (com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -3958,6 +5195,66 @@ public final class ConfigGrpc {
                     com.google.cloud.config.v1.UpdateAutoMigrationConfigRequest,
                     com.google.longrunning.Operation>(
                     service, METHODID_UPDATE_AUTO_MIGRATION_CONFIG)))
+        .addMethod(
+            getGetDeploymentGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.GetDeploymentGroupRequest,
+                    com.google.cloud.config.v1.DeploymentGroup>(
+                    service, METHODID_GET_DEPLOYMENT_GROUP)))
+        .addMethod(
+            getCreateDeploymentGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.CreateDeploymentGroupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_DEPLOYMENT_GROUP)))
+        .addMethod(
+            getUpdateDeploymentGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.UpdateDeploymentGroupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_UPDATE_DEPLOYMENT_GROUP)))
+        .addMethod(
+            getDeleteDeploymentGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.DeleteDeploymentGroupRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_DEPLOYMENT_GROUP)))
+        .addMethod(
+            getListDeploymentGroupsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.ListDeploymentGroupsRequest,
+                    com.google.cloud.config.v1.ListDeploymentGroupsResponse>(
+                    service, METHODID_LIST_DEPLOYMENT_GROUPS)))
+        .addMethod(
+            getProvisionDeploymentGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.ProvisionDeploymentGroupRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_PROVISION_DEPLOYMENT_GROUP)))
+        .addMethod(
+            getDeprovisionDeploymentGroupMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.DeprovisionDeploymentGroupRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_DEPROVISION_DEPLOYMENT_GROUP)))
+        .addMethod(
+            getGetDeploymentGroupRevisionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.GetDeploymentGroupRevisionRequest,
+                    com.google.cloud.config.v1.DeploymentGroupRevision>(
+                    service, METHODID_GET_DEPLOYMENT_GROUP_REVISION)))
+        .addMethod(
+            getListDeploymentGroupRevisionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.config.v1.ListDeploymentGroupRevisionsRequest,
+                    com.google.cloud.config.v1.ListDeploymentGroupRevisionsResponse>(
+                    service, METHODID_LIST_DEPLOYMENT_GROUP_REVISIONS)))
         .build();
   }
 
@@ -4036,6 +5333,15 @@ public final class ConfigGrpc {
                       .addMethod(getGetResourceDriftMethod())
                       .addMethod(getGetAutoMigrationConfigMethod())
                       .addMethod(getUpdateAutoMigrationConfigMethod())
+                      .addMethod(getGetDeploymentGroupMethod())
+                      .addMethod(getCreateDeploymentGroupMethod())
+                      .addMethod(getUpdateDeploymentGroupMethod())
+                      .addMethod(getDeleteDeploymentGroupMethod())
+                      .addMethod(getListDeploymentGroupsMethod())
+                      .addMethod(getProvisionDeploymentGroupMethod())
+                      .addMethod(getDeprovisionDeploymentGroupMethod())
+                      .addMethod(getGetDeploymentGroupRevisionMethod())
+                      .addMethod(getListDeploymentGroupRevisionsMethod())
                       .build();
         }
       }

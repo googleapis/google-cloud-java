@@ -15,7 +15,8 @@
 deep-remove-regex:
 - /java-datastore/proto-google-.*/src
 deep-preserve-regex:
-- /java-datastore/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
+- /.*google-.*/src/main/java/.*/stub/Version.java
+- /.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java
 deep-copy-regex:
 - source: /google/datastore/(v.*)/.*-java/proto-google-.*/src
   dest: /owl-bot-staging/java-datastore/$1/proto-google-cloud-datastore-$1/src

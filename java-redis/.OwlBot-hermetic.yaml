@@ -20,7 +20,8 @@ deep-remove-regex:
 - "/java-redis/google-.*/src"
 
 deep-preserve-regex:
-- "/java-redis/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/cloud/redis/(v.*)/.*-java/proto-google-.*/src"

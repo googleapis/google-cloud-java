@@ -75,7 +75,6 @@ public class MockTokenServerTransport extends MockHttpTransport {
   private final Queue<Future<LowLevelHttpResponse>> responseSequence = new ArrayDeque<>();
   private int expiresInSeconds = 3600;
   private MockLowLevelHttpRequest request;
-  private ClientAuthenticationType clientAuthenticationType;
   private PKCEProvider pkceProvider;
 
   public MockTokenServerTransport() {}
@@ -88,9 +87,7 @@ public class MockTokenServerTransport extends MockHttpTransport {
     this.tokenServerUri = tokenServerUri;
   }
 
-  public void setClientAuthType(ClientAuthenticationType type) {
-    this.clientAuthenticationType = type;
-  }
+  public void setClientAuthType(ClientAuthenticationType type) {}
 
   public void setPkceProvider(PKCEProvider pkceProvider) {
     this.pkceProvider = pkceProvider;
@@ -141,9 +138,9 @@ public class MockTokenServerTransport extends MockHttpTransport {
     this.error = error;
   }
 
-  public void addResponseErrorSequence(IOException... errors) {
-    for (IOException error : errors) {
-      responseSequence.add(Futures.<LowLevelHttpResponse>immediateFailedFuture(error));
+  public void addResponseErrorSequence(IOException... ioExceptions) {
+    for (IOException ioException : ioExceptions) {
+      responseSequence.add(Futures.immediateFailedFuture(ioException));
     }
   }
 
@@ -173,7 +170,6 @@ public class MockTokenServerTransport extends MockHttpTransport {
     }
     int questionMarkPos = url.indexOf('?');
     final String urlWithoutQuery = (questionMarkPos > 0) ? url.substring(0, questionMarkPos) : url;
-    final String query = (questionMarkPos > 0) ? url.substring(questionMarkPos + 1) : "";
 
     if (!responseSequence.isEmpty()) {
       request =
@@ -213,7 +209,7 @@ public class MockTokenServerTransport extends MockHttpTransport {
               }
 
               String content = this.getContentAsString();
-              Map<String, String> query = TestUtils.parseQuery(content);
+              Map<String, String> query = parseRequestContent(content);
               String accessToken = null;
               String refreshToken = null;
               String grantedScopesString = null;
@@ -255,16 +251,18 @@ public class MockTokenServerTransport extends MockHttpTransport {
               } else if (query.containsKey("grant_type")) {
                 String grantType = query.get("grant_type");
                 String assertion = query.get("assertion");
+                if (assertion == null) {
+                  assertion = query.get("subject_token");
+                }
                 JsonWebSignature signature = JsonWebSignature.parse(JSON_FACTORY, assertion);
                 if (OAuth2Utils.GRANT_TYPE_JWT_BEARER.equals(grantType)) {
                   String foundEmail = signature.getPayload().getIssuer();
-                  if (!serviceAccounts.containsKey(foundEmail)) {}
                   accessToken = serviceAccounts.get(foundEmail);
                   String foundTargetAudience =
                       (String) signature.getPayload().get("target_audience");
                   String foundScopes = (String) signature.getPayload().get("scope");
-                  if ((foundScopes == null || foundScopes.length() == 0)
-                      && (foundTargetAudience == null || foundTargetAudience.length() == 0)) {
+                  if ((foundScopes == null || foundScopes.isEmpty())
+                      && (foundTargetAudience == null || foundTargetAudience.isEmpty())) {
                     throw new IOException("Either target_audience or scopes must be specified.");
                   }
 
@@ -284,7 +282,10 @@ public class MockTokenServerTransport extends MockHttpTransport {
                         "GDCH Service Account Service Identity Name not found as issuer.");
                   }
                   accessToken = gdchServiceAccounts.get(foundServiceIdentityName);
-                  String foundApiAudience = (String) signature.getPayload().get("api_audience");
+                  String foundApiAudience = query.get("audience");
+                  if (foundApiAudience == null || foundApiAudience.isEmpty()) {
+                    foundApiAudience = (String) signature.getPayload().get("api_audience");
+                  }
                   if ((foundApiAudience == null || foundApiAudience.length() == 0)) {
                     throw new IOException("Api_audience must be specified.");
                   }
@@ -326,7 +327,7 @@ public class MockTokenServerTransport extends MockHttpTransport {
           new MockLowLevelHttpRequest(url) {
             @Override
             public LowLevelHttpResponse execute() throws IOException {
-              Map<String, String> parameters = TestUtils.parseQuery(this.getContentAsString());
+              Map<String, String> parameters = parseRequestContent(this.getContentAsString());
               String token = parameters.get("token");
               if (token == null) {
                 throw new IOException("Token to revoke not found.");
@@ -358,7 +359,7 @@ public class MockTokenServerTransport extends MockHttpTransport {
               }
 
               String content = this.getContentAsString();
-              Map<String, String> query = TestUtils.parseQuery(content);
+              Map<String, String> query = parseRequestContent(content);
 
               // Validate required fields.
               if (!query.containsKey("code")
@@ -412,6 +413,13 @@ public class MockTokenServerTransport extends MockHttpTransport {
       return request;
     }
     return super.buildRequest(method, url);
+  }
+
+  private Map<String, String> parseRequestContent(String content) throws IOException {
+    if (content != null && content.trim().startsWith("{")) {
+      return TestUtils.parseJson(content);
+    }
+    return TestUtils.parseQuery(content);
   }
 
   private void validateAdditionalParameters(Map<String, String> query) {

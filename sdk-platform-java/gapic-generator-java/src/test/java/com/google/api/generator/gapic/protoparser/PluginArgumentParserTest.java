@@ -271,7 +271,7 @@ class PluginArgumentParserTest {
 
   @Test
   void parseRepo() {
-    String repo = "googleapis/sdk-platform-java";
+    String repo = "googleapis/google-cloud-java";
     String rawArgument = String.format("repo=%s", repo);
     assertEquals(
         repo,

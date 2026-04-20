@@ -32,8 +32,8 @@
 package com.google.auth.oauth2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
@@ -122,12 +122,11 @@ final class ITDownscopingTest {
 
     // Attempt to retrieve the object that the downscoped token does not have access to. This should
     // fail.
-    try {
-      retrieveObjectFromGcs(credentials, GCS_OBJECT_NAME_WITHOUT_PERMISSION);
-      fail("Call to GCS should have failed.");
-    } catch (HttpResponseException e) {
-      assertEquals(403, e.getStatusCode());
-    }
+    HttpResponseException e =
+        assertThrows(
+            HttpResponseException.class,
+            () -> retrieveObjectFromGcs(credentials, GCS_OBJECT_NAME_WITHOUT_PERMISSION));
+    assertEquals(403, e.getStatusCode());
   }
 
   private void retrieveObjectFromGcs(Credentials credentials, String objectName)
