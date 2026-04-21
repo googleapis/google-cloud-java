@@ -369,7 +369,11 @@ public class GapicSpannerRpc implements SpannerRpc {
           GrpcTransportOptions.setUpCredentialsProvider(options);
 
       InstantiatingGrpcChannelProvider.Builder defaultChannelProviderBuilder =
-          createChannelProviderBuilder(options, headerProviderWithUserAgent, isEnableDirectAccess);
+          createBaseChannelProviderBuilder(
+              options, headerProviderWithUserAgent, isEnableDirectAccess);
+      GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator =
+          createGrpcGcpEndpointChannelConfigurator(defaultChannelProviderBuilder, options);
+      maybeEnableGrpcGcpExtension(defaultChannelProviderBuilder, options);
 
       if (options.getChannelProvider() == null
           && isEnableDirectAccess
@@ -391,7 +395,8 @@ public class GapicSpannerRpc implements SpannerRpc {
           enableLocationApi && baseChannelProvider instanceof InstantiatingGrpcChannelProvider
               ? new KeyAwareTransportChannelProvider(
                   (InstantiatingGrpcChannelProvider) baseChannelProvider,
-                  options.getChannelEndpointCacheFactory())
+                  options.getChannelEndpointCacheFactory(),
+                  endpointChannelConfigurator)
               : baseChannelProvider;
 
       spannerWatchdog =
@@ -431,12 +436,26 @@ public class GapicSpannerRpc implements SpannerRpc {
                 && isEnableDirectAccess;
         this.readRetrySettings =
             options.getSpannerStubSettings().streamingReadSettings().getRetrySettings();
-        this.readRetryableCodes =
+        Set<Code> streamingReadRetryableCodes =
             options.getSpannerStubSettings().streamingReadSettings().getRetryableCodes();
+        this.readRetryableCodes =
+            enableLocationApi
+                ? ImmutableSet.<Code>builder()
+                    .addAll(streamingReadRetryableCodes)
+                    .add(Code.RESOURCE_EXHAUSTED)
+                    .build()
+                : streamingReadRetryableCodes;
         this.executeQueryRetrySettings =
             options.getSpannerStubSettings().executeStreamingSqlSettings().getRetrySettings();
-        this.executeQueryRetryableCodes =
+        Set<Code> executeStreamingSqlRetryableCodes =
             options.getSpannerStubSettings().executeStreamingSqlSettings().getRetryableCodes();
+        this.executeQueryRetryableCodes =
+            enableLocationApi
+                ? ImmutableSet.<Code>builder()
+                    .addAll(executeStreamingSqlRetryableCodes)
+                    .add(Code.RESOURCE_EXHAUSTED)
+                    .build()
+                : executeStreamingSqlRetryableCodes;
         this.commitRetrySettings =
             options.getSpannerStubSettings().commitSettings().getRetrySettings();
         partitionedDmlRetrySettings =
@@ -726,6 +745,17 @@ public class GapicSpannerRpc implements SpannerRpc {
       final HeaderProvider headerProviderWithUserAgent,
       boolean isEnableDirectAccess) {
     InstantiatingGrpcChannelProvider.Builder defaultChannelProviderBuilder =
+        createBaseChannelProviderBuilder(
+            options, headerProviderWithUserAgent, isEnableDirectAccess);
+    maybeEnableGrpcGcpExtension(defaultChannelProviderBuilder, options);
+    return defaultChannelProviderBuilder;
+  }
+
+  private InstantiatingGrpcChannelProvider.Builder createBaseChannelProviderBuilder(
+      final SpannerOptions options,
+      final HeaderProvider headerProviderWithUserAgent,
+      boolean isEnableDirectAccess) {
+    InstantiatingGrpcChannelProvider.Builder defaultChannelProviderBuilder =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setChannelConfigurator(options.getChannelConfigurator())
             .setEndpoint(options.getEndpoint())
@@ -770,8 +800,6 @@ public class GapicSpannerRpc implements SpannerRpc {
         defaultChannelProviderBuilder.setExecutor(executor);
       }
     }
-    // If it is enabled in options uses the channel pool provided by the gRPC-GCP extension.
-    maybeEnableGrpcGcpExtension(defaultChannelProviderBuilder, options);
     return defaultChannelProviderBuilder;
   }
 
@@ -825,6 +853,36 @@ public class GapicSpannerRpc implements SpannerRpc {
         .setAffinityKeyLifetime(channelPoolOptions.getAffinityKeyLifetime())
         .setCleanupInterval(channelPoolOptions.getCleanupInterval())
         .build();
+  }
+
+  @VisibleForTesting
+  static GcpChannelPoolOptions getGrpcGcpEndpointChannelPoolOptions(SpannerOptions options) {
+    GcpChannelPoolOptions channelPoolOptions = options.getGcpChannelPoolOptions();
+    return GcpChannelPoolOptions.newBuilder()
+        .setMaxSize(1)
+        .setMinSize(1)
+        .setInitSize(1)
+        .disableDynamicScaling()
+        .setAffinityKeyLifetime(channelPoolOptions.getAffinityKeyLifetime())
+        .setCleanupInterval(channelPoolOptions.getCleanupInterval())
+        .build();
+  }
+
+  @Nullable
+  private static GrpcGcpEndpointChannelConfigurator createGrpcGcpEndpointChannelConfigurator(
+      InstantiatingGrpcChannelProvider.Builder channelProviderBuilder, SpannerOptions options) {
+    if (!options.isGrpcGcpExtensionEnabled()) {
+      return null;
+    }
+
+    GcpManagedChannelOptions endpointGrpcGcpOptions =
+        GcpManagedChannelOptions.newBuilder(grpcGcpOptionsWithMetricsAndDcp(options))
+            .withChannelPoolOptions(getGrpcGcpEndpointChannelPoolOptions(options))
+            .build();
+    return new GrpcGcpEndpointChannelConfigurator(
+        channelProviderBuilder.getChannelConfigurator(),
+        parseGrpcGcpApiConfig(),
+        endpointGrpcGcpOptions);
   }
 
   @SuppressWarnings("rawtypes")
