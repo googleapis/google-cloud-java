@@ -19,7 +19,6 @@ for pomFile in $(find . -mindepth 2 -name pom.xml | sort ); do
       [[ "${pomFile}" =~ .*java-storage.* ]] || \
       [[ "${pomFile}" =~ .*java-storage-nio.* ]] || \
       [[ "${pomFile}" =~ .*java-vertexai.* ]] || \
-      [[ "${pomFile}" =~ .*java-compute.* ]] || \  # Skip compute due to dependency on logback
       [[ "${pomFile}" =~ .*.github*. ]]; then
     continue
   fi
