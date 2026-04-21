@@ -322,6 +322,7 @@ jobs:
       shell: bash
       run: |
         bash generation/run_generator_docker.sh "${library_generation_image_tag}" "${{ github.base_ref || 'main' }}" \
+          -e GENERATOR_VERSION="${library_generation_image_tag}" \
           --quiet \
           -u "$(id -u):$(id -g)" \
           -v "$(pwd):${workspace_name}" \
