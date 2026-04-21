@@ -202,9 +202,15 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
     private final ByteString transactionId;
 
     private PartialResultSetsIterator(
-        ResultSet resultSet, boolean setPrecommitToken, ByteString transactionId) {
+        ResultSet resultSet,
+        boolean setPrecommitToken,
+        ByteString transactionId,
+        ByteString resumeToken) {
       this.resultSet = resultSet;
-      this.hasNext = true;
+      this.currentRow = parseResumeToken(resumeToken);
+      this.hasNext =
+          currentRow < resultSet.getRowsCount()
+              || (currentRow == 0 && resultSet.getRowsCount() == 0);
       this.setPrecommitToken = setPrecommitToken;
       this.transactionId = transactionId;
     }
@@ -245,6 +251,17 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
     @Override
     public void remove() {
       throw new UnsupportedOperationException();
+    }
+
+    private static int parseResumeToken(ByteString resumeToken) {
+      if (resumeToken == null || resumeToken.isEmpty()) {
+        return 0;
+      }
+      try {
+        return Integer.parseInt(resumeToken.toStringUtf8());
+      } catch (NumberFormatException ignore) {
+        return 0;
+      }
     }
   }
 
@@ -1283,6 +1300,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
               res.getResultSet(),
               transactionId,
               request.getTransaction(),
+              request.getResumeToken(),
               responseObserver,
               getExecuteStreamingSqlExecutionTime(),
               session.getMultiplexed());
@@ -1747,6 +1765,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
           res.getResultSet(),
           transactionId,
           request.getTransaction(),
+          request.getResumeToken(),
           responseObserver,
           getStreamingReadExecutionTime(),
           session.getMultiplexed());
@@ -1761,6 +1780,7 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
       ResultSet resultSet,
       ByteString transactionId,
       TransactionSelector transactionSelector,
+      ByteString resumeToken,
       StreamObserver<PartialResultSet> responseObserver,
       SimulatedExecutionTime executionTime,
       boolean isMultiplexedSession)
@@ -1783,7 +1803,8 @@ public class MockSpannerServiceImpl extends SpannerImplBase implements MockGrpcS
         new PartialResultSetsIterator(
             resultSet,
             isMultiplexedSession && isReadWriteTransaction(transactionId),
-            transactionId);
+            transactionId,
+            resumeToken);
     long index = 0L;
     while (iterator.hasNext()) {
       SimulatedExecutionTime.checkStreamException(
