@@ -49,17 +49,24 @@ class BigQueryJdbcRootLogger {
   private static Path currentLogPath = null;
   private static int fileCounter = 0;
 
-  static final long PROCESS_ID =
-      Long.parseLong(ManagementFactory.getRuntimeMXBean().getName().split("@")[0]);
+  static final String PROCESS_ID = ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
+
+  private static final ThreadLocal<SimpleDateFormat> DATE_FORMATTER =
+      ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS"));
 
   static String getThreadName(long threadId) {
     Thread current = Thread.currentThread();
     if (current.getId() == threadId) {
       return current.getName();
     }
-    int count = Thread.activeCount();
+    ThreadGroup rootGroup = current.getThreadGroup();
+    while (rootGroup.getParent() != null) {
+      rootGroup = rootGroup.getParent();
+    }
+
+    int count = rootGroup.activeCount();
     Thread[] threads = new Thread[count * 2];
-    int actualCount = Thread.enumerate(threads);
+    int actualCount = rootGroup.enumerate(threads);
     for (int i = 0; i < actualCount; i++) {
       if (threads[i].getId() == threadId) {
         return threads[i].getName();
@@ -81,13 +88,11 @@ class BigQueryJdbcRootLogger {
 
   public static Formatter getFormatter() {
     return new Formatter() {
-      private final ThreadLocal<SimpleDateFormat> dateFormatter =
-          ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS"));
       private static final int MAX_THREAD_NAME_LENGTH = 15;
 
       @Override
       public String format(LogRecord record) {
-        String date = dateFormatter.get().format(new Date(record.getMillis()));
+        String date = DATE_FORMATTER.get().format(new Date(record.getMillis()));
 
         long threadId = record.getThreadID();
         String threadName = getThreadName(threadId);
