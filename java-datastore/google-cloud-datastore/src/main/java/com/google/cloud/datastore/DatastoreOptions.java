@@ -57,6 +57,10 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
   public static final String LOCAL_HOST_ENV_VAR = "DATASTORE_EMULATOR_HOST";
   public static final int INIT_CHANNEL_COUNT = 5;
   static final int CHANNEL_POOL_DEFAULT_RESIZE_DELTA = 5;
+
+  // Configure this default to be 100 to match the typical default `MAX_CONCURRENT_STREAMS`.
+  // Larger values *may* experience possible client-side queueing as excess streams cannot be
+  // multiplexed onto a full Http2 connection.
   static final int CHANNEL_POOL_MAX_RPCS_PER_CHANNEL = 100;
   public static final int MIN_CHANNEL_COUNT = 1;
 
