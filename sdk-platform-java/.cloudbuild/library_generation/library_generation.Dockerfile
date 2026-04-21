@@ -43,6 +43,10 @@ ARG GRPC_VERSION=1.80.0
 ENV HOME=/home
 ENV OS_ARCHITECTURE="linux-x86_64"
 
+# {x-version-update-start:gapic-generator-java:current}
+ENV GENERATOR_VERSION="2.71.0"
+# {x-version-update-end}
+
 # install OS tools
 RUN apt update && apt install -y curl unzip rsync jq nodejs npm git openjdk-17-jdk
 
