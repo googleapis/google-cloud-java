@@ -124,28 +124,12 @@ changed_libraries="$(cat "${changed_libraries_file}")"
 echo "Changed libraries are: ${changed_libraries:-"No changed library"}."
 
 # run hermetic code generation docker image.
-# Attempt to pull the image to see if it exists on release PRs.
-if [[ "$current_branch" =~ ^release-please-- ]]; then
-  echo "Detected release PR branch: $current_branch"
-  if ! docker pull "${IMAGE_NAME}:${image_tag}"; then
-    echo "Image not found for version ${image_tag}. Falling back to previous version from ${target_branch}."
-    previous_tag=$(git show "${target_branch}":.github/workflows/hermetic_library_generation.yaml | grep -m 1 "^[[:space:]]*image_tag:" | cut -d ':' -f 2- | cut -d '#' -f 1 | xargs || true)
-    if [ -n "$previous_tag" ]; then
-      echo "Using previous image version: $previous_tag"
-      image_tag="$previous_tag"
-    else
-      echo "Failed to extract previous version from ${target_branch}. Proceeding with original tag."
-    fi
-  fi
-fi
-
-docker run \
-  --rm \
+bash generation/run_generator_docker.sh "${image_tag}" "${target_branch}" \
   -u "$(id -u):$(id -g)" \
   -v "$(pwd):${workspace_name}" \
   -v "${api_def_dir}:${workspace_name}/googleapis" \
   -e GENERATOR_VERSION="${image_tag}" \
-  "${IMAGE_NAME}:${image_tag}" \
+  -- \
   --generation-config-path="${workspace_name}/${generation_config}" \
   --library-names="${changed_libraries}" \
   --api-definitions-path="${workspace_name}/googleapis"
