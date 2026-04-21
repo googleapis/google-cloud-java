@@ -20,7 +20,15 @@
 
 package com.google.showcase.v1beta1;
 
-/** Protobuf type {@code google.showcase.v1beta1.AttemptStreamingSequenceRequest} */
+/**
+ *
+ *
+ * <pre>
+ * Request message for the AttemptStreamingSequence method.
+ * </pre>
+ *
+ * Protobuf type {@code google.showcase.v1beta1.AttemptStreamingSequenceRequest}
+ */
 @com.google.protobuf.Generated
 public final class AttemptStreamingSequenceRequest extends com.google.protobuf.GeneratedMessage
     implements
@@ -298,7 +306,15 @@ public final class AttemptStreamingSequenceRequest extends com.google.protobuf.G
     return builder;
   }
 
-  /** Protobuf type {@code google.showcase.v1beta1.AttemptStreamingSequenceRequest} */
+  /**
+   *
+   *
+   * <pre>
+   * Request message for the AttemptStreamingSequence method.
+   * </pre>
+   *
+   * Protobuf type {@code google.showcase.v1beta1.AttemptStreamingSequenceRequest}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.showcase.v1beta1.AttemptStreamingSequenceRequest)

@@ -20,7 +20,16 @@
 
 package com.google.showcase.v1beta1;
 
-/** Protobuf type {@code google.showcase.v1beta1.StreamingSequence} */
+/**
+ *
+ *
+ * <pre>
+ * A sequence of responses to be returned in order at the delay specified
+ * as part of the server streaming call
+ * </pre>
+ *
+ * Protobuf type {@code google.showcase.v1beta1.StreamingSequence}
+ */
 @com.google.protobuf.Generated
 public final class StreamingSequence extends com.google.protobuf.GeneratedMessage
     implements
@@ -147,7 +156,7 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The index that the status should be sent
+     * The index that the status should be sent at
      * </pre>
      *
      * <code>int32 response_index = 3;</code>
@@ -310,7 +319,7 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The index that the status should be sent
+     * The index that the status should be sent at
      * </pre>
      *
      * <code>int32 response_index = 3;</code>
@@ -1089,7 +1098,7 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The index that the status should be sent
+       * The index that the status should be sent at
        * </pre>
        *
        * <code>int32 response_index = 3;</code>
@@ -1105,7 +1114,7 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The index that the status should be sent
+       * The index that the status should be sent at
        * </pre>
        *
        * <code>int32 response_index = 3;</code>
@@ -1125,7 +1134,7 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The index that the status should be sent
+       * The index that the status should be sent at
        * </pre>
        *
        * <code>int32 response_index = 3;</code>
@@ -1197,6 +1206,12 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
   private volatile java.lang.Object name_ = "";
 
   /**
+   *
+   *
+   * <pre>
+   * The name of the streaming sequence.
+   * </pre>
+   *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
@@ -1215,6 +1230,12 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
   }
 
   /**
+   *
+   *
+   * <pre>
+   * The name of the streaming sequence.
+   * </pre>
+   *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
@@ -1241,7 +1262,8 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The Content that the stream will send
+   * The content that the stream will send
+   * this was specified when the sequence was created
    * </pre>
    *
    * <code>string content = 2;</code>
@@ -1265,7 +1287,8 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The Content that the stream will send
+   * The content that the stream will send
+   * this was specified when the sequence was created
    * </pre>
    *
    * <code>string content = 2;</code>
@@ -1547,7 +1570,16 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
     return builder;
   }
 
-  /** Protobuf type {@code google.showcase.v1beta1.StreamingSequence} */
+  /**
+   *
+   *
+   * <pre>
+   * A sequence of responses to be returned in order at the delay specified
+   * as part of the server streaming call
+   * </pre>
+   *
+   * Protobuf type {@code google.showcase.v1beta1.StreamingSequence}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.showcase.v1beta1.StreamingSequence)
@@ -1767,6 +1799,12 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
     private java.lang.Object name_ = "";
 
     /**
+     *
+     *
+     * <pre>
+     * The name of the streaming sequence.
+     * </pre>
+     *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The name.
@@ -1784,6 +1822,12 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
     }
 
     /**
+     *
+     *
+     * <pre>
+     * The name of the streaming sequence.
+     * </pre>
+     *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for name.
@@ -1801,6 +1845,12 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
     }
 
     /**
+     *
+     *
+     * <pre>
+     * The name of the streaming sequence.
+     * </pre>
+     *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The name to set.
@@ -1817,6 +1867,12 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
     }
 
     /**
+     *
+     *
+     * <pre>
+     * The name of the streaming sequence.
+     * </pre>
+     *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
@@ -1829,6 +1885,12 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
     }
 
     /**
+     *
+     *
+     * <pre>
+     * The name of the streaming sequence.
+     * </pre>
+     *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for name to set.
@@ -1851,7 +1913,8 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The Content that the stream will send
+     * The content that the stream will send
+     * this was specified when the sequence was created
      * </pre>
      *
      * <code>string content = 2;</code>
@@ -1874,7 +1937,8 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The Content that the stream will send
+     * The content that the stream will send
+     * this was specified when the sequence was created
      * </pre>
      *
      * <code>string content = 2;</code>
@@ -1897,7 +1961,8 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The Content that the stream will send
+     * The content that the stream will send
+     * this was specified when the sequence was created
      * </pre>
      *
      * <code>string content = 2;</code>
@@ -1919,7 +1984,8 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The Content that the stream will send
+     * The content that the stream will send
+     * this was specified when the sequence was created
      * </pre>
      *
      * <code>string content = 2;</code>
@@ -1937,7 +2003,8 @@ public final class StreamingSequence extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The Content that the stream will send
+     * The content that the stream will send
+     * this was specified when the sequence was created
      * </pre>
      *
      * <code>string content = 2;</code>

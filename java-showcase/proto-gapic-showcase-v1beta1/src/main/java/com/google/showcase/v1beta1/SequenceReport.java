@@ -20,7 +20,15 @@
 
 package com.google.showcase.v1beta1;
 
-/** Protobuf type {@code google.showcase.v1beta1.SequenceReport} */
+/**
+ *
+ *
+ * <pre>
+ * A report of the results of a sequence of unary responses
+ * </pre>
+ *
+ * Protobuf type {@code google.showcase.v1beta1.SequenceReport}
+ */
 @com.google.protobuf.Generated
 public final class SequenceReport extends com.google.protobuf.GeneratedMessage
     implements
@@ -2156,7 +2164,15 @@ public final class SequenceReport extends com.google.protobuf.GeneratedMessage
     return builder;
   }
 
-  /** Protobuf type {@code google.showcase.v1beta1.SequenceReport} */
+  /**
+   *
+   *
+   * <pre>
+   * A report of the results of a sequence of unary responses
+   * </pre>
+   *
+   * Protobuf type {@code google.showcase.v1beta1.SequenceReport}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.showcase.v1beta1.SequenceReport)

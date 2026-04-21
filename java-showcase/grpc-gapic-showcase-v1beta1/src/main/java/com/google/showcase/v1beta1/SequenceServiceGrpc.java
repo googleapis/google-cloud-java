@@ -17,7 +17,14 @@ package com.google.showcase.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * A service that enables testing of unary and server streaming calls
+ * by specifying a specific, predictable sequence of responses from the service
+ * </pre>
+ */
 @io.grpc.stub.annotations.GrpcGenerated
 public final class SequenceServiceGrpc {
 
@@ -365,14 +372,21 @@ public final class SequenceServiceGrpc {
     return SequenceServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A service that enables testing of unary and server streaming calls
+   * by specifying a specific, predictable sequence of responses from the service
+   * </pre>
+   */
   public interface AsyncService {
 
     /**
      *
      *
      * <pre>
-     * Creates a sequence.
+     * Create a sequence of responses to be returned as unary calls
      * </pre>
      */
     default void createSequence(
@@ -386,7 +400,7 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Creates a sequence.
+     * Creates a sequence of responses to be returned in a server streaming call
      * </pre>
      */
     default void createStreamingSequence(
@@ -401,7 +415,8 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a sequence.
+     * Retrieves a sequence report which can be used to retrieve information about a
+     * sequence of unary calls.
      * </pre>
      */
     default void getSequenceReport(
@@ -415,7 +430,8 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a sequence.
+     * Retrieves a sequence report which can be used to retrieve information
+     * about a sequences of responses in a server streaming call.
      * </pre>
      */
     default void getStreamingSequenceReport(
@@ -430,7 +446,7 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Attempts a sequence.
+     * Attempts a sequence of unary responses.
      * </pre>
      */
     default void attemptSequence(
@@ -444,7 +460,8 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Attempts a streaming sequence.
+     * Attempts a server streaming call with a sequence of responses
+     * Can be used to test retries and stream resumption logic
      * May not function as expected in HTTP mode due to when http statuses are sent
      * See https://github.com/googleapis/gapic-showcase/issues/1377 for more details
      * </pre>
@@ -458,7 +475,14 @@ public final class SequenceServiceGrpc {
     }
   }
 
-  /** Base class for the server implementation of the service SequenceService. */
+  /**
+   * Base class for the server implementation of the service SequenceService.
+   *
+   * <pre>
+   * A service that enables testing of unary and server streaming calls
+   * by specifying a specific, predictable sequence of responses from the service
+   * </pre>
+   */
   public abstract static class SequenceServiceImplBase
       implements io.grpc.BindableService, AsyncService {
 
@@ -468,7 +492,14 @@ public final class SequenceServiceGrpc {
     }
   }
 
-  /** A stub to allow clients to do asynchronous rpc calls to service SequenceService. */
+  /**
+   * A stub to allow clients to do asynchronous rpc calls to service SequenceService.
+   *
+   * <pre>
+   * A service that enables testing of unary and server streaming calls
+   * by specifying a specific, predictable sequence of responses from the service
+   * </pre>
+   */
   public static final class SequenceServiceStub
       extends io.grpc.stub.AbstractAsyncStub<SequenceServiceStub> {
     private SequenceServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -484,7 +515,7 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Creates a sequence.
+     * Create a sequence of responses to be returned as unary calls
      * </pre>
      */
     public void createSequence(
@@ -500,7 +531,7 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Creates a sequence.
+     * Creates a sequence of responses to be returned in a server streaming call
      * </pre>
      */
     public void createStreamingSequence(
@@ -517,7 +548,8 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a sequence.
+     * Retrieves a sequence report which can be used to retrieve information about a
+     * sequence of unary calls.
      * </pre>
      */
     public void getSequenceReport(
@@ -533,7 +565,8 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a sequence.
+     * Retrieves a sequence report which can be used to retrieve information
+     * about a sequences of responses in a server streaming call.
      * </pre>
      */
     public void getStreamingSequenceReport(
@@ -550,7 +583,7 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Attempts a sequence.
+     * Attempts a sequence of unary responses.
      * </pre>
      */
     public void attemptSequence(
@@ -566,7 +599,8 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Attempts a streaming sequence.
+     * Attempts a server streaming call with a sequence of responses
+     * Can be used to test retries and stream resumption logic
      * May not function as expected in HTTP mode due to when http statuses are sent
      * See https://github.com/googleapis/gapic-showcase/issues/1377 for more details
      * </pre>
@@ -582,7 +616,14 @@ public final class SequenceServiceGrpc {
     }
   }
 
-  /** A stub to allow clients to do synchronous rpc calls to service SequenceService. */
+  /**
+   * A stub to allow clients to do synchronous rpc calls to service SequenceService.
+   *
+   * <pre>
+   * A service that enables testing of unary and server streaming calls
+   * by specifying a specific, predictable sequence of responses from the service
+   * </pre>
+   */
   public static final class SequenceServiceBlockingV2Stub
       extends io.grpc.stub.AbstractBlockingStub<SequenceServiceBlockingV2Stub> {
     private SequenceServiceBlockingV2Stub(
@@ -600,7 +641,7 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Creates a sequence.
+     * Create a sequence of responses to be returned as unary calls
      * </pre>
      */
     public com.google.showcase.v1beta1.Sequence createSequence(
@@ -613,7 +654,7 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Creates a sequence.
+     * Creates a sequence of responses to be returned in a server streaming call
      * </pre>
      */
     public com.google.showcase.v1beta1.StreamingSequence createStreamingSequence(
@@ -627,7 +668,8 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a sequence.
+     * Retrieves a sequence report which can be used to retrieve information about a
+     * sequence of unary calls.
      * </pre>
      */
     public com.google.showcase.v1beta1.SequenceReport getSequenceReport(
@@ -641,7 +683,8 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a sequence.
+     * Retrieves a sequence report which can be used to retrieve information
+     * about a sequences of responses in a server streaming call.
      * </pre>
      */
     public com.google.showcase.v1beta1.StreamingSequenceReport getStreamingSequenceReport(
@@ -655,7 +698,7 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Attempts a sequence.
+     * Attempts a sequence of unary responses.
      * </pre>
      */
     public com.google.protobuf.Empty attemptSequence(
@@ -668,7 +711,8 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Attempts a streaming sequence.
+     * Attempts a server streaming call with a sequence of responses
+     * Can be used to test retries and stream resumption logic
      * May not function as expected in HTTP mode due to when http statuses are sent
      * See https://github.com/googleapis/gapic-showcase/issues/1377 for more details
      * </pre>
@@ -683,7 +727,14 @@ public final class SequenceServiceGrpc {
     }
   }
 
-  /** A stub to allow clients to do limited synchronous rpc calls to service SequenceService. */
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SequenceService.
+   *
+   * <pre>
+   * A service that enables testing of unary and server streaming calls
+   * by specifying a specific, predictable sequence of responses from the service
+   * </pre>
+   */
   public static final class SequenceServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<SequenceServiceBlockingStub> {
     private SequenceServiceBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -700,7 +751,7 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Creates a sequence.
+     * Create a sequence of responses to be returned as unary calls
      * </pre>
      */
     public com.google.showcase.v1beta1.Sequence createSequence(
@@ -713,7 +764,7 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Creates a sequence.
+     * Creates a sequence of responses to be returned in a server streaming call
      * </pre>
      */
     public com.google.showcase.v1beta1.StreamingSequence createStreamingSequence(
@@ -726,7 +777,8 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a sequence.
+     * Retrieves a sequence report which can be used to retrieve information about a
+     * sequence of unary calls.
      * </pre>
      */
     public com.google.showcase.v1beta1.SequenceReport getSequenceReport(
@@ -739,7 +791,8 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a sequence.
+     * Retrieves a sequence report which can be used to retrieve information
+     * about a sequences of responses in a server streaming call.
      * </pre>
      */
     public com.google.showcase.v1beta1.StreamingSequenceReport getStreamingSequenceReport(
@@ -752,7 +805,7 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Attempts a sequence.
+     * Attempts a sequence of unary responses.
      * </pre>
      */
     public com.google.protobuf.Empty attemptSequence(
@@ -765,7 +818,8 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Attempts a streaming sequence.
+     * Attempts a server streaming call with a sequence of responses
+     * Can be used to test retries and stream resumption logic
      * May not function as expected in HTTP mode due to when http statuses are sent
      * See https://github.com/googleapis/gapic-showcase/issues/1377 for more details
      * </pre>
@@ -778,7 +832,14 @@ public final class SequenceServiceGrpc {
     }
   }
 
-  /** A stub to allow clients to do ListenableFuture-style rpc calls to service SequenceService. */
+  /**
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service SequenceService.
+   *
+   * <pre>
+   * A service that enables testing of unary and server streaming calls
+   * by specifying a specific, predictable sequence of responses from the service
+   * </pre>
+   */
   public static final class SequenceServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<SequenceServiceFutureStub> {
     private SequenceServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -795,7 +856,7 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Creates a sequence.
+     * Create a sequence of responses to be returned as unary calls
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.showcase.v1beta1.Sequence>
@@ -808,7 +869,7 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Creates a sequence.
+     * Creates a sequence of responses to be returned in a server streaming call
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -823,7 +884,8 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a sequence.
+     * Retrieves a sequence report which can be used to retrieve information about a
+     * sequence of unary calls.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -837,7 +899,8 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Retrieves a sequence.
+     * Retrieves a sequence report which can be used to retrieve information
+     * about a sequences of responses in a server streaming call.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -852,7 +915,7 @@ public final class SequenceServiceGrpc {
      *
      *
      * <pre>
-     * Attempts a sequence.
+     * Attempts a sequence of unary responses.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

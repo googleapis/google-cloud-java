@@ -24,7 +24,7 @@ package com.google.showcase.v1beta1;
  *
  *
  * <pre>
- * The response message for the Echo methods.
+ * The response message for the AttemptStreamingSequence method.
  * </pre>
  *
  * Protobuf type {@code google.showcase.v1beta1.AttemptStreamingSequenceResponse}
@@ -289,7 +289,7 @@ public final class AttemptStreamingSequenceResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * The response message for the Echo methods.
+   * The response message for the AttemptStreamingSequence method.
    * </pre>
    *
    * Protobuf type {@code google.showcase.v1beta1.AttemptStreamingSequenceResponse}

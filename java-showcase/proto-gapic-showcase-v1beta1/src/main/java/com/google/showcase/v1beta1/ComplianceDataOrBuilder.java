@@ -205,6 +205,146 @@ public interface ComplianceDataOrBuilder
   int getPInt32();
 
   /**
+   * <code>optional sint32 p_sint32 = 39;</code>
+   *
+   * @return Whether the pSint32 field is set.
+   */
+  boolean hasPSint32();
+
+  /**
+   * <code>optional sint32 p_sint32 = 39;</code>
+   *
+   * @return The pSint32.
+   */
+  int getPSint32();
+
+  /**
+   * <code>optional sfixed32 p_sfixed32 = 40;</code>
+   *
+   * @return Whether the pSfixed32 field is set.
+   */
+  boolean hasPSfixed32();
+
+  /**
+   * <code>optional sfixed32 p_sfixed32 = 40;</code>
+   *
+   * @return The pSfixed32.
+   */
+  int getPSfixed32();
+
+  /**
+   * <code>optional uint32 p_uint32 = 41;</code>
+   *
+   * @return Whether the pUint32 field is set.
+   */
+  boolean hasPUint32();
+
+  /**
+   * <code>optional uint32 p_uint32 = 41;</code>
+   *
+   * @return The pUint32.
+   */
+  int getPUint32();
+
+  /**
+   * <code>optional fixed32 p_fixed32 = 42;</code>
+   *
+   * @return Whether the pFixed32 field is set.
+   */
+  boolean hasPFixed32();
+
+  /**
+   * <code>optional fixed32 p_fixed32 = 42;</code>
+   *
+   * @return The pFixed32.
+   */
+  int getPFixed32();
+
+  /**
+   * <code>optional int64 p_int64 = 43;</code>
+   *
+   * @return Whether the pInt64 field is set.
+   */
+  boolean hasPInt64();
+
+  /**
+   * <code>optional int64 p_int64 = 43;</code>
+   *
+   * @return The pInt64.
+   */
+  long getPInt64();
+
+  /**
+   * <code>optional sint64 p_sint64 = 44;</code>
+   *
+   * @return Whether the pSint64 field is set.
+   */
+  boolean hasPSint64();
+
+  /**
+   * <code>optional sint64 p_sint64 = 44;</code>
+   *
+   * @return The pSint64.
+   */
+  long getPSint64();
+
+  /**
+   * <code>optional sfixed64 p_sfixed64 = 45;</code>
+   *
+   * @return Whether the pSfixed64 field is set.
+   */
+  boolean hasPSfixed64();
+
+  /**
+   * <code>optional sfixed64 p_sfixed64 = 45;</code>
+   *
+   * @return The pSfixed64.
+   */
+  long getPSfixed64();
+
+  /**
+   * <code>optional uint64 p_uint64 = 46;</code>
+   *
+   * @return Whether the pUint64 field is set.
+   */
+  boolean hasPUint64();
+
+  /**
+   * <code>optional uint64 p_uint64 = 46;</code>
+   *
+   * @return The pUint64.
+   */
+  long getPUint64();
+
+  /**
+   * <code>optional fixed64 p_fixed64 = 47;</code>
+   *
+   * @return Whether the pFixed64 field is set.
+   */
+  boolean hasPFixed64();
+
+  /**
+   * <code>optional fixed64 p_fixed64 = 47;</code>
+   *
+   * @return The pFixed64.
+   */
+  long getPFixed64();
+
+  /**
+   * <code>optional float p_float = 48;</code>
+   *
+   * @return Whether the pFloat field is set.
+   */
+  boolean hasPFloat();
+
+  /**
+   * <code>optional float p_float = 48;</code>
+   *
+   * @return The pFloat.
+   */
+  float getPFloat();
+
+  /**
    * <code>optional double p_double = 19;</code>
    *
    * @return Whether the pDouble field is set.

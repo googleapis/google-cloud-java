@@ -30,12 +30,14 @@ option java_package = "com.google.showcase.v1beta1";
 option java_multiple_files = true;
 option ruby_package = "Google::Showcase::V1beta1";
 
+// A service that enables testing of unary and server streaming calls
+// by specifying a specific, predictable sequence of responses from the service
 service SequenceService {
   // This service is meant to only run locally on the port 7469 (keypad digits
   // for "show").
   option (google.api.default_host) = "localhost:7469";
 
-  // Creates a sequence.
+  // Create a sequence of responses to be returned as unary calls
   rpc CreateSequence(CreateSequenceRequest) returns (Sequence) {
     option (google.api.http) = {
       post: "/v1beta1/sequences"
@@ -44,7 +46,7 @@ service SequenceService {
     option (google.api.method_signature) = "sequence";
   };
 
-    // Creates a sequence.
+  // Creates a sequence of responses to be returned in a server streaming call
   rpc CreateStreamingSequence(CreateStreamingSequenceRequest) returns (StreamingSequence) {
     option (google.api.http) = {
       post: "/v1beta1/streamingSequences"
@@ -53,7 +55,8 @@ service SequenceService {
     option (google.api.method_signature) = "streaming_sequence";
   };
 
-  // Retrieves a sequence.
+  // Retrieves a sequence report which can be used to retrieve information about a
+  // sequence of unary calls.
   rpc GetSequenceReport(GetSequenceReportRequest) returns (SequenceReport) {
     option (google.api.http) = {
       get: "/v1beta1/{name=sequences/*/sequenceReport}"
@@ -61,7 +64,8 @@ service SequenceService {
     option (google.api.method_signature) = "name";
   };
 
-  // Retrieves a sequence.
+  // Retrieves a sequence report which can be used to retrieve information
+  // about a sequences of responses in a server streaming call.
   rpc GetStreamingSequenceReport(GetStreamingSequenceReportRequest) returns (StreamingSequenceReport) {
     option (google.api.http) = {
       get: "/v1beta1/{name=streamingSequences/*/streamingSequenceReport}"
@@ -69,7 +73,7 @@ service SequenceService {
     option (google.api.method_signature) = "name";
   };
 
-  // Attempts a sequence.
+  // Attempts a sequence of unary responses.
   rpc AttemptSequence(AttemptSequenceRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
       post: "/v1beta1/{name=sequences/*}"
@@ -78,7 +82,8 @@ service SequenceService {
     option (google.api.method_signature) = "name";
   };
 
-  // Attempts a streaming sequence.
+  // Attempts a server streaming call with a sequence of responses
+  // Can be used to test retries and stream resumption logic
   // May not function as expected in HTTP mode due to when http statuses are sent
   // See https://github.com/googleapis/gapic-showcase/issues/1377 for more details
   rpc AttemptStreamingSequence(AttemptStreamingSequenceRequest) returns  (stream AttemptStreamingSequenceResponse) {
@@ -90,6 +95,7 @@ service SequenceService {
   };
 }
 
+// A sequence of responses to be returned in order for each unary call attempt
 message Sequence {
   option (google.api.resource) = {
     type: "showcase.googleapis.com/Sequence"
@@ -112,15 +118,19 @@ message Sequence {
   repeated Response responses = 2;
 }
 
+// A sequence of responses to be returned in order at the delay specified
+// as part of the server streaming call
 message StreamingSequence {
   option (google.api.resource) = {
     type: "showcase.googleapis.com/StreamingSequence"
     pattern: "streamingSequences/{streaming_sequence}"
   };
 
+  // The name of the streaming sequence.
   string name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
 
-  // The Content that the stream will send
+  // The content that the stream will send
+  // this was specified when the sequence was created
   string content = 2;
 
   // A server response to an RPC Attempt in a sequence.
@@ -131,7 +141,7 @@ message StreamingSequence {
     // The amount of time to delay sending the response.
     google.protobuf.Duration delay = 2;
 
-    // The index that the status should be sent
+    // The index that the status should be sent at
     int32 response_index = 3;
   }
 
@@ -140,7 +150,7 @@ message StreamingSequence {
   repeated Response responses = 3;
 }
 
-
+// A report of the results of a streaming sequence.
 message StreamingSequenceReport {
   option (google.api.resource) = {
     type: "showcase.googleapis.com/StreamingSequenceReport"
@@ -174,6 +184,7 @@ message StreamingSequenceReport {
   repeated Attempt attempts = 2;
 }
 
+// A report of the results of a sequence of unary responses
 message SequenceReport {
   option (google.api.resource) = {
     type: "showcase.googleapis.com/SequenceReport"
@@ -206,14 +217,17 @@ message SequenceReport {
   repeated Attempt attempts = 2;
 }
 
+// Request message for creating a sequence of unary calls
 message CreateSequenceRequest {
   Sequence sequence = 1;
 }
 
+// Request message for the sequences of responses to be sent in a server streaming call
 message CreateStreamingSequenceRequest {
   StreamingSequence streaming_sequence = 1;
 }
 
+// Request message for the unary AttemptSequence method
 message AttemptSequenceRequest {
   string name = 1 [
     (google.api.resource_reference).type = "showcase.googleapis.com/Sequence",
@@ -222,6 +236,7 @@ message AttemptSequenceRequest {
 
 }
 
+// Request message for the AttemptStreamingSequence method.
 message AttemptStreamingSequenceRequest {
   string name = 1 [
     (google.api.resource_reference).type = "showcase.googleapis.com/StreamingSequence",
@@ -236,7 +251,7 @@ message AttemptStreamingSequenceRequest {
   ];
 }
 
-// The response message for the Echo methods.
+// The response message for the AttemptStreamingSequence method.
 message AttemptStreamingSequenceResponse {
   // The content specified in the request.
   string content = 1;

@@ -216,9 +216,37 @@ message ComplianceData {
   // optional fields
 
   optional string p_string = 17;
+
   optional int32 p_int32 = 18;
+  optional sint32 p_sint32 = 39;
+  optional sfixed32 p_sfixed32 = 40;
+
+  optional uint32 p_uint32 = 41;
+  optional fixed32 p_fixed32 = 42;
+
+  optional int64 p_int64 = 43;
+  optional sint64 p_sint64 = 44;
+  optional sfixed64 p_sfixed64 = 45;
+
+  optional uint64 p_uint64 = 46;
+  optional fixed64 p_fixed64 = 47;
+
+  optional float p_float = 48;
   optional double p_double = 19;
+
   optional bool p_bool = 20;
+
+  // The proto compiler seems to misgenerate optional bytes fields.
+  // The generated code looks like:
+  // ```
+  // if cmd.Flags().Changed("info.p_bytes") {
+  // 	RepeatDataBodyInfoInput.Info.PBytes = &repeatDataBodyInfoInputInfoPBytes
+  // }
+  // ```
+  // The dereference of `&repeatDataBodyInfoInputInfoPBytes` is incorrect since
+  // `repeatDataBodyInfoInputInfoPBytes` is already a `byte[]`
+  // optional bytes p_bytes = 49;
+
   optional LifeKingdom p_kingdom = 23;
   optional ComplianceDataChild p_child = 21;
 }
@@ -253,7 +281,6 @@ enum Continent {
   AUSTRALIA = 4;
   EUROPE = 5;
 }
-
 
 message EnumRequest {
   // Whether the client is requesting a new, unknown enum value or a known enum value already declared in this proto file.

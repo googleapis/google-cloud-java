@@ -46,8 +46,11 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * This class provides the ability to make remote calls to the backing service through method calls
- * that map to API methods. Sample code to get started:
+ * Service Description: A service that enables testing of unary and server streaming calls by
+ * specifying a specific, predictable sequence of responses from the service
+ *
+ * <p>This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
  *
  * <pre>{@code
  * // This snippet has been automatically generated and should be regarded as a code template only.
@@ -74,7 +77,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateSequence</td>
- *      <td><p> Creates a sequence.</td>
+ *      <td><p> Create a sequence of responses to be returned as unary calls</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -92,7 +95,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateStreamingSequence</td>
- *      <td><p> Creates a sequence.</td>
+ *      <td><p> Creates a sequence of responses to be returned in a server streaming call</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -110,7 +113,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetSequenceReport</td>
- *      <td><p> Retrieves a sequence.</td>
+ *      <td><p> Retrieves a sequence report which can be used to retrieve information about a sequence of unary calls.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -129,7 +132,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetStreamingSequenceReport</td>
- *      <td><p> Retrieves a sequence.</td>
+ *      <td><p> Retrieves a sequence report which can be used to retrieve information about a sequences of responses in a server streaming call.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -148,7 +151,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AttemptSequence</td>
- *      <td><p> Attempts a sequence.</td>
+ *      <td><p> Attempts a sequence of unary responses.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -167,7 +170,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> AttemptStreamingSequence</td>
- *      <td><p> Attempts a streaming sequence. May not function as expected in HTTP mode due to when http statuses are sent See https://github.com/googleapis/gapic-showcase/issues/1377 for more details</td>
+ *      <td><p> Attempts a server streaming call with a sequence of responses Can be used to test retries and stream resumption logic May not function as expected in HTTP mode due to when http statuses are sent See https://github.com/googleapis/gapic-showcase/issues/1377 for more details</td>
  *      <td>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -359,7 +362,7 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a sequence.
+   * Create a sequence of responses to be returned as unary calls
    *
    * <p>Sample code:
    *
@@ -386,7 +389,7 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a sequence.
+   * Create a sequence of responses to be returned as unary calls
    *
    * <p>Sample code:
    *
@@ -412,7 +415,7 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a sequence.
+   * Create a sequence of responses to be returned as unary calls
    *
    * <p>Sample code:
    *
@@ -438,7 +441,7 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a sequence.
+   * Creates a sequence of responses to be returned in a server streaming call
    *
    * <p>Sample code:
    *
@@ -465,7 +468,7 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a sequence.
+   * Creates a sequence of responses to be returned in a server streaming call
    *
    * <p>Sample code:
    *
@@ -493,7 +496,7 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a sequence.
+   * Creates a sequence of responses to be returned in a server streaming call
    *
    * <p>Sample code:
    *
@@ -522,7 +525,8 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a sequence.
+   * Retrieves a sequence report which can be used to retrieve information about a sequence of unary
+   * calls.
    *
    * <p>Sample code:
    *
@@ -551,7 +555,8 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a sequence.
+   * Retrieves a sequence report which can be used to retrieve information about a sequence of unary
+   * calls.
    *
    * <p>Sample code:
    *
@@ -577,7 +582,8 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a sequence.
+   * Retrieves a sequence report which can be used to retrieve information about a sequence of unary
+   * calls.
    *
    * <p>Sample code:
    *
@@ -605,7 +611,8 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a sequence.
+   * Retrieves a sequence report which can be used to retrieve information about a sequence of unary
+   * calls.
    *
    * <p>Sample code:
    *
@@ -633,7 +640,8 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a sequence.
+   * Retrieves a sequence report which can be used to retrieve information about a sequences of
+   * responses in a server streaming call.
    *
    * <p>Sample code:
    *
@@ -663,7 +671,8 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a sequence.
+   * Retrieves a sequence report which can be used to retrieve information about a sequences of
+   * responses in a server streaming call.
    *
    * <p>Sample code:
    *
@@ -690,7 +699,8 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a sequence.
+   * Retrieves a sequence report which can be used to retrieve information about a sequences of
+   * responses in a server streaming call.
    *
    * <p>Sample code:
    *
@@ -719,7 +729,8 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Retrieves a sequence.
+   * Retrieves a sequence report which can be used to retrieve information about a sequences of
+   * responses in a server streaming call.
    *
    * <p>Sample code:
    *
@@ -748,7 +759,7 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Attempts a sequence.
+   * Attempts a sequence of unary responses.
    *
    * <p>Sample code:
    *
@@ -775,7 +786,7 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Attempts a sequence.
+   * Attempts a sequence of unary responses.
    *
    * <p>Sample code:
    *
@@ -801,7 +812,7 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Attempts a sequence.
+   * Attempts a sequence of unary responses.
    *
    * <p>Sample code:
    *
@@ -829,7 +840,7 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Attempts a sequence.
+   * Attempts a sequence of unary responses.
    *
    * <p>Sample code:
    *
@@ -856,8 +867,9 @@ public class SequenceServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Attempts a streaming sequence. May not function as expected in HTTP mode due to when http
-   * statuses are sent See https://github.com/googleapis/gapic-showcase/issues/1377 for more details
+   * Attempts a server streaming call with a sequence of responses Can be used to test retries and
+   * stream resumption logic May not function as expected in HTTP mode due to when http statuses are
+   * sent See https://github.com/googleapis/gapic-showcase/issues/1377 for more details
    *
    * <p>Sample code:
    *

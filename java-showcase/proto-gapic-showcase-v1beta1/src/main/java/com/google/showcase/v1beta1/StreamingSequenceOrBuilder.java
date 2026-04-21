@@ -27,6 +27,12 @@ public interface StreamingSequenceOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * The name of the streaming sequence.
+   * </pre>
+   *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
@@ -34,6 +40,12 @@ public interface StreamingSequenceOrBuilder
   java.lang.String getName();
 
   /**
+   *
+   *
+   * <pre>
+   * The name of the streaming sequence.
+   * </pre>
+   *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
@@ -44,7 +56,8 @@ public interface StreamingSequenceOrBuilder
    *
    *
    * <pre>
-   * The Content that the stream will send
+   * The content that the stream will send
+   * this was specified when the sequence was created
    * </pre>
    *
    * <code>string content = 2;</code>
@@ -57,7 +70,8 @@ public interface StreamingSequenceOrBuilder
    *
    *
    * <pre>
-   * The Content that the stream will send
+   * The content that the stream will send
+   * this was specified when the sequence was created
    * </pre>
    *
    * <code>string content = 2;</code>

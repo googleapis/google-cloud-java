@@ -20,7 +20,15 @@
 
 package com.google.showcase.v1beta1;
 
-/** Protobuf type {@code google.showcase.v1beta1.CreateSequenceRequest} */
+/**
+ *
+ *
+ * <pre>
+ * Request message for creating a sequence of unary calls
+ * </pre>
+ *
+ * Protobuf type {@code google.showcase.v1beta1.CreateSequenceRequest}
+ */
 @com.google.protobuf.Generated
 public final class CreateSequenceRequest extends com.google.protobuf.GeneratedMessage
     implements
@@ -259,7 +267,15 @@ public final class CreateSequenceRequest extends com.google.protobuf.GeneratedMe
     return builder;
   }
 
-  /** Protobuf type {@code google.showcase.v1beta1.CreateSequenceRequest} */
+  /**
+   *
+   *
+   * <pre>
+   * Request message for creating a sequence of unary calls
+   * </pre>
+   *
+   * Protobuf type {@code google.showcase.v1beta1.CreateSequenceRequest}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.showcase.v1beta1.CreateSequenceRequest)

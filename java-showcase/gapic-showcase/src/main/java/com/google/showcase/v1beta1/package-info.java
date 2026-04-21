@@ -125,6 +125,9 @@
  *
  * <p>======================= SequenceServiceClient =======================
  *
+ * <p>Service Description: A service that enables testing of unary and server streaming calls by
+ * specifying a specific, predictable sequence of responses from the service
+ *
  * <p>Sample for SequenceServiceClient:
  *
  * <pre>{@code

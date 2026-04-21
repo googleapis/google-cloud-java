@@ -574,6 +574,236 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     return pInt32_;
   }
 
+  public static final int P_SINT32_FIELD_NUMBER = 39;
+  private int pSint32_ = 0;
+
+  /**
+   * <code>optional sint32 p_sint32 = 39;</code>
+   *
+   * @return Whether the pSint32 field is set.
+   */
+  @java.lang.Override
+  public boolean hasPSint32() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   * <code>optional sint32 p_sint32 = 39;</code>
+   *
+   * @return The pSint32.
+   */
+  @java.lang.Override
+  public int getPSint32() {
+    return pSint32_;
+  }
+
+  public static final int P_SFIXED32_FIELD_NUMBER = 40;
+  private int pSfixed32_ = 0;
+
+  /**
+   * <code>optional sfixed32 p_sfixed32 = 40;</code>
+   *
+   * @return Whether the pSfixed32 field is set.
+   */
+  @java.lang.Override
+  public boolean hasPSfixed32() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   * <code>optional sfixed32 p_sfixed32 = 40;</code>
+   *
+   * @return The pSfixed32.
+   */
+  @java.lang.Override
+  public int getPSfixed32() {
+    return pSfixed32_;
+  }
+
+  public static final int P_UINT32_FIELD_NUMBER = 41;
+  private int pUint32_ = 0;
+
+  /**
+   * <code>optional uint32 p_uint32 = 41;</code>
+   *
+   * @return Whether the pUint32 field is set.
+   */
+  @java.lang.Override
+  public boolean hasPUint32() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   * <code>optional uint32 p_uint32 = 41;</code>
+   *
+   * @return The pUint32.
+   */
+  @java.lang.Override
+  public int getPUint32() {
+    return pUint32_;
+  }
+
+  public static final int P_FIXED32_FIELD_NUMBER = 42;
+  private int pFixed32_ = 0;
+
+  /**
+   * <code>optional fixed32 p_fixed32 = 42;</code>
+   *
+   * @return Whether the pFixed32 field is set.
+   */
+  @java.lang.Override
+  public boolean hasPFixed32() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   * <code>optional fixed32 p_fixed32 = 42;</code>
+   *
+   * @return The pFixed32.
+   */
+  @java.lang.Override
+  public int getPFixed32() {
+    return pFixed32_;
+  }
+
+  public static final int P_INT64_FIELD_NUMBER = 43;
+  private long pInt64_ = 0L;
+
+  /**
+   * <code>optional int64 p_int64 = 43;</code>
+   *
+   * @return Whether the pInt64 field is set.
+   */
+  @java.lang.Override
+  public boolean hasPInt64() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   * <code>optional int64 p_int64 = 43;</code>
+   *
+   * @return The pInt64.
+   */
+  @java.lang.Override
+  public long getPInt64() {
+    return pInt64_;
+  }
+
+  public static final int P_SINT64_FIELD_NUMBER = 44;
+  private long pSint64_ = 0L;
+
+  /**
+   * <code>optional sint64 p_sint64 = 44;</code>
+   *
+   * @return Whether the pSint64 field is set.
+   */
+  @java.lang.Override
+  public boolean hasPSint64() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   * <code>optional sint64 p_sint64 = 44;</code>
+   *
+   * @return The pSint64.
+   */
+  @java.lang.Override
+  public long getPSint64() {
+    return pSint64_;
+  }
+
+  public static final int P_SFIXED64_FIELD_NUMBER = 45;
+  private long pSfixed64_ = 0L;
+
+  /**
+   * <code>optional sfixed64 p_sfixed64 = 45;</code>
+   *
+   * @return Whether the pSfixed64 field is set.
+   */
+  @java.lang.Override
+  public boolean hasPSfixed64() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   * <code>optional sfixed64 p_sfixed64 = 45;</code>
+   *
+   * @return The pSfixed64.
+   */
+  @java.lang.Override
+  public long getPSfixed64() {
+    return pSfixed64_;
+  }
+
+  public static final int P_UINT64_FIELD_NUMBER = 46;
+  private long pUint64_ = 0L;
+
+  /**
+   * <code>optional uint64 p_uint64 = 46;</code>
+   *
+   * @return Whether the pUint64 field is set.
+   */
+  @java.lang.Override
+  public boolean hasPUint64() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   * <code>optional uint64 p_uint64 = 46;</code>
+   *
+   * @return The pUint64.
+   */
+  @java.lang.Override
+  public long getPUint64() {
+    return pUint64_;
+  }
+
+  public static final int P_FIXED64_FIELD_NUMBER = 47;
+  private long pFixed64_ = 0L;
+
+  /**
+   * <code>optional fixed64 p_fixed64 = 47;</code>
+   *
+   * @return Whether the pFixed64 field is set.
+   */
+  @java.lang.Override
+  public boolean hasPFixed64() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   * <code>optional fixed64 p_fixed64 = 47;</code>
+   *
+   * @return The pFixed64.
+   */
+  @java.lang.Override
+  public long getPFixed64() {
+    return pFixed64_;
+  }
+
+  public static final int P_FLOAT_FIELD_NUMBER = 48;
+  private float pFloat_ = 0F;
+
+  /**
+   * <code>optional float p_float = 48;</code>
+   *
+   * @return Whether the pFloat field is set.
+   */
+  @java.lang.Override
+  public boolean hasPFloat() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   * <code>optional float p_float = 48;</code>
+   *
+   * @return The pFloat.
+   */
+  @java.lang.Override
+  public float getPFloat() {
+    return pFloat_;
+  }
+
   public static final int P_DOUBLE_FIELD_NUMBER = 19;
   private double pDouble_ = 0D;
 
@@ -584,7 +814,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPDouble() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
 
   /**
@@ -607,7 +837,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPBool() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -630,7 +860,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPKingdom() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -667,7 +897,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasPChild() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -758,13 +988,13 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt32(18, pInt32_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeDouble(19, pDouble_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeBool(20, pBool_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeMessage(21, getPChild());
     }
     if (fKingdom_
@@ -772,8 +1002,38 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       output.writeEnum(22, fKingdom_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeEnum(23, pKingdom_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeSInt32(39, pSint32_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeSFixed32(40, pSfixed32_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeUInt32(41, pUint32_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeFixed32(42, pFixed32_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeInt64(43, pInt64_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeSInt64(44, pSint64_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeSFixed64(45, pSfixed64_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeUInt64(46, pUint64_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeFixed64(47, pFixed64_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeFloat(48, pFloat_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -838,13 +1098,13 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(18, pInt32_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(19, pDouble_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, pBool_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getPChild());
     }
     if (fKingdom_
@@ -852,8 +1112,38 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, fKingdom_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(23, pKingdom_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeSInt32Size(39, pSint32_);
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeSFixed32Size(40, pSfixed32_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(41, pUint32_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeFixed32Size(42, pFixed32_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(43, pInt64_);
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeSInt64Size(44, pSint64_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeSFixed64Size(45, pSfixed64_);
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeUInt64Size(46, pUint64_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeFixed64Size(47, pFixed64_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(48, pFloat_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -900,6 +1190,47 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     if (hasPInt32() != other.hasPInt32()) return false;
     if (hasPInt32()) {
       if (getPInt32() != other.getPInt32()) return false;
+    }
+    if (hasPSint32() != other.hasPSint32()) return false;
+    if (hasPSint32()) {
+      if (getPSint32() != other.getPSint32()) return false;
+    }
+    if (hasPSfixed32() != other.hasPSfixed32()) return false;
+    if (hasPSfixed32()) {
+      if (getPSfixed32() != other.getPSfixed32()) return false;
+    }
+    if (hasPUint32() != other.hasPUint32()) return false;
+    if (hasPUint32()) {
+      if (getPUint32() != other.getPUint32()) return false;
+    }
+    if (hasPFixed32() != other.hasPFixed32()) return false;
+    if (hasPFixed32()) {
+      if (getPFixed32() != other.getPFixed32()) return false;
+    }
+    if (hasPInt64() != other.hasPInt64()) return false;
+    if (hasPInt64()) {
+      if (getPInt64() != other.getPInt64()) return false;
+    }
+    if (hasPSint64() != other.hasPSint64()) return false;
+    if (hasPSint64()) {
+      if (getPSint64() != other.getPSint64()) return false;
+    }
+    if (hasPSfixed64() != other.hasPSfixed64()) return false;
+    if (hasPSfixed64()) {
+      if (getPSfixed64() != other.getPSfixed64()) return false;
+    }
+    if (hasPUint64() != other.hasPUint64()) return false;
+    if (hasPUint64()) {
+      if (getPUint64() != other.getPUint64()) return false;
+    }
+    if (hasPFixed64() != other.hasPFixed64()) return false;
+    if (hasPFixed64()) {
+      if (getPFixed64() != other.getPFixed64()) return false;
+    }
+    if (hasPFloat() != other.hasPFloat()) return false;
+    if (hasPFloat()) {
+      if (java.lang.Float.floatToIntBits(getPFloat())
+          != java.lang.Float.floatToIntBits(other.getPFloat())) return false;
     }
     if (hasPDouble() != other.hasPDouble()) return false;
     if (hasPDouble()) {
@@ -975,6 +1306,46 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     if (hasPInt32()) {
       hash = (37 * hash) + P_INT32_FIELD_NUMBER;
       hash = (53 * hash) + getPInt32();
+    }
+    if (hasPSint32()) {
+      hash = (37 * hash) + P_SINT32_FIELD_NUMBER;
+      hash = (53 * hash) + getPSint32();
+    }
+    if (hasPSfixed32()) {
+      hash = (37 * hash) + P_SFIXED32_FIELD_NUMBER;
+      hash = (53 * hash) + getPSfixed32();
+    }
+    if (hasPUint32()) {
+      hash = (37 * hash) + P_UINT32_FIELD_NUMBER;
+      hash = (53 * hash) + getPUint32();
+    }
+    if (hasPFixed32()) {
+      hash = (37 * hash) + P_FIXED32_FIELD_NUMBER;
+      hash = (53 * hash) + getPFixed32();
+    }
+    if (hasPInt64()) {
+      hash = (37 * hash) + P_INT64_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPInt64());
+    }
+    if (hasPSint64()) {
+      hash = (37 * hash) + P_SINT64_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPSint64());
+    }
+    if (hasPSfixed64()) {
+      hash = (37 * hash) + P_SFIXED64_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPSfixed64());
+    }
+    if (hasPUint64()) {
+      hash = (37 * hash) + P_UINT64_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPUint64());
+    }
+    if (hasPFixed64()) {
+      hash = (37 * hash) + P_FIXED64_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPFixed64());
+    }
+    if (hasPFloat()) {
+      hash = (37 * hash) + P_FLOAT_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getPFloat());
     }
     if (hasPDouble()) {
       hash = (37 * hash) + P_DOUBLE_FIELD_NUMBER;
@@ -1146,6 +1517,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       fString_ = "";
       fInt32_ = 0;
       fSint32_ = 0;
@@ -1169,6 +1541,16 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
       }
       pString_ = "";
       pInt32_ = 0;
+      pSint32_ = 0;
+      pSfixed32_ = 0;
+      pUint32_ = 0;
+      pFixed32_ = 0;
+      pInt64_ = 0L;
+      pSint64_ = 0L;
+      pSfixed64_ = 0L;
+      pUint64_ = 0L;
+      pFixed64_ = 0L;
+      pFloat_ = 0F;
       pDouble_ = 0D;
       pBool_ = false;
       pKingdom_ = 0;
@@ -1206,6 +1588,9 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
           new com.google.showcase.v1beta1.ComplianceData(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
+      }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
       }
       onBuilt();
       return result;
@@ -1275,20 +1660,66 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.pDouble_ = pDouble_;
+        result.pSint32_ = pSint32_;
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.pBool_ = pBool_;
+        result.pSfixed32_ = pSfixed32_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.pKingdom_ = pKingdom_;
+        result.pUint32_ = pUint32_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.pChild_ = pChildBuilder_ == null ? pChild_ : pChildBuilder_.build();
+        result.pFixed32_ = pFixed32_;
         to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.pInt64_ = pInt64_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.pSint64_ = pSint64_;
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.pSfixed64_ = pSfixed64_;
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.pUint64_ = pUint64_;
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.pFixed64_ = pFixed64_;
+        to_bitField0_ |= 0x00000800;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.pFloat_ = pFloat_;
+        to_bitField0_ |= 0x00001000;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.pDouble_ = pDouble_;
+        to_bitField0_ |= 0x00002000;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.pBool_ = pBool_;
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x80000000) != 0)) {
+        result.pKingdom_ = pKingdom_;
+        to_bitField0_ |= 0x00008000;
+      }
+      result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial1(com.google.showcase.v1beta1.ComplianceData result) {
+      int from_bitField1_ = bitField1_;
+      int to_bitField0_ = 0;
+      if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.pChild_ = pChildBuilder_ == null ? pChild_ : pChildBuilder_.build();
+        to_bitField0_ |= 0x00010000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1365,6 +1796,36 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasPInt32()) {
         setPInt32(other.getPInt32());
+      }
+      if (other.hasPSint32()) {
+        setPSint32(other.getPSint32());
+      }
+      if (other.hasPSfixed32()) {
+        setPSfixed32(other.getPSfixed32());
+      }
+      if (other.hasPUint32()) {
+        setPUint32(other.getPUint32());
+      }
+      if (other.hasPFixed32()) {
+        setPFixed32(other.getPFixed32());
+      }
+      if (other.hasPInt64()) {
+        setPInt64(other.getPInt64());
+      }
+      if (other.hasPSint64()) {
+        setPSint64(other.getPSint64());
+      }
+      if (other.hasPSfixed64()) {
+        setPSfixed64(other.getPSfixed64());
+      }
+      if (other.hasPUint64()) {
+        setPUint64(other.getPUint64());
+      }
+      if (other.hasPFixed64()) {
+        setPFixed64(other.getPFixed64());
+      }
+      if (other.hasPFloat()) {
+        setPFloat(other.getPFloat());
       }
       if (other.hasPDouble()) {
         setPDouble(other.getPDouble());
@@ -1515,19 +1976,19 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
             case 153:
               {
                 pDouble_ = input.readDouble();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 153
             case 160:
               {
                 pBool_ = input.readBool();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 160
             case 170:
               {
                 input.readMessage(internalGetPChildFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 170
             case 176:
@@ -1539,9 +2000,69 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
             case 184:
               {
                 pKingdom_ = input.readEnum();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 184
+            case 312:
+              {
+                pSint32_ = input.readSInt32();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 312
+            case 325:
+              {
+                pSfixed32_ = input.readSFixed32();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 325
+            case 328:
+              {
+                pUint32_ = input.readUInt32();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 328
+            case 341:
+              {
+                pFixed32_ = input.readFixed32();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 341
+            case 344:
+              {
+                pInt64_ = input.readInt64();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 344
+            case 352:
+              {
+                pSint64_ = input.readSInt64();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 352
+            case 361:
+              {
+                pSfixed64_ = input.readSFixed64();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 361
+            case 368:
+              {
+                pUint64_ = input.readUInt64();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 368
+            case 377:
+              {
+                pFixed64_ = input.readFixed64();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 377
+            case 389:
+              {
+                pFloat_ = input.readFloat();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 389
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1560,6 +2081,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private java.lang.Object fString_ = "";
 
@@ -2508,6 +3030,486 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int pSint32_;
+
+    /**
+     * <code>optional sint32 p_sint32 = 39;</code>
+     *
+     * @return Whether the pSint32 field is set.
+     */
+    @java.lang.Override
+    public boolean hasPSint32() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     * <code>optional sint32 p_sint32 = 39;</code>
+     *
+     * @return The pSint32.
+     */
+    @java.lang.Override
+    public int getPSint32() {
+      return pSint32_;
+    }
+
+    /**
+     * <code>optional sint32 p_sint32 = 39;</code>
+     *
+     * @param value The pSint32 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPSint32(int value) {
+
+      pSint32_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>optional sint32 p_sint32 = 39;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPSint32() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      pSint32_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int pSfixed32_;
+
+    /**
+     * <code>optional sfixed32 p_sfixed32 = 40;</code>
+     *
+     * @return Whether the pSfixed32 field is set.
+     */
+    @java.lang.Override
+    public boolean hasPSfixed32() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     * <code>optional sfixed32 p_sfixed32 = 40;</code>
+     *
+     * @return The pSfixed32.
+     */
+    @java.lang.Override
+    public int getPSfixed32() {
+      return pSfixed32_;
+    }
+
+    /**
+     * <code>optional sfixed32 p_sfixed32 = 40;</code>
+     *
+     * @param value The pSfixed32 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPSfixed32(int value) {
+
+      pSfixed32_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>optional sfixed32 p_sfixed32 = 40;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPSfixed32() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      pSfixed32_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int pUint32_;
+
+    /**
+     * <code>optional uint32 p_uint32 = 41;</code>
+     *
+     * @return Whether the pUint32 field is set.
+     */
+    @java.lang.Override
+    public boolean hasPUint32() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+
+    /**
+     * <code>optional uint32 p_uint32 = 41;</code>
+     *
+     * @return The pUint32.
+     */
+    @java.lang.Override
+    public int getPUint32() {
+      return pUint32_;
+    }
+
+    /**
+     * <code>optional uint32 p_uint32 = 41;</code>
+     *
+     * @param value The pUint32 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPUint32(int value) {
+
+      pUint32_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>optional uint32 p_uint32 = 41;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPUint32() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      pUint32_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int pFixed32_;
+
+    /**
+     * <code>optional fixed32 p_fixed32 = 42;</code>
+     *
+     * @return Whether the pFixed32 field is set.
+     */
+    @java.lang.Override
+    public boolean hasPFixed32() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+
+    /**
+     * <code>optional fixed32 p_fixed32 = 42;</code>
+     *
+     * @return The pFixed32.
+     */
+    @java.lang.Override
+    public int getPFixed32() {
+      return pFixed32_;
+    }
+
+    /**
+     * <code>optional fixed32 p_fixed32 = 42;</code>
+     *
+     * @param value The pFixed32 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPFixed32(int value) {
+
+      pFixed32_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>optional fixed32 p_fixed32 = 42;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPFixed32() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      pFixed32_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private long pInt64_;
+
+    /**
+     * <code>optional int64 p_int64 = 43;</code>
+     *
+     * @return Whether the pInt64 field is set.
+     */
+    @java.lang.Override
+    public boolean hasPInt64() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+
+    /**
+     * <code>optional int64 p_int64 = 43;</code>
+     *
+     * @return The pInt64.
+     */
+    @java.lang.Override
+    public long getPInt64() {
+      return pInt64_;
+    }
+
+    /**
+     * <code>optional int64 p_int64 = 43;</code>
+     *
+     * @param value The pInt64 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPInt64(long value) {
+
+      pInt64_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>optional int64 p_int64 = 43;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPInt64() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      pInt64_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long pSint64_;
+
+    /**
+     * <code>optional sint64 p_sint64 = 44;</code>
+     *
+     * @return Whether the pSint64 field is set.
+     */
+    @java.lang.Override
+    public boolean hasPSint64() {
+      return ((bitField0_ & 0x01000000) != 0);
+    }
+
+    /**
+     * <code>optional sint64 p_sint64 = 44;</code>
+     *
+     * @return The pSint64.
+     */
+    @java.lang.Override
+    public long getPSint64() {
+      return pSint64_;
+    }
+
+    /**
+     * <code>optional sint64 p_sint64 = 44;</code>
+     *
+     * @param value The pSint64 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPSint64(long value) {
+
+      pSint64_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>optional sint64 p_sint64 = 44;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPSint64() {
+      bitField0_ = (bitField0_ & ~0x01000000);
+      pSint64_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long pSfixed64_;
+
+    /**
+     * <code>optional sfixed64 p_sfixed64 = 45;</code>
+     *
+     * @return Whether the pSfixed64 field is set.
+     */
+    @java.lang.Override
+    public boolean hasPSfixed64() {
+      return ((bitField0_ & 0x02000000) != 0);
+    }
+
+    /**
+     * <code>optional sfixed64 p_sfixed64 = 45;</code>
+     *
+     * @return The pSfixed64.
+     */
+    @java.lang.Override
+    public long getPSfixed64() {
+      return pSfixed64_;
+    }
+
+    /**
+     * <code>optional sfixed64 p_sfixed64 = 45;</code>
+     *
+     * @param value The pSfixed64 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPSfixed64(long value) {
+
+      pSfixed64_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>optional sfixed64 p_sfixed64 = 45;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPSfixed64() {
+      bitField0_ = (bitField0_ & ~0x02000000);
+      pSfixed64_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long pUint64_;
+
+    /**
+     * <code>optional uint64 p_uint64 = 46;</code>
+     *
+     * @return Whether the pUint64 field is set.
+     */
+    @java.lang.Override
+    public boolean hasPUint64() {
+      return ((bitField0_ & 0x04000000) != 0);
+    }
+
+    /**
+     * <code>optional uint64 p_uint64 = 46;</code>
+     *
+     * @return The pUint64.
+     */
+    @java.lang.Override
+    public long getPUint64() {
+      return pUint64_;
+    }
+
+    /**
+     * <code>optional uint64 p_uint64 = 46;</code>
+     *
+     * @param value The pUint64 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPUint64(long value) {
+
+      pUint64_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>optional uint64 p_uint64 = 46;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPUint64() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      pUint64_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long pFixed64_;
+
+    /**
+     * <code>optional fixed64 p_fixed64 = 47;</code>
+     *
+     * @return Whether the pFixed64 field is set.
+     */
+    @java.lang.Override
+    public boolean hasPFixed64() {
+      return ((bitField0_ & 0x08000000) != 0);
+    }
+
+    /**
+     * <code>optional fixed64 p_fixed64 = 47;</code>
+     *
+     * @return The pFixed64.
+     */
+    @java.lang.Override
+    public long getPFixed64() {
+      return pFixed64_;
+    }
+
+    /**
+     * <code>optional fixed64 p_fixed64 = 47;</code>
+     *
+     * @param value The pFixed64 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPFixed64(long value) {
+
+      pFixed64_ = value;
+      bitField0_ |= 0x08000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>optional fixed64 p_fixed64 = 47;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPFixed64() {
+      bitField0_ = (bitField0_ & ~0x08000000);
+      pFixed64_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private float pFloat_;
+
+    /**
+     * <code>optional float p_float = 48;</code>
+     *
+     * @return Whether the pFloat field is set.
+     */
+    @java.lang.Override
+    public boolean hasPFloat() {
+      return ((bitField0_ & 0x10000000) != 0);
+    }
+
+    /**
+     * <code>optional float p_float = 48;</code>
+     *
+     * @return The pFloat.
+     */
+    @java.lang.Override
+    public float getPFloat() {
+      return pFloat_;
+    }
+
+    /**
+     * <code>optional float p_float = 48;</code>
+     *
+     * @param value The pFloat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPFloat(float value) {
+
+      pFloat_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>optional float p_float = 48;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPFloat() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      pFloat_ = 0F;
+      onChanged();
+      return this;
+    }
+
     private double pDouble_;
 
     /**
@@ -2517,7 +3519,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPDouble() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
 
     /**
@@ -2539,7 +3541,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder setPDouble(double value) {
 
       pDouble_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -2550,7 +3552,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPDouble() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       pDouble_ = 0D;
       onChanged();
       return this;
@@ -2565,7 +3567,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPBool() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
 
     /**
@@ -2587,7 +3589,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder setPBool(boolean value) {
 
       pBool_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -2598,7 +3600,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPBool() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       pBool_ = false;
       onChanged();
       return this;
@@ -2613,7 +3615,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPKingdom() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
 
     /**
@@ -2634,7 +3636,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     public Builder setPKingdomValue(int value) {
       pKingdom_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -2663,7 +3665,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x80000000;
       pKingdom_ = value.getNumber();
       onChanged();
       return this;
@@ -2675,7 +3677,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPKingdom() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       pKingdom_ = 0;
       onChanged();
       return this;
@@ -2694,7 +3696,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return Whether the pChild field is set.
      */
     public boolean hasPChild() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
 
     /**
@@ -2722,7 +3724,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
       } else {
         pChildBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2735,7 +3737,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
       } else {
         pChildBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -2743,7 +3745,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     /** <code>optional .google.showcase.v1beta1.ComplianceDataChild p_child = 21;</code> */
     public Builder mergePChild(com.google.showcase.v1beta1.ComplianceDataChild value) {
       if (pChildBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField1_ & 0x00000001) != 0)
             && pChild_ != null
             && pChild_ != com.google.showcase.v1beta1.ComplianceDataChild.getDefaultInstance()) {
           getPChildBuilder().mergeFrom(value);
@@ -2754,7 +3756,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
         pChildBuilder_.mergeFrom(value);
       }
       if (pChild_ != null) {
-        bitField0_ |= 0x00400000;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       return this;
@@ -2762,7 +3764,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
 
     /** <code>optional .google.showcase.v1beta1.ComplianceDataChild p_child = 21;</code> */
     public Builder clearPChild() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       pChild_ = null;
       if (pChildBuilder_ != null) {
         pChildBuilder_.dispose();
@@ -2774,7 +3776,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
 
     /** <code>optional .google.showcase.v1beta1.ComplianceDataChild p_child = 21;</code> */
     public com.google.showcase.v1beta1.ComplianceDataChild.Builder getPChildBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return internalGetPChildFieldBuilder().getBuilder();
     }
