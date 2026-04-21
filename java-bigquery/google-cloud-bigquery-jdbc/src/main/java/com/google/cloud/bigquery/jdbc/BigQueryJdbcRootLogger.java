@@ -53,10 +53,10 @@ class BigQueryJdbcRootLogger {
   private static Path currentLogPath = null;
   private static int fileCounter = 0;
 
-  private static final long PROCESS_ID =
+  static final long PROCESS_ID =
       Long.parseLong(ManagementFactory.getRuntimeMXBean().getName().split("@")[0]);
 
-  private static String getThreadName(long threadId) {
+  static String getThreadName(long threadId) {
     Thread current = Thread.currentThread();
     if (current.getId() == threadId) {
       return current.getName();
