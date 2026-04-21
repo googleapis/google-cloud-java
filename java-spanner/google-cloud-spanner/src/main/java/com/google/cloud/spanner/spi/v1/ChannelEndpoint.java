@@ -71,4 +71,22 @@ public interface ChannelEndpoint {
    * @return the managed channel for this server
    */
   ManagedChannel getChannel();
+
+  /**
+   * Records that an application RPC started on this endpoint.
+   *
+   * <p>This is used for request-load-aware routing decisions. Implementations must keep the count
+   * scoped to this endpoint instance so evicted or recreated endpoints do not share inflight state.
+   */
+  void incrementActiveRequests();
+
+  /**
+   * Records that an application RPC finished on this endpoint.
+   *
+   * <p>Implementations must not allow the count to go negative.
+   */
+  void decrementActiveRequests();
+
+  /** Returns the number of currently active application RPCs on this endpoint. */
+  int getActiveRequestCount();
 }

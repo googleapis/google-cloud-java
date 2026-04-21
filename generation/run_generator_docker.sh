@@ -47,7 +47,7 @@ if [[ "$CURRENT_BRANCH" =~ ^release-please-- ]]; then
   if ! docker pull "${IMAGE_NAME}:${IMAGE_TAG}"; then
     echo "Image not found for version ${IMAGE_TAG}. Falling back to previous version from ${TARGET_BRANCH}."
     # Extract tag from target branch's versions.txt
-    PREVIOUS_TAG=$(git show "${TARGET_BRANCH}":versions.txt | grep "^gapic-generator-java:" | cut -d ':' -f 2 || true)
+    PREVIOUS_TAG=$(git show origin/"${TARGET_BRANCH}":versions.txt | grep "^gapic-generator-java:" | cut -d ':' -f 2 || true)
     if [ -n "$PREVIOUS_TAG" ]; then
       echo "Using previous image version: $PREVIOUS_TAG"
       IMAGE_TAG="$PREVIOUS_TAG"

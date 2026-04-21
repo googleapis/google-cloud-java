@@ -38,6 +38,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -149,6 +150,7 @@ public class ChannelFinderGoldenTest {
 
     private final class FakeEndpoint implements ChannelEndpoint {
       private final String address;
+      private final AtomicInteger activeRequests = new AtomicInteger();
 
       private FakeEndpoint(String address) {
         this.address = address;
@@ -208,6 +210,21 @@ public class ChannelFinderGoldenTest {
             return address;
           }
         };
+      }
+
+      @Override
+      public void incrementActiveRequests() {
+        activeRequests.incrementAndGet();
+      }
+
+      @Override
+      public void decrementActiveRequests() {
+        activeRequests.updateAndGet(current -> current > 0 ? current - 1 : 0);
+      }
+
+      @Override
+      public int getActiveRequestCount() {
+        return Math.max(0, activeRequests.get());
       }
     }
   }
