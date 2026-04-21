@@ -728,8 +728,6 @@ class ChannelPoolTest {
     ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
-    List<ManagedChannel> channels = new ArrayList<>();
-
     ChannelFactory channelFactory =
         () -> {
           ManagedChannel channel = Mockito.mock(ManagedChannel.class);
@@ -740,8 +738,6 @@ class ChannelPoolTest {
                     ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
                     return clientCall;
                   });
-
-          channels.add(channel);
           return channel;
         };
 
@@ -794,13 +790,7 @@ class ChannelPoolTest {
     ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
-    List<ManagedChannel> channels = new ArrayList<>();
-    ChannelFactory channelFactory =
-        () -> {
-          ManagedChannel channel = Mockito.mock(ManagedChannel.class);
-          channels.add(channel);
-          return channel;
-        };
+    ChannelFactory channelFactory = () -> Mockito.mock(ManagedChannel.class);
 
     pool =
         new ChannelPool(
