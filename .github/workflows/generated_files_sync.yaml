@@ -27,13 +27,12 @@ jobs:
     - name: Generate root pom.xml file
       shell: bash
       run: |
-        docker run \
-          --rm \
+        bash generation/run_generator_docker.sh "${library_generation_image_tag}" "${{ github.base_ref }}" \
           --quiet \
           -u "$(id -u):$(id -g)" \
           -v "$(pwd):/workspace" \
           --entrypoint python \
-          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
+          -- \
           /src/library_generation/cli/generate_monorepo_root_pom.py \
           generate \
           --repository-path=/workspace
@@ -48,13 +47,12 @@ jobs:
     - name: Generate gapic-libraries-bom/pom.xml
       shell: bash
       run: |
-        docker run \
-          --rm \
+        bash generation/run_generator_docker.sh "${library_generation_image_tag}" "${{ github.base_ref }}" \
           --quiet \
           -u "$(id -u):$(id -g)" \
           -v "$(pwd):/workspace" \
           --entrypoint python \
-          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
+          -- \
           /src/library_generation/cli/generate_monorepo_gapic_bom.py \
           generate \
           --repository-path=/workspace \
