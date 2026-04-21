@@ -42,9 +42,11 @@ import io.opencensus.tags.Tags;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
 import io.opentelemetry.api.trace.Span;
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -104,6 +106,8 @@ class HeaderInterceptor implements ClientInterceptor {
       public void start(Listener<RespT> responseListener, Metadata headers) {
         try {
           Span span = Span.current();
+          long startedAtNanos = System.nanoTime();
+          AtomicBoolean firstResponseRecorded = new AtomicBoolean(false);
           DatabaseName databaseName = extractDatabaseName(headers);
           String key = extractKey(databaseName, method.getFullMethodName());
           String requestId = extractRequestId(headers);
@@ -115,6 +119,7 @@ class HeaderInterceptor implements ClientInterceptor {
               new SimpleForwardingClientCallListener<RespT>(responseListener) {
                 @Override
                 public void onHeaders(Metadata metadata) {
+                  recordFirstResponseLatency(requestId, startedAtNanos, firstResponseRecorded);
                   String serverTiming = metadata.get(SERVER_TIMING_HEADER_KEY);
                   try {
                     // Get gfe and afe Latency value
@@ -137,10 +142,14 @@ class HeaderInterceptor implements ClientInterceptor {
                   recordCustomMetrics(tagContext, attributes, isDirectPathUsed);
                   Map<String, String> builtInMetricsAttributes = new HashMap<>();
                   try {
-                    builtInMetricsAttributes = getBuiltInMetricAttributes(key, databaseName);
+                    builtInMetricsAttributes =
+                        new HashMap<>(getBuiltInMetricAttributes(key, databaseName));
                   } catch (ExecutionException e) {
                     LOGGER.log(
                         LEVEL, "Unable to get built-in metric attributes {}", e.getMessage());
+                  }
+                  if (status.isOk()) {
+                    recordFirstResponseLatency(requestId, startedAtNanos, firstResponseRecorded);
                   }
                   recordBuiltInMetrics(
                       compositeTracer,
@@ -148,6 +157,7 @@ class HeaderInterceptor implements ClientInterceptor {
                       requestId,
                       isDirectPathUsed,
                       isAfeEnabled);
+                  RequestIdTargetTracker.remove(requestId);
                   super.onClose(status, trailers);
                 }
               },
@@ -206,6 +216,27 @@ class HeaderInterceptor implements ClientInterceptor {
       compositeTracer.recordServerTimingHeaderMetrics(
           gfeLatency, afeLatency, isDirectPathUsed, isAfeEnabled);
     }
+  }
+
+  private void recordFirstResponseLatency(
+      String requestId, long startedAtNanos, AtomicBoolean firstResponseRecorded) {
+    if (!firstResponseRecorded.compareAndSet(false, true)) {
+      return;
+    }
+    RequestIdTargetTracker.RoutingTarget routingTarget = RequestIdTargetTracker.get(requestId);
+    if (routingTarget == null
+        || routingTarget.operationUid <= 0
+        || routingTarget.targetEndpoint == null
+        || routingTarget.targetEndpoint.isEmpty()) {
+      return;
+    }
+    long latencyNanos = Math.max(0L, System.nanoTime() - startedAtNanos);
+    EndpointLatencyRegistry.recordLatency(
+        routingTarget.databaseScope,
+        routingTarget.operationUid,
+        routingTarget.preferLeader,
+        routingTarget.targetEndpoint,
+        Duration.ofNanos(latencyNanos));
   }
 
   private Map<String, Float> parseServerTimingHeader(String serverTiming) {
