@@ -20,6 +20,7 @@ import static com.google.cloud.datastore.Validator.validateNamespace;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -58,6 +59,8 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
   public static final int CHANNEL_POOL_DEFAULT_RESIZE_DELTA = 5;
   public static final int CHANNEL_POOL_MAX_RPCS_PER_CHANNEL = 100;
   public static final int MIN_CHANNEL_COUNT = 1;
+
+  @ObsoleteApi("This constant is obsolete and will be removed in a future version")
   public static final int MAX_CHANNEL_COUNT = 4;
 
   private transient TransportChannelProvider channelProvider = null;
