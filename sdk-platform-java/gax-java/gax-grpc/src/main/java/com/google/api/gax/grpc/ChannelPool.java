@@ -335,11 +335,21 @@ class ChannelPool extends ManagedChannel {
     int delta = tentativeTarget - currentSize;
     int dampenedTarget = tentativeTarget;
     // Dampen the rate of change if the desired delta exceeds the maximum allowed step size.
-    if (Math.abs(delta) > settings.getMaxResizeDelta()) {
-      // Limit the change to maxResizeDelta, maintaining the correct direction (positive or
+    // Ensure that the step size is capped by the max channel count to handle small pool
+    // configurations.
+    int effectiveMaxResizeDelta =
+        Math.min(settings.getMaxResizeDelta(), settings.getMaxChannelCount());
+    if (Math.abs(delta) > effectiveMaxResizeDelta) {
+      // Limit the change to effectiveMaxResizeDelta, maintaining the correct direction (positive or
       // negative).
-      dampenedTarget = currentSize + (int) Math.copySign(settings.getMaxResizeDelta(), delta);
+      dampenedTarget = currentSize + (int) Math.copySign(effectiveMaxResizeDelta, delta);
     }
+
+    // Ensure that the calculated dampedTarget value will never exceed the maxChannelCount or fall
+    // below minChannelCount
+    dampenedTarget =
+        Math.max(
+            settings.getMinChannelCount(), Math.min(settings.getMaxChannelCount(), dampenedTarget));
 
     // Only count as "resized" if the thresholds are crossed and Gax attempts to scale. Checking
     // that `dampenedTarget != currentSize` would cause false positives when the pool is within

@@ -148,9 +148,8 @@ public abstract class ChannelPoolSettings {
         .setMaxRpcsPerChannel(Integer.MAX_VALUE)
         .setMinChannelCount(size)
         .setMaxChannelCount(size)
-        // Static pools don't resize so this value doesn't affect operation. However,
-        // validation still checks that resize delta doesn't exceed channel pool size.
-        .setMaxResizeDelta(Math.min(DEFAULT_MAX_RESIZE_DELTA, size))
+        // Static pools don't resize so this value doesn't affect operation.
+        .setMaxResizeDelta(DEFAULT_MAX_RESIZE_DELTA)
         .build();
   }
 
