@@ -16,8 +16,12 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.common.base.Strings;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -49,6 +53,25 @@ class BigQueryJdbcRootLogger {
   private static Path currentLogPath = null;
   private static int fileCounter = 0;
 
+  private static final long PROCESS_ID =
+      Long.parseLong(ManagementFactory.getRuntimeMXBean().getName().split("@")[0]);
+
+  private static String getThreadName(long threadId) {
+    Thread current = Thread.currentThread();
+    if (current.getId() == threadId) {
+      return current.getName();
+    }
+    int count = Thread.activeCount();
+    Thread[] threads = new Thread[count * 2];
+    int actualCount = Thread.enumerate(threads);
+    for (int i = 0; i < actualCount; i++) {
+      if (threads[i].getId() == threadId) {
+        return threads[i].getName();
+      }
+    }
+    return "";
+  }
+
   static {
     logger.setUseParentHandlers(false);
     storageLogger.setUseParentHandlers(true);
@@ -62,49 +85,41 @@ class BigQueryJdbcRootLogger {
 
   public static Formatter getFormatter() {
     return new Formatter() {
-      private static final String PATTERN = "yyyy-MM-dd HH:mm:ss.SSS";
-      private static final String FORMAT =
-          "%1$s %2$5s %3$d --- [%4$-7.15s] %5$-50s %6$-20s: %7$s%8$s";
+      private final ThreadLocal<SimpleDateFormat> dateFormatter =
+          ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS"));
       private static final int MAX_THREAD_NAME_LENGTH = 15;
-
-      /**
-       * Returns the thread for the given thread id.
-       *
-       * @param threadId ID for the thread being logged.
-       * @return returns the thread
-       */
-      Optional<Thread> getThread(long threadId) {
-        return Thread.getAllStackTraces().keySet().stream()
-            .filter(thread -> thread.getId() == threadId)
-            .findFirst();
-      }
 
       @Override
       public String format(LogRecord record) {
-        String date = new SimpleDateFormat(PATTERN).format(new Date(record.getMillis()));
-        String threadName =
-            getThread(record.getThreadID())
-                .map(Thread::getName)
-                .map(
-                    name ->
-                        name.length() > MAX_THREAD_NAME_LENGTH
-                            ? name.substring(name.length() - MAX_THREAD_NAME_LENGTH)
-                            : name)
-                .orElse("");
-        long processId =
-            Long.parseLong(ManagementFactory.getRuntimeMXBean().getName().split("@")[0]);
+        String date = dateFormatter.get().format(new Date(record.getMillis()));
+        
+        long threadId = record.getThreadID();
+        String threadName = getThreadName(threadId);
+
+        if (threadName.length() > MAX_THREAD_NAME_LENGTH) {
+          threadName = threadName.substring(threadName.length() - MAX_THREAD_NAME_LENGTH);
+        }
+        
         String sourceClassName = record.getLoggerName();
         String sourceMethodName = record.getSourceMethodName();
-        return String.format(
-            FORMAT,
-            date,
-            record.getLevel().getName(),
-            processId,
-            threadName,
-            sourceClassName,
-            sourceMethodName,
-            record.getMessage(),
-            System.lineSeparator());
+        
+        StringBuilder sb = new StringBuilder(256);
+        sb.append(date)
+          .append(" ")
+          .append(Strings.padStart(record.getLevel().getName(), 5, ' '))
+          .append(" ")
+          .append(PROCESS_ID)
+          .append(" --- [")
+          .append(Strings.padEnd(threadName, 7, ' '))
+          .append("] ")
+          .append(Strings.padEnd(sourceClassName != null ? sourceClassName : "", 50, ' '))
+          .append(" ")
+          .append(Strings.padEnd(sourceMethodName != null ? sourceMethodName : "", 20, ' '))
+          .append(": ")
+          .append(record.getMessage())
+          .append(System.lineSeparator());
+          
+        return sb.toString();
       }
     };
   }
