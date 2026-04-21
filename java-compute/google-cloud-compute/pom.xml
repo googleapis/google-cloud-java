@@ -95,7 +95,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-monitoring</artifactId>
-      <version>3.80.0</version>
+      <version>3.80.0</version> <!-- {x-version-update:google-cloud-monitoring:current} -->
       <scope>test</scope>
     </dependency>
     <dependency>
