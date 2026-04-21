@@ -24,55 +24,45 @@ package com.google.cloud.netapp.v1;
  *
  *
  * <pre>
- * Schedule for Hybrid Replication.
- * New enum values may be added in future to support different frequency of
- * replication.
+ * Defines the scale-type of a UNIFIED Storage Pool.
  * </pre>
  *
- * Protobuf enum {@code google.cloud.netapp.v1.HybridReplicationSchedule}
+ * Protobuf enum {@code google.cloud.netapp.v1.ScaleType}
  */
 @com.google.protobuf.Generated
-public enum HybridReplicationSchedule implements com.google.protobuf.ProtocolMessageEnum {
+public enum ScaleType implements com.google.protobuf.ProtocolMessageEnum {
   /**
    *
    *
    * <pre>
-   * Unspecified HybridReplicationSchedule
+   * Unspecified scale type.
    * </pre>
    *
-   * <code>HYBRID_REPLICATION_SCHEDULE_UNSPECIFIED = 0;</code>
+   * <code>SCALE_TYPE_UNSPECIFIED = 0;</code>
    */
-  HYBRID_REPLICATION_SCHEDULE_UNSPECIFIED(0),
+  SCALE_TYPE_UNSPECIFIED(0),
   /**
    *
    *
    * <pre>
-   * Replication happens once every 10 minutes.
+   * Represents standard capacity and performance scale-type.
+   * Suitable for general purpose workloads.
    * </pre>
    *
-   * <code>EVERY_10_MINUTES = 1;</code>
+   * <code>SCALE_TYPE_DEFAULT = 1;</code>
    */
-  EVERY_10_MINUTES(1),
+  SCALE_TYPE_DEFAULT(1),
   /**
    *
    *
    * <pre>
-   * Replication happens once every hour.
+   * Represents higher capacity and performance scale-type.
+   * Suitable for more demanding workloads.
    * </pre>
    *
-   * <code>HOURLY = 2;</code>
+   * <code>SCALE_TYPE_SCALEOUT = 2;</code>
    */
-  HOURLY(2),
-  /**
-   *
-   *
-   * <pre>
-   * Replication happens once every day.
-   * </pre>
-   *
-   * <code>DAILY = 3;</code>
-   */
-  DAILY(3),
+  SCALE_TYPE_SCALEOUT(2),
   UNRECOGNIZED(-1),
   ;
 
@@ -83,52 +73,43 @@ public enum HybridReplicationSchedule implements com.google.protobuf.ProtocolMes
         /* minor= */ 33,
         /* patch= */ 2,
         /* suffix= */ "",
-        "HybridReplicationSchedule");
+        "ScaleType");
   }
 
   /**
    *
    *
    * <pre>
-   * Unspecified HybridReplicationSchedule
+   * Unspecified scale type.
    * </pre>
    *
-   * <code>HYBRID_REPLICATION_SCHEDULE_UNSPECIFIED = 0;</code>
+   * <code>SCALE_TYPE_UNSPECIFIED = 0;</code>
    */
-  public static final int HYBRID_REPLICATION_SCHEDULE_UNSPECIFIED_VALUE = 0;
+  public static final int SCALE_TYPE_UNSPECIFIED_VALUE = 0;
 
   /**
    *
    *
    * <pre>
-   * Replication happens once every 10 minutes.
+   * Represents standard capacity and performance scale-type.
+   * Suitable for general purpose workloads.
    * </pre>
    *
-   * <code>EVERY_10_MINUTES = 1;</code>
+   * <code>SCALE_TYPE_DEFAULT = 1;</code>
    */
-  public static final int EVERY_10_MINUTES_VALUE = 1;
+  public static final int SCALE_TYPE_DEFAULT_VALUE = 1;
 
   /**
    *
    *
    * <pre>
-   * Replication happens once every hour.
+   * Represents higher capacity and performance scale-type.
+   * Suitable for more demanding workloads.
    * </pre>
    *
-   * <code>HOURLY = 2;</code>
+   * <code>SCALE_TYPE_SCALEOUT = 2;</code>
    */
-  public static final int HOURLY_VALUE = 2;
-
-  /**
-   *
-   *
-   * <pre>
-   * Replication happens once every day.
-   * </pre>
-   *
-   * <code>DAILY = 3;</code>
-   */
-  public static final int DAILY_VALUE = 3;
+  public static final int SCALE_TYPE_SCALEOUT_VALUE = 2;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -144,7 +125,7 @@ public enum HybridReplicationSchedule implements com.google.protobuf.ProtocolMes
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static HybridReplicationSchedule valueOf(int value) {
+  public static ScaleType valueOf(int value) {
     return forNumber(value);
   }
 
@@ -152,33 +133,29 @@ public enum HybridReplicationSchedule implements com.google.protobuf.ProtocolMes
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static HybridReplicationSchedule forNumber(int value) {
+  public static ScaleType forNumber(int value) {
     switch (value) {
       case 0:
-        return HYBRID_REPLICATION_SCHEDULE_UNSPECIFIED;
+        return SCALE_TYPE_UNSPECIFIED;
       case 1:
-        return EVERY_10_MINUTES;
+        return SCALE_TYPE_DEFAULT;
       case 2:
-        return HOURLY;
-      case 3:
-        return DAILY;
+        return SCALE_TYPE_SCALEOUT;
       default:
         return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<HybridReplicationSchedule>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<ScaleType> internalGetValueMap() {
     return internalValueMap;
   }
 
-  private static final com.google.protobuf.Internal.EnumLiteMap<HybridReplicationSchedule>
-      internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<HybridReplicationSchedule>() {
-            public HybridReplicationSchedule findValueByNumber(int number) {
-              return HybridReplicationSchedule.forNumber(number);
-            }
-          };
+  private static final com.google.protobuf.Internal.EnumLiteMap<ScaleType> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<ScaleType>() {
+        public ScaleType findValueByNumber(int number) {
+          return ScaleType.forNumber(number);
+        }
+      };
 
   public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     if (this == UNRECOGNIZED) {
@@ -193,13 +170,12 @@ public enum HybridReplicationSchedule implements com.google.protobuf.ProtocolMes
   }
 
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.netapp.v1.CommonProto.getDescriptor().getEnumTypes().get(6);
+    return com.google.cloud.netapp.v1.CommonProto.getDescriptor().getEnumTypes().get(5);
   }
 
-  private static final HybridReplicationSchedule[] VALUES = values();
+  private static final ScaleType[] VALUES = values();
 
-  public static HybridReplicationSchedule valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static ScaleType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
@@ -211,9 +187,9 @@ public enum HybridReplicationSchedule implements com.google.protobuf.ProtocolMes
 
   private final int value;
 
-  private HybridReplicationSchedule(int value) {
+  private ScaleType(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:google.cloud.netapp.v1.HybridReplicationSchedule)
+  // @@protoc_insertion_point(enum_scope:google.cloud.netapp.v1.ScaleType)
 }
