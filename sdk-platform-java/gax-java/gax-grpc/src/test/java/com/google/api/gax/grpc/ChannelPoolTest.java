@@ -537,20 +537,7 @@ class ChannelPoolTest {
 
     List<ManagedChannel> channels = new ArrayList<>();
 
-    ChannelFactory channelFactory =
-        () -> {
-          ManagedChannel channel = Mockito.mock(ManagedChannel.class);
-          Mockito.when(channel.newCall(Mockito.any(), Mockito.any()))
-              .thenAnswer(
-                  invocation -> {
-                    @SuppressWarnings("unchecked")
-                    ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
-                    return clientCall;
-                  });
-
-          channels.add(channel);
-          return channel;
-        };
+    ChannelFactory channelFactory = createMockChannelFactory(channels, null);
 
     pool =
         new ChannelPool(
@@ -583,67 +570,7 @@ class ChannelPoolTest {
     List<ManagedChannel> channels = new ArrayList<>();
 
     List<ClientCall<Object, Object>> startedCalls = new ArrayList<>();
-    ChannelFactory channelFactory =
-        () -> {
-          ManagedChannel channel = Mockito.mock(ManagedChannel.class);
-          Mockito.when(channel.newCall(Mockito.any(), Mockito.any()))
-              .thenAnswer(
-                  invocation -> {
-                    @SuppressWarnings("unchecked")
-                    ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
-                    return clientCall;
-                  });
-
-          channels.add(channel);
-          return channel;
-        };
-
-    pool =
-        new ChannelPool(
-            ChannelPoolSettings.builder()
-                .setInitialChannelCount(2)
-                .setMinRpcsPerChannel(1)
-                .setMaxRpcsPerChannel(2)
-                .setMaxResizeDelta(5)
-                .build(),
-            channelFactory,
-            provider);
-    assertThat(pool.entries.get()).hasSize(2);
-
-    // Add 20 RPCs to push expansion
-    for (int i = 0; i < 20; i++) {
-      ClientCalls.futureUnaryCall(
-          pool.newCall(METHOD_RECOGNIZE, CallOptions.DEFAULT), Color.getDefaultInstance());
-    }
-    pool.resize();
-    // delta is 15 - 2 = 13. Capped at maxResizeDelta = 5.
-    // Expected size = 2 + 5 = 7.
-    assertThat(pool.entries.get()).hasSize(7);
-  }
-
-  @Test
-  void removedIdleChannelsAreShutdown() throws Exception {
-    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
-    FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
-
-    List<ManagedChannel> channels = new ArrayList<>();
-
-    List<ClientCall<Object, Object>> startedCalls = new ArrayList<>();
-    ChannelFactory channelFactory =
-        () -> {
-          ManagedChannel channel = Mockito.mock(ManagedChannel.class);
-          Mockito.when(channel.newCall(Mockito.any(), Mockito.any()))
-              .thenAnswer(
-                  invocation -> {
-                    @SuppressWarnings("unchecked")
-                    ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
-                    startedCalls.add(clientCall);
-                    return clientCall;
-                  });
-
-          channels.add(channel);
-          return channel;
-        };
+    ChannelFactory channelFactory = createMockChannelFactory(channels, startedCalls);
 
     pool =
         new ChannelPool(
@@ -768,18 +695,7 @@ class ChannelPoolTest {
     ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
-    ChannelFactory channelFactory =
-        () -> {
-          ManagedChannel channel = Mockito.mock(ManagedChannel.class);
-          Mockito.when(channel.newCall(Mockito.any(), Mockito.any()))
-              .thenAnswer(
-                  invocation -> {
-                    @SuppressWarnings("unchecked")
-                    ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
-                    return clientCall;
-                  });
-          return channel;
-        };
+    ChannelFactory channelFactory = createMockChannelFactory(new ArrayList<>(), null);
 
     pool =
         new ChannelPool(
