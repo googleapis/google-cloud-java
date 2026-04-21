@@ -19,16 +19,12 @@ package com.google.cloud.bigquery.jdbc;
 import com.google.common.base.Strings;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Optional;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Formatter;
@@ -92,33 +88,33 @@ class BigQueryJdbcRootLogger {
       @Override
       public String format(LogRecord record) {
         String date = dateFormatter.get().format(new Date(record.getMillis()));
-        
+
         long threadId = record.getThreadID();
         String threadName = getThreadName(threadId);
 
         if (threadName.length() > MAX_THREAD_NAME_LENGTH) {
           threadName = threadName.substring(threadName.length() - MAX_THREAD_NAME_LENGTH);
         }
-        
+
         String sourceClassName = record.getLoggerName();
         String sourceMethodName = record.getSourceMethodName();
-        
+
         StringBuilder sb = new StringBuilder(256);
         sb.append(date)
-          .append(" ")
-          .append(Strings.padStart(record.getLevel().getName(), 5, ' '))
-          .append(" ")
-          .append(PROCESS_ID)
-          .append(" --- [")
-          .append(Strings.padEnd(threadName, 7, ' '))
-          .append("] ")
-          .append(Strings.padEnd(sourceClassName != null ? sourceClassName : "", 50, ' '))
-          .append(" ")
-          .append(Strings.padEnd(sourceMethodName != null ? sourceMethodName : "", 20, ' '))
-          .append(": ")
-          .append(record.getMessage())
-          .append(System.lineSeparator());
-          
+            .append(" ")
+            .append(Strings.padStart(record.getLevel().getName(), 5, ' '))
+            .append(" ")
+            .append(PROCESS_ID)
+            .append(" --- [")
+            .append(Strings.padEnd(threadName, 7, ' '))
+            .append("] ")
+            .append(Strings.padEnd(sourceClassName != null ? sourceClassName : "", 50, ' '))
+            .append(" ")
+            .append(Strings.padEnd(sourceMethodName != null ? sourceMethodName : "", 20, ' '))
+            .append(": ")
+            .append(record.getMessage())
+            .append(System.lineSeparator());
+
         return sb.toString();
       }
     };

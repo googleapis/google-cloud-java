@@ -50,12 +50,12 @@ public class BigQueryJdbcRootLoggerTest {
   public void testThreadNameTruncation() {
     Formatter formatter = BigQueryJdbcRootLogger.getFormatter();
     LogRecord record = new LogRecord(Level.INFO, "Test message");
-    
+
     String formatted = formatter.format(record);
     int startIndex = formatted.indexOf("--- [") + 5;
     int endIndex = formatted.indexOf("]", startIndex);
     String threadPart = formatted.substring(startIndex, endIndex).trim();
-    
+
     assertTrue(threadPart.length() <= 15);
   }
 
