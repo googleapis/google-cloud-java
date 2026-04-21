@@ -96,8 +96,7 @@ class ChannelPool extends ManagedChannel {
 
   // Tracks the number of consecutive resize cycles where a resize actually occurred (either expand
   // or shrink). Used to detect repeated resizing activity and log a warning.
-  // Note: This field is only accessed safely within resizeSafely() and does not need to be atomic.
-  private int consecutiveResizes = 0;
+  private final AtomicInteger consecutiveResizes = new AtomicInteger(0);
 
   static ChannelPool create(
       ChannelPoolSettings settings,
@@ -328,13 +327,17 @@ class ChannelPool extends ManagedChannel {
       maxChannels = settings.getMinChannelCount();
     }
 
-    // If the pool were to be resized, try to aim for the middle of the bound, but limit rate of
-    // change.
+    // If the pool were to be resized, try to aim for the middle of the bound,
+    // but limit rate of change.
     int tentativeTarget = (maxChannels + minChannels) / 2;
     int currentSize = localEntries.size();
+    // Calculate the desired change in pool size.
     int delta = tentativeTarget - currentSize;
     int dampenedTarget = tentativeTarget;
+    // Dampen the rate of change if the desired delta exceeds the maximum allowed step size.
     if (Math.abs(delta) > settings.getMaxResizeDelta()) {
+      // Limit the change to maxResizeDelta, maintaining the correct direction (positive or
+      // negative).
       dampenedTarget = currentSize + (int) Math.copySign(settings.getMaxResizeDelta(), delta);
     }
 
@@ -343,15 +346,15 @@ class ChannelPool extends ManagedChannel {
     // bounds but not at the target (target aims for the middle of the bounds)
     boolean resized = (currentSize < minChannels || currentSize > maxChannels);
     if (resized) {
-      consecutiveResizes++;
+      consecutiveResizes.incrementAndGet();
     } else {
-      consecutiveResizes = 0;
+      consecutiveResizes.set(0);
     }
 
     // Log warning only once when the consecutive threshold is reached to avoid spamming logs. Log
     // message will repeat if the number of consecutive resizes resets (e.g. stabilizes for a bit).
     // However, aim to log once to ensure that this does not incur log spam.
-    if (consecutiveResizes == CONSECUTIVE_RESIZE_THRESHOLD) {
+    if (consecutiveResizes.get() == CONSECUTIVE_RESIZE_THRESHOLD) {
       LOG.warning(CHANNEL_POOL_CONSECUTIVE_RESIZING_WARNING);
     }
 
