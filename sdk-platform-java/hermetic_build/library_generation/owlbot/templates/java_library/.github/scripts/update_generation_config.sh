@@ -150,10 +150,10 @@ update_config "gapic_generator_version" "${latest_gapic_generator_version}" "${g
 # Update the GitHub Actions reference to the latest.
 # After the google-cloud-java monorepo migration of sdk-platform-java,
 # we cannot rely on the gapic-generator-java version tag. Let's use
-# the shared dependencies BOM version
-latest_shared_dependencies_bom_version=$(get_latest_released_version "com.google.cloud" "google-cloud-shared-dependencies")
+# the gapic-libraries-bom version
+latest_gapic_libraries_bom_version=$(get_latest_released_version "com.google.cloud" "gapic-libraries-bom")
 update_action "googleapis/google-cloud-java/sdk-platform-java/.github/scripts" \
-  "google-cloud-shared-dependencies/v${latest_shared_dependencies_bom_version}" \
+  "v${latest_gapic_libraries_bom_version}" \
   "${workflow}"
 
 # Update libraries-bom version to the latest

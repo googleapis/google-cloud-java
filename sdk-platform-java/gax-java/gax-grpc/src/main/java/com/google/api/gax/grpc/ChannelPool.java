@@ -69,6 +69,11 @@ import javax.annotation.Nullable;
  * <p>Package-private for internal use.
  */
 class ChannelPool extends ManagedChannel {
+  static final String CHANNEL_POOL_CONSECUTIVE_RESIZING_WARNING =
+      "Channel pool is repeatedly resizing. "
+          + "Consider adjusting `initialChannelCount` or `maxResizeDelta` to a more reasonable value. "
+          + "See https://docs.cloud.google.com/java/docs/troubleshooting to enable logging "
+          + "and set `com.google.api.gax.grpc.ChannelPool.level=FINEST` to log the channel pool resize behavior.";
   @VisibleForTesting static final Logger LOG = Logger.getLogger(ChannelPool.class.getName());
   private static final java.time.Duration REFRESH_PERIOD = java.time.Duration.ofMinutes(50);
 
@@ -83,6 +88,16 @@ class ChannelPool extends ManagedChannel {
   @VisibleForTesting final AtomicReference<ImmutableList<Entry>> entries = new AtomicReference<>();
   private final AtomicInteger indexTicker = new AtomicInteger();
   private final String authority;
+
+  // The number of consecutive resize cycles to wait before logging a warning about repeated
+  // resizing. This value was chosen to detect repeated requests for changes (multiple continuous
+  // increase or decrease attempts) without being too sensitive.
+  private static final int CONSECUTIVE_RESIZE_THRESHOLD = 5;
+
+  // Tracks the number of consecutive resize cycles where a resize actually occurred (either expand
+  // or shrink). Used to detect repeated resizing activity and log a warning.
+  // Note: This field is only accessed safely within resizeSafely() and does not need to be atomic.
+  private int consecutiveResizes = 0;
 
   static ChannelPool create(
       ChannelPoolSettings settings,
@@ -275,7 +290,8 @@ class ChannelPool extends ManagedChannel {
    *   <li>Get the maximum number of outstanding RPCs since last invocation
    *   <li>Determine a valid range of number of channels to handle that many outstanding RPCs
    *   <li>If the current number of channel falls outside of that range, add or remove at most
-   *       {@link ChannelPoolSettings#MAX_RESIZE_DELTA} to get closer to middle of that range.
+   *       {@link ChannelPoolSettings#DEFAULT_MAX_RESIZE_DELTA} to get closer to middle of that
+   *       range.
    * </ul>
    *
    * <p>Not threadsafe, must be called under the entryWriteLock monitor
@@ -313,9 +329,25 @@ class ChannelPool extends ManagedChannel {
     int currentSize = localEntries.size();
     int delta = tentativeTarget - currentSize;
     int dampenedTarget = tentativeTarget;
-    if (Math.abs(delta) > ChannelPoolSettings.MAX_RESIZE_DELTA) {
-      dampenedTarget =
-          currentSize + (int) Math.copySign(ChannelPoolSettings.MAX_RESIZE_DELTA, delta);
+    if (Math.abs(delta) > settings.getMaxResizeDelta()) {
+      dampenedTarget = currentSize + (int) Math.copySign(settings.getMaxResizeDelta(), delta);
+    }
+
+    // Only count as "resized" if the thresholds are crossed and Gax attempts to scale. Checking
+    // that `dampenedTarget != currentSize` would cause false positives when the pool is within
+    // bounds but not at the target (target aims for the middle of the bounds)
+    boolean resized = (currentSize < minChannels || currentSize > maxChannels);
+    if (resized) {
+      consecutiveResizes++;
+    } else {
+      consecutiveResizes = 0;
+    }
+
+    // Log warning only once when the consecutive threshold is reached to avoid spamming logs. Log
+    // message will repeat if the number of consecutive resizes resets (e.g. stabilizes for a bit).
+    // However, aim to log once to ensure that this does not incur log spam.
+    if (consecutiveResizes == CONSECUTIVE_RESIZE_THRESHOLD) {
+      LOG.warning(CHANNEL_POOL_CONSECUTIVE_RESIZING_WARNING);
     }
 
     // Only resize the pool when thresholds are crossed

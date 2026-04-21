@@ -321,13 +321,13 @@ jobs:
     - name: validate generation configuration
       shell: bash
       run: |
-        docker run \
-          --rm \
+        bash generation/run_generator_docker.sh "${library_generation_image_tag}" "${{ github.base_ref || 'main' }}" \
+          -e GENERATOR_VERSION="${library_generation_image_tag}" \
           --quiet \
           -u "$(id -u):$(id -g)" \
           -v "$(pwd):${workspace_name}" \
           --entrypoint python \
-          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
+          -- \
           /src/library_generation/cli/entry_point.py validate-generation-config
       env:
         library_generation_image_tag: 2.68.0
