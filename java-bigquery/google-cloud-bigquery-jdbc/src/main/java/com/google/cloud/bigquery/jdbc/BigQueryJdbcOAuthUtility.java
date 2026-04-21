@@ -295,11 +295,6 @@ final class BigQueryJdbcOAuthUtility {
         throw new IllegalStateException(OAUTH_TYPE_ERROR_MESSAGE);
     }
 
-    if (reqGoogleDriveScopeBool) {
-      credentials = credentials.createScoped(BIGQUERY_WITH_DRIVE_SCOPES);
-      LOG.fine("Added Google Drive read-only scope centrally to GoogleCredentials.");
-    }
-
     return getServiceAccountImpersonatedCredentials(
         credentials, reqGoogleDriveScopeBool, authProperties);
   }
@@ -616,7 +611,6 @@ final class BigQueryJdbcOAuthUtility {
         }
       }
 
-      GoogleCredentials credentials;
       if (credentialsPath != null) {
         return ExternalAccountCredentials.fromStream(
             Files.newInputStream(Paths.get(credentialsPath)));
@@ -644,6 +638,10 @@ final class BigQueryJdbcOAuthUtility {
     String impersonationEmail =
         authProperties.get(BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_EMAIL_PROPERTY_NAME);
     if (impersonationEmail == null || impersonationEmail.isEmpty()) {
+      if (reqGoogleDriveScopeBool) {
+        credentials = credentials.createScoped(BIGQUERY_WITH_DRIVE_SCOPES);
+        LOG.fine("Added Google Drive read-only scope to GoogleCredentials.");
+      }
       return credentials;
     }
 
