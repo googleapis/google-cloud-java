@@ -117,8 +117,14 @@ jobs:
       matrix:
         java: [ 11, 17, 21 ]
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: temurin
+          cache: maven
       - run: bazelisk version
-      - name: Install all modules using Java 11
+      - name: Install all modules
         shell: bash
         run: .kokoro/build.sh
         env:
@@ -134,8 +140,14 @@ jobs:
     runs-on: ubuntu-22.04
     name: sdk-platform-java integration (25)
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 25
+          distribution: temurin
+          cache: maven
       - run: bazelisk version
-      - name: Install all modules using Java 11
+      - name: Install all modules
         shell: bash
         run: .kokoro/build.sh
         env:
@@ -149,11 +161,17 @@ jobs:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-22.04
-    name: sdk-platform-java integration
+    name: sdk-platform-java self-service clients
     strategy:
       matrix:
         java: [ 11, 17 ]
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: temurin
+          cache: maven
       - run: bazelisk version
       - name: Install all modules using Java 11
         shell: bash
