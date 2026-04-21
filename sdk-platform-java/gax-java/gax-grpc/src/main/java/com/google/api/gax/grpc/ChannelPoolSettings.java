@@ -247,9 +247,6 @@ public abstract class ChannelPoolSettings {
       Preconditions.checkState(
           s.getMaxResizeDelta() <= MAX_ALLOWED_RESIZE_DELTA,
           "Max resize delta cannot be greater than " + MAX_ALLOWED_RESIZE_DELTA);
-      Preconditions.checkState(
-          s.getMaxResizeDelta() <= s.getMaxChannelCount(),
-          "Max resize delta cannot be greater than max channel count");
       return s;
     }
   }
