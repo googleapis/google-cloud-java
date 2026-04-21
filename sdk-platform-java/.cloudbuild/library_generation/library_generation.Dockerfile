@@ -44,7 +44,7 @@ ENV HOME=/home
 ENV OS_ARCHITECTURE="linux-x86_64"
 
 # {x-version-update-start:gapic-generator-java:current}
-ENV GENERATOR_VERSION="2.71.0"
+ENV GENERATOR_VERSION="9.99.9"
 # {x-version-update-end}
 
 # install OS tools
