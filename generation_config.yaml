@@ -1976,7 +1976,6 @@ libraries:
   issue_tracker: https://issuetracker.google.com/savedsearches/559755
   GAPICs:
   - proto_path: google/cloud/oslogin/v1
-  - proto_path: google/cloud/oslogin/v1beta
 - api_shortname: parallelstore
   name_pretty: Parallelstore API
   product_documentation: https://cloud/parallelstore?hl=en
