@@ -16,8 +16,8 @@
 
 package com.example.spanner;
 
-import static com.google.cloud.spanner.testing.ExperimentalHostHelper.isExperimentalHost;
-import static com.google.cloud.spanner.testing.ExperimentalHostHelper.setExperimentalHostSpannerOptions;
+import static com.example.spanner.ExperimentalHostHelper.isExperimentalHost;
+import static com.example.spanner.ExperimentalHostHelper.setExperimentalHostSpannerOptions;
 
 import com.google.api.gax.paging.Page;
 import com.google.cloud.ByteArray;

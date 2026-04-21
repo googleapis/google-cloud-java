@@ -18,8 +18,8 @@ package com.example.spanner;
 
 // [START spanner_query_information_schema_database_options]
 
-import static com.google.cloud.spanner.testing.ExperimentalHostHelper.isExperimentalHost;
-import static com.google.cloud.spanner.testing.ExperimentalHostHelper.setExperimentalHostSpannerOptions;
+import static com.example.spanner.ExperimentalHostHelper.isExperimentalHost;
+import static com.example.spanner.ExperimentalHostHelper.setExperimentalHostSpannerOptions;
 
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.DatabaseId;
