@@ -645,6 +645,9 @@ final class GrpcStorageImpl extends BaseService<StorageOptions>
         .forEach(builder::addSourceObjects);
     final Object target = codecs.blobInfo().encode(composeRequest.getTarget());
     builder.setDestination(target);
+    if (composeRequest.isDeleteSourceObjects()) {
+      builder.setDeleteSourceObjects(true);
+    }
     ComposeObjectRequest req = opts.composeObjectsRequest().apply(builder).build();
     GrpcCallContext merge = Utils.merge(grpcCallContext, Retrying.newCallContext());
     return retrier.run(
