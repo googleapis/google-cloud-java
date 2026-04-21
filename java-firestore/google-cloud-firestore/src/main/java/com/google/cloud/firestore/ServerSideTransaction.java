@@ -281,7 +281,7 @@ final class ServerSideTransaction extends Transaction {
       @Nonnull Pipeline pipeline, @Nonnull PipelineExecuteOptions options) {
     Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
     try (TraceUtil.Scope ignored = transactionTraceContext.makeCurrent()) {
-      return pipeline.execute(new PipelineExecuteOptions(), transactionId, null);
+      return pipeline.execute(options, transactionId, null);
     }
   }
 }

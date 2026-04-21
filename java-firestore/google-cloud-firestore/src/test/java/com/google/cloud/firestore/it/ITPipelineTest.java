@@ -3883,7 +3883,11 @@ public class ITPipelineTest extends ITBaseTest {
     firestore
         .runTransaction(
             transaction -> {
-              PipelineExecuteOptions options = new PipelineExecuteOptions().with("foo", "bar");
+              PipelineExecuteOptions options =
+                  new PipelineExecuteOptions()
+                      .withExplainOptions(
+                          new ExplainOptions()
+                              .withExecutionMode(ExplainOptions.ExecutionMode.ANALYZE));
               List<PipelineResult> results =
                   transaction.execute(pipeline, options).get().getResults();
               assertThat(results).hasSize(1);
