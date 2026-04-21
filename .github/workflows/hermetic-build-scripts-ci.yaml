@@ -97,3 +97,14 @@ jobs:
         # exclude generated golden files
         # exclude owlbot until further refaction
         black --check hermetic_build --exclude "(library_generation/tests/resources/goldens)"
+  required:
+    needs: [ library-generation-unit-tests, library-generation-lint-shell, library-generation-lint-python ]
+    name: conditional-required-check
+    if: ${{ always() }} # Always run even if any "needs" jobs fail
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Fail if any previous failure
+        if: ${{ contains(needs.*.result, 'failure') }}
+        run: exit 1
+      - name: Success otherwise
+        run: echo "Success!"
