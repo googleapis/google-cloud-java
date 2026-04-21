@@ -32,6 +32,7 @@ package com.google.api.gax.grpc;
 import static com.google.api.gax.grpc.testing.FakeServiceGrpc.METHOD_RECOGNIZE;
 import static com.google.api.gax.grpc.testing.FakeServiceGrpc.METHOD_SERVER_STREAMING_RECOGNIZE;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertThrows;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.FixedExecutorProvider;
@@ -529,7 +530,6 @@ class ChannelPoolTest {
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
     List<ManagedChannel> channels = new ArrayList<>();
-    List<ClientCall<Object, Object>> startedCalls = new ArrayList<>();
 
     ChannelFactory channelFactory =
         () -> {
@@ -539,7 +539,6 @@ class ChannelPoolTest {
                   invocation -> {
                     @SuppressWarnings("unchecked")
                     ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
-                    startedCalls.add(clientCall);
                     return clientCall;
                   });
 
@@ -576,7 +575,6 @@ class ChannelPoolTest {
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
     List<ManagedChannel> channels = new ArrayList<>();
-    List<ClientCall<Object, Object>> startedCalls = new ArrayList<>();
 
     ChannelFactory channelFactory =
         () -> {
@@ -586,7 +584,6 @@ class ChannelPoolTest {
                   invocation -> {
                     @SuppressWarnings("unchecked")
                     ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
-                    startedCalls.add(clientCall);
                     return clientCall;
                   });
 
@@ -732,7 +729,6 @@ class ChannelPoolTest {
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
     List<ManagedChannel> channels = new ArrayList<>();
-    List<ClientCall<Object, Object>> startedCalls = new ArrayList<>();
 
     ChannelFactory channelFactory =
         () -> {
@@ -742,7 +738,6 @@ class ChannelPoolTest {
                   invocation -> {
                     @SuppressWarnings("unchecked")
                     ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
-                    startedCalls.add(clientCall);
                     return clientCall;
                   });
 
@@ -904,7 +899,6 @@ class ChannelPoolTest {
   void settingsValidationFailsWhenMaxResizeDeltaExceedsLimit() {
     ChannelPoolSettings.Builder builder =
         ChannelPoolSettings.builder().setMaxResizeDelta(26).setMaxChannelCount(30);
-    org.junit.jupiter.api.Assertions.assertThrows(
-        IllegalStateException.class, () -> builder.build());
+    assertThrows(IllegalStateException.class, builder::build);
   }
 }
