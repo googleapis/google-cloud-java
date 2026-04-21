@@ -48,8 +48,10 @@ import java.net.InetSocketAddress;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /** Shared-backend replica harness for end-to-end location-aware routing tests. */
 final class SharedBackendReplicaHarness implements Closeable {
@@ -68,12 +70,18 @@ final class SharedBackendReplicaHarness implements Closeable {
 
   static final class HookedReplicaSpannerService extends SpannerGrpc.SpannerImplBase {
     private final MockSpannerServiceImpl backend;
+    private final boolean recordRequestDetails;
     private final Map<String, ArrayDeque<Throwable>> methodErrors = new HashMap<>();
+    private final Map<String, Integer> requestCounts = new HashMap<>();
+    private final Map<String, Integer> retryAttemptCounts = new HashMap<>();
+    private final Map<String, Set<String>> logicalRequestKeys = new HashMap<>();
     private final Map<String, List<AbstractMessage>> requests = new HashMap<>();
     private final Map<String, List<String>> requestIds = new HashMap<>();
 
-    private HookedReplicaSpannerService(MockSpannerServiceImpl backend) {
+    private HookedReplicaSpannerService(
+        MockSpannerServiceImpl backend, boolean recordRequestDetails) {
       this.backend = backend;
+      this.recordRequestDetails = recordRequestDetails;
     }
 
     synchronized void putMethodErrors(String method, Throwable... errors) {
@@ -92,7 +100,22 @@ final class SharedBackendReplicaHarness implements Closeable {
       return new ArrayList<>(requestIds.getOrDefault(method, new ArrayList<>()));
     }
 
+    synchronized int getRequestCount(String method) {
+      return requestCounts.getOrDefault(method, 0);
+    }
+
+    synchronized int getRetryAttemptCount(String method) {
+      return retryAttemptCounts.getOrDefault(method, 0);
+    }
+
+    synchronized int getLogicalRequestCount(String method) {
+      return logicalRequestKeys.getOrDefault(method, new HashSet<>()).size();
+    }
+
     synchronized void clearRequests() {
+      requestCounts.clear();
+      retryAttemptCounts.clear();
+      logicalRequestKeys.clear();
       requests.clear();
       requestIds.clear();
     }
@@ -102,11 +125,29 @@ final class SharedBackendReplicaHarness implements Closeable {
     }
 
     private synchronized void recordRequest(String method, AbstractMessage request) {
-      requests.computeIfAbsent(method, ignored -> new ArrayList<>()).add(request);
+      requestCounts.merge(method, 1, Integer::sum);
+      if (recordRequestDetails) {
+        requests.computeIfAbsent(method, ignored -> new ArrayList<>()).add(request);
+      }
     }
 
     private synchronized void recordRequestId(String method, String requestId) {
-      requestIds.computeIfAbsent(method, ignored -> new ArrayList<>()).add(requestId);
+      if (requestId != null) {
+        try {
+          XGoogSpannerRequestId parsed = XGoogSpannerRequestId.of(requestId);
+          if (parsed.getAttempt() > 1L) {
+            retryAttemptCounts.merge(method, 1, Integer::sum);
+          }
+          logicalRequestKeys
+              .computeIfAbsent(method, ignored -> new HashSet<>())
+              .add(parsed.getLogicalRequestKey());
+        } catch (IllegalStateException ignore) {
+          // Some tests may inject non-standard request ids. Ignore them for aggregate stats.
+        }
+      }
+      if (recordRequestDetails) {
+        requestIds.computeIfAbsent(method, ignored -> new ArrayList<>()).add(requestId);
+      }
     }
 
     private synchronized Throwable nextError(String method) {
@@ -245,15 +286,22 @@ final class SharedBackendReplicaHarness implements Closeable {
   }
 
   static SharedBackendReplicaHarness create(int replicaCount) throws IOException {
+    return create(replicaCount, true);
+  }
+
+  static SharedBackendReplicaHarness create(int replicaCount, boolean recordRequestDetails)
+      throws IOException {
     MockSpannerServiceImpl backend = new MockSpannerServiceImpl();
     backend.setAbortProbability(0.0D);
     List<Server> servers = new ArrayList<>();
-    HookedReplicaSpannerService defaultReplica = new HookedReplicaSpannerService(backend);
+    HookedReplicaSpannerService defaultReplica =
+        new HookedReplicaSpannerService(backend, recordRequestDetails);
     List<HookedReplicaSpannerService> replicas = new ArrayList<>();
     List<String> replicaAddresses = new ArrayList<>();
     String defaultAddress = startServer(servers, defaultReplica);
     for (int i = 0; i < replicaCount; i++) {
-      HookedReplicaSpannerService replica = new HookedReplicaSpannerService(backend);
+      HookedReplicaSpannerService replica =
+          new HookedReplicaSpannerService(backend, recordRequestDetails);
       replicas.add(replica);
       replicaAddresses.add(startServer(servers, replica));
     }

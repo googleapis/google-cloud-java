@@ -693,6 +693,33 @@ public class KeyRangeCacheTest {
   }
 
   @Test
+  public void preferLeaderFalseWithTwoReplicasAlwaysPicksLowerCostWithoutDeterministicMode() {
+    FakeEndpointCache endpointCache = new FakeEndpointCache();
+    KeyRangeCache cache = new KeyRangeCache(endpointCache);
+    cache.addRanges(twoReplicaUpdate());
+
+    endpointCache.get("server1");
+    endpointCache.get("server2");
+
+    EndpointLatencyRegistry.recordLatency(
+        null, TEST_OPERATION_UID, false, "server1", Duration.ofNanos(300_000L));
+    EndpointLatencyRegistry.recordLatency(
+        null, TEST_OPERATION_UID, false, "server2", Duration.ofNanos(100_000L));
+
+    for (int i = 0; i < 100; i++) {
+      ChannelEndpoint server =
+          cache.fillRoutingHint(
+              false,
+              KeyRangeCache.RangeMode.COVERING_SPLIT,
+              DirectedReadOptions.getDefaultInstance(),
+              RoutingHint.newBuilder().setKey(bytes("a")).setOperationUid(TEST_OPERATION_UID));
+
+      assertNotNull(server);
+      assertEquals("server2", server.getAddress());
+    }
+  }
+
+  @Test
   public void preferLeaderTrueUsesLatencyScoresWhenOperationUidAvailable() {
     FakeEndpointCache endpointCache = new FakeEndpointCache();
     KeyRangeCache cache = new KeyRangeCache(endpointCache);

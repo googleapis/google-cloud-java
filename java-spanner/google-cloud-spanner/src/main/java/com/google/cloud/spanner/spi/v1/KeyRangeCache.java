@@ -18,7 +18,6 @@ package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.core.InternalApi;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.collect.Lists;
 import com.google.common.hash.Hashing;
 import com.google.protobuf.ByteString;
 import com.google.spanner.v1.CacheUpdate;
@@ -156,8 +155,6 @@ public final class KeyRangeCache {
   private final Lock readLock = cacheLock.readLock();
   private final Lock writeLock = cacheLock.writeLock();
   private final AtomicLong accessCounter = new AtomicLong();
-  private final ReplicaSelector replicaSelector = new PowerOfTwoReplicaSelector();
-
   private volatile boolean deterministicRandom = false;
   private volatile int minCacheEntriesForRandomPick = DEFAULT_MIN_ENTRIES_FOR_RANDOM_PICK;
 
@@ -966,17 +963,7 @@ public final class KeyRangeCache {
       if (deterministicRandom) {
         return lowestCostReplica(eligibleReplicas);
       }
-
-      ChannelEndpoint selectedEndpoint =
-          replicaSelector.select(
-              endpointView(eligibleReplicas),
-              endpoint -> selectionCostForEndpoint(eligibleReplicas, endpoint));
-      if (selectedEndpoint == null) {
-        return eligibleReplicas.get(0);
-      }
-
-      EligibleReplica selected = candidateForEndpoint(eligibleReplicas, selectedEndpoint);
-      return selected == null ? eligibleReplicas.get(0) : selected;
+      return selectPowerOfTwoReplica(eligibleReplicas);
     }
 
     private EligibleReplica lowestCostReplica(List<EligibleReplica> eligibleReplicas) {
@@ -990,25 +977,16 @@ public final class KeyRangeCache {
       return lowestCost;
     }
 
-    private List<ChannelEndpoint> endpointView(List<EligibleReplica> eligibleReplicas) {
-      return Lists.transform(eligibleReplicas, candidate -> candidate.endpoint);
-    }
-
-    private double selectionCostForEndpoint(
-        List<EligibleReplica> eligibleReplicas, ChannelEndpoint endpoint) {
-      EligibleReplica candidate = candidateForEndpoint(eligibleReplicas, endpoint);
-      return candidate == null ? Double.MAX_VALUE : candidate.selectionCost;
-    }
-
-    @javax.annotation.Nullable
-    private EligibleReplica candidateForEndpoint(
-        List<EligibleReplica> eligibleReplicas, ChannelEndpoint endpoint) {
-      for (EligibleReplica candidate : eligibleReplicas) {
-        if (candidate.endpoint == endpoint) {
-          return candidate;
-        }
+    private EligibleReplica selectPowerOfTwoReplica(List<EligibleReplica> eligibleReplicas) {
+      int size = eligibleReplicas.size();
+      int firstIndex = ThreadLocalRandom.current().nextInt(size);
+      int secondIndex = ThreadLocalRandom.current().nextInt(size - 1);
+      if (secondIndex >= firstIndex) {
+        secondIndex++;
       }
-      return null;
+      EligibleReplica first = eligibleReplicas.get(firstIndex);
+      EligibleReplica second = eligibleReplicas.get(secondIndex);
+      return first.selectionCost <= second.selectionCost ? first : second;
     }
 
     private double selectionCost(

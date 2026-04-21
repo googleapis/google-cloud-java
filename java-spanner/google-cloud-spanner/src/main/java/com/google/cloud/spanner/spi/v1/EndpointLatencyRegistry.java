@@ -187,6 +187,7 @@ final class EndpointLatencyRegistry {
     private final long operationUid;
     private final boolean preferLeader;
     private final String address;
+    private final int hashCode;
 
     private TrackerKey(
         String databaseScope, long operationUid, boolean preferLeader, String address) {
@@ -194,6 +195,11 @@ final class EndpointLatencyRegistry {
       this.operationUid = operationUid;
       this.preferLeader = preferLeader;
       this.address = address;
+      int result = databaseScope.hashCode();
+      result = 31 * result + Long.hashCode(operationUid);
+      result = 31 * result + Boolean.hashCode(preferLeader);
+      result = 31 * result + address.hashCode();
+      this.hashCode = result;
     }
 
     @Override
@@ -213,7 +219,7 @@ final class EndpointLatencyRegistry {
 
     @Override
     public int hashCode() {
-      return Objects.hash(databaseScope, operationUid, preferLeader, address);
+      return hashCode;
     }
 
     @Override

@@ -26,8 +26,10 @@ import com.google.common.hash.Hashing;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Value;
 import com.google.spanner.v1.ExecuteSqlRequest;
+import com.google.spanner.v1.ExecuteSqlRequestOrBuilder;
 import com.google.spanner.v1.Mutation;
 import com.google.spanner.v1.ReadRequest;
+import com.google.spanner.v1.ReadRequestOrBuilder;
 import com.google.spanner.v1.RecipeList;
 import com.google.spanner.v1.RoutingHint;
 import com.google.spanner.v1.Type;
@@ -50,7 +52,7 @@ public final class KeyRecipeCache {
   private static final long DEFAULT_PREPARED_READ_CACHE_SIZE = 1000;
 
   @VisibleForTesting
-  static long fingerprint(ReadRequest req) {
+  static long fingerprint(ReadRequestOrBuilder req) {
     Hasher hasher = Hashing.goodFastHash(64).newHasher();
     hasher.putString(req.getTable(), StandardCharsets.UTF_8);
     hasher.putString(req.getIndex(), StandardCharsets.UTF_8);
@@ -62,7 +64,7 @@ public final class KeyRecipeCache {
   }
 
   @VisibleForTesting
-  static long fingerprint(ExecuteSqlRequest req) {
+  static long fingerprint(ExecuteSqlRequestOrBuilder req) {
     Hasher hasher = Hashing.goodFastHash(64).newHasher();
     hasher.putString(req.getSql(), StandardCharsets.UTF_8);
 
@@ -155,17 +157,17 @@ public final class KeyRecipeCache {
   }
 
   public void computeKeys(ReadRequest.Builder reqBuilder) {
-    long reqFp = fingerprint(reqBuilder.buildPartial());
+    long reqFp = fingerprint(reqBuilder);
 
     RoutingHint.Builder hintBuilder = reqBuilder.getRoutingHintBuilder();
     applySchemaGeneration(hintBuilder);
 
     PreparedRead preparedRead = getIfPresent(preparedReads, reqFp);
     if (preparedRead == null) {
-      preparedRead = PreparedRead.fromRequest(reqBuilder.buildPartial());
+      preparedRead = PreparedRead.fromRequest(reqBuilder);
       preparedRead.operationUid = nextOperationUid.getAndIncrement();
       preparedReads.put(reqFp, preparedRead);
-    } else if (!preparedRead.matches(reqBuilder.buildPartial())) {
+    } else if (!preparedRead.matches(reqBuilder)) {
       logger.fine("Fingerprint collision for ReadRequest: " + reqFp);
       return;
     }
@@ -191,17 +193,17 @@ public final class KeyRecipeCache {
   }
 
   public void computeKeys(ExecuteSqlRequest.Builder reqBuilder) {
-    long reqFp = fingerprint(reqBuilder.buildPartial());
+    long reqFp = fingerprint(reqBuilder);
 
     RoutingHint.Builder hintBuilder = reqBuilder.getRoutingHintBuilder();
     applySchemaGeneration(hintBuilder);
 
     PreparedQuery preparedQuery = getIfPresent(preparedQueries, reqFp);
     if (preparedQuery == null) {
-      preparedQuery = PreparedQuery.fromRequest(reqBuilder.buildPartial());
+      preparedQuery = PreparedQuery.fromRequest(reqBuilder);
       preparedQuery.operationUid = nextOperationUid.getAndIncrement();
       preparedQueries.put(reqFp, preparedQuery);
-    } else if (!preparedQuery.matches(reqBuilder.buildPartial())) {
+    } else if (!preparedQuery.matches(reqBuilder)) {
       logger.fine("Fingerprint collision for ExecuteSqlRequest: " + reqFp);
       return;
     }
@@ -291,11 +293,11 @@ public final class KeyRecipeCache {
       this.columns = ImmutableList.copyOf(columns);
     }
 
-    static PreparedRead fromRequest(ReadRequest req) {
+    static PreparedRead fromRequest(ReadRequestOrBuilder req) {
       return new PreparedRead(req.getTable(), req.getColumnsList());
     }
 
-    boolean matches(ReadRequest req) {
+    boolean matches(ReadRequestOrBuilder req) {
       if (!Objects.equals(table, req.getTable())) {
         return false;
       }
@@ -316,7 +318,7 @@ public final class KeyRecipeCache {
       this.queryOptions = queryOptions;
     }
 
-    private static PreparedQuery fromRequest(ExecuteSqlRequest req) {
+    private static PreparedQuery fromRequest(ExecuteSqlRequestOrBuilder req) {
       List<Param> params = new ArrayList<>();
       for (Map.Entry<String, Value> entry : req.getParams().getFieldsMap().entrySet()) {
         String name = entry.getKey();
@@ -330,7 +332,7 @@ public final class KeyRecipeCache {
       return new PreparedQuery(req.getSql(), params, req.getQueryOptions());
     }
 
-    private boolean matches(ExecuteSqlRequest req) {
+    private boolean matches(ExecuteSqlRequestOrBuilder req) {
       if (!sql.equals(req.getSql())) {
         return false;
       }
