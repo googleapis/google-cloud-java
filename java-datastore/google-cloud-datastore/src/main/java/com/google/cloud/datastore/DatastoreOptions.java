@@ -54,7 +54,9 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
   private static final String DEFAULT_DATABASE_ID = "";
   public static final String PROJECT_ID_ENV_VAR = "DATASTORE_PROJECT_ID";
   public static final String LOCAL_HOST_ENV_VAR = "DATASTORE_EMULATOR_HOST";
-  public static final int INIT_CHANNEL_COUNT = 1;
+  public static final int INIT_CHANNEL_COUNT = 5;
+  public static final int CHANNEL_POOL_DEFAULT_RESIZE_DELTA = 5;
+  public static final int CHANNEL_POOL_MAX_RPCS_PER_CHANNEL = 100;
   public static final int MIN_CHANNEL_COUNT = 1;
   public static final int MAX_CHANNEL_COUNT = 4;
 
@@ -233,14 +235,18 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
           "Only gRPC transport allows setting of channel provider or credentials provider");
     } else if (getTransportOptions() instanceof GrpcTransportOptions) {
       if (builder.channelProvider == null) {
-        /*
-         The default gRPC connection pool is configured with a minimum of 1 channel.
-         The maximum channel count automatically defaults to 200 (Defined in gax-grpc).
-        */
+        // Set the default gRPC connection pool to be configured with a minimum of 1 channel.
+        // The maximum channel count automatically defaults to 200 (as defined in gax-grpc).
+        // Datastore sets the initial channel pool count to be 5 channels to allow better handle
+        // large loads of requests and the resize delta to be 5 to scale quicker. In cases of low
+        // load, the channel count will scale down as needed and memory will be freed. The default
+        // configuration is set to try and handle ~500 QPS and will scale up and down as needed.
         ChannelPoolSettings datastoreChannelPoolSettings =
             ChannelPoolSettings.builder()
                 .setInitialChannelCount(INIT_CHANNEL_COUNT)
                 .setMinChannelCount(MIN_CHANNEL_COUNT)
+                .setMaxRpcsPerChannel(CHANNEL_POOL_MAX_RPCS_PER_CHANNEL)
+                .setMaxResizeDelta(CHANNEL_POOL_DEFAULT_RESIZE_DELTA)
                 .build();
 
         ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> channelConfigurator =
