@@ -16,6 +16,9 @@
 
 package com.example.spanner;
 
+import static com.google.cloud.spanner.testing.ExperimentalHostHelper.isExperimentalHost;
+import static com.google.cloud.spanner.testing.ExperimentalHostHelper.setExperimentalHostSpannerOptions;
+
 import com.google.cloud.Timestamp;
 import com.google.cloud.spanner.DatabaseClient;
 import com.google.cloud.spanner.DatabaseId;
@@ -554,7 +557,11 @@ public class SpannerGraphSample {
     if (args.length != 3 && args.length != 4) {
       printUsageAndExit();
     }
-    SpannerOptions options = SpannerOptions.newBuilder().build();
+    SpannerOptions.Builder builder = SpannerOptions.newBuilder();
+    if (isExperimentalHost()) {
+      setExperimentalHostSpannerOptions(builder);
+    }
+    SpannerOptions options = builder.build();
     Spanner spanner = options.getService();
     DatabaseAdminClient dbAdminClient = null;
     try {
