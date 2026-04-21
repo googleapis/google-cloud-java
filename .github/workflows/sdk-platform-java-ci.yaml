@@ -125,7 +125,7 @@ jobs:
         run: echo 'EXTRA_BAZEL_ARGS="--jvmopt=-Dcom.google.testing.junit.runner.shouldInstallTestSecurityManager=false"' >> $GITHUB_ENV
       - name: Integration Tests
         run: |
-          bazelisk --batch test //sdk-platform-java/test/integration/... ${EXTRA_BAZEL_ARGS}
+          bazelisk --batch ${EXTRA_BAZEL_ARGS} test //sdk-platform-java/test/integration/...
 
   sdk-platform-java-8:
     needs: filter
