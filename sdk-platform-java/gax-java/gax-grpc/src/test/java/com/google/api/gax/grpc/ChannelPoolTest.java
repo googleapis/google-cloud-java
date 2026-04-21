@@ -145,6 +145,26 @@ class ChannelPoolTest {
     }
   }
 
+  private static ChannelFactory createMockChannelFactory(
+      List<ManagedChannel> channels, List<ClientCall<Object, Object>> startedCalls) {
+    return () -> {
+      ManagedChannel channel = Mockito.mock(ManagedChannel.class);
+      Mockito.when(channel.newCall(Mockito.any(), Mockito.any()))
+          .thenAnswer(
+              invocation -> {
+                @SuppressWarnings("unchecked")
+                ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
+                if (startedCalls != null) {
+                  startedCalls.add(clientCall);
+                }
+                return clientCall;
+              });
+
+      channels.add(channel);
+      return channel;
+    };
+  }
+
   @Test
   void ensureEvenDistribution() throws InterruptedException, IOException {
     int numChannels = 10;
@@ -452,21 +472,7 @@ class ChannelPoolTest {
     List<ManagedChannel> channels = new ArrayList<>();
     List<ClientCall<Object, Object>> startedCalls = new ArrayList<>();
 
-    ChannelFactory channelFactory =
-        () -> {
-          ManagedChannel channel = Mockito.mock(ManagedChannel.class);
-          Mockito.when(channel.newCall(Mockito.any(), Mockito.any()))
-              .thenAnswer(
-                  invocation -> {
-                    @SuppressWarnings("unchecked")
-                    ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
-                    startedCalls.add(clientCall);
-                    return clientCall;
-                  });
-
-          channels.add(channel);
-          return channel;
-        };
+    ChannelFactory channelFactory = createMockChannelFactory(channels, startedCalls);
 
     pool =
         new ChannelPool(
@@ -531,6 +537,7 @@ class ChannelPoolTest {
 
     List<ManagedChannel> channels = new ArrayList<>();
 
+<<<<<<< HEAD
     ChannelFactory channelFactory =
         () -> {
           ManagedChannel channel = Mockito.mock(ManagedChannel.class);
@@ -545,6 +552,9 @@ class ChannelPoolTest {
           channels.add(channel);
           return channel;
         };
+=======
+    ChannelFactory channelFactory = createMockChannelFactory(channels, startedCalls);
+>>>>>>> 019ca9693c7 (fix: Fix channel clamping logic in ChannelPools to respect channel bounds)
 
     pool =
         new ChannelPool(
@@ -576,6 +586,7 @@ class ChannelPoolTest {
 
     List<ManagedChannel> channels = new ArrayList<>();
 
+<<<<<<< HEAD
     ChannelFactory channelFactory =
         () -> {
           ManagedChannel channel = Mockito.mock(ManagedChannel.class);
@@ -590,6 +601,9 @@ class ChannelPoolTest {
           channels.add(channel);
           return channel;
         };
+=======
+    ChannelFactory channelFactory = createMockChannelFactory(channels, startedCalls);
+>>>>>>> 019ca9693c7 (fix: Fix channel clamping logic in ChannelPools to respect channel bounds)
 
     pool =
         new ChannelPool(
@@ -616,21 +630,7 @@ class ChannelPoolTest {
     List<ManagedChannel> channels = new ArrayList<>();
     List<ClientCall<Object, Object>> startedCalls = new ArrayList<>();
 
-    ChannelFactory channelFactory =
-        () -> {
-          ManagedChannel channel = Mockito.mock(ManagedChannel.class);
-          Mockito.when(channel.newCall(Mockito.any(), Mockito.any()))
-              .thenAnswer(
-                  invocation -> {
-                    @SuppressWarnings("unchecked")
-                    ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
-                    startedCalls.add(clientCall);
-                    return clientCall;
-                  });
-
-          channels.add(channel);
-          return channel;
-        };
+    ChannelFactory channelFactory = createMockChannelFactory(channels, startedCalls);
 
     pool =
         new ChannelPool(
@@ -730,6 +730,7 @@ class ChannelPoolTest {
 
     List<ManagedChannel> channels = new ArrayList<>();
 
+<<<<<<< HEAD
     ChannelFactory channelFactory =
         () -> {
           ManagedChannel channel = Mockito.mock(ManagedChannel.class);
@@ -744,6 +745,9 @@ class ChannelPoolTest {
           channels.add(channel);
           return channel;
         };
+=======
+    ChannelFactory channelFactory = createMockChannelFactory(channels, startedCalls);
+>>>>>>> 019ca9693c7 (fix: Fix channel clamping logic in ChannelPools to respect channel bounds)
 
     pool =
         new ChannelPool(

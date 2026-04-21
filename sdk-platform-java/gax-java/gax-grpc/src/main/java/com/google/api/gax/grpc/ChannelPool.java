@@ -310,6 +310,10 @@ class ChannelPool extends ManagedChannel {
     if (minChannels < settings.getMinChannelCount()) {
       minChannels = settings.getMinChannelCount();
     }
+    // Limit in case the calculated min channel count exceeds the configured max channel count
+    if (minChannels > settings.getMaxChannelCount()) {
+      minChannels = settings.getMaxChannelCount();
+    }
 
     // Number of channels if each channel operated at minimum capacity
     // Note: getMinRpcsPerChannel() can return 0, but division by 0 shouldn't cause a problem.
@@ -319,8 +323,9 @@ class ChannelPool extends ManagedChannel {
     if (maxChannels > settings.getMaxChannelCount()) {
       maxChannels = settings.getMaxChannelCount();
     }
-    if (maxChannels < minChannels) {
-      maxChannels = minChannels;
+    // Limit in case the calculated max channel count falls below the configured min channel count
+    if (maxChannels < settings.getMinChannelCount()) {
+      maxChannels = settings.getMinChannelCount();
     }
 
     // If the pool were to be resized, try to aim for the middle of the bound, but limit rate of

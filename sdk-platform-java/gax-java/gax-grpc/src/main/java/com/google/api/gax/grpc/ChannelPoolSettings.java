@@ -198,7 +198,7 @@ public abstract class ChannelPoolSettings {
       Preconditions.checkState(
           s.getMinChannelCount() > 0, "Minimum channel count must be at least 1");
       Preconditions.checkState(
-          s.getMinChannelCount() <= s.getMaxRpcsPerChannel(), "absolute channel range is invalid");
+          s.getMinChannelCount() <= s.getMaxChannelCount(), "absolute channel range is invalid");
       Preconditions.checkState(
           s.getMinChannelCount() <= s.getInitialChannelCount(),
           "initial channel count be at least minChannelCount");
