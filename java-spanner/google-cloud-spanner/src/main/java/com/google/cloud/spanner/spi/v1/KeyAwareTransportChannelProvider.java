@@ -29,25 +29,22 @@ import javax.annotation.Nullable;
 final class KeyAwareTransportChannelProvider implements TransportChannelProvider {
   private final InstantiatingGrpcChannelProvider baseProvider;
   @Nullable private final ChannelEndpointCacheFactory endpointCacheFactory;
-
-  KeyAwareTransportChannelProvider(
-      InstantiatingGrpcChannelProvider.Builder builder,
-      @Nullable ChannelEndpointCacheFactory endpointCacheFactory) {
-    this.baseProvider = builder.build();
-    this.endpointCacheFactory = endpointCacheFactory;
-  }
+  @Nullable private final GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator;
 
   KeyAwareTransportChannelProvider(
       InstantiatingGrpcChannelProvider baseProvider,
-      @Nullable ChannelEndpointCacheFactory endpointCacheFactory) {
+      @Nullable ChannelEndpointCacheFactory endpointCacheFactory,
+      @Nullable GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator) {
     this.baseProvider = baseProvider;
     this.endpointCacheFactory = endpointCacheFactory;
+    this.endpointChannelConfigurator = endpointChannelConfigurator;
   }
 
   @Override
   public GrpcTransportChannel getTransportChannel() throws IOException {
     return GrpcTransportChannel.newBuilder()
-        .setManagedChannel(KeyAwareChannel.create(baseProvider, endpointCacheFactory))
+        .setManagedChannel(
+            KeyAwareChannel.create(baseProvider, endpointCacheFactory, endpointChannelConfigurator))
         .build();
   }
 
@@ -85,41 +82,48 @@ final class KeyAwareTransportChannelProvider implements TransportChannelProvider
   public TransportChannelProvider withEndpoint(String endpoint) {
     return new KeyAwareTransportChannelProvider(
         (InstantiatingGrpcChannelProvider) baseProvider.withEndpoint(endpoint),
-        endpointCacheFactory);
+        endpointCacheFactory,
+        endpointChannelConfigurator);
   }
 
   @Override
   public TransportChannelProvider withCredentials(Credentials credentials) {
     return new KeyAwareTransportChannelProvider(
         (InstantiatingGrpcChannelProvider) baseProvider.withCredentials(credentials),
-        endpointCacheFactory);
+        endpointCacheFactory,
+        endpointChannelConfigurator);
   }
 
   @Override
   public TransportChannelProvider withHeaders(Map<String, String> headers) {
     return new KeyAwareTransportChannelProvider(
-        (InstantiatingGrpcChannelProvider) baseProvider.withHeaders(headers), endpointCacheFactory);
+        (InstantiatingGrpcChannelProvider) baseProvider.withHeaders(headers),
+        endpointCacheFactory,
+        endpointChannelConfigurator);
   }
 
   @Override
   public TransportChannelProvider withPoolSize(int poolSize) {
     return new KeyAwareTransportChannelProvider(
         (InstantiatingGrpcChannelProvider) baseProvider.withPoolSize(poolSize),
-        endpointCacheFactory);
+        endpointCacheFactory,
+        endpointChannelConfigurator);
   }
 
   @Override
   public TransportChannelProvider withExecutor(ScheduledExecutorService executor) {
     return new KeyAwareTransportChannelProvider(
         (InstantiatingGrpcChannelProvider) baseProvider.withExecutor(executor),
-        endpointCacheFactory);
+        endpointCacheFactory,
+        endpointChannelConfigurator);
   }
 
   @Override
   public TransportChannelProvider withExecutor(Executor executor) {
     return new KeyAwareTransportChannelProvider(
         (InstantiatingGrpcChannelProvider) baseProvider.withExecutor(executor),
-        endpointCacheFactory);
+        endpointCacheFactory,
+        endpointChannelConfigurator);
   }
 
   @Override
