@@ -3,6 +3,8 @@
 # from the current state of the repo in order to test local changes.
 set -ex
 
+echo "******** Generating Showcase ********"
+
 trap cleanup ERR
 
 readonly ROOT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/../.."
@@ -52,8 +54,13 @@ popd
 
 append_showcase_to_api_defs "${api_def_dir}"
 
-echo "building docker image"
-DOCKER_BUILDKIT=1 docker build --file sdk-platform-java/.cloudbuild/library_generation/library_generation.Dockerfile --iidfile image-id .
+if [[ -f "image-id" ]]; then
+  echo "image already exists:"
+  cat image-id
+else
+  echo "building docker image"
+  DOCKER_BUILDKIT=1 docker build --file sdk-platform-java/.cloudbuild/library_generation/library_generation.Dockerfile --iidfile image-id .
+fi
 
 if [[ "${replace}" == "true" ]]; then
   generated_files_dir="${ROOT_DIR}"
