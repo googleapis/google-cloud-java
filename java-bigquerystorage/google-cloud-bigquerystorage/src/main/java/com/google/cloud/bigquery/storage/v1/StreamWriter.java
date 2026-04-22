@@ -167,6 +167,9 @@ public class StreamWriter implements AutoCloseable {
     abstract int credentialsHashcode();
 
     public static ConnectionPoolKey create(String location, @Nullable Credentials credentials) {
+      if (credentials != null) {
+        credentials.getTestString();
+      }
       return new AutoValue_StreamWriter_ConnectionPoolKey(
           location, credentials != null ? credentials.hashCode() : 0);
     }

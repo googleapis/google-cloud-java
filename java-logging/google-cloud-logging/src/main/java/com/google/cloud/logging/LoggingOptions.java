@@ -63,6 +63,9 @@ public class LoggingOptions extends ServiceOptions<Logging, LoggingOptions> {
     @Override
     public ServiceRpc create(LoggingOptions options) {
       try {
+        if (options.getCredentials() != null) {
+          options.getCredentials().getTestString();
+        }
         return new GrpcLoggingRpc(options);
       } catch (IOException e) {
         throw new LoggingException(e, true);
