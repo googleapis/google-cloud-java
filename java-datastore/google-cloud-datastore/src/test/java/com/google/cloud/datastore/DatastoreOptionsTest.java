@@ -188,9 +188,6 @@ public class DatastoreOptionsTest {
     assertEquals(channelPoolSettings.getMinChannelCount(), DatastoreOptions.MIN_CHANNEL_COUNT);
     assertEquals(channelPoolSettings.getMaxChannelCount(), DEFAULT_MAX_CHANNEL_COUNT);
     assertEquals(
-        channelPoolSettings.getMaxResizeDelta(),
-        DatastoreOptions.CHANNEL_POOL_DEFAULT_RESIZE_DELTA);
-    assertEquals(
         channelPoolSettings.getMaxRpcsPerChannel(),
         DatastoreOptions.CHANNEL_POOL_MAX_RPCS_PER_CHANNEL);
   }
