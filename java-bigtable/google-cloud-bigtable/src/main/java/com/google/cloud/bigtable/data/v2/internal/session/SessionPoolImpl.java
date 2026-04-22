@@ -534,7 +534,6 @@ public class SessionPoolImpl<OpenReqT extends Message> implements SessionPool<Op
       if (!handle.isPresent()) {
         break;
       }
-      handle.get().onVRpcStarted();
       PendingVRpc<?, ?> rpc = pendingRpcs.removeFirst();
       rpc.drainTo(handle.get());
     }

@@ -111,7 +111,7 @@ class SessionList {
         handle -> {
           poolStats.readyCount--;
           poolStats.inUseCount++;
-
+          inUseSessions.add(handle);
           if (handle.afe.get().sessions.isEmpty()) {
             afesWithReadySessions.remove(afeHandle);
           }
@@ -192,11 +192,6 @@ class SessionList {
 
       poolStats.startingCount--;
       poolStats.readyCount++;
-    }
-
-    void onVRpcStarted() {
-      // Pool stats and AFE list are updated in SessionList#checkoutSession
-      inUseSessions.add(this);
     }
 
     /**

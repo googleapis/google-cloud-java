@@ -20,6 +20,7 @@ import com.google.bigtable.v2.PeerInfo;
 import com.google.bigtable.v2.VirtualRpcRequest;
 import com.google.bigtable.v2.VirtualRpcRequest.Metadata;
 import com.google.bigtable.v2.VirtualRpcResponse;
+import com.google.cloud.bigtable.data.v2.internal.csm.tracers.DebugTagTracer;
 import com.google.cloud.bigtable.data.v2.internal.middleware.VRpc;
 import com.google.protobuf.Message;
 import com.google.protobuf.MessageLite;
@@ -72,16 +73,20 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
 
   private AtomicReference<State> state;
 
+  private final DebugTagTracer debugTagTracer;
+
   public VRpcImpl(
       VRpcSessionApi session,
       VRpcDescriptor<OpenReqT, ReqT, RespT> desc,
       long rpcId,
-      PeerInfo peerInfo) {
+      PeerInfo peerInfo,
+      DebugTagTracer debugTagTracer) {
     this.session = session;
     this.desc = desc;
     this.rpcId = rpcId;
     this.state = new AtomicReference<>(State.NEW);
     this.peerInfo = peerInfo;
+    this.debugTagTracer = debugTagTracer;
   }
 
   @Override
@@ -96,6 +101,8 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
       retryable = false;
     } else if (ctx.getOperationInfo().getDeadline().timeRemaining(TimeUnit.MICROSECONDS)
         < TimeUnit.MILLISECONDS.toMicros(1)) {
+      // transitioning to the close state is handled below
+      state.set(State.STARTED);
       // Don't send RPCs that don't have any hope of succeeding
       status =
           Status.DEADLINE_EXCEEDED.withDescription("Remaining deadline is too short to send RPC");
@@ -124,9 +131,11 @@ class VRpcImpl<OpenReqT extends Message, ReqT extends MessageLite, RespT extends
     }
 
     if (!status.isOk()) {
-      if (!state.compareAndSet(State.STARTED, State.CLOSED)) {
-        return;
-      }
+      debugTagTracer.checkPrecondition(
+          state.compareAndSet(State.STARTED, State.CLOSED),
+          "vrpc_incorrect_start_state",
+          "VRpc has incorrect state. Expected to be started but was %s",
+          state);
       // TODO: loop through the session executor
       if (retryable) {
         listener.onClose(VRpcResult.createUncommitedError(status));

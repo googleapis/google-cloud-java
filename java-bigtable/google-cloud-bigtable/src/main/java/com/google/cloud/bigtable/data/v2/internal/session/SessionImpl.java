@@ -324,7 +324,7 @@ public class SessionImpl implements Session, VRpcSessionApi {
 
       long rpcId = nextRpcId;
       nextRpcId = Math.incrementExact(nextRpcId);
-      return new VRpcImpl<>(this, descriptor, rpcId, stream.getPeerInfo());
+      return new VRpcImpl<>(this, descriptor, rpcId, stream.getPeerInfo(), debugTagTracer);
     }
   }
 
