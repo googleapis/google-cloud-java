@@ -76,13 +76,14 @@ scriptDir=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 cd ${scriptDir}/..
 
 # Make artifacts available for 'mvn validate' at the bottom
-mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
+mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q --no-transfer-progress
 
 # Get version of doclet used to generate Cloud RAD for javadoc testing with the doclet below
+rm -rf java-docfx-doclet
 git clone https://github.com/googleapis/java-docfx-doclet.git
 pushd java-docfx-doclet/third_party/docfx-doclet-143274
 git checkout 1.9.0
-mvn package -Dmaven.test.skip=true
+mvn package -Dmaven.test.skip=true -B -V --no-transfer-progress
 
 # work from the root directory
 popd
@@ -101,27 +102,31 @@ fi
 echo "Version: ${JAVA_SHARED_CONFIG_VERSION}"
 
 # Update java-shared-config in sdk-platform-java-config
-git clone "https://github.com/googleapis/sdk-platform-java.git" --depth=1
-pushd sdk-platform-java
-SDK_PLATFORM_JAVA_CONFIG_VERSION=$(get_current_version_from_versions_txt versions.txt "google-cloud-shared-dependencies")
-RELEASED_SHARED_DEPENDENCIES_VERSION=$(get_released_version_from_versions_txt versions.txt "google-cloud-shared-dependencies")
-echo "This is the SDK_PLATFORM_JAVA_CONFIG_VERSION: ${SDK_PLATFORM_JAVA_CONFIG_VERSION}"
-echo "This is the RELEASED_SHARED_DEPENDENCIES_VERSION: ${RELEASED_SHARED_DEPENDENCIES_VERSION}"
-pushd sdk-platform-java-config
+rm -rf google-cloud-java
+# Find the latest tag matching v* and use it
+LATEST_TAG=$(git ls-remote --tags https://github.com/googleapis/google-cloud-java.git | grep 'refs/tags/v' | sort -k2,2 -V | tail -n 1 | awk '{print $2}' | sed 's|refs/tags/||')
+echo "Cloning google-cloud-java at tag: ${LATEST_TAG}"
+git clone "https://github.com/googleapis/google-cloud-java.git" -b "${LATEST_TAG}" --depth=1
+pushd google-cloud-java/sdk-platform-java
+SDK_PLATFORM_JAVA_CONFIG_VERSION=$(sed -e 's/xmlns=".*"//' sdk-platform-java-config/pom.xml | xmllint --xpath '/project/version/text()' -)
 
+pushd sdk-platform-java-config
 # Use released version of google-cloud-shared-dependencies to avoid verifying SNAPSHOT changes.
 replace_java_shared_config_version "${JAVA_SHARED_CONFIG_VERSION}"
-replace_java_shared_dependencies_version "${RELEASED_SHARED_DEPENDENCIES_VERSION}"
-mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dgcloud.download.skip=true -B -V -q
+echo "The diff in sdk-platform-java-config:"
+git --no-pager diff
+echo "--------"
+mvn install "-DskipTests=true" "-Dmaven.javadoc.skip=true" "-Dgcloud.download.skip=true" "-Dcheckstyle.skip=true" -B -V -q --no-transfer-progress
 popd
 
 # Check javadoc generation with the doclet
+rm -rf "${REPO}"
 git clone "https://github.com/googleapis/${REPO}.git" --depth=1
 
 pushd ${REPO}
 replace_sdk_platform_java_config_version "${SDK_PLATFORM_JAVA_CONFIG_VERSION}"
 
-mvn clean -B -ntp \
+mvn clean -B --no-transfer-progress \
     -P docFX \
     -DdocletPath="${docletPath}" \
     -Dclirr.skip=true \
