@@ -246,6 +246,17 @@ jobs:
         JOB_TYPE: test
         JOB_NAME: units-8-runtime-${{matrix.java}}
       working-directory: ${{matrix.package}}
+  required:
+    needs: [ changes, split-units ]
+    name: conditional-required-check
+    if: ${{ always() }} # Always run even if any "needs" jobs fail
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Fail if any previous failure
+        if: ${{ needs.changes.outputs.packages != '[]' && contains(needs.*.result, 'failure') }}
+        run: exit 1
+      - name: Success otherwise
+        run: echo "Success!"
   windows:
     runs-on: windows-latest
     steps:
@@ -332,30 +343,3 @@ jobs:
       env:
         library_generation_image_tag: 2.68.0
         workspace_name: /workspace
-
-# TODO: Uncomment the needed Github Actions
-#  dependencies:
-#    runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        java: [8, 11, 17]
-#    steps:
-#    - uses: actions/checkout@v3
-#    - uses: actions/setup-java@v3
-#      with:
-#        distribution: zulu
-#        java-version: ${{matrix.java}}
-#    - run: java -version
-#    - run: .kokoro/dependencies.sh
-#  clirr:
-#    runs-on: ubuntu-latest
-#    steps:
-#    - uses: actions/checkout@v3
-#    - uses: actions/setup-java@v3
-#      with:
-#        distribution: zulu
-#        java-version: 8
-#    - run: java -version
-#    - run: .kokoro/build.sh
-#      env:
-#        JOB_TYPE: clirr

@@ -24,6 +24,7 @@ jobs:
           library:
             - 'sdk-platform-java/**'
             - .kokoro/downstream-compatibility.sh
+            - .github/workflows/sdk-platform-java-downstream.yaml
   downstream-compatibility:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
@@ -71,3 +72,14 @@ jobs:
           sudo apt-get -y install libxml2-utils
       - name: Perform downstream compatibility testing
         run: .kokoro/downstream-compatibility-spring.sh
+  required:
+    needs: [ downstream-compatibility, downstream-compatibility-spring-generator ]
+    name: conditional-required-check
+    if: ${{ always() }} # Always run even if any "needs" jobs fail
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Fail if any previous failure
+        if: ${{ contains(needs.*.result, 'failure') }}
+        run: exit 1
+      - name: Success otherwise
+        run: echo "Success!"

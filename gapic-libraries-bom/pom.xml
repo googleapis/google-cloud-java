@@ -1259,7 +1259,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-spanner-bom</artifactId>
-        <version>6.116.0</version><!-- {x-version-update:google-cloud-spanner:current} -->
+        <version>6.116.1</version><!-- {x-version-update:google-cloud-spanner:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
