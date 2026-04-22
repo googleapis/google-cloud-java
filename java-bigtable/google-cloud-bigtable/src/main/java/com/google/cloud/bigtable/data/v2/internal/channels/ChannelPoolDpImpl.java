@@ -262,11 +262,16 @@ public class ChannelPoolDpImpl implements ChannelPool {
   }
 
   @GuardedBy("this")
-  private AfeChannelGroup rehomeChannel(ChannelWrapper channelWrapper, AfeId afeId) {
+  private void rehomeChannel(ChannelWrapper channelWrapper, AfeId afeId) {
+    // No need to rehome recycled channels.
+    if (channelWrapper.channel.isShutdown()) {
+      return;
+    }
+
     AfeChannelGroup origGroup = channelWrapper.group;
 
     if (Objects.equals(origGroup.afeId, afeId)) {
-      return origGroup;
+      return;
     }
 
     log(Level.FINE, "Rehoming channel from: %s to %s", origGroup.afeId, afeId);
@@ -291,7 +296,7 @@ public class ChannelPoolDpImpl implements ChannelPool {
     newGroup.channels.add(channelWrapper);
     newGroup.numStreams += channelWrapper.numOutstanding;
 
-    return newGroup;
+    return;
   }
 
   // Update accounting when a stream is closed and releases its channel
@@ -322,6 +327,11 @@ public class ChannelPoolDpImpl implements ChannelPool {
 
   @GuardedBy("this")
   private void recycleChannel(ChannelWrapper channelWrapper) {
+    if (channelWrapper.channel.isShutdown()) {
+      // Channel is already recycled.
+      return;
+    }
+
     channelWrapper.group.channels.remove(channelWrapper);
     channelWrapper.channel.shutdown();
     // Checking for starting group because we don't want to delete the stating group.
