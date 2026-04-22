@@ -1221,12 +1221,13 @@ class ITBigQueryTest {
     QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query).build();
 
     // 1. Test lossless 64-bit integer parsing (useInt64Timestamps = true)
-    DataFormatOptions losslessOptions = DataFormatOptions.newBuilder()
-        .useInt64Timestamp(true)
-        .build();
-    BigQuery losslessBigQuery = bigquery.getOptions().toBuilder()
-        .setDataFormatOptions(losslessOptions)
-        .build().getService();
+    DataFormatOptions losslessOptions =
+        DataFormatOptions.newBuilder().useInt64Timestamp(true).build();
+    BigQuery losslessBigQuery =
+        bigquery.getOptions().toBuilder()
+            .setDataFormatOptions(losslessOptions)
+            .build()
+            .getService();
 
     TableResult losslessResult = losslessBigQuery.query(config);
     assertEquals(1L, losslessResult.getTotalRows());
@@ -1236,12 +1237,10 @@ class ITBigQueryTest {
     }
 
     // 2. Test lossy FLOAT64 rounding behavior (useInt64Timestamps = false)
-    DataFormatOptions floatOptions = DataFormatOptions.newBuilder()
-        .useInt64Timestamp(false)
-        .build();
-    BigQuery floatBigQuery = bigquery.getOptions().toBuilder()
-        .setDataFormatOptions(floatOptions)
-        .build().getService();
+    DataFormatOptions floatOptions =
+        DataFormatOptions.newBuilder().useInt64Timestamp(false).build();
+    BigQuery floatBigQuery =
+        bigquery.getOptions().toBuilder().setDataFormatOptions(floatOptions).build().getService();
 
     TableResult floatResult = floatBigQuery.query(config);
     assertEquals(1L, floatResult.getTotalRows());
@@ -1251,12 +1250,12 @@ class ITBigQueryTest {
     }
 
     // 3. Test ISO8601 timestamp formatting
-    DataFormatOptions isoOptions = DataFormatOptions.newBuilder()
-        .timestampFormatOptions(DataFormatOptions.TimestampFormatOptions.ISO8601_STRING)
-        .build();
-    BigQuery isoBigQuery = bigquery.getOptions().toBuilder()
-        .setDataFormatOptions(isoOptions)
-        .build().getService();
+    DataFormatOptions isoOptions =
+        DataFormatOptions.newBuilder()
+            .timestampFormatOptions(DataFormatOptions.TimestampFormatOptions.ISO8601_STRING)
+            .build();
+    BigQuery isoBigQuery =
+        bigquery.getOptions().toBuilder().setDataFormatOptions(isoOptions).build().getService();
 
     TableResult isoResult = isoBigQuery.query(config);
     assertEquals(1L, isoResult.getTotalRows());
