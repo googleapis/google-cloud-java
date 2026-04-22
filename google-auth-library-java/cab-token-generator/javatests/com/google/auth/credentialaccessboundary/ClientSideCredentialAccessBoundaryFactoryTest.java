@@ -624,7 +624,7 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
             .thenReturn(
                 mockedTimeInMillis, // First call: Stale (triggers the async refresh)
                 currentTimeInMillis // Subsequent calls: Fresh (skips redundant refreshes)
-            );
+                );
         break;
       case BLOCKING:
         // Set mocked time so that the token requires immediate refresh (just after the minimum
@@ -635,8 +635,6 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
       default:
         throw new IllegalArgumentException("Unexpected RefreshType: " + refreshType);
     }
-
-
 
     return mockClock;
   }
