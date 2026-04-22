@@ -319,6 +319,7 @@ case ${JOB_TYPE} in
     mvn -B -ntp \
       -Dfmt.skip=true \
       -Denforcer.skip=true \
+      -Dcheckstyle.skip=true \
       clirr:check
     RETURN_CODE=$?
     if [[ -n "${BUILD_SUBDIR}" ]]
