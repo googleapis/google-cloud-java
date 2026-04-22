@@ -23,7 +23,6 @@ import static com.google.api.MetricDescriptor.ValueType.DISTRIBUTION;
 import static com.google.api.MetricDescriptor.ValueType.DOUBLE;
 import static com.google.api.MetricDescriptor.ValueType.INT64;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.DATASTORE_RESOURCE_TYPE;
-import static com.google.cloud.datastore.telemetry.TelemetryConstants.PROJECT_ID_KEY;
 
 import com.google.api.Distribution;
 import com.google.api.Distribution.BucketOptions;
@@ -48,7 +47,6 @@ import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.metrics.data.MetricDataType;
 import io.opentelemetry.sdk.metrics.data.PointData;
 import io.opentelemetry.sdk.metrics.data.SumData;
-import io.opentelemetry.sdk.resources.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -71,16 +69,6 @@ class DatastoreCloudMonitoringExporterUtils {
       Logger.getLogger(DatastoreCloudMonitoringExporterUtils.class.getName());
 
   private DatastoreCloudMonitoringExporterUtils() {}
-
-  /**
-   * Extracts the project ID from the OpenTelemetry {@link Resource}.
-   *
-   * @param resource the OTel resource.
-   * @return the project ID string, or null if not present.
-   */
-  static String getProjectId(Resource resource) {
-    return resource.getAttributes().get(PROJECT_ID_KEY);
-  }
 
   /**
    * Converts a list of {@link MetricData} to Cloud Monitoring {@link TimeSeries}.

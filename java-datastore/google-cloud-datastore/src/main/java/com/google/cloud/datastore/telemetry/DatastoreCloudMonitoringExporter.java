@@ -108,8 +108,10 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
   // Flag to prevent log spam of any export failures
   private final AtomicBoolean datastoreExportFailureLogged = new AtomicBoolean(false);
 
+  // Flag to prevent double shutdown of this exporter instance
+  private final AtomicBoolean isExporterShutDown = new AtomicBoolean(false);
+
   private final String projectId;
-  private final String databaseId;
 
   /**
    * Creates a new instance of the exporter.
@@ -163,7 +165,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
     }
 
     return new DatastoreCloudMonitoringExporter(
-        key, projectId, databaseId, cachedMetricsClient.client, clientAttributes);
+        key, projectId, cachedMetricsClient.client, clientAttributes);
   }
 
   private static MetricServiceClient createMetricServiceClient(Credentials credentials)
@@ -189,13 +191,11 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
   DatastoreCloudMonitoringExporter(
       String cacheKey,
       String projectId,
-      String databaseId,
       MetricServiceClient client,
       Map<String, String> clientAttributes) {
     this.cacheKey = cacheKey;
     this.client = client;
     this.projectId = projectId;
-    this.databaseId = databaseId;
     this.clientAttributes = clientAttributes;
   }
 
@@ -207,7 +207,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
    */
   @Override
   public CompletableResultCode export(@Nonnull Collection<MetricData> collection) {
-    if (client.isShutdown()) {
+    if (isExporterShutDown.get()) {
       logger.log(Level.WARNING, "Exporter is shut down");
       return CompletableResultCode.ofFailure();
     }
@@ -305,7 +305,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
   /** Shuts down the exporter and the underlying {@link MetricServiceClient}. */
   @Override
   public CompletableResultCode shutdown() {
-    if (client.isShutdown()) {
+    if (!isExporterShutDown.compareAndSet(false, true)) {
       logger.log(Level.WARNING, "shutdown is called multiple times");
       return CompletableResultCode.ofSuccess();
     }
