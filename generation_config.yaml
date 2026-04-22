@@ -1,4 +1,4 @@
-googleapis_commitish: a78b5838b801428bfe5b85758727a46d830b7f39
+googleapis_commitish: 939ba3bf8408af83f0f73ae35c76c4b11a8c8c8d
 libraries_bom_version: 26.80.0
 libraries:
 - api_shortname: accessapproval
