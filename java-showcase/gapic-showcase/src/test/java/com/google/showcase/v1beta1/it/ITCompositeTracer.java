@@ -126,6 +126,10 @@ class ITCompositeTracer {
 
       // Verify metric name and one basic attribute server.address
       Collection<MetricData> actualMetrics = metricReader.collectAllMetrics();
+      for (int i = 0; i < 10 && actualMetrics.isEmpty(); i++) {
+        Thread.sleep(1000L);
+        actualMetrics = metricReader.collectAllMetrics();
+      }
 
       assertThat(actualMetrics).isNotEmpty();
       MetricData metricData =
