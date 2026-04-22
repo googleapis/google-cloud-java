@@ -327,8 +327,8 @@ class ChannelPool extends ManagedChannel {
       maxChannels = settings.getMinChannelCount();
     }
 
-    // If the pool were to be resized, try to aim for the middle of the bound,
-    // but limit rate of change.
+    // If the pool were to be resized, try to aim for the middle of the bound. The tentativeTarget
+    // will
     int tentativeTarget = (maxChannels + minChannels) / 2;
     int currentSize = localEntries.size();
     // Calculate the desired change in pool size.
@@ -346,12 +346,6 @@ class ChannelPool extends ManagedChannel {
       int step = delta > 0 ? effectiveMaxResizeDelta : -effectiveMaxResizeDelta;
       dampenedTarget = currentSize + step;
     }
-
-    // Ensure that the calculated dampenedTarget value will never exceed the maxChannelCount or fall
-    // below minChannelCount. This ensures that `currentSize + resizeDelta` remains within bounds.
-    dampenedTarget =
-        Math.max(
-            settings.getMinChannelCount(), Math.min(settings.getMaxChannelCount(), dampenedTarget));
 
     // Only count as "resized" if the thresholds are crossed and Gax attempts to scale. Checking
     // that `dampenedTarget != currentSize` would cause false positives when the pool is within

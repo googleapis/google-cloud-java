@@ -847,4 +847,68 @@ class ChannelPoolTest {
         ChannelPoolSettings.builder().setMaxResizeDelta(26).setMaxChannelCount(30);
     assertThrows(IllegalStateException.class, builder::build);
   }
+
+  @Test
+  void minChannelsClampedToMaxChannelCountUnderHighLoad() throws Exception {
+    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
+
+    List<ManagedChannel> channels = new ArrayList<>();
+    ChannelFactory channelFactory = createMockChannelFactory(channels, null);
+
+    pool =
+        new ChannelPool(
+            ChannelPoolSettings.builder()
+                .setInitialChannelCount(1)
+                .setMinRpcsPerChannel(1)
+                .setMaxRpcsPerChannel(2)
+                .setMaxResizeDelta(10)
+                .setMinChannelCount(1)
+                .setMaxChannelCount(5)
+                .build(),
+            channelFactory,
+            provider);
+    assertThat(pool.entries.get()).hasSize(1);
+
+    // Add 20 RPCs, which would require 10 channels (20/2)
+    // But max is 5
+    for (int i = 0; i < 20; i++) {
+      ClientCalls.futureUnaryCall(
+          pool.newCall(METHOD_RECOGNIZE, CallOptions.DEFAULT), Color.getDefaultInstance());
+    }
+
+    pool.resize();
+
+    // Should be clamped to maxChannelCount = 5
+    assertThat(pool.entries.get()).hasSize(5);
+  }
+
+  @Test
+  void maxChannelsClampedToMinChannelCountUnderLowLoad() throws Exception {
+    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
+
+    List<ManagedChannel> channels = new ArrayList<>();
+    ChannelFactory channelFactory = createMockChannelFactory(channels, null);
+
+    pool =
+        new ChannelPool(
+            ChannelPoolSettings.builder()
+                .setInitialChannelCount(5)
+                .setMinRpcsPerChannel(1)
+                .setMaxRpcsPerChannel(2)
+                .setMinChannelCount(3)
+                .setMaxChannelCount(10)
+                .build(),
+            channelFactory,
+            provider);
+    assertThat(pool.entries.get()).hasSize(5);
+
+    // With no outstanding RPCs, the pool should want to shrink to 0
+    // But min is 3
+    pool.resize();
+
+    // Should be clamped to minChannelCount = 3
+    assertThat(pool.entries.get()).hasSize(3);
+  }
 }
