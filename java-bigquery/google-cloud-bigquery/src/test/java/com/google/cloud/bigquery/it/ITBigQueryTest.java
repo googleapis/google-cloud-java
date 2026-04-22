@@ -1219,17 +1219,17 @@ class ITBigQueryTest {
   void testLosslessMaxTimestampIntegration() throws InterruptedException {
     // 1. Initialize BigQueryOptions with the lossless timestamp flag enabled
     // We use RemoteBigQueryHelper to get standard test environment credentials
-    BigQueryOptions options = RemoteBigQueryHelper.create().getOptions().toBuilder()
+    BigQueryOptions options = bigquery.getOptions().toBuilder()
         .setUseInt64Timestamps(true)
         .build();
-    BigQuery bigquery = options.getService();
+    BigQuery losslessBigQuery = options.getService();
 
     // 2. Query the absolute maximum timestamp directly from BigQuery
     String query = "SELECT TIMESTAMP '9999-12-31 23:59:59.999999 UTC' as max_ts";
     QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query).build();
     
     // 3. Execute the query
-    TableResult result = bigquery.query(config);
+    TableResult result = losslessBigQuery.query(config);
 
     // 4. Verify that the parsed value exactly matches the 64-bit microsecond value without rounding
     for (FieldValueList row : result.iterateAll()) {
