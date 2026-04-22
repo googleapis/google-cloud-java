@@ -4732,7 +4732,13 @@ class ITBigQueryTest {
     // Use `getNumDmlAffectedRows()` for DML operations
     Job queryJob = bigquery.getJob(result.getJobId());
     queryJob = queryJob.waitFor();
+    assertNull(
+        queryJob.getStatus().getError(),
+        "Job failed with error: " + queryJob.getStatus().getError());
+
     JobStatistics.QueryStatistics statistics = queryJob.getStatistics();
+    assertNotNull(
+        statistics.getNumDmlAffectedRows(), "DML affected rows statistics should not be null");
     assertEquals(1L, statistics.getNumDmlAffectedRows().longValue());
 
     // Verify correctness of table content

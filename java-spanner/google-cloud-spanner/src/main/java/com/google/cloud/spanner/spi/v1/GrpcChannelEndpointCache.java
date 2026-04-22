@@ -17,6 +17,7 @@
 package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.core.InternalApi;
+import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder;
 import com.google.cloud.spanner.ErrorCode;
@@ -26,11 +27,13 @@ import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -50,10 +53,14 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
   /** Timeout for graceful channel shutdown. */
   private static final long SHUTDOWN_TIMEOUT_SECONDS = 5;
 
+  @VisibleForTesting static final Duration ROUTED_KEEPALIVE_TIME = Duration.ofSeconds(2);
+  @VisibleForTesting static final Duration ROUTED_KEEPALIVE_TIMEOUT = Duration.ofSeconds(20);
+
   private final InstantiatingGrpcChannelProvider baseProvider;
   private final Map<String, GrpcChannelEndpoint> servers = new ConcurrentHashMap<>();
   private final GrpcChannelEndpoint defaultEndpoint;
   private final String defaultAuthority;
+  @Nullable private final GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator;
   private final AtomicBoolean isShutdown = new AtomicBoolean(false);
 
   /**
@@ -65,7 +72,15 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
    */
   public GrpcChannelEndpointCache(InstantiatingGrpcChannelProvider channelProvider)
       throws IOException {
+    this(channelProvider, null);
+  }
+
+  public GrpcChannelEndpointCache(
+      InstantiatingGrpcChannelProvider channelProvider,
+      @Nullable GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator)
+      throws IOException {
     this.baseProvider = channelProvider;
+    this.endpointChannelConfigurator = endpointChannelConfigurator;
     String defaultEndpoint = channelProvider.getEndpoint();
     this.defaultEndpoint = new GrpcChannelEndpoint(defaultEndpoint, channelProvider);
     this.defaultAuthority = this.defaultEndpoint.getChannel().authority();
@@ -110,19 +125,27 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
     return servers.get(address);
   }
 
-  private InstantiatingGrpcChannelProvider createProviderWithAuthorityOverride(String address) {
+  @VisibleForTesting
+  InstantiatingGrpcChannelProvider createProviderWithAuthorityOverride(String address) {
     InstantiatingGrpcChannelProvider endpointProvider =
         (InstantiatingGrpcChannelProvider) baseProvider.withEndpoint(address);
     if (Objects.equals(defaultAuthority, address)) {
       return endpointProvider;
     }
     Builder builder = endpointProvider.toBuilder();
+    builder.setChannelPoolSettings(ChannelPoolSettings.staticallySized(1));
+    builder.setKeepAliveTimeDuration(ROUTED_KEEPALIVE_TIME);
+    builder.setKeepAliveTimeoutDuration(ROUTED_KEEPALIVE_TIMEOUT);
+    builder.setKeepAliveWithoutCalls(Boolean.TRUE);
     final com.google.api.core.ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>
-        baseConfigurator = builder.getChannelConfigurator();
+        baseConfigurator =
+            endpointChannelConfigurator == null ? builder.getChannelConfigurator() : null;
     builder.setChannelConfigurator(
         channelBuilder -> {
           ManagedChannelBuilder effectiveBuilder = channelBuilder;
-          if (baseConfigurator != null) {
+          if (endpointChannelConfigurator != null) {
+            effectiveBuilder = endpointChannelConfigurator.configure(effectiveBuilder);
+          } else if (baseConfigurator != null) {
             effectiveBuilder = baseConfigurator.apply(effectiveBuilder);
           }
           return effectiveBuilder.overrideAuthority(defaultAuthority);
@@ -182,6 +205,7 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
   static class GrpcChannelEndpoint implements ChannelEndpoint {
     private final String address;
     private final ManagedChannel channel;
+    private final AtomicInteger activeRequests = new AtomicInteger();
 
     /**
      * Creates a server from a channel provider.
@@ -266,6 +290,21 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
     @Override
     public ManagedChannel getChannel() {
       return channel;
+    }
+
+    @Override
+    public void incrementActiveRequests() {
+      activeRequests.incrementAndGet();
+    }
+
+    @Override
+    public void decrementActiveRequests() {
+      activeRequests.updateAndGet(current -> current > 0 ? current - 1 : 0);
+    }
+
+    @Override
+    public int getActiveRequestCount() {
+      return Math.max(0, activeRequests.get());
     }
   }
 }

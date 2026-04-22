@@ -42,6 +42,14 @@
           </archive> 
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.graalvm.buildtools</groupId>
+        <artifactId>native-maven-plugin</artifactId>
+        <configuration>
+          <skipNativeTests>true</skipNativeTests>
+        </configuration>
+      </plugin>
+
     </plugins>
   </build>
 
