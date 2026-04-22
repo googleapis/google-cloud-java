@@ -1216,7 +1216,7 @@ class ITBigQueryTest {
   }
 
   @Test
-  public void testLosslessMaxTimestampIntegration() throws InterruptedException {
+  void testLosslessMaxTimestampIntegration() throws InterruptedException {
     // 1. Initialize BigQueryOptions with the lossless timestamp flag enabled
     // We use RemoteBigQueryHelper to get standard test environment credentials
     BigQueryOptions options = RemoteBigQueryHelper.create().getOptions().toBuilder()
