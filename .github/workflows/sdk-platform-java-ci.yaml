@@ -53,6 +53,22 @@ jobs:
           GOOGLE_SDK_JAVA_LOGGING: true
         working-directory: sdk-platform-java
 
+  clirr:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 11
+    - run: java -version
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: clirr
+        BUILD_SUBDIR: sdk-platform-java
+
   sdk-platform-java-8:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
