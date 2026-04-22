@@ -139,6 +139,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Long listenerPoolSize;
   String partnerToken;
   DatabaseMetaData databaseMetaData;
+  Boolean reqGoogleDriveScope;
 
   BigQueryConnection(String url) throws IOException {
     this(url, DataSource.fromUrl(url));
@@ -171,9 +172,15 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.overrideProperties.put(
           BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME, this.universeDomain);
     }
+
+    this.reqGoogleDriveScope =
+        BigQueryJdbcUrlUtility.convertIntToBoolean(
+            String.valueOf(ds.getRequestGoogleDriveScope()),
+            BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME);
+
     this.credentials =
         BigQueryJdbcOAuthUtility.getCredentials(
-            authProperties, overrideProperties, this.connectionClassName);
+            authProperties, overrideProperties, this.reqGoogleDriveScope, this.connectionClassName);
     String defaultDatasetString = ds.getDefaultDataset();
     if (defaultDatasetString == null || defaultDatasetString.trim().isEmpty()) {
       this.defaultDataset = null;

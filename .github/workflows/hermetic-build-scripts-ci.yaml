@@ -1,9 +1,7 @@
 on:
   pull_request:
 
-name: sdk-platform-java verify_library_generation
-env:
-  BUILD_SUBDIR: sdk-platform-java
+name: hermetic build scripts
 jobs:
   filter:
     runs-on: ubuntu-latest
@@ -16,48 +14,14 @@ jobs:
       with:
         filters: |
           library:
-            - 'sdk-platform-java/**'
-  should-run-library-generation-tests:
-    needs: filter
-    if: ${{ needs.filter.outputs.library == 'true' }}
-    runs-on: ubuntu-22.04
-    outputs:
-      should_run: ${{ steps.get_changed_directories.outputs.should_run }}
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: get changed directories in the pull request
-      id: get_changed_directories
-      shell: bash
-      run: |
-        set -ex
-        # PRs that come from a fork need to be handled differently
-        if [[ ${head_repo_name} == ${base_repo} ]]; then
-          git checkout ${base_ref}
-          git checkout ${head_ref}
-          changed_directories="$(git diff --name-only ${base_ref} ${head_ref})"
-        else
-          git remote add fork ${head_repo_url}
-          git fetch fork # create a mapping of the fork
-          git checkout -b "${head_ref}" fork/${head_ref}
-          changed_directories="$(git diff --name-only "fork/${head_ref}" "origin/${base_ref}")"
-        fi
-        if [[ ${changed_directories} =~ "sdk-platform-java/hermetic_build/" ]] || [[ ${changed_directories} =~ "sdk-platform-java/.cloudbuild/library_generation/" ]]; then
-          echo "should_run=true" >> $GITHUB_OUTPUT
-        else
-          echo "should_run=false" >> $GITHUB_OUTPUT
-        fi
-      env:
-        base_ref: ${{ github.event.pull_request.base.ref }}
-        head_ref: ${{ github.event.pull_request.head.ref }}
-        head_repo_url: ${{ github.event.pull_request.head.repo.html_url }}
-        head_repo_name: ${{ github.event.pull_request.head.repo.full_name  }}
-        base_repo: ${{ github.repository }}
+            - 'sdk-platform-java/hermetic_build/**'
+            - 'sdk-platform-java/.cloudbuild/library_generation/**'
+            - '.github/workflows/hermetic-build-scripts-ci.yaml'
   library-generation-unit-tests:
-    needs: [filter, should-run-library-generation-tests]
-    if: needs.filter.outputs.library == 'true' && needs.should-run-library-generation-tests.outputs.should_run == 'true'
+    needs: filter
+    if: needs.filter.outputs.library == 'true'
     runs-on: ubuntu-22.04
+    name: hermetic build units (python)
     defaults:
       run:
         working-directory: sdk-platform-java
@@ -86,9 +50,10 @@ jobs:
         set -x
         python -m unittest discover -s hermetic_build -p "*unit_tests.py"
   library-generation-lint-shell:
-    needs: [filter, should-run-library-generation-tests]
-    if: needs.filter.outputs.library == 'true' && needs.should-run-library-generation-tests.outputs.should_run == 'true'
+    needs: filter
+    if: needs.filter.outputs.library == 'true'
     runs-on: ubuntu-22.04
+    name: hermetic build lint (shell)
     defaults:
       run:
         working-directory: sdk-platform-java
@@ -103,9 +68,10 @@ jobs:
         ignore_paths: 
           .kokoro
   library-generation-lint-python:
-    needs: [filter, should-run-library-generation-tests]
-    if: needs.filter.outputs.library == 'true' && needs.should-run-library-generation-tests.outputs.should_run == 'true'
+    needs: filter
+    if: needs.filter.outputs.library == 'true'
     runs-on: ubuntu-22.04
+    name: hermetic build lint (python)
     defaults:
       run:
         working-directory: sdk-platform-java
