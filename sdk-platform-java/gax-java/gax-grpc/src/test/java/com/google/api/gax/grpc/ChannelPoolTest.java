@@ -32,7 +32,7 @@ package com.google.api.gax.grpc;
 import static com.google.api.gax.grpc.testing.FakeServiceGrpc.METHOD_RECOGNIZE;
 import static com.google.api.gax.grpc.testing.FakeServiceGrpc.METHOD_SERVER_STREAMING_RECOGNIZE;
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.FixedExecutorProvider;

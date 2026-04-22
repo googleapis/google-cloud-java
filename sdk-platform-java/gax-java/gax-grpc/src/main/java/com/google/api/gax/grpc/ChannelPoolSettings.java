@@ -110,7 +110,7 @@ public abstract class ChannelPoolSettings {
    * <p><b>Warning:</b> Higher values for resize delta may still result in performance degradation
    * during spikes due to rapid scaling.
    */
-  public abstract int getMaxResizeDelta();
+  abstract int getMaxResizeDelta();
 
   /**
    * The initial size of the channel pool.
