@@ -104,6 +104,10 @@ class BigQueryJdbcRootLogger {
         String sourceClassName = record.getLoggerName();
         String sourceMethodName = record.getSourceMethodName();
 
+        // Expected log format: yyyy-MM-dd HH:mm:ss.SSS LEVEL PID --- [THREAD] CLASS METHOD: MESSAGE
+        // Example: 2026-04-22 10:16:00.123  INFO 12345 --- [main   ]
+        // com.google.cloud.bigquery.jdbc.BigQueryConnection connect             : Connection
+        // successful
         StringBuilder sb = new StringBuilder(256);
         sb.append(date)
             .append(" ")
