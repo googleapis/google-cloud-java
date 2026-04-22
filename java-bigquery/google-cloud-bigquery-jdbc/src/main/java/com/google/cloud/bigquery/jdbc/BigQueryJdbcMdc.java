@@ -53,21 +53,6 @@ public class BigQueryJdbcMdc {
     }
   }
 
-  /** Retrieves the connection ID mapped to a specific BigQueryConnection instance. */
-  public static String getConnectionId(BigQueryConnection connection) {
-    if (connection != null) {
-      InheritableThreadLocal<String> local = instanceLocals.get(connection);
-      if (local != null) {
-        String val = local.get();
-        if (val != null) {
-          return val;
-        }
-      }
-      return instanceIds.get(connection);
-    }
-    return null;
-  }
-
   /**
    * Returns the connection ID carried by any registered active connection on the current thread.
    */
