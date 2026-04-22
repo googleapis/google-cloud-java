@@ -303,43 +303,46 @@ class ChannelPool extends ManagedChannel {
         localEntries.stream().mapToInt(Entry::getAndResetMaxOutstanding).sum();
 
     // Number of channels if each channel operated at max capacity
-    int minChannels =
+    int calculatedResizeMinChannels =
         (int) Math.ceil(actualOutstandingRpcs / (double) settings.getMaxRpcsPerChannel());
     // Limit the threshold to absolute range
-    if (minChannels < settings.getMinChannelCount()) {
-      minChannels = settings.getMinChannelCount();
+    if (calculatedResizeMinChannels < settings.getMinChannelCount()) {
+      calculatedResizeMinChannels = settings.getMinChannelCount();
     }
     // Limit in case the calculated min channel count exceeds the configured max channel count
-    if (minChannels > settings.getMaxChannelCount()) {
-      minChannels = settings.getMaxChannelCount();
+    if (calculatedResizeMinChannels > settings.getMaxChannelCount()) {
+      calculatedResizeMinChannels = settings.getMaxChannelCount();
     }
 
     // Number of channels if each channel operated at minimum capacity
     // Note: getMinRpcsPerChannel() can return 0, but division by 0 shouldn't cause a problem.
-    int maxChannels =
+    int calculatedResizeMaxChannels =
         (int) Math.ceil(actualOutstandingRpcs / (double) settings.getMinRpcsPerChannel());
     // Limit the threshold to absolute range
-    if (maxChannels > settings.getMaxChannelCount()) {
-      maxChannels = settings.getMaxChannelCount();
+    if (calculatedResizeMaxChannels > settings.getMaxChannelCount()) {
+      calculatedResizeMaxChannels = settings.getMaxChannelCount();
     }
     // Limit in case the calculated max channel count falls below the configured min channel count
-    if (maxChannels < settings.getMinChannelCount()) {
-      maxChannels = settings.getMinChannelCount();
+    if (calculatedResizeMaxChannels < settings.getMinChannelCount()) {
+      calculatedResizeMaxChannels = settings.getMinChannelCount();
     }
 
     // If the pool were to be resized, try to aim for the middle of the bound. The tentativeTarget
-    // will
-    int tentativeTarget = (maxChannels + minChannels) / 2;
+    // is guaranteed to be between configured min and max channel bounds
+    int tentativeTarget = calculatedResizeMinChannels + (calculatedResizeMaxChannels - calculatedResizeMinChannels) / 2;
     int currentSize = localEntries.size();
+
     // Calculate the desired change in pool size.
     int delta = tentativeTarget - currentSize;
-    int dampenedTarget = tentativeTarget;
+
     // Dampen the rate of change if the desired delta exceeds the maximum allowed step size.
     // Ensure that the step size is capped by the max channel count.
     // Note: resize delta value is not enforced to be smaller than max channel count in
     // ChannelPoolSettings as DEFAULT_RESIZE_DELTA is 2 and max channel pool count can be 1
+    int dampenedTarget = tentativeTarget;
     int effectiveMaxResizeDelta =
         Math.min(settings.getMaxResizeDelta(), settings.getMaxChannelCount());
+
     // Rate-limit the change to not exceed the effectiveMaxResizeDelta
     if (Math.abs(delta) > effectiveMaxResizeDelta) {
       // Maintaining the correct direction (positive or negative) to handle expand/shrink
@@ -350,7 +353,7 @@ class ChannelPool extends ManagedChannel {
     // Only count as "resized" if the thresholds are crossed and Gax attempts to scale. Checking
     // that `dampenedTarget != currentSize` would cause false positives when the pool is within
     // bounds but not at the target (target aims for the middle of the bounds)
-    boolean resized = (currentSize < minChannels || currentSize > maxChannels);
+    boolean resized = (currentSize < calculatedResizeMinChannels || currentSize > calculatedResizeMaxChannels);
     if (resized) {
       consecutiveResizes.incrementAndGet();
     } else {
@@ -365,14 +368,14 @@ class ChannelPool extends ManagedChannel {
     }
 
     // Only resize the pool when thresholds are crossed
-    if (localEntries.size() < minChannels) {
+    if (localEntries.size() < calculatedResizeMinChannels) {
       LOG.fine(
           String.format(
               "Detected throughput peak of %d, expanding channel pool size: %d -> %d.",
               actualOutstandingRpcs, currentSize, dampenedTarget));
 
       expand(dampenedTarget);
-    } else if (localEntries.size() > maxChannels) {
+    } else if (localEntries.size() > calculatedResizeMaxChannels) {
       LOG.fine(
           String.format(
               "Detected throughput drop to %d, shrinking channel pool size: %d -> %d.",
