@@ -34,6 +34,7 @@ jobs:
         filters: |
           library:
             - 'google-auth-library-java/**'
+            - '.github/workflows/google-auth-library-java-ci.yaml'
   units-logging:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
@@ -54,3 +55,14 @@ jobs:
         BUILD_SUBDIR: google-auth-library-java
         JOB_TYPE: test
         SUREFIRE_JVM_OPT: "-P '!slf4j2x,slf4j2x-test'"
+  required:
+    needs: [ units-logging ]
+    name: conditional-required-check
+    if: ${{ always() }} # Always run even if any "needs" jobs fail
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Fail if any previous failure
+        if: ${{ contains(needs.*.result, 'failure') }}
+        run: exit 1
+      - name: Success otherwise
+        run: echo "Success!"
