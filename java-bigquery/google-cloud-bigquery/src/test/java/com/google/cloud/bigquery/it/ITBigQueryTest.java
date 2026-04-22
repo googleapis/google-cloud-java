@@ -1232,6 +1232,7 @@ class ITBigQueryTest {
     TableResult result = losslessBigQuery.query(config);
 
     // 4. Verify that the parsed value exactly matches the 64-bit microsecond value without rounding
+    assertEquals(1L, result.getTotalRows());
     for (FieldValueList row : result.iterateAll()) {
       long exactMicros = row.get("max_ts").getTimestampValue();
       assertEquals(253402300799999999L, exactMicros);
