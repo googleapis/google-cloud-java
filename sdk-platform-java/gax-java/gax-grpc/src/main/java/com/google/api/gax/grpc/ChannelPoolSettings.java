@@ -59,7 +59,11 @@ public abstract class ChannelPoolSettings {
   static final Duration RESIZE_INTERVAL = Duration.ofMinutes(1);
 
   /** The maximum number of channels that can be added or removed at a time. */
-  static final int MAX_RESIZE_DELTA = 2;
+  static final int DEFAULT_MAX_RESIZE_DELTA = 2;
+
+  // Arbitrary limit to prevent unbounded growth and protect server/client resources.
+  // Capping at 25 ensures we don't scale too aggressively in a single cycle.
+  private static final int MAX_ALLOWED_RESIZE_DELTA = 25;
 
   /**
    * Threshold to start scaling down the channel pool.
@@ -93,6 +97,22 @@ public abstract class ChannelPoolSettings {
   public abstract int getMaxChannelCount();
 
   /**
+   * The maximum number of channels that can be added or removed at a time.
+   *
+   * <p>This setting limits the rate at which the channel pool can grow or shrink in a single resize
+   * period. The default value is {@value #DEFAULT_MAX_RESIZE_DELTA}. Increasing this value can help
+   * the pool better handle sudden bursts or spikes in requests by allowing it to scale up faster.
+   * Regardless of this setting, the number of channels will never exceed {@link
+   * #getMaxChannelCount()}.
+   *
+   * <p><b>Note:</b> This value cannot exceed {@value #MAX_ALLOWED_RESIZE_DELTA}.
+   *
+   * <p><b>Warning:</b> Higher values for resize delta may still result in performance degradation
+   * during spikes due to rapid scaling.
+   */
+  public abstract int getMaxResizeDelta();
+
+  /**
    * The initial size of the channel pool.
    *
    * <p>During client construction the client open this many connections. This will be scaled up or
@@ -116,11 +136,7 @@ public abstract class ChannelPoolSettings {
       return true;
     }
     // When the scaling threshold are not set
-    if (getMinRpcsPerChannel() == 0 && getMaxRpcsPerChannel() == Integer.MAX_VALUE) {
-      return true;
-    }
-
-    return false;
+    return getMinRpcsPerChannel() == 0 && getMaxRpcsPerChannel() == Integer.MAX_VALUE;
   }
 
   public abstract Builder toBuilder();
@@ -132,6 +148,9 @@ public abstract class ChannelPoolSettings {
         .setMaxRpcsPerChannel(Integer.MAX_VALUE)
         .setMinChannelCount(size)
         .setMaxChannelCount(size)
+        // Static pools don't resize so this value doesn't affect operation. However,
+        // validation still checks that resize delta doesn't exceed channel pool size.
+        .setMaxResizeDelta(Math.min(DEFAULT_MAX_RESIZE_DELTA, size))
         .build();
   }
 
@@ -142,7 +161,8 @@ public abstract class ChannelPoolSettings {
         .setMaxChannelCount(200)
         .setMinRpcsPerChannel(0)
         .setMaxRpcsPerChannel(Integer.MAX_VALUE)
-        .setPreemptiveRefreshEnabled(false);
+        .setPreemptiveRefreshEnabled(false)
+        .setMaxResizeDelta(DEFAULT_MAX_RESIZE_DELTA);
   }
 
   @AutoValue.Builder
@@ -158,6 +178,15 @@ public abstract class ChannelPoolSettings {
     public abstract Builder setInitialChannelCount(int count);
 
     public abstract Builder setPreemptiveRefreshEnabled(boolean enabled);
+
+    /**
+     * Sets the maximum number of channels that can be added or removed in a single resize cycle.
+     * This acts as a rate limiter to prevent wild fluctuations.
+     *
+     * <p><b>Warning:</b> Higher values for resize delta may still result in performance degradation
+     * during spikes due to rapid scaling.
+     */
+    public abstract Builder setMaxResizeDelta(int count);
 
     abstract ChannelPoolSettings autoBuild();
 
@@ -178,6 +207,14 @@ public abstract class ChannelPoolSettings {
           "initial channel count must be less than maxChannelCount");
       Preconditions.checkState(
           s.getInitialChannelCount() > 0, "Initial channel count must be greater than 0");
+      Preconditions.checkState(
+          s.getMaxResizeDelta() > 0, "Max resize delta must be greater than 0");
+      Preconditions.checkState(
+          s.getMaxResizeDelta() <= MAX_ALLOWED_RESIZE_DELTA,
+          "Max resize delta cannot be greater than " + MAX_ALLOWED_RESIZE_DELTA);
+      Preconditions.checkState(
+          s.getMaxResizeDelta() <= s.getMaxChannelCount(),
+          "Max resize delta cannot be greater than max channel count");
       return s;
     }
   }

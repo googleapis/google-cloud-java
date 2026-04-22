@@ -54,6 +54,7 @@ jobs:
   downstream-compatibility-spring-generator:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
+    name: "downstream-compatibility (spring-cloud-gcp)"
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false

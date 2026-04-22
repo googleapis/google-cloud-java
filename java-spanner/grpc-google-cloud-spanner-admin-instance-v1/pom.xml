@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-spanner-admin-instance-v1</artifactId>
-  <version>6.116.0</version><!-- {x-version-update:grpc-google-cloud-spanner-admin-instance-v1:current} -->
+  <version>6.116.1</version><!-- {x-version-update:grpc-google-cloud-spanner-admin-instance-v1:current} -->
   <name>grpc-google-cloud-spanner-admin-instance-v1</name>
   <description>GRPC library for grpc-google-cloud-spanner-admin-instance-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-spanner-parent</artifactId>
-    <version>6.116.0</version><!-- {x-version-update:google-cloud-spanner:current} -->
+    <version>6.116.1</version><!-- {x-version-update:google-cloud-spanner:current} -->
   </parent>
   <dependencies>
     <dependency>
