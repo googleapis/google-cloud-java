@@ -97,4 +97,55 @@ public class ConsistencyRequestTest {
     assertThat(checkConsistencyRequest.getModeCase())
         .isEqualTo(CheckConsistencyRequest.ModeCase.STANDARD_READ_REMOTE_WRITES);
   }
+
+  @Test
+  public void testToCheckConsistencyProtoFromTableName() {
+    String fullTableName = NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID);
+    ConsistencyRequest consistencyRequest =
+        ConsistencyRequest.forReplicationFromTableName(fullTableName);
+
+    CheckConsistencyRequest checkConsistencyRequest =
+        consistencyRequest.toCheckConsistencyProto(CONSISTENCY_TOKEN);
+
+    assertThat(checkConsistencyRequest.getName()).isEqualTo(fullTableName);
+    assertThat(checkConsistencyRequest.getConsistencyToken()).isEqualTo(CONSISTENCY_TOKEN);
+    assertThat(checkConsistencyRequest.getModeCase())
+        .isEqualTo(CheckConsistencyRequest.ModeCase.STANDARD_READ_REMOTE_WRITES);
+  }
+
+  @Test
+  public void testToCheckConsistencyProtoFromTableNameWithToken() {
+    String fullTableName = NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID);
+    ConsistencyRequest consistencyRequest =
+        ConsistencyRequest.forReplicationFromTableName(fullTableName, CONSISTENCY_TOKEN);
+
+    CheckConsistencyRequest checkConsistencyRequest =
+        consistencyRequest.toCheckConsistencyProto(CONSISTENCY_TOKEN);
+
+    assertThat(checkConsistencyRequest.getName()).isEqualTo(fullTableName);
+    assertThat(checkConsistencyRequest.getConsistencyToken()).isEqualTo(CONSISTENCY_TOKEN);
+    assertThat(checkConsistencyRequest.getModeCase())
+        .isEqualTo(CheckConsistencyRequest.ModeCase.STANDARD_READ_REMOTE_WRITES);
+  }
+
+  @Test
+  public void testToGenerateTokenProtoFromTableName() {
+    String fullTableName = NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID);
+    ConsistencyRequest consistencyRequest =
+        ConsistencyRequest.forReplicationFromTableName(fullTableName);
+
+    GenerateConsistencyTokenRequest generateRequest = consistencyRequest.toGenerateTokenProto();
+
+    assertThat(generateRequest.getName()).isEqualTo(fullTableName);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testForReplicationFromTableNameInvalid() {
+    ConsistencyRequest.forReplicationFromTableName(TABLE_ID);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testForReplicationFromTableNameWithTokenInvalid() {
+    ConsistencyRequest.forReplicationFromTableName(TABLE_ID, CONSISTENCY_TOKEN);
+  }
 }

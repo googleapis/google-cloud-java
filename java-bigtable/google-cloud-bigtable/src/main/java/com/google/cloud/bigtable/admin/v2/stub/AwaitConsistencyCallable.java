@@ -42,6 +42,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
+import javax.annotation.Nullable;
 
 /**
  * Callable that waits until either replication or Data Boost has caught up to the point it was
@@ -56,7 +57,7 @@ class AwaitConsistencyCallable extends UnaryCallable<ConsistencyRequest, Void> {
   private final UnaryCallable<CheckConsistencyRequest, CheckConsistencyResponse> checkCallable;
   private final RetryingExecutor<CheckConsistencyResponse> executor;
 
-  private final TableAdminRequestContext requestContext;
+  @Nullable private final TableAdminRequestContext requestContext;
 
   static AwaitConsistencyCallable create(
       UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
@@ -64,7 +65,7 @@ class AwaitConsistencyCallable extends UnaryCallable<ConsistencyRequest, Void> {
       UnaryCallable<CheckConsistencyRequest, CheckConsistencyResponse> checkCallable,
       ClientContext clientContext,
       RetrySettings pollingSettings,
-      TableAdminRequestContext requestContext) {
+      @Nullable TableAdminRequestContext requestContext) {
 
     RetryAlgorithm<CheckConsistencyResponse> retryAlgorithm =
         new RetryAlgorithm<>(
@@ -78,13 +79,22 @@ class AwaitConsistencyCallable extends UnaryCallable<ConsistencyRequest, Void> {
         generateCallable, checkCallable, retryingExecutor, requestContext);
   }
 
+  static AwaitConsistencyCallable create(
+      UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
+          generateCallable,
+      UnaryCallable<CheckConsistencyRequest, CheckConsistencyResponse> checkCallable,
+      ClientContext clientContext,
+      RetrySettings pollingSettings) {
+    return create(generateCallable, checkCallable, clientContext, pollingSettings, null);
+  }
+
   @VisibleForTesting
   AwaitConsistencyCallable(
       UnaryCallable<GenerateConsistencyTokenRequest, GenerateConsistencyTokenResponse>
           generateCallable,
       UnaryCallable<CheckConsistencyRequest, CheckConsistencyResponse> checkCallable,
       RetryingExecutor<CheckConsistencyResponse> executor,
-      TableAdminRequestContext requestContext) {
+      @Nullable TableAdminRequestContext requestContext) {
     this.generateCallable = generateCallable;
     this.checkCallable = checkCallable;
     this.executor = executor;
@@ -98,13 +108,19 @@ class AwaitConsistencyCallable extends UnaryCallable<ConsistencyRequest, Void> {
     // If the token is already provided, skip generation and poll directly.
     if (consistencyRequest.getConsistencyToken() != null) {
       CheckConsistencyRequest request =
-          consistencyRequest.toCheckConsistencyProto(
-              requestContext, consistencyRequest.getConsistencyToken());
+          requestContext == null
+              ? consistencyRequest.toCheckConsistencyProto(consistencyRequest.getConsistencyToken())
+              : consistencyRequest.toCheckConsistencyProto(
+                  requestContext, consistencyRequest.getConsistencyToken());
       return pollToken(request, apiCallContext);
     }
 
     ApiFuture<GenerateConsistencyTokenResponse> tokenFuture =
-        generateToken(consistencyRequest.toGenerateTokenProto(requestContext), apiCallContext);
+        generateToken(
+            requestContext == null
+                ? consistencyRequest.toGenerateTokenProto()
+                : consistencyRequest.toGenerateTokenProto(requestContext),
+            apiCallContext);
 
     return ApiFutures.transformAsync(
         tokenFuture,
@@ -112,8 +128,10 @@ class AwaitConsistencyCallable extends UnaryCallable<ConsistencyRequest, Void> {
           @Override
           public ApiFuture<Void> apply(GenerateConsistencyTokenResponse input) {
             CheckConsistencyRequest request =
-                consistencyRequest.toCheckConsistencyProto(
-                    requestContext, input.getConsistencyToken());
+                requestContext == null
+                    ? consistencyRequest.toCheckConsistencyProto(input.getConsistencyToken())
+                    : consistencyRequest.toCheckConsistencyProto(
+                        requestContext, input.getConsistencyToken());
             return pollToken(request, apiCallContext);
           }
         },

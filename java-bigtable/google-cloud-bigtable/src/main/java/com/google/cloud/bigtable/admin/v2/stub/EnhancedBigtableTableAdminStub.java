@@ -54,7 +54,7 @@ public class EnhancedBigtableTableAdminStub extends GrpcBigtableTableAdminStub {
   private final BigtableTableAdminStubSettings settings;
   private final ClientContext clientContext;
 
-  private final TableAdminRequestContext requestContext;
+  @javax.annotation.Nullable private final TableAdminRequestContext requestContext;
 
   @Deprecated private final AwaitReplicationCallable awaitReplicationCallable;
 
@@ -62,6 +62,30 @@ public class EnhancedBigtableTableAdminStub extends GrpcBigtableTableAdminStub {
   private final OperationCallable<Void, Empty, OptimizeRestoredTableMetadata>
       optimizeRestoredTableOperationBaseCallable;
 
+  /**
+   * Creates an instance of {@link EnhancedBigtableTableAdminStub} using the provided settings. This
+   * variant is used by the V2 client stack which relies on fully qualified table names and
+   * therefore does not require a {@link TableAdminRequestContext}.
+   *
+   * @param settings The settings used to configure the stub.
+   * @return A new instance of {@code EnhancedBigtableTableAdminStub}.
+   * @throws IOException If there are errors creating the underlying client context.
+   */
+  public static EnhancedBigtableTableAdminStub createEnhanced(
+      BigtableTableAdminStubSettings settings) throws IOException {
+    return new EnhancedBigtableTableAdminStub(settings, ClientContext.create(settings), null);
+  }
+
+  /**
+   * Creates an instance of {@link EnhancedBigtableTableAdminStub} using the provided settings. This
+   * variant is used by the legacy client stack which relies on short table IDs and requires a
+   * {@link TableAdminRequestContext} to construct fully qualified table names.
+   *
+   * @param settings The settings used to configure the stub.
+   * @param requestContext The context used to format short table IDs.
+   * @return A new instance of {@code EnhancedBigtableTableAdminStub}.
+   * @throws IOException If there are errors creating the underlying client context.
+   */
   public static EnhancedBigtableTableAdminStub createEnhanced(
       BigtableTableAdminStubSettings settings, TableAdminRequestContext requestContext)
       throws IOException {
@@ -72,7 +96,7 @@ public class EnhancedBigtableTableAdminStub extends GrpcBigtableTableAdminStub {
   private EnhancedBigtableTableAdminStub(
       BigtableTableAdminStubSettings settings,
       ClientContext clientContext,
-      TableAdminRequestContext requestContext)
+      @javax.annotation.Nullable TableAdminRequestContext requestContext)
       throws IOException {
     super(settings, clientContext);
 

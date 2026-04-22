@@ -43,9 +43,11 @@ public abstract class ConsistencyRequest {
   @Nullable
   public abstract String getConsistencyToken();
 
+  protected abstract boolean isFullyQualified();
+
   public static ConsistencyRequest forReplication(String tableId) {
     return new AutoValue_ConsistencyRequest(
-        tableId, CheckConsistencyRequest.ModeCase.STANDARD_READ_REMOTE_WRITES, null);
+        tableId, CheckConsistencyRequest.ModeCase.STANDARD_READ_REMOTE_WRITES, null, false);
   }
 
   /**
@@ -59,20 +61,41 @@ public abstract class ConsistencyRequest {
     Preconditions.checkNotNull(consistencyToken, "consistencyToken must not be null");
 
     return new AutoValue_ConsistencyRequest(
-        tableId, CheckConsistencyRequest.ModeCase.STANDARD_READ_REMOTE_WRITES, consistencyToken);
+        tableId,
+        CheckConsistencyRequest.ModeCase.STANDARD_READ_REMOTE_WRITES,
+        consistencyToken,
+        false);
   }
 
   public static ConsistencyRequest forDataBoost(String tableId) {
     return new AutoValue_ConsistencyRequest(
-        tableId, CheckConsistencyRequest.ModeCase.DATA_BOOST_READ_LOCAL_WRITES, null);
+        tableId, CheckConsistencyRequest.ModeCase.DATA_BOOST_READ_LOCAL_WRITES, null, false);
   }
 
   @InternalApi
-  public CheckConsistencyRequest toCheckConsistencyProto(
-      TableAdminRequestContext requestContext, String token) {
+  public static ConsistencyRequest forReplicationFromTableName(String tableName) {
+    Preconditions.checkArgument(
+        TableName.isParsableFrom(tableName), "tableName must be a fully qualified table name");
+    return new AutoValue_ConsistencyRequest(
+        tableName, CheckConsistencyRequest.ModeCase.STANDARD_READ_REMOTE_WRITES, null, true);
+  }
+
+  @InternalApi
+  public static ConsistencyRequest forReplicationFromTableName(
+      String tableName, String consistencyToken) {
+    Preconditions.checkArgument(
+        TableName.isParsableFrom(tableName), "tableName must be a fully qualified table name");
+    Preconditions.checkNotNull(consistencyToken, "consistencyToken must not be null");
+
+    return new AutoValue_ConsistencyRequest(
+        tableName,
+        CheckConsistencyRequest.ModeCase.STANDARD_READ_REMOTE_WRITES,
+        consistencyToken,
+        true);
+  }
+
+  private CheckConsistencyRequest.Builder buildBaseRequest(String name, String token) {
     CheckConsistencyRequest.Builder builder = CheckConsistencyRequest.newBuilder();
-    TableName tableName =
-        TableName.of(requestContext.getProjectId(), requestContext.getInstanceId(), getTableId());
 
     if (getMode().equals(CheckConsistencyRequest.ModeCase.STANDARD_READ_REMOTE_WRITES)) {
       builder.setStandardReadRemoteWrites(StandardReadRemoteWrites.newBuilder().build());
@@ -80,16 +103,68 @@ public abstract class ConsistencyRequest {
       builder.setDataBoostReadLocalWrites(DataBoostReadLocalWrites.newBuilder().build());
     }
 
-    return builder.setName(tableName.toString()).setConsistencyToken(token).build();
+    return builder.setName(name).setConsistencyToken(token);
   }
 
+  /**
+   * Creates a CheckConsistencyRequest proto. This variant is used when the ConsistencyRequest was
+   * initialized with a short table ID, relying on the TableAdminRequestContext to construct the
+   * fully qualified table name.
+   */
+  @InternalApi
+  public CheckConsistencyRequest toCheckConsistencyProto(
+      TableAdminRequestContext requestContext, String token) {
+    Preconditions.checkState(
+        !isFullyQualified(),
+        "Use toCheckConsistencyProto(String token) for fully qualified table names.");
+    TableName tableName =
+        TableName.of(requestContext.getProjectId(), requestContext.getInstanceId(), getTableId());
+
+    return buildBaseRequest(tableName.toString(), token).build();
+  }
+
+  /**
+   * Creates a CheckConsistencyRequest proto. This variant is used when the ConsistencyRequest was
+   * initialized with a fully qualified table name, eliminating the need for a request context.
+   */
+  @InternalApi
+  public CheckConsistencyRequest toCheckConsistencyProto(String token) {
+    Preconditions.checkState(
+        isFullyQualified(),
+        "Use toCheckConsistencyProto(TableAdminRequestContext, String) for non-qualified table"
+            + " names.");
+
+    return buildBaseRequest(getTableId(), token).build();
+  }
+
+  /**
+   * Creates a GenerateConsistencyTokenRequest proto. This variant is used when the
+   * ConsistencyRequest was initialized with a short table ID, relying on the
+   * TableAdminRequestContext to construct the fully qualified table name.
+   */
   @InternalApi
   public GenerateConsistencyTokenRequest toGenerateTokenProto(
       TableAdminRequestContext requestContext) {
+    Preconditions.checkState(
+        !isFullyQualified(), "Use toGenerateTokenProto() for fully qualified table names.");
     GenerateConsistencyTokenRequest.Builder builder = GenerateConsistencyTokenRequest.newBuilder();
     TableName tableName =
         TableName.of(requestContext.getProjectId(), requestContext.getInstanceId(), getTableId());
 
     return builder.setName(tableName.toString()).build();
+  }
+
+  /**
+   * Creates a GenerateConsistencyTokenRequest proto. This variant is used when the
+   * ConsistencyRequest was initialized with a fully qualified table name, eliminating the need for
+   * a request context.
+   */
+  @InternalApi
+  public GenerateConsistencyTokenRequest toGenerateTokenProto() {
+    Preconditions.checkState(
+        isFullyQualified(),
+        "Use toGenerateTokenProto(TableAdminRequestContext) for non-qualified table names.");
+    GenerateConsistencyTokenRequest.Builder builder = GenerateConsistencyTokenRequest.newBuilder();
+    return builder.setName(getTableId()).build();
   }
 }
