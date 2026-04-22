@@ -335,18 +335,20 @@ class ChannelPool extends ManagedChannel {
     int delta = tentativeTarget - currentSize;
     int dampenedTarget = tentativeTarget;
     // Dampen the rate of change if the desired delta exceeds the maximum allowed step size.
-    // Ensure that the step size is capped by the max channel count to handle small pool
-    // configurations.
+    // Ensure that the step size is capped by the max channel count.
+    // Note: resize delta value is not enforced to be smaller than max channel count in
+    // ChannelPoolSettings as DEFAULT_RESIZE_DELTA is 2 and max channel pool count can be 1
     int effectiveMaxResizeDelta =
         Math.min(settings.getMaxResizeDelta(), settings.getMaxChannelCount());
+    // Rate-limit the change to not exceed the effectiveMaxResizeDelta
     if (Math.abs(delta) > effectiveMaxResizeDelta) {
-      // Limit the change to effectiveMaxResizeDelta, maintaining the correct direction (positive or
-      // negative).
-      dampenedTarget = currentSize + (int) Math.copySign(effectiveMaxResizeDelta, delta);
+      // Maintaining the correct direction (positive or negative) to handle expand/shrink
+      int step = delta > 0 ? effectiveMaxResizeDelta : -effectiveMaxResizeDelta;
+      dampenedTarget = currentSize + step;
     }
 
-    // Ensure that the calculated dampedTarget value will never exceed the maxChannelCount or fall
-    // below minChannelCount
+    // Ensure that the calculated dampenedTarget value will never exceed the maxChannelCount or fall
+    // below minChannelCount. This ensures that `currentSize + resizeDelta` remains within bounds.
     dampenedTarget =
         Math.max(
             settings.getMinChannelCount(), Math.min(settings.getMaxChannelCount(), dampenedTarget));
