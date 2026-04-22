@@ -247,13 +247,13 @@ jobs:
         JOB_NAME: units-8-runtime-${{matrix.java}}
       working-directory: ${{matrix.package}}
   required:
-    needs: [ changes, split-units, split-units-8 ]
+    needs: [ changes, split-units ]
     name: conditional-required-check
     if: ${{ always() }} # Always run even if any "needs" jobs fail
     runs-on: ubuntu-22.04
     steps:
       - name: Fail if any previous failure
-        if: ${{ contains(needs.*.result, 'failure') }}
+        if: ${{ needs.changes.outputs.packages != '[]' && contains(needs.*.result, 'failure') }}
         run: exit 1
       - name: Success otherwise
         run: echo "Success!"
