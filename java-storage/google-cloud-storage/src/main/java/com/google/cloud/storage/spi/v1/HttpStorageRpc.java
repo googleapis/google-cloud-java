@@ -817,9 +817,7 @@ public class HttpStorageRpc implements StorageRpc {
       sourceObjects.add(sourceObject);
     }
     request.setSourceObjects(sourceObjects);
-    if (Option.DELETE_SOURCE_OBJECTS.getBoolean(targetOptions) != null) {
-      request.setDeleteSourceObjects(Option.DELETE_SOURCE_OBJECTS.getBoolean(targetOptions));
-    }
+    request.setDeleteSourceObjects(Option.DELETE_SOURCE_OBJECTS.getBoolean(targetOptions));
     Span span = startSpan(HttpStorageRpcSpans.SPAN_NAME_COMPOSE);
     Scope scope = tracer.withSpan(span);
     try {
