@@ -18,6 +18,7 @@ package com.google.cloud.datastore.telemetry;
 
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
+import com.google.common.base.Preconditions;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
@@ -47,7 +48,7 @@ import javax.annotation.Nullable;
  * automated environment detection and resource attribute configuration for the {@link
  * TelemetryConstants#DATASTORE_RESOURCE_TYPE} monitored resource.
  */
-public final class BuiltInDatastoreMetricsProvider {
+class BuiltInDatastoreMetricsProvider {
 
   public static final BuiltInDatastoreMetricsProvider INSTANCE =
       new BuiltInDatastoreMetricsProvider();
@@ -55,8 +56,7 @@ public final class BuiltInDatastoreMetricsProvider {
   private static final Logger logger =
       Logger.getLogger(BuiltInDatastoreMetricsProvider.class.getName());
 
-  private static volatile String location;
-  private static final String DEFAULT_LOCATION = "global";
+  private String location;
 
   // Pre-computed once per JVM; hostname lookup can block, so we pay the cost at class-init time.
   private static final String PID_AND_HOSTNAME = getProcessId() + "@" + getHostnameSafely();
@@ -92,6 +92,7 @@ public final class BuiltInDatastoreMetricsProvider {
   @Nullable
   public OpenTelemetry createOpenTelemetry(
       @Nonnull String projectId, @Nonnull String databaseId, @Nonnull Credentials credentials) {
+    Preconditions.checkNotNull(credentials, "Credentials cannot be null for built in metrics");
     SdkMeterProviderBuilder sdkMeterProviderBuilder = SdkMeterProvider.builder();
 
     Map<String, String> clientAttributes = buildClientAttributes();
@@ -127,9 +128,9 @@ public final class BuiltInDatastoreMetricsProvider {
    *
    * @return the detected location, or "global" if detection fails.
    */
-  public static String detectClientLocation() {
+  public String detectClientLocation() {
     if (location == null) {
-      location = DEFAULT_LOCATION;
+      location = "global";
     }
     return location;
   }

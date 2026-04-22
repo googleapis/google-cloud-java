@@ -52,7 +52,7 @@ class OpenTelemetryDatastoreMetricsRecorder extends OpenTelemetryMetricsRecorder
   private final OpenTelemetry openTelemetry;
   // True when this recorder created the OpenTelemetry instance (built-in path) and therefore
   // owns its lifecycle. False when the instance was provided by the user.
-  private final boolean ownsOpenTelemetry;
+  private final boolean isBuiltInOpenTelemetryInstance;
 
   // Datastore-specific transaction metrics (registered under the Datastore meter).
   private final DoubleHistogram transactionLatency;
@@ -66,14 +66,16 @@ class OpenTelemetryDatastoreMetricsRecorder extends OpenTelemetryMetricsRecorder
   /**
    * Creates a recorder, specifying whether this instance owns the {@link OpenTelemetry} lifecycle.
    *
-   * @param ownsOpenTelemetry {@code true} if this recorder created the instance and should shut it
-   *     down on {@link #close()}; {@code false} if the user provided it.
+   * @param isBuiltInOpenTelemetryInstance {@code true} if this recorder created the instance and
+   *     should shut it down on {@link #close()}; {@code false} if the user provided it.
    */
   OpenTelemetryDatastoreMetricsRecorder(
-      @Nonnull OpenTelemetry openTelemetry, String metricPrefix, boolean ownsOpenTelemetry) {
+      @Nonnull OpenTelemetry openTelemetry,
+      String metricPrefix,
+      boolean isBuiltInOpenTelemetryInstance) {
     super(openTelemetry, metricPrefix);
     this.openTelemetry = openTelemetry;
-    this.ownsOpenTelemetry = ownsOpenTelemetry;
+    this.isBuiltInOpenTelemetryInstance = isBuiltInOpenTelemetryInstance;
 
     // Note: Standard GAX RPC metrics (operation_latency, attempt_latency, etc.) are handled by the
     // base OpenTelemetryMetricsRecorder class. Those metrics are inherited from the parent classes.
@@ -108,7 +110,7 @@ class OpenTelemetryDatastoreMetricsRecorder extends OpenTelemetryMetricsRecorder
    */
   @Override
   public void close() {
-    if (ownsOpenTelemetry && openTelemetry instanceof OpenTelemetrySdk) {
+    if (isBuiltInOpenTelemetryInstance && openTelemetry instanceof OpenTelemetrySdk) {
       try {
         ((OpenTelemetrySdk) openTelemetry).close();
       } catch (Exception e) {

@@ -128,7 +128,7 @@ public class DatastoreOpenTelemetryOptions {
     private Builder() {
       tracingEnabled = false;
       metricsEnabled = false;
-      // TODO: This is disabled by default until the Firestore namespace is deployed
+      // TODO(b/405457573): This is disabled by default until the Firestore namespace is deployed
       exportBuiltinMetricsToGoogleCloudMonitoring = false;
       openTelemetry = null;
     }
@@ -176,7 +176,6 @@ public class DatastoreOpenTelemetryOptions {
      * @return this builder instance.
      */
     @BetaApi
-    @Nonnull
     public DatastoreOpenTelemetryOptions.Builder setExportBuiltinMetricsToGoogleCloudMonitoring(
         boolean exportBuiltinMetrics) {
       this.exportBuiltinMetricsToGoogleCloudMonitoring = exportBuiltinMetrics;
