@@ -90,7 +90,7 @@ class ITOtelTracing {
       String.format("%s:%s", SHOWCASE_SERVER_ADDRESS, SHOWCASE_SERVER_PORT);
   private static final String SHOWCASE_HTTPJSON_ENDPOINT =
       String.format("http://%s:%s", SHOWCASE_SERVER_ADDRESS, SHOWCASE_SERVER_PORT);
-  private static final String SHOWCASE_REPO = "googleapis/sdk-platform-java";
+  private static final String SHOWCASE_REPO = "googleapis/google-cloud-java";
   private static final String SHOWCASE_ARTIFACT = "com.google.cloud:gapic-showcase";
   private static final String SHOWCASE_USER_URL = "http://localhost:7469/v1beta1/echo:echo";
 
