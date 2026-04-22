@@ -1217,23 +1217,52 @@ class ITBigQueryTest {
 
   @Test
   void testLosslessMaxTimestampIntegration() throws InterruptedException {
-    // 1. Initialize BigQueryOptions with the lossless timestamp flag enabled
-    // We use RemoteBigQueryHelper to get standard test environment credentials
-    BigQueryOptions options = bigquery.getOptions().toBuilder().setUseInt64Timestamps(true).build();
-    BigQuery losslessBigQuery = options.getService();
-
-    // 2. Query the absolute maximum timestamp directly from BigQuery
     String query = "SELECT TIMESTAMP '9999-12-31 23:59:59.999999 UTC' as max_ts";
     QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query).build();
 
-    // 3. Execute the query
-    TableResult result = losslessBigQuery.query(config);
+    // 1. Test lossless 64-bit integer parsing (useInt64Timestamps = true)
+    DataFormatOptions losslessOptions = DataFormatOptions.newBuilder()
+        .useInt64Timestamp(true)
+        .build();
+    BigQuery losslessBigQuery = bigquery.getOptions().toBuilder()
+        .setDataFormatOptions(losslessOptions)
+        .build().getService();
 
-    // 4. Verify that the parsed value exactly matches the 64-bit microsecond value without rounding
-    assertEquals(1L, result.getTotalRows());
-    for (FieldValueList row : result.iterateAll()) {
+    TableResult losslessResult = losslessBigQuery.query(config);
+    assertEquals(1L, losslessResult.getTotalRows());
+    for (FieldValueList row : losslessResult.iterateAll()) {
       long exactMicros = row.get("max_ts").getTimestampValue();
       assertEquals(253402300799999999L, exactMicros);
+    }
+
+    // 2. Test lossy FLOAT64 rounding behavior (useInt64Timestamps = false)
+    DataFormatOptions floatOptions = DataFormatOptions.newBuilder()
+        .useInt64Timestamp(false)
+        .build();
+    BigQuery floatBigQuery = bigquery.getOptions().toBuilder()
+        .setDataFormatOptions(floatOptions)
+        .build().getService();
+
+    TableResult floatResult = floatBigQuery.query(config);
+    assertEquals(1L, floatResult.getTotalRows());
+    for (FieldValueList row : floatResult.iterateAll()) {
+      long roundedMicros = row.get("max_ts").getTimestampValue();
+      assertEquals(253402300800000000L, roundedMicros);
+    }
+
+    // 3. Test ISO8601 timestamp formatting
+    DataFormatOptions isoOptions = DataFormatOptions.newBuilder()
+        .timestampFormatOptions(DataFormatOptions.TimestampFormatOptions.ISO8601_STRING)
+        .build();
+    BigQuery isoBigQuery = bigquery.getOptions().toBuilder()
+        .setDataFormatOptions(isoOptions)
+        .build().getService();
+
+    TableResult isoResult = isoBigQuery.query(config);
+    assertEquals(1L, isoResult.getTotalRows());
+    for (FieldValueList row : isoResult.iterateAll()) {
+      String isoValue = row.get("max_ts").getStringValue();
+      assertEquals("9999-12-31T23:59:59.999999Z", isoValue);
     }
   }
 
