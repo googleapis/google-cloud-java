@@ -134,6 +134,13 @@
                       <pattern>io</pattern>
                       <shadedPattern>com.google.bqjdbc.shaded.io</shadedPattern>
                       <excludes>
+                        <!-- 
+                          OpenTelemetry API and Context must remain unshaded to ensure interoperability.
+                          Shading these would prevent the driver from participating in the application's 
+                          existing tracing context. We are aware that unshaded dependencies can lead to 
+                          version mismatches, but this is a necessary trade-off for the OpenTelemetry 
+                          integration to function correctly across different applications.
+                        -->
                         <exclude>io.opentelemetry.api.*</exclude>
                         <exclude>io.opentelemetry.context.*</exclude>
                       </excludes>
