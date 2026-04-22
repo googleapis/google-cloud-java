@@ -34,7 +34,7 @@ jobs:
         filters: |
           library:
             - 'google-auth-library-java/**'
-            - ''.github/workflows/google-auth-library-java-ci.yaml'
+            - '.github/workflows/google-auth-library-java-ci.yaml'
   units-logging:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
