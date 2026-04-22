@@ -59,6 +59,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     displayName_ = "";
     state_ = 0;
     type_ = 0;
+    edition_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -440,6 +441,193 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.bigtable.admin.v2.Instance.Type)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Possible editions of an instance.
+   *
+   * An edition is a specific tier of Cloud Bigtable. Each edition is tailored
+   * to different customer needs. Higher tiers offer more features and better
+   * performance.
+   * </pre>
+   *
+   * Protobuf enum {@code google.bigtable.admin.v2.Instance.Edition}
+   */
+  public enum Edition implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The edition is unspecified. This is treated as `ENTERPRISE`.
+     * </pre>
+     *
+     * <code>EDITION_UNSPECIFIED = 0;</code>
+     */
+    EDITION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The Enterprise edition. This is the default offering that is designed to
+     * meet the needs of most enterprise workloads.
+     * </pre>
+     *
+     * <code>ENTERPRISE = 1;</code>
+     */
+    ENTERPRISE(1),
+    /**
+     *
+     *
+     * <pre>
+     * The Enterprise Plus edition. This is a premium tier that is designed for
+     * demanding, multi-tenant workloads requiring the highest levels of
+     * performance, scale, and global availability.
+     *
+     * The nodes in the Enterprise Plus tier come at a higher cost than the
+     * Enterprise tier. Any Enterprise Plus features must be disabled before
+     * downgrading to Enterprise.
+     * </pre>
+     *
+     * <code>ENTERPRISE_PLUS = 2;</code>
+     */
+    ENTERPRISE_PLUS(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "Edition");
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The edition is unspecified. This is treated as `ENTERPRISE`.
+     * </pre>
+     *
+     * <code>EDITION_UNSPECIFIED = 0;</code>
+     */
+    public static final int EDITION_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The Enterprise edition. This is the default offering that is designed to
+     * meet the needs of most enterprise workloads.
+     * </pre>
+     *
+     * <code>ENTERPRISE = 1;</code>
+     */
+    public static final int ENTERPRISE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The Enterprise Plus edition. This is a premium tier that is designed for
+     * demanding, multi-tenant workloads requiring the highest levels of
+     * performance, scale, and global availability.
+     *
+     * The nodes in the Enterprise Plus tier come at a higher cost than the
+     * Enterprise tier. Any Enterprise Plus features must be disabled before
+     * downgrading to Enterprise.
+     * </pre>
+     *
+     * <code>ENTERPRISE_PLUS = 2;</code>
+     */
+    public static final int ENTERPRISE_PLUS_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Edition valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Edition forNumber(int value) {
+      switch (value) {
+        case 0:
+          return EDITION_UNSPECIFIED;
+        case 1:
+          return ENTERPRISE;
+        case 2:
+          return ENTERPRISE_PLUS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Edition> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Edition> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Edition>() {
+          public Edition findValueByNumber(int number) {
+            return Edition.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.Instance.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final Edition[] VALUES = values();
+
+    public static Edition valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Edition(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.bigtable.admin.v2.Instance.Edition)
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -629,6 +817,49 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     com.google.bigtable.admin.v2.Instance.Type result =
         com.google.bigtable.admin.v2.Instance.Type.forNumber(type_);
     return result == null ? com.google.bigtable.admin.v2.Instance.Type.UNRECOGNIZED : result;
+  }
+
+  public static final int EDITION_FIELD_NUMBER = 14;
+  private int edition_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The edition of the instance. See
+   * [Edition][google.bigtable.admin.v2.Instance.Edition] for details.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Instance.Edition edition = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for edition.
+   */
+  @java.lang.Override
+  public int getEditionValue() {
+    return edition_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The edition of the instance. See
+   * [Edition][google.bigtable.admin.v2.Instance.Edition] for details.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Instance.Edition edition = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The edition.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.Instance.Edition getEdition() {
+    com.google.bigtable.admin.v2.Instance.Edition result =
+        com.google.bigtable.admin.v2.Instance.Edition.forNumber(edition_);
+    return result == null ? com.google.bigtable.admin.v2.Instance.Edition.UNRECOGNIZED : result;
   }
 
   public static final int LABELS_FIELD_NUMBER = 5;
@@ -1092,6 +1323,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessage.serializeStringMapTo(
         output, internalGetTags(), TagsDefaultEntryHolder.defaultEntry, 12);
+    if (edition_ != com.google.bigtable.admin.v2.Instance.Edition.EDITION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(14, edition_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1142,6 +1376,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, tags__);
     }
+    if (edition_ != com.google.bigtable.admin.v2.Instance.Edition.EDITION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, edition_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1161,6 +1398,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (state_ != other.state_) return false;
     if (type_ != other.type_) return false;
+    if (edition_ != other.edition_) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
@@ -1194,6 +1432,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + state_;
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
+    hash = (37 * hash) + EDITION_FIELD_NUMBER;
+    hash = (53 * hash) + edition_;
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
@@ -1395,6 +1635,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       displayName_ = "";
       state_ = 0;
       type_ = 0;
+      edition_ = 0;
       internalGetMutableLabels().clear();
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -1453,23 +1694,26 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         result.type_ = type_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.edition_ = edition_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.satisfiesPzi_ = satisfiesPzi_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.tags_ = internalGetTags();
         result.tags_.makeImmutable();
       }
@@ -1504,8 +1748,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
+      if (other.edition_ != 0) {
+        setEditionValue(other.getEditionValue());
+      }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -1516,7 +1763,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         setSatisfiesPzi(other.getSatisfiesPzi());
       }
       internalGetMutableTags().mergeFrom(other.internalGetTags());
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1576,26 +1823,26 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 58:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             case 64:
               {
                 satisfiesPzs_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 64
             case 88:
               {
                 satisfiesPzi_ = input.readBool();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 88
             case 98:
@@ -1604,9 +1851,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
                     input.readMessage(
                         TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableTags().getMutableMap().put(tags__.getKey(), tags__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 98
+            case 112:
+              {
+                edition_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 112
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2063,6 +2316,116 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int edition_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The edition of the instance. See
+     * [Edition][google.bigtable.admin.v2.Instance.Edition] for details.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Instance.Edition edition = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for edition.
+     */
+    @java.lang.Override
+    public int getEditionValue() {
+      return edition_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The edition of the instance. See
+     * [Edition][google.bigtable.admin.v2.Instance.Edition] for details.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Instance.Edition edition = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for edition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEditionValue(int value) {
+      edition_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The edition of the instance. See
+     * [Edition][google.bigtable.admin.v2.Instance.Edition] for details.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Instance.Edition edition = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The edition.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.Instance.Edition getEdition() {
+      com.google.bigtable.admin.v2.Instance.Edition result =
+          com.google.bigtable.admin.v2.Instance.Edition.forNumber(edition_);
+      return result == null ? com.google.bigtable.admin.v2.Instance.Edition.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The edition of the instance. See
+     * [Edition][google.bigtable.admin.v2.Instance.Edition] for details.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Instance.Edition edition = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The edition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEdition(com.google.bigtable.admin.v2.Instance.Edition value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      edition_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The edition of the instance. See
+     * [Edition][google.bigtable.admin.v2.Instance.Edition] for details.
+     * </pre>
+     *
+     * <code>
+     * .google.bigtable.admin.v2.Instance.Edition edition = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEdition() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      edition_ = 0;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
 
     private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
@@ -2080,7 +2443,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return labels_;
     }
@@ -2210,7 +2573,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -2245,7 +2608,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -2276,7 +2639,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -2301,7 +2664,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -2328,7 +2691,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2378,7 +2741,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2402,7 +2765,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2422,7 +2785,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2433,7 +2796,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2453,7 +2816,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2477,7 +2840,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -2550,7 +2913,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasSatisfiesPzs() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -2584,7 +2947,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder setSatisfiesPzs(boolean value) {
 
       satisfiesPzs_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2601,7 +2964,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzs() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       satisfiesPzs_ = false;
       onChanged();
       return this;
@@ -2622,7 +2985,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasSatisfiesPzi() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2656,7 +3019,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     public Builder setSatisfiesPzi(boolean value) {
 
       satisfiesPzi_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2673,7 +3036,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearSatisfiesPzi() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       satisfiesPzi_ = false;
       onChanged();
       return this;
@@ -2696,7 +3059,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
       if (!tags_.isMutable()) {
         tags_ = tags_.copy();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return tags_;
     }
@@ -2826,7 +3189,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearTags() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableTags().getMutableMap().clear();
       return this;
     }
@@ -2861,7 +3224,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableTags() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return internalGetMutableTags().getMutableMap();
     }
 
@@ -2892,7 +3255,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableTags().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 
@@ -2917,7 +3280,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllTags(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableTags().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 

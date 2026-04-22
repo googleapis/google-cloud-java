@@ -475,6 +475,7 @@ public class BaseBigtableInstanceAdminClientTest {
     Assert.assertEquals(request.getDisplayName(), actualRequest.getDisplayName());
     Assert.assertEquals(request.getState(), actualRequest.getState());
     Assert.assertEquals(request.getType(), actualRequest.getType());
+    Assert.assertEquals(request.getEdition(), actualRequest.getEdition());
     Assert.assertEquals(request.getLabelsMap(), actualRequest.getLabelsMap());
     Assert.assertEquals(request.getCreateTime(), actualRequest.getCreateTime());
     Assert.assertEquals(request.getSatisfiesPzs(), actualRequest.getSatisfiesPzs());

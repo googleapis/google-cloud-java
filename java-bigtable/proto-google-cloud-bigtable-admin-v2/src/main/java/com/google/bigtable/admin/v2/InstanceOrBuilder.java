@@ -144,6 +144,38 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Optional. The edition of the instance. See
+   * [Edition][google.bigtable.admin.v2.Instance.Edition] for details.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Instance.Edition edition = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for edition.
+   */
+  int getEditionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The edition of the instance. See
+   * [Edition][google.bigtable.admin.v2.Instance.Edition] for details.
+   * </pre>
+   *
+   * <code>
+   * .google.bigtable.admin.v2.Instance.Edition edition = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The edition.
+   */
+  com.google.bigtable.admin.v2.Instance.Edition getEdition();
+
+  /**
+   *
+   *
+   * <pre>
    * Labels are a flexible and lightweight mechanism for organizing cloud
    * resources into groups that reflect a customer's organizational needs and
    * deployment strategies. They can be used to filter resources and aggregate
