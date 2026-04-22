@@ -777,7 +777,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
   private final OperationsClient operationsClient;
 
   /** Constructs an instance of BaseBigtableInstanceAdminClient with default settings. */
-  public static final BaseBigtableInstanceAdminClient create() throws IOException {
+  protected static BaseBigtableInstanceAdminClient create() throws IOException {
     return create(BaseBigtableInstanceAdminSettings.newBuilder().build());
   }
 
@@ -786,7 +786,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * channels are created based on the settings passed in, or defaults for any settings that are not
    * set.
    */
-  public static final BaseBigtableInstanceAdminClient create(
+  protected static BaseBigtableInstanceAdminClient create(
       BaseBigtableInstanceAdminSettings settings) throws IOException {
     return new BaseBigtableInstanceAdminClient(settings);
   }
@@ -795,7 +795,7 @@ public class BaseBigtableInstanceAdminClient implements BackgroundResource {
    * Constructs an instance of BaseBigtableInstanceAdminClient, using the given stub for making
    * calls. This is for advanced usage - prefer using create(BaseBigtableInstanceAdminSettings).
    */
-  public static final BaseBigtableInstanceAdminClient create(BigtableInstanceAdminStub stub) {
+  protected static BaseBigtableInstanceAdminClient create(BigtableInstanceAdminStub stub) {
     return new BaseBigtableInstanceAdminClient(stub);
   }
 

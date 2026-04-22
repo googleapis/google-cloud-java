@@ -67,6 +67,14 @@ for library in s.get_staging_dirs():
   if os.path.exists("owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/package-info.java"):
     os.remove("owl-bot-staging/v2/google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/package-info.java")
 
+  # Remove the 'final' modifier from all static create() factory methods in the Base Admin clients
+  # This allows our handwritten Selective GAPIC subclasses to hide these methods.
+  s.replace(
+      f"{library}/**/BaseBigtable*AdminClient.java",
+      r"public static final BaseBigtable(.*)AdminClient create\(",
+      r"protected static BaseBigtable\1AdminClient create("
+  )
+
   s.move(library)
 
 s.remove_staging_dirs()
