@@ -20,6 +20,9 @@ on:
 env:
   REPO_FULL_NAME: ${{ github.event.pull_request.head.repo.full_name }}
   GITHUB_REPOSITORY: ${{ github.repository }}
+  # {x-version-update-start:gapic-generator-java:current}
+  GENERATOR_VERSION: 2.71.0
+  # {x-version-update-end}
 jobs:
   library_generation:
     runs-on: ubuntu-latest
@@ -44,4 +47,4 @@ jobs:
         head_ref: ${{ github.head_ref }}
         token: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
         force_regenerate_all: ${{ github.event.pull_request.head.ref == 'generate-libraries-main' }}
-        image_tag: 2.71.0  # {x-version-update:gapic-generator-java:current}
+        image_tag: ${{ env.GENERATOR_VERSION }}

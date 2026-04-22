@@ -82,13 +82,19 @@ public final class ChannelFinder {
       ChannelEndpointCache endpointCache,
       @Nullable EndpointLifecycleManager lifecycleManager,
       @Nullable String finderKey) {
-    this.rangeCache = new KeyRangeCache(Objects.requireNonNull(endpointCache), lifecycleManager);
+    this.rangeCache =
+        new KeyRangeCache(Objects.requireNonNull(endpointCache), lifecycleManager, finderKey);
     this.lifecycleManager = lifecycleManager;
     this.finderKey = finderKey;
   }
 
   void useDeterministicRandom() {
     rangeCache.useDeterministicRandom();
+  }
+
+  @Nullable
+  String finderKey() {
+    return finderKey;
   }
 
   private static ExecutorService createCacheUpdatePool() {

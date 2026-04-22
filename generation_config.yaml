@@ -1,4 +1,3 @@
-gapic_generator_version: 2.70.0
 googleapis_commitish: 62e4ecb2f4390728990514fea14aad0431881a52
 libraries_bom_version: 26.79.0
 libraries:
@@ -1977,7 +1976,6 @@ libraries:
   issue_tracker: https://issuetracker.google.com/savedsearches/559755
   GAPICs:
   - proto_path: google/cloud/oslogin/v1
-  - proto_path: google/cloud/oslogin/v1beta
 - api_shortname: parallelstore
   name_pretty: Parallelstore API
   product_documentation: https://cloud/parallelstore?hl=en

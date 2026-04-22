@@ -213,6 +213,27 @@ get_proto_path_from_preprocessed_sources_multiple_proto_dirs_fails() {
   assertEquals 1 ${res}
 }
 
+backup_and_restore_version_java_succeeds() {
+  local target_dir=$(mktemp -d)
+  local backup_dir=$(mktemp -d)
+  
+  mkdir -p "${target_dir}/google-cloud-test/src/main/java/com/google/cloud/test/v1/stub"
+  echo "version1" > "${target_dir}/google-cloud-test/src/main/java/com/google/cloud/test/v1/stub/Version.java"
+
+  backup_version_java "${target_dir}" "${backup_dir}"
+
+  # Simulate owl-bot overwriting the file
+  echo "version2" > "${target_dir}/google-cloud-test/src/main/java/com/google/cloud/test/v1/stub/Version.java"
+
+  restore_version_java "${target_dir}" "${backup_dir}"
+
+  # The original "version1" should have been restored
+  local restored_content=$(cat "${target_dir}/google-cloud-test/src/main/java/com/google/cloud/test/v1/stub/Version.java")
+  assertEquals "version1" "${restored_content}"
+
+  rm -rf "${target_dir}" "${backup_dir}"
+}
+
 normalize_owlbot_yaml_test() {
   local temp_dir=$(mktemp -d)
   local input_file="${temp_dir}/input.yaml"
@@ -266,6 +287,7 @@ test_list=(
   get_proto_path_from_preprocessed_sources_valid_library_succeeds
   get_proto_path_from_preprocessed_sources_empty_library_fails
   get_proto_path_from_preprocessed_sources_multiple_proto_dirs_fails
+  backup_and_restore_version_java_succeeds
   normalize_owlbot_yaml_test
 )
 
