@@ -1,0 +1,26 @@
+2026-04-22 13:01:21.196 FINEST 2384934 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryJdbcOAuthUtility parseOAuthProperties: ++enter++	com.google.cloud.bigquery.jdbc.BigQueryConnection@4d099a37
+2026-04-22 13:01:21.228 FINEST 2384934 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryJdbcOAuthUtility getCredentials      : ++enter++	com.google.cloud.bigquery.jdbc.BigQueryConnection@4d099a37
+2026-04-22 13:01:21.230 FINEST 2384934 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryJdbcOAuthUtility getApplicationDefaultCredentials: ++enter++	com.google.cloud.bigquery.jdbc.BigQueryConnection@4d099a37
+2026-04-22 13:01:21.231  INFO 2384934 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryJdbcOAuthUtility info                : Connection established. Auth Method: Application Default Credentials, Principal: user credentials.
+2026-04-22 13:01:21.233 FINEST 2384934 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryJdbcProxyUtility parseProxyProperties: ++enter++	com.google.cloud.bigquery.jdbc.BigQueryConnection@4d099a37
+2026-04-22 13:01:21.235 FINEST 2384934 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryJdbcProxyUtility getHttpTransportOptions: ++enter++	com.google.cloud.bigquery.jdbc.BigQueryConnection@4d099a37
+2026-04-22 13:01:21.236 FINEST 2384934 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryJdbcProxyUtility getTransportChannelProvider: ++enter++	com.google.cloud.bigquery.jdbc.BigQueryConnection@4d099a37
+2026-04-22 13:01:21.237 FINEST 2384934 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryConnection@4d099a37 getSessionPropertyFromQueryProperties: ++enter++
+2026-04-22 13:01:21.239 FINEST 2384934 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryConnection@4d099a37 convertMapToConnectionPropertiesList: ++enter++
+2026-04-22 13:01:21.240 FINEST 2384934 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryConnection@4d099a37 getLibraryVersion   : ++enter++
+2026-04-22 13:01:21.245 FINEST 2384934 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryStatement@43b1fdb7 generateBigQuerySettings: ++enter++
+2026-04-22 13:01:21.246  FINE 2384934 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryConnection@4d099a37 fine                : Statement com.google.cloud.bigquery.jdbc.BigQueryStatement@43b1fdb7 created.
+2026-04-22 13:01:21.247 FINEST 2384934 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryConnection@4d099a37 finest              : Statement com.google.cloud.bigquery.jdbc.BigQueryStatement@43b1fdb7 added to Connection com.google.cloud.bigquery.jdbc.BigQueryConnection@4d099a37.
+2026-04-22 13:03:37.299 FINEST 2386488 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryJdbcOAuthUtility parseOAuthProperties: ++enter++	com.google.cloud.bigquery.jdbc.BigQueryConnection@51fadaff
+2026-04-22 13:03:37.348 FINEST 2386488 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryJdbcOAuthUtility getCredentials      : ++enter++	com.google.cloud.bigquery.jdbc.BigQueryConnection@51fadaff
+2026-04-22 13:03:37.350 FINEST 2386488 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryJdbcOAuthUtility getApplicationDefaultCredentials: ++enter++	com.google.cloud.bigquery.jdbc.BigQueryConnection@51fadaff
+2026-04-22 13:03:37.352  INFO 2386488 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryJdbcOAuthUtility info                : Connection established. Auth Method: Application Default Credentials, Principal: bigquery-neenutestproject@neenutestproject.iam.gserviceaccount.com.
+2026-04-22 13:03:37.354 FINEST 2386488 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryJdbcProxyUtility parseProxyProperties: ++enter++	com.google.cloud.bigquery.jdbc.BigQueryConnection@51fadaff
+2026-04-22 13:03:37.356 FINEST 2386488 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryJdbcProxyUtility getHttpTransportOptions: ++enter++	com.google.cloud.bigquery.jdbc.BigQueryConnection@51fadaff
+2026-04-22 13:03:37.358 FINEST 2386488 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryJdbcProxyUtility getTransportChannelProvider: ++enter++	com.google.cloud.bigquery.jdbc.BigQueryConnection@51fadaff
+2026-04-22 13:03:37.360 FINEST 2386488 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryConnection@51fadaff getSessionPropertyFromQueryProperties: ++enter++
+2026-04-22 13:03:37.361 FINEST 2386488 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryConnection@51fadaff convertMapToConnectionPropertiesList: ++enter++
+2026-04-22 13:03:37.363 FINEST 2386488 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryConnection@51fadaff getLibraryVersion   : ++enter++
+2026-04-22 13:03:37.370 FINEST 2386488 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryStatement@73cd37c0 generateBigQuerySettings: ++enter++
+2026-04-22 13:03:37.372  FINE 2386488 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryConnection@51fadaff fine                : Statement com.google.cloud.bigquery.jdbc.BigQueryStatement@73cd37c0 created.
+2026-04-22 13:03:37.373 FINEST 2386488 --- [main   ] com.google.cloud.bigquery.jdbc.BigQueryConnection@51fadaff finest              : Statement com.google.cloud.bigquery.jdbc.BigQueryStatement@73cd37c0 added to Connection com.google.cloud.bigquery.jdbc.BigQueryConnection@51fadaff.
