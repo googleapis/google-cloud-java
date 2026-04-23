@@ -38,12 +38,10 @@ def main():
 
     # 1. Scan backwards through git history of versions.txt
     # We use -G to find commits that modified lines matching the module name.
-    # We use --first-parent to ignore merge noise.
     log_cmd = [
         "git",
         "log",
         "--oneline",
-        "--first-parent",
         f"-G^{re.escape(module)}:",
         "--",
         "versions.txt",
@@ -109,7 +107,6 @@ def main():
             "log",
             "--reverse",
             "--oneline",
-            "--first-parent",
             "--",
             directory,
         ]
@@ -130,13 +127,11 @@ def main():
     )
 
     # 2. Generate commit history in that range affecting that directory
-    # Use --first-parent to ignore merge noise.
     # Use format that includes hash, subject, and body
     notes_cmd = [
         "git",
         "log",
         "--format=%H %s%n%b%n--END_OF_COMMIT--",
-        "--first-parent",
         f"{prev_commit}..{target_commit}" if prev_commit else target_commit,
         "--",
         directory,
