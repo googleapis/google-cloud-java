@@ -38,7 +38,9 @@ public class SyncDeleteCloudControl {
       DeleteCloudControlRequest request =
           DeleteCloudControlRequest.newBuilder()
               .setName(
-                  CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString())
+                  CloudControlName.ofOrganizationLocationCloudControlName(
+                          "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+                      .toString())
               .build();
       configClient.deleteCloudControl(request);
     }
