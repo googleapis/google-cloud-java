@@ -50,8 +50,7 @@ import javax.annotation.Nullable;
  */
 class BuiltInDatastoreMetricsProvider {
 
-  public static final BuiltInDatastoreMetricsProvider INSTANCE =
-      new BuiltInDatastoreMetricsProvider();
+  static final BuiltInDatastoreMetricsProvider INSTANCE = new BuiltInDatastoreMetricsProvider();
 
   private static final Logger logger =
       Logger.getLogger(BuiltInDatastoreMetricsProvider.class.getName());

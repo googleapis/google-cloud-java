@@ -124,9 +124,9 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
    * responses and can mask the real failure reason.
    *
    * <p>{@code createTimeSeries} is used instead of {@code createServiceTimeSeries} because the
-   * Firestore namespace in Cloud Monitoring has not yet been deployed as a service resource. Once
-   * the namespace is available, this should be migrated to {@code createServiceTimeSeries} for
-   * correct quota and resource attribution.
+   * Firestore namespace in Cloud Monitoring (b/405457573) has not yet been deployed as a service
+   * resource. Once the namespace is available, this should be migrated to {@code
+   * createServiceTimeSeries} for correct quota and resource attribution.
    *
    * @param projectId the GCP project ID where metrics will be exported.
    * @param credentials the credentials used to authenticate with Cloud Monitoring.

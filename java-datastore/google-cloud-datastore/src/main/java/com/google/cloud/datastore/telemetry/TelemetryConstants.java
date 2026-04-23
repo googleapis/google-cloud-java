@@ -33,8 +33,8 @@ import java.util.Set;
 @InternalApi
 public class TelemetryConstants {
 
-  // The Firestore namespace has not been deployed yet. Must target the custom namespace
-  // until this is implemented.
+  // TODO(b/405457573): The Firestore namespace has not been deployed yet. Must target the
+  // custom namespace until this is implemented.
   public static final String METRIC_PREFIX = "custom.googleapis.com/internal/client";
   public static final String DATASTORE_METER_NAME = "java-datastore";
 
@@ -63,8 +63,7 @@ public class TelemetryConstants {
   // GAX-emitted metrics for the built-in Cloud Monitoring export pipeline.
   public static final Set<String> GAX_METRICS = GAX_METRIC_NAME_MAP.keySet();
 
-  // The subset of GAX_METRICS that are histograms (latency metrics). Explicit enumeration here
-  // avoids fragile name-suffix matching (endsWith("latency")) in view registration logic.
+  // The subset of GAX_METRICS that are histograms (e.g. latency metrics)
   public static final Set<String> GAX_HISTOGRAM_METRICS =
       ImmutableSet.of(METRIC_NAME_SHORT_OPERATION_LATENCY, METRIC_NAME_SHORT_ATTEMPT_LATENCY);
 
@@ -72,8 +71,8 @@ public class TelemetryConstants {
   public static final String DATASTORE_RESOURCE_TYPE = "global";
 
   // Resource label keys for the monitored resource
-  // The Firestore namespace has not been deployed yet. Must target the global
-  // Monitored Resource until this is implemented.
+  // TODO(b/405457573): The Firestore namespace has not been deployed yet. Must
+  // target the global Monitored Resource until this is implemented.
   public static final String RESOURCE_LABEL_PROJECT_ID = "project_id";
   public static final String RESOURCE_LABEL_DATABASE_ID = "database_id";
   public static final String RESOURCE_LABEL_LOCATION = "location";

@@ -84,24 +84,26 @@ class DatastoreCloudMonitoringExporterUtils {
 
     // Metrics should already been filtered for Gax and Datastore related ones
     for (MetricData metricData : collection) {
+      // TODO(b/405457573): The monitored resource is currently written to `global` because the
+      // Firestore
+      // namespace in Cloud Monitoring has not been deployed yet. Once the namespace is available,
+      // database_id and location labels should be added here using RESOURCE_LABEL_DATABASE_ID
+      // and RESOURCE_LABEL_LOCATION respectively.
+
       // Map OTel resource attributes to the specific monitored resource labels.
       MonitoredResource.Builder monitoredResourceBuilder =
           MonitoredResource.newBuilder().setType(DATASTORE_RESOURCE_TYPE);
 
       Attributes resourceAttributes = metricData.getResource().getAttributes();
       String resourceProjectId = resourceAttributes.get(TelemetryConstants.PROJECT_ID_KEY);
-      String resourceDatabaseId = resourceAttributes.get(TelemetryConstants.DATABASE_ID_KEY);
-      String resourceLocation = resourceAttributes.get(TelemetryConstants.LOCATION_ID_KEY);
+      //      String resourceDatabaseId =
+      // resourceAttributes.get(TelemetryConstants.DATABASE_ID_KEY);
+      //      String resourceLocation = resourceAttributes.get(TelemetryConstants.LOCATION_ID_KEY);
 
       if (resourceProjectId != null) {
         monitoredResourceBuilder.putLabels(
             TelemetryConstants.RESOURCE_LABEL_PROJECT_ID, resourceProjectId);
       }
-
-      // TODO: The monitored resource is currently written to `global` because the Datastore
-      // namespace in Cloud Monitoring has not been deployed yet. Once the namespace is available,
-      // database_id and location labels should be added here using RESOURCE_LABEL_DATABASE_ID
-      // and RESOURCE_LABEL_LOCATION respectively.
 
       // Convert each point in the metric data to a TimeSeries.
       metricData.getData().getPoints().stream()
