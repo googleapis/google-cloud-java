@@ -55,6 +55,9 @@ public final class BuiltInDatastoreMetricsProvider {
   private static final Logger logger =
       Logger.getLogger(BuiltInDatastoreMetricsProvider.class.getName());
 
+  // volatile ensures that writes from one thread (first call to detectClientLocation) are
+  // immediately visible to all other threads sharing this singleton INSTANCE. Without it, a
+  // thread could read a stale null and re-enter the initialization branch.
   private static volatile String location;
   private static final String DEFAULT_LOCATION = "global";
 

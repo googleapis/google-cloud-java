@@ -43,8 +43,6 @@ import javax.annotation.Nonnull;
 @InternalExtensionOnly
 public interface DatastoreMetricsRecorder extends MetricsRecorder {
 
-  Logger logger = Logger.getLogger(DatastoreMetricsRecorder.class.getName());
-
   /**
    * Releases any resources held by this recorder.
    *
@@ -85,6 +83,7 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
    * @return a {@link DatastoreMetricsRecorder} that fans out to all configured backends
    */
   static DatastoreMetricsRecorder getInstance(@Nonnull DatastoreOptions datastoreOptions) {
+    Logger logger = Logger.getLogger(DatastoreMetricsRecorder.class.getName());
     DatastoreOpenTelemetryOptions otelOptions = datastoreOptions.getOpenTelemetryOptions();
     List<DatastoreMetricsRecorder> recorders = new ArrayList<>();
 
@@ -103,7 +102,7 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
         if (builtInOtel != null) {
           recorders.add(
               new OpenTelemetryDatastoreMetricsRecorder(
-                  builtInOtel, TelemetryConstants.METRIC_PREFIX, /* ownsOpenTelemetry= */ true));
+                  builtInOtel, TelemetryConstants.METRIC_PREFIX, /* isBuiltIn= */ true));
         }
       } catch (Exception e) {
         logger.log(

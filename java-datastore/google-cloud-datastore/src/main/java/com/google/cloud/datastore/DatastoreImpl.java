@@ -179,7 +179,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     } catch (Exception e) {
       logger.log(Level.WARNING, "Failed to close channels", e);
     }
-    // Close the default Metrics Recorder if exists
+    // Flush and shut down the built-in OTel SDK if active; no-op for user-provided instances.
     getOptions().getMetricsRecorder().close();
   }
 

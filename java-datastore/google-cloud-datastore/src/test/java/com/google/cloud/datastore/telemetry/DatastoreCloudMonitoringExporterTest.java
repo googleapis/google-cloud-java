@@ -173,7 +173,8 @@ public class DatastoreCloudMonitoringExporterTest {
     DatastoreCloudMonitoringExporter.METRICS_CLIENT_CACHE.put(key, cachedMetricsClient);
 
     DatastoreCloudMonitoringExporter exporter1 =
-        new DatastoreCloudMonitoringExporter(key, PROJECT_ID, DATABASE_ID, mockClient, Collections.emptyMap());
+        new DatastoreCloudMonitoringExporter(
+            key, PROJECT_ID, DATABASE_ID, mockClient, Collections.emptyMap());
 
     // First shutdown should decrement refCount to 1, but not close client
     exporter1.shutdown();
@@ -181,7 +182,8 @@ public class DatastoreCloudMonitoringExporterTest {
     assertThat(DatastoreCloudMonitoringExporter.METRICS_CLIENT_CACHE.containsKey(key)).isTrue();
 
     DatastoreCloudMonitoringExporter exporter2 =
-        new DatastoreCloudMonitoringExporter(key, PROJECT_ID, DATABASE_ID, mockClient, Collections.emptyMap());
+        new DatastoreCloudMonitoringExporter(
+            key, PROJECT_ID, DATABASE_ID, mockClient, Collections.emptyMap());
 
     // Second shutdown should decrement refCount to 0, close client, and remove from cache
     exporter2.shutdown();
