@@ -55,6 +55,7 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_ENAB
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_ENABLE_DYNAMIC_CHANNEL_POOL;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_ENABLE_END_TO_END_TRACING;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_ENABLE_EXTENDED_TRACING;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_ENABLE_GRPC_GCP;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_ENDPOINT;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_IS_EXPERIMENTAL_HOST;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_KEEP_TRANSACTION_ALIVE;
@@ -85,6 +86,7 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_API_T
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_DYNAMIC_CHANNEL_POOL_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_END_TO_END_TRACING_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_EXTENDED_TRACING_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_GRPC_GCP_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENABLE_GRPC_INTERCEPTOR_PROVIDER_SYSTEM_PROPERTY;
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENCODED_CREDENTIALS_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.ENDPOINT_PROPERTY_NAME;
@@ -460,6 +462,18 @@ public class ConnectionProperties {
               + "The default is currently false (disabled), but this may change to true in a "
               + "future version. Set this property explicitly to ensure consistent behavior.",
           DEFAULT_ENABLE_DYNAMIC_CHANNEL_POOL,
+          BOOLEANS,
+          BooleanConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<Boolean> ENABLE_GRPC_GCP =
+      create(
+          ENABLE_GRPC_GCP_PROPERTY_NAME,
+          "Enable or disable grpc-gcp channel pool (true/false). "
+              + "Setting this to false will disable grpc-gcp and use the Gax gRPC channel pool. "
+              + "Disabling grpc-gcp also automatically disables dynamic channel pooling, regardless "
+              + "of the value of enableDynamicChannelPool, as Spanner only supports dynamic channel "
+              + "pooling in combination with grpc-gcp.",
+          DEFAULT_ENABLE_GRPC_GCP,
           BOOLEANS,
           BooleanConverter.INSTANCE,
           Context.STARTUP);

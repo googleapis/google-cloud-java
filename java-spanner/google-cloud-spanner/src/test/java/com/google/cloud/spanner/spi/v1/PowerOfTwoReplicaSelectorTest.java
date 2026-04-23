@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -33,6 +34,7 @@ public class PowerOfTwoReplicaSelectorTest {
 
   private static class TestEndpoint implements ChannelEndpoint {
     private final String address;
+    private final AtomicInteger activeRequests = new AtomicInteger();
 
     TestEndpoint(String address) {
       this.address = address;
@@ -56,6 +58,21 @@ public class PowerOfTwoReplicaSelectorTest {
     @Override
     public io.grpc.ManagedChannel getChannel() {
       return null;
+    }
+
+    @Override
+    public void incrementActiveRequests() {
+      activeRequests.incrementAndGet();
+    }
+
+    @Override
+    public void decrementActiveRequests() {
+      activeRequests.updateAndGet(current -> current > 0 ? current - 1 : 0);
+    }
+
+    @Override
+    public int getActiveRequestCount() {
+      return Math.max(0, activeRequests.get());
     }
   }
 

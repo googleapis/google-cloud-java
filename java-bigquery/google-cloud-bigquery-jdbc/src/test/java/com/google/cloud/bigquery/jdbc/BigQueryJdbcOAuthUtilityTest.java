@@ -18,7 +18,6 @@ package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -109,7 +108,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         DataSource.fromUrl(connectionString).getOverrideProperties();
 
     try {
-      BigQueryJdbcOAuthUtility.getCredentials(oauthProperties, overrideProperties, null);
+      BigQueryJdbcOAuthUtility.getCredentials(oauthProperties, overrideProperties, false, null);
       Assertions.fail();
     } catch (BigQueryJdbcRuntimeException e) {
       assertThat(e.getMessage()).contains("java.net.URISyntaxException");
@@ -165,7 +164,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
             null);
 
     GoogleCredentials credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(authProperties, Collections.EMPTY_MAP, null);
+        BigQueryJdbcOAuthUtility.getCredentials(authProperties, Collections.EMPTY_MAP, false, null);
     assertThat(credentials).isNotNull();
   }
 
@@ -185,7 +184,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     Map<String, String> overrideProperties = new HashMap<>(stringStringMap);
 
     GoogleCredentials credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(authProperties, overrideProperties, null);
+        BigQueryJdbcOAuthUtility.getCredentials(authProperties, overrideProperties, false, null);
     assertThat(credentials.getUniverseDomain()).isEqualTo("testDomain");
   }
 
@@ -200,7 +199,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
             null);
 
     GoogleCredentials credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(authProperties, null, null);
+        BigQueryJdbcOAuthUtility.getCredentials(authProperties, null, false, null);
     assertThat(credentials).isNotNull();
   }
 
@@ -339,100 +338,6 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
   }
 
   @Test
-  public void testParseOAuthProperties_UserAccount_RequestDriveScopeEnabled() {
-    String url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=1;OAuthClientId=redactedClientId;OAuthClientSecret=redactedClientSecret;"
-            + "RequestGoogleDriveScope=1;";
-    Map<String, String> properties =
-        BigQueryJdbcOAuthUtility.parseOAuthProperties(
-            DataSource.fromUrl(url), this.getClass().getName());
-    assertEquals(
-        String.valueOf(BigQueryJdbcOAuthUtility.AuthType.GOOGLE_USER_ACCOUNT),
-        properties.get(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME));
-    assertEquals(
-        "redactedClientId", properties.get(BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME));
-    assertEquals(
-        "redactedClientSecret",
-        properties.get(BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME));
-    assertEquals(
-        "1", properties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
-  }
-
-  @Test
-  public void testParseOAuthProperties_UserAccount_RequestDriveScopeDisabled() {
-    String url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=1;OAuthClientId=redactedClientId;OAuthClientSecret=redactedClientSecret;"
-            + "RequestGoogleDriveScope=0;";
-    Map<String, String> properties =
-        BigQueryJdbcOAuthUtility.parseOAuthProperties(
-            DataSource.fromUrl(url), this.getClass().getName());
-    assertEquals(
-        "0", properties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
-  }
-
-  @Test
-  public void testParseOAuthProperties_UserAccount_RequestDriveScopeDefault() {
-    String url =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-            + "OAuthType=1;OAuthClientId=redactedClientId;OAuthClientSecret=redactedClientSecret;";
-    Map<String, String> properties =
-        BigQueryJdbcOAuthUtility.parseOAuthProperties(
-            DataSource.fromUrl(url), this.getClass().getName());
-    assertEquals(
-        String.valueOf(BigQueryJdbcUrlUtility.DEFAULT_REQUEST_GOOGLE_DRIVE_SCOPE_VALUE),
-        properties.get(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
-  }
-
-  @Test
-  public void testGetUserAuthorizer_WithDriveScope() throws URISyntaxException {
-    Map<String, String> authProperties = new HashMap<>();
-    authProperties.put(BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME, "redactedClientId");
-    authProperties.put(
-        BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME, "redactedClientSecret");
-    authProperties.put(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME, "1");
-
-    UserAuthorizer authorizer =
-        BigQueryJdbcOAuthUtility.getUserAuthorizer(
-            authProperties, Collections.emptyMap(), 12345, this.getClass().getName());
-
-    assertTrue(authorizer.getScopes().contains("https://www.googleapis.com/auth/bigquery"));
-    assertTrue(authorizer.getScopes().contains("https://www.googleapis.com/auth/drive.readonly"));
-    assertEquals(2, authorizer.getScopes().size());
-  }
-
-  @Test
-  public void testGetUserAuthorizer_WithoutDriveScope() throws URISyntaxException {
-    Map<String, String> authProperties = new HashMap<>();
-    authProperties.put(BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME, "redactedClientId");
-    authProperties.put(
-        BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME, "redactedClientSecret");
-    authProperties.put(BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME, "0");
-
-    UserAuthorizer authorizer =
-        BigQueryJdbcOAuthUtility.getUserAuthorizer(
-            authProperties, Collections.emptyMap(), 12345, this.getClass().getName());
-    assertTrue(authorizer.getScopes().contains("https://www.googleapis.com/auth/bigquery"));
-    assertFalse(authorizer.getScopes().contains("https://www.googleapis.com/auth/drive.readonly"));
-    assertEquals(1, authorizer.getScopes().size());
-  }
-
-  @Test
-  public void testGetUserAuthorizer_InvalidDriveScopeValue() throws URISyntaxException {
-    Map<String, String> authProperties = new HashMap<>();
-    authProperties.put(BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME, "redactedClientId");
-    authProperties.put(
-        BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME, "redactedClientSecret");
-    authProperties.put(
-        BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME, "invalid_value");
-    UserAuthorizer authorizer =
-        BigQueryJdbcOAuthUtility.getUserAuthorizer(
-            authProperties, Collections.emptyMap(), 12345, this.getClass().getName());
-    assertFalse(authorizer.getScopes().contains("https://www.googleapis.com/auth/drive.readonly"));
-  }
-
-  @Test
   public void testParseUserImpersonationDefault() {
     String connectionUri =
         getUriOAuthServiceAccount()
@@ -444,7 +349,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
         "impersonated",
         result.get(BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_EMAIL_PROPERTY_NAME));
     assertEquals(
-        BigQueryJdbcUrlUtility.DEFAULT_OAUTH_SA_IMPERSONATION_SCOPES_VALUE,
+        BigQueryJdbcOAuthUtility.BIGQUERY_SCOPE,
         result.get(BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_SCOPES_PROPERTY_NAME));
     assertEquals(
         BigQueryJdbcUrlUtility.DEFAULT_OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_VALUE,
@@ -482,7 +387,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
                     .toString()),
             "");
     GoogleCredentials credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(authProperties, Collections.EMPTY_MAP, null);
+        BigQueryJdbcOAuthUtility.getCredentials(authProperties, Collections.EMPTY_MAP, false, null);
     assertThat(credentials).isInstanceOf(ImpersonatedCredentials.class);
   }
 
