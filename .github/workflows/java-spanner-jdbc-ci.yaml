@@ -110,6 +110,8 @@ jobs:
         java-version: ${{matrix.java}}
     - run: java -version
     - run: .kokoro/dependencies.sh
+      env:
+        BUILD_SUBDIR: java-spanner-jdbc
   javadoc:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
