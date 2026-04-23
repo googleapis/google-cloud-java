@@ -146,8 +146,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
               String.format(
                   "The array index is out of range: %d, number of elements: %d.",
                   index + count, size));
-      LOG.severe(
-          ex, "The array index is out of range: %d, number of elements: %d.", index + count, size);
+      LOG.severe(ex, ex.getMessage());
       throw ex;
     }
     long toIndex = normalisedFromIndex + count;

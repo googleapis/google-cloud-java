@@ -709,7 +709,7 @@ final class BigQueryJdbcUrlUtility {
           BigQueryJdbcRuntimeException ex =
               new BigQueryJdbcRuntimeException(
                   String.format("Wrong value or unknown setting: %s", safeRef));
-          LOG.severe(ex, "Wrong value or unknown setting: %s", safeRef);
+          LOG.severe(ex, ex.getMessage());
           throw ex;
         } else {
           LOG.warning("Wrong value or unknown setting: %s", safeRef);
@@ -779,10 +779,7 @@ final class BigQueryJdbcUrlUtility {
                   "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
                       + " true.",
                   propertyName));
-      LOG.severe(
-          ex,
-          "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for true.",
-          propertyName);
+      LOG.severe(ex, ex.getMessage());
       throw ex;
     }
   }

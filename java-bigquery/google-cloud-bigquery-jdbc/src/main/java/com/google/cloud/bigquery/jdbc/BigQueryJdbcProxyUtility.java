@@ -76,8 +76,7 @@ final class BigQueryJdbcProxyUtility {
                 String.format(
                     "Illegal port number provided %s. Please provide a valid port number.",
                     proxyPort));
-        LOG.severe(
-            ex, "Illegal port number provided %s. Please provide a valid port number.", proxyPort);
+        LOG.severe(ex, ex.getMessage());
         throw ex;
       }
       proxyProperties.put(BigQueryJdbcUrlUtility.PROXY_PORT_PROPERTY_NAME, proxyPort);

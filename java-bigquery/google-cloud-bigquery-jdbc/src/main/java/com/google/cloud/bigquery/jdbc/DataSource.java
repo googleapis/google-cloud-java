@@ -371,16 +371,14 @@ public class DataSource implements javax.sql.DataSource {
       BigQueryJdbcException ex =
           new BigQueryJdbcException(
               "Connection URL is null. Please specify a valid Connection URL to get Connection.");
-      LOG.severe(
-          ex, "Connection URL is null. Please specify a valid Connection URL to get Connection.");
+      LOG.severe(ex, ex.getMessage());
       throw ex;
     }
     if (!BigQueryDriver.getRegisteredDriver().acceptsURL(getURL())) {
       BigQueryJdbcException ex =
           new BigQueryJdbcException(
               "The URL " + getURL() + " is invalid. Please specify a valid Connection URL. ");
-      LOG.severe(
-          ex, "The URL " + getURL() + " is invalid. Please specify a valid Connection URL. ");
+      LOG.severe(ex, ex.getMessage());
       throw ex;
     }
     return DriverManager.getConnection(getURL(), createProperties());

@@ -66,7 +66,7 @@ public class BigQueryDriver implements Driver {
     } catch (SQLException e) {
       ExceptionInInitializerError ex =
           new ExceptionInInitializerError("Registering driver failed: " + e.getMessage());
-      LOG.severe(ex, "Registering driver failed: " + e.getMessage());
+      LOG.severe(ex, ex.getMessage());
       throw ex;
     }
     LoadBalancerRegistry.getDefaultRegistry().register(new PickFirstLoadBalancerProvider());
@@ -101,9 +101,7 @@ public class BigQueryDriver implements Driver {
     IllegalStateException ex =
         new IllegalStateException(
             "Driver is not registered (or it has not been registered using Driver.register() method)");
-    LOG.severe(
-        ex,
-        "Driver is not registered (or it has not been registered using Driver.register() method)");
+    LOG.severe(ex, ex.getMessage());
     throw ex;
   }
 
@@ -196,7 +194,7 @@ public class BigQueryDriver implements Driver {
     LOG.finest("++enter++");
     if (url == null || url.isEmpty()) {
       BigQueryJdbcException ex = new BigQueryJdbcException("Connection URL is null.");
-      LOG.severe(ex, "Connection URL is null.");
+      LOG.severe(ex, ex.getMessage());
       throw ex;
     }
     return url.startsWith("jdbc:bigquery:");
