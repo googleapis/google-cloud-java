@@ -37,7 +37,7 @@ class PerConnectionFileHandler extends Handler {
   private FileHandler defaultHandler;
 
   PerConnectionFileHandler(String baseLogPath, Level level) {
-    this.baseLogPath = baseLogPath;
+    this.baseLogPath = baseLogPath != null ? baseLogPath : "";
     this.level = level;
 
     try {
@@ -53,7 +53,8 @@ class PerConnectionFileHandler extends Handler {
       this.defaultHandler.setLevel(level);
       this.defaultHandler.setFormatter(BigQueryJdbcRootLogger.getFormatter());
     } catch (IOException e) {
-      System.err.println("Failed to initialize default log file: " + e.getMessage());
+      reportError(
+          "Failed to initialize default log file", e, java.util.logging.ErrorManager.OPEN_FAILURE);
     }
   }
 
@@ -86,8 +87,10 @@ class PerConnectionFileHandler extends Handler {
                   fh.setFormatter(BigQueryJdbcRootLogger.getFormatter());
                   return fh;
                 } catch (IOException e) {
-                  System.err.println(
-                      "Failed to create log file for connection " + id + ": " + e.getMessage());
+                  reportError(
+                      "Failed to create log file for connection " + id,
+                      e,
+                      java.util.logging.ErrorManager.OPEN_FAILURE);
                   return defaultHandler;
                 }
               });
@@ -109,14 +112,18 @@ class PerConnectionFileHandler extends Handler {
   }
 
   @Override
-  @Override
   public void close() throws SecurityException {
     for (FileHandler h : handlers.values()) {
-      try { h.close(); } catch (Exception e) {}
+      try {
+        h.close();
+      } catch (Exception e) {
+      }
     }
     try {
       if (defaultHandler != null) defaultHandler.close();
-    } finally { handlers.clear(); }
+    } finally {
+      handlers.clear();
+    }
   }
 
   public void closeHandler(String connectionId) {

@@ -31,8 +31,7 @@ import org.mockito.Mockito;
 
 public class PerConnectionFileHandlerTest {
 
-  @TempDir
-  Path tempDir;
+  @TempDir Path tempDir;
 
   private PerConnectionFileHandler handler;
   private BigQueryConnection mockConnection;
@@ -72,7 +71,7 @@ public class PerConnectionFileHandlerTest {
   @Test
   public void testPublishConnectionSpecific() throws IOException {
     BigQueryJdbcMdc.registerInstance(mockConnection, "123");
-    
+
     LogRecord record = new LogRecord(Level.INFO, "Test message connection 123");
     handler.publish(record);
     handler.flush();
@@ -86,7 +85,7 @@ public class PerConnectionFileHandlerTest {
   @Test
   public void testCloseHandler() {
     BigQueryJdbcMdc.registerInstance(mockConnection, "456");
-    
+
     LogRecord record = new LogRecord(Level.INFO, "Test message connection 456");
     handler.publish(record);
     handler.flush();
