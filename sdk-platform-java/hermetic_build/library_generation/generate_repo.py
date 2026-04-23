@@ -66,7 +66,7 @@ def generate_from_yaml(
             repo_config=repo_config,
         )
 
-    if not config.is_monorepo() or config.contains_common_protos():
+    if not config.is_monorepo():
         return
 
     monorepo_postprocessing(
