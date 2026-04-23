@@ -370,7 +370,10 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
             jsonArray = new JsonArray();
           }
         } else {
-          throw new BigQueryJdbcException("Mismatch between field count and parameter count.");
+          BigQueryJdbcException ex =
+              new BigQueryJdbcException("Mismatch between field count and parameter count.");
+          LOG.severe(ex, "Mismatch between field count and parameter count.");
+          throw ex;
         }
       }
     } catch (BigQueryJdbcException e) {
@@ -387,7 +390,9 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     BatchCommitWriteStreamsResponse commitResponse =
         bigQueryWriteClient.batchCommitWriteStreams(commitRequest);
     if (commitResponse.hasCommitTime() == false) {
-      throw new BigQueryJdbcException("Error committing the streams");
+      BigQueryJdbcException ex = new BigQueryJdbcException("Error committing the streams");
+      LOG.severe(ex, "Error committing the streams");
+      throw ex;
     }
     LOG.finest("Commit called.");
     return rowCount;
@@ -398,8 +403,11 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     if (!statistics.getStatementType().equals(StatementType.INSERT)
         || statistics.getSchema() == null
         || statistics.getReferencedTables().stream().distinct().count() > 1) {
-      throw new BigQueryJdbcException(
-          "Use java.sql.Statement.executeBatch() for heterogeneous DML batches");
+      BigQueryJdbcException ex =
+          new BigQueryJdbcException(
+              "Use java.sql.Statement.executeBatch() for heterogeneous DML batches");
+      LOG.severe(ex, "Use java.sql.Statement.executeBatch() for heterogeneous DML batches");
+      throw ex;
     }
 
     this.insertSchema = statistics.getSchema();

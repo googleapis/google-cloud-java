@@ -5264,16 +5264,18 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       if (input == null) {
         String errorMessage =
             "Could not find dependencies.properties. Driver version information is unavailable.";
-        LOG.severe(errorMessage);
-        throw new IllegalStateException(errorMessage);
+        IllegalStateException ex = new IllegalStateException(errorMessage);
+        LOG.severe(ex, errorMessage);
+        throw ex;
       }
       props.load(input);
       String versionString = props.getProperty("version.jdbc");
       if (versionString == null || versionString.trim().isEmpty()) {
         String errorMessage =
             "The property version.jdbc not found or empty in dependencies.properties.";
-        LOG.severe(errorMessage);
-        throw new IllegalStateException(errorMessage);
+        IllegalStateException ex = new IllegalStateException(errorMessage);
+        LOG.severe(ex, errorMessage);
+        throw ex;
       }
       parsedDriverVersion.compareAndSet(null, versionString.trim());
       String[] parts = versionString.split("\\.");
@@ -5291,8 +5293,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           "Error reading dependencies.properties. Driver version information is"
               + " unavailable. Error: "
               + e.getMessage();
-      LOG.severe(errorMessage);
-      throw new IllegalStateException(errorMessage, e);
+      IllegalStateException ex = new IllegalStateException(errorMessage, e);
+      LOG.severe(ex, errorMessage);
+      throw ex;
     }
   }
 }
