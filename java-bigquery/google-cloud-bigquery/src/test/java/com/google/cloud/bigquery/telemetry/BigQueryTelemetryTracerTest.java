@@ -143,7 +143,7 @@ public class BigQueryTelemetryTracerTest {
     assertEquals(
         "java.lang.Exception",
         spanData.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
-    assertErrorSpanAttributes("CLIENT_UNKNOWN_ERROR", "Exception: Test error message");
+    assertErrorSpanAttributes("Exception", "Exception: Test error message");
   }
 
   @Test
@@ -161,7 +161,7 @@ public class BigQueryTelemetryTracerTest {
         spanData.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
     assertEquals("Exception", spanData.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
     assertEquals(
-        "CLIENT_UNKNOWN_ERROR", spanData.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+        "Exception", spanData.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
   }
 
   @Test
