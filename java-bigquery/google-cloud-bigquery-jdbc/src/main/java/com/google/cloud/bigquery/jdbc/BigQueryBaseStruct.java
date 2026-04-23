@@ -42,11 +42,13 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
 
   @Override
   public final String getSQLTypeName() throws SQLException {
+    LOG.severe(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
     throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
   @Override
   public final Object[] getAttributes(Map<String, Class<?>> map) throws SQLException {
+    LOG.severe(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
     throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
