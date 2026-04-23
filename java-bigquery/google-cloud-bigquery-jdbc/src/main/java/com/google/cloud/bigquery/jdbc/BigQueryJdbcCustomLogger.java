@@ -16,6 +16,8 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -53,6 +55,12 @@ class BigQueryJdbcCustomLogger extends Logger {
     logp(level, sourceClass, sourceMethod, msgSupplier);
   }
 
+  private String formatStackTrace(Throwable thrown) {
+    StringWriter sw = new StringWriter();
+    thrown.printStackTrace(new PrintWriter(sw));
+    return sw.toString();
+  }
+
   void finest(String format, Object... args) {
     logWithCaller(Level.FINEST, () -> String.format(format, args));
   }
@@ -77,8 +85,26 @@ class BigQueryJdbcCustomLogger extends Logger {
     logWithCaller(Level.WARNING, () -> String.format(format, args));
   }
 
+  void warning(Throwable thrown, String msg) {
+    logWithCaller(Level.WARNING, () -> msg + System.lineSeparator() + formatStackTrace(thrown));
+  }
+
+  void warning(Throwable thrown, String format, Object... args) {
+    logWithCaller(Level.WARNING, () -> String.format(format, args) + System.lineSeparator() + formatStackTrace(thrown));
+  }
+
   void severe(String format, Object... args) {
     logWithCaller(Level.SEVERE, () -> String.format(format, args));
   }
+
+  void severe(Throwable thrown, String msg) {
+    logWithCaller(Level.SEVERE, () -> msg + System.lineSeparator() + formatStackTrace(thrown));
+  }
+
+  void severe(Throwable thrown, String format, Object... args) {
+    logWithCaller(Level.SEVERE, () -> String.format(format, args) + System.lineSeparator() + formatStackTrace(thrown));
+  }
 }
+
+
 

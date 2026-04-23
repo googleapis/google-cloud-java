@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,4 +78,20 @@ public class BigQueryJdbcCustomLoggerTest {
     assertEquals("testLogWithCallerInference", record.getSourceMethodName());
     assertEquals(BigQueryJdbcCustomLoggerTest.class.getName(), record.getSourceClassName());
   }
+
+  @Test
+  public void testLogWithException() {
+    Exception ex = new Exception("Test exception");
+    logger.severe(ex, "Error occurred: %s", "detail");
+    
+    List<LogRecord> records = testHandler.getRecords();
+    assertEquals(1, records.size());
+    LogRecord record = records.get(0);
+    
+    assertEquals("testLogWithException", record.getSourceMethodName());
+    assertEquals(BigQueryJdbcCustomLoggerTest.class.getName(), record.getSourceClassName());
+    assertTrue(record.getMessage().contains("Error occurred: detail"));
+    assertTrue(record.getMessage().contains("java.lang.Exception: Test exception"));
+  }
 }
+
