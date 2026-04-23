@@ -152,6 +152,18 @@ public class FieldValueTest {
   }
 
   @Test
+  public void testLosslessMaxTimestamp() {
+    // Test the lossless behavior (useInt64Timestamps = true)
+    // The backend returns a 64-bit integer string for microseconds when this option is enabled
+    String losslessTimestampString = "253402300799999999";
+    FieldValue losslessValue =
+        FieldValue.of(FieldValue.Attribute.PRIMITIVE, losslessTimestampString, true);
+
+    // Exactly matches the microsecond equivalent of 9999-12-31 23:59:59.999999
+    assertEquals(253402300799999999L, losslessValue.getTimestampValue());
+  }
+
+  @Test
   public void testEquals() {
     FieldValue booleanValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "false");
     assertEquals(booleanValue, FieldValue.fromPb(BOOLEAN_FIELD));
