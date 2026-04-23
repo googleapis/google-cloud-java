@@ -140,8 +140,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Long connectionPoolSize;
   Long listenerPoolSize;
   String partnerToken;
-  boolean enableGcpTraceExporter;
-  boolean enableGcpLogExporter;
+  Boolean enableGcpTraceExporter;
+  Boolean enableGcpLogExporter;
   OpenTelemetry customOpenTelemetry;
   Tracer tracer =
       OpenTelemetry.noop().getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
@@ -1004,6 +1004,13 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     }
 
     bigQueryReadSettings.setTransportChannelProvider(activeProvider);
+
+    OpenTelemetry openTelemetry =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(
+            this.enableGcpTraceExporter, this.enableGcpLogExporter, this.customOpenTelemetry);
+    if (this.enableGcpTraceExporter || this.customOpenTelemetry != null) {
+      bigQueryReadSettings.setOpenTelemetryTracerProvider(openTelemetry.getTracerProvider());
+    }
 
     return BigQueryReadClient.create(bigQueryReadSettings.build());
   }
