@@ -41,6 +41,8 @@ import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.http.HttpTransportOptions;
+import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.trace.Tracer;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.CallableStatement;
@@ -138,6 +140,11 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   Long connectionPoolSize;
   Long listenerPoolSize;
   String partnerToken;
+  Boolean enableGcpTraceExporter;
+  Boolean enableGcpLogExporter;
+  OpenTelemetry customOpenTelemetry;
+  Tracer tracer =
+      OpenTelemetry.noop().getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME);
   DatabaseMetaData databaseMetaData;
 
   BigQueryConnection(String url) throws IOException {
@@ -243,6 +250,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     this.connectionPoolSize = ds.getConnectionPoolSize();
     this.listenerPoolSize = ds.getListenerPoolSize();
     this.partnerToken = ds.getPartnerToken();
+    this.enableGcpTraceExporter = ds.getEnableGcpTraceExporter();
+    this.enableGcpLogExporter = ds.getEnableGcpLogExporter();
+    this.customOpenTelemetry = ds.getCustomOpenTelemetry();
 
     this.headerProvider = createHeaderProvider();
     this.bigQuery = getBigQueryConnection();
@@ -939,6 +949,14 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       bigQueryOptions.setTransportOptions(this.httpTransportOptions);
     }
 
+    OpenTelemetry openTelemetry =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(
+            this.enableGcpTraceExporter, this.enableGcpLogExporter, this.customOpenTelemetry);
+    if (this.enableGcpTraceExporter || this.customOpenTelemetry != null) {
+      this.tracer = BigQueryJdbcOpenTelemetry.getTracer(openTelemetry);
+      bigQueryOptions.setOpenTelemetryTracer(this.tracer);
+    }
+
     BigQueryOptions options = bigQueryOptions.setHeaderProvider(this.headerProvider).build();
     options.setDefaultJobCreationMode(
         this.useStatelessQueryMode
@@ -986,6 +1004,13 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     }
 
     bigQueryReadSettings.setTransportChannelProvider(activeProvider);
+
+    OpenTelemetry openTelemetry =
+        BigQueryJdbcOpenTelemetry.getOpenTelemetry(
+            this.enableGcpTraceExporter, this.enableGcpLogExporter, this.customOpenTelemetry);
+    if (this.enableGcpTraceExporter || this.customOpenTelemetry != null) {
+      bigQueryReadSettings.setOpenTelemetryTracerProvider(openTelemetry.getTracerProvider());
+    }
 
     return BigQueryReadClient.create(bigQueryReadSettings.build());
   }
@@ -1086,5 +1111,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           "Unsupported CallableStatement feature");
     }
     return prepareCall(sql);
+  }
+
+  public Tracer getTracer() {
+    return this.tracer;
   }
 }

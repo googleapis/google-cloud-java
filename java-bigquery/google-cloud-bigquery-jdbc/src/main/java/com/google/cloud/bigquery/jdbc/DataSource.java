@@ -20,6 +20,7 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import io.opentelemetry.api.OpenTelemetry;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -113,6 +114,9 @@ public class DataSource implements javax.sql.DataSource {
   private String privateServiceConnect;
   private Long connectionPoolSize;
   private Long listenerPoolSize;
+  private Boolean enableGcpTraceExporter;
+  private Boolean enableGcpLogExporter;
+  private OpenTelemetry customOpenTelemetry;
 
   // Make sure the JDBC driver class is loaded.
   static {
@@ -324,6 +328,18 @@ public class DataSource implements javax.sql.DataSource {
           .put(
               BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME,
               (ds, val) -> ds.setListenerPoolSize(Long.parseLong(val)))
+          .put(
+              BigQueryJdbcUrlUtility.ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setEnableGcpTraceExporter(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME)))
+          .put(
+              BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setEnableGcpLogExporter(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME)))
           .build();
 
   public static DataSource fromUrl(String url) {
@@ -375,7 +391,11 @@ public class DataSource implements javax.sql.DataSource {
       throw new BigQueryJdbcException(
           "The URL " + getURL() + " is invalid. Please specify a valid Connection URL. ");
     }
-    return DriverManager.getConnection(getURL(), createProperties());
+    Properties props = createProperties();
+    if (this.customOpenTelemetry != null) {
+      props.put("customOpenTelemetry", this.customOpenTelemetry);
+    }
+    return DriverManager.getConnection(getURL(), props);
   }
 
   private Properties createProperties() {
@@ -616,6 +636,16 @@ public class DataSource implements javax.sql.DataSource {
           BigQueryJdbcUrlUtility.LISTENER_POOL_SIZE_PROPERTY_NAME,
           String.valueOf(this.listenerPoolSize));
     }
+    if (this.enableGcpTraceExporter != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME,
+          String.valueOf(this.enableGcpTraceExporter));
+    }
+    if (this.enableGcpLogExporter != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME,
+          String.valueOf(this.enableGcpLogExporter));
+    }
     return connectionProperties;
   }
 
@@ -735,6 +765,34 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setListenerPoolSize(Long listenerPoolSize) {
     this.listenerPoolSize = listenerPoolSize;
+  }
+
+  public Boolean getEnableGcpTraceExporter() {
+    return enableGcpTraceExporter != null
+        ? enableGcpTraceExporter
+        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GCP_TRACE_EXPORTER_VALUE;
+  }
+
+  public void setEnableGcpTraceExporter(Boolean enableGcpTraceExporter) {
+    this.enableGcpTraceExporter = enableGcpTraceExporter;
+  }
+
+  public Boolean getEnableGcpLogExporter() {
+    return enableGcpLogExporter != null
+        ? enableGcpLogExporter
+        : BigQueryJdbcUrlUtility.DEFAULT_ENABLE_GCP_LOG_EXPORTER_VALUE;
+  }
+
+  public void setEnableGcpLogExporter(Boolean enableGcpLogExporter) {
+    this.enableGcpLogExporter = enableGcpLogExporter;
+  }
+
+  public OpenTelemetry getCustomOpenTelemetry() {
+    return customOpenTelemetry;
+  }
+
+  public void setCustomOpenTelemetry(OpenTelemetry customOpenTelemetry) {
+    this.customOpenTelemetry = customOpenTelemetry;
   }
 
   public void setHighThroughputMinTableSize(Integer highThroughputMinTableSize) {

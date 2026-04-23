@@ -162,6 +162,10 @@ final class BigQueryJdbcUrlUtility {
   static final int DEFAULT_SWA_APPEND_ROW_COUNT_VALUE = 1000;
   static final String SWA_ACTIVATION_ROW_COUNT_PROPERTY_NAME = "SWA_ActivationRowCount";
   static final int DEFAULT_SWA_ACTIVATION_ROW_COUNT_VALUE = 3;
+  static final String ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME = "enableGcpTraceExporter";
+  static final boolean DEFAULT_ENABLE_GCP_TRACE_EXPORTER_VALUE = false;
+  static final String ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME = "enableGcpLogExporter";
+  static final boolean DEFAULT_ENABLE_GCP_LOG_EXPORTER_VALUE = false;
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcUrlUtility.class.getName());
   static final String FILTER_TABLES_ON_DEFAULT_DATASET_PROPERTY_NAME =
@@ -607,6 +611,18 @@ final class BigQueryJdbcUrlUtility {
                       .setDescription(
                           "Reason for the request, which is passed as the x-goog-request-reason"
                               + " header.")
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(ENABLE_GCP_TRACE_EXPORTER_PROPERTY_NAME)
+                      .setDescription(
+                          "Enables or disables GCP OpenTelemetry Trace exporter. Disabled by default.")
+                      .setDefaultValue(String.valueOf(DEFAULT_ENABLE_GCP_TRACE_EXPORTER_VALUE))
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(ENABLE_GCP_LOG_EXPORTER_PROPERTY_NAME)
+                      .setDescription(
+                          "Enables or disables GCP OpenTelemetry Log exporter. Disabled by default.")
+                      .setDefaultValue(String.valueOf(DEFAULT_ENABLE_GCP_LOG_EXPORTER_VALUE))
                       .build())));
 
   private static final List<String> NETWORK_PROPERTIES =
