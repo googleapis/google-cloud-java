@@ -236,5 +236,3 @@ Logged by `io.grpc.ChannelLogger`, these states define connection phases:
 >         .build()
 > );
 > ```
-
-grpc_channel_pool_guide.md
