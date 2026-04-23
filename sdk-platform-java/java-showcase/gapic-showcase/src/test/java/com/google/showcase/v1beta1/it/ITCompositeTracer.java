@@ -124,6 +124,7 @@ class ITCompositeTracer {
                   .get(AttributeKey.stringKey(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE)))
           .isEqualTo(SHOWCASE_SERVER_ADDRESS);
 
+      Thread.sleep(100);
       // Verify metric name and one basic attribute server.address
       Collection<MetricData> actualMetrics = metricReader.collectAllMetrics();
 
