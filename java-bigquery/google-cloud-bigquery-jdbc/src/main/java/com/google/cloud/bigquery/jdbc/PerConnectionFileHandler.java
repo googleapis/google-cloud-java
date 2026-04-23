@@ -109,13 +109,14 @@ class PerConnectionFileHandler extends Handler {
   }
 
   @Override
+  @Override
   public void close() throws SecurityException {
-    if (defaultHandler != null) {
-      defaultHandler.close();
-    }
     for (FileHandler h : handlers.values()) {
-      h.close();
+      try { h.close(); } catch (Exception e) {}
     }
+    try {
+      if (defaultHandler != null) defaultHandler.close();
+    } finally { handlers.clear(); }
   }
 
   public void closeHandler(String connectionId) {
