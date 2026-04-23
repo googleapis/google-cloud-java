@@ -160,8 +160,7 @@ public class BigQueryTelemetryTracerTest {
         "java.lang.Exception",
         spanData.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
     assertEquals("Exception", spanData.getAttributes().get(BigQueryTelemetryTracer.STATUS_MESSAGE));
-    assertEquals(
-        "Exception", spanData.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+    assertEquals("Exception", spanData.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
   }
 
   @Test

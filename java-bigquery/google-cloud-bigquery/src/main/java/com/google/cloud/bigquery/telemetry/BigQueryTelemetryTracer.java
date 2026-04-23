@@ -82,8 +82,7 @@ public final class BigQueryTelemetryTracer {
     String simpleName = e.getClass().getSimpleName();
     String statusMessage = simpleName + (message != null ? ": " + message : "");
     span.setAttribute(BigQueryTelemetryTracer.EXCEPTION_TYPE, e.getClass().getName());
-    span.setAttribute(
-        BigQueryTelemetryTracer.ERROR_TYPE, ErrorTypeUtil.extractErrorType(e));
+    span.setAttribute(BigQueryTelemetryTracer.ERROR_TYPE, ErrorTypeUtil.extractErrorType(e));
     span.setAttribute(BigQueryTelemetryTracer.STATUS_MESSAGE, statusMessage);
     span.setStatus(StatusCode.ERROR, statusMessage);
   }
