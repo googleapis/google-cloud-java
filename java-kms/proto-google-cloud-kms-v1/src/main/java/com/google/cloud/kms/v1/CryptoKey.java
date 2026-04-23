@@ -1246,6 +1246,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessage
    * justification codes.
    * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
    * By default, this field is absent, and all justification codes are allowed.
+   * If the
+   * `key_access_justifications_policy.allowed_access_reasons`
+   * is empty (zero allowed justification code), all encrypt, decrypt, and sign
+   * operations will fail.
    * </pre>
    *
    * <code>
@@ -1271,6 +1275,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessage
    * justification codes.
    * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
    * By default, this field is absent, and all justification codes are allowed.
+   * If the
+   * `key_access_justifications_policy.allowed_access_reasons`
+   * is empty (zero allowed justification code), all encrypt, decrypt, and sign
+   * operations will fail.
    * </pre>
    *
    * <code>
@@ -1298,6 +1306,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessage
    * justification codes.
    * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
    * By default, this field is absent, and all justification codes are allowed.
+   * If the
+   * `key_access_justifications_policy.allowed_access_reasons`
+   * is empty (zero allowed justification code), all encrypt, decrypt, and sign
+   * operations will fail.
    * </pre>
    *
    * <code>
@@ -4406,6 +4418,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessage
      * justification codes.
      * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
      * By default, this field is absent, and all justification codes are allowed.
+     * If the
+     * `key_access_justifications_policy.allowed_access_reasons`
+     * is empty (zero allowed justification code), all encrypt, decrypt, and sign
+     * operations will fail.
      * </pre>
      *
      * <code>
@@ -4430,6 +4446,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessage
      * justification codes.
      * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
      * By default, this field is absent, and all justification codes are allowed.
+     * If the
+     * `key_access_justifications_policy.allowed_access_reasons`
+     * is empty (zero allowed justification code), all encrypt, decrypt, and sign
+     * operations will fail.
      * </pre>
      *
      * <code>
@@ -4461,6 +4481,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessage
      * justification codes.
      * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
      * By default, this field is absent, and all justification codes are allowed.
+     * If the
+     * `key_access_justifications_policy.allowed_access_reasons`
+     * is empty (zero allowed justification code), all encrypt, decrypt, and sign
+     * operations will fail.
      * </pre>
      *
      * <code>
@@ -4494,6 +4518,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessage
      * justification codes.
      * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
      * By default, this field is absent, and all justification codes are allowed.
+     * If the
+     * `key_access_justifications_policy.allowed_access_reasons`
+     * is empty (zero allowed justification code), all encrypt, decrypt, and sign
+     * operations will fail.
      * </pre>
      *
      * <code>
@@ -4524,6 +4552,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessage
      * justification codes.
      * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
      * By default, this field is absent, and all justification codes are allowed.
+     * If the
+     * `key_access_justifications_policy.allowed_access_reasons`
+     * is empty (zero allowed justification code), all encrypt, decrypt, and sign
+     * operations will fail.
      * </pre>
      *
      * <code>
@@ -4563,6 +4595,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessage
      * justification codes.
      * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
      * By default, this field is absent, and all justification codes are allowed.
+     * If the
+     * `key_access_justifications_policy.allowed_access_reasons`
+     * is empty (zero allowed justification code), all encrypt, decrypt, and sign
+     * operations will fail.
      * </pre>
      *
      * <code>
@@ -4592,6 +4628,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessage
      * justification codes.
      * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
      * By default, this field is absent, and all justification codes are allowed.
+     * If the
+     * `key_access_justifications_policy.allowed_access_reasons`
+     * is empty (zero allowed justification code), all encrypt, decrypt, and sign
+     * operations will fail.
      * </pre>
      *
      * <code>
@@ -4617,6 +4657,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessage
      * justification codes.
      * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
      * By default, this field is absent, and all justification codes are allowed.
+     * If the
+     * `key_access_justifications_policy.allowed_access_reasons`
+     * is empty (zero allowed justification code), all encrypt, decrypt, and sign
+     * operations will fail.
      * </pre>
      *
      * <code>
@@ -4646,6 +4690,10 @@ public final class CryptoKey extends com.google.protobuf.GeneratedMessage
      * justification codes.
      * https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes
      * By default, this field is absent, and all justification codes are allowed.
+     * If the
+     * `key_access_justifications_policy.allowed_access_reasons`
+     * is empty (zero allowed justification code), all encrypt, decrypt, and sign
+     * operations will fail.
      * </pre>
      *
      * <code>

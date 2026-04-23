@@ -47,6 +47,7 @@ import com.google.cloud.vectorsearch.v1.ListIndexesRequest;
 import com.google.cloud.vectorsearch.v1.ListIndexesResponse;
 import com.google.cloud.vectorsearch.v1.OperationMetadata;
 import com.google.cloud.vectorsearch.v1.UpdateCollectionRequest;
+import com.google.cloud.vectorsearch.v1.UpdateIndexRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -128,6 +129,15 @@ public abstract class VectorSearchServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateIndexRequest, Operation> createIndexCallable() {
     throw new UnsupportedOperationException("Not implemented: createIndexCallable()");
+  }
+
+  public OperationCallable<UpdateIndexRequest, Index, OperationMetadata>
+      updateIndexOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateIndexOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateIndexRequest, Operation> updateIndexCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateIndexCallable()");
   }
 
   public OperationCallable<DeleteIndexRequest, Empty, OperationMetadata>

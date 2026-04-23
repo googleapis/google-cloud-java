@@ -374,11 +374,11 @@ public final class PlaybookProto extends com.google.protobuf.GeneratedFile {
           + "cations/*/agents/*/playbooks/*/versions/"
           + "*}\032x\312A\031dialogflow.googleapis.com\322AYhttps"
           + "://www.googleapis.com/auth/cloud-platfor"
-          + "m,https://www.googleapis.com/auth/dialogflowB\214\001\n"
+          + "m,https://www.googleapis.com/auth/dialogflowB\260\001\n"
           + "!com.google.cloud.dialogflow.cx.v3B\r"
           + "PlaybookProtoP\001Z1cloud.google.com/go"
           + "/dialogflow/cx/apiv3/cxpb;cxpb\242\002\002DF\252\002\035Go"
-          + "ogle.Cloud.Dialogflow.Cx.V3b\006proto3"
+          + "ogle.Cloud.Dialogflow.Cx.V3\352\002!Google::Cloud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

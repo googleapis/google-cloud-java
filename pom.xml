@@ -124,8 +124,8 @@
     <module>java-grafeas</module>
     <module>java-gsuite-addons</module>
     <module>java-hypercomputecluster</module>
-    <module>java-iam</module>
     <module>java-iam-admin</module>
+    <module>java-iam-policy</module>
     <module>java-iamcredentials</module>
     <module>java-iap</module>
     <module>java-ids</module>
