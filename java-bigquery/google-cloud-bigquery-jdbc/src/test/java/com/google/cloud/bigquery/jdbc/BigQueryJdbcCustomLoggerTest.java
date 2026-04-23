@@ -70,11 +70,11 @@ public class BigQueryJdbcCustomLoggerTest {
   @Test
   public void testLogWithCallerInference() {
     logger.fine("Test message with format %s", "arg");
-    
+
     List<LogRecord> records = testHandler.getRecords();
     assertEquals(1, records.size());
     LogRecord record = records.get(0);
-    
+
     assertEquals("testLogWithCallerInference", record.getSourceMethodName());
     assertEquals(BigQueryJdbcCustomLoggerTest.class.getName(), record.getSourceClassName());
   }
@@ -83,15 +83,14 @@ public class BigQueryJdbcCustomLoggerTest {
   public void testLogWithException() {
     Exception ex = new Exception("Test exception");
     logger.severe(ex, "Error occurred: %s", "detail");
-    
+
     List<LogRecord> records = testHandler.getRecords();
     assertEquals(1, records.size());
     LogRecord record = records.get(0);
-    
+
     assertEquals("testLogWithException", record.getSourceMethodName());
     assertEquals(BigQueryJdbcCustomLoggerTest.class.getName(), record.getSourceClassName());
     assertTrue(record.getMessage().contains("Error occurred: detail"));
     assertTrue(record.getMessage().contains("java.lang.Exception: Test exception"));
   }
 }
-

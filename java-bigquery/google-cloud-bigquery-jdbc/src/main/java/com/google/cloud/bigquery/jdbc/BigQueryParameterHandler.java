@@ -66,6 +66,7 @@ class BigQueryParameterHandler {
             QueryParameterValue.of(parameterValue, sqlType));
       }
     } catch (NullPointerException e) {
+      LOG.severe(e, "Null parameter mapping encountered.");
       if (e.getMessage().contains("Null type")) {
         throw new BigQueryJdbcException("One or more parameters missing in Prepared statement.", e);
       }

@@ -90,7 +90,9 @@ class BigQueryJdbcCustomLogger extends Logger {
   }
 
   void warning(Throwable thrown, String format, Object... args) {
-    logWithCaller(Level.WARNING, () -> String.format(format, args) + System.lineSeparator() + formatStackTrace(thrown));
+    logWithCaller(
+        Level.WARNING,
+        () -> String.format(format, args) + System.lineSeparator() + formatStackTrace(thrown));
   }
 
   void severe(String format, Object... args) {
@@ -102,9 +104,8 @@ class BigQueryJdbcCustomLogger extends Logger {
   }
 
   void severe(Throwable thrown, String format, Object... args) {
-    logWithCaller(Level.SEVERE, () -> String.format(format, args) + System.lineSeparator() + formatStackTrace(thrown));
+    logWithCaller(
+        Level.SEVERE,
+        () -> String.format(format, args) + System.lineSeparator() + formatStackTrace(thrown));
   }
 }
-
-
-

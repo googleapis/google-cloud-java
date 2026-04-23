@@ -91,6 +91,7 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
       sb.append("}");
       return sb.toString();
     } catch (SQLException e) {
+      LOG.severe(e, "Error converting struct to string");
       return "{ \"error\": \"Error converting struct to string: " + e.getMessage() + "\" }";
     }
   }

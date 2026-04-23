@@ -189,6 +189,7 @@ final class BigQueryJdbcProxyUtility {
                 .setSSLSocketFactory(sslSocketFactory)
                 .build());
       } catch (IOException | GeneralSecurityException e) {
+        LOG.severe(e, "Failed to configure SSL TrustStore for HTTP transport");
         throw new BigQueryJdbcRuntimeException(e);
       }
     }
@@ -278,6 +279,7 @@ final class BigQueryJdbcProxyUtility {
                           .sslContext(grpcSslContext);
 
                     } catch (IOException | GeneralSecurityException e) {
+                      LOG.severe(e, "Failed to configure SSL TrustStore for GRPC channel");
                       throw new BigQueryJdbcRuntimeException(e);
                     }
                   }

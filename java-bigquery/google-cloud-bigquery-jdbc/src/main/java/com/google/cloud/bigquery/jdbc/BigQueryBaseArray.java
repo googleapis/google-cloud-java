@@ -166,6 +166,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
       }
       return Arrays.deepToString(array);
     } catch (SQLException e) {
+      LOG.severe(e, "Error converting array to string");
       return "[Error converting array to string: " + e.getMessage() + "]";
     }
   }
