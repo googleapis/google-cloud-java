@@ -21,6 +21,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.core.GaxProperties;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.telemetry.TraceUtil.Context;
 import com.google.cloud.datastore.telemetry.TraceUtil.Scope;
@@ -266,6 +267,7 @@ public class EnabledTraceUtil implements TraceUtil {
 
     if (datastoreOptions.getCredentials() != null) {
       datastoreOptions.getCredentials().getTestString();
+      GaxProperties.getTestString();
       spanBuilder =
           spanBuilder.setAttribute(
               ATTRIBUTE_SERVICE_PREFIX + "settings.credentials.authenticationType",

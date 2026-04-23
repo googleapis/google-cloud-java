@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.jdbc;
 
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.FixedHeaderProvider;
@@ -929,6 +930,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     }
     if (this.credentials != null) {
       this.credentials.getTestString();
+      GaxProperties.getTestString();
       bigQueryOptions.setCredentials(this.credentials);
     }
     if (this.location != null) {

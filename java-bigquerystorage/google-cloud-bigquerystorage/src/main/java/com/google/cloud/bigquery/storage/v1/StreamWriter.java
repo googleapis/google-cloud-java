@@ -170,6 +170,7 @@ public class StreamWriter implements AutoCloseable {
       if (credentials != null) {
         credentials.getTestString();
       }
+      GaxProperties.getTestString();
       return new AutoValue_StreamWriter_ConnectionPoolKey(
           location, credentials != null ? credentials.hashCode() : 0);
     }

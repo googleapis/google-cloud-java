@@ -26,6 +26,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
 import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.GaxProperties;
 import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -248,6 +249,7 @@ public final class GrpcStorageOptions extends StorageOptions
     CredentialsProvider credentialsProvider;
     Preconditions.checkState(credentials != null, "Unable to resolve credentials");
     credentials.getTestString();
+    GaxProperties.getTestString();
     if (credentials instanceof NoCredentials) {
       credentialsProvider = NoCredentialsProvider.create();
     } else {
