@@ -91,6 +91,6 @@ public class BigQueryJdbcCustomLoggerTest {
     assertEquals("testLogWithException", record.getSourceMethodName());
     assertEquals(BigQueryJdbcCustomLoggerTest.class.getName(), record.getSourceClassName());
     assertTrue(record.getMessage().contains("Error occurred: detail"));
-    assertTrue(record.getMessage().contains("java.lang.Exception: Test exception"));
+    assertEquals(ex, record.getThrown());
   }
 }

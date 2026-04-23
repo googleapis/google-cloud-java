@@ -16,10 +16,9 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.function.Supplier;
 import java.util.logging.Level;
+import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 class BigQueryJdbcCustomLogger extends Logger {
@@ -35,6 +34,10 @@ class BigQueryJdbcCustomLogger extends Logger {
   }
 
   private void logWithCaller(Level level, Supplier<String> msgSupplier) {
+    logWithCaller(level, null, msgSupplier);
+  }
+
+  private void logWithCaller(Level level, Throwable thrown, Supplier<String> msgSupplier) {
     if (!isLoggable(level)) {
       return;
     }
@@ -52,13 +55,15 @@ class BigQueryJdbcCustomLogger extends Logger {
       }
     }
 
-    logp(level, sourceClass, sourceMethod, msgSupplier);
-  }
-
-  private String formatStackTrace(Throwable thrown) {
-    StringWriter sw = new StringWriter();
-    thrown.printStackTrace(new PrintWriter(sw));
-    return sw.toString();
+    if (thrown == null) {
+      logp(level, sourceClass, sourceMethod, msgSupplier);
+    } else {
+      LogRecord record = new LogRecord(level, msgSupplier.get());
+      record.setSourceClassName(sourceClass);
+      record.setSourceMethodName(sourceMethod);
+      record.setThrown(thrown);
+      log(record);
+    }
   }
 
   void finest(String format, Object... args) {
@@ -86,13 +91,11 @@ class BigQueryJdbcCustomLogger extends Logger {
   }
 
   void warning(Throwable thrown, String msg) {
-    logWithCaller(Level.WARNING, () -> msg + System.lineSeparator() + formatStackTrace(thrown));
+    logWithCaller(Level.WARNING, thrown, () -> msg);
   }
 
   void warning(Throwable thrown, String format, Object... args) {
-    logWithCaller(
-        Level.WARNING,
-        () -> String.format(format, args) + System.lineSeparator() + formatStackTrace(thrown));
+    logWithCaller(Level.WARNING, thrown, () -> String.format(format, args));
   }
 
   void severe(String format, Object... args) {
@@ -100,12 +103,10 @@ class BigQueryJdbcCustomLogger extends Logger {
   }
 
   void severe(Throwable thrown, String msg) {
-    logWithCaller(Level.SEVERE, () -> msg + System.lineSeparator() + formatStackTrace(thrown));
+    logWithCaller(Level.SEVERE, thrown, () -> msg);
   }
 
   void severe(Throwable thrown, String format, Object... args) {
-    logWithCaller(
-        Level.SEVERE,
-        () -> String.format(format, args) + System.lineSeparator() + formatStackTrace(thrown));
+    logWithCaller(Level.SEVERE, thrown, () -> String.format(format, args));
   }
 }
