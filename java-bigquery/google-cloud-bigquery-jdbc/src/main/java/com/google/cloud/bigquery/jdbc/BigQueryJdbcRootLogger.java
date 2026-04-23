@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.common.base.Strings;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.nio.file.Files;
@@ -24,7 +25,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Optional;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Formatter;
@@ -49,6 +49,32 @@ class BigQueryJdbcRootLogger {
   private static Path currentLogPath = null;
   private static int fileCounter = 0;
 
+  static final String PROCESS_ID = ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
+
+  private static final ThreadLocal<SimpleDateFormat> DATE_FORMATTER =
+      ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS"));
+
+  static String getThreadName(long threadId) {
+    Thread current = Thread.currentThread();
+    if (current.getId() == threadId) {
+      return current.getName();
+    }
+    ThreadGroup rootGroup = current.getThreadGroup();
+    while (rootGroup.getParent() != null) {
+      rootGroup = rootGroup.getParent();
+    }
+
+    int count = rootGroup.activeCount();
+    Thread[] threads = new Thread[count * 2];
+    int actualCount = rootGroup.enumerate(threads);
+    for (int i = 0; i < actualCount; i++) {
+      if (threads[i].getId() == threadId) {
+        return threads[i].getName();
+      }
+    }
+    return "";
+  }
+
   static {
     logger.setUseParentHandlers(false);
     storageLogger.setUseParentHandlers(true);
@@ -62,49 +88,43 @@ class BigQueryJdbcRootLogger {
 
   public static Formatter getFormatter() {
     return new Formatter() {
-      private static final String PATTERN = "yyyy-MM-dd HH:mm:ss.SSS";
-      private static final String FORMAT =
-          "%1$s %2$5s %3$d --- [%4$-7.15s] %5$-50s %6$-20s: %7$s%8$s";
       private static final int MAX_THREAD_NAME_LENGTH = 15;
-
-      /**
-       * Returns the thread for the given thread id.
-       *
-       * @param threadId ID for the thread being logged.
-       * @return returns the thread
-       */
-      Optional<Thread> getThread(long threadId) {
-        return Thread.getAllStackTraces().keySet().stream()
-            .filter(thread -> thread.getId() == threadId)
-            .findFirst();
-      }
 
       @Override
       public String format(LogRecord record) {
-        String date = new SimpleDateFormat(PATTERN).format(new Date(record.getMillis()));
-        String threadName =
-            getThread(record.getThreadID())
-                .map(Thread::getName)
-                .map(
-                    name ->
-                        name.length() > MAX_THREAD_NAME_LENGTH
-                            ? name.substring(name.length() - MAX_THREAD_NAME_LENGTH)
-                            : name)
-                .orElse("");
-        long processId =
-            Long.parseLong(ManagementFactory.getRuntimeMXBean().getName().split("@")[0]);
+        String date = DATE_FORMATTER.get().format(new Date(record.getMillis()));
+
+        long threadId = record.getThreadID();
+        String threadName = getThreadName(threadId);
+
+        if (threadName.length() > MAX_THREAD_NAME_LENGTH) {
+          threadName = threadName.substring(threadName.length() - MAX_THREAD_NAME_LENGTH);
+        }
+
         String sourceClassName = record.getLoggerName();
         String sourceMethodName = record.getSourceMethodName();
-        return String.format(
-            FORMAT,
-            date,
-            record.getLevel().getName(),
-            processId,
-            threadName,
-            sourceClassName,
-            sourceMethodName,
-            record.getMessage(),
-            System.lineSeparator());
+
+        // Expected log format: yyyy-MM-dd HH:mm:ss.SSS LEVEL PID --- [THREAD] CLASS METHOD: MESSAGE
+        // Example: 2026-04-22 10:16:00.123  INFO 12345 --- [main   ]
+        // com.google.cloud.bigquery.jdbc.BigQueryConnection connect             : Connection
+        // successful
+        StringBuilder sb = new StringBuilder(256);
+        sb.append(date)
+            .append(" ")
+            .append(Strings.padStart(record.getLevel().getName(), 5, ' '))
+            .append(" ")
+            .append(PROCESS_ID)
+            .append(" --- [")
+            .append(Strings.padEnd(threadName, 7, ' '))
+            .append("] ")
+            .append(Strings.padEnd(sourceClassName != null ? sourceClassName : "", 50, ' '))
+            .append(" ")
+            .append(Strings.padEnd(sourceMethodName != null ? sourceMethodName : "", 20, ' '))
+            .append(": ")
+            .append(record.getMessage())
+            .append(System.lineSeparator());
+
+        return sb.toString();
       }
     };
   }
