@@ -182,11 +182,14 @@ public class ITComputeGoldenSignals extends BaseTest {
         .getTraceSettings()
         .setRetrySettings(
             RetrySettings.newBuilder()
-                .setTotalTimeoutDuration(Duration.ofSeconds(60))
+                .setTotalTimeoutDuration(Duration.ofMinutes(5))
                 .setInitialRpcTimeoutDuration(Duration.ofSeconds(5))
                 .setMaxRpcTimeoutDuration(Duration.ofSeconds(10))
                 .build())
-        .setRetryableCodes(StatusCode.Code.NOT_FOUND);
+        .setRetryableCodes(
+            StatusCode.Code.NOT_FOUND,
+            StatusCode.Code.INTERNAL,
+            StatusCode.Code.DEADLINE_EXCEEDED);
 
     settingsBuilder.getStubSettingsBuilder().setTracerFactory(BaseApiTracerFactory.getInstance());
 
@@ -299,7 +302,18 @@ public class ITComputeGoldenSignals extends BaseTest {
   }
 
   private void fetchAndValidateTrace(String traceId, boolean expectError) throws Exception {
-    Trace trace = traceClient.getTrace(DEFAULT_PROJECT, traceId);
+    Trace trace = null;
+    try {
+      trace = traceClient.getTrace(DEFAULT_PROJECT, traceId);
+    } catch (Exception e) {
+      logger.error(
+          "Exception occurred while fetching trace for project: "
+              + DEFAULT_PROJECT
+              + ", traceId: "
+              + traceId,
+          e);
+      throw e;
+    }
     assertThat(trace).isNotNull();
 
     for (TraceSpan span : trace.getSpansList()) {
@@ -506,6 +520,7 @@ public class ITComputeGoldenSignals extends BaseTest {
         if (e.getStatus().getCode() == Status.Code.NOT_FOUND) {
           logger.info("Metric not found yet (gRPC NOT_FOUND): " + e.getMessage());
         } else {
+          logger.error("Encountered unexpected StatusRuntimeException while polling for metrics", e);
           throw e;
         }
       }
