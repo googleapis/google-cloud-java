@@ -187,9 +187,7 @@ public class ITComputeGoldenSignals extends BaseTest {
                 .setMaxRpcTimeoutDuration(Duration.ofSeconds(10))
                 .build())
         .setRetryableCodes(
-            StatusCode.Code.NOT_FOUND,
-            StatusCode.Code.INTERNAL,
-            StatusCode.Code.DEADLINE_EXCEEDED);
+            StatusCode.Code.NOT_FOUND, StatusCode.Code.INTERNAL, StatusCode.Code.DEADLINE_EXCEEDED);
 
     settingsBuilder.getStubSettingsBuilder().setTracerFactory(BaseApiTracerFactory.getInstance());
 
@@ -520,7 +518,8 @@ public class ITComputeGoldenSignals extends BaseTest {
         if (e.getStatus().getCode() == Status.Code.NOT_FOUND) {
           logger.info("Metric not found yet (gRPC NOT_FOUND): " + e.getMessage());
         } else {
-          logger.error("Encountered unexpected StatusRuntimeException while polling for metrics", e);
+          logger.error(
+              "Encountered unexpected StatusRuntimeException while polling for metrics", e);
           throw e;
         }
       }
