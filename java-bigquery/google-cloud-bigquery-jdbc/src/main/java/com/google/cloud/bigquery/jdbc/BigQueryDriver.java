@@ -64,7 +64,10 @@ public class BigQueryDriver implements Driver {
     try {
       register();
     } catch (SQLException e) {
-      throw new ExceptionInInitializerError("Registering driver failed: " + e.getMessage());
+      ExceptionInInitializerError ex =
+          new ExceptionInInitializerError("Registering driver failed: " + e.getMessage());
+      LOG.severe(ex, "Registering driver failed: " + e.getMessage());
+      throw ex;
     }
     LoadBalancerRegistry.getDefaultRegistry().register(new PickFirstLoadBalancerProvider());
   }
@@ -95,8 +98,13 @@ public class BigQueryDriver implements Driver {
     if (isRegistered()) {
       return registeredBigqueryJdbcDriver;
     }
-    throw new IllegalStateException(
+    IllegalStateException ex =
+        new IllegalStateException(
+            "Driver is not registered (or it has not been registered using Driver.register() method)");
+    LOG.severe(
+        ex,
         "Driver is not registered (or it has not been registered using Driver.register() method)");
+    throw ex;
   }
 
   /**
@@ -127,6 +135,7 @@ public class BigQueryDriver implements Driver {
         try {
           BigQueryJdbcUrlUtility.parseUrl(connectionUri);
         } catch (BigQueryJdbcRuntimeException e) {
+          LOG.severe(e, "Failed to parse connection URL");
           throw new BigQueryJdbcException(e.getMessage(), e);
         }
 
@@ -186,7 +195,9 @@ public class BigQueryDriver implements Driver {
   public boolean acceptsURL(String url) throws SQLException {
     LOG.finest("++enter++");
     if (url == null || url.isEmpty()) {
-      throw new BigQueryJdbcException("Connection URL is null.");
+      BigQueryJdbcException ex = new BigQueryJdbcException("Connection URL is null.");
+      LOG.severe(ex, "Connection URL is null.");
+      throw ex;
     }
     return url.startsWith("jdbc:bigquery:");
   }

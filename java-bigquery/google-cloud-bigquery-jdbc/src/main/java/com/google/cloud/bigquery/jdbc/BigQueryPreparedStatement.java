@@ -291,6 +291,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         return insertArray;
 
       } catch (DescriptorValidationException | IOException | InterruptedException e) {
+        LOG.severe(e, "Failed to execute batch with Write API");
         throw new BigQueryJdbcRuntimeException(e);
       }
 
@@ -319,8 +320,10 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         }
         return result;
       } catch (InterruptedException ex) {
+        LOG.severe(ex, "Interrupted during individual INSERT batch");
         throw new BigQueryJdbcRuntimeException(ex);
       } catch (SQLException e) {
+        LOG.severe(e, "SQL error during individual INSERT batch");
         throw new BigQueryJdbcException(e);
       }
     }

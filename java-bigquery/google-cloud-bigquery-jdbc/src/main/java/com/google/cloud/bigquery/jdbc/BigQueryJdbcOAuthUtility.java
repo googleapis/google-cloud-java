@@ -121,6 +121,7 @@ final class BigQueryJdbcOAuthUtility {
     try {
       authType = AuthType.fromValue(ds.getOAuthType());
     } catch (NumberFormatException exception) {
+      LOG.severe(exception, OAUTH_TYPE_ERROR_MESSAGE);
       throw new IllegalArgumentException(OAUTH_TYPE_ERROR_MESSAGE);
     }
     oauthProperties.put(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME, String.valueOf(authType));
@@ -458,6 +459,7 @@ final class BigQueryJdbcOAuthUtility {
         Matcher m = p.matcher(response);
 
         if (!m.find()) {
+          LOG.severe("Could not retrieve the code for user auth");
           throw new BigQueryJdbcRuntimeException("Could not retrieve the code for user auth");
         }
         code = m.group();
@@ -467,6 +469,7 @@ final class BigQueryJdbcOAuthUtility {
         socket.close();
         serverSocket.close();
       } else {
+        LOG.severe("User auth only supported in desktop environments");
         throw new BigQueryJdbcRuntimeException("User auth only supported in desktop environments");
       }
 

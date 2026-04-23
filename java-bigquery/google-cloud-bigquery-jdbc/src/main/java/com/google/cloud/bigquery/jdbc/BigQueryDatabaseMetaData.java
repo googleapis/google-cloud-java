@@ -2639,6 +2639,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
       return this.statement.executeQuery(formattedSql);
     } catch (SQLException e) {
+      LOG.severe(e, "Error executing getPrimaryKeys");
       throw new BigQueryJdbcException(e);
     }
   }
@@ -2654,6 +2655,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
       return this.statement.executeQuery(formattedSql);
     } catch (SQLException e) {
+      LOG.severe(e, "Error executing getImportedKeys");
       throw new BigQueryJdbcException(e);
     }
   }
@@ -2669,6 +2671,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
       return this.statement.executeQuery(formattedSql);
     } catch (SQLException e) {
+      LOG.severe(e, "Error executing getExportedKeys");
       throw new BigQueryJdbcException(e);
     }
   }
@@ -2698,6 +2701,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               foreignTable);
       return this.statement.executeQuery(formattedSql);
     } catch (SQLException e) {
+      LOG.severe(e, "Error executing getCrossReference");
       throw new BigQueryJdbcException(e);
     }
   }

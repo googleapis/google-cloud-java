@@ -109,6 +109,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   protected SQLException createCoercionException(
       int columnIndex, Class<?> targetClass, Exception cause) throws SQLException {
+    LOG.severe(cause, "Coercion failed");
     checkClosed();
     StandardSQLTypeName type;
     String typeName;
