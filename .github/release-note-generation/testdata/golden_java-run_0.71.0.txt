@@ -1,0 +1,12 @@
+
+Release Notes:
+### ⚠ BREAKING CHANGES
+
+* 9f28cd5bcd9 fix!: [run] An existing resource_definition `cloudbuild.googleapis.com/WorkerPool` is removed
+* 9f28cd5bcd9 fix!: [run] A type of an existing resource_reference option of the field `worker_pool` in message `.google.cloud.run.v2.SubmitBuildRequest` is changed from `cloudbuild.googleapis.com/WorkerPool` to `cloudbuild.googleapis.com/BuildWorkerPool`
+* 9f28cd5bcd9 fix!: [run] A type of an existing resource_reference option of the field `worker_pool` in message `.google.cloud.run.v2.BuildConfig` is changed from `cloudbuild.googleapis.com/WorkerPool` to `cloudbuild.googleapis.com/BuildWorkerPool`
+
+### Features
+
+* 9f28cd5bcd9 feat: [run] Adding new resource tpye run.googleapis.com/WorkerPool. [googleapis/googleapis@0998e04](https://github.com/googleapis/googleapis/commit/0998e045cf83a1307ceb158e3da304bdaff5bb3a)
+
