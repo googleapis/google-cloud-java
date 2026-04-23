@@ -49,6 +49,12 @@
     <dependency>
       <groupId>dev.cel</groupId>
       <artifactId>cel</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.code.findbugs</groupId>
+          <artifactId>annotations</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.google.crypto.tink</groupId>
