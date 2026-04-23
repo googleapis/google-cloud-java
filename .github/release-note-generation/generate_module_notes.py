@@ -44,7 +44,7 @@ def main():
         "log",
         "--oneline",
         "--first-parent",
-        f"-G^{module}:",
+        f"-G^{re.escape(module)}:",
         "--",
         "versions.txt",
     ]
@@ -65,7 +65,7 @@ def main():
             continue  # Ignore errors if file couldn't be read
 
         # Find the line for the module
-        pattern = re.compile(rf"^{module}:([^:]+):([^:]+)$")
+        pattern = re.compile(rf"^{re.escape(module)}:([^:]+):([^:]+)$")
         for line in content.splitlines():
             match = pattern.match(line)
             if match:
@@ -75,7 +75,7 @@ def main():
                 # Condition for target version
                 if released_ver == target_version and not target_commit:
                     target_commit = commit
-                    print(f"Found target version {target_version} at {commit}")
+                    print(f"Found target version {target_version} at {commit}", file=sys.stderr)
 
                 # Condition for previous non-snapshot version
                 # We ignore snapshot versions by checking both fields.
@@ -87,7 +87,7 @@ def main():
                 ):
                     prev_commit = commit
                     prev_version = released_ver
-                    print(f"Found previous version {released_ver} at {commit}")
+                    print(f"Found previous version {released_ver} at {commit}", file=sys.stderr)
                     break
         if prev_commit:
             break
@@ -101,7 +101,7 @@ def main():
     # Fallback for initial version if no previous version found
     if not prev_commit:
         print(
-            f"Previous version not found in history for module {module}."
+            f"Previous version not found in history for module {module}.", file=sys.stderr
         )
         # Find the first commit affecting that directory
         first_commit_cmd = [
@@ -116,16 +116,17 @@ def main():
         try:
             first_commit_output = run_cmd(first_commit_cmd)
             if first_commit_output:
-                prev_commit = first_commit_output.splitlines()[0].split()[0]
-                print(f"Using first commit affecting directory as base: {prev_commit}")
+                prev_commit = None
+                print(f"No previous version found. Generating notes from the beginning of history for {directory}.", file=sys.stderr)
             else:
-                print(f"No history found for directory {directory}.")
+                print(f"No history found for directory {directory}.", file=sys.stderr)
                 sys.exit(1)
         except SystemExit:
             sys.exit(1)
 
+    range_desc = f"between {prev_commit} and {target_commit}" if prev_commit else f"up to {target_commit}"
     print(
-        f"Generating notes between {prev_commit} and {target_commit} for directory {directory}"
+        f"Generating notes {range_desc} for directory {directory}", file=sys.stderr
     )
 
     # 2. Generate commit history in that range affecting that directory
@@ -136,7 +137,7 @@ def main():
         "log",
         "--format=%H %s%n%b%n--END_OF_COMMIT--",
         "--first-parent",
-        f"{prev_commit}..{target_commit}",
+        f"{prev_commit}..{target_commit}" if prev_commit else target_commit,
         "--",
         directory,
     ]
