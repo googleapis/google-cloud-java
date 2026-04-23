@@ -298,6 +298,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         this.bigQueryReadClient = getBigQueryReadClientConnection();
       }
     } catch (IOException e) {
+      LOG.severe(e, "Failed to initialize BigQueryReadClient");
       throw new BigQueryJdbcRuntimeException(e);
     }
     return this.bigQueryReadClient;
@@ -309,6 +310,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         this.bigQueryWriteClient = getBigQueryWriteClientConnection();
       }
     } catch (IOException e) {
+      LOG.severe(e, "Failed to initialize BigQueryWriteClient");
       throw new BigQueryJdbcRuntimeException(e);
     }
     return this.bigQueryWriteClient;
@@ -537,6 +539,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       }
       this.transactionStarted = true;
     } catch (InterruptedException ex) {
+      LOG.severe(ex, "Failed to begin transaction");
       throw new BigQueryJdbcRuntimeException(ex);
     }
   }
@@ -774,6 +777,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         beginTransaction();
       }
     } catch (InterruptedException | BigQueryException ex) {
+      LOG.severe(ex, "Failed to rollback transaction");
       throw new BigQueryJdbcException(ex);
     }
   }
@@ -849,8 +853,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       }
       this.openStatements.clear();
     } catch (ConcurrentModificationException ex) {
+      LOG.severe(ex, "Concurrent modification during close");
       throw new BigQueryJdbcException(ex);
     } catch (InterruptedException e) {
+      LOG.severe(e, "Interrupted during close");
       throw new BigQueryJdbcRuntimeException(e);
     }
     this.isClosed = true;
