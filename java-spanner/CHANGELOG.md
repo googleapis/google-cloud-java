@@ -1,18 +1,17 @@
 # Changelog
 
-## [6.116.1](https://github.com/googleapis/google-cloud-java/compare/1b0a9a014fd...cd6048171fc) (2026-04-21)
+## [6.116.1](https://github.com/googleapis/google-cloud-java/compare/966e8a4d99b...cd6048171fc) (2026-04-21)
 
 ### Features
 
 * feat(spanner): add shared endpoint cooldowns for location-aware rerouting (#12845) ([f5f273b](https://github.com/googleapis/google-cloud-java/commit/f5f273ba0bd6b7ca9a8be7d1b5a89211ef5ff9fc))
 
 
-## [6.116.0](https://github.com/googleapis/google-cloud-java/compare/6bef068b4d8...1b0a9a014fd) (2026-04-14)
+## [6.116.0](https://github.com/googleapis/google-cloud-java/compare/6bef068b4d8...fabe31c2a9d) (2026-04-13)
 
 * No change
 
-
-## [6.115.0](https://github.com/googleapis/google-cloud-java/compare/c2147fc9ab7...5c303706d40) (2026-04-13)
+## [6.115.0](https://github.com/googleapis/google-cloud-java/compare/c2147fc9ab7...6bef068b4d8) (2026-04-10)
 
 ### Bug Fixes
 
@@ -23,20 +22,13 @@
 * fix(spanner): honor built-in metrics opt-out for gRPC metrics exporter (#12711) ([57baaea](https://github.com/googleapis/google-cloud-java/commit/57baaeaae5ef1f819e04b253dfcf570499ccc110))
 
 
-## [6.114.0](https://github.com/googleapis/google-cloud-java/compare/a35f1c267d8...4042feed629) (2026-04-10)
+## [6.114.0](https://github.com/googleapis/google-cloud-java/compare/55c4e0f125c...c2147fc9ab7) (2026-04-08)
 
 * No change
 
-
-## [6.113.0](https://github.com/googleapis/google-cloud-java/compare/8e13cf00a16...c2147fc9ab7~1) (2026-04-08)
+## [6.113.0](https://github.com/googleapis/google-cloud-java/compare/8e13cf00a16...55c4e0f125c) (2026-03-31)
 
 * No change
-
-
-
-
-
-
 
 
 
