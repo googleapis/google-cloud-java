@@ -37,6 +37,9 @@ import com.google.auth.http.HttpTransportFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.util.concurrent.SettableFuture;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Level;
@@ -88,18 +91,20 @@ final class RegionalAccessBoundaryManager {
   private static final ExecutorService EXECUTOR;
 
   static {
-    java.util.concurrent.ThreadPoolExecutor executor =
-        new java.util.concurrent.ThreadPoolExecutor(
+    ThreadPoolExecutor executor =
+        new ThreadPoolExecutor(
             5, // corePoolSize: threads to keep alive
             5, // maximumPoolSize: max threads allowed
             1, // keepAliveTime: time to wait before terminating idle threads
-            java.util.concurrent.TimeUnit.HOURS, // unit for keepAliveTime
-            new java.util.concurrent.LinkedBlockingQueue<>(), // work queue
+            TimeUnit.HOURS, // unit for keepAliveTime
+            new LinkedBlockingQueue<>(), // work queue
             r -> {
               Thread t = new Thread(r, "RAB-refresh-" + threadCount.getAndIncrement());
               t.setDaemon(true);
               return t;
             });
+    // Allow core threads to time out so the executor can shrink to 0 when idle.
+    // Ensures threads are released when idle to avoid unnecessary resource usage.
     executor.allowCoreThreadTimeOut(true);
     EXECUTOR = executor;
   }
