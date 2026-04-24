@@ -1216,6 +1216,56 @@ class ITBigQueryTest {
   }
 
   @Test
+  void testLosslessMaxTimestampIntegration() throws InterruptedException {
+    String query = "SELECT TIMESTAMP '9999-12-31 23:59:59.999999 UTC' as max_ts";
+    QueryJobConfiguration config = QueryJobConfiguration.newBuilder(query).build();
+
+    // 1. Test lossless 64-bit integer parsing (useInt64Timestamps = true)
+    DataFormatOptions losslessOptions =
+        DataFormatOptions.newBuilder().useInt64Timestamp(true).build();
+    BigQuery losslessBigQuery =
+        bigquery.getOptions().toBuilder()
+            .setDataFormatOptions(losslessOptions)
+            .build()
+            .getService();
+
+    TableResult losslessResult = losslessBigQuery.query(config);
+    assertEquals(1L, losslessResult.getTotalRows());
+    for (FieldValueList row : losslessResult.iterateAll()) {
+      long exactMicros = row.get("max_ts").getTimestampValue();
+      assertEquals(253402300799999999L, exactMicros);
+    }
+
+    // 2. Test lossy FLOAT64 rounding behavior (useInt64Timestamps = false)
+    DataFormatOptions floatOptions =
+        DataFormatOptions.newBuilder().useInt64Timestamp(false).build();
+    BigQuery floatBigQuery =
+        bigquery.getOptions().toBuilder().setDataFormatOptions(floatOptions).build().getService();
+
+    TableResult floatResult = floatBigQuery.query(config);
+    assertEquals(1L, floatResult.getTotalRows());
+    for (FieldValueList row : floatResult.iterateAll()) {
+      long roundedMicros = row.get("max_ts").getTimestampValue();
+      assertEquals(253402300800000000L, roundedMicros);
+    }
+
+    // 3. Test ISO8601 timestamp formatting
+    DataFormatOptions isoOptions =
+        DataFormatOptions.newBuilder()
+            .timestampFormatOptions(DataFormatOptions.TimestampFormatOptions.ISO8601_STRING)
+            .build();
+    BigQuery isoBigQuery =
+        bigquery.getOptions().toBuilder().setDataFormatOptions(isoOptions).build().getService();
+
+    TableResult isoResult = isoBigQuery.query(config);
+    assertEquals(1L, isoResult.getTotalRows());
+    for (FieldValueList row : isoResult.iterateAll()) {
+      String isoValue = row.get("max_ts").getStringValue();
+      assertEquals("9999-12-31T23:59:59.999999Z", isoValue);
+    }
+  }
+
+  @Test
   void testListDatasets() {
     Page<Dataset> datasets = bigquery.listDatasets("bigquery-public-data");
     Iterator<Dataset> iterator = datasets.iterateAll().iterator();

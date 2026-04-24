@@ -34,6 +34,7 @@ jobs:
         filters: |
           library:
             - 'java-spanner-jdbc/**'
+            - '.github/workflows/java-spanner-jdbc-ci.yaml'
   units:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
@@ -141,3 +142,14 @@ jobs:
         JOB_TYPE: lint
         HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         BASE_SHA: ${{ github.event.pull_request.base.sha }}
+  required:
+    needs: [ units, units-java8, windows, dependencies, javadoc, lint ]
+    name: conditional-required-check
+    if: ${{ always() }} # Always run even if any "needs" jobs fail
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Fail if any previous failure
+        if: ${{ contains(needs.*.result, 'failure') }}
+        run: exit 1
+      - name: Success otherwise
+        run: echo "Success!"
