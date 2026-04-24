@@ -43,6 +43,7 @@ import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
@@ -1737,141 +1738,154 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       final String catalogParam = effectiveCatalog;
       final String schemaParam = effectiveSchemaPattern;
 
+      SpanContext parentSpanContext = span.getSpanContext();
       Runnable tableFetcher =
           () -> {
-            ExecutorService apiExecutor = null;
-            ExecutorService tableProcessorExecutor = null;
-            final FieldList localResultSchemaFields = resultSchemaFields;
-            final List<Future<List<Table>>> apiFutures = new ArrayList<>();
-            final List<Future<?>> processingFutures = new ArrayList<>();
+            Span backgroundSpan =
+                tracer
+                    .spanBuilder("BigQueryDatabaseMetaData.getTables.background")
+                    .addLink(parentSpanContext)
+                    .startSpan();
 
-            try {
-              List<Dataset> datasetsToScan =
-                  findMatchingBigQueryObjects(
-                      "Dataset",
-                      () ->
-                          bigquery.listDatasets(
-                              catalogParam, DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
-                      (name) -> bigquery.getDataset(DatasetId.of(catalogParam, name)),
-                      (ds) -> ds.getDatasetId().getDataset(),
-                      schemaParam,
-                      schemaRegex,
-                      LOG);
+            try (Scope backgroundScope = backgroundSpan.makeCurrent()) {
+              ExecutorService apiExecutor = null;
+              ExecutorService tableProcessorExecutor = null;
+              final FieldList localResultSchemaFields = resultSchemaFields;
+              final List<Future<List<Table>>> apiFutures = new ArrayList<>();
+              final List<Future<?>> processingFutures = new ArrayList<>();
 
-              if (datasetsToScan.isEmpty()) {
-                LOG.info("Fetcher thread found no matching datasets. Returning empty resultset.");
-                return;
-              }
+              try {
+                List<Dataset> datasetsToScan =
+                    findMatchingBigQueryObjects(
+                        "Dataset",
+                        () ->
+                            bigquery.listDatasets(
+                                catalogParam, DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
+                        (name) -> bigquery.getDataset(DatasetId.of(catalogParam, name)),
+                        (ds) -> ds.getDatasetId().getDataset(),
+                        schemaParam,
+                        schemaRegex,
+                        LOG);
 
-              apiExecutor = Executors.newFixedThreadPool(API_EXECUTOR_POOL_SIZE);
-              tableProcessorExecutor = Executors.newFixedThreadPool(this.metadataFetchThreadCount);
-
-              LOG.fine("Submitting parallel findMatchingTables tasks...");
-              for (Dataset dataset : datasetsToScan) {
-                if (Thread.currentThread().isInterrupted()) {
-                  LOG.warning("Table fetcher interrupted during dataset iteration.");
-                  break;
+                if (datasetsToScan.isEmpty()) {
+                  LOG.info("Fetcher thread found no matching datasets. Returning empty resultset.");
+                  return;
                 }
 
-                final DatasetId currentDatasetId = dataset.getDatasetId();
-                Callable<List<Table>> apiCallable =
-                    () ->
-                        findMatchingBigQueryObjects(
-                            "Table",
-                            () ->
-                                bigquery.listTables(
-                                    currentDatasetId, TableListOption.pageSize(DEFAULT_PAGE_SIZE)),
-                            (name) ->
-                                bigquery.getTable(
-                                    TableId.of(
-                                        currentDatasetId.getProject(),
-                                        currentDatasetId.getDataset(),
-                                        name)),
-                            (tbl) -> tbl.getTableId().getTable(),
-                            tableNamePattern,
-                            tableNameRegex,
-                            LOG);
+                apiExecutor = Executors.newFixedThreadPool(API_EXECUTOR_POOL_SIZE);
+                tableProcessorExecutor =
+                    Executors.newFixedThreadPool(this.metadataFetchThreadCount);
 
-                Callable<List<Table>> wrappedApiCallable = Context.current().wrap(apiCallable);
-                Future<List<Table>> apiFuture = apiExecutor.submit(wrappedApiCallable);
-                apiFutures.add(apiFuture);
-              }
-              LOG.fine("Finished submitting " + apiFutures.size() + " findMatchingTables tasks.");
-              apiExecutor.shutdown();
-
-              LOG.fine("Processing results from findMatchingTables tasks...");
-              for (Future<List<Table>> apiFuture : apiFutures) {
-                if (Thread.currentThread().isInterrupted()) {
-                  LOG.warning("Table fetcher interrupted while processing API futures.");
-                  break;
-                }
-                try {
-                  List<Table> tablesResult = apiFuture.get();
-                  if (tablesResult != null) {
-                    for (Table table : tablesResult) {
-                      if (Thread.currentThread().isInterrupted()) break;
-
-                      final Table currentTable = table;
-                      Runnable processRunnable =
-                          () ->
-                              processTableInfo(
-                                  currentTable,
-                                  requestedTypes,
-                                  collectedResults,
-                                  localResultSchemaFields);
-                      Runnable wrappedProcessRunnable = Context.current().wrap(processRunnable);
-                      Future<?> processFuture =
-                          tableProcessorExecutor.submit(wrappedProcessRunnable);
-                      processingFutures.add(processFuture);
-                    }
+                LOG.fine("Submitting parallel findMatchingTables tasks...");
+                for (Dataset dataset : datasetsToScan) {
+                  if (Thread.currentThread().isInterrupted()) {
+                    LOG.warning("Table fetcher interrupted during dataset iteration.");
+                    break;
                   }
-                } catch (InterruptedException e) {
-                  Thread.currentThread().interrupt();
-                  LOG.warning("Fetcher thread interrupted while waiting for API future result.");
-                  break;
-                } catch (ExecutionException e) {
-                  LOG.warning(
-                      "Error executing findMatchingTables task: "
-                          + e.getMessage()
-                          + ". Cause: "
-                          + e.getCause());
-                } catch (CancellationException e) {
-                  LOG.warning("A findMatchingTables task was cancelled.");
+
+                  final DatasetId currentDatasetId = dataset.getDatasetId();
+                  Callable<List<Table>> apiCallable =
+                      () ->
+                          findMatchingBigQueryObjects(
+                              "Table",
+                              () ->
+                                  bigquery.listTables(
+                                      currentDatasetId,
+                                      TableListOption.pageSize(DEFAULT_PAGE_SIZE)),
+                              (name) ->
+                                  bigquery.getTable(
+                                      TableId.of(
+                                          currentDatasetId.getProject(),
+                                          currentDatasetId.getDataset(),
+                                          name)),
+                              (tbl) -> tbl.getTableId().getTable(),
+                              tableNamePattern,
+                              tableNameRegex,
+                              LOG);
+
+                  Callable<List<Table>> wrappedApiCallable = Context.current().wrap(apiCallable);
+                  Future<List<Table>> apiFuture = apiExecutor.submit(wrappedApiCallable);
+                  apiFutures.add(apiFuture);
                 }
-              }
+                LOG.fine("Finished submitting " + apiFutures.size() + " findMatchingTables tasks.");
+                apiExecutor.shutdown();
 
-              LOG.fine(
-                  "Finished submitting " + processingFutures.size() + " processTableInfo tasks.");
+                LOG.fine("Processing results from findMatchingTables tasks...");
+                for (Future<List<Table>> apiFuture : apiFutures) {
+                  if (Thread.currentThread().isInterrupted()) {
+                    LOG.warning("Table fetcher interrupted while processing API futures.");
+                    break;
+                  }
+                  try {
+                    List<Table> tablesResult = apiFuture.get();
+                    if (tablesResult != null) {
+                      for (Table table : tablesResult) {
+                        if (Thread.currentThread().isInterrupted()) break;
 
-              if (Thread.currentThread().isInterrupted()) {
-                LOG.warning(
-                    "Fetcher interrupted before waiting for processing tasks; cancelling remaining.");
+                        final Table currentTable = table;
+                        Runnable processRunnable =
+                            () ->
+                                processTableInfo(
+                                    currentTable,
+                                    requestedTypes,
+                                    collectedResults,
+                                    localResultSchemaFields);
+                        Runnable wrappedProcessRunnable = Context.current().wrap(processRunnable);
+                        Future<?> processFuture =
+                            tableProcessorExecutor.submit(wrappedProcessRunnable);
+                        processingFutures.add(processFuture);
+                      }
+                    }
+                  } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    LOG.warning("Fetcher thread interrupted while waiting for API future result.");
+                    break;
+                  } catch (ExecutionException e) {
+                    LOG.warning(
+                        "Error executing findMatchingTables task: "
+                            + e.getMessage()
+                            + ". Cause: "
+                            + e.getCause());
+                  } catch (CancellationException e) {
+                    LOG.warning("A findMatchingTables task was cancelled.");
+                  }
+                }
+
+                LOG.fine(
+                    "Finished submitting " + processingFutures.size() + " processTableInfo tasks.");
+
+                if (Thread.currentThread().isInterrupted()) {
+                  LOG.warning(
+                      "Fetcher interrupted before waiting for processing tasks; cancelling remaining.");
+                  processingFutures.forEach(f -> f.cancel(true));
+                } else {
+                  LOG.fine("Waiting for processTableInfo tasks to complete...");
+                  waitForTasksCompletion(processingFutures);
+                  LOG.fine("All processTableInfo tasks completed.");
+                }
+
+                if (!Thread.currentThread().isInterrupted()) {
+                  Comparator<FieldValueList> comparator =
+                      defineGetTablesComparator(localResultSchemaFields);
+                  sortResults(collectedResults, comparator, "getTables", LOG);
+                }
+
+                if (!Thread.currentThread().isInterrupted()) {
+                  populateQueue(collectedResults, queue, localResultSchemaFields);
+                }
+
+              } catch (Throwable t) {
+                LOG.severe("Unexpected error in table fetcher runnable: " + t.getMessage());
+                apiFutures.forEach(f -> f.cancel(true));
                 processingFutures.forEach(f -> f.cancel(true));
-              } else {
-                LOG.fine("Waiting for processTableInfo tasks to complete...");
-                waitForTasksCompletion(processingFutures);
-                LOG.fine("All processTableInfo tasks completed.");
+              } finally {
+                signalEndOfData(queue, localResultSchemaFields);
+                shutdownExecutor(apiExecutor);
+                shutdownExecutor(tableProcessorExecutor);
+                LOG.info("Table fetcher thread finished.");
               }
-
-              if (!Thread.currentThread().isInterrupted()) {
-                Comparator<FieldValueList> comparator =
-                    defineGetTablesComparator(localResultSchemaFields);
-                sortResults(collectedResults, comparator, "getTables", LOG);
-              }
-
-              if (!Thread.currentThread().isInterrupted()) {
-                populateQueue(collectedResults, queue, localResultSchemaFields);
-              }
-
-            } catch (Throwable t) {
-              LOG.severe("Unexpected error in table fetcher runnable: " + t.getMessage());
-              apiFutures.forEach(f -> f.cancel(true));
-              processingFutures.forEach(f -> f.cancel(true));
             } finally {
-              signalEndOfData(queue, localResultSchemaFields);
-              shutdownExecutor(apiExecutor);
-              shutdownExecutor(tableProcessorExecutor);
-              LOG.info("Table fetcher thread finished.");
+              backgroundSpan.end();
             }
           };
 
@@ -2125,100 +2139,111 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       final String catalogParam = effectiveCatalog;
       final String schemaParam = effectiveSchemaPattern;
 
+      SpanContext parentSpanContext = span.getSpanContext();
       Runnable columnFetcher =
           () -> {
-            ExecutorService columnExecutor = null;
-            final List<Future<?>> taskFutures = new ArrayList<>();
-            final FieldList localResultSchemaFields = resultSchemaFields;
+            Span backgroundSpan =
+                tracer
+                    .spanBuilder("BigQueryDatabaseMetaData.getColumns.background")
+                    .addLink(parentSpanContext)
+                    .startSpan();
 
-            try {
-              List<Dataset> datasetsToScan =
-                  findMatchingBigQueryObjects(
-                      "Dataset",
-                      () ->
-                          bigquery.listDatasets(
-                              catalogParam, DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
-                      (name) -> bigquery.getDataset(DatasetId.of(catalogParam, name)),
-                      (ds) -> ds.getDatasetId().getDataset(),
-                      schemaParam,
-                      schemaRegex,
-                      LOG);
+            try (Scope backgroundScope = backgroundSpan.makeCurrent()) {
+              ExecutorService columnExecutor = null;
+              final List<Future<?>> taskFutures = new ArrayList<>();
+              final FieldList localResultSchemaFields = resultSchemaFields;
 
-              if (datasetsToScan.isEmpty()) {
-                LOG.info("Fetcher thread found no matching datasets. Returning empty resultset.");
-                return;
-              }
-
-              columnExecutor = Executors.newFixedThreadPool(this.metadataFetchThreadCount);
-
-              for (Dataset dataset : datasetsToScan) {
-                if (Thread.currentThread().isInterrupted()) {
-                  LOG.warning("Fetcher interrupted during dataset iteration.");
-                  break;
-                }
-
-                DatasetId datasetId = dataset.getDatasetId();
-                LOG.info("Processing dataset: " + datasetId.getDataset());
-
-                List<Table> tablesToScan =
+              try {
+                List<Dataset> datasetsToScan =
                     findMatchingBigQueryObjects(
-                        "Table",
+                        "Dataset",
                         () ->
-                            bigquery.listTables(
-                                datasetId, TableListOption.pageSize(DEFAULT_PAGE_SIZE)),
-                        (name) ->
-                            bigquery.getTable(
-                                TableId.of(datasetId.getProject(), datasetId.getDataset(), name)),
-                        (tbl) -> tbl.getTableId().getTable(),
-                        tableNamePattern,
-                        tableNameRegex,
+                            bigquery.listDatasets(
+                                catalogParam, DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
+                        (name) -> bigquery.getDataset(DatasetId.of(catalogParam, name)),
+                        (ds) -> ds.getDatasetId().getDataset(),
+                        schemaParam,
+                        schemaRegex,
                         LOG);
 
-                for (Table table : tablesToScan) {
+                if (datasetsToScan.isEmpty()) {
+                  LOG.info("Fetcher thread found no matching datasets. Returning empty resultset.");
+                  return;
+                }
+
+                columnExecutor = Executors.newFixedThreadPool(this.metadataFetchThreadCount);
+
+                for (Dataset dataset : datasetsToScan) {
                   if (Thread.currentThread().isInterrupted()) {
-                    LOG.warning(
-                        "Fetcher interrupted during table iteration for dataset "
-                            + datasetId.getDataset());
+                    LOG.warning("Fetcher interrupted during dataset iteration.");
                     break;
                   }
 
-                  TableId tableId = table.getTableId();
-                  LOG.fine("Submitting task for table: " + tableId);
-                  final Table finalTable = table;
+                  DatasetId datasetId = dataset.getDatasetId();
+                  LOG.info("Processing dataset: " + datasetId.getDataset());
 
-                  Runnable columnTask =
-                      () ->
-                          processTableColumns(
-                              finalTable,
-                              columnNameRegex,
-                              collectedResults,
-                              localResultSchemaFields);
-                  Runnable wrappedColumnTask = Context.current().wrap(columnTask);
-                  Future<?> future = columnExecutor.submit(wrappedColumnTask);
-                  taskFutures.add(future);
+                  List<Table> tablesToScan =
+                      findMatchingBigQueryObjects(
+                          "Table",
+                          () ->
+                              bigquery.listTables(
+                                  datasetId, TableListOption.pageSize(DEFAULT_PAGE_SIZE)),
+                          (name) ->
+                              bigquery.getTable(
+                                  TableId.of(datasetId.getProject(), datasetId.getDataset(), name)),
+                          (tbl) -> tbl.getTableId().getTable(),
+                          tableNamePattern,
+                          tableNameRegex,
+                          LOG);
+
+                  for (Table table : tablesToScan) {
+                    if (Thread.currentThread().isInterrupted()) {
+                      LOG.warning(
+                          "Fetcher interrupted during table iteration for dataset "
+                              + datasetId.getDataset());
+                      break;
+                    }
+
+                    TableId tableId = table.getTableId();
+                    LOG.fine("Submitting task for table: " + tableId);
+                    final Table finalTable = table;
+
+                    Runnable columnTask =
+                        () ->
+                            processTableColumns(
+                                finalTable,
+                                columnNameRegex,
+                                collectedResults,
+                                localResultSchemaFields);
+                    Runnable wrappedColumnTask = Context.current().wrap(columnTask);
+                    Future<?> future = columnExecutor.submit(wrappedColumnTask);
+                    taskFutures.add(future);
+                  }
+                  if (Thread.currentThread().isInterrupted()) break;
                 }
-                if (Thread.currentThread().isInterrupted()) break;
+
+                waitForTasksCompletion(taskFutures);
+
+                if (!Thread.currentThread().isInterrupted()) {
+                  Comparator<FieldValueList> comparator =
+                      defineGetColumnsComparator(localResultSchemaFields);
+                  sortResults(collectedResults, comparator, "getColumns", LOG);
+                }
+
+                if (!Thread.currentThread().isInterrupted()) {
+                  populateQueue(collectedResults, queue, localResultSchemaFields);
+                }
+
+              } catch (Throwable t) {
+                LOG.severe("Unexpected error in column fetcher runnable: " + t.getMessage());
+                taskFutures.forEach(f -> f.cancel(true));
+              } finally {
+                signalEndOfData(queue, localResultSchemaFields);
+                shutdownExecutor(columnExecutor);
+                LOG.info("Column fetcher thread finished.");
               }
-
-              waitForTasksCompletion(taskFutures);
-
-              if (!Thread.currentThread().isInterrupted()) {
-                Comparator<FieldValueList> comparator =
-                    defineGetColumnsComparator(localResultSchemaFields);
-                sortResults(collectedResults, comparator, "getColumns", LOG);
-              }
-
-              if (!Thread.currentThread().isInterrupted()) {
-                populateQueue(collectedResults, queue, localResultSchemaFields);
-              }
-
-            } catch (Throwable t) {
-              LOG.severe("Unexpected error in column fetcher runnable: " + t.getMessage());
-              taskFutures.forEach(f -> f.cancel(true));
             } finally {
-              signalEndOfData(queue, localResultSchemaFields);
-              shutdownExecutor(columnExecutor);
-              LOG.info("Column fetcher thread finished.");
+              backgroundSpan.end();
             }
           };
 
@@ -3676,80 +3701,91 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
       final String catalogParam = catalog;
 
+      SpanContext parentSpanContext = span.getSpanContext();
       Runnable schemaFetcher =
           () -> {
-            final FieldList localResultSchemaFields = resultSchemaFields;
-            List<String> projectsToScanList = new ArrayList<>();
+            Span backgroundSpan =
+                tracer
+                    .spanBuilder("BigQueryDatabaseMetaData.getSchemas.background")
+                    .addLink(parentSpanContext)
+                    .startSpan();
 
-            if (catalogParam != null) {
-              projectsToScanList.add(catalogParam);
-            } else {
-              projectsToScanList.addAll(getAccessibleCatalogNames());
-            }
+            try (Scope backgroundScope = backgroundSpan.makeCurrent()) {
+              final FieldList localResultSchemaFields = resultSchemaFields;
+              List<String> projectsToScanList = new ArrayList<>();
 
-            if (projectsToScanList.isEmpty()) {
-              LOG.info(
-                  "No valid projects to scan (primary, specified, or additional). Returning empty"
-                      + " resultset.");
-              return;
-            }
+              if (catalogParam != null) {
+                projectsToScanList.add(catalogParam);
+              } else {
+                projectsToScanList.addAll(getAccessibleCatalogNames());
+              }
 
-            try {
-              for (String currentProjectToScan : projectsToScanList) {
-                if (Thread.currentThread().isInterrupted()) {
-                  LOG.warning(
-                      "Schema fetcher interrupted during project iteration for project: "
-                          + currentProjectToScan);
-                  break;
-                }
-                LOG.info("Fetching schemas for project: " + currentProjectToScan);
-                List<Dataset> datasetsInProject =
-                    findMatchingBigQueryObjects(
-                        "Dataset",
-                        () ->
-                            bigquery.listDatasets(
-                                currentProjectToScan,
-                                BigQuery.DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
-                        (name) -> bigquery.getDataset(DatasetId.of(currentProjectToScan, name)),
-                        (ds) -> ds.getDatasetId().getDataset(),
-                        schemaPattern,
-                        schemaRegex,
-                        LOG);
+              if (projectsToScanList.isEmpty()) {
+                LOG.info(
+                    "No valid projects to scan (primary, specified, or additional). Returning empty"
+                        + " resultset.");
+                return;
+              }
 
-                if (datasetsInProject.isEmpty() || Thread.currentThread().isInterrupted()) {
-                  LOG.info(
-                      "Fetcher thread found no matching datasets in project: "
-                          + currentProjectToScan);
-                  continue;
-                }
-
-                LOG.fine("Processing found datasets for project: " + currentProjectToScan);
-                for (Dataset dataset : datasetsInProject) {
+              try {
+                for (String currentProjectToScan : projectsToScanList) {
                   if (Thread.currentThread().isInterrupted()) {
                     LOG.warning(
-                        "Schema fetcher interrupted during dataset iteration for project: "
+                        "Schema fetcher interrupted during project iteration for project: "
                             + currentProjectToScan);
                     break;
                   }
-                  processSchemaInfo(dataset, collectedResults, localResultSchemaFields);
+                  LOG.info("Fetching schemas for project: " + currentProjectToScan);
+                  List<Dataset> datasetsInProject =
+                      findMatchingBigQueryObjects(
+                          "Dataset",
+                          () ->
+                              bigquery.listDatasets(
+                                  currentProjectToScan,
+                                  BigQuery.DatasetListOption.pageSize(DEFAULT_PAGE_SIZE)),
+                          (name) -> bigquery.getDataset(DatasetId.of(currentProjectToScan, name)),
+                          (ds) -> ds.getDatasetId().getDataset(),
+                          schemaPattern,
+                          schemaRegex,
+                          LOG);
+
+                  if (datasetsInProject.isEmpty() || Thread.currentThread().isInterrupted()) {
+                    LOG.info(
+                        "Fetcher thread found no matching datasets in project: "
+                            + currentProjectToScan);
+                    continue;
+                  }
+
+                  LOG.fine("Processing found datasets for project: " + currentProjectToScan);
+                  for (Dataset dataset : datasetsInProject) {
+                    if (Thread.currentThread().isInterrupted()) {
+                      LOG.warning(
+                          "Schema fetcher interrupted during dataset iteration for project: "
+                              + currentProjectToScan);
+                      break;
+                    }
+                    processSchemaInfo(dataset, collectedResults, localResultSchemaFields);
+                  }
                 }
-              }
 
-              if (!Thread.currentThread().isInterrupted()) {
-                Comparator<FieldValueList> comparator =
-                    defineGetSchemasComparator(localResultSchemaFields);
-                sortResults(collectedResults, comparator, "getSchemas", LOG);
-              }
+                if (!Thread.currentThread().isInterrupted()) {
+                  Comparator<FieldValueList> comparator =
+                      defineGetSchemasComparator(localResultSchemaFields);
+                  sortResults(collectedResults, comparator, "getSchemas", LOG);
+                }
 
-              if (!Thread.currentThread().isInterrupted()) {
-                populateQueue(collectedResults, queue, localResultSchemaFields);
-              }
+                if (!Thread.currentThread().isInterrupted()) {
+                  populateQueue(collectedResults, queue, localResultSchemaFields);
+                }
 
-            } catch (Throwable t) {
-              LOG.severe("Unexpected error in schema fetcher runnable: " + t.getMessage());
+              } catch (Throwable t) {
+                LOG.severe("Unexpected error in schema fetcher runnable: " + t.getMessage());
+              } finally {
+                signalEndOfData(queue, localResultSchemaFields);
+                LOG.info("Schema fetcher thread finished.");
+              }
             } finally {
-              signalEndOfData(queue, localResultSchemaFields);
-              LOG.info("Schema fetcher thread finished.");
+              backgroundSpan.end();
             }
           };
 
