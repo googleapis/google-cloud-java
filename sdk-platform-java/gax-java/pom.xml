@@ -4,14 +4,14 @@
   <groupId>com.google.api</groupId>
   <artifactId>gax-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.79.0</version><!-- {x-version-update:gax:current} -->
+  <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
   <name>GAX (Google Api eXtensions) for Java (Parent)</name>
   <description>Google Api eXtensions for Java (Parent)</description>
 
   <parent>
     <groupId>com.google.api</groupId>
     <artifactId>gapic-generator-java-pom-parent</artifactId>
-    <version>2.71.0</version><!-- {x-version-update:gapic-generator-java:current} -->
+    <version>2.72.0-SNAPSHOT</version><!-- {x-version-update:gapic-generator-java:current} -->
     <relativePath>../gapic-generator-java-pom-parent</relativePath>
   </parent>
 
@@ -50,27 +50,27 @@
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>api-common</artifactId>
-        <version>2.62.0</version><!-- {x-version-update:api-common:current} -->
+        <version>2.63.0-SNAPSHOT</version><!-- {x-version-update:api-common:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.auth</groupId>
         <artifactId>google-auth-library-credentials</artifactId>
-        <version>1.46.0</version><!-- {x-version-update:google-auth-library-parent:current} -->
+        <version>1.47.0-SNAPSHOT</version><!-- {x-version-update:google-auth-library-parent:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.auth</groupId>
         <artifactId>google-auth-library-oauth2-http</artifactId>
-        <version>1.46.0</version><!-- {x-version-update:google-auth-library-parent:current} -->
+        <version>1.47.0-SNAPSHOT</version><!-- {x-version-update:google-auth-library-parent:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.auth</groupId>
         <artifactId>google-auth-library-appengine</artifactId>
-        <version>1.46.0</version><!-- {x-version-update:google-auth-library-parent:current} -->
+        <version>1.47.0-SNAPSHOT</version><!-- {x-version-update:google-auth-library-parent:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.auth</groupId>
         <artifactId>google-auth-library-cab-token-generator</artifactId>
-        <version>1.46.0</version><!-- {x-version-update:google-auth-library-parent:current} -->
+        <version>1.47.0-SNAPSHOT</version><!-- {x-version-update:google-auth-library-parent:current} -->
       </dependency>
       <dependency>
         <groupId>org.threeten</groupId>
@@ -111,24 +111,24 @@
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax</artifactId>
-        <version>2.79.0</version> <!-- {x-version-update:gax:current} -->
+        <version>2.80.0-SNAPSHOT</version> <!-- {x-version-update:gax:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api</groupId>
         <artifactId>gax</artifactId>
-        <version>2.79.0</version> <!-- {x-version-update:gax:current} -->
+        <version>2.80.0-SNAPSHOT</version> <!-- {x-version-update:gax:current} -->
         <type>test-jar</type>
         <classifier>testlib</classifier>
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-common-protos</artifactId>
-        <version>2.70.0</version><!-- {x-version-update:proto-google-common-protos:current} -->
+        <version>2.71.0-SNAPSHOT</version><!-- {x-version-update:proto-google-common-protos:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-common-protos</artifactId>
-        <version>2.70.0</version><!-- {x-version-update:grpc-google-common-protos:current} -->
+        <version>2.71.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-common-protos:current} -->
       </dependency>
       <dependency>
         <groupId>io.grpc</groupId>
