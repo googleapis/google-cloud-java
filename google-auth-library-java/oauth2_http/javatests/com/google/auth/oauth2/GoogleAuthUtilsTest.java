@@ -56,6 +56,39 @@ class GoogleAuthUtilsTest {
             () -> GoogleAuthUtils.getWellKnownCredentialsFile(provider));
     assertTrue(thrown.getCause() instanceof FileNotFoundException);
     assertTrue(thrown.getCause().getMessage().contains("APPDATA"));
+    assertTrue(thrown.getCause().getMessage().contains("not set or empty"));
+  }
+
+  @Test
+  void getWellKnownCredentialsFile_windows_emptyAppData_throwsUncheckedIOException() {
+    DefaultCredentialsProviderTest.TestDefaultCredentialsProvider provider =
+        new DefaultCredentialsProviderTest.TestDefaultCredentialsProvider();
+    provider.setProperty("os.name", "windows");
+    provider.setEnv("APPDATA", "");
+
+    UncheckedIOException thrown =
+        assertThrows(
+            UncheckedIOException.class,
+            () -> GoogleAuthUtils.getWellKnownCredentialsFile(provider));
+    assertTrue(thrown.getCause() instanceof FileNotFoundException);
+    assertTrue(thrown.getCause().getMessage().contains("APPDATA"));
+    assertTrue(thrown.getCause().getMessage().contains("not set or empty"));
+  }
+
+  @Test
+  void getWellKnownCredentialsFile_windows_blankAppData_throwsUncheckedIOException() {
+    DefaultCredentialsProviderTest.TestDefaultCredentialsProvider provider =
+        new DefaultCredentialsProviderTest.TestDefaultCredentialsProvider();
+    provider.setProperty("os.name", "windows");
+    provider.setEnv("APPDATA", "   ");
+
+    UncheckedIOException thrown =
+        assertThrows(
+            UncheckedIOException.class,
+            () -> GoogleAuthUtils.getWellKnownCredentialsFile(provider));
+    assertTrue(thrown.getCause() instanceof FileNotFoundException);
+    assertTrue(thrown.getCause().getMessage().contains("APPDATA"));
+    assertTrue(thrown.getCause().getMessage().contains("not set or empty"));
   }
 
   @Test

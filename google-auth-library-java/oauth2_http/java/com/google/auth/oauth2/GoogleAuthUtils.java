@@ -73,10 +73,10 @@ public class GoogleAuthUtils {
       cloudConfigPath = new File(envPath);
     } else if (provider.getOsName().indexOf("windows") >= 0) {
       String appDataEnv = provider.getEnv("APPDATA");
-      if (appDataEnv == null) {
+      if (appDataEnv == null || appDataEnv.trim().isEmpty()) {
         throw new UncheckedIOException(
             new FileNotFoundException(
-                "APPDATA environment variable is not set; cannot locate the well-known"
+                "APPDATA environment variable is not set or empty; cannot locate the well-known"
                     + " credentials file on Windows."));
       }
       File appDataPath = new File(appDataEnv);
