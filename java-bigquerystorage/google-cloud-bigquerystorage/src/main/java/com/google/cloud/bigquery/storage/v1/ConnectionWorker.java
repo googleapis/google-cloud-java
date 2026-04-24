@@ -878,7 +878,6 @@ class ConnectionWorker implements AutoCloseable {
             // Consider the backend latency as completed for the current request.
             requestProfilerHook.endOperation(
                 RequestProfiler.OperationName.RESPONSE_LATENCY, requestWrapper.requestUniqueId);
-            requestWrapper.requestSendTimeStamp = null;
             requestProfilerHook.startOperation(
                 RequestProfiler.OperationName.WAIT_QUEUE, requestWrapper.requestUniqueId);
             waitingRequestQueue.addFirst(requestWrapper);
@@ -1454,7 +1453,6 @@ class ConnectionWorker implements AutoCloseable {
   private AppendRequestAndResponse pollInflightRequestQueue(boolean pollLast) {
     AppendRequestAndResponse requestWrapper =
         pollLast ? inflightRequestQueue.pollLast() : inflightRequestQueue.poll();
-    requestWrapper.requestSendTimeStamp = null;
     --this.inflightRequests;
     this.inflightBytes -= requestWrapper.messageSize;
     this.inflightReduced.signal();
@@ -1501,7 +1499,7 @@ class ConnectionWorker implements AutoCloseable {
     long recordBatchRowCount = -1;
 
     // Time at which request was last sent over the network.
-    // If a response is no longer expected this is set back to null.
+    // This is set ONLY by the appendLoop thread.
     Instant requestSendTimeStamp;
 
     AppendRequestAndResponse(
