@@ -130,6 +130,7 @@ public class ITDatastoreBuiltInAndCustomMetrics {
                 DatastoreOpenTelemetryOptions.newBuilder()
                     .setMetricsEnabled(true)
                     .setOpenTelemetry(customOtel)
+                    .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
                     .build())
             .build();
     datastore = options.getService();
