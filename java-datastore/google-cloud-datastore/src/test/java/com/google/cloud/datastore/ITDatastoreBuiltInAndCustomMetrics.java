@@ -29,13 +29,14 @@ import io.opentelemetry.sdk.metrics.data.LongPointData;
 import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.metrics.data.PointData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Optional;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.runners.Parameterized;
 
 /**
  * Integration test that verifies both the default built-in Cloud Monitoring export path and a
@@ -82,13 +83,24 @@ import org.junit.runners.JUnit4;
  *
  * <p>Data may take up to 60 seconds (one periodic flush interval) to appear.
  */
-@RunWith(JUnit4.class)
+@RunWith(Parameterized.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class ITDatastoreBuiltInAndCustomMetrics {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String DATABASE_ID =
       System.getenv().getOrDefault("DATASTORE_DATABASE_ID", "");
+
+  private final boolean useGrpc;
+
+  public ITDatastoreBuiltInAndCustomMetrics(boolean useGrpc) {
+    this.useGrpc = useGrpc;
+  }
+
+  @Parameterized.Parameters(name = "useGrpc: {0}")
+  public static Iterable<Object[]> data() {
+    return Arrays.asList(new Object[][] {{true}, {false}});
+  }
 
   /**
    * Delta temporality is used so that each {@link InMemoryMetricReader#collectAllMetrics()} call
@@ -122,7 +134,7 @@ public class ITDatastoreBuiltInAndCustomMetrics {
     //
     // The resulting DatastoreMetricsRecorder will be a CompositeDatastoreMetricsRecorder that
     // fans out all recording calls to both backends simultaneously.
-    DatastoreOptions options =
+    DatastoreOptions.Builder builder =
         DatastoreOptions.newBuilder()
             .setProjectId(PROJECT_ID)
             .setDatabaseId(DATABASE_ID)
@@ -131,9 +143,15 @@ public class ITDatastoreBuiltInAndCustomMetrics {
                     .setMetricsEnabled(true)
                     .setOpenTelemetry(customOtel)
                     .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
-                    .build())
-            .build();
-    datastore = options.getService();
+                    .build());
+
+    if (useGrpc) {
+      builder.setTransportOptions(DatastoreOptions.getDefaultGrpcTransportOptions());
+    } else {
+      builder.setTransportOptions(DatastoreOptions.getDefaultHttpTransportOptions());
+    }
+
+    datastore = builder.build().getService();
 
     // Drain any metrics emitted during client initialisation so test assertions only capture
     // data from the operations performed within the test method itself.
