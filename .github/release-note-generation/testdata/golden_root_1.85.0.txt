@@ -1,4 +1,4 @@
-## [1.85.0](https://github.com/googleapis/google-cloud-java/compare/6bef068b4d8...1b0a9a014fd) (2026-04-14)
+## [1.85.0](https://github.com/googleapis/google-cloud-java/compare/6bef068b4d8...fabe31c2a9d) (2026-04-13)
 
 ### Features
 
@@ -22,9 +22,6 @@
 
 ### Bug Fixes
 
-* fix(datastore): Create a plaintext gRPC transport channel when using the Emulator (#12721) ([4bed8fd](https://github.com/googleapis/google-cloud-java/commit/4bed8fd118a723c1d82ae3f29e0550d461db695a))
-* fix: correct build directory paths in graalvm cloudbuild.yaml (#12794) ([8e6ba36](https://github.com/googleapis/google-cloud-java/commit/8e6ba3662d31693e21879f31ed52d9c301a026fd))
-* fix(bqjdbc): Revert DatabaseMetaData field to be non-static in BigQueryConnection (#12778) ([ac69c8d](https://github.com/googleapis/google-cloud-java/commit/ac69c8d9041121b7bdd1f7cb7b6b0d2f182ba138))
 * fix: update appoptimize version to 0.0.1 to match released repo (#12782) ([80dfac6](https://github.com/googleapis/google-cloud-java/commit/80dfac6773bfe7e41e1d3f659fa5c9953a4fd83b))
 * fix(deps): update the Java code generator (gapic-generator-java) to 2.69.0 ([fc62b1e](https://github.com/googleapis/google-cloud-java/commit/fc62b1e80fa239ba8eec34ce1853e6c32126d9f4))
 * fix(bqjdbc): lazily instantiate Statement in BigQueryDatabaseMetaData (#12752) ([72e5508](https://github.com/googleapis/google-cloud-java/commit/72e5508669ea48cde28f02adfeedfb05cd73fc57))
@@ -45,6 +42,5 @@
 
 ### Dependencies
 
-* chore(deps): update upper bound dependencies file (#12706) ([c3f13a6](https://github.com/googleapis/google-cloud-java/commit/c3f13a653e76875e4b9ad9e27f572e046bdda3e3))
 * build(deps): upgrade grpc-gcp to 1.10.0 (#12772) ([bb60a6e](https://github.com/googleapis/google-cloud-java/commit/bb60a6ea1a3481bd582e5c45503d2e578740e61c))
 

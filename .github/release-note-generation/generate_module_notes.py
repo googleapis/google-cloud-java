@@ -16,6 +16,56 @@ def run_cmd(cmd, cwd=None):
     return result.stdout
 
 
+def find_version_boundaries(file_path, pattern, target_version, module=None):
+    """Scans history of a file to find release boundaries moving forward."""
+    log_cmd = [
+        "git",
+        "log",
+        "--oneline",
+        "--all",
+        "--",
+        file_path,
+    ]
+    try:
+        log_output = run_cmd(log_cmd)
+        commits = [line.split()[0] for line in log_output.splitlines() if line]
+        commits.reverse()  # Move forward in time!
+        
+        first_prev_commit = None
+        target_release_commit = None
+        prev_version = None
+
+        for commit in commits:
+            show_cmd = ["git", "show", f"{commit}:{file_path}"]
+            try:
+                content = run_cmd(show_cmd)
+            except SystemExit:
+                continue
+                
+            found_ver = None
+            match = pattern.search(content)
+            if match:
+                found_ver = match.group(1)
+                    
+            if found_ver:
+                if found_ver == target_version and not target_release_commit:
+                    target_release_commit = commit
+                    break  # Stop as soon as we find the target release!
+
+                if found_ver != target_version and "-SNAPSHOT" not in found_ver:
+                    if not prev_version:
+                        prev_version = found_ver
+                        first_prev_commit = commit
+                    elif found_ver != prev_version:
+                        # Found a newer stable version before hitting target!
+                        prev_version = found_ver
+                        first_prev_commit = commit
+            
+        return first_prev_commit, target_release_commit, prev_version
+    except SystemExit:
+        return None, None, None
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Generate release notes based on commit history for a specific module."
@@ -36,135 +86,23 @@ def main():
     directory = args.directory
     target_version = args.version
 
-    # 1. Scan backwards through git history of versions.txt
-    # We use -G to find commits that modified lines matching the module name.
-    log_cmd = [
-        "git",
-        "log",
-        "--oneline",
-        f"-G^{re.escape(module)}:",
-        "--",
-        "versions.txt",
-    ]
-    log_output = run_cmd(log_cmd)
-
-    commits = [line.split()[0] for line in log_output.splitlines() if line]
-
-    target_commit = None
-    prev_commit = None
-    prev_version = None
-
-    for commit in commits:
-        # Get content of versions.txt at this commit
-        show_cmd = ["git", "show", f"{commit}:versions.txt"]
-        try:
-            content = run_cmd(show_cmd)
-        except SystemExit:
-            continue  # Ignore errors if file couldn't be read
-
-        # Find the line for the module
-        pattern = re.compile(rf"^{re.escape(module)}:([^:]+):([^:]+)$")
-        for line in content.splitlines():
-            match = pattern.match(line)
-            if match:
-                released_ver = match.group(1)
-                current_ver = match.group(2)
-
-                # Condition for target version
-                if released_ver == target_version and not target_commit:
-                    target_commit = commit
-                    print(f"Found target version {target_version} at {commit}", file=sys.stderr)
-
-                # Condition for previous non-snapshot version
-                # We ignore snapshot versions by checking both fields.
-                elif (
-                    target_commit
-                    and released_ver != target_version
-                    and "-SNAPSHOT" not in released_ver
-                    and "-SNAPSHOT" not in current_ver
-                ):
-                    prev_commit = commit
-                    prev_version = released_ver
-                    print(f"Found previous version {released_ver} at {commit}", file=sys.stderr)
-                    break
-        if prev_commit:
-            break
-
-    if not target_commit:
-        print(
-            f"Target version {target_version} not found in history for module {module}."
-        )
-        sys.exit(1)
-
-    # Fallback for initial version if no previous version found
-    if not prev_commit:
-        print(
-            f"Previous version not found in history of versions.txt for module {module}. Trying pom.xml history...", file=sys.stderr
-        )
-        
+    # 1. Scan history of pom.xml
+    if directory == ".":
+        pom_path = "gapic-libraries-bom/pom.xml"
+    else:
         pom_path = f"{directory}/pom.xml"
-        pom_log_cmd = [
-            "git",
-            "log",
-            "--oneline",
-            "--",
-            pom_path,
-        ]
-        try:
-            pom_log_output = run_cmd(pom_log_cmd)
-            pom_commits = [line.split()[0] for line in pom_log_output.splitlines() if line]
-            
-            prev_commit_in_loop = None
-            target_end_commit = None
-            prev_start_commit = None
-
-            for commit in pom_commits:
-                show_cmd = ["git", "show", f"{commit}:{pom_path}"]
-                try:
-                    content = run_cmd(show_cmd)
-                except SystemExit:
-                    continue
-
-                match = re.search(r"<version>([^<]+)</version>", content)
-                if match:
-                    ver = match.group(1)
-
-                    if ver == target_version and not target_end_commit:
-                        # Moving backwards, this is the first commit with target version!
-                        # The previous commit in loop was the one that changed it AWAY from target version!
-                        target_end_commit = prev_commit_in_loop
-                        print(
-                            f"Found commit changing away from {target_version} at {target_end_commit}",
-                            file=sys.stderr,
-                        )
-
-                    elif (
-                        target_end_commit
-                        and ver != target_version
-                        and "-SNAPSHOT" not in ver
-                    ):
-                        # This is the commit where the previous stable version was set!
-                        prev_start_commit = commit
-                        print(
-                            f"Found previous stable version {ver} at {commit}",
-                            file=sys.stderr,
-                        )
-                        break
-
-                prev_commit_in_loop = commit
-
-            if prev_start_commit and target_end_commit:
-                prev_commit = prev_start_commit
-                # Use W~1 to be exclusive of W (the commit that changed it away)
-                target_commit = f"{target_end_commit}~1"
-                print(f"Using range derived from pom.xml: {prev_commit}..{target_commit}", file=sys.stderr)
-            else:
-                print(f"Could not find complete range in pom.xml. Falling back to initial release logic.", file=sys.stderr)
-                prev_commit = None
-
-        except SystemExit:
-            print(f"Failed to read pom.xml history.", file=sys.stderr)
-            prev_commit = None
+    pom_pattern = re.compile(r"<version>([^<]+)</version>")
+    
+    prev_commit, target_release_commit, prev_version = find_version_boundaries(pom_path, pom_pattern, target_version)
+    
+    target_commit = None
+    if target_release_commit:
+        target_commit = target_release_commit
+        print(f"Found target release commit at {target_release_commit}. Using exclusive upper boundary {target_commit}", file=sys.stderr)
+    
+    if not target_commit:
+        print(f"Target version {target_version} not found in history of {pom_path}.", file=sys.stderr)
+        sys.exit(1)
 
     range_desc = f"between {prev_commit} and {target_commit}" if prev_commit else f"up to {target_commit}"
     print(
@@ -178,10 +116,12 @@ def main():
         "log",
         "--format=%H %s%n%b%n--END_OF_COMMIT--",
         f"{prev_commit}..{target_commit}" if prev_commit else target_commit,
-        "--",
-        directory,
     ]
+    if directory != ".":
+        notes_cmd.extend(["--", directory])
     notes_output = run_cmd(notes_cmd)
+
+
 
     # Filter commit titles based on allowed prefixes and categorize them
     # Supports scopes in parentheses, e.g., feat(spanner):
@@ -231,6 +171,36 @@ def main():
         subject = header_parts[1] if len(header_parts) > 1 else ""
         
         body = "\n".join(lines[1:])
+        
+        # Verify if commit belongs to this release based on file state
+        should_include = False
+        target_snapshot = f"{target_version}-SNAPSHOT"
+        allowed_versions = (prev_version, target_snapshot) if prev_version else (target_snapshot,)
+        try:
+            if directory == ".":
+                pom_path = "gapic-libraries-bom/pom.xml"
+            else:
+                pom_path = f"{directory}/pom.xml"
+            # Check if file exists at that commit to avoid noisy errors
+            check_cmd = ["git", "cat-file", "-e", f"{commit_hash}:{pom_path}"]
+            check_result = subprocess.run(check_cmd, stderr=subprocess.PIPE)
+            if check_result.returncode == 0:
+                content = run_cmd(["git", "show", f"{commit_hash}:{pom_path}"])
+                if directory == ".":
+                    pattern = re.compile(r"<artifactId>gapic-libraries-bom</artifactId>\s*<packaging>pom</packaging>\s*<version>([^<]+)</version>", re.DOTALL)
+                else:
+                    pattern = re.compile(rf"<artifactId>{re.escape(module)}</artifactId>\s*<version>([^<]+)</version>", re.DOTALL)
+                
+                match = pattern.search(content)
+
+                
+                if match and match.group(1) in allowed_versions:
+                    should_include = True
+        except SystemExit:
+            pass
+
+        if not should_include:
+            continue
         
         # Check for override in the entire message
         if "BEGIN_COMMIT_OVERRIDE" in body or "BEGIN_COMMIT_OVERRIDE" in subject:
@@ -296,35 +266,38 @@ def main():
     print(f"## [{target_version}]({compare_url}) ({date_str})")
     print()
 
-    if breaking_changes:
-        print("### ⚠ BREAKING CHANGES\n")
-        for item in breaking_changes:
-            print(f"* {item}")
-        print()
+    if not any([breaking_changes, features, bug_fixes, dependency_upgrades, documentation]):
+        print("* No change")
+    else:
+        if breaking_changes:
+            print("### ⚠ BREAKING CHANGES\n")
+            for item in breaking_changes:
+                print(f"* {item}")
+            print()
 
-    if features:
-        print("### Features\n")
-        for item in features:
-            print(f"* {item}")
-        print()
+        if features:
+            print("### Features\n")
+            for item in features:
+                print(f"* {item}")
+            print()
 
-    if bug_fixes:
-        print("### Bug Fixes\n")
-        for item in bug_fixes:
-            print(f"* {item}")
-        print()
+        if bug_fixes:
+            print("### Bug Fixes\n")
+            for item in bug_fixes:
+                print(f"* {item}")
+            print()
 
-    if documentation:
-        print("### Documentation\n")
-        for item in documentation:
-            print(f"* {item}")
-        print()
+        if documentation:
+            print("### Documentation\n")
+            for item in documentation:
+                print(f"* {item}")
+            print()
 
-    if dependency_upgrades:
-        print("### Dependencies\n")
-        for item in dependency_upgrades:
-            print(f"* {item}")
-        print()
+        if dependency_upgrades:
+            print("### Dependencies\n")
+            for item in dependency_upgrades:
+                print(f"* {item}")
+            print()
 
 
 
