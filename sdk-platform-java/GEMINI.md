@@ -52,4 +52,4 @@ bazelisk test //...
 
 ### 3.3. Running Showcase Integration Tests
 
-Showcase integration tests are run against a local server that implements the Showcase API. The `java-showcase/README.md` file provides detailed instructions on how to run these tests.
+Showcase integration tests are run against a local server that implements the Showcase API. The [java-showcase/README.md](java-showcase/README.md) file provides detailed instructions on how to run these tests.
