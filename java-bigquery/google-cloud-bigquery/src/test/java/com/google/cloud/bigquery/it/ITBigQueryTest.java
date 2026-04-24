@@ -7819,6 +7819,7 @@ class ITBigQueryTest {
               .setDescription(DESCRIPTION)
               .setMaxTimeTravelHours(72L)
               .setLabels(LABELS)
+              .setLocation("US")
               .build();
 
       Dataset dataset = bigquery.create(info);
