@@ -29,6 +29,7 @@ jobs:
     outputs:
       src: ${{ steps.filter.outputs.src }}
       ci: ${{ steps.filter.outputs.ci }}
+      is_gen_update: ${{ steps.detect-gen-update.outputs.is_gen_update }}
     steps:
     - uses: actions/checkout@v4
     - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
@@ -42,6 +43,30 @@ jobs:
           ci:
             - '.github/workflows/ci.yaml'
             - '.kokoro/**'
+    - name: Detect Generation Update
+      id: detect-gen-update
+      shell: bash
+      run: |
+        if [[ "${{ github.event_name }}" == "pull_request" ]] && [[ "${{ github.event.pull_request.base.ref }}" == "main" ]]; then
+          TRIGGER_TEXT="${{ github.event.pull_request.title }}"
+          
+          echo "Checking trigger text: $TRIGGER_TEXT"
+
+          # Aim to try and target these two types of PRs to trigger bulk tests.
+          # New cases can be added in the future when we need to run these bulk tests.
+          # Showcase tests should cover most GAPIC functionalities, so there is no strong need to run these bulk tests all the time.
+          # Regex to match:
+          # 1. chore: Update generation configuration at ...
+          # 2. feat: [library_name] new module for library_name
+          if [[ "$TRIGGER_TEXT" =~ ^chore:[[:space:]]Update[[:space:]]generation[[:space:]]configuration[[:space:]]at ]] || \
+             [[ "$TRIGGER_TEXT" =~ ^feat:[[:space:]]\[.*\][[:space:]]new[[:space:]]module[[:space:]]for[[:space:]].* ]]; then
+            echo "is_gen_update=true" >> $GITHUB_OUTPUT
+          else
+            echo "is_gen_update=false" >> $GITHUB_OUTPUT
+          fi
+        else
+          echo "is_gen_update=false" >> $GITHUB_OUTPUT
+        fi
   # these unit tests are "bulk" (non-handwritten) libraries
   units:
     runs-on: ubuntu-latest
@@ -66,7 +91,7 @@ jobs:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
-      if: ${{ needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true' }}
+      if: ${{ (needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true') && needs.bulk-filter.outputs.is_gen_update == 'true' }}
       env:
         JOB_TYPE: test
         JOB_NAME: units-${{matrix.java}}
@@ -99,7 +124,7 @@ jobs:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
-      if: ${{ needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true' }}
+      if: ${{ (needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true') && needs.bulk-filter.outputs.is_gen_update == 'true' }}
       shell: bash      
       env:
         JOB_TYPE: test
