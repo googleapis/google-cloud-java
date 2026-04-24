@@ -55,8 +55,24 @@ jobs:
         BUILD_SUBDIR: google-auth-library-java
         JOB_TYPE: test
         SUREFIRE_JVM_OPT: "-P '!slf4j2x,slf4j2x-test'"
+  clirr:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 11
+    - run: java -version
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: clirr
+        BUILD_SUBDIR: google-auth-library-java
+
   required:
-    needs: [ units-logging ]
+    needs: [ units-logging, clirr ]
     name: conditional-required-check
     if: ${{ always() }} # Always run even if any "needs" jobs fail
     runs-on: ubuntu-22.04

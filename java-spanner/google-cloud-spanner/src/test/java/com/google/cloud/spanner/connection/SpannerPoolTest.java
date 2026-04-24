@@ -771,4 +771,47 @@ public class SpannerPoolTest {
                 .setCredentials(NoCredentials.getInstance())
                 .build()));
   }
+
+  @Test
+  public void testGrpcGcpSettings() {
+    SpannerPoolKey keyWithoutGrpcGcp =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri("cloudspanner:/projects/p/instances/i/databases/d")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    SpannerPoolKey keyWithGrpcGcpEnabled =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri("cloudspanner:/projects/p/instances/i/databases/d?enableGrpcGcp=true")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    SpannerPoolKey keyWithGrpcGcpDisabled =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri("cloudspanner:/projects/p/instances/i/databases/d?enableGrpcGcp=false")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+
+    // grpcGcp settings should affect the SpannerPoolKey
+    assertNotEquals(keyWithoutGrpcGcp, keyWithGrpcGcpEnabled);
+    assertNotEquals(keyWithoutGrpcGcp, keyWithGrpcGcpDisabled);
+    assertNotEquals(keyWithGrpcGcpEnabled, keyWithGrpcGcpDisabled);
+
+    // Same configuration should create equal keys
+    assertEquals(
+        keyWithGrpcGcpEnabled,
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri("cloudspanner:/projects/p/instances/i/databases/d?enableGrpcGcp=true")
+                .setCredentials(NoCredentials.getInstance())
+                .build()));
+    assertEquals(
+        keyWithGrpcGcpDisabled,
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri("cloudspanner:/projects/p/instances/i/databases/d?enableGrpcGcp=false")
+                .setCredentials(NoCredentials.getInstance())
+                .build()));
+  }
 }

@@ -305,6 +305,29 @@ case ${JOB_TYPE} in
       popd
     fi
     ;;
+  clirr)
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "Compiling and building all modules for ${BUILD_SUBDIR}"
+      install_modules "${BUILD_SUBDIR}"
+      echo "Running in subdir: ${BUILD_SUBDIR}"
+      pushd "${BUILD_SUBDIR}"
+      EXTRA_PROFILE_OPTS=()
+    else
+      install_modules "sdk-platform-java"
+    fi
+    mvn -B -ntp \
+      -Dfmt.skip=true \
+      -Denforcer.skip=true \
+      -Dcheckstyle.skip=true \
+      clirr:check
+    RETURN_CODE=$?
+    if [[ -n "${BUILD_SUBDIR}" ]]
+    then
+      echo "restoring directory"
+      popd
+    fi
+    ;;
   *) ;;
 
 esac
