@@ -20,6 +20,9 @@ import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 import static org.junit.Assume.assumeNotNull;
 
+import com.google.cloud.TransportOptions;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
@@ -33,6 +36,7 @@ import java.util.Arrays;
 import com.google.cloud.monitoring.v3.MetricServiceClient;
 import com.google.monitoring.v3.ListTimeSeriesRequest;
 import com.google.monitoring.v3.TimeInterval;
+import com.google.api.gax.rpc.ApiException;
 import com.google.protobuf.Timestamp;
 import java.util.Collection;
 import java.util.Optional;
@@ -94,16 +98,21 @@ public class ITDatastoreBuiltInAndCustomMetrics {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String DATABASE_ID =
       System.getenv().getOrDefault("DATASTORE_DATABASE_ID", "");
+  private boolean isDatastoreClosed = false;
 
-  private final boolean useGrpc;
+  private final TransportOptions transportOptions;
 
-  public ITDatastoreBuiltInAndCustomMetrics(boolean useGrpc) {
-    this.useGrpc = useGrpc;
+  public ITDatastoreBuiltInAndCustomMetrics(TransportOptions transportOptions) {
+    this.transportOptions = transportOptions;
   }
 
-  @Parameterized.Parameters(name = "useGrpc: {0}")
+  @Parameterized.Parameters(name = "transport: {0}")
   public static Iterable<Object[]> data() {
-    return Arrays.asList(new Object[][] {{true}, {false}});
+    return Arrays.asList(
+        new Object[][] {
+          {DatastoreOptions.getDefaultGrpcTransportOptions()},
+          {DatastoreOptions.getDefaultHttpTransportOptions()}
+        });
   }
 
   /**
@@ -149,10 +158,10 @@ public class ITDatastoreBuiltInAndCustomMetrics {
                     .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
                     .build());
 
-    if (useGrpc) {
-      builder.setTransportOptions(DatastoreOptions.getDefaultGrpcTransportOptions());
+    if (transportOptions instanceof GrpcTransportOptions) {
+      builder.setTransportOptions((GrpcTransportOptions) transportOptions);
     } else {
-      builder.setTransportOptions(DatastoreOptions.getDefaultHttpTransportOptions());
+      builder.setTransportOptions((HttpTransportOptions) transportOptions);
     }
 
     datastore = builder.build().getService();
@@ -164,21 +173,19 @@ public class ITDatastoreBuiltInAndCustomMetrics {
 
   @After
   public void tearDown() throws Exception {
-    if (datastore != null) {
+    if (datastore != null && !isDatastoreClosed) {
       Key key = datastore.newKeyFactory().setKind(kind).newKey("metrics-it-entity");
-      datastore.delete(key);
-      // Closing the client flushes the built-in SDK and shuts down the PeriodicMetricReader,
-      // ensuring any buffered metrics are exported before the test process exits.
+      try {
+        datastore.delete(key);
+      } catch (Exception e) {
+        // ignore if fails, we are cleaning up
+      }
       datastore.close();
     }
     if (customMeterProvider != null) {
       customMeterProvider.close();
     }
   }
-
-
-
-
 
   /**
    * Verifies that a transaction operation records {@code transaction_latency} and {@code
@@ -395,27 +402,53 @@ public class ITDatastoreBuiltInAndCustomMetrics {
           tx.put(Entity.newBuilder(current).set("value", current.getLong("value") + 1).build());
           return null;
         });
+        
+    // Perform a lookup to generate GAX metrics
+    datastore.get(key);
 
-    // Wait for metrics to be flushed and ingested.
-    // The default interval is 60 seconds, so we need to wait at least that long, plus ingestion delay.
-    // Let's use a polling loop with a timeout of 150 seconds.
-    
-    long startTimeMillis = System.currentTimeMillis();
-    String filter = "metric.type = \"custom.googleapis.com/internal/client/transaction_latency\"";
-    
-    boolean found = false;
-    int attempts = 0;
-    while (System.currentTimeMillis() - startTimeMillis < 150000) {
-      attempts++;
-      System.out.println("Checking Cloud Monitoring for metrics (attempt " + attempts + ")...");
-      if (isMetricPresent(filter)) {
-        found = true;
-        break;
-      }
-      Thread.sleep(10000); // Wait 10 seconds between attempts
+    // Clean up entity before closing client
+    datastore.delete(key);
+
+    // Close client to force flush metrics
+    datastore.close();
+    isDatastoreClosed = true;
+
+    // List of metrics to verify in Cloud Monitoring
+    java.util.List<String> metricNames = Arrays.asList(
+        TelemetryConstants.METRIC_NAME_TRANSACTION_LATENCY,
+        TelemetryConstants.METRIC_NAME_TRANSACTION_ATTEMPT_COUNT,
+        TelemetryConstants.METRIC_PREFIX + "/operation_latencies",
+        TelemetryConstants.METRIC_PREFIX + "/attempt_latencies",
+        TelemetryConstants.METRIC_PREFIX + "/operation_count",
+        TelemetryConstants.METRIC_PREFIX + "/attempt_count"
+    );
+
+    for (String metricName : metricNames) {
+      String filter = "metric.type = \"" + metricName + "\"";
+      boolean found = verifyWithPolling(filter);
+      assertWithMessage("Metric " + metricName + " should be present in Cloud Monitoring").that(found).isTrue();
     }
-    
-    assertWithMessage("Metrics should be present in Cloud Monitoring").that(found).isTrue();
+  }
+
+  private boolean verifyWithPolling(String filter) throws Exception {
+    // Try to read immediately first
+    if (isMetricPresent(filter)) {
+      System.out.println("Metric found immediately!");
+      return true;
+    }
+
+    // Fallback to short polling loop (30 seconds total)
+    long startTimeMillis = System.currentTimeMillis();
+    int attempts = 0;
+    while (System.currentTimeMillis() - startTimeMillis < 30000) {
+      attempts++;
+      System.out.println("Polling Cloud Monitoring for metric (attempt " + attempts + ")...");
+      if (isMetricPresent(filter)) {
+        return true;
+      }
+      Thread.sleep(5000); // Wait 5 seconds between attempts
+    }
+    return false;
   }
 
   private boolean isMetricPresent(String filter) throws Exception {
@@ -439,8 +472,16 @@ public class ITDatastoreBuiltInAndCustomMetrics {
           .setView(ListTimeSeriesRequest.TimeSeriesView.FULL)
           .build();
           
-      MetricServiceClient.ListTimeSeriesPagedResponse response = client.listTimeSeries(request);
-      return response.iterateAll().iterator().hasNext();
+      try {
+        MetricServiceClient.ListTimeSeriesPagedResponse response = client.listTimeSeries(request);
+        return response.iterateAll().iterator().hasNext();
+      } catch (ApiException e) {
+        if (e.getStatusCode().getCode() == com.google.api.gax.rpc.StatusCode.Code.NOT_FOUND) {
+          System.out.println("Metric not found yet (NOT_FOUND status).");
+          return false;
+        }
+        throw e;
+      }
     }
   }
 }
