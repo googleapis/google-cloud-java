@@ -9,6 +9,8 @@
 
 ## [6.116.0](https://github.com/googleapis/google-cloud-java/compare/6bef068b4d8...1b0a9a014fd) (2026-04-14)
 
+* No change
+
 
 ## [6.115.0](https://github.com/googleapis/google-cloud-java/compare/c2147fc9ab7...5c303706d40) (2026-04-13)
 
@@ -23,26 +25,20 @@
 
 ## [6.114.0](https://github.com/googleapis/google-cloud-java/compare/a35f1c267d8...4042feed629) (2026-04-10)
 
-### Bug Fixes
-
-* fix(java-spanner): use the existing dependency versions (#12746) ([8650bc6](https://github.com/googleapis/google-cloud-java/commit/8650bc6d907a5ad25f191a3d83d993d6d069694e))
-* fix(spanner): preserve all async cache updates (#12740) ([b8bf432](https://github.com/googleapis/google-cloud-java/commit/b8bf432f48f48bb454ba0ea50e40bfabca0ebc24))
-* fix(spanner):  fix grpc-gcp affinity cleanup and multiplexed channel usage leaks (#12726) ([55c9857](https://github.com/googleapis/google-cloud-java/commit/55c985776700b1219ece39a519021030eb18d927))
-* fix(spanner): ensure executeQueryAsync is non-blocking (#12715) ([b7e34d2](https://github.com/googleapis/google-cloud-java/commit/b7e34d22191df6bf7fc2aa30bd83234312dd89c6))
-* fix(spanner): honor built-in metrics opt-out for gRPC metrics exporter (#12711) ([57baaea](https://github.com/googleapis/google-cloud-java/commit/57baaeaae5ef1f819e04b253dfcf570499ccc110))
-* fix: update Version.java and correct spanner version for 1.83.0 release (#12712) ([c2147fc](https://github.com/googleapis/google-cloud-java/commit/c2147fc9ab767b0546e6f71483e3f0af1a99740c))
+* No change
 
 
 ## [6.113.0](https://github.com/googleapis/google-cloud-java/compare/8e13cf00a16...c2147fc9ab7~1) (2026-04-08)
 
-### Features
+* No change
 
-* feat: Switch Eef metrics to using built in open telemetry (#4385) ([759bb22](https://github.com/googleapis/google-cloud-java/commit/759bb22da811ac9cdb6f8720a3e22e0b17c8f4e9))
 
-### Bug Fixes
 
-* fix(spanner): enforce READY-only location aware routing and add endpoint lifecycle management ([ecb86fd](https://github.com/googleapis/google-cloud-java/commit/ecb86fd8be5fd6e2d470434d5a7b74afb96220d0))
-* fix(spanner): improve grpc-gcp affinity cleanup and location-aware retries ([a157c2f](https://github.com/googleapis/google-cloud-java/commit/a157c2f09e431bc61dd74b375bfb2dcf812d81f4))
+
+
+
+
+
 
 
 ## [6.112.0](https://github.com/googleapis/java-spanner/compare/v6.111.1...v6.112.0) (2026-03-17)
