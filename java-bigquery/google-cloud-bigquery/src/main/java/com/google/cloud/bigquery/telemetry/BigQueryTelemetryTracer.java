@@ -19,6 +19,8 @@ package com.google.cloud.bigquery.telemetry;
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.core.InternalApi;
+import com.google.api.gax.tracing.ErrorTypeUtil;
+import com.google.api.gax.tracing.ObservabilityAttributes;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.StatusCode;
@@ -37,27 +39,30 @@ public final class BigQueryTelemetryTracer {
   // https://github.com/googleapis/google-cloud-java/issues/12099
   // Common GCP Attributes
   public static final AttributeKey<String> GCP_CLIENT_SERVICE =
-      AttributeKey.stringKey("gcp.client.service");
+      AttributeKey.stringKey(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE);
   public static final AttributeKey<String> GCP_CLIENT_VERSION =
       AttributeKey.stringKey("gcp.client.version");
   public static final AttributeKey<String> GCP_CLIENT_REPO =
-      AttributeKey.stringKey("gcp.client.repo");
+      AttributeKey.stringKey(ObservabilityAttributes.REPO_ATTRIBUTE);
   public static final AttributeKey<String> GCP_CLIENT_ARTIFACT =
       AttributeKey.stringKey("gcp.client.artifact");
   public static final AttributeKey<String> GCP_RESOURCE_DESTINATION_ID =
-      AttributeKey.stringKey("gcp.resource.destination.id");
+      AttributeKey.stringKey(ObservabilityAttributes.DESTINATION_RESOURCE_ID_ATTRIBUTE);
   public static final AttributeKey<String> RPC_SYSTEM_NAME =
-      AttributeKey.stringKey("rpc.system.name");
+      AttributeKey.stringKey(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE);
 
   // Common Error Attributes
-  public static final AttributeKey<String> ERROR_TYPE = AttributeKey.stringKey("error.type");
+  public static final AttributeKey<String> ERROR_TYPE =
+      AttributeKey.stringKey(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE);
   public static final AttributeKey<String> EXCEPTION_TYPE =
-      AttributeKey.stringKey("exception.type");
+      AttributeKey.stringKey(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE);
   public static final AttributeKey<String> STATUS_MESSAGE =
-      AttributeKey.stringKey("status.message");
+      AttributeKey.stringKey(ObservabilityAttributes.STATUS_MESSAGE_ATTRIBUTE);
 
-  public static final AttributeKey<String> URL_TEMPLATE = AttributeKey.stringKey("url.template");
-  public static final AttributeKey<String> URL_DOMAIN = AttributeKey.stringKey("url.domain");
+  public static final AttributeKey<String> URL_TEMPLATE =
+      AttributeKey.stringKey(ObservabilityAttributes.URL_TEMPLATE_ATTRIBUTE);
+  public static final AttributeKey<String> URL_DOMAIN =
+      AttributeKey.stringKey(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE);
 
   public static void addCommonAttributeToSpan(Span span) {
     span.setAttribute(GCP_CLIENT_SERVICE, BQ_GCP_CLIENT_SERVICE)
@@ -77,8 +82,7 @@ public final class BigQueryTelemetryTracer {
     String simpleName = e.getClass().getSimpleName();
     String statusMessage = simpleName + (message != null ? ": " + message : "");
     span.setAttribute(BigQueryTelemetryTracer.EXCEPTION_TYPE, e.getClass().getName());
-    span.setAttribute(
-        BigQueryTelemetryTracer.ERROR_TYPE, ErrorTypeUtil.getClientErrorType(e).toString());
+    span.setAttribute(BigQueryTelemetryTracer.ERROR_TYPE, ErrorTypeUtil.extractErrorType(e));
     span.setAttribute(BigQueryTelemetryTracer.STATUS_MESSAGE, statusMessage);
     span.setStatus(StatusCode.ERROR, statusMessage);
   }

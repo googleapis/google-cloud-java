@@ -24,7 +24,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * Allocates a dedicated, independent InheritableThreadLocal object per concrete BigQueryConnection
  * instance.
  */
-public class BigQueryJdbcMdc {
+class BigQueryJdbcMdc {
   private static final AtomicLong nextId = new AtomicLong(1);
   private static final ConcurrentHashMap<BigQueryConnection, InheritableThreadLocal<String>>
       instanceLocals = new ConcurrentHashMap<>();
@@ -35,7 +35,7 @@ public class BigQueryJdbcMdc {
   private static final InheritableThreadLocal<String> currentConnectionId =
       new InheritableThreadLocal<>();
 
-  public static void registerInstance(BigQueryConnection connection, String id) {
+  static void registerInstance(BigQueryConnection connection, String id) {
     if (connection != null) {
       String cleanId =
           instanceIds.computeIfAbsent(
@@ -56,12 +56,12 @@ public class BigQueryJdbcMdc {
   /**
    * Returns the connection ID carried by any registered active connection on the current thread.
    */
-  public static String getConnectionId() {
+  static String getConnectionId() {
     return currentConnectionId.get();
   }
 
   /** Clears the connection ID context from all active connection contexts on the current thread. */
-  public static void removeInstance(BigQueryConnection connection) {
+  static void removeInstance(BigQueryConnection connection) {
     if (connection != null) {
       InheritableThreadLocal<String> local = instanceLocals.remove(connection);
       if (local != null) {
@@ -71,7 +71,7 @@ public class BigQueryJdbcMdc {
     }
   }
 
-  public static void clear() {
+  static void clear() {
     currentConnectionId.remove();
     for (InheritableThreadLocal<String> local : instanceLocals.values()) {
       local.remove();
