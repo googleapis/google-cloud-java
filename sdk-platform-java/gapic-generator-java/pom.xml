@@ -379,7 +379,6 @@
         <configuration>
           <ignoredUnusedDeclaredDependencies>
             <ignoredUnusedDeclaredDependency>com.google.errorprone:error_prone_annotations</ignoredUnusedDeclaredDependency>
-            <ignoredUnusedDeclaredDependency>org.junit.jupiter:junit-jupiter-engine</ignoredUnusedDeclaredDependency>
           </ignoredUnusedDeclaredDependencies>
         </configuration>
       </plugin>
@@ -505,7 +504,7 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
-      <version>2.62.0</version>
+      <version>2.62.0</version><!-- {x-version-update:api-common:current} -->
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
@@ -531,7 +530,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
-      <version>2.70.0</version>
+      <version>2.70.0</version><!-- {x-version-update:proto-google-common-protos:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.protobuf</groupId>
