@@ -55,12 +55,9 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
   public static final String LOCAL_HOST_ENV_VAR = "DATASTORE_EMULATOR_HOST";
 
   // Default to a slightly larger channel count to handle a larger initial QPS. The initial
-  // configuration
-  // should be able to handle a max of ~500 QPS as each gRPC channel can handle 100 max streams
-  // (limited
-  // by Google Middleware). This default relies on the ChannelPool to resize according to the
-  // client's
-  // average load.
+  // configuration should be able to handle a max of ~500 QPS as each gRPC channel can handle
+  // 100 max streams (limited by Google Middleware). This default relies on the ChannelPool
+  // to resize according to the client's average load.
   public static final int INIT_CHANNEL_COUNT = 5;
   // Default to be larger than Gax's default (2) to better scale with spikes in requests
   static final int CHANNEL_POOL_DEFAULT_RESIZE_DELTA = 5;
