@@ -93,6 +93,9 @@
  *   EvaluateInstancesRequest request =
  *       EvaluateInstancesRequest.newBuilder()
  *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .addAllMetrics(new ArrayList<Metric>())
+ *           .addAllMetricSources(new ArrayList<MetricSource>())
+ *           .setInstance(EvaluationInstance.newBuilder().build())
  *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
  *           .build();
  *   EvaluateInstancesResponse response = evaluationServiceClient.evaluateInstances(request);
@@ -526,6 +529,26 @@
  *   NotebookRuntimeTemplateName name =
  *       NotebookRuntimeTemplateName.of("[PROJECT]", "[LOCATION]", "[NOTEBOOK_RUNTIME_TEMPLATE]");
  *   NotebookRuntimeTemplate response = notebookServiceClient.getNotebookRuntimeTemplate(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= OnlineEvaluatorServiceClient =======================
+ *
+ * <p>Service Description: This service is used to create and manage Vertex AI OnlineEvaluators.
+ *
+ * <p>Sample for OnlineEvaluatorServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (OnlineEvaluatorServiceClient onlineEvaluatorServiceClient =
+ *     OnlineEvaluatorServiceClient.create()) {
+ *   OnlineEvaluatorName name =
+ *       OnlineEvaluatorName.of("[PROJECT]", "[LOCATION]", "[ONLINE_EVALUATOR]");
+ *   OnlineEvaluator response = onlineEvaluatorServiceClient.getOnlineEvaluator(name);
  * }
  * }</pre>
  *

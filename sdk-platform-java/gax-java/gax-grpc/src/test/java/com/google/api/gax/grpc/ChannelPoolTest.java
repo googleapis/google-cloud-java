@@ -32,6 +32,7 @@ package com.google.api.gax.grpc;
 import static com.google.api.gax.grpc.testing.FakeServiceGrpc.METHOD_RECOGNIZE;
 import static com.google.api.gax.grpc.testing.FakeServiceGrpc.METHOD_SERVER_STREAMING_RECOGNIZE;
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.core.FixedExecutorProvider;
@@ -142,6 +143,26 @@ class ChannelPoolTest {
         Mockito.verify(otherChannel, Mockito.never()).newCall(methodDescriptor, callOptions);
       }
     }
+  }
+
+  private static ChannelFactory createMockChannelFactory(
+      List<ManagedChannel> channels, List<ClientCall<Object, Object>> startedCalls) {
+    return () -> {
+      ManagedChannel channel = Mockito.mock(ManagedChannel.class);
+      Mockito.when(channel.newCall(Mockito.any(), Mockito.any()))
+          .thenAnswer(
+              invocation -> {
+                @SuppressWarnings("unchecked")
+                ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
+                if (startedCalls != null) {
+                  startedCalls.add(clientCall);
+                }
+                return clientCall;
+              });
+
+      channels.add(channel);
+      return channel;
+    };
   }
 
   @Test
@@ -451,21 +472,7 @@ class ChannelPoolTest {
     List<ManagedChannel> channels = new ArrayList<>();
     List<ClientCall<Object, Object>> startedCalls = new ArrayList<>();
 
-    ChannelFactory channelFactory =
-        () -> {
-          ManagedChannel channel = Mockito.mock(ManagedChannel.class);
-          Mockito.when(channel.newCall(Mockito.any(), Mockito.any()))
-              .thenAnswer(
-                  invocation -> {
-                    @SuppressWarnings("unchecked")
-                    ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
-                    startedCalls.add(clientCall);
-                    return clientCall;
-                  });
-
-          channels.add(channel);
-          return channel;
-        };
+    ChannelFactory channelFactory = createMockChannelFactory(channels, startedCalls);
 
     pool =
         new ChannelPool(
@@ -524,28 +531,46 @@ class ChannelPoolTest {
   }
 
   @Test
+  void customResizeDeltaIsRespected() throws Exception {
+    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
+
+    List<ManagedChannel> channels = new ArrayList<>();
+
+    ChannelFactory channelFactory = createMockChannelFactory(channels, null);
+
+    pool =
+        new ChannelPool(
+            ChannelPoolSettings.builder()
+                .setInitialChannelCount(2)
+                .setMinRpcsPerChannel(1)
+                .setMaxRpcsPerChannel(2)
+                .setMaxResizeDelta(5)
+                .build(),
+            channelFactory,
+            provider);
+    assertThat(pool.entries.get()).hasSize(2);
+
+    // Add 20 RPCs to push expansion
+    for (int i = 0; i < 20; i++) {
+      ClientCalls.futureUnaryCall(
+          pool.newCall(METHOD_RECOGNIZE, CallOptions.DEFAULT), Color.getDefaultInstance());
+    }
+    pool.resize();
+    // delta is 15 - 2 = 13. Capped at maxResizeDelta = 5.
+    // Expected size = 2 + 5 = 7.
+    assertThat(pool.entries.get()).hasSize(7);
+  }
+
+  @Test
   void removedIdleChannelsAreShutdown() throws Exception {
     ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
     FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
 
     List<ManagedChannel> channels = new ArrayList<>();
+
     List<ClientCall<Object, Object>> startedCalls = new ArrayList<>();
-
-    ChannelFactory channelFactory =
-        () -> {
-          ManagedChannel channel = Mockito.mock(ManagedChannel.class);
-          Mockito.when(channel.newCall(Mockito.any(), Mockito.any()))
-              .thenAnswer(
-                  invocation -> {
-                    @SuppressWarnings("unchecked")
-                    ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
-                    startedCalls.add(clientCall);
-                    return clientCall;
-                  });
-
-          channels.add(channel);
-          return channel;
-        };
+    ChannelFactory channelFactory = createMockChannelFactory(channels, startedCalls);
 
     pool =
         new ChannelPool(
@@ -572,21 +597,7 @@ class ChannelPoolTest {
     List<ManagedChannel> channels = new ArrayList<>();
     List<ClientCall<Object, Object>> startedCalls = new ArrayList<>();
 
-    ChannelFactory channelFactory =
-        () -> {
-          ManagedChannel channel = Mockito.mock(ManagedChannel.class);
-          Mockito.when(channel.newCall(Mockito.any(), Mockito.any()))
-              .thenAnswer(
-                  invocation -> {
-                    @SuppressWarnings("unchecked")
-                    ClientCall<Object, Object> clientCall = Mockito.mock(ClientCall.class);
-                    startedCalls.add(clientCall);
-                    return clientCall;
-                  });
-
-          channels.add(channel);
-          return channel;
-        };
+    ChannelFactory channelFactory = createMockChannelFactory(channels, startedCalls);
 
     pool =
         new ChannelPool(
@@ -680,6 +691,98 @@ class ChannelPoolTest {
   }
 
   @Test
+  void repeatedResizingLogsWarningOnExpand() throws Exception {
+    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
+
+    ChannelFactory channelFactory = createMockChannelFactory(new ArrayList<>(), null);
+
+    pool =
+        new ChannelPool(
+            ChannelPoolSettings.builder()
+                .setInitialChannelCount(1)
+                .setMinRpcsPerChannel(1)
+                .setMaxRpcsPerChannel(2)
+                .setMaxResizeDelta(1)
+                .setMinChannelCount(1)
+                .setMaxChannelCount(10)
+                .build(),
+            channelFactory,
+            provider);
+    assertThat(pool.entries.get()).hasSize(1);
+
+    FakeLogHandler logHandler = new FakeLogHandler();
+    ChannelPool.LOG.addHandler(logHandler);
+
+    try {
+      // Add 20 RPCs to push expansion
+      for (int i = 0; i < 20; i++) {
+        ClientCalls.futureUnaryCall(
+            pool.newCall(METHOD_RECOGNIZE, CallOptions.DEFAULT), Color.getDefaultInstance());
+      }
+
+      // Resize 4 times, should not log warning yet
+      for (int i = 0; i < 4; i++) {
+        pool.resize();
+      }
+      assertThat(logHandler.getAllMessages()).isEmpty();
+
+      // 5th resize, should log warning
+      pool.resize();
+      assertThat(logHandler.getAllMessages()).hasSize(1);
+      assertThat(logHandler.getAllMessages())
+          .contains(ChannelPool.CHANNEL_POOL_CONSECUTIVE_RESIZING_WARNING);
+
+      // 6th resize, should not log again
+      pool.resize();
+      assertThat(logHandler.getAllMessages()).hasSize(1);
+    } finally {
+      ChannelPool.LOG.removeHandler(logHandler);
+    }
+  }
+
+  @Test
+  void repeatedResizingLogsWarningOnShrink() throws Exception {
+    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
+
+    ChannelFactory channelFactory = () -> Mockito.mock(ManagedChannel.class);
+
+    pool =
+        new ChannelPool(
+            ChannelPoolSettings.builder()
+                .setInitialChannelCount(10)
+                .setMinRpcsPerChannel(1)
+                .setMaxRpcsPerChannel(2)
+                .setMaxResizeDelta(1)
+                .setMinChannelCount(1)
+                .setMaxChannelCount(10)
+                .build(),
+            channelFactory,
+            provider);
+    assertThat(pool.entries.get()).hasSize(10);
+
+    FakeLogHandler logHandler = new FakeLogHandler();
+    ChannelPool.LOG.addHandler(logHandler);
+
+    try {
+      // 0 RPCs, should shrink every cycle
+      // Resize 4 times, should not log warning yet
+      for (int i = 0; i < 4; i++) {
+        pool.resize();
+      }
+      assertThat(logHandler.getAllMessages()).isEmpty();
+
+      // 5th resize, should log warning
+      pool.resize();
+      assertThat(logHandler.getAllMessages())
+          .contains(ChannelPool.CHANNEL_POOL_CONSECUTIVE_RESIZING_WARNING);
+    } finally {
+      ChannelPool.LOG.removeHandler(logHandler);
+    }
+  }
+
+  @Test
   void testDoubleRelease() throws Exception {
     FakeLogHandler logHandler = new FakeLogHandler();
     ChannelPool.LOG.addHandler(logHandler);
@@ -736,5 +839,76 @@ class ChannelPoolTest {
     } finally {
       ChannelPool.LOG.removeHandler(logHandler);
     }
+  }
+
+  @Test
+  void settingsValidationFailsWhenMaxResizeDeltaExceedsLimit() {
+    ChannelPoolSettings.Builder builder =
+        ChannelPoolSettings.builder().setMaxResizeDelta(26).setMaxChannelCount(30);
+    assertThrows(IllegalStateException.class, builder::build);
+  }
+
+  @Test
+  void minChannelsClampedToMaxChannelCountUnderHighLoad() throws Exception {
+    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
+
+    List<ManagedChannel> channels = new ArrayList<>();
+    ChannelFactory channelFactory = createMockChannelFactory(channels, null);
+
+    pool =
+        new ChannelPool(
+            ChannelPoolSettings.builder()
+                .setInitialChannelCount(1)
+                .setMinRpcsPerChannel(1)
+                .setMaxRpcsPerChannel(2)
+                .setMaxResizeDelta(10)
+                .setMinChannelCount(1)
+                .setMaxChannelCount(5)
+                .build(),
+            channelFactory,
+            provider);
+    assertThat(pool.entries.get()).hasSize(1);
+
+    // Add 20 RPCs, which would require 10 channels (20/2)
+    // But max is 5
+    for (int i = 0; i < 20; i++) {
+      ClientCalls.futureUnaryCall(
+          pool.newCall(METHOD_RECOGNIZE, CallOptions.DEFAULT), Color.getDefaultInstance());
+    }
+
+    pool.resize();
+
+    // Should be clamped to maxChannelCount = 5
+    assertThat(pool.entries.get()).hasSize(5);
+  }
+
+  @Test
+  void maxChannelsClampedToMinChannelCountUnderLowLoad() throws Exception {
+    ScheduledExecutorService executor = Mockito.mock(ScheduledExecutorService.class);
+    FixedExecutorProvider provider = FixedExecutorProvider.create(executor);
+
+    List<ManagedChannel> channels = new ArrayList<>();
+    ChannelFactory channelFactory = createMockChannelFactory(channels, null);
+
+    pool =
+        new ChannelPool(
+            ChannelPoolSettings.builder()
+                .setInitialChannelCount(5)
+                .setMinRpcsPerChannel(1)
+                .setMaxRpcsPerChannel(2)
+                .setMinChannelCount(3)
+                .setMaxChannelCount(10)
+                .build(),
+            channelFactory,
+            provider);
+    assertThat(pool.entries.get()).hasSize(5);
+
+    // With no outstanding RPCs, the pool should want to shrink to 0
+    // But min is 3
+    pool.resize();
+
+    // Should be clamped to minChannelCount = 3
+    assertThat(pool.entries.get()).hasSize(3);
   }
 }

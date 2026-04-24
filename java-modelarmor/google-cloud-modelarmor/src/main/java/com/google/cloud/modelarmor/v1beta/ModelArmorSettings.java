@@ -29,6 +29,7 @@ import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.location.GetLocationRequest;
@@ -140,6 +141,18 @@ public class ModelArmorSettings extends ClientSettings<ModelArmorSettings> {
   public UnaryCallSettings<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
       sanitizeModelResponseSettings() {
     return ((ModelArmorStubSettings) getStubSettings()).sanitizeModelResponseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to streamSanitizeUserPrompt. */
+  public StreamingCallSettings<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+      streamSanitizeUserPromptSettings() {
+    return ((ModelArmorStubSettings) getStubSettings()).streamSanitizeUserPromptSettings();
+  }
+
+  /** Returns the object with the settings used for calls to streamSanitizeModelResponse. */
+  public StreamingCallSettings<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+      streamSanitizeModelResponseSettings() {
+    return ((ModelArmorStubSettings) getStubSettings()).streamSanitizeModelResponseSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -313,6 +326,19 @@ public class ModelArmorSettings extends ClientSettings<ModelArmorSettings> {
     public UnaryCallSettings.Builder<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
         sanitizeModelResponseSettings() {
       return getStubSettingsBuilder().sanitizeModelResponseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to streamSanitizeUserPrompt. */
+    public StreamingCallSettings.Builder<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+        streamSanitizeUserPromptSettings() {
+      return getStubSettingsBuilder().streamSanitizeUserPromptSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to streamSanitizeModelResponse. */
+    public StreamingCallSettings.Builder<
+            SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+        streamSanitizeModelResponseSettings() {
+      return getStubSettingsBuilder().streamSanitizeModelResponseSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

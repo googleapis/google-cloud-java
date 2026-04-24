@@ -39,7 +39,9 @@ public class AsyncDeleteCloudControl {
       DeleteCloudControlRequest request =
           DeleteCloudControlRequest.newBuilder()
               .setName(
-                  CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString())
+                  CloudControlName.ofOrganizationLocationCloudControlName(
+                          "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+                      .toString())
               .build();
       ApiFuture<Empty> future = configClient.deleteCloudControlCallable().futureCall(request);
       // Do something.

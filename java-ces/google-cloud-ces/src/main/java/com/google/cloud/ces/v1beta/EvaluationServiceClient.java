@@ -680,6 +680,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ExportEvaluations</td>
+ *      <td><p> Exports evaluations.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> exportEvaluationsAsync(ExportEvaluationsRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> exportEvaluationsAsync(AppName parent)
+ *           <li><p> exportEvaluationsAsync(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> exportEvaluationsOperationCallable()
+ *           <li><p> exportEvaluationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.
  * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name] field:
@@ -5396,6 +5416,168 @@ public class EvaluationServiceClient implements BackgroundResource {
   public final UnaryCallable<TestPersonaVoiceRequest, TestPersonaVoiceResponse>
       testPersonaVoiceCallable() {
     return stub.testPersonaVoiceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+   *   ExportEvaluationsResponse response =
+   *       evaluationServiceClient.exportEvaluationsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the app to export evaluations from. Format:
+   *     `projects/{project}/locations/{location}/apps/{app}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportEvaluationsResponse, OperationMetadata> exportEvaluationsAsync(
+      AppName parent) {
+    ExportEvaluationsRequest request =
+        ExportEvaluationsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return exportEvaluationsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   String parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString();
+   *   ExportEvaluationsResponse response =
+   *       evaluationServiceClient.exportEvaluationsAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the app to export evaluations from. Format:
+   *     `projects/{project}/locations/{location}/apps/{app}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportEvaluationsResponse, OperationMetadata> exportEvaluationsAsync(
+      String parent) {
+    ExportEvaluationsRequest request =
+        ExportEvaluationsRequest.newBuilder().setParent(parent).build();
+    return exportEvaluationsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   ExportEvaluationsRequest request =
+   *       ExportEvaluationsRequest.newBuilder()
+   *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setExportOptions(ExportOptions.newBuilder().build())
+   *           .setIncludeEvaluationResults(true)
+   *           .setIncludeEvaluations(true)
+   *           .build();
+   *   ExportEvaluationsResponse response =
+   *       evaluationServiceClient.exportEvaluationsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ExportEvaluationsResponse, OperationMetadata> exportEvaluationsAsync(
+      ExportEvaluationsRequest request) {
+    return exportEvaluationsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   ExportEvaluationsRequest request =
+   *       ExportEvaluationsRequest.newBuilder()
+   *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setExportOptions(ExportOptions.newBuilder().build())
+   *           .setIncludeEvaluationResults(true)
+   *           .setIncludeEvaluations(true)
+   *           .build();
+   *   OperationFuture<ExportEvaluationsResponse, OperationMetadata> future =
+   *       evaluationServiceClient.exportEvaluationsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportEvaluationsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
+      exportEvaluationsOperationCallable() {
+    return stub.exportEvaluationsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Exports evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   ExportEvaluationsRequest request =
+   *       ExportEvaluationsRequest.newBuilder()
+   *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .setExportOptions(ExportOptions.newBuilder().build())
+   *           .setIncludeEvaluationResults(true)
+   *           .setIncludeEvaluations(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       evaluationServiceClient.exportEvaluationsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ExportEvaluationsRequest, Operation> exportEvaluationsCallable() {
+    return stub.exportEvaluationsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -1545,6 +1545,50 @@ public final class EvaluationServiceGrpc {
     return getTestPersonaVoiceMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.ExportEvaluationsRequest, com.google.longrunning.Operation>
+      getExportEvaluationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportEvaluations",
+      requestType = com.google.cloud.ces.v1beta.ExportEvaluationsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.ces.v1beta.ExportEvaluationsRequest, com.google.longrunning.Operation>
+      getExportEvaluationsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.ces.v1beta.ExportEvaluationsRequest, com.google.longrunning.Operation>
+        getExportEvaluationsMethod;
+    if ((getExportEvaluationsMethod = EvaluationServiceGrpc.getExportEvaluationsMethod) == null) {
+      synchronized (EvaluationServiceGrpc.class) {
+        if ((getExportEvaluationsMethod = EvaluationServiceGrpc.getExportEvaluationsMethod)
+            == null) {
+          EvaluationServiceGrpc.getExportEvaluationsMethod =
+              getExportEvaluationsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.ces.v1beta.ExportEvaluationsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportEvaluations"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.ces.v1beta.ExportEvaluationsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new EvaluationServiceMethodDescriptorSupplier("ExportEvaluations"))
+                      .build();
+        }
+      }
+    }
+    return getExportEvaluationsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static EvaluationServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<EvaluationServiceStub> factory =
@@ -2061,6 +2105,20 @@ public final class EvaluationServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getTestPersonaVoiceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports evaluations.
+     * </pre>
+     */
+    default void exportEvaluations(
+        com.google.cloud.ces.v1beta.ExportEvaluationsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportEvaluationsMethod(), responseObserver);
     }
   }
 
@@ -2615,6 +2673,22 @@ public final class EvaluationServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports evaluations.
+     * </pre>
+     */
+    public void exportEvaluations(
+        com.google.cloud.ces.v1beta.ExportEvaluationsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportEvaluationsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -3072,6 +3146,20 @@ public final class EvaluationServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getTestPersonaVoiceMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports evaluations.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportEvaluations(
+        com.google.cloud.ces.v1beta.ExportEvaluationsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getExportEvaluationsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -3500,6 +3588,19 @@ public final class EvaluationServiceGrpc {
         com.google.cloud.ces.v1beta.TestPersonaVoiceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getTestPersonaVoiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports evaluations.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportEvaluations(
+        com.google.cloud.ces.v1beta.ExportEvaluationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportEvaluationsMethod(), getCallOptions(), request);
     }
   }
 
@@ -3962,6 +4063,19 @@ public final class EvaluationServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getTestPersonaVoiceMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports evaluations.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportEvaluations(com.google.cloud.ces.v1beta.ExportEvaluationsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportEvaluationsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_RUN_EVALUATION = 0;
@@ -3995,6 +4109,7 @@ public final class EvaluationServiceGrpc {
   private static final int METHODID_UPDATE_SCHEDULED_EVALUATION_RUN = 28;
   private static final int METHODID_DELETE_SCHEDULED_EVALUATION_RUN = 29;
   private static final int METHODID_TEST_PERSONA_VOICE = 30;
+  private static final int METHODID_EXPORT_EVALUATIONS = 31;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4194,6 +4309,11 @@ public final class EvaluationServiceGrpc {
               (com.google.cloud.ces.v1beta.TestPersonaVoiceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.ces.v1beta.TestPersonaVoiceResponse>)
                   responseObserver);
+          break;
+        case METHODID_EXPORT_EVALUATIONS:
+          serviceImpl.exportEvaluations(
+              (com.google.cloud.ces.v1beta.ExportEvaluationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -4418,6 +4538,12 @@ public final class EvaluationServiceGrpc {
                     com.google.cloud.ces.v1beta.TestPersonaVoiceRequest,
                     com.google.cloud.ces.v1beta.TestPersonaVoiceResponse>(
                     service, METHODID_TEST_PERSONA_VOICE)))
+        .addMethod(
+            getExportEvaluationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.ces.v1beta.ExportEvaluationsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_EVALUATIONS)))
         .build();
   }
 
@@ -4500,6 +4626,7 @@ public final class EvaluationServiceGrpc {
                       .addMethod(getUpdateScheduledEvaluationRunMethod())
                       .addMethod(getDeleteScheduledEvaluationRunMethod())
                       .addMethod(getTestPersonaVoiceMethod())
+                      .addMethod(getExportEvaluationsMethod())
                       .build();
         }
       }

@@ -35,6 +35,7 @@ import static com.google.cloud.spanner.connection.ConnectionProperties.ENABLE_DI
 import static com.google.cloud.spanner.connection.ConnectionProperties.ENABLE_DYNAMIC_CHANNEL_POOL;
 import static com.google.cloud.spanner.connection.ConnectionProperties.ENABLE_END_TO_END_TRACING;
 import static com.google.cloud.spanner.connection.ConnectionProperties.ENABLE_EXTENDED_TRACING;
+import static com.google.cloud.spanner.connection.ConnectionProperties.ENABLE_GRPC_GCP;
 import static com.google.cloud.spanner.connection.ConnectionProperties.ENCODED_CREDENTIALS;
 import static com.google.cloud.spanner.connection.ConnectionProperties.ENDPOINT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.GRPC_INTERCEPTOR_PROVIDER;
@@ -160,6 +161,7 @@ public class ConnectionOptions {
   static final Integer DEFAULT_MAX_SESSIONS = null;
   static final Integer DEFAULT_NUM_CHANNELS = null;
   static final Boolean DEFAULT_ENABLE_DYNAMIC_CHANNEL_POOL = null;
+  static final Boolean DEFAULT_ENABLE_GRPC_GCP = null;
   static final Integer DEFAULT_DCP_MIN_CHANNELS = null;
   static final Integer DEFAULT_DCP_MAX_CHANNELS = null;
   static final Integer DEFAULT_DCP_INITIAL_CHANNELS = null;
@@ -262,6 +264,9 @@ public class ConnectionOptions {
 
   /** Name of the 'enableDynamicChannelPool' connection property. */
   public static final String ENABLE_DYNAMIC_CHANNEL_POOL_PROPERTY_NAME = "enableDynamicChannelPool";
+
+  /** Name of the 'enableGrpcGcp' connection property. */
+  public static final String ENABLE_GRPC_GCP_PROPERTY_NAME = "enableGrpcGcp";
 
   /** Name of the 'dcpMinChannels' connection property. */
   public static final String DCP_MIN_CHANNELS_PROPERTY_NAME = "dcpMinChannels";
@@ -1014,6 +1019,11 @@ public class ConnectionOptions {
   /** Whether dynamic channel pooling is enabled for this connection. */
   public Boolean isEnableDynamicChannelPool() {
     return getInitialConnectionPropertyValue(ENABLE_DYNAMIC_CHANNEL_POOL);
+  }
+
+  /** Whether grpc-gcp is enabled for this connection. */
+  public Boolean isEnableGrpcGcp() {
+    return getInitialConnectionPropertyValue(ENABLE_GRPC_GCP);
   }
 
   /** The minimum number of channels in the dynamic channel pool. */

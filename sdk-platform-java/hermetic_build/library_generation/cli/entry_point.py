@@ -224,10 +224,7 @@ def _needs_full_repo_generation(generation_config: GenerationConfig) -> bool:
     Whether you should need a full repo generation, i.e., generate all
     libraries in the generation configuration.
     """
-    return (
-        not generation_config.is_monorepo()
-        or generation_config.contains_common_protos()
-    )
+    return not generation_config.is_monorepo()
 
 
 def _parse_library_name_from(

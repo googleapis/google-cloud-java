@@ -614,22 +614,28 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
         // Set mocked time so that the token is fresh and no refresh is needed (before the refresh
         // margin).
         mockedTimeInMillis = expirationTimeInMillis - refreshMarginInMillis - 60000;
+        when(mockClock.currentTimeMillis()).thenReturn(mockedTimeInMillis);
         break;
       case ASYNC:
         // Set mocked time so that the token is nearing expiry and an async refresh is triggered
         // (within the refresh margin).
         mockedTimeInMillis = expirationTimeInMillis - refreshMarginInMillis + 60000;
+        when(mockClock.currentTimeMillis())
+            .thenReturn(
+                mockedTimeInMillis, // First call: Stale (triggers the async refresh)
+                currentTimeInMillis // Subsequent calls: Fresh (skips redundant refreshes)
+                );
         break;
       case BLOCKING:
         // Set mocked time so that the token requires immediate refresh (just after the minimum
         // token lifetime).
         mockedTimeInMillis = expirationTimeInMillis - minimumTokenLifetimeMillis + 60000;
+        when(mockClock.currentTimeMillis()).thenReturn(mockedTimeInMillis);
         break;
       default:
         throw new IllegalArgumentException("Unexpected RefreshType: " + refreshType);
     }
 
-    when(mockClock.currentTimeMillis()).thenReturn(mockedTimeInMillis);
     return mockClock;
   }
 

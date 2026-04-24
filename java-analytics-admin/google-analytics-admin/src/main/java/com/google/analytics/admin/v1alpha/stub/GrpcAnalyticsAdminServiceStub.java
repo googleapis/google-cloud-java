@@ -166,6 +166,7 @@ import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaReq
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest;
+import com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
@@ -274,6 +275,7 @@ import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchema
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest;
+import com.google.analytics.admin.v1alpha.UserProvidedDataSettings;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -2323,6 +2325,21 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<
+          GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+      getUserProvidedDataSettingsMethodDescriptor =
+          MethodDescriptor
+              .<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetUserProvidedDataSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetUserProvidedDataSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(UserProvidedDataSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable;
   private final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
@@ -2669,6 +2686,8 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       getSubpropertySyncConfigCallable;
   private final UnaryCallable<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
       getReportingIdentitySettingsCallable;
+  private final UnaryCallable<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+      getUserProvidedDataSettingsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -4554,6 +4573,19 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    GrpcCallSettings<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+        getUserProvidedDataSettingsTransportSettings =
+            GrpcCallSettings
+                .<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>newBuilder()
+                .setMethodDescriptor(getUserProvidedDataSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
 
     this.getAccountCallable =
         callableFactory.createUnaryCallable(
@@ -5391,6 +5423,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         callableFactory.createUnaryCallable(
             getReportingIdentitySettingsTransportSettings,
             settings.getReportingIdentitySettingsSettings(),
+            clientContext);
+    this.getUserProvidedDataSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getUserProvidedDataSettingsTransportSettings,
+            settings.getUserProvidedDataSettingsSettings(),
             clientContext);
 
     this.backgroundResources =
@@ -6451,6 +6488,12 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
       getReportingIdentitySettingsCallable() {
     return getReportingIdentitySettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+      getUserProvidedDataSettingsCallable() {
+    return getUserProvidedDataSettingsCallable;
   }
 
   @Override
