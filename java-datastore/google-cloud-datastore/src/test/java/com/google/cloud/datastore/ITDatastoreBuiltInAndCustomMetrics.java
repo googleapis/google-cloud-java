@@ -21,9 +21,9 @@ import static com.google.common.truth.Truth.assertWithMessage;
 import static org.junit.Assume.assumeNotNull;
 
 import com.google.cloud.TransportOptions;
+import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.http.HttpTransportOptions;
-import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
@@ -33,11 +33,6 @@ import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.metrics.data.PointData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.util.Arrays;
-import com.google.cloud.monitoring.v3.MetricServiceClient;
-import com.google.monitoring.v3.ListTimeSeriesRequest;
-import com.google.monitoring.v3.TimeInterval;
-import com.google.api.gax.rpc.ApiException;
-import com.google.protobuf.Timestamp;
 import java.util.Collection;
 import java.util.Optional;
 import org.junit.After;
@@ -396,5 +391,4 @@ public class ITDatastoreBuiltInAndCustomMetrics {
     String actual = point.getAttributes().get(AttributeKey.stringKey(attributeKey));
     return expectedValue.equals(actual);
   }
-
 }

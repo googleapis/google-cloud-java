@@ -307,6 +307,7 @@ public class DatastoreOptionsTest {
     assertNotEquals(original, newOptions);
     assertNotEquals(original.hashCode(), newOptions.hashCode());
   }
+
   @Test
   public void builtInMetricsExport_isDisabledByDefault() {
     DatastoreOptions defaultOptions =
@@ -330,8 +331,7 @@ public class DatastoreOptionsTest {
                     .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
                     .build())
             .build();
-    String recorderClassName =
-        options.getMetricsRecorder().getClass().getSimpleName();
+    String recorderClassName = options.getMetricsRecorder().getClass().getSimpleName();
     assertThat(recorderClassName).isEqualTo("CompositeDatastoreMetricsRecorder");
   }
 }
