@@ -84,7 +84,7 @@ import org.junit.runners.JUnit4;
  */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class DatastoreBuiltInAndCustomMetricsIT {
+public class ITDatastoreBuiltInAndCustomMetrics {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String DATABASE_ID =
