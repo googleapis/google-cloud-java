@@ -101,5 +101,27 @@
       <artifactId>truth</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <configuration>
+          <ignoredUnusedDeclaredDependencies>
+            <ignoredUnusedDeclaredDependency>com.google.errorprone:error_prone_annotations</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>org.junit.platform:junit-platform-launcher</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>org.junit.jupiter:junit-jupiter-engine</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>org.junit.vintage:junit-vintage-engine</ignoredUnusedDeclaredDependency>
+          </ignoredUnusedDeclaredDependencies>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
