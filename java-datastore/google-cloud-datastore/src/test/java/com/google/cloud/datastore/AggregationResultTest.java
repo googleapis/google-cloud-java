@@ -14,17 +14,18 @@
  * limitations under the License.
  */
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertThrows;
+
 
 import com.google.common.collect.ImmutableMap;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class AggregationResultTest {
+class AggregationResultTest {
 
   @Test
-  public void shouldGetLongAggregatedResultValueByAlias() {
+  void shouldGetLongAggregatedResultValueByAlias() {
     AggregationResult aggregationResult =
         new AggregationResult(
             ImmutableMap.of(
@@ -36,7 +37,7 @@ public class AggregationResultTest {
   }
 
   @Test
-  public void shouldGetDoubleAggregatedResultValueByAlias() {
+  void shouldGetDoubleAggregatedResultValueByAlias() {
     AggregationResult aggregationResult =
         new AggregationResult(
             ImmutableMap.of(
@@ -48,7 +49,7 @@ public class AggregationResultTest {
   }
 
   @Test
-  public void shouldGetLongAggregatedResultValueAsDouble() {
+  void shouldGetLongAggregatedResultValueAsDouble() {
     AggregationResult aggregationResult =
         new AggregationResult(ImmutableMap.of("count", LongValue.of(45)));
 
@@ -56,7 +57,7 @@ public class AggregationResultTest {
   }
 
   @Test
-  public void shouldGetDoubleAggregatedResultValueAsLong() {
+  void shouldGetDoubleAggregatedResultValueAsLong() {
     AggregationResult aggregationResult =
         new AggregationResult(ImmutableMap.of("qty_avg", DoubleValue.of(45.9322)));
 
@@ -64,7 +65,7 @@ public class AggregationResultTest {
   }
 
   @Test
-  public void shouldThrowRuntimeExceptionOnUnknownTypes() {
+  void shouldThrowRuntimeExceptionOnUnknownTypes() {
     AggregationResult aggregationResult =
         new AggregationResult(
             ImmutableMap.of(
@@ -84,14 +85,14 @@ public class AggregationResultTest {
   }
 
   @Test
-  public void shouldGetDoubleAggregatedResultValueAsNumber() {
+  void shouldGetDoubleAggregatedResultValueAsNumber() {
     AggregationResult aggregationResult =
         new AggregationResult(ImmutableMap.of("qty_avg", DoubleValue.of(45.9322)));
     assertThat(aggregationResult.getNumber("qty_avg")).isEqualTo(45.9322);
   }
 
   @Test
-  public void shouldGetLongAggregatedResultValueAsNumber() {
+  void shouldGetLongAggregatedResultValueAsNumber() {
     AggregationResult aggregationResult =
         new AggregationResult(ImmutableMap.of("count", LongValue.of(50)));
     assertThat(aggregationResult.getNumber("count")).isEqualTo(50);

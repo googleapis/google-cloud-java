@@ -15,17 +15,18 @@
  */
 
 package com.google.cloud.datastore.aggregation;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.cloud.datastore.aggregation.Aggregation.count;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.datastore.v1.AggregationQuery;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class CountAggregationTest {
+class CountAggregationTest {
 
   @Test
-  public void testCountAggregationWithDefaultValues() {
+  void testCountAggregationWithDefaultValues() {
     AggregationQuery.Aggregation countAggregationPb = count().build().toPb();
 
     assertThat(countAggregationPb.getCount().getUpTo().getValue()).isEqualTo(0L);
@@ -33,7 +34,7 @@ public class CountAggregationTest {
   }
 
   @Test
-  public void testCountAggregationWithAlias() {
+  void testCountAggregationWithAlias() {
     AggregationQuery.Aggregation countAggregationPb = count().as("column_1").build().toPb();
 
     assertThat(countAggregationPb.getCount().getUpTo().getValue()).isEqualTo(0L);
@@ -41,7 +42,7 @@ public class CountAggregationTest {
   }
 
   @Test
-  public void testEquals() {
+  void testEquals() {
     CountAggregation.Builder aggregationWithAlias1 = count().as("total");
     CountAggregation.Builder aggregationWithAlias2 = count().as("total");
     CountAggregation.Builder aggregationWithoutAlias1 = count();

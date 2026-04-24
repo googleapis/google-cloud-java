@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package com.google.cloud.datastore.execution;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.cloud.datastore.ProtoTestData.intValue;
 import static com.google.cloud.datastore.ReadOption.eventualConsistency;
@@ -46,10 +47,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
 import org.easymock.EasyMock;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class AggregationQueryExecutorTest {
+class AggregationQueryExecutorTest {
 
   private static final String KIND = "Task";
   private static final String NAMESPACE = "ns";
@@ -58,8 +59,8 @@ public class AggregationQueryExecutorTest {
   private AggregationQueryExecutor queryExecutor;
   private DatastoreOptions datastoreOptions;
 
-  @Before
-  public void setUp() throws Exception {
+  @BeforeEach
+  void setUp() throws Exception {
     mockRpc = EasyMock.createStrictMock(DatastoreRpc.class);
     datastoreOptions =
         DatastoreOptions.newBuilder().setProjectId("project-id").setNamespace(NAMESPACE).build();
@@ -67,7 +68,7 @@ public class AggregationQueryExecutorTest {
   }
 
   @Test
-  public void shouldExecuteAggregationQuery() {
+  void shouldExecuteAggregationQuery() {
     EntityQuery nestedQuery =
         Query.newEntityQueryBuilder()
             .setNamespace(NAMESPACE)
@@ -106,7 +107,7 @@ public class AggregationQueryExecutorTest {
   }
 
   @Test
-  public void shouldExecuteAggregationQueryWithReadOptions() {
+  void shouldExecuteAggregationQueryWithReadOptions() {
     EntityQuery nestedQuery =
         Query.newEntityQueryBuilder()
             .setNamespace(NAMESPACE)

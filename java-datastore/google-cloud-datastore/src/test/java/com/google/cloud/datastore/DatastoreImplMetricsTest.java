@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertThrows;
+
 
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.NoCredentials;
@@ -47,19 +49,19 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import org.easymock.EasyMock;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.api.parallel.ResourceLock;
+
 
 /**
  * Tests for transaction metrics recording in {@link DatastoreImpl}. These tests verify that
  * transaction latency and per-attempt metrics are correctly recorded via the {@link
  * DatastoreMetricsRecorder}.
  */
-@RunWith(Parameterized.class)
-public class DatastoreImplMetricsTest {
+
+@ResourceLock("GlobalOpenTelemetry")
+class DatastoreImplMetricsTest {
 
   private static final String PROJECT_ID = "test-project";
   private static final String DATABASE_ID = "test-database";
@@ -67,7 +69,7 @@ public class DatastoreImplMetricsTest {
   private InMemoryMetricReader metricReader;
   private DatastoreRpc rpcMock;
   private Datastore datastore;
-  private final TelemetryConstants.Transport transport;
+  private TelemetryConstants.Transport transport;
 
   /**
    * We parameterize this test to run against both GRPC and HTTP transports. This ensures that
@@ -76,17 +78,13 @@ public class DatastoreImplMetricsTest {
    * GAX handles them natively for gRPC). Parameterizing allows us to automatically test both
    * transports for any new metrics added.
    */
-  @Parameters(name = "transport={0}")
   public static List<TelemetryConstants.Transport> data() {
     return Arrays.asList(TelemetryConstants.Transport.GRPC, TelemetryConstants.Transport.HTTP);
   }
 
-  public DatastoreImplMetricsTest(TelemetryConstants.Transport transport) {
-    this.transport = transport;
-  }
 
-  @Before
-  public void setUp() {
+  void initialize(TelemetryConstants.Transport transport) {
+    this.transport = transport;
     // Use delta temporality so each collectAllMetrics() call returns only new data and resets.
     metricReader = InMemoryMetricReader.createDelta();
     SdkMeterProvider meterProvider =
@@ -128,8 +126,10 @@ public class DatastoreImplMetricsTest {
     metricReader.collectAllMetrics(); // drain initialization
   }
 
-  @Test
-  public void runInTransaction_recordsLatencyOnSuccess() {
+  @ParameterizedTest
+  @MethodSource("data")
+  void runInTransaction_recordsLatencyOnSuccess(TelemetryConstants.Transport transport) {
+    initialize(transport);
     EasyMock.expect(rpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
         .andReturn(BeginTransactionResponse.getDefaultInstance());
     EasyMock.expect(rpcMock.commit(EasyMock.anyObject(CommitRequest.class)))
@@ -167,8 +167,10 @@ public class DatastoreImplMetricsTest {
     EasyMock.verify(rpcMock);
   }
 
-  @Test
-  public void runInTransaction_recordsPerAttemptCountOnSuccess() {
+  @ParameterizedTest
+  @MethodSource("data")
+  void runInTransaction_recordsPerAttemptCountOnSuccess(TelemetryConstants.Transport transport) {
+    initialize(transport);
     EasyMock.expect(rpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
         .andReturn(BeginTransactionResponse.getDefaultInstance());
     EasyMock.expect(rpcMock.commit(EasyMock.anyObject(CommitRequest.class)))
@@ -206,8 +208,10 @@ public class DatastoreImplMetricsTest {
     EasyMock.verify(rpcMock);
   }
 
-  @Test
-  public void runInTransaction_recordsPerAttemptOnRetry() {
+  @ParameterizedTest
+  @MethodSource("data")
+  void runInTransaction_recordsPerAttemptOnRetry(TelemetryConstants.Transport transport) {
+    initialize(transport);
     String abortedStatusCodeString = StatusCode.Code.ABORTED.toString();
     String okStatusCodeString = StatusCode.Code.OK.toString();
     // First attempt: begin -> ABORTED -> rollback
@@ -345,8 +349,10 @@ public class DatastoreImplMetricsTest {
     EasyMock.verify(rpcMock);
   }
 
-  @Test
-  public void runInTransaction_recordsStatusCodeOnFailure() {
+  @ParameterizedTest
+  @MethodSource("data")
+  void runInTransaction_recordsStatusCodeOnFailure(TelemetryConstants.Transport transport) {
+    initialize(transport);
     String abortedStatusCodeString = StatusCode.Code.ABORTED.toString();
     String cancelledStatusCodeString = StatusCode.Code.CANCELLED.toString();
 
@@ -475,8 +481,10 @@ public class DatastoreImplMetricsTest {
         .isTrue();
   }
 
-  @Test
-  public void runInTransaction_withTransactionOptions_recordsMetrics() {
+  @ParameterizedTest
+  @MethodSource("data")
+  void runInTransaction_withTransactionOptions_recordsMetrics(TelemetryConstants.Transport transport) {
+    initialize(transport);
     EasyMock.expect(rpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
         .andReturn(BeginTransactionResponse.getDefaultInstance());
     EasyMock.expect(rpcMock.commit(EasyMock.anyObject(CommitRequest.class)))
@@ -501,8 +509,10 @@ public class DatastoreImplMetricsTest {
     EasyMock.verify(rpcMock);
   }
 
-  @Test
-  public void lookup_recordsOperationAndAttemptMetrics() {
+  @ParameterizedTest
+  @MethodSource("data")
+  void lookup_recordsOperationAndAttemptMetrics(TelemetryConstants.Transport transport) {
+    initialize(transport);
     // Use `lookup` as a simple RPC test to test that metrics are recorded for operation
     // and attempt. Any RPC could have worked (there is no specific reason for lookup)
     EasyMock.expect(rpcMock.lookup(EasyMock.anyObject(LookupRequest.class)))
@@ -573,8 +583,10 @@ public class DatastoreImplMetricsTest {
     EasyMock.verify(rpcMock);
   }
 
-  @Test
-  public void lookup_recordsFailureStatusOnError() {
+  @ParameterizedTest
+  @MethodSource("data")
+  void lookup_recordsFailureStatusOnError(TelemetryConstants.Transport transport) {
+    initialize(transport);
     // Use `lookup` as a simple RPC test to test that metrics are recorded for operation
     // and attempt. Any RPC could have worked (there is no specific reason for lookup)
     StatusCode.Code unavailableStatusCode = StatusCode.Code.UNAVAILABLE;

@@ -15,16 +15,23 @@
  */
 
 package com.google.cloud.datastore.it;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.cloud.datastore.aggregation.Aggregation.count;
 import static com.google.cloud.datastore.telemetry.TraceUtil.*;
 import static com.google.common.truth.Truth.assertThat;
 import static io.opentelemetry.semconv.resource.attributes.ResourceAttributes.SERVICE_NAME;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+
+
+
+
+
 
 import com.google.cloud.datastore.AggregationQuery;
 import com.google.cloud.datastore.AggregationResult;
@@ -45,8 +52,6 @@ import com.google.cloud.datastore.Transaction;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import com.google.cloud.datastore.testing.RemoteDatastoreHelper;
 import com.google.common.base.Preconditions;
-import com.google.testing.junit.testparameterinjector.TestParameter;
-import com.google.testing.junit.testparameterinjector.TestParameterInjector;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.common.Attributes;
@@ -70,16 +75,18 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TestName;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.api.parallel.ResourceLock;
+import java.util.stream.Stream;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-@RunWith(TestParameterInjector.class)
-public class ITTracingTest {
+
+@ResourceLock("GlobalOpenTelemetry")
+class ITTracingTest {
   protected boolean isUsingGlobalOpenTelemetrySDK() {
     return useGlobalOpenTelemetrySDK;
   }
@@ -114,23 +121,27 @@ public class ITTracingTest {
   protected Datastore datastore;
   private static RemoteDatastoreHelper remoteDatastoreHelper;
 
-  @TestParameter boolean useGlobalOpenTelemetrySDK;
-
-  @TestParameter({
-    /*(default)*/
-    "",
-    "test-db"
-  })
+  boolean useGlobalOpenTelemetrySDK;
   String datastoreNamedDatabase;
 
   Map<String, String> spanNameToSpanId = new HashMap<>();
   Map<String, String> spanIdToParentSpanId = new HashMap<>();
   Map<String, SpanData> spanNameToSpanData = new HashMap<>();
 
-  @Rule public TestName testName = new TestName();
 
-  @Before
-  public void before() {
+  public static Stream<Arguments> data() {
+    return Stream.of(
+        arguments(true, ""),
+        arguments(true, "test-db"),
+        arguments(false, ""),
+        arguments(false, "test-db")
+    );
+  }
+
+  void initialize(boolean useGlobalOpenTelemetrySDK, String datastoreNamedDatabase) {
+    this.useGlobalOpenTelemetrySDK = useGlobalOpenTelemetrySDK;
+    this.datastoreNamedDatabase = datastoreNamedDatabase;
+    
     inMemorySpanExporter = InMemorySpanExporter.create();
 
     Resource resource =
@@ -190,8 +201,8 @@ public class ITTracingTest {
     cleanupTestSpanContext();
   }
 
-  @After
-  public void after() throws Exception {
+  @AfterEach
+  void after() throws Exception {
     if (isUsingGlobalOpenTelemetrySDK()) {
       GlobalOpenTelemetry.resetForTest();
     }
@@ -203,8 +214,8 @@ public class ITTracingTest {
     openTelemetrySdk = null;
   }
 
-  @AfterClass
-  public static void teardown() {}
+  @AfterAll
+  static void teardown() {}
 
   void waitForTracesToComplete() throws Exception {
     // The same way that querying the Cloud Trace backend may not give us the
@@ -369,29 +380,10 @@ public class ITTracingTest {
     spanNameToSpanData.clear();
   }
 
-  // This is a POJO used for testing APIs that take a POJO.
-  public static class Pojo {
-    public int bar;
-
-    public Pojo() {
-      bar = 0;
-    }
-
-    public Pojo(int bar) {
-      this.bar = bar;
-    }
-
-    public int getBar() {
-      return bar;
-    }
-
-    public void setBar(int bar) {
-      this.bar = bar;
-    }
-  }
-
-  @Test
-  public void lookupTraceTest() throws Exception {
+  @ParameterizedTest
+  @MethodSource("data")
+  void lookupTraceTest(boolean useGlobalOpenTelemetrySDK, String datastoreNamedDatabase) throws Exception {
+    initialize(useGlobalOpenTelemetrySDK, datastoreNamedDatabase);
     Entity entity = datastore.get(KEY1);
     assertNull(entity);
 
@@ -414,8 +406,10 @@ public class ITTracingTest {
                 .build()));
   }
 
-  @Test
-  public void allocateIdsTraceTest() throws Exception {
+  @ParameterizedTest
+  @MethodSource("data")
+  void allocateIdsTraceTest(boolean useGlobalOpenTelemetrySDK, String datastoreNamedDatabase) throws Exception {
+    initialize(useGlobalOpenTelemetrySDK, datastoreNamedDatabase);
     String kind1 = "kind1";
     KeyFactory keyFactory = datastore.newKeyFactory().setKind(kind1);
     IncompleteKey pk1 = keyFactory.newKey();
@@ -428,8 +422,10 @@ public class ITTracingTest {
     assertSpanHierarchy(SPAN_NAME_ALLOCATE_IDS);
   }
 
-  @Test
-  public void reserveIdsTraceTest() throws Exception {
+  @ParameterizedTest
+  @MethodSource("data")
+  void reserveIdsTraceTest(boolean useGlobalOpenTelemetrySDK, String datastoreNamedDatabase) throws Exception {
+    initialize(useGlobalOpenTelemetrySDK, datastoreNamedDatabase);
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
     Key key1 = keyFactory.newKey(10);
     Key key2 = keyFactory.newKey("name");
@@ -443,8 +439,10 @@ public class ITTracingTest {
     assertSpanHierarchy(SPAN_NAME_RESERVE_IDS);
   }
 
-  @Test
-  public void commitTraceTest() throws Exception {
+  @ParameterizedTest
+  @MethodSource("data")
+  void commitTraceTest(boolean useGlobalOpenTelemetrySDK, String datastoreNamedDatabase) throws Exception {
+    initialize(useGlobalOpenTelemetrySDK, datastoreNamedDatabase);
     Entity entity1 = Entity.newBuilder(KEY1).set("test_key", "test_value").build();
     Entity response = datastore.add(entity1);
     assertEquals(entity1, response);
@@ -456,8 +454,10 @@ public class ITTracingTest {
     assertSpanHierarchy(SPAN_NAME_COMMIT);
   }
 
-  @Test
-  public void putTraceTest() throws Exception {
+  @ParameterizedTest
+  @MethodSource("data")
+  void putTraceTest(boolean useGlobalOpenTelemetrySDK, String datastoreNamedDatabase) throws Exception {
+    initialize(useGlobalOpenTelemetrySDK, datastoreNamedDatabase);
     Entity entity1 = Entity.newBuilder(KEY1).set("test_key", "test_value").build();
     Entity response = datastore.put(entity1);
     assertEquals(entity1, response);
@@ -469,8 +469,10 @@ public class ITTracingTest {
     assertSpanHierarchy(SPAN_NAME_COMMIT);
   }
 
-  @Test
-  public void updateTraceTest() throws Exception {
+  @ParameterizedTest
+  @MethodSource("data")
+  void updateTraceTest(boolean useGlobalOpenTelemetrySDK, String datastoreNamedDatabase) throws Exception {
+    initialize(useGlobalOpenTelemetrySDK, datastoreNamedDatabase);
     Entity entity1 = Entity.newBuilder(KEY1).set("test_field", "test_value1").build();
     Entity entity2 = Entity.newBuilder(KEY2).set("test_field", "test_value2").build();
     List<Entity> entityList = new ArrayList<>();
@@ -509,8 +511,10 @@ public class ITTracingTest {
     assertSpanHierarchy(SPAN_NAME_COMMIT);
   }
 
-  @Test
-  public void deleteTraceTest() throws Exception {
+  @ParameterizedTest
+  @MethodSource("data")
+  void deleteTraceTest(boolean useGlobalOpenTelemetrySDK, String datastoreNamedDatabase) throws Exception {
+    initialize(useGlobalOpenTelemetrySDK, datastoreNamedDatabase);
     Entity entity1 = Entity.newBuilder(KEY1).set("test_key", "test_value").build();
     Entity response = datastore.put(entity1);
     assertEquals(entity1, response);
@@ -553,8 +557,10 @@ public class ITTracingTest {
                 .build()));
   }
 
-  @Test
-  public void runQueryTraceTest() throws Exception {
+  @ParameterizedTest
+  @MethodSource("data")
+  void runQueryTraceTest(boolean useGlobalOpenTelemetrySDK, String datastoreNamedDatabase) throws Exception {
+    initialize(useGlobalOpenTelemetrySDK, datastoreNamedDatabase);
     Entity entity1 = Entity.newBuilder(KEY1).set("test_field", "test_value1").build();
     Entity entity2 = Entity.newBuilder(KEY2).set("test_field", "test_value2").build();
     List<Entity> entityList = new ArrayList<>();
@@ -597,8 +603,10 @@ public class ITTracingTest {
                 .build()));
   }
 
-  @Test
-  public void runAggregationQueryTraceTest() throws Exception {
+  @ParameterizedTest
+  @MethodSource("data")
+  void runAggregationQueryTraceTest(boolean useGlobalOpenTelemetrySDK, String datastoreNamedDatabase) throws Exception {
+    initialize(useGlobalOpenTelemetrySDK, datastoreNamedDatabase);
     Entity entity1 =
         Entity.newBuilder(KEY1)
             .set("pepper_name", "jalapeno")
@@ -652,178 +660,10 @@ public class ITTracingTest {
     assertSpanHierarchy(SPAN_NAME_RUN_AGGREGATION_QUERY);
   }
 
-  @Test
-  public void newTransactionReadWriteTraceTest() throws Exception {
-    // Transaction.Begin
-    Transaction transaction = datastore.newTransaction();
-
-    // Transaction.Lookup
-    Entity entity = datastore.get(KEY1, ReadOption.transactionId(transaction.getTransactionId()));
-    assertNull(entity);
-
-    Entity updatedEntity = Entity.newBuilder(KEY1).set("test_field", "new_test_value1").build();
-    transaction.put(updatedEntity);
-
-    // Transaction.Commit
-    transaction.commit();
-
-    waitForTracesToComplete();
-
-    List<SpanData> spans = prepareSpans();
-    assertEquals(3, spans.size());
-
-    assertSpanHierarchy(SPAN_NAME_BEGIN_TRANSACTION);
-    assertSpanHierarchy(SPAN_NAME_TRANSACTION_LOOKUP);
-    SpanData span = getSpanByName(SPAN_NAME_TRANSACTION_LOOKUP);
-    assertTrue(
-        hasEvent(
-            span,
-            SPAN_NAME_TRANSACTION_LOOKUP + " complete.",
-            Attributes.builder()
-                .put(TelemetryConstants.ATTRIBUTES_KEY_DEFERRED, 0)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_MISSING, 1)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_RECEIVED, 0)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, true)
-                .put(
-                    TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID,
-                    transaction.getTransactionId().toStringUtf8())
-                .build()));
-
-    assertSpanHierarchy(SPAN_NAME_TRANSACTION_COMMIT);
-    span = getSpanByName(SPAN_NAME_TRANSACTION_COMMIT);
-    assertTrue(
-        hasEvent(
-            span,
-            SPAN_NAME_TRANSACTION_COMMIT + " complete.",
-            Attributes.builder()
-                .put(TelemetryConstants.ATTRIBUTES_KEY_DOCUMENT_COUNT, 1)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, true)
-                .put(
-                    TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID,
-                    transaction.getTransactionId().toStringUtf8())
-                .build()));
-  }
-
-  @Test
-  public void newTransactionQueryTest() throws Exception {
-    Entity entity1 = Entity.newBuilder(KEY1).set("test_field", "test_value1").build();
-    Entity entity2 = Entity.newBuilder(KEY2).set("test_field", "test_value2").build();
-    List<Entity> entityList = new ArrayList<>();
-    entityList.add(entity1);
-    entityList.add(entity2);
-
-    List<Entity> response = datastore.add(entity1, entity2);
-    assertEquals(entityList, response);
-
-    // Clean Up test span context to verify Transaction RunQuery spans
-    cleanupTestSpanContext();
-
-    Transaction transaction = datastore.newTransaction();
-    PropertyFilter filter = PropertyFilter.eq("test_field", entity1.getValue("test_field"));
-    Query<Entity> query =
-        Query.newEntityQueryBuilder().setKind(KEY1.getKind()).setFilter(filter).build();
-    QueryResults<Entity> queryResults = transaction.run(query);
-    transaction.commit();
-    assertTrue(queryResults.hasNext());
-    assertEquals(entity1, queryResults.next());
-    assertFalse(queryResults.hasNext());
-
-    waitForTracesToComplete();
-
-    List<SpanData> spans = prepareSpans();
-    assertEquals(3, spans.size());
-
-    assertSpanHierarchy(SPAN_NAME_BEGIN_TRANSACTION);
-    assertSpanHierarchy(SPAN_NAME_TRANSACTION_RUN_QUERY);
-    assertSpanHierarchy(SPAN_NAME_TRANSACTION_COMMIT);
-    SpanData span = getSpanByName(SPAN_NAME_TRANSACTION_RUN_QUERY);
-    assertTrue(
-        hasEvent(
-            span,
-            SPAN_NAME_TRANSACTION_RUN_QUERY + " complete.",
-            Attributes.builder()
-                .put(TelemetryConstants.ATTRIBUTES_KEY_DOCUMENT_COUNT, 1)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, true)
-                .put(
-                    TelemetryConstants.ATTRIBUTES_KEY_READ_CONSISTENCY,
-                    "READ_CONSISTENCY_UNSPECIFIED")
-                .put(TelemetryConstants.ATTRIBUTES_KEY_MORE_RESULTS, "NO_MORE_RESULTS")
-                .put(
-                    TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID,
-                    transaction.getTransactionId().toStringUtf8())
-                .build()));
-  }
-
-  @Test
-  public void newTransactionRollbackTest() throws Exception {
-    Entity entity1 = Entity.newBuilder(KEY1).set("pepper_type", "jalapeno").build();
-    Entity entity2 = Entity.newBuilder(KEY2).set("pepper_type", "habanero").build();
-    List<Entity> entityList = new ArrayList<>();
-    entityList.add(entity1);
-    entityList.add(entity2);
-
-    List<Entity> response = datastore.add(entity1, entity2);
-    assertEquals(entityList, response);
-
-    // Clean Up test span context to verify Transaction Rollback spans
-    cleanupTestSpanContext();
-
-    String simplified_spice_level = "not_spicy";
-    Entity entity1update =
-        Entity.newBuilder(entity1).set("spice_level", simplified_spice_level).build();
-    Transaction transaction = datastore.newTransaction();
-    entity1 = transaction.get(KEY1);
-    switch (entity1.getString("pepper_type")) {
-      case "jalapeno":
-        simplified_spice_level = "mild";
-        break;
-
-      case "habanero":
-        simplified_spice_level = "hot";
-        break;
-    }
-    transaction.update(entity1update);
-    transaction.delete(KEY2);
-    transaction.rollback();
-    assertFalse(transaction.isActive());
-
-    waitForTracesToComplete();
-
-    List<SpanData> spans = prepareSpans();
-    assertEquals(3, spans.size());
-
-    assertSpanHierarchy(SPAN_NAME_BEGIN_TRANSACTION);
-    assertSpanHierarchy(SPAN_NAME_TRANSACTION_LOOKUP);
-    SpanData span = getSpanByName(SPAN_NAME_TRANSACTION_LOOKUP);
-    assertTrue(
-        hasEvent(
-            span,
-            SPAN_NAME_TRANSACTION_LOOKUP + " complete.",
-            Attributes.builder()
-                .put(TelemetryConstants.ATTRIBUTES_KEY_DEFERRED, 0)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_MISSING, 0)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_RECEIVED, 1)
-                .put(TelemetryConstants.ATTRIBUTES_KEY_TRANSACTIONAL, true)
-                .put(
-                    TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID,
-                    transaction.getTransactionId().toStringUtf8())
-                .build()));
-
-    assertSpanHierarchy(SPAN_NAME_ROLLBACK);
-    span = getSpanByName(SPAN_NAME_ROLLBACK);
-    assertTrue(
-        hasEvent(
-            span,
-            SPAN_NAME_ROLLBACK,
-            Attributes.builder()
-                .put(
-                    TelemetryConstants.ATTRIBUTES_KEY_TRANSACTION_ID,
-                    transaction.getTransactionId().toStringUtf8())
-                .build()));
-  }
-
-  @Test
-  public void runInTransactionQueryTest() throws Exception {
+  @ParameterizedTest
+  @MethodSource("data")
+  void runInTransactionQueryTest(boolean useGlobalOpenTelemetrySDK, String datastoreNamedDatabase) throws Exception {
+    initialize(useGlobalOpenTelemetrySDK, datastoreNamedDatabase);
     // Set up
     Entity entity1 = Entity.newBuilder(KEY1).set("test_field", "test_value1").build();
     Entity entity2 = Entity.newBuilder(KEY2).set("test_field", "test_value2").build();

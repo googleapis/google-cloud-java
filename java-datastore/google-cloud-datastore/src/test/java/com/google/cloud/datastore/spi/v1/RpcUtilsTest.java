@@ -15,6 +15,7 @@
  */
 
 package com.google.cloud.datastore.spi.v1;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -22,12 +23,12 @@ import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.datastore.DatastoreOptions;
 import java.time.Duration;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class RpcUtilsTest {
+class RpcUtilsTest {
 
   @Test
-  public void testRetrySettingSetter() {
+  void testRetrySettingSetter() {
     UnaryCallSettings.Builder<Object, Object> builder =
         UnaryCallSettings.newUnaryCallSettingsBuilder();
 

@@ -15,25 +15,28 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createStrictMock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+
+
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterators;
 import java.util.Collections;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class DatastoreHelperTest {
+class DatastoreHelperTest {
 
   @Test
-  public void testNewKeyFactory() {
+  void testNewKeyFactory() {
     DatastoreOptions options = createMock(DatastoreOptions.class);
     expect(options.getProjectId()).andReturn("ds1").once();
     expect(options.getNamespace()).andReturn("ns1").once();
@@ -50,7 +53,7 @@ public class DatastoreHelperTest {
   }
 
   @Test
-  public void testAllocateId() {
+  void testAllocateId() {
     Datastore datastore = createStrictMock(Datastore.class);
     IncompleteKey pKey1 = IncompleteKey.newBuilder("ds", "k").build();
     Key key1 = Key.newBuilder(pKey1, 1).build();
@@ -62,7 +65,7 @@ public class DatastoreHelperTest {
   }
 
   @Test
-  public void testGetWithDatastore() throws Exception {
+  void testGetWithDatastore() throws Exception {
     Datastore datastore = createStrictMock(Datastore.class);
     IncompleteKey pKey1 = IncompleteKey.newBuilder("ds", "k").build();
     Key key1 = Key.newBuilder(pKey1, 1).build();
@@ -83,7 +86,7 @@ public class DatastoreHelperTest {
   }
 
   @Test
-  public void testGetWithTransaction() throws Exception {
+  void testGetWithTransaction() throws Exception {
     Transaction transaction = createStrictMock(Transaction.class);
     IncompleteKey pKey1 = IncompleteKey.newBuilder("ds", "k").build();
     Key key1 = Key.newBuilder(pKey1, 1).build();
@@ -99,7 +102,7 @@ public class DatastoreHelperTest {
   }
 
   @Test
-  public void testAdd() throws Exception {
+  void testAdd() throws Exception {
     Datastore datastore = createStrictMock(Datastore.class);
     IncompleteKey pKey = IncompleteKey.newBuilder("ds", "k").build();
     Key key = Key.newBuilder(pKey, 1).build();
@@ -111,7 +114,7 @@ public class DatastoreHelperTest {
   }
 
   @Test
-  public void testFetchWithDatastore() throws Exception {
+  void testFetchWithDatastore() throws Exception {
     Datastore datastore = createStrictMock(Datastore.class);
     IncompleteKey pKey1 = IncompleteKey.newBuilder("ds", "k").build();
     Key key1 = Key.newBuilder(pKey1, 1).build();
@@ -138,7 +141,7 @@ public class DatastoreHelperTest {
   }
 
   @Test
-  public void testFetchWithTransaction() throws Exception {
+  void testFetchWithTransaction() throws Exception {
     Transaction transaction = createStrictMock(Transaction.class);
     IncompleteKey pKey1 = IncompleteKey.newBuilder("ds", "k").build();
     Key key1 = Key.newBuilder(pKey1, 1).build();

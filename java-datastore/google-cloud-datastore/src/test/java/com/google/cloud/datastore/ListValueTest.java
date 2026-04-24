@@ -15,18 +15,22 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+
+
+
 
 import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
 import java.util.Collections;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class ListValueTest {
+class ListValueTest {
 
   private static final List<Value<?>> CONTENT =
       ImmutableList.of(NullValue.of(), StringValue.of("foo"));
@@ -50,13 +54,13 @@ public class ListValueTest {
   private static final Blob BLOB2 = Blob.copyFrom(new byte[] {0xB, 0x0, 0x0, 0x0});
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     ListValue value = ListValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @Test
-  public void testOf() {
+  void testOf() {
     ListValue value = ListValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -106,7 +110,7 @@ public class ListValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     ListValue.Builder builder = ListValue.newBuilder().set(CONTENT);
     ListValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

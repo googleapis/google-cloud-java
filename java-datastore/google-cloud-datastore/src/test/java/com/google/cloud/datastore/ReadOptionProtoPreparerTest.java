@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.cloud.datastore.ReadOption.eventualConsistency;
 import static com.google.cloud.datastore.ReadOption.readTime;
@@ -21,22 +23,22 @@ import static com.google.cloud.datastore.ReadOption.transactionId;
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.datastore.v1.ReadOptions.ReadConsistency.EVENTUAL;
 import static java.util.Collections.singletonList;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThrows;
+
+
 
 import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
 import com.google.datastore.v1.ReadOptions;
 import java.util.Arrays;
 import java.util.Optional;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class ReadOptionProtoPreparerTest {
+class ReadOptionProtoPreparerTest {
 
   private final ReadOptionProtoPreparer protoPreparer = new ReadOptionProtoPreparer();
 
   @Test
-  public void shouldThrowErrorWhenUsingMultipleReadOptions() {
+  void shouldThrowErrorWhenUsingMultipleReadOptions() {
     assertThrows(
         DatastoreException.class,
         () ->
@@ -62,14 +64,14 @@ public class ReadOptionProtoPreparerTest {
   }
 
   @Test
-  public void shouldPrepareReadOptionsWithEventualConsistency() {
+  void shouldPrepareReadOptionsWithEventualConsistency() {
     Optional<ReadOptions> readOptions = protoPreparer.prepare(singletonList(eventualConsistency()));
 
     assertThat(readOptions.get().getReadConsistency()).isEqualTo(EVENTUAL);
   }
 
   @Test
-  public void shouldPrepareReadOptionsWithReadTime() {
+  void shouldPrepareReadOptionsWithReadTime() {
     Timestamp timestamp = Timestamp.now();
     Optional<ReadOptions> readOptions = protoPreparer.prepare(singletonList(readTime(timestamp)));
 
@@ -77,7 +79,7 @@ public class ReadOptionProtoPreparerTest {
   }
 
   @Test
-  public void shouldPrepareReadOptionsWithTransactionId() {
+  void shouldPrepareReadOptionsWithTransactionId() {
     String transactionId = "transaction-id";
     Optional<ReadOptions> readOptions =
         protoPreparer.prepare(singletonList(transactionId(transactionId)));
@@ -86,12 +88,12 @@ public class ReadOptionProtoPreparerTest {
   }
 
   @Test
-  public void shouldReturnNullWhenReadOptionsIsNull() {
+  void shouldReturnNullWhenReadOptionsIsNull() {
     assertFalse(protoPreparer.prepare(null).isPresent());
   }
 
   @Test
-  public void shouldReturnNullWhenReadOptionsIsAnEmptyList() {
+  void shouldReturnNullWhenReadOptionsIsAnEmptyList() {
     assertFalse(protoPreparer.prepare(ImmutableList.of()).isPresent());
   }
 }

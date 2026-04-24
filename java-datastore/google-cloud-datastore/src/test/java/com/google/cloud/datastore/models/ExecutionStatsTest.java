@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package com.google.cloud.datastore.models;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.Structs;
 import com.google.common.testing.EqualsTester;
@@ -21,9 +22,9 @@ import com.google.common.truth.Truth;
 import com.google.protobuf.Duration;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class ExecutionStatsTest {
+class ExecutionStatsTest {
   private final Struct struct =
       Struct.newBuilder()
           .putFields("key", Value.newBuilder().setStringValue("val").build())
@@ -39,7 +40,7 @@ public class ExecutionStatsTest {
   ExecutionStats executionStats = new ExecutionStats(proto);
 
   @Test
-  public void testModel() {
+  void testModel() {
     Truth.assertThat(executionStats.getDebugStats()).isEqualTo(Structs.asMap(struct));
     Truth.assertThat(executionStats.getExecutionDurationJavaTime())
         .isEqualTo(java.time.Duration.ofNanos(duration.getNanos()));
@@ -48,7 +49,7 @@ public class ExecutionStatsTest {
   }
 
   @Test
-  public void testEqualsAndHashcode() {
+  void testEqualsAndHashcode() {
     com.google.datastore.v1.ExecutionStats proto2 =
         com.google.datastore.v1.ExecutionStats.newBuilder()
             .setDebugStats(struct)

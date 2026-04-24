@@ -15,26 +15,30 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
 
-public class LatLngValueTest {
+
+
+import org.junit.jupiter.api.Test;
+
+class LatLngValueTest {
 
   private static final LatLng CONTENT = new LatLng(37.4, -122.1);
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     LatLngValue value = LatLngValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testOf() {
+  void testOf() {
     LatLngValue value = LatLngValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -42,7 +46,7 @@ public class LatLngValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     LatLngValue.Builder builder = LatLngValue.newBuilder(CONTENT);
     LatLngValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

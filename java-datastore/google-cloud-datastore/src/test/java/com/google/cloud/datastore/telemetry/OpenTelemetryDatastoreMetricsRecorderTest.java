@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package com.google.cloud.datastore.telemetry;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -29,19 +30,19 @@ import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
-public class OpenTelemetryDatastoreMetricsRecorderTest {
+
+
+
+class OpenTelemetryDatastoreMetricsRecorderTest {
 
   private InMemoryMetricReader metricReader;
   private OpenTelemetryDatastoreMetricsRecorder recorder;
 
-  @Before
-  public void setUp() {
+  @BeforeEach
+  void setUp() {
     metricReader = InMemoryMetricReader.create();
     SdkMeterProvider meterProvider =
         SdkMeterProvider.builder().registerMetricReader(metricReader).build();
@@ -52,7 +53,7 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void recordTransactionLatency_recordsHistogramWithAttributes() {
+  void recordTransactionLatency_recordsHistogramWithAttributes() {
     Map<String, String> attributes = new HashMap<>();
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, StatusCode.Code.OK.toString());
     attributes.put(
@@ -89,7 +90,7 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void recordTransactionAttemptCount_recordsCounterWithAttributes() {
+  void recordTransactionAttemptCount_recordsCounterWithAttributes() {
     Map<String, String> attributes = new HashMap<>();
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, StatusCode.Code.ABORTED.toString());
     attributes.put(
@@ -126,7 +127,7 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void recordTransactionAttemptCount_multipleAttempts_accumulates() {
+  void recordTransactionAttemptCount_multipleAttempts_accumulates() {
     Map<String, String> abortedAttributes = new HashMap<>();
     abortedAttributes.put(
         TelemetryConstants.ATTRIBUTES_KEY_STATUS, StatusCode.Code.ABORTED.toString());
@@ -157,7 +158,7 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void recordTransactionLatency_nullAttributes() {
+  void recordTransactionLatency_nullAttributes() {
     recorder.recordTransactionLatency(100.0, null);
 
     Collection<MetricData> metrics = metricReader.collectAllMetrics();
@@ -165,7 +166,7 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void recordAttemptLatency_recordsHistogramWithAttributes() {
+  void recordAttemptLatency_recordsHistogramWithAttributes() {
     Map<String, String> attributes = new HashMap<>();
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, StatusCode.Code.OK.toString());
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_METHOD, TelemetryConstants.METHOD_LOOKUP);
@@ -195,7 +196,7 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void recordAttemptCount_recordsCounterWithAttributes() {
+  void recordAttemptCount_recordsCounterWithAttributes() {
     Map<String, String> attributes = new HashMap<>();
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, StatusCode.Code.OK.toString());
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_METHOD, TelemetryConstants.METHOD_COMMIT);
@@ -217,7 +218,7 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void recordOperationLatency_recordsHistogramWithAttributes() {
+  void recordOperationLatency_recordsHistogramWithAttributes() {
     Map<String, String> attributes = new HashMap<>();
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, StatusCode.Code.OK.toString());
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_METHOD, TelemetryConstants.METHOD_RUN_QUERY);
@@ -243,7 +244,7 @@ public class OpenTelemetryDatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void recordOperationCount_recordsCounterWithAttributes() {
+  void recordOperationCount_recordsCounterWithAttributes() {
     Map<String, String> attributes = new HashMap<>();
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, StatusCode.Code.OK.toString());
     attributes.put(

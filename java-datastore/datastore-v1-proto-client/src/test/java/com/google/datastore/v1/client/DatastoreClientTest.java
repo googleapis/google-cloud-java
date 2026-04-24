@@ -14,13 +14,18 @@
  * limitations under the License.
  */
 package com.google.datastore.v1.client;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.fail;
+
+
+
+
+
 
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
@@ -51,13 +56,13 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.SocketTimeoutException;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
+
+
 
 /** Tests for {@link DatastoreFactory} and {@link Datastore}. */
-@RunWith(JUnit4.class)
-public class DatastoreClientTest {
+
+class DatastoreClientTest {
   private static final String PROJECT_ID = "project-id";
 
   private DatastoreFactory factory = new MockDatastoreFactory();
@@ -65,7 +70,7 @@ public class DatastoreClientTest {
       new DatastoreOptions.Builder().projectId(PROJECT_ID).credential(new MockCredential());
 
   @Test
-  public void options_NoProjectIdOrProjectEndpoint() {
+  void options_NoProjectIdOrProjectEndpoint() {
     IllegalArgumentException exception =
         assertThrows(
             IllegalArgumentException.class,
@@ -77,7 +82,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void options_ProjectIdAndProjectEndpoint() throws Exception {
+  void options_ProjectIdAndProjectEndpoint() throws Exception {
     IllegalArgumentException exception =
         assertThrows(
             IllegalArgumentException.class,
@@ -92,7 +97,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void options_LocalHostAndProjectEndpoint() throws Exception {
+  void options_LocalHostAndProjectEndpoint() throws Exception {
     IllegalArgumentException exception =
         assertThrows(
             IllegalArgumentException.class,
@@ -107,7 +112,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void options_HostAndProjectEndpoint() throws Exception {
+  void options_HostAndProjectEndpoint() throws Exception {
     IllegalArgumentException exception =
         assertThrows(
             IllegalArgumentException.class,
@@ -122,7 +127,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void options_HostAndLocalHost() throws Exception {
+  void options_HostAndLocalHost() throws Exception {
     IllegalArgumentException exception =
         assertThrows(
             IllegalArgumentException.class,
@@ -136,7 +141,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void options_InvalidLocalHost() throws Exception {
+  void options_InvalidLocalHost() throws Exception {
     IllegalArgumentException exception =
         assertThrows(
             IllegalArgumentException.class,
@@ -150,7 +155,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void options_SchemeInLocalHost() {
+  void options_SchemeInLocalHost() {
     IllegalArgumentException exception =
         assertThrows(
             IllegalArgumentException.class,
@@ -161,7 +166,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void options_InvalidHost() {
+  void options_InvalidHost() {
     IllegalArgumentException exception =
         assertThrows(
             IllegalArgumentException.class,
@@ -175,7 +180,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void options_SchemeInHost() {
+  void options_SchemeInHost() {
     IllegalArgumentException exception =
         assertThrows(
             IllegalArgumentException.class,
@@ -187,12 +192,12 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void create_NullOptions() throws Exception {
+  void create_NullOptions() throws Exception {
     assertThrows(NullPointerException.class, () -> factory.create(null));
   }
 
   @Test
-  public void create_Host() {
+  void create_Host() {
     Datastore datastore =
         factory.create(
             new DatastoreOptions.Builder()
@@ -204,7 +209,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void create_LocalHost() {
+  void create_LocalHost() {
     Datastore datastore =
         factory.create(
             new DatastoreOptions.Builder()
@@ -216,7 +221,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void create_LocalHostIp() {
+  void create_LocalHostIp() {
     Datastore datastore =
         factory.create(
             new DatastoreOptions.Builder()
@@ -228,7 +233,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void create_DefaultHost() {
+  void create_DefaultHost() {
     Datastore datastore =
         factory.create(new DatastoreOptions.Builder().projectId(PROJECT_ID).build());
     assertThat(datastore.remoteRpc.getUrl())
@@ -236,7 +241,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void create_ProjectEndpoint() {
+  void create_ProjectEndpoint() {
     Datastore datastore =
         factory.create(
             new DatastoreOptions.Builder()
@@ -247,7 +252,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void create_ProjectEndpointNoScheme() {
+  void create_ProjectEndpointNoScheme() {
     IllegalArgumentException exception =
         assertThrows(
             IllegalArgumentException.class,
@@ -264,7 +269,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void initializer() throws Exception {
+  void initializer() throws Exception {
     options.initializer(
         new HttpRequestInitializer() {
           @Override
@@ -282,21 +287,21 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void allocateIds() throws Exception {
+  void allocateIds() throws Exception {
     AllocateIdsRequest.Builder request = AllocateIdsRequest.newBuilder();
     AllocateIdsResponse.Builder response = AllocateIdsResponse.newBuilder();
     expectRpc("allocateIds", request.build(), response.build());
   }
 
   @Test
-  public void lookup() throws Exception {
+  void lookup() throws Exception {
     LookupRequest.Builder request = LookupRequest.newBuilder();
     LookupResponse.Builder response = LookupResponse.newBuilder();
     expectRpc("lookup", request.build(), response.build());
   }
 
   @Test
-  public void beginTransaction() throws Exception {
+  void beginTransaction() throws Exception {
     BeginTransactionRequest.Builder request = BeginTransactionRequest.newBuilder();
     BeginTransactionResponse.Builder response = BeginTransactionResponse.newBuilder();
     response.setTransaction(ByteString.copyFromUtf8("project-id"));
@@ -304,7 +309,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void commit() throws Exception {
+  void commit() throws Exception {
     CommitRequest.Builder request = CommitRequest.newBuilder();
     request.setTransaction(ByteString.copyFromUtf8("project-id"));
     CommitResponse.Builder response = CommitResponse.newBuilder();
@@ -312,14 +317,14 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void reserveIds() throws Exception {
+  void reserveIds() throws Exception {
     ReserveIdsRequest.Builder request = ReserveIdsRequest.newBuilder();
     ReserveIdsResponse.Builder response = ReserveIdsResponse.newBuilder();
     expectRpc("reserveIds", request.build(), response.build());
   }
 
   @Test
-  public void rollback() throws Exception {
+  void rollback() throws Exception {
     RollbackRequest.Builder request = RollbackRequest.newBuilder();
     request.setTransaction(ByteString.copyFromUtf8("project-id"));
     RollbackResponse.Builder response = RollbackResponse.newBuilder();
@@ -327,7 +332,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void runQuery() throws Exception {
+  void runQuery() throws Exception {
     RunQueryRequest.Builder request = RunQueryRequest.newBuilder();
     request.getQueryBuilder();
     RunQueryResponse.Builder response = RunQueryResponse.newBuilder();
@@ -339,7 +344,7 @@ public class DatastoreClientTest {
   }
 
   @Test
-  public void runAggregationQuery() throws Exception {
+  void runAggregationQuery() throws Exception {
     RunAggregationQueryRequest.Builder request = RunAggregationQueryRequest.newBuilder();
     RunAggregationQueryResponse.Builder response = RunAggregationQueryResponse.newBuilder();
     expectRpc("runAggregationQuery", request.build(), response.build());

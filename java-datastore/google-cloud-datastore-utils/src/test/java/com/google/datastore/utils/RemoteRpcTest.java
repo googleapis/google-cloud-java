@@ -14,8 +14,11 @@
  * limitations under the License.
  */
 package com.google.datastore.utils;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.*;
+
 
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpTransport;
@@ -34,18 +37,18 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.zip.GZIPOutputStream;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
+
+
 
 /** Test for {@link RemoteRpc}. */
-@RunWith(JUnit4.class)
-public class RemoteRpcTest {
+
+class RemoteRpcTest {
 
   private static final String METHOD_NAME = "methodName";
 
   @Test
-  public void testException() {
+  void testException() {
     Status statusProto =
         Status.newBuilder()
             .setCode(Code.UNAUTHENTICATED_VALUE)
@@ -67,7 +70,7 @@ public class RemoteRpcTest {
   }
 
   @Test
-  public void testInvalidProtoException() {
+  void testInvalidProtoException() {
     DatastoreException exception =
         RemoteRpc.makeException(
             "url",
@@ -85,7 +88,7 @@ public class RemoteRpcTest {
   }
 
   @Test
-  public void testEmptyProtoException() {
+  void testEmptyProtoException() {
     Status statusProto = Status.newBuilder().build();
     DatastoreException exception =
         RemoteRpc.makeException(
@@ -104,7 +107,7 @@ public class RemoteRpcTest {
   }
 
   @Test
-  public void testEmptyProtoExceptionUnauthenticated() {
+  void testEmptyProtoExceptionUnauthenticated() {
     Status statusProto = Status.newBuilder().build();
     DatastoreException exception =
         RemoteRpc.makeException(
@@ -121,7 +124,7 @@ public class RemoteRpcTest {
   }
 
   @Test
-  public void testPlainTextException() {
+  void testPlainTextException() {
     DatastoreException exception =
         RemoteRpc.makeException(
             "url",
@@ -138,7 +141,7 @@ public class RemoteRpcTest {
   }
 
   @Test
-  public void testGzip() throws IOException, DatastoreException {
+  void testGzip() throws IOException, DatastoreException {
     BeginTransactionResponse response = newBeginTransactionResponse();
     InjectedTestValues injectedTestValues =
         new InjectedTestValues(gzip(response), new byte[1], true);
@@ -155,7 +158,7 @@ public class RemoteRpcTest {
   }
 
   @Test
-  public void testHttpHeaders_apiFormat() throws IOException {
+  void testHttpHeaders_apiFormat() throws IOException {
     String projectId = "project-id";
     MessageLite request =
         RollbackRequest.newBuilder().setTransaction(ByteString.copyFromUtf8(projectId)).build();
@@ -170,7 +173,7 @@ public class RemoteRpcTest {
   }
 
   @Test
-  public void testHttpHeaders_prefixHeader() throws IOException {
+  void testHttpHeaders_prefixHeader() throws IOException {
     String projectId = "my-project";
     String databaseId = "my-db";
     MessageLite request =

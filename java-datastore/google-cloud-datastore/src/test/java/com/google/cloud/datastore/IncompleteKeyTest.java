@@ -15,21 +15,25 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
-import org.junit.Before;
-import org.junit.Test;
 
-public class IncompleteKeyTest {
+
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class IncompleteKeyTest {
 
   private static IncompleteKey pk1, pk2, pk4, pk5;
   private static Key parent1, parent2;
 
-  @Before
-  public void setUp() {
+  @BeforeEach
+  void setUp() {
     pk1 = IncompleteKey.newBuilder("ds", "kind1").build();
     parent1 = Key.newBuilder("ds", "kind2", 10).setNamespace("ns").build();
     parent2 = Key.newBuilder("ds", "kind2", 10, "test-db").setNamespace("ns").build();
@@ -39,7 +43,7 @@ public class IncompleteKeyTest {
   }
 
   @Test
-  public void testBuilders() {
+  void testBuilders() {
     assertEquals("ds", pk1.getProjectId());
     assertEquals("", pk1.getDatabaseId());
     assertEquals("kind1", pk1.getKind());
@@ -69,7 +73,7 @@ public class IncompleteKeyTest {
   }
 
   @Test
-  public void testParent() {
+  void testParent() {
     assertNull(pk1.getParent());
     assertEquals(parent1, pk2.getParent());
     assertEquals(parent2, pk5.getParent());

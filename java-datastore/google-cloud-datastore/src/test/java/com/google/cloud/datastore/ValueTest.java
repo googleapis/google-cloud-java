@@ -15,10 +15,14 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+
+
+
 
 import com.google.cloud.Timestamp;
 import com.google.common.collect.ImmutableList;
@@ -28,10 +32,10 @@ import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class ValueTest {
+class ValueTest {
 
   private static final Key KEY = Key.newBuilder("ds", "kind", 1).build();
   private static final Blob BLOB = Blob.copyFrom(new byte[] {});
@@ -81,8 +85,8 @@ public class ValueTest {
     }
   }
 
-  @Before
-  public void setUp() throws Exception {
+  @BeforeEach
+  void setUp() throws Exception {
     ImmutableMap.Builder<ValueType, Value<?>> builder = ImmutableMap.builder();
     for (ValueType valueType : ValueType.values()) {
       Object[] values = TYPES.get(valueType);
@@ -107,21 +111,21 @@ public class ValueTest {
             }
           }
         }
-        assertTrue("Could not find an of method for " + valueClass, found);
+        assertTrue(found, "Could not find an of method for " + valueClass);
       }
     }
     typeToValue = builder.buildOrThrow();
   }
 
   @Test
-  public void testType() {
+  void testType() {
     for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
       assertEquals(entry.getKey(), entry.getValue().getType());
     }
   }
 
   @Test
-  public void testExcludeFromIndexes() {
+  void testExcludeFromIndexes() {
     for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
       assertFalse(entry.getValue().excludeFromIndexes());
     }
@@ -133,13 +137,13 @@ public class ValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testMeaning() {
+  void testMeaning() {
     TestBuilder builder = new TestBuilder();
     assertEquals(10, builder.setMeaning(10).build().getMeaning());
   }
 
   @Test
-  public void testGet() {
+  void testGet() {
     for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
       ValueType valueType = entry.getKey();
       Value<?> value = entry.getValue();
@@ -153,7 +157,7 @@ public class ValueTest {
 
   @SuppressWarnings({"unchecked", "deprecation"})
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     Set<String> content = Collections.singleton("bla");
     @SuppressWarnings("rawtypes")
     ValueBuilder builder = new TestBuilder();

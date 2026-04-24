@@ -14,17 +14,18 @@
  * limitations under the License.
  */
 package com.google.cloud.datastore.telemetry;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.NoCredentials;
 import com.google.cloud.datastore.DatastoreOpenTelemetryOptions;
 import com.google.cloud.datastore.DatastoreOptions;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class TraceUtilTest {
+class TraceUtilTest {
   @Test
-  public void defaultOptionsUseDisabledTraceUtil() {
+  void defaultOptionsUseDisabledTraceUtil() {
     TraceUtil traceUtil =
         TraceUtil.getInstance(
             DatastoreOptions.newBuilder()
@@ -35,7 +36,7 @@ public class TraceUtilTest {
   }
 
   @Test
-  public void tracingDisabledOptionsUseDisabledTraceUtil() {
+  void tracingDisabledOptionsUseDisabledTraceUtil() {
     TraceUtil traceUtil =
         TraceUtil.getInstance(
             DatastoreOptions.newBuilder()
@@ -48,7 +49,7 @@ public class TraceUtilTest {
   }
 
   @Test
-  public void tracingEnabledOptionsUseEnabledTraceUtil() {
+  void tracingEnabledOptionsUseEnabledTraceUtil() {
     TraceUtil traceUtil =
         TraceUtil.getInstance(
             DatastoreOptions.newBuilder()

@@ -14,11 +14,13 @@
  * limitations under the License.
  */
 package com.google.datastore.utils;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.datastore.utils.DatastoreHelper.*;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertThrows;
+
+
 
 import com.google.datastore.utils.testing.MockCredential;
 import com.google.datastore.utils.testing.MockDatastoreFactory;
@@ -30,13 +32,13 @@ import com.google.datastore.v1.QueryResultBatch.MoreResultsType;
 import com.google.protobuf.Int32Value;
 import com.google.protobuf.Timestamp;
 import java.util.List;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
+
+
 
 /** Tests for {@link com.google.datastore.utils.QuerySplitterImpl}. */
-@RunWith(JUnit4.class)
-public class QuerySplitterTest {
+
+class QuerySplitterTest {
   private static final String PROJECT_ID = "project-id";
   private static final PartitionId PARTITION =
       PartitionId.newBuilder().setProjectId(PROJECT_ID).build();
@@ -70,7 +72,7 @@ public class QuerySplitterTest {
       makeKey(KIND, String.format("%05d", 301)).setPartitionId(PARTITION).build();
 
   @Test
-  public void disallowsSortOrder() {
+  void disallowsSortOrder() {
     com.google.datastore.utils.Datastore datastore = factory.create(options.build());
     Query queryWithOrder =
         query.toBuilder().addOrder(makeOrder("bar", Direction.ASCENDING)).build();
@@ -84,7 +86,7 @@ public class QuerySplitterTest {
   }
 
   @Test
-  public void disallowsMultipleKinds() {
+  void disallowsMultipleKinds() {
     com.google.datastore.utils.Datastore datastore = factory.create(options.build());
     Query queryWithMultipleKinds =
         query.toBuilder()
@@ -100,7 +102,7 @@ public class QuerySplitterTest {
   }
 
   @Test
-  public void disallowsKindlessQuery() {
+  void disallowsKindlessQuery() {
     com.google.datastore.utils.Datastore datastore = factory.create(options.build());
     Query kindlessQuery = query.toBuilder().clearKind().build();
     IllegalArgumentException exception =
@@ -113,7 +115,7 @@ public class QuerySplitterTest {
   }
 
   @Test
-  public void disallowsInequalityFilter() {
+  void disallowsInequalityFilter() {
     com.google.datastore.utils.Datastore datastore = factory.create(options.build());
     Query queryWithInequality =
         query.toBuilder()
@@ -129,7 +131,7 @@ public class QuerySplitterTest {
   }
 
   @Test
-  public void splitsMustBePositive() {
+  void splitsMustBePositive() {
     com.google.datastore.utils.Datastore datastore = factory.create(options.build());
     IllegalArgumentException exception =
         assertThrows(
@@ -141,7 +143,7 @@ public class QuerySplitterTest {
   }
 
   @Test
-  public void getSplits() throws Exception {
+  void getSplits() throws Exception {
     com.google.datastore.utils.Datastore datastore = factory.create(options.build());
     MockDatastoreFactory mockClient = (MockDatastoreFactory) factory;
 
@@ -189,7 +191,7 @@ public class QuerySplitterTest {
   }
 
   @Test
-  public void getSplitsWithDatabaseId() throws Exception {
+  void getSplitsWithDatabaseId() throws Exception {
     com.google.datastore.utils.Datastore datastore = factory.create(options.build());
     MockDatastoreFactory mockClient = (MockDatastoreFactory) factory;
 
@@ -241,7 +243,7 @@ public class QuerySplitterTest {
   }
 
   @Test
-  public void notEnoughSplits() throws Exception {
+  void notEnoughSplits() throws Exception {
     com.google.datastore.utils.Datastore datastore = factory.create(options.build());
     MockDatastoreFactory mockClient = (MockDatastoreFactory) factory;
 
@@ -283,7 +285,7 @@ public class QuerySplitterTest {
   }
 
   @Test
-  public void getSplits_withReadTime() throws Exception {
+  void getSplits_withReadTime() throws Exception {
     Datastore datastore = factory.create(options.build());
     MockDatastoreFactory mockClient = (MockDatastoreFactory) factory;
 

@@ -15,26 +15,30 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+
+
+
 
 import com.google.cloud.Timestamp;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class TimestampValueTest {
+class TimestampValueTest {
 
   private static final Timestamp CONTENT = Timestamp.now();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     TimestampValue value = TimestampValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @Test
-  public void testOf() {
+  void testOf() {
     TimestampValue value = TimestampValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -42,7 +46,7 @@ public class TimestampValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     TimestampValue.Builder builder = TimestampValue.newBuilder(CONTENT);
     TimestampValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

@@ -15,17 +15,23 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+
+
+
+
+
 
 import com.google.cloud.Timestamp;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class ProjectionEntityTest {
+class ProjectionEntityTest {
 
   private static final Key KEY = Key.newBuilder("ds1", "k1", "n1").build();
   private static final StringValue STRING_INDEX_VALUE =
@@ -49,25 +55,25 @@ public class ProjectionEntityTest {
           .build();
 
   @Test
-  public void testHasKey() {
+  void testHasKey() {
     assertTrue(ENTITY1.hasKey());
     assertFalse(ENTITY2.hasKey());
   }
 
   @Test
-  public void testKey() {
+  void testKey() {
     assertEquals(KEY, ENTITY1.getKey());
     assertNull(ENTITY2.getKey());
   }
 
   @Test
-  public void testGetBlob() {
+  void testGetBlob() {
     assertArrayEquals(STRING_INDEX_VALUE.get().getBytes(), ENTITY2.getBlob("a").toByteArray());
     assertEquals(BLOB_VALUE.get(), ENTITY2.getBlob("b"));
   }
 
   @Test
-  public void testGetTimestamp() {
+  void testGetTimestamp() {
     assertEquals(TIMESTAMP_VALUE.get(), ENTITY2.getTimestamp("c"));
     assertEquals(TIMESTAMP_VALUE.get(), ENTITY2.getTimestamp("d"));
   }

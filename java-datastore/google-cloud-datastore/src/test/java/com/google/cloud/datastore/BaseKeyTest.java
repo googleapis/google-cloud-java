@@ -15,16 +15,19 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
+
 
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class BaseKeyTest {
+class BaseKeyTest {
 
   private class Builder extends BaseKey.Builder<Builder> {
 
@@ -56,7 +59,7 @@ public class BaseKeyTest {
   }
 
   @Test
-  public void testProjectId() {
+  void testProjectId() {
     Builder builder = new Builder("ds1", "k");
     BaseKey key = builder.build();
     assertEquals("ds1", key.getProjectId());
@@ -66,7 +69,7 @@ public class BaseKeyTest {
   }
 
   @Test
-  public void testDatabaseId() {
+  void testDatabaseId() {
     Builder builder = new Builder("ds1", "k").setDatabaseId("test-db");
     BaseKey key = builder.build();
     assertEquals("ds1", key.getProjectId());
@@ -75,19 +78,19 @@ public class BaseKeyTest {
     assertEquals("test-db", key.getDatabaseId());
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void testBadDatasetInConstructor() {
-    new Builder(" ", "k");
-  }
-
-  @Test(expected = IllegalArgumentException.class)
-  public void testBadDatasetInSetter() {
-    Builder builder = new Builder("d", "k");
-    builder.setProjectId(" ");
+  @Test
+  void testBadDatasetInConstructor() {
+    assertThrows(IllegalArgumentException.class, () -> new Builder(" ", "k"));
   }
 
   @Test
-  public void testNamespace() {
+  void testBadDatasetInSetter() {
+    Builder builder = new Builder("d", "k");
+    assertThrows(IllegalArgumentException.class, () -> builder.setProjectId(" "));
+  }
+
+  @Test
+  void testNamespace() {
     Builder builder = new Builder("ds", "k");
     BaseKey key = builder.build();
     assertTrue(key.getNamespace() != null);
@@ -97,7 +100,7 @@ public class BaseKeyTest {
   }
 
   @Test
-  public void testKind() {
+  void testKind() {
     Builder builder = new Builder("ds", "k1");
     BaseKey key = builder.build();
     assertEquals("k1", key.getKind());
@@ -105,25 +108,25 @@ public class BaseKeyTest {
     assertEquals("k2", key.getKind());
   }
 
-  @Test(expected = NullPointerException.class)
-  public void testNoKind() throws Exception {
+  @Test
+  void testNoKind() throws Exception {
     Builder builder = new Builder("ds");
-    builder.build();
-  }
-
-  @Test(expected = IllegalArgumentException.class)
-  public void testBadKindInConstructor() throws Exception {
-    new Builder("ds", "");
-  }
-
-  @Test(expected = IllegalArgumentException.class)
-  public void testBadKindInSetter() throws Exception {
-    Builder builder = new Builder("ds", "k1");
-    builder.setKind("");
+    assertThrows(NullPointerException.class, () -> builder.build());
   }
 
   @Test
-  public void testAncestors() throws Exception {
+  void testBadKindInConstructor() throws Exception {
+    assertThrows(IllegalArgumentException.class, () -> new Builder("ds", ""));
+  }
+
+  @Test
+  void testBadKindInSetter() throws Exception {
+    Builder builder = new Builder("ds", "k1");
+    assertThrows(IllegalArgumentException.class, () -> builder.setKind(""));
+  }
+
+  @Test
+  void testAncestors() throws Exception {
     Builder builder = new Builder("ds", "k");
     BaseKey key = builder.build();
     assertTrue(key.getAncestors().isEmpty());
@@ -137,7 +140,7 @@ public class BaseKeyTest {
   }
 
   @Test
-  public void testCopyFrom() {
+  void testCopyFrom() {
     Builder copyFrom = new Builder("test-project", "kind").setDatabaseId("test-db");
     Builder builder = new Builder(copyFrom.build());
     BaseKey baseKey = builder.build();

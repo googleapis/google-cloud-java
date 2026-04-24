@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package com.google.cloud.datastore.telemetry;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -25,13 +26,13 @@ import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
+
+
 
 /** Tests for {@link DatastoreMetricsRecorder#getInstance(DatastoreOptions)}. */
-@RunWith(JUnit4.class)
-public class DatastoreMetricsRecorderTest {
+
+class DatastoreMetricsRecorderTest {
 
   private static final String PROJECT_ID = "test-project";
 
@@ -42,7 +43,7 @@ public class DatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void defaultOptions_returnsNoOp() {
+  void defaultOptions_returnsNoOp() {
     // metricsEnabled defaults to false, so getInstance() should return NoOp
     DatastoreOptions options = baseOptions().build();
     DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options);
@@ -50,7 +51,7 @@ public class DatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void tracingEnabledButMetricsDisabled_returnsNoOp() {
+  void tracingEnabledButMetricsDisabled_returnsNoOp() {
     // Enabling tracing alone should not enable metrics
     DatastoreOptions options =
         baseOptions()
@@ -62,7 +63,7 @@ public class DatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void metricsEnabled_withCustomOtel_returnsOpenTelemetryRecorder() {
+  void metricsEnabled_withCustomOtel_returnsOpenTelemetryRecorder() {
     InMemoryMetricReader metricReader = InMemoryMetricReader.create();
     SdkMeterProvider meterProvider =
         SdkMeterProvider.builder().registerMetricReader(metricReader).build();
@@ -81,7 +82,7 @@ public class DatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void openTelemetryRecorderCreatedWithExplicitOpenTelemetry() {
+  void openTelemetryRecorderCreatedWithExplicitOpenTelemetry() {
     InMemoryMetricReader metricReader = InMemoryMetricReader.create();
     SdkMeterProvider meterProvider =
         SdkMeterProvider.builder().registerMetricReader(metricReader).build();

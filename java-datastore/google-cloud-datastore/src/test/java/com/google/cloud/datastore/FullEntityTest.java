@@ -15,15 +15,20 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
 
-public class FullEntityTest {
+
+
+
+import org.junit.jupiter.api.Test;
+
+class FullEntityTest {
 
   private static final Key KEY1 = Key.newBuilder("ds1", "k1", "n1").build();
   private static final Key KEY2 = Key.newBuilder("ds1", "k2", 1).build();
@@ -36,7 +41,7 @@ public class FullEntityTest {
       Entity.newBuilder(INCOMPLETE_KEY).set("a", "b").build();
 
   @Test
-  public void testFullEntity() {
+  void testFullEntity() {
     assertTrue(COMPLETE_ENTITY1.hasKey());
     assertEquals(KEY1, COMPLETE_ENTITY1.getKey());
     assertEquals("bar", COMPLETE_ENTITY1.getString("foo"));
@@ -47,7 +52,7 @@ public class FullEntityTest {
   }
 
   @Test
-  public void testNoKey() {
+  void testNoKey() {
     FullEntity<IncompleteKey> entity = FullEntity.newBuilder().set("foo", "bar").build();
     assertFalse(entity.hasKey());
     assertNull(entity.getKey());
@@ -59,7 +64,7 @@ public class FullEntityTest {
   }
 
   @Test
-  public void testCopyFrom() {
+  void testCopyFrom() {
     FullEntity.Builder<Key> builder1 = FullEntity.newBuilder(ENTITY);
     assertEquals(ENTITY, builder1.build());
 

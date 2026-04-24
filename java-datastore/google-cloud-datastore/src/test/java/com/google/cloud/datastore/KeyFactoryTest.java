@@ -15,28 +15,31 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
+
 
 import java.util.Iterator;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class KeyFactoryTest {
+class KeyFactoryTest {
 
   private static final String PROJECT_ID = "projectid";
   private static final String DATABASE_ID = "database-id";
 
   private KeyFactory keyFactory;
 
-  @Before
-  public void setUp() {
+  @BeforeEach
+  void setUp() {
     keyFactory = new KeyFactory(PROJECT_ID).setDatabaseId(DATABASE_ID).setKind("k");
   }
 
   @Test
-  public void testReset() {
+  void testReset() {
     IncompleteKey key =
         keyFactory
             .setProjectId("ds1")
@@ -64,23 +67,26 @@ public class KeyFactoryTest {
     assertTrue(key.getNamespace().isEmpty());
     assertTrue(key.getAncestors().isEmpty());
 
-    keyFactory = new KeyFactory(PROJECT_ID, "ns1").setKind("k");
-    key = keyFactory.newKey();
+    KeyFactory keyFactory2 = new KeyFactory(PROJECT_ID, "ns1").setKind("k");
+    key = keyFactory2.newKey();
     assertEquals(PROJECT_ID, key.getProjectId());
     assertEquals("", key.getDatabaseId());
     assertEquals("ns1", key.getNamespace());
-    key = keyFactory.setProjectId("bla1").setNamespace("bla2").build();
+    key = keyFactory2.setProjectId("bla1").setNamespace("bla2").build();
     assertEquals("bla1", key.getProjectId());
     assertEquals("bla2", key.getNamespace());
-    keyFactory.reset().setKind("kind");
-    key = keyFactory.newKey();
+    keyFactory2.reset().setKind("kind");
+    key = keyFactory2.newKey();
+    assertEquals(PROJECT_ID, key.getProjectId());
+    assertEquals("ns1", key.getNamespace());
+    assertEquals("kind", key.getKind());
     assertEquals(PROJECT_ID, key.getProjectId());
     assertEquals("ns1", key.getNamespace());
     assertEquals("kind", key.getKind());
   }
 
   @Test
-  public void testCreatedWithDbId() {
+  void testCreatedWithDbId() {
     KeyFactory keyFactory = new KeyFactory(PROJECT_ID, "namespace", DATABASE_ID).setKind("k");
     IncompleteKey key =
         keyFactory
@@ -109,23 +115,26 @@ public class KeyFactoryTest {
     assertEquals("namespace", key.getNamespace());
     assertTrue(key.getAncestors().isEmpty());
 
-    keyFactory = new KeyFactory(PROJECT_ID, "ns1").setKind("k");
-    key = keyFactory.newKey();
+    KeyFactory keyFactory2 = new KeyFactory(PROJECT_ID, "ns1").setKind("k");
+    key = keyFactory2.newKey();
     assertEquals(PROJECT_ID, key.getProjectId());
     assertEquals("", key.getDatabaseId());
     assertEquals("ns1", key.getNamespace());
-    key = keyFactory.setProjectId("bla1").setNamespace("bla2").build();
+    key = keyFactory2.setProjectId("bla1").setNamespace("bla2").build();
     assertEquals("bla1", key.getProjectId());
     assertEquals("bla2", key.getNamespace());
-    keyFactory.reset().setKind("kind");
-    key = keyFactory.newKey();
+    keyFactory2.reset().setKind("kind");
+    key = keyFactory2.newKey();
+    assertEquals(PROJECT_ID, key.getProjectId());
+    assertEquals("ns1", key.getNamespace());
+    assertEquals("kind", key.getKind());
     assertEquals(PROJECT_ID, key.getProjectId());
     assertEquals("ns1", key.getNamespace());
     assertEquals("kind", key.getKind());
   }
 
   @Test
-  public void testNewKey() {
+  void testNewKey() {
     Key key = keyFactory.newKey(1);
     verifyKey(key, 1L, "");
     key = keyFactory.newKey("n");
@@ -137,7 +146,7 @@ public class KeyFactoryTest {
   }
 
   @Test
-  public void testNewIncompleteKey() {
+  void testNewIncompleteKey() {
     IncompleteKey key = keyFactory.newKey();
     verifyIncompleteKey(key, "");
     PathElement p1 = PathElement.of("k1", "n");
@@ -146,9 +155,9 @@ public class KeyFactoryTest {
     verifyIncompleteKey(key, "ns", p1, p2);
   }
 
-  @Test(expected = NullPointerException.class)
-  public void testNewIncompleteWithNoKind() {
-    new KeyFactory(PROJECT_ID).build();
+  @Test
+  void testNewIncompleteWithNoKind() {
+    assertThrows(NullPointerException.class, () -> new KeyFactory(PROJECT_ID).build());
   }
 
   private void verifyKey(Key key, String name, String namespace, PathElement... ancestors) {

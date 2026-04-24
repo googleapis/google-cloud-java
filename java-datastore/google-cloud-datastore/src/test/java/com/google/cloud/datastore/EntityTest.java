@@ -15,14 +15,18 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
 
-public class EntityTest {
+
+
+import org.junit.jupiter.api.Test;
+
+class EntityTest {
 
   private static final Key KEY1 = Key.newBuilder("ds1", "k1", "n1").build();
   private static final Key KEY2 = Key.newBuilder("ds1", "k2", 1).build();
@@ -32,14 +36,14 @@ public class EntityTest {
       Entity.newBuilder(INCOMPLETE_KEY).set("a", "b").build();
 
   @Test
-  public void testEntity() {
+  void testEntity() {
     assertTrue(ENTITY.hasKey());
     assertEquals(KEY1, ENTITY.getKey());
     assertEquals("bar", ENTITY.getString("foo"));
   }
 
   @Test
-  public void testCopyFrom() {
+  void testCopyFrom() {
     Entity.Builder builder = Entity.newBuilder(ENTITY);
     assertEquals(ENTITY, builder.build());
     Entity entity = builder.setKey(KEY2).build();
@@ -49,7 +53,7 @@ public class EntityTest {
   }
 
   @Test
-  public void testCopyFromIncompleteEntity() {
+  void testCopyFromIncompleteEntity() {
     Entity.Builder builder = Entity.newBuilder(KEY2, INCOMPLETE_ENTITY);
     Entity entity = builder.build();
     assertNotEquals(INCOMPLETE_ENTITY, entity);
@@ -57,7 +61,7 @@ public class EntityTest {
   }
 
   @Test
-  public void testEntitySize() {
+  void testEntitySize() {
     assertEquals(ENTITY.toPb().getSerializedSize(), Entity.calculateSerializedSize(ENTITY));
   }
 }
