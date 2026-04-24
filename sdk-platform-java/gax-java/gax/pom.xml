@@ -41,6 +41,13 @@
     <dependency>
       <groupId> com.google.protobuf</groupId>
       <artifactId>protobuf-java-util</artifactId>
+      <exclusions>
+        <exclusion>
+          <!-- protobuf-java-util's error_prone_annotatoins is old. -->
+          <groupId>com.google.errorprone</groupId>
+          <artifactId>error_prone_annotations</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.threeten</groupId>
