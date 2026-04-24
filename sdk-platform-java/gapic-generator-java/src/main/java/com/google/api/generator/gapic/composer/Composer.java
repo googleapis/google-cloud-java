@@ -199,6 +199,9 @@ public class Composer {
   }
 
   public static List<GapicClass> generateVersionClasses(GapicContext context) {
+    if (!context.generateVersionJava()) {
+      return new java.util.ArrayList<>();
+    }
     return context.services().stream()
         .collect(Collectors.toMap(Service::pakkage, s -> s, (s1, s2) -> s1))
         .values()

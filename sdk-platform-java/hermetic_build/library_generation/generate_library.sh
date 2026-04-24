@@ -30,6 +30,11 @@ case $key in
     rest_numeric_enums="$2"
     shift
     ;;
+  --generate_version_java)
+    generate_version_java="$2"
+    shift
+    ;;
+
   --gapic_yaml)
     gapic_yaml="$2"
     shift
@@ -74,6 +79,11 @@ output_folder="$(get_output_folder)"
 if [ -z "${proto_only}" ]; then
   proto_only="false"
 fi
+
+if [ -z "${generate_version_java}" ]; then
+  generate_version_java="true"
+fi
+
 
 if [ -z "${gapic_additional_protos}" ]; then
   gapic_additional_protos="google/cloud/common_resources.proto"
@@ -195,7 +205,8 @@ if [[ "${proto_only}" == "false" ]]; then
   "$protoc_path"/protoc --experimental_allow_proto3_optional \
   "--plugin=protoc-gen-java_gapic=${script_dir}/gapic-generator-java-wrapper" \
   "--java_gapic_out=metadata:${temp_destination_path}/java_gapic_srcjar_raw.srcjar.zip" \
-  "--java_gapic_opt=$(get_gapic_opts "${transport}" "${rest_numeric_enums}" "${gapic_yaml}" "${service_config}" "${service_yaml}" "${repo}" "${artifact}")" \
+  "--java_gapic_opt=$(get_gapic_opts "${transport}" "${rest_numeric_enums}" "${gapic_yaml}" "${service_config}" "${service_yaml}" "${repo}" "${artifact}" "${generate_version_java}")" \
+
   ${proto_files} ${gapic_additional_protos}
 
   unzip -o -q "${temp_destination_path}/java_gapic_srcjar_raw.srcjar.zip" -d "${temp_destination_path}"
