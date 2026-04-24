@@ -1283,7 +1283,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       if (Thread.currentThread().isInterrupted()) {
         listRoutineFutures.forEach(f -> f.cancel(true));
         InterruptedException ex =
-            new InterruptedException("Interrupted while collecting routine lists");
+            new InterruptedException("Interrupted while collecting routine lists for catalog: " + catalogParam);
         logger.severe(ex, ex.getMessage());
         throw ex;
       }
