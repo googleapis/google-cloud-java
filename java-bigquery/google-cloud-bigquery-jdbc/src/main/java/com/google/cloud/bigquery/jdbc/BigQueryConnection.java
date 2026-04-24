@@ -61,6 +61,7 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * An implementation of {@link java.sql.Connection} for establishing a connection with BigQuery and
@@ -72,6 +73,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
   String connectionClassName = this.toString();
+  private final String connectionId;
+  private static final AtomicLong connectionIdCounter = new AtomicLong(1);
   private static final String DEFAULT_JDBC_TOKEN_VALUE = "Google-BigQuery-JDBC-Driver";
   private static final String DEFAULT_VERSION = "0.0.0";
   private HeaderProvider headerProvider;
@@ -146,6 +149,8 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   BigQueryConnection(String url, DataSource ds) throws IOException {
+    this.connectionId = String.valueOf(connectionIdCounter.getAndIncrement());
+    BigQueryJdbcMdc.registerInstance(this, this.connectionId);
     this.connectionUrl = url;
     this.openStatements = ConcurrentHashMap.newKeySet();
     this.autoCommit = true;
@@ -321,6 +326,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   String getConnectionUrl() {
     return connectionUrl;
+  }
+
+  String getConnectionId() {
+    return this.connectionId;
   }
 
   /**
@@ -834,6 +843,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     if (isClosed()) {
       return;
     }
+
     try {
       if (this.bigQueryReadClient != null) {
         this.bigQueryReadClient.shutdown();
@@ -857,6 +867,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     } catch (InterruptedException e) {
       LOG.severe(e, "Interrupted during close");
       throw new BigQueryJdbcRuntimeException(e);
+    } finally{
+      BigQueryJdbcMdc.removeInstance(this);
+      BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
     }
     this.isClosed = true;
   }
