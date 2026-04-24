@@ -182,9 +182,8 @@ public class ITDatastoreBuiltInAndCustomMetrics {
    */
   @Test
   public void builtInMetricsExport_isDisabledByDefault() {
-    DatastoreOptions defaultOptions = DatastoreOptions.newBuilder()
-            .setProjectId(PROJECT_ID)
-            .build();
+    DatastoreOptions defaultOptions =
+        DatastoreOptions.newBuilder().setProjectId(PROJECT_ID).build();
     assertThat(
             defaultOptions
                 .getOpenTelemetryOptions()

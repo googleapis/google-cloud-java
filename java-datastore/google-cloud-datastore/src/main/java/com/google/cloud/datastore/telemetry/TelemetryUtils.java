@@ -42,7 +42,8 @@ public final class TelemetryUtils {
    * @param status The status of the operation or attempt.
    * @return The map of attributes.
    */
-  public static Map<String, String> buildMetricAttributes(String methodName, String status, String databaseId) {
+  public static Map<String, String> buildMetricAttributes(
+      String methodName, String status, String databaseId) {
     Map<String, String> attributes = new HashMap<>();
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_METHOD, methodName);
     attributes.put(TelemetryConstants.ATTRIBUTES_KEY_STATUS, status);
@@ -91,7 +92,10 @@ public final class TelemetryUtils {
    * @return A wrapped callable that includes attempt-level metrics recording.
    */
   public static <T> Callable<T> attemptMetricsCallable(
-      Callable<T> callable, DatastoreMetricsRecorder metricsRecorder, String methodName, String databaseId) {
+      Callable<T> callable,
+      DatastoreMetricsRecorder metricsRecorder,
+      String methodName,
+      String databaseId) {
     return () -> {
       Stopwatch stopwatch = Stopwatch.createStarted();
       String status = StatusCode.Code.UNKNOWN.toString();
