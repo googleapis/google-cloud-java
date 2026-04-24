@@ -7818,6 +7818,7 @@ class ITBigQueryTest {
               .setDescription(DESCRIPTION)
               .setMaxTimeTravelHours(72L)
               .setLabels(LABELS)
+              .setLocation("US")
               .build();
 
       Dataset dataset = bigquery.create(info);
@@ -7839,7 +7840,7 @@ class ITBigQueryTest {
       parentSpan.end();
       Map<AttributeKey<?>, Object> createMap =
           OTEL_ATTRIBUTES.get("com.google.cloud.bigquery.BigQuery.createDataset");
-      assertEquals("null", createMap.get(AttributeKey.stringKey("bq.dataset.location")));
+      assertEquals("US", createMap.get(AttributeKey.stringKey("bq.dataset.location")));
       assertEquals(
           "DatasetService",
           OTEL_ATTRIBUTES
