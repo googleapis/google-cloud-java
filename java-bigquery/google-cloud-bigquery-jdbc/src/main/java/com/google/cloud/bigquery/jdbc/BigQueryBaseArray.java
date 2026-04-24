@@ -71,23 +71,27 @@ abstract class BigQueryBaseArray implements java.sql.Array {
 
   @Override
   public final Object getArray(Map<String, Class<?>> map) throws SQLException {
+    LOG.severe(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
     throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
   @Override
   public final Object getArray(long index, int count, Map<String, Class<?>> map)
       throws SQLException {
+    LOG.severe(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
     throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
   @Override
   public final ResultSet getResultSet(Map<String, Class<?>> map) throws SQLException {
+    LOG.severe(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
     throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
   @Override
   public final ResultSet getResultSet(long index, int count, Map<String, Class<?>> map)
       throws SQLException {
+    LOG.severe(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
     throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
@@ -106,6 +110,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
   protected void ensureValid() throws IllegalStateException {
     LOG.finest("++enter++");
     if (!this.valid) {
+      LOG.severe(INVALID_ARRAY);
       throw new IllegalStateException(INVALID_ARRAY);
     }
   }
@@ -127,6 +132,8 @@ abstract class BigQueryBaseArray implements java.sql.Array {
     // jdbc array follows 1 based array indexing
     long normalisedFromIndex = index - 1;
     if (normalisedFromIndex + count > size) {
+      LOG.severe(
+          "The array index is out of range: %d, number of elements: %d.", index + count, size);
       throw new IllegalArgumentException(
           String.format(
               "The array index is out of range: %d, number of elements: %d.", index + count, size));
@@ -166,6 +173,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
       }
       return Arrays.deepToString(array);
     } catch (SQLException e) {
+      LOG.warning("Error converting array to string");
       return "[Error converting array to string: " + e.getMessage() + "]";
     }
   }

@@ -15,14 +15,11 @@
  */
 package com.google.cloud.bigquery.telemetry;
 
-import com.google.api.core.BetaApi;
-
 /**
  * Utility class for identifying exception types for telemetry tracking. TODO: this class should get
  * replaced with gax version when ready work tracked in
  * https://github.com/googleapis/google-cloud-java/issues/12105
  */
-@BetaApi
 class ErrorTypeUtil {
 
   enum ErrorType {

@@ -20,8 +20,32 @@ on:
   pull_request:
 name: ci
 jobs:
+  # detect whether or note we should run "bulk" (non-handwritten) unit tests
+  bulk-filter:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    # Set job outputs to values from filter step
+    outputs:
+      src: ${{ steps.filter.outputs.src }}
+      ci: ${{ steps.filter.outputs.ci }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
+      id: filter
+      with:
+        filters: |
+          src:
+            - '!(java-bigquery|java-bigquerystorage|java-datastore|java-logging-logback|java-logging|java-spanner|java-storage|google-auth-library-java)/**/*.java'
+            - '!(java-bigquery|java-bigquerystorage|java-datastore|java-logging-logback|java-logging|java-spanner|java-storage|google-auth-library-java)/**/pom.xml'
+            - 'pom.xml'
+          ci:
+            - '.github/workflows/ci.yaml'
+            - '.kokoro/**'
+  # these unit tests are "bulk" (non-handwritten) libraries
   units:
     runs-on: ubuntu-latest
+    needs: bulk-filter
     strategy:
       fail-fast: false
       matrix:
@@ -42,11 +66,13 @@ jobs:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
+      if: ${{ needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true' }}
       env:
         JOB_TYPE: test
         JOB_NAME: units-${{matrix.java}}
   units-8-runtime:
     runs-on: ubuntu-latest
+    needs: bulk-filter
     name: "units (8)"
     steps:
     - name: Get current week within the year
@@ -73,6 +99,7 @@ jobs:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
     - run: .kokoro/build.sh
+      if: ${{ needs.bulk-filter.outputs.src == 'true' || needs.bulk-filter.outputs.ci == 'true' }}
       shell: bash      
       env:
         JOB_TYPE: test
@@ -85,18 +112,58 @@ jobs:
     outputs:
       packages: ${{ steps.filter.outputs.changes }}
     steps:
-    - uses: dorny/paths-filter@v4
+    - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
       id: filter
       with:
+        # For each library, run CI in split repos where there are changes in:
+        # 1. Changes inside the split repo's module
+        # 2. Java code changes in upstream modules: Auth Library and Sdk-Platform-Java
+        # 3. Upstream dependency version changes: Shared-Deps and Gapic-Generator-Pom-Parent
         filters: |
-          java-bigquery: java-bigquery/**
-          java-bigquerystorage: java-bigquerystorage/**
-          java-datastore: java-datastore/**
-          java-logging-logback: java-logging-logback/**
-          java-logging: java-logging/**
-          java-spanner: java-spanner/**
-          java-storage: java-storage/**
-          sdk-platform-java: sdk-platform-java/**
+          google-auth-library-java:
+            - 'google-auth-library-java/**'
+          java-bigquery:
+            - 'java-bigquery/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-bigquerystorage:
+            - 'java-bigquerystorage/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-datastore:
+            - 'java-datastore/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-logging-logback:
+            - 'java-logging-logback/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-logging:
+            - 'java-logging/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-spanner:
+            - 'java-spanner/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
+          java-storage:
+            - 'java-storage/**'
+            - 'google-auth-library-java/**/*.java'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
   split-units:
     runs-on: ubuntu-latest
     needs: changes
@@ -159,13 +226,9 @@ jobs:
       run: |
         mvn test \
           -B -ntp \
+          -Pquick-build \
           -Dorg.slf4j.simpleLogger.showDateTime=true \
           -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-          -Dclirr.skip=true \
-          -Denforcer.skip=true \
-          -Dcheckstyle.skip=true \
-          -Dflatten.skip=true \
-          -Danimal.sniffer.skip=true \
           -Dmaven.wagon.http.retryHandler.count=5 \
           --also-make \
           -T 1C
@@ -174,6 +237,37 @@ jobs:
         JOB_TYPE: test
         JOB_NAME: units-8-runtime-${{matrix.java}}
       working-directory: ${{matrix.package}}
+  split-clirr:
+    runs-on: ubuntu-latest
+    needs: changes
+    strategy:
+      matrix:
+        package: ${{ fromJSON(needs.changes.outputs.packages) }}
+    steps:
+    - name: Get current week within the year
+      id: date
+      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: 11
+    - run: .kokoro/build.sh
+      env:
+        BUILD_SUBDIR: ${{matrix.package}}
+        JOB_TYPE: clirr
+        JOB_NAME: clirr-${{matrix.package}}
+  required:
+    needs: [ changes, split-units, split-clirr ]
+    name: conditional-required-check
+    if: ${{ always() }} # Always run even if any "needs" jobs fail
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Fail if any previous failure
+        if: ${{ needs.changes.outputs.packages != '[]' && contains(needs.*.result, 'failure') }}
+        run: exit 1
+      - name: Success otherwise
+        run: echo "Success!"
   windows:
     runs-on: windows-latest
     steps:
@@ -220,8 +314,9 @@ jobs:
         cache: maven
     - run: java -version
     - name: Install Maven modules to local Maven repository
-      run: |
-        mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip
+      run: .kokoro/build.sh
+      env:
+        JOB_TYPE: install
     - run: java -version
     - run: mvn -B -ntp enforcer:enforce@enforce -T 1C
   gapic-libraries-bom:
@@ -234,8 +329,9 @@ jobs:
         distribution: temurin
         cache: maven
     - name: Install Maven modules to local Maven repository
-      run: |
-        mvn install -B -ntp  -T 1C -DskipTests -Dclirr.skip -Dcheckstyle.skip -Denforcer.skip
+      run: .kokoro/build.sh
+      env:
+        JOB_TYPE: install
     - name: Validate gapic-libraries-bom
       uses: googleapis/java-cloud-bom/tests/validate-bom@v26.79.0
       with:
@@ -247,41 +343,14 @@ jobs:
     - name: validate generation configuration
       shell: bash
       run: |
-        docker run \
-          --rm \
+        bash generation/run_generator_docker.sh "${library_generation_image_tag}" "${{ github.base_ref || 'main' }}" \
+          -e GENERATOR_VERSION="${library_generation_image_tag}" \
           --quiet \
           -u "$(id -u):$(id -g)" \
           -v "$(pwd):${workspace_name}" \
           --entrypoint python \
-          gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
+          -- \
           /src/library_generation/cli/entry_point.py validate-generation-config
       env:
         library_generation_image_tag: 2.68.0
         workspace_name: /workspace
-
-# TODO: Uncomment the needed Github Actions
-#  dependencies:
-#    runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        java: [8, 11, 17]
-#    steps:
-#    - uses: actions/checkout@v3
-#    - uses: actions/setup-java@v3
-#      with:
-#        distribution: zulu
-#        java-version: ${{matrix.java}}
-#    - run: java -version
-#    - run: .kokoro/dependencies.sh
-#  clirr:
-#    runs-on: ubuntu-latest
-#    steps:
-#    - uses: actions/checkout@v3
-#    - uses: actions/setup-java@v3
-#      with:
-#        distribution: zulu
-#        java-version: 8
-#    - run: java -version
-#    - run: .kokoro/build.sh
-#      env:
-#        JOB_TYPE: clirr

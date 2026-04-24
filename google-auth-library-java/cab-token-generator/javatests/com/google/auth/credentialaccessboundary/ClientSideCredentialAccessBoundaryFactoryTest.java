@@ -614,22 +614,28 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
         // Set mocked time so that the token is fresh and no refresh is needed (before the refresh
         // margin).
         mockedTimeInMillis = expirationTimeInMillis - refreshMarginInMillis - 60000;
+        when(mockClock.currentTimeMillis()).thenReturn(mockedTimeInMillis);
         break;
       case ASYNC:
         // Set mocked time so that the token is nearing expiry and an async refresh is triggered
         // (within the refresh margin).
         mockedTimeInMillis = expirationTimeInMillis - refreshMarginInMillis + 60000;
+        when(mockClock.currentTimeMillis())
+            .thenReturn(
+                mockedTimeInMillis, // First call: Stale (triggers the async refresh)
+                currentTimeInMillis // Subsequent calls: Fresh (skips redundant refreshes)
+                );
         break;
       case BLOCKING:
         // Set mocked time so that the token requires immediate refresh (just after the minimum
         // token lifetime).
         mockedTimeInMillis = expirationTimeInMillis - minimumTokenLifetimeMillis + 60000;
+        when(mockClock.currentTimeMillis()).thenReturn(mockedTimeInMillis);
         break;
       default:
         throw new IllegalArgumentException("Unexpected RefreshType: " + refreshType);
     }
 
-    when(mockClock.currentTimeMillis()).thenReturn(mockedTimeInMillis);
     return mockClock;
   }
 
@@ -987,5 +993,60 @@ class ClientSideCredentialAccessBoundaryFactoryTest {
             .build();
 
     assertThrows(GeneralSecurityException.class, () -> factory.generateToken(accessBoundary));
+  }
+
+  @Test
+  void generateToken_freshInstance_concurrent_noNpe() throws Exception {
+    for (int run = 0; run < 10; run++) { // Run 10 times in a single test instance to save time
+      GoogleCredentials sourceCredentials =
+          getServiceAccountSourceCredentials(mockTokenServerTransportFactory);
+      ClientSideCredentialAccessBoundaryFactory factory =
+          ClientSideCredentialAccessBoundaryFactory.newBuilder()
+              .setSourceCredential(sourceCredentials)
+              .setHttpTransportFactory(mockStsTransportFactory)
+              .build();
+
+      CredentialAccessBoundary.Builder cabBuilder = CredentialAccessBoundary.newBuilder();
+      CredentialAccessBoundary accessBoundary =
+          cabBuilder
+              .addRule(
+                  CredentialAccessBoundary.AccessBoundaryRule.newBuilder()
+                      .setAvailableResource("resource")
+                      .setAvailablePermissions(ImmutableList.of("role"))
+                      .build())
+              .build();
+
+      int numThreads = 5;
+      CountDownLatch latch = new CountDownLatch(numThreads);
+      java.util.concurrent.atomic.AtomicInteger npeCount =
+          new java.util.concurrent.atomic.AtomicInteger();
+      java.util.concurrent.ExecutorService executor =
+          java.util.concurrent.Executors.newFixedThreadPool(numThreads);
+
+      try {
+        for (int i = 0; i < numThreads; i++) {
+          executor.submit(
+              () -> {
+                try {
+                  latch.countDown();
+                  latch.await();
+                  factory.generateToken(accessBoundary);
+                } catch (NullPointerException e) {
+                  npeCount.incrementAndGet();
+                } catch (Exception e) {
+                  // Ignore other exceptions for the sake of the race reproduction
+                }
+              });
+        }
+      } finally {
+        executor.shutdown();
+        executor.awaitTermination(5, java.util.concurrent.TimeUnit.SECONDS);
+      }
+
+      org.junit.jupiter.api.Assertions.assertEquals(
+          0,
+          npeCount.get(),
+          "Expected zero NullPointerExceptions due to the race condition, but some were thrown.");
+    }
   }
 }

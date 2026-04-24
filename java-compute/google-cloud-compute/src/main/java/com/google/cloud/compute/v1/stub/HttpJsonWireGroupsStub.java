@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteWireGroupRequest;
 import com.google.cloud.compute.v1.GetWireGroupRequest;
 import com.google.cloud.compute.v1.InsertWireGroupRequest;
@@ -336,6 +337,20 @@ public class HttpJsonWireGroupsStub extends WireGroupsStub {
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/global/crossSiteNetworks/{cross_site_network}/wireGroups/{wire_group}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/global/crossSiteNetworks/{cross_site_network}/wireGroups/{wire_group}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/crossSiteNetworks/{cross_site_network}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/crossSiteNetworks/{cross_site_network}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/global/crossSiteNetworks/{cross_site_network}/wireGroups/{wire_group}");
+
   public static final HttpJsonWireGroupsStub create(WireGroupsStubSettings settings)
       throws IOException {
     return new HttpJsonWireGroupsStub(settings, ClientContext.create(settings));
@@ -388,6 +403,15 @@ public class HttpJsonWireGroupsStub extends WireGroupsStub {
                   builder.add("wire_group", String.valueOf(request.getWireGroup()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "cross_site_network", String.valueOf(request.getCrossSiteNetwork()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("wire_group", String.valueOf(request.getWireGroup()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetWireGroupRequest, WireGroup> getTransportSettings =
         HttpJsonCallSettings.<GetWireGroupRequest, WireGroup>newBuilder()
@@ -401,6 +425,15 @@ public class HttpJsonWireGroupsStub extends WireGroupsStub {
                   builder.add("wire_group", String.valueOf(request.getWireGroup()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "cross_site_network", String.valueOf(request.getCrossSiteNetwork()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("wire_group", String.valueOf(request.getWireGroup()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertWireGroupRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertWireGroupRequest, Operation>newBuilder()
@@ -412,6 +445,14 @@ public class HttpJsonWireGroupsStub extends WireGroupsStub {
                   builder.add("cross_site_network", String.valueOf(request.getCrossSiteNetwork()));
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "cross_site_network", String.valueOf(request.getCrossSiteNetwork()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListWireGroupsRequest, WireGroupList> listTransportSettings =
@@ -425,6 +466,14 @@ public class HttpJsonWireGroupsStub extends WireGroupsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "cross_site_network", String.valueOf(request.getCrossSiteNetwork()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<PatchWireGroupRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchWireGroupRequest, Operation>newBuilder()
@@ -437,6 +486,15 @@ public class HttpJsonWireGroupsStub extends WireGroupsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("wire_group", String.valueOf(request.getWireGroup()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "cross_site_network", String.valueOf(request.getCrossSiteNetwork()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("wire_group", String.valueOf(request.getWireGroup()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

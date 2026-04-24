@@ -16,6 +16,8 @@
 
 package com.google.cloud.config.v1;
 
+import static com.google.cloud.config.v1.ConfigClient.ListDeploymentGroupRevisionsPagedResponse;
+import static com.google.cloud.config.v1.ConfigClient.ListDeploymentGroupsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListDeploymentsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListLocationsPagedResponse;
 import static com.google.cloud.config.v1.ConfigClient.ListPreviewsPagedResponse;
@@ -342,6 +344,97 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
           UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
       updateAutoMigrationConfigOperationSettings() {
     return ((ConfigStubSettings) getStubSettings()).updateAutoMigrationConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDeploymentGroup. */
+  public UnaryCallSettings<GetDeploymentGroupRequest, DeploymentGroup>
+      getDeploymentGroupSettings() {
+    return ((ConfigStubSettings) getStubSettings()).getDeploymentGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDeploymentGroup. */
+  public UnaryCallSettings<CreateDeploymentGroupRequest, Operation>
+      createDeploymentGroupSettings() {
+    return ((ConfigStubSettings) getStubSettings()).createDeploymentGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDeploymentGroup. */
+  public OperationCallSettings<CreateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      createDeploymentGroupOperationSettings() {
+    return ((ConfigStubSettings) getStubSettings()).createDeploymentGroupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDeploymentGroup. */
+  public UnaryCallSettings<UpdateDeploymentGroupRequest, Operation>
+      updateDeploymentGroupSettings() {
+    return ((ConfigStubSettings) getStubSettings()).updateDeploymentGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateDeploymentGroup. */
+  public OperationCallSettings<UpdateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      updateDeploymentGroupOperationSettings() {
+    return ((ConfigStubSettings) getStubSettings()).updateDeploymentGroupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDeploymentGroup. */
+  public UnaryCallSettings<DeleteDeploymentGroupRequest, Operation>
+      deleteDeploymentGroupSettings() {
+    return ((ConfigStubSettings) getStubSettings()).deleteDeploymentGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDeploymentGroup. */
+  public OperationCallSettings<DeleteDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deleteDeploymentGroupOperationSettings() {
+    return ((ConfigStubSettings) getStubSettings()).deleteDeploymentGroupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDeploymentGroups. */
+  public PagedCallSettings<
+          ListDeploymentGroupsRequest,
+          ListDeploymentGroupsResponse,
+          ListDeploymentGroupsPagedResponse>
+      listDeploymentGroupsSettings() {
+    return ((ConfigStubSettings) getStubSettings()).listDeploymentGroupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to provisionDeploymentGroup. */
+  public UnaryCallSettings<ProvisionDeploymentGroupRequest, Operation>
+      provisionDeploymentGroupSettings() {
+    return ((ConfigStubSettings) getStubSettings()).provisionDeploymentGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to provisionDeploymentGroup. */
+  public OperationCallSettings<ProvisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      provisionDeploymentGroupOperationSettings() {
+    return ((ConfigStubSettings) getStubSettings()).provisionDeploymentGroupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deprovisionDeploymentGroup. */
+  public UnaryCallSettings<DeprovisionDeploymentGroupRequest, Operation>
+      deprovisionDeploymentGroupSettings() {
+    return ((ConfigStubSettings) getStubSettings()).deprovisionDeploymentGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deprovisionDeploymentGroup. */
+  public OperationCallSettings<
+          DeprovisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+      deprovisionDeploymentGroupOperationSettings() {
+    return ((ConfigStubSettings) getStubSettings()).deprovisionDeploymentGroupOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDeploymentGroupRevision. */
+  public UnaryCallSettings<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+      getDeploymentGroupRevisionSettings() {
+    return ((ConfigStubSettings) getStubSettings()).getDeploymentGroupRevisionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDeploymentGroupRevisions. */
+  public PagedCallSettings<
+          ListDeploymentGroupRevisionsRequest,
+          ListDeploymentGroupRevisionsResponse,
+          ListDeploymentGroupRevisionsPagedResponse>
+      listDeploymentGroupRevisionsSettings() {
+    return ((ConfigStubSettings) getStubSettings()).listDeploymentGroupRevisionsSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -704,6 +797,101 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
             UpdateAutoMigrationConfigRequest, AutoMigrationConfig, OperationMetadata>
         updateAutoMigrationConfigOperationSettings() {
       return getStubSettingsBuilder().updateAutoMigrationConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDeploymentGroup. */
+    public UnaryCallSettings.Builder<GetDeploymentGroupRequest, DeploymentGroup>
+        getDeploymentGroupSettings() {
+      return getStubSettingsBuilder().getDeploymentGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDeploymentGroup. */
+    public UnaryCallSettings.Builder<CreateDeploymentGroupRequest, Operation>
+        createDeploymentGroupSettings() {
+      return getStubSettingsBuilder().createDeploymentGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDeploymentGroup. */
+    public OperationCallSettings.Builder<
+            CreateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+        createDeploymentGroupOperationSettings() {
+      return getStubSettingsBuilder().createDeploymentGroupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDeploymentGroup. */
+    public UnaryCallSettings.Builder<UpdateDeploymentGroupRequest, Operation>
+        updateDeploymentGroupSettings() {
+      return getStubSettingsBuilder().updateDeploymentGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateDeploymentGroup. */
+    public OperationCallSettings.Builder<
+            UpdateDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+        updateDeploymentGroupOperationSettings() {
+      return getStubSettingsBuilder().updateDeploymentGroupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDeploymentGroup. */
+    public UnaryCallSettings.Builder<DeleteDeploymentGroupRequest, Operation>
+        deleteDeploymentGroupSettings() {
+      return getStubSettingsBuilder().deleteDeploymentGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDeploymentGroup. */
+    public OperationCallSettings.Builder<
+            DeleteDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+        deleteDeploymentGroupOperationSettings() {
+      return getStubSettingsBuilder().deleteDeploymentGroupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDeploymentGroups. */
+    public PagedCallSettings.Builder<
+            ListDeploymentGroupsRequest,
+            ListDeploymentGroupsResponse,
+            ListDeploymentGroupsPagedResponse>
+        listDeploymentGroupsSettings() {
+      return getStubSettingsBuilder().listDeploymentGroupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to provisionDeploymentGroup. */
+    public UnaryCallSettings.Builder<ProvisionDeploymentGroupRequest, Operation>
+        provisionDeploymentGroupSettings() {
+      return getStubSettingsBuilder().provisionDeploymentGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to provisionDeploymentGroup. */
+    public OperationCallSettings.Builder<
+            ProvisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+        provisionDeploymentGroupOperationSettings() {
+      return getStubSettingsBuilder().provisionDeploymentGroupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deprovisionDeploymentGroup. */
+    public UnaryCallSettings.Builder<DeprovisionDeploymentGroupRequest, Operation>
+        deprovisionDeploymentGroupSettings() {
+      return getStubSettingsBuilder().deprovisionDeploymentGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deprovisionDeploymentGroup. */
+    public OperationCallSettings.Builder<
+            DeprovisionDeploymentGroupRequest, DeploymentGroup, OperationMetadata>
+        deprovisionDeploymentGroupOperationSettings() {
+      return getStubSettingsBuilder().deprovisionDeploymentGroupOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDeploymentGroupRevision. */
+    public UnaryCallSettings.Builder<GetDeploymentGroupRevisionRequest, DeploymentGroupRevision>
+        getDeploymentGroupRevisionSettings() {
+      return getStubSettingsBuilder().getDeploymentGroupRevisionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDeploymentGroupRevisions. */
+    public PagedCallSettings.Builder<
+            ListDeploymentGroupRevisionsRequest,
+            ListDeploymentGroupRevisionsResponse,
+            ListDeploymentGroupRevisionsPagedResponse>
+        listDeploymentGroupRevisionsSettings() {
+      return getStubSettingsBuilder().listDeploymentGroupRevisionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

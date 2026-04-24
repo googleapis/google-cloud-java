@@ -28,6 +28,9 @@ import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import com.google.api.core.ApiFutures;
+import com.google.cloud.NoCredentials;
+import com.google.cloud.grpc.GrpcTransportOptions.ExecutorFactory;
 import com.google.cloud.spanner.SessionClient.SessionConsumer;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -36,6 +39,12 @@ import java.time.Clock;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Map;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -43,6 +52,10 @@ import org.mockito.stubbing.Answer;
 
 @RunWith(JUnit4.class)
 public class MultiplexedSessionDatabaseClientTest {
+  @After
+  public void tearDown() throws Exception {
+    clearChannelUsage();
+  }
 
   @Test
   public void testMaintainer() {
@@ -245,11 +258,165 @@ public class MultiplexedSessionDatabaseClientTest {
     }
   }
 
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testGrpcGcpSingleUseDoesNotReserveBitsetChannelHint() throws Exception {
+    assumeTrue(isJava8());
+    SessionClient sessionClient = mock(SessionClient.class);
+    SpannerImpl spanner = mock(SpannerImpl.class);
+    SpannerOptions spannerOptions = mock(SpannerOptions.class);
+    SessionPoolOptions sessionPoolOptions = mock(SessionPoolOptions.class);
+    TraceWrapper tracer = mock(TraceWrapper.class);
+    ISpan span = mock(ISpan.class);
+
+    when(sessionClient.getSpanner()).thenReturn(spanner);
+    when(spanner.getOptions()).thenReturn(spannerOptions);
+    when(spanner.getTracer()).thenReturn(tracer);
+    when(tracer.getCurrentSpan()).thenReturn(span);
+    when(spannerOptions.getNumChannels()).thenReturn(4);
+    when(spannerOptions.isGrpcGcpExtensionEnabled()).thenReturn(true);
+    when(spannerOptions.getSessionPoolOptions()).thenReturn(sessionPoolOptions);
+    when(sessionPoolOptions.getMultiplexedSessionMaintenanceDuration())
+        .thenReturn(Duration.ofDays(7));
+    when(sessionPoolOptions.getWaitForMinSessions()).thenReturn(Duration.ZERO);
+
+    MultiplexedSessionDatabaseClient client =
+        new MultiplexedSessionDatabaseClient(sessionClient, Clock.systemUTC());
+    SessionReference sessionReference =
+        new SessionReference(
+            "projects/p/instances/i/databases/d/sessions/s1",
+            null,
+            com.google.protobuf.Timestamp.getDefaultInstance(),
+            true,
+            null);
+
+    Field sessionFutureField =
+        MultiplexedSessionDatabaseClient.class.getDeclaredField("multiplexedSessionReference");
+    sessionFutureField.setAccessible(true);
+    @SuppressWarnings("unchecked")
+    AtomicReference<com.google.api.core.ApiFuture<SessionReference>> sessionFutureRef =
+        (AtomicReference<com.google.api.core.ApiFuture<SessionReference>>)
+            sessionFutureField.get(client);
+    sessionFutureRef.set(ApiFutures.immediateFuture(sessionReference));
+
+    java.lang.reflect.Method method =
+        MultiplexedSessionDatabaseClient.class.getDeclaredMethod(
+            "createDirectMultiplexedSessionTransaction", boolean.class);
+    method.setAccessible(true);
+    method.invoke(client, true);
+
+    Field field =
+        MultiplexedSessionDatabaseClient.class.getDeclaredField("numCurrentSingleUseTransactions");
+    field.setAccessible(true);
+    AtomicInteger counter = (AtomicInteger) field.get(client);
+    assertEquals(0, counter.get());
+  }
+
+  @Test
+  public void testCloseRemovesChannelUsageEntryWhenLastClientCloses() throws Exception {
+    try (SpannerImpl spanner = createTestSpanner();
+        SessionClient sessionClient = createSessionClient(spanner)) {
+      MultiplexedSessionDatabaseClient client =
+          new MultiplexedSessionDatabaseClient(sessionClient, Clock.systemUTC());
+
+      assertEquals(1, getChannelUsage().size());
+
+      client.close();
+
+      assertEquals(0, getChannelUsage().size());
+    }
+  }
+
+  @Test
+  public void testCloseKeepsChannelUsageEntryWhileAnotherClientIsUsingSameSpanner()
+      throws Exception {
+    try (SpannerImpl spanner = createTestSpanner();
+        SessionClient firstSessionClient = createSessionClient(spanner);
+        SessionClient secondSessionClient = createSessionClient(spanner)) {
+      MultiplexedSessionDatabaseClient firstClient =
+          new MultiplexedSessionDatabaseClient(firstSessionClient, Clock.systemUTC());
+      MultiplexedSessionDatabaseClient secondClient =
+          new MultiplexedSessionDatabaseClient(secondSessionClient, Clock.systemUTC());
+
+      assertEquals(1, getChannelUsage().size());
+
+      firstClient.close();
+      assertEquals(1, getChannelUsage().size());
+
+      secondClient.close();
+      assertEquals(0, getChannelUsage().size());
+    }
+  }
+
+  private SessionClient createSessionClient(SpannerImpl spanner) {
+    return new FailingMultiplexedSessionClient(spanner);
+  }
+
+  private SpannerImpl createTestSpanner() {
+    SessionPoolOptions sessionPoolOptions =
+        SessionPoolOptions.newBuilder()
+            .setMultiplexedSessionMaintenanceDuration(Duration.ofDays(7))
+            .setWaitForMinSessionsDuration(Duration.ZERO)
+            .build();
+    SpannerOptions options =
+        SpannerOptions.newBuilder()
+            .setProjectId("test-project")
+            .setCredentials(NoCredentials.getInstance())
+            .setNumChannels(4)
+            .setSessionPoolOption(sessionPoolOptions)
+            .build();
+    return new SpannerImpl(options);
+  }
+
+  @SuppressWarnings("unchecked")
+  private Map<?, ?> getChannelUsage() throws Exception {
+    Field field = MultiplexedSessionDatabaseClient.class.getDeclaredField("CHANNEL_USAGE");
+    field.setAccessible(true);
+    return (Map<?, ?>) field.get(null);
+  }
+
+  private void clearChannelUsage() throws Exception {
+    getChannelUsage().clear();
+  }
+
   private boolean isJava8() {
     return JavaVersionUtil.getJavaMajorVersion() == 8;
   }
 
   private boolean isWindows() {
     return System.getProperty("os.name").toLowerCase().contains("windows");
+  }
+
+  private static final class TestExecutorFactory
+      implements ExecutorFactory<ScheduledExecutorService> {
+    @Override
+    public ScheduledExecutorService get() {
+      return Executors.newSingleThreadScheduledExecutor();
+    }
+
+    @Override
+    public void release(ScheduledExecutorService executor) {
+      executor.shutdown();
+      try {
+        executor.awaitTermination(10L, TimeUnit.SECONDS);
+      } catch (InterruptedException e) {
+        throw new RuntimeException(e);
+      }
+    }
+  }
+
+  private static final class FailingMultiplexedSessionClient extends SessionClient {
+    private static final DatabaseId TEST_DATABASE_ID =
+        DatabaseId.of("test-project", "test-instance", "test-database");
+
+    private FailingMultiplexedSessionClient(SpannerImpl spanner) {
+      super(spanner, TEST_DATABASE_ID, new TestExecutorFactory());
+    }
+
+    @Override
+    void asyncCreateMultiplexedSession(SessionConsumer consumer) {
+      consumer.onSessionCreateFailure(
+          SpannerExceptionFactory.newSpannerException(ErrorCode.UNAUTHENTICATED, "test"), 1);
+    }
   }
 }

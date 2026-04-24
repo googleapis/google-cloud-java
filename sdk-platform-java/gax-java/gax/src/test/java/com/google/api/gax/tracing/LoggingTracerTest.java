@@ -31,7 +31,6 @@
 package com.google.api.gax.tracing;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.google.api.gax.logging.TestLogger;
 import com.google.api.gax.rpc.ApiExceptionFactory;
@@ -121,8 +120,6 @@ class LoggingTracerTest {
     tracer.recordActionableError(error);
 
     Map<String, ?> attributesMap = getAttributesMap();
-
-    assertTrue(attributesMap != null && !attributesMap.isEmpty());
     assertEquals(
         "INVALID_ARGUMENT",
         attributesMap.get(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE));
@@ -138,8 +135,6 @@ class LoggingTracerTest {
     tracer.recordActionableError(error);
 
     Map<String, ?> attributesMap = getAttributesMap();
-
-    assertTrue(attributesMap != null && !attributesMap.isEmpty());
     assertEquals(
         "test-service", attributesMap.get(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE));
   }
@@ -172,14 +167,51 @@ class LoggingTracerTest {
     tracer.recordActionableError(error);
 
     Map<String, ?> attributesMap = getAttributesMap();
-
-    assertTrue(attributesMap != null && !attributesMap.isEmpty());
     assertEquals("TEST_REASON", attributesMap.get(ObservabilityAttributes.ERROR_TYPE_ATTRIBUTE));
     assertEquals(
         "test.domain.com", attributesMap.get(ObservabilityAttributes.ERROR_DOMAIN_ATTRIBUTE));
     assertEquals(
         "test_value",
         attributesMap.get(ObservabilityAttributes.ERROR_METADATA_ATTRIBUTE_PREFIX + "test_key"));
+  }
+
+  @Test
+  void testRecordActionableError_logsExceptionDetails() {
+    ApiTracerContext context = ApiTracerContext.empty();
+    LoggingTracer tracer = new LoggingTracer(context);
+
+    Exception error = new RuntimeException("test error message");
+    tracer.recordActionableError(error);
+
+    Map<String, ?> attributesMap = getAttributesMap();
+    assertEquals(
+        "java.lang.RuntimeException",
+        attributesMap.get(ObservabilityAttributes.EXCEPTION_TYPE_ATTRIBUTE));
+    assertEquals(
+        "test error message",
+        attributesMap.get(ObservabilityAttributes.EXCEPTION_MESSAGE_ATTRIBUTE));
+  }
+
+  @Test
+  void testRecordActionableError_logsHttpStatus() {
+    ApiTracerContext context =
+        ApiTracerContext.empty().toBuilder().setTransport(ApiTracerContext.Transport.HTTP).build();
+    LoggingTracer tracer = new LoggingTracer(context);
+
+    Exception error =
+        ApiExceptionFactory.createException(
+            "test error message",
+            new RuntimeException("cause"),
+            FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT),
+            false);
+
+    tracer.recordActionableError(error);
+
+    Map<String, ?> attributesMap = getAttributesMap();
+    assertEquals(
+        "INVALID_ARGUMENT",
+        attributesMap.get(ObservabilityAttributes.RPC_RESPONSE_STATUS_ATTRIBUTE));
+    assertEquals(400L, attributesMap.get(ObservabilityAttributes.HTTP_RESPONSE_STATUS_ATTRIBUTE));
   }
 
   private Map<String, ?> getAttributesMap() {

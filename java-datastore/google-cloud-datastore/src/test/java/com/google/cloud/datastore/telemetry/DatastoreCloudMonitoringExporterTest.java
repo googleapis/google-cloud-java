@@ -77,11 +77,16 @@ public class DatastoreCloudMonitoringExporterTest {
   public void setUp() {
     mockMetricServiceStub = createMock(MetricServiceStub.class);
     fakeMetricServiceClient = new FakeMetricServiceClient(mockMetricServiceStub);
-    exporter = new DatastoreCloudMonitoringExporter(PROJECT_ID, fakeMetricServiceClient);
 
-    Map<String, String> clientAttributes =
-        BuiltInDatastoreMetricsProvider.INSTANCE.getClientAttributes();
+    Map<String, String> clientAttributes = BuiltInDatastoreMetricsProvider.buildClientAttributes();
     this.clientUid = clientAttributes.get(CLIENT_UID_KEY.getKey());
+
+    exporter =
+        new DatastoreCloudMonitoringExporter(
+            PROJECT_ID + ":" + DATABASE_ID + ":0",
+            PROJECT_ID,
+            fakeMetricServiceClient,
+            clientAttributes);
 
     attributes =
         Attributes.builder()
@@ -150,6 +155,39 @@ public class DatastoreCloudMonitoringExporterTest {
     assertThat(timeSeries.getPoints(0).getValue().getInt64Value()).isEqualTo(fakeValue);
 
     verify(mockMetricServiceStub, mockCallable);
+  }
+
+  @Test
+  public void testClientCacheReferenceCounting() {
+    MetricServiceClient mockClient = createMock(MetricServiceClient.class);
+    expect(mockClient.isShutdown()).andReturn(false).anyTimes();
+    mockClient.shutdown();
+    EasyMock.expectLastCall(); // Expect shutdown when refCount reaches 0
+    replay(mockClient);
+
+    String key = PROJECT_ID + ":" + DATABASE_ID + ":0";
+    DatastoreCloudMonitoringExporter.CachedMetricsClient cachedMetricsClient =
+        new DatastoreCloudMonitoringExporter.CachedMetricsClient(mockClient);
+    cachedMetricsClient.refCount.set(2); // Simulate 2 references
+    DatastoreCloudMonitoringExporter.METRICS_CLIENT_CACHE.put(key, cachedMetricsClient);
+
+    DatastoreCloudMonitoringExporter exporter1 =
+        new DatastoreCloudMonitoringExporter(key, PROJECT_ID, mockClient, Collections.emptyMap());
+
+    // First shutdown should decrement refCount to 1, but not close client
+    exporter1.shutdown();
+    assertThat(cachedMetricsClient.refCount.get()).isEqualTo(1);
+    assertThat(DatastoreCloudMonitoringExporter.METRICS_CLIENT_CACHE.containsKey(key)).isTrue();
+
+    DatastoreCloudMonitoringExporter exporter2 =
+        new DatastoreCloudMonitoringExporter(key, PROJECT_ID, mockClient, Collections.emptyMap());
+
+    // Second shutdown should decrement refCount to 0, close client, and remove from cache
+    exporter2.shutdown();
+    assertThat(cachedMetricsClient.refCount.get()).isEqualTo(0);
+    assertThat(DatastoreCloudMonitoringExporter.METRICS_CLIENT_CACHE.containsKey(key)).isFalse();
+
+    verify(mockClient);
   }
 
   private static class FakeMetricServiceClient extends MetricServiceClient {

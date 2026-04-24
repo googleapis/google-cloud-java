@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteExternalVpnGatewayRequest;
 import com.google.cloud.compute.v1.ExternalVpnGateway;
 import com.google.cloud.compute.v1.ExternalVpnGatewayList;
@@ -368,6 +369,19 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/externalVpnGateways/{external_vpn_gateway}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/externalVpnGateways/{external_vpn_gateway}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate SET_LABELS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/externalVpnGateways/{resource}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/externalVpnGateways/{resource}");
+
   public static final HttpJsonExternalVpnGatewaysStub create(
       ExternalVpnGatewaysStubSettings settings) throws IOException {
     return new HttpJsonExternalVpnGatewaysStub(settings, ClientContext.create(settings));
@@ -421,6 +435,14 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "external_vpn_gateway", String.valueOf(request.getExternalVpnGateway()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetExternalVpnGatewayRequest, ExternalVpnGateway> getTransportSettings =
         HttpJsonCallSettings.<GetExternalVpnGatewayRequest, ExternalVpnGateway>newBuilder()
@@ -434,6 +456,14 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "external_vpn_gateway", String.valueOf(request.getExternalVpnGateway()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertExternalVpnGatewayRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertExternalVpnGatewayRequest, Operation>newBuilder()
@@ -444,6 +474,12 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListExternalVpnGatewaysRequest, ExternalVpnGatewayList>
@@ -458,6 +494,12 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<SetLabelsExternalVpnGatewayRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsExternalVpnGatewayRequest, Operation>newBuilder()
@@ -469,6 +511,13 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("resource", String.valueOf(request.getResource()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  return SET_LABELS_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<TestIamPermissionsExternalVpnGatewayRequest, TestPermissionsResponse>
@@ -483,6 +532,14 @@ public class HttpJsonExternalVpnGatewaysStub extends ExternalVpnGatewaysStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 

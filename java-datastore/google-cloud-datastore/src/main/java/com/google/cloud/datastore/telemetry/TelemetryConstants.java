@@ -33,8 +33,8 @@ import java.util.Set;
 @InternalApi
 public class TelemetryConstants {
 
-  // The Firestore namespace has not been deployed yet. Must target the custom namespace
-  // until this is implemented.
+  // TODO(b/405457573): The Firestore namespace has not been deployed yet. Must target the
+  // custom namespace until this is implemented.
   public static final String METRIC_PREFIX = "custom.googleapis.com/internal/client";
   public static final String DATASTORE_METER_NAME = "java-datastore";
 
@@ -63,12 +63,16 @@ public class TelemetryConstants {
   // GAX-emitted metrics for the built-in Cloud Monitoring export pipeline.
   public static final Set<String> GAX_METRICS = GAX_METRIC_NAME_MAP.keySet();
 
+  // The subset of GAX_METRICS that are histograms (e.g. latency metrics)
+  public static final Set<String> GAX_HISTOGRAM_METRICS =
+      ImmutableSet.of(METRIC_NAME_SHORT_OPERATION_LATENCY, METRIC_NAME_SHORT_ATTEMPT_LATENCY);
+
   // Monitored resource type for Cloud Monitoring
   public static final String DATASTORE_RESOURCE_TYPE = "global";
 
   // Resource label keys for the monitored resource
-  // The Firestore namespace has not been deployed yet. Must target the global
-  // Monitored Resource until this is implemented.
+  // TODO(b/405457573): The Firestore namespace has not been deployed yet. Must
+  // target the global Monitored Resource until this is implemented.
   public static final String RESOURCE_LABEL_PROJECT_ID = "project_id";
   public static final String RESOURCE_LABEL_DATABASE_ID = "database_id";
   public static final String RESOURCE_LABEL_LOCATION = "location";
@@ -105,7 +109,6 @@ public class TelemetryConstants {
 
   // Metric attribute keys (used on metric data points)
   public static final AttributeKey<String> CLIENT_UID_KEY = AttributeKey.stringKey("client_uid");
-  public static final AttributeKey<String> CLIENT_NAME_KEY = AttributeKey.stringKey("client_name");
   public static final AttributeKey<String> METHOD_KEY = AttributeKey.stringKey("method");
   public static final AttributeKey<String> STATUS_KEY = AttributeKey.stringKey("status");
   public static final AttributeKey<String> SERVICE_KEY = AttributeKey.stringKey("service");
@@ -126,12 +129,9 @@ public class TelemetryConstants {
   public static final Set<AttributeKey<?>> COMMON_ATTRIBUTES =
       ImmutableSet.of(CLIENT_UID_KEY, METHOD_KEY, STATUS_KEY, SERVICE_KEY);
 
-  // Environment variable to enable/disable built-in metrics
-  public static final String ENABLE_METRICS_ENV_VAR = "DATASTORE_ENABLE_METRICS";
-
   /** Metric name for the total latency of a transaction. */
   public static final String METRIC_NAME_TRANSACTION_LATENCY =
-      METRIC_PREFIX + "/transaction_latency";
+      METRIC_PREFIX + "/transaction_latencies";
 
   /** Metric name for the number of attempts a transaction took. */
   public static final String METRIC_NAME_TRANSACTION_ATTEMPT_COUNT =
@@ -140,8 +140,12 @@ public class TelemetryConstants {
   /**
    * Metric name for the total latency of an operation (one full RPC call including retries).
    *
-   * <p>Renamed to the plural form ({@code operation_latencies}) by {@link
-   * DatastoreBuiltInMetricsView} during export.
+   * <p><b>Singular/plural naming:</b> This constant uses the singular form ({@code
+   * operation_latency}) to match the name recorded by the GAX layer and used by custom OTel
+   * backends (e.g., an in-memory reader in tests). The built-in Cloud Monitoring export path
+   * renames the metric to the plural form ({@code operation_latencies}) via an OTel View in {@link
+   * DatastoreBuiltInMetricsView}. This split is intentional and consistent with other Google Cloud
+   * client libraries.
    */
   public static final String METRIC_NAME_OPERATION_LATENCY =
       METRIC_PREFIX + "/" + METRIC_NAME_SHORT_OPERATION_LATENCY;
@@ -149,8 +153,8 @@ public class TelemetryConstants {
   /**
    * Metric name for the latency of a single RPC attempt.
    *
-   * <p>Renamed to the plural form ({@code attempt_latencies}) by {@link
-   * DatastoreBuiltInMetricsView} during export.
+   * <p>See {@link #METRIC_NAME_OPERATION_LATENCY} for the singular/plural naming rationale. The
+   * built-in Cloud Monitoring export renames this to {@code attempt_latencies} via an OTel View.
    */
   public static final String METRIC_NAME_ATTEMPT_LATENCY =
       METRIC_PREFIX + "/" + METRIC_NAME_SHORT_ATTEMPT_LATENCY;
@@ -163,8 +167,6 @@ public class TelemetryConstants {
   public static final String METRIC_NAME_ATTEMPT_COUNT =
       METRIC_PREFIX + "/" + METRIC_NAME_SHORT_ATTEMPT_COUNT;
 
-  // This is intentionally different from the `SERVICE_NAME` constant as it matches Gax's logic for
-  // method name.
   static final String METHOD_SERVICE_NAME = "Datastore";
 
   // The follow method name formats are not in SnakeCase to match the method name convention in Gax.

@@ -17,10 +17,9 @@
 package com.google.cloud.spanner.spi.v1;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider.Builder;
-import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.cloud.spanner.ErrorCode;
 import com.google.cloud.spanner.SpannerExceptionFactory;
 import com.google.common.annotations.VisibleForTesting;
@@ -28,11 +27,16 @@ import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.Nullable;
 
 /**
  * gRPC implementation of {@link ChannelEndpointCache}.
@@ -44,13 +48,19 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @InternalApi
 class GrpcChannelEndpointCache implements ChannelEndpointCache {
 
+  private static final Logger logger = Logger.getLogger(GrpcChannelEndpointCache.class.getName());
+
   /** Timeout for graceful channel shutdown. */
   private static final long SHUTDOWN_TIMEOUT_SECONDS = 5;
+
+  @VisibleForTesting static final Duration ROUTED_KEEPALIVE_TIME = Duration.ofSeconds(2);
+  @VisibleForTesting static final Duration ROUTED_KEEPALIVE_TIMEOUT = Duration.ofSeconds(20);
 
   private final InstantiatingGrpcChannelProvider baseProvider;
   private final Map<String, GrpcChannelEndpoint> servers = new ConcurrentHashMap<>();
   private final GrpcChannelEndpoint defaultEndpoint;
   private final String defaultAuthority;
+  @Nullable private final GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator;
   private final AtomicBoolean isShutdown = new AtomicBoolean(false);
 
   /**
@@ -62,7 +72,15 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
    */
   public GrpcChannelEndpointCache(InstantiatingGrpcChannelProvider channelProvider)
       throws IOException {
+    this(channelProvider, null);
+  }
+
+  public GrpcChannelEndpointCache(
+      InstantiatingGrpcChannelProvider channelProvider,
+      @Nullable GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator)
+      throws IOException {
     this.baseProvider = channelProvider;
+    this.endpointChannelConfigurator = endpointChannelConfigurator;
     String defaultEndpoint = channelProvider.getEndpoint();
     this.defaultEndpoint = new GrpcChannelEndpoint(defaultEndpoint, channelProvider);
     this.defaultAuthority = this.defaultEndpoint.getChannel().authority();
@@ -87,28 +105,47 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
           try {
             // Create a new provider with the same config but different endpoint.
             // This is thread-safe as withEndpoint() returns a new provider instance.
-            TransportChannelProvider newProvider = createProviderWithAuthorityOverride(addr);
-            return new GrpcChannelEndpoint(addr, newProvider);
+            InstantiatingGrpcChannelProvider newProvider =
+                createProviderWithAuthorityOverride(addr);
+            GrpcChannelEndpoint endpoint = new GrpcChannelEndpoint(addr, newProvider);
+            logger.log(Level.FINE, "Location-aware endpoint created for address: {0}", addr);
+            return endpoint;
           } catch (IOException e) {
+            logger.log(
+                Level.FINE, "Failed to create location-aware endpoint for address: " + addr, e);
             throw SpannerExceptionFactory.newSpannerException(
                 ErrorCode.INTERNAL, "Failed to create channel for address: " + addr, e);
           }
         });
   }
 
-  private TransportChannelProvider createProviderWithAuthorityOverride(String address) {
+  @Override
+  @Nullable
+  public ChannelEndpoint getIfPresent(String address) {
+    return servers.get(address);
+  }
+
+  @VisibleForTesting
+  InstantiatingGrpcChannelProvider createProviderWithAuthorityOverride(String address) {
     InstantiatingGrpcChannelProvider endpointProvider =
         (InstantiatingGrpcChannelProvider) baseProvider.withEndpoint(address);
     if (Objects.equals(defaultAuthority, address)) {
       return endpointProvider;
     }
     Builder builder = endpointProvider.toBuilder();
+    builder.setChannelPoolSettings(ChannelPoolSettings.staticallySized(1));
+    builder.setKeepAliveTimeDuration(ROUTED_KEEPALIVE_TIME);
+    builder.setKeepAliveTimeoutDuration(ROUTED_KEEPALIVE_TIMEOUT);
+    builder.setKeepAliveWithoutCalls(Boolean.TRUE);
     final com.google.api.core.ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>
-        baseConfigurator = builder.getChannelConfigurator();
+        baseConfigurator =
+            endpointChannelConfigurator == null ? builder.getChannelConfigurator() : null;
     builder.setChannelConfigurator(
         channelBuilder -> {
           ManagedChannelBuilder effectiveBuilder = channelBuilder;
-          if (baseConfigurator != null) {
+          if (endpointChannelConfigurator != null) {
+            effectiveBuilder = endpointChannelConfigurator.configure(effectiveBuilder);
+          } else if (baseConfigurator != null) {
             effectiveBuilder = baseConfigurator.apply(effectiveBuilder);
           }
           return effectiveBuilder.overrideAuthority(defaultAuthority);
@@ -168,6 +205,7 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
   static class GrpcChannelEndpoint implements ChannelEndpoint {
     private final String address;
     private final ManagedChannel channel;
+    private final AtomicInteger activeRequests = new AtomicInteger();
 
     /**
      * Creates a server from a channel provider.
@@ -176,15 +214,19 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
      * @param provider the channel provider (must be a gRPC provider)
      * @throws IOException if the channel cannot be created
      */
-    GrpcChannelEndpoint(String address, TransportChannelProvider provider) throws IOException {
+    GrpcChannelEndpoint(String address, InstantiatingGrpcChannelProvider provider)
+        throws IOException {
       this.address = address;
-      TransportChannelProvider readyProvider = provider;
+      // Build a raw ManagedChannel directly instead of going through getTransportChannel(),
+      // which wraps the channel in a ChannelPool that does not support getState().
+      // Location-aware routing needs getState() to check channel connectivity.
+      InstantiatingGrpcChannelProvider readyProvider = provider;
       if (provider.needsHeaders()) {
-        readyProvider = provider.withHeaders(java.util.Collections.emptyMap());
+        readyProvider =
+            (InstantiatingGrpcChannelProvider)
+                provider.withHeaders(java.util.Collections.emptyMap());
       }
-      GrpcTransportChannel transportChannel =
-          (GrpcTransportChannel) readyProvider.getTransportChannel();
-      this.channel = (ManagedChannel) transportChannel.getChannel();
+      this.channel = readyProvider.createDecoratedChannelBuilder().build();
     }
 
     /**
@@ -210,19 +252,59 @@ class GrpcChannelEndpointCache implements ChannelEndpointCache {
         return false;
       }
       // Check connectivity state without triggering a connection attempt.
+      // Only READY channels are considered healthy for location-aware routing.
       // Some channel implementations don't support getState(), in which case
-      // we assume the channel is healthy if it's not shutdown/terminated.
+      // we treat the endpoint as not ready for location-aware routing (defensive).
       try {
         ConnectivityState state = channel.getState(false);
-        return state != ConnectivityState.SHUTDOWN && state != ConnectivityState.TRANSIENT_FAILURE;
-      } catch (UnsupportedOperationException ignore) {
-        return true;
+        boolean ready = state == ConnectivityState.READY;
+        if (!ready) {
+          logger.log(
+              Level.FINE,
+              "Location-aware endpoint {0} is not ready for location-aware routing, state: {1}",
+              new Object[] {address, state});
+        }
+        return ready;
+      } catch (UnsupportedOperationException e) {
+        logger.log(
+            Level.FINE,
+            "getState(false) unsupported for location-aware endpoint {0}, treating as not ready",
+            address);
+        return false;
+      }
+    }
+
+    @Override
+    public boolean isTransientFailure() {
+      if (channel.isShutdown() || channel.isTerminated()) {
+        return false;
+      }
+      try {
+        ConnectivityState state = channel.getState(false);
+        return state == ConnectivityState.TRANSIENT_FAILURE;
+      } catch (UnsupportedOperationException e) {
+        return false;
       }
     }
 
     @Override
     public ManagedChannel getChannel() {
       return channel;
+    }
+
+    @Override
+    public void incrementActiveRequests() {
+      activeRequests.incrementAndGet();
+    }
+
+    @Override
+    public void decrementActiveRequests() {
+      activeRequests.updateAndGet(current -> current > 0 ? current - 1 : 0);
+    }
+
+    @Override
+    public int getActiveRequestCount() {
+      return Math.max(0, activeRequests.get());
     }
   }
 }

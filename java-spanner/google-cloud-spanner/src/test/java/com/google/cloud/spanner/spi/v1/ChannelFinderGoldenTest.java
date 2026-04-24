@@ -38,6 +38,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -132,6 +133,12 @@ public class ChannelFinderGoldenTest {
     }
 
     @Override
+    public ChannelEndpoint getIfPresent(String address) {
+      // Auto-create for golden tests — simulates lifecycle manager having pre-created endpoints.
+      return endpoints.computeIfAbsent(address, FakeEndpoint::new);
+    }
+
+    @Override
     public void evict(String address) {
       endpoints.remove(address);
     }
@@ -143,6 +150,7 @@ public class ChannelFinderGoldenTest {
 
     private final class FakeEndpoint implements ChannelEndpoint {
       private final String address;
+      private final AtomicInteger activeRequests = new AtomicInteger();
 
       private FakeEndpoint(String address) {
         this.address = address;
@@ -156,6 +164,11 @@ public class ChannelFinderGoldenTest {
       @Override
       public boolean isHealthy() {
         return !unhealthyServers.contains(address);
+      }
+
+      @Override
+      public boolean isTransientFailure() {
+        return unhealthyServers.contains(address);
       }
 
       @Override
@@ -197,6 +210,21 @@ public class ChannelFinderGoldenTest {
             return address;
           }
         };
+      }
+
+      @Override
+      public void incrementActiveRequests() {
+        activeRequests.incrementAndGet();
+      }
+
+      @Override
+      public void decrementActiveRequests() {
+        activeRequests.updateAndGet(current -> current > 0 ? current - 1 : 0);
+      }
+
+      @Override
+      public int getActiveRequestCount() {
+        return Math.max(0, activeRequests.get());
       }
     }
   }

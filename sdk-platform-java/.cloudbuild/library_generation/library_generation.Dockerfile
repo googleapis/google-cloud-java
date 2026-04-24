@@ -18,29 +18,34 @@
 
 FROM docker.io/library/maven:3.9.9-eclipse-temurin-17-alpine@sha256:969014ee8852c9910ff5ef09de17541c2587819364b79d7dc044634dfb8a3388 AS ggj-build
 
-WORKDIR /sdk-platform-java
-COPY sdk-platform-java/ .
+WORKDIR /google-cloud-java
+
+COPY . .
 # {x-version-update-start:gapic-generator-java:current}
-ENV DOCKER_GAPIC_GENERATOR_VERSION="2.68.1-SNAPSHOT"
+ENV DOCKER_GAPIC_GENERATOR_VERSION="2.71.0"
 # {x-version-update-end}
 
 # Download the java formatter
-RUN mvn -pl gapic-generator-java-pom-parent help:evaluate -Dexpression='google-java-format.version' -q -DforceStdout > /java-formatter-version
+RUN mvn -pl sdk-platform-java/gapic-generator-java-pom-parent help:evaluate -Dexpression='google-java-format.version' -q -DforceStdout > /java-formatter-version
 RUN cat /java-formatter-version
 RUN V=$(cat /java-formatter-version) && curl -o "/google-java-format.jar" "https://maven-central.storage-download.googleapis.com/maven2/com/google/googlejavaformat/google-java-format/${V}/google-java-format-${V}-all-deps.jar"
 
 # Compile and install packages
-RUN mvn install -B -ntp -T 1.5C -DskipTests -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip
+RUN mvn install -B -ntp -T 1.5C -DskipTests -Dcheckstyle.skip -Dclirr.skip -Denforcer.skip -Dfmt.skip -pl sdk-platform-java/gapic-generator-java --also-make
 RUN cp "/root/.m2/repository/com/google/api/gapic-generator-java/${DOCKER_GAPIC_GENERATOR_VERSION}/gapic-generator-java-${DOCKER_GAPIC_GENERATOR_VERSION}.jar" \
-  "./gapic-generator-java.jar"
+  "/gapic-generator-java.jar"
 
 FROM docker.io/library/python:3.13.2-slim@sha256:6b3223eb4d93718828223966ad316909c39813dee3ee9395204940500792b740 as final
 
 ARG OWLBOT_CLI_COMMITTISH=3a68a9c0de318784b3aefadcc502a6521b3f1bc5
 ARG PROTOC_VERSION=33.2
-ARG GRPC_VERSION=1.76.3
+ARG GRPC_VERSION=1.80.0
 ENV HOME=/home
 ENV OS_ARCHITECTURE="linux-x86_64"
+
+# {x-version-update-start:gapic-generator-java:current}
+ENV GENERATOR_VERSION="2.71.0"
+# {x-version-update-end}
 
 # install OS tools
 RUN apt update && apt install -y curl unzip rsync jq nodejs npm git openjdk-17-jdk
@@ -93,7 +98,7 @@ ENV JAVA_FORMATTER_LOCATION="${HOME}/.library_generation/google-java-format.jar"
 # Note that the destination is a well-known location that will be assumed at runtime
 # We hard-code the location string to avoid making it configurable (via ARG) as
 # well as to avoid it making it overridable at runtime (via ENV).
-COPY --from=ggj-build "/sdk-platform-java/gapic-generator-java.jar" "${HOME}/.library_generation/gapic-generator-java.jar"
+COPY --from=ggj-build "/gapic-generator-java.jar" "${HOME}/.library_generation/gapic-generator-java.jar"
 RUN chmod 755 "${HOME}/.library_generation/gapic-generator-java.jar"
 ENV GAPIC_GENERATOR_LOCATION="${HOME}/.library_generation/gapic-generator-java.jar"
 

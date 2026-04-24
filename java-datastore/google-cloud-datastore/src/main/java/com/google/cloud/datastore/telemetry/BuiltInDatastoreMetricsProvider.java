@@ -17,6 +17,8 @@
 package com.google.cloud.datastore.telemetry;
 
 import com.google.auth.Credentials;
+import com.google.cloud.NoCredentials;
+import com.google.common.base.Preconditions;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
@@ -24,12 +26,10 @@ import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import io.opentelemetry.sdk.resources.Resource;
-import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -48,25 +48,25 @@ import javax.annotation.Nullable;
  * automated environment detection and resource attribute configuration for the {@link
  * TelemetryConstants#DATASTORE_RESOURCE_TYPE} monitored resource.
  */
-public final class BuiltInDatastoreMetricsProvider {
+class BuiltInDatastoreMetricsProvider {
 
-  public static final BuiltInDatastoreMetricsProvider INSTANCE =
-      new BuiltInDatastoreMetricsProvider();
+  static final BuiltInDatastoreMetricsProvider INSTANCE = new BuiltInDatastoreMetricsProvider();
 
   private static final Logger logger =
       Logger.getLogger(BuiltInDatastoreMetricsProvider.class.getName());
 
-  private static volatile String taskId;
+  // volatile ensures that writes from one thread (first call to detectClientLocation) are
+  // immediately visible to all other threads sharing this singleton INSTANCE. Without it, a
+  // thread could read a stale null and re-enter the initialization branch.
   private static volatile String location;
   private static final String DEFAULT_LOCATION = "global";
 
-  private final Map<String, String> cachedClientAttributes;
+  // Pre-computed once per JVM; hostname lookup can block, so we pay the cost at class-init time.
+  private static final String PID_AND_HOSTNAME = getProcessId() + "@" + getHostnameSafely();
 
-  private BuiltInDatastoreMetricsProvider() {
-    cachedClientAttributes = Collections.unmodifiableMap(buildClientAttributes());
-  }
+  private BuiltInDatastoreMetricsProvider() {}
 
-  private Map<String, String> buildClientAttributes() {
+  static Map<String, String> buildClientAttributes() {
     Map<String, String> attrs = new HashMap<>();
     attrs.put(TelemetryConstants.CLIENT_UID_KEY.getKey(), getDefaultTaskValue());
     attrs.put(TelemetryConstants.SERVICE_KEY.getKey(), TelemetryConstants.SERVICE_VALUE);
@@ -81,11 +81,8 @@ public final class BuiltInDatastoreMetricsProvider {
    * DatastoreCloudMonitoringExporter}. No global or shared state is modified.
    *
    * <p><b>Lifecycle:</b> The returned instance is owned by the caller. It should be closed by
-   * calling {@link OpenTelemetrySdk#close()} (or via {@link
+   * calling {@link io.opentelemetry.sdk.OpenTelemetrySdk#close()} (or via {@link
    * OpenTelemetryDatastoreMetricsRecorder#close()}) when the associated Datastore client is closed.
-   * A JVM shutdown hook is also registered as a last-resort safety net for cases where the caller
-   * does not explicitly close the client. Note that each call to this method adds a new shutdown
-   * hook; callers should avoid creating an unbounded number of short-lived clients.
    *
    * <p>No caching is performed here; callers are responsible for holding the returned instance for
    * the lifetime of their Datastore client.
@@ -97,27 +94,33 @@ public final class BuiltInDatastoreMetricsProvider {
    */
   @Nullable
   public OpenTelemetry createOpenTelemetry(
-      @Nonnull String projectId, @Nonnull String databaseId, @Nullable Credentials credentials) {
-    try {
-      SdkMeterProviderBuilder sdkMeterProviderBuilder = SdkMeterProvider.builder();
-      // Register Datastore-specific views and the PeriodicMetricReader.
-      DatastoreBuiltInMetricsView.registerBuiltinMetrics(
-          DatastoreCloudMonitoringExporter.create(projectId, credentials), sdkMeterProviderBuilder);
-      // Configure the monitored resource attributes for this specific client.
-      sdkMeterProviderBuilder.setResource(
-          Resource.create(createResourceAttributes(projectId, databaseId)));
-      SdkMeterProvider sdkMeterProvider = sdkMeterProviderBuilder.build();
-      // Ensure cleanup on shutdown.
-      Runtime.getRuntime().addShutdownHook(new Thread(sdkMeterProvider::close));
-      return OpenTelemetrySdk.builder().setMeterProvider(sdkMeterProvider).build();
-    } catch (IOException ex) {
+      @Nonnull String projectId, @Nonnull String databaseId, @Nonnull Credentials credentials) {
+    Preconditions.checkNotNull(credentials, "Credentials cannot be null for built in metrics");
+    SdkMeterProviderBuilder sdkMeterProviderBuilder = SdkMeterProvider.builder();
+
+    Map<String, String> clientAttributes = buildClientAttributes();
+
+    if (credentials instanceof NoCredentials) {
       logger.log(
           Level.WARNING,
-          "Unable to create OpenTelemetry instance for client side metrics, will skip exporting"
-              + " built-in metrics",
-          ex);
+          "Built-in metrics exporting is disabled when using NoCredentials (emulator).");
       return null;
     }
+
+    DatastoreCloudMonitoringExporter exporter =
+        DatastoreCloudMonitoringExporter.create(
+            projectId, databaseId, credentials, clientAttributes);
+    if (exporter == null) {
+      return null;
+    }
+
+    // Register Datastore-specific views and the PeriodicMetricReader.
+    DatastoreBuiltInMetricsView.registerBuiltinMetrics(exporter, sdkMeterProviderBuilder);
+    // Configure the monitored resource attributes for this specific client.
+    sdkMeterProviderBuilder.setResource(
+        Resource.create(createResourceAttributes(projectId, databaseId)));
+    SdkMeterProvider sdkMeterProvider = sdkMeterProviderBuilder.build();
+    return OpenTelemetrySdk.builder().setMeterProvider(sdkMeterProvider).build();
   }
 
   /**
@@ -128,9 +131,9 @@ public final class BuiltInDatastoreMetricsProvider {
    *
    * @return the detected location, or "global" if detection fails.
    */
-  public static String detectClientLocation() {
+  public String detectClientLocation() {
     if (location == null) {
-      location = DEFAULT_LOCATION;
+      location = "global";
     }
     return location;
   }
@@ -156,44 +159,25 @@ public final class BuiltInDatastoreMetricsProvider {
   }
 
   /**
-   * Returns common client attributes added to every exported metric data point.
-   *
-   * <p>The returned map is pre-computed at construction time and shared across all export calls,
-   * since {@code client_name}, {@code client_uid}, and {@code service} are stable for the lifetime
-   * of the process.
-   *
-   * @return an unmodifiable map of client attributes.
-   */
-  Map<String, String> getClientAttributes() {
-    return cachedClientAttributes;
-  }
-
-  /**
    * Generates a unique identifier for the {@code client_uid} metric field.
    *
-   * <p>Combines a random UUID with {@code RuntimeMXBean.getName()} (typically {@code
+   * <p>Combines a random UUID with the pre-computed {@code PID_AND_HOSTNAME} (typically {@code
    * pid@hostname}). The UUID prefix ensures uniqueness across process restarts that reuse the same
    * PID, preventing Cloud Monitoring from conflating time series from different process lifecycles.
-   *
-   * <p>For Java 9 and later, the PID is obtained using the ProcessHandle API. For Java 8, the PID
-   * is extracted from ManagementFactory.getRuntimeMXBean().getName().
    *
    * @return a unique identifier string.
    */
   private static String getDefaultTaskValue() {
-    if (taskId == null) {
-      String identifier = UUID.randomUUID().toString();
-      String pid = getProcessId();
+    return UUID.randomUUID().toString() + "@" + PID_AND_HOSTNAME;
+  }
 
-      try {
-        String hostname = InetAddress.getLocalHost().getHostName();
-        taskId = identifier + "@" + pid + "@" + hostname;
-      } catch (UnknownHostException e) {
-        logger.log(Level.INFO, "Unable to get the hostname.", e);
-        taskId = identifier + "@" + pid + "@localhost";
-      }
+  private static String getHostnameSafely() {
+    try {
+      return InetAddress.getLocalHost().getHostName();
+    } catch (UnknownHostException e) {
+      logger.log(Level.CONFIG, "Unable to get the hostname.", e);
+      return "localhost";
     }
-    return taskId;
   }
 
   private static String getProcessId() {

@@ -52,6 +52,7 @@ import com.google.cloud.vectorsearch.v1.ListIndexesRequest;
 import com.google.cloud.vectorsearch.v1.ListIndexesResponse;
 import com.google.cloud.vectorsearch.v1.OperationMetadata;
 import com.google.cloud.vectorsearch.v1.UpdateCollectionRequest;
+import com.google.cloud.vectorsearch.v1.UpdateIndexRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -157,6 +158,15 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<UpdateIndexRequest, Operation> updateIndexMethodDescriptor =
+      MethodDescriptor.<UpdateIndexRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.vectorsearch.v1.VectorSearchService/UpdateIndex")
+          .setRequestMarshaller(ProtoUtils.marshaller(UpdateIndexRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
   private static final MethodDescriptor<DeleteIndexRequest, Operation> deleteIndexMethodDescriptor =
       MethodDescriptor.<DeleteIndexRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -232,6 +242,9 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
   private final UnaryCallable<CreateIndexRequest, Operation> createIndexCallable;
   private final OperationCallable<CreateIndexRequest, Index, OperationMetadata>
       createIndexOperationCallable;
+  private final UnaryCallable<UpdateIndexRequest, Operation> updateIndexCallable;
+  private final OperationCallable<UpdateIndexRequest, Index, OperationMetadata>
+      updateIndexOperationCallable;
   private final UnaryCallable<DeleteIndexRequest, Operation> deleteIndexCallable;
   private final OperationCallable<DeleteIndexRequest, Empty, OperationMetadata>
       deleteIndexOperationCallable;
@@ -380,6 +393,16 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
                 })
             .setResourceNameExtractor(request -> request.getParent())
             .build();
+    GrpcCallSettings<UpdateIndexRequest, Operation> updateIndexTransportSettings =
+        GrpcCallSettings.<UpdateIndexRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateIndexMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("index.name", String.valueOf(request.getIndex().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteIndexRequest, Operation> deleteIndexTransportSettings =
         GrpcCallSettings.<DeleteIndexRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteIndexMethodDescriptor)
@@ -486,6 +509,15 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
         callableFactory.createOperationCallable(
             createIndexTransportSettings,
             settings.createIndexOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateIndexCallable =
+        callableFactory.createUnaryCallable(
+            updateIndexTransportSettings, settings.updateIndexSettings(), clientContext);
+    this.updateIndexOperationCallable =
+        callableFactory.createOperationCallable(
+            updateIndexTransportSettings,
+            settings.updateIndexOperationSettings(),
             clientContext,
             operationsStub);
     this.deleteIndexCallable =
@@ -610,6 +642,17 @@ public class GrpcVectorSearchServiceStub extends VectorSearchServiceStub {
   public OperationCallable<CreateIndexRequest, Index, OperationMetadata>
       createIndexOperationCallable() {
     return createIndexOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateIndexRequest, Operation> updateIndexCallable() {
+    return updateIndexCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateIndexRequest, Index, OperationMetadata>
+      updateIndexOperationCallable() {
+    return updateIndexOperationCallable;
   }
 
   @Override

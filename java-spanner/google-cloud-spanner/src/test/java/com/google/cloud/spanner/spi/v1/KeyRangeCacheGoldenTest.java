@@ -34,6 +34,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -126,6 +127,12 @@ public class KeyRangeCacheGoldenTest {
     }
 
     @Override
+    public ChannelEndpoint getIfPresent(String address) {
+      // Auto-create for golden tests — simulates lifecycle manager having pre-created endpoints.
+      return endpoints.computeIfAbsent(address, FakeEndpoint::new);
+    }
+
+    @Override
     public void evict(String address) {
       endpoints.remove(address);
     }
@@ -139,6 +146,7 @@ public class KeyRangeCacheGoldenTest {
   private static final class FakeEndpoint implements ChannelEndpoint {
     private final String address;
     private final ManagedChannel channel = new FakeManagedChannel();
+    private final AtomicInteger activeRequests = new AtomicInteger();
 
     FakeEndpoint(String address) {
       this.address = address;
@@ -155,8 +163,28 @@ public class KeyRangeCacheGoldenTest {
     }
 
     @Override
+    public boolean isTransientFailure() {
+      return false;
+    }
+
+    @Override
     public ManagedChannel getChannel() {
       return channel;
+    }
+
+    @Override
+    public void incrementActiveRequests() {
+      activeRequests.incrementAndGet();
+    }
+
+    @Override
+    public void decrementActiveRequests() {
+      activeRequests.updateAndGet(current -> current > 0 ? current - 1 : 0);
+    }
+
+    @Override
+    public int getActiveRequestCount() {
+      return Math.max(0, activeRequests.get());
     }
   }
 

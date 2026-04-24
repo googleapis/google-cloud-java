@@ -69,6 +69,7 @@ def detect_modules(root_directory: Path):
         tree = ET.parse(module_pom_xml)
         root = tree.getroot()
         version = root.find('mvn:version', POM_NAMESPACES).text
+        api_name = None
         if owlbot_yaml_path.exists():
             # If OwlBot configuration file exists (most cases), it's the better
             # source to get the OwlBot-generated pull request title prefix than
@@ -78,21 +79,21 @@ def detect_modules(root_directory: Path):
                 match = re.search(r'api-name: (.+)', owlbot_yaml_content)
                 if match:
                     api_name = match.group(1)
-                    modules.append(LibraryModule(module_path, api_name,
-                                                 version,
-                                                 changelog))
+
+        if not api_name:
+            # Fallback to repo-metadata.json (e.g. for vertexai or Spanner transitional state)
+            if repo_metadata_path.exists():
+                with open(repo_metadata_path, 'r') as file:
+                    repo_metadata = json.load(file)
+                    api_name = repo_metadata.get('api_shortname')
+
+        if api_name:
+            modules.append(LibraryModule(module_path, api_name,
+                                         version,
+                                         changelog))
         else:
-            # vertexai (handwritten) does not have OwlBot yaml file
-            with open(repo_metadata_path, 'r') as file:
-                repo_metadata = json.load(file)
-                api_name = repo_metadata['api_shortname']
-                if api_name:
-                    modules.append(LibraryModule(repo_metadata_path.parent, api_name,
-                                                 version,
-                                                 changelog))
-                else:
-                    raise Exception(f'repo_metadata_path {repo_metadata_path} does'
-                                    f' not have api_shortname field')
+            raise Exception(f'Could not determine api-name for {repo_metadata_path}')
+
 
     return modules
 
@@ -133,7 +134,7 @@ def group_changes_by_api(main_changes: [str]):
             elif section == BUG_FIXES_SECTION:
                 api_to_changelog[api_name].bug_fixes.append(note)
             elif section == DEPENDENCIES_SECTION:
-                api_to_changelog[api_name].dependencies.append(note)
+                api_to_changelog[api_name].dependency_upgrades.append(note)
     return api_to_changelog
 
 

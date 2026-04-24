@@ -284,7 +284,7 @@ public class OpenTelemetryBuiltInMetricsTracerTest extends AbstractNettyMockServ
               return null;
             });
 
-    Spanner spanner =
+    try (Spanner spanner =
         builder
             .setProjectId("test-project")
             .setChannelConfigurator(ManagedChannelBuilder::usePlaintext)
@@ -303,46 +303,52 @@ public class OpenTelemetryBuiltInMetricsTracerTest extends AbstractNettyMockServ
             .setBuiltInMetricsEnabled(false)
             .setApiTracerFactory(createMetricsTracerFactory())
             .build()
-            .getService();
-    String instance = "i";
-    DatabaseClient client = spanner.getDatabaseClient(DatabaseId.of("test-project", instance, "d"));
+            .getService()) {
+      String instance = "i";
+      DatabaseClient client =
+          spanner.getDatabaseClient(DatabaseId.of("test-project", instance, "d"));
 
-    // Using this client will return UNAVAILABLE, as the server is not reachable and we have
-    // disabled retries.
-    SpannerException exception =
-        assertThrows(
-            SpannerException.class, () -> client.singleUse().executeQuery(SELECT_RANDOM).next());
-    assertEquals(ErrorCode.UNAVAILABLE, exception.getErrorCode());
+      // Using this client will return UNAVAILABLE, as the server is not reachable and we have
+      // disabled retries.
+      SpannerException exception =
+          assertThrows(
+              SpannerException.class, () -> client.singleUse().executeQuery(SELECT_RANDOM).next());
+      assertEquals(ErrorCode.UNAVAILABLE, exception.getErrorCode());
 
-    Attributes expectedAttributesCreateSessionOK =
-        expectedCommonBaseAttributes.toBuilder()
-            .put(BuiltInMetricsConstant.STATUS_KEY, "OK")
-            .put(BuiltInMetricsConstant.METHOD_KEY, "Spanner.CreateSession")
-            // Include the additional attributes that are added by the HeaderInterceptor in the
-            // filter. Note that the DIRECT_PATH_USED attribute is not added, as the request never
-            // leaves the client.
-            .build();
+      Attributes expectedAttributesCreateSessionOK =
+          expectedCommonBaseAttributes.toBuilder()
+              .put(BuiltInMetricsConstant.STATUS_KEY, "OK")
+              .put(BuiltInMetricsConstant.METHOD_KEY, "Spanner.CreateSession")
+              // Include the additional attributes that are added by the HeaderInterceptor in the
+              // filter. Note that the DIRECT_PATH_USED attribute is not added, as the request
+              // never leaves the client.
+              .build();
 
-    Attributes expectedAttributesCreateSessionFailed =
-        expectedCommonBaseAttributes.toBuilder()
-            .put(BuiltInMetricsConstant.STATUS_KEY, "UNAVAILABLE")
-            .put(BuiltInMetricsConstant.METHOD_KEY, "Spanner.CreateSession")
-            // Include the additional attributes that are added by the HeaderInterceptor in the
-            // filter. Note that the DIRECT_PATH_USED attribute is not added, as the request never
-            // leaves the client.
-            .build();
+      Attributes expectedAttributesCreateSessionFailed =
+          expectedCommonBaseAttributes.toBuilder()
+              .put(BuiltInMetricsConstant.STATUS_KEY, "UNAVAILABLE")
+              .put(BuiltInMetricsConstant.METHOD_KEY, "Spanner.CreateSession")
+              // Include the additional attributes that are added by the HeaderInterceptor in the
+              // filter. Note that the DIRECT_PATH_USED attribute is not added, as the request
+              // never leaves the client.
+              .build();
 
-    MetricData attemptCountMetricData =
-        getMetricData(metricReader, BuiltInMetricsConstant.ATTEMPT_COUNT_NAME);
-    assertNotNull(attemptCountMetricData);
+      MetricData attemptCountMetricData =
+          getMetricData(metricReader, BuiltInMetricsConstant.ATTEMPT_COUNT_NAME);
+      assertNotNull(attemptCountMetricData);
 
-    // Attempt count should have a failed metric point for CreateSession.
-    assertEquals(
-        1, getAggregatedValue(attemptCountMetricData, expectedAttributesCreateSessionFailed), 0);
-    assertTrue(
-        checkIfMetricExists(metricReader, BuiltInMetricsConstant.GFE_CONNECTIVITY_ERROR_NAME));
-    assertTrue(
-        checkIfMetricExists(metricReader, BuiltInMetricsConstant.AFE_CONNECTIVITY_ERROR_NAME));
+      // Multiplexed session creation may continue retrying in the background, so the exact number
+      // of failed CreateSession attempts is timing-dependent. The request should never succeed,
+      // and we should observe at least one failed CreateSession attempt.
+      assertEquals(
+          0, getAggregatedValue(attemptCountMetricData, expectedAttributesCreateSessionOK), 0);
+      assertTrue(
+          getAggregatedValue(attemptCountMetricData, expectedAttributesCreateSessionFailed) >= 1.0);
+      assertTrue(
+          checkIfMetricExists(metricReader, BuiltInMetricsConstant.GFE_CONNECTIVITY_ERROR_NAME));
+      assertTrue(
+          checkIfMetricExists(metricReader, BuiltInMetricsConstant.AFE_CONNECTIVITY_ERROR_NAME));
+    }
   }
 
   @Test

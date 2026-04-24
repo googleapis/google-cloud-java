@@ -361,9 +361,10 @@ public final class ToolProto extends com.google.protobuf.GeneratedFile {
           + "J\"E/v3/{name=projects/*/locations/*/agen"
           + "ts/*/tools/*/versions/*}:restore:\001*\032x\312A\031"
           + "dialogflow.googleapis.com\322AYhttps://www.googleapis.com/auth/cloud-platform,https"
-          + "://www.googleapis.com/auth/dialogflowB\210\001\n"
+          + "://www.googleapis.com/auth/dialogflowB\254\001\n"
           + "!com.google.cloud.dialogflow.cx.v3B\tToolProtoP\001Z1cloud.google.com/go/dialogflow"
-          + "/cx/apiv3/cxpb;cxpb\242\002\002DF\252\002\035Google.Cloud.Dialogflow.Cx.V3b\006proto3"
+          + "/cx/apiv3/cxpb;cxpb\242\002\002DF\252\002\035Google.Cloud."
+          + "Dialogflow.Cx.V3\352\002!Google::Cloud::Dialogflow::CX::V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

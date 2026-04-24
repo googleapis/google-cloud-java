@@ -1220,6 +1220,7 @@ public class ReservationServiceClientTest {
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .setPrincipal("principal-1812041682")
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1266,6 +1267,7 @@ public class ReservationServiceClientTest {
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .setPrincipal("principal-1812041682")
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1662,6 +1664,7 @@ public class ReservationServiceClientTest {
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .setPrincipal("principal-1812041682")
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1711,6 +1714,7 @@ public class ReservationServiceClientTest {
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .setPrincipal("principal-1812041682")
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1759,6 +1763,7 @@ public class ReservationServiceClientTest {
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .setPrincipal("principal-1812041682")
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1806,6 +1811,7 @@ public class ReservationServiceClientTest {
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .setPrincipal("principal-1812041682")
             .build();
     mockReservationService.addResponse(expectedResponse);
 
@@ -1852,6 +1858,7 @@ public class ReservationServiceClientTest {
             .setAssignee("assignee-369881649")
             .setEnableGeminiInBigquery(true)
             .setSchedulingPolicy(SchedulingPolicy.newBuilder().build())
+            .setPrincipal("principal-1812041682")
             .build();
     mockReservationService.addResponse(expectedResponse);
 

@@ -19,13 +19,10 @@ package com.google.cloud.datastore.telemetry;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
-import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
-import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.PermissionDeniedException;
 import com.google.auth.Credentials;
-import com.google.cloud.NoCredentials;
 import com.google.cloud.monitoring.v3.MetricServiceClient;
 import com.google.cloud.monitoring.v3.MetricServiceSettings;
 import com.google.common.annotations.VisibleForTesting;
@@ -45,7 +42,10 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nonnull;
@@ -71,7 +71,33 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
   private static final Logger logger =
       Logger.getLogger(DatastoreCloudMonitoringExporter.class.getName());
 
+  /**
+   * Wrapper class to hold a {@link MetricServiceClient} and its reference count. This is used to
+   * share the client across multiple exporter instances.
+   */
+  static class CachedMetricsClient {
+    final MetricServiceClient client;
+    final AtomicInteger refCount = new AtomicInteger(0);
+
+    CachedMetricsClient(MetricServiceClient client) {
+      this.client = client;
+    }
+  }
+
+  /**
+   * Shared cache for {@link MetricServiceClient} instances, keyed by
+   * "projectId:databaseId:credentialsHashCode". Sharing a single gRPC channel across exporter
+   * instances that target the same project, database, and credentials avoids per-client channel
+   * overhead (threads, connections, memory). The credentials hash ensures that clients using
+   * different credentials get their own isolated channel. Reference counting is used to safely shut
+   * down the client when no longer needed.
+   */
+  static final ConcurrentHashMap<String, CachedMetricsClient> METRICS_CLIENT_CACHE =
+      new ConcurrentHashMap<>();
+
   private final MetricServiceClient client;
+  private final Map<String, String> clientAttributes;
+  private final String cacheKey;
 
   // This is the quota limit from Cloud Monitoring. More details in
   // https://cloud.google.com/monitoring/quotas#custom_metrics_quotas.
@@ -84,7 +110,10 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
   // Flag to prevent log spam of any export failures
   private final AtomicBoolean datastoreExportFailureLogged = new AtomicBoolean(false);
 
-  private final String datastoreProjectId;
+  // Flag to prevent double shutdown of this exporter instance
+  private final AtomicBoolean isExporterShutDown = new AtomicBoolean(false);
+
+  private final String projectId;
 
   /**
    * Creates a new instance of the exporter.
@@ -95,17 +124,55 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
    * responses and can mask the real failure reason.
    *
    * <p>{@code createTimeSeries} is used instead of {@code createServiceTimeSeries} because the
-   * Firestore namespace in Cloud Monitoring has not yet been deployed as a service resource. Once
-   * the namespace is available, this should be migrated to {@code createServiceTimeSeries} for
-   * correct quota and resource attribution.
+   * Firestore namespace in Cloud Monitoring (b/405457573) has not yet been deployed as a service
+   * resource. Once the namespace is available, this should be migrated to {@code
+   * createServiceTimeSeries} for correct quota and resource attribution.
    *
    * @param projectId the GCP project ID where metrics will be exported.
    * @param credentials the credentials used to authenticate with Cloud Monitoring.
    * @return a new {@link DatastoreCloudMonitoringExporter} instance.
-   * @throws IOException if the {@link MetricServiceClient} fails to initialize.
    */
+  @Nullable
   static DatastoreCloudMonitoringExporter create(
-      String projectId, @Nullable Credentials credentials) throws IOException {
+      String projectId,
+      String databaseId,
+      Credentials credentials,
+      Map<String, String> clientAttributes) {
+    int credHash = credentials != null ? credentials.hashCode() : 0;
+    String key = projectId + ":" + databaseId + ":" + credHash;
+
+    // Use compute to acquire or create the client atomically with reference counting.
+    // If creation fails, we log the error and return null so it's not added to the map.
+    CachedMetricsClient cachedMetricsClient =
+        METRICS_CLIENT_CACHE.compute(
+            key,
+            (k, v) -> {
+              if (v == null) {
+                try {
+                  v = new CachedMetricsClient(createMetricServiceClient(credentials));
+                } catch (IOException e) {
+                  logger.log(
+                      Level.WARNING,
+                      "Failed to create MetricServiceClient for metrics export. Monitoring will be disabled.",
+                      e);
+                  return null; // Do not add to map
+                }
+              }
+              v.refCount.incrementAndGet();
+              return v;
+            });
+
+    // If there is no client in the cache (creation failed), return null.
+    if (cachedMetricsClient == null) {
+      return null;
+    }
+
+    return new DatastoreCloudMonitoringExporter(
+        key, projectId, cachedMetricsClient.client, clientAttributes);
+  }
+
+  private static MetricServiceClient createMetricServiceClient(Credentials credentials)
+      throws IOException {
     MetricServiceSettings.Builder settingsBuilder = MetricServiceSettings.newBuilder();
 
     InstantiatingGrpcChannelProvider transportChannelProvider =
@@ -114,26 +181,25 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
             .build();
     settingsBuilder.setTransportChannelProvider(transportChannelProvider);
 
-    CredentialsProvider credentialsProvider;
-    if (credentials == null || credentials instanceof NoCredentials) {
-      credentialsProvider = NoCredentialsProvider.create();
-    } else {
-      credentialsProvider = FixedCredentialsProvider.create(credentials);
-    }
-    settingsBuilder.setCredentialsProvider(credentialsProvider);
+    settingsBuilder.setCredentialsProvider(FixedCredentialsProvider.create(credentials));
 
     settingsBuilder
         .createTimeSeriesSettings()
         .setSimpleTimeoutNoRetriesDuration(Duration.ofMinutes(1));
 
-    return new DatastoreCloudMonitoringExporter(
-        projectId, MetricServiceClient.create(settingsBuilder.build()));
+    return MetricServiceClient.create(settingsBuilder.build());
   }
 
   @VisibleForTesting
-  DatastoreCloudMonitoringExporter(String projectId, MetricServiceClient client) {
+  DatastoreCloudMonitoringExporter(
+      String cacheKey,
+      String projectId,
+      MetricServiceClient client,
+      Map<String, String> clientAttributes) {
+    this.cacheKey = cacheKey;
     this.client = client;
-    this.datastoreProjectId = projectId;
+    this.projectId = projectId;
+    this.clientAttributes = clientAttributes;
   }
 
   /**
@@ -144,7 +210,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
    */
   @Override
   public CompletableResultCode export(@Nonnull Collection<MetricData> collection) {
-    if (client.isShutdown()) {
+    if (isExporterShutDown.get()) {
       logger.log(Level.WARNING, "Exporter is shut down");
       return CompletableResultCode.ofFailure();
     }
@@ -159,8 +225,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
       // Convert OTel MetricData to Cloud Monitoring TimeSeries.
       datastoreTimeSeries =
           DatastoreCloudMonitoringExporterUtils.convertToDatastoreTimeSeries(
-              new ArrayList<>(collection),
-              BuiltInDatastoreMetricsProvider.INSTANCE.getClientAttributes());
+              new ArrayList<>(collection), clientAttributes);
     } catch (Throwable e) {
       logger.log(
           Level.WARNING,
@@ -169,7 +234,7 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
       return CompletableResultCode.ofFailure();
     }
 
-    ProjectName projectName = ProjectName.of(datastoreProjectId);
+    ProjectName projectName = ProjectName.of(projectId);
 
     // Perform the actual network call to Cloud Monitoring.
     ApiFuture<List<Empty>> futureList = exportTimeSeriesInBatch(projectName, datastoreTimeSeries);
@@ -243,13 +308,23 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
   /** Shuts down the exporter and the underlying {@link MetricServiceClient}. */
   @Override
   public CompletableResultCode shutdown() {
-    if (client.isShutdown()) {
+    if (!isExporterShutDown.compareAndSet(false, true)) {
       logger.log(Level.WARNING, "shutdown is called multiple times");
       return CompletableResultCode.ofSuccess();
     }
     CompletableResultCode shutdownResult = new CompletableResultCode();
     try {
-      client.shutdown();
+      // Atomically decrement reference count and cleanup if zero.
+      METRICS_CLIENT_CACHE.compute(
+          cacheKey,
+          (k, v) -> {
+            if (v != null && v.refCount.decrementAndGet() == 0) {
+              v.client.shutdown();
+              return null; // Remove from map to prevent leaks
+            }
+
+            return v;
+          });
       shutdownResult.succeed();
     } catch (Throwable e) {
       logger.log(Level.WARNING, "failed to shutdown the monitoring client", e);

@@ -187,6 +187,9 @@ public class DatastoreOptionsTest {
     assertEquals(channelPoolSettings.getInitialChannelCount(), DatastoreOptions.INIT_CHANNEL_COUNT);
     assertEquals(channelPoolSettings.getMinChannelCount(), DatastoreOptions.MIN_CHANNEL_COUNT);
     assertEquals(channelPoolSettings.getMaxChannelCount(), DEFAULT_MAX_CHANNEL_COUNT);
+    assertEquals(
+        channelPoolSettings.getMaxRpcsPerChannel(),
+        DatastoreOptions.CHANNEL_POOL_MAX_RPCS_PER_CHANNEL);
   }
 
   @Test

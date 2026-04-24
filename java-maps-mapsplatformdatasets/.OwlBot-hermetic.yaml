@@ -20,7 +20,8 @@ deep-remove-regex:
 - "/java-maps-mapsplatformdatasets/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-maps-mapsplatformdatasets/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/.*google-.*/src/main/java/.*/stub/Version.java"
+- "/.*google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/maps/mapsplatformdatasets/(v.*)/.*-java/proto-google-.*/src"

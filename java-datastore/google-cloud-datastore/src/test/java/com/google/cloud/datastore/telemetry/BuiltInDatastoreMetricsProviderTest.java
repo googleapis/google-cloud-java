@@ -18,8 +18,12 @@ package com.google.cloud.datastore.telemetry;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.auth.CredentialTypeForMetrics;
+import com.google.auth.Credentials;
+import com.google.cloud.NoCredentials;
 import io.opentelemetry.api.OpenTelemetry;
 import java.util.Map;
+import org.easymock.EasyMock;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -30,8 +34,8 @@ public class BuiltInDatastoreMetricsProviderTest {
   private static final String PROJECT_ID = "project-id";
 
   @Test
-  public void testGetClientAttributes() {
-    Map<String, String> attributes = BuiltInDatastoreMetricsProvider.INSTANCE.getClientAttributes();
+  public void testBuildClientAttributes() {
+    Map<String, String> attributes = BuiltInDatastoreMetricsProvider.buildClientAttributes();
     assertThat(attributes).containsKey(TelemetryConstants.CLIENT_UID_KEY.getKey());
     assertThat(attributes.get(TelemetryConstants.CLIENT_UID_KEY.getKey())).contains("@");
     assertThat(attributes).containsKey(TelemetryConstants.SERVICE_KEY.getKey());
@@ -40,26 +44,42 @@ public class BuiltInDatastoreMetricsProviderTest {
   }
 
   @Test
-  public void testCreateOpenTelemetry_returnsNonNull() {
+  public void testCreateOpenTelemetry_returnsNull() {
     OpenTelemetry otel =
-        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(PROJECT_ID, "test-db", null);
+        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(
+            PROJECT_ID, "test-db", NoCredentials.getInstance());
+    assertThat(otel).isNull();
+  }
+
+  @Test
+  public void testCreateOpenTelemetry_returnsNonNull() {
+    Credentials credentials = EasyMock.mock(Credentials.class);
+    EasyMock.expect(credentials.getMetricsCredentialType())
+        .andReturn(CredentialTypeForMetrics.DO_NOT_SEND);
+    EasyMock.replay(credentials);
+    OpenTelemetry otel =
+        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(
+            PROJECT_ID, "test-db", credentials);
     assertThat(otel).isNotNull();
   }
 
   @Test
   public void testCreateOpenTelemetry_eachCallReturnsDistinctInstance() {
+    Credentials credentials1 = EasyMock.mock(Credentials.class);
+    EasyMock.expect(credentials1.getMetricsCredentialType())
+        .andReturn(CredentialTypeForMetrics.DO_NOT_SEND);
+    Credentials credentials2 = EasyMock.mock(Credentials.class);
+    EasyMock.expect(credentials2.getMetricsCredentialType())
+        .andReturn(CredentialTypeForMetrics.DO_NOT_SEND);
+    EasyMock.replay(credentials1, credentials2);
     OpenTelemetry otel1 =
-        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(PROJECT_ID, "test-db", null);
+        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(
+            PROJECT_ID, "test-db", credentials1);
     OpenTelemetry otel2 =
-        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(PROJECT_ID, "test-db", null);
+        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(
+            PROJECT_ID, "test-db", credentials2);
     assertThat(otel1).isNotNull();
     assertThat(otel2).isNotNull();
     assertThat(otel1).isNotSameInstanceAs(otel2);
-  }
-
-  @Test
-  public void testDetectClientLocation() {
-    String location = BuiltInDatastoreMetricsProvider.detectClientLocation();
-    assertThat(location).isEqualTo("global");
   }
 }

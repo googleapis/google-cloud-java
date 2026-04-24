@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListRegionCompositeHealthChecksRequest;
 import com.google.cloud.compute.v1.CompositeHealthCheck;
 import com.google.cloud.compute.v1.CompositeHealthCheckAggregatedList;
@@ -468,6 +469,24 @@ public class HttpJsonRegionCompositeHealthChecksStub extends RegionCompositeHeal
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/compositeHealthChecks/{composite_health_check}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/compositeHealthChecks/{composite_health_check}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/compositeHealthChecks/{composite_health_check}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/compositeHealthChecks/{resource}");
+
   public static final HttpJsonRegionCompositeHealthChecksStub create(
       RegionCompositeHealthChecksStubSettings settings) throws IOException {
     return new HttpJsonRegionCompositeHealthChecksStub(settings, ClientContext.create(settings));
@@ -527,6 +546,13 @@ public class HttpJsonRegionCompositeHealthChecksStub extends RegionCompositeHeal
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteRegionCompositeHealthCheckRequest, Operation>
         deleteTransportSettings =
@@ -542,6 +568,16 @@ public class HttpJsonRegionCompositeHealthChecksStub extends RegionCompositeHeal
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "composite_health_check",
+                          String.valueOf(request.getCompositeHealthCheck()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<GetRegionCompositeHealthCheckRequest, CompositeHealthCheck>
@@ -560,6 +596,16 @@ public class HttpJsonRegionCompositeHealthChecksStub extends RegionCompositeHeal
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "composite_health_check",
+                          String.valueOf(request.getCompositeHealthCheck()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertRegionCompositeHealthCheckRequest, Operation>
         insertTransportSettings =
@@ -572,6 +618,13 @@ public class HttpJsonRegionCompositeHealthChecksStub extends RegionCompositeHeal
                       builder.add("project", String.valueOf(request.getProject()));
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<ListRegionCompositeHealthChecksRequest, CompositeHealthCheckList>
@@ -587,6 +640,13 @@ public class HttpJsonRegionCompositeHealthChecksStub extends RegionCompositeHeal
                       builder.add("region", String.valueOf(request.getRegion()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchRegionCompositeHealthCheckRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRegionCompositeHealthCheckRequest, Operation>newBuilder()
@@ -600,6 +660,15 @@ public class HttpJsonRegionCompositeHealthChecksStub extends RegionCompositeHeal
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "composite_health_check", String.valueOf(request.getCompositeHealthCheck()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<
@@ -617,6 +686,15 @@ public class HttpJsonRegionCompositeHealthChecksStub extends RegionCompositeHeal
                       builder.add("region", String.valueOf(request.getRegion()));
                       builder.add("resource", String.valueOf(request.getResource()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 

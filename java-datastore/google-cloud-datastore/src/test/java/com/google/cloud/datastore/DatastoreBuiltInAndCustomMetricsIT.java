@@ -175,17 +175,18 @@ public class DatastoreBuiltInAndCustomMetricsIT {
   }
 
   /**
-   * Verifies that the built-in metrics export flag is on by default so that the Cloud Monitoring
-   * exporter path is active even when no additional configuration is provided.
+   * Verifies that the built-in metrics export flag is off by default. The flag is disabled until
+   * the Datastore namespace in Cloud Monitoring is deployed; it must be explicitly opted in via
+   * {@link DatastoreOpenTelemetryOptions.Builder#setExportBuiltinMetricsToGoogleCloudMonitoring}.
    */
   @Test
-  public void builtInMetricsExport_isEnabledByDefault() {
+  public void builtInMetricsExport_isDisabledByDefault() {
     assertThat(
             datastore
                 .getOptions()
                 .getOpenTelemetryOptions()
                 .isExportBuiltinMetricsToGoogleCloudMonitoring())
-        .isTrue();
+        .isFalse();
   }
 
   /**

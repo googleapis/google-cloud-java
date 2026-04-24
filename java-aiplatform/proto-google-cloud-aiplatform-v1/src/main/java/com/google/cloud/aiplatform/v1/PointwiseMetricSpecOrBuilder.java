@@ -67,4 +67,105 @@ public interface PointwiseMetricSpecOrBuilder
    * @return The bytes for metricPromptTemplate.
    */
   com.google.protobuf.ByteString getMetricPromptTemplateBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System instructions for pointwise metric.
+   * </pre>
+   *
+   * <code>optional string system_instruction = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the systemInstruction field is set.
+   */
+  boolean hasSystemInstruction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System instructions for pointwise metric.
+   * </pre>
+   *
+   * <code>optional string system_instruction = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The systemInstruction.
+   */
+  java.lang.String getSystemInstruction();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. System instructions for pointwise metric.
+   * </pre>
+   *
+   * <code>optional string system_instruction = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for systemInstruction.
+   */
+  com.google.protobuf.ByteString getSystemInstructionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CustomOutputFormatConfig allows customization of metric output.
+   * By default, metrics return a score and explanation.
+   * When this config is set, the default output is replaced with either:
+   * - The raw output string.
+   * - A parsed output based on a user-defined schema.
+   * If a custom format is chosen, the `score` and `explanation` fields in the
+   * corresponding metric result will be empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.CustomOutputFormatConfig custom_output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customOutputFormatConfig field is set.
+   */
+  boolean hasCustomOutputFormatConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CustomOutputFormatConfig allows customization of metric output.
+   * By default, metrics return a score and explanation.
+   * When this config is set, the default output is replaced with either:
+   * - The raw output string.
+   * - A parsed output based on a user-defined schema.
+   * If a custom format is chosen, the `score` and `explanation` fields in the
+   * corresponding metric result will be empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.CustomOutputFormatConfig custom_output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customOutputFormatConfig.
+   */
+  com.google.cloud.aiplatform.v1.CustomOutputFormatConfig getCustomOutputFormatConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. CustomOutputFormatConfig allows customization of metric output.
+   * By default, metrics return a score and explanation.
+   * When this config is set, the default output is replaced with either:
+   * - The raw output string.
+   * - A parsed output based on a user-defined schema.
+   * If a custom format is chosen, the `score` and `explanation` fields in the
+   * corresponding metric result will be empty.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.CustomOutputFormatConfig custom_output_format_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.CustomOutputFormatConfigOrBuilder
+      getCustomOutputFormatConfigOrBuilder();
 }

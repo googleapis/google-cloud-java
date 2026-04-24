@@ -1009,6 +1009,26 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GenerateAppResource</td>
+ *      <td><p> Generates specific resources (e.g. agent) in the app using LLM assistant.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateAppResourceAsync(GenerateAppResourceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> generateAppResourceAsync(AppName parent)
+ *           <li><p> generateAppResourceAsync(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateAppResourceOperationCallable()
+ *           <li><p> generateAppResourceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListChangelogs</td>
  *      <td><p> Lists the changelogs of the specified app.</td>
  *      <td>
@@ -7812,6 +7832,201 @@ public class AgentServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<RestoreAppVersionRequest, Operation> restoreAppVersionCallable() {
     return stub.restoreAppVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates specific resources (e.g. agent) in the app using LLM assistant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+   *   AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+   *   GenerateAppResourceResponse response =
+   *       agentServiceClient.generateAppResourceAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the app to generate the resource for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<GenerateAppResourceResponse, GenerateAppResourceOperationMetadata>
+      generateAppResourceAsync(AppName parent) {
+    GenerateAppResourceRequest request =
+        GenerateAppResourceRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return generateAppResourceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates specific resources (e.g. agent) in the app using LLM assistant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+   *   String parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString();
+   *   GenerateAppResourceResponse response =
+   *       agentServiceClient.generateAppResourceAsync(parent).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the app to generate the resource for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<GenerateAppResourceResponse, GenerateAppResourceOperationMetadata>
+      generateAppResourceAsync(String parent) {
+    GenerateAppResourceRequest request =
+        GenerateAppResourceRequest.newBuilder().setParent(parent).build();
+    return generateAppResourceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates specific resources (e.g. agent) in the app using LLM assistant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+   *   GenerateAppResourceRequest request =
+   *       GenerateAppResourceRequest.newBuilder()
+   *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .addAllRefineInstructions(
+   *               new ArrayList<GenerateAppResourceRequest.RefineInstructions>())
+   *           .setToolGenerationConfig(
+   *               GenerateAppResourceRequest.ToolGenerationConfig.newBuilder().build())
+   *           .setAppGenerationConfig(
+   *               GenerateAppResourceRequest.AppGenerationConfig.newBuilder().build())
+   *           .setEvaluationGenerationConfig(
+   *               GenerateAppResourceRequest.EvaluationGenerationConfig.newBuilder().build())
+   *           .setEvaluationPersonasGenerationConfig(
+   *               GenerateAppResourceRequest.EvaluationPersonasGenerationConfig.newBuilder()
+   *                   .build())
+   *           .setQualityReportGenerationConfig(
+   *               GenerateAppResourceRequest.QualityReportGenerationConfig.newBuilder().build())
+   *           .setHillClimbingFixConfig(
+   *               GenerateAppResourceRequest.HillClimbingFixConfig.newBuilder().build())
+   *           .build();
+   *   GenerateAppResourceResponse response =
+   *       agentServiceClient.generateAppResourceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<GenerateAppResourceResponse, GenerateAppResourceOperationMetadata>
+      generateAppResourceAsync(GenerateAppResourceRequest request) {
+    return generateAppResourceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates specific resources (e.g. agent) in the app using LLM assistant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+   *   GenerateAppResourceRequest request =
+   *       GenerateAppResourceRequest.newBuilder()
+   *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .addAllRefineInstructions(
+   *               new ArrayList<GenerateAppResourceRequest.RefineInstructions>())
+   *           .setToolGenerationConfig(
+   *               GenerateAppResourceRequest.ToolGenerationConfig.newBuilder().build())
+   *           .setAppGenerationConfig(
+   *               GenerateAppResourceRequest.AppGenerationConfig.newBuilder().build())
+   *           .setEvaluationGenerationConfig(
+   *               GenerateAppResourceRequest.EvaluationGenerationConfig.newBuilder().build())
+   *           .setEvaluationPersonasGenerationConfig(
+   *               GenerateAppResourceRequest.EvaluationPersonasGenerationConfig.newBuilder()
+   *                   .build())
+   *           .setQualityReportGenerationConfig(
+   *               GenerateAppResourceRequest.QualityReportGenerationConfig.newBuilder().build())
+   *           .setHillClimbingFixConfig(
+   *               GenerateAppResourceRequest.HillClimbingFixConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<GenerateAppResourceResponse, GenerateAppResourceOperationMetadata> future =
+   *       agentServiceClient.generateAppResourceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateAppResourceResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          GenerateAppResourceRequest,
+          GenerateAppResourceResponse,
+          GenerateAppResourceOperationMetadata>
+      generateAppResourceOperationCallable() {
+    return stub.generateAppResourceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates specific resources (e.g. agent) in the app using LLM assistant.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AgentServiceClient agentServiceClient = AgentServiceClient.create()) {
+   *   GenerateAppResourceRequest request =
+   *       GenerateAppResourceRequest.newBuilder()
+   *           .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
+   *           .addAllRefineInstructions(
+   *               new ArrayList<GenerateAppResourceRequest.RefineInstructions>())
+   *           .setToolGenerationConfig(
+   *               GenerateAppResourceRequest.ToolGenerationConfig.newBuilder().build())
+   *           .setAppGenerationConfig(
+   *               GenerateAppResourceRequest.AppGenerationConfig.newBuilder().build())
+   *           .setEvaluationGenerationConfig(
+   *               GenerateAppResourceRequest.EvaluationGenerationConfig.newBuilder().build())
+   *           .setEvaluationPersonasGenerationConfig(
+   *               GenerateAppResourceRequest.EvaluationPersonasGenerationConfig.newBuilder()
+   *                   .build())
+   *           .setQualityReportGenerationConfig(
+   *               GenerateAppResourceRequest.QualityReportGenerationConfig.newBuilder().build())
+   *           .setHillClimbingFixConfig(
+   *               GenerateAppResourceRequest.HillClimbingFixConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       agentServiceClient.generateAppResourceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GenerateAppResourceRequest, Operation> generateAppResourceCallable() {
+    return stub.generateAppResourceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

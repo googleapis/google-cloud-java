@@ -192,7 +192,7 @@ libraries:
     client_documentation: "https://cloud.google.com/java/docs/reference/google-cloud-asset/latest/overview"
     distribution_name: "com.google.cloud:google-cloud-asset"
     release_level: "stable"
-    issue_tracker: "https://issuetracker.google.com/issues/new?component=187210&template=0"
+    issue_tracker: "https://issuetracker.google.com/issues/new?component=187210"
     api_reference: "https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview"
     GAPICs:
       - proto_path: google/cloud/asset/v1

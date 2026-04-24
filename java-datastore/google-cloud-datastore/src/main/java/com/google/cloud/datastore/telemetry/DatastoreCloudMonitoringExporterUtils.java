@@ -23,7 +23,6 @@ import static com.google.api.MetricDescriptor.ValueType.DISTRIBUTION;
 import static com.google.api.MetricDescriptor.ValueType.DOUBLE;
 import static com.google.api.MetricDescriptor.ValueType.INT64;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.DATASTORE_RESOURCE_TYPE;
-import static com.google.cloud.datastore.telemetry.TelemetryConstants.PROJECT_ID_KEY;
 
 import com.google.api.Distribution;
 import com.google.api.Distribution.BucketOptions;
@@ -48,7 +47,6 @@ import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.metrics.data.MetricDataType;
 import io.opentelemetry.sdk.metrics.data.PointData;
 import io.opentelemetry.sdk.metrics.data.SumData;
-import io.opentelemetry.sdk.resources.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -73,16 +71,6 @@ class DatastoreCloudMonitoringExporterUtils {
   private DatastoreCloudMonitoringExporterUtils() {}
 
   /**
-   * Extracts the project ID from the OpenTelemetry {@link Resource}.
-   *
-   * @param resource the OTel resource.
-   * @return the project ID string, or null if not present.
-   */
-  static String getProjectId(Resource resource) {
-    return resource.getAttributes().get(PROJECT_ID_KEY);
-  }
-
-  /**
    * Converts a list of {@link MetricData} to Cloud Monitoring {@link TimeSeries}.
    *
    * @param collection the collection of metrics to convert.
@@ -96,24 +84,26 @@ class DatastoreCloudMonitoringExporterUtils {
 
     // Metrics should already been filtered for Gax and Datastore related ones
     for (MetricData metricData : collection) {
+      // TODO(b/405457573): The monitored resource is currently written to `global` because the
+      // Firestore
+      // namespace in Cloud Monitoring has not been deployed yet. Once the namespace is available,
+      // database_id and location labels should be added here using RESOURCE_LABEL_DATABASE_ID
+      // and RESOURCE_LABEL_LOCATION respectively.
+
       // Map OTel resource attributes to the specific monitored resource labels.
       MonitoredResource.Builder monitoredResourceBuilder =
           MonitoredResource.newBuilder().setType(DATASTORE_RESOURCE_TYPE);
 
       Attributes resourceAttributes = metricData.getResource().getAttributes();
       String resourceProjectId = resourceAttributes.get(TelemetryConstants.PROJECT_ID_KEY);
-      String resourceDatabaseId = resourceAttributes.get(TelemetryConstants.DATABASE_ID_KEY);
-      String resourceLocation = resourceAttributes.get(TelemetryConstants.LOCATION_ID_KEY);
+      //      String resourceDatabaseId =
+      // resourceAttributes.get(TelemetryConstants.DATABASE_ID_KEY);
+      //      String resourceLocation = resourceAttributes.get(TelemetryConstants.LOCATION_ID_KEY);
 
       if (resourceProjectId != null) {
         monitoredResourceBuilder.putLabels(
             TelemetryConstants.RESOURCE_LABEL_PROJECT_ID, resourceProjectId);
       }
-
-      // TODO: The monitored resource is currently written to `global` because the Datastore
-      // namespace in Cloud Monitoring has not been deployed yet. Once the namespace is available,
-      // database_id and location labels should be added here using RESOURCE_LABEL_DATABASE_ID
-      // and RESOURCE_LABEL_LOCATION respectively.
 
       // Convert each point in the metric data to a TimeSeries.
       metricData.getData().getPoints().stream()
@@ -132,7 +122,7 @@ class DatastoreCloudMonitoringExporterUtils {
    * <p>{@code clientAttributes} (e.g. {@code client_name}, {@code client_uid}) are injected here
    * rather than being looked up from a singleton so that this method is testable in isolation. The
    * caller ({@link DatastoreCloudMonitoringExporter}) is responsible for supplying them from {@link
-   * BuiltInDatastoreMetricsProvider#getClientAttributes()}.
+   * BuiltInDatastoreMetricsProvider#buildClientAttributes()}.
    */
   private static TimeSeries convertPointToDatastoreTimeSeries(
       MetricData metricData,
@@ -179,7 +169,6 @@ class DatastoreCloudMonitoringExporterUtils {
   private static MetricKind convertMetricKind(MetricData metricData) {
     switch (metricData.getType()) {
       case HISTOGRAM:
-      case EXPONENTIAL_HISTOGRAM:
         return convertHistogramType(metricData.getHistogramData());
       case LONG_GAUGE:
       case DOUBLE_GAUGE:
@@ -235,7 +224,6 @@ class DatastoreCloudMonitoringExporterUtils {
       case DOUBLE_SUM:
         return DOUBLE;
       case HISTOGRAM:
-      case EXPONENTIAL_HISTOGRAM:
         return DISTRIBUTION;
       default:
         return ValueType.UNRECOGNIZED;
@@ -248,7 +236,6 @@ class DatastoreCloudMonitoringExporterUtils {
     Point.Builder builder = Point.newBuilder().setInterval(timeInterval);
     switch (type) {
       case HISTOGRAM:
-      case EXPONENTIAL_HISTOGRAM:
         return builder
             .setValue(
                 TypedValue.newBuilder()

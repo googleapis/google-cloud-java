@@ -64,6 +64,7 @@ import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.grpc.GcpManagedChannel;
 import com.google.cloud.grpc.GcpManagedChannelBuilder;
 import com.google.cloud.grpc.GcpManagedChannelOptions;
+import com.google.cloud.grpc.GcpManagedChannelOptions.GcpChannelPoolOptions;
 import com.google.cloud.grpc.GcpManagedChannelOptions.GcpMetricsOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.grpc.fallback.GcpFallbackChannel;
@@ -301,6 +302,7 @@ public class GapicSpannerRpc implements SpannerRpc {
   private final boolean isGrpcGcpExtensionEnabled;
   private final boolean isDynamicChannelPoolEnabled;
   @Nullable private final KeyAwareChannel keyAwareChannel;
+  @Nullable private final GcpManagedChannel grpcGcpChannel;
 
   private final GrpcCallContext baseGrpcCallContext;
 
@@ -367,7 +369,11 @@ public class GapicSpannerRpc implements SpannerRpc {
           GrpcTransportOptions.setUpCredentialsProvider(options);
 
       InstantiatingGrpcChannelProvider.Builder defaultChannelProviderBuilder =
-          createChannelProviderBuilder(options, headerProviderWithUserAgent, isEnableDirectAccess);
+          createBaseChannelProviderBuilder(
+              options, headerProviderWithUserAgent, isEnableDirectAccess);
+      GrpcGcpEndpointChannelConfigurator endpointChannelConfigurator =
+          createGrpcGcpEndpointChannelConfigurator(defaultChannelProviderBuilder, options);
+      maybeEnableGrpcGcpExtension(defaultChannelProviderBuilder, options);
 
       if (options.getChannelProvider() == null
           && isEnableDirectAccess
@@ -389,7 +395,8 @@ public class GapicSpannerRpc implements SpannerRpc {
           enableLocationApi && baseChannelProvider instanceof InstantiatingGrpcChannelProvider
               ? new KeyAwareTransportChannelProvider(
                   (InstantiatingGrpcChannelProvider) baseChannelProvider,
-                  options.getChannelEndpointCacheFactory())
+                  options.getChannelEndpointCacheFactory(),
+                  endpointChannelConfigurator)
               : baseChannelProvider;
 
       spannerWatchdog =
@@ -420,6 +427,7 @@ public class GapicSpannerRpc implements SpannerRpc {
                 .build();
         ClientContext clientContext = ClientContext.create(spannerStubSettings);
         this.keyAwareChannel = extractKeyAwareChannel(clientContext.getTransportChannel());
+        this.grpcGcpChannel = extractGrpcGcpChannel(clientContext.getTransportChannel());
         this.spannerStub =
             GrpcSpannerStubWithStubSettingsAndClientContext.create(
                 spannerStubSettings, clientContext);
@@ -428,12 +436,26 @@ public class GapicSpannerRpc implements SpannerRpc {
                 && isEnableDirectAccess;
         this.readRetrySettings =
             options.getSpannerStubSettings().streamingReadSettings().getRetrySettings();
-        this.readRetryableCodes =
+        Set<Code> streamingReadRetryableCodes =
             options.getSpannerStubSettings().streamingReadSettings().getRetryableCodes();
+        this.readRetryableCodes =
+            enableLocationApi
+                ? ImmutableSet.<Code>builder()
+                    .addAll(streamingReadRetryableCodes)
+                    .add(Code.RESOURCE_EXHAUSTED)
+                    .build()
+                : streamingReadRetryableCodes;
         this.executeQueryRetrySettings =
             options.getSpannerStubSettings().executeStreamingSqlSettings().getRetrySettings();
-        this.executeQueryRetryableCodes =
+        Set<Code> executeStreamingSqlRetryableCodes =
             options.getSpannerStubSettings().executeStreamingSqlSettings().getRetryableCodes();
+        this.executeQueryRetryableCodes =
+            enableLocationApi
+                ? ImmutableSet.<Code>builder()
+                    .addAll(executeStreamingSqlRetryableCodes)
+                    .add(Code.RESOURCE_EXHAUSTED)
+                    .build()
+                : executeStreamingSqlRetryableCodes;
         this.commitRetrySettings =
             options.getSpannerStubSettings().commitSettings().getRetrySettings();
         partitionedDmlRetrySettings =
@@ -540,6 +562,7 @@ public class GapicSpannerRpc implements SpannerRpc {
       }
     } else {
       this.keyAwareChannel = null;
+      this.grpcGcpChannel = null;
       this.databaseAdminStub = null;
       this.instanceAdminStub = null;
       this.spannerStub = null;
@@ -589,11 +612,33 @@ public class GapicSpannerRpc implements SpannerRpc {
     return null;
   }
 
+  @Nullable
+  private static GcpManagedChannel extractGrpcGcpChannel(TransportChannel transportChannel) {
+    if (!(transportChannel instanceof GrpcTransportChannel)) {
+      return null;
+    }
+    Channel channel = ((GrpcTransportChannel) transportChannel).getChannel();
+    if (channel instanceof GcpManagedChannel) {
+      return (GcpManagedChannel) channel;
+    }
+    return null;
+  }
+
   @Override
   public void clearTransactionAffinity(ByteString transactionId) {
     if (keyAwareChannel != null) {
       keyAwareChannel.clearTransactionAffinity(transactionId);
     }
+  }
+
+  @Override
+  public void clearTransactionAndChannelAffinity(
+      ByteString transactionId, @Nullable Long channelHint) {
+    if (keyAwareChannel != null) {
+      keyAwareChannel.clearTransactionAndChannelAffinity(transactionId, channelHint);
+      return;
+    }
+    GrpcGcpAffinityUtil.clearChannelHintAffinity(grpcGcpChannel, channelHint);
   }
 
   private static String parseGrpcGcpApiConfig() {
@@ -700,6 +745,17 @@ public class GapicSpannerRpc implements SpannerRpc {
       final HeaderProvider headerProviderWithUserAgent,
       boolean isEnableDirectAccess) {
     InstantiatingGrpcChannelProvider.Builder defaultChannelProviderBuilder =
+        createBaseChannelProviderBuilder(
+            options, headerProviderWithUserAgent, isEnableDirectAccess);
+    maybeEnableGrpcGcpExtension(defaultChannelProviderBuilder, options);
+    return defaultChannelProviderBuilder;
+  }
+
+  private InstantiatingGrpcChannelProvider.Builder createBaseChannelProviderBuilder(
+      final SpannerOptions options,
+      final HeaderProvider headerProviderWithUserAgent,
+      boolean isEnableDirectAccess) {
+    InstantiatingGrpcChannelProvider.Builder defaultChannelProviderBuilder =
         InstantiatingGrpcChannelProvider.newBuilder()
             .setChannelConfigurator(options.getChannelConfigurator())
             .setEndpoint(options.getEndpoint())
@@ -744,8 +800,6 @@ public class GapicSpannerRpc implements SpannerRpc {
         defaultChannelProviderBuilder.setExecutor(executor);
       }
     }
-    // If it is enabled in options uses the channel pool provided by the gRPC-GCP extension.
-    maybeEnableGrpcGcpExtension(defaultChannelProviderBuilder, options);
     return defaultChannelProviderBuilder;
   }
 
@@ -772,14 +826,63 @@ public class GapicSpannerRpc implements SpannerRpc {
     }
     optionsBuilder.withMetricsOptions(metricsOptionsBuilder.build());
 
-    // Configure dynamic channel pool options if enabled.
-    // Uses the GcpChannelPoolOptions from SpannerOptions, which contains Spanner-specific defaults
-    // or user-provided configuration.
-    if (options.isDynamicChannelPoolEnabled()) {
-      optionsBuilder.withChannelPoolOptions(options.getGcpChannelPoolOptions());
+    // Always pass channel-pool options when grpc-gcp is enabled so affinity cleanup settings are
+    // applied regardless of whether dynamic channel pool is enabled. In the non-DCP path, only
+    // propagate the affinity cleanup configuration to avoid implicitly turning on dynamic scaling.
+    if (options.isGrpcGcpExtensionEnabled()) {
+      optionsBuilder.withChannelPoolOptions(getGrpcGcpChannelPoolOptions(options));
     }
 
     return optionsBuilder.build();
+  }
+
+  @VisibleForTesting
+  static GcpChannelPoolOptions getGrpcGcpChannelPoolOptions(SpannerOptions options) {
+    GcpChannelPoolOptions channelPoolOptions = options.getGcpChannelPoolOptions();
+    if (options.isDynamicChannelPoolEnabled()) {
+      return channelPoolOptions;
+    }
+
+    // When DCP is disabled, Spanner's numChannels should still produce a fixed grpc-gcp channel
+    // pool instead of only capping the pool's maximum size.
+    return GcpChannelPoolOptions.newBuilder()
+        .setMaxSize(options.getNumChannels())
+        .setMinSize(options.getNumChannels())
+        .setInitSize(options.getNumChannels())
+        .disableDynamicScaling()
+        .setAffinityKeyLifetime(channelPoolOptions.getAffinityKeyLifetime())
+        .setCleanupInterval(channelPoolOptions.getCleanupInterval())
+        .build();
+  }
+
+  @VisibleForTesting
+  static GcpChannelPoolOptions getGrpcGcpEndpointChannelPoolOptions(SpannerOptions options) {
+    GcpChannelPoolOptions channelPoolOptions = options.getGcpChannelPoolOptions();
+    return GcpChannelPoolOptions.newBuilder()
+        .setMaxSize(1)
+        .setMinSize(1)
+        .setInitSize(1)
+        .disableDynamicScaling()
+        .setAffinityKeyLifetime(channelPoolOptions.getAffinityKeyLifetime())
+        .setCleanupInterval(channelPoolOptions.getCleanupInterval())
+        .build();
+  }
+
+  @Nullable
+  private static GrpcGcpEndpointChannelConfigurator createGrpcGcpEndpointChannelConfigurator(
+      InstantiatingGrpcChannelProvider.Builder channelProviderBuilder, SpannerOptions options) {
+    if (!options.isGrpcGcpExtensionEnabled()) {
+      return null;
+    }
+
+    GcpManagedChannelOptions endpointGrpcGcpOptions =
+        GcpManagedChannelOptions.newBuilder(grpcGcpOptionsWithMetricsAndDcp(options))
+            .withChannelPoolOptions(getGrpcGcpEndpointChannelPoolOptions(options))
+            .build();
+    return new GrpcGcpEndpointChannelConfigurator(
+        channelProviderBuilder.getChannelConfigurator(),
+        parseGrpcGcpApiConfig(),
+        endpointGrpcGcpOptions);
   }
 
   @SuppressWarnings("rawtypes")
@@ -793,10 +896,6 @@ public class GapicSpannerRpc implements SpannerRpc {
     final String jsonApiConfig = parseGrpcGcpApiConfig();
     final GcpManagedChannelOptions grpcGcpOptions = grpcGcpOptionsWithMetricsAndDcp(options);
 
-    // When dynamic channel pool is enabled, use the DCP initial size as the pool size.
-    // When disabled, use the explicitly configured numChannels.
-    final int poolSize = options.isDynamicChannelPoolEnabled() ? 0 : options.getNumChannels();
-
     ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> baseConfigurator =
         defaultChannelProviderBuilder.getChannelConfigurator();
     ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder> apiFunction =
@@ -804,10 +903,12 @@ public class GapicSpannerRpc implements SpannerRpc {
           if (baseConfigurator != null) {
             channelBuilder = baseConfigurator.apply(channelBuilder);
           }
+          // The grpc-gcp pool is configured entirely through GcpChannelPoolOptions above. Avoid
+          // the deprecated setPoolSize path, which only adjusts maxSize and does not eagerly create
+          // a fixed-size pool.
           return GcpManagedChannelBuilder.forDelegateBuilder(channelBuilder)
               .withApiConfigJsonString(jsonApiConfig)
-              .withOptions(grpcGcpOptions)
-              .setPoolSize(poolSize);
+              .withOptions(grpcGcpOptions);
         };
 
     // Disable the GAX channel pooling functionality by setting the GAX channel pool size to 1.
@@ -2059,6 +2160,13 @@ public class GapicSpannerRpc implements SpannerRpc {
       CommitRequest request, @Nullable Map<Option, ?> options) {
     GrpcCallContext context =
         newCallContext(options, request.getSession(), request, SpannerGrpc.getCommitMethod(), true);
+    // Signal grpc-gcp to unbind the affinity key after this call completes.
+    // Commit is a terminal RPC — no more RPCs will use this transaction's affinity key.
+    if (this.isGrpcGcpExtensionEnabled) {
+      context =
+          context.withCallOptions(
+              context.getCallOptions().withOption(GcpManagedChannel.UNBIND_AFFINITY_KEY, true));
+    }
     return spannerStub.commitCallable().futureCall(request, context);
   }
 
@@ -2078,6 +2186,13 @@ public class GapicSpannerRpc implements SpannerRpc {
     GrpcCallContext context =
         newCallContext(
             options, request.getSession(), request, SpannerGrpc.getRollbackMethod(), true);
+    // Signal grpc-gcp to unbind the affinity key after this call completes.
+    // Rollback is a terminal RPC — no more RPCs will use this transaction's affinity key.
+    if (this.isGrpcGcpExtensionEnabled) {
+      context =
+          context.withCallOptions(
+              context.getCallOptions().withOption(GcpManagedChannel.UNBIND_AFFINITY_KEY, true));
+    }
     return spannerStub.rollbackCallable().futureCall(request, context);
   }
 
@@ -2261,23 +2376,19 @@ public class GapicSpannerRpc implements SpannerRpc {
     Long affinity = options == null ? null : Option.CHANNEL_HINT.getLong(options);
     if (affinity != null) {
       if (this.isGrpcGcpExtensionEnabled) {
-        // Set channel affinity in gRPC-GCP.
-        String affinityKey;
-        if (this.isDynamicChannelPoolEnabled) {
-          // When dynamic channel pooling is enabled, we use the raw affinity value as the key.
-          // This allows grpc-gcp to use round-robin for new keys, enabling new channels
-          // (created during scale-up) to receive requests. The affinity key lifetime setting
-          // ensures the affinity map doesn't grow unbounded.
-          affinityKey = String.valueOf(affinity);
-        } else {
-          // When DCP is disabled, compute bounded channel hint to prevent
-          // gRPC-GCP affinity map from getting unbounded.
-          int boundedChannelHint = affinity.intValue() % this.numChannels;
-          affinityKey = String.valueOf(boundedChannelHint);
-        }
+        // Set channel affinity in gRPC-GCP. Always use the raw affinity value as the key.
+        // Cleanup is handled explicitly by unbind on terminal/single-use operations.
+        String affinityKey = String.valueOf(affinity);
         context =
             context.withCallOptions(
                 context.getCallOptions().withOption(GcpManagedChannel.AFFINITY_KEY, affinityKey));
+        // Check if the caller wants to unbind the affinity key after this call completes.
+        Boolean unbind = Option.UNBIND_CHANNEL_HINT.get(options);
+        if (Boolean.TRUE.equals(unbind)) {
+          context =
+              context.withCallOptions(
+                  context.getCallOptions().withOption(GcpManagedChannel.UNBIND_AFFINITY_KEY, true));
+        }
       } else {
         // Set channel affinity in GAX.
         context = context.withChannelAffinity(affinity.intValue());

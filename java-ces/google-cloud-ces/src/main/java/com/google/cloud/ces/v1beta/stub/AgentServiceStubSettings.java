@@ -87,6 +87,9 @@ import com.google.cloud.ces.v1beta.Deployment;
 import com.google.cloud.ces.v1beta.Example;
 import com.google.cloud.ces.v1beta.ExportAppRequest;
 import com.google.cloud.ces.v1beta.ExportAppResponse;
+import com.google.cloud.ces.v1beta.GenerateAppResourceOperationMetadata;
+import com.google.cloud.ces.v1beta.GenerateAppResourceRequest;
+import com.google.cloud.ces.v1beta.GenerateAppResourceResponse;
 import com.google.cloud.ces.v1beta.GetAgentRequest;
 import com.google.cloud.ces.v1beta.GetAppRequest;
 import com.google.cloud.ces.v1beta.GetAppVersionRequest;
@@ -317,6 +320,13 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
   private final OperationCallSettings<
           RestoreAppVersionRequest, RestoreAppVersionResponse, OperationMetadata>
       restoreAppVersionOperationSettings;
+  private final UnaryCallSettings<GenerateAppResourceRequest, Operation>
+      generateAppResourceSettings;
+  private final OperationCallSettings<
+          GenerateAppResourceRequest,
+          GenerateAppResourceResponse,
+          GenerateAppResourceOperationMetadata>
+      generateAppResourceOperationSettings;
   private final PagedCallSettings<
           ListChangelogsRequest, ListChangelogsResponse, ListChangelogsPagedResponse>
       listChangelogsSettings;
@@ -1196,6 +1206,20 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
     return restoreAppVersionOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to generateAppResource. */
+  public UnaryCallSettings<GenerateAppResourceRequest, Operation> generateAppResourceSettings() {
+    return generateAppResourceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to generateAppResource. */
+  public OperationCallSettings<
+          GenerateAppResourceRequest,
+          GenerateAppResourceResponse,
+          GenerateAppResourceOperationMetadata>
+      generateAppResourceOperationSettings() {
+    return generateAppResourceOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listChangelogs. */
   public PagedCallSettings<
           ListChangelogsRequest, ListChangelogsResponse, ListChangelogsPagedResponse>
@@ -1386,6 +1410,9 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
     restoreAppVersionSettings = settingsBuilder.restoreAppVersionSettings().build();
     restoreAppVersionOperationSettings =
         settingsBuilder.restoreAppVersionOperationSettings().build();
+    generateAppResourceSettings = settingsBuilder.generateAppResourceSettings().build();
+    generateAppResourceOperationSettings =
+        settingsBuilder.generateAppResourceOperationSettings().build();
     listChangelogsSettings = settingsBuilder.listChangelogsSettings().build();
     getChangelogSettings = settingsBuilder.getChangelogSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
@@ -1499,6 +1526,13 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
     private final OperationCallSettings.Builder<
             RestoreAppVersionRequest, RestoreAppVersionResponse, OperationMetadata>
         restoreAppVersionOperationSettings;
+    private final UnaryCallSettings.Builder<GenerateAppResourceRequest, Operation>
+        generateAppResourceSettings;
+    private final OperationCallSettings.Builder<
+            GenerateAppResourceRequest,
+            GenerateAppResourceResponse,
+            GenerateAppResourceOperationMetadata>
+        generateAppResourceOperationSettings;
     private final PagedCallSettings.Builder<
             ListChangelogsRequest, ListChangelogsResponse, ListChangelogsPagedResponse>
         listChangelogsSettings;
@@ -1601,6 +1635,8 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
       deleteAppVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restoreAppVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restoreAppVersionOperationSettings = OperationCallSettings.newBuilder();
+      generateAppResourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      generateAppResourceOperationSettings = OperationCallSettings.newBuilder();
       listChangelogsSettings = PagedCallSettings.newBuilder(LIST_CHANGELOGS_PAGE_STR_FACT);
       getChangelogSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
@@ -1656,6 +1692,7 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
               createAppVersionSettings,
               deleteAppVersionSettings,
               restoreAppVersionSettings,
+              generateAppResourceSettings,
               listChangelogsSettings,
               getChangelogSettings,
               listLocationsSettings,
@@ -1721,6 +1758,9 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
       deleteAppVersionSettings = settings.deleteAppVersionSettings.toBuilder();
       restoreAppVersionSettings = settings.restoreAppVersionSettings.toBuilder();
       restoreAppVersionOperationSettings = settings.restoreAppVersionOperationSettings.toBuilder();
+      generateAppResourceSettings = settings.generateAppResourceSettings.toBuilder();
+      generateAppResourceOperationSettings =
+          settings.generateAppResourceOperationSettings.toBuilder();
       listChangelogsSettings = settings.listChangelogsSettings.toBuilder();
       getChangelogSettings = settings.getChangelogSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
@@ -1776,6 +1816,7 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
               createAppVersionSettings,
               deleteAppVersionSettings,
               restoreAppVersionSettings,
+              generateAppResourceSettings,
               listChangelogsSettings,
               getChangelogSettings,
               listLocationsSettings,
@@ -2048,6 +2089,11 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .generateAppResourceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listChangelogsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -2196,6 +2242,32 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
                   RestoreAppVersionResponse.class))
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .generateAppResourceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<GenerateAppResourceRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  GenerateAppResourceResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  GenerateAppResourceOperationMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -2526,6 +2598,21 @@ public class AgentServiceStubSettings extends StubSettings<AgentServiceStubSetti
             RestoreAppVersionRequest, RestoreAppVersionResponse, OperationMetadata>
         restoreAppVersionOperationSettings() {
       return restoreAppVersionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to generateAppResource. */
+    public UnaryCallSettings.Builder<GenerateAppResourceRequest, Operation>
+        generateAppResourceSettings() {
+      return generateAppResourceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to generateAppResource. */
+    public OperationCallSettings.Builder<
+            GenerateAppResourceRequest,
+            GenerateAppResourceResponse,
+            GenerateAppResourceOperationMetadata>
+        generateAppResourceOperationSettings() {
+      return generateAppResourceOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listChangelogs. */

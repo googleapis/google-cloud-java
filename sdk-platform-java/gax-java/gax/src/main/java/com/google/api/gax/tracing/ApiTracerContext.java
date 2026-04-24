@@ -37,6 +37,7 @@ import com.google.auto.value.AutoValue;
 import com.google.common.base.Strings;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
 /**
@@ -78,7 +79,7 @@ public abstract class ApiTracerContext {
    * @return the server port, or {@code null} if not set
    */
   @Nullable
-  public abstract Integer serverPort();
+  abstract Integer serverPort();
 
   /**
    * Returns the library metadata associated with the RPC.
@@ -134,7 +135,7 @@ public abstract class ApiTracerContext {
    * @return the operation type, or {@code null} if not set
    */
   @Nullable
-  public abstract OperationType operationType();
+  abstract OperationType operationType();
 
   /**
    * Returns the HTTP method used for the RPC, in case the RPC is an HttpJson method.
@@ -158,20 +159,57 @@ public abstract class ApiTracerContext {
 
   /** The service name of a client (e.g. "bigtable", "spanner"). */
   @Nullable
-  public abstract String serviceName();
+  abstract String serviceName();
 
   /** The url domain of the request (e.g. "pubsub.googleapis.com"). */
   @Nullable
-  public abstract String urlDomain();
+  abstract String urlDomain();
 
-  /** The destination resource id of the request (e.g. projects/p/locations/l/topics/t). */
   @Nullable
-  public abstract String destinationResourceId();
+  protected abstract Supplier<String> destinationResourceIdSupplier();
+
+  /**
+   * The destination resource id of the request (e.g.
+   * //pubsub.googleapis.com/projects/p/locations/l/topics/t).
+   */
+  @Nullable
+  String destinationResourceId() {
+    Supplier<String> supplier = destinationResourceIdSupplier();
+    if (supplier == null) {
+      return null;
+    }
+    String resourceId = supplier.get();
+    if (Strings.isNullOrEmpty(resourceId)) {
+      return null;
+    }
+    if (Strings.isNullOrEmpty(urlDomain())) {
+      return resourceId;
+    }
+    return "//" + urlDomain() + "/" + resourceId;
+  }
+
+  <RequestT> ApiTracerContext withResourceNameExtractor(
+      @Nullable RequestT request,
+      @Nullable com.google.api.gax.rpc.ResourceNameExtractor<RequestT> extractor) {
+    if (extractor == null || request == null) {
+      return this;
+    }
+    return toBuilder()
+        .setDestinationResourceIdSupplier(
+            () -> {
+              try {
+                return extractor.extract(request);
+              } catch (Exception e) {
+                return null;
+              }
+            })
+        .build();
+  }
 
   /**
    * @return a map of attributes to be included in attempt-level spans
    */
-  public Map<String, Object> getAttemptAttributes() {
+  Map<String, Object> getAttemptAttributes() {
     Map<String, Object> attributes = new HashMap<>();
     if (!Strings.isNullOrEmpty(serverAddress())) {
       attributes.put(ObservabilityAttributes.SERVER_ADDRESS_ATTRIBUTE, serverAddress());
@@ -182,17 +220,8 @@ public abstract class ApiTracerContext {
     if (rpcSystemName() != null) {
       attributes.put(ObservabilityAttributes.RPC_SYSTEM_NAME_ATTRIBUTE, rpcSystemName());
     }
-    if (!libraryMetadata().isEmpty()) {
-      if (!Strings.isNullOrEmpty(libraryMetadata().repository())) {
-        attributes.put(ObservabilityAttributes.REPO_ATTRIBUTE, libraryMetadata().repository());
-      }
-      if (!Strings.isNullOrEmpty(libraryMetadata().artifactName())) {
-        attributes.put(
-            ObservabilityAttributes.ARTIFACT_ATTRIBUTE, libraryMetadata().artifactName());
-      }
-      if (!Strings.isNullOrEmpty(libraryMetadata().version())) {
-        attributes.put(ObservabilityAttributes.VERSION_ATTRIBUTE, libraryMetadata().version());
-      }
+    if (!libraryMetadata().isEmpty() && !Strings.isNullOrEmpty(libraryMetadata().repository())) {
+      attributes.put(ObservabilityAttributes.REPO_ATTRIBUTE, libraryMetadata().repository());
     }
     if (transport() == Transport.GRPC && !Strings.isNullOrEmpty(fullMethodName())) {
       attributes.put(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE, fullMethodName());
@@ -212,6 +241,9 @@ public abstract class ApiTracerContext {
       attributes.put(
           ObservabilityAttributes.DESTINATION_RESOURCE_ID_ATTRIBUTE, destinationResourceId());
     }
+    if (!Strings.isNullOrEmpty(urlDomain())) {
+      attributes.put(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE, urlDomain());
+    }
     return attributes;
   }
 
@@ -223,6 +255,9 @@ public abstract class ApiTracerContext {
     if (serverPort() != null) {
       attributes.put(ObservabilityAttributes.SERVER_PORT_ATTRIBUTE, serverPort());
     }
+    if (!libraryMetadata().isEmpty() && !Strings.isNullOrEmpty(libraryMetadata().repository())) {
+      attributes.put(ObservabilityAttributes.REPO_ATTRIBUTE, libraryMetadata().repository());
+    }
     if (!Strings.isNullOrEmpty(serviceName())) {
       attributes.put(ObservabilityAttributes.GCP_CLIENT_SERVICE_ATTRIBUTE, serviceName());
     }
@@ -232,10 +267,10 @@ public abstract class ApiTracerContext {
     if (!Strings.isNullOrEmpty(fullMethodName())) {
       attributes.put(ObservabilityAttributes.GRPC_RPC_METHOD_ATTRIBUTE, fullMethodName());
     }
+    if (!Strings.isNullOrEmpty(urlDomain())) {
+      attributes.put(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE, urlDomain());
+    }
     if (transport() == Transport.HTTP) {
-      if (!Strings.isNullOrEmpty(urlDomain())) {
-        attributes.put(ObservabilityAttributes.URL_DOMAIN_ATTRIBUTE, urlDomain());
-      }
       if (!Strings.isNullOrEmpty(httpPathTemplate())) {
         attributes.put(ObservabilityAttributes.URL_TEMPLATE_ATTRIBUTE, httpPathTemplate());
       }
@@ -281,13 +316,13 @@ public abstract class ApiTracerContext {
     if (!Strings.isNullOrEmpty(other.urlDomain())) {
       builder.setUrlDomain(other.urlDomain());
     }
-    if (other.destinationResourceId() != null) {
-      builder.setDestinationResourceId(other.destinationResourceId());
+    if (other.destinationResourceIdSupplier() != null) {
+      builder.setDestinationResourceIdSupplier(other.destinationResourceIdSupplier());
     }
     return builder.build();
   }
 
-  public static ApiTracerContext empty() {
+  static ApiTracerContext empty() {
     return newBuilder().setLibraryMetadata(LibraryMetadata.empty()).build();
   }
 
@@ -295,7 +330,7 @@ public abstract class ApiTracerContext {
     return new AutoValue_ApiTracerContext.Builder();
   }
 
-  public abstract Builder toBuilder();
+  abstract Builder toBuilder();
 
   @AutoValue.Builder
   public abstract static class Builder {
@@ -307,7 +342,7 @@ public abstract class ApiTracerContext {
 
     public abstract Builder setTransport(@Nullable Transport transport);
 
-    public abstract Builder setOperationType(@Nullable OperationType operationType);
+    abstract Builder setOperationType(@Nullable OperationType operationType);
 
     public abstract Builder setServerPort(@Nullable Integer serverPort);
 
@@ -319,7 +354,8 @@ public abstract class ApiTracerContext {
 
     public abstract Builder setUrlDomain(@Nullable String urlDomain);
 
-    public abstract Builder setDestinationResourceId(@Nullable String destinationResourceId);
+    abstract Builder setDestinationResourceIdSupplier(
+        @Nullable Supplier<String> destinationResourceIdSupplier);
 
     public abstract ApiTracerContext build();
   }

@@ -41,18 +41,26 @@ public interface ChannelEndpoint {
   String getAddress();
 
   /**
-   * Returns whether this server is ready to accept RPCs.
+   * Returns whether this server's channel is in {@code READY} state and can accept location-aware
+   * RPCs.
    *
-   * <p>A server is considered unhealthy if:
+   * <p>Only endpoints in {@code READY} state are eligible for location-aware routing. Endpoints in
+   * {@code IDLE}, {@code CONNECTING}, {@code TRANSIENT_FAILURE}, or {@code SHUTDOWN} are not
+   * considered healthy for location-aware routing purposes.
    *
-   * <ul>
-   *   <li>The underlying channel is shutdown or terminated
-   *   <li>The channel is in a transient failure state
-   * </ul>
-   *
-   * @return true if the server is healthy and ready to accept RPCs
+   * @return true if the channel is in READY state
    */
   boolean isHealthy();
+
+  /**
+   * Returns whether this server's channel is in {@code TRANSIENT_FAILURE} state.
+   *
+   * <p>When an endpoint is in transient failure, it should be reported as a skipped tablet in
+   * routing hints so the server can refresh the client cache.
+   *
+   * @return true if the channel is in TRANSIENT_FAILURE state
+   */
+  boolean isTransientFailure();
 
   /**
    * Returns the gRPC channel for making RPCs to this server.
@@ -63,4 +71,22 @@ public interface ChannelEndpoint {
    * @return the managed channel for this server
    */
   ManagedChannel getChannel();
+
+  /**
+   * Records that an application RPC started on this endpoint.
+   *
+   * <p>This is used for request-load-aware routing decisions. Implementations must keep the count
+   * scoped to this endpoint instance so evicted or recreated endpoints do not share inflight state.
+   */
+  void incrementActiveRequests();
+
+  /**
+   * Records that an application RPC finished on this endpoint.
+   *
+   * <p>Implementations must not allow the count to go negative.
+   */
+  void decrementActiveRequests();
+
+  /** Returns the number of currently active application RPCs on this endpoint. */
+  int getActiveRequestCount();
 }

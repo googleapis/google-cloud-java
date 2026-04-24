@@ -159,6 +159,82 @@ public final class MachineConfig extends com.google.protobuf.GeneratedMessage
     return vcpuCount_;
   }
 
+  public static final int BASELINE_SLOT_COUNT_FIELD_NUMBER = 5;
+  private long baselineSlotCount_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Baseline slots for BigQuery Reservations. Baseline slots are in
+   * increments of 50.
+   * </pre>
+   *
+   * <code>optional int64 baseline_slot_count = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the baselineSlotCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasBaselineSlotCount() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Baseline slots for BigQuery Reservations. Baseline slots are in
+   * increments of 50.
+   * </pre>
+   *
+   * <code>optional int64 baseline_slot_count = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The baselineSlotCount.
+   */
+  @java.lang.Override
+  public long getBaselineSlotCount() {
+    return baselineSlotCount_;
+  }
+
+  public static final int MAX_RESERVATION_SLOT_COUNT_FIELD_NUMBER = 6;
+  private long maxReservationSlotCount_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Max slots for BigQuery Reservations. Max slots are in increments
+   * of 50.
+   * </pre>
+   *
+   * <code>optional int64 max_reservation_slot_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the maxReservationSlotCount field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxReservationSlotCount() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Max slots for BigQuery Reservations. Max slots are in increments
+   * of 50.
+   * </pre>
+   *
+   * <code>optional int64 max_reservation_slot_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The maxReservationSlotCount.
+   */
+  @java.lang.Override
+  public long getMaxReservationSlotCount() {
+    return maxReservationSlotCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -182,6 +258,12 @@ public final class MachineConfig extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeDouble(4, vcpuCount_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt64(5, baselineSlotCount_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeInt64(6, maxReservationSlotCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -199,6 +281,12 @@ public final class MachineConfig extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(4, vcpuCount_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(5, baselineSlotCount_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, maxReservationSlotCount_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -226,6 +314,14 @@ public final class MachineConfig extends com.google.protobuf.GeneratedMessage
       if (java.lang.Double.doubleToLongBits(getVcpuCount())
           != java.lang.Double.doubleToLongBits(other.getVcpuCount())) return false;
     }
+    if (hasBaselineSlotCount() != other.hasBaselineSlotCount()) return false;
+    if (hasBaselineSlotCount()) {
+      if (getBaselineSlotCount() != other.getBaselineSlotCount()) return false;
+    }
+    if (hasMaxReservationSlotCount() != other.hasMaxReservationSlotCount()) return false;
+    if (hasMaxReservationSlotCount()) {
+      if (getMaxReservationSlotCount() != other.getMaxReservationSlotCount()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -249,6 +345,14 @@ public final class MachineConfig extends com.google.protobuf.GeneratedMessage
           (53 * hash)
               + com.google.protobuf.Internal.hashLong(
                   java.lang.Double.doubleToLongBits(getVcpuCount()));
+    }
+    if (hasBaselineSlotCount()) {
+      hash = (37 * hash) + BASELINE_SLOT_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getBaselineSlotCount());
+    }
+    if (hasMaxReservationSlotCount()) {
+      hash = (37 * hash) + MAX_RESERVATION_SLOT_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxReservationSlotCount());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -394,6 +498,8 @@ public final class MachineConfig extends com.google.protobuf.GeneratedMessage
       memorySizeBytes_ = 0L;
       shardCount_ = 0;
       vcpuCount_ = 0D;
+      baselineSlotCount_ = 0L;
+      maxReservationSlotCount_ = 0L;
       return this;
     }
 
@@ -442,6 +548,14 @@ public final class MachineConfig extends com.google.protobuf.GeneratedMessage
         result.vcpuCount_ = vcpuCount_;
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.baselineSlotCount_ = baselineSlotCount_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.maxReservationSlotCount_ = maxReservationSlotCount_;
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -466,6 +580,12 @@ public final class MachineConfig extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasVcpuCount()) {
         setVcpuCount(other.getVcpuCount());
+      }
+      if (other.hasBaselineSlotCount()) {
+        setBaselineSlotCount(other.getBaselineSlotCount());
+      }
+      if (other.hasMaxReservationSlotCount()) {
+        setMaxReservationSlotCount(other.getMaxReservationSlotCount());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -511,6 +631,18 @@ public final class MachineConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 33
+            case 40:
+              {
+                baselineSlotCount_ = input.readInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+            case 48:
+              {
+                maxReservationSlotCount_ = input.readInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -726,6 +858,170 @@ public final class MachineConfig extends com.google.protobuf.GeneratedMessage
     public Builder clearVcpuCount() {
       bitField0_ = (bitField0_ & ~0x00000004);
       vcpuCount_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private long baselineSlotCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Baseline slots for BigQuery Reservations. Baseline slots are in
+     * increments of 50.
+     * </pre>
+     *
+     * <code>optional int64 baseline_slot_count = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the baselineSlotCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasBaselineSlotCount() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Baseline slots for BigQuery Reservations. Baseline slots are in
+     * increments of 50.
+     * </pre>
+     *
+     * <code>optional int64 baseline_slot_count = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The baselineSlotCount.
+     */
+    @java.lang.Override
+    public long getBaselineSlotCount() {
+      return baselineSlotCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Baseline slots for BigQuery Reservations. Baseline slots are in
+     * increments of 50.
+     * </pre>
+     *
+     * <code>optional int64 baseline_slot_count = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The baselineSlotCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBaselineSlotCount(long value) {
+
+      baselineSlotCount_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Baseline slots for BigQuery Reservations. Baseline slots are in
+     * increments of 50.
+     * </pre>
+     *
+     * <code>optional int64 baseline_slot_count = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBaselineSlotCount() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      baselineSlotCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long maxReservationSlotCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Max slots for BigQuery Reservations. Max slots are in increments
+     * of 50.
+     * </pre>
+     *
+     * <code>
+     * optional int64 max_reservation_slot_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the maxReservationSlotCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxReservationSlotCount() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Max slots for BigQuery Reservations. Max slots are in increments
+     * of 50.
+     * </pre>
+     *
+     * <code>
+     * optional int64 max_reservation_slot_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The maxReservationSlotCount.
+     */
+    @java.lang.Override
+    public long getMaxReservationSlotCount() {
+      return maxReservationSlotCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Max slots for BigQuery Reservations. Max slots are in increments
+     * of 50.
+     * </pre>
+     *
+     * <code>
+     * optional int64 max_reservation_slot_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The maxReservationSlotCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxReservationSlotCount(long value) {
+
+      maxReservationSlotCount_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Max slots for BigQuery Reservations. Max slots are in increments
+     * of 50.
+     * </pre>
+     *
+     * <code>
+     * optional int64 max_reservation_slot_count = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxReservationSlotCount() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      maxReservationSlotCount_ = 0L;
       onChanged();
       return this;
     }

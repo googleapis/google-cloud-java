@@ -42,20 +42,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-webrisk</artifactId>
-  <version>2.87.0</version>
+  <version>2.90.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-webrisk:2.87.0'
+implementation 'com.google.cloud:google-cloud-webrisk:2.90.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-webrisk" % "2.87.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-webrisk" % "2.90.0"
 ```
 
 ## Authentication
@@ -84,7 +84,7 @@ to add `google-cloud-webrisk` as a dependency in your code.
 ## About Web Risk
 
 
-[Web Risk][product-docs] is a Google Cloud service that lets client applications check URLs against Google's constantly updated lists of unsafe web resources. Unsafe web resources include social engineering sites—such as phishing and deceptive sites—and sites that host malware or unwanted software. With the Web Risk API, you can quickly identify known bad sites, warn users before they click infected links, and prevent users from posting links to known infected pages from your site. The Web Risk API includes data on more than a million unsafe URLs and stays up to date by examining billions of URLs each day.
+[Web Risk][product-docs] is a Google Cloud service that lets client applications check URLs against Google's constantly updated lists of unsafe web resources. Unsafe web resources include social engineering sites - such as phishing and deceptive sites - and sites that host malware or unwanted software. With the Web Risk API, you can quickly identify known bad sites, warn users before they click infected links, and prevent users from posting links to known infected pages from your site. The Web Risk API includes data on more than a million unsafe URLs and stays up to date by examining billions of URLs each day.
 
 See the [Web Risk client library docs][javadocs] to learn how to
 use this Web Risk Client Library.
@@ -175,7 +175,7 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [javadocs]: https://cloud.google.com/java/docs/reference/google-cloud-webrisk/latest/overview
 [stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-webrisk.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-webrisk/2.87.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.cloud/google-cloud-webrisk/2.90.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

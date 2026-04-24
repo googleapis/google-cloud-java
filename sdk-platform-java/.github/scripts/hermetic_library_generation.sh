@@ -27,6 +27,7 @@ set -exo pipefail
 # the default value is generation_config.yaml in the repository root.
 # 5. [optional] showcase_mode, true if we wish to download the showcase api
 # definitions, which are necessary for generating the showcase library.
+IMAGE_NAME="gcr.io/cloud-devrel-public-resources/java-library-generation"
 while [[ $# -gt 0 ]]; do
 key="$1"
 case "${key}" in
@@ -48,6 +49,10 @@ case "${key}" in
     ;;
   --showcase_mode)
     showcase_mode="$2"
+    shift
+    ;;
+  --force_regenerate_all)
+    force_regenerate_all="$2"
     shift
     ;;
   *)
@@ -81,6 +86,10 @@ if [ -z "${image_tag}" ]; then
   image_tag=$(grep "gapic_generator_version" "${generation_config}" | cut -d ':' -f 2 | xargs)
 fi
 
+if [ -z "${force_regenerate_all}" ]; then
+  force_regenerate_all="false"
+fi
+
 workspace_name="/workspace"
 baseline_generation_config="baseline_generation_config.yaml"
 message="chore: generate libraries at $(date)"
@@ -109,18 +118,18 @@ fi
 changed_libraries_file="$(mktemp)"
 python hermetic_build/common/cli/get_changed_libraries.py create \
   --baseline-generation-config-path="${baseline_generation_config}" \
-  --current-generation-config-path="${generation_config}" | tee "${changed_libraries_file}"
+  --current-generation-config-path="${generation_config}"\
+  --force-regenerate-all="${force_regenerate_all}" | tee "${changed_libraries_file}"
 changed_libraries="$(cat "${changed_libraries_file}")"
 echo "Changed libraries are: ${changed_libraries:-"No changed library"}."
 
 # run hermetic code generation docker image.
-docker run \
-  --rm \
+bash generation/run_generator_docker.sh "${image_tag}" "${target_branch}" \
   -u "$(id -u):$(id -g)" \
   -v "$(pwd):${workspace_name}" \
   -v "${api_def_dir}:${workspace_name}/googleapis" \
   -e GENERATOR_VERSION="${image_tag}" \
-  gcr.io/cloud-devrel-public-resources/java-library-generation:"${image_tag}" \
+  -- \
   --generation-config-path="${workspace_name}/${generation_config}" \
   --library-names="${changed_libraries}" \
   --api-definitions-path="${workspace_name}/googleapis"

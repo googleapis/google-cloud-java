@@ -32,6 +32,7 @@
     <module>java-apikeys</module>
     <module>java-appengine-admin</module>
     <module>java-apphub</module>
+    <module>java-appoptimize</module>
     <module>java-area120-tables</module>
     <module>java-artifact-registry</module>
     <module>java-asset</module>
@@ -71,6 +72,7 @@
     <module>java-cloudquotas</module>
     <module>java-cloudsecuritycompliance</module>
     <module>java-cloudsupport</module>
+    <module>java-common-protos</module>
     <module>java-compute</module>
     <module>java-confidentialcomputing</module>
     <module>java-configdelivery</module>
@@ -125,6 +127,7 @@
     <module>java-hypercomputecluster</module>
     <module>java-iam</module>
     <module>java-iam-admin</module>
+    <module>java-iam-policy</module>
     <module>java-iamcredentials</module>
     <module>java-iap</module>
     <module>java-ids</module>
@@ -148,6 +151,7 @@
     <module>java-maps-area-insights</module>
     <module>java-maps-fleetengine</module>
     <module>java-maps-fleetengine-delivery</module>
+    <module>java-maps-geocode</module>
     <module>java-maps-mapsplatformdatasets</module>
     <module>java-maps-places</module>
     <module>java-maps-routeoptimization</module>
@@ -222,11 +226,13 @@
     <module>java-shopping-merchant-quota</module>
     <module>java-shopping-merchant-reports</module>
     <module>java-shopping-merchant-reviews</module>
+    <module>java-showcase</module>
     <module>java-spanner</module>
     <module>java-spanner-jdbc</module>
     <module>java-spanneradapter</module>
     <module>java-speech</module>
     <module>java-storage</module>
+    <module>java-storage-nio</module>
     <module>java-storage-transfer</module>
     <module>java-storagebatchoperations</module>
     <module>java-storageinsights</module>

@@ -23,7 +23,7 @@ jobs:
       library: ${{ steps.filter.outputs.library }}
     steps:
     - uses: actions/checkout@v4
-    - uses: dorny/paths-filter@v3
+    - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
       id: filter
       with:
         filters: |
@@ -50,6 +50,13 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dependencies-list != '' }}
         run: echo "DEPENDENCIES_LIST=${{ github.event.inputs.dependencies-list }}" >> $GITHUB_ENV
 
+      - name: Install sdk-platform-java modules
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
+
       # Run in the root module which should test for everything except for showcase
       - name: Perform Dependency Compatibility Unit Testing
         shell: bash
@@ -61,15 +68,9 @@ jobs:
           fi
         working-directory: sdk-platform-java
 
-      # Install the modules for showcase (Shared-Deps is required to run showcase)
-      - name: Install sdk-platform-java's modules
-        # gapic-generator-java requires Java 8 and is irrelevant for this CI
-        run: mvn -q -B -ntp install --projects '!gapic-generator-java' -Dcheckstyle.skip -Dfmt.skip -DskipTests -Dclirr.skip -T 1C
-        working-directory: sdk-platform-java
-
       # Set up local showcase server to run the showcase ITs
       - name: Parse showcase version
-        working-directory: sdk-platform-java/java-showcase/gapic-showcase
+        working-directory: java-showcase/gapic-showcase
         run: echo "SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)" >> "$GITHUB_ENV"
       - name: Install showcase server
         run: |
@@ -88,8 +89,8 @@ jobs:
         # Need to cd out of the directory to get the scripts as this step is run inside the java-showcase directory
         run: |
           if [[ -n "${{ env.DEPENDENCIES_LIST }}" ]]; then
-            ../.github/scripts/test_dependency_compatibility.sh -l ${{ env.DEPENDENCIES_LIST }}
+            ../sdk-platform-java/.github/scripts/test_dependency_compatibility.sh -l ${{ env.DEPENDENCIES_LIST }}
           else
-            ../.github/scripts/test_dependency_compatibility.sh -f ../dependencies.txt
+            ../sdk-platform-java/.github/scripts/test_dependency_compatibility.sh -f ../sdk-platform-java/dependencies.txt
           fi
-        working-directory: sdk-platform-java/java-showcase
+        working-directory: java-showcase

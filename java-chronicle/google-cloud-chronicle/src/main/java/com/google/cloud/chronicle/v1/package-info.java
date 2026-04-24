@@ -43,6 +43,26 @@
  * }
  * }</pre>
  *
+ * <p>======================= DataTableServiceClient =======================
+ *
+ * <p>Service Description: DataTableManager provides an interface for managing data tables.
+ *
+ * <p>Sample for DataTableServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DataTableServiceClient dataTableServiceClient = DataTableServiceClient.create()) {
+ *   InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+ *   DataTable dataTable = DataTable.newBuilder().build();
+ *   String dataTableId = "dataTableId1260854911";
+ *   DataTable response = dataTableServiceClient.createDataTable(parent, dataTable, dataTableId);
+ * }
+ * }</pre>
+ *
  * <p>======================= EntityServiceClient =======================
  *
  * <p>Service Description: EntityService contains apis for finding entities.

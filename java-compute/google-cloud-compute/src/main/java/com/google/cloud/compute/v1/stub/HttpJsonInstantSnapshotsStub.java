@@ -33,6 +33,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListInstantSnapshotsRequest;
 import com.google.cloud.compute.v1.DeleteInstantSnapshotRequest;
 import com.google.cloud.compute.v1.GetIamPolicyInstantSnapshotRequest;
@@ -538,6 +539,25 @@ public class HttpJsonInstantSnapshotsStub extends InstantSnapshotsStub {
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/instantSnapshots/{instant_snapshot}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/instantSnapshots/{instant_snapshot}");
+  private static final PathTemplate GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/instantSnapshots/{resource}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+  private static final PathTemplate SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/instantSnapshots/{resource}");
+  private static final PathTemplate SET_LABELS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/instantSnapshots/{resource}");
+  private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/instantSnapshots/{resource}");
+
   public static final HttpJsonInstantSnapshotsStub create(InstantSnapshotsStubSettings settings)
       throws IOException {
     return new HttpJsonInstantSnapshotsStub(settings, ClientContext.create(settings));
@@ -590,6 +610,13 @@ public class HttpJsonInstantSnapshotsStub extends InstantSnapshotsStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteInstantSnapshotRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteInstantSnapshotRequest, Operation>newBuilder()
@@ -602,6 +629,15 @@ public class HttpJsonInstantSnapshotsStub extends InstantSnapshotsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "instant_snapshot", String.valueOf(request.getInstantSnapshot()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetInstantSnapshotRequest, InstantSnapshot> getTransportSettings =
@@ -616,6 +652,15 @@ public class HttpJsonInstantSnapshotsStub extends InstantSnapshotsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "instant_snapshot", String.valueOf(request.getInstantSnapshot()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetIamPolicyInstantSnapshotRequest, Policy> getIamPolicyTransportSettings =
         HttpJsonCallSettings.<GetIamPolicyInstantSnapshotRequest, Policy>newBuilder()
@@ -629,6 +674,14 @@ public class HttpJsonInstantSnapshotsStub extends InstantSnapshotsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertInstantSnapshotRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertInstantSnapshotRequest, Operation>newBuilder()
@@ -641,6 +694,13 @@ public class HttpJsonInstantSnapshotsStub extends InstantSnapshotsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListInstantSnapshotsRequest, InstantSnapshotList> listTransportSettings =
         HttpJsonCallSettings.<ListInstantSnapshotsRequest, InstantSnapshotList>newBuilder()
@@ -652,6 +712,13 @@ public class HttpJsonInstantSnapshotsStub extends InstantSnapshotsStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<SetIamPolicyInstantSnapshotRequest, Policy> setIamPolicyTransportSettings =
@@ -666,6 +733,14 @@ public class HttpJsonInstantSnapshotsStub extends InstantSnapshotsStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return SET_IAM_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<SetLabelsInstantSnapshotRequest, Operation> setLabelsTransportSettings =
         HttpJsonCallSettings.<SetLabelsInstantSnapshotRequest, Operation>newBuilder()
@@ -678,6 +753,14 @@ public class HttpJsonInstantSnapshotsStub extends InstantSnapshotsStub {
                   builder.add("resource", String.valueOf(request.getResource()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return SET_LABELS_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<TestIamPermissionsInstantSnapshotRequest, TestPermissionsResponse>
@@ -693,6 +776,15 @@ public class HttpJsonInstantSnapshotsStub extends InstantSnapshotsStub {
                       builder.add("resource", String.valueOf(request.getResource()));
                       builder.add("zone", String.valueOf(request.getZone()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("resource", String.valueOf(request.getResource()));
+                      resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                      return TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 

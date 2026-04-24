@@ -51,6 +51,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ThreadLocalRandom;
 import javax.annotation.Nullable;
 
 /**
@@ -299,10 +300,11 @@ class SessionImpl implements Session {
     }
     CommitRequest request = requestBuilder.build();
     ISpan span = tracer.spanBuilder(SpannerImpl.COMMIT);
+    Map<SpannerRpc.Option, ?> singleUseWriteOptions = getSingleUseWriteChannelHintOptions();
 
     try (IScope s = tracer.withSpan(span)) {
       return SpannerRetryHelper.runTxWithRetriesOnAborted(
-          () -> new CommitResponse(spanner.getRpc().commit(request, getOptions())));
+          () -> new CommitResponse(spanner.getRpc().commit(request, singleUseWriteOptions)));
     } catch (RuntimeException e) {
       span.setStatus(e);
       throw e;
@@ -324,6 +326,14 @@ class SessionImpl implements Session {
       return requestOptionsBuilder.build();
     }
     return null;
+  }
+
+  private Map<SpannerRpc.Option, ?> getSingleUseWriteChannelHintOptions() {
+    if (!spanner.getOptions().isGrpcGcpExtensionEnabled()) {
+      return getOptions();
+    }
+    return optionMap(
+        SessionOption.channelHint(ThreadLocalRandom.current().nextLong(Long.MAX_VALUE)));
   }
 
   @Override

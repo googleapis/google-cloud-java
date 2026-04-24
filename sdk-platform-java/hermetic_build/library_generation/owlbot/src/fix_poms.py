@@ -273,7 +273,8 @@ def update_parent_pom(filename: str, modules: List[module.Module]):
         new_dependency.append(new_group)
         new_dependency.append(new_artifact)
         new_dependency.append(new_version)
-        new_dependency.append(comment)
+        if "vertexai" not in m.artifact_id:
+            new_dependency.append(comment)
         new_dependency.tail = "\n      "
         dependencies.insert(1, new_dependency)
 
@@ -310,7 +311,8 @@ def update_bom_pom(filename: str, modules: List[module.Module]):
         new_dependency.append(new_group)
         new_dependency.append(new_artifact)
         new_dependency.append(new_version)
-        new_dependency.append(comment)
+        if "vertexai" not in m.artifact_id:
+            new_dependency.append(comment)
 
         if index == num_modules - 1:
             new_dependency.tail = "\n    "
@@ -447,6 +449,9 @@ def main(versions_file, monorepo):
                     version=main_module.version,
                     release_version=main_module.release_version,
                 )
+        if path not in required_dependencies:
+            required_dependencies[path] = existing_modules[path]
+
         if not os.path.isfile(f"{path}/pom.xml"):
             print(f"creating missing proto pom: {path}")
             templates.render(
@@ -486,6 +491,9 @@ def main(versions_file, monorepo):
                     version=main_module.version,
                     release_version=main_module.release_version,
                 )
+
+        if path not in required_dependencies:
+            required_dependencies[path] = existing_modules[path]
 
         if not os.path.isfile(f"{path}/pom.xml"):
             proto_artifact_id = path.replace("grpc-", "proto-")

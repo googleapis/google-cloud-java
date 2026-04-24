@@ -33,6 +33,7 @@ import static com.google.api.gax.util.TimeConversionTestUtils.testDurationMethod
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNotSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -54,7 +55,6 @@ import com.google.api.gax.rpc.testing.FakeClientSettings;
 import com.google.api.gax.rpc.testing.FakeStubSettings;
 import com.google.api.gax.rpc.testing.FakeTransportChannel;
 import com.google.api.gax.tracing.ApiTracerFactory;
-import com.google.api.gax.tracing.SpanTracerFactory;
 import com.google.auth.ApiKeyCredentials;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.Credentials;
@@ -64,7 +64,6 @@ import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.truth.Truth;
 import java.io.IOException;
-import java.net.URI;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -891,16 +890,16 @@ class ClientContextTest {
     assertThat(transportChannel.getExecutor()).isSameInstanceAs(executorProvider.getExecutor());
   }
 
-  private GdchCredentials getMockGdchCredentials() throws IOException {
+  private GdchCredentials getMockGdchCredentials() {
     GdchCredentials creds = Mockito.mock(GdchCredentials.class);
 
     // GdchCredentials builder is mocked to accept a well-formed uri
     GdchCredentials.Builder gdchCredsBuilder = Mockito.mock(GdchCredentials.Builder.class);
-    Mockito.when(gdchCredsBuilder.setGdchAudience(Mockito.any(URI.class)))
+    Mockito.when(gdchCredsBuilder.setGdchAudience(Mockito.anyString()))
         .thenReturn(gdchCredsBuilder);
     Mockito.when(gdchCredsBuilder.build()).thenReturn(creds);
     Mockito.when(creds.toBuilder()).thenReturn(gdchCredsBuilder);
-    Mockito.when(creds.createWithGdchAudience(Mockito.any()))
+    Mockito.when(creds.createWithGdchAudience(Mockito.anyString()))
         .thenAnswer((uri) -> getMockGdchCredentials());
     return creds;
   }
@@ -940,7 +939,7 @@ class ClientContextTest {
     assertThat(fromProvider).isInstanceOf(GdchCredentials.class);
     assertNotSame(fromContext, fromProvider);
     verify((GdchCredentials) fromProvider, times(1))
-        .createWithGdchAudience(URI.create("test.googleapis.com:443"));
+        .createWithGdchAudience("test.googleapis.com:443");
   }
 
   @Test
@@ -995,8 +994,7 @@ class ClientContextTest {
     assertThat(fromContext).isInstanceOf(GdchCredentials.class);
     assertThat(fromProvider).isInstanceOf(GdchCredentials.class);
     assertNotSame(fromContext, fromProvider);
-    verify((GdchCredentials) fromProvider, times(1))
-        .createWithGdchAudience(URI.create("test-endpoint"));
+    verify((GdchCredentials) fromProvider, times(1)).createWithGdchAudience("test-endpoint");
   }
 
   @Test
@@ -1022,14 +1020,13 @@ class ClientContextTest {
     assertNotNull(fromContext);
     // using an audience should have made the context to recreate the credentials
     assertNotSame(fromContext, fromProvider);
-    verify((GdchCredentials) fromProvider, times(1))
-        .createWithGdchAudience(URI.create("valid-uri"));
-    verify((GdchCredentials) fromProvider, times(0))
-        .createWithGdchAudience(URI.create("test-endpoint"));
+    verify((GdchCredentials) fromProvider, times(1)).createWithGdchAudience("valid-uri");
+    verify((GdchCredentials) fromProvider, times(0)).createWithGdchAudience("test-endpoint");
   }
 
   @Test
-  void testCreateClientContext_withGdchCredentialAndInvalidAudience_throws() throws IOException {
+  void testCreateClientContext_withGdchCredentialAndInvalidAudience_doesNotThrow()
+      throws IOException {
     TransportChannelProvider transportChannelProvider = getFakeTransportChannelProvider();
     Credentials creds = getMockGdchCredentials();
     CredentialsProvider provider = FixedCredentialsProvider.create(creds);
@@ -1045,17 +1042,14 @@ class ClientContextTest {
     clientSettingsBuilder.setCredentialsProvider(provider);
     clientSettingsBuilder.setTransportChannelProvider(transportChannelProvider);
     final ClientSettings withGdchCredentialsAndMalformedApiAudience = clientSettingsBuilder.build();
-    // should throw
-    String exMessage =
-        assertThrows(
-                IllegalArgumentException.class,
-                () -> ClientContext.create(withGdchCredentialsAndMalformedApiAudience))
-            .getMessage();
-    assertThat(exMessage).contains("The GDC-H API audience string is not a valid URI");
+
+    // There is an invalid URI for the GDCH audience, but we do not validate the URI
+    // There are some use cases where there the GDCH audience is not a URI.
+    ClientContext clientContext = ClientContext.create(withGdchCredentialsAndMalformedApiAudience);
+    assertInstanceOf(GdchCredentials.class, clientContext.getCredentials());
 
     Credentials fromProvider = provider.getCredentials();
-    verify((GdchCredentials) fromProvider, times(0))
-        .createWithGdchAudience(URI.create("test-endpoint"));
+    verify((GdchCredentials) fromProvider, times(0)).createWithGdchAudience("test-endpoint");
   }
 
   @Test
@@ -1297,7 +1291,8 @@ class ClientContextTest {
     builder.setCredentialsProvider(
         FixedCredentialsProvider.create(Mockito.mock(Credentials.class)));
 
-    ApiTracerFactory apiTracerFactory = Mockito.mock(SpanTracerFactory.class);
+    ApiTracerFactory apiTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    Mockito.doReturn(true).when(apiTracerFactory).needsContext();
     Mockito.doReturn(apiTracerFactory).when(apiTracerFactory).withContext(Mockito.any());
 
     FakeStubSettings settings = Mockito.spy(builder.build());
@@ -1306,5 +1301,69 @@ class ClientContextTest {
     ClientContext context = ClientContext.create(settings);
     assertThat(context.getTracerFactory()).isSameInstanceAs(apiTracerFactory);
     verify(apiTracerFactory, times(1)).withContext(Mockito.any());
+  }
+
+  @Test
+  void testGetApiTracerFactory_noContextNeeded() throws java.io.IOException {
+    ApiTracerFactory mockTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    when(mockTracerFactory.needsContext()).thenReturn(false);
+    when(mockTracerFactory.withContext(
+            Mockito.any(com.google.api.gax.tracing.ApiTracerContext.class)))
+        .thenReturn(mockTracerFactory);
+
+    FakeStubSettings.Builder builder = FakeStubSettings.newBuilder();
+    builder.setTracerFactory(mockTracerFactory);
+
+    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+
+    ApiTracerFactory apiTracerFactory =
+        ClientContext.getApiTracerFactory(builder.build(), endpointContext);
+
+    assertThat(apiTracerFactory).isSameInstanceAs(mockTracerFactory);
+  }
+
+  @Test
+  void testGetApiTracerFactory_contextNeeded() throws java.io.IOException {
+    ApiTracerFactory mockTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    ApiTracerFactory withContextTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    when(mockTracerFactory.needsContext()).thenReturn(true);
+    when(mockTracerFactory.withContext(
+            Mockito.any(com.google.api.gax.tracing.ApiTracerContext.class)))
+        .thenReturn(withContextTracerFactory);
+
+    FakeStubSettings.Builder builder = FakeStubSettings.newBuilder();
+    builder.setTracerFactory(mockTracerFactory);
+
+    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+    when(endpointContext.resolvedServerAddress()).thenReturn("test-address");
+    when(endpointContext.resolvedServerPort()).thenReturn(443);
+
+    ApiTracerFactory apiTracerFactory =
+        ClientContext.getApiTracerFactory(builder.build(), endpointContext);
+
+    assertThat(apiTracerFactory).isSameInstanceAs(withContextTracerFactory);
+    verify(mockTracerFactory, times(1))
+        .withContext(Mockito.any(com.google.api.gax.tracing.ApiTracerContext.class));
+  }
+
+  // This test should only run when the maven profile `EnvVarTest` is enabled.
+  @Test
+  void testGetApiTracerFactory_loggingEnabled() throws java.io.IOException {
+    ApiTracerFactory mockTracerFactory = Mockito.mock(ApiTracerFactory.class);
+    when(mockTracerFactory.needsContext()).thenReturn(false);
+    when(mockTracerFactory.withContext(
+            Mockito.any(com.google.api.gax.tracing.ApiTracerContext.class)))
+        .thenReturn(mockTracerFactory);
+
+    FakeStubSettings.Builder builder = FakeStubSettings.newBuilder();
+    builder.setTracerFactory(mockTracerFactory);
+
+    EndpointContext endpointContext = Mockito.mock(EndpointContext.class);
+
+    ApiTracerFactory apiTracerFactory =
+        ClientContext.getApiTracerFactory(builder.build(), endpointContext);
+
+    assertThat(apiTracerFactory)
+        .isInstanceOf(com.google.api.gax.tracing.CompositeTracerFactory.class);
   }
 }

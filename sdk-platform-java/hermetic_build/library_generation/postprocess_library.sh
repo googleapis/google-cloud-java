@@ -73,9 +73,7 @@ if [[ "${is_monorepo}" == "true" ]]; then
   # - "/google-.*/src"
 
   library_name=$(basename "${postprocessing_target}")
-  cat "${postprocessing_target}/${owlbot_yaml_file_name}" \
-    | sed "s/- \"\/${library_name}/ - \"/" \
-    > "${postprocessing_target}/.OwlBot.hermetic.yaml"
+  normalize_owlbot_yaml "${postprocessing_target}/${owlbot_yaml_file_name}" "${postprocessing_target}/.OwlBot.hermetic.yaml" "${library_name}"
   owlbot_yaml_relative_path=".OwlBot.hermetic.yaml"
 else
   owlbot_yaml_relative_path=".github/${owlbot_yaml_file_name}"
@@ -87,10 +85,19 @@ preprocessed_libraries_binding="${owlbot_cli_source_folder}"
 
 pushd "${postprocessing_target}"
 
+# Backs up all files matching `stub/Version.java`
+# This is a workaround to prevent owl-bot-copy from omitting
+# Version.java files when transferring the generated code
+backup_dir=$(mktemp -d)
+backup_version_java "${PWD}" "${backup_dir}"
+
 owl-bot copy-code \
   --source-repo-commit-hash=none \
   --source-repo="${owlbot_cli_source_folder}" \
   --config-file="${owlbot_yaml_relative_path}"
+
+restore_version_java "${PWD}" "${backup_dir}"
+rm -rf "${backup_dir}"
 
 
 # clean the custom owlbot yaml

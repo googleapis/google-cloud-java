@@ -43,8 +43,6 @@ import javax.annotation.Nonnull;
 @InternalExtensionOnly
 public interface DatastoreMetricsRecorder extends MetricsRecorder {
 
-  Logger logger = Logger.getLogger(DatastoreMetricsRecorder.class.getName());
-
   /**
    * Releases any resources held by this recorder.
    *
@@ -85,18 +83,16 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
    * @return a {@link DatastoreMetricsRecorder} that fans out to all configured backends
    */
   static DatastoreMetricsRecorder getInstance(@Nonnull DatastoreOptions datastoreOptions) {
+    Logger logger = Logger.getLogger(DatastoreMetricsRecorder.class.getName());
     DatastoreOpenTelemetryOptions otelOptions = datastoreOptions.getOpenTelemetryOptions();
     List<DatastoreMetricsRecorder> recorders = new ArrayList<>();
 
     // Default provider: export built-in metrics to Cloud Monitoring
     String emulatorHost = System.getenv(DatastoreOptions.LOCAL_HOST_ENV_VAR);
     boolean emulatorEnabled = emulatorHost != null && !emulatorHost.isEmpty();
-    String metricsEnvVar = System.getenv(TelemetryConstants.ENABLE_METRICS_ENV_VAR);
-    boolean metricsDisabledViaEnv = "false".equalsIgnoreCase(metricsEnvVar);
 
-    if (otelOptions.isExportBuiltinMetricsToGoogleCloudMonitoring()
-        && !emulatorEnabled
-        && !metricsDisabledViaEnv) {
+    // When using a local emulator, there is no need to configure a built-in Otel instance
+    if (otelOptions.isExportBuiltinMetricsToGoogleCloudMonitoring() && !emulatorEnabled) {
       try {
         OpenTelemetry builtInOtel =
             BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(
@@ -106,7 +102,7 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
         if (builtInOtel != null) {
           recorders.add(
               new OpenTelemetryDatastoreMetricsRecorder(
-                  builtInOtel, TelemetryConstants.METRIC_PREFIX, /* ownsOpenTelemetry= */ true));
+                  builtInOtel, TelemetryConstants.METRIC_PREFIX, /* isBuiltIn= */ true));
         }
       } catch (Exception e) {
         logger.log(

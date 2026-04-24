@@ -232,7 +232,9 @@ class TransactionRunnerImpl implements SessionTransaction, TransactionRunner {
       this.clock = builder.clock;
       this.channelHint =
           getChannelHintOptions(
-              session.getOptions(), ThreadLocalRandom.current().nextLong(Long.MAX_VALUE));
+              session.getOptions(),
+              ThreadLocalRandom.current().nextLong(Long.MAX_VALUE),
+              session.getSpanner().getOptions().isGrpcGcpExtensionEnabled());
       this.previousTransactionId = builder.previousTransactionId;
     }
 

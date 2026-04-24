@@ -19,8 +19,6 @@
     <module>api-common-java</module>
     <module>gax-java</module>
     <module>gapic-generator-java</module>
-    <module>java-common-protos</module>
-    <module>java-iam</module>
     <module>java-core</module>
     <module>gapic-generator-java-bom</module>
     <module>java-shared-dependencies</module>
@@ -29,6 +27,13 @@
   <!-- Do not deploy the aggregator POM -->
   <build>
     <plugins>
+      <plugin>
+        <groupId>com.spotify.fmt</groupId>
+        <artifactId>fmt-maven-plugin</artifactId>
+        <configuration>
+          <skip>true</skip>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>
@@ -85,7 +90,6 @@
         </property>
       </activation>
       <modules>
-        <module>java-showcase</module>
       </modules>
     </profile>
 
@@ -97,7 +101,6 @@
         </property>
       </activation>
       <modules>
-        <module>java-showcase</module>
         <module>coverage-report</module>
       </modules>
       <properties>

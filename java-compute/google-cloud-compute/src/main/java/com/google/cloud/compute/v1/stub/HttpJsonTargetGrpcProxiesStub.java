@@ -32,6 +32,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.DeleteTargetGrpcProxyRequest;
 import com.google.cloud.compute.v1.GetTargetGrpcProxyRequest;
 import com.google.cloud.compute.v1.InsertTargetGrpcProxyRequest;
@@ -325,6 +326,17 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetGrpcProxies/{target_grpc_proxy}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetGrpcProxies/{target_grpc_proxy}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/targetGrpcProxies/{target_grpc_proxy}");
+
   public static final HttpJsonTargetGrpcProxiesStub create(TargetGrpcProxiesStubSettings settings)
       throws IOException {
     return new HttpJsonTargetGrpcProxiesStub(settings, ClientContext.create(settings));
@@ -377,6 +389,14 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                   builder.add("target_grpc_proxy", String.valueOf(request.getTargetGrpcProxy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_grpc_proxy", String.valueOf(request.getTargetGrpcProxy()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<GetTargetGrpcProxyRequest, TargetGrpcProxy> getTransportSettings =
         HttpJsonCallSettings.<GetTargetGrpcProxyRequest, TargetGrpcProxy>newBuilder()
@@ -389,6 +409,14 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                   builder.add("target_grpc_proxy", String.valueOf(request.getTargetGrpcProxy()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_grpc_proxy", String.valueOf(request.getTargetGrpcProxy()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<InsertTargetGrpcProxyRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertTargetGrpcProxyRequest, Operation>newBuilder()
@@ -399,6 +427,12 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListTargetGrpcProxiesRequest, TargetGrpcProxyList> listTransportSettings =
@@ -411,6 +445,12 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<PatchTargetGrpcProxyRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchTargetGrpcProxyRequest, Operation>newBuilder()
@@ -422,6 +462,14 @@ public class HttpJsonTargetGrpcProxiesStub extends TargetGrpcProxiesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("target_grpc_proxy", String.valueOf(request.getTargetGrpcProxy()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put(
+                      "target_grpc_proxy", String.valueOf(request.getTargetGrpcProxy()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

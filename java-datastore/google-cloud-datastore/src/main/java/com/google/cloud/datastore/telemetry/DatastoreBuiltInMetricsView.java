@@ -74,6 +74,10 @@ class DatastoreBuiltInMetricsView {
    * @param metricExporter the exporter to use for metrics.
    * @param builder the builder to register views and the {@link PeriodicMetricReader} on.
    */
+  // Views are scoped to the SdkMeterProvider they are registered on. This method is called
+  // exclusively from BuiltInDatastoreMetricsProvider, which constructs a private SdkMeterProvider
+  // for the built-in Cloud Monitoring export path. A user-provided OpenTelemetry instance has its
+  // own independent MeterProvider, so these views never affect user-configured backends.
   static void registerBuiltinMetrics(
       MetricExporter metricExporter, SdkMeterProviderBuilder builder) {
     registerGaxViews(builder);
@@ -94,12 +98,11 @@ class DatastoreBuiltInMetricsView {
     for (String metricName : TelemetryConstants.GAX_METRICS) {
       Aggregation aggregation = Aggregation.defaultAggregation();
 
-      // Differentiate the instrumentation type between `count` vs `latency`
       InstrumentType type = InstrumentType.COUNTER;
       String unit = "1";
 
       // Latency metrics use histograms with specific millisecond buckets.
-      if (metricName.endsWith("latency")) {
+      if (TelemetryConstants.GAX_HISTOGRAM_METRICS.contains(metricName)) {
         aggregation = AGGREGATION_WITH_MILLIS_HISTOGRAM;
         type = InstrumentType.HISTOGRAM;
         unit = "ms";

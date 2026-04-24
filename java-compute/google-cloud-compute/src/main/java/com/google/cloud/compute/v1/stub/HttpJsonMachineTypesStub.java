@@ -31,6 +31,7 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListMachineTypesRequest;
 import com.google.cloud.compute.v1.GetMachineTypeRequest;
 import com.google.cloud.compute.v1.ListMachineTypesRequest;
@@ -218,6 +219,13 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/machineTypes/{machine_type}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}");
+
   public static final HttpJsonMachineTypesStub create(MachineTypesStubSettings settings)
       throws IOException {
     return new HttpJsonMachineTypesStub(settings, ClientContext.create(settings));
@@ -269,6 +277,13 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetMachineTypeRequest, MachineType> getTransportSettings =
         HttpJsonCallSettings.<GetMachineTypeRequest, MachineType>newBuilder()
@@ -282,6 +297,15 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put(
+                      "machine_type", String.valueOf(request.getMachineType()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListMachineTypesRequest, MachineTypeList> listTransportSettings =
         HttpJsonCallSettings.<ListMachineTypesRequest, MachineTypeList>newBuilder()
@@ -293,6 +317,13 @@ public class HttpJsonMachineTypesStub extends MachineTypesStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("zone", String.valueOf(request.getZone()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
 

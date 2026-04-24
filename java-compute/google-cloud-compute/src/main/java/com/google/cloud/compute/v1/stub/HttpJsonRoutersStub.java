@@ -36,6 +36,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListRoutersRequest;
 import com.google.cloud.compute.v1.DeleteRoutePolicyRouterRequest;
 import com.google.cloud.compute.v1.DeleteRouterRequest;
@@ -994,6 +995,41 @@ public class HttpJsonRoutersStub extends RoutersStub {
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
 
+  private static final PathTemplate AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+  private static final PathTemplate DELETE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/routers/{router}");
+  private static final PathTemplate DELETE_ROUTE_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/routers/{router}");
+  private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/routers/{router}");
+  private static final PathTemplate GET_NAT_IP_INFO_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/routers/{router}");
+  private static final PathTemplate GET_NAT_MAPPING_INFO_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/routers/{router}");
+  private static final PathTemplate GET_ROUTE_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/routers/{router}");
+  private static final PathTemplate GET_ROUTER_STATUS_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/routers/{router}");
+  private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}");
+  private static final PathTemplate LIST_BGP_ROUTES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/routers/{router}");
+  private static final PathTemplate LIST_ROUTE_POLICIES_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/routers/{router}");
+  private static final PathTemplate PATCH_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/routers/{router}");
+  private static final PathTemplate PATCH_ROUTE_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/routers/{router}");
+  private static final PathTemplate PREVIEW_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/routers/{router}");
+  private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/routers/{router}");
+  private static final PathTemplate UPDATE_ROUTE_POLICY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/regions/{region}/routers/{router}");
+
   public static final HttpJsonRoutersStub create(RoutersStubSettings settings) throws IOException {
     return new HttpJsonRoutersStub(settings, ClientContext.create(settings));
   }
@@ -1043,6 +1079,13 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       builder.add("project", String.valueOf(request.getProject()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      return AGGREGATED_LIST_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<DeleteRouterRequest, Operation> deleteTransportSettings =
         HttpJsonCallSettings.<DeleteRouterRequest, Operation>newBuilder()
@@ -1055,6 +1098,14 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("router", String.valueOf(request.getRouter()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("router", String.valueOf(request.getRouter()));
+                  return DELETE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<DeleteRoutePolicyRouterRequest, Operation>
@@ -1070,6 +1121,15 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       builder.add("router", String.valueOf(request.getRouter()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("router", String.valueOf(request.getRouter()));
+                      return DELETE_ROUTE_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetRouterRequest, Router> getTransportSettings =
         HttpJsonCallSettings.<GetRouterRequest, Router>newBuilder()
@@ -1082,6 +1142,14 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("router", String.valueOf(request.getRouter()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("router", String.valueOf(request.getRouter()));
+                  return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<GetNatIpInfoRouterRequest, NatIpInfoResponse>
@@ -1096,6 +1164,15 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       builder.add("region", String.valueOf(request.getRegion()));
                       builder.add("router", String.valueOf(request.getRouter()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("router", String.valueOf(request.getRouter()));
+                      return GET_NAT_IP_INFO_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<GetNatMappingInfoRoutersRequest, VmEndpointNatMappingsList>
@@ -1112,6 +1189,15 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       builder.add("router", String.valueOf(request.getRouter()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("router", String.valueOf(request.getRouter()));
+                      return GET_NAT_MAPPING_INFO_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetRoutePolicyRouterRequest, RoutersGetRoutePolicyResponse>
         getRoutePolicyTransportSettings =
@@ -1127,6 +1213,15 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       builder.add("router", String.valueOf(request.getRouter()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("router", String.valueOf(request.getRouter()));
+                      return GET_ROUTE_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<GetRouterStatusRouterRequest, RouterStatusResponse>
         getRouterStatusTransportSettings =
@@ -1141,6 +1236,15 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       builder.add("router", String.valueOf(request.getRouter()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("router", String.valueOf(request.getRouter()));
+                      return GET_ROUTER_STATUS_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<InsertRouterRequest, Operation> insertTransportSettings =
         HttpJsonCallSettings.<InsertRouterRequest, Operation>newBuilder()
@@ -1153,6 +1257,13 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return INSERT_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<ListRoutersRequest, RouterList> listTransportSettings =
         HttpJsonCallSettings.<ListRoutersRequest, RouterList>newBuilder()
@@ -1164,6 +1275,13 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   builder.add("project", String.valueOf(request.getProject()));
                   builder.add("region", String.valueOf(request.getRegion()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  return LIST_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<ListBgpRoutesRoutersRequest, RoutersListBgpRoutes>
@@ -1178,6 +1296,15 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       builder.add("region", String.valueOf(request.getRegion()));
                       builder.add("router", String.valueOf(request.getRouter()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("router", String.valueOf(request.getRouter()));
+                      return LIST_BGP_ROUTES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
     HttpJsonCallSettings<ListRoutePoliciesRoutersRequest, RoutersListRoutePolicies>
@@ -1194,6 +1321,15 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       builder.add("router", String.valueOf(request.getRouter()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("router", String.valueOf(request.getRouter()));
+                      return LIST_ROUTE_POLICIES_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PatchRouterRequest, Operation> patchTransportSettings =
         HttpJsonCallSettings.<PatchRouterRequest, Operation>newBuilder()
@@ -1206,6 +1342,14 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("router", String.valueOf(request.getRouter()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("router", String.valueOf(request.getRouter()));
+                  return PATCH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<PatchRoutePolicyRouterRequest, Operation>
@@ -1221,6 +1365,15 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       builder.add("router", String.valueOf(request.getRouter()));
                       return builder.build();
                     })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("router", String.valueOf(request.getRouter()));
+                      return PATCH_ROUTE_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
+                    })
                 .build();
     HttpJsonCallSettings<PreviewRouterRequest, RoutersPreviewResponse> previewTransportSettings =
         HttpJsonCallSettings.<PreviewRouterRequest, RoutersPreviewResponse>newBuilder()
@@ -1233,6 +1386,14 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   builder.add("region", String.valueOf(request.getRegion()));
                   builder.add("router", String.valueOf(request.getRouter()));
                   return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("router", String.valueOf(request.getRouter()));
+                  return PREVIEW_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
     HttpJsonCallSettings<UpdateRouterRequest, Operation> updateTransportSettings =
@@ -1247,6 +1408,14 @@ public class HttpJsonRoutersStub extends RoutersStub {
                   builder.add("router", String.valueOf(request.getRouter()));
                   return builder.build();
                 })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                  resourceNameSegments.put("router", String.valueOf(request.getRouter()));
+                  return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
             .build();
     HttpJsonCallSettings<UpdateRoutePolicyRouterRequest, Operation>
         updateRoutePolicyTransportSettings =
@@ -1260,6 +1429,15 @@ public class HttpJsonRoutersStub extends RoutersStub {
                       builder.add("region", String.valueOf(request.getRegion()));
                       builder.add("router", String.valueOf(request.getRouter()));
                       return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      resourceNameSegments.put("router", String.valueOf(request.getRouter()));
+                      return UPDATE_ROUTE_POLICY_RESOURCE_NAME_TEMPLATE.instantiate(
+                          resourceNameSegments);
                     })
                 .build();
 

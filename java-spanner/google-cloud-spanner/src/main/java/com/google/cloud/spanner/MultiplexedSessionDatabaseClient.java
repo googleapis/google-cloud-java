@@ -161,7 +161,17 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
    * Keeps track of which channels have been 'given' to single-use transactions for a given Spanner
    * instance.
    */
-  private static final Map<SpannerImpl, BitSet> CHANNEL_USAGE = new HashMap<>();
+  private static final class SharedChannelUsage {
+    private final BitSet channelUsage;
+    private int referenceCount;
+
+    private SharedChannelUsage(int numChannels) {
+      this.channelUsage = new BitSet(numChannels);
+      this.referenceCount = 0;
+    }
+  }
+
+  private static final Map<SpannerImpl, SharedChannelUsage> CHANNEL_USAGE = new HashMap<>();
 
   private static final EnumSet<ErrorCode> RETRYABLE_ERROR_CODES =
       EnumSet.of(ErrorCode.DEADLINE_EXCEEDED, ErrorCode.RESOURCE_EXHAUSTED, ErrorCode.UNAVAILABLE);
@@ -181,6 +191,8 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
   private final Duration sessionExpirationDuration;
 
   private final SessionClient sessionClient;
+
+  private final SpannerImpl spanner;
 
   private final TraceWrapper tracer;
 
@@ -213,15 +225,20 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
 
   @VisibleForTesting
   MultiplexedSessionDatabaseClient(SessionClient sessionClient, Clock clock) {
-    this.numChannels = sessionClient.getSpanner().getOptions().getNumChannels();
+    this.spanner = sessionClient.getSpanner();
+    this.numChannels = spanner.getOptions().getNumChannels();
     synchronized (CHANNEL_USAGE) {
-      CHANNEL_USAGE.putIfAbsent(sessionClient.getSpanner(), new BitSet(numChannels));
-      this.channelUsage = CHANNEL_USAGE.get(sessionClient.getSpanner());
+      SharedChannelUsage sharedChannelUsage = CHANNEL_USAGE.get(this.spanner);
+      if (sharedChannelUsage == null) {
+        sharedChannelUsage = new SharedChannelUsage(numChannels);
+        CHANNEL_USAGE.put(this.spanner, sharedChannelUsage);
+      }
+      sharedChannelUsage.referenceCount++;
+      this.channelUsage = sharedChannelUsage.channelUsage;
     }
     this.sessionExpirationDuration =
         Duration.ofMillis(
-            sessionClient
-                .getSpanner()
+            spanner
                 .getOptions()
                 .getSessionPoolOptions()
                 .getMultiplexedSessionMaintenanceDuration()
@@ -354,10 +371,23 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
   }
 
   void close() {
+    boolean releaseChannelUsage = false;
     synchronized (this) {
       if (!this.isClosed) {
         this.isClosed = true;
         this.maintainer.stop();
+        releaseChannelUsage = true;
+      }
+    }
+    if (releaseChannelUsage) {
+      synchronized (CHANNEL_USAGE) {
+        SharedChannelUsage sharedChannelUsage = CHANNEL_USAGE.get(this.spanner);
+        if (sharedChannelUsage != null) {
+          sharedChannelUsage.referenceCount--;
+          if (sharedChannelUsage.referenceCount == 0) {
+            CHANNEL_USAGE.remove(this.spanner);
+          }
+        }
       }
     }
   }
@@ -398,6 +428,10 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
   private MultiplexedSessionTransaction createDirectMultiplexedSessionTransaction(
       boolean singleUse) {
     try {
+      int singleUseChannelHint =
+          singleUse && !sessionClient.getSpanner().getOptions().isGrpcGcpExtensionEnabled()
+              ? getSingleUseChannelHint()
+              : NO_CHANNEL_HINT;
       return new MultiplexedSessionTransaction(
           this,
           tracer.getCurrentSpan(),
@@ -406,7 +440,7 @@ final class MultiplexedSessionDatabaseClient extends AbstractMultiplexedSessionD
           // session, such as for example a DatabaseNotFound exception. We therefore do not need
           // any special handling of such errors.
           multiplexedSessionReference.get().get(),
-          singleUse ? getSingleUseChannelHint() : NO_CHANNEL_HINT,
+          singleUseChannelHint,
           singleUse);
     } catch (ExecutionException executionException) {
       throw SpannerExceptionFactory.asSpannerException(executionException.getCause());
