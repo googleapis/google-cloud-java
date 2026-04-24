@@ -1251,9 +1251,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     for (Dataset dataset : datasetsToScan) {
       if (Thread.currentThread().isInterrupted()) {
-        logger.warning(
-            "Interrupted during submission of routine listing tasks for catalog: " + catalogParam);
-        throw new InterruptedException("Interrupted while listing routines");
+        InterruptedException ex = new InterruptedException("Interrupted while listing routines");
+        logger.severe(ex, ex.getMessage());
+        throw ex;
       }
       final DatasetId currentDatasetId = dataset.getDatasetId();
       Callable<List<Routine>> listCallable =
@@ -1281,10 +1281,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     for (Future<List<Routine>> listFuture : listRoutineFutures) {
       if (Thread.currentThread().isInterrupted()) {
-        logger.warning(
-            "Interrupted while collecting routine list results for catalog: " + catalogParam);
         listRoutineFutures.forEach(f -> f.cancel(true));
-        throw new InterruptedException("Interrupted while collecting routine lists");
+        InterruptedException ex =
+            new InterruptedException("Interrupted while collecting routine lists");
+        logger.severe(ex, ex.getMessage());
+        throw ex;
       }
       try {
         List<Routine> listedRoutines = listFuture.get();
@@ -1327,8 +1328,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     for (RoutineId procId : procedureIdsToGet) {
       if (Thread.currentThread().isInterrupted()) {
-        logger.warning("Interrupted during submission of getRoutine detail tasks.");
-        throw new InterruptedException("Interrupted while submitting getRoutine tasks");
+        InterruptedException ex =
+            new InterruptedException("Interrupted while submitting getRoutine tasks");
+        logger.severe(ex, ex.getMessage());
+        throw ex;
       }
       final RoutineId currentProcId = procId;
       Callable<Routine> getCallable =
@@ -1350,9 +1353,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     for (Future<Routine> getFuture : getRoutineFutures) {
       if (Thread.currentThread().isInterrupted()) {
-        logger.warning("Interrupted while collecting getRoutine detail results.");
         getRoutineFutures.forEach(f -> f.cancel(true)); // Cancel remaining
-        throw new InterruptedException("Interrupted while collecting Routine details");
+        InterruptedException ex =
+            new InterruptedException("Interrupted while collecting Routine details");
+        logger.severe(ex, ex.getMessage());
+        throw ex;
       }
       try {
         Routine fullRoutine = getFuture.get();
@@ -1382,8 +1387,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     for (Routine fullRoutine : fullRoutines) {
       if (Thread.currentThread().isInterrupted()) {
-        logger.warning("Interrupted during submission of argument processing tasks.");
-        throw new InterruptedException("Interrupted while submitting argument processing jobs");
+        InterruptedException ex =
+            new InterruptedException("Interrupted while submitting argument processing jobs");
+        logger.severe(ex, ex.getMessage());
+        throw ex;
       }
       if (fullRoutine != null) {
         if ("PROCEDURE".equalsIgnoreCase(fullRoutine.getRoutineType())) {

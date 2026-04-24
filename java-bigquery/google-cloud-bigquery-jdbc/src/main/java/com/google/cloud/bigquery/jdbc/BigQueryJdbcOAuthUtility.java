@@ -293,7 +293,9 @@ final class BigQueryJdbcOAuthUtility {
         credentials = getExternalAccountAuthCredentials(authProperties, callerClassName);
         break;
       default:
-        throw new IllegalStateException(OAUTH_TYPE_ERROR_MESSAGE);
+        IllegalStateException ex = new IllegalStateException(OAUTH_TYPE_ERROR_MESSAGE);
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
     }
 
     return getServiceAccountImpersonatedCredentials(
@@ -369,8 +371,10 @@ final class BigQueryJdbcOAuthUtility {
         builder =
             ServiceAccountCredentials.newBuilder().setClientEmail(pvtEmail).setPrivateKey(key);
       } else {
-        LOG.severe("No valid Service Account credentials provided.");
-        throw new BigQueryJdbcRuntimeException("No valid credentials provided.");
+        BigQueryJdbcRuntimeException ex =
+            new BigQueryJdbcRuntimeException("No valid credentials provided.");
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
 
       if (overrideProperties.containsKey(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)) {
@@ -383,7 +387,7 @@ final class BigQueryJdbcOAuthUtility {
             overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
       }
     } catch (URISyntaxException | IOException e) {
-      LOG.severe("Validation failure for Service Account credentials.");
+      LOG.severe(e, "Validation failure for Service Account credentials.");
       throw new BigQueryJdbcRuntimeException(e);
     }
     LOG.info("GoogleCredentials instantiated. Auth Method: Service Account.");
@@ -459,8 +463,10 @@ final class BigQueryJdbcOAuthUtility {
         Matcher m = p.matcher(response);
 
         if (!m.find()) {
-          LOG.severe("Could not retrieve the code for user auth");
-          throw new BigQueryJdbcRuntimeException("Could not retrieve the code for user auth");
+          BigQueryJdbcRuntimeException ex =
+              new BigQueryJdbcRuntimeException("Could not retrieve the code for user auth");
+          LOG.severe(ex, ex.getMessage());
+          throw ex;
         }
         code = m.group();
 
@@ -469,14 +475,15 @@ final class BigQueryJdbcOAuthUtility {
         socket.close();
         serverSocket.close();
       } else {
-        LOG.severe("User auth only supported in desktop environments");
-        throw new BigQueryJdbcRuntimeException("User auth only supported in desktop environments");
+        BigQueryJdbcRuntimeException ex =
+            new BigQueryJdbcRuntimeException("User auth only supported in desktop environments");
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
 
       return getCredentialsFromCode(userAuthorizer, code, callerClassName);
     } catch (IOException | URISyntaxException ex) {
-      LOG.severe(
-          "Failed to establish connection using User Account authentication: %s", ex.getMessage());
+      LOG.severe(ex, "Failed to establish connection using User Account authentication");
       throw new BigQueryJdbcRuntimeException(ex);
     }
   }
@@ -516,6 +523,7 @@ final class BigQueryJdbcOAuthUtility {
         return getPreGeneratedRefreshTokenCredentials(
             authProperties, overrideProperties, callerClassName);
       } catch (URISyntaxException ex) {
+        LOG.severe(ex, "URISyntaxException during getPreGeneratedTokensCredentials");
         throw new BigQueryJdbcRuntimeException(ex);
       }
     } else {
@@ -571,7 +579,7 @@ final class BigQueryJdbcOAuthUtility {
 
       return credentials;
     } catch (IOException exception) {
-      // TODO throw exception
+      LOG.severe(exception, "Application default credentials not found.");
       throw new BigQueryJdbcRuntimeException("Application default credentials not found.");
     }
   }
@@ -621,10 +629,13 @@ final class BigQueryJdbcOAuthUtility {
         return ExternalAccountCredentials.fromStream(
             new ByteArrayInputStream(jsonObject.toString().getBytes()));
       } else {
-        throw new IllegalArgumentException(
-            "Insufficient info provided for external authentication");
+        IllegalArgumentException ex =
+            new IllegalArgumentException("Insufficient info provided for external authentication");
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
     } catch (IOException e) {
+      LOG.severe(e, "IOException during getExternalAccountAuthCredentials");
       throw new BigQueryJdbcRuntimeException(e);
     }
   }
@@ -678,10 +689,12 @@ final class BigQueryJdbcOAuthUtility {
     try {
       impersonationLifetimeInt = Integer.parseInt(impersonationLifetime);
     } catch (NumberFormatException e) {
-      LOG.severe("Invalid value for ServiceAccountImpersonationTokenLifetime.");
-      throw new IllegalArgumentException(
-          "Invalid value for ServiceAccountImpersonationTokenLifetime: must be a positive integer.",
-          e);
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              "Invalid value for ServiceAccountImpersonationTokenLifetime: must be a positive integer.",
+              e);
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
 
     return ImpersonatedCredentials.create(
@@ -708,7 +721,9 @@ final class BigQueryJdbcOAuthUtility {
       Reader reader = new StringReader(privateKeyPkcs8);
       PemReader.Section section = readFirstSectionAndClose(reader, "PRIVATE KEY");
       if (section == null) {
-        throw new IOException("Invalid PKCS#8 data.");
+        IOException ex = new IOException("Invalid PKCS#8 data.");
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
       byte[] bytes = section.getBase64DecodedBytes();
       PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(bytes);
@@ -739,7 +754,9 @@ final class BigQueryJdbcOAuthUtility {
           return authType;
         }
       }
-      throw new IllegalStateException(OAUTH_TYPE_ERROR_MESSAGE + ": " + value);
+      IllegalStateException ex = new IllegalStateException(OAUTH_TYPE_ERROR_MESSAGE + ": " + value);
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
   }
 }

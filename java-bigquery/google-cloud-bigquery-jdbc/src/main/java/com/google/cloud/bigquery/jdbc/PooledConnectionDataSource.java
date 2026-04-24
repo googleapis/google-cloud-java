@@ -24,6 +24,7 @@ import javax.sql.ConnectionPoolDataSource;
 import javax.sql.PooledConnection;
 
 public class PooledConnectionDataSource extends DataSource implements ConnectionPoolDataSource {
+  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
   private PooledConnectionListener connectionPoolManager = null;
   Connection bqConnection = null;
 
@@ -37,8 +38,11 @@ public class PooledConnectionDataSource extends DataSource implements Connection
       bqConnection = super.getConnection();
     }
     if (bqConnection == null) {
-      throw new BigQueryJdbcRuntimeException(
-          "Cannot get pooled connection: unable to get underlying physical connection");
+      BigQueryJdbcRuntimeException ex =
+          new BigQueryJdbcRuntimeException(
+              "Cannot get pooled connection: unable to get underlying physical connection");
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
     Long connectionPoolSize = ((BigQueryConnection) bqConnection).getConnectionPoolSize();
     if (connectionPoolManager == null) {
@@ -62,6 +66,9 @@ public class PooledConnectionDataSource extends DataSource implements Connection
 
   @Override
   public PooledConnection getPooledConnection(String arg0, String arg1) throws SQLException {
-    throw new UnsupportedOperationException("This operation is not supported by the driver");
+    UnsupportedOperationException ex =
+        new UnsupportedOperationException("This operation is not supported by the driver");
+    LOG.severe(ex, ex.getMessage());
+    throw ex;
   }
 }

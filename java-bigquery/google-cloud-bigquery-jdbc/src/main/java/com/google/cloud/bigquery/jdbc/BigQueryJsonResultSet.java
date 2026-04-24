@@ -137,8 +137,11 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       // We are working with the nested record, the cursor would have been
       // populated.
       if (this.cursor == null || this.cursor.getArrayFieldValueList() == null) {
-        throw new IllegalStateException(
-            "Cursor/ArrayFieldValueList can not be null working with the nested record");
+        IllegalStateException ex =
+            new IllegalStateException(
+                "Cursor/ArrayFieldValueList can not be null working with the nested record");
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
       // Check if there's a next record in the array which can be read
       if (this.nestedRowIndex < (this.toIndexExclusive - 1)) {
@@ -160,7 +163,10 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         // Advance the cursor,Potentially blocking operation
         this.cursor = this.buffer.take();
         if (this.cursor.getException() != null) {
-          throw new BigQueryJdbcRuntimeException(this.cursor.getException());
+          BigQueryJdbcRuntimeException ex =
+              new BigQueryJdbcRuntimeException(this.cursor.getException());
+          LOG.severe(ex, ex.getMessage());
+          throw ex;
         }
         this.rowCnt++;
         // Check for end of stream
@@ -173,6 +179,9 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         return true;
 
       } catch (InterruptedException ex) {
+        LOG.severe(
+            ex,
+            "Error occurred while advancing the cursor. This could happen when connection is closed while we call the next method");
         throw new BigQueryJdbcRuntimeException(
             "Error occurred while advancing the cursor. This could happen when connection is closed while we call the next method",
             ex);
@@ -236,12 +245,17 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       // BigQuery doesn't support multidimensional arrays, so just the default row
       // num column (1) and the actual column (2) is supposed to be read
       if (!validIndexForNestedResultSet) {
-        throw new IllegalArgumentException(
-            "Column index is required to be 1 or 2 for the nested arrays");
+        IllegalArgumentException ex =
+            new IllegalArgumentException(
+                "Column index is required to be 1 or 2 for the nested arrays");
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
       if (this.cursor.getArrayFieldValueList() == null
           || this.cursor.getArrayFieldValueList().get(this.nestedRowIndex) == null) {
-        throw new IllegalStateException("ArrayFieldValueList cannot be null");
+        IllegalStateException ex = new IllegalStateException("ArrayFieldValueList cannot be null");
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
 
       // For Arrays the first column is Index, ref:

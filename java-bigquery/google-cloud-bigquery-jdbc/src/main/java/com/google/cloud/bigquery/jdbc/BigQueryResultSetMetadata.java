@@ -203,11 +203,17 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   // Unsupported methods:
   @Override
   public <T> T unwrap(Class<T> iface) throws SQLException {
-    throw new BigQueryJdbcSqlFeatureNotSupportedException("unwrap is not implemented");
+    BigQueryJdbcSqlFeatureNotSupportedException ex =
+        new BigQueryJdbcSqlFeatureNotSupportedException("unwrap is not implemented");
+    LOG.severe(ex, ex.getMessage());
+    throw ex;
   }
 
   @Override
   public boolean isWrapperFor(Class<?> iface) throws SQLException {
-    throw new BigQueryJdbcSqlFeatureNotSupportedException("isWrapperFor is not implemented");
+    BigQueryJdbcSqlFeatureNotSupportedException ex =
+        new BigQueryJdbcSqlFeatureNotSupportedException("isWrapperFor is not implemented");
+    LOG.severe(ex, ex.getMessage());
+    throw ex;
   }
 }

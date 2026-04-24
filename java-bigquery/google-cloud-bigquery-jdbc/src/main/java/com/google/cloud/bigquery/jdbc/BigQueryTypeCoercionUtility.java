@@ -39,6 +39,8 @@ import org.apache.arrow.vector.util.Text;
 
 @InternalApi
 class BigQueryTypeCoercionUtility {
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryTypeCoercionUtility.class.getName());
 
   static BigQueryTypeCoercer INSTANCE;
 
@@ -256,6 +258,7 @@ class BigQueryTypeCoercionUtility {
         long millis = TimeUnit.NANOSECONDS.toMillis(localTime.toNanoOfDay());
         return new Time(millis);
       } catch (java.time.format.DateTimeParseException e) {
+        LOG.severe(e, "Cannot parse the value to java.sql.Time");
         throw new IllegalArgumentException(
             "Cannot parse the value " + strTime + " to java.sql.Time", e);
       }

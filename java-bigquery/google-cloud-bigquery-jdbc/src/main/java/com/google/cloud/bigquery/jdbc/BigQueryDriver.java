@@ -133,8 +133,9 @@ public class BigQueryDriver implements Driver {
         try {
           BigQueryJdbcUrlUtility.parseUrl(connectionUri);
         } catch (BigQueryJdbcRuntimeException e) {
-          LOG.severe(e, "Failed to parse connection URL");
-          throw new BigQueryJdbcException(e.getMessage(), e);
+          BigQueryJdbcException ex = new BigQueryJdbcException(e.getMessage(), e);
+          LOG.severe(ex, "Failed to parse connection URL");
+          throw ex;
         }
 
         DataSource ds = DataSource.fromUrl(connectionUri);

@@ -108,6 +108,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       try {
         this.arrowDeserializer = new ArrowDeserializer(arrowSchema);
       } catch (IOException ex) {
+        LOG.severe(ex, "IOException during ArrowDeserializer creation");
         throw new BigQueryJdbcException(ex);
       }
     }
@@ -215,8 +216,11 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     checkClosed();
     if (this.isNested) {
       if (this.currentNestedBatch == null || this.currentNestedBatch.getNestedRecords() == null) {
-        throw new IllegalStateException(
-            "currentNestedBatch/JsonStringArrayList can not be null working with the nested record");
+        IllegalStateException ex =
+            new IllegalStateException(
+                "currentNestedBatch/JsonStringArrayList can not be null working with the nested record");
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
       if (this.nestedRowIndex < (this.toIndexExclusive - 1)) {
         /* Check if there's a next record in the array which can be read */
@@ -238,7 +242,10 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           // Advance the cursor. Potentially blocking operation.
           BigQueryArrowBatchWrapper batchWrapper = this.buffer.take();
           if (batchWrapper.getException() != null) {
-            throw new BigQueryJdbcRuntimeException(batchWrapper.getException());
+            BigQueryJdbcRuntimeException ex =
+                new BigQueryJdbcRuntimeException(batchWrapper.getException());
+            LOG.severe(ex, ex.getMessage());
+            throw ex;
           }
           if (batchWrapper.isLast()) {
             /* Marks the end of the records */
@@ -267,6 +274,9 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           return true;
         }
       } catch (InterruptedException | SQLException ex) {
+        LOG.severe(
+            ex,
+            "Error occurred while advancing the cursor. This could happen when connection is closed while the next method is being called.");
         throw new BigQueryJdbcException(
             "Error occurred while advancing the cursor. This could happen when connection is closed while the next method is being called.",
             ex);
@@ -283,12 +293,16 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       // BigQuery doesn't support multidimensional arrays, so
       // just the default row num column (1) and the actual column (2) is supposed to be read
       if (!(columnIndex == 1 || columnIndex == 2)) {
-
-        throw new IllegalArgumentException(
-            "Column index is required to be 1 or 2 for nested arrays");
+        IllegalArgumentException ex =
+            new IllegalArgumentException("Column index is required to be 1 or 2 for nested arrays");
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
       if (this.currentNestedBatch.getNestedRecords() == null) {
-        throw new IllegalStateException("JsonStringArrayList cannot be null for nested records.");
+        IllegalStateException ex =
+            new IllegalStateException("JsonStringArrayList cannot be null for nested records.");
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
       // For Arrays the first column is Index, ref:
       // https://docs.oracle.com/javase/7/docs/api/java/sql/Array.html#getResultSet()

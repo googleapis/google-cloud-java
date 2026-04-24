@@ -98,7 +98,9 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       jobConfiguration = this.parameterHandler.configureParameters(jobConfiguration);
       runQuery(this.currentQuery, jobConfiguration.build());
     } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException(ex);
+      BigQueryJdbcRuntimeException e = new BigQueryJdbcRuntimeException(ex);
+      LOG.severe(e, "Interrupted during executeQuery");
+      throw e;
     }
     return getCurrentResultSet();
   }
@@ -113,7 +115,9 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       jobConfiguration = this.parameterHandler.configureParameters(jobConfiguration);
       runQuery(this.currentQuery, jobConfiguration.build());
     } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException(ex);
+      BigQueryJdbcRuntimeException e = new BigQueryJdbcRuntimeException(ex);
+      LOG.severe(e, "Interrupted during executeLargeUpdate");
+      throw e;
     }
     return this.currentUpdateCount;
   }
@@ -134,7 +138,9 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       jobConfiguration = this.parameterHandler.configureParameters(jobConfiguration);
       runQuery(this.currentQuery, jobConfiguration.build());
     } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException(ex);
+      BigQueryJdbcRuntimeException e = new BigQueryJdbcRuntimeException(ex);
+      LOG.severe(e, "Interrupted during execute");
+      throw e;
     }
     return getCurrentResultSet() != null;
   }
@@ -291,8 +297,9 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         return insertArray;
 
       } catch (DescriptorValidationException | IOException | InterruptedException e) {
-        LOG.severe(e, "Failed to execute batch with Write API");
-        throw new BigQueryJdbcRuntimeException(e);
+        BigQueryJdbcRuntimeException ex = new BigQueryJdbcRuntimeException(e);
+        LOG.severe(ex, "Failed to execute batch with Write API");
+        throw ex;
       }
 
     } else {
@@ -320,11 +327,13 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         }
         return result;
       } catch (InterruptedException ex) {
-        LOG.severe(ex, "Interrupted during individual INSERT batch");
-        throw new BigQueryJdbcRuntimeException(ex);
+        BigQueryJdbcRuntimeException e = new BigQueryJdbcRuntimeException(ex);
+        LOG.severe(e, "Interrupted during individual INSERT batch");
+        throw e;
       } catch (SQLException e) {
-        LOG.severe(e, "SQL error during individual INSERT batch");
-        throw new BigQueryJdbcException(e);
+        BigQueryJdbcException ex = new BigQueryJdbcException(e);
+        LOG.severe(ex, "SQL error during individual INSERT batch");
+        throw ex;
       }
     }
   }
@@ -377,7 +386,9 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         }
       }
     } catch (BigQueryJdbcException e) {
-      throw new RuntimeException(e);
+      RuntimeException ex = new RuntimeException(e);
+      LOG.severe(ex, "BigQueryJdbcException during bulkInsertWithWriteAPI");
+      throw ex;
     }
 
     long rowCount = bulkInsertWriter.cleanup(bigQueryWriteClient);

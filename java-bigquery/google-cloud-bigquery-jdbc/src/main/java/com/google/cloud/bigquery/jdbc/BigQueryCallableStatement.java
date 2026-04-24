@@ -940,7 +940,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
           BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
           -1);
     } catch (Exception e) {
-      throw new SQLException(e);
+      SQLException ex = new SQLException(e);
+      LOG.severe(ex, "Failed to registerOutParameter");
+      throw ex;
     }
   }
 
@@ -957,7 +959,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
           BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
           -1);
     } catch (Exception e) {
-      throw new SQLException(e);
+      SQLException ex = new SQLException(e);
+      LOG.severe(ex, "Failed to registerOutParameter");
+      throw ex;
     }
   }
 
@@ -979,7 +983,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
           BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
           scale);
     } catch (Exception e) {
-      throw new SQLException(e);
+      SQLException ex = new SQLException(e);
+      LOG.severe(ex, "Failed to registerOutParameter");
+      throw ex;
     }
   }
 
@@ -1012,7 +1018,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
           BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
           scale);
     } catch (Exception e) {
-      throw new SQLException(e);
+      SQLException ex = new SQLException(e);
+      LOG.severe(ex, "Failed to registerOutParameter");
+      throw ex;
     }
   }
 
@@ -1236,12 +1244,18 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     if (BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.containsKey(sqlType)) {
       int javaSqlType = BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(sqlType);
       if (javaSqlType != arg2) {
-        throw new BigQueryJdbcSqlFeatureNotSupportedException(
-            String.format("Unsupported  sql type:%s ", arg2));
+        BigQueryJdbcSqlFeatureNotSupportedException ex =
+            new BigQueryJdbcSqlFeatureNotSupportedException(
+                String.format("Unsupported  sql type:%s ", arg2));
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
     } else {
-      throw new BigQueryJdbcSqlFeatureNotSupportedException(
-          String.format("parameter sql type not supported: %s", sqlType));
+      BigQueryJdbcSqlFeatureNotSupportedException ex =
+          new BigQueryJdbcSqlFeatureNotSupportedException(
+              String.format("parameter sql type not supported: %s", sqlType));
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
   }
 
@@ -1253,12 +1267,18 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     if (BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.containsKey(sqlType)) {
       int javaSqlType = BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(sqlType);
       if (javaSqlType != arg2) {
-        throw new BigQueryJdbcSqlFeatureNotSupportedException(
-            String.format("Unsupported  sql type:%s ", arg2));
+        BigQueryJdbcSqlFeatureNotSupportedException ex =
+            new BigQueryJdbcSqlFeatureNotSupportedException(
+                String.format("Unsupported  sql type:%s ", arg2));
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
     } else {
-      throw new BigQueryJdbcSqlFeatureNotSupportedException(
-          String.format("parameter sql type not supported: %s", sqlType));
+      BigQueryJdbcSqlFeatureNotSupportedException ex =
+          new BigQueryJdbcSqlFeatureNotSupportedException(
+              String.format("parameter sql type not supported: %s", sqlType));
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
   }
 

@@ -228,7 +228,9 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finest("++enter++");
     checkClosed();
     if (columnLabel == null) {
-      throw new SQLException("Column label cannot be null");
+      SQLException ex = new SQLException("Column label cannot be null");
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
     // use schema to get the column index, add 1 for SQL index
     return this.schemaFieldList.getIndex(columnLabel) + 1;

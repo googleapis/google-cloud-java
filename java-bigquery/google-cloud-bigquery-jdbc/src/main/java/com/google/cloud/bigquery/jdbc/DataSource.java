@@ -973,11 +973,14 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setJobCreationMode(Integer jobCreationMode) {
     if (jobCreationMode != null && !VALID_JOB_CREATION_MODES.contains(jobCreationMode)) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Invalid value for %s. Use 1 for JOB_CREATION_REQUIRED and 2 for"
-                  + " JOB_CREATION_OPTIONAL.",
-              BigQueryJdbcUrlUtility.JOB_CREATION_MODE_PROPERTY_NAME));
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              String.format(
+                  "Invalid value for %s. Use 1 for JOB_CREATION_REQUIRED and 2 for"
+                      + " JOB_CREATION_OPTIONAL.",
+                  BigQueryJdbcUrlUtility.JOB_CREATION_MODE_PROPERTY_NAME));
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
     this.jobCreationMode = jobCreationMode;
   }

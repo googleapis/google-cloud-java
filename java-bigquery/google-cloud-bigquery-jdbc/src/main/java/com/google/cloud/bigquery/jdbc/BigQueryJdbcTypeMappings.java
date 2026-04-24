@@ -33,6 +33,8 @@ import java.util.Map;
 
 @InternalApi
 class BigQueryJdbcTypeMappings {
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryJdbcTypeMappings.class.getName());
 
   static final Map<StandardSQLTypeName, Class<?>> standardSQLToJavaTypeMapping =
       ImmutableMap.ofEntries(
@@ -135,20 +137,29 @@ class BigQueryJdbcTypeMappings {
     } else if (byte[].class.isAssignableFrom(type)) {
       return StandardSQLTypeName.BYTES;
     }
-    throw new BigQueryJdbcSqlFeatureNotSupportedException(
-        "Unsupported object type for QueryParameter: " + type);
+    BigQueryJdbcSqlFeatureNotSupportedException ex =
+        new BigQueryJdbcSqlFeatureNotSupportedException(
+            "Unsupported object type for QueryParameter: " + type);
+    LOG.severe(ex, ex.getMessage());
+    throw ex;
   }
 
   static Class<?> getJavaType(int javaSQLType) throws BigQueryJdbcSqlFeatureNotSupportedException {
     if (!javaSQLToJavaTypeMapping.containsKey(javaSQLType)) {
-      throw new BigQueryJdbcSqlFeatureNotSupportedException(
-          "Unsupported Java type for SQL type: " + javaSQLType);
+      BigQueryJdbcSqlFeatureNotSupportedException ex =
+          new BigQueryJdbcSqlFeatureNotSupportedException(
+              "Unsupported Java type for SQL type: " + javaSQLType);
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
     Class<?> javaType = javaSQLToJavaTypeMapping.get(javaSQLType);
     if (javaType == null) {
       // This should never happen unless the map was initialized with null values.
-      throw new BigQueryJdbcSqlFeatureNotSupportedException(
-          "Unsupported Java type for SQL type: " + javaSQLType);
+      BigQueryJdbcSqlFeatureNotSupportedException ex =
+          new BigQueryJdbcSqlFeatureNotSupportedException(
+              "Unsupported Java type for SQL type: " + javaSQLType);
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
     return javaType;
   }

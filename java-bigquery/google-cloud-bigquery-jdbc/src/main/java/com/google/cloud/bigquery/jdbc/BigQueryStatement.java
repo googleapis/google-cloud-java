@@ -241,13 +241,16 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           setDestinationDatasetAndTableInJobConfig(getJobConfig(sql).build());
       runQuery(sql, jobConfiguration);
     } catch (InterruptedException ex) {
-      LOG.severe(ex, "Interrupted during executeQuery");
-      throw new BigQueryJdbcException(ex);
+      BigQueryJdbcException e = new BigQueryJdbcException("Interrupted during executeQuery", ex);
+      LOG.severe(e, e.getMessage());
+      throw e;
     }
 
     if (!isSingularResultSet()) {
-      throw new BigQueryJdbcException(
-          "Query returned more than one or didn't return any ResultSet.");
+      BigQueryJdbcException ex =
+          new BigQueryJdbcException("Query returned more than one or didn't return any ResultSet.");
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
     // This contains all the other assertions spec required on this method
     return getCurrentResultSet();
@@ -261,12 +264,17 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
       runQuery(sql, jobConfiguration.build());
     } catch (InterruptedException ex) {
-      LOG.severe(ex, "Interrupted during executeLargeUpdate");
-      throw new BigQueryJdbcRuntimeException(ex);
+      BigQueryJdbcRuntimeException e =
+          new BigQueryJdbcRuntimeException("Interrupted during executeLargeUpdate", ex);
+      LOG.severe(e, e.getMessage());
+      throw e;
     }
     if (this.currentUpdateCount == -1) {
-      throw new BigQueryJdbcException(
-          "Update query expected to return affected row count. Double check query type.");
+      BigQueryJdbcException ex =
+          new BigQueryJdbcException(
+              "Update query expected to return affected row count. Double check query type.");
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
     return this.currentUpdateCount;
   }
@@ -299,7 +307,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       }
       runQuery(sql, jobConfiguration);
     } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException(ex);
+      BigQueryJdbcRuntimeException e =
+          new BigQueryJdbcRuntimeException("Interrupted during execute", ex);
+      LOG.severe(e, e.getMessage());
+      throw e;
     }
     return getCurrentResultSet() != null;
   }
@@ -313,9 +324,16 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       job = bigQuery.create(JobInfo.of(dryRunJobConfiguration));
     } catch (BigQueryException ex) {
       if (ex.getMessage().contains("Syntax error")) {
-        throw new BigQueryJdbcSqlSyntaxErrorException(ex);
+        BigQueryJdbcSqlSyntaxErrorException e =
+            new BigQueryJdbcSqlSyntaxErrorException(
+                "BigQueryException during getStatementType", ex);
+        LOG.severe(e, e.getMessage());
+        throw e;
       }
-      throw new BigQueryJdbcException(ex);
+      BigQueryJdbcException e =
+          new BigQueryJdbcException("BigQueryException during getStatementType", ex);
+      LOG.severe(e, e.getMessage());
+      throw e;
     }
     QueryStatistics statistics = job.getStatistics();
     return statistics.getStatementType();
@@ -346,9 +364,16 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       return job.getStatistics();
     } catch (BigQueryException ex) {
       if (ex.getMessage().contains("Syntax error")) {
-        throw new BigQueryJdbcSqlSyntaxErrorException(ex);
+        BigQueryJdbcSqlSyntaxErrorException e =
+            new BigQueryJdbcSqlSyntaxErrorException(
+                "BigQueryException during getQueryStatistics", ex);
+        LOG.severe(e, e.getMessage());
+        throw e;
       }
-      throw new BigQueryJdbcException(ex);
+      BigQueryJdbcException e =
+          new BigQueryJdbcException("BigQueryException during getQueryStatistics", ex);
+      LOG.severe(e, e.getMessage());
+      throw e;
     }
   }
 
@@ -416,7 +441,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public void setQueryTimeout(int seconds) {
     if (seconds < 0) {
-      throw new IllegalArgumentException("Query Timeout should be >= 0.");
+      IllegalArgumentException ex = new IllegalArgumentException("Query Timeout should be >= 0.");
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
     this.queryTimeout = seconds;
   }
@@ -442,7 +469,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
                   || e.getMessage().contains("Error: 3848323"))) {
             LOG.warning("Attempted to cancel a job that was already done: " + jobId);
           } else {
-            throw new BigQueryJdbcException(e);
+            BigQueryJdbcException ex = new BigQueryJdbcException("Failed to cancel job", e);
+            LOG.severe(ex, ex.getMessage());
+            throw ex;
           }
         }
       }
@@ -550,7 +579,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       if (result instanceof Job) {
         job = (Job) result;
       } else {
-        throw new BigQueryJdbcException("Unexpected result type from queryWithTimeout");
+        BigQueryJdbcException ex =
+            new BigQueryJdbcException("Unexpected result type from queryWithTimeout");
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
     } else {
       // Update jobId with custom JobId if jobless query is disabled.
@@ -560,12 +592,16 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
 
     if (job == null) {
-      throw new BigQueryJdbcException("Failed to create BQ Job.");
+      BigQueryJdbcException ex = new BigQueryJdbcException("Failed to create BQ Job.");
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
     synchronized (cancelLock) {
       if (isCanceled) {
         job.cancel();
-        throw new BigQueryJdbcException("Query was cancelled.");
+        BigQueryJdbcException ex = new BigQueryJdbcException("Query was cancelled.");
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
       jobId = job.getJobId();
       jobIds.add(jobId);
@@ -604,12 +640,20 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       SqlType queryType = getQueryType(jobConfiguration, statementType);
       handleQueryResult(query, executeResult.tableResult, queryType);
     } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException(ex);
+      BigQueryJdbcRuntimeException e =
+          new BigQueryJdbcRuntimeException("Interrupted during runQuery", ex);
+      LOG.severe(e, e.getMessage());
+      throw e;
     } catch (BigQueryException ex) {
       if (ex.getMessage().contains("Syntax error")) {
-        throw new BigQueryJdbcSqlSyntaxErrorException(ex);
+        BigQueryJdbcSqlSyntaxErrorException e =
+            new BigQueryJdbcSqlSyntaxErrorException("BigQueryException during runQuery", ex);
+        LOG.severe(e, e.getMessage());
+        throw e;
       }
-      throw new BigQueryJdbcException(ex);
+      BigQueryJdbcException e = new BigQueryJdbcException("BigQueryException during runQuery", ex);
+      LOG.severe(e, e.getMessage());
+      throw e;
     }
   }
 
