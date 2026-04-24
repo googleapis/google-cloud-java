@@ -86,14 +86,24 @@ final class RegionalAccessBoundaryManager {
   // on concurrent refresh tasks, while threadCount provides unique names
   // for easier debugging.
   private static final AtomicInteger threadCount = new AtomicInteger(0);
-  private static final ExecutorService EXECUTOR =
-      Executors.newFixedThreadPool(
-          5,
-          r -> {
-            Thread t = new Thread(r, "RAB-refresh-" + threadCount.getAndIncrement());
-            t.setDaemon(true);
-            return t;
-          });
+  private static final ExecutorService EXECUTOR;
+
+  static {
+    java.util.concurrent.ThreadPoolExecutor executor =
+        new java.util.concurrent.ThreadPoolExecutor(
+            5, // corePoolSize: threads to keep alive
+            5, // maximumPoolSize: max threads allowed
+            1, // keepAliveTime: time to wait before terminating idle threads
+            java.util.concurrent.TimeUnit.HOURS, // unit for keepAliveTime
+            new java.util.concurrent.LinkedBlockingQueue<>(), // work queue
+            r -> {
+              Thread t = new Thread(r, "RAB-refresh-" + threadCount.getAndIncrement());
+              t.setDaemon(true);
+              return t;
+            });
+    executor.allowCoreThreadTimeOut(true);
+    EXECUTOR = executor;
+  }
 
   private final transient Clock clock;
   private final int maxRetryElapsedTimeMillis;
