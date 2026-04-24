@@ -76,26 +76,12 @@ public final class StsRequestHandler {
   @Nullable private final HttpHeaders headers;
   @Nullable private final String internalOptions;
 
-  /**
-   * Internal constructor.
-   *
-   * @param tokenExchangeEndpoint the token exchange endpoint
-   * @param request the token exchange request
-   * @param headers optional additional headers to pass along the request
-   * @param internalOptions optional GCP specific STS options
-   * @return an StsTokenExchangeResponse instance if the request was successful
-   */
-  private StsRequestHandler(
-      String tokenExchangeEndpoint,
-      StsTokenExchangeRequest request,
-      HttpRequestFactory httpRequestFactory,
-      @Nullable HttpHeaders headers,
-      @Nullable String internalOptions) {
-    this.tokenExchangeEndpoint = tokenExchangeEndpoint;
-    this.request = request;
-    this.httpRequestFactory = httpRequestFactory;
-    this.headers = headers;
-    this.internalOptions = internalOptions;
+  private StsRequestHandler(Builder builder) {
+    this.tokenExchangeEndpoint = builder.tokenExchangeEndpoint;
+    this.request = builder.request;
+    this.httpRequestFactory = builder.httpRequestFactory;
+    this.headers = builder.headers;
+    this.internalOptions = builder.internalOptions;
   }
 
   /**
@@ -248,8 +234,7 @@ public final class StsRequestHandler {
     }
 
     public StsRequestHandler build() {
-      return new StsRequestHandler(
-          tokenExchangeEndpoint, request, httpRequestFactory, headers, internalOptions);
+      return new StsRequestHandler(this);
     }
   }
 }
