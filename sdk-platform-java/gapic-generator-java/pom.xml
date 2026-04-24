@@ -497,7 +497,6 @@
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
-    <!-- Used undeclared dependencies -->
     <dependency>
       <groupId>com.google.code.findbugs</groupId>
       <artifactId>jsr305</artifactId>

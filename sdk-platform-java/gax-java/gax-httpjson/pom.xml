@@ -93,7 +93,6 @@
       <scope>test</scope>
       <classifier>testlib</classifier>
     </dependency>
-    <!-- Used undeclared dependencies -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
