@@ -19,6 +19,7 @@ package com.google.cloud.compute.v1.integration;
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 
+import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;
@@ -28,6 +29,7 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.tracing.ApiTracerFactory;
 import com.google.api.gax.tracing.BaseApiTracerFactory;
 import com.google.api.gax.tracing.CompositeTracerFactory;
+import com.google.api.gax.tracing.LoggingTracer;
 import com.google.api.gax.tracing.ObservabilityAttributes;
 import com.google.api.gax.tracing.OpenTelemetryMetricsFactory;
 import com.google.api.gax.tracing.OpenTelemetryTracingFactory;
@@ -203,10 +205,9 @@ public class ITComputeGoldenSignals extends BaseTest {
     // Initialize and attach TestAppender
     testAppender = new TestAppender();
     testAppender.start();
-    Logger loggingTracerLogger =
-        (Logger) LoggerFactory.getLogger("com.google.api.gax.tracing.LoggingTracer");
+    Logger loggingTracerLogger = (Logger) LoggerFactory.getLogger(LoggingTracer.class);
     loggingTracerLogger.addAppender(testAppender);
-    loggingTracerLogger.setLevel(ch.qos.logback.classic.Level.DEBUG);
+    loggingTracerLogger.setLevel(Level.DEBUG);
   }
 
   @After
@@ -221,7 +222,7 @@ public class ITComputeGoldenSignals extends BaseTest {
       openTelemetrySdk.close();
     }
     if (testAppender != null) {
-      ((Logger) LoggerFactory.getLogger("ROOT")).detachAppender(testAppender);
+      ((Logger) LoggerFactory.getLogger(LoggingTracer.class)).detachAppender(testAppender);
     }
   }
 
