@@ -31,27 +31,21 @@ import java.util.logging.LogRecord;
  * log files using the connection ID retrieved from BigQueryJdbcMdc.
  */
 class PerConnectionFileHandler extends Handler {
-  private final String baseLogPath;
+  private final Path baseLogPath;
   private final Level level;
   private final ConcurrentHashMap<String, FileHandler> handlers = new ConcurrentHashMap<>();
   private FileHandler defaultHandler;
 
   PerConnectionFileHandler(String baseLogPath, Level level) {
-    this.baseLogPath = baseLogPath != null ? baseLogPath : "";
+    this.baseLogPath = Paths.get(baseLogPath != null ? baseLogPath : "").toAbsolutePath();
     this.level = level;
 
     try {
-      if (!baseLogPath.isEmpty()) {
-        Path dir = Paths.get(baseLogPath);
-        if (!Files.exists(dir)) {
-          Files.createDirectories(dir);
-        }
+      if (!Files.exists(this.baseLogPath)) {
+        Files.createDirectories(this.baseLogPath);
       }
 
-      String defaultPath = getLogFilePath("Jdbc-default");
-      this.defaultHandler = new FileHandler(defaultPath, 0, 1, true);
-      this.defaultHandler.setLevel(level);
-      this.defaultHandler.setFormatter(BigQueryJdbcRootLogger.getFormatter());
+      this.defaultHandler = createFileHandler("Jdbc-default");
     } catch (IOException e) {
       reportError(
           "Failed to initialize default log file", e, java.util.logging.ErrorManager.OPEN_FAILURE);
@@ -59,11 +53,23 @@ class PerConnectionFileHandler extends Handler {
   }
 
   private String getLogFilePath(String id) {
-    String path = baseLogPath;
-    if (!path.isEmpty() && !path.endsWith("/")) {
-      path = path + "/";
+    return baseLogPath.resolve("BigQuery-" + id + ".log").toString();
+  }
+
+  private FileHandler createFileHandler(String id) {
+    try {
+      String filePath = getLogFilePath(id);
+      FileHandler fh = new FileHandler(filePath, 0, 1, true);
+      fh.setLevel(level);
+      fh.setFormatter(BigQueryJdbcRootLogger.getFormatter());
+      return fh;
+    } catch (IOException e) {
+      reportError(
+          "Failed to create log file for connection " + id,
+          e,
+          java.util.logging.ErrorManager.OPEN_FAILURE);
+      return null;
     }
-    return path + "BigQuery-" + id + ".log";
   }
 
   @Override
@@ -76,24 +82,10 @@ class PerConnectionFileHandler extends Handler {
     FileHandler handler = defaultHandler;
 
     if (connectionId != null && !connectionId.isEmpty()) {
-      handler =
-          handlers.computeIfAbsent(
-              connectionId,
-              id -> {
-                try {
-                  String filePath = getLogFilePath(id);
-                  FileHandler fh = new FileHandler(filePath, 0, 1, true);
-                  fh.setLevel(level);
-                  fh.setFormatter(BigQueryJdbcRootLogger.getFormatter());
-                  return fh;
-                } catch (IOException e) {
-                  reportError(
-                      "Failed to create log file for connection " + id,
-                      e,
-                      java.util.logging.ErrorManager.OPEN_FAILURE);
-                  return defaultHandler;
-                }
-              });
+      handler = handlers.computeIfAbsent(connectionId, this::createFileHandler);
+      if (handler == null) {
+        handler = defaultHandler;
+      }
     }
 
     if (handler != null) {
