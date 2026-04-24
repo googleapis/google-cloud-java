@@ -133,8 +133,7 @@
                         <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
                     </ignoredUnusedDeclaredDependencies>
                 </configuration>
-        </plugin>
-
+            </plugin>
         </plugins>
     </build>
 </project>
