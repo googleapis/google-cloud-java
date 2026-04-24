@@ -14,11 +14,11 @@ This guide provides general best practices for configuring and tuning gRPC chann
 
 ## Background
 
-When handling heavy traffic, a single gRPC connection often becomes a performance bottleneck. To overcome this, the Google Cloud Java client libraries use **Channel Pooling** via the Gax-Java (Google API Extensions for Java) library.
+For applications with high throughput or concurrency demands, a single gRPC connection can potentially become a performance bottleneck due to limits on concurrent streams. Users may experience a spike in latency as requests queue on the gRPC connection when the limit is reached. Google middleware enforces a limit of 100 streams per connection. To overcome this, the Google Cloud Java client libraries use **Channel Pooling** via the Gax-Java (Google API Extensions for Java) library.
 
 GAX is the internal transport layer shared by all Google Cloud Java client libraries. It handles connection management, retries, and configuration, including channel pools.
 
-Channel pooling spreads the outbound RPC load across multiple identical gRPC connections, ensuring higher throughput and better resilience.
+Channel pooling spreads the outbound RPC load across multiple identical gRPC connections, which can help achieve higher throughput and better resilience for demanding workloads.
 
 ---
 
@@ -97,7 +97,7 @@ YourServiceClient client = YourServiceClient.create(settings);
 
 ## Sizing Your Channel Pool
 
-Having **too few** connections causes in-flight requests to queue on the client side, which shows up as high latency. Having **too many** causes idle connections to be dropped by GFE, inducing latency spikes as connections are re-established when traffic returns.
+If a pool has **too few** connections for its workload, in-flight requests might queue on the client side, which can show up as high latency. Conversely, having **too many** connections may lead to idle connections being dropped by GFE, potentially inducing tail latency spikes as connections need to be re-established when traffic returns.
 
 ### Why Do We Account for Concurrency?
 
@@ -106,7 +106,7 @@ gRPC sends multiple requests over the same connection simultaneously using HTTP/
 - **Serial throughput of one stream**: If each request takes 20ms, a single stream can complete 1,000ms / 20ms = **50 requests per second**.
 - **Concurrent streams needed**: If your application must serve 5,000 requests per second, one stream handling 50 req/s is not enough. You need enough simultaneous streams to collectively handle 5,000 req/s. That requires 5,000 / 50 = **100 streams open at the same time**.
 
-If you size your pool without accounting for this concurrency demand, you risk **client-side queuing** (too few channels, too few streams) or **idle connection dropouts** (more channels than your traffic needs).
+If the pool is sized without considering these concurrency factors, it may lead to **client-side queuing** (if sized too small) or **idle connection dropouts** (if sized too large).
 
 ### Calculating Optimal Channel Pool Bounds
 
