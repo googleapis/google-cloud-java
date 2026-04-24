@@ -182,9 +182,11 @@ public class ITDatastoreBuiltInAndCustomMetrics {
    */
   @Test
   public void builtInMetricsExport_isDisabledByDefault() {
+    DatastoreOptions defaultOptions = DatastoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .build();
     assertThat(
-            datastore
-                .getOptions()
+            defaultOptions
                 .getOpenTelemetryOptions()
                 .isExportBuiltinMetricsToGoogleCloudMonitoring())
         .isFalse();

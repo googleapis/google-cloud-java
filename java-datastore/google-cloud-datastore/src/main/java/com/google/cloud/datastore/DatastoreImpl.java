@@ -254,7 +254,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     private void recordAttempt(String status) {
       Map<String, String> attributes =
           TelemetryUtils.buildMetricAttributes(
-              TelemetryConstants.METHOD_TRANSACTION_COMMIT, status);
+              TelemetryConstants.METHOD_TRANSACTION_COMMIT, status, datastore.getOptions().getDatabaseId());
       metricsRecorder.recordTransactionAttemptCount(1, attributes);
     }
   }
@@ -292,7 +292,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     } finally {
       long latencyMs = stopwatch.elapsed(TimeUnit.MILLISECONDS);
       Map<String, String> attributes =
-          TelemetryUtils.buildMetricAttributes(TelemetryConstants.METHOD_TRANSACTION_RUN, status);
+          TelemetryUtils.buildMetricAttributes(TelemetryConstants.METHOD_TRANSACTION_RUN, status, getOptions().getDatabaseId());
       metricsRecorder.recordTransactionLatency(latencyMs, attributes);
       span.end();
     }
@@ -801,7 +801,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
     DatastoreOptions options = getOptions();
     Callable<T> attemptCallable =
-        TelemetryUtils.attemptMetricsCallable(callable, metricsRecorder, methodName);
+        TelemetryUtils.attemptMetricsCallable(callable, metricsRecorder, methodName, options.getDatabaseId());
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       return RetryHelper.runWithRetries(
           attemptCallable, retrySettings, exceptionHandler, options.getClock());
@@ -811,7 +811,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       throw DatastoreException.translateAndThrow(e);
     } finally {
       TelemetryUtils.recordOperationMetrics(
-          metricsRecorder, operationStopwatch, methodName, operationStatus);
+          metricsRecorder, operationStopwatch, methodName, operationStatus, options.getDatabaseId());
       span.end();
     }
   }
