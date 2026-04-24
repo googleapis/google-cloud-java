@@ -7801,6 +7801,7 @@ class ITBigQueryTest {
         BigQueryOptions.newBuilder()
             .setEnableOpenTelemetryTracing(true)
             .setOpenTelemetryTracer(tracer)
+            .setLocation("US")
             .build();
     BigQuery bigquery = otelOptions.getService();
 
