@@ -471,6 +471,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> FindGroupChats</td>
+ *      <td><p> Returns all spaces with `spaceType == GROUP_CHAT`, whose human memberships contain exactly the calling user, and the users specified in `FindGroupChatsRequest.users`. Only members that have joined the conversation are supported. For an example, see [Find group chats](https://developers.google.com/workspace/chat/find-group-chats).
+ * <p>  If the calling user blocks, or is blocked by, some users, and no spaces with the entire specified set of users are found, this method returns spaces that don't include the blocked or blocking users.
+ * <p>  The specified set of users must contain only human (non-app) memberships. A request that contains non-human users doesn't return any spaces.
+ * <p>  Requires [user authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user) with one of the following [authorization scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+ * <p>    - `https://www.googleapis.com/auth/chat.memberships.readonly`   - `https://www.googleapis.com/auth/chat.memberships`</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> findGroupChats(FindGroupChatsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> findGroupChatsPagedCallable()
+ *           <li><p> findGroupChatsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> CreateMembership</td>
  *      <td><p> Creates a membership for the calling Chat app, a user, or a Google Group. Creating memberships for other Chat apps isn't supported. When creating a membership, if the specified member has their auto-accept policy turned off, then they're invited, and must accept the space invitation before joining. Otherwise, creating a membership adds the member directly to the specified space.
  * <p>  Supports the following types of [authentication](https://developers.google.com/workspace/chat/authenticate-authorize):
@@ -4498,6 +4517,166 @@ public class ChatServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<FindDirectMessageRequest, Space> findDirectMessageCallable() {
     return stub.findDirectMessageCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns all spaces with `spaceType == GROUP_CHAT`, whose human memberships contain exactly the
+   * calling user, and the users specified in `FindGroupChatsRequest.users`. Only members that have
+   * joined the conversation are supported. For an example, see [Find group
+   * chats](https://developers.google.com/workspace/chat/find-group-chats).
+   *
+   * <p>If the calling user blocks, or is blocked by, some users, and no spaces with the entire
+   * specified set of users are found, this method returns spaces that don't include the blocked or
+   * blocking users.
+   *
+   * <p>The specified set of users must contain only human (non-app) memberships. A request that
+   * contains non-human users doesn't return any spaces.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.memberships.readonly` -
+   * `https://www.googleapis.com/auth/chat.memberships`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   FindGroupChatsRequest request =
+   *       FindGroupChatsRequest.newBuilder()
+   *           .addAllUsers(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setSpaceView(SpaceView.forNumber(0))
+   *           .build();
+   *   for (Space element : chatServiceClient.findGroupChats(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FindGroupChatsPagedResponse findGroupChats(FindGroupChatsRequest request) {
+    return findGroupChatsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns all spaces with `spaceType == GROUP_CHAT`, whose human memberships contain exactly the
+   * calling user, and the users specified in `FindGroupChatsRequest.users`. Only members that have
+   * joined the conversation are supported. For an example, see [Find group
+   * chats](https://developers.google.com/workspace/chat/find-group-chats).
+   *
+   * <p>If the calling user blocks, or is blocked by, some users, and no spaces with the entire
+   * specified set of users are found, this method returns spaces that don't include the blocked or
+   * blocking users.
+   *
+   * <p>The specified set of users must contain only human (non-app) memberships. A request that
+   * contains non-human users doesn't return any spaces.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.memberships.readonly` -
+   * `https://www.googleapis.com/auth/chat.memberships`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   FindGroupChatsRequest request =
+   *       FindGroupChatsRequest.newBuilder()
+   *           .addAllUsers(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setSpaceView(SpaceView.forNumber(0))
+   *           .build();
+   *   ApiFuture<Space> future = chatServiceClient.findGroupChatsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Space element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FindGroupChatsRequest, FindGroupChatsPagedResponse>
+      findGroupChatsPagedCallable() {
+    return stub.findGroupChatsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns all spaces with `spaceType == GROUP_CHAT`, whose human memberships contain exactly the
+   * calling user, and the users specified in `FindGroupChatsRequest.users`. Only members that have
+   * joined the conversation are supported. For an example, see [Find group
+   * chats](https://developers.google.com/workspace/chat/find-group-chats).
+   *
+   * <p>If the calling user blocks, or is blocked by, some users, and no spaces with the entire
+   * specified set of users are found, this method returns spaces that don't include the blocked or
+   * blocking users.
+   *
+   * <p>The specified set of users must contain only human (non-app) memberships. A request that
+   * contains non-human users doesn't return any spaces.
+   *
+   * <p>Requires [user
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+   * with one of the following [authorization
+   * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+   *
+   * <p>- `https://www.googleapis.com/auth/chat.memberships.readonly` -
+   * `https://www.googleapis.com/auth/chat.memberships`
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ChatServiceClient chatServiceClient = ChatServiceClient.create()) {
+   *   FindGroupChatsRequest request =
+   *       FindGroupChatsRequest.newBuilder()
+   *           .addAllUsers(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setSpaceView(SpaceView.forNumber(0))
+   *           .build();
+   *   while (true) {
+   *     FindGroupChatsResponse response = chatServiceClient.findGroupChatsCallable().call(request);
+   *     for (Space element : response.getSpacesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FindGroupChatsRequest, FindGroupChatsResponse>
+      findGroupChatsCallable() {
+    return stub.findGroupChatsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -9371,6 +9550,82 @@ public class ChatServiceClient implements BackgroundResource {
     protected SearchSpacesFixedSizeCollection createCollection(
         List<SearchSpacesPage> pages, int collectionSize) {
       return new SearchSpacesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class FindGroupChatsPagedResponse
+      extends AbstractPagedListResponse<
+          FindGroupChatsRequest,
+          FindGroupChatsResponse,
+          Space,
+          FindGroupChatsPage,
+          FindGroupChatsFixedSizeCollection> {
+
+    public static ApiFuture<FindGroupChatsPagedResponse> createAsync(
+        PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
+        ApiFuture<FindGroupChatsResponse> futureResponse) {
+      ApiFuture<FindGroupChatsPage> futurePage =
+          FindGroupChatsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new FindGroupChatsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private FindGroupChatsPagedResponse(FindGroupChatsPage page) {
+      super(page, FindGroupChatsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class FindGroupChatsPage
+      extends AbstractPage<
+          FindGroupChatsRequest, FindGroupChatsResponse, Space, FindGroupChatsPage> {
+
+    private FindGroupChatsPage(
+        PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
+        FindGroupChatsResponse response) {
+      super(context, response);
+    }
+
+    private static FindGroupChatsPage createEmptyPage() {
+      return new FindGroupChatsPage(null, null);
+    }
+
+    @Override
+    protected FindGroupChatsPage createPage(
+        PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
+        FindGroupChatsResponse response) {
+      return new FindGroupChatsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<FindGroupChatsPage> createPageAsync(
+        PageContext<FindGroupChatsRequest, FindGroupChatsResponse, Space> context,
+        ApiFuture<FindGroupChatsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class FindGroupChatsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          FindGroupChatsRequest,
+          FindGroupChatsResponse,
+          Space,
+          FindGroupChatsPage,
+          FindGroupChatsFixedSizeCollection> {
+
+    private FindGroupChatsFixedSizeCollection(List<FindGroupChatsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static FindGroupChatsFixedSizeCollection createEmptyCollection() {
+      return new FindGroupChatsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected FindGroupChatsFixedSizeCollection createCollection(
+        List<FindGroupChatsPage> pages, int collectionSize) {
+      return new FindGroupChatsFixedSizeCollection(pages, collectionSize);
     }
   }
 

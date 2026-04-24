@@ -18,6 +18,7 @@ package com.google.cloud.cloudsecuritycompliance.v1.samples;
 
 // [START cloudsecuritycompliance_v1_generated_Monitoring_ListFrameworkComplianceSummaries_Paged_async]
 import com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummary;
+import com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView;
 import com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkComplianceSummariesRequest;
 import com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkComplianceSummariesResponse;
 import com.google.cloud.cloudsecuritycompliance.v1.LocationName;
@@ -43,6 +44,7 @@ public class AsyncListFrameworkComplianceSummariesPaged {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
+              .setView(FrameworkComplianceSummaryView.forNumber(0))
               .build();
       while (true) {
         ListFrameworkComplianceSummariesResponse response =

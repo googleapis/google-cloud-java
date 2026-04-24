@@ -223,6 +223,66 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public static final int GENERATION_CONFIG_FIELD_NUMBER = 4;
+  private com.google.cloud.aiplatform.v1beta1.GenerationConfig generationConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for model generation and outputs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the generationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasGenerationConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for model generation and outputs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The generationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GenerationConfig getGenerationConfig() {
+    return generationConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()
+        : generationConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for model generation and outputs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder
+      getGenerationConfigOrBuilder() {
+    return generationConfig_ == null
+        ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()
+        : generationConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -246,6 +306,9 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(autoraterModel_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, autoraterModel_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(4, getGenerationConfig());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -263,6 +326,9 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(autoraterModel_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, autoraterModel_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getGenerationConfig());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -289,6 +355,10 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessage
       if (getFlipEnabled() != other.getFlipEnabled()) return false;
     }
     if (!getAutoraterModel().equals(other.getAutoraterModel())) return false;
+    if (hasGenerationConfig() != other.hasGenerationConfig()) return false;
+    if (hasGenerationConfig()) {
+      if (!getGenerationConfig().equals(other.getGenerationConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -310,6 +380,10 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessage
     }
     hash = (37 * hash) + AUTORATER_MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getAutoraterModel().hashCode();
+    if (hasGenerationConfig()) {
+      hash = (37 * hash) + GENERATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGenerationConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -441,10 +515,19 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.cloud.aiplatform.v1beta1.AutoraterConfig.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetGenerationConfigFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -454,6 +537,11 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessage
       samplingCount_ = 0;
       flipEnabled_ = false;
       autoraterModel_ = "";
+      generationConfig_ = null;
+      if (generationConfigBuilder_ != null) {
+        generationConfigBuilder_.dispose();
+        generationConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -502,6 +590,11 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.autoraterModel_ = autoraterModel_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.generationConfig_ =
+            generationConfigBuilder_ == null ? generationConfig_ : generationConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -528,6 +621,9 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessage
         autoraterModel_ = other.autoraterModel_;
         bitField0_ |= 0x00000004;
         onChanged();
+      }
+      if (other.hasGenerationConfig()) {
+        mergeGenerationConfig(other.getGenerationConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -573,6 +669,13 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    internalGetGenerationConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -908,6 +1011,223 @@ public final class AutoraterConfig extends com.google.protobuf.GeneratedMessage
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.GenerationConfig generationConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder>
+        generationConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for model generation and outputs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the generationConfig field is set.
+     */
+    public boolean hasGenerationConfig() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for model generation and outputs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The generationConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfig getGenerationConfig() {
+      if (generationConfigBuilder_ == null) {
+        return generationConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()
+            : generationConfig_;
+      } else {
+        return generationConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for model generation and outputs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGenerationConfig(com.google.cloud.aiplatform.v1beta1.GenerationConfig value) {
+      if (generationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        generationConfig_ = value;
+      } else {
+        generationConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for model generation and outputs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGenerationConfig(
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder builderForValue) {
+      if (generationConfigBuilder_ == null) {
+        generationConfig_ = builderForValue.build();
+      } else {
+        generationConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for model generation and outputs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGenerationConfig(
+        com.google.cloud.aiplatform.v1beta1.GenerationConfig value) {
+      if (generationConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && generationConfig_ != null
+            && generationConfig_
+                != com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()) {
+          getGenerationConfigBuilder().mergeFrom(value);
+        } else {
+          generationConfig_ = value;
+        }
+      } else {
+        generationConfigBuilder_.mergeFrom(value);
+      }
+      if (generationConfig_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for model generation and outputs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGenerationConfig() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      generationConfig_ = null;
+      if (generationConfigBuilder_ != null) {
+        generationConfigBuilder_.dispose();
+        generationConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for model generation and outputs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder
+        getGenerationConfigBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return internalGetGenerationConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for model generation and outputs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder
+        getGenerationConfigOrBuilder() {
+      if (generationConfigBuilder_ != null) {
+        return generationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return generationConfig_ == null
+            ? com.google.cloud.aiplatform.v1beta1.GenerationConfig.getDefaultInstance()
+            : generationConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration options for model generation and outputs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder,
+            com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder>
+        internalGetGenerationConfigFieldBuilder() {
+      if (generationConfigBuilder_ == null) {
+        generationConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig,
+                com.google.cloud.aiplatform.v1beta1.GenerationConfig.Builder,
+                com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder>(
+                getGenerationConfig(), getParentForChildren(), isClean());
+        generationConfig_ = null;
+      }
+      return generationConfigBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.AutoraterConfig)

@@ -241,6 +241,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           setDestinationDatasetAndTableInJobConfig(getJobConfig(sql).build());
       runQuery(sql, jobConfiguration);
     } catch (InterruptedException ex) {
+      LOG.severe(ex, "Interrupted during executeQuery");
       throw new BigQueryJdbcException(ex);
     }
 
@@ -260,6 +261,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
       runQuery(sql, jobConfiguration.build());
     } catch (InterruptedException ex) {
+      LOG.severe(ex, "Interrupted during executeLargeUpdate");
       throw new BigQueryJdbcRuntimeException(ex);
     }
     if (this.currentUpdateCount == -1) {

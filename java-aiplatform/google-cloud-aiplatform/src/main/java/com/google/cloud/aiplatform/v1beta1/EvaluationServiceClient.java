@@ -63,6 +63,9 @@ import javax.annotation.Generated;
  *   EvaluateInstancesRequest request =
  *       EvaluateInstancesRequest.newBuilder()
  *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .addAllMetrics(new ArrayList<Metric>())
+ *           .addAllMetricSources(new ArrayList<MetricSource>())
+ *           .setInstance(EvaluationInstance.newBuilder().build())
  *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
  *           .build();
  *   EvaluateInstancesResponse response = evaluationServiceClient.evaluateInstances(request);
@@ -106,6 +109,20 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> evaluateDatasetOperationCallable()
  *           <li><p> evaluateDatasetCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GenerateInstanceRubrics</td>
+ *      <td><p> Generates rubrics for a given prompt. A rubric represents a single testable criterion for evaluation. One input prompt could have multiple rubrics This RPC allows users to get suggested rubrics based on provided prompt, which can then be reviewed and used for subsequent evaluations.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> generateInstanceRubrics(GenerateInstanceRubricsRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> generateInstanceRubricsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -303,6 +320,9 @@ public class EvaluationServiceClient implements BackgroundResource {
    *   EvaluateInstancesRequest request =
    *       EvaluateInstancesRequest.newBuilder()
    *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllMetrics(new ArrayList<Metric>())
+   *           .addAllMetricSources(new ArrayList<MetricSource>())
+   *           .setInstance(EvaluationInstance.newBuilder().build())
    *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
    *           .build();
    *   EvaluateInstancesResponse response = evaluationServiceClient.evaluateInstances(request);
@@ -332,6 +352,9 @@ public class EvaluationServiceClient implements BackgroundResource {
    *   EvaluateInstancesRequest request =
    *       EvaluateInstancesRequest.newBuilder()
    *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllMetrics(new ArrayList<Metric>())
+   *           .addAllMetricSources(new ArrayList<MetricSource>())
+   *           .setInstance(EvaluationInstance.newBuilder().build())
    *           .setAutoraterConfig(AutoraterConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<EvaluateInstancesResponse> future =
@@ -444,6 +467,79 @@ public class EvaluationServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<EvaluateDatasetRequest, Operation> evaluateDatasetCallable() {
     return stub.evaluateDatasetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates rubrics for a given prompt. A rubric represents a single testable criterion for
+   * evaluation. One input prompt could have multiple rubrics This RPC allows users to get suggested
+   * rubrics based on provided prompt, which can then be reviewed and used for subsequent
+   * evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   GenerateInstanceRubricsRequest request =
+   *       GenerateInstanceRubricsRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllContents(new ArrayList<Content>())
+   *           .setPredefinedRubricGenerationSpec(PredefinedMetricSpec.newBuilder().build())
+   *           .setRubricGenerationSpec(RubricGenerationSpec.newBuilder().build())
+   *           .setAgentConfig(EvaluationInstance.DeprecatedAgentConfig.newBuilder().build())
+   *           .build();
+   *   GenerateInstanceRubricsResponse response =
+   *       evaluationServiceClient.generateInstanceRubrics(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateInstanceRubricsResponse generateInstanceRubrics(
+      GenerateInstanceRubricsRequest request) {
+    return generateInstanceRubricsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generates rubrics for a given prompt. A rubric represents a single testable criterion for
+   * evaluation. One input prompt could have multiple rubrics This RPC allows users to get suggested
+   * rubrics based on provided prompt, which can then be reviewed and used for subsequent
+   * evaluations.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (EvaluationServiceClient evaluationServiceClient = EvaluationServiceClient.create()) {
+   *   GenerateInstanceRubricsRequest request =
+   *       GenerateInstanceRubricsRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllContents(new ArrayList<Content>())
+   *           .setPredefinedRubricGenerationSpec(PredefinedMetricSpec.newBuilder().build())
+   *           .setRubricGenerationSpec(RubricGenerationSpec.newBuilder().build())
+   *           .setAgentConfig(EvaluationInstance.DeprecatedAgentConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<GenerateInstanceRubricsResponse> future =
+   *       evaluationServiceClient.generateInstanceRubricsCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateInstanceRubricsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>
+      generateInstanceRubricsCallable() {
+    return stub.generateInstanceRubricsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

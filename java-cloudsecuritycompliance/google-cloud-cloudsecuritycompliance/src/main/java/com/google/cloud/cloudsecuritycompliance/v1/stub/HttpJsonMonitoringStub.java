@@ -98,6 +98,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                             serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "pageSize", request.getPageSize());
                             serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "view", request.getViewValue());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -184,6 +185,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                             ProtoRestSerializer<FetchFrameworkComplianceReportRequest> serializer =
                                 ProtoRestSerializer.create();
                             serializer.putQueryParam(fields, "endTime", request.getEndTime());
+                            serializer.putQueryParam(fields, "filter", request.getFilter());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })
@@ -306,6 +308,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*}/locations")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -340,6 +343,7 @@ public class HttpJsonMonitoringStub extends MonitoringStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

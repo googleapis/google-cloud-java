@@ -35,6 +35,11 @@ jobs:
           library:
             - 'java-spanner-jdbc/**'
             - '.github/workflows/java-spanner-jdbc-ci.yaml'
+            - 'google-auth-library-java/**/*.java'
+            - 'google-auth-library-java/**/pom.xml'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
   units:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}

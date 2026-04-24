@@ -751,6 +751,48 @@ public final class ChatServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.chat.v1.FindGroupChatsRequest, com.google.chat.v1.FindGroupChatsResponse>
+      getFindGroupChatsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindGroupChats",
+      requestType = com.google.chat.v1.FindGroupChatsRequest.class,
+      responseType = com.google.chat.v1.FindGroupChatsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.chat.v1.FindGroupChatsRequest, com.google.chat.v1.FindGroupChatsResponse>
+      getFindGroupChatsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.chat.v1.FindGroupChatsRequest, com.google.chat.v1.FindGroupChatsResponse>
+        getFindGroupChatsMethod;
+    if ((getFindGroupChatsMethod = ChatServiceGrpc.getFindGroupChatsMethod) == null) {
+      synchronized (ChatServiceGrpc.class) {
+        if ((getFindGroupChatsMethod = ChatServiceGrpc.getFindGroupChatsMethod) == null) {
+          ChatServiceGrpc.getFindGroupChatsMethod =
+              getFindGroupChatsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.chat.v1.FindGroupChatsRequest,
+                          com.google.chat.v1.FindGroupChatsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindGroupChats"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.FindGroupChatsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.chat.v1.FindGroupChatsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ChatServiceMethodDescriptorSupplier("FindGroupChats"))
+                      .build();
+        }
+      }
+    }
+    return getFindGroupChatsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.chat.v1.CreateMembershipRequest, com.google.chat.v1.Membership>
       getCreateMembershipMethod;
 
@@ -2472,6 +2514,35 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns all spaces with `spaceType == GROUP_CHAT`, whose
+     * human memberships contain exactly the calling user, and the users specified
+     * in `FindGroupChatsRequest.users`. Only members that have joined the
+     * conversation are supported. For an example, see [Find group
+     * chats](https://developers.google.com/workspace/chat/find-group-chats).
+     * If the calling user blocks, or is blocked by, some users, and no spaces
+     * with the entire specified set of users are found, this method returns
+     * spaces that don't include the blocked or blocking users.
+     * The specified set of users must contain only human (non-app) memberships.
+     * A request that contains non-human users doesn't return any spaces.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *   - `https://www.googleapis.com/auth/chat.memberships`
+     * </pre>
+     */
+    default void findGroupChats(
+        com.google.chat.v1.FindGroupChatsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.FindGroupChatsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getFindGroupChatsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a membership for the calling Chat app, a user, or a Google Group.
      * Creating memberships for other Chat apps isn't supported.
      * When creating a membership, if the specified member has their auto-accept
@@ -3861,6 +3932,37 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns all spaces with `spaceType == GROUP_CHAT`, whose
+     * human memberships contain exactly the calling user, and the users specified
+     * in `FindGroupChatsRequest.users`. Only members that have joined the
+     * conversation are supported. For an example, see [Find group
+     * chats](https://developers.google.com/workspace/chat/find-group-chats).
+     * If the calling user blocks, or is blocked by, some users, and no spaces
+     * with the entire specified set of users are found, this method returns
+     * spaces that don't include the blocked or blocking users.
+     * The specified set of users must contain only human (non-app) memberships.
+     * A request that contains non-human users doesn't return any spaces.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *   - `https://www.googleapis.com/auth/chat.memberships`
+     * </pre>
+     */
+    public void findGroupChats(
+        com.google.chat.v1.FindGroupChatsRequest request,
+        io.grpc.stub.StreamObserver<com.google.chat.v1.FindGroupChatsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindGroupChatsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a membership for the calling Chat app, a user, or a Google Group.
      * Creating memberships for other Chat apps isn't supported.
      * When creating a membership, if the specified member has their auto-accept
@@ -5235,6 +5337,34 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns all spaces with `spaceType == GROUP_CHAT`, whose
+     * human memberships contain exactly the calling user, and the users specified
+     * in `FindGroupChatsRequest.users`. Only members that have joined the
+     * conversation are supported. For an example, see [Find group
+     * chats](https://developers.google.com/workspace/chat/find-group-chats).
+     * If the calling user blocks, or is blocked by, some users, and no spaces
+     * with the entire specified set of users are found, this method returns
+     * spaces that don't include the blocked or blocking users.
+     * The specified set of users must contain only human (non-app) memberships.
+     * A request that contains non-human users doesn't return any spaces.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *   - `https://www.googleapis.com/auth/chat.memberships`
+     * </pre>
+     */
+    public com.google.chat.v1.FindGroupChatsResponse findGroupChats(
+        com.google.chat.v1.FindGroupChatsRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getFindGroupChatsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a membership for the calling Chat app, a user, or a Google Group.
      * Creating memberships for other Chat apps isn't supported.
      * When creating a membership, if the specified member has their auto-accept
@@ -6527,6 +6657,34 @@ public final class ChatServiceGrpc {
         com.google.chat.v1.FindDirectMessageRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getFindDirectMessageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns all spaces with `spaceType == GROUP_CHAT`, whose
+     * human memberships contain exactly the calling user, and the users specified
+     * in `FindGroupChatsRequest.users`. Only members that have joined the
+     * conversation are supported. For an example, see [Find group
+     * chats](https://developers.google.com/workspace/chat/find-group-chats).
+     * If the calling user blocks, or is blocked by, some users, and no spaces
+     * with the entire specified set of users are found, this method returns
+     * spaces that don't include the blocked or blocking users.
+     * The specified set of users must contain only human (non-app) memberships.
+     * A request that contains non-human users doesn't return any spaces.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *   - `https://www.googleapis.com/auth/chat.memberships`
+     * </pre>
+     */
+    public com.google.chat.v1.FindGroupChatsResponse findGroupChats(
+        com.google.chat.v1.FindGroupChatsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindGroupChatsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -7840,6 +7998,35 @@ public final class ChatServiceGrpc {
      *
      *
      * <pre>
+     * Returns all spaces with `spaceType == GROUP_CHAT`, whose
+     * human memberships contain exactly the calling user, and the users specified
+     * in `FindGroupChatsRequest.users`. Only members that have joined the
+     * conversation are supported. For an example, see [Find group
+     * chats](https://developers.google.com/workspace/chat/find-group-chats).
+     * If the calling user blocks, or is blocked by, some users, and no spaces
+     * with the entire specified set of users are found, this method returns
+     * spaces that don't include the blocked or blocking users.
+     * The specified set of users must contain only human (non-app) memberships.
+     * A request that contains non-human users doesn't return any spaces.
+     * Requires [user
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
+     * with one of the following [authorization
+     * scopes](https://developers.google.com/workspace/chat/authenticate-authorize#chat-api-scopes):
+     *   - `https://www.googleapis.com/auth/chat.memberships.readonly`
+     *   - `https://www.googleapis.com/auth/chat.memberships`
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.chat.v1.FindGroupChatsResponse>
+        findGroupChats(com.google.chat.v1.FindGroupChatsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindGroupChatsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a membership for the calling Chat app, a user, or a Google Group.
      * Creating memberships for other Chat apps isn't supported.
      * When creating a membership, if the specified member has their auto-accept
@@ -8510,30 +8697,31 @@ public final class ChatServiceGrpc {
   private static final int METHODID_DELETE_SPACE = 15;
   private static final int METHODID_COMPLETE_IMPORT_SPACE = 16;
   private static final int METHODID_FIND_DIRECT_MESSAGE = 17;
-  private static final int METHODID_CREATE_MEMBERSHIP = 18;
-  private static final int METHODID_UPDATE_MEMBERSHIP = 19;
-  private static final int METHODID_DELETE_MEMBERSHIP = 20;
-  private static final int METHODID_CREATE_REACTION = 21;
-  private static final int METHODID_LIST_REACTIONS = 22;
-  private static final int METHODID_DELETE_REACTION = 23;
-  private static final int METHODID_CREATE_CUSTOM_EMOJI = 24;
-  private static final int METHODID_GET_CUSTOM_EMOJI = 25;
-  private static final int METHODID_LIST_CUSTOM_EMOJIS = 26;
-  private static final int METHODID_DELETE_CUSTOM_EMOJI = 27;
-  private static final int METHODID_GET_SPACE_READ_STATE = 28;
-  private static final int METHODID_UPDATE_SPACE_READ_STATE = 29;
-  private static final int METHODID_GET_THREAD_READ_STATE = 30;
-  private static final int METHODID_GET_SPACE_EVENT = 31;
-  private static final int METHODID_LIST_SPACE_EVENTS = 32;
-  private static final int METHODID_GET_SPACE_NOTIFICATION_SETTING = 33;
-  private static final int METHODID_UPDATE_SPACE_NOTIFICATION_SETTING = 34;
-  private static final int METHODID_CREATE_SECTION = 35;
-  private static final int METHODID_DELETE_SECTION = 36;
-  private static final int METHODID_UPDATE_SECTION = 37;
-  private static final int METHODID_LIST_SECTIONS = 38;
-  private static final int METHODID_POSITION_SECTION = 39;
-  private static final int METHODID_LIST_SECTION_ITEMS = 40;
-  private static final int METHODID_MOVE_SECTION_ITEM = 41;
+  private static final int METHODID_FIND_GROUP_CHATS = 18;
+  private static final int METHODID_CREATE_MEMBERSHIP = 19;
+  private static final int METHODID_UPDATE_MEMBERSHIP = 20;
+  private static final int METHODID_DELETE_MEMBERSHIP = 21;
+  private static final int METHODID_CREATE_REACTION = 22;
+  private static final int METHODID_LIST_REACTIONS = 23;
+  private static final int METHODID_DELETE_REACTION = 24;
+  private static final int METHODID_CREATE_CUSTOM_EMOJI = 25;
+  private static final int METHODID_GET_CUSTOM_EMOJI = 26;
+  private static final int METHODID_LIST_CUSTOM_EMOJIS = 27;
+  private static final int METHODID_DELETE_CUSTOM_EMOJI = 28;
+  private static final int METHODID_GET_SPACE_READ_STATE = 29;
+  private static final int METHODID_UPDATE_SPACE_READ_STATE = 30;
+  private static final int METHODID_GET_THREAD_READ_STATE = 31;
+  private static final int METHODID_GET_SPACE_EVENT = 32;
+  private static final int METHODID_LIST_SPACE_EVENTS = 33;
+  private static final int METHODID_GET_SPACE_NOTIFICATION_SETTING = 34;
+  private static final int METHODID_UPDATE_SPACE_NOTIFICATION_SETTING = 35;
+  private static final int METHODID_CREATE_SECTION = 36;
+  private static final int METHODID_DELETE_SECTION = 37;
+  private static final int METHODID_UPDATE_SECTION = 38;
+  private static final int METHODID_LIST_SECTIONS = 39;
+  private static final int METHODID_POSITION_SECTION = 40;
+  private static final int METHODID_LIST_SECTION_ITEMS = 41;
+  private static final int METHODID_MOVE_SECTION_ITEM = 42;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -8647,6 +8835,12 @@ public final class ChatServiceGrpc {
           serviceImpl.findDirectMessage(
               (com.google.chat.v1.FindDirectMessageRequest) request,
               (io.grpc.stub.StreamObserver<com.google.chat.v1.Space>) responseObserver);
+          break;
+        case METHODID_FIND_GROUP_CHATS:
+          serviceImpl.findGroupChats(
+              (com.google.chat.v1.FindGroupChatsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chat.v1.FindGroupChatsResponse>)
+                  responseObserver);
           break;
         case METHODID_CREATE_MEMBERSHIP:
           serviceImpl.createMembership(
@@ -8903,6 +9097,12 @@ public final class ChatServiceGrpc {
                     com.google.chat.v1.FindDirectMessageRequest, com.google.chat.v1.Space>(
                     service, METHODID_FIND_DIRECT_MESSAGE)))
         .addMethod(
+            getFindGroupChatsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.chat.v1.FindGroupChatsRequest,
+                    com.google.chat.v1.FindGroupChatsResponse>(service, METHODID_FIND_GROUP_CHATS)))
+        .addMethod(
             getCreateMembershipMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -9122,6 +9322,7 @@ public final class ChatServiceGrpc {
                       .addMethod(getDeleteSpaceMethod())
                       .addMethod(getCompleteImportSpaceMethod())
                       .addMethod(getFindDirectMessageMethod())
+                      .addMethod(getFindGroupChatsMethod())
                       .addMethod(getCreateMembershipMethod())
                       .addMethod(getUpdateMembershipMethod())
                       .addMethod(getDeleteMembershipMethod())

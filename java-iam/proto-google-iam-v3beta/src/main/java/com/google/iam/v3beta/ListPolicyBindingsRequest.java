@@ -155,8 +155,7 @@ public final class ListPolicyBindingsRequest extends com.google.protobuf.Generat
    * Optional. The maximum number of policy bindings to return. The service may
    * return fewer than this value.
    *
-   * If unspecified, at most 50 policy bindings will be returned.
-   * The maximum value is 1000; values above 1000 will be coerced to 1000.
+   * The default value is 50. The maximum value is 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -239,7 +238,8 @@ public final class ListPolicyBindingsRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Optional. An expression for filtering the results of the request. Filter
-   * rules are case insensitive. Some eligible fields for filtering are:
+   * rules are case insensitive. Some eligible fields for filtering are the
+   * following:
    *
    * + `target`
    * + `policy`
@@ -273,7 +273,8 @@ public final class ListPolicyBindingsRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Optional. An expression for filtering the results of the request. Filter
-   * rules are case insensitive. Some eligible fields for filtering are:
+   * rules are case insensitive. Some eligible fields for filtering are the
+   * following:
    *
    * + `target`
    * + `policy`
@@ -852,8 +853,7 @@ public final class ListPolicyBindingsRequest extends com.google.protobuf.Generat
      * Optional. The maximum number of policy bindings to return. The service may
      * return fewer than this value.
      *
-     * If unspecified, at most 50 policy bindings will be returned.
-     * The maximum value is 1000; values above 1000 will be coerced to 1000.
+     * The default value is 50. The maximum value is 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -872,8 +872,7 @@ public final class ListPolicyBindingsRequest extends com.google.protobuf.Generat
      * Optional. The maximum number of policy bindings to return. The service may
      * return fewer than this value.
      *
-     * If unspecified, at most 50 policy bindings will be returned.
-     * The maximum value is 1000; values above 1000 will be coerced to 1000.
+     * The default value is 50. The maximum value is 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -896,8 +895,7 @@ public final class ListPolicyBindingsRequest extends com.google.protobuf.Generat
      * Optional. The maximum number of policy bindings to return. The service may
      * return fewer than this value.
      *
-     * If unspecified, at most 50 policy bindings will be returned.
-     * The maximum value is 1000; values above 1000 will be coerced to 1000.
+     * The default value is 50. The maximum value is 1000.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1049,7 +1047,8 @@ public final class ListPolicyBindingsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. An expression for filtering the results of the request. Filter
-     * rules are case insensitive. Some eligible fields for filtering are:
+     * rules are case insensitive. Some eligible fields for filtering are the
+     * following:
      *
      * + `target`
      * + `policy`
@@ -1082,7 +1081,8 @@ public final class ListPolicyBindingsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. An expression for filtering the results of the request. Filter
-     * rules are case insensitive. Some eligible fields for filtering are:
+     * rules are case insensitive. Some eligible fields for filtering are the
+     * following:
      *
      * + `target`
      * + `policy`
@@ -1115,7 +1115,8 @@ public final class ListPolicyBindingsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. An expression for filtering the results of the request. Filter
-     * rules are case insensitive. Some eligible fields for filtering are:
+     * rules are case insensitive. Some eligible fields for filtering are the
+     * following:
      *
      * + `target`
      * + `policy`
@@ -1147,7 +1148,8 @@ public final class ListPolicyBindingsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. An expression for filtering the results of the request. Filter
-     * rules are case insensitive. Some eligible fields for filtering are:
+     * rules are case insensitive. Some eligible fields for filtering are the
+     * following:
      *
      * + `target`
      * + `policy`
@@ -1175,7 +1177,8 @@ public final class ListPolicyBindingsRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Optional. An expression for filtering the results of the request. Filter
-     * rules are case insensitive. Some eligible fields for filtering are:
+     * rules are case insensitive. Some eligible fields for filtering are the
+     * following:
      *
      * + `target`
      * + `policy`

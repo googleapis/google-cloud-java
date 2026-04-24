@@ -82,4 +82,113 @@ public interface VeoHyperParametersOrBuilder
    * @return The tuningTask.
    */
   com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningTask getTuningTask();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ratio of Google internal dataset to use in the training
+   * mixture, in range of `[0, 1)`. If `0.2`, it means 20% of Google internal
+   * dataset and 80% of user dataset will be used for training. If not set, the
+   * default value is 0.1.
+   * </pre>
+   *
+   * <code>optional double veo_data_mixture_ratio = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the veoDataMixtureRatio field is set.
+   */
+  boolean hasVeoDataMixtureRatio();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The ratio of Google internal dataset to use in the training
+   * mixture, in range of `[0, 1)`. If `0.2`, it means 20% of Google internal
+   * dataset and 80% of user dataset will be used for training. If not set, the
+   * default value is 0.1.
+   * </pre>
+   *
+   * <code>optional double veo_data_mixture_ratio = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The veoDataMixtureRatio.
+   */
+  double getVeoDataMixtureRatio();
+
+  /**
+   *
+   *
+   * <pre>
+   * The speed of the tuning job. Only supported for Veo 3.0 models.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed tuning_speed = 5;
+   * </code>
+   *
+   * @return Whether the tuningSpeed field is set.
+   */
+  boolean hasTuningSpeed();
+
+  /**
+   *
+   *
+   * <pre>
+   * The speed of the tuning job. Only supported for Veo 3.0 models.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed tuning_speed = 5;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for tuningSpeed.
+   */
+  int getTuningSpeedValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The speed of the tuning job. Only supported for Veo 3.0 models.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed tuning_speed = 5;
+   * </code>
+   *
+   * @return The tuningSpeed.
+   */
+  com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.TuningSpeed getTuningSpeed();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The adapter size for LoRA tuning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize adapter_size = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for adapterSize.
+   */
+  int getAdapterSizeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The adapter size for LoRA tuning.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize adapter_size = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The adapterSize.
+   */
+  com.google.cloud.aiplatform.v1beta1.VeoHyperParameters.AdapterSize getAdapterSize();
 }

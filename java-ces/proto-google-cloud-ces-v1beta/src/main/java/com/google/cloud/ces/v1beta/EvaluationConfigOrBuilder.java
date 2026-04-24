@@ -38,7 +38,7 @@ public interface EvaluationConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationConfig.input_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1421
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1424
    * @return Whether the inputAudioConfig field is set.
    */
   @java.lang.Deprecated
@@ -56,7 +56,7 @@ public interface EvaluationConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationConfig.input_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1421
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1424
    * @return The inputAudioConfig.
    */
   @java.lang.Deprecated
@@ -88,7 +88,7 @@ public interface EvaluationConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationConfig.output_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1425
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1428
    * @return Whether the outputAudioConfig field is set.
    */
   @java.lang.Deprecated
@@ -106,7 +106,7 @@ public interface EvaluationConfigOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationConfig.output_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1425
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1428
    * @return The outputAudioConfig.
    */
   @java.lang.Deprecated

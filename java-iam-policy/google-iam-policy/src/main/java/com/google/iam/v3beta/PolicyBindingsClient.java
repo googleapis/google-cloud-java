@@ -73,7 +73,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreatePolicyBinding</td>
- *      <td><p> Creates a policy binding and returns a long-running operation. Callers will need the IAM permissions on both the policy and target. Once the binding is created, the policy is applied to the target.</td>
+ *      <td><p> Creates a policy binding and returns a long-running operation. Callers will need the IAM permissions on both the policy and target. After the binding is created, the policy is applied to the target.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -114,7 +114,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdatePolicyBinding</td>
- *      <td><p> Updates a policy binding and returns a long-running operation. Callers will need the IAM permissions on the policy and target in the binding to update, and the IAM permission to remove the existing policy from the binding. Target is immutable and cannot be updated. Once the binding is updated, the new policy is applied to the target.</td>
+ *      <td><p> Updates a policy binding and returns a long-running operation. Callers will need the IAM permissions on the policy and target in the binding to update. Target and policy are immutable and cannot be updated.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -133,7 +133,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeletePolicyBinding</td>
- *      <td><p> Deletes a policy binding and returns a long-running operation. Callers will need the IAM permissions on both the policy and target. Once the binding is deleted, the policy no longer applies to the target.</td>
+ *      <td><p> Deletes a policy binding and returns a long-running operation. Callers will need the IAM permissions on both the policy and target. After the binding is deleted, the policy no longer applies to the target.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -329,7 +329,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is created, the policy is applied
+   * permissions on both the policy and target. After the binding is created, the policy is applied
    * to the target.
    *
    * <p>Sample code:
@@ -383,7 +383,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is created, the policy is applied
+   * permissions on both the policy and target. After the binding is created, the policy is applied
    * to the target.
    *
    * <p>Sample code:
@@ -437,7 +437,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is created, the policy is applied
+   * permissions on both the policy and target. After the binding is created, the policy is applied
    * to the target.
    *
    * <p>Sample code:
@@ -491,7 +491,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is created, the policy is applied
+   * permissions on both the policy and target. After the binding is created, the policy is applied
    * to the target.
    *
    * <p>Sample code:
@@ -545,7 +545,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is created, the policy is applied
+   * permissions on both the policy and target. After the binding is created, the policy is applied
    * to the target.
    *
    * <p>Sample code:
@@ -579,7 +579,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is created, the policy is applied
+   * permissions on both the policy and target. After the binding is created, the policy is applied
    * to the target.
    *
    * <p>Sample code:
@@ -613,7 +613,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is created, the policy is applied
+   * permissions on both the policy and target. After the binding is created, the policy is applied
    * to the target.
    *
    * <p>Sample code:
@@ -782,9 +782,8 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on the policy and target in the binding to update, and the IAM permission to remove
-   * the existing policy from the binding. Target is immutable and cannot be updated. Once the
-   * binding is updated, the new policy is applied to the target.
+   * permissions on the policy and target in the binding to update. Target and policy are immutable
+   * and cannot be updated.
    *
    * <p>Sample code:
    *
@@ -820,9 +819,8 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on the policy and target in the binding to update, and the IAM permission to remove
-   * the existing policy from the binding. Target is immutable and cannot be updated. Once the
-   * binding is updated, the new policy is applied to the target.
+   * permissions on the policy and target in the binding to update. Target and policy are immutable
+   * and cannot be updated.
    *
    * <p>Sample code:
    *
@@ -854,9 +852,8 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on the policy and target in the binding to update, and the IAM permission to remove
-   * the existing policy from the binding. Target is immutable and cannot be updated. Once the
-   * binding is updated, the new policy is applied to the target.
+   * permissions on the policy and target in the binding to update. Target and policy are immutable
+   * and cannot be updated.
    *
    * <p>Sample code:
    *
@@ -888,9 +885,8 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on the policy and target in the binding to update, and the IAM permission to remove
-   * the existing policy from the binding. Target is immutable and cannot be updated. Once the
-   * binding is updated, the new policy is applied to the target.
+   * permissions on the policy and target in the binding to update. Target and policy are immutable
+   * and cannot be updated.
    *
    * <p>Sample code:
    *
@@ -921,7 +917,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is deleted, the policy no longer
+   * permissions on both the policy and target. After the binding is deleted, the policy no longer
    * applies to the target.
    *
    * <p>Sample code:
@@ -963,7 +959,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is deleted, the policy no longer
+   * permissions on both the policy and target. After the binding is deleted, the policy no longer
    * applies to the target.
    *
    * <p>Sample code:
@@ -1003,7 +999,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is deleted, the policy no longer
+   * permissions on both the policy and target. After the binding is deleted, the policy no longer
    * applies to the target.
    *
    * <p>Sample code:
@@ -1039,7 +1035,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is deleted, the policy no longer
+   * permissions on both the policy and target. After the binding is deleted, the policy no longer
    * applies to the target.
    *
    * <p>Sample code:
@@ -1075,7 +1071,7 @@ public class PolicyBindingsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a policy binding and returns a long-running operation. Callers will need the IAM
-   * permissions on both the policy and target. Once the binding is deleted, the policy no longer
+   * permissions on both the policy and target. After the binding is deleted, the policy no longer
    * applies to the target.
    *
    * <p>Sample code:
@@ -1606,6 +1602,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (PolicyBinding element :
    *       policyBindingsClient.searchTargetPolicyBindings(request).iterateAll()) {
@@ -1641,6 +1638,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<PolicyBinding> future =
    *       policyBindingsClient.searchTargetPolicyBindingsPagedCallable().futureCall(request);
@@ -1676,6 +1674,7 @@ public class PolicyBindingsClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setParent(OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]").toString())
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     SearchTargetPolicyBindingsResponse response =
