@@ -30,11 +30,12 @@ Directories starting with `java-` are client libraries for specific Google Cloud
     - **Storage NIO**: [java-storage-nio](java-storage-nio)
     - **Datastore**: [java-datastore](java-datastore)
     - **Logging**: [java-logging](java-logging)
+    - **Logging Logback**: [java-logging-logback](java-logging-logback)
 
 ## 3. Getting Started
 ### Prerequisites
-- Java 11+
-- Maven
+- Java 11+ (build targets Java 8 bytecode compatibility)
+- Maven 3.0+
 - Bazelisk (for integration tests in `sdk-platform-java`)
 
 ### Building the Project
@@ -50,19 +51,18 @@ Directories starting with `java-` are client libraries for specific Google Cloud
 ## 4. Testing Strategy
 - **Unit Tests**: `mvn test`.
 - **Integration Tests**: Module specific, may require emulators or live services.
-- **Core Components Testing**: See [sdk-platform-java/DEVELOPMENT.md](sdk-platform-java/DEVELOPMENT.md) for a detailed explanation of the 4 layers of testing (Traditional Unit, Golden Unit, Showcase, Golden Integration).
+- **Core Components Testing**: Components should have adequate unit and integration tests to ensure coverage and correctness.
 
 ## 5. Style Guide
 1. Minimize visibility scopes. Default to most restrictive access level.
 2. Use short names over fully qualified names.
-3. Avoid calling `@ObsoleteApi` or `@Deprecated` methods.
+3. Avoid calling `@ObsoleteApi` or `@Deprecated` methods and classes.
 4. Avoid unnecessary formatting changes to keep diffs clean.
 5. Use `mvn` for everything other than the `test/integration` folder.
 
 ## 6. Dependency Management
 - Do not bump external dependency versions unless for CVE or critical bug fix.
-- Avoid introducing new external dependencies.
-- Prefer Java standard library, then existing dependencies.
+- Avoid introducing new external dependencies if possible. Prefer Java standard library, then opt for existing dependencies.
 
 ## 7. Contribution Guidelines
 - **Commits**: Conventional Commits `<type>(<scope>): <description>`.
