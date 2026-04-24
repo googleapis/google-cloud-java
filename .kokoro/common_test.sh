@@ -22,7 +22,7 @@ cd target
 function test_find_all_poms_with_versioned_dependency {
   mkdir -p test_find_all_poms_with_dependency
   pushd test_find_all_poms_with_dependency
-  cp ../../sdk-platform-java/java-showcase/gapic-showcase/pom.xml pom.xml
+  cp ../../java-showcase/gapic-showcase/pom.xml pom.xml
 
   find_all_poms_with_versioned_dependency 'truth'
   if [ "${#POMS[@]}" != 1 ]; then
@@ -45,7 +45,7 @@ function test_find_all_poms_with_versioned_dependency {
 function test_update_pom_dependency {
   mkdir -p test_update_pom_dependency
   pushd test_update_pom_dependency
-  cp ../../sdk-platform-java/java-showcase/gapic-showcase/pom.xml pom.xml
+  cp ../../java-showcase/gapic-showcase/pom.xml pom.xml
 
   update_pom_dependency . truth "99.88.77"
 
@@ -66,7 +66,7 @@ EOF
 function test_parse_pom_version {
   mkdir -p test_parse_pom_version
   pushd test_parse_pom_version
-  cp ../../sdk-platform-java/java-showcase/gapic-showcase/pom.xml pom.xml
+  cp ../../java-showcase/gapic-showcase/pom.xml pom.xml
 
   VERSION=$(parse_pom_version .)
   if [ "$VERSION" != "0.0.1-SNAPSHOT" ]; then

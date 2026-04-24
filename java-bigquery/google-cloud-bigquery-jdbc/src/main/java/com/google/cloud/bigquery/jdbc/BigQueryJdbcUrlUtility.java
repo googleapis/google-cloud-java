@@ -70,8 +70,7 @@ final class BigQueryJdbcUrlUtility {
   static final String HTAPI_ACTIVATION_RATIO_PROPERTY_NAME = "HighThroughputActivationRatio";
   static final String KMS_KEY_NAME_PROPERTY_NAME = "KMSKeyName";
   static final String QUERY_PROPERTIES_NAME = "QueryProperties";
-  static final int DEFAULT_HTAPI_ACTIVATION_RATIO_VALUE =
-      2; // TODO: to adjust this value before private preview based on performance testing.
+  static final int DEFAULT_HTAPI_ACTIVATION_RATIO_VALUE = 2;
   static final String HTAPI_MIN_TABLE_SIZE_PROPERTY_NAME = "HighThroughputMinTableSize";
   static final int DEFAULT_HTAPI_MIN_TABLE_SIZE_VALUE = 100;
   static final int DEFAULT_OAUTH_TYPE_VALUE = -1;
@@ -86,8 +85,6 @@ final class BigQueryJdbcUrlUtility {
   static final String DEFAULT_OAUTH_SA_IMPERSONATION_CHAIN_VALUE = null;
   static final String OAUTH_SA_IMPERSONATION_SCOPES_PROPERTY_NAME =
       "ServiceAccountImpersonationScopes";
-  static final String DEFAULT_OAUTH_SA_IMPERSONATION_SCOPES_VALUE =
-      "https://www.googleapis.com/auth/bigquery";
   static final String OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_PROPERTY_NAME =
       "ServiceAccountImpersonationTokenLifetime";
   static final String DEFAULT_OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_VALUE = "3600";
@@ -709,8 +706,11 @@ final class BigQueryJdbcUrlUtility {
         // Some tools can pass unknown keys. In order not to break compatibility, throw
         // an exception only with incorrect format, otherwise log an error.
         if (kv.length != 2) {
-          throw new BigQueryJdbcRuntimeException(
-              String.format("Wrong value or unknown setting: %s", safeRef));
+          BigQueryJdbcRuntimeException ex =
+              new BigQueryJdbcRuntimeException(
+                  String.format("Wrong value or unknown setting: %s", safeRef));
+          LOG.severe(ex, ex.getMessage());
+          throw ex;
         } else {
           LOG.warning("Wrong value or unknown setting: %s", safeRef);
           continue;
@@ -757,6 +757,10 @@ final class BigQueryJdbcUrlUtility {
       }
 
     } catch (NumberFormatException ex) {
+      LOG.severe(
+          ex,
+          "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for true.",
+          propertyName);
       throw new IllegalArgumentException(
           String.format(
               "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
@@ -769,11 +773,14 @@ final class BigQueryJdbcUrlUtility {
     } else if (integerValue == 0) {
       return false;
     } else {
-      throw new IllegalArgumentException(
-          String.format(
-              "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
-                  + " true.",
-              propertyName));
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              String.format(
+                  "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
+                      + " true.",
+                  propertyName));
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
   }
 
