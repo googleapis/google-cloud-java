@@ -44,6 +44,7 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanContext;
+import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
@@ -1744,6 +1745,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             Span backgroundSpan =
                 tracer
                     .spanBuilder("BigQueryDatabaseMetaData.getTables.background")
+                    .setNoParent()
                     .addLink(parentSpanContext)
                     .startSpan();
 
@@ -1900,6 +1902,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       return resultSet;
     } catch (Exception e) {
       span.recordException(e);
+      span.setStatus(StatusCode.ERROR, e.getMessage());
       throw e;
     } finally {
       span.end();
@@ -2045,6 +2048,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           catalogsSchema, catalogRows.size(), queue, null, new Thread[0]);
     } catch (Exception e) {
       span.recordException(e);
+      span.setStatus(StatusCode.ERROR, e.getMessage());
       throw e;
     } finally {
       span.end();
@@ -2145,6 +2149,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             Span backgroundSpan =
                 tracer
                     .spanBuilder("BigQueryDatabaseMetaData.getColumns.background")
+                    .setNoParent()
                     .addLink(parentSpanContext)
                     .startSpan();
 
@@ -2258,6 +2263,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       return resultSet;
     } catch (Exception e) {
       span.recordException(e);
+      span.setStatus(StatusCode.ERROR, e.getMessage());
       throw e;
     } finally {
       span.end();
@@ -3707,6 +3713,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             Span backgroundSpan =
                 tracer
                     .spanBuilder("BigQueryDatabaseMetaData.getSchemas.background")
+                    .setNoParent()
                     .addLink(parentSpanContext)
                     .startSpan();
 
@@ -3799,6 +3806,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       return resultSet;
     } catch (Exception e) {
       span.recordException(e);
+      span.setStatus(StatusCode.ERROR, e.getMessage());
       throw e;
     } finally {
       span.end();

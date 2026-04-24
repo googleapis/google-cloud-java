@@ -1578,7 +1578,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         }
 
         SpanBuilder spanBuilder = tracer.spanBuilder("BigQueryStatement.pagination");
-        if (parentSpanContext != null) {
+        if (parentSpanContext.isValid()) {
           spanBuilder.addLink(parentSpanContext);
         }
         Span paginationSpan = spanBuilder.startSpan();
