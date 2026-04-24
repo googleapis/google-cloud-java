@@ -21,10 +21,7 @@
   </parent>
 
   <distributionManagement>
-    <snapshotRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <url>https://google.oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
+
     <site>
       <id>googleapis.dev</id>
       <name>Google self-hosted documentation site</name>

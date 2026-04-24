@@ -40,27 +40,7 @@
   </dependencyManagement>
 
   <profiles>
-    <profile>
-      <!-- profile for nexus-staging:release invocation -->
-      <id>release-staging-repository</id>
-      <activation>
-        <property>
-          <!-- The root project not using nexus-staging-maven-plugin when signing -->
-          <name>!gpg.executable</name>
-        </property>
-      </activation>
-      <distributionManagement>
-        <snapshotRepository>
-          <id>sonatype-nexus-snapshots</id>
-          <url>https://google.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-          <id>sonatype-nexus-staging</id>
-          <url>https://google.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-      </distributionManagement>
 
-    </profile>
 
     <!-- Skip gapic-generator-java when analyzing showcase test coverage on SonarCloud   -->
     <profile>
