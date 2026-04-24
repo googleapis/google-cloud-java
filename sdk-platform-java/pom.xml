@@ -19,8 +19,6 @@
     <module>api-common-java</module>
     <module>gax-java</module>
     <module>gapic-generator-java</module>
-    <module>java-common-protos</module>
-    <module>java-iam</module>
     <module>java-core</module>
     <module>gapic-generator-java-bom</module>
     <module>java-shared-dependencies</module>
@@ -92,7 +90,6 @@
         </property>
       </activation>
       <modules>
-        <module>java-showcase</module>
       </modules>
     </profile>
 
@@ -104,7 +101,6 @@
         </property>
       </activation>
       <modules>
-        <module>java-showcase</module>
         <module>coverage-report</module>
       </modules>
       <properties>

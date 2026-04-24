@@ -268,6 +268,73 @@ public class EndpointLifecycleManagerTest {
   }
 
   @Test
+  public void transientFailureOscillationWithConnectingStillEvictsEndpoint() throws Exception {
+    KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
+    manager =
+        new EndpointLifecycleManager(
+            cache, /* probeIntervalSeconds= */ 60, Duration.ofMinutes(30), Clock.systemUTC());
+
+    registerAddresses(manager, "server1");
+    awaitCondition(
+        "endpoint should be created in background", () -> cache.getIfPresent("server1") != null);
+
+    cache.setState("server1", KeyRangeCacheTest.EndpointHealthState.TRANSIENT_FAILURE);
+    manager.probe("server1");
+    assertEquals(1, manager.getEndpointState("server1").consecutiveTransientFailures);
+
+    cache.setState("server1", KeyRangeCacheTest.EndpointHealthState.CONNECTING);
+    manager.probe("server1");
+    assertEquals(1, manager.getEndpointState("server1").consecutiveTransientFailures);
+
+    cache.setState("server1", KeyRangeCacheTest.EndpointHealthState.TRANSIENT_FAILURE);
+    manager.probe("server1");
+    assertEquals(2, manager.getEndpointState("server1").consecutiveTransientFailures);
+
+    cache.setState("server1", KeyRangeCacheTest.EndpointHealthState.CONNECTING);
+    manager.probe("server1");
+    assertEquals(2, manager.getEndpointState("server1").consecutiveTransientFailures);
+
+    cache.setState("server1", KeyRangeCacheTest.EndpointHealthState.TRANSIENT_FAILURE);
+    manager.probe("server1");
+
+    assertFalse(manager.isManaged("server1"));
+    assertTrue(manager.wasRecentlyEvictedTransientFailure("server1"));
+    assertNull(cache.getIfPresent("server1"));
+  }
+
+  @Test
+  public void readyResetsTransientFailureCounterAfterRecovery() throws Exception {
+    KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
+    manager =
+        new EndpointLifecycleManager(
+            cache, /* probeIntervalSeconds= */ 60, Duration.ofMinutes(30), Clock.systemUTC());
+
+    registerAddresses(manager, "server1");
+    awaitCondition(
+        "endpoint should be created in background", () -> cache.getIfPresent("server1") != null);
+
+    cache.setState("server1", KeyRangeCacheTest.EndpointHealthState.TRANSIENT_FAILURE);
+    manager.probe("server1");
+    cache.setState("server1", KeyRangeCacheTest.EndpointHealthState.CONNECTING);
+    manager.probe("server1");
+    cache.setState("server1", KeyRangeCacheTest.EndpointHealthState.TRANSIENT_FAILURE);
+    manager.probe("server1");
+    assertEquals(2, manager.getEndpointState("server1").consecutiveTransientFailures);
+
+    cache.setState("server1", KeyRangeCacheTest.EndpointHealthState.READY);
+    manager.probe("server1");
+    EndpointLifecycleManager.EndpointState state = manager.getEndpointState("server1");
+    assertNotNull(state);
+    assertEquals(0, state.consecutiveTransientFailures);
+    assertNotNull(state.lastReadyAt);
+
+    cache.setState("server1", KeyRangeCacheTest.EndpointHealthState.TRANSIENT_FAILURE);
+    manager.probe("server1");
+    assertEquals(1, manager.getEndpointState("server1").consecutiveTransientFailures);
+    assertTrue(manager.isManaged("server1"));
+  }
+
+  @Test
   public void transientFailureEvictionMarkerRemovedWhenAddressNoLongerActive() throws Exception {
     KeyRangeCacheTest.FakeEndpointCache cache = new KeyRangeCacheTest.FakeEndpointCache();
     manager =

@@ -413,4 +413,28 @@ public class BigQueryConnectionTest {
           bq.getOptions().getDefaultJobCreationMode(), JobCreationMode.JOB_CREATION_OPTIONAL);
     }
   }
+
+  @Test
+  public void testWithDriveScopeTrue() throws Exception {
+    String url = BASE_URL + "RequestGoogleDriveScope=1;";
+    try (BigQueryConnection connection = new BigQueryConnection(url)) {
+      assertTrue(connection.reqGoogleDriveScope);
+    }
+  }
+
+  @Test
+  public void testWithDriveScopeFalse() throws Exception {
+    String url = BASE_URL + "RequestGoogleDriveScope=0;";
+    try (BigQueryConnection connection = new BigQueryConnection(url)) {
+      assertFalse(connection.reqGoogleDriveScope);
+    }
+  }
+
+  @Test
+  public void testWithDriveScopeDefault() throws Exception {
+    String url = BASE_URL;
+    try (BigQueryConnection connection = new BigQueryConnection(url)) {
+      assertFalse(connection.reqGoogleDriveScope);
+    }
+  }
 }

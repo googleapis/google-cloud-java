@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
 import java.time.Duration;
+import java.util.function.LongSupplier;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -29,7 +30,7 @@ public class EwmaLatencyTrackerTest {
 
   @Test
   public void testInitialization() {
-    EwmaLatencyTracker tracker = new EwmaLatencyTracker();
+    EwmaLatencyTracker tracker = new EwmaLatencyTracker(Duration.ofSeconds(10), new FakeClock());
     tracker.update(Duration.ofNanos(100 * 1000));
     assertEquals(100.0, tracker.getScore(), 0.001);
   }
@@ -42,7 +43,7 @@ public class EwmaLatencyTrackerTest {
 
   @Test
   public void testOverflowScore() {
-    EwmaLatencyTracker tracker = new EwmaLatencyTracker();
+    EwmaLatencyTracker tracker = new EwmaLatencyTracker(Duration.ofSeconds(10), new FakeClock());
     tracker.update(Duration.ofSeconds(Long.MAX_VALUE));
     assertEquals((double) Long.MAX_VALUE, tracker.getScore(), 0.001);
   }
@@ -50,7 +51,7 @@ public class EwmaLatencyTrackerTest {
   @Test
   public void testEwmaCalculation() {
     double alpha = 0.5;
-    EwmaLatencyTracker tracker = new EwmaLatencyTracker(alpha);
+    EwmaLatencyTracker tracker = new EwmaLatencyTracker(alpha, new FakeClock());
 
     tracker.update(Duration.ofNanos(100 * 1000)); // Initial score = 100
     assertEquals(100.0, tracker.getScore(), 0.001);
@@ -63,19 +64,21 @@ public class EwmaLatencyTrackerTest {
   }
 
   @Test
-  public void testDefaultAlpha() {
-    EwmaLatencyTracker tracker = new EwmaLatencyTracker();
+  public void testDefaultDecayUsesTimeBasedAlpha() {
+    FakeClock clock = new FakeClock();
+    EwmaLatencyTracker tracker = new EwmaLatencyTracker(Duration.ofSeconds(10), clock);
     tracker.update(Duration.ofNanos(100 * 1000));
+    clock.advance(Duration.ofSeconds(10));
     tracker.update(Duration.ofNanos(200 * 1000));
 
-    double expected =
-        EwmaLatencyTracker.DEFAULT_ALPHA * 200 + (1 - EwmaLatencyTracker.DEFAULT_ALPHA) * 100;
+    double alpha = 1.0 - Math.exp(-1.0);
+    double expected = alpha * 200 + (1.0 - alpha) * 100;
     assertEquals(expected, tracker.getScore(), 0.001);
   }
 
   @Test
   public void testRecordError() {
-    EwmaLatencyTracker tracker = new EwmaLatencyTracker(0.5);
+    EwmaLatencyTracker tracker = new EwmaLatencyTracker(0.5, new FakeClock());
     tracker.update(Duration.ofNanos(100 * 1000));
 
     tracker.recordError(Duration.ofNanos(10000 * 1000)); // Score = 0.5 * 10000 + 0.5 * 100 = 5050
@@ -91,11 +94,24 @@ public class EwmaLatencyTrackerTest {
 
   @Test
   public void testAlphaOne() {
-    EwmaLatencyTracker tracker = new EwmaLatencyTracker(1.0);
+    EwmaLatencyTracker tracker = new EwmaLatencyTracker(1.0, new FakeClock());
     tracker.update(Duration.ofNanos(100 * 1000));
     assertEquals(100.0, tracker.getScore(), 0.001);
 
     tracker.update(Duration.ofNanos(200 * 1000));
     assertEquals(200.0, tracker.getScore(), 0.001);
+  }
+
+  private static final class FakeClock implements LongSupplier {
+    private long currentNanos;
+
+    @Override
+    public long getAsLong() {
+      return currentNanos;
+    }
+
+    void advance(Duration duration) {
+      currentNanos += duration.toNanos();
+    }
   }
 }
