@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>gapic-google-cloud-storage-v2</artifactId>
-  <version>2.67.0</version><!-- {x-version-update:gapic-google-cloud-storage-v2:current} -->
+  <version>2.68.0-SNAPSHOT</version><!-- {x-version-update:gapic-google-cloud-storage-v2:current} -->
   <name>gapic-google-cloud-storage-v2</name>
   <description>GRPC library for gapic-google-cloud-storage-v2</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-storage-parent</artifactId>
-    <version>2.67.0</version><!-- {x-version-update:google-cloud-storage:current} -->
+    <version>2.68.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-storage:current} -->
   </parent>
   <dependencies>
     <dependency>
@@ -40,28 +40,28 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-common-protos</artifactId>
-      <version>2.70.0</version><!-- {x-version-update:proto-google-common-protos:current} -->
+      <version>2.71.0-SNAPSHOT</version><!-- {x-version-update:proto-google-common-protos:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
-      <version>2.62.0</version><!-- {x-version-update:api-common:current} -->
+      <version>2.63.0-SNAPSHOT</version><!-- {x-version-update:api-common:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
-      <version>2.79.0</version><!-- {x-version-update:gax:current} -->
+      <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:gax:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-iam-v1</artifactId>
-      <version>1.65.0</version><!-- {x-version-update:proto-google-iam-v1:current} -->
+      <version>1.66.0-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v1:current} -->
     </dependency>
 
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
-      <version>2.79.0</version><!-- {x-version-update:gax-grpc:current} -->
+      <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:gax-grpc:current} -->
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -77,7 +77,7 @@
       <artifactId>gax-grpc</artifactId>
       <classifier>testlib</classifier>
       <scope>test</scope>
-      <version>2.79.0</version><!-- {x-version-update:gax-grpc:current} -->
+      <version>2.80.0-SNAPSHOT</version><!-- {x-version-update:gax-grpc:current} -->
     </dependency>
 
   </dependencies>

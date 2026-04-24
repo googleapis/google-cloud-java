@@ -21,7 +21,7 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 final class Version {
   // {x-version-update-start:google-cloud-recaptchaenterprise:current}
-  static final String VERSION = "3.88.0";
+  static final String VERSION = "3.89.0-SNAPSHOT";
   // {x-version-update-end}
 
 }
