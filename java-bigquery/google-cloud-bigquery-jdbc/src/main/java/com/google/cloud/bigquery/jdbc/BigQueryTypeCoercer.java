@@ -121,8 +121,9 @@ class BigQueryTypeCoercer {
     try {
       return coercion.coerce(sourceClass != Void.class ? value : null);
     } catch (Exception ex) {
-      LOG.severe(ex, "Coercion failed");
-      throw new BigQueryJdbcCoercionException(ex);
+      BigQueryJdbcCoercionException e = new BigQueryJdbcCoercionException(ex);
+      LOG.severe(e, "Coercion failed");
+      throw e;
     }
   }
 

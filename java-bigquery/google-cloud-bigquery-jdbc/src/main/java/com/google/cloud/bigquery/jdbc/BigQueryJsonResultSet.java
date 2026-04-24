@@ -178,13 +178,14 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         // Cursor has been advanced
         return true;
 
-      } catch (InterruptedException ex) {
-        LOG.severe(
-            ex,
-            "Error occurred while advancing the cursor. This could happen when connection is closed while we call the next method");
-        throw new BigQueryJdbcRuntimeException(
-            "Error occurred while advancing the cursor. This could happen when connection is closed while we call the next method",
-            ex);
+      } catch (InterruptedException e) {
+
+        BigQueryJdbcRuntimeException ex =
+            new BigQueryJdbcRuntimeException(
+                "Error occurred while advancing the cursor. This could happen when connection is closed while we call the next method",
+                e);
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
     }
   }

@@ -387,8 +387,11 @@ final class BigQueryJdbcOAuthUtility {
             overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
       }
     } catch (URISyntaxException | IOException e) {
-      LOG.severe(e, "Validation failure for Service Account credentials.");
-      throw new BigQueryJdbcRuntimeException(e);
+      BigQueryJdbcRuntimeException ex =
+          new BigQueryJdbcRuntimeException(
+              "Validation failure for Service Account credentials.", e);
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
     LOG.info("GoogleCredentials instantiated. Auth Method: Service Account.");
     return builder.build();
@@ -523,8 +526,11 @@ final class BigQueryJdbcOAuthUtility {
         return getPreGeneratedRefreshTokenCredentials(
             authProperties, overrideProperties, callerClassName);
       } catch (URISyntaxException ex) {
-        LOG.severe(ex, "URISyntaxException during getPreGeneratedTokensCredentials");
-        throw new BigQueryJdbcRuntimeException(ex);
+        BigQueryJdbcRuntimeException e =
+            new BigQueryJdbcRuntimeException(
+                "URISyntaxException during getPreGeneratedTokensCredentials", ex);
+        LOG.severe(e, e.getMessage());
+        throw e;
       }
     } else {
       return getPreGeneratedAccessTokenCredentials(
@@ -579,8 +585,10 @@ final class BigQueryJdbcOAuthUtility {
 
       return credentials;
     } catch (IOException exception) {
-      LOG.severe(exception, "Application default credentials not found.");
-      throw new BigQueryJdbcRuntimeException("Application default credentials not found.");
+      BigQueryJdbcRuntimeException e =
+          new BigQueryJdbcRuntimeException("Application default credentials not found.", exception);
+      LOG.severe(e, e.getMessage());
+      throw e;
     }
   }
 
@@ -635,8 +643,11 @@ final class BigQueryJdbcOAuthUtility {
         throw ex;
       }
     } catch (IOException e) {
-      LOG.severe(e, "IOException during getExternalAccountAuthCredentials");
-      throw new BigQueryJdbcRuntimeException(e);
+      BigQueryJdbcRuntimeException ex =
+          new BigQueryJdbcRuntimeException(
+              "IOException during getExternalAccountAuthCredentials", e);
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
   }
 

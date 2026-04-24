@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.exception;
 
+
 public class BigQueryJdbcRuntimeException extends RuntimeException {
 
   /**
@@ -43,6 +44,10 @@ public class BigQueryJdbcRuntimeException extends RuntimeException {
    * @param ex Throwable to be thrown.
    */
   public BigQueryJdbcRuntimeException(String message, InterruptedException ex) {
+    super(message, ex);
+  }
+
+  public BigQueryJdbcRuntimeException(String message, Throwable ex) {
     super(message, ex);
   }
 }

@@ -270,7 +270,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         version = props.getProperty("version.jdbc");
       }
     } catch (IOException e) {
-      LOG.severe(e, "Failed to load dependencies.properties");
+      LOG.warning("Failed to load dependencies.properties");
       return DEFAULT_VERSION;
     }
 

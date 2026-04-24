@@ -258,9 +258,11 @@ class BigQueryTypeCoercionUtility {
         long millis = TimeUnit.NANOSECONDS.toMillis(localTime.toNanoOfDay());
         return new Time(millis);
       } catch (java.time.format.DateTimeParseException e) {
-        LOG.severe(e, "Cannot parse the value to java.sql.Time");
-        throw new IllegalArgumentException(
-            "Cannot parse the value " + strTime + " to java.sql.Time", e);
+        IllegalArgumentException ex =
+            new IllegalArgumentException(
+                "Cannot parse the value " + strTime + " to java.sql.Time", e);
+        LOG.severe(ex, ex.getMessage());
+        throw ex;
       }
     }
   }
