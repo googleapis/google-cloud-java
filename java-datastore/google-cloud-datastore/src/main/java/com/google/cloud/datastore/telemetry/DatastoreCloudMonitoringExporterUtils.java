@@ -85,10 +85,9 @@ class DatastoreCloudMonitoringExporterUtils {
     // Metrics should already been filtered for Gax and Datastore related ones
     for (MetricData metricData : collection) {
       // TODO(b/405457573): The monitored resource is currently written to `global` because the
-      // Firestore
-      // namespace in Cloud Monitoring has not been deployed yet. Once the namespace is available,
-      // database_id and location labels should be added here using RESOURCE_LABEL_DATABASE_ID
-      // and RESOURCE_LABEL_LOCATION respectively.
+      // Firestore namespace in Cloud Monitoring has not been deployed yet. Once the namespace
+      // is available, database_id and location labels should be added here using
+      // RESOURCE_LABEL_DATABASE_ID and RESOURCE_LABEL_LOCATION respectively.
 
       // Map OTel resource attributes to the specific monitored resource labels.
       MonitoredResource.Builder monitoredResourceBuilder =

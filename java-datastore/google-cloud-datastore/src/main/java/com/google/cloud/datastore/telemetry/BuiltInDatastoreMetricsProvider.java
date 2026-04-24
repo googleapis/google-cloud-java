@@ -131,7 +131,7 @@ class BuiltInDatastoreMetricsProvider {
    *
    * @return the detected location, or "global" if detection fails.
    */
-  public String detectClientLocation() {
+  String detectClientLocation() {
     if (location == null) {
       location = "global";
     }

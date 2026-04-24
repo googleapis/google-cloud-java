@@ -71,13 +71,14 @@ class DatastoreBuiltInMetricsView {
    * <p>This method acts as the central configuration point for the metrics pipeline, stitching
    * together the recording (SDK), the processing (Views), and the delivery (Exporter).
    *
+   * <p>Views are scoped to the SdkMeterProvider they are registered on. This method is called
+   * exclusively from BuiltInDatastoreMetricsProvider, which constructs a private SdkMeterProvider
+   * for the built-in Cloud Monitoring export path. A user-provided OpenTelemetry instance has its
+   * own independent MeterProvider, so these views never affect user-configured backends.
+   *
    * @param metricExporter the exporter to use for metrics.
    * @param builder the builder to register views and the {@link PeriodicMetricReader} on.
    */
-  // Views are scoped to the SdkMeterProvider they are registered on. This method is called
-  // exclusively from BuiltInDatastoreMetricsProvider, which constructs a private SdkMeterProvider
-  // for the built-in Cloud Monitoring export path. A user-provided OpenTelemetry instance has its
-  // own independent MeterProvider, so these views never affect user-configured backends.
   static void registerBuiltinMetrics(
       MetricExporter metricExporter, SdkMeterProviderBuilder builder) {
     registerGaxViews(builder);

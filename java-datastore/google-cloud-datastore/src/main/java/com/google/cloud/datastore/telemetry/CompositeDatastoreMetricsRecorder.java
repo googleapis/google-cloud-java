@@ -39,6 +39,7 @@ class CompositeDatastoreMetricsRecorder implements DatastoreMetricsRecorder {
     this.recorders = recorders;
   }
 
+  /** {@inheritDoc} */
   @Override
   public void recordTransactionLatency(double latencyMs, Map<String, String> attributes) {
     for (DatastoreMetricsRecorder recorder : recorders) {
@@ -46,6 +47,7 @@ class CompositeDatastoreMetricsRecorder implements DatastoreMetricsRecorder {
     }
   }
 
+  /** {@inheritDoc} */
   @Override
   public void recordTransactionAttemptCount(long count, Map<String, String> attributes) {
     for (DatastoreMetricsRecorder recorder : recorders) {
@@ -53,6 +55,7 @@ class CompositeDatastoreMetricsRecorder implements DatastoreMetricsRecorder {
     }
   }
 
+  /** {@inheritDoc} */
   @Override
   public void recordAttemptLatency(double latencyMs, Map<String, String> attributes) {
     for (DatastoreMetricsRecorder recorder : recorders) {
@@ -60,6 +63,7 @@ class CompositeDatastoreMetricsRecorder implements DatastoreMetricsRecorder {
     }
   }
 
+  /** {@inheritDoc} */
   @Override
   public void recordAttemptCount(long count, Map<String, String> attributes) {
     for (DatastoreMetricsRecorder recorder : recorders) {
@@ -67,6 +71,7 @@ class CompositeDatastoreMetricsRecorder implements DatastoreMetricsRecorder {
     }
   }
 
+  /** {@inheritDoc} */
   @Override
   public void recordOperationLatency(double latencyMs, Map<String, String> attributes) {
     for (DatastoreMetricsRecorder recorder : recorders) {
@@ -74,6 +79,7 @@ class CompositeDatastoreMetricsRecorder implements DatastoreMetricsRecorder {
     }
   }
 
+  /** {@inheritDoc} */
   @Override
   public void recordOperationCount(long count, Map<String, String> attributes) {
     for (DatastoreMetricsRecorder recorder : recorders) {

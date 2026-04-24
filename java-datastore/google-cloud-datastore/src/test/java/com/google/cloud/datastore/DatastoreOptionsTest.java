@@ -25,6 +25,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
+import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
@@ -321,10 +322,17 @@ public class DatastoreOptionsTest {
 
   @Test
   public void bothBackendsActive_recorderIsComposite() {
+    Credentials credentials = EasyMock.createMock(Credentials.class);
+    EasyMock.expect(credentials.getMetricsCredentialType())
+        .andReturn(com.google.auth.CredentialTypeForMetrics.DO_NOT_SEND)
+        .anyTimes();
+    EasyMock.replay(credentials);
+
     DatastoreOptions options =
         DatastoreOptions.newBuilder()
             .setProjectId(PROJECT_ID)
             .setDatabaseId(DATABASE_ID)
+            .setCredentials(credentials)
             .setOpenTelemetryOptions(
                 DatastoreOpenTelemetryOptions.newBuilder()
                     .setMetricsEnabled(true)

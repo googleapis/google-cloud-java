@@ -66,6 +66,12 @@ class OpenTelemetryDatastoreMetricsRecorder extends OpenTelemetryMetricsRecorder
   /**
    * Creates a recorder, specifying whether this instance owns the {@link OpenTelemetry} lifecycle.
    *
+   * <p>Note: Standard GAX RPC metrics (operation_latency, attempt_latency, etc.) are handled by the
+   * base OpenTelemetryMetricsRecorder class. Those metrics are inherited from the parent classes.
+   * However, the internal metrics expect plural suffixes (e.g. `latencies` instead of `latency`).
+   * The discrepancy between the singular GAX names and the plural internal Cloud Monitoring names
+   * is handled by configuring OpenTelemetry Views.
+   *
    * @param isBuiltIn {@code true} if this recorder created the instance and should shut it down on
    *     {@link #close()}; {@code false} if the user provided it.
    */
@@ -74,12 +80,6 @@ class OpenTelemetryDatastoreMetricsRecorder extends OpenTelemetryMetricsRecorder
     super(openTelemetry, metricPrefix);
     this.openTelemetry = openTelemetry;
     this.isBuiltIn = isBuiltIn;
-
-    // Note: Standard GAX RPC metrics (operation_latency, attempt_latency, etc.) are handled by the
-    // base OpenTelemetryMetricsRecorder class. Those metrics are inherited from the parent classes.
-    // However, the internal metrics expect plural suffixes (e.g. `latencies` instead of `latency`).
-    // The discrepancy between the singular GAX names and the plural internal Cloud Monitoring names
-    // is handled by configuring OpenTelemetry Views.
 
     Meter meter = openTelemetry.getMeter(TelemetryConstants.DATASTORE_METER_NAME);
 
