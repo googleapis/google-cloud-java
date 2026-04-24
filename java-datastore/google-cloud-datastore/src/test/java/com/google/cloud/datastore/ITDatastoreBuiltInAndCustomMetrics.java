@@ -90,6 +90,13 @@ import org.junit.runners.Parameterized;
  * </pre>
  *
  * <p>Data may take up to 60 seconds (one periodic flush interval) to appear.
+ *
+ * <p><b>Note on Cloud Monitoring verification:</b> This test does not programmatically verify that
+ * metrics are successfully received by the Cloud Monitoring backend. Querying Cloud Monitoring for
+ * recently written metrics can be flaky due to ingestion delays (which can take up to 10 minutes
+ * for new metrics). Following the strategy used in tracing tests (which only use in-memory
+ * exporters), this test relies on {@link InMemoryMetricReader} to verify that metrics are correctly
+ * generated with expected attributes.
  */
 @RunWith(Parameterized.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
@@ -389,99 +396,5 @@ public class ITDatastoreBuiltInAndCustomMetrics {
     String actual = point.getAttributes().get(AttributeKey.stringKey(attributeKey));
     return expectedValue.equals(actual);
   }
-  @Test
-  public void metricsExportedToCloudMonitoring() throws Exception {
-    // Perform an operation to generate metrics
-    Key key = datastore.newKeyFactory().setKind(kind).newKey("metrics-it-entity");
-    Entity initial = Entity.newBuilder(key).set("value", 0L).build();
-    datastore.put(initial);
 
-    datastore.runInTransaction(
-        tx -> {
-          Entity current = tx.get(key);
-          tx.put(Entity.newBuilder(current).set("value", current.getLong("value") + 1).build());
-          return null;
-        });
-        
-    // Perform a lookup to generate GAX metrics
-    datastore.get(key);
-
-    // Clean up entity before closing client
-    datastore.delete(key);
-
-    // Close client to force flush metrics
-    datastore.close();
-    isDatastoreClosed = true;
-
-    // List of metrics to verify in Cloud Monitoring
-    java.util.List<String> metricNames = Arrays.asList(
-        TelemetryConstants.METRIC_NAME_TRANSACTION_LATENCY,
-        TelemetryConstants.METRIC_NAME_TRANSACTION_ATTEMPT_COUNT,
-        TelemetryConstants.METRIC_PREFIX + "/operation_latencies",
-        TelemetryConstants.METRIC_PREFIX + "/attempt_latencies",
-        TelemetryConstants.METRIC_PREFIX + "/operation_count",
-        TelemetryConstants.METRIC_PREFIX + "/attempt_count"
-    );
-
-    for (String metricName : metricNames) {
-      String filter = "metric.type = \"" + metricName + "\"";
-      boolean found = verifyWithPolling(filter);
-      assertWithMessage("Metric " + metricName + " should be present in Cloud Monitoring").that(found).isTrue();
-    }
-  }
-
-  private boolean verifyWithPolling(String filter) throws Exception {
-    // Try to read immediately first
-    if (isMetricPresent(filter)) {
-      System.out.println("Metric found immediately!");
-      return true;
-    }
-
-    // Fallback to short polling loop (30 seconds total)
-    long startTimeMillis = System.currentTimeMillis();
-    int attempts = 0;
-    while (System.currentTimeMillis() - startTimeMillis < 30000) {
-      attempts++;
-      System.out.println("Polling Cloud Monitoring for metric (attempt " + attempts + ")...");
-      if (isMetricPresent(filter)) {
-        return true;
-      }
-      Thread.sleep(5000); // Wait 5 seconds between attempts
-    }
-    return false;
-  }
-
-  private boolean isMetricPresent(String filter) throws Exception {
-    try (MetricServiceClient client = MetricServiceClient.create()) {
-      String name = "projects/" + PROJECT_ID;
-      
-      // Use a time interval covering the last 5 minutes
-      long now = System.currentTimeMillis();
-      Timestamp endTime = Timestamp.newBuilder().setSeconds(now / 1000).build();
-      Timestamp startTime = Timestamp.newBuilder().setSeconds((now - 300000) / 1000).build();
-      
-      TimeInterval interval = TimeInterval.newBuilder()
-          .setStartTime(startTime)
-          .setEndTime(endTime)
-          .build();
-          
-      ListTimeSeriesRequest request = ListTimeSeriesRequest.newBuilder()
-          .setName(name)
-          .setFilter(filter)
-          .setInterval(interval)
-          .setView(ListTimeSeriesRequest.TimeSeriesView.FULL)
-          .build();
-          
-      try {
-        MetricServiceClient.ListTimeSeriesPagedResponse response = client.listTimeSeries(request);
-        return response.iterateAll().iterator().hasNext();
-      } catch (ApiException e) {
-        if (e.getStatusCode().getCode() == com.google.api.gax.rpc.StatusCode.Code.NOT_FOUND) {
-          System.out.println("Metric not found yet (NOT_FOUND status).");
-          return false;
-        }
-        throw e;
-      }
-    }
-  }
 }
