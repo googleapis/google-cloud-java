@@ -24,7 +24,8 @@ import javax.sql.ConnectionPoolDataSource;
 import javax.sql.PooledConnection;
 
 public class PooledConnectionDataSource extends DataSource implements ConnectionPoolDataSource {
-  private static final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(PooledConnectionDataSource.class.getName());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(PooledConnectionDataSource.class.getName());
   private PooledConnectionListener connectionPoolManager = null;
   Connection bqConnection = null;
 

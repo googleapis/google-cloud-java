@@ -1251,7 +1251,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     for (Dataset dataset : datasetsToScan) {
       if (Thread.currentThread().isInterrupted()) {
-        InterruptedException ex = new InterruptedException("Interrupted while listing routines for catalog: " + catalogParam);
+        InterruptedException ex =
+            new InterruptedException(
+                "Interrupted while listing routines for catalog: " + catalogParam);
         logger.severe(ex, ex.getMessage());
         throw ex;
       }
@@ -1283,7 +1285,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       if (Thread.currentThread().isInterrupted()) {
         listRoutineFutures.forEach(f -> f.cancel(true));
         InterruptedException ex =
-            new InterruptedException("Interrupted while collecting routine lists for catalog: " + catalogParam);
+            new InterruptedException(
+                "Interrupted while collecting routine lists for catalog: " + catalogParam);
         logger.severe(ex, ex.getMessage());
         throw ex;
       }

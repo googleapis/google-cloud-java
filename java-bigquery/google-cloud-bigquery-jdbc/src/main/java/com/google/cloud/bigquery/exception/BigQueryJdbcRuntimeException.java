@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.exception;
 
-
 public class BigQueryJdbcRuntimeException extends RuntimeException {
 
   /**
