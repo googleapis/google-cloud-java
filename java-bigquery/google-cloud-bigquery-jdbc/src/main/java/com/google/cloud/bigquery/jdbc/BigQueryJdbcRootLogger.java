@@ -124,6 +124,12 @@ class BigQueryJdbcRootLogger {
             .append(record.getMessage())
             .append(System.lineSeparator());
 
+        if (record.getThrown() != null) {
+          java.io.StringWriter sw = new java.io.StringWriter();
+          record.getThrown().printStackTrace(new java.io.PrintWriter(sw));
+          sb.append(sw.toString()).append(System.lineSeparator());
+        }
+
         return sb.toString();
       }
     };

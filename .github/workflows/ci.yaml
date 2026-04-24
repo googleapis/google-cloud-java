@@ -34,20 +34,11 @@ jobs:
     - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
       id: filter
       with:
-        # we want to run tests if source code is changed or the scripts
-        # used to run the unit tests
         filters: |
           src:
-            - '**/*.java'
-            - '**/pom.xml'
-            - '!java-bigquery/**'
-            - '!java-bigquerystorage/**'
-            - '!java-datastore/**'
-            - '!java-logging-logback/**'
-            - '!java-logging/**'
-            - '!java-spanner/**'
-            - '!java-storage/**'
-            - '!google-auth-library-java/**'
+            - '!(java-bigquery|java-bigquerystorage|java-datastore|java-logging-logback|java-logging|java-spanner|java-storage|google-auth-library-java)/**/*.java'
+            - '!(java-bigquery|java-bigquerystorage|java-datastore|java-logging-logback|java-logging|java-spanner|java-storage|google-auth-library-java)/**/pom.xml'
+            - 'pom.xml'
           ci:
             - '.github/workflows/ci.yaml'
             - '.kokoro/**'
