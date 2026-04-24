@@ -3123,7 +3123,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Optional. Flag indicating if the volume will be a large capacity volume or
-   * a regular volume.
+   * a regular volume. This field is used for legacy FILE pools. For Unified
+   * pools, use the `large_capacity_config` field instead. This field and
+   * `large_capacity_config` are mutually exclusive.
    * </pre>
    *
    * <code>bool large_capacity = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3584,6 +3586,77 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
     return blockDevices_.get(index);
   }
 
+  public static final int LARGE_CAPACITY_CONFIG_FIELD_NUMBER = 46;
+  private com.google.cloud.netapp.v1.LargeCapacityConfig largeCapacityConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Large capacity config for the volume.
+   * Enables and configures large capacity for volumes in Unified pools with
+   * File protocols. Not applicable for Block protocols in Unified pools.
+   * This field and the legacy `large_capacity` boolean field
+   * are mutually exclusive.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.LargeCapacityConfig large_capacity_config = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the largeCapacityConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasLargeCapacityConfig() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Large capacity config for the volume.
+   * Enables and configures large capacity for volumes in Unified pools with
+   * File protocols. Not applicable for Block protocols in Unified pools.
+   * This field and the legacy `large_capacity` boolean field
+   * are mutually exclusive.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.LargeCapacityConfig large_capacity_config = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The largeCapacityConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.LargeCapacityConfig getLargeCapacityConfig() {
+    return largeCapacityConfig_ == null
+        ? com.google.cloud.netapp.v1.LargeCapacityConfig.getDefaultInstance()
+        : largeCapacityConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Large capacity config for the volume.
+   * Enables and configures large capacity for volumes in Unified pools with
+   * File protocols. Not applicable for Block protocols in Unified pools.
+   * This field and the legacy `large_capacity` boolean field
+   * are mutually exclusive.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.LargeCapacityConfig large_capacity_config = 46 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.LargeCapacityConfigOrBuilder getLargeCapacityConfigOrBuilder() {
+    return largeCapacityConfig_ == null
+        ? com.google.cloud.netapp.v1.LargeCapacityConfig.getDefaultInstance()
+        : largeCapacityConfig_;
+  }
+
   public static final int CLONE_DETAILS_FIELD_NUMBER = 47;
   private com.google.cloud.netapp.v1.Volume.CloneDetails cloneDetails_;
 
@@ -3603,7 +3676,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCloneDetails() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -3802,6 +3875,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
       output.writeMessage(45, blockDevices_.get(i));
     }
     if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(46, getLargeCapacityConfig());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(47, getCloneDetails());
     }
     getUnknownFields().writeTo(output);
@@ -3983,6 +4059,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(45, blockDevices_.get(i));
     }
     if (((bitField0_ & 0x00000100) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(46, getLargeCapacityConfig());
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(47, getCloneDetails());
     }
     size += getUnknownFields().getSerializedSize();
@@ -4069,6 +4149,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
     }
     if (getHotTierSizeUsedGib() != other.getHotTierSizeUsedGib()) return false;
     if (!getBlockDevicesList().equals(other.getBlockDevicesList())) return false;
+    if (hasLargeCapacityConfig() != other.hasLargeCapacityConfig()) return false;
+    if (hasLargeCapacityConfig()) {
+      if (!getLargeCapacityConfig().equals(other.getLargeCapacityConfig())) return false;
+    }
     if (hasCloneDetails() != other.hasCloneDetails()) return false;
     if (hasCloneDetails()) {
       if (!getCloneDetails().equals(other.getCloneDetails())) return false;
@@ -4201,6 +4285,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
     if (getBlockDevicesCount() > 0) {
       hash = (37 * hash) + BLOCK_DEVICES_FIELD_NUMBER;
       hash = (53 * hash) + getBlockDevicesList().hashCode();
+    }
+    if (hasLargeCapacityConfig()) {
+      hash = (37 * hash) + LARGE_CAPACITY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getLargeCapacityConfig().hashCode();
     }
     if (hasCloneDetails()) {
       hash = (37 * hash) + CLONE_DETAILS_FIELD_NUMBER;
@@ -4378,6 +4466,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
         internalGetHybridReplicationParametersFieldBuilder();
         internalGetCacheParametersFieldBuilder();
         internalGetBlockDevicesFieldBuilder();
+        internalGetLargeCapacityConfigFieldBuilder();
         internalGetCloneDetailsFieldBuilder();
       }
     }
@@ -4473,6 +4562,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
         blockDevicesBuilder_.clear();
       }
       bitField1_ = (bitField1_ & ~0x00000200);
+      largeCapacityConfig_ = null;
+      if (largeCapacityConfigBuilder_ != null) {
+        largeCapacityConfigBuilder_.dispose();
+        largeCapacityConfigBuilder_ = null;
+      }
       cloneDetails_ = null;
       if (cloneDetailsBuilder_ != null) {
         cloneDetailsBuilder_.dispose();
@@ -4689,9 +4783,16 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
         result.hotTierSizeUsedGib_ = hotTierSizeUsedGib_;
       }
       if (((from_bitField1_ & 0x00000400) != 0)) {
+        result.largeCapacityConfig_ =
+            largeCapacityConfigBuilder_ == null
+                ? largeCapacityConfig_
+                : largeCapacityConfigBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField1_ & 0x00000800) != 0)) {
         result.cloneDetails_ =
             cloneDetailsBuilder_ == null ? cloneDetails_ : cloneDetailsBuilder_.build();
-        to_bitField0_ |= 0x00000100;
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4928,6 +5029,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
             blockDevicesBuilder_.addAllMessages(other.blockDevices_);
           }
         }
+      }
+      if (other.hasLargeCapacityConfig()) {
+        mergeLargeCapacityConfig(other.getLargeCapacityConfig());
       }
       if (other.hasCloneDetails()) {
         mergeCloneDetails(other.getCloneDetails());
@@ -5275,11 +5379,18 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
                 }
                 break;
               } // case 362
+            case 370:
+              {
+                input.readMessage(
+                    internalGetLargeCapacityConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x00000400;
+                break;
+              } // case 370
             case 378:
               {
                 input.readMessage(
                     internalGetCloneDetailsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000400;
+                bitField1_ |= 0x00000800;
                 break;
               } // case 378
             default:
@@ -9699,7 +9810,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Flag indicating if the volume will be a large capacity volume or
-     * a regular volume.
+     * a regular volume. This field is used for legacy FILE pools. For Unified
+     * pools, use the `large_capacity_config` field instead. This field and
+     * `large_capacity_config` are mutually exclusive.
      * </pre>
      *
      * <code>bool large_capacity = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9716,7 +9829,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Flag indicating if the volume will be a large capacity volume or
-     * a regular volume.
+     * a regular volume. This field is used for legacy FILE pools. For Unified
+     * pools, use the `large_capacity_config` field instead. This field and
+     * `large_capacity_config` are mutually exclusive.
      * </pre>
      *
      * <code>bool large_capacity = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -9737,7 +9852,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Optional. Flag indicating if the volume will be a large capacity volume or
-     * a regular volume.
+     * a regular volume. This field is used for legacy FILE pools. For Unified
+     * pools, use the `large_capacity_config` field instead. This field and
+     * `large_capacity_config` are mutually exclusive.
      * </pre>
      *
      * <code>bool large_capacity = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -11257,6 +11374,257 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
       return blockDevicesBuilder_;
     }
 
+    private com.google.cloud.netapp.v1.LargeCapacityConfig largeCapacityConfig_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.netapp.v1.LargeCapacityConfig,
+            com.google.cloud.netapp.v1.LargeCapacityConfig.Builder,
+            com.google.cloud.netapp.v1.LargeCapacityConfigOrBuilder>
+        largeCapacityConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Large capacity config for the volume.
+     * Enables and configures large capacity for volumes in Unified pools with
+     * File protocols. Not applicable for Block protocols in Unified pools.
+     * This field and the legacy `large_capacity` boolean field
+     * are mutually exclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.LargeCapacityConfig large_capacity_config = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the largeCapacityConfig field is set.
+     */
+    public boolean hasLargeCapacityConfig() {
+      return ((bitField1_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Large capacity config for the volume.
+     * Enables and configures large capacity for volumes in Unified pools with
+     * File protocols. Not applicable for Block protocols in Unified pools.
+     * This field and the legacy `large_capacity` boolean field
+     * are mutually exclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.LargeCapacityConfig large_capacity_config = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The largeCapacityConfig.
+     */
+    public com.google.cloud.netapp.v1.LargeCapacityConfig getLargeCapacityConfig() {
+      if (largeCapacityConfigBuilder_ == null) {
+        return largeCapacityConfig_ == null
+            ? com.google.cloud.netapp.v1.LargeCapacityConfig.getDefaultInstance()
+            : largeCapacityConfig_;
+      } else {
+        return largeCapacityConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Large capacity config for the volume.
+     * Enables and configures large capacity for volumes in Unified pools with
+     * File protocols. Not applicable for Block protocols in Unified pools.
+     * This field and the legacy `large_capacity` boolean field
+     * are mutually exclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.LargeCapacityConfig large_capacity_config = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLargeCapacityConfig(com.google.cloud.netapp.v1.LargeCapacityConfig value) {
+      if (largeCapacityConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        largeCapacityConfig_ = value;
+      } else {
+        largeCapacityConfigBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Large capacity config for the volume.
+     * Enables and configures large capacity for volumes in Unified pools with
+     * File protocols. Not applicable for Block protocols in Unified pools.
+     * This field and the legacy `large_capacity` boolean field
+     * are mutually exclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.LargeCapacityConfig large_capacity_config = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setLargeCapacityConfig(
+        com.google.cloud.netapp.v1.LargeCapacityConfig.Builder builderForValue) {
+      if (largeCapacityConfigBuilder_ == null) {
+        largeCapacityConfig_ = builderForValue.build();
+      } else {
+        largeCapacityConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Large capacity config for the volume.
+     * Enables and configures large capacity for volumes in Unified pools with
+     * File protocols. Not applicable for Block protocols in Unified pools.
+     * This field and the legacy `large_capacity` boolean field
+     * are mutually exclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.LargeCapacityConfig large_capacity_config = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeLargeCapacityConfig(com.google.cloud.netapp.v1.LargeCapacityConfig value) {
+      if (largeCapacityConfigBuilder_ == null) {
+        if (((bitField1_ & 0x00000400) != 0)
+            && largeCapacityConfig_ != null
+            && largeCapacityConfig_
+                != com.google.cloud.netapp.v1.LargeCapacityConfig.getDefaultInstance()) {
+          getLargeCapacityConfigBuilder().mergeFrom(value);
+        } else {
+          largeCapacityConfig_ = value;
+        }
+      } else {
+        largeCapacityConfigBuilder_.mergeFrom(value);
+      }
+      if (largeCapacityConfig_ != null) {
+        bitField1_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Large capacity config for the volume.
+     * Enables and configures large capacity for volumes in Unified pools with
+     * File protocols. Not applicable for Block protocols in Unified pools.
+     * This field and the legacy `large_capacity` boolean field
+     * are mutually exclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.LargeCapacityConfig large_capacity_config = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearLargeCapacityConfig() {
+      bitField1_ = (bitField1_ & ~0x00000400);
+      largeCapacityConfig_ = null;
+      if (largeCapacityConfigBuilder_ != null) {
+        largeCapacityConfigBuilder_.dispose();
+        largeCapacityConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Large capacity config for the volume.
+     * Enables and configures large capacity for volumes in Unified pools with
+     * File protocols. Not applicable for Block protocols in Unified pools.
+     * This field and the legacy `large_capacity` boolean field
+     * are mutually exclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.LargeCapacityConfig large_capacity_config = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.LargeCapacityConfig.Builder getLargeCapacityConfigBuilder() {
+      bitField1_ |= 0x00000400;
+      onChanged();
+      return internalGetLargeCapacityConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Large capacity config for the volume.
+     * Enables and configures large capacity for volumes in Unified pools with
+     * File protocols. Not applicable for Block protocols in Unified pools.
+     * This field and the legacy `large_capacity` boolean field
+     * are mutually exclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.LargeCapacityConfig large_capacity_config = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.LargeCapacityConfigOrBuilder
+        getLargeCapacityConfigOrBuilder() {
+      if (largeCapacityConfigBuilder_ != null) {
+        return largeCapacityConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return largeCapacityConfig_ == null
+            ? com.google.cloud.netapp.v1.LargeCapacityConfig.getDefaultInstance()
+            : largeCapacityConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Large capacity config for the volume.
+     * Enables and configures large capacity for volumes in Unified pools with
+     * File protocols. Not applicable for Block protocols in Unified pools.
+     * This field and the legacy `large_capacity` boolean field
+     * are mutually exclusive.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.LargeCapacityConfig large_capacity_config = 46 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.netapp.v1.LargeCapacityConfig,
+            com.google.cloud.netapp.v1.LargeCapacityConfig.Builder,
+            com.google.cloud.netapp.v1.LargeCapacityConfigOrBuilder>
+        internalGetLargeCapacityConfigFieldBuilder() {
+      if (largeCapacityConfigBuilder_ == null) {
+        largeCapacityConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.netapp.v1.LargeCapacityConfig,
+                com.google.cloud.netapp.v1.LargeCapacityConfig.Builder,
+                com.google.cloud.netapp.v1.LargeCapacityConfigOrBuilder>(
+                getLargeCapacityConfig(), getParentForChildren(), isClean());
+        largeCapacityConfig_ = null;
+      }
+      return largeCapacityConfigBuilder_;
+    }
+
     private com.google.cloud.netapp.v1.Volume.CloneDetails cloneDetails_;
     private com.google.protobuf.SingleFieldBuilder<
             com.google.cloud.netapp.v1.Volume.CloneDetails,
@@ -11279,7 +11647,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
      * @return Whether the cloneDetails field is set.
      */
     public boolean hasCloneDetails() {
-      return ((bitField1_ & 0x00000400) != 0);
+      return ((bitField1_ & 0x00000800) != 0);
     }
 
     /**
@@ -11327,7 +11695,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
       } else {
         cloneDetailsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -11351,7 +11719,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
       } else {
         cloneDetailsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -11370,7 +11738,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCloneDetails(com.google.cloud.netapp.v1.Volume.CloneDetails value) {
       if (cloneDetailsBuilder_ == null) {
-        if (((bitField1_ & 0x00000400) != 0)
+        if (((bitField1_ & 0x00000800) != 0)
             && cloneDetails_ != null
             && cloneDetails_
                 != com.google.cloud.netapp.v1.Volume.CloneDetails.getDefaultInstance()) {
@@ -11382,7 +11750,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
         cloneDetailsBuilder_.mergeFrom(value);
       }
       if (cloneDetails_ != null) {
-        bitField1_ |= 0x00000400;
+        bitField1_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -11401,7 +11769,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCloneDetails() {
-      bitField1_ = (bitField1_ & ~0x00000400);
+      bitField1_ = (bitField1_ & ~0x00000800);
       cloneDetails_ = null;
       if (cloneDetailsBuilder_ != null) {
         cloneDetailsBuilder_.dispose();
@@ -11424,7 +11792,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.netapp.v1.Volume.CloneDetails.Builder getCloneDetailsBuilder() {
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00000800;
       onChanged();
       return internalGetCloneDetailsFieldBuilder().getBuilder();
     }

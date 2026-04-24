@@ -1168,6 +1168,13 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
         .getReportingIdentitySettingsSettings();
   }
 
+  /** Returns the object with the settings used for calls to getUserProvidedDataSettings. */
+  public UnaryCallSettings<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+      getUserProvidedDataSettingsSettings() {
+    return ((AnalyticsAdminServiceStubSettings) getStubSettings())
+        .getUserProvidedDataSettingsSettings();
+  }
+
   public static final AnalyticsAdminServiceSettings create(AnalyticsAdminServiceStubSettings stub)
       throws IOException {
     return new AnalyticsAdminServiceSettings.Builder(stub.toBuilder()).build();
@@ -2330,6 +2337,12 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     public UnaryCallSettings.Builder<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
         getReportingIdentitySettingsSettings() {
       return getStubSettingsBuilder().getReportingIdentitySettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getUserProvidedDataSettings. */
+    public UnaryCallSettings.Builder<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+        getUserProvidedDataSettingsSettings() {
+      return getStubSettingsBuilder().getUserProvidedDataSettingsSettings();
     }
 
     @Override

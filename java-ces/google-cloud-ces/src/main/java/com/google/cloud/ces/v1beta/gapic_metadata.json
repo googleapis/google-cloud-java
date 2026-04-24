@@ -208,6 +208,9 @@
             "DeleteScheduledEvaluationRun": {
               "methods": ["deleteScheduledEvaluationRun", "deleteScheduledEvaluationRun", "deleteScheduledEvaluationRun", "deleteScheduledEvaluationRunCallable"]
             },
+            "ExportEvaluations": {
+              "methods": ["exportEvaluationsAsync", "exportEvaluationsAsync", "exportEvaluationsAsync", "exportEvaluationsOperationCallable", "exportEvaluationsCallable"]
+            },
             "GenerateEvaluation": {
               "methods": ["generateEvaluationAsync", "generateEvaluationAsync", "generateEvaluationAsync", "generateEvaluationOperationCallable", "generateEvaluationCallable"]
             },

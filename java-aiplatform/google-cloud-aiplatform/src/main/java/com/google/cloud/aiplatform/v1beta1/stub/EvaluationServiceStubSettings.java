@@ -51,6 +51,8 @@ import com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse;
+import com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest;
+import com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -161,6 +163,8 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
   private final OperationCallSettings<
           EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
       evaluateDatasetOperationSettings;
+  private final UnaryCallSettings<GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>
+      generateInstanceRubricsSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -237,6 +241,12 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
           EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
       evaluateDatasetOperationSettings() {
     return evaluateDatasetOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to generateInstanceRubrics. */
+  public UnaryCallSettings<GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>
+      generateInstanceRubricsSettings() {
+    return generateInstanceRubricsSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -350,6 +360,7 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
     evaluateInstancesSettings = settingsBuilder.evaluateInstancesSettings().build();
     evaluateDatasetSettings = settingsBuilder.evaluateDatasetSettings().build();
     evaluateDatasetOperationSettings = settingsBuilder.evaluateDatasetOperationSettings().build();
+    generateInstanceRubricsSettings = settingsBuilder.generateInstanceRubricsSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -376,6 +387,9 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
     private final OperationCallSettings.Builder<
             EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
         evaluateDatasetOperationSettings;
+    private final UnaryCallSettings.Builder<
+            GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>
+        generateInstanceRubricsSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -424,6 +438,7 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
       evaluateInstancesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       evaluateDatasetSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       evaluateDatasetOperationSettings = OperationCallSettings.newBuilder();
+      generateInstanceRubricsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -434,6 +449,7 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               evaluateInstancesSettings,
               evaluateDatasetSettings,
+              generateInstanceRubricsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -448,6 +464,7 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
       evaluateInstancesSettings = settings.evaluateInstancesSettings.toBuilder();
       evaluateDatasetSettings = settings.evaluateDatasetSettings.toBuilder();
       evaluateDatasetOperationSettings = settings.evaluateDatasetOperationSettings.toBuilder();
+      generateInstanceRubricsSettings = settings.generateInstanceRubricsSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -458,6 +475,7 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               evaluateInstancesSettings,
               evaluateDatasetSettings,
+              generateInstanceRubricsSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -485,6 +503,11 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
 
       builder
           .evaluateDatasetSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .generateInstanceRubricsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -572,6 +595,13 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
             EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
         evaluateDatasetOperationSettings() {
       return evaluateDatasetOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to generateInstanceRubrics. */
+    public UnaryCallSettings.Builder<
+            GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>
+        generateInstanceRubricsSettings() {
+      return generateInstanceRubricsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

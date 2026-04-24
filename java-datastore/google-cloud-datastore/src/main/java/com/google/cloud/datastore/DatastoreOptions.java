@@ -53,12 +53,21 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
   private static final String DEFAULT_DATABASE_ID = "";
   public static final String PROJECT_ID_ENV_VAR = "DATASTORE_PROJECT_ID";
   public static final String LOCAL_HOST_ENV_VAR = "DATASTORE_EMULATOR_HOST";
+
+  // Default to a slightly larger channel count to handle a larger initial QPS. The initial
+  // configuration should be able to handle a max of ~500 concurrent streams as each gRPC
+  // channel can handle a max of 100 streams (limited by Google Middleware). The initial
+  // configuration aims to have a max of ~250 concurrent streams and will rely on the ChannelPool
+  // to resize according to the client's average load.
   public static final int INIT_CHANNEL_COUNT = 5;
+  // Default to be larger than Gax's default (2) to better scale with spikes in requests
   static final int CHANNEL_POOL_DEFAULT_RESIZE_DELTA = 5;
-  // Configure this default to be 100 to match the typical default `MAX_CONCURRENT_STREAMS`.
-  // Larger values *may* experience possible client-side queueing as excess streams cannot be
-  // multiplexed onto a full Http2 connection.
-  static final int CHANNEL_POOL_MAX_RPCS_PER_CHANNEL = 100;
+
+  // Configure the min and max RPC/Channel default in accordance to Datastore configuration guide:
+  // https://docs.cloud.google.com/datastore/docs/java-client-grpc#connection_pool_configuration
+  static final int CHANNEL_POOL_MIN_RPCS_PER_CHANNEL = 10;
+  static final int CHANNEL_POOL_MAX_RPCS_PER_CHANNEL = 50;
+
   public static final int MIN_CHANNEL_COUNT = 1;
 
   // This is a default max channel constant value set to handle the default initial channel
@@ -246,11 +255,13 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
         // Datastore sets the initial channel pool count to be 5 channels to allow better handle
         // large loads of requests and the resize delta to be 5 to scale quicker. In cases of low
         // load, the channel count will scale down as needed and memory will be freed. The default
-        // configuration is set to try and handle ~500 QPS and will scale up and down as needed.
+        // configuration is set to try and handle an average of ~250 QPS and will scale up and down
+        // as needed.
         ChannelPoolSettings datastoreChannelPoolSettings =
             ChannelPoolSettings.builder()
                 .setInitialChannelCount(INIT_CHANNEL_COUNT)
                 .setMinChannelCount(MIN_CHANNEL_COUNT)
+                .setMinRpcsPerChannel(CHANNEL_POOL_MIN_RPCS_PER_CHANNEL)
                 .setMaxRpcsPerChannel(CHANNEL_POOL_MAX_RPCS_PER_CHANNEL)
                 .setMaxResizeDelta(CHANNEL_POOL_DEFAULT_RESIZE_DELTA)
                 .build();

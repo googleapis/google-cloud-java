@@ -7840,6 +7840,59 @@ public final class AnalyticsAdminServiceGrpc {
     return getGetReportingIdentitySettingsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest,
+          com.google.analytics.admin.v1alpha.UserProvidedDataSettings>
+      getGetUserProvidedDataSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetUserProvidedDataSettings",
+      requestType = com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.UserProvidedDataSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest,
+          com.google.analytics.admin.v1alpha.UserProvidedDataSettings>
+      getGetUserProvidedDataSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest,
+            com.google.analytics.admin.v1alpha.UserProvidedDataSettings>
+        getGetUserProvidedDataSettingsMethod;
+    if ((getGetUserProvidedDataSettingsMethod =
+            AnalyticsAdminServiceGrpc.getGetUserProvidedDataSettingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetUserProvidedDataSettingsMethod =
+                AnalyticsAdminServiceGrpc.getGetUserProvidedDataSettingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetUserProvidedDataSettingsMethod =
+              getGetUserProvidedDataSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest,
+                          com.google.analytics.admin.v1alpha.UserProvidedDataSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetUserProvidedDataSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UserProvidedDataSettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetUserProvidedDataSettings"))
+                      .build();
+        }
+      }
+    }
+    return getGetUserProvidedDataSettingsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AnalyticsAdminServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AnalyticsAdminServiceStub> factory =
@@ -10288,7 +10341,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Returns the singleton data retention settings for this property.
+     * Returns the reporting identity settings for this property.
      * </pre>
      */
     default void getReportingIdentitySettings(
@@ -10297,6 +10350,21 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetReportingIdentitySettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up settings related to user-provided data for a property.
+     * </pre>
+     */
+    default void getUserProvidedDataSettings(
+        com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserProvidedDataSettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetUserProvidedDataSettingsMethod(), responseObserver);
     }
   }
 
@@ -13031,7 +13099,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Returns the singleton data retention settings for this property.
+     * Returns the reporting identity settings for this property.
      * </pre>
      */
     public void getReportingIdentitySettings(
@@ -13040,6 +13108,23 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetReportingIdentitySettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up settings related to user-provided data for a property.
+     * </pre>
+     */
+    public void getUserProvidedDataSettings(
+        com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.UserProvidedDataSettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetUserProvidedDataSettingsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -15370,7 +15455,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Returns the singleton data retention settings for this property.
+     * Returns the reporting identity settings for this property.
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ReportingIdentitySettings
@@ -15379,6 +15464,20 @@ public final class AnalyticsAdminServiceGrpc {
             throws io.grpc.StatusException {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getGetReportingIdentitySettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up settings related to user-provided data for a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.UserProvidedDataSettings getUserProvidedDataSettings(
+        com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getGetUserProvidedDataSettingsMethod(), getCallOptions(), request);
     }
   }
 
@@ -17555,7 +17654,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Returns the singleton data retention settings for this property.
+     * Returns the reporting identity settings for this property.
      * </pre>
      */
     public com.google.analytics.admin.v1alpha.ReportingIdentitySettings
@@ -17563,6 +17662,19 @@ public final class AnalyticsAdminServiceGrpc {
             com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetReportingIdentitySettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up settings related to user-provided data for a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.UserProvidedDataSettings getUserProvidedDataSettings(
+        com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUserProvidedDataSettingsMethod(), getCallOptions(), request);
     }
   }
 
@@ -19928,7 +20040,7 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Returns the singleton data retention settings for this property.
+     * Returns the reporting identity settings for this property.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -19937,6 +20049,21 @@ public final class AnalyticsAdminServiceGrpc {
             com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetReportingIdentitySettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Looks up settings related to user-provided data for a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.UserProvidedDataSettings>
+        getUserProvidedDataSettings(
+            com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetUserProvidedDataSettingsMethod(), getCallOptions()), request);
     }
   }
 
@@ -20094,6 +20221,7 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_UPDATE_SUBPROPERTY_SYNC_CONFIG = 151;
   private static final int METHODID_GET_SUBPROPERTY_SYNC_CONFIG = 152;
   private static final int METHODID_GET_REPORTING_IDENTITY_SETTINGS = 153;
+  private static final int METHODID_GET_USER_PROVIDED_DATA_SETTINGS = 154;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -21099,6 +21227,13 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1alpha.ReportingIdentitySettings>)
+                  responseObserver);
+          break;
+        case METHODID_GET_USER_PROVIDED_DATA_SETTINGS:
+          serviceImpl.getUserProvidedDataSettings(
+              (com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.UserProvidedDataSettings>)
                   responseObserver);
           break;
         default:
@@ -22182,6 +22317,13 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest,
                     com.google.analytics.admin.v1alpha.ReportingIdentitySettings>(
                     service, METHODID_GET_REPORTING_IDENTITY_SETTINGS)))
+        .addMethod(
+            getGetUserProvidedDataSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest,
+                    com.google.analytics.admin.v1alpha.UserProvidedDataSettings>(
+                    service, METHODID_GET_USER_PROVIDED_DATA_SETTINGS)))
         .build();
   }
 
@@ -22387,6 +22529,7 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getUpdateSubpropertySyncConfigMethod())
                       .addMethod(getGetSubpropertySyncConfigMethod())
                       .addMethod(getGetReportingIdentitySettingsMethod())
+                      .addMethod(getGetUserProvidedDataSettingsMethod())
                       .build();
         }
       }

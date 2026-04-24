@@ -30,8 +30,12 @@ public interface DeleteCloudControlRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the cloud control to delete, in the format
-   * `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`.
+   * Required. The name of the cloud control to delete, in one of the following
+   * formats:
+   * `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`
+   * or
+   * `projects/{project}/locations/{location}/CloudControls/{CloudControl}`.
+   *
    * The only supported location is `global`.
    * </pre>
    *
@@ -47,8 +51,12 @@ public interface DeleteCloudControlRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the cloud control to delete, in the format
-   * `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`.
+   * Required. The name of the cloud control to delete, in one of the following
+   * formats:
+   * `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`
+   * or
+   * `projects/{project}/locations/{location}/CloudControls/{CloudControl}`.
+   *
    * The only supported location is `global`.
    * </pre>
    *

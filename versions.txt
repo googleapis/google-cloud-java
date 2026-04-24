@@ -991,9 +991,6 @@ proto-google-iam-v2:1.65.0:1.65.0
 grpc-google-iam-v2:1.65.0:1.65.0
 google-cloud-core:2.69.0:2.69.0
 google-cloud-shared-dependencies:3.61.0:3.61.0
-gapic-showcase:0.17.0:0.17.0
-proto-gapic-showcase-v1beta1:0.17.0:0.17.0
-grpc-gapic-showcase-v1beta1:0.17.0:0.17.0
 proto-google-iam-v3:1.65.0:1.65.0
 grpc-google-iam-v3:1.65.0:1.65.0
 proto-google-iam-v3beta:1.65.0:1.65.0

@@ -42,6 +42,7 @@ import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
 import com.google.api.gax.rpc.PagedListResponseFactory;
 import com.google.api.gax.rpc.StatusCode;
+import com.google.api.gax.rpc.StreamingCallSettings;
 import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -145,6 +146,10 @@ public class ModelArmorStubSettings extends StubSettings<ModelArmorStubSettings>
       sanitizeUserPromptSettings;
   private final UnaryCallSettings<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
       sanitizeModelResponseSettings;
+  private final StreamingCallSettings<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+      streamSanitizeUserPromptSettings;
+  private final StreamingCallSettings<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+      streamSanitizeModelResponseSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -300,6 +305,18 @@ public class ModelArmorStubSettings extends StubSettings<ModelArmorStubSettings>
     return sanitizeModelResponseSettings;
   }
 
+  /** Returns the object with the settings used for calls to streamSanitizeUserPrompt. */
+  public StreamingCallSettings<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+      streamSanitizeUserPromptSettings() {
+    return streamSanitizeUserPromptSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamSanitizeModelResponse. */
+  public StreamingCallSettings<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+      streamSanitizeModelResponseSettings() {
+    return streamSanitizeModelResponseSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -431,6 +448,9 @@ public class ModelArmorStubSettings extends StubSettings<ModelArmorStubSettings>
     updateFloorSettingSettings = settingsBuilder.updateFloorSettingSettings().build();
     sanitizeUserPromptSettings = settingsBuilder.sanitizeUserPromptSettings().build();
     sanitizeModelResponseSettings = settingsBuilder.sanitizeModelResponseSettings().build();
+    streamSanitizeUserPromptSettings = settingsBuilder.streamSanitizeUserPromptSettings().build();
+    streamSanitizeModelResponseSettings =
+        settingsBuilder.streamSanitizeModelResponseSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -463,6 +483,12 @@ public class ModelArmorStubSettings extends StubSettings<ModelArmorStubSettings>
     private final UnaryCallSettings.Builder<
             SanitizeModelResponseRequest, SanitizeModelResponseResponse>
         sanitizeModelResponseSettings;
+    private final StreamingCallSettings.Builder<
+            SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+        streamSanitizeUserPromptSettings;
+    private final StreamingCallSettings.Builder<
+            SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+        streamSanitizeModelResponseSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -527,6 +553,8 @@ public class ModelArmorStubSettings extends StubSettings<ModelArmorStubSettings>
       updateFloorSettingSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       sanitizeUserPromptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       sanitizeModelResponseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      streamSanitizeUserPromptSettings = StreamingCallSettings.newBuilder();
+      streamSanitizeModelResponseSettings = StreamingCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -558,6 +586,9 @@ public class ModelArmorStubSettings extends StubSettings<ModelArmorStubSettings>
       updateFloorSettingSettings = settings.updateFloorSettingSettings.toBuilder();
       sanitizeUserPromptSettings = settings.sanitizeUserPromptSettings.toBuilder();
       sanitizeModelResponseSettings = settings.sanitizeModelResponseSettings.toBuilder();
+      streamSanitizeUserPromptSettings = settings.streamSanitizeUserPromptSettings.toBuilder();
+      streamSanitizeModelResponseSettings =
+          settings.streamSanitizeModelResponseSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -723,6 +754,19 @@ public class ModelArmorStubSettings extends StubSettings<ModelArmorStubSettings>
     public UnaryCallSettings.Builder<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
         sanitizeModelResponseSettings() {
       return sanitizeModelResponseSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamSanitizeUserPrompt. */
+    public StreamingCallSettings.Builder<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+        streamSanitizeUserPromptSettings() {
+      return streamSanitizeUserPromptSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamSanitizeModelResponse. */
+    public StreamingCallSettings.Builder<
+            SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+        streamSanitizeModelResponseSettings() {
+      return streamSanitizeModelResponseSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

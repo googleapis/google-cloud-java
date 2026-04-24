@@ -166,6 +166,7 @@ import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaReq
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest;
+import com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
@@ -274,6 +275,7 @@ import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchema
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest;
+import com.google.analytics.admin.v1alpha.UserProvidedDataSettings;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -1217,6 +1219,12 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
       getReportingIdentitySettingsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: getReportingIdentitySettingsCallable()");
+  }
+
+  public UnaryCallable<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+      getUserProvidedDataSettingsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getUserProvidedDataSettingsCallable()");
   }
 
   @Override

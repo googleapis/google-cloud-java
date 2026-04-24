@@ -14,7 +14,6 @@ jobs:
       shell: bash
       run: .kokoro/build.sh
       env:
-        BUILD_SUBDIR: sdk-platform-java
         JOB_TYPE: install
     - name: Unmanaged dependency check
       uses: ./sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check

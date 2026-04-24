@@ -20,6 +20,7 @@ package com.google.cloud.ces.v1beta.samples;
 import com.google.cloud.ces.v1beta.AppName;
 import com.google.cloud.ces.v1beta.ExecuteToolRequest;
 import com.google.cloud.ces.v1beta.ExecuteToolResponse;
+import com.google.cloud.ces.v1beta.MockConfig;
 import com.google.cloud.ces.v1beta.ToolServiceClient;
 import com.google.protobuf.Struct;
 
@@ -40,6 +41,7 @@ public class SyncExecuteTool {
           ExecuteToolRequest.newBuilder()
               .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
               .setArgs(Struct.newBuilder().build())
+              .setMockConfig(MockConfig.newBuilder().build())
               .build();
       ExecuteToolResponse response = toolServiceClient.executeTool(request);
     }

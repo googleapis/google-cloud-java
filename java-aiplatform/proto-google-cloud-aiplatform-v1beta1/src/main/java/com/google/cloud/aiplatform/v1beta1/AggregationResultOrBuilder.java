@@ -224,6 +224,50 @@ public interface AggregationResultOrBuilder
    *
    *
    * <pre>
+   * Result for code execution metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult custom_code_execution_result = 10;
+   * </code>
+   *
+   * @return Whether the customCodeExecutionResult field is set.
+   */
+  boolean hasCustomCodeExecutionResult();
+
+  /**
+   *
+   *
+   * <pre>
+   * Result for code execution metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult custom_code_execution_result = 10;
+   * </code>
+   *
+   * @return The customCodeExecutionResult.
+   */
+  com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult getCustomCodeExecutionResult();
+
+  /**
+   *
+   *
+   * <pre>
+   * Result for code execution metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult custom_code_execution_result = 10;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResultOrBuilder
+      getCustomCodeExecutionResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Aggregation metric.
    * </pre>
    *
