@@ -185,7 +185,7 @@ def main():
 
     # Filter commit titles based on allowed prefixes and categorize them
     # Supports scopes in parentheses, e.g., feat(spanner):
-    prefix_regex = re.compile(r"^(feat|fix|deps|docs)(\([^)]+\))?(!)?:")
+    prefix_regex = re.compile(r"^(feat|fix|deps|docs|chore\(deps\)|build\(deps\))(\([^)]+\))?(!)?:")
     
     breaking_changes = []
     features = []
@@ -201,16 +201,19 @@ def main():
         prefix = match.group(1)
         is_breaking = match.group(3) == "!"
         
+        commit_link = f"([{commit_hash[:7]}](https://github.com/googleapis/google-cloud-java/commit/{commit_hash}))"
+        full_item = f"{text} {commit_link}"
+        
         if is_breaking:
-            breaking_changes.append(f"{commit_hash[:11]} {text}")
+            breaking_changes.append(full_item)
         elif prefix == "feat":
-            features.append(f"{commit_hash[:11]} {text}")
+            features.append(full_item)
         elif prefix == "fix":
-            bug_fixes.append(f"{commit_hash[:11]} {text}")
-        elif prefix == "deps":
-            dependency_upgrades.append(f"{commit_hash[:11]} {text}")
+            bug_fixes.append(full_item)
+        elif prefix == "deps" or prefix in ("chore(deps)", "build(deps)"):
+            dependency_upgrades.append(full_item)
         elif prefix == "docs":
-            documentation.append(f"{commit_hash[:11]} {text}")
+            documentation.append(full_item)
 
     commits_data = notes_output.split("--END_OF_COMMIT--")
     
@@ -282,7 +285,17 @@ def main():
         if prefix_regex.match(subject):
             categorize_and_append(commit_hash, subject)
 
-    print("\nRelease Notes:")
+    # Get dates and build header
+    # We use ~1 to be exclusive of the boundary as requested earlier, but let's be careful.
+    # If prev_commit is None, we don't set a range.
+    target_date = run_cmd(["git", "log", "-1", "--format=%cI", target_commit]).strip()
+    date_str = target_date.split("T")[0]  # Get YYYY-MM-DD
+    
+    compare_url = f"https://github.com/googleapis/google-cloud-java/compare/{prev_commit}...{target_commit}" if prev_commit else f"https://github.com/googleapis/google-cloud-java/commit/{target_commit}"
+    
+    print(f"## [{target_version}]({compare_url}) ({date_str})")
+    print()
+
     if breaking_changes:
         print("### ⚠ BREAKING CHANGES\n")
         for item in breaking_changes:
@@ -301,15 +314,15 @@ def main():
             print(f"* {item}")
         print()
 
-    if dependency_upgrades:
-        print("### Dependencies\n")
-        for item in dependency_upgrades:
-            print(f"* {item}")
-        print()
-
     if documentation:
         print("### Documentation\n")
         for item in documentation:
+            print(f"* {item}")
+        print()
+
+    if dependency_upgrades:
+        print("### Dependencies\n")
+        for item in dependency_upgrades:
             print(f"* {item}")
         print()
 
