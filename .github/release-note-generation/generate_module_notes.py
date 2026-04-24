@@ -99,27 +99,72 @@ def main():
     # Fallback for initial version if no previous version found
     if not prev_commit:
         print(
-            f"Previous version not found in history for module {module}.", file=sys.stderr
+            f"Previous version not found in history of versions.txt for module {module}. Trying pom.xml history...", file=sys.stderr
         )
-        # Find the first commit affecting that directory
-        first_commit_cmd = [
+        
+        pom_path = f"{directory}/pom.xml"
+        pom_log_cmd = [
             "git",
             "log",
-            "--reverse",
             "--oneline",
             "--",
-            directory,
+            pom_path,
         ]
         try:
-            first_commit_output = run_cmd(first_commit_cmd)
-            if first_commit_output:
-                prev_commit = None
-                print(f"No previous version found. Generating notes from the beginning of history for {directory}.", file=sys.stderr)
+            pom_log_output = run_cmd(pom_log_cmd)
+            pom_commits = [line.split()[0] for line in pom_log_output.splitlines() if line]
+            
+            prev_commit_in_loop = None
+            target_end_commit = None
+            prev_start_commit = None
+
+            for commit in pom_commits:
+                show_cmd = ["git", "show", f"{commit}:{pom_path}"]
+                try:
+                    content = run_cmd(show_cmd)
+                except SystemExit:
+                    continue
+
+                match = re.search(r"<version>([^<]+)</version>", content)
+                if match:
+                    ver = match.group(1)
+
+                    if ver == target_version and not target_end_commit:
+                        # Moving backwards, this is the first commit with target version!
+                        # The previous commit in loop was the one that changed it AWAY from target version!
+                        target_end_commit = prev_commit_in_loop
+                        print(
+                            f"Found commit changing away from {target_version} at {target_end_commit}",
+                            file=sys.stderr,
+                        )
+
+                    elif (
+                        target_end_commit
+                        and ver != target_version
+                        and "-SNAPSHOT" not in ver
+                    ):
+                        # This is the commit where the previous stable version was set!
+                        prev_start_commit = commit
+                        print(
+                            f"Found previous stable version {ver} at {commit}",
+                            file=sys.stderr,
+                        )
+                        break
+
+                prev_commit_in_loop = commit
+
+            if prev_start_commit and target_end_commit:
+                prev_commit = prev_start_commit
+                # Use W~1 to be exclusive of W (the commit that changed it away)
+                target_commit = f"{target_end_commit}~1"
+                print(f"Using range derived from pom.xml: {prev_commit}..{target_commit}", file=sys.stderr)
             else:
-                print(f"No history found for directory {directory}.", file=sys.stderr)
-                sys.exit(1)
+                print(f"Could not find complete range in pom.xml. Falling back to initial release logic.", file=sys.stderr)
+                prev_commit = None
+
         except SystemExit:
-            sys.exit(1)
+            print(f"Failed to read pom.xml history.", file=sys.stderr)
+            prev_commit = None
 
     range_desc = f"between {prev_commit} and {target_commit}" if prev_commit else f"up to {target_commit}"
     print(
