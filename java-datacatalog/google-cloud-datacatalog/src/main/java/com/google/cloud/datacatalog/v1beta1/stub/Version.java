@@ -21,7 +21,7 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 final class Version {
   // {x-version-update-start:google-cloud-datacatalog:current}
-  static final String VERSION = "1.97.0";
+  static final String VERSION = "1.98.0-SNAPSHOT";
   // {x-version-update-end}
 
 }
