@@ -30,6 +30,10 @@ import io.opentelemetry.sdk.metrics.data.MetricData;
 import io.opentelemetry.sdk.metrics.data.PointData;
 import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
 import java.util.Arrays;
+import com.google.cloud.monitoring.v3.MetricServiceClient;
+import com.google.monitoring.v3.ListTimeSeriesRequest;
+import com.google.monitoring.v3.TimeInterval;
+import com.google.protobuf.Timestamp;
 import java.util.Collection;
 import java.util.Optional;
 import org.junit.After;
@@ -172,42 +176,9 @@ public class ITDatastoreBuiltInAndCustomMetrics {
     }
   }
 
-  /**
-   * Verifies that the Datastore client is configured with a composite recorder so that both the
-   * built-in Cloud Monitoring backend and the user-provided custom OTel backend are active.
-   *
-   * <p>The composite recorder is the internal mechanism that fans out every {@code record*()} call
-   * to all registered backends. Its presence guarantees that:
-   *
-   * <ul>
-   *   <li>the built-in SDK was successfully created and its exporter was wired up, AND
-   *   <li>the user-provided custom OTel instance is also receiving metric data.
-   * </ul>
-   */
-  @Test
-  public void bothBackendsActive_recorderIsComposite() {
-    // DatastoreOptions.getMetricsRecorder() is package-private; accessible because this test
-    // lives in the same package (com.google.cloud.datastore).
-    String recorderClassName =
-        datastore.getOptions().getMetricsRecorder().getClass().getSimpleName();
-    assertThat(recorderClassName).isEqualTo("CompositeDatastoreMetricsRecorder");
-  }
 
-  /**
-   * Verifies that the built-in metrics export flag is off by default. The flag is disabled until
-   * the Datastore namespace in Cloud Monitoring is deployed; it must be explicitly opted in via
-   * {@link DatastoreOpenTelemetryOptions.Builder#setExportBuiltinMetricsToGoogleCloudMonitoring}.
-   */
-  @Test
-  public void builtInMetricsExport_isDisabledByDefault() {
-    DatastoreOptions defaultOptions =
-        DatastoreOptions.newBuilder().setProjectId(PROJECT_ID).build();
-    assertThat(
-            defaultOptions
-                .getOpenTelemetryOptions()
-                .isExportBuiltinMetricsToGoogleCloudMonitoring())
-        .isFalse();
-  }
+
+
 
   /**
    * Verifies that a transaction operation records {@code transaction_latency} and {@code
@@ -410,5 +381,66 @@ public class ITDatastoreBuiltInAndCustomMetrics {
       PointData point, String attributeKey, String expectedValue) {
     String actual = point.getAttributes().get(AttributeKey.stringKey(attributeKey));
     return expectedValue.equals(actual);
+  }
+  @Test
+  public void metricsExportedToCloudMonitoring() throws Exception {
+    // Perform an operation to generate metrics
+    Key key = datastore.newKeyFactory().setKind(kind).newKey("metrics-it-entity");
+    Entity initial = Entity.newBuilder(key).set("value", 0L).build();
+    datastore.put(initial);
+
+    datastore.runInTransaction(
+        tx -> {
+          Entity current = tx.get(key);
+          tx.put(Entity.newBuilder(current).set("value", current.getLong("value") + 1).build());
+          return null;
+        });
+
+    // Wait for metrics to be flushed and ingested.
+    // The default interval is 60 seconds, so we need to wait at least that long, plus ingestion delay.
+    // Let's use a polling loop with a timeout of 150 seconds.
+    
+    long startTimeMillis = System.currentTimeMillis();
+    String filter = "metric.type = \"custom.googleapis.com/internal/client/transaction_latency\"";
+    
+    boolean found = false;
+    int attempts = 0;
+    while (System.currentTimeMillis() - startTimeMillis < 150000) {
+      attempts++;
+      System.out.println("Checking Cloud Monitoring for metrics (attempt " + attempts + ")...");
+      if (isMetricPresent(filter)) {
+        found = true;
+        break;
+      }
+      Thread.sleep(10000); // Wait 10 seconds between attempts
+    }
+    
+    assertWithMessage("Metrics should be present in Cloud Monitoring").that(found).isTrue();
+  }
+
+  private boolean isMetricPresent(String filter) throws Exception {
+    try (MetricServiceClient client = MetricServiceClient.create()) {
+      String name = "projects/" + PROJECT_ID;
+      
+      // Use a time interval covering the last 5 minutes
+      long now = System.currentTimeMillis();
+      Timestamp endTime = Timestamp.newBuilder().setSeconds(now / 1000).build();
+      Timestamp startTime = Timestamp.newBuilder().setSeconds((now - 300000) / 1000).build();
+      
+      TimeInterval interval = TimeInterval.newBuilder()
+          .setStartTime(startTime)
+          .setEndTime(endTime)
+          .build();
+          
+      ListTimeSeriesRequest request = ListTimeSeriesRequest.newBuilder()
+          .setName(name)
+          .setFilter(filter)
+          .setInterval(interval)
+          .setView(ListTimeSeriesRequest.TimeSeriesView.FULL)
+          .build();
+          
+      MetricServiceClient.ListTimeSeriesPagedResponse response = client.listTimeSeries(request);
+      return response.iterateAll().iterator().hasNext();
+    }
   }
 }

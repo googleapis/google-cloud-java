@@ -307,4 +307,31 @@ public class DatastoreOptionsTest {
     assertNotEquals(original, newOptions);
     assertNotEquals(original.hashCode(), newOptions.hashCode());
   }
+  @Test
+  public void builtInMetricsExport_isDisabledByDefault() {
+    DatastoreOptions defaultOptions =
+        DatastoreOptions.newBuilder().setProjectId(PROJECT_ID).build();
+    assertThat(
+            defaultOptions
+                .getOpenTelemetryOptions()
+                .isExportBuiltinMetricsToGoogleCloudMonitoring())
+        .isFalse();
+  }
+
+  @Test
+  public void bothBackendsActive_recorderIsComposite() {
+    DatastoreOptions options =
+        DatastoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setDatabaseId(DATABASE_ID)
+            .setOpenTelemetryOptions(
+                DatastoreOpenTelemetryOptions.newBuilder()
+                    .setMetricsEnabled(true)
+                    .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
+                    .build())
+            .build();
+    String recorderClassName =
+        options.getMetricsRecorder().getClass().getSimpleName();
+    assertThat(recorderClassName).isEqualTo("CompositeDatastoreMetricsRecorder");
+  }
 }
