@@ -25,6 +25,9 @@ import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.context.Context;
+import io.opentelemetry.context.Scope;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.concurrent.BlockingQueue;
@@ -133,49 +136,51 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   /* Advances the result set to the next row, returning false if no such row exists. Potentially blocking operation */
   public boolean next() throws SQLException {
     checkClosed();
-    if (this.isNested) {
-      // We are working with the nested record, the cursor would have been
-      // populated.
-      if (this.cursor == null || this.cursor.getArrayFieldValueList() == null) {
-        throw new IllegalStateException(
-            "Cursor/ArrayFieldValueList can not be null working with the nested record");
-      }
-      // Check if there's a next record in the array which can be read
-      if (this.nestedRowIndex < (this.toIndexExclusive - 1)) {
-        this.nestedRowIndex++;
-        return true;
-      }
-      this.afterLast = true;
-      return false;
-
-    } else {
-      // If end of stream is reached or we are past the last row i.e
-      // rowcnt == totalRows (rowcnt starts at 0)
-      // then we can simply return false
-      if (this.hasReachedEnd || this.isLast()) {
+    try (Scope scope = Context.current().with(Span.wrap(originalSpanContext)).makeCurrent()) {
+      if (this.isNested) {
+        // We are working with the nested record, the cursor would have been
+        // populated.
+        if (this.cursor == null || this.cursor.getArrayFieldValueList() == null) {
+          throw new IllegalStateException(
+              "Cursor/ArrayFieldValueList can not be null working with the nested record");
+        }
+        // Check if there's a next record in the array which can be read
+        if (this.nestedRowIndex < (this.toIndexExclusive - 1)) {
+          this.nestedRowIndex++;
+          return true;
+        }
         this.afterLast = true;
         return false;
-      }
-      try {
-        // Advance the cursor,Potentially blocking operation
-        this.cursor = this.buffer.take();
-        if (this.cursor.getException() != null) {
-          throw new BigQueryJdbcRuntimeException(this.cursor.getException());
-        }
-        this.rowCnt++;
-        // Check for end of stream
-        if (this.cursor.isLast()) {
-          this.cursor = null;
-          this.hasReachedEnd = true;
+
+      } else {
+        // If end of stream is reached or we are past the last row i.e
+        // rowcnt == totalRows (rowcnt starts at 0)
+        // then we can simply return false
+        if (this.hasReachedEnd || this.isLast()) {
+          this.afterLast = true;
           return false;
         }
-        // Cursor has been advanced
-        return true;
+        try {
+          // Advance the cursor,Potentially blocking operation
+          this.cursor = this.buffer.take();
+          if (this.cursor.getException() != null) {
+            throw new BigQueryJdbcRuntimeException(this.cursor.getException());
+          }
+          this.rowCnt++;
+          // Check for end of stream
+          if (this.cursor.isLast()) {
+            this.cursor = null;
+            this.hasReachedEnd = true;
+            return false;
+          }
+          // Cursor has been advanced
+          return true;
 
-      } catch (InterruptedException ex) {
-        throw new BigQueryJdbcRuntimeException(
-            "Error occurred while advancing the cursor. This could happen when connection is closed while we call the next method",
-            ex);
+        } catch (InterruptedException ex) {
+          throw new BigQueryJdbcRuntimeException(
+              "Error occurred while advancing the cursor. This could happen when connection is closed while we call the next method",
+              ex);
+        }
       }
     }
   }

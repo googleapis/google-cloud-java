@@ -49,4 +49,12 @@ public class BigQueryJdbcOpenTelemetry {
   public static Tracer getTracer(OpenTelemetry openTelemetry) {
     return openTelemetry.getTracer(INSTRUMENTATION_SCOPE_NAME);
   }
+
+  /** Gets a Tracer for the JDBC driver, fallback to noop if connection has no tracer. */
+  public static Tracer getSafeTracer(BigQueryConnection connection) {
+    if (connection != null && connection.getTracer() != null) {
+      return connection.getTracer();
+    }
+    return getOpenTelemetry(false, false, null).getTracer(INSTRUMENTATION_SCOPE_NAME);
+  }
 }
