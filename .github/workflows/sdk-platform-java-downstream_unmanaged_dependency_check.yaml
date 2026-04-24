@@ -55,12 +55,10 @@ jobs:
           cache: maven
       - name: Install the modules of sdk-platform-java
         shell: bash
-        working-directory: google-cloud-java/sdk-platform-java
-        run: |
-          set -euo pipefail
-          # gapic-generator-java is irrelevant
-          mvn -q -B -ntp install \
-            -Dcheckstyle.skip -Dfmt.skip -DskipTests -T 1C
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
       - name: Build unmanaged dependency check
         shell: bash
         working-directory: google-cloud-java/sdk-platform-java/java-shared-dependencies/unmanaged-dependency-check
