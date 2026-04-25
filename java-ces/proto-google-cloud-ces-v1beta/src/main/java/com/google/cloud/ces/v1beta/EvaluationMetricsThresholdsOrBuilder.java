@@ -84,7 +84,7 @@ public interface EvaluationMetricsThresholdsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationMetricsThresholds.hallucination_metric_behavior
-   *     is deprecated. See google/cloud/ces/v1beta/app.proto;l=546
+   *     is deprecated. See google/cloud/ces/v1beta/app.proto;l=581
    * @return The enum numeric value on the wire for hallucinationMetricBehavior.
    */
   @java.lang.Deprecated
@@ -103,7 +103,7 @@ public interface EvaluationMetricsThresholdsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationMetricsThresholds.hallucination_metric_behavior
-   *     is deprecated. See google/cloud/ces/v1beta/app.proto;l=546
+   *     is deprecated. See google/cloud/ces/v1beta/app.proto;l=581
    * @return The hallucinationMetricBehavior.
    */
   @java.lang.Deprecated

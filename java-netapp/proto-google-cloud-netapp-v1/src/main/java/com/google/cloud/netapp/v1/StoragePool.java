@@ -69,6 +69,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
     qosType_ = 0;
     type_ = 0;
     mode_ = 0;
+    scaleType_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -1693,6 +1694,49 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
     return result == null ? com.google.cloud.netapp.v1.Mode.UNRECOGNIZED : result;
   }
 
+  public static final int SCALE_TYPE_FIELD_NUMBER = 38;
+  private int scaleType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scale type of the storage pool. Defaults to
+   * `SCALE_TYPE_DEFAULT` if not specified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.ScaleType scale_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for scaleType.
+   */
+  @java.lang.Override
+  public int getScaleTypeValue() {
+    return scaleType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The scale type of the storage pool. Defaults to
+   * `SCALE_TYPE_DEFAULT` if not specified.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.ScaleType scale_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The scaleType.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.ScaleType getScaleType() {
+    com.google.cloud.netapp.v1.ScaleType result =
+        com.google.cloud.netapp.v1.ScaleType.forNumber(scaleType_);
+    return result == null ? com.google.cloud.netapp.v1.ScaleType.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1806,6 +1850,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeEnum(36, mode_);
+    }
+    if (scaleType_ != com.google.cloud.netapp.v1.ScaleType.SCALE_TYPE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(38, scaleType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1925,6 +1972,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(36, mode_);
     }
+    if (scaleType_ != com.google.cloud.netapp.v1.ScaleType.SCALE_TYPE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(38, scaleType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1989,6 +2039,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
     if (hasMode()) {
       if (mode_ != other.mode_) return false;
     }
+    if (scaleType_ != other.scaleType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2081,6 +2132,8 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + MODE_FIELD_NUMBER;
       hash = (53 * hash) + mode_;
     }
+    hash = (37 * hash) + SCALE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + scaleType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2292,6 +2345,7 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
       hotTierSizeUsedGib_ = 0L;
       type_ = 0;
       mode_ = 0;
+      scaleType_ = 0;
       return this;
     }
 
@@ -2443,6 +2497,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
         result.mode_ = mode_;
         to_bitField0_ |= 0x00000010;
       }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
+        result.scaleType_ = scaleType_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -2573,6 +2630,9 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasMode()) {
         setModeValue(other.getModeValue());
+      }
+      if (other.scaleType_ != 0) {
+        setScaleTypeValue(other.getScaleTypeValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2805,6 +2865,12 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
                 bitField1_ |= 0x00000001;
                 break;
               } // case 288
+            case 304:
+              {
+                scaleType_ = input.readEnum();
+                bitField1_ |= 0x00000002;
+                break;
+              } // case 304
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5938,6 +6004,116 @@ public final class StoragePool extends com.google.protobuf.GeneratedMessage
     public Builder clearMode() {
       bitField1_ = (bitField1_ & ~0x00000001);
       mode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int scaleType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scale type of the storage pool. Defaults to
+     * `SCALE_TYPE_DEFAULT` if not specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.ScaleType scale_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for scaleType.
+     */
+    @java.lang.Override
+    public int getScaleTypeValue() {
+      return scaleType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scale type of the storage pool. Defaults to
+     * `SCALE_TYPE_DEFAULT` if not specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.ScaleType scale_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for scaleType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScaleTypeValue(int value) {
+      scaleType_ = value;
+      bitField1_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scale type of the storage pool. Defaults to
+     * `SCALE_TYPE_DEFAULT` if not specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.ScaleType scale_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The scaleType.
+     */
+    @java.lang.Override
+    public com.google.cloud.netapp.v1.ScaleType getScaleType() {
+      com.google.cloud.netapp.v1.ScaleType result =
+          com.google.cloud.netapp.v1.ScaleType.forNumber(scaleType_);
+      return result == null ? com.google.cloud.netapp.v1.ScaleType.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scale type of the storage pool. Defaults to
+     * `SCALE_TYPE_DEFAULT` if not specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.ScaleType scale_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The scaleType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setScaleType(com.google.cloud.netapp.v1.ScaleType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField1_ |= 0x00000002;
+      scaleType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The scale type of the storage pool. Defaults to
+     * `SCALE_TYPE_DEFAULT` if not specified.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.ScaleType scale_type = 38 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearScaleType() {
+      bitField1_ = (bitField1_ & ~0x00000002);
+      scaleType_ = 0;
       onChanged();
       return this;
     }

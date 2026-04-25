@@ -87,6 +87,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{parent=projects/*/locations/*}/frameworks")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -123,6 +124,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*/frameworks/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -159,6 +161,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{parent=projects/*/locations/*}/frameworks")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -199,6 +202,8 @@ public class HttpJsonConfigStub extends ConfigStub {
                                 fields, "framework.name", request.getFramework().getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{framework.name=projects/*/locations/*/frameworks/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -239,6 +244,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*/frameworks/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -273,6 +279,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{parent=projects/*/locations/*}/cloudControls")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -309,6 +316,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*/cloudControls/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -346,6 +354,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                             serializer.putPathParam(fields, "parent", request.getParent());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{parent=projects/*/locations/*}/cloudControls")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -387,6 +396,8 @@ public class HttpJsonConfigStub extends ConfigStub {
                                 fields, "cloudControl.name", request.getCloudControl().getName());
                             return fields;
                           })
+                      .setAdditionalPaths(
+                          "/v1/{cloudControl.name=projects/*/locations/*/cloudControls/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -426,6 +437,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*/cloudControls/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -460,6 +472,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*}/locations")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -494,6 +507,7 @@ public class HttpJsonConfigStub extends ConfigStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

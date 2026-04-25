@@ -109,6 +109,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   protected SQLException createCoercionException(
       int columnIndex, Class<?> targetClass, Exception cause) throws SQLException {
+    LOG.severe(cause, "Coercion failed");
     checkClosed();
     StandardSQLTypeName type;
     String typeName;
@@ -123,8 +124,11 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
         type = arrayField.getType().getStandardType();
         typeName = type.name();
       } else {
-        throw new SQLException(
-            "For a nested ResultSet from an Array, columnIndex must be 1 or 2.", cause);
+        SQLException ex =
+            new SQLException(
+                "For a nested ResultSet from an Array, columnIndex must be 1 or 2.", cause);
+        LOG.severe(ex, "For a nested ResultSet from an Array, columnIndex must be 1 or 2.");
+        throw ex;
       }
     } else {
       Field field = this.schemaFieldList.get(columnIndex - 1);
@@ -144,18 +148,25 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
         return StandardSQLTypeName.INT64;
       } else if (columnIndex == 2) {
         if (this.schema == null || this.schema.getFields().isEmpty()) {
-          throw new SQLException("Schema not available for nested result set.");
+          SQLException ex = new SQLException("Schema not available for nested result set.");
+          LOG.severe(ex, "Schema not available for nested result set.");
+          throw ex;
         }
         Field arrayField = this.schema.getFields().get(0);
         return arrayField.getType().getStandardType();
       } else {
-        throw new SQLException("For a nested ResultSet from an Array, columnIndex must be 1 or 2.");
+        SQLException ex =
+            new SQLException("For a nested ResultSet from an Array, columnIndex must be 1 or 2.");
+        LOG.severe(ex, "For a nested ResultSet from an Array, columnIndex must be 1 or 2.");
+        throw ex;
       }
     } else {
       if (this.schemaFieldList == null
           || columnIndex > this.schemaFieldList.size()
           || columnIndex < 1) {
-        throw new SQLException("Invalid column index: " + columnIndex);
+        SQLException ex = new SQLException("Invalid column index: " + columnIndex);
+        LOG.severe(ex, "Invalid column index: " + columnIndex);
+        throw ex;
       }
       Field field = this.schemaFieldList.get(columnIndex - 1);
       return field.getType().getStandardType();

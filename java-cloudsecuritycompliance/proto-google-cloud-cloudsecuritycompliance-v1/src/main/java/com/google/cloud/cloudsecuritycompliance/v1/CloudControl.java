@@ -264,8 +264,12 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Identifier. The name of the cloud control, in the format
-   * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+   * Required. Identifier. The name of the cloud control, in either of the
+   * formats:
+   * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+   * or
+   * `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+   *
    * The only supported location is `global`.
    * </pre>
    *
@@ -292,8 +296,12 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Identifier. The name of the cloud control, in the format
-   * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+   * Required. Identifier. The name of the cloud control, in either of the
+   * formats:
+   * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+   * or
+   * `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+   *
    * The only supported location is `global`.
    * </pre>
    *
@@ -2311,8 +2319,12 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Identifier. The name of the cloud control, in the format
-     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+     * Required. Identifier. The name of the cloud control, in either of the
+     * formats:
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+     *
      * The only supported location is `global`.
      * </pre>
      *
@@ -2338,8 +2350,12 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Identifier. The name of the cloud control, in the format
-     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+     * Required. Identifier. The name of the cloud control, in either of the
+     * formats:
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+     *
      * The only supported location is `global`.
      * </pre>
      *
@@ -2365,8 +2381,12 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Identifier. The name of the cloud control, in the format
-     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+     * Required. Identifier. The name of the cloud control, in either of the
+     * formats:
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+     *
      * The only supported location is `global`.
      * </pre>
      *
@@ -2391,8 +2411,12 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Identifier. The name of the cloud control, in the format
-     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+     * Required. Identifier. The name of the cloud control, in either of the
+     * formats:
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+     *
      * The only supported location is `global`.
      * </pre>
      *
@@ -2413,8 +2437,12 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Identifier. The name of the cloud control, in the format
-     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control_id}`.
+     * Required. Identifier. The name of the cloud control, in either of the
+     * formats:
+     * `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+     *
      * The only supported location is `global`.
      * </pre>
      *

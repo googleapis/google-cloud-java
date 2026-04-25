@@ -16,6 +16,7 @@
 
 package com.google.chat.v1.stub;
 
+import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
@@ -55,6 +56,8 @@ import com.google.chat.v1.DeleteReactionRequest;
 import com.google.chat.v1.DeleteSectionRequest;
 import com.google.chat.v1.DeleteSpaceRequest;
 import com.google.chat.v1.FindDirectMessageRequest;
+import com.google.chat.v1.FindGroupChatsRequest;
+import com.google.chat.v1.FindGroupChatsResponse;
 import com.google.chat.v1.GetAttachmentRequest;
 import com.google.chat.v1.GetCustomEmojiRequest;
 import com.google.chat.v1.GetMembershipRequest;
@@ -785,6 +788,44 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<Space>newBuilder()
                       .setDefaultInstance(Space.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<FindGroupChatsRequest, FindGroupChatsResponse>
+      findGroupChatsMethodDescriptor =
+          ApiMethodDescriptor.<FindGroupChatsRequest, FindGroupChatsResponse>newBuilder()
+              .setFullMethodName("google.chat.v1.ChatService/FindGroupChats")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<FindGroupChatsRequest>newBuilder()
+                      .setPath(
+                          "/v1/spaces:findGroupChats",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<FindGroupChatsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<FindGroupChatsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(
+                                fields, "spaceView", request.getSpaceViewValue());
+                            serializer.putQueryParam(fields, "users", request.getUsersList());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<FindGroupChatsResponse>newBuilder()
+                      .setDefaultInstance(FindGroupChatsResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1700,6 +1741,9 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   private final UnaryCallable<CompleteImportSpaceRequest, CompleteImportSpaceResponse>
       completeImportSpaceCallable;
   private final UnaryCallable<FindDirectMessageRequest, Space> findDirectMessageCallable;
+  private final UnaryCallable<FindGroupChatsRequest, FindGroupChatsResponse> findGroupChatsCallable;
+  private final UnaryCallable<FindGroupChatsRequest, FindGroupChatsPagedResponse>
+      findGroupChatsPagedCallable;
   private final UnaryCallable<CreateMembershipRequest, Membership> createMembershipCallable;
   private final UnaryCallable<UpdateMembershipRequest, Membership> updateMembershipCallable;
   private final UnaryCallable<DeleteMembershipRequest, Membership> deleteMembershipCallable;
@@ -1969,6 +2013,12 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
             .setMethodDescriptor(findDirectMessageMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<FindGroupChatsRequest, FindGroupChatsResponse>
+        findGroupChatsTransportSettings =
+            HttpJsonCallSettings.<FindGroupChatsRequest, FindGroupChatsResponse>newBuilder()
+                .setMethodDescriptor(findGroupChatsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<CreateMembershipRequest, Membership> createMembershipTransportSettings =
         HttpJsonCallSettings.<CreateMembershipRequest, Membership>newBuilder()
             .setMethodDescriptor(createMembershipMethodDescriptor)
@@ -2327,6 +2377,12 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
             findDirectMessageTransportSettings,
             settings.findDirectMessageSettings(),
             clientContext);
+    this.findGroupChatsCallable =
+        callableFactory.createUnaryCallable(
+            findGroupChatsTransportSettings, settings.findGroupChatsSettings(), clientContext);
+    this.findGroupChatsPagedCallable =
+        callableFactory.createPagedCallable(
+            findGroupChatsTransportSettings, settings.findGroupChatsSettings(), clientContext);
     this.createMembershipCallable =
         callableFactory.createUnaryCallable(
             createMembershipTransportSettings, settings.createMembershipSettings(), clientContext);
@@ -2454,6 +2510,7 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
     methodDescriptors.add(deleteSpaceMethodDescriptor);
     methodDescriptors.add(completeImportSpaceMethodDescriptor);
     methodDescriptors.add(findDirectMessageMethodDescriptor);
+    methodDescriptors.add(findGroupChatsMethodDescriptor);
     methodDescriptors.add(createMembershipMethodDescriptor);
     methodDescriptors.add(updateMembershipMethodDescriptor);
     methodDescriptors.add(deleteMembershipMethodDescriptor);
@@ -2592,6 +2649,17 @@ public class HttpJsonChatServiceStub extends ChatServiceStub {
   @Override
   public UnaryCallable<FindDirectMessageRequest, Space> findDirectMessageCallable() {
     return findDirectMessageCallable;
+  }
+
+  @Override
+  public UnaryCallable<FindGroupChatsRequest, FindGroupChatsResponse> findGroupChatsCallable() {
+    return findGroupChatsCallable;
+  }
+
+  @Override
+  public UnaryCallable<FindGroupChatsRequest, FindGroupChatsPagedResponse>
+      findGroupChatsPagedCallable() {
+    return findGroupChatsPagedCallable;
   }
 
   @Override

@@ -117,6 +117,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     virtualModelLink_ = "";
     certifications_ = java.util.Collections.emptyList();
     sustainabilityIncentives_ = java.util.Collections.emptyList();
+    videoLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -8219,7 +8220,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Global Trade Item Numbers
-   * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+   * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
    * item.
    * You can provide up to 10 GTINs.
    * </pre>
@@ -8237,7 +8238,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Global Trade Item Numbers
-   * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+   * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
    * item.
    * You can provide up to 10 GTINs.
    * </pre>
@@ -8255,7 +8256,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Global Trade Item Numbers
-   * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+   * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
    * item.
    * You can provide up to 10 GTINs.
    * </pre>
@@ -8274,7 +8275,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Global Trade Item Numbers
-   * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+   * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
    * item.
    * You can provide up to 10 GTINs.
    * </pre>
@@ -8439,7 +8440,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Manufacturer Part Number
-   * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+   * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
    * item.
    * </pre>
    *
@@ -8457,7 +8458,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Manufacturer Part Number
-   * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+   * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
    * item.
    * </pre>
    *
@@ -8483,7 +8484,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Manufacturer Part Number
-   * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+   * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
    * item.
    * </pre>
    *
@@ -13639,6 +13640,86 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     return sustainabilityIncentives_.get(index);
   }
 
+  public static final int VIDEO_LINKS_FIELD_NUMBER = 169;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList videoLinks_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of video URLs for the item. Use this attribute to provide
+   * more visuals for your product beyond your image attributes. See the [Help
+   * Center article](https://support.google.com/merchants/answer/15216925) for
+   * more information.
+   * </pre>
+   *
+   * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the videoLinks.
+   */
+  public com.google.protobuf.ProtocolStringList getVideoLinksList() {
+    return videoLinks_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of video URLs for the item. Use this attribute to provide
+   * more visuals for your product beyond your image attributes. See the [Help
+   * Center article](https://support.google.com/merchants/answer/15216925) for
+   * more information.
+   * </pre>
+   *
+   * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of videoLinks.
+   */
+  public int getVideoLinksCount() {
+    return videoLinks_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of video URLs for the item. Use this attribute to provide
+   * more visuals for your product beyond your image attributes. See the [Help
+   * Center article](https://support.google.com/merchants/answer/15216925) for
+   * more information.
+   * </pre>
+   *
+   * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The videoLinks at the given index.
+   */
+  public java.lang.String getVideoLinks(int index) {
+    return videoLinks_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of video URLs for the item. Use this attribute to provide
+   * more visuals for your product beyond your image attributes. See the [Help
+   * Center article](https://support.google.com/merchants/answer/15216925) for
+   * more information.
+   * </pre>
+   *
+   * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the videoLinks at the given index.
+   */
+  public com.google.protobuf.ByteString getVideoLinksBytes(int index) {
+    return videoLinks_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -13954,6 +14035,9 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     }
     for (int i = 0; i < shippingTransitBusinessDays_.size(); i++) {
       output.writeMessage(144, shippingTransitBusinessDays_.get(i));
+    }
+    for (int i = 0; i < videoLinks_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 169, videoLinks_.getRaw(i));
     }
     if (((bitField1_ & 0x00000400) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 170, returnPolicyLabel_);
@@ -14351,6 +14435,14 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               144, shippingTransitBusinessDays_.get(i));
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < videoLinks_.size(); i++) {
+        dataSize += computeStringSizeNoTag(videoLinks_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getVideoLinksList().size();
+    }
     if (((bitField1_ & 0x00000400) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(170, returnPolicyLabel_);
     }
@@ -14695,6 +14787,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     }
     if (!getSustainabilityIncentivesList().equals(other.getSustainabilityIncentivesList()))
       return false;
+    if (!getVideoLinksList().equals(other.getVideoLinksList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -15096,6 +15189,10 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
     if (getSustainabilityIncentivesCount() > 0) {
       hash = (37 * hash) + SUSTAINABILITY_INCENTIVES_FIELD_NUMBER;
       hash = (53 * hash) + getSustainabilityIncentivesList().hashCode();
+    }
+    if (getVideoLinksCount() > 0) {
+      hash = (37 * hash) + VIDEO_LINKS_FIELD_NUMBER;
+      hash = (53 * hash) + getVideoLinksList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -15543,6 +15640,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         sustainabilityIncentivesBuilder_.clear();
       }
       bitField3_ = (bitField3_ & ~0x00000001);
+      videoLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -16096,6 +16194,10 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
 
     private void buildPartial3(com.google.shopping.merchant.products.v1.ProductAttributes result) {
       int from_bitField3_ = bitField3_;
+      if (((from_bitField3_ & 0x00000002) != 0)) {
+        videoLinks_.makeImmutable();
+        result.videoLinks_ = videoLinks_;
+      }
     }
 
     @java.lang.Override
@@ -16816,6 +16918,16 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
             sustainabilityIncentivesBuilder_.addAllMessages(other.sustainabilityIncentives_);
           }
         }
+      }
+      if (!other.videoLinks_.isEmpty()) {
+        if (videoLinks_.isEmpty()) {
+          videoLinks_ = other.videoLinks_;
+          bitField3_ |= 0x00000002;
+        } else {
+          ensureVideoLinksIsMutable();
+          videoLinks_.addAll(other.videoLinks_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -17586,6 +17698,13 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
                 }
                 break;
               } // case 1154
+            case 1354:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureVideoLinksIsMutable();
+                videoLinks_.add(s);
+                break;
+              } // case 1354
             case 1362:
               {
                 returnPolicyLabel_ = input.readStringRequireUtf8();
@@ -20360,7 +20479,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20379,7 +20498,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20397,7 +20516,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20416,7 +20535,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20435,7 +20554,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20462,7 +20581,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20488,7 +20607,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20511,7 +20630,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20533,7 +20652,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Global Trade Item Numbers
-     * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+     * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
      * item.
      * You can provide up to 10 GTINs.
      * </pre>
@@ -20820,7 +20939,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Manufacturer Part Number
-     * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+     * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
      * item.
      * </pre>
      *
@@ -20837,7 +20956,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Manufacturer Part Number
-     * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+     * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
      * item.
      * </pre>
      *
@@ -20862,7 +20981,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Manufacturer Part Number
-     * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+     * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
      * item.
      * </pre>
      *
@@ -20887,7 +21006,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Manufacturer Part Number
-     * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+     * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
      * item.
      * </pre>
      *
@@ -20911,7 +21030,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Manufacturer Part Number
-     * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+     * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
      * item.
      * </pre>
      *
@@ -20931,7 +21050,7 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Manufacturer Part Number
-     * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+     * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
      * item.
      * </pre>
      *
@@ -36244,6 +36363,216 @@ public final class ProductAttributes extends com.google.protobuf.GeneratedMessag
         sustainabilityIncentives_ = null;
       }
       return sustainabilityIncentivesBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList videoLinks_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureVideoLinksIsMutable() {
+      if (!videoLinks_.isModifiable()) {
+        videoLinks_ = new com.google.protobuf.LazyStringArrayList(videoLinks_);
+      }
+      bitField3_ |= 0x00000002;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the videoLinks.
+     */
+    public com.google.protobuf.ProtocolStringList getVideoLinksList() {
+      videoLinks_.makeImmutable();
+      return videoLinks_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of videoLinks.
+     */
+    public int getVideoLinksCount() {
+      return videoLinks_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The videoLinks at the given index.
+     */
+    public java.lang.String getVideoLinks(int index) {
+      return videoLinks_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the videoLinks at the given index.
+     */
+    public com.google.protobuf.ByteString getVideoLinksBytes(int index) {
+      return videoLinks_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The videoLinks to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVideoLinks(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureVideoLinksIsMutable();
+      videoLinks_.set(index, value);
+      bitField3_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The videoLinks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addVideoLinks(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureVideoLinksIsMutable();
+      videoLinks_.add(value);
+      bitField3_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The videoLinks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllVideoLinks(java.lang.Iterable<java.lang.String> values) {
+      ensureVideoLinksIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, videoLinks_);
+      bitField3_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearVideoLinks() {
+      videoLinks_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField3_ = (bitField3_ & ~0x00000002);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of video URLs for the item. Use this attribute to provide
+     * more visuals for your product beyond your image attributes. See the [Help
+     * Center article](https://support.google.com/merchants/answer/15216925) for
+     * more information.
+     * </pre>
+     *
+     * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the videoLinks to add.
+     * @return This builder for chaining.
+     */
+    public Builder addVideoLinksBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureVideoLinksIsMutable();
+      videoLinks_.add(value);
+      bitField3_ |= 0x00000002;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.shopping.merchant.products.v1.ProductAttributes)
