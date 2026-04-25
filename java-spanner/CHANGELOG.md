@@ -7,11 +7,11 @@
 * feat(spanner): add shared endpoint cooldowns for location-aware rerouting (#12845) ([f5f273b](https://github.com/googleapis/google-cloud-java/commit/f5f273ba0bd6b7ca9a8be7d1b5a89211ef5ff9fc))
 
 
-## [6.116.0](https://github.com/googleapis/google-cloud-java/compare/6bef068b4d8...fabe31c2a9d) (2026-04-13)
+## [6.116.0](https://github.com/googleapis/google-cloud-java/compare/6bef068b4d8...v1.85.0) (2026-04-13)
 
 * No change
 
-## [6.115.0](https://github.com/googleapis/google-cloud-java/compare/c2147fc9ab7...6bef068b4d8) (2026-04-10)
+## [6.115.0](https://github.com/googleapis/google-cloud-java/compare/v1.83.0-sdk-platform-java...6bef068b4d8) (2026-04-10)
 
 ### Bug Fixes
 
@@ -20,17 +20,16 @@
 * fix(spanner):  fix grpc-gcp affinity cleanup and multiplexed channel usage leaks (#12726) ([55c9857](https://github.com/googleapis/google-cloud-java/commit/55c985776700b1219ece39a519021030eb18d927))
 * fix(spanner): ensure executeQueryAsync is non-blocking (#12715) ([b7e34d2](https://github.com/googleapis/google-cloud-java/commit/b7e34d22191df6bf7fc2aa30bd83234312dd89c6))
 * fix(spanner): honor built-in metrics opt-out for gRPC metrics exporter (#12711) ([57baaea](https://github.com/googleapis/google-cloud-java/commit/57baaeaae5ef1f819e04b253dfcf570499ccc110))
+* fix: update Version.java and correct spanner version for 1.83.0 release (#12712) ([c2147fc](https://github.com/googleapis/google-cloud-java/commit/c2147fc9ab767b0546e6f71483e3f0af1a99740c))
 
 
-## [6.114.0](https://github.com/googleapis/google-cloud-java/compare/55c4e0f125c...c2147fc9ab7) (2026-04-08)
+## [6.114.0](https://github.com/googleapis/google-cloud-java/compare/55c4e0f125c...v1.83.0-sdk-platform-java) (2026-04-08)
 
 * No change
 
 ## [6.113.0](https://github.com/googleapis/google-cloud-java/compare/8e13cf00a16...55c4e0f125c) (2026-03-31)
 
 * No change
-
-
 
 
 ## [6.112.0](https://github.com/googleapis/java-spanner/compare/v6.111.1...v6.112.0) (2026-03-17)

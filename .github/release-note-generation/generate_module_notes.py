@@ -54,22 +54,107 @@ def find_version_boundaries(file_path, pattern, target_version, module=None):
                 found_ver = match.group(1)
                     
             if found_ver:
-                if found_ver == target_version and not target_release_commit:
+                if found_ver == target_version:
                     target_release_commit = commit
                     break  # Stop as soon as we find the target release!
 
-                if found_ver != target_version and "-SNAPSHOT" not in found_ver:
-                    if not prev_version:
-                        prev_version = found_ver
-                        first_prev_commit = commit
-                    elif found_ver != prev_version:
-                        # Found a newer stable version before hitting target!
-                        prev_version = found_ver
-                        first_prev_commit = commit
+                # Track the first occurrence of the latest stable version before target
+                if found_ver != target_version and "-SNAPSHOT" not in found_ver and (not prev_version or found_ver != prev_version):
+                    prev_version = found_ver
+                    first_prev_commit = commit
             
         return first_prev_commit, target_release_commit, prev_version
     except SystemExit:
         return None, None, None
+
+
+def verify_commit(commit_hash, directory, module, allowed_versions):
+    """Verifies if a commit belongs to the release based on file state."""
+    if directory == ".":
+        pom_path = "gapic-libraries-bom/pom.xml"
+    else:
+        pom_path = f"{directory}/pom.xml"
+        
+    # Check if file exists at that commit to avoid noisy errors
+    check_cmd = ["git", "cat-file", "-e", f"{commit_hash}:{pom_path}"]
+    check_result = subprocess.run(check_cmd, stderr=subprocess.PIPE)
+    if check_result.returncode != 0:
+        return False
+        
+    try:
+        content = run_cmd(["git", "show", f"{commit_hash}:{pom_path}"])
+        # Allow optional <packaging> tag in between artifactId and version
+        pattern = re.compile(rf"<artifactId>{re.escape(module)}</artifactId>\s*(?:<packaging>[^<]+</packaging>\s*)?<version>([^<]+)</version>", re.DOTALL)
+        
+        match = pattern.search(content)
+        if match and match.group(1) in allowed_versions:
+            return True
+    except SystemExit:
+        pass
+        
+    return False
+
+
+def parse_commit_overrides(commit_data, short_name, prefix_regex, commit_hash, categorize_callback):
+    """Parses commit overrides and calls callback for each item."""
+    match = re.search(r"BEGIN_COMMIT_OVERRIDE(.*?)END_COMMIT_OVERRIDE", commit_data, re.DOTALL)
+    if not match:
+        return False
+        
+    override_content = match.group(1)
+    current_item = []
+    in_module_item = False
+
+    for line in override_content.splitlines():
+        line_stripped = line.strip()
+        if not line_stripped:
+            continue
+
+        is_new_item = prefix_regex.match(line_stripped)
+
+        if is_new_item:
+            if in_module_item and current_item:
+                categorize_callback(commit_hash, " ".join(current_item))
+                current_item = []
+                in_module_item = False
+
+            should_include = False
+            if short_name:
+                if f"[{short_name}]" in line_stripped:
+                    should_include = True
+            else:
+                should_include = True
+
+            if should_include:
+                in_module_item = True
+                current_item.append(line_stripped)
+        elif in_module_item:
+            if line_stripped.startswith(("PiperOrigin-RevId:", "Source Link:")):
+                continue
+            if line_stripped in ("END_NESTED_COMMIT", "BEGIN_NESTED_COMMIT"):
+                continue
+            current_item.append(line_stripped)
+
+    if in_module_item and current_item:
+        categorize_callback(commit_hash, " ".join(current_item))
+        
+    return True
+
+
+def get_tag_or_commit(commit_hash):
+    """Returns the tag pointing at the commit if there is exactly one, else the commit hash."""
+    if not commit_hash:
+        return None
+    try:
+        # Remove ~1 if present to find the actual tag pointing at the commit
+        clean_hash = commit_hash.split("~")[0]
+        tags_output = run_cmd(["git", "tag", "--points-at", clean_hash])
+        tags = [line.strip() for line in tags_output.splitlines() if line.strip()]
+        if len(tags) == 1:
+            return tags[0]
+    except SystemExit:
+        pass
+    return commit_hash
 
 
 def main():
@@ -104,7 +189,7 @@ def main():
     target_commit = None
     if target_release_commit:
         target_commit = target_release_commit
-        print(f"Found target release commit at {target_release_commit}. Using exclusive upper boundary {target_commit}", file=sys.stderr)
+        print(f"Found target release commit at {target_release_commit}. Using inclusive upper boundary {target_commit}", file=sys.stderr)
     
     if not target_commit:
         print(f"Target version {target_version} not found in history of {pom_path}.", file=sys.stderr)
@@ -121,7 +206,7 @@ def main():
         "git",
         "log",
         "--format=%H %s%n%b%n--END_OF_COMMIT--",
-        f"{prev_commit}..{target_commit}" if prev_commit else target_commit,
+        f"{prev_commit}~1..{target_commit}" if prev_commit else target_commit,
     ]
     if directory != ".":
         notes_cmd.extend(["--", directory])
@@ -179,95 +264,30 @@ def main():
         body = "\n".join(lines[1:])
         
         # Verify if commit belongs to this release based on file state
-        should_include = False
         target_snapshot = f"{target_version}-SNAPSHOT"
         allowed_versions = (prev_version, target_snapshot) if prev_version else (target_snapshot,)
-        try:
-            if directory == ".":
-                pom_path = "gapic-libraries-bom/pom.xml"
-            else:
-                pom_path = f"{directory}/pom.xml"
-            # Check if file exists at that commit to avoid noisy errors
-            check_cmd = ["git", "cat-file", "-e", f"{commit_hash}:{pom_path}"]
-            check_result = subprocess.run(check_cmd, stderr=subprocess.PIPE)
-            if check_result.returncode == 0:
-                content = run_cmd(["git", "show", f"{commit_hash}:{pom_path}"])
-                if directory == ".":
-                    pattern = re.compile(r"<artifactId>gapic-libraries-bom</artifactId>\s*<packaging>pom</packaging>\s*<version>([^<]+)</version>", re.DOTALL)
-                else:
-                    pattern = re.compile(rf"<artifactId>{re.escape(module)}</artifactId>\s*<version>([^<]+)</version>", re.DOTALL)
-                
-                match = pattern.search(content)
-
-                
-                if match and match.group(1) in allowed_versions:
-                    should_include = True
-        except SystemExit:
-            pass
-
-        if not should_include:
+        
+        target_module = "gapic-libraries-bom" if directory == "." else module
+        if not verify_commit(commit_hash, directory, target_module, allowed_versions):
             continue
         
         # Check for override in the entire message
         if "BEGIN_COMMIT_OVERRIDE" in body or "BEGIN_COMMIT_OVERRIDE" in subject:
-            match = re.search(r"BEGIN_COMMIT_OVERRIDE(.*?)END_COMMIT_OVERRIDE", commit_data, re.DOTALL)
-            if match:
-                override_content = match.group(1)
-                current_item = []
-                in_module_item = False
-
-                for line in override_content.splitlines():
-                    line_stripped = line.strip()
-                    if not line_stripped:
-                        continue
-
-                    # Check if it's a new item using regex
-                    is_new_item = prefix_regex.match(line_stripped)
-
-                    if is_new_item:
-                        # If we were in an item, save it
-                        if in_module_item and current_item:
-                            categorize_and_append(commit_hash, " ".join(current_item))
-                            current_item = []
-                            in_module_item = False
-
-                        # Check if this new item is for our module or if we want all
-                        should_include = False
-                        if args.short_name:
-                            if f"[{args.short_name}]" in line_stripped:
-                                should_include = True
-                        else:
-                            should_include = True
-
-                        if should_include:
-                            in_module_item = True
-                            current_item.append(line_stripped)
-                    elif in_module_item:
-                        # Continuation line
-                        if line_stripped.startswith(("PiperOrigin-RevId:", "Source Link:")):
-                            continue
-                        if line_stripped in ("END_NESTED_COMMIT", "BEGIN_NESTED_COMMIT"):
-                            continue
-                        current_item.append(line_stripped)
-
-                # Save the last item if we were in one
-                if in_module_item and current_item:
-                    categorize_and_append(commit_hash, " ".join(current_item))
-
-            # Ignore the title since there was an override
-            continue
+            if parse_commit_overrides(commit_data, args.short_name, prefix_regex, commit_hash, categorize_and_append):
+                continue
             
         # Fallback to title check if no override
         if prefix_regex.match(subject):
             categorize_and_append(commit_hash, subject)
 
     # Get dates and build header
-    # We use ~1 to be exclusive of the boundary as requested earlier, but let's be careful.
-    # If prev_commit is None, we don't set a range.
     target_date = run_cmd(["git", "log", "-1", "--format=%cI", target_commit]).strip()
     date_str = target_date.split("T")[0]  # Get YYYY-MM-DD
     
-    compare_url = f"https://github.com/googleapis/google-cloud-java/compare/{prev_commit}...{target_commit}" if prev_commit else f"https://github.com/googleapis/google-cloud-java/commit/{target_commit}"
+    prev_ref = get_tag_or_commit(prev_commit)
+    target_ref = get_tag_or_commit(target_commit)
+    
+    compare_url = f"https://github.com/googleapis/google-cloud-java/compare/{prev_ref}...{target_ref}" if prev_ref else f"https://github.com/googleapis/google-cloud-java/commit/{target_ref}"
     
     print(f"## [{target_version}]({compare_url}) ({date_str})")
     print()

@@ -1,4 +1,4 @@
-## [0.71.0](https://github.com/googleapis/google-cloud-java/compare/12e01b2413f...bb7de963ded) (2025-08-08)
+## [0.71.0](https://github.com/googleapis/google-cloud-java/compare/v1.64.0...v1.65.0) (2025-08-08)
 
 ### ⚠ BREAKING CHANGES
 
