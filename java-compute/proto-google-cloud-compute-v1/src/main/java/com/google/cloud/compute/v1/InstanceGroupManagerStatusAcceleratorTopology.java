@@ -77,7 +77,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
    *
    *
    * <pre>
-   * Output only. [Output Only] The state of the accelerator topology.
+   * Output only. The state of the accelerator topology.
    * </pre>
    *
    * Protobuf enum {@code
@@ -350,7 +350,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
    *
    *
    * <pre>
-   * Output only. [Output Only] Topology in the format of: "16x16", "4x4x4", etc.
+   * Output only. Topology in the format of: "16x16", "4x4x4", etc.
    * The value is the same as configured in the WorkloadPolicy.
    * </pre>
    *
@@ -367,7 +367,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
    *
    *
    * <pre>
-   * Output only. [Output Only] Topology in the format of: "16x16", "4x4x4", etc.
+   * Output only. Topology in the format of: "16x16", "4x4x4", etc.
    * The value is the same as configured in the WorkloadPolicy.
    * </pre>
    *
@@ -392,7 +392,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
    *
    *
    * <pre>
-   * Output only. [Output Only] Topology in the format of: "16x16", "4x4x4", etc.
+   * Output only. Topology in the format of: "16x16", "4x4x4", etc.
    * The value is the same as configured in the WorkloadPolicy.
    * </pre>
    *
@@ -422,7 +422,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
    *
    *
    * <pre>
-   * Output only. [Output Only] The state of the accelerator topology.
+   * Output only. The state of the accelerator topology.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -439,7 +439,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
    *
    *
    * <pre>
-   * Output only. [Output Only] The state of the accelerator topology.
+   * Output only. The state of the accelerator topology.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -464,7 +464,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
    *
    *
    * <pre>
-   * Output only. [Output Only] The state of the accelerator topology.
+   * Output only. The state of the accelerator topology.
    * Check the State enum for the list of possible values.
    * </pre>
    *
@@ -494,7 +494,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
    *
    *
    * <pre>
-   * Output only. [Output Only] The result of the latest accelerator topology state
+   * Output only. The result of the latest accelerator topology state
    * check.
    * </pre>
    *
@@ -513,7 +513,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
    *
    *
    * <pre>
-   * Output only. [Output Only] The result of the latest accelerator topology state
+   * Output only. The result of the latest accelerator topology state
    * check.
    * </pre>
    *
@@ -538,7 +538,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
    *
    *
    * <pre>
-   * Output only. [Output Only] The result of the latest accelerator topology state
+   * Output only. The result of the latest accelerator topology state
    * check.
    * </pre>
    *
@@ -968,7 +968,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] Topology in the format of: "16x16", "4x4x4", etc.
+     * Output only. Topology in the format of: "16x16", "4x4x4", etc.
      * The value is the same as configured in the WorkloadPolicy.
      * </pre>
      *
@@ -984,7 +984,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] Topology in the format of: "16x16", "4x4x4", etc.
+     * Output only. Topology in the format of: "16x16", "4x4x4", etc.
      * The value is the same as configured in the WorkloadPolicy.
      * </pre>
      *
@@ -1008,7 +1008,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] Topology in the format of: "16x16", "4x4x4", etc.
+     * Output only. Topology in the format of: "16x16", "4x4x4", etc.
      * The value is the same as configured in the WorkloadPolicy.
      * </pre>
      *
@@ -1032,7 +1032,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] Topology in the format of: "16x16", "4x4x4", etc.
+     * Output only. Topology in the format of: "16x16", "4x4x4", etc.
      * The value is the same as configured in the WorkloadPolicy.
      * </pre>
      *
@@ -1055,7 +1055,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] Topology in the format of: "16x16", "4x4x4", etc.
+     * Output only. Topology in the format of: "16x16", "4x4x4", etc.
      * The value is the same as configured in the WorkloadPolicy.
      * </pre>
      *
@@ -1074,7 +1074,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] Topology in the format of: "16x16", "4x4x4", etc.
+     * Output only. Topology in the format of: "16x16", "4x4x4", etc.
      * The value is the same as configured in the WorkloadPolicy.
      * </pre>
      *
@@ -1100,7 +1100,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] The state of the accelerator topology.
+     * Output only. The state of the accelerator topology.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -1116,7 +1116,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] The state of the accelerator topology.
+     * Output only. The state of the accelerator topology.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -1140,7 +1140,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] The state of the accelerator topology.
+     * Output only. The state of the accelerator topology.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -1164,7 +1164,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] The state of the accelerator topology.
+     * Output only. The state of the accelerator topology.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -1187,7 +1187,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] The state of the accelerator topology.
+     * Output only. The state of the accelerator topology.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -1206,7 +1206,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] The state of the accelerator topology.
+     * Output only. The state of the accelerator topology.
      * Check the State enum for the list of possible values.
      * </pre>
      *
@@ -1243,7 +1243,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] The result of the latest accelerator topology state
+     * Output only. The result of the latest accelerator topology state
      * check.
      * </pre>
      *
@@ -1261,7 +1261,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] The result of the latest accelerator topology state
+     * Output only. The result of the latest accelerator topology state
      * check.
      * </pre>
      *
@@ -1289,7 +1289,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] The result of the latest accelerator topology state
+     * Output only. The result of the latest accelerator topology state
      * check.
      * </pre>
      *
@@ -1318,7 +1318,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] The result of the latest accelerator topology state
+     * Output only. The result of the latest accelerator topology state
      * check.
      * </pre>
      *
@@ -1345,7 +1345,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] The result of the latest accelerator topology state
+     * Output only. The result of the latest accelerator topology state
      * check.
      * </pre>
      *
@@ -1382,7 +1382,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] The result of the latest accelerator topology state
+     * Output only. The result of the latest accelerator topology state
      * check.
      * </pre>
      *
@@ -1405,7 +1405,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] The result of the latest accelerator topology state
+     * Output only. The result of the latest accelerator topology state
      * check.
      * </pre>
      *
@@ -1425,7 +1425,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] The result of the latest accelerator topology state
+     * Output only. The result of the latest accelerator topology state
      * check.
      * </pre>
      *
@@ -1451,7 +1451,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopology
      *
      *
      * <pre>
-     * Output only. [Output Only] The result of the latest accelerator topology state
+     * Output only. The result of the latest accelerator topology state
      * check.
      * </pre>
      *
