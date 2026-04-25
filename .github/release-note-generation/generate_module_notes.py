@@ -141,7 +141,7 @@ def parse_commit_overrides(commit_data, short_name, prefix_regex, commit_hash, c
     return True
 
 
-def get_tag_or_commit(commit_hash):
+def get_tag_or_commit(commit_hash, target_version):
     """Returns the tag pointing at the commit if there is exactly one, else the commit hash."""
     if not commit_hash:
         return None
@@ -152,6 +152,10 @@ def get_tag_or_commit(commit_hash):
         tags = [line.strip() for line in tags_output.splitlines() if line.strip()]
         if len(tags) == 1:
             return tags[0]
+        elif len(tags) > 1:
+            for tag in tags:
+                if target_version in tag:
+                    return tag
     except SystemExit:
         pass
     return commit_hash
@@ -284,8 +288,8 @@ def main():
     target_date = run_cmd(["git", "log", "-1", "--format=%cI", target_commit]).strip()
     date_str = target_date.split("T")[0]  # Get YYYY-MM-DD
     
-    prev_ref = get_tag_or_commit(prev_commit)
-    target_ref = get_tag_or_commit(target_commit)
+    prev_ref = get_tag_or_commit(prev_commit, prev_version) if prev_version else prev_commit
+    target_ref = get_tag_or_commit(target_commit, target_version)
     
     compare_url = f"https://github.com/googleapis/google-cloud-java/compare/{prev_ref}...{target_ref}" if prev_ref else f"https://github.com/googleapis/google-cloud-java/commit/{target_ref}"
     
