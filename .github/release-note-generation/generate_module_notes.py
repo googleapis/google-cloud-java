@@ -36,6 +36,12 @@ def find_version_boundaries(file_path, pattern, target_version, module=None):
         prev_version = None
 
         for commit in commits:
+            # Check if file exists at that commit to avoid noisy errors
+            check_cmd = ["git", "cat-file", "-e", f"{commit}:{file_path}"]
+            check_result = subprocess.run(check_cmd, stderr=subprocess.PIPE)
+            if check_result.returncode != 0:
+                continue
+                
             show_cmd = ["git", "show", f"{commit}:{file_path}"]
             try:
                 content = run_cmd(show_cmd)
