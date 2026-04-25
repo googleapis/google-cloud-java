@@ -104,6 +104,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   protected int currentJobIdIndex = -1;
   protected List<String> batchQueries = new ArrayList<>();
   protected BigQueryConnection connection;
+  protected String connectionId;
   protected int maxFieldSize = 0;
   protected int maxRows = 0;
   protected boolean isClosed = false;
@@ -149,6 +150,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @VisibleForTesting
   public BigQueryStatement(BigQueryConnection connection) {
     this.connection = connection;
+    this.connectionId = connection.getConnectionId();
     this.bigQuery = connection.getBigQuery();
     this.querySettings = generateBigQuerySettings();
   }
@@ -233,48 +235,63 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public ResultSet executeQuery(String sql) throws SQLException {
-    // TODO: write method to return state variables to original state.
-    LOG.finest("++enter++");
-    logQueryExecutionStart(sql);
     try {
-      QueryJobConfiguration jobConfiguration =
-          setDestinationDatasetAndTableInJobConfig(getJobConfig(sql).build());
-      runQuery(sql, jobConfiguration);
-    } catch (InterruptedException ex) {
-      LOG.severe(ex, "Interrupted during executeQuery");
-      throw new BigQueryJdbcException(ex);
-    }
+      BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
+      // TODO: write method to return state variables to original state.
+      LOG.finest("++enter++");
+      logQueryExecutionStart(sql);
+      try {
+        QueryJobConfiguration jobConfiguration =
+            setDestinationDatasetAndTableInJobConfig(getJobConfig(sql).build());
+        runQuery(sql, jobConfiguration);
+      } catch (InterruptedException ex) {
+        LOG.severe(ex, "Interrupted during executeQuery");
+        throw new BigQueryJdbcException(ex);
+      }
 
-    if (!isSingularResultSet()) {
-      throw new BigQueryJdbcException(
-          "Query returned more than one or didn't return any ResultSet.");
+      if (!isSingularResultSet()) {
+        throw new BigQueryJdbcException(
+            "Query returned more than one or didn't return any ResultSet.");
+      }
+      // This contains all the other assertions spec required on this method
+      return getCurrentResultSet();
+    } finally {
+      BigQueryJdbcMdc.clear();
     }
-    // This contains all the other assertions spec required on this method
-    return getCurrentResultSet();
   }
 
   @Override
   public long executeLargeUpdate(String sql) throws SQLException {
-    LOG.finest("++enter++");
-    logQueryExecutionStart(sql);
     try {
-      QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
-      runQuery(sql, jobConfiguration.build());
-    } catch (InterruptedException ex) {
-      LOG.severe(ex, "Interrupted during executeLargeUpdate");
-      throw new BigQueryJdbcRuntimeException(ex);
+      BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
+      LOG.finest("++enter++");
+      logQueryExecutionStart(sql);
+      try {
+        QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
+        runQuery(sql, jobConfiguration.build());
+      } catch (InterruptedException ex) {
+        LOG.severe(ex, "Interrupted during executeLargeUpdate");
+        throw new BigQueryJdbcRuntimeException(ex);
+      }
+      if (this.currentUpdateCount == -1) {
+        throw new BigQueryJdbcException(
+            "Update query expected to return affected row count. Double check query type.");
+      }
+      return this.currentUpdateCount;
+    } finally {
+      BigQueryJdbcMdc.clear();
     }
-    if (this.currentUpdateCount == -1) {
-      throw new BigQueryJdbcException(
-          "Update query expected to return affected row count. Double check query type.");
-    }
-    return this.currentUpdateCount;
   }
 
   @Override
   public int executeUpdate(String sql) throws SQLException {
-    LOG.finest("++enter++");
-    return checkUpdateCount(executeLargeUpdate(sql));
+    try {
+      BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
+      LOG.finest("++enter++");
+      return checkUpdateCount(executeLargeUpdate(sql));
+    } finally {
+      BigQueryJdbcMdc.clear();
+    }
   }
 
   int checkUpdateCount(long updateCount) {
@@ -289,19 +306,24 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean execute(String sql) throws SQLException {
-    LOG.finest("++enter++");
-    logQueryExecutionStart(sql);
     try {
-      QueryJobConfiguration jobConfiguration = getJobConfig(sql).build();
-      // If Large Results are enabled, ensure query type is SELECT
-      if (isLargeResultsEnabled() && getQueryType(jobConfiguration, null) == SqlType.SELECT) {
-        jobConfiguration = setDestinationDatasetAndTableInJobConfig(jobConfiguration);
+      BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
+      LOG.finest("++enter++");
+      logQueryExecutionStart(sql);
+      try {
+        QueryJobConfiguration jobConfiguration = getJobConfig(sql).build();
+        // If Large Results are enabled, ensure query type is SELECT
+        if (isLargeResultsEnabled() && getQueryType(jobConfiguration, null) == SqlType.SELECT) {
+          jobConfiguration = setDestinationDatasetAndTableInJobConfig(jobConfiguration);
+        }
+        runQuery(sql, jobConfiguration);
+      } catch (InterruptedException ex) {
+        throw new BigQueryJdbcRuntimeException(ex);
       }
-      runQuery(sql, jobConfiguration);
-    } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException(ex);
+      return getCurrentResultSet() != null;
+    } finally {
+      BigQueryJdbcMdc.clear();
     }
-    return getCurrentResultSet() != null;
   }
 
   StatementType getStatementType(QueryJobConfiguration queryJobConfiguration) throws SQLException {
@@ -363,23 +385,28 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public void close() throws SQLException {
-    LOG.fine("Closing Statement %s.", this);
-    if (isClosed()) {
-      return;
-    }
-
-    boolean cancelSucceeded = false;
     try {
-      cancel(); // This attempts to cancel jobs and calls closeStatementResources()
-      cancelSucceeded = true;
-    } catch (SQLException e) {
-      LOG.warning("Failed to cancel statement during close().", e);
-    } finally {
-      if (!cancelSucceeded) {
-        closeStatementResources();
+      BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
+      LOG.fine("Closing Statement %s.", this);
+      if (isClosed()) {
+        return;
       }
-      this.connection = null;
-      this.isClosed = true;
+
+      boolean cancelSucceeded = false;
+      try {
+        cancel(); // This attempts to cancel jobs and calls closeStatementResources()
+        cancelSucceeded = true;
+      } catch (SQLException e) {
+        LOG.warning("Failed to cancel statement during close().", e);
+      } finally {
+        if (!cancelSucceeded) {
+          closeStatementResources();
+        }
+        this.connection = null;
+        this.isClosed = true;
+      }
+    } finally {
+      BigQueryJdbcMdc.clear();
     }
   }
 
@@ -429,28 +456,33 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public void cancel() throws SQLException {
-    LOG.finest("Statement %s cancelled", this);
-    synchronized (cancelLock) {
-      this.isCanceled = true;
-      for (JobId jobId : this.jobIds) {
-        try {
-          this.bigQuery.cancel(jobId);
-          LOG.info("Job " + jobId + "cancelled.");
-        } catch (BigQueryException e) {
-          if (e.getMessage() != null
-              && (e.getMessage().contains("Job is already in state DONE")
-                  || e.getMessage().contains("Error: 3848323"))) {
-            LOG.warning("Attempted to cancel a job that was already done: " + jobId);
-          } else {
-            throw new BigQueryJdbcException(e);
+    try {
+      BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
+      LOG.finest("Statement %s cancelled", this);
+      synchronized (cancelLock) {
+        this.isCanceled = true;
+        for (JobId jobId : this.jobIds) {
+          try {
+            this.bigQuery.cancel(jobId);
+            LOG.info("Job " + jobId + "cancelled.");
+          } catch (BigQueryException e) {
+            if (e.getMessage() != null
+                && (e.getMessage().contains("Job is already in state DONE")
+                    || e.getMessage().contains("Error: 3848323"))) {
+              LOG.warning("Attempted to cancel a job that was already done: " + jobId);
+            } else {
+              throw new BigQueryJdbcException(e);
+            }
           }
         }
+        jobIds.clear();
       }
-      jobIds.clear();
+      // If a ResultSet exists, then it will be closed as well, closing the
+      // ownedThreads
+      closeStatementResources();
+    } finally {
+      BigQueryJdbcMdc.clear();
     }
-    // If a ResultSet exists, then it will be closed as well, closing the
-    // ownedThreads
-    closeStatementResources();
   }
 
   @Override
