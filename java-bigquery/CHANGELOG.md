@@ -1,6 +1,6 @@
 # Changelog
 
-## [2.65.0](https://github.com/googleapis/google-cloud-java/compare/6bef068b4d8...fabe31c2a9d) (2026-04-13)
+## [2.65.0](https://github.com/googleapis/google-cloud-java/compare/6bef068b4d8...v1.85.0) (2026-04-13)
 
 ### Bug Fixes
 
@@ -10,6 +10,7 @@
 ## [2.64.0](https://github.com/googleapis/google-cloud-java/compare/0fe7d3822cc...6bef068b4d8) (2026-04-10)
 
 * No change
+
 
 ## 2.62.0 (None)
 
