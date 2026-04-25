@@ -927,15 +927,13 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   @Override
   public void close() throws SQLException {
     try {
-      BigQueryJdbcMdc.registerInstance(this, this.connectionId);
-      LOG.finest("++enter++");
-      LOG.fine("Closing Connection " + this);
-      // TODO(neenu-postMVP): Release all connection state objects
-      // check for and close all existing transactions
-
       if (isClosed()) {
         return;
       }
+
+      BigQueryJdbcMdc.registerInstance(this, this.connectionId);
+      LOG.finest("++enter++");
+      LOG.fine("Closing Connection " + this);
 
       try {
         if (this.bigQueryReadClient != null) {
@@ -977,6 +975,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   private void checkClosed() {
     if (isClosed()) {
+      LOG.severe("This " + getClass().getName() + " has been closed");
       throw new IllegalStateException("This " + getClass().getName() + " has been closed");
     }
   }

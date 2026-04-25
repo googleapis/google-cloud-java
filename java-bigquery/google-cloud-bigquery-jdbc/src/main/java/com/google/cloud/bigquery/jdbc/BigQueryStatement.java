@@ -235,6 +235,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public ResultSet executeQuery(String sql) throws SQLException {
+    checkClosed();
     try {
       BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
       // TODO: write method to return state variables to original state.
@@ -262,6 +263,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public long executeLargeUpdate(String sql) throws SQLException {
+    checkClosed();
     try {
       BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
       LOG.finest("++enter++");
@@ -306,6 +308,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean execute(String sql) throws SQLException {
+    checkClosed();
     try {
       BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
       LOG.finest("++enter++");
@@ -385,12 +388,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public void close() throws SQLException {
+    if (isClosed()) {
+      return;
+    }
     try {
       BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
       LOG.fine("Closing Statement %s.", this);
-      if (isClosed()) {
-        return;
-      }
 
       boolean cancelSucceeded = false;
       try {
@@ -1571,6 +1574,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   /** Throws a {@link BigQueryJdbcException} if this object is closed */
   void checkClosed() throws SQLException {
     if (isClosed()) {
+      LOG.severe("This " + getClass().getName() + " has been closed");
       throw new BigQueryJdbcException("This " + getClass().getName() + " has been closed");
     }
   }
