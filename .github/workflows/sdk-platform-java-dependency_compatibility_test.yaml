@@ -29,6 +29,8 @@ jobs:
         filters: |
           library:
             - 'sdk-platform-java/**'
+            - 'google-auth-library-java/**'
+            - '.github/workflows/sdk-platform-java-dependency-compatibility-test.yaml'
   dependency-compatibility-test:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}

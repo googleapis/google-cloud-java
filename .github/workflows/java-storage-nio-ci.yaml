@@ -35,6 +35,11 @@ jobs:
           library:
             - 'java-storage-nio/**'
             - '.github/workflows/java-storage-nio-ci.yaml'
+            - 'google-auth-library-java/**/*.java'
+            - 'google-auth-library-java/**/pom.xml'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
   units:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
@@ -99,16 +104,12 @@ jobs:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        java: [17]
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-java@v4
       with:
         distribution: temurin
-        java-version: ${{matrix.java}}
-    - run: java -version
+        java-version: 17
     - run: .kokoro/dependencies.sh
   javadoc:
     needs: filter

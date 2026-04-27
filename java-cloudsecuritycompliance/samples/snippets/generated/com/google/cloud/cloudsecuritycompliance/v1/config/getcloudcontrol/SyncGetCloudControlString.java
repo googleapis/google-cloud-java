@@ -35,7 +35,9 @@ public class SyncGetCloudControlString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (ConfigClient configClient = ConfigClient.create()) {
       String name =
-          CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString();
+          CloudControlName.ofOrganizationLocationCloudControlName(
+                  "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+              .toString();
       CloudControl response = configClient.getCloudControl(name);
     }
   }

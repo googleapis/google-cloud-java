@@ -66,7 +66,7 @@ public final class PolicyBindingResourcesProto extends com.google.protobuf.Gener
           + "rces.proto\022\021google.iam.v3beta\032\037google/ap"
           + "i/field_behavior.proto\032\033google/api/field"
           + "_info.proto\032\031google/api/resource.proto\032\037"
-          + "google/protobuf/timestamp.proto\032\026google/type/expr.proto\"\342\007\n\r"
+          + "google/protobuf/timestamp.proto\032\026google/type/expr.proto\"\207\010\n\r"
           + "PolicyBinding\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\030\n"
           + "\003uid\030\002 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022\021\n"
@@ -83,24 +83,26 @@ public final class PolicyBindingResourcesProto extends com.google.protobuf.Gener
           + "\tcondition\030\010 \001(\0132\021.google.type.ExprB\003\340A\001\0224\n"
           + "\013create_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\n"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0320\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\032I\n"
           + "\006Target\022\034\n\r"
-          + "principal_set\030\001 \001(\tB\003\340A\005H\000B\010\n"
+          + "principal_set\030\001 \001(\tB\003\340A\005H\000\022\027\n"
+          + "\010resource\030\002 \001(\tB\003\340A\005H\000B\010\n"
           + "\006target\0322\n"
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"H\n\n"
+          + "\005value\030\002 \001(\t:\0028\001\"T\n\n"
           + "PolicyKind\022\033\n"
           + "\027POLICY_KIND_UNSPECIFIED\020\000\022\035\n"
-          + "\031PRINCIPAL_ACCESS_BOUNDARY\020\001:\250\002\352A\244\002\n"
-          + " iam.googleapis.com/PolicyBinding\022Qorganizations/{organization}/locations/{loca"
-          + "tion}/policyBindings/{policy_binding}\022Efolders/{folder}/locations/{location}/pol"
-          + "icyBindings/{policy_binding}\022Gprojects/{"
-          + "project}/locations/{location}/policyBindings/{policy_binding}*\016policyBindings2\r"
+          + "\031PRINCIPAL_ACCESS_BOUNDARY\020\001\022\n\n"
+          + "\006ACCESS\020\002:\250\002\352A\244\002\n"
+          + " iam.googleapis.com/PolicyBinding\022Qorganizations/{organization}/locations/{locatio"
+          + "n}/policyBindings/{policy_binding}\022Efolders/{folder}/locations/{location}/policy"
+          + "Bindings/{policy_binding}\022Gprojects/{pro"
+          + "ject}/locations/{location}/policyBindings/{policy_binding}*\016policyBindings2\r"
           + "policyBindingB\231\001\n"
-          + "\025com.google.iam.v3betaB\033PolicyBindingResourcesProtoP\001Z-cloud.goo"
-          + "gle.com/go/iam/apiv3beta/iampb;iampb\252\002\027G"
-          + "oogle.Cloud.Iam.V3Beta\312\002\027Google\\Cloud\\Iam\\V3betab\006proto3"
+          + "\025com.google.iam.v3betaB\033PolicyBindingResourcesProtoP\001Z-cloud.google"
+          + ".com/go/iam/apiv3beta/iampb;iampb\252\002\027Goog"
+          + "le.Cloud.Iam.V3Beta\312\002\027Google\\Cloud\\Iam\\V3betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -136,7 +138,7 @@ public final class PolicyBindingResourcesProto extends com.google.protobuf.Gener
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_iam_v3beta_PolicyBinding_Target_descriptor,
             new java.lang.String[] {
-              "PrincipalSet", "Target",
+              "PrincipalSet", "Resource", "Target",
             });
     internal_static_google_iam_v3beta_PolicyBinding_AnnotationsEntry_descriptor =
         internal_static_google_iam_v3beta_PolicyBinding_descriptor.getNestedType(1);

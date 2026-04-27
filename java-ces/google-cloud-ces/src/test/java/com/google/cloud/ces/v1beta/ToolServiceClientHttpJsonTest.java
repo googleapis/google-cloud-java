@@ -96,6 +96,7 @@ public class ToolServiceClientHttpJsonTest {
         ExecuteToolRequest.newBuilder()
             .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
             .setArgs(Struct.newBuilder().build())
+            .setMockConfig(MockConfig.newBuilder().build())
             .build();
 
     ExecuteToolResponse actualResponse = client.executeTool(request);
@@ -128,6 +129,7 @@ public class ToolServiceClientHttpJsonTest {
           ExecuteToolRequest.newBuilder()
               .setParent(AppName.of("[PROJECT]", "[LOCATION]", "[APP]").toString())
               .setArgs(Struct.newBuilder().build())
+              .setMockConfig(MockConfig.newBuilder().build())
               .build();
       client.executeTool(request);
       Assert.fail("No exception raised");

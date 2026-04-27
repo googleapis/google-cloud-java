@@ -82,7 +82,9 @@ public final class GetCloudControlDeploymentRequest extends com.google.protobuf.
    *
    * <pre>
    * Required. The name for the cloud control deployment, in the format
-   * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+   * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+   * or
+   * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
    * The only supported location is `global`.
    * </pre>
    *
@@ -110,7 +112,9 @@ public final class GetCloudControlDeploymentRequest extends com.google.protobuf.
    *
    * <pre>
    * Required. The name for the cloud control deployment, in the format
-   * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+   * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+   * or
+   * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
    * The only supported location is `global`.
    * </pre>
    *
@@ -469,7 +473,9 @@ public final class GetCloudControlDeploymentRequest extends com.google.protobuf.
      *
      * <pre>
      * Required. The name for the cloud control deployment, in the format
-     * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -496,7 +502,9 @@ public final class GetCloudControlDeploymentRequest extends com.google.protobuf.
      *
      * <pre>
      * Required. The name for the cloud control deployment, in the format
-     * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -523,7 +531,9 @@ public final class GetCloudControlDeploymentRequest extends com.google.protobuf.
      *
      * <pre>
      * Required. The name for the cloud control deployment, in the format
-     * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -549,7 +559,9 @@ public final class GetCloudControlDeploymentRequest extends com.google.protobuf.
      *
      * <pre>
      * Required. The name for the cloud control deployment, in the format
-     * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -571,7 +583,9 @@ public final class GetCloudControlDeploymentRequest extends com.google.protobuf.
      *
      * <pre>
      * Required. The name for the cloud control deployment, in the format
-     * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *

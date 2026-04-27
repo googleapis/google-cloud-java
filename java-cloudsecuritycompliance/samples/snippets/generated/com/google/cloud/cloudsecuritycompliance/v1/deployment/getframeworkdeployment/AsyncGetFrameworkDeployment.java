@@ -39,7 +39,7 @@ public class AsyncGetFrameworkDeployment {
       GetFrameworkDeploymentRequest request =
           GetFrameworkDeploymentRequest.newBuilder()
               .setName(
-                  FrameworkDeploymentName.of(
+                  FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
                           "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
                       .toString())
               .build();

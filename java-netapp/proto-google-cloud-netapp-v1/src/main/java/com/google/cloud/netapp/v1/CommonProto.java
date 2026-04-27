@@ -89,7 +89,11 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "\017StoragePoolType\022!\n"
           + "\035STORAGE_POOL_TYPE_UNSPECIFIED\020\000\022\010\n"
           + "\004FILE\020\001\022\013\n"
-          + "\007UNIFIED\020\002*u\n"
+          + "\007UNIFIED\020\002*X\n"
+          + "\tScaleType\022\032\n"
+          + "\026SCALE_TYPE_UNSPECIFIED\020\000\022\026\n"
+          + "\022SCALE_TYPE_DEFAULT\020\001\022\027\n"
+          + "\023SCALE_TYPE_SCALEOUT\020\002*u\n"
           + "\031HybridReplicationSchedule\022+\n"
           + "\'HYBRID_REPLICATION_SCHEDULE_UNSPECIFIED\020\000\022\024\n"
           + "\020EVERY_10_MINUTES\020\001\022\n\n"
@@ -104,10 +108,10 @@ public final class CommonProto extends com.google.protobuf.GeneratedFile {
           + "\005LINUX\020\001\022\013\n"
           + "\007WINDOWS\020\002\022\010\n"
           + "\004ESXI\020\003B\255\001\n"
-          + "\032com.google.cloud.netapp.v1B\013CommonProtoP\001Z2c"
-          + "loud.google.com/go/netapp/apiv1/netapppb"
-          + ";netapppb\252\002\026Google.Cloud.NetApp.V1\312\002\026Goo"
-          + "gle\\Cloud\\NetApp\\V1\352\002\031Google::Cloud::NetApp::V1b\006proto3"
+          + "\032com.google.cloud.netapp.v1B\013CommonProtoP\001Z2cloud.google.com/go/netapp/apiv"
+          + "1/netapppb;netapppb\252\002\026Google.Cloud.NetAp"
+          + "p.V1\312\002\026Google\\Cloud\\NetApp\\V1\352\002\031Google::"
+          + "Cloud::NetApp::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

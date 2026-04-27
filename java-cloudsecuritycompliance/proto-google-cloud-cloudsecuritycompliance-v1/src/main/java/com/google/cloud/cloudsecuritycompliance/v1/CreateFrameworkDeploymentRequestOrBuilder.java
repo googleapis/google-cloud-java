@@ -31,7 +31,9 @@ public interface CreateFrameworkDeploymentRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource of the framework deployment in the format
-   * `organizations/{organization}/locations/{location}`.
+   * `organizations/{organization}/locations/{location}`
+   * or
+   * `projects/{project}/locations/{location}`.
    * Only the global location is supported.
    * </pre>
    *
@@ -48,7 +50,9 @@ public interface CreateFrameworkDeploymentRequestOrBuilder
    *
    * <pre>
    * Required. The parent resource of the framework deployment in the format
-   * `organizations/{organization}/locations/{location}`.
+   * `organizations/{organization}/locations/{location}`
+   * or
+   * `projects/{project}/locations/{location}`.
    * Only the global location is supported.
    * </pre>
    *

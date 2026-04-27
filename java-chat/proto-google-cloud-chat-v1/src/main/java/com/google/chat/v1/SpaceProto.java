@@ -85,6 +85,14 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_chat_v1_FindDirectMessageRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_FindGroupChatsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_chat_v1_FindGroupChatsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_chat_v1_FindGroupChatsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_chat_v1_FindGroupChatsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_chat_v1_UpdateSpaceRequest_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_chat_v1_UpdateSpaceRequest_fieldAccessorTable;
@@ -237,7 +245,15 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
           + "\031chat.googleapis.com/Space\022\035\n"
           + "\020use_admin_access\030\002 \001(\010B\003\340A\001\"-\n"
           + "\030FindDirectMessageRequest\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\"\224\001\n"
+          + "\004name\030\001 \001(\tB\003\340A\002\"\213\001\n"
+          + "\025FindGroupChatsRequest\022\022\n"
+          + "\005users\030\005 \003(\tB\003\340A\001\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022-\n\n"
+          + "space_view\030\004 \001(\0162\031.google.chat.v1.SpaceView\"X\n"
+          + "\026FindGroupChatsResponse\022%\n"
+          + "\006spaces\030\001 \003(\0132\025.google.chat.v1.Space\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\224\001\n"
           + "\022UpdateSpaceRequest\022)\n"
           + "\005space\030\001 \001(\0132\025.google.chat.v1.SpaceB\003\340A\002\0224\n"
           + "\013update_mask\030\002"
@@ -261,11 +277,16 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
           + "\004name\030\001 \001(\tB!\340A\002\372A\033\n"
           + "\031chat.googleapis.com/Space\"C\n"
           + "\033CompleteImportSpaceResponse\022$\n"
-          + "\005space\030\001 \001(\0132\025.google.chat.v1.SpaceB\243\001\n"
+          + "\005space\030\001 \001(\0132\025.google.chat.v1.Space*c\n"
+          + "\tSpaceView\022\032\n"
+          + "\026SPACE_VIEW_UNSPECIFIED\020\000\022!\n"
+          + "\035SPACE_VIEW_RESOURCE_NAME_ONLY\020\003\022\027\n"
+          + "\023SPACE_VIEW_EXPANDED\020\004B\243\001\n"
           + "\022com.google.chat.v1B\n"
-          + "SpaceProtoP\001Z,cloud.google.com/go/chat/apiv1/chatpb;chatpb"
-          + "\242\002\013DYNAPIProto\252\002\023Google.Apps.Chat.V1\312\002\023G"
-          + "oogle\\Apps\\Chat\\V1\352\002\026Google::Apps::Chat::V1b\006proto3"
+          + "SpaceProtoP\001Z,cloud.google.com/go/chat/apiv1/"
+          + "chatpb;chatpb\242\002\013DYNAPIProto\252\002\023Google.App"
+          + "s.Chat.V1\312\002\023Google\\Apps\\Chat\\V1\352\002\026Google"
+          + "::Apps::Chat::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -390,8 +411,24 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_chat_v1_UpdateSpaceRequest_descriptor =
+    internal_static_google_chat_v1_FindGroupChatsRequest_descriptor =
         getDescriptor().getMessageType(6);
+    internal_static_google_chat_v1_FindGroupChatsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_chat_v1_FindGroupChatsRequest_descriptor,
+            new java.lang.String[] {
+              "Users", "PageSize", "PageToken", "SpaceView",
+            });
+    internal_static_google_chat_v1_FindGroupChatsResponse_descriptor =
+        getDescriptor().getMessageType(7);
+    internal_static_google_chat_v1_FindGroupChatsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_chat_v1_FindGroupChatsResponse_descriptor,
+            new java.lang.String[] {
+              "Spaces", "NextPageToken",
+            });
+    internal_static_google_chat_v1_UpdateSpaceRequest_descriptor =
+        getDescriptor().getMessageType(8);
     internal_static_google_chat_v1_UpdateSpaceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_UpdateSpaceRequest_descriptor,
@@ -399,7 +436,7 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
               "Space", "UpdateMask", "UseAdminAccess",
             });
     internal_static_google_chat_v1_SearchSpacesRequest_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(9);
     internal_static_google_chat_v1_SearchSpacesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_SearchSpacesRequest_descriptor,
@@ -407,7 +444,7 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
               "UseAdminAccess", "PageSize", "PageToken", "Query", "OrderBy",
             });
     internal_static_google_chat_v1_SearchSpacesResponse_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(10);
     internal_static_google_chat_v1_SearchSpacesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_SearchSpacesResponse_descriptor,
@@ -415,7 +452,7 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
               "Spaces", "NextPageToken", "TotalSize",
             });
     internal_static_google_chat_v1_DeleteSpaceRequest_descriptor =
-        getDescriptor().getMessageType(9);
+        getDescriptor().getMessageType(11);
     internal_static_google_chat_v1_DeleteSpaceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_DeleteSpaceRequest_descriptor,
@@ -423,7 +460,7 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
               "Name", "UseAdminAccess",
             });
     internal_static_google_chat_v1_CompleteImportSpaceRequest_descriptor =
-        getDescriptor().getMessageType(10);
+        getDescriptor().getMessageType(12);
     internal_static_google_chat_v1_CompleteImportSpaceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_CompleteImportSpaceRequest_descriptor,
@@ -431,7 +468,7 @@ public final class SpaceProto extends com.google.protobuf.GeneratedFile {
               "Name",
             });
     internal_static_google_chat_v1_CompleteImportSpaceResponse_descriptor =
-        getDescriptor().getMessageType(11);
+        getDescriptor().getMessageType(13);
     internal_static_google_chat_v1_CompleteImportSpaceResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_chat_v1_CompleteImportSpaceResponse_descriptor,

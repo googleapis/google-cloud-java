@@ -37,6 +37,12 @@
             "SanitizeUserPrompt": {
               "methods": ["sanitizeUserPrompt", "sanitizeUserPromptCallable"]
             },
+            "StreamSanitizeModelResponse": {
+              "methods": ["streamSanitizeModelResponseCallable"]
+            },
+            "StreamSanitizeUserPrompt": {
+              "methods": ["streamSanitizeUserPromptCallable"]
+            },
             "UpdateFloorSetting": {
               "methods": ["updateFloorSetting", "updateFloorSetting", "updateFloorSettingCallable"]
             },
