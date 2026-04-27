@@ -822,21 +822,24 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
             "Cannot rollback without an active transaction. Please set setAutoCommit to false to"
                 + " start a transaction.");
       }
-      try {
-        QueryJobConfiguration transactionRollbackJobConfig =
-            QueryJobConfiguration.newBuilder("ROLLBACK TRANSACTION;")
-                .setConnectionProperties(this.queryProperties)
-                .build();
-        Job rollbackJob = this.bigQuery.create(JobInfo.of(transactionRollbackJobConfig));
-        rollbackJob.waitFor();
-        this.transactionStarted = false;
-        if (!getAutoCommit()) {
-          beginTransaction();
-        }
-      } catch (InterruptedException | BigQueryException ex) {
-        LOG.severe(ex, "Failed to rollback transaction");
-        throw new BigQueryJdbcException(ex);
+      rollbackImpl();
+    }
+  }
+
+  private void rollbackImpl() throws SQLException {
+    try {
+      QueryJobConfiguration transactionRollbackJobConfig =
+          QueryJobConfiguration.newBuilder("ROLLBACK TRANSACTION;")
+              .setConnectionProperties(this.queryProperties)
+              .build();
+      Job rollbackJob = this.bigQuery.create(JobInfo.of(transactionRollbackJobConfig));
+      rollbackJob.waitFor();
+      this.transactionStarted = false;
+      if (!getAutoCommit()) {
+        beginTransaction();
       }
+    } catch (InterruptedException | BigQueryException ex) {
+      throw new BigQueryJdbcException(ex, "Failed to rollback transaction");
     }
   }
 
@@ -901,36 +904,39 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         BigQueryJdbcMdc.registerInstance(this, this.connectionId)) {
       LOG.finest("++enter++");
       LOG.fine("Closing Connection " + this);
-
-      try {
-        if (this.bigQueryReadClient != null) {
-          this.bigQueryReadClient.shutdown();
-          this.bigQueryReadClient.awaitTermination(1, TimeUnit.MINUTES);
-          this.bigQueryReadClient.close();
-        }
-
-        if (this.bigQueryWriteClient != null) {
-          this.bigQueryWriteClient.shutdown();
-          this.bigQueryWriteClient.awaitTermination(1, TimeUnit.MINUTES);
-          this.bigQueryWriteClient.close();
-        }
-
-        for (Statement statement : this.openStatements) {
-          statement.close();
-        }
-        this.openStatements.clear();
-      } catch (ConcurrentModificationException ex) {
-        LOG.severe(ex, "Concurrent modification during close");
-        throw new BigQueryJdbcException(ex);
-      } catch (InterruptedException e) {
-        LOG.severe(e, "Interrupted during close");
-        throw new BigQueryJdbcRuntimeException(e);
-      } finally {
-        BigQueryJdbcMdc.removeInstance(this);
-        BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
-      }
-      this.isClosed = true;
+      closeImpl();
     }
+  }
+
+  private void closeImpl() throws SQLException {
+    try {
+      if (this.bigQueryReadClient != null) {
+        this.bigQueryReadClient.shutdown();
+        this.bigQueryReadClient.awaitTermination(1, TimeUnit.MINUTES);
+        this.bigQueryReadClient.close();
+      }
+
+      if (this.bigQueryWriteClient != null) {
+        this.bigQueryWriteClient.shutdown();
+        this.bigQueryWriteClient.awaitTermination(1, TimeUnit.MINUTES);
+        this.bigQueryWriteClient.close();
+      }
+
+      for (Statement statement : this.openStatements) {
+        statement.close();
+      }
+      this.openStatements.clear();
+    } catch (ConcurrentModificationException ex) {
+      LOG.severe(ex, "Concurrent modification during close");
+      throw new BigQueryJdbcException(ex);
+    } catch (InterruptedException e) {
+      LOG.severe(e, "Interrupted during close");
+      throw new BigQueryJdbcRuntimeException(e);
+    } finally {
+      BigQueryJdbcMdc.removeInstance(this);
+      BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
+    }
+    this.isClosed = true;
   }
 
   @Override
