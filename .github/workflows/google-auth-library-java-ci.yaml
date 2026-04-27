@@ -70,9 +70,20 @@ jobs:
       env:
         JOB_TYPE: clirr
         BUILD_SUBDIR: google-auth-library-java
+  dependencies:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        distribution: temurin
+        java-version: 17
+    - run: .kokoro/dependencies.sh
 
   required:
-    needs: [ units-logging, clirr ]
+    needs: [ units-logging, clirr, dependencies ]
     name: conditional-required-check
     if: ${{ always() }} # Always run even if any "needs" jobs fail
     runs-on: ubuntu-22.04

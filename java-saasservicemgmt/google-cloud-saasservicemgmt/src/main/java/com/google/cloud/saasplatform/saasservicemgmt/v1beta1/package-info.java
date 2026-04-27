@@ -15,7 +15,7 @@
  */
 
 /**
- * A client to SaaS Runtime API
+ * A client to App Lifecycle Manager API
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *

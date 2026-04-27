@@ -20,6 +20,7 @@
   </parent>
   <properties>
     <skipUnitTests>false</skipUnitTests>
+    <ignoreNonCompile>true</ignoreNonCompile><!-- maven-dependency-plugin:analyze to skip test scope dependencies -->
   </properties>
 
   <dependencyManagement>

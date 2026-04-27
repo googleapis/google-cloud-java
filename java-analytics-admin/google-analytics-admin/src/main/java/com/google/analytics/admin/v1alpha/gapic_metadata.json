@@ -286,6 +286,9 @@
             "GetSubpropertySyncConfig": {
               "methods": ["getSubpropertySyncConfig", "getSubpropertySyncConfig", "getSubpropertySyncConfig", "getSubpropertySyncConfigCallable"]
             },
+            "GetUserProvidedDataSettings": {
+              "methods": ["getUserProvidedDataSettings", "getUserProvidedDataSettings", "getUserProvidedDataSettings", "getUserProvidedDataSettingsCallable"]
+            },
             "ListAccessBindings": {
               "methods": ["listAccessBindings", "listAccessBindings", "listAccessBindings", "listAccessBindings", "listAccessBindingsPagedCallable", "listAccessBindingsCallable"]
             },

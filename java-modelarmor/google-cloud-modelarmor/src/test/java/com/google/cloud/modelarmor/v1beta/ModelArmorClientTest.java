@@ -24,8 +24,12 @@ import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
+import com.google.api.gax.grpc.testing.MockStreamObserver;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
+import com.google.api.gax.rpc.ApiStreamObserver;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -43,6 +47,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -490,6 +495,7 @@ public class ModelArmorClientTest {
             .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
             .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
             .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+            .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
             .build();
     mockModelArmor.addResponse(expectedResponse);
 
@@ -535,6 +541,7 @@ public class ModelArmorClientTest {
             .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
             .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
             .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+            .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
             .build();
     mockModelArmor.addResponse(expectedResponse);
 
@@ -580,6 +587,7 @@ public class ModelArmorClientTest {
             .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
             .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
             .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+            .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
             .build();
     mockModelArmor.addResponse(expectedResponse);
 
@@ -629,6 +637,7 @@ public class ModelArmorClientTest {
             .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
             .setUserPromptData(DataItem.newBuilder().build())
             .setMultiLanguageDetectionMetadata(MultiLanguageDetectionMetadata.newBuilder().build())
+            .setStreamingMode(StreamingMode.forNumber(0))
             .build();
 
     SanitizeUserPromptResponse actualResponse = client.sanitizeUserPrompt(request);
@@ -643,6 +652,7 @@ public class ModelArmorClientTest {
     Assert.assertEquals(
         request.getMultiLanguageDetectionMetadata(),
         actualRequest.getMultiLanguageDetectionMetadata());
+    Assert.assertEquals(request.getStreamingMode(), actualRequest.getStreamingMode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -661,6 +671,7 @@ public class ModelArmorClientTest {
               .setUserPromptData(DataItem.newBuilder().build())
               .setMultiLanguageDetectionMetadata(
                   MultiLanguageDetectionMetadata.newBuilder().build())
+              .setStreamingMode(StreamingMode.forNumber(0))
               .build();
       client.sanitizeUserPrompt(request);
       Assert.fail("No exception raised");
@@ -683,6 +694,7 @@ public class ModelArmorClientTest {
             .setModelResponseData(DataItem.newBuilder().build())
             .setUserPrompt("userPrompt1504308495")
             .setMultiLanguageDetectionMetadata(MultiLanguageDetectionMetadata.newBuilder().build())
+            .setStreamingMode(StreamingMode.forNumber(0))
             .build();
 
     SanitizeModelResponseResponse actualResponse = client.sanitizeModelResponse(request);
@@ -699,6 +711,7 @@ public class ModelArmorClientTest {
     Assert.assertEquals(
         request.getMultiLanguageDetectionMetadata(),
         actualRequest.getMultiLanguageDetectionMetadata());
+    Assert.assertEquals(request.getStreamingMode(), actualRequest.getStreamingMode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -718,11 +731,136 @@ public class ModelArmorClientTest {
               .setUserPrompt("userPrompt1504308495")
               .setMultiLanguageDetectionMetadata(
                   MultiLanguageDetectionMetadata.newBuilder().build())
+              .setStreamingMode(StreamingMode.forNumber(0))
               .build();
       client.sanitizeModelResponse(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void streamSanitizeUserPromptTest() throws Exception {
+    SanitizeUserPromptResponse expectedResponse =
+        SanitizeUserPromptResponse.newBuilder()
+            .setSanitizationResult(SanitizationResult.newBuilder().build())
+            .build();
+    mockModelArmor.addResponse(expectedResponse);
+    SanitizeUserPromptRequest request =
+        SanitizeUserPromptRequest.newBuilder()
+            .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+            .setUserPromptData(DataItem.newBuilder().build())
+            .setMultiLanguageDetectionMetadata(MultiLanguageDetectionMetadata.newBuilder().build())
+            .setStreamingMode(StreamingMode.forNumber(0))
+            .build();
+
+    MockStreamObserver<SanitizeUserPromptResponse> responseObserver = new MockStreamObserver<>();
+
+    BidiStreamingCallable<SanitizeUserPromptRequest, SanitizeUserPromptResponse> callable =
+        client.streamSanitizeUserPromptCallable();
+    ApiStreamObserver<SanitizeUserPromptRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<SanitizeUserPromptResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void streamSanitizeUserPromptExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelArmor.addException(exception);
+    SanitizeUserPromptRequest request =
+        SanitizeUserPromptRequest.newBuilder()
+            .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+            .setUserPromptData(DataItem.newBuilder().build())
+            .setMultiLanguageDetectionMetadata(MultiLanguageDetectionMetadata.newBuilder().build())
+            .setStreamingMode(StreamingMode.forNumber(0))
+            .build();
+
+    MockStreamObserver<SanitizeUserPromptResponse> responseObserver = new MockStreamObserver<>();
+
+    BidiStreamingCallable<SanitizeUserPromptRequest, SanitizeUserPromptResponse> callable =
+        client.streamSanitizeUserPromptCallable();
+    ApiStreamObserver<SanitizeUserPromptRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+
+    try {
+      List<SanitizeUserPromptResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void streamSanitizeModelResponseTest() throws Exception {
+    SanitizeModelResponseResponse expectedResponse =
+        SanitizeModelResponseResponse.newBuilder()
+            .setSanitizationResult(SanitizationResult.newBuilder().build())
+            .build();
+    mockModelArmor.addResponse(expectedResponse);
+    SanitizeModelResponseRequest request =
+        SanitizeModelResponseRequest.newBuilder()
+            .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+            .setModelResponseData(DataItem.newBuilder().build())
+            .setUserPrompt("userPrompt1504308495")
+            .setMultiLanguageDetectionMetadata(MultiLanguageDetectionMetadata.newBuilder().build())
+            .setStreamingMode(StreamingMode.forNumber(0))
+            .build();
+
+    MockStreamObserver<SanitizeModelResponseResponse> responseObserver = new MockStreamObserver<>();
+
+    BidiStreamingCallable<SanitizeModelResponseRequest, SanitizeModelResponseResponse> callable =
+        client.streamSanitizeModelResponseCallable();
+    ApiStreamObserver<SanitizeModelResponseRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<SanitizeModelResponseResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+  }
+
+  @Test
+  public void streamSanitizeModelResponseExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockModelArmor.addException(exception);
+    SanitizeModelResponseRequest request =
+        SanitizeModelResponseRequest.newBuilder()
+            .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+            .setModelResponseData(DataItem.newBuilder().build())
+            .setUserPrompt("userPrompt1504308495")
+            .setMultiLanguageDetectionMetadata(MultiLanguageDetectionMetadata.newBuilder().build())
+            .setStreamingMode(StreamingMode.forNumber(0))
+            .build();
+
+    MockStreamObserver<SanitizeModelResponseResponse> responseObserver = new MockStreamObserver<>();
+
+    BidiStreamingCallable<SanitizeModelResponseRequest, SanitizeModelResponseResponse> callable =
+        client.streamSanitizeModelResponseCallable();
+    ApiStreamObserver<SanitizeModelResponseRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+
+    try {
+      List<SanitizeModelResponseResponse> actualResponses = responseObserver.future().get();
+      Assert.fail("No exception thrown");
+    } catch (ExecutionException e) {
+      Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

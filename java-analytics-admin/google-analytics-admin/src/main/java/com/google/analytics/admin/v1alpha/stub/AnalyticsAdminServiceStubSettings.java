@@ -168,6 +168,7 @@ import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaReq
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.GetSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest;
+import com.google.analytics.admin.v1alpha.GetUserProvidedDataSettingsRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
 import com.google.analytics.admin.v1alpha.GoogleAdsLink;
 import com.google.analytics.admin.v1alpha.GoogleSignalsSettings;
@@ -276,6 +277,7 @@ import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchema
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertyEventFilterRequest;
 import com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest;
+import com.google.analytics.admin.v1alpha.UserProvidedDataSettings;
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
@@ -729,6 +731,8 @@ public class AnalyticsAdminServiceStubSettings
       getSubpropertySyncConfigSettings;
   private final UnaryCallSettings<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
       getReportingIdentitySettingsSettings;
+  private final UnaryCallSettings<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+      getUserProvidedDataSettingsSettings;
 
   private static final PagedListDescriptor<ListAccountsRequest, ListAccountsResponse, Account>
       LIST_ACCOUNTS_PAGE_STR_DESC =
@@ -3600,6 +3604,12 @@ public class AnalyticsAdminServiceStubSettings
     return getReportingIdentitySettingsSettings;
   }
 
+  /** Returns the object with the settings used for calls to getUserProvidedDataSettings. */
+  public UnaryCallSettings<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+      getUserProvidedDataSettingsSettings() {
+    return getUserProvidedDataSettingsSettings;
+  }
+
   public AnalyticsAdminServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -3908,6 +3918,8 @@ public class AnalyticsAdminServiceStubSettings
     getSubpropertySyncConfigSettings = settingsBuilder.getSubpropertySyncConfigSettings().build();
     getReportingIdentitySettingsSettings =
         settingsBuilder.getReportingIdentitySettingsSettings().build();
+    getUserProvidedDataSettingsSettings =
+        settingsBuilder.getUserProvidedDataSettingsSettings().build();
   }
 
   @Override
@@ -4315,6 +4327,9 @@ public class AnalyticsAdminServiceStubSettings
     private final UnaryCallSettings.Builder<
             GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
         getReportingIdentitySettingsSettings;
+    private final UnaryCallSettings.Builder<
+            GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+        getUserProvidedDataSettingsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -4546,6 +4561,7 @@ public class AnalyticsAdminServiceStubSettings
       updateSubpropertySyncConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getSubpropertySyncConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getReportingIdentitySettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getUserProvidedDataSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -4702,7 +4718,8 @@ public class AnalyticsAdminServiceStubSettings
               listSubpropertySyncConfigsSettings,
               updateSubpropertySyncConfigSettings,
               getSubpropertySyncConfigSettings,
-              getReportingIdentitySettingsSettings);
+              getReportingIdentitySettingsSettings,
+              getUserProvidedDataSettingsSettings);
       initDefaults(this);
     }
 
@@ -4904,6 +4921,8 @@ public class AnalyticsAdminServiceStubSettings
       getSubpropertySyncConfigSettings = settings.getSubpropertySyncConfigSettings.toBuilder();
       getReportingIdentitySettingsSettings =
           settings.getReportingIdentitySettingsSettings.toBuilder();
+      getUserProvidedDataSettingsSettings =
+          settings.getUserProvidedDataSettingsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -5060,7 +5079,8 @@ public class AnalyticsAdminServiceStubSettings
               listSubpropertySyncConfigsSettings,
               updateSubpropertySyncConfigSettings,
               getSubpropertySyncConfigSettings,
-              getReportingIdentitySettingsSettings);
+              getReportingIdentitySettingsSettings,
+              getUserProvidedDataSettingsSettings);
     }
 
     private static Builder createDefault() {
@@ -5855,6 +5875,11 @@ public class AnalyticsAdminServiceStubSettings
 
       builder
           .getReportingIdentitySettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getUserProvidedDataSettingsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -6925,6 +6950,12 @@ public class AnalyticsAdminServiceStubSettings
     public UnaryCallSettings.Builder<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
         getReportingIdentitySettingsSettings() {
       return getReportingIdentitySettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getUserProvidedDataSettings. */
+    public UnaryCallSettings.Builder<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+        getUserProvidedDataSettingsSettings() {
+      return getUserProvidedDataSettingsSettings;
     }
 
     @Override

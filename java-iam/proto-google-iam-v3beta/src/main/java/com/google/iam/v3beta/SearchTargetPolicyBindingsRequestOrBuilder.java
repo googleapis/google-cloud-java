@@ -77,8 +77,7 @@ public interface SearchTargetPolicyBindingsRequestOrBuilder
    * Optional. The maximum number of policy bindings to return. The service may
    * return fewer than this value.
    *
-   * If unspecified, at most 50 policy bindings will be returned.
-   * The maximum value is 1000; values above 1000 will be coerced to 1000.
+   * The default value is 50. The maximum value is 1000.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -172,4 +171,48 @@ public interface SearchTargetPolicyBindingsRequestOrBuilder
    * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filtering currently only supports the kind of policies to return,
+   * and must be in the format "policy_kind={policy_kind}".
+   *
+   * If String is empty, bindings bound to all kinds of policies would be
+   * returned.
+   *
+   * The only supported values are the following:
+   *
+   * * "policy_kind=PRINCIPAL_ACCESS_BOUNDARY",
+   * * "policy_kind=ACCESS"
+   * </pre>
+   *
+   * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Filtering currently only supports the kind of policies to return,
+   * and must be in the format "policy_kind={policy_kind}".
+   *
+   * If String is empty, bindings bound to all kinds of policies would be
+   * returned.
+   *
+   * The only supported values are the following:
+   *
+   * * "policy_kind=PRINCIPAL_ACCESS_BOUNDARY",
+   * * "policy_kind=ACCESS"
+   * </pre>
+   *
+   * <code>string filter = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

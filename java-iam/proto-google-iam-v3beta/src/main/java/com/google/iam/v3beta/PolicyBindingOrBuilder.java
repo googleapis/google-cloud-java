@@ -242,8 +242,8 @@ public interface PolicyBindingOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Target is the full resource name of the resource to
-   * which the policy will be bound. Immutable once set.
+   * Required. Immutable. The full resource name of the resource to which the
+   * policy will be bound. Immutable once set.
    * </pre>
    *
    * <code>
@@ -258,8 +258,8 @@ public interface PolicyBindingOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Target is the full resource name of the resource to
-   * which the policy will be bound. Immutable once set.
+   * Required. Immutable. The full resource name of the resource to which the
+   * policy will be bound. Immutable once set.
    * </pre>
    *
    * <code>
@@ -274,8 +274,8 @@ public interface PolicyBindingOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Target is the full resource name of the resource to
-   * which the policy will be bound. Immutable once set.
+   * Required. Immutable. The full resource name of the resource to which the
+   * policy will be bound. Immutable once set.
    * </pre>
    *
    * <code>
@@ -413,13 +413,14 @@ public interface PolicyBindingOrBuilder
    * - `principal.type != &lt;principal type string&gt;`
    * - `principal.type in [&lt;list of principal types&gt;]`
    *
-   * Supported principal types are Workspace, Workforce Pool, Workload Pool and
-   * Service Account. Allowed string must be one of:
+   * Supported principal types are workspace, workforce pool, workload pool,
+   * service account, and Agent Identity. Allowed string must be one of:
    *
-   * - iam.googleapis.com/WorkspaceIdentity
-   * - iam.googleapis.com/WorkforcePoolIdentity
-   * - iam.googleapis.com/WorkloadPoolIdentity
-   * - iam.googleapis.com/ServiceAccount
+   * - `iam.googleapis.com/WorkspaceIdentity`
+   * - `iam.googleapis.com/WorkforcePoolIdentity`
+   * - `iam.googleapis.com/WorkloadPoolIdentity`
+   * - `iam.googleapis.com/ServiceAccount`
+   * - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)
    * </pre>
    *
    * <code>.google.type.Expr condition = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -461,13 +462,14 @@ public interface PolicyBindingOrBuilder
    * - `principal.type != &lt;principal type string&gt;`
    * - `principal.type in [&lt;list of principal types&gt;]`
    *
-   * Supported principal types are Workspace, Workforce Pool, Workload Pool and
-   * Service Account. Allowed string must be one of:
+   * Supported principal types are workspace, workforce pool, workload pool,
+   * service account, and Agent Identity. Allowed string must be one of:
    *
-   * - iam.googleapis.com/WorkspaceIdentity
-   * - iam.googleapis.com/WorkforcePoolIdentity
-   * - iam.googleapis.com/WorkloadPoolIdentity
-   * - iam.googleapis.com/ServiceAccount
+   * - `iam.googleapis.com/WorkspaceIdentity`
+   * - `iam.googleapis.com/WorkforcePoolIdentity`
+   * - `iam.googleapis.com/WorkloadPoolIdentity`
+   * - `iam.googleapis.com/ServiceAccount`
+   * - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)
    * </pre>
    *
    * <code>.google.type.Expr condition = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -509,13 +511,14 @@ public interface PolicyBindingOrBuilder
    * - `principal.type != &lt;principal type string&gt;`
    * - `principal.type in [&lt;list of principal types&gt;]`
    *
-   * Supported principal types are Workspace, Workforce Pool, Workload Pool and
-   * Service Account. Allowed string must be one of:
+   * Supported principal types are workspace, workforce pool, workload pool,
+   * service account, and Agent Identity. Allowed string must be one of:
    *
-   * - iam.googleapis.com/WorkspaceIdentity
-   * - iam.googleapis.com/WorkforcePoolIdentity
-   * - iam.googleapis.com/WorkloadPoolIdentity
-   * - iam.googleapis.com/ServiceAccount
+   * - `iam.googleapis.com/WorkspaceIdentity`
+   * - `iam.googleapis.com/WorkforcePoolIdentity`
+   * - `iam.googleapis.com/WorkloadPoolIdentity`
+   * - `iam.googleapis.com/ServiceAccount`
+   * - `iam.googleapis.com/AgentPoolIdentity` (available in Preview)
    * </pre>
    *
    * <code>.google.type.Expr condition = 8 [(.google.api.field_behavior) = OPTIONAL];</code>

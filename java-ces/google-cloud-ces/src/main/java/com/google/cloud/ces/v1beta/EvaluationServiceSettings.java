@@ -355,6 +355,18 @@ public class EvaluationServiceSettings extends ClientSettings<EvaluationServiceS
     return ((EvaluationServiceStubSettings) getStubSettings()).testPersonaVoiceSettings();
   }
 
+  /** Returns the object with the settings used for calls to exportEvaluations. */
+  public UnaryCallSettings<ExportEvaluationsRequest, Operation> exportEvaluationsSettings() {
+    return ((EvaluationServiceStubSettings) getStubSettings()).exportEvaluationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportEvaluations. */
+  public OperationCallSettings<
+          ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
+      exportEvaluationsOperationSettings() {
+    return ((EvaluationServiceStubSettings) getStubSettings()).exportEvaluationsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -701,6 +713,19 @@ public class EvaluationServiceSettings extends ClientSettings<EvaluationServiceS
     public UnaryCallSettings.Builder<TestPersonaVoiceRequest, TestPersonaVoiceResponse>
         testPersonaVoiceSettings() {
       return getStubSettingsBuilder().testPersonaVoiceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportEvaluations. */
+    public UnaryCallSettings.Builder<ExportEvaluationsRequest, Operation>
+        exportEvaluationsSettings() {
+      return getStubSettingsBuilder().exportEvaluationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportEvaluations. */
+    public OperationCallSettings.Builder<
+            ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
+        exportEvaluationsOperationSettings() {
+      return getStubSettingsBuilder().exportEvaluationsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

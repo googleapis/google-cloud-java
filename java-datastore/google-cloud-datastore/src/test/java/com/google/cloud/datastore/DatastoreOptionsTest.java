@@ -184,12 +184,15 @@ public class DatastoreOptionsTest {
     ChannelPoolSettings channelPoolSettings =
         ((InstantiatingGrpcChannelProvider) datastoreOptions.getTransportChannelProvider())
             .getChannelPoolSettings();
-    assertEquals(channelPoolSettings.getInitialChannelCount(), DatastoreOptions.INIT_CHANNEL_COUNT);
-    assertEquals(channelPoolSettings.getMinChannelCount(), DatastoreOptions.MIN_CHANNEL_COUNT);
-    assertEquals(channelPoolSettings.getMaxChannelCount(), DEFAULT_MAX_CHANNEL_COUNT);
+    assertEquals(DatastoreOptions.INIT_CHANNEL_COUNT, channelPoolSettings.getInitialChannelCount());
+    assertEquals(DatastoreOptions.MIN_CHANNEL_COUNT, channelPoolSettings.getMinChannelCount());
+    assertEquals(DEFAULT_MAX_CHANNEL_COUNT, channelPoolSettings.getMaxChannelCount());
     assertEquals(
-        channelPoolSettings.getMaxRpcsPerChannel(),
-        DatastoreOptions.CHANNEL_POOL_MAX_RPCS_PER_CHANNEL);
+        DatastoreOptions.CHANNEL_POOL_MIN_RPCS_PER_CHANNEL,
+        channelPoolSettings.getMinRpcsPerChannel());
+    assertEquals(
+        DatastoreOptions.CHANNEL_POOL_MAX_RPCS_PER_CHANNEL,
+        channelPoolSettings.getMaxRpcsPerChannel());
   }
 
   @Test

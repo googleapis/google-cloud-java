@@ -379,7 +379,7 @@ public final class PolicyBindingsGrpc {
      * <pre>
      * Creates a policy binding and returns a long-running operation.
      * Callers will need the IAM permissions on both the policy and target.
-     * Once the binding is created, the policy is applied to the target.
+     * After the binding is created, the policy is applied to the target.
      * </pre>
      */
     default void createPolicyBinding(
@@ -409,9 +409,7 @@ public final class PolicyBindingsGrpc {
      * <pre>
      * Updates a policy binding and returns a long-running operation.
      * Callers will need the IAM permissions on the policy and target in the
-     * binding to update, and the IAM permission to remove the existing policy
-     * from the binding. Target is immutable and cannot be updated. Once the
-     * binding is updated, the new policy is applied to the target.
+     * binding to update. Target and policy are immutable and cannot be updated.
      * </pre>
      */
     default void updatePolicyBinding(
@@ -427,7 +425,7 @@ public final class PolicyBindingsGrpc {
      * <pre>
      * Deletes a policy binding and returns a long-running operation.
      * Callers will need the IAM permissions on both the policy and target.
-     * Once the binding is deleted, the policy no longer applies to the target.
+     * After the binding is deleted, the policy no longer applies to the target.
      * </pre>
      */
     default void deletePolicyBinding(
@@ -511,7 +509,7 @@ public final class PolicyBindingsGrpc {
      * <pre>
      * Creates a policy binding and returns a long-running operation.
      * Callers will need the IAM permissions on both the policy and target.
-     * Once the binding is created, the policy is applied to the target.
+     * After the binding is created, the policy is applied to the target.
      * </pre>
      */
     public void createPolicyBinding(
@@ -545,9 +543,7 @@ public final class PolicyBindingsGrpc {
      * <pre>
      * Updates a policy binding and returns a long-running operation.
      * Callers will need the IAM permissions on the policy and target in the
-     * binding to update, and the IAM permission to remove the existing policy
-     * from the binding. Target is immutable and cannot be updated. Once the
-     * binding is updated, the new policy is applied to the target.
+     * binding to update. Target and policy are immutable and cannot be updated.
      * </pre>
      */
     public void updatePolicyBinding(
@@ -565,7 +561,7 @@ public final class PolicyBindingsGrpc {
      * <pre>
      * Deletes a policy binding and returns a long-running operation.
      * Callers will need the IAM permissions on both the policy and target.
-     * Once the binding is deleted, the policy no longer applies to the target.
+     * After the binding is deleted, the policy no longer applies to the target.
      * </pre>
      */
     public void deletePolicyBinding(
@@ -639,7 +635,7 @@ public final class PolicyBindingsGrpc {
      * <pre>
      * Creates a policy binding and returns a long-running operation.
      * Callers will need the IAM permissions on both the policy and target.
-     * Once the binding is created, the policy is applied to the target.
+     * After the binding is created, the policy is applied to the target.
      * </pre>
      */
     public com.google.longrunning.Operation createPolicyBinding(
@@ -667,9 +663,7 @@ public final class PolicyBindingsGrpc {
      * <pre>
      * Updates a policy binding and returns a long-running operation.
      * Callers will need the IAM permissions on the policy and target in the
-     * binding to update, and the IAM permission to remove the existing policy
-     * from the binding. Target is immutable and cannot be updated. Once the
-     * binding is updated, the new policy is applied to the target.
+     * binding to update. Target and policy are immutable and cannot be updated.
      * </pre>
      */
     public com.google.longrunning.Operation updatePolicyBinding(
@@ -684,7 +678,7 @@ public final class PolicyBindingsGrpc {
      * <pre>
      * Deletes a policy binding and returns a long-running operation.
      * Callers will need the IAM permissions on both the policy and target.
-     * Once the binding is deleted, the policy no longer applies to the target.
+     * After the binding is deleted, the policy no longer applies to the target.
      * </pre>
      */
     public com.google.longrunning.Operation deletePolicyBinding(
@@ -748,7 +742,7 @@ public final class PolicyBindingsGrpc {
      * <pre>
      * Creates a policy binding and returns a long-running operation.
      * Callers will need the IAM permissions on both the policy and target.
-     * Once the binding is created, the policy is applied to the target.
+     * After the binding is created, the policy is applied to the target.
      * </pre>
      */
     public com.google.longrunning.Operation createPolicyBinding(
@@ -776,9 +770,7 @@ public final class PolicyBindingsGrpc {
      * <pre>
      * Updates a policy binding and returns a long-running operation.
      * Callers will need the IAM permissions on the policy and target in the
-     * binding to update, and the IAM permission to remove the existing policy
-     * from the binding. Target is immutable and cannot be updated. Once the
-     * binding is updated, the new policy is applied to the target.
+     * binding to update. Target and policy are immutable and cannot be updated.
      * </pre>
      */
     public com.google.longrunning.Operation updatePolicyBinding(
@@ -793,7 +785,7 @@ public final class PolicyBindingsGrpc {
      * <pre>
      * Deletes a policy binding and returns a long-running operation.
      * Callers will need the IAM permissions on both the policy and target.
-     * Once the binding is deleted, the policy no longer applies to the target.
+     * After the binding is deleted, the policy no longer applies to the target.
      * </pre>
      */
     public com.google.longrunning.Operation deletePolicyBinding(
@@ -856,7 +848,7 @@ public final class PolicyBindingsGrpc {
      * <pre>
      * Creates a policy binding and returns a long-running operation.
      * Callers will need the IAM permissions on both the policy and target.
-     * Once the binding is created, the policy is applied to the target.
+     * After the binding is created, the policy is applied to the target.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -884,9 +876,7 @@ public final class PolicyBindingsGrpc {
      * <pre>
      * Updates a policy binding and returns a long-running operation.
      * Callers will need the IAM permissions on the policy and target in the
-     * binding to update, and the IAM permission to remove the existing policy
-     * from the binding. Target is immutable and cannot be updated. Once the
-     * binding is updated, the new policy is applied to the target.
+     * binding to update. Target and policy are immutable and cannot be updated.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -901,7 +891,7 @@ public final class PolicyBindingsGrpc {
      * <pre>
      * Deletes a policy binding and returns a long-running operation.
      * Callers will need the IAM permissions on both the policy and target.
-     * Once the binding is deleted, the policy no longer applies to the target.
+     * After the binding is deleted, the policy no longer applies to the target.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
