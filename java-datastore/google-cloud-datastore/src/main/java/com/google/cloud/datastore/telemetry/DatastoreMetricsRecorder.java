@@ -125,7 +125,7 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
           new OpenTelemetryDatastoreMetricsRecorder(customOtel, TelemetryConstants.METRIC_PREFIX));
     }
 
-    // Default metrics are disabled and user has not custom Otel instance
+    // Default metrics are disabled and user has no custom Otel instance
     if (recorders.isEmpty()) {
       return new NoOpDatastoreMetricsRecorder();
     }
