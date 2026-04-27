@@ -538,12 +538,16 @@ public class ITComputeGoldenSignals extends BaseTest {
   private void validateLogging(boolean expectError) {
     List<ILoggingEvent> computeEvents = new ArrayList<>();
     for (ILoggingEvent event : testAppender.events) {
-      if (event.getKeyValuePairs() == null) {
-        continue;
-      }
       Map<String, String> mdc = new HashMap<>();
-      for (KeyValuePair kvp : event.getKeyValuePairs()) {
-        mdc.put(kvp.key, String.valueOf(kvp.value));
+      if (event.getKeyValuePairs() != null) {
+        for (KeyValuePair kvp : event.getKeyValuePairs()) {
+          mdc.put(kvp.key, String.valueOf(kvp.value));
+        }
+      } else if (event.getMDCPropertyMap() != null) {
+        mdc.putAll(event.getMDCPropertyMap());
+      } else {
+        logger.warn("Found log without KV pairs nor MDC Property Map: " + event);
+        continue;
       }
       if (!"compute".equals(mdc.get("gcp.client.service"))) {
         continue;
