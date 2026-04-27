@@ -91,6 +91,7 @@ case ${JOB_TYPE} in
     install_modules "java-compute"
     
     mvn verify -Penable-integration-tests -Pquick-build --projects "java-compute/google-cloud-compute" \
+      ${INTEGRATION_TEST_ARGS} \
       -B -ntp -fae \
       --also-make \
       -Dtest=ITComputeGoldenSignals \
@@ -153,6 +154,7 @@ case ${JOB_TYPE} in
     install_modules "java-compute"
     
     mvn test -Pnative -Pquick-build --projects "java-compute/google-cloud-compute" \
+      ${INTEGRATION_TEST_ARGS} \
       -B -ntp -fae \
       -Dtest=ITComputeGoldenSignals \
       -Dsurefire.failIfNoSpecifiedTests=false \
@@ -167,6 +169,7 @@ case ${JOB_TYPE} in
     install_modules "java-compute"
     
     mvn test -Pnative -Pquick-build --projects "java-compute/google-cloud-compute" \
+      ${INTEGRATION_TEST_ARGS} \
       -B -ntp -fae \
       -Dtest=ITComputeGoldenSignals \
       -Dsurefire.failIfNoSpecifiedTests=false \
