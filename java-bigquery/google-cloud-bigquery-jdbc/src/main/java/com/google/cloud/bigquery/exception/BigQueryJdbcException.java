@@ -50,8 +50,8 @@ public class BigQueryJdbcException extends SQLException {
    *
    * @param ex The BigQueryException to be thrown.
    */
-  public BigQueryJdbcException(BigQueryException ex) {
-    super(ex);
+  public BigQueryJdbcException(String message, BigQueryException ex) {
+    super(message, ex);
     this.bigQueryException = ex;
     LOG.severe(this, ex.getMessage());
   }
