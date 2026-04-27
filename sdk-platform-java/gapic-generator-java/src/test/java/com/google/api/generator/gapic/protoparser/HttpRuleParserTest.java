@@ -16,7 +16,6 @@ package com.google.api.generator.gapic.protoparser;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.generator.gapic.model.HttpBindings;
@@ -79,8 +78,6 @@ class HttpRuleParserTest {
                 .collect(Collectors.toList()))
         .containsExactly("answer", "foo", "name", "test_to_verify.name", "type");
   }
-
-
 
   @Test
   void parseHttpAnnotation_shouldPutAllFieldsIntoQueryParamsIfPathParamAndBodyAreNotConfigured() {
