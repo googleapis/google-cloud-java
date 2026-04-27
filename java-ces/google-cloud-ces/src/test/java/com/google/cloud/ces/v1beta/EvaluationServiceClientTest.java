@@ -646,8 +646,12 @@ public class EvaluationServiceClientTest {
     ImportEvaluationsResponse expectedResponse =
         ImportEvaluationsResponse.newBuilder()
             .addAllEvaluations(new ArrayList<Evaluation>())
+            .addAllEvaluationResults(new ArrayList<EvaluationResult>())
+            .addAllEvaluationRuns(new ArrayList<EvaluationRun>())
             .addAllErrorMessages(new ArrayList<String>())
             .setImportFailureCount(663262976)
+            .setEvaluationResultImportFailureCount(432529247)
+            .setEvaluationRunImportFailureCount(-1483443241)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -694,8 +698,12 @@ public class EvaluationServiceClientTest {
     ImportEvaluationsResponse expectedResponse =
         ImportEvaluationsResponse.newBuilder()
             .addAllEvaluations(new ArrayList<Evaluation>())
+            .addAllEvaluationResults(new ArrayList<EvaluationResult>())
+            .addAllEvaluationRuns(new ArrayList<EvaluationRun>())
             .addAllErrorMessages(new ArrayList<String>())
             .setImportFailureCount(663262976)
+            .setEvaluationResultImportFailureCount(432529247)
+            .setEvaluationRunImportFailureCount(-1483443241)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3375,6 +3383,98 @@ public class EvaluationServiceClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void exportEvaluationsTest() throws Exception {
+    ExportEvaluationsResponse expectedResponse =
+        ExportEvaluationsResponse.newBuilder()
+            .putAllFailedEvaluations(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportEvaluationsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEvaluationService.addResponse(resultOperation);
+
+    AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+
+    ExportEvaluationsResponse actualResponse = client.exportEvaluationsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEvaluationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportEvaluationsRequest actualRequest = ((ExportEvaluationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportEvaluationsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEvaluationService.addException(exception);
+
+    try {
+      AppName parent = AppName.of("[PROJECT]", "[LOCATION]", "[APP]");
+      client.exportEvaluationsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void exportEvaluationsTest2() throws Exception {
+    ExportEvaluationsResponse expectedResponse =
+        ExportEvaluationsResponse.newBuilder()
+            .putAllFailedEvaluations(new HashMap<String, String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportEvaluationsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockEvaluationService.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+
+    ExportEvaluationsResponse actualResponse = client.exportEvaluationsAsync(parent).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockEvaluationService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportEvaluationsRequest actualRequest = ((ExportEvaluationsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportEvaluationsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockEvaluationService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.exportEvaluationsAsync(parent).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

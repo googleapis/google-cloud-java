@@ -39,7 +39,9 @@ public class AsyncGetCloudControl {
       GetCloudControlRequest request =
           GetCloudControlRequest.newBuilder()
               .setName(
-                  CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString())
+                  CloudControlName.ofOrganizationLocationCloudControlName(
+                          "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+                      .toString())
               .setMajorRevisionId(612576889)
               .build();
       ApiFuture<CloudControl> future = configClient.getCloudControlCallable().futureCall(request);

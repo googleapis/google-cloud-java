@@ -235,6 +235,7 @@ public class NetAppClientHttpJsonTest {
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
             .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -321,6 +322,7 @@ public class NetAppClientHttpJsonTest {
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
             .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -407,6 +409,7 @@ public class NetAppClientHttpJsonTest {
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
             .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -483,6 +486,7 @@ public class NetAppClientHttpJsonTest {
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
             .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -559,6 +563,7 @@ public class NetAppClientHttpJsonTest {
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
             .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -603,6 +608,7 @@ public class NetAppClientHttpJsonTest {
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
             .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -668,6 +674,7 @@ public class NetAppClientHttpJsonTest {
               .setHotTierSizeUsedGib(-151116719)
               .setType(StoragePoolType.forNumber(0))
               .setMode(Mode.forNumber(0))
+              .setScaleType(ScaleType.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateStoragePoolAsync(storagePool, updateMask).get();
@@ -856,6 +863,7 @@ public class NetAppClientHttpJsonTest {
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
             .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1053,6 +1061,7 @@ public class NetAppClientHttpJsonTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
             .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -1140,6 +1149,7 @@ public class NetAppClientHttpJsonTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
             .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
@@ -1227,6 +1237,7 @@ public class NetAppClientHttpJsonTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
             .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1323,6 +1334,7 @@ public class NetAppClientHttpJsonTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
             .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1419,6 +1431,7 @@ public class NetAppClientHttpJsonTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
             .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1474,6 +1487,7 @@ public class NetAppClientHttpJsonTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
             .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1550,6 +1564,7 @@ public class NetAppClientHttpJsonTest {
               .setCacheParameters(CacheParameters.newBuilder().build())
               .setHotTierSizeUsedGib(-151116719)
               .addAllBlockDevices(new ArrayList<BlockDevice>())
+              .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
               .setCloneDetails(Volume.CloneDetails.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1696,6 +1711,7 @@ public class NetAppClientHttpJsonTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
             .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1796,6 +1812,7 @@ public class NetAppClientHttpJsonTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
             .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =

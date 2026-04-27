@@ -2908,7 +2908,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetReportingIdentitySettings</td>
- *      <td><p> Returns the singleton data retention settings for this property.</td>
+ *      <td><p> Returns the reporting identity settings for this property.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -2922,6 +2922,25 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> getReportingIdentitySettingsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetUserProvidedDataSettings</td>
+ *      <td><p> Looks up settings related to user-provided data for a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getUserProvidedDataSettings(GetUserProvidedDataSettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getUserProvidedDataSettings(UserProvidedDataSettingsName name)
+ *           <li><p> getUserProvidedDataSettings(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getUserProvidedDataSettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -22198,7 +22217,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the singleton data retention settings for this property.
+   * Returns the reporting identity settings for this property.
    *
    * <p>Sample code:
    *
@@ -22232,7 +22251,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the singleton data retention settings for this property.
+   * Returns the reporting identity settings for this property.
    *
    * <p>Sample code:
    *
@@ -22263,7 +22282,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the singleton data retention settings for this property.
+   * Returns the reporting identity settings for this property.
    *
    * <p>Sample code:
    *
@@ -22294,7 +22313,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Returns the singleton data retention settings for this property.
+   * Returns the reporting identity settings for this property.
    *
    * <p>Sample code:
    *
@@ -22320,6 +22339,130 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   public final UnaryCallable<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
       getReportingIdentitySettingsCallable() {
     return stub.getReportingIdentitySettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up settings related to user-provided data for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UserProvidedDataSettingsName name = UserProvidedDataSettingsName.of("[PROPERTY]");
+   *   UserProvidedDataSettings response =
+   *       analyticsAdminServiceClient.getUserProvidedDataSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the user provided data settings to retrieve. Format:
+   *     properties/{property}/userProvidedDataSettings
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserProvidedDataSettings getUserProvidedDataSettings(
+      UserProvidedDataSettingsName name) {
+    GetUserProvidedDataSettingsRequest request =
+        GetUserProvidedDataSettingsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getUserProvidedDataSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up settings related to user-provided data for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = UserProvidedDataSettingsName.of("[PROPERTY]").toString();
+   *   UserProvidedDataSettings response =
+   *       analyticsAdminServiceClient.getUserProvidedDataSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the user provided data settings to retrieve. Format:
+   *     properties/{property}/userProvidedDataSettings
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserProvidedDataSettings getUserProvidedDataSettings(String name) {
+    GetUserProvidedDataSettingsRequest request =
+        GetUserProvidedDataSettingsRequest.newBuilder().setName(name).build();
+    return getUserProvidedDataSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up settings related to user-provided data for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetUserProvidedDataSettingsRequest request =
+   *       GetUserProvidedDataSettingsRequest.newBuilder()
+   *           .setName(UserProvidedDataSettingsName.of("[PROPERTY]").toString())
+   *           .build();
+   *   UserProvidedDataSettings response =
+   *       analyticsAdminServiceClient.getUserProvidedDataSettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UserProvidedDataSettings getUserProvidedDataSettings(
+      GetUserProvidedDataSettingsRequest request) {
+    return getUserProvidedDataSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up settings related to user-provided data for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetUserProvidedDataSettingsRequest request =
+   *       GetUserProvidedDataSettingsRequest.newBuilder()
+   *           .setName(UserProvidedDataSettingsName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<UserProvidedDataSettings> future =
+   *       analyticsAdminServiceClient.getUserProvidedDataSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   UserProvidedDataSettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetUserProvidedDataSettingsRequest, UserProvidedDataSettings>
+      getUserProvidedDataSettingsCallable() {
+    return stub.getUserProvidedDataSettingsCallable();
   }
 
   @Override

@@ -11809,4 +11809,86 @@ public class AnalyticsAdminServiceClientTest {
       // Expected exception.
     }
   }
+
+  @Test
+  public void getUserProvidedDataSettingsTest() throws Exception {
+    UserProvidedDataSettings expectedResponse =
+        UserProvidedDataSettings.newBuilder()
+            .setName(UserProvidedDataSettingsName.of("[PROPERTY]").toString())
+            .setUserProvidedDataCollectionEnabled(true)
+            .setAutomaticallyDetectedDataCollectionEnabled(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    UserProvidedDataSettingsName name = UserProvidedDataSettingsName.of("[PROPERTY]");
+
+    UserProvidedDataSettings actualResponse = client.getUserProvidedDataSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetUserProvidedDataSettingsRequest actualRequest =
+        ((GetUserProvidedDataSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getUserProvidedDataSettingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      UserProvidedDataSettingsName name = UserProvidedDataSettingsName.of("[PROPERTY]");
+      client.getUserProvidedDataSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getUserProvidedDataSettingsTest2() throws Exception {
+    UserProvidedDataSettings expectedResponse =
+        UserProvidedDataSettings.newBuilder()
+            .setName(UserProvidedDataSettingsName.of("[PROPERTY]").toString())
+            .setUserProvidedDataCollectionEnabled(true)
+            .setAutomaticallyDetectedDataCollectionEnabled(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    UserProvidedDataSettings actualResponse = client.getUserProvidedDataSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetUserProvidedDataSettingsRequest actualRequest =
+        ((GetUserProvidedDataSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getUserProvidedDataSettingsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getUserProvidedDataSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

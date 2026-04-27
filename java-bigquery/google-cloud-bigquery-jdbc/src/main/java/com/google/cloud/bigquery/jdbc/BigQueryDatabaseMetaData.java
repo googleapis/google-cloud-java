@@ -139,6 +139,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   String URL;
   BigQueryConnection connection;
+  Statement statement = null;
   private final BigQuery bigquery;
   private final int metadataFetchThreadCount;
   private static final AtomicReference<String> parsedDriverVersion = new AtomicReference<>(null);
@@ -147,7 +148,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   private static final AtomicReference<Integer> parsedDriverMinorVersion =
       new AtomicReference<>(null);
 
-  BigQueryDatabaseMetaData(BigQueryConnection connection) throws SQLException {
+  BigQueryDatabaseMetaData(BigQueryConnection connection) {
     this.URL = connection.getConnectionUrl();
     this.connection = connection;
     this.bigquery = connection.getBigQuery();
@@ -2632,11 +2633,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   public ResultSet getPrimaryKeys(String catalog, String schema, String table) throws SQLException {
     String sql = readSqlFromFile(GET_PRIMARY_KEYS_SQL);
     try {
-      Statement stmt = this.connection.createStatement();
-      stmt.closeOnCompletion();
+      if (this.statement == null) {
+        this.statement = this.connection.createStatement();
+      }
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return stmt.executeQuery(formattedSql);
+      return this.statement.executeQuery(formattedSql);
     } catch (SQLException e) {
+      LOG.severe(e, "Error executing getPrimaryKeys");
       throw new BigQueryJdbcException(e);
     }
   }
@@ -2646,11 +2649,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       throws SQLException {
     String sql = readSqlFromFile(GET_IMPORTED_KEYS_SQL);
     try {
-      Statement stmt = this.connection.createStatement();
-      stmt.closeOnCompletion();
+      if (this.statement == null) {
+        this.statement = this.connection.createStatement();
+      }
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return stmt.executeQuery(formattedSql);
+      return this.statement.executeQuery(formattedSql);
     } catch (SQLException e) {
+      LOG.severe(e, "Error executing getImportedKeys");
       throw new BigQueryJdbcException(e);
     }
   }
@@ -2660,11 +2665,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       throws SQLException {
     String sql = readSqlFromFile(GET_EXPORTED_KEYS_SQL);
     try {
-      Statement stmt = this.connection.createStatement();
-      stmt.closeOnCompletion();
+      if (this.statement == null) {
+        this.statement = this.connection.createStatement();
+      }
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
-      return stmt.executeQuery(formattedSql);
+      return this.statement.executeQuery(formattedSql);
     } catch (SQLException e) {
+      LOG.severe(e, "Error executing getExportedKeys");
       throw new BigQueryJdbcException(e);
     }
   }
@@ -2680,8 +2687,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       throws SQLException {
     String sql = readSqlFromFile(GET_CROSS_REFERENCE_SQL);
     try {
-      Statement stmt = this.connection.createStatement();
-      stmt.closeOnCompletion();
+      if (this.statement == null) {
+        this.statement = this.connection.createStatement();
+      }
       String formattedSql =
           replaceSqlParameters(
               sql,
@@ -2691,8 +2699,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               foreignCatalog,
               foreignSchema,
               foreignTable);
-      return stmt.executeQuery(formattedSql);
+      return this.statement.executeQuery(formattedSql);
     } catch (SQLException e) {
+      LOG.severe(e, "Error executing getCrossReference");
       throw new BigQueryJdbcException(e);
     }
   }
@@ -5255,16 +5264,18 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       if (input == null) {
         String errorMessage =
             "Could not find dependencies.properties. Driver version information is unavailable.";
-        LOG.severe(errorMessage);
-        throw new IllegalStateException(errorMessage);
+        IllegalStateException ex = new IllegalStateException(errorMessage);
+        LOG.severe(ex, errorMessage);
+        throw ex;
       }
       props.load(input);
       String versionString = props.getProperty("version.jdbc");
       if (versionString == null || versionString.trim().isEmpty()) {
         String errorMessage =
             "The property version.jdbc not found or empty in dependencies.properties.";
-        LOG.severe(errorMessage);
-        throw new IllegalStateException(errorMessage);
+        IllegalStateException ex = new IllegalStateException(errorMessage);
+        LOG.severe(ex, errorMessage);
+        throw ex;
       }
       parsedDriverVersion.compareAndSet(null, versionString.trim());
       String[] parts = versionString.split("\\.");
@@ -5282,8 +5293,9 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           "Error reading dependencies.properties. Driver version information is"
               + " unavailable. Error: "
               + e.getMessage();
-      LOG.severe(errorMessage);
-      throw new IllegalStateException(errorMessage, e);
+      IllegalStateException ex = new IllegalStateException(errorMessage, e);
+      LOG.severe(ex, errorMessage);
+      throw ex;
     }
   }
 }

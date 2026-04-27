@@ -62,13 +62,15 @@ import javax.annotation.Nullable;
  * A {@link ManagedChannel} that will send requests round-robin via a set of channels.
  *
  * <p>In addition to spreading requests over a set of child connections, the pool will also actively
- * manage the lifecycle of the channels. Currently lifecycle management is limited to pre-emptively
+ * manage the lifecycle of the channels. Currently, lifecycle management is limited to pre-emptively
  * replacing channels every hour. In the future it will dynamically size the pool based on number of
  * outstanding requests.
  *
  * <p>Package-private for internal use.
  */
 class ChannelPool extends ManagedChannel {
+  static final String CHANNEL_POOL_CONSECUTIVE_RESIZING_WARNING =
+      "The gRPC ChannelPool used in the client has been flagged to be repeatedly resizing (5+ times). See https://github.com/googleapis/google-cloud-java/blob/main/docs/grpc_channel_pool_guide.md for more information about this behavior.";
   @VisibleForTesting static final Logger LOG = Logger.getLogger(ChannelPool.class.getName());
   private static final java.time.Duration REFRESH_PERIOD = java.time.Duration.ofMinutes(50);
 
@@ -83,6 +85,15 @@ class ChannelPool extends ManagedChannel {
   @VisibleForTesting final AtomicReference<ImmutableList<Entry>> entries = new AtomicReference<>();
   private final AtomicInteger indexTicker = new AtomicInteger();
   private final String authority;
+
+  // The number of consecutive resize cycles to wait before logging a warning about repeated
+  // resizing. This value was chosen to detect repeated requests for changes (multiple continuous
+  // increase or decrease attempts) without being too sensitive.
+  private static final int CONSECUTIVE_RESIZE_THRESHOLD = 5;
+
+  // Tracks the number of consecutive resize cycles where a resize actually occurred (either expand
+  // or shrink). Used to detect repeated resizing activity and log a warning.
+  private final AtomicInteger consecutiveResizes = new AtomicInteger(0);
 
   static ChannelPool create(
       ChannelPoolSettings settings,
@@ -275,7 +286,8 @@ class ChannelPool extends ManagedChannel {
    *   <li>Get the maximum number of outstanding RPCs since last invocation
    *   <li>Determine a valid range of number of channels to handle that many outstanding RPCs
    *   <li>If the current number of channel falls outside of that range, add or remove at most
-   *       {@link ChannelPoolSettings#MAX_RESIZE_DELTA} to get closer to middle of that range.
+   *       {@link ChannelPoolSettings#DEFAULT_MAX_RESIZE_DELTA} to get closer to middle of that
+   *       range.
    * </ul>
    *
    * <p>Not threadsafe, must be called under the entryWriteLock monitor
@@ -288,45 +300,82 @@ class ChannelPool extends ManagedChannel {
         localEntries.stream().mapToInt(Entry::getAndResetMaxOutstanding).sum();
 
     // Number of channels if each channel operated at max capacity
-    int minChannels =
+    int calculatedResizeMinChannels =
         (int) Math.ceil(actualOutstandingRpcs / (double) settings.getMaxRpcsPerChannel());
     // Limit the threshold to absolute range
-    if (minChannels < settings.getMinChannelCount()) {
-      minChannels = settings.getMinChannelCount();
+    if (calculatedResizeMinChannels < settings.getMinChannelCount()) {
+      calculatedResizeMinChannels = settings.getMinChannelCount();
+    }
+    // Limit in case the calculated min channel count exceeds the configured max channel count
+    if (calculatedResizeMinChannels > settings.getMaxChannelCount()) {
+      calculatedResizeMinChannels = settings.getMaxChannelCount();
     }
 
     // Number of channels if each channel operated at minimum capacity
     // Note: getMinRpcsPerChannel() can return 0, but division by 0 shouldn't cause a problem.
-    int maxChannels =
+    int calculatedResizeMaxChannels =
         (int) Math.ceil(actualOutstandingRpcs / (double) settings.getMinRpcsPerChannel());
     // Limit the threshold to absolute range
-    if (maxChannels > settings.getMaxChannelCount()) {
-      maxChannels = settings.getMaxChannelCount();
+    if (calculatedResizeMaxChannels > settings.getMaxChannelCount()) {
+      calculatedResizeMaxChannels = settings.getMaxChannelCount();
     }
-    if (maxChannels < minChannels) {
-      maxChannels = minChannels;
+    // Limit in case the calculated max channel count falls below the configured min channel count
+    if (calculatedResizeMaxChannels < settings.getMinChannelCount()) {
+      calculatedResizeMaxChannels = settings.getMinChannelCount();
     }
 
-    // If the pool were to be resized, try to aim for the middle of the bound, but limit rate of
-    // change.
-    int tentativeTarget = (maxChannels + minChannels) / 2;
+    // If the pool were to be resized, try to aim for the middle of the bound. The tentativeTarget
+    // is guaranteed to be between configured min and max channel bounds
+    int tentativeTarget =
+        calculatedResizeMinChannels
+            + (calculatedResizeMaxChannels - calculatedResizeMinChannels) / 2;
     int currentSize = localEntries.size();
+
+    // Calculate the desired change in pool size.
     int delta = tentativeTarget - currentSize;
+
+    // Dampen the rate of change if the desired delta exceeds the maximum allowed step size.
+    // Ensure that the step size is capped by the max channel count.
+    // Note: resize delta value is not enforced to be smaller than max channel count in
+    // ChannelPoolSettings as DEFAULT_RESIZE_DELTA is 2 and max channel pool count can be 1
     int dampenedTarget = tentativeTarget;
-    if (Math.abs(delta) > ChannelPoolSettings.MAX_RESIZE_DELTA) {
-      dampenedTarget =
-          currentSize + (int) Math.copySign(ChannelPoolSettings.MAX_RESIZE_DELTA, delta);
+    int effectiveMaxResizeDelta =
+        Math.min(settings.getMaxResizeDelta(), settings.getMaxChannelCount());
+
+    // Rate-limit the change to not exceed the effectiveMaxResizeDelta
+    if (Math.abs(delta) > effectiveMaxResizeDelta) {
+      // Maintaining the correct direction (positive or negative) to handle expand/shrink
+      int step = delta > 0 ? effectiveMaxResizeDelta : -effectiveMaxResizeDelta;
+      dampenedTarget = currentSize + step;
+    }
+
+    // Only count as "resized" if the thresholds are crossed and Gax attempts to scale. Checking
+    // that `dampenedTarget != currentSize` would cause false positives when the pool is within
+    // bounds but not at the target (target aims for the middle of the bounds)
+    boolean resized =
+        (currentSize < calculatedResizeMinChannels || currentSize > calculatedResizeMaxChannels);
+    if (resized) {
+      consecutiveResizes.incrementAndGet();
+    } else {
+      consecutiveResizes.set(0);
+    }
+
+    // Log warning only once when the consecutive threshold is reached to avoid spamming logs. Log
+    // message will repeat if the number of consecutive resizes resets (e.g. stabilizes for a bit).
+    // However, aim to log once to ensure that this does not incur log spam.
+    if (consecutiveResizes.get() == CONSECUTIVE_RESIZE_THRESHOLD) {
+      LOG.warning(CHANNEL_POOL_CONSECUTIVE_RESIZING_WARNING);
     }
 
     // Only resize the pool when thresholds are crossed
-    if (localEntries.size() < minChannels) {
+    if (localEntries.size() < calculatedResizeMinChannels) {
       LOG.fine(
           String.format(
               "Detected throughput peak of %d, expanding channel pool size: %d -> %d.",
               actualOutstandingRpcs, currentSize, dampenedTarget));
 
       expand(dampenedTarget);
-    } else if (localEntries.size() > maxChannels) {
+    } else if (localEntries.size() > calculatedResizeMaxChannels) {
       LOG.fine(
           String.format(
               "Detected throughput drop to %d, shrinking channel pool size: %d -> %d.",

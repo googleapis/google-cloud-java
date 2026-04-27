@@ -68,6 +68,7 @@ public final class ConversationLoggingSettings extends com.google.protobuf.Gener
             com.google.cloud.ces.v1beta.ConversationLoggingSettings.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DISABLE_CONVERSATION_LOGGING_FIELD_NUMBER = 1;
   private boolean disableConversationLogging_ = false;
 
@@ -87,6 +88,65 @@ public final class ConversationLoggingSettings extends com.google.protobuf.Gener
     return disableConversationLogging_;
   }
 
+  public static final int RETENTION_WINDOW_FIELD_NUMBER = 2;
+  private com.google.protobuf.Duration retentionWindow_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the retention window for the conversation.
+   * If not set, the conversation will be retained for 365 days.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration retention_window = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retentionWindow field is set.
+   */
+  @java.lang.Override
+  public boolean hasRetentionWindow() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the retention window for the conversation.
+   * If not set, the conversation will be retained for 365 days.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration retention_window = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retentionWindow.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getRetentionWindow() {
+    return retentionWindow_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : retentionWindow_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the retention window for the conversation.
+   * If not set, the conversation will be retained for 365 days.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration retention_window = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getRetentionWindowOrBuilder() {
+    return retentionWindow_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : retentionWindow_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -104,6 +164,9 @@ public final class ConversationLoggingSettings extends com.google.protobuf.Gener
     if (disableConversationLogging_ != false) {
       output.writeBool(1, disableConversationLogging_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(2, getRetentionWindow());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -115,6 +178,9 @@ public final class ConversationLoggingSettings extends com.google.protobuf.Gener
     size = 0;
     if (disableConversationLogging_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, disableConversationLogging_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getRetentionWindow());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -133,6 +199,10 @@ public final class ConversationLoggingSettings extends com.google.protobuf.Gener
         (com.google.cloud.ces.v1beta.ConversationLoggingSettings) obj;
 
     if (getDisableConversationLogging() != other.getDisableConversationLogging()) return false;
+    if (hasRetentionWindow() != other.hasRetentionWindow()) return false;
+    if (hasRetentionWindow()) {
+      if (!getRetentionWindow().equals(other.getRetentionWindow())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -146,6 +216,10 @@ public final class ConversationLoggingSettings extends com.google.protobuf.Gener
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + DISABLE_CONVERSATION_LOGGING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableConversationLogging());
+    if (hasRetentionWindow()) {
+      hash = (37 * hash) + RETENTION_WINDOW_FIELD_NUMBER;
+      hash = (53 * hash) + getRetentionWindow().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -277,10 +351,19 @@ public final class ConversationLoggingSettings extends com.google.protobuf.Gener
     }
 
     // Construct using com.google.cloud.ces.v1beta.ConversationLoggingSettings.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetRetentionWindowFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -288,6 +371,11 @@ public final class ConversationLoggingSettings extends com.google.protobuf.Gener
       super.clear();
       bitField0_ = 0;
       disableConversationLogging_ = false;
+      retentionWindow_ = null;
+      if (retentionWindowBuilder_ != null) {
+        retentionWindowBuilder_.dispose();
+        retentionWindowBuilder_ = null;
+      }
       return this;
     }
 
@@ -327,6 +415,13 @@ public final class ConversationLoggingSettings extends com.google.protobuf.Gener
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.disableConversationLogging_ = disableConversationLogging_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.retentionWindow_ =
+            retentionWindowBuilder_ == null ? retentionWindow_ : retentionWindowBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -344,6 +439,9 @@ public final class ConversationLoggingSettings extends com.google.protobuf.Gener
         return this;
       if (other.getDisableConversationLogging() != false) {
         setDisableConversationLogging(other.getDisableConversationLogging());
+      }
+      if (other.hasRetentionWindow()) {
+        mergeRetentionWindow(other.getRetentionWindow());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -377,6 +475,13 @@ public final class ConversationLoggingSettings extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+            case 18:
+              {
+                input.readMessage(
+                    internalGetRetentionWindowFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -450,6 +555,227 @@ public final class ConversationLoggingSettings extends com.google.protobuf.Gener
       disableConversationLogging_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Duration retentionWindow_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        retentionWindowBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the retention window for the conversation.
+     * If not set, the conversation will be retained for 365 days.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration retention_window = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the retentionWindow field is set.
+     */
+    public boolean hasRetentionWindow() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the retention window for the conversation.
+     * If not set, the conversation will be retained for 365 days.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration retention_window = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The retentionWindow.
+     */
+    public com.google.protobuf.Duration getRetentionWindow() {
+      if (retentionWindowBuilder_ == null) {
+        return retentionWindow_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : retentionWindow_;
+      } else {
+        return retentionWindowBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the retention window for the conversation.
+     * If not set, the conversation will be retained for 365 days.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration retention_window = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRetentionWindow(com.google.protobuf.Duration value) {
+      if (retentionWindowBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        retentionWindow_ = value;
+      } else {
+        retentionWindowBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the retention window for the conversation.
+     * If not set, the conversation will be retained for 365 days.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration retention_window = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setRetentionWindow(com.google.protobuf.Duration.Builder builderForValue) {
+      if (retentionWindowBuilder_ == null) {
+        retentionWindow_ = builderForValue.build();
+      } else {
+        retentionWindowBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the retention window for the conversation.
+     * If not set, the conversation will be retained for 365 days.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration retention_window = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeRetentionWindow(com.google.protobuf.Duration value) {
+      if (retentionWindowBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && retentionWindow_ != null
+            && retentionWindow_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getRetentionWindowBuilder().mergeFrom(value);
+        } else {
+          retentionWindow_ = value;
+        }
+      } else {
+        retentionWindowBuilder_.mergeFrom(value);
+      }
+      if (retentionWindow_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the retention window for the conversation.
+     * If not set, the conversation will be retained for 365 days.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration retention_window = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearRetentionWindow() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      retentionWindow_ = null;
+      if (retentionWindowBuilder_ != null) {
+        retentionWindowBuilder_.dispose();
+        retentionWindowBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the retention window for the conversation.
+     * If not set, the conversation will be retained for 365 days.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration retention_window = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Duration.Builder getRetentionWindowBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return internalGetRetentionWindowFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the retention window for the conversation.
+     * If not set, the conversation will be retained for 365 days.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration retention_window = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.DurationOrBuilder getRetentionWindowOrBuilder() {
+      if (retentionWindowBuilder_ != null) {
+        return retentionWindowBuilder_.getMessageOrBuilder();
+      } else {
+        return retentionWindow_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : retentionWindow_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Controls the retention window for the conversation.
+     * If not set, the conversation will be retained for 365 days.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Duration retention_window = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        internalGetRetentionWindowFieldBuilder() {
+      if (retentionWindowBuilder_ == null) {
+        retentionWindowBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getRetentionWindow(), getParentForChildren(), isClean());
+        retentionWindow_ = null;
+      }
+      return retentionWindowBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.ces.v1beta.ConversationLoggingSettings)

@@ -40,6 +40,7 @@
     <slf4j.version>2.0.16</slf4j.version>
     <!--  skipping clirr check for protobuf 4.x upgrade -->
     <clirr.skip>true</clirr.skip>
+    <ignoreNonCompile>true</ignoreNonCompile><!-- maven-dependency-plugin:analyze to skip test scope dependencies -->
   </properties>
 
   <developers>
@@ -228,11 +229,6 @@
     </profile>
   </profiles>
   <repositories>
-    <repository>
-      <id>google-maven-central-copy</id>
-      <name>Google Maven Central copy</name>
-      <url>https://maven-central.storage-download.googleapis.com/maven2</url>
-    </repository>
     <repository>
       <id>maven-central</id>
       <name>Maven Central</name>

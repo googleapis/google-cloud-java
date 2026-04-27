@@ -27,8 +27,6 @@ scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 cd "${scriptDir}/.." # cd to the root of this repo
 source "$scriptDir/common.sh"
 
-setup_maven_mirror
-
 install_modules "sdk-platform-java"
 cd sdk-platform-java
 
@@ -42,6 +40,9 @@ for repo in ${REPOS_UNDER_TEST//,/ }; do # Split on comma
   git clone "https://github.com/googleapis/$repo.git" --depth=1 --branch "v$last_release"
   update_all_poms_dependency "$repo" google-cloud-shared-dependencies "$SHARED_DEPS_VERSION"
   pushd "$repo"
+  echo "Diff to run the test with modified dependencies:"
+  git --no-pager diff
+  echo "---------------"
   JOB_TYPE="test" ./.kokoro/build.sh
   popd
 done

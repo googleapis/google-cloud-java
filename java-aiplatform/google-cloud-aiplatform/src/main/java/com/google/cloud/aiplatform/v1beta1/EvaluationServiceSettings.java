@@ -143,6 +143,12 @@ public class EvaluationServiceSettings extends ClientSettings<EvaluationServiceS
     return ((EvaluationServiceStubSettings) getStubSettings()).evaluateDatasetOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to generateInstanceRubrics. */
+  public UnaryCallSettings<GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>
+      generateInstanceRubricsSettings() {
+    return ((EvaluationServiceStubSettings) getStubSettings()).generateInstanceRubricsSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -282,6 +288,13 @@ public class EvaluationServiceSettings extends ClientSettings<EvaluationServiceS
             EvaluateDatasetRequest, EvaluateDatasetResponse, EvaluateDatasetOperationMetadata>
         evaluateDatasetOperationSettings() {
       return getStubSettingsBuilder().evaluateDatasetOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to generateInstanceRubrics. */
+    public UnaryCallSettings.Builder<
+            GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>
+        generateInstanceRubricsSettings() {
+      return getStubSettingsBuilder().generateInstanceRubricsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

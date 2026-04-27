@@ -16,6 +16,7 @@
 
 package com.google.chat.v1;
 
+import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
@@ -1406,6 +1407,65 @@ public class ChatServiceClientTest {
       FindDirectMessageRequest request =
           FindDirectMessageRequest.newBuilder().setName("name3373707").build();
       client.findDirectMessage(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void findGroupChatsTest() throws Exception {
+    Space responsesElement = Space.newBuilder().build();
+    FindGroupChatsResponse expectedResponse =
+        FindGroupChatsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSpaces(Arrays.asList(responsesElement))
+            .build();
+    mockChatService.addResponse(expectedResponse);
+
+    FindGroupChatsRequest request =
+        FindGroupChatsRequest.newBuilder()
+            .addAllUsers(new ArrayList<String>())
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .setSpaceView(SpaceView.forNumber(0))
+            .build();
+
+    FindGroupChatsPagedResponse pagedListResponse = client.findGroupChats(request);
+
+    List<Space> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSpacesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockChatService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FindGroupChatsRequest actualRequest = ((FindGroupChatsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getUsersList(), actualRequest.getUsersList());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertEquals(request.getSpaceView(), actualRequest.getSpaceView());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void findGroupChatsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockChatService.addException(exception);
+
+    try {
+      FindGroupChatsRequest request =
+          FindGroupChatsRequest.newBuilder()
+              .addAllUsers(new ArrayList<String>())
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .setSpaceView(SpaceView.forNumber(0))
+              .build();
+      client.findGroupChats(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

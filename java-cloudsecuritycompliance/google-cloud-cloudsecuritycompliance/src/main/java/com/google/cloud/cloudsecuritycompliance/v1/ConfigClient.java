@@ -53,7 +53,9 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (ConfigClient configClient = ConfigClient.create()) {
- *   FrameworkName name = FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]");
+ *   FrameworkName name =
+ *       FrameworkName.ofOrganizationLocationFrameworkName(
+ *           "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]");
  *   Framework response = configClient.getFramework(name);
  * }
  * }</pre>
@@ -78,6 +80,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> listFrameworks(LocationName parent)
  *           <li><p> listFrameworks(OrganizationLocationName parent)
  *           <li><p> listFrameworks(String parent)
  *      </ul>
@@ -118,6 +121,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> createFramework(LocationName parent, Framework framework, String frameworkId)
  *           <li><p> createFramework(OrganizationLocationName parent, Framework framework, String frameworkId)
  *           <li><p> createFramework(String parent, Framework framework, String frameworkId)
  *      </ul>
@@ -177,6 +181,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> listCloudControls(LocationName parent)
  *           <li><p> listCloudControls(OrganizationLocationName parent)
  *           <li><p> listCloudControls(String parent)
  *      </ul>
@@ -217,6 +222,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> createCloudControl(LocationName parent, CloudControl cloudControl, String cloudControlId)
  *           <li><p> createCloudControl(OrganizationLocationName parent, CloudControl cloudControl, String cloudControlId)
  *           <li><p> createCloudControl(String parent, CloudControl cloudControl, String cloudControlId)
  *      </ul>
@@ -268,7 +274,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -410,6 +418,41 @@ public class ConfigClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Framework element : configClient.listFrameworks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name, in one of the following formats: -
+   *     `organizations/{organization}/locations/{location}` -
+   *     `projects/{project}/locations/{location}`.
+   *     <p>The only supported location is `global`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFrameworksPagedResponse listFrameworks(LocationName parent) {
+    ListFrameworksRequest request =
+        ListFrameworksRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listFrameworks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the frameworks (both built-in and custom) that are available within the parent resource.
+   * The latest major version of each framework is returned. This method supports pagination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
    *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   for (Framework element : configClient.listFrameworks(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -417,9 +460,10 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`. The only supported location is
-   *     `global`.
+   * @param parent Required. The parent resource name, in one of the following formats: -
+   *     `organizations/{organization}/locations/{location}` -
+   *     `projects/{project}/locations/{location}`.
+   *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFrameworksPagedResponse listFrameworks(OrganizationLocationName parent) {
@@ -451,9 +495,10 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`. The only supported location is
-   *     `global`.
+   * @param parent Required. The parent resource name, in one of the following formats: -
+   *     `organizations/{organization}/locations/{location}` -
+   *     `projects/{project}/locations/{location}`.
+   *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFrameworksPagedResponse listFrameworks(String parent) {
@@ -583,14 +628,17 @@ public class ConfigClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   FrameworkName name = FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]");
+   *   FrameworkName name =
+   *       FrameworkName.ofOrganizationLocationFrameworkName(
+   *           "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]");
    *   Framework response = configClient.getFramework(name);
    * }
    * }</pre>
    *
-   * @param name Required. The name of the framework to retrieve, in the format
-   *     `organizations/{organization}/locations/{location}/frameworks/{framework_id}` The only
-   *     supported location is `global`.
+   * @param name Required. The name of the framework to retrieve, in one of the following formats:
+   *     `organizations/{organization}/locations/{location}/frameworks/{framework}` or
+   *     `projects/{project}/locations/{location}/frameworks/{framework}`.
+   *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Framework getFramework(FrameworkName name) {
@@ -615,14 +663,18 @@ public class ConfigClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   String name = FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]").toString();
+   *   String name =
+   *       FrameworkName.ofOrganizationLocationFrameworkName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]")
+   *           .toString();
    *   Framework response = configClient.getFramework(name);
    * }
    * }</pre>
    *
-   * @param name Required. The name of the framework to retrieve, in the format
-   *     `organizations/{organization}/locations/{location}/frameworks/{framework_id}` The only
-   *     supported location is `global`.
+   * @param name Required. The name of the framework to retrieve, in one of the following formats:
+   *     `organizations/{organization}/locations/{location}/frameworks/{framework}` or
+   *     `projects/{project}/locations/{location}/frameworks/{framework}`.
+   *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Framework getFramework(String name) {
@@ -648,7 +700,10 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   GetFrameworkRequest request =
    *       GetFrameworkRequest.newBuilder()
-   *           .setName(FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]").toString())
+   *           .setName(
+   *               FrameworkName.ofOrganizationLocationFrameworkName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]")
+   *                   .toString())
    *           .setMajorRevisionId(612576889)
    *           .build();
    *   Framework response = configClient.getFramework(request);
@@ -680,7 +735,10 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   GetFrameworkRequest request =
    *       GetFrameworkRequest.newBuilder()
-   *           .setName(FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]").toString())
+   *           .setName(
+   *               FrameworkName.ofOrganizationLocationFrameworkName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]")
+   *                   .toString())
    *           .setMajorRevisionId(612576889)
    *           .build();
    *   ApiFuture<Framework> future = configClient.getFrameworkCallable().futureCall(request);
@@ -707,6 +765,47 @@ public class ConfigClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Framework framework = Framework.newBuilder().build();
+   *   String frameworkId = "frameworkId886666169";
+   *   Framework response = configClient.createFramework(parent, framework, frameworkId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name, in one of the following formats: -
+   *     `organizations/{organization}/locations/{location}` -
+   *     `projects/{project}/locations/{location}`.
+   *     <p>The only supported location is `global`.
+   * @param framework Required. The resource being created.
+   * @param frameworkId Required. The identifier (ID) of the framework. The ID is not the full name
+   *     of the framework; it's the last part of the full name of the framework.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Framework createFramework(
+      LocationName parent, Framework framework, String frameworkId) {
+    CreateFrameworkRequest request =
+        CreateFrameworkRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFramework(framework)
+            .setFrameworkId(frameworkId)
+            .build();
+    return createFramework(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a custom framework in a given parent resource. You can't create built-in frameworks
+   * because those are managed by Google.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
    *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   Framework framework = Framework.newBuilder().build();
    *   String frameworkId = "frameworkId886666169";
@@ -714,9 +813,10 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`. The only supported location is
-   *     `global`.
+   * @param parent Required. The parent resource name, in one of the following formats: -
+   *     `organizations/{organization}/locations/{location}` -
+   *     `projects/{project}/locations/{location}`.
+   *     <p>The only supported location is `global`.
    * @param framework Required. The resource being created.
    * @param frameworkId Required. The identifier (ID) of the framework. The ID is not the full name
    *     of the framework; it's the last part of the full name of the framework.
@@ -754,9 +854,10 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`. The only supported location is
-   *     `global`.
+   * @param parent Required. The parent resource name, in one of the following formats: -
+   *     `organizations/{organization}/locations/{location}` -
+   *     `projects/{project}/locations/{location}`.
+   *     <p>The only supported location is `global`.
    * @param framework Required. The resource being created.
    * @param frameworkId Required. The identifier (ID) of the framework. The ID is not the full name
    *     of the framework; it's the last part of the full name of the framework.
@@ -969,14 +1070,17 @@ public class ConfigClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   FrameworkName name = FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]");
+   *   FrameworkName name =
+   *       FrameworkName.ofOrganizationLocationFrameworkName(
+   *           "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]");
    *   configClient.deleteFramework(name);
    * }
    * }</pre>
    *
-   * @param name Required. The name of the resource, in the format
-   *     `organizations/{organization}/locations/{location}/frameworks/{framework}`. The only
-   *     supported location is `global`.
+   * @param name Required. The name of the resource, in one of the following formats:
+   *     `organizations/{organization}/locations/{location}/frameworks/{framework}` or
+   *     `projects/{project}/locations/{location}/frameworks/{framework}`.
+   *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteFramework(FrameworkName name) {
@@ -1003,14 +1107,18 @@ public class ConfigClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ConfigClient configClient = ConfigClient.create()) {
-   *   String name = FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]").toString();
+   *   String name =
+   *       FrameworkName.ofOrganizationLocationFrameworkName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]")
+   *           .toString();
    *   configClient.deleteFramework(name);
    * }
    * }</pre>
    *
-   * @param name Required. The name of the resource, in the format
-   *     `organizations/{organization}/locations/{location}/frameworks/{framework}`. The only
-   *     supported location is `global`.
+   * @param name Required. The name of the resource, in one of the following formats:
+   *     `organizations/{organization}/locations/{location}/frameworks/{framework}` or
+   *     `projects/{project}/locations/{location}/frameworks/{framework}`.
+   *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteFramework(String name) {
@@ -1038,7 +1146,10 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   DeleteFrameworkRequest request =
    *       DeleteFrameworkRequest.newBuilder()
-   *           .setName(FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]").toString())
+   *           .setName(
+   *               FrameworkName.ofOrganizationLocationFrameworkName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]")
+   *                   .toString())
    *           .build();
    *   configClient.deleteFramework(request);
    * }
@@ -1071,7 +1182,10 @@ public class ConfigClient implements BackgroundResource {
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   DeleteFrameworkRequest request =
    *       DeleteFrameworkRequest.newBuilder()
-   *           .setName(FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]").toString())
+   *           .setName(
+   *               FrameworkName.ofOrganizationLocationFrameworkName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<Empty> future = configClient.deleteFrameworkCallable().futureCall(request);
    *   // Do something.
@@ -1098,6 +1212,42 @@ public class ConfigClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (CloudControl element : configClient.listCloudControls(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name, in one of the following formats: -
+   *     `organizations/{organization}/locations/{location}` -
+   *     `projects/{project}/locations/{location}`.
+   *     <p>The only supported location is `global`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCloudControlsPagedResponse listCloudControls(LocationName parent) {
+    ListCloudControlsRequest request =
+        ListCloudControlsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCloudControls(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the cloud controls (both built-in and custom) that are available in a given parent
+   * resource. The latest major version of each cloud control is returned. This method supports
+   * pagination.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
    *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   for (CloudControl element : configClient.listCloudControls(parent).iterateAll()) {
    *     // doThingsWith(element);
@@ -1105,9 +1255,10 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`. The only supported location is
-   *     `global`.
+   * @param parent Required. The parent resource name, in one of the following formats: -
+   *     `organizations/{organization}/locations/{location}` -
+   *     `projects/{project}/locations/{location}`.
+   *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCloudControlsPagedResponse listCloudControls(OrganizationLocationName parent) {
@@ -1140,9 +1291,10 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`. The only supported location is
-   *     `global`.
+   * @param parent Required. The parent resource name, in one of the following formats: -
+   *     `organizations/{organization}/locations/{location}` -
+   *     `projects/{project}/locations/{location}`.
+   *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCloudControlsPagedResponse listCloudControls(String parent) {
@@ -1279,14 +1431,16 @@ public class ConfigClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   CloudControlName name =
-   *       CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]");
+   *       CloudControlName.ofOrganizationLocationCloudControlName(
+   *           "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]");
    *   CloudControl response = configClient.getCloudControl(name);
    * }
    * }</pre>
    *
-   * @param name Required. The name of the cloud control to retrieve, in the format
-   *     `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`. The only
-   *     supported location is `global`.
+   * @param name Required. The name of the cloud control to retrieve, in one of the following
+   *     formats: `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+   *     or `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+   *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CloudControl getCloudControl(CloudControlName name) {
@@ -1313,14 +1467,17 @@ public class ConfigClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   String name =
-   *       CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString();
+   *       CloudControlName.ofOrganizationLocationCloudControlName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+   *           .toString();
    *   CloudControl response = configClient.getCloudControl(name);
    * }
    * }</pre>
    *
-   * @param name Required. The name of the cloud control to retrieve, in the format
-   *     `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`. The only
-   *     supported location is `global`.
+   * @param name Required. The name of the cloud control to retrieve, in one of the following
+   *     formats: `organizations/{organization}/locations/{location}/cloudControls/{cloud_control}`
+   *     or `projects/{project}/locations/{location}/cloudControls/{cloud_control}`.
+   *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final CloudControl getCloudControl(String name) {
@@ -1348,7 +1505,9 @@ public class ConfigClient implements BackgroundResource {
    *   GetCloudControlRequest request =
    *       GetCloudControlRequest.newBuilder()
    *           .setName(
-   *               CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString())
+   *               CloudControlName.ofOrganizationLocationCloudControlName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+   *                   .toString())
    *           .setMajorRevisionId(612576889)
    *           .build();
    *   CloudControl response = configClient.getCloudControl(request);
@@ -1382,7 +1541,9 @@ public class ConfigClient implements BackgroundResource {
    *   GetCloudControlRequest request =
    *       GetCloudControlRequest.newBuilder()
    *           .setName(
-   *               CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString())
+   *               CloudControlName.ofOrganizationLocationCloudControlName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+   *                   .toString())
    *           .setMajorRevisionId(612576889)
    *           .build();
    *   ApiFuture<CloudControl> future = configClient.getCloudControlCallable().futureCall(request);
@@ -1409,6 +1570,47 @@ public class ConfigClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ConfigClient configClient = ConfigClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   CloudControl cloudControl = CloudControl.newBuilder().build();
+   *   String cloudControlId = "cloudControlId657324195";
+   *   CloudControl response = configClient.createCloudControl(parent, cloudControl, cloudControlId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource name, in one of the following formats: -
+   *     `organizations/{organization}/locations/{location}`. -
+   *     `projects/{project}/locations/{location}`.
+   *     <p>The only supported location is `global`.
+   * @param cloudControl Required. The cloud control that's being created.
+   * @param cloudControlId Required. The identifier for the cloud control, which is the last segment
+   *     of the cloud control name. The format is `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CloudControl createCloudControl(
+      LocationName parent, CloudControl cloudControl, String cloudControlId) {
+    CreateCloudControlRequest request =
+        CreateCloudControlRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setCloudControl(cloudControl)
+            .setCloudControlId(cloudControlId)
+            .build();
+    return createCloudControl(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a custom cloud control in a given parent resource. You can't create built-in cloud
+   * controls because those are managed by Google.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfigClient configClient = ConfigClient.create()) {
    *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   CloudControl cloudControl = CloudControl.newBuilder().build();
    *   String cloudControlId = "cloudControlId657324195";
@@ -1416,9 +1618,10 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`. The only supported location is
-   *     `global`.
+   * @param parent Required. The parent resource name, in one of the following formats: -
+   *     `organizations/{organization}/locations/{location}`. -
+   *     `projects/{project}/locations/{location}`.
+   *     <p>The only supported location is `global`.
    * @param cloudControl Required. The cloud control that's being created.
    * @param cloudControlId Required. The identifier for the cloud control, which is the last segment
    *     of the cloud control name. The format is `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
@@ -1456,9 +1659,10 @@ public class ConfigClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`. The only supported location is
-   *     `global`.
+   * @param parent Required. The parent resource name, in one of the following formats: -
+   *     `organizations/{organization}/locations/{location}`. -
+   *     `projects/{project}/locations/{location}`.
+   *     <p>The only supported location is `global`.
    * @param cloudControl Required. The cloud control that's being created.
    * @param cloudControlId Required. The identifier for the cloud control, which is the last segment
    *     of the cloud control name. The format is `^[a-zA-Z][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]$`.
@@ -1675,14 +1879,16 @@ public class ConfigClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   CloudControlName name =
-   *       CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]");
+   *       CloudControlName.ofOrganizationLocationCloudControlName(
+   *           "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]");
    *   configClient.deleteCloudControl(name);
    * }
    * }</pre>
    *
-   * @param name Required. The name of the cloud control to delete, in the format
-   *     `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`. The only
-   *     supported location is `global`.
+   * @param name Required. The name of the cloud control to delete, in one of the following formats:
+   *     `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}` or
+   *     `projects/{project}/locations/{location}/CloudControls/{CloudControl}`.
+   *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCloudControl(CloudControlName name) {
@@ -1712,14 +1918,17 @@ public class ConfigClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (ConfigClient configClient = ConfigClient.create()) {
    *   String name =
-   *       CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString();
+   *       CloudControlName.ofOrganizationLocationCloudControlName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+   *           .toString();
    *   configClient.deleteCloudControl(name);
    * }
    * }</pre>
    *
-   * @param name Required. The name of the cloud control to delete, in the format
-   *     `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}`. The only
-   *     supported location is `global`.
+   * @param name Required. The name of the cloud control to delete, in one of the following formats:
+   *     `organizations/{organization}/locations/{location}/CloudControls/{CloudControl}` or
+   *     `projects/{project}/locations/{location}/CloudControls/{CloudControl}`.
+   *     <p>The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final void deleteCloudControl(String name) {
@@ -1749,7 +1958,9 @@ public class ConfigClient implements BackgroundResource {
    *   DeleteCloudControlRequest request =
    *       DeleteCloudControlRequest.newBuilder()
    *           .setName(
-   *               CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString())
+   *               CloudControlName.ofOrganizationLocationCloudControlName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+   *                   .toString())
    *           .build();
    *   configClient.deleteCloudControl(request);
    * }
@@ -1783,7 +1994,9 @@ public class ConfigClient implements BackgroundResource {
    *   DeleteCloudControlRequest request =
    *       DeleteCloudControlRequest.newBuilder()
    *           .setName(
-   *               CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString())
+   *               CloudControlName.ofOrganizationLocationCloudControlName(
+   *                       "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+   *                   .toString())
    *           .build();
    *   ApiFuture<Empty> future = configClient.deleteCloudControlCallable().futureCall(request);
    *   // Do something.
@@ -1798,6 +2011,18 @@ public class ConfigClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1832,6 +2057,18 @@ public class ConfigClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1864,6 +2101,18 @@ public class ConfigClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

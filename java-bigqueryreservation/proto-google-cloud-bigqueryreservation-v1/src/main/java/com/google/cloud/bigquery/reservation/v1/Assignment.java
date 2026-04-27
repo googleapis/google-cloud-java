@@ -57,6 +57,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
     assignee_ = "";
     jobType_ = 0;
     state_ = 0;
+    principal_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
@@ -884,6 +885,87 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
         : schedulingPolicy_;
   }
 
+  public static final int PRINCIPAL_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object principal_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the principal for this assignment. If not empty, jobs
+   * run by this principal will utilize the associated reservation. Otherwise,
+   * jobs will fall back to using the reservation assigned to the project,
+   * folder, or organization (in that order). If no reservation is assigned at
+   * any of these levels, on-demand capacity will be used.
+   *
+   * The supported formats are:
+   *
+   * * `principal://goog/subject/USER_EMAIL_ADDRESS` for users,
+   * * `principal://iam.googleapis.com/projects/-/serviceAccounts/SA_EMAIL_ADDRESS`
+   * for service accounts,
+   * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
+   * for workload identity pool identities.
+   * * The special value `unknown_or_deleted_user` represents principals which
+   * cannot be read from the user info service, for example deleted users.
+   * </pre>
+   *
+   * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The principal.
+   */
+  @java.lang.Override
+  public java.lang.String getPrincipal() {
+    java.lang.Object ref = principal_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      principal_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Represents the principal for this assignment. If not empty, jobs
+   * run by this principal will utilize the associated reservation. Otherwise,
+   * jobs will fall back to using the reservation assigned to the project,
+   * folder, or organization (in that order). If no reservation is assigned at
+   * any of these levels, on-demand capacity will be used.
+   *
+   * The supported formats are:
+   *
+   * * `principal://goog/subject/USER_EMAIL_ADDRESS` for users,
+   * * `principal://iam.googleapis.com/projects/-/serviceAccounts/SA_EMAIL_ADDRESS`
+   * for service accounts,
+   * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
+   * for workload identity pool identities.
+   * * The special value `unknown_or_deleted_user` represents principals which
+   * cannot be read from the user info service, for example deleted users.
+   * </pre>
+   *
+   * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for principal.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPrincipalBytes() {
+    java.lang.Object ref = principal_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      principal_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -920,6 +1002,9 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(11, getSchedulingPolicy());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(principal_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 12, principal_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -951,6 +1036,9 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getSchedulingPolicy());
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(principal_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(12, principal_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -976,6 +1064,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
     if (hasSchedulingPolicy()) {
       if (!getSchedulingPolicy().equals(other.getSchedulingPolicy())) return false;
     }
+    if (!getPrincipal().equals(other.getPrincipal())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1001,6 +1090,8 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + SCHEDULING_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getSchedulingPolicy().hashCode();
     }
+    hash = (37 * hash) + PRINCIPAL_FIELD_NUMBER;
+    hash = (53 * hash) + getPrincipal().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1161,6 +1252,7 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
         schedulingPolicyBuilder_.dispose();
         schedulingPolicyBuilder_ = null;
       }
+      principal_ = "";
       return this;
     }
 
@@ -1218,6 +1310,9 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
             schedulingPolicyBuilder_ == null ? schedulingPolicy_ : schedulingPolicyBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.principal_ = principal_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1255,6 +1350,11 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasSchedulingPolicy()) {
         mergeSchedulingPolicy(other.getSchedulingPolicy());
+      }
+      if (!other.getPrincipal().isEmpty()) {
+        principal_ = other.principal_;
+        bitField0_ |= 0x00000040;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1319,6 +1419,12 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000020;
                 break;
               } // case 90
+            case 98:
+              {
+                principal_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2138,6 +2244,187 @@ public final class Assignment extends com.google.protobuf.GeneratedMessage
         schedulingPolicy_ = null;
       }
       return schedulingPolicyBuilder_;
+    }
+
+    private java.lang.Object principal_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the principal for this assignment. If not empty, jobs
+     * run by this principal will utilize the associated reservation. Otherwise,
+     * jobs will fall back to using the reservation assigned to the project,
+     * folder, or organization (in that order). If no reservation is assigned at
+     * any of these levels, on-demand capacity will be used.
+     *
+     * The supported formats are:
+     *
+     * * `principal://goog/subject/USER_EMAIL_ADDRESS` for users,
+     * * `principal://iam.googleapis.com/projects/-/serviceAccounts/SA_EMAIL_ADDRESS`
+     * for service accounts,
+     * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
+     * for workload identity pool identities.
+     * * The special value `unknown_or_deleted_user` represents principals which
+     * cannot be read from the user info service, for example deleted users.
+     * </pre>
+     *
+     * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The principal.
+     */
+    public java.lang.String getPrincipal() {
+      java.lang.Object ref = principal_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        principal_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the principal for this assignment. If not empty, jobs
+     * run by this principal will utilize the associated reservation. Otherwise,
+     * jobs will fall back to using the reservation assigned to the project,
+     * folder, or organization (in that order). If no reservation is assigned at
+     * any of these levels, on-demand capacity will be used.
+     *
+     * The supported formats are:
+     *
+     * * `principal://goog/subject/USER_EMAIL_ADDRESS` for users,
+     * * `principal://iam.googleapis.com/projects/-/serviceAccounts/SA_EMAIL_ADDRESS`
+     * for service accounts,
+     * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
+     * for workload identity pool identities.
+     * * The special value `unknown_or_deleted_user` represents principals which
+     * cannot be read from the user info service, for example deleted users.
+     * </pre>
+     *
+     * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for principal.
+     */
+    public com.google.protobuf.ByteString getPrincipalBytes() {
+      java.lang.Object ref = principal_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        principal_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the principal for this assignment. If not empty, jobs
+     * run by this principal will utilize the associated reservation. Otherwise,
+     * jobs will fall back to using the reservation assigned to the project,
+     * folder, or organization (in that order). If no reservation is assigned at
+     * any of these levels, on-demand capacity will be used.
+     *
+     * The supported formats are:
+     *
+     * * `principal://goog/subject/USER_EMAIL_ADDRESS` for users,
+     * * `principal://iam.googleapis.com/projects/-/serviceAccounts/SA_EMAIL_ADDRESS`
+     * for service accounts,
+     * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
+     * for workload identity pool identities.
+     * * The special value `unknown_or_deleted_user` represents principals which
+     * cannot be read from the user info service, for example deleted users.
+     * </pre>
+     *
+     * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The principal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrincipal(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      principal_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the principal for this assignment. If not empty, jobs
+     * run by this principal will utilize the associated reservation. Otherwise,
+     * jobs will fall back to using the reservation assigned to the project,
+     * folder, or organization (in that order). If no reservation is assigned at
+     * any of these levels, on-demand capacity will be used.
+     *
+     * The supported formats are:
+     *
+     * * `principal://goog/subject/USER_EMAIL_ADDRESS` for users,
+     * * `principal://iam.googleapis.com/projects/-/serviceAccounts/SA_EMAIL_ADDRESS`
+     * for service accounts,
+     * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
+     * for workload identity pool identities.
+     * * The special value `unknown_or_deleted_user` represents principals which
+     * cannot be read from the user info service, for example deleted users.
+     * </pre>
+     *
+     * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrincipal() {
+      principal_ = getDefaultInstance().getPrincipal();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Represents the principal for this assignment. If not empty, jobs
+     * run by this principal will utilize the associated reservation. Otherwise,
+     * jobs will fall back to using the reservation assigned to the project,
+     * folder, or organization (in that order). If no reservation is assigned at
+     * any of these levels, on-demand capacity will be used.
+     *
+     * The supported formats are:
+     *
+     * * `principal://goog/subject/USER_EMAIL_ADDRESS` for users,
+     * * `principal://iam.googleapis.com/projects/-/serviceAccounts/SA_EMAIL_ADDRESS`
+     * for service accounts,
+     * * `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT_ID`
+     * for workload identity pool identities.
+     * * The special value `unknown_or_deleted_user` represents principals which
+     * cannot be read from the user info service, for example deleted users.
+     * </pre>
+     *
+     * <code>string principal = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for principal to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrincipalBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      principal_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.reservation.v1.Assignment)
