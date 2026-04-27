@@ -41,8 +41,9 @@ public class DatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void defaultOptionsWithBuiltInMetricsDisabled_returnsNoOp() {
-    // When both custom metrics and built-in metrics export are disabled, should return NoOp
+  public void defaultOptionsWithBuiltInMetricsDisabled_returnsNoRecorders() {
+    // When both custom metrics and built-in metrics export are disabled,
+    // there should be no recorders
     DatastoreOptions options =
         baseOptions()
             .setOpenTelemetryOptions(
@@ -51,11 +52,14 @@ public class DatastoreMetricsRecorderTest {
                     .build())
             .build();
     DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options);
-    assertThat(recorder).isInstanceOf(NoOpDatastoreMetricsRecorder.class);
+    assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
+    CompositeDatastoreMetricsRecorder compositeRecorder =
+        (CompositeDatastoreMetricsRecorder) recorder;
+    assertThat(compositeRecorder.getMetricRecorders().size()).isEqualTo(0);
   }
 
   @Test
-  public void tracingEnabledButMetricsDisabledAndBuiltInDisabled_returnsNoOp() {
+  public void tracingEnabledButMetricsDisabledAndBuiltInDisabled_returnsNoRecorders() {
     // Enabling tracing alone should not enable metrics
     DatastoreOptions options =
         baseOptions()
@@ -66,11 +70,14 @@ public class DatastoreMetricsRecorderTest {
                     .build())
             .build();
     DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options);
-    assertThat(recorder).isInstanceOf(NoOpDatastoreMetricsRecorder.class);
+    assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
+    CompositeDatastoreMetricsRecorder compositeRecorder =
+        (CompositeDatastoreMetricsRecorder) recorder;
+    assertThat(compositeRecorder.getMetricRecorders().size()).isEqualTo(0);
   }
 
   @Test
-  public void defaultOptionsWithBuiltInMetricsEnabled_butNoCredentials_returnsNoOpRecorder() {
+  public void defaultOptionsWithBuiltInMetricsEnabled_butNoCredentials_returnsNoRecorders() {
     // Explicitly enable built-in metrics export
     DatastoreOptions options =
         baseOptions() // Uses NoCredentials by default
@@ -81,9 +88,12 @@ public class DatastoreMetricsRecorderTest {
             .build();
     DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options);
 
-    // Since baseOptions() uses NoCredentials, it should return NoOpDatastoreMetricsRecorder
+    // Since baseOptions() uses NoCredentials, it should not have any recorders
     // as we don't want to send metrics for local emulator logic.
-    assertThat(recorder).isInstanceOf(NoOpDatastoreMetricsRecorder.class);
+    assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
+    CompositeDatastoreMetricsRecorder compositeRecorder =
+        (CompositeDatastoreMetricsRecorder) recorder;
+    assertThat(compositeRecorder.getMetricRecorders().size()).isEqualTo(0);
   }
 
   @Test

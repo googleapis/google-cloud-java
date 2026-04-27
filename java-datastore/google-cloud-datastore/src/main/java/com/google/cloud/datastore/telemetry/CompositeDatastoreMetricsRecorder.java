@@ -16,6 +16,8 @@
 
 package com.google.cloud.datastore.telemetry;
 
+import com.google.api.core.InternalApi;
+import com.google.common.annotations.VisibleForTesting;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
@@ -28,15 +30,21 @@ import java.util.logging.Logger;
  * <p>This allows simultaneous recording to both built-in (Cloud Monitoring) and custom
  * (user-provided) OpenTelemetry backends.
  */
-class CompositeDatastoreMetricsRecorder implements DatastoreMetricsRecorder {
+@InternalApi
+public class CompositeDatastoreMetricsRecorder implements DatastoreMetricsRecorder {
 
   private static final Logger logger =
       Logger.getLogger(CompositeDatastoreMetricsRecorder.class.getName());
 
   private final List<DatastoreMetricsRecorder> recorders;
 
-  CompositeDatastoreMetricsRecorder(List<DatastoreMetricsRecorder> recorders) {
+  public CompositeDatastoreMetricsRecorder(List<DatastoreMetricsRecorder> recorders) {
     this.recorders = recorders;
+  }
+
+  @VisibleForTesting
+  List<DatastoreMetricsRecorder> getMetricRecorders() {
+    return recorders;
   }
 
   /** {@inheritDoc} */
