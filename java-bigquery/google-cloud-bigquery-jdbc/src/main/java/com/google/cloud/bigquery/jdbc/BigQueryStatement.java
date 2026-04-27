@@ -235,16 +235,15 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public ResultSet executeQuery(String sql) throws SQLException {
-    checkClosed();
     try (BigQueryJdbcMdc.MdcCloseable mdc =
         BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.finest("++enter++");
+      checkClosed();
       return executeQueryImpl(sql);
     }
   }
 
   private ResultSet executeQueryImpl(String sql) throws SQLException {
-    // TODO: write method to return state variables to original state.
     logQueryExecutionStart(sql);
     try {
       QueryJobConfiguration jobConfiguration =
@@ -264,10 +263,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public long executeLargeUpdate(String sql) throws SQLException {
-    checkClosed();
     try (BigQueryJdbcMdc.MdcCloseable mdc =
         BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.finest("++enter++");
+      checkClosed();
       return executeLargeUpdateImpl(sql);
     }
   }
@@ -311,10 +310,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean execute(String sql) throws SQLException {
-    checkClosed();
     try (BigQueryJdbcMdc.MdcCloseable mdc =
         BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.finest("++enter++");
+      checkClosed();
       return executeImpl(sql);
     }
   }
@@ -1483,10 +1482,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean getMoreResults(int current) throws SQLException {
-    checkClosed();
     try (BigQueryJdbcMdc.MdcCloseable mdc =
         BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.finest("++enter++");
+      checkClosed();
       return getMoreResultsImpl(current);
     }
   }
@@ -1582,7 +1581,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   /** Throws a {@link BigQueryJdbcException} if this object is closed */
   void checkClosed() throws SQLException {
     if (isClosed()) {
-      LOG.severe("This " + getClass().getName() + " has been closed");
       throw new BigQueryJdbcException("This " + getClass().getName() + " has been closed");
     }
   }

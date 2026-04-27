@@ -947,6 +947,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   private void checkIfEnabledSession(String methodName) {
     if (!this.enableSession) {
+      LOG.severe("Session needs to be enabled to use %s method.", methodName);
       throw new IllegalStateException(
           String.format("Session needs to be enabled to use %s method.", methodName));
     }
