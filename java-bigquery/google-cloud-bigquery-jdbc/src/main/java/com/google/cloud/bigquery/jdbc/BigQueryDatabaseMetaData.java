@@ -1745,7 +1745,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final String catalogParam = effectiveCatalog;
     final String schemaParam = effectiveSchemaPattern;
 
-    Tracer tracer = BigQueryJdbcOpenTelemetry.getSafeTracer(this.connection);
+    Tracer tracer = this.connection.getTracer();
     SpanContext parentSpanContext = Span.current().getSpanContext();
     Runnable tableFetcher =
         () -> {
@@ -2139,7 +2139,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final String catalogParam = effectiveCatalog;
     final String schemaParam = effectiveSchemaPattern;
 
-    Tracer tracer = BigQueryJdbcOpenTelemetry.getSafeTracer(this.connection);
+    Tracer tracer = this.connection.getTracer();
     SpanContext parentSpanContext = Span.current().getSpanContext();
     Runnable columnFetcher =
         () -> {
@@ -3699,7 +3699,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     final String catalogParam = catalog;
 
-    Tracer tracer = BigQueryJdbcOpenTelemetry.getSafeTracer(this.connection);
+    Tracer tracer = this.connection.getTracer();
     SpanContext parentSpanContext = Span.current().getSpanContext();
     Runnable schemaFetcher =
         () -> {
@@ -5377,7 +5377,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   private <T> T withTracing(String spanName, TracedMetadataOperation<T> operation)
       throws SQLException {
-    Tracer tracer = BigQueryJdbcOpenTelemetry.getSafeTracer(this.connection);
+    Tracer tracer = this.connection.getTracer();
     Span span = tracer.spanBuilder(spanName).startSpan();
     try (Scope scope = span.makeCurrent()) {
       return operation.run();

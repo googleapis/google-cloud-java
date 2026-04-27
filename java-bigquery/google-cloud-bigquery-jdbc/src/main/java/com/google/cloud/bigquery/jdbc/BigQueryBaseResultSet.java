@@ -29,6 +29,8 @@ import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionException;
 import com.google.cloud.bigquery.exception.BigQueryJdbcCoercionNotFoundException;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanContext;
+import io.opentelemetry.context.Context;
+import io.opentelemetry.context.Scope;
 import java.io.InputStream;
 import java.io.Reader;
 import java.io.StringReader;
@@ -70,6 +72,10 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     this.schemaFieldList = schema != null ? schema.getFields() : null;
     this.isNested = isNested;
     this.originalSpanContext = Span.current().getSpanContext();
+  }
+
+  protected Scope makeOriginalContextCurrent() {
+    return Context.current().with(Span.wrap(this.originalSpanContext)).makeCurrent();
   }
 
   public QueryStatistics getQueryStatistics() {

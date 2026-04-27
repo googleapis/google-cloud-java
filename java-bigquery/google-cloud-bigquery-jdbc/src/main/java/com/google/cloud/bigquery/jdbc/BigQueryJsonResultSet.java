@@ -25,8 +25,6 @@ import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValue.Attribute;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.exception.BigQueryJdbcRuntimeException;
-import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.context.Context;
 import io.opentelemetry.context.Scope;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -161,7 +159,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       }
       try {
         // Advance the cursor,Potentially blocking operation
-        try (Scope scope = Context.current().with(Span.wrap(originalSpanContext)).makeCurrent()) {
+        try (Scope scope = makeOriginalContextCurrent()) {
           this.cursor = this.buffer.take();
         }
         if (this.cursor.getException() != null) {

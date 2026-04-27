@@ -1542,7 +1542,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private <T> T withTracing(String spanName, TracedOperation<T> operation) throws SQLException {
-    Tracer tracer = BigQueryJdbcOpenTelemetry.getSafeTracer(this.connection);
+    Tracer tracer = this.connection.getTracer();
     Span span = tracer.spanBuilder(spanName).startSpan();
     try (Scope scope = span.makeCurrent()) {
       return operation.run(span);
@@ -1561,7 +1561,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       BlockingQueue<Tuple<TableResult, Boolean>> rpcResponseQueue,
       BlockingQueue<BigQueryFieldValueListWrapper> bigQueryFieldValueListWrapperBlockingQueue,
       TableResult result) {
-    Tracer tracer = BigQueryJdbcOpenTelemetry.getSafeTracer(this.connection);
+    Tracer tracer = this.connection.getTracer();
     SpanContext parentSpanContext = Span.current().getSpanContext();
     String currentPageToken = firstPageToken;
     TableResult currentResults = result;
