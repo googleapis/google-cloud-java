@@ -1,4 +1,4 @@
-# Google SaaS Runtime API Client for Java
+# Google App Lifecycle Manager Client for Java
 
 Java idiomatic client for [App Lifecycle Manager][product-docs].
 
