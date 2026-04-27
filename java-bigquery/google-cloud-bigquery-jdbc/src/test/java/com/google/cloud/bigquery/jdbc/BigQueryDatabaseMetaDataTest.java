@@ -30,6 +30,10 @@ import static org.mockito.Mockito.*;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.*;
 import com.google.cloud.bigquery.BigQuery.RoutineListOption;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Scope;
+import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.DatabaseMetaData;
@@ -39,15 +43,22 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
 import java.util.*;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.regex.Pattern;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 
 public class BigQueryDatabaseMetaDataTest {
+
+  @RegisterExtension
+  static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
 
   private BigQueryConnection bigQueryConnection;
   private BigQueryDatabaseMetaData dbMetadata;
@@ -62,6 +73,11 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigQueryConnection.getConnectionUrl()).thenReturn("jdbc:bigquery://test-project");
     when(bigQueryConnection.getBigQuery()).thenReturn(bigqueryClient);
     when(bigQueryConnection.createStatement()).thenReturn(mockStatement);
+    when(bigQueryConnection.getTracer())
+        .thenReturn(
+            otelTesting
+                .getOpenTelemetry()
+                .getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME));
 
     dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
   }
@@ -3205,5 +3221,150 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testGetSQLStateType() throws SQLException {
     assertEquals(DatabaseMetaData.sqlStateSQL, dbMetadata.getSQLStateType());
+  }
+
+  @Test
+  public void testGetCatalogs_generatesSpan() throws SQLException {
+    try {
+      dbMetadata.getCatalogs();
+    } catch (NullPointerException e) {
+      // Expected
+    }
+
+    boolean found =
+        otelTesting.getSpans().stream()
+            .anyMatch(span -> span.getName().equals("BigQueryDatabaseMetaData.getCatalogs"));
+    assertTrue(found);
+  }
+
+  @Test
+  public void testGetSchemas_generatesSpan() throws SQLException {
+    try {
+      dbMetadata.getSchemas("catalog", "schema");
+    } catch (Exception e) {
+      // Expected
+    }
+
+    boolean found =
+        otelTesting.getSpans().stream()
+            .anyMatch(span -> span.getName().equals("BigQueryDatabaseMetaData.getSchemas"));
+    assertTrue(found);
+  }
+
+  @Test
+  public void testGetTables_generatesSpan() throws SQLException {
+    try {
+      dbMetadata.getTables("catalog", "schema", "table", new String[] {"TABLE"});
+    } catch (Exception e) {
+      // Expected
+    }
+
+    boolean found =
+        otelTesting.getSpans().stream()
+            .anyMatch(span -> span.getName().equals("BigQueryDatabaseMetaData.getTables"));
+    assertTrue(found);
+  }
+
+  @Test
+  public void testGetColumns_generatesSpan() throws SQLException {
+    try {
+      dbMetadata.getColumns("catalog", "schema", "table", "column");
+    } catch (Exception e) {
+      // Expected
+    }
+
+    boolean found =
+        otelTesting.getSpans().stream()
+            .anyMatch(span -> span.getName().equals("BigQueryDatabaseMetaData.getColumns"));
+    assertTrue(found);
+  }
+
+  @Test
+  public void testGetTables_createsDetachedLinkedSpan() throws Exception {
+    BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>();
+
+    Tracer testTracer = otelTesting.getOpenTelemetry().getTracer("test");
+    Span parentSpan = testTracer.spanBuilder("parent-span").startSpan();
+
+    try (Scope scope = parentSpan.makeCurrent()) {
+      Thread workerThread =
+          dbMetadata.runGetTablesTaskAsync(
+              "catalog",
+              "schema",
+              "table",
+              new String[] {"TABLE"},
+              dbMetadata.defineGetTablesSchema(),
+              queue);
+
+      Assertions.assertNotNull(workerThread, "Worker thread should not be null");
+      workerThread.join();
+
+      boolean found =
+          otelTesting.getSpans().stream()
+              .anyMatch(
+                  span ->
+                      span.getName().equals("BigQueryDatabaseMetaData.getTables.background")
+                          && span.getLinks().stream()
+                              .anyMatch(link -> link.getSpanContext().isValid()));
+      assertTrue(found);
+    } finally {
+      parentSpan.end();
+    }
+  }
+
+  @Test
+  public void testGetColumns_createsDetachedLinkedSpan() throws Exception {
+    BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>();
+
+    Tracer testTracer = otelTesting.getOpenTelemetry().getTracer("test");
+    Span parentSpan = testTracer.spanBuilder("parent-span").startSpan();
+
+    try (Scope scope = parentSpan.makeCurrent()) {
+      Thread workerThread =
+          dbMetadata.runGetColumnsTaskAsync(
+              "catalog", "schema", "table", "column", dbMetadata.defineGetColumnsSchema(), queue);
+
+      Assertions.assertNotNull(workerThread, "Worker thread should not be null");
+      workerThread.join();
+
+      boolean found =
+          otelTesting.getSpans().stream()
+              .anyMatch(
+                  span ->
+                      span.getName().equals("BigQueryDatabaseMetaData.getColumns.background")
+                          && span.getLinks().stream()
+                              .anyMatch(link -> link.getSpanContext().isValid()));
+      assertTrue(found);
+    } finally {
+      parentSpan.end();
+    }
+  }
+
+  @Test
+  public void testGetSchemas_createsDetachedLinkedSpan() throws Exception {
+    BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>();
+
+    Tracer testTracer = otelTesting.getOpenTelemetry().getTracer("test");
+    Span parentSpan = testTracer.spanBuilder("parent-span").startSpan();
+
+    try (Scope scope = parentSpan.makeCurrent()) {
+      Thread workerThread =
+          dbMetadata.runGetSchemasTaskAsync(
+              "catalog", "schema", dbMetadata.defineGetSchemasSchema(), queue);
+
+      Assertions.assertNotNull(workerThread, "Worker thread should not be null");
+      workerThread.join();
+
+      boolean found =
+          otelTesting.getSpans().stream()
+              .anyMatch(
+                  span ->
+                      span.getName().equals("BigQueryDatabaseMetaData.getSchemas.background")
+                          && span.getLinks().stream()
+                              .anyMatch(link -> link.getSpanContext().isValid()));
+      assertTrue(found);
+    } finally {
+      parentSpan.end();
+    }
   }
 }

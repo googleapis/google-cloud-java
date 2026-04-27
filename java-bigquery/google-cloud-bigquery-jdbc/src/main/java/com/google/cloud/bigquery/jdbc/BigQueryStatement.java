@@ -1561,7 +1561,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       BlockingQueue<Tuple<TableResult, Boolean>> rpcResponseQueue,
       BlockingQueue<BigQueryFieldValueListWrapper> bigQueryFieldValueListWrapperBlockingQueue,
       TableResult result) {
-    Tracer tracer = this.connection.getTracer();
     SpanContext parentSpanContext = Span.current().getSpanContext();
     String currentPageToken = firstPageToken;
     TableResult currentResults = result;
@@ -1577,7 +1576,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           break;
         }
 
-        SpanBuilder spanBuilder = tracer.spanBuilder("BigQueryStatement.pagination");
+        SpanBuilder spanBuilder =
+            this.connection.getTracer().spanBuilder("BigQueryStatement.pagination");
         if (parentSpanContext.isValid()) {
           spanBuilder.addLink(parentSpanContext);
         }

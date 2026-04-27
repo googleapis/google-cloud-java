@@ -27,8 +27,10 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.Tuple;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.QueryResultsOption;
+import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
@@ -52,7 +54,10 @@ import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
-import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Scope;
+import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -61,18 +66,24 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingDeque;
 import org.apache.arrow.memory.RootAllocator;
 import org.apache.arrow.vector.BitVector;
 import org.apache.arrow.vector.FieldVector;
 import org.apache.arrow.vector.IntVector;
 import org.apache.arrow.vector.VectorSchemaRoot;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.RegisterExtension;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 
 public class BigQueryStatementTest {
+
+  @RegisterExtension
+  public static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
 
   private BigQueryConnection bigQueryConnection;
   private static final String PROJECT = "project";
@@ -128,7 +139,10 @@ public class BigQueryStatementTest {
   @BeforeEach
   public void setUp() throws IOException, SQLException {
     bigQueryConnection = mock(BigQueryConnection.class);
-    doReturn(OpenTelemetry.noop().getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME))
+    doReturn(
+            otelTesting
+                .getOpenTelemetry()
+                .getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME))
         .when(bigQueryConnection)
         .getTracer();
     rpcFactoryMock = mock(BigQueryRpcFactory.class);
@@ -483,5 +497,104 @@ public class BigQueryStatementTest {
 
     // And no backend cancellation was attempted
     verify(bigquery, Mockito.never()).cancel(any(JobId.class));
+  }
+
+  @Test
+  public void testExecuteQuery_generatesSpan() throws Exception {
+    doReturn(true).when(bigQueryConnection).getUseStatelessQueryMode();
+    TableResult tableResultMock = mock(TableResult.class);
+    doReturn(JobId.of("job")).when(tableResultMock).getJobId();
+    doReturn(Schema.of()).when(tableResultMock).getSchema();
+    doReturn(tableResultMock)
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+    Job dryRunJobMock = getJobMock(null, null, StatementType.SELECT);
+    doReturn(dryRunJobMock).when(bigquery).create(any(JobInfo.class));
+
+    bigQueryStatement.executeQuery("SELECT 1");
+
+    boolean found =
+        otelTesting.getSpans().stream()
+            .anyMatch(span -> span.getName().equals("BigQueryStatement.executeQuery"));
+    assertTrue(found);
+  }
+
+  @Test
+  public void testExecute_generatesSpan() throws Exception {
+    doReturn(true).when(bigQueryConnection).getUseStatelessQueryMode();
+    TableResult tableResultMock = mock(TableResult.class);
+    doReturn(JobId.of("job")).when(tableResultMock).getJobId();
+    doReturn(Schema.of()).when(tableResultMock).getSchema();
+    doReturn(tableResultMock)
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+    Job dryRunJobMock = getJobMock(null, null, StatementType.SELECT);
+    doReturn(dryRunJobMock).when(bigquery).create(any(JobInfo.class));
+
+    bigQueryStatement.execute("SELECT 1");
+
+    boolean found =
+        otelTesting.getSpans().stream()
+            .anyMatch(span -> span.getName().equals("BigQueryStatement.execute"));
+    assertTrue(found);
+  }
+
+  @Test
+  public void testFetchNextPages_addsLinkToParent() throws Exception {
+    Tracer testTracer = otelTesting.getOpenTelemetry().getTracer("test");
+    Span parentSpan = testTracer.spanBuilder("parent-span").startSpan();
+
+    try (Scope scope = parentSpan.makeCurrent()) {
+
+      BlockingQueue<Tuple<TableResult, Boolean>> rpcResponseQueue = new LinkedBlockingDeque<>();
+      BlockingQueue<BigQueryFieldValueListWrapper> bigQueryFieldValueListWrapperBlockingQueue =
+          new LinkedBlockingDeque<>();
+      TableResult mockResult = mock(TableResult.class);
+      JobId mockJobId = JobId.of("job");
+
+      Job mockJob = mock(Job.class);
+      QueryJobConfiguration realConfig =
+          QueryJobConfiguration.newBuilder("SELECT 1")
+              .setDestinationTable(TableId.of("project", "dataset", "table"))
+              .build();
+      doReturn(mockJob).when(bigquery).getJob(any(JobId.class));
+      doReturn(realConfig).when(mockJob).getConfiguration();
+
+      TableResult mockNextResult = mock(TableResult.class);
+      doReturn(mockNextResult)
+          .when(bigquery)
+          .listTableData(
+              any(TableId.class), any(TableDataListOption.class), any(TableDataListOption.class));
+      doReturn(null).when(mockNextResult).getNextPageToken();
+
+      Thread workerThread =
+          bigQueryStatement.runNextPageTaskAsync(
+              mockResult,
+              "token",
+              mockJobId,
+              rpcResponseQueue,
+              bigQueryFieldValueListWrapperBlockingQueue);
+
+      Assertions.assertNotNull(workerThread, "Worker thread should not be null");
+      workerThread.join();
+
+      boolean found =
+          otelTesting.getSpans().stream()
+              .anyMatch(
+                  span ->
+                      span.getName().equals("BigQueryStatement.pagination")
+                          && span.getLinks().stream()
+                              .anyMatch(
+                                  link ->
+                                      link.getSpanContext()
+                                              .getTraceId()
+                                              .equals(parentSpan.getSpanContext().getTraceId())
+                                          && link.getSpanContext()
+                                              .getSpanId()
+                                              .equals(parentSpan.getSpanContext().getSpanId())));
+      assertTrue(found);
+    } finally {
+      parentSpan.end();
+    }
   }
 }
