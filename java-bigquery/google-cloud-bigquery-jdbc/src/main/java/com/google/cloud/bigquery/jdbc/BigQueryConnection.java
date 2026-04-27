@@ -839,7 +839,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         beginTransaction();
       }
     } catch (InterruptedException | BigQueryException ex) {
-      throw new BigQueryJdbcException(ex, "Failed to rollback transaction");
+      throw new BigQueryJdbcException("Failed to rollback transaction", ex);
     }
   }
 
