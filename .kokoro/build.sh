@@ -86,22 +86,25 @@ case ${JOB_TYPE} in
     fi
     ;;
   integration)
-    echo "FORCED: Running only ITComputeGoldenSignals"
-    setup_cloud "java-compute"
-    install_modules "java-compute"
-    
-    mvn verify -Penable-integration-tests -Pquick-build --projects "java-compute/google-cloud-compute" \
-      ${INTEGRATION_TEST_ARGS} \
-      -B -ntp -fae \
-      --also-make \
-      -Dtest=*ITComputeGoldenSignals \
-      -Dsurefire.failIfNoSpecifiedTests=false \
-      -DskipUnitTests=true \
-      -Dorg.slf4j.simpleLogger.showDateTime=true \
-      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
-      -Dmaven.wagon.http.retryHandler.count=5 \
-      -T 1C
-    RETURN_CODE=$?
+    generate_modified_modules_list
+    if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
+      echo "Skipping integration tests as this is Release Please SNAPSHOT pull request."
+    elif [[ ${#modified_module_list[@]} -gt 0 ]]; then
+      filter_modules_with_integration_tests
+      if [[ ${#filtered_it_module_list[@]} -eq 0 ]]; then
+        echo "No modified modules contain integration tests. Skipping."
+      else
+        module_list=$(
+          IFS=,
+          echo "${filtered_it_module_list[*]}"
+        )
+        setup_cloud "$module_list"
+        install_modules "$module_list"
+        run_integration_tests "$module_list"
+      fi
+    else
+      echo "No Integration Tests to run"
+    fi
     ;;
   integration-single)
     generate_modified_modules_list false
@@ -149,34 +152,28 @@ case ${JOB_TYPE} in
     fi
     ;;
   graalvm-presubmit)
-    echo "FORCED: Running only ITComputeGoldenSignals for GraalVM"
-    setup_cloud "java-compute"
-    install_modules "java-compute"
-    
-    mvn test -Pnative -Pquick-build --projects "java-compute/google-cloud-compute" \
-      ${INTEGRATION_TEST_ARGS} \
-      -B -ntp -fae \
-      -Dtest=*ITComputeGoldenSignals \
-      -Dsurefire.failIfNoSpecifiedTests=false \
-      -DtrimStackTrace=false \
-      -Dorg.slf4j.simpleLogger.showDateTime=true \
-      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS
-    RETURN_CODE=$?
+    generate_graalvm_presubmit_modules_list
+    if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
+      echo "Not running GraalVM checks -- this is Release Please SNAPSHOT pull request."
+    else
+      printf "Running GraalVM presubmit checks for:\n%s\n" "${module_list}"
+      setup_cloud "$module_list"
+      install_modules "$module_list"
+      run_graalvm_tests "$module_list"
+    fi
     ;;
   graalvm)
-    echo "FORCED: Running only ITComputeGoldenSignals for GraalVM"
-    setup_cloud "java-compute"
-    install_modules "java-compute"
-    
-    mvn test -Pnative -Pquick-build --projects "java-compute/google-cloud-compute" \
-      ${INTEGRATION_TEST_ARGS} \
-      -B -ntp -fae \
-      -Dtest=*ITComputeGoldenSignals \
-      -Dsurefire.failIfNoSpecifiedTests=false \
-      -DtrimStackTrace=false \
-      -Dorg.slf4j.simpleLogger.showDateTime=true \
-      -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS
-    RETURN_CODE=$?
+    generate_graalvm_modules_list
+    if [[ "$(release_please_snapshot_pull_request)" == "true" ]]; then
+      echo "Not running GraalVM checks -- this is Release Please SNAPSHOT pull request."
+    elif [ ! -z "${module_list}" ]; then
+      printf "Running GraalVM checks for:\n%s\n" "${module_list}"
+      setup_cloud "$module_list"
+      install_modules "$module_list"
+      run_graalvm_tests "$module_list"
+    else
+      echo "Not running GraalVM checks -- No changes in relevant modules"
+    fi
     ;;
   graalvm-single)
     generate_modified_modules_list false
