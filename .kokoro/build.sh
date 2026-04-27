@@ -94,7 +94,7 @@ case ${JOB_TYPE} in
       -B -ntp -fae \
       --also-make \
       -Dtest=ITComputeGoldenSignals \
-      -DfailIfNoTests=false \
+      -Dsurefire.failIfNoSpecifiedTests=false \
       -DskipUnitTests=true \
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS \
@@ -155,7 +155,7 @@ case ${JOB_TYPE} in
     mvn test -Pnative -Pquick-build --projects "java-compute/google-cloud-compute" \
       -B -ntp -fae \
       -Dtest=ITComputeGoldenSignals \
-      -DfailIfNoTests=false \
+      -Dsurefire.failIfNoSpecifiedTests=false \
       -DtrimStackTrace=false \
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS
@@ -169,7 +169,7 @@ case ${JOB_TYPE} in
     mvn test -Pnative -Pquick-build --projects "java-compute/google-cloud-compute" \
       -B -ntp -fae \
       -Dtest=ITComputeGoldenSignals \
-      -DfailIfNoTests=false \
+      -Dsurefire.failIfNoSpecifiedTests=false \
       -DtrimStackTrace=false \
       -Dorg.slf4j.simpleLogger.showDateTime=true \
       -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSS
