@@ -163,10 +163,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         // Advance the cursor,Potentially blocking operation
         this.cursor = this.buffer.take();
         if (this.cursor.getException() != null) {
-          BigQueryJdbcRuntimeException ex =
-              new BigQueryJdbcRuntimeException(this.cursor.getException());
-          LOG.severe(ex, ex.getMessage());
-          throw ex;
+          throw new BigQueryJdbcRuntimeException(this.cursor.getException());
         }
         this.rowCnt++;
         // Check for end of stream
@@ -180,12 +177,9 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
 
       } catch (InterruptedException e) {
 
-        BigQueryJdbcRuntimeException ex =
-            new BigQueryJdbcRuntimeException(
-                "Error occurred while advancing the cursor. This could happen when connection is closed while we call the next method",
-                e);
-        LOG.severe(ex, ex.getMessage());
-        throw ex;
+        throw new BigQueryJdbcRuntimeException(
+            "Error occurred while advancing the cursor. This could happen when connection is closed while we call the next method",
+            e);
       }
     }
   }

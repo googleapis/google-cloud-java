@@ -552,10 +552,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       if (result instanceof Job) {
         job = (Job) result;
       } else {
-        BigQueryJdbcException ex =
-            new BigQueryJdbcException("Unexpected result type from queryWithTimeout");
-        LOG.severe(ex, ex.getMessage());
-        throw ex;
+        throw new BigQueryJdbcException("Unexpected result type from queryWithTimeout");
       }
     } else {
       // Update jobId with custom JobId if jobless query is disabled.
@@ -565,16 +562,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
 
     if (job == null) {
-      BigQueryJdbcException ex = new BigQueryJdbcException("Failed to create BQ Job.");
-      LOG.severe(ex, ex.getMessage());
-      throw ex;
+      throw new BigQueryJdbcException("Failed to create BQ Job.");
     }
     synchronized (cancelLock) {
       if (isCanceled) {
         job.cancel();
-        BigQueryJdbcException ex = new BigQueryJdbcException("Query was cancelled.");
-        LOG.severe(ex, ex.getMessage());
-        throw ex;
+        throw new BigQueryJdbcException("Query was cancelled.");
       }
       jobId = job.getJobId();
       jobIds.add(jobId);
