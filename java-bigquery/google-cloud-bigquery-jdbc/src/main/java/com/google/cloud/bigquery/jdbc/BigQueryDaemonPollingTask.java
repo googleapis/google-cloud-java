@@ -113,9 +113,12 @@ class BigQueryDaemonPollingTask extends Thread {
           reference.clear();
         }
       } else {
-        throw new BigQueryJdbcRuntimeException("Null Reference Queue");
+        BigQueryJdbcRuntimeException ex = new BigQueryJdbcRuntimeException("Null Reference Queue");
+        LOG.severe(ex, "Null Reference Queue");
+        throw ex;
       }
     } catch (InterruptedException ex) {
+      LOG.severe(ex, "Interrupted in GC daemon task");
       throw new BigQueryJdbcRuntimeException(ex);
     }
   }

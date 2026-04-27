@@ -155,6 +155,7 @@ public class SpannerPool {
     private final SessionPoolOptions sessionPoolOptions;
     private final Integer numChannels;
     private final Boolean enableDynamicChannelPool;
+    private final Boolean enableGrpcGcp;
     private final Integer dcpMinChannels;
     private final Integer dcpMaxChannels;
     private final Integer dcpInitialChannels;
@@ -197,6 +198,7 @@ public class SpannerPool {
               : options.getSessionPoolOptions();
       this.numChannels = options.getNumChannels();
       this.enableDynamicChannelPool = options.isEnableDynamicChannelPool();
+      this.enableGrpcGcp = options.isEnableGrpcGcp();
       this.dcpMinChannels = options.getDcpMinChannels();
       this.dcpMaxChannels = options.getDcpMaxChannels();
       this.dcpInitialChannels = options.getDcpInitialChannels();
@@ -228,6 +230,7 @@ public class SpannerPool {
           && Objects.equals(this.sessionPoolOptions, other.sessionPoolOptions)
           && Objects.equals(this.numChannels, other.numChannels)
           && Objects.equals(this.enableDynamicChannelPool, other.enableDynamicChannelPool)
+          && Objects.equals(this.enableGrpcGcp, other.enableGrpcGcp)
           && Objects.equals(this.dcpMinChannels, other.dcpMinChannels)
           && Objects.equals(this.dcpMaxChannels, other.dcpMaxChannels)
           && Objects.equals(this.dcpInitialChannels, other.dcpInitialChannels)
@@ -258,6 +261,7 @@ public class SpannerPool {
           this.sessionPoolOptions,
           this.numChannels,
           this.enableDynamicChannelPool,
+          this.enableGrpcGcp,
           this.dcpMinChannels,
           this.dcpMaxChannels,
           this.dcpInitialChannels,
@@ -421,9 +425,18 @@ public class SpannerPool {
     if (key.numChannels != null) {
       builder.setNumChannels(key.numChannels);
     }
+    if (key.enableGrpcGcp != null) {
+      if (Boolean.TRUE.equals(key.enableGrpcGcp)) {
+        builder.enableGrpcGcpExtension();
+      } else {
+        builder.disableGrpcGcpExtension();
+      }
+    }
     // Configure Dynamic Channel Pooling (DCP) based on explicit user setting.
     // Note: Setting numChannels disables DCP even if enableDynamicChannelPool is true.
-    if (key.enableDynamicChannelPool != null && key.numChannels == null) {
+    if (key.enableDynamicChannelPool != null
+        && key.numChannels == null
+        && !Boolean.FALSE.equals(key.enableGrpcGcp)) {
       if (Boolean.TRUE.equals(key.enableDynamicChannelPool)) {
         builder.enableDynamicChannelPool();
         // Build custom GcpChannelPoolOptions if any DCP-specific options are set.
