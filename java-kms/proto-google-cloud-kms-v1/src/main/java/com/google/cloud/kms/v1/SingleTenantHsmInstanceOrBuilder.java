@@ -232,7 +232,7 @@ public interface SingleTenantHsmInstanceOrBuilder
    * <pre>
    * Output only. The system-defined duration that an instance can remain
    * unrefreshed until it is automatically disabled. This will have a value of
-   * 120 days.
+   * 730 days.
    * </pre>
    *
    * <code>
@@ -249,7 +249,7 @@ public interface SingleTenantHsmInstanceOrBuilder
    * <pre>
    * Output only. The system-defined duration that an instance can remain
    * unrefreshed until it is automatically disabled. This will have a value of
-   * 120 days.
+   * 730 days.
    * </pre>
    *
    * <code>
@@ -266,7 +266,7 @@ public interface SingleTenantHsmInstanceOrBuilder
    * <pre>
    * Output only. The system-defined duration that an instance can remain
    * unrefreshed until it is automatically disabled. This will have a value of
-   * 120 days.
+   * 730 days.
    * </pre>
    *
    * <code>

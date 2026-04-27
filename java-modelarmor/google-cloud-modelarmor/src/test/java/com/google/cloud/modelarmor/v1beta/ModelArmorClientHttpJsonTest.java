@@ -548,6 +548,7 @@ public class ModelArmorClientHttpJsonTest {
             .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
             .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
             .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+            .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -599,6 +600,7 @@ public class ModelArmorClientHttpJsonTest {
             .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
             .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
             .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+            .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -650,6 +652,7 @@ public class ModelArmorClientHttpJsonTest {
             .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
             .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
             .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+            .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -663,6 +666,7 @@ public class ModelArmorClientHttpJsonTest {
             .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
             .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
             .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+            .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -702,6 +706,7 @@ public class ModelArmorClientHttpJsonTest {
               .addAllIntegratedServices(new ArrayList<FloorSetting.IntegratedService>())
               .setAiPlatformFloorSetting(AiPlatformFloorSetting.newBuilder().build())
               .setFloorSettingMetadata(FloorSetting.FloorSettingMetadata.newBuilder().build())
+              .setGoogleMcpServerFloorSetting(McpServerFloorSetting.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateFloorSetting(floorSetting, updateMask);
@@ -724,6 +729,7 @@ public class ModelArmorClientHttpJsonTest {
             .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
             .setUserPromptData(DataItem.newBuilder().build())
             .setMultiLanguageDetectionMetadata(MultiLanguageDetectionMetadata.newBuilder().build())
+            .setStreamingMode(StreamingMode.forNumber(0))
             .build();
 
     SanitizeUserPromptResponse actualResponse = client.sanitizeUserPrompt(request);
@@ -758,6 +764,7 @@ public class ModelArmorClientHttpJsonTest {
               .setUserPromptData(DataItem.newBuilder().build())
               .setMultiLanguageDetectionMetadata(
                   MultiLanguageDetectionMetadata.newBuilder().build())
+              .setStreamingMode(StreamingMode.forNumber(0))
               .build();
       client.sanitizeUserPrompt(request);
       Assert.fail("No exception raised");
@@ -780,6 +787,7 @@ public class ModelArmorClientHttpJsonTest {
             .setModelResponseData(DataItem.newBuilder().build())
             .setUserPrompt("userPrompt1504308495")
             .setMultiLanguageDetectionMetadata(MultiLanguageDetectionMetadata.newBuilder().build())
+            .setStreamingMode(StreamingMode.forNumber(0))
             .build();
 
     SanitizeModelResponseResponse actualResponse = client.sanitizeModelResponse(request);
@@ -815,12 +823,25 @@ public class ModelArmorClientHttpJsonTest {
               .setUserPrompt("userPrompt1504308495")
               .setMultiLanguageDetectionMetadata(
                   MultiLanguageDetectionMetadata.newBuilder().build())
+              .setStreamingMode(StreamingMode.forNumber(0))
               .build();
       client.sanitizeModelResponse(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
     }
+  }
+
+  @Test
+  public void streamSanitizeUserPromptUnsupportedMethodTest() throws Exception {
+    // The streamSanitizeUserPrompt() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
+  }
+
+  @Test
+  public void streamSanitizeModelResponseUnsupportedMethodTest() throws Exception {
+    // The streamSanitizeModelResponse() method is not supported in REST transport.
+    // This empty test is generated for technical reasons.
   }
 
   @Test

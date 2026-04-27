@@ -52,6 +52,9 @@
             "FindDirectMessage": {
               "methods": ["findDirectMessage", "findDirectMessageCallable"]
             },
+            "FindGroupChats": {
+              "methods": ["findGroupChats", "findGroupChatsPagedCallable", "findGroupChatsCallable"]
+            },
             "GetAttachment": {
               "methods": ["getAttachment", "getAttachment", "getAttachment", "getAttachmentCallable"]
             },

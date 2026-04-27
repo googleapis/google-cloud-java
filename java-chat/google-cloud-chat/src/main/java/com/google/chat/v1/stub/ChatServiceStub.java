@@ -16,6 +16,7 @@
 
 package com.google.chat.v1.stub;
 
+import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
@@ -45,6 +46,8 @@ import com.google.chat.v1.DeleteReactionRequest;
 import com.google.chat.v1.DeleteSectionRequest;
 import com.google.chat.v1.DeleteSpaceRequest;
 import com.google.chat.v1.FindDirectMessageRequest;
+import com.google.chat.v1.FindGroupChatsRequest;
+import com.google.chat.v1.FindGroupChatsResponse;
 import com.google.chat.v1.GetAttachmentRequest;
 import com.google.chat.v1.GetCustomEmojiRequest;
 import com.google.chat.v1.GetMembershipRequest;
@@ -195,6 +198,15 @@ public abstract class ChatServiceStub implements BackgroundResource {
 
   public UnaryCallable<FindDirectMessageRequest, Space> findDirectMessageCallable() {
     throw new UnsupportedOperationException("Not implemented: findDirectMessageCallable()");
+  }
+
+  public UnaryCallable<FindGroupChatsRequest, FindGroupChatsPagedResponse>
+      findGroupChatsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: findGroupChatsPagedCallable()");
+  }
+
+  public UnaryCallable<FindGroupChatsRequest, FindGroupChatsResponse> findGroupChatsCallable() {
+    throw new UnsupportedOperationException("Not implemented: findGroupChatsCallable()");
   }
 
   public UnaryCallable<CreateMembershipRequest, Membership> createMembershipCallable() {

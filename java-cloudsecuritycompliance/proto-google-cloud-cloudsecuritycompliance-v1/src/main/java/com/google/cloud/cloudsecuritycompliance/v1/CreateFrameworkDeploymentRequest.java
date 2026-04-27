@@ -84,7 +84,9 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
    *
    * <pre>
    * Required. The parent resource of the framework deployment in the format
-   * `organizations/{organization}/locations/{location}`.
+   * `organizations/{organization}/locations/{location}`
+   * or
+   * `projects/{project}/locations/{location}`.
    * Only the global location is supported.
    * </pre>
    *
@@ -112,7 +114,9 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
    *
    * <pre>
    * Required. The parent resource of the framework deployment in the format
-   * `organizations/{organization}/locations/{location}`.
+   * `organizations/{organization}/locations/{location}`
+   * or
+   * `projects/{project}/locations/{location}`.
    * Only the global location is supported.
    * </pre>
    *
@@ -659,7 +663,9 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      * <pre>
      * Required. The parent resource of the framework deployment in the format
-     * `organizations/{organization}/locations/{location}`.
+     * `organizations/{organization}/locations/{location}`
+     * or
+     * `projects/{project}/locations/{location}`.
      * Only the global location is supported.
      * </pre>
      *
@@ -686,7 +692,9 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      * <pre>
      * Required. The parent resource of the framework deployment in the format
-     * `organizations/{organization}/locations/{location}`.
+     * `organizations/{organization}/locations/{location}`
+     * or
+     * `projects/{project}/locations/{location}`.
      * Only the global location is supported.
      * </pre>
      *
@@ -713,7 +721,9 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      * <pre>
      * Required. The parent resource of the framework deployment in the format
-     * `organizations/{organization}/locations/{location}`.
+     * `organizations/{organization}/locations/{location}`
+     * or
+     * `projects/{project}/locations/{location}`.
      * Only the global location is supported.
      * </pre>
      *
@@ -739,7 +749,9 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      * <pre>
      * Required. The parent resource of the framework deployment in the format
-     * `organizations/{organization}/locations/{location}`.
+     * `organizations/{organization}/locations/{location}`
+     * or
+     * `projects/{project}/locations/{location}`.
      * Only the global location is supported.
      * </pre>
      *
@@ -761,7 +773,9 @@ public final class CreateFrameworkDeploymentRequest extends com.google.protobuf.
      *
      * <pre>
      * Required. The parent resource of the framework deployment in the format
-     * `organizations/{organization}/locations/{location}`.
+     * `organizations/{organization}/locations/{location}`
+     * or
+     * `projects/{project}/locations/{location}`.
      * Only the global location is supported.
      * </pre>
      *

@@ -17,6 +17,7 @@
 package com.google.cloud.cloudsecuritycompliance.v1;
 
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,22 +33,39 @@ public class CloudControlDeploymentName implements ResourceName {
   private static final PathTemplate ORGANIZATION_LOCATION_CLOUD_CONTROL_DEPLOYMENT =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}");
+  private static final PathTemplate PROJECT_LOCATION_CLOUD_CONTROL_DEPLOYMENT =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String organization;
   private final String location;
   private final String cloudControlDeployment;
+  private final String project;
 
   @Deprecated
   protected CloudControlDeploymentName() {
     organization = null;
     location = null;
     cloudControlDeployment = null;
+    project = null;
   }
 
   private CloudControlDeploymentName(Builder builder) {
     organization = Preconditions.checkNotNull(builder.getOrganization());
     location = Preconditions.checkNotNull(builder.getLocation());
     cloudControlDeployment = Preconditions.checkNotNull(builder.getCloudControlDeployment());
+    project = null;
+    pathTemplate = ORGANIZATION_LOCATION_CLOUD_CONTROL_DEPLOYMENT;
+  }
+
+  private CloudControlDeploymentName(ProjectLocationCloudControlDeploymentBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    cloudControlDeployment = Preconditions.checkNotNull(builder.getCloudControlDeployment());
+    organization = null;
+    pathTemplate = PROJECT_LOCATION_CLOUD_CONTROL_DEPLOYMENT;
   }
 
   public String getOrganization() {
@@ -62,8 +80,21 @@ public class CloudControlDeploymentName implements ResourceName {
     return cloudControlDeployment;
   }
 
+  public String getProject() {
+    return project;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  public static Builder newOrganizationLocationCloudControlDeploymentBuilder() {
+    return new Builder();
+  }
+
+  public static ProjectLocationCloudControlDeploymentBuilder
+      newProjectLocationCloudControlDeploymentBuilder() {
+    return new ProjectLocationCloudControlDeploymentBuilder();
   }
 
   public Builder toBuilder() {
@@ -79,9 +110,47 @@ public class CloudControlDeploymentName implements ResourceName {
         .build();
   }
 
+  public static CloudControlDeploymentName ofOrganizationLocationCloudControlDeploymentName(
+      String organization, String location, String cloudControlDeployment) {
+    return newBuilder()
+        .setOrganization(organization)
+        .setLocation(location)
+        .setCloudControlDeployment(cloudControlDeployment)
+        .build();
+  }
+
+  public static CloudControlDeploymentName ofProjectLocationCloudControlDeploymentName(
+      String project, String location, String cloudControlDeployment) {
+    return newProjectLocationCloudControlDeploymentBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setCloudControlDeployment(cloudControlDeployment)
+        .build();
+  }
+
   public static String format(String organization, String location, String cloudControlDeployment) {
     return newBuilder()
         .setOrganization(organization)
+        .setLocation(location)
+        .setCloudControlDeployment(cloudControlDeployment)
+        .build()
+        .toString();
+  }
+
+  public static String formatOrganizationLocationCloudControlDeploymentName(
+      String organization, String location, String cloudControlDeployment) {
+    return newBuilder()
+        .setOrganization(organization)
+        .setLocation(location)
+        .setCloudControlDeployment(cloudControlDeployment)
+        .build()
+        .toString();
+  }
+
+  public static String formatProjectLocationCloudControlDeploymentName(
+      String project, String location, String cloudControlDeployment) {
+    return newProjectLocationCloudControlDeploymentBuilder()
+        .setProject(project)
         .setLocation(location)
         .setCloudControlDeployment(cloudControlDeployment)
         .build()
@@ -92,14 +161,23 @@ public class CloudControlDeploymentName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        ORGANIZATION_LOCATION_CLOUD_CONTROL_DEPLOYMENT.validatedMatch(
-            formattedString,
-            "CloudControlDeploymentName.parse: formattedString not in valid format");
-    return of(
-        matchMap.get("organization"),
-        matchMap.get("location"),
-        matchMap.get("cloud_control_deployment"));
+    if (ORGANIZATION_LOCATION_CLOUD_CONTROL_DEPLOYMENT.matches(formattedString)) {
+      Map<String, String> matchMap =
+          ORGANIZATION_LOCATION_CLOUD_CONTROL_DEPLOYMENT.match(formattedString);
+      return ofOrganizationLocationCloudControlDeploymentName(
+          matchMap.get("organization"),
+          matchMap.get("location"),
+          matchMap.get("cloud_control_deployment"));
+    } else if (PROJECT_LOCATION_CLOUD_CONTROL_DEPLOYMENT.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_CLOUD_CONTROL_DEPLOYMENT.match(formattedString);
+      return ofProjectLocationCloudControlDeploymentName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("cloud_control_deployment"));
+    }
+    throw new ValidationException(
+        "CloudControlDeploymentName.parse: formattedString not in valid format");
   }
 
   public static List<CloudControlDeploymentName> parseList(List<String> formattedStrings) {
@@ -123,7 +201,8 @@ public class CloudControlDeploymentName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return ORGANIZATION_LOCATION_CLOUD_CONTROL_DEPLOYMENT.matches(formattedString);
+    return ORGANIZATION_LOCATION_CLOUD_CONTROL_DEPLOYMENT.matches(formattedString)
+        || PROJECT_LOCATION_CLOUD_CONTROL_DEPLOYMENT.matches(formattedString);
   }
 
   @Override
@@ -141,6 +220,9 @@ public class CloudControlDeploymentName implements ResourceName {
           if (cloudControlDeployment != null) {
             fieldMapBuilder.put("cloud_control_deployment", cloudControlDeployment);
           }
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -154,13 +236,7 @@ public class CloudControlDeploymentName implements ResourceName {
 
   @Override
   public String toString() {
-    return ORGANIZATION_LOCATION_CLOUD_CONTROL_DEPLOYMENT.instantiate(
-        "organization",
-        organization,
-        "location",
-        location,
-        "cloud_control_deployment",
-        cloudControlDeployment);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -172,7 +248,8 @@ public class CloudControlDeploymentName implements ResourceName {
       CloudControlDeploymentName that = ((CloudControlDeploymentName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.location, that.location)
-          && Objects.equals(this.cloudControlDeployment, that.cloudControlDeployment);
+          && Objects.equals(this.cloudControlDeployment, that.cloudControlDeployment)
+          && Objects.equals(this.project, that.project);
     }
     return false;
   }
@@ -181,11 +258,15 @@ public class CloudControlDeploymentName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
     h ^= Objects.hashCode(organization);
     h *= 1000003;
     h ^= Objects.hashCode(location);
     h *= 1000003;
     h ^= Objects.hashCode(cloudControlDeployment);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
     return h;
   }
 
@@ -228,9 +309,59 @@ public class CloudControlDeploymentName implements ResourceName {
     }
 
     private Builder(CloudControlDeploymentName cloudControlDeploymentName) {
+      Preconditions.checkArgument(
+          Objects.equals(
+              cloudControlDeploymentName.pathTemplate,
+              ORGANIZATION_LOCATION_CLOUD_CONTROL_DEPLOYMENT),
+          "toBuilder is only supported when CloudControlDeploymentName has the pattern of"
+              + " organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}");
       this.organization = cloudControlDeploymentName.organization;
       this.location = cloudControlDeploymentName.location;
       this.cloudControlDeployment = cloudControlDeploymentName.cloudControlDeployment;
+    }
+
+    public CloudControlDeploymentName build() {
+      return new CloudControlDeploymentName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}.
+   */
+  public static class ProjectLocationCloudControlDeploymentBuilder {
+    private String project;
+    private String location;
+    private String cloudControlDeployment;
+
+    protected ProjectLocationCloudControlDeploymentBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getCloudControlDeployment() {
+      return cloudControlDeployment;
+    }
+
+    public ProjectLocationCloudControlDeploymentBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationCloudControlDeploymentBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationCloudControlDeploymentBuilder setCloudControlDeployment(
+        String cloudControlDeployment) {
+      this.cloudControlDeployment = cloudControlDeployment;
+      return this;
     }
 
     public CloudControlDeploymentName build() {

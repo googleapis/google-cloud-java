@@ -75,6 +75,16 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Deployment is being updated.
+   * </pre>
+   *
+   * <code>DEPLOYMENT_STATE_UPDATING = 8;</code>
+   */
+  DEPLOYMENT_STATE_UPDATING(8),
+  /**
+   *
+   *
+   * <pre>
    * Deployment has failed. All the changes made by the deployment were
    * successfully rolled back. You can retry or delete a deployment that's
    * in this state.
@@ -178,6 +188,17 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Deployment is being updated.
+   * </pre>
+   *
+   * <code>DEPLOYMENT_STATE_UPDATING = 8;</code>
+   */
+  public static final int DEPLOYMENT_STATE_UPDATING_VALUE = 8;
+
+  /**
+   *
+   *
+   * <pre>
    * Deployment has failed. All the changes made by the deployment were
    * successfully rolled back. You can retry or delete a deployment that's
    * in this state.
@@ -256,6 +277,8 @@ public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
         return DEPLOYMENT_STATE_CREATING;
       case 3:
         return DEPLOYMENT_STATE_DELETING;
+      case 8:
+        return DEPLOYMENT_STATE_UPDATING;
       case 4:
         return DEPLOYMENT_STATE_FAILED;
       case 5:

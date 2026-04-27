@@ -30,13 +30,13 @@ public interface SearchAds360LinkOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this SearchAds360Link resource.
+   * Identifier. The resource name for this SearchAds360Link resource.
    * Format: properties/{propertyId}/searchAds360Links/{linkId}
    *
    * Note: linkId is not the Search Ads 360 advertiser ID
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -46,13 +46,13 @@ public interface SearchAds360LinkOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this SearchAds360Link resource.
+   * Identifier. The resource name for this SearchAds360Link resource.
    * Format: properties/{propertyId}/searchAds360Links/{linkId}
    *
    * Note: linkId is not the Search Ads 360 advertiser ID
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

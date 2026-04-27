@@ -83,12 +83,12 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Resource name for this account summary.
+   * Identifier. Resource name for this account summary.
    * Format: accountSummaries/{account_id}
    * Example: "accountSummaries/1000"
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -109,12 +109,12 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Resource name for this account summary.
+   * Identifier. Resource name for this account summary.
    * Format: accountSummaries/{account_id}
    * Example: "accountSummaries/1000"
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -758,12 +758,12 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Resource name for this account summary.
+     * Identifier. Resource name for this account summary.
      * Format: accountSummaries/{account_id}
      * Example: "accountSummaries/1000"
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -783,12 +783,12 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Resource name for this account summary.
+     * Identifier. Resource name for this account summary.
      * Format: accountSummaries/{account_id}
      * Example: "accountSummaries/1000"
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -808,12 +808,12 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Resource name for this account summary.
+     * Identifier. Resource name for this account summary.
      * Format: accountSummaries/{account_id}
      * Example: "accountSummaries/1000"
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -832,12 +832,12 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Resource name for this account summary.
+     * Identifier. Resource name for this account summary.
      * Format: accountSummaries/{account_id}
      * Example: "accountSummaries/1000"
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -852,12 +852,12 @@ public final class AccountSummary extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Resource name for this account summary.
+     * Identifier. Resource name for this account summary.
      * Format: accountSummaries/{account_id}
      * Example: "accountSummaries/1000"
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

@@ -150,7 +150,7 @@ public final class ListControlComplianceSummariesRequest
    *
    * @deprecated
    *     google.cloud.cloudsecuritycompliance.v1.ListControlComplianceSummariesRequest.end_time is
-   *     deprecated. See google/cloud/cloudsecuritycompliance/v1/monitoring.proto;l=319
+   *     deprecated. See google/cloud/cloudsecuritycompliance/v1/monitoring.proto;l=344
    * @return Whether the endTime field is set.
    */
   @java.lang.Override
@@ -172,7 +172,7 @@ public final class ListControlComplianceSummariesRequest
    *
    * @deprecated
    *     google.cloud.cloudsecuritycompliance.v1.ListControlComplianceSummariesRequest.end_time is
-   *     deprecated. See google/cloud/cloudsecuritycompliance/v1/monitoring.proto;l=319
+   *     deprecated. See google/cloud/cloudsecuritycompliance/v1/monitoring.proto;l=344
    * @return The endTime.
    */
   @java.lang.Override
@@ -916,7 +916,7 @@ public final class ListControlComplianceSummariesRequest
      *
      * @deprecated
      *     google.cloud.cloudsecuritycompliance.v1.ListControlComplianceSummariesRequest.end_time is
-     *     deprecated. See google/cloud/cloudsecuritycompliance/v1/monitoring.proto;l=319
+     *     deprecated. See google/cloud/cloudsecuritycompliance/v1/monitoring.proto;l=344
      * @return Whether the endTime field is set.
      */
     @java.lang.Deprecated
@@ -937,7 +937,7 @@ public final class ListControlComplianceSummariesRequest
      *
      * @deprecated
      *     google.cloud.cloudsecuritycompliance.v1.ListControlComplianceSummariesRequest.end_time is
-     *     deprecated. See google/cloud/cloudsecuritycompliance/v1/monitoring.proto;l=319
+     *     deprecated. See google/cloud/cloudsecuritycompliance/v1/monitoring.proto;l=344
      * @return The endTime.
      */
     @java.lang.Deprecated

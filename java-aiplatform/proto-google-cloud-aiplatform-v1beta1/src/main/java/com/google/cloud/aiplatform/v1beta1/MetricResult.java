@@ -52,6 +52,7 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
   }
 
   private MetricResult() {
+    rubricVerdicts_ = java.util.Collections.emptyList();
     explanation_ = "";
   }
 
@@ -106,6 +107,93 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public float getScore() {
     return score_;
+  }
+
+  public static final int RUBRIC_VERDICTS_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.RubricVerdict> rubricVerdicts_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For rubric-based metrics, the verdicts for each rubric.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.RubricVerdict> getRubricVerdictsList() {
+    return rubricVerdicts_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For rubric-based metrics, the verdicts for each rubric.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.RubricVerdictOrBuilder>
+      getRubricVerdictsOrBuilderList() {
+    return rubricVerdicts_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For rubric-based metrics, the verdicts for each rubric.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getRubricVerdictsCount() {
+    return rubricVerdicts_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For rubric-based metrics, the verdicts for each rubric.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RubricVerdict getRubricVerdicts(int index) {
+    return rubricVerdicts_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. For rubric-based metrics, the verdicts for each rubric.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RubricVerdictOrBuilder getRubricVerdictsOrBuilder(
+      int index) {
+    return rubricVerdicts_.get(index);
   }
 
   public static final int EXPLANATION_FIELD_NUMBER = 3;
@@ -246,6 +334,9 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeFloat(1, score_);
     }
+    for (int i = 0; i < rubricVerdicts_.size(); i++) {
+      output.writeMessage(2, rubricVerdicts_.get(i));
+    }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, explanation_);
     }
@@ -263,6 +354,9 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, score_);
+    }
+    for (int i = 0; i < rubricVerdicts_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, rubricVerdicts_.get(i));
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, explanation_);
@@ -291,6 +385,7 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
       if (java.lang.Float.floatToIntBits(getScore())
           != java.lang.Float.floatToIntBits(other.getScore())) return false;
     }
+    if (!getRubricVerdictsList().equals(other.getRubricVerdictsList())) return false;
     if (hasExplanation() != other.hasExplanation()) return false;
     if (hasExplanation()) {
       if (!getExplanation().equals(other.getExplanation())) return false;
@@ -313,6 +408,10 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
     if (hasScore()) {
       hash = (37 * hash) + SCORE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getScore());
+    }
+    if (getRubricVerdictsCount() > 0) {
+      hash = (37 * hash) + RUBRIC_VERDICTS_FIELD_NUMBER;
+      hash = (53 * hash) + getRubricVerdictsList().hashCode();
     }
     if (hasExplanation()) {
       hash = (37 * hash) + EXPLANATION_FIELD_NUMBER;
@@ -463,6 +562,7 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetRubricVerdictsFieldBuilder();
         internalGetErrorFieldBuilder();
       }
     }
@@ -472,6 +572,13 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       score_ = 0F;
+      if (rubricVerdictsBuilder_ == null) {
+        rubricVerdicts_ = java.util.Collections.emptyList();
+      } else {
+        rubricVerdicts_ = null;
+        rubricVerdictsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000002);
       explanation_ = "";
       error_ = null;
       if (errorBuilder_ != null) {
@@ -505,11 +612,25 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.aiplatform.v1beta1.MetricResult buildPartial() {
       com.google.cloud.aiplatform.v1beta1.MetricResult result =
           new com.google.cloud.aiplatform.v1beta1.MetricResult(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.aiplatform.v1beta1.MetricResult result) {
+      if (rubricVerdictsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          rubricVerdicts_ = java.util.Collections.unmodifiableList(rubricVerdicts_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.rubricVerdicts_ = rubricVerdicts_;
+      } else {
+        result.rubricVerdicts_ = rubricVerdictsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.MetricResult result) {
@@ -519,11 +640,11 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
         result.score_ = score_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.explanation_ = explanation_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
@@ -546,9 +667,36 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
       if (other.hasScore()) {
         setScore(other.getScore());
       }
+      if (rubricVerdictsBuilder_ == null) {
+        if (!other.rubricVerdicts_.isEmpty()) {
+          if (rubricVerdicts_.isEmpty()) {
+            rubricVerdicts_ = other.rubricVerdicts_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureRubricVerdictsIsMutable();
+            rubricVerdicts_.addAll(other.rubricVerdicts_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.rubricVerdicts_.isEmpty()) {
+          if (rubricVerdictsBuilder_.isEmpty()) {
+            rubricVerdictsBuilder_.dispose();
+            rubricVerdictsBuilder_ = null;
+            rubricVerdicts_ = other.rubricVerdicts_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            rubricVerdictsBuilder_ =
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                    ? internalGetRubricVerdictsFieldBuilder()
+                    : null;
+          } else {
+            rubricVerdictsBuilder_.addAllMessages(other.rubricVerdicts_);
+          }
+        }
+      }
       if (other.hasExplanation()) {
         explanation_ = other.explanation_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasError()) {
@@ -586,16 +734,30 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 13
+            case 18:
+              {
+                com.google.cloud.aiplatform.v1beta1.RubricVerdict m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.RubricVerdict.parser(),
+                        extensionRegistry);
+                if (rubricVerdictsBuilder_ == null) {
+                  ensureRubricVerdictsIsMutable();
+                  rubricVerdicts_.add(m);
+                } else {
+                  rubricVerdictsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
             case 26:
               {
                 explanation_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(internalGetErrorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -693,6 +855,421 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.RubricVerdict> rubricVerdicts_ =
+        java.util.Collections.emptyList();
+
+    private void ensureRubricVerdictsIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        rubricVerdicts_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.RubricVerdict>(
+                rubricVerdicts_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.RubricVerdict,
+            com.google.cloud.aiplatform.v1beta1.RubricVerdict.Builder,
+            com.google.cloud.aiplatform.v1beta1.RubricVerdictOrBuilder>
+        rubricVerdictsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.RubricVerdict>
+        getRubricVerdictsList() {
+      if (rubricVerdictsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(rubricVerdicts_);
+      } else {
+        return rubricVerdictsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getRubricVerdictsCount() {
+      if (rubricVerdictsBuilder_ == null) {
+        return rubricVerdicts_.size();
+      } else {
+        return rubricVerdictsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RubricVerdict getRubricVerdicts(int index) {
+      if (rubricVerdictsBuilder_ == null) {
+        return rubricVerdicts_.get(index);
+      } else {
+        return rubricVerdictsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRubricVerdicts(
+        int index, com.google.cloud.aiplatform.v1beta1.RubricVerdict value) {
+      if (rubricVerdictsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRubricVerdictsIsMutable();
+        rubricVerdicts_.set(index, value);
+        onChanged();
+      } else {
+        rubricVerdictsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setRubricVerdicts(
+        int index, com.google.cloud.aiplatform.v1beta1.RubricVerdict.Builder builderForValue) {
+      if (rubricVerdictsBuilder_ == null) {
+        ensureRubricVerdictsIsMutable();
+        rubricVerdicts_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        rubricVerdictsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRubricVerdicts(com.google.cloud.aiplatform.v1beta1.RubricVerdict value) {
+      if (rubricVerdictsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRubricVerdictsIsMutable();
+        rubricVerdicts_.add(value);
+        onChanged();
+      } else {
+        rubricVerdictsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRubricVerdicts(
+        int index, com.google.cloud.aiplatform.v1beta1.RubricVerdict value) {
+      if (rubricVerdictsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureRubricVerdictsIsMutable();
+        rubricVerdicts_.add(index, value);
+        onChanged();
+      } else {
+        rubricVerdictsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRubricVerdicts(
+        com.google.cloud.aiplatform.v1beta1.RubricVerdict.Builder builderForValue) {
+      if (rubricVerdictsBuilder_ == null) {
+        ensureRubricVerdictsIsMutable();
+        rubricVerdicts_.add(builderForValue.build());
+        onChanged();
+      } else {
+        rubricVerdictsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addRubricVerdicts(
+        int index, com.google.cloud.aiplatform.v1beta1.RubricVerdict.Builder builderForValue) {
+      if (rubricVerdictsBuilder_ == null) {
+        ensureRubricVerdictsIsMutable();
+        rubricVerdicts_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        rubricVerdictsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllRubricVerdicts(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.RubricVerdict> values) {
+      if (rubricVerdictsBuilder_ == null) {
+        ensureRubricVerdictsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, rubricVerdicts_);
+        onChanged();
+      } else {
+        rubricVerdictsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearRubricVerdicts() {
+      if (rubricVerdictsBuilder_ == null) {
+        rubricVerdicts_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        rubricVerdictsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeRubricVerdicts(int index) {
+      if (rubricVerdictsBuilder_ == null) {
+        ensureRubricVerdictsIsMutable();
+        rubricVerdicts_.remove(index);
+        onChanged();
+      } else {
+        rubricVerdictsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RubricVerdict.Builder getRubricVerdictsBuilder(
+        int index) {
+      return internalGetRubricVerdictsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RubricVerdictOrBuilder getRubricVerdictsOrBuilder(
+        int index) {
+      if (rubricVerdictsBuilder_ == null) {
+        return rubricVerdicts_.get(index);
+      } else {
+        return rubricVerdictsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.RubricVerdictOrBuilder>
+        getRubricVerdictsOrBuilderList() {
+      if (rubricVerdictsBuilder_ != null) {
+        return rubricVerdictsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(rubricVerdicts_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RubricVerdict.Builder addRubricVerdictsBuilder() {
+      return internalGetRubricVerdictsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.RubricVerdict.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RubricVerdict.Builder addRubricVerdictsBuilder(
+        int index) {
+      return internalGetRubricVerdictsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.aiplatform.v1beta1.RubricVerdict.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. For rubric-based metrics, the verdicts for each rubric.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.RubricVerdict rubric_verdicts = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.RubricVerdict.Builder>
+        getRubricVerdictsBuilderList() {
+      return internalGetRubricVerdictsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.RubricVerdict,
+            com.google.cloud.aiplatform.v1beta1.RubricVerdict.Builder,
+            com.google.cloud.aiplatform.v1beta1.RubricVerdictOrBuilder>
+        internalGetRubricVerdictsFieldBuilder() {
+      if (rubricVerdictsBuilder_ == null) {
+        rubricVerdictsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.RubricVerdict,
+                com.google.cloud.aiplatform.v1beta1.RubricVerdict.Builder,
+                com.google.cloud.aiplatform.v1beta1.RubricVerdictOrBuilder>(
+                rubricVerdicts_,
+                ((bitField0_ & 0x00000002) != 0),
+                getParentForChildren(),
+                isClean());
+        rubricVerdicts_ = null;
+      }
+      return rubricVerdictsBuilder_;
+    }
+
     private java.lang.Object explanation_ = "";
 
     /**
@@ -707,7 +1284,7 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
      * @return Whether the explanation field is set.
      */
     public boolean hasExplanation() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -773,7 +1350,7 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       explanation_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -791,7 +1368,7 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearExplanation() {
       explanation_ = getDefaultInstance().getExplanation();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -814,7 +1391,7 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       explanation_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -837,7 +1414,7 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -879,7 +1456,7 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
       } else {
         errorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -900,7 +1477,7 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -917,7 +1494,7 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && error_ != null
             && error_ != com.google.rpc.Status.getDefaultInstance()) {
           getErrorBuilder().mergeFrom(value);
@@ -928,7 +1505,7 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
         errorBuilder_.mergeFrom(value);
       }
       if (error_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -945,7 +1522,7 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearError() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -966,7 +1543,7 @@ public final class MetricResult extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetErrorFieldBuilder().getBuilder();
     }

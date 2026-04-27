@@ -25,9 +25,13 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest;
+import com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineResponse;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryReasoningEngineResponse;
 import com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest;
@@ -40,6 +44,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -78,6 +83,18 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StreamQueryReasoningEngineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<AsyncQueryReasoningEngineRequest, Operation>
+      asyncQueryReasoningEngineMethodDescriptor =
+          MethodDescriptor.<AsyncQueryReasoningEngineRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ReasoningEngineExecutionService/AsyncQueryReasoningEngine")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AsyncQueryReasoningEngineRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -136,6 +153,13 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
       queryReasoningEngineCallable;
   private final ServerStreamingCallable<StreamQueryReasoningEngineRequest, HttpBody>
       streamQueryReasoningEngineCallable;
+  private final UnaryCallable<AsyncQueryReasoningEngineRequest, Operation>
+      asyncQueryReasoningEngineCallable;
+  private final OperationCallable<
+          AsyncQueryReasoningEngineRequest,
+          AsyncQueryReasoningEngineResponse,
+          AsyncQueryReasoningEngineOperationMetadata>
+      asyncQueryReasoningEngineOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -216,6 +240,18 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    GrpcCallSettings<AsyncQueryReasoningEngineRequest, Operation>
+        asyncQueryReasoningEngineTransportSettings =
+            GrpcCallSettings.<AsyncQueryReasoningEngineRequest, Operation>newBuilder()
+                .setMethodDescriptor(asyncQueryReasoningEngineMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -281,6 +317,17 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
             streamQueryReasoningEngineTransportSettings,
             settings.streamQueryReasoningEngineSettings(),
             clientContext);
+    this.asyncQueryReasoningEngineCallable =
+        callableFactory.createUnaryCallable(
+            asyncQueryReasoningEngineTransportSettings,
+            settings.asyncQueryReasoningEngineSettings(),
+            clientContext);
+    this.asyncQueryReasoningEngineOperationCallable =
+        callableFactory.createOperationCallable(
+            asyncQueryReasoningEngineTransportSettings,
+            settings.asyncQueryReasoningEngineOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -320,6 +367,21 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
   public ServerStreamingCallable<StreamQueryReasoningEngineRequest, HttpBody>
       streamQueryReasoningEngineCallable() {
     return streamQueryReasoningEngineCallable;
+  }
+
+  @Override
+  public UnaryCallable<AsyncQueryReasoningEngineRequest, Operation>
+      asyncQueryReasoningEngineCallable() {
+    return asyncQueryReasoningEngineCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          AsyncQueryReasoningEngineRequest,
+          AsyncQueryReasoningEngineResponse,
+          AsyncQueryReasoningEngineOperationMetadata>
+      asyncQueryReasoningEngineOperationCallable() {
+    return asyncQueryReasoningEngineOperationCallable;
   }
 
   @Override

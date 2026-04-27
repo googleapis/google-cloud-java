@@ -432,6 +432,27 @@ public class MockChatServiceImpl extends ChatServiceImplBase {
   }
 
   @Override
+  public void findGroupChats(
+      FindGroupChatsRequest request, StreamObserver<FindGroupChatsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FindGroupChatsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FindGroupChatsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FindGroupChats, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FindGroupChatsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void createMembership(
       CreateMembershipRequest request, StreamObserver<Membership> responseObserver) {
     Object response = responses.poll();

@@ -706,8 +706,11 @@ final class BigQueryJdbcUrlUtility {
         // Some tools can pass unknown keys. In order not to break compatibility, throw
         // an exception only with incorrect format, otherwise log an error.
         if (kv.length != 2) {
-          throw new BigQueryJdbcRuntimeException(
-              String.format("Wrong value or unknown setting: %s", safeRef));
+          BigQueryJdbcRuntimeException ex =
+              new BigQueryJdbcRuntimeException(
+                  String.format("Wrong value or unknown setting: %s", safeRef));
+          LOG.severe(ex, ex.getMessage());
+          throw ex;
         } else {
           LOG.warning("Wrong value or unknown setting: %s", safeRef);
           continue;
@@ -754,6 +757,10 @@ final class BigQueryJdbcUrlUtility {
       }
 
     } catch (NumberFormatException ex) {
+      LOG.severe(
+          ex,
+          "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for true.",
+          propertyName);
       throw new IllegalArgumentException(
           String.format(
               "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
@@ -766,11 +773,14 @@ final class BigQueryJdbcUrlUtility {
     } else if (integerValue == 0) {
       return false;
     } else {
-      throw new IllegalArgumentException(
-          String.format(
-              "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
-                  + " true.",
-              propertyName));
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              String.format(
+                  "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
+                      + " true.",
+                  propertyName));
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
   }
 
