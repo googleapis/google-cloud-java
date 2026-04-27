@@ -236,53 +236,56 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public ResultSet executeQuery(String sql) throws SQLException {
     checkClosed();
-    try {
-      BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
-      // TODO: write method to return state variables to original state.
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.finest("++enter++");
-      logQueryExecutionStart(sql);
-      try {
-        QueryJobConfiguration jobConfiguration =
-            setDestinationDatasetAndTableInJobConfig(getJobConfig(sql).build());
-        runQuery(sql, jobConfiguration);
-      } catch (InterruptedException ex) {
-        LOG.severe(ex, "Interrupted during executeQuery");
-        throw new BigQueryJdbcException(ex);
-      }
-
-      if (!isSingularResultSet()) {
-        throw new BigQueryJdbcException(
-            "Query returned more than one or didn't return any ResultSet.");
-      }
-      // This contains all the other assertions spec required on this method
-      return getCurrentResultSet();
-    } finally {
-      BigQueryJdbcMdc.clear();
+      return executeQueryImpl(sql);
     }
+  }
+
+  private ResultSet executeQueryImpl(String sql) throws SQLException {
+    // TODO: write method to return state variables to original state.
+    logQueryExecutionStart(sql);
+    try {
+      QueryJobConfiguration jobConfiguration =
+          setDestinationDatasetAndTableInJobConfig(getJobConfig(sql).build());
+      runQuery(sql, jobConfiguration);
+    } catch (InterruptedException ex) {
+      LOG.severe(ex, "Interrupted during executeQuery");
+      throw new BigQueryJdbcException(ex);
+    }
+
+    if (!isSingularResultSet()) {
+      throw new BigQueryJdbcException(
+          "Query returned more than one or didn't return any ResultSet.");
+    }
+    return getCurrentResultSet();
   }
 
   @Override
   public long executeLargeUpdate(String sql) throws SQLException {
     checkClosed();
-    try {
-      BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.finest("++enter++");
-      logQueryExecutionStart(sql);
-      try {
-        QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
-        runQuery(sql, jobConfiguration.build());
-      } catch (InterruptedException ex) {
-        LOG.severe(ex, "Interrupted during executeLargeUpdate");
-        throw new BigQueryJdbcRuntimeException(ex);
-      }
-      if (this.currentUpdateCount == -1) {
-        throw new BigQueryJdbcException(
-            "Update query expected to return affected row count. Double check query type.");
-      }
-      return this.currentUpdateCount;
-    } finally {
-      BigQueryJdbcMdc.clear();
+      return executeLargeUpdateImpl(sql);
     }
+  }
+
+  private long executeLargeUpdateImpl(String sql) throws SQLException {
+    logQueryExecutionStart(sql);
+    try {
+      QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
+      runQuery(sql, jobConfiguration.build());
+    } catch (InterruptedException ex) {
+      LOG.severe(ex, "Interrupted during executeLargeUpdate");
+      throw new BigQueryJdbcRuntimeException(ex);
+    }
+    if (this.currentUpdateCount == -1) {
+      throw new BigQueryJdbcException(
+          "Update query expected to return affected row count. Double check query type.");
+    }
+    return this.currentUpdateCount;
   }
 
   @Override
@@ -309,24 +312,26 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public boolean execute(String sql) throws SQLException {
     checkClosed();
-    try {
-      BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.finest("++enter++");
-      logQueryExecutionStart(sql);
-      try {
-        QueryJobConfiguration jobConfiguration = getJobConfig(sql).build();
-        // If Large Results are enabled, ensure query type is SELECT
-        if (isLargeResultsEnabled() && getQueryType(jobConfiguration, null) == SqlType.SELECT) {
-          jobConfiguration = setDestinationDatasetAndTableInJobConfig(jobConfiguration);
-        }
-        runQuery(sql, jobConfiguration);
-      } catch (InterruptedException ex) {
-        throw new BigQueryJdbcRuntimeException(ex);
-      }
-      return getCurrentResultSet() != null;
-    } finally {
-      BigQueryJdbcMdc.clear();
+      return executeImpl(sql);
     }
+  }
+
+  private boolean executeImpl(String sql) throws SQLException {
+    logQueryExecutionStart(sql);
+    try {
+      QueryJobConfiguration jobConfiguration = getJobConfig(sql).build();
+      // If Large Results are enabled, ensure query type is SELECT
+      if (isLargeResultsEnabled() && getQueryType(jobConfiguration, null) == SqlType.SELECT) {
+        jobConfiguration = setDestinationDatasetAndTableInJobConfig(jobConfiguration);
+      }
+      runQuery(sql, jobConfiguration);
+    } catch (InterruptedException ex) {
+      throw new BigQueryJdbcRuntimeException(ex);
+    }
+    return getCurrentResultSet() != null;
   }
 
   StatementType getStatementType(QueryJobConfiguration queryJobConfiguration) throws SQLException {
@@ -391,8 +396,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (isClosed()) {
       return;
     }
-    try {
-      BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.fine("Closing Statement %s.", this);
 
       boolean cancelSucceeded = false;
@@ -408,8 +413,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         this.connection = null;
         this.isClosed = true;
       }
-    } finally {
-      BigQueryJdbcMdc.clear();
     }
   }
 
@@ -459,8 +462,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public void cancel() throws SQLException {
-    try {
-      BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.finest("Statement %s cancelled", this);
       synchronized (cancelLock) {
         this.isCanceled = true;
@@ -483,8 +486,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       // If a ResultSet exists, then it will be closed as well, closing the
       // ownedThreads
       closeStatementResources();
-    } finally {
-      BigQueryJdbcMdc.clear();
     }
   }
 
@@ -1482,8 +1483,15 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean getMoreResults(int current) throws SQLException {
-    LOG.finest("++enter++");
     checkClosed();
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+      LOG.finest("++enter++");
+      return getMoreResultsImpl(current);
+    }
+  }
+
+  private boolean getMoreResultsImpl(int current) throws SQLException {
     if (current != CLOSE_CURRENT_RESULT) {
       throw new BigQueryJdbcSqlFeatureNotSupportedException(
           "The JDBC driver only supports Statement.CLOSE_CURRENT_RESULT.");
