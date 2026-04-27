@@ -42,6 +42,11 @@ public abstract class HttpBindings {
 
     abstract String lowerCamelName();
 
+    // The dot-separated json_name of the field.
+    // e.g. parent.iceberg-catalog-id
+    @Nullable
+    public abstract String jsonName();
+
     // An object that contains all info of the leaf level field
     @Nullable
     public abstract Field field();
@@ -69,6 +74,8 @@ public abstract class HttpBindings {
     public abstract static class Builder {
 
       public abstract HttpBindings.HttpBinding.Builder setName(String name);
+
+      public abstract HttpBindings.HttpBinding.Builder setJsonName(String jsonName);
 
       public abstract HttpBindings.HttpBinding.Builder setField(Field field);
 

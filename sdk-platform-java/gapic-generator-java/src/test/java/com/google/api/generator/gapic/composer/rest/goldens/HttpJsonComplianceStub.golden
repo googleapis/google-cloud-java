@@ -94,6 +94,8 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RepeatRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "custom-kebab-name", request.getCustomKebabName());
                             serializer.putQueryParam(fields, "name", request.getName());
                             serializer.putQueryParam(
                                 fields, "serverVerify", request.getServerVerify());
@@ -132,6 +134,8 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RepeatRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "custom-kebab-name", request.getCustomKebabName());
                             serializer.putQueryParam(fields, "info", request.getInfo());
                             serializer.putQueryParam(fields, "name", request.getName());
                             serializer.putQueryParam(
@@ -181,6 +185,8 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RepeatRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "custom-kebab-name", request.getCustomKebabName());
                             serializer.putQueryParam(fields, "info", request.getInfo());
                             serializer.putQueryParam(fields, "name", request.getName());
                             serializer.putQueryParam(
@@ -228,6 +234,8 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RepeatRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "custom-kebab-name", request.getCustomKebabName());
                             serializer.putQueryParam(fields, "info", request.getInfo());
                             serializer.putQueryParam(fields, "name", request.getName());
                             serializer.putQueryParam(
@@ -272,6 +280,8 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<RepeatRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "custom-kebab-name", request.getCustomKebabName());
                             serializer.putQueryParam(fields, "info", request.getInfo());
                             serializer.putQueryParam(fields, "name", request.getName());
                             serializer.putQueryParam(

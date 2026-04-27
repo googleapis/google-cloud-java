@@ -127,6 +127,9 @@ message RepeatRequest {
   // If true, the server will verify that the received request matches
   // the request with the same name in the compliance test suite.
   bool server_verify = 3;
+
+  // New field for testing json_name with dashes
+  string custom_kebab_name = 4 [json_name = "custom-kebab-name"];
 }
 
 message RepeatResponse {

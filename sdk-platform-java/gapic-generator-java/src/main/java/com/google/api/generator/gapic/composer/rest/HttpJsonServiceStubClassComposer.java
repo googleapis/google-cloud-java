@@ -926,7 +926,9 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
       paramsPutArgs.add(
           ValueExpr.withValue(
               StringObjectValue.withValue(
-                  JavaStyle.toLowerCamelCase(httpBindingFieldName.name()))));
+                  (httpBindingFieldName.jsonName() != null)
+                      ? httpBindingFieldName.jsonName()
+                      : JavaStyle.toLowerCamelCase(httpBindingFieldName.name()))));
       paramsPutArgs.add(requestBuilderExpr);
 
       Expr paramsPutExpr =
