@@ -147,7 +147,7 @@ public class HttpRuleParser {
         continue;
       }
       Message nestedMessage = inputMessage;
-      List<String> jsonNameParts = new ArrayList();
+      List<String> jsonNameParts = new ArrayList<>();
       for (int i = 0; i < subFields.length; i++) {
         String subFieldName = subFields[i];
         Field field = nestedMessage.fieldMap().get(subFieldName);

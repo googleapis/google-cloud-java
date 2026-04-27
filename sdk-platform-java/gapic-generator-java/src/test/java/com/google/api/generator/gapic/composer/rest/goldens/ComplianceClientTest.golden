@@ -66,6 +66,7 @@ public class ComplianceClientTest {
             .setName("name3373707")
             .setInfo(ComplianceData.newBuilder().build())
             .setServerVerify(true)
+            .setCustomKebabName("customKebabName-2062111197")
             .build();
 
     RepeatResponse actualResponse = client.repeatDataBody(request);
@@ -99,6 +100,7 @@ public class ComplianceClientTest {
               .setName("name3373707")
               .setInfo(ComplianceData.newBuilder().build())
               .setServerVerify(true)
+              .setCustomKebabName("customKebabName-2062111197")
               .build();
       client.repeatDataBody(request);
       Assert.fail("No exception raised");

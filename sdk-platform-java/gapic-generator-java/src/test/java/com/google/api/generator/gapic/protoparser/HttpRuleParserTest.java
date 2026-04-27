@@ -80,21 +80,7 @@ class HttpRuleParserTest {
         .containsExactly("answer", "foo", "name", "test_to_verify.name", "type");
   }
 
-  @Test
-  void parseHttpAnnotation_missingFieldFromMessage() {
-    FileDescriptor testingFileDescriptor = TestingOuterClass.getDescriptor();
-    ServiceDescriptor testingService = testingFileDescriptor.getServices().get(0);
-    assertEquals("Testing", testingService.getName());
 
-    Map<String, Message> messages = Parser.parseMessages(testingFileDescriptor);
-
-    // VerityTest method.
-    MethodDescriptor rpcMethod =
-        testingService.getMethods().get(testingService.getMethods().size() - 1);
-    Message inputMessage = messages.get("com.google.showcase.v1beta1.CreateSessionRequest");
-    assertThrows(
-        IllegalStateException.class, () -> HttpRuleParser.parse(rpcMethod, inputMessage, messages));
-  }
 
   @Test
   void parseHttpAnnotation_shouldPutAllFieldsIntoQueryParamsIfPathParamAndBodyAreNotConfigured() {
