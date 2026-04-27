@@ -19,6 +19,8 @@ package com.google.cloud.datastore.telemetry;
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.common.base.Preconditions;
+import com.google.common.hash.HashFunction;
+import com.google.common.hash.Hashing;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
@@ -26,10 +28,6 @@ import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
 import io.opentelemetry.sdk.metrics.SdkMeterProviderBuilder;
 import io.opentelemetry.sdk.resources.Resource;
-import java.lang.management.ManagementFactory;
-import java.lang.reflect.Method;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -61,16 +59,42 @@ class BuiltInDatastoreMetricsProvider {
   private static volatile String location;
   private static final String DEFAULT_LOCATION = "global";
 
-  // Pre-computed once per JVM; hostname lookup can block, so we pay the cost at class-init time.
-  private static final String PID_AND_HOSTNAME = getProcessId() + "@" + getHostnameSafely();
-
   private BuiltInDatastoreMetricsProvider() {}
 
   static Map<String, String> buildClientAttributes() {
     Map<String, String> attrs = new HashMap<>();
-    attrs.put(TelemetryConstants.CLIENT_UID_KEY.getKey(), getDefaultTaskValue());
+    attrs.put(
+        TelemetryConstants.CLIENT_UID_KEY.getKey(), hashClientUId(UUID.randomUUID().toString()));
     attrs.put(TelemetryConstants.SERVICE_KEY.getKey(), TelemetryConstants.SERVICE_VALUE);
     return attrs;
+  }
+
+  /**
+   * Generates a 6-digit zero-padded all lower case hexadecimal representation of hash of the
+   * accounting group. The hash utilizes the 10 most significant bits of the value returned by
+   * `Hashing.goodFastHash(64).hashBytes()`, so effectively the returned values are uniformly
+   * distributed in the range [000000, 0003ff].
+   *
+   * <p>The primary purpose of this function is to generate a hash value for the `client_uid` metric
+   * field. The range of values is chosen to be small enough to keep the cardinality under control.
+   *
+   * <p>Note: If at later time the range needs to be increased, it can be done by increasing the
+   * value of `kPrefixLength` to up to 24 bits without changing the format of the returned value.
+   *
+   * @return Returns a 6-digit zero-padded all lower case hexadecimal representation of hash of the
+   *     accounting group.
+   */
+  private static String hashClientUId(String uuid) {
+    if (uuid == null) {
+      return "000000";
+    }
+
+    HashFunction hashFunction = Hashing.goodFastHash(64);
+    long hash = hashFunction.hashBytes(uuid.getBytes()).asLong();
+    // Don't change this value without reading above comment
+    int kPrefixLength = 10;
+    long shiftedValue = hash >>> (64 - kPrefixLength);
+    return String.format("%06x", shiftedValue);
   }
 
   /**
@@ -133,7 +157,7 @@ class BuiltInDatastoreMetricsProvider {
    */
   String detectClientLocation() {
     if (location == null) {
-      location = "global";
+      location = DEFAULT_LOCATION;
     }
     return location;
   }
@@ -156,47 +180,5 @@ class BuiltInDatastoreMetricsProvider {
             .put(TelemetryConstants.DATABASE_ID_KEY, databaseId)
             .put(TelemetryConstants.LOCATION_ID_KEY, detectClientLocation());
     return attributesBuilder.build();
-  }
-
-  /**
-   * Generates a unique identifier for the {@code client_uid} metric field.
-   *
-   * <p>Combines a random UUID with the pre-computed {@code PID_AND_HOSTNAME} (typically {@code
-   * pid@hostname}). The UUID prefix ensures uniqueness across process restarts that reuse the same
-   * PID, preventing Cloud Monitoring from conflating time series from different process lifecycles.
-   *
-   * @return a unique identifier string.
-   */
-  private static String getDefaultTaskValue() {
-    return UUID.randomUUID().toString() + "@" + PID_AND_HOSTNAME;
-  }
-
-  private static String getHostnameSafely() {
-    try {
-      return InetAddress.getLocalHost().getHostName();
-    } catch (UnknownHostException e) {
-      logger.log(Level.CONFIG, "Unable to get the hostname.", e);
-      return "localhost";
-    }
-  }
-
-  private static String getProcessId() {
-    try {
-      // Check if Java 9+ and ProcessHandle class is available
-      Class<?> processHandleClass = Class.forName("java.lang.ProcessHandle");
-      Method currentMethod = processHandleClass.getMethod("current");
-      Object processHandleInstance = currentMethod.invoke(null);
-      Method pidMethod = processHandleClass.getMethod("pid");
-      long pid = (long) pidMethod.invoke(processHandleInstance);
-      return Long.toString(pid);
-    } catch (Exception e) {
-      // Fallback to Java 8 method
-      final String jvmName = ManagementFactory.getRuntimeMXBean().getName();
-      if (jvmName != null && jvmName.contains("@")) {
-        return jvmName.split("@")[0];
-      } else {
-        return "unknown";
-      }
-    }
   }
 }

@@ -37,7 +37,7 @@ public class BuiltInDatastoreMetricsProviderTest {
   public void testBuildClientAttributes() {
     Map<String, String> attributes = BuiltInDatastoreMetricsProvider.buildClientAttributes();
     assertThat(attributes).containsKey(TelemetryConstants.CLIENT_UID_KEY.getKey());
-    assertThat(attributes.get(TelemetryConstants.CLIENT_UID_KEY.getKey())).contains("@");
+    assertThat(attributes.get(TelemetryConstants.CLIENT_UID_KEY.getKey())).isNotEmpty();
     assertThat(attributes).containsKey(TelemetryConstants.SERVICE_KEY.getKey());
     assertThat(attributes.get(TelemetryConstants.SERVICE_KEY.getKey()))
         .isEqualTo(TelemetryConstants.SERVICE_VALUE);
