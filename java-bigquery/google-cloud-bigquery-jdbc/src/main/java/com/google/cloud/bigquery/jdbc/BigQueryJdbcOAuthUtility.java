@@ -371,10 +371,7 @@ final class BigQueryJdbcOAuthUtility {
         builder =
             ServiceAccountCredentials.newBuilder().setClientEmail(pvtEmail).setPrivateKey(key);
       } else {
-        BigQueryJdbcRuntimeException ex =
-            new BigQueryJdbcRuntimeException("No valid credentials provided.");
-        LOG.severe(ex, ex.getMessage());
-        throw ex;
+        throw new BigQueryJdbcRuntimeException("No valid credentials provided.");
       }
 
       if (overrideProperties.containsKey(BigQueryJdbcUrlUtility.OAUTH2_TOKEN_URI_PROPERTY_NAME)) {
@@ -387,11 +384,8 @@ final class BigQueryJdbcOAuthUtility {
             overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
       }
     } catch (URISyntaxException | IOException e) {
-      BigQueryJdbcRuntimeException ex =
-          new BigQueryJdbcRuntimeException(
-              "Validation failure for Service Account credentials.", e);
-      LOG.severe(ex, ex.getMessage());
-      throw ex;
+      throw new BigQueryJdbcRuntimeException(
+          "Validation failure for Service Account credentials.", e);
     }
     LOG.info("GoogleCredentials instantiated. Auth Method: Service Account.");
     return builder.build();
@@ -466,10 +460,7 @@ final class BigQueryJdbcOAuthUtility {
         Matcher m = p.matcher(response);
 
         if (!m.find()) {
-          BigQueryJdbcRuntimeException ex =
-              new BigQueryJdbcRuntimeException("Could not retrieve the code for user auth");
-          LOG.severe(ex, ex.getMessage());
-          throw ex;
+          throw new BigQueryJdbcRuntimeException("Could not retrieve the code for user auth");
         }
         code = m.group();
 
@@ -478,16 +469,13 @@ final class BigQueryJdbcOAuthUtility {
         socket.close();
         serverSocket.close();
       } else {
-        BigQueryJdbcRuntimeException ex =
-            new BigQueryJdbcRuntimeException("User auth only supported in desktop environments");
-        LOG.severe(ex, ex.getMessage());
-        throw ex;
+        throw new BigQueryJdbcRuntimeException("User auth only supported in desktop environments");
       }
 
       return getCredentialsFromCode(userAuthorizer, code, callerClassName);
     } catch (IOException | URISyntaxException ex) {
-      LOG.severe(ex, "Failed to establish connection using User Account authentication");
-      throw new BigQueryJdbcRuntimeException(ex);
+      throw new BigQueryJdbcRuntimeException(
+          "Failed to establish connection using User Account authentication", ex);
     }
   }
 
@@ -526,11 +514,8 @@ final class BigQueryJdbcOAuthUtility {
         return getPreGeneratedRefreshTokenCredentials(
             authProperties, overrideProperties, callerClassName);
       } catch (URISyntaxException ex) {
-        BigQueryJdbcRuntimeException e =
-            new BigQueryJdbcRuntimeException(
-                "URISyntaxException during getPreGeneratedTokensCredentials", ex);
-        LOG.severe(e, e.getMessage());
-        throw e;
+        throw new BigQueryJdbcRuntimeException(
+            "URISyntaxException during getPreGeneratedTokensCredentials", ex);
       }
     } else {
       return getPreGeneratedAccessTokenCredentials(
@@ -585,10 +570,8 @@ final class BigQueryJdbcOAuthUtility {
 
       return credentials;
     } catch (IOException exception) {
-      BigQueryJdbcRuntimeException e =
-          new BigQueryJdbcRuntimeException("Application default credentials not found.", exception);
-      LOG.severe(e, e.getMessage());
-      throw e;
+      throw new BigQueryJdbcRuntimeException(
+          "Application default credentials not found.", exception);
     }
   }
 
@@ -643,11 +626,8 @@ final class BigQueryJdbcOAuthUtility {
         throw ex;
       }
     } catch (IOException e) {
-      BigQueryJdbcRuntimeException ex =
-          new BigQueryJdbcRuntimeException(
-              "IOException during getExternalAccountAuthCredentials", e);
-      LOG.severe(ex, ex.getMessage());
-      throw ex;
+      throw new BigQueryJdbcRuntimeException(
+          "IOException during getExternalAccountAuthCredentials", e);
     }
   }
 

@@ -98,9 +98,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       jobConfiguration = this.parameterHandler.configureParameters(jobConfiguration);
       runQuery(this.currentQuery, jobConfiguration.build());
     } catch (InterruptedException ex) {
-      BigQueryJdbcRuntimeException e = new BigQueryJdbcRuntimeException(ex);
-      LOG.severe(e, "Interrupted during executeQuery");
-      throw e;
+      throw new BigQueryJdbcRuntimeException("Interrupted during executeQuery", ex);
     }
     return getCurrentResultSet();
   }
@@ -115,9 +113,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       jobConfiguration = this.parameterHandler.configureParameters(jobConfiguration);
       runQuery(this.currentQuery, jobConfiguration.build());
     } catch (InterruptedException ex) {
-      BigQueryJdbcRuntimeException e = new BigQueryJdbcRuntimeException(ex);
-      LOG.severe(e, "Interrupted during executeLargeUpdate");
-      throw e;
+      throw new BigQueryJdbcRuntimeException("Interrupted during executeLargeUpdate", ex);
     }
     return this.currentUpdateCount;
   }
@@ -138,9 +134,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
       jobConfiguration = this.parameterHandler.configureParameters(jobConfiguration);
       runQuery(this.currentQuery, jobConfiguration.build());
     } catch (InterruptedException ex) {
-      BigQueryJdbcRuntimeException e = new BigQueryJdbcRuntimeException(ex);
-      LOG.severe(e, "Interrupted during execute");
-      throw e;
+      throw new BigQueryJdbcRuntimeException("Interrupted during execute", ex);
     }
     return getCurrentResultSet() != null;
   }
@@ -331,9 +325,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         LOG.severe(e, "Interrupted during individual INSERT batch");
         throw e;
       } catch (SQLException e) {
-        BigQueryJdbcException ex = new BigQueryJdbcException(e);
-        LOG.severe(ex, "SQL error during individual INSERT batch");
-        throw ex;
+        throw new BigQueryJdbcException("SQL error during individual INSERT batch", e);
       }
     }
   }
@@ -379,15 +371,13 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
             jsonArray = new JsonArray();
           }
         } else {
-          BigQueryJdbcException ex =
-              new BigQueryJdbcException("Mismatch between field count and parameter count.");
-          LOG.severe(ex, "Mismatch between field count and parameter count.");
-          throw ex;
+          throw new BigQueryJdbcException("Mismatch between field count and parameter count.");
         }
       }
     } catch (BigQueryJdbcException e) {
-      RuntimeException ex = new RuntimeException(e);
-      LOG.severe(ex, "BigQueryJdbcException during bulkInsertWithWriteAPI");
+      RuntimeException ex =
+          new RuntimeException("BigQueryJdbcException during bulkInsertWithWriteAPI", e);
+      LOG.severe(ex, ex.getMessage());
       throw ex;
     }
 
@@ -401,9 +391,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     BatchCommitWriteStreamsResponse commitResponse =
         bigQueryWriteClient.batchCommitWriteStreams(commitRequest);
     if (commitResponse.hasCommitTime() == false) {
-      BigQueryJdbcException ex = new BigQueryJdbcException("Error committing the streams");
-      LOG.severe(ex, "Error committing the streams");
-      throw ex;
+      throw new BigQueryJdbcException("Error committing the streams");
     }
     LOG.finest("Commit called.");
     return rowCount;

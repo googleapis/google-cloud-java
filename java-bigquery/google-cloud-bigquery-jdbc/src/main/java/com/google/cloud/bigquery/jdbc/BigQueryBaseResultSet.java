@@ -109,7 +109,6 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   protected SQLException createCoercionException(
       int columnIndex, Class<?> targetClass, Exception cause) throws SQLException {
-    LOG.severe(cause, "Coercion failed");
     checkClosed();
     StandardSQLTypeName type;
     String typeName;
@@ -127,7 +126,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
         SQLException ex =
             new SQLException(
                 "For a nested ResultSet from an Array, columnIndex must be 1 or 2.", cause);
-        LOG.severe(ex, "For a nested ResultSet from an Array, columnIndex must be 1 or 2.");
+        LOG.severe(ex, ex.getMessage());
         throw ex;
       }
     } else {

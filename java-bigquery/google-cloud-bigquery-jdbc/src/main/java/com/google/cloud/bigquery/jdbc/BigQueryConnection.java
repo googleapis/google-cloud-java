@@ -301,10 +301,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         this.bigQueryReadClient = getBigQueryReadClientConnection();
       }
     } catch (IOException e) {
-      BigQueryJdbcRuntimeException ex =
-          new BigQueryJdbcRuntimeException("Failed to initialize BigQueryReadClient", e);
-      LOG.severe(ex, ex.getMessage());
-      throw ex;
+      throw new BigQueryJdbcRuntimeException("Failed to initialize BigQueryReadClient", e);
     }
     return this.bigQueryReadClient;
   }
@@ -315,10 +312,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         this.bigQueryWriteClient = getBigQueryWriteClientConnection();
       }
     } catch (IOException e) {
-      BigQueryJdbcRuntimeException ex =
-          new BigQueryJdbcRuntimeException("Failed to initialize BigQueryWriteClient", e);
-      LOG.severe(ex, ex.getMessage());
-      throw ex;
+      throw new BigQueryJdbcRuntimeException("Failed to initialize BigQueryWriteClient", e);
     }
     return this.bigQueryWriteClient;
   }
@@ -564,10 +558,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       }
       this.transactionStarted = true;
     } catch (InterruptedException ex) {
-      BigQueryJdbcRuntimeException e =
-          new BigQueryJdbcRuntimeException("Failed to begin transaction", ex);
-      LOG.severe(e, e.getMessage());
-      throw e;
+      throw new BigQueryJdbcRuntimeException("Failed to begin transaction", ex);
     }
   }
 
@@ -774,9 +765,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     checkClosed();
     checkIfEnabledSession("commit");
     if (!isTransactionStarted()) {
-      throw new IllegalStateException(
-          "Cannot commit without an active transaction. Please set setAutoCommit to false to start"
-              + " a transaction.");
+      IllegalStateException ex =
+          new IllegalStateException(
+              "Cannot commit without an active transaction. Please set setAutoCommit to false to start"
+                  + " a transaction.");
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
     commitTransaction();
     if (!getAutoCommit()) {
@@ -790,9 +784,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     checkClosed();
     checkIfEnabledSession("rollback");
     if (!isTransactionStarted()) {
-      throw new IllegalStateException(
-          "Cannot rollback without an active transaction. Please set setAutoCommit to false to"
-              + " start a transaction.");
+      IllegalStateException ex =
+          new IllegalStateException(
+              "Cannot rollback without an active transaction. Please set setAutoCommit to false to"
+                  + " start a transaction.");
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
     try {
       QueryJobConfiguration transactionRollbackJobConfig =
@@ -806,9 +803,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         beginTransaction();
       }
     } catch (InterruptedException | BigQueryException ex) {
-      BigQueryJdbcException e = new BigQueryJdbcException("Failed to rollback transaction", ex);
-      LOG.severe(e, e.getMessage());
-      throw e;
+      throw new BigQueryJdbcException("Failed to rollback transaction", ex);
     }
   }
 
@@ -883,15 +878,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       }
       this.openStatements.clear();
     } catch (ConcurrentModificationException ex) {
-      BigQueryJdbcException e =
-          new BigQueryJdbcException("Concurrent modification during close", ex);
-      LOG.severe(e, e.getMessage());
-      throw e;
+      throw new BigQueryJdbcException("Concurrent modification during close", ex);
     } catch (InterruptedException e) {
-      BigQueryJdbcRuntimeException ex =
-          new BigQueryJdbcRuntimeException("Interrupted during close", e);
-      LOG.severe(ex, ex.getMessage());
-      throw ex;
+      throw new BigQueryJdbcRuntimeException("Interrupted during close", e);
     }
     this.isClosed = true;
   }
@@ -1101,10 +1090,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       commitJob.waitFor();
       this.transactionStarted = false;
     } catch (InterruptedException ex) {
-      BigQueryJdbcRuntimeException e =
-          new BigQueryJdbcRuntimeException("Interrupted during commitTransaction", ex);
-      LOG.severe(e, e.getMessage());
-      throw e;
+      throw new BigQueryJdbcRuntimeException("Interrupted during commitTransaction", ex);
     }
   }
 

@@ -71,36 +71,24 @@ abstract class BigQueryBaseArray implements java.sql.Array {
 
   @Override
   public final Object getArray(Map<String, Class<?>> map) throws SQLException {
-    BigQueryJdbcSqlFeatureNotSupportedException ex =
-        new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    LOG.severe(ex, CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    throw ex;
+    throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
   @Override
   public final Object getArray(long index, int count, Map<String, Class<?>> map)
       throws SQLException {
-    BigQueryJdbcSqlFeatureNotSupportedException ex =
-        new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    LOG.severe(ex, CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    throw ex;
+    throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
   @Override
   public final ResultSet getResultSet(Map<String, Class<?>> map) throws SQLException {
-    BigQueryJdbcSqlFeatureNotSupportedException ex =
-        new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    LOG.severe(ex, CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    throw ex;
+    throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
   @Override
   public final ResultSet getResultSet(long index, int count, Map<String, Class<?>> map)
       throws SQLException {
-    BigQueryJdbcSqlFeatureNotSupportedException ex =
-        new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    LOG.severe(ex, CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    throw ex;
+    throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
   protected Object getArrayInternal(int fromIndex, int toIndexExclusive) {

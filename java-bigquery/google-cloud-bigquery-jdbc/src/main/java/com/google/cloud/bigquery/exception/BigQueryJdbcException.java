@@ -17,9 +17,12 @@
 package com.google.cloud.bigquery.exception;
 
 import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
 import java.sql.SQLException;
 
 public class BigQueryJdbcException extends SQLException {
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryJdbcException.class.getName());
   private BigQueryException bigQueryException = null;
 
   /**
@@ -29,6 +32,7 @@ public class BigQueryJdbcException extends SQLException {
    */
   public BigQueryJdbcException(String message) {
     super(message);
+    LOG.severe(this, message);
   }
 
   /**
@@ -38,6 +42,7 @@ public class BigQueryJdbcException extends SQLException {
    */
   public BigQueryJdbcException(InterruptedException ex) {
     super(ex);
+    LOG.severe(this, ex.getMessage());
   }
 
   /**
@@ -48,6 +53,7 @@ public class BigQueryJdbcException extends SQLException {
   public BigQueryJdbcException(BigQueryException ex) {
     super(ex);
     this.bigQueryException = ex;
+    LOG.severe(this, ex.getMessage());
   }
 
   /**
@@ -58,6 +64,7 @@ public class BigQueryJdbcException extends SQLException {
    */
   public BigQueryJdbcException(String message, Throwable cause) {
     super(message, cause);
+    LOG.severe(this, message);
   }
 
   /**
@@ -68,6 +75,7 @@ public class BigQueryJdbcException extends SQLException {
    */
   public BigQueryJdbcException(Throwable cause) {
     super(cause);
+    LOG.severe(this, cause.getMessage());
   }
 
   public BigQueryException getBigQueryException() {

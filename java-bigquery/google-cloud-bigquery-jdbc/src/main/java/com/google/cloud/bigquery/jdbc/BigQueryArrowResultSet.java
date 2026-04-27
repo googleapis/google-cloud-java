@@ -108,10 +108,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       try {
         this.arrowDeserializer = new ArrowDeserializer(arrowSchema);
       } catch (IOException ex) {
-        BigQueryJdbcException e =
-            new BigQueryJdbcException("IOException during ArrowDeserializer creation", ex);
-        LOG.severe(e, e.getMessage());
-        throw e;
+        throw new BigQueryJdbcException("IOException during ArrowDeserializer creation", ex);
       }
     }
   }
@@ -244,10 +241,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           // Advance the cursor. Potentially blocking operation.
           BigQueryArrowBatchWrapper batchWrapper = this.buffer.take();
           if (batchWrapper.getException() != null) {
-            BigQueryJdbcRuntimeException ex =
-                new BigQueryJdbcRuntimeException(batchWrapper.getException());
-            LOG.severe(ex, ex.getMessage());
-            throw ex;
+            throw new BigQueryJdbcRuntimeException(batchWrapper.getException());
           }
           if (batchWrapper.isLast()) {
             /* Marks the end of the records */
@@ -276,12 +270,9 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
           return true;
         }
       } catch (InterruptedException | SQLException ex) {
-        BigQueryJdbcException e =
-            new BigQueryJdbcException(
-                "Error occurred while advancing the cursor. This could happen when connection is closed while the next method is being called.",
-                ex);
-        LOG.severe(e, e.getMessage());
-        throw e;
+        throw new BigQueryJdbcException(
+            "Error occurred while advancing the cursor. This could happen when connection is closed while the next method is being called.",
+            ex);
       }
     }
     return false;

@@ -113,17 +113,12 @@ class BigQueryTypeCoercer {
       if (targetClass.equals(String.class)) {
         return (T) value.toString();
       }
-      BigQueryJdbcCoercionNotFoundException ex =
-          new BigQueryJdbcCoercionNotFoundException(sourceClass, targetClass);
-      LOG.severe(ex, ex.getMessage());
-      throw ex;
+      throw new BigQueryJdbcCoercionNotFoundException(sourceClass, targetClass);
     }
     try {
       return coercion.coerce(sourceClass != Void.class ? value : null);
     } catch (Exception ex) {
-      BigQueryJdbcCoercionException e = new BigQueryJdbcCoercionException(ex);
-      LOG.severe(e, "Coercion failed");
-      throw e;
+      throw new BigQueryJdbcCoercionException(ex);
     }
   }
 

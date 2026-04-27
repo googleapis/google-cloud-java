@@ -972,8 +972,11 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
         "registerOutParameter: paramIndex %s, sqlType %s, scale %s", paramIndex, sqlType, scale);
     checkClosed();
     if (sqlType != Types.NUMERIC && sqlType != Types.DECIMAL) {
-      throw new IllegalArgumentException(
-          String.format("registerOutParameter: Invalid sqlType passed in %s", sqlType));
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              String.format("registerOutParameter: Invalid sqlType passed in %s", sqlType));
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
     try {
       this.parameterHandler.setParameter(
@@ -1007,8 +1010,11 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
         "registerOutParameter: paramIndex %s, sqlType %s, scale %s", paramName, sqlType, scale);
     checkClosed();
     if (sqlType != Types.NUMERIC && sqlType != Types.DECIMAL) {
-      throw new IllegalArgumentException(
-          String.format("registerOutParameter: Invalid sqlType passed in %s", sqlType));
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              String.format("registerOutParameter: Invalid sqlType passed in %s", sqlType));
+      LOG.severe(ex, ex.getMessage());
+      throw ex;
     }
     try {
       this.parameterHandler.setParameter(
