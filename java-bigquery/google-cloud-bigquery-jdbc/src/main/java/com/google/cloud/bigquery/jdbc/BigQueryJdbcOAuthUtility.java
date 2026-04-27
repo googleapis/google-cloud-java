@@ -121,7 +121,7 @@ final class BigQueryJdbcOAuthUtility {
     try {
       authType = AuthType.fromValue(ds.getOAuthType());
     } catch (NumberFormatException exception) {
-      LOG.severe(exception, OAUTH_TYPE_ERROR_MESSAGE);
+      LOG.severe(OAUTH_TYPE_ERROR_MESSAGE, exception);
       throw new IllegalArgumentException(OAUTH_TYPE_ERROR_MESSAGE);
     }
     oauthProperties.put(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME, String.valueOf(authType));
@@ -294,7 +294,7 @@ final class BigQueryJdbcOAuthUtility {
         break;
       default:
         IllegalStateException ex = new IllegalStateException(OAUTH_TYPE_ERROR_MESSAGE);
-        LOG.severe(ex, ex.getMessage());
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
     }
 
@@ -622,7 +622,7 @@ final class BigQueryJdbcOAuthUtility {
       } else {
         IllegalArgumentException ex =
             new IllegalArgumentException("Insufficient info provided for external authentication");
-        LOG.severe(ex, ex.getMessage());
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
     } catch (IOException e) {
@@ -684,7 +684,7 @@ final class BigQueryJdbcOAuthUtility {
           new IllegalArgumentException(
               "Invalid value for ServiceAccountImpersonationTokenLifetime: must be a positive integer.",
               e);
-      LOG.severe(ex, ex.getMessage());
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
 
@@ -713,7 +713,7 @@ final class BigQueryJdbcOAuthUtility {
       PemReader.Section section = readFirstSectionAndClose(reader, "PRIVATE KEY");
       if (section == null) {
         IOException ex = new IOException("Invalid PKCS#8 data.");
-        LOG.severe(ex, ex.getMessage());
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
       byte[] bytes = section.getBase64DecodedBytes();
@@ -746,7 +746,7 @@ final class BigQueryJdbcOAuthUtility {
         }
       }
       IllegalStateException ex = new IllegalStateException(OAUTH_TYPE_ERROR_MESSAGE + ": " + value);
-      LOG.severe(ex, ex.getMessage());
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
   }

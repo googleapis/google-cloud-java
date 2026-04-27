@@ -35,6 +35,6 @@ public class BigQueryJdbcCoercionException extends RuntimeException {
    */
   public BigQueryJdbcCoercionException(Exception cause) {
     super("Coercion error", cause);
-    LOG.severe(this, "Coercion error");
+    LOG.severe("Coercion error", this);
   }
 }

@@ -195,7 +195,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
             new IllegalArgumentException(
                 "DefaultDataset format is invalid. Supported options are datasetId or"
                     + " projectId.datasetId");
-        LOG.severe(ex, ex.getMessage());
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
     }
@@ -749,7 +749,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           new IllegalStateException(
               "Cannot commit without an active transaction. Please set setAutoCommit to false to start"
                   + " a transaction.");
-      LOG.severe(ex, ex.getMessage());
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
     commitTransaction();
@@ -768,7 +768,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           new IllegalStateException(
               "Cannot rollback without an active transaction. Please set setAutoCommit to false to"
                   + " start a transaction.");
-      LOG.severe(ex, ex.getMessage());
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
     try {
@@ -874,7 +874,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     if (isClosed()) {
       IllegalStateException ex =
           new IllegalStateException("This " + getClass().getName() + " has been closed");
-      LOG.severe(ex, ex.getMessage());
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
   }
@@ -884,7 +884,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       IllegalStateException ex =
           new IllegalStateException(
               String.format("Session needs to be enabled to use %s method.", methodName));
-      LOG.severe(ex, ex.getMessage());
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
   }

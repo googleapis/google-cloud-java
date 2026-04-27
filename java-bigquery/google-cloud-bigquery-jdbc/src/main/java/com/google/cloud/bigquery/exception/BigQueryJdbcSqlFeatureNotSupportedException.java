@@ -31,7 +31,7 @@ public class BigQueryJdbcSqlFeatureNotSupportedException extends SQLFeatureNotSu
    */
   public BigQueryJdbcSqlFeatureNotSupportedException(String message) {
     super(message);
-    LOG.severe(this, message);
+    LOG.severe(message, this);
   }
 
   /**
@@ -41,6 +41,6 @@ public class BigQueryJdbcSqlFeatureNotSupportedException extends SQLFeatureNotSu
    */
   public BigQueryJdbcSqlFeatureNotSupportedException(BigQueryException ex) {
     super(ex);
-    LOG.severe(this, ex.getMessage());
+    LOG.severe(ex.getMessage(), this);
   }
 }

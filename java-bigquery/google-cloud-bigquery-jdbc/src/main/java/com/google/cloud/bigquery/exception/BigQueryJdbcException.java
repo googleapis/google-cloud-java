@@ -32,7 +32,7 @@ public class BigQueryJdbcException extends SQLException {
    */
   public BigQueryJdbcException(String message) {
     super(message);
-    LOG.severe(this, message);
+    LOG.severe(message, this);
   }
 
   /**
@@ -42,18 +42,19 @@ public class BigQueryJdbcException extends SQLException {
    */
   public BigQueryJdbcException(InterruptedException ex) {
     super(ex);
-    LOG.severe(this, ex.getMessage());
+    LOG.severe(ex.getMessage(), this);
   }
 
   /**
    * Constructs a new BigQueryJdbcException from BigQueryException
    *
+   * @param message Specific message that is being added to the Exception.
    * @param ex The BigQueryException to be thrown.
    */
   public BigQueryJdbcException(String message, BigQueryException ex) {
     super(message, ex);
     this.bigQueryException = ex;
-    LOG.severe(this, ex.getMessage());
+    LOG.severe(ex.getMessage(), this);
   }
 
   /**
@@ -64,7 +65,7 @@ public class BigQueryJdbcException extends SQLException {
    */
   public BigQueryJdbcException(String message, Throwable cause) {
     super(message, cause);
-    LOG.severe(this, message);
+    LOG.severe(message, this);
   }
 
   /**
@@ -75,7 +76,7 @@ public class BigQueryJdbcException extends SQLException {
    */
   public BigQueryJdbcException(Throwable cause) {
     super(cause);
-    LOG.severe(this, cause.getMessage());
+    LOG.severe(cause.getMessage(), this);
   }
 
   public BigQueryException getBigQueryException() {

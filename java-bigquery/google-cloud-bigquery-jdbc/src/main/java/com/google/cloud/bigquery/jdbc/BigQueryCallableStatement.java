@@ -941,7 +941,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
           -1);
     } catch (Exception e) {
       SQLException ex = new SQLException(e);
-      LOG.severe(ex, "Failed to registerOutParameter");
+      LOG.severe("Failed to registerOutParameter", ex);
       throw ex;
     }
   }
@@ -960,7 +960,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
           -1);
     } catch (Exception e) {
       SQLException ex = new SQLException(e);
-      LOG.severe(ex, "Failed to registerOutParameter");
+      LOG.severe("Failed to registerOutParameter", ex);
       throw ex;
     }
   }
@@ -975,7 +975,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
       IllegalArgumentException ex =
           new IllegalArgumentException(
               String.format("registerOutParameter: Invalid sqlType passed in %s", sqlType));
-      LOG.severe(ex, ex.getMessage());
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
     try {
@@ -987,7 +987,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
           scale);
     } catch (Exception e) {
       SQLException ex = new SQLException(e);
-      LOG.severe(ex, "Failed to registerOutParameter");
+      LOG.severe("Failed to registerOutParameter", ex);
       throw ex;
     }
   }
@@ -1013,7 +1013,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
       IllegalArgumentException ex =
           new IllegalArgumentException(
               String.format("registerOutParameter: Invalid sqlType passed in %s", sqlType));
-      LOG.severe(ex, ex.getMessage());
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
     try {
@@ -1025,7 +1025,7 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
           scale);
     } catch (Exception e) {
       SQLException ex = new SQLException(e);
-      LOG.severe(ex, "Failed to registerOutParameter");
+      LOG.severe("Failed to registerOutParameter", ex);
       throw ex;
     }
   }
@@ -1250,18 +1250,12 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     if (BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.containsKey(sqlType)) {
       int javaSqlType = BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(sqlType);
       if (javaSqlType != arg2) {
-        BigQueryJdbcSqlFeatureNotSupportedException ex =
-            new BigQueryJdbcSqlFeatureNotSupportedException(
-                String.format("Unsupported  sql type:%s ", arg2));
-        LOG.severe(ex, ex.getMessage());
-        throw ex;
+        throw new BigQueryJdbcSqlFeatureNotSupportedException(
+            String.format("Unsupported  sql type:%s ", arg2));
       }
     } else {
-      BigQueryJdbcSqlFeatureNotSupportedException ex =
-          new BigQueryJdbcSqlFeatureNotSupportedException(
-              String.format("parameter sql type not supported: %s", sqlType));
-      LOG.severe(ex, ex.getMessage());
-      throw ex;
+      throw new BigQueryJdbcSqlFeatureNotSupportedException(
+          String.format("parameter sql type not supported: %s", sqlType));
     }
   }
 
@@ -1273,18 +1267,12 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
     if (BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.containsKey(sqlType)) {
       int javaSqlType = BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(sqlType);
       if (javaSqlType != arg2) {
-        BigQueryJdbcSqlFeatureNotSupportedException ex =
-            new BigQueryJdbcSqlFeatureNotSupportedException(
-                String.format("Unsupported  sql type:%s ", arg2));
-        LOG.severe(ex, ex.getMessage());
-        throw ex;
+        throw new BigQueryJdbcSqlFeatureNotSupportedException(
+            String.format("Unsupported  sql type:%s ", arg2));
       }
     } else {
-      BigQueryJdbcSqlFeatureNotSupportedException ex =
-          new BigQueryJdbcSqlFeatureNotSupportedException(
-              String.format("parameter sql type not supported: %s", sqlType));
-      LOG.severe(ex, ex.getMessage());
-      throw ex;
+      throw new BigQueryJdbcSqlFeatureNotSupportedException(
+          String.format("parameter sql type not supported: %s", sqlType));
     }
   }
 

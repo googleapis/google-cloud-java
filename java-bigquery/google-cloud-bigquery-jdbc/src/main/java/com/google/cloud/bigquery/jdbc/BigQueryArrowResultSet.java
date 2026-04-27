@@ -218,7 +218,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
         IllegalStateException ex =
             new IllegalStateException(
                 "currentNestedBatch/JsonStringArrayList can not be null working with the nested record");
-        LOG.severe(ex, ex.getMessage());
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
       if (this.nestedRowIndex < (this.toIndexExclusive - 1)) {
@@ -288,13 +288,13 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
       if (!(columnIndex == 1 || columnIndex == 2)) {
         IllegalArgumentException ex =
             new IllegalArgumentException("Column index is required to be 1 or 2 for nested arrays");
-        LOG.severe(ex, ex.getMessage());
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
       if (this.currentNestedBatch.getNestedRecords() == null) {
         IllegalStateException ex =
             new IllegalStateException("JsonStringArrayList cannot be null for nested records.");
-        LOG.severe(ex, ex.getMessage());
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
       // For Arrays the first column is Index, ref:

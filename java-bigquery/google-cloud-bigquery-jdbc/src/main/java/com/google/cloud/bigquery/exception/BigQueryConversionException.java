@@ -28,6 +28,6 @@ public class BigQueryConversionException extends SQLException {
 
   public BigQueryConversionException(String message, Throwable cause) {
     super(message, cause);
-    LOG.severe(this, message);
+    LOG.severe(message, this);
   }
 }

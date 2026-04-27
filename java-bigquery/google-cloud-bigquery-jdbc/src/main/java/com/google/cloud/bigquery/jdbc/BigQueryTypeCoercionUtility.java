@@ -261,7 +261,7 @@ class BigQueryTypeCoercionUtility {
         IllegalArgumentException ex =
             new IllegalArgumentException(
                 "Cannot parse the value " + strTime + " to java.sql.Time", e);
-        LOG.severe(ex, ex.getMessage());
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
     }

@@ -30,7 +30,7 @@ public class BigQueryJdbcRuntimeException extends RuntimeException {
    */
   public BigQueryJdbcRuntimeException(String message) {
     super(message);
-    LOG.severe(this, message);
+    LOG.severe(message, this);
   }
 
   /**
@@ -40,7 +40,7 @@ public class BigQueryJdbcRuntimeException extends RuntimeException {
    */
   public BigQueryJdbcRuntimeException(Throwable ex) {
     super(ex);
-    LOG.severe(this, ex.getMessage());
+    LOG.severe(ex.getMessage(), this);
   }
 
   /**
@@ -51,11 +51,11 @@ public class BigQueryJdbcRuntimeException extends RuntimeException {
    */
   public BigQueryJdbcRuntimeException(String message, InterruptedException ex) {
     super(message, ex);
-    LOG.severe(this, message);
+    LOG.severe(message, this);
   }
 
   public BigQueryJdbcRuntimeException(String message, Throwable ex) {
     super(message, ex);
-    LOG.severe(this, message);
+    LOG.severe(message, this);
   }
 }

@@ -103,11 +103,11 @@ public class BigQueryJdbcCustomLogger extends Logger {
     logWithCaller(Level.SEVERE, () -> String.format(format, args));
   }
 
-  public void severe(Throwable thrown, String msg) {
+  public void severe(String msg, Throwable thrown) {
     logWithCaller(Level.SEVERE, thrown, () -> msg);
   }
 
-  public void severe(Throwable thrown, String format, Object... args) {
+  public void severe(String format, Throwable thrown, Object... args) {
     logWithCaller(Level.SEVERE, thrown, () -> String.format(format, args));
   }
 }

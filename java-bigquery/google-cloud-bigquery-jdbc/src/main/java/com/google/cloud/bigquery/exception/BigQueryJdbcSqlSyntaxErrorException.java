@@ -36,11 +36,11 @@ public class BigQueryJdbcSqlSyntaxErrorException extends SQLSyntaxErrorException
    */
   public BigQueryJdbcSqlSyntaxErrorException(BigQueryException ex) {
     super(ex.getMessage(), "Incorrect SQL syntax.");
-    LOG.severe(this, ex.getMessage());
+    LOG.severe(ex.getMessage(), this);
   }
 
   public BigQueryJdbcSqlSyntaxErrorException(String message, BigQueryException ex) {
     super(message, ex);
-    LOG.severe(this, message);
+    LOG.severe(message, this);
   }
 }

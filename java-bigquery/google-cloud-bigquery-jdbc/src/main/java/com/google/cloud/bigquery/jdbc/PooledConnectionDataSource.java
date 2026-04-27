@@ -66,7 +66,7 @@ public class PooledConnectionDataSource extends DataSource implements Connection
   public PooledConnection getPooledConnection(String arg0, String arg1) throws SQLException {
     UnsupportedOperationException ex =
         new UnsupportedOperationException("This operation is not supported by the driver");
-    LOG.severe(ex, ex.getMessage());
+    LOG.severe(ex.getMessage(), ex);
     throw ex;
   }
 }

@@ -107,7 +107,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
     LOG.finest("++enter++");
     if (!this.valid) {
       IllegalStateException ex = new IllegalStateException(INVALID_ARRAY);
-      LOG.severe(ex, INVALID_ARRAY);
+      LOG.severe(INVALID_ARRAY, ex);
       throw ex;
     }
   }
@@ -134,7 +134,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
               String.format(
                   "The array index is out of range: %d, number of elements: %d.",
                   index + count, size));
-      LOG.severe(ex, ex.getMessage());
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
     long toIndex = normalisedFromIndex + count;

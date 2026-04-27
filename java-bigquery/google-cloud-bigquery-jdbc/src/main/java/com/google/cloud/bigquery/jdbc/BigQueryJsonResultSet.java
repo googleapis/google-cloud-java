@@ -140,7 +140,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         IllegalStateException ex =
             new IllegalStateException(
                 "Cursor/ArrayFieldValueList can not be null working with the nested record");
-        LOG.severe(ex, ex.getMessage());
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
       // Check if there's a next record in the array which can be read
@@ -243,13 +243,13 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         IllegalArgumentException ex =
             new IllegalArgumentException(
                 "Column index is required to be 1 or 2 for the nested arrays");
-        LOG.severe(ex, ex.getMessage());
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
       if (this.cursor.getArrayFieldValueList() == null
           || this.cursor.getArrayFieldValueList().get(this.nestedRowIndex) == null) {
         IllegalStateException ex = new IllegalStateException("ArrayFieldValueList cannot be null");
-        LOG.severe(ex, ex.getMessage());
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
 

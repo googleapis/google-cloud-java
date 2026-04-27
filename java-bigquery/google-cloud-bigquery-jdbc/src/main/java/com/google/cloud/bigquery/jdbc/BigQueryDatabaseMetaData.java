@@ -1254,7 +1254,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         InterruptedException ex =
             new InterruptedException(
                 "Interrupted while listing routines for catalog: " + catalogParam);
-        logger.severe(ex, ex.getMessage());
+        logger.severe(ex.getMessage(), ex);
         throw ex;
       }
       final DatasetId currentDatasetId = dataset.getDatasetId();
@@ -1287,7 +1287,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         InterruptedException ex =
             new InterruptedException(
                 "Interrupted while collecting routine lists for catalog: " + catalogParam);
-        logger.severe(ex, ex.getMessage());
+        logger.severe(ex.getMessage(), ex);
         throw ex;
       }
       try {
@@ -1333,7 +1333,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       if (Thread.currentThread().isInterrupted()) {
         InterruptedException ex =
             new InterruptedException("Interrupted while submitting getRoutine tasks");
-        logger.severe(ex, ex.getMessage());
+        logger.severe(ex.getMessage(), ex);
         throw ex;
       }
       final RoutineId currentProcId = procId;
@@ -1359,7 +1359,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         getRoutineFutures.forEach(f -> f.cancel(true)); // Cancel remaining
         InterruptedException ex =
             new InterruptedException("Interrupted while collecting Routine details");
-        logger.severe(ex, ex.getMessage());
+        logger.severe(ex.getMessage(), ex);
         throw ex;
       }
       try {
@@ -1392,7 +1392,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       if (Thread.currentThread().isInterrupted()) {
         InterruptedException ex =
             new InterruptedException("Interrupted while submitting argument processing jobs");
-        logger.severe(ex, ex.getMessage());
+        logger.severe(ex.getMessage(), ex);
         throw ex;
       }
       if (fullRoutine != null) {
@@ -2649,8 +2649,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
       return this.statement.executeQuery(formattedSql);
     } catch (SQLException e) {
-      LOG.severe(e, "Error executing getPrimaryKeys");
-      throw new BigQueryJdbcException(e);
+      throw new BigQueryJdbcException("Error executing getPrimaryKeys", e);
     }
   }
 
@@ -2665,8 +2664,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
       return this.statement.executeQuery(formattedSql);
     } catch (SQLException e) {
-      LOG.severe(e, "Error executing getImportedKeys");
-      throw new BigQueryJdbcException(e);
+      throw new BigQueryJdbcException("Error executing getImportedKeys", e);
     }
   }
 
@@ -2681,8 +2679,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String formattedSql = replaceSqlParameters(sql, catalog, schema, table);
       return this.statement.executeQuery(formattedSql);
     } catch (SQLException e) {
-      LOG.severe(e, "Error executing getExportedKeys");
-      throw new BigQueryJdbcException(e);
+      throw new BigQueryJdbcException("Error executing getExportedKeys", e);
     }
   }
 
@@ -2711,8 +2708,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               foreignTable);
       return this.statement.executeQuery(formattedSql);
     } catch (SQLException e) {
-      LOG.severe(e, "Error executing getCrossReference");
-      throw new BigQueryJdbcException(e);
+      throw new BigQueryJdbcException("Error executing getCrossReference", e);
     }
   }
 
@@ -5275,7 +5271,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         String errorMessage =
             "Could not find dependencies.properties. Driver version information is unavailable.";
         IllegalStateException ex = new IllegalStateException(errorMessage);
-        LOG.severe(ex, errorMessage);
+        LOG.severe(errorMessage, ex);
         throw ex;
       }
       props.load(input);
@@ -5284,7 +5280,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         String errorMessage =
             "The property version.jdbc not found or empty in dependencies.properties.";
         IllegalStateException ex = new IllegalStateException(errorMessage);
-        LOG.severe(ex, errorMessage);
+        LOG.severe(errorMessage, ex);
         throw ex;
       }
       parsedDriverVersion.compareAndSet(null, versionString.trim());
@@ -5304,7 +5300,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               + " unavailable. Error: "
               + e.getMessage();
       IllegalStateException ex = new IllegalStateException(errorMessage, e);
-      LOG.severe(ex, errorMessage);
+      LOG.severe(errorMessage, ex);
       throw ex;
     }
   }

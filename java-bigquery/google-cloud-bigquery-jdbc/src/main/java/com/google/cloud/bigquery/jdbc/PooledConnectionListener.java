@@ -96,7 +96,7 @@ public class PooledConnectionListener implements ConnectionEventListener {
           new IllegalArgumentException(
               "Invalid ConnectionEvent source passed to connectionClosed. Expecting"
                   + " BigQueryPooledConnection.");
-      LOG.severe(ex, ex.getMessage());
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
     BigQueryPooledConnection bqPooledConnection = (BigQueryPooledConnection) eventSource;
@@ -115,7 +115,7 @@ public class PooledConnectionListener implements ConnectionEventListener {
           new IllegalArgumentException(
               "Invalid ConnectionEvent source passed to connectionClosed. Expecting"
                   + " BigQueryPooledConnection.");
-      LOG.severe(ex, ex.getMessage());
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
     BigQueryPooledConnection bqPooledConnection = (BigQueryPooledConnection) eventSource;

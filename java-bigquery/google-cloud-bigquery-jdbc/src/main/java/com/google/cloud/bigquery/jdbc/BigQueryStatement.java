@@ -417,7 +417,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   public void setQueryTimeout(int seconds) {
     if (seconds < 0) {
       IllegalArgumentException ex = new IllegalArgumentException("Query Timeout should be >= 0.");
-      LOG.severe(ex, ex.getMessage());
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
     this.queryTimeout = seconds;
@@ -1399,7 +1399,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (!SqlType.DML.equals(sqlType)) {
       IllegalArgumentException ex =
           new IllegalArgumentException("addBatch currently supports DML operations.");
-      LOG.severe(ex, ex.getMessage());
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
     this.batchQueries.add(sql);

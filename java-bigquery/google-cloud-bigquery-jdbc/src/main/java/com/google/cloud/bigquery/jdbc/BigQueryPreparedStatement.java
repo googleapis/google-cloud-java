@@ -291,9 +291,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         return insertArray;
 
       } catch (DescriptorValidationException | IOException | InterruptedException e) {
-        BigQueryJdbcRuntimeException ex = new BigQueryJdbcRuntimeException(e);
-        LOG.severe(ex, "Failed to execute batch with Write API");
-        throw ex;
+        throw new BigQueryJdbcRuntimeException("Failed to execute batch with Write API", e);
       }
 
     } else {
@@ -321,9 +319,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         }
         return result;
       } catch (InterruptedException ex) {
-        BigQueryJdbcRuntimeException e = new BigQueryJdbcRuntimeException(ex);
-        LOG.severe(e, "Interrupted during individual INSERT batch");
-        throw e;
+        throw new BigQueryJdbcRuntimeException("Interrupted during individual INSERT batch", ex);
       } catch (SQLException e) {
         throw new BigQueryJdbcException("SQL error during individual INSERT batch", e);
       }
@@ -375,10 +371,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
         }
       }
     } catch (BigQueryJdbcException e) {
-      RuntimeException ex =
-          new RuntimeException("BigQueryJdbcException during bulkInsertWithWriteAPI", e);
-      LOG.severe(ex, ex.getMessage());
-      throw ex;
+      throw new BigQueryJdbcException("BigQueryJdbcException during bulkInsertWithWriteAPI", e);
     }
 
     long rowCount = bulkInsertWriter.cleanup(bigQueryWriteClient);
@@ -402,11 +395,8 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
     if (!statistics.getStatementType().equals(StatementType.INSERT)
         || statistics.getSchema() == null
         || statistics.getReferencedTables().stream().distinct().count() > 1) {
-      BigQueryJdbcException ex =
-          new BigQueryJdbcException(
-              "Use java.sql.Statement.executeBatch() for heterogeneous DML batches");
-      LOG.severe(ex, "Use java.sql.Statement.executeBatch() for heterogeneous DML batches");
-      throw ex;
+      throw new BigQueryJdbcException(
+          "Use java.sql.Statement.executeBatch() for heterogeneous DML batches");
     }
 
     this.insertSchema = statistics.getSchema();

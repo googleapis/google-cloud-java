@@ -66,7 +66,7 @@ class BigQueryPooledConnection implements PooledConnection {
     LOG.finest("++enter++");
     if (inUse) {
       SQLException ex = new SQLException("PooledConnection is already in use.");
-      LOG.severe(ex, ex.getMessage());
+      LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
     inUse = true;
@@ -145,7 +145,7 @@ class BigQueryPooledConnection implements PooledConnection {
     UnsupportedOperationException ex =
         new UnsupportedOperationException(
             "Method 'addStatementEventListener' is not supported by the BQ Driver");
-    LOG.severe(ex, ex.getMessage());
+    LOG.severe(ex.getMessage(), ex);
     throw ex;
   }
 
@@ -154,7 +154,7 @@ class BigQueryPooledConnection implements PooledConnection {
     UnsupportedOperationException ex =
         new UnsupportedOperationException(
             "Method 'removeStatementEventListener' is not supported by the BQ Driver");
-    LOG.severe(ex, ex.getMessage());
+    LOG.severe(ex.getMessage(), ex);
     throw ex;
   }
 

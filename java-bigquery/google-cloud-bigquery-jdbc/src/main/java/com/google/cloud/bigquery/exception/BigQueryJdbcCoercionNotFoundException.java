@@ -39,6 +39,6 @@ public class BigQueryJdbcCoercionNotFoundException extends RuntimeException {
         String.format(
             "Coercion not found for [%s -> %s] conversion",
             source.getCanonicalName(), target.getCanonicalName()));
-    LOG.severe(this, this.getMessage());
+    LOG.severe(this.getMessage(), this);
   }
 }
