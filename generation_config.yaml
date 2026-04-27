@@ -1,6 +1,6 @@
-gapic_generator_version: 2.69.0
-googleapis_commitish:  e182cf5152967047b763fd88f03094cfc836d194
-libraries_bom_version: 26.79.0
+googleapis_commitish: 260e3f5d5dcf9692c77d14b01b47c16ef01837e9
+libraries_bom_version: 26.80.0
+is_monorepo: true
 libraries:
 - api_shortname: accessapproval
   name_pretty: Access Approval
@@ -235,7 +235,7 @@ libraries:
   library_name: asset
   release_level: stable
   api_reference: https://cloud.google.com/resource-manager/docs/cloud-asset-inventory/overview
-  issue_tracker: https://issuetracker.google.com/issues/new?component=187210&template=0
+  issue_tracker: https://issuetracker.google.com/issues/new?component=187210
   GAPICs:
   - proto_path: google/cloud/asset/v1
   - proto_path: google/cloud/asset/v1p1beta1
@@ -772,7 +772,7 @@ libraries:
   api_description: Database Center provides an organization-wide, cross-product fleet
     health platform to eliminate the overhead, complexity, and risk associated with
     aggregating and summarizing health signals through custom dashboards. Through
-    Database Center’s fleet health dashboard and API, database platform teams that
+    Database Center's fleet health dashboard and API, database platform teams that
     are responsible for reliability, compliance, security, cost, and administration
     of database fleets will now have a single pane of glass that pinpoints issues
     relevant to each team.
@@ -1299,12 +1299,13 @@ libraries:
   - proto_path: google/cloud/hypercomputecluster/v1beta
   - proto_path: google/cloud/hypercomputecluster/v1
   requires_billing: true
-- api_shortname: iam
+- api_shortname: iam-policy
   name_pretty: IAM
   product_documentation: n/a
   api_description: n/a
   release_level: stable
   distribution_name: com.google.cloud:google-iam-policy
+  api_id: iam.googleapis.com
   client_documentation: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/history
   excluded_poms: proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1
   excluded_dependencies: google-iam-policy
@@ -1331,7 +1332,7 @@ libraries:
     accounts.
   release_level: stable
   requires_billing: false
-  issue_tracker: https://issuetracker.google.com/issues/new?component=187161&template=0
+  issue_tracker: https://issuetracker.google.com/issues/new?component=187161
   GAPICs:
   - proto_path: google/iam/credentials/v1
 - api_shortname: iap
@@ -1557,7 +1558,6 @@ libraries:
   api_id: managedidentities.googleapis.com
   GAPICs:
   - proto_path: google/cloud/managedidentities/v1
-  - proto_path: google/cloud/managedidentities/v1beta1
 - api_shortname: managedkafka
   name_pretty: Managed Service for Apache Kafka
   product_documentation: https://cloud.google.com/managed-kafka
@@ -1976,7 +1976,6 @@ libraries:
   issue_tracker: https://issuetracker.google.com/savedsearches/559755
   GAPICs:
   - proto_path: google/cloud/oslogin/v1
-  - proto_path: google/cloud/oslogin/v1beta
 - api_shortname: parallelstore
   name_pretty: Parallelstore API
   product_documentation: https://cloud/parallelstore?hl=en
@@ -2924,7 +2923,7 @@ libraries:
   product_documentation: https://cloud.google.com/web-risk/docs/
   api_description: is a Google Cloud service that lets client applications check URLs
     against Google's constantly updated lists of unsafe web resources. Unsafe web
-    resources include social engineering sites—such as phishing and deceptive sites—and
+    resources include social engineering sites - such as phishing and deceptive sites - and
     sites that host malware or unwanted software. With the Web Risk API, you can quickly
     identify known bad sites, warn users before they click infected links, and prevent
     users from posting links to known infected pages from your site. The Web Risk
@@ -3014,4 +3013,51 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/workstations/v1
   - proto_path: google/cloud/workstations/v1beta
-
+- api_shortname: common-protos
+  name_pretty: Common Protos
+  product_documentation: https://github.com/googleapis/api-common-protos
+  api_description: Protobuf classes for Google's common protos.
+  release_level: stable
+  client_documentation: https://cloud.google.com/java/docs/reference/proto-google-common-protos/latest/history
+  distribution_name: com.google.api.grpc:proto-google-common-protos
+  excluded_dependencies: proto-google-common-protos,grpc-google-common-protos,proto-google-common-protos-parent
+  excluded_poms: proto-google-common-protos-bom,proto-google-common-protos
+  library_type: OTHER
+  GAPICs:
+  - proto_path: google/api
+  - proto_path: google/apps/card/v1
+  - proto_path: google/cloud
+  - proto_path: google/cloud/audit
+  - proto_path: google/cloud/location
+  - proto_path: google/geo/type
+  - proto_path: google/logging/type
+  - proto_path: google/longrunning
+  - proto_path: google/rpc
+  - proto_path: google/rpc/context
+  - proto_path: google/shopping/type
+  - proto_path: google/type
+- api_shortname: showcase
+  excluded_poms: gapic-showcase-bom
+  name_pretty: Showcase
+  api_description: Showcase module
+  product_documentation: https://cloud.google.com/dummy
+  distribution_name: com.google.cloud:gapic-showcase
+  library_type: OTHER
+  GAPICs:
+  - proto_path: schema/google/showcase/v1beta1
+- api_shortname: iam
+  name_pretty: IAM
+  product_documentation: https://cloud.google.com/iam
+  api_description: Manages access control for Google Cloud Platform resources
+  release_level: stable
+  client_documentation: https://cloud.google.com/java/docs/reference/proto-google-iam-v1/latest/overview
+  distribution_name: com.google.api.grpc:proto-google-iam-v1
+  excluded_dependencies: "grpc-google-iam-v1"
+  excluded_poms: "proto-google-iam-v1-bom,google-iam-policy,proto-google-iam-v1"
+  library_type: OTHER
+  GAPICs:
+  - proto_path: google/iam/v1
+  - proto_path: google/iam/v2
+  - proto_path: google/iam/v2beta
+  - proto_path: google/iam/v3
+  - proto_path: google/iam/v3beta

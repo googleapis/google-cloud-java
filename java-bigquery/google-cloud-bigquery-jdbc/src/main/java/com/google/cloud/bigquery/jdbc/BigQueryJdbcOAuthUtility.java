@@ -80,6 +80,13 @@ final class BigQueryJdbcOAuthUtility {
           + "Thank you for using JDBC Driver for Google BigQuery!\n"
           + "You may now close the window.</body></html>";
 
+  static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
+  static final String DRIVE_READONLY_SCOPE = "https://www.googleapis.com/auth/drive.readonly";
+
+  static final List<String> DEFAULT_BIGQUERY_SCOPES = Arrays.asList(BIGQUERY_SCOPE);
+  static final List<String> BIGQUERY_WITH_DRIVE_SCOPES =
+      Arrays.asList(BIGQUERY_SCOPE, DRIVE_READONLY_SCOPE);
+
   private static final int USER_AUTH_TIMEOUT_MS = 120000;
   private static final BigQueryJdbcCustomLogger LOG =
       new BigQueryJdbcCustomLogger(BigQueryJdbcOAuthUtility.class.getName());
@@ -114,9 +121,11 @@ final class BigQueryJdbcOAuthUtility {
     try {
       authType = AuthType.fromValue(ds.getOAuthType());
     } catch (NumberFormatException exception) {
+      LOG.severe(exception, OAUTH_TYPE_ERROR_MESSAGE);
       throw new IllegalArgumentException(OAUTH_TYPE_ERROR_MESSAGE);
     }
     oauthProperties.put(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME, String.valueOf(authType));
+
     switch (authType) {
       case GOOGLE_SERVICE_ACCOUNT:
         // For using a Google Service Account (OAuth Type 0)
@@ -144,11 +153,6 @@ final class BigQueryJdbcOAuthUtility {
             BigQueryJdbcUrlUtility.OAUTH_CLIENT_ID_PROPERTY_NAME, ds.getOAuthClientId());
         oauthProperties.put(
             BigQueryJdbcUrlUtility.OAUTH_CLIENT_SECRET_PROPERTY_NAME, ds.getOAuthClientSecret());
-        int reqGoogleDriveScope = ds.getRequestGoogleDriveScope();
-        oauthProperties.put(
-            BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME,
-            String.valueOf(reqGoogleDriveScope));
-        LOG.fine("RequestGoogleDriveScope parsed.");
         break;
       case PRE_GENERATED_TOKEN:
         String refreshToken = ds.getOAuthRefreshToken();
@@ -239,7 +243,7 @@ final class BigQueryJdbcOAuthUtility {
           BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_SCOPES_PROPERTY_NAME,
           ds.getOAuthSAImpersonationScopes() != null
               ? ds.getOAuthSAImpersonationScopes()
-              : BigQueryJdbcUrlUtility.DEFAULT_OAUTH_SA_IMPERSONATION_SCOPES_VALUE);
+              : BIGQUERY_SCOPE);
       oauthProperties.put(
           BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_PROPERTY_NAME,
           ds.getOAuthSAImpersonationTokenLifetime() != null
@@ -258,6 +262,7 @@ final class BigQueryJdbcOAuthUtility {
   static GoogleCredentials getCredentials(
       Map<String, String> authProperties,
       Map<String, String> overrideProperties,
+      Boolean reqGoogleDriveScopeBool,
       String callerClassName) {
     LOG.finest("++enter++\t" + callerClassName);
 
@@ -280,15 +285,19 @@ final class BigQueryJdbcOAuthUtility {
         break;
       case APPLICATION_DEFAULT_CREDENTIALS:
         // This auth method doesn't support service account impersonation
-        return getApplicationDefaultCredentials(callerClassName);
+
+        credentials = getApplicationDefaultCredentials(callerClassName);
+        break;
       case EXTERNAL_ACCOUNT_AUTH:
         // This auth method doesn't support service account impersonation
-        return getExternalAccountAuthCredentials(authProperties, callerClassName);
+        credentials = getExternalAccountAuthCredentials(authProperties, callerClassName);
+        break;
       default:
         throw new IllegalStateException(OAUTH_TYPE_ERROR_MESSAGE);
     }
 
-    return getServiceAccountImpersonatedCredentials(credentials, authProperties);
+    return getServiceAccountImpersonatedCredentials(
+        credentials, reqGoogleDriveScopeBool, authProperties);
   }
 
   private static boolean isFileExists(String filename) {
@@ -388,28 +397,9 @@ final class BigQueryJdbcOAuthUtility {
       String callerClassName)
       throws URISyntaxException {
     LOG.finest("++enter++\t" + callerClassName);
+
     List<String> scopes = new ArrayList<>();
     scopes.add("https://www.googleapis.com/auth/bigquery");
-
-    // Add Google Drive scope conditionally
-    if (authProperties.containsKey(
-        BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME)) {
-      try {
-        int driveScopeValue =
-            Integer.parseInt(
-                authProperties.get(
-                    BigQueryJdbcUrlUtility.REQUEST_GOOGLE_DRIVE_SCOPE_PROPERTY_NAME));
-        if (driveScopeValue == 1) {
-          scopes.add("https://www.googleapis.com/auth/drive.readonly");
-          LOG.fine("Added Google Drive read-only scope. Caller: " + callerClassName);
-        }
-      } catch (NumberFormatException e) {
-        LOG.severe(
-            "Invalid value for RequestGoogleDriveScope, defaulting to not request Drive scope."
-                + " Caller: "
-                + callerClassName);
-      }
-    }
 
     List<String> responseTypes = new ArrayList<>();
     responseTypes.add("code");
@@ -469,6 +459,7 @@ final class BigQueryJdbcOAuthUtility {
         Matcher m = p.matcher(response);
 
         if (!m.find()) {
+          LOG.severe("Could not retrieve the code for user auth");
           throw new BigQueryJdbcRuntimeException("Could not retrieve the code for user auth");
         }
         code = m.group();
@@ -478,6 +469,7 @@ final class BigQueryJdbcOAuthUtility {
         socket.close();
         serverSocket.close();
       } else {
+        LOG.severe("User auth only supported in desktop environments");
         throw new BigQueryJdbcRuntimeException("User auth only supported in desktop environments");
       }
 
@@ -500,14 +492,18 @@ final class BigQueryJdbcOAuthUtility {
       builder.setUniverseDomain(
           overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
     }
+
     LOG.info("Connection established. Auth Method: Pre-generated Access Token.");
-    return builder
-        .setAccessToken(
-            AccessToken.newBuilder()
-                .setTokenValue(
-                    authProperties.get(BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_PROPERTY_NAME))
-                .build())
-        .build();
+    GoogleCredentials credentials =
+        builder
+            .setAccessToken(
+                AccessToken.newBuilder()
+                    .setTokenValue(
+                        authProperties.get(BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_PROPERTY_NAME))
+                    .build())
+            .build();
+
+    return credentials;
   }
 
   static GoogleCredentials getPreGeneratedTokensCredentials(
@@ -552,6 +548,7 @@ final class BigQueryJdbcOAuthUtility {
       userCredentialsBuilder.setUniverseDomain(
           overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
     }
+
     LOG.info("Connection established. Auth Method: Pre-generated Refresh Token.");
     return userCredentialsBuilder.build();
   }
@@ -571,6 +568,7 @@ final class BigQueryJdbcOAuthUtility {
       LOG.info(
           "Connection established. Auth Method: Application Default Credentials, Principal: %s.",
           principal);
+
       return credentials;
     } catch (IOException exception) {
       // TODO throw exception
@@ -634,13 +632,19 @@ final class BigQueryJdbcOAuthUtility {
   // This function checks if connection string contains configuration for
   // credentials impersonation. If not, it returns regular credentials object.
   // If impersonated service account is provided, returns Credentials object
-  // accomodating this information.
+  // accommodating this information.
   private static GoogleCredentials getServiceAccountImpersonatedCredentials(
-      GoogleCredentials credentials, Map<String, String> authProperties) {
+      GoogleCredentials credentials,
+      Boolean reqGoogleDriveScopeBool,
+      Map<String, String> authProperties) {
 
     String impersonationEmail =
         authProperties.get(BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_EMAIL_PROPERTY_NAME);
     if (impersonationEmail == null || impersonationEmail.isEmpty()) {
+      if (reqGoogleDriveScopeBool) {
+        credentials = credentials.createScoped(BIGQUERY_WITH_DRIVE_SCOPES);
+        LOG.fine("Added Google Drive read-only scope to GoogleCredentials.");
+      }
       return credentials;
     }
 
@@ -653,10 +657,18 @@ final class BigQueryJdbcOAuthUtility {
 
     // Scopes has a default value, so it should never be null
     List<String> impersonationScopes =
-        Arrays.asList(
-            authProperties
-                .get(BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_SCOPES_PROPERTY_NAME)
-                .split(","));
+        new java.util.ArrayList<>(
+            Arrays.asList(
+                authProperties
+                    .get(BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_SCOPES_PROPERTY_NAME)
+                    .split(",")));
+
+    if (reqGoogleDriveScopeBool) {
+      if (!impersonationScopes.contains(DRIVE_READONLY_SCOPE)) {
+        impersonationScopes.add(DRIVE_READONLY_SCOPE);
+        LOG.fine("Added Google Drive read-only scope to impersonation scopes.");
+      }
+    }
 
     // Token lifetime has a default value, so it should never be null
     String impersonationLifetime =

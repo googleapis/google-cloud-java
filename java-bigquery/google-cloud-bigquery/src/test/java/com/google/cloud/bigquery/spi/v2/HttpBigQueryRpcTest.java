@@ -1079,8 +1079,7 @@ public class HttpBigQueryRpcTest {
       assertEquals(
           "java.io.IOException",
           rpcSpan.getAttributes().get(BigQueryTelemetryTracer.EXCEPTION_TYPE));
-      assertEquals(
-          "CLIENT_UNKNOWN_ERROR", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
+      assertEquals("IOException", rpcSpan.getAttributes().get(BigQueryTelemetryTracer.ERROR_TYPE));
     }
 
     @Test

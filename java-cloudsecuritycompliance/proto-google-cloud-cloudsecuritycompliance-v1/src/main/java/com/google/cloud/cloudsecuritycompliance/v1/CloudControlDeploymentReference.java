@@ -81,7 +81,9 @@ public final class CloudControlDeploymentReference extends com.google.protobuf.G
    *
    * <pre>
    * Output only. The name of the CloudControlDeployment. The format is
-   * `organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+   * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+   * or
+   * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
    * The only supported location is `global`.
    * </pre>
    *
@@ -109,7 +111,9 @@ public final class CloudControlDeploymentReference extends com.google.protobuf.G
    *
    * <pre>
    * Output only. The name of the CloudControlDeployment. The format is
-   * `organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+   * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+   * or
+   * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
    * The only supported location is `global`.
    * </pre>
    *
@@ -468,7 +472,9 @@ public final class CloudControlDeploymentReference extends com.google.protobuf.G
      *
      * <pre>
      * Output only. The name of the CloudControlDeployment. The format is
-     * `organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -495,7 +501,9 @@ public final class CloudControlDeploymentReference extends com.google.protobuf.G
      *
      * <pre>
      * Output only. The name of the CloudControlDeployment. The format is
-     * `organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -522,7 +530,9 @@ public final class CloudControlDeploymentReference extends com.google.protobuf.G
      *
      * <pre>
      * Output only. The name of the CloudControlDeployment. The format is
-     * `organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -548,7 +558,9 @@ public final class CloudControlDeploymentReference extends com.google.protobuf.G
      *
      * <pre>
      * Output only. The name of the CloudControlDeployment. The format is
-     * `organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *
@@ -570,7 +582,9 @@ public final class CloudControlDeploymentReference extends com.google.protobuf.G
      *
      * <pre>
      * Output only. The name of the CloudControlDeployment. The format is
-     * `organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+     * `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+     * or
+     * `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
      * The only supported location is `global`.
      * </pre>
      *

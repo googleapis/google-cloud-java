@@ -84,6 +84,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * These are relative to the finding's containing element.
      * Note that when the content is not textual, this references
      * the UTF-8 encoded textual representation of the content.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1beta.RangeInfo byte_range = 1;</code>
@@ -100,6 +101,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * These are relative to the finding's containing element.
      * Note that when the content is not textual, this references
      * the UTF-8 encoded textual representation of the content.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1beta.RangeInfo byte_range = 1;</code>
@@ -116,6 +118,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * These are relative to the finding's containing element.
      * Note that when the content is not textual, this references
      * the UTF-8 encoded textual representation of the content.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1beta.RangeInfo byte_range = 1;</code>
@@ -129,6 +132,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * Unicode character offsets delimiting the finding.
      * These are relative to the finding's containing element.
      * Provided when the content is text.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1beta.RangeInfo codepoint_range = 2;</code>
@@ -144,6 +148,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * Unicode character offsets delimiting the finding.
      * These are relative to the finding's containing element.
      * Provided when the content is text.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1beta.RangeInfo codepoint_range = 2;</code>
@@ -159,6 +164,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * Unicode character offsets delimiting the finding.
      * These are relative to the finding's containing element.
      * Provided when the content is text.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1beta.RangeInfo codepoint_range = 2;</code>
@@ -225,6 +231,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * These are relative to the finding's containing element.
      * Note that when the content is not textual, this references
      * the UTF-8 encoded textual representation of the content.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1beta.RangeInfo byte_range = 1;</code>
@@ -244,6 +251,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * These are relative to the finding's containing element.
      * Note that when the content is not textual, this references
      * the UTF-8 encoded textual representation of the content.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1beta.RangeInfo byte_range = 1;</code>
@@ -265,6 +273,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * These are relative to the finding's containing element.
      * Note that when the content is not textual, this references
      * the UTF-8 encoded textual representation of the content.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1beta.RangeInfo byte_range = 1;</code>
@@ -286,6 +295,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * Unicode character offsets delimiting the finding.
      * These are relative to the finding's containing element.
      * Provided when the content is text.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1beta.RangeInfo codepoint_range = 2;</code>
@@ -304,6 +314,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * Unicode character offsets delimiting the finding.
      * These are relative to the finding's containing element.
      * Provided when the content is text.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1beta.RangeInfo codepoint_range = 2;</code>
@@ -324,6 +335,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
      * Unicode character offsets delimiting the finding.
      * These are relative to the finding's containing element.
      * Provided when the content is text.
+     * Note: Omitted if content is an image.
      * </pre>
      *
      * <code>.google.cloud.modelarmor.v1beta.RangeInfo codepoint_range = 2;</code>
@@ -724,6 +736,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo byte_range = 1;</code>
@@ -742,6 +755,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo byte_range = 1;</code>
@@ -766,6 +780,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo byte_range = 1;</code>
@@ -792,6 +807,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo byte_range = 1;</code>
@@ -816,6 +832,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo byte_range = 1;</code>
@@ -847,6 +864,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo byte_range = 1;</code>
@@ -870,6 +888,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo byte_range = 1;</code>
@@ -888,6 +907,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo byte_range = 1;</code>
@@ -910,6 +930,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * These are relative to the finding's containing element.
        * Note that when the content is not textual, this references
        * the UTF-8 encoded textual representation of the content.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo byte_range = 1;</code>
@@ -945,6 +966,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo codepoint_range = 2;</code>
@@ -962,6 +984,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo codepoint_range = 2;</code>
@@ -985,6 +1008,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo codepoint_range = 2;</code>
@@ -1010,6 +1034,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo codepoint_range = 2;</code>
@@ -1033,6 +1058,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo codepoint_range = 2;</code>
@@ -1064,6 +1090,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo codepoint_range = 2;</code>
@@ -1086,6 +1113,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo codepoint_range = 2;</code>
@@ -1103,6 +1131,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo codepoint_range = 2;</code>
@@ -1124,6 +1153,7 @@ public final class SdpFinding extends com.google.protobuf.GeneratedMessage
        * Unicode character offsets delimiting the finding.
        * These are relative to the finding's containing element.
        * Provided when the content is text.
+       * Note: Omitted if content is an image.
        * </pre>
        *
        * <code>.google.cloud.modelarmor.v1beta.RangeInfo codepoint_range = 2;</code>

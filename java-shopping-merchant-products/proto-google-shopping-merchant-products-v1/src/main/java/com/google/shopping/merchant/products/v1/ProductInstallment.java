@@ -247,6 +247,43 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
         : result;
   }
 
+  public static final int ANNUAL_PERCENTAGE_RATE_FIELD_NUMBER = 5;
+  private double annualPercentageRate_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Annual percentage rate for `credit_type` finance
+   * </pre>
+   *
+   * <code>optional double annual_percentage_rate = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the annualPercentageRate field is set.
+   */
+  @java.lang.Override
+  public boolean hasAnnualPercentageRate() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Annual percentage rate for `credit_type` finance
+   * </pre>
+   *
+   * <code>optional double annual_percentage_rate = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The annualPercentageRate.
+   */
+  @java.lang.Override
+  public double getAnnualPercentageRate() {
+    return annualPercentageRate_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -273,6 +310,9 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeEnum(4, creditType_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeDouble(5, annualPercentageRate_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -293,6 +333,9 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, creditType_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(5, annualPercentageRate_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -323,6 +366,11 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
     if (hasCreditType()) {
       if (creditType_ != other.creditType_) return false;
     }
+    if (hasAnnualPercentageRate() != other.hasAnnualPercentageRate()) return false;
+    if (hasAnnualPercentageRate()) {
+      if (java.lang.Double.doubleToLongBits(getAnnualPercentageRate())
+          != java.lang.Double.doubleToLongBits(other.getAnnualPercentageRate())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -347,6 +395,13 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
     if (hasCreditType()) {
       hash = (37 * hash) + CREDIT_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + creditType_;
+    }
+    if (hasAnnualPercentageRate()) {
+      hash = (37 * hash) + ANNUAL_PERCENTAGE_RATE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getAnnualPercentageRate()));
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -511,6 +566,7 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
         downpaymentBuilder_ = null;
       }
       creditType_ = 0;
+      annualPercentageRate_ = 0D;
       return this;
     }
 
@@ -564,6 +620,10 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
         result.creditType_ = creditType_;
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.annualPercentageRate_ = annualPercentageRate_;
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -591,6 +651,9 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
       }
       if (other.hasCreditType()) {
         setCreditTypeValue(other.getCreditTypeValue());
+      }
+      if (other.hasAnnualPercentageRate()) {
+        setAnnualPercentageRate(other.getAnnualPercentageRate());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -643,6 +706,12 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 41:
+              {
+                annualPercentageRate_ = input.readDouble();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 41
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1211,6 +1280,82 @@ public final class ProductInstallment extends com.google.protobuf.GeneratedMessa
     public Builder clearCreditType() {
       bitField0_ = (bitField0_ & ~0x00000008);
       creditType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private double annualPercentageRate_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Annual percentage rate for `credit_type` finance
+     * </pre>
+     *
+     * <code>optional double annual_percentage_rate = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the annualPercentageRate field is set.
+     */
+    @java.lang.Override
+    public boolean hasAnnualPercentageRate() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Annual percentage rate for `credit_type` finance
+     * </pre>
+     *
+     * <code>optional double annual_percentage_rate = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The annualPercentageRate.
+     */
+    @java.lang.Override
+    public double getAnnualPercentageRate() {
+      return annualPercentageRate_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Annual percentage rate for `credit_type` finance
+     * </pre>
+     *
+     * <code>optional double annual_percentage_rate = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The annualPercentageRate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAnnualPercentageRate(double value) {
+
+      annualPercentageRate_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Annual percentage rate for `credit_type` finance
+     * </pre>
+     *
+     * <code>optional double annual_percentage_rate = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAnnualPercentageRate() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      annualPercentageRate_ = 0D;
       onChanged();
       return this;
     }

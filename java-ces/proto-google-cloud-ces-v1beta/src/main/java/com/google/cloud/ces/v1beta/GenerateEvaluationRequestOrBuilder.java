@@ -73,7 +73,7 @@ public interface GenerateEvaluationRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.GenerateEvaluationRequest.source is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation_service.proto;l=452
+   *     google/cloud/ces/v1beta/evaluation_service.proto;l=467
    * @return The enum numeric value on the wire for source.
    */
   @java.lang.Deprecated
@@ -92,7 +92,7 @@ public interface GenerateEvaluationRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.GenerateEvaluationRequest.source is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation_service.proto;l=452
+   *     google/cloud/ces/v1beta/evaluation_service.proto;l=467
    * @return The source.
    */
   @java.lang.Deprecated

@@ -28,12 +28,18 @@ jobs:
       library: ${{ steps.filter.outputs.library }}
     steps:
     - uses: actions/checkout@v4
-    - uses: dorny/paths-filter@v3
+    - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
       id: filter
       with:
         filters: |
           library:
             - 'java-storage-nio/**'
+            - '.github/workflows/java-storage-nio-ci.yaml'
+            - 'google-auth-library-java/**/*.java'
+            - 'google-auth-library-java/**/pom.xml'
+            - 'sdk-platform-java/**/*.java'
+            - 'sdk-platform-java/java-shared-dependencies/**/pom.xml'
+            - 'sdk-platform-java/gapic-generator-java-pom-parent/pom.xml'
   units:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
@@ -98,16 +104,12 @@ jobs:
     needs: filter
     if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        java: [17]
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-java@v4
       with:
         distribution: temurin
-        java-version: ${{matrix.java}}
-    - run: java -version
+        java-version: 17
     - run: .kokoro/dependencies.sh
   javadoc:
     needs: filter
@@ -141,3 +143,14 @@ jobs:
         JOB_TYPE: lint
         HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         BASE_SHA: ${{ github.event.pull_request.base.sha }}
+  required:
+    needs: [ units, units-java8, windows, dependencies, javadoc, lint ]
+    name: conditional-required-check
+    if: ${{ always() }} # Always run even if any "needs" jobs fail
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Fail if any previous failure
+        if: ${{ contains(needs.*.result, 'failure') }}
+        run: exit 1
+      - name: Success otherwise
+        run: echo "Success!"

@@ -46,6 +46,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Option;
 import java.util.HashMap;
 import java.util.Map;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.slf4j.Logger;
@@ -56,6 +57,7 @@ class Slf4jUtilsTest {
 
   // This test should only run GOOGLE_SDK_JAVA_LOGGING != true
   @Test
+  @Disabled("See https://github.com/googleapis/google-cloud-java/issues/12836")
   void testGetLogger_loggingDisabled_shouldGetNOPLogger() {
     Logger logger = Slf4jUtils.getLogger(Slf4jUtilsTest.class);
     assertEquals(NOPLogger.class, logger.getClass());

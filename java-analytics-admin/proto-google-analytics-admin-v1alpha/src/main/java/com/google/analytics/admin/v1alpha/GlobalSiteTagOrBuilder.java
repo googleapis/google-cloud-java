@@ -30,12 +30,12 @@ public interface GlobalSiteTagOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name for this GlobalSiteTag resource.
+   * Identifier. Resource name for this GlobalSiteTag resource.
    * Format: properties/{property_id}/dataStreams/{stream_id}/globalSiteTag
    * Example: "properties/123/dataStreams/456/globalSiteTag"
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -45,12 +45,12 @@ public interface GlobalSiteTagOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name for this GlobalSiteTag resource.
+   * Identifier. Resource name for this GlobalSiteTag resource.
    * Format: properties/{property_id}/dataStreams/{stream_id}/globalSiteTag
    * Example: "properties/123/dataStreams/456/globalSiteTag"
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

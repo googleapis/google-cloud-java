@@ -16,6 +16,9 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import java.util.function.Supplier;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 class BigQueryJdbcCustomLogger extends Logger {
@@ -30,31 +33,80 @@ class BigQueryJdbcCustomLogger extends Logger {
     this.setParent(BigQueryJdbcRootLogger.getRootLogger());
   }
 
+  private void logWithCaller(Level level, Supplier<String> msgSupplier) {
+    logWithCaller(level, null, msgSupplier);
+  }
+
+  private void logWithCaller(Level level, Throwable thrown, Supplier<String> msgSupplier) {
+    if (!isLoggable(level)) {
+      return;
+    }
+
+    StackTraceElement[] stackTrace = new Throwable().getStackTrace();
+    String sourceClass = "unknown";
+    String sourceMethod = "unknown";
+
+    for (StackTraceElement element : stackTrace) {
+      String className = element.getClassName();
+      if (!className.equals(BigQueryJdbcCustomLogger.class.getName())) {
+        sourceClass = className;
+        sourceMethod = element.getMethodName();
+        break;
+      }
+    }
+
+    if (thrown == null) {
+      logp(level, sourceClass, sourceMethod, msgSupplier);
+    } else {
+      LogRecord record = new LogRecord(level, msgSupplier.get());
+      record.setSourceClassName(sourceClass);
+      record.setSourceMethodName(sourceMethod);
+      record.setThrown(thrown);
+      log(record);
+    }
+  }
+
   void finest(String format, Object... args) {
-    this.finest(() -> String.format(format, args));
+    logWithCaller(Level.FINEST, () -> String.format(format, args));
   }
 
   void finer(String format, Object... args) {
-    this.finer(() -> String.format(format, args));
+    logWithCaller(Level.FINER, () -> String.format(format, args));
   }
 
   void fine(String format, Object... args) {
-    this.fine(() -> String.format(format, args));
+    logWithCaller(Level.FINE, () -> String.format(format, args));
   }
 
   void config(String format, Object... args) {
-    this.config(() -> String.format(format, args));
+    logWithCaller(Level.CONFIG, () -> String.format(format, args));
   }
 
   void info(String format, Object... args) {
-    this.info(() -> String.format(format, args));
+    logWithCaller(Level.INFO, () -> String.format(format, args));
   }
 
   void warning(String format, Object... args) {
-    this.warning(() -> String.format(format, args));
+    logWithCaller(Level.WARNING, () -> String.format(format, args));
+  }
+
+  void warning(Throwable thrown, String msg) {
+    logWithCaller(Level.WARNING, thrown, () -> msg);
+  }
+
+  void warning(Throwable thrown, String format, Object... args) {
+    logWithCaller(Level.WARNING, thrown, () -> String.format(format, args));
   }
 
   void severe(String format, Object... args) {
-    this.severe(() -> String.format(format, args));
+    logWithCaller(Level.SEVERE, () -> String.format(format, args));
+  }
+
+  void severe(Throwable thrown, String msg) {
+    logWithCaller(Level.SEVERE, thrown, () -> msg);
+  }
+
+  void severe(Throwable thrown, String format, Object... args) {
+    logWithCaller(Level.SEVERE, thrown, () -> String.format(format, args));
   }
 }

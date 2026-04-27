@@ -156,67 +156,6 @@ class EntryPointTest(unittest.TestCase):
         )
 
     @patch("library_generation.cli.entry_point.generate_from_yaml")
-    def test_generate_monorepo_with_common_protos_without_library_names_triggers_full_generation(
-        self,
-        generate_from_yaml,
-    ):
-        """
-        this tests confirms the behavior of generation of a monorepo with
-        common protos.
-        generate() should call generate_from_yaml() with
-        target_library_names=None in order to trigger the full generation
-        """
-        config_path = f"{test_resource_dir}/monorepo_with_common_protos.yaml"
-        self.assertTrue(GenerationConfig.from_yaml(config_path).is_monorepo())
-        # we call the implementation method directly since click
-        # does special handling when a method is annotated with @main.command()
-        generate_impl(
-            generation_config_path=config_path,
-            generation_input=None,
-            library_names=None,
-            api_path=None,
-            repository_path=".",
-            api_definitions_path=".",
-        )
-        generate_from_yaml.assert_called_with(
-            config=ANY,
-            repository_path=ANY,
-            api_definitions_path=ANY,
-            target_library_names=None,
-            target_api_path=None,
-        )
-
-    @patch("library_generation.cli.entry_point.generate_from_yaml")
-    def test_generate_monorepo_with_common_protos_with_library_names_triggers_full_generation(
-        self,
-        generate_from_yaml,
-    ):
-        """
-        this tests confirms the behavior of generation of a monorepo with
-        common protos.
-        target_library_names is the same as includes.
-        """
-        config_path = f"{test_resource_dir}/monorepo_with_common_protos.yaml"
-        self.assertTrue(GenerationConfig.from_yaml(config_path).is_monorepo())
-        # we call the implementation method directly since click
-        # does special handling when a method is annotated with @main.command()
-        generate_impl(
-            generation_config_path=config_path,
-            generation_input=None,
-            library_names="iam,non-existent-library",
-            api_path=None,
-            repository_path=".",
-            api_definitions_path=".",
-        )
-        generate_from_yaml.assert_called_with(
-            config=ANY,
-            repository_path=ANY,
-            api_definitions_path=ANY,
-            target_library_names=None,
-            target_api_path=None,
-        )
-
-    @patch("library_generation.cli.entry_point.generate_from_yaml")
     def test_generate_monorepo_without_library_names_trigger_full_generation(
         self,
         generate_from_yaml,

@@ -42,16 +42,20 @@ public class XGoogSpannerRequestId {
   @VisibleForTesting
   static final long VERSION = 1; // The version of the specification being implemented.
 
+  private static final String STATIC_PREFIX = VERSION + "." + RAND_PROCESS_ID + ".";
+
   private final long nthClientId;
   private final long nthRequest;
   private long nthChannelId;
   private long attempt;
+  private final String instancePrefix;
 
   XGoogSpannerRequestId(long nthClientId, long nthChannelId, long nthRequest, long attempt) {
     this.nthClientId = nthClientId;
     this.nthChannelId = nthChannelId;
     this.nthRequest = nthRequest;
     this.attempt = attempt;
+    this.instancePrefix = STATIC_PREFIX + nthClientId + ".";
   }
 
   public static XGoogSpannerRequestId of(
@@ -122,26 +126,27 @@ public class XGoogSpannerRequestId {
 
   /** Returns the string representation of this RequestId as it should be sent to Spanner. */
   public String getHeaderValue() {
-    return String.format(
-        "%d.%s.%d.%d.%d.%d",
-        XGoogSpannerRequestId.VERSION,
-        XGoogSpannerRequestId.RAND_PROCESS_ID,
-        this.nthClientId,
-        this.nthChannelId,
-        this.nthRequest,
-        this.attempt);
+    return new StringBuilder(this.instancePrefix.length() + 48)
+        .append(this.instancePrefix)
+        .append(this.nthChannelId)
+        .append('.')
+        .append(this.nthRequest)
+        .append('.')
+        .append(this.attempt)
+        .toString();
   }
 
   @Override
   public String toString() {
-    return String.format(
-        "%d.%s.%d.%s.%d.%d",
-        XGoogSpannerRequestId.VERSION,
-        XGoogSpannerRequestId.RAND_PROCESS_ID,
-        this.nthClientId,
-        this.nthChannelId < 0 ? "x" : String.valueOf(this.nthChannelId),
-        this.nthRequest,
-        this.attempt);
+    StringBuilder sb = new StringBuilder(this.instancePrefix.length() + 48);
+    sb.append(this.instancePrefix);
+    if (this.nthChannelId < 0) {
+      sb.append('x');
+    } else {
+      sb.append(this.nthChannelId);
+    }
+    sb.append('.').append(this.nthRequest).append('.').append(this.attempt);
+    return sb.toString();
   }
 
   public String debugToString() {

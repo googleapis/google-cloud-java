@@ -107,7 +107,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Enabled
+     * Disabled
      * </pre>
      *
      * <code>DISABLED = 2;</code>
@@ -152,7 +152,7 @@ public final class PiAndJailbreakFilterSettings extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Enabled
+     * Disabled
      * </pre>
      *
      * <code>DISABLED = 2;</code>

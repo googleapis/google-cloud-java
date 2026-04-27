@@ -27,7 +27,7 @@ steps:
       "--build-arg", "JAVA_SHARED_CONFIG_VERSION=$_JAVA_SHARED_CONFIG_VERSION",
       "."
     ]
-    dir: .cloudbuild/graalvm
+    dir: sdk-platform-java/.cloudbuild/graalvm
     id: graalvm-a-build
     waitFor: [ "-" ]
 
@@ -41,7 +41,7 @@ steps:
       "--build-arg", "JAVA_SHARED_CONFIG_VERSION=$_JAVA_SHARED_CONFIG_VERSION",
       "."
     ]
-    dir: .cloudbuild/graalvm
+    dir: sdk-platform-java/.cloudbuild/graalvm
     id: graalvm-b-build
     waitFor: [ "-" ]
 
@@ -55,7 +55,7 @@ steps:
       "--build-arg", "JAVA_SHARED_CONFIG_VERSION=$_JAVA_SHARED_CONFIG_VERSION",
       "."
     ]
-    dir: .cloudbuild/graalvm
+    dir: sdk-platform-java/.cloudbuild/graalvm
     id: graalvm-c-build
     waitFor: [ "-" ]
 

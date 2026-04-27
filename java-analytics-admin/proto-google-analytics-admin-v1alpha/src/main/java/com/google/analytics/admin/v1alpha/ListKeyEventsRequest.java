@@ -137,12 +137,12 @@ public final class ListKeyEventsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The maximum number of resources to return.
+   * Optional. The maximum number of resources to return.
    * If unspecified, at most 50 resources will be returned.
    * The maximum value is 200; (higher values will be coerced to the maximum)
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -160,13 +160,13 @@ public final class ListKeyEventsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A page token, received from a previous `ListKeyEvents` call.
+   * Optional. A page token, received from a previous `ListKeyEvents` call.
    * Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to `ListKeyEvents`
    * must match the call that provided the page token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -187,13 +187,13 @@ public final class ListKeyEventsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * A page token, received from a previous `ListKeyEvents` call.
+   * Optional. A page token, received from a previous `ListKeyEvents` call.
    * Provide this to retrieve the subsequent page.
    * When paginating, all other parameters provided to `ListKeyEvents`
    * must match the call that provided the page token.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -699,12 +699,12 @@ public final class ListKeyEventsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The maximum number of resources to return.
+     * Optional. The maximum number of resources to return.
      * If unspecified, at most 50 resources will be returned.
      * The maximum value is 200; (higher values will be coerced to the maximum)
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -717,12 +717,12 @@ public final class ListKeyEventsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The maximum number of resources to return.
+     * Optional. The maximum number of resources to return.
      * If unspecified, at most 50 resources will be returned.
      * The maximum value is 200; (higher values will be coerced to the maximum)
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -739,12 +739,12 @@ public final class ListKeyEventsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The maximum number of resources to return.
+     * Optional. The maximum number of resources to return.
      * If unspecified, at most 50 resources will be returned.
      * The maximum value is 200; (higher values will be coerced to the maximum)
      * </pre>
      *
-     * <code>int32 page_size = 2;</code>
+     * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -761,13 +761,13 @@ public final class ListKeyEventsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A page token, received from a previous `ListKeyEvents` call.
+     * Optional. A page token, received from a previous `ListKeyEvents` call.
      * Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to `ListKeyEvents`
      * must match the call that provided the page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -787,13 +787,13 @@ public final class ListKeyEventsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A page token, received from a previous `ListKeyEvents` call.
+     * Optional. A page token, received from a previous `ListKeyEvents` call.
      * Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to `ListKeyEvents`
      * must match the call that provided the page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -813,13 +813,13 @@ public final class ListKeyEventsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A page token, received from a previous `ListKeyEvents` call.
+     * Optional. A page token, received from a previous `ListKeyEvents` call.
      * Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to `ListKeyEvents`
      * must match the call that provided the page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -838,13 +838,13 @@ public final class ListKeyEventsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A page token, received from a previous `ListKeyEvents` call.
+     * Optional. A page token, received from a previous `ListKeyEvents` call.
      * Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to `ListKeyEvents`
      * must match the call that provided the page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -859,13 +859,13 @@ public final class ListKeyEventsRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * A page token, received from a previous `ListKeyEvents` call.
+     * Optional. A page token, received from a previous `ListKeyEvents` call.
      * Provide this to retrieve the subsequent page.
      * When paginating, all other parameters provided to `ListKeyEvents`
      * must match the call that provided the page token.
      * </pre>
      *
-     * <code>string page_token = 3;</code>
+     * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
