@@ -114,9 +114,9 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
 
     // If the user has enabled metrics, we will attempt to export metrics to their
     // configured backend. We will first check their supplied Otel object, then check
-    // the global Otel config. If there is nothing configured, then a no-op Otel object
-    // will be used.
-    if (otelOptions.isMetricsEnabled()) {
+    // the global Otel config.
+    // Note: Metrics will not be sent if an emulator is enabled.
+    if (otelOptions.isMetricsEnabled() && !emulatorEnabled) {
       OpenTelemetry customOtel = otelOptions.getOpenTelemetry();
       if (customOtel == null) {
         customOtel = GlobalOpenTelemetry.get();
