@@ -152,11 +152,10 @@ public class OptionsTest {
     assertThat(options.equals(null)).isFalse();
     assertThat(options.equals(this)).isFalse();
     assertNull(options.isolationLevel());
-    // Verify hashCode contract: equal objects must have equal hashCodes, and hashCode is stable.
+    // Verify hashCode contract: equal objects must have equal hashCodes.
     Options options2 = Options.fromReadOptions();
-    assertThat(options.equals(options2)).isTrue();
+    assertThat(options).isEqualTo(options2);
     assertThat(options.hashCode()).isEqualTo(options2.hashCode());
-    assertThat(options.hashCode()).isEqualTo(options.hashCode());
   }
 
   @Test
@@ -179,13 +178,12 @@ public class OptionsTest {
     assertThat(options.pageSize()).isEqualTo(pageSize);
     assertThat(options.pageToken()).isEqualTo(pageToken);
     assertThat(options.filter()).isEqualTo(filter);
-    // Verify hashCode contract: equal objects must have equal hashCodes, and hashCode is stable.
+    // Verify hashCode contract: equal objects must have equal hashCodes.
     Options options2 =
         Options.fromListOptions(
             Options.pageSize(pageSize), Options.pageToken(pageToken), Options.filter(filter));
-    assertThat(options.equals(options2)).isTrue();
+    assertThat(options).isEqualTo(options2);
     assertThat(options.hashCode()).isEqualTo(options2.hashCode());
-    assertThat(options.hashCode()).isEqualTo(options.hashCode());
   }
 
   @Test
@@ -706,11 +704,10 @@ public class OptionsTest {
     assertEquals("tag: " + tag + " ", options.toString());
     assertTrue(options.hasTag());
     assertThat(options.tag()).isEqualTo(tag);
-    // Verify hashCode contract: equal objects must have equal hashCodes, and hashCode is stable.
+    // Verify hashCode contract: equal objects must have equal hashCodes.
     Options options2 = Options.fromUpdateOptions(Options.tag(tag));
-    assertThat(options.equals(options2)).isTrue();
+    assertThat(options).isEqualTo(options2);
     assertThat(options.hashCode()).isEqualTo(options2.hashCode());
-    assertThat(options.hashCode()).isEqualTo(options.hashCode());
   }
 
   @Test
@@ -742,11 +739,10 @@ public class OptionsTest {
     assertEquals("tag: " + tag + " ", options.toString());
     assertTrue(options.hasTag());
     assertThat(options.tag()).isEqualTo(tag);
-    // Verify hashCode contract: equal objects must have equal hashCodes, and hashCode is stable.
+    // Verify hashCode contract: equal objects must have equal hashCodes.
     Options options2 = Options.fromTransactionOptions(Options.tag(tag));
-    assertThat(options.equals(options2)).isTrue();
+    assertThat(options).isEqualTo(options2);
     assertThat(options.hashCode()).isEqualTo(options2.hashCode());
-    assertThat(options.hashCode()).isEqualTo(options.hashCode());
   }
 
   @Test
