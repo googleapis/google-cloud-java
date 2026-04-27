@@ -151,6 +151,11 @@ public class HttpRuleParser {
       for (int i = 0; i < subFields.length; i++) {
         String subFieldName = subFields[i];
         Field field = nestedMessage.fieldMap().get(subFieldName);
+        Preconditions.checkState(
+            field != null,
+            "Expected message %s to contain field %s but none found",
+            nestedMessage.name(),
+            subFieldName);
 
         // Each component of the JSON name uses the json_name annotation of the field,
         // or default to the field name
