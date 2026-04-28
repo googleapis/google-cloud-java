@@ -21,9 +21,7 @@ import com.google.cloud.NoCredentials;
 import com.google.cloud.datastore.DatastoreOpenTelemetryOptions;
 import com.google.cloud.datastore.DatastoreOptions;
 import io.opentelemetry.api.OpenTelemetry;
-import io.opentelemetry.sdk.OpenTelemetrySdk;
-import io.opentelemetry.sdk.metrics.SdkMeterProvider;
-import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import org.easymock.EasyMock;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -51,8 +49,8 @@ public class DatastoreMetricsRecorderTest {
                     .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
                     .build())
             .build();
-    OpenTelemetry builtInOtel = org.easymock.EasyMock.createMock(OpenTelemetry.class);
-    org.easymock.EasyMock.replay(builtInOtel);
+    OpenTelemetry builtInOtel = EasyMock.createMock(OpenTelemetry.class);
+    EasyMock.replay(builtInOtel);
     DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options, builtInOtel);
     assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
     CompositeDatastoreMetricsRecorder compositeRecorder =
@@ -71,8 +69,8 @@ public class DatastoreMetricsRecorderTest {
                     .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
                     .build())
             .build();
-    OpenTelemetry builtInOtel = org.easymock.EasyMock.createMock(OpenTelemetry.class);
-    org.easymock.EasyMock.replay(builtInOtel);
+    OpenTelemetry builtInOtel = EasyMock.createMock(OpenTelemetry.class);
+    EasyMock.replay(builtInOtel);
     DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options, builtInOtel);
     assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
     CompositeDatastoreMetricsRecorder compositeRecorder =

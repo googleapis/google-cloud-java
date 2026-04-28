@@ -43,6 +43,8 @@ import javax.annotation.Nonnull;
 @InternalExtensionOnly
 public interface DatastoreMetricsRecorder extends MetricsRecorder {
 
+  Logger logger = Logger.getLogger(DatastoreMetricsRecorder.class.getName());
+
   /**
    * Releases any resources held by this recorder.
    *
@@ -85,16 +87,21 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
    */
   static DatastoreMetricsRecorder getInstance(
       @Nonnull DatastoreOptions options, OpenTelemetry builtInOtel) {
-    Logger logger = Logger.getLogger(DatastoreMetricsRecorder.class.getName());
-    DatastoreOpenTelemetryOptions otelOptions = options.getOpenTelemetryOptions();
     List<DatastoreMetricsRecorder> recorders = new ArrayList<>();
 
-    // Default provider: export built-in metrics to Cloud Monitoring
+    // No need to send metrics when using an emulator
     String emulatorHost = System.getenv(DatastoreOptions.LOCAL_HOST_ENV_VAR);
     boolean emulatorEnabled = emulatorHost != null && !emulatorHost.isEmpty();
 
+    if (emulatorEnabled) {
+      logger.log(Level.FINE, "Emulator detected in Datastore. Metrics are not being recorded.");
+      return new CompositeDatastoreMetricsRecorder(recorders);
+    }
+
+    DatastoreOpenTelemetryOptions otelOptions = options.getOpenTelemetryOptions();
+
     // When using a local emulator, there is no need to configure a built-in Otel instance
-    if (otelOptions.isExportBuiltinMetricsToGoogleCloudMonitoring() && !emulatorEnabled) {
+    if (otelOptions.isExportBuiltinMetricsToGoogleCloudMonitoring()) {
       try {
         if (builtInOtel != null) {
           recorders.add(
@@ -104,7 +111,7 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
       } catch (Exception e) {
         logger.log(
             Level.WARNING,
-            "Failed to create built-in metrics provider for Cloud Monitoring export.",
+            "Failed to create built-in metrics provider for Cloud Monitoring exporting.",
             e);
       }
     }
@@ -113,7 +120,7 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
     // configured backend. We will first check their supplied Otel object, then check
     // the global Otel config.
     // Note: Metrics will not be sent if an emulator is enabled.
-    if (otelOptions.isMetricsEnabled() && !emulatorEnabled) {
+    if (otelOptions.isMetricsEnabled()) {
       OpenTelemetry customOtel = otelOptions.getOpenTelemetry();
       if (customOtel == null) {
         customOtel = GlobalOpenTelemetry.get();
