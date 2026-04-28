@@ -665,13 +665,13 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Ref getRef(int arg0) throws SQLException {
-    // TODO Auto-generated method stub
+    // Auto-generated method stub
     return null;
   }
 
   @Override
   public Ref getRef(String arg0) throws SQLException {
-    // TODO Auto-generated method stub
+    // Auto-generated method stub
     return null;
   }
 
@@ -703,13 +703,13 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public SQLXML getSQLXML(int arg0) throws SQLException {
-    // TODO Auto-generated method stub
+    // Auto-generated method stub
     return null;
   }
 
   @Override
   public SQLXML getSQLXML(String arg0) throws SQLException {
-    // TODO Auto-generated method stub
+    // Auto-generated method stub
     return null;
   }
 
