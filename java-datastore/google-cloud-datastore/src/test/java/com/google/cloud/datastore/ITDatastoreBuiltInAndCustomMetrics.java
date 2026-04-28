@@ -42,10 +42,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 /**
- * Integration test that verifies both the default built-in Cloud Monitoring export path and a
- * user-configured OpenTelemetry backend (backed by {@link InMemoryMetricReader}) are active
- * simultaneously via the {@link
- * com.google.cloud.datastore.telemetry.CompositeDatastoreMetricsRecorder}.
+ * Integration test that verifies a user-configured OpenTelemetry backend (backed by {@link
+ * InMemoryMetricReader}) correctly captures metrics emitted by the Datastore SDK.
  *
  * <h3>What this test covers</h3>
  *
@@ -54,44 +52,10 @@ import org.junit.runners.Parameterized;
  *       emitted by the Datastore SDK. After each operation the test collects all metrics
  *       synchronously and asserts that expected names, types, and attributes are present. Because
  *       the in-memory reader is under full test control, these assertions are deterministic.
- *   <li><b>Built-in Cloud Monitoring backend</b> — a private {@link OpenTelemetrySdk} configured
- *       with {@link com.google.cloud.datastore.telemetry.DatastoreCloudMonitoringExporter} is
- *       created alongside the custom backend. The test verifies the composite recorder is in place
- *       (confirming both backends are wired up) and that no exception is thrown during the export
- *       path. The periodic export interval means data will not appear in Cloud Monitoring
- *       immediately; manual verification steps are provided at the bottom of this class Javadoc.
  * </ol>
  *
- * <h3>Setup</h3>
- *
- * <p>Requires a real GCP project with Application Default Credentials that have the {@code
- * monitoring.timeSeries.create} IAM permission. Set the following environment variables:
- *
- * <ul>
- *   <li>{@code GOOGLE_CLOUD_PROJECT} — GCP project ID (required)
- *   <li>{@code DATASTORE_DATABASE_ID} — Datastore database ID (defaults to {@code ""} for the
- *       default database)
- * </ul>
- *
- * <h3>Cloud Monitoring verification</h3>
- *
- * <p>After running this test, navigate to <b>Cloud Console → Monitoring → Metrics Explorer</b> and
- * query:
- *
- * <pre>
- *   Metric  : custom.googleapis.com/internal/client/transaction_latency
- *   Resource: global
- *   Filter  : project_id = &lt;YOUR_PROJECT_ID&gt;
- * </pre>
- *
- * <p>Data may take up to 60 seconds (one periodic flush interval) to appear.
- *
- * <p><b>Note on Cloud Monitoring verification:</b> This test does not programmatically verify that
- * metrics are successfully received by the Cloud Monitoring backend. Querying Cloud Monitoring for
- * recently written metrics can be flaky due to ingestion delays (which can take up to 10 minutes
- * for new metrics). Following the strategy used in tracing tests (which only use in-memory
- * exporters), this test relies on {@link InMemoryMetricReader} to verify that metrics are correctly
- * generated with expected attributes.
+ * <p>Following the strategy used in tracing tests, this test relies on {@link InMemoryMetricReader}
+ * to verify that metrics are correctly generated with expected attributes.
  */
 @RunWith(Parameterized.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
