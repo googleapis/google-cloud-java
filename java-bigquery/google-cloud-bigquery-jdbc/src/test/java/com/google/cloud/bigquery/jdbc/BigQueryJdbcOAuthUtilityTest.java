@@ -219,6 +219,22 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
   }
 
   @Test
+  public void testParseOAuthPropsForUserAuthDefault() {
+    Map<String, String> authProperties =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(
+            DataSource.fromUrl(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                    + "OAuthType=1;ProjectId=MyBigQueryProject;"),
+            null);
+
+    assertThat(authProperties.get("OAuthType")).isEqualTo("GOOGLE_USER_ACCOUNT");
+    assertThat(authProperties.get("OAuthClientId"))
+        .isEqualTo(BigQueryJdbcUrlUtility.DEFAULT_OAUTH_CLIENT_ID);
+    assertThat(authProperties.get("OAuthClientSecret"))
+        .isEqualTo(BigQueryJdbcUrlUtility.DEFAULT_OAUTH_CLIENT_SECRET);
+  }
+
+  @Test
   public void testGenerateUserAuthURL() {
     try {
       HashMap<String, String> authProperties = new HashMap<>();

@@ -101,6 +101,8 @@ final class BigQueryJdbcUrlUtility {
   static final String OAUTH_REFRESH_TOKEN_PROPERTY_NAME = "OAuthRefreshToken";
   static final String OAUTH_CLIENT_ID_PROPERTY_NAME = "OAuthClientId";
   static final String OAUTH_CLIENT_SECRET_PROPERTY_NAME = "OAuthClientSecret";
+  static final String DEFAULT_OAUTH_CLIENT_ID = "977385342095.apps.googleusercontent.com";
+  static final String DEFAULT_OAUTH_CLIENT_SECRET = "wbER7576mc_1YOII0dGk7jEE";
   static final String ENABLE_HTAPI_PROPERTY_NAME = "EnableHighThroughputAPI";
   static final String PROXY_HOST_PROPERTY_NAME = "ProxyHost";
   static final String PROXY_PORT_PROPERTY_NAME = "ProxyPort";
