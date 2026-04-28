@@ -3299,14 +3299,7 @@ public class BigQueryDatabaseMetaDataTest {
       Assertions.assertNotNull(workerThread, "Worker thread should not be null");
       workerThread.join();
 
-      boolean found =
-          otelTesting.getSpans().stream()
-              .anyMatch(
-                  span ->
-                      span.getName().equals("BigQueryDatabaseMetaData.getTables.background")
-                          && span.getLinks().stream()
-                              .anyMatch(link -> link.getSpanContext().isValid()));
-      assertTrue(found);
+      assertSpanLinkedToParent("BigQueryDatabaseMetaData.getTables.background", parentSpan);
     } finally {
       parentSpan.end();
     }
@@ -3327,14 +3320,7 @@ public class BigQueryDatabaseMetaDataTest {
       Assertions.assertNotNull(workerThread, "Worker thread should not be null");
       workerThread.join();
 
-      boolean found =
-          otelTesting.getSpans().stream()
-              .anyMatch(
-                  span ->
-                      span.getName().equals("BigQueryDatabaseMetaData.getColumns.background")
-                          && span.getLinks().stream()
-                              .anyMatch(link -> link.getSpanContext().isValid()));
-      assertTrue(found);
+      assertSpanLinkedToParent("BigQueryDatabaseMetaData.getColumns.background", parentSpan);
     } finally {
       parentSpan.end();
     }
@@ -3355,16 +3341,27 @@ public class BigQueryDatabaseMetaDataTest {
       Assertions.assertNotNull(workerThread, "Worker thread should not be null");
       workerThread.join();
 
-      boolean found =
-          otelTesting.getSpans().stream()
-              .anyMatch(
-                  span ->
-                      span.getName().equals("BigQueryDatabaseMetaData.getSchemas.background")
-                          && span.getLinks().stream()
-                              .anyMatch(link -> link.getSpanContext().isValid()));
-      assertTrue(found);
+      assertSpanLinkedToParent("BigQueryDatabaseMetaData.getSchemas.background", parentSpan);
     } finally {
       parentSpan.end();
     }
+  }
+
+  private void assertSpanLinkedToParent(String spanName, Span parentSpan) {
+    boolean found =
+        otelTesting.getSpans().stream()
+            .anyMatch(
+                span ->
+                    span.getName().equals(spanName)
+                        && span.getLinks().stream()
+                            .anyMatch(
+                                link ->
+                                    link.getSpanContext()
+                                            .getTraceId()
+                                            .equals(parentSpan.getSpanContext().getTraceId())
+                                        && link.getSpanContext()
+                                            .getSpanId()
+                                            .equals(parentSpan.getSpanContext().getSpanId())));
+    assertTrue(found, "Span " + spanName + " not found or not linked to parent");
   }
 }

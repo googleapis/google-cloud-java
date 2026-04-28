@@ -1749,18 +1749,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @VisibleForTesting
   Thread runGetTablesTaskAsync(
-      String catalog,
-      String schemaPattern,
+      String effectiveCatalog,
+      String effectiveSchemaPattern,
       String tableNamePattern,
       String[] types,
       Schema resultSchema,
       BlockingQueue<BigQueryFieldValueListWrapper> queue)
       throws SQLException {
-
-    Tuple<String, String> effectiveIdentifiers =
-        determineEffectiveCatalogAndSchema(catalog, schemaPattern);
-    String effectiveCatalog = effectiveIdentifiers.x();
-    String effectiveSchemaPattern = effectiveIdentifiers.y();
 
     final Pattern schemaRegex = compileSqlLikePattern(effectiveSchemaPattern);
     final Pattern tableNameRegex = compileSqlLikePattern(tableNamePattern);
@@ -2155,7 +2150,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Thread fetcherThread =
         runGetColumnsTaskAsync(
-            catalog, schemaPattern, tableNamePattern, columnNamePattern, resultSchema, queue);
+            effectiveCatalog,
+            effectiveSchemaPattern,
+            tableNamePattern,
+            columnNamePattern,
+            resultSchema,
+            queue);
 
     BigQueryJsonResultSet resultSet =
         BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
@@ -2166,18 +2166,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @VisibleForTesting
   Thread runGetColumnsTaskAsync(
-      String catalog,
-      String schemaPattern,
+      String effectiveCatalog,
+      String effectiveSchemaPattern,
       String tableNamePattern,
       String columnNamePattern,
       Schema resultSchema,
       BlockingQueue<BigQueryFieldValueListWrapper> queue)
       throws SQLException {
-
-    Tuple<String, String> effectiveIdentifiers =
-        determineEffectiveCatalogAndSchema(catalog, schemaPattern);
-    String effectiveCatalog = effectiveIdentifiers.x();
-    String effectiveSchemaPattern = effectiveIdentifiers.y();
 
     Pattern schemaRegex = compileSqlLikePattern(effectiveSchemaPattern);
     Pattern tableNameRegex = compileSqlLikePattern(tableNamePattern);
