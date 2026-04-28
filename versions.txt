@@ -1026,3 +1026,6 @@ google-cloud-nio:0.131.0:0.131.0
 google-cloud-appoptimize:0.1.0:0.1.0
 proto-google-cloud-appoptimize-v1beta:0.1.0:0.1.0
 grpc-google-cloud-appoptimize-v1beta:0.1.0:0.1.0
+google-maps-mapmanagement:0.0.0:0.0.1-SNAPSHOT
+proto-google-maps-mapmanagement-v2beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-maps-mapmanagement-v2beta:0.0.0:0.0.1-SNAPSHOT
