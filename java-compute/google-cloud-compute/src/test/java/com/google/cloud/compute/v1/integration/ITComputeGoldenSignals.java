@@ -538,7 +538,6 @@ public class ITComputeGoldenSignals extends BaseTest {
 
   private void validateLogging(boolean expectError) {
 
-
     List<ILoggingEvent> computeEvents = new ArrayList<>();
     for (ILoggingEvent event : testAppender.events) {
       Map<String, String> mdc = new HashMap<>();
