@@ -114,9 +114,7 @@ public class ITComputeGoldenSignals extends BaseTest {
 
   @Before
   public void setUp() throws Exception {
-    logger.info(
-        "DEBUG: LoggingUtils.isLoggingEnabled() = "
-            + com.google.api.gax.logging.LoggingUtils.isLoggingEnabled());
+
     rootSpanName = "ComputeRootSpan-" + generateRandomHexString(8);
     testRunId = generateRandomHexString(8);
 
@@ -539,12 +537,7 @@ public class ITComputeGoldenSignals extends BaseTest {
   }
 
   private void validateLogging(boolean expectError) {
-    logger.info("DEBUG: Total events in testAppender: " + testAppender.events.size());
-    for (ILoggingEvent event : testAppender.events) {
-      logger.info("DEBUG: Event message: " + event.getMessage());
-      logger.info("DEBUG: Event KVP: " + event.getKeyValuePairs());
-      logger.info("DEBUG: Event MDC: " + event.getMDCPropertyMap());
-    }
+
 
     List<ILoggingEvent> computeEvents = new ArrayList<>();
     for (ILoggingEvent event : testAppender.events) {
