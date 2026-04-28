@@ -52,6 +52,7 @@ import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
+import io.opentelemetry.api.OpenTelemetry;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -127,6 +128,9 @@ public class BigQueryStatementTest {
   @BeforeEach
   public void setUp() throws IOException, SQLException {
     bigQueryConnection = mock(BigQueryConnection.class);
+    doReturn(OpenTelemetry.noop().getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME))
+        .when(bigQueryConnection)
+        .getTracer();
     rpcFactoryMock = mock(BigQueryRpcFactory.class);
     bigquery = mock(BigQuery.class);
     bigQueryConnection.bigQuery = bigquery;
