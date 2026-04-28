@@ -47,6 +47,7 @@ import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.execution.AggregationQueryExecutor;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
+import com.google.cloud.datastore.telemetry.BuiltInDatastoreMetricsProvider;
 import com.google.cloud.datastore.telemetry.DatastoreMetricsRecorder;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import com.google.cloud.datastore.telemetry.TelemetryUtils;
@@ -69,7 +70,9 @@ import com.google.datastore.v1.RunQueryResponse;
 import com.google.datastore.v1.TransactionOptions;
 import com.google.protobuf.ByteString;
 import io.grpc.Status;
+import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.context.Context;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -98,7 +101,9 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   private final com.google.cloud.datastore.telemetry.TraceUtil otelTraceUtil =
       getOptions().getTraceUtil();
-  private final DatastoreMetricsRecorder metricsRecorder = getOptions().getMetricsRecorder();
+  private final DatastoreMetricsRecorder metricsRecorder;
+  private final OpenTelemetry builtInOpenTelemetry;
+
   private final ReadOptionProtoPreparer readOptionProtoPreparer;
   private final AggregationQueryExecutor aggregationQueryExecutor;
 
@@ -107,6 +112,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     this.datastoreRpc = options.getDatastoreRpcV1();
     retrySettings =
         MoreObjects.firstNonNull(options.getRetrySettings(), ServiceOptions.getNoRetrySettings());
+    builtInOpenTelemetry = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
+    metricsRecorder = DatastoreMetricsRecorder.getInstance(options, builtInOpenTelemetry);
 
     readOptionProtoPreparer = new ReadOptionProtoPreparer();
     aggregationQueryExecutor =
@@ -180,7 +187,13 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       logger.log(Level.WARNING, "Failed to close channels", e);
     }
     // Flush and shut down the built-in OTel SDK if active; no-op for user-provided instances.
-    getOptions().getMetricsRecorder().close();
+    if (builtInOpenTelemetry instanceof OpenTelemetrySdk) {
+      try {
+        ((OpenTelemetrySdk) builtInOpenTelemetry).close();
+      } catch (Exception e) {
+        logger.log(Level.WARNING, "Failed to close built-in OpenTelemetry SDK instance.", e);
+      }
+    }
   }
 
   @Override

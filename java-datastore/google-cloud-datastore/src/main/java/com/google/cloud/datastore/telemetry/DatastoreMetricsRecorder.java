@@ -79,12 +79,14 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
    *       also recorded to that backend.
    * </ul>
    *
-   * @param datastoreOptions the {@link DatastoreOptions} configuring the Datastore client
+   * @param options the {@link DatastoreOptions} configuring the Datastore client
+   * @param builtInOtel the {@link OpenTelemetry} built in Otel object
    * @return a {@link DatastoreMetricsRecorder} that fans out to all configured backends
    */
-  static DatastoreMetricsRecorder getInstance(@Nonnull DatastoreOptions datastoreOptions) {
+  static DatastoreMetricsRecorder getInstance(
+      @Nonnull DatastoreOptions options, OpenTelemetry builtInOtel) {
     Logger logger = Logger.getLogger(DatastoreMetricsRecorder.class.getName());
-    DatastoreOpenTelemetryOptions otelOptions = datastoreOptions.getOpenTelemetryOptions();
+    DatastoreOpenTelemetryOptions otelOptions = options.getOpenTelemetryOptions();
     List<DatastoreMetricsRecorder> recorders = new ArrayList<>();
 
     // Default provider: export built-in metrics to Cloud Monitoring
@@ -94,15 +96,10 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
     // When using a local emulator, there is no need to configure a built-in Otel instance
     if (otelOptions.isExportBuiltinMetricsToGoogleCloudMonitoring() && !emulatorEnabled) {
       try {
-        OpenTelemetry builtInOtel =
-            BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(
-                datastoreOptions.getProjectId(),
-                datastoreOptions.getDatabaseId(),
-                datastoreOptions.getCredentials());
         if (builtInOtel != null) {
           recorders.add(
               new OpenTelemetryDatastoreMetricsRecorder(
-                  builtInOtel, TelemetryConstants.METRIC_PREFIX, /* isBuiltIn= */ true));
+                  builtInOtel, TelemetryConstants.METRIC_PREFIX));
         }
       } catch (Exception e) {
         logger.log(

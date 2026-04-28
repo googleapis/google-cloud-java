@@ -16,8 +16,10 @@
 
 package com.google.cloud.datastore.telemetry;
 
+import com.google.api.core.InternalApi;
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.datastore.DatastoreOptions;
 import com.google.common.base.Preconditions;
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hashing;
@@ -46,9 +48,11 @@ import javax.annotation.Nullable;
  * automated environment detection and resource attribute configuration for the {@link
  * TelemetryConstants#DATASTORE_RESOURCE_TYPE} monitored resource.
  */
-class BuiltInDatastoreMetricsProvider {
+@InternalApi
+public class BuiltInDatastoreMetricsProvider {
 
-  static final BuiltInDatastoreMetricsProvider INSTANCE = new BuiltInDatastoreMetricsProvider();
+  public static final BuiltInDatastoreMetricsProvider INSTANCE =
+      new BuiltInDatastoreMetricsProvider();
 
   private static final Logger logger =
       Logger.getLogger(BuiltInDatastoreMetricsProvider.class.getName());
@@ -111,14 +115,14 @@ class BuiltInDatastoreMetricsProvider {
    * <p>No caching is performed here; callers are responsible for holding the returned instance for
    * the lifetime of their Datastore client.
    *
-   * @param projectId the GCP project ID.
-   * @param databaseId the Datastore database ID.
-   * @param credentials the credentials to use for exporting metrics.
+   * @param options Datastore Client Options
    * @return a new {@link OpenTelemetry} instance, or {@code null} if it could not be created.
    */
   @Nullable
-  public OpenTelemetry createOpenTelemetry(
-      @Nonnull String projectId, @Nonnull String databaseId, @Nonnull Credentials credentials) {
+  public OpenTelemetry createOpenTelemetry(@Nonnull DatastoreOptions options) {
+    Credentials credentials = options.getCredentials();
+    String projectId = options.getProjectId();
+    String databaseId = options.getDatabaseId();
     Preconditions.checkNotNull(credentials, "Credentials cannot be null for built in metrics");
     SdkMeterProviderBuilder sdkMeterProviderBuilder = SdkMeterProvider.builder();
 
@@ -135,6 +139,9 @@ class BuiltInDatastoreMetricsProvider {
         DatastoreCloudMonitoringExporter.create(
             projectId, databaseId, credentials, clientAttributes);
     if (exporter == null) {
+      logger.log(
+          Level.WARNING,
+          "Built-in metrics exporting is disabled as the exporter could not be created.");
       return null;
     }
 

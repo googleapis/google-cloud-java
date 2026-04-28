@@ -28,7 +28,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for {@link DatastoreMetricsRecorder#getInstance(DatastoreOptions)}. */
+/** Tests for {@link DatastoreMetricsRecorder#getInstance(DatastoreOptions, OpenTelemetry)}. */
 @RunWith(JUnit4.class)
 public class DatastoreMetricsRecorderTest {
 
@@ -51,7 +51,9 @@ public class DatastoreMetricsRecorderTest {
                     .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
                     .build())
             .build();
-    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options);
+    OpenTelemetry builtInOtel =
+        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
+    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options, builtInOtel);
     assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
     CompositeDatastoreMetricsRecorder compositeRecorder =
         (CompositeDatastoreMetricsRecorder) recorder;
@@ -69,7 +71,9 @@ public class DatastoreMetricsRecorderTest {
                     .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
                     .build())
             .build();
-    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options);
+    OpenTelemetry builtInOtel =
+        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
+    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options, builtInOtel);
     assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
     CompositeDatastoreMetricsRecorder compositeRecorder =
         (CompositeDatastoreMetricsRecorder) recorder;
@@ -86,7 +90,9 @@ public class DatastoreMetricsRecorderTest {
                     .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
                     .build())
             .build();
-    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options);
+    OpenTelemetry builtInOtel =
+        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
+    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options, builtInOtel);
 
     // Since baseOptions() uses NoCredentials, it should not have any recorders
     // as we don't want to send metrics for local emulator logic.

@@ -50,36 +50,23 @@ class OpenTelemetryDatastoreMetricsRecorder extends OpenTelemetryMetricsRecorder
       Logger.getLogger(OpenTelemetryDatastoreMetricsRecorder.class.getName());
 
   private final OpenTelemetry openTelemetry;
-  // True when this recorder created the OpenTelemetry instance (built-in path) and therefore
-  // owns its lifecycle. False when the instance was provided by the user.
-  private final boolean isBuiltIn;
 
   // Datastore-specific transaction metrics (registered under the Datastore meter).
   private final DoubleHistogram transactionLatency;
   private final LongCounter transactionAttemptCount;
 
-  /** Creates a recorder backed by a user-provided {@link OpenTelemetry} instance. */
-  OpenTelemetryDatastoreMetricsRecorder(@Nonnull OpenTelemetry openTelemetry, String metricPrefix) {
-    this(openTelemetry, metricPrefix, /* isBuiltIn= */ false);
-  }
-
   /**
-   * Creates a recorder, specifying whether this instance owns the {@link OpenTelemetry} lifecycle.
+   * Creates a recorder based on the Otel configuration.
    *
    * <p>Note: Standard GAX RPC metrics (operation_latency, attempt_latency, etc.) are handled by the
    * base OpenTelemetryMetricsRecorder class. Those metrics are inherited from the parent classes.
    * However, the internal metrics expect plural suffixes (e.g. `latencies` instead of `latency`).
    * The discrepancy between the singular GAX names and the plural internal Cloud Monitoring names
    * is handled by configuring OpenTelemetry Views.
-   *
-   * @param isBuiltIn {@code true} if this recorder created the instance and should shut it down on
-   *     {@link #close()}; {@code false} if the user provided it.
    */
-  OpenTelemetryDatastoreMetricsRecorder(
-      @Nonnull OpenTelemetry openTelemetry, String metricPrefix, boolean isBuiltIn) {
+  OpenTelemetryDatastoreMetricsRecorder(@Nonnull OpenTelemetry openTelemetry, String metricPrefix) {
     super(openTelemetry, metricPrefix);
     this.openTelemetry = openTelemetry;
-    this.isBuiltIn = isBuiltIn;
 
     Meter meter = openTelemetry.getMeter(TelemetryConstants.DATASTORE_METER_NAME);
 
@@ -108,7 +95,7 @@ class OpenTelemetryDatastoreMetricsRecorder extends OpenTelemetryMetricsRecorder
    */
   @Override
   public void close() {
-    if (isBuiltIn && openTelemetry instanceof OpenTelemetrySdk) {
+    if (openTelemetry instanceof OpenTelemetrySdk) {
       try {
         ((OpenTelemetrySdk) openTelemetry).close();
       } catch (Exception e) {

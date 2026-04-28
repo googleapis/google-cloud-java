@@ -21,6 +21,7 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.auth.CredentialTypeForMetrics;
 import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.datastore.DatastoreOptions;
 import io.opentelemetry.api.OpenTelemetry;
 import java.util.Map;
 import org.easymock.EasyMock;
@@ -45,9 +46,13 @@ public class BuiltInDatastoreMetricsProviderTest {
 
   @Test
   public void testCreateOpenTelemetry_returnsNull() {
-    OpenTelemetry otel =
-        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(
-            PROJECT_ID, "test-db", NoCredentials.getInstance());
+    DatastoreOptions options =
+        DatastoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setDatabaseId("test-db")
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    OpenTelemetry otel = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
     assertThat(otel).isNull();
   }
 
@@ -57,9 +62,15 @@ public class BuiltInDatastoreMetricsProviderTest {
     EasyMock.expect(credentials.getMetricsCredentialType())
         .andReturn(CredentialTypeForMetrics.DO_NOT_SEND);
     EasyMock.replay(credentials);
-    OpenTelemetry otel =
-        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(
-            PROJECT_ID, "test-db", credentials);
+
+    DatastoreOptions options =
+        DatastoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setDatabaseId("test-db")
+            .setCredentials(credentials)
+            .build();
+
+    OpenTelemetry otel = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
     assertThat(otel).isNotNull();
   }
 
@@ -72,12 +83,23 @@ public class BuiltInDatastoreMetricsProviderTest {
     EasyMock.expect(credentials2.getMetricsCredentialType())
         .andReturn(CredentialTypeForMetrics.DO_NOT_SEND);
     EasyMock.replay(credentials1, credentials2);
-    OpenTelemetry otel1 =
-        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(
-            PROJECT_ID, "test-db", credentials1);
-    OpenTelemetry otel2 =
-        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(
-            PROJECT_ID, "test-db", credentials2);
+
+    DatastoreOptions options1 =
+        DatastoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setDatabaseId("test-db")
+            .setCredentials(credentials1)
+            .build();
+
+    DatastoreOptions options2 =
+        DatastoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setDatabaseId("test-db")
+            .setCredentials(credentials2)
+            .build();
+
+    OpenTelemetry otel1 = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options1);
+    OpenTelemetry otel2 = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options2);
     assertThat(otel1).isNotNull();
     assertThat(otel2).isNotNull();
     assertThat(otel1).isNotSameInstanceAs(otel2);
