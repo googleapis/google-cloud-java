@@ -81,7 +81,7 @@ public class ITSystemTest {
 
   @Test
   public void getTraceTest() throws InterruptedException {
-		Thread.sleep(30000);
+    Thread.sleep(30000);
     GetTraceRequest request =
         GetTraceRequest.newBuilder().setProjectId(PROJECT_ID).setTraceId(TRACE_ID).build();
     Trace trace = client.getTrace(request);
@@ -94,7 +94,7 @@ public class ITSystemTest {
 
   @Test
   public void listTracesTest() throws InterruptedException {
-		Thread.sleep(30000);
+    Thread.sleep(30000);
     ListTracesRequest request = ListTracesRequest.newBuilder().setProjectId(PROJECT_ID).build();
     TraceServiceClient.ListTracesPagedResponse trace = client.listTraces(request);
     assertNotNull(trace);
