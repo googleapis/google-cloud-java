@@ -50,15 +50,21 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.RegisterExtension;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BigQueryDatabaseMetaDataTest {
 
   @RegisterExtension
-  static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
+  public static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
 
   private BigQueryConnection bigQueryConnection;
   private BigQueryDatabaseMetaData dbMetadata;
@@ -78,6 +84,15 @@ public class BigQueryDatabaseMetaDataTest {
             otelTesting
                 .getOpenTelemetry()
                 .getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME));
+
+    Page<Dataset> datasetPageMock = mock(Page.class);
+    when(bigqueryClient.listDatasets(anyString(), any())).thenReturn(datasetPageMock);
+
+    Page<Table> tablePageMock = mock(Page.class);
+    when(bigqueryClient.listTables(any(DatasetId.class), any())).thenReturn(tablePageMock);
+
+    Table mockTable = mock(Table.class);
+    when(bigqueryClient.getTable(any(TableId.class))).thenReturn(mockTable);
 
     dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
   }
@@ -3223,145 +3238,95 @@ public class BigQueryDatabaseMetaDataTest {
     assertEquals(DatabaseMetaData.sqlStateSQL, dbMetadata.getSQLStateType());
   }
 
-  @Test
-  public void testGetCatalogs_generatesSpan() throws SQLException {
-    try {
-      dbMetadata.getCatalogs();
-    } catch (NullPointerException e) {
-      // Expected
-    }
+  @ParameterizedTest
+  @MethodSource("metadataOperationProvider")
+  public void testMetadataOperation_generatesSpan(
+      MetadataOperation operation, String expectedSpanName) throws SQLException {
+    operation.run();
 
     boolean found =
-        otelTesting.getSpans().stream()
-            .anyMatch(span -> span.getName().equals("BigQueryDatabaseMetaData.getCatalogs"));
+        otelTesting.getSpans().stream().anyMatch(span -> span.getName().equals(expectedSpanName));
     assertTrue(found);
   }
 
-  @Test
-  public void testGetSchemas_generatesSpan() throws SQLException {
-    try {
-      dbMetadata.getSchemas("catalog", "schema");
-    } catch (Exception e) {
-      // Expected
-    }
-
-    boolean found =
-        otelTesting.getSpans().stream()
-            .anyMatch(span -> span.getName().equals("BigQueryDatabaseMetaData.getSchemas"));
-    assertTrue(found);
+  @FunctionalInterface
+  interface MetadataOperation {
+    void run() throws SQLException;
   }
 
-  @Test
-  public void testGetTables_generatesSpan() throws SQLException {
-    try {
-      dbMetadata.getTables("catalog", "schema", "table", new String[] {"TABLE"});
-    } catch (Exception e) {
-      // Expected
-    }
-
-    boolean found =
-        otelTesting.getSpans().stream()
-            .anyMatch(span -> span.getName().equals("BigQueryDatabaseMetaData.getTables"));
-    assertTrue(found);
+  Stream<Arguments> metadataOperationProvider() {
+    return Stream.of(
+        Arguments.of(
+            (MetadataOperation) () -> dbMetadata.getCatalogs(),
+            "BigQueryDatabaseMetaData.getCatalogs"),
+        Arguments.of(
+            (MetadataOperation) () -> dbMetadata.getSchemas("catalog", "schema"),
+            "BigQueryDatabaseMetaData.getSchemas"),
+        Arguments.of(
+            (MetadataOperation)
+                () -> dbMetadata.getTables("catalog", "schema", "table", new String[] {"TABLE"}),
+            "BigQueryDatabaseMetaData.getTables"),
+        Arguments.of(
+            (MetadataOperation) () -> dbMetadata.getColumns("catalog", "schema", "table", "column"),
+            "BigQueryDatabaseMetaData.getColumns"));
   }
 
-  @Test
-  public void testGetColumns_generatesSpan() throws SQLException {
-    try {
-      dbMetadata.getColumns("catalog", "schema", "table", "column");
-    } catch (Exception e) {
-      // Expected
-    }
-
-    boolean found =
-        otelTesting.getSpans().stream()
-            .anyMatch(span -> span.getName().equals("BigQueryDatabaseMetaData.getColumns"));
-    assertTrue(found);
-  }
-
-  @Test
-  public void testGetTables_createsDetachedLinkedSpan() throws Exception {
+  @ParameterizedTest
+  @MethodSource("asyncMetadataOperationProvider")
+  public void testAsyncMetadataOperation_createsDetachedLinkedSpan(
+      AsyncMetadataOperation operation, String expectedSpanName) throws Exception {
     BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>();
 
     Tracer testTracer = otelTesting.getOpenTelemetry().getTracer("test");
     Span parentSpan = testTracer.spanBuilder("parent-span").startSpan();
 
     try (Scope scope = parentSpan.makeCurrent()) {
-      Thread workerThread =
-          dbMetadata.runGetTablesTaskAsync(
-              "catalog",
-              "schema",
-              "table",
-              new String[] {"TABLE"},
-              dbMetadata.defineGetTablesSchema(),
-              queue);
+      Thread workerThread = operation.run(queue);
 
       Assertions.assertNotNull(workerThread, "Worker thread should not be null");
       workerThread.join();
 
-      assertSpanLinkedToParent("BigQueryDatabaseMetaData.getTables.background", parentSpan);
+      OpenTelemetryTestUtility.assertSpanLinkedToParent(
+          otelTesting.getSpans(), expectedSpanName, parentSpan);
     } finally {
       parentSpan.end();
     }
   }
 
-  @Test
-  public void testGetColumns_createsDetachedLinkedSpan() throws Exception {
-    BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>();
-
-    Tracer testTracer = otelTesting.getOpenTelemetry().getTracer("test");
-    Span parentSpan = testTracer.spanBuilder("parent-span").startSpan();
-
-    try (Scope scope = parentSpan.makeCurrent()) {
-      Thread workerThread =
-          dbMetadata.runGetColumnsTaskAsync(
-              "catalog", "schema", "table", "column", dbMetadata.defineGetColumnsSchema(), queue);
-
-      Assertions.assertNotNull(workerThread, "Worker thread should not be null");
-      workerThread.join();
-
-      assertSpanLinkedToParent("BigQueryDatabaseMetaData.getColumns.background", parentSpan);
-    } finally {
-      parentSpan.end();
-    }
+  @FunctionalInterface
+  interface AsyncMetadataOperation {
+    Thread run(BlockingQueue<BigQueryFieldValueListWrapper> queue) throws Exception;
   }
 
-  @Test
-  public void testGetSchemas_createsDetachedLinkedSpan() throws Exception {
-    BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>();
-
-    Tracer testTracer = otelTesting.getOpenTelemetry().getTracer("test");
-    Span parentSpan = testTracer.spanBuilder("parent-span").startSpan();
-
-    try (Scope scope = parentSpan.makeCurrent()) {
-      Thread workerThread =
-          dbMetadata.runGetSchemasTaskAsync(
-              "catalog", "schema", dbMetadata.defineGetSchemasSchema(), queue);
-
-      Assertions.assertNotNull(workerThread, "Worker thread should not be null");
-      workerThread.join();
-
-      assertSpanLinkedToParent("BigQueryDatabaseMetaData.getSchemas.background", parentSpan);
-    } finally {
-      parentSpan.end();
-    }
-  }
-
-  private void assertSpanLinkedToParent(String spanName, Span parentSpan) {
-    boolean found =
-        otelTesting.getSpans().stream()
-            .anyMatch(
-                span ->
-                    span.getName().equals(spanName)
-                        && span.getLinks().stream()
-                            .anyMatch(
-                                link ->
-                                    link.getSpanContext()
-                                            .getTraceId()
-                                            .equals(parentSpan.getSpanContext().getTraceId())
-                                        && link.getSpanContext()
-                                            .getSpanId()
-                                            .equals(parentSpan.getSpanContext().getSpanId())));
-    assertTrue(found, "Span " + spanName + " not found or not linked to parent");
+  Stream<Arguments> asyncMetadataOperationProvider() {
+    return Stream.of(
+        Arguments.of(
+            (AsyncMetadataOperation)
+                (q) ->
+                    dbMetadata.runGetTablesTaskAsync(
+                        "catalog",
+                        "schema",
+                        "table",
+                        new String[] {"TABLE"},
+                        dbMetadata.defineGetTablesSchema(),
+                        q),
+            "BigQueryDatabaseMetaData.getTables.background"),
+        Arguments.of(
+            (AsyncMetadataOperation)
+                (q) ->
+                    dbMetadata.runGetColumnsTaskAsync(
+                        "catalog",
+                        "schema",
+                        "table",
+                        "column",
+                        dbMetadata.defineGetColumnsSchema(),
+                        q),
+            "BigQueryDatabaseMetaData.getColumns.background"),
+        Arguments.of(
+            (AsyncMetadataOperation)
+                (q) ->
+                    dbMetadata.runGetSchemasTaskAsync(
+                        "catalog", "schema", dbMetadata.defineGetSchemasSchema(), q),
+            "BigQueryDatabaseMetaData.getSchemas.background"));
   }
 }
