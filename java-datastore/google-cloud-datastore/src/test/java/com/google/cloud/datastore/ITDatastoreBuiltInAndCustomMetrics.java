@@ -157,7 +157,7 @@ public class ITDatastoreBuiltInAndCustomMetrics {
                 DatastoreOpenTelemetryOptions.newBuilder()
                     .setMetricsEnabled(true)
                     .setOpenTelemetry(customOtel)
-                    .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
+                    .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
                     .build());
 
     if (transportOptions instanceof GrpcTransportOptions) {
