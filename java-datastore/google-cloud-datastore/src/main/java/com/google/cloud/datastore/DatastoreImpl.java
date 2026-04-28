@@ -186,7 +186,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     } catch (Exception e) {
       logger.log(Level.WARNING, "Failed to close channels", e);
     }
-    // Flush and shut down the built-in OTel SDK if active; no-op for user-provided instances.
+    // Shut down the built-in OTel SDK as we manage its lifecycle
     if (builtInOpenTelemetry instanceof OpenTelemetrySdk) {
       try {
         ((OpenTelemetrySdk) builtInOpenTelemetry).close();

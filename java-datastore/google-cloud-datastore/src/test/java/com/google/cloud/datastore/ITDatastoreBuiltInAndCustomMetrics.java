@@ -106,13 +106,8 @@ public class ITDatastoreBuiltInAndCustomMetrics {
     OpenTelemetrySdk customOtel =
         OpenTelemetrySdk.builder().setMeterProvider(customMeterProvider).build();
 
-    // Configure the Datastore client with BOTH backends active:
-    //   1. Built-in Cloud Monitoring export (enabled by default via
-    //      DatastoreOpenTelemetryOptions.exportBuiltinMetricsToGoogleCloudMonitoring = true)
-    //   2. User-configured OTel backend wired to the in-memory reader above.
-    //
-    // The resulting DatastoreMetricsRecorder will be a CompositeDatastoreMetricsRecorder that
-    // fans out all recording calls to both backends simultaneously.
+    // Do not enable setExportBuiltinMetricsToGoogleCloudMonitoring(false) for this IT
+    // as we will only rely on in-memory to collect the metrics for this test
     DatastoreOptions.Builder builder =
         DatastoreOptions.newBuilder()
             .setProjectId(PROJECT_ID)
