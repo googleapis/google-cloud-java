@@ -16,14 +16,110 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.sdk.trace.data.SpanData;
 import java.util.List;
+import java.util.Optional;
 
 public class OpenTelemetryTestUtility {
 
+  /**
+   * Asserts that a span with the given name exists in the provided list and returns it.
+   *
+   * @param spans The list of exported spans.
+   * @param spanName The name of the span to find.
+   * @return The found SpanData.
+   * @throws AssertionError if the span is not found.
+   */
+  public static SpanData findSpanByName(List<SpanData> spans, String spanName) {
+    Optional<SpanData> span = spans.stream().filter(s -> s.getName().equals(spanName)).findFirst();
+    assertTrue(span.isPresent(), "Span with name '" + spanName + "' not found");
+    return span.get();
+  }
+
+  /**
+   * Asserts that a span exists in the list.
+   *
+   * @param spans The list of exported spans.
+   * @param spanName The name of the span to find.
+   */
+  public static void assertSpanExists(List<SpanData> spans, String spanName) {
+    findSpanByName(spans, spanName);
+  }
+
+  /**
+   * Asserts that a span has a specific attribute key and value.
+   *
+   * @param span The span to check.
+   * @param key The attribute key.
+   * @param expectedValue The expected value of the attribute.
+   * @param <T> The type of the attribute value.
+   */
+  public static <T> void assertSpanHasAttribute(
+      SpanData span, AttributeKey<T> key, T expectedValue) {
+    T actualValue = span.getAttributes().get(key);
+    assertNotNull(
+        actualValue, "Attribute '" + key.getKey() + "' not found on span '" + span.getName() + "'");
+    assertEquals(
+        expectedValue,
+        actualValue,
+        "Attribute '" + key.getKey() + "' value mismatch on span '" + span.getName() + "'");
+  }
+
+  /**
+   * Asserts the status of a span.
+   *
+   * @param span The span to check.
+   * @param expectedStatus The expected StatusCode.
+   */
+  public static void assertSpanStatus(SpanData span, StatusCode expectedStatus) {
+    assertEquals(
+        expectedStatus,
+        span.getStatus().getStatusCode(),
+        "Status code mismatch on span '" + span.getName() + "'");
+  }
+
+  /**
+   * Asserts that an exception of a specific type was recorded on the span.
+   *
+   * @param span The span to check.
+   * @param exceptionClass The class of the expected exception.
+   */
+  public static void assertSpanHasException(
+      SpanData span, Class<? extends Throwable> exceptionClass) {
+    boolean found =
+        span.getEvents().stream()
+            .anyMatch(
+                event ->
+                    event.getName().equals("exception")
+                        && exceptionClass
+                            .getName()
+                            .equals(
+                                event
+                                    .getAttributes()
+                                    .get(AttributeKey.stringKey("exception.type"))));
+    assertTrue(
+        found,
+        "Exception of type "
+            + exceptionClass.getName()
+            + " not found in events of span '"
+            + span.getName()
+            + "'");
+  }
+
+  /**
+   * Asserts that a span is linked to a parent span.
+   *
+   * @param spans The list of exported spans.
+   * @param spanName The name of the span that should have the link.
+   * @param parentSpan The parent span it should be linked to.
+   */
   public static void assertSpanLinkedToParent(
       List<SpanData> spans, String spanName, Span parentSpan) {
     boolean found =

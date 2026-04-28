@@ -31,9 +31,11 @@ import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.*;
 import com.google.cloud.bigquery.BigQuery.RoutineListOption;
 import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
+import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.DatabaseMetaData;
@@ -3241,12 +3243,12 @@ public class BigQueryDatabaseMetaDataTest {
   @ParameterizedTest
   @MethodSource("metadataOperationProvider")
   public void testMetadataOperation_generatesSpan(
-      MetadataOperation operation, String expectedSpanName) throws SQLException {
+      MetadataOperation operation, String expectedSpanName) throws Exception {
     operation.run();
 
-    boolean found =
-        otelTesting.getSpans().stream().anyMatch(span -> span.getName().equals(expectedSpanName));
-    assertTrue(found);
+    SpanData span =
+        OpenTelemetryTestUtility.findSpanByName(otelTesting.getSpans(), expectedSpanName);
+    OpenTelemetryTestUtility.assertSpanStatus(span, StatusCode.UNSET);
   }
 
   @FunctionalInterface

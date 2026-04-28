@@ -54,13 +54,17 @@ import com.google.cloud.bigquery.storage.v1.CreateReadSessionRequest;
 import com.google.cloud.bigquery.storage.v1.ReadSession;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
+import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Scope;
 import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
+import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -567,13 +571,24 @@ public class BigQueryStatementTest {
   @ParameterizedTest
   @MethodSource("statementOperationProvider")
   public void testExecuteOperation_generatesSpan(
-      StatementOperation operation, String expectedSpanName, StatementType type) throws Exception {
+      StatementOperation operation,
+      String expectedSpanName,
+      StatementType type,
+      Map<AttributeKey<?>, Object> expectedAttributes)
+      throws Exception {
     setupMockQueryResults(JobId.of("job"), type, 1L);
     operation.run();
 
-    boolean found =
-        otelTesting.getSpans().stream().anyMatch(span -> span.getName().equals(expectedSpanName));
-    assertTrue(found);
+    SpanData span =
+        OpenTelemetryTestUtility.findSpanByName(otelTesting.getSpans(), expectedSpanName);
+    OpenTelemetryTestUtility.assertSpanStatus(span, StatusCode.UNSET);
+
+    if (expectedAttributes != null) {
+      for (Map.Entry<AttributeKey<?>, Object> entry : expectedAttributes.entrySet()) {
+        OpenTelemetryTestUtility.assertSpanHasAttribute(
+            span, (AttributeKey<Object>) entry.getKey(), entry.getValue());
+      }
+    }
   }
 
   Stream<Arguments> statementOperationProvider() {
@@ -581,16 +596,20 @@ public class BigQueryStatementTest {
         Arguments.of(
             (StatementOperation) () -> bigQueryStatement.executeQuery("SELECT 1"),
             "BigQueryStatement.executeQuery",
-            StatementType.SELECT),
+            StatementType.SELECT,
+            Collections.singletonMap(AttributeKey.stringKey("db.statement"), "SELECT 1")),
         Arguments.of(
             (StatementOperation) () -> bigQueryStatement.execute("SELECT 1"),
             "BigQueryStatement.execute",
-            StatementType.SELECT),
+            StatementType.SELECT,
+            Collections.singletonMap(AttributeKey.stringKey("db.statement"), "SELECT 1")),
         Arguments.of(
             (StatementOperation)
                 () -> bigQueryStatement.executeLargeUpdate("UPDATE table SET col = 1"),
             "BigQueryStatement.executeLargeUpdate",
-            StatementType.UPDATE),
+            StatementType.UPDATE,
+            Collections.singletonMap(
+                AttributeKey.stringKey("db.statement"), "UPDATE table SET col = 1")),
         Arguments.of(
             (StatementOperation)
                 () -> {
@@ -598,7 +617,15 @@ public class BigQueryStatementTest {
                   bigQueryStatement.executeBatch();
                 },
             "BigQueryStatement.executeBatch",
-            StatementType.UPDATE));
+            StatementType.UPDATE,
+            new HashMap<AttributeKey<?>, Object>() {
+              {
+                put(AttributeKey.longKey("db.statement.count"), 1L);
+                put(
+                    AttributeKey.stringArrayKey("db.batch.statements"),
+                    Collections.singletonList("UPDATE table SET col = 1; "));
+              }
+            }));
   }
 
   @FunctionalInterface

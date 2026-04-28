@@ -1356,7 +1356,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         "BigQueryStatement.executeBatch",
         (span) -> {
           span.setAttribute("db.statement.count", this.batchQueries.size());
-          span.setAttribute(AttributeKey.stringArrayKey("db.batch.statements"), this.batchQueries);
+          span.setAttribute(
+              AttributeKey.stringArrayKey("db.batch.statements"),
+              new ArrayList<>(this.batchQueries));
 
           StringBuilder sb = new StringBuilder();
           for (String query : this.batchQueries) {
