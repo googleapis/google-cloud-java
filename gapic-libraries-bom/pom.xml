@@ -22,13 +22,6 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>io.netty</groupId>
-        <artifactId>netty-bom</artifactId>
-        <version>4.1.132.Final</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
         <groupId>com.google.analytics</groupId>
         <artifactId>google-analytics-admin-bom</artifactId>
         <version>0.101.0</version><!-- {x-version-update:google-analytics-admin:current} -->
