@@ -91,6 +91,13 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public ResultSet executeQuery() throws SQLException {
     LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+      return executeQueryImpl();
+    }
+  }
+
+  private ResultSet executeQueryImpl() throws SQLException {
     logQueryExecutionStart(this.currentQuery);
     try {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);
@@ -106,6 +113,13 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public long executeLargeUpdate() throws SQLException {
     LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+      return executeLargeUpdateImpl();
+    }
+  }
+
+  private long executeLargeUpdateImpl() throws SQLException {
     logQueryExecutionStart(this.currentQuery);
     try {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);
@@ -121,12 +135,22 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public int executeUpdate() throws SQLException {
     LOG.finest("++enter++");
-    return checkUpdateCount(executeLargeUpdate());
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+      return checkUpdateCount(executeLargeUpdateImpl());
+    }
   }
 
   @Override
   public boolean execute() throws SQLException {
     LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+      return executeImpl();
+    }
+  }
+
+  private boolean executeImpl() throws SQLException {
     logQueryExecutionStart(this.currentQuery);
     try {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(this.currentQuery);
@@ -271,6 +295,13 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
   @Override
   public int[] executeBatch() throws SQLException {
     LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+      return executeBatchImpl();
+    }
+  }
+
+  private int[] executeBatchImpl() throws SQLException {
     int[] result = new int[this.batchParameters.size()];
     if (this.batchParameters.isEmpty()) {
       return result;
