@@ -212,7 +212,15 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   @Override
   public boolean next() throws SQLException {
-    checkClosed();
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.statement.connection, this.statement.connectionId)) {
+      LOG.finest("++enter++");
+      checkClosed();
+      return nextImpl();
+    }
+  }
+
+  private boolean nextImpl() throws SQLException {
     if (this.isNested) {
       if (this.currentNestedBatch == null || this.currentNestedBatch.getNestedRecords() == null) {
         IllegalStateException ex =
@@ -319,10 +327,16 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   @Override
   public Object getObject(int columnIndex) throws SQLException {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.statement.connection, this.statement.connectionId)) {
+      // columnIndex is SQL index starting at 1
+      LOG.finest("++enter++");
+      checkClosed();
+      return getObjectImpl(columnIndex);
+    }
+  }
 
-    // columnIndex is SQL index starting at 1
-    LOG.finest("++enter++");
-    checkClosed();
+  private Object getObjectImpl(int columnIndex) throws SQLException {
     Object value = getObjectInternal(columnIndex);
     if (value == null) {
       return null;
@@ -451,14 +465,22 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   }
 
   @Override
-  public void close() {
-    LOG.fine("Closing BigqueryArrowResultSet %s.", this);
-    this.isClosed = true;
-    if (ownedThread != null && !ownedThread.isInterrupted()) {
-      // interrupt the producer thread when result set is closed
-      ownedThread.interrupt();
+  public void close() throws SQLException {
+    if (isClosed()) {
+      return;
     }
-    super.close();
+
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.statement.connection, this.statement.connectionId)) {
+      LOG.finest("++enter++");
+      LOG.fine("Closing BigqueryArrowResultSet %s.", this);
+      this.isClosed = true;
+      if (ownedThread != null && !ownedThread.isInterrupted()) {
+        // interrupt the producer thread when result set is closed
+        ownedThread.interrupt();
+      }
+      super.close();
+    }
   }
 
   @Override

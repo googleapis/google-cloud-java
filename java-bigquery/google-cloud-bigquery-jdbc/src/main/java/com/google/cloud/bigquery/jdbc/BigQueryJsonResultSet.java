@@ -132,7 +132,15 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
 
   /* Advances the result set to the next row, returning false if no such row exists. Potentially blocking operation */
   public boolean next() throws SQLException {
-    checkClosed();
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.statement.connection, this.statement.connectionId)) {
+      LOG.finest("++enter++");
+      checkClosed();
+      return nextImpl();
+    }
+  }
+
+  private boolean nextImpl() throws SQLException {
     if (this.isNested) {
       // We are working with the nested record, the cursor would have been
       // populated.
@@ -186,9 +194,15 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
 
   @Override
   public Object getObject(int columnIndex) throws SQLException {
-    // columnIndex is SQL index starting at 1
-    checkClosed();
-    LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.statement.connection, this.statement.connectionId)) {
+      LOG.finest("++enter++");
+      checkClosed();
+      return getObjectImpl(columnIndex);
+    }
+  }
+
+  private Object getObjectImpl(int columnIndex) throws SQLException {
     FieldValue value = getObjectInternal(columnIndex);
     if (value == null || value.isNull()) {
       return null;
@@ -209,8 +223,8 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       return this.bigQueryTypeCoercer.coerceTo(targetClass, value);
     }
 
-    int extraIndex = this.isNested ? 2 : 1;
-    Field fieldSchema = this.schemaFieldList.get(columnIndex - extraIndex);
+    int fieldIndex = this.isNested ? 2 : 1;
+    Field fieldSchema = this.schemaFieldList.get(columnIndex - fieldIndex);
     if (isArray(fieldSchema)) {
       return new BigQueryJsonArray(fieldSchema, value);
     } else if (isStruct(fieldSchema)) {
@@ -274,17 +288,22 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   }
 
   @Override
-  public void close() {
-    LOG.fine("Closing BigqueryJsonResultSet %s.", this);
-    this.isClosed = true;
-    if (ownedThreads != null) {
-      for (Thread ownedThread : ownedThreads) {
-        if (!ownedThread.isInterrupted()) {
-          ownedThread.interrupt();
+  public void close() throws SQLException {
+    LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.statement.connection, this.statement.connectionId)) {
+      checkClosed();
+      LOG.fine("Closing BigqueryJsonResultSet %s.", this);
+      this.isClosed = true;
+      if (ownedThreads != null) {
+        for (Thread ownedThread : ownedThreads) {
+          if (!ownedThread.isInterrupted()) {
+            ownedThread.interrupt();
+          }
         }
       }
+      super.close();
     }
-    super.close();
   }
 
   @Override
