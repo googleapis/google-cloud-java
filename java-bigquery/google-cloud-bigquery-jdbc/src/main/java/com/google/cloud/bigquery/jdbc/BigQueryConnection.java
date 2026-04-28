@@ -946,8 +946,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   private void checkClosed() {
     if (isClosed()) {
-      LOG.severe("This " + getClass().getName() + " has been closed");
-      throw new IllegalStateException("This " + getClass().getName() + " has been closed");
+      LOG.severe("This %s has been closed", getClass().getName());
+      throw new IllegalStateException(
+          String.format("This %s has been closed", getClass().getName()));
     }
   }
 
@@ -994,8 +995,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   private BigQuery getBigQueryConnection() {
-    // 404 Not Found - check if the project exists
-    // 403 Forbidden - execute a dryRun to check if the user has bigquery.jobs.create permissions
     BigQueryOptions.Builder bigQueryOptions = BigQueryOptions.newBuilder();
     if (this.retryTimeoutInSeconds > 0L
         || (this.retryInitialDelayInSeconds > 0L && this.retryMaxDelayInSeconds > 0L)) {
