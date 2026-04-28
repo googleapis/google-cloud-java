@@ -45,6 +45,7 @@
     <com.google.crypto.tink.version>1.16.0</com.google.crypto.tink.version>
     <io.opentelemetry.contrib.opentelemetry-gcp-resources.version>1.45.0-alpha</io.opentelemetry.contrib.opentelemetry-gcp-resources.version>
     <json.version>20250517</json.version>
+    <netty.version>4.1.132.Final</netty.version>
   </properties>
 
   <dependencyManagement>
@@ -261,6 +262,13 @@
         <groupId>com.google.crypto.tink</groupId>
         <artifactId>tink</artifactId>
         <version>${com.google.crypto.tink.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.netty</groupId>
+        <artifactId>netty-bom</artifactId>
+        <version>${netty.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
