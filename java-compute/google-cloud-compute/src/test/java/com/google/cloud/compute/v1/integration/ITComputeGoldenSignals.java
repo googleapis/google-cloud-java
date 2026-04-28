@@ -114,6 +114,7 @@ public class ITComputeGoldenSignals extends BaseTest {
 
   @Before
   public void setUp() throws Exception {
+    logger.info("DEBUG: LoggingUtils.isLoggingEnabled() = " + com.google.api.gax.logging.LoggingUtils.isLoggingEnabled());
     rootSpanName = "ComputeRootSpan-" + generateRandomHexString(8);
     testRunId = generateRandomHexString(8);
 
