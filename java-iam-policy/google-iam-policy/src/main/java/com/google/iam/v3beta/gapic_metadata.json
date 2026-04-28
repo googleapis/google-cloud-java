@@ -5,6 +5,33 @@
   "protoPackage": "google.iam.v3beta",
   "libraryPackage": "com.google.iam.v3beta",
   "services": {
+    "AccessPolicies": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "AccessPoliciesClient",
+          "rpcs": {
+            "CreateAccessPolicy": {
+              "methods": ["createAccessPolicyAsync", "createAccessPolicyAsync", "createAccessPolicyAsync", "createAccessPolicyAsync", "createAccessPolicyAsync", "createAccessPolicyOperationCallable", "createAccessPolicyCallable"]
+            },
+            "DeleteAccessPolicy": {
+              "methods": ["deleteAccessPolicyAsync", "deleteAccessPolicyAsync", "deleteAccessPolicyAsync", "deleteAccessPolicyOperationCallable", "deleteAccessPolicyCallable"]
+            },
+            "GetAccessPolicy": {
+              "methods": ["getAccessPolicy", "getAccessPolicy", "getAccessPolicy", "getAccessPolicyCallable"]
+            },
+            "ListAccessPolicies": {
+              "methods": ["listAccessPolicies", "listAccessPolicies", "listAccessPolicies", "listAccessPolicies", "listAccessPolicies", "listAccessPoliciesPagedCallable", "listAccessPoliciesCallable"]
+            },
+            "SearchAccessPolicyBindings": {
+              "methods": ["searchAccessPolicyBindings", "searchAccessPolicyBindings", "searchAccessPolicyBindings", "searchAccessPolicyBindingsPagedCallable", "searchAccessPolicyBindingsCallable"]
+            },
+            "UpdateAccessPolicy": {
+              "methods": ["updateAccessPolicyAsync", "updateAccessPolicyOperationCallable", "updateAccessPolicyCallable"]
+            }
+          }
+        }
+      }
+    },
     "PolicyBindings": {
       "clients": {
         "grpc": {

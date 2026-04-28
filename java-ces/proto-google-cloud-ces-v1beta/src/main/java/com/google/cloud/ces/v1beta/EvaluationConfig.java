@@ -259,7 +259,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationConfig.input_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1421
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1424
    * @return Whether the inputAudioConfig field is set.
    */
   @java.lang.Override
@@ -280,7 +280,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationConfig.input_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1421
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1424
    * @return The inputAudioConfig.
    */
   @java.lang.Override
@@ -325,7 +325,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationConfig.output_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1425
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1428
    * @return Whether the outputAudioConfig field is set.
    */
   @java.lang.Override
@@ -346,7 +346,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationConfig.output_audio_config is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=1425
+   *     google/cloud/ces/v1beta/evaluation.proto;l=1428
    * @return The outputAudioConfig.
    */
   @java.lang.Override
@@ -907,7 +907,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationConfig.input_audio_config is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=1421
+     *     google/cloud/ces/v1beta/evaluation.proto;l=1424
      * @return Whether the inputAudioConfig field is set.
      */
     @java.lang.Deprecated
@@ -927,7 +927,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationConfig.input_audio_config is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=1421
+     *     google/cloud/ces/v1beta/evaluation.proto;l=1424
      * @return The inputAudioConfig.
      */
     @java.lang.Deprecated
@@ -1133,7 +1133,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationConfig.output_audio_config is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=1425
+     *     google/cloud/ces/v1beta/evaluation.proto;l=1428
      * @return Whether the outputAudioConfig field is set.
      */
     @java.lang.Deprecated
@@ -1153,7 +1153,7 @@ public final class EvaluationConfig extends com.google.protobuf.GeneratedMessage
      * </code>
      *
      * @deprecated google.cloud.ces.v1beta.EvaluationConfig.output_audio_config is deprecated. See
-     *     google/cloud/ces/v1beta/evaluation.proto;l=1425
+     *     google/cloud/ces/v1beta/evaluation.proto;l=1428
      * @return The outputAudioConfig.
      */
     @java.lang.Deprecated

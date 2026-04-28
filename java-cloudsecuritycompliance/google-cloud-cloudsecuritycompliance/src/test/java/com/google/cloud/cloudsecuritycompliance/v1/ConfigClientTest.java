@@ -103,7 +103,7 @@ public class ConfigClientTest {
             .build();
     mockConfig.addResponse(expectedResponse);
 
-    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
     ListFrameworksPagedResponse pagedListResponse = client.listFrameworks(parent);
 
@@ -129,7 +129,7 @@ public class ConfigClientTest {
     mockConfig.addException(exception);
 
     try {
-      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       client.listFrameworks(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -139,6 +139,50 @@ public class ConfigClientTest {
 
   @Test
   public void listFrameworksTest2() throws Exception {
+    Framework responsesElement = Framework.newBuilder().build();
+    ListFrameworksResponse expectedResponse =
+        ListFrameworksResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFrameworks(Arrays.asList(responsesElement))
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListFrameworksPagedResponse pagedListResponse = client.listFrameworks(parent);
+
+    List<Framework> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFrameworksList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFrameworksRequest actualRequest = ((ListFrameworksRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFrameworksExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listFrameworks(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFrameworksTest3() throws Exception {
     Framework responsesElement = Framework.newBuilder().build();
     ListFrameworksResponse expectedResponse =
         ListFrameworksResponse.newBuilder()
@@ -168,7 +212,7 @@ public class ConfigClientTest {
   }
 
   @Test
-  public void listFrameworksExceptionTest2() throws Exception {
+  public void listFrameworksExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockConfig.addException(exception);
 
@@ -185,7 +229,10 @@ public class ConfigClientTest {
   public void getFrameworkTest() throws Exception {
     Framework expectedResponse =
         Framework.newBuilder()
-            .setName(FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]").toString())
+            .setName(
+                FrameworkName.ofOrganizationLocationFrameworkName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]")
+                    .toString())
             .setMajorRevisionId(612576889)
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -197,7 +244,9 @@ public class ConfigClientTest {
             .build();
     mockConfig.addResponse(expectedResponse);
 
-    FrameworkName name = FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]");
+    FrameworkName name =
+        FrameworkName.ofOrganizationLocationFrameworkName(
+            "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]");
 
     Framework actualResponse = client.getFramework(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -219,7 +268,9 @@ public class ConfigClientTest {
     mockConfig.addException(exception);
 
     try {
-      FrameworkName name = FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]");
+      FrameworkName name =
+          FrameworkName.ofOrganizationLocationFrameworkName(
+              "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]");
       client.getFramework(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -231,7 +282,10 @@ public class ConfigClientTest {
   public void getFrameworkTest2() throws Exception {
     Framework expectedResponse =
         Framework.newBuilder()
-            .setName(FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]").toString())
+            .setName(
+                FrameworkName.ofOrganizationLocationFrameworkName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]")
+                    .toString())
             .setMajorRevisionId(612576889)
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -277,7 +331,65 @@ public class ConfigClientTest {
   public void createFrameworkTest() throws Exception {
     Framework expectedResponse =
         Framework.newBuilder()
-            .setName(FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]").toString())
+            .setName(
+                FrameworkName.ofOrganizationLocationFrameworkName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]")
+                    .toString())
+            .setMajorRevisionId(612576889)
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .addAllCloudControlDetails(new ArrayList<CloudControlDetails>())
+            .addAllCategory(new ArrayList<FrameworkCategory>())
+            .addAllSupportedCloudProviders(new ArrayList<CloudProvider>())
+            .addAllSupportedTargetResourceTypes(new ArrayList<TargetResourceType>())
+            .addAllSupportedEnforcementModes(new ArrayList<EnforcementMode>())
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    Framework framework = Framework.newBuilder().build();
+    String frameworkId = "frameworkId886666169";
+
+    Framework actualResponse = client.createFramework(parent, framework, frameworkId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFrameworkRequest actualRequest = ((CreateFrameworkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(framework, actualRequest.getFramework());
+    Assert.assertEquals(frameworkId, actualRequest.getFrameworkId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFrameworkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      Framework framework = Framework.newBuilder().build();
+      String frameworkId = "frameworkId886666169";
+      client.createFramework(parent, framework, frameworkId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createFrameworkTest2() throws Exception {
+    Framework expectedResponse =
+        Framework.newBuilder()
+            .setName(
+                FrameworkName.ofOrganizationLocationFrameworkName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]")
+                    .toString())
             .setMajorRevisionId(612576889)
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -310,7 +422,7 @@ public class ConfigClientTest {
   }
 
   @Test
-  public void createFrameworkExceptionTest() throws Exception {
+  public void createFrameworkExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockConfig.addException(exception);
 
@@ -326,10 +438,13 @@ public class ConfigClientTest {
   }
 
   @Test
-  public void createFrameworkTest2() throws Exception {
+  public void createFrameworkTest3() throws Exception {
     Framework expectedResponse =
         Framework.newBuilder()
-            .setName(FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]").toString())
+            .setName(
+                FrameworkName.ofOrganizationLocationFrameworkName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]")
+                    .toString())
             .setMajorRevisionId(612576889)
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -362,7 +477,7 @@ public class ConfigClientTest {
   }
 
   @Test
-  public void createFrameworkExceptionTest2() throws Exception {
+  public void createFrameworkExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockConfig.addException(exception);
 
@@ -381,7 +496,10 @@ public class ConfigClientTest {
   public void updateFrameworkTest() throws Exception {
     Framework expectedResponse =
         Framework.newBuilder()
-            .setName(FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]").toString())
+            .setName(
+                FrameworkName.ofOrganizationLocationFrameworkName(
+                        "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]")
+                    .toString())
             .setMajorRevisionId(612576889)
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
@@ -431,7 +549,9 @@ public class ConfigClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockConfig.addResponse(expectedResponse);
 
-    FrameworkName name = FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]");
+    FrameworkName name =
+        FrameworkName.ofOrganizationLocationFrameworkName(
+            "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]");
 
     client.deleteFramework(name);
 
@@ -452,7 +572,9 @@ public class ConfigClientTest {
     mockConfig.addException(exception);
 
     try {
-      FrameworkName name = FrameworkName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]");
+      FrameworkName name =
+          FrameworkName.ofOrganizationLocationFrameworkName(
+              "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK]");
       client.deleteFramework(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -504,7 +626,7 @@ public class ConfigClientTest {
             .build();
     mockConfig.addResponse(expectedResponse);
 
-    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
 
     ListCloudControlsPagedResponse pagedListResponse = client.listCloudControls(parent);
 
@@ -530,7 +652,7 @@ public class ConfigClientTest {
     mockConfig.addException(exception);
 
     try {
-      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       client.listCloudControls(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -540,6 +662,50 @@ public class ConfigClientTest {
 
   @Test
   public void listCloudControlsTest2() throws Exception {
+    CloudControl responsesElement = CloudControl.newBuilder().build();
+    ListCloudControlsResponse expectedResponse =
+        ListCloudControlsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllCloudControls(Arrays.asList(responsesElement))
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+
+    ListCloudControlsPagedResponse pagedListResponse = client.listCloudControls(parent);
+
+    List<CloudControl> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getCloudControlsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListCloudControlsRequest actualRequest = ((ListCloudControlsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listCloudControlsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
+      client.listCloudControls(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listCloudControlsTest3() throws Exception {
     CloudControl responsesElement = CloudControl.newBuilder().build();
     ListCloudControlsResponse expectedResponse =
         ListCloudControlsResponse.newBuilder()
@@ -569,7 +735,7 @@ public class ConfigClientTest {
   }
 
   @Test
-  public void listCloudControlsExceptionTest2() throws Exception {
+  public void listCloudControlsExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockConfig.addException(exception);
 
@@ -587,7 +753,9 @@ public class ConfigClientTest {
     CloudControl expectedResponse =
         CloudControl.newBuilder()
             .setName(
-                CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString())
+                CloudControlName.ofOrganizationLocationCloudControlName(
+                        "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+                    .toString())
             .setMajorRevisionId(612576889)
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
@@ -605,7 +773,9 @@ public class ConfigClientTest {
             .build();
     mockConfig.addResponse(expectedResponse);
 
-    CloudControlName name = CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]");
+    CloudControlName name =
+        CloudControlName.ofOrganizationLocationCloudControlName(
+            "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]");
 
     CloudControl actualResponse = client.getCloudControl(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -628,7 +798,8 @@ public class ConfigClientTest {
 
     try {
       CloudControlName name =
-          CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]");
+          CloudControlName.ofOrganizationLocationCloudControlName(
+              "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]");
       client.getCloudControl(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -641,7 +812,9 @@ public class ConfigClientTest {
     CloudControl expectedResponse =
         CloudControl.newBuilder()
             .setName(
-                CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString())
+                CloudControlName.ofOrganizationLocationCloudControlName(
+                        "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+                    .toString())
             .setMajorRevisionId(612576889)
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
@@ -694,7 +867,70 @@ public class ConfigClientTest {
     CloudControl expectedResponse =
         CloudControl.newBuilder()
             .setName(
-                CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString())
+                CloudControlName.ofOrganizationLocationCloudControlName(
+                        "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+                    .toString())
+            .setMajorRevisionId(612576889)
+            .setDescription("description-1724546052")
+            .setDisplayName("displayName1714148973")
+            .addAllSupportedEnforcementModes(new ArrayList<EnforcementMode>())
+            .addAllParameterSpec(new ArrayList<ParameterSpec>())
+            .addAllRules(new ArrayList<Rule>())
+            .setSeverity(Severity.forNumber(0))
+            .setFindingCategory("findingCategory-1495850073")
+            .addAllSupportedCloudProviders(new ArrayList<CloudProvider>())
+            .addAllRelatedFrameworks(new ArrayList<String>())
+            .setRemediationSteps("remediationSteps1230652930")
+            .addAllCategories(new ArrayList<CloudControlCategory>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllSupportedTargetResourceTypes(new ArrayList<TargetResourceType>())
+            .build();
+    mockConfig.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    CloudControl cloudControl = CloudControl.newBuilder().build();
+    String cloudControlId = "cloudControlId657324195";
+
+    CloudControl actualResponse = client.createCloudControl(parent, cloudControl, cloudControlId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockConfig.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateCloudControlRequest actualRequest = ((CreateCloudControlRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(cloudControl, actualRequest.getCloudControl());
+    Assert.assertEquals(cloudControlId, actualRequest.getCloudControlId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createCloudControlExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockConfig.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      CloudControl cloudControl = CloudControl.newBuilder().build();
+      String cloudControlId = "cloudControlId657324195";
+      client.createCloudControl(parent, cloudControl, cloudControlId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createCloudControlTest2() throws Exception {
+    CloudControl expectedResponse =
+        CloudControl.newBuilder()
+            .setName(
+                CloudControlName.ofOrganizationLocationCloudControlName(
+                        "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+                    .toString())
             .setMajorRevisionId(612576889)
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
@@ -733,7 +969,7 @@ public class ConfigClientTest {
   }
 
   @Test
-  public void createCloudControlExceptionTest() throws Exception {
+  public void createCloudControlExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockConfig.addException(exception);
 
@@ -749,11 +985,13 @@ public class ConfigClientTest {
   }
 
   @Test
-  public void createCloudControlTest2() throws Exception {
+  public void createCloudControlTest3() throws Exception {
     CloudControl expectedResponse =
         CloudControl.newBuilder()
             .setName(
-                CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString())
+                CloudControlName.ofOrganizationLocationCloudControlName(
+                        "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+                    .toString())
             .setMajorRevisionId(612576889)
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
@@ -792,7 +1030,7 @@ public class ConfigClientTest {
   }
 
   @Test
-  public void createCloudControlExceptionTest2() throws Exception {
+  public void createCloudControlExceptionTest3() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockConfig.addException(exception);
 
@@ -812,7 +1050,9 @@ public class ConfigClientTest {
     CloudControl expectedResponse =
         CloudControl.newBuilder()
             .setName(
-                CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]").toString())
+                CloudControlName.ofOrganizationLocationCloudControlName(
+                        "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]")
+                    .toString())
             .setMajorRevisionId(612576889)
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
@@ -868,7 +1108,9 @@ public class ConfigClientTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockConfig.addResponse(expectedResponse);
 
-    CloudControlName name = CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]");
+    CloudControlName name =
+        CloudControlName.ofOrganizationLocationCloudControlName(
+            "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]");
 
     client.deleteCloudControl(name);
 
@@ -890,7 +1132,8 @@ public class ConfigClientTest {
 
     try {
       CloudControlName name =
-          CloudControlName.of("[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]");
+          CloudControlName.ofOrganizationLocationCloudControlName(
+              "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL]");
       client.deleteCloudControl(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {

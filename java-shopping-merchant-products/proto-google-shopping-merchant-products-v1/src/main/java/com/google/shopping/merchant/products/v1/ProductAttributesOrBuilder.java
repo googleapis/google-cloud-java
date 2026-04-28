@@ -849,7 +849,7 @@ public interface ProductAttributesOrBuilder
    *
    * <pre>
    * Global Trade Item Numbers
-   * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+   * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
    * item.
    * You can provide up to 10 GTINs.
    * </pre>
@@ -865,7 +865,7 @@ public interface ProductAttributesOrBuilder
    *
    * <pre>
    * Global Trade Item Numbers
-   * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+   * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
    * item.
    * You can provide up to 10 GTINs.
    * </pre>
@@ -881,7 +881,7 @@ public interface ProductAttributesOrBuilder
    *
    * <pre>
    * Global Trade Item Numbers
-   * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+   * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
    * item.
    * You can provide up to 10 GTINs.
    * </pre>
@@ -898,7 +898,7 @@ public interface ProductAttributesOrBuilder
    *
    * <pre>
    * Global Trade Item Numbers
-   * ([GTIN](https://support.google.com/merchants/answer/188494#gtin)) of the
+   * ([GTIN](https://support.google.com/merchants/answer/6324461)) of the
    * item.
    * You can provide up to 10 GTINs.
    * </pre>
@@ -996,7 +996,7 @@ public interface ProductAttributesOrBuilder
    *
    * <pre>
    * Manufacturer Part Number
-   * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+   * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
    * item.
    * </pre>
    *
@@ -1011,7 +1011,7 @@ public interface ProductAttributesOrBuilder
    *
    * <pre>
    * Manufacturer Part Number
-   * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+   * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
    * item.
    * </pre>
    *
@@ -1026,7 +1026,7 @@ public interface ProductAttributesOrBuilder
    *
    * <pre>
    * Manufacturer Part Number
-   * ([MPN](https://support.google.com/merchants/answer/188494#mpn)) of the
+   * ([MPN](https://support.google.com/merchants/answer/6324482)) of the
    * item.
    * </pre>
    *
@@ -4648,4 +4648,70 @@ public interface ProductAttributesOrBuilder
    */
   com.google.shopping.merchant.products.v1.ProductSustainabilityIncentiveOrBuilder
       getSustainabilityIncentivesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of video URLs for the item. Use this attribute to provide
+   * more visuals for your product beyond your image attributes. See the [Help
+   * Center article](https://support.google.com/merchants/answer/15216925) for
+   * more information.
+   * </pre>
+   *
+   * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the videoLinks.
+   */
+  java.util.List<java.lang.String> getVideoLinksList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of video URLs for the item. Use this attribute to provide
+   * more visuals for your product beyond your image attributes. See the [Help
+   * Center article](https://support.google.com/merchants/answer/15216925) for
+   * more information.
+   * </pre>
+   *
+   * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of videoLinks.
+   */
+  int getVideoLinksCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of video URLs for the item. Use this attribute to provide
+   * more visuals for your product beyond your image attributes. See the [Help
+   * Center article](https://support.google.com/merchants/answer/15216925) for
+   * more information.
+   * </pre>
+   *
+   * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The videoLinks at the given index.
+   */
+  java.lang.String getVideoLinks(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of video URLs for the item. Use this attribute to provide
+   * more visuals for your product beyond your image attributes. See the [Help
+   * Center article](https://support.google.com/merchants/answer/15216925) for
+   * more information.
+   * </pre>
+   *
+   * <code>repeated string video_links = 169 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the videoLinks at the given index.
+   */
+  com.google.protobuf.ByteString getVideoLinksBytes(int index);
 }

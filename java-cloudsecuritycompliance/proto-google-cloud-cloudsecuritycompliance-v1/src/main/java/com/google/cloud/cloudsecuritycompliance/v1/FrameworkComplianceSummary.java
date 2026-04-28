@@ -703,6 +703,85 @@ public final class FrameworkComplianceSummary extends com.google.protobuf.Genera
     return targetResourceDetails_.get(index);
   }
 
+  public static final int FINDING_COUNT_FIELD_NUMBER = 11;
+  private long findingCount_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The count of the findings generated against the framework.
+   * </pre>
+   *
+   * <code>int64 finding_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The findingCount.
+   */
+  @java.lang.Override
+  public long getFindingCount() {
+    return findingCount_;
+  }
+
+  public static final int CONTROLS_PASSING_TREND_FIELD_NUMBER = 12;
+  private com.google.cloud.cloudsecuritycompliance.v1.Trend controlsPassingTrend_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The trend of controls that are passing for the given duration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.Trend controls_passing_trend = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the controlsPassingTrend field is set.
+   */
+  @java.lang.Override
+  public boolean hasControlsPassingTrend() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The trend of controls that are passing for the given duration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.Trend controls_passing_trend = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The controlsPassingTrend.
+   */
+  @java.lang.Override
+  public com.google.cloud.cloudsecuritycompliance.v1.Trend getControlsPassingTrend() {
+    return controlsPassingTrend_ == null
+        ? com.google.cloud.cloudsecuritycompliance.v1.Trend.getDefaultInstance()
+        : controlsPassingTrend_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The trend of controls that are passing for the given duration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.cloudsecuritycompliance.v1.Trend controls_passing_trend = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.cloudsecuritycompliance.v1.TrendOrBuilder
+      getControlsPassingTrendOrBuilder() {
+    return controlsPassingTrend_ == null
+        ? com.google.cloud.cloudsecuritycompliance.v1.Trend.getDefaultInstance()
+        : controlsPassingTrend_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -758,6 +837,12 @@ public final class FrameworkComplianceSummary extends com.google.protobuf.Genera
     }
     for (int i = 0; i < targetResourceDetails_.size(); i++) {
       output.writeMessage(10, targetResourceDetails_.get(i));
+    }
+    if (findingCount_ != 0L) {
+      output.writeInt64(11, findingCount_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(12, getControlsPassingTrend());
     }
     getUnknownFields().writeTo(output);
   }
@@ -827,6 +912,13 @@ public final class FrameworkComplianceSummary extends com.google.protobuf.Genera
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, targetResourceDetails_.get(i));
     }
+    if (findingCount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(11, findingCount_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(12, getControlsPassingTrend());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -856,6 +948,11 @@ public final class FrameworkComplianceSummary extends com.google.protobuf.Genera
     if (getMajorRevisionId() != other.getMajorRevisionId()) return false;
     if (getMinorRevisionId() != other.getMinorRevisionId()) return false;
     if (!getTargetResourceDetailsList().equals(other.getTargetResourceDetailsList())) return false;
+    if (getFindingCount() != other.getFindingCount()) return false;
+    if (hasControlsPassingTrend() != other.hasControlsPassingTrend()) return false;
+    if (hasControlsPassingTrend()) {
+      if (!getControlsPassingTrend().equals(other.getControlsPassingTrend())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -894,6 +991,12 @@ public final class FrameworkComplianceSummary extends com.google.protobuf.Genera
     if (getTargetResourceDetailsCount() > 0) {
       hash = (37 * hash) + TARGET_RESOURCE_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getTargetResourceDetailsList().hashCode();
+    }
+    hash = (37 * hash) + FINDING_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getFindingCount());
+    if (hasControlsPassingTrend()) {
+      hash = (37 * hash) + CONTROLS_PASSING_TREND_FIELD_NUMBER;
+      hash = (53 * hash) + getControlsPassingTrend().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1041,6 +1144,7 @@ public final class FrameworkComplianceSummary extends com.google.protobuf.Genera
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
         internalGetControlAssessmentDetailsFieldBuilder();
         internalGetTargetResourceDetailsFieldBuilder();
+        internalGetControlsPassingTrendFieldBuilder();
       }
     }
 
@@ -1068,6 +1172,12 @@ public final class FrameworkComplianceSummary extends com.google.protobuf.Genera
         targetResourceDetailsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000200);
+      findingCount_ = 0L;
+      controlsPassingTrend_ = null;
+      if (controlsPassingTrendBuilder_ != null) {
+        controlsPassingTrendBuilder_.dispose();
+        controlsPassingTrendBuilder_ = null;
+      }
       return this;
     }
 
@@ -1155,6 +1265,16 @@ public final class FrameworkComplianceSummary extends com.google.protobuf.Genera
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.minorRevisionId_ = minorRevisionId_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.findingCount_ = findingCount_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.controlsPassingTrend_ =
+            controlsPassingTrendBuilder_ == null
+                ? controlsPassingTrend_
+                : controlsPassingTrendBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1250,6 +1370,12 @@ public final class FrameworkComplianceSummary extends com.google.protobuf.Genera
             targetResourceDetailsBuilder_.addAllMessages(other.targetResourceDetails_);
           }
         }
+      }
+      if (other.getFindingCount() != 0L) {
+        setFindingCount(other.getFindingCount());
+      }
+      if (other.hasControlsPassingTrend()) {
+        mergeControlsPassingTrend(other.getControlsPassingTrend());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1371,6 +1497,19 @@ public final class FrameworkComplianceSummary extends com.google.protobuf.Genera
                 }
                 break;
               } // case 82
+            case 88:
+              {
+                findingCount_ = input.readInt64();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
+            case 98:
+              {
+                input.readMessage(
+                    internalGetControlsPassingTrendFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3116,6 +3255,280 @@ public final class FrameworkComplianceSummary extends com.google.protobuf.Genera
         targetResourceDetails_ = null;
       }
       return targetResourceDetailsBuilder_;
+    }
+
+    private long findingCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The count of the findings generated against the framework.
+     * </pre>
+     *
+     * <code>int64 finding_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The findingCount.
+     */
+    @java.lang.Override
+    public long getFindingCount() {
+      return findingCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The count of the findings generated against the framework.
+     * </pre>
+     *
+     * <code>int64 finding_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The findingCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFindingCount(long value) {
+
+      findingCount_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The count of the findings generated against the framework.
+     * </pre>
+     *
+     * <code>int64 finding_count = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFindingCount() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      findingCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.cloudsecuritycompliance.v1.Trend controlsPassingTrend_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.cloudsecuritycompliance.v1.Trend,
+            com.google.cloud.cloudsecuritycompliance.v1.Trend.Builder,
+            com.google.cloud.cloudsecuritycompliance.v1.TrendOrBuilder>
+        controlsPassingTrendBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The trend of controls that are passing for the given duration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.cloudsecuritycompliance.v1.Trend controls_passing_trend = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the controlsPassingTrend field is set.
+     */
+    public boolean hasControlsPassingTrend() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The trend of controls that are passing for the given duration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.cloudsecuritycompliance.v1.Trend controls_passing_trend = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The controlsPassingTrend.
+     */
+    public com.google.cloud.cloudsecuritycompliance.v1.Trend getControlsPassingTrend() {
+      if (controlsPassingTrendBuilder_ == null) {
+        return controlsPassingTrend_ == null
+            ? com.google.cloud.cloudsecuritycompliance.v1.Trend.getDefaultInstance()
+            : controlsPassingTrend_;
+      } else {
+        return controlsPassingTrendBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The trend of controls that are passing for the given duration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.cloudsecuritycompliance.v1.Trend controls_passing_trend = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setControlsPassingTrend(
+        com.google.cloud.cloudsecuritycompliance.v1.Trend value) {
+      if (controlsPassingTrendBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        controlsPassingTrend_ = value;
+      } else {
+        controlsPassingTrendBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The trend of controls that are passing for the given duration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.cloudsecuritycompliance.v1.Trend controls_passing_trend = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setControlsPassingTrend(
+        com.google.cloud.cloudsecuritycompliance.v1.Trend.Builder builderForValue) {
+      if (controlsPassingTrendBuilder_ == null) {
+        controlsPassingTrend_ = builderForValue.build();
+      } else {
+        controlsPassingTrendBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The trend of controls that are passing for the given duration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.cloudsecuritycompliance.v1.Trend controls_passing_trend = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeControlsPassingTrend(
+        com.google.cloud.cloudsecuritycompliance.v1.Trend value) {
+      if (controlsPassingTrendBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && controlsPassingTrend_ != null
+            && controlsPassingTrend_
+                != com.google.cloud.cloudsecuritycompliance.v1.Trend.getDefaultInstance()) {
+          getControlsPassingTrendBuilder().mergeFrom(value);
+        } else {
+          controlsPassingTrend_ = value;
+        }
+      } else {
+        controlsPassingTrendBuilder_.mergeFrom(value);
+      }
+      if (controlsPassingTrend_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The trend of controls that are passing for the given duration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.cloudsecuritycompliance.v1.Trend controls_passing_trend = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearControlsPassingTrend() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      controlsPassingTrend_ = null;
+      if (controlsPassingTrendBuilder_ != null) {
+        controlsPassingTrendBuilder_.dispose();
+        controlsPassingTrendBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The trend of controls that are passing for the given duration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.cloudsecuritycompliance.v1.Trend controls_passing_trend = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.cloudsecuritycompliance.v1.Trend.Builder
+        getControlsPassingTrendBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return internalGetControlsPassingTrendFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The trend of controls that are passing for the given duration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.cloudsecuritycompliance.v1.Trend controls_passing_trend = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.cloudsecuritycompliance.v1.TrendOrBuilder
+        getControlsPassingTrendOrBuilder() {
+      if (controlsPassingTrendBuilder_ != null) {
+        return controlsPassingTrendBuilder_.getMessageOrBuilder();
+      } else {
+        return controlsPassingTrend_ == null
+            ? com.google.cloud.cloudsecuritycompliance.v1.Trend.getDefaultInstance()
+            : controlsPassingTrend_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The trend of controls that are passing for the given duration.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.cloudsecuritycompliance.v1.Trend controls_passing_trend = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.cloudsecuritycompliance.v1.Trend,
+            com.google.cloud.cloudsecuritycompliance.v1.Trend.Builder,
+            com.google.cloud.cloudsecuritycompliance.v1.TrendOrBuilder>
+        internalGetControlsPassingTrendFieldBuilder() {
+      if (controlsPassingTrendBuilder_ == null) {
+        controlsPassingTrendBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.cloudsecuritycompliance.v1.Trend,
+                com.google.cloud.cloudsecuritycompliance.v1.Trend.Builder,
+                com.google.cloud.cloudsecuritycompliance.v1.TrendOrBuilder>(
+                getControlsPassingTrend(), getParentForChildren(), isClean());
+        controlsPassingTrend_ = null;
+      }
+      return controlsPassingTrendBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummary)

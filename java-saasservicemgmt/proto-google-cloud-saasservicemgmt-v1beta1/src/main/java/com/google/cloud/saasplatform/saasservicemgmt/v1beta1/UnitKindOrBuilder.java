@@ -335,8 +335,9 @@ public interface UnitKindOrBuilder
    *
    * <pre>
    * Required. Immutable. A reference to the Saas that defines the product
-   * (managed service) that the producer wants to manage with SaaS Runtime. Part
-   * of the SaaS Runtime common data model. Immutable once set.
+   * (managed service) that the producer wants to manage with App Lifecycle
+   * Manager. Part of the App Lifecycle Manager common data model. Immutable
+   * once set.
    * </pre>
    *
    * <code>
@@ -352,8 +353,9 @@ public interface UnitKindOrBuilder
    *
    * <pre>
    * Required. Immutable. A reference to the Saas that defines the product
-   * (managed service) that the producer wants to manage with SaaS Runtime. Part
-   * of the SaaS Runtime common data model. Immutable once set.
+   * (managed service) that the producer wants to manage with App Lifecycle
+   * Manager. Part of the App Lifecycle Manager common data model. Immutable
+   * once set.
    * </pre>
    *
    * <code>

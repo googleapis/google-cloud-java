@@ -202,6 +202,9 @@
             "EvaluateInstances": {
               "methods": ["evaluateInstances", "evaluateInstancesCallable"]
             },
+            "GenerateInstanceRubrics": {
+              "methods": ["generateInstanceRubrics", "generateInstanceRubricsCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },
@@ -1457,6 +1460,51 @@
         }
       }
     },
+    "OnlineEvaluatorService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "OnlineEvaluatorServiceClient",
+          "rpcs": {
+            "ActivateOnlineEvaluator": {
+              "methods": ["activateOnlineEvaluatorAsync", "activateOnlineEvaluatorAsync", "activateOnlineEvaluatorAsync", "activateOnlineEvaluatorOperationCallable", "activateOnlineEvaluatorCallable"]
+            },
+            "CreateOnlineEvaluator": {
+              "methods": ["createOnlineEvaluatorAsync", "createOnlineEvaluatorAsync", "createOnlineEvaluatorAsync", "createOnlineEvaluatorOperationCallable", "createOnlineEvaluatorCallable"]
+            },
+            "DeleteOnlineEvaluator": {
+              "methods": ["deleteOnlineEvaluatorAsync", "deleteOnlineEvaluatorAsync", "deleteOnlineEvaluatorAsync", "deleteOnlineEvaluatorOperationCallable", "deleteOnlineEvaluatorCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetOnlineEvaluator": {
+              "methods": ["getOnlineEvaluator", "getOnlineEvaluator", "getOnlineEvaluator", "getOnlineEvaluatorCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListOnlineEvaluators": {
+              "methods": ["listOnlineEvaluators", "listOnlineEvaluators", "listOnlineEvaluators", "listOnlineEvaluatorsPagedCallable", "listOnlineEvaluatorsCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SuspendOnlineEvaluator": {
+              "methods": ["suspendOnlineEvaluatorAsync", "suspendOnlineEvaluatorAsync", "suspendOnlineEvaluatorAsync", "suspendOnlineEvaluatorOperationCallable", "suspendOnlineEvaluatorCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateOnlineEvaluator": {
+              "methods": ["updateOnlineEvaluatorAsync", "updateOnlineEvaluatorAsync", "updateOnlineEvaluatorOperationCallable", "updateOnlineEvaluatorCallable"]
+            }
+          }
+        }
+      }
+    },
     "PersistentResourceService": {
       "clients": {
         "grpc": {
@@ -1636,6 +1684,9 @@
         "grpc": {
           "libraryClient": "ReasoningEngineExecutionServiceClient",
           "rpcs": {
+            "AsyncQueryReasoningEngine": {
+              "methods": ["asyncQueryReasoningEngineAsync", "asyncQueryReasoningEngineOperationCallable", "asyncQueryReasoningEngineCallable"]
+            },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
             },

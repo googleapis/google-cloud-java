@@ -24,6 +24,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -162,6 +163,32 @@ public class GrpcModelArmorStub extends ModelArmorStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+      streamSanitizeUserPromptMethodDescriptor =
+          MethodDescriptor.<SanitizeUserPromptRequest, SanitizeUserPromptResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.modelarmor.v1beta.ModelArmor/StreamSanitizeUserPrompt")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SanitizeUserPromptRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SanitizeUserPromptResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+      streamSanitizeModelResponseMethodDescriptor =
+          MethodDescriptor.<SanitizeModelResponseRequest, SanitizeModelResponseResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.modelarmor.v1beta.ModelArmor/StreamSanitizeModelResponse")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SanitizeModelResponseRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SanitizeModelResponseResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -196,6 +223,10 @@ public class GrpcModelArmorStub extends ModelArmorStub {
       sanitizeUserPromptCallable;
   private final UnaryCallable<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
       sanitizeModelResponseCallable;
+  private final BidiStreamingCallable<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+      streamSanitizeUserPromptCallable;
+  private final BidiStreamingCallable<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+      streamSanitizeModelResponseCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -344,6 +375,19 @@ public class GrpcModelArmorStub extends ModelArmorStub {
                     })
                 .setResourceNameExtractor(request -> request.getName())
                 .build();
+    GrpcCallSettings<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+        streamSanitizeUserPromptTransportSettings =
+            GrpcCallSettings.<SanitizeUserPromptRequest, SanitizeUserPromptResponse>newBuilder()
+                .setMethodDescriptor(streamSanitizeUserPromptMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
+    GrpcCallSettings<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+        streamSanitizeModelResponseTransportSettings =
+            GrpcCallSettings
+                .<SanitizeModelResponseRequest, SanitizeModelResponseResponse>newBuilder()
+                .setMethodDescriptor(streamSanitizeModelResponseMethodDescriptor)
+                .setResourceNameExtractor(request -> request.getName())
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -400,6 +444,16 @@ public class GrpcModelArmorStub extends ModelArmorStub {
         callableFactory.createUnaryCallable(
             sanitizeModelResponseTransportSettings,
             settings.sanitizeModelResponseSettings(),
+            clientContext);
+    this.streamSanitizeUserPromptCallable =
+        callableFactory.createBidiStreamingCallable(
+            streamSanitizeUserPromptTransportSettings,
+            settings.streamSanitizeUserPromptSettings(),
+            clientContext);
+    this.streamSanitizeModelResponseCallable =
+        callableFactory.createBidiStreamingCallable(
+            streamSanitizeModelResponseTransportSettings,
+            settings.streamSanitizeModelResponseSettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -470,6 +524,18 @@ public class GrpcModelArmorStub extends ModelArmorStub {
   public UnaryCallable<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
       sanitizeModelResponseCallable() {
     return sanitizeModelResponseCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+      streamSanitizeUserPromptCallable() {
+    return streamSanitizeUserPromptCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+      streamSanitizeModelResponseCallable() {
+    return streamSanitizeModelResponseCallable;
   }
 
   @Override

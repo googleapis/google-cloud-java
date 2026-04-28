@@ -30,11 +30,11 @@ public interface ConversionEventOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of this conversion event.
+   * Identifier. Resource name of this conversion event.
    * Format: properties/{property}/conversionEvents/{conversion_event}
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -44,11 +44,11 @@ public interface ConversionEventOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of this conversion event.
+   * Identifier. Resource name of this conversion event.
    * Format: properties/{property}/conversionEvents/{conversion_event}
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

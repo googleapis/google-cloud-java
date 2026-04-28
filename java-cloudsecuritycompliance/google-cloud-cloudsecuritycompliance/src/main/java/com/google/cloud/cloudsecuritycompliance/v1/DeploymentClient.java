@@ -58,7 +58,8 @@ import javax.annotation.Generated;
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DeploymentClient deploymentClient = DeploymentClient.create()) {
  *   FrameworkDeploymentName name =
- *       FrameworkDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
+ *       FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+ *           "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
  *   FrameworkDeployment response = deploymentClient.getFrameworkDeployment(name);
  * }
  * }</pre>
@@ -83,6 +84,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
  *      <ul>
+ *           <li><p> createFrameworkDeploymentAsync(LocationName parent, FrameworkDeployment frameworkDeployment, String frameworkDeploymentId)
  *           <li><p> createFrameworkDeploymentAsync(OrganizationLocationName parent, FrameworkDeployment frameworkDeployment, String frameworkDeploymentId)
  *           <li><p> createFrameworkDeploymentAsync(String parent, FrameworkDeployment frameworkDeployment, String frameworkDeploymentId)
  *      </ul>
@@ -142,6 +144,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> listFrameworkDeployments(LocationName parent)
  *           <li><p> listFrameworkDeployments(OrganizationLocationName parent)
  *           <li><p> listFrameworkDeployments(String parent)
  *      </ul>
@@ -181,6 +184,7 @@ import javax.annotation.Generated;
  *      </ul>
  *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
  *      <ul>
+ *           <li><p> listCloudControlDeployments(LocationName parent)
  *           <li><p> listCloudControlDeployments(OrganizationLocationName parent)
  *           <li><p> listCloudControlDeployments(String parent)
  *      </ul>
@@ -193,7 +197,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -362,6 +368,53 @@ public class DeploymentClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentClient deploymentClient = DeploymentClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   FrameworkDeployment frameworkDeployment = FrameworkDeployment.newBuilder().build();
+   *   String frameworkDeploymentId = "frameworkDeploymentId-1244700706";
+   *   FrameworkDeployment response =
+   *       deploymentClient
+   *           .createFrameworkDeploymentAsync(parent, frameworkDeployment, frameworkDeploymentId)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the framework deployment in the format
+   *     `organizations/{organization}/locations/{location}` or
+   *     `projects/{project}/locations/{location}`. Only the global location is supported.
+   * @param frameworkDeployment Required. The framework deployment that you're creating.
+   * @param frameworkDeploymentId Optional. An identifier for the framework deployment that's unique
+   *     in scope of the parent. If you don't specify a value, then a random UUID is generated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<FrameworkDeployment, OperationMetadata>
+      createFrameworkDeploymentAsync(
+          LocationName parent,
+          FrameworkDeployment frameworkDeployment,
+          String frameworkDeploymentId) {
+    CreateFrameworkDeploymentRequest request =
+        CreateFrameworkDeploymentRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setFrameworkDeployment(frameworkDeployment)
+            .setFrameworkDeploymentId(frameworkDeploymentId)
+            .build();
+    return createFrameworkDeploymentAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a framework deployment in a given parent resource. A framework deployment lets you
+   * assign a particular framework version to an organization, folder, or project so that you can
+   * control and monitor those resources using the framework's cloud controls.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeploymentClient deploymentClient = DeploymentClient.create()) {
    *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   FrameworkDeployment frameworkDeployment = FrameworkDeployment.newBuilder().build();
    *   String frameworkDeploymentId = "frameworkDeploymentId-1244700706";
@@ -373,7 +426,8 @@ public class DeploymentClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the framework deployment in the format
-   *     `organizations/{organization}/locations/{location}`. Only the global location is supported.
+   *     `organizations/{organization}/locations/{location}` or
+   *     `projects/{project}/locations/{location}`. Only the global location is supported.
    * @param frameworkDeployment Required. The framework deployment that you're creating.
    * @param frameworkDeploymentId Optional. An identifier for the framework deployment that's unique
    *     in scope of the parent. If you don't specify a value, then a random UUID is generated.
@@ -419,7 +473,8 @@ public class DeploymentClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the framework deployment in the format
-   *     `organizations/{organization}/locations/{location}`. Only the global location is supported.
+   *     `organizations/{organization}/locations/{location}` or
+   *     `projects/{project}/locations/{location}`. Only the global location is supported.
    * @param frameworkDeployment Required. The framework deployment that you're creating.
    * @param frameworkDeploymentId Optional. An identifier for the framework deployment that's unique
    *     in scope of the parent. If you don't specify a value, then a random UUID is generated.
@@ -551,14 +606,16 @@ public class DeploymentClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentClient deploymentClient = DeploymentClient.create()) {
    *   FrameworkDeploymentName name =
-   *       FrameworkDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
+   *       FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+   *           "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
    *   deploymentClient.deleteFrameworkDeploymentAsync(name).get();
    * }
    * }</pre>
    *
    * @param name Required. The name of the framework deployment that you want to delete, in the
    *     format
-   *     `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   *     `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+   *     or `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
    *     The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -585,7 +642,8 @@ public class DeploymentClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentClient deploymentClient = DeploymentClient.create()) {
    *   String name =
-   *       FrameworkDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
+   *       FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
    *           .toString();
    *   deploymentClient.deleteFrameworkDeploymentAsync(name).get();
    * }
@@ -593,7 +651,8 @@ public class DeploymentClient implements BackgroundResource {
    *
    * @param name Required. The name of the framework deployment that you want to delete, in the
    *     format
-   *     `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   *     `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+   *     or `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
    *     The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -620,7 +679,7 @@ public class DeploymentClient implements BackgroundResource {
    *   DeleteFrameworkDeploymentRequest request =
    *       DeleteFrameworkDeploymentRequest.newBuilder()
    *           .setName(
-   *               FrameworkDeploymentName.of(
+   *               FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
    *                       "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
    *                   .toString())
    *           .setEtag("etag3123477")
@@ -653,7 +712,7 @@ public class DeploymentClient implements BackgroundResource {
    *   DeleteFrameworkDeploymentRequest request =
    *       DeleteFrameworkDeploymentRequest.newBuilder()
    *           .setName(
-   *               FrameworkDeploymentName.of(
+   *               FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
    *                       "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
    *                   .toString())
    *           .setEtag("etag3123477")
@@ -686,7 +745,7 @@ public class DeploymentClient implements BackgroundResource {
    *   DeleteFrameworkDeploymentRequest request =
    *       DeleteFrameworkDeploymentRequest.newBuilder()
    *           .setName(
-   *               FrameworkDeploymentName.of(
+   *               FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
    *                       "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
    *                   .toString())
    *           .setEtag("etag3123477")
@@ -717,13 +776,15 @@ public class DeploymentClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentClient deploymentClient = DeploymentClient.create()) {
    *   FrameworkDeploymentName name =
-   *       FrameworkDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
+   *       FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+   *           "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]");
    *   FrameworkDeployment response = deploymentClient.getFrameworkDeployment(name);
    * }
    * }</pre>
    *
    * @param name Required. The name of the framework deployment, in the format
-   *     `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   *     `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+   *     or `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
    *     The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -749,14 +810,16 @@ public class DeploymentClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentClient deploymentClient = DeploymentClient.create()) {
    *   String name =
-   *       FrameworkDeploymentName.of("[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
+   *       FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
+   *               "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
    *           .toString();
    *   FrameworkDeployment response = deploymentClient.getFrameworkDeployment(name);
    * }
    * }</pre>
    *
    * @param name Required. The name of the framework deployment, in the format
-   *     `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   *     `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+   *     or `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
    *     The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -782,7 +845,7 @@ public class DeploymentClient implements BackgroundResource {
    *   GetFrameworkDeploymentRequest request =
    *       GetFrameworkDeploymentRequest.newBuilder()
    *           .setName(
-   *               FrameworkDeploymentName.of(
+   *               FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
    *                       "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
    *                   .toString())
    *           .build();
@@ -813,7 +876,7 @@ public class DeploymentClient implements BackgroundResource {
    *   GetFrameworkDeploymentRequest request =
    *       GetFrameworkDeploymentRequest.newBuilder()
    *           .setName(
-   *               FrameworkDeploymentName.of(
+   *               FrameworkDeploymentName.ofOrganizationLocationFrameworkDeploymentName(
    *                       "[ORGANIZATION]", "[LOCATION]", "[FRAMEWORK_DEPLOYMENT]")
    *                   .toString())
    *           .build();
@@ -842,6 +905,40 @@ public class DeploymentClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentClient deploymentClient = DeploymentClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (FrameworkDeployment element :
+   *       deploymentClient.listFrameworkDeployments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource of the framework deployment, in the format
+   *     `organizations/{organization}/locations/{location}` or
+   *     `projects/{project}/locations/{location}`. The only supported location is `global`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListFrameworkDeploymentsPagedResponse listFrameworkDeployments(LocationName parent) {
+    ListFrameworkDeploymentsRequest request =
+        ListFrameworkDeploymentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listFrameworkDeployments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the framework deployments in a given parent resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeploymentClient deploymentClient = DeploymentClient.create()) {
    *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   for (FrameworkDeployment element :
    *       deploymentClient.listFrameworkDeployments(parent).iterateAll()) {
@@ -851,8 +948,8 @@ public class DeploymentClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the framework deployment, in the format
-   *     `organizations/{organization}/locations/{location}`. The only supported location is
-   *     `global`.
+   *     `organizations/{organization}/locations/{location}` or
+   *     `projects/{project}/locations/{location}`. The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFrameworkDeploymentsPagedResponse listFrameworkDeployments(
@@ -886,8 +983,8 @@ public class DeploymentClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource of the framework deployment, in the format
-   *     `organizations/{organization}/locations/{location}`. The only supported location is
-   *     `global`.
+   *     `organizations/{organization}/locations/{location}` or
+   *     `projects/{project}/locations/{location}`. The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFrameworkDeploymentsPagedResponse listFrameworkDeployments(String parent) {
@@ -1023,14 +1120,16 @@ public class DeploymentClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentClient deploymentClient = DeploymentClient.create()) {
    *   CloudControlDeploymentName name =
-   *       CloudControlDeploymentName.of(
+   *       CloudControlDeploymentName.ofOrganizationLocationCloudControlDeploymentName(
    *           "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL_DEPLOYMENT]");
    *   CloudControlDeployment response = deploymentClient.getCloudControlDeployment(name);
    * }
    * }</pre>
    *
    * @param name Required. The name for the cloud control deployment, in the format
-   *     `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+   *     `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+   *     or
+   *     `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
    *     The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1056,7 +1155,7 @@ public class DeploymentClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentClient deploymentClient = DeploymentClient.create()) {
    *   String name =
-   *       CloudControlDeploymentName.of(
+   *       CloudControlDeploymentName.ofOrganizationLocationCloudControlDeploymentName(
    *               "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL_DEPLOYMENT]")
    *           .toString();
    *   CloudControlDeployment response = deploymentClient.getCloudControlDeployment(name);
@@ -1064,7 +1163,9 @@ public class DeploymentClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The name for the cloud control deployment, in the format
-   *     `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}`.
+   *     `organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`
+   *     or
+   *     `projects/{project}/locations/{location}/cloudControlDeployments/{cloud_control_deployment}`.
    *     The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1090,7 +1191,7 @@ public class DeploymentClient implements BackgroundResource {
    *   GetCloudControlDeploymentRequest request =
    *       GetCloudControlDeploymentRequest.newBuilder()
    *           .setName(
-   *               CloudControlDeploymentName.of(
+   *               CloudControlDeploymentName.ofOrganizationLocationCloudControlDeploymentName(
    *                       "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL_DEPLOYMENT]")
    *                   .toString())
    *           .build();
@@ -1122,7 +1223,7 @@ public class DeploymentClient implements BackgroundResource {
    *   GetCloudControlDeploymentRequest request =
    *       GetCloudControlDeploymentRequest.newBuilder()
    *           .setName(
-   *               CloudControlDeploymentName.of(
+   *               CloudControlDeploymentName.ofOrganizationLocationCloudControlDeploymentName(
    *                       "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL_DEPLOYMENT]")
    *                   .toString())
    *           .build();
@@ -1151,6 +1252,41 @@ public class DeploymentClient implements BackgroundResource {
    * // - It may require specifying regional endpoints when creating the service client as shown in
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DeploymentClient deploymentClient = DeploymentClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (CloudControlDeployment element :
+   *       deploymentClient.listCloudControlDeployments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource for the cloud control deployment, in the format
+   *     `organizations/{organization}/locations/{location}` or
+   *     `projects/{project}/locations/{location}`. The only supported location is `global`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListCloudControlDeploymentsPagedResponse listCloudControlDeployments(
+      LocationName parent) {
+    ListCloudControlDeploymentsRequest request =
+        ListCloudControlDeploymentsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listCloudControlDeployments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the cloud conrol deployments in a given parent resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DeploymentClient deploymentClient = DeploymentClient.create()) {
    *   OrganizationLocationName parent = OrganizationLocationName.of("[ORGANIZATION]", "[LOCATION]");
    *   for (CloudControlDeployment element :
    *       deploymentClient.listCloudControlDeployments(parent).iterateAll()) {
@@ -1160,8 +1296,8 @@ public class DeploymentClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource for the cloud control deployment, in the format
-   *     `organizations/{organization}/locations/{location}`. The only supported location is
-   *     `global`.
+   *     `organizations/{organization}/locations/{location}` or
+   *     `projects/{project}/locations/{location}`. The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCloudControlDeploymentsPagedResponse listCloudControlDeployments(
@@ -1195,8 +1331,8 @@ public class DeploymentClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource for the cloud control deployment, in the format
-   *     `organizations/{organization}/locations/{location}`. The only supported location is
-   *     `global`.
+   *     `organizations/{organization}/locations/{location}` or
+   *     `projects/{project}/locations/{location}`. The only supported location is `global`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCloudControlDeploymentsPagedResponse listCloudControlDeployments(String parent) {
@@ -1324,6 +1460,18 @@ public class DeploymentClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1356,6 +1504,18 @@ public class DeploymentClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1390,6 +1550,18 @@ public class DeploymentClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
