@@ -51,8 +51,8 @@ public class DatastoreMetricsRecorderTest {
                     .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
                     .build())
             .build();
-    OpenTelemetry builtInOtel =
-        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
+    OpenTelemetry builtInOtel = org.easymock.EasyMock.createMock(OpenTelemetry.class);
+    org.easymock.EasyMock.replay(builtInOtel);
     DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options, builtInOtel);
     assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
     CompositeDatastoreMetricsRecorder compositeRecorder =
@@ -71,8 +71,8 @@ public class DatastoreMetricsRecorderTest {
                     .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
                     .build())
             .build();
-    OpenTelemetry builtInOtel =
-        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
+    OpenTelemetry builtInOtel = org.easymock.EasyMock.createMock(OpenTelemetry.class);
+    org.easymock.EasyMock.replay(builtInOtel);
     DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options, builtInOtel);
     assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
     CompositeDatastoreMetricsRecorder compositeRecorder =
@@ -90,9 +90,7 @@ public class DatastoreMetricsRecorderTest {
                     .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
                     .build())
             .build();
-    OpenTelemetry builtInOtel =
-        BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
-    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options, builtInOtel);
+    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options, null);
 
     // Since baseOptions() uses NoCredentials, it should not have any recorders
     // as we don't want to send metrics for local emulator logic.
@@ -104,11 +102,7 @@ public class DatastoreMetricsRecorderTest {
 
   @Test
   public void openTelemetryRecorderCreatedWithExplicitOpenTelemetry() {
-    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
-    SdkMeterProvider meterProvider =
-        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
-    OpenTelemetry openTelemetry =
-        OpenTelemetrySdk.builder().setMeterProvider(meterProvider).build();
+    OpenTelemetry openTelemetry = OpenTelemetry.noop();
 
     OpenTelemetryDatastoreMetricsRecorder recorder =
         new OpenTelemetryDatastoreMetricsRecorder(openTelemetry, TelemetryConstants.METRIC_PREFIX);

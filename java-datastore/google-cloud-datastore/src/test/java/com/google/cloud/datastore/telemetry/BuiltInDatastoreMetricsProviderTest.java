@@ -23,6 +23,7 @@ import com.google.auth.Credentials;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.datastore.DatastoreOptions;
 import io.opentelemetry.api.OpenTelemetry;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.util.Map;
 import org.easymock.EasyMock;
 import org.junit.Test;
@@ -71,7 +72,13 @@ public class BuiltInDatastoreMetricsProviderTest {
             .build();
 
     OpenTelemetry otel = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
-    assertThat(otel).isNotNull();
+    try {
+      assertThat(otel).isNotNull();
+    } finally {
+      if (otel instanceof OpenTelemetrySdk) {
+        ((OpenTelemetrySdk) otel).close();
+      }
+    }
   }
 
   @Test
@@ -100,8 +107,17 @@ public class BuiltInDatastoreMetricsProviderTest {
 
     OpenTelemetry otel1 = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options1);
     OpenTelemetry otel2 = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options2);
-    assertThat(otel1).isNotNull();
-    assertThat(otel2).isNotNull();
-    assertThat(otel1).isNotSameInstanceAs(otel2);
+    try {
+      assertThat(otel1).isNotNull();
+      assertThat(otel2).isNotNull();
+      assertThat(otel1).isNotSameInstanceAs(otel2);
+    } finally {
+      if (otel1 instanceof OpenTelemetrySdk) {
+        ((OpenTelemetrySdk) otel1).close();
+      }
+      if (otel2 instanceof OpenTelemetrySdk) {
+        ((OpenTelemetrySdk) otel2).close();
+      }
+    }
   }
 }
