@@ -1572,14 +1572,14 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
 
     try {
+      Tracer tracer = this.connection.getTracer();
       while (currentPageToken != null) {
         if (Thread.currentThread().isInterrupted() || queryTaskExecutor.isShutdown()) {
           LOG.warning("%s Interrupted @ runNextPageTaskAsync", Thread.currentThread().getName());
           break;
         }
 
-        SpanBuilder spanBuilder =
-            this.connection.getTracer().spanBuilder("BigQueryStatement.pagination");
+        SpanBuilder spanBuilder = tracer.spanBuilder("BigQueryStatement.pagination");
         if (parentSpanContext.isValid()) {
           spanBuilder.addLink(parentSpanContext);
         }
