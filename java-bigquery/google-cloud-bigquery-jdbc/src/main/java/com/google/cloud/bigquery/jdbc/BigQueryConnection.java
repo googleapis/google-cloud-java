@@ -202,9 +202,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         } else if (parts.length == 1) {
           this.defaultDataset = DatasetId.of(parts[0]);
         } else {
-          throw new IllegalArgumentException(
-              "DefaultDataset format is invalid. Supported options are datasetId or"
-                  + " projectId.datasetId");
+          IllegalArgumentException ex =
+              new IllegalArgumentException(
+                  "DefaultDataset format is invalid. Supported options are datasetId or"
+                      + " projectId.datasetId");
+          LOG.severe(ex.getMessage(), ex);
+          throw ex;
         }
       }
       this.location = ds.getLocation();
@@ -280,6 +283,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         version = props.getProperty("version.jdbc");
       }
     } catch (IOException e) {
+      LOG.warning("Failed to load dependencies.properties");
       return DEFAULT_VERSION;
     }
 
@@ -310,8 +314,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         this.bigQueryReadClient = getBigQueryReadClientConnection();
       }
     } catch (IOException e) {
-      LOG.severe(e, "Failed to initialize BigQueryReadClient");
-      throw new BigQueryJdbcRuntimeException(e);
+      throw new BigQueryJdbcRuntimeException("Failed to initialize BigQueryReadClient", e);
     }
     return this.bigQueryReadClient;
   }
@@ -322,8 +325,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
         this.bigQueryWriteClient = getBigQueryWriteClientConnection();
       }
     } catch (IOException e) {
-      LOG.severe(e, "Failed to initialize BigQueryWriteClient");
-      throw new BigQueryJdbcRuntimeException(e);
+      throw new BigQueryJdbcRuntimeException("Failed to initialize BigQueryWriteClient", e);
     }
     return this.bigQueryWriteClient;
   }
@@ -585,8 +587,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       }
       this.transactionStarted = true;
     } catch (InterruptedException ex) {
-      LOG.severe(ex, "Failed to begin transaction");
-      throw new BigQueryJdbcRuntimeException(ex);
+      throw new BigQueryJdbcRuntimeException("Failed to begin transaction", ex);
     }
   }
 
@@ -799,9 +800,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       checkClosed();
       checkIfEnabledSession("commit");
       if (!isTransactionStarted()) {
-        throw new IllegalStateException(
-            "Cannot commit without an active transaction. Please set setAutoCommit to false to start"
-                + " a transaction.");
+        IllegalStateException ex =
+            new IllegalStateException(
+                "Cannot commit without an active transaction. Please set setAutoCommit to false to start"
+                    + " a transaction.");
+        LOG.severe(ex.getMessage(), ex);
+        throw ex;
       }
       commitTransaction();
       if (!getAutoCommit()) {
@@ -818,9 +822,12 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       checkClosed();
       checkIfEnabledSession("rollback");
       if (!isTransactionStarted()) {
-        throw new IllegalStateException(
-            "Cannot rollback without an active transaction. Please set setAutoCommit to false to"
-                + " start a transaction.");
+        IllegalStateException ex =
+            new IllegalStateException(
+                "Cannot rollback without an active transaction. Please set setAutoCommit to false to"
+                    + " start a transaction.");
+        LOG.severe(ex.getMessage(), ex);
+        throw ex;
       }
       rollbackImpl();
     }
@@ -880,11 +887,14 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void setHoldability(int holdability) throws SQLException {
-    if (holdability != ResultSet.CLOSE_CURSORS_AT_COMMIT) {
-      throw new BigQueryJdbcSqlFeatureNotSupportedException(
-          "CLOSE_CURSORS_AT_COMMIT not supported");
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this, this.connectionId)) {
+      if (holdability != ResultSet.CLOSE_CURSORS_AT_COMMIT) {
+        throw new BigQueryJdbcSqlFeatureNotSupportedException(
+            "CLOSE_CURSORS_AT_COMMIT not supported");
+      }
+      this.holdability = holdability;
     }
-    this.holdability = holdability;
   }
 
   /**
@@ -927,11 +937,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       }
       this.openStatements.clear();
     } catch (ConcurrentModificationException ex) {
-      LOG.severe(ex, "Concurrent modification during close");
-      throw new BigQueryJdbcException(ex);
+      throw new BigQueryJdbcException("Concurrent modification during close", ex);
     } catch (InterruptedException e) {
-      LOG.severe(e, "Interrupted during close");
-      throw new BigQueryJdbcRuntimeException(e);
+      throw new BigQueryJdbcRuntimeException("Interrupted during close", e);
     } finally {
       BigQueryJdbcMdc.removeInstance(this);
       BigQueryJdbcRootLogger.closeConnectionHandler(this.connectionId);
@@ -946,17 +954,20 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   private void checkClosed() {
     if (isClosed()) {
-      LOG.severe("This %s has been closed", getClass().getName());
-      throw new IllegalStateException(
-          String.format("This %s has been closed", getClass().getName()));
+      IllegalStateException ex =
+          new IllegalStateException("This " + getClass().getName() + " has been closed");
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
   }
 
   private void checkIfEnabledSession(String methodName) {
     if (!this.enableSession) {
-      LOG.severe("Session needs to be enabled to use %s method.", methodName);
-      throw new IllegalStateException(
-          String.format("Session needs to be enabled to use %s method.", methodName));
+      IllegalStateException ex =
+          new IllegalStateException(
+              String.format("Session needs to be enabled to use %s method.", methodName));
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
   }
 
@@ -1139,17 +1150,20 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       commitJob.waitFor();
       this.transactionStarted = false;
     } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException(ex);
+      throw new BigQueryJdbcRuntimeException("Interrupted during commitTransaction", ex);
     }
   }
 
   @Override
   public CallableStatement prepareCall(String sql) throws SQLException {
-    checkClosed();
-    CallableStatement currentStatement = new BigQueryCallableStatement(this, sql);
-    LOG.fine("Callable Statement %s created.", currentStatement);
-    addOpenStatements(currentStatement);
-    return currentStatement;
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this, this.connectionId)) {
+      checkClosed();
+      CallableStatement currentStatement = new BigQueryCallableStatement(this, sql);
+      LOG.fine("Callable Statement %s created.", currentStatement);
+      addOpenStatements(currentStatement);
+      return currentStatement;
+    }
   }
 
   @Override

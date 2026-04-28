@@ -665,13 +665,13 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public Ref getRef(int arg0) throws SQLException {
-    // TODO Auto-generated method stub
+    // Auto-generated method stub
     return null;
   }
 
   @Override
   public Ref getRef(String arg0) throws SQLException {
-    // TODO Auto-generated method stub
+    // Auto-generated method stub
     return null;
   }
 
@@ -703,13 +703,13 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
 
   @Override
   public SQLXML getSQLXML(int arg0) throws SQLException {
-    // TODO Auto-generated method stub
+    // Auto-generated method stub
     return null;
   }
 
   @Override
   public SQLXML getSQLXML(String arg0) throws SQLException {
-    // TODO Auto-generated method stub
+    // Auto-generated method stub
     return null;
   }
 
@@ -940,7 +940,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
           BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
           -1);
     } catch (Exception e) {
-      throw new SQLException(e);
+      SQLException ex = new SQLException(e);
+      LOG.severe("Failed to registerOutParameter", ex);
+      throw ex;
     }
   }
 
@@ -957,7 +959,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
           BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
           -1);
     } catch (Exception e) {
-      throw new SQLException(e);
+      SQLException ex = new SQLException(e);
+      LOG.severe("Failed to registerOutParameter", ex);
+      throw ex;
     }
   }
 
@@ -968,8 +972,11 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
         "registerOutParameter: paramIndex %s, sqlType %s, scale %s", paramIndex, sqlType, scale);
     checkClosed();
     if (sqlType != Types.NUMERIC && sqlType != Types.DECIMAL) {
-      throw new IllegalArgumentException(
-          String.format("registerOutParameter: Invalid sqlType passed in %s", sqlType));
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              String.format("registerOutParameter: Invalid sqlType passed in %s", sqlType));
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
     try {
       this.parameterHandler.setParameter(
@@ -979,7 +986,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
           BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
           scale);
     } catch (Exception e) {
-      throw new SQLException(e);
+      SQLException ex = new SQLException(e);
+      LOG.severe("Failed to registerOutParameter", ex);
+      throw ex;
     }
   }
 
@@ -1001,8 +1010,11 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
         "registerOutParameter: paramIndex %s, sqlType %s, scale %s", paramName, sqlType, scale);
     checkClosed();
     if (sqlType != Types.NUMERIC && sqlType != Types.DECIMAL) {
-      throw new IllegalArgumentException(
-          String.format("registerOutParameter: Invalid sqlType passed in %s", sqlType));
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              String.format("registerOutParameter: Invalid sqlType passed in %s", sqlType));
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
     try {
       this.parameterHandler.setParameter(
@@ -1012,7 +1024,9 @@ class BigQueryCallableStatement extends BigQueryPreparedStatement implements Cal
           BigQueryParameterHandler.BigQueryStatementParameterType.OUT,
           scale);
     } catch (Exception e) {
-      throw new SQLException(e);
+      SQLException ex = new SQLException(e);
+      LOG.severe("Failed to registerOutParameter", ex);
+      throw ex;
     }
   }
 

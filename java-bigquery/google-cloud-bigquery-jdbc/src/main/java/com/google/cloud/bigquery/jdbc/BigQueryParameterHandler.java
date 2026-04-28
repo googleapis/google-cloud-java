@@ -66,7 +66,7 @@ class BigQueryParameterHandler {
             QueryParameterValue.of(parameterValue, sqlType));
       }
     } catch (NullPointerException e) {
-      LOG.severe(e, "Null parameter mapping encountered.");
+      LOG.severe("Null parameter mapping encountered.", e);
       if (e.getMessage().contains("Null type")) {
         throw new BigQueryJdbcException("One or more parameters missing in Prepared statement.", e);
       }
@@ -106,7 +106,7 @@ class BigQueryParameterHandler {
     if (parameterIndex > this.parametersArraySize) {
       IndexOutOfBoundsException ex =
           new IndexOutOfBoundsException("All parameters already provided.");
-      LOG.severe(ex, "All parameters already provided.");
+      LOG.severe("All parameters already provided.", ex);
       throw ex;
     }
   }
@@ -157,7 +157,7 @@ class BigQueryParameterHandler {
     if (paramName == null || paramName.isEmpty()) {
       IllegalArgumentException ex =
           new IllegalArgumentException("paramName cannot be null or empty");
-      LOG.severe(ex, "paramName cannot be null or empty");
+      LOG.severe("paramName cannot be null or empty", ex);
       throw ex;
     }
     BigQueryJdbcParameter parameter = null;

@@ -33,6 +33,8 @@ import java.util.Map;
 
 @InternalApi
 class BigQueryJdbcTypeMappings {
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryJdbcTypeMappings.class.getName());
 
   static final Map<StandardSQLTypeName, Class<?>> standardSQLToJavaTypeMapping =
       ImmutableMap.ofEntries(

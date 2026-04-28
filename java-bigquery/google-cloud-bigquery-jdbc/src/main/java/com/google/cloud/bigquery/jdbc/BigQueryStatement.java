@@ -250,8 +250,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           setDestinationDatasetAndTableInJobConfig(getJobConfig(sql).build());
       runQuery(sql, jobConfiguration);
     } catch (InterruptedException ex) {
-      LOG.severe(ex, "Interrupted during executeQuery");
-      throw new BigQueryJdbcException(ex);
+      throw new BigQueryJdbcException("Interrupted during executeQuery", ex);
     }
 
     if (!isSingularResultSet()) {
@@ -277,8 +276,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
       runQuery(sql, jobConfiguration.build());
     } catch (InterruptedException ex) {
-      LOG.severe(ex, "Interrupted during executeLargeUpdate");
-      throw new BigQueryJdbcRuntimeException(ex);
+      throw new BigQueryJdbcRuntimeException("Interrupted during executeLargeUpdate", ex);
     }
     if (this.currentUpdateCount == -1) {
       throw new BigQueryJdbcException(
@@ -328,7 +326,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       }
       runQuery(sql, jobConfiguration);
     } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException(ex);
+      throw new BigQueryJdbcRuntimeException("Interrupted during execute", ex);
     }
     return getCurrentResultSet() != null;
   }
@@ -342,9 +340,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       job = bigQuery.create(JobInfo.of(dryRunJobConfiguration));
     } catch (BigQueryException ex) {
       if (ex.getMessage().contains("Syntax error")) {
-        throw new BigQueryJdbcSqlSyntaxErrorException(ex);
+        throw new BigQueryJdbcSqlSyntaxErrorException(
+            "BigQueryException during getStatementType", ex);
       }
-      throw new BigQueryJdbcException(ex);
+      throw new BigQueryJdbcException("BigQueryException during getStatementType", ex);
     }
     QueryStatistics statistics = job.getStatistics();
     return statistics.getStatementType();
@@ -375,9 +374,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       return job.getStatistics();
     } catch (BigQueryException ex) {
       if (ex.getMessage().contains("Syntax error")) {
-        throw new BigQueryJdbcSqlSyntaxErrorException(ex);
+        throw new BigQueryJdbcSqlSyntaxErrorException(
+            "BigQueryException during getQueryStatistics", ex);
       }
-      throw new BigQueryJdbcException(ex);
+      throw new BigQueryJdbcException("BigQueryException during getQueryStatistics", ex);
     }
   }
 
@@ -448,7 +448,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @Override
   public void setQueryTimeout(int seconds) {
     if (seconds < 0) {
-      throw new IllegalArgumentException("Query Timeout should be >= 0.");
+      IllegalArgumentException ex = new IllegalArgumentException("Query Timeout should be >= 0.");
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
     this.queryTimeout = seconds;
   }
@@ -639,12 +641,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       SqlType queryType = getQueryType(jobConfiguration, statementType);
       handleQueryResult(query, executeResult.tableResult, queryType);
     } catch (InterruptedException ex) {
-      throw new BigQueryJdbcRuntimeException(ex);
+      throw new BigQueryJdbcRuntimeException("Interrupted during runQuery", ex);
     } catch (BigQueryException ex) {
       if (ex.getMessage().contains("Syntax error")) {
-        throw new BigQueryJdbcSqlSyntaxErrorException(ex);
+        throw new BigQueryJdbcSqlSyntaxErrorException("BigQueryException during runQuery", ex);
       }
-      throw new BigQueryJdbcException(ex);
+      throw new BigQueryJdbcException("BigQueryException during runQuery", ex);
     }
   }
 
@@ -1430,7 +1432,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
     SqlType sqlType = getQueryType(QueryJobConfiguration.newBuilder(sql).build(), null);
     if (!SqlType.DML.equals(sqlType)) {
-      throw new IllegalArgumentException("addBatch currently supports DML operations.");
+      IllegalArgumentException ex =
+          new IllegalArgumentException("addBatch currently supports DML operations.");
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
     this.batchQueries.add(sql);
   }
