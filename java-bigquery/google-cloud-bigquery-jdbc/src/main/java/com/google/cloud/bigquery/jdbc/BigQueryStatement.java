@@ -104,6 +104,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   protected int currentJobIdIndex = -1;
   protected List<String> batchQueries = new ArrayList<>();
   protected BigQueryConnection connection;
+  protected String connectionId;
   protected int maxFieldSize = 0;
   protected int maxRows = 0;
   protected boolean isClosed = false;
@@ -149,6 +150,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   @VisibleForTesting
   public BigQueryStatement(BigQueryConnection connection) {
     this.connection = connection;
+    this.connectionId = connection.getConnectionId();
     this.bigQuery = connection.getBigQuery();
     this.querySettings = generateBigQuerySettings();
   }
@@ -233,8 +235,15 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public ResultSet executeQuery(String sql) throws SQLException {
-    // TODO: write method to return state variables to original state.
-    LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+      LOG.finest("++enter++");
+      checkClosed();
+      return executeQueryImpl(sql);
+    }
+  }
+
+  private ResultSet executeQueryImpl(String sql) throws SQLException {
     logQueryExecutionStart(sql);
     try {
       QueryJobConfiguration jobConfiguration =
@@ -249,13 +258,20 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       throw new BigQueryJdbcException(
           "Query returned more than one or didn't return any ResultSet.");
     }
-    // This contains all the other assertions spec required on this method
     return getCurrentResultSet();
   }
 
   @Override
   public long executeLargeUpdate(String sql) throws SQLException {
-    LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+      LOG.finest("++enter++");
+      checkClosed();
+      return executeLargeUpdateImpl(sql);
+    }
+  }
+
+  private long executeLargeUpdateImpl(String sql) throws SQLException {
     logQueryExecutionStart(sql);
     try {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
@@ -273,8 +289,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public int executeUpdate(String sql) throws SQLException {
-    LOG.finest("++enter++");
-    return checkUpdateCount(executeLargeUpdate(sql));
+    try {
+      BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
+      LOG.finest("++enter++");
+      return checkUpdateCount(executeLargeUpdate(sql));
+    } finally {
+      BigQueryJdbcMdc.clear();
+    }
   }
 
   int checkUpdateCount(long updateCount) {
@@ -289,7 +310,15 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean execute(String sql) throws SQLException {
-    LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+      LOG.finest("++enter++");
+      checkClosed();
+      return executeImpl(sql);
+    }
+  }
+
+  private boolean executeImpl(String sql) throws SQLException {
     logQueryExecutionStart(sql);
     try {
       QueryJobConfiguration jobConfiguration = getJobConfig(sql).build();
@@ -363,23 +392,26 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public void close() throws SQLException {
-    LOG.fine("Closing Statement %s.", this);
     if (isClosed()) {
       return;
     }
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+      LOG.fine("Closing Statement %s.", this);
 
-    boolean cancelSucceeded = false;
-    try {
-      cancel(); // This attempts to cancel jobs and calls closeStatementResources()
-      cancelSucceeded = true;
-    } catch (SQLException e) {
-      LOG.warning("Failed to cancel statement during close().", e);
-    } finally {
-      if (!cancelSucceeded) {
-        closeStatementResources();
+      boolean cancelSucceeded = false;
+      try {
+        cancel(); // This attempts to cancel jobs and calls closeStatementResources()
+        cancelSucceeded = true;
+      } catch (SQLException e) {
+        LOG.warning("Failed to cancel statement during close().", e);
+      } finally {
+        if (!cancelSucceeded) {
+          closeStatementResources();
+        }
+        this.connection = null;
+        this.isClosed = true;
       }
-      this.connection = null;
-      this.isClosed = true;
     }
   }
 
@@ -429,28 +461,31 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public void cancel() throws SQLException {
-    LOG.finest("Statement %s cancelled", this);
-    synchronized (cancelLock) {
-      this.isCanceled = true;
-      for (JobId jobId : this.jobIds) {
-        try {
-          this.bigQuery.cancel(jobId);
-          LOG.info("Job " + jobId + "cancelled.");
-        } catch (BigQueryException e) {
-          if (e.getMessage() != null
-              && (e.getMessage().contains("Job is already in state DONE")
-                  || e.getMessage().contains("Error: 3848323"))) {
-            LOG.warning("Attempted to cancel a job that was already done: " + jobId);
-          } else {
-            throw new BigQueryJdbcException(e);
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+      LOG.finest("Statement %s cancelled", this);
+      synchronized (cancelLock) {
+        this.isCanceled = true;
+        for (JobId jobId : this.jobIds) {
+          try {
+            this.bigQuery.cancel(jobId);
+            LOG.info("Job " + jobId + "cancelled.");
+          } catch (BigQueryException e) {
+            if (e.getMessage() != null
+                && (e.getMessage().contains("Job is already in state DONE")
+                    || e.getMessage().contains("Error: 3848323"))) {
+              LOG.warning("Attempted to cancel a job that was already done: " + jobId);
+            } else {
+              throw new BigQueryJdbcException(e);
+            }
           }
         }
+        jobIds.clear();
       }
-      jobIds.clear();
+      // If a ResultSet exists, then it will be closed as well, closing the
+      // ownedThreads
+      closeStatementResources();
     }
-    // If a ResultSet exists, then it will be closed as well, closing the
-    // ownedThreads
-    closeStatementResources();
   }
 
   @Override
@@ -1447,8 +1482,15 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean getMoreResults(int current) throws SQLException {
-    LOG.finest("++enter++");
-    checkClosed();
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+      LOG.finest("++enter++");
+      checkClosed();
+      return getMoreResultsImpl(current);
+    }
+  }
+
+  private boolean getMoreResultsImpl(int current) throws SQLException {
     if (current != CLOSE_CURRENT_RESULT) {
       throw new BigQueryJdbcSqlFeatureNotSupportedException(
           "The JDBC driver only supports Statement.CLOSE_CURRENT_RESULT.");

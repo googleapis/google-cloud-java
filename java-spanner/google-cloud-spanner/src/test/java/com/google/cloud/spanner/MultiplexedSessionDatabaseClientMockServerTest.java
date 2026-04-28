@@ -105,7 +105,7 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
   public void testCreateSessionDeadlineExceeded() {
     // Simulate a problem with the CreateSession RPC making it slow.
     mockSpanner.setCreateSessionExecutionTime(
-        SimulatedExecutionTime.ofException(Status.DEADLINE_EXCEEDED.asRuntimeException()));
+        SimulatedExecutionTime.ofStickyException(Status.DEADLINE_EXCEEDED.asRuntimeException()));
 
     Spanner testSpanner =
         SpannerOptions.newBuilder()

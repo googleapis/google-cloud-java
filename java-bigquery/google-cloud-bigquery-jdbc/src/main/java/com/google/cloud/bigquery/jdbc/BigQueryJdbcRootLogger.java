@@ -19,14 +19,10 @@ package com.google.cloud.bigquery.jdbc;
 import com.google.common.base.Strings;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.ConsoleHandler;
-import java.util.logging.FileHandler;
 import java.util.logging.Formatter;
 import java.util.logging.Handler;
 import java.util.logging.Level;
@@ -46,13 +42,11 @@ class BigQueryJdbcRootLogger {
   private static final boolean isTest = Boolean.getBoolean("JDBC_TESTS");
 
   private static Handler fileHandler = null;
-  private static Path currentLogPath = null;
-  private static int fileCounter = 0;
 
   static final String PROCESS_ID = ManagementFactory.getRuntimeMXBean().getName().split("@")[0];
 
-  private static final ThreadLocal<SimpleDateFormat> DATE_FORMATTER =
-      ThreadLocal.withInitial(() -> new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS"));
+  private static final DateTimeFormatter DATE_FORMATTER =
+      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS").withZone(ZoneId.systemDefault());
 
   static String getThreadName(long threadId) {
     Thread current = Thread.currentThread();
@@ -92,7 +86,10 @@ class BigQueryJdbcRootLogger {
 
       @Override
       public String format(LogRecord record) {
-        String date = DATE_FORMATTER.get().format(new Date(record.getMillis()));
+        String date = DATE_FORMATTER.format(Instant.ofEpochMilli(record.getMillis()));
+        String connectionId = BigQueryJdbcMdc.getConnectionId();
+        String connStr =
+            (connectionId != null && !connectionId.isEmpty()) ? connectionId : "NO_CONN";
 
         long threadId = record.getThreadID();
         String threadName = getThreadName(threadId);
@@ -104,13 +101,13 @@ class BigQueryJdbcRootLogger {
         String sourceClassName = record.getLoggerName();
         String sourceMethodName = record.getSourceMethodName();
 
-        // Expected log format: yyyy-MM-dd HH:mm:ss.SSS LEVEL PID --- [THREAD] CLASS METHOD: MESSAGE
-        // Example: 2026-04-22 10:16:00.123  INFO 12345 --- [main   ]
-        // com.google.cloud.bigquery.jdbc.BigQueryConnection connect             : Connection
-        // successful
+        // Expected log format: yyyy-MM-dd HH:mm:ss.SSS [CONNECTION_ID] LEVEL PID --- [THREAD] CLASS
+        // METHOD: MESSAGE
         StringBuilder sb = new StringBuilder(256);
         sb.append(date)
-            .append(" ")
+            .append(" [")
+            .append(connStr)
+            .append("] ")
             .append(Strings.padStart(record.getLevel().getName(), 5, ' '))
             .append(" ")
             .append(PROCESS_ID)
@@ -139,41 +136,9 @@ class BigQueryJdbcRootLogger {
     return logger;
   }
 
-  private static void setHandler() throws IOException {
-    // If Console handler exists, remove it.
-    // If File handler exists, use it. Else create new one.
-    for (Handler h : logger.getHandlers()) {
-      if (h instanceof ConsoleHandler) {
-        if (!isTest) {
-          h.close();
-          logger.removeHandler(h);
-        }
-      } else if (h instanceof FileHandler) {
-        fileHandler = h;
-      }
-    }
-
-    if (fileHandler == null) {
-      String fileName = String.format("BigQueryJdbc%d", fileCounter);
-      fileCounter++;
-
-      currentLogPath = Files.createTempFile(fileName, ".log");
-      currentLogPath.toFile().deleteOnExit();
-
-      fileHandler = new FileHandler(currentLogPath.toString(), 0, 1, true);
-      logger.addHandler(fileHandler);
-    }
-  }
-
   public static void setLevel(Level level, String logPath) throws IOException {
     if (level != Level.OFF) {
-      setPath(logPath);
-      if (logger.getHandlers().length == 0) {
-        setHandler();
-        fileHandler.setFormatter(getFormatter());
-        logger.setUseParentHandlers(false);
-      }
-      fileHandler.setLevel(level);
+      setPath(logPath, level);
       logger.setLevel(level);
     } else {
       for (Handler h : logger.getHandlers()) {
@@ -181,45 +146,36 @@ class BigQueryJdbcRootLogger {
         logger.removeHandler(h);
       }
       fileHandler = null;
-      currentLogPath = null;
     }
   }
 
-  static void setPath(String logPath) {
+  static void setPath(String logPath, Level level) {
     try {
+      if (logPath == null) {
+        logPath = "";
+      }
       if (!logPath.isEmpty() && !logPath.endsWith("/")) {
         logPath = logPath + "/";
       }
-      Path dir = Paths.get(logPath);
-      if (!Files.exists(dir)) {
-        Files.createDirectory(dir);
+
+      if (fileHandler != null) {
+        fileHandler.close();
+        logger.removeHandler(fileHandler);
       }
 
-      String fileName = String.format("BigQueryJdbc%d.log", fileCounter);
-      fileCounter++;
-      Path destination = Paths.get(logPath + fileName).toAbsolutePath();
-
-      if (currentLogPath != null && !currentLogPath.equals(destination)) {
-        Path source = Paths.get(currentLogPath.toUri());
-        Files.move(source, destination, StandardCopyOption.REPLACE_EXISTING);
-      }
-
-      currentLogPath = destination;
-      fileHandler = new FileHandler(currentLogPath.toString(), 0, 1, true);
-      fileHandler.setFormatter(getFormatter());
-
-      for (Handler h : logger.getHandlers()) {
-        if (h instanceof FileHandler) {
-          h.close();
-          logger.removeHandler(h);
-          break;
-        }
-      }
-
+      fileHandler = new PerConnectionFileHandler(logPath, level);
+      fileHandler.setLevel(level);
       logger.addHandler(fileHandler);
+      logger.setUseParentHandlers(false);
 
-    } catch (IOException ex) {
+    } catch (Exception ex) {
       logger.warning("Log File warning : " + ex);
+    }
+  }
+
+  public static void closeConnectionHandler(String connectionId) {
+    if (fileHandler instanceof PerConnectionFileHandler) {
+      ((PerConnectionFileHandler) fileHandler).closeHandler(connectionId);
     }
   }
 }
