@@ -275,6 +275,55 @@ public interface ExecuteToolRequestOrBuilder
    */
   com.google.protobuf.StructOrBuilder getArgsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mock configuration for the tool execution.
+   * If this field is set, tools that call other tools will be
+   * mocked based on the provided patterns and responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.MockConfig mock_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the mockConfig field is set.
+   */
+  boolean hasMockConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mock configuration for the tool execution.
+   * If this field is set, tools that call other tools will be
+   * mocked based on the provided patterns and responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.MockConfig mock_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The mockConfig.
+   */
+  com.google.cloud.ces.v1beta.MockConfig getMockConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Mock configuration for the tool execution.
+   * If this field is set, tools that call other tools will be
+   * mocked based on the provided patterns and responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.MockConfig mock_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.MockConfigOrBuilder getMockConfigOrBuilder();
+
   com.google.cloud.ces.v1beta.ExecuteToolRequest.ToolIdentifierCase getToolIdentifierCase();
 
   com.google.cloud.ces.v1beta.ExecuteToolRequest.ToolExecutionContextCase

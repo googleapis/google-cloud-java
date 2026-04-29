@@ -14,8 +14,8 @@
 
 
 deep-remove-regex:
-  - "/java-iam/grpc-google-.*/src"
-  - "/java-iam/proto-google-.*/src"
+  - "/java-iam-policy/grpc-google-.*/src"
+  - "/java-iam-policy/proto-google-.*/src"
 
 deep-preserve-regex:
   - "/.*google-.*/src/main/java/.*/stub/Version.java"
@@ -24,12 +24,12 @@ deep-preserve-regex:
 
 deep-copy-regex:
   - source: "/google/iam/v2beta/.*-java/gapic-google-.*/src"
-    dest: "/owl-bot-staging/java-iam/v2beta/google-iam-policy/src"
+    dest: "/owl-bot-staging/java-iam-policy/v2beta/google-iam-policy/src"
   - source: "/google/iam/v2/.*-java/gapic-google-.*/src"
-    dest: "/owl-bot-staging/java-iam/v2/google-iam-policy/src"
+    dest: "/owl-bot-staging/java-iam-policy/v2/google-iam-policy/src"
   - source: "/google/iam/v3/.*-java/gapic-google-.*/src"
-    dest: "/owl-bot-staging/java-iam/v3/google-iam-policy/src"
+    dest: "/owl-bot-staging/java-iam-policy/v3/google-iam-policy/src"
   - source: "/google/iam/v3beta/.*-java/gapic-google-.*/src"
-    dest: "/owl-bot-staging/java-iam/v3beta/google-iam-policy/src"
+    dest: "/owl-bot-staging/java-iam-policy/v3beta/google-iam-policy/src"
 
-api-name: iam
+api-name: iam-policy

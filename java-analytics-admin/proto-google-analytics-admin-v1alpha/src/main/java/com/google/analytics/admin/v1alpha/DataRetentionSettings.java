@@ -330,11 +330,11 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Output only. Resource name for this DataRetentionSetting resource.
+   * Identifier. Resource name for this DataRetentionSetting resource.
    * Format: properties/{property}/dataRetentionSettings
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -355,11 +355,11 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Output only. Resource name for this DataRetentionSetting resource.
+   * Identifier. Resource name for this DataRetentionSetting resource.
    * Format: properties/{property}/dataRetentionSettings
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -881,11 +881,11 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Resource name for this DataRetentionSetting resource.
+     * Identifier. Resource name for this DataRetentionSetting resource.
      * Format: properties/{property}/dataRetentionSettings
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -905,11 +905,11 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Resource name for this DataRetentionSetting resource.
+     * Identifier. Resource name for this DataRetentionSetting resource.
      * Format: properties/{property}/dataRetentionSettings
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -929,11 +929,11 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Resource name for this DataRetentionSetting resource.
+     * Identifier. Resource name for this DataRetentionSetting resource.
      * Format: properties/{property}/dataRetentionSettings
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -952,11 +952,11 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Resource name for this DataRetentionSetting resource.
+     * Identifier. Resource name for this DataRetentionSetting resource.
      * Format: properties/{property}/dataRetentionSettings
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -971,11 +971,11 @@ public final class DataRetentionSettings extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Resource name for this DataRetentionSetting resource.
+     * Identifier. Resource name for this DataRetentionSetting resource.
      * Format: properties/{property}/dataRetentionSettings
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

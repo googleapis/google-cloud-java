@@ -62,6 +62,11 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-datastore-v1</artifactId>
+        <version>2.40.0</version><!-- {x-version-update:grpc-google-cloud-datastore-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-datastore-v1</artifactId>
         <version>0.131.0</version><!-- {x-version-update:proto-google-cloud-datastore-v1:current} -->
       </dependency>

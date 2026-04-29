@@ -27,6 +27,8 @@ import com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesRequest;
 import com.google.cloud.aiplatform.v1beta1.EvaluateInstancesResponse;
+import com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsRequest;
+import com.google.cloud.aiplatform.v1beta1.GenerateInstanceRubricsResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -67,6 +69,11 @@ public abstract class EvaluationServiceStub implements BackgroundResource {
 
   public UnaryCallable<EvaluateDatasetRequest, Operation> evaluateDatasetCallable() {
     throw new UnsupportedOperationException("Not implemented: evaluateDatasetCallable()");
+  }
+
+  public UnaryCallable<GenerateInstanceRubricsRequest, GenerateInstanceRubricsResponse>
+      generateInstanceRubricsCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateInstanceRubricsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

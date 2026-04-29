@@ -231,6 +231,7 @@ public class NetAppClientTest {
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
             .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -316,6 +317,7 @@ public class NetAppClientTest {
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
             .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -401,6 +403,7 @@ public class NetAppClientTest {
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
             .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -471,6 +474,7 @@ public class NetAppClientTest {
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
             .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -541,6 +545,7 @@ public class NetAppClientTest {
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
             .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -758,6 +763,7 @@ public class NetAppClientTest {
             .setHotTierSizeUsedGib(-151116719)
             .setType(StoragePoolType.forNumber(0))
             .setMode(Mode.forNumber(0))
+            .setScaleType(ScaleType.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -941,6 +947,7 @@ public class NetAppClientTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
             .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
@@ -1022,6 +1029,7 @@ public class NetAppClientTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
             .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
@@ -1103,6 +1111,7 @@ public class NetAppClientTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
             .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1198,6 +1207,7 @@ public class NetAppClientTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
             .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1293,6 +1303,7 @@ public class NetAppClientTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
             .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1469,6 +1480,7 @@ public class NetAppClientTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
             .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -1567,6 +1579,7 @@ public class NetAppClientTest {
             .setCacheParameters(CacheParameters.newBuilder().build())
             .setHotTierSizeUsedGib(-151116719)
             .addAllBlockDevices(new ArrayList<BlockDevice>())
+            .setLargeCapacityConfig(LargeCapacityConfig.newBuilder().build())
             .setCloneDetails(Volume.CloneDetails.newBuilder().build())
             .build();
     Operation resultOperation =

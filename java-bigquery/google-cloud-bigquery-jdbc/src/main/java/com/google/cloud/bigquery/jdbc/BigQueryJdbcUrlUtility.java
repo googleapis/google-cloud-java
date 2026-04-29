@@ -770,23 +770,29 @@ final class BigQueryJdbcUrlUtility {
       }
 
     } catch (NumberFormatException ex) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
-                  + " true.",
-              propertyName),
-          ex);
+      IllegalArgumentException e =
+          new IllegalArgumentException(
+              String.format(
+                  "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
+                      + " true.",
+                  propertyName),
+              ex);
+      LOG.severe(e.getMessage(), e);
+      throw e;
     }
     if (integerValue == 1) {
       return true;
     } else if (integerValue == 0) {
       return false;
     } else {
-      throw new IllegalArgumentException(
-          String.format(
-              "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
-                  + " true.",
-              propertyName));
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              String.format(
+                  "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
+                      + " true.",
+                  propertyName));
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
   }
 

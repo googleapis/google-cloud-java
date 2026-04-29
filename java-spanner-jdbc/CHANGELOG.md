@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.38.0](https://github.com/googleapis/google-cloud-java/compare/6bef068b4d8...v1.85.0) (2026-04-13)
+
+* No change
+
+## [2.37.0](https://github.com/googleapis/google-cloud-java/compare/55c4e0f125c...6bef068b4d8) (2026-04-10)
+
+### Bug Fixes
+
+* fix: update Version.java and correct spanner version for 1.83.0 release (#12712) ([c2147fc](https://github.com/googleapis/google-cloud-java/commit/c2147fc9ab767b0546e6f71483e3f0af1a99740c))
+
+
 ## [2.35.4](https://github.com/googleapis/java-spanner-jdbc/compare/v2.35.3...v2.35.4) (2026-03-04)
 
 

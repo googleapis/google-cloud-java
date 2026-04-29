@@ -468,11 +468,11 @@ public class ConnectionProperties {
   static final ConnectionProperty<Boolean> ENABLE_GRPC_GCP =
       create(
           ENABLE_GRPC_GCP_PROPERTY_NAME,
-          "Enable or disable grpc-gcp channel pool (true/false). "
-              + "Setting this to false will disable grpc-gcp and use the Gax gRPC channel pool. "
-              + "Disabling grpc-gcp also automatically disables dynamic channel pooling, regardless "
-              + "of the value of enableDynamicChannelPool, as Spanner only supports dynamic channel "
-              + "pooling in combination with grpc-gcp.",
+          "Enable or disable grpc-gcp channel pool (true/false). Setting this to false will disable"
+              + " grpc-gcp and use the Gax gRPC channel pool. Disabling grpc-gcp also automatically"
+              + " disables dynamic channel pooling, regardless of the value of"
+              + " enableDynamicChannelPool, as Spanner only supports dynamic channel pooling in"
+              + " combination with grpc-gcp.",
           DEFAULT_ENABLE_GRPC_GCP,
           BOOLEANS,
           BooleanConverter.INSTANCE,

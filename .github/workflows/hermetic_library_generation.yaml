@@ -47,4 +47,5 @@ jobs:
         head_ref: ${{ github.head_ref }}
         token: ${{ secrets.CLOUD_JAVA_BOT_GITHUB_TOKEN }}
         force_regenerate_all: ${{ github.event.pull_request.head.ref == 'generate-libraries-main' }}
+        showcase_mode: true
         image_tag: ${{ env.GENERATOR_VERSION }}

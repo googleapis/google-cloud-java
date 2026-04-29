@@ -19,6 +19,26 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= AccessPoliciesClient =======================
+ *
+ * <p>Service Description: Manages Identity and Access Management (IAM) access policies.
+ *
+ * <p>Sample for AccessPoliciesClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AccessPoliciesClient accessPoliciesClient = AccessPoliciesClient.create()) {
+ *   AccessPolicyName name =
+ *       AccessPolicyName.ofProjectLocationAccessPolicyName(
+ *           "[PROJECT]", "[LOCATION]", "[ACCESS_POLICY]");
+ *   AccessPolicy response = accessPoliciesClient.getAccessPolicy(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= PolicyBindingsClient =======================
  *
  * <p>Service Description: An interface for managing Identity and Access Management (IAM) policy

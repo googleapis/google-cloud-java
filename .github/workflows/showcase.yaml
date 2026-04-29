@@ -1,0 +1,230 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+name: showcase
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@fbd0ab8f3e69293af611ebaee6363fc25e6d187d # v4.0.1
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'sdk-platform-java/**'
+            - 'google-auth-library-java/**'
+            - 'java-showcase/**'
+            - '.github/workflows/showcase.yaml'
+
+  showcase-java8:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    name: "showcase (8)"
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 11
+          distribution: temurin
+          cache: maven
+      - name: Install all modules using Java 11
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
+      - uses: actions/setup-java@v3
+        with:
+          java-version: 8
+          distribution: temurin
+      - run: java -version
+      - name: Parse showcase version
+        working-directory: java-showcase/gapic-showcase
+        run: echo "SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)" >> "$GITHUB_ENV"
+      - name: Install showcase server
+        run: |
+                sudo mkdir -p /usr/src/showcase
+                sudo chown -R ${USER} /usr/src/
+                curl --location https://github.com/googleapis/gapic-showcase/releases/download/v${{env.SHOWCASE_VERSION}}/gapic-showcase-${{env.SHOWCASE_VERSION}}-linux-amd64.tar.gz --output /usr/src/showcase/showcase-${{env.SHOWCASE_VERSION}}-linux-amd64.tar.gz
+                cd /usr/src/showcase/
+                tar -xf showcase-*
+                ./gapic-showcase run &
+                cd -
+      - name: Showcase integration tests
+        working-directory: java-showcase
+        run: |
+              mvn verify \
+                -P enable-integration-tests \
+                --batch-mode \
+                --no-transfer-progress
+        # The `slf4j1_logback` profile brings logging dependency and compiles logging tests, require env var to be set
+      - name: Showcase integration tests - Logging SLF4J 1.x
+        working-directory: java-showcase
+        run: |
+             mvn clean verify -P '!showcase,enable-integration-tests,loggingTestBase,slf4j1_logback' \
+              --batch-mode \
+              --no-transfer-progress
+        # Set the Env Var for this step only
+        env:
+            GOOGLE_SDK_JAVA_LOGGING: true
+        # The `disabledLogging` profile tests logging disabled when logging dependency present,
+        # do not set env var for this step
+      - name: Showcase integration tests - Logging disabed
+        working-directory: java-showcase
+        run: |
+          mvn clean verify -P '!showcase,enable-integration-tests,loggingTestBase,disabledLogging'  \
+            --batch-mode \
+            --no-transfer-progress
+      - name: Showcase integration tests - Protobuf gen code 3.25.8
+        working-directory: sdk-platform-java/java-showcase-3.25.8
+        run: |
+          mvn verify \
+            -P enable-integration-tests \
+            --batch-mode \
+            --no-transfer-progress
+      - name: Showcase integration tests - Protobuf gen code 3.21.0
+        working-directory: sdk-platform-java/java-showcase-3.21.0
+        run: |
+          mvn verify \
+            -P enable-integration-tests \
+            --batch-mode \
+            --no-transfer-progress
+  showcase:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        java: [ 11, 17, 21, 25 ]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: temurin
+      - run: mvn -version
+      - name: Install Maven modules
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
+      - name: Showcase golden tests
+        working-directory: java-showcase
+        run: |
+          mvn test \
+            -P enable-golden-tests \
+            --batch-mode \
+            --no-transfer-progress
+      - name: Parse showcase version
+        working-directory: java-showcase/gapic-showcase
+        run: echo "SHOWCASE_VERSION=$(mvn help:evaluate -Dexpression=gapic-showcase.version -q -DforceStdout)" >> "$GITHUB_ENV"
+      - name: Install showcase server
+        run: |
+          sudo mkdir -p /usr/src/showcase
+          sudo chown -R ${USER} /usr/src/
+          curl --location https://github.com/googleapis/gapic-showcase/releases/download/v${{env.SHOWCASE_VERSION}}/gapic-showcase-${{env.SHOWCASE_VERSION}}-linux-amd64.tar.gz --output /usr/src/showcase/showcase-${{env.SHOWCASE_VERSION}}-linux-amd64.tar.gz
+          cd /usr/src/showcase/
+          tar -xf showcase-*
+          ./gapic-showcase run &
+          cd -
+      - name: Showcase integration tests
+        working-directory: java-showcase
+        run: |
+          mvn verify \
+            -P enable-integration-tests \
+            --batch-mode \
+            --no-transfer-progress
+      # The `slf4j2_logback` profile brings logging dependency and compiles logging tests, require env var to be set
+      - name: Showcase integration tests - Logging SLF4J 2.x
+        working-directory: java-showcase
+        run: |
+          mvn clean verify -P '!showcase,enable-integration-tests,loggingTestBase,slf4j2_logback' \
+            --batch-mode \
+            --no-transfer-progress
+        # Set the Env Var for this step only
+        env:
+          GOOGLE_SDK_JAVA_LOGGING: true
+    # The `slf4j1_logback` profile brings logging dependency and compiles logging tests, require env var to be set
+      - name: Showcase integration tests - Logging SLF4J 1.x
+        working-directory: java-showcase
+        run: |
+          mvn clean verify -P '!showcase,enable-integration-tests,loggingTestBase,slf4j1_logback' \
+            --batch-mode \
+            --no-transfer-progress
+        # Set the Env Var for this step only
+        env:
+          GOOGLE_SDK_JAVA_LOGGING: true
+    # The `disabledLogging` profile tests logging disabled when logging dependency present,
+    # do not set env var for this step
+      - name: Showcase integration tests - Logging disabed
+        working-directory: java-showcase
+        run: |
+          mvn clean verify -P '!showcase,enable-integration-tests,loggingTestBase,disabledLogging'  \
+            --batch-mode \
+            --no-transfer-progress
+      - name: Showcase integration tests - Protobuf 3 compatibility with third party library Tensorflow
+        working-directory: java-showcase
+        run: |
+          mvn clean verify -P 'enable-integration-tests,protobuf3,showcase'  \
+            --batch-mode \
+            --no-transfer-progress
+
+  showcase-clirr:
+    needs: filter
+    if: ${{ (needs.filter.outputs.library == 'true') && github.base_ref != '' }} # Only execute on pull_request trigger event
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout @ target branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.base_ref }}
+      - uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: temurin
+          cache: maven
+      - name: Install Maven modules
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          BUILD_SUBDIR: sdk-platform-java
+          JOB_TYPE: install
+      - name: Install showcase to local maven repository
+        run: |
+          mvn install -B -ntp -T 1C -DskipTests
+          SHOWCASE_CLIENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          echo "SHOWCASE_CLIENT_VERSION=$SHOWCASE_CLIENT_VERSION" >> "$GITHUB_ENV"
+        working-directory: java-showcase
+      - name: Checkout sdk-platform-java @ PR merge commit
+        uses: actions/checkout@v3
+      - name: Install sdk-platform-java @ PR merge commit
+        shell: bash
+        run: .kokoro/build.sh
+        env:
+          JOB_TYPE: install
+          BUILD_SUBDIR: sdk-platform-java
+        # Showcase golden test ensures that src changes are already reflected in the PR.
+      - name: Clirr check
+        working-directory: java-showcase
+        run: |
+          mvn versions:set -B -ntp -DnewVersion=local
+          mvn clirr:check -B -ntp -DcomparisonVersion=$SHOWCASE_CLIENT_VERSION
+
+  required:
+    needs: [ showcase, showcase-java8 ]
+    name: conditional-required-check
+    if: ${{ always() }} # Always run even if any "needs" jobs fail
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Fail if any previous failure
+        if: ${{ contains(needs.*.result, 'failure') }}
+        run: exit 1
+      - name: Success otherwise
+        run: echo "Success!"

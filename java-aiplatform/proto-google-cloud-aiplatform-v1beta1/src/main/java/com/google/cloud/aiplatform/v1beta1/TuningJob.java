@@ -155,6 +155,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
     DISTILLATION_SPEC(17),
     PARTNER_MODEL_TUNING_SPEC(21),
     VEO_TUNING_SPEC(33),
+    VEO_LORA_TUNING_SPEC(38),
     TUNINGSPEC_NOT_SET(0);
     private final int value;
 
@@ -182,6 +183,8 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
           return PARTNER_MODEL_TUNING_SPEC;
         case 33:
           return VEO_TUNING_SPEC;
+        case 38:
+          return VEO_LORA_TUNING_SPEC;
         case 0:
           return TUNINGSPEC_NOT_SET;
         default:
@@ -548,6 +551,61 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       return (com.google.cloud.aiplatform.v1beta1.VeoTuningSpec) tuningSpec_;
     }
     return com.google.cloud.aiplatform.v1beta1.VeoTuningSpec.getDefaultInstance();
+  }
+
+  public static final int VEO_LORA_TUNING_SPEC_FIELD_NUMBER = 38;
+
+  /**
+   *
+   *
+   * <pre>
+   * Tuning Spec for Veo LoRA Tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec veo_lora_tuning_spec = 38;</code>
+   *
+   * @return Whether the veoLoraTuningSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasVeoLoraTuningSpec() {
+    return tuningSpecCase_ == 38;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Tuning Spec for Veo LoRA Tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec veo_lora_tuning_spec = 38;</code>
+   *
+   * @return The veoLoraTuningSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec getVeoLoraTuningSpec() {
+    if (tuningSpecCase_ == 38) {
+      return (com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec) tuningSpec_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Tuning Spec for Veo LoRA Tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec veo_lora_tuning_spec = 38;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpecOrBuilder
+      getVeoLoraTuningSpecOrBuilder() {
+    if (tuningSpecCase_ == 38) {
+      return (com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec) tuningSpec_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -1854,6 +1912,9 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
     if (tuningSpecCase_ == 33) {
       output.writeMessage(33, (com.google.cloud.aiplatform.v1beta1.VeoTuningSpec) tuningSpec_);
     }
+    if (tuningSpecCase_ == 38) {
+      output.writeMessage(38, (com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec) tuningSpec_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1956,6 +2017,11 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               33, (com.google.cloud.aiplatform.v1beta1.VeoTuningSpec) tuningSpec_);
     }
+    if (tuningSpecCase_ == 38) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              38, (com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec) tuningSpec_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2039,6 +2105,9 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         break;
       case 33:
         if (!getVeoTuningSpec().equals(other.getVeoTuningSpec())) return false;
+        break;
+      case 38:
+        if (!getVeoLoraTuningSpec().equals(other.getVeoLoraTuningSpec())) return false;
         break;
       case 0:
       default:
@@ -2140,6 +2209,10 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       case 33:
         hash = (37 * hash) + VEO_TUNING_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getVeoTuningSpec().hashCode();
+        break;
+      case 38:
+        hash = (37 * hash) + VEO_LORA_TUNING_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getVeoLoraTuningSpec().hashCode();
         break;
       case 0:
       default:
@@ -2338,6 +2411,9 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       if (veoTuningSpecBuilder_ != null) {
         veoTuningSpecBuilder_.clear();
       }
+      if (veoLoraTuningSpecBuilder_ != null) {
+        veoLoraTuningSpecBuilder_.clear();
+      }
       name_ = "";
       tunedModelDisplayName_ = "";
       description_ = "";
@@ -2394,7 +2470,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         evaluateDatasetRuns_ = null;
         evaluateDatasetRunsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       sourceModelCase_ = 0;
       sourceModel_ = null;
       tuningSpecCase_ = 0;
@@ -2437,9 +2513,9 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.aiplatform.v1beta1.TuningJob result) {
       if (evaluateDatasetRunsBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)) {
+        if (((bitField0_ & 0x02000000) != 0)) {
           evaluateDatasetRuns_ = java.util.Collections.unmodifiableList(evaluateDatasetRuns_);
-          bitField0_ = (bitField0_ & ~0x01000000);
+          bitField0_ = (bitField0_ & ~0x02000000);
         }
         result.evaluateDatasetRuns_ = evaluateDatasetRuns_;
       } else {
@@ -2449,70 +2525,70 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.TuningJob result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.tunedModelDisplayName_ = tunedModelDisplayName_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.customBaseModel_ = customBaseModel_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.state_ = state_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00008000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.experiment_ = experiment_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.tunedModel_ = tunedModelBuilder_ == null ? tunedModel_ : tunedModelBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.tuningDataStats_ =
             tuningDataStatsBuilder_ == null ? tuningDataStats_ : tuningDataStatsBuilder_.build();
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.pipelineJob_ = pipelineJob_;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.encryptionSpec_ =
             encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.serviceAccount_ = serviceAccount_;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.outputUri_ = outputUri_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -2538,6 +2614,9 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       if (tuningSpecCase_ == 33 && veoTuningSpecBuilder_ != null) {
         result.tuningSpec_ = veoTuningSpecBuilder_.build();
       }
+      if (tuningSpecCase_ == 38 && veoLoraTuningSpecBuilder_ != null) {
+        result.tuningSpec_ = veoLoraTuningSpecBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -2554,22 +2633,22 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       if (other == com.google.cloud.aiplatform.v1beta1.TuningJob.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getTunedModelDisplayName().isEmpty()) {
         tunedModelDisplayName_ = other.tunedModelDisplayName_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       if (!other.getCustomBaseModel().isEmpty()) {
         customBaseModel_ = other.customBaseModel_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -2591,10 +2670,10 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         mergeError(other.getError());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       if (!other.getExperiment().isEmpty()) {
         experiment_ = other.experiment_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasTunedModel()) {
@@ -2605,7 +2684,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getPipelineJob().isEmpty()) {
         pipelineJob_ = other.pipelineJob_;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.hasEncryptionSpec()) {
@@ -2613,19 +2692,19 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getServiceAccount().isEmpty()) {
         serviceAccount_ = other.serviceAccount_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (!other.getOutputUri().isEmpty()) {
         outputUri_ = other.outputUri_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       if (evaluateDatasetRunsBuilder_ == null) {
         if (!other.evaluateDatasetRuns_.isEmpty()) {
           if (evaluateDatasetRuns_.isEmpty()) {
             evaluateDatasetRuns_ = other.evaluateDatasetRuns_;
-            bitField0_ = (bitField0_ & ~0x01000000);
+            bitField0_ = (bitField0_ & ~0x02000000);
           } else {
             ensureEvaluateDatasetRunsIsMutable();
             evaluateDatasetRuns_.addAll(other.evaluateDatasetRuns_);
@@ -2638,7 +2717,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
             evaluateDatasetRunsBuilder_.dispose();
             evaluateDatasetRunsBuilder_ = null;
             evaluateDatasetRuns_ = other.evaluateDatasetRuns_;
-            bitField0_ = (bitField0_ & ~0x01000000);
+            bitField0_ = (bitField0_ & ~0x02000000);
             evaluateDatasetRunsBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetEvaluateDatasetRunsFieldBuilder()
@@ -2687,6 +2766,11 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
             mergeVeoTuningSpec(other.getVeoTuningSpec());
             break;
           }
+        case VEO_LORA_TUNING_SPEC:
+          {
+            mergeVeoLoraTuningSpec(other.getVeoLoraTuningSpec());
+            break;
+          }
         case TUNINGSPEC_NOT_SET:
           {
             break;
@@ -2721,19 +2805,19 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 10
             case 18:
               {
                 tunedModelDisplayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 26
             case 34:
@@ -2753,40 +2837,40 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
             case 48:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(
                     internalGetCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(
                     internalGetStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(internalGetEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(
                     internalGetUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(internalGetErrorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 90
             case 98:
@@ -2798,34 +2882,34 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 98
             case 106:
               {
                 experiment_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(
                     internalGetTunedModelFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 114
             case 122:
               {
                 input.readMessage(
                     internalGetTuningDataStatsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 122
             case 130:
               {
                 input.readMessage(
                     internalGetEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 130
             case 138:
@@ -2838,7 +2922,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
             case 146:
               {
                 pipelineJob_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 146
             case 170:
@@ -2852,19 +2936,19 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
             case 178:
               {
                 serviceAccount_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 178
             case 202:
               {
                 outputUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 202
             case 210:
               {
                 customBaseModel_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 210
             case 250:
@@ -2895,6 +2979,13 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
                 tuningSpecCase_ = 33;
                 break;
               } // case 266
+            case 306:
+              {
+                input.readMessage(
+                    internalGetVeoLoraTuningSpecFieldBuilder().getBuilder(), extensionRegistry);
+                tuningSpecCase_ = 38;
+                break;
+              } // case 306
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4214,6 +4305,229 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       return veoTuningSpecBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec,
+            com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpecOrBuilder>
+        veoLoraTuningSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Tuning Spec for Veo LoRA Tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec veo_lora_tuning_spec = 38;</code>
+     *
+     * @return Whether the veoLoraTuningSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasVeoLoraTuningSpec() {
+      return tuningSpecCase_ == 38;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tuning Spec for Veo LoRA Tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec veo_lora_tuning_spec = 38;</code>
+     *
+     * @return The veoLoraTuningSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec getVeoLoraTuningSpec() {
+      if (veoLoraTuningSpecBuilder_ == null) {
+        if (tuningSpecCase_ == 38) {
+          return (com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec) tuningSpec_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec.getDefaultInstance();
+      } else {
+        if (tuningSpecCase_ == 38) {
+          return veoLoraTuningSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tuning Spec for Veo LoRA Tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec veo_lora_tuning_spec = 38;</code>
+     */
+    public Builder setVeoLoraTuningSpec(
+        com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec value) {
+      if (veoLoraTuningSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tuningSpec_ = value;
+        onChanged();
+      } else {
+        veoLoraTuningSpecBuilder_.setMessage(value);
+      }
+      tuningSpecCase_ = 38;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tuning Spec for Veo LoRA Tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec veo_lora_tuning_spec = 38;</code>
+     */
+    public Builder setVeoLoraTuningSpec(
+        com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec.Builder builderForValue) {
+      if (veoLoraTuningSpecBuilder_ == null) {
+        tuningSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        veoLoraTuningSpecBuilder_.setMessage(builderForValue.build());
+      }
+      tuningSpecCase_ = 38;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tuning Spec for Veo LoRA Tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec veo_lora_tuning_spec = 38;</code>
+     */
+    public Builder mergeVeoLoraTuningSpec(
+        com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec value) {
+      if (veoLoraTuningSpecBuilder_ == null) {
+        if (tuningSpecCase_ == 38
+            && tuningSpec_
+                != com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec.getDefaultInstance()) {
+          tuningSpec_ =
+              com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec) tuningSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          tuningSpec_ = value;
+        }
+        onChanged();
+      } else {
+        if (tuningSpecCase_ == 38) {
+          veoLoraTuningSpecBuilder_.mergeFrom(value);
+        } else {
+          veoLoraTuningSpecBuilder_.setMessage(value);
+        }
+      }
+      tuningSpecCase_ = 38;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tuning Spec for Veo LoRA Tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec veo_lora_tuning_spec = 38;</code>
+     */
+    public Builder clearVeoLoraTuningSpec() {
+      if (veoLoraTuningSpecBuilder_ == null) {
+        if (tuningSpecCase_ == 38) {
+          tuningSpecCase_ = 0;
+          tuningSpec_ = null;
+          onChanged();
+        }
+      } else {
+        if (tuningSpecCase_ == 38) {
+          tuningSpecCase_ = 0;
+          tuningSpec_ = null;
+        }
+        veoLoraTuningSpecBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tuning Spec for Veo LoRA Tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec veo_lora_tuning_spec = 38;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec.Builder
+        getVeoLoraTuningSpecBuilder() {
+      return internalGetVeoLoraTuningSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tuning Spec for Veo LoRA Tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec veo_lora_tuning_spec = 38;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpecOrBuilder
+        getVeoLoraTuningSpecOrBuilder() {
+      if ((tuningSpecCase_ == 38) && (veoLoraTuningSpecBuilder_ != null)) {
+        return veoLoraTuningSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (tuningSpecCase_ == 38) {
+          return (com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec) tuningSpec_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tuning Spec for Veo LoRA Tuning.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec veo_lora_tuning_spec = 38;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec,
+            com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpecOrBuilder>
+        internalGetVeoLoraTuningSpecFieldBuilder() {
+      if (veoLoraTuningSpecBuilder_ == null) {
+        if (!(tuningSpecCase_ == 38)) {
+          tuningSpec_ = com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec.getDefaultInstance();
+        }
+        veoLoraTuningSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec,
+                com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpecOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.VeoLoraTuningSpec) tuningSpec_,
+                getParentForChildren(),
+                isClean());
+        tuningSpec_ = null;
+      }
+      tuningSpecCase_ = 38;
+      onChanged();
+      return veoLoraTuningSpecBuilder_;
+    }
+
     private java.lang.Object name_ = "";
 
     /**
@@ -4288,7 +4602,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4309,7 +4623,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4335,7 +4649,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4411,7 +4725,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       tunedModelDisplayName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4431,7 +4745,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearTunedModelDisplayName() {
       tunedModelDisplayName_ = getDefaultInstance().getTunedModelDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4456,7 +4770,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       tunedModelDisplayName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4529,7 +4843,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4548,7 +4862,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -4572,7 +4886,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4657,7 +4971,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       customBaseModel_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4680,7 +4994,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearCustomBaseModel() {
       customBaseModel_ = getDefaultInstance().getCustomBaseModel();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4708,7 +5022,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       customBaseModel_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4749,7 +5063,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4792,7 +5106,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -4812,7 +5126,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       state_ = 0;
       onChanged();
       return this;
@@ -4840,7 +5154,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -4888,7 +5202,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4911,7 +5225,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4930,7 +5244,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -4941,7 +5255,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -4960,7 +5274,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -4983,7 +5297,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return internalGetCreateTimeFieldBuilder().getBuilder();
     }
@@ -5061,7 +5375,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -5107,7 +5421,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         startTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5130,7 +5444,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -5149,7 +5463,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && startTime_ != null
             && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getStartTimeBuilder().mergeFrom(value);
@@ -5160,7 +5474,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         startTimeBuilder_.mergeFrom(value);
       }
       if (startTime_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -5179,7 +5493,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearStartTime() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       startTime_ = null;
       if (startTimeBuilder_ != null) {
         startTimeBuilder_.dispose();
@@ -5202,7 +5516,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return internalGetStartTimeFieldBuilder().getBuilder();
     }
@@ -5278,7 +5592,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -5324,7 +5638,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         endTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5347,7 +5661,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -5366,7 +5680,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && endTime_ != null
             && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getEndTimeBuilder().mergeFrom(value);
@@ -5377,7 +5691,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         endTimeBuilder_.mergeFrom(value);
       }
       if (endTime_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -5396,7 +5710,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearEndTime() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       endTime_ = null;
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
@@ -5419,7 +5733,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return internalGetEndTimeFieldBuilder().getBuilder();
     }
@@ -5496,7 +5810,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -5546,7 +5860,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5570,7 +5884,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -5590,7 +5904,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00004000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -5601,7 +5915,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -5621,7 +5935,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -5645,7 +5959,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return internalGetUpdateTimeFieldBuilder().getBuilder();
     }
@@ -5721,7 +6035,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -5763,7 +6077,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         errorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5784,7 +6098,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -5801,7 +6115,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && error_ != null
             && error_ != com.google.rpc.Status.getDefaultInstance()) {
           getErrorBuilder().mergeFrom(value);
@@ -5812,7 +6126,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         errorBuilder_.mergeFrom(value);
       }
       if (error_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -5829,7 +6143,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -5850,7 +6164,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * <code>.google.rpc.Status error = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return internalGetErrorFieldBuilder().getBuilder();
     }
@@ -5914,7 +6228,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return labels_;
     }
@@ -6040,7 +6354,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -6074,7 +6388,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -6104,7 +6418,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       return this;
     }
 
@@ -6128,7 +6442,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       return this;
     }
 
@@ -6206,7 +6520,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       experiment_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6227,7 +6541,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearExperiment() {
       experiment_ = getDefaultInstance().getExperiment();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -6253,7 +6567,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       experiment_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -6280,7 +6594,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * @return Whether the tunedModel field is set.
      */
     public boolean hasTunedModel() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -6328,7 +6642,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         tunedModelBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6352,7 +6666,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         tunedModelBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -6371,7 +6685,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTunedModel(com.google.cloud.aiplatform.v1beta1.TunedModel value) {
       if (tunedModelBuilder_ == null) {
-        if (((bitField0_ & 0x00040000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && tunedModel_ != null
             && tunedModel_ != com.google.cloud.aiplatform.v1beta1.TunedModel.getDefaultInstance()) {
           getTunedModelBuilder().mergeFrom(value);
@@ -6382,7 +6696,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         tunedModelBuilder_.mergeFrom(value);
       }
       if (tunedModel_ != null) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -6401,7 +6715,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearTunedModel() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       tunedModel_ = null;
       if (tunedModelBuilder_ != null) {
         tunedModelBuilder_.dispose();
@@ -6424,7 +6738,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.TunedModel.Builder getTunedModelBuilder() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return internalGetTunedModelFieldBuilder().getBuilder();
     }
@@ -6502,7 +6816,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * @return Whether the tuningDataStats field is set.
      */
     public boolean hasTuningDataStats() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -6550,7 +6864,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         tuningDataStatsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6574,7 +6888,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         tuningDataStatsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -6593,7 +6907,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTuningDataStats(com.google.cloud.aiplatform.v1beta1.TuningDataStats value) {
       if (tuningDataStatsBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && tuningDataStats_ != null
             && tuningDataStats_
                 != com.google.cloud.aiplatform.v1beta1.TuningDataStats.getDefaultInstance()) {
@@ -6605,7 +6919,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         tuningDataStatsBuilder_.mergeFrom(value);
       }
       if (tuningDataStats_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -6624,7 +6938,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearTuningDataStats() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       tuningDataStats_ = null;
       if (tuningDataStatsBuilder_ != null) {
         tuningDataStatsBuilder_.dispose();
@@ -6647,7 +6961,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.TuningDataStats.Builder getTuningDataStatsBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return internalGetTuningDataStatsFieldBuilder().getBuilder();
     }
@@ -6781,7 +7095,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       pipelineJob_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6803,7 +7117,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPipelineJob() {
       pipelineJob_ = getDefaultInstance().getPipelineJob();
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -6830,7 +7144,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       pipelineJob_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -6856,7 +7170,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * @return Whether the encryptionSpec field is set.
      */
     public boolean hasEncryptionSpec() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
@@ -6902,7 +7216,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         encryptionSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6925,7 +7239,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       } else {
         encryptionSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -6943,7 +7257,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
       if (encryptionSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && encryptionSpec_ != null
             && encryptionSpec_
                 != com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()) {
@@ -6955,7 +7269,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         encryptionSpecBuilder_.mergeFrom(value);
       }
       if (encryptionSpec_ != null) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00400000;
         onChanged();
       }
       return this;
@@ -6973,7 +7287,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 16;</code>
      */
     public Builder clearEncryptionSpec() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       encryptionSpec_ = null;
       if (encryptionSpecBuilder_ != null) {
         encryptionSpecBuilder_.dispose();
@@ -6995,7 +7309,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 16;</code>
      */
     public com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return internalGetEncryptionSpecFieldBuilder().getBuilder();
     }
@@ -7133,7 +7447,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       serviceAccount_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7157,7 +7471,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearServiceAccount() {
       serviceAccount_ = getDefaultInstance().getServiceAccount();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -7186,7 +7500,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       serviceAccount_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7262,7 +7576,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       outputUri_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7282,7 +7596,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearOutputUri() {
       outputUri_ = getDefaultInstance().getOutputUri();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -7307,7 +7621,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       outputUri_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7316,11 +7630,11 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
         evaluateDatasetRuns_ = java.util.Collections.emptyList();
 
     private void ensureEvaluateDatasetRunsIsMutable() {
-      if (!((bitField0_ & 0x01000000) != 0)) {
+      if (!((bitField0_ & 0x02000000) != 0)) {
         evaluateDatasetRuns_ =
             new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun>(
                 evaluateDatasetRuns_);
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x02000000;
       }
     }
 
@@ -7574,7 +7888,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
     public Builder clearEvaluateDatasetRuns() {
       if (evaluateDatasetRunsBuilder_ == null) {
         evaluateDatasetRuns_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x02000000);
         onChanged();
       } else {
         evaluateDatasetRunsBuilder_.clear();
@@ -7723,7 +8037,7 @@ public final class TuningJob extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun.Builder,
                 com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRunOrBuilder>(
                 evaluateDatasetRuns_,
-                ((bitField0_ & 0x01000000) != 0),
+                ((bitField0_ & 0x02000000) != 0),
                 getParentForChildren(),
                 isClean());
         evaluateDatasetRuns_ = null;

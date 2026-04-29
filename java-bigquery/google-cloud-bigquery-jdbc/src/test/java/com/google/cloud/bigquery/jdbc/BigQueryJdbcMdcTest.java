@@ -149,4 +149,13 @@ public class BigQueryJdbcMdcTest {
     assertEquals("JdbcConnection-B", threadBIdAfterRegister.get());
     assertEquals("JdbcConnection-A", threadAIdAfterB.get());
   }
+
+  @Test
+  public void testMdcCloseableClearsContext() {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(mockConnection1, "789")) {
+      assertEquals("JdbcConnection-789", BigQueryJdbcMdc.getConnectionId());
+    }
+    assertNull(BigQueryJdbcMdc.getConnectionId());
+  }
 }

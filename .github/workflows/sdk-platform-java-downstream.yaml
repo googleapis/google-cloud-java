@@ -23,6 +23,7 @@ jobs:
         filters: |
           library:
             - 'sdk-platform-java/**'
+            - 'google-auth-library-java/**'
             - .kokoro/downstream-compatibility.sh
             - .github/workflows/sdk-platform-java-downstream.yaml
   downstream-compatibility:

@@ -106,7 +106,9 @@ abstract class BigQueryBaseArray implements java.sql.Array {
   protected void ensureValid() throws IllegalStateException {
     LOG.finest("++enter++");
     if (!this.valid) {
-      throw new IllegalStateException(INVALID_ARRAY);
+      IllegalStateException ex = new IllegalStateException(INVALID_ARRAY);
+      LOG.severe(INVALID_ARRAY, ex);
+      throw ex;
     }
   }
 
@@ -127,9 +129,13 @@ abstract class BigQueryBaseArray implements java.sql.Array {
     // jdbc array follows 1 based array indexing
     long normalisedFromIndex = index - 1;
     if (normalisedFromIndex + count > size) {
-      throw new IllegalArgumentException(
-          String.format(
-              "The array index is out of range: %d, number of elements: %d.", index + count, size));
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              String.format(
+                  "The array index is out of range: %d, number of elements: %d.",
+                  index + count, size));
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
     long toIndex = normalisedFromIndex + count;
     return Tuple.of((int) normalisedFromIndex, (int) toIndex);
@@ -166,6 +172,7 @@ abstract class BigQueryBaseArray implements java.sql.Array {
       }
       return Arrays.deepToString(array);
     } catch (SQLException e) {
+      LOG.warning("Error converting array to string");
       return "[Error converting array to string: " + e.getMessage() + "]";
     }
   }

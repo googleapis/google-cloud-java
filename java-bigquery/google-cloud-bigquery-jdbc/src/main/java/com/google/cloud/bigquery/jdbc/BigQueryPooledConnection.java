@@ -65,7 +65,9 @@ class BigQueryPooledConnection implements PooledConnection {
   public synchronized Connection getConnection() throws SQLException {
     LOG.finest("++enter++");
     if (inUse) {
-      throw new SQLException("PooledConnection is already in use.");
+      SQLException ex = new SQLException("PooledConnection is already in use.");
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
     inUse = true;
     // Return a wrapper around the underlying physical connection.
@@ -140,14 +142,20 @@ class BigQueryPooledConnection implements PooledConnection {
 
   @Override
   public void addStatementEventListener(StatementEventListener arg0) {
-    throw new UnsupportedOperationException(
-        "Method 'addStatementEventListener' is not supported by the BQ Driver");
+    UnsupportedOperationException ex =
+        new UnsupportedOperationException(
+            "Method 'addStatementEventListener' is not supported by the BQ Driver");
+    LOG.severe(ex.getMessage(), ex);
+    throw ex;
   }
 
   @Override
   public void removeStatementEventListener(StatementEventListener arg0) {
-    throw new UnsupportedOperationException(
-        "Method 'removeStatementEventListener' is not supported by the BQ Driver");
+    UnsupportedOperationException ex =
+        new UnsupportedOperationException(
+            "Method 'removeStatementEventListener' is not supported by the BQ Driver");
+    LOG.severe(ex.getMessage(), ex);
+    throw ex;
   }
 
   // Inner class: Connection Wrapper around the actual physical Connection

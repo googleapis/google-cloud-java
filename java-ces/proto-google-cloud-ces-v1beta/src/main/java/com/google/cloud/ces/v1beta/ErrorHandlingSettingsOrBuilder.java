@@ -56,4 +56,96 @@ public interface ErrorHandlingSettingsOrBuilder
    */
   com.google.cloud.ces.v1beta.ErrorHandlingSettings.ErrorHandlingStrategy
       getErrorHandlingStrategy();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for handling fallback responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig fallback_response_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the fallbackResponseConfig field is set.
+   */
+  boolean hasFallbackResponseConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for handling fallback responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig fallback_response_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The fallbackResponseConfig.
+   */
+  com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig
+      getFallbackResponseConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for handling fallback responses.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfig fallback_response_config = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.ErrorHandlingSettings.FallbackResponseConfigOrBuilder
+      getFallbackResponseConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for ending the session in case of system errors
+   * (e.g. LLM errors).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig end_session_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the endSessionConfig field is set.
+   */
+  boolean hasEndSessionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for ending the session in case of system errors
+   * (e.g. LLM errors).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig end_session_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The endSessionConfig.
+   */
+  com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig getEndSessionConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for ending the session in case of system errors
+   * (e.g. LLM errors).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfig end_session_config = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.ces.v1beta.ErrorHandlingSettings.EndSessionConfigOrBuilder
+      getEndSessionConfigOrBuilder();
 }

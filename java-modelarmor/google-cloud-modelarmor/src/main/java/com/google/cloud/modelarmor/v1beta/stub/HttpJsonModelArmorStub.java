@@ -29,6 +29,7 @@ import com.google.api.gax.httpjson.HttpJsonStubCallableFactory;
 import com.google.api.gax.httpjson.ProtoMessageRequestFormatter;
 import com.google.api.gax.httpjson.ProtoMessageResponseParser;
 import com.google.api.gax.httpjson.ProtoRestSerializer;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -811,6 +812,22 @@ public class HttpJsonModelArmorStub extends ModelArmorStub {
   @Override
   public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
     return getLocationCallable;
+  }
+
+  @Override
+  public BidiStreamingCallable<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+      streamSanitizeUserPromptCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamSanitizeUserPromptCallable(). REST transport is not implemented for"
+            + " this method yet.");
+  }
+
+  @Override
+  public BidiStreamingCallable<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+      streamSanitizeModelResponseCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: streamSanitizeModelResponseCallable(). REST transport is not implemented"
+            + " for this method yet.");
   }
 
   @Override

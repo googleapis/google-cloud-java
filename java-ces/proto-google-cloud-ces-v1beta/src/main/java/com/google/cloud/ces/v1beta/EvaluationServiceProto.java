@@ -224,6 +224,30 @@ public final class EvaluationServiceProto extends com.google.protobuf.GeneratedF
       internal_static_google_cloud_ces_v1beta_ListEvaluationExpectationsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_cloud_ces_v1beta_ListEvaluationExpectationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_ExportOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_ExportOptions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_ExportEvaluationsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_ExportEvaluationsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_ExportEvaluationsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_ExportEvaluationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_ExportEvaluationsResponse_FailedEvaluationsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_ExportEvaluationsResponse_FailedEvaluationsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_ExportEvaluationResultsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_ExportEvaluationResultsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_ces_v1beta_ExportEvaluationRunsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_cloud_ces_v1beta_ExportEvaluationRunsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -238,10 +262,11 @@ public final class EvaluationServiceProto extends com.google.protobuf.GeneratedF
           + "vice.proto\022\027google.cloud.ces.v1beta\032\034goo"
           + "gle/api/annotations.proto\032\027google/api/cl"
           + "ient.proto\032\037google/api/field_behavior.pr"
-          + "oto\032\031google/api/resource.proto\032*google/c"
-          + "loud/ces/v1beta/conversation.proto\032(google/cloud/ces/v1beta/evaluation.proto\032#go"
-          + "ogle/longrunning/operations.proto\032\036googl"
-          + "e/protobuf/duration.proto\032\033google/protobuf/empty.proto\032"
+          + "oto\032\031google/api/resource.proto\032+google/c"
+          + "loud/ces/v1beta/agent_service.proto\032*google/cloud/ces/v1beta/conversation.proto\032"
+          + "(google/cloud/ces/v1beta/evaluation.prot"
+          + "o\032#google/longrunning/operations.proto\032\036"
+          + "google/protobuf/duration.proto\032\033google/protobuf/empty.proto\032"
           + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"V\n"
           + "\025RunEvaluationResponse\022=\n"
           + "\016evaluation_run\030\001 \001(\tB%\372A\"\n"
@@ -266,33 +291,39 @@ public final class EvaluationServiceProto extends com.google.protobuf.GeneratedF
           + "\031GenerateEvaluationRequest\022=\n"
           + "\014conversation\030\001 \001(\tB\'\340A\002\372A!\n"
           + "\037ces.googleapis.com/Conversation\022C\n"
-          + "\006source\030\002 \001(\0162"
-          + ",.google.cloud.ces.v1beta.Conversation.SourceB\005\030\001\340A\001\"\373\004\n"
+          + "\006source\030\002"
+          + " \001(\0162,.google.cloud.ces.v1beta.Conversation.SourceB\005\030\001\340A\001\"\373\004\n"
           + "\030ImportEvaluationsRequest\022_\n"
-          + "\021conversation_list\030\002 \001(\0132B.google.cl"
-          + "oud.ces.v1beta.ImportEvaluationsRequest.ConversationListH\000\022\021\n"
+          + "\021conversation_list\030\002 \001(\0132B.goog"
+          + "le.cloud.ces.v1beta.ImportEvaluationsRequest.ConversationListH\000\022\021\n"
           + "\007gcs_uri\030\003 \001(\tH\000\022\025\n"
           + "\013csv_content\030\004 \001(\014H\000\022.\n"
           + "\006parent\030\001 \001(\tB\036\340A\002\372A\030\n"
           + "\026ces.googleapis.com/App\022\\\n"
-          + "\016import_options\030\005 \001(\0132?.google.cloud.ces.v1beta.I"
-          + "mportEvaluationsRequest.ImportOptionsB\003\340A\001\032.\n"
+          + "\016import_options\030\005 \001(\0132?.google.cloud.ces.v1b"
+          + "eta.ImportEvaluationsRequest.ImportOptionsB\003\340A\001\032.\n"
           + "\020ConversationList\022\032\n\r"
           + "conversations\030\001 \003(\tB\003\340A\001\032\213\002\n\r"
           + "ImportOptions\022\205\001\n"
-          + "\034conflict_resolution_strategy\030\001 \001(\0162Z.google.clo"
-          + "ud.ces.v1beta.ImportEvaluationsRequest.I"
-          + "mportOptions.ConflictResolutionStrategyB\003\340A\001\"r\n"
+          + "\034conflict_resolution_strategy\030\001 \001(\0162Z.googl"
+          + "e.cloud.ces.v1beta.ImportEvaluationsRequ"
+          + "est.ImportOptions.ConflictResolutionStrategyB\003\340A\001\"r\n"
           + "\032ConflictResolutionStrategy\022,\n"
           + "(CONFLICT_RESOLUTION_STRATEGY_UNSPECIFIED\020\000\022\r\n"
           + "\tOVERWRITE\020\001\022\010\n"
           + "\004SKIP\020\002\022\r\n"
           + "\tDUPLICATE\020\003B\010\n"
-          + "\006source\"\220\001\n"
+          + "\006source\"\365\002\n"
           + "\031ImportEvaluationsResponse\0228\n"
-          + "\013evaluations\030\001 \003(\0132#.google.cloud.ces.v1beta.Evaluation\022\033\n"
+          + "\013evaluations\030\001 \003(\0132#.google.cloud.ces.v1beta.Evaluation\022E\n"
+          + "\022evaluation_results\030\004"
+          + " \003(\0132).google.cloud.ces.v1beta.EvaluationResult\022?\n"
+          + "\017evaluation_runs\030\005 \003(\0132"
+          + "&.google.cloud.ces.v1beta.EvaluationRun\022\033\n"
           + "\016error_messages\030\002 \003(\tB\003\340A\001\022\034\n"
-          + "\024import_failure_count\030\003 \001(\005\"\252\001\n"
+          + "\024import_failure_count\030\003 \001(\005\022.\n"
+          + "&evaluation_result_import_failure_count\030\006 \001(\005\022+\n"
+          + "#evaluation_run_import_failure_count\030\007 \001(\005\"\252\001\n"
           + "\"ImportEvaluationsOperationMetadata\0224\n"
           + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
           + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\033\n"
@@ -301,8 +332,8 @@ public final class EvaluationServiceProto extends com.google.protobuf.GeneratedF
           + "\006parent\030\001 \001(\tB\036\340A\002\372A\030\n"
           + "\026ces.googleapis.com/App\022\"\n"
           + "\025evaluation_dataset_id\030\002 \001(\tB\003\340A\001\022K\n"
-          + "\022evaluation_dataset\030\003 \001(\0132*."
-          + "google.cloud.ces.v1beta.EvaluationDatasetB\003\340A\002\"\215\001\n"
+          + "\022evaluation_dataset\030\003 \001(\0132*.google"
+          + ".cloud.ces.v1beta.EvaluationDatasetB\003\340A\002\"\215\001\n"
           + "\027UpdateEvaluationRequest\022<\n\n"
           + "evaluation\030\001 \001(\0132#.google.cloud.ces.v1beta.EvaluationB\003\340A\002\0224\n"
           + "\013update_mask\030\002"
@@ -377,25 +408,25 @@ public final class EvaluationServiceProto extends com.google.protobuf.GeneratedF
           + " \003(\0132).google.cloud.ces.v1beta.EvaluationResult\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"\202\001\n"
           + "\036ListEvaluationDatasetsResponse\022G\n"
-          + "\023evaluation_datasets\030\001 \003"
-          + "(\0132*.google.cloud.ces.v1beta.EvaluationDataset\022\027\n"
+          + "\023evaluation_datasets\030\001 \003(\0132*.g"
+          + "oogle.cloud.ces.v1beta.EvaluationDataset\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"v\n"
           + "\032ListEvaluationRunsResponse\022?\n"
-          + "\017evaluation_runs\030\001"
-          + " \003(\0132&.google.cloud.ces.v1beta.EvaluationRun\022\027\n"
+          + "\017evaluation_runs\030\001 \003(\013"
+          + "2&.google.cloud.ces.v1beta.EvaluationRun\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"\327\001\n"
           + "#CreateScheduledEvaluationRunRequest\022.\n"
           + "\006parent\030\001 \001(\tB\036\340A\002\372A\030\n"
           + "\026ces.googleapis.com/App\022(\n"
           + "\033scheduled_evaluation_run_id\030\002 \001(\tB\003\340A\001\022V\n"
-          + "\030scheduled_evaluation_run\030\003 \001(\0132/.go"
-          + "ogle.cloud.ces.v1beta.ScheduledEvaluationRunB\003\340A\002\"c\n"
+          + "\030scheduled_evaluation_run\030\003 \001(\0132/.google.c"
+          + "loud.ces.v1beta.ScheduledEvaluationRunB\003\340A\002\"c\n"
           + " GetScheduledEvaluationRunRequest\022?\n"
           + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
           + ")ces.googleapis.com/ScheduledEvaluationRun\"\304\001\n"
           + "\"ListScheduledEvaluationRunsRequest\022A\n"
-          + "\006parent\030\001 \001("
-          + "\tB1\340A\002\372A+\022)ces.googleapis.com/ScheduledEvaluationRun\022\026\n"
+          + "\006parent\030\001 \001(\tB"
+          + "1\340A\002\372A+\022)ces.googleapis.com/ScheduledEvaluationRun\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
@@ -432,11 +463,11 @@ public final class EvaluationServiceProto extends com.google.protobuf.GeneratedF
           + "\006parent\030\001 \001(\tB\036\340A\002\372A\030\n"
           + "\026ces.googleapis.com/App\022&\n"
           + "\031evaluation_expectation_id\030\002 \001(\tB\003\340A\001\022S\n"
-          + "\026evaluation_expectation\030\003 \001(\0132..goog"
-          + "le.cloud.ces.v1beta.EvaluationExpectationB\003\340A\002\"\257\001\n"
+          + "\026evaluation_expectation\030\003 \001(\0132..google.clo"
+          + "ud.ces.v1beta.EvaluationExpectationB\003\340A\002\"\257\001\n"
           + "\"UpdateEvaluationExpectationRequest\022S\n"
-          + "\026evaluation_expectation\030\001 \001(\0132.."
-          + "google.cloud.ces.v1beta.EvaluationExpectationB\003\340A\002\0224\n"
+          + "\026evaluation_expectation\030\001 \001(\0132..google"
+          + ".cloud.ces.v1beta.EvaluationExpectationB\003\340A\002\0224\n"
           + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"w\n"
           + "\"DeleteEvaluationExpectationRequest\022>\n"
           + "\004name\030\001 \001(\tB0\340A\002\372A*\n"
@@ -453,161 +484,199 @@ public final class EvaluationServiceProto extends com.google.protobuf.GeneratedF
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\216\001\n"
           + "\"ListEvaluationExpectationsResponse\022O\n"
-          + "\027evaluation_expectations\030\001 \003(\0132..goog"
-          + "le.cloud.ces.v1beta.EvaluationExpectation\022\027\n"
-          + "\017next_page_token\030\002 \001(\t2\245:\n"
+          + "\027evaluation_expectations\030\001"
+          + " \003(\0132..google.cloud.ces.v1beta.EvaluationExpectation\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\271\001\n\r"
+          + "ExportOptions\022O\n\r"
+          + "export_format\030\001 \001(\01623.google.cloud.ces"
+          + ".v1beta.ExportOptions.ExportFormatB\003\340A\001\022\024\n"
+          + "\007gcs_uri\030\002 \001(\tB\003\340A\001\"A\n"
+          + "\014ExportFormat\022\035\n"
+          + "\031EXPORT_FORMAT_UNSPECIFIED\020\000\022\010\n"
+          + "\004JSON\020\001\022\010\n"
+          + "\004YAML\020\002\"\220\002\n"
+          + "\030ExportEvaluationsRequest\022.\n"
+          + "\006parent\030\001 \001(\tB\036\340A\002\372A\030\n"
+          + "\026ces.googleapis.com/App\0224\n"
+          + "\005names\030\002 \003(\tB%\340A\002\372A\037\n"
+          + "\035ces.googleapis.com/Evaluation\022C\n"
+          + "\016export_options\030\003 "
+          + "\001(\0132&.google.cloud.ces.v1beta.ExportOptionsB\003\340A\001\022\'\n"
+          + "\032include_evaluation_results\030\004 \001(\010B\003\340A\001\022 \n"
+          + "\023include_evaluations\030\005 \001(\010B\003\340A\001\"\212\002\n"
+          + "\031ExportEvaluationsResponse\022\035\n"
+          + "\023evaluations_content\030\001 \001(\014H\000\022\031\n"
+          + "\017evaluations_uri\030\002 \001(\tH\000\022j\n"
+          + "\022failed_evaluations\030\003 \003(\0132I.google.cloud.ces.v1beta.ExportEvaluati"
+          + "onsResponse.FailedEvaluationsEntryB\003\340A\003\0328\n"
+          + "\026FailedEvaluationsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r"
+          + "\n"
+          + "\005value\030\002 \001(\t:\0028\001B\r\n"
+          + "\013evaluations\"\177\n"
+          + "\037ExportEvaluationResultsResponse\022$\n"
+          + "\032evaluation_results_content\030\001 \001(\014H\000\022 \n"
+          + "\026evaluation_results_uri\030\002 \001(\tH\000B\024\n"
+          + "\022evaluation_results\"s\n"
+          + "\034ExportEvaluationRunsResponse\022!\n"
+          + "\027evaluation_runs_content\030\001 \001(\014H\000\022\035\n"
+          + "\023evaluation_runs_uri\030\002 \001(\tH\000B\021\n"
+          + "\017evaluation_runs2\226<\n"
           + "\021EvaluationService\022\344\001\n\r"
-          + "RunEvaluation\022-.google.clou"
-          + "d.ces.v1beta.RunEvaluationRequest\032\035.google.longrunning.Operation\"\204\001\312A7\n"
-          + "\025RunEvaluationResponse\022\036RunEvaluationOperationMet"
-          + "adata\332A\003app\202\323\344\223\002>\"9/v1beta/{app=projects"
-          + "/*/locations/*/apps/*}:runEvaluation:\001*\022\370\001\n"
-          + "\025UploadEvaluationAudio\0225.google.cloud.ces.v1beta.UploadEvaluationAudioRequest"
-          + "\0326.google.cloud.ces.v1beta.UploadEvaluat"
-          + "ionAudioResponse\"p\332A\022name,audio_content\202"
-          + "\323\344\223\002U\"P/v1beta/{name=projects/*/location"
-          + "s/*/apps/*/evaluations/*}:uploadEvaluationAudio:\001*\022\360\001\n"
-          + "\020CreateEvaluation\0220.google.cloud.ces.v1beta.CreateEvaluationReques"
-          + "t\032#.google.cloud.ces.v1beta.Evaluation\"\204"
-          + "\001\332A\037parent,evaluation,evaluation_id\332A\021pa"
-          + "rent,evaluation\202\323\344\223\002H\":/v1beta/{parent=p"
-          + "rojects/*/locations/*/apps/*}/evaluations:\n"
+          + "RunEvaluation\022-.google.cloud.ces.v1beta.RunEvaluationRe"
+          + "quest\032\035.google.longrunning.Operation\"\204\001\312A7\n"
+          + "\025RunEvaluationResponse\022\036RunEvaluation"
+          + "OperationMetadata\332A\003app\202\323\344\223\002>\"9/v1beta/{"
+          + "app=projects/*/locations/*/apps/*}:runEvaluation:\001*\022\370\001\n"
+          + "\025UploadEvaluationAudio\0225.google.cloud.ces.v1beta.UploadEvaluation"
+          + "AudioRequest\0326.google.cloud.ces.v1beta.U"
+          + "ploadEvaluationAudioResponse\"p\332A\022name,au"
+          + "dio_content\202\323\344\223\002U\"P/v1beta/{name=project"
+          + "s/*/locations/*/apps/*/evaluations/*}:uploadEvaluationAudio:\001*\022\360\001\n"
+          + "\020CreateEvaluation\0220.google.cloud.ces.v1beta.CreateEval"
+          + "uationRequest\032#.google.cloud.ces.v1beta."
+          + "Evaluation\"\204\001\332A\037parent,evaluation,evalua"
+          + "tion_id\332A\021parent,evaluation\202\323\344\223\002H\":/v1be"
+          + "ta/{parent=projects/*/locations/*/apps/*}/evaluations:\n"
           + "evaluation\022\217\002\n"
-          + "\022GenerateEvaluation\0222.google.cloud.ces.v1beta.GenerateEvaluatio"
-          + "nRequest\032\035.google.longrunning.Operation\"\245\001\312A1\n\n"
-          + "Evaluation\022#GenerateEvaluationOpe"
-          + "rationMetadata\332A\014conversation\202\323\344\223\002\\\"W/v1"
-          + "beta/{conversation=projects/*/locations/"
-          + "*/apps/*/conversations/*}:generateEvaluation:\001*\022\376\001\n"
-          + "\021ImportEvaluations\0221.google.c"
-          + "loud.ces.v1beta.ImportEvaluationsRequest\032\035.google.longrunning.Operation\"\226\001\312A?\n"
-          + "\031ImportEvaluationsResponse\022\"ImportEvaluati"
-          + "onsOperationMetadata\332A\006parent\202\323\344\223\002E\"@/v1"
-          + "beta/{parent=projects/*/locations/*/apps/*}:importEvaluations:\001*\022\254\002\n"
-          + "\027CreateEvaluationDataset\0227.google.cloud.ces.v1beta.C"
-          + "reateEvaluationDatasetRequest\032*.google.c"
-          + "loud.ces.v1beta.EvaluationDataset\"\253\001\332A/p"
-          + "arent,evaluation_dataset,evaluation_data"
-          + "set_id\332A\031parent,evaluation_dataset\202\323\344\223\002W"
-          + "\"A/v1beta/{parent=projects/*/locations/*"
-          + "/apps/*}/evaluationDatasets:\022evaluation_dataset\022\335\001\n"
-          + "\020UpdateEvaluation\0220.google.cloud.ces.v1beta.UpdateEvaluationRequest\032#"
-          + ".google.cloud.ces.v1beta.Evaluation\"r\332A\026"
-          + "evaluation,update_mask\202\323\344\223\002S2E/v1beta/{e"
-          + "valuation.name=projects/*/locations/*/apps/*/evaluations/*}:\n"
+          + "\022GenerateEvaluation\0222.google.cloud.ces.v1beta.Gener"
+          + "ateEvaluationRequest\032\035.google.longrunning.Operation\"\245\001\312A1\n\n"
+          + "Evaluation\022#GenerateEvaluationOperationMetadata\332A\014conversatio"
+          + "n\202\323\344\223\002\\\"W/v1beta/{conversation=projects/"
+          + "*/locations/*/apps/*/conversations/*}:generateEvaluation:\001*\022\376\001\n"
+          + "\021ImportEvaluations\0221.google.cloud.ces.v1beta.ImportEvalua"
+          + "tionsRequest\032\035.google.longrunning.Operation\"\226\001\312A?\n"
+          + "\031ImportEvaluationsResponse\022\"ImportEvaluationsOperationMetadata\332A\006paren"
+          + "t\202\323\344\223\002E\"@/v1beta/{parent=projects/*/locations/*/apps/*}:importEvaluations:\001*\022\254\002\n"
+          + "\027CreateEvaluationDataset\0227.google.cloud.ces.v1beta.CreateEvaluationDatasetReques"
+          + "t\032*.google.cloud.ces.v1beta.EvaluationDa"
+          + "taset\"\253\001\332A/parent,evaluation_dataset,eva"
+          + "luation_dataset_id\332A\031parent,evaluation_d"
+          + "ataset\202\323\344\223\002W\"A/v1beta/{parent=projects/*"
+          + "/locations/*/apps/*}/evaluationDatasets:\022evaluation_dataset\022\335\001\n"
+          + "\020UpdateEvaluation\0220.google.cloud.ces.v1beta.UpdateEvaluat"
+          + "ionRequest\032#.google.cloud.ces.v1beta.Eva"
+          + "luation\"r\332A\026evaluation,update_mask\202\323\344\223\002S"
+          + "2E/v1beta/{evaluation.name=projects/*/locations/*/apps/*/evaluations/*}:\n"
           + "evaluation\022\222\002\n"
-          + "\027UpdateEvaluationDataset\0227.google.cloud.ces.v"
-          + "1beta.UpdateEvaluationDatasetRequest\032*.google.cloud.ces.v1beta.EvaluationDataset"
-          + "\"\221\001\332A\036evaluation_dataset,update_mask\202\323\344\223"
-          + "\002j2T/v1beta/{evaluation_dataset.name=pro"
-          + "jects/*/locations/*/apps/*/evaluationDatasets/*}:\022evaluation_dataset\022\247\001\n"
-          + "\020DeleteEvaluation\0220.google.cloud.ces.v1beta.Dele"
-          + "teEvaluationRequest\032\026.google.protobuf.Em"
-          + "pty\"I\332A\004name\202\323\344\223\002<*:/v1beta/{name=projec"
-          + "ts/*/locations/*/apps/*/evaluations/*}\022\275\001\n"
-          + "\026DeleteEvaluationResult\0226.google.cloud.ces.v1beta.DeleteEvaluationResultReques"
-          + "t\032\026.google.protobuf.Empty\"S\332A\004name\202\323\344\223\002F"
-          + "*D/v1beta/{name=projects/*/locations/*/apps/*/evaluations/*/results/*}\022\274\001\n"
-          + "\027DeleteEvaluationDataset\0227.google.cloud.ces.v1"
-          + "beta.DeleteEvaluationDatasetRequest\032\026.go"
-          + "ogle.protobuf.Empty\"P\332A\004name\202\323\344\223\002C*A/v1b"
-          + "eta/{name=projects/*/locations/*/apps/*/evaluationDatasets/*}\022\370\001\n"
-          + "\023DeleteEvaluationRun\0223.google.cloud.ces.v1beta.DeleteEv"
-          + "aluationRunRequest\032\035.google.longrunning.Operation\"\214\001\312A=\n"
-          + "\025google.protobuf.Empty\022$DeleteEvaluationRunOperationMetadata\332A\004n"
-          + "ame\202\323\344\223\002?*=/v1beta/{name=projects/*/locations/*/apps/*/evaluationRuns/*}\022\256\001\n\r"
-          + "GetEvaluation\022-.google.cloud.ces.v1beta.Get"
-          + "EvaluationRequest\032#.google.cloud.ces.v1b"
-          + "eta.Evaluation\"I\332A\004name\202\323\344\223\002<\022:/v1beta/{"
-          + "name=projects/*/locations/*/apps/*/evaluations/*}\022\312\001\n"
-          + "\023GetEvaluationResult\0223.google.cloud.ces.v1beta.GetEvaluationResultR"
-          + "equest\032).google.cloud.ces.v1beta.Evaluat"
-          + "ionResult\"S\332A\004name\202\323\344\223\002F\022D/v1beta/{name="
-          + "projects/*/locations/*/apps/*/evaluations/*/results/*}\022\312\001\n"
-          + "\024GetEvaluationDataset\0224.google.cloud.ces.v1beta.GetEvaluationD"
-          + "atasetRequest\032*.google.cloud.ces.v1beta."
-          + "EvaluationDataset\"P\332A\004name\202\323\344\223\002C\022A/v1bet"
-          + "a/{name=projects/*/locations/*/apps/*/evaluationDatasets/*}\022\272\001\n"
-          + "\020GetEvaluationRun\0220.google.cloud.ces.v1beta.GetEvaluation"
-          + "RunRequest\032&.google.cloud.ces.v1beta.Eva"
-          + "luationRun\"L\332A\004name\202\323\344\223\002?\022=/v1beta/{name"
-          + "=projects/*/locations/*/apps/*/evaluationRuns/*}\022\301\001\n"
-          + "\017ListEvaluations\022/.google.cloud.ces.v1beta.ListEvaluationsRequest\0320."
-          + "google.cloud.ces.v1beta.ListEvaluationsR"
-          + "esponse\"K\332A\006parent\202\323\344\223\002<\022:/v1beta/{paren"
-          + "t=projects/*/locations/*/apps/*}/evaluations\022\335\001\n"
-          + "\025ListEvaluationResults\0225.google.cloud.ces.v1beta.ListEvaluationResultsRe"
-          + "quest\0326.google.cloud.ces.v1beta.ListEval"
-          + "uationResultsResponse\"U\332A\006parent\202\323\344\223\002F\022D"
-          + "/v1beta/{parent=projects/*/locations/*/apps/*/evaluations/*}/results\022\335\001\n"
-          + "\026ListEvaluationDatasets\0226.google.cloud.ces.v1bet"
-          + "a.ListEvaluationDatasetsRequest\0327.google.cloud.ces.v1beta.ListEvaluationDatasets"
-          + "Response\"R\332A\006parent\202\323\344\223\002C\022A/v1beta/{pare"
-          + "nt=projects/*/locations/*/apps/*}/evaluationDatasets\022\315\001\n"
-          + "\022ListEvaluationRuns\0222.google.cloud.ces.v1beta.ListEvaluationRuns"
-          + "Request\0323.google.cloud.ces.v1beta.ListEv"
-          + "aluationRunsResponse\"N\332A\006parent\202\323\344\223\002?\022=/"
-          + "v1beta/{parent=projects/*/locations/*/apps/*}/evaluationRuns\022\355\001\n"
-          + "\032ListEvaluationExpectations\022:.google.cloud.ces.v1beta.Li"
-          + "stEvaluationExpectationsRequest\032;.google.cloud.ces.v1beta.ListEvaluationExpectat"
-          + "ionsResponse\"V\332A\006parent\202\323\344\223\002G\022E/v1beta/{"
-          + "parent=projects/*/locations/*/apps/*}/evaluationExpectations\022\332\001\n"
-          + "\030GetEvaluationExpectation\0228.google.cloud.ces.v1beta.GetE"
-          + "valuationExpectationRequest\032..google.clo"
-          + "ud.ces.v1beta.EvaluationExpectation\"T\332A\004"
-          + "name\202\323\344\223\002G\022E/v1beta/{name=projects/*/loc"
-          + "ations/*/apps/*/evaluationExpectations/*}\022\314\002\n"
-          + "\033CreateEvaluationExpectation\022;.google.cloud.ces.v1beta.CreateEvaluationExpe"
-          + "ctationRequest\032..google.cloud.ces.v1beta"
-          + ".EvaluationExpectation\"\277\001\332A7parent,evalu"
-          + "ation_expectation,evaluation_expectation"
-          + "_id\332A\035parent,evaluation_expectation\202\323\344\223\002"
-          + "_\"E/v1beta/{parent=projects/*/locations/"
-          + "*/apps/*}/evaluationExpectations:\026evaluation_expectation\022\256\002\n"
-          + "\033UpdateEvaluationExpectation\022;.google.cloud.ces.v1beta.Updat"
-          + "eEvaluationExpectationRequest\032..google.c"
-          + "loud.ces.v1beta.EvaluationExpectation\"\241\001"
-          + "\332A\"evaluation_expectation,update_mask\202\323\344"
-          + "\223\002v2\\/v1beta/{evaluation_expectation.nam"
-          + "e=projects/*/locations/*/apps/*/evaluati"
-          + "onExpectations/*}:\026evaluation_expectation\022\310\001\n"
-          + "\033DeleteEvaluationExpectation\022;.google.cloud.ces.v1beta.DeleteEvaluationExpe"
-          + "ctationRequest\032\026.google.protobuf.Empty\"T"
-          + "\332A\004name\202\323\344\223\002G*E/v1beta/{name=projects/*/"
-          + "locations/*/apps/*/evaluationExpectations/*}\022\330\002\n"
-          + "\034CreateScheduledEvaluationRun\022<.google.cloud.ces.v1beta.CreateScheduledE"
-          + "valuationRunRequest\032/.google.cloud.ces.v"
-          + "1beta.ScheduledEvaluationRun\"\310\001\332A;parent"
-          + ",scheduled_evaluation_run,scheduled_evaluation_run_id\332A\037parent,scheduled_evaluat"
-          + "ion_run\202\323\344\223\002b\"F/v1beta/{parent=projects/"
-          + "*/locations/*/apps/*}/scheduledEvaluationRuns:\030scheduled_evaluation_run\022\336\001\n"
-          + "\031GetScheduledEvaluationRun\0229.google.cloud.ces"
-          + ".v1beta.GetScheduledEvaluationRunRequest\032/.google.cloud.ces.v1beta.ScheduledEval"
-          + "uationRun\"U\332A\004name\202\323\344\223\002H\022F/v1beta/{name="
-          + "projects/*/locations/*/apps/*/scheduledEvaluationRuns/*}\022\361\001\n"
-          + "\033ListScheduledEvaluationRuns\022;.google.cloud.ces.v1beta.ListS"
-          + "cheduledEvaluationRunsRequest\032<.google.cloud.ces.v1beta.ListScheduledEvaluationR"
-          + "unsResponse\"W\332A\006parent\202\323\344\223\002H\022F/v1beta/{p"
-          + "arent=projects/*/locations/*/apps/*}/scheduledEvaluationRuns\022\270\002\n"
-          + "\034UpdateScheduledEvaluationRun\022<.google.cloud.ces.v1beta."
-          + "UpdateScheduledEvaluationRunRequest\032/.google.cloud.ces.v1beta.ScheduledEvaluatio"
-          + "nRun\"\250\001\332A$scheduled_evaluation_run,updat"
-          + "e_mask\202\323\344\223\002{2_/v1beta/{scheduled_evaluat"
-          + "ion_run.name=projects/*/locations/*/apps"
-          + "/*/scheduledEvaluationRuns/*}:\030scheduled_evaluation_run\022\313\001\n"
-          + "\034DeleteScheduledEvaluationRun\022<.google.cloud.ces.v1beta.Delet"
-          + "eScheduledEvaluationRunRequest\032\026.google."
-          + "protobuf.Empty\"U\332A\004name\202\323\344\223\002H*F/v1beta/{"
-          + "name=projects/*/locations/*/apps/*/scheduledEvaluationRuns/*}\022\306\001\n"
-          + "\020TestPersonaVoice\0220.google.cloud.ces.v1beta.TestPersona"
-          + "VoiceRequest\0321.google.cloud.ces.v1beta.T"
-          + "estPersonaVoiceResponse\"M\332A\003app\202\323\344\223\002A\"</"
-          + "v1beta/{app=projects/*/locations/*/apps/"
-          + "*}:testPersonaVoice:\001*\032j\312A\022ces.googleapi"
-          + "s.com\322ARhttps://www.googleapis.com/auth/"
-          + "ces,https://www.googleapis.com/auth/cloud-platformBf\n"
-          + "\033com.google.cloud.ces.v1betaB\026EvaluationServiceProtoP\001Z-cloud.googl"
-          + "e.com/go/ces/apiv1beta/cespb;cespbb\006proto3"
+          + "\027UpdateEvaluationDataset\0227.google.cloud.ces.v1beta.UpdateEvaluationDatase"
+          + "tRequest\032*.google.cloud.ces.v1beta.Evalu"
+          + "ationDataset\"\221\001\332A\036evaluation_dataset,upd"
+          + "ate_mask\202\323\344\223\002j2T/v1beta/{evaluation_data"
+          + "set.name=projects/*/locations/*/apps/*/e"
+          + "valuationDatasets/*}:\022evaluation_dataset\022\247\001\n"
+          + "\020DeleteEvaluation\0220.google.cloud.ces"
+          + ".v1beta.DeleteEvaluationRequest\032\026.google"
+          + ".protobuf.Empty\"I\332A\004name\202\323\344\223\002<*:/v1beta/"
+          + "{name=projects/*/locations/*/apps/*/evaluations/*}\022\275\001\n"
+          + "\026DeleteEvaluationResult\0226.google.cloud.ces.v1beta.DeleteEvaluation"
+          + "ResultRequest\032\026.google.protobuf.Empty\"S\332"
+          + "A\004name\202\323\344\223\002F*D/v1beta/{name=projects/*/l"
+          + "ocations/*/apps/*/evaluations/*/results/*}\022\274\001\n"
+          + "\027DeleteEvaluationDataset\0227.google.cloud.ces.v1beta.DeleteEvaluationDataset"
+          + "Request\032\026.google.protobuf.Empty\"P\332A\004name"
+          + "\202\323\344\223\002C*A/v1beta/{name=projects/*/locations/*/apps/*/evaluationDatasets/*}\022\370\001\n"
+          + "\023DeleteEvaluationRun\0223.google.cloud.ces.v1b"
+          + "eta.DeleteEvaluationRunRequest\032\035.google.longrunning.Operation\"\214\001\312A=\n"
+          + "\025google.protobuf.Empty\022$DeleteEvaluationRunOperation"
+          + "Metadata\332A\004name\202\323\344\223\002?*=/v1beta/{name=pro"
+          + "jects/*/locations/*/apps/*/evaluationRuns/*}\022\256\001\n\r"
+          + "GetEvaluation\022-.google.cloud.ces.v1beta.GetEvaluationRequest\032#.google.c"
+          + "loud.ces.v1beta.Evaluation\"I\332A\004name\202\323\344\223\002"
+          + "<\022:/v1beta/{name=projects/*/locations/*/apps/*/evaluations/*}\022\312\001\n"
+          + "\023GetEvaluationResult\0223.google.cloud.ces.v1beta.GetEvalu"
+          + "ationResultRequest\032).google.cloud.ces.v1"
+          + "beta.EvaluationResult\"S\332A\004name\202\323\344\223\002F\022D/v"
+          + "1beta/{name=projects/*/locations/*/apps/*/evaluations/*/results/*}\022\312\001\n"
+          + "\024GetEvaluationDataset\0224.google.cloud.ces.v1beta.Ge"
+          + "tEvaluationDatasetRequest\032*.google.cloud"
+          + ".ces.v1beta.EvaluationDataset\"P\332A\004name\202\323"
+          + "\344\223\002C\022A/v1beta/{name=projects/*/locations/*/apps/*/evaluationDatasets/*}\022\272\001\n"
+          + "\020GetEvaluationRun\0220.google.cloud.ces.v1beta.G"
+          + "etEvaluationRunRequest\032&.google.cloud.ce"
+          + "s.v1beta.EvaluationRun\"L\332A\004name\202\323\344\223\002?\022=/"
+          + "v1beta/{name=projects/*/locations/*/apps/*/evaluationRuns/*}\022\301\001\n"
+          + "\017ListEvaluations\022/.google.cloud.ces.v1beta.ListEvaluatio"
+          + "nsRequest\0320.google.cloud.ces.v1beta.List"
+          + "EvaluationsResponse\"K\332A\006parent\202\323\344\223\002<\022:/v"
+          + "1beta/{parent=projects/*/locations/*/apps/*}/evaluations\022\335\001\n"
+          + "\025ListEvaluationResults\0225.google.cloud.ces.v1beta.ListEvaluat"
+          + "ionResultsRequest\0326.google.cloud.ces.v1b"
+          + "eta.ListEvaluationResultsResponse\"U\332A\006pa"
+          + "rent\202\323\344\223\002F\022D/v1beta/{parent=projects/*/l"
+          + "ocations/*/apps/*/evaluations/*}/results\022\335\001\n"
+          + "\026ListEvaluationDatasets\0226.google.cloud.ces.v1beta.ListEvaluationDatasetsRequ"
+          + "est\0327.google.cloud.ces.v1beta.ListEvalua"
+          + "tionDatasetsResponse\"R\332A\006parent\202\323\344\223\002C\022A/"
+          + "v1beta/{parent=projects/*/locations/*/apps/*}/evaluationDatasets\022\315\001\n"
+          + "\022ListEvaluationRuns\0222.google.cloud.ces.v1beta.ListEv"
+          + "aluationRunsRequest\0323.google.cloud.ces.v"
+          + "1beta.ListEvaluationRunsResponse\"N\332A\006par"
+          + "ent\202\323\344\223\002?\022=/v1beta/{parent=projects/*/locations/*/apps/*}/evaluationRuns\022\355\001\n"
+          + "\032ListEvaluationExpectations\022:.google.cloud.c"
+          + "es.v1beta.ListEvaluationExpectationsRequest\032;.google.cloud.ces.v1beta.ListEvalua"
+          + "tionExpectationsResponse\"V\332A\006parent\202\323\344\223\002"
+          + "G\022E/v1beta/{parent=projects/*/locations/*/apps/*}/evaluationExpectations\022\332\001\n"
+          + "\030GetEvaluationExpectation\0228.google.cloud.ces"
+          + ".v1beta.GetEvaluationExpectationRequest\032..google.cloud.ces.v1beta.EvaluationExpe"
+          + "ctation\"T\332A\004name\202\323\344\223\002G\022E/v1beta/{name=pr"
+          + "ojects/*/locations/*/apps/*/evaluationExpectations/*}\022\314\002\n"
+          + "\033CreateEvaluationExpectation\022;.google.cloud.ces.v1beta.CreateEv"
+          + "aluationExpectationRequest\032..google.clou"
+          + "d.ces.v1beta.EvaluationExpectation\"\277\001\332A7"
+          + "parent,evaluation_expectation,evaluation_expectation_id\332A\035parent,evaluation_expe"
+          + "ctation\202\323\344\223\002_\"E/v1beta/{parent=projects/"
+          + "*/locations/*/apps/*}/evaluationExpectations:\026evaluation_expectation\022\256\002\n"
+          + "\033UpdateEvaluationExpectation\022;.google.cloud.ces."
+          + "v1beta.UpdateEvaluationExpectationRequest\032..google.cloud.ces.v1beta.EvaluationEx"
+          + "pectation\"\241\001\332A\"evaluation_expectation,up"
+          + "date_mask\202\323\344\223\002v2\\/v1beta/{evaluation_exp"
+          + "ectation.name=projects/*/locations/*/app"
+          + "s/*/evaluationExpectations/*}:\026evaluation_expectation\022\310\001\n"
+          + "\033DeleteEvaluationExpectation\022;.google.cloud.ces.v1beta.DeleteEv"
+          + "aluationExpectationRequest\032\026.google.prot"
+          + "obuf.Empty\"T\332A\004name\202\323\344\223\002G*E/v1beta/{name"
+          + "=projects/*/locations/*/apps/*/evaluationExpectations/*}\022\330\002\n"
+          + "\034CreateScheduledEvaluationRun\022<.google.cloud.ces.v1beta.Crea"
+          + "teScheduledEvaluationRunRequest\032/.google.cloud.ces.v1beta.ScheduledEvaluationRun"
+          + "\"\310\001\332A;parent,scheduled_evaluation_run,sc"
+          + "heduled_evaluation_run_id\332A\037parent,sched"
+          + "uled_evaluation_run\202\323\344\223\002b\"F/v1beta/{pare"
+          + "nt=projects/*/locations/*/apps/*}/schedu"
+          + "ledEvaluationRuns:\030scheduled_evaluation_run\022\336\001\n"
+          + "\031GetScheduledEvaluationRun\0229.google.cloud.ces.v1beta.GetScheduledEvaluati"
+          + "onRunRequest\032/.google.cloud.ces.v1beta.S"
+          + "cheduledEvaluationRun\"U\332A\004name\202\323\344\223\002H\022F/v"
+          + "1beta/{name=projects/*/locations/*/apps/*/scheduledEvaluationRuns/*}\022\361\001\n"
+          + "\033ListScheduledEvaluationRuns\022;.google.cloud.ces."
+          + "v1beta.ListScheduledEvaluationRunsRequest\032<.google.cloud.ces.v1beta.ListSchedule"
+          + "dEvaluationRunsResponse\"W\332A\006parent\202\323\344\223\002H"
+          + "\022F/v1beta/{parent=projects/*/locations/*/apps/*}/scheduledEvaluationRuns\022\270\002\n"
+          + "\034UpdateScheduledEvaluationRun\022<.google.cloud"
+          + ".ces.v1beta.UpdateScheduledEvaluationRunRequest\032/.google.cloud.ces.v1beta.Schedu"
+          + "ledEvaluationRun\"\250\001\332A$scheduled_evaluati"
+          + "on_run,update_mask\202\323\344\223\002{2_/v1beta/{sched"
+          + "uled_evaluation_run.name=projects/*/loca"
+          + "tions/*/apps/*/scheduledEvaluationRuns/*}:\030scheduled_evaluation_run\022\313\001\n"
+          + "\034DeleteScheduledEvaluationRun\022<.google.cloud.ces."
+          + "v1beta.DeleteScheduledEvaluationRunReque"
+          + "st\032\026.google.protobuf.Empty\"U\332A\004name\202\323\344\223\002"
+          + "H*F/v1beta/{name=projects/*/locations/*/apps/*/scheduledEvaluationRuns/*}\022\306\001\n"
+          + "\020TestPersonaVoice\0220.google.cloud.ces.v1beta"
+          + ".TestPersonaVoiceRequest\0321.google.cloud."
+          + "ces.v1beta.TestPersonaVoiceResponse\"M\332A\003"
+          + "app\202\323\344\223\002A\"</v1beta/{app=projects/*/locations/*/apps/*}:testPersonaVoice:\001*\022\356\001\n"
+          + "\021ExportEvaluations\0221.google.cloud.ces.v1be"
+          + "ta.ExportEvaluationsRequest\032\035.google.longrunning.Operation\"\206\001\312A.\n"
+          + "\031ExportEvaluationsResponse\022\021OperationMetadata\332A\006parent\202"
+          + "\323\344\223\002F\"A/v1beta/{parent=projects/*/locati"
+          + "ons/*/apps/*}/evaluations:export:\001*\032j\312A\022",
+      "ces.googleapis.com\322ARhttps://www.googlea"
+          + "pis.com/auth/ces,https://www.googleapis."
+          + "com/auth/cloud-platformBf\n\033com.google.cl"
+          + "oud.ces.v1betaB\026EvaluationServiceProtoP\001"
+          + "Z-cloud.google.com/go/ces/apiv1beta/cesp"
+          + "b;cespbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -617,6 +686,7 @@ public final class EvaluationServiceProto extends com.google.protobuf.GeneratedF
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.ces.v1beta.AgentServiceProto.getDescriptor(),
               com.google.cloud.ces.v1beta.ConversationProto.getDescriptor(),
               com.google.cloud.ces.v1beta.EvaluationProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
@@ -701,7 +771,13 @@ public final class EvaluationServiceProto extends com.google.protobuf.GeneratedF
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_cloud_ces_v1beta_ImportEvaluationsResponse_descriptor,
             new java.lang.String[] {
-              "Evaluations", "ErrorMessages", "ImportFailureCount",
+              "Evaluations",
+              "EvaluationResults",
+              "EvaluationRuns",
+              "ErrorMessages",
+              "ImportFailureCount",
+              "EvaluationResultImportFailureCount",
+              "EvaluationRunImportFailureCount",
             });
     internal_static_google_cloud_ces_v1beta_ImportEvaluationsOperationMetadata_descriptor =
         getDescriptor().getMessageType(8);
@@ -998,11 +1074,61 @@ public final class EvaluationServiceProto extends com.google.protobuf.GeneratedF
             new java.lang.String[] {
               "EvaluationExpectations", "NextPageToken",
             });
+    internal_static_google_cloud_ces_v1beta_ExportOptions_descriptor =
+        getDescriptor().getMessageType(44);
+    internal_static_google_cloud_ces_v1beta_ExportOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_ExportOptions_descriptor,
+            new java.lang.String[] {
+              "ExportFormat", "GcsUri",
+            });
+    internal_static_google_cloud_ces_v1beta_ExportEvaluationsRequest_descriptor =
+        getDescriptor().getMessageType(45);
+    internal_static_google_cloud_ces_v1beta_ExportEvaluationsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_ExportEvaluationsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names", "ExportOptions", "IncludeEvaluationResults", "IncludeEvaluations",
+            });
+    internal_static_google_cloud_ces_v1beta_ExportEvaluationsResponse_descriptor =
+        getDescriptor().getMessageType(46);
+    internal_static_google_cloud_ces_v1beta_ExportEvaluationsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_ExportEvaluationsResponse_descriptor,
+            new java.lang.String[] {
+              "EvaluationsContent", "EvaluationsUri", "FailedEvaluations", "Evaluations",
+            });
+    internal_static_google_cloud_ces_v1beta_ExportEvaluationsResponse_FailedEvaluationsEntry_descriptor =
+        internal_static_google_cloud_ces_v1beta_ExportEvaluationsResponse_descriptor.getNestedType(
+            0);
+    internal_static_google_cloud_ces_v1beta_ExportEvaluationsResponse_FailedEvaluationsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_ExportEvaluationsResponse_FailedEvaluationsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_ces_v1beta_ExportEvaluationResultsResponse_descriptor =
+        getDescriptor().getMessageType(47);
+    internal_static_google_cloud_ces_v1beta_ExportEvaluationResultsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_ExportEvaluationResultsResponse_descriptor,
+            new java.lang.String[] {
+              "EvaluationResultsContent", "EvaluationResultsUri", "EvaluationResults",
+            });
+    internal_static_google_cloud_ces_v1beta_ExportEvaluationRunsResponse_descriptor =
+        getDescriptor().getMessageType(48);
+    internal_static_google_cloud_ces_v1beta_ExportEvaluationRunsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_cloud_ces_v1beta_ExportEvaluationRunsResponse_descriptor,
+            new java.lang.String[] {
+              "EvaluationRunsContent", "EvaluationRunsUri", "EvaluationRuns",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.ces.v1beta.AgentServiceProto.getDescriptor();
     com.google.cloud.ces.v1beta.ConversationProto.getDescriptor();
     com.google.cloud.ces.v1beta.EvaluationProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
