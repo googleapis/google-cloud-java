@@ -53,7 +53,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class TracedUnaryCallableTest {
-  private static final SpanName SPAN_NAME = SpanName.of("FakeClient", "FakeRpc");
+
   private static final ApiTracerContext TRACER_CONTEXT =
       ApiTracerContext.newBuilder()
           .setFullMethodName("FakeClient/FakeRpc")
@@ -77,8 +77,7 @@ class TracedUnaryCallableTest {
     // Wire the mock tracer factory
     when(tracerFactory.newTracer(any(ApiTracer.class), any(ApiTracerContext.class)))
         .thenReturn(tracer);
-    tracedUnaryCallable =
-        new TracedUnaryCallable<>(innerCallable, tracerFactory, TRACER_CONTEXT, null);
+    tracedUnaryCallable = new TracedUnaryCallable<>(innerCallable, tracerFactory, TRACER_CONTEXT);
 
     // Wire the mock inner callable
     innerResult = SettableApiFuture.create();
@@ -98,13 +97,12 @@ class TracedUnaryCallableTest {
   void testOperationTypeIsSet() {
     when(tracerFactory.newTracer(any(ApiTracer.class), any(ApiTracerContext.class)))
         .thenReturn(tracer);
-    tracedUnaryCallable =
-        new TracedUnaryCallable<>(innerCallable, tracerFactory, TRACER_CONTEXT, null);
+    tracedUnaryCallable = new TracedUnaryCallable<>(innerCallable, tracerFactory, TRACER_CONTEXT);
     ApiTracerContext contextWithWrongType =
         TRACER_CONTEXT.toBuilder().setOperationType(OperationType.BidiStreaming).build();
 
     tracedUnaryCallable =
-        new TracedUnaryCallable<>(innerCallable, tracerFactory, contextWithWrongType, null);
+        new TracedUnaryCallable<>(innerCallable, tracerFactory, contextWithWrongType);
 
     innerResult = SettableApiFuture.create();
     when(innerCallable.futureCall(anyString(), any(ApiCallContext.class))).thenReturn(innerResult);

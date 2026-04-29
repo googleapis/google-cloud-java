@@ -56,7 +56,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class TracedCallableTest {
-  private static final SpanName SPAN_NAME = SpanName.of("FakeClient", "FakeRpc");
+
   private static final ApiTracerContext TRACER_CONTEXT =
       ApiTracerContext.newBuilder()
           .setFullMethodName("FakeClient/FakeRpc")
@@ -94,7 +94,7 @@ class TracedCallableTest {
       UnaryCallSettings<Object, Object> callSettings) {
     UnaryCallable<String, String> callable =
         Callables.retrying(innerCallable, callSettings, clientContext);
-    return new TracedUnaryCallable<>(callable, tracerFactory, TRACER_CONTEXT, null);
+    return new TracedUnaryCallable<>(callable, tracerFactory, TRACER_CONTEXT);
   }
 
   @Test

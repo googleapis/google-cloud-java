@@ -80,6 +80,13 @@ public class TracedUnaryCallable<RequestT, ResponseT> extends UnaryCallable<Requ
     this.resourceNameExtractor = resourceNameExtractor;
   }
 
+  TracedUnaryCallable(
+      UnaryCallable<RequestT, ResponseT> innerCallable,
+      ApiTracerFactory tracerFactory,
+      ApiTracerContext apiTracerContext) {
+    this(innerCallable, tracerFactory, apiTracerContext, null);
+  }
+
   /**
    * Calls the wrapped {@link UnaryCallable} within the context of a new trace.
    *
