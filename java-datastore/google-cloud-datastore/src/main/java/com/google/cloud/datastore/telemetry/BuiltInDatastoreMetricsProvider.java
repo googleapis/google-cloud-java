@@ -120,21 +120,30 @@ public class BuiltInDatastoreMetricsProvider {
    */
   @Nullable
   public OpenTelemetry createOpenTelemetry(@Nonnull DatastoreOptions options) {
-    Credentials credentials = options.getCredentials();
+    Credentials credentials =
+        Preconditions.checkNotNull(
+            options.getCredentials(), "Credentials cannot be null for built in metrics");
     String projectId = options.getProjectId();
     String databaseId = options.getDatabaseId();
-    Preconditions.checkNotNull(credentials, "Credentials cannot be null for built in metrics");
-    SdkMeterProviderBuilder sdkMeterProviderBuilder = SdkMeterProvider.builder();
 
-    Map<String, String> clientAttributes = buildClientAttributes();
+    // No need to send metrics when using an emulator
+    String emulatorHost =
+        System.getProperty(
+            DatastoreOptions.LOCAL_HOST_ENV_VAR,
+            System.getenv(DatastoreOptions.LOCAL_HOST_ENV_VAR));
+    boolean emulatorEnabled = emulatorHost != null && !emulatorHost.isEmpty();
 
+    if (emulatorEnabled) {
+      logger.log(Level.FINE, "Emulator detected in Datastore. Metrics are not being recorded.");
+      return OpenTelemetry.noop();
+    }
     if (credentials instanceof NoCredentials) {
-      logger.log(
-          Level.WARNING,
-          "Built-in metrics exporting is disabled when using NoCredentials (emulator).");
-      return null;
+      logger.log(Level.WARNING, "Built-in metrics exporting is disabled when using NoCredentials.");
+      return OpenTelemetry.noop();
     }
 
+    SdkMeterProviderBuilder sdkMeterProviderBuilder = SdkMeterProvider.builder();
+    Map<String, String> clientAttributes = buildClientAttributes();
     DatastoreCloudMonitoringExporter exporter =
         DatastoreCloudMonitoringExporter.create(
             projectId, databaseId, credentials, clientAttributes);
@@ -142,7 +151,7 @@ public class BuiltInDatastoreMetricsProvider {
       logger.log(
           Level.WARNING,
           "Built-in metrics exporting is disabled as the exporter could not be created.");
-      return null;
+      return OpenTelemetry.noop();
     }
 
     // Register Datastore-specific views and the PeriodicMetricReader.

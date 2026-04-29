@@ -88,14 +88,16 @@ public class DatastoreMetricsRecorderTest {
                     .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
                     .build())
             .build();
-    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options, null);
+    DatastoreMetricsRecorder recorder =
+        DatastoreMetricsRecorder.getInstance(options, OpenTelemetry.noop());
 
-    // Since baseOptions() uses NoCredentials, it should not have any recorders
-    // as we don't want to send metrics for local emulator logic.
+    // Since baseOptions() uses NoCredentials, the provider returns OpenTelemetry.noop().
+    // This NoOp instance is passed to getInstance, which adds it to the recorders list.
+    // So we have 1 recorder (the NoOp one).
     assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
     CompositeDatastoreMetricsRecorder compositeRecorder =
         (CompositeDatastoreMetricsRecorder) recorder;
-    assertThat(compositeRecorder.getMetricRecorders().size()).isEqualTo(0);
+    assertThat(compositeRecorder.getMetricRecorders().size()).isEqualTo(1);
   }
 
   @Test

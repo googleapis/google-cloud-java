@@ -46,7 +46,7 @@ public class BuiltInDatastoreMetricsProviderTest {
   }
 
   @Test
-  public void testCreateOpenTelemetry_returnsNull() {
+  public void testCreateOpenTelemetry_returnsNoOp() {
     DatastoreOptions options =
         DatastoreOptions.newBuilder()
             .setProjectId(PROJECT_ID)
@@ -54,7 +54,7 @@ public class BuiltInDatastoreMetricsProviderTest {
             .setCredentials(NoCredentials.getInstance())
             .build();
     OpenTelemetry otel = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
-    assertThat(otel).isNull();
+    assertThat(otel).isInstanceOf(OpenTelemetry.noop().getClass());
   }
 
   @Test
@@ -118,6 +118,19 @@ public class BuiltInDatastoreMetricsProviderTest {
       if (otel2 instanceof OpenTelemetrySdk) {
         ((OpenTelemetrySdk) otel2).close();
       }
+    }
+  }
+
+  @Test
+  public void testCreateOpenTelemetry_withEmulatorHostProperty_returnsNoOp() {
+    System.setProperty(DatastoreOptions.LOCAL_HOST_ENV_VAR, "localhost:8081");
+    try {
+      DatastoreOptions options =
+          DatastoreOptions.newBuilder().setProjectId(PROJECT_ID).setDatabaseId("test-db").build();
+      OpenTelemetry otel = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
+      assertThat(otel).isInstanceOf(OpenTelemetry.noop().getClass());
+    } finally {
+      System.clearProperty(DatastoreOptions.LOCAL_HOST_ENV_VAR);
     }
   }
 }
