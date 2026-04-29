@@ -16,20 +16,26 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.BackendBucketsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.BackendBucketsClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.BackendBucketsClient.ListUsablePagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddSignedUrlKeyBackendBucketRequest;
+import com.google.cloud.compute.v1.AggregatedListBackendBucketsRequest;
 import com.google.cloud.compute.v1.BackendBucket;
+import com.google.cloud.compute.v1.BackendBucketAggregatedList;
 import com.google.cloud.compute.v1.BackendBucketList;
+import com.google.cloud.compute.v1.BackendBucketListUsable;
 import com.google.cloud.compute.v1.DeleteBackendBucketRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendBucketRequest;
 import com.google.cloud.compute.v1.GetBackendBucketRequest;
 import com.google.cloud.compute.v1.GetIamPolicyBackendBucketRequest;
 import com.google.cloud.compute.v1.InsertBackendBucketRequest;
 import com.google.cloud.compute.v1.ListBackendBucketsRequest;
+import com.google.cloud.compute.v1.ListUsableBackendBucketsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendBucketRequest;
 import com.google.cloud.compute.v1.Policy;
@@ -56,6 +62,16 @@ public abstract class BackendBucketsStub implements BackgroundResource {
 
   public UnaryCallable<AddSignedUrlKeyBackendBucketRequest, Operation> addSignedUrlKeyCallable() {
     throw new UnsupportedOperationException("Not implemented: addSignedUrlKeyCallable()");
+  }
+
+  public UnaryCallable<AggregatedListBackendBucketsRequest, AggregatedListPagedResponse>
+      aggregatedListPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListPagedCallable()");
+  }
+
+  public UnaryCallable<AggregatedListBackendBucketsRequest, BackendBucketAggregatedList>
+      aggregatedListCallable() {
+    throw new UnsupportedOperationException("Not implemented: aggregatedListCallable()");
   }
 
   public OperationCallable<DeleteBackendBucketRequest, Operation, Operation>
@@ -101,6 +117,16 @@ public abstract class BackendBucketsStub implements BackgroundResource {
 
   public UnaryCallable<ListBackendBucketsRequest, BackendBucketList> listCallable() {
     throw new UnsupportedOperationException("Not implemented: listCallable()");
+  }
+
+  public UnaryCallable<ListUsableBackendBucketsRequest, ListUsablePagedResponse>
+      listUsablePagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsablePagedCallable()");
+  }
+
+  public UnaryCallable<ListUsableBackendBucketsRequest, BackendBucketListUsable>
+      listUsableCallable() {
+    throw new UnsupportedOperationException("Not implemented: listUsableCallable()");
   }
 
   public OperationCallable<PatchBackendBucketRequest, Operation, Operation>

@@ -16,7 +16,9 @@
 
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.BackendBucketsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.BackendBucketsClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.BackendBucketsClient.ListUsablePagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -125,6 +127,15 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
     return ((BackendBucketsStubSettings) getStubSettings()).addSignedUrlKeyOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListBackendBucketsRequest,
+          BackendBucketAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).aggregatedListSettings();
+  }
+
   /** Returns the object with the settings used for calls to delete. */
   public UnaryCallSettings<DeleteBackendBucketRequest, Operation> deleteSettings() {
     return ((BackendBucketsStubSettings) getStubSettings()).deleteSettings();
@@ -173,6 +184,13 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
   public PagedCallSettings<ListBackendBucketsRequest, BackendBucketList, ListPagedResponse>
       listSettings() {
     return ((BackendBucketsStubSettings) getStubSettings()).listSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listUsable. */
+  public PagedCallSettings<
+          ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>
+      listUsableSettings() {
+    return ((BackendBucketsStubSettings) getStubSettings()).listUsableSettings();
   }
 
   /** Returns the object with the settings used for calls to patch. */
@@ -330,6 +348,15 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
       return getStubSettingsBuilder().addSignedUrlKeyOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListBackendBucketsRequest,
+            BackendBucketAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return getStubSettingsBuilder().aggregatedListSettings();
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteBackendBucketRequest, Operation> deleteSettings() {
       return getStubSettingsBuilder().deleteSettings();
@@ -381,6 +408,13 @@ public class BackendBucketsSettings extends ClientSettings<BackendBucketsSetting
             ListBackendBucketsRequest, BackendBucketList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listUsable. */
+    public PagedCallSettings.Builder<
+            ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>
+        listUsableSettings() {
+      return getStubSettingsBuilder().listUsableSettings();
     }
 
     /** Returns the builder for the settings used for calls to patch. */

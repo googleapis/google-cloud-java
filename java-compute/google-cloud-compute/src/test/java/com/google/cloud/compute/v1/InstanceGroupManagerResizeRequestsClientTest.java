@@ -243,6 +243,7 @@ public class InstanceGroupManagerResizeRequestsClientTest {
             .setId(3355)
             .setKind("kind3292052")
             .setName("name3373707")
+            .setRegion("region-934795532")
             .setRequestedRunDuration(Duration.newBuilder().build())
             .setResizeBy(2144348098)
             .setSelfLink("selfLink1191800166")

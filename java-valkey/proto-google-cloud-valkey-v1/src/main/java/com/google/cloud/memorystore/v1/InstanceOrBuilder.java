@@ -1165,7 +1165,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1/memorystore.proto;l=586
+   *     google/cloud/memorystore/v1/memorystore.proto;l=604
    * @return Whether the ondemandMaintenance field is set.
    */
   @java.lang.Deprecated
@@ -1183,7 +1183,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.ondemand_maintenance is deprecated. See
-   *     google/cloud/memorystore/v1/memorystore.proto;l=586
+   *     google/cloud/memorystore/v1/memorystore.proto;l=604
    * @return The ondemandMaintenance.
    */
   @java.lang.Deprecated
@@ -1776,7 +1776,7 @@ public interface InstanceOrBuilder
    * </code>
    *
    * @deprecated google.cloud.memorystore.v1.Instance.allow_fewer_zones_deployment is deprecated.
-   *     See google/cloud/memorystore/v1/memorystore.proto;l=667
+   *     See google/cloud/memorystore/v1/memorystore.proto;l=685
    * @return The allowFewerZonesDeployment.
    */
   @java.lang.Deprecated
