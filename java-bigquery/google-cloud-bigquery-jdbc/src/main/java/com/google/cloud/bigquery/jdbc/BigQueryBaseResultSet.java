@@ -109,7 +109,6 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   protected SQLException createCoercionException(
       int columnIndex, Class<?> targetClass, Exception cause) throws SQLException {
-    LOG.severe(cause, "Coercion failed");
     checkClosed();
     StandardSQLTypeName type;
     String typeName;
@@ -127,7 +126,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
         SQLException ex =
             new SQLException(
                 "For a nested ResultSet from an Array, columnIndex must be 1 or 2.", cause);
-        LOG.severe(ex, "For a nested ResultSet from an Array, columnIndex must be 1 or 2.");
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
     } else {
@@ -149,7 +148,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
       } else if (columnIndex == 2) {
         if (this.schema == null || this.schema.getFields().isEmpty()) {
           SQLException ex = new SQLException("Schema not available for nested result set.");
-          LOG.severe(ex, "Schema not available for nested result set.");
+          LOG.severe("Schema not available for nested result set.", ex);
           throw ex;
         }
         Field arrayField = this.schema.getFields().get(0);
@@ -157,7 +156,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
       } else {
         SQLException ex =
             new SQLException("For a nested ResultSet from an Array, columnIndex must be 1 or 2.");
-        LOG.severe(ex, "For a nested ResultSet from an Array, columnIndex must be 1 or 2.");
+        LOG.severe("For a nested ResultSet from an Array, columnIndex must be 1 or 2.", ex);
         throw ex;
       }
     } else {
@@ -165,7 +164,7 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
           || columnIndex > this.schemaFieldList.size()
           || columnIndex < 1) {
         SQLException ex = new SQLException("Invalid column index: " + columnIndex);
-        LOG.severe(ex, "Invalid column index: " + columnIndex);
+        LOG.severe("Invalid column index: " + columnIndex, ex);
         throw ex;
       }
       Field field = this.schemaFieldList.get(columnIndex - 1);
@@ -228,7 +227,9 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     LOG.finest("++enter++");
     checkClosed();
     if (columnLabel == null) {
-      throw new SQLException("Column label cannot be null");
+      SQLException ex = new SQLException("Column label cannot be null");
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
     // use schema to get the column index, add 1 for SQL index
     return this.schemaFieldList.getIndex(columnLabel) + 1;

@@ -30,8 +30,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
-    <site.installationModule>google-cloud-bigquery-jdbc
-    </site.installationModule>
+    <site.installationModule>google-cloud-bigquery-jdbc</site.installationModule>
   </properties>
 
   <build>
@@ -278,6 +277,11 @@
     </dependency>
 
     <!--  Test Dependencies  -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>com.google.truth</groupId>
       <artifactId>truth</artifactId>

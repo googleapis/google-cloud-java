@@ -117,6 +117,20 @@
       <scope>test</scope>
       <classifier>testlib</classifier>
     </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.protobuf</groupId>
+      <artifactId>protobuf-java</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
@@ -146,6 +160,18 @@
           <!-- These tests require an Env Var to be set. Use -PenvVarTest to ONLY run these tests -->
           <test>!InstantiatingGrpcChannelProviderTest#testLogDirectPathMisconfig_AttemptDirectPathNotSetAndAttemptDirectPathXdsSetViaEnv_warns,!InstantiatingGrpcChannelProviderTest#canUseDirectPath_directPathEnvVarNotSet_attemptDirectPathIsTrue,InstantiatingGrpcChannelProviderTest#testLogDirectPathMisconfigWrongCredential</test>
           <!-- <test>!InstantiatingGrpcChannelProviderTest#testLogDirectPathMisconfig_AttemptDirectPathNotSetAndAttemptDirectPathXdsSetViaEnv_warns</test> -->
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <configuration>
+          <ignoredUnusedDeclaredDependencies>
+            <ignoredUnusedDeclaredDependency>io.grpc:grpc-netty-shaded</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>io.grpc:grpc-googleapis</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>org.slf4j:slf4j-api</ignoredUnusedDeclaredDependency>
+            <ignoredUnusedDeclaredDependency>io.grpc:grpc-s2a</ignoredUnusedDeclaredDependency>
+          </ignoredUnusedDeclaredDependencies>
         </configuration>
       </plugin>
     </plugins>

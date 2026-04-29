@@ -45,6 +45,7 @@ public interface GuestOsFeatureOrBuilder
    * - TDX_CAPABLE
    * - IDPF
    * - SNP_SVSM_CAPABLE
+   * - CCA_CAPABLE
    *
    *
    * For more information, see
@@ -77,6 +78,7 @@ public interface GuestOsFeatureOrBuilder
    * - TDX_CAPABLE
    * - IDPF
    * - SNP_SVSM_CAPABLE
+   * - CCA_CAPABLE
    *
    *
    * For more information, see
@@ -109,6 +111,7 @@ public interface GuestOsFeatureOrBuilder
    * - TDX_CAPABLE
    * - IDPF
    * - SNP_SVSM_CAPABLE
+   * - CCA_CAPABLE
    *
    *
    * For more information, see

@@ -24,9 +24,11 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRegionHealthSourcesRequest;
 import com.google.cloud.compute.v1.DeleteRegionHealthSourceRequest;
+import com.google.cloud.compute.v1.GetHealthRegionHealthSourceRequest;
 import com.google.cloud.compute.v1.GetRegionHealthSourceRequest;
 import com.google.cloud.compute.v1.HealthSource;
 import com.google.cloud.compute.v1.HealthSourceAggregatedList;
+import com.google.cloud.compute.v1.HealthSourceHealth;
 import com.google.cloud.compute.v1.HealthSourceList;
 import com.google.cloud.compute.v1.InsertRegionHealthSourceRequest;
 import com.google.cloud.compute.v1.ListRegionHealthSourcesRequest;
@@ -66,6 +68,10 @@ public abstract class RegionHealthSourcesStub implements BackgroundResource {
 
   public UnaryCallable<GetRegionHealthSourceRequest, HealthSource> getCallable() {
     throw new UnsupportedOperationException("Not implemented: getCallable()");
+  }
+
+  public UnaryCallable<GetHealthRegionHealthSourceRequest, HealthSourceHealth> getHealthCallable() {
+    throw new UnsupportedOperationException("Not implemented: getHealthCallable()");
   }
 
   public OperationCallable<InsertRegionHealthSourceRequest, Operation, Operation>

@@ -66,12 +66,11 @@
             <version>${errorprone.version}</version>
             <scope>compile</scope>
         </dependency>
-
         <!-- Test Dependencies -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.version}</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -81,8 +80,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.junit.vintage</groupId>
-            <artifactId>junit-vintage-engine</artifactId>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
@@ -91,11 +90,6 @@
             <artifactId>truth</artifactId>
             <version>1.4.4</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-          <groupId>com.google.j2objc</groupId>
-          <artifactId>j2objc-annotations</artifactId>
-          <version>${j2objc-annotations.version}</version>
         </dependency>
     </dependencies>
 
@@ -127,6 +121,17 @@
                             <Automatic-Module-Name>com.google.api.apicommon</Automatic-Module-Name>
                         </manifestEntries>
                     </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <configuration>
+                    <!-- They are declared to fix upper bound failures -->
+                    <ignoredUnusedDeclaredDependencies>
+                        <ignoredUnusedDeclaredDependency>com.google.errorprone:error_prone_annotations</ignoredUnusedDeclaredDependency>
+                        <ignoredUnusedDeclaredDependency>javax.annotation:javax.annotation-api</ignoredUnusedDeclaredDependency>
+                    </ignoredUnusedDeclaredDependencies>
                 </configuration>
             </plugin>
         </plugins>

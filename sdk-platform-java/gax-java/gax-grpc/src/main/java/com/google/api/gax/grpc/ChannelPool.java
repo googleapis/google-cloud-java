@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  * A {@link ManagedChannel} that will send requests round-robin via a set of channels.
  *
  * <p>In addition to spreading requests over a set of child connections, the pool will also actively
- * manage the lifecycle of the channels. Currently lifecycle management is limited to pre-emptively
+ * manage the lifecycle of the channels. Currently, lifecycle management is limited to pre-emptively
  * replacing channels every hour. In the future it will dynamically size the pool based on number of
  * outstanding requests.
  *
@@ -70,10 +70,7 @@ import javax.annotation.Nullable;
  */
 class ChannelPool extends ManagedChannel {
   static final String CHANNEL_POOL_CONSECUTIVE_RESIZING_WARNING =
-      "Channel pool is repeatedly resizing. "
-          + "Consider adjusting `initialChannelCount` or `maxResizeDelta` to a more reasonable value. "
-          + "See https://docs.cloud.google.com/java/docs/troubleshooting to enable logging "
-          + "and set `com.google.api.gax.grpc.ChannelPool.level=FINEST` to log the channel pool resize behavior.";
+      "The gRPC ChannelPool used in the client has been flagged to be repeatedly resizing (5+ times). See https://github.com/googleapis/google-cloud-java/blob/main/docs/grpc_channel_pool_guide.md for more information about this behavior.";
   @VisibleForTesting static final Logger LOG = Logger.getLogger(ChannelPool.class.getName());
   private static final java.time.Duration REFRESH_PERIOD = java.time.Duration.ofMinutes(50);
 
