@@ -79,7 +79,7 @@ public class DatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void defaultOptionsWithBuiltInMetricsEnabled_butNoCredentials_returnsNoRecorders() {
+  public void defaultOptionsWithBuiltInMetricsEnabled_butNoCredentials_returnsOneRecorder() {
     // Explicitly enable built-in metrics export
     DatastoreOptions options =
         baseOptions() // Uses NoCredentials by default
