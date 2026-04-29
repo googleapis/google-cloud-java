@@ -24,6 +24,8 @@ import javax.sql.ConnectionPoolDataSource;
 import javax.sql.PooledConnection;
 
 public class PooledConnectionDataSource extends DataSource implements ConnectionPoolDataSource {
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(PooledConnectionDataSource.class.getName());
   private PooledConnectionListener connectionPoolManager = null;
   Connection bqConnection = null;
 
@@ -62,6 +64,9 @@ public class PooledConnectionDataSource extends DataSource implements Connection
 
   @Override
   public PooledConnection getPooledConnection(String arg0, String arg1) throws SQLException {
-    throw new UnsupportedOperationException("This operation is not supported by the driver");
+    UnsupportedOperationException ex =
+        new UnsupportedOperationException("This operation is not supported by the driver");
+    LOG.severe(ex.getMessage(), ex);
+    throw ex;
   }
 }
