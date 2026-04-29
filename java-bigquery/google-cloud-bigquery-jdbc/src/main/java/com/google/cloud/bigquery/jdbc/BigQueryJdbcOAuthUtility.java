@@ -121,7 +121,7 @@ final class BigQueryJdbcOAuthUtility {
     try {
       authType = AuthType.fromValue(ds.getOAuthType());
     } catch (NumberFormatException exception) {
-      LOG.severe(exception, OAUTH_TYPE_ERROR_MESSAGE);
+      LOG.severe(OAUTH_TYPE_ERROR_MESSAGE, exception);
       throw new IllegalArgumentException(OAUTH_TYPE_ERROR_MESSAGE);
     }
     oauthProperties.put(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME, String.valueOf(authType));
@@ -293,7 +293,9 @@ final class BigQueryJdbcOAuthUtility {
         credentials = getExternalAccountAuthCredentials(authProperties, callerClassName);
         break;
       default:
-        throw new IllegalStateException(OAUTH_TYPE_ERROR_MESSAGE);
+        IllegalStateException ex = new IllegalStateException(OAUTH_TYPE_ERROR_MESSAGE);
+        LOG.severe(ex.getMessage(), ex);
+        throw ex;
     }
 
     return getServiceAccountImpersonatedCredentials(
@@ -369,7 +371,6 @@ final class BigQueryJdbcOAuthUtility {
         builder =
             ServiceAccountCredentials.newBuilder().setClientEmail(pvtEmail).setPrivateKey(key);
       } else {
-        LOG.severe("No valid Service Account credentials provided.");
         throw new BigQueryJdbcRuntimeException("No valid credentials provided.");
       }
 
@@ -383,8 +384,8 @@ final class BigQueryJdbcOAuthUtility {
             overrideProperties.get(BigQueryJdbcUrlUtility.UNIVERSE_DOMAIN_OVERRIDE_PROPERTY_NAME));
       }
     } catch (URISyntaxException | IOException e) {
-      LOG.severe("Validation failure for Service Account credentials.");
-      throw new BigQueryJdbcRuntimeException(e);
+      throw new BigQueryJdbcRuntimeException(
+          "Validation failure for Service Account credentials.", e);
     }
     LOG.info("GoogleCredentials instantiated. Auth Method: Service Account.");
     return builder.build();
@@ -459,7 +460,6 @@ final class BigQueryJdbcOAuthUtility {
         Matcher m = p.matcher(response);
 
         if (!m.find()) {
-          LOG.severe("Could not retrieve the code for user auth");
           throw new BigQueryJdbcRuntimeException("Could not retrieve the code for user auth");
         }
         code = m.group();
@@ -469,15 +469,13 @@ final class BigQueryJdbcOAuthUtility {
         socket.close();
         serverSocket.close();
       } else {
-        LOG.severe("User auth only supported in desktop environments");
         throw new BigQueryJdbcRuntimeException("User auth only supported in desktop environments");
       }
 
       return getCredentialsFromCode(userAuthorizer, code, callerClassName);
     } catch (IOException | URISyntaxException ex) {
-      LOG.severe(
-          "Failed to establish connection using User Account authentication: %s", ex.getMessage());
-      throw new BigQueryJdbcRuntimeException(ex);
+      throw new BigQueryJdbcRuntimeException(
+          "Failed to establish connection using User Account authentication", ex);
     }
   }
 
@@ -516,7 +514,8 @@ final class BigQueryJdbcOAuthUtility {
         return getPreGeneratedRefreshTokenCredentials(
             authProperties, overrideProperties, callerClassName);
       } catch (URISyntaxException ex) {
-        throw new BigQueryJdbcRuntimeException(ex);
+        throw new BigQueryJdbcRuntimeException(
+            "URISyntaxException during getPreGeneratedTokensCredentials", ex);
       }
     } else {
       return getPreGeneratedAccessTokenCredentials(
@@ -571,8 +570,8 @@ final class BigQueryJdbcOAuthUtility {
 
       return credentials;
     } catch (IOException exception) {
-      // TODO throw exception
-      throw new BigQueryJdbcRuntimeException("Application default credentials not found.");
+      throw new BigQueryJdbcRuntimeException(
+          "Application default credentials not found.", exception);
     }
   }
 
@@ -621,11 +620,14 @@ final class BigQueryJdbcOAuthUtility {
         return ExternalAccountCredentials.fromStream(
             new ByteArrayInputStream(jsonObject.toString().getBytes()));
       } else {
-        throw new IllegalArgumentException(
-            "Insufficient info provided for external authentication");
+        IllegalArgumentException ex =
+            new IllegalArgumentException("Insufficient info provided for external authentication");
+        LOG.severe(ex.getMessage(), ex);
+        throw ex;
       }
     } catch (IOException e) {
-      throw new BigQueryJdbcRuntimeException(e);
+      throw new BigQueryJdbcRuntimeException(
+          "IOException during getExternalAccountAuthCredentials", e);
     }
   }
 
@@ -678,10 +680,12 @@ final class BigQueryJdbcOAuthUtility {
     try {
       impersonationLifetimeInt = Integer.parseInt(impersonationLifetime);
     } catch (NumberFormatException e) {
-      LOG.severe("Invalid value for ServiceAccountImpersonationTokenLifetime.");
-      throw new IllegalArgumentException(
-          "Invalid value for ServiceAccountImpersonationTokenLifetime: must be a positive integer.",
-          e);
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              "Invalid value for ServiceAccountImpersonationTokenLifetime: must be a positive integer.",
+              e);
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
 
     return ImpersonatedCredentials.create(
@@ -708,7 +712,9 @@ final class BigQueryJdbcOAuthUtility {
       Reader reader = new StringReader(privateKeyPkcs8);
       PemReader.Section section = readFirstSectionAndClose(reader, "PRIVATE KEY");
       if (section == null) {
-        throw new IOException("Invalid PKCS#8 data.");
+        IOException ex = new IOException("Invalid PKCS#8 data.");
+        LOG.severe(ex.getMessage(), ex);
+        throw ex;
       }
       byte[] bytes = section.getBase64DecodedBytes();
       PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(bytes);
@@ -739,7 +745,9 @@ final class BigQueryJdbcOAuthUtility {
           return authType;
         }
       }
-      throw new IllegalStateException(OAUTH_TYPE_ERROR_MESSAGE + ": " + value);
+      IllegalStateException ex = new IllegalStateException(OAUTH_TYPE_ERROR_MESSAGE + ": " + value);
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
   }
 }

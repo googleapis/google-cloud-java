@@ -309,7 +309,7 @@ public class ITBigQueryJDBCTest extends ITBase {
       bigQueryStatement.executeQuery(query);
       Assertions.fail();
     } catch (BigQueryJdbcException e) {
-      assertTrue(e.getMessage().contains("SELECT * must have a FROM clause"));
+      assertTrue(e.getCause().getMessage().contains("SELECT * must have a FROM clause"));
     }
   }
 

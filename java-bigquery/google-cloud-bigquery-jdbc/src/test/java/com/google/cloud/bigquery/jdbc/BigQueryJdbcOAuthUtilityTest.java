@@ -111,7 +111,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
       BigQueryJdbcOAuthUtility.getCredentials(oauthProperties, overrideProperties, false, null);
       Assertions.fail();
     } catch (BigQueryJdbcRuntimeException e) {
-      assertThat(e.getMessage()).contains("java.net.URISyntaxException");
+      assertThat(e.getMessage()).contains("Validation failure");
     }
   }
 

@@ -170,6 +170,17 @@ public class SnapshotsSettings extends ClientSettings<SnapshotsSettings> {
     return ((SnapshotsStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public UnaryCallSettings<UpdateKmsKeySnapshotRequest, Operation> updateKmsKeySettings() {
+    return ((SnapshotsStubSettings) getStubSettings()).updateKmsKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public OperationCallSettings<UpdateKmsKeySnapshotRequest, Operation, Operation>
+      updateKmsKeyOperationSettings() {
+    return ((SnapshotsStubSettings) getStubSettings()).updateKmsKeyOperationSettings();
+  }
+
   public static final SnapshotsSettings create(SnapshotsStubSettings stub) throws IOException {
     return new SnapshotsSettings.Builder(stub.toBuilder()).build();
   }
@@ -324,6 +335,18 @@ public class SnapshotsSettings extends ClientSettings<SnapshotsSettings> {
     public UnaryCallSettings.Builder<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public UnaryCallSettings.Builder<UpdateKmsKeySnapshotRequest, Operation>
+        updateKmsKeySettings() {
+      return getStubSettingsBuilder().updateKmsKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public OperationCallSettings.Builder<UpdateKmsKeySnapshotRequest, Operation, Operation>
+        updateKmsKeyOperationSettings() {
+      return getStubSettingsBuilder().updateKmsKeyOperationSettings();
     }
 
     @Override

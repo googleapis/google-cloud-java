@@ -140,6 +140,12 @@ public class RegionHealthSourcesSettings extends ClientSettings<RegionHealthSour
     return ((RegionHealthSourcesStubSettings) getStubSettings()).getSettings();
   }
 
+  /** Returns the object with the settings used for calls to getHealth. */
+  public UnaryCallSettings<GetHealthRegionHealthSourceRequest, HealthSourceHealth>
+      getHealthSettings() {
+    return ((RegionHealthSourcesStubSettings) getStubSettings()).getHealthSettings();
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertRegionHealthSourceRequest, Operation> insertSettings() {
     return ((RegionHealthSourcesStubSettings) getStubSettings()).insertSettings();
@@ -294,6 +300,12 @@ public class RegionHealthSourcesSettings extends ClientSettings<RegionHealthSour
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetRegionHealthSourceRequest, HealthSource> getSettings() {
       return getStubSettingsBuilder().getSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getHealth. */
+    public UnaryCallSettings.Builder<GetHealthRegionHealthSourceRequest, HealthSourceHealth>
+        getHealthSettings() {
+      return getStubSettingsBuilder().getHealthSettings();
     }
 
     /** Returns the builder for the settings used for calls to insert. */

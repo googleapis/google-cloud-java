@@ -899,6 +899,48 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
+   * Output only. [Output Only] URL of the region where the snapshot resides. Only applicable
+   * for regional snapshots.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return Whether the region field is set.
+   */
+  boolean hasRegion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] URL of the region where the snapshot resides. Only applicable
+   * for regional snapshots.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The region.
+   */
+  java.lang.String getRegion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] URL of the region where the snapshot resides. Only applicable
+   * for regional snapshots.
+   * </pre>
+   *
+   * <code>optional string region = 138946292;</code>
+   *
+   * @return The bytes for region.
+   */
+  com.google.protobuf.ByteString getRegionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Reserved for future use.
    * </pre>
    *
@@ -1067,6 +1109,90 @@ public interface SnapshotOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getSnapshotEncryptionKeyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The unique ID of the snapshot group that this snapshot
+   * belongs to. The usage of snapshot group feature is restricted.
+   * </pre>
+   *
+   * <code>optional string snapshot_group_id = 255004406;</code>
+   *
+   * @return Whether the snapshotGroupId field is set.
+   */
+  boolean hasSnapshotGroupId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The unique ID of the snapshot group that this snapshot
+   * belongs to. The usage of snapshot group feature is restricted.
+   * </pre>
+   *
+   * <code>optional string snapshot_group_id = 255004406;</code>
+   *
+   * @return The snapshotGroupId.
+   */
+  java.lang.String getSnapshotGroupId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The unique ID of the snapshot group that this snapshot
+   * belongs to. The usage of snapshot group feature is restricted.
+   * </pre>
+   *
+   * <code>optional string snapshot_group_id = 255004406;</code>
+   *
+   * @return The bytes for snapshotGroupId.
+   */
+  com.google.protobuf.ByteString getSnapshotGroupIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The snapshot group that this snapshot belongs to. The usage
+   * of snapshot group feature is restricted.
+   * </pre>
+   *
+   * <code>optional string snapshot_group_name = 246247846;</code>
+   *
+   * @return Whether the snapshotGroupName field is set.
+   */
+  boolean hasSnapshotGroupName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The snapshot group that this snapshot belongs to. The usage
+   * of snapshot group feature is restricted.
+   * </pre>
+   *
+   * <code>optional string snapshot_group_name = 246247846;</code>
+   *
+   * @return The snapshotGroupName.
+   */
+  java.lang.String getSnapshotGroupName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output only] The snapshot group that this snapshot belongs to. The usage
+   * of snapshot group feature is restricted.
+   * </pre>
+   *
+   * <code>optional string snapshot_group_name = 246247846;</code>
+   *
+   * @return The bytes for snapshotGroupName.
+   */
+  com.google.protobuf.ByteString getSnapshotGroupNameBytes();
 
   /**
    *
