@@ -16,8 +16,8 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Lightweight MDC implementation for the BigQuery JDBC driver using InheritableThreadLocal.
@@ -25,7 +25,6 @@ import java.util.concurrent.atomic.AtomicLong;
  * instance.
  */
 class BigQueryJdbcMdc {
-  private static final AtomicLong nextId = new AtomicLong(1);
   private static final ConcurrentHashMap<BigQueryConnection, InheritableThreadLocal<String>>
       instanceLocals = new ConcurrentHashMap<>();
   private static final ConcurrentHashMap<BigQueryConnection, String> instanceIds =
@@ -41,8 +40,7 @@ class BigQueryJdbcMdc {
           instanceIds.computeIfAbsent(
               connection,
               k -> {
-                String suffix =
-                    (id != null && !id.isEmpty()) ? id : String.valueOf(nextId.getAndIncrement());
+                String suffix = (id != null && !id.isEmpty()) ? id : UUID.randomUUID().toString();
                 return "JdbcConnection-" + suffix;
               });
 
