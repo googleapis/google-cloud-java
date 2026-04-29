@@ -1356,7 +1356,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
         "BigQueryStatement.executeBatch",
         (span) -> {
           span.setAttribute("db.statement.count", this.batchQueries.size());
-          span.setAttribute(AttributeKey.stringArrayKey("db.batch.statements"), this.batchQueries);
+          span.setAttribute(
+              AttributeKey.stringArrayKey("db.batch.statements"),
+              new ArrayList<>(this.batchQueries));
 
           StringBuilder sb = new StringBuilder();
           for (String query : this.batchQueries) {
@@ -1561,7 +1563,6 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       BlockingQueue<Tuple<TableResult, Boolean>> rpcResponseQueue,
       BlockingQueue<BigQueryFieldValueListWrapper> bigQueryFieldValueListWrapperBlockingQueue,
       TableResult result) {
-    Tracer tracer = this.connection.getTracer();
     SpanContext parentSpanContext = Span.current().getSpanContext();
     String currentPageToken = firstPageToken;
     TableResult currentResults = result;
@@ -1571,6 +1572,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     }
 
     try {
+      Tracer tracer = this.connection.getTracer();
       while (currentPageToken != null) {
         if (Thread.currentThread().isInterrupted() || queryTaskExecutor.isShutdown()) {
           LOG.warning("%s Interrupted @ runNextPageTaskAsync", Thread.currentThread().getName());

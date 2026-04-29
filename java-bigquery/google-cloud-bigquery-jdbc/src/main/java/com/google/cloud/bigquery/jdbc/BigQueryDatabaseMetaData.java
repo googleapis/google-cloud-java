@@ -42,6 +42,7 @@ import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.exception.BigQueryJdbcException;
+import com.google.common.annotations.VisibleForTesting;
 import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.api.trace.StatusCode;
@@ -1731,32 +1732,52 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         "getTables called for catalog: %s, schemaPattern: %s, tableNamePattern: %s, types: %s",
         effectiveCatalog, effectiveSchemaPattern, tableNamePattern, Arrays.toString(types));
 
+    final Schema resultSchema = defineGetTablesSchema();
+    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+
+    Thread fetcherThread =
+        runGetTablesTaskAsync(
+            effectiveCatalog, effectiveSchemaPattern, tableNamePattern, types, resultSchema, queue);
+
+    BigQueryJsonResultSet resultSet =
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+
+    LOG.info("Started background thread for getTables");
+    return resultSet;
+  }
+
+  @VisibleForTesting
+  Thread runGetTablesTaskAsync(
+      String effectiveCatalog,
+      String effectiveSchemaPattern,
+      String tableNamePattern,
+      String[] types,
+      Schema resultSchema,
+      BlockingQueue<BigQueryFieldValueListWrapper> queue)
+      throws SQLException {
+
     final Pattern schemaRegex = compileSqlLikePattern(effectiveSchemaPattern);
     final Pattern tableNameRegex = compileSqlLikePattern(tableNamePattern);
     final Set<String> requestedTypes =
         (types == null || types.length == 0) ? null : new HashSet<>(Arrays.asList(types));
 
-    final Schema resultSchema = defineGetTablesSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
-
-    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
-        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
     final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     final String catalogParam = effectiveCatalog;
     final String schemaParam = effectiveSchemaPattern;
-
-    Tracer tracer = this.connection.getTracer();
     SpanContext parentSpanContext = Span.current().getSpanContext();
     Runnable tableFetcher =
         () -> {
           Span backgroundSpan =
-              tracer
+              this.connection
+                  .getTracer()
                   .spanBuilder("BigQueryDatabaseMetaData.getTables.background")
                   .setNoParent()
                   .addLink(parentSpanContext)
                   .startSpan();
 
-          try (Scope backgroundScope = backgroundSpan.makeCurrent()) {
+          try (Scope scope = backgroundSpan.makeCurrent()) {
             ExecutorService apiExecutor = null;
             ExecutorService tableProcessorExecutor = null;
             final FieldList localResultSchemaFields = resultSchemaFields;
@@ -1898,12 +1919,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Runnable wrappedTableFetcher = Context.current().wrap(tableFetcher);
     Thread fetcherThread = new Thread(wrappedTableFetcher, "getTables-fetcher-" + effectiveCatalog);
-    BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
-
     fetcherThread.start();
-    LOG.info("Started background thread for getTables");
-    return resultSet;
+    return fetcherThread;
   }
 
   Schema defineGetTablesSchema() {
@@ -2127,24 +2144,51 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             + " columnNamePattern: %s",
         effectiveCatalog, effectiveSchemaPattern, tableNamePattern, columnNamePattern);
 
+    final Schema resultSchema = defineGetColumnsSchema();
+    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
+        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+
+    Thread fetcherThread =
+        runGetColumnsTaskAsync(
+            effectiveCatalog,
+            effectiveSchemaPattern,
+            tableNamePattern,
+            columnNamePattern,
+            resultSchema,
+            queue);
+
+    BigQueryJsonResultSet resultSet =
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+
+    LOG.info("Started background thread for getColumns");
+    return resultSet;
+  }
+
+  @VisibleForTesting
+  Thread runGetColumnsTaskAsync(
+      String effectiveCatalog,
+      String effectiveSchemaPattern,
+      String tableNamePattern,
+      String columnNamePattern,
+      Schema resultSchema,
+      BlockingQueue<BigQueryFieldValueListWrapper> queue)
+      throws SQLException {
+
     Pattern schemaRegex = compileSqlLikePattern(effectiveSchemaPattern);
     Pattern tableNameRegex = compileSqlLikePattern(tableNamePattern);
     Pattern columnNameRegex = compileSqlLikePattern(columnNamePattern);
 
-    final Schema resultSchema = defineGetColumnsSchema();
     final FieldList resultSchemaFields = resultSchema.getFields();
-    final BlockingQueue<BigQueryFieldValueListWrapper> queue =
-        new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
     final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     final String catalogParam = effectiveCatalog;
     final String schemaParam = effectiveSchemaPattern;
 
-    Tracer tracer = this.connection.getTracer();
     SpanContext parentSpanContext = Span.current().getSpanContext();
     Runnable columnFetcher =
         () -> {
           Span backgroundSpan =
-              tracer
+              this.connection
+                  .getTracer()
                   .spanBuilder("BigQueryDatabaseMetaData.getColumns.background")
                   .setNoParent()
                   .addLink(parentSpanContext)
@@ -2252,12 +2296,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     Runnable wrappedColumnFetcher = Context.current().wrap(columnFetcher);
     Thread fetcherThread =
         new Thread(wrappedColumnFetcher, "getColumns-fetcher-" + effectiveCatalog);
-    BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
-
     fetcherThread.start();
-    LOG.info("Started background thread for getColumns");
-    return resultSet;
+    return fetcherThread;
   }
 
   private void processTableColumns(
@@ -2324,7 +2364,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     }
   }
 
-  private Schema defineGetColumnsSchema() {
+  Schema defineGetColumnsSchema() {
     List<Field> fields = new ArrayList<>(24);
     fields.add(
         Field.newBuilder("TABLE_CAT", StandardSQLTypeName.STRING)
@@ -3690,27 +3730,44 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     LOG.info("getSchemas called for catalog: %s, schemaPattern: %s", catalog, schemaPattern);
 
-    final Pattern schemaRegex = compileSqlLikePattern(schemaPattern);
     final Schema resultSchema = defineGetSchemasSchema();
-    final FieldList resultSchemaFields = resultSchema.getFields();
-
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(DEFAULT_QUEUE_CAPACITY);
+
+    Thread fetcherThread = runGetSchemasTaskAsync(catalog, schemaPattern, resultSchema, queue);
+
+    BigQueryJsonResultSet resultSet =
+        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
+
+    LOG.info("Started background thread for getSchemas");
+    return resultSet;
+  }
+
+  @VisibleForTesting
+  Thread runGetSchemasTaskAsync(
+      String catalog,
+      String schemaPattern,
+      Schema resultSchema,
+      BlockingQueue<BigQueryFieldValueListWrapper> queue)
+      throws SQLException {
+
+    final Pattern schemaRegex = compileSqlLikePattern(schemaPattern);
+    final FieldList resultSchemaFields = resultSchema.getFields();
     final List<FieldValueList> collectedResults = Collections.synchronizedList(new ArrayList<>());
     final String catalogParam = catalog;
 
-    Tracer tracer = this.connection.getTracer();
     SpanContext parentSpanContext = Span.current().getSpanContext();
     Runnable schemaFetcher =
         () -> {
           Span backgroundSpan =
-              tracer
+              this.connection
+                  .getTracer()
                   .spanBuilder("BigQueryDatabaseMetaData.getSchemas.background")
                   .setNoParent()
                   .addLink(parentSpanContext)
                   .startSpan();
 
-          try (Scope backgroundScope = backgroundSpan.makeCurrent()) {
+          try (Scope scope = backgroundSpan.makeCurrent()) {
             final FieldList localResultSchemaFields = resultSchemaFields;
             List<String> projectsToScanList = new ArrayList<>();
 
@@ -3791,12 +3848,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     Runnable wrappedFetcher = Context.current().wrap(schemaFetcher);
     Thread fetcherThread = new Thread(wrappedFetcher, "getSchemas-fetcher-" + catalog);
-    BigQueryJsonResultSet resultSet =
-        BigQueryJsonResultSet.of(resultSchema, -1, queue, null, new Thread[] {fetcherThread});
-
     fetcherThread.start();
-    LOG.info("Started background thread for getSchemas");
-    return resultSet;
+    return fetcherThread;
   }
 
   Schema defineGetSchemasSchema() {

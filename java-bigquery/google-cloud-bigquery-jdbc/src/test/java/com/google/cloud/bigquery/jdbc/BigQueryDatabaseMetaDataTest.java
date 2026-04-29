@@ -30,6 +30,12 @@ import static org.mockito.Mockito.*;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.bigquery.*;
 import com.google.cloud.bigquery.BigQuery.RoutineListOption;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.StatusCode;
+import io.opentelemetry.api.trace.Tracer;
+import io.opentelemetry.context.Scope;
+import io.opentelemetry.sdk.testing.junit5.OpenTelemetryExtension;
+import io.opentelemetry.sdk.trace.data.SpanData;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.DatabaseMetaData;
@@ -39,15 +45,28 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Types;
 import java.util.*;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.RegisterExtension;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BigQueryDatabaseMetaDataTest {
+
+  @RegisterExtension
+  public static final OpenTelemetryExtension otelTesting = OpenTelemetryExtension.create();
 
   private BigQueryConnection bigQueryConnection;
   private BigQueryDatabaseMetaData dbMetadata;
@@ -62,6 +81,20 @@ public class BigQueryDatabaseMetaDataTest {
     when(bigQueryConnection.getConnectionUrl()).thenReturn("jdbc:bigquery://test-project");
     when(bigQueryConnection.getBigQuery()).thenReturn(bigqueryClient);
     when(bigQueryConnection.createStatement()).thenReturn(mockStatement);
+    when(bigQueryConnection.getTracer())
+        .thenReturn(
+            otelTesting
+                .getOpenTelemetry()
+                .getTracer(BigQueryJdbcOpenTelemetry.INSTRUMENTATION_SCOPE_NAME));
+
+    Page<Dataset> datasetPageMock = mock(Page.class);
+    when(bigqueryClient.listDatasets(anyString(), any())).thenReturn(datasetPageMock);
+
+    Page<Table> tablePageMock = mock(Page.class);
+    when(bigqueryClient.listTables(any(DatasetId.class), any())).thenReturn(tablePageMock);
+
+    Table mockTable = mock(Table.class);
+    when(bigqueryClient.getTable(any(TableId.class))).thenReturn(mockTable);
 
     dbMetadata = new BigQueryDatabaseMetaData(bigQueryConnection);
   }
@@ -3205,5 +3238,97 @@ public class BigQueryDatabaseMetaDataTest {
   @Test
   public void testGetSQLStateType() throws SQLException {
     assertEquals(DatabaseMetaData.sqlStateSQL, dbMetadata.getSQLStateType());
+  }
+
+  @ParameterizedTest
+  @MethodSource("metadataOperationProvider")
+  public void testMetadataOperation_generatesSpan(
+      MetadataOperation operation, String expectedSpanName) throws Exception {
+    operation.run();
+
+    SpanData span =
+        OpenTelemetryTestUtility.findSpanByName(otelTesting.getSpans(), expectedSpanName);
+    OpenTelemetryTestUtility.assertSpanStatus(span, StatusCode.UNSET);
+  }
+
+  @FunctionalInterface
+  interface MetadataOperation {
+    void run() throws SQLException;
+  }
+
+  Stream<Arguments> metadataOperationProvider() {
+    return Stream.of(
+        Arguments.of(
+            (MetadataOperation) () -> dbMetadata.getCatalogs(),
+            "BigQueryDatabaseMetaData.getCatalogs"),
+        Arguments.of(
+            (MetadataOperation) () -> dbMetadata.getSchemas("catalog", "schema"),
+            "BigQueryDatabaseMetaData.getSchemas"),
+        Arguments.of(
+            (MetadataOperation)
+                () -> dbMetadata.getTables("catalog", "schema", "table", new String[] {"TABLE"}),
+            "BigQueryDatabaseMetaData.getTables"),
+        Arguments.of(
+            (MetadataOperation) () -> dbMetadata.getColumns("catalog", "schema", "table", "column"),
+            "BigQueryDatabaseMetaData.getColumns"));
+  }
+
+  @ParameterizedTest
+  @MethodSource("asyncMetadataOperationProvider")
+  public void testAsyncMetadataOperation_createsDetachedLinkedSpan(
+      AsyncMetadataOperation operation, String expectedSpanName) throws Exception {
+    BlockingQueue<BigQueryFieldValueListWrapper> queue = new LinkedBlockingQueue<>();
+
+    Tracer testTracer = otelTesting.getOpenTelemetry().getTracer("test");
+    Span parentSpan = testTracer.spanBuilder("parent-span").startSpan();
+
+    try (Scope scope = parentSpan.makeCurrent()) {
+      Thread workerThread = operation.run(queue);
+
+      Assertions.assertNotNull(workerThread, "Worker thread should not be null");
+      workerThread.join();
+
+      OpenTelemetryTestUtility.assertSpanLinkedToParent(
+          otelTesting.getSpans(), expectedSpanName, parentSpan);
+    } finally {
+      parentSpan.end();
+    }
+  }
+
+  @FunctionalInterface
+  interface AsyncMetadataOperation {
+    Thread run(BlockingQueue<BigQueryFieldValueListWrapper> queue) throws Exception;
+  }
+
+  Stream<Arguments> asyncMetadataOperationProvider() {
+    return Stream.of(
+        Arguments.of(
+            (AsyncMetadataOperation)
+                (q) ->
+                    dbMetadata.runGetTablesTaskAsync(
+                        "catalog",
+                        "schema",
+                        "table",
+                        new String[] {"TABLE"},
+                        dbMetadata.defineGetTablesSchema(),
+                        q),
+            "BigQueryDatabaseMetaData.getTables.background"),
+        Arguments.of(
+            (AsyncMetadataOperation)
+                (q) ->
+                    dbMetadata.runGetColumnsTaskAsync(
+                        "catalog",
+                        "schema",
+                        "table",
+                        "column",
+                        dbMetadata.defineGetColumnsSchema(),
+                        q),
+            "BigQueryDatabaseMetaData.getColumns.background"),
+        Arguments.of(
+            (AsyncMetadataOperation)
+                (q) ->
+                    dbMetadata.runGetSchemasTaskAsync(
+                        "catalog", "schema", dbMetadata.defineGetSchemasSchema(), q),
+            "BigQueryDatabaseMetaData.getSchemas.background"));
   }
 }
