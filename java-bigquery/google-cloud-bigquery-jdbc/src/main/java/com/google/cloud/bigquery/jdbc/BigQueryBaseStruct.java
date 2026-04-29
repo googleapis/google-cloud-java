@@ -21,6 +21,7 @@ import static com.google.cloud.bigquery.jdbc.BigQueryErrorMessage.CUSTOMER_TYPE_
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
+import com.google.cloud.bigquery.StandardSQLTypeName;
 import com.google.cloud.bigquery.exception.BigQueryJdbcSqlFeatureNotSupportedException;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -42,7 +43,7 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
 
   @Override
   public final String getSQLTypeName() throws SQLException {
-    return "STRUCT";
+    return StandardSQLTypeName.STRUCT.name();
   }
 
   @Override
