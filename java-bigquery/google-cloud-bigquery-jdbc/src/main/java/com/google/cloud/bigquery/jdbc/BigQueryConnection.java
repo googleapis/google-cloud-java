@@ -41,8 +41,11 @@ import com.google.cloud.bigquery.storage.v1.BigQueryReadSettings;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
 import com.google.cloud.http.HttpTransportOptions;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -53,6 +56,7 @@ import java.sql.SQLWarning;
 import java.sql.Statement;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.ConcurrentModificationException;
 import java.util.List;
 import java.util.Map;
@@ -143,6 +147,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   String partnerToken;
   DatabaseMetaData databaseMetaData;
   Boolean reqGoogleDriveScope;
+  private boolean isReadOnlyTokenUsed = false;
 
   BigQueryConnection(String url) throws IOException {
     this(url, DataSource.fromUrl(url));
@@ -172,6 +177,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.jobTimeoutInSeconds = ds.getJobTimeout();
       this.authProperties =
           BigQueryJdbcOAuthUtility.parseOAuthProperties(ds, this.connectionClassName);
+      this.isReadOnlyTokenUsed = checkisReadOnlyTokenUsed(this.authProperties);
       this.catalog = ds.getProjectId();
       this.universeDomain = ds.getUniverseDomain();
 
@@ -1192,5 +1198,46 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           "Unsupported CallableStatement feature");
     }
     return prepareCall(sql);
+  }
+
+  public boolean isReadOnlyTokenUsed() {
+    return this.isReadOnlyTokenUsed;
+  }
+
+  private boolean checkisReadOnlyTokenUsed(Map<String, String> authProps) {
+    if (authProps == null) {
+      return false;
+    }
+    BigQueryJdbcOAuthUtility.AuthType oauthType =
+        BigQueryJdbcOAuthUtility.AuthType.fromValue(
+            authProps.get(BigQueryJdbcUrlUtility.OAUTH_TYPE_PROPERTY_NAME));
+    if (oauthType != BigQueryJdbcOAuthUtility.AuthType.PRE_GENERATED_TOKEN) {
+      return false;
+    }
+    String token = authProps.get(BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_PROPERTY_NAME);
+    if (token == null || token.isEmpty()) {
+      return false;
+    }
+
+    // Try to parse scope from the token if it is a JWT
+    try {
+      String[] parts = token.split("\\.");
+      if (parts.length != 3) {
+        return false;
+      }
+      String payloadJson =
+          new String(Base64.getUrlDecoder().decode(parts[1]), StandardCharsets.UTF_8);
+      JsonObject payload = JsonParser.parseString(payloadJson).getAsJsonObject();
+      if (!payload.has("scope")) {
+        return false;
+      }
+      String scope = payload.get("scope").getAsString();
+      if (scope.contains("https://www.googleapis.com/auth/bigquery.readonly")) {
+        return true;
+      }
+    } catch (Exception e) {
+      // Likely invalid token and auth is going to fail later.
+    }
+    return false;
   }
 }

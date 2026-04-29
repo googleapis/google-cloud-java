@@ -333,6 +333,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   StatementType getStatementType(QueryJobConfiguration queryJobConfiguration) throws SQLException {
     LOG.finest("++enter++");
+    // BQ Read-only tokens are not recommended to use, they have a lot of known flaws.
+    // We're supporting them in a limited capacity, for pure SELECT statements.
+    if (this.connection.isReadOnlyTokenUsed()) {
+      LOG.warning(
+          "Read-only token detected, skipping dry run and assuming StatementType is SELECT.");
+      return StatementType.SELECT;
+    }
     QueryJobConfiguration dryRunJobConfiguration =
         queryJobConfiguration.toBuilder().setDryRun(true).build();
     Job job;

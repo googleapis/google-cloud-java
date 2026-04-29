@@ -68,6 +68,8 @@ import org.apache.arrow.vector.VectorSchemaRoot;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 
@@ -479,5 +481,23 @@ public class BigQueryStatementTest {
 
     // And no backend cancellation was attempted
     verify(bigquery, Mockito.never()).cancel(any(JobId.class));
+  }
+
+  @ParameterizedTest
+  @ValueSource(booleans = {true, false})
+  public void testGetStatementType(boolean isReadOnlyTokenUsed) throws Exception {
+    doReturn(isReadOnlyTokenUsed).when(bigQueryConnection).isReadOnlyTokenUsed();
+
+    Job dryRunJobMock = getJobMock(null, null, StatementType.SELECT);
+    doReturn(dryRunJobMock).when(bigquery).create(any(JobInfo.class));
+
+    BigQueryStatement statementSpy = Mockito.spy(bigQueryStatement);
+    QueryJobConfiguration queryJobConfiguration = QueryJobConfiguration.newBuilder(query).build();
+
+    StatementType type = statementSpy.getStatementType(queryJobConfiguration);
+
+    assertThat(type).isEqualTo(StatementType.SELECT);
+    verify(bigquery, isReadOnlyTokenUsed ? Mockito.never() : Mockito.times(1))
+        .create(any(JobInfo.class));
   }
 }
