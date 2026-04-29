@@ -30,8 +30,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.Properties;
-import java.nio.charset.StandardCharsets;
-import java.util.Base64;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -443,21 +441,16 @@ public class BigQueryConnectionTest {
   }
 
   @ParameterizedTest
-  @CsvSource({
-    "https://www.googleapis.com/auth/bigquery.readonly, true",
-    "https://www.googleapis.com/auth/bigquery, false"
-  })
-  public void testIsReadOnlyTokenProvided(String scope, boolean expectedIsReadOnly) throws Exception {
-    String payload = "{\"scope\":\"" + scope + "\"}";
-    String encodedPayload =
-        Base64.getUrlEncoder()
-            .encodeToString(payload.getBytes(StandardCharsets.UTF_8));
+  @CsvSource({"1, true", "0, false", "true, true", "false, false"})
+  public void testIsReadOnlyTokenProvided(String readonlyProp, boolean expectedIsReadOnly)
+      throws Exception {
     String url =
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
             + "OAuthType=2;ProjectId=MyBigQueryProject;"
-            + "OAuthAccessToken=header."
-            + encodedPayload
-            + ".signature;";
+            + "OAuthAccessToken=redacted;"
+            + "OAuthAccessTokenReadonly="
+            + readonlyProp
+            + ";";
 
     try (BigQueryConnection connection = new BigQueryConnection(url)) {
       assertEquals(expectedIsReadOnly, connection.isReadOnlyTokenUsed());

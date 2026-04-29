@@ -853,6 +853,99 @@ public interface InstantSnapshotOrBuilder
    *
    *
    * <pre>
+   * Output only. [Output Only] URL of the source instant snapshot this instant snapshot is
+   * part of. Note that the source instant snapshot group must be in the same
+   * zone/region as the instant snapshot to be created. This can be a full or
+   * valid partial URL.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_group = 525991686;</code>
+   *
+   * @return Whether the sourceInstantSnapshotGroup field is set.
+   */
+  boolean hasSourceInstantSnapshotGroup();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] URL of the source instant snapshot this instant snapshot is
+   * part of. Note that the source instant snapshot group must be in the same
+   * zone/region as the instant snapshot to be created. This can be a full or
+   * valid partial URL.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_group = 525991686;</code>
+   *
+   * @return The sourceInstantSnapshotGroup.
+   */
+  java.lang.String getSourceInstantSnapshotGroup();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] URL of the source instant snapshot this instant snapshot is
+   * part of. Note that the source instant snapshot group must be in the same
+   * zone/region as the instant snapshot to be created. This can be a full or
+   * valid partial URL.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_group = 525991686;</code>
+   *
+   * @return The bytes for sourceInstantSnapshotGroup.
+   */
+  com.google.protobuf.ByteString getSourceInstantSnapshotGroupBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The ID value of the source instant snapshot group this
+   * InstantSnapshot is part of. This value may be used to determine whether the
+   * InstantSnapshot was created as part of an InstantSnapshotGroup creation.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_group_id = 167103732;</code>
+   *
+   * @return Whether the sourceInstantSnapshotGroupId field is set.
+   */
+  boolean hasSourceInstantSnapshotGroupId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The ID value of the source instant snapshot group this
+   * InstantSnapshot is part of. This value may be used to determine whether the
+   * InstantSnapshot was created as part of an InstantSnapshotGroup creation.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_group_id = 167103732;</code>
+   *
+   * @return The sourceInstantSnapshotGroupId.
+   */
+  java.lang.String getSourceInstantSnapshotGroupId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The ID value of the source instant snapshot group this
+   * InstantSnapshot is part of. This value may be used to determine whether the
+   * InstantSnapshot was created as part of an InstantSnapshotGroup creation.
+   * </pre>
+   *
+   * <code>optional string source_instant_snapshot_group_id = 167103732;</code>
+   *
+   * @return The bytes for sourceInstantSnapshotGroupId.
+   */
+  com.google.protobuf.ByteString getSourceInstantSnapshotGroupIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] The status of the instantSnapshot. This can beCREATING, DELETING, FAILED, orREADY.
    * Check the Status enum for the list of possible values.
    * </pre>

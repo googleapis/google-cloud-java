@@ -581,31 +581,21 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     // so we need to explicitly set it;
     // Do not set custom JobId here or it will disable jobless queries.
     JobId jobId = JobId.newBuilder().setLocation(connection.getLocation()).build();
-    if (connection.getUseStatelessQueryMode()) {
-      Object result = bigQuery.queryWithTimeout(jobConfiguration, jobId, null);
-      if (result instanceof TableResult) {
-        TableResult tableResult = (TableResult) result;
-        if (tableResult.getJobId() != null) {
-          return new ExecuteResult(tableResult, bigQuery.getJob(tableResult.getJobId()));
-        }
-        return new ExecuteResult((TableResult) result, null);
+    Object result = bigQuery.queryWithTimeout(jobConfiguration, jobId, null);
+    if (result instanceof TableResult) {
+      TableResult tableResult = (TableResult) result;
+      if (tableResult.getJobId() != null) {
+        return new ExecuteResult(tableResult, bigQuery.getJob(tableResult.getJobId()));
       }
+      return new ExecuteResult((TableResult) result, null);
+    }
 
-      if (result instanceof Job) {
-        job = (Job) result;
-      } else {
-        throw new BigQueryJdbcException("Unexpected result type from queryWithTimeout");
-      }
+    if (result instanceof Job) {
+      job = (Job) result;
     } else {
-      // Update jobId with custom JobId if jobless query is disabled.
-      jobId = jobId.toBuilder().setJob(generateJobId()).build();
-      JobInfo jobInfo = JobInfo.newBuilder(jobConfiguration).setJobId(jobId).build();
-      job = bigQuery.create(jobInfo);
+      throw new BigQueryJdbcException("Unexpected result type from queryWithTimeout");
     }
 
-    if (job == null) {
-      throw new BigQueryJdbcException("Failed to create BQ Job.");
-    }
     synchronized (cancelLock) {
       if (isCanceled) {
         job.cancel();
@@ -615,12 +605,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       jobIds.add(jobId);
     }
     LOG.info("Query submitted with Job ID: " + job.getJobId().getJob());
-    TableResult result =
+    TableResult tableResult =
         job.getQueryResults(QueryResultsOption.pageSize(querySettings.getMaxResultPerPage()));
     synchronized (cancelLock) {
       jobIds.remove(jobId);
     }
-    return new ExecuteResult(result, job);
+    return new ExecuteResult(tableResult, job);
   }
 
   /**

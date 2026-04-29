@@ -170,6 +170,9 @@ final class BigQueryJdbcOAuthUtility {
         }
         oauthProperties.put(
             BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_PROPERTY_NAME, ds.getOAuthAccessToken());
+        oauthProperties.put(
+            BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME,
+            String.valueOf(ds.getOAuthAccessTokenReadonly()));
         LOG.fine("OAuthAccessToken provided.");
         break;
       case APPLICATION_DEFAULT_CREDENTIALS:

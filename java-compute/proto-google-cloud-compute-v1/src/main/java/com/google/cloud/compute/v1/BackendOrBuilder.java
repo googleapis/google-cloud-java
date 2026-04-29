@@ -460,6 +460,94 @@ public interface BackendOrBuilder
    *
    *
    * <pre>
+   * Defines a maximum number of in-flight requests for the whole NEG or
+   * instance group. Not available if backend's balancingMode isRATE or CONNECTION.
+   * </pre>
+   *
+   * <code>optional int32 max_in_flight_requests = 273269332;</code>
+   *
+   * @return Whether the maxInFlightRequests field is set.
+   */
+  boolean hasMaxInFlightRequests();
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a maximum number of in-flight requests for the whole NEG or
+   * instance group. Not available if backend's balancingMode isRATE or CONNECTION.
+   * </pre>
+   *
+   * <code>optional int32 max_in_flight_requests = 273269332;</code>
+   *
+   * @return The maxInFlightRequests.
+   */
+  int getMaxInFlightRequests();
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a maximum number of in-flight requests for a single endpoint.
+   * Not available if backend's balancingMode is RATE
+   * or CONNECTION.
+   * </pre>
+   *
+   * <code>optional int32 max_in_flight_requests_per_endpoint = 307928706;</code>
+   *
+   * @return Whether the maxInFlightRequestsPerEndpoint field is set.
+   */
+  boolean hasMaxInFlightRequestsPerEndpoint();
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a maximum number of in-flight requests for a single endpoint.
+   * Not available if backend's balancingMode is RATE
+   * or CONNECTION.
+   * </pre>
+   *
+   * <code>optional int32 max_in_flight_requests_per_endpoint = 307928706;</code>
+   *
+   * @return The maxInFlightRequestsPerEndpoint.
+   */
+  int getMaxInFlightRequestsPerEndpoint();
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a maximum number of in-flight requests for a single VM.
+   * Not available if backend's balancingMode is RATE
+   * or CONNECTION.
+   * </pre>
+   *
+   * <code>optional int32 max_in_flight_requests_per_instance = 195696002;</code>
+   *
+   * @return Whether the maxInFlightRequestsPerInstance field is set.
+   */
+  boolean hasMaxInFlightRequestsPerInstance();
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines a maximum number of in-flight requests for a single VM.
+   * Not available if backend's balancingMode is RATE
+   * or CONNECTION.
+   * </pre>
+   *
+   * <code>optional int32 max_in_flight_requests_per_instance = 195696002;</code>
+   *
+   * @return The maxInFlightRequestsPerInstance.
+   */
+  int getMaxInFlightRequestsPerInstance();
+
+  /**
+   *
+   *
+   * <pre>
    * Defines a maximum number of HTTP requests per second (RPS). For
    * usage guidelines, seeRate
    * balancing mode and Utilization
@@ -708,4 +796,46 @@ public interface BackendOrBuilder
    * @return The bytes for preference.
    */
   com.google.protobuf.ByteString getPreferenceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the TrafficDuration enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string traffic_duration = 11618710;</code>
+   *
+   * @return Whether the trafficDuration field is set.
+   */
+  boolean hasTrafficDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the TrafficDuration enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string traffic_duration = 11618710;</code>
+   *
+   * @return The trafficDuration.
+   */
+  java.lang.String getTrafficDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the TrafficDuration enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string traffic_duration = 11618710;</code>
+   *
+   * @return The bytes for trafficDuration.
+   */
+  com.google.protobuf.ByteString getTrafficDurationBytes();
 }

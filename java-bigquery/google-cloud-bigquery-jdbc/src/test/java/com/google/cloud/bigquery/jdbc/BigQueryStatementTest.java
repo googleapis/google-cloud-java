@@ -214,7 +214,7 @@ public class BigQueryStatementTest {
             .build();
     Job job = getJobMock(tableResult, queryJobConfiguration, StatementType.SELECT);
 
-    doReturn(job).when(bigquery).create(any(JobInfo.class));
+    doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
 
     doReturn(jobIdWrapper)
         .when(bigQueryStatementSpy)
@@ -299,14 +299,14 @@ public class BigQueryStatementTest {
         QueryJobConfiguration.newBuilder(query).setJobTimeoutMs(10000L).build();
 
     Job job = getJobMock(result, jobConfiguration, StatementType.SELECT);
-    doReturn(job).when(bigquery).create(any(JobInfo.class));
+    doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
 
     doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(result);
-    ArgumentCaptor<JobInfo> captor = ArgumentCaptor.forClass(JobInfo.class);
+    ArgumentCaptor<QueryJobConfiguration> captor = ArgumentCaptor.forClass(QueryJobConfiguration.class);
 
     bigQueryStatementSpy.runQuery(query, jobConfiguration);
-    verify(bigquery).create(captor.capture());
-    QueryJobConfiguration jobConfig = captor.getValue().getConfiguration();
+    verify(bigquery).queryWithTimeout(captor.capture(), any(), any());
+    QueryJobConfiguration jobConfig = captor.getValue();
     assertEquals(3000L, jobConfig.getJobTimeoutMs().longValue());
   }
 
@@ -395,23 +395,16 @@ public class BigQueryStatementTest {
     TableResult tableResultJobfulMock = mock(TableResult.class);
     QueryJobConfiguration jobConf = QueryJobConfiguration.newBuilder("SELECT 1").build();
     Job jobMock = getJobMock(tableResultJobfulMock, jobConf, StatementType.SELECT);
-    ArgumentCaptor<JobInfo> jobfulCaptor = ArgumentCaptor.forClass(JobInfo.class);
-    doReturn(jobMock).when(bigquery).create(jobfulCaptor.capture());
+    doReturn(jobMock)
+        .when(bigquery)
+        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
     doReturn(mock(BigQueryJsonResultSet.class))
         .when(jobfulStatementSpy)
         .processJsonResultSet(tableResultJobfulMock);
 
     jobfulStatementSpy.executeQuery("SELECT 1");
 
-    verify(bigquery).create(any(JobInfo.class));
-    assertTrue(
-        jobfulCaptor.getAllValues().stream()
-            .noneMatch(
-                jobInfo ->
-                    Boolean.TRUE.equals(
-                        ((QueryJobConfiguration) jobInfo.getConfiguration()).dryRun())));
-    verify(bigquery, Mockito.never())
-        .queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
+    verify(bigquery).queryWithTimeout(any(QueryJobConfiguration.class), any(), any());
   }
 
   @Test
@@ -424,7 +417,7 @@ public class BigQueryStatementTest {
         QueryJobConfiguration.newBuilder(query).setPriority(Priority.BATCH).build();
     Job job = getJobMock(tableResult, queryJobConfiguration, StatementType.SELECT);
 
-    doReturn(job).when(bigquery).create(any(JobInfo.class));
+    doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
     doReturn(false).when(bigQueryStatementSpy).useReadAPI(eq(tableResult));
     doReturn(mock(JobId.class)).when(tableResult).getJobId();
     Mockito.when(job.getQueryResults(any(QueryResultsOption.class)))
