@@ -274,6 +274,9 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.partnerToken = ds.getPartnerToken();
 
       this.headerProvider = createHeaderProvider();
+      this.enableGcpTraceExporter = ds.getEnableGcpTraceExporter();
+      this.enableGcpLogExporter = ds.getEnableGcpLogExporter();
+      this.customOpenTelemetry = ds.getCustomOpenTelemetry();
       this.bigQuery = getBigQueryConnection();
     }
   }
