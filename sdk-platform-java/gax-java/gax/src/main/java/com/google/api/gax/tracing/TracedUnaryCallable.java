@@ -55,8 +55,6 @@ public class TracedUnaryCallable<RequestT, ResponseT> extends UnaryCallable<Requ
   @Nullable private final ApiTracerContext apiTracerContext;
   @Nullable private final ResourceNameExtractor<RequestT> resourceNameExtractor;
 
-
-
   @ObsoleteApi("Use constructor with ApiTracerContext instead")
   public TracedUnaryCallable(
       UnaryCallable<RequestT, ResponseT> innerCallable,
