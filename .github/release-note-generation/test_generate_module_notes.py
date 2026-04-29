@@ -1,4 +1,5 @@
 import subprocess
+import sys
 import unittest
 from pathlib import Path
 
@@ -17,7 +18,7 @@ class TestGenerateModuleNotes(unittest.TestCase):
             expected_output = f.read()
 
         cmd = [
-            "python3",
+            sys.executable,
             str(self.script_path),
             "--module",
             "google-cloud-run",
@@ -29,10 +30,9 @@ class TestGenerateModuleNotes(unittest.TestCase):
             "run",
         ]
         result = subprocess.run(
-            cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
+            cmd, capture_output=True, text=True, check=True
         )
 
-        self.assertEqual(result.returncode, 0)
         self.assertEqual(result.stdout, expected_output)
 
     def test_root_generation(self):
@@ -41,7 +41,7 @@ class TestGenerateModuleNotes(unittest.TestCase):
             expected_output = f.read()
 
         cmd = [
-            "python3",
+            sys.executable,
             str(self.script_path),
             "--module",
             "google-cloud-java",
@@ -51,10 +51,9 @@ class TestGenerateModuleNotes(unittest.TestCase):
             "1.85.0",
         ]
         result = subprocess.run(
-            cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
+            cmd, capture_output=True, text=True, check=True
         )
 
-        self.assertEqual(result.returncode, 0)
         self.assertEqual(result.stdout, expected_output)
 
 
@@ -67,11 +66,10 @@ class TestGenerateModuleNotes(unittest.TestCase):
             "--short-name", "dataplex"
         ]
         
-        cmd = ["python3", str(self.script_path)] + args
+        cmd = [sys.executable, str(self.script_path)] + args
         result = subprocess.run(
-            cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
+            cmd, capture_output=True, text=True, check=True
         )
-        self.assertEqual(result.returncode, 0)
         
         golden_path = self.testdata_dir / "golden_java-dataplex_1.86.0.txt"
         with open(golden_path, "r") as f:

@@ -114,7 +114,7 @@ def parse_commit_overrides(commit_data, short_name, prefix_regex, commit_hash, c
 
         if is_new_item:
             if in_module_item and current_item:
-                categorize_callback(commit_hash, " ".join(current_item))
+                categorize_callback(commit_hash, "\n".join(current_item))
                 current_item = []
                 in_module_item = False
 
@@ -136,7 +136,7 @@ def parse_commit_overrides(commit_data, short_name, prefix_regex, commit_hash, c
             current_item.append(line_stripped)
 
     if in_module_item and current_item:
-        categorize_callback(commit_hash, " ".join(current_item))
+        categorize_callback(commit_hash, "\n".join(current_item))
         
     return True
 
