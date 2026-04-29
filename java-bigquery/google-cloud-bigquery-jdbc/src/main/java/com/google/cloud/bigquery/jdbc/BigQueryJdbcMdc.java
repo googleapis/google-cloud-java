@@ -36,6 +36,7 @@ class BigQueryJdbcMdc {
       new InheritableThreadLocal<>();
 
   static MdcCloseable registerInstance(BigQueryConnection connection, String id) {
+    String prevId = currentConnectionId.get();
     if (connection != null) {
       String cleanId =
           instanceIds.computeIfAbsent(
@@ -51,7 +52,13 @@ class BigQueryJdbcMdc {
           instanceLocals.computeIfAbsent(connection, k -> new InheritableThreadLocal<>());
       threadLocal.set(cleanId);
     }
-    return () -> clear();
+    return () -> {
+      if (prevId == null) {
+        clear();
+      } else {
+        currentConnectionId.set(prevId);
+      }
+    };
   }
 
   /**

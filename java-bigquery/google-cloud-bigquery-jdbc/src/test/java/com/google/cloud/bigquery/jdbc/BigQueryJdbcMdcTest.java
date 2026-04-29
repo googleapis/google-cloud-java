@@ -158,4 +158,36 @@ public class BigQueryJdbcMdcTest {
     }
     assertNull(BigQueryJdbcMdc.getConnectionId());
   }
+
+  @Test
+  public void testMdcCloseableNesting() {
+    try (BigQueryJdbcMdc.MdcCloseable mdc1 =
+        BigQueryJdbcMdc.registerInstance(mockConnection1, "outer")) {
+      assertEquals("JdbcConnection-outer", BigQueryJdbcMdc.getConnectionId());
+
+      try (BigQueryJdbcMdc.MdcCloseable mdc2 =
+          BigQueryJdbcMdc.registerInstance(mockConnection1, "inner")) {
+        assertEquals("JdbcConnection-outer", BigQueryJdbcMdc.getConnectionId());
+      }
+
+      assertEquals("JdbcConnection-outer", BigQueryJdbcMdc.getConnectionId());
+    }
+    assertNull(BigQueryJdbcMdc.getConnectionId());
+  }
+
+  @Test
+  public void testMdcCloseableNestingDifferentConnections() {
+    try (BigQueryJdbcMdc.MdcCloseable mdc1 =
+        BigQueryJdbcMdc.registerInstance(mockConnection1, "conn1")) {
+      assertEquals("JdbcConnection-conn1", BigQueryJdbcMdc.getConnectionId());
+
+      try (BigQueryJdbcMdc.MdcCloseable mdc2 =
+          BigQueryJdbcMdc.registerInstance(mockConnection2, "conn2")) {
+        assertEquals("JdbcConnection-conn2", BigQueryJdbcMdc.getConnectionId());
+      }
+
+      assertEquals("JdbcConnection-conn1", BigQueryJdbcMdc.getConnectionId());
+    }
+    assertNull(BigQueryJdbcMdc.getConnectionId());
+  }
 }
