@@ -120,6 +120,9 @@
                           <exclude>io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi</exclude>
                           <exclude>io.opentelemetry:opentelemetry-sdk-common</exclude>
                           <exclude>io.opentelemetry:opentelemetry-sdk</exclude>
+                          <exclude>com.fasterxml.jackson.core:jackson-core</exclude>
+                          <exclude>com.fasterxml.jackson.core:jackson-databind</exclude>
+                          <exclude>com.fasterxml.jackson.core:jackson-annotations</exclude>
                         </excludes>
                       </requireUpperBoundDeps>
                     </rules>
