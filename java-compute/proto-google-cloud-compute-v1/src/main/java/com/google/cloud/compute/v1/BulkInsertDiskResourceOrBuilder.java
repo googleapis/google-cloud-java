@@ -30,6 +30,97 @@ public interface BulkInsertDiskResourceOrBuilder
    *
    *
    * <pre>
+   * The parameters for the instant snapshot group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstantSnapshotGroupParameters instant_snapshot_group_parameters = 17051623;
+   * </code>
+   *
+   * @return Whether the instantSnapshotGroupParameters field is set.
+   */
+  boolean hasInstantSnapshotGroupParameters();
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameters for the instant snapshot group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstantSnapshotGroupParameters instant_snapshot_group_parameters = 17051623;
+   * </code>
+   *
+   * @return The instantSnapshotGroupParameters.
+   */
+  com.google.cloud.compute.v1.InstantSnapshotGroupParameters getInstantSnapshotGroupParameters();
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameters for the instant snapshot group.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstantSnapshotGroupParameters instant_snapshot_group_parameters = 17051623;
+   * </code>
+   */
+  com.google.cloud.compute.v1.InstantSnapshotGroupParametersOrBuilder
+      getInstantSnapshotGroupParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameters for the snapshot group. The usage of snapshot group feature
+   * is restricted.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SnapshotGroupParameters snapshot_group_parameters = 42252485;
+   * </code>
+   *
+   * @return Whether the snapshotGroupParameters field is set.
+   */
+  boolean hasSnapshotGroupParameters();
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameters for the snapshot group. The usage of snapshot group feature
+   * is restricted.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SnapshotGroupParameters snapshot_group_parameters = 42252485;
+   * </code>
+   *
+   * @return The snapshotGroupParameters.
+   */
+  com.google.cloud.compute.v1.SnapshotGroupParameters getSnapshotGroupParameters();
+
+  /**
+   *
+   *
+   * <pre>
+   * The parameters for the snapshot group. The usage of snapshot group feature
+   * is restricted.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SnapshotGroupParameters snapshot_group_parameters = 42252485;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SnapshotGroupParametersOrBuilder
+      getSnapshotGroupParametersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The URL of the DiskConsistencyGroupPolicy for the group of disks to clone.
    * This may be a full or partial URL, such as:
    *
