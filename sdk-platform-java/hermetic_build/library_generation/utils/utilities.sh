@@ -73,15 +73,15 @@ get_gapic_opts() {
   local repo=$6
   local artifact=$7
   local generate_version_java=$8
+
+  local opts="transport=${transport}"
+  
   if [ "${rest_numeric_enums}" == "true" ]; then
-    rest_numeric_enums="rest-numeric-enums"
-  else
-    rest_numeric_enums=""
+    opts="${opts},rest-numeric-enums"
   fi
+  
   if [ "${generate_version_java}" == "true" ]; then
-    generate_version_java_opt="generate-version-java"
-  else
-    generate_version_java_opt=""
+    opts="${opts},generate-version-java"
   fi
 
   # If any of the gapic options is empty (default value), try to search for
@@ -97,8 +97,9 @@ get_gapic_opts() {
   if [[ "${service_yaml}" == "" ]]; then
     service_yaml=$(find "${proto_path}" -maxdepth 1 -type f \( -name "*.yaml" ! -name "*gapic*.yaml" \))
   fi
-  echo "transport=${transport},${rest_numeric_enums},${generate_version_java_opt},grpc-service-config=${service_config},gapic-config=${gapic_yaml},api-service-config=${service_yaml},repo=${repo},artifact=${artifact}"
 
+  opts="${opts},grpc-service-config=${service_config},gapic-config=${gapic_yaml},api-service-config=${service_yaml},repo=${repo},artifact=${artifact}"
+  echo "${opts}"
 }
 
 remove_grpc_version() {
