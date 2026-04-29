@@ -48,9 +48,11 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRegionHealthSourcesRequest;
 import com.google.cloud.compute.v1.DeleteRegionHealthSourceRequest;
+import com.google.cloud.compute.v1.GetHealthRegionHealthSourceRequest;
 import com.google.cloud.compute.v1.GetRegionHealthSourceRequest;
 import com.google.cloud.compute.v1.HealthSource;
 import com.google.cloud.compute.v1.HealthSourceAggregatedList;
+import com.google.cloud.compute.v1.HealthSourceHealth;
 import com.google.cloud.compute.v1.HealthSourceList;
 import com.google.cloud.compute.v1.HealthSourcesScopedList;
 import com.google.cloud.compute.v1.InsertRegionHealthSourceRequest;
@@ -165,6 +167,8 @@ public class RegionHealthSourcesStubSettings extends StubSettings<RegionHealthSo
   private final OperationCallSettings<DeleteRegionHealthSourceRequest, Operation, Operation>
       deleteOperationSettings;
   private final UnaryCallSettings<GetRegionHealthSourceRequest, HealthSource> getSettings;
+  private final UnaryCallSettings<GetHealthRegionHealthSourceRequest, HealthSourceHealth>
+      getHealthSettings;
   private final UnaryCallSettings<InsertRegionHealthSourceRequest, Operation> insertSettings;
   private final OperationCallSettings<InsertRegionHealthSourceRequest, Operation, Operation>
       insertOperationSettings;
@@ -333,6 +337,12 @@ public class RegionHealthSourcesStubSettings extends StubSettings<RegionHealthSo
     return getSettings;
   }
 
+  /** Returns the object with the settings used for calls to getHealth. */
+  public UnaryCallSettings<GetHealthRegionHealthSourceRequest, HealthSourceHealth>
+      getHealthSettings() {
+    return getHealthSettings;
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertRegionHealthSourceRequest, Operation> insertSettings() {
     return insertSettings;
@@ -453,6 +463,7 @@ public class RegionHealthSourcesStubSettings extends StubSettings<RegionHealthSo
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
+    getHealthSettings = settingsBuilder.getHealthSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
@@ -485,6 +496,8 @@ public class RegionHealthSourcesStubSettings extends StubSettings<RegionHealthSo
             DeleteRegionHealthSourceRequest, Operation, Operation>
         deleteOperationSettings;
     private final UnaryCallSettings.Builder<GetRegionHealthSourceRequest, HealthSource> getSettings;
+    private final UnaryCallSettings.Builder<GetHealthRegionHealthSourceRequest, HealthSourceHealth>
+        getHealthSettings;
     private final UnaryCallSettings.Builder<InsertRegionHealthSourceRequest, Operation>
         insertSettings;
     private final OperationCallSettings.Builder<
@@ -555,6 +568,7 @@ public class RegionHealthSourcesStubSettings extends StubSettings<RegionHealthSo
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getHealthSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
@@ -567,6 +581,7 @@ public class RegionHealthSourcesStubSettings extends StubSettings<RegionHealthSo
               aggregatedListSettings,
               deleteSettings,
               getSettings,
+              getHealthSettings,
               insertSettings,
               listSettings,
               patchSettings,
@@ -581,6 +596,7 @@ public class RegionHealthSourcesStubSettings extends StubSettings<RegionHealthSo
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
+      getHealthSettings = settings.getHealthSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
@@ -593,6 +609,7 @@ public class RegionHealthSourcesStubSettings extends StubSettings<RegionHealthSo
               aggregatedListSettings,
               deleteSettings,
               getSettings,
+              getHealthSettings,
               insertSettings,
               listSettings,
               patchSettings,
@@ -624,6 +641,11 @@ public class RegionHealthSourcesStubSettings extends StubSettings<RegionHealthSo
 
       builder
           .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getHealthSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -760,6 +782,12 @@ public class RegionHealthSourcesStubSettings extends StubSettings<RegionHealthSo
     /** Returns the builder for the settings used for calls to get. */
     public UnaryCallSettings.Builder<GetRegionHealthSourceRequest, HealthSource> getSettings() {
       return getSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getHealth. */
+    public UnaryCallSettings.Builder<GetHealthRegionHealthSourceRequest, HealthSourceHealth>
+        getHealthSettings() {
+      return getHealthSettings;
     }
 
     /** Returns the builder for the settings used for calls to insert. */

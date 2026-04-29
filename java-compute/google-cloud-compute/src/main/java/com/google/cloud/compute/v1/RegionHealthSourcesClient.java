@@ -125,6 +125,24 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> GetHealth</td>
+ *      <td><p> Gets the most recent health check results for this regional HealthSource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getHealth(GetHealthRegionHealthSourceRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getHealth(String project, String region, String healthSource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getHealthCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> Insert</td>
  *      <td><p> Create a HealthSource in the specified project in the given region using the parameters that are included in the request.</td>
  *      <td>
@@ -683,6 +701,103 @@ public class RegionHealthSourcesClient implements BackgroundResource {
    */
   public final UnaryCallable<GetRegionHealthSourceRequest, HealthSource> getCallable() {
     return stub.getCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the most recent health check results for this regional HealthSource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionHealthSourcesClient regionHealthSourcesClient = RegionHealthSourcesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String healthSource = "healthSource513679767";
+   *   HealthSourceHealth response =
+   *       regionHealthSourcesClient.getHealth(project, region, healthSource);
+   * }
+   * }</pre>
+   *
+   * @param project Name of the project scoping this request.
+   * @param region Name of the region scoping this request.
+   * @param healthSource Name of the HealthSource resource to get health for.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HealthSourceHealth getHealth(String project, String region, String healthSource) {
+    GetHealthRegionHealthSourceRequest request =
+        GetHealthRegionHealthSourceRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setHealthSource(healthSource)
+            .build();
+    return getHealth(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the most recent health check results for this regional HealthSource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionHealthSourcesClient regionHealthSourcesClient = RegionHealthSourcesClient.create()) {
+   *   GetHealthRegionHealthSourceRequest request =
+   *       GetHealthRegionHealthSourceRequest.newBuilder()
+   *           .setHealthSource("healthSource513679767")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   HealthSourceHealth response = regionHealthSourcesClient.getHealth(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final HealthSourceHealth getHealth(GetHealthRegionHealthSourceRequest request) {
+    return getHealthCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the most recent health check results for this regional HealthSource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RegionHealthSourcesClient regionHealthSourcesClient = RegionHealthSourcesClient.create()) {
+   *   GetHealthRegionHealthSourceRequest request =
+   *       GetHealthRegionHealthSourceRequest.newBuilder()
+   *           .setHealthSource("healthSource513679767")
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .build();
+   *   ApiFuture<HealthSourceHealth> future =
+   *       regionHealthSourcesClient.getHealthCallable().futureCall(request);
+   *   // Do something.
+   *   HealthSourceHealth response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetHealthRegionHealthSourceRequest, HealthSourceHealth>
+      getHealthCallable() {
+    return stub.getHealthCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
