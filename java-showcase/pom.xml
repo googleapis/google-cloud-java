@@ -24,6 +24,8 @@
     <checkstyle.skip>true</checkstyle.skip>
     <clirr.skip>true</clirr.skip>
     <enforcer.skip>true</enforcer.skip>
+    <maven.deploy.skip>true</maven.deploy.skip>
+    <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
     <mdep.analyze.skip>true</mdep.analyze.skip><!-- The showcase modules are not meant for library customers. -->
   </properties>
 

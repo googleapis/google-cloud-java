@@ -16,14 +16,18 @@
 
 package com.google.cloud.bigquery.exception;
 
+import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
 import java.sql.SQLException;
 
 /**
  * Exception for errors that occur when the driver cannot convert a value from one type to another.
  */
 public class BigQueryConversionException extends SQLException {
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryConversionException.class.getName());
 
   public BigQueryConversionException(String message, Throwable cause) {
     super(message, cause);
+    LOG.severe(message, this);
   }
 }

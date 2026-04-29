@@ -2209,7 +2209,7 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/run/v2
 - api_shortname: saasservicemgmt
-  name_pretty: SaaS Runtime API
+  name_pretty: App Lifecycle Manager
   product_documentation: https://cloud.google.com/saas-runtime/docs/overview
   api_description: "Model, deploy, and operate your SaaS at scale.\t"
   client_documentation: 
