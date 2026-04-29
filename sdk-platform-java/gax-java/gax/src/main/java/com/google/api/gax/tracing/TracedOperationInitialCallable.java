@@ -50,7 +50,7 @@ public class TracedOperationInitialCallable<RequestT>
       UnaryCallable<RequestT, OperationSnapshot> innerCallable,
       ApiTracerFactory tracedFactory,
       ApiTracerContext apiTracerContext) {
-    super(innerCallable, tracedFactory, apiTracerContext, null);
+    super(innerCallable, tracedFactory, apiTracerContext);
   }
 
   @Override
