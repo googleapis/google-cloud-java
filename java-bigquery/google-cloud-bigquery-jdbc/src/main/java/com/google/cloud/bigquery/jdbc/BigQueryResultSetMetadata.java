@@ -43,7 +43,7 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
     this.schemaFieldList = schemaFieldList;
     this.columnCount = schemaFieldList.size();
     this.statement = statement;
-    this.connection = (BigQueryConnection) statement.getConnection();
+    this.connection = statement.getConnection().unwrap(BigQueryConnection.class);
   }
 
   static BigQueryResultSetMetadata of(FieldList schemaFieldList, Statement statement)

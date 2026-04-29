@@ -290,9 +290,11 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   @Override
   public void close() throws SQLException {
     LOG.finest("++enter++");
+    if (isClosed()) {
+      return;
+    }
     try (BigQueryJdbcMdc.MdcCloseable mdc =
         BigQueryJdbcMdc.registerInstance(this.statement.connection, this.statement.connectionId)) {
-      checkClosed();
       LOG.fine("Closing BigqueryJsonResultSet %s.", this);
       this.isClosed = true;
       if (ownedThreads != null) {

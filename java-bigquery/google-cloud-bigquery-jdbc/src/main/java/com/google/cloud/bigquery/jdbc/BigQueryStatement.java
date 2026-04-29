@@ -295,7 +295,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
         BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.finest("++enter++");
-      return checkUpdateCount(executeLargeUpdate(sql));
+      return checkUpdateCount(executeLargeUpdateImpl(sql));
     }
   }
 
