@@ -58,5 +58,27 @@ class TestGenerateModuleNotes(unittest.TestCase):
         self.assertEqual(result.stdout, expected_output)
 
 
+    def test_java_dataplex_generation(self):
+        """Test generating release notes for Dataplex module version 1.86.0."""
+        args = [
+            "--module", "google-cloud-dataplex",
+            "--directory", "java-dataplex",
+            "--version", "1.86.0",
+            "--short-name", "dataplex"
+        ]
+        
+        cmd = ["python3", str(self.script_path)] + args
+        result = subprocess.run(
+            cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
+        )
+        self.assertEqual(result.returncode, 0)
+        
+        golden_path = self.testdata_dir / "golden_java-dataplex_1.86.0.txt"
+        with open(golden_path, "r") as f:
+            expected_output = f.read()
+            
+        self.assertEqual(result.stdout, expected_output)
+
+
 if __name__ == "__main__":
     unittest.main()
