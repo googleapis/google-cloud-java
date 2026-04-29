@@ -950,8 +950,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     (name) -> bigquery.getDataset(DatasetId.of(catalogParam, name)),
                     (ds) -> ds.getDatasetId().getDataset(),
                     schemaPattern,
-                    schemaRegex,
-                    LOG);
+                    schemaRegex);
 
             if (datasetsToScan.isEmpty()) {
               LOG.info("Fetcher thread found no matching datasets. Finishing.");
@@ -984,8 +983,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                                       name)),
                           (rt) -> rt.getRoutineId().getRoutine(),
                           procedureNamePattern,
-                          procedureNameRegex,
-                          LOG);
+                          procedureNameRegex);
               Future<List<Routine>> apiFuture = apiExecutor.submit(apiCallable);
               apiFutures.add(apiFuture);
             }
@@ -1052,7 +1050,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             if (!Thread.currentThread().isInterrupted()) {
               Comparator<FieldValueList> comparator =
                   defineGetProceduresComparator(localResultSchemaFields);
-              sortResults(collectedResults, comparator, "getProcedures", LOG);
+              sortResults(collectedResults, comparator, "getProcedures");
             }
 
             if (!Thread.currentThread().isInterrupted()) {
@@ -1259,8 +1257,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     procedureNamePattern,
                     procedureNameRegex,
                     listRoutinesExecutor,
-                    catalogParam,
-                    LOG);
+                    catalogParam);
             shutdownExecutor(listRoutinesExecutor);
             listRoutinesExecutor = null;
 
@@ -1274,7 +1271,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     100,
                     runnable -> new Thread(runnable, "pcol-get-details" + fetcherThreadNameSuffix));
             List<Routine> fullRoutines =
-                fetchFullRoutineDetailsForIds(procedureIdsToGet, getRoutineDetailsExecutor, LOG);
+                fetchFullRoutineDetailsForIds(procedureIdsToGet, getRoutineDetailsExecutor);
             shutdownExecutor(getRoutineDetailsExecutor);
             getRoutineDetailsExecutor = null;
 
@@ -1294,8 +1291,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 collectedResults,
                 resultSchema.getFields(),
                 processArgsExecutor,
-                processingTaskFutures,
-                LOG);
+                processingTaskFutures);
 
             if (Thread.currentThread().isInterrupted()) {
               LOG.warning(
@@ -1317,7 +1313,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             if (!Thread.currentThread().isInterrupted()) {
               Comparator<FieldValueList> comparator =
                   defineGetProcedureColumnsComparator(resultSchema.getFields());
-              sortResults(collectedResults, comparator, "getProcedureColumns", LOG);
+              sortResults(collectedResults, comparator, "getProcedureColumns");
               populateQueue(collectedResults, queue, resultSchema.getFields());
             }
 
@@ -1369,8 +1365,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             (name) -> bigquery.getDataset(DatasetId.of(catalogParam, name)),
             (ds) -> ds.getDatasetId().getDataset(),
             schemaPattern,
-            schemaRegex,
-            LOG);
+            schemaRegex);
     LOG.info(
         "Found %d datasets to scan for procedures in catalog '%s'.",
         datasetsToScan.size(), catalogParam);
@@ -1382,12 +1377,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String procedureNamePattern,
       Pattern procedureNameRegex,
       ExecutorService listRoutinesExecutor,
-      String catalogParam,
-      BigQueryJdbcCustomLogger logger)
+      String catalogParam)
       throws InterruptedException {
     LOG.finest("++enter++");
 
-    logger.fine(
+    LOG.fine(
         "Listing matching procedure IDs from %d datasets for catalog '%s'.",
         datasetsToScan.size(), catalogParam);
     final List<Future<List<Routine>>> listRoutineFutures = new ArrayList<>();
@@ -1398,7 +1392,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         InterruptedException ex =
             new InterruptedException(
                 "Interrupted while listing routines for catalog: " + catalogParam);
-        logger.severe(ex.getMessage(), ex);
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
       final DatasetId currentDatasetId = dataset.getDatasetId();
@@ -1415,11 +1409,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                               currentDatasetId.getProject(), currentDatasetId.getDataset(), name)),
                   (rt) -> rt.getRoutineId().getRoutine(),
                   procedureNamePattern,
-                  procedureNameRegex,
-                  logger);
+                  procedureNameRegex);
       listRoutineFutures.add(listRoutinesExecutor.submit(listCallable));
     }
-    logger.fine(
+    LOG.fine(
         "Submitted "
             + listRoutineFutures.size()
             + " routine list tasks for catalog: "
@@ -1431,7 +1424,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         InterruptedException ex =
             new InterruptedException(
                 "Interrupted while collecting routine lists for catalog: " + catalogParam);
-        logger.severe(ex.getMessage(), ex);
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
       try {
@@ -1443,7 +1436,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               if (listedRoutine.getRoutineId() != null) {
                 procedureIdsToGet.add(listedRoutine.getRoutineId());
               } else {
-                logger.warning(
+                LOG.warning(
                     "Found a procedure type routine with a null ID during listing phase for"
                         + " catalog: "
                         + catalogParam);
@@ -1452,25 +1445,23 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         }
       } catch (ExecutionException e) {
-        logger.warning(
+        LOG.warning(
             "Error getting routine list result for catalog " + catalogParam + ": " + e.getCause());
       } catch (CancellationException e) {
-        logger.warning("Routine list task cancelled for catalog: " + catalogParam);
+        LOG.warning("Routine list task cancelled for catalog: " + catalogParam);
       }
     }
-    logger.info(
+    LOG.info(
         "Found %d procedure IDs to fetch details for in catalog '%s'.",
         procedureIdsToGet.size(), catalogParam);
     return procedureIdsToGet;
   }
 
   List<Routine> fetchFullRoutineDetailsForIds(
-      List<RoutineId> procedureIdsToGet,
-      ExecutorService getRoutineDetailsExecutor,
-      BigQueryJdbcCustomLogger logger)
+      List<RoutineId> procedureIdsToGet, ExecutorService getRoutineDetailsExecutor)
       throws InterruptedException {
     LOG.finest("++enter++");
-    logger.fine("Fetching full details for %d procedure IDs.", procedureIdsToGet.size());
+    LOG.fine("Fetching full details for %d procedure IDs.", procedureIdsToGet.size());
     final List<Future<Routine>> getRoutineFutures = new ArrayList<>();
     final List<Routine> fullRoutines = Collections.synchronizedList(new ArrayList<>());
 
@@ -1478,7 +1469,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       if (Thread.currentThread().isInterrupted()) {
         InterruptedException ex =
             new InterruptedException("Interrupted while submitting getRoutine tasks");
-        logger.severe(ex.getMessage(), ex);
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
       final RoutineId currentProcId = procId;
@@ -1487,7 +1478,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             try {
               return bigquery.getRoutine(currentProcId);
             } catch (Exception e) {
-              logger.warning(
+              LOG.warning(
                   "Failed to get full details for routine "
                       + currentProcId
                       + ": "
@@ -1497,14 +1488,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           };
       getRoutineFutures.add(getRoutineDetailsExecutor.submit(getCallable));
     }
-    logger.fine("Submitted " + getRoutineFutures.size() + " getRoutine detail tasks.");
+    LOG.fine("Submitted " + getRoutineFutures.size() + " getRoutine detail tasks.");
 
     for (Future<Routine> getFuture : getRoutineFutures) {
       if (Thread.currentThread().isInterrupted()) {
         getRoutineFutures.forEach(f -> f.cancel(true)); // Cancel remaining
         InterruptedException ex =
             new InterruptedException("Interrupted while collecting Routine details");
-        logger.severe(ex.getMessage(), ex);
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
       try {
@@ -1513,12 +1504,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           fullRoutines.add(fullRoutine);
         }
       } catch (ExecutionException e) {
-        logger.warning("Error processing getRoutine future result: " + e.getCause());
+        LOG.warning("Error processing getRoutine future result: " + e.getCause());
       } catch (CancellationException e) {
-        logger.warning("getRoutine detail task cancelled.");
+        LOG.warning("getRoutine detail task cancelled.");
       }
     }
-    logger.info("Successfully fetched full details for %d routines.", fullRoutines.size());
+    LOG.info("Successfully fetched full details for %d routines.", fullRoutines.size());
     return fullRoutines;
   }
 
@@ -1528,16 +1519,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
       ExecutorService processArgsExecutor,
-      List<Future<?>> outArgumentProcessingFutures,
-      BigQueryJdbcCustomLogger logger)
+      List<Future<?>> outArgumentProcessingFutures)
       throws InterruptedException {
-    logger.fine("Submitting argument processing jobs for %d routines.", fullRoutines.size());
+    LOG.fine("Submitting argument processing jobs for %d routines.", fullRoutines.size());
 
     for (Routine fullRoutine : fullRoutines) {
       if (Thread.currentThread().isInterrupted()) {
         InterruptedException ex =
             new InterruptedException("Interrupted while submitting argument processing jobs");
-        logger.severe(ex.getMessage(), ex);
+        LOG.severe(ex.getMessage(), ex);
         throw ex;
       }
       if (fullRoutine != null) {
@@ -1550,7 +1540,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                           finalFullRoutine, columnNameRegex, collectedResults, resultSchemaFields));
           outArgumentProcessingFutures.add(processFuture);
         } else {
-          logger.warning(
+          LOG.warning(
               "Routine "
                   + (fullRoutine.getRoutineId() != null
                       ? fullRoutine.getRoutineId().toString()
@@ -1561,10 +1551,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         }
       }
     }
-    logger.fine(
+    LOG.fine(
         "Finished submitting "
             + outArgumentProcessingFutures.size()
             + " processProcedureArguments tasks.");
+    LOG.info(
+        "Submitted %d procedure argument processing jobs.", outArgumentProcessingFutures.size());
   }
 
   Schema defineGetProcedureColumnsSchema() {
@@ -1918,8 +1910,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     (name) -> bigquery.getDataset(DatasetId.of(catalogParam, name)),
                     (ds) -> ds.getDatasetId().getDataset(),
                     schemaParam,
-                    schemaRegex,
-                    LOG);
+                    schemaRegex);
 
             if (datasetsToScan.isEmpty()) {
               LOG.info("Fetcher thread found no matching datasets. Returning empty resultset.");
@@ -1952,8 +1943,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                                       name)),
                           (tbl) -> tbl.getTableId().getTable(),
                           tableNamePattern,
-                          tableNameRegex,
-                          LOG);
+                          tableNameRegex);
               Future<List<Table>> apiFuture = apiExecutor.submit(apiCallable);
               apiFutures.add(apiFuture);
             }
@@ -2015,7 +2005,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             if (!Thread.currentThread().isInterrupted()) {
               Comparator<FieldValueList> comparator =
                   defineGetTablesComparator(localResultSchemaFields);
-              sortResults(collectedResults, comparator, "getTables", LOG);
+              sortResults(collectedResults, comparator, "getTables");
             }
 
             if (!Thread.currentThread().isInterrupted()) {
@@ -2319,8 +2309,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     (name) -> bigquery.getDataset(DatasetId.of(catalogParam, name)),
                     (ds) -> ds.getDatasetId().getDataset(),
                     schemaParam,
-                    schemaRegex,
-                    LOG);
+                    schemaRegex);
 
             if (datasetsToScan.isEmpty()) {
               LOG.info("Fetcher thread found no matching datasets. Returning empty resultset.");
@@ -2349,8 +2338,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                               TableId.of(datasetId.getProject(), datasetId.getDataset(), name)),
                       (tbl) -> tbl.getTableId().getTable(),
                       tableNamePattern,
-                      tableNameRegex,
-                      LOG);
+                      tableNameRegex);
 
               for (Table table : tablesToScan) {
                 if (Thread.currentThread().isInterrupted()) {
@@ -2381,7 +2369,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             if (!Thread.currentThread().isInterrupted()) {
               Comparator<FieldValueList> comparator =
                   defineGetColumnsComparator(localResultSchemaFields);
-              sortResults(collectedResults, comparator, "getColumns", LOG);
+              sortResults(collectedResults, comparator, "getColumns");
             }
 
             if (!Thread.currentThread().isInterrupted()) {
@@ -3023,7 +3011,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     final List<FieldValueList> typeInfoRows = prepareGetTypeInfoRows(schemaFields);
 
     final Comparator<FieldValueList> comparator = defineGetTypeInfoComparator(schemaFields);
-    sortResults(typeInfoRows, comparator, "getTypeInfo", LOG);
+    sortResults(typeInfoRows, comparator, "getTypeInfo");
     final BlockingQueue<BigQueryFieldValueListWrapper> queue =
         new LinkedBlockingQueue<>(typeInfoRows.size() + 1);
 
@@ -4041,8 +4029,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                       (name) -> bigquery.getDataset(DatasetId.of(currentProjectToScan, name)),
                       (ds) -> ds.getDatasetId().getDataset(),
                       schemaPattern,
-                      schemaRegex,
-                      LOG);
+                      schemaRegex);
 
               if (datasetsInProject.isEmpty() || Thread.currentThread().isInterrupted()) {
                 LOG.info(
@@ -4066,7 +4053,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             if (!Thread.currentThread().isInterrupted()) {
               Comparator<FieldValueList> comparator =
                   defineGetSchemasComparator(localResultSchemaFields);
-              sortResults(collectedResults, comparator, "getSchemas", LOG);
+              sortResults(collectedResults, comparator, "getSchemas");
             }
 
             if (!Thread.currentThread().isInterrupted()) {
@@ -4196,7 +4183,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               (FieldValueList fvl) ->
                   getStringValueOrNull(fvl, resultSchemaFields.getIndex("NAME")),
               Comparator.nullsFirst(String::compareToIgnoreCase));
-      sortResults(collectedResults, comparator, "getClientInfoProperties", LOG);
+      sortResults(collectedResults, comparator, "getClientInfoProperties");
       populateQueue(collectedResults, queue, resultSchemaFields);
 
     } catch (Exception e) {
@@ -4284,8 +4271,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     (name) -> bigquery.getDataset(DatasetId.of(catalogParam, name)),
                     (ds) -> ds.getDatasetId().getDataset(),
                     schemaPattern,
-                    schemaRegex,
-                    LOG);
+                    schemaRegex);
 
             if (datasetsToScan.isEmpty()) {
               LOG.info("Fetcher thread found no matching datasets. Returning empty resultset.");
@@ -4321,8 +4307,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                                     name)),
                         (rt) -> rt.getRoutineId().getRoutine(),
                         functionNamePattern,
-                        functionNameRegex,
-                        LOG);
+                        functionNameRegex);
                   };
               Future<List<Routine>> apiFuture = apiExecutor.submit(apiCallable);
               apiFutures.add(apiFuture);
@@ -4377,7 +4362,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             waitForTasksCompletion(processingTaskFutures);
             Comparator<FieldValueList> comparator =
                 defineGetFunctionsComparator(localResultSchemaFields);
-            sortResults(collectedResults, comparator, "getFunctions", LOG);
+            sortResults(collectedResults, comparator, "getFunctions");
             populateQueue(collectedResults, queue, localResultSchemaFields);
           } catch (Throwable t) {
             LOG.severe("Unexpected error in function fetcher runnable: " + t.getMessage());
@@ -4549,8 +4534,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     (name) -> bigquery.getDataset(DatasetId.of(catalogParam, name)),
                     (ds) -> ds.getDatasetId().getDataset(),
                     schemaPattern,
-                    schemaRegex,
-                    LOG);
+                    schemaRegex);
 
             if (datasetsToScan.isEmpty() || Thread.currentThread().isInterrupted()) {
               LOG.info(
@@ -4568,8 +4552,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     functionNamePattern,
                     functionNameRegex,
                     listRoutinesExecutor,
-                    catalogParam,
-                    LOG);
+                    catalogParam);
             shutdownExecutor(listRoutinesExecutor);
             listRoutinesExecutor = null;
 
@@ -4584,7 +4567,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     runnable ->
                         new Thread(runnable, "funcol-get-details" + fetcherThreadNameSuffix));
             List<Routine> fullFunctions =
-                fetchFullRoutineDetailsForIds(functionIdsToGet, getRoutineDetailsExecutor, LOG);
+                fetchFullRoutineDetailsForIds(functionIdsToGet, getRoutineDetailsExecutor);
             shutdownExecutor(getRoutineDetailsExecutor);
             getRoutineDetailsExecutor = null;
 
@@ -4605,8 +4588,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 collectedResults,
                 resultSchemaFields,
                 processParamsExecutor,
-                processingTaskFutures,
-                LOG);
+                processingTaskFutures);
 
             if (Thread.currentThread().isInterrupted()) {
               LOG.warning(
@@ -4628,7 +4610,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
             if (!Thread.currentThread().isInterrupted()) {
               Comparator<FieldValueList> comparator =
                   defineGetFunctionColumnsComparator(resultSchemaFields);
-              sortResults(collectedResults, comparator, "getFunctionColumns", LOG);
+              sortResults(collectedResults, comparator, "getFunctionColumns");
               populateQueue(collectedResults, queue, resultSchemaFields);
             }
 
@@ -4739,12 +4721,11 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String functionNamePattern,
       Pattern functionNameRegex,
       ExecutorService listRoutinesExecutor,
-      String catalogParam,
-      BigQueryJdbcCustomLogger logger)
+      String catalogParam)
       throws InterruptedException {
     LOG.finest("++enter++");
 
-    logger.fine(
+    LOG.fine(
         "Listing matching function IDs from %d datasets for catalog '%s'.",
         datasetsToScan.size(), catalogParam);
     final List<Future<List<Routine>>> listRoutineFutures = new ArrayList<>();
@@ -4752,7 +4733,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     for (Dataset dataset : datasetsToScan) {
       if (Thread.currentThread().isInterrupted()) {
-        logger.warning(
+        LOG.warning(
             "Interrupted during submission of routine (function) listing tasks for catalog: "
                 + catalogParam);
         throw new InterruptedException("Interrupted while listing functions");
@@ -4771,11 +4752,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                               currentDatasetId.getProject(), currentDatasetId.getDataset(), name)),
                   (rt) -> rt.getRoutineId().getRoutine(),
                   functionNamePattern,
-                  functionNameRegex,
-                  logger);
+                  functionNameRegex);
       listRoutineFutures.add(listRoutinesExecutor.submit(listCallable));
     }
-    logger.fine(
+    LOG.fine(
         "Submitted "
             + listRoutineFutures.size()
             + " routine (function) list tasks for catalog: "
@@ -4783,7 +4763,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     for (Future<List<Routine>> listFuture : listRoutineFutures) {
       if (Thread.currentThread().isInterrupted()) {
-        logger.warning(
+        LOG.warning(
             "Interrupted while collecting routine (function) list results for catalog: "
                 + catalogParam);
         listRoutineFutures.forEach(f -> f.cancel(true));
@@ -4799,7 +4779,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
               if (listedRoutine.getRoutineId() != null) {
                 functionIdsToGet.add(listedRoutine.getRoutineId());
               } else {
-                logger.warning(
+                LOG.warning(
                     "Found a function type routine with a null ID during listing phase for catalog:"
                         + " "
                         + catalogParam);
@@ -4808,16 +4788,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
           }
         }
       } catch (ExecutionException e) {
-        logger.warning(
+        LOG.warning(
             "Error getting routine (function) list result for catalog "
                 + catalogParam
                 + ": "
                 + e.getCause());
       } catch (CancellationException e) {
-        logger.warning("Routine (function) list task cancelled for catalog: " + catalogParam);
+        LOG.warning("Routine (function) list task cancelled for catalog: " + catalogParam);
       }
     }
-    logger.info(
+    LOG.info(
         "Found %d function IDs to fetch details for in catalog '%s'.",
         functionIdsToGet.size(), catalogParam);
     return functionIdsToGet;
@@ -4829,14 +4809,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields,
       ExecutorService processParamsExecutor,
-      List<Future<?>> outParameterProcessingFutures,
-      BigQueryJdbcCustomLogger logger)
+      List<Future<?>> outParameterProcessingFutures)
       throws InterruptedException {
-    logger.fine("Submitting parameter processing jobs for %d functions.", fullFunctions.size());
+    LOG.fine("Submitting parameter processing jobs for %d functions.", fullFunctions.size());
 
     for (Routine fullFunction : fullFunctions) {
       if (Thread.currentThread().isInterrupted()) {
-        logger.warning("Interrupted during submission of function parameter processing tasks.");
+        LOG.warning("Interrupted during submission of function parameter processing tasks.");
         throw new InterruptedException(
             "Interrupted while submitting function parameter processing jobs");
       }
@@ -4855,7 +4834,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                           resultSchemaFields));
           outParameterProcessingFutures.add(processFuture);
         } else {
-          logger.warning(
+          LOG.warning(
               "Routine "
                   + (fullFunction.getRoutineId() != null
                       ? fullFunction.getRoutineId().toString()
@@ -4866,7 +4845,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
         }
       }
     }
-    logger.fine(
+    LOG.fine(
         "Finished submitting "
             + outParameterProcessingFutures.size()
             + " processFunctionParametersAndReturnValue tasks.");
@@ -5264,8 +5243,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       Function<String, T> getSpecificOperation,
       Function<T, String> nameExtractor,
       String pattern,
-      Pattern regex,
-      BigQueryJdbcCustomLogger logger) {
+      Pattern regex) {
 
     boolean needsList = needsListing(pattern);
     List<T> resultList = new ArrayList<>();
@@ -5273,30 +5251,29 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     try {
       Iterable<T> objects;
       if (needsList) {
-        logger.info(
+        LOG.info(
             "Listing all %ss (pattern: %s)...",
             objectTypeName, pattern == null ? "<all>" : pattern);
         Page<T> firstPage = listAllOperation.get();
         objects = firstPage.iterateAll();
-        logger.fine(
-            "Retrieved initial %s list, iterating & filtering if needed...", objectTypeName);
+        LOG.fine("Retrieved initial %s list, iterating & filtering if needed...", objectTypeName);
 
       } else {
-        logger.info("Getting specific %s: '%s'", objectTypeName, pattern);
+        LOG.info("Getting specific %s: '%s'", objectTypeName, pattern);
         T specificObject = getSpecificOperation.apply(pattern);
         objects =
             (specificObject == null)
                 ? Collections.<T>emptyList()
                 : Collections.singletonList(specificObject);
         if (specificObject == null) {
-          logger.info("Specific %s not found: '%s'", objectTypeName, pattern);
+          LOG.info("Specific %s not found: '%s'", objectTypeName, pattern);
         }
       }
 
       boolean wasListing = needsList;
       for (T obj : objects) {
         if (Thread.currentThread().isInterrupted()) {
-          logger.warning("Thread interrupted during " + objectTypeName + " processing loop.");
+          LOG.warning("Thread interrupted during " + objectTypeName + " processing loop.");
           throw new InterruptedException(
               "Interrupted during " + objectTypeName + " processing loop");
         }
@@ -5314,17 +5291,17 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     } catch (BigQueryException e) {
       if (!needsList && e.getCode() == 404) {
-        logger.info("%s '%s' not found (API error 404).", objectTypeName, pattern);
+        LOG.info("%s '%s' not found (API error 404).", objectTypeName, pattern);
       } else {
-        logger.warning(
+        LOG.warning(
             "BigQueryException finding %ss for pattern '%s': %s (Code: %d)",
             objectTypeName, pattern, e.getMessage(), e.getCode());
       }
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
-      logger.warning("Interrupted while finding " + objectTypeName + "s.");
+      LOG.warning("Interrupted while finding " + objectTypeName + "s.");
     } catch (Exception e) {
-      logger.severe(
+      LOG.severe(
           "Unexpected exception finding %ss for pattern '%s': %s",
           objectTypeName, pattern, e.getMessage());
     }
@@ -5388,24 +5365,23 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   void sortResults(
       List<FieldValueList> collectedResults,
       Comparator<FieldValueList> comparator,
-      String operationName,
-      BigQueryJdbcCustomLogger logger) {
+      String operationName) {
 
     if (collectedResults == null || collectedResults.isEmpty()) {
-      logger.info("No results collected for %s, skipping sort.", operationName);
+      LOG.info("No results collected for %s, skipping sort.", operationName);
       return;
     }
     if (comparator == null) {
-      logger.info("No comparator provided for %s, skipping sort.", operationName);
+      LOG.info("No comparator provided for %s, skipping sort.", operationName);
       return;
     }
 
-    logger.info("Sorting %d collected %s results...", collectedResults.size(), operationName);
+    LOG.info("Sorting %d collected %s results...", collectedResults.size(), operationName);
     try {
       collectedResults.sort(comparator);
-      logger.info("%s result sorting completed.", operationName);
+      LOG.info("%s result sorting completed.", operationName);
     } catch (Exception e) {
-      logger.severe("Error during sorting %s results: %s", operationName, e.getMessage());
+      LOG.severe("Error during sorting %s results: %s", operationName, e.getMessage());
     }
   }
 
@@ -5653,6 +5629,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
     List<String> sortedCatalogs = new ArrayList<>(accessibleCatalogs);
     Collections.sort(sortedCatalogs);
+    LOG.info("Accessible catalogs: %s", sortedCatalogs);
     return sortedCatalogs;
   }
 
