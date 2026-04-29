@@ -743,6 +743,39 @@ public class SpannerPoolTest {
   }
 
   @Test
+  public void testDynamicChannelPoolWithNewSettings() {
+    SpannerPoolKey keyWithNewDcpSettings =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/p/instances/i/databases/d"
+                        + "?enableDynamicChannelPool=true;dcpMinRpcPerChannel=10;dcpMaxRpcPerChannel=100;dcpConcurrentStreamsLowWatermark=5")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+    SpannerPoolKey keyWithDifferentMinRpc =
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/p/instances/i/databases/d"
+                        + "?enableDynamicChannelPool=true;dcpMinRpcPerChannel=20;dcpMaxRpcPerChannel=100;dcpConcurrentStreamsLowWatermark=5")
+                .setCredentials(NoCredentials.getInstance())
+                .build());
+
+    assertNotEquals(keyWithNewDcpSettings, keyWithDifferentMinRpc);
+
+    // Same configuration should be equal
+    assertEquals(
+        keyWithNewDcpSettings,
+        SpannerPoolKey.of(
+            ConnectionOptions.newBuilder()
+                .setUri(
+                    "cloudspanner:/projects/p/instances/i/databases/d"
+                        + "?enableDynamicChannelPool=true;dcpMinRpcPerChannel=10;dcpMaxRpcPerChannel=100;dcpConcurrentStreamsLowWatermark=5")
+                .setCredentials(NoCredentials.getInstance())
+                .build()));
+  }
+
+  @Test
   public void testExplicitlyDisabledDynamicChannelPool() {
     SpannerPoolKey keyWithoutDcpSetting =
         SpannerPoolKey.of(
