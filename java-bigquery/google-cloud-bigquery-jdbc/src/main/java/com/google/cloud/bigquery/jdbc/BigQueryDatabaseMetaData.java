@@ -84,9 +84,9 @@ import javax.annotation.Nullable;
  *
  * @see BigQueryStatement
  */
-// TODO(neenu): test and verify after post MVP implementation.
 class BigQueryDatabaseMetaData implements DatabaseMetaData {
-  final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryDatabaseMetaData.class.getName());
   private static final String DATABASE_PRODUCT_NAME = "Google BigQuery";
   private static final String DATABASE_PRODUCT_VERSION = "2.0";
   private static final String DRIVER_NAME = "GoogleJDBCDriverForGoogleBigQuery";
@@ -149,6 +149,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       new AtomicReference<>(null);
 
   BigQueryDatabaseMetaData(BigQueryConnection connection) {
+    LOG.finest("++enter++");
     this.URL = connection.getConnectionUrl();
     this.connection = connection;
     this.bigquery = connection.getBigQuery();
@@ -158,6 +159,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public boolean allProceduresAreCallable() {
+    LOG.finest("++enter++");
     // Returns false because BigQuery's IAM permissions can allow a user
     // to discover a procedure's existence without having rights to execute it.
     return false;
@@ -165,6 +167,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public boolean allTablesAreSelectable() {
+    LOG.finest("++enter++");
     // Returns true to ensure maximum compatibility with client applications
     // that expect a positive response to discover and list all available tables.
     return true;
@@ -172,136 +175,163 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public String getURL() {
+    LOG.finest("++enter++");
     return this.URL;
   }
 
   @Override
   public String getUserName() {
+    LOG.finest("++enter++");
     return null;
   }
 
   @Override
   public boolean isReadOnly() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean nullsAreSortedHigh() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean nullsAreSortedLow() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean nullsAreSortedAtStart() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean nullsAreSortedAtEnd() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public String getDatabaseProductName() {
+    LOG.finest("++enter++");
     return DATABASE_PRODUCT_NAME;
   }
 
   @Override
   public String getDatabaseProductVersion() {
+    LOG.finest("++enter++");
     return DATABASE_PRODUCT_VERSION;
   }
 
   @Override
   public String getDriverName() {
+    LOG.finest("++enter++");
     return DRIVER_NAME;
   }
 
   @Override
   public String getDriverVersion() {
+    LOG.finest("++enter++");
     return parsedDriverVersion.get() != null ? parsedDriverVersion.get() : DRIVER_DEFAULT_VERSION;
   }
 
   @Override
   public int getDriverMajorVersion() {
+    LOG.finest("++enter++");
     return parsedDriverMajorVersion.get() != null ? parsedDriverMajorVersion.get() : 0;
   }
 
   @Override
   public int getDriverMinorVersion() {
+    LOG.finest("++enter++");
     return parsedDriverMinorVersion.get() != null ? parsedDriverMinorVersion.get() : 0;
   }
 
   @Override
   public boolean usesLocalFiles() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean usesLocalFilePerTable() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsMixedCaseIdentifiers() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean storesUpperCaseIdentifiers() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean storesLowerCaseIdentifiers() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean storesMixedCaseIdentifiers() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsMixedCaseQuotedIdentifiers() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean storesUpperCaseQuotedIdentifiers() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean storesLowerCaseQuotedIdentifiers() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean storesMixedCaseQuotedIdentifiers() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public String getIdentifierQuoteString() {
+    LOG.finest("++enter++");
     return GOOGLE_SQL_QUOTED_IDENTIFIER;
   }
 
   @Override
   public String getSQLKeywords() {
+    LOG.finest("++enter++");
     return GOOGLE_SQL_RESERVED_KEYWORDS;
   }
 
   @Override
   public String getNumericFunctions() {
+    LOG.finest("++enter++");
     return GOOGLE_SQL_NUMERIC_FNS;
   }
 
   @Override
   public String getStringFunctions() {
+    LOG.finest("++enter++");
     return GOOGLE_SQL_STRING_FNS;
   }
 
@@ -309,319 +339,382 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   // GoogleSQL has UDF (user defined functions).
   // System functions like DATABASE(), USER() are not supported.
   public String getSystemFunctions() {
+    LOG.finest("++enter++");
     return null;
   }
 
   @Override
   public String getTimeDateFunctions() {
+    LOG.finest("++enter++");
     return GOOGLE_SQL_TIME_DATE_FNS;
   }
 
   @Override
   public String getSearchStringEscape() {
+    LOG.finest("++enter++");
     return GOOGLE_SQL_ESCAPE;
   }
 
   @Override
   // No extra characters beyond a-z, A-Z, 0-9 and _
   public String getExtraNameCharacters() {
+    LOG.finest("++enter++");
     return null;
   }
 
   @Override
   public boolean supportsAlterTableWithAddColumn() {
+    LOG.finest("++enter++");
     return true;
   }
 
   @Override
   public boolean supportsAlterTableWithDropColumn() {
+    LOG.finest("++enter++");
     return true;
   }
 
   @Override
   public boolean supportsColumnAliasing() {
+    LOG.finest("++enter++");
     return true;
   }
 
   @Override
   public boolean nullPlusNonNullIsNull() {
+    LOG.finest("++enter++");
     return true;
   }
 
   @Override
   public boolean supportsConvert() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsConvert(int fromType, int toType) {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsTableCorrelationNames() {
+    LOG.finest("++enter++");
     return true;
   }
 
   @Override
   public boolean supportsDifferentTableCorrelationNames() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsExpressionsInOrderBy() {
+    LOG.finest("++enter++");
     return true;
   }
 
   @Override
   public boolean supportsOrderByUnrelated() {
+    LOG.finest("++enter++");
     return true;
   }
 
   @Override
   public boolean supportsGroupBy() {
+    LOG.finest("++enter++");
     return true;
   }
 
   @Override
   public boolean supportsGroupByUnrelated() {
+    LOG.finest("++enter++");
     return true;
   }
 
   @Override
   public boolean supportsGroupByBeyondSelect() {
+    LOG.finest("++enter++");
     return true;
   }
 
   @Override
   public boolean supportsLikeEscapeClause() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsMultipleResultSets() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsMultipleTransactions() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsNonNullableColumns() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsMinimumSQLGrammar() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsCoreSQLGrammar() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsExtendedSQLGrammar() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsANSI92EntryLevelSQL() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsANSI92IntermediateSQL() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsANSI92FullSQL() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsIntegrityEnhancementFacility() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsOuterJoins() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsFullOuterJoins() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsLimitedOuterJoins() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public String getSchemaTerm() {
+    LOG.finest("++enter++");
     return SCHEMA_TERM;
   }
 
   @Override
   public String getProcedureTerm() {
+    LOG.finest("++enter++");
     return PROCEDURE_TERM;
   }
 
   @Override
   public String getCatalogTerm() {
+    LOG.finest("++enter++");
     return CATALOG_TERM;
   }
 
   @Override
   public boolean isCatalogAtStart() {
+    LOG.finest("++enter++");
     return true;
   }
 
   @Override
   public String getCatalogSeparator() {
+    LOG.finest("++enter++");
     return GOOGLE_SQL_CATALOG_SEPARATOR;
   }
 
   @Override
   public boolean supportsSchemasInDataManipulation() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsSchemasInProcedureCalls() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsSchemasInTableDefinitions() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsSchemasInIndexDefinitions() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsSchemasInPrivilegeDefinitions() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsCatalogsInDataManipulation() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsCatalogsInProcedureCalls() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsCatalogsInTableDefinitions() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsCatalogsInIndexDefinitions() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsCatalogsInPrivilegeDefinitions() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsPositionedDelete() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsPositionedUpdate() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsSelectForUpdate() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsStoredProcedures() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsSubqueriesInComparisons() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsSubqueriesInExists() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsSubqueriesInIns() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsSubqueriesInQuantifieds() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsCorrelatedSubqueries() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsUnion() {
+    LOG.finest("++enter++");
     return true;
   }
 
   @Override
   public boolean supportsUnionAll() {
+    LOG.finest("++enter++");
     return true;
   }
 
   @Override
   public boolean supportsOpenCursorsAcrossCommit() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsOpenCursorsAcrossRollback() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsOpenStatementsAcrossCommit() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsOpenStatementsAcrossRollback() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   // No limit
   public int getMaxBinaryLiteralLength() {
+    LOG.finest("++enter++");
     return 0;
   }
 
   @Override
   // No Limit
   public int getMaxCharLiteralLength() {
+    LOG.finest("++enter++");
     return 0;
   }
 
@@ -629,58 +722,68 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   // GoogleSQL documentation says 300.
   // https://cloud.google.com/bigquery/quotas#all_tables
   public int getMaxColumnNameLength() {
+    LOG.finest("++enter++");
     return GOOGLE_SQL_MAX_COL_NAME_LEN;
   }
 
   @Override
   // No specific limits for group by.
   public int getMaxColumnsInGroupBy() {
+    LOG.finest("++enter++");
     return 0;
   }
 
   @Override
   // No specific limits for index.
   public int getMaxColumnsInIndex() {
+    LOG.finest("++enter++");
     return 0;
   }
 
   @Override
   // No specific limit for Order By.
   public int getMaxColumnsInOrderBy() {
+    LOG.finest("++enter++");
     return 0;
   }
 
   @Override
   // All columns can be selected. No specific limits.
   public int getMaxColumnsInSelect() {
+    LOG.finest("++enter++");
     return 0;
   }
 
   @Override
   public int getMaxColumnsInTable() {
+    LOG.finest("++enter++");
     return GOOGLE_SQL_MAX_COLS_PER_TABLE;
   }
 
   @Override
   public int getMaxConnections() {
+    LOG.finest("++enter++");
     // Per JDBC spec, returns 0 as there is no connection limit or is unknown.
     return 0;
   }
 
   @Override
   public int getMaxCursorNameLength() {
+    LOG.finest("++enter++");
     // BigQuery does not support named cursors or positioned updates/deletes.
     return 0;
   }
 
   @Override
   public int getMaxIndexLength() {
+    LOG.finest("++enter++");
     // Per the JDBC spec, 0 indicates this feature is not supported.
     return 0;
   }
 
   @Override
   public int getMaxSchemaNameLength() {
+    LOG.finest("++enter++");
     // Dataset IDs can be up to 1024 characters long.
     // See: https://cloud.google.com/bigquery/docs/datasets#dataset-naming
     return 1024;
@@ -688,6 +791,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public int getMaxProcedureNameLength() {
+    LOG.finest("++enter++");
     // Routine IDs can be up to 256 characters long.
     // See:
     // https://cloud.google.com/bigquery/docs/reference/rest/v2/routines#RoutineReference.FIELDS.routine_id
@@ -696,6 +800,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public int getMaxCatalogNameLength() {
+    LOG.finest("++enter++");
     // Corresponds to the BigQuery Project ID, which can be a maximum of 30 characters.
     // See:
     // https://cloud.google.com/resource-manager/docs/creating-managing-projects#before_you_begin
@@ -704,17 +809,20 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public int getMaxRowSize() {
+    LOG.finest("++enter++");
     // Per JDBC spec, returns 0 as there is no fixed limit or is unknown.
     return 0;
   }
 
   @Override
   public boolean doesMaxRowSizeIncludeBlobs() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public int getMaxStatementLength() {
+    LOG.finest("++enter++");
     // Per JDBC spec, returns 0 as there is no fixed limit or is unknown.
     // See: https://cloud.google.com/bigquery/quotas#query_jobs
     return 0;
@@ -722,12 +830,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public int getMaxStatements() {
+    LOG.finest("++enter++");
     // Per JDBC spec, returns 0 as there is no fixed limit or is unknown.
     return 0;
   }
 
   @Override
   public int getMaxTableNameLength() {
+    LOG.finest("++enter++");
     // Table IDs can be up to 1024 characters long.
     // See: https://cloud.google.com/bigquery/docs/tables#table-naming
     return 1024;
@@ -735,6 +845,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public int getMaxTablesInSelect() {
+    LOG.finest("++enter++");
     // BigQuery allows up to 1,000 tables to be referenced per query.
     // See: https://cloud.google.com/bigquery/quotas#query_jobs
     return 1000;
@@ -742,47 +853,65 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public int getMaxUserNameLength() {
+    LOG.finest("++enter++");
     return 0;
   }
 
   @Override
   public int getDefaultTransactionIsolation() {
+    LOG.finest("++enter++");
     return Connection.TRANSACTION_SERIALIZABLE;
   }
 
   @Override
   public boolean supportsTransactions() {
+    LOG.finest("++enter++");
     return true;
   }
 
   @Override
   public boolean supportsTransactionIsolationLevel(int level) {
+    LOG.finest("++enter++");
     return level == Connection.TRANSACTION_SERIALIZABLE;
   }
 
   @Override
   public boolean supportsDataDefinitionAndDataManipulationTransactions() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsDataManipulationTransactionsOnly() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean dataDefinitionCausesTransactionCommit() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean dataDefinitionIgnoredInTransactions() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public ResultSet getProcedures(
       String catalog, String schemaPattern, String procedureNamePattern) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getProceduresImpl(catalog, schemaPattern, procedureNamePattern);
+    }
+  }
+
+  private ResultSet getProceduresImpl(
+      String catalog, String schemaPattern, String procedureNamePattern) {
+    LOG.finest("++enter++");
     if ((catalog == null || catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())
         || (procedureNamePattern != null && procedureNamePattern.isEmpty())) {
@@ -952,6 +1081,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetProceduresSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(9);
     fields.add(
         Field.newBuilder("PROCEDURE_CAT", StandardSQLTypeName.STRING)
@@ -1040,6 +1170,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Comparator<FieldValueList> defineGetProceduresComparator(FieldList resultSchemaFields) {
+    LOG.finest("++enter++");
     final int PROC_CAT_IDX = resultSchemaFields.getIndex("PROCEDURE_CAT");
     final int PROC_SCHEM_IDX = resultSchemaFields.getIndex("PROCEDURE_SCHEM");
     final int PROC_NAME_IDX = resultSchemaFields.getIndex("PROCEDURE_NAME");
@@ -1061,6 +1192,17 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getProcedureColumns(
       String catalog, String schemaPattern, String procedureNamePattern, String columnNamePattern) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getProcedureColumnsImpl(
+          catalog, schemaPattern, procedureNamePattern, columnNamePattern);
+    }
+  }
+
+  private ResultSet getProcedureColumnsImpl(
+      String catalog, String schemaPattern, String procedureNamePattern, String columnNamePattern) {
+    LOG.finest("++enter++");
 
     if (catalog == null || catalog.isEmpty()) {
       LOG.warning("Returning empty ResultSet because catalog (project) is null or empty.");
@@ -1215,6 +1357,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   private List<Dataset> fetchMatchingDatasetsForProcedureColumns(
       String catalogParam, String schemaPattern, Pattern schemaRegex) throws InterruptedException {
+    LOG.finest("++enter++");
     LOG.fine(
         "Fetching matching datasets for catalog '%s', schemaPattern '%s'",
         catalogParam, schemaPattern);
@@ -1242,6 +1385,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String catalogParam,
       BigQueryJdbcCustomLogger logger)
       throws InterruptedException {
+    LOG.finest("++enter++");
 
     logger.fine(
         "Listing matching procedure IDs from %d datasets for catalog '%s'.",
@@ -1325,6 +1469,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       ExecutorService getRoutineDetailsExecutor,
       BigQueryJdbcCustomLogger logger)
       throws InterruptedException {
+    LOG.finest("++enter++");
     logger.fine("Fetching full details for %d procedure IDs.", procedureIdsToGet.size());
     final List<Future<Routine>> getRoutineFutures = new ArrayList<>();
     final List<Routine> fullRoutines = Collections.synchronizedList(new ArrayList<>());
@@ -1423,6 +1568,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetProcedureColumnsSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(20);
     fields.add(
         Field.newBuilder("PROCEDURE_CAT", StandardSQLTypeName.STRING)
@@ -1558,6 +1704,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       @Nullable RoutineArgument argument,
       int ordinalPosition,
       String columnName) {
+    LOG.finest("++enter++");
 
     List<FieldValue> values = new ArrayList<>(20);
     ColumnTypeInfo typeInfo;
@@ -1650,6 +1797,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String procedureName,
       String columnName,
       int ordinalPosition) {
+    LOG.finest("++enter++");
 
     ColumnTypeInfo defaultVarcharTypeInfo =
         new ColumnTypeInfo(Types.VARCHAR, "VARCHAR", null, null, null);
@@ -1672,6 +1820,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Comparator<FieldValueList> defineGetProcedureColumnsComparator(FieldList resultSchemaFields) {
+    LOG.finest("++enter++");
     final int PROC_CAT_IDX = resultSchemaFields.getIndex("PROCEDURE_CAT");
     final int PROC_SCHEM_IDX = resultSchemaFields.getIndex("PROCEDURE_SCHEM");
     final int PROC_NAME_IDX = resultSchemaFields.getIndex("PROCEDURE_NAME");
@@ -1709,6 +1858,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getTables(
       String catalog, String schemaPattern, String tableNamePattern, String[] types) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getTablesImpl(catalog, schemaPattern, tableNamePattern, types);
+    }
+  }
+
+  private ResultSet getTablesImpl(
+      String catalog, String schemaPattern, String tableNamePattern, String[] types) {
+    LOG.finest("++enter++");
 
     Tuple<String, String> effectiveIdentifiers =
         determineEffectiveCatalogAndSchema(catalog, schemaPattern);
@@ -1885,6 +2044,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetTablesSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(10);
     fields.add(
         Field.newBuilder("TABLE_CAT", StandardSQLTypeName.STRING)
@@ -1976,6 +2136,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Comparator<FieldValueList> defineGetTablesComparator(FieldList resultSchemaFields) {
+    LOG.finest("++enter++");
     final int TABLE_TYPE_IDX = resultSchemaFields.getIndex("TABLE_TYPE");
     final int TABLE_CAT_IDX = resultSchemaFields.getIndex("TABLE_CAT");
     final int TABLE_SCHEM_IDX = resultSchemaFields.getIndex("TABLE_SCHEM");
@@ -1996,13 +2157,26 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getSchemas() {
-    LOG.info("getSchemas() called");
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      LOG.info("getSchemas() called");
 
-    return getSchemas(null, null);
+      return getSchemas(null, null);
+    }
   }
 
   @Override
   public ResultSet getCatalogs() {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getCatalogsImpl();
+    }
+  }
+
+  private ResultSet getCatalogsImpl() {
+    LOG.finest("++enter++");
     LOG.info("getCatalogs() called");
 
     final List<String> accessibleCatalogs = getAccessibleCatalogNames();
@@ -2021,12 +2195,14 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetCatalogsSchema() {
+    LOG.finest("++enter++");
     return Schema.of(
         Field.newBuilder("TABLE_CAT", StandardSQLTypeName.STRING).setMode(Mode.REQUIRED).build());
   }
 
   List<FieldValueList> prepareGetCatalogsRows(
       FieldList schemaFields, List<String> accessibleCatalogs) {
+    LOG.finest("++enter++");
     List<FieldValueList> catalogRows = new ArrayList<>();
     for (String catalogName : accessibleCatalogs) {
       FieldValue fieldValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, catalogName);
@@ -2037,6 +2213,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getTableTypes() {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getTableTypesImpl();
+    }
+  }
+
+  private ResultSet getTableTypesImpl() {
+    LOG.finest("++enter++");
     LOG.info("getTableTypes() called");
 
     final Schema tableTypesSchema = defineGetTableTypesSchema();
@@ -2053,6 +2238,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   static Schema defineGetTableTypesSchema() {
+    LOG.finest("++enter++");
     return Schema.of(
         Field.newBuilder("TABLE_TYPE", StandardSQLTypeName.STRING)
             .setMode(Field.Mode.REQUIRED)
@@ -2060,6 +2246,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   static List<FieldValueList> prepareGetTableTypesRows(Schema schema) {
+    LOG.finest("++enter++");
     final String[] tableTypes = {"EXTERNAL", "MATERIALIZED VIEW", "SNAPSHOT", "TABLE", "VIEW"};
     List<FieldValueList> rows = new ArrayList<>(tableTypes.length);
     FieldList schemaFields = schema.getFields();
@@ -2074,6 +2261,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getColumns(
       String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getColumnsImpl(catalog, schemaPattern, tableNamePattern, columnNamePattern);
+    }
+  }
+
+  private ResultSet getColumnsImpl(
+      String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern) {
+    LOG.finest("++enter++");
 
     Tuple<String, String> effectiveIdentifiers =
         determineEffectiveCatalogAndSchema(catalog, schemaPattern);
@@ -2215,6 +2412,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       Pattern columnNameRegex,
       List<FieldValueList> collectedResults,
       FieldList resultSchemaFields) {
+    LOG.finest("++enter++");
     TableId tableId = table.getTableId();
     LOG.fine("Processing columns for table: " + tableId);
     TableDefinition definition = table.getDefinition();
@@ -2275,6 +2473,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   private Schema defineGetColumnsSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(24);
     fields.add(
         Field.newBuilder("TABLE_CAT", StandardSQLTypeName.STRING)
@@ -2377,6 +2576,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   List<FieldValue> createColumnRow(
       String catalog, String schemaName, String tableName, Field field, int ordinalPosition) {
+    LOG.finest("++enter++");
     List<FieldValue> values = new ArrayList<>(24);
     Field.Mode mode = (field.getMode() == null) ? Field.Mode.NULLABLE : field.getMode();
     ColumnTypeInfo typeInfo = mapBigQueryTypeToJdbc(field);
@@ -2457,6 +2657,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   ColumnTypeInfo mapBigQueryTypeToJdbc(Field field) {
+    LOG.finest("++enter++");
     Mode mode = (field.getMode() == null) ? Mode.NULLABLE : field.getMode();
     if (mode == Mode.REPEATED) {
       return new ColumnTypeInfo(Types.ARRAY, "ARRAY", null, null, null);
@@ -2470,6 +2671,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   private Comparator<FieldValueList> defineGetColumnsComparator(FieldList resultSchemaFields) {
+    LOG.finest("++enter++");
     final int TABLE_CAT_IDX = resultSchemaFields.getIndex("TABLE_CAT");
     final int TABLE_SCHEM_IDX = resultSchemaFields.getIndex("TABLE_SCHEM");
     final int TABLE_NAME_IDX = resultSchemaFields.getIndex("TABLE_NAME");
@@ -2491,6 +2693,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getColumnPrivileges(
       String catalog, String schema, String table, String columnNamePattern) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getColumnPrivilegesImpl(catalog, schema, table, columnNamePattern);
+    }
+  }
+
+  private ResultSet getColumnPrivilegesImpl(
+      String catalog, String schema, String table, String columnNamePattern) {
+    LOG.finest("++enter++");
     LOG.info(
         "getColumnPrivileges called for catalog: %s, schema: %s, table: %s, columnNamePattern:"
             + " %s. BigQuery IAM model differs from SQL privileges; returning empty ResultSet.",
@@ -2505,6 +2717,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetColumnPrivilegesSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = defineBasePrivilegeFields();
 
     Field columnNameField =
@@ -2519,6 +2732,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getTablePrivileges(
       String catalog, String schemaPattern, String tableNamePattern) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getTablePrivilegesImpl(catalog, schemaPattern, tableNamePattern);
+    }
+  }
+
+  private ResultSet getTablePrivilegesImpl(
+      String catalog, String schemaPattern, String tableNamePattern) {
+    LOG.finest("++enter++");
     LOG.info(
         "getTablePrivileges called for catalog: %s, schemaPattern: %s, tableNamePattern: %s. "
             + "BigQuery IAM model differs from SQL privileges; returning empty ResultSet.",
@@ -2533,6 +2756,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetTablePrivilegesSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = defineBasePrivilegeFields();
     return Schema.of(fields);
   }
@@ -2540,6 +2764,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getBestRowIdentifier(
       String catalog, String schema, String table, int scope, boolean nullable) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getBestRowIdentifierImpl(catalog, schema, table, scope, nullable);
+    }
+  }
+
+  private ResultSet getBestRowIdentifierImpl(
+      String catalog, String schema, String table, int scope, boolean nullable) {
+    LOG.finest("++enter++");
     LOG.info(
         "getBestRowIdentifier called for catalog: %s, schema: %s, table: %s, scope: %d,"
             + " nullable: %s. BigQuery does not support best row identifiers; returning empty"
@@ -2555,6 +2789,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetBestRowIdentifierSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(8);
     fields.add(
         Field.newBuilder("SCOPE", StandardSQLTypeName.INT64).setMode(Field.Mode.REQUIRED).build());
@@ -2591,6 +2826,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getVersionColumns(String catalog, String schema, String table) {
+    LOG.finest("++enter++");
     LOG.info(
         "getVersionColumns called for catalog: %s, schema: %s, table: %s. "
             + "Automatic version columns not supported by BigQuery; returning empty ResultSet.",
@@ -2605,6 +2841,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetVersionColumnsSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(8);
     fields.add(
         Field.newBuilder("SCOPE", StandardSQLTypeName.INT64).setMode(Field.Mode.NULLABLE).build());
@@ -2641,6 +2878,18 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getPrimaryKeys(String catalog, String schema, String table) throws SQLException {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getPrimaryKeysImpl(catalog, schema, table);
+    }
+  }
+
+  private ResultSet getPrimaryKeysImpl(String catalog, String schema, String table)
+      throws SQLException {
+    LOG.finest("++enter++");
+    LOG.info(
+        "getPrimaryKeys called for catalog: %s, schema: %s, table: %s", catalog, schema, table);
     String sql = readSqlFromFile(GET_PRIMARY_KEYS_SQL);
     try {
       if (this.statement == null) {
@@ -2656,6 +2905,18 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getImportedKeys(String catalog, String schema, String table)
       throws SQLException {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getImportedKeysImpl(catalog, schema, table);
+    }
+  }
+
+  private ResultSet getImportedKeysImpl(String catalog, String schema, String table)
+      throws SQLException {
+    LOG.finest("++enter++");
+    LOG.info(
+        "getImportedKeys called for catalog: %s, schema: %s, table: %s", catalog, schema, table);
     String sql = readSqlFromFile(GET_IMPORTED_KEYS_SQL);
     try {
       if (this.statement == null) {
@@ -2671,6 +2932,18 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getExportedKeys(String catalog, String schema, String table)
       throws SQLException {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getExportedKeysImpl(catalog, schema, table);
+    }
+  }
+
+  private ResultSet getExportedKeysImpl(String catalog, String schema, String table)
+      throws SQLException {
+    LOG.finest("++enter++");
+    LOG.info(
+        "getExportedKeys called for catalog: %s, schema: %s, table: %s", catalog, schema, table);
     String sql = readSqlFromFile(GET_EXPORTED_KEYS_SQL);
     try {
       if (this.statement == null) {
@@ -2692,6 +2965,26 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String foreignSchema,
       String foreignTable)
       throws SQLException {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getCrossReferenceImpl(
+          parentCatalog, parentSchema, parentTable, foreignCatalog, foreignSchema, foreignTable);
+    }
+  }
+
+  private ResultSet getCrossReferenceImpl(
+      String parentCatalog,
+      String parentSchema,
+      String parentTable,
+      String foreignCatalog,
+      String foreignSchema,
+      String foreignTable)
+      throws SQLException {
+    LOG.finest("++enter++");
+    LOG.info(
+        "getCrossReference called for parentCatalog: %s, parentSchema: %s, parentTable: %s, foreignCatalog: %s, foreignSchema: %s, foreignTable: %s",
+        parentCatalog, parentSchema, parentTable, foreignCatalog, foreignSchema, foreignTable);
     String sql = readSqlFromFile(GET_CROSS_REFERENCE_SQL);
     try {
       if (this.statement == null) {
@@ -2714,6 +3007,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getTypeInfo() {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getTypeInfoImpl();
+    }
+  }
+
+  private ResultSet getTypeInfoImpl() {
+    LOG.finest("++enter++");
     LOG.info("getTypeInfo() called");
 
     final Schema typeInfoSchema = defineGetTypeInfoSchema();
@@ -2732,6 +3034,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetTypeInfoSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(18);
     fields.add(
         Field.newBuilder("TYPE_NAME", StandardSQLTypeName.STRING)
@@ -2809,6 +3112,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   List<FieldValueList> prepareGetTypeInfoRows(FieldList schemaFields) {
+    LOG.finest("++enter++");
     List<FieldValueList> rows = new ArrayList<>();
 
     Function<TypeInfoRowData, FieldValueList> createRow =
@@ -3163,6 +3467,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Comparator<FieldValueList> defineGetTypeInfoComparator(FieldList schemaFields) {
+    LOG.finest("++enter++");
     final int DATA_TYPE_IDX = schemaFields.getIndex("DATA_TYPE");
     if (DATA_TYPE_IDX < 0) {
       LOG.severe(
@@ -3180,6 +3485,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getIndexInfo(
       String catalog, String schema, String table, boolean unique, boolean approximate) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getIndexInfoImpl(catalog, schema, table, unique, approximate);
+    }
+  }
+
+  private ResultSet getIndexInfoImpl(
+      String catalog, String schema, String table, boolean unique, boolean approximate) {
+    LOG.finest("++enter++");
     LOG.info(
         "getIndexInfo called for catalog: %s, schema: %s, table: %s, unique: %s, approximate:"
             + " %s. Traditional indexes not supported by BigQuery; returning empty ResultSet.",
@@ -3194,6 +3509,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetIndexInfoSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(13);
     fields.add(
         Field.newBuilder("TABLE_CAT", StandardSQLTypeName.STRING)
@@ -3248,69 +3564,82 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public boolean supportsResultSetType(int type) {
+    LOG.finest("++enter++");
     // BigQuery primarily supports forward-only result sets.
     return type == ResultSet.TYPE_FORWARD_ONLY;
   }
 
   @Override
   public boolean supportsResultSetConcurrency(int type, int concurrency) {
+    LOG.finest("++enter++");
     // BigQuery primarily supports forward-only, read-only result sets.
     return type == ResultSet.TYPE_FORWARD_ONLY && concurrency == ResultSet.CONCUR_READ_ONLY;
   }
 
   @Override
   public boolean ownUpdatesAreVisible(int type) {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean ownDeletesAreVisible(int type) {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean ownInsertsAreVisible(int type) {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean othersUpdatesAreVisible(int type) {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean othersDeletesAreVisible(int type) {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean othersInsertsAreVisible(int type) {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean updatesAreDetected(int type) {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean deletesAreDetected(int type) {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean insertsAreDetected(int type) {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsBatchUpdates() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public ResultSet getUDTs(
       String catalog, String schemaPattern, String typeNamePattern, int[] types) {
+    LOG.finest("++enter++");
     LOG.info(
         "getUDTs called for catalog: %s, schemaPattern: %s, typeNamePattern: %s, types: %s. "
             + "Feature not supported by BigQuery; returning empty ResultSet.",
@@ -3325,6 +3654,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetUDTsSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(7);
     fields.add(
         Field.newBuilder("TYPE_CAT", StandardSQLTypeName.STRING)
@@ -3359,31 +3689,37 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public Connection getConnection() {
+    LOG.finest("++enter++");
     return connection;
   }
 
   @Override
   public boolean supportsSavepoints() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsNamedParameters() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsMultipleOpenResults() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsGetGeneratedKeys() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public ResultSet getSuperTables(String catalog, String schemaPattern, String tableNamePattern) {
+    LOG.finest("++enter++");
     LOG.info(
         "getSuperTables called for catalog: %s, schemaPattern: %s, tableNamePattern: %s. "
             + "BigQuery does not support super tables; returning empty ResultSet.",
@@ -3399,6 +3735,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetSuperTablesSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(4);
     fields.add(
         Field.newBuilder("TABLE_CAT", StandardSQLTypeName.STRING)
@@ -3421,6 +3758,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getSuperTypes(String catalog, String schemaPattern, String typeNamePattern) {
+    LOG.finest("++enter++");
     LOG.info(
         "getSuperTypes called for catalog: %s, schemaPattern: %s, typeNamePattern: %s. BigQuery"
             + " does not support user-defined type hierarchies; returning empty ResultSet.",
@@ -3436,6 +3774,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetSuperTypesSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(6);
     fields.add(
         Field.newBuilder("TYPE_CAT", StandardSQLTypeName.STRING)
@@ -3467,6 +3806,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getAttributes(
       String catalog, String schemaPattern, String typeNamePattern, String attributeNamePattern) {
+    LOG.finest("++enter++");
     LOG.info(
         "getAttributes called for catalog: %s, schemaPattern: %s, typeNamePattern: %s,"
             + " attributeNamePattern: %s. Feature not supported by BigQuery; returning empty"
@@ -3482,6 +3822,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetAttributesSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(21);
     fields.add(
         Field.newBuilder("TYPE_CAT", StandardSQLTypeName.STRING)
@@ -3572,6 +3913,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public boolean supportsResultSetHoldability(int holdability) {
+    LOG.finest("++enter++");
     if (holdability == ResultSet.CLOSE_CURSORS_AT_COMMIT) {
       return true;
     }
@@ -3580,6 +3922,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public int getResultSetHoldability() {
+    LOG.finest("++enter++");
     return ResultSet.CLOSE_CURSORS_AT_COMMIT;
   }
 
@@ -3587,46 +3930,63 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   // Obtained from java libraries pom
   // https://github.com/googleapis/java-bigquery/blob/main/pom.xml
   public int getDatabaseMajorVersion() {
+    LOG.finest("++enter++");
     return 2;
   }
 
   @Override
   public int getDatabaseMinorVersion() {
+    LOG.finest("++enter++");
     return 0;
   }
 
   @Override
   public int getJDBCMajorVersion() {
+    LOG.finest("++enter++");
     return 4;
   }
 
   @Override
   public int getJDBCMinorVersion() {
+    LOG.finest("++enter++");
     return 2;
   }
 
   @Override
   public int getSQLStateType() {
+    LOG.finest("++enter++");
     return DatabaseMetaData.sqlStateSQL;
   }
 
   @Override
   public boolean locatorsUpdateCopy() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean supportsStatementPooling() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public RowIdLifetime getRowIdLifetime() {
+    LOG.finest("++enter++");
     return null;
   }
 
   @Override
   public ResultSet getSchemas(String catalog, String schemaPattern) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getSchemasImpl(catalog, schemaPattern);
+    }
+  }
+
+  private ResultSet getSchemasImpl(String catalog, String schemaPattern) {
+    LOG.finest("++enter++");
     if ((catalog != null && catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())) {
       LOG.warning("Returning empty ResultSet as catalog or schemaPattern is an empty string.");
@@ -3731,6 +4091,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetSchemasSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(2);
     fields.add(
         Field.newBuilder("TABLE_SCHEM", StandardSQLTypeName.STRING)
@@ -3764,6 +4125,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Comparator<FieldValueList> defineGetSchemasComparator(FieldList resultSchemaFields) {
+    LOG.finest("++enter++");
     final int TABLE_CATALOG_IDX = resultSchemaFields.getIndex("TABLE_CATALOG");
     final int TABLE_SCHEM_IDX = resultSchemaFields.getIndex("TABLE_SCHEM");
     return Comparator.comparing(
@@ -3776,16 +4138,19 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public boolean supportsStoredFunctionsUsingCallSyntax() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public boolean autoCommitFailureClosesAllResultSets() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public ResultSet getClientInfoProperties() {
+    LOG.finest("++enter++");
     LOG.info("getClientInfoProperties() called.");
 
     final Schema resultSchema = defineGetClientInfoPropertiesSchema();
@@ -3846,6 +4211,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetClientInfoPropertiesSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(4);
     fields.add(
         Field.newBuilder("NAME", StandardSQLTypeName.STRING)
@@ -3868,6 +4234,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getFunctions(String catalog, String schemaPattern, String functionNamePattern) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getFunctionsImpl(catalog, schemaPattern, functionNamePattern);
+    }
+  }
+
+  private ResultSet getFunctionsImpl(
+      String catalog, String schemaPattern, String functionNamePattern) {
+    LOG.finest("++enter++");
     if ((catalog == null || catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())
         || (functionNamePattern != null && functionNamePattern.isEmpty())) {
@@ -4025,6 +4401,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetFunctionsSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(6);
     fields.add(
         Field.newBuilder("FUNCTION_CAT", StandardSQLTypeName.STRING)
@@ -4093,6 +4470,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Comparator<FieldValueList> defineGetFunctionsComparator(FieldList resultSchemaFields) {
+    LOG.finest("++enter++");
     final int FUNC_CAT_IDX = resultSchemaFields.getIndex("FUNCTION_CAT");
     final int FUNC_SCHEM_IDX = resultSchemaFields.getIndex("FUNCTION_SCHEM");
     final int FUNC_NAME_IDX = resultSchemaFields.getIndex("FUNCTION_NAME");
@@ -4115,6 +4493,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getFunctionColumns(
       String catalog, String schemaPattern, String functionNamePattern, String columnNamePattern) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+      LOG.finest("++enter++");
+      return getFunctionColumnsImpl(catalog, schemaPattern, functionNamePattern, columnNamePattern);
+    }
+  }
+
+  private ResultSet getFunctionColumnsImpl(
+      String catalog, String schemaPattern, String functionNamePattern, String columnNamePattern) {
+    LOG.finest("++enter++");
     if (catalog == null || catalog.isEmpty()) {
       LOG.warning("Returning empty ResultSet catalog (project) is null or empty.");
       return new BigQueryJsonResultSet();
@@ -4279,6 +4667,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetFunctionColumnsSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(17);
     fields.add(
         Field.newBuilder("FUNCTION_CAT", StandardSQLTypeName.STRING)
@@ -4353,6 +4742,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String catalogParam,
       BigQueryJdbcCustomLogger logger)
       throws InterruptedException {
+    LOG.finest("++enter++");
 
     logger.fine(
         "Listing matching function IDs from %d datasets for catalog '%s'.",
@@ -4573,6 +4963,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       int columnType,
       StandardSQLDataType dataType,
       int ordinalPosition) {
+    LOG.finest("++enter++");
 
     List<FieldValue> values = new ArrayList<>(17);
     ColumnTypeInfo typeInfo =
@@ -4641,6 +5032,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Comparator<FieldValueList> defineGetFunctionColumnsComparator(FieldList resultSchemaFields) {
+    LOG.finest("++enter++");
     final int FUNC_CAT_IDX = resultSchemaFields.getIndex("FUNCTION_CAT");
     final int FUNC_SCHEM_IDX = resultSchemaFields.getIndex("FUNCTION_SCHEM");
     final int FUNC_NAME_IDX = resultSchemaFields.getIndex("FUNCTION_NAME");
@@ -4667,6 +5059,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getPseudoColumns(
       String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern) {
+    LOG.finest("++enter++");
     LOG.info(
         "getPseudoColumns called for catalog: %s, schemaPattern: %s, tableNamePattern: %s,"
             + " columnNamePattern: %s. Pseudo columns not supported by BigQuery; returning"
@@ -4682,6 +5075,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Schema defineGetPseudoColumnsSchema() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(12);
     fields.add(
         Field.newBuilder("TABLE_CAT", StandardSQLTypeName.STRING)
@@ -4736,16 +5130,19 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public boolean generatedKeyAlwaysReturned() {
+    LOG.finest("++enter++");
     return false;
   }
 
   @Override
   public <T> T unwrap(Class<T> iface) {
+    LOG.finest("++enter++");
     return null;
   }
 
   @Override
   public boolean isWrapperFor(Class<?> iface) {
+    LOG.finest("++enter++");
     return false;
   }
 
@@ -4768,6 +5165,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
    */
   private Tuple<String, String> determineEffectiveCatalogAndSchema(
       String catalog, String schemaPattern) {
+    LOG.finest("++enter++");
     String effectiveCatalog = catalog;
     String effectiveSchemaPattern = schemaPattern;
 
@@ -4819,6 +5217,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   private ColumnTypeInfo getColumnTypeInfoForSqlType(StandardSQLTypeName bqType) {
+    LOG.finest("++enter++");
     if (bqType == null) {
       LOG.warning("Null BigQuery type encountered: " + bqType.name() + ". Mapping to VARCHAR.");
       return new ColumnTypeInfo(Types.VARCHAR, bqType.name(), null, null, null);
@@ -5011,6 +5410,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   private List<Field> defineBasePrivilegeFields() {
+    LOG.finest("++enter++");
     List<Field> fields = new ArrayList<>(7);
     fields.add(
         Field.newBuilder("TABLE_CAT", StandardSQLTypeName.STRING)
@@ -5044,6 +5444,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   Pattern compileSqlLikePattern(String sqlLikePattern) {
+    LOG.finest("++enter++");
+    LOG.info("Compiling SQL LIKE pattern: %s", sqlLikePattern);
     if (sqlLikePattern == null) {
       return null;
     }
@@ -5091,32 +5493,38 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   FieldValue createStringFieldValue(String value) {
+    LOG.finest("++enter++");
     return FieldValue.of(FieldValue.Attribute.PRIMITIVE, value);
   }
 
   FieldValue createLongFieldValue(Long value) {
+    LOG.finest("++enter++");
     return (value == null)
         ? FieldValue.of(FieldValue.Attribute.PRIMITIVE, null)
         : FieldValue.of(FieldValue.Attribute.PRIMITIVE, String.valueOf(value));
   }
 
   FieldValue createNullFieldValue() {
+    LOG.finest("++enter++");
     return FieldValue.of(FieldValue.Attribute.PRIMITIVE, null);
   }
 
   FieldValue createBooleanFieldValue(Boolean value) {
+    LOG.finest("++enter++");
     return (value == null)
         ? FieldValue.of(FieldValue.Attribute.PRIMITIVE, null)
         : FieldValue.of(FieldValue.Attribute.PRIMITIVE, value ? "1" : "0");
   }
 
   private String getStringValueOrNull(FieldValueList fvl, int index) {
+    LOG.finest("++enter++");
     if (fvl == null || index < 0 || index >= fvl.size()) return null;
     FieldValue fv = fvl.get(index);
     return (fv == null || fv.isNull()) ? null : fv.getStringValue();
   }
 
   private Long getLongValueOrNull(FieldValueList fvl, int index) {
+    LOG.finest("++enter++");
     if (fvl == null || index < 0 || index >= fvl.size()) return null;
     FieldValue fv = fvl.get(index);
     try {
@@ -5128,6 +5536,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   private void waitForTasksCompletion(List<Future<?>> taskFutures) {
+    LOG.finest("++enter++");
     LOG.info("Waiting for %d submitted tasks to complete...", taskFutures.size());
     for (Future<?> future : taskFutures) {
       try {
@@ -5156,6 +5565,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       List<FieldValueList> collectedResults,
       BlockingQueue<BigQueryFieldValueListWrapper> queue,
       FieldList resultSchemaFields) {
+    LOG.finest("++enter++");
     LOG.info("Populating queue with %d results...", collectedResults.size());
     try {
       for (FieldValueList sortedRow : collectedResults) {
@@ -5176,6 +5586,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   private void signalEndOfData(
       BlockingQueue<BigQueryFieldValueListWrapper> queue, FieldList resultSchemaFields) {
+    LOG.finest("++enter++");
     try {
       LOG.info("Adding end signal to queue.");
       queue.put(BigQueryFieldValueListWrapper.of(resultSchemaFields, null, true));
@@ -5188,6 +5599,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   private void shutdownExecutor(ExecutorService executor) {
+    LOG.finest("++enter++");
     if (executor == null || executor.isShutdown()) {
       return;
     }
@@ -5213,10 +5625,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   private String getCurrentCatalogName() {
+    LOG.finest("++enter++");
     return this.connection.getCatalog();
   }
 
   private List<String> getAccessibleCatalogNames() {
+    LOG.finest("++enter++");
     Set<String> accessibleCatalogs = new HashSet<>();
     String primaryCatalog = getCurrentCatalogName();
     if (primaryCatalog != null && !primaryCatalog.isEmpty()) {
@@ -5243,6 +5657,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   static String readSqlFromFile(String filename) {
+    LOG.finest("++enter++");
     InputStream in;
     in = BigQueryDatabaseMetaData.class.getResourceAsStream(filename);
     BufferedReader reader = new BufferedReader(new InputStreamReader(in));
@@ -5257,10 +5672,12 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   }
 
   String replaceSqlParameters(String sql, String... params) throws SQLException {
+    LOG.finest("++enter++");
     return String.format(sql, (Object[]) params);
   }
 
   private void loadDriverVersionProperties() {
+    LOG.finest("++enter++");
     if (parsedDriverVersion.get() != null) {
       return;
     }

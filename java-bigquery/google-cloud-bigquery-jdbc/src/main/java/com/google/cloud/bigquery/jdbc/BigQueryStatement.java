@@ -287,12 +287,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public int executeUpdate(String sql) throws SQLException {
-    try {
-      BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId);
+    try (BigQueryJdbcMdc.MdcCloseable mdc =
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.finest("++enter++");
       return checkUpdateCount(executeLargeUpdate(sql));
-    } finally {
-      BigQueryJdbcMdc.clear();
     }
   }
 
