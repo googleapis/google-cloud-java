@@ -126,7 +126,11 @@ public class BuiltInDatastoreMetricsProviderTest {
     System.setProperty(DatastoreOptions.LOCAL_HOST_ENV_VAR, "localhost:8081");
     try {
       DatastoreOptions options =
-          DatastoreOptions.newBuilder().setProjectId(PROJECT_ID).setDatabaseId("test-db").build();
+          DatastoreOptions.newBuilder()
+              .setProjectId(PROJECT_ID)
+              .setDatabaseId("test-db")
+              .setCredentials(NoCredentials.getInstance())
+              .build();
       OpenTelemetry otel = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
       assertThat(otel).isInstanceOf(OpenTelemetry.noop().getClass());
     } finally {
