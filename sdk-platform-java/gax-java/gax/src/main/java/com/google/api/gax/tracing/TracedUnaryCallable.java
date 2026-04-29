@@ -51,19 +51,10 @@ public class TracedUnaryCallable<RequestT, ResponseT> extends UnaryCallable<Requ
   private final UnaryCallable<RequestT, ResponseT> innerCallable;
   private final ApiTracerFactory tracerFactory;
   private final SpanName spanName;
-  @Nullable private final ApiTracerContext apiTracerContext;
+  private final ApiTracerContext apiTracerContext;
   @Nullable private final ResourceNameExtractor<RequestT> resourceNameExtractor;
 
-  public TracedUnaryCallable(
-      UnaryCallable<RequestT, ResponseT> innerCallable,
-      ApiTracerFactory tracerFactory,
-      SpanName spanName) {
-    this.innerCallable = innerCallable;
-    this.tracerFactory = tracerFactory;
-    this.spanName = spanName;
-    this.apiTracerContext = null;
-    this.resourceNameExtractor = null;
-  }
+
 
   public TracedUnaryCallable(
       UnaryCallable<RequestT, ResponseT> innerCallable,
@@ -86,15 +77,10 @@ public class TracedUnaryCallable<RequestT, ResponseT> extends UnaryCallable<Requ
    */
   @Override
   public ApiFuture<ResponseT> futureCall(RequestT request, ApiCallContext context) {
-    ApiTracer tracer;
-    if (apiTracerContext != null) {
-      tracer =
-          tracerFactory.newTracer(
-              context.getTracer(),
-              apiTracerContext.withResourceNameExtractor(request, resourceNameExtractor));
-    } else {
-      tracer = tracerFactory.newTracer(context.getTracer(), spanName, OperationType.Unary);
-    }
+    ApiTracer tracer =
+        tracerFactory.newTracer(
+            context.getTracer(),
+            apiTracerContext.withResourceNameExtractor(request, resourceNameExtractor));
     TraceFinisher<ResponseT> finisher = new TraceFinisher<>(tracer);
 
     try {

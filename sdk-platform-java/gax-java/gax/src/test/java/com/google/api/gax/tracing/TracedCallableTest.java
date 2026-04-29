@@ -46,6 +46,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.api.gax.rpc.testing.FakeCallContext;
+import com.google.api.gax.rpc.LibraryMetadata;
+import com.google.api.gax.tracing.ApiTracerContext.Transport;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -56,6 +58,13 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class TracedCallableTest {
   private static final SpanName SPAN_NAME = SpanName.of("FakeClient", "FakeRpc");
+  private static final ApiTracerContext TRACER_CONTEXT =
+      ApiTracerContext.newBuilder()
+          .setFullMethodName("FakeClient/FakeRpc")
+          .setTransport(Transport.GRPC)
+          .setLibraryMetadata(LibraryMetadata.empty())
+          .setOperationType(OperationType.Unary)
+          .build();
 
   @Mock private ApiTracerFactory tracerFactory;
   private ApiTracer parentTracer;
@@ -71,8 +80,7 @@ class TracedCallableTest {
     parentTracer = BaseApiTracer.getInstance();
 
     // Wire the mock tracer factory
-    when(tracerFactory.newTracer(
-            any(ApiTracer.class), any(SpanName.class), eq(OperationType.Unary)))
+    when(tracerFactory.newTracer(any(ApiTracer.class), any(ApiTracerContext.class)))
         .thenReturn(tracer);
 
     // Wire the mock inner callable
@@ -87,7 +95,7 @@ class TracedCallableTest {
       UnaryCallSettings<Object, Object> callSettings) {
     UnaryCallable<String, String> callable =
         Callables.retrying(innerCallable, callSettings, clientContext);
-    return new TracedUnaryCallable<>(callable, tracerFactory, SPAN_NAME);
+    return new TracedUnaryCallable<>(callable, tracerFactory, TRACER_CONTEXT, null);
   }
 
   @Test
@@ -102,7 +110,7 @@ class TracedCallableTest {
 
     ApiFuture<String> future = callable.futureCall("Is your refrigerator running?", callContext);
 
-    verify(tracerFactory, times(1)).newTracer(parentTracer, SPAN_NAME, OperationType.Unary);
+    verify(tracerFactory, times(1)).newTracer(parentTracer, TRACER_CONTEXT);
     verify(tracer, times(1)).attemptStarted(anyString(), anyInt());
     verify(tracer, times(1)).attemptSucceeded();
     verify(tracer, times(1)).operationSucceeded();
