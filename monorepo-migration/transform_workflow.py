@@ -52,6 +52,7 @@ def transform(content, lib_name):
     in_jobs = False
     skip_current_job = False
     current_job_is_windows = False
+    current_job_is_lint = False
     
     skip_lines_count = 0
     
@@ -84,6 +85,7 @@ def transform(content, lib_name):
             if job_match:
                 job_name = job_match.group(1)
                 current_job_is_windows = False # Reset for new job
+                current_job_is_lint = (job_name == 'lint')
                 skip_current_job = False
                 if job_name == 'clirr':
                     skip_current_job = True
@@ -108,6 +110,18 @@ def transform(content, lib_name):
 
             if 'name: Support longpaths' in line and current_job_is_windows:
                 skip_lines_count = 1
+                continue
+
+            if '- uses: actions/checkout' in line and current_job_is_lint:
+                new_lines.append("    - uses: actions/checkout@v4")
+                new_lines.append("      with:")
+                new_lines.append("        fetch-depth: 0")
+                continue
+
+            if 'JOB_TYPE: lint' in line and current_job_is_lint:
+                new_lines.append(line)
+                new_lines.append("        HEAD_SHA: ${{ github.event.pull_request.head.sha }}")
+                new_lines.append("        BASE_SHA: ${{ github.event.pull_request.base.sha }}")
                 continue
 
             if 'run: echo "SUREFIRE_JVM_OPT=' in line and '!java17' not in line:
