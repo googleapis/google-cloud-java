@@ -1032,3 +1032,6 @@ grpc-gapic-showcase-v1beta1:0.0.0:0.0.1-SNAPSHOT
 google-maps-mapmanagement:0.0.0:0.0.1-SNAPSHOT
 proto-google-maps-mapmanagement-v2beta:0.0.0:0.0.1-SNAPSHOT
 grpc-google-maps-mapmanagement-v2beta:0.0.0:0.0.1-SNAPSHOT
+google-cloud-health:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-health-v4:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-health-v4:0.0.0:0.0.1-SNAPSHOT
