@@ -31,7 +31,7 @@
     <gson.version>2.12.1</gson.version>
     <guava.version>33.5.0-jre</guava.version>
     <protobuf.version>4.33.2</protobuf.version>
-    <opentelemetry.version>1.51.0</opentelemetry.version>
+    <opentelemetry.version>1.57.0</opentelemetry.version>
     <errorprone.version>2.45.0</errorprone.version>
     <j2objc-annotations.version>3.1</j2objc-annotations.version>
     <threetenbp.version>1.7.0</threetenbp.version>
