@@ -76,17 +76,17 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.google.http.version>2.1.0</project.google.http.version>
     <project.junit.version>5.11.4</project.junit.version>
-    <project.guava.version>33.5.0-android</project.guava.version>
+    <project.guava.version>33.5.0-jre</project.guava.version>
     <project.appengine.version>2.0.33</project.appengine.version>
     <project.findbugs.version>3.0.2</project.findbugs.version>
     <deploy.autorelease>false</deploy.autorelease>
-    <project.error-prone.version>2.42.0</project.error-prone.version>
+    <project.error-prone.version>2.45.0</project.error-prone.version>
     <project.protobuf.version>4.33.2</project.protobuf.version>
     <project.cel.version>0.9.0-proto3</project.cel.version>
     <project.tink.version>1.15.0</project.tink.version>
     <project.slf4j.version>2.0.17</project.slf4j.version>
     <project.gson.version>2.12.1</project.gson.version>
-    <project.api-common.version>2.53.0</project.api-common.version>
+    <project.api-common.version>2.62.0</project.api-common.version><!-- {x-version-update:api-common:current} -->
     <surefire.version>3.5.2</surefire.version>
     <clirr.skip>true</clirr.skip>
   </properties>

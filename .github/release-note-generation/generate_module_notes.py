@@ -120,7 +120,7 @@ def parse_commit_overrides(commit_data, short_name, prefix_regex, commit_hash, c
 
             should_include = False
             if short_name:
-                if f"[{short_name}]" in line_stripped:
+                if f"[{short_name}]" in line_stripped or f"({short_name})" in line_stripped:
                     should_include = True
             else:
                 should_include = True

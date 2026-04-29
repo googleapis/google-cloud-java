@@ -26,9 +26,12 @@ import static com.google.cloud.spanner.connection.ConnectionProperties.CREDENTIA
 import static com.google.cloud.spanner.connection.ConnectionProperties.CREDENTIALS_URL;
 import static com.google.cloud.spanner.connection.ConnectionProperties.DATABASE_ROLE;
 import static com.google.cloud.spanner.connection.ConnectionProperties.DATA_BOOST_ENABLED;
+import static com.google.cloud.spanner.connection.ConnectionProperties.DCP_CONCURRENT_STREAMS_LOW_WATERMARK;
 import static com.google.cloud.spanner.connection.ConnectionProperties.DCP_INITIAL_CHANNELS;
 import static com.google.cloud.spanner.connection.ConnectionProperties.DCP_MAX_CHANNELS;
+import static com.google.cloud.spanner.connection.ConnectionProperties.DCP_MAX_RPC_PER_CHANNEL;
 import static com.google.cloud.spanner.connection.ConnectionProperties.DCP_MIN_CHANNELS;
+import static com.google.cloud.spanner.connection.ConnectionProperties.DCP_MIN_RPC_PER_CHANNEL;
 import static com.google.cloud.spanner.connection.ConnectionProperties.DIALECT;
 import static com.google.cloud.spanner.connection.ConnectionProperties.ENABLE_API_TRACING;
 import static com.google.cloud.spanner.connection.ConnectionProperties.ENABLE_DIRECT_ACCESS;
@@ -165,6 +168,9 @@ public class ConnectionOptions {
   static final Integer DEFAULT_DCP_MIN_CHANNELS = null;
   static final Integer DEFAULT_DCP_MAX_CHANNELS = null;
   static final Integer DEFAULT_DCP_INITIAL_CHANNELS = null;
+  static final Integer DEFAULT_DCP_MIN_RPC_PER_CHANNEL = null;
+  static final Integer DEFAULT_DCP_MAX_RPC_PER_CHANNEL = null;
+  static final Integer DEFAULT_DCP_CONCURRENT_STREAMS_LOW_WATERMARK = null;
   static final String DEFAULT_ENDPOINT = null;
   static final String DEFAULT_CHANNEL_PROVIDER = null;
   static final String DEFAULT_DATABASE_ROLE = null;
@@ -276,6 +282,16 @@ public class ConnectionOptions {
 
   /** Name of the 'dcpInitialChannels' connection property. */
   public static final String DCP_INITIAL_CHANNELS_PROPERTY_NAME = "dcpInitialChannels";
+
+  /** Name of the 'dcpMinRpcPerChannel' connection property. */
+  public static final String DCP_MIN_RPC_PER_CHANNEL_PROPERTY_NAME = "dcpMinRpcPerChannel";
+
+  /** Name of the 'dcpMaxRpcPerChannel' connection property. */
+  public static final String DCP_MAX_RPC_PER_CHANNEL_PROPERTY_NAME = "dcpMaxRpcPerChannel";
+
+  /** Name of the 'dcpConcurrentStreamsLowWatermark' connection property. */
+  public static final String DCP_CONCURRENT_STREAMS_LOW_WATERMARK_PROPERTY_NAME =
+      "dcpConcurrentStreamsLowWatermark";
 
   /** Name of the 'endpoint' connection property. */
   public static final String ENDPOINT_PROPERTY_NAME = "endpoint";
@@ -1039,6 +1055,21 @@ public class ConnectionOptions {
   /** The initial number of channels in the dynamic channel pool. */
   public Integer getDcpInitialChannels() {
     return getInitialConnectionPropertyValue(DCP_INITIAL_CHANNELS);
+  }
+
+  /** The minimum number of RPCs per channel in the dynamic channel pool. */
+  public Integer getDcpMinRpcPerChannel() {
+    return getInitialConnectionPropertyValue(DCP_MIN_RPC_PER_CHANNEL);
+  }
+
+  /** The maximum number of RPCs per channel in the dynamic channel pool. */
+  public Integer getDcpMaxRpcPerChannel() {
+    return getInitialConnectionPropertyValue(DCP_MAX_RPC_PER_CHANNEL);
+  }
+
+  /** The concurrent streams low watermark in the dynamic channel pool. */
+  public Integer getDcpConcurrentStreamsLowWatermark() {
+    return getInitialConnectionPropertyValue(DCP_CONCURRENT_STREAMS_LOW_WATERMARK);
   }
 
   /** Calls the getChannelProvider() method from the supplied class. */
