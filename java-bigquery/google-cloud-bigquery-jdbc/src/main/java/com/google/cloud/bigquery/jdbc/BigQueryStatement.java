@@ -248,11 +248,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       LOG.finest("++enter++");
       checkClosed();
       return withTracing(
-        "BigQueryStatement.executeQuery",
-        (span) -> {
-          span.setAttribute("db.statement", sql);
-          return executeQueryImpl(sql);
-        });
+          "BigQueryStatement.executeQuery",
+          (span) -> {
+            span.setAttribute("db.statement", sql);
+            return executeQueryImpl(sql);
+          });
     }
   }
 
@@ -280,10 +280,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       LOG.finest("++enter++");
       checkClosed();
       return withTracing(
-        "BigQueryStatement.executeLargeUpdate",
-        (span) -> {
-          span.setAttribute("db.statement", sql);
-          return executeLargeUpdateImpl(sql);
+          "BigQueryStatement.executeLargeUpdate",
+          (span) -> {
+            span.setAttribute("db.statement", sql);
+            return executeLargeUpdateImpl(sql);
+          });
     }
   }
 
@@ -330,10 +331,11 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       LOG.finest("++enter++");
       checkClosed();
       return withTracing(
-        "BigQueryStatement.execute",
-        (span) -> {
-          span.setAttribute("db.statement", sql);
-          return executeImpl(sql);
+          "BigQueryStatement.execute",
+          (span) -> {
+            span.setAttribute("db.statement", sql);
+            return executeImpl(sql);
+          });
     }
   }
 
