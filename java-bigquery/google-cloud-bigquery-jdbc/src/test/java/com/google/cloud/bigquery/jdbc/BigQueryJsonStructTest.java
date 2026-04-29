@@ -246,7 +246,7 @@ public class BigQueryJsonStructTest {
   }
 
   @Test
-  public void getSQLTypeName() throws SQLException{
+  public void getSQLTypeName() throws SQLException {
     assertThat(structWithPrimitiveValues.getSQLTypeName()).isEqualTo("STRUCT");
   }
 
