@@ -58,6 +58,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
   protected boolean isClosed = false;
   protected boolean wasNull = false;
   protected final BigQueryTypeCoercer bigQueryTypeCoercer = BigQueryTypeCoercionUtility.INSTANCE;
+  protected BigQueryConnection connection = null;
+  protected String connectionId = null;
 
   protected BigQueryBaseResultSet(
       BigQuery bigQuery, BigQueryStatement statement, Schema schema, boolean isNested) {
@@ -66,6 +68,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     this.schema = schema;
     this.schemaFieldList = schema != null ? schema.getFields() : null;
     this.isNested = isNested;
+    this.connection = statement != null ? (BigQueryConnection) statement.getConnection() : null;
+    this.connectionId = this.connection != null ? this.connection.getConnectionId() : null;
   }
 
   public QueryStatistics getQueryStatistics() {

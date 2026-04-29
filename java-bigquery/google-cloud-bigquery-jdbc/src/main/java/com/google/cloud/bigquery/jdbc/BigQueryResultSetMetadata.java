@@ -43,7 +43,8 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
     this.schemaFieldList = schemaFieldList;
     this.columnCount = schemaFieldList.size();
     this.statement = statement;
-    this.connection = statement.getConnection().unwrap(BigQueryConnection.class);
+    this.connection =
+        statement != null ? statement.getConnection().unwrap(BigQueryConnection.class) : null;
   }
 
   static BigQueryResultSetMetadata of(FieldList schemaFieldList, Statement statement)
@@ -71,7 +72,8 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   @Override
   public boolean isCaseSensitive(int column) throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+        BigQueryJdbcMdc.registerInstance(
+            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
       LOG.finest("++enter++");
       int colType = getColumnType(column);
       return colType == Types.NVARCHAR;
@@ -81,7 +83,8 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   @Override
   public boolean isSearchable(int column) throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+        BigQueryJdbcMdc.registerInstance(
+            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
       LOG.finest("++enter++");
       int colType = getColumnType(column);
       return colType != Types.OTHER;
@@ -96,7 +99,8 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   @Override
   public int isNullable(int column) throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+        BigQueryJdbcMdc.registerInstance(
+            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
       LOG.finest("++enter++");
       Mode colMode = getField(column).getMode();
       if (colMode == null) {
@@ -111,7 +115,8 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   @Override
   public boolean isSigned(int column) throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+        BigQueryJdbcMdc.registerInstance(
+            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
       LOG.finest("++enter++");
       int colType = getColumnType(column);
       return colType == Types.FLOAT
@@ -124,7 +129,8 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   @Override
   public int getColumnDisplaySize(int column) throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+        BigQueryJdbcMdc.registerInstance(
+            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
       LOG.finest("++enter++");
       return getColumnDisplaySizeImpl(column);
     }
@@ -154,7 +160,8 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   @Override
   public String getColumnLabel(int column) throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+        BigQueryJdbcMdc.registerInstance(
+            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
       LOG.finest("++enter++");
       return getField(column).getName();
     }
@@ -163,7 +170,8 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   @Override
   public String getColumnName(int column) throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+        BigQueryJdbcMdc.registerInstance(
+            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
       LOG.finest("++enter++");
       return getField(column).getName();
     }
@@ -172,7 +180,8 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   @Override
   public int getPrecision(int column) throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+        BigQueryJdbcMdc.registerInstance(
+            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
       LOG.finest("++enter++");
       return (int) (getField(column).getPrecision() != null ? getField(column).getPrecision() : 0);
     }
@@ -181,7 +190,8 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   @Override
   public int getScale(int column) throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+        BigQueryJdbcMdc.registerInstance(
+            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
       LOG.finest("++enter++");
       return (int) (getField(column).getScale() != null ? getField(column).getScale() : 0);
     }
@@ -216,7 +226,8 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   @Override
   public int getColumnType(int column) throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+        BigQueryJdbcMdc.registerInstance(
+            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
       LOG.finest("++enter++");
       LOG.info("getColumnType called for column: %d", column);
       return BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(
@@ -227,7 +238,8 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   @Override
   public String getColumnTypeName(int column) throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+        BigQueryJdbcMdc.registerInstance(
+            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
       LOG.finest("++enter++");
       return getStandardSQLTypeName(column).name();
     }
@@ -241,7 +253,8 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   @Override
   public boolean isWritable(int column) throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+        BigQueryJdbcMdc.registerInstance(
+            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
       LOG.finest("++enter++");
       return !isReadOnly(column);
     }
@@ -255,7 +268,8 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
   @Override
   public String getColumnClassName(int column) throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+        BigQueryJdbcMdc.registerInstance(
+            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
       LOG.finest("++enter++");
       LOG.info("getColumnClassName called for column: %d", column);
       Field field = getField(column);

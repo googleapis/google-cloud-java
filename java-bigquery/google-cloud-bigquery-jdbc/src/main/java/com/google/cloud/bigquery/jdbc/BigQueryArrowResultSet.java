@@ -213,7 +213,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   @Override
   public boolean next() throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.statement.connection, this.statement.connectionId)) {
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.finest("++enter++");
       checkClosed();
       return nextImpl();
@@ -328,7 +328,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
   @Override
   public Object getObject(int columnIndex) throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.statement.connection, this.statement.connectionId)) {
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       // columnIndex is SQL index starting at 1
       LOG.finest("++enter++");
       checkClosed();
@@ -471,7 +471,7 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     }
 
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.statement.connection, this.statement.connectionId)) {
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.finest("++enter++");
       LOG.fine("Closing BigqueryArrowResultSet %s.", this);
       this.isClosed = true;

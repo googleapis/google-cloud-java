@@ -133,7 +133,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   /* Advances the result set to the next row, returning false if no such row exists. Potentially blocking operation */
   public boolean next() throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.statement.connection, this.statement.connectionId)) {
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.finest("++enter++");
       checkClosed();
       return nextImpl();
@@ -195,7 +195,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   @Override
   public Object getObject(int columnIndex) throws SQLException {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.statement.connection, this.statement.connectionId)) {
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.finest("++enter++");
       checkClosed();
       return getObjectImpl(columnIndex);
@@ -294,7 +294,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       return;
     }
     try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.statement.connection, this.statement.connectionId)) {
+        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
       LOG.fine("Closing BigqueryJsonResultSet %s.", this);
       this.isClosed = true;
       if (ownedThreads != null) {

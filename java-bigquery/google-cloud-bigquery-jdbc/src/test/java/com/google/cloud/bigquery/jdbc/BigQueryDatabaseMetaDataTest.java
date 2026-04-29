@@ -610,7 +610,7 @@ public class BigQueryDatabaseMetaDataTest {
     results.add(createTableRow("cat_a", null, "view_0", "VIEW", schemaFields));
 
     Comparator<FieldValueList> comparator = dbMetadata.defineGetTablesComparator(schemaFields);
-    dbMetadata.sortResults(results, comparator, "getTables", dbMetadata.LOG);
+    dbMetadata.sortResults(results, comparator, "getTables");
 
     // Expected order: TABLEs first, then VIEWs. Within type, sort by CAT, SCHEM, NAME
     assertEquals(6, results.size());
@@ -659,7 +659,7 @@ public class BigQueryDatabaseMetaDataTest {
     List<FieldValueList> results = new ArrayList<>();
 
     Comparator<FieldValueList> comparator = dbMetadata.defineGetTablesComparator(schemaFields);
-    dbMetadata.sortResults(results, comparator, "getTables", dbMetadata.LOG);
+    dbMetadata.sortResults(results, comparator, "getTables");
     assertTrue(results.isEmpty());
   }
 
@@ -728,7 +728,7 @@ public class BigQueryDatabaseMetaDataTest {
     results.add(createSchemaRow("proj_a", "schema_c", schemaFields));
 
     Comparator<FieldValueList> comparator = dbMetadata.defineGetSchemasComparator(schemaFields);
-    dbMetadata.sortResults(results, comparator, "getSchemas", dbMetadata.LOG);
+    dbMetadata.sortResults(results, comparator, "getSchemas");
 
     // Expected order: Sort by TABLE_CATALOG (nulls first), then TABLE_SCHEM
     assertEquals(5, results.size());
@@ -761,7 +761,7 @@ public class BigQueryDatabaseMetaDataTest {
     List<FieldValueList> results = new ArrayList<>();
 
     Comparator<FieldValueList> comparator = dbMetadata.defineGetSchemasComparator(schemaFields);
-    dbMetadata.sortResults(results, comparator, "getSchemas", dbMetadata.LOG);
+    dbMetadata.sortResults(results, comparator, "getSchemas");
     assertTrue(results.isEmpty());
   }
 
@@ -906,7 +906,7 @@ public class BigQueryDatabaseMetaDataTest {
         createProcedureRow("cat_a", "sch_z", "proc_alpha", "proc_alpha_spec_older", schemaFields));
 
     Comparator<FieldValueList> comparator = dbMetadata.defineGetProceduresComparator(schemaFields);
-    dbMetadata.sortResults(results, comparator, "getProcedures", dbMetadata.LOG);
+    dbMetadata.sortResults(results, comparator, "getProcedures");
 
     // Expected Order: Null Cat, then Cat A (Null Schem, then sch_z), then Cat B. Within that, Name,
     // then Spec Name.
@@ -961,7 +961,7 @@ public class BigQueryDatabaseMetaDataTest {
     List<FieldValueList> results = new ArrayList<>();
 
     Comparator<FieldValueList> comparator = dbMetadata.defineGetProceduresComparator(schemaFields);
-    dbMetadata.sortResults(results, comparator, "getProcedures", dbMetadata.LOG);
+    dbMetadata.sortResults(results, comparator, "getProcedures");
     assertTrue(results.isEmpty());
   }
 
@@ -994,8 +994,7 @@ public class BigQueryDatabaseMetaDataTest {
                     RoutineId.of(datasetId.getProject(), datasetId.getDataset(), name)),
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
-            regex,
-            dbMetadata.LOG);
+            regex);
 
     verify(bigqueryClient, times(1))
         .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption.class));
@@ -1036,8 +1035,7 @@ public class BigQueryDatabaseMetaDataTest {
                     RoutineId.of(datasetId.getProject(), datasetId.getDataset(), name)),
             (rt) -> rt.getRoutineId().getRoutine(),
             pattern,
-            regex,
-            dbMetadata.LOG);
+            regex);
 
     verify(bigqueryClient, times(1))
         .listRoutines(eq(datasetId), any(BigQuery.RoutineListOption.class));
@@ -1071,8 +1069,7 @@ public class BigQueryDatabaseMetaDataTest {
                     RoutineId.of(datasetId.getProject(), datasetId.getDataset(), name)),
             (rt) -> rt.getRoutineId().getRoutine(),
             procNameExact,
-            regex,
-            dbMetadata.LOG);
+            regex);
 
     verify(bigqueryClient, times(1)).getRoutine(eq(routineId));
     verify(bigqueryClient, never())
@@ -1464,7 +1461,7 @@ public class BigQueryDatabaseMetaDataTest {
     Comparator<FieldValueList> comparator =
         dbMetadata.defineGetProcedureColumnsComparator(schemaFields);
     assertNotNull(comparator);
-    dbMetadata.sortResults(results, comparator, "getProcedureColumns", dbMetadata.LOG);
+    dbMetadata.sortResults(results, comparator, "getProcedureColumns");
 
     assertEquals(5, results.size());
 
@@ -1549,7 +1546,7 @@ public class BigQueryDatabaseMetaDataTest {
 
     List<RoutineId> resultIds =
         dbMetadata.listMatchingProcedureIdsFromDatasets(
-            datasetsToScan, null, null, mockExecutor, catalog, dbMetadata.LOG);
+            datasetsToScan, null, null, mockExecutor, catalog);
 
     assertEquals(2, resultIds.size());
     assertTrue(resultIds.contains(proc1_ds1.getRoutineId()));
@@ -1606,8 +1603,7 @@ public class BigQueryDatabaseMetaDataTest {
         collectedResults,
         resultSchemaFields,
         mockExecutor,
-        processingTaskFutures,
-        dbMetadata.LOG);
+        processingTaskFutures);
 
     verify(mockExecutor, times(2)).submit(any(Runnable.class));
     assertEquals(2, processingTaskFutures.size());
@@ -2491,7 +2487,7 @@ public class BigQueryDatabaseMetaDataTest {
             schemaFields));
 
     Comparator<FieldValueList> comparator = dbMetadata.defineGetFunctionsComparator(schemaFields);
-    dbMetadata.sortResults(results, comparator, "getFunctions", dbMetadata.LOG);
+    dbMetadata.sortResults(results, comparator, "getFunctions");
 
     // Expected Order: Null Cat, then Cat A (Null Schem, then sch_z), then Cat B. Within that, Name,
     // then Spec Name.

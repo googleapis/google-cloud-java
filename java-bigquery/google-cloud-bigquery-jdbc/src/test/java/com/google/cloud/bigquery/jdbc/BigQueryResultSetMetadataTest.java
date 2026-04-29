@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.jdbc;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FieldList;
@@ -33,12 +34,14 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 public class BigQueryResultSetMetadataTest {
 
   private BigQueryStatement statement;
+  @Mock private BigQueryConnection mockConnection;
 
   private static Field tenthField =
       Field.newBuilder("tenth", LegacySQLTypeName.NUMERIC)
@@ -109,6 +112,7 @@ public class BigQueryResultSetMetadataTest {
   @BeforeEach
   public void setUp() throws SQLException {
     statement = mock(BigQueryStatement.class);
+    when(statement.getConnection()).thenReturn(mockConnection);
     Thread[] workerThreads = {new Thread()};
     BigQueryJsonResultSet bigQueryJsonResultSet =
         BigQueryJsonResultSet.of(QUERY_SCHEMA, 1L, null, statement, workerThreads);
