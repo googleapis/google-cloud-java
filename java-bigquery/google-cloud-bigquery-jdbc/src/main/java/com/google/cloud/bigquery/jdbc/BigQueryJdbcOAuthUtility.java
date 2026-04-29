@@ -752,16 +752,5 @@ final class BigQueryJdbcOAuthUtility {
       LOG.severe(ex.getMessage(), ex);
       throw ex;
     }
-
-    static AuthType fromValue(String value) {
-      for (AuthType authType : values()) {
-        if (authType.name().equalsIgnoreCase(value)) {
-          return authType;
-        }
-      }
-      IllegalStateException ex = new IllegalStateException(OAUTH_TYPE_ERROR_MESSAGE + ": " + value);
-      LOG.severe(ex.getMessage(), ex);
-      throw ex;
-    }
   }
 }

@@ -302,7 +302,8 @@ public class BigQueryStatementTest {
     doReturn(job).when(bigquery).queryWithTimeout(any(), any(), any());
 
     doReturn(jsonResultSet).when(bigQueryStatementSpy).processJsonResultSet(result);
-    ArgumentCaptor<QueryJobConfiguration> captor = ArgumentCaptor.forClass(QueryJobConfiguration.class);
+    ArgumentCaptor<QueryJobConfiguration> captor =
+        ArgumentCaptor.forClass(QueryJobConfiguration.class);
 
     bigQueryStatementSpy.runQuery(query, jobConfiguration);
     verify(bigquery).queryWithTimeout(captor.capture(), any(), any());
