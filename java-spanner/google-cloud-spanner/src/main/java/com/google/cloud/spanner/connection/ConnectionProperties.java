@@ -515,7 +515,8 @@ public class ConnectionProperties {
           DCP_MIN_RPC_PER_CHANNEL_PROPERTY_NAME,
           "The minimum number of desired RPCs per channel in the dynamic channel pool. Only used when "
               + "enableDynamicChannelPool is true. The default is "
-              + "SpannerOptions.DEFAULT_DYNAMIC_POOL_MIN_RPC (15).",
+              + DEFAULT_DCP_MIN_RPC_PER_CHANNEL
+              + ".",
           DEFAULT_DCP_MIN_RPC_PER_CHANNEL,
           NonNegativeIntegerConverter.INSTANCE,
           Context.STARTUP);
@@ -524,7 +525,8 @@ public class ConnectionProperties {
           DCP_MAX_RPC_PER_CHANNEL_PROPERTY_NAME,
           "The maximum number of desired RPCs per channel in the dynamic channel pool. Only used when "
               + "enableDynamicChannelPool is true. The default is "
-              + "SpannerOptions.DEFAULT_DYNAMIC_POOL_MAX_RPC (90).",
+              + DEFAULT_DCP_MAX_RPC_PER_CHANNEL
+              + ".",
           DEFAULT_DCP_MAX_RPC_PER_CHANNEL,
           NonNegativeIntegerConverter.INSTANCE,
           Context.STARTUP);
