@@ -91,7 +91,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   private static final int MAX_PROCESS_QUERY_THREADS_CNT = 50;
   protected static ExecutorService queryTaskExecutor =
       Executors.newFixedThreadPool(MAX_PROCESS_QUERY_THREADS_CNT);
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryStatement.class.getName());
   private static final String DEFAULT_DATASET_NAME = "_google_jdbc";
   private static final String DEFAULT_TABLE_NAME = "temp_table_";
   private static final String JDBC_JOB_PREFIX = "google-jdbc-";
@@ -149,6 +150,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @VisibleForTesting
   public BigQueryStatement(BigQueryConnection connection) {
+    LOG.finest("++enter++");
     this.connection = connection;
     this.connectionId = connection.getConnectionId();
     this.bigQuery = connection.getBigQuery();
@@ -156,6 +158,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private void resetStatementFields() {
+    LOG.finest("++enter++");
     this.isCanceled = false;
     this.scriptQuery = null;
     this.parentJobId = null;
@@ -244,6 +247,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private ResultSet executeQueryImpl(String sql) throws SQLException {
+    LOG.finest("++enter++");
     logQueryExecutionStart(sql);
     try {
       QueryJobConfiguration jobConfiguration =
@@ -271,6 +275,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private long executeLargeUpdateImpl(String sql) throws SQLException {
+    LOG.finest("++enter++");
     logQueryExecutionStart(sql);
     try {
       QueryJobConfiguration.Builder jobConfiguration = getJobConfig(sql);
@@ -315,6 +320,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private boolean executeImpl(String sql) throws SQLException {
+    LOG.finest("++enter++");
     logQueryExecutionStart(sql);
     try {
       QueryJobConfiguration jobConfiguration = getJobConfig(sql).build();
@@ -390,6 +396,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public void close() throws SQLException {
+    LOG.finest("++enter++");
     if (isClosed()) {
       return;
     }
@@ -415,36 +422,43 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public int getMaxFieldSize() {
+    LOG.finest("++enter++");
     return this.maxFieldSize;
   }
 
   @Override
   public void setMaxFieldSize(int max) {
+    LOG.finest("++enter++");
     this.maxFieldSize = max;
   }
 
   @Override
   public int getMaxRows() {
+    LOG.finest("++enter++");
     return this.maxRows;
   }
 
   @Override
   public void setMaxRows(int max) {
+    LOG.finest("++enter++");
     this.maxRows = max;
   }
 
   @Override
   public void setEscapeProcessing(boolean enable) {
+    LOG.finest("++enter++");
     // TODO: verify how to implement this method
   }
 
   @Override
   public int getQueryTimeout() {
+    LOG.finest("++enter++");
     return this.queryTimeout;
   }
 
   @Override
   public void setQueryTimeout(int seconds) {
+    LOG.finest("++enter++");
     if (seconds < 0) {
       IllegalArgumentException ex = new IllegalArgumentException("Query Timeout should be >= 0.");
       LOG.severe(ex.getMessage(), ex);
@@ -490,36 +504,43 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public SQLWarning getWarnings() {
+    LOG.finest("++enter++");
     return this.warning;
   }
 
   @Override
   public void clearWarnings() {
+    LOG.finest("++enter++");
     this.warning = null;
   }
 
   @Override
   public ResultSet getResultSet() {
+    LOG.finest("++enter++");
     return this.currentResultSet;
   }
 
   @VisibleForTesting
   void setUpdateCount(long count) {
+    LOG.finest("++enter++");
     this.currentUpdateCount = count;
   }
 
   @Override
   public int getUpdateCount() {
+    LOG.finest("++enter++");
     return (int) this.currentUpdateCount;
   }
 
   @Override
   public long getLargeUpdateCount() {
+    LOG.finest("++enter++");
     return this.currentUpdateCount;
   }
 
   @Override
   public boolean getMoreResults() throws SQLException {
+    LOG.finest("++enter++");
     return getMoreResults(CLOSE_CURRENT_RESULT);
   }
 
@@ -545,11 +566,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private boolean isSingularResultSet() {
+    LOG.finest("++enter++");
     return this.currentResultSet != null
         && (this.parentJobId == null || this.parentJobId.getJobs().size() == 1);
   }
 
   private String generateJobId() {
+    LOG.finest("++enter++");
     return JDBC_JOB_PREFIX + UUID.randomUUID().toString();
   }
 
@@ -649,6 +672,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private boolean isLargeResultsEnabled() {
+    LOG.finest("++enter++");
     String destinationTable = this.querySettings.getDestinationTable();
     String destinationDataset = this.querySettings.getDestinationDataset();
     return destinationDataset != null || destinationTable != null;
@@ -656,6 +680,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   private QueryJobConfiguration setDestinationDatasetAndTableInJobConfig(
       QueryJobConfiguration jobConfiguration) {
+    LOG.finest("++enter++");
     String destinationTable = this.querySettings.getDestinationTable();
     String destinationDataset = this.querySettings.getDestinationDataset();
     if (destinationDataset != null || destinationTable != null) {
@@ -680,6 +705,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   Job getNextJob() {
+    LOG.finest("++enter++");
     if (this.parentJobId == null) {
       return null;
     }
@@ -754,6 +780,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private void updateAffectedRowCount(Long count) throws SQLException {
+    LOG.finest("++enter++");
     // TODO(neenu): check if this need to be closed vs removed)
     if (this.currentResultSet != null) {
       try {
@@ -768,6 +795,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @InternalApi
   BigQueryReadClient getBigQueryReadClient() {
+    LOG.finest("++enter++");
     if (this.bigQueryReadClient == null) {
       this.bigQueryReadClient = this.connection.getBigQueryReadClient();
     }
@@ -782,6 +810,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @InternalApi
   ArrowSchema getArrowSchema(ReadSession readSession) {
+    LOG.finest("++enter++");
     return readSession.getArrowSchema();
   }
 
@@ -794,6 +823,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     long totalRows = (getMaxRows() > 0) ? getMaxRows() : results.getTotalRows();
     JobId currentJobId = results.getJobId();
     TableId destinationTable = getDestinationTable(currentJobId);
+    LOG.info("Processing Arrow result set for table: %s", destinationTable);
     Schema schema = results.getSchema();
     try {
       String parent = String.format("projects/%s", destinationTable.getProject());
@@ -930,6 +960,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   /** Executes SQL query using either fast query path or read API */
   void processQueryResponse(String query, TableResult results) throws SQLException {
+    LOG.finest("++enter++");
+    LOG.info("Processing query response with total rows: %d", results.getTotalRows());
     LOG.finest(
         "API call completed{Query=%s, Parent Job ID=%s, Total rows=%s} ",
         query, results.getJobId(), results.getTotalRows());
@@ -978,6 +1010,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   BigQueryJsonResultSet processJsonResultSet(TableResult results) {
+    LOG.finest("++enter++");
     String jobIdOrQueryId =
         results.getJobId() == null ? results.getQueryId() : results.getJobId().getJob();
     LOG.info("BigQuery Job %s completed. Fetching results.", jobIdOrQueryId);
@@ -1052,6 +1085,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public void setFetchDirection(int direction) throws SQLException {
+    LOG.finest("++enter++");
     if (direction != ResultSet.FETCH_FORWARD) {
       throw new BigQueryJdbcSqlFeatureNotSupportedException("Only FETCH_FORWARD is supported.");
     }
@@ -1237,6 +1271,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public int getFetchDirection() {
+    LOG.finest("++enter++");
     return this.fetchDirection;
   }
 
@@ -1244,6 +1279,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   // getNumBufferedRows in querySettings is always the same withDefaultValues - 20000 buffer size
   // So, getBufferSize is also 20000.
   private int getBufferSize() {
+    LOG.finest("++enter++");
     return (this.querySettings == null
             || this.querySettings.getNumBufferedRows() == null
             || this.querySettings.getNumBufferedRows() < 10000
@@ -1253,6 +1289,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   /** Returns the destinationTable from jobId by calling `jobs.get` API */
   TableId getDestinationTable(JobId jobId) {
+    LOG.finest("++enter++");
     Job job = this.bigQuery.getJob(jobId);
     LOG.finest("Destination Table retrieved from %s", job.getJobId());
     return ((QueryJobConfiguration) job.getConfiguration()).getDestinationTable();
@@ -1305,6 +1342,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private void checkIfDatasetExistElseCreate(String datasetName) {
+    LOG.finest("++enter++");
     Dataset dataset = bigQuery.getDataset(DatasetId.of(datasetName));
     if (dataset == null) {
       LOG.info("Creating a hidden dataset: %s ", datasetName);
@@ -1317,6 +1355,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private String getDefaultDestinationTable() {
+    LOG.finest("++enter++");
     String timeOfCreation = String.valueOf(Instant.now().toEpochMilli());
     String randomizedId = String.valueOf(new Random().nextInt(9999));
     return DEFAULT_TABLE_NAME + timeOfCreation + randomizedId;
@@ -1337,11 +1376,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public void setFetchSize(int rows) {
+    LOG.finest("++enter++");
     this.fetchSize = rows;
   }
 
   @Override
   public int getFetchSize() {
+    LOG.finest("++enter++");
     return this.fetchSize;
   }
 
@@ -1351,6 +1392,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    * @return A map of the extra labels.
    */
   public Map<String, String> getExtraLabels() {
+    LOG.finest("++enter++");
     return this.extraLabels;
   }
 
@@ -1360,20 +1402,24 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    * @param extraLabels A map of the extra labels.
    */
   public void setExtraLabels(Map<String, String> extraLabels) {
+    LOG.finest("++enter++");
     this.extraLabels = extraLabels;
   }
 
   @Override
   public int getResultSetConcurrency() {
+    LOG.finest("++enter++");
     return ResultSet.CONCUR_READ_ONLY;
   }
 
   ResultSet getCurrentResultSet() {
+    LOG.finest("++enter++");
     return this.currentResultSet;
   }
 
   @Override
   public int getResultSetType() {
+    LOG.finest("++enter++");
     return ResultSet.TYPE_FORWARD_ONLY;
   }
 
@@ -1388,32 +1434,39 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     private ArrayList<Job> jobs;
 
     public JobIdWrapper(JobId jobId, TableResult firstPage, ArrayList<Job> jobs) {
+      LOG.finest("++enter++");
       this.jobId = jobId;
       this.firstPage = firstPage;
       this.jobs = jobs;
     }
 
     JobId getJobId() {
+      LOG.finest("++enter++");
       return this.jobId;
     }
 
     void setJobId(JobId jobId) {
+      LOG.finest("++enter++");
       this.jobId = jobId;
     }
 
     TableResult getResults() {
+      LOG.finest("++enter++");
       return this.firstPage;
     }
 
     void setResults(TableResult firstPage) {
+      LOG.finest("++enter++");
       this.firstPage = firstPage;
     }
 
     ArrayList<Job> getJobs() {
+      LOG.finest("++enter++");
       return jobs;
     }
 
     void setJobs(ArrayList<Job> jobs) {
+      LOG.finest("++enter++");
       this.jobs = jobs;
     }
   }
@@ -1440,12 +1493,14 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public void clearBatch() {
+    LOG.finest("++enter++");
     this.batchQueries.clear();
   }
 
   @Override
   public int[] executeBatch() throws SQLException {
     LOG.finest("++enter++");
+    LOG.info("Executing batch of %d queries", this.batchQueries.size());
     int[] result = new int[this.batchQueries.size()];
     if (this.batchQueries.isEmpty()) {
       return result;
@@ -1473,10 +1528,12 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public Connection getConnection() {
+    LOG.finest("++enter++");
     return this.connection;
   }
 
   public boolean hasMoreResults() {
+    LOG.finest("++enter++");
     if (this.parentJobId == null) {
       return false;
     }
@@ -1494,6 +1551,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private boolean getMoreResultsImpl(int current) throws SQLException {
+    LOG.finest("++enter++");
     if (current != CLOSE_CURRENT_RESULT) {
       throw new BigQueryJdbcSqlFeatureNotSupportedException(
           "The JDBC driver only supports Statement.CLOSE_CURRENT_RESULT.");
@@ -1528,11 +1586,13 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean isWrapperFor(Class<?> iface) {
+    LOG.finest("++enter++");
     return iface.isInstance(this);
   }
 
   @Override
   public <T> T unwrap(Class<T> iface) throws SQLException {
+    LOG.finest("++enter++");
     if (!isWrapperFor(iface)) {
       throw new BigQueryJdbcException(
           String.format("Unable to cast Statement to %s class.", iface.getName()));
@@ -1542,35 +1602,42 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public int getResultSetHoldability() {
+    LOG.finest("++enter++");
     return ResultSet.CLOSE_CURSORS_AT_COMMIT;
   }
 
   @Override
   public boolean isClosed() {
+    LOG.finest("++enter++");
     return this.isClosed;
   }
 
   @Override
   public void setPoolable(boolean poolable) {
+    LOG.finest("++enter++");
     this.poolable = poolable;
   }
 
   @Override
   public boolean isPoolable() {
+    LOG.finest("++enter++");
     return this.poolable;
   }
 
   @Override
   public void closeOnCompletion() {
+    LOG.finest("++enter++");
     this.closeOnCompletion = true;
   }
 
   @Override
   public boolean isCloseOnCompletion() {
+    LOG.finest("++enter++");
     return this.closeOnCompletion;
   }
 
   protected void logQueryExecutionStart(String sql) {
+    LOG.finest("++enter++");
     if (sql == null) {
       return;
     }
@@ -1583,6 +1650,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   /** Throws a {@link BigQueryJdbcException} if this object is closed */
   void checkClosed() throws SQLException {
+    LOG.finest("++enter++");
     if (isClosed()) {
       throw new BigQueryJdbcException("This " + getClass().getName() + " has been closed");
     }
@@ -1604,20 +1672,24 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
   }
 
   private void enqueueError(BlockingQueue<BigQueryArrowBatchWrapper> queue, Exception e) {
+    LOG.finest("++enter++");
     Uninterruptibles.putUninterruptibly(
         queue, BigQueryArrowBatchWrapper.ofError(new BigQueryJdbcRuntimeException(e)));
   }
 
   private void enqueueEndOfStream(BlockingQueue<BigQueryArrowBatchWrapper> queue) {
+    LOG.finest("++enter++");
     Uninterruptibles.putUninterruptibly(queue, BigQueryArrowBatchWrapper.of(null, true));
   }
 
   private void enqueueBufferError(BlockingQueue<BigQueryFieldValueListWrapper> queue, Exception e) {
+    LOG.finest("++enter++");
     Uninterruptibles.putUninterruptibly(
         queue, BigQueryFieldValueListWrapper.ofError(new BigQueryJdbcRuntimeException(e)));
   }
 
   private void enqueueBufferEndOfStream(BlockingQueue<BigQueryFieldValueListWrapper> queue) {
+    LOG.finest("++enter++");
     Uninterruptibles.putUninterruptibly(queue, BigQueryFieldValueListWrapper.of(null, null, true));
   }
 }
