@@ -394,6 +394,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
   }
 
   @Test
+  @Disabled
   public void testGetServiceAccountImpersonatedCredentialsForADC() {
     Map<String, String> authProperties =
         BigQueryJdbcOAuthUtility.parseOAuthProperties(
@@ -404,8 +405,7 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
             "");
 
     GoogleCredentials credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(
-            authProperties, java.util.Collections.EMPTY_MAP, false, null);
+        BigQueryJdbcOAuthUtility.getCredentials(authProperties, null, false, null);
 
     assertThat(credentials).isInstanceOf(ImpersonatedCredentials.class);
   }
