@@ -173,6 +173,32 @@ git merge --allow-unrelated-histories --no-ff "$SOURCE_REPO_NAME/main" -s ours -
 echo "Reading tree into prefix $SOURCE_REPO_NAME/..."
 git read-tree --prefix="$SOURCE_REPO_NAME/" -u "$SOURCE_REPO_NAME/main"
 
+# 6.3 Commit the initial import
+echo "Committing initial import of $SOURCE_REPO_NAME..."
+git add "$SOURCE_REPO_NAME"
+git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
+COMMIT_COUNT=$((COMMIT_COUNT + 1))
+
+# 6.4b Migrate GraalVM Native presubmit config if present
+if [ -f "$SOURCE_REPO_NAME/.kokoro/presubmit/graalvm-native-a.cfg" ]; then
+    echo "Migrating graalvm-native-a.cfg to monorepo root .kokoro/presubmit/${SOURCE_REPO_NAME}-graalvm-native-presubmit.cfg..."
+    mkdir -p .kokoro/presubmit
+    sed -e 's/value: "graalvm"/value: "graalvm-single"/' \
+        "$SOURCE_REPO_NAME/.kokoro/presubmit/graalvm-native-a.cfg" > ".kokoro/presubmit/${SOURCE_REPO_NAME}-graalvm-native-presubmit.cfg"
+    
+    # Append BUILD_SUBDIR
+    cat <<EOF >> ".kokoro/presubmit/${SOURCE_REPO_NAME}-graalvm-native-presubmit.cfg"
+
+env_vars: {
+  key: "BUILD_SUBDIR"
+  value: "${SOURCE_REPO_NAME}"
+}
+EOF
+    git add ".kokoro/presubmit/${SOURCE_REPO_NAME}-graalvm-native-presubmit.cfg"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate GraalVM Native presubmit config"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
+
 # 6.5 Remove common files from the root of the migrated library
 echo "Removing common files from the root of $SOURCE_REPO_NAME/..."
 rm -f "$SOURCE_REPO_NAME/.gitignore"
@@ -180,16 +206,14 @@ rm -f "$SOURCE_REPO_NAME/renovate.json"
 rm -f "$SOURCE_REPO_NAME/LICENSE"
 rm -f "$SOURCE_REPO_NAME/java.header"
 rm -rf "$SOURCE_REPO_NAME/.kokoro"
-# rm -rf "$SOURCE_REPO_NAME/.kokoro/continuous"  "$SOURCE_REPO_NAME/.kokoro/nightly"  "$SOURCE_REPO_NAME/.kokoro/presubmit"
 rm -f "$SOURCE_REPO_NAME/codecov.yaml"
 rm -f "$SOURCE_REPO_NAME/synth.metadata"
 rm -f "$SOURCE_REPO_NAME/license-checks.xml"
 find "$SOURCE_REPO_NAME" -maxdepth 1 -name "*.md" ! -name "CHANGELOG.md" ! -name "README.md" -delete
 
-# 7. Commit the migration
-echo "Committing migration..."
+echo "Committing removal of common files..."
 git add "$SOURCE_REPO_NAME"
-git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
+git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): remove common files from module root"
 COMMIT_COUNT=$((COMMIT_COUNT + 1))
 
 # 7.1 Update CODEOWNERS
