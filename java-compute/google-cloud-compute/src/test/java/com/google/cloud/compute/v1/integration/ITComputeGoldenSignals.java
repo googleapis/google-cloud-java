@@ -416,7 +416,6 @@ public class ITComputeGoldenSignals extends BaseTest {
         .isEqualTo("compute/v1/projects/{project=*}/zones/{zone=*}/instances");
 
     // New assertions
-    String expectedProject = expectError ? "invalid-project-id" : DEFAULT_PROJECT;
     String expectedStatus = expectError ? "404" : "200";
 
     assertThat(
