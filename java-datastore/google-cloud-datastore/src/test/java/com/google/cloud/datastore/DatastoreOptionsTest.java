@@ -162,6 +162,27 @@ public class DatastoreOptionsTest {
   }
 
   @Test
+  public void testOpenTelemetryMetricsAndCloudMonitoringMixed() {
+    DatastoreOpenTelemetryOptions o1 =
+        DatastoreOpenTelemetryOptions.newBuilder()
+            .setMetricsEnabled(true)
+            .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
+            .build();
+    assertTrue(o1.isMetricsEnabled());
+    assertFalse(o1.isExportBuiltinMetricsToGoogleCloudMonitoring());
+    assertTrue(o1.isEnabled());
+
+    DatastoreOpenTelemetryOptions o2 =
+        DatastoreOpenTelemetryOptions.newBuilder()
+            .setMetricsEnabled(false)
+            .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
+            .build();
+    assertFalse(o2.isMetricsEnabled());
+    assertTrue(o2.isExportBuiltinMetricsToGoogleCloudMonitoring());
+    assertFalse(o2.isEnabled());
+  }
+
+  @Test
   public void testOpenTelemetryOptionsDefaultInstance() {
     DatastoreOpenTelemetryOptions telemetryOptions =
         DatastoreOpenTelemetryOptions.newBuilder().build();
