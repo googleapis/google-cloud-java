@@ -160,6 +160,22 @@ public class DatastoreOptionsTest {
   }
 
   @Test
+  public void testOpenTelemetryOptionsDefaultInstance() {
+    DatastoreOpenTelemetryOptions o = DatastoreOpenTelemetryOptions.newBuilder().build();
+    assertThat(o.getOpenTelemetry()).isSameInstanceAs(io.opentelemetry.api.GlobalOpenTelemetry.get());
+  }
+
+  @Test
+  public void testOpenTelemetryOptionsSetNullThrowsNPE() {
+    try {
+      DatastoreOpenTelemetryOptions.newBuilder().setOpenTelemetry(null);
+      org.junit.Assert.fail("Expected NullPointerException");
+    } catch (NullPointerException e) {
+      assertThat(e.getMessage()).isEqualTo("OpenTelemetry instance cannot be null");
+    }
+  }
+
+  @Test
   public void testNamespace() {
     assertTrue(options.build().getNamespace().isEmpty());
     assertEquals("ns1", options.setNamespace("ns1").build().getNamespace());

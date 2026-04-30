@@ -196,7 +196,7 @@ public class DatastoreOpenTelemetryOptions {
     @Nonnull
     public DatastoreOpenTelemetryOptions.Builder setOpenTelemetry(
         @Nonnull OpenTelemetry openTelemetry) {
-      Preconditions.checkNotNull(openTelemetry, "Custom Otel instance cannot be null");
+      Preconditions.checkNotNull(openTelemetry, "OpenTelemetry instance cannot be null");
       this.openTelemetry = openTelemetry;
       return this;
     }
