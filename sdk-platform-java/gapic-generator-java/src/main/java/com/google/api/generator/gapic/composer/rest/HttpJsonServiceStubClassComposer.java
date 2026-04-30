@@ -765,8 +765,11 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
       MethodInvocationExpr.Builder requestFieldMethodExprBuilder =
           MethodInvocationExpr.builder().setExprReferenceExpr(prevExpr);
       // Use explicit json_name if defined in the proto, prioritizing the actual wire name
-      // over Java-escaped identifiers (e.g., avoiding 'case_' generated to prevent keywords
-      // conflict).
+      // over Java-escaped identifiers. Note that trailing underscores (e.g., 'case_') result from:
+      // 1. protoc-gen-java:
+      // https://github.com/protocolbuffers/protobuf/blob/cecbbf41e43634c7c5b940dd336aa81b31fd4e5d/src/google/protobuf/compiler/java/names.cc#L189-L195
+      // 2. gapic-generator-java Keyword implementation:
+      // com/google/api/generator/engine/lexicon/Keyword.java#L92-L94
       bodyParamName =
           !Strings.isNullOrEmpty(httpBindingFieldName.jsonName())
               ? httpBindingFieldName.jsonName()
@@ -934,8 +937,7 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
           ValueExpr.withValue(
               StringObjectValue.withValue(
                   // Use explicit json_name if defined in the proto, prioritizing the actual wire
-                  // name
-                  // over Java-escaped identifiers (e.g., avoiding 'case_' generated to prevent
+                  // name over Java-escaped identifiers (e.g., avoiding 'case_' generated to prevent
                   // keywords conflict).
                   (httpBindingFieldName.jsonName() != null)
                       ? httpBindingFieldName.jsonName()
