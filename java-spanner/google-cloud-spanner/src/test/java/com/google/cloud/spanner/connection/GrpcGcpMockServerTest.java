@@ -24,6 +24,7 @@ import com.google.cloud.spanner.ResultSet;
 import com.google.cloud.spanner.Spanner;
 import com.google.cloud.spanner.Statement;
 import com.google.cloud.spanner.connection.StatementResult.ResultType;
+import java.util.Objects;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -56,7 +57,7 @@ public class GrpcGcpMockServerTest extends AbstractMockServerTest {
   @Test
   public void testDisableGrpcGcp() {
     try (Connection connection = createConnection(";enableGrpcGcp=false")) {
-      Spanner spanner = ((ConnectionImpl) connection).getSpanner();
+      Spanner spanner = connection.getSpanner();
       assertFalse(spanner.getOptions().isGrpcGcpExtensionEnabled());
       verifyConnectionWorks(connection);
     }
@@ -65,7 +66,7 @@ public class GrpcGcpMockServerTest extends AbstractMockServerTest {
   @Test
   public void testEnableGrpcGcp() {
     try (Connection connection = createConnection(";enableGrpcGcp=true")) {
-      Spanner spanner = ((ConnectionImpl) connection).getSpanner();
+      Spanner spanner = connection.getSpanner();
       assertTrue(spanner.getOptions().isGrpcGcpExtensionEnabled());
       verifyConnectionWorks(connection);
     }
@@ -74,9 +75,32 @@ public class GrpcGcpMockServerTest extends AbstractMockServerTest {
   @Test
   public void testDefaultGrpcGcp() {
     try (Connection connection = createConnection()) {
-      Spanner spanner = ((ConnectionImpl) connection).getSpanner();
+      Spanner spanner = connection.getSpanner();
       // Default should be true in SpannerOptions
       assertTrue(spanner.getOptions().isGrpcGcpExtensionEnabled());
+      verifyConnectionWorks(connection);
+    }
+  }
+
+  @Test
+  public void testDcpNewSettings() {
+    try (Connection connection =
+        createConnection(
+            ";enableDynamicChannelPool=true;dcpMinRpcPerChannel=10;dcpMaxRpcPerChannel=100;dcpConcurrentStreamsLowWatermark=5")) {
+      Spanner spanner = connection.getSpanner();
+      assertTrue(spanner.getOptions().isGrpcGcpExtensionEnabled());
+      assertEquals(
+          10,
+          Objects.requireNonNull(spanner.getOptions().getGcpChannelPoolOptions())
+              .getMinRpcPerChannel());
+      assertEquals(
+          100,
+          Objects.requireNonNull(spanner.getOptions().getGcpChannelPoolOptions())
+              .getMaxRpcPerChannel());
+      assertEquals(
+          5,
+          Objects.requireNonNull(spanner.getOptions().getGcpChannelPoolOptions())
+              .getConcurrentStreamsLowWatermark());
       verifyConnectionWorks(connection);
     }
   }

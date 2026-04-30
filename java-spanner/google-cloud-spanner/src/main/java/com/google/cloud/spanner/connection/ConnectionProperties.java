@@ -29,9 +29,12 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.CREDENTIALS_
 import static com.google.cloud.spanner.connection.ConnectionOptions.CREDENTIALS_PROVIDER_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DATABASE_ROLE_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DATA_BOOST_ENABLED_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DCP_CONCURRENT_STREAMS_LOW_WATERMARK_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DCP_INITIAL_CHANNELS_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DCP_MAX_CHANNELS_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DCP_MAX_RPC_PER_CHANNEL_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DCP_MIN_CHANNELS_PROPERTY_NAME;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DCP_MIN_RPC_PER_CHANNEL_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DDL_IN_TRANSACTION_MODE_PROPERTY_NAME;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_AUTOCOMMIT;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_AUTO_BATCH_DML;
@@ -45,9 +48,12 @@ import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_CLIE
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_CREDENTIALS;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DATABASE_ROLE;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DATA_BOOST_ENABLED;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DCP_CONCURRENT_STREAMS_LOW_WATERMARK;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DCP_INITIAL_CHANNELS;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DCP_MAX_CHANNELS;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DCP_MAX_RPC_PER_CHANNEL;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DCP_MIN_CHANNELS;
+import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DCP_MIN_RPC_PER_CHANNEL;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DDL_IN_TRANSACTION_MODE;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DEFAULT_SEQUENCE_KIND;
 import static com.google.cloud.spanner.connection.ConnectionOptions.DEFAULT_DELAY_TRANSACTION_START_UNTIL_FIRST_WRITE;
@@ -502,6 +508,34 @@ public class ConnectionProperties {
               + "enableDynamicChannelPool is true. The default is "
               + "SpannerOptions.DEFAULT_DYNAMIC_POOL_INITIAL_SIZE (4).",
           DEFAULT_DCP_INITIAL_CHANNELS,
+          NonNegativeIntegerConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<Integer> DCP_MIN_RPC_PER_CHANNEL =
+      create(
+          DCP_MIN_RPC_PER_CHANNEL_PROPERTY_NAME,
+          "The minimum number of desired RPCs per channel in the dynamic channel pool. Only used when "
+              + "enableDynamicChannelPool is true. The default is "
+              + DEFAULT_DCP_MIN_RPC_PER_CHANNEL
+              + ".",
+          DEFAULT_DCP_MIN_RPC_PER_CHANNEL,
+          NonNegativeIntegerConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<Integer> DCP_MAX_RPC_PER_CHANNEL =
+      create(
+          DCP_MAX_RPC_PER_CHANNEL_PROPERTY_NAME,
+          "The maximum number of desired RPCs per channel in the dynamic channel pool. Only used when "
+              + "enableDynamicChannelPool is true. The default is "
+              + DEFAULT_DCP_MAX_RPC_PER_CHANNEL
+              + ".",
+          DEFAULT_DCP_MAX_RPC_PER_CHANNEL,
+          NonNegativeIntegerConverter.INSTANCE,
+          Context.STARTUP);
+  static final ConnectionProperty<Integer> DCP_CONCURRENT_STREAMS_LOW_WATERMARK =
+      create(
+          DCP_CONCURRENT_STREAMS_LOW_WATERMARK_PROPERTY_NAME,
+          "The concurrent streams low watermark in the dynamic channel pool. Only used when "
+              + "enableDynamicChannelPool is true.",
+          DEFAULT_DCP_CONCURRENT_STREAMS_LOW_WATERMARK,
           NonNegativeIntegerConverter.INSTANCE,
           Context.STARTUP);
   static final ConnectionProperty<String> CHANNEL_PROVIDER =

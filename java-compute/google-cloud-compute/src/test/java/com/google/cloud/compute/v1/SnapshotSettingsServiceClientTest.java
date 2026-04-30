@@ -78,6 +78,7 @@ public class SnapshotSettingsServiceClientTest {
   public void getTest() throws Exception {
     SnapshotSettings expectedResponse =
         SnapshotSettings.newBuilder()
+            .setAccessLocation(SnapshotSettingsAccessLocation.newBuilder().build())
             .setStorageLocation(SnapshotSettingsStorageLocationSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
