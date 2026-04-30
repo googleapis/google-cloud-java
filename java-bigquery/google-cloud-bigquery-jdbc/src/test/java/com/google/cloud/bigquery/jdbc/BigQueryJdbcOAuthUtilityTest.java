@@ -394,20 +394,57 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
   }
 
   @Test
-  @Disabled
-  public void testGetServiceAccountImpersonatedCredentialsForADC() {
-    Map<String, String> authProperties =
-        BigQueryJdbcOAuthUtility.parseOAuthProperties(
-            DataSource.fromUrl(
-                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
-                    + "OAuthType=3;ProjectId=MyBigQueryProject;"
-                    + "ServiceAccountImpersonationEmail=impersonated@email.com;"),
-            "");
+  public void testGetServiceAccountImpersonatedCredentialsForADC() throws Exception {
+    String dummyJson =
+        "{\n"
+            + "  \"type\": \"service_account\",\n"
+            + "  \"project_id\": \"dummy-project\",\n"
+            + "  \"private_key_id\": \"dummy-key-id\",\n"
+            + "  \"private_key\": \""
+            + fake_pkcs8_key.replace("\n", "\\n")
+            + "\",\n"
+            + "  \"client_email\": \"dummy@email.com\",\n"
+            + "  \"client_id\": \"dummy-client-id\",\n"
+            + "  \"auth_uri\": \"https://accounts.google.com/o/oauth2/auth\",\n"
+            + "  \"token_uri\": \"https://oauth2.googleapis.com/token\"\n"
+            + "}";
 
-    GoogleCredentials credentials =
-        BigQueryJdbcOAuthUtility.getCredentials(authProperties, null, false, null);
+    java.nio.file.Path tempFile = java.nio.file.Files.createTempFile("adc", ".json");
+    java.nio.file.Files.write(tempFile, dummyJson.getBytes());
+    tempFile.toFile().deleteOnExit();
 
-    assertThat(credentials).isInstanceOf(ImpersonatedCredentials.class);
+    Class<?> processEnvironmentClass = Class.forName("java.lang.ProcessEnvironment");
+    java.lang.reflect.Field theEnvironmentField =
+        processEnvironmentClass.getDeclaredField("theEnvironment");
+    theEnvironmentField.setAccessible(true);
+    java.util.Map<String, String> env =
+        (java.util.Map<String, String>) theEnvironmentField.get(null);
+
+    String originalEnv = env.get("GOOGLE_APPLICATION_CREDENTIALS");
+
+    try {
+      if (originalEnv == null) {
+        env.put("GOOGLE_APPLICATION_CREDENTIALS", tempFile.toAbsolutePath().toString());
+      }
+
+      Map<String, String> authProperties =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(
+              DataSource.fromUrl(
+                  "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                      + "OAuthType=3;ProjectId=MyBigQueryProject;"
+                      + "ServiceAccountImpersonationEmail=impersonated@email.com;"),
+              "");
+
+      GoogleCredentials credentials =
+          BigQueryJdbcOAuthUtility.getCredentials(
+              authProperties, java.util.Collections.EMPTY_MAP, false, null);
+
+      assertThat(credentials).isInstanceOf(ImpersonatedCredentials.class);
+    } finally {
+      if (originalEnv == null) {
+        env.remove("GOOGLE_APPLICATION_CREDENTIALS");
+      }
+    }
   }
 
   @Test
