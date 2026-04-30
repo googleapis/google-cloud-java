@@ -219,6 +219,10 @@ public final class DatastoreHelper {
    *   <li>Google Application Default as described <a
    *       href="https://cloud.google.com/docs/authentication/production">here</a>.
    * </ol>
+   *
+   * <p>To point the datastore client to a specific endpoint URL for testing, use the
+   * <code>__DATASTORE_URL_OVERRIDE</code> environment variable. The URL must include a scheme
+   * (e.g. <code>http://localhost:8080</code>).
    */
   public static DatastoreOptions.Builder getOptionsFromEnv()
       throws GeneralSecurityException, IOException {

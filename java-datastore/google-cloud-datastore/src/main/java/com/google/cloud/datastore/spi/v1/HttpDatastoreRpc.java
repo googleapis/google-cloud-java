@@ -63,10 +63,9 @@ public class HttpDatastoreRpc implements DatastoreRpc {
 
     if (isLocalHost(normalizedHost)) {
       clientBuilder = clientBuilder.localHost(removeScheme(normalizedHost));
-    } else if (!removeScheme(com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST)
-            .equals(removeScheme(normalizedHost))
+    } else if (!removeScheme(normalizedHost)
+            .equals(removeScheme(com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST))
         && !normalizedHost.isEmpty()) {
-      // The projectEndpoint builder method was removed. Use host instead.
       // DatastoreFactory.create will build the valid endpoint URL automatically.
       clientBuilder = clientBuilder.host(removeScheme(normalizedHost));
     }

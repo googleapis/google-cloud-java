@@ -69,9 +69,12 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
   public static final int MIN_CHANNEL_COUNT = 1;
 
-  /** @deprecated This constant is obsolete and will be removed in a future version. */
+  /**
+   * @deprecated This constant is obsolete and will be removed in a future version.
+   */
   @ObsoleteApi("This constant is obsolete and will be removed in a future version.")
-  @Deprecated public static final int MAX_CHANNEL_COUNT = 10;
+  @Deprecated
+  public static final int MAX_CHANNEL_COUNT = 10;
 
   private transient TransportChannelProvider channelProvider = null;
 
