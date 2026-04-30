@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-appoptimize</artifactId>
-  <version>0.1.0</version><!-- {x-version-update:google-cloud-appoptimize:current} -->
+  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-appoptimize:current} -->
   <packaging>jar</packaging>
   <name>Google App Optimize API</name>
   <description>App Optimize API The App Optimize API provides developers and platform teams with tools to monitor, analyze, and improve the performance and cost-efficiency of their cloud applications.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-appoptimize-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-appoptimize:current} -->
+    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-appoptimize:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-appoptimize</site.installationModule>

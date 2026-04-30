@@ -17,9 +17,13 @@
 package com.google.cloud.bigquery.exception;
 
 import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.jdbc.BigQueryJdbcCustomLogger;
 import java.sql.SQLFeatureNotSupportedException;
 
 public class BigQueryJdbcSqlFeatureNotSupportedException extends SQLFeatureNotSupportedException {
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryJdbcSqlFeatureNotSupportedException.class.getName());
+
   /**
    * Constructs a new BigQueryJdbcSqlFeatureNotSupportedException with the given message.
    *
@@ -27,6 +31,7 @@ public class BigQueryJdbcSqlFeatureNotSupportedException extends SQLFeatureNotSu
    */
   public BigQueryJdbcSqlFeatureNotSupportedException(String message) {
     super(message);
+    LOG.severe(message, this);
   }
 
   /**
@@ -36,5 +41,6 @@ public class BigQueryJdbcSqlFeatureNotSupportedException extends SQLFeatureNotSu
    */
   public BigQueryJdbcSqlFeatureNotSupportedException(BigQueryException ex) {
     super(ex);
+    LOG.severe(ex.getMessage(), this);
   }
 }

@@ -310,4 +310,15 @@ public class DatastoreOptionsTest {
     assertNotEquals(original, newOptions);
     assertNotEquals(original.hashCode(), newOptions.hashCode());
   }
+
+  @Test
+  public void builtInMetricsExport_isDisabledByDefault() {
+    DatastoreOptions defaultOptions =
+        DatastoreOptions.newBuilder().setProjectId(PROJECT_ID).build();
+    assertThat(
+            defaultOptions
+                .getOpenTelemetryOptions()
+                .isExportBuiltinMetricsToGoogleCloudMonitoring())
+        .isFalse();
+  }
 }

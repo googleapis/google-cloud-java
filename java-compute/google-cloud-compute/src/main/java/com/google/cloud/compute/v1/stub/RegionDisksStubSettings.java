@@ -66,6 +66,7 @@ import com.google.cloud.compute.v1.StopAsyncReplicationRegionDiskRequest;
 import com.google.cloud.compute.v1.StopGroupAsyncReplicationRegionDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsRegionDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateKmsKeyRegionDiskRequest;
 import com.google.cloud.compute.v1.UpdateRegionDiskRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -211,6 +212,9 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
   private final UnaryCallSettings<UpdateRegionDiskRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateRegionDiskRequest, Operation, Operation>
       updateOperationSettings;
+  private final UnaryCallSettings<UpdateKmsKeyRegionDiskRequest, Operation> updateKmsKeySettings;
+  private final OperationCallSettings<UpdateKmsKeyRegionDiskRequest, Operation, Operation>
+      updateKmsKeyOperationSettings;
 
   private static final PagedListDescriptor<ListRegionDisksRequest, DiskList, Disk>
       LIST_PAGE_STR_DESC =
@@ -426,6 +430,17 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     return updateOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public UnaryCallSettings<UpdateKmsKeyRegionDiskRequest, Operation> updateKmsKeySettings() {
+    return updateKmsKeySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public OperationCallSettings<UpdateKmsKeyRegionDiskRequest, Operation, Operation>
+      updateKmsKeyOperationSettings() {
+    return updateKmsKeyOperationSettings;
+  }
+
   public RegionDisksStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -542,6 +557,8 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
     updateSettings = settingsBuilder.updateSettings().build();
     updateOperationSettings = settingsBuilder.updateOperationSettings().build();
+    updateKmsKeySettings = settingsBuilder.updateKmsKeySettings().build();
+    updateKmsKeyOperationSettings = settingsBuilder.updateKmsKeyOperationSettings().build();
   }
 
   @Override
@@ -616,6 +633,10 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     private final UnaryCallSettings.Builder<UpdateRegionDiskRequest, Operation> updateSettings;
     private final OperationCallSettings.Builder<UpdateRegionDiskRequest, Operation, Operation>
         updateOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateKmsKeyRegionDiskRequest, Operation>
+        updateKmsKeySettings;
+    private final OperationCallSettings.Builder<UpdateKmsKeyRegionDiskRequest, Operation, Operation>
+        updateKmsKeyOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -695,6 +716,8 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
       testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateOperationSettings = OperationCallSettings.newBuilder();
+      updateKmsKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateKmsKeyOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -714,7 +737,8 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
               stopAsyncReplicationSettings,
               stopGroupAsyncReplicationSettings,
               testIamPermissionsSettings,
-              updateSettings);
+              updateSettings,
+              updateKmsKeySettings);
       initDefaults(this);
     }
 
@@ -755,6 +779,8 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
       updateSettings = settings.updateSettings.toBuilder();
       updateOperationSettings = settings.updateOperationSettings.toBuilder();
+      updateKmsKeySettings = settings.updateKmsKeySettings.toBuilder();
+      updateKmsKeyOperationSettings = settings.updateKmsKeyOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -774,7 +800,8 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
               stopAsyncReplicationSettings,
               stopGroupAsyncReplicationSettings,
               testIamPermissionsSettings,
-              updateSettings);
+              updateSettings,
+              updateKmsKeySettings);
     }
 
     private static Builder createDefault() {
@@ -872,6 +899,11 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
 
       builder
           .updateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateKmsKeySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1168,6 +1200,30 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
                       .setTotalTimeoutDuration(Duration.ofMillis(600000L))
                       .build()));
 
+      builder
+          .updateKmsKeyOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateKmsKeyRegionDiskRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
+
       return builder;
     }
 
@@ -1353,6 +1409,18 @@ public class RegionDisksStubSettings extends StubSettings<RegionDisksStubSetting
     public OperationCallSettings.Builder<UpdateRegionDiskRequest, Operation, Operation>
         updateOperationSettings() {
       return updateOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public UnaryCallSettings.Builder<UpdateKmsKeyRegionDiskRequest, Operation>
+        updateKmsKeySettings() {
+      return updateKmsKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public OperationCallSettings.Builder<UpdateKmsKeyRegionDiskRequest, Operation, Operation>
+        updateKmsKeyOperationSettings() {
+      return updateKmsKeyOperationSettings;
     }
 
     @Override

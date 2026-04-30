@@ -1,3 +1,4 @@
 drivers/**
 target-it/**
 *logs*/**
+**/ITBigQueryJDBCLocalTest.java
