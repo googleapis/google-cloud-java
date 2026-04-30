@@ -26,7 +26,7 @@ echo "========================================================"
 
 # 1. Configure environment for the base migrate.sh script
 export SOURCE_REPO_URL="https://github.com/googleapis/java-pubsub"
-export MIGRATION_HEAD_BRANCH="main"
+export MIGRATION_HEAD_BRANCH="${MIGRATION_HEAD_BRANCH:-main}"
 export SQUASH_COMMITS="false"
 export CODEOWNER="@googleapis/pubsub-team" 
 
