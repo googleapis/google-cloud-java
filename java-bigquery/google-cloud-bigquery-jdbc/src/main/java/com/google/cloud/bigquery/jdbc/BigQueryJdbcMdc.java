@@ -16,8 +16,6 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -36,20 +34,14 @@ class BigQueryJdbcMdc {
   private static final InheritableThreadLocal<String> currentConnectionId =
       new InheritableThreadLocal<>();
 
-  static String generateConnectionId() {
-    String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss"));
-    String shortUuid = UUID.randomUUID().toString().substring(0, 8);
-    return timestamp + "-" + shortUuid;
-  }
-
   static MdcCloseable registerInstance(BigQueryConnection connection, String id) {
     if (connection != null) {
       String cleanId =
           instanceIds.computeIfAbsent(
               connection,
               k -> {
-                String baseId = (id != null && !id.isEmpty()) ? id : generateConnectionId();
-                return "JdbcConnection-" + baseId;
+                String baseId = (id != null && !id.isEmpty()) ? id : UUID.randomUUID().toString();
+                return "BQ-JDBC-" + baseId;
               });
 
       currentConnectionId.set(cleanId);

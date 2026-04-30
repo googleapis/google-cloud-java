@@ -58,6 +58,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
@@ -147,7 +148,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   BigQueryConnection(String url, DataSource ds) throws IOException {
-    this.connectionId = BigQueryJdbcMdc.generateConnectionId();
+    this.connectionId = UUID.randomUUID().toString();
     try (BigQueryJdbcMdc.MdcCloseable mdc =
         BigQueryJdbcMdc.registerInstance(this, this.connectionId)) {
       LOG.finest("++enter++");
