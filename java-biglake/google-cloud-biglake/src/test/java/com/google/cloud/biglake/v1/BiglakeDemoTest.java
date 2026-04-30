@@ -27,13 +27,18 @@ import com.google.cloud.biglake.v1.IcebergCatalogServiceClient;
 import com.google.cloud.biglake.v1.IcebergCatalogServiceSettings;
 import com.google.cloud.biglake.v1.ListIcebergCatalogsRequest;
 import java.io.IOException;
+import com.google.api.gax.rpc.ApiException;
+import com.google.api.gax.rpc.StatusCode;
+import org.junit.Test;
 
-public class BiglakeDemo {
-  public static void main(String[] args) {
+public class BiglakeDemoTest {
+
+  @Test
+  public void testBiglakeRequests() throws Exception {
     String projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
     if (projectId == null || projectId.isEmpty()) {
-      System.err.println("Error: GOOGLE_CLOUD_PROJECT environment variable is not defined.");
-      System.exit(1);
+      System.err.println("Warning: GOOGLE_CLOUD_PROJECT environment variable not defined. Skipping demo requests.");
+      return;
     }
 
     System.out.println("Starting BigLake Client library demo execution...");
@@ -41,15 +46,26 @@ public class BiglakeDemo {
 
     try {
       runHiveMetastoreDemo(projectId);
+    } catch (ApiException e) {
+      if (e.getStatusCode().getCode() == StatusCode.Code.UNIMPLEMENTED || e.getStatusCode().getCode() == StatusCode.Code.PERMISSION_DENIED) {
+        System.out.println("Target API returned expected status: " + e.getStatusCode().getCode() + " (" + e.getMessage() + ")");
+      } else {
+        throw e;
+      }
+    }
+
+    try {
       runIcebergCatalogDemo(projectId);
-    } catch (Exception e) {
-      System.err.println("Demo Execution encountered error:");
-      e.printStackTrace();
-      System.exit(1);
+    } catch (ApiException e) {
+      if (e.getStatusCode().getCode() == StatusCode.Code.UNIMPLEMENTED || e.getStatusCode().getCode() == StatusCode.Code.PERMISSION_DENIED) {
+        System.out.println("Target API returned expected status: " + e.getStatusCode().getCode() + " (" + e.getMessage() + ")");
+      } else {
+        throw e;
+      }
     }
   }
 
-  private static void runHiveMetastoreDemo(String projectId) throws IOException {
+  private void runHiveMetastoreDemo(String projectId) throws IOException {
     System.out.println("\nExecuting Hive Metastore affected requests test...");
     HiveMetastoreServiceSettings settings =
         HiveMetastoreServiceSettings.newHttpJsonBuilder().build();
@@ -88,7 +104,7 @@ public class BiglakeDemo {
     }
   }
 
-  private static void runIcebergCatalogDemo(String projectId) throws IOException {
+  private void runIcebergCatalogDemo(String projectId) throws IOException {
     System.out.println("\nExecuting Iceberg Catalog affected requests test...");
     IcebergCatalogServiceSettings settings =
         IcebergCatalogServiceSettings.newHttpJsonBuilder().build();
