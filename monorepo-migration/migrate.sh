@@ -348,11 +348,20 @@ while read -r bom_pom; do
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 done < <(find "$SOURCE_REPO_NAME" -name "pom.xml" | grep "\-bom/pom.xml" | grep -v "samples")
 
+# 7.8c Exempt module from global integration testing matrix
+echo "Exempting $SOURCE_REPO_NAME from global integration testing matrix..."
+sed -i.bak "s/'java-storage-nio'/'java-storage-nio'\n  '${SOURCE_REPO_NAME}'/" ".kokoro/common.sh"
+
+echo "Committing common.sh update..."
+git add .kokoro/common.sh
+git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): exempt from global integration testing matrix"
+COMMIT_COUNT=$((COMMIT_COUNT + 1))
+
 # 7.9b Conditionally skip version check if unmanaged dependencies exist
 echo "Verifying non-release-please version compliance..."
 if ! (./generation/check_non_release_please_versions.sh > /dev/null 2>&1); then
     echo "Unmanaged dependency versions detected. Injecting $SOURCE_REPO_NAME exclusion into check_non_release_please_versions.sh..."
-    sed -i.bak "s/\[\[ \"\${pomFile}\" =~ \.\*java-vertexai\.\* \]\]/[[ \"\${pomFile}\" =~ .*${SOURCE_REPO_NAME}.* ]] || \\\\\n      [[ \"\${pomFile}\" =~ .*java-vertexai.* ]]/" "generation/check_non_release_please_versions.sh"
+    sed -i.bak "s/\[\[ \"\${pomFile}\" =~ \.\*java-vertexai\.\* \]\]/[[ \"\${pomFile}\" =~ .*${SOURCE_REPO_NAME}.* ]] || [[ \"\${pomFile}\" =~ .*java-vertexai.* ]]/" "generation/check_non_release_please_versions.sh"
     
     echo "Committing linter adjustment..."
     git add generation/check_non_release_please_versions.sh
