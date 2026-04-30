@@ -21,7 +21,6 @@ import com.google.common.base.Preconditions;
 import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 /**
  * Represents the options that are used to configure the use of OpenTelemetry for telemetry
@@ -31,14 +30,15 @@ public class DatastoreOpenTelemetryOptions {
   private final boolean tracingEnabled;
   private final boolean metricsEnabled;
   private final boolean exportBuiltinMetricsToGoogleCloudMonitoring;
-  private final @Nullable OpenTelemetry openTelemetry;
+  private final OpenTelemetry openTelemetry;
 
   DatastoreOpenTelemetryOptions(Builder builder) {
     this.tracingEnabled = builder.tracingEnabled;
     this.metricsEnabled = builder.metricsEnabled;
     this.exportBuiltinMetricsToGoogleCloudMonitoring =
         builder.exportBuiltinMetricsToGoogleCloudMonitoring;
-    this.openTelemetry = builder.openTelemetry;
+    this.openTelemetry =
+        builder.openTelemetry == null ? io.opentelemetry.api.OpenTelemetry.noop() : builder.openTelemetry;
   }
 
   /**
@@ -98,7 +98,7 @@ public class DatastoreOpenTelemetryOptions {
    */
   @Nonnull
   public OpenTelemetry getOpenTelemetry() {
-    return openTelemetry == null ? GlobalOpenTelemetry.get() : openTelemetry;
+    return openTelemetry;
   }
 
   /**

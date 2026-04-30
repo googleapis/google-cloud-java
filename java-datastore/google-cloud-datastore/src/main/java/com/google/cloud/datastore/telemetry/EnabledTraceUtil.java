@@ -51,7 +51,11 @@ public class EnabledTraceUtil implements TraceUtil {
 
   EnabledTraceUtil(DatastoreOptions datastoreOptions) {
     this.datastoreOptions = datastoreOptions;
-    this.openTelemetry = datastoreOptions.getOpenTelemetryOptions().getOpenTelemetry();
+    OpenTelemetry otel = datastoreOptions.getOpenTelemetryOptions().getOpenTelemetry();
+    if (otel.getTracerProvider() == io.opentelemetry.api.trace.TracerProvider.noop()) {
+      otel = io.opentelemetry.api.GlobalOpenTelemetry.get();
+    }
+    this.openTelemetry = otel;
     this.tracer = openTelemetry.getTracer(LIBRARY_NAME);
   }
 
