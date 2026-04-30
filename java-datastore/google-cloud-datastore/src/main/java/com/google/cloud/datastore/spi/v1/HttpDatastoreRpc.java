@@ -66,16 +66,9 @@ public class HttpDatastoreRpc implements DatastoreRpc {
     } else if (!removeScheme(com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST)
             .equals(removeScheme(normalizedHost))
         && !normalizedHost.isEmpty()) {
-      String fullUrl = normalizedHost;
-      if (fullUrl.charAt(fullUrl.length() - 1) != '/') {
-        fullUrl = fullUrl + '/';
-      }
-      fullUrl =
-          fullUrl
-              + com.google.datastore.v1.client.DatastoreFactory.VERSION
-              + "/projects/"
-              + options.getProjectId();
-      clientBuilder = clientBuilder.projectId(null).projectEndpoint(fullUrl);
+      // The projectEndpoint builder method was removed. Use host instead.
+      // DatastoreFactory.create will build the valid endpoint URL automatically.
+      clientBuilder = clientBuilder.host(removeScheme(normalizedHost));
     }
     client = com.google.datastore.v1.client.DatastoreFactory.get().create(clientBuilder.build());
   }

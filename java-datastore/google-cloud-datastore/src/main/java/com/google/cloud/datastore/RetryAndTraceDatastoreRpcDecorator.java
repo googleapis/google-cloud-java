@@ -63,7 +63,6 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
   private final RetrySettings retrySettings;
   private final DatastoreOptions datastoreOptions;
   private final DatastoreMetricsRecorder metricsRecorder;
-
   /**
    * This constructor is deprecated.
    *

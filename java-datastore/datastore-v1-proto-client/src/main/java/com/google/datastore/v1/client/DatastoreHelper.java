@@ -323,8 +323,23 @@ public final class DatastoreHelper {
     }
     String projectId = getProjectIdFromEnv();
     if (System.getenv(URL_OVERRIDE_ENV_VAR) != null) {
-      options.projectEndpoint(
-          String.format("%s/projects/%s", System.getenv(URL_OVERRIDE_ENV_VAR), projectId));
+      String urlOverride = System.getenv(URL_OVERRIDE_ENV_VAR);
+      options.projectId(projectId);
+      // The projectEndpoint builder method was removed. Use host or localHost instead.
+      // Since host and localHost methods don't accept a scheme, we strip it if present.
+      // We then check if it's a local host to use options.localHost(...) for the emulator,
+      // or options.host(...) for actual calls.
+      String host = urlOverride;
+      if (host.startsWith("http://")) {
+        host = host.substring("http://".length());
+      } else if (host.startsWith("https://")) {
+        host = host.substring("https://".length());
+      }
+      if (host.startsWith("localhost") || host.startsWith("127.0.0.1")) {
+        options.localHost(host);
+      } else {
+        options.host(host);
+      }
       return;
     }
     if (System.getenv(LOCAL_HOST_ENV_VAR) != null) {

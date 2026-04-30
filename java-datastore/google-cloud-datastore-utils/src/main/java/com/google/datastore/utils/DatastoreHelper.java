@@ -325,8 +325,7 @@ public final class DatastoreHelper {
     }
     String projectId = getProjectIdFromEnv();
     if (System.getenv(URL_OVERRIDE_ENV_VAR) != null) {
-      options.projectEndpoint(
-          String.format("%s/projects/%s", System.getenv(URL_OVERRIDE_ENV_VAR), projectId));
+      options.host(String.format("%s/projects/%s", System.getenv(URL_OVERRIDE_ENV_VAR), projectId));
       return;
     }
     if (System.getenv(LOCAL_HOST_ENV_VAR) != null) {
@@ -335,7 +334,6 @@ public final class DatastoreHelper {
       return;
     }
     options.projectId(projectId);
-    return;
   }
 
   /**
