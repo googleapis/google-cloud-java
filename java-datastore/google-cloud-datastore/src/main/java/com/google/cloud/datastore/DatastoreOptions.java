@@ -19,7 +19,6 @@ package com.google.cloud.datastore;
 import static com.google.cloud.datastore.Validator.validateNamespace;
 
 import com.google.api.core.BetaApi;
-import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -71,8 +70,8 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
   // This is a default max channel constant value set to handle the default initial channel
   // count and resize delta.
-  @ObsoleteApi("This constant is obsolete and will be removed in a future version")
-  public static final int MAX_CHANNEL_COUNT = 10;
+  // Note: "This constant is obsolete and will be removed in a future version"
+  @Deprecated public static final int MAX_CHANNEL_COUNT = 10;
 
   private transient TransportChannelProvider channelProvider = null;
 
