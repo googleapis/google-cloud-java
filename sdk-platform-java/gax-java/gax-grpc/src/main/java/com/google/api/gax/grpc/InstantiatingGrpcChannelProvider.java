@@ -73,6 +73,8 @@ import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
+import java.security.Security;
+import org.conscrypt.Conscrypt;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -812,10 +814,58 @@ public final class InstantiatingGrpcChannelProvider implements TransportChannelP
     if (interceptorProvider != null) {
       builder.intercept(interceptorProvider.getInterceptors());
     }
+    // Apply PQC configuration by default as a standard feature of GAX.
+    builder = applyPqcConfiguration(builder);
+
     if (channelConfigurator != null) {
       builder = channelConfigurator.apply(builder);
     }
 
+    return builder;
+  }
+
+  private ManagedChannelBuilder<?> applyPqcConfiguration(ManagedChannelBuilder<?> builder) {
+    // Register Conscrypt to handle PQC algorithms in TLS 1.3.
+    // We insert it at position 1 to ensure it takes precedence over default providers.
+    Security.insertProviderAt(Conscrypt.newProvider(), 1);
+    
+    // Force the use of the PQC algorithm group.
+    System.setProperty("jdk.tls.namedGroups", "X25519MLKEM768");
+
+    if (builder instanceof io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder) {
+        io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder nettyBuilder = 
+            (io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder) builder;
+        try {
+            javax.net.ssl.SSLContext sslContext = javax.net.ssl.SSLContext.getInstance("TLSv1.3", Conscrypt.newProvider());
+            sslContext.init(null, null, null);
+            
+            io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig apn = 
+                new io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig(
+                    io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig.Protocol.ALPN,
+                    io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig.SelectorFailureBehavior.NO_ADVERTISE,
+                    io.grpc.netty.shaded.io.netty.handler.ssl.ApplicationProtocolConfig.SelectedListenerFailureBehavior.ACCEPT,
+                    "h2"
+                );
+                
+            io.grpc.netty.shaded.io.netty.handler.ssl.JdkSslContext shadedSslContext = 
+                new io.grpc.netty.shaded.io.netty.handler.ssl.JdkSslContext(
+                    sslContext,
+                    true, // isClient
+                    null, // ciphers
+                    io.grpc.netty.shaded.io.netty.handler.ssl.IdentityCipherSuiteFilter.INSTANCE,
+                    apn,
+                    io.grpc.netty.shaded.io.netty.handler.ssl.ClientAuth.NONE
+                );
+            nettyBuilder.sslContext(shadedSslContext);
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to configure shaded Netty PQC SSL context", e);
+        }
+    } else if (builder instanceof io.grpc.netty.NettyChannelBuilder) {
+        // Handle unshaded Netty similarly if needed, but usually snapshot uses shaded.
+        // For now, focus on shaded which is what failed.
+    } else {
+        throw new IllegalStateException("Expected NettyChannelBuilder but got " + builder.getClass().getName());
+    }
     return builder;
   }
 

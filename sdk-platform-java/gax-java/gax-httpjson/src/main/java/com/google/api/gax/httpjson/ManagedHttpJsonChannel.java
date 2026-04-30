@@ -183,6 +183,16 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
     shutdown();
   }
 
+  private static HttpTransport createPqcTransport() {
+    try {
+      java.security.Security.insertProviderAt(org.conscrypt.Conscrypt.newProvider(), 1);
+      System.setProperty("jdk.tls.namedGroups", "X25519MLKEM768");
+    } catch (Throwable t) {
+      throw new RuntimeException("Failed to enable PQC transport", t);
+    }
+    return new NetHttpTransport();
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -229,7 +239,7 @@ public class ManagedHttpJsonChannel implements HttpJsonChannel, BackgroundResour
           executor,
           usingDefaultExecutor,
           endpoint,
-          httpTransport == null ? new NetHttpTransport() : httpTransport);
+          httpTransport == null ? createPqcTransport() : httpTransport);
     }
   }
 }

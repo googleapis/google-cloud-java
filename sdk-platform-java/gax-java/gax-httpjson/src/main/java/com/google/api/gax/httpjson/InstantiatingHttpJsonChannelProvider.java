@@ -185,6 +185,13 @@ public final class InstantiatingHttpJsonChannelProvider implements TransportChan
   }
 
   HttpTransport createHttpTransport() throws IOException, GeneralSecurityException {
+    try {
+      java.security.Security.insertProviderAt(org.conscrypt.Conscrypt.newProvider(), 1);
+      System.setProperty("jdk.tls.namedGroups", "X25519MLKEM768");
+    } catch (Throwable t) {
+      throw new RuntimeException("Failed to enable PQC transport", t);
+    }
+
     if (mtlsProvider == null) {
       return null;
     }
