@@ -33,7 +33,6 @@ import com.google.cloud.datastore.v1.DatastoreSettings;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.datastore.v1.client.DatastoreFactory;
-import io.opentelemetry.api.GlobalOpenTelemetry;
 import org.easymock.EasyMock;
 import org.junit.Assert;
 import org.junit.Before;
@@ -186,7 +185,8 @@ public class DatastoreOptionsTest {
   public void testOpenTelemetryOptionsDefaultInstance() {
     DatastoreOpenTelemetryOptions telemetryOptions =
         DatastoreOpenTelemetryOptions.newBuilder().build();
-    assertThat(telemetryOptions.getOpenTelemetry()).isSameInstanceAs(GlobalOpenTelemetry.get());
+    assertThat(telemetryOptions.getOpenTelemetry())
+        .isSameInstanceAs(io.opentelemetry.api.OpenTelemetry.noop());
   }
 
   @Test

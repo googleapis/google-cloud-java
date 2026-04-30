@@ -18,7 +18,6 @@ package com.google.cloud.datastore;
 
 import com.google.api.core.BetaApi;
 import com.google.common.base.Preconditions;
-import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import javax.annotation.Nonnull;
 
@@ -38,7 +37,7 @@ public class DatastoreOpenTelemetryOptions {
     this.exportBuiltinMetricsToGoogleCloudMonitoring =
         builder.exportBuiltinMetricsToGoogleCloudMonitoring;
     this.openTelemetry =
-        builder.openTelemetry == null ? io.opentelemetry.api.OpenTelemetry.noop() : builder.openTelemetry;
+        builder.openTelemetry == null ? OpenTelemetry.noop() : builder.openTelemetry;
   }
 
   /**

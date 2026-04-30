@@ -22,11 +22,9 @@ import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
 import com.google.cloud.datastore.DatastoreOptions;
-import com.google.cloud.datastore.telemetry.TraceUtil.Context;
-import com.google.cloud.datastore.telemetry.TraceUtil.Scope;
-import com.google.cloud.datastore.telemetry.TraceUtil.Span;
 import com.google.common.base.Throwables;
 import io.grpc.ManagedChannelBuilder;
+import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
@@ -52,8 +50,8 @@ public class EnabledTraceUtil implements TraceUtil {
   EnabledTraceUtil(DatastoreOptions datastoreOptions) {
     this.datastoreOptions = datastoreOptions;
     OpenTelemetry otel = datastoreOptions.getOpenTelemetryOptions().getOpenTelemetry();
-    if (otel.getTracerProvider() == io.opentelemetry.api.trace.TracerProvider.noop()) {
-      otel = io.opentelemetry.api.GlobalOpenTelemetry.get();
+    if (otel.getTracerProvider() == TracerProvider.noop()) {
+      otel = GlobalOpenTelemetry.get();
     }
     this.openTelemetry = otel;
     this.tracer = openTelemetry.getTracer(LIBRARY_NAME);
