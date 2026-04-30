@@ -348,7 +348,11 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     sendPostRequest("/reset");
   }
 
-  /** This method is obsolete. Use {@link #stopDuration(java.time.Duration)} instead */
+  /**
+   * This method is obsolete. Use {@link #stopDuration(java.time.Duration)} instead.
+   *
+   * @deprecated Use {@link #stopDuration(java.time.Duration)} instead.
+   */
   @Deprecated
   @Override
   public void stop(org.threeten.bp.Duration timeout)

@@ -52,7 +52,11 @@ public class ExecutionStats {
     return debugStats;
   }
 
-  /** This method is obsolete. Use {@link #getExecutionDurationJavaTime()} instead. */
+  /**
+   * This method is obsolete. Use {@link #getExecutionDurationJavaTime()} instead.
+   *
+   * @deprecated Use {@link #getExecutionDurationJavaTime()} instead.
+   */
   @Deprecated
   public org.threeten.bp.Duration getExecutionDuration() {
     return toThreetenDuration(getExecutionDurationJavaTime());

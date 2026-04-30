@@ -67,6 +67,8 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
    * This constructor is deprecated.
    *
    * <p>Prefer to create RetryAndTraceDatastoreRpcDecorator via the Builder
+   *
+   * @deprecated Prefer to create RetryAndTraceDatastoreRpcDecorator via the Builder
    */
   @Deprecated
   public RetryAndTraceDatastoreRpcDecorator(

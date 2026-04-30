@@ -325,17 +325,22 @@ public final class DatastoreHelper {
     if (System.getenv(URL_OVERRIDE_ENV_VAR) != null) {
       String urlOverride = System.getenv(URL_OVERRIDE_ENV_VAR);
       options.projectId(projectId);
-      // The projectEndpoint builder method was removed. Use host or localHost instead.
       // Since host and localHost methods don't accept a scheme, we strip it if present.
-      // We then check if it's a local host to use options.localHost(...) for the emulator,
-      // or options.host(...) for actual calls.
+      // We then check if it's an HTTP or HTTPS URL to use options.localHost(...) or
+      // options.host(...) accordingly. We use options.localHost(...) for all HTTP URLs
+      // (not just localhost or 127.0.0.1) because the emulator might be running on a
+      // different host in containerized or CI environments.
       String host = urlOverride;
-      if (host.startsWith("http://")) {
+      boolean isHttp = host.startsWith("http://");
+      if (isHttp) {
         host = host.substring("http://".length());
       } else if (host.startsWith("https://")) {
         host = host.substring("https://".length());
       }
-      if (host.startsWith("localhost") || host.startsWith("127.0.0.1")) {
+      if (host.endsWith("/")) {
+        host = host.substring(0, host.length() - 1);
+      }
+      if (isHttp) {
         options.localHost(host);
       } else {
         options.host(host);
