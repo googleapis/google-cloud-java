@@ -138,8 +138,7 @@ public class ITDatastoreClientSideMetrics {
 
   @After
   public void tearDown() throws Exception {
-    boolean isDatastoreClosed = false;
-    if (datastore != null && !isDatastoreClosed) {
+    if (datastore != null) {
       Key key = datastore.newKeyFactory().setKind(kind).newKey("metrics-it-entity");
       try {
         datastore.delete(key);

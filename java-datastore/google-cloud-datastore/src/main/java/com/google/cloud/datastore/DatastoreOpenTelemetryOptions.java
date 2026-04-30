@@ -37,7 +37,8 @@ public class DatastoreOpenTelemetryOptions {
     this.metricsEnabled = builder.metricsEnabled;
     this.exportBuiltinMetricsToGoogleCloudMonitoring =
         builder.exportBuiltinMetricsToGoogleCloudMonitoring;
-    this.openTelemetry = builder.openTelemetry;
+    this.openTelemetry =
+        builder.openTelemetry == null ? GlobalOpenTelemetry.get() : builder.openTelemetry;
   }
 
   /**
@@ -91,7 +92,7 @@ public class DatastoreOpenTelemetryOptions {
   /**
    * Returns the custom {@link OpenTelemetry} instance, if one was provided.
    *
-   * @return the custom {@link OpenTelemetry} instance, or {@code null} if none was provided.
+   * @return the custom {@link OpenTelemetry} instance.
    */
   @Nonnull
   public OpenTelemetry getOpenTelemetry() {
@@ -192,8 +193,9 @@ public class DatastoreOpenTelemetryOptions {
      * @return this builder instance.
      */
     @Nonnull
-    public DatastoreOpenTelemetryOptions.Builder setOpenTelemetry(OpenTelemetry openTelemetry) {
-      Preconditions.checkNotNull(openTelemetry, "Custom Otel Instance cannot be null");
+    public DatastoreOpenTelemetryOptions.Builder setOpenTelemetry(
+        @Nonnull OpenTelemetry openTelemetry) {
+      Preconditions.checkNotNull(openTelemetry, "Custom Otel instance cannot be null");
       this.openTelemetry = openTelemetry;
       return this;
     }
@@ -205,8 +207,6 @@ public class DatastoreOpenTelemetryOptions {
      */
     @Nonnull
     public DatastoreOpenTelemetryOptions build() {
-      // If no custom Otel was provided, fall back to using GlobalOpenTelemetry.
-      this.openTelemetry = openTelemetry == null ? GlobalOpenTelemetry.get() : openTelemetry;
       return new DatastoreOpenTelemetryOptions(this);
     }
   }
