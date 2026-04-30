@@ -232,7 +232,8 @@ final class BigQueryJdbcOAuthUtility {
 
     if (authType == AuthType.GOOGLE_SERVICE_ACCOUNT
         || authType == AuthType.GOOGLE_USER_ACCOUNT
-        || authType == AuthType.PRE_GENERATED_TOKEN) {
+        || authType == AuthType.PRE_GENERATED_TOKEN
+        || authType == AuthType.APPLICATION_DEFAULT_CREDENTIALS) {
       oauthProperties.put(
           BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_EMAIL_PROPERTY_NAME,
           ds.getOAuthSAImpersonationEmail());
@@ -284,8 +285,6 @@ final class BigQueryJdbcOAuthUtility {
             getPreGeneratedTokensCredentials(authProperties, overrideProperties, callerClassName);
         break;
       case APPLICATION_DEFAULT_CREDENTIALS:
-        // This auth method doesn't support service account impersonation
-
         credentials = getApplicationDefaultCredentials(callerClassName);
         break;
       case EXTERNAL_ACCOUNT_AUTH:
