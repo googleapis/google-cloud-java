@@ -16,28 +16,27 @@
 
 package com.google.analytics.data.v1alpha.samples;
 
-// [START analyticsdata_v1alpha_generated_AlphaAnalyticsData_SheetExportAudienceList_Audiencelistname_sync]
+// [START analyticsdata_v1alpha_generated_AlphaAnalyticsData_GetMetadata_String_sync]
 import com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient;
-import com.google.analytics.data.v1alpha.AudienceListName;
-import com.google.analytics.data.v1alpha.SheetExportAudienceListResponse;
+import com.google.analytics.data.v1alpha.Metadata;
+import com.google.analytics.data.v1alpha.MetadataName;
 
-public class SyncSheetExportAudienceListAudiencelistname {
+public class SyncGetMetadataString {
 
   public static void main(String[] args) throws Exception {
-    syncSheetExportAudienceListAudiencelistname();
+    syncGetMetadataString();
   }
 
-  public static void syncSheetExportAudienceListAudiencelistname() throws Exception {
+  public static void syncGetMetadataString() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-      AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
-      SheetExportAudienceListResponse response =
-          alphaAnalyticsDataClient.sheetExportAudienceList(name);
+      String name = MetadataName.of("[PROPERTY]").toString();
+      Metadata response = alphaAnalyticsDataClient.getMetadata(name);
     }
   }
 }
-// [END analyticsdata_v1alpha_generated_AlphaAnalyticsData_SheetExportAudienceList_Audiencelistname_sync]
+// [END analyticsdata_v1alpha_generated_AlphaAnalyticsData_GetMetadata_String_sync]

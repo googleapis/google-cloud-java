@@ -16,37 +16,27 @@
 
 package com.google.analytics.data.v1alpha.samples;
 
-// [START analyticsdata_v1alpha_generated_AlphaAnalyticsData_SheetExportAudienceList_async]
+// [START analyticsdata_v1alpha_generated_AlphaAnalyticsData_GetMetadata_Metadataname_sync]
 import com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient;
-import com.google.analytics.data.v1alpha.AudienceListName;
-import com.google.analytics.data.v1alpha.SheetExportAudienceListRequest;
-import com.google.analytics.data.v1alpha.SheetExportAudienceListResponse;
-import com.google.api.core.ApiFuture;
+import com.google.analytics.data.v1alpha.Metadata;
+import com.google.analytics.data.v1alpha.MetadataName;
 
-public class AsyncSheetExportAudienceList {
+public class SyncGetMetadataMetadataname {
 
   public static void main(String[] args) throws Exception {
-    asyncSheetExportAudienceList();
+    syncGetMetadataMetadataname();
   }
 
-  public static void asyncSheetExportAudienceList() throws Exception {
+  public static void syncGetMetadataMetadataname() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-      SheetExportAudienceListRequest request =
-          SheetExportAudienceListRequest.newBuilder()
-              .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
-              .setOffset(-1019779949)
-              .setLimit(102976443)
-              .build();
-      ApiFuture<SheetExportAudienceListResponse> future =
-          alphaAnalyticsDataClient.sheetExportAudienceListCallable().futureCall(request);
-      // Do something.
-      SheetExportAudienceListResponse response = future.get();
+      MetadataName name = MetadataName.of("[PROPERTY]");
+      Metadata response = alphaAnalyticsDataClient.getMetadata(name);
     }
   }
 }
-// [END analyticsdata_v1alpha_generated_AlphaAnalyticsData_SheetExportAudienceList_async]
+// [END analyticsdata_v1alpha_generated_AlphaAnalyticsData_GetMetadata_Metadataname_sync]

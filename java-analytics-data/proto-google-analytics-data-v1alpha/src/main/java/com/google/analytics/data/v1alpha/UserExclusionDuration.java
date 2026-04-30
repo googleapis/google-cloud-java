@@ -175,7 +175,7 @@ public enum UserExclusionDuration implements com.google.protobuf.ProtocolMessage
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto.getDescriptor()
         .getEnumTypes()
-        .get(1);
+        .get(2);
   }
 
   private static final UserExclusionDuration[] VALUES = values();

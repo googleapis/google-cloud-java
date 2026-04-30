@@ -16,28 +16,29 @@
 
 package com.google.analytics.data.v1alpha.samples;
 
-// [START analyticsdata_v1alpha_generated_AlphaAnalyticsData_SheetExportAudienceList_String_sync]
+// [START analyticsdata_v1alpha_generated_AlphaAnalyticsData_GetMetadata_sync]
 import com.google.analytics.data.v1alpha.AlphaAnalyticsDataClient;
-import com.google.analytics.data.v1alpha.AudienceListName;
-import com.google.analytics.data.v1alpha.SheetExportAudienceListResponse;
+import com.google.analytics.data.v1alpha.GetMetadataRequest;
+import com.google.analytics.data.v1alpha.Metadata;
+import com.google.analytics.data.v1alpha.MetadataName;
 
-public class SyncSheetExportAudienceListString {
+public class SyncGetMetadata {
 
   public static void main(String[] args) throws Exception {
-    syncSheetExportAudienceListString();
+    syncGetMetadata();
   }
 
-  public static void syncSheetExportAudienceListString() throws Exception {
+  public static void syncGetMetadata() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-      String name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString();
-      SheetExportAudienceListResponse response =
-          alphaAnalyticsDataClient.sheetExportAudienceList(name);
+      GetMetadataRequest request =
+          GetMetadataRequest.newBuilder().setName(MetadataName.of("[PROPERTY]").toString()).build();
+      Metadata response = alphaAnalyticsDataClient.getMetadata(request);
     }
   }
 }
-// [END analyticsdata_v1alpha_generated_AlphaAnalyticsData_SheetExportAudienceList_String_sync]
+// [END analyticsdata_v1alpha_generated_AlphaAnalyticsData_GetMetadata_sync]

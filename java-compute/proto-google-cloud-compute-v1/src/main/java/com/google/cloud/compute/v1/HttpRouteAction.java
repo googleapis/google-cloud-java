@@ -70,6 +70,68 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
   }
 
   private int bitField0_;
+  public static final int CACHE_POLICY_FIELD_NUMBER = 457366671;
+  private com.google.cloud.compute.v1.CachePolicy cachePolicy_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the cache policy configuration for matched traffic. Available
+   * only for Global `EXTERNAL_MANAGED` load balancer schemes. At least one
+   * property must be specified. This policy cannot be specified if any target
+   * backend has Identity-Aware Proxy enabled.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.CachePolicy cache_policy = 457366671;</code>
+   *
+   * @return Whether the cachePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasCachePolicy() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the cache policy configuration for matched traffic. Available
+   * only for Global `EXTERNAL_MANAGED` load balancer schemes. At least one
+   * property must be specified. This policy cannot be specified if any target
+   * backend has Identity-Aware Proxy enabled.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.CachePolicy cache_policy = 457366671;</code>
+   *
+   * @return The cachePolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.CachePolicy getCachePolicy() {
+    return cachePolicy_ == null
+        ? com.google.cloud.compute.v1.CachePolicy.getDefaultInstance()
+        : cachePolicy_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the cache policy configuration for matched traffic. Available
+   * only for Global `EXTERNAL_MANAGED` load balancer schemes. At least one
+   * property must be specified. This policy cannot be specified if any target
+   * backend has Identity-Aware Proxy enabled.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.CachePolicy cache_policy = 457366671;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.CachePolicyOrBuilder getCachePolicyOrBuilder() {
+    return cachePolicy_ == null
+        ? com.google.cloud.compute.v1.CachePolicy.getDefaultInstance()
+        : cachePolicy_;
+  }
+
   public static final int CORS_POLICY_FIELD_NUMBER = 398943748;
   private com.google.cloud.compute.v1.CorsPolicy corsPolicy_;
 
@@ -91,7 +153,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasCorsPolicy() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -167,7 +229,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasFaultInjectionPolicy() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -258,7 +320,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasMaxStreamDuration() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -340,7 +402,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRequestMirrorPolicy() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -408,7 +470,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasRetryPolicy() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -470,7 +532,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasTimeout() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -544,7 +606,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
    */
   @java.lang.Override
   public boolean hasUrlRewrite() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -743,29 +805,32 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(56799913, getRetryPolicy());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(61428376, getMaxStreamDuration());
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(220196866, getRequestMirrorPolicy());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(273333948, getUrlRewrite());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(296701281, getTimeout());
     }
     for (int i = 0; i < weightedBackendServices_.size(); i++) {
       output.writeMessage(337028049, weightedBackendServices_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(398943748, getCorsPolicy());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(412781079, getFaultInjectionPolicy());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(457366671, getCachePolicy());
     }
     getUnknownFields().writeTo(output);
   }
@@ -776,23 +841,23 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(56799913, getRetryPolicy());
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              61428376, getMaxStreamDuration());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
+              61428376, getMaxStreamDuration());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
               220196866, getRequestMirrorPolicy());
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(273333948, getUrlRewrite());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(296701281, getTimeout());
     }
     for (int i = 0; i < weightedBackendServices_.size(); i++) {
@@ -800,13 +865,16 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               337028049, weightedBackendServices_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(398943748, getCorsPolicy());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               412781079, getFaultInjectionPolicy());
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(457366671, getCachePolicy());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -824,6 +892,10 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
     com.google.cloud.compute.v1.HttpRouteAction other =
         (com.google.cloud.compute.v1.HttpRouteAction) obj;
 
+    if (hasCachePolicy() != other.hasCachePolicy()) return false;
+    if (hasCachePolicy()) {
+      if (!getCachePolicy().equals(other.getCachePolicy())) return false;
+    }
     if (hasCorsPolicy() != other.hasCorsPolicy()) return false;
     if (hasCorsPolicy()) {
       if (!getCorsPolicy().equals(other.getCorsPolicy())) return false;
@@ -865,6 +937,10 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasCachePolicy()) {
+      hash = (37 * hash) + CACHE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getCachePolicy().hashCode();
+    }
     if (hasCorsPolicy()) {
       hash = (37 * hash) + CORS_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getCorsPolicy().hashCode();
@@ -1037,6 +1113,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetCachePolicyFieldBuilder();
         internalGetCorsPolicyFieldBuilder();
         internalGetFaultInjectionPolicyFieldBuilder();
         internalGetMaxStreamDurationFieldBuilder();
@@ -1052,6 +1129,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      cachePolicy_ = null;
+      if (cachePolicyBuilder_ != null) {
+        cachePolicyBuilder_.dispose();
+        cachePolicyBuilder_ = null;
+      }
       corsPolicy_ = null;
       if (corsPolicyBuilder_ != null) {
         corsPolicyBuilder_.dispose();
@@ -1093,7 +1175,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         weightedBackendServices_ = null;
         weightedBackendServicesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
 
@@ -1131,10 +1213,10 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.HttpRouteAction result) {
       if (weightedBackendServicesBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           weightedBackendServices_ =
               java.util.Collections.unmodifiableList(weightedBackendServices_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.weightedBackendServices_ = weightedBackendServices_;
       } else {
@@ -1146,42 +1228,47 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.corsPolicy_ = corsPolicyBuilder_ == null ? corsPolicy_ : corsPolicyBuilder_.build();
+        result.cachePolicy_ =
+            cachePolicyBuilder_ == null ? cachePolicy_ : cachePolicyBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.corsPolicy_ = corsPolicyBuilder_ == null ? corsPolicy_ : corsPolicyBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.faultInjectionPolicy_ =
             faultInjectionPolicyBuilder_ == null
                 ? faultInjectionPolicy_
                 : faultInjectionPolicyBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.maxStreamDuration_ =
             maxStreamDurationBuilder_ == null
                 ? maxStreamDuration_
                 : maxStreamDurationBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.requestMirrorPolicy_ =
             requestMirrorPolicyBuilder_ == null
                 ? requestMirrorPolicy_
                 : requestMirrorPolicyBuilder_.build();
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.retryPolicy_ =
-            retryPolicyBuilder_ == null ? retryPolicy_ : retryPolicyBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
+        result.retryPolicy_ =
+            retryPolicyBuilder_ == null ? retryPolicy_ : retryPolicyBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.urlRewrite_ = urlRewriteBuilder_ == null ? urlRewrite_ : urlRewriteBuilder_.build();
+        result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
         to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.urlRewrite_ = urlRewriteBuilder_ == null ? urlRewrite_ : urlRewriteBuilder_.build();
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1198,6 +1285,9 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.cloud.compute.v1.HttpRouteAction other) {
       if (other == com.google.cloud.compute.v1.HttpRouteAction.getDefaultInstance()) return this;
+      if (other.hasCachePolicy()) {
+        mergeCachePolicy(other.getCachePolicy());
+      }
       if (other.hasCorsPolicy()) {
         mergeCorsPolicy(other.getCorsPolicy());
       }
@@ -1223,7 +1313,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         if (!other.weightedBackendServices_.isEmpty()) {
           if (weightedBackendServices_.isEmpty()) {
             weightedBackendServices_ = other.weightedBackendServices_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureWeightedBackendServicesIsMutable();
             weightedBackendServices_.addAll(other.weightedBackendServices_);
@@ -1236,7 +1326,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
             weightedBackendServicesBuilder_.dispose();
             weightedBackendServicesBuilder_ = null;
             weightedBackendServices_ = other.weightedBackendServices_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
             weightedBackendServicesBuilder_ =
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
                     ? internalGetWeightedBackendServicesFieldBuilder()
@@ -1276,34 +1366,34 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetRetryPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 454399306
             case 491427010:
               {
                 input.readMessage(
                     internalGetMaxStreamDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 491427010
             case 1761574930:
               {
                 input.readMessage(
                     internalGetRequestMirrorPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1761574930
             case -2108295710:
               {
                 input.readMessage(
                     internalGetUrlRewriteFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -2108295710
             case -1921357046:
               {
                 input.readMessage(internalGetTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case -1921357046
             case -1598742902:
@@ -1324,16 +1414,23 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
               {
                 input.readMessage(
                     internalGetCorsPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case -1103417310
             case -992718662:
               {
                 input.readMessage(
                     internalGetFaultInjectionPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -992718662
+            case -636033926:
+              {
+                input.readMessage(
+                    internalGetCachePolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case -636033926
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1352,6 +1449,227 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
+
+    private com.google.cloud.compute.v1.CachePolicy cachePolicy_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.CachePolicy,
+            com.google.cloud.compute.v1.CachePolicy.Builder,
+            com.google.cloud.compute.v1.CachePolicyOrBuilder>
+        cachePolicyBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the cache policy configuration for matched traffic. Available
+     * only for Global `EXTERNAL_MANAGED` load balancer schemes. At least one
+     * property must be specified. This policy cannot be specified if any target
+     * backend has Identity-Aware Proxy enabled.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.CachePolicy cache_policy = 457366671;</code>
+     *
+     * @return Whether the cachePolicy field is set.
+     */
+    public boolean hasCachePolicy() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the cache policy configuration for matched traffic. Available
+     * only for Global `EXTERNAL_MANAGED` load balancer schemes. At least one
+     * property must be specified. This policy cannot be specified if any target
+     * backend has Identity-Aware Proxy enabled.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.CachePolicy cache_policy = 457366671;</code>
+     *
+     * @return The cachePolicy.
+     */
+    public com.google.cloud.compute.v1.CachePolicy getCachePolicy() {
+      if (cachePolicyBuilder_ == null) {
+        return cachePolicy_ == null
+            ? com.google.cloud.compute.v1.CachePolicy.getDefaultInstance()
+            : cachePolicy_;
+      } else {
+        return cachePolicyBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the cache policy configuration for matched traffic. Available
+     * only for Global `EXTERNAL_MANAGED` load balancer schemes. At least one
+     * property must be specified. This policy cannot be specified if any target
+     * backend has Identity-Aware Proxy enabled.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.CachePolicy cache_policy = 457366671;</code>
+     */
+    public Builder setCachePolicy(com.google.cloud.compute.v1.CachePolicy value) {
+      if (cachePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cachePolicy_ = value;
+      } else {
+        cachePolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the cache policy configuration for matched traffic. Available
+     * only for Global `EXTERNAL_MANAGED` load balancer schemes. At least one
+     * property must be specified. This policy cannot be specified if any target
+     * backend has Identity-Aware Proxy enabled.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.CachePolicy cache_policy = 457366671;</code>
+     */
+    public Builder setCachePolicy(com.google.cloud.compute.v1.CachePolicy.Builder builderForValue) {
+      if (cachePolicyBuilder_ == null) {
+        cachePolicy_ = builderForValue.build();
+      } else {
+        cachePolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the cache policy configuration for matched traffic. Available
+     * only for Global `EXTERNAL_MANAGED` load balancer schemes. At least one
+     * property must be specified. This policy cannot be specified if any target
+     * backend has Identity-Aware Proxy enabled.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.CachePolicy cache_policy = 457366671;</code>
+     */
+    public Builder mergeCachePolicy(com.google.cloud.compute.v1.CachePolicy value) {
+      if (cachePolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && cachePolicy_ != null
+            && cachePolicy_ != com.google.cloud.compute.v1.CachePolicy.getDefaultInstance()) {
+          getCachePolicyBuilder().mergeFrom(value);
+        } else {
+          cachePolicy_ = value;
+        }
+      } else {
+        cachePolicyBuilder_.mergeFrom(value);
+      }
+      if (cachePolicy_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the cache policy configuration for matched traffic. Available
+     * only for Global `EXTERNAL_MANAGED` load balancer schemes. At least one
+     * property must be specified. This policy cannot be specified if any target
+     * backend has Identity-Aware Proxy enabled.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.CachePolicy cache_policy = 457366671;</code>
+     */
+    public Builder clearCachePolicy() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      cachePolicy_ = null;
+      if (cachePolicyBuilder_ != null) {
+        cachePolicyBuilder_.dispose();
+        cachePolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the cache policy configuration for matched traffic. Available
+     * only for Global `EXTERNAL_MANAGED` load balancer schemes. At least one
+     * property must be specified. This policy cannot be specified if any target
+     * backend has Identity-Aware Proxy enabled.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.CachePolicy cache_policy = 457366671;</code>
+     */
+    public com.google.cloud.compute.v1.CachePolicy.Builder getCachePolicyBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return internalGetCachePolicyFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the cache policy configuration for matched traffic. Available
+     * only for Global `EXTERNAL_MANAGED` load balancer schemes. At least one
+     * property must be specified. This policy cannot be specified if any target
+     * backend has Identity-Aware Proxy enabled.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.CachePolicy cache_policy = 457366671;</code>
+     */
+    public com.google.cloud.compute.v1.CachePolicyOrBuilder getCachePolicyOrBuilder() {
+      if (cachePolicyBuilder_ != null) {
+        return cachePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return cachePolicy_ == null
+            ? com.google.cloud.compute.v1.CachePolicy.getDefaultInstance()
+            : cachePolicy_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the cache policy configuration for matched traffic. Available
+     * only for Global `EXTERNAL_MANAGED` load balancer schemes. At least one
+     * property must be specified. This policy cannot be specified if any target
+     * backend has Identity-Aware Proxy enabled.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.CachePolicy cache_policy = 457366671;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.CachePolicy,
+            com.google.cloud.compute.v1.CachePolicy.Builder,
+            com.google.cloud.compute.v1.CachePolicyOrBuilder>
+        internalGetCachePolicyFieldBuilder() {
+      if (cachePolicyBuilder_ == null) {
+        cachePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.CachePolicy,
+                com.google.cloud.compute.v1.CachePolicy.Builder,
+                com.google.cloud.compute.v1.CachePolicyOrBuilder>(
+                getCachePolicy(), getParentForChildren(), isClean());
+        cachePolicy_ = null;
+      }
+      return cachePolicyBuilder_;
+    }
 
     private com.google.cloud.compute.v1.CorsPolicy corsPolicy_;
     private com.google.protobuf.SingleFieldBuilder<
@@ -1377,7 +1695,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * @return Whether the corsPolicy field is set.
      */
     public boolean hasCorsPolicy() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -1429,7 +1747,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         corsPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1454,7 +1772,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         corsPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1475,7 +1793,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeCorsPolicy(com.google.cloud.compute.v1.CorsPolicy value) {
       if (corsPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && corsPolicy_ != null
             && corsPolicy_ != com.google.cloud.compute.v1.CorsPolicy.getDefaultInstance()) {
           getCorsPolicyBuilder().mergeFrom(value);
@@ -1486,7 +1804,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         corsPolicyBuilder_.mergeFrom(value);
       }
       if (corsPolicy_ != null) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -1507,7 +1825,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
      */
     public Builder clearCorsPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       corsPolicy_ = null;
       if (corsPolicyBuilder_ != null) {
         corsPolicyBuilder_.dispose();
@@ -1532,7 +1850,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
      */
     public com.google.cloud.compute.v1.CorsPolicy.Builder getCorsPolicyBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return internalGetCorsPolicyFieldBuilder().getBuilder();
     }
@@ -1625,7 +1943,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * @return Whether the faultInjectionPolicy field is set.
      */
     public boolean hasFaultInjectionPolicy() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -1695,7 +2013,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         faultInjectionPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1730,7 +2048,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         faultInjectionPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1760,7 +2078,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeFaultInjectionPolicy(com.google.cloud.compute.v1.HttpFaultInjection value) {
       if (faultInjectionPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && faultInjectionPolicy_ != null
             && faultInjectionPolicy_
                 != com.google.cloud.compute.v1.HttpFaultInjection.getDefaultInstance()) {
@@ -1772,7 +2090,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         faultInjectionPolicyBuilder_.mergeFrom(value);
       }
       if (faultInjectionPolicy_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -1802,7 +2120,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearFaultInjectionPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       faultInjectionPolicy_ = null;
       if (faultInjectionPolicyBuilder_ != null) {
         faultInjectionPolicyBuilder_.dispose();
@@ -1836,7 +2154,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.compute.v1.HttpFaultInjection.Builder getFaultInjectionPolicyBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return internalGetFaultInjectionPolicyFieldBuilder().getBuilder();
     }
@@ -1945,7 +2263,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * @return Whether the maxStreamDuration field is set.
      */
     public boolean hasMaxStreamDuration() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -2009,7 +2327,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         maxStreamDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2041,7 +2359,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         maxStreamDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2068,7 +2386,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeMaxStreamDuration(com.google.cloud.compute.v1.Duration value) {
       if (maxStreamDurationBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && maxStreamDuration_ != null
             && maxStreamDuration_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           getMaxStreamDurationBuilder().mergeFrom(value);
@@ -2079,7 +2397,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         maxStreamDurationBuilder_.mergeFrom(value);
       }
       if (maxStreamDuration_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -2106,7 +2424,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      */
     public Builder clearMaxStreamDuration() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       maxStreamDuration_ = null;
       if (maxStreamDurationBuilder_ != null) {
         maxStreamDurationBuilder_.dispose();
@@ -2137,7 +2455,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getMaxStreamDurationBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return internalGetMaxStreamDurationFieldBuilder().getBuilder();
     }
@@ -2236,7 +2554,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * @return Whether the requestMirrorPolicy field is set.
      */
     public boolean hasRequestMirrorPolicy() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -2294,7 +2612,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         requestMirrorPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2323,7 +2641,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         requestMirrorPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2347,7 +2665,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRequestMirrorPolicy(com.google.cloud.compute.v1.RequestMirrorPolicy value) {
       if (requestMirrorPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && requestMirrorPolicy_ != null
             && requestMirrorPolicy_
                 != com.google.cloud.compute.v1.RequestMirrorPolicy.getDefaultInstance()) {
@@ -2359,7 +2677,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         requestMirrorPolicyBuilder_.mergeFrom(value);
       }
       if (requestMirrorPolicy_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -2383,7 +2701,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearRequestMirrorPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       requestMirrorPolicy_ = null;
       if (requestMirrorPolicyBuilder_ != null) {
         requestMirrorPolicyBuilder_.dispose();
@@ -2411,7 +2729,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public com.google.cloud.compute.v1.RequestMirrorPolicy.Builder getRequestMirrorPolicyBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return internalGetRequestMirrorPolicyFieldBuilder().getBuilder();
     }
@@ -2497,7 +2815,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * @return Whether the retryPolicy field is set.
      */
     public boolean hasRetryPolicy() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -2539,7 +2857,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         retryPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2560,7 +2878,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         retryPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2576,7 +2894,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeRetryPolicy(com.google.cloud.compute.v1.HttpRetryPolicy value) {
       if (retryPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && retryPolicy_ != null
             && retryPolicy_ != com.google.cloud.compute.v1.HttpRetryPolicy.getDefaultInstance()) {
           getRetryPolicyBuilder().mergeFrom(value);
@@ -2587,7 +2905,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         retryPolicyBuilder_.mergeFrom(value);
       }
       if (retryPolicy_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -2603,7 +2921,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.HttpRetryPolicy retry_policy = 56799913;</code>
      */
     public Builder clearRetryPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       retryPolicy_ = null;
       if (retryPolicyBuilder_ != null) {
         retryPolicyBuilder_.dispose();
@@ -2623,7 +2941,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.HttpRetryPolicy retry_policy = 56799913;</code>
      */
     public com.google.cloud.compute.v1.HttpRetryPolicy.Builder getRetryPolicyBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return internalGetRetryPolicyFieldBuilder().getBuilder();
     }
@@ -2701,7 +3019,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -2761,7 +3079,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         timeoutBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2790,7 +3108,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2815,7 +3133,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeTimeout(com.google.cloud.compute.v1.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && timeout_ != null
             && timeout_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           getTimeoutBuilder().mergeFrom(value);
@@ -2826,7 +3144,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         timeoutBuilder_.mergeFrom(value);
       }
       if (timeout_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2851,7 +3169,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.Duration timeout = 296701281;</code>
      */
     public Builder clearTimeout() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       timeout_ = null;
       if (timeoutBuilder_ != null) {
         timeoutBuilder_.dispose();
@@ -2880,7 +3198,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.Duration timeout = 296701281;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getTimeoutBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetTimeoutFieldBuilder().getBuilder();
     }
@@ -2974,7 +3292,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * @return Whether the urlRewrite field is set.
      */
     public boolean hasUrlRewrite() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -3030,7 +3348,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         urlRewriteBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3057,7 +3375,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
       } else {
         urlRewriteBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3080,7 +3398,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      */
     public Builder mergeUrlRewrite(com.google.cloud.compute.v1.UrlRewrite value) {
       if (urlRewriteBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && urlRewrite_ != null
             && urlRewrite_ != com.google.cloud.compute.v1.UrlRewrite.getDefaultInstance()) {
           getUrlRewriteBuilder().mergeFrom(value);
@@ -3091,7 +3409,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         urlRewriteBuilder_.mergeFrom(value);
       }
       if (urlRewrite_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -3114,7 +3432,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
      */
     public Builder clearUrlRewrite() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       urlRewrite_ = null;
       if (urlRewriteBuilder_ != null) {
         urlRewriteBuilder_.dispose();
@@ -3141,7 +3459,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
      * <code>optional .google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
      */
     public com.google.cloud.compute.v1.UrlRewrite.Builder getUrlRewriteBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetUrlRewriteFieldBuilder().getBuilder();
     }
@@ -3209,11 +3527,11 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
         weightedBackendServices_ = java.util.Collections.emptyList();
 
     private void ensureWeightedBackendServicesIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         weightedBackendServices_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.WeightedBackendService>(
                 weightedBackendServices_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -3565,7 +3883,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
     public Builder clearWeightedBackendServices() {
       if (weightedBackendServicesBuilder_ == null) {
         weightedBackendServices_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         weightedBackendServicesBuilder_.clear();
@@ -3777,7 +4095,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessage
                 com.google.cloud.compute.v1.WeightedBackendService.Builder,
                 com.google.cloud.compute.v1.WeightedBackendServiceOrBuilder>(
                 weightedBackendServices_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         weightedBackendServices_ = null;
