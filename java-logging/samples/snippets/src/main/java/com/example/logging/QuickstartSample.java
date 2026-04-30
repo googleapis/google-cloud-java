@@ -26,19 +26,22 @@ import com.google.cloud.logging.Severity;
 import java.util.Collections;
 
 /**
- * This sample demonstrates writing logs using the Cloud Logging API. The library also offers a
- * java.util.logging Handler `com.google.cloud.logging.LoggingHandler` Logback integration is also
- * available :
- * https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-clients/google-cloud-contrib/google-cloud-logging-logback
- * Using the java.util.logging handler / Logback appender should be preferred to using the API
- * directly.
+ * This sample demonstrates writing logs directly with the Cloud Logging API.
+ *
+ * <p>Authenticate by running `gcloud auth application-default login`, by setting the
+ * GOOGLE_APPLICATION_CREDENTIALS environment variable to a service account key path, or by running
+ * this sample on Google Cloud where Application Default Credentials are available automatically.
+ *
+ * <p>For production applications, prefer using a standard logging framework with Cloud Logging
+ * integration, such as Logback with https://github.com/googleapis/java-logging-logback. If you need
+ * more customizable LogEntry fields, see the WriteLogEntry sample.
  */
 public class QuickstartSample {
 
   /** Expects a new or existing Cloud log name as the first argument. */
   public static void main(String... args) throws Exception {
     // The name of the log to write to
-    String logName = args[0]; // "my-log";
+    String logName = args.length > 0 ? args[0] : "my-log";
     String textPayload = "Hello, world!";
 
     // Instantiates a client
