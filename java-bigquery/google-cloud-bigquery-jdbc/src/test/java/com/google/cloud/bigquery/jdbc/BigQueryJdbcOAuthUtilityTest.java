@@ -395,15 +395,11 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
 
   @Test
   public void testGetServiceAccountImpersonatedCredentialsForADC() throws Exception {
-    java.nio.file.Path tempAdcFile = createTempAdcFile();
-    String originalEnv = System.getenv("GOOGLE_APPLICATION_CREDENTIALS");
+    GoogleCredentials dummySourceCredentials = GoogleCredentials.newBuilder().build();
 
-    try {
-      if (originalEnv == null) {
-        setEnvironmentVariable(
-            "GOOGLE_APPLICATION_CREDENTIALS", tempAdcFile.toAbsolutePath().toString());
-        clearDefaultCredentialsCache();
-      }
+    try (org.mockito.MockedStatic<GoogleCredentials> mockedCreds =
+        org.mockito.Mockito.mockStatic(GoogleCredentials.class)) {
+      mockedCreds.when(GoogleCredentials::getApplicationDefault).thenReturn(dummySourceCredentials);
 
       Map<String, String> authProperties =
           BigQueryJdbcOAuthUtility.parseOAuthProperties(
@@ -418,11 +414,6 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
               authProperties, java.util.Collections.EMPTY_MAP, false, null);
 
       assertThat(credentials).isInstanceOf(ImpersonatedCredentials.class);
-    } finally {
-      if (originalEnv == null) {
-        removeEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS");
-        clearDefaultCredentialsCache();
-      }
     }
   }
 
@@ -479,57 +470,5 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
     } catch (Exception e) {
       assertTrue(false);
     }
-  }
-
-  private static java.nio.file.Path createTempAdcFile() throws Exception {
-    String dummyJson =
-        "{\n"
-            + "  \"type\": \"service_account\",\n"
-            + "  \"project_id\": \"dummy-project\",\n"
-            + "  \"private_key_id\": \"dummy-key-id\",\n"
-            + "  \"private_key\": \""
-            + fake_pkcs8_key.replace("\n", "\\n")
-            + "\",\n"
-            + "  \"client_email\": \"dummy@email.com\",\n"
-            + "  \"client_id\": \"dummy-client-id\",\n"
-            + "  \"auth_uri\": \"https://accounts.google.com/o/oauth2/auth\",\n"
-            + "  \"token_uri\": \"https://oauth2.googleapis.com/token\"\n"
-            + "}";
-
-    java.nio.file.Path tempFile = java.nio.file.Files.createTempFile("adc", ".json");
-    java.nio.file.Files.write(tempFile, dummyJson.getBytes());
-    tempFile.toFile().deleteOnExit();
-    return tempFile;
-  }
-
-  private static void setEnvironmentVariable(String key, String value) throws Exception {
-    Class<?> processEnvironmentClass = Class.forName("java.lang.ProcessEnvironment");
-    java.lang.reflect.Field theEnvironmentField =
-        processEnvironmentClass.getDeclaredField("theEnvironment");
-    theEnvironmentField.setAccessible(true);
-    java.util.Map<String, String> env =
-        (java.util.Map<String, String>) theEnvironmentField.get(null);
-    env.put(key, value);
-  }
-
-  private static void removeEnvironmentVariable(String key) throws Exception {
-    Class<?> processEnvironmentClass = Class.forName("java.lang.ProcessEnvironment");
-    java.lang.reflect.Field theEnvironmentField =
-        processEnvironmentClass.getDeclaredField("theEnvironment");
-    theEnvironmentField.setAccessible(true);
-    java.util.Map<String, String> env =
-        (java.util.Map<String, String>) theEnvironmentField.get(null);
-    env.remove(key);
-  }
-
-  private static void clearDefaultCredentialsCache() throws Exception {
-    Class<?> providerClass = Class.forName("com.google.auth.oauth2.DefaultCredentialsProvider");
-    java.lang.reflect.Field defaultField = providerClass.getDeclaredField("DEFAULT");
-    defaultField.setAccessible(true);
-    Object provider = defaultField.get(null);
-
-    java.lang.reflect.Field cachedCredsField = providerClass.getDeclaredField("cachedCredentials");
-    cachedCredsField.setAccessible(true);
-    cachedCredsField.set(provider, null);
   }
 }
