@@ -33,6 +33,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
+import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ResourceNameExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -54,6 +55,7 @@ public class TracedUnaryCallable<RequestT, ResponseT> extends UnaryCallable<Requ
   @Nullable private final ApiTracerContext apiTracerContext;
   @Nullable private final ResourceNameExtractor<RequestT> resourceNameExtractor;
 
+  @ObsoleteApi("Use constructor with ApiTracerContext instead")
   public TracedUnaryCallable(
       UnaryCallable<RequestT, ResponseT> innerCallable,
       ApiTracerFactory tracerFactory,
@@ -76,6 +78,13 @@ public class TracedUnaryCallable<RequestT, ResponseT> extends UnaryCallable<Requ
         apiTracerContext.toBuilder().setOperationType(OperationType.Unary).build();
     this.spanName = SpanName.of(apiTracerContext);
     this.resourceNameExtractor = resourceNameExtractor;
+  }
+
+  TracedUnaryCallable(
+      UnaryCallable<RequestT, ResponseT> innerCallable,
+      ApiTracerFactory tracerFactory,
+      ApiTracerContext apiTracerContext) {
+    this(innerCallable, tracerFactory, apiTracerContext, null);
   }
 
   /**
