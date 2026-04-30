@@ -21,14 +21,7 @@ import com.google.cloud.biglake.hive.v1beta.HiveCatalog;
 import com.google.cloud.biglake.hive.v1beta.HiveMetastoreServiceClient;
 import com.google.cloud.biglake.hive.v1beta.HiveMetastoreServiceSettings;
 import com.google.cloud.biglake.hive.v1beta.ListHiveCatalogsRequest;
-import com.google.cloud.biglake.v1.CreateIcebergCatalogRequest;
-import com.google.cloud.biglake.v1.IcebergCatalog;
-import com.google.cloud.biglake.v1.IcebergCatalogServiceClient;
-import com.google.cloud.biglake.v1.IcebergCatalogServiceSettings;
-import com.google.cloud.biglake.v1.ListIcebergCatalogsRequest;
 import java.io.IOException;
-import com.google.api.gax.rpc.ApiException;
-import com.google.api.gax.rpc.StatusCode;
 import org.junit.Test;
 
 public class BiglakeDemoTest {
@@ -37,32 +30,16 @@ public class BiglakeDemoTest {
   public void testBiglakeRequests() throws Exception {
     String projectId = System.getenv("GOOGLE_CLOUD_PROJECT");
     if (projectId == null || projectId.isEmpty()) {
-      System.err.println("Warning: GOOGLE_CLOUD_PROJECT environment variable not defined. Skipping demo requests.");
+      System.err.println(
+          "Warning: GOOGLE_CLOUD_PROJECT environment variable not defined. Skipping demo requests.");
       return;
     }
 
     System.out.println("Starting BigLake Client library demo execution...");
     System.out.println("Target Project ID: " + projectId);
 
-    try {
-      runHiveMetastoreDemo(projectId);
-    } catch (ApiException e) {
-      if (e.getStatusCode().getCode() == StatusCode.Code.UNIMPLEMENTED || e.getStatusCode().getCode() == StatusCode.Code.PERMISSION_DENIED) {
-        System.out.println("Target API returned expected status: " + e.getStatusCode().getCode() + " (" + e.getMessage() + ")");
-      } else {
-        throw e;
-      }
-    }
-
-    try {
-      runIcebergCatalogDemo(projectId);
-    } catch (ApiException e) {
-      if (e.getStatusCode().getCode() == StatusCode.Code.UNIMPLEMENTED || e.getStatusCode().getCode() == StatusCode.Code.PERMISSION_DENIED) {
-        System.out.println("Target API returned expected status: " + e.getStatusCode().getCode() + " (" + e.getMessage() + ")");
-      } else {
-        throw e;
-      }
-    }
+    runHiveMetastoreDemo(projectId);
+    runIcebergCatalogDemo(projectId);
   }
 
   private void runHiveMetastoreDemo(String projectId) throws IOException {
@@ -72,18 +49,16 @@ public class BiglakeDemoTest {
 
     try (HiveMetastoreServiceClient client = HiveMetastoreServiceClient.create(settings)) {
       String parent = String.format("projects/%s", projectId);
-      
+
       // Call ListHiveCatalogsRequest verifying corrected query parameters
       System.out.println("Requesting ListHiveCatalogs...");
       ListHiveCatalogsRequest listRequest =
-          ListHiveCatalogsRequest.newBuilder()
-              .setParent(parent)
-              .setPageSize(10)
-              .build();
-      
-      client.listHiveCatalogs(listRequest).iterateAll().forEach(
-          catalog -> System.out.println(" -> Found Catalog: " + catalog.getName())
-      );
+          ListHiveCatalogsRequest.newBuilder().setParent(parent).setPageSize(10).build();
+
+      client
+          .listHiveCatalogs(listRequest)
+          .iterateAll()
+          .forEach(catalog -> System.out.println(" -> Found Catalog: " + catalog.getName()));
 
       // Call CreateHiveCatalogRequest verifying query parameter primary_location serialization
       System.out.println("Requesting CreateHiveCatalog (dry-run / testing)...");
@@ -95,12 +70,8 @@ public class BiglakeDemoTest {
               .setHiveCatalog(HiveCatalog.newBuilder().build())
               .build();
 
-      try {
-        HiveCatalog response = client.createHiveCatalog(createRequest);
-        System.out.println(" -> Successfully Created Catalog: " + response.getName());
-      } catch (Exception e) {
-        System.out.println(" -> Create catalog call failed: " + e.getMessage());
-      }
+      HiveCatalog response = client.createHiveCatalog(createRequest);
+      System.out.println(" -> Successfully Created Catalog: " + response.getName());
     }
   }
 
@@ -115,14 +86,13 @@ public class BiglakeDemoTest {
       // Call ListIcebergCatalogsRequest verifying corrected query parameters
       System.out.println("Requesting ListIcebergCatalogs...");
       ListIcebergCatalogsRequest listRequest =
-          ListIcebergCatalogsRequest.newBuilder()
-              .setParent(parent)
-              .setPageSize(10)
-              .build();
+          ListIcebergCatalogsRequest.newBuilder().setParent(parent).setPageSize(10).build();
 
-      client.listIcebergCatalogs(listRequest).iterateAll().forEach(
-          catalog -> System.out.println(" -> Found Iceberg Catalog: " + catalog.getName())
-      );
+      client
+          .listIcebergCatalogs(listRequest)
+          .iterateAll()
+          .forEach(
+              catalog -> System.out.println(" -> Found Iceberg Catalog: " + catalog.getName()));
 
       // Call CreateIcebergCatalogRequest verifying corrected parameter
       System.out.println("Requesting CreateIcebergCatalog...");
@@ -133,12 +103,8 @@ public class BiglakeDemoTest {
               .setIcebergCatalog(IcebergCatalog.newBuilder().build())
               .build();
 
-      try {
-        IcebergCatalog response = client.createIcebergCatalog(createRequest);
-        System.out.println(" -> Successfully Created Iceberg Catalog: " + response.getName());
-      } catch (Exception e) {
-        System.out.println(" -> Create iceberg call failed: " + e.getMessage());
-      }
+      IcebergCatalog response = client.createIcebergCatalog(createRequest);
+      System.out.println(" -> Successfully Created Iceberg Catalog: " + response.getName());
     }
   }
 }
