@@ -16,8 +16,8 @@ package com.google.api.generator.gapic.model;
 
 import com.google.api.generator.gapic.utils.JavaStyle;
 import com.google.auto.value.AutoValue;
-import com.google.common.collect.ImmutableSet;
 import com.google.common.base.Strings;
+import com.google.common.collect.ImmutableSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
