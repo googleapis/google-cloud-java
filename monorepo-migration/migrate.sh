@@ -56,6 +56,7 @@ FIX_COPYRIGHT_SCRIPT="$TRANSFORM_SCRIPT_DIR/fix_copyright_headers.py"
 UPDATE_GENERATION_CONFIG_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_generation_config.py"
 UPDATE_OWLBOT_HERMETIC_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot_hermetic.py"
 TRANSFORM_OWLBOT_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot.py"
+UPDATE_LINTER_EXCLUSIONS_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_linter_exclusions.py"
 
 # Track number of commits made by this script
 COMMIT_COUNT=0
@@ -196,6 +197,26 @@ env_vars: {
 EOF
     git add ".kokoro/presubmit/${SOURCE_REPO_NAME}-graalvm-native-presubmit.cfg"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate GraalVM Native presubmit config"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
+
+# 6.4c Migrate Integration presubmit config if present
+if [ -f "$SOURCE_REPO_NAME/.kokoro/presubmit/integration.cfg" ]; then
+    echo "Migrating integration.cfg to monorepo root .kokoro/presubmit/${SOURCE_REPO_NAME}-integration.cfg..."
+    mkdir -p .kokoro/presubmit
+    sed -e 's/value: "integration"/value: "integration-single"/' \
+        "$SOURCE_REPO_NAME/.kokoro/presubmit/integration.cfg" > ".kokoro/presubmit/${SOURCE_REPO_NAME}-integration.cfg"
+    
+    # Append BUILD_SUBDIR
+    cat <<EOF >> ".kokoro/presubmit/${SOURCE_REPO_NAME}-integration.cfg"
+
+env_vars: {
+  key: "BUILD_SUBDIR"
+  value: "${SOURCE_REPO_NAME}"
+}
+EOF
+    git add ".kokoro/presubmit/${SOURCE_REPO_NAME}-integration.cfg"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate Integration presubmit config"
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
@@ -397,7 +418,7 @@ COMMIT_COUNT=$((COMMIT_COUNT + 1))
 echo "Verifying non-release-please version compliance..."
 if ! (./generation/check_non_release_please_versions.sh > /dev/null 2>&1); then
     echo "Unmanaged dependency versions detected. Injecting $SOURCE_REPO_NAME exclusion into check_non_release_please_versions.sh..."
-    sed -i.bak "s/\[\[ \"\${pomFile}\" =~ \.\*java-vertexai\.\* \]\]/[[ \"\${pomFile}\" =~ .*${SOURCE_REPO_NAME}.* ]] || [[ \"\${pomFile}\" =~ .*java-vertexai.* ]]/" "generation/check_non_release_please_versions.sh"
+    python3 "$UPDATE_LINTER_EXCLUSIONS_SCRIPT" "generation/check_non_release_please_versions.sh" "$SOURCE_REPO_NAME"
     
     echo "Committing linter adjustment..."
     git add generation/check_non_release_please_versions.sh
