@@ -82,7 +82,7 @@ public class BigQueryJdbcCustomLoggerTest {
   @Test
   public void testLogWithException() {
     Exception ex = new Exception("Test exception");
-    logger.severe(ex, "Error occurred: %s", "detail");
+    logger.severe("Error occurred: %s", ex, "detail");
 
     List<LogRecord> records = testHandler.getRecords();
     assertEquals(1, records.size());

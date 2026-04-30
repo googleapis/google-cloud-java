@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-spanner</artifactId>
-  <version>6.116.1</version><!-- {x-version-update:google-cloud-spanner:current} -->
+  <version>6.117.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Spanner</name>
   <url>https://github.com/googleapis/google-cloud-java</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-spanner-parent</artifactId>
-    <version>6.116.1</version><!-- {x-version-update:google-cloud-spanner:current} -->
+    <version>6.117.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanner</site.installationModule>
@@ -310,7 +310,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-monitoring</artifactId>
-      <version>3.92.0</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+      <version>3.93.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
       <!-- Version will be managed by guava -->
       <exclusions>
         <exclusion>
@@ -322,7 +322,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-monitoring-v3</artifactId>
-      <version>3.92.0</version><!-- {x-version-update:proto-google-cloud-monitoring-v3:current} -->
+      <version>3.93.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-monitoring-v3:current} -->
       <!-- Version will be managed by guava -->
       <exclusions>
         <exclusion>
@@ -334,7 +334,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-monitoring-v3</artifactId>
-      <version>3.92.0</version><!-- {x-version-update:grpc-google-cloud-monitoring-v3:current} -->
+      <version>3.93.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-monitoring-v3:current} -->
       <scope>test</scope>
       <!-- Version will be managed by guava -->
       <exclusions>
@@ -523,13 +523,13 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-trace</artifactId>
-      <version>2.91.0</version><!-- {x-version-update:google-cloud-trace:current} -->
+      <version>2.92.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-trace-v1</artifactId>
-      <version>2.91.0</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
+      <version>2.92.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
       <scope>test</scope>
     </dependency>
   </dependencies>

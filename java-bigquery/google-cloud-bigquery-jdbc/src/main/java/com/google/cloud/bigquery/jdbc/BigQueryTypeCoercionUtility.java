@@ -39,6 +39,8 @@ import org.apache.arrow.vector.util.Text;
 
 @InternalApi
 class BigQueryTypeCoercionUtility {
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryTypeCoercionUtility.class.getName());
 
   static BigQueryTypeCoercer INSTANCE;
 
@@ -256,8 +258,11 @@ class BigQueryTypeCoercionUtility {
         long millis = TimeUnit.NANOSECONDS.toMillis(localTime.toNanoOfDay());
         return new Time(millis);
       } catch (java.time.format.DateTimeParseException e) {
-        throw new IllegalArgumentException(
-            "Cannot parse the value " + strTime + " to java.sql.Time", e);
+        IllegalArgumentException ex =
+            new IllegalArgumentException(
+                "Cannot parse the value " + strTime + " to java.sql.Time", e);
+        LOG.severe(ex.getMessage(), ex);
+        throw ex;
       }
     }
   }

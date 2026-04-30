@@ -27,12 +27,12 @@ To run this example:
 
 [//]: # ({x-version-update-start:google-cloud-nio:current})
     ```
-    java -cp google-cloud-nio/target/google-cloud-nio-0.131.0.jar:google-cloud-nio-retrofit/target/google-cloud-nio-retrofit-0.120.1-alpha-SNAPSHOT.jar com.google.cloud.nio.retrofit.ListFilesystems
+    java -cp google-cloud-nio/target/google-cloud-nio-0.132.0-SNAPSHOT.jar:google-cloud-nio-retrofit/target/google-cloud-nio-retrofit-0.120.1-alpha-SNAPSHOT.jar com.google.cloud.nio.retrofit.ListFilesystems
     ```
 
     Notice that it lists Google Cloud Storage ("gs"), which it wouldn't if you ran it without the NIO jar:
     ```
-    java -cp google-cloud-nio-retrofit/target/google-cloud-nio-retrofit-0.131.0.jar com.google.cloud.nio.retrofit.ListFilesystems
+    java -cp google-cloud-nio-retrofit/target/google-cloud-nio-retrofit-0.132.0-SNAPSHOT.jar com.google.cloud.nio.retrofit.ListFilesystems
     ```
 [//]: # ({x-version-update-end})
 

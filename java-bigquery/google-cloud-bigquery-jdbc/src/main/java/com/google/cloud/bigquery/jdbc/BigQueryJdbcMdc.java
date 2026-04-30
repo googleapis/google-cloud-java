@@ -35,7 +35,7 @@ class BigQueryJdbcMdc {
   private static final InheritableThreadLocal<String> currentConnectionId =
       new InheritableThreadLocal<>();
 
-  static void registerInstance(BigQueryConnection connection, String id) {
+  static MdcCloseable registerInstance(BigQueryConnection connection, String id) {
     if (connection != null) {
       String cleanId =
           instanceIds.computeIfAbsent(
@@ -51,6 +51,7 @@ class BigQueryJdbcMdc {
           instanceLocals.computeIfAbsent(connection, k -> new InheritableThreadLocal<>());
       threadLocal.set(cleanId);
     }
+    return () -> clear();
   }
 
   /**
@@ -76,5 +77,15 @@ class BigQueryJdbcMdc {
     for (InheritableThreadLocal<String> local : instanceLocals.values()) {
       local.remove();
     }
+  }
+
+  /**
+   * Functional interface that extends AutoCloseable to avoid throwing checked exceptions in
+   * try-with-resources.
+   */
+  @FunctionalInterface
+  interface MdcCloseable extends AutoCloseable {
+    @Override
+    void close();
   }
 }

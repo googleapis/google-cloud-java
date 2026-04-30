@@ -843,6 +843,54 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
+   * Optional. Producer Service's Service class Id for the region of this network
+   * interface. Can only be used with network_attachment. It is not possible to
+   * use on its own however, network_attachment can be used without
+   * service_class_id.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return Whether the serviceClassId field is set.
+   */
+  boolean hasServiceClassId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Producer Service's Service class Id for the region of this network
+   * interface. Can only be used with network_attachment. It is not possible to
+   * use on its own however, network_attachment can be used without
+   * service_class_id.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return The serviceClassId.
+   */
+  java.lang.String getServiceClassId();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Producer Service's Service class Id for the region of this network
+   * interface. Can only be used with network_attachment. It is not possible to
+   * use on its own however, network_attachment can be used without
+   * service_class_id.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return The bytes for serviceClassId.
+   */
+  com.google.protobuf.ByteString getServiceClassIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The stack type for this network interface. To assign only IPv4 addresses,
    * use IPV4_ONLY. To assign both IPv4 and IPv6 addresses, useIPV4_IPV6. If not specified, IPV4_ONLY is used.
    *

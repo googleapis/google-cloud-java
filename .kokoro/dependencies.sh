@@ -58,9 +58,8 @@ then
 fi
 
 # this should run maven enforcer
-retry_with_backoff 3 10 \
-  mvn install -B -V -ntp \
-    -Pquick-build -DskipTests=true -Dmaven.javadoc.skip=true -Denforcer.skip=false
+mvn install -B -V -ntp \
+  -Pquick-build -DskipTests=true -Dmaven.javadoc.skip=true -Denforcer.skip=false
 
 mvn -B dependency:analyze -Pquick-build -DfailOnWarning=true -Dmdep.analyze.skip=false
 

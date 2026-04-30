@@ -42,18 +42,12 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
 
   @Override
   public final String getSQLTypeName() throws SQLException {
-    BigQueryJdbcSqlFeatureNotSupportedException ex =
-        new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    LOG.severe(ex, CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    throw ex;
+    throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
   @Override
   public final Object[] getAttributes(Map<String, Class<?>> map) throws SQLException {
-    BigQueryJdbcSqlFeatureNotSupportedException ex =
-        new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    LOG.severe(ex, CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
-    throw ex;
+    throw new BigQueryJdbcSqlFeatureNotSupportedException(CUSTOMER_TYPE_MAPPING_NOT_SUPPORTED);
   }
 
   static boolean isStruct(Field currentSchema) {
@@ -97,7 +91,7 @@ abstract class BigQueryBaseStruct implements java.sql.Struct {
       sb.append("}");
       return sb.toString();
     } catch (SQLException e) {
-      LOG.severe(e, "Error converting struct to string");
+      LOG.severe("Error converting struct to string", e);
       return "{ \"error\": \"Error converting struct to string: " + e.getMessage() + "\" }";
     }
   }

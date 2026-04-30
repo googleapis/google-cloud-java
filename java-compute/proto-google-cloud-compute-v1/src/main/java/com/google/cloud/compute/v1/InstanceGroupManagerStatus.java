@@ -79,7 +79,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output only] Status of all-instances configuration on the group.
+   * Output only. Status of all-instances configuration on the group.
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output only] Status of all-instances configuration on the group.
+   * Output only. Status of all-instances configuration on the group.
    * </pre>
    *
    * <code>
@@ -119,7 +119,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output only] Status of all-instances configuration on the group.
+   * Output only. Status of all-instances configuration on the group.
    * </pre>
    *
    * <code>
@@ -145,7 +145,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Output only. The accelerator topology applied to this MIG.
    * Currently only one accelerator topology is supported.
    * </pre>
    *
@@ -163,7 +163,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Output only. The accelerator topology applied to this MIG.
    * Currently only one accelerator topology is supported.
    * </pre>
    *
@@ -183,7 +183,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Output only. The accelerator topology applied to this MIG.
    * Currently only one accelerator topology is supported.
    * </pre>
    *
@@ -200,7 +200,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Output only. The accelerator topology applied to this MIG.
    * Currently only one accelerator topology is supported.
    * </pre>
    *
@@ -218,7 +218,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] The accelerator topology applied to this MIG.
+   * Output only. The accelerator topology applied to this MIG.
    * Currently only one accelerator topology is supported.
    * </pre>
    *
@@ -241,7 +241,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL of theAutoscaler
+   * Output only. The URL of theAutoscaler
    * that targets this instance group manager.
    * </pre>
    *
@@ -258,7 +258,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL of theAutoscaler
+   * Output only. The URL of theAutoscaler
    * that targets this instance group manager.
    * </pre>
    *
@@ -283,7 +283,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] The URL of theAutoscaler
+   * Output only. The URL of theAutoscaler
    * that targets this instance group manager.
    * </pre>
    *
@@ -312,7 +312,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] The status of bulk instance operation.
+   * Output only. The status of bulk instance operation.
    * </pre>
    *
    * <code>
@@ -330,7 +330,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] The status of bulk instance operation.
+   * Output only. The status of bulk instance operation.
    * </pre>
    *
    * <code>
@@ -352,7 +352,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] The status of bulk instance operation.
+   * Output only. The status of bulk instance operation.
    * </pre>
    *
    * <code>
@@ -368,6 +368,76 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         : bulkInstanceOperation_;
   }
 
+  public static final int CURRENT_INSTANCE_STATUSES_FIELD_NUMBER = 269432644;
+  private com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary
+      currentInstanceStatuses_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of instance statuses and the number of instances
+   * in this managed instance group that have the status. Currently only shown
+   * for TPU MIGs
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary current_instance_statuses = 269432644;
+   * </code>
+   *
+   * @return Whether the currentInstanceStatuses field is set.
+   */
+  @java.lang.Override
+  public boolean hasCurrentInstanceStatuses() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of instance statuses and the number of instances
+   * in this managed instance group that have the status. Currently only shown
+   * for TPU MIGs
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary current_instance_statuses = 269432644;
+   * </code>
+   *
+   * @return The currentInstanceStatuses.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary
+      getCurrentInstanceStatuses() {
+    return currentInstanceStatuses_ == null
+        ? com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary
+            .getDefaultInstance()
+        : currentInstanceStatuses_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of instance statuses and the number of instances
+   * in this managed instance group that have the status. Currently only shown
+   * for TPU MIGs
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary current_instance_statuses = 269432644;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummaryOrBuilder
+      getCurrentInstanceStatusesOrBuilder() {
+    return currentInstanceStatuses_ == null
+        ? com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary
+            .getDefaultInstance()
+        : currentInstanceStatuses_;
+  }
+
   public static final int IS_STABLE_FIELD_NUMBER = 108410864;
   private boolean isStable_ = false;
 
@@ -375,7 +445,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] A bit indicating whether the managed instance group is in a
+   * Output only. A bit indicating whether the managed instance group is in a
    * stable state. A stable state means that: none of the instances in the
    * managed instance group is currently undergoing any type of change (for
    * example, creation, restart, or deletion); no future changes are scheduled
@@ -389,14 +459,14 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasIsStable() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Output only. [Output Only] A bit indicating whether the managed instance group is in a
+   * Output only. A bit indicating whether the managed instance group is in a
    * stable state. A stable state means that: none of the instances in the
    * managed instance group is currently undergoing any type of change (for
    * example, creation, restart, or deletion); no future changes are scheduled
@@ -420,7 +490,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] Stateful status of the given Instance Group Manager.
+   * Output only. Stateful status of the given Instance Group Manager.
    * </pre>
    *
    * <code>
@@ -431,14 +501,14 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasStateful() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Output only. [Output Only] Stateful status of the given Instance Group Manager.
+   * Output only. Stateful status of the given Instance Group Manager.
    * </pre>
    *
    * <code>
@@ -458,7 +528,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] Stateful status of the given Instance Group Manager.
+   * Output only. Stateful status of the given Instance Group Manager.
    * </pre>
    *
    * <code>
@@ -480,7 +550,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] A status of consistency of Instances' versions with their
+   * Output only. A status of consistency of Instances' versions with their
    * target version specified by version field on Instance Group
    * Manager.
    * </pre>
@@ -493,14 +563,14 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasVersionTarget() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
    *
    *
    * <pre>
-   * Output only. [Output Only] A status of consistency of Instances' versions with their
+   * Output only. A status of consistency of Instances' versions with their
    * target version specified by version field on Instance Group
    * Manager.
    * </pre>
@@ -522,7 +592,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Output only. [Output Only] A status of consistency of Instances' versions with their
+   * Output only. A status of consistency of Instances' versions with their
    * target version specified by version field on Instance Group
    * Manager.
    * </pre>
@@ -553,16 +623,19 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeBool(108410864, isStable_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(112596737, getAllInstancesConfig());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(244462412, getStateful());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(269432644, getCurrentInstanceStatuses());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(289386200, getVersionTarget());
     }
     for (int i = 0; i < appliedAcceleratorTopologies_.size(); i++) {
@@ -583,7 +656,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(108410864, isStable_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -591,10 +664,15 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               112596737, getAllInstancesConfig());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(244462412, getStateful());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              269432644, getCurrentInstanceStatuses());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(289386200, getVersionTarget());
     }
@@ -641,6 +719,10 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     if (hasBulkInstanceOperation()) {
       if (!getBulkInstanceOperation().equals(other.getBulkInstanceOperation())) return false;
     }
+    if (hasCurrentInstanceStatuses() != other.hasCurrentInstanceStatuses()) return false;
+    if (hasCurrentInstanceStatuses()) {
+      if (!getCurrentInstanceStatuses().equals(other.getCurrentInstanceStatuses())) return false;
+    }
     if (hasIsStable() != other.hasIsStable()) return false;
     if (hasIsStable()) {
       if (getIsStable() != other.getIsStable()) return false;
@@ -679,6 +761,10 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     if (hasBulkInstanceOperation()) {
       hash = (37 * hash) + BULK_INSTANCE_OPERATION_FIELD_NUMBER;
       hash = (53 * hash) + getBulkInstanceOperation().hashCode();
+    }
+    if (hasCurrentInstanceStatuses()) {
+      hash = (37 * hash) + CURRENT_INSTANCE_STATUSES_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrentInstanceStatuses().hashCode();
     }
     if (hasIsStable()) {
       hash = (37 * hash) + IS_STABLE_FIELD_NUMBER;
@@ -836,6 +922,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         internalGetAllInstancesConfigFieldBuilder();
         internalGetAppliedAcceleratorTopologiesFieldBuilder();
         internalGetBulkInstanceOperationFieldBuilder();
+        internalGetCurrentInstanceStatusesFieldBuilder();
         internalGetStatefulFieldBuilder();
         internalGetVersionTargetFieldBuilder();
       }
@@ -862,6 +949,11 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       if (bulkInstanceOperationBuilder_ != null) {
         bulkInstanceOperationBuilder_.dispose();
         bulkInstanceOperationBuilder_ = null;
+      }
+      currentInstanceStatuses_ = null;
+      if (currentInstanceStatusesBuilder_ != null) {
+        currentInstanceStatusesBuilder_.dispose();
+        currentInstanceStatusesBuilder_ = null;
       }
       isStable_ = false;
       stateful_ = null;
@@ -945,17 +1037,24 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.isStable_ = isStable_;
+        result.currentInstanceStatuses_ =
+            currentInstanceStatusesBuilder_ == null
+                ? currentInstanceStatuses_
+                : currentInstanceStatusesBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.stateful_ = statefulBuilder_ == null ? stateful_ : statefulBuilder_.build();
+        result.isStable_ = isStable_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.stateful_ = statefulBuilder_ == null ? stateful_ : statefulBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.versionTarget_ =
             versionTargetBuilder_ == null ? versionTarget_ : versionTargetBuilder_.build();
-        to_bitField0_ |= 0x00000020;
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1012,6 +1111,9 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       if (other.hasBulkInstanceOperation()) {
         mergeBulkInstanceOperation(other.getBulkInstanceOperation());
       }
+      if (other.hasCurrentInstanceStatuses()) {
+        mergeCurrentInstanceStatuses(other.getCurrentInstanceStatuses());
+      }
       if (other.hasIsStable()) {
         setIsStable(other.getIsStable());
       }
@@ -1050,7 +1152,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
             case 867286912:
               {
                 isStable_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 867286912
             case 900773898:
@@ -1064,14 +1166,22 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
               {
                 input.readMessage(
                     internalGetStatefulFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 1955699298
+            case -2139506142:
+              {
+                input.readMessage(
+                    internalGetCurrentInstanceStatusesFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case -2139506142
             case -1979877694:
               {
                 input.readMessage(
                     internalGetVersionTargetFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -1979877694
             case -443826918:
@@ -1133,7 +1243,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output only] Status of all-instances configuration on the group.
+     * Output only. Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -1150,7 +1260,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output only] Status of all-instances configuration on the group.
+     * Output only. Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -1175,7 +1285,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output only] Status of all-instances configuration on the group.
+     * Output only. Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -1201,7 +1311,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output only] Status of all-instances configuration on the group.
+     * Output only. Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -1225,7 +1335,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output only] Status of all-instances configuration on the group.
+     * Output only. Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -1258,7 +1368,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output only] Status of all-instances configuration on the group.
+     * Output only. Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -1280,7 +1390,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output only] Status of all-instances configuration on the group.
+     * Output only. Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -1298,7 +1408,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output only] Status of all-instances configuration on the group.
+     * Output only. Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -1321,7 +1431,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output only] Status of all-instances configuration on the group.
+     * Output only. Status of all-instances configuration on the group.
      * </pre>
      *
      * <code>
@@ -1369,7 +1479,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1390,7 +1500,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1410,7 +1520,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1431,7 +1541,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1459,7 +1569,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1485,7 +1595,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1512,7 +1622,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1540,7 +1650,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1565,7 +1675,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1591,7 +1701,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1618,7 +1728,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1641,7 +1751,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1664,7 +1774,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1681,7 +1791,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1702,7 +1812,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1725,7 +1835,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1745,7 +1855,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1766,7 +1876,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The accelerator topology applied to this MIG.
+     * Output only. The accelerator topology applied to this MIG.
      * Currently only one accelerator topology is supported.
      * </pre>
      *
@@ -1806,7 +1916,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL of theAutoscaler
+     * Output only. The URL of theAutoscaler
      * that targets this instance group manager.
      * </pre>
      *
@@ -1822,7 +1932,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL of theAutoscaler
+     * Output only. The URL of theAutoscaler
      * that targets this instance group manager.
      * </pre>
      *
@@ -1846,7 +1956,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL of theAutoscaler
+     * Output only. The URL of theAutoscaler
      * that targets this instance group manager.
      * </pre>
      *
@@ -1870,7 +1980,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL of theAutoscaler
+     * Output only. The URL of theAutoscaler
      * that targets this instance group manager.
      * </pre>
      *
@@ -1893,7 +2003,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL of theAutoscaler
+     * Output only. The URL of theAutoscaler
      * that targets this instance group manager.
      * </pre>
      *
@@ -1912,7 +2022,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The URL of theAutoscaler
+     * Output only. The URL of theAutoscaler
      * that targets this instance group manager.
      * </pre>
      *
@@ -1944,7 +2054,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The status of bulk instance operation.
+     * Output only. The status of bulk instance operation.
      * </pre>
      *
      * <code>
@@ -1961,7 +2071,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The status of bulk instance operation.
+     * Output only. The status of bulk instance operation.
      * </pre>
      *
      * <code>
@@ -1986,7 +2096,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The status of bulk instance operation.
+     * Output only. The status of bulk instance operation.
      * </pre>
      *
      * <code>
@@ -2012,7 +2122,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The status of bulk instance operation.
+     * Output only. The status of bulk instance operation.
      * </pre>
      *
      * <code>
@@ -2036,7 +2146,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The status of bulk instance operation.
+     * Output only. The status of bulk instance operation.
      * </pre>
      *
      * <code>
@@ -2069,7 +2179,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The status of bulk instance operation.
+     * Output only. The status of bulk instance operation.
      * </pre>
      *
      * <code>
@@ -2091,7 +2201,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The status of bulk instance operation.
+     * Output only. The status of bulk instance operation.
      * </pre>
      *
      * <code>
@@ -2109,7 +2219,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The status of bulk instance operation.
+     * Output only. The status of bulk instance operation.
      * </pre>
      *
      * <code>
@@ -2132,7 +2242,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] The status of bulk instance operation.
+     * Output only. The status of bulk instance operation.
      * </pre>
      *
      * <code>
@@ -2157,13 +2267,256 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       return bulkInstanceOperationBuilder_;
     }
 
+    private com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary
+        currentInstanceStatuses_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary.Builder,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummaryOrBuilder>
+        currentInstanceStatusesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of instance statuses and the number of instances
+     * in this managed instance group that have the status. Currently only shown
+     * for TPU MIGs
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary current_instance_statuses = 269432644;
+     * </code>
+     *
+     * @return Whether the currentInstanceStatuses field is set.
+     */
+    public boolean hasCurrentInstanceStatuses() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of instance statuses and the number of instances
+     * in this managed instance group that have the status. Currently only shown
+     * for TPU MIGs
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary current_instance_statuses = 269432644;
+     * </code>
+     *
+     * @return The currentInstanceStatuses.
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary
+        getCurrentInstanceStatuses() {
+      if (currentInstanceStatusesBuilder_ == null) {
+        return currentInstanceStatuses_ == null
+            ? com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary
+                .getDefaultInstance()
+            : currentInstanceStatuses_;
+      } else {
+        return currentInstanceStatusesBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of instance statuses and the number of instances
+     * in this managed instance group that have the status. Currently only shown
+     * for TPU MIGs
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary current_instance_statuses = 269432644;
+     * </code>
+     */
+    public Builder setCurrentInstanceStatuses(
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary value) {
+      if (currentInstanceStatusesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        currentInstanceStatuses_ = value;
+      } else {
+        currentInstanceStatusesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of instance statuses and the number of instances
+     * in this managed instance group that have the status. Currently only shown
+     * for TPU MIGs
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary current_instance_statuses = 269432644;
+     * </code>
+     */
+    public Builder setCurrentInstanceStatuses(
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary.Builder
+            builderForValue) {
+      if (currentInstanceStatusesBuilder_ == null) {
+        currentInstanceStatuses_ = builderForValue.build();
+      } else {
+        currentInstanceStatusesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of instance statuses and the number of instances
+     * in this managed instance group that have the status. Currently only shown
+     * for TPU MIGs
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary current_instance_statuses = 269432644;
+     * </code>
+     */
+    public Builder mergeCurrentInstanceStatuses(
+        com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary value) {
+      if (currentInstanceStatusesBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && currentInstanceStatuses_ != null
+            && currentInstanceStatuses_
+                != com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary
+                    .getDefaultInstance()) {
+          getCurrentInstanceStatusesBuilder().mergeFrom(value);
+        } else {
+          currentInstanceStatuses_ = value;
+        }
+      } else {
+        currentInstanceStatusesBuilder_.mergeFrom(value);
+      }
+      if (currentInstanceStatuses_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of instance statuses and the number of instances
+     * in this managed instance group that have the status. Currently only shown
+     * for TPU MIGs
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary current_instance_statuses = 269432644;
+     * </code>
+     */
+    public Builder clearCurrentInstanceStatuses() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      currentInstanceStatuses_ = null;
+      if (currentInstanceStatusesBuilder_ != null) {
+        currentInstanceStatusesBuilder_.dispose();
+        currentInstanceStatusesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of instance statuses and the number of instances
+     * in this managed instance group that have the status. Currently only shown
+     * for TPU MIGs
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary current_instance_statuses = 269432644;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary.Builder
+        getCurrentInstanceStatusesBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetCurrentInstanceStatusesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of instance statuses and the number of instances
+     * in this managed instance group that have the status. Currently only shown
+     * for TPU MIGs
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary current_instance_statuses = 269432644;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummaryOrBuilder
+        getCurrentInstanceStatusesOrBuilder() {
+      if (currentInstanceStatusesBuilder_ != null) {
+        return currentInstanceStatusesBuilder_.getMessageOrBuilder();
+      } else {
+        return currentInstanceStatuses_ == null
+            ? com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary
+                .getDefaultInstance()
+            : currentInstanceStatuses_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of instance statuses and the number of instances
+     * in this managed instance group that have the status. Currently only shown
+     * for TPU MIGs
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary current_instance_statuses = 269432644;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary.Builder,
+            com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummaryOrBuilder>
+        internalGetCurrentInstanceStatusesFieldBuilder() {
+      if (currentInstanceStatusesBuilder_ == null) {
+        currentInstanceStatusesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary,
+                com.google.cloud.compute.v1.InstanceGroupManagerStatusInstanceStatusSummary.Builder,
+                com.google.cloud.compute.v1
+                    .InstanceGroupManagerStatusInstanceStatusSummaryOrBuilder>(
+                getCurrentInstanceStatuses(), getParentForChildren(), isClean());
+        currentInstanceStatuses_ = null;
+      }
+      return currentInstanceStatusesBuilder_;
+    }
+
     private boolean isStable_;
 
     /**
      *
      *
      * <pre>
-     * Output only. [Output Only] A bit indicating whether the managed instance group is in a
+     * Output only. A bit indicating whether the managed instance group is in a
      * stable state. A stable state means that: none of the instances in the
      * managed instance group is currently undergoing any type of change (for
      * example, creation, restart, or deletion); no future changes are scheduled
@@ -2177,14 +2530,14 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      */
     @java.lang.Override
     public boolean hasIsStable() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. [Output Only] A bit indicating whether the managed instance group is in a
+     * Output only. A bit indicating whether the managed instance group is in a
      * stable state. A stable state means that: none of the instances in the
      * managed instance group is currently undergoing any type of change (for
      * example, creation, restart, or deletion); no future changes are scheduled
@@ -2205,7 +2558,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] A bit indicating whether the managed instance group is in a
+     * Output only. A bit indicating whether the managed instance group is in a
      * stable state. A stable state means that: none of the instances in the
      * managed instance group is currently undergoing any type of change (for
      * example, creation, restart, or deletion); no future changes are scheduled
@@ -2221,7 +2574,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public Builder setIsStable(boolean value) {
 
       isStable_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2230,7 +2583,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] A bit indicating whether the managed instance group is in a
+     * Output only. A bit indicating whether the managed instance group is in a
      * stable state. A stable state means that: none of the instances in the
      * managed instance group is currently undergoing any type of change (for
      * example, creation, restart, or deletion); no future changes are scheduled
@@ -2243,7 +2596,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearIsStable() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       isStable_ = false;
       onChanged();
       return this;
@@ -2260,7 +2613,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -2270,14 +2623,14 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return Whether the stateful field is set.
      */
     public boolean hasStateful() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -2300,7 +2653,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -2317,7 +2670,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         statefulBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2326,7 +2679,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -2340,7 +2693,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         statefulBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2349,7 +2702,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -2359,7 +2712,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public Builder mergeStateful(
         com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful value) {
       if (statefulBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && stateful_ != null
             && stateful_
                 != com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful
@@ -2372,7 +2725,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         statefulBuilder_.mergeFrom(value);
       }
       if (stateful_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -2382,7 +2735,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -2390,7 +2743,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearStateful() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       stateful_ = null;
       if (statefulBuilder_ != null) {
         statefulBuilder_.dispose();
@@ -2404,7 +2757,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -2413,7 +2766,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusStateful.Builder
         getStatefulBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return internalGetStatefulFieldBuilder().getBuilder();
     }
@@ -2422,7 +2775,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -2444,7 +2797,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] Stateful status of the given Instance Group Manager.
+     * Output only. Stateful status of the given Instance Group Manager.
      * </pre>
      *
      * <code>
@@ -2479,7 +2832,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * Output only. A status of consistency of Instances' versions with their
      * target version specified by version field on Instance Group
      * Manager.
      * </pre>
@@ -2491,14 +2844,14 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * @return Whether the versionTarget field is set.
      */
     public boolean hasVersionTarget() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * Output only. A status of consistency of Instances' versions with their
      * target version specified by version field on Instance Group
      * Manager.
      * </pre>
@@ -2524,7 +2877,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * Output only. A status of consistency of Instances' versions with their
      * target version specified by version field on Instance Group
      * Manager.
      * </pre>
@@ -2543,7 +2896,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         versionTargetBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2552,7 +2905,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * Output only. A status of consistency of Instances' versions with their
      * target version specified by version field on Instance Group
      * Manager.
      * </pre>
@@ -2569,7 +2922,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
       } else {
         versionTargetBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2578,7 +2931,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * Output only. A status of consistency of Instances' versions with their
      * target version specified by version field on Instance Group
      * Manager.
      * </pre>
@@ -2590,7 +2943,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
     public Builder mergeVersionTarget(
         com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget value) {
       if (versionTargetBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && versionTarget_ != null
             && versionTarget_
                 != com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget
@@ -2603,7 +2956,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
         versionTargetBuilder_.mergeFrom(value);
       }
       if (versionTarget_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -2613,7 +2966,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * Output only. A status of consistency of Instances' versions with their
      * target version specified by version field on Instance Group
      * Manager.
      * </pre>
@@ -2623,7 +2976,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      * </code>
      */
     public Builder clearVersionTarget() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       versionTarget_ = null;
       if (versionTargetBuilder_ != null) {
         versionTargetBuilder_.dispose();
@@ -2637,7 +2990,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * Output only. A status of consistency of Instances' versions with their
      * target version specified by version field on Instance Group
      * Manager.
      * </pre>
@@ -2648,7 +3001,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget.Builder
         getVersionTargetBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return internalGetVersionTargetFieldBuilder().getBuilder();
     }
@@ -2657,7 +3010,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * Output only. A status of consistency of Instances' versions with their
      * target version specified by version field on Instance Group
      * Manager.
      * </pre>
@@ -2682,7 +3035,7 @@ public final class InstanceGroupManagerStatus extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Output only. [Output Only] A status of consistency of Instances' versions with their
+     * Output only. A status of consistency of Instances' versions with their
      * target version specified by version field on Instance Group
      * Manager.
      * </pre>
