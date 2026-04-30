@@ -37,6 +37,7 @@ public class DatastoreOpenTelemetryOptions {
     this.metricsEnabled = builder.metricsEnabled;
     this.exportBuiltinMetricsToGoogleCloudMonitoring =
         builder.exportBuiltinMetricsToGoogleCloudMonitoring;
+    // If no custom Otel was provided, fall back to using GlobalOpenTelemetry.
     this.openTelemetry =
         builder.openTelemetry == null ? GlobalOpenTelemetry.get() : builder.openTelemetry;
   }
