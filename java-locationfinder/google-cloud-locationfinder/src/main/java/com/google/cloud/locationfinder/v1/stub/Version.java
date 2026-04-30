@@ -21,7 +21,7 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 final class Version {
   // {x-version-update-start:google-cloud-locationfinder:current}
-  static final String VERSION = "0.16.0";
+  static final String VERSION = "0.17.0-SNAPSHOT";
   // {x-version-update-end}
 
 }
