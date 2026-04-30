@@ -114,10 +114,15 @@ class HttpRuleParserTest {
     HttpBindings actual = HttpRuleParser.parse(rpcMethod, inputMessage, messages);
 
     HttpBinding expected1 =
-        HttpBinding.builder().setName("name").setField(inputMessage.fieldMap().get("name")).build();
+        HttpBinding.builder()
+            .setName("name")
+            .setJsonName("name")
+            .setField(inputMessage.fieldMap().get("name"))
+            .build();
     HttpBinding expected2 =
         HttpBinding.builder()
             .setName("nested_object")
+            .setJsonName("nestedObject")
             .setField(inputMessage.fieldMap().get("nested_object"))
             .build();
     Truth.assertThat(new HashSet<>(actual.queryParameters())).containsExactly(expected1, expected2);
@@ -172,5 +177,33 @@ class HttpRuleParserTest {
 
     Truth.assertThat(new HashSet<>(actual.queryParameters())).containsExactly(expected1, expected2);
     Truth.assertThat(new HashSet<>(actual.pathParameters())).containsExactly(expectedPathParam);
+  }
+
+  @Test
+  void parseHttpAnnotation_respectsJsonNameWithDashes() {
+    FileDescriptor complianceFileDescriptor =
+        com.google.showcase.v1beta1.ComplianceOuterClass.getDescriptor();
+    ServiceDescriptor complianceService = complianceFileDescriptor.getServices().get(0);
+    assertEquals("Compliance", complianceService.getName());
+
+    Map<String, Message> messages = Parser.parseMessages(complianceFileDescriptor);
+
+    MethodDescriptor rpcMethod =
+        complianceService.getMethods().stream()
+            .filter(m -> m.getName().equals("RepeatDataCustomQuery"))
+            .findAny()
+            .get();
+
+    Message inputMessage = messages.get("com.google.showcase.v1beta1.CustomBindingRequest");
+    HttpBindings httpBindings = HttpRuleParser.parse(rpcMethod, inputMessage, messages);
+
+    HttpBinding customBinding =
+        httpBindings.queryParameters().stream()
+            .filter(b -> b.name().equals("custom_kebab_name"))
+            .findAny()
+            .orElse(null);
+
+    Truth.assertThat(customBinding).isNotNull();
+    assertEquals("custom-kebab-name", customBinding.jsonName());
   }
 }

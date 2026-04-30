@@ -109,4 +109,45 @@ public class DatastoreMetricsRecorderTest {
 
     assertThat(recorder.getOpenTelemetry()).isSameInstanceAs(openTelemetry);
   }
+
+  @Test
+  public void builtInDisabledAndCustomEnabled_returnsOneRecorder() {
+    DatastoreOptions options =
+        baseOptions()
+            .setOpenTelemetryOptions(
+                DatastoreOpenTelemetryOptions.newBuilder()
+                    .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
+                    .setMetricsEnabled(true)
+                    .setOpenTelemetry(OpenTelemetry.noop())
+                    .build())
+            .build();
+    OpenTelemetry builtInOtel = EasyMock.createMock(OpenTelemetry.class);
+    EasyMock.replay(builtInOtel);
+
+    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options, builtInOtel);
+    assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
+    CompositeDatastoreMetricsRecorder compositeRecorder =
+        (CompositeDatastoreMetricsRecorder) recorder;
+    assertThat(compositeRecorder.getMetricRecorders().size()).isEqualTo(1);
+  }
+
+  @Test
+  public void bothEnabled_returnsTwoRecorders() {
+    DatastoreOptions options =
+        baseOptions()
+            .setOpenTelemetryOptions(
+                DatastoreOpenTelemetryOptions.newBuilder()
+                    .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
+                    .setMetricsEnabled(true)
+                    .setOpenTelemetry(OpenTelemetry.noop())
+                    .build())
+            .build();
+    OpenTelemetry builtInOtel = OpenTelemetry.noop();
+
+    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options, builtInOtel);
+    assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
+    CompositeDatastoreMetricsRecorder compositeRecorder =
+        (CompositeDatastoreMetricsRecorder) recorder;
+    assertThat(compositeRecorder.getMetricRecorders().size()).isEqualTo(2);
+  }
 }
