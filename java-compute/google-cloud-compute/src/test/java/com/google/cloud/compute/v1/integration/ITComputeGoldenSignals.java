@@ -498,7 +498,7 @@ public class ITComputeGoldenSignals extends BaseTest {
     Thread.sleep(initialSleepMs);
 
     Stopwatch metricsPollingStopwatch = Stopwatch.createStarted();
-    Duration totalTimeout = Duration.ofMinutes(10);
+    Duration totalTimeout = Duration.ofMinutes(5);
     Duration pollInterval = Duration.ofSeconds(30);
     TimeSeries targetTs = null;
 
