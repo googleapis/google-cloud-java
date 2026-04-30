@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.maps.api.grpc</groupId>
   <artifactId>proto-google-maps-geocode-v4</artifactId>
-  <version>0.3.0</version><!-- {x-version-update:proto-google-maps-geocode-v4:current} -->
+  <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:proto-google-maps-geocode-v4:current} -->
   <name>proto-google-maps-geocode-v4</name>
   <description>Proto library for google-maps-geocode</description>
   <parent>
     <groupId>com.google.maps</groupId>
     <artifactId>google-maps-geocode-parent</artifactId>
-    <version>0.3.0</version><!-- {x-version-update:google-maps-geocode:current} -->
+    <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-maps-geocode:current} -->
   </parent>
   <dependencies>
     <dependency>

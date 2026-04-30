@@ -37,8 +37,10 @@ import com.google.api.pathtemplate.PathTemplate;
 import com.google.cloud.compute.v1.AggregatedListRegionCompositeHealthChecksRequest;
 import com.google.cloud.compute.v1.CompositeHealthCheck;
 import com.google.cloud.compute.v1.CompositeHealthCheckAggregatedList;
+import com.google.cloud.compute.v1.CompositeHealthCheckHealth;
 import com.google.cloud.compute.v1.CompositeHealthCheckList;
 import com.google.cloud.compute.v1.DeleteRegionCompositeHealthCheckRequest;
+import com.google.cloud.compute.v1.GetHealthRegionCompositeHealthCheckRequest;
 import com.google.cloud.compute.v1.GetRegionCompositeHealthCheckRequest;
 import com.google.cloud.compute.v1.InsertRegionCompositeHealthCheckRequest;
 import com.google.cloud.compute.v1.ListRegionCompositeHealthChecksRequest;
@@ -221,6 +223,45 @@ public class HttpJsonRegionCompositeHealthChecksStub extends RegionCompositeHeal
               .setResponseParser(
                   ProtoMessageResponseParser.<CompositeHealthCheck>newBuilder()
                       .setDefaultInstance(CompositeHealthCheck.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<
+          GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+      getHealthMethodDescriptor =
+          ApiMethodDescriptor
+              .<GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionCompositeHealthChecks/GetHealth")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<GetHealthRegionCompositeHealthCheckRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/compositeHealthChecks/{compositeHealthCheck}/getHealth",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHealthRegionCompositeHealthCheckRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "compositeHealthCheck", request.getCompositeHealthCheck());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetHealthRegionCompositeHealthCheckRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<CompositeHealthCheckHealth>newBuilder()
+                      .setDefaultInstance(CompositeHealthCheckHealth.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -451,6 +492,9 @@ public class HttpJsonRegionCompositeHealthChecksStub extends RegionCompositeHeal
       deleteOperationCallable;
   private final UnaryCallable<GetRegionCompositeHealthCheckRequest, CompositeHealthCheck>
       getCallable;
+  private final UnaryCallable<
+          GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+      getHealthCallable;
   private final UnaryCallable<InsertRegionCompositeHealthCheckRequest, Operation> insertCallable;
   private final OperationCallable<InsertRegionCompositeHealthCheckRequest, Operation, Operation>
       insertOperationCallable;
@@ -475,6 +519,9 @@ public class HttpJsonRegionCompositeHealthChecksStub extends RegionCompositeHeal
       PathTemplate.create(
           "projects/{project}/regions/{region}/compositeHealthChecks/{composite_health_check}");
   private static final PathTemplate GET_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create(
+          "projects/{project}/regions/{region}/compositeHealthChecks/{composite_health_check}");
+  private static final PathTemplate GET_HEALTH_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create(
           "projects/{project}/regions/{region}/compositeHealthChecks/{composite_health_check}");
   private static final PathTemplate INSERT_RESOURCE_NAME_TEMPLATE =
@@ -607,6 +654,34 @@ public class HttpJsonRegionCompositeHealthChecksStub extends RegionCompositeHeal
                       return GET_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                     })
                 .build();
+    HttpJsonCallSettings<GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+        getHealthTransportSettings =
+            HttpJsonCallSettings
+                .<GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+                    newBuilder()
+                .setMethodDescriptor(getHealthMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "composite_health_check",
+                          String.valueOf(request.getCompositeHealthCheck()));
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      return builder.build();
+                    })
+                .setResourceNameExtractor(
+                    request -> {
+                      Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                      resourceNameSegments.put(
+                          "composite_health_check",
+                          String.valueOf(request.getCompositeHealthCheck()));
+                      resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                      resourceNameSegments.put("region", String.valueOf(request.getRegion()));
+                      return GET_HEALTH_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                    })
+                .build();
     HttpJsonCallSettings<InsertRegionCompositeHealthCheckRequest, Operation>
         insertTransportSettings =
             HttpJsonCallSettings.<InsertRegionCompositeHealthCheckRequest, Operation>newBuilder()
@@ -716,6 +791,9 @@ public class HttpJsonRegionCompositeHealthChecksStub extends RegionCompositeHeal
     this.getCallable =
         callableFactory.createUnaryCallable(
             getTransportSettings, settings.getSettings(), clientContext);
+    this.getHealthCallable =
+        callableFactory.createUnaryCallable(
+            getHealthTransportSettings, settings.getHealthSettings(), clientContext);
     this.insertCallable =
         callableFactory.createUnaryCallable(
             insertTransportSettings, settings.insertSettings(), clientContext);
@@ -756,6 +834,7 @@ public class HttpJsonRegionCompositeHealthChecksStub extends RegionCompositeHeal
     methodDescriptors.add(aggregatedListMethodDescriptor);
     methodDescriptors.add(deleteMethodDescriptor);
     methodDescriptors.add(getMethodDescriptor);
+    methodDescriptors.add(getHealthMethodDescriptor);
     methodDescriptors.add(insertMethodDescriptor);
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(patchMethodDescriptor);
@@ -791,6 +870,12 @@ public class HttpJsonRegionCompositeHealthChecksStub extends RegionCompositeHeal
   @Override
   public UnaryCallable<GetRegionCompositeHealthCheckRequest, CompositeHealthCheck> getCallable() {
     return getCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+      getHealthCallable() {
+    return getHealthCallable;
   }
 
   @Override

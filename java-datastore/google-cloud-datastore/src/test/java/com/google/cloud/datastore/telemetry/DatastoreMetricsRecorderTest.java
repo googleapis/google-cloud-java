@@ -19,17 +19,14 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.NoCredentials;
 import com.google.cloud.datastore.DatastoreOpenTelemetryOptions;
-import com.google.cloud.datastore.DatastoreOpenTelemetryOptionsTestHelper;
 import com.google.cloud.datastore.DatastoreOptions;
 import io.opentelemetry.api.OpenTelemetry;
-import io.opentelemetry.sdk.OpenTelemetrySdk;
-import io.opentelemetry.sdk.metrics.SdkMeterProvider;
-import io.opentelemetry.sdk.testing.exporter.InMemoryMetricReader;
+import org.easymock.EasyMock;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for {@link DatastoreMetricsRecorder#getInstance(DatastoreOptions)}. */
+/** Tests for {@link DatastoreMetricsRecorder#getInstance(DatastoreOptions, OpenTelemetry)}. */
 @RunWith(JUnit4.class)
 public class DatastoreMetricsRecorderTest {
 
@@ -42,51 +39,70 @@ public class DatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void defaultOptions_returnsNoOp() {
-    // metricsEnabled defaults to false, so getInstance() should return NoOp
-    DatastoreOptions options = baseOptions().build();
-    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options);
-    assertThat(recorder).isInstanceOf(NoOpDatastoreMetricsRecorder.class);
+  public void defaultOptionsWithBuiltInMetricsDisabled_returnsNoRecorders() {
+    // When both custom metrics and built-in metrics export are disabled,
+    // there should be no recorders
+    DatastoreOptions options =
+        baseOptions()
+            .setOpenTelemetryOptions(
+                DatastoreOpenTelemetryOptions.newBuilder()
+                    .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
+                    .build())
+            .build();
+    OpenTelemetry builtInOtel = EasyMock.createMock(OpenTelemetry.class);
+    EasyMock.replay(builtInOtel);
+    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options, builtInOtel);
+    assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
+    CompositeDatastoreMetricsRecorder compositeRecorder =
+        (CompositeDatastoreMetricsRecorder) recorder;
+    assertThat(compositeRecorder.getMetricRecorders().size()).isEqualTo(0);
   }
 
   @Test
-  public void tracingEnabledButMetricsDisabled_returnsNoOp() {
+  public void tracingEnabledButMetricsDisabledAndBuiltInDisabled_returnsNoRecorders() {
     // Enabling tracing alone should not enable metrics
     DatastoreOptions options =
         baseOptions()
             .setOpenTelemetryOptions(
-                DatastoreOpenTelemetryOptions.newBuilder().setTracingEnabled(true).build())
+                DatastoreOpenTelemetryOptions.newBuilder()
+                    .setTracingEnabled(true)
+                    .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
+                    .build())
             .build();
-    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options);
-    assertThat(recorder).isInstanceOf(NoOpDatastoreMetricsRecorder.class);
+    OpenTelemetry builtInOtel = EasyMock.createMock(OpenTelemetry.class);
+    EasyMock.replay(builtInOtel);
+    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options, builtInOtel);
+    assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
+    CompositeDatastoreMetricsRecorder compositeRecorder =
+        (CompositeDatastoreMetricsRecorder) recorder;
+    assertThat(compositeRecorder.getMetricRecorders().size()).isEqualTo(0);
   }
 
   @Test
-  public void metricsEnabled_withCustomOtel_returnsOpenTelemetryRecorder() {
-    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
-    SdkMeterProvider meterProvider =
-        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
-    OpenTelemetry openTelemetry =
-        OpenTelemetrySdk.builder().setMeterProvider(meterProvider).build();
-
-    // Use DatastoreOpenTelemetryOptionsTestHelper since setMetricsEnabled() is package-private
-    // and this test lives in the telemetry sub-package.
+  public void defaultOptionsWithBuiltInMetricsEnabled_butNoCredentials_returnsOneRecorder() {
+    // Explicitly enable built-in metrics export
     DatastoreOptions options =
-        baseOptions()
+        baseOptions() // Uses NoCredentials by default
             .setOpenTelemetryOptions(
-                DatastoreOpenTelemetryOptionsTestHelper.withMetricsEnabled(openTelemetry))
+                DatastoreOpenTelemetryOptions.newBuilder()
+                    .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
+                    .build())
             .build();
-    DatastoreMetricsRecorder recorder = DatastoreMetricsRecorder.getInstance(options);
-    assertThat(recorder).isInstanceOf(OpenTelemetryDatastoreMetricsRecorder.class);
+    DatastoreMetricsRecorder recorder =
+        DatastoreMetricsRecorder.getInstance(options, OpenTelemetry.noop());
+
+    // Since baseOptions() uses NoCredentials, the provider returns OpenTelemetry.noop().
+    // This NoOp instance is passed to getInstance, which adds it to the recorders list.
+    // So we have 1 recorder (the NoOp one).
+    assertThat(recorder).isInstanceOf(CompositeDatastoreMetricsRecorder.class);
+    CompositeDatastoreMetricsRecorder compositeRecorder =
+        (CompositeDatastoreMetricsRecorder) recorder;
+    assertThat(compositeRecorder.getMetricRecorders().size()).isEqualTo(1);
   }
 
   @Test
   public void openTelemetryRecorderCreatedWithExplicitOpenTelemetry() {
-    InMemoryMetricReader metricReader = InMemoryMetricReader.create();
-    SdkMeterProvider meterProvider =
-        SdkMeterProvider.builder().registerMetricReader(metricReader).build();
-    OpenTelemetry openTelemetry =
-        OpenTelemetrySdk.builder().setMeterProvider(meterProvider).build();
+    OpenTelemetry openTelemetry = OpenTelemetry.noop();
 
     OpenTelemetryDatastoreMetricsRecorder recorder =
         new OpenTelemetryDatastoreMetricsRecorder(openTelemetry, TelemetryConstants.METRIC_PREFIX);

@@ -67,7 +67,7 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS")
 load("@io_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS")
 
-_gapic_generator_java_version = "2.71.0"  # {x-version-update:gapic-generator-java:current}
+_gapic_generator_java_version = "2.72.0-SNAPSHOT"  # {x-version-update:gapic-generator-java:current}
 
 maven_install(
     artifacts = [

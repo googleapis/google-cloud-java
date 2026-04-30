@@ -47,6 +47,7 @@ import com.google.cloud.compute.v1.Snapshot;
 import com.google.cloud.compute.v1.SnapshotList;
 import com.google.cloud.compute.v1.TestIamPermissionsSnapshotRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
+import com.google.cloud.compute.v1.UpdateKmsKeySnapshotRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -426,6 +427,61 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateKmsKeySnapshotRequest, Operation>
+      updateKmsKeyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateKmsKeySnapshotRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Snapshots/UpdateKmsKey")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateKmsKeySnapshotRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/global/snapshots/{snapshot}/updateKmsKey",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateKmsKeySnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "snapshot", request.getSnapshot());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateKmsKeySnapshotRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "snapshotUpdateKmsKeyRequestResource",
+                                      request.getSnapshotUpdateKmsKeyRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateKmsKeySnapshotRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<DeleteSnapshotRequest, Operation> deleteCallable;
   private final OperationCallable<DeleteSnapshotRequest, Operation, Operation>
       deleteOperationCallable;
@@ -442,6 +498,9 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
       setLabelsOperationCallable;
   private final UnaryCallable<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
       testIamPermissionsCallable;
+  private final UnaryCallable<UpdateKmsKeySnapshotRequest, Operation> updateKmsKeyCallable;
+  private final OperationCallable<UpdateKmsKeySnapshotRequest, Operation, Operation>
+      updateKmsKeyOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonGlobalOperationsStub httpJsonOperationsStub;
@@ -463,6 +522,8 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
       PathTemplate.create("projects/{project}/global/snapshots/{resource}");
   private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/global/snapshots/{resource}");
+  private static final PathTemplate UPDATE_KMS_KEY_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/global/snapshots/{snapshot}");
 
   public static final HttpJsonSnapshotsStub create(SnapshotsStubSettings settings)
       throws IOException {
@@ -654,6 +715,25 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
                           resourceNameSegments);
                     })
                 .build();
+    HttpJsonCallSettings<UpdateKmsKeySnapshotRequest, Operation> updateKmsKeyTransportSettings =
+        HttpJsonCallSettings.<UpdateKmsKeySnapshotRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateKmsKeyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("snapshot", String.valueOf(request.getSnapshot()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("snapshot", String.valueOf(request.getSnapshot()));
+                  return UPDATE_KMS_KEY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
 
     this.deleteCallable =
         callableFactory.createUnaryCallable(
@@ -702,6 +782,15 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
             testIamPermissionsTransportSettings,
             settings.testIamPermissionsSettings(),
             clientContext);
+    this.updateKmsKeyCallable =
+        callableFactory.createUnaryCallable(
+            updateKmsKeyTransportSettings, settings.updateKmsKeySettings(), clientContext);
+    this.updateKmsKeyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateKmsKeyTransportSettings,
+            settings.updateKmsKeyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -718,6 +807,7 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
     methodDescriptors.add(setIamPolicyMethodDescriptor);
     methodDescriptors.add(setLabelsMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
+    methodDescriptors.add(updateKmsKeyMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -781,6 +871,17 @@ public class HttpJsonSnapshotsStub extends SnapshotsStub {
   public UnaryCallable<TestIamPermissionsSnapshotRequest, TestPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateKmsKeySnapshotRequest, Operation> updateKmsKeyCallable() {
+    return updateKmsKeyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateKmsKeySnapshotRequest, Operation, Operation>
+      updateKmsKeyOperationCallable() {
+    return updateKmsKeyOperationCallable;
   }
 
   @Override

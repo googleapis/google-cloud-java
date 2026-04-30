@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-common-protos</artifactId>
-  <version>2.70.0</version><!-- {x-version-update:proto-google-common-protos:current} -->
+  <version>2.71.0-SNAPSHOT</version><!-- {x-version-update:proto-google-common-protos:current} -->
   <name>grpc-google-common-protos</name>
   <description>GRPC library for grpc-google-common-protos</description>
   <parent>
     <groupId>com.google.api.grpc</groupId>
     <artifactId>google-common-protos-parent</artifactId>
-    <version>2.70.0</version><!-- {x-version-update:proto-google-common-protos:current} -->
+    <version>2.71.0-SNAPSHOT</version><!-- {x-version-update:proto-google-common-protos:current} -->
   </parent>
   <dependencies>
     <dependency>
