@@ -414,6 +414,8 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
               authProperties, java.util.Collections.EMPTY_MAP, false, null);
 
       assertThat(credentials).isInstanceOf(ImpersonatedCredentials.class);
+      assertThat(((ImpersonatedCredentials) credentials).getSourceCredentials())
+          .isEqualTo(dummySourceCredentials);
     }
   }
 
