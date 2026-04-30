@@ -22,6 +22,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -32,6 +33,7 @@ import com.google.cloud.datastore.v1.DatastoreSettings;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.datastore.v1.client.DatastoreFactory;
+import io.opentelemetry.api.GlobalOpenTelemetry;
 import org.easymock.EasyMock;
 import org.junit.Assert;
 import org.junit.Before;
@@ -161,15 +163,16 @@ public class DatastoreOptionsTest {
 
   @Test
   public void testOpenTelemetryOptionsDefaultInstance() {
-    DatastoreOpenTelemetryOptions o = DatastoreOpenTelemetryOptions.newBuilder().build();
-    assertThat(o.getOpenTelemetry()).isSameInstanceAs(io.opentelemetry.api.GlobalOpenTelemetry.get());
+    DatastoreOpenTelemetryOptions telemetryOptions =
+        DatastoreOpenTelemetryOptions.newBuilder().build();
+    assertThat(telemetryOptions.getOpenTelemetry()).isSameInstanceAs(GlobalOpenTelemetry.get());
   }
 
   @Test
   public void testOpenTelemetryOptionsSetNullThrowsNPE() {
     try {
       DatastoreOpenTelemetryOptions.newBuilder().setOpenTelemetry(null);
-      org.junit.Assert.fail("Expected NullPointerException");
+      fail("Expected NullPointerException");
     } catch (NullPointerException e) {
       assertThat(e.getMessage()).isEqualTo("OpenTelemetry instance cannot be null");
     }
