@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.auth</groupId>
   <artifactId>google-auth-library-parent</artifactId>
-  <version>1.46.0</version><!-- {x-version-update:google-auth-library-parent:current} -->
+  <version>1.47.0-SNAPSHOT</version><!-- {x-version-update:google-auth-library-parent:current} -->
   <packaging>pom</packaging>
   <name>Google Auth Library for Java</name>
   <description>Client libraries providing authentication and
@@ -86,7 +86,7 @@
     <project.tink.version>1.15.0</project.tink.version>
     <project.slf4j.version>2.0.17</project.slf4j.version>
     <project.gson.version>2.12.1</project.gson.version>
-    <project.api-common.version>2.62.0</project.api-common.version><!-- {x-version-update:api-common:current} -->
+    <project.api-common.version>2.63.0-SNAPSHOT</project.api-common.version><!-- {x-version-update:api-common:current} -->
     <surefire.version>3.5.2</surefire.version>
     <clirr.skip>true</clirr.skip>
   </properties>

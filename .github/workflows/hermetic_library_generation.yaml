@@ -21,7 +21,7 @@ env:
   REPO_FULL_NAME: ${{ github.event.pull_request.head.repo.full_name }}
   GITHUB_REPOSITORY: ${{ github.repository }}
   # {x-version-update-start:gapic-generator-java:current}
-  GENERATOR_VERSION: 2.71.0
+  GENERATOR_VERSION: 2.72.0-SNAPSHOT
   # {x-version-update-end}
 jobs:
   library_generation:
