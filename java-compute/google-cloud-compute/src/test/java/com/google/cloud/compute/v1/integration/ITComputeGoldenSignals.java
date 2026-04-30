@@ -76,6 +76,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.CopyOnWriteArrayList;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -588,7 +589,7 @@ public class ITComputeGoldenSignals extends BaseTest {
   }
 
   public static class TestAppender extends AppenderBase<ILoggingEvent> {
-    public List<ILoggingEvent> events = new ArrayList<>();
+    public List<ILoggingEvent> events = new CopyOnWriteArrayList<>();
 
     @Override
     protected void append(ILoggingEvent eventObject) {
