@@ -122,9 +122,6 @@ public interface DatastoreMetricsRecorder extends MetricsRecorder {
     // Note: Metrics will not be sent if an emulator is enabled.
     if (otelOptions.isMetricsEnabled()) {
       OpenTelemetry customOtel = otelOptions.getOpenTelemetry();
-      if (customOtel == null) {
-        customOtel = GlobalOpenTelemetry.get();
-      }
       recorders.add(
           new OpenTelemetryDatastoreMetricsRecorder(customOtel, TelemetryConstants.METRIC_PREFIX));
     }

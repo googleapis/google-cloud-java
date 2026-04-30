@@ -17,9 +17,10 @@
 package com.google.cloud.datastore;
 
 import com.google.api.core.BetaApi;
+import com.google.common.base.Preconditions;
+import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 /**
  * Represents the options that are used to configure the use of OpenTelemetry for telemetry
@@ -29,7 +30,7 @@ public class DatastoreOpenTelemetryOptions {
   private final boolean tracingEnabled;
   private final boolean metricsEnabled;
   private final boolean exportBuiltinMetricsToGoogleCloudMonitoring;
-  private final @Nullable OpenTelemetry openTelemetry;
+  private final OpenTelemetry openTelemetry;
 
   DatastoreOpenTelemetryOptions(Builder builder) {
     this.tracingEnabled = builder.tracingEnabled;
@@ -92,7 +93,7 @@ public class DatastoreOpenTelemetryOptions {
    *
    * @return the custom {@link OpenTelemetry} instance, or {@code null} if none was provided.
    */
-  @Nullable
+  @Nonnull
   public OpenTelemetry getOpenTelemetry() {
     return openTelemetry;
   }
@@ -123,7 +124,7 @@ public class DatastoreOpenTelemetryOptions {
     private boolean metricsEnabled;
     private boolean exportBuiltinMetricsToGoogleCloudMonitoring;
 
-    @Nullable private OpenTelemetry openTelemetry;
+    private OpenTelemetry openTelemetry;
 
     private Builder() {
       tracingEnabled = false;
@@ -159,8 +160,8 @@ public class DatastoreOpenTelemetryOptions {
      * @param enabled Whether metrics should be enabled.
      * @return this builder instance.
      */
-    @Nonnull
-    DatastoreOpenTelemetryOptions.Builder setMetricsEnabled(boolean enabled) {
+    @BetaApi
+    public DatastoreOpenTelemetryOptions.Builder setMetricsEnabled(boolean enabled) {
       this.metricsEnabled = enabled;
       return this;
     }
@@ -191,8 +192,8 @@ public class DatastoreOpenTelemetryOptions {
      * @return this builder instance.
      */
     @Nonnull
-    public DatastoreOpenTelemetryOptions.Builder setOpenTelemetry(
-        @Nonnull OpenTelemetry openTelemetry) {
+    public DatastoreOpenTelemetryOptions.Builder setOpenTelemetry(OpenTelemetry openTelemetry) {
+      Preconditions.checkNotNull(openTelemetry, "Custom Otel Instance cannot be null");
       this.openTelemetry = openTelemetry;
       return this;
     }
@@ -204,6 +205,8 @@ public class DatastoreOpenTelemetryOptions {
      */
     @Nonnull
     public DatastoreOpenTelemetryOptions build() {
+      // If no custom Otel was provided, fall back to using GlobalOpenTelemetry.
+      this.openTelemetry = openTelemetry == null ? GlobalOpenTelemetry.get() : openTelemetry;
       return new DatastoreOpenTelemetryOptions(this);
     }
   }

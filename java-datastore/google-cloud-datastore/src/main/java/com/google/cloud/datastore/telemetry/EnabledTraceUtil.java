@@ -27,7 +27,6 @@ import com.google.cloud.datastore.telemetry.TraceUtil.Scope;
 import com.google.cloud.datastore.telemetry.TraceUtil.Span;
 import com.google.common.base.Throwables;
 import io.grpc.ManagedChannelBuilder;
-import io.opentelemetry.api.GlobalOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.common.Attributes;
 import io.opentelemetry.api.common.AttributesBuilder;
@@ -51,16 +50,8 @@ public class EnabledTraceUtil implements TraceUtil {
   private final DatastoreOptions datastoreOptions;
 
   EnabledTraceUtil(DatastoreOptions datastoreOptions) {
-    OpenTelemetry openTelemetry = datastoreOptions.getOpenTelemetryOptions().getOpenTelemetry();
-
-    // If tracing is enabled, but an OpenTelemetry instance is not provided, fall back
-    // to using GlobalOpenTelemetry.
-    if (openTelemetry == null) {
-      openTelemetry = GlobalOpenTelemetry.get();
-    }
-
     this.datastoreOptions = datastoreOptions;
-    this.openTelemetry = openTelemetry;
+    this.openTelemetry = datastoreOptions.getOpenTelemetryOptions().getOpenTelemetry();
     this.tracer = openTelemetry.getTracer(LIBRARY_NAME);
   }
 
