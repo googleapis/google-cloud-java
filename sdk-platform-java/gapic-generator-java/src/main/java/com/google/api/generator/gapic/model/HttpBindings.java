@@ -17,6 +17,7 @@ package com.google.api.generator.gapic.model;
 import com.google.api.generator.gapic.utils.JavaStyle;
 import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.base.Strings;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -140,9 +141,11 @@ public abstract class HttpBindings {
   private static String lowerCamelPattern(String originalPattern, Set<HttpBinding> pathParameters) {
     String lowerCamelPattern = originalPattern;
     for (HttpBinding pathParam : pathParameters) {
-      lowerCamelPattern =
-          lowerCamelPattern.replaceAll(
-              "\\{" + pathParam.name(), "{" + JavaStyle.toLowerCamelCase(pathParam.name()));
+      String replacement =
+          !Strings.isNullOrEmpty(pathParam.jsonName())
+              ? pathParam.jsonName()
+              : JavaStyle.toLowerCamelCase(pathParam.name());
+      lowerCamelPattern = lowerCamelPattern.replaceAll("\\{" + pathParam.name(), "{" + replacement);
     }
     return lowerCamelPattern;
   }

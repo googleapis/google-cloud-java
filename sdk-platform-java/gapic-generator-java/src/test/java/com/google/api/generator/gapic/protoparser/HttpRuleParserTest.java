@@ -190,11 +190,11 @@ class HttpRuleParserTest {
 
     MethodDescriptor rpcMethod =
         complianceService.getMethods().stream()
-            .filter(m -> m.getName().equals("RepeatDataQuery"))
+            .filter(m -> m.getName().equals("RepeatDataCustomQuery"))
             .findAny()
             .get();
 
-    Message inputMessage = messages.get("com.google.showcase.v1beta1.RepeatRequest");
+    Message inputMessage = messages.get("com.google.showcase.v1beta1.CustomBindingRequest");
     HttpBindings httpBindings = HttpRuleParser.parse(rpcMethod, inputMessage, messages);
 
     HttpBinding customBinding =

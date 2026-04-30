@@ -62,6 +62,7 @@ import com.google.api.generator.gapic.model.OperationResponse;
 import com.google.api.generator.gapic.model.Service;
 import com.google.api.generator.gapic.utils.JavaStyle;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Strings;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -763,7 +764,13 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
       // Handle foo.bar cases by descending into the subfields.
       MethodInvocationExpr.Builder requestFieldMethodExprBuilder =
           MethodInvocationExpr.builder().setExprReferenceExpr(prevExpr);
-      bodyParamName = JavaStyle.toLowerCamelCase(httpBindingFieldName.name());
+      // Use explicit json_name if defined in the proto, prioritizing the actual wire name
+      // over Java-escaped identifiers (e.g., avoiding 'case_' generated to prevent keywords
+      // conflict).
+      bodyParamName =
+          !Strings.isNullOrEmpty(httpBindingFieldName.jsonName())
+              ? httpBindingFieldName.jsonName()
+              : JavaStyle.toLowerCamelCase(httpBindingFieldName.name());
       String[] descendantFields = httpBindingFieldName.name().split("\\.");
       if (asteriskBody && descendantFields.length > 1) {
         // This is the `body: "*"` case, do not clean nested body fields as it a very rare, not
@@ -926,6 +933,10 @@ public class HttpJsonServiceStubClassComposer extends AbstractTransportServiceSt
       paramsPutArgs.add(
           ValueExpr.withValue(
               StringObjectValue.withValue(
+                  // Use explicit json_name if defined in the proto, prioritizing the actual wire
+                  // name
+                  // over Java-escaped identifiers (e.g., avoiding 'case_' generated to prevent
+                  // keywords conflict).
                   (httpBindingFieldName.jsonName() != null)
                       ? httpBindingFieldName.jsonName()
                       : JavaStyle.toLowerCamelCase(httpBindingFieldName.name()))));
