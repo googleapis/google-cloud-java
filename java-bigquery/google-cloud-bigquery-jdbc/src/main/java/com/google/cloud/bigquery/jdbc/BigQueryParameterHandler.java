@@ -115,27 +115,36 @@ class BigQueryParameterHandler {
     // Index is 1-based. Converting to 0 based for java.
     int arrayIndex = index - 1;
     if (parametersList.size() <= arrayIndex || parametersList.get(arrayIndex) == null) {
+      LOG.finest("getParameter(index=%d) returned null", index);
       return null;
     }
-    return parametersList.get(arrayIndex).getValue();
+    Object value = parametersList.get(arrayIndex).getValue();
+    LOG.finest("getParameter(index=%d) returned %s", index, value);
+    return value;
   }
 
   Class<?> getType(int index) {
     // Index is 1-based. Converting to 0 based for java.
     int arrayIndex = index - 1;
     if (parametersList.size() <= arrayIndex || parametersList.get(arrayIndex) == null) {
+      LOG.finest("getType(index=%d) returned null", index);
       return null;
     }
-    return parametersList.get(arrayIndex).getType();
+    Class<?> type = parametersList.get(arrayIndex).getType();
+    LOG.finest("getType(index=%d) returned %s", index, type);
+    return type;
   }
 
   StandardSQLTypeName getSqlType(int index) {
     // Index is 1-based. Converting to 0 based for java.
     int arrayIndex = index - 1;
     if (parametersList.size() <= arrayIndex || parametersList.get(arrayIndex) == null) {
+      LOG.finest("getSqlType(index=%d) returned null", index);
       return null;
     }
-    return parametersList.get(arrayIndex).getSqlType();
+    StandardSQLTypeName sqlType = parametersList.get(arrayIndex).getSqlType();
+    LOG.finest("getSqlType(index=%d) returned %s", index, sqlType);
+    return sqlType;
   }
 
   void clearParameters() {

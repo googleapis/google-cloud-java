@@ -90,8 +90,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public ResultSet executeQuery() throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       return executeQueryImpl();
     }
@@ -112,8 +111,7 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public long executeLargeUpdate() throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       return executeLargeUpdateImpl();
     }
@@ -134,17 +132,15 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public int executeUpdate() throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
-      LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
+      LOG.finest("++enter++ currentQuery: " + this.currentQuery);
       return checkUpdateCount(executeLargeUpdateImpl());
     }
   }
 
   @Override
   public boolean execute() throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       return executeImpl();
     }
@@ -294,9 +290,8 @@ class BigQueryPreparedStatement extends BigQueryStatement implements PreparedSta
 
   @Override
   public int[] executeBatch() throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
-      LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
+      LOG.finest("++enter++ currentQuery: " + this.currentQuery);
       return executeBatchImpl();
     }
   }

@@ -61,6 +61,30 @@ class BigQueryJdbcMdc {
     };
   }
 
+  static MdcCloseable setContext(String connectionId) {
+    String prevId = currentConnectionId.get();
+    if (connectionId != null && !connectionId.isEmpty()) {
+      currentConnectionId.set("JdbcConnection-" + connectionId);
+    }
+    return () -> {
+      if (prevId == null) {
+        currentConnectionId.remove();
+      } else {
+        currentConnectionId.set(prevId);
+      }
+    };
+  }
+
+  static void setContextPersistent(String connectionId) {
+    if (connectionId != null && !connectionId.isEmpty()) {
+      currentConnectionId.set("JdbcConnection-" + connectionId);
+    }
+  }
+
+  static void clearContext() {
+    currentConnectionId.remove();
+  }
+
   /**
    * Returns the connection ID carried by any registered active connection on the current thread.
    */

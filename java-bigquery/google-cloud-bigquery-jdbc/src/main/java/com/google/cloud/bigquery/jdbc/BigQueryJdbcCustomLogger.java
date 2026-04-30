@@ -79,6 +79,10 @@ public class BigQueryJdbcCustomLogger extends Logger {
     logWithCaller(Level.FINE, () -> String.format(format, args));
   }
 
+  void fine(Throwable thrown, String msg) {
+    logWithCaller(Level.FINE, thrown, () -> msg);
+  }
+
   void config(String format, Object... args) {
     logWithCaller(Level.CONFIG, () -> String.format(format, args));
   }

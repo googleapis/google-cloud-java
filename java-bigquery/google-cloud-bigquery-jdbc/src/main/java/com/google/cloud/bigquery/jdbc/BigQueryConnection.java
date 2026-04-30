@@ -745,8 +745,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public boolean isValid(int timeout) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this, this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       LOG.info("Validating connection");
       if (timeout < 0) {
@@ -771,8 +770,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void abort(Executor executor) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this, this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       close();
     }
@@ -822,8 +820,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public boolean getAutoCommit() {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this, this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       checkClosed();
       return this.autoCommit;
@@ -832,8 +829,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void setAutoCommit(boolean autoCommit) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this, this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       checkClosed();
       checkIfEnabledSession("setAutoCommit");
@@ -932,8 +928,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void setTransactionIsolation(int level) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this, this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       if (level != Connection.TRANSACTION_SERIALIZABLE) {
         throw new BigQueryJdbcSqlFeatureNotSupportedException(
@@ -951,8 +946,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public void setHoldability(int holdability) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this, this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       if (holdability != ResultSet.CLOSE_CURSORS_AT_COMMIT) {
         throw new BigQueryJdbcSqlFeatureNotSupportedException(
             "CLOSE_CURSORS_AT_COMMIT not supported");

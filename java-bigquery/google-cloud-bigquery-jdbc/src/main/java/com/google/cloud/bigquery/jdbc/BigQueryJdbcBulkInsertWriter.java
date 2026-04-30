@@ -47,6 +47,7 @@ class BigQueryJdbcBulkInsertWriter {
 
   void initialize(TableName parentTable, BigQueryWriteClient client, RetrySettings retrySettings)
       throws IOException, DescriptorValidationException, InterruptedException {
+    LOG.fine("Initializing BulkInsertWriter for table: %s", parentTable);
     WriteStream stream = WriteStream.newBuilder().setType(WriteStream.Type.PENDING).build();
 
     CreateWriteStreamRequest createWriteStreamRequest =
@@ -67,6 +68,7 @@ class BigQueryJdbcBulkInsertWriter {
   }
 
   void append(JsonArray data, long offset) throws DescriptorValidationException, IOException {
+    LOG.fine("Appending %d rows at offset %d", data.size(), offset);
     synchronized (this.streamLock) {
       if (this.error != null) {
         throw this.error;
@@ -113,6 +115,7 @@ class BigQueryJdbcBulkInsertWriter {
     }
 
     public void onFailure(Throwable throwable) {
+      parent.LOG.fine(throwable, "Failed to append rows in background callback");
       synchronized (this.parent.streamLock) {
         if (this.parent.error == null) {
           StorageException storageException = Exceptions.toStorageException(throwable);

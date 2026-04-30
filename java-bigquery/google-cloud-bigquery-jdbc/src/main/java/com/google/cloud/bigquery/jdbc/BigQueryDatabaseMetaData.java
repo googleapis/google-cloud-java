@@ -140,6 +140,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   String URL;
   BigQueryConnection connection;
   Statement statement = null;
+  private final String connectionId;
   private final BigQuery bigquery;
   private final int metadataFetchThreadCount;
   private static final AtomicReference<String> parsedDriverVersion = new AtomicReference<>(null);
@@ -152,6 +153,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
     LOG.finest("++enter++");
     this.URL = connection.getConnectionUrl();
     this.connection = connection;
+    this.connectionId = connection != null ? connection.getConnectionId() : null;
     this.bigquery = connection.getBigQuery();
     this.metadataFetchThreadCount = connection.getMetadataFetchThreadCount();
     loadDriverVersionProperties();
@@ -902,16 +904,27 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getProcedures(
       String catalog, String schemaPattern, String procedureNamePattern) {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
-      LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
+      LOG.finest(
+          "++enter++ catalog: "
+              + catalog
+              + ", schemaPattern: "
+              + schemaPattern
+              + ", procedureNamePattern: "
+              + procedureNamePattern);
       return getProceduresImpl(catalog, schemaPattern, procedureNamePattern);
     }
   }
 
   private ResultSet getProceduresImpl(
       String catalog, String schemaPattern, String procedureNamePattern) {
-    LOG.finest("++enter++");
+    LOG.finest(
+        "++enter++ catalog: "
+            + catalog
+            + ", schemaPattern: "
+            + schemaPattern
+            + ", procedureNamePattern: "
+            + procedureNamePattern);
     if ((catalog == null || catalog.isEmpty())
         || (schemaPattern != null && schemaPattern.isEmpty())
         || (procedureNamePattern != null && procedureNamePattern.isEmpty())) {
@@ -1190,9 +1203,16 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getProcedureColumns(
       String catalog, String schemaPattern, String procedureNamePattern, String columnNamePattern) {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
-      LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
+      LOG.finest(
+          "++enter++ catalog: "
+              + catalog
+              + ", schemaPattern: "
+              + schemaPattern
+              + ", procedureNamePattern: "
+              + procedureNamePattern
+              + ", columnNamePattern: "
+              + columnNamePattern);
       return getProcedureColumnsImpl(
           catalog, schemaPattern, procedureNamePattern, columnNamePattern);
     }
@@ -1200,7 +1220,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   private ResultSet getProcedureColumnsImpl(
       String catalog, String schemaPattern, String procedureNamePattern, String columnNamePattern) {
-    LOG.finest("++enter++");
+    LOG.finest(
+        "++enter++ catalog: "
+            + catalog
+            + ", schemaPattern: "
+            + schemaPattern
+            + ", procedureNamePattern: "
+            + procedureNamePattern
+            + ", columnNamePattern: "
+            + columnNamePattern);
 
     if (catalog == null || catalog.isEmpty()) {
       LOG.warning("Returning empty ResultSet because catalog (project) is null or empty.");
@@ -1850,9 +1878,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getTables(
       String catalog, String schemaPattern, String tableNamePattern, String[] types) {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
-      LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
+      LOG.finest(
+          "++enter++ getTables(catalog=%s, schemaPattern=%s, tableNamePattern=%s, types=%s)",
+          catalog, schemaPattern, tableNamePattern, java.util.Arrays.toString(types));
       return getTablesImpl(catalog, schemaPattern, tableNamePattern, types);
     }
   }
@@ -1965,12 +1994,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                     final Table currentTable = table;
                     Future<?> processFuture =
                         tableProcessorExecutor.submit(
-                            () ->
-                                processTableInfo(
-                                    currentTable,
-                                    requestedTypes,
-                                    collectedResults,
-                                    localResultSchemaFields));
+                            wrapWithMdc(
+                                () ->
+                                    processTableInfo(
+                                        currentTable,
+                                        requestedTypes,
+                                        collectedResults,
+                                        localResultSchemaFields)));
                     processingFutures.add(processFuture);
                   }
                 }
@@ -2147,8 +2177,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getSchemas() {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       LOG.info("getSchemas() called");
 
@@ -2158,8 +2187,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getCatalogs() {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       return getCatalogsImpl();
     }
@@ -2203,8 +2231,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getTableTypes() {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       return getTableTypesImpl();
     }
@@ -2251,9 +2278,10 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getColumns(
       String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern) {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
-      LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
+      LOG.finest(
+          "++enter++ getColumns(catalog=%s, schemaPattern=%s, tableNamePattern=%s, columnNamePattern=%s)",
+          catalog, schemaPattern, tableNamePattern, columnNamePattern);
       return getColumnsImpl(catalog, schemaPattern, tableNamePattern, columnNamePattern);
     }
   }
@@ -2353,12 +2381,13 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
                 final Table finalTable = table;
                 Future<?> future =
                     columnExecutor.submit(
-                        () ->
-                            processTableColumns(
-                                finalTable,
-                                columnNameRegex,
-                                collectedResults,
-                                localResultSchemaFields));
+                        wrapWithMdc(
+                            () ->
+                                processTableColumns(
+                                    finalTable,
+                                    columnNameRegex,
+                                    collectedResults,
+                                    localResultSchemaFields)));
                 taskFutures.add(future);
               }
               if (Thread.currentThread().isInterrupted()) break;
@@ -2681,8 +2710,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getColumnPrivileges(
       String catalog, String schema, String table, String columnNamePattern) {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       return getColumnPrivilegesImpl(catalog, schema, table, columnNamePattern);
     }
@@ -2720,8 +2748,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getTablePrivileges(
       String catalog, String schemaPattern, String tableNamePattern) {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       return getTablePrivilegesImpl(catalog, schemaPattern, tableNamePattern);
     }
@@ -2752,8 +2779,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getBestRowIdentifier(
       String catalog, String schema, String table, int scope, boolean nullable) {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       return getBestRowIdentifierImpl(catalog, schema, table, scope, nullable);
     }
@@ -2866,16 +2892,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getPrimaryKeys(String catalog, String schema, String table) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
-      LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
+      LOG.finest("++enter++ catalog: " + catalog + ", schema: " + schema + ", table: " + table);
       return getPrimaryKeysImpl(catalog, schema, table);
     }
   }
 
   private ResultSet getPrimaryKeysImpl(String catalog, String schema, String table)
       throws SQLException {
-    LOG.finest("++enter++");
+    LOG.finest("++enter++ catalog: " + catalog + ", schema: " + schema + ", table: " + table);
     LOG.info(
         "getPrimaryKeys called for catalog: %s, schema: %s, table: %s", catalog, schema, table);
     String sql = readSqlFromFile(GET_PRIMARY_KEYS_SQL);
@@ -2893,16 +2918,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getImportedKeys(String catalog, String schema, String table)
       throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
-      LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
+      LOG.finest("++enter++ catalog: " + catalog + ", schema: " + schema + ", table: " + table);
       return getImportedKeysImpl(catalog, schema, table);
     }
   }
 
   private ResultSet getImportedKeysImpl(String catalog, String schema, String table)
       throws SQLException {
-    LOG.finest("++enter++");
+    LOG.finest("++enter++ catalog: " + catalog + ", schema: " + schema + ", table: " + table);
     LOG.info(
         "getImportedKeys called for catalog: %s, schema: %s, table: %s", catalog, schema, table);
     String sql = readSqlFromFile(GET_IMPORTED_KEYS_SQL);
@@ -2920,16 +2944,15 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getExportedKeys(String catalog, String schema, String table)
       throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
-      LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
+      LOG.finest("++enter++ catalog: " + catalog + ", schema: " + schema + ", table: " + table);
       return getExportedKeysImpl(catalog, schema, table);
     }
   }
 
   private ResultSet getExportedKeysImpl(String catalog, String schema, String table)
       throws SQLException {
-    LOG.finest("++enter++");
+    LOG.finest("++enter++ catalog: " + catalog + ", schema: " + schema + ", table: " + table);
     LOG.info(
         "getExportedKeys called for catalog: %s, schema: %s, table: %s", catalog, schema, table);
     String sql = readSqlFromFile(GET_EXPORTED_KEYS_SQL);
@@ -2953,8 +2976,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
       String foreignSchema,
       String foreignTable)
       throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       return getCrossReferenceImpl(
           parentCatalog, parentSchema, parentTable, foreignCatalog, foreignSchema, foreignTable);
@@ -2995,8 +3017,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getTypeInfo() {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       return getTypeInfoImpl();
     }
@@ -3473,8 +3494,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getIndexInfo(
       String catalog, String schema, String table, boolean unique, boolean approximate) {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       return getIndexInfoImpl(catalog, schema, table, unique, approximate);
     }
@@ -3966,9 +3986,8 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getSchemas(String catalog, String schemaPattern) {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
-      LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
+      LOG.finest("++enter++ getSchemas(catalog=%s, schemaPattern=%s)", catalog, schemaPattern);
       return getSchemasImpl(catalog, schemaPattern);
     }
   }
@@ -4221,8 +4240,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public ResultSet getFunctions(String catalog, String schemaPattern, String functionNamePattern) {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       return getFunctionsImpl(catalog, schemaPattern, functionNamePattern);
     }
@@ -4478,8 +4496,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   @Override
   public ResultSet getFunctionColumns(
       String catalog, String schemaPattern, String functionNamePattern, String columnNamePattern) {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connection.getConnectionId())) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       return getFunctionColumnsImpl(catalog, schemaPattern, functionNamePattern, columnNamePattern);
     }
@@ -5651,6 +5668,22 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
   String replaceSqlParameters(String sql, String... params) throws SQLException {
     LOG.finest("++enter++");
     return String.format(sql, (Object[]) params);
+  }
+
+  private <T> java.util.concurrent.Callable<T> wrapWithMdc(java.util.concurrent.Callable<T> task) {
+    return () -> {
+      try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
+        return task.call();
+      }
+    };
+  }
+
+  private java.lang.Runnable wrapWithMdc(java.lang.Runnable task) {
+    return () -> {
+      try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
+        task.run();
+      }
+    };
   }
 
   private void loadDriverVersionProperties() {

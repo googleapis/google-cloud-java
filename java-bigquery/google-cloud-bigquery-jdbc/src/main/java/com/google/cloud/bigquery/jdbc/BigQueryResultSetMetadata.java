@@ -70,24 +70,16 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
 
   @Override
   public boolean isCaseSensitive(int column) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(
-            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
-      LOG.finest("++enter++");
-      int colType = getColumnType(column);
-      return colType == Types.NVARCHAR;
-    }
+    LOG.finest("++enter++");
+    int colType = getColumnType(column);
+    return colType == Types.NVARCHAR;
   }
 
   @Override
   public boolean isSearchable(int column) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(
-            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
-      LOG.finest("++enter++");
-      int colType = getColumnType(column);
-      return colType != Types.OTHER;
-    }
+    LOG.finest("++enter++");
+    int colType = getColumnType(column);
+    return colType != Types.OTHER;
   }
 
   @Override
@@ -97,42 +89,30 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
 
   @Override
   public int isNullable(int column) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(
-            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
-      LOG.finest("++enter++");
-      Mode colMode = getField(column).getMode();
-      if (colMode == null) {
-        return ResultSetMetaData.columnNullableUnknown;
-      }
-      return colMode == Mode.NULLABLE
-          ? ResultSetMetaData.columnNullable
-          : ResultSetMetaData.columnNoNulls;
+    LOG.finest("++enter++");
+    Mode colMode = getField(column).getMode();
+    if (colMode == null) {
+      return ResultSetMetaData.columnNullableUnknown;
     }
+    return colMode == Mode.NULLABLE
+        ? ResultSetMetaData.columnNullable
+        : ResultSetMetaData.columnNoNulls;
   }
 
   @Override
   public boolean isSigned(int column) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(
-            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
-      LOG.finest("++enter++");
-      int colType = getColumnType(column);
-      return colType == Types.FLOAT
-          || colType == Types.DOUBLE
-          || colType == Types.BIGINT
-          || colType == Types.NUMERIC;
-    }
+    LOG.finest("++enter++");
+    int colType = getColumnType(column);
+    return colType == Types.FLOAT
+        || colType == Types.DOUBLE
+        || colType == Types.BIGINT
+        || colType == Types.NUMERIC;
   }
 
   @Override
   public int getColumnDisplaySize(int column) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(
-            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
-      LOG.finest("++enter++");
-      return getColumnDisplaySizeImpl(column);
-    }
+    LOG.finest("++enter++");
+    return getColumnDisplaySizeImpl(column);
   }
 
   private int getColumnDisplaySizeImpl(int column) throws SQLException {
@@ -158,42 +138,26 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
 
   @Override
   public String getColumnLabel(int column) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(
-            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
-      LOG.finest("++enter++");
-      return getField(column).getName();
-    }
+    LOG.finest("++enter++");
+    return getField(column).getName();
   }
 
   @Override
   public String getColumnName(int column) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(
-            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
-      LOG.finest("++enter++");
-      return getField(column).getName();
-    }
+    LOG.finest("++enter++");
+    return getField(column).getName();
   }
 
   @Override
   public int getPrecision(int column) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(
-            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
-      LOG.finest("++enter++");
-      return (int) (getField(column).getPrecision() != null ? getField(column).getPrecision() : 0);
-    }
+    LOG.finest("++enter++");
+    return (int) (getField(column).getPrecision() != null ? getField(column).getPrecision() : 0);
   }
 
   @Override
   public int getScale(int column) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(
-            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
-      LOG.finest("++enter++");
-      return (int) (getField(column).getScale() != null ? getField(column).getScale() : 0);
-    }
+    LOG.finest("++enter++");
+    return (int) (getField(column).getScale() != null ? getField(column).getScale() : 0);
   }
 
   @Override
@@ -224,24 +188,16 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
 
   @Override
   public int getColumnType(int column) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(
-            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
-      LOG.finest("++enter++");
-      LOG.info("getColumnType called for column: %d", column);
-      return BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(
-          getStandardSQLTypeName(column));
-    }
+    LOG.finest("++enter++");
+    LOG.info("getColumnType called for column: %d", column);
+    return BigQueryJdbcTypeMappings.standardSQLToJavaSqlTypesMapping.get(
+        getStandardSQLTypeName(column));
   }
 
   @Override
   public String getColumnTypeName(int column) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(
-            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
-      LOG.finest("++enter++");
-      return getStandardSQLTypeName(column).name();
-    }
+    LOG.finest("++enter++");
+    return getStandardSQLTypeName(column).name();
   }
 
   @Override
@@ -251,12 +207,8 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
 
   @Override
   public boolean isWritable(int column) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(
-            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
-      LOG.finest("++enter++");
-      return !isReadOnly(column);
-    }
+    LOG.finest("++enter++");
+    return !isReadOnly(column);
   }
 
   @Override
@@ -266,19 +218,15 @@ class BigQueryResultSetMetadata implements ResultSetMetaData {
 
   @Override
   public String getColumnClassName(int column) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(
-            this.connection, this.connection != null ? this.connection.getConnectionId() : null)) {
-      LOG.finest("++enter++");
-      LOG.info("getColumnClassName called for column: %d", column);
-      Field field = getField(column);
-      if (field.getMode() == Mode.REPEATED) {
-        return java.sql.Array.class.getName();
-      }
-      return BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping
-          .get(field.getType().getStandardType())
-          .getName();
+    LOG.finest("++enter++");
+    LOG.info("getColumnClassName called for column: %d", column);
+    Field field = getField(column);
+    if (field.getMode() == Mode.REPEATED) {
+      return java.sql.Array.class.getName();
     }
+    return BigQueryJdbcTypeMappings.standardSQLToJavaTypeMapping
+        .get(field.getType().getStandardType())
+        .getName();
   }
 
   // Unsupported methods:

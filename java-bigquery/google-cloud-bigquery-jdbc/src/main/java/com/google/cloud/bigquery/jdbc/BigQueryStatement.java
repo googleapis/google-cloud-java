@@ -238,8 +238,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public ResultSet executeQuery(String sql) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       checkClosed();
       return executeQueryImpl(sql);
@@ -266,8 +265,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public long executeLargeUpdate(String sql) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       checkClosed();
       return executeLargeUpdateImpl(sql);
@@ -292,9 +290,8 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public int executeUpdate(String sql) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
-      LOG.finest("++enter++");
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
+      LOG.finest("++enter++ sql: " + sql);
       return checkUpdateCount(executeLargeUpdateImpl(sql));
     }
   }
@@ -311,8 +308,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean execute(String sql) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       checkClosed();
       return executeImpl(sql);
@@ -400,8 +396,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     if (isClosed()) {
       return;
     }
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.fine("Closing Statement %s.", this);
 
       boolean cancelSucceeded = false;
@@ -475,8 +470,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
    */
   @Override
   public void cancel() throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("Statement %s cancelled", this);
       synchronized (cancelLock) {
         this.isCanceled = true;
@@ -1542,8 +1536,7 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
 
   @Override
   public boolean getMoreResults(int current) throws SQLException {
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.setContext(this.connectionId)) {
       LOG.finest("++enter++");
       checkClosed();
       return getMoreResultsImpl(current);
