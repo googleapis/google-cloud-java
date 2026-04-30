@@ -91,9 +91,11 @@ public class DatastoreOpenTelemetryOptions {
   }
 
   /**
-   * Returns the custom {@link OpenTelemetry} instance, if one was provided.
+   * Returns the configured custom {@link OpenTelemetry} instance.
    *
-   * @return the custom {@link OpenTelemetry} instance.
+   * @return the configured {@link OpenTelemetry} instance, or the global instance if a custom one
+   *     was not provided. If there is no global instance, then {@code OpenTelemetry.noop()} is
+   *     returned.
    */
   @Nonnull
   public OpenTelemetry getOpenTelemetry() {
