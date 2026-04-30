@@ -348,6 +348,18 @@ while read -r bom_pom; do
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 done < <(find "$SOURCE_REPO_NAME" -name "pom.xml" | grep "\-bom/pom.xml" | grep -v "samples")
 
+# 7.12b Align all version markers across the monorepo
+echo "Aligning all version markers using apply_versions.sh..."
+bash generation/apply_versions.sh versions.txt current
+
+# 7.12c Sync all owlbot.py formatting
+echo "Syncing all owlbot.py formatting..."
+bash generation/update_owlbot_postprocessor_config.sh || true
+
+git add -u
+git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): align versions and format owlbot configurations"
+COMMIT_COUNT=$((COMMIT_COUNT + 1))
+
 # 7.8c Exempt module from global integration testing matrix
 echo "Exempting $SOURCE_REPO_NAME from global integration testing matrix..."
 sed -i.bak "s/'java-storage-nio'/'java-storage-nio'\n  '${SOURCE_REPO_NAME}'/" ".kokoro/common.sh"
