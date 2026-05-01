@@ -206,7 +206,6 @@ if [[ "${proto_only}" == "false" ]]; then
   "--plugin=protoc-gen-java_gapic=${script_dir}/gapic-generator-java-wrapper" \
   "--java_gapic_out=metadata:${temp_destination_path}/java_gapic_srcjar_raw.srcjar.zip" \
   "--java_gapic_opt=$(get_gapic_opts "${transport}" "${rest_numeric_enums}" "${gapic_yaml}" "${service_config}" "${service_yaml}" "${repo}" "${artifact}" "${generate_version_java}")" \
-
   ${proto_files} ${gapic_additional_protos}
 
   unzip -o -q "${temp_destination_path}/java_gapic_srcjar_raw.srcjar.zip" -d "${temp_destination_path}"
