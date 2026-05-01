@@ -35,6 +35,7 @@ import com.google.cloud.datastore.v1.DatastoreSettings;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -127,13 +128,14 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
     private String databaseId;
     private TransportChannelProvider channelProvider = null;
     private String host;
-    private TransportOptions transportOptions;
+
+    @Nonnull
+    private TransportOptions transportOptions =
+        new DatastoreDefaults().getDefaultTransportOptions();
 
     @Nullable private DatastoreOpenTelemetryOptions openTelemetryOptions = null;
 
-    private Builder() {
-      this.transportOptions = new DatastoreDefaults().getDefaultTransportOptions();
-    }
+    private Builder() {}
 
     private Builder(DatastoreOptions options) {
       super(options);
@@ -145,8 +147,27 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       this.transportOptions = options.getTransportOptions();
     }
 
+    private TransportChannelProvider validateChannelProvider(
+        TransportChannelProvider channelProvider) {
+      Preconditions.checkNotNull(channelProvider, "TransportChannelProvider cannot be null");
+      if (!(channelProvider instanceof InstantiatingGrpcChannelProvider)) {
+        throw new IllegalArgumentException(
+            "Only GRPC channels are allowed for " + API_SHORT_NAME + ".");
+      }
+      return channelProvider;
+    }
+
+    /**
+     * Sets the transport options.
+     *
+     * @param transportOptions the transport options to set, must be {@link HttpTransportOptions} or
+     *     {@link GrpcTransportOptions}
+     * @return the builder
+     * @throws IllegalArgumentException if the transport options are not supported
+     */
     @Override
-    public Builder setTransportOptions(TransportOptions transportOptions) {
+    public Builder setTransportOptions(@Nonnull TransportOptions transportOptions) {
+      Preconditions.checkNotNull(transportOptions, "TransportOptions cannot be null");
       if (!(transportOptions instanceof HttpTransportOptions)
           && !(transportOptions instanceof GrpcTransportOptions)) {
         throw new IllegalArgumentException(
@@ -188,9 +209,23 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       return this;
     }
 
+    /**
+     * Builds the {@link DatastoreOptions} instance.
+     *
+     * <p>If the host is not explicitly set, it defaults to the transport-specific default host:
+     *
+     * <ul>
+     *   <li>gRPC: {@code datastore.googleapis.com:443}
+     *   <li>HTTP: {@code https://datastore.googleapis.com}
+     * </ul>
+     *
+     * @return the {@link DatastoreOptions} instance
+     */
     @Override
     public DatastoreOptions build() {
       if (this.host == null) {
+        // Use whatever host value the user passes in, otherwise use the transport specific default
+        // host values
         if (this.transportOptions instanceof GrpcTransportOptions) {
           this.setHost(DatastoreSettings.getDefaultEndpoint());
         } else if (this.transportOptions instanceof HttpTransportOptions) {
@@ -223,15 +258,6 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       this.openTelemetryOptions = openTelemetryOptions;
       return this;
     }
-  }
-
-  private static TransportChannelProvider validateChannelProvider(
-      TransportChannelProvider channelProvider) {
-    if (channelProvider != null && !(channelProvider instanceof InstantiatingGrpcChannelProvider)) {
-      throw new IllegalArgumentException(
-          "Only GRPC channels are allowed for " + API_SHORT_NAME + ".");
-    }
-    return channelProvider;
   }
 
   private DatastoreOptions(Builder builder) {
