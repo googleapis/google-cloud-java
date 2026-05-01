@@ -11,6 +11,12 @@ local_repository(
    path = "sdk-platform-java/gax-java",
 )
 
+local_repository(
+   name = "gapic_generator_java",
+   path = ".",
+)
+
+
 load("@com_google_api_gax_java//:repository_rules.bzl", "com_google_api_gax_java_properties")
 
 com_google_api_gax_java_properties(
