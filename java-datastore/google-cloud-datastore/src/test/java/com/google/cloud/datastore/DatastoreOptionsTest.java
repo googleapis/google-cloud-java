@@ -22,6 +22,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -157,6 +158,45 @@ public class DatastoreOptionsTest {
     assertFalse(o2.isTracingEnabled());
     assertTrue(o2.isMetricsEnabled());
     assertTrue(o2.isEnabled());
+  }
+
+  @Test
+  public void testOpenTelemetryMetricsAndCloudMonitoringMixed() {
+    DatastoreOpenTelemetryOptions o1 =
+        DatastoreOpenTelemetryOptions.newBuilder()
+            .setMetricsEnabled(true)
+            .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
+            .build();
+    assertTrue(o1.isMetricsEnabled());
+    assertFalse(o1.isExportBuiltinMetricsToGoogleCloudMonitoring());
+    assertTrue(o1.isEnabled());
+
+    DatastoreOpenTelemetryOptions o2 =
+        DatastoreOpenTelemetryOptions.newBuilder()
+            .setMetricsEnabled(false)
+            .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
+            .build();
+    assertFalse(o2.isMetricsEnabled());
+    assertTrue(o2.isExportBuiltinMetricsToGoogleCloudMonitoring());
+    assertFalse(o2.isEnabled());
+  }
+
+  @Test
+  public void testOpenTelemetryOptionsDefaultInstance() {
+    DatastoreOpenTelemetryOptions telemetryOptions =
+        DatastoreOpenTelemetryOptions.newBuilder().build();
+    assertThat(telemetryOptions.getOpenTelemetry())
+        .isSameInstanceAs(io.opentelemetry.api.OpenTelemetry.noop());
+  }
+
+  @Test
+  public void testOpenTelemetryOptionsSetNullThrowsNPE() {
+    try {
+      DatastoreOpenTelemetryOptions.newBuilder().setOpenTelemetry(null);
+      fail("Expected NullPointerException");
+    } catch (NullPointerException e) {
+      assertThat(e.getMessage()).isEqualTo("OpenTelemetry instance cannot be null");
+    }
   }
 
   @Test

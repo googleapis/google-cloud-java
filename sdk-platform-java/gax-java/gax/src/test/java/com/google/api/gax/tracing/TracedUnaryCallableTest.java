@@ -47,15 +47,13 @@ import com.google.api.gax.tracing.ApiTracerContext.Transport;
 import com.google.api.gax.tracing.ApiTracerFactory.OperationType;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 class TracedUnaryCallableTest {
-  private static final SpanName SPAN_NAME = SpanName.of("FakeClient", "FakeRpc");
+
   private static final ApiTracerContext TRACER_CONTEXT =
       ApiTracerContext.newBuilder()
           .setFullMethodName("FakeClient/FakeRpc")
@@ -73,21 +71,13 @@ class TracedUnaryCallableTest {
   private TracedUnaryCallable<String, String> tracedUnaryCallable;
   private FakeCallContext callContext;
 
-  void init(boolean useContext) {
+  void init() {
     parentTracer = BaseApiTracer.getInstance();
 
     // Wire the mock tracer factory
-    if (useContext) {
-      when(tracerFactory.newTracer(any(ApiTracer.class), any(ApiTracerContext.class)))
-          .thenReturn(tracer);
-      tracedUnaryCallable =
-          new TracedUnaryCallable<>(innerCallable, tracerFactory, TRACER_CONTEXT, null);
-    } else {
-      when(tracerFactory.newTracer(
-              any(ApiTracer.class), any(SpanName.class), eq(OperationType.Unary)))
-          .thenReturn(tracer);
-      tracedUnaryCallable = new TracedUnaryCallable<>(innerCallable, tracerFactory, SPAN_NAME);
-    }
+    when(tracerFactory.newTracer(any(ApiTracer.class), any(ApiTracerContext.class)))
+        .thenReturn(tracer);
+    tracedUnaryCallable = new TracedUnaryCallable<>(innerCallable, tracerFactory, TRACER_CONTEXT);
 
     // Wire the mock inner callable
     innerResult = SettableApiFuture.create();
@@ -96,29 +86,23 @@ class TracedUnaryCallableTest {
     callContext = FakeCallContext.createDefault();
   }
 
-  @ParameterizedTest
-  @ValueSource(booleans = {false, true})
-  void testTracerCreated(boolean useContext) {
-    init(useContext);
+  @Test
+  void testTracerCreated() {
+    init();
     tracedUnaryCallable.futureCall("test", callContext);
-    if (useContext) {
-      verify(tracerFactory, times(1)).newTracer(parentTracer, TRACER_CONTEXT);
-    } else {
-      verify(tracerFactory, times(1)).newTracer(parentTracer, SPAN_NAME, OperationType.Unary);
-    }
+    verify(tracerFactory, times(1)).newTracer(parentTracer, TRACER_CONTEXT);
   }
 
   @Test
   void testOperationTypeIsSet() {
     when(tracerFactory.newTracer(any(ApiTracer.class), any(ApiTracerContext.class)))
         .thenReturn(tracer);
-    tracedUnaryCallable =
-        new TracedUnaryCallable<>(innerCallable, tracerFactory, TRACER_CONTEXT, null);
+    tracedUnaryCallable = new TracedUnaryCallable<>(innerCallable, tracerFactory, TRACER_CONTEXT);
     ApiTracerContext contextWithWrongType =
         TRACER_CONTEXT.toBuilder().setOperationType(OperationType.BidiStreaming).build();
 
     tracedUnaryCallable =
-        new TracedUnaryCallable<>(innerCallable, tracerFactory, contextWithWrongType, null);
+        new TracedUnaryCallable<>(innerCallable, tracerFactory, contextWithWrongType);
 
     innerResult = SettableApiFuture.create();
     when(innerCallable.futureCall(anyString(), any(ApiCallContext.class))).thenReturn(innerResult);
@@ -131,29 +115,26 @@ class TracedUnaryCallableTest {
     assertThat(contextCaptor.getValue().operationType()).isEqualTo(OperationType.Unary);
   }
 
-  @ParameterizedTest
-  @ValueSource(booleans = {false, true})
-  void testOperationFinish(boolean useContext) {
-    init(useContext);
+  @Test
+  void testOperationFinish() {
+    init();
     innerResult.set("successful result");
     tracedUnaryCallable.futureCall("test", callContext);
 
     verify(tracer, times(1)).operationSucceeded();
   }
 
-  @ParameterizedTest
-  @ValueSource(booleans = {false, true})
-  void testOperationCancelled(boolean useContext) {
-    init(useContext);
+  @Test
+  void testOperationCancelled() {
+    init();
     innerResult.cancel(true);
     tracedUnaryCallable.futureCall("test", callContext);
     verify(tracer, times(1)).operationCancelled();
   }
 
-  @ParameterizedTest
-  @ValueSource(booleans = {false, true})
-  void testOperationFailed(boolean useContext) {
-    init(useContext);
+  @Test
+  void testOperationFailed() {
+    init();
     RuntimeException fakeError = new RuntimeException("fake error");
     innerResult.setException(fakeError);
     tracedUnaryCallable.futureCall("test", callContext);
@@ -161,10 +142,9 @@ class TracedUnaryCallableTest {
     verify(tracer, times(1)).operationFailed(fakeError);
   }
 
-  @ParameterizedTest
-  @ValueSource(booleans = {false, true})
-  void testSyncError(boolean useContext) {
-    init(useContext);
+  @Test
+  void testSyncError() {
+    init();
     RuntimeException fakeError = new RuntimeException("fake error");
 
     // Reset the irrelevant expectations from setup. (only needed to silence the warnings).

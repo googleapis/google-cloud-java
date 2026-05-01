@@ -33,6 +33,5 @@ java.common_templates(
         "java.header",
         "license-checks.xml",
         "renovate.json",
-        ".gitignore",
-    ],
-)
+        ".gitignore"
+])
