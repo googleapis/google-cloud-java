@@ -17,6 +17,12 @@
 # Exit on error
 set -e
 
+# Ensure git-filter-repo is available in PATH
+if ! command -v git-filter-repo >/dev/null 2>&1; then
+    echo "Injecting local .git-filter-repo into PATH..."
+    export PATH="$(pwd)/.git-filter-repo:$PATH"
+fi
+
 # Function to check if a command exists
 check_command() {
     if ! command -v "$1" >/dev/null 2>&1; then
@@ -29,6 +35,7 @@ check_command() {
 check_command git
 check_command python3
 check_command mvn
+check_command git-filter-repo
 
 # Configuration
 MONOREPO_URL="https://github.com/googleapis/google-cloud-java"
