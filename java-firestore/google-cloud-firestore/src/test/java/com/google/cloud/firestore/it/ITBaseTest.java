@@ -82,7 +82,7 @@ public abstract class ITBaseTest {
   public static FirestoreOptions.Builder getOptionsBuilder() {
     FirestoreOptions.Builder optionsBuilder = FirestoreOptions.newBuilder();
 
-    String dbPropertyName = "FIRESTORE_NAMED_DATABASE";
+    String dbPropertyName = "FIRESTORE_DATABASE_ID";
     String namedDb = System.getProperty(dbPropertyName);
     if (namedDb == null) {
       namedDb = System.getenv(dbPropertyName);

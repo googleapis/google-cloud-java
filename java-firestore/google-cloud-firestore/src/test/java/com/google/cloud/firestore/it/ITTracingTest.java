@@ -135,7 +135,7 @@ public abstract class ITTracingTest {
           otelOptionsBuilder.setOpenTelemetry(openTelemetrySdk).build());
     }
 
-    String namedDb = System.getProperty("FIRESTORE_NAMED_DATABASE");
+    String namedDb = System.getProperty("FIRESTORE_DATABASE_ID");
     if (namedDb != null) {
       logger.log(
           Level.INFO,

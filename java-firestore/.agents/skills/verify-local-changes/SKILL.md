@@ -47,7 +47,7 @@ When running integration tests, configure your execution using properties or env
     -   `standard` (Default)
     -   `enterprise`
     -   *Note*: **Pipelines can only be run against `enterprise` editions**, while standard Queries run on both.
--   **`FIRESTORE_NAMED_DATABASE`**: 
+-   **`FIRESTORE_DATABASE_ID`**:
     -   Enterprise editions usually require a named database (often `enterprise`). Adjust this flag if pointing to specific instances.
 -   **`FIRESTORE_TARGET_BACKEND`**:
     -   `PROD` (Default)
@@ -58,14 +58,12 @@ When running integration tests, configure your execution using properties or env
 1.  **Identify modified integration tests** (usually Starting in `IT`).
 2.  **Run specific integration tests only** (isolated checks run quicker):
     ```bash
-    mvn verify -Penable-integration-tests -DFIRESTORE_EDITION=enterprise -DFIRESTORE_NAMED_DATABASE=enterprise -Dtest=ITTest#testMethod -Dclirr.skip=true -Denforcer.skip=true -fae
+    mvn verify -Penable-integration-tests -DFIRESTORE_EDITION=enterprise -DFIRESTORE_DATABASE_ID=enterprise -Dtest=ITTest#testMethod -Dclirr.skip=true -Denforcer.skip=true -fae
     ```
 3.  **Run the entire integration test suite** for the modified class if isolation tests pass:
     ```bash
-    mvn verify -Penable-integration-tests -DFIRESTORE_EDITION=enterprise -DFIRESTORE_NAMED_DATABASE=enterprise -Dtest=ITTest -Dclirr.skip=true -Denforcer.skip=true -fae
+    mvn verify -Penable-integration-tests -DFIRESTORE_EDITION=enterprise -DFIRESTORE_DATABASE_ID=enterprise -Dtest=ITTest -Dclirr.skip=true -Denforcer.skip=true -fae
     ```
-
-
 
 ---
 
@@ -74,7 +72,7 @@ When running integration tests, configure your execution using properties or env
 Run the full integration regression suite once you are confident subsets pass:
 
 ```bash
-mvn verify -Penable-integration-tests -DFIRESTORE_EDITION=enterprise -DFIRESTORE_NAMED_DATABASE=enterprise -Dclirr.skip=true -Denforcer.skip=true -fae
+mvn verify -Penable-integration-tests -DFIRESTORE_EDITION=enterprise -DFIRESTORE_DATABASE_ID=enterprise -Dclirr.skip=true -Denforcer.skip=true -fae
 ```
 
 ---
@@ -89,7 +87,7 @@ mvn verify -Penable-integration-tests -DFIRESTORE_EDITION=enterprise -DFIRESTORE
 If you run into issues executing tests with the commands above, **consult the Kokoro configuration files** as the ultimate source of truth:
 
 -   **Presubmit configurations**: See `.kokoro/presubmit/integration.cfg` (or `integration-named-db.cfg`)
--   **Nightly configurations**: See `.kokoro/nightly/integration.cfg` 
+-   **Nightly configurations**: See `.kokoro/nightly/integration.cfg` (or `integration-named-db.cfg`)
 -   **Build shell scripts**: See `.kokoro/build.sh`
 
 These files define the exact environment variables (e.g., specific endpoints or endpoints overrides) the CI server uses!
