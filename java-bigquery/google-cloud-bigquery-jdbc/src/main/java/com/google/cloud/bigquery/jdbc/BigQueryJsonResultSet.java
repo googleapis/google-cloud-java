@@ -197,6 +197,7 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
 
   @Override
   public Object getObject(int columnIndex) throws SQLException {
+    // columnIndex is SQL index starting at 1
     checkClosed();
     try {
       return getObjectImpl(columnIndex);
