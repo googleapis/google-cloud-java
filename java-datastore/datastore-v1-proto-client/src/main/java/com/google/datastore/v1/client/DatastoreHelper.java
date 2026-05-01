@@ -220,10 +220,10 @@ public final class DatastoreHelper {
    *       href="https://cloud.google.com/docs/authentication/production">here</a>.
    * </ol>
    *
-   * <p><b>Warning:</b> The <code>__DATASTORE_URL_OVERRIDE</code> environment variable is an
-   * internal, legacy testing override and its use is <b>strongly discouraged</b>. To maintain legacy
-   * behavior, the URL must include a scheme (e.g. <code>http://localhost:8080</code>). Omitting the
-   * scheme will result in an invalid endpoint URL.
+   * <p><b>Warning:</b> The <code>__DATASTORE_URL_OVERRIDE</code> environment variable is not
+   * well-supported or documented. To maintain legacy behavior, the URL must include a scheme
+   * (e.g. <code>http://localhost:8080</code>). Omitting the scheme will result in an invalid
+   * endpoint URL.
    *
    * <p>Users should instead use the standard and supported <code>DATASTORE_EMULATOR_HOST</code>
    * environment variable (e.g., <code>localhost:8080</code>) to connect to local emulators.
@@ -334,12 +334,13 @@ public final class DatastoreHelper {
     if (urlOverride != null) {
       logger.warning(
           String.format(
-              "The environment variable %s is an internal/legacy override. "
+              "The environment variable %s is not well-supported or documented. "
                   + "Consider using the standard %s environment variable instead. "
                   + "See https://docs.cloud.google.com/datastore/docs/tools/datastore-emulator",
               URL_OVERRIDE_ENV_VAR, LOCAL_HOST_ENV_VAR));
       options.projectId(projectId);
-      // To maintain legacy behavior, the URL override must include a scheme (e.g., http://).
+      // To maintain legacy behavior for undocumented overrides, the URL override must include a
+      // scheme (e.g., http://).
       // Since host and localHost methods don't accept a scheme, we strip it if present.
       // We then check if it's an HTTP or HTTPS URL to use options.localHost(...) or
       // options.host(...) accordingly. We use options.localHost(...) for all HTTP URLs
