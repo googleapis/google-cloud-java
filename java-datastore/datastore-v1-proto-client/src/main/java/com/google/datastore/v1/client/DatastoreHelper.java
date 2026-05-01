@@ -221,9 +221,9 @@ public final class DatastoreHelper {
    * </ol>
    *
    * <p><b>Warning:</b> The <code>__DATASTORE_URL_OVERRIDE</code> environment variable is not
-   * well-supported or documented. To maintain legacy behavior, the URL must include a scheme
-   * (e.g. <code>http://localhost:8080</code>). Omitting the scheme will result in an invalid
-   * endpoint URL.
+   * well-supported or documented. To maintain legacy behavior, the URL must include a scheme (e.g.
+   * <code>http://localhost:8080</code>). Omitting the scheme will result in an invalid endpoint
+   * URL.
    *
    * <p>Users should instead use the standard and supported <code>DATASTORE_EMULATOR_HOST</code>
    * environment variable (e.g., <code>localhost:8080</code>) to connect to local emulators.
