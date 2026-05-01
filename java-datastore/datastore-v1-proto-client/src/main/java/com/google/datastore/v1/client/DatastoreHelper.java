@@ -332,6 +332,10 @@ public final class DatastoreHelper {
     String projectId = getProjectIdFromEnv();
     String urlOverride = System.getenv(URL_OVERRIDE_ENV_VAR);
     if (urlOverride != null) {
+      if (!urlOverride.startsWith("http://") && !urlOverride.startsWith("https://")) {
+        throw new IllegalArgumentException(
+            String.format("Project endpoint \"%s\" must include scheme.", urlOverride));
+      }
       logger.warning(
           String.format(
               "The environment variable %s is not well-supported or documented. "
