@@ -764,6 +764,177 @@ public class ComplianceClientTest {
   }
 
   @Test
+  public void repeatDataCustomPathTest() throws Exception {
+    RepeatResponse expectedResponse =
+        RepeatResponse.newBuilder()
+            .setRequest(RepeatRequest.newBuilder().build())
+            .setBindingUri("bindingUri1514820775")
+            .build();
+    mockCompliance.addResponse(expectedResponse);
+
+    CustomBindingRequest request =
+        CustomBindingRequest.newBuilder()
+            .setName("name3373707")
+            .setInfo(ComplianceData.newBuilder().build())
+            .setServerVerify(true)
+            .setCustomKebabName("customKebabName-2062111197")
+            .setCustomBodyMessage(ComplianceData.newBuilder().build())
+            .build();
+
+    RepeatResponse actualResponse = client.repeatDataCustomPath(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCompliance.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CustomBindingRequest actualRequest = ((CustomBindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getInfo(), actualRequest.getInfo());
+    Assert.assertEquals(request.getServerVerify(), actualRequest.getServerVerify());
+    Assert.assertEquals(request.getCustomKebabName(), actualRequest.getCustomKebabName());
+    Assert.assertEquals(request.getCustomBodyMessage(), actualRequest.getCustomBodyMessage());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void repeatDataCustomPathExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCompliance.addException(exception);
+
+    try {
+      CustomBindingRequest request =
+          CustomBindingRequest.newBuilder()
+              .setName("name3373707")
+              .setInfo(ComplianceData.newBuilder().build())
+              .setServerVerify(true)
+              .setCustomKebabName("customKebabName-2062111197")
+              .setCustomBodyMessage(ComplianceData.newBuilder().build())
+              .build();
+      client.repeatDataCustomPath(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void repeatDataBodyCustomMessageTest() throws Exception {
+    RepeatResponse expectedResponse =
+        RepeatResponse.newBuilder()
+            .setRequest(RepeatRequest.newBuilder().build())
+            .setBindingUri("bindingUri1514820775")
+            .build();
+    mockCompliance.addResponse(expectedResponse);
+
+    CustomBindingRequest request =
+        CustomBindingRequest.newBuilder()
+            .setName("name3373707")
+            .setInfo(ComplianceData.newBuilder().build())
+            .setServerVerify(true)
+            .setCustomKebabName("customKebabName-2062111197")
+            .setCustomBodyMessage(ComplianceData.newBuilder().build())
+            .build();
+
+    RepeatResponse actualResponse = client.repeatDataBodyCustomMessage(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCompliance.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CustomBindingRequest actualRequest = ((CustomBindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getInfo(), actualRequest.getInfo());
+    Assert.assertEquals(request.getServerVerify(), actualRequest.getServerVerify());
+    Assert.assertEquals(request.getCustomKebabName(), actualRequest.getCustomKebabName());
+    Assert.assertEquals(request.getCustomBodyMessage(), actualRequest.getCustomBodyMessage());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void repeatDataBodyCustomMessageExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCompliance.addException(exception);
+
+    try {
+      CustomBindingRequest request =
+          CustomBindingRequest.newBuilder()
+              .setName("name3373707")
+              .setInfo(ComplianceData.newBuilder().build())
+              .setServerVerify(true)
+              .setCustomKebabName("customKebabName-2062111197")
+              .setCustomBodyMessage(ComplianceData.newBuilder().build())
+              .build();
+      client.repeatDataBodyCustomMessage(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void repeatDataCustomQueryTest() throws Exception {
+    RepeatResponse expectedResponse =
+        RepeatResponse.newBuilder()
+            .setRequest(RepeatRequest.newBuilder().build())
+            .setBindingUri("bindingUri1514820775")
+            .build();
+    mockCompliance.addResponse(expectedResponse);
+
+    CustomBindingRequest request =
+        CustomBindingRequest.newBuilder()
+            .setName("name3373707")
+            .setInfo(ComplianceData.newBuilder().build())
+            .setServerVerify(true)
+            .setCustomKebabName("customKebabName-2062111197")
+            .setCustomBodyMessage(ComplianceData.newBuilder().build())
+            .build();
+
+    RepeatResponse actualResponse = client.repeatDataCustomQuery(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCompliance.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CustomBindingRequest actualRequest = ((CustomBindingRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getInfo(), actualRequest.getInfo());
+    Assert.assertEquals(request.getServerVerify(), actualRequest.getServerVerify());
+    Assert.assertEquals(request.getCustomKebabName(), actualRequest.getCustomKebabName());
+    Assert.assertEquals(request.getCustomBodyMessage(), actualRequest.getCustomBodyMessage());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void repeatDataCustomQueryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCompliance.addException(exception);
+
+    try {
+      CustomBindingRequest request =
+          CustomBindingRequest.newBuilder()
+              .setName("name3373707")
+              .setInfo(ComplianceData.newBuilder().build())
+              .setServerVerify(true)
+              .setCustomKebabName("customKebabName-2062111197")
+              .setCustomBodyMessage(ComplianceData.newBuilder().build())
+              .build();
+      client.repeatDataCustomQuery(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

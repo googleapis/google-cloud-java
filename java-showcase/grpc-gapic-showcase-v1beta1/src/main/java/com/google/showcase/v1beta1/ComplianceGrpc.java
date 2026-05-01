@@ -462,6 +462,152 @@ public final class ComplianceGrpc {
     return getVerifyEnumMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.showcase.v1beta1.CustomBindingRequest,
+          com.google.showcase.v1beta1.RepeatResponse>
+      getRepeatDataCustomPathMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RepeatDataCustomPath",
+      requestType = com.google.showcase.v1beta1.CustomBindingRequest.class,
+      responseType = com.google.showcase.v1beta1.RepeatResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.showcase.v1beta1.CustomBindingRequest,
+          com.google.showcase.v1beta1.RepeatResponse>
+      getRepeatDataCustomPathMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.showcase.v1beta1.CustomBindingRequest,
+            com.google.showcase.v1beta1.RepeatResponse>
+        getRepeatDataCustomPathMethod;
+    if ((getRepeatDataCustomPathMethod = ComplianceGrpc.getRepeatDataCustomPathMethod) == null) {
+      synchronized (ComplianceGrpc.class) {
+        if ((getRepeatDataCustomPathMethod = ComplianceGrpc.getRepeatDataCustomPathMethod)
+            == null) {
+          ComplianceGrpc.getRepeatDataCustomPathMethod =
+              getRepeatDataCustomPathMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.showcase.v1beta1.CustomBindingRequest,
+                          com.google.showcase.v1beta1.RepeatResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RepeatDataCustomPath"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.showcase.v1beta1.CustomBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.showcase.v1beta1.RepeatResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ComplianceMethodDescriptorSupplier("RepeatDataCustomPath"))
+                      .build();
+        }
+      }
+    }
+    return getRepeatDataCustomPathMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.showcase.v1beta1.CustomBindingRequest,
+          com.google.showcase.v1beta1.RepeatResponse>
+      getRepeatDataBodyCustomMessageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RepeatDataBodyCustomMessage",
+      requestType = com.google.showcase.v1beta1.CustomBindingRequest.class,
+      responseType = com.google.showcase.v1beta1.RepeatResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.showcase.v1beta1.CustomBindingRequest,
+          com.google.showcase.v1beta1.RepeatResponse>
+      getRepeatDataBodyCustomMessageMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.showcase.v1beta1.CustomBindingRequest,
+            com.google.showcase.v1beta1.RepeatResponse>
+        getRepeatDataBodyCustomMessageMethod;
+    if ((getRepeatDataBodyCustomMessageMethod = ComplianceGrpc.getRepeatDataBodyCustomMessageMethod)
+        == null) {
+      synchronized (ComplianceGrpc.class) {
+        if ((getRepeatDataBodyCustomMessageMethod =
+                ComplianceGrpc.getRepeatDataBodyCustomMessageMethod)
+            == null) {
+          ComplianceGrpc.getRepeatDataBodyCustomMessageMethod =
+              getRepeatDataBodyCustomMessageMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.showcase.v1beta1.CustomBindingRequest,
+                          com.google.showcase.v1beta1.RepeatResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RepeatDataBodyCustomMessage"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.showcase.v1beta1.CustomBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.showcase.v1beta1.RepeatResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ComplianceMethodDescriptorSupplier("RepeatDataBodyCustomMessage"))
+                      .build();
+        }
+      }
+    }
+    return getRepeatDataBodyCustomMessageMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.showcase.v1beta1.CustomBindingRequest,
+          com.google.showcase.v1beta1.RepeatResponse>
+      getRepeatDataCustomQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RepeatDataCustomQuery",
+      requestType = com.google.showcase.v1beta1.CustomBindingRequest.class,
+      responseType = com.google.showcase.v1beta1.RepeatResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.showcase.v1beta1.CustomBindingRequest,
+          com.google.showcase.v1beta1.RepeatResponse>
+      getRepeatDataCustomQueryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.showcase.v1beta1.CustomBindingRequest,
+            com.google.showcase.v1beta1.RepeatResponse>
+        getRepeatDataCustomQueryMethod;
+    if ((getRepeatDataCustomQueryMethod = ComplianceGrpc.getRepeatDataCustomQueryMethod) == null) {
+      synchronized (ComplianceGrpc.class) {
+        if ((getRepeatDataCustomQueryMethod = ComplianceGrpc.getRepeatDataCustomQueryMethod)
+            == null) {
+          ComplianceGrpc.getRepeatDataCustomQueryMethod =
+              getRepeatDataCustomQueryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.showcase.v1beta1.CustomBindingRequest,
+                          com.google.showcase.v1beta1.RepeatResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RepeatDataCustomQuery"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.showcase.v1beta1.CustomBindingRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.showcase.v1beta1.RepeatResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ComplianceMethodDescriptorSupplier("RepeatDataCustomQuery"))
+                      .build();
+        }
+      }
+    }
+    return getRepeatDataCustomQueryMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ComplianceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ComplianceStub> factory =
@@ -677,6 +823,49 @@ public final class ComplianceGrpc {
         io.grpc.stub.StreamObserver<com.google.showcase.v1beta1.EnumResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getVerifyEnumMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * This method echoes the ComplianceData request. This method exercises
+     * sending some parameters as path variables with custom json_name.
+     * </pre>
+     */
+    default void repeatDataCustomPath(
+        com.google.showcase.v1beta1.CustomBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.showcase.v1beta1.RepeatResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRepeatDataCustomPathMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Testing custom json_name option in custom message bodies
+     * </pre>
+     */
+    default void repeatDataBodyCustomMessage(
+        com.google.showcase.v1beta1.CustomBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.showcase.v1beta1.RepeatResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRepeatDataBodyCustomMessageMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Testing custom query parameter mapping with dashes
+     * </pre>
+     */
+    default void repeatDataCustomQuery(
+        com.google.showcase.v1beta1.CustomBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.showcase.v1beta1.RepeatResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRepeatDataCustomQueryMethod(), responseObserver);
+    }
   }
 
   /**
@@ -884,6 +1073,55 @@ public final class ComplianceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getVerifyEnumMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * This method echoes the ComplianceData request. This method exercises
+     * sending some parameters as path variables with custom json_name.
+     * </pre>
+     */
+    public void repeatDataCustomPath(
+        com.google.showcase.v1beta1.CustomBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.showcase.v1beta1.RepeatResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRepeatDataCustomPathMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Testing custom json_name option in custom message bodies
+     * </pre>
+     */
+    public void repeatDataBodyCustomMessage(
+        com.google.showcase.v1beta1.CustomBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.showcase.v1beta1.RepeatResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRepeatDataBodyCustomMessageMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Testing custom query parameter mapping with dashes
+     * </pre>
+     */
+    public void repeatDataCustomQuery(
+        com.google.showcase.v1beta1.CustomBindingRequest request,
+        io.grpc.stub.StreamObserver<com.google.showcase.v1beta1.RepeatResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRepeatDataCustomQueryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1050,6 +1288,46 @@ public final class ComplianceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
           getChannel(), getVerifyEnumMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * This method echoes the ComplianceData request. This method exercises
+     * sending some parameters as path variables with custom json_name.
+     * </pre>
+     */
+    public com.google.showcase.v1beta1.RepeatResponse repeatDataCustomPath(
+        com.google.showcase.v1beta1.CustomBindingRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRepeatDataCustomPathMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Testing custom json_name option in custom message bodies
+     * </pre>
+     */
+    public com.google.showcase.v1beta1.RepeatResponse repeatDataBodyCustomMessage(
+        com.google.showcase.v1beta1.CustomBindingRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRepeatDataBodyCustomMessageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Testing custom query parameter mapping with dashes
+     * </pre>
+     */
+    public com.google.showcase.v1beta1.RepeatResponse repeatDataCustomQuery(
+        com.google.showcase.v1beta1.CustomBindingRequest request) throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getRepeatDataCustomQueryMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1215,6 +1493,46 @@ public final class ComplianceGrpc {
         com.google.showcase.v1beta1.EnumResponse request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getVerifyEnumMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This method echoes the ComplianceData request. This method exercises
+     * sending some parameters as path variables with custom json_name.
+     * </pre>
+     */
+    public com.google.showcase.v1beta1.RepeatResponse repeatDataCustomPath(
+        com.google.showcase.v1beta1.CustomBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRepeatDataCustomPathMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Testing custom json_name option in custom message bodies
+     * </pre>
+     */
+    public com.google.showcase.v1beta1.RepeatResponse repeatDataBodyCustomMessage(
+        com.google.showcase.v1beta1.CustomBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRepeatDataBodyCustomMessageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Testing custom query parameter mapping with dashes
+     * </pre>
+     */
+    public com.google.showcase.v1beta1.RepeatResponse repeatDataCustomQuery(
+        com.google.showcase.v1beta1.CustomBindingRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRepeatDataCustomQueryMethod(), getCallOptions(), request);
     }
   }
 
@@ -1392,6 +1710,49 @@ public final class ComplianceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getVerifyEnumMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * This method echoes the ComplianceData request. This method exercises
+     * sending some parameters as path variables with custom json_name.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.showcase.v1beta1.RepeatResponse>
+        repeatDataCustomPath(com.google.showcase.v1beta1.CustomBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRepeatDataCustomPathMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Testing custom json_name option in custom message bodies
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.showcase.v1beta1.RepeatResponse>
+        repeatDataBodyCustomMessage(com.google.showcase.v1beta1.CustomBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRepeatDataBodyCustomMessageMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Testing custom query parameter mapping with dashes
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.showcase.v1beta1.RepeatResponse>
+        repeatDataCustomQuery(com.google.showcase.v1beta1.CustomBindingRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRepeatDataCustomQueryMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_REPEAT_DATA_BODY = 0;
@@ -1404,6 +1765,9 @@ public final class ComplianceGrpc {
   private static final int METHODID_REPEAT_DATA_BODY_PATCH = 7;
   private static final int METHODID_GET_ENUM = 8;
   private static final int METHODID_VERIFY_ENUM = 9;
+  private static final int METHODID_REPEAT_DATA_CUSTOM_PATH = 10;
+  private static final int METHODID_REPEAT_DATA_BODY_CUSTOM_MESSAGE = 11;
+  private static final int METHODID_REPEAT_DATA_CUSTOM_QUERY = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1480,6 +1844,24 @@ public final class ComplianceGrpc {
           serviceImpl.verifyEnum(
               (com.google.showcase.v1beta1.EnumResponse) request,
               (io.grpc.stub.StreamObserver<com.google.showcase.v1beta1.EnumResponse>)
+                  responseObserver);
+          break;
+        case METHODID_REPEAT_DATA_CUSTOM_PATH:
+          serviceImpl.repeatDataCustomPath(
+              (com.google.showcase.v1beta1.CustomBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.showcase.v1beta1.RepeatResponse>)
+                  responseObserver);
+          break;
+        case METHODID_REPEAT_DATA_BODY_CUSTOM_MESSAGE:
+          serviceImpl.repeatDataBodyCustomMessage(
+              (com.google.showcase.v1beta1.CustomBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.showcase.v1beta1.RepeatResponse>)
+                  responseObserver);
+          break;
+        case METHODID_REPEAT_DATA_CUSTOM_QUERY:
+          serviceImpl.repeatDataCustomQuery(
+              (com.google.showcase.v1beta1.CustomBindingRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.showcase.v1beta1.RepeatResponse>)
                   responseObserver);
           break;
         default:
@@ -1568,6 +1950,27 @@ public final class ComplianceGrpc {
                 new MethodHandlers<
                     com.google.showcase.v1beta1.EnumResponse,
                     com.google.showcase.v1beta1.EnumResponse>(service, METHODID_VERIFY_ENUM)))
+        .addMethod(
+            getRepeatDataCustomPathMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.showcase.v1beta1.CustomBindingRequest,
+                    com.google.showcase.v1beta1.RepeatResponse>(
+                    service, METHODID_REPEAT_DATA_CUSTOM_PATH)))
+        .addMethod(
+            getRepeatDataBodyCustomMessageMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.showcase.v1beta1.CustomBindingRequest,
+                    com.google.showcase.v1beta1.RepeatResponse>(
+                    service, METHODID_REPEAT_DATA_BODY_CUSTOM_MESSAGE)))
+        .addMethod(
+            getRepeatDataCustomQueryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.showcase.v1beta1.CustomBindingRequest,
+                    com.google.showcase.v1beta1.RepeatResponse>(
+                    service, METHODID_REPEAT_DATA_CUSTOM_QUERY)))
         .build();
   }
 
@@ -1629,6 +2032,9 @@ public final class ComplianceGrpc {
                       .addMethod(getRepeatDataBodyPatchMethod())
                       .addMethod(getGetEnumMethod())
                       .addMethod(getVerifyEnumMethod())
+                      .addMethod(getRepeatDataCustomPathMethod())
+                      .addMethod(getRepeatDataBodyCustomMessageMethod())
+                      .addMethod(getRepeatDataCustomQueryMethod())
                       .build();
         }
       }

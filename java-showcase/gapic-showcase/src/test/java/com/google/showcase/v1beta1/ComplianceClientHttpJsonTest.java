@@ -328,6 +328,7 @@ public class ComplianceClientHttpJsonTest {
                     .setFBool(true)
                     .setFBytes(ByteString.EMPTY)
                     .setFChild(ComplianceDataChild.newBuilder().build())
+                    .setCustomPathField("customPathField-1920204956")
                     .setPString("pString-1191954271")
                     .setPInt32(-858673665)
                     .setPSint32(-567522134)
@@ -401,6 +402,7 @@ public class ComplianceClientHttpJsonTest {
                       .setFBool(true)
                       .setFBytes(ByteString.EMPTY)
                       .setFChild(ComplianceDataChild.newBuilder().build())
+                      .setCustomPathField("customPathField-1920204956")
                       .setPString("pString-1191954271")
                       .setPInt32(-858673665)
                       .setPSint32(-567522134)
@@ -477,6 +479,7 @@ public class ComplianceClientHttpJsonTest {
                             .setPContinent(Continent.forNumber(0))
                             .setPChild(ComplianceDataGrandchild.newBuilder().build())
                             .build())
+                    .setCustomPathField("customPathField-1920204956")
                     .setPString("pString-1191954271")
                     .setPInt32(-858673665)
                     .setPSint32(-567522134)
@@ -564,6 +567,7 @@ public class ComplianceClientHttpJsonTest {
                               .setPContinent(Continent.forNumber(0))
                               .setPChild(ComplianceDataGrandchild.newBuilder().build())
                               .build())
+                      .setCustomPathField("customPathField-1920204956")
                       .setPString("pString-1191954271")
                       .setPInt32(-858673665)
                       .setPSint32(-567522134)
@@ -640,6 +644,7 @@ public class ComplianceClientHttpJsonTest {
                             .setPContinent(Continent.forNumber(0))
                             .setPChild(ComplianceDataGrandchild.newBuilder().build())
                             .build())
+                    .setCustomPathField("customPathField-1920204956")
                     .setPString("pString-1191954271")
                     .setPInt32(-858673665)
                     .setPSint32(-567522134)
@@ -727,6 +732,7 @@ public class ComplianceClientHttpJsonTest {
                               .setPContinent(Continent.forNumber(0))
                               .setPChild(ComplianceDataGrandchild.newBuilder().build())
                               .build())
+                      .setCustomPathField("customPathField-1920204956")
                       .setPString("pString-1191954271")
                       .setPInt32(-858673665)
                       .setPSint32(-567522134)
@@ -989,6 +995,251 @@ public class ComplianceClientHttpJsonTest {
               .setContinent(Continent.forNumber(0))
               .build();
       client.verifyEnum(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void repeatDataCustomPathTest() throws Exception {
+    RepeatResponse expectedResponse =
+        RepeatResponse.newBuilder()
+            .setRequest(RepeatRequest.newBuilder().build())
+            .setBindingUri("bindingUri1514820775")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CustomBindingRequest request =
+        CustomBindingRequest.newBuilder()
+            .setName("name3373707")
+            .setInfo(
+                ComplianceData.newBuilder()
+                    .setFString("fString-1477056489")
+                    .setFInt32(-1143775883)
+                    .setFSint32(-815756300)
+                    .setFSfixed32(-763212615)
+                    .setFUint32(-758497998)
+                    .setFFixed32(1837548026)
+                    .setFInt64(-1143775788)
+                    .setFSint64(-815756205)
+                    .setFSfixed64(-763212520)
+                    .setFUint64(-758497903)
+                    .setFFixed64(1837548121)
+                    .setFDouble(-1239459382)
+                    .setFFloat(-1146609341)
+                    .setFBool(true)
+                    .setFBytes(ByteString.EMPTY)
+                    .setFChild(ComplianceDataChild.newBuilder().build())
+                    .setCustomPathField("customPathField-8550")
+                    .setPString("pString-1191954271")
+                    .setPInt32(-858673665)
+                    .setPSint32(-567522134)
+                    .setPSfixed32(1566619631)
+                    .setPUint32(-510263832)
+                    .setPFixed32(942872580)
+                    .setPInt64(-858673570)
+                    .setPSint64(-567522039)
+                    .setPSfixed64(1566619726)
+                    .setPUint64(-510263737)
+                    .setPFixed64(942872675)
+                    .setPFloat(-861507123)
+                    .setPDouble(-991225216)
+                    .setPBool(true)
+                    .setPChild(ComplianceDataChild.newBuilder().build())
+                    .build())
+            .setServerVerify(true)
+            .setCustomKebabName("customKebabName-2062111197")
+            .setCustomBodyMessage(ComplianceData.newBuilder().build())
+            .build();
+
+    RepeatResponse actualResponse = client.repeatDataCustomPath(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void repeatDataCustomPathExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomBindingRequest request =
+          CustomBindingRequest.newBuilder()
+              .setName("name3373707")
+              .setInfo(
+                  ComplianceData.newBuilder()
+                      .setFString("fString-1477056489")
+                      .setFInt32(-1143775883)
+                      .setFSint32(-815756300)
+                      .setFSfixed32(-763212615)
+                      .setFUint32(-758497998)
+                      .setFFixed32(1837548026)
+                      .setFInt64(-1143775788)
+                      .setFSint64(-815756205)
+                      .setFSfixed64(-763212520)
+                      .setFUint64(-758497903)
+                      .setFFixed64(1837548121)
+                      .setFDouble(-1239459382)
+                      .setFFloat(-1146609341)
+                      .setFBool(true)
+                      .setFBytes(ByteString.EMPTY)
+                      .setFChild(ComplianceDataChild.newBuilder().build())
+                      .setCustomPathField("customPathField-8550")
+                      .setPString("pString-1191954271")
+                      .setPInt32(-858673665)
+                      .setPSint32(-567522134)
+                      .setPSfixed32(1566619631)
+                      .setPUint32(-510263832)
+                      .setPFixed32(942872580)
+                      .setPInt64(-858673570)
+                      .setPSint64(-567522039)
+                      .setPSfixed64(1566619726)
+                      .setPUint64(-510263737)
+                      .setPFixed64(942872675)
+                      .setPFloat(-861507123)
+                      .setPDouble(-991225216)
+                      .setPBool(true)
+                      .setPChild(ComplianceDataChild.newBuilder().build())
+                      .build())
+              .setServerVerify(true)
+              .setCustomKebabName("customKebabName-2062111197")
+              .setCustomBodyMessage(ComplianceData.newBuilder().build())
+              .build();
+      client.repeatDataCustomPath(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void repeatDataBodyCustomMessageTest() throws Exception {
+    RepeatResponse expectedResponse =
+        RepeatResponse.newBuilder()
+            .setRequest(RepeatRequest.newBuilder().build())
+            .setBindingUri("bindingUri1514820775")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CustomBindingRequest request =
+        CustomBindingRequest.newBuilder()
+            .setName("name3373707")
+            .setInfo(ComplianceData.newBuilder().build())
+            .setServerVerify(true)
+            .setCustomKebabName("customKebabName-2062111197")
+            .setCustomBodyMessage(ComplianceData.newBuilder().build())
+            .build();
+
+    RepeatResponse actualResponse = client.repeatDataBodyCustomMessage(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void repeatDataBodyCustomMessageExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomBindingRequest request =
+          CustomBindingRequest.newBuilder()
+              .setName("name3373707")
+              .setInfo(ComplianceData.newBuilder().build())
+              .setServerVerify(true)
+              .setCustomKebabName("customKebabName-2062111197")
+              .setCustomBodyMessage(ComplianceData.newBuilder().build())
+              .build();
+      client.repeatDataBodyCustomMessage(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void repeatDataCustomQueryTest() throws Exception {
+    RepeatResponse expectedResponse =
+        RepeatResponse.newBuilder()
+            .setRequest(RepeatRequest.newBuilder().build())
+            .setBindingUri("bindingUri1514820775")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    CustomBindingRequest request =
+        CustomBindingRequest.newBuilder()
+            .setName("name3373707")
+            .setInfo(ComplianceData.newBuilder().build())
+            .setServerVerify(true)
+            .setCustomKebabName("customKebabName-2062111197")
+            .setCustomBodyMessage(ComplianceData.newBuilder().build())
+            .build();
+
+    RepeatResponse actualResponse = client.repeatDataCustomQuery(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void repeatDataCustomQueryExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      CustomBindingRequest request =
+          CustomBindingRequest.newBuilder()
+              .setName("name3373707")
+              .setInfo(ComplianceData.newBuilder().build())
+              .setServerVerify(true)
+              .setCustomKebabName("customKebabName-2062111197")
+              .setCustomBodyMessage(ComplianceData.newBuilder().build())
+              .build();
+      client.repeatDataCustomQuery(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -229,6 +229,48 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> RepeatDataCustomPath</td>
+ *      <td><p> This method echoes the ComplianceData request. This method exercises sending some parameters as path variables with custom json_name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> repeatDataCustomPath(CustomBindingRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> repeatDataCustomPathCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RepeatDataBodyCustomMessage</td>
+ *      <td><p> Testing custom json_name option in custom message bodies</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> repeatDataBodyCustomMessage(CustomBindingRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> repeatDataBodyCustomMessageCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RepeatDataCustomQuery</td>
+ *      <td><p> Testing custom query parameter mapping with dashes</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> repeatDataCustomQuery(CustomBindingRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> repeatDataCustomQueryCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
  *      <td><p> Lists information about the supported locations for this service.</td>
  *      <td>
@@ -1139,6 +1181,201 @@ public class ComplianceClient implements BackgroundResource {
    */
   public final UnaryCallable<EnumResponse, EnumResponse> verifyEnumCallable() {
     return stub.verifyEnumCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This method echoes the ComplianceData request. This method exercises sending some parameters as
+   * path variables with custom json_name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ComplianceClient complianceClient = ComplianceClient.create()) {
+   *   CustomBindingRequest request =
+   *       CustomBindingRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setInfo(ComplianceData.newBuilder().build())
+   *           .setServerVerify(true)
+   *           .setCustomKebabName("customKebabName-2062111197")
+   *           .setCustomBodyMessage(ComplianceData.newBuilder().build())
+   *           .build();
+   *   RepeatResponse response = complianceClient.repeatDataCustomPath(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RepeatResponse repeatDataCustomPath(CustomBindingRequest request) {
+    return repeatDataCustomPathCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * This method echoes the ComplianceData request. This method exercises sending some parameters as
+   * path variables with custom json_name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ComplianceClient complianceClient = ComplianceClient.create()) {
+   *   CustomBindingRequest request =
+   *       CustomBindingRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setInfo(ComplianceData.newBuilder().build())
+   *           .setServerVerify(true)
+   *           .setCustomKebabName("customKebabName-2062111197")
+   *           .setCustomBodyMessage(ComplianceData.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RepeatResponse> future =
+   *       complianceClient.repeatDataCustomPathCallable().futureCall(request);
+   *   // Do something.
+   *   RepeatResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CustomBindingRequest, RepeatResponse> repeatDataCustomPathCallable() {
+    return stub.repeatDataCustomPathCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Testing custom json_name option in custom message bodies
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ComplianceClient complianceClient = ComplianceClient.create()) {
+   *   CustomBindingRequest request =
+   *       CustomBindingRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setInfo(ComplianceData.newBuilder().build())
+   *           .setServerVerify(true)
+   *           .setCustomKebabName("customKebabName-2062111197")
+   *           .setCustomBodyMessage(ComplianceData.newBuilder().build())
+   *           .build();
+   *   RepeatResponse response = complianceClient.repeatDataBodyCustomMessage(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RepeatResponse repeatDataBodyCustomMessage(CustomBindingRequest request) {
+    return repeatDataBodyCustomMessageCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Testing custom json_name option in custom message bodies
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ComplianceClient complianceClient = ComplianceClient.create()) {
+   *   CustomBindingRequest request =
+   *       CustomBindingRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setInfo(ComplianceData.newBuilder().build())
+   *           .setServerVerify(true)
+   *           .setCustomKebabName("customKebabName-2062111197")
+   *           .setCustomBodyMessage(ComplianceData.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RepeatResponse> future =
+   *       complianceClient.repeatDataBodyCustomMessageCallable().futureCall(request);
+   *   // Do something.
+   *   RepeatResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CustomBindingRequest, RepeatResponse>
+      repeatDataBodyCustomMessageCallable() {
+    return stub.repeatDataBodyCustomMessageCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Testing custom query parameter mapping with dashes
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ComplianceClient complianceClient = ComplianceClient.create()) {
+   *   CustomBindingRequest request =
+   *       CustomBindingRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setInfo(ComplianceData.newBuilder().build())
+   *           .setServerVerify(true)
+   *           .setCustomKebabName("customKebabName-2062111197")
+   *           .setCustomBodyMessage(ComplianceData.newBuilder().build())
+   *           .build();
+   *   RepeatResponse response = complianceClient.repeatDataCustomQuery(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RepeatResponse repeatDataCustomQuery(CustomBindingRequest request) {
+    return repeatDataCustomQueryCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Testing custom query parameter mapping with dashes
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ComplianceClient complianceClient = ComplianceClient.create()) {
+   *   CustomBindingRequest request =
+   *       CustomBindingRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setInfo(ComplianceData.newBuilder().build())
+   *           .setServerVerify(true)
+   *           .setCustomKebabName("customKebabName-2062111197")
+   *           .setCustomBodyMessage(ComplianceData.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RepeatResponse> future =
+   *       complianceClient.repeatDataCustomQueryCallable().futureCall(request);
+   *   // Do something.
+   *   RepeatResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CustomBindingRequest, RepeatResponse> repeatDataCustomQueryCallable() {
+    return stub.repeatDataCustomQueryCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

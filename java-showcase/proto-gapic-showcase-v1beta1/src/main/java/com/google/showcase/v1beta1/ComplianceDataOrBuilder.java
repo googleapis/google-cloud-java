@@ -170,6 +170,20 @@ public interface ComplianceDataOrBuilder
   com.google.showcase.v1beta1.ComplianceDataChildOrBuilder getFChildOrBuilder();
 
   /**
+   * <code>string custom_path_field = 24 [json_name = "custom-path-field"];</code>
+   *
+   * @return The customPathField.
+   */
+  java.lang.String getCustomPathField();
+
+  /**
+   * <code>string custom_path_field = 24 [json_name = "custom-path-field"];</code>
+   *
+   * @return The bytes for customPathField.
+   */
+  com.google.protobuf.ByteString getCustomPathFieldBytes();
+
+  /**
    * <code>optional string p_string = 17;</code>
    *
    * @return Whether the pString field is set.

@@ -41,6 +41,7 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
+import com.google.showcase.v1beta1.CustomBindingRequest;
 import com.google.showcase.v1beta1.EnumRequest;
 import com.google.showcase.v1beta1.EnumResponse;
 import com.google.showcase.v1beta1.RepeatRequest;
@@ -518,6 +519,132 @@ public class HttpJsonComplianceStub extends ComplianceStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<CustomBindingRequest, RepeatResponse>
+      repeatDataCustomPathMethodDescriptor =
+          ApiMethodDescriptor.<CustomBindingRequest, RepeatResponse>newBuilder()
+              .setFullMethodName("google.showcase.v1beta1.Compliance/RepeatDataCustomPath")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CustomBindingRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/repeat/{info.custom-path-field}:custompath",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CustomBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "info.custom-path-field",
+                                request.getInfo().getCustomPathField());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CustomBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "custom-body-message", request.getCustomBodyMessage());
+                            serializer.putQueryParam(
+                                fields, "custom-kebab-name", request.getCustomKebabName());
+                            serializer.putQueryParam(fields, "info", request.getInfo());
+                            serializer.putQueryParam(fields, "name", request.getName());
+                            serializer.putQueryParam(
+                                fields, "serverVerify", request.getServerVerify());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RepeatResponse>newBuilder()
+                      .setDefaultInstance(RepeatResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CustomBindingRequest, RepeatResponse>
+      repeatDataBodyCustomMessageMethodDescriptor =
+          ApiMethodDescriptor.<CustomBindingRequest, RepeatResponse>newBuilder()
+              .setFullMethodName("google.showcase.v1beta1.Compliance/RepeatDataBodyCustomMessage")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CustomBindingRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/repeat:bodycustommessage",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CustomBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CustomBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "custom-kebab-name", request.getCustomKebabName());
+                            serializer.putQueryParam(fields, "info", request.getInfo());
+                            serializer.putQueryParam(fields, "name", request.getName());
+                            serializer.putQueryParam(
+                                fields, "serverVerify", request.getServerVerify());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "custom-body-message", request.getCustomBodyMessage(), false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RepeatResponse>newBuilder()
+                      .setDefaultInstance(RepeatResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<CustomBindingRequest, RepeatResponse>
+      repeatDataCustomQueryMethodDescriptor =
+          ApiMethodDescriptor.<CustomBindingRequest, RepeatResponse>newBuilder()
+              .setFullMethodName("google.showcase.v1beta1.Compliance/RepeatDataCustomQuery")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CustomBindingRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/repeat:customquery",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CustomBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CustomBindingRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "custom-body-message", request.getCustomBodyMessage());
+                            serializer.putQueryParam(
+                                fields, "custom-kebab-name", request.getCustomKebabName());
+                            serializer.putQueryParam(fields, "info", request.getInfo());
+                            serializer.putQueryParam(fields, "name", request.getName());
+                            serializer.putQueryParam(
+                                fields, "serverVerify", request.getServerVerify());
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<RepeatResponse>newBuilder()
+                      .setDefaultInstance(RepeatResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -711,6 +838,10 @@ public class HttpJsonComplianceStub extends ComplianceStub {
   private final UnaryCallable<RepeatRequest, RepeatResponse> repeatDataBodyPatchCallable;
   private final UnaryCallable<EnumRequest, EnumResponse> getEnumCallable;
   private final UnaryCallable<EnumResponse, EnumResponse> verifyEnumCallable;
+  private final UnaryCallable<CustomBindingRequest, RepeatResponse> repeatDataCustomPathCallable;
+  private final UnaryCallable<CustomBindingRequest, RepeatResponse>
+      repeatDataBodyCustomMessageCallable;
+  private final UnaryCallable<CustomBindingRequest, RepeatResponse> repeatDataCustomQueryCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -843,6 +974,32 @@ public class HttpJsonComplianceStub extends ComplianceStub {
             .setMethodDescriptor(verifyEnumMethodDescriptor)
             .setTypeRegistry(typeRegistry)
             .build();
+    HttpJsonCallSettings<CustomBindingRequest, RepeatResponse>
+        repeatDataCustomPathTransportSettings =
+            HttpJsonCallSettings.<CustomBindingRequest, RepeatResponse>newBuilder()
+                .setMethodDescriptor(repeatDataCustomPathMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "info.custom_path_field",
+                          String.valueOf(request.getInfo().getCustomPathField()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<CustomBindingRequest, RepeatResponse>
+        repeatDataBodyCustomMessageTransportSettings =
+            HttpJsonCallSettings.<CustomBindingRequest, RepeatResponse>newBuilder()
+                .setMethodDescriptor(repeatDataBodyCustomMessageMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<CustomBindingRequest, RepeatResponse>
+        repeatDataCustomQueryTransportSettings =
+            HttpJsonCallSettings.<CustomBindingRequest, RepeatResponse>newBuilder()
+                .setMethodDescriptor(repeatDataCustomQueryMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -946,6 +1103,21 @@ public class HttpJsonComplianceStub extends ComplianceStub {
     this.verifyEnumCallable =
         callableFactory.createUnaryCallable(
             verifyEnumTransportSettings, settings.verifyEnumSettings(), clientContext);
+    this.repeatDataCustomPathCallable =
+        callableFactory.createUnaryCallable(
+            repeatDataCustomPathTransportSettings,
+            settings.repeatDataCustomPathSettings(),
+            clientContext);
+    this.repeatDataBodyCustomMessageCallable =
+        callableFactory.createUnaryCallable(
+            repeatDataBodyCustomMessageTransportSettings,
+            settings.repeatDataBodyCustomMessageSettings(),
+            clientContext);
+    this.repeatDataCustomQueryCallable =
+        callableFactory.createUnaryCallable(
+            repeatDataCustomQueryTransportSettings,
+            settings.repeatDataCustomQuerySettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -984,6 +1156,9 @@ public class HttpJsonComplianceStub extends ComplianceStub {
     methodDescriptors.add(repeatDataBodyPatchMethodDescriptor);
     methodDescriptors.add(getEnumMethodDescriptor);
     methodDescriptors.add(verifyEnumMethodDescriptor);
+    methodDescriptors.add(repeatDataCustomPathMethodDescriptor);
+    methodDescriptors.add(repeatDataBodyCustomMessageMethodDescriptor);
+    methodDescriptors.add(repeatDataCustomQueryMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     methodDescriptors.add(setIamPolicyMethodDescriptor);
@@ -1040,6 +1215,21 @@ public class HttpJsonComplianceStub extends ComplianceStub {
   @Override
   public UnaryCallable<EnumResponse, EnumResponse> verifyEnumCallable() {
     return verifyEnumCallable;
+  }
+
+  @Override
+  public UnaryCallable<CustomBindingRequest, RepeatResponse> repeatDataCustomPathCallable() {
+    return repeatDataCustomPathCallable;
+  }
+
+  @Override
+  public UnaryCallable<CustomBindingRequest, RepeatResponse> repeatDataBodyCustomMessageCallable() {
+    return repeatDataBodyCustomMessageCallable;
+  }
+
+  @Override
+  public UnaryCallable<CustomBindingRequest, RepeatResponse> repeatDataCustomQueryCallable() {
+    return repeatDataCustomQueryCallable;
   }
 
   @Override

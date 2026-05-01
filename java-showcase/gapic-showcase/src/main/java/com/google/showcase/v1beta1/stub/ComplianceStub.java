@@ -30,6 +30,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.showcase.v1beta1.CustomBindingRequest;
 import com.google.showcase.v1beta1.EnumRequest;
 import com.google.showcase.v1beta1.EnumResponse;
 import com.google.showcase.v1beta1.RepeatRequest;
@@ -85,6 +86,19 @@ public abstract class ComplianceStub implements BackgroundResource {
 
   public UnaryCallable<EnumResponse, EnumResponse> verifyEnumCallable() {
     throw new UnsupportedOperationException("Not implemented: verifyEnumCallable()");
+  }
+
+  public UnaryCallable<CustomBindingRequest, RepeatResponse> repeatDataCustomPathCallable() {
+    throw new UnsupportedOperationException("Not implemented: repeatDataCustomPathCallable()");
+  }
+
+  public UnaryCallable<CustomBindingRequest, RepeatResponse> repeatDataBodyCustomMessageCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: repeatDataBodyCustomMessageCallable()");
+  }
+
+  public UnaryCallable<CustomBindingRequest, RepeatResponse> repeatDataCustomQueryCallable() {
+    throw new UnsupportedOperationException("Not implemented: repeatDataCustomQueryCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

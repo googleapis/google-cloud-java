@@ -147,6 +147,22 @@ public class ComplianceSettings extends ClientSettings<ComplianceSettings> {
     return ((ComplianceStubSettings) getStubSettings()).verifyEnumSettings();
   }
 
+  /** Returns the object with the settings used for calls to repeatDataCustomPath. */
+  public UnaryCallSettings<CustomBindingRequest, RepeatResponse> repeatDataCustomPathSettings() {
+    return ((ComplianceStubSettings) getStubSettings()).repeatDataCustomPathSettings();
+  }
+
+  /** Returns the object with the settings used for calls to repeatDataBodyCustomMessage. */
+  public UnaryCallSettings<CustomBindingRequest, RepeatResponse>
+      repeatDataBodyCustomMessageSettings() {
+    return ((ComplianceStubSettings) getStubSettings()).repeatDataBodyCustomMessageSettings();
+  }
+
+  /** Returns the object with the settings used for calls to repeatDataCustomQuery. */
+  public UnaryCallSettings<CustomBindingRequest, RepeatResponse> repeatDataCustomQuerySettings() {
+    return ((ComplianceStubSettings) getStubSettings()).repeatDataCustomQuerySettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -335,6 +351,24 @@ public class ComplianceSettings extends ClientSettings<ComplianceSettings> {
     /** Returns the builder for the settings used for calls to verifyEnum. */
     public UnaryCallSettings.Builder<EnumResponse, EnumResponse> verifyEnumSettings() {
       return getStubSettingsBuilder().verifyEnumSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to repeatDataCustomPath. */
+    public UnaryCallSettings.Builder<CustomBindingRequest, RepeatResponse>
+        repeatDataCustomPathSettings() {
+      return getStubSettingsBuilder().repeatDataCustomPathSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to repeatDataBodyCustomMessage. */
+    public UnaryCallSettings.Builder<CustomBindingRequest, RepeatResponse>
+        repeatDataBodyCustomMessageSettings() {
+      return getStubSettingsBuilder().repeatDataBodyCustomMessageSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to repeatDataCustomQuery. */
+    public UnaryCallSettings.Builder<CustomBindingRequest, RepeatResponse>
+        repeatDataCustomQuerySettings() {
+      return getStubSettingsBuilder().repeatDataCustomQuerySettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

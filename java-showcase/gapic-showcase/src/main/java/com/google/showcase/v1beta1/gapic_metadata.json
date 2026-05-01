@@ -25,6 +25,9 @@
             "RepeatDataBody": {
               "methods": ["repeatDataBody", "repeatDataBodyCallable"]
             },
+            "RepeatDataBodyCustomMessage": {
+              "methods": ["repeatDataBodyCustomMessage", "repeatDataBodyCustomMessageCallable"]
+            },
             "RepeatDataBodyInfo": {
               "methods": ["repeatDataBodyInfo", "repeatDataBodyInfoCallable"]
             },
@@ -33,6 +36,12 @@
             },
             "RepeatDataBodyPut": {
               "methods": ["repeatDataBodyPut", "repeatDataBodyPutCallable"]
+            },
+            "RepeatDataCustomPath": {
+              "methods": ["repeatDataCustomPath", "repeatDataCustomPathCallable"]
+            },
+            "RepeatDataCustomQuery": {
+              "methods": ["repeatDataCustomQuery", "repeatDataCustomQueryCallable"]
             },
             "RepeatDataPathResource": {
               "methods": ["repeatDataPathResource", "repeatDataPathResourceCallable"]

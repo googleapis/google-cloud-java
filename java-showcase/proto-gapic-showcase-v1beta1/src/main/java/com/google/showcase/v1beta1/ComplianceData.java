@@ -56,6 +56,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     fString_ = "";
     fBytes_ = com.google.protobuf.ByteString.EMPTY;
     fKingdom_ = 0;
+    customPathField_ = "";
     pString_ = "";
     pKingdom_ = 0;
   }
@@ -498,6 +499,47 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     return fChild_ == null
         ? com.google.showcase.v1beta1.ComplianceDataChild.getDefaultInstance()
         : fChild_;
+  }
+
+  public static final int CUSTOM_PATH_FIELD_FIELD_NUMBER = 24;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customPathField_ = "";
+
+  /**
+   * <code>string custom_path_field = 24 [json_name = "custom-path-field"];</code>
+   *
+   * @return The customPathField.
+   */
+  @java.lang.Override
+  public java.lang.String getCustomPathField() {
+    java.lang.Object ref = customPathField_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      customPathField_ = s;
+      return s;
+    }
+  }
+
+  /**
+   * <code>string custom_path_field = 24 [json_name = "custom-path-field"];</code>
+   *
+   * @return The bytes for customPathField.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCustomPathFieldBytes() {
+    java.lang.Object ref = customPathField_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      customPathField_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int P_STRING_FIELD_NUMBER = 17;
@@ -1005,6 +1047,9 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00008000) != 0)) {
       output.writeEnum(23, pKingdom_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(customPathField_)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 24, customPathField_);
+    }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeSInt32(39, pSint32_);
     }
@@ -1115,6 +1160,9 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(23, pKingdom_);
     }
+    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(customPathField_)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(24, customPathField_);
+    }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeSInt32Size(39, pSint32_);
     }
@@ -1183,6 +1231,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     if (hasFChild()) {
       if (!getFChild().equals(other.getFChild())) return false;
     }
+    if (!getCustomPathField().equals(other.getCustomPathField())) return false;
     if (hasPString() != other.hasPString()) return false;
     if (hasPString()) {
       if (!getPString().equals(other.getPString())) return false;
@@ -1299,6 +1348,8 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + F_CHILD_FIELD_NUMBER;
       hash = (53 * hash) + getFChild().hashCode();
     }
+    hash = (37 * hash) + CUSTOM_PATH_FIELD_FIELD_NUMBER;
+    hash = (53 * hash) + getCustomPathField().hashCode();
     if (hasPString()) {
       hash = (37 * hash) + P_STRING_FIELD_NUMBER;
       hash = (53 * hash) + getPString().hashCode();
@@ -1539,6 +1590,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
         fChildBuilder_.dispose();
         fChildBuilder_ = null;
       }
+      customPathField_ = "";
       pString_ = "";
       pInt32_ = 0;
       pSint32_ = 0;
@@ -1652,64 +1704,63 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.customPathField_ = customPathField_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.pString_ = pString_;
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.pInt32_ = pInt32_;
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.pSint32_ = pSint32_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.pSfixed32_ = pSfixed32_;
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.pUint32_ = pUint32_;
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.pFixed32_ = pFixed32_;
         to_bitField0_ |= 0x00000040;
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.pInt64_ = pInt64_;
         to_bitField0_ |= 0x00000080;
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.pSint64_ = pSint64_;
         to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.pSfixed64_ = pSfixed64_;
         to_bitField0_ |= 0x00000200;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.pUint64_ = pUint64_;
         to_bitField0_ |= 0x00000400;
       }
-      if (((from_bitField0_ & 0x08000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.pFixed64_ = pFixed64_;
         to_bitField0_ |= 0x00000800;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.pFloat_ = pFloat_;
         to_bitField0_ |= 0x00001000;
       }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
+      if (((from_bitField0_ & 0x40000000) != 0)) {
         result.pDouble_ = pDouble_;
         to_bitField0_ |= 0x00002000;
       }
-      if (((from_bitField0_ & 0x40000000) != 0)) {
+      if (((from_bitField0_ & 0x80000000) != 0)) {
         result.pBool_ = pBool_;
         to_bitField0_ |= 0x00004000;
-      }
-      if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.pKingdom_ = pKingdom_;
-        to_bitField0_ |= 0x00008000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1718,6 +1769,10 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
+        result.pKingdom_ = pKingdom_;
+        to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField1_ & 0x00000002) != 0)) {
         result.pChild_ = pChildBuilder_ == null ? pChild_ : pChildBuilder_.build();
         to_bitField0_ |= 0x00010000;
       }
@@ -1789,9 +1844,14 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
       if (other.hasFChild()) {
         mergeFChild(other.getFChild());
       }
+      if (!other.getCustomPathField().isEmpty()) {
+        customPathField_ = other.customPathField_;
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
       if (other.hasPString()) {
         pString_ = other.pString_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasPInt32()) {
@@ -1964,31 +2024,31 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
             case 138:
               {
                 pString_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 138
             case 144:
               {
                 pInt32_ = input.readInt32();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 144
             case 153:
               {
                 pDouble_ = input.readDouble();
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 153
             case 160:
               {
                 pBool_ = input.readBool();
-                bitField0_ |= 0x40000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 160
             case 170:
               {
                 input.readMessage(internalGetPChildFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000002;
                 break;
               } // case 170
             case 176:
@@ -2000,67 +2060,73 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
             case 184:
               {
                 pKingdom_ = input.readEnum();
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 184
+            case 194:
+              {
+                customPathField_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 194
             case 312:
               {
                 pSint32_ = input.readSInt32();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 312
             case 325:
               {
                 pSfixed32_ = input.readSFixed32();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 325
             case 328:
               {
                 pUint32_ = input.readUInt32();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 328
             case 341:
               {
                 pFixed32_ = input.readFixed32();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 341
             case 344:
               {
                 pInt64_ = input.readInt64();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 344
             case 352:
               {
                 pSint64_ = input.readSInt64();
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 352
             case 361:
               {
                 pSfixed64_ = input.readSFixed64();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 361
             case 368:
               {
                 pUint64_ = input.readUInt64();
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 368
             case 377:
               {
                 pFixed64_ = input.readFixed64();
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 377
             case 389:
               {
                 pFloat_ = input.readFloat();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 389
             default:
@@ -2892,6 +2958,87 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
       return fChildBuilder_;
     }
 
+    private java.lang.Object customPathField_ = "";
+
+    /**
+     * <code>string custom_path_field = 24 [json_name = "custom-path-field"];</code>
+     *
+     * @return The customPathField.
+     */
+    public java.lang.String getCustomPathField() {
+      java.lang.Object ref = customPathField_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customPathField_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     * <code>string custom_path_field = 24 [json_name = "custom-path-field"];</code>
+     *
+     * @return The bytes for customPathField.
+     */
+    public com.google.protobuf.ByteString getCustomPathFieldBytes() {
+      java.lang.Object ref = customPathField_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        customPathField_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     * <code>string custom_path_field = 24 [json_name = "custom-path-field"];</code>
+     *
+     * @param value The customPathField to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomPathField(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      customPathField_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>string custom_path_field = 24 [json_name = "custom-path-field"];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomPathField() {
+      customPathField_ = getDefaultInstance().getCustomPathField();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>string custom_path_field = 24 [json_name = "custom-path-field"];</code>
+     *
+     * @param value The bytes for customPathField to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomPathFieldBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      customPathField_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object pString_ = "";
 
     /**
@@ -2900,7 +3047,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return Whether the pString field is set.
      */
     public boolean hasPString() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -2948,7 +3095,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
         throw new NullPointerException();
       }
       pString_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -2960,7 +3107,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearPString() {
       pString_ = getDefaultInstance().getPString();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -2977,7 +3124,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
       }
       checkByteStringIsUtf8(value);
       pString_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -2991,7 +3138,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPInt32() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -3013,7 +3160,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder setPInt32(int value) {
 
       pInt32_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -3024,7 +3171,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPInt32() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       pInt32_ = 0;
       onChanged();
       return this;
@@ -3039,7 +3186,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPSint32() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -3061,7 +3208,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder setPSint32(int value) {
 
       pSint32_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -3072,7 +3219,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPSint32() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       pSint32_ = 0;
       onChanged();
       return this;
@@ -3087,7 +3234,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPSfixed32() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
 
     /**
@@ -3109,7 +3256,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder setPSfixed32(int value) {
 
       pSfixed32_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -3120,7 +3267,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPSfixed32() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       pSfixed32_ = 0;
       onChanged();
       return this;
@@ -3135,7 +3282,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPUint32() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
 
     /**
@@ -3157,7 +3304,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder setPUint32(int value) {
 
       pUint32_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -3168,7 +3315,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPUint32() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       pUint32_ = 0;
       onChanged();
       return this;
@@ -3183,7 +3330,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPFixed32() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
 
     /**
@@ -3205,7 +3352,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder setPFixed32(int value) {
 
       pFixed32_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -3216,7 +3363,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPFixed32() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       pFixed32_ = 0;
       onChanged();
       return this;
@@ -3231,7 +3378,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPInt64() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
 
     /**
@@ -3253,7 +3400,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder setPInt64(long value) {
 
       pInt64_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -3264,7 +3411,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPInt64() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       pInt64_ = 0L;
       onChanged();
       return this;
@@ -3279,7 +3426,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPSint64() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
 
     /**
@@ -3301,7 +3448,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder setPSint64(long value) {
 
       pSint64_ = value;
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -3312,7 +3459,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPSint64() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       pSint64_ = 0L;
       onChanged();
       return this;
@@ -3327,7 +3474,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPSfixed64() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x04000000) != 0);
     }
 
     /**
@@ -3349,7 +3496,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder setPSfixed64(long value) {
 
       pSfixed64_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return this;
     }
@@ -3360,7 +3507,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPSfixed64() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       pSfixed64_ = 0L;
       onChanged();
       return this;
@@ -3375,7 +3522,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPUint64() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
 
     /**
@@ -3397,7 +3544,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder setPUint64(long value) {
 
       pUint64_ = value;
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -3408,7 +3555,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPUint64() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       pUint64_ = 0L;
       onChanged();
       return this;
@@ -3423,7 +3570,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPFixed64() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
 
     /**
@@ -3445,7 +3592,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder setPFixed64(long value) {
 
       pFixed64_ = value;
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -3456,7 +3603,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPFixed64() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       pFixed64_ = 0L;
       onChanged();
       return this;
@@ -3471,7 +3618,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPFloat() {
-      return ((bitField0_ & 0x10000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
 
     /**
@@ -3493,7 +3640,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder setPFloat(float value) {
 
       pFloat_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -3504,7 +3651,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPFloat() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       pFloat_ = 0F;
       onChanged();
       return this;
@@ -3519,7 +3666,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPDouble() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x40000000) != 0);
     }
 
     /**
@@ -3541,7 +3688,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder setPDouble(double value) {
 
       pDouble_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -3552,7 +3699,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPDouble() {
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       pDouble_ = 0D;
       onChanged();
       return this;
@@ -3567,7 +3714,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPBool() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
 
     /**
@@ -3589,7 +3736,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     public Builder setPBool(boolean value) {
 
       pBool_ = value;
-      bitField0_ |= 0x40000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -3600,7 +3747,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPBool() {
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       pBool_ = false;
       onChanged();
       return this;
@@ -3615,7 +3762,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     @java.lang.Override
     public boolean hasPKingdom() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
 
     /**
@@ -3636,7 +3783,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      */
     public Builder setPKingdomValue(int value) {
       pKingdom_ = value;
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -3665,7 +3812,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000001;
       pKingdom_ = value.getNumber();
       onChanged();
       return this;
@@ -3677,7 +3824,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return This builder for chaining.
      */
     public Builder clearPKingdom() {
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       pKingdom_ = 0;
       onChanged();
       return this;
@@ -3696,7 +3843,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
      * @return Whether the pChild field is set.
      */
     public boolean hasPChild() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
 
     /**
@@ -3724,7 +3871,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
       } else {
         pChildBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3737,7 +3884,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
       } else {
         pChildBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -3745,7 +3892,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
     /** <code>optional .google.showcase.v1beta1.ComplianceDataChild p_child = 21;</code> */
     public Builder mergePChild(com.google.showcase.v1beta1.ComplianceDataChild value) {
       if (pChildBuilder_ == null) {
-        if (((bitField1_ & 0x00000001) != 0)
+        if (((bitField1_ & 0x00000002) != 0)
             && pChild_ != null
             && pChild_ != com.google.showcase.v1beta1.ComplianceDataChild.getDefaultInstance()) {
           getPChildBuilder().mergeFrom(value);
@@ -3756,7 +3903,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
         pChildBuilder_.mergeFrom(value);
       }
       if (pChild_ != null) {
-        bitField1_ |= 0x00000001;
+        bitField1_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -3764,7 +3911,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
 
     /** <code>optional .google.showcase.v1beta1.ComplianceDataChild p_child = 21;</code> */
     public Builder clearPChild() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000002);
       pChild_ = null;
       if (pChildBuilder_ != null) {
         pChildBuilder_.dispose();
@@ -3776,7 +3923,7 @@ public final class ComplianceData extends com.google.protobuf.GeneratedMessage
 
     /** <code>optional .google.showcase.v1beta1.ComplianceDataChild p_child = 21;</code> */
     public com.google.showcase.v1beta1.ComplianceDataChild.Builder getPChildBuilder() {
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000002;
       onChanged();
       return internalGetPChildFieldBuilder().getBuilder();
     }

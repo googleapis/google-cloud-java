@@ -36,6 +36,7 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.stub.GrpcOperationsStub;
+import com.google.showcase.v1beta1.CustomBindingRequest;
 import com.google.showcase.v1beta1.EnumRequest;
 import com.google.showcase.v1beta1.EnumResponse;
 import com.google.showcase.v1beta1.RepeatRequest;
@@ -154,6 +155,39 @@ public class GrpcComplianceStub extends ComplianceStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<CustomBindingRequest, RepeatResponse>
+      repeatDataCustomPathMethodDescriptor =
+          MethodDescriptor.<CustomBindingRequest, RepeatResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.showcase.v1beta1.Compliance/RepeatDataCustomPath")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CustomBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RepeatResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CustomBindingRequest, RepeatResponse>
+      repeatDataBodyCustomMessageMethodDescriptor =
+          MethodDescriptor.<CustomBindingRequest, RepeatResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.showcase.v1beta1.Compliance/RepeatDataBodyCustomMessage")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CustomBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RepeatResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CustomBindingRequest, RepeatResponse>
+      repeatDataCustomQueryMethodDescriptor =
+          MethodDescriptor.<CustomBindingRequest, RepeatResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.showcase.v1beta1.Compliance/RepeatDataCustomQuery")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CustomBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RepeatResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -215,6 +249,10 @@ public class GrpcComplianceStub extends ComplianceStub {
   private final UnaryCallable<RepeatRequest, RepeatResponse> repeatDataBodyPatchCallable;
   private final UnaryCallable<EnumRequest, EnumResponse> getEnumCallable;
   private final UnaryCallable<EnumResponse, EnumResponse> verifyEnumCallable;
+  private final UnaryCallable<CustomBindingRequest, RepeatResponse> repeatDataCustomPathCallable;
+  private final UnaryCallable<CustomBindingRequest, RepeatResponse>
+      repeatDataBodyCustomMessageCallable;
+  private final UnaryCallable<CustomBindingRequest, RepeatResponse> repeatDataCustomQueryCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -337,6 +375,27 @@ public class GrpcComplianceStub extends ComplianceStub {
         GrpcCallSettings.<EnumResponse, EnumResponse>newBuilder()
             .setMethodDescriptor(verifyEnumMethodDescriptor)
             .build();
+    GrpcCallSettings<CustomBindingRequest, RepeatResponse> repeatDataCustomPathTransportSettings =
+        GrpcCallSettings.<CustomBindingRequest, RepeatResponse>newBuilder()
+            .setMethodDescriptor(repeatDataCustomPathMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "info.custom_path_field",
+                      String.valueOf(request.getInfo().getCustomPathField()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CustomBindingRequest, RepeatResponse>
+        repeatDataBodyCustomMessageTransportSettings =
+            GrpcCallSettings.<CustomBindingRequest, RepeatResponse>newBuilder()
+                .setMethodDescriptor(repeatDataBodyCustomMessageMethodDescriptor)
+                .build();
+    GrpcCallSettings<CustomBindingRequest, RepeatResponse> repeatDataCustomQueryTransportSettings =
+        GrpcCallSettings.<CustomBindingRequest, RepeatResponse>newBuilder()
+            .setMethodDescriptor(repeatDataCustomQueryMethodDescriptor)
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -434,6 +493,21 @@ public class GrpcComplianceStub extends ComplianceStub {
     this.verifyEnumCallable =
         callableFactory.createUnaryCallable(
             verifyEnumTransportSettings, settings.verifyEnumSettings(), clientContext);
+    this.repeatDataCustomPathCallable =
+        callableFactory.createUnaryCallable(
+            repeatDataCustomPathTransportSettings,
+            settings.repeatDataCustomPathSettings(),
+            clientContext);
+    this.repeatDataBodyCustomMessageCallable =
+        callableFactory.createUnaryCallable(
+            repeatDataBodyCustomMessageTransportSettings,
+            settings.repeatDataBodyCustomMessageSettings(),
+            clientContext);
+    this.repeatDataCustomQueryCallable =
+        callableFactory.createUnaryCallable(
+            repeatDataCustomQueryTransportSettings,
+            settings.repeatDataCustomQuerySettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -511,6 +585,21 @@ public class GrpcComplianceStub extends ComplianceStub {
   @Override
   public UnaryCallable<EnumResponse, EnumResponse> verifyEnumCallable() {
     return verifyEnumCallable;
+  }
+
+  @Override
+  public UnaryCallable<CustomBindingRequest, RepeatResponse> repeatDataCustomPathCallable() {
+    return repeatDataCustomPathCallable;
+  }
+
+  @Override
+  public UnaryCallable<CustomBindingRequest, RepeatResponse> repeatDataBodyCustomMessageCallable() {
+    return repeatDataBodyCustomMessageCallable;
+  }
+
+  @Override
+  public UnaryCallable<CustomBindingRequest, RepeatResponse> repeatDataCustomQueryCallable() {
+    return repeatDataCustomQueryCallable;
   }
 
   @Override

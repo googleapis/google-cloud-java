@@ -45,6 +45,10 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_showcase_v1beta1_RepeatRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_showcase_v1beta1_CustomBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_showcase_v1beta1_CustomBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_showcase_v1beta1_RepeatResponse_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_showcase_v1beta1_RepeatResponse_fieldAccessorTable;
@@ -104,7 +108,14 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
           + "\025_intended_binding_uriB\n\n"
           + "\010_p_int32B\n\n"
           + "\010_p_int64B\013\n"
-          + "\t_p_double\"^\n"
+          + "\t_p_double\"\373\001\n"
+          + "\024CustomBindingRequest\022\014\n"
+          + "\004name\030\001 \001(\t\0225\n"
+          + "\004info\030\002 \001(\0132\'.google.showcase.v1beta1.ComplianceData\022\025\n\r"
+          + "server_verify\030\003 \001(\010\022,\n"
+          + "\021custom_kebab_name\030\004 \001(\tR\021custom-kebab-name\022Y\n"
+          + "\023custom_body_message\030\005"
+          + " \001(\0132\'.google.showcase.v1beta1.ComplianceDataR\023custom-body-message\"^\n"
           + "\016RepeatResponse\0227\n"
           + "\007request\030\001 \001(\0132&.google.showcase.v1beta1.RepeatRequest\022\023\n"
           + "\013binding_uri\030\002 \001(\t\"J\n"
@@ -113,7 +124,7 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
           + "\017ComplianceGroup\022\014\n"
           + "\004name\030\001 \001(\t\022\014\n"
           + "\004rpcs\030\002 \003(\t\0228\n"
-          + "\010requests\030\003 \003(\0132&.google.showcase.v1beta1.RepeatRequest\"\320\t\n"
+          + "\010requests\030\003 \003(\0132&.google.showcase.v1beta1.RepeatRequest\"\376\t\n"
           + "\016ComplianceData\022\020\n"
           + "\010f_string\030\001 \001(\t\022\017\n"
           + "\007f_int32\030\002 \001(\005\022\020\n"
@@ -133,9 +144,10 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
           + " \001(\002\022\016\n"
           + "\006f_bool\030\016 \001(\010\022\017\n"
           + "\007f_bytes\030\017 \001(\014\022F\n"
-          + "\tf_kingdom\030\026 \001(\016"
-          + "23.google.showcase.v1beta1.ComplianceData.LifeKingdom\022=\n"
-          + "\007f_child\030\020 \001(\0132,.google.showcase.v1beta1.ComplianceDataChild\022\025\n"
+          + "\tf_kingdom\030\026"
+          + " \001(\01623.google.showcase.v1beta1.ComplianceData.LifeKingdom\022=\n"
+          + "\007f_child\030\020 \001(\0132,.google.showcase.v1beta1.ComplianceDataChild\022,\n"
+          + "\021custom_path_field\030\030 \001(\tR\021custom-path-field\022\025\n"
           + "\010p_string\030\021 \001(\tH\000\210\001\001\022\024\n"
           + "\007p_int32\030\022 \001(\005H\001\210\001\001\022\025\n"
           + "\010p_sint32\030\' \001(\021H\002\210\001\001\022\027\n\n"
@@ -153,10 +165,10 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
           + "\010p_double\030\023 \001(\001H\014\210\001\001\022\023\n"
           + "\006p_bool\030\024 \001(\010H\r"
           + "\210\001\001\022K\n"
-          + "\tp_kingdom\030\027"
-          + " \001(\01623.google.showcase.v1beta1.ComplianceData.LifeKingdomH\016\210\001\001\022B\n"
-          + "\007p_child\030\025"
-          + " \001(\0132,.google.showcase.v1beta1.ComplianceDataChildH\017\210\001\001\"\203\001\n"
+          + "\tp_kingdom\030\027 \001(\01623"
+          + ".google.showcase.v1beta1.ComplianceData.LifeKingdomH\016\210\001\001\022B\n"
+          + "\007p_child\030\025 \001(\0132,.goog"
+          + "le.showcase.v1beta1.ComplianceDataChildH\017\210\001\001\"\203\001\n"
           + "\013LifeKingdom\022\034\n"
           + "\030LIFE_KINGDOM_UNSPECIFIED\020\000\022\022\n"
           + "\016ARCHAEBACTERIA\020\001\022\016\n\n"
@@ -170,8 +182,7 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
           + "\t_p_sint32B\r\n"
           + "\013_p_sfixed32B\013\n"
           + "\t_p_uint32B\014\n\n"
-          + "_p_fixed32B\n"
-          + "\n"
+          + "_p_fixed32B\n\n"
           + "\010_p_int64B\013\n"
           + "\t_p_sint64B\r\n"
           + "\013_p_sfixed64B\013\n"
@@ -188,8 +199,8 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
           + "\010f_double\030\003 \001(\001\022\016\n"
           + "\006f_bool\030\004 \001(\010\0227\n"
           + "\013f_continent\030\013 \001(\0162\".google.showcase.v1beta1.Continent\022B\n"
-          + "\007f_child\030\005"
-          + " \001(\01321.google.showcase.v1beta1.ComplianceDataGrandchild\022\025\n"
+          + "\007f_child\030\005 \001(\01321.goo"
+          + "gle.showcase.v1beta1.ComplianceDataGrandchild\022\025\n"
           + "\010p_string\030\006 \001(\tH\000\210\001\001\022\024\n"
           + "\007p_float\030\007 \001(\002H\001\210\001\001\022\025\n"
           + "\010p_double\030\010 \001(\001H\002\210\001\001\022\023\n"
@@ -217,46 +228,54 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
           + "\007AMERICA\020\002\022\r\n"
           + "\tANTARTICA\020\003\022\r\n"
           + "\tAUSTRALIA\020\004\022\n\n"
-          + "\006EUROPE\020\0052\330\r\n\n"
+          + "\006EUROPE\020\0052\325\021\n\n"
           + "Compliance\022\202\001\n"
-          + "\016RepeatDataBody\022&.google.showcase.v1beta1.Repe"
-          + "atRequest\032\'.google.showcase.v1beta1.Repe"
-          + "atResponse\"\037\202\323\344\223\002\031\"\024/v1beta1/repeat:body:\001*\022\215\001\n"
-          + "\022RepeatDataBodyInfo\022&.google.show"
-          + "case.v1beta1.RepeatRequest\032\'.google.showcase.v1beta1.RepeatResponse\"&\202\323\344\223\002"
+          + "\016RepeatDataBody\022&.google.showcase.v1beta1.RepeatRequest\032\'.google.s"
+          + "howcase.v1beta1.RepeatResponse\"\037\202\323\344\223\002\031\"\024/v1beta1/repeat:body:\001*\022\215\001\n"
+          + "\022RepeatDataBodyInfo\022&.google.showcase.v1beta1.RepeatR"
+          + "equest\032\'.google.showcase.v1beta1.RepeatResponse\"&\202\323\344\223\002"
           + " \"\030/v1beta1/repeat:bodyinfo:\004info\022\201\001\n"
-          + "\017RepeatDataQuery\022&.google.showcase.v1beta1.Repeat"
-          + "Request\032\'.google.showcase.v1beta1.Repeat"
-          + "Response\"\035\202\323\344\223\002\027\022\025/v1beta1/repeat:query\022\331\001\n"
-          + "\024RepeatDataSimplePath\022&.google.showca"
-          + "se.v1beta1.RepeatRequest\032\'.google.showca"
-          + "se.v1beta1.RepeatResponse\"p\202\323\344\223\002j\022h/v1be"
-          + "ta1/repeat/{info.f_string}/{info.f_int32"
-          + "}/{info.f_double}/{info.f_bool}/{info.f_kingdom}:simplepath\022\323\002\n"
-          + "\026RepeatDataPathResource\022&.google.showcase.v1beta1.RepeatR"
-          + "equest\032\'.google.showcase.v1beta1.RepeatR"
-          + "esponse\"\347\001\202\323\344\223\002\340\001\022h/v1beta1/repeat/{info"
-          + ".f_string=first/*}/{info.f_child.f_string=second/*}/bool/{info.f_bool}:pathresou"
-          + "rceZt\022r/v1beta1/repeat/{info.f_child.f_string=first/*}/{info.f_string=second/*}/"
-          + "bool/{info.f_bool}:childfirstpathresource\022\331\001\n"
-          + "\036RepeatDataPathTrailingResource\022&.google.showcase.v1beta1.RepeatRequest\032\'.g"
-          + "oogle.showcase.v1beta1.RepeatResponse\"f\202"
-          + "\323\344\223\002`\022^/v1beta1/repeat/{info.f_string=fi"
-          + "rst/*}/{info.f_child.f_string=second/**}:pathtrailingresource\022\210\001\n"
-          + "\021RepeatDataBodyPut\022&.google.showcase.v1beta1.RepeatRequ"
-          + "est\032\'.google.showcase.v1beta1.RepeatResp"
-          + "onse\"\"\202\323\344\223\002\034\032\027/v1beta1/repeat:bodyput:\001*\022\214\001\n"
-          + "\023RepeatDataBodyPatch\022&.google.showcase.v1beta1.RepeatRequest\032\'.google.showca"
-          + "se.v1beta1.RepeatResponse\"$\202\323\344\223\002\0362\031/v1beta1/repeat:bodypatch:\001*\022x\n"
-          + "\007GetEnum\022$.goo"
-          + "gle.showcase.v1beta1.EnumRequest\032%.google.showcase.v1beta1.EnumResponse\""
+          + "\017RepeatDataQuery\022&.google.showcase.v1beta1.RepeatRequest\032\'.google.sho"
+          + "wcase.v1beta1.RepeatResponse\"\035\202\323\344\223\002\027\022\025/v1beta1/repeat:query\022\331\001\n"
+          + "\024RepeatDataSimplePath\022&.google.showcase.v1beta1.RepeatReq"
+          + "uest\032\'.google.showcase.v1beta1.RepeatRes"
+          + "ponse\"p\202\323\344\223\002j\022h/v1beta1/repeat/{info.f_s"
+          + "tring}/{info.f_int32}/{info.f_double}/{i"
+          + "nfo.f_bool}/{info.f_kingdom}:simplepath\022\323\002\n"
+          + "\026RepeatDataPathResource\022&.google.show"
+          + "case.v1beta1.RepeatRequest\032\'.google.show"
+          + "case.v1beta1.RepeatResponse\"\347\001\202\323\344\223\002\340\001\022h/"
+          + "v1beta1/repeat/{info.f_string=first/*}/{info.f_child.f_string=second/*}/bool/{in"
+          + "fo.f_bool}:pathresourceZt\022r/v1beta1/repeat/{info.f_child.f_string=first/*}/{info"
+          + ".f_string=second/*}/bool/{info.f_bool}:childfirstpathresource\022\331\001\n"
+          + "\036RepeatDataPathTrailingResource\022&.google.showcase.v1bet"
+          + "a1.RepeatRequest\032\'.google.showcase.v1bet"
+          + "a1.RepeatResponse\"f\202\323\344\223\002`\022^/v1beta1/repe"
+          + "at/{info.f_string=first/*}/{info.f_child"
+          + ".f_string=second/**}:pathtrailingresource\022\210\001\n"
+          + "\021RepeatDataBodyPut\022&.google.showcase.v1beta1.RepeatRequest\032\'.google.showcas"
+          + "e.v1beta1.RepeatResponse\"\"\202\323\344\223\002\034\032\027/v1beta1/repeat:bodyput:\001*\022\214\001\n"
+          + "\023RepeatDataBodyPatch\022&.google.showcase.v1beta1.RepeatReq"
+          + "uest\032\'.google.showcase.v1beta1.RepeatRes"
+          + "ponse\"$\202\323\344\223\002\0362\031/v1beta1/repeat:bodypatch:\001*\022x\n"
+          + "\007GetEnum\022$.google.showcase.v1beta1"
+          + ".EnumRequest\032%.google.showcase.v1beta1.EnumResponse\""
           + " \202\323\344\223\002\032\022\030/v1beta1/compliance/enum\022|\n\n"
-          + "VerifyEnum\022"
-          + "%.google.showcase.v1beta1.EnumResponse\032%.google.showcase.v1beta1.EnumResponse\""
-          + " \202"
-          + "\323\344\223\002\032\"\030/v1beta1/compliance/enum\032\021\312A\016localhost:7469Bq\n"
-          + "\033com.google.showcase.v1beta1P\001Z4github.com/googleapis/gapic-showcas"
-          + "e/server/genproto\352\002\031Google::Showcase::V1beta1b\006proto3"
+          + "VerifyEnum\022%.google.showcase.v1"
+          + "beta1.EnumResponse\032%.google.showcase.v1beta1.EnumResponse\""
+          + " \202\323\344\223\002\032\"\030/v1beta1/compliance/enum\022\253\001\n"
+          + "\024RepeatDataCustomPath\022-.google.showcase.v1beta1.CustomBindingRequ"
+          + "est\032\'.google.showcase.v1beta1.RepeatResp"
+          + "onse\";\202\323\344\223\0025\0223/v1beta1/repeat/{info.custom_path_field}:custompath\022\265\001\n"
+          + "\033RepeatDataBodyCustomMessage\022-.google.showcase.v1be"
+          + "ta1.CustomBindingRequest\032\'.google.showca"
+          + "se.v1beta1.RepeatResponse\">\202\323\344\223\0028\"!/v1be"
+          + "ta1/repeat:bodycustommessage:\023custom_body_message\022\224\001\n"
+          + "\025RepeatDataCustomQuery\022-.google.showcase.v1beta1.CustomBindingReque"
+          + "st\032\'.google.showcase.v1beta1.RepeatRespo"
+          + "nse\"#\202\323\344\223\002\035\022\033/v1beta1/repeat:customquery\032\021\312A\016localhost:7469Bq\n"
+          + "\033com.google.showcase.v1beta1P\001Z4github.com/googleapis/gapi"
+          + "c-showcase/server/genproto\352\002\031Google::Showcase::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -282,8 +301,16 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
               "PInt64",
               "PDouble",
             });
-    internal_static_google_showcase_v1beta1_RepeatResponse_descriptor =
+    internal_static_google_showcase_v1beta1_CustomBindingRequest_descriptor =
         getDescriptor().getMessageType(1);
+    internal_static_google_showcase_v1beta1_CustomBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_showcase_v1beta1_CustomBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Info", "ServerVerify", "CustomKebabName", "CustomBodyMessage",
+            });
+    internal_static_google_showcase_v1beta1_RepeatResponse_descriptor =
+        getDescriptor().getMessageType(2);
     internal_static_google_showcase_v1beta1_RepeatResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_showcase_v1beta1_RepeatResponse_descriptor,
@@ -291,7 +318,7 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
               "Request", "BindingUri",
             });
     internal_static_google_showcase_v1beta1_ComplianceSuite_descriptor =
-        getDescriptor().getMessageType(2);
+        getDescriptor().getMessageType(3);
     internal_static_google_showcase_v1beta1_ComplianceSuite_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_showcase_v1beta1_ComplianceSuite_descriptor,
@@ -299,7 +326,7 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
               "Group",
             });
     internal_static_google_showcase_v1beta1_ComplianceGroup_descriptor =
-        getDescriptor().getMessageType(3);
+        getDescriptor().getMessageType(4);
     internal_static_google_showcase_v1beta1_ComplianceGroup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_showcase_v1beta1_ComplianceGroup_descriptor,
@@ -307,7 +334,7 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
               "Name", "Rpcs", "Requests",
             });
     internal_static_google_showcase_v1beta1_ComplianceData_descriptor =
-        getDescriptor().getMessageType(4);
+        getDescriptor().getMessageType(5);
     internal_static_google_showcase_v1beta1_ComplianceData_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_showcase_v1beta1_ComplianceData_descriptor,
@@ -329,6 +356,7 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
               "FBytes",
               "FKingdom",
               "FChild",
+              "CustomPathField",
               "PString",
               "PInt32",
               "PSint32",
@@ -347,7 +375,7 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
               "PChild",
             });
     internal_static_google_showcase_v1beta1_ComplianceDataChild_descriptor =
-        getDescriptor().getMessageType(5);
+        getDescriptor().getMessageType(6);
     internal_static_google_showcase_v1beta1_ComplianceDataChild_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_showcase_v1beta1_ComplianceDataChild_descriptor,
@@ -366,7 +394,7 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
               "PChild",
             });
     internal_static_google_showcase_v1beta1_ComplianceDataGrandchild_descriptor =
-        getDescriptor().getMessageType(6);
+        getDescriptor().getMessageType(7);
     internal_static_google_showcase_v1beta1_ComplianceDataGrandchild_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_showcase_v1beta1_ComplianceDataGrandchild_descriptor,
@@ -374,7 +402,7 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
               "FString", "FDouble", "FBool",
             });
     internal_static_google_showcase_v1beta1_EnumRequest_descriptor =
-        getDescriptor().getMessageType(7);
+        getDescriptor().getMessageType(8);
     internal_static_google_showcase_v1beta1_EnumRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_showcase_v1beta1_EnumRequest_descriptor,
@@ -382,7 +410,7 @@ public final class ComplianceOuterClass extends com.google.protobuf.GeneratedFil
               "UnknownEnum",
             });
     internal_static_google_showcase_v1beta1_EnumResponse_descriptor =
-        getDescriptor().getMessageType(8);
+        getDescriptor().getMessageType(9);
     internal_static_google_showcase_v1beta1_EnumResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_showcase_v1beta1_EnumResponse_descriptor,
