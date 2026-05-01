@@ -153,6 +153,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
         BigQueryJdbcMdc.registerInstance(this, this.connectionId)) {
       LOG.finest("++enter++");
+      LOG.info("Initializing BigQuery Connection with properties: %s", ds.toString());
 
       this.connectionUrl = url;
       this.openStatements = ConcurrentHashMap.newKeySet();
@@ -964,7 +965,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
    */
   @Override
   public void close() throws SQLException {
-    LOG.finest("++enter++");
     if (isClosed()) {
       return;
     }
@@ -1010,7 +1010,6 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   @Override
   public boolean isClosed() {
-    LOG.finest("++enter++");
     return this.isClosed;
   }
 

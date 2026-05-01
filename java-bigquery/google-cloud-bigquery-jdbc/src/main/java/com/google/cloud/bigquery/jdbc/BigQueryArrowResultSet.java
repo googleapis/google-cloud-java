@@ -181,7 +181,6 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
     }
 
     private void deserializeArrowBatch(ArrowRecordBatch batch) throws SQLException {
-      LOG.finest("++enter++");
       try {
         if (vectorSchemaRoot != null) {
           // Clear vectorSchemaRoot before populating a new batch
@@ -516,7 +515,6 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   @Override
   public boolean isLast() throws SQLException {
-    LOG.finest("++enter++");
     checkClosed();
     if (this.isNested) {
       return this.nestedRowIndex == this.toIndexExclusive - 1;

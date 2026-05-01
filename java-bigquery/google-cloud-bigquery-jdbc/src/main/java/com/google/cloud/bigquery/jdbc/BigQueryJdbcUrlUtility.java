@@ -726,7 +726,6 @@ final class BigQueryJdbcUrlUtility {
    * @return The string value of the updated URL.
    */
   static String appendPropertiesToURL(String url, String callerClassName, Properties properties) {
-    LOG.finest("++enter++  " + callerClassName);
     StringBuilder urlBuilder = new StringBuilder(url);
     for (Entry<Object, Object> entry : properties.entrySet()) {
       if (entry.getValue() != null && !"".equals(entry.getValue())) {

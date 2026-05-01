@@ -346,7 +346,6 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
   @Override
   public boolean isLast() throws SQLException {
     checkClosed();
-    LOG.finest("++enter++");
     if (this.isNested) {
       return this.nestedRowIndex == this.toIndexExclusive - 1;
     } else {

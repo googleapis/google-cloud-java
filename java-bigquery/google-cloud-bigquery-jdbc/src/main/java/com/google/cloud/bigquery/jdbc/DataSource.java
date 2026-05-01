@@ -40,7 +40,8 @@ import java.util.regex.Pattern;
  * registered with a naming service based on the Java™ Naming and Directory (JNDI) API.
  */
 public class DataSource implements javax.sql.DataSource {
-  private final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(DataSource.class.toString());
   private String URL;
   static final ImmutableSet<Integer> VALID_JOB_CREATION_MODES = ImmutableSet.of(1, 2);
 
@@ -1259,6 +1260,161 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setPrivateServiceConnect(String privateServiceConnect) {
     this.privateServiceConnect = privateServiceConnect;
+  }
+
+  @Override
+  public String toString() {
+    return "DataSource{"
+        + "projectId='"
+        + projectId
+        + '\''
+        + ", defaultDataset='"
+        + defaultDataset
+        + '\''
+        + ", location='"
+        + location
+        + '\''
+        + ", userAgent='"
+        + userAgent
+        + '\''
+        + ", enableHighThroughputAPI="
+        + enableHighThroughputAPI
+        + ", highThroughputMinTableSize="
+        + highThroughputMinTableSize
+        + ", highThroughputActivationRatio="
+        + highThroughputActivationRatio
+        + ", unsupportedHTAPIFallback="
+        + unsupportedHTAPIFallback
+        + ", kmsKeyName='"
+        + kmsKeyName
+        + '\''
+        + ", queryProperties="
+        + queryProperties
+        + ", logLevel='"
+        + logLevel
+        + '\''
+        + ", enableSession="
+        + enableSession
+        + ", logPath='"
+        + logPath
+        + '\''
+        + ", oAuthType="
+        + oAuthType
+        + ", oAuthServiceAcctEmail='"
+        + oAuthServiceAcctEmail
+        + '\''
+        + ", useQueryCache="
+        + useQueryCache
+        + ", queryDialect='"
+        + queryDialect
+        + '\''
+        + ", allowLargeResults="
+        + allowLargeResults
+        + ", destinationTable='"
+        + destinationTable
+        + '\''
+        + ", destinationDataset='"
+        + destinationDataset
+        + '\''
+        + ", destinationDatasetExpirationTime="
+        + destinationDatasetExpirationTime
+        + ", universeDomain='"
+        + universeDomain
+        + '\''
+        + ", proxyHost='"
+        + proxyHost
+        + '\''
+        + ", proxyPort='"
+        + proxyPort
+        + '\''
+        + ", proxyUid='"
+        + proxyUid
+        + '\''
+        + ", oAuthClientId='"
+        + oAuthClientId
+        + '\''
+        + ", jobCreationMode="
+        + jobCreationMode
+        + ", maxResults="
+        + maxResults
+        + ", partnerToken='"
+        + partnerToken
+        + '\''
+        + ", enableWriteAPI="
+        + enableWriteAPI
+        + ", additionalProjects='"
+        + additionalProjects
+        + '\''
+        + ", filterTablesOnDefaultDataset="
+        + filterTablesOnDefaultDataset
+        + ", requestGoogleDriveScope="
+        + requestGoogleDriveScope
+        + ", metadataFetchThreadCount="
+        + metadataFetchThreadCount
+        + ", sslTrustStorePath='"
+        + sslTrustStorePath
+        + '\''
+        + ", labels="
+        + labels
+        + ", requestReason='"
+        + requestReason
+        + '\''
+        + ", timeout="
+        + timeout
+        + ", jobTimeout="
+        + jobTimeout
+        + ", retryInitialDelay="
+        + retryInitialDelay
+        + ", retryMaxDelay="
+        + retryMaxDelay
+        + ", httpConnectTimeout="
+        + httpConnectTimeout
+        + ", httpReadTimeout="
+        + httpReadTimeout
+        + ", maximumBytesBilled="
+        + maximumBytesBilled
+        + ", swaActivationRowCount="
+        + swaActivationRowCount
+        + ", swaAppendRowCount="
+        + swaAppendRowCount
+        + ", oAuthSAImpersonationEmail='"
+        + oAuthSAImpersonationEmail
+        + '\''
+        + ", oAuthSAImpersonationChain='"
+        + oAuthSAImpersonationChain
+        + '\''
+        + ", oAuthSAImpersonationScopes='"
+        + oAuthSAImpersonationScopes
+        + '\''
+        + ", oAuthSAImpersonationTokenLifetime='"
+        + oAuthSAImpersonationTokenLifetime
+        + '\''
+        + ", oAuth2TokenUri='"
+        + oAuth2TokenUri
+        + '\''
+        + ", byoidAudienceUri='"
+        + byoidAudienceUri
+        + '\''
+        + ", byoidPoolUserProject='"
+        + byoidPoolUserProject
+        + '\''
+        + ", byoidSubjectTokenType='"
+        + byoidSubjectTokenType
+        + '\''
+        + ", byoidTokenUri='"
+        + byoidTokenUri
+        + '\''
+        + ", endpointOverrides='"
+        + endpointOverrides
+        + '\''
+        + ", privateServiceConnect='"
+        + privateServiceConnect
+        + '\''
+        + ", connectionPoolSize="
+        + connectionPoolSize
+        + ", listenerPoolSize="
+        + listenerPoolSize
+        + '}';
   }
 
   @Override

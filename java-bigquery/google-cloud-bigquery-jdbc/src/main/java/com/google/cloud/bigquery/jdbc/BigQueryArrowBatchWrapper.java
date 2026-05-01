@@ -63,17 +63,14 @@ class BigQueryArrowBatchWrapper {
   }
 
   ArrowRecordBatch getCurrentArrowBatch() {
-    LOG.finest("++enter++");
     return this.currentArrowBatch;
   }
 
   JsonStringArrayList getNestedRecords() {
-    LOG.finest("++enter++");
     return this.nestedRecords;
   }
 
   boolean isLast() {
-    LOG.finest("++enter++");
     return this.isLast;
   }
 

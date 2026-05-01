@@ -460,6 +460,9 @@ class BigQuerySettings {
         + ", "
         + "maxBytesBilled="
         + maxBytesBilled
+        + ", "
+        + "labels="
+        + labels
         + "}";
   }
 
