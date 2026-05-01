@@ -194,40 +194,40 @@ COMMIT_COUNT=$((COMMIT_COUNT + 1))
 
 # 6.4b Migrate GraalVM Native presubmit config if present
 if [ -f "$SOURCE_REPO_NAME/.kokoro/presubmit/graalvm-native-a.cfg" ]; then
-    echo "Migrating graalvm-native-a.cfg to monorepo root .kokoro/presubmit/${SOURCE_REPO_NAME}-graalvm-native-presubmit.cfg..."
+    echo "Migrating graalvm-native-a.cfg to monorepo root .kokoro/presubmit/${SOURCE_REPO_NAME#java-}-graalvm-native-presubmit.cfg..."
     mkdir -p .kokoro/presubmit
     sed -e 's/value: "graalvm"/value: "graalvm-single"/' \
-        "$SOURCE_REPO_NAME/.kokoro/presubmit/graalvm-native-a.cfg" > ".kokoro/presubmit/${SOURCE_REPO_NAME}-graalvm-native-presubmit.cfg"
+        "$SOURCE_REPO_NAME/.kokoro/presubmit/graalvm-native-a.cfg" > ".kokoro/presubmit/${SOURCE_REPO_NAME#java-}-graalvm-native-presubmit.cfg"
     
     # Append BUILD_SUBDIR
-    cat <<EOF >> ".kokoro/presubmit/${SOURCE_REPO_NAME}-graalvm-native-presubmit.cfg"
+    cat <<EOF >> ".kokoro/presubmit/${SOURCE_REPO_NAME#java-}-graalvm-native-presubmit.cfg"
 
 env_vars: {
   key: "BUILD_SUBDIR"
   value: "${SOURCE_REPO_NAME}"
 }
 EOF
-    git add ".kokoro/presubmit/${SOURCE_REPO_NAME}-graalvm-native-presubmit.cfg"
+    git add ".kokoro/presubmit/${SOURCE_REPO_NAME#java-}-graalvm-native-presubmit.cfg"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate GraalVM Native presubmit config"
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
 # 6.4c Migrate Integration presubmit config if present
 if [ -f "$SOURCE_REPO_NAME/.kokoro/presubmit/integration.cfg" ]; then
-    echo "Migrating integration.cfg to monorepo root .kokoro/presubmit/${SOURCE_REPO_NAME}-integration.cfg..."
+    echo "Migrating integration.cfg to monorepo root .kokoro/presubmit/${SOURCE_REPO_NAME#java-}-integration.cfg..."
     mkdir -p .kokoro/presubmit
     sed -e 's/value: "integration"/value: "integration-single"/' \
-        "$SOURCE_REPO_NAME/.kokoro/presubmit/integration.cfg" > ".kokoro/presubmit/${SOURCE_REPO_NAME}-integration.cfg"
+        "$SOURCE_REPO_NAME/.kokoro/presubmit/integration.cfg" > ".kokoro/presubmit/${SOURCE_REPO_NAME#java-}-integration.cfg"
     
     # Append BUILD_SUBDIR
-    cat <<EOF >> ".kokoro/presubmit/${SOURCE_REPO_NAME}-integration.cfg"
+    cat <<EOF >> ".kokoro/presubmit/${SOURCE_REPO_NAME#java-}-integration.cfg"
 
 env_vars: {
   key: "BUILD_SUBDIR"
   value: "${SOURCE_REPO_NAME}"
 }
 EOF
-    git add ".kokoro/presubmit/${SOURCE_REPO_NAME}-integration.cfg"
+    git add ".kokoro/presubmit/${SOURCE_REPO_NAME#java-}-integration.cfg"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate Integration presubmit config"
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
