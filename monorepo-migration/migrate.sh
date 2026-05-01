@@ -217,6 +217,7 @@ if [ -f "$SOURCE_REPO_NAME/.kokoro/presubmit/integration.cfg" ]; then
     echo "Migrating integration.cfg to monorepo root .kokoro/presubmit/${SOURCE_REPO_NAME#java-}-integration.cfg..."
     mkdir -p .kokoro/presubmit
     sed -e 's/value: "integration"/value: "integration-single"/' \
+        -e 's/java8/java11/' \
         "$SOURCE_REPO_NAME/.kokoro/presubmit/integration.cfg" > ".kokoro/presubmit/${SOURCE_REPO_NAME#java-}-integration.cfg"
     
     # Append BUILD_SUBDIR
