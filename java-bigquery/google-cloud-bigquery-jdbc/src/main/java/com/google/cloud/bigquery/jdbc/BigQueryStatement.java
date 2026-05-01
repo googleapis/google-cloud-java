@@ -341,9 +341,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     } catch (BigQueryException ex) {
       if (ex.getMessage().contains("Syntax error")) {
         throw new BigQueryJdbcSqlSyntaxErrorException(
-            "BigQueryException during getStatementType", ex);
+            "BigQueryException during getStatementType: " + ex.getMessage(), ex);
       }
-      throw new BigQueryJdbcException("BigQueryException during getStatementType", ex);
+      throw new BigQueryJdbcException("BigQueryException during getStatementType: " + ex.getMessage(), ex);
     }
     QueryStatistics statistics = job.getStatistics();
     return statistics.getStatementType();
@@ -375,9 +375,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
     } catch (BigQueryException ex) {
       if (ex.getMessage().contains("Syntax error")) {
         throw new BigQueryJdbcSqlSyntaxErrorException(
-            "BigQueryException during getQueryStatistics", ex);
+            "BigQueryException during getQueryStatistics: " + ex.getMessage(), ex);
       }
-      throw new BigQueryJdbcException("BigQueryException during getQueryStatistics", ex);
+      throw new BigQueryJdbcException("BigQueryException during getQueryStatistics: " + ex.getMessage(), ex);
     }
   }
 
@@ -644,9 +644,9 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       throw new BigQueryJdbcRuntimeException("Interrupted during runQuery", ex);
     } catch (BigQueryException ex) {
       if (ex.getMessage().contains("Syntax error")) {
-        throw new BigQueryJdbcSqlSyntaxErrorException("BigQueryException during runQuery", ex);
+        throw new BigQueryJdbcSqlSyntaxErrorException("BigQueryException during runQuery: " + ex.getMessage(), ex);
       }
-      throw new BigQueryJdbcException("BigQueryException during runQuery", ex);
+      throw new BigQueryJdbcException("BigQueryException during runQuery: " + ex.getMessage(), ex);
     }
   }
 
