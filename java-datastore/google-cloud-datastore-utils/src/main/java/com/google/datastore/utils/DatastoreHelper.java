@@ -223,8 +223,9 @@ public final class DatastoreHelper {
    * </ol>
    *
    * <p>To point the datastore client to a specific endpoint URL for testing, use the
-   * <code>__DATASTORE_URL_OVERRIDE</code> environment variable. The URL must include a scheme
-   * (e.g. <code>http://localhost:8080</code>).
+   * <code>__DATASTORE_URL_OVERRIDE</code> environment variable. To maintain legacy behavior,
+   * the URL must include a scheme (e.g. <code>http://localhost:8080</code>). Omitting the scheme
+   * will result in an invalid endpoint URL.
    */
   public static DatastoreOptions.Builder getOptionsFromEnv()
       throws GeneralSecurityException, IOException {
@@ -338,6 +339,7 @@ public final class DatastoreHelper {
               URL_OVERRIDE_ENV_VAR,
               LOCAL_HOST_ENV_VAR));
       options.projectId(projectId);
+      // To maintain legacy behavior, the URL override must include a scheme (e.g., http://).
       // Since host and localHost methods don't accept a scheme, we strip it if present.
       // We then check if it's an HTTP or HTTPS URL to use options.localHost(...) or
       // options.host(...) accordingly. We use options.localHost(...) for all HTTP URLs
