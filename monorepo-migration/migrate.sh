@@ -236,7 +236,7 @@ fi
 REPO_METADATA="$SOURCE_REPO_NAME/.repo-metadata.json"
 if [ -f "$REPO_METADATA" ]; then
     echo "Updating repo and repo_short in $REPO_METADATA..."
-    python3 -c "import json; f = '$REPO_METADATA'; d = json.load(open(f)); d['repo'] = 'googleapis/google-cloud-java'; d['repo_short'] = 'google-cloud-java'; json.dump(d, open(f, 'w'), indent=2); open(f, 'a').write('\n')"
+    python3 -c "import json; f = '$REPO_METADATA'; d = json.load(open(f)); d['repo'] = 'googleapis/google-cloud-java'; json.dump(d, open(f, 'w'), indent=2); open(f, 'a').write('\n')"
     
     git add "$REPO_METADATA"
     git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): update .repo-metadata.json"
