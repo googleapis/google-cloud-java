@@ -14,7 +14,7 @@
 
 timeout: 7200s # 2 hours
 substitutions:
-  _SHARED_DEPENDENCIES_VERSION: '3.61.0' # {x-version-update:google-cloud-shared-dependencies:current}
+  _SHARED_DEPENDENCIES_VERSION: '3.62.0-SNAPSHOT' # {x-version-update:google-cloud-shared-dependencies:current}
   _JAVA_SHARED_CONFIG_VERSION: '1.17.0'
 steps:
   # GraalVM A build

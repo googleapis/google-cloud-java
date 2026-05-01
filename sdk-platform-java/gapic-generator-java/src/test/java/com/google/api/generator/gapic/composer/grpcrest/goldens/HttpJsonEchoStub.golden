@@ -362,7 +362,7 @@ public class HttpJsonEchoStub extends EchoStub {
                       })
                   .setRequestBodyExtractor(
                       request ->
-                          ProtoRestSerializer.create().toBody("case_", request.getCase(), false))
+                          ProtoRestSerializer.create().toBody("case", request.getCase(), false))
                   .build())
           .setResponseParser(
               ProtoMessageResponseParser.<Case>newBuilder()
