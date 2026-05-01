@@ -82,6 +82,8 @@ echo "Basing migration branch on: ${MIGRATION_HEAD_BRANCH}"
 if [ ! -d "$SOURCE_DIR" ]; then
     echo "Cloning source repo: $SOURCE_REPO_URL into $SOURCE_DIR"
     git clone "$SOURCE_REPO_URL" "$SOURCE_DIR"
+elif [ "${SKIP_SOURCE_UPDATE:-false}" = "true" ]; then
+    echo "Skipping source repository update..."
 else
     echo "Source directory $SOURCE_DIR already exists. Ensuring it is clean and up-to-date..."
     cd "$SOURCE_DIR"
@@ -92,11 +94,13 @@ else
     cd - > /dev/null
 fi
 
-# 1.2 Rewrite history of the split repo to move files to the target subdirectory
-echo "Moving files to destination path: ${SOURCE_REPO_NAME} in history..."
-cd "$SOURCE_DIR"
-git filter-repo --to-subdirectory-filter "${SOURCE_REPO_NAME}" --force
-cd - > /dev/null
+if [ "${SKIP_SOURCE_UPDATE:-false}" != "true" ]; then
+    # 1.2 Rewrite history of the split repo to move files to the target subdirectory
+    echo "Moving files to destination path: ${SOURCE_REPO_NAME} in history..."
+    cd "$SOURCE_DIR"
+    git filter-repo --to-subdirectory-filter "${SOURCE_REPO_NAME}" --force
+    cd - > /dev/null
+fi
 
 
 # 1.5 Extract CODEOWNERS from source repository as default
@@ -476,8 +480,10 @@ if [ "${SQUASH_COMMITS:-false}" = "true" ]; then
 fi
 
 # 8. Cleanup
-echo "Cleaning up temporary source clone..."
-rm -rf "$SOURCE_DIR"
+if [ "${SKIP_SOURCE_UPDATE:-false}" != "true" ]; then
+    echo "Cleaning up temporary source clone..."
+    rm -rf "$SOURCE_DIR"
+fi
 
 echo "Migration complete!"
 echo "The migrated codebase is available in: $TARGET_DIR"
