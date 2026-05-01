@@ -247,6 +247,46 @@ def modernize_pom(file_path, parent_version, source_repo_name=None, parent_artif
 
         new_lines.append(line)
 
+    # Add bulkTests profile if it does not already exist
+    bulk_tests_pattern = r'<id>\s*bulkTests\s*</id>'
+    if not re.search(bulk_tests_pattern, "".join(new_lines)):
+        in_profiles = False
+        inserted = False
+        for i in range(len(new_lines)):
+            if '<profiles>' in new_lines[i]:
+                in_profiles = True
+            if '</profiles>' in new_lines[i] and in_profiles:
+                indent = "    "
+                profile_block = (
+                    f"{indent}<profile>\n"
+                    f"{indent}  <id>bulkTests</id>\n"
+                    f"{indent}  <properties>\n"
+                    f"{indent}    <skipTests>true</skipTests>\n"
+                    f"{indent}  </properties>\n"
+                    f"{indent}</profile>\n"
+                )
+                new_lines.insert(i, profile_block)
+                inserted = True
+                break
+        
+        # If no <profiles> section existed, create one before </project>
+        if not inserted:
+            for i in range(len(new_lines) - 1, -1, -1):
+                if '</project>' in new_lines[i]:
+                    indent = "  "
+                    profile_block = (
+                        f"\n{indent}<profiles>\n"
+                        f"{indent}  <profile>\n"
+                        f"{indent}    <id>bulkTests</id>\n"
+                        f"{indent}    <properties>\n"
+                        f"{indent}      <skipTests>true</skipTests>\n"
+                        f"{indent}    </properties>\n"
+                        f"{indent}  </profile>\n"
+                        f"{indent}</profiles>\n"
+                    )
+                    new_lines.insert(i, profile_block)
+                    break
+
     with open(file_path, 'w') as f:
         # Clean up double empty lines potentially introduced by pruning
         content = "".join(new_lines)
