@@ -46,7 +46,8 @@ import java.util.Calendar;
 
 public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     implements BigQueryResultSet {
-  protected final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.toString());
+  protected static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryBaseResultSet.class.getName());
   private BigQuery bigQuery;
   private JobId jobId;
   private String queryId;

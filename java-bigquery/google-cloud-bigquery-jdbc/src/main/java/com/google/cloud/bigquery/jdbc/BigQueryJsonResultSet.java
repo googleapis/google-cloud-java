@@ -31,6 +31,8 @@ import java.util.concurrent.BlockingQueue;
 
 /** {@link ResultSet} Implementation for JSON datasource (Using REST APIs) */
 class BigQueryJsonResultSet extends BigQueryBaseResultSet {
+  private static final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(BigQueryJsonResultSet.class.getName());
   private final long totalRows;
   private final BlockingQueue<BigQueryFieldValueListWrapper> buffer;
   private boolean hasReachedEnd = false;
@@ -291,12 +293,13 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
 
   @Override
   public void close() throws SQLException {
-    LOG.finest("++enter++");
+
     if (isClosed()) {
       return;
     }
     try (BigQueryJdbcMdc.MdcCloseable mdc =
         BigQueryJdbcMdc.registerInstance(this.connection, this.connectionId)) {
+      LOG.finest("++enter++");
       LOG.fine("Closing BigqueryJsonResultSet %s.", this);
       this.isClosed = true;
       if (ownedThreads != null) {
