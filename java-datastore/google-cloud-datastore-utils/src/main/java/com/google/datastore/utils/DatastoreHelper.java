@@ -222,11 +222,13 @@ public final class DatastoreHelper {
    *       href="https://cloud.google.com/docs/authentication/production">here</a>.
    * </ol>
    *
-   * <p>To point the datastore client to a specific endpoint URL for testing, use the <code>
-   * __DATASTORE_URL_OVERRIDE</code> environment variable. To maintain legacy behavior, the URL must
-   * include a scheme (e.g. <code>http://localhost:8080</code>). Omitting the scheme will result in
-   * an invalid endpoint URL. Consider using the standard <code>DATASTORE_EMULATOR_HOST</code>
-   * environment variable instead.
+   * <p><b>Warning:</b> The <code>__DATASTORE_URL_OVERRIDE</code> environment variable is an
+   * internal, legacy testing override and its use is <b>strongly discouraged</b>. To maintain legacy
+   * behavior, the URL must include a scheme (e.g. <code>http://localhost:8080</code>). Omitting the
+   * scheme will result in an invalid endpoint URL.
+   *
+   * <p>Users should instead use the standard and supported <code>DATASTORE_EMULATOR_HOST</code>
+   * environment variable (e.g., <code>localhost:8080</code>) to connect to local emulators.
    */
   public static DatastoreOptions.Builder getOptionsFromEnv()
       throws GeneralSecurityException, IOException {
