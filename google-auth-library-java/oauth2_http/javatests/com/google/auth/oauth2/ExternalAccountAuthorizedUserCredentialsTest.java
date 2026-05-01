@@ -707,8 +707,8 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
     GoogleCredentials credentials =
         ExternalAccountAuthorizedUserCredentials.fromJson(buildJsonCredentials(), transportFactory);
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
@@ -721,8 +721,8 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
     GoogleCredentials credentials =
         ExternalAccountAuthorizedUserCredentials.fromJson(buildJsonCredentials(), transportFactory);
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
@@ -742,8 +742,8 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
             .setAccessToken(new AccessToken(ACCESS_TOKEN, /* expirationTime= */ null))
             .build();
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 

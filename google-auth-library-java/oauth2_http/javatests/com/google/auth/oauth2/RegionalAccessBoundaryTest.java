@@ -228,7 +228,8 @@ public class RegionalAccessBoundaryTest {
   @Test
   public void testExecutorQueueCapacityLimit() throws Exception {
     final String url = "https://example.com/rab";
-    final AccessToken token = new AccessToken("token", new java.util.Date(System.currentTimeMillis() + 3600000L));
+    final AccessToken token =
+        new AccessToken("token", new java.util.Date(System.currentTimeMillis() + 3600000L));
     RegionalAccessBoundaryProvider provider = () -> url;
 
     int poolSize = 5;
@@ -236,28 +237,35 @@ public class RegionalAccessBoundaryTest {
     int totalCapacity = poolSize + queueCapacity;
 
     CountDownLatch latch = new CountDownLatch(1);
-    
-    java.io.InputStream blockingStream = new java.io.InputStream() {
-      private final java.io.InputStream delegate = new ByteArrayInputStream("{\"encodedLocations\": \"encoded\", \"locations\": [\"loc\"]}".getBytes());
-      private boolean blocked = false;
 
-      @Override
-      public int read() throws java.io.IOException {
-        if (!blocked) {
-          try {
-            latch.await();
-          } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+    java.io.InputStream blockingStream =
+        new java.io.InputStream() {
+          private final java.io.InputStream delegate =
+              new ByteArrayInputStream(
+                  "{\"encodedLocations\": \"encoded\", \"locations\": [\"loc\"]}".getBytes());
+          private boolean blocked = false;
+
+          @Override
+          public int read() throws java.io.IOException {
+            if (!blocked) {
+              try {
+                latch.await();
+              } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+              }
+              blocked = true;
+            }
+            return delegate.read();
           }
-          blocked = true;
-        }
-        return delegate.read();
-      }
-    };
+        };
 
-    MockHttpTransport transport = new MockHttpTransport.Builder()
-        .setLowLevelHttpResponse(new MockLowLevelHttpResponse().setContent(blockingStream).setContentType("application/json"))
-        .build();
+    MockHttpTransport transport =
+        new MockHttpTransport.Builder()
+            .setLowLevelHttpResponse(
+                new MockLowLevelHttpResponse()
+                    .setContent(blockingStream)
+                    .setContentType("application/json"))
+            .build();
     HttpTransportFactory transportFactory = () -> transport;
 
     RegionalAccessBoundaryManager[] managers = new RegionalAccessBoundaryManager[totalCapacity];
@@ -268,10 +276,12 @@ public class RegionalAccessBoundaryTest {
 
     RegionalAccessBoundaryManager extraManager = new RegionalAccessBoundaryManager(testClock);
     assertFalse(extraManager.isCooldownActive());
-    
+
     extraManager.triggerAsyncRefresh(transportFactory, provider, token);
 
-    assertTrue(extraManager.isCooldownActive(), "106th task should have been rejected and entered cooldown");
+    assertTrue(
+        extraManager.isCooldownActive(),
+        "106th task should have been rejected and entered cooldown");
 
     latch.countDown();
   }

@@ -44,9 +44,7 @@ import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.util.Clock;
 import com.google.api.client.util.ExponentialBackOff;
 import com.google.api.client.util.Key;
-import com.google.api.core.InternalApi;
 import com.google.auth.http.HttpTransportFactory;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import java.io.IOException;
@@ -173,7 +171,6 @@ final class RegionalAccessBoundary implements Serializable {
    *
    * @return True if the regional access boundary feature is enabled, false otherwise.
    */
-
 
   /**
    * Refreshes the regional access boundary by making a network call to the lookup endpoint.

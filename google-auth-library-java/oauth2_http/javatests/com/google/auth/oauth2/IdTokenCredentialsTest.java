@@ -48,8 +48,8 @@ class IdTokenCredentialsTest extends BaseSerializationTest {
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =
@@ -77,8 +77,8 @@ class IdTokenCredentialsTest extends BaseSerializationTest {
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =
@@ -107,8 +107,8 @@ class IdTokenCredentialsTest extends BaseSerializationTest {
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =

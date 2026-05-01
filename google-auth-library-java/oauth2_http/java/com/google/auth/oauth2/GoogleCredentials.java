@@ -373,8 +373,7 @@ public class GoogleCredentials extends OAuth2Credentials implements QuotaProject
    */
   void refreshRegionalAccessBoundaryIfExpired(@Nullable URI uri, @Nullable AccessToken token)
       throws IOException {
-    if (!(this instanceof RegionalAccessBoundaryProvider)
-        || !isDefaultUniverseDomain()) {
+    if (!(this instanceof RegionalAccessBoundaryProvider) || !isDefaultUniverseDomain()) {
       return;
     }
 

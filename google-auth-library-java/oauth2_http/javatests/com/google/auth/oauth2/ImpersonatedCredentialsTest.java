@@ -176,8 +176,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
             .setHttpTransportFactory(transportFactory)
             .build();
     sourceCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), sourceCredentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), sourceCredentials.clock));
     transportFactory.transport.addServiceAccount(SA_CLIENT_EMAIL, ACCESS_TOKEN);
     transportFactory.transport.setRegionalAccessBoundary(REGIONAL_ACCESS_BOUNDARY);
 
@@ -596,8 +596,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
             mockTransportFactory,
             QUOTA_PROJECT_ID);
     targetCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), targetCredentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), targetCredentials.clock));
 
     Map<String, List<String>> metadata = targetCredentials.getRequestMetadata();
     assertTrue(metadata.containsKey("x-goog-user-project"));
@@ -621,8 +621,8 @@ class ImpersonatedCredentialsTest extends BaseSerializationTest {
             VALID_LIFETIME,
             mockTransportFactory);
     targetCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), targetCredentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), targetCredentials.clock));
 
     Map<String, List<String>> metadata = targetCredentials.getRequestMetadata();
     assertFalse(metadata.containsKey("x-goog-user-project"));

@@ -97,8 +97,6 @@ public class LoggingTest {
   @org.junit.jupiter.api.BeforeEach
   void setUp() {}
 
-
-
   @Test
   void userCredentials_getRequestMetadata_fromRefreshToken_hasAccessToken() throws IOException {
     TestAppender testAppender = setupTestLogger(UserCredentials.class);
@@ -170,8 +168,8 @@ public class LoggingTest {
             .setScopes(SCOPES)
             .build();
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);
 
@@ -229,8 +227,8 @@ public class LoggingTest {
             .setUniverseDomain(nonGDU)
             .build();
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =
@@ -453,8 +451,8 @@ public class LoggingTest {
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);
@@ -497,8 +495,8 @@ public class LoggingTest {
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =
@@ -554,8 +552,8 @@ public class LoggingTest {
             .setScopes(SCOPES)
             .build();
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);

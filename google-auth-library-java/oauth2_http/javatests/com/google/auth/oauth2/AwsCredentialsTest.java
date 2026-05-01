@@ -135,8 +135,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(buildAwsCredentialSource(transportFactory))
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     AccessToken accessToken = awsCredential.refreshAccessToken();
 
@@ -167,8 +167,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
                 transportFactory.transport.getServiceAccountImpersonationUrl())
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     AccessToken accessToken = awsCredential.refreshAccessToken();
 
@@ -202,8 +202,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
                 ExternalAccountCredentialsTest.buildServiceAccountImpersonationOptions())
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     AccessToken accessToken = awsCredential.refreshAccessToken();
 
@@ -242,8 +242,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setSubjectTokenType("subjectTokenType")
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     AccessToken accessToken = awsCredential.refreshAccessToken();
 
@@ -276,8 +276,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
                 transportFactory.transport.getServiceAccountImpersonationUrl())
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     AccessToken accessToken = awsCredential.refreshAccessToken();
 
@@ -302,8 +302,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(buildAwsCredentialSource(transportFactory))
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     String subjectToken = URLDecoder.decode(awsCredential.retrieveSubjectToken(), "UTF-8");
 
@@ -349,8 +349,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(buildAwsImdsv2CredentialSource(transportFactory))
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     String subjectToken = URLDecoder.decode(awsCredential.retrieveSubjectToken(), "UTF-8");
 
@@ -425,8 +425,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setEnvironmentProvider(environmentProvider)
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     String subjectToken = URLDecoder.decode(awsCredential.retrieveSubjectToken(), "UTF-8");
 
@@ -473,8 +473,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setEnvironmentProvider(environmentProvider)
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     String subjectToken = URLDecoder.decode(awsCredential.retrieveSubjectToken(), "UTF-8");
 
@@ -515,8 +515,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(buildAwsCredentialSource(transportFactory))
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     IOException exception = assertThrows(IOException.class, awsCredential::retrieveSubjectToken);
     assertEquals("Failed to retrieve AWS region.", exception.getMessage());
@@ -543,8 +543,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(buildAwsCredentialSource(transportFactory))
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     IOException exception = assertThrows(IOException.class, awsCredential::retrieveSubjectToken);
     assertEquals("Failed to retrieve AWS IAM role.", exception.getMessage());
@@ -574,8 +574,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(buildAwsCredentialSource(transportFactory))
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     IOException exception = assertThrows(IOException.class, awsCredential::retrieveSubjectToken);
     assertEquals("Failed to retrieve AWS credentials.", exception.getMessage());
@@ -608,8 +608,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(new AwsCredentialSource(credentialSource))
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     IOException exception = assertThrows(IOException.class, awsCredential::retrieveSubjectToken);
     assertEquals(
@@ -639,8 +639,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setSubjectTokenType("subjectTokenType")
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     String subjectToken = URLDecoder.decode(awsCredential.retrieveSubjectToken(), "UTF-8");
 
@@ -684,8 +684,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setSubjectTokenType("subjectTokenType")
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     String subjectToken = URLDecoder.decode(awsCredential.retrieveSubjectToken(), "UTF-8");
 
@@ -737,8 +737,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setSubjectTokenType("subjectTokenType")
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     assertDoesNotThrow(awsCredential::retrieveSubjectToken);
   }
@@ -762,8 +762,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setSubjectTokenType("subjectTokenType")
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     IOException exception = assertThrows(IOException.class, awsCredential::retrieveSubjectToken);
     assertEquals("test", exception.getMessage());
@@ -781,8 +781,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setEnvironmentProvider(environmentProvider)
             .build();
     testAwsCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), testAwsCredentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), testAwsCredentials.clock));
 
     AwsSecurityCredentials credentials =
         testAwsCredentials.getAwsSecurityCredentialsSupplier().getCredentials(emptyContext);
@@ -817,8 +817,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(credSource)
             .build();
     testAwsCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), testAwsCredentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), testAwsCredentials.clock));
 
     AwsSecurityCredentials credentials =
         testAwsCredentials.getAwsSecurityCredentialsSupplier().getCredentials(emptyContext);
@@ -842,8 +842,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setEnvironmentProvider(environmentProvider)
             .build();
     testAwsCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), testAwsCredentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), testAwsCredentials.clock));
 
     AwsSecurityCredentials credentials =
         testAwsCredentials.getAwsSecurityCredentialsSupplier().getCredentials(emptyContext);
@@ -864,8 +864,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(buildAwsCredentialSource(transportFactory))
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     AwsSecurityCredentials credentials =
         awsCredential.getAwsSecurityCredentialsSupplier().getCredentials(emptyContext);
@@ -899,8 +899,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(new AwsCredentialSource(credentialSource))
             .build();
     awsCredential.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredential.clock));
 
     IOException exception =
         assertThrows(
@@ -930,8 +930,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setEnvironmentProvider(environmentProvider)
             .build();
     awsCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredentials.clock));
 
     String region = awsCredentials.getAwsSecurityCredentialsSupplier().getRegion(emptyContext);
 
@@ -958,8 +958,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setEnvironmentProvider(environmentProvider)
             .build();
     awsCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredentials.clock));
 
     String region = awsCredentials.getAwsSecurityCredentialsSupplier().getRegion(emptyContext);
 
@@ -982,8 +982,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setCredentialSource(buildAwsCredentialSource(transportFactory))
             .build();
     awsCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), awsCredentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), awsCredentials.clock));
 
     String region = awsCredentials.getAwsSecurityCredentialsSupplier().getRegion(emptyContext);
 
@@ -1013,15 +1013,15 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setUniverseDomain("universeDomain")
             .build();
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
 
     List<String> newScopes = Arrays.asList("scope1", "scope2");
 
     AwsCredentials newCredentials = (AwsCredentials) credentials.createScoped(newScopes);
     newCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), newCredentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), newCredentials.clock));
 
     assertEquals(credentials.getAudience(), newCredentials.getAudience());
     assertEquals(credentials.getSubjectTokenType(), newCredentials.getSubjectTokenType());
@@ -1098,8 +1098,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setUniverseDomain("universeDomain")
             .build();
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
 
     assertEquals("audience", credentials.getAudience());
     assertEquals("subjectTokenType", credentials.getSubjectTokenType());
@@ -1137,8 +1137,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setScopes(scopes)
             .build();
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
 
     assertEquals("https://test.com", credentials.getRegionalCredentialVerificationUrlOverride());
     assertEquals("audience", credentials.getAudience());
@@ -1177,13 +1177,13 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setUniverseDomain("universeDomain")
             .build();
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
 
     AwsCredentials newBuilderCreds = AwsCredentials.newBuilder(credentials).build();
     newBuilderCreds.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), newBuilderCreds.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), newBuilderCreds.clock));
     assertEquals(credentials.getAudience(), newBuilderCreds.getAudience());
     assertEquals(credentials.getSubjectTokenType(), newBuilderCreds.getSubjectTokenType());
     assertEquals(credentials.getTokenUrl(), newBuilderCreds.getTokenUrl());
@@ -1220,13 +1220,13 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setScopes(scopes)
             .build();
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
 
     AwsCredentials newBuilderCreds = AwsCredentials.newBuilder(credentials).build();
     newBuilderCreds.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), newBuilderCreds.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), newBuilderCreds.clock));
     assertEquals(credentials.getAudience(), newBuilderCreds.getAudience());
     assertEquals(credentials.getSubjectTokenType(), newBuilderCreds.getSubjectTokenType());
     assertEquals(credentials.getTokenUrl(), newBuilderCreds.getTokenUrl());
@@ -1265,8 +1265,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setScopes(scopes)
             .build();
     credentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
 
     assertNull(credentials.getRegionalCredentialVerificationUrlOverride());
     assertEquals(
@@ -1347,8 +1347,8 @@ class AwsCredentialsTest extends BaseSerializationTest {
             .setScopes(scopes)
             .build();
     testCredentials.regionalAccessBoundaryManager.setCachedRAB(
-        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), testCredentials.clock)
-    );
+        new RegionalAccessBoundary(
+            "dummy-locations", Arrays.asList("dummy-loc"), testCredentials.clock));
 
     AwsCredentials deserializedCredentials = serializeAndDeserialize(testCredentials);
     assertEquals(testCredentials, deserializedCredentials);

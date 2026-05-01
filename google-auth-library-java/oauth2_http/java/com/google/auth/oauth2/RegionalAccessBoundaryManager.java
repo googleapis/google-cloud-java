@@ -88,12 +88,12 @@ final class RegionalAccessBoundaryManager {
   // on concurrent refresh tasks, while threadCount provides unique names
   // for easier debugging.
   private static final AtomicInteger threadCount = new AtomicInteger(0);
-  
+
   // Bounded executor service ensures hard limits on concurrent refresh tasks and queued tasks
   // to avoid resource exhaustion.
   private static final int EXECUTOR_POOL_SIZE = 5;
   private static final int EXECUTOR_QUEUE_CAPACITY = 100;
-  
+
   private static final ExecutorService EXECUTOR;
 
   static {
