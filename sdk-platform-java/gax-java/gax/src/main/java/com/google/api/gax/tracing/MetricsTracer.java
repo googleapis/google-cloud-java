@@ -59,6 +59,7 @@ public class MetricsTracer implements ApiTracer {
   public static final String DEFAULT_LANGUAGE = "Java";
   private static final String OPERATION_FINISHED_STATUS_MESSAGE =
       "Operation has already been completed";
+  private static final double NANOS_PER_MILLISECOND = 1_000_000.0;
   private Stopwatch attemptTimer;
   private final Ticker ticker;
   private final Stopwatch operationTimer;
@@ -94,7 +95,8 @@ public class MetricsTracer implements ApiTracer {
       throw new IllegalStateException(OPERATION_FINISHED_STATUS_MESSAGE);
     }
     attributes.put(STATUS_ATTRIBUTE, StatusCode.Code.OK.toString());
-    metricsRecorder.recordOperationLatency(operationTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
+    metricsRecorder.recordOperationLatency(
+        operationTimer.elapsed(TimeUnit.NANOSECONDS) / NANOS_PER_MILLISECOND, attributes);
     metricsRecorder.recordOperationCount(1, attributes);
   }
 
@@ -111,7 +113,8 @@ public class MetricsTracer implements ApiTracer {
       throw new IllegalStateException(OPERATION_FINISHED_STATUS_MESSAGE);
     }
     attributes.put(STATUS_ATTRIBUTE, StatusCode.Code.CANCELLED.toString());
-    metricsRecorder.recordOperationLatency(operationTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
+    metricsRecorder.recordOperationLatency(
+        operationTimer.elapsed(TimeUnit.NANOSECONDS) / NANOS_PER_MILLISECOND, attributes);
     metricsRecorder.recordOperationCount(1, attributes);
   }
 
@@ -129,7 +132,8 @@ public class MetricsTracer implements ApiTracer {
     }
     // Uses the GRPC status code representation.
     attributes.put(STATUS_ATTRIBUTE, ObservabilityUtils.extractStatus(error).toString());
-    metricsRecorder.recordOperationLatency(operationTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
+    metricsRecorder.recordOperationLatency(
+        operationTimer.elapsed(TimeUnit.NANOSECONDS) / NANOS_PER_MILLISECOND, attributes);
     metricsRecorder.recordOperationCount(1, attributes);
   }
 
@@ -154,7 +158,8 @@ public class MetricsTracer implements ApiTracer {
   @Override
   public void attemptSucceeded() {
     attributes.put(STATUS_ATTRIBUTE, StatusCode.Code.OK.toString());
-    metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
+    metricsRecorder.recordAttemptLatency(
+        attemptTimer.elapsed(TimeUnit.NANOSECONDS) / NANOS_PER_MILLISECOND, attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
 
@@ -165,7 +170,8 @@ public class MetricsTracer implements ApiTracer {
   @Override
   public void attemptCancelled() {
     attributes.put(STATUS_ATTRIBUTE, StatusCode.Code.CANCELLED.toString());
-    metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
+    metricsRecorder.recordAttemptLatency(
+        attemptTimer.elapsed(TimeUnit.NANOSECONDS) / NANOS_PER_MILLISECOND, attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
 
@@ -180,7 +186,8 @@ public class MetricsTracer implements ApiTracer {
   @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
     attributes.put(STATUS_ATTRIBUTE, ObservabilityUtils.extractStatus(error).toString());
-    metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
+    metricsRecorder.recordAttemptLatency(
+        attemptTimer.elapsed(TimeUnit.NANOSECONDS) / NANOS_PER_MILLISECOND, attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
 
@@ -204,7 +211,8 @@ public class MetricsTracer implements ApiTracer {
   @Override
   public void attemptFailedRetriesExhausted(Throwable error) {
     attributes.put(STATUS_ATTRIBUTE, ObservabilityUtils.extractStatus(error).toString());
-    metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
+    metricsRecorder.recordAttemptLatency(
+        attemptTimer.elapsed(TimeUnit.NANOSECONDS) / NANOS_PER_MILLISECOND, attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
 
@@ -218,7 +226,8 @@ public class MetricsTracer implements ApiTracer {
   @Override
   public void attemptPermanentFailure(Throwable error) {
     attributes.put(STATUS_ATTRIBUTE, ObservabilityUtils.extractStatus(error).toString());
-    metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
+    metricsRecorder.recordAttemptLatency(
+        attemptTimer.elapsed(TimeUnit.NANOSECONDS) / NANOS_PER_MILLISECOND, attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
 
@@ -241,7 +250,6 @@ public class MetricsTracer implements ApiTracer {
     this.attributes.putAll(attributes);
   }
   ;
-
 
   @VisibleForTesting
   Map<String, String> getAttributes() {
