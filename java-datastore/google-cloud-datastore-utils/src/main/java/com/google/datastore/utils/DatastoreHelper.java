@@ -222,10 +222,11 @@ public final class DatastoreHelper {
    *       href="https://cloud.google.com/docs/authentication/production">here</a>.
    * </ol>
    *
-   * <p>To point the datastore client to a specific endpoint URL for testing, use the
-   * <code>__DATASTORE_URL_OVERRIDE</code> environment variable. To maintain legacy behavior,
-   * the URL must include a scheme (e.g. <code>http://localhost:8080</code>). Omitting the scheme
-   * will result in an invalid endpoint URL.
+   * <p>To point the datastore client to a specific endpoint URL for testing, use the <code>
+   * __DATASTORE_URL_OVERRIDE</code> environment variable. To maintain legacy behavior, the URL must
+   * include a scheme (e.g. <code>http://localhost:8080</code>). Omitting the scheme will result in
+   * an invalid endpoint URL. Consider using the standard <code>DATASTORE_EMULATOR_HOST</code>
+   * environment variable instead.
    */
   public static DatastoreOptions.Builder getOptionsFromEnv()
       throws GeneralSecurityException, IOException {
@@ -336,8 +337,7 @@ public final class DatastoreHelper {
               "The environment variable %s is an internal/legacy override. "
                   + "Consider using the standard %s environment variable instead. "
                   + "See https://docs.cloud.google.com/datastore/docs/tools/datastore-emulator",
-              URL_OVERRIDE_ENV_VAR,
-              LOCAL_HOST_ENV_VAR));
+              URL_OVERRIDE_ENV_VAR, LOCAL_HOST_ENV_VAR));
       options.projectId(projectId);
       // To maintain legacy behavior, the URL override must include a scheme (e.g., http://).
       // Since host and localHost methods don't accept a scheme, we strip it if present.
