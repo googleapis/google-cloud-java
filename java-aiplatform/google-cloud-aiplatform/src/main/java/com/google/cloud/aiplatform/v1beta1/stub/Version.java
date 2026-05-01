@@ -21,7 +21,7 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 final class Version {
   // {x-version-update-start:google-cloud-aiplatform:current}
-  static final String VERSION = "3.92.0";
+  static final String VERSION = "3.93.0-SNAPSHOT";
   // {x-version-update-end}
 
 }

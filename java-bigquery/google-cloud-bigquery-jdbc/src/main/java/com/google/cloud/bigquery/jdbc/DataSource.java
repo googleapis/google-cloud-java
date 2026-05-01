@@ -368,18 +368,12 @@ public class DataSource implements javax.sql.DataSource {
   @Override
   public Connection getConnection() throws SQLException {
     if (getURL() == null) {
-      BigQueryJdbcException ex =
-          new BigQueryJdbcException(
-              "Connection URL is null. Please specify a valid Connection URL to get Connection.");
-      LOG.severe(ex, ex.getMessage());
-      throw ex;
+      throw new BigQueryJdbcException(
+          "Connection URL is null. Please specify a valid Connection URL to get Connection.");
     }
     if (!BigQueryDriver.getRegisteredDriver().acceptsURL(getURL())) {
-      BigQueryJdbcException ex =
-          new BigQueryJdbcException(
-              "The URL " + getURL() + " is invalid. Please specify a valid Connection URL. ");
-      LOG.severe(ex, ex.getMessage());
-      throw ex;
+      throw new BigQueryJdbcException(
+          "The URL " + getURL() + " is invalid. Please specify a valid Connection URL. ");
     }
     return DriverManager.getConnection(getURL(), createProperties());
   }
@@ -973,11 +967,14 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setJobCreationMode(Integer jobCreationMode) {
     if (jobCreationMode != null && !VALID_JOB_CREATION_MODES.contains(jobCreationMode)) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Invalid value for %s. Use 1 for JOB_CREATION_REQUIRED and 2 for"
-                  + " JOB_CREATION_OPTIONAL.",
-              BigQueryJdbcUrlUtility.JOB_CREATION_MODE_PROPERTY_NAME));
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              String.format(
+                  "Invalid value for %s. Use 1 for JOB_CREATION_REQUIRED and 2 for"
+                      + " JOB_CREATION_OPTIONAL.",
+                  BigQueryJdbcUrlUtility.JOB_CREATION_MODE_PROPERTY_NAME));
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
     this.jobCreationMode = jobCreationMode;
   }

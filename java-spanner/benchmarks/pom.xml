@@ -24,7 +24,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-spanner-parent</artifactId>
-    <version>6.116.1</version><!-- {x-version-update:google-cloud-spanner:current} -->
+    <version>6.117.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanner:current} -->
   </parent>
 
   <properties>
@@ -60,7 +60,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-monitoring</artifactId>
-      <version>3.92.0</version><!-- {x-version-update:google-cloud-monitoring:current} -->
+      <version>3.93.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring:current} -->
     </dependency>
     <dependency>
       <groupId>io.opentelemetry</groupId>

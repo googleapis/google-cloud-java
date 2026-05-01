@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.paging.AbstractFixedSizeCollection;
 import com.google.api.gax.paging.AbstractPage;
 import com.google.api.gax.paging.AbstractPagedListResponse;
+import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.location.GetLocationRequest;
@@ -229,8 +230,30 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> StreamSanitizeUserPrompt</td>
+ *      <td><p> Streaming version of Sanitize User Prompt.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamSanitizeUserPromptCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> StreamSanitizeModelResponse</td>
+ *      <td><p> Streaming version of Sanitizes Model Response.</td>
+ *      <td>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> streamSanitizeModelResponseCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListLocations</td>
- *      <td><p> Lists information about the supported locations for this service.</td>
+ *      <td><p> Lists information about the supported locations for this service.
+ * <p> This method lists locations based on the resource scope provided inthe [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field: &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If `name` follows the format`projects/{project}`, the method lists locations visible to thatspecific project. This includes public, private, or otherproject-specific locations enabled for the project.
+ * <p> For gRPC and client library implementations, the resource name ispassed as the `name` field. For direct service calls, the resourcename isincorporated into the request path based on the specific serviceimplementation and version.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1191,6 +1214,7 @@ public class ModelArmorClient implements BackgroundResource {
    *           .setUserPromptData(DataItem.newBuilder().build())
    *           .setMultiLanguageDetectionMetadata(
    *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
    *           .build();
    *   SanitizeUserPromptResponse response = modelArmorClient.sanitizeUserPrompt(request);
    * }
@@ -1222,6 +1246,7 @@ public class ModelArmorClient implements BackgroundResource {
    *           .setUserPromptData(DataItem.newBuilder().build())
    *           .setMultiLanguageDetectionMetadata(
    *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
    *           .build();
    *   ApiFuture<SanitizeUserPromptResponse> future =
    *       modelArmorClient.sanitizeUserPromptCallable().futureCall(request);
@@ -1255,6 +1280,7 @@ public class ModelArmorClient implements BackgroundResource {
    *           .setUserPrompt("userPrompt1504308495")
    *           .setMultiLanguageDetectionMetadata(
    *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
    *           .build();
    *   SanitizeModelResponseResponse response = modelArmorClient.sanitizeModelResponse(request);
    * }
@@ -1288,6 +1314,7 @@ public class ModelArmorClient implements BackgroundResource {
    *           .setUserPrompt("userPrompt1504308495")
    *           .setMultiLanguageDetectionMetadata(
    *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
    *           .build();
    *   ApiFuture<SanitizeModelResponseResponse> future =
    *       modelArmorClient.sanitizeModelResponseCallable().futureCall(request);
@@ -1303,7 +1330,90 @@ public class ModelArmorClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Streaming version of Sanitize User Prompt.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelArmorClient modelArmorClient = ModelArmorClient.create()) {
+   *   BidiStream<SanitizeUserPromptRequest, SanitizeUserPromptResponse> bidiStream =
+   *       modelArmorClient.streamSanitizeUserPromptCallable().call();
+   *   SanitizeUserPromptRequest request =
+   *       SanitizeUserPromptRequest.newBuilder()
+   *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+   *           .setUserPromptData(DataItem.newBuilder().build())
+   *           .setMultiLanguageDetectionMetadata(
+   *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (SanitizeUserPromptResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<SanitizeUserPromptRequest, SanitizeUserPromptResponse>
+      streamSanitizeUserPromptCallable() {
+    return stub.streamSanitizeUserPromptCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Streaming version of Sanitizes Model Response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelArmorClient modelArmorClient = ModelArmorClient.create()) {
+   *   BidiStream<SanitizeModelResponseRequest, SanitizeModelResponseResponse> bidiStream =
+   *       modelArmorClient.streamSanitizeModelResponseCallable().call();
+   *   SanitizeModelResponseRequest request =
+   *       SanitizeModelResponseRequest.newBuilder()
+   *           .setName(TemplateName.of("[PROJECT]", "[LOCATION]", "[TEMPLATE]").toString())
+   *           .setModelResponseData(DataItem.newBuilder().build())
+   *           .setUserPrompt("userPrompt1504308495")
+   *           .setMultiLanguageDetectionMetadata(
+   *               MultiLanguageDetectionMetadata.newBuilder().build())
+   *           .setStreamingMode(StreamingMode.forNumber(0))
+   *           .build();
+   *   bidiStream.send(request);
+   *   for (SanitizeModelResponseResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
+   */
+  public final BidiStreamingCallable<SanitizeModelResponseRequest, SanitizeModelResponseResponse>
+      streamSanitizeModelResponseCallable() {
+    return stub.streamSanitizeModelResponseCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *
@@ -1338,6 +1448,18 @@ public class ModelArmorClient implements BackgroundResource {
   /**
    * Lists information about the supported locations for this service.
    *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
+   *
    * <p>Sample code:
    *
    * <pre>{@code
@@ -1371,6 +1493,18 @@ public class ModelArmorClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists information about the supported locations for this service.
+   *
+   * <p>This method lists locations based on the resource scope provided inthe
+   * [ListLocationsRequest.name][google.cloud.location.ListLocationsRequest.name] field:
+   * &#42;&#42;&#42;Global locations&#42;&#42;: If `name` is empty, the method lists thepublic
+   * locations available to all projects. &#42; &#42;&#42;Project-specificlocations&#42;&#42;: If
+   * `name` follows the format`projects/{project}`, the method lists locations visible to
+   * thatspecific project. This includes public, private, or otherproject-specific locations enabled
+   * for the project.
+   *
+   * <p>For gRPC and client library implementations, the resource name ispassed as the `name` field.
+   * For direct service calls, the resourcename isincorporated into the request path based on the
+   * specific serviceimplementation and version.
    *
    * <p>Sample code:
    *

@@ -137,8 +137,11 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       // We are working with the nested record, the cursor would have been
       // populated.
       if (this.cursor == null || this.cursor.getArrayFieldValueList() == null) {
-        throw new IllegalStateException(
-            "Cursor/ArrayFieldValueList can not be null working with the nested record");
+        IllegalStateException ex =
+            new IllegalStateException(
+                "Cursor/ArrayFieldValueList can not be null working with the nested record");
+        LOG.severe(ex.getMessage(), ex);
+        throw ex;
       }
       // Check if there's a next record in the array which can be read
       if (this.nestedRowIndex < (this.toIndexExclusive - 1)) {
@@ -172,10 +175,11 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
         // Cursor has been advanced
         return true;
 
-      } catch (InterruptedException ex) {
+      } catch (InterruptedException e) {
+
         throw new BigQueryJdbcRuntimeException(
             "Error occurred while advancing the cursor. This could happen when connection is closed while we call the next method",
-            ex);
+            e);
       }
     }
   }
@@ -236,12 +240,17 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
       // BigQuery doesn't support multidimensional arrays, so just the default row
       // num column (1) and the actual column (2) is supposed to be read
       if (!validIndexForNestedResultSet) {
-        throw new IllegalArgumentException(
-            "Column index is required to be 1 or 2 for the nested arrays");
+        IllegalArgumentException ex =
+            new IllegalArgumentException(
+                "Column index is required to be 1 or 2 for the nested arrays");
+        LOG.severe(ex.getMessage(), ex);
+        throw ex;
       }
       if (this.cursor.getArrayFieldValueList() == null
           || this.cursor.getArrayFieldValueList().get(this.nestedRowIndex) == null) {
-        throw new IllegalStateException("ArrayFieldValueList cannot be null");
+        IllegalStateException ex = new IllegalStateException("ArrayFieldValueList cannot be null");
+        LOG.severe(ex.getMessage(), ex);
+        throw ex;
       }
 
       // For Arrays the first column is Index, ref:

@@ -24,8 +24,10 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * The reference of a framework, in the format
- * `organizations/{organization}/locations/{location}/frameworks/{framework}`.
+ * The reference of a framework, in one of the following formats:
+ * - `organizations/{organization}/locations/{location}/frameworks/{framework}`
+ * - `projects/{project}/locations/{location}/frameworks/{framework}`.
+ *
  * The only supported location is `global`.
  * </pre>
  *
@@ -86,7 +88,9 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
    * corresponds to the latest version of the framework.
    * </pre>
    *
-   * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string framework = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The framework.
    */
@@ -111,7 +115,9 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
    * corresponds to the latest version of the framework.
    * </pre>
    *
-   * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>
+   * string framework = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for framework.
    */
@@ -344,8 +350,10 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The reference of a framework, in the format
-   * `organizations/{organization}/locations/{location}/frameworks/{framework}`.
+   * The reference of a framework, in one of the following formats:
+   * - `organizations/{organization}/locations/{location}/frameworks/{framework}`
+   * - `projects/{project}/locations/{location}/frameworks/{framework}`.
+   *
    * The only supported location is `global`.
    * </pre>
    *
@@ -521,7 +529,9 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
      * corresponds to the latest version of the framework.
      * </pre>
      *
-     * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string framework = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The framework.
      */
@@ -545,7 +555,9 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
      * corresponds to the latest version of the framework.
      * </pre>
      *
-     * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string framework = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for framework.
      */
@@ -569,7 +581,9 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
      * corresponds to the latest version of the framework.
      * </pre>
      *
-     * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string framework = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The framework to set.
      * @return This builder for chaining.
@@ -592,7 +606,9 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
      * corresponds to the latest version of the framework.
      * </pre>
      *
-     * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string framework = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -611,7 +627,9 @@ public final class FrameworkReference extends com.google.protobuf.GeneratedMessa
      * corresponds to the latest version of the framework.
      * </pre>
      *
-     * <code>string framework = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>
+     * string framework = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for framework to set.
      * @return This builder for chaining.

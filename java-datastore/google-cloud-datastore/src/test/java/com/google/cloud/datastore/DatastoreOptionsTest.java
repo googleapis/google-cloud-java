@@ -22,6 +22,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -160,6 +161,45 @@ public class DatastoreOptionsTest {
   }
 
   @Test
+  public void testOpenTelemetryMetricsAndCloudMonitoringMixed() {
+    DatastoreOpenTelemetryOptions o1 =
+        DatastoreOpenTelemetryOptions.newBuilder()
+            .setMetricsEnabled(true)
+            .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
+            .build();
+    assertTrue(o1.isMetricsEnabled());
+    assertFalse(o1.isExportBuiltinMetricsToGoogleCloudMonitoring());
+    assertTrue(o1.isEnabled());
+
+    DatastoreOpenTelemetryOptions o2 =
+        DatastoreOpenTelemetryOptions.newBuilder()
+            .setMetricsEnabled(false)
+            .setExportBuiltinMetricsToGoogleCloudMonitoring(true)
+            .build();
+    assertFalse(o2.isMetricsEnabled());
+    assertTrue(o2.isExportBuiltinMetricsToGoogleCloudMonitoring());
+    assertFalse(o2.isEnabled());
+  }
+
+  @Test
+  public void testOpenTelemetryOptionsDefaultInstance() {
+    DatastoreOpenTelemetryOptions telemetryOptions =
+        DatastoreOpenTelemetryOptions.newBuilder().build();
+    assertThat(telemetryOptions.getOpenTelemetry())
+        .isSameInstanceAs(io.opentelemetry.api.OpenTelemetry.noop());
+  }
+
+  @Test
+  public void testOpenTelemetryOptionsSetNullThrowsNPE() {
+    try {
+      DatastoreOpenTelemetryOptions.newBuilder().setOpenTelemetry(null);
+      fail("Expected NullPointerException");
+    } catch (NullPointerException e) {
+      assertThat(e.getMessage()).isEqualTo("OpenTelemetry instance cannot be null");
+    }
+  }
+
+  @Test
   public void testNamespace() {
     assertTrue(options.build().getNamespace().isEmpty());
     assertEquals("ns1", options.setNamespace("ns1").build().getNamespace());
@@ -184,12 +224,15 @@ public class DatastoreOptionsTest {
     ChannelPoolSettings channelPoolSettings =
         ((InstantiatingGrpcChannelProvider) datastoreOptions.getTransportChannelProvider())
             .getChannelPoolSettings();
-    assertEquals(channelPoolSettings.getInitialChannelCount(), DatastoreOptions.INIT_CHANNEL_COUNT);
-    assertEquals(channelPoolSettings.getMinChannelCount(), DatastoreOptions.MIN_CHANNEL_COUNT);
-    assertEquals(channelPoolSettings.getMaxChannelCount(), DEFAULT_MAX_CHANNEL_COUNT);
+    assertEquals(DatastoreOptions.INIT_CHANNEL_COUNT, channelPoolSettings.getInitialChannelCount());
+    assertEquals(DatastoreOptions.MIN_CHANNEL_COUNT, channelPoolSettings.getMinChannelCount());
+    assertEquals(DEFAULT_MAX_CHANNEL_COUNT, channelPoolSettings.getMaxChannelCount());
     assertEquals(
-        channelPoolSettings.getMaxRpcsPerChannel(),
-        DatastoreOptions.CHANNEL_POOL_MAX_RPCS_PER_CHANNEL);
+        DatastoreOptions.CHANNEL_POOL_MIN_RPCS_PER_CHANNEL,
+        channelPoolSettings.getMinRpcsPerChannel());
+    assertEquals(
+        DatastoreOptions.CHANNEL_POOL_MAX_RPCS_PER_CHANNEL,
+        channelPoolSettings.getMaxRpcsPerChannel());
   }
 
   @Test
@@ -306,5 +349,16 @@ public class DatastoreOptionsTest {
     DatastoreOptions newOptions = options.setDatabaseId("new-database-id").build();
     assertNotEquals(original, newOptions);
     assertNotEquals(original.hashCode(), newOptions.hashCode());
+  }
+
+  @Test
+  public void builtInMetricsExport_isDisabledByDefault() {
+    DatastoreOptions defaultOptions =
+        DatastoreOptions.newBuilder().setProjectId(PROJECT_ID).build();
+    assertThat(
+            defaultOptions
+                .getOpenTelemetryOptions()
+                .isExportBuiltinMetricsToGoogleCloudMonitoring())
+        .isFalse();
   }
 }

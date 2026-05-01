@@ -24,6 +24,9 @@
     <checkstyle.skip>true</checkstyle.skip>
     <clirr.skip>true</clirr.skip>
     <enforcer.skip>true</enforcer.skip>
+    <maven.deploy.skip>true</maven.deploy.skip>
+    <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
+    <mdep.analyze.skip>true</mdep.analyze.skip><!-- The showcase modules are not meant for library customers. -->
   </properties>
 
   <dependencyManagement>
@@ -31,7 +34,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>3.61.0</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
+        <version>3.62.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-shared-dependencies:current} -->
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -255,6 +258,13 @@
           </plugin>
         </plugins>
       </build>
+    </profile>
+    <!-- skip tests if bulkTests profile is enabled (when testing the rest of the monorepo) -->
+    <profile>
+      <id>bulkTests</id>
+      <properties>
+        <skipTests>true</skipTests>
+      </properties>
     </profile>
   </profiles>
 </project>

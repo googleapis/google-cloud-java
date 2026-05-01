@@ -191,6 +191,46 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    * <code>CC_CATEGORY_BCDR = 15;</code>
    */
   CC_CATEGORY_BCDR(15),
+  /**
+   *
+   *
+   * <pre>
+   * The admin access category.
+   * </pre>
+   *
+   * <code>CC_CATEGORY_ADMIN_ACCESS = 16;</code>
+   */
+  CC_CATEGORY_ADMIN_ACCESS(16),
+  /**
+   *
+   *
+   * <pre>
+   * DRZ (Data Residency).
+   * </pre>
+   *
+   * <code>CC_CATEGORY_DATA_RESIDENCY = 17;</code>
+   */
+  CC_CATEGORY_DATA_RESIDENCY(17),
+  /**
+   *
+   *
+   * <pre>
+   * RUR (Resource Usage Restriction).
+   * </pre>
+   *
+   * <code>CC_CATEGORY_RESOURCE_USAGE_RESTRICTION = 18;</code>
+   */
+  CC_CATEGORY_RESOURCE_USAGE_RESTRICTION(18),
+  /**
+   *
+   *
+   * <pre>
+   * SERVICE SPECIFIC
+   * </pre>
+   *
+   * <code>CC_CATEGORY_SERVICE_SPECIFIC = 19;</code>
+   */
+  CC_CATEGORY_SERVICE_SPECIFIC(19),
   UNRECOGNIZED(-1),
   ;
 
@@ -380,6 +420,50 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
    */
   public static final int CC_CATEGORY_BCDR_VALUE = 15;
 
+  /**
+   *
+   *
+   * <pre>
+   * The admin access category.
+   * </pre>
+   *
+   * <code>CC_CATEGORY_ADMIN_ACCESS = 16;</code>
+   */
+  public static final int CC_CATEGORY_ADMIN_ACCESS_VALUE = 16;
+
+  /**
+   *
+   *
+   * <pre>
+   * DRZ (Data Residency).
+   * </pre>
+   *
+   * <code>CC_CATEGORY_DATA_RESIDENCY = 17;</code>
+   */
+  public static final int CC_CATEGORY_DATA_RESIDENCY_VALUE = 17;
+
+  /**
+   *
+   *
+   * <pre>
+   * RUR (Resource Usage Restriction).
+   * </pre>
+   *
+   * <code>CC_CATEGORY_RESOURCE_USAGE_RESTRICTION = 18;</code>
+   */
+  public static final int CC_CATEGORY_RESOURCE_USAGE_RESTRICTION_VALUE = 18;
+
+  /**
+   *
+   *
+   * <pre>
+   * SERVICE SPECIFIC
+   * </pre>
+   *
+   * <code>CC_CATEGORY_SERVICE_SPECIFIC = 19;</code>
+   */
+  public static final int CC_CATEGORY_SERVICE_SPECIFIC_VALUE = 19;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -436,6 +520,14 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
         return CC_CATEGORY_PRIVACY;
       case 15:
         return CC_CATEGORY_BCDR;
+      case 16:
+        return CC_CATEGORY_ADMIN_ACCESS;
+      case 17:
+        return CC_CATEGORY_DATA_RESIDENCY;
+      case 18:
+        return CC_CATEGORY_RESOURCE_USAGE_RESTRICTION;
+      case 19:
+        return CC_CATEGORY_SERVICE_SPECIFIC;
       default:
         return null;
     }

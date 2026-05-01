@@ -1,0 +1,22 @@
+## [1.86.0](https://github.com/googleapis/google-cloud-java/compare/601ea6a901e...v1.82.0) (2026-03-20)
+
+### ⚠ BREAKING CHANGES
+
+* fix(dataplex)!: remove deprecated Explore-related methods and messages from public client libraries Breaking Changes: - Removed ContentService and all associated methods (CreateContent, UpdateContent, DeleteContent, GetContent, ListContent, etc.) and request/response messages. - Removed Environment and Session management methods from DataplexService (CreateEnvironment, UpdateEnvironment, DeleteEnvironment, ListEnvironments, GetEnvironment, ListSessions) and their associated messages. [googleapis/googleapis@69ca7ae](https://github.com/googleapis/googleapis/commit/69ca7ae2e66cd5623cafecc00971ef5397a4b258) ([e29dd99](https://github.com/googleapis/google-cloud-java/commit/e29dd99559b04de62d2f91792a6352b5ce980438))
+
+### Features
+
+* feat(dataplex): add DataProductService to manage data products and underlying data assets ([e29dd99](https://github.com/googleapis/google-cloud-java/commit/e29dd99559b04de62d2f91792a6352b5ce980438))
+* feat(dataplex): add MetadataFeed to CatalogService for tracking metadata changes ([e29dd99](https://github.com/googleapis/google-cloud-java/commit/e29dd99559b04de62d2f91792a6352b5ce980438))
+* feat(dataplex): add LookupContext to CatalogService for LLM-generated resource context ([e29dd99](https://github.com/googleapis/google-cloud-java/commit/e29dd99559b04de62d2f91792a6352b5ce980438))
+* feat(dataplex): add support for attaching aspects to EntryLinks ([e29dd99](https://github.com/googleapis/google-cloud-java/commit/e29dd99559b04de62d2f91792a6352b5ce980438))
+* feat(dataplex): add UpdateEntryLink and LookupEntryLinks methods to CatalogService ([e29dd99](https://github.com/googleapis/google-cloud-java/commit/e29dd99559b04de62d2f91792a6352b5ce980438))
+* feat(dataplex): support OneTime triggers for DataScan operations ([e29dd99](https://github.com/googleapis/google-cloud-java/commit/e29dd99559b04de62d2f91792a6352b5ce980438))
+* feat(dataplex): add debug query support to Data Quality rules ([e29dd99](https://github.com/googleapis/google-cloud-java/commit/e29dd99559b04de62d2f91792a6352b5ce980438))
+* feat(dataplex): allow selective generation scope for Data Documentation scans ([e29dd99](https://github.com/googleapis/google-cloud-java/commit/e29dd99559b04de62d2f91792a6352b5ce980438))
+* feat(dataplex): add SKIPPED state to DataScan catalog publishing status ([e29dd99](https://github.com/googleapis/google-cloud-java/commit/e29dd99559b04de62d2f91792a6352b5ce980438))
+
+### Documentation
+
+* docs(dataplex): remove deprecated metadata change warnings in Dataplex Catalog The DataProductService provides APIs to curate and manage collections of data assets as data products, enabling more organized sharing and usage for specific business cases. MetadataFeeds allow users to monitor metadata changes (CREATE, UPDATE, DELETE) within a specified scope (organization, project, or entry group) and publish them to Pub/Sub. CatalogService now includes a LookupContext API to provide LLM-generated context for resources, and enhanced EntryLink management, including the ability to attach aspects. DataScan operations now support a OneTime trigger for single-run scans, and Data Quality rules support DebugQueries to help investigate rule failures by returning diagnostic values. ([e29dd99](https://github.com/googleapis/google-cloud-java/commit/e29dd99559b04de62d2f91792a6352b5ce980438))
+

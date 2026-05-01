@@ -35,7 +35,7 @@ public class SyncGetCloudControlDeploymentString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DeploymentClient deploymentClient = DeploymentClient.create()) {
       String name =
-          CloudControlDeploymentName.of(
+          CloudControlDeploymentName.ofOrganizationLocationCloudControlDeploymentName(
                   "[ORGANIZATION]", "[LOCATION]", "[CLOUD_CONTROL_DEPLOYMENT]")
               .toString();
       CloudControlDeployment response = deploymentClient.getCloudControlDeployment(name);

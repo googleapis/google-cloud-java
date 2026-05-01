@@ -131,4 +131,47 @@ public interface AutoraterConfigOrBuilder
    * @return The bytes for autoraterModel.
    */
   com.google.protobuf.ByteString getAutoraterModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for model generation and outputs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the generationConfig field is set.
+   */
+  boolean hasGenerationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for model generation and outputs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The generationConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.GenerationConfig getGenerationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration options for model generation and outputs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.GenerationConfig generation_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.GenerationConfigOrBuilder getGenerationConfigOrBuilder();
 }

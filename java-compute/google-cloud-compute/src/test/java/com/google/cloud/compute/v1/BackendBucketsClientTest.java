@@ -16,7 +16,9 @@
 
 package com.google.cloud.compute.v1;
 
+import static com.google.cloud.compute.v1.BackendBucketsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.BackendBucketsClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.BackendBucketsClient.ListUsablePagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -33,7 +35,9 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
@@ -151,6 +155,58 @@ public class BackendBucketsClientTest {
       client.addSignedUrlKeyAsync(project, backendBucket, signedUrlKeyResource).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void aggregatedListTest() throws Exception {
+    BackendBucketsScopedList responsesElement = BackendBucketsScopedList.newBuilder().build();
+    BackendBucketAggregatedList expectedResponse =
+        BackendBucketAggregatedList.newBuilder()
+            .setNextPageToken("")
+            .putAllItems(Collections.singletonMap("items", responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+
+    AggregatedListPagedResponse pagedListResponse = client.aggregatedList(project);
+
+    List<Map.Entry<String, BackendBucketsScopedList>> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getItemsMap().entrySet().iterator().next(), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void aggregatedListExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      client.aggregatedList(project);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -320,6 +376,7 @@ public class BackendBucketsClientTest {
             .setLoadBalancingScheme("loadBalancingScheme-1223583272")
             .setName("name3373707")
             .setParams(BackendBucketParams.newBuilder().build())
+            .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .addAllUsedBy(new ArrayList<BackendBucketUsedBy>())
             .build();
@@ -530,6 +587,56 @@ public class BackendBucketsClientTest {
     try {
       String project = "project-6911";
       client.list(project);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listUsableTest() throws Exception {
+    BackendBucket responsesElement = BackendBucket.newBuilder().build();
+    BackendBucketListUsable expectedResponse =
+        BackendBucketListUsable.newBuilder()
+            .setNextPageToken("")
+            .addAllItems(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String project = "project-6911";
+
+    ListUsablePagedResponse pagedListResponse = client.listUsable(project);
+
+    List<BackendBucket> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getItemsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listUsableExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String project = "project-6911";
+      client.listUsable(project);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

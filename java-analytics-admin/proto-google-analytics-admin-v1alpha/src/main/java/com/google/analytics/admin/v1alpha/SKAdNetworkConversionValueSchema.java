@@ -81,13 +81,13 @@ public final class SKAdNetworkConversionValueSchema extends com.google.protobuf.
    *
    *
    * <pre>
-   * Output only. Resource name of the schema. This will be child of ONLY an iOS
+   * Identifier. Resource name of the schema. This will be child of ONLY an iOS
    * stream, and there can be at most one such child under an iOS stream.
    * Format:
    * properties/{property}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -108,13 +108,13 @@ public final class SKAdNetworkConversionValueSchema extends com.google.protobuf.
    *
    *
    * <pre>
-   * Output only. Resource name of the schema. This will be child of ONLY an iOS
+   * Identifier. Resource name of the schema. This will be child of ONLY an iOS
    * stream, and there can be at most one such child under an iOS stream.
    * Format:
    * properties/{property}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -840,13 +840,13 @@ public final class SKAdNetworkConversionValueSchema extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Resource name of the schema. This will be child of ONLY an iOS
+     * Identifier. Resource name of the schema. This will be child of ONLY an iOS
      * stream, and there can be at most one such child under an iOS stream.
      * Format:
      * properties/{property}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -866,13 +866,13 @@ public final class SKAdNetworkConversionValueSchema extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Resource name of the schema. This will be child of ONLY an iOS
+     * Identifier. Resource name of the schema. This will be child of ONLY an iOS
      * stream, and there can be at most one such child under an iOS stream.
      * Format:
      * properties/{property}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -892,13 +892,13 @@ public final class SKAdNetworkConversionValueSchema extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Resource name of the schema. This will be child of ONLY an iOS
+     * Identifier. Resource name of the schema. This will be child of ONLY an iOS
      * stream, and there can be at most one such child under an iOS stream.
      * Format:
      * properties/{property}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -917,13 +917,13 @@ public final class SKAdNetworkConversionValueSchema extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Resource name of the schema. This will be child of ONLY an iOS
+     * Identifier. Resource name of the schema. This will be child of ONLY an iOS
      * stream, and there can be at most one such child under an iOS stream.
      * Format:
      * properties/{property}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -938,13 +938,13 @@ public final class SKAdNetworkConversionValueSchema extends com.google.protobuf.
      *
      *
      * <pre>
-     * Output only. Resource name of the schema. This will be child of ONLY an iOS
+     * Identifier. Resource name of the schema. This will be child of ONLY an iOS
      * stream, and there can be at most one such child under an iOS stream.
      * Format:
      * properties/{property}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

@@ -16,6 +16,7 @@
 
 package com.google.chat.v1;
 
+import static com.google.chat.v1.ChatServiceClient.FindGroupChatsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListCustomEmojisPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMembershipsPagedResponse;
 import static com.google.chat.v1.ChatServiceClient.ListMessagesPagedResponse;
@@ -191,6 +192,13 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
   /** Returns the object with the settings used for calls to findDirectMessage. */
   public UnaryCallSettings<FindDirectMessageRequest, Space> findDirectMessageSettings() {
     return ((ChatServiceStubSettings) getStubSettings()).findDirectMessageSettings();
+  }
+
+  /** Returns the object with the settings used for calls to findGroupChats. */
+  public PagedCallSettings<
+          FindGroupChatsRequest, FindGroupChatsResponse, FindGroupChatsPagedResponse>
+      findGroupChatsSettings() {
+    return ((ChatServiceStubSettings) getStubSettings()).findGroupChatsSettings();
   }
 
   /** Returns the object with the settings used for calls to createMembership. */
@@ -535,6 +543,13 @@ public class ChatServiceSettings extends ClientSettings<ChatServiceSettings> {
     /** Returns the builder for the settings used for calls to findDirectMessage. */
     public UnaryCallSettings.Builder<FindDirectMessageRequest, Space> findDirectMessageSettings() {
       return getStubSettingsBuilder().findDirectMessageSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to findGroupChats. */
+    public PagedCallSettings.Builder<
+            FindGroupChatsRequest, FindGroupChatsResponse, FindGroupChatsPagedResponse>
+        findGroupChatsSettings() {
+      return getStubSettingsBuilder().findGroupChatsSettings();
     }
 
     /** Returns the builder for the settings used for calls to createMembership. */

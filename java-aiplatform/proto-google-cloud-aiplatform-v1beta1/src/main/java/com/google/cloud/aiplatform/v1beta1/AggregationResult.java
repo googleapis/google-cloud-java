@@ -84,6 +84,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     EXACT_MATCH_METRIC_VALUE(7),
     BLEU_METRIC_VALUE(8),
     ROUGE_METRIC_VALUE(9),
+    CUSTOM_CODE_EXECUTION_RESULT(10),
     AGGREGATIONRESULT_NOT_SET(0);
     private final int value;
 
@@ -113,6 +114,8 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
           return BLEU_METRIC_VALUE;
         case 9:
           return ROUGE_METRIC_VALUE;
+        case 10:
+          return CUSTOM_CODE_EXECUTION_RESULT;
         case 0:
           return AGGREGATIONRESULT_NOT_SET;
         default:
@@ -410,6 +413,68 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.aiplatform.v1beta1.RougeMetricValue.getDefaultInstance();
   }
 
+  public static final int CUSTOM_CODE_EXECUTION_RESULT_FIELD_NUMBER = 10;
+
+  /**
+   *
+   *
+   * <pre>
+   * Result for code execution metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult custom_code_execution_result = 10;
+   * </code>
+   *
+   * @return Whether the customCodeExecutionResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomCodeExecutionResult() {
+    return aggregationResultCase_ == 10;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Result for code execution metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult custom_code_execution_result = 10;
+   * </code>
+   *
+   * @return The customCodeExecutionResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult
+      getCustomCodeExecutionResult() {
+    if (aggregationResultCase_ == 10) {
+      return (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult) aggregationResult_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Result for code execution metric.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult custom_code_execution_result = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResultOrBuilder
+      getCustomCodeExecutionResultOrBuilder() {
+    if (aggregationResultCase_ == 10) {
+      return (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult) aggregationResult_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult.getDefaultInstance();
+  }
+
   public static final int AGGREGATION_METRIC_FIELD_NUMBER = 4;
   private int aggregationMetric_ = 0;
 
@@ -489,6 +554,10 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       output.writeMessage(
           9, (com.google.cloud.aiplatform.v1beta1.RougeMetricValue) aggregationResult_);
     }
+    if (aggregationResultCase_ == 10) {
+      output.writeMessage(
+          10, (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult) aggregationResult_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -529,6 +598,12 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, (com.google.cloud.aiplatform.v1beta1.RougeMetricValue) aggregationResult_);
     }
+    if (aggregationResultCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10,
+              (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult) aggregationResult_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -562,6 +637,10 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         break;
       case 9:
         if (!getRougeMetricValue().equals(other.getRougeMetricValue())) return false;
+        break;
+      case 10:
+        if (!getCustomCodeExecutionResult().equals(other.getCustomCodeExecutionResult()))
+          return false;
         break;
       case 0:
       default:
@@ -599,6 +678,10 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       case 9:
         hash = (37 * hash) + ROUGE_METRIC_VALUE_FIELD_NUMBER;
         hash = (53 * hash) + getRougeMetricValue().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + CUSTOM_CODE_EXECUTION_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomCodeExecutionResult().hashCode();
         break;
       case 0:
       default:
@@ -759,6 +842,9 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       if (rougeMetricValueBuilder_ != null) {
         rougeMetricValueBuilder_.clear();
       }
+      if (customCodeExecutionResultBuilder_ != null) {
+        customCodeExecutionResultBuilder_.clear();
+      }
       aggregationMetric_ = 0;
       aggregationResultCase_ = 0;
       aggregationResult_ = null;
@@ -799,7 +885,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.AggregationResult result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.aggregationMetric_ = aggregationMetric_;
       }
     }
@@ -821,6 +907,9 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       }
       if (aggregationResultCase_ == 9 && rougeMetricValueBuilder_ != null) {
         result.aggregationResult_ = rougeMetricValueBuilder_.build();
+      }
+      if (aggregationResultCase_ == 10 && customCodeExecutionResultBuilder_ != null) {
+        result.aggregationResult_ = customCodeExecutionResultBuilder_.build();
       }
     }
 
@@ -866,6 +955,11 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
             mergeRougeMetricValue(other.getRougeMetricValue());
             break;
           }
+        case CUSTOM_CODE_EXECUTION_RESULT:
+          {
+            mergeCustomCodeExecutionResult(other.getCustomCodeExecutionResult());
+            break;
+          }
         case AGGREGATIONRESULT_NOT_SET:
           {
             break;
@@ -900,7 +994,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
             case 32:
               {
                 aggregationMetric_ = input.readEnum();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 32
             case 42:
@@ -938,6 +1032,14 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
                 aggregationResultCase_ = 9;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    internalGetCustomCodeExecutionResultFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                aggregationResultCase_ = 10;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2116,6 +2218,251 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       return rougeMetricValueBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult,
+            com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult.Builder,
+            com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResultOrBuilder>
+        customCodeExecutionResultBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Result for code execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult custom_code_execution_result = 10;
+     * </code>
+     *
+     * @return Whether the customCodeExecutionResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomCodeExecutionResult() {
+      return aggregationResultCase_ == 10;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Result for code execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult custom_code_execution_result = 10;
+     * </code>
+     *
+     * @return The customCodeExecutionResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult
+        getCustomCodeExecutionResult() {
+      if (customCodeExecutionResultBuilder_ == null) {
+        if (aggregationResultCase_ == 10) {
+          return (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult) aggregationResult_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult.getDefaultInstance();
+      } else {
+        if (aggregationResultCase_ == 10) {
+          return customCodeExecutionResultBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Result for code execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult custom_code_execution_result = 10;
+     * </code>
+     */
+    public Builder setCustomCodeExecutionResult(
+        com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult value) {
+      if (customCodeExecutionResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        aggregationResult_ = value;
+        onChanged();
+      } else {
+        customCodeExecutionResultBuilder_.setMessage(value);
+      }
+      aggregationResultCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Result for code execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult custom_code_execution_result = 10;
+     * </code>
+     */
+    public Builder setCustomCodeExecutionResult(
+        com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult.Builder builderForValue) {
+      if (customCodeExecutionResultBuilder_ == null) {
+        aggregationResult_ = builderForValue.build();
+        onChanged();
+      } else {
+        customCodeExecutionResultBuilder_.setMessage(builderForValue.build());
+      }
+      aggregationResultCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Result for code execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult custom_code_execution_result = 10;
+     * </code>
+     */
+    public Builder mergeCustomCodeExecutionResult(
+        com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult value) {
+      if (customCodeExecutionResultBuilder_ == null) {
+        if (aggregationResultCase_ == 10
+            && aggregationResult_
+                != com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult
+                    .getDefaultInstance()) {
+          aggregationResult_ =
+              com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult)
+                          aggregationResult_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          aggregationResult_ = value;
+        }
+        onChanged();
+      } else {
+        if (aggregationResultCase_ == 10) {
+          customCodeExecutionResultBuilder_.mergeFrom(value);
+        } else {
+          customCodeExecutionResultBuilder_.setMessage(value);
+        }
+      }
+      aggregationResultCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Result for code execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult custom_code_execution_result = 10;
+     * </code>
+     */
+    public Builder clearCustomCodeExecutionResult() {
+      if (customCodeExecutionResultBuilder_ == null) {
+        if (aggregationResultCase_ == 10) {
+          aggregationResultCase_ = 0;
+          aggregationResult_ = null;
+          onChanged();
+        }
+      } else {
+        if (aggregationResultCase_ == 10) {
+          aggregationResultCase_ = 0;
+          aggregationResult_ = null;
+        }
+        customCodeExecutionResultBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Result for code execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult custom_code_execution_result = 10;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult.Builder
+        getCustomCodeExecutionResultBuilder() {
+      return internalGetCustomCodeExecutionResultFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Result for code execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult custom_code_execution_result = 10;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResultOrBuilder
+        getCustomCodeExecutionResultOrBuilder() {
+      if ((aggregationResultCase_ == 10) && (customCodeExecutionResultBuilder_ != null)) {
+        return customCodeExecutionResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (aggregationResultCase_ == 10) {
+          return (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult) aggregationResult_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Result for code execution metric.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult custom_code_execution_result = 10;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult,
+            com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult.Builder,
+            com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResultOrBuilder>
+        internalGetCustomCodeExecutionResultFieldBuilder() {
+      if (customCodeExecutionResultBuilder_ == null) {
+        if (!(aggregationResultCase_ == 10)) {
+          aggregationResult_ =
+              com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult.getDefaultInstance();
+        }
+        customCodeExecutionResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult,
+                com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult.Builder,
+                com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResultOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.CustomCodeExecutionResult) aggregationResult_,
+                getParentForChildren(),
+                isClean());
+        aggregationResult_ = null;
+      }
+      aggregationResultCase_ = 10;
+      onChanged();
+      return customCodeExecutionResultBuilder_;
+    }
+
     private int aggregationMetric_ = 0;
 
     /**
@@ -2150,7 +2497,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
      */
     public Builder setAggregationMetricValue(int value) {
       aggregationMetric_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2195,7 +2542,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       aggregationMetric_ = value.getNumber();
       onChanged();
       return this;
@@ -2214,7 +2561,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearAggregationMetric() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       aggregationMetric_ = 0;
       onChanged();
       return this;

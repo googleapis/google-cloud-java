@@ -24,8 +24,8 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
+import com.google.cloud.datastore.telemetry.CompositeDatastoreMetricsRecorder;
 import com.google.cloud.datastore.telemetry.DatastoreMetricsRecorder;
-import com.google.cloud.datastore.telemetry.NoOpDatastoreMetricsRecorder;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import com.google.cloud.datastore.telemetry.TelemetryUtils;
 import com.google.cloud.datastore.telemetry.TraceUtil;
@@ -48,7 +48,9 @@ import com.google.datastore.v1.RunAggregationQueryRequest;
 import com.google.datastore.v1.RunAggregationQueryResponse;
 import com.google.datastore.v1.RunQueryRequest;
 import com.google.datastore.v1.RunQueryResponse;
+import java.util.ArrayList;
 import java.util.concurrent.Callable;
+import javax.annotation.Nonnull;
 
 /**
  * An implementation of {@link DatastoreRpc} which acts as a Decorator and decorates the underlying
@@ -58,7 +60,7 @@ import java.util.concurrent.Callable;
 public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
 
   private final DatastoreRpc datastoreRpc;
-  private final com.google.cloud.datastore.telemetry.TraceUtil otelTraceUtil;
+  private final TraceUtil otelTraceUtil;
   private final RetrySettings retrySettings;
   private final DatastoreOptions datastoreOptions;
   private final DatastoreMetricsRecorder metricsRecorder;
@@ -73,7 +75,7 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
     this.retrySettings = retrySettings;
     this.datastoreOptions = datastoreOptions;
     this.otelTraceUtil = otelTraceUtil;
-    this.metricsRecorder = new NoOpDatastoreMetricsRecorder();
+    this.metricsRecorder = new CompositeDatastoreMetricsRecorder(new ArrayList<>());
   }
 
   private RetryAndTraceDatastoreRpcDecorator(Builder builder) {
@@ -94,10 +96,8 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
     private RetrySettings retrySettings;
     private DatastoreOptions datastoreOptions;
 
-    // Defaults configured for this class
-    private DatastoreMetricsRecorder metricsRecorder = new NoOpDatastoreMetricsRecorder();
-
-    private Builder() {}
+    private DatastoreMetricsRecorder metricsRecorder =
+        new CompositeDatastoreMetricsRecorder(new ArrayList<>());
 
     public Builder setDatastoreRpc(DatastoreRpc datastoreRpc) {
       this.datastoreRpc = datastoreRpc;
@@ -119,8 +119,8 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
       return this;
     }
 
-    public Builder setMetricsRecorder(DatastoreMetricsRecorder metricsRecorder) {
-      Preconditions.checkNotNull(metricsRecorder, "metricsRecorder can not be null");
+    @InternalApi
+    public Builder setMetricsRecorder(@Nonnull DatastoreMetricsRecorder metricsRecorder) {
       this.metricsRecorder = metricsRecorder;
       return this;
     }
@@ -130,6 +130,7 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
       Preconditions.checkNotNull(otelTraceUtil, "otelTraceUtil is required");
       Preconditions.checkNotNull(retrySettings, "retrySettings is required");
       Preconditions.checkNotNull(datastoreOptions, "datastoreOptions is required");
+      Preconditions.checkNotNull(metricsRecorder, "metricsRecorder is required");
       return new RetryAndTraceDatastoreRpcDecorator(this);
     }
   }
@@ -176,9 +177,8 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
     boolean isTransactional = readOptions.hasTransaction() || readOptions.hasNewTransaction();
     String spanName =
         (isTransactional
-            ? com.google.cloud.datastore.telemetry.TraceUtil
-                .SPAN_NAME_TRANSACTION_RUN_AGGREGATION_QUERY
-            : com.google.cloud.datastore.telemetry.TraceUtil.SPAN_NAME_RUN_AGGREGATION_QUERY);
+            ? TraceUtil.SPAN_NAME_TRANSACTION_RUN_AGGREGATION_QUERY
+            : TraceUtil.SPAN_NAME_RUN_AGGREGATION_QUERY);
     return invokeRpc(
         () -> datastoreRpc.runAggregationQuery(request),
         spanName,
@@ -205,7 +205,8 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
     String operationStatus = StatusCode.Code.UNKNOWN.toString();
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       Callable<O> callable =
-          TelemetryUtils.attemptMetricsCallable(block, metricsRecorder, methodName);
+          TelemetryUtils.attemptMetricsCallable(
+              block, metricsRecorder, methodName, datastoreOptions.getDatabaseId());
       O result =
           RetryHelper.runWithRetries(
               callable, this.retrySettings, EXCEPTION_HANDLER, this.datastoreOptions.getClock());
@@ -217,7 +218,11 @@ public class RetryAndTraceDatastoreRpcDecorator implements DatastoreRpc {
       throw DatastoreException.translateAndThrow(e);
     } finally {
       TelemetryUtils.recordOperationMetrics(
-          metricsRecorder, stopwatch, methodName, operationStatus);
+          metricsRecorder,
+          stopwatch,
+          methodName,
+          operationStatus,
+          datastoreOptions.getDatabaseId());
       span.end();
     }
   }

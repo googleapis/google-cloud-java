@@ -138,6 +138,58 @@ public final class ReasoningEngineExecutionServiceGrpc {
     return getStreamQueryReasoningEngineMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest,
+          com.google.longrunning.Operation>
+      getAsyncQueryReasoningEngineMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AsyncQueryReasoningEngine",
+      requestType = com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest,
+          com.google.longrunning.Operation>
+      getAsyncQueryReasoningEngineMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest,
+            com.google.longrunning.Operation>
+        getAsyncQueryReasoningEngineMethod;
+    if ((getAsyncQueryReasoningEngineMethod =
+            ReasoningEngineExecutionServiceGrpc.getAsyncQueryReasoningEngineMethod)
+        == null) {
+      synchronized (ReasoningEngineExecutionServiceGrpc.class) {
+        if ((getAsyncQueryReasoningEngineMethod =
+                ReasoningEngineExecutionServiceGrpc.getAsyncQueryReasoningEngineMethod)
+            == null) {
+          ReasoningEngineExecutionServiceGrpc.getAsyncQueryReasoningEngineMethod =
+              getAsyncQueryReasoningEngineMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "AsyncQueryReasoningEngine"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ReasoningEngineExecutionServiceMethodDescriptorSupplier(
+                              "AsyncQueryReasoningEngine"))
+                      .build();
+        }
+      }
+    }
+    return getAsyncQueryReasoningEngineMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ReasoningEngineExecutionServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ReasoningEngineExecutionServiceStub> factory =
@@ -232,6 +284,20 @@ public final class ReasoningEngineExecutionServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getStreamQueryReasoningEngineMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Async query using a reasoning engine.
+     * </pre>
+     */
+    default void asyncQueryReasoningEngine(
+        com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAsyncQueryReasoningEngineMethod(), responseObserver);
+    }
   }
 
   /**
@@ -304,6 +370,22 @@ public final class ReasoningEngineExecutionServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Async query using a reasoning engine.
+     * </pre>
+     */
+    public void asyncQueryReasoningEngine(
+        com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAsyncQueryReasoningEngineMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -353,6 +435,20 @@ public final class ReasoningEngineExecutionServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
           getChannel(), getStreamQueryReasoningEngineMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Async query using a reasoning engine.
+     * </pre>
+     */
+    public com.google.longrunning.Operation asyncQueryReasoningEngine(
+        com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest request)
+        throws io.grpc.StatusException {
+      return io.grpc.stub.ClientCalls.blockingV2UnaryCall(
+          getChannel(), getAsyncQueryReasoningEngineMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -401,6 +497,19 @@ public final class ReasoningEngineExecutionServiceGrpc {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getStreamQueryReasoningEngineMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Async query using a reasoning engine.
+     * </pre>
+     */
+    public com.google.longrunning.Operation asyncQueryReasoningEngine(
+        com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAsyncQueryReasoningEngineMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -438,10 +547,25 @@ public final class ReasoningEngineExecutionServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getQueryReasoningEngineMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Async query using a reasoning engine.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        asyncQueryReasoningEngine(
+            com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAsyncQueryReasoningEngineMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_QUERY_REASONING_ENGINE = 0;
   private static final int METHODID_STREAM_QUERY_REASONING_ENGINE = 1;
+  private static final int METHODID_ASYNC_QUERY_REASONING_ENGINE = 2;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -471,6 +595,11 @@ public final class ReasoningEngineExecutionServiceGrpc {
           serviceImpl.streamQueryReasoningEngine(
               (com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest) request,
               (io.grpc.stub.StreamObserver<com.google.api.HttpBody>) responseObserver);
+          break;
+        case METHODID_ASYNC_QUERY_REASONING_ENGINE:
+          serviceImpl.asyncQueryReasoningEngine(
+              (com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -503,6 +632,13 @@ public final class ReasoningEngineExecutionServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.aiplatform.v1beta1.StreamQueryReasoningEngineRequest,
                     com.google.api.HttpBody>(service, METHODID_STREAM_QUERY_REASONING_ENGINE)))
+        .addMethod(
+            getAsyncQueryReasoningEngineMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1beta1.AsyncQueryReasoningEngineRequest,
+                    com.google.longrunning.Operation>(
+                    service, METHODID_ASYNC_QUERY_REASONING_ENGINE)))
         .build();
   }
 
@@ -558,6 +694,7 @@ public final class ReasoningEngineExecutionServiceGrpc {
                           new ReasoningEngineExecutionServiceFileDescriptorSupplier())
                       .addMethod(getQueryReasoningEngineMethod())
                       .addMethod(getStreamQueryReasoningEngineMethod())
+                      .addMethod(getAsyncQueryReasoningEngineMethod())
                       .build();
         }
       }

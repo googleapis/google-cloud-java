@@ -16,7 +16,9 @@
 
 package com.google.cloud.compute.v1.stub;
 
+import static com.google.cloud.compute.v1.BackendBucketsClient.AggregatedListPagedResponse;
 import static com.google.cloud.compute.v1.BackendBucketsClient.ListPagedResponse;
+import static com.google.cloud.compute.v1.BackendBucketsClient.ListUsablePagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -46,14 +48,19 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AddSignedUrlKeyBackendBucketRequest;
+import com.google.cloud.compute.v1.AggregatedListBackendBucketsRequest;
 import com.google.cloud.compute.v1.BackendBucket;
+import com.google.cloud.compute.v1.BackendBucketAggregatedList;
 import com.google.cloud.compute.v1.BackendBucketList;
+import com.google.cloud.compute.v1.BackendBucketListUsable;
+import com.google.cloud.compute.v1.BackendBucketsScopedList;
 import com.google.cloud.compute.v1.DeleteBackendBucketRequest;
 import com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendBucketRequest;
 import com.google.cloud.compute.v1.GetBackendBucketRequest;
 import com.google.cloud.compute.v1.GetIamPolicyBackendBucketRequest;
 import com.google.cloud.compute.v1.InsertBackendBucketRequest;
 import com.google.cloud.compute.v1.ListBackendBucketsRequest;
+import com.google.cloud.compute.v1.ListUsableBackendBucketsRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.PatchBackendBucketRequest;
 import com.google.cloud.compute.v1.Policy;
@@ -69,6 +76,7 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+import java.util.Map;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -161,6 +169,11 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       addSignedUrlKeySettings;
   private final OperationCallSettings<AddSignedUrlKeyBackendBucketRequest, Operation, Operation>
       addSignedUrlKeyOperationSettings;
+  private final PagedCallSettings<
+          AggregatedListBackendBucketsRequest,
+          BackendBucketAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings;
   private final UnaryCallSettings<DeleteBackendBucketRequest, Operation> deleteSettings;
   private final OperationCallSettings<DeleteBackendBucketRequest, Operation, Operation>
       deleteOperationSettings;
@@ -175,6 +188,9 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       insertOperationSettings;
   private final PagedCallSettings<ListBackendBucketsRequest, BackendBucketList, ListPagedResponse>
       listSettings;
+  private final PagedCallSettings<
+          ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>
+      listUsableSettings;
   private final UnaryCallSettings<PatchBackendBucketRequest, Operation> patchSettings;
   private final OperationCallSettings<PatchBackendBucketRequest, Operation, Operation>
       patchOperationSettings;
@@ -189,6 +205,53 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
   private final UnaryCallSettings<UpdateBackendBucketRequest, Operation> updateSettings;
   private final OperationCallSettings<UpdateBackendBucketRequest, Operation, Operation>
       updateOperationSettings;
+
+  private static final PagedListDescriptor<
+          AggregatedListBackendBucketsRequest,
+          BackendBucketAggregatedList,
+          Map.Entry<String, BackendBucketsScopedList>>
+      AGGREGATED_LIST_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              AggregatedListBackendBucketsRequest,
+              BackendBucketAggregatedList,
+              Map.Entry<String, BackendBucketsScopedList>>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public AggregatedListBackendBucketsRequest injectToken(
+                AggregatedListBackendBucketsRequest payload, String token) {
+              return AggregatedListBackendBucketsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public AggregatedListBackendBucketsRequest injectPageSize(
+                AggregatedListBackendBucketsRequest payload, int pageSize) {
+              return AggregatedListBackendBucketsRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(AggregatedListBackendBucketsRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(BackendBucketAggregatedList payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Map.Entry<String, BackendBucketsScopedList>> extractResources(
+                BackendBucketAggregatedList payload) {
+              return payload.getItemsMap().entrySet();
+            }
+          };
 
   private static final PagedListDescriptor<
           ListBackendBucketsRequest, BackendBucketList, BackendBucket>
@@ -227,6 +290,74 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
             }
           };
 
+  private static final PagedListDescriptor<
+          ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>
+      LIST_USABLE_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUsableBackendBucketsRequest injectToken(
+                ListUsableBackendBucketsRequest payload, String token) {
+              return ListUsableBackendBucketsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListUsableBackendBucketsRequest injectPageSize(
+                ListUsableBackendBucketsRequest payload, int pageSize) {
+              return ListUsableBackendBucketsRequest.newBuilder(payload)
+                  .setMaxResults(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUsableBackendBucketsRequest payload) {
+              return payload.getMaxResults();
+            }
+
+            @Override
+            public String extractNextToken(BackendBucketListUsable payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BackendBucket> extractResources(BackendBucketListUsable payload) {
+              return payload.getItemsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          AggregatedListBackendBucketsRequest,
+          BackendBucketAggregatedList,
+          AggregatedListPagedResponse>
+      AGGREGATED_LIST_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              AggregatedListBackendBucketsRequest,
+              BackendBucketAggregatedList,
+              AggregatedListPagedResponse>() {
+            @Override
+            public ApiFuture<AggregatedListPagedResponse> getFuturePagedResponse(
+                UnaryCallable<AggregatedListBackendBucketsRequest, BackendBucketAggregatedList>
+                    callable,
+                AggregatedListBackendBucketsRequest request,
+                ApiCallContext context,
+                ApiFuture<BackendBucketAggregatedList> futureResponse) {
+              PageContext<
+                      AggregatedListBackendBucketsRequest,
+                      BackendBucketAggregatedList,
+                      Map.Entry<String, BackendBucketsScopedList>>
+                  pageContext =
+                      PageContext.create(callable, AGGREGATED_LIST_PAGE_STR_DESC, request, context);
+              return AggregatedListPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListBackendBucketsRequest, BackendBucketList, ListPagedResponse>
       LIST_PAGE_STR_FACT =
@@ -244,6 +375,24 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>
+      LIST_USABLE_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>() {
+            @Override
+            public ApiFuture<ListUsablePagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUsableBackendBucketsRequest, BackendBucketListUsable> callable,
+                ListUsableBackendBucketsRequest request,
+                ApiCallContext context,
+                ApiFuture<BackendBucketListUsable> futureResponse) {
+              PageContext<ListUsableBackendBucketsRequest, BackendBucketListUsable, BackendBucket>
+                  pageContext =
+                      PageContext.create(callable, LIST_USABLE_PAGE_STR_DESC, request, context);
+              return ListUsablePagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
   /** Returns the object with the settings used for calls to addSignedUrlKey. */
   public UnaryCallSettings<AddSignedUrlKeyBackendBucketRequest, Operation>
       addSignedUrlKeySettings() {
@@ -254,6 +403,15 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
   public OperationCallSettings<AddSignedUrlKeyBackendBucketRequest, Operation, Operation>
       addSignedUrlKeyOperationSettings() {
     return addSignedUrlKeyOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to aggregatedList. */
+  public PagedCallSettings<
+          AggregatedListBackendBucketsRequest,
+          BackendBucketAggregatedList,
+          AggregatedListPagedResponse>
+      aggregatedListSettings() {
+    return aggregatedListSettings;
   }
 
   /** Returns the object with the settings used for calls to delete. */
@@ -304,6 +462,13 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
   public PagedCallSettings<ListBackendBucketsRequest, BackendBucketList, ListPagedResponse>
       listSettings() {
     return listSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listUsable. */
+  public PagedCallSettings<
+          ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>
+      listUsableSettings() {
+    return listUsableSettings;
   }
 
   /** Returns the object with the settings used for calls to patch. */
@@ -435,6 +600,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
 
     addSignedUrlKeySettings = settingsBuilder.addSignedUrlKeySettings().build();
     addSignedUrlKeyOperationSettings = settingsBuilder.addSignedUrlKeyOperationSettings().build();
+    aggregatedListSettings = settingsBuilder.aggregatedListSettings().build();
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     deleteSignedUrlKeySettings = settingsBuilder.deleteSignedUrlKeySettings().build();
@@ -445,6 +611,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    listUsableSettings = settingsBuilder.listUsableSettings().build();
     patchSettings = settingsBuilder.patchSettings().build();
     patchOperationSettings = settingsBuilder.patchOperationSettings().build();
     setEdgeSecurityPolicySettings = settingsBuilder.setEdgeSecurityPolicySettings().build();
@@ -473,6 +640,11 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     private final OperationCallSettings.Builder<
             AddSignedUrlKeyBackendBucketRequest, Operation, Operation>
         addSignedUrlKeyOperationSettings;
+    private final PagedCallSettings.Builder<
+            AggregatedListBackendBucketsRequest,
+            BackendBucketAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings;
     private final UnaryCallSettings.Builder<DeleteBackendBucketRequest, Operation> deleteSettings;
     private final OperationCallSettings.Builder<DeleteBackendBucketRequest, Operation, Operation>
         deleteOperationSettings;
@@ -490,6 +662,9 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
     private final PagedCallSettings.Builder<
             ListBackendBucketsRequest, BackendBucketList, ListPagedResponse>
         listSettings;
+    private final PagedCallSettings.Builder<
+            ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>
+        listUsableSettings;
     private final UnaryCallSettings.Builder<PatchBackendBucketRequest, Operation> patchSettings;
     private final OperationCallSettings.Builder<PatchBackendBucketRequest, Operation, Operation>
         patchOperationSettings;
@@ -558,6 +733,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
 
       addSignedUrlKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       addSignedUrlKeyOperationSettings = OperationCallSettings.newBuilder();
+      aggregatedListSettings = PagedCallSettings.newBuilder(AGGREGATED_LIST_PAGE_STR_FACT);
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       deleteSignedUrlKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -567,6 +743,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      listUsableSettings = PagedCallSettings.newBuilder(LIST_USABLE_PAGE_STR_FACT);
       patchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       patchOperationSettings = OperationCallSettings.newBuilder();
       setEdgeSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -579,12 +756,14 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addSignedUrlKeySettings,
+              aggregatedListSettings,
               deleteSettings,
               deleteSignedUrlKeySettings,
               getSettings,
               getIamPolicySettings,
               insertSettings,
               listSettings,
+              listUsableSettings,
               patchSettings,
               setEdgeSecurityPolicySettings,
               setIamPolicySettings,
@@ -598,6 +777,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
 
       addSignedUrlKeySettings = settings.addSignedUrlKeySettings.toBuilder();
       addSignedUrlKeyOperationSettings = settings.addSignedUrlKeyOperationSettings.toBuilder();
+      aggregatedListSettings = settings.aggregatedListSettings.toBuilder();
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       deleteSignedUrlKeySettings = settings.deleteSignedUrlKeySettings.toBuilder();
@@ -608,6 +788,7 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      listUsableSettings = settings.listUsableSettings.toBuilder();
       patchSettings = settings.patchSettings.toBuilder();
       patchOperationSettings = settings.patchOperationSettings.toBuilder();
       setEdgeSecurityPolicySettings = settings.setEdgeSecurityPolicySettings.toBuilder();
@@ -621,12 +802,14 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               addSignedUrlKeySettings,
+              aggregatedListSettings,
               deleteSettings,
               deleteSignedUrlKeySettings,
               getSettings,
               getIamPolicySettings,
               insertSettings,
               listSettings,
+              listUsableSettings,
               patchSettings,
               setEdgeSecurityPolicySettings,
               setIamPolicySettings,
@@ -651,6 +834,11 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
           .addSignedUrlKeySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .aggregatedListSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteSettings()
@@ -679,6 +867,11 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
 
       builder
           .listSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listUsableSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -908,6 +1101,15 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
       return addSignedUrlKeyOperationSettings;
     }
 
+    /** Returns the builder for the settings used for calls to aggregatedList. */
+    public PagedCallSettings.Builder<
+            AggregatedListBackendBucketsRequest,
+            BackendBucketAggregatedList,
+            AggregatedListPagedResponse>
+        aggregatedListSettings() {
+      return aggregatedListSettings;
+    }
+
     /** Returns the builder for the settings used for calls to delete. */
     public UnaryCallSettings.Builder<DeleteBackendBucketRequest, Operation> deleteSettings() {
       return deleteSettings;
@@ -959,6 +1161,13 @@ public class BackendBucketsStubSettings extends StubSettings<BackendBucketsStubS
             ListBackendBucketsRequest, BackendBucketList, ListPagedResponse>
         listSettings() {
       return listSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listUsable. */
+    public PagedCallSettings.Builder<
+            ListUsableBackendBucketsRequest, BackendBucketListUsable, ListUsablePagedResponse>
+        listUsableSettings() {
+      return listUsableSettings;
     }
 
     /** Returns the builder for the settings used for calls to patch. */

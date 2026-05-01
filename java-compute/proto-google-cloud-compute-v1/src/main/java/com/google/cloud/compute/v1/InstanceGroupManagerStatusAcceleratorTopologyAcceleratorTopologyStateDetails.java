@@ -84,7 +84,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
    *
    *
    * <pre>
-   * Output only. [Output Only] Encountered errors.
+   * Output only. Encountered errors.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -100,7 +100,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
    *
    *
    * <pre>
-   * Output only. [Output Only] Encountered errors.
+   * Output only. Encountered errors.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -116,7 +116,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
    *
    *
    * <pre>
-   * Output only. [Output Only] Encountered errors.
+   * Output only. Encountered errors.
    * </pre>
    *
    * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -135,7 +135,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
    *
    *
    * <pre>
-   * Output only. [Output Only] Timestamp is shown only if there is an error. The field
+   * Output only. Timestamp is shown only if there is an error. The field
    * has // RFC3339 //
    * text format.
    * </pre>
@@ -153,7 +153,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
    *
    *
    * <pre>
-   * Output only. [Output Only] Timestamp is shown only if there is an error. The field
+   * Output only. Timestamp is shown only if there is an error. The field
    * has // RFC3339 //
    * text format.
    * </pre>
@@ -179,7 +179,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
    *
    *
    * <pre>
-   * Output only. [Output Only] Timestamp is shown only if there is an error. The field
+   * Output only. Timestamp is shown only if there is an error. The field
    * has // RFC3339 //
    * text format.
    * </pre>
@@ -633,7 +633,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
      *
      *
      * <pre>
-     * Output only. [Output Only] Encountered errors.
+     * Output only. Encountered errors.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -648,7 +648,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
      *
      *
      * <pre>
-     * Output only. [Output Only] Encountered errors.
+     * Output only. Encountered errors.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -667,7 +667,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
      *
      *
      * <pre>
-     * Output only. [Output Only] Encountered errors.
+     * Output only. Encountered errors.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -690,7 +690,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
      *
      *
      * <pre>
-     * Output only. [Output Only] Encountered errors.
+     * Output only. Encountered errors.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -710,7 +710,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
      *
      *
      * <pre>
-     * Output only. [Output Only] Encountered errors.
+     * Output only. Encountered errors.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -738,7 +738,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
      *
      *
      * <pre>
-     * Output only. [Output Only] Encountered errors.
+     * Output only. Encountered errors.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -758,7 +758,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
      *
      *
      * <pre>
-     * Output only. [Output Only] Encountered errors.
+     * Output only. Encountered errors.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -773,7 +773,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
      *
      *
      * <pre>
-     * Output only. [Output Only] Encountered errors.
+     * Output only. Encountered errors.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -790,7 +790,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
      *
      *
      * <pre>
-     * Output only. [Output Only] Encountered errors.
+     * Output only. Encountered errors.
      * </pre>
      *
      * <code>optional .google.cloud.compute.v1.Error error = 96784904;</code>
@@ -818,7 +818,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
      *
      *
      * <pre>
-     * Output only. [Output Only] Timestamp is shown only if there is an error. The field
+     * Output only. Timestamp is shown only if there is an error. The field
      * has // RFC3339 //
      * text format.
      * </pre>
@@ -835,7 +835,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
      *
      *
      * <pre>
-     * Output only. [Output Only] Timestamp is shown only if there is an error. The field
+     * Output only. Timestamp is shown only if there is an error. The field
      * has // RFC3339 //
      * text format.
      * </pre>
@@ -860,7 +860,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
      *
      *
      * <pre>
-     * Output only. [Output Only] Timestamp is shown only if there is an error. The field
+     * Output only. Timestamp is shown only if there is an error. The field
      * has // RFC3339 //
      * text format.
      * </pre>
@@ -885,7 +885,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
      *
      *
      * <pre>
-     * Output only. [Output Only] Timestamp is shown only if there is an error. The field
+     * Output only. Timestamp is shown only if there is an error. The field
      * has // RFC3339 //
      * text format.
      * </pre>
@@ -909,7 +909,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
      *
      *
      * <pre>
-     * Output only. [Output Only] Timestamp is shown only if there is an error. The field
+     * Output only. Timestamp is shown only if there is an error. The field
      * has // RFC3339 //
      * text format.
      * </pre>
@@ -929,7 +929,7 @@ public final class InstanceGroupManagerStatusAcceleratorTopologyAcceleratorTopol
      *
      *
      * <pre>
-     * Output only. [Output Only] Timestamp is shown only if there is an error. The field
+     * Output only. Timestamp is shown only if there is an error. The field
      * has // RFC3339 //
      * text format.
      * </pre>
