@@ -68,6 +68,7 @@ def run_process_and_print_output(
         kwargs["stderr"] = subprocess.STDOUT
     proc_info = subprocess.run(arguments, stdout=subprocess.PIPE, **kwargs)
     print(proc_info.stdout.decode(), end="", flush=True)
+		# If stderr was not specified and the process failed, print the error output
     if proc_info.returncode != 0 and proc_info.stderr:
         print(proc_info.stderr.decode(), end="", flush=True)
     print(
