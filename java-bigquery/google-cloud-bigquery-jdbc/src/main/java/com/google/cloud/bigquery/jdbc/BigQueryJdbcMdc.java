@@ -44,7 +44,7 @@ class BigQueryJdbcMdc {
               k -> {
                 String suffix =
                     (id != null && !id.isEmpty()) ? id : String.valueOf(nextId.getAndIncrement());
-                return "JdbcConnection-" + suffix;
+                return suffix.startsWith("JdbcConnection-") ? suffix : "JdbcConnection-" + suffix;
               });
 
       currentConnectionId.set(cleanId);
@@ -64,7 +64,7 @@ class BigQueryJdbcMdc {
   static MdcCloseable setContext(String connectionId) {
     String prevId = currentConnectionId.get();
     if (connectionId != null && !connectionId.isEmpty()) {
-      currentConnectionId.set("JdbcConnection-" + connectionId);
+      currentConnectionId.set(connectionId);
     }
     return () -> {
       if (prevId == null) {
@@ -77,7 +77,7 @@ class BigQueryJdbcMdc {
 
   static void setContextPersistent(String connectionId) {
     if (connectionId != null && !connectionId.isEmpty()) {
-      currentConnectionId.set("JdbcConnection-" + connectionId);
+      currentConnectionId.set(connectionId);
     }
   }
 

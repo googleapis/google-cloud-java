@@ -149,7 +149,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   }
 
   BigQueryConnection(String url, DataSource ds) throws IOException {
-    this.connectionId = String.valueOf(connectionIdCounter.getAndIncrement());
+    this.connectionId = "JdbcConnection-" + connectionIdCounter.getAndIncrement();
     try (BigQueryJdbcMdc.MdcCloseable mdc =
         BigQueryJdbcMdc.registerInstance(this, this.connectionId)) {
       LOG.finest("++enter++");

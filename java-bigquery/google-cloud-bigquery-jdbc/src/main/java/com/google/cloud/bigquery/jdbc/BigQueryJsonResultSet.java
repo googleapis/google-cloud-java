@@ -132,10 +132,13 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
 
   /* Advances the result set to the next row, returning false if no such row exists. Potentially blocking operation */
   public boolean next() throws SQLException {
-    BigQueryJdbcMdc.setContextPersistent(this.connectionId);
-    LOG.finest("++enter++");
     checkClosed();
-    return nextImpl();
+    try {
+      return nextImpl();
+    } catch (SQLException | RuntimeException ex) {
+      BigQueryJdbcMdc.setContextPersistent(this.connectionId);
+      throw ex;
+    }
   }
 
   private boolean nextImpl() throws SQLException {
@@ -192,10 +195,13 @@ class BigQueryJsonResultSet extends BigQueryBaseResultSet {
 
   @Override
   public Object getObject(int columnIndex) throws SQLException {
-    BigQueryJdbcMdc.setContextPersistent(this.connectionId);
-    LOG.finest("++enter++");
     checkClosed();
-    return getObjectImpl(columnIndex);
+    try {
+      return getObjectImpl(columnIndex);
+    } catch (SQLException | RuntimeException ex) {
+      BigQueryJdbcMdc.setContextPersistent(this.connectionId);
+      throw ex;
+    }
   }
 
   private Object getObjectImpl(int columnIndex) throws SQLException {

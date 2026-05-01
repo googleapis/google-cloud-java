@@ -212,10 +212,13 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   @Override
   public boolean next() throws SQLException {
-    BigQueryJdbcMdc.setContextPersistent(this.connectionId);
-    LOG.finest("++enter++");
     checkClosed();
-    return nextImpl();
+    try {
+      return nextImpl();
+    } catch (SQLException | RuntimeException ex) {
+      BigQueryJdbcMdc.setContextPersistent(this.connectionId);
+      throw ex;
+    }
   }
 
   private boolean nextImpl() throws SQLException {
@@ -325,11 +328,14 @@ class BigQueryArrowResultSet extends BigQueryBaseResultSet {
 
   @Override
   public Object getObject(int columnIndex) throws SQLException {
-    BigQueryJdbcMdc.setContextPersistent(this.connectionId);
     // columnIndex is SQL index starting at 1
-    LOG.finest("++enter++");
     checkClosed();
-    return getObjectImpl(columnIndex);
+    try {
+      return getObjectImpl(columnIndex);
+    } catch (SQLException | RuntimeException ex) {
+      BigQueryJdbcMdc.setContextPersistent(this.connectionId);
+      throw ex;
+    }
   }
 
   private Object getObjectImpl(int columnIndex) throws SQLException {
