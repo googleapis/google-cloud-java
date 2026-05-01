@@ -87,6 +87,7 @@ elif [ "${SKIP_SOURCE_UPDATE:-false}" = "true" ]; then
 else
     echo "Source directory $SOURCE_DIR already exists. Ensuring it is clean and up-to-date..."
     cd "$SOURCE_DIR"
+    git remote add origin "$SOURCE_REPO_URL" 2>/dev/null || git remote set-url origin "$SOURCE_REPO_URL"
     git fetch origin
     git checkout -f "main"
     git reset --hard origin/main
@@ -351,8 +352,8 @@ fi
 
 # 7.8 Migrate .OwlBot-hermetic.yaml
 echo "Migrating .OwlBot-hermetic.yaml..."
-if [ -f "$SOURCE_DIR/.github/.OwlBot-hermetic.yaml" ]; then
-    SOURCE_OWLBOT="$SOURCE_DIR/.github/.OwlBot-hermetic.yaml"
+if [ -f "$SOURCE_DIR/$SOURCE_REPO_NAME/.github/.OwlBot-hermetic.yaml" ]; then
+    SOURCE_OWLBOT="$SOURCE_DIR/$SOURCE_REPO_NAME/.github/.OwlBot-hermetic.yaml"
 else
     SOURCE_OWLBOT=""
 fi
@@ -370,10 +371,10 @@ fi
 
 # 7.8b Migrate owlbot.py
 echo "Migrating owlbot.py..."
-if [ -f "$SOURCE_DIR/owlbot.py" ]; then
+if [ -f "$SOURCE_DIR/$SOURCE_REPO_NAME/owlbot.py" ]; then
     TARGET_OWLBOT="$SOURCE_REPO_NAME/owlbot.py"
     
-    python3 "$TRANSFORM_OWLBOT_SCRIPT" "$TARGET_OWLBOT" "$SOURCE_DIR/owlbot.py"
+    python3 "$TRANSFORM_OWLBOT_SCRIPT" "$TARGET_OWLBOT" "$SOURCE_DIR/$SOURCE_REPO_NAME/owlbot.py"
 
     echo "Committing owlbot.py migration..."
     git add "$TARGET_OWLBOT"
