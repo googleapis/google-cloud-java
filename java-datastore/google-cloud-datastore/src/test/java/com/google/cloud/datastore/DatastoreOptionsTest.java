@@ -281,8 +281,17 @@ public class DatastoreOptionsTest {
 
   @Test
   public void testTransport() {
-    // default http transport
-    assertThat(options.build().getTransportOptions()).isInstanceOf(HttpTransportOptions.class);
+    // default grpc transport
+    assertThat(options.build().getTransportOptions()).isInstanceOf(GrpcTransportOptions.class);
+
+    // custom http transport
+    DatastoreOptions httpTransportOptions =
+        DatastoreOptions.newBuilder()
+            .setTransportOptions(HttpTransportOptions.newBuilder().build())
+            .setProjectId(PROJECT_ID)
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertThat(httpTransportOptions.getTransportOptions()).isInstanceOf(HttpTransportOptions.class);
 
     // custom grpc transport
     DatastoreOptions grpcTransportOptions =
@@ -317,8 +326,16 @@ public class DatastoreOptionsTest {
             .build();
     assertThat(grpcTransportOptionsCustomHost.getHost()).isEqualTo(customHost);
 
+    DatastoreOptions defaultTransportOptions =
+        DatastoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertThat(defaultTransportOptions.getHost()).isEqualTo(DatastoreSettings.getDefaultEndpoint());
+
     DatastoreOptions httpTransportOptions =
         DatastoreOptions.newBuilder()
+            .setTransportOptions(HttpTransportOptions.newBuilder().build())
             .setProjectId(PROJECT_ID)
             .setCredentials(NoCredentials.getInstance())
             .build();
@@ -326,6 +343,7 @@ public class DatastoreOptionsTest {
 
     DatastoreOptions httpTransportOptionsCustomHost =
         DatastoreOptions.newBuilder()
+            .setTransportOptions(HttpTransportOptions.newBuilder().build())
             .setHost(customHost)
             .setProjectId(PROJECT_ID)
             .setCredentials(NoCredentials.getInstance())

@@ -131,7 +131,9 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
     @Nullable private DatastoreOpenTelemetryOptions openTelemetryOptions = null;
 
-    private Builder() {}
+    private Builder() {
+      this.transportOptions = new DatastoreDefaults().getDefaultTransportOptions();
+    }
 
     private Builder(DatastoreOptions options) {
       super(options);
@@ -139,13 +141,16 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       this.databaseId = options.databaseId;
       this.openTelemetryOptions = options.openTelemetryOptions;
       this.channelProvider = validateChannelProvider(options.channelProvider);
+      this.host = options.getHost();
+      this.transportOptions = options.getTransportOptions();
     }
 
     @Override
     public Builder setTransportOptions(TransportOptions transportOptions) {
-      if (!(transportOptions instanceof HttpTransportOptions)) {
+      if (!(transportOptions instanceof HttpTransportOptions)
+          && !(transportOptions instanceof GrpcTransportOptions)) {
         throw new IllegalArgumentException(
-            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+            "Only http and grpc transport are allowed for " + API_SHORT_NAME + ".");
       }
       this.transportOptions = transportOptions;
       return super.setTransportOptions(transportOptions);
@@ -308,8 +313,8 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       return TRANSPORT_OPTIONS;
     }
 
-    public static HttpTransportOptions.Builder getDefaultTransportOptionsBuilder() {
-      return HttpTransportOptions.newBuilder();
+    public static GrpcTransportOptions.Builder getDefaultTransportOptionsBuilder() {
+      return GrpcTransportOptions.newBuilder();
     }
   }
 
