@@ -330,6 +330,13 @@ public final class DatastoreHelper {
     String projectId = getProjectIdFromEnv();
     if (System.getenv(URL_OVERRIDE_ENV_VAR) != null) {
       String urlOverride = System.getenv(URL_OVERRIDE_ENV_VAR);
+      logger.warning(
+          String.format(
+              "The environment variable %s is an internal/legacy override. "
+                  + "Consider using the standard %s environment variable instead. "
+                  + "See https://docs.cloud.google.com/datastore/docs/tools/datastore-emulator",
+              URL_OVERRIDE_ENV_VAR,
+              LOCAL_HOST_ENV_VAR));
       options.projectId(projectId);
       // Since host and localHost methods don't accept a scheme, we strip it if present.
       // We then check if it's an HTTP or HTTPS URL to use options.localHost(...) or
