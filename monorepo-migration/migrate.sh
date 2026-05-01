@@ -222,6 +222,17 @@ EOF
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
+# 6.4d Update repo and repo_short in .repo-metadata.json
+REPO_METADATA="$SOURCE_REPO_NAME/.repo-metadata.json"
+if [ -f "$REPO_METADATA" ]; then
+    echo "Updating repo and repo_short in $REPO_METADATA..."
+    python3 -c "import json; f = '$REPO_METADATA'; d = json.load(open(f)); d['repo'] = 'googleapis/google-cloud-java'; d['repo_short'] = 'google-cloud-java'; json.dump(d, open(f, 'w'), indent=2); open(f, 'a').write('\n')"
+    
+    git add "$REPO_METADATA"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): update .repo-metadata.json"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
+
 # 6.5 Remove common files from the root of the migrated library
 echo "Removing common files from the root of $SOURCE_REPO_NAME/..."
 rm -f "$SOURCE_REPO_NAME/.gitignore"
