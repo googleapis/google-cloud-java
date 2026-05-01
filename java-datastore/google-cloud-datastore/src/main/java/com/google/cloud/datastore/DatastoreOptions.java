@@ -190,8 +190,12 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
     @Override
     public DatastoreOptions build() {
-      if (this.host == null && this.transportOptions instanceof GrpcTransportOptions) {
-        this.setHost(DatastoreSettings.getDefaultEndpoint());
+      if (this.host == null) {
+        if (this.transportOptions instanceof GrpcTransportOptions) {
+          this.setHost(DatastoreSettings.getDefaultEndpoint());
+        } else if (this.transportOptions instanceof HttpTransportOptions) {
+          this.setHost(com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST);
+        }
       }
       return new DatastoreOptions(this);
     }
