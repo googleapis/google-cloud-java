@@ -85,6 +85,13 @@ else
     cd - > /dev/null
 fi
 
+# 1.2 Rewrite history of the split repo to move files to the target subdirectory
+echo "Moving files to destination path: ${SOURCE_REPO_NAME} in history..."
+cd "$SOURCE_DIR"
+git filter-repo --to-subdirectory-filter "${SOURCE_REPO_NAME}" --force
+cd - > /dev/null
+
+
 # 1.5 Extract CODEOWNERS from source repository as default
 if [ -z "$CODEOWNER" ]; then
     echo "Attempting to find default CODEOWNER from source repository..."
@@ -168,18 +175,9 @@ git remote add "$SOURCE_REPO_NAME" "../$SOURCE_REPO_NAME-source"
 echo "Fetching $SOURCE_REPO_NAME..."
 git fetch "$SOURCE_REPO_NAME"
 
-# 5. Merge the histories using 'ours' strategy to keep monorepo content
-echo "Merging histories (strategy: ours)..."
-git merge --allow-unrelated-histories --no-ff "$SOURCE_REPO_NAME/main" -s ours --no-commit -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
-
-# 6. Read the tree from the source repo into the desired subdirectory
-echo "Reading tree into prefix $SOURCE_REPO_NAME/..."
-git read-tree --prefix="$SOURCE_REPO_NAME/" -u "$SOURCE_REPO_NAME/main"
-
-# 6.3 Commit the initial import
-echo "Committing initial import of $SOURCE_REPO_NAME..."
-git add "$SOURCE_REPO_NAME"
-git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
+# 5. Merge the histories to pull all rewritten files into their subdirectory directly
+echo "Merging histories..."
+git merge --allow-unrelated-histories --no-edit --no-gpg-sign "$SOURCE_REPO_NAME/main" -m "chore($SOURCE_REPO_NAME): migrate $SOURCE_REPO_NAME into monorepo"
 COMMIT_COUNT=$((COMMIT_COUNT + 1))
 
 # 6.4b Migrate GraalVM Native presubmit config if present
