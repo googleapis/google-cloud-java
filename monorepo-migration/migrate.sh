@@ -58,6 +58,7 @@ UPDATE_OWLBOT_HERMETIC_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot_hermetic.py"
 TRANSFORM_OWLBOT_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_owlbot.py"
 UPDATE_LINTER_EXCLUSIONS_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_linter_exclusions.py"
 UPDATE_CI_FILTERS_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_ci_filters.py"
+UPDATE_CHANGES_FILTERS_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_changes_filters.py"
 
 # Track number of commits made by this script
 COMMIT_COUNT=0
@@ -410,6 +411,7 @@ COMMIT_COUNT=$((COMMIT_COUNT + 1))
 echo "Exempting $SOURCE_REPO_NAME from global integration testing matrix..."
 sed -i.bak "s/'java-storage-nio'/'java-storage-nio'\n  '${SOURCE_REPO_NAME}'/" ".kokoro/common.sh"
 python3 "$UPDATE_CI_FILTERS_SCRIPT" ".github/workflows/ci.yaml" "$SOURCE_REPO_NAME"
+python3 "$UPDATE_CHANGES_FILTERS_SCRIPT" ".github/workflows/ci.yaml" "$SOURCE_REPO_NAME"
 
 echo "Committing common.sh and ci.yaml updates..."
 git add .kokoro/common.sh .github/workflows/ci.yaml
