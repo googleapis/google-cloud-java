@@ -1108,6 +1108,9 @@ class ExternalAccountCredentialsTest extends BaseSerializationTest {
                 .setCredentialSource(new TestCredentialSource(FILE_CREDENTIAL_SOURCE_MAP))
                 .setQuotaProjectId("quotaProjectId")
                 .build();
+    testCredentials.regionalAccessBoundaryManager.setCachedRAB(
+        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), testCredentials.clock)
+    );
 
     Map<String, List<String>> requestMetadata =
         testCredentials.getRequestMetadata(URI.create("http://googleapis.com/foo/bar"));

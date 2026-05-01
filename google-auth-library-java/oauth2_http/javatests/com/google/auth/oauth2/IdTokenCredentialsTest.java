@@ -34,6 +34,7 @@ package com.google.auth.oauth2;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
 /** Test case for {@link IdTokenCredentials}. */
@@ -46,6 +47,9 @@ class IdTokenCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setIdToken(ComputeEngineCredentialsTest.STANDARD_ID_TOKEN);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(
+        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
+    );
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =
@@ -72,6 +76,9 @@ class IdTokenCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setIdToken(ComputeEngineCredentialsTest.STANDARD_ID_TOKEN);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(
+        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
+    );
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =
@@ -99,6 +106,9 @@ class IdTokenCredentialsTest extends BaseSerializationTest {
     transportFactory.transport.setIdToken(ComputeEngineCredentialsTest.STANDARD_ID_TOKEN);
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(
+        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
+    );
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =

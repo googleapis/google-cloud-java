@@ -706,6 +706,9 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
   void getRequestMetadata() throws IOException {
     GoogleCredentials credentials =
         ExternalAccountAuthorizedUserCredentials.fromJson(buildJsonCredentials(), transportFactory);
+    credentials.regionalAccessBoundaryManager.setCachedRAB(
+        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
+    );
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
@@ -717,6 +720,9 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
   void getRequestMetadata_withQuotaProjectId() throws IOException {
     GoogleCredentials credentials =
         ExternalAccountAuthorizedUserCredentials.fromJson(buildJsonCredentials(), transportFactory);
+    credentials.regionalAccessBoundaryManager.setCachedRAB(
+        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
+    );
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
@@ -735,6 +741,9 @@ class ExternalAccountAuthorizedUserCredentialsTest extends BaseSerializationTest
             .setHttpTransportFactory(transportFactory)
             .setAccessToken(new AccessToken(ACCESS_TOKEN, /* expirationTime= */ null))
             .build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(
+        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
+    );
 
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 

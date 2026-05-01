@@ -76,7 +76,7 @@ import org.slf4j.event.KeyValuePair;
  * credentials test classes with addition of test logging appender setup and test logic for logging.
  * This duplicates tests setups, but centralizes logging test setup in this class.
  */
-class LoggingTest {
+public class LoggingTest {
 
   private TestAppender setupTestLogger(Class<?> clazz) {
     TestAppender testAppender = new TestAppender();
@@ -97,10 +97,7 @@ class LoggingTest {
   @org.junit.jupiter.api.BeforeEach
   void setUp() {}
 
-  @org.junit.jupiter.api.AfterEach
-  void tearDown() {
-    RegionalAccessBoundary.setEnvironmentProviderForTest(null);
-  }
+
 
   @Test
   void userCredentials_getRequestMetadata_fromRefreshToken_hasAccessToken() throws IOException {
@@ -172,6 +169,9 @@ class LoggingTest {
         ServiceAccountCredentialsTest.createDefaultBuilderWithToken(ACCESS_TOKEN)
             .setScopes(SCOPES)
             .build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(
+        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
+    );
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);
 
@@ -228,6 +228,9 @@ class LoggingTest {
             .setHttpTransportFactory(transportFactory)
             .setUniverseDomain(nonGDU)
             .build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(
+        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
+    );
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =
@@ -449,6 +452,9 @@ class LoggingTest {
     transportFactory.transport.setServiceAccountEmail("SA_CLIENT_EMAIL");
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(
+        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
+    );
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);
@@ -490,6 +496,9 @@ class LoggingTest {
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     ComputeEngineCredentials credentials =
         ComputeEngineCredentials.newBuilder().setHttpTransportFactory(transportFactory).build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(
+        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
+    );
 
     String targetAudience = "https://foo.bar";
     IdTokenCredentials tokenCredential =
@@ -544,6 +553,9 @@ class LoggingTest {
         ServiceAccountCredentialsTest.createDefaultBuilderWithToken(ACCESS_TOKEN)
             .setScopes(SCOPES)
             .build();
+    credentials.regionalAccessBoundaryManager.setCachedRAB(
+        new RegionalAccessBoundary("dummy-locations", Arrays.asList("dummy-loc"), credentials.clock)
+    );
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);

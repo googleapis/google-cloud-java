@@ -142,6 +142,11 @@ final class RegionalAccessBoundaryManager {
     return null;
   }
 
+  @VisibleForTesting
+  void setCachedRAB(RegionalAccessBoundary rab) {
+    this.cachedRAB.set(rab);
+  }
+
   /**
    * Triggers an asynchronous refresh of the RegionalAccessBoundary if it is not already being
    * refreshed and if the cooldown period is not active.

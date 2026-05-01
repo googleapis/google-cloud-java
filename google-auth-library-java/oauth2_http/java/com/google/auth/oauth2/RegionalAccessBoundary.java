@@ -67,24 +67,6 @@ final class RegionalAccessBoundary implements Serializable {
   static final String X_ALLOWED_LOCATIONS_HEADER_KEY = "x-allowed-locations";
   private static final long serialVersionUID = -2428522338274020302L;
 
-  private static final ThreadLocal<Boolean> DISABLE_RAB_FOR_TESTS =
-      ThreadLocal.withInitial(() -> false);
-
-  @VisibleForTesting
-  static void disableForTests() {
-    DISABLE_RAB_FOR_TESTS.set(true);
-  }
-
-  @VisibleForTesting
-  static void enableForTests() {
-    DISABLE_RAB_FOR_TESTS.set(false);
-  }
-
-  @VisibleForTesting
-  static void resetForTests() {
-    DISABLE_RAB_FOR_TESTS.remove();
-  }
-
   static final long TTL_MILLIS = 6 * 60 * 60 * 1000L; // 6 hours
   static final long REFRESH_THRESHOLD_MILLIS = 1 * 60 * 60 * 1000L; // 1 hour
 
@@ -191,10 +173,7 @@ final class RegionalAccessBoundary implements Serializable {
    *
    * @return True if the regional access boundary feature is enabled, false otherwise.
    */
-  @InternalApi
-  static boolean isEnabled() {
-    return !DISABLE_RAB_FOR_TESTS.get();
-  }
+
 
   /**
    * Refreshes the regional access boundary by making a network call to the lookup endpoint.
