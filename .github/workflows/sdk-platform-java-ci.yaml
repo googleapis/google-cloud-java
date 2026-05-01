@@ -162,7 +162,7 @@ jobs:
           JOB_TYPE: install
       - name: Integration Tests
         run: |
-          bazelisk --batch test //sdk-platform-java/test/integration/...
+          bazelisk --batch test //sdk-platform-java/test/integration/... --test_output=errors
 
   bazel-25:  
     needs: filter
