@@ -216,6 +216,7 @@ public class ReservationsClientTest {
             .setAdvancedDeploymentControl(ReservationAdvancedDeploymentControl.newBuilder().build())
             .setAggregateReservation(AllocationAggregateReservation.newBuilder().build())
             .setCommitment("commitment1019005717")
+            .setConfidentialComputeType("confidentialComputeType119980393")
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDeleteAfterDuration(Duration.newBuilder().build())
             .setDeleteAtTime("deleteAtTime-1276262613")

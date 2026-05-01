@@ -230,26 +230,22 @@ final class BigQueryJdbcOAuthUtility {
         break;
     }
 
-    if (authType == AuthType.GOOGLE_SERVICE_ACCOUNT
-        || authType == AuthType.GOOGLE_USER_ACCOUNT
-        || authType == AuthType.PRE_GENERATED_TOKEN) {
-      oauthProperties.put(
-          BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_EMAIL_PROPERTY_NAME,
-          ds.getOAuthSAImpersonationEmail());
-      oauthProperties.put(
-          BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_CHAIN_PROPERTY_NAME,
-          ds.getOAuthSAImpersonationChain());
-      oauthProperties.put(
-          BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_SCOPES_PROPERTY_NAME,
-          ds.getOAuthSAImpersonationScopes() != null
-              ? ds.getOAuthSAImpersonationScopes()
-              : BIGQUERY_SCOPE);
-      oauthProperties.put(
-          BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_PROPERTY_NAME,
-          ds.getOAuthSAImpersonationTokenLifetime() != null
-              ? ds.getOAuthSAImpersonationTokenLifetime()
-              : BigQueryJdbcUrlUtility.DEFAULT_OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_VALUE);
-    }
+    oauthProperties.put(
+        BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_EMAIL_PROPERTY_NAME,
+        ds.getOAuthSAImpersonationEmail());
+    oauthProperties.put(
+        BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_CHAIN_PROPERTY_NAME,
+        ds.getOAuthSAImpersonationChain());
+    oauthProperties.put(
+        BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_SCOPES_PROPERTY_NAME,
+        ds.getOAuthSAImpersonationScopes() != null
+            ? ds.getOAuthSAImpersonationScopes()
+            : BIGQUERY_SCOPE);
+    oauthProperties.put(
+        BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_PROPERTY_NAME,
+        ds.getOAuthSAImpersonationTokenLifetime() != null
+            ? ds.getOAuthSAImpersonationTokenLifetime()
+            : BigQueryJdbcUrlUtility.DEFAULT_OAUTH_SA_IMPERSONATION_TOKEN_LIFETIME_VALUE);
     return oauthProperties;
   }
 
@@ -284,12 +280,9 @@ final class BigQueryJdbcOAuthUtility {
             getPreGeneratedTokensCredentials(authProperties, overrideProperties, callerClassName);
         break;
       case APPLICATION_DEFAULT_CREDENTIALS:
-        // This auth method doesn't support service account impersonation
-
         credentials = getApplicationDefaultCredentials(callerClassName);
         break;
       case EXTERNAL_ACCOUNT_AUTH:
-        // This auth method doesn't support service account impersonation
         credentials = getExternalAccountAuthCredentials(authProperties, callerClassName);
         break;
       default:

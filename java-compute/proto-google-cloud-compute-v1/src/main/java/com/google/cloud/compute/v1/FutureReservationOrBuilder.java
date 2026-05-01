@@ -260,6 +260,48 @@ public interface FutureReservationOrBuilder
    *
    *
    * <pre>
+   *
+   * Check the ConfidentialComputeType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string confidential_compute_type = 386447257;</code>
+   *
+   * @return Whether the confidentialComputeType field is set.
+   */
+  boolean hasConfidentialComputeType();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the ConfidentialComputeType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string confidential_compute_type = 386447257;</code>
+   *
+   * @return The confidentialComputeType.
+   */
+  java.lang.String getConfidentialComputeType();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the ConfidentialComputeType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string confidential_compute_type = 386447257;</code>
+   *
+   * @return The bytes for confidentialComputeType.
+   */
+  com.google.protobuf.ByteString getConfidentialComputeTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] The creation timestamp for this future reservation inRFC3339
    * text format.
    * </pre>
@@ -582,6 +624,46 @@ public interface FutureReservationOrBuilder
    * @return The bytes for namePrefix.
    */
   com.google.protobuf.ByteString getNamePrefixBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.FutureReservationParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  boolean hasParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.FutureReservationParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  com.google.cloud.compute.v1.FutureReservationParams getParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Additional params passed with the request, but not persisted
+   * as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.FutureReservationParams params = 78313862;</code>
+   */
+  com.google.cloud.compute.v1.FutureReservationParamsOrBuilder getParamsOrBuilder();
 
   /**
    *

@@ -363,12 +363,14 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The full Google Cloud Storage URL where the raw disk image archive is
-   * stored.
-   * The following are valid formats for the URL:
+   * The full Google Cloud Storage URL or Artifact Registry path where the raw
+   * disk image archive is stored.
+   * The following are valid formats:
    *
    * - https://storage.googleapis.com/bucket_name/image_archive_name
    * - https://storage.googleapis.com/bucket_name/folder_name/image_archive_name
+   * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id
+   * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id&#64;dirsum_sha256:hex_value
    *
    *
    *
@@ -394,12 +396,14 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The full Google Cloud Storage URL where the raw disk image archive is
-   * stored.
-   * The following are valid formats for the URL:
+   * The full Google Cloud Storage URL or Artifact Registry path where the raw
+   * disk image archive is stored.
+   * The following are valid formats:
    *
    * - https://storage.googleapis.com/bucket_name/image_archive_name
    * - https://storage.googleapis.com/bucket_name/folder_name/image_archive_name
+   * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id
+   * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id&#64;dirsum_sha256:hex_value
    *
    *
    *
@@ -433,12 +437,14 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The full Google Cloud Storage URL where the raw disk image archive is
-   * stored.
-   * The following are valid formats for the URL:
+   * The full Google Cloud Storage URL or Artifact Registry path where the raw
+   * disk image archive is stored.
+   * The following are valid formats:
    *
    * - https://storage.googleapis.com/bucket_name/image_archive_name
    * - https://storage.googleapis.com/bucket_name/folder_name/image_archive_name
+   * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id
+   * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id&#64;dirsum_sha256:hex_value
    *
    *
    *
@@ -1124,12 +1130,14 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The full Google Cloud Storage URL where the raw disk image archive is
-     * stored.
-     * The following are valid formats for the URL:
+     * The full Google Cloud Storage URL or Artifact Registry path where the raw
+     * disk image archive is stored.
+     * The following are valid formats:
      *
      * - https://storage.googleapis.com/bucket_name/image_archive_name
      * - https://storage.googleapis.com/bucket_name/folder_name/image_archive_name
+     * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id
+     * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id&#64;dirsum_sha256:hex_value
      *
      *
      *
@@ -1154,12 +1162,14 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The full Google Cloud Storage URL where the raw disk image archive is
-     * stored.
-     * The following are valid formats for the URL:
+     * The full Google Cloud Storage URL or Artifact Registry path where the raw
+     * disk image archive is stored.
+     * The following are valid formats:
      *
      * - https://storage.googleapis.com/bucket_name/image_archive_name
      * - https://storage.googleapis.com/bucket_name/folder_name/image_archive_name
+     * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id
+     * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id&#64;dirsum_sha256:hex_value
      *
      *
      *
@@ -1192,12 +1202,14 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The full Google Cloud Storage URL where the raw disk image archive is
-     * stored.
-     * The following are valid formats for the URL:
+     * The full Google Cloud Storage URL or Artifact Registry path where the raw
+     * disk image archive is stored.
+     * The following are valid formats:
      *
      * - https://storage.googleapis.com/bucket_name/image_archive_name
      * - https://storage.googleapis.com/bucket_name/folder_name/image_archive_name
+     * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id
+     * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id&#64;dirsum_sha256:hex_value
      *
      *
      *
@@ -1230,12 +1242,14 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The full Google Cloud Storage URL where the raw disk image archive is
-     * stored.
-     * The following are valid formats for the URL:
+     * The full Google Cloud Storage URL or Artifact Registry path where the raw
+     * disk image archive is stored.
+     * The following are valid formats:
      *
      * - https://storage.googleapis.com/bucket_name/image_archive_name
      * - https://storage.googleapis.com/bucket_name/folder_name/image_archive_name
+     * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id
+     * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id&#64;dirsum_sha256:hex_value
      *
      *
      *
@@ -1267,12 +1281,14 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The full Google Cloud Storage URL where the raw disk image archive is
-     * stored.
-     * The following are valid formats for the URL:
+     * The full Google Cloud Storage URL or Artifact Registry path where the raw
+     * disk image archive is stored.
+     * The following are valid formats:
      *
      * - https://storage.googleapis.com/bucket_name/image_archive_name
      * - https://storage.googleapis.com/bucket_name/folder_name/image_archive_name
+     * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id
+     * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id&#64;dirsum_sha256:hex_value
      *
      *
      *
@@ -1300,12 +1316,14 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The full Google Cloud Storage URL where the raw disk image archive is
-     * stored.
-     * The following are valid formats for the URL:
+     * The full Google Cloud Storage URL or Artifact Registry path where the raw
+     * disk image archive is stored.
+     * The following are valid formats:
      *
      * - https://storage.googleapis.com/bucket_name/image_archive_name
      * - https://storage.googleapis.com/bucket_name/folder_name/image_archive_name
+     * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id
+     * - projects/project/locations/location/repositories/repo/packages/package/versions/version_id&#64;dirsum_sha256:hex_value
      *
      *
      *

@@ -25,6 +25,8 @@ import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.telemetry.DatastoreMetricsRecorder;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
+import com.google.cloud.grpc.GrpcTransportOptions;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.datastore.v1.BeginTransactionRequest;
 import com.google.datastore.v1.BeginTransactionResponse;
 import com.google.datastore.v1.CommitRequest;
@@ -113,9 +115,9 @@ public class DatastoreImplMetricsTest {
                     .build());
 
     if (TelemetryConstants.Transport.GRPC.equals(transport)) {
-      builder.setTransportOptions(com.google.cloud.grpc.GrpcTransportOptions.newBuilder().build());
+      builder.setTransportOptions(GrpcTransportOptions.newBuilder().build());
     } else {
-      builder.setTransportOptions(com.google.cloud.http.HttpTransportOptions.newBuilder().build());
+      builder.setTransportOptions(HttpTransportOptions.newBuilder().build());
     }
 
     DatastoreOptions datastoreOptions = builder.build();

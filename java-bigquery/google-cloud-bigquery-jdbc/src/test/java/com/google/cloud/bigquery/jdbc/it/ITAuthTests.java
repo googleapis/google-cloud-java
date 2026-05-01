@@ -371,4 +371,15 @@ public class ITAuthTests extends ITBase {
             .toString();
     validateConnection(connection_uri);
   }
+
+  @Test
+  public void testADCAuthenticationWithImpersonation() throws IOException, SQLException {
+    final JsonObject authJson = getAuthJson();
+
+    String connection_uri =
+        getBaseUri(3, authJson.get("project_id").getAsString())
+            .append("ServiceAccountImpersonationEmail", authJson.get("client_email").getAsString())
+            .toString();
+    validateConnection(connection_uri);
+  }
 }

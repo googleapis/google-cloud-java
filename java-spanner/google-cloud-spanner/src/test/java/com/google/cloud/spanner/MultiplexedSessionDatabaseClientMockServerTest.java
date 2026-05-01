@@ -102,10 +102,11 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
   }
 
   @Test
-  public void testCreateSessionDeadlineExceeded() {
+  public void testCreateSessionDeadlineExceeded() throws Exception {
     // Simulate a problem with the CreateSession RPC making it slow.
     mockSpanner.setCreateSessionExecutionTime(
-        SimulatedExecutionTime.ofStickyException(Status.DEADLINE_EXCEEDED.asRuntimeException()));
+        SimulatedExecutionTime.ofException(Status.DEADLINE_EXCEEDED.asRuntimeException()));
+    mockSpanner.freezeAfter(1);
 
     Spanner testSpanner =
         SpannerOptions.newBuilder()
@@ -123,13 +124,16 @@ public class MultiplexedSessionDatabaseClientMockServerTest extends AbstractMock
       assertEquals(ErrorCode.DEADLINE_EXCEEDED, exception.getErrorCode());
     }
 
-    // Remove the simulated problem on the mock server.
     // The next attempt should then succeed.
-    mockSpanner.removeAllExecutionTimes();
+    mockSpanner.unfreeze();
+    DatabaseClientImpl clientImpl = (DatabaseClientImpl) client;
+    assertNotNull(clientImpl.multiplexedSessionDatabaseClient.getCurrentSessionReference());
+
     try (ResultSet resultSet = client.singleUse().executeQuery(STATEMENT)) {
       //noinspection StatementWithEmptyBody
       while (resultSet.next()) {}
     }
+    testSpanner.close();
   }
 
   @Test

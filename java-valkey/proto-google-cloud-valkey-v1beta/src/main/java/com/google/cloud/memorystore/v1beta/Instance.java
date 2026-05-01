@@ -717,6 +717,66 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      * <code>STANDARD_SMALL = 4;</code>
      */
     STANDARD_SMALL(4),
+    /**
+     *
+     *
+     * <pre>
+     * Custom micro.
+     * </pre>
+     *
+     * <code>CUSTOM_MICRO = 5;</code>
+     */
+    CUSTOM_MICRO(5),
+    /**
+     *
+     *
+     * <pre>
+     * Custom mini.
+     * </pre>
+     *
+     * <code>CUSTOM_MINI = 6;</code>
+     */
+    CUSTOM_MINI(6),
+    /**
+     *
+     *
+     * <pre>
+     * High cpu medium.
+     * </pre>
+     *
+     * <code>HIGHCPU_MEDIUM = 7;</code>
+     */
+    HIGHCPU_MEDIUM(7),
+    /**
+     *
+     *
+     * <pre>
+     * Standard large.
+     * </pre>
+     *
+     * <code>STANDARD_LARGE = 8;</code>
+     */
+    STANDARD_LARGE(8),
+    /**
+     *
+     *
+     * <pre>
+     * High memory 2xlarge.
+     * </pre>
+     *
+     * <code>HIGHMEM_2XLARGE = 9;</code>
+     */
+    HIGHMEM_2XLARGE(9),
+    /**
+     *
+     *
+     * <pre>
+     * Custom pico.
+     * </pre>
+     *
+     * <code>CUSTOM_PICO = 10;</code>
+     */
+    CUSTOM_PICO(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -785,6 +845,72 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
      */
     public static final int STANDARD_SMALL_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * Custom micro.
+     * </pre>
+     *
+     * <code>CUSTOM_MICRO = 5;</code>
+     */
+    public static final int CUSTOM_MICRO_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Custom mini.
+     * </pre>
+     *
+     * <code>CUSTOM_MINI = 6;</code>
+     */
+    public static final int CUSTOM_MINI_VALUE = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * High cpu medium.
+     * </pre>
+     *
+     * <code>HIGHCPU_MEDIUM = 7;</code>
+     */
+    public static final int HIGHCPU_MEDIUM_VALUE = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Standard large.
+     * </pre>
+     *
+     * <code>STANDARD_LARGE = 8;</code>
+     */
+    public static final int STANDARD_LARGE_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * High memory 2xlarge.
+     * </pre>
+     *
+     * <code>HIGHMEM_2XLARGE = 9;</code>
+     */
+    public static final int HIGHMEM_2XLARGE_VALUE = 9;
+
+    /**
+     *
+     *
+     * <pre>
+     * Custom pico.
+     * </pre>
+     *
+     * <code>CUSTOM_PICO = 10;</code>
+     */
+    public static final int CUSTOM_PICO_VALUE = 10;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -819,6 +945,18 @@ public final class Instance extends com.google.protobuf.GeneratedMessage
           return HIGHMEM_XLARGE;
         case 4:
           return STANDARD_SMALL;
+        case 5:
+          return CUSTOM_MICRO;
+        case 6:
+          return CUSTOM_MINI;
+        case 7:
+          return HIGHCPU_MEDIUM;
+        case 8:
+          return STANDARD_LARGE;
+        case 9:
+          return HIGHMEM_2XLARGE;
+        case 10:
+          return CUSTOM_PICO;
         default:
           return null;
       }

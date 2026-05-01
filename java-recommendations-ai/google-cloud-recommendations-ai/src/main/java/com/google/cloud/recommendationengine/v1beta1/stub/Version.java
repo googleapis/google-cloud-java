@@ -21,7 +21,7 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 final class Version {
   // {x-version-update-start:google-cloud-recommendations-ai:current}
-  static final String VERSION = "0.98.0";
+  static final String VERSION = "0.99.0-SNAPSHOT";
   // {x-version-update-end}
 
 }

@@ -210,6 +210,48 @@ public interface NetworkAttachmentConnectedEndpointOrBuilder
    *
    *
    * <pre>
+   * The service class id of the producer service to which the IP was
+   * assigned.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return Whether the serviceClassId field is set.
+   */
+  boolean hasServiceClassId();
+
+  /**
+   *
+   *
+   * <pre>
+   * The service class id of the producer service to which the IP was
+   * assigned.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return The serviceClassId.
+   */
+  java.lang.String getServiceClassId();
+
+  /**
+   *
+   *
+   * <pre>
+   * The service class id of the producer service to which the IP was
+   * assigned.
+   * </pre>
+   *
+   * <code>optional string service_class_id = 422763404;</code>
+   *
+   * @return The bytes for serviceClassId.
+   */
+  com.google.protobuf.ByteString getServiceClassIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The status of a connected endpoint to this network attachment.
    * Check the Status enum for the list of possible values.
    * </pre>
