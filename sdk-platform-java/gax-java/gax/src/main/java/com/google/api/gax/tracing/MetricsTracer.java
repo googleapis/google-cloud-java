@@ -94,7 +94,7 @@ public class MetricsTracer implements ApiTracer {
       throw new IllegalStateException(OPERATION_FINISHED_STATUS_MESSAGE);
     }
     attributes.put(STATUS_ATTRIBUTE, StatusCode.Code.OK.toString());
-    metricsRecorder.recordOperationLatency(elapsedMillis(operationTimer), attributes);
+    metricsRecorder.recordOperationLatency(operationTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
     metricsRecorder.recordOperationCount(1, attributes);
   }
 
@@ -111,7 +111,7 @@ public class MetricsTracer implements ApiTracer {
       throw new IllegalStateException(OPERATION_FINISHED_STATUS_MESSAGE);
     }
     attributes.put(STATUS_ATTRIBUTE, StatusCode.Code.CANCELLED.toString());
-    metricsRecorder.recordOperationLatency(elapsedMillis(operationTimer), attributes);
+    metricsRecorder.recordOperationLatency(operationTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
     metricsRecorder.recordOperationCount(1, attributes);
   }
 
@@ -129,7 +129,7 @@ public class MetricsTracer implements ApiTracer {
     }
     // Uses the GRPC status code representation.
     attributes.put(STATUS_ATTRIBUTE, ObservabilityUtils.extractStatus(error).toString());
-    metricsRecorder.recordOperationLatency(elapsedMillis(operationTimer), attributes);
+    metricsRecorder.recordOperationLatency(operationTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
     metricsRecorder.recordOperationCount(1, attributes);
   }
 
@@ -154,7 +154,7 @@ public class MetricsTracer implements ApiTracer {
   @Override
   public void attemptSucceeded() {
     attributes.put(STATUS_ATTRIBUTE, StatusCode.Code.OK.toString());
-    metricsRecorder.recordAttemptLatency(elapsedMillis(attemptTimer), attributes);
+    metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
 
@@ -165,7 +165,7 @@ public class MetricsTracer implements ApiTracer {
   @Override
   public void attemptCancelled() {
     attributes.put(STATUS_ATTRIBUTE, StatusCode.Code.CANCELLED.toString());
-    metricsRecorder.recordAttemptLatency(elapsedMillis(attemptTimer), attributes);
+    metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
 
@@ -180,7 +180,7 @@ public class MetricsTracer implements ApiTracer {
   @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
     attributes.put(STATUS_ATTRIBUTE, ObservabilityUtils.extractStatus(error).toString());
-    metricsRecorder.recordAttemptLatency(elapsedMillis(attemptTimer), attributes);
+    metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
 
@@ -204,7 +204,7 @@ public class MetricsTracer implements ApiTracer {
   @Override
   public void attemptFailedRetriesExhausted(Throwable error) {
     attributes.put(STATUS_ATTRIBUTE, ObservabilityUtils.extractStatus(error).toString());
-    metricsRecorder.recordAttemptLatency(elapsedMillis(attemptTimer), attributes);
+    metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
 
@@ -218,7 +218,7 @@ public class MetricsTracer implements ApiTracer {
   @Override
   public void attemptPermanentFailure(Throwable error) {
     attributes.put(STATUS_ATTRIBUTE, ObservabilityUtils.extractStatus(error).toString());
-    metricsRecorder.recordAttemptLatency(elapsedMillis(attemptTimer), attributes);
+    metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0, attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
 
@@ -242,9 +242,6 @@ public class MetricsTracer implements ApiTracer {
   }
   ;
 
-  private static double elapsedMillis(Stopwatch stopwatch) {
-    return stopwatch.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0;
-  }
 
   @VisibleForTesting
   Map<String, String> getAttributes() {
