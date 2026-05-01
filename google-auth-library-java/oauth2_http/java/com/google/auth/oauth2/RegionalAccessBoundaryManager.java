@@ -88,16 +88,22 @@ final class RegionalAccessBoundaryManager {
   // on concurrent refresh tasks, while threadCount provides unique names
   // for easier debugging.
   private static final AtomicInteger threadCount = new AtomicInteger(0);
+  
+  // Bounded executor service ensures hard limits on concurrent refresh tasks and queued tasks
+  // to avoid resource exhaustion.
+  private static final int EXECUTOR_POOL_SIZE = 5;
+  private static final int EXECUTOR_QUEUE_CAPACITY = 100;
+  
   private static final ExecutorService EXECUTOR;
 
   static {
     ThreadPoolExecutor executor =
         new ThreadPoolExecutor(
-            5, // corePoolSize: threads to keep alive
-            5, // maximumPoolSize: max threads allowed
+            EXECUTOR_POOL_SIZE, // corePoolSize: threads to keep alive
+            EXECUTOR_POOL_SIZE, // maximumPoolSize: max threads allowed
             1, // keepAliveTime: time to wait before terminating idle threads
             TimeUnit.HOURS, // unit for keepAliveTime
-            new LinkedBlockingQueue<>(), // work queue
+            new LinkedBlockingQueue<>(EXECUTOR_QUEUE_CAPACITY), // work queue with bound
             r -> {
               Thread t = new Thread(r, "RAB-refresh-" + threadCount.getAndIncrement());
               t.setDaemon(true);

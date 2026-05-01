@@ -45,6 +45,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Collections;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicLong;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -222,6 +223,57 @@ public class RegionalAccessBoundaryTest {
         resultRab != null && newerEncoded.equals(resultRab.getEncodedLocations()),
         "Refresh should have completed and updated the cache within 5 seconds");
     assertEquals(newerEncoded, resultRab.getEncodedLocations());
+  }
+
+  @Test
+  public void testExecutorQueueCapacityLimit() throws Exception {
+    final String url = "https://example.com/rab";
+    final AccessToken token = new AccessToken("token", new java.util.Date(System.currentTimeMillis() + 3600000L));
+    RegionalAccessBoundaryProvider provider = () -> url;
+
+    int poolSize = 5;
+    int queueCapacity = 100;
+    int totalCapacity = poolSize + queueCapacity;
+
+    CountDownLatch latch = new CountDownLatch(1);
+    
+    java.io.InputStream blockingStream = new java.io.InputStream() {
+      private final java.io.InputStream delegate = new ByteArrayInputStream("{\"encodedLocations\": \"encoded\", \"locations\": [\"loc\"]}".getBytes());
+      private boolean blocked = false;
+
+      @Override
+      public int read() throws java.io.IOException {
+        if (!blocked) {
+          try {
+            latch.await();
+          } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+          }
+          blocked = true;
+        }
+        return delegate.read();
+      }
+    };
+
+    MockHttpTransport transport = new MockHttpTransport.Builder()
+        .setLowLevelHttpResponse(new MockLowLevelHttpResponse().setContent(blockingStream).setContentType("application/json"))
+        .build();
+    HttpTransportFactory transportFactory = () -> transport;
+
+    RegionalAccessBoundaryManager[] managers = new RegionalAccessBoundaryManager[totalCapacity];
+    for (int i = 0; i < totalCapacity; i++) {
+      managers[i] = new RegionalAccessBoundaryManager(testClock);
+      managers[i].triggerAsyncRefresh(transportFactory, provider, token);
+    }
+
+    RegionalAccessBoundaryManager extraManager = new RegionalAccessBoundaryManager(testClock);
+    assertFalse(extraManager.isCooldownActive());
+    
+    extraManager.triggerAsyncRefresh(transportFactory, provider, token);
+
+    assertTrue(extraManager.isCooldownActive(), "106th task should have been rejected and entered cooldown");
+
+    latch.countDown();
   }
 
   private static class TestClock implements Clock {
