@@ -38,6 +38,7 @@ import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Stopwatch;
+import com.google.common.base.Ticker;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -59,17 +60,25 @@ public class MetricsTracer implements ApiTracer {
   private static final String OPERATION_FINISHED_STATUS_MESSAGE =
       "Operation has already been completed";
   private Stopwatch attemptTimer;
-  private final Stopwatch operationTimer = Stopwatch.createStarted();
+  private final Ticker ticker;
+  private final Stopwatch operationTimer;
   // These are RPC specific attributes and pertain to a specific API Trace
   private final Map<String, String> attributes = new HashMap<>();
   private final MetricsRecorder metricsRecorder;
   private final AtomicBoolean operationFinished;
 
   public MetricsTracer(MethodName methodName, MetricsRecorder metricsRecorder) {
+    this(methodName, metricsRecorder, Ticker.systemTicker());
+  }
+
+  @VisibleForTesting
+  MetricsTracer(MethodName methodName, MetricsRecorder metricsRecorder, Ticker ticker) {
     this.attributes.put(METHOD_ATTRIBUTE, methodName.toString());
     this.attributes.put(LANGUAGE_ATTRIBUTE, DEFAULT_LANGUAGE);
     this.metricsRecorder = metricsRecorder;
     this.operationFinished = new AtomicBoolean();
+    this.ticker = ticker;
+    this.operationTimer = Stopwatch.createStarted(ticker);
   }
 
   /**
@@ -85,8 +94,7 @@ public class MetricsTracer implements ApiTracer {
       throw new IllegalStateException(OPERATION_FINISHED_STATUS_MESSAGE);
     }
     attributes.put(STATUS_ATTRIBUTE, StatusCode.Code.OK.toString());
-    metricsRecorder.recordOperationLatency(
-        operationTimer.elapsed(TimeUnit.MILLISECONDS), attributes);
+    metricsRecorder.recordOperationLatency(elapsedMillis(operationTimer), attributes);
     metricsRecorder.recordOperationCount(1, attributes);
   }
 
@@ -103,8 +111,7 @@ public class MetricsTracer implements ApiTracer {
       throw new IllegalStateException(OPERATION_FINISHED_STATUS_MESSAGE);
     }
     attributes.put(STATUS_ATTRIBUTE, StatusCode.Code.CANCELLED.toString());
-    metricsRecorder.recordOperationLatency(
-        operationTimer.elapsed(TimeUnit.MILLISECONDS), attributes);
+    metricsRecorder.recordOperationLatency(elapsedMillis(operationTimer), attributes);
     metricsRecorder.recordOperationCount(1, attributes);
   }
 
@@ -122,8 +129,7 @@ public class MetricsTracer implements ApiTracer {
     }
     // Uses the GRPC status code representation.
     attributes.put(STATUS_ATTRIBUTE, ObservabilityUtils.extractStatus(error).toString());
-    metricsRecorder.recordOperationLatency(
-        operationTimer.elapsed(TimeUnit.MILLISECONDS), attributes);
+    metricsRecorder.recordOperationLatency(elapsedMillis(operationTimer), attributes);
     metricsRecorder.recordOperationCount(1, attributes);
   }
 
@@ -138,7 +144,7 @@ public class MetricsTracer implements ApiTracer {
    */
   @Override
   public void attemptStarted(Object request, int attemptNumber) {
-    attemptTimer = Stopwatch.createStarted();
+    attemptTimer = Stopwatch.createStarted(ticker);
   }
 
   /**
@@ -148,7 +154,7 @@ public class MetricsTracer implements ApiTracer {
   @Override
   public void attemptSucceeded() {
     attributes.put(STATUS_ATTRIBUTE, StatusCode.Code.OK.toString());
-    metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.MILLISECONDS), attributes);
+    metricsRecorder.recordAttemptLatency(elapsedMillis(attemptTimer), attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
 
@@ -159,7 +165,7 @@ public class MetricsTracer implements ApiTracer {
   @Override
   public void attemptCancelled() {
     attributes.put(STATUS_ATTRIBUTE, StatusCode.Code.CANCELLED.toString());
-    metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.MILLISECONDS), attributes);
+    metricsRecorder.recordAttemptLatency(elapsedMillis(attemptTimer), attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
 
@@ -174,7 +180,7 @@ public class MetricsTracer implements ApiTracer {
   @Override
   public void attemptFailedDuration(Throwable error, java.time.Duration delay) {
     attributes.put(STATUS_ATTRIBUTE, ObservabilityUtils.extractStatus(error).toString());
-    metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.MILLISECONDS), attributes);
+    metricsRecorder.recordAttemptLatency(elapsedMillis(attemptTimer), attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
 
@@ -198,7 +204,7 @@ public class MetricsTracer implements ApiTracer {
   @Override
   public void attemptFailedRetriesExhausted(Throwable error) {
     attributes.put(STATUS_ATTRIBUTE, ObservabilityUtils.extractStatus(error).toString());
-    metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.MILLISECONDS), attributes);
+    metricsRecorder.recordAttemptLatency(elapsedMillis(attemptTimer), attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
 
@@ -212,7 +218,7 @@ public class MetricsTracer implements ApiTracer {
   @Override
   public void attemptPermanentFailure(Throwable error) {
     attributes.put(STATUS_ATTRIBUTE, ObservabilityUtils.extractStatus(error).toString());
-    metricsRecorder.recordAttemptLatency(attemptTimer.elapsed(TimeUnit.MILLISECONDS), attributes);
+    metricsRecorder.recordAttemptLatency(elapsedMillis(attemptTimer), attributes);
     metricsRecorder.recordAttemptCount(1, attributes);
   }
 
@@ -235,6 +241,10 @@ public class MetricsTracer implements ApiTracer {
     this.attributes.putAll(attributes);
   }
   ;
+
+  private static double elapsedMillis(Stopwatch stopwatch) {
+    return stopwatch.elapsed(TimeUnit.NANOSECONDS) / 1_000_000.0;
+  }
 
   @VisibleForTesting
   Map<String, String> getAttributes() {
