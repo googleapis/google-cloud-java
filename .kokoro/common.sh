@@ -27,7 +27,7 @@ excluded_modules=(
   'sdk-platform-java'
   'sdk-platform-java/java-shared-dependencies/dependency-analyzer'
   'sdk-platform-java/java-shared-dependencies/dependency-convergence-check'
-  'sdk-platform-java/java-showcase'
+  'java-showcase'
   'sdk-platform-java/java-showcase-3.21.0'
   'sdk-platform-java/java-showcase-3.25.8'
   'java-spanner'
