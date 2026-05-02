@@ -3080,3 +3080,27 @@ libraries:
   - proto_path: google/iam/v2beta
   - proto_path: google/iam/v3
   - proto_path: google/iam/v3beta
+- api_shortname: firestore
+  name_pretty: Cloud Firestore
+  product_documentation: https://cloud.google.com/firestore
+  client_documentation: https://cloud.google.com/java/docs/reference/google-cloud-firestore/latest/history
+  issue_tracker: https://issuetracker.google.com/savedsearches/5337669
+  release_level: stable
+  language: java
+  distribution_name: com.google.cloud:google-cloud-firestore
+  codeowner_team: '@googleapis/firestore-team'
+  api_id: firestore.googleapis.com
+  library_type: GAPIC_COMBO
+  api_description: is a fully-managed NoSQL document database for mobile, web, and
+    server development from Firebase and Google Cloud Platform.  It's backed by a
+    multi-region replicated database that ensures once data is committed, it's durable
+    even in the face of unexpected disasters. Not only that, but despite being a distributed
+    database, it's also strongly consistent and offers seamless integration with other
+    Firebase and Google Cloud Platform products, including Google Cloud Functions.
+  transport: grpc
+  excluded_poms: google-cloud-firestore,google-cloud-firestore-bom
+  recommended_package: com.google.cloud.firestore
+  GAPICs:
+  - proto_path: google/firestore/v1
+  - proto_path: google/firestore/admin/v1
+  - proto_path: google/firestore/bundle
