@@ -20,7 +20,6 @@ import static com.google.api.gax.util.TimeConversionUtils.toJavaTimeDuration;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.core.InternalApi;
-import com.google.api.core.ObsoleteApi;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.DatastoreOptions;
@@ -349,8 +348,12 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
     sendPostRequest("/reset");
   }
 
-  /** This method is obsolete. Use {@link #stopDuration(java.time.Duration)} instead */
-  @ObsoleteApi("Use stopDuration(java.time.Duration) instead")
+  /**
+   * This method is obsolete. Use {@link #stopDuration(java.time.Duration)} instead.
+   *
+   * @deprecated Use {@link #stopDuration(java.time.Duration)} instead.
+   */
+  @Deprecated
   @Override
   public void stop(org.threeten.bp.Duration timeout)
       throws IOException, InterruptedException, TimeoutException {
