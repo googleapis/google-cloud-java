@@ -1026,3 +1026,11 @@ google-cloud-nio:0.131.0:0.132.0-SNAPSHOT
 google-cloud-appoptimize:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-appoptimize-v1beta:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-appoptimize-v1beta:0.1.0:0.2.0-SNAPSHOT
+google-cloud-firestore:3.41.0:3.41.0
+google-cloud-firestore-admin:3.41.0:3.41.0
+google-cloud-firestore-bom:3.41.0:3.41.0
+grpc-google-cloud-firestore-admin-v1:3.41.0:3.41.0
+grpc-google-cloud-firestore-v1:3.41.0:3.41.0
+proto-google-cloud-firestore-admin-v1:3.41.0:3.41.0
+proto-google-cloud-firestore-v1:3.41.0:3.41.0
+proto-google-cloud-firestore-bundle-v1:3.41.0:3.41.0
