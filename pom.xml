@@ -114,6 +114,7 @@
     <module>java-eventarc-publishing</module>
     <module>java-filestore</module>
     <module>java-financialservices</module>
+    <module>java-firestore</module>
     <module>java-functions</module>
     <module>java-gdchardwaremanagement</module>
     <module>java-geminidataanalytics</module>
