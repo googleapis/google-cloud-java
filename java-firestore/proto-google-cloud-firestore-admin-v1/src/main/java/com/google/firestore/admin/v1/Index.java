@@ -1124,6 +1124,49 @@ public final class Index extends com.google.protobuf.GeneratedMessage
      */
     com.google.firestore.admin.v1.Index.IndexField.VectorConfigOrBuilder getVectorConfigOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that this field supports search operations. This field
+     * is only currently supported for indexes with MONGODB_COMPATIBLE_API
+     * ApiScope.
+     * </pre>
+     *
+     * <code>.google.firestore.admin.v1.Index.IndexField.SearchConfig search_config = 5;</code>
+     *
+     * @return Whether the searchConfig field is set.
+     */
+    boolean hasSearchConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that this field supports search operations. This field
+     * is only currently supported for indexes with MONGODB_COMPATIBLE_API
+     * ApiScope.
+     * </pre>
+     *
+     * <code>.google.firestore.admin.v1.Index.IndexField.SearchConfig search_config = 5;</code>
+     *
+     * @return The searchConfig.
+     */
+    com.google.firestore.admin.v1.Index.IndexField.SearchConfig getSearchConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that this field supports search operations. This field
+     * is only currently supported for indexes with MONGODB_COMPATIBLE_API
+     * ApiScope.
+     * </pre>
+     *
+     * <code>.google.firestore.admin.v1.Index.IndexField.SearchConfig search_config = 5;</code>
+     */
+    com.google.firestore.admin.v1.Index.IndexField.SearchConfigOrBuilder getSearchConfigOrBuilder();
+
     com.google.firestore.admin.v1.Index.IndexField.ValueModeCase getValueModeCase();
   }
 
@@ -2877,6 +2920,4082 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public interface SearchConfigOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.firestore.admin.v1.Index.IndexField.SearchConfig)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for building a text search index for a
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec text_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the textSpec field is set.
+       */
+      boolean hasTextSpec();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for building a text search index for a
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec text_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The textSpec.
+       */
+      com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec getTextSpec();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for building a text search index for a
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec text_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpecOrBuilder
+          getTextSpecOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for building a geo search index for a
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geo_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the geoSpec field is set.
+       */
+      boolean hasGeoSpec();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for building a geo search index for a
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geo_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The geoSpec.
+       */
+      com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec getGeoSpec();
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for building a geo search index for a
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geo_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpecOrBuilder
+          getGeoSpecOrBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The configuration for how to index a field for search.
+     * </pre>
+     *
+     * Protobuf type {@code google.firestore.admin.v1.Index.IndexField.SearchConfig}
+     */
+    public static final class SearchConfig extends com.google.protobuf.GeneratedMessage
+        implements
+        // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Index.IndexField.SearchConfig)
+        SearchConfigOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+            com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+            /* major= */ 4,
+            /* minor= */ 33,
+            /* patch= */ 2,
+            /* suffix= */ "",
+            "SearchConfig");
+      }
+
+      // Use SearchConfig.newBuilder() to construct.
+      private SearchConfig(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SearchConfig() {}
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.firestore.admin.v1.IndexProto
+            .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.firestore.admin.v1.IndexProto
+            .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.class,
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.Builder.class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Ways to index the text field value.
+       * </pre>
+       *
+       * Protobuf enum {@code google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType}
+       */
+      public enum TextIndexType implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * The index type is unspecified. Not a valid option.
+         * </pre>
+         *
+         * <code>TEXT_INDEX_TYPE_UNSPECIFIED = 0;</code>
+         */
+        TEXT_INDEX_TYPE_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * Field values are tokenized. This is the only way currently supported
+         * for MONGODB_COMPATIBLE_API.
+         * </pre>
+         *
+         * <code>TOKENIZED = 1;</code>
+         */
+        TOKENIZED(1),
+        UNRECOGNIZED(-1),
+        ;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "TextIndexType");
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The index type is unspecified. Not a valid option.
+         * </pre>
+         *
+         * <code>TEXT_INDEX_TYPE_UNSPECIFIED = 0;</code>
+         */
+        public static final int TEXT_INDEX_TYPE_UNSPECIFIED_VALUE = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Field values are tokenized. This is the only way currently supported
+         * for MONGODB_COMPATIBLE_API.
+         * </pre>
+         *
+         * <code>TOKENIZED = 1;</code>
+         */
+        public static final int TOKENIZED_VALUE = 1;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static TextIndexType valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static TextIndexType forNumber(int value) {
+          switch (value) {
+            case 0:
+              return TEXT_INDEX_TYPE_UNSPECIFIED;
+            case 1:
+              return TOKENIZED;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<TextIndexType>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<TextIndexType>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<TextIndexType>() {
+                  public TextIndexType findValueByNumber(int number) {
+                    return TextIndexType.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.firestore.admin.v1.Index.IndexField.SearchConfig.getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final TextIndexType[] VALUES = values();
+
+        public static TextIndexType valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private TextIndexType(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType)
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Types of text matches that are supported for the
+       * field.
+       * </pre>
+       *
+       * Protobuf enum {@code google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType}
+       */
+      public enum TextMatchType implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * The match type is unspecified. Not a valid option.
+         * </pre>
+         *
+         * <code>TEXT_MATCH_TYPE_UNSPECIFIED = 0;</code>
+         */
+        TEXT_MATCH_TYPE_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * Match on any indexed field. This is the only way currently supported
+         * for MONGODB_COMPATIBLE_API.
+         * </pre>
+         *
+         * <code>MATCH_GLOBALLY = 1;</code>
+         */
+        MATCH_GLOBALLY(1),
+        UNRECOGNIZED(-1),
+        ;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "TextMatchType");
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The match type is unspecified. Not a valid option.
+         * </pre>
+         *
+         * <code>TEXT_MATCH_TYPE_UNSPECIFIED = 0;</code>
+         */
+        public static final int TEXT_MATCH_TYPE_UNSPECIFIED_VALUE = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Match on any indexed field. This is the only way currently supported
+         * for MONGODB_COMPATIBLE_API.
+         * </pre>
+         *
+         * <code>MATCH_GLOBALLY = 1;</code>
+         */
+        public static final int MATCH_GLOBALLY_VALUE = 1;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static TextMatchType valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static TextMatchType forNumber(int value) {
+          switch (value) {
+            case 0:
+              return TEXT_MATCH_TYPE_UNSPECIFIED;
+            case 1:
+              return MATCH_GLOBALLY;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<TextMatchType>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<TextMatchType>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<TextMatchType>() {
+                  public TextMatchType findValueByNumber(int number) {
+                    return TextMatchType.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.firestore.admin.v1.Index.IndexField.SearchConfig.getDescriptor()
+              .getEnumTypes()
+              .get(1);
+        }
+
+        private static final TextMatchType[] VALUES = values();
+
+        public static TextMatchType valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private TextMatchType(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType)
+      }
+
+      public interface SearchTextIndexSpecOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. How to index the text field value.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType index_type = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for indexType.
+         */
+        int getIndexTypeValue();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. How to index the text field value.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType index_type = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The indexType.
+         */
+        com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType getIndexType();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. How to match the text field value.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType match_type = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for matchType.
+         */
+        int getMatchTypeValue();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. How to match the text field value.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType match_type = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The matchType.
+         */
+        com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType getMatchType();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Specification of how the field should be indexed for search text
+       * indexes.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec}
+       */
+      public static final class SearchTextIndexSpec extends com.google.protobuf.GeneratedMessage
+          implements
+          // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec)
+          SearchTextIndexSpecOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "SearchTextIndexSpec");
+        }
+
+        // Use SearchTextIndexSpec.newBuilder() to construct.
+        private SearchTextIndexSpec(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+
+        private SearchTextIndexSpec() {
+          indexType_ = 0;
+          matchType_ = 0;
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.firestore.admin.v1.IndexProto
+              .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextIndexSpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.firestore.admin.v1.IndexProto
+              .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextIndexSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                      .class,
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                      .Builder.class);
+        }
+
+        public static final int INDEX_TYPE_FIELD_NUMBER = 1;
+        private int indexType_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. How to index the text field value.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType index_type = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for indexType.
+         */
+        @java.lang.Override
+        public int getIndexTypeValue() {
+          return indexType_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. How to index the text field value.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType index_type = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The indexType.
+         */
+        @java.lang.Override
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType
+            getIndexType() {
+          com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType result =
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType.forNumber(
+                  indexType_);
+          return result == null
+              ? com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType
+                  .UNRECOGNIZED
+              : result;
+        }
+
+        public static final int MATCH_TYPE_FIELD_NUMBER = 2;
+        private int matchType_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. How to match the text field value.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType match_type = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for matchType.
+         */
+        @java.lang.Override
+        public int getMatchTypeValue() {
+          return matchType_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. How to match the text field value.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType match_type = 2 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         *
+         * @return The matchType.
+         */
+        @java.lang.Override
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType
+            getMatchType() {
+          com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType result =
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType.forNumber(
+                  matchType_);
+          return result == null
+              ? com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType
+                  .UNRECOGNIZED
+              : result;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (indexType_
+              != com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType
+                  .TEXT_INDEX_TYPE_UNSPECIFIED
+                  .getNumber()) {
+            output.writeEnum(1, indexType_);
+          }
+          if (matchType_
+              != com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType
+                  .TEXT_MATCH_TYPE_UNSPECIFIED
+                  .getNumber()) {
+            output.writeEnum(2, matchType_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (indexType_
+              != com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType
+                  .TEXT_INDEX_TYPE_UNSPECIFIED
+                  .getNumber()) {
+            size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, indexType_);
+          }
+          if (matchType_
+              != com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType
+                  .TEXT_MATCH_TYPE_UNSPECIFIED
+                  .getNumber()) {
+            size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, matchType_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec)) {
+            return super.equals(obj);
+          }
+          com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec other =
+              (com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec) obj;
+
+          if (indexType_ != other.indexType_) return false;
+          if (matchType_ != other.matchType_) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + INDEX_TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + indexType_;
+          hash = (37 * hash) + MATCH_TYPE_FIELD_NUMBER;
+          hash = (53 * hash) + matchType_;
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpec
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpec
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpec
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpec
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpec
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpec
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpec
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpec
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpec
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpec
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpec
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpec
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Specification of how the field should be indexed for search text
+         * indexes.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec)
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpecOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.firestore.admin.v1.IndexProto
+                .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextIndexSpec_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.firestore.admin.v1.IndexProto
+                .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextIndexSpec_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                        .class,
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                        .Builder.class);
+          }
+
+          // Construct using
+          // com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            indexType_ = 0;
+            matchType_ = 0;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.firestore.admin.v1.IndexProto
+                .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextIndexSpec_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+              getDefaultInstanceForType() {
+            return com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+              build() {
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec result =
+                buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+              buildPartial() {
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec result =
+                new com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec(
+                    this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.indexType_ = indexType_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.matchType_ = matchType_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec) {
+              return mergeFrom(
+                  (com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                  other) {
+            if (other
+                == com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                    .getDefaultInstance()) return this;
+            if (other.indexType_ != 0) {
+              setIndexTypeValue(other.getIndexTypeValue());
+            }
+            if (other.matchType_ != 0) {
+              setMatchTypeValue(other.getMatchTypeValue());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8:
+                    {
+                      indexType_ = input.readEnum();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 8
+                  case 16:
+                    {
+                      matchType_ = input.readEnum();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 16
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private int indexType_ = 0;
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. How to index the text field value.
+           * </pre>
+           *
+           * <code>
+           * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType index_type = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @return The enum numeric value on the wire for indexType.
+           */
+          @java.lang.Override
+          public int getIndexTypeValue() {
+            return indexType_;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. How to index the text field value.
+           * </pre>
+           *
+           * <code>
+           * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType index_type = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @param value The enum numeric value on the wire for indexType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setIndexTypeValue(int value) {
+            indexType_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. How to index the text field value.
+           * </pre>
+           *
+           * <code>
+           * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType index_type = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @return The indexType.
+           */
+          @java.lang.Override
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType
+              getIndexType() {
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType result =
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType.forNumber(
+                    indexType_);
+            return result == null
+                ? com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType
+                    .UNRECOGNIZED
+                : result;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. How to index the text field value.
+           * </pre>
+           *
+           * <code>
+           * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType index_type = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @param value The indexType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setIndexType(
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            bitField0_ |= 0x00000001;
+            indexType_ = value.getNumber();
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. How to index the text field value.
+           * </pre>
+           *
+           * <code>
+           * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextIndexType index_type = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearIndexType() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            indexType_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private int matchType_ = 0;
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. How to match the text field value.
+           * </pre>
+           *
+           * <code>
+           * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType match_type = 2 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @return The enum numeric value on the wire for matchType.
+           */
+          @java.lang.Override
+          public int getMatchTypeValue() {
+            return matchType_;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. How to match the text field value.
+           * </pre>
+           *
+           * <code>
+           * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType match_type = 2 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @param value The enum numeric value on the wire for matchType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setMatchTypeValue(int value) {
+            matchType_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. How to match the text field value.
+           * </pre>
+           *
+           * <code>
+           * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType match_type = 2 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @return The matchType.
+           */
+          @java.lang.Override
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType
+              getMatchType() {
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType result =
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType.forNumber(
+                    matchType_);
+            return result == null
+                ? com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType
+                    .UNRECOGNIZED
+                : result;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. How to match the text field value.
+           * </pre>
+           *
+           * <code>
+           * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType match_type = 2 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @param value The matchType to set.
+           * @return This builder for chaining.
+           */
+          public Builder setMatchType(
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            bitField0_ |= 0x00000002;
+            matchType_ = value.getNumber();
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. How to match the text field value.
+           * </pre>
+           *
+           * <code>
+           * .google.firestore.admin.v1.Index.IndexField.SearchConfig.TextMatchType match_type = 2 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearMatchType() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            matchType_ = 0;
+            onChanged();
+            return this;
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec)
+        private static final com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpec
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec();
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpec
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<SearchTextIndexSpec> PARSER =
+            new com.google.protobuf.AbstractParser<SearchTextIndexSpec>() {
+              @java.lang.Override
+              public SearchTextIndexSpec parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<SearchTextIndexSpec> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<SearchTextIndexSpec> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface SearchTextSpecOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Specifications for how the field should be indexed.
+         * Repeated so that the field can be indexed in multiple ways.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        java.util.List<
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec>
+            getIndexSpecsList();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Specifications for how the field should be indexed.
+         * Repeated so that the field can be indexed in multiple ways.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+            getIndexSpecs(int index);
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Specifications for how the field should be indexed.
+         * Repeated so that the field can be indexed in multiple ways.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        int getIndexSpecsCount();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Specifications for how the field should be indexed.
+         * Repeated so that the field can be indexed in multiple ways.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        java.util.List<
+                ? extends
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                        .SearchTextIndexSpecOrBuilder>
+            getIndexSpecsOrBuilderList();
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Specifications for how the field should be indexed.
+         * Repeated so that the field can be indexed in multiple ways.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpecOrBuilder
+            getIndexSpecsOrBuilder(int index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The specification for how to build a text search index for a field.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec}
+       */
+      public static final class SearchTextSpec extends com.google.protobuf.GeneratedMessage
+          implements
+          // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec)
+          SearchTextSpecOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "SearchTextSpec");
+        }
+
+        // Use SearchTextSpec.newBuilder() to construct.
+        private SearchTextSpec(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+
+        private SearchTextSpec() {
+          indexSpecs_ = java.util.Collections.emptyList();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.firestore.admin.v1.IndexProto
+              .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextSpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.firestore.admin.v1.IndexProto
+              .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec.class,
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec.Builder
+                      .class);
+        }
+
+        public static final int INDEX_SPECS_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private java.util.List<
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec>
+            indexSpecs_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Specifications for how the field should be indexed.
+         * Repeated so that the field can be indexed in multiple ways.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec>
+            getIndexSpecsList() {
+          return indexSpecs_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Specifications for how the field should be indexed.
+         * Repeated so that the field can be indexed in multiple ways.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        @java.lang.Override
+        public java.util.List<
+                ? extends
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                        .SearchTextIndexSpecOrBuilder>
+            getIndexSpecsOrBuilderList() {
+          return indexSpecs_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Specifications for how the field should be indexed.
+         * Repeated so that the field can be indexed in multiple ways.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        @java.lang.Override
+        public int getIndexSpecsCount() {
+          return indexSpecs_.size();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Specifications for how the field should be indexed.
+         * Repeated so that the field can be indexed in multiple ways.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+            getIndexSpecs(int index) {
+          return indexSpecs_.get(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Specifications for how the field should be indexed.
+         * Repeated so that the field can be indexed in multiple ways.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+         * </code>
+         */
+        @java.lang.Override
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextIndexSpecOrBuilder
+            getIndexSpecsOrBuilder(int index) {
+          return indexSpecs_.get(index);
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          for (int i = 0; i < indexSpecs_.size(); i++) {
+            output.writeMessage(1, indexSpecs_.get(i));
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          for (int i = 0; i < indexSpecs_.size(); i++) {
+            size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, indexSpecs_.get(i));
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec)) {
+            return super.equals(obj);
+          }
+          com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec other =
+              (com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec) obj;
+
+          if (!getIndexSpecsList().equals(other.getIndexSpecsList())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          if (getIndexSpecsCount() > 0) {
+            hash = (37 * hash) + INDEX_SPECS_FIELD_NUMBER;
+            hash = (53 * hash) + getIndexSpecsList().hashCode();
+          }
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The specification for how to build a text search index for a field.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec)
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpecOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.firestore.admin.v1.IndexProto
+                .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextSpec_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.firestore.admin.v1.IndexProto
+                .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextSpec_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+                        .class,
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+                        .Builder.class);
+          }
+
+          // Construct using
+          // com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            if (indexSpecsBuilder_ == null) {
+              indexSpecs_ = java.util.Collections.emptyList();
+            } else {
+              indexSpecs_ = null;
+              indexSpecsBuilder_.clear();
+            }
+            bitField0_ = (bitField0_ & ~0x00000001);
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.firestore.admin.v1.IndexProto
+                .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextSpec_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+              getDefaultInstanceForType() {
+            return com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+              build() {
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec result =
+                buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+              buildPartial() {
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec result =
+                new com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec(
+                    this);
+            buildPartialRepeatedFields(result);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartialRepeatedFields(
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec result) {
+            if (indexSpecsBuilder_ == null) {
+              if (((bitField0_ & 0x00000001) != 0)) {
+                indexSpecs_ = java.util.Collections.unmodifiableList(indexSpecs_);
+                bitField0_ = (bitField0_ & ~0x00000001);
+              }
+              result.indexSpecs_ = indexSpecs_;
+            } else {
+              result.indexSpecs_ = indexSpecsBuilder_.build();
+            }
+          }
+
+          private void buildPartial0(
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec result) {
+            int from_bitField0_ = bitField0_;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec) {
+              return mergeFrom(
+                  (com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec other) {
+            if (other
+                == com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+                    .getDefaultInstance()) return this;
+            if (indexSpecsBuilder_ == null) {
+              if (!other.indexSpecs_.isEmpty()) {
+                if (indexSpecs_.isEmpty()) {
+                  indexSpecs_ = other.indexSpecs_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                } else {
+                  ensureIndexSpecsIsMutable();
+                  indexSpecs_.addAll(other.indexSpecs_);
+                }
+                onChanged();
+              }
+            } else {
+              if (!other.indexSpecs_.isEmpty()) {
+                if (indexSpecsBuilder_.isEmpty()) {
+                  indexSpecsBuilder_.dispose();
+                  indexSpecsBuilder_ = null;
+                  indexSpecs_ = other.indexSpecs_;
+                  bitField0_ = (bitField0_ & ~0x00000001);
+                  indexSpecsBuilder_ =
+                      com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders
+                          ? internalGetIndexSpecsFieldBuilder()
+                          : null;
+                } else {
+                  indexSpecsBuilder_.addAllMessages(other.indexSpecs_);
+                }
+              }
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                              .SearchTextIndexSpec
+                          m =
+                              input.readMessage(
+                                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                                      .SearchTextIndexSpec.parser(),
+                                  extensionRegistry);
+                      if (indexSpecsBuilder_ == null) {
+                        ensureIndexSpecsIsMutable();
+                        indexSpecs_.add(m);
+                      } else {
+                        indexSpecsBuilder_.addMessage(m);
+                      }
+                      break;
+                    } // case 10
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.util.List<
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec>
+              indexSpecs_ = java.util.Collections.emptyList();
+
+          private void ensureIndexSpecsIsMutable() {
+            if (!((bitField0_ & 0x00000001) != 0)) {
+              indexSpecs_ =
+                  new java.util.ArrayList<
+                      com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                          .SearchTextIndexSpec>(indexSpecs_);
+              bitField0_ |= 0x00000001;
+            }
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec,
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                      .Builder,
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                      .SearchTextIndexSpecOrBuilder>
+              indexSpecsBuilder_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public java.util.List<
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec>
+              getIndexSpecsList() {
+            if (indexSpecsBuilder_ == null) {
+              return java.util.Collections.unmodifiableList(indexSpecs_);
+            } else {
+              return indexSpecsBuilder_.getMessageList();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public int getIndexSpecsCount() {
+            if (indexSpecsBuilder_ == null) {
+              return indexSpecs_.size();
+            } else {
+              return indexSpecsBuilder_.getCount();
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+              getIndexSpecs(int index) {
+            if (indexSpecsBuilder_ == null) {
+              return indexSpecs_.get(index);
+            } else {
+              return indexSpecsBuilder_.getMessage(index);
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public Builder setIndexSpecs(
+              int index,
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                  value) {
+            if (indexSpecsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureIndexSpecsIsMutable();
+              indexSpecs_.set(index, value);
+              onChanged();
+            } else {
+              indexSpecsBuilder_.setMessage(index, value);
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public Builder setIndexSpecs(
+              int index,
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                      .Builder
+                  builderForValue) {
+            if (indexSpecsBuilder_ == null) {
+              ensureIndexSpecsIsMutable();
+              indexSpecs_.set(index, builderForValue.build());
+              onChanged();
+            } else {
+              indexSpecsBuilder_.setMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public Builder addIndexSpecs(
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                  value) {
+            if (indexSpecsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureIndexSpecsIsMutable();
+              indexSpecs_.add(value);
+              onChanged();
+            } else {
+              indexSpecsBuilder_.addMessage(value);
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public Builder addIndexSpecs(
+              int index,
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                  value) {
+            if (indexSpecsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              ensureIndexSpecsIsMutable();
+              indexSpecs_.add(index, value);
+              onChanged();
+            } else {
+              indexSpecsBuilder_.addMessage(index, value);
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public Builder addIndexSpecs(
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                      .Builder
+                  builderForValue) {
+            if (indexSpecsBuilder_ == null) {
+              ensureIndexSpecsIsMutable();
+              indexSpecs_.add(builderForValue.build());
+              onChanged();
+            } else {
+              indexSpecsBuilder_.addMessage(builderForValue.build());
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public Builder addIndexSpecs(
+              int index,
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                      .Builder
+                  builderForValue) {
+            if (indexSpecsBuilder_ == null) {
+              ensureIndexSpecsIsMutable();
+              indexSpecs_.add(index, builderForValue.build());
+              onChanged();
+            } else {
+              indexSpecsBuilder_.addMessage(index, builderForValue.build());
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public Builder addAllIndexSpecs(
+              java.lang.Iterable<
+                      ? extends
+                          com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                              .SearchTextIndexSpec>
+                  values) {
+            if (indexSpecsBuilder_ == null) {
+              ensureIndexSpecsIsMutable();
+              com.google.protobuf.AbstractMessageLite.Builder.addAll(values, indexSpecs_);
+              onChanged();
+            } else {
+              indexSpecsBuilder_.addAllMessages(values);
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public Builder clearIndexSpecs() {
+            if (indexSpecsBuilder_ == null) {
+              indexSpecs_ = java.util.Collections.emptyList();
+              bitField0_ = (bitField0_ & ~0x00000001);
+              onChanged();
+            } else {
+              indexSpecsBuilder_.clear();
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public Builder removeIndexSpecs(int index) {
+            if (indexSpecsBuilder_ == null) {
+              ensureIndexSpecsIsMutable();
+              indexSpecs_.remove(index);
+              onChanged();
+            } else {
+              indexSpecsBuilder_.remove(index);
+            }
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                  .Builder
+              getIndexSpecsBuilder(int index) {
+            return internalGetIndexSpecsFieldBuilder().getBuilder(index);
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                  .SearchTextIndexSpecOrBuilder
+              getIndexSpecsOrBuilder(int index) {
+            if (indexSpecsBuilder_ == null) {
+              return indexSpecs_.get(index);
+            } else {
+              return indexSpecsBuilder_.getMessageOrBuilder(index);
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public java.util.List<
+                  ? extends
+                      com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                          .SearchTextIndexSpecOrBuilder>
+              getIndexSpecsOrBuilderList() {
+            if (indexSpecsBuilder_ != null) {
+              return indexSpecsBuilder_.getMessageOrBuilderList();
+            } else {
+              return java.util.Collections.unmodifiableList(indexSpecs_);
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                  .Builder
+              addIndexSpecsBuilder() {
+            return internalGetIndexSpecsFieldBuilder()
+                .addBuilder(
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                        .getDefaultInstance());
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                  .Builder
+              addIndexSpecsBuilder(int index) {
+            return internalGetIndexSpecsFieldBuilder()
+                .addBuilder(
+                    index,
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                        .getDefaultInstance());
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Required. Specifications for how the field should be indexed.
+           * Repeated so that the field can be indexed in multiple ways.
+           * </pre>
+           *
+           * <code>
+           * repeated .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec index_specs = 1 [(.google.api.field_behavior) = REQUIRED];
+           * </code>
+           */
+          public java.util.List<
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                      .Builder>
+              getIndexSpecsBuilderList() {
+            return internalGetIndexSpecsFieldBuilder().getBuilderList();
+          }
+
+          private com.google.protobuf.RepeatedFieldBuilder<
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec,
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextIndexSpec
+                      .Builder,
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                      .SearchTextIndexSpecOrBuilder>
+              internalGetIndexSpecsFieldBuilder() {
+            if (indexSpecsBuilder_ == null) {
+              indexSpecsBuilder_ =
+                  new com.google.protobuf.RepeatedFieldBuilder<
+                      com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                          .SearchTextIndexSpec,
+                      com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                          .SearchTextIndexSpec.Builder,
+                      com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                          .SearchTextIndexSpecOrBuilder>(
+                      indexSpecs_,
+                      ((bitField0_ & 0x00000001) != 0),
+                      getParentForChildren(),
+                      isClean());
+              indexSpecs_ = null;
+            }
+            return indexSpecsBuilder_;
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec)
+        private static final com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchTextSpec
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec();
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<SearchTextSpec> PARSER =
+            new com.google.protobuf.AbstractParser<SearchTextSpec>() {
+              @java.lang.Override
+              public SearchTextSpec parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<SearchTextSpec> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<SearchTextSpec> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public interface SearchGeoSpecOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Disables geoJSON indexing for the field. By default,
+         * geoJSON points are indexed.
+         * </pre>
+         *
+         * <code>bool geo_json_indexing_disabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The geoJsonIndexingDisabled.
+         */
+        boolean getGeoJsonIndexingDisabled();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The specification for how to build a geo search index for a field.
+       * </pre>
+       *
+       * Protobuf type {@code google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec}
+       */
+      public static final class SearchGeoSpec extends com.google.protobuf.GeneratedMessage
+          implements
+          // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec)
+          SearchGeoSpecOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        static {
+          com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+              com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+              /* major= */ 4,
+              /* minor= */ 33,
+              /* patch= */ 2,
+              /* suffix= */ "",
+              "SearchGeoSpec");
+        }
+
+        // Use SearchGeoSpec.newBuilder() to construct.
+        private SearchGeoSpec(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+          super(builder);
+        }
+
+        private SearchGeoSpec() {}
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.firestore.admin.v1.IndexProto
+              .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchGeoSpec_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.firestore.admin.v1.IndexProto
+              .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchGeoSpec_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec.class,
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec.Builder
+                      .class);
+        }
+
+        public static final int GEO_JSON_INDEXING_DISABLED_FIELD_NUMBER = 1;
+        private boolean geoJsonIndexingDisabled_ = false;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Disables geoJSON indexing for the field. By default,
+         * geoJSON points are indexed.
+         * </pre>
+         *
+         * <code>bool geo_json_indexing_disabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The geoJsonIndexingDisabled.
+         */
+        @java.lang.Override
+        public boolean getGeoJsonIndexingDisabled() {
+          return geoJsonIndexingDisabled_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (geoJsonIndexingDisabled_ != false) {
+            output.writeBool(1, geoJsonIndexingDisabled_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (geoJsonIndexingDisabled_ != false) {
+            size +=
+                com.google.protobuf.CodedOutputStream.computeBoolSize(1, geoJsonIndexingDisabled_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec)) {
+            return super.equals(obj);
+          }
+          com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec other =
+              (com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec) obj;
+
+          if (getGeoJsonIndexingDisabled() != other.getGeoJsonIndexingDisabled()) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + GEO_JSON_INDEXING_DISABLED_FIELD_NUMBER;
+          hash =
+              (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGeoJsonIndexingDisabled());
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessage.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The specification for how to build a geo search index for a field.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec)
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpecOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.firestore.admin.v1.IndexProto
+                .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchGeoSpec_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.firestore.admin.v1.IndexProto
+                .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchGeoSpec_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec.class,
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+                        .Builder.class);
+          }
+
+          // Construct using
+          // com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            geoJsonIndexingDisabled_ = false;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.firestore.admin.v1.IndexProto
+                .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchGeoSpec_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+              getDefaultInstanceForType() {
+            return com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec build() {
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec result =
+                buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+              buildPartial() {
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec result =
+                new com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.geoJsonIndexingDisabled_ = geoJsonIndexingDisabled_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec) {
+              return mergeFrom(
+                  (com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec other) {
+            if (other
+                == com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+                    .getDefaultInstance()) return this;
+            if (other.getGeoJsonIndexingDisabled() != false) {
+              setGeoJsonIndexingDisabled(other.getGeoJsonIndexingDisabled());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8:
+                    {
+                      geoJsonIndexingDisabled_ = input.readBool();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 8
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private boolean geoJsonIndexingDisabled_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Disables geoJSON indexing for the field. By default,
+           * geoJSON points are indexed.
+           * </pre>
+           *
+           * <code>bool geo_json_indexing_disabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return The geoJsonIndexingDisabled.
+           */
+          @java.lang.Override
+          public boolean getGeoJsonIndexingDisabled() {
+            return geoJsonIndexingDisabled_;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Disables geoJSON indexing for the field. By default,
+           * geoJSON points are indexed.
+           * </pre>
+           *
+           * <code>bool geo_json_indexing_disabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @param value The geoJsonIndexingDisabled to set.
+           * @return This builder for chaining.
+           */
+          public Builder setGeoJsonIndexingDisabled(boolean value) {
+
+            geoJsonIndexingDisabled_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Optional. Disables geoJSON indexing for the field. By default,
+           * geoJSON points are indexed.
+           * </pre>
+           *
+           * <code>bool geo_json_indexing_disabled = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearGeoJsonIndexingDisabled() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            geoJsonIndexingDisabled_ = false;
+            onChanged();
+            return this;
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec)
+        private static final com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                .SearchGeoSpec
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec();
+        }
+
+        public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<SearchGeoSpec> PARSER =
+            new com.google.protobuf.AbstractParser<SearchGeoSpec>() {
+              @java.lang.Override
+              public SearchGeoSpec parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<SearchGeoSpec> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<SearchGeoSpec> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int bitField0_;
+      public static final int TEXT_SPEC_FIELD_NUMBER = 1;
+      private com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec textSpec_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for building a text search index for a
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec text_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the textSpec field is set.
+       */
+      @java.lang.Override
+      public boolean hasTextSpec() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for building a text search index for a
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec text_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The textSpec.
+       */
+      @java.lang.Override
+      public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+          getTextSpec() {
+        return textSpec_ == null
+            ? com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+                .getDefaultInstance()
+            : textSpec_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for building a text search index for a
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec text_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpecOrBuilder
+          getTextSpecOrBuilder() {
+        return textSpec_ == null
+            ? com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+                .getDefaultInstance()
+            : textSpec_;
+      }
+
+      public static final int GEO_SPEC_FIELD_NUMBER = 2;
+      private com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geoSpec_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for building a geo search index for a
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geo_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the geoSpec field is set.
+       */
+      @java.lang.Override
+      public boolean hasGeoSpec() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for building a geo search index for a
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geo_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The geoSpec.
+       */
+      @java.lang.Override
+      public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+          getGeoSpec() {
+        return geoSpec_ == null
+            ? com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+                .getDefaultInstance()
+            : geoSpec_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The specification for building a geo search index for a
+       * field.
+       * </pre>
+       *
+       * <code>
+       * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geo_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpecOrBuilder
+          getGeoSpecOrBuilder() {
+        return geoSpec_ == null
+            ? com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+                .getDefaultInstance()
+            : geoSpec_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(1, getTextSpec());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeMessage(2, getGeoSpec());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getTextSpec());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getGeoSpec());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj instanceof com.google.firestore.admin.v1.Index.IndexField.SearchConfig)) {
+          return super.equals(obj);
+        }
+        com.google.firestore.admin.v1.Index.IndexField.SearchConfig other =
+            (com.google.firestore.admin.v1.Index.IndexField.SearchConfig) obj;
+
+        if (hasTextSpec() != other.hasTextSpec()) return false;
+        if (hasTextSpec()) {
+          if (!getTextSpec().equals(other.getTextSpec())) return false;
+        }
+        if (hasGeoSpec() != other.hasGeoSpec()) return false;
+        if (hasGeoSpec()) {
+          if (!getGeoSpec().equals(other.getGeoSpec())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasTextSpec()) {
+          hash = (37 * hash) + TEXT_SPEC_FIELD_NUMBER;
+          hash = (53 * hash) + getTextSpec().hashCode();
+        }
+        if (hasGeoSpec()) {
+          hash = (37 * hash) + GEO_SPEC_FIELD_NUMBER;
+          hash = (53 * hash) + getGeoSpec().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig parseDelimitedFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.firestore.admin.v1.Index.IndexField.SearchConfig prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * The configuration for how to index a field for search.
+       * </pre>
+       *
+       * Protobuf type {@code google.firestore.admin.v1.Index.IndexField.SearchConfig}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.firestore.admin.v1.Index.IndexField.SearchConfig)
+          com.google.firestore.admin.v1.Index.IndexField.SearchConfigOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.firestore.admin.v1.IndexProto
+              .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.firestore.admin.v1.IndexProto
+              .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.class,
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.Builder.class);
+        }
+
+        // Construct using com.google.firestore.admin.v1.Index.IndexField.SearchConfig.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+            internalGetTextSpecFieldBuilder();
+            internalGetGeoSpecFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          textSpec_ = null;
+          if (textSpecBuilder_ != null) {
+            textSpecBuilder_.dispose();
+            textSpecBuilder_ = null;
+          }
+          geoSpec_ = null;
+          if (geoSpecBuilder_ != null) {
+            geoSpecBuilder_.dispose();
+            geoSpecBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.firestore.admin.v1.IndexProto
+              .internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+            getDefaultInstanceForType() {
+          return com.google.firestore.admin.v1.Index.IndexField.SearchConfig.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig build() {
+          com.google.firestore.admin.v1.Index.IndexField.SearchConfig result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig buildPartial() {
+          com.google.firestore.admin.v1.Index.IndexField.SearchConfig result =
+              new com.google.firestore.admin.v1.Index.IndexField.SearchConfig(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.textSpec_ = textSpecBuilder_ == null ? textSpec_ : textSpecBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.geoSpec_ = geoSpecBuilder_ == null ? geoSpec_ : geoSpecBuilder_.build();
+            to_bitField0_ |= 0x00000002;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.firestore.admin.v1.Index.IndexField.SearchConfig) {
+            return mergeFrom((com.google.firestore.admin.v1.Index.IndexField.SearchConfig) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig other) {
+          if (other
+              == com.google.firestore.admin.v1.Index.IndexField.SearchConfig.getDefaultInstance())
+            return this;
+          if (other.hasTextSpec()) {
+            mergeTextSpec(other.getTextSpec());
+          }
+          if (other.hasGeoSpec()) {
+            mergeGeoSpec(other.getGeoSpec());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(
+                        internalGetTextSpecFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        internalGetGeoSpecFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            textSpec_;
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec,
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec.Builder,
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpecOrBuilder>
+            textSpecBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a text search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec text_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the textSpec field is set.
+         */
+        public boolean hasTextSpec() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a text search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec text_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The textSpec.
+         */
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+            getTextSpec() {
+          if (textSpecBuilder_ == null) {
+            return textSpec_ == null
+                ? com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+                    .getDefaultInstance()
+                : textSpec_;
+          } else {
+            return textSpecBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a text search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec text_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setTextSpec(
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec value) {
+          if (textSpecBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            textSpec_ = value;
+          } else {
+            textSpecBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a text search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec text_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setTextSpec(
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec.Builder
+                builderForValue) {
+          if (textSpecBuilder_ == null) {
+            textSpec_ = builderForValue.build();
+          } else {
+            textSpecBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a text search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec text_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeTextSpec(
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec value) {
+          if (textSpecBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)
+                && textSpec_ != null
+                && textSpec_
+                    != com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+                        .getDefaultInstance()) {
+              getTextSpecBuilder().mergeFrom(value);
+            } else {
+              textSpec_ = value;
+            }
+          } else {
+            textSpecBuilder_.mergeFrom(value);
+          }
+          if (textSpec_ != null) {
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a text search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec text_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearTextSpec() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          textSpec_ = null;
+          if (textSpecBuilder_ != null) {
+            textSpecBuilder_.dispose();
+            textSpecBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a text search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec text_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec.Builder
+            getTextSpecBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return internalGetTextSpecFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a text search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec text_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpecOrBuilder
+            getTextSpecOrBuilder() {
+          if (textSpecBuilder_ != null) {
+            return textSpecBuilder_.getMessageOrBuilder();
+          } else {
+            return textSpec_ == null
+                ? com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+                    .getDefaultInstance()
+                : textSpec_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a text search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec text_spec = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec,
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec.Builder,
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpecOrBuilder>
+            internalGetTextSpecFieldBuilder() {
+          if (textSpecBuilder_ == null) {
+            textSpecBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec,
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpec
+                        .Builder,
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                        .SearchTextSpecOrBuilder>(getTextSpec(), getParentForChildren(), isClean());
+            textSpec_ = null;
+          }
+          return textSpecBuilder_;
+        }
+
+        private com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geoSpec_;
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec,
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec.Builder,
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpecOrBuilder>
+            geoSpecBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a geo search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geo_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the geoSpec field is set.
+         */
+        public boolean hasGeoSpec() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a geo search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geo_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The geoSpec.
+         */
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+            getGeoSpec() {
+          if (geoSpecBuilder_ == null) {
+            return geoSpec_ == null
+                ? com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+                    .getDefaultInstance()
+                : geoSpec_;
+          } else {
+            return geoSpecBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a geo search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geo_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setGeoSpec(
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec value) {
+          if (geoSpecBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            geoSpec_ = value;
+          } else {
+            geoSpecBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a geo search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geo_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setGeoSpec(
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec.Builder
+                builderForValue) {
+          if (geoSpecBuilder_ == null) {
+            geoSpec_ = builderForValue.build();
+          } else {
+            geoSpecBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a geo search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geo_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeGeoSpec(
+            com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec value) {
+          if (geoSpecBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)
+                && geoSpec_ != null
+                && geoSpec_
+                    != com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+                        .getDefaultInstance()) {
+              getGeoSpecBuilder().mergeFrom(value);
+            } else {
+              geoSpec_ = value;
+            }
+          } else {
+            geoSpecBuilder_.mergeFrom(value);
+          }
+          if (geoSpec_ != null) {
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a geo search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geo_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearGeoSpec() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          geoSpec_ = null;
+          if (geoSpecBuilder_ != null) {
+            geoSpecBuilder_.dispose();
+            geoSpecBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a geo search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geo_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec.Builder
+            getGeoSpecBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return internalGetGeoSpecFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a geo search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geo_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpecOrBuilder
+            getGeoSpecOrBuilder() {
+          if (geoSpecBuilder_ != null) {
+            return geoSpecBuilder_.getMessageOrBuilder();
+          } else {
+            return geoSpec_ == null
+                ? com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+                    .getDefaultInstance()
+                : geoSpec_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Optional. The specification for building a geo search index for a
+         * field.
+         * </pre>
+         *
+         * <code>
+         * .google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec geo_spec = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilder<
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec,
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec.Builder,
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpecOrBuilder>
+            internalGetGeoSpecFieldBuilder() {
+          if (geoSpecBuilder_ == null) {
+            geoSpecBuilder_ =
+                new com.google.protobuf.SingleFieldBuilder<
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec,
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig.SearchGeoSpec
+                        .Builder,
+                    com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                        .SearchGeoSpecOrBuilder>(getGeoSpec(), getParentForChildren(), isClean());
+            geoSpec_ = null;
+          }
+          return geoSpecBuilder_;
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.firestore.admin.v1.Index.IndexField.SearchConfig)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.firestore.admin.v1.Index.IndexField.SearchConfig)
+      private static final com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE = new com.google.firestore.admin.v1.Index.IndexField.SearchConfig();
+      }
+
+      public static com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SearchConfig> PARSER =
+          new com.google.protobuf.AbstractParser<SearchConfig>() {
+            @java.lang.Override
+            public SearchConfig parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SearchConfig> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SearchConfig> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int valueModeCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -2889,6 +7008,7 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       ORDER(2),
       ARRAY_CONFIG(3),
       VECTOR_CONFIG(4),
+      SEARCH_CONFIG(5),
       VALUEMODE_NOT_SET(0);
       private final int value;
 
@@ -2914,6 +7034,8 @@ public final class Index extends com.google.protobuf.GeneratedMessage
             return ARRAY_CONFIG;
           case 4:
             return VECTOR_CONFIG;
+          case 5:
+            return SEARCH_CONFIG;
           case 0:
             return VALUEMODE_NOT_SET;
           default:
@@ -3164,6 +7286,67 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       return com.google.firestore.admin.v1.Index.IndexField.VectorConfig.getDefaultInstance();
     }
 
+    public static final int SEARCH_CONFIG_FIELD_NUMBER = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that this field supports search operations. This field
+     * is only currently supported for indexes with MONGODB_COMPATIBLE_API
+     * ApiScope.
+     * </pre>
+     *
+     * <code>.google.firestore.admin.v1.Index.IndexField.SearchConfig search_config = 5;</code>
+     *
+     * @return Whether the searchConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSearchConfig() {
+      return valueModeCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that this field supports search operations. This field
+     * is only currently supported for indexes with MONGODB_COMPATIBLE_API
+     * ApiScope.
+     * </pre>
+     *
+     * <code>.google.firestore.admin.v1.Index.IndexField.SearchConfig search_config = 5;</code>
+     *
+     * @return The searchConfig.
+     */
+    @java.lang.Override
+    public com.google.firestore.admin.v1.Index.IndexField.SearchConfig getSearchConfig() {
+      if (valueModeCase_ == 5) {
+        return (com.google.firestore.admin.v1.Index.IndexField.SearchConfig) valueMode_;
+      }
+      return com.google.firestore.admin.v1.Index.IndexField.SearchConfig.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that this field supports search operations. This field
+     * is only currently supported for indexes with MONGODB_COMPATIBLE_API
+     * ApiScope.
+     * </pre>
+     *
+     * <code>.google.firestore.admin.v1.Index.IndexField.SearchConfig search_config = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.firestore.admin.v1.Index.IndexField.SearchConfigOrBuilder
+        getSearchConfigOrBuilder() {
+      if (valueModeCase_ == 5) {
+        return (com.google.firestore.admin.v1.Index.IndexField.SearchConfig) valueMode_;
+      }
+      return com.google.firestore.admin.v1.Index.IndexField.SearchConfig.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3191,6 +7374,10 @@ public final class Index extends com.google.protobuf.GeneratedMessage
         output.writeMessage(
             4, (com.google.firestore.admin.v1.Index.IndexField.VectorConfig) valueMode_);
       }
+      if (valueModeCase_ == 5) {
+        output.writeMessage(
+            5, (com.google.firestore.admin.v1.Index.IndexField.SearchConfig) valueMode_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3217,6 +7404,11 @@ public final class Index extends com.google.protobuf.GeneratedMessage
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 4, (com.google.firestore.admin.v1.Index.IndexField.VectorConfig) valueMode_);
+      }
+      if (valueModeCase_ == 5) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5, (com.google.firestore.admin.v1.Index.IndexField.SearchConfig) valueMode_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3246,6 +7438,9 @@ public final class Index extends com.google.protobuf.GeneratedMessage
         case 4:
           if (!getVectorConfig().equals(other.getVectorConfig())) return false;
           break;
+        case 5:
+          if (!getSearchConfig().equals(other.getSearchConfig())) return false;
+          break;
         case 0:
         default:
       }
@@ -3274,6 +7469,10 @@ public final class Index extends com.google.protobuf.GeneratedMessage
         case 4:
           hash = (37 * hash) + VECTOR_CONFIG_FIELD_NUMBER;
           hash = (53 * hash) + getVectorConfig().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + SEARCH_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getSearchConfig().hashCode();
           break;
         case 0:
         default:
@@ -3424,6 +7623,9 @@ public final class Index extends com.google.protobuf.GeneratedMessage
         if (vectorConfigBuilder_ != null) {
           vectorConfigBuilder_.clear();
         }
+        if (searchConfigBuilder_ != null) {
+          searchConfigBuilder_.clear();
+        }
         valueModeCase_ = 0;
         valueMode_ = null;
         return this;
@@ -3474,6 +7676,9 @@ public final class Index extends com.google.protobuf.GeneratedMessage
         if (valueModeCase_ == 4 && vectorConfigBuilder_ != null) {
           result.valueMode_ = vectorConfigBuilder_.build();
         }
+        if (valueModeCase_ == 5 && searchConfigBuilder_ != null) {
+          result.valueMode_ = searchConfigBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3508,6 +7713,11 @@ public final class Index extends com.google.protobuf.GeneratedMessage
           case VECTOR_CONFIG:
             {
               mergeVectorConfig(other.getVectorConfig());
+              break;
+            }
+          case SEARCH_CONFIG:
+            {
+              mergeSearchConfig(other.getSearchConfig());
               break;
             }
           case VALUEMODE_NOT_SET:
@@ -3568,6 +7778,13 @@ public final class Index extends com.google.protobuf.GeneratedMessage
                   valueModeCase_ = 4;
                   break;
                 } // case 34
+              case 42:
+                {
+                  input.readMessage(
+                      internalGetSearchConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  valueModeCase_ = 5;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4203,6 +8420,249 @@ public final class Index extends com.google.protobuf.GeneratedMessage
         return vectorConfigBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig,
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.Builder,
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfigOrBuilder>
+          searchConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this field supports search operations. This field
+       * is only currently supported for indexes with MONGODB_COMPATIBLE_API
+       * ApiScope.
+       * </pre>
+       *
+       * <code>.google.firestore.admin.v1.Index.IndexField.SearchConfig search_config = 5;</code>
+       *
+       * @return Whether the searchConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasSearchConfig() {
+        return valueModeCase_ == 5;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this field supports search operations. This field
+       * is only currently supported for indexes with MONGODB_COMPATIBLE_API
+       * ApiScope.
+       * </pre>
+       *
+       * <code>.google.firestore.admin.v1.Index.IndexField.SearchConfig search_config = 5;</code>
+       *
+       * @return The searchConfig.
+       */
+      @java.lang.Override
+      public com.google.firestore.admin.v1.Index.IndexField.SearchConfig getSearchConfig() {
+        if (searchConfigBuilder_ == null) {
+          if (valueModeCase_ == 5) {
+            return (com.google.firestore.admin.v1.Index.IndexField.SearchConfig) valueMode_;
+          }
+          return com.google.firestore.admin.v1.Index.IndexField.SearchConfig.getDefaultInstance();
+        } else {
+          if (valueModeCase_ == 5) {
+            return searchConfigBuilder_.getMessage();
+          }
+          return com.google.firestore.admin.v1.Index.IndexField.SearchConfig.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this field supports search operations. This field
+       * is only currently supported for indexes with MONGODB_COMPATIBLE_API
+       * ApiScope.
+       * </pre>
+       *
+       * <code>.google.firestore.admin.v1.Index.IndexField.SearchConfig search_config = 5;</code>
+       */
+      public Builder setSearchConfig(
+          com.google.firestore.admin.v1.Index.IndexField.SearchConfig value) {
+        if (searchConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          valueMode_ = value;
+          onChanged();
+        } else {
+          searchConfigBuilder_.setMessage(value);
+        }
+        valueModeCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this field supports search operations. This field
+       * is only currently supported for indexes with MONGODB_COMPATIBLE_API
+       * ApiScope.
+       * </pre>
+       *
+       * <code>.google.firestore.admin.v1.Index.IndexField.SearchConfig search_config = 5;</code>
+       */
+      public Builder setSearchConfig(
+          com.google.firestore.admin.v1.Index.IndexField.SearchConfig.Builder builderForValue) {
+        if (searchConfigBuilder_ == null) {
+          valueMode_ = builderForValue.build();
+          onChanged();
+        } else {
+          searchConfigBuilder_.setMessage(builderForValue.build());
+        }
+        valueModeCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this field supports search operations. This field
+       * is only currently supported for indexes with MONGODB_COMPATIBLE_API
+       * ApiScope.
+       * </pre>
+       *
+       * <code>.google.firestore.admin.v1.Index.IndexField.SearchConfig search_config = 5;</code>
+       */
+      public Builder mergeSearchConfig(
+          com.google.firestore.admin.v1.Index.IndexField.SearchConfig value) {
+        if (searchConfigBuilder_ == null) {
+          if (valueModeCase_ == 5
+              && valueMode_
+                  != com.google.firestore.admin.v1.Index.IndexField.SearchConfig
+                      .getDefaultInstance()) {
+            valueMode_ =
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.newBuilder(
+                        (com.google.firestore.admin.v1.Index.IndexField.SearchConfig) valueMode_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            valueMode_ = value;
+          }
+          onChanged();
+        } else {
+          if (valueModeCase_ == 5) {
+            searchConfigBuilder_.mergeFrom(value);
+          } else {
+            searchConfigBuilder_.setMessage(value);
+          }
+        }
+        valueModeCase_ = 5;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this field supports search operations. This field
+       * is only currently supported for indexes with MONGODB_COMPATIBLE_API
+       * ApiScope.
+       * </pre>
+       *
+       * <code>.google.firestore.admin.v1.Index.IndexField.SearchConfig search_config = 5;</code>
+       */
+      public Builder clearSearchConfig() {
+        if (searchConfigBuilder_ == null) {
+          if (valueModeCase_ == 5) {
+            valueModeCase_ = 0;
+            valueMode_ = null;
+            onChanged();
+          }
+        } else {
+          if (valueModeCase_ == 5) {
+            valueModeCase_ = 0;
+            valueMode_ = null;
+          }
+          searchConfigBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this field supports search operations. This field
+       * is only currently supported for indexes with MONGODB_COMPATIBLE_API
+       * ApiScope.
+       * </pre>
+       *
+       * <code>.google.firestore.admin.v1.Index.IndexField.SearchConfig search_config = 5;</code>
+       */
+      public com.google.firestore.admin.v1.Index.IndexField.SearchConfig.Builder
+          getSearchConfigBuilder() {
+        return internalGetSearchConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this field supports search operations. This field
+       * is only currently supported for indexes with MONGODB_COMPATIBLE_API
+       * ApiScope.
+       * </pre>
+       *
+       * <code>.google.firestore.admin.v1.Index.IndexField.SearchConfig search_config = 5;</code>
+       */
+      @java.lang.Override
+      public com.google.firestore.admin.v1.Index.IndexField.SearchConfigOrBuilder
+          getSearchConfigOrBuilder() {
+        if ((valueModeCase_ == 5) && (searchConfigBuilder_ != null)) {
+          return searchConfigBuilder_.getMessageOrBuilder();
+        } else {
+          if (valueModeCase_ == 5) {
+            return (com.google.firestore.admin.v1.Index.IndexField.SearchConfig) valueMode_;
+          }
+          return com.google.firestore.admin.v1.Index.IndexField.SearchConfig.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Indicates that this field supports search operations. This field
+       * is only currently supported for indexes with MONGODB_COMPATIBLE_API
+       * ApiScope.
+       * </pre>
+       *
+       * <code>.google.firestore.admin.v1.Index.IndexField.SearchConfig search_config = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig,
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfig.Builder,
+              com.google.firestore.admin.v1.Index.IndexField.SearchConfigOrBuilder>
+          internalGetSearchConfigFieldBuilder() {
+        if (searchConfigBuilder_ == null) {
+          if (!(valueModeCase_ == 5)) {
+            valueMode_ =
+                com.google.firestore.admin.v1.Index.IndexField.SearchConfig.getDefaultInstance();
+          }
+          searchConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig,
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfig.Builder,
+                  com.google.firestore.admin.v1.Index.IndexField.SearchConfigOrBuilder>(
+                  (com.google.firestore.admin.v1.Index.IndexField.SearchConfig) valueMode_,
+                  getParentForChildren(),
+                  isClean());
+          valueMode_ = null;
+        }
+        valueModeCase_ = 5;
+        onChanged();
+        return searchConfigBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:google.firestore.admin.v1.Index.IndexField)
     }
 
@@ -4255,6 +8715,937 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     }
   }
 
+  public interface SearchIndexOptionsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.firestore.admin.v1.Index.SearchIndexOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language to use for text search indexes. Used as the
+     * default language if not overridden at the document level by specifying
+     * the `text_language_override_field`. The language is specified as a BCP 47
+     * language code.
+     * For indexes with MONGODB_COMPATIBLE_API ApiScope: If unspecified, the
+     * default language is English.
+     * For indexes with `ANY_API` ApiScope: If unspecified, the default behavior
+     * is autodetect.
+     * </pre>
+     *
+     * <code>string text_language = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The textLanguage.
+     */
+    java.lang.String getTextLanguage();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language to use for text search indexes. Used as the
+     * default language if not overridden at the document level by specifying
+     * the `text_language_override_field`. The language is specified as a BCP 47
+     * language code.
+     * For indexes with MONGODB_COMPATIBLE_API ApiScope: If unspecified, the
+     * default language is English.
+     * For indexes with `ANY_API` ApiScope: If unspecified, the default behavior
+     * is autodetect.
+     * </pre>
+     *
+     * <code>string text_language = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for textLanguage.
+     */
+    com.google.protobuf.ByteString getTextLanguageBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field in the document that specifies which language to use
+     * for that specific document. For indexes with MONGODB_COMPATIBLE_API
+     * ApiScope: if unspecified, the language is taken from the "language" field
+     * if it exists or from `text_language` if it does not.
+     * </pre>
+     *
+     * <code>string text_language_override_field_path = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The textLanguageOverrideFieldPath.
+     */
+    java.lang.String getTextLanguageOverrideFieldPath();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field in the document that specifies which language to use
+     * for that specific document. For indexes with MONGODB_COMPATIBLE_API
+     * ApiScope: if unspecified, the language is taken from the "language" field
+     * if it exists or from `text_language` if it does not.
+     * </pre>
+     *
+     * <code>string text_language_override_field_path = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for textLanguageOverrideFieldPath.
+     */
+    com.google.protobuf.ByteString getTextLanguageOverrideFieldPathBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Options for search indexes at the definition level.
+   * </pre>
+   *
+   * Protobuf type {@code google.firestore.admin.v1.Index.SearchIndexOptions}
+   */
+  public static final class SearchIndexOptions extends com.google.protobuf.GeneratedMessage
+      implements
+      // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Index.SearchIndexOptions)
+      SearchIndexOptionsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 2,
+          /* suffix= */ "",
+          "SearchIndexOptions");
+    }
+
+    // Use SearchIndexOptions.newBuilder() to construct.
+    private SearchIndexOptions(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SearchIndexOptions() {
+      textLanguage_ = "";
+      textLanguageOverrideFieldPath_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.firestore.admin.v1.IndexProto
+          .internal_static_google_firestore_admin_v1_Index_SearchIndexOptions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.firestore.admin.v1.IndexProto
+          .internal_static_google_firestore_admin_v1_Index_SearchIndexOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.firestore.admin.v1.Index.SearchIndexOptions.class,
+              com.google.firestore.admin.v1.Index.SearchIndexOptions.Builder.class);
+    }
+
+    public static final int TEXT_LANGUAGE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object textLanguage_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language to use for text search indexes. Used as the
+     * default language if not overridden at the document level by specifying
+     * the `text_language_override_field`. The language is specified as a BCP 47
+     * language code.
+     * For indexes with MONGODB_COMPATIBLE_API ApiScope: If unspecified, the
+     * default language is English.
+     * For indexes with `ANY_API` ApiScope: If unspecified, the default behavior
+     * is autodetect.
+     * </pre>
+     *
+     * <code>string text_language = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The textLanguage.
+     */
+    @java.lang.Override
+    public java.lang.String getTextLanguage() {
+      java.lang.Object ref = textLanguage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        textLanguage_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The language to use for text search indexes. Used as the
+     * default language if not overridden at the document level by specifying
+     * the `text_language_override_field`. The language is specified as a BCP 47
+     * language code.
+     * For indexes with MONGODB_COMPATIBLE_API ApiScope: If unspecified, the
+     * default language is English.
+     * For indexes with `ANY_API` ApiScope: If unspecified, the default behavior
+     * is autodetect.
+     * </pre>
+     *
+     * <code>string text_language = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for textLanguage.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTextLanguageBytes() {
+      java.lang.Object ref = textLanguage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        textLanguage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TEXT_LANGUAGE_OVERRIDE_FIELD_PATH_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object textLanguageOverrideFieldPath_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field in the document that specifies which language to use
+     * for that specific document. For indexes with MONGODB_COMPATIBLE_API
+     * ApiScope: if unspecified, the language is taken from the "language" field
+     * if it exists or from `text_language` if it does not.
+     * </pre>
+     *
+     * <code>string text_language_override_field_path = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The textLanguageOverrideFieldPath.
+     */
+    @java.lang.Override
+    public java.lang.String getTextLanguageOverrideFieldPath() {
+      java.lang.Object ref = textLanguageOverrideFieldPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        textLanguageOverrideFieldPath_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The field in the document that specifies which language to use
+     * for that specific document. For indexes with MONGODB_COMPATIBLE_API
+     * ApiScope: if unspecified, the language is taken from the "language" field
+     * if it exists or from `text_language` if it does not.
+     * </pre>
+     *
+     * <code>string text_language_override_field_path = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for textLanguageOverrideFieldPath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getTextLanguageOverrideFieldPathBytes() {
+      java.lang.Object ref = textLanguageOverrideFieldPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        textLanguageOverrideFieldPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(textLanguage_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, textLanguage_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(textLanguageOverrideFieldPath_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, textLanguageOverrideFieldPath_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(textLanguage_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, textLanguage_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(textLanguageOverrideFieldPath_)) {
+        size +=
+            com.google.protobuf.GeneratedMessage.computeStringSize(
+                2, textLanguageOverrideFieldPath_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.firestore.admin.v1.Index.SearchIndexOptions)) {
+        return super.equals(obj);
+      }
+      com.google.firestore.admin.v1.Index.SearchIndexOptions other =
+          (com.google.firestore.admin.v1.Index.SearchIndexOptions) obj;
+
+      if (!getTextLanguage().equals(other.getTextLanguage())) return false;
+      if (!getTextLanguageOverrideFieldPath().equals(other.getTextLanguageOverrideFieldPath()))
+        return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TEXT_LANGUAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getTextLanguage().hashCode();
+      hash = (37 * hash) + TEXT_LANGUAGE_OVERRIDE_FIELD_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getTextLanguageOverrideFieldPath().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.firestore.admin.v1.Index.SearchIndexOptions parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.firestore.admin.v1.Index.SearchIndexOptions parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.firestore.admin.v1.Index.SearchIndexOptions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.firestore.admin.v1.Index.SearchIndexOptions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.firestore.admin.v1.Index.SearchIndexOptions parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.firestore.admin.v1.Index.SearchIndexOptions parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.firestore.admin.v1.Index.SearchIndexOptions parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.firestore.admin.v1.Index.SearchIndexOptions parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.firestore.admin.v1.Index.SearchIndexOptions parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.firestore.admin.v1.Index.SearchIndexOptions parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.firestore.admin.v1.Index.SearchIndexOptions parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.firestore.admin.v1.Index.SearchIndexOptions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.firestore.admin.v1.Index.SearchIndexOptions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Options for search indexes at the definition level.
+     * </pre>
+     *
+     * Protobuf type {@code google.firestore.admin.v1.Index.SearchIndexOptions}
+     */
+    public static final class Builder extends com.google.protobuf.GeneratedMessage.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.firestore.admin.v1.Index.SearchIndexOptions)
+        com.google.firestore.admin.v1.Index.SearchIndexOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.firestore.admin.v1.IndexProto
+            .internal_static_google_firestore_admin_v1_Index_SearchIndexOptions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.firestore.admin.v1.IndexProto
+            .internal_static_google_firestore_admin_v1_Index_SearchIndexOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.firestore.admin.v1.Index.SearchIndexOptions.class,
+                com.google.firestore.admin.v1.Index.SearchIndexOptions.Builder.class);
+      }
+
+      // Construct using com.google.firestore.admin.v1.Index.SearchIndexOptions.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        textLanguage_ = "";
+        textLanguageOverrideFieldPath_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.firestore.admin.v1.IndexProto
+            .internal_static_google_firestore_admin_v1_Index_SearchIndexOptions_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.firestore.admin.v1.Index.SearchIndexOptions getDefaultInstanceForType() {
+        return com.google.firestore.admin.v1.Index.SearchIndexOptions.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.firestore.admin.v1.Index.SearchIndexOptions build() {
+        com.google.firestore.admin.v1.Index.SearchIndexOptions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.firestore.admin.v1.Index.SearchIndexOptions buildPartial() {
+        com.google.firestore.admin.v1.Index.SearchIndexOptions result =
+            new com.google.firestore.admin.v1.Index.SearchIndexOptions(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.firestore.admin.v1.Index.SearchIndexOptions result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.textLanguage_ = textLanguage_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.textLanguageOverrideFieldPath_ = textLanguageOverrideFieldPath_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.firestore.admin.v1.Index.SearchIndexOptions) {
+          return mergeFrom((com.google.firestore.admin.v1.Index.SearchIndexOptions) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.firestore.admin.v1.Index.SearchIndexOptions other) {
+        if (other == com.google.firestore.admin.v1.Index.SearchIndexOptions.getDefaultInstance())
+          return this;
+        if (!other.getTextLanguage().isEmpty()) {
+          textLanguage_ = other.textLanguage_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getTextLanguageOverrideFieldPath().isEmpty()) {
+          textLanguageOverrideFieldPath_ = other.textLanguageOverrideFieldPath_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  textLanguage_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  textLanguageOverrideFieldPath_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object textLanguage_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The language to use for text search indexes. Used as the
+       * default language if not overridden at the document level by specifying
+       * the `text_language_override_field`. The language is specified as a BCP 47
+       * language code.
+       * For indexes with MONGODB_COMPATIBLE_API ApiScope: If unspecified, the
+       * default language is English.
+       * For indexes with `ANY_API` ApiScope: If unspecified, the default behavior
+       * is autodetect.
+       * </pre>
+       *
+       * <code>string text_language = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The textLanguage.
+       */
+      public java.lang.String getTextLanguage() {
+        java.lang.Object ref = textLanguage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          textLanguage_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The language to use for text search indexes. Used as the
+       * default language if not overridden at the document level by specifying
+       * the `text_language_override_field`. The language is specified as a BCP 47
+       * language code.
+       * For indexes with MONGODB_COMPATIBLE_API ApiScope: If unspecified, the
+       * default language is English.
+       * For indexes with `ANY_API` ApiScope: If unspecified, the default behavior
+       * is autodetect.
+       * </pre>
+       *
+       * <code>string text_language = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for textLanguage.
+       */
+      public com.google.protobuf.ByteString getTextLanguageBytes() {
+        java.lang.Object ref = textLanguage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          textLanguage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The language to use for text search indexes. Used as the
+       * default language if not overridden at the document level by specifying
+       * the `text_language_override_field`. The language is specified as a BCP 47
+       * language code.
+       * For indexes with MONGODB_COMPATIBLE_API ApiScope: If unspecified, the
+       * default language is English.
+       * For indexes with `ANY_API` ApiScope: If unspecified, the default behavior
+       * is autodetect.
+       * </pre>
+       *
+       * <code>string text_language = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The textLanguage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTextLanguage(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        textLanguage_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The language to use for text search indexes. Used as the
+       * default language if not overridden at the document level by specifying
+       * the `text_language_override_field`. The language is specified as a BCP 47
+       * language code.
+       * For indexes with MONGODB_COMPATIBLE_API ApiScope: If unspecified, the
+       * default language is English.
+       * For indexes with `ANY_API` ApiScope: If unspecified, the default behavior
+       * is autodetect.
+       * </pre>
+       *
+       * <code>string text_language = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTextLanguage() {
+        textLanguage_ = getDefaultInstance().getTextLanguage();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The language to use for text search indexes. Used as the
+       * default language if not overridden at the document level by specifying
+       * the `text_language_override_field`. The language is specified as a BCP 47
+       * language code.
+       * For indexes with MONGODB_COMPATIBLE_API ApiScope: If unspecified, the
+       * default language is English.
+       * For indexes with `ANY_API` ApiScope: If unspecified, the default behavior
+       * is autodetect.
+       * </pre>
+       *
+       * <code>string text_language = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for textLanguage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTextLanguageBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        textLanguage_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object textLanguageOverrideFieldPath_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The field in the document that specifies which language to use
+       * for that specific document. For indexes with MONGODB_COMPATIBLE_API
+       * ApiScope: if unspecified, the language is taken from the "language" field
+       * if it exists or from `text_language` if it does not.
+       * </pre>
+       *
+       * <code>
+       * string text_language_override_field_path = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The textLanguageOverrideFieldPath.
+       */
+      public java.lang.String getTextLanguageOverrideFieldPath() {
+        java.lang.Object ref = textLanguageOverrideFieldPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          textLanguageOverrideFieldPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The field in the document that specifies which language to use
+       * for that specific document. For indexes with MONGODB_COMPATIBLE_API
+       * ApiScope: if unspecified, the language is taken from the "language" field
+       * if it exists or from `text_language` if it does not.
+       * </pre>
+       *
+       * <code>
+       * string text_language_override_field_path = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for textLanguageOverrideFieldPath.
+       */
+      public com.google.protobuf.ByteString getTextLanguageOverrideFieldPathBytes() {
+        java.lang.Object ref = textLanguageOverrideFieldPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          textLanguageOverrideFieldPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The field in the document that specifies which language to use
+       * for that specific document. For indexes with MONGODB_COMPATIBLE_API
+       * ApiScope: if unspecified, the language is taken from the "language" field
+       * if it exists or from `text_language` if it does not.
+       * </pre>
+       *
+       * <code>
+       * string text_language_override_field_path = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The textLanguageOverrideFieldPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTextLanguageOverrideFieldPath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        textLanguageOverrideFieldPath_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The field in the document that specifies which language to use
+       * for that specific document. For indexes with MONGODB_COMPATIBLE_API
+       * ApiScope: if unspecified, the language is taken from the "language" field
+       * if it exists or from `text_language` if it does not.
+       * </pre>
+       *
+       * <code>
+       * string text_language_override_field_path = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTextLanguageOverrideFieldPath() {
+        textLanguageOverrideFieldPath_ = getDefaultInstance().getTextLanguageOverrideFieldPath();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The field in the document that specifies which language to use
+       * for that specific document. For indexes with MONGODB_COMPATIBLE_API
+       * ApiScope: if unspecified, the language is taken from the "language" field
+       * if it exists or from `text_language` if it does not.
+       * </pre>
+       *
+       * <code>
+       * string text_language_override_field_path = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes for textLanguageOverrideFieldPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTextLanguageOverrideFieldPathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        textLanguageOverrideFieldPath_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.firestore.admin.v1.Index.SearchIndexOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.firestore.admin.v1.Index.SearchIndexOptions)
+    private static final com.google.firestore.admin.v1.Index.SearchIndexOptions DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.firestore.admin.v1.Index.SearchIndexOptions();
+    }
+
+    public static com.google.firestore.admin.v1.Index.SearchIndexOptions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SearchIndexOptions> PARSER =
+        new com.google.protobuf.AbstractParser<SearchIndexOptions>() {
+          @java.lang.Override
+          public SearchIndexOptions parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SearchIndexOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SearchIndexOptions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.firestore.admin.v1.Index.SearchIndexOptions getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -4669,6 +10060,72 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     return unique_;
   }
 
+  public static final int SEARCH_INDEX_OPTIONS_FIELD_NUMBER = 9;
+  private com.google.firestore.admin.v1.Index.SearchIndexOptions searchIndexOptions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for search indexes that are at the index definition
+   * level. This field is only currently supported for indexes with
+   * MONGODB_COMPATIBLE_API ApiScope.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Index.SearchIndexOptions search_index_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the searchIndexOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasSearchIndexOptions() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for search indexes that are at the index definition
+   * level. This field is only currently supported for indexes with
+   * MONGODB_COMPATIBLE_API ApiScope.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Index.SearchIndexOptions search_index_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The searchIndexOptions.
+   */
+  @java.lang.Override
+  public com.google.firestore.admin.v1.Index.SearchIndexOptions getSearchIndexOptions() {
+    return searchIndexOptions_ == null
+        ? com.google.firestore.admin.v1.Index.SearchIndexOptions.getDefaultInstance()
+        : searchIndexOptions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Options for search indexes that are at the index definition
+   * level. This field is only currently supported for indexes with
+   * MONGODB_COMPATIBLE_API ApiScope.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Index.SearchIndexOptions search_index_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.firestore.admin.v1.Index.SearchIndexOptionsOrBuilder
+      getSearchIndexOptionsOrBuilder() {
+    return searchIndexOptions_ == null
+        ? com.google.firestore.admin.v1.Index.SearchIndexOptions.getDefaultInstance()
+        : searchIndexOptions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4708,6 +10165,9 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     if (shardCount_ != 0) {
       output.writeInt32(8, shardCount_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(9, getSearchIndexOptions());
+    }
     if (unique_ != false) {
       output.writeBool(10, unique_);
     }
@@ -4745,6 +10205,9 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     if (shardCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, shardCount_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getSearchIndexOptions());
+    }
     if (unique_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, unique_);
     }
@@ -4772,6 +10235,10 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     if (getMultikey() != other.getMultikey()) return false;
     if (getShardCount() != other.getShardCount()) return false;
     if (getUnique() != other.getUnique()) return false;
+    if (hasSearchIndexOptions() != other.hasSearchIndexOptions()) return false;
+    if (hasSearchIndexOptions()) {
+      if (!getSearchIndexOptions().equals(other.getSearchIndexOptions())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4803,6 +10270,10 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getShardCount();
     hash = (37 * hash) + UNIQUE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUnique());
+    if (hasSearchIndexOptions()) {
+      hash = (37 * hash) + SEARCH_INDEX_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getSearchIndexOptions().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4933,10 +10404,20 @@ public final class Index extends com.google.protobuf.GeneratedMessage
     }
 
     // Construct using com.google.firestore.admin.v1.Index.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        internalGetFieldsFieldBuilder();
+        internalGetSearchIndexOptionsFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -4958,6 +10439,11 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       multikey_ = false;
       shardCount_ = 0;
       unique_ = false;
+      searchIndexOptions_ = null;
+      if (searchIndexOptionsBuilder_ != null) {
+        searchIndexOptionsBuilder_.dispose();
+        searchIndexOptionsBuilder_ = null;
+      }
       return this;
     }
 
@@ -5030,6 +10516,15 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.unique_ = unique_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.searchIndexOptions_ =
+            searchIndexOptionsBuilder_ == null
+                ? searchIndexOptions_
+                : searchIndexOptionsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -5096,6 +10591,9 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       }
       if (other.getUnique() != false) {
         setUnique(other.getUnique());
+      }
+      if (other.hasSearchIndexOptions()) {
+        mergeSearchIndexOptions(other.getSearchIndexOptions());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5178,6 +10676,13 @@ public final class Index extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000080;
                 break;
               } // case 64
+            case 74:
+              {
+                input.readMessage(
+                    internalGetSearchIndexOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 74
             case 80:
               {
                 unique_ = input.readBool();
@@ -6486,6 +11991,242 @@ public final class Index extends com.google.protobuf.GeneratedMessage
       unique_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.firestore.admin.v1.Index.SearchIndexOptions searchIndexOptions_;
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.firestore.admin.v1.Index.SearchIndexOptions,
+            com.google.firestore.admin.v1.Index.SearchIndexOptions.Builder,
+            com.google.firestore.admin.v1.Index.SearchIndexOptionsOrBuilder>
+        searchIndexOptionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for search indexes that are at the index definition
+     * level. This field is only currently supported for indexes with
+     * MONGODB_COMPATIBLE_API ApiScope.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Index.SearchIndexOptions search_index_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the searchIndexOptions field is set.
+     */
+    public boolean hasSearchIndexOptions() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for search indexes that are at the index definition
+     * level. This field is only currently supported for indexes with
+     * MONGODB_COMPATIBLE_API ApiScope.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Index.SearchIndexOptions search_index_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The searchIndexOptions.
+     */
+    public com.google.firestore.admin.v1.Index.SearchIndexOptions getSearchIndexOptions() {
+      if (searchIndexOptionsBuilder_ == null) {
+        return searchIndexOptions_ == null
+            ? com.google.firestore.admin.v1.Index.SearchIndexOptions.getDefaultInstance()
+            : searchIndexOptions_;
+      } else {
+        return searchIndexOptionsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for search indexes that are at the index definition
+     * level. This field is only currently supported for indexes with
+     * MONGODB_COMPATIBLE_API ApiScope.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Index.SearchIndexOptions search_index_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSearchIndexOptions(
+        com.google.firestore.admin.v1.Index.SearchIndexOptions value) {
+      if (searchIndexOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        searchIndexOptions_ = value;
+      } else {
+        searchIndexOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for search indexes that are at the index definition
+     * level. This field is only currently supported for indexes with
+     * MONGODB_COMPATIBLE_API ApiScope.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Index.SearchIndexOptions search_index_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSearchIndexOptions(
+        com.google.firestore.admin.v1.Index.SearchIndexOptions.Builder builderForValue) {
+      if (searchIndexOptionsBuilder_ == null) {
+        searchIndexOptions_ = builderForValue.build();
+      } else {
+        searchIndexOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for search indexes that are at the index definition
+     * level. This field is only currently supported for indexes with
+     * MONGODB_COMPATIBLE_API ApiScope.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Index.SearchIndexOptions search_index_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSearchIndexOptions(
+        com.google.firestore.admin.v1.Index.SearchIndexOptions value) {
+      if (searchIndexOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && searchIndexOptions_ != null
+            && searchIndexOptions_
+                != com.google.firestore.admin.v1.Index.SearchIndexOptions.getDefaultInstance()) {
+          getSearchIndexOptionsBuilder().mergeFrom(value);
+        } else {
+          searchIndexOptions_ = value;
+        }
+      } else {
+        searchIndexOptionsBuilder_.mergeFrom(value);
+      }
+      if (searchIndexOptions_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for search indexes that are at the index definition
+     * level. This field is only currently supported for indexes with
+     * MONGODB_COMPATIBLE_API ApiScope.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Index.SearchIndexOptions search_index_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSearchIndexOptions() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      searchIndexOptions_ = null;
+      if (searchIndexOptionsBuilder_ != null) {
+        searchIndexOptionsBuilder_.dispose();
+        searchIndexOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for search indexes that are at the index definition
+     * level. This field is only currently supported for indexes with
+     * MONGODB_COMPATIBLE_API ApiScope.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Index.SearchIndexOptions search_index_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.firestore.admin.v1.Index.SearchIndexOptions.Builder
+        getSearchIndexOptionsBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return internalGetSearchIndexOptionsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for search indexes that are at the index definition
+     * level. This field is only currently supported for indexes with
+     * MONGODB_COMPATIBLE_API ApiScope.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Index.SearchIndexOptions search_index_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.firestore.admin.v1.Index.SearchIndexOptionsOrBuilder
+        getSearchIndexOptionsOrBuilder() {
+      if (searchIndexOptionsBuilder_ != null) {
+        return searchIndexOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return searchIndexOptions_ == null
+            ? com.google.firestore.admin.v1.Index.SearchIndexOptions.getDefaultInstance()
+            : searchIndexOptions_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Options for search indexes that are at the index definition
+     * level. This field is only currently supported for indexes with
+     * MONGODB_COMPATIBLE_API ApiScope.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Index.SearchIndexOptions search_index_options = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+            com.google.firestore.admin.v1.Index.SearchIndexOptions,
+            com.google.firestore.admin.v1.Index.SearchIndexOptions.Builder,
+            com.google.firestore.admin.v1.Index.SearchIndexOptionsOrBuilder>
+        internalGetSearchIndexOptionsFieldBuilder() {
+      if (searchIndexOptionsBuilder_ == null) {
+        searchIndexOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilder<
+                com.google.firestore.admin.v1.Index.SearchIndexOptions,
+                com.google.firestore.admin.v1.Index.SearchIndexOptions.Builder,
+                com.google.firestore.admin.v1.Index.SearchIndexOptionsOrBuilder>(
+                getSearchIndexOptions(), getParentForChildren(), isClean());
+        searchIndexOptions_ = null;
+      }
+      return searchIndexOptionsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:google.firestore.admin.v1.Index)

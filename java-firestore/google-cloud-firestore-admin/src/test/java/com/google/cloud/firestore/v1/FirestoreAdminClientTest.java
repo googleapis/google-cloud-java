@@ -158,6 +158,7 @@ public class FirestoreAdminClientTest {
             .setMultikey(true)
             .setShardCount(-495377042)
             .setUnique(true)
+            .setSearchIndexOptions(Index.SearchIndexOptions.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -212,6 +213,7 @@ public class FirestoreAdminClientTest {
             .setMultikey(true)
             .setShardCount(-495377042)
             .setUnique(true)
+            .setSearchIndexOptions(Index.SearchIndexOptions.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -354,6 +356,7 @@ public class FirestoreAdminClientTest {
             .setMultikey(true)
             .setShardCount(-495377042)
             .setUnique(true)
+            .setSearchIndexOptions(Index.SearchIndexOptions.newBuilder().build())
             .build();
     mockFirestoreAdmin.addResponse(expectedResponse);
 
@@ -396,6 +399,7 @@ public class FirestoreAdminClientTest {
             .setMultikey(true)
             .setShardCount(-495377042)
             .setUnique(true)
+            .setSearchIndexOptions(Index.SearchIndexOptions.newBuilder().build())
             .build();
     mockFirestoreAdmin.addResponse(expectedResponse);
 

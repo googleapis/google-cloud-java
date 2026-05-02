@@ -56,6 +56,26 @@ public final class IndexProto extends com.google.protobuf.GeneratedFile {
       internal_static_google_firestore_admin_v1_Index_IndexField_VectorConfig_FlatIndex_descriptor;
   static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_google_firestore_admin_v1_Index_IndexField_VectorConfig_FlatIndex_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextIndexSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextIndexSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchGeoSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchGeoSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_firestore_admin_v1_Index_SearchIndexOptions_descriptor;
+  static final com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_google_firestore_admin_v1_Index_SearchIndexOptions_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -68,7 +88,7 @@ public final class IndexProto extends com.google.protobuf.GeneratedFile {
       "\n"
           + "%google/firestore/admin/v1/index.proto\022"
           + "\031google.firestore.admin.v1\032\037google/api/f"
-          + "ield_behavior.proto\032\031google/api/resource.proto\"\202\013\n"
+          + "ield_behavior.proto\032\031google/api/resource.proto\"\365\022\n"
           + "\005Index\022\014\n"
           + "\004name\030\001 \001(\t\022@\n"
           + "\013query_scope\030\002 \001(\0162+.google.firestore.admin.v1.Index.QueryScope\022<\n"
@@ -80,21 +100,46 @@ public final class IndexProto extends com.google.protobuf.GeneratedFile {
           + "\010multikey\030\007 \001(\010B\003\340A\001\022\030\n"
           + "\013shard_count\030\010 \001(\005B\003\340A\001\022\023\n"
           + "\006unique\030\n"
-          + " \001(\010B\003\340A\001\032\242\004\n\n"
+          + " \001(\010B\003\340A\001\022V\n"
+          + "\024search_index_options\030\t \001(\01323"
+          + ".google.firestore.admin.v1.Index.SearchIndexOptionsB\003\340A\001\032\333\n\n\n"
           + "IndexField\022\022\n\n"
           + "field_path\030\001 \001(\t\022B\n"
-          + "\005order\030\002"
-          + " \001(\01621.google.firestore.admin.v1.Index.IndexField.OrderH\000\022O\n"
-          + "\014array_config\030\003"
-          + " \001(\01627.google.firestore.admin.v1.Index.IndexField.ArrayConfigH\000\022Q\n\r"
-          + "vector_config\030\004"
-          + " \001(\01328.google.firestore.admin.v1.Index.IndexField.VectorConfigH\000\032\217\001\n"
+          + "\005order\030\002 \001(\01621.google.fire"
+          + "store.admin.v1.Index.IndexField.OrderH\000\022O\n"
+          + "\014array_config\030\003 \001(\01627.google.firestore"
+          + ".admin.v1.Index.IndexField.ArrayConfigH\000\022Q\n\r"
+          + "vector_config\030\004 \001(\01328.google.firesto"
+          + "re.admin.v1.Index.IndexField.VectorConfigH\000\022Q\n\r"
+          + "search_config\030\005 \001(\01328.google.fire"
+          + "store.admin.v1.Index.IndexField.SearchConfigH\000\032\217\001\n"
           + "\014VectorConfig\022\026\n"
           + "\tdimension\030\001 \001(\005B\003\340A\002\022R\n"
-          + "\004flat\030\002 \001(\0132B.google.firestore.admin.v1.I"
-          + "ndex.IndexField.VectorConfig.FlatIndexH\000\032\013\n"
+          + "\004flat\030\002 \001(\0132B.google.firestore"
+          + ".admin.v1.Index.IndexField.VectorConfig.FlatIndexH\000\032\013\n"
           + "\tFlatIndexB\006\n"
-          + "\004type\"=\n"
+          + "\004type\032\343\005\n"
+          + "\014SearchConfig\022_\n"
+          + "\ttext_spec\030\001 \001(\0132G.google.fi"
+          + "restore.admin.v1.Index.IndexField.SearchConfig.SearchTextSpecB\003\340A\001\022]\n"
+          + "\010geo_spec\030\002 \001(\0132F.google.firestore.admin.v1.Index.I"
+          + "ndexField.SearchConfig.SearchGeoSpecB\003\340A\001\032\327\001\n"
+          + "\023SearchTextIndexSpec\022_\n\n"
+          + "index_type\030\001 \001(\0162F.google.firestore.admin.v1.Index."
+          + "IndexField.SearchConfig.TextIndexTypeB\003\340A\002\022_\n\n"
+          + "match_type\030\002 \001(\0162F.google.firestor"
+          + "e.admin.v1.Index.IndexField.SearchConfig.TextMatchTypeB\003\340A\002\032x\n"
+          + "\016SearchTextSpec\022f\n"
+          + "\013index_specs\030\001 \003(\0132L.google.firestore.ad"
+          + "min.v1.Index.IndexField.SearchConfig.SearchTextIndexSpecB\003\340A\002\0328\n\r"
+          + "SearchGeoSpec\022\'\n"
+          + "\032geo_json_indexing_disabled\030\001 \001(\010B\003\340A\001\"?\n\r"
+          + "TextIndexType\022\037\n"
+          + "\033TEXT_INDEX_TYPE_UNSPECIFIED\020\000\022\r\n"
+          + "\tTOKENIZED\020\001\"D\n\r"
+          + "TextMatchType\022\037\n"
+          + "\033TEXT_MATCH_TYPE_UNSPECIFIED\020\000\022\022\n"
+          + "\016MATCH_GLOBALLY\020\001\"=\n"
           + "\005Order\022\025\n"
           + "\021ORDER_UNSPECIFIED\020\000\022\r\n"
           + "\tASCENDING\020\001\022\016\n\n"
@@ -102,8 +147,10 @@ public final class IndexProto extends com.google.protobuf.GeneratedFile {
           + "\013ArrayConfig\022\034\n"
           + "\030ARRAY_CONFIG_UNSPECIFIED\020\000\022\014\n"
           + "\010CONTAINS\020\001B\014\n\n"
-          + "value_mode\"i\n"
-          + "\n"
+          + "value_mode\032`\n"
+          + "\022SearchIndexOptions\022\032\n\r"
+          + "text_language\030\001 \001(\tB\003\340A\001\022.\n"
+          + "!text_language_override_field_path\030\002 \001(\tB\003\340A\001\"i\n\n"
           + "QueryScope\022\033\n"
           + "\027QUERY_SCOPE_UNSPECIFIED\020\000\022\016\n\n"
           + "COLLECTION\020\001\022\024\n"
@@ -123,13 +170,13 @@ public final class IndexProto extends com.google.protobuf.GeneratedFile {
           + "SPARSE_ALL\020\001\022\016\n\n"
           + "SPARSE_ANY\020\002\022\t\n"
           + "\005DENSE\020\003:z\352Aw\n"
-          + "\036firestore.googleapis.com/Index\022Uprojects/{project}/databas"
-          + "es/{database}/collectionGroups/{collection}/indexes/{index}B\331\001\n"
+          + "\036firestore.googleapis.com/Index\022Uprojects/{proje"
+          + "ct}/databases/{database}/collectionGroups/{collection}/indexes/{index}B\331\001\n"
           + "\035com.google.firestore.admin.v1B\n"
-          + "IndexProtoP\001Z9cloud.google.com/go/firestore/apiv1/admin/adminpb;a"
-          + "dminpb\242\002\004GCFS\252\002\037Google.Cloud.Firestore.A"
-          + "dmin.V1\312\002\037Google\\Cloud\\Firestore\\Admin\\V"
-          + "1\352\002#Google::Cloud::Firestore::Admin::V1b\006proto3"
+          + "IndexProtoP\001Z9cloud.google.com/go/firestore/apiv1/admi"
+          + "n/adminpb;adminpb\242\002\004GCFS\252\002\037Google.Cloud."
+          + "Firestore.Admin.V1\312\002\037Google\\Cloud\\Firest"
+          + "ore\\Admin\\V1\352\002#Google::Cloud::Firestore::Admin::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -152,6 +199,7 @@ public final class IndexProto extends com.google.protobuf.GeneratedFile {
               "Multikey",
               "ShardCount",
               "Unique",
+              "SearchIndexOptions",
             });
     internal_static_google_firestore_admin_v1_Index_IndexField_descriptor =
         internal_static_google_firestore_admin_v1_Index_descriptor.getNestedType(0);
@@ -159,7 +207,7 @@ public final class IndexProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_firestore_admin_v1_Index_IndexField_descriptor,
             new java.lang.String[] {
-              "FieldPath", "Order", "ArrayConfig", "VectorConfig", "ValueMode",
+              "FieldPath", "Order", "ArrayConfig", "VectorConfig", "SearchConfig", "ValueMode",
             });
     internal_static_google_firestore_admin_v1_Index_IndexField_VectorConfig_descriptor =
         internal_static_google_firestore_admin_v1_Index_IndexField_descriptor.getNestedType(0);
@@ -176,6 +224,49 @@ public final class IndexProto extends com.google.protobuf.GeneratedFile {
         new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
             internal_static_google_firestore_admin_v1_Index_IndexField_VectorConfig_FlatIndex_descriptor,
             new java.lang.String[] {});
+    internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_descriptor =
+        internal_static_google_firestore_admin_v1_Index_IndexField_descriptor.getNestedType(1);
+    internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_descriptor,
+            new java.lang.String[] {
+              "TextSpec", "GeoSpec",
+            });
+    internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextIndexSpec_descriptor =
+        internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_descriptor
+            .getNestedType(0);
+    internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextIndexSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextIndexSpec_descriptor,
+            new java.lang.String[] {
+              "IndexType", "MatchType",
+            });
+    internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextSpec_descriptor =
+        internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_descriptor
+            .getNestedType(1);
+    internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchTextSpec_descriptor,
+            new java.lang.String[] {
+              "IndexSpecs",
+            });
+    internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchGeoSpec_descriptor =
+        internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_descriptor
+            .getNestedType(2);
+    internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchGeoSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_firestore_admin_v1_Index_IndexField_SearchConfig_SearchGeoSpec_descriptor,
+            new java.lang.String[] {
+              "GeoJsonIndexingDisabled",
+            });
+    internal_static_google_firestore_admin_v1_Index_SearchIndexOptions_descriptor =
+        internal_static_google_firestore_admin_v1_Index_descriptor.getNestedType(1);
+    internal_static_google_firestore_admin_v1_Index_SearchIndexOptions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+            internal_static_google_firestore_admin_v1_Index_SearchIndexOptions_descriptor,
+            new java.lang.String[] {
+              "TextLanguage", "TextLanguageOverrideFieldPath",
+            });
     descriptor.resolveAllFeaturesImmutable();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();

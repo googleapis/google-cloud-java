@@ -121,6 +121,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .setMultikey(true)
             .setShardCount(-495377042)
             .setUnique(true)
+            .setSearchIndexOptions(Index.SearchIndexOptions.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -177,6 +178,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .setMultikey(true)
             .setShardCount(-495377042)
             .setUnique(true)
+            .setSearchIndexOptions(Index.SearchIndexOptions.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -337,6 +339,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .setMultikey(true)
             .setShardCount(-495377042)
             .setUnique(true)
+            .setSearchIndexOptions(Index.SearchIndexOptions.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -385,6 +388,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .setMultikey(true)
             .setShardCount(-495377042)
             .setUnique(true)
+            .setSearchIndexOptions(Index.SearchIndexOptions.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
