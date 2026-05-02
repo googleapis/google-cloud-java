@@ -14,20 +14,22 @@
  * limitations under the License.
  */
 package com.google.datastore.v1.client;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.fail;
+
 
 import java.util.List;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
+
+
 
 /** Tests for {@link DatastoreEmulator}. */
-@RunWith(JUnit4.class)
-public class DatastoreEmulatorTest {
+
+class DatastoreEmulatorTest {
 
   @Test
-  public void testLifecycle() throws DatastoreEmulatorException {
+  void testLifecycle() throws DatastoreEmulatorException {
     DatastoreEmulatorOptions options =
         new DatastoreEmulatorOptions.Builder().setCommand("/yar").setProjectId("myproject").build();
 

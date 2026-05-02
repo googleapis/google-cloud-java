@@ -15,19 +15,21 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static junit.framework.TestCase.assertFalse;
-import static junit.framework.TestCase.assertTrue;
+
 
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.ExceptionHandler;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /** Tests for {@link TransactionExceptionHandler}. */
-public class TransactionExceptionHandlerTest {
+class TransactionExceptionHandlerTest {
 
   @Test
-  public void testShouldTry() {
+  void testShouldTry() {
     ExceptionHandler handler =
         ExceptionHandler.newBuilder()
             .abortOn(RuntimeException.class)

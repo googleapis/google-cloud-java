@@ -15,14 +15,21 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+
+
+
+
+
+
 
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
@@ -34,11 +41,11 @@ import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.datastore.v1.client.DatastoreFactory;
 import org.easymock.EasyMock;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 
-public class DatastoreOptionsTest {
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class DatastoreOptionsTest {
 
   private static final String PROJECT_ID = "project-id";
   private static final String DATABASE_ID = "database-id";
@@ -48,8 +55,8 @@ public class DatastoreOptionsTest {
   private DatastoreRpc datastoreRpc;
   private DatastoreOptions.Builder options;
 
-  @Before
-  public void setUp() {
+  @BeforeEach
+  void setUp() {
     datastoreRpcFactory = EasyMock.createMock(DatastoreRpcFactory.class);
     datastoreRpc = EasyMock.createMock(DatastoreRpc.class);
     options =
@@ -67,22 +74,22 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testProjectId() {
+  void testProjectId() {
     assertEquals(PROJECT_ID, options.build().getProjectId());
   }
 
   @Test
-  public void testDatabaseId() {
+  void testDatabaseId() {
     assertEquals(DATABASE_ID, options.build().getDatabaseId());
   }
 
   @Test
-  public void testHost() {
+  void testHost() {
     assertEquals("http://localhost:" + PORT, options.build().getHost());
   }
 
   @Test
-  public void testOpenTelemetryOptionsDefault() {
+  void testOpenTelemetryOptionsDefault() {
     DatastoreOpenTelemetryOptions o1 = DatastoreOpenTelemetryOptions.newBuilder().build();
     assertFalse(o1.isMetricsEnabled());
     assertFalse(o1.isTracingEnabled());
@@ -90,7 +97,7 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testOpenTelemetryOptionsEnabled() {
+  void testOpenTelemetryOptionsEnabled() {
     options.setOpenTelemetryOptions(
         DatastoreOpenTelemetryOptions.newBuilder()
             .setTracingEnabled(true)
@@ -102,7 +109,7 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testOpenTelemetryOptionsDisabled() {
+  void testOpenTelemetryOptionsDisabled() {
     options.setOpenTelemetryOptions(
         DatastoreOpenTelemetryOptions.newBuilder()
             .setTracingEnabled(false)
@@ -114,7 +121,7 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testOpenTelemetryTracingEnabled() {
+  void testOpenTelemetryTracingEnabled() {
     DatastoreOpenTelemetryOptions o1 =
         DatastoreOpenTelemetryOptions.newBuilder().setTracingEnabled(false).build();
     assertFalse(o1.isTracingEnabled());
@@ -127,7 +134,7 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testOpenTelemetryMetricsEnabled() {
+  void testOpenTelemetryMetricsEnabled() {
     DatastoreOpenTelemetryOptions o1 =
         DatastoreOpenTelemetryOptions.newBuilder().setMetricsEnabled(false).build();
     assertFalse(o1.isMetricsEnabled());
@@ -140,7 +147,7 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testTelemetrySignalsMixedEnabled() {
+  void testTelemetrySignalsMixedEnabled() {
     DatastoreOpenTelemetryOptions o1 =
         DatastoreOpenTelemetryOptions.newBuilder()
             .setTracingEnabled(true)
@@ -161,7 +168,7 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testOpenTelemetryMetricsAndCloudMonitoringMixed() {
+  void testOpenTelemetryMetricsAndCloudMonitoringMixed() {
     DatastoreOpenTelemetryOptions o1 =
         DatastoreOpenTelemetryOptions.newBuilder()
             .setMetricsEnabled(true)
@@ -182,7 +189,7 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testOpenTelemetryOptionsDefaultInstance() {
+  void testOpenTelemetryOptionsDefaultInstance() {
     DatastoreOpenTelemetryOptions telemetryOptions =
         DatastoreOpenTelemetryOptions.newBuilder().build();
     assertThat(telemetryOptions.getOpenTelemetry())
@@ -190,7 +197,7 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testOpenTelemetryOptionsSetNullThrowsNPE() {
+  void testOpenTelemetryOptionsSetNullThrowsNPE() {
     try {
       DatastoreOpenTelemetryOptions.newBuilder().setOpenTelemetry(null);
       fail("Expected NullPointerException");
@@ -200,18 +207,18 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testNamespace() {
+  void testNamespace() {
     assertTrue(options.build().getNamespace().isEmpty());
     assertEquals("ns1", options.setNamespace("ns1").build().getNamespace());
   }
 
   @Test
-  public void testDatastore() {
+  void testDatastore() {
     assertSame(datastoreRpc, options.build().getRpc());
   }
 
   @Test
-  public void testGrpcDefaultChannelConfigurations() {
+  void testGrpcDefaultChannelConfigurations() {
     DatastoreOptions datastoreOptions =
         DatastoreOptions.newBuilder()
             .setServiceRpcFactory(datastoreRpcFactory)
@@ -236,7 +243,7 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testCustomChannelAndCredentials() {
+  void testCustomChannelAndCredentials() {
     InstantiatingGrpcChannelProvider channelProvider =
         DatastoreSettings.defaultGrpcTransportProviderBuilder()
             .setChannelPoolSettings(
@@ -259,7 +266,7 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testInvalidConfigForHttp() {
+  void testInvalidConfigForHttp() {
     DatastoreOptions.Builder options =
         DatastoreOptions.newBuilder()
             .setServiceRpcFactory(datastoreRpcFactory)
@@ -276,11 +283,11 @@ public class DatastoreOptionsTest {
                     .build())
             .setCredentials(NoCredentials.getInstance())
             .setHost("http://localhost:" + PORT);
-    Assert.assertThrows(IllegalArgumentException.class, options::build);
+    assertThrows(IllegalArgumentException.class, options::build);
   }
 
   @Test
-  public void testTransport() {
+  void testTransport() {
     // default http transport
     assertThat(options.build().getTransportOptions()).isInstanceOf(HttpTransportOptions.class);
 
@@ -297,7 +304,7 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testHostWithGrpcAndHttp() {
+  void testHostWithGrpcAndHttp() {
     DatastoreOptions grpcTransportOptions =
         DatastoreOptions.newBuilder()
             .setTransportOptions(GrpcTransportOptions.newBuilder().build())
@@ -334,7 +341,7 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     DatastoreOptions original = options.setNamespace("ns1").build();
     DatastoreOptions copy = original.toBuilder().build();
     assertEquals(original.getProjectId(), copy.getProjectId());
@@ -352,7 +359,7 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void builtInMetricsExport_isDisabledByDefault() {
+  void builtInMetricsExport_isDisabledByDefault() {
     DatastoreOptions defaultOptions =
         DatastoreOptions.newBuilder().setProjectId(PROJECT_ID).build();
     assertThat(

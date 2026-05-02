@@ -15,25 +15,29 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
 
-public class StringValueTest {
+
+
+import org.junit.jupiter.api.Test;
+
+class StringValueTest {
 
   private static final String CONTENT = "hello world";
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     StringValue value = StringValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @Test
-  public void testOf() {
+  void testOf() {
     StringValue value = StringValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -41,7 +45,7 @@ public class StringValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     StringValue.Builder builder = StringValue.newBuilder(CONTENT);
     StringValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

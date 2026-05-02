@@ -15,23 +15,24 @@
  */
 
 package com.google.cloud.datastore.aggregation;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.cloud.datastore.aggregation.Aggregation.avg;
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertThrows;
+
 
 import com.google.datastore.v1.AggregationQuery;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class AvgAggregationTest {
+class AvgAggregationTest {
 
   @Test
-  public void shouldThrowExceptionWhenPropertyReferenceIsNull() {
+  void shouldThrowExceptionWhenPropertyReferenceIsNull() {
     assertThrows(IllegalArgumentException.class, () -> avg(null).build());
   }
 
   @Test
-  public void testAvgAggregationWithDefaultValues() {
+  void testAvgAggregationWithDefaultValues() {
     AggregationQuery.Aggregation avgAggregation = avg("marks").build().toPb();
 
     assertThat(avgAggregation.getAvg().getProperty().getName()).isEqualTo("marks");
@@ -39,7 +40,7 @@ public class AvgAggregationTest {
   }
 
   @Test
-  public void testCountAggregationWithAlias() {
+  void testCountAggregationWithAlias() {
     AggregationQuery.Aggregation avgAggregation = avg("marks").as("total_marks").build().toPb();
 
     assertThat(avgAggregation.getAvg().getProperty().getName()).isEqualTo("marks");
@@ -47,7 +48,7 @@ public class AvgAggregationTest {
   }
 
   @Test
-  public void testEqualsWithAliasVariations() {
+  void testEqualsWithAliasVariations() {
     AvgAggregation.Builder aggregationWithAlias1 = avg("marks").as("total");
     AvgAggregation.Builder aggregationWithAlias2 = avg("marks").as("total");
     AvgAggregation.Builder aggregationWithoutAlias1 = avg("marks");
@@ -73,7 +74,7 @@ public class AvgAggregationTest {
   }
 
   @Test
-  public void testEqualsWithPropertyReferenceVariations() {
+  void testEqualsWithPropertyReferenceVariations() {
     AvgAggregation totalMarks1 = avg("marks").build();
     AvgAggregation totalMarks2 = avg("marks").build();
 

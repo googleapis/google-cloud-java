@@ -15,6 +15,7 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -26,7 +27,7 @@ import com.google.cloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 
-public class SerializationTest extends BaseSerializationTest {
+class SerializationTest extends BaseSerializationTest {
 
   private static final IncompleteKey INCOMPLETE_KEY1 =
       IncompleteKey.newBuilder("ds", "k").addAncestor(PathElement.of("p", 1)).build();

@@ -15,26 +15,30 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
 
-public class DoubleValueTest {
+
+
+import org.junit.jupiter.api.Test;
+
+class DoubleValueTest {
 
   private static final Double CONTENT = 1.25;
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     DoubleValue value = DoubleValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testOf() {
+  void testOf() {
     DoubleValue value = DoubleValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -42,7 +46,7 @@ public class DoubleValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     DoubleValue.Builder builder = DoubleValue.newBuilder(CONTENT);
     DoubleValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

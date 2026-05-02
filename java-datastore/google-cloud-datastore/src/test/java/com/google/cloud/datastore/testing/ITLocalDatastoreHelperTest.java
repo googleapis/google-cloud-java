@@ -15,14 +15,22 @@
  */
 
 package com.google.cloud.datastore.testing;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
+
+
+
+
+
+
 
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.NoCredentials;
@@ -38,33 +46,33 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Duration;
 import java.util.concurrent.TimeoutException;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.AfterEach;
 
-@RunWith(JUnit4.class)
-public class ITLocalDatastoreHelperTest {
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+
+
+
+class ITLocalDatastoreHelperTest {
 
   private static final double TOLERANCE = 0.00001;
   private static final String PROJECT_ID_PREFIX = "test-project-";
   private static final String NAMESPACE = "namespace";
   private Path dataDir;
 
-  @Before
-  public void setUp() throws IOException {
+  @BeforeEach
+  void setUp() throws IOException {
     dataDir = Files.createTempDirectory("gcd");
   }
 
-  @After
-  public void tearDown() throws IOException {
+  @AfterEach
+  void tearDown() throws IOException {
     LocalDatastoreHelper.deleteRecursively(dataDir);
   }
 
   @Test
-  public void testCreate() {
+  void testCreate() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create(0.75);
     assertTrue(Math.abs(0.75 - helper.getConsistency()) < TOLERANCE);
     assertTrue(helper.getProjectId().startsWith(PROJECT_ID_PREFIX));
@@ -74,7 +82,7 @@ public class ITLocalDatastoreHelperTest {
   }
 
   @Test
-  public void testCreateWithBuilder() {
+  void testCreateWithBuilder() {
     LocalDatastoreHelper helper =
         LocalDatastoreHelper.newBuilder()
             .setConsistency(0.75)
@@ -95,7 +103,7 @@ public class ITLocalDatastoreHelperTest {
   }
 
   @Test
-  public void testCreateWithCustomProjectId() {
+  void testCreateWithCustomProjectId() {
     String customProjectId = "custom-project-id";
     LocalDatastoreHelper helper =
         LocalDatastoreHelper.newBuilder().setProjectId(customProjectId).build();
@@ -103,7 +111,7 @@ public class ITLocalDatastoreHelperTest {
   }
 
   @Test
-  public void testCreateWithToBuilder() throws IOException {
+  void testCreateWithToBuilder() throws IOException {
     LocalDatastoreHelper helper =
         LocalDatastoreHelper.newBuilder()
             .setConsistency(0.75)
@@ -138,7 +146,7 @@ public class ITLocalDatastoreHelperTest {
   }
 
   @Test
-  public void testCreatePort() {
+  void testCreatePort() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create(0.75, 8888);
     DatastoreOptions options = helper.setNamespace(NAMESPACE).build();
     assertTrue(options.getHost().endsWith("8888"));
@@ -155,7 +163,7 @@ public class ITLocalDatastoreHelperTest {
   }
 
   @Test
-  public void testSetDatabaseId() {
+  void testSetDatabaseId() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create(0.75, 8888);
     DatastoreOptions options =
         helper.setNamespace(NAMESPACE).setDatabaseId("new-database-id").build();
@@ -163,7 +171,7 @@ public class ITLocalDatastoreHelperTest {
   }
 
   @Test
-  public void testOptions() {
+  void testOptions() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create();
     DatastoreOptions options = helper.getOptions();
     assertTrue(options.getProjectId().startsWith(PROJECT_ID_PREFIX));
@@ -177,14 +185,14 @@ public class ITLocalDatastoreHelperTest {
   }
 
   @Test
-  public void testDefaultHttpTransportOptions() {
+  void testDefaultHttpTransportOptions() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create();
     DatastoreOptions options = helper.getOptions();
     assertThat(options.getTransportOptions()).isInstanceOf(HttpTransportOptions.class);
   }
 
   @Test
-  public void testSetGrpcTransportOptions() {
+  void testSetGrpcTransportOptions() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create();
     DatastoreOptions options =
         helper.getGrpcTransportOptions(GrpcTransportOptions.newBuilder().build());
@@ -194,46 +202,40 @@ public class ITLocalDatastoreHelperTest {
   }
 
   @Test
-  public void testStartStopReset() throws IOException, InterruptedException, TimeoutException {
-    try {
-      LocalDatastoreHelper helper = LocalDatastoreHelper.create();
-      helper.start();
-      Datastore datastore = helper.getOptions().getService();
-      Key key = datastore.newKeyFactory().setKind("kind").newKey("name");
-      datastore.put(Entity.newBuilder(key).build());
-      assertNotNull(datastore.get(key));
-      helper.reset();
-      assertNull(datastore.get(key));
-      helper.stopDuration(Duration.ofMinutes(1));
-      datastore.get(key);
-      Assert.fail();
-    } catch (DatastoreException ex) {
-      assertNotNull(ex.getMessage());
-    }
+  void testStartStopReset() throws IOException, InterruptedException, TimeoutException {
+    LocalDatastoreHelper helper = LocalDatastoreHelper.create();
+    helper.start();
+    Datastore datastore = helper.getOptions().getService();
+    Key key = datastore.newKeyFactory().setKind("kind").newKey("name");
+    datastore.put(Entity.newBuilder(key).build());
+    assertNotNull(datastore.get(key));
+    helper.reset();
+    assertNull(datastore.get(key));
+    helper.stopDuration(Duration.ofMinutes(1));
+    
+    DatastoreException ex = assertThrows(DatastoreException.class, () -> datastore.get(key));
+    assertNotNull(ex.getMessage());
   }
 
   @Test
-  public void testStartStopResetWithBuilder()
+  void testStartStopResetWithBuilder()
       throws IOException, InterruptedException, TimeoutException {
-    try {
-      LocalDatastoreHelper helper = LocalDatastoreHelper.newBuilder().build();
-      helper.start();
-      Datastore datastore = helper.getOptions().getService();
-      Key key = datastore.newKeyFactory().setKind("kind").newKey("name");
-      datastore.put(Entity.newBuilder(key).build());
-      assertNotNull(datastore.get(key));
-      helper.reset();
-      assertNull(datastore.get(key));
-      helper.stopDuration(Duration.ofMinutes(1));
-      datastore.get(key);
-      Assert.fail();
-    } catch (DatastoreException ex) {
-      assertNotNull(ex.getMessage());
-    }
+    LocalDatastoreHelper helper = LocalDatastoreHelper.newBuilder().build();
+    helper.start();
+    Datastore datastore = helper.getOptions().getService();
+    Key key = datastore.newKeyFactory().setKind("kind").newKey("name");
+    datastore.put(Entity.newBuilder(key).build());
+    assertNotNull(datastore.get(key));
+    helper.reset();
+    assertNull(datastore.get(key));
+    helper.stopDuration(Duration.ofMinutes(1));
+    
+    DatastoreException ex = assertThrows(DatastoreException.class, () -> datastore.get(key));
+    assertNotNull(ex.getMessage());
   }
 
   @Test
-  public void testCreateWithFirestoreInDatastoreMode()
+  void testCreateWithFirestoreInDatastoreMode()
       throws IOException, InterruptedException, TimeoutException {
     LocalDatastoreHelper helper =
         LocalDatastoreHelper.newBuilder().setFirestoreInDatastoreMode(true).build();

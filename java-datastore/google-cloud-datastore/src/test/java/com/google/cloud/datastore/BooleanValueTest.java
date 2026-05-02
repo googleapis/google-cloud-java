@@ -15,23 +15,27 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
 
-public class BooleanValueTest {
+
+
+import org.junit.jupiter.api.Test;
+
+class BooleanValueTest {
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     BooleanValue value = BooleanValue.of(true);
     assertEquals(value, value.toBuilder().build());
   }
 
   @Test
-  public void testOf() {
+  void testOf() {
     BooleanValue value = BooleanValue.of(false);
     assertFalse(value.get());
     assertFalse(value.excludeFromIndexes());
@@ -39,7 +43,7 @@ public class BooleanValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     BooleanValue.Builder builder = BooleanValue.newBuilder(true);
     BooleanValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertTrue(value.get());

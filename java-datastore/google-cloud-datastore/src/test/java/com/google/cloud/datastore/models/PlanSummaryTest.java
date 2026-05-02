@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package com.google.cloud.datastore.models;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import com.google.cloud.Structs;
 import com.google.common.collect.Lists;
@@ -21,9 +22,9 @@ import com.google.common.testing.EqualsTester;
 import com.google.common.truth.Truth;
 import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class PlanSummaryTest {
+class PlanSummaryTest {
   private final Struct struct1 =
       Struct.newBuilder()
           .putFields("key", Value.newBuilder().setStringValue("val").build())
@@ -41,14 +42,14 @@ public class PlanSummaryTest {
   private final PlanSummary planSummary = new PlanSummary(proto);
 
   @Test
-  public void testModel() {
+  void testModel() {
     Truth.assertThat(planSummary.getIndexesUsed())
         .isEqualTo(Lists.newArrayList(Structs.asMap(struct1), Structs.asMap(struct2)));
     Truth.assertThat(planSummary.getIndexesUsed().get(0).get("key")).isEqualTo("val");
   }
 
   @Test
-  public void testEqualsAndHashcode() {
+  void testEqualsAndHashcode() {
     com.google.datastore.v1.PlanSummary proto2 =
         com.google.datastore.v1.PlanSummary.newBuilder().addIndexesUsed(struct1).build();
     PlanSummary planSummary2 = new PlanSummary(proto2);

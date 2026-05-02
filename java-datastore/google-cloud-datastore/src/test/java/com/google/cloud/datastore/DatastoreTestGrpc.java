@@ -21,41 +21,35 @@ import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.common.truth.Truth;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Arrays;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 
-@RunWith(Parameterized.class)
-public class DatastoreTestGrpc extends AbstractDatastoreTest {
+class DatastoreTestGrpc extends AbstractDatastoreTest {
 
   private static final LocalDatastoreHelper helper = LocalDatastoreHelper.create(1.0, 9090);
 
-  private static DatastoreOptions options =
-      helper.getGrpcTransportOptions(GrpcTransportOptions.newBuilder().build());
-  private static Datastore datastore = options.getService();
+  private static DatastoreOptions staticOptions;
+  private static Datastore staticDatastore;
 
-  public DatastoreTestGrpc(DatastoreOptions options, Datastore datastore) {
-    super(options, datastore);
-  }
-
-  @Parameterized.Parameters(name = "data options: {0}")
-  public static Iterable<Object[]> data() {
-    return Arrays.asList(new Object[][] {{options, datastore}});
-  }
-
-  @BeforeClass
-  public static void beforeClass() throws IOException, InterruptedException {
+  @BeforeAll
+  static void beforeAll() throws IOException, InterruptedException {
     helper.start();
-    options = helper.getGrpcTransportOptions(GrpcTransportOptions.newBuilder().build());
-    datastore = options.getService();
+    staticOptions = helper.getGrpcTransportOptions(GrpcTransportOptions.newBuilder().build());
+    staticDatastore = staticOptions.getService();
   }
 
-  @AfterClass
-  public static void afterClass() throws Exception {
-    datastore.close();
-    Truth.assertThat(datastore.isClosed()).isTrue();
+  @BeforeEach
+  void setUp() {
+    this.options = staticOptions;
+    this.datastore = staticDatastore;
+    initialize();
+  }
+
+  @AfterAll
+  static void afterAll() throws Exception {
+    staticDatastore.close();
+    Truth.assertThat(staticDatastore.isClosed()).isTrue();
     helper.stopDuration(Duration.ofMinutes(1));
   }
 }

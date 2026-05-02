@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertThrows;
+
 
 import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.NoCredentials;
@@ -49,9 +51,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import org.easymock.EasyMock;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
@@ -60,8 +62,8 @@ import org.junit.runners.Parameterized.Parameters;
  * transaction latency and per-attempt metrics are correctly recorded via the {@link
  * DatastoreMetricsRecorder}.
  */
-@RunWith(Parameterized.class)
-public class DatastoreImplMetricsTest {
+
+class DatastoreImplMetricsTest {
 
   private static final String PROJECT_ID = "test-project";
   private static final String DATABASE_ID = "test-database";
@@ -69,7 +71,7 @@ public class DatastoreImplMetricsTest {
   private InMemoryMetricReader metricReader;
   private DatastoreRpc rpcMock;
   private Datastore datastore;
-  private final TelemetryConstants.Transport transport;
+  private TelemetryConstants.Transport transport;
 
   /**
    * We parameterize this test to run against both GRPC and HTTP transports. This ensures that
@@ -78,17 +80,12 @@ public class DatastoreImplMetricsTest {
    * GAX handles them natively for gRPC). Parameterizing allows us to automatically test both
    * transports for any new metrics added.
    */
-  @Parameters(name = "transport={0}")
   public static List<TelemetryConstants.Transport> data() {
     return Arrays.asList(TelemetryConstants.Transport.GRPC, TelemetryConstants.Transport.HTTP);
   }
 
-  public DatastoreImplMetricsTest(TelemetryConstants.Transport transport) {
-    this.transport = transport;
-  }
-
-  @Before
-  public void setUp() {
+  @BeforeEach
+  void setUp() {
     // Use delta temporality so each collectAllMetrics() call returns only new data and resets.
     metricReader = InMemoryMetricReader.createDelta();
     SdkMeterProvider meterProvider =
@@ -131,7 +128,7 @@ public class DatastoreImplMetricsTest {
   }
 
   @Test
-  public void runInTransaction_recordsLatencyOnSuccess() {
+  void runInTransaction_recordsLatencyOnSuccess() {
     EasyMock.expect(rpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
         .andReturn(BeginTransactionResponse.getDefaultInstance());
     EasyMock.expect(rpcMock.commit(EasyMock.anyObject(CommitRequest.class)))
@@ -170,7 +167,7 @@ public class DatastoreImplMetricsTest {
   }
 
   @Test
-  public void runInTransaction_recordsPerAttemptCountOnSuccess() {
+  void runInTransaction_recordsPerAttemptCountOnSuccess() {
     EasyMock.expect(rpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
         .andReturn(BeginTransactionResponse.getDefaultInstance());
     EasyMock.expect(rpcMock.commit(EasyMock.anyObject(CommitRequest.class)))
@@ -209,7 +206,7 @@ public class DatastoreImplMetricsTest {
   }
 
   @Test
-  public void runInTransaction_recordsPerAttemptOnRetry() {
+  void runInTransaction_recordsPerAttemptOnRetry() {
     String abortedStatusCodeString = StatusCode.Code.ABORTED.toString();
     String okStatusCodeString = StatusCode.Code.OK.toString();
     // First attempt: begin -> ABORTED -> rollback
@@ -348,7 +345,7 @@ public class DatastoreImplMetricsTest {
   }
 
   @Test
-  public void runInTransaction_recordsStatusCodeOnFailure() {
+  void runInTransaction_recordsStatusCodeOnFailure() {
     String abortedStatusCodeString = StatusCode.Code.ABORTED.toString();
     String cancelledStatusCodeString = StatusCode.Code.CANCELLED.toString();
 
@@ -478,7 +475,7 @@ public class DatastoreImplMetricsTest {
   }
 
   @Test
-  public void runInTransaction_withTransactionOptions_recordsMetrics() {
+  void runInTransaction_withTransactionOptions_recordsMetrics() {
     EasyMock.expect(rpcMock.beginTransaction(EasyMock.anyObject(BeginTransactionRequest.class)))
         .andReturn(BeginTransactionResponse.getDefaultInstance());
     EasyMock.expect(rpcMock.commit(EasyMock.anyObject(CommitRequest.class)))
@@ -504,7 +501,7 @@ public class DatastoreImplMetricsTest {
   }
 
   @Test
-  public void lookup_recordsOperationAndAttemptMetrics() {
+  void lookup_recordsOperationAndAttemptMetrics() {
     // Use `lookup` as a simple RPC test to test that metrics are recorded for operation
     // and attempt. Any RPC could have worked (there is no specific reason for lookup)
     EasyMock.expect(rpcMock.lookup(EasyMock.anyObject(LookupRequest.class)))
@@ -576,7 +573,7 @@ public class DatastoreImplMetricsTest {
   }
 
   @Test
-  public void lookup_recordsFailureStatusOnError() {
+  void lookup_recordsFailureStatusOnError() {
     // Use `lookup` as a simple RPC test to test that metrics are recorded for operation
     // and attempt. Any RPC could have worked (there is no specific reason for lookup)
     StatusCode.Code unavailableStatusCode = StatusCode.Code.UNAVAILABLE;

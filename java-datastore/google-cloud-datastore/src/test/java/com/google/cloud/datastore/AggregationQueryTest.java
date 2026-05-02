@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.cloud.datastore.AggregationQuery.Mode.GQL;
 import static com.google.cloud.datastore.AggregationQuery.Mode.STRUCTURED;
@@ -22,16 +24,16 @@ import static com.google.cloud.datastore.aggregation.Aggregation.avg;
 import static com.google.cloud.datastore.aggregation.Aggregation.count;
 import static com.google.cloud.datastore.aggregation.Aggregation.sum;
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThrows;
+
+
 
 import com.google.cloud.datastore.aggregation.AvgAggregation;
 import com.google.cloud.datastore.aggregation.CountAggregation;
 import com.google.cloud.datastore.aggregation.SumAggregation;
 import com.google.common.collect.ImmutableSet;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class AggregationQueryTest {
+class AggregationQueryTest {
 
   private static final String KIND = "Task";
   private static final String NAMESPACE = "ns";
@@ -44,7 +46,7 @@ public class AggregationQueryTest {
           .build();
 
   @Test
-  public void testAggregations() {
+  void testAggregations() {
     AggregationQuery aggregationQuery =
         Query.newAggregationQueryBuilder()
             .setNamespace(NAMESPACE)
@@ -60,7 +62,7 @@ public class AggregationQueryTest {
   }
 
   @Test
-  public void testAggregationBuilderWithMultipleAggregationsOneByOne() {
+  void testAggregationBuilderWithMultipleAggregationsOneByOne() {
     AggregationQuery aggregationQuery =
         Query.newAggregationQueryBuilder()
             .setNamespace(NAMESPACE)
@@ -79,7 +81,7 @@ public class AggregationQueryTest {
   }
 
   @Test
-  public void testAggregationBuilderWithMultipleAggregationsTogether() {
+  void testAggregationBuilderWithMultipleAggregationsTogether() {
     AggregationQuery aggregationQuery =
         Query.newAggregationQueryBuilder()
             .setNamespace(NAMESPACE)
@@ -97,7 +99,7 @@ public class AggregationQueryTest {
   }
 
   @Test
-  public void testAggregationBuilderWithMultipleAggregationsConfiguredThroughConstructor() {
+  void testAggregationBuilderWithMultipleAggregationsConfiguredThroughConstructor() {
     AggregationQuery aggregationQuery =
         Query.newAggregationQueryBuilder()
             .setNamespace(NAMESPACE)
@@ -117,7 +119,7 @@ public class AggregationQueryTest {
   }
 
   @Test
-  public void testAggregationBuilderWithDuplicateAggregations() {
+  void testAggregationBuilderWithDuplicateAggregations() {
     AggregationQuery aggregationQueryWithDuplicateCounts =
         Query.newAggregationQueryBuilder()
             .setNamespace(NAMESPACE)
@@ -149,7 +151,7 @@ public class AggregationQueryTest {
   }
 
   @Test
-  public void testAggregationQueryBuilderWithoutNamespace() {
+  void testAggregationQueryBuilderWithoutNamespace() {
     AggregationQuery aggregationQuery =
         Query.newAggregationQueryBuilder()
             .addAggregation(count().as("total"))
@@ -164,31 +166,31 @@ public class AggregationQueryTest {
   }
 
   @Test
-  public void testAggregationQueryBuilderWithoutNestedQuery() {
+  void testAggregationQueryBuilderWithoutNestedQuery() {
     assertThrows(
-        "Nested query is required for an aggregation query to run",
         IllegalArgumentException.class,
         () ->
             Query.newAggregationQueryBuilder()
                 .setNamespace(NAMESPACE)
                 .addAggregation(count().as("total"))
-                .build());
+                .build(),
+        "Nested query is required for an aggregation query to run");
   }
 
   @Test
-  public void testAggregationQueryBuilderWithoutAggregation() {
+  void testAggregationQueryBuilderWithoutAggregation() {
     assertThrows(
-        "At least one aggregation is required for an aggregation query to run",
         IllegalArgumentException.class,
         () ->
             Query.newAggregationQueryBuilder()
                 .setNamespace(NAMESPACE)
                 .over(COMPLETED_TASK_QUERY)
-                .build());
+                .build(),
+        "At least one aggregation is required for an aggregation query to run");
   }
 
   @Test
-  public void testAggregationQueryBuilderWithGqlQuery() {
+  void testAggregationQueryBuilderWithGqlQuery() {
     GqlQuery<?> gqlQuery = Query.newGqlQueryBuilder("SELECT * FROM Task WHERE done = true").build();
 
     AggregationQuery aggregationQuery =
@@ -199,10 +201,10 @@ public class AggregationQueryTest {
   }
 
   @Test
-  public void testAggregationQueryBuilderWithoutProvidingAnyNestedQuery() {
+  void testAggregationQueryBuilderWithoutProvidingAnyNestedQuery() {
     assertThrows(
-        "Nested query is required for an aggregation query to run",
         IllegalArgumentException.class,
-        () -> Query.newAggregationQueryBuilder().setNamespace(NAMESPACE).build());
+        () -> Query.newAggregationQueryBuilder().setNamespace(NAMESPACE).build(),
+        "Nested query is required for an aggregation query to run");
   }
 }

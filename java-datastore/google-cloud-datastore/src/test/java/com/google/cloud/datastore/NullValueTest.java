@@ -15,24 +15,29 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
 
-public class NullValueTest {
+
+
+
+import org.junit.jupiter.api.Test;
+
+class NullValueTest {
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     NullValue value = NullValue.of();
     assertEquals(value, value.toBuilder().build());
   }
 
   @Test
-  public void testOf() {
+  void testOf() {
     NullValue value = NullValue.of();
     assertNull(value.get());
     assertFalse(value.excludeFromIndexes());
@@ -40,7 +45,7 @@ public class NullValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     NullValue.Builder builder = NullValue.newBuilder();
     NullValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertNull(value.get());

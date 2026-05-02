@@ -14,13 +14,20 @@
  * limitations under the License.
  */
 package com.google.cloud.datastore.it;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+
+
+
+
+
+
 
 import com.google.cloud.Timestamp;
 import com.google.cloud.datastore.Cursor;
@@ -66,15 +73,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 /*
  * Test created based on ConceptsTest to run against GraalVM checks
  */
-public class ITDatastoreConceptsTest {
+class ITDatastoreConceptsTest {
   private static final RemoteDatastoreHelper HELPER = RemoteDatastoreHelper.create();
   private static final DatastoreOptions OPTIONS = HELPER.getOptions();
   private static final FullEntity<IncompleteKey> TEST_FULL_ENTITY = FullEntity.newBuilder().build();
@@ -89,14 +96,14 @@ public class ITDatastoreConceptsTest {
   private static final String TASK_CONCEPTS = "TaskConcepts";
 
   /** Initializes Datastore for testing. */
-  @BeforeClass
-  public static void beforeClass() throws Exception {
+  @BeforeAll
+  static void beforeClass() throws Exception {
     datastore = OPTIONS.getService();
   }
 
   /** Cleans out any residual values. Also initializes global variables used for testing. */
-  @Before
-  public void setUp() {
+  @BeforeEach
+  void setUp() {
     StructuredQuery<Key> query = Query.newKeyQueryBuilder().build();
     QueryResults<Key> result = datastore.run(query);
     datastore.delete(Iterators.toArray(result, Key.class));
@@ -124,8 +131,8 @@ public class ITDatastoreConceptsTest {
     setUpQueryTests();
   }
 
-  @After
-  public void tearDown() {
+  @AfterEach
+  void tearDown() {
     KeyQuery taskQuery = Query.newKeyQueryBuilder().setKind(TASK_CONCEPTS).build();
     Key[] taskKeysToDelete = Iterators.toArray(datastore.run(taskQuery), Key.class);
     datastore.delete(taskKeysToDelete);
@@ -211,20 +218,20 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testIncompleteKey() {
+  void testIncompleteKey() {
     KeyFactory keyFactory = datastore.newKeyFactory().setKind(TASK_CONCEPTS);
     Key taskKey = datastore.allocateId(keyFactory.newKey());
     assertValidKey(taskKey);
   }
 
   @Test
-  public void testNamedKey() {
+  void testNamedKey() {
     Key taskKey = datastore.newKeyFactory().setKind(TASK_CONCEPTS).newKey("sampleTask");
     assertValidKey(taskKey);
   }
 
   @Test
-  public void testKeyWithParent() {
+  void testKeyWithParent() {
     Key taskKey =
         datastore
             .newKeyFactory()
@@ -235,7 +242,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testKeyWithMultilevelParent() {
+  void testKeyWithMultilevelParent() {
     KeyFactory keyFactory =
         datastore
             .newKeyFactory()
@@ -246,7 +253,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testEntityWithParent() {
+  void testEntityWithParent() {
     Key taskKey =
         datastore
             .newKeyFactory()
@@ -264,7 +271,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testProperties() {
+  void testProperties() {
     Entity task =
         Entity.newBuilder(taskKey)
             .set("category", "Personal")
@@ -280,7 +287,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testArrayValue() {
+  void testArrayValue() {
     Entity task =
         Entity.newBuilder(taskKey)
             .set("tags", "fun", "programming")
@@ -290,7 +297,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testBasicEntity() {
+  void testBasicEntity() {
     Key taskKey = datastore.newKeyFactory().setKind(TASK_CONCEPTS).newKey("sampleTask");
     Entity task =
         Entity.newBuilder(taskKey)
@@ -303,27 +310,27 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testUpsert() {
+  void testUpsert() {
     Entity task = Entity.newBuilder(keyFactory.newKey("sampleTask")).build();
     datastore.put(task);
     assertEquals(task, datastore.get(task.getKey()));
   }
 
   @Test
-  public void testInsert() {
+  void testInsert() {
     Key taskKey = datastore.add(FullEntity.newBuilder(keyFactory.newKey()).build()).getKey();
     assertEquals(FullEntity.newBuilder(taskKey).build(), datastore.get(taskKey));
   }
 
   @Test
-  public void testLookup() {
+  void testLookup() {
     datastore.put(testEntity);
     Entity task = datastore.get(taskKey);
     assertEquals(testEntity, task);
   }
 
   @Test
-  public void testUpdate() {
+  void testUpdate() {
     datastore.put(testEntity);
     Entity task = Entity.newBuilder(datastore.get(taskKey)).set("priority", 5).build();
     datastore.update(task);
@@ -331,14 +338,14 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testDelete() {
+  void testDelete() {
     datastore.put(testEntity);
     datastore.delete(taskKey);
     assertNull(datastore.get(taskKey));
   }
 
   @Test
-  public void testBatchUpsert() {
+  void testBatchUpsert() {
     FullEntity<IncompleteKey> task1 =
         FullEntity.newBuilder(keyFactory.newKey())
             .set("category", "Personal")
@@ -361,7 +368,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testBatchLookup() {
+  void testBatchLookup() {
     Key taskKey1 = keyFactory.newKey(1);
     Key taskKey2 = keyFactory.newKey(2);
     List<Entity> expectedTasks = setUpBatchTests(taskKey1, taskKey2);
@@ -371,7 +378,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testBatchDelete() {
+  void testBatchDelete() {
     Key taskKey1 = keyFactory.newKey(1);
     Key taskKey2 = keyFactory.newKey(2);
     setUpBatchTests(taskKey1, taskKey2);
@@ -381,7 +388,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testBasicQuery() {
+  void testBasicQuery() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -394,7 +401,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testRunQuery() {
+  void testRunQuery() {
     Query<Entity> query = Query.newEntityQueryBuilder().setKind(TASK_CONCEPTS).build();
     QueryResults<Entity> tasks = datastore.run(query);
     assertNotNull(tasks.next());
@@ -402,7 +409,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testPropertyFilter() {
+  void testPropertyFilter() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -412,7 +419,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testCompositeFilter() {
+  void testCompositeFilter() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -424,7 +431,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testKeyFilter() {
+  void testKeyFilter() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -434,7 +441,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testAscendingSort() {
+  void testAscendingSort() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -444,7 +451,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testDescendingSort() {
+  void testDescendingSort() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -454,7 +461,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testMultiSort() {
+  void testMultiSort() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -464,7 +471,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testKindlessQuery() {
+  void testKindlessQuery() {
     Key lastSeenKey = keyFactory.newKey("a");
 
     Query<Entity> query =
@@ -473,7 +480,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testAncestorQuery() {
+  void testAncestorQuery() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -485,7 +492,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testProjectionQuery() {
+  void testProjectionQuery() {
     Query<ProjectionEntity> query =
         Query.newProjectionEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -495,7 +502,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testRunProjectionQuery() {
+  void testRunProjectionQuery() {
     Query<ProjectionEntity> query =
         Query.newProjectionEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -514,13 +521,13 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testKeysOnlyQuery() {
+  void testKeysOnlyQuery() {
     Query<Key> query = Query.newKeyQueryBuilder().setKind(TASK_CONCEPTS).build();
     assertValidQuery(query);
   }
 
   @Test
-  public void testDistinctOnQuery() {
+  void testDistinctOnQuery() {
     Query<ProjectionEntity> query =
         Query.newProjectionEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -532,7 +539,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testArrayValueInequalityRange() {
+  void testArrayValueInequalityRange() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -545,7 +552,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testArrayValueEquality() {
+  void testArrayValueEquality() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -557,7 +564,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testInequalityRange() {
+  void testInequalityRange() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -569,7 +576,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testInequalityValid() {
+  void testInequalityValid() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -581,7 +588,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testEqualAndInequalityRange() {
+  void testEqualAndInequalityRange() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -595,7 +602,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testInequalitySort() {
+  void testInequalitySort() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -606,7 +613,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testInequalitySortInvalidNotSame() {
+  void testInequalitySortInvalidNotSame() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -617,7 +624,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testInequalitySortInvalidNotFirst() {
+  void testInequalitySortInvalidNotFirst() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -628,13 +635,13 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testLimit() {
+  void testLimit() {
     Query<Entity> query = Query.newEntityQueryBuilder().setKind(TASK_CONCEPTS).setLimit(5).build();
     assertValidQuery(query);
   }
 
   @Test
-  public void testCursorPaging() {
+  void testCursorPaging() {
     datastore.put(testEntity);
     Cursor nextPageCursor = cursorPaging(1, null);
     assertNotNull(nextPageCursor);
@@ -658,7 +665,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testEventualConsistentQuery() {
+  void testEventualConsistentQuery() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -671,7 +678,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testUnindexedPropertyQuery() {
+  void testUnindexedPropertyQuery() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -682,7 +689,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testExplodingProperties() {
+  void testExplodingProperties() {
     Entity task =
         Entity.newBuilder(taskKey)
             .set("tags", "fun", "programming", "learn")
@@ -693,7 +700,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testTransactionalUpdate() {
+  void testTransactionalUpdate() {
     List<Key> keys = setUpTransferTests();
     transferFunds(keys.get(0), keys.get(1), 10);
     assertSuccessfulTransfer(keys.get(0), keys.get(1));
@@ -719,7 +726,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testTransactionalRetry() {
+  void testTransactionalRetry() {
     List<Key> keys = setUpTransferTests();
     Key fromKey = keys.get(0);
     Key toKey = keys.get(1);
@@ -739,7 +746,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testTransactionalGetOrCreate() {
+  void testTransactionalGetOrCreate() {
     Entity task;
     Transaction txn = datastore.newTransaction();
     try {
@@ -758,7 +765,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testTransactionalSingleEntityGroupReadOnly() {
+  void testTransactionalSingleEntityGroupReadOnly() {
 
     Key taskListKey = datastore.newKeyFactory().setKind("TaskList").newKey("default");
     Entity taskListEntity = Entity.newBuilder(taskListKey).build();
@@ -788,7 +795,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testNamespaceRunQuery() {
+  void testNamespaceRunQuery() {
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("__namespace__");
     Key namespaceKey = keyFactory.newKey(OPTIONS.getNamespace());
     Query<Key> query =
@@ -805,7 +812,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testKindRunQuery() {
+  void testKindRunQuery() {
     Query<Key> query = Query.newKeyQueryBuilder().setKind("__kind__").build();
     List<String> kinds = new ArrayList<>();
     QueryResults<Key> results = datastore.run(query);
@@ -816,7 +823,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testPropertyRunQuery() {
+  void testPropertyRunQuery() {
     Query<Key> query = Query.newKeyQueryBuilder().setKind("__property__").build();
     QueryResults<Key> keys = datastore.run(query);
     Map<String, Collection<String>> propertiesByKind = new HashMap<>();
@@ -836,7 +843,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testPropertyByKindRunQuery() {
+  void testPropertyByKindRunQuery() {
     Key key = datastore.newKeyFactory().setKind("__kind__").newKey(TASK_CONCEPTS);
     Query<Entity> query =
         Query.newEntityQueryBuilder()
@@ -869,7 +876,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testPropertyFilteringRunQuery() {
+  void testPropertyFilteringRunQuery() {
     Key startKey =
         datastore
             .newKeyFactory()
@@ -896,7 +903,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testEqQuerySorted() {
+  void testEqQuerySorted() {
     Query<Entity> query =
         Query.newEntityQueryBuilder()
             .setKind(TASK_CONCEPTS)
@@ -929,7 +936,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testInQuery() {
+  void testInQuery() {
     setUpQueryTestsRealBackend();
     Query<Entity> query =
         Query.newEntityQueryBuilder()
@@ -940,7 +947,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testNotEqualsQuery() {
+  void testNotEqualsQuery() {
     setUpQueryTestsRealBackend();
     Query<Entity> query =
         Query.newEntityQueryBuilder()
@@ -951,7 +958,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testNotInQuery() {
+  void testNotInQuery() {
     setUpQueryTestsRealBackend();
     Query<Entity> query =
         Query.newEntityQueryBuilder()
@@ -962,7 +969,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testInQuerySorted() {
+  void testInQuerySorted() {
     setUpQueryTestsRealBackend();
     Query<Entity> query =
         Query.newEntityQueryBuilder()
@@ -974,7 +981,7 @@ public class ITDatastoreConceptsTest {
   }
 
   @Test
-  public void testStaleReads() throws InterruptedException {
+  void testStaleReads() throws InterruptedException {
     setUpQueryTestsRealBackend();
     // waiting for 6 seconds, so that we can query with read time of 5 seconds ago
     TimeUnit.SECONDS.sleep(6);

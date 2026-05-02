@@ -15,29 +15,34 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
+
+
+
+
 
 import com.google.common.testing.EqualsTester;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.Random;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class BlobTest {
+class BlobTest {
 
   private static final byte[] bytes1 = new byte[10];
   private static final byte[] bytes2 = new byte[11];
   private Blob blob1;
   private Blob blob2;
 
-  @Before
-  public void setUp() {
+  @BeforeEach
+  void setUp() {
     Random rnd = new Random();
     rnd.nextBytes(bytes1);
     rnd.nextBytes(bytes2);
@@ -46,7 +51,7 @@ public class BlobTest {
   }
 
   @Test
-  public void testEquals() {
+  void testEquals() {
     EqualsTester equalsTester = new EqualsTester();
     equalsTester.addEqualityGroup(blob1, blob1).testEquals();
     assertEquals(blob1, Blob.copyFrom(bytes1));
@@ -54,19 +59,19 @@ public class BlobTest {
   }
 
   @Test
-  public void testLength() {
+  void testLength() {
     assertEquals(bytes1.length, blob1.getLength());
     assertEquals(bytes2.length, blob2.getLength());
   }
 
   @Test
-  public void testToByteArray() {
+  void testToByteArray() {
     assertArrayEquals(bytes1, blob1.toByteArray());
     assertArrayEquals(bytes2, blob2.toByteArray());
   }
 
   @Test
-  public void testAsReadOnlyByteBuffer() {
+  void testAsReadOnlyByteBuffer() {
     ByteBuffer buffer = blob1.asReadOnlyByteBuffer();
     byte[] bytes = new byte[bytes1.length];
     buffer.get(bytes);
@@ -75,7 +80,7 @@ public class BlobTest {
   }
 
   @Test
-  public void testAsInputStream() throws Exception {
+  void testAsInputStream() throws Exception {
     byte[] bytes = new byte[bytes1.length];
     InputStream in = blob1.asInputStream();
     assertEquals(bytes1.length, in.read(bytes));
@@ -84,7 +89,7 @@ public class BlobTest {
   }
 
   @Test
-  public void testCopyTo() {
+  void testCopyTo() {
     byte[] bytes = new byte[bytes1.length];
     blob1.copyTo(bytes);
     assertArrayEquals(bytes1, bytes);
@@ -99,7 +104,7 @@ public class BlobTest {
   }
 
   @Test
-  public void testCopyFrom() throws Exception {
+  void testCopyFrom() throws Exception {
     Blob blob = Blob.copyFrom(ByteBuffer.wrap(bytes1));
     assertEquals(blob1, blob);
     assertArrayEquals(bytes1, blob.toByteArray());

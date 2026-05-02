@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.common.truth.Truth.assertThat;
 
 import io.grpc.Status.Code;
 import java.util.EnumMap;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class GrpcToDatastoreCodeTranslationTest {
+class GrpcToDatastoreCodeTranslationTest {
   @Test
-  public void grpcCodeToDatastoreCode_expectedMapping() {
+  void grpcCodeToDatastoreCode_expectedMapping() {
     EnumMap<Code, Integer> expected = new EnumMap<>(Code.class);
     expected.put(Code.OK, com.google.rpc.Code.OK.getNumber());
     expected.put(Code.INVALID_ARGUMENT, com.google.rpc.Code.INVALID_ARGUMENT.getNumber());

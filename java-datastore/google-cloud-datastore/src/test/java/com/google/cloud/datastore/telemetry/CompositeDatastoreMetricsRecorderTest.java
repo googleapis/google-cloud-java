@@ -15,21 +15,22 @@
  */
 
 package com.google.cloud.datastore.telemetry;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.common.truth.Truth.assertThat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
-public class CompositeDatastoreMetricsRecorderTest {
+
+
+
+class CompositeDatastoreMetricsRecorderTest {
 
   @Test
-  public void testCloseLIFOAndExceptionSafe() {
+  void testCloseLIFOAndExceptionSafe() {
     List<Integer> closeOrder = new ArrayList<>();
     DatastoreMetricsRecorder recorder1 = new MockRecorder(1, closeOrder, false);
     DatastoreMetricsRecorder recorder2 = new MockRecorder(2, closeOrder, true); // will throw

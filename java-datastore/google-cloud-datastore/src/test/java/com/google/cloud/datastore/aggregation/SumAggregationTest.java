@@ -15,23 +15,24 @@
  */
 
 package com.google.cloud.datastore.aggregation;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.cloud.datastore.aggregation.Aggregation.sum;
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertThrows;
+
 
 import com.google.datastore.v1.AggregationQuery;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class SumAggregationTest {
+class SumAggregationTest {
 
   @Test
-  public void shouldThrowExceptionWhenPropertyReferenceIsNull() {
+  void shouldThrowExceptionWhenPropertyReferenceIsNull() {
     assertThrows(IllegalArgumentException.class, () -> sum(null).build());
   }
 
   @Test
-  public void testSumAggregationWithDefaultValues() {
+  void testSumAggregationWithDefaultValues() {
     AggregationQuery.Aggregation sumAggregation = sum("marks").build().toPb();
 
     assertThat(sumAggregation.getSum().getProperty().getName()).isEqualTo("marks");
@@ -39,7 +40,7 @@ public class SumAggregationTest {
   }
 
   @Test
-  public void testCountAggregationWithAlias() {
+  void testCountAggregationWithAlias() {
     AggregationQuery.Aggregation sumAggregation = sum("marks").as("total_marks").build().toPb();
 
     assertThat(sumAggregation.getSum().getProperty().getName()).isEqualTo("marks");
@@ -47,7 +48,7 @@ public class SumAggregationTest {
   }
 
   @Test
-  public void testEqualsWithAliasVariations() {
+  void testEqualsWithAliasVariations() {
     SumAggregation.Builder aggregationWithAlias1 = sum("marks").as("total");
     SumAggregation.Builder aggregationWithAlias2 = sum("marks").as("total");
     SumAggregation.Builder aggregationWithoutAlias1 = sum("marks");
@@ -73,7 +74,7 @@ public class SumAggregationTest {
   }
 
   @Test
-  public void testEqualsWithPropertyReferenceVariations() {
+  void testEqualsWithPropertyReferenceVariations() {
     SumAggregation totalMarks1 = sum("marks").build();
     SumAggregation totalMarks2 = sum("marks").build();
 

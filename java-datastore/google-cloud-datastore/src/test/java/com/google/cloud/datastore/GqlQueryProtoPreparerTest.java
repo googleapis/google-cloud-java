@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.cloud.datastore.ProtoTestData.gqlQueryParameter;
 import static com.google.cloud.datastore.ProtoTestData.intValue;
@@ -21,27 +24,27 @@ import static com.google.cloud.datastore.ProtoTestData.stringValue;
 import static com.google.cloud.datastore.Query.newGqlQueryBuilder;
 import static com.google.common.truth.Truth.assertThat;
 import static java.util.Arrays.asList;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+
+
 
 import com.google.common.collect.ImmutableMap;
 import java.util.HashMap;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class GqlQueryProtoPreparerTest {
+class GqlQueryProtoPreparerTest {
 
   private final GqlQueryProtoPreparer protoPreparer = new GqlQueryProtoPreparer();
   private final GqlQuery.Builder<?> gqlQueryBuilder = newGqlQueryBuilder("SELECT * from Character");
 
   @Test
-  public void testQueryString() {
+  void testQueryString() {
     com.google.datastore.v1.GqlQuery gqlQuery = protoPreparer.prepare(gqlQueryBuilder.build());
 
     assertThat(gqlQuery.getQueryString()).isEqualTo("SELECT * from Character");
   }
 
   @Test
-  public void testAllowLiteral() {
+  void testAllowLiteral() {
     assertTrue(
         protoPreparer.prepare(gqlQueryBuilder.setAllowLiteral(true).build()).getAllowLiterals());
     assertFalse(
@@ -49,7 +52,7 @@ public class GqlQueryProtoPreparerTest {
   }
 
   @Test
-  public void testNamedBinding() {
+  void testNamedBinding() {
     com.google.datastore.v1.GqlQuery gqlQuery =
         protoPreparer.prepare(
             gqlQueryBuilder.setBinding("name", "John Doe").setBinding("age", 27).build());
@@ -63,7 +66,7 @@ public class GqlQueryProtoPreparerTest {
   }
 
   @Test
-  public void testPositionalBinding() {
+  void testPositionalBinding() {
     com.google.datastore.v1.GqlQuery gqlQuery =
         protoPreparer.prepare(gqlQueryBuilder.addBinding("John Doe").addBinding(27).build());
 

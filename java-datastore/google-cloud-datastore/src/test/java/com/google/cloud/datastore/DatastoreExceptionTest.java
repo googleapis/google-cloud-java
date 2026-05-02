@@ -15,28 +15,35 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+
+
+
+
+
+
 
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper;
 import java.io.IOException;
 import java.net.SocketTimeoutException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class DatastoreExceptionTest {
+class DatastoreExceptionTest {
 
   @Test
-  public void testDatastoreException() {
+  void testDatastoreException() {
     DatastoreException exception = new DatastoreException(10, "message", "ABORTED");
     assertEquals(10, exception.getCode());
     assertEquals("ABORTED", exception.getReason());
@@ -79,7 +86,7 @@ public class DatastoreExceptionTest {
   }
 
   @Test
-  public void testTranslateAndThrow() {
+  void testTranslateAndThrow() {
     Exception cause = new DatastoreException(14, "message", "UNAVAILABLE");
     RetryHelper.RetryHelperException exceptionMock =
         createMock(RetryHelper.RetryHelperException.class);
@@ -112,7 +119,7 @@ public class DatastoreExceptionTest {
   }
 
   @Test
-  public void testThrowInvalidRequest() {
+  void testThrowInvalidRequest() {
     try {
       DatastoreException.throwInvalidRequest("message %s %d", "a", 1);
       fail("Exception expected");

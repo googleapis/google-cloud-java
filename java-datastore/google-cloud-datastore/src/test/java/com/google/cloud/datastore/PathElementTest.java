@@ -15,57 +15,62 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
 
-public class PathElementTest {
+
+
+
+import org.junit.jupiter.api.Test;
+
+class PathElementTest {
 
   private static final PathElement PE_1 = PathElement.of("k1");
   private static final PathElement PE_2 = PathElement.of("k2", "n");
   private static final PathElement PE_3 = PathElement.of("k3", 1);
 
   @Test
-  public void testKind() {
+  void testKind() {
     assertEquals("k1", PE_1.getKind());
     assertEquals("k2", PE_2.getKind());
     assertEquals("k3", PE_3.getKind());
   }
 
   @Test
-  public void testHasId() {
+  void testHasId() {
     assertFalse(PE_1.hasId());
     assertFalse(PE_2.hasId());
     assertTrue(PE_3.hasId());
   }
 
   @Test
-  public void testId() {
+  void testId() {
     assertNull(PE_1.getId());
     assertNull(PE_2.getId());
     assertEquals(Long.valueOf(1), PE_3.getId());
   }
 
   @Test
-  public void testHasName() {
+  void testHasName() {
     assertFalse(PE_1.hasName());
     assertTrue(PE_2.hasName());
     assertFalse(PE_3.hasName());
   }
 
   @Test
-  public void testName() {
+  void testName() {
     assertNull(PE_1.getName());
     assertEquals("n", PE_2.getName());
     assertNull(PE_3.getName());
   }
 
   @Test
-  public void testNameOrId() {
+  void testNameOrId() {
     assertNull(PE_1.getNameOrId());
     assertEquals("n", PE_2.getNameOrId());
     assertEquals(Long.valueOf(1), PE_3.getNameOrId());

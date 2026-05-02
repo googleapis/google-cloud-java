@@ -15,28 +15,31 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+
+
 
 import java.util.Iterator;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class KeyFactoryTest {
+class KeyFactoryTest {
 
   private static final String PROJECT_ID = "projectid";
   private static final String DATABASE_ID = "database-id";
 
   private KeyFactory keyFactory;
 
-  @Before
-  public void setUp() {
+  @BeforeEach
+  void setUp() {
     keyFactory = new KeyFactory(PROJECT_ID).setDatabaseId(DATABASE_ID).setKind("k");
   }
 
   @Test
-  public void testReset() {
+  void testReset() {
     IncompleteKey key =
         keyFactory
             .setProjectId("ds1")
@@ -80,7 +83,7 @@ public class KeyFactoryTest {
   }
 
   @Test
-  public void testCreatedWithDbId() {
+  void testCreatedWithDbId() {
     KeyFactory keyFactory = new KeyFactory(PROJECT_ID, "namespace", DATABASE_ID).setKind("k");
     IncompleteKey key =
         keyFactory
@@ -125,7 +128,7 @@ public class KeyFactoryTest {
   }
 
   @Test
-  public void testNewKey() {
+  void testNewKey() {
     Key key = keyFactory.newKey(1);
     verifyKey(key, 1L, "");
     key = keyFactory.newKey("n");
@@ -137,7 +140,7 @@ public class KeyFactoryTest {
   }
 
   @Test
-  public void testNewIncompleteKey() {
+  void testNewIncompleteKey() {
     IncompleteKey key = keyFactory.newKey();
     verifyIncompleteKey(key, "");
     PathElement p1 = PathElement.of("k1", "n");
@@ -146,9 +149,9 @@ public class KeyFactoryTest {
     verifyIncompleteKey(key, "ns", p1, p2);
   }
 
-  @Test(expected = NullPointerException.class)
-  public void testNewIncompleteWithNoKind() {
-    new KeyFactory(PROJECT_ID).build();
+  @Test
+  void testNewIncompleteWithNoKind() {
+    assertThrows(NullPointerException.class, () -> new KeyFactory(PROJECT_ID).build());
   }
 
   private void verifyKey(Key key, String name, String namespace, PathElement... ancestors) {

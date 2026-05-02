@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package com.google.datastore.utils.it;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.datastore.utils.DatastoreHelper.makeFilter;
 import static com.google.datastore.utils.DatastoreHelper.makeValue;
@@ -26,10 +27,10 @@ import com.google.datastore.v1.*;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.List;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class ITDatastoreProtoClientTest {
+class ITDatastoreProtoClientTest {
 
   private static Datastore DATASTORE;
 
@@ -38,13 +39,13 @@ public class ITDatastoreProtoClientTest {
   private static final String KIND = "test-kind";
   private static final String PROJECT_ID = System.getenv(DatastoreHelper.PROJECT_ID_ENV_VAR);
 
-  @Before
-  public void setUp() throws GeneralSecurityException, IOException {
+  @BeforeEach
+  void setUp() throws GeneralSecurityException, IOException {
     DATASTORE = DatastoreHelper.getDatastoreFromEnv();
   }
 
   @Test
-  public void testQuerySplitterWithDefaultDb() throws DatastoreException {
+  void testQuerySplitterWithDefaultDb() throws DatastoreException {
     Filter propertyFilter =
         makeFilter("foo", PropertyFilter.Operator.EQUAL, makeValue("value")).build();
     Query query =
@@ -66,7 +67,7 @@ public class ITDatastoreProtoClientTest {
   }
 
   @Test
-  public void testQuerySplitterWithDb() throws DatastoreException {
+  void testQuerySplitterWithDb() throws DatastoreException {
     Filter propertyFilter =
         makeFilter("foo", PropertyFilter.Operator.EQUAL, makeValue("value")).build();
     Query query =

@@ -15,6 +15,7 @@
  */
 
 package com.google.cloud.datastore.telemetry;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -26,17 +27,17 @@ import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.util.Map;
 import org.easymock.EasyMock;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnit4.class)
-public class BuiltInDatastoreMetricsProviderTest {
+
+
+
+class BuiltInDatastoreMetricsProviderTest {
 
   private static final String PROJECT_ID = "project-id";
 
   @Test
-  public void testBuildClientAttributes() {
+  void testBuildClientAttributes() {
     Map<String, String> attributes = BuiltInDatastoreMetricsProvider.buildClientAttributes();
     assertThat(attributes).containsKey(TelemetryConstants.CLIENT_UID_KEY.getKey());
     assertThat(attributes.get(TelemetryConstants.CLIENT_UID_KEY.getKey())).isNotEmpty();
@@ -46,7 +47,7 @@ public class BuiltInDatastoreMetricsProviderTest {
   }
 
   @Test
-  public void testCreateOpenTelemetry_returnsNoOp() {
+  void testCreateOpenTelemetry_returnsNoOp() {
     DatastoreOptions options =
         DatastoreOptions.newBuilder()
             .setProjectId(PROJECT_ID)
@@ -58,7 +59,7 @@ public class BuiltInDatastoreMetricsProviderTest {
   }
 
   @Test
-  public void testCreateOpenTelemetry_returnsNonNull() {
+  void testCreateOpenTelemetry_returnsNonNull() {
     Credentials credentials = EasyMock.mock(Credentials.class);
     EasyMock.expect(credentials.getMetricsCredentialType())
         .andReturn(CredentialTypeForMetrics.DO_NOT_SEND);
@@ -82,7 +83,7 @@ public class BuiltInDatastoreMetricsProviderTest {
   }
 
   @Test
-  public void testCreateOpenTelemetry_eachCallReturnsDistinctInstance() {
+  void testCreateOpenTelemetry_eachCallReturnsDistinctInstance() {
     Credentials credentials1 = EasyMock.mock(Credentials.class);
     EasyMock.expect(credentials1.getMetricsCredentialType())
         .andReturn(CredentialTypeForMetrics.DO_NOT_SEND);
@@ -122,7 +123,7 @@ public class BuiltInDatastoreMetricsProviderTest {
   }
 
   @Test
-  public void testCreateOpenTelemetry_withEmulatorHostProperty_returnsNoOp() {
+  void testCreateOpenTelemetry_withEmulatorHostProperty_returnsNoOp() {
     System.setProperty(DatastoreOptions.LOCAL_HOST_ENV_VAR, "localhost:8081");
     try {
       DatastoreOptions options =

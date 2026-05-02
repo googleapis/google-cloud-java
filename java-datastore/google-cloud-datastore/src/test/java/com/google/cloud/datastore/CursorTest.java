@@ -15,35 +15,38 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+
+
 
 import com.google.protobuf.ByteString;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class CursorTest {
+class CursorTest {
 
   private static final byte[] bytes1 = {1, 2, 3, '%', '<', '+'};
   private static final byte[] bytes2 = {10, 20, 30};
   private Cursor cursor1;
   private Cursor cursor2;
 
-  @Before
-  public void setUp() {
+  @BeforeEach
+  void setUp() {
     cursor1 = new Cursor(ByteString.copyFrom(bytes1));
     cursor2 = new Cursor(ByteString.copyFrom(bytes2));
   }
 
   @Test
-  public void testToFromUrlSafe() {
+  void testToFromUrlSafe() {
     String urlSafe = cursor1.toUrlSafe();
     assertEquals(cursor1, Cursor.fromUrlSafe(urlSafe));
   }
 
   @Test
-  public void testCopyFrom() {
+  void testCopyFrom() {
     Cursor cursor = Cursor.copyFrom(bytes2);
     assertEquals(cursor2, cursor);
     assertNotEquals(cursor1, cursor);

@@ -15,26 +15,30 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
 
-public class KeyValueTest {
+
+
+import org.junit.jupiter.api.Test;
+
+class KeyValueTest {
 
   private static final Key CONTENT = Key.newBuilder("ds", "kind", 1).build();
 
   @Test
-  public void testToBuilder() {
+  void testToBuilder() {
     KeyValue value = KeyValue.of(CONTENT);
     assertEquals(value, value.toBuilder().build());
   }
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testOf() {
+  void testOf() {
     KeyValue value = KeyValue.of(CONTENT);
     assertEquals(CONTENT, value.get());
     assertFalse(value.excludeFromIndexes());
@@ -42,7 +46,7 @@ public class KeyValueTest {
 
   @SuppressWarnings("deprecation")
   @Test
-  public void testBuilder() {
+  void testBuilder() {
     KeyValue.Builder builder = KeyValue.newBuilder(CONTENT);
     KeyValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

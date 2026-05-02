@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package com.google.cloud.datastore.telemetry;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -22,13 +23,13 @@ import com.google.cloud.datastore.DatastoreOpenTelemetryOptions;
 import com.google.cloud.datastore.DatastoreOptions;
 import io.opentelemetry.api.OpenTelemetry;
 import org.easymock.EasyMock;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
+
+
 
 /** Tests for {@link DatastoreMetricsRecorder#getInstance(DatastoreOptions, OpenTelemetry)}. */
-@RunWith(JUnit4.class)
-public class DatastoreMetricsRecorderTest {
+
+class DatastoreMetricsRecorderTest {
 
   private static final String PROJECT_ID = "test-project";
 
@@ -39,7 +40,7 @@ public class DatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void defaultOptionsWithBuiltInMetricsDisabled_returnsNoRecorders() {
+  void defaultOptionsWithBuiltInMetricsDisabled_returnsNoRecorders() {
     // When both custom metrics and built-in metrics export are disabled,
     // there should be no recorders
     DatastoreOptions options =
@@ -59,7 +60,7 @@ public class DatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void tracingEnabledButMetricsDisabledAndBuiltInDisabled_returnsNoRecorders() {
+  void tracingEnabledButMetricsDisabledAndBuiltInDisabled_returnsNoRecorders() {
     // Enabling tracing alone should not enable metrics
     DatastoreOptions options =
         baseOptions()
@@ -79,7 +80,7 @@ public class DatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void defaultOptionsWithBuiltInMetricsEnabled_butNoCredentials_returnsOneRecorder() {
+  void defaultOptionsWithBuiltInMetricsEnabled_butNoCredentials_returnsOneRecorder() {
     // Explicitly enable built-in metrics export
     DatastoreOptions options =
         baseOptions() // Uses NoCredentials by default
@@ -101,7 +102,7 @@ public class DatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void openTelemetryRecorderCreatedWithExplicitOpenTelemetry() {
+  void openTelemetryRecorderCreatedWithExplicitOpenTelemetry() {
     OpenTelemetry openTelemetry = OpenTelemetry.noop();
 
     OpenTelemetryDatastoreMetricsRecorder recorder =
@@ -111,7 +112,7 @@ public class DatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void builtInDisabledAndCustomEnabled_returnsOneRecorder() {
+  void builtInDisabledAndCustomEnabled_returnsOneRecorder() {
     DatastoreOptions options =
         baseOptions()
             .setOpenTelemetryOptions(
@@ -132,7 +133,7 @@ public class DatastoreMetricsRecorderTest {
   }
 
   @Test
-  public void bothEnabled_returnsTwoRecorders() {
+  void bothEnabled_returnsTwoRecorders() {
     DatastoreOptions options =
         baseOptions()
             .setOpenTelemetryOptions(

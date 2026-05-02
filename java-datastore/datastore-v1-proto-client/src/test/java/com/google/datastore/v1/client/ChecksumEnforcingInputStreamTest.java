@@ -14,20 +14,23 @@
  * limitations under the License.
  */
 package com.google.datastore.v1.client;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.fail;
+
+
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
+
+
 
 /** Test for {@link ChecksumEnforcingInputStream}. */
-@RunWith(JUnit4.class)
-public class ChecksumEnforcingInputStreamTest {
+
+class ChecksumEnforcingInputStreamTest {
   public void test(int payloadSize) throws Exception {
     // read 1000 bytes at a time
     // Since checksum should be correct, do not expect IOException
@@ -42,7 +45,7 @@ public class ChecksumEnforcingInputStreamTest {
   }
 
   @Test
-  public void read_withValidChecksum_differentPayloadSizes() throws Exception {
+  void read_withValidChecksum_differentPayloadSizes() throws Exception {
     // test with various payload sizes (1, 2, 2**2, 2**3 etc upto 2**28 = 256MB)
     for (int i = 0, payloadSize = 1; i < 29; i++) {
       long start = System.currentTimeMillis();
@@ -57,7 +60,7 @@ public class ChecksumEnforcingInputStreamTest {
   }
 
   @Test
-  public void read_withInvalidChecksum() {
+  void read_withInvalidChecksum() {
     // build a test instance with invalidchecksum
     // read 1000 bytes at a time
     // Since checksum should be correct, do not expect IOException
@@ -76,7 +79,7 @@ public class ChecksumEnforcingInputStreamTest {
   }
 
   @Test
-  public void markNotSupported() throws Exception {
+  void markNotSupported() throws Exception {
     try (ChecksumEnforcingInputStream testInstance = setUpData(1)) {
       assertFalse(testInstance.markSupported());
     }

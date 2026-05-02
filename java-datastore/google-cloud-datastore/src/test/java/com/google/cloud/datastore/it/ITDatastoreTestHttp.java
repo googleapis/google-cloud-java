@@ -18,16 +18,14 @@ package com.google.cloud.datastore.it;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.testing.RemoteDatastoreHelper;
-import java.util.Arrays;
-import org.junit.AfterClass;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
+import java.util.stream.Stream;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.params.provider.Arguments;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-@RunWith(Parameterized.class)
-public class ITDatastoreTestHttp extends AbstractITDatastoreTest {
+class ITDatastoreTestHttp extends AbstractITDatastoreTest {
   // setup for default db, http transport
   private static final RemoteDatastoreHelper HELPER_DEFAULT_HTTP = RemoteDatastoreHelper.create();
-
   private static final DatastoreOptions OPTIONS_DEFAULT_HTTP = HELPER_DEFAULT_HTTP.getOptions();
   private static final Datastore DATASTORE_DEFAULT_HTTP = OPTIONS_DEFAULT_HTTP.getService();
 
@@ -37,20 +35,15 @@ public class ITDatastoreTestHttp extends AbstractITDatastoreTest {
   private static final DatastoreOptions OPTIONS_CUSTOM_DB_HTTP = HELPER_CUSTOM_DB_HTTP.getOptions();
   private static final Datastore DATASTORE_CUSTOM_DB_HTTP = OPTIONS_CUSTOM_DB_HTTP.getService();
 
-  public ITDatastoreTestHttp(DatastoreOptions options, Datastore datastore, String databaseType) {
-    super(options, datastore, databaseType);
+  @Override
+  public Stream<Arguments> data() {
+    return Stream.of(
+        arguments(OPTIONS_DEFAULT_HTTP, DATASTORE_DEFAULT_HTTP, "default"),
+        arguments(OPTIONS_CUSTOM_DB_HTTP, DATASTORE_CUSTOM_DB_HTTP, CUSTOM_DB_ID)
+    );
   }
 
-  @Parameterized.Parameters(name = "database: {2}")
-  public static Iterable<Object[]> data() {
-    return Arrays.asList(
-        new Object[][] {
-          {OPTIONS_DEFAULT_HTTP, DATASTORE_DEFAULT_HTTP, "default"},
-          {OPTIONS_CUSTOM_DB_HTTP, DATASTORE_CUSTOM_DB_HTTP, CUSTOM_DB_ID},
-        });
-  }
-
-  @AfterClass
+  @AfterAll
   public static void afterClass() throws Exception {
     HELPER_DEFAULT_HTTP.deleteNamespace();
     HELPER_CUSTOM_DB_HTTP.deleteNamespace();

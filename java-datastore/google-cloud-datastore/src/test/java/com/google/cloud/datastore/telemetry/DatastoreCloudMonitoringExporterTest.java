@@ -15,6 +15,7 @@
  */
 
 package com.google.cloud.datastore.telemetry;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.CLIENT_UID_KEY;
 import static com.google.cloud.datastore.telemetry.TelemetryConstants.DATABASE_ID_KEY;
@@ -54,10 +55,10 @@ import java.util.Collections;
 import java.util.Map;
 import org.easymock.Capture;
 import org.easymock.EasyMock;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class DatastoreCloudMonitoringExporterTest {
+class DatastoreCloudMonitoringExporterTest {
 
   private static final String PROJECT_ID = "test-project";
   private static final String LOCATION_ID = "global";
@@ -73,8 +74,8 @@ public class DatastoreCloudMonitoringExporterTest {
   private InstrumentationScopeInfo scope;
   private String clientUid;
 
-  @Before
-  public void setUp() {
+  @BeforeEach
+  void setUp() {
     mockMetricServiceStub = createMock(MetricServiceStub.class);
     fakeMetricServiceClient = new FakeMetricServiceClient(mockMetricServiceStub);
 
@@ -106,7 +107,7 @@ public class DatastoreCloudMonitoringExporterTest {
   }
 
   @Test
-  public void testExportingSumData() {
+  void testExportingSumData() {
     Capture<CreateTimeSeriesRequest> capture = EasyMock.newCapture();
 
     UnaryCallable<CreateTimeSeriesRequest, Empty> mockCallable = createMock(UnaryCallable.class);
@@ -158,7 +159,7 @@ public class DatastoreCloudMonitoringExporterTest {
   }
 
   @Test
-  public void testClientCacheReferenceCounting() {
+  void testClientCacheReferenceCounting() {
     MetricServiceClient mockClient = createMock(MetricServiceClient.class);
     expect(mockClient.isShutdown()).andReturn(false).anyTimes();
     mockClient.shutdown();

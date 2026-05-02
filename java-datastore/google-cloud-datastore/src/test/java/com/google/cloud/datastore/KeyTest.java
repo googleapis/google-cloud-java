@@ -15,17 +15,21 @@
  */
 
 package com.google.cloud.datastore;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
 
-public class KeyTest {
+
+
+import org.junit.jupiter.api.Test;
+
+class KeyTest {
 
   @Test
-  public void testHasId() {
+  void testHasId() {
     Key.Builder builder = Key.newBuilder("d", "k", 10);
     Key key = builder.build();
     assertTrue(key.hasId());
@@ -34,7 +38,7 @@ public class KeyTest {
   }
 
   @Test
-  public void testId() {
+  void testId() {
     Key.Builder builder = Key.newBuilder("d", "k", 10);
     Key key = builder.build();
     assertEquals(Long.valueOf(10), key.getId());
@@ -43,7 +47,7 @@ public class KeyTest {
   }
 
   @Test
-  public void testHasName() {
+  void testHasName() {
     Key.Builder builder = Key.newBuilder("d", "k", "n");
     Key key = builder.build();
     assertTrue(key.hasName());
@@ -52,7 +56,7 @@ public class KeyTest {
   }
 
   @Test
-  public void testName() {
+  void testName() {
     Key.Builder builder = Key.newBuilder("d", "k", "n");
     Key key = builder.build();
     assertEquals("n", key.getName());
@@ -61,7 +65,7 @@ public class KeyTest {
   }
 
   @Test
-  public void testNameOrId() {
+  void testNameOrId() {
     Key.Builder builder = Key.newBuilder("d", "k", "n");
     Key key = builder.build();
     assertEquals("n", key.getNameOrId());
@@ -70,7 +74,7 @@ public class KeyTest {
   }
 
   @Test
-  public void testToAndFromUrlSafe() {
+  void testToAndFromUrlSafe() {
     Key key = Key.newBuilder("d", "k", "n").build();
     String urlSafe = key.toUrlSafe();
     Key copy = Key.fromUrlSafe(urlSafe);
@@ -78,7 +82,7 @@ public class KeyTest {
   }
 
   @Test
-  public void testDatabaseId() {
+  void testDatabaseId() {
     Key.Builder builder = Key.newBuilder("project-id", "kind", "name", "database-id");
     Key key = builder.build();
     assertEquals("database-id", key.getDatabaseId());
