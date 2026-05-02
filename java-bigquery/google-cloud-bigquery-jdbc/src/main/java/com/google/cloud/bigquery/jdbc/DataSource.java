@@ -950,7 +950,7 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public String getOAuthClientSecret() {
-    return oAuthClientSecret != null && !oAuthClientSecret.isEmpty()
+    return oAuthClientSecret != null && !oAuthClientSecret.trim().isEmpty()
         ? oAuthClientSecret
         : BigQueryJdbcUrlUtility.DEFAULT_OAUTH_CLIENT_SECRET;
   }
