@@ -43,8 +43,10 @@ import com.google.api.gax.rpc.NotFoundException;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.testing.FakeTicker;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -83,6 +85,35 @@ class MetricsTracerTest {
     verify(metricsRecorder).recordOperationCount(1, attributes);
     verify(metricsRecorder).recordOperationLatency(anyDouble(), eq(attributes));
 
+    verifyNoMoreInteractions(metricsRecorder);
+  }
+
+  @Test
+  void testOperationSucceeded_recordsFractionalMilliseconds() {
+    FakeTicker ticker = new FakeTicker();
+    metricsTracer =
+        new MetricsTracer(MethodName.of("fake_service", "fake_method"), metricsRecorder, ticker);
+    ticker.advance(3_900_000, TimeUnit.NANOSECONDS);
+
+    metricsTracer.operationSucceeded();
+
+    verify(metricsRecorder).recordOperationLatency(3.9, getAttributes(Code.OK));
+    verify(metricsRecorder).recordOperationCount(1, getAttributes(Code.OK));
+    verifyNoMoreInteractions(metricsRecorder);
+  }
+
+  @Test
+  void testAttemptSucceeded_recordsFractionalMilliseconds() {
+    FakeTicker ticker = new FakeTicker();
+    metricsTracer =
+        new MetricsTracer(MethodName.of("fake_service", "fake_method"), metricsRecorder, ticker);
+    metricsTracer.attemptStarted(new Object(), 0);
+    ticker.advance(4_200_000, TimeUnit.NANOSECONDS);
+
+    metricsTracer.attemptSucceeded();
+
+    verify(metricsRecorder).recordAttemptLatency(4.2, getAttributes(Code.OK));
+    verify(metricsRecorder).recordAttemptCount(1, getAttributes(Code.OK));
     verifyNoMoreInteractions(metricsRecorder);
   }
 

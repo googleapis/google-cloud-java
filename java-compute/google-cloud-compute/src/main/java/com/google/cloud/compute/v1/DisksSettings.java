@@ -289,6 +289,17 @@ public class DisksSettings extends ClientSettings<DisksSettings> {
     return ((DisksStubSettings) getStubSettings()).updateOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public UnaryCallSettings<UpdateKmsKeyDiskRequest, Operation> updateKmsKeySettings() {
+    return ((DisksStubSettings) getStubSettings()).updateKmsKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateKmsKey. */
+  public OperationCallSettings<UpdateKmsKeyDiskRequest, Operation, Operation>
+      updateKmsKeyOperationSettings() {
+    return ((DisksStubSettings) getStubSettings()).updateKmsKeyOperationSettings();
+  }
+
   public static final DisksSettings create(DisksStubSettings stub) throws IOException {
     return new DisksSettings.Builder(stub.toBuilder()).build();
   }
@@ -565,6 +576,17 @@ public class DisksSettings extends ClientSettings<DisksSettings> {
     public OperationCallSettings.Builder<UpdateDiskRequest, Operation, Operation>
         updateOperationSettings() {
       return getStubSettingsBuilder().updateOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public UnaryCallSettings.Builder<UpdateKmsKeyDiskRequest, Operation> updateKmsKeySettings() {
+      return getStubSettingsBuilder().updateKmsKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateKmsKey. */
+    public OperationCallSettings.Builder<UpdateKmsKeyDiskRequest, Operation, Operation>
+        updateKmsKeyOperationSettings() {
+      return getStubSettingsBuilder().updateKmsKeyOperationSettings();
     }
 
     @Override

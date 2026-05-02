@@ -58,6 +58,7 @@ nosetests.xml
 .settings
 .DS_Store
 .classpath
+.vscode
 
 # API key file containing value of GOOGLE_API_KEY for integration tests
 api_key

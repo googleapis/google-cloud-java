@@ -62,6 +62,7 @@ public class DataSource implements javax.sql.DataSource {
   private String oAuthPvtKeyPath;
   private String oAuthPvtKey;
   private String oAuthAccessToken;
+  private Boolean oAuthAccessTokenReadonly;
   private String oAuthRefreshToken;
   private Boolean useQueryCache;
   private String queryDialect;
@@ -175,6 +176,12 @@ public class DataSource implements javax.sql.DataSource {
           .put(
               BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_PROPERTY_NAME,
               DataSource::setOAuthAccessToken)
+          .put(
+              BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME,
+              (ds, val) ->
+                  ds.setOAuthAccessTokenReadonly(
+                      BigQueryJdbcUrlUtility.convertIntToBoolean(
+                          val, BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME)))
           .put(
               BigQueryJdbcUrlUtility.OAUTH_REFRESH_TOKEN_PROPERTY_NAME,
               DataSource::setOAuthRefreshToken)
@@ -450,6 +457,11 @@ public class DataSource implements javax.sql.DataSource {
     if (this.oAuthAccessToken != null) {
       connectionProperties.setProperty(
           BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_PROPERTY_NAME, this.oAuthAccessToken);
+    }
+    if (this.oAuthAccessTokenReadonly != null) {
+      connectionProperties.setProperty(
+          BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME,
+          String.valueOf(this.oAuthAccessTokenReadonly));
     }
     if (this.oAuthRefreshToken != null) {
       connectionProperties.setProperty(
@@ -877,6 +889,14 @@ public class DataSource implements javax.sql.DataSource {
 
   public void setOAuthAccessToken(String oAuthAccessToken) {
     this.oAuthAccessToken = oAuthAccessToken;
+  }
+
+  public Boolean getOAuthAccessTokenReadonly() {
+    return oAuthAccessTokenReadonly != null ? oAuthAccessTokenReadonly : false;
+  }
+
+  public void setOAuthAccessTokenReadonly(Boolean oAuthAccessTokenReadonly) {
+    this.oAuthAccessTokenReadonly = oAuthAccessTokenReadonly;
   }
 
   public String getOAuthRefreshToken() {

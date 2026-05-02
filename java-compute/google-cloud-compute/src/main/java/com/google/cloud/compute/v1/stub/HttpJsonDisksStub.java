@@ -60,6 +60,7 @@ import com.google.cloud.compute.v1.StopGroupAsyncReplicationDiskRequest;
 import com.google.cloud.compute.v1.TestIamPermissionsDiskRequest;
 import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.cloud.compute.v1.UpdateDiskRequest;
+import com.google.cloud.compute.v1.UpdateKmsKeyDiskRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1076,6 +1077,63 @@ public class HttpJsonDisksStub extends DisksStub {
               })
           .build();
 
+  private static final ApiMethodDescriptor<UpdateKmsKeyDiskRequest, Operation>
+      updateKmsKeyMethodDescriptor =
+          ApiMethodDescriptor.<UpdateKmsKeyDiskRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.Disks/UpdateKmsKey")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateKmsKeyDiskRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/zones/{zone}/disks/{disk}/updateKmsKey",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateKmsKeyDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "disk", request.getDisk());
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "zone", request.getZone());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateKmsKeyDiskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            if (request.hasRequestId()) {
+                              serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            }
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "diskUpdateKmsKeyRequestResource",
+                                      request.getDiskUpdateKmsKeyRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (UpdateKmsKeyDiskRequest request, Operation response) -> {
+                    StringBuilder opName = new StringBuilder(response.getName());
+                    opName.append(":").append(request.getProject());
+                    opName.append(":").append(request.getZone());
+                    return HttpJsonOperationSnapshot.newBuilder()
+                        .setName(opName.toString())
+                        .setMetadata(response)
+                        .setDone(Status.DONE.equals(response.getStatus()))
+                        .setResponse(response)
+                        .setError(response.getHttpErrorStatusCode(), response.getHttpErrorMessage())
+                        .build();
+                  })
+              .build();
+
   private final UnaryCallable<AddResourcePoliciesDiskRequest, Operation>
       addResourcePoliciesCallable;
   private final OperationCallable<AddResourcePoliciesDiskRequest, Operation, Operation>
@@ -1127,6 +1185,9 @@ public class HttpJsonDisksStub extends DisksStub {
       testIamPermissionsCallable;
   private final UnaryCallable<UpdateDiskRequest, Operation> updateCallable;
   private final OperationCallable<UpdateDiskRequest, Operation, Operation> updateOperationCallable;
+  private final UnaryCallable<UpdateKmsKeyDiskRequest, Operation> updateKmsKeyCallable;
+  private final OperationCallable<UpdateKmsKeyDiskRequest, Operation, Operation>
+      updateKmsKeyOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonZoneOperationsStub httpJsonOperationsStub;
@@ -1169,6 +1230,8 @@ public class HttpJsonDisksStub extends DisksStub {
   private static final PathTemplate TEST_IAM_PERMISSIONS_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/zones/{zone}/disks/{resource}");
   private static final PathTemplate UPDATE_RESOURCE_NAME_TEMPLATE =
+      PathTemplate.create("projects/{project}/zones/{zone}/disks/{disk}");
+  private static final PathTemplate UPDATE_KMS_KEY_RESOURCE_NAME_TEMPLATE =
       PathTemplate.create("projects/{project}/zones/{zone}/disks/{disk}");
 
   public static final HttpJsonDisksStub create(DisksStubSettings settings) throws IOException {
@@ -1608,6 +1671,27 @@ public class HttpJsonDisksStub extends DisksStub {
                   return UPDATE_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
                 })
             .build();
+    HttpJsonCallSettings<UpdateKmsKeyDiskRequest, Operation> updateKmsKeyTransportSettings =
+        HttpJsonCallSettings.<UpdateKmsKeyDiskRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateKmsKeyMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("disk", String.valueOf(request.getDisk()));
+                  builder.add("project", String.valueOf(request.getProject()));
+                  builder.add("zone", String.valueOf(request.getZone()));
+                  return builder.build();
+                })
+            .setResourceNameExtractor(
+                request -> {
+                  Map<String, String> resourceNameSegments = new HashMap<String, String>();
+                  resourceNameSegments.put("disk", String.valueOf(request.getDisk()));
+                  resourceNameSegments.put("project", String.valueOf(request.getProject()));
+                  resourceNameSegments.put("zone", String.valueOf(request.getZone()));
+                  return UPDATE_KMS_KEY_RESOURCE_NAME_TEMPLATE.instantiate(resourceNameSegments);
+                })
+            .build();
 
     this.addResourcePoliciesCallable =
         callableFactory.createUnaryCallable(
@@ -1762,6 +1846,15 @@ public class HttpJsonDisksStub extends DisksStub {
             settings.updateOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.updateKmsKeyCallable =
+        callableFactory.createUnaryCallable(
+            updateKmsKeyTransportSettings, settings.updateKmsKeySettings(), clientContext);
+    this.updateKmsKeyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateKmsKeyTransportSettings,
+            settings.updateKmsKeyOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1789,6 +1882,7 @@ public class HttpJsonDisksStub extends DisksStub {
     methodDescriptors.add(stopGroupAsyncReplicationMethodDescriptor);
     methodDescriptors.add(testIamPermissionsMethodDescriptor);
     methodDescriptors.add(updateMethodDescriptor);
+    methodDescriptors.add(updateKmsKeyMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1974,6 +2068,17 @@ public class HttpJsonDisksStub extends DisksStub {
   @Override
   public OperationCallable<UpdateDiskRequest, Operation, Operation> updateOperationCallable() {
     return updateOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateKmsKeyDiskRequest, Operation> updateKmsKeyCallable() {
+    return updateKmsKeyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateKmsKeyDiskRequest, Operation, Operation>
+      updateKmsKeyOperationCallable() {
+    return updateKmsKeyOperationCallable;
   }
 
   @Override
