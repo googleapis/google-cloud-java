@@ -236,6 +236,19 @@ public class RegionalAccessBoundaryTest {
     int queueCapacity = 100;
     int totalCapacity = poolSize + queueCapacity;
 
+    java.util.concurrent.ThreadPoolExecutor testExecutor =
+        new java.util.concurrent.ThreadPoolExecutor(
+            poolSize,
+            poolSize,
+            1,
+            java.util.concurrent.TimeUnit.HOURS,
+            new java.util.concurrent.LinkedBlockingQueue<>(queueCapacity),
+            r -> {
+              Thread t = new Thread(r, "test-RAB-refresh");
+              t.setDaemon(true);
+              return t;
+            });
+
     CountDownLatch latch = new CountDownLatch(1);
 
     java.io.InputStream blockingStream =
@@ -270,20 +283,29 @@ public class RegionalAccessBoundaryTest {
 
     RegionalAccessBoundaryManager[] managers = new RegionalAccessBoundaryManager[totalCapacity];
     for (int i = 0; i < totalCapacity; i++) {
-      managers[i] = new RegionalAccessBoundaryManager(testClock);
+      managers[i] =
+          new RegionalAccessBoundaryManager(
+              testClock,
+              RegionalAccessBoundaryManager.DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS,
+              testExecutor);
       managers[i].triggerAsyncRefresh(transportFactory, provider, token);
     }
 
-    RegionalAccessBoundaryManager extraManager = new RegionalAccessBoundaryManager(testClock);
+    RegionalAccessBoundaryManager extraManager =
+        new RegionalAccessBoundaryManager(
+            testClock,
+            RegionalAccessBoundaryManager.DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS,
+            testExecutor);
     assertFalse(extraManager.isCooldownActive());
 
     extraManager.triggerAsyncRefresh(transportFactory, provider, token);
 
-    assertTrue(
+    assertFalse(
         extraManager.isCooldownActive(),
-        "106th task should have been rejected and entered cooldown");
+        "106th task should NOT have entered cooldown on scheduling failure");
 
     latch.countDown();
+    testExecutor.shutdownNow();
   }
 
   private static class TestClock implements Clock {

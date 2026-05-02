@@ -64,7 +64,7 @@ final class RegionalAccessBoundaryManager {
    * The default maximum elapsed time in milliseconds for retrying Regional Access Boundary lookup
    * requests.
    */
-  private static final int DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS = 60000;
+  static final int DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS = 60000;
 
   /**
    * cachedRAB uses AtomicReference to provide thread-safe, lock-free access to the cached data for
@@ -94,7 +94,7 @@ final class RegionalAccessBoundaryManager {
   private static final int EXECUTOR_POOL_SIZE = 5;
   private static final int EXECUTOR_QUEUE_CAPACITY = 100;
 
-  private static final ExecutorService EXECUTOR;
+  private static final ExecutorService DEFAULT_SHARED_EXECUTOR;
 
   static {
     ThreadPoolExecutor executor =
@@ -112,11 +112,12 @@ final class RegionalAccessBoundaryManager {
     // Allow core threads to time out so the executor can shrink to 0 when idle.
     // Ensures threads are released when idle to avoid unnecessary resource usage.
     executor.allowCoreThreadTimeOut(true);
-    EXECUTOR = executor;
+    DEFAULT_SHARED_EXECUTOR = executor;
   }
 
   private final transient Clock clock;
   private final int maxRetryElapsedTimeMillis;
+  private final ExecutorService executor;
 
   /**
    * Creates a new RegionalAccessBoundaryManager with the default retry timeout of 60 seconds.
@@ -124,13 +125,20 @@ final class RegionalAccessBoundaryManager {
    * @param clock The clock to use for cooldown and expiration checks.
    */
   RegionalAccessBoundaryManager(Clock clock) {
-    this(clock, DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS);
+    this(clock, DEFAULT_MAX_RETRY_ELAPSED_TIME_MILLIS, DEFAULT_SHARED_EXECUTOR);
   }
 
   @VisibleForTesting
   RegionalAccessBoundaryManager(Clock clock, int maxRetryElapsedTimeMillis) {
+    this(clock, maxRetryElapsedTimeMillis, DEFAULT_SHARED_EXECUTOR);
+  }
+
+  @VisibleForTesting
+  RegionalAccessBoundaryManager(
+      Clock clock, int maxRetryElapsedTimeMillis, ExecutorService executor) {
     this.clock = clock != null ? clock : Clock.SYSTEM;
     this.maxRetryElapsedTimeMillis = maxRetryElapsedTimeMillis;
+    this.executor = executor;
   }
 
   /**
@@ -203,12 +211,15 @@ final class RegionalAccessBoundaryManager {
           };
 
       try {
-        EXECUTOR.submit(refreshTask);
+        this.executor.submit(refreshTask);
       } catch (Exception | Error e) {
         // If scheduling fails (e.g., RejectedExecutionException, OutOfMemoryError for threads),
         // the task's finally block will never execute. We must release the lock here.
-        handleRefreshFailure(
-            new Exception("Regional Access Boundary background refresh failed to schedule", e));
+        LoggingUtils.log(
+            LOGGER_PROVIDER,
+            java.util.logging.Level.WARNING,
+            null,
+            "Regional Access Boundary background refresh failed to schedule: " + e.getMessage());
         future.setException(e);
         refreshFuture.set(null);
       }
