@@ -940,7 +940,7 @@ public class DataSource implements javax.sql.DataSource {
   }
 
   public String getOAuthClientId() {
-    return oAuthClientId != null && !oAuthClientId.isEmpty()
+    return oAuthClientId != null && !oAuthClientId.trim().isEmpty()
         ? oAuthClientId
         : BigQueryJdbcUrlUtility.DEFAULT_OAUTH_CLIENT_ID;
   }
