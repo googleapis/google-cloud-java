@@ -1,8 +1,24 @@
 on:
   pull_request:
-name: Unmanaged dependency check
+name: java-firestore Unmanaged dependency check
+env:
+  BUILD_SUBDIR: java-firestore
 jobs:
+  filter:
+    runs-on: ubuntu-latest
+    outputs:
+      library: ${{ steps.filter.outputs.library }}
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dorny/paths-filter@v3
+      id: filter
+      with:
+        filters: |
+          library:
+            - 'java-firestore/**'
   unmanaged_dependency_check:
+    needs: filter
+    if: ${{ needs.filter.outputs.library == 'true' }}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
