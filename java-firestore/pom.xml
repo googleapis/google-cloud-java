@@ -6,15 +6,16 @@
   <packaging>pom</packaging>
   <version>3.41.0</version><!-- {x-version-update:google-cloud-firestore:current} -->
   <name>Google Cloud Firestore Parent</name>
-  <url>https://github.com/googleapis/java-firestore</url>
+  <url>https://github.com/googleapis/google-cloud-java</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>
 
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>sdk-platform-java-config</artifactId>
-    <version>3.61.0</version>
+    <artifactId>google-cloud-jar-parent</artifactId>
+    <version>1.86.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-java:current} -->
+    <relativePath>../google-cloud-jar-parent/pom.xml</relativePath>
   </parent>
 
   <developers>
@@ -120,13 +121,13 @@
     <name>Google LLC</name>
   </organization>
   <scm>
-    <connection>scm:git:git@github.com:googleapis/java-firestore.git</connection>
-    <developerConnection>scm:git:git@github.com:googleapis/java-firestore.git</developerConnection>
-    <url>https://github.com/googleapis/java-firestore</url>
+    <connection>scm:git:git@github.com:googleapis/google-cloud-java.git</connection>
+    <developerConnection>scm:git:git@github.com:googleapis/google-cloud-java.git</developerConnection>
+    <url>https://github.com/googleapis/google-cloud-java</url>
     <tag>HEAD</tag>
   </scm>
   <issueManagement>
-    <url>https://github.com/googleapis/java-firestore/issues</url>
+    <url>https://github.com/googleapis/google-cloud-java/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
 
@@ -179,14 +180,6 @@
       </dependency>
 
       <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-shared-dependencies</artifactId>
-        <version>${google-cloud-shared-dependencies.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-      <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>4.13.2</version>
@@ -217,36 +210,6 @@
     <module>google-cloud-firestore-admin</module>
     <module>google-cloud-firestore-bom</module>
   </modules>
-
-  <reporting>
-  <plugins>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-javadoc-plugin</artifactId>
-      <reportSets>
-        <reportSet>
-          <id>html</id>
-          <reports>
-            <report>aggregate</report>
-            <report>javadoc</report>
-          </reports>
-        </reportSet>
-      </reportSets>
-      <configuration>
-        <source>8</source>
-        <links combine.self="override">
-          <link>https://googleapis.dev/java/api-common/latest/</link>
-          <link>https://googleapis.dev/java/gax/latest/</link>
-          <link>https://googleapis.dev/java/google-auth-library/latest/</link>
-          <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
-        </links>
-        <sourceFileExcludes>
-          <exclude>com/google/cloud/firestore/v1/package-info.java</exclude>
-        </sourceFileExcludes>
-      </configuration>
-    </plugin>
-  </plugins>
-</reporting>
 
   <profiles>
     <profile>
@@ -283,6 +246,12 @@
           </plugin>
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <id>bulkTests</id>
+      <properties>
+        <skipTests>true</skipTests>
+      </properties>
     </profile>
   </profiles>
 </project>
