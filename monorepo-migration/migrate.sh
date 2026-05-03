@@ -17,10 +17,24 @@
 # Exit on error
 set -e
 
+# Get absolute path to the script directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+MONOREPO_ROOT="$(dirname "$SCRIPT_DIR")"
+
 # Ensure git-filter-repo is available in PATH
 if ! command -v git-filter-repo >/dev/null 2>&1; then
+    LOCAL_FILTER_REPO_DIR="${SCRIPT_DIR}/.git-filter-repo"
+    LOCAL_FILTER_REPO="${LOCAL_FILTER_REPO_DIR}/git-filter-repo"
+    
+    if [ ! -f "$LOCAL_FILTER_REPO" ]; then
+        echo "git-filter-repo not found locally or in PATH. Downloading version v2.45.0..."
+        mkdir -p "$LOCAL_FILTER_REPO_DIR"
+        curl -sSL -o "$LOCAL_FILTER_REPO" "https://raw.githubusercontent.com/newren/git-filter-repo/v2.45.0/git-filter-repo"
+        chmod +x "$LOCAL_FILTER_REPO"
+    fi
+    
     echo "Injecting local .git-filter-repo into PATH..."
-    export PATH="$(pwd)/.git-filter-repo:$PATH"
+    export PATH="${LOCAL_FILTER_REPO_DIR}:$PATH"
 fi
 
 # Function to check if a command exists
@@ -49,13 +63,12 @@ CODEOWNER="${CODEOWNER:-}"
 SOURCE_REPO_NAME="${SOURCE_REPO_URL##*/}"
 MONOREPO_NAME="${MONOREPO_URL##*/}"
 
-# Use a temporary working directory sibling to the current monorepo
-WORKING_DIR="../../migration-work"
+# Use a temporary working directory sibling to the current monorepo, anchored to script location
+WORKING_DIR="$(cd "${SCRIPT_DIR}/../.." && pwd)/migration-work"
 SOURCE_DIR="$WORKING_DIR/$SOURCE_REPO_NAME-source"
 TARGET_DIR="$WORKING_DIR/$MONOREPO_NAME-target"
 
-# Get absolute path to the transformation script before any cd
-TRANSFORM_SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+TRANSFORM_SCRIPT_DIR="${SCRIPT_DIR}"
 TRANSFORM_SCRIPT="$TRANSFORM_SCRIPT_DIR/transform_workflow.py"
 MODERNIZE_POM_SCRIPT="$TRANSFORM_SCRIPT_DIR/modernize_pom.py"
 UPDATE_ROOT_POM_SCRIPT="$TRANSFORM_SCRIPT_DIR/update_root_pom.py"
@@ -75,20 +88,20 @@ echo "Starting migration using git read-tree with isolated clones..."
 # 0. Create working directory
 mkdir -p "$WORKING_DIR"
 
-MIGRATION_HEAD_BRANCH="${MIGRATION_HEAD_BRANCH:-main}"
+MIGRATION_HEAD_BRANCH="main"
 echo "Basing migration branch on: ${MIGRATION_HEAD_BRANCH}"
 
 # 1. Clone the source repository
 if [ ! -d "$SOURCE_DIR" ]; then
     echo "Cloning source repo: $SOURCE_REPO_URL into $SOURCE_DIR"
-    git clone "$SOURCE_REPO_URL" "$SOURCE_DIR"
+    git clone --branch main --single-branch "$SOURCE_REPO_URL" "$SOURCE_DIR"
 elif [ "${SKIP_SOURCE_UPDATE:-false}" = "true" ]; then
     echo "Skipping source repository update..."
 else
     echo "Source directory $SOURCE_DIR already exists. Ensuring it is clean and up-to-date..."
     cd "$SOURCE_DIR"
     git remote add origin "$SOURCE_REPO_URL" 2>/dev/null || git remote set-url origin "$SOURCE_REPO_URL"
-    git fetch origin
+    git fetch origin main
     git checkout -f "main"
     git reset --hard origin/main
     git clean -fd
@@ -136,28 +149,30 @@ fi
 # 2. Clone the target monorepo (the "isolated clone")
 if [ ! -d "$TARGET_DIR" ]; then
     echo "Cloning target monorepo: $MONOREPO_URL into $TARGET_DIR"
-    git clone "$MONOREPO_URL" "$TARGET_DIR"
-    git checkout -f "${MIGRATION_HEAD_BRANCH}"
-    git reset --hard origin/${MIGRATION_HEAD_BRANCH}
+    git clone --branch main --single-branch --depth 1 "$MONOREPO_URL" "$TARGET_DIR"
 else
     echo "Target directory $TARGET_DIR already exists. Ensuring it is clean and up-to-date..."
     cd "$TARGET_DIR"
-    git fetch origin
-    git checkout -f "${MIGRATION_HEAD_BRANCH}"
-    git reset --hard origin/${MIGRATION_HEAD_BRANCH}
+    git fetch --depth 1 origin main
+    git checkout -f "main"
+    git reset --hard origin/main
     git clean -fd
     cd - > /dev/null
 fi
 
 cd "$TARGET_DIR"
+if [ "$(pwd)" = "$MONOREPO_ROOT" ]; then
+    echo "CRITICAL ERROR: Script failed to change directory or attempted to run destructive Git operations inside the active workspace!" >&2
+    exit 1
+fi
 
 # Ensure we are on a clean main branch in the target clone
 echo "Ensuring clean state in target monorepo..."
-git fetch origin
+git fetch --depth 1 origin main
 git reset --hard HEAD
 git clean -fd
-git checkout -f "${MIGRATION_HEAD_BRANCH}"
-git reset --hard origin/${MIGRATION_HEAD_BRANCH}
+git checkout -f "main"
+git reset --hard origin/main
 git clean -fdx
 
 # Check if the repository is already migrated
