@@ -445,7 +445,6 @@ public class LoggingTest {
 
   @Test
   void getRequestMetadata_hasAccessToken() throws IOException {
-    TestAppender testAppender = setupTestLogger(ComputeEngineCredentials.class);
     MockMetadataServerTransportFactory transportFactory = new MockMetadataServerTransportFactory();
     transportFactory.transport.setServiceAccountEmail("SA_CLIENT_EMAIL");
     ComputeEngineCredentials credentials =
@@ -453,11 +452,12 @@ public class LoggingTest {
     credentials.regionalAccessBoundaryManager.setCachedRAB(
         new RegionalAccessBoundary(
             "dummy-locations", Arrays.asList("dummy-loc"), credentials.clock));
+    TestAppender testAppender = setupTestLogger(ComputeEngineCredentials.class);
     Map<String, List<String>> metadata = credentials.getRequestMetadata(CALL_URI);
 
     TestUtils.assertContainsBearerToken(metadata, ACCESS_TOKEN);
 
-    assertEquals(3, testAppender.events.size());
+    assertEquals(5, testAppender.events.size());
 
     ILoggingEvent accessTokenRequest = testAppender.events.get(0);
     assertEquals("Sending request to refresh access token", accessTokenRequest.getMessage());
