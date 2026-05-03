@@ -443,6 +443,14 @@ sed -i.bak "s/'java-storage-nio'/'java-storage-nio'\n  '${SOURCE_REPO_NAME}'/" "
 python3 "$UPDATE_CI_FILTERS_SCRIPT" ".github/workflows/ci.yaml" "$SOURCE_REPO_NAME"
 python3 "$UPDATE_CHANGES_FILTERS_SCRIPT" ".github/workflows/ci.yaml" "$SOURCE_REPO_NAME"
 
+if [ -n "${PRE_INSTALL_DEPS}" ]; then
+    echo "Injecting explicit dependencies into always_install_deps list inside .kokoro/common.sh..."
+    for dep in $(echo "${PRE_INSTALL_DEPS}" | tr ',' ' '); do
+        sed -i.bak "s|always_install_deps_list=(|always_install_deps_list=(\n      '${dep}'|" ".kokoro/common.sh"
+    done
+    rm -f .kokoro/common.sh.bak
+fi
+
 echo "Committing common.sh and ci.yaml updates..."
 git add .kokoro/common.sh .github/workflows/ci.yaml
 git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): exempt from global integration testing matrix"
@@ -465,7 +473,6 @@ fi
 # 7.11 Verify compilation
 echo "Verifying compilation..."
 BUILD_SUBDIR="${SOURCE_REPO_NAME}" JOB_TYPE=test .kokoro/build.sh
-# (cd "$SOURCE_REPO_NAME" && mvn compile -DskipTests -T 1C)
 
 # 7.13 Squash commits
 if [ "${SQUASH_COMMITS:-false}" = "true" ]; then
