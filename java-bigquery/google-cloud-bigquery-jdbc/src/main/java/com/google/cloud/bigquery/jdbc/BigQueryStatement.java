@@ -482,8 +482,10 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
           } catch (BigQueryException e) {
             if (e.getMessage() != null
                 && (e.getMessage().contains("Job is already in state DONE")
-                    || e.getMessage().contains("Error: 3848323"))) {
-              LOG.warning("Attempted to cancel a job that was already done: " + jobId);
+                    || e.getMessage().contains("Error: 3848323")
+                    || e.getMessage().contains("Not found")
+                    || e.getCode() == 404)) {
+              LOG.warning("Attempted to cancel a job that was not found or already done: " + jobId);
             } else {
               throw new BigQueryJdbcException(e);
             }
@@ -577,41 +579,63 @@ public class BigQueryStatement extends BigQueryNoOpsStatement {
       throws InterruptedException, BigQueryException, BigQueryJdbcException {
     LOG.finest("++enter++");
     Job job = null;
-    // Location is not properly passed from the connection,
-    // so we need to explicitly set it;
-    // Do not set custom JobId here or it will disable jobless queries.
+    // Location is not properly passed from the connection, so we need to explicitly set it;
     JobId jobId = JobId.newBuilder().setLocation(connection.getLocation()).build();
-    Object result = bigQuery.queryWithTimeout(jobConfiguration, jobId, null);
-    if (result instanceof TableResult) {
-      TableResult tableResult = (TableResult) result;
-      if (tableResult.getJobId() != null) {
-        return new ExecuteResult(tableResult, bigQuery.getJob(tableResult.getJobId()));
-      }
-      return new ExecuteResult((TableResult) result, null);
-    }
+    boolean shouldPrepopulate = !connection.isReadOnlyTokenUsed() && !connection.getUseStatelessQueryMode();
 
-    if (result instanceof Job) {
-      job = (Job) result;
-    } else {
-      throw new BigQueryJdbcException("Unexpected result type from queryWithTimeout");
+    if (shouldPrepopulate) {
+      jobId = jobId.toBuilder().setJob(generateJobId()).build();
     }
 
     synchronized (cancelLock) {
       if (isCanceled) {
-        job.cancel();
         throw new BigQueryJdbcException("Query was cancelled.");
       }
-      jobId = job.getJobId();
-      jobIds.add(jobId);
+      if (shouldPrepopulate) {
+        jobIds.add(jobId);
+      }
     }
-    LOG.info("Query submitted with Job ID: " + job.getJobId().getJob());
-    TableResult tableResult =
-        job.getQueryResults(QueryResultsOption.pageSize(querySettings.getMaxResultPerPage()));
-    synchronized (cancelLock) {
-      jobIds.remove(jobId);
+
+    try {
+      Object result = bigQuery.queryWithTimeout(jobConfiguration, jobId, null);
+      if (result instanceof TableResult) {
+        TableResult tableResult = (TableResult) result;
+        if (tableResult.getJobId() != null) {
+          return new ExecuteResult(tableResult, bigQuery.getJob(tableResult.getJobId()));
+        }
+        return new ExecuteResult((TableResult) result, null);
+      }
+
+      if (result instanceof Job) {
+        job = (Job) result;
+      } else {
+        throw new BigQueryJdbcException("Unexpected result type from queryWithTimeout");
+      }
+
+      synchronized (cancelLock) {
+        if (isCanceled) {
+          job.cancel();
+          throw new BigQueryJdbcException("Query was cancelled.");
+        }
+        JobId returnedId = job.getJobId();
+        if (!jobIds.contains(returnedId)) {
+          jobIds.add(returnedId);
+        }
+      }
+      LOG.info("Query submitted with Job ID: " + job.getJobId().getJob());
+      TableResult tableResult =
+          job.getQueryResults(QueryResultsOption.pageSize(querySettings.getMaxResultPerPage()));
+      return new ExecuteResult(tableResult, job);
+    } finally {
+      synchronized (cancelLock) {
+        jobIds.remove(jobId);
+        if (job != null) {
+          jobIds.remove(job.getJobId());
+        }
+      }
     }
-    return new ExecuteResult(tableResult, job);
   }
+
 
   /**
    * Execute the SQL script and sets the reference of the underlying job, passing null querySettings

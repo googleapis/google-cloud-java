@@ -494,4 +494,82 @@ public class BigQueryStatementTest {
     verify(bigquery, isReadOnlyTokenUsed ? Mockito.never() : Mockito.times(1))
         .create(any(JobInfo.class));
   }
+
+  @Test
+  public void testExecuteJobPrepopulatesJobId() throws SQLException, InterruptedException {
+    doReturn(false).when(bigQueryConnection).isReadOnlyTokenUsed();
+    doReturn(false).when(bigQueryConnection).getUseStatelessQueryMode();
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    BigQueryStatement statementSpy = Mockito.spy(statement);
+
+    TableResult tableResultMock = mock(TableResult.class);
+    doReturn(null).when(tableResultMock).getJobId();
+
+    ArgumentCaptor<JobId> jobIdCaptor = ArgumentCaptor.forClass(JobId.class);
+
+    Mockito.when(bigquery.queryWithTimeout(any(QueryJobConfiguration.class), jobIdCaptor.capture(), any()))
+        .thenAnswer(invocation -> {
+            JobId capturedId = jobIdCaptor.getValue();
+            assertThat(capturedId).isNotNull();
+            assertThat(capturedId.getJob()).isNotNull(); // Prepopulated Job name unique UUID
+            assertThat(statementSpy.jobIds).contains(capturedId); // Registered BEFORE wait blocks!
+            return tableResultMock;
+        });
+
+    doReturn(mock(BigQueryJsonResultSet.class))
+        .when(statementSpy)
+        .processJsonResultSet(tableResultMock);
+
+    statementSpy.executeQuery("SELECT 1");
+
+    // Cleaned up safely in the finally block
+    assertThat(statementSpy.jobIds).isEmpty();
+  }
+
+  @Test
+  public void testExecuteJobNoPrepopulateForStateless() throws SQLException, InterruptedException {
+    doReturn(true).when(bigQueryConnection).isReadOnlyTokenUsed();
+
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    BigQueryStatement statementSpy = Mockito.spy(statement);
+
+    TableResult tableResultMock = mock(TableResult.class);
+    doReturn(null).when(tableResultMock).getJobId();
+
+    ArgumentCaptor<JobId> jobIdCaptor = ArgumentCaptor.forClass(JobId.class);
+
+    Mockito.when(bigquery.queryWithTimeout(any(QueryJobConfiguration.class), jobIdCaptor.capture(), any()))
+        .thenAnswer(invocation -> {
+            JobId capturedId = jobIdCaptor.getValue();
+            assertThat(capturedId).isNotNull();
+            assertThat(capturedId.getJob()).isNull(); // Bypassed for stateless/fast-path
+            assertThat(statementSpy.jobIds).isEmpty(); // No Statement hook addition
+            return tableResultMock;
+        });
+
+    doReturn(mock(BigQueryJsonResultSet.class))
+        .when(statementSpy)
+        .processJsonResultSet(tableResultMock);
+
+    statementSpy.executeQuery("SELECT 1");
+    assertThat(statementSpy.jobIds).isEmpty();
+  }
+
+  @Test
+  public void testCancelGracefullyHandles404() throws SQLException {
+    BigQueryStatement statement = new BigQueryStatement(bigQueryConnection);
+    JobId dummyJobId = JobId.of("dummy-project", "dummy-job");
+    statement.jobIds.add(dummyJobId);
+
+    com.google.cloud.bigquery.BigQueryException missingJobException =
+        new com.google.cloud.bigquery.BigQueryException(404, "Not found: Job dummy-project:dummy-job");
+    Mockito.doThrow(missingJobException).when(bigquery).cancel(dummyJobId);
+
+    // Verify that Statement.cancel() ignores HTTP 404 gracefully without throwing SQLException
+    statement.cancel();
+
+    verify(bigquery).cancel(dummyJobId);
+    assertThat(statement.jobIds).isEmpty();
+  }
 }
