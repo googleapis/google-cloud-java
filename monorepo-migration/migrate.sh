@@ -92,20 +92,13 @@ MIGRATION_HEAD_BRANCH="main"
 echo "Basing migration branch on: ${MIGRATION_HEAD_BRANCH}"
 
 # 1. Clone the source repository
-if [ ! -d "$SOURCE_DIR" ]; then
+if [ "${SKIP_SOURCE_UPDATE:-false}" = "true" ] && [ -d "$SOURCE_DIR" ]; then
+    echo "Skipping source repository update and reusing existing directory..."
+else
+    echo "Ensuring clean slate for history filters by removing existing source directory..."
+    rm -rf "$SOURCE_DIR"
     echo "Cloning source repo: $SOURCE_REPO_URL into $SOURCE_DIR"
     git clone --branch main --single-branch "$SOURCE_REPO_URL" "$SOURCE_DIR"
-elif [ "${SKIP_SOURCE_UPDATE:-false}" = "true" ]; then
-    echo "Skipping source repository update..."
-else
-    echo "Source directory $SOURCE_DIR already exists. Ensuring it is clean and up-to-date..."
-    cd "$SOURCE_DIR"
-    git remote add origin "$SOURCE_REPO_URL" 2>/dev/null || git remote set-url origin "$SOURCE_REPO_URL"
-    git fetch origin main
-    git checkout -f "main"
-    git reset --hard origin/main
-    git clean -fd
-    cd - > /dev/null
 fi
 
 if [ "${SKIP_SOURCE_UPDATE:-false}" != "true" ]; then
@@ -438,7 +431,7 @@ bash generation/apply_versions.sh versions.txt current
 
 # 7.12c Sync all owlbot.py formatting
 echo "Syncing all owlbot.py formatting..."
-bash generation/update_owlbot_postprocessor_config.sh || true
+bash generation/update_owlbot_postprocessor_config.sh "$SOURCE_REPO_NAME" || true
 
 git add -u
 git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): align versions and format owlbot configurations"
