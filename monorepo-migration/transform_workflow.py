@@ -128,6 +128,9 @@ def transform(content, lib_name):
                 line = line.replace('" >> $GITHUB_ENV', ' -P !java17" >> $GITHUB_ENV')
             if 'build.bat' in line:
                 line = line.replace('build.bat', 'build.sh')
+            if '.kokoro/conformance.sh' in line:
+                short_name = lib_name.replace('java-', '')
+                line = line.replace('.kokoro/conformance.sh', f'.kokoro/{short_name}-conformance.sh')
 
             new_lines.append(line)
     return "\n".join(new_lines)

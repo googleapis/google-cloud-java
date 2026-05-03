@@ -241,6 +241,38 @@ EOF
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
+# 6.4c(2) Migrate custom conformance execution script if present
+if [ -f "$SOURCE_REPO_NAME/.kokoro/conformance.sh" ]; then
+    echo "Migrating conformance.sh to monorepo root .kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh..."
+    mkdir -p .kokoro
+    cp "$SOURCE_REPO_NAME/.kokoro/conformance.sh" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
+    
+    echo "Adapting conformance script paths and build scopes for monorepo root..."
+    PL_MODULES="${SOURCE_REPO_NAME}"
+    if [ -n "${PRE_INSTALL_DEPS}" ]; then
+        PL_MODULES="${PL_MODULES},${PRE_INSTALL_DEPS}"
+    fi
+    sed -i.bak "s|mvn install|mvn install -pl ${PL_MODULES} -am|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
+    sed -i.bak "s|cd test-proxy|cd ${SOURCE_REPO_NAME}/test-proxy|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
+    sed -i.bak "s|-jar test-proxy/target/|-jar ${SOURCE_REPO_NAME}/test-proxy/target/|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
+    sed -i.bak "s|kill \${proxyPID}|kill \${proxyPID} \&\& sleep 5|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
+    sed -i.bak "s|../../test-proxy/known_failures.txt|../../\${SOURCE_REPO_NAME}/test-proxy/known_failures.txt|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
+    rm -f ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh.bak"
+    
+    if [ -f "${SOURCE_REPO_NAME}/test-proxy/pom.xml" ]; then
+        echo "Fixing protoc-gen-grpc-java version in test-proxy/pom.xml for Apple Silicon (osx-aarch_64) support..."
+        sed -i.bak "s|1.24.0:exe:\${os.detected.classifier}|1.62.2:exe:\${os.detected.classifier}|" "${SOURCE_REPO_NAME}/test-proxy/pom.xml"
+        rm -f "${SOURCE_REPO_NAME}/test-proxy/pom.xml.bak"
+        git add "${SOURCE_REPO_NAME}/test-proxy/pom.xml"
+        git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): fix protoc-gen-grpc-java version for Apple Silicon support"
+        COMMIT_COUNT=$((COMMIT_COUNT + 1))
+    fi
+    
+    git add ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate and adapt conformance execution script"
+    COMMIT_COUNT=$((COMMIT_COUNT + 1))
+fi
+
 # 6.4d Update repo and repo_short in .repo-metadata.json
 REPO_METADATA="$SOURCE_REPO_NAME/.repo-metadata.json"
 if [ -f "$REPO_METADATA" ]; then
