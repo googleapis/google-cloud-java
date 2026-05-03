@@ -105,6 +105,29 @@ service Compliance {
     };
   }
 
+  // This method echoes the ComplianceData request. This method exercises
+  // sending some parameters as path variables with custom json_name.
+  rpc RepeatDataCustomPath(CustomBindingRequest) returns (RepeatResponse) {
+    option (google.api.http) = {
+      get: "/v1beta1/repeat/{info.custom_path_field}:custompath"
+    };
+  }
+
+  // Testing custom json_name option in custom message bodies
+  rpc RepeatDataBodyCustomMessage(CustomBindingRequest) returns (RepeatResponse) {
+    option (google.api.http) = {
+      post: "/v1beta1/repeat:bodycustommessage"
+      body: "custom_body_message"
+    };
+  }
+
+  // Testing custom query parameter mapping with dashes
+  rpc RepeatDataCustomQuery(CustomBindingRequest) returns (RepeatResponse) {
+    option (google.api.http) = {
+      get: "/v1beta1/repeat:customquery"
+    };
+  }
+
 }
 
 message EnumRequest {
@@ -127,6 +150,15 @@ message RepeatRequest {
   // If true, the server will verify that the received request matches
   // the request with the same name in the compliance test suite.
   bool server_verify = 3;
+}
+
+message CustomBindingRequest {
+  string name = 1;
+  ComplianceData info = 2;
+  bool server_verify = 3;
+
+  string custom_kebab_name = 4 [json_name = "custom-kebab-name"];
+  ComplianceData custom_body_message = 5 [json_name = "custom-body-message"];
 }
 
 message RepeatResponse {
@@ -189,6 +221,7 @@ message ComplianceData {
   LifeKingdom f_kingdom = 22;
 
   ComplianceDataChild f_child = 16;
+  string custom_path_field = 24 [json_name = "custom-path-field"];
 
   // optional fields
 

@@ -175,6 +175,7 @@ jobs:
             |grep --invert-match samples \
             |grep --invert-match benchmark \
             |grep --invert-match grafeas \
+            |grep --invert-match '/tools/' \
             |grep --invert-match 'cloud-build.*v2' \
             |grep --invert-match 'google/monitoring/v3/DroppedLabelsOuterClass.java' \
             |grep --invert-match 'google/cloud/policytroubleshooter/v1/Explanations.java')

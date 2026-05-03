@@ -98,6 +98,7 @@ final class BigQueryJdbcUrlUtility {
   static final String BIGQUERY_ENDPOINT_OVERRIDE_PROPERTY_NAME = "BIGQUERY";
   static final String STS_ENDPOINT_OVERRIDE_PROPERTY_NAME = "STS";
   static final String OAUTH_ACCESS_TOKEN_PROPERTY_NAME = "OAuthAccessToken";
+  static final String OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME = "OAuthAccessTokenReadonly";
   static final String OAUTH_REFRESH_TOKEN_PROPERTY_NAME = "OAuthRefreshToken";
   static final String OAUTH_CLIENT_ID_PROPERTY_NAME = "OAuthClientId";
   static final String OAUTH_CLIENT_SECRET_PROPERTY_NAME = "OAuthClientSecret";
@@ -247,6 +248,11 @@ final class BigQueryJdbcUrlUtility {
                       .setDescription(
                           "The pre-generated access token to be used with BigQuery for"
                               + " authentication.")
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME)
+                      .setDescription(
+                          "Set to true if the pre-generated access token has a read-only scope.")
                       .build(),
                   BigQueryConnectionProperty.newBuilder()
                       .setName(OAUTH_CLIENT_ID_PROPERTY_NAME)
