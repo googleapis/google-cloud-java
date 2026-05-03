@@ -16,6 +16,9 @@
 
 package com.example.spanner;
 
+import static com.example.spanner.ExperimentalHostHelper.isExperimentalHost;
+import static com.example.spanner.ExperimentalHostHelper.setExperimentalHostSpannerOptions;
+
 import static com.google.cloud.spanner.Type.StructField;
 
 import com.google.api.gax.longrunning.OperationFuture;
@@ -1503,17 +1506,19 @@ public class SpannerSample {
 
   // [START spanner_create_client_with_query_options]
   static void clientWithQueryOptions(DatabaseId db) {
-    SpannerOptions options =
-        SpannerOptions.newBuilder()
-            .setDefaultQueryOptions(
+    SpannerOptions.Builder builder = SpannerOptions.newBuilder();
+    builder.setDefaultQueryOptions(
                 db, QueryOptions
                     .newBuilder()
                     .setOptimizerVersion("1")
                     // The list of available statistics packages can be found by querying the
                     // "INFORMATION_SCHEMA.SPANNER_STATISTICS" table.
                     .setOptimizerStatisticsPackage("latest")
-                    .build())
-            .build();
+                    .build());
+    if (isExperimentalHost()) {
+      setExperimentalHostSpannerOptions(builder);
+    }
+    SpannerOptions options = builder.build();
     Spanner spanner = options.getService();
     DatabaseClient dbClient = spanner.getDatabaseClient(db);
     try (ResultSet resultSet =
@@ -2231,7 +2236,11 @@ public class SpannerSample {
       printUsageAndExit();
     }
     // [START init_client]
-    SpannerOptions options = SpannerOptions.newBuilder().build();
+    SpannerOptions.Builder builder = SpannerOptions.newBuilder();
+    if (isExperimentalHost()) {
+      setExperimentalHostSpannerOptions(builder);
+    }
+    SpannerOptions options = builder.build();
     Spanner spanner = options.getService();
     DatabaseAdminClient dbAdminClient = null;
     try {
