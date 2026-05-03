@@ -26,39 +26,11 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class DatastoreEmulatorTest {
 
-  private static final DatastoreEmulatorOptions options =
-      new DatastoreEmulatorOptions.Builder().build();
-
-  @Test
-  public void testArgs() throws DatastoreEmulatorException {
-    DatastoreEmulator datastore =
-        new DatastoreEmulator(null, "blar", options) {
-          @Override
-          void startEmulatorInternal(
-              String emulatorDir, String projectId, List<String> cmdLineOpts) {
-            // no-op for testing
-          }
-        };
-
-    try {
-      datastore.start(null, "projectId");
-      fail("expected exception");
-    } catch (NullPointerException npe) {
-      // good
-    }
-
-    try {
-      datastore.start("path/to/emulator", null);
-      fail("expected exception");
-    } catch (NullPointerException npe) {
-      // good
-    }
-
-    datastore.start("path/to/emulator", "projectId");
-  }
-
   @Test
   public void testLifecycle() throws DatastoreEmulatorException {
+    DatastoreEmulatorOptions options =
+        new DatastoreEmulatorOptions.Builder().setCommand("/yar").setProjectId("myproject").build();
+
     DatastoreEmulator datastore =
         new DatastoreEmulator(null, "blar", options) {
           @Override
@@ -73,12 +45,9 @@ public class DatastoreEmulatorTest {
           }
         };
 
-    String emulatorDir = "/yar";
-    String myProject = "myproject";
-
-    datastore.start(emulatorDir, myProject);
+    datastore.start();
     try {
-      datastore.start(emulatorDir, myProject);
+      datastore.start();
       fail("expected exception");
     } catch (IllegalStateException e) {
       // good
@@ -90,7 +59,7 @@ public class DatastoreEmulatorTest {
 
     // Once we've stopped we can't start again.
     try {
-      datastore.start(emulatorDir, myProject);
+      datastore.start();
       fail("expected exception");
     } catch (IllegalStateException e) {
       // good

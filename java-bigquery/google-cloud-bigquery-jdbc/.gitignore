@@ -2,3 +2,6 @@ drivers/**
 target-it/**
 *logs*/**
 **/ITBigQueryJDBCLocalTest.java
+
+tools/**/*.class
+tools/**/*.jfr
