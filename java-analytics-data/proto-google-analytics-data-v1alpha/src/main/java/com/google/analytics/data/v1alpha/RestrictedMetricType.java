@@ -171,7 +171,7 @@ public enum RestrictedMetricType implements com.google.protobuf.ProtocolMessageE
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto.getDescriptor()
         .getEnumTypes()
-        .get(8);
+        .get(9);
   }
 
   private static final RestrictedMetricType[] VALUES = values();

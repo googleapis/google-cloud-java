@@ -88,7 +88,8 @@ public class DatastoreMetricsSampleIT {
     systemsOutRule.assertContains("Built-in metrics are explicitly enabled");
     systemsOutRule.assertContains("Inserted entity");
     systemsOutRule.assertContains("Transaction committed");
-    systemsOutRule.assertContains("transaction_latency and transaction_attempt_count metrics recorded");
+    systemsOutRule.assertContains(
+        "transaction_latency and transaction_attempt_count metrics recorded");
     systemsOutRule.assertContains("Deleted entity");
     systemsOutRule.assertContains("Metrics will be flushed to Cloud Monitoring");
   }
