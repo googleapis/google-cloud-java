@@ -24,7 +24,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreException;
@@ -180,17 +179,18 @@ public class ITLocalDatastoreHelperTest {
   public void testDefaultHttpTransportOptions() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create();
     DatastoreOptions options = helper.getOptions();
-    assertThat(options.getTransportOptions()).isInstanceOf(HttpTransportOptions.class);
+    assertThat(options.getTransportOptions()).isInstanceOf(GrpcTransportOptions.class);
   }
 
   @Test
-  public void testSetGrpcTransportOptions() {
+  public void testSetHttpTransportOptions() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create();
     DatastoreOptions options =
-        helper.getGrpcTransportOptions(GrpcTransportOptions.newBuilder().build());
-    assertThat(options.getTransportOptions()).isInstanceOf(GrpcTransportOptions.class);
-    assertThat(options.getTransportChannelProvider())
-        .isInstanceOf(InstantiatingGrpcChannelProvider.class);
+        helper.getOptions().toBuilder()
+            .setTransportOptions(HttpTransportOptions.newBuilder().build())
+            .build();
+    assertThat(options.getTransportOptions()).isInstanceOf(HttpTransportOptions.class);
+    assertNull(options.getTransportChannelProvider());
   }
 
   @Test

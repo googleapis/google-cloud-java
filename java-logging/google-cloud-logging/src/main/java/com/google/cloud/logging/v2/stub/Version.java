@@ -21,7 +21,7 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 final class Version {
   // {x-version-update-start:google-cloud-logging:current}
-  static final String VERSION = "3.32.0";
+  static final String VERSION = "3.33.0-SNAPSHOT";
   // {x-version-update-end}
 
 }

@@ -813,6 +813,34 @@ public class ITObjectTest {
   }
 
   @Test
+  public void testComposeBlobWithDeleteSourceObjects() {
+    String baseName = generator.randomObjectName();
+    String sourceBlobName1 = baseName + "-1";
+    String sourceBlobName2 = baseName + "-2";
+    BlobInfo sourceBlob1 = BlobInfo.newBuilder(bucket, sourceBlobName1).build();
+    BlobInfo sourceBlob2 = BlobInfo.newBuilder(bucket, sourceBlobName2).build();
+    storage.create(sourceBlob1, BLOB_BYTE_CONTENT);
+    storage.create(sourceBlob2, BLOB_BYTE_CONTENT);
+
+    String targetBlobName = baseName + "-target";
+    BlobInfo targetBlob = BlobInfo.newBuilder(bucket, targetBlobName).build();
+    ComposeRequest req =
+        ComposeRequest.newBuilder()
+            .addSource(sourceBlobName1, sourceBlobName2)
+            .setTarget(targetBlob)
+            .setDeleteSourceObjects(true)
+            .build();
+    Blob remoteTargetBlob = storage.compose(req);
+    assertNotNull(remoteTargetBlob);
+
+    assertNull(storage.get(bucket.getName(), sourceBlobName1));
+    assertNull(storage.get(bucket.getName(), sourceBlobName2));
+
+    byte[] readBytes = storage.readAllBytes(bucket.getName(), targetBlobName);
+    assertThat(readBytes.length).isEqualTo(BLOB_BYTE_CONTENT.length * 2);
+  }
+
+  @Test
   public void testComposeBlobFail() {
     String baseName = generator.randomObjectName();
     String sourceBlobName1 = baseName + "-source-1";
