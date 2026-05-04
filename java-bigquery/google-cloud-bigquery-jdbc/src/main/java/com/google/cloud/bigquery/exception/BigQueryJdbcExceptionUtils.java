@@ -17,7 +17,7 @@
 package com.google.cloud.bigquery.exception;
 
 /** Utility class for JDBC exceptions. */
-public final class BigQueryJdbcExceptionUtils {
+final class BigQueryJdbcExceptionUtils {
 
   private BigQueryJdbcExceptionUtils() {
     // Utility class, prevent instantiation
