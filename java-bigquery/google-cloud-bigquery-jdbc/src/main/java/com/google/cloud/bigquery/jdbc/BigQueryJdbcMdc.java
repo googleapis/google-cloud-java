@@ -41,7 +41,7 @@ class BigQueryJdbcMdc {
               connection,
               k -> {
                 String baseId = (id != null && !id.isEmpty()) ? id : UUID.randomUUID().toString();
-                return "BQ-JDBC-" + baseId;
+                return baseId;
               });
 
       currentConnectionId.set(cleanId);
