@@ -47,18 +47,18 @@ public class BigQueryJdbcMdcTest {
   @Test
   public void testRegisterAndRetrieveConnectionId() {
     BigQueryJdbcMdc.registerInstance(mockConnection1, "123");
-    assertEquals("JdbcConnection-123", BigQueryJdbcMdc.getConnectionId());
+    assertEquals("123", BigQueryJdbcMdc.getConnectionId());
   }
 
   @Test
   public void testRemoveInstance() {
     BigQueryJdbcMdc.registerInstance(mockConnection1, "1");
-    assertEquals("JdbcConnection-1", BigQueryJdbcMdc.getConnectionId());
+    assertEquals("1", BigQueryJdbcMdc.getConnectionId());
 
     BigQueryJdbcMdc.removeInstance(mockConnection1);
     // Note: removeInstance does not clear currentConnectionId on the current thread
     // based on current implementation.
-    assertEquals("JdbcConnection-1", BigQueryJdbcMdc.getConnectionId());
+    assertEquals("1", BigQueryJdbcMdc.getConnectionId());
 
     BigQueryJdbcMdc.clear();
     assertNull(BigQueryJdbcMdc.getConnectionId());
@@ -67,7 +67,7 @@ public class BigQueryJdbcMdcTest {
   @Test
   public void testClearContext() {
     BigQueryJdbcMdc.registerInstance(mockConnection1, "456");
-    assertEquals("JdbcConnection-456", BigQueryJdbcMdc.getConnectionId());
+    assertEquals("456", BigQueryJdbcMdc.getConnectionId());
 
     BigQueryJdbcMdc.clear();
     assertNull(BigQueryJdbcMdc.getConnectionId());
@@ -76,7 +76,7 @@ public class BigQueryJdbcMdcTest {
   @Test
   public void testThreadInheritance() throws InterruptedException {
     BigQueryJdbcMdc.registerInstance(mockConnection1, "parent");
-    assertEquals("JdbcConnection-parent", BigQueryJdbcMdc.getConnectionId());
+    assertEquals("parent", BigQueryJdbcMdc.getConnectionId());
 
     AtomicReference<String> childConnectionId = new AtomicReference<>();
     CountDownLatch latch = new CountDownLatch(1);
@@ -90,7 +90,7 @@ public class BigQueryJdbcMdcTest {
     childThread.start();
     assertTrue(latch.await(5, TimeUnit.SECONDS));
 
-    assertEquals("JdbcConnection-parent", childConnectionId.get());
+    assertEquals("parent", childConnectionId.get());
   }
 
   @Test
@@ -144,17 +144,17 @@ public class BigQueryJdbcMdcTest {
 
     assertTrue(testFinished.await(5, TimeUnit.SECONDS));
 
-    assertEquals("JdbcConnection-A", threadAIdBeforeB.get());
+    assertEquals("A", threadAIdBeforeB.get());
     assertNull(threadBIdBeforeRegister.get());
-    assertEquals("JdbcConnection-B", threadBIdAfterRegister.get());
-    assertEquals("JdbcConnection-A", threadAIdAfterB.get());
+    assertEquals("B", threadBIdAfterRegister.get());
+    assertEquals("A", threadAIdAfterB.get());
   }
 
   @Test
   public void testMdcCloseableClearsContext() {
     try (BigQueryJdbcMdc.MdcCloseable mdc =
         BigQueryJdbcMdc.registerInstance(mockConnection1, "789")) {
-      assertEquals("JdbcConnection-789", BigQueryJdbcMdc.getConnectionId());
+      assertEquals("789", BigQueryJdbcMdc.getConnectionId());
     }
     assertNull(BigQueryJdbcMdc.getConnectionId());
   }
