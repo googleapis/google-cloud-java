@@ -35,9 +35,7 @@ class ServiceStubSettingsClassComposerTest {
             0),
         Arguments.of(
             "PublisherStubSettings",
-            GrpcTestProtoLoader.instance().parsePubSubPublisher().toBuilder()
-                .setGenerateVersionJava(true)
-                .build(),
+            GrpcTestProtoLoader.instance().parsePubSubPublisher(),
             "pubsub",
             "v1",
             0),
