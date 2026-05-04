@@ -360,6 +360,8 @@ if [ -d "$SOURCE_REPO_NAME/.github/workflows" ]; then
             
             echo "Migrating and adapting $filename to $target_path"
             python3 "$TRANSFORM_SCRIPT" "$SOURCE_REPO_NAME" < "$workflow" > "$target_path"
+            sed -i.bak "s|java-version: 8|java-version: 11|" "$target_path"
+            rm -f "${target_path}.bak"
         fi
     done
     
