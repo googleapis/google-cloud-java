@@ -250,5 +250,57 @@ public interface CommitResponseOrBuilder
    */
   com.google.spanner.v1.CacheUpdateOrBuilder getCacheUpdateOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The isolation level used for the read-write transaction.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.TransactionOptions.IsolationLevel isolation_level = 7;</code>
+   *
+   * @return The enum numeric value on the wire for isolationLevel.
+   */
+  int getIsolationLevelValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The isolation level used for the read-write transaction.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.TransactionOptions.IsolationLevel isolation_level = 7;</code>
+   *
+   * @return The isolationLevel.
+   */
+  com.google.spanner.v1.TransactionOptions.IsolationLevel getIsolationLevel();
+
+  /**
+   *
+   *
+   * <pre>
+   * The read lock mode used for the read-write transaction.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode read_lock_mode = 8;</code>
+   *
+   * @return The enum numeric value on the wire for readLockMode.
+   */
+  int getReadLockModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * The read lock mode used for the read-write transaction.
+   * </pre>
+   *
+   * <code>.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode read_lock_mode = 8;</code>
+   *
+   * @return The readLockMode.
+   */
+  com.google.spanner.v1.TransactionOptions.ReadWrite.ReadLockMode getReadLockMode();
+
   com.google.spanner.v1.CommitResponse.MultiplexedSessionRetryCase getMultiplexedSessionRetryCase();
 }
