@@ -22,6 +22,7 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import com.google.api.core.InternalApi;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.ServiceOptions;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.testing.BaseEmulatorHelper;
@@ -242,11 +243,14 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
   }
 
   /**
-   * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
-   * localhost. The transportOptions is set to {@code grpcTransportOptions}.
+   * Prefer to set the TransportOptions via the Options Builder.
+   *
+   * <p>Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator
+   * on localhost. The transportOptions is set to {@code grpcTransportOptions}.
    */
+  @Deprecated
   public DatastoreOptions getGrpcTransportOptions(GrpcTransportOptions grpcTransportOptions) {
-    return optionsBuilder.setTransportOptions(grpcTransportOptions).build();
+    return optionsBuilder.setTransportOptions((TransportOptions) grpcTransportOptions).build();
   }
 
   public DatastoreOptions.Builder setNamespace(String namespace) {

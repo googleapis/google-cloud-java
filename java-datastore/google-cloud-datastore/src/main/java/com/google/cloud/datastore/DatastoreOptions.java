@@ -180,12 +180,16 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
     }
 
     /**
-     * Sets the transport to gRPC. Note this functionality is experimental and subject to change.
+     * This method deprecated. Prefer to use {@link #setTransportOptions(TransportOptions)} instead.
+     * When using the transport-neutral variant, you may need to cast to TransportOptions when using
+     * a GrpcTransportOptions class, otherwise it will default to the deprecated method.
+     *
+     * <p>Sets the transport to gRPC. Note this functionality is experimental and subject to change.
      */
+    @Deprecated
     @BetaApi
     public Builder setTransportOptions(GrpcTransportOptions transportOptions) {
-      this.transportOptions = transportOptions;
-      return super.setTransportOptions(transportOptions);
+      return setTransportOptions((TransportOptions) transportOptions);
     }
 
     @Override
