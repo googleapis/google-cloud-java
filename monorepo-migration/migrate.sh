@@ -257,6 +257,13 @@ if [ -f "$SOURCE_REPO_NAME/.kokoro/conformance.sh" ]; then
     
     echo "Adapting conformance script paths and build scopes for monorepo root..."
     PL_MODULES="${SOURCE_REPO_NAME}"
+    # Also include any child BOM modules to ensure snapshots install to local .m2 cache for test utilities
+    for bom_dir in "${SOURCE_REPO_NAME}"/*-bom; do
+        if [ -d "$bom_dir" ]; then
+            PL_MODULES="${PL_MODULES},${bom_dir}"
+        fi
+    done
+    
     if [ -n "${PRE_INSTALL_DEPS}" ]; then
         PL_MODULES="${PL_MODULES},${PRE_INSTALL_DEPS}"
     fi
