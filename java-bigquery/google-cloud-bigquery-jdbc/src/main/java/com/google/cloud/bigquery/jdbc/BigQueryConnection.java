@@ -1220,10 +1220,10 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     return prepareCall(sql);
   }
 
-<<<<<<< jdbc/feature-branch-otel
   public Tracer getTracer() {
     return this.tracer;
-=======
+  }
+
   public boolean isReadOnlyTokenUsed() {
     return this.isReadOnlyTokenUsed;
   }
@@ -1236,6 +1236,5 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           readonlyValue, BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME);
     }
     return false;
->>>>>>> main
   }
 }

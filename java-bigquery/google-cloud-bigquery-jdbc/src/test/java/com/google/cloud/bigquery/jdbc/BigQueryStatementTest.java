@@ -626,6 +626,8 @@ public class BigQueryStatementTest {
   @FunctionalInterface
   interface StatementOperation {
     void run() throws Exception;
+  }
+
   @ParameterizedTest
   @ValueSource(booleans = {true, false})
   public void testGetStatementType(boolean isReadOnlyTokenUsed) throws Exception {
