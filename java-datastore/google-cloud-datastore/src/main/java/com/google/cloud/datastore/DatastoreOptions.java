@@ -19,7 +19,6 @@ package com.google.cloud.datastore;
 import static com.google.cloud.datastore.Validator.validateNamespace;
 
 import com.google.api.core.BetaApi;
-import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -48,6 +47,8 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
   private static final long serialVersionUID = -1018382430058137336L;
   private static final String API_SHORT_NAME = "Datastore";
+  private static final java.util.logging.Logger logger =
+      java.util.logging.Logger.getLogger(DatastoreOptions.class.getName());
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE);
   private static final String DEFAULT_DATABASE_ID = "";
@@ -73,9 +74,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
   /**
    * @deprecated This constant is obsolete and will be removed in a future version.
    */
-  @ObsoleteApi("This constant is obsolete and will be removed in a future version.")
-  @Deprecated
-  public static final int MAX_CHANNEL_COUNT = 10;
+  @Deprecated public static final int MAX_CHANNEL_COUNT = 10;
 
   private transient TransportChannelProvider channelProvider = null;
 
@@ -278,9 +277,9 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
     namespace = MoreObjects.firstNonNull(builder.namespace, defaultNamespace());
     databaseId = MoreObjects.firstNonNull(builder.databaseId, DEFAULT_DATABASE_ID);
 
+    // ChannelProvider is used by GAX but HttpJson does not use it so we safely ignore it.
     if (getTransportOptions() instanceof HttpTransportOptions && builder.channelProvider != null) {
-      throw new IllegalArgumentException(
-          "Only gRPC transport allows setting of channel provider or credentials provider");
+      logger.warning("Channel provider is ignored for HttpJson transport.");
     } else if (getTransportOptions() instanceof GrpcTransportOptions) {
       if (builder.channelProvider == null) {
         // Set the default gRPC connection pool to be configured with a minimum of 1 channel.
