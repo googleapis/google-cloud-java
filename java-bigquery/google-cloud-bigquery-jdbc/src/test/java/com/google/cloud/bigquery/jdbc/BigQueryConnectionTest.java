@@ -32,6 +32,8 @@ import java.sql.SQLException;
 import java.util.Properties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class BigQueryConnectionTest {
 
@@ -435,6 +437,23 @@ public class BigQueryConnectionTest {
     String url = BASE_URL;
     try (BigQueryConnection connection = new BigQueryConnection(url)) {
       assertFalse(connection.reqGoogleDriveScope);
+    }
+  }
+
+  @ParameterizedTest
+  @CsvSource({"1, true", "0, false", "true, true", "false, false"})
+  public void testIsReadOnlyTokenProvided(String readonlyProp, boolean expectedIsReadOnly)
+      throws Exception {
+    String url =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+            + "OAuthType=2;ProjectId=MyBigQueryProject;"
+            + "OAuthAccessToken=redacted;"
+            + "OAuthAccessTokenReadonly="
+            + readonlyProp
+            + ";";
+
+    try (BigQueryConnection connection = new BigQueryConnection(url)) {
+      assertEquals(expectedIsReadOnly, connection.isReadOnlyTokenUsed());
     }
   }
 }
