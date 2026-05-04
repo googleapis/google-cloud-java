@@ -220,24 +220,32 @@ EOF
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
-# 6.4c Migrate Integration presubmit config if present
-if [ -f "$SOURCE_REPO_NAME/.kokoro/presubmit/integration.cfg" ]; then
-    echo "Migrating integration.cfg to monorepo root .kokoro/presubmit/${SOURCE_REPO_NAME#java-}-integration.cfg..."
+# 6.4c Migrate Integration presubmit configurations if present
+if ls "$SOURCE_REPO_NAME/.kokoro/presubmit/integration"*.cfg >/dev/null 2>&1; then
     mkdir -p .kokoro/presubmit
-    sed -e 's/value: "integration"/value: "integration-single"/' \
-        -e 's/java8/java11/' \
-        "$SOURCE_REPO_NAME/.kokoro/presubmit/integration.cfg" > ".kokoro/presubmit/${SOURCE_REPO_NAME#java-}-integration.cfg"
-    
-    # Append BUILD_SUBDIR
-    cat <<EOF >> ".kokoro/presubmit/${SOURCE_REPO_NAME#java-}-integration.cfg"
+    for cfg_file in "$SOURCE_REPO_NAME/.kokoro/presubmit/integration"*.cfg; do
+        if [ -f "$cfg_file" ]; then
+            filename=$(basename "$cfg_file")
+            new_filename="${filename/integration/${SOURCE_REPO_NAME#java-}-integration}"
+            target_cfg=".kokoro/presubmit/${new_filename}"
+            
+            echo "Migrating and adapting $filename to $target_cfg..."
+            sed -e 's/value: "integration"/value: "integration-single"/' \
+                -e 's/java8/java11/' \
+                "$cfg_file" > "$target_cfg"
+            
+            # Append BUILD_SUBDIR
+            cat <<EOF >> "$target_cfg"
 
 env_vars: {
   key: "BUILD_SUBDIR"
   value: "${SOURCE_REPO_NAME}"
 }
 EOF
-    git add ".kokoro/presubmit/${SOURCE_REPO_NAME#java-}-integration.cfg"
-    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate Integration presubmit config"
+            git add "$target_cfg"
+        fi
+    done
+    git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): migrate Integration presubmit configurations"
     COMMIT_COUNT=$((COMMIT_COUNT + 1))
 fi
 
