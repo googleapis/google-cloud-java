@@ -1026,3 +1026,11 @@ google-cloud-nio:0.131.0:0.132.0-SNAPSHOT
 google-cloud-appoptimize:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-appoptimize-v1beta:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-appoptimize-v1beta:0.1.0:0.2.0-SNAPSHOT
+google-maps-mapmanagement:0.0.0:0.0.1-SNAPSHOT
+proto-google-maps-mapmanagement-v2beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-maps-mapmanagement-v2beta:0.0.0:0.0.1-SNAPSHOT
+gapic-showcase:0.0.0:0.0.1-SNAPSHOT
+proto-gapic-showcase-v1beta1:0.0.0:0.0.1-SNAPSHOT
+grpc-gapic-showcase-v1beta1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-valkey-v1beta:0.37.0:0.38.0-SNAPSHOT
+grpc-google-cloud-valkey-v1:0.37.0:0.38.0-SNAPSHOT

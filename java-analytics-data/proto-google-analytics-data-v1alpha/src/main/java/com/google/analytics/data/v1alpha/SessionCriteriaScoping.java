@@ -175,7 +175,7 @@ public enum SessionCriteriaScoping implements com.google.protobuf.ProtocolMessag
   public static com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.analytics.data.v1alpha.ReportingApiProto.getDescriptor()
         .getEnumTypes()
-        .get(2);
+        .get(3);
   }
 
   private static final SessionCriteriaScoping[] VALUES = values();
