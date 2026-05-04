@@ -344,7 +344,7 @@ if [ -d "$SOURCE_REPO_NAME/.github/workflows" ]; then
             case "$filename" in
                 "hermetic_library_generation.yaml" | "update_generation_config.yaml" | \
                 "approve-readme.yaml" | "auto-release.yaml" | "renovate_config_check.yaml" | \
-                "samples.yaml" | "unmanaged_dependency_check.yaml")
+                "samples.yaml" | "unmanaged_dependency_check.yaml" | "unmanaged-dependency-check.yaml")
                     echo "Skipping redundant workflow: $filename"
                     continue
                     ;;
