@@ -3042,6 +3042,7 @@ libraries:
   excluded_dependencies: proto-google-common-protos,grpc-google-common-protos,proto-google-common-protos-parent
   excluded_poms: proto-google-common-protos-bom,proto-google-common-protos
   library_type: OTHER
+
   GAPICs:
   - proto_path: google/api
   - proto_path: google/apps/card/v1
