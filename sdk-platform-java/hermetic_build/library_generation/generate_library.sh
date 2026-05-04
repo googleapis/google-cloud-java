@@ -165,11 +165,6 @@ case "${proto_path}" in
       removed_proto="google/cloud/visionai/v1/prediction.proto"
       proto_files="${proto_files//${removed_proto}/}"
       ;;
-  "google/rpc")
-    # this proto is excluded from //google/rpc:google-rpc-java
-    removed_proto="google/rpc/http.proto"
-    proto_files="${proto_files//${removed_proto}/}"
-    ;;
 esac
 
 protoc_path=$(get_protoc_location)
