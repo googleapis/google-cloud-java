@@ -1026,3 +1026,6 @@ google-cloud-nio:0.131.0:0.132.0-SNAPSHOT
 google-cloud-appoptimize:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-appoptimize-v1beta:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-appoptimize-v1beta:0.1.0:0.2.0-SNAPSHOT
+google-cloud-health:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-health-v4:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-health-v4:0.0.0:0.0.1-SNAPSHOT
