@@ -271,8 +271,13 @@ if [ -f "$SOURCE_REPO_NAME/.kokoro/conformance.sh" ]; then
         echo "Fixing protoc-gen-grpc-java version in test-proxy/pom.xml for Apple Silicon (osx-aarch_64) support..."
         sed -i.bak "s|1.24.0:exe:\${os.detected.classifier}|1.62.2:exe:\${os.detected.classifier}|" "${SOURCE_REPO_NAME}/test-proxy/pom.xml"
         rm -f "${SOURCE_REPO_NAME}/test-proxy/pom.xml.bak"
-        git add "${SOURCE_REPO_NAME}/test-proxy/pom.xml"
-        git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): fix protoc-gen-grpc-java version for Apple Silicon support"
+        
+        echo "Integrating test-proxy into the parent modules reactor list to fix CI linters..."
+        sed -i.bak "s|</modules>|  <module>test-proxy</module>\n  </modules>|" "${SOURCE_REPO_NAME}/pom.xml"
+        rm -f "${SOURCE_REPO_NAME}/pom.xml.bak"
+        
+        git add "${SOURCE_REPO_NAME}/test-proxy/pom.xml" "${SOURCE_REPO_NAME}/pom.xml"
+        git commit -n --no-gpg-sign -m "chore($SOURCE_REPO_NAME): fix test-proxy compilation and register as a reactor module for CI support"
         COMMIT_COUNT=$((COMMIT_COUNT + 1))
     fi
     
