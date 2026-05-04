@@ -40,6 +40,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Objects;
 import java.util.Set;
+import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -47,8 +48,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
   private static final long serialVersionUID = -1018382430058137336L;
   private static final String API_SHORT_NAME = "Datastore";
-  private static final java.util.logging.Logger logger =
-      java.util.logging.Logger.getLogger(DatastoreOptions.class.getName());
+  private static final Logger logger = Logger.getLogger(DatastoreOptions.class.getName());
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE);
   private static final String DEFAULT_DATABASE_ID = "";
