@@ -34,13 +34,19 @@ public class BigQueryJdbcExceptionTest {
 
   static Stream<Arguments> exceptionProvider() {
     return Stream.of(
-        Arguments.of((ExceptionCreator) (msg, cause) -> new BigQueryJdbcException(msg, (BigQueryException) cause)),
+        Arguments.of(
+            (ExceptionCreator)
+                (msg, cause) -> new BigQueryJdbcException(msg, (BigQueryException) cause)),
         Arguments.of((ExceptionCreator) BigQueryJdbcException::new),
         Arguments.of((ExceptionCreator) BigQueryJdbcRuntimeException::new),
         Arguments.of((ExceptionCreator) BigQueryConversionException::new),
-        Arguments.of((ExceptionCreator) (msg, cause) -> new BigQueryJdbcCoercionException((Exception) cause)),
-        Arguments.of((ExceptionCreator) (msg, cause) -> new BigQueryJdbcSqlSyntaxErrorException(msg, (BigQueryException) cause))
-    );
+        Arguments.of(
+            (ExceptionCreator)
+                (msg, cause) -> new BigQueryJdbcCoercionException((Exception) cause)),
+        Arguments.of(
+            (ExceptionCreator)
+                (msg, cause) ->
+                    new BigQueryJdbcSqlSyntaxErrorException(msg, (BigQueryException) cause)));
   }
 
   @ParameterizedTest
@@ -48,12 +54,13 @@ public class BigQueryJdbcExceptionTest {
   public void testExceptionMessageFormatting(ExceptionCreator creator) {
     String message = "Custom error message";
     Throwable cause = new BigQueryException(500, "Underlying error");
-    
+
     Throwable ex = creator.create(message, cause);
-    
-    String expectedPrefix = ex instanceof BigQueryJdbcCoercionException ? "Coercion error" : message;
+
+    String expectedPrefix =
+        ex instanceof BigQueryJdbcCoercionException ? "Coercion error" : message;
     String expectedMessage = expectedPrefix + "\n" + cause.getMessage();
-    
+
     assertEquals(expectedMessage, ex.getMessage());
     assertEquals(cause, ex.getCause());
   }
@@ -62,9 +69,9 @@ public class BigQueryJdbcExceptionTest {
   public void testException_withCauseHavingNullMessage() {
     String message = "Custom error message";
     Throwable cause = new RuntimeException(); // Null message
-    
+
     BigQueryJdbcException ex = new BigQueryJdbcException(message, cause);
-    
+
     String expectedMessage = message + "\n" + cause.toString();
     assertEquals(expectedMessage, ex.getMessage());
   }

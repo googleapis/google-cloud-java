@@ -16,9 +16,7 @@
 
 package com.google.cloud.bigquery.exception;
 
-/**
- * Utility class for JDBC exceptions.
- */
+/** Utility class for JDBC exceptions. */
 public final class BigQueryJdbcExceptionUtils {
 
   private BigQueryJdbcExceptionUtils() {
@@ -26,7 +24,8 @@ public final class BigQueryJdbcExceptionUtils {
   }
 
   /**
-   * Formats the exception message by appending the cause's message (or toString if null) on a newline.
+   * Formats the exception message by appending the cause's message (or toString if null) on a
+   * newline.
    *
    * @param message The custom detail message.
    * @param cause The underlying cause of the exception.
