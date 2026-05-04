@@ -14,16 +14,19 @@
  * limitations under the License.
  */
 
-package com.google.cloud.datastore;
+package com.google.cloud.datastore.it;
 
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 import static org.junit.Assume.assumeNotNull;
 
 import com.google.cloud.TransportOptions;
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOpenTelemetryOptions;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
-import com.google.cloud.grpc.GrpcTransportOptions;
-import com.google.cloud.http.HttpTransportOptions;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
@@ -59,16 +62,15 @@ import org.junit.runners.Parameterized;
  */
 @RunWith(Parameterized.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class ITDatastoreBuiltInAndCustomMetrics {
+public class ITDatastoreClientSideMetrics {
 
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static final String DATABASE_ID =
       System.getenv().getOrDefault("DATASTORE_DATABASE_ID", "");
-  private boolean isDatastoreClosed = false;
 
   private final TransportOptions transportOptions;
 
-  public ITDatastoreBuiltInAndCustomMetrics(TransportOptions transportOptions) {
+  public ITDatastoreClientSideMetrics(TransportOptions transportOptions) {
     this.transportOptions = transportOptions;
   }
 
@@ -117,13 +119,8 @@ public class ITDatastoreBuiltInAndCustomMetrics {
                     .setMetricsEnabled(true)
                     .setOpenTelemetry(customOtel)
                     .setExportBuiltinMetricsToGoogleCloudMonitoring(false)
-                    .build());
-
-    if (transportOptions instanceof GrpcTransportOptions) {
-      builder.setTransportOptions((GrpcTransportOptions) transportOptions);
-    } else {
-      builder.setTransportOptions((HttpTransportOptions) transportOptions);
-    }
+                    .build())
+            .setTransportOptions(transportOptions);
 
     datastore = builder.build().getService();
 
@@ -134,7 +131,7 @@ public class ITDatastoreBuiltInAndCustomMetrics {
 
   @After
   public void tearDown() throws Exception {
-    if (datastore != null && !isDatastoreClosed) {
+    if (datastore != null) {
       Key key = datastore.newKeyFactory().setKind(kind).newKey("metrics-it-entity");
       try {
         datastore.delete(key);

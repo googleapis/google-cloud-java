@@ -1181,6 +1181,7 @@ public class Parser {
     return fieldBuilder
         .setName(actualFieldName)
         .setOriginalName(fieldDescriptor.getName())
+        .setJsonName(fieldDescriptor.getJsonName())
         .setType(TypeParser.parseType(fieldDescriptor))
         .setIsMessage(fieldDescriptor.getJavaType() == FieldDescriptor.JavaType.MESSAGE)
         .setIsEnum(fieldDescriptor.getJavaType() == FieldDescriptor.JavaType.ENUM)

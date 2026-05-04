@@ -515,27 +515,27 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public boolean supportsCatalogsInDataManipulation() {
-    return false;
+    return true;
   }
 
   @Override
   public boolean supportsCatalogsInProcedureCalls() {
-    return false;
+    return true;
   }
 
   @Override
   public boolean supportsCatalogsInTableDefinitions() {
-    return false;
+    return true;
   }
 
   @Override
   public boolean supportsCatalogsInIndexDefinitions() {
-    return false;
+    return true;
   }
 
   @Override
   public boolean supportsCatalogsInPrivilegeDefinitions() {
-    return false;
+    return true;
   }
 
   @Override
@@ -3305,7 +3305,7 @@ class BigQueryDatabaseMetaData implements DatabaseMetaData {
 
   @Override
   public boolean supportsBatchUpdates() {
-    return false;
+    return true;
   }
 
   @Override
