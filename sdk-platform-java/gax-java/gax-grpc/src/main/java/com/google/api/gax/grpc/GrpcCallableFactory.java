@@ -199,7 +199,7 @@ public class GrpcCallableFactory {
     // Create a sub-trace for the initial RPC that starts the operation.
     UnaryCallable<RequestT, OperationSnapshot> tracedInitialCallable =
         new TracedOperationInitialCallable<>(
-            initialCallable, clientContext.getTracerFactory(), initialSpanName);
+            initialCallable, clientContext.getTracerFactory(), tracerContext);
 
     LongRunningClient longRunningClient = new GrpcLongRunningClient(operationsStub);
     OperationCallable<RequestT, ResponseT, MetadataT> operationCallable =

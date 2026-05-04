@@ -142,6 +142,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
   String partnerToken;
   DatabaseMetaData databaseMetaData;
   Boolean reqGoogleDriveScope;
+  private boolean isReadOnlyTokenUsed = false;
 
   BigQueryConnection(String url) throws IOException {
     this(url, DataSource.fromUrl(url));
@@ -171,6 +172,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
       this.jobTimeoutInSeconds = ds.getJobTimeout();
       this.authProperties =
           BigQueryJdbcOAuthUtility.parseOAuthProperties(ds, this.connectionClassName);
+      this.isReadOnlyTokenUsed = checkIsReadOnlyTokenUsed(this.authProperties);
       this.catalog = ds.getProjectId();
       this.universeDomain = ds.getUniverseDomain();
 
@@ -1191,5 +1193,19 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
           "Unsupported CallableStatement feature");
     }
     return prepareCall(sql);
+  }
+
+  public boolean isReadOnlyTokenUsed() {
+    return this.isReadOnlyTokenUsed;
+  }
+
+  private boolean checkIsReadOnlyTokenUsed(Map<String, String> authProps) {
+    String readonlyValue =
+        authProps.get(BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME);
+    if (readonlyValue != null) {
+      return BigQueryJdbcUrlUtility.convertIntToBoolean(
+          readonlyValue, BigQueryJdbcUrlUtility.OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME);
+    }
+    return false;
   }
 }
