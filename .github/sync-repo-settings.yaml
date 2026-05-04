@@ -139,18 +139,17 @@ branchProtectionRules:
     requiresCodeOwnerReviews: true
     requiresStrictStatusChecks: false
     requiredStatusCheckContexts:
-      - units (8)
-      - units (11)
-      - units (17)
+      - split-units (java-datastore, 8)
+      - split-units (java-datastore, 11)
+      - split-units (java-datastore, 17)
+      - split-units (java-datastore, 21)
+      - split-units (java-datastore, 25)
+      - split-clirr (java-datastore)
       - cla/google
       - lint
       - 'Kokoro - Test: Integration'
-      - 'Kokoro - Test: GraalVM Native Image A'
-      - 'Kokoro - Test: GraalVM Native Image B'
-      - 'Kokoro - Test: GraalVM Native Image C'
-      - header-check
-      - library_generation
-      - unmanaged_dependency_check
+      - 'Kokoro - Test: Datastore Integration'
+      - 'Kokoro - Test: Datastore GraalVM Native Image'
 permissionRules:
   - team: yoshi-admins
     permission: admin
