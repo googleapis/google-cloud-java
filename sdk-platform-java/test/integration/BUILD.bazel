@@ -149,7 +149,7 @@ java_gapic_library(
     name = "iam_java_gapic",
     srcs = ["@com_google_googleapis//google/iam/v1:iam_proto_with_info"],
     grpc_service_config = "iam_grpc_service_config.json",
-    generate_version_java = True,
+    generate_version_java = False,
     test_deps = [
         "@com_google_googleapis//google/iam/v1:iam_java_grpc",
     ],
@@ -264,4 +264,3 @@ java_gapic_test(
     ],
     runtime_deps = [":pubsub_java_gapic_test"],
 )
-
