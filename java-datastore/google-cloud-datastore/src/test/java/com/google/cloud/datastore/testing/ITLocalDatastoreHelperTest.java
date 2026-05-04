@@ -185,7 +185,10 @@ public class ITLocalDatastoreHelperTest {
   @Test
   public void testSetHttpTransportOptions() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create();
-    DatastoreOptions options = helper.getOptions();
+    DatastoreOptions options =
+        helper.getOptions().toBuilder()
+            .setTransportOptions(HttpTransportOptions.newBuilder().build())
+            .build();
     assertThat(options.getTransportOptions()).isInstanceOf(HttpTransportOptions.class);
     assertNull(options.getTransportChannelProvider());
   }
