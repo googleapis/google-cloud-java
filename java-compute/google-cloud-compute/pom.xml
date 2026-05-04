@@ -149,6 +149,12 @@
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>
+		<!-- Needed for trace client -->
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-netty-shaded</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
