@@ -378,6 +378,48 @@ public class BigQueryJdbcOAuthUtilityTest extends BigQueryJdbcBaseTest {
   }
 
   @Test
+  public void testParseUserImpersonationForADC() {
+    Map<String, String> result =
+        BigQueryJdbcOAuthUtility.parseOAuthProperties(
+            DataSource.fromUrl(
+                "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                    + "OAuthType=3;ProjectId=MyBigQueryProject;"
+                    + "ServiceAccountImpersonationEmail=impersonated@email.com;"),
+            "");
+
+    assertEquals("APPLICATION_DEFAULT_CREDENTIALS", result.get("OAuthType"));
+    assertEquals(
+        "impersonated@email.com",
+        result.get(BigQueryJdbcUrlUtility.OAUTH_SA_IMPERSONATION_EMAIL_PROPERTY_NAME));
+  }
+
+  @Test
+  public void testGetServiceAccountImpersonatedCredentialsForADC() throws Exception {
+    GoogleCredentials dummySourceCredentials = GoogleCredentials.newBuilder().build();
+
+    try (org.mockito.MockedStatic<GoogleCredentials> mockedCreds =
+        org.mockito.Mockito.mockStatic(GoogleCredentials.class)) {
+      mockedCreds.when(GoogleCredentials::getApplicationDefault).thenReturn(dummySourceCredentials);
+
+      Map<String, String> authProperties =
+          BigQueryJdbcOAuthUtility.parseOAuthProperties(
+              DataSource.fromUrl(
+                  "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
+                      + "OAuthType=3;ProjectId=MyBigQueryProject;"
+                      + "ServiceAccountImpersonationEmail=impersonated@email.com;"),
+              "");
+
+      GoogleCredentials credentials =
+          BigQueryJdbcOAuthUtility.getCredentials(
+              authProperties, java.util.Collections.EMPTY_MAP, false, null);
+
+      assertThat(credentials).isInstanceOf(ImpersonatedCredentials.class);
+      assertThat(((ImpersonatedCredentials) credentials).getSourceCredentials())
+          .isEqualTo(dummySourceCredentials);
+    }
+  }
+
+  @Test
   public void testGetServiceAccountImpersonatedCredentials() {
     Map<String, String> authProperties =
         BigQueryJdbcOAuthUtility.parseOAuthProperties(

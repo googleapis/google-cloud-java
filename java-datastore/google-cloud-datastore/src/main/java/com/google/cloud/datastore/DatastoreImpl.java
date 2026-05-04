@@ -47,6 +47,7 @@ import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.execution.AggregationQueryExecutor;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
+import com.google.cloud.datastore.telemetry.BuiltInDatastoreMetricsProvider;
 import com.google.cloud.datastore.telemetry.DatastoreMetricsRecorder;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import com.google.cloud.datastore.telemetry.TelemetryUtils;
@@ -69,7 +70,9 @@ import com.google.datastore.v1.RunQueryResponse;
 import com.google.datastore.v1.TransactionOptions;
 import com.google.protobuf.ByteString;
 import io.grpc.Status;
+import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.context.Context;
+import io.opentelemetry.sdk.OpenTelemetrySdk;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -98,7 +101,9 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   private final com.google.cloud.datastore.telemetry.TraceUtil otelTraceUtil =
       getOptions().getTraceUtil();
-  private final DatastoreMetricsRecorder metricsRecorder = getOptions().getMetricsRecorder();
+  private final DatastoreMetricsRecorder metricsRecorder;
+  private final OpenTelemetry builtInOpenTelemetry;
+
   private final ReadOptionProtoPreparer readOptionProtoPreparer;
   private final AggregationQueryExecutor aggregationQueryExecutor;
 
@@ -107,6 +112,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     this.datastoreRpc = options.getDatastoreRpcV1();
     retrySettings =
         MoreObjects.firstNonNull(options.getRetrySettings(), ServiceOptions.getNoRetrySettings());
+    builtInOpenTelemetry = BuiltInDatastoreMetricsProvider.INSTANCE.createOpenTelemetry(options);
+    metricsRecorder = DatastoreMetricsRecorder.getInstance(options, builtInOpenTelemetry);
 
     readOptionProtoPreparer = new ReadOptionProtoPreparer();
     aggregationQueryExecutor =
@@ -162,12 +169,30 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     }
   }
 
+  /**
+   * Closes the Datastore client and releases all resources.
+   *
+   * <p>This method closes the underlying RPC channel and then closes the {@link
+   * com.google.cloud.datastore.telemetry.DatastoreMetricsRecorder}. For clients using the built-in
+   * Cloud Monitoring exporter, closing the recorder flushes any buffered metrics and shuts down the
+   * private {@link io.opentelemetry.sdk.OpenTelemetrySdk} instance. For clients using a
+   * user-provided {@link io.opentelemetry.api.OpenTelemetry} instance, the recorder close is a
+   * no-op since the user owns that instance's lifecycle.
+   */
   @Override
   public void close() throws Exception {
     try {
       datastoreRpc.close();
     } catch (Exception e) {
       logger.log(Level.WARNING, "Failed to close channels", e);
+    }
+    // Shut down the built-in OTel SDK as we manage its lifecycle
+    if (builtInOpenTelemetry instanceof OpenTelemetrySdk) {
+      try {
+        ((OpenTelemetrySdk) builtInOpenTelemetry).close();
+      } catch (Exception e) {
+        logger.log(Level.WARNING, "Failed to close built-in OpenTelemetry SDK instance.", e);
+      }
     }
   }
 
@@ -242,7 +267,9 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     private void recordAttempt(String status) {
       Map<String, String> attributes =
           TelemetryUtils.buildMetricAttributes(
-              TelemetryConstants.METHOD_TRANSACTION_COMMIT, status);
+              TelemetryConstants.METHOD_TRANSACTION_COMMIT,
+              status,
+              datastore.getOptions().getDatabaseId());
       metricsRecorder.recordTransactionAttemptCount(1, attributes);
     }
   }
@@ -280,7 +307,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     } finally {
       long latencyMs = stopwatch.elapsed(TimeUnit.MILLISECONDS);
       Map<String, String> attributes =
-          TelemetryUtils.buildMetricAttributes(TelemetryConstants.METHOD_TRANSACTION_RUN, status);
+          TelemetryUtils.buildMetricAttributes(
+              TelemetryConstants.METHOD_TRANSACTION_RUN, status, getOptions().getDatabaseId());
       metricsRecorder.recordTransactionLatency(latencyMs, attributes);
       span.end();
     }
@@ -789,7 +817,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
     DatastoreOptions options = getOptions();
     Callable<T> attemptCallable =
-        TelemetryUtils.attemptMetricsCallable(callable, metricsRecorder, methodName);
+        TelemetryUtils.attemptMetricsCallable(
+            callable, metricsRecorder, methodName, options.getDatabaseId());
     try (TraceUtil.Scope ignored = span.makeCurrent()) {
       return RetryHelper.runWithRetries(
           attemptCallable, retrySettings, exceptionHandler, options.getClock());
@@ -799,7 +828,11 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       throw DatastoreException.translateAndThrow(e);
     } finally {
       TelemetryUtils.recordOperationMetrics(
-          metricsRecorder, operationStopwatch, methodName, operationStatus);
+          metricsRecorder,
+          operationStopwatch,
+          methodName,
+          operationStatus,
+          options.getDatabaseId());
       span.end();
     }
   }
