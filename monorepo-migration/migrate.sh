@@ -264,7 +264,7 @@ if [ -f "$SOURCE_REPO_NAME/.kokoro/conformance.sh" ]; then
     sed -i.bak "s|cd test-proxy|cd ${SOURCE_REPO_NAME}/test-proxy|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
     sed -i.bak "s|-jar test-proxy/target/|-jar ${SOURCE_REPO_NAME}/test-proxy/target/|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
     sed -i.bak "s|kill \${proxyPID}|kill \${proxyPID} \&\& sleep 5|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
-    sed -i.bak "s|../../test-proxy/known_failures.txt|../../\${SOURCE_REPO_NAME}/test-proxy/known_failures.txt|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
+    sed -i.bak "s|../../test-proxy/known_failures.txt|../../${SOURCE_REPO_NAME}/test-proxy/known_failures.txt|" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
     rm -f ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh.bak"
     
     if [ -f "${SOURCE_REPO_NAME}/test-proxy/pom.xml" ]; then
