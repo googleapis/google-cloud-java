@@ -47,5 +47,5 @@ org.apache.arrow:arrow-memory-core,arrow=18.3.0
 dev.cel:cel,dev.cel=0.12.0
 com.google.crypto.tink:tink,com.google.crypto.tink=1.21.0
 # The follow opentelemetry dependencies have a different version from the opentelemetry-bom
-io.opentelemetry.semconv:opentelemetry-semconv,opentelemetry-semconv=1.40.0
+io.opentelemetry.semconv:opentelemetry-semconv,opentelemetry-semconv=1.41.0
 io.opentelemetry.contrib:opentelemetry-gcp-resources,io.opentelemetry.contrib.opentelemetry-gcp-resources=1.52.0-alpha
