@@ -96,4 +96,12 @@ class HttpBindingsTest {
 
     Truth.assertThat(httpBinding.isEnum()).isTrue();
   }
+
+  @Test
+  void builder_preservesLiteralJsonName() {
+    final String jsonName = "iceberg-catalog-id";
+    HttpBinding binding =
+        HttpBinding.builder().setName("doesNotMatter").setJsonName(jsonName).build();
+    Truth.assertThat(binding.jsonName()).isEqualTo(jsonName);
+  }
 }

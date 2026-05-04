@@ -1322,7 +1322,7 @@ public class ITBigQueryJDBCTest extends ITBase {
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
             + "OAuthType=3;ProjectId="
             + PROJECT_ID
-            + ";MaxResults=500;HighThroughputActivationRatio=1;"
+            + ";MaxResults=500;HighThroughputActivationRatio=0;"
             + "HighThroughputMinTableSize=100;"
             + "EnableHighThroughputAPI=1;JobCreationMode=1;";
 
@@ -2011,7 +2011,7 @@ public class ITBigQueryJDBCTest extends ITBase {
         "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;"
             + "OAuthType=3;ProjectId="
             + PROJECT_ID
-            + ";MaxResults=500;HighThroughputActivationRatio=1;"
+            + ";MaxResults=500;HighThroughputActivationRatio=0;"
             + "HighThroughputMinTableSize=100;"
             + "EnableHighThroughputAPI=1;JobCreationMode=1;";
 
