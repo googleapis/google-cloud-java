@@ -27,6 +27,7 @@ import static org.junit.Assert.fail;
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.NoCredentials;
+import com.google.cloud.TransportOptions;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.v1.DatastoreSettings;
@@ -34,7 +35,6 @@ import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.datastore.v1.client.DatastoreFactory;
 import org.easymock.EasyMock;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -217,7 +217,7 @@ public class DatastoreOptionsTest {
             .setServiceRpcFactory(datastoreRpcFactory)
             .setProjectId(PROJECT_ID)
             .setDatabaseId(DATABASE_ID)
-            .setTransportOptions(GrpcTransportOptions.newBuilder().build())
+            .setTransportOptions((TransportOptions) GrpcTransportOptions.newBuilder().build())
             .setCredentials(NoCredentials.getInstance())
             .setHost("http://localhost:" + PORT)
             .build();
@@ -250,7 +250,7 @@ public class DatastoreOptionsTest {
             .setServiceRpcFactory(datastoreRpcFactory)
             .setProjectId(PROJECT_ID)
             .setDatabaseId(DATABASE_ID)
-            .setTransportOptions(GrpcTransportOptions.newBuilder().build())
+            .setTransportOptions((TransportOptions) GrpcTransportOptions.newBuilder().build())
             .setChannelProvider(channelProvider)
             .setCredentials(NoCredentials.getInstance())
             .setHost("http://localhost:" + PORT)
@@ -259,35 +259,23 @@ public class DatastoreOptionsTest {
   }
 
   @Test
-  public void testInvalidConfigForHttp() {
-    DatastoreOptions.Builder options =
-        DatastoreOptions.newBuilder()
-            .setServiceRpcFactory(datastoreRpcFactory)
-            .setProjectId(PROJECT_ID)
-            .setDatabaseId(DATABASE_ID)
-            .setTransportOptions(HttpTransportOptions.newBuilder().build())
-            .setChannelProvider(
-                DatastoreSettings.defaultGrpcTransportProviderBuilder()
-                    .setChannelPoolSettings(
-                        ChannelPoolSettings.builder()
-                            .setInitialChannelCount(10)
-                            .setMaxChannelCount(20)
-                            .build())
-                    .build())
-            .setCredentials(NoCredentials.getInstance())
-            .setHost("http://localhost:" + PORT);
-    Assert.assertThrows(IllegalArgumentException.class, options::build);
-  }
-
-  @Test
   public void testTransport() {
-    // default http transport
-    assertThat(options.build().getTransportOptions()).isInstanceOf(HttpTransportOptions.class);
+    // default grpc transport
+    assertThat(options.build().getTransportOptions()).isInstanceOf(GrpcTransportOptions.class);
+
+    // custom http transport
+    DatastoreOptions httpTransportOptions =
+        DatastoreOptions.newBuilder()
+            .setTransportOptions(HttpTransportOptions.newBuilder().build())
+            .setProjectId(PROJECT_ID)
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertThat(httpTransportOptions.getTransportOptions()).isInstanceOf(HttpTransportOptions.class);
 
     // custom grpc transport
     DatastoreOptions grpcTransportOptions =
         DatastoreOptions.newBuilder()
-            .setTransportOptions(GrpcTransportOptions.newBuilder().build())
+            .setTransportOptions((TransportOptions) GrpcTransportOptions.newBuilder().build())
             .setProjectId(PROJECT_ID)
             .setCredentials(NoCredentials.getInstance())
             .build();
@@ -300,7 +288,7 @@ public class DatastoreOptionsTest {
   public void testHostWithGrpcAndHttp() {
     DatastoreOptions grpcTransportOptions =
         DatastoreOptions.newBuilder()
-            .setTransportOptions(GrpcTransportOptions.newBuilder().build())
+            .setTransportOptions((TransportOptions) GrpcTransportOptions.newBuilder().build())
             .setProjectId(PROJECT_ID)
             .setCredentials(NoCredentials.getInstance())
             .build();
@@ -310,15 +298,23 @@ public class DatastoreOptionsTest {
     String customHost = "http://localhost:" + PORT;
     DatastoreOptions grpcTransportOptionsCustomHost =
         DatastoreOptions.newBuilder()
-            .setTransportOptions(GrpcTransportOptions.newBuilder().build())
+            .setTransportOptions((TransportOptions) GrpcTransportOptions.newBuilder().build())
             .setHost(customHost)
             .setProjectId(PROJECT_ID)
             .setCredentials(NoCredentials.getInstance())
             .build();
     assertThat(grpcTransportOptionsCustomHost.getHost()).isEqualTo(customHost);
 
+    DatastoreOptions defaultTransportOptions =
+        DatastoreOptions.newBuilder()
+            .setProjectId(PROJECT_ID)
+            .setCredentials(NoCredentials.getInstance())
+            .build();
+    assertThat(defaultTransportOptions.getHost()).isEqualTo(DatastoreSettings.getDefaultEndpoint());
+
     DatastoreOptions httpTransportOptions =
         DatastoreOptions.newBuilder()
+            .setTransportOptions(HttpTransportOptions.newBuilder().build())
             .setProjectId(PROJECT_ID)
             .setCredentials(NoCredentials.getInstance())
             .build();
@@ -326,6 +322,7 @@ public class DatastoreOptionsTest {
 
     DatastoreOptions httpTransportOptionsCustomHost =
         DatastoreOptions.newBuilder()
+            .setTransportOptions(HttpTransportOptions.newBuilder().build())
             .setHost(customHost)
             .setProjectId(PROJECT_ID)
             .setCredentials(NoCredentials.getInstance())

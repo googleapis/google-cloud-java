@@ -28,7 +28,6 @@ import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.telemetry.TelemetryConstants;
 import com.google.cloud.grpc.GrpcTransportOptions;
-import com.google.cloud.http.HttpTransportOptions;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.sdk.OpenTelemetrySdk;
 import io.opentelemetry.sdk.metrics.SdkMeterProvider;
@@ -124,9 +123,9 @@ public class ITDatastoreClientSideMetrics {
                     .build());
 
     if (transportOptions instanceof GrpcTransportOptions) {
-      builder.setTransportOptions((GrpcTransportOptions) transportOptions);
+      builder.setTransportOptions(transportOptions);
     } else {
-      builder.setTransportOptions((HttpTransportOptions) transportOptions);
+      builder.setTransportOptions(transportOptions);
     }
 
     datastore = builder.build().getService();

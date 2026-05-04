@@ -114,8 +114,7 @@ public class RemoteDatastoreHelper {
             .setNamespace(UUID.randomUUID().toString())
             .setRetrySettings(retrySettings());
     if (transportOptions instanceof GrpcTransportOptions) {
-      datastoreOptionBuilder =
-          datastoreOptionBuilder.setTransportOptions((GrpcTransportOptions) transportOptions);
+      datastoreOptionBuilder = datastoreOptionBuilder.setTransportOptions(transportOptions);
     } else {
       datastoreOptionBuilder = datastoreOptionBuilder.setTransportOptions(transportOptions);
     }
