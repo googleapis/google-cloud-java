@@ -109,7 +109,7 @@ public class HttpJsonHiveMetastoreServiceStub extends HiveMetastoreServiceStub {
                             serializer.putQueryParam(
                                 fields, "hiveCatalogId", request.getHiveCatalogId());
                             serializer.putQueryParam(
-                                fields, "primaryLocation", request.getPrimaryLocation());
+                                fields, "primary_location", request.getPrimaryLocation());
                             serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
                             return fields;
                           })

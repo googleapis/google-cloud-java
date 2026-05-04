@@ -153,7 +153,8 @@ class DatastoreCloudMonitoringExporter implements MetricExporter {
                 } catch (IOException e) {
                   logger.log(
                       Level.WARNING,
-                      "Failed to create MetricServiceClient for metrics export. Monitoring will be disabled.",
+                      "Failed to create MetricServiceClient for metrics export. Monitoring will be"
+                          + " disabled.",
                       e);
                   return null; // Do not add to map
                 }

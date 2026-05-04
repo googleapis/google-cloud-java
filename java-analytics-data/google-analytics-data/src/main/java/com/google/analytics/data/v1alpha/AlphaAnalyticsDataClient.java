@@ -140,28 +140,6 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
- *      <td><p> SheetExportAudienceList</td>
- *      <td><p> Exports an audience list of users to a Google Sheet. After creating an audience, the users are not immediately available for listing. First, a request to `CreateAudienceList` is necessary to create an audience list of users, and then second, this method is used to export those users in the audience list to a Google Sheet.
- * <p>  See [Creating an Audience List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics) for an introduction to Audience Lists with examples.
- * <p>  Audiences in Google Analytics 4 allow you to segment your users in the ways that are important to your business. To learn more, see https://support.google.com/analytics/answer/9267572.
- * <p>  This method is introduced at alpha stability with the intention of gathering feedback on syntax and capabilities before entering beta. To give your feedback on this API, complete the [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> sheetExportAudienceList(SheetExportAudienceListRequest request)
- *      </ul>
- *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
- *      <ul>
- *           <li><p> sheetExportAudienceList(AudienceListName name)
- *           <li><p> sheetExportAudienceList(String name)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> sheetExportAudienceListCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
  *      <td><p> GetAudienceList</td>
  *      <td><p> Gets configuration metadata about a specific audience list. This method can be used to understand an audience list after it has been created.
  * <p>  See [Creating an Audience List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics) for an introduction to Audience Lists with examples.
@@ -361,6 +339,40 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listReportTasksPagedCallable()
  *           <li><p> listReportTasksCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RunReport</td>
+ *      <td><p> Returns a customized report of your Google Analytics event data. Reports contain statistics derived from data collected by the Google Analytics tracking code. The data returned from the API is as a table with columns for the requested dimensions and metrics. Metrics are individual measurements of user activity on your property, such as active users or event count. Dimensions break down metrics across some common criteria, such as country or event name.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> runReport(RunReportRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> runReportCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetMetadata</td>
+ *      <td><p> Returns metadata for dimensions and metrics available in reporting methods. Used to explore the dimensions and metrics. In this method, a Google Analytics property identifier is specified in the request, and the metadata response includes Custom dimensions and metrics as well as Universal metadata.
+ * <p>  For example if a custom metric with parameter name `levels_unlocked` is registered to a property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata are dimensions and metrics applicable to any property such as `country` and `totalUsers`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getMetadata(GetMetadataRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getMetadata(MetadataName name)
+ *           <li><p> getMetadata(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getMetadataCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -993,189 +1005,6 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
   public final UnaryCallable<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListCallable() {
     return stub.queryAudienceListCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Exports an audience list of users to a Google Sheet. After creating an audience, the users are
-   * not immediately available for listing. First, a request to `CreateAudienceList` is necessary to
-   * create an audience list of users, and then second, this method is used to export those users in
-   * the audience list to a Google Sheet.
-   *
-   * <p>See [Creating an Audience
-   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
-   * for an introduction to Audience Lists with examples.
-   *
-   * <p>Audiences in Google Analytics 4 allow you to segment your users in the ways that are
-   * important to your business. To learn more, see
-   * https://support.google.com/analytics/answer/9267572.
-   *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   AudienceListName name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]");
-   *   SheetExportAudienceListResponse response =
-   *       alphaAnalyticsDataClient.sheetExportAudienceList(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the audience list to retrieve users from. Format:
-   *     `properties/{property}/audienceLists/{audience_list}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SheetExportAudienceListResponse sheetExportAudienceList(AudienceListName name) {
-    SheetExportAudienceListRequest request =
-        SheetExportAudienceListRequest.newBuilder()
-            .setName(name == null ? null : name.toString())
-            .build();
-    return sheetExportAudienceList(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Exports an audience list of users to a Google Sheet. After creating an audience, the users are
-   * not immediately available for listing. First, a request to `CreateAudienceList` is necessary to
-   * create an audience list of users, and then second, this method is used to export those users in
-   * the audience list to a Google Sheet.
-   *
-   * <p>See [Creating an Audience
-   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
-   * for an introduction to Audience Lists with examples.
-   *
-   * <p>Audiences in Google Analytics 4 allow you to segment your users in the ways that are
-   * important to your business. To learn more, see
-   * https://support.google.com/analytics/answer/9267572.
-   *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   String name = AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString();
-   *   SheetExportAudienceListResponse response =
-   *       alphaAnalyticsDataClient.sheetExportAudienceList(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. The name of the audience list to retrieve users from. Format:
-   *     `properties/{property}/audienceLists/{audience_list}`
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SheetExportAudienceListResponse sheetExportAudienceList(String name) {
-    SheetExportAudienceListRequest request =
-        SheetExportAudienceListRequest.newBuilder().setName(name).build();
-    return sheetExportAudienceList(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Exports an audience list of users to a Google Sheet. After creating an audience, the users are
-   * not immediately available for listing. First, a request to `CreateAudienceList` is necessary to
-   * create an audience list of users, and then second, this method is used to export those users in
-   * the audience list to a Google Sheet.
-   *
-   * <p>See [Creating an Audience
-   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
-   * for an introduction to Audience Lists with examples.
-   *
-   * <p>Audiences in Google Analytics 4 allow you to segment your users in the ways that are
-   * important to your business. To learn more, see
-   * https://support.google.com/analytics/answer/9267572.
-   *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   SheetExportAudienceListRequest request =
-   *       SheetExportAudienceListRequest.newBuilder()
-   *           .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
-   *           .setOffset(-1019779949)
-   *           .setLimit(102976443)
-   *           .build();
-   *   SheetExportAudienceListResponse response =
-   *       alphaAnalyticsDataClient.sheetExportAudienceList(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SheetExportAudienceListResponse sheetExportAudienceList(
-      SheetExportAudienceListRequest request) {
-    return sheetExportAudienceListCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Exports an audience list of users to a Google Sheet. After creating an audience, the users are
-   * not immediately available for listing. First, a request to `CreateAudienceList` is necessary to
-   * create an audience list of users, and then second, this method is used to export those users in
-   * the audience list to a Google Sheet.
-   *
-   * <p>See [Creating an Audience
-   * List](https://developers.google.com/analytics/devguides/reporting/data/v1/audience-list-basics)
-   * for an introduction to Audience Lists with examples.
-   *
-   * <p>Audiences in Google Analytics 4 allow you to segment your users in the ways that are
-   * important to your business. To learn more, see
-   * https://support.google.com/analytics/answer/9267572.
-   *
-   * <p>This method is introduced at alpha stability with the intention of gathering feedback on
-   * syntax and capabilities before entering beta. To give your feedback on this API, complete the
-   * [Google Analytics Audience Export API Feedback](https://forms.gle/EeA5u5LW6PEggtCEA) form.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
-   *   SheetExportAudienceListRequest request =
-   *       SheetExportAudienceListRequest.newBuilder()
-   *           .setName(AudienceListName.of("[PROPERTY]", "[AUDIENCE_LIST]").toString())
-   *           .setOffset(-1019779949)
-   *           .setLimit(102976443)
-   *           .build();
-   *   ApiFuture<SheetExportAudienceListResponse> future =
-   *       alphaAnalyticsDataClient.sheetExportAudienceListCallable().futureCall(request);
-   *   // Do something.
-   *   SheetExportAudienceListResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-      sheetExportAudienceListCallable() {
-    return stub.sheetExportAudienceListCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2791,6 +2620,245 @@ public class AlphaAnalyticsDataClient implements BackgroundResource {
   public final UnaryCallable<ListReportTasksRequest, ListReportTasksResponse>
       listReportTasksCallable() {
     return stub.listReportTasksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a customized report of your Google Analytics event data. Reports contain statistics
+   * derived from data collected by the Google Analytics tracking code. The data returned from the
+   * API is as a table with columns for the requested dimensions and metrics. Metrics are individual
+   * measurements of user activity on your property, such as active users or event count. Dimensions
+   * break down metrics across some common criteria, such as country or event name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   RunReportRequest request =
+   *       RunReportRequest.newBuilder()
+   *           .setProperty("property-993141291")
+   *           .addAllDimensions(new ArrayList<Dimension>())
+   *           .addAllMetrics(new ArrayList<Metric>())
+   *           .addAllDateRanges(new ArrayList<DateRange>())
+   *           .setDimensionFilter(FilterExpression.newBuilder().build())
+   *           .setMetricFilter(FilterExpression.newBuilder().build())
+   *           .setOffset(-1019779949)
+   *           .setLimit(102976443)
+   *           .addAllMetricAggregations(new ArrayList<MetricAggregation>())
+   *           .addAllOrderBys(new ArrayList<OrderBy>())
+   *           .setCurrencyCode("currencyCode1004773790")
+   *           .setCohortSpec(CohortSpec.newBuilder().build())
+   *           .setKeepEmptyRows(true)
+   *           .setReturnPropertyQuota(true)
+   *           .addAllComparisons(new ArrayList<Comparison>())
+   *           .setConversionSpec(ConversionSpec.newBuilder().build())
+   *           .build();
+   *   RunReportResponse response = alphaAnalyticsDataClient.runReport(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RunReportResponse runReport(RunReportRequest request) {
+    return runReportCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a customized report of your Google Analytics event data. Reports contain statistics
+   * derived from data collected by the Google Analytics tracking code. The data returned from the
+   * API is as a table with columns for the requested dimensions and metrics. Metrics are individual
+   * measurements of user activity on your property, such as active users or event count. Dimensions
+   * break down metrics across some common criteria, such as country or event name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   RunReportRequest request =
+   *       RunReportRequest.newBuilder()
+   *           .setProperty("property-993141291")
+   *           .addAllDimensions(new ArrayList<Dimension>())
+   *           .addAllMetrics(new ArrayList<Metric>())
+   *           .addAllDateRanges(new ArrayList<DateRange>())
+   *           .setDimensionFilter(FilterExpression.newBuilder().build())
+   *           .setMetricFilter(FilterExpression.newBuilder().build())
+   *           .setOffset(-1019779949)
+   *           .setLimit(102976443)
+   *           .addAllMetricAggregations(new ArrayList<MetricAggregation>())
+   *           .addAllOrderBys(new ArrayList<OrderBy>())
+   *           .setCurrencyCode("currencyCode1004773790")
+   *           .setCohortSpec(CohortSpec.newBuilder().build())
+   *           .setKeepEmptyRows(true)
+   *           .setReturnPropertyQuota(true)
+   *           .addAllComparisons(new ArrayList<Comparison>())
+   *           .setConversionSpec(ConversionSpec.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RunReportResponse> future =
+   *       alphaAnalyticsDataClient.runReportCallable().futureCall(request);
+   *   // Do something.
+   *   RunReportResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable() {
+    return stub.runReportCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. In this method, a Google Analytics property identifier is specified in
+   * the request, and the metadata response includes Custom dimensions and metrics as well as
+   * Universal metadata.
+   *
+   * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
+   * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata
+   * are dimensions and metrics applicable to any property such as `country` and `totalUsers`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   MetadataName name = MetadataName.of("[PROPERTY]");
+   *   Metadata response = alphaAnalyticsDataClient.getMetadata(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the metadata to retrieve. This name field is
+   *     specified in the URL path and not URL parameters. Property is a numeric Google Analytics
+   *     property identifier. To learn more, see [where to find your Property
+   *     ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+   *     <p>Example: properties/1234/metadata
+   *     <p>Set the Property ID to 0 for dimensions and metrics common to all properties. In this
+   *     special mode, this method will not return custom dimensions and metrics.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Metadata getMetadata(MetadataName name) {
+    GetMetadataRequest request =
+        GetMetadataRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. In this method, a Google Analytics property identifier is specified in
+   * the request, and the metadata response includes Custom dimensions and metrics as well as
+   * Universal metadata.
+   *
+   * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
+   * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata
+   * are dimensions and metrics applicable to any property such as `country` and `totalUsers`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   String name = MetadataName.of("[PROPERTY]").toString();
+   *   Metadata response = alphaAnalyticsDataClient.getMetadata(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the metadata to retrieve. This name field is
+   *     specified in the URL path and not URL parameters. Property is a numeric Google Analytics
+   *     property identifier. To learn more, see [where to find your Property
+   *     ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id).
+   *     <p>Example: properties/1234/metadata
+   *     <p>Set the Property ID to 0 for dimensions and metrics common to all properties. In this
+   *     special mode, this method will not return custom dimensions and metrics.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Metadata getMetadata(String name) {
+    GetMetadataRequest request = GetMetadataRequest.newBuilder().setName(name).build();
+    return getMetadata(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. In this method, a Google Analytics property identifier is specified in
+   * the request, and the metadata response includes Custom dimensions and metrics as well as
+   * Universal metadata.
+   *
+   * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
+   * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata
+   * are dimensions and metrics applicable to any property such as `country` and `totalUsers`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   GetMetadataRequest request =
+   *       GetMetadataRequest.newBuilder().setName(MetadataName.of("[PROPERTY]").toString()).build();
+   *   Metadata response = alphaAnalyticsDataClient.getMetadata(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Metadata getMetadata(GetMetadataRequest request) {
+    return getMetadataCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns metadata for dimensions and metrics available in reporting methods. Used to explore the
+   * dimensions and metrics. In this method, a Google Analytics property identifier is specified in
+   * the request, and the metadata response includes Custom dimensions and metrics as well as
+   * Universal metadata.
+   *
+   * <p>For example if a custom metric with parameter name `levels_unlocked` is registered to a
+   * property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata
+   * are dimensions and metrics applicable to any property such as `country` and `totalUsers`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlphaAnalyticsDataClient alphaAnalyticsDataClient = AlphaAnalyticsDataClient.create()) {
+   *   GetMetadataRequest request =
+   *       GetMetadataRequest.newBuilder().setName(MetadataName.of("[PROPERTY]").toString()).build();
+   *   ApiFuture<Metadata> future =
+   *       alphaAnalyticsDataClient.getMetadataCallable().futureCall(request);
+   *   // Do something.
+   *   Metadata response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable() {
+    return stub.getMetadataCallable();
   }
 
   @Override

@@ -26,6 +26,7 @@ import com.google.analytics.data.v1alpha.CreateAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.CreateReportTaskRequest;
 import com.google.analytics.data.v1alpha.GetAudienceListRequest;
+import com.google.analytics.data.v1alpha.GetMetadataRequest;
 import com.google.analytics.data.v1alpha.GetPropertyQuotasSnapshotRequest;
 import com.google.analytics.data.v1alpha.GetRecurringAudienceListRequest;
 import com.google.analytics.data.v1alpha.GetReportTaskRequest;
@@ -35,6 +36,7 @@ import com.google.analytics.data.v1alpha.ListRecurringAudienceListsRequest;
 import com.google.analytics.data.v1alpha.ListRecurringAudienceListsResponse;
 import com.google.analytics.data.v1alpha.ListReportTasksRequest;
 import com.google.analytics.data.v1alpha.ListReportTasksResponse;
+import com.google.analytics.data.v1alpha.Metadata;
 import com.google.analytics.data.v1alpha.PropertyQuotasSnapshot;
 import com.google.analytics.data.v1alpha.QueryAudienceListRequest;
 import com.google.analytics.data.v1alpha.QueryAudienceListResponse;
@@ -45,8 +47,8 @@ import com.google.analytics.data.v1alpha.ReportTask;
 import com.google.analytics.data.v1alpha.ReportTaskMetadata;
 import com.google.analytics.data.v1alpha.RunFunnelReportRequest;
 import com.google.analytics.data.v1alpha.RunFunnelReportResponse;
-import com.google.analytics.data.v1alpha.SheetExportAudienceListRequest;
-import com.google.analytics.data.v1alpha.SheetExportAudienceListResponse;
+import com.google.analytics.data.v1alpha.RunReportRequest;
+import com.google.analytics.data.v1alpha.RunReportResponse;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -90,11 +92,6 @@ public abstract class AlphaAnalyticsDataStub implements BackgroundResource {
   public UnaryCallable<QueryAudienceListRequest, QueryAudienceListResponse>
       queryAudienceListCallable() {
     throw new UnsupportedOperationException("Not implemented: queryAudienceListCallable()");
-  }
-
-  public UnaryCallable<SheetExportAudienceListRequest, SheetExportAudienceListResponse>
-      sheetExportAudienceListCallable() {
-    throw new UnsupportedOperationException("Not implemented: sheetExportAudienceListCallable()");
   }
 
   public UnaryCallable<GetAudienceListRequest, AudienceList> getAudienceListCallable() {
@@ -163,6 +160,14 @@ public abstract class AlphaAnalyticsDataStub implements BackgroundResource {
 
   public UnaryCallable<ListReportTasksRequest, ListReportTasksResponse> listReportTasksCallable() {
     throw new UnsupportedOperationException("Not implemented: listReportTasksCallable()");
+  }
+
+  public UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable() {
+    throw new UnsupportedOperationException("Not implemented: runReportCallable()");
+  }
+
+  public UnaryCallable<GetMetadataRequest, Metadata> getMetadataCallable() {
+    throw new UnsupportedOperationException("Not implemented: getMetadataCallable()");
   }
 
   @Override

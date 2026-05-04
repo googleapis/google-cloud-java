@@ -21,13 +21,16 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.ServiceOptions;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.Connection;
@@ -35,9 +38,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Arrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class ITAuthTests extends ITBase {
   static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
@@ -283,26 +289,31 @@ public class ITAuthTests extends ITBase {
     connection.close();
   }
 
-  // TODO(farhan): figure out how to programmatically generate an access token and test
-  @Test
-  @Disabled
-  public void testValidPreGeneratedAccessTokenAuthentication() throws SQLException {
-    String connection_uri =
-        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;PROJECTID="
-            + PROJECT_ID
-            + ";OAUTHTYPE=2;OAuthAccessToken=access_token;";
+  @ParameterizedTest
+  @CsvSource({
+    "https://www.googleapis.com/auth/bigquery.readonly, true",
+    "https://www.googleapis.com/auth/bigquery, false"
+  })
+  public void testValidPreGeneratedAccessTokenAuthentication(String scope, boolean isReadOnly)
+      throws Exception {
+    final JsonObject authJson = getAuthJson();
+    InputStream stream =
+        new ByteArrayInputStream(authJson.toString().getBytes(StandardCharsets.UTF_8));
+    GoogleCredentials credentials =
+        GoogleCredentials.fromStream(stream).createScoped(Arrays.asList(scope));
+    credentials.refresh();
+    String accessToken = credentials.getAccessToken().getTokenValue();
 
-    Connection connection = DriverManager.getConnection(connection_uri);
-    assertNotNull(connection);
-    assertFalse(connection.isClosed());
+    String connectionUri =
+        "jdbc:bigquery://https://www.googleapis.com/bigquery/v2:443;ProjectId="
+            + authJson.get("project_id").getAsString()
+            + ";OAuthType=2"
+            + ";OAuthAccessToken="
+            + accessToken
+            + ";OAuthAccessTokenReadonly="
+            + isReadOnly;
 
-    Statement statement = connection.createStatement();
-    ResultSet resultSet =
-        statement.executeQuery(
-            "SELECT repository_name FROM `bigquery-public-data.samples.github_timeline` LIMIT 50");
-
-    assertEquals(50, resultSetRowCount(resultSet));
-    connection.close();
+    validateConnection(connectionUri);
   }
 
   // TODO(obada): figure out how to programmatically generate a refresh token and test

@@ -101,11 +101,12 @@ public final class EvaluationRubricProto extends com.google.protobuf.GeneratedFi
           + " \001(\0132\'.google.cloud.aiplatform.v1beta1.Rubric\022\017\n"
           + "\007verdict\030\002 \001(\010\022\026\n"
           + "\treasoning\030\003 \001(\tH\000\210\001\001B\014\n\n"
-          + "_reasoningB\247\001\n"
-          + "#com.google.cloud.aiplatform.v1b"
-          + "eta1B\025EvaluationRubricProtoP\001\252\002\037Google.C"
-          + "loud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\A"
-          + "IPlatform\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "_reasoningB\354\001\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\025EvaluationRubricProtoP\001ZCcloud.goo"
+          + "gle.com/go/aiplatform/apiv1beta1/aiplatf"
+          + "ormpb;aiplatformpb\252\002\037Google.Cloud.AIPlat"
+          + "form.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V"
+          + "1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
