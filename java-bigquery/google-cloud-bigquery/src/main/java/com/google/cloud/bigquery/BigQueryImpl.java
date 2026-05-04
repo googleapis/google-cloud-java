@@ -2104,7 +2104,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
         return queryRpc(projectId, content, options);
       }
-      return create(JobInfo.of(jobId, configuration), options).getQueryResults();
+      return create(JobInfo.of(jobId, configuration), options);
     } finally {
       if (querySpan != null) {
         querySpan.end();
