@@ -729,7 +729,7 @@ public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSetti
 
   @Override
   protected LibraryMetadata getLibraryMetadata() {
-    return LibraryMetadata.newBuilder().setVersion(Version.VERSION).build();
+    return LibraryMetadata.newBuilder().build();
   }
 
   /** Builder for AssetServiceStubSettings. */

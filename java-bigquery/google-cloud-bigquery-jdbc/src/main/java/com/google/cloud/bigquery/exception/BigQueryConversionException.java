@@ -27,7 +27,7 @@ public class BigQueryConversionException extends SQLException {
       new BigQueryJdbcCustomLogger(BigQueryConversionException.class.getName());
 
   public BigQueryConversionException(String message, Throwable cause) {
-    super(message, cause);
-    LOG.severe(message, this);
+    super(BigQueryJdbcExceptionUtils.formatMessage(message, cause), cause);
+    LOG.severe(this.getMessage(), this);
   }
 }
