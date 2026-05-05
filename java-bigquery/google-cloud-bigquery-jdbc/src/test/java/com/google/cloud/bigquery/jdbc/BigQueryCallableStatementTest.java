@@ -914,7 +914,7 @@ public class BigQueryCallableStatementTest {
     Calendar expectedCal = mock(Calendar.class);
 
     doReturn(1L).when(expectedDate).getTime();
-    doReturn(1L).when(expectedCal).getTime();
+    doReturn(new java.util.Date(1L)).when(expectedCal).getTime();
     doReturn(1L).when(expectedCal).getTimeInMillis();
     statement.setDate(PARAM_KEY, expectedDate, expectedCal);
     Date actual = statement.getDate(PARAM_KEY);
@@ -1033,7 +1033,7 @@ public class BigQueryCallableStatementTest {
     Calendar expectedCal = mock(Calendar.class);
 
     doReturn(1L).when(expectedTime).getTime();
-    doReturn(1L).when(expectedCal).getTime();
+    doReturn(new java.util.Date(1L)).when(expectedCal).getTime();
     doReturn(1L).when(expectedCal).getTimeInMillis();
     statement.setTime(PARAM_KEY, expectedTime, expectedCal);
     Time actual = statement.getTime(PARAM_KEY);
@@ -1062,7 +1062,7 @@ public class BigQueryCallableStatementTest {
     Calendar expectedCal = mock(Calendar.class);
 
     doReturn(1L).when(expectedTimestamp).getTime();
-    doReturn(1L).when(expectedCal).getTime();
+    doReturn(new java.util.Date(1L)).when(expectedCal).getTime();
     doReturn(1L).when(expectedCal).getTimeInMillis();
     statement.setTimestamp(PARAM_KEY, expectedTimestamp, expectedCal);
     Timestamp actual = statement.getTimestamp(PARAM_KEY);

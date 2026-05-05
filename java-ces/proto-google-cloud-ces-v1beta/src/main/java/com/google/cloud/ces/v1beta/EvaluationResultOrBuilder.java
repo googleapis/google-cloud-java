@@ -382,7 +382,7 @@ public interface EvaluationResultOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=988
+   *     google/cloud/ces/v1beta/evaluation.proto;l=991
    * @return Whether the error field is set.
    */
   @java.lang.Deprecated
@@ -401,7 +401,7 @@ public interface EvaluationResultOrBuilder
    * </code>
    *
    * @deprecated google.cloud.ces.v1beta.EvaluationResult.error is deprecated. See
-   *     google/cloud/ces/v1beta/evaluation.proto;l=988
+   *     google/cloud/ces/v1beta/evaluation.proto;l=991
    * @return The error.
    */
   @java.lang.Deprecated

@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.google.auth</groupId>
     <artifactId>google-auth-library-parent</artifactId>
-    <version>1.46.0</version><!-- {x-version-update:google-auth-library-parent:current} -->
+    <version>1.47.0-SNAPSHOT</version><!-- {x-version-update:google-auth-library-parent:current} -->
   </parent>
 
   <artifactId>google-auth-library-cab-token-generator</artifactId>
@@ -22,6 +22,10 @@
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
     <dependency>
       <groupId>com.google.auth</groupId>
       <artifactId>google-auth-library-oauth2-http</artifactId>
@@ -39,20 +43,18 @@
       <artifactId>error_prone_annotations</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.google.guava</groupId>
-      <artifactId>guava</artifactId>
-    </dependency>
-    <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java</artifactId>
     </dependency>
     <dependency>
       <groupId>dev.cel</groupId>
       <artifactId>cel</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.code.findbugs</groupId>
-      <artifactId>jsr305</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.code.findbugs</groupId>
+          <artifactId>annotations</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.google.crypto.tink</groupId>

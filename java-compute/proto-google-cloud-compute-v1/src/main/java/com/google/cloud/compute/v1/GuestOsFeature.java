@@ -89,6 +89,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
    * - TDX_CAPABLE
    * - IDPF
    * - SNP_SVSM_CAPABLE
+   * - CCA_CAPABLE
    *
    *
    * For more information, see
@@ -341,6 +342,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
    * - TDX_CAPABLE
    * - IDPF
    * - SNP_SVSM_CAPABLE
+   * - CCA_CAPABLE
    *
    *
    * For more information, see
@@ -376,6 +378,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
    * - TDX_CAPABLE
    * - IDPF
    * - SNP_SVSM_CAPABLE
+   * - CCA_CAPABLE
    *
    *
    * For more information, see
@@ -419,6 +422,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
    * - TDX_CAPABLE
    * - IDPF
    * - SNP_SVSM_CAPABLE
+   * - CCA_CAPABLE
    *
    *
    * For more information, see
@@ -781,6 +785,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
      * - TDX_CAPABLE
      * - IDPF
      * - SNP_SVSM_CAPABLE
+     * - CCA_CAPABLE
      *
      *
      * For more information, see
@@ -815,6 +820,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
      * - TDX_CAPABLE
      * - IDPF
      * - SNP_SVSM_CAPABLE
+     * - CCA_CAPABLE
      *
      *
      * For more information, see
@@ -857,6 +863,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
      * - TDX_CAPABLE
      * - IDPF
      * - SNP_SVSM_CAPABLE
+     * - CCA_CAPABLE
      *
      *
      * For more information, see
@@ -899,6 +906,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
      * - TDX_CAPABLE
      * - IDPF
      * - SNP_SVSM_CAPABLE
+     * - CCA_CAPABLE
      *
      *
      * For more information, see
@@ -940,6 +948,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
      * - TDX_CAPABLE
      * - IDPF
      * - SNP_SVSM_CAPABLE
+     * - CCA_CAPABLE
      *
      *
      * For more information, see
@@ -977,6 +986,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessage
      * - TDX_CAPABLE
      * - IDPF
      * - SNP_SVSM_CAPABLE
+     * - CCA_CAPABLE
      *
      *
      * For more information, see

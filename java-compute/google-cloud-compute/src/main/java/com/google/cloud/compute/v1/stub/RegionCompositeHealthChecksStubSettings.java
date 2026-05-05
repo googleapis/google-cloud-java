@@ -49,9 +49,11 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.AggregatedListRegionCompositeHealthChecksRequest;
 import com.google.cloud.compute.v1.CompositeHealthCheck;
 import com.google.cloud.compute.v1.CompositeHealthCheckAggregatedList;
+import com.google.cloud.compute.v1.CompositeHealthCheckHealth;
 import com.google.cloud.compute.v1.CompositeHealthCheckList;
 import com.google.cloud.compute.v1.CompositeHealthChecksScopedList;
 import com.google.cloud.compute.v1.DeleteRegionCompositeHealthCheckRequest;
+import com.google.cloud.compute.v1.GetHealthRegionCompositeHealthCheckRequest;
 import com.google.cloud.compute.v1.GetRegionCompositeHealthCheckRequest;
 import com.google.cloud.compute.v1.InsertRegionCompositeHealthCheckRequest;
 import com.google.cloud.compute.v1.ListRegionCompositeHealthChecksRequest;
@@ -168,6 +170,9 @@ public class RegionCompositeHealthChecksStubSettings
       deleteOperationSettings;
   private final UnaryCallSettings<GetRegionCompositeHealthCheckRequest, CompositeHealthCheck>
       getSettings;
+  private final UnaryCallSettings<
+          GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+      getHealthSettings;
   private final UnaryCallSettings<InsertRegionCompositeHealthCheckRequest, Operation>
       insertSettings;
   private final OperationCallSettings<InsertRegionCompositeHealthCheckRequest, Operation, Operation>
@@ -352,6 +357,12 @@ public class RegionCompositeHealthChecksStubSettings
     return getSettings;
   }
 
+  /** Returns the object with the settings used for calls to getHealth. */
+  public UnaryCallSettings<GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+      getHealthSettings() {
+    return getHealthSettings;
+  }
+
   /** Returns the object with the settings used for calls to insert. */
   public UnaryCallSettings<InsertRegionCompositeHealthCheckRequest, Operation> insertSettings() {
     return insertSettings;
@@ -474,6 +485,7 @@ public class RegionCompositeHealthChecksStubSettings
     deleteSettings = settingsBuilder.deleteSettings().build();
     deleteOperationSettings = settingsBuilder.deleteOperationSettings().build();
     getSettings = settingsBuilder.getSettings().build();
+    getHealthSettings = settingsBuilder.getHealthSettings().build();
     insertSettings = settingsBuilder.insertSettings().build();
     insertOperationSettings = settingsBuilder.insertOperationSettings().build();
     listSettings = settingsBuilder.listSettings().build();
@@ -508,6 +520,9 @@ public class RegionCompositeHealthChecksStubSettings
     private final UnaryCallSettings.Builder<
             GetRegionCompositeHealthCheckRequest, CompositeHealthCheck>
         getSettings;
+    private final UnaryCallSettings.Builder<
+            GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+        getHealthSettings;
     private final UnaryCallSettings.Builder<InsertRegionCompositeHealthCheckRequest, Operation>
         insertSettings;
     private final OperationCallSettings.Builder<
@@ -578,6 +593,7 @@ public class RegionCompositeHealthChecksStubSettings
       deleteSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteOperationSettings = OperationCallSettings.newBuilder();
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getHealthSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       insertOperationSettings = OperationCallSettings.newBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
@@ -590,6 +606,7 @@ public class RegionCompositeHealthChecksStubSettings
               aggregatedListSettings,
               deleteSettings,
               getSettings,
+              getHealthSettings,
               insertSettings,
               listSettings,
               patchSettings,
@@ -604,6 +621,7 @@ public class RegionCompositeHealthChecksStubSettings
       deleteSettings = settings.deleteSettings.toBuilder();
       deleteOperationSettings = settings.deleteOperationSettings.toBuilder();
       getSettings = settings.getSettings.toBuilder();
+      getHealthSettings = settings.getHealthSettings.toBuilder();
       insertSettings = settings.insertSettings.toBuilder();
       insertOperationSettings = settings.insertOperationSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
@@ -616,6 +634,7 @@ public class RegionCompositeHealthChecksStubSettings
               aggregatedListSettings,
               deleteSettings,
               getSettings,
+              getHealthSettings,
               insertSettings,
               listSettings,
               patchSettings,
@@ -647,6 +666,11 @@ public class RegionCompositeHealthChecksStubSettings
 
       builder
           .getSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getHealthSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -789,6 +813,13 @@ public class RegionCompositeHealthChecksStubSettings
     public UnaryCallSettings.Builder<GetRegionCompositeHealthCheckRequest, CompositeHealthCheck>
         getSettings() {
       return getSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getHealth. */
+    public UnaryCallSettings.Builder<
+            GetHealthRegionCompositeHealthCheckRequest, CompositeHealthCheckHealth>
+        getHealthSettings() {
+      return getHealthSettings;
     }
 
     /** Returns the builder for the settings used for calls to insert. */

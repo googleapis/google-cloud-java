@@ -46,3 +46,8 @@ branches:
       onDemand: true
       local: true
       localCloneDepth: 200
+    - branch: datastore-2.x
+      releaseType: java-backport
+      onDemand: true
+      local: true
+      localCloneDepth: 200

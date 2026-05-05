@@ -30,6 +30,52 @@ public interface SnapshotSettingsOrBuilder
    *
    *
    * <pre>
+   * (Regional snapshots use only)Policy of which location is allowed to access
+   * snapshot.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SnapshotSettingsAccessLocation access_location = 18410544;
+   * </code>
+   *
+   * @return Whether the accessLocation field is set.
+   */
+  boolean hasAccessLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * (Regional snapshots use only)Policy of which location is allowed to access
+   * snapshot.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SnapshotSettingsAccessLocation access_location = 18410544;
+   * </code>
+   *
+   * @return The accessLocation.
+   */
+  com.google.cloud.compute.v1.SnapshotSettingsAccessLocation getAccessLocation();
+
+  /**
+   *
+   *
+   * <pre>
+   * (Regional snapshots use only)Policy of which location is allowed to access
+   * snapshot.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SnapshotSettingsAccessLocation access_location = 18410544;
+   * </code>
+   */
+  com.google.cloud.compute.v1.SnapshotSettingsAccessLocationOrBuilder getAccessLocationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Policy of which storage location is going to be resolved, and additional
    * data that particularizes how the policy is going to be carried out.
    * </pre>

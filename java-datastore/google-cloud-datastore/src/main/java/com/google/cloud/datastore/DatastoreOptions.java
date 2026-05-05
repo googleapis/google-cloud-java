@@ -19,7 +19,6 @@ package com.google.cloud.datastore;
 import static com.google.cloud.datastore.Validator.validateNamespace;
 
 import com.google.api.core.BetaApi;
-import com.google.api.core.ObsoleteApi;
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannelProvider;
@@ -31,16 +30,17 @@ import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.v1.DatastoreRpc;
 import com.google.cloud.datastore.spi.v1.GrpcDatastoreRpc;
 import com.google.cloud.datastore.spi.v1.HttpDatastoreRpc;
-import com.google.cloud.datastore.telemetry.DatastoreMetricsRecorder;
 import com.google.cloud.datastore.v1.DatastoreSettings;
 import com.google.cloud.grpc.GrpcTransportOptions;
 import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Objects;
 import java.util.Set;
+import java.util.logging.Logger;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
@@ -48,23 +48,33 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
   private static final long serialVersionUID = -1018382430058137336L;
   private static final String API_SHORT_NAME = "Datastore";
+  private static final Logger logger = Logger.getLogger(DatastoreOptions.class.getName());
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE);
   private static final String DEFAULT_DATABASE_ID = "";
   public static final String PROJECT_ID_ENV_VAR = "DATASTORE_PROJECT_ID";
   public static final String LOCAL_HOST_ENV_VAR = "DATASTORE_EMULATOR_HOST";
+
+  // Default to a slightly larger channel count to handle a larger initial QPS. The initial
+  // configuration should be able to handle a max of ~500 concurrent streams as each gRPC
+  // channel can handle a max of 100 streams (limited by Google Middleware). The initial
+  // configuration aims to have a max of ~250 concurrent streams and will rely on the ChannelPool
+  // to resize according to the client's average load.
   public static final int INIT_CHANNEL_COUNT = 5;
+  // Default to be larger than Gax's default (2) to better scale with spikes in requests
   static final int CHANNEL_POOL_DEFAULT_RESIZE_DELTA = 5;
-  // Configure this default to be 100 to match the typical default `MAX_CONCURRENT_STREAMS`.
-  // Larger values *may* experience possible client-side queueing as excess streams cannot be
-  // multiplexed onto a full Http2 connection.
-  static final int CHANNEL_POOL_MAX_RPCS_PER_CHANNEL = 100;
+
+  // Configure the min and max RPC/Channel default in accordance to Datastore configuration guide:
+  // https://docs.cloud.google.com/datastore/docs/java-client-grpc#connection_pool_configuration
+  static final int CHANNEL_POOL_MIN_RPCS_PER_CHANNEL = 10;
+  static final int CHANNEL_POOL_MAX_RPCS_PER_CHANNEL = 50;
+
   public static final int MIN_CHANNEL_COUNT = 1;
 
-  // This is a default max channel constant value set to handle the default initial channel
-  // count and resize delta.
-  @ObsoleteApi("This constant is obsolete and will be removed in a future version")
-  public static final int MAX_CHANNEL_COUNT = 10;
+  /**
+   * @deprecated This constant is obsolete and will be removed in a future version.
+   */
+  @Deprecated public static final int MAX_CHANNEL_COUNT = 10;
 
   private transient TransportChannelProvider channelProvider = null;
 
@@ -73,7 +83,6 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
 
   private final transient @Nonnull DatastoreOpenTelemetryOptions openTelemetryOptions;
   private final transient @Nonnull com.google.cloud.datastore.telemetry.TraceUtil traceUtil;
-  private final transient @Nonnull DatastoreMetricsRecorder metricsRecorder;
 
   public static class DefaultDatastoreFactory implements DatastoreFactory {
 
@@ -114,18 +123,16 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
     return openTelemetryOptions;
   }
 
-  @Nonnull
-  DatastoreMetricsRecorder getMetricsRecorder() {
-    return metricsRecorder;
-  }
-
   public static class Builder extends ServiceOptions.Builder<Datastore, DatastoreOptions, Builder> {
 
     private String namespace;
     private String databaseId;
     private TransportChannelProvider channelProvider = null;
     private String host;
-    private TransportOptions transportOptions;
+
+    @Nonnull
+    private TransportOptions transportOptions =
+        new DatastoreDefaults().getDefaultTransportOptions();
 
     @Nullable private DatastoreOpenTelemetryOptions openTelemetryOptions = null;
 
@@ -137,25 +144,51 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       this.databaseId = options.databaseId;
       this.openTelemetryOptions = options.openTelemetryOptions;
       this.channelProvider = validateChannelProvider(options.channelProvider);
+      this.host = options.getHost();
+      this.transportOptions = options.getTransportOptions();
     }
 
-    @Override
-    public Builder setTransportOptions(TransportOptions transportOptions) {
-      if (!(transportOptions instanceof HttpTransportOptions)) {
+    private TransportChannelProvider validateChannelProvider(
+        TransportChannelProvider channelProvider) {
+      Preconditions.checkNotNull(channelProvider, "TransportChannelProvider cannot be null");
+      if (!(channelProvider instanceof InstantiatingGrpcChannelProvider)) {
         throw new IllegalArgumentException(
-            "Only http transport is allowed for " + API_SHORT_NAME + ".");
+            "Only GRPC channels are allowed for " + API_SHORT_NAME + ".");
+      }
+      return channelProvider;
+    }
+
+    /**
+     * Sets the transport options.
+     *
+     * @param transportOptions the transport options to set, must be {@link HttpTransportOptions} or
+     *     {@link GrpcTransportOptions}
+     * @return the builder
+     * @throws IllegalArgumentException if the transport options are not supported
+     */
+    @Override
+    public Builder setTransportOptions(@Nonnull TransportOptions transportOptions) {
+      Preconditions.checkNotNull(transportOptions, "TransportOptions cannot be null");
+      if (!(transportOptions instanceof HttpTransportOptions)
+          && !(transportOptions instanceof GrpcTransportOptions)) {
+        throw new IllegalArgumentException(
+            "Only http and grpc transport are allowed for " + API_SHORT_NAME + ".");
       }
       this.transportOptions = transportOptions;
       return super.setTransportOptions(transportOptions);
     }
 
     /**
-     * Sets the transport to gRPC. Note this functionality is experimental and subject to change.
+     * This method deprecated. Prefer to use {@link #setTransportOptions(TransportOptions)} instead.
+     * When using the transport-neutral variant, you may need to cast to TransportOptions when using
+     * a GrpcTransportOptions class, otherwise it will default to the deprecated method.
+     *
+     * <p>Sets the transport to gRPC. Note this functionality is experimental and subject to change.
      */
+    @Deprecated
     @BetaApi
     public Builder setTransportOptions(GrpcTransportOptions transportOptions) {
-      this.transportOptions = transportOptions;
-      return super.setTransportOptions(transportOptions);
+      return setTransportOptions((TransportOptions) transportOptions);
     }
 
     @Override
@@ -181,10 +214,28 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       return this;
     }
 
+    /**
+     * Builds the {@link DatastoreOptions} instance.
+     *
+     * <p>If the host is not explicitly set, it defaults to the transport-specific default host:
+     *
+     * <ul>
+     *   <li>gRPC: {@code datastore.googleapis.com:443}
+     *   <li>HTTP: {@code https://datastore.googleapis.com}
+     * </ul>
+     *
+     * @return the {@link DatastoreOptions} instance
+     */
     @Override
     public DatastoreOptions build() {
-      if (this.host == null && this.transportOptions instanceof GrpcTransportOptions) {
-        this.setHost(DatastoreSettings.getDefaultEndpoint());
+      if (this.host == null) {
+        // Use whatever host value the user passes in, otherwise use the transport specific default
+        // host values
+        if (this.transportOptions instanceof GrpcTransportOptions) {
+          this.setHost(DatastoreSettings.getDefaultEndpoint());
+        } else if (this.transportOptions instanceof HttpTransportOptions) {
+          this.setHost(com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST);
+        }
       }
       return new DatastoreOptions(this);
     }
@@ -214,15 +265,6 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
     }
   }
 
-  private static TransportChannelProvider validateChannelProvider(
-      TransportChannelProvider channelProvider) {
-    if (channelProvider != null && !(channelProvider instanceof InstantiatingGrpcChannelProvider)) {
-      throw new IllegalArgumentException(
-          "Only GRPC channels are allowed for " + API_SHORT_NAME + ".");
-    }
-    return channelProvider;
-  }
-
   private DatastoreOptions(Builder builder) {
     super(DatastoreFactory.class, DatastoreRpcFactory.class, builder, new DatastoreDefaults());
 
@@ -231,14 +273,13 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
             ? builder.openTelemetryOptions
             : DatastoreOpenTelemetryOptions.newBuilder().build();
     this.traceUtil = com.google.cloud.datastore.telemetry.TraceUtil.getInstance(this);
-    this.metricsRecorder = DatastoreMetricsRecorder.getInstance(this);
 
     namespace = MoreObjects.firstNonNull(builder.namespace, defaultNamespace());
     databaseId = MoreObjects.firstNonNull(builder.databaseId, DEFAULT_DATABASE_ID);
 
+    // ChannelProvider is used by GAX but HttpJson does not use it so we safely ignore it.
     if (getTransportOptions() instanceof HttpTransportOptions && builder.channelProvider != null) {
-      throw new IllegalArgumentException(
-          "Only gRPC transport allows setting of channel provider or credentials provider");
+      logger.warning("Channel provider is ignored for HttpJson transport.");
     } else if (getTransportOptions() instanceof GrpcTransportOptions) {
       if (builder.channelProvider == null) {
         // Set the default gRPC connection pool to be configured with a minimum of 1 channel.
@@ -246,11 +287,13 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
         // Datastore sets the initial channel pool count to be 5 channels to allow better handle
         // large loads of requests and the resize delta to be 5 to scale quicker. In cases of low
         // load, the channel count will scale down as needed and memory will be freed. The default
-        // configuration is set to try and handle ~500 QPS and will scale up and down as needed.
+        // configuration is set to try and handle an average of ~250 QPS and will scale up and down
+        // as needed.
         ChannelPoolSettings datastoreChannelPoolSettings =
             ChannelPoolSettings.builder()
                 .setInitialChannelCount(INIT_CHANNEL_COUNT)
                 .setMinChannelCount(MIN_CHANNEL_COUNT)
+                .setMinRpcsPerChannel(CHANNEL_POOL_MIN_RPCS_PER_CHANNEL)
                 .setMaxRpcsPerChannel(CHANNEL_POOL_MAX_RPCS_PER_CHANNEL)
                 .setMaxResizeDelta(CHANNEL_POOL_DEFAULT_RESIZE_DELTA)
                 .build();
@@ -305,8 +348,8 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreOptions
       return TRANSPORT_OPTIONS;
     }
 
-    public static HttpTransportOptions.Builder getDefaultTransportOptionsBuilder() {
-      return HttpTransportOptions.newBuilder();
+    public static GrpcTransportOptions.Builder getDefaultTransportOptionsBuilder() {
+      return GrpcTransportOptions.newBuilder();
     }
   }
 

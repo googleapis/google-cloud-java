@@ -1224,6 +1224,50 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     com.google.analytics.admin.v1alpha.ReportingIdentitySettingsOrBuilder
         getReportingIdentitySettingsOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a UserProvidedDataSettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.UserProvidedDataSettings user_provided_data_settings = 35;
+     * </code>
+     *
+     * @return Whether the userProvidedDataSettings field is set.
+     */
+    boolean hasUserProvidedDataSettings();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a UserProvidedDataSettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.UserProvidedDataSettings user_provided_data_settings = 35;
+     * </code>
+     *
+     * @return The userProvidedDataSettings.
+     */
+    com.google.analytics.admin.v1alpha.UserProvidedDataSettings getUserProvidedDataSettings();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a UserProvidedDataSettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.UserProvidedDataSettings user_provided_data_settings = 35;
+     * </code>
+     */
+    com.google.analytics.admin.v1alpha.UserProvidedDataSettingsOrBuilder
+        getUserProvidedDataSettingsOrBuilder();
+
     com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.ResourceCase
         getResourceCase();
   }
@@ -1315,6 +1359,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       REPORTING_DATA_ANNOTATION(32),
       SUBPROPERTY_SYNC_CONFIG(33),
       REPORTING_IDENTITY_SETTINGS(34),
+      USER_PROVIDED_DATA_SETTINGS(35),
       RESOURCE_NOT_SET(0);
       private final int value;
 
@@ -1392,6 +1437,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             return SUBPROPERTY_SYNC_CONFIG;
           case 34:
             return REPORTING_IDENTITY_SETTINGS;
+          case 35:
+            return USER_PROVIDED_DATA_SETTINGS;
           case 0:
             return RESOURCE_NOT_SET;
           default:
@@ -3062,6 +3109,68 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.ReportingIdentitySettings.getDefaultInstance();
     }
 
+    public static final int USER_PROVIDED_DATA_SETTINGS_FIELD_NUMBER = 35;
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a UserProvidedDataSettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.UserProvidedDataSettings user_provided_data_settings = 35;
+     * </code>
+     *
+     * @return Whether the userProvidedDataSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasUserProvidedDataSettings() {
+      return resourceCase_ == 35;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a UserProvidedDataSettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.UserProvidedDataSettings user_provided_data_settings = 35;
+     * </code>
+     *
+     * @return The userProvidedDataSettings.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.UserProvidedDataSettings
+        getUserProvidedDataSettings() {
+      if (resourceCase_ == 35) {
+        return (com.google.analytics.admin.v1alpha.UserProvidedDataSettings) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.UserProvidedDataSettings.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a UserProvidedDataSettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.UserProvidedDataSettings user_provided_data_settings = 35;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.UserProvidedDataSettingsOrBuilder
+        getUserProvidedDataSettingsOrBuilder() {
+      if (resourceCase_ == 35) {
+        return (com.google.analytics.admin.v1alpha.UserProvidedDataSettings) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.UserProvidedDataSettings.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3174,6 +3283,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       if (resourceCase_ == 34) {
         output.writeMessage(
             34, (com.google.analytics.admin.v1alpha.ReportingIdentitySettings) resource_);
+      }
+      if (resourceCase_ == 35) {
+        output.writeMessage(
+            35, (com.google.analytics.admin.v1alpha.UserProvidedDataSettings) resource_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3332,6 +3445,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 34, (com.google.analytics.admin.v1alpha.ReportingIdentitySettings) resource_);
       }
+      if (resourceCase_ == 35) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                35, (com.google.analytics.admin.v1alpha.UserProvidedDataSettings) resource_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3444,6 +3562,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           break;
         case 34:
           if (!getReportingIdentitySettings().equals(other.getReportingIdentitySettings()))
+            return false;
+          break;
+        case 35:
+          if (!getUserProvidedDataSettings().equals(other.getUserProvidedDataSettings()))
             return false;
           break;
         case 0:
@@ -3576,6 +3698,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 34:
           hash = (37 * hash) + REPORTING_IDENTITY_SETTINGS_FIELD_NUMBER;
           hash = (53 * hash) + getReportingIdentitySettings().hashCode();
+          break;
+        case 35:
+          hash = (37 * hash) + USER_PROVIDED_DATA_SETTINGS_FIELD_NUMBER;
+          hash = (53 * hash) + getUserProvidedDataSettings().hashCode();
           break;
         case 0:
         default:
@@ -3818,6 +3944,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         if (reportingIdentitySettingsBuilder_ != null) {
           reportingIdentitySettingsBuilder_.clear();
         }
+        if (userProvidedDataSettingsBuilder_ != null) {
+          userProvidedDataSettingsBuilder_.clear();
+        }
         resourceCase_ = 0;
         resource_ = null;
         return this;
@@ -3954,6 +4083,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         if (resourceCase_ == 34 && reportingIdentitySettingsBuilder_ != null) {
           result.resource_ = reportingIdentitySettingsBuilder_.build();
+        }
+        if (resourceCase_ == 35 && userProvidedDataSettingsBuilder_ != null) {
+          result.resource_ = userProvidedDataSettingsBuilder_.build();
         }
       }
 
@@ -4120,6 +4252,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           case REPORTING_IDENTITY_SETTINGS:
             {
               mergeReportingIdentitySettings(other.getReportingIdentitySettings());
+              break;
+            }
+          case USER_PROVIDED_DATA_SETTINGS:
+            {
+              mergeUserProvidedDataSettings(other.getUserProvidedDataSettings());
               break;
             }
           case RESOURCE_NOT_SET:
@@ -4367,6 +4504,14 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                   resourceCase_ = 34;
                   break;
                 } // case 274
+              case 282:
+                {
+                  input.readMessage(
+                      internalGetUserProvidedDataSettingsFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  resourceCase_ = 35;
+                  break;
+                } // case 282
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11054,6 +11199,250 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 34;
         onChanged();
         return reportingIdentitySettingsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.analytics.admin.v1alpha.UserProvidedDataSettings,
+              com.google.analytics.admin.v1alpha.UserProvidedDataSettings.Builder,
+              com.google.analytics.admin.v1alpha.UserProvidedDataSettingsOrBuilder>
+          userProvidedDataSettingsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a UserProvidedDataSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.UserProvidedDataSettings user_provided_data_settings = 35;
+       * </code>
+       *
+       * @return Whether the userProvidedDataSettings field is set.
+       */
+      @java.lang.Override
+      public boolean hasUserProvidedDataSettings() {
+        return resourceCase_ == 35;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a UserProvidedDataSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.UserProvidedDataSettings user_provided_data_settings = 35;
+       * </code>
+       *
+       * @return The userProvidedDataSettings.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.UserProvidedDataSettings
+          getUserProvidedDataSettings() {
+        if (userProvidedDataSettingsBuilder_ == null) {
+          if (resourceCase_ == 35) {
+            return (com.google.analytics.admin.v1alpha.UserProvidedDataSettings) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.UserProvidedDataSettings.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 35) {
+            return userProvidedDataSettingsBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.UserProvidedDataSettings.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a UserProvidedDataSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.UserProvidedDataSettings user_provided_data_settings = 35;
+       * </code>
+       */
+      public Builder setUserProvidedDataSettings(
+          com.google.analytics.admin.v1alpha.UserProvidedDataSettings value) {
+        if (userProvidedDataSettingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          userProvidedDataSettingsBuilder_.setMessage(value);
+        }
+        resourceCase_ = 35;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a UserProvidedDataSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.UserProvidedDataSettings user_provided_data_settings = 35;
+       * </code>
+       */
+      public Builder setUserProvidedDataSettings(
+          com.google.analytics.admin.v1alpha.UserProvidedDataSettings.Builder builderForValue) {
+        if (userProvidedDataSettingsBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          userProvidedDataSettingsBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 35;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a UserProvidedDataSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.UserProvidedDataSettings user_provided_data_settings = 35;
+       * </code>
+       */
+      public Builder mergeUserProvidedDataSettings(
+          com.google.analytics.admin.v1alpha.UserProvidedDataSettings value) {
+        if (userProvidedDataSettingsBuilder_ == null) {
+          if (resourceCase_ == 35
+              && resource_
+                  != com.google.analytics.admin.v1alpha.UserProvidedDataSettings
+                      .getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.UserProvidedDataSettings.newBuilder(
+                        (com.google.analytics.admin.v1alpha.UserProvidedDataSettings) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 35) {
+            userProvidedDataSettingsBuilder_.mergeFrom(value);
+          } else {
+            userProvidedDataSettingsBuilder_.setMessage(value);
+          }
+        }
+        resourceCase_ = 35;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a UserProvidedDataSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.UserProvidedDataSettings user_provided_data_settings = 35;
+       * </code>
+       */
+      public Builder clearUserProvidedDataSettings() {
+        if (userProvidedDataSettingsBuilder_ == null) {
+          if (resourceCase_ == 35) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 35) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          userProvidedDataSettingsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a UserProvidedDataSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.UserProvidedDataSettings user_provided_data_settings = 35;
+       * </code>
+       */
+      public com.google.analytics.admin.v1alpha.UserProvidedDataSettings.Builder
+          getUserProvidedDataSettingsBuilder() {
+        return internalGetUserProvidedDataSettingsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a UserProvidedDataSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.UserProvidedDataSettings user_provided_data_settings = 35;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.UserProvidedDataSettingsOrBuilder
+          getUserProvidedDataSettingsOrBuilder() {
+        if ((resourceCase_ == 35) && (userProvidedDataSettingsBuilder_ != null)) {
+          return userProvidedDataSettingsBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 35) {
+            return (com.google.analytics.admin.v1alpha.UserProvidedDataSettings) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.UserProvidedDataSettings.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a UserProvidedDataSettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.UserProvidedDataSettings user_provided_data_settings = 35;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+              com.google.analytics.admin.v1alpha.UserProvidedDataSettings,
+              com.google.analytics.admin.v1alpha.UserProvidedDataSettings.Builder,
+              com.google.analytics.admin.v1alpha.UserProvidedDataSettingsOrBuilder>
+          internalGetUserProvidedDataSettingsFieldBuilder() {
+        if (userProvidedDataSettingsBuilder_ == null) {
+          if (!(resourceCase_ == 35)) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.UserProvidedDataSettings.getDefaultInstance();
+          }
+          userProvidedDataSettingsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilder<
+                  com.google.analytics.admin.v1alpha.UserProvidedDataSettings,
+                  com.google.analytics.admin.v1alpha.UserProvidedDataSettings.Builder,
+                  com.google.analytics.admin.v1alpha.UserProvidedDataSettingsOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.UserProvidedDataSettings) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 35;
+        onChanged();
+        return userProvidedDataSettingsBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource)

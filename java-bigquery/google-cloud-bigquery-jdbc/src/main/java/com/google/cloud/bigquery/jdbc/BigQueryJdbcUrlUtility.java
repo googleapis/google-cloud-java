@@ -98,9 +98,12 @@ final class BigQueryJdbcUrlUtility {
   static final String BIGQUERY_ENDPOINT_OVERRIDE_PROPERTY_NAME = "BIGQUERY";
   static final String STS_ENDPOINT_OVERRIDE_PROPERTY_NAME = "STS";
   static final String OAUTH_ACCESS_TOKEN_PROPERTY_NAME = "OAuthAccessToken";
+  static final String OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME = "OAuthAccessTokenReadonly";
   static final String OAUTH_REFRESH_TOKEN_PROPERTY_NAME = "OAuthRefreshToken";
   static final String OAUTH_CLIENT_ID_PROPERTY_NAME = "OAuthClientId";
   static final String OAUTH_CLIENT_SECRET_PROPERTY_NAME = "OAuthClientSecret";
+  static final String DEFAULT_OAUTH_CLIENT_ID = "977385342095.apps.googleusercontent.com";
+  static final String DEFAULT_OAUTH_CLIENT_SECRET = "wbER7576mc_1YOII0dGk7jEE";
   static final String ENABLE_HTAPI_PROPERTY_NAME = "EnableHighThroughputAPI";
   static final String PROXY_HOST_PROPERTY_NAME = "ProxyHost";
   static final String PROXY_PORT_PROPERTY_NAME = "ProxyPort";
@@ -247,6 +250,11 @@ final class BigQueryJdbcUrlUtility {
                       .setDescription(
                           "The pre-generated access token to be used with BigQuery for"
                               + " authentication.")
+                      .build(),
+                  BigQueryConnectionProperty.newBuilder()
+                      .setName(OAUTH_ACCESS_TOKEN_READONLY_PROPERTY_NAME)
+                      .setDescription(
+                          "Set to true if the pre-generated access token has a read-only scope.")
                       .build(),
                   BigQueryConnectionProperty.newBuilder()
                       .setName(OAUTH_CLIENT_ID_PROPERTY_NAME)
@@ -754,23 +762,29 @@ final class BigQueryJdbcUrlUtility {
       }
 
     } catch (NumberFormatException ex) {
-      throw new IllegalArgumentException(
-          String.format(
-              "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
-                  + " true.",
-              propertyName),
-          ex);
+      IllegalArgumentException e =
+          new IllegalArgumentException(
+              String.format(
+                  "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
+                      + " true.",
+                  propertyName),
+              ex);
+      LOG.severe(e.getMessage(), e);
+      throw e;
     }
     if (integerValue == 1) {
       return true;
     } else if (integerValue == 0) {
       return false;
     } else {
-      throw new IllegalArgumentException(
-          String.format(
-              "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
-                  + " true.",
-              propertyName));
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              String.format(
+                  "Invalid value for %s. For Boolean connection properties, use 0 for false and 1 for"
+                      + " true.",
+                  propertyName));
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
   }
 

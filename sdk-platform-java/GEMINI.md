@@ -52,4 +52,49 @@ bazelisk test //...
 
 ### 3.3. Running Showcase Integration Tests
 
-Showcase integration tests are run against a local server that implements the Showcase API. The [java-showcase/README.md](java-showcase/README.md) file provides detailed instructions on how to run these tests.
+```sh
+bazelisk test //test/integration:redis
+```
+
+### 3.4. Updating Golden Files
+
+If you make changes that affect the generated code, you will need to update the golden files. This can be done using the following command:
+
+```sh
+bazelisk run //test/integration:update_asset && bazelisk run //test/integration:update_credentials && bazelisk run //test/integration:update_iam && bazelisk run //test/integration:update_kms && bazelisk run //test/integration:update_pubsub && bazelisk run //test/integration:update_logging && bazelisk run //test/integration:update_redis && bazelisk run //test/integration:update_storage && bazelisk run //test/integration:update_library && bazelisk run //test/integration:update_compute && bazelisk run //test/integration:update_bigtable && bazelisk run //test/integration:update_apigeeconnect 
+```
+
+### 3.5. Running Showcase Integration Tests
+
+Showcase integration tests are run against a local server that implements the Showcase API. The `java-showcase/README.md` file provides detailed instructions on how to run these tests. The general steps are:
+
+1.  **Install the Showcase server:**
+
+    ```sh
+    go install github.com/googleapis/gapic-showcase/cmd/gapic-showcase@latest
+    ```
+
+2.  **Run the Showcase server:**
+
+    ```sh
+    gapic-showcase run
+    ```
+
+3.  **Run the integration tests:**
+
+    ```sh
+    cd java-showcase
+    mvn verify -P enable-integration-tests
+    ```
+
+## 4. File Exclusions & Loading Constraints
+
+To maintain a highly focused context window and prevent memory overload:
+
+*   **Permanent Exclusions (Always Ignore):**
+    *   Do **NOT** load, read, or search through files under the directories `java-showcase-3.21.0/` and `java-showcase-3.25.8/`. Treat these folders as completely out of scope.
+*   **Conditional Exclusions (Ignore by Default):**
+    *   By default, do **NOT** load, read, or search through files in the `test/` folder (which contains massive auto-generated integration golden files).
+    *   **Exceptions:** You are only authorized to load or modify files under `test/` when:
+        1. The user explicitly asks you to *"update the golden files"* or *"inspect test files"*.
+        2. You are actively executing the Golden Integration Update commands (e.g. `bazelisk run //test/integration:update_...`).

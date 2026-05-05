@@ -159,6 +159,7 @@ public class HttpJsonCmEnrollmentServiceStub extends CmEnrollmentServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*}/locations")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -193,6 +194,7 @@ public class HttpJsonCmEnrollmentServiceStub extends CmEnrollmentServiceStub {
                             serializer.putPathParam(fields, "name", request.getName());
                             return fields;
                           })
+                      .setAdditionalPaths("/v1/{name=projects/*/locations/*}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();

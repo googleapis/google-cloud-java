@@ -71,11 +71,13 @@ final class BigQueryJdbcProxyUtility {
     String proxyPort = ds.getProxyPort();
     if (proxyPort != null) {
       if (!Pattern.compile(validPortRegex).matcher(proxyPort).find()) {
-        LOG.severe(
-            "Illegal port number provided %s. Please provide a valid port number.", proxyPort);
-        throw new IllegalArgumentException(
-            String.format(
-                "Illegal port number provided %s. Please provide a valid port number.", proxyPort));
+        IllegalArgumentException ex =
+            new IllegalArgumentException(
+                String.format(
+                    "Illegal port number provided %s. Please provide a valid port number.",
+                    proxyPort));
+        LOG.severe(ex.getMessage(), ex);
+        throw ex;
       }
       proxyProperties.put(BigQueryJdbcUrlUtility.PROXY_PORT_PROPERTY_NAME, proxyPort);
     }
@@ -91,25 +93,29 @@ final class BigQueryJdbcProxyUtility {
     boolean isMissingProxyHostOrPortWhenProxySet =
         (proxyHost == null && proxyPort != null) || (proxyHost != null && proxyPort == null);
     if (isMissingProxyHostOrPortWhenProxySet) {
-      LOG.severe(
-          "Both ProxyHost and ProxyPort parameters need to be specified. No defaulting behavior occurs.");
-      throw new IllegalArgumentException(
-          "Both ProxyHost and ProxyPort parameters need to be specified. No defaulting behavior"
-              + " occurs.");
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              "Both ProxyHost and ProxyPort parameters need to be specified. No defaulting behavior"
+                  + " occurs.");
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
     boolean isMissingProxyUidOrPwdWhenAuthSet =
         (proxyUid == null && proxyPwd != null) || (proxyUid != null && proxyPwd == null);
     if (isMissingProxyUidOrPwdWhenAuthSet) {
-      LOG.severe("Both ProxyUid and ProxyPwd parameters need to be specified for authentication.");
-      throw new IllegalArgumentException(
-          "Both ProxyUid and ProxyPwd parameters need to be specified for authentication.");
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              "Both ProxyUid and ProxyPwd parameters need to be specified for authentication.");
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
     boolean isProxyAuthSetWithoutProxySettings = proxyUid != null && proxyHost == null;
     if (isProxyAuthSetWithoutProxySettings) {
-      LOG.severe(
-          "Proxy authentication provided via connection string with no proxy host or port set.");
-      throw new IllegalArgumentException(
-          "Proxy authentication provided via connection string with no proxy host or port set.");
+      IllegalArgumentException ex =
+          new IllegalArgumentException(
+              "Proxy authentication provided via connection string with no proxy host or port set.");
+      LOG.severe(ex.getMessage(), ex);
+      throw ex;
     }
     return proxyProperties;
   }
@@ -196,8 +202,8 @@ final class BigQueryJdbcProxyUtility {
                 .setSSLSocketFactory(sslSocketFactory)
                 .build());
       } catch (IOException | GeneralSecurityException e) {
-        LOG.severe(e, "Failed to configure SSL TrustStore for HTTP transport");
-        throw new BigQueryJdbcRuntimeException(e);
+        throw new BigQueryJdbcRuntimeException(
+            "Failed to configure SSL TrustStore for HTTP transport", e);
       }
     }
     addAuthToProxyIfPresent(proxyProperties, httpClientBuilder, callerClassName);
@@ -286,8 +292,8 @@ final class BigQueryJdbcProxyUtility {
                           .sslContext(grpcSslContext);
 
                     } catch (IOException | GeneralSecurityException e) {
-                      LOG.severe(e, "Failed to configure SSL TrustStore for GRPC channel");
-                      throw new BigQueryJdbcRuntimeException(e);
+                      throw new BigQueryJdbcRuntimeException(
+                          "Failed to configure SSL TrustStore for GRPC channel", e);
                     }
                   }
                   return managedChannelBuilder;

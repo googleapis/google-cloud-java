@@ -38,4 +38,47 @@ public interface ConversationLoggingSettingsOrBuilder
    * @return The disableConversationLogging.
    */
   boolean getDisableConversationLogging();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the retention window for the conversation.
+   * If not set, the conversation will be retained for 365 days.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration retention_window = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the retentionWindow field is set.
+   */
+  boolean hasRetentionWindow();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the retention window for the conversation.
+   * If not set, the conversation will be retained for 365 days.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration retention_window = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The retentionWindow.
+   */
+  com.google.protobuf.Duration getRetentionWindow();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Controls the retention window for the conversation.
+   * If not set, the conversation will be retained for 365 days.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration retention_window = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getRetentionWindowOrBuilder();
 }

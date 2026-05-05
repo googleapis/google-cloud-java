@@ -19,6 +19,7 @@ package com.google.cloud.cloudsecuritycompliance.v1.samples;
 // [START cloudsecuritycompliance_v1_generated_Monitoring_ListFrameworkComplianceSummaries_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummary;
+import com.google.cloud.cloudsecuritycompliance.v1.FrameworkComplianceSummaryView;
 import com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkComplianceSummariesRequest;
 import com.google.cloud.cloudsecuritycompliance.v1.LocationName;
 import com.google.cloud.cloudsecuritycompliance.v1.MonitoringClient;
@@ -42,6 +43,7 @@ public class AsyncListFrameworkComplianceSummaries {
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setFilter("filter-1274492040")
+              .setView(FrameworkComplianceSummaryView.forNumber(0))
               .build();
       ApiFuture<FrameworkComplianceSummary> future =
           monitoringClient.listFrameworkComplianceSummariesPagedCallable().futureCall(request);

@@ -31,7 +31,9 @@ public interface FrameworkDeploymentOrBuilder
    *
    * <pre>
    * Identifier. The name of the framework deployment, in the format
-   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+   * or
+   * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
    * The only supported location is `global`.
    * </pre>
    *
@@ -46,7 +48,9 @@ public interface FrameworkDeploymentOrBuilder
    *
    * <pre>
    * Identifier. The name of the framework deployment, in the format
-   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}`.
+   * `organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment}`
+   * or
+   * `projects/{project}/locations/{location}/frameworkDeployments/{framework_deployment}`.
    * The only supported location is `global`.
    * </pre>
    *

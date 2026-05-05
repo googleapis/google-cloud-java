@@ -163,6 +163,48 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
+   *
+   * Check the ConfidentialComputeType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string confidential_compute_type = 386447257;</code>
+   *
+   * @return Whether the confidentialComputeType field is set.
+   */
+  boolean hasConfidentialComputeType();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the ConfidentialComputeType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string confidential_compute_type = 386447257;</code>
+   *
+   * @return The confidentialComputeType.
+   */
+  java.lang.String getConfidentialComputeType();
+
+  /**
+   *
+   *
+   * <pre>
+   *
+   * Check the ConfidentialComputeType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string confidential_compute_type = 386447257;</code>
+   *
+   * @return The bytes for confidentialComputeType.
+   */
+  com.google.protobuf.ByteString getConfidentialComputeTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. [Output Only] Creation timestamp inRFC3339
    * text format.
    * </pre>

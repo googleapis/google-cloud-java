@@ -373,6 +373,55 @@ public interface ToolOrBuilder
    *
    *
    * <pre>
+   * Optional. If specified, Vertex AI will use Parallel.ai to search for
+   * information to answer user queries. The search results will be grounded on
+   * Parallel.ai and presented to the model for response generation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallel_ai_search = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the parallelAiSearch field is set.
+   */
+  boolean hasParallelAiSearch();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If specified, Vertex AI will use Parallel.ai to search for
+   * information to answer user queries. The search results will be grounded on
+   * Parallel.ai and presented to the model for response generation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallel_ai_search = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The parallelAiSearch.
+   */
+  com.google.cloud.aiplatform.v1.Tool.ParallelAiSearch getParallelAiSearch();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If specified, Vertex AI will use Parallel.ai to search for
+   * information to answer user queries. The search results will be grounded on
+   * Parallel.ai and presented to the model for response generation
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Tool.ParallelAiSearch parallel_ai_search = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.Tool.ParallelAiSearchOrBuilder getParallelAiSearchOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. CodeExecution tool type.
    * Enables the model to execute code as part of generation.
    * </pre>

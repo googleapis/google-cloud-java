@@ -21,7 +21,7 @@ import com.google.api.core.InternalApi;
 @InternalApi("For internal use only")
 final class Version {
   // {x-version-update-start:google-cloud-dataplex:current}
-  static final String VERSION = "1.89.0";
+  static final String VERSION = "1.90.0-SNAPSHOT";
   // {x-version-update-end}
 
 }

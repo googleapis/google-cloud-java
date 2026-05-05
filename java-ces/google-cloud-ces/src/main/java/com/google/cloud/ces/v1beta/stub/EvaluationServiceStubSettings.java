@@ -71,6 +71,8 @@ import com.google.cloud.ces.v1beta.EvaluationDataset;
 import com.google.cloud.ces.v1beta.EvaluationExpectation;
 import com.google.cloud.ces.v1beta.EvaluationResult;
 import com.google.cloud.ces.v1beta.EvaluationRun;
+import com.google.cloud.ces.v1beta.ExportEvaluationsRequest;
+import com.google.cloud.ces.v1beta.ExportEvaluationsResponse;
 import com.google.cloud.ces.v1beta.GenerateEvaluationOperationMetadata;
 import com.google.cloud.ces.v1beta.GenerateEvaluationRequest;
 import com.google.cloud.ces.v1beta.GetEvaluationDatasetRequest;
@@ -94,6 +96,7 @@ import com.google.cloud.ces.v1beta.ListEvaluationsRequest;
 import com.google.cloud.ces.v1beta.ListEvaluationsResponse;
 import com.google.cloud.ces.v1beta.ListScheduledEvaluationRunsRequest;
 import com.google.cloud.ces.v1beta.ListScheduledEvaluationRunsResponse;
+import com.google.cloud.ces.v1beta.OperationMetadata;
 import com.google.cloud.ces.v1beta.RunEvaluationOperationMetadata;
 import com.google.cloud.ces.v1beta.RunEvaluationRequest;
 import com.google.cloud.ces.v1beta.RunEvaluationResponse;
@@ -289,6 +292,10 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
       deleteScheduledEvaluationRunSettings;
   private final UnaryCallSettings<TestPersonaVoiceRequest, TestPersonaVoiceResponse>
       testPersonaVoiceSettings;
+  private final UnaryCallSettings<ExportEvaluationsRequest, Operation> exportEvaluationsSettings;
+  private final OperationCallSettings<
+          ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
+      exportEvaluationsOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -958,6 +965,18 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
     return testPersonaVoiceSettings;
   }
 
+  /** Returns the object with the settings used for calls to exportEvaluations. */
+  public UnaryCallSettings<ExportEvaluationsRequest, Operation> exportEvaluationsSettings() {
+    return exportEvaluationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to exportEvaluations. */
+  public OperationCallSettings<
+          ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
+      exportEvaluationsOperationSettings() {
+    return exportEvaluationsOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1126,6 +1145,9 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
     deleteScheduledEvaluationRunSettings =
         settingsBuilder.deleteScheduledEvaluationRunSettings().build();
     testPersonaVoiceSettings = settingsBuilder.testPersonaVoiceSettings().build();
+    exportEvaluationsSettings = settingsBuilder.exportEvaluationsSettings().build();
+    exportEvaluationsOperationSettings =
+        settingsBuilder.exportEvaluationsOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1234,6 +1256,11 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
         deleteScheduledEvaluationRunSettings;
     private final UnaryCallSettings.Builder<TestPersonaVoiceRequest, TestPersonaVoiceResponse>
         testPersonaVoiceSettings;
+    private final UnaryCallSettings.Builder<ExportEvaluationsRequest, Operation>
+        exportEvaluationsSettings;
+    private final OperationCallSettings.Builder<
+            ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
+        exportEvaluationsOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -1317,6 +1344,8 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
       updateScheduledEvaluationRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteScheduledEvaluationRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       testPersonaVoiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportEvaluationsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      exportEvaluationsOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1353,6 +1382,7 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
               updateScheduledEvaluationRunSettings,
               deleteScheduledEvaluationRunSettings,
               testPersonaVoiceSettings,
+              exportEvaluationsSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1405,6 +1435,8 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
       deleteScheduledEvaluationRunSettings =
           settings.deleteScheduledEvaluationRunSettings.toBuilder();
       testPersonaVoiceSettings = settings.testPersonaVoiceSettings.toBuilder();
+      exportEvaluationsSettings = settings.exportEvaluationsSettings.toBuilder();
+      exportEvaluationsOperationSettings = settings.exportEvaluationsOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -1441,6 +1473,7 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
               updateScheduledEvaluationRunSettings,
               deleteScheduledEvaluationRunSettings,
               testPersonaVoiceSettings,
+              exportEvaluationsSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1626,6 +1659,11 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .exportEvaluationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .listLocationsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
@@ -1724,6 +1762,31 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
                   DeleteEvaluationRunOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .exportEvaluationsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExportEvaluationsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  ExportEvaluationsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -1977,6 +2040,19 @@ public class EvaluationServiceStubSettings extends StubSettings<EvaluationServic
     public UnaryCallSettings.Builder<TestPersonaVoiceRequest, TestPersonaVoiceResponse>
         testPersonaVoiceSettings() {
       return testPersonaVoiceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportEvaluations. */
+    public UnaryCallSettings.Builder<ExportEvaluationsRequest, Operation>
+        exportEvaluationsSettings() {
+      return exportEvaluationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to exportEvaluations. */
+    public OperationCallSettings.Builder<
+            ExportEvaluationsRequest, ExportEvaluationsResponse, OperationMetadata>
+        exportEvaluationsOperationSettings() {
+      return exportEvaluationsOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */
