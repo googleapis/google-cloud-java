@@ -40,6 +40,13 @@ ENV/
 env.bak/
 venv.bak/
 
+# Protect Java package folders from global Python virtualenv env/ and ENV/ blanket collisions
+!**/src/main/java/**/env/
+!**/src/test/java/**/env/
+!**/src/main/proto/**/env/
+!**/src/test/proto/**/env/
+!**/src/main/java/**/ENV/
+!**/src/test/java/**/ENV/
 
 # Unit test / coverage reports
 .coverage
