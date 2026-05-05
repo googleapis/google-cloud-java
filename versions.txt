@@ -1032,8 +1032,5 @@ grpc-google-cloud-health-v4:0.1.0:0.1.0
 google-maps-mapmanagement:0.1.0:0.1.0
 proto-google-maps-mapmanagement-v2beta:0.1.0:0.1.0
 grpc-google-maps-mapmanagement-v2beta:0.1.0:0.1.0
-gapic-showcase:0.1.0:0.1.0
-proto-gapic-showcase-v1beta1:0.1.0:0.1.0
-grpc-gapic-showcase-v1beta1:0.1.0:0.1.0
 grpc-google-cloud-valkey-v1beta:0.38.0:0.38.0
 grpc-google-cloud-valkey-v1:0.38.0:0.38.0
