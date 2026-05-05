@@ -168,6 +168,17 @@ class ComposerTest {
   }
 
   @Test
+  void testGenerateVersionClasses_generateVersionJavaFalse_returnsEmptyList() {
+    GapicContext contextWithFlagFalse = context.toBuilder().setGenerateVersionJava(false).build();
+    assertTrue(Composer.generateVersionClasses(contextWithFlagFalse).isEmpty());
+  }
+
+  @Test
+  void testGapicContext_generateVersionJava_disabledByDefault() {
+    assertFalse(GapicContext.EMPTY.generateVersionJava());
+  }
+
+  @Test
   void testComposePackageInfo_emptyGapicContext_returnsNull() {
     assertNull(Composer.composePackageInfo(GapicContext.EMPTY));
   }
