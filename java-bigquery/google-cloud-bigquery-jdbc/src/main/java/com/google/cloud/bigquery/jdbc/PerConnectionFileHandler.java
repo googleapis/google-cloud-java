@@ -45,7 +45,7 @@ class PerConnectionFileHandler extends Handler {
         Files.createDirectories(this.baseLogPath);
       }
 
-      this.defaultHandler = createFileHandler("Jdbc-default");
+      this.defaultHandler = createFileHandler("Jdbc-global");
     } catch (IOException e) {
       reportError(
           "Failed to initialize default log file", e, java.util.logging.ErrorManager.OPEN_FAILURE);

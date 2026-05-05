@@ -53,7 +53,7 @@ public class PerConnectionFileHandlerTest {
 
   @Test
   public void testInitialization() {
-    Path defaultLog = tempDir.resolve("BigQuery-Jdbc-default.log");
+    Path defaultLog = tempDir.resolve("BigQuery-Jdbc-global.log");
     assertTrue(Files.exists(defaultLog));
   }
 
@@ -63,14 +63,14 @@ public class PerConnectionFileHandlerTest {
     handler.publish(record);
     handler.flush();
 
-    Path defaultLog = tempDir.resolve("BigQuery-Jdbc-default.log");
+    Path defaultLog = tempDir.resolve("BigQuery-Jdbc-global.log");
     String content = new String(Files.readAllBytes(defaultLog));
     assertTrue(content.contains("Test message default"));
   }
 
   @Test
   public void testPublishConnectionSpecific() throws IOException {
-    BigQueryJdbcMdc.registerInstance(mockConnection, "123");
+    BigQueryJdbcMdc.registerInstance("JdbcConnection-123");
 
     LogRecord record = new LogRecord(Level.INFO, "Test message connection 123");
     handler.publish(record);
@@ -84,7 +84,7 @@ public class PerConnectionFileHandlerTest {
 
   @Test
   public void testCloseHandler() {
-    BigQueryJdbcMdc.registerInstance(mockConnection, "456");
+    BigQueryJdbcMdc.registerInstance("JdbcConnection-456");
 
     LogRecord record = new LogRecord(Level.INFO, "Test message connection 456");
     handler.publish(record);
