@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-
 /** Lightweight MDC implementation for the BigQuery JDBC driver using InheritableThreadLocal. */
 class BigQueryJdbcMdc {
   private static final InheritableThreadLocal<String> currentConnectionId =
