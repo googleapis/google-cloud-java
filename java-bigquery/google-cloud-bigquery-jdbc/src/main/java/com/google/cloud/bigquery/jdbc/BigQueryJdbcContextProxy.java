@@ -131,8 +131,8 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
       // context
       if (BigQueryJdbcRootLogger.isFileLoggingEnabled()) {
         try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
-          LOG.severe(
-              "Exception occurred during " + method.getName() + ": " + cause.getMessage(), cause);
+          String errMsg = cause.getMessage() != null ? cause.getMessage() : cause.toString();
+          LOG.severe("Exception occurred during " + method.getName() + ": " + errMsg, cause);
         }
       }
 
