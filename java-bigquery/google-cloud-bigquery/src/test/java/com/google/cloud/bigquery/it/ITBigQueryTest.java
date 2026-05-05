@@ -7517,7 +7517,7 @@ class ITBigQueryTest {
             .setJobCreationMode(JobCreationMode.JOB_CREATION_REQUIRED)
             .setUseQueryCache(false)
             .build();
-    long millis = System.currentTimeMillis();
+    millis = System.currentTimeMillis();
     result = bigQuery.queryWithTimeout(config, null, 1000L);
     millis = System.currentTimeMillis() - millis;
     assertTrue(result instanceof Job);
