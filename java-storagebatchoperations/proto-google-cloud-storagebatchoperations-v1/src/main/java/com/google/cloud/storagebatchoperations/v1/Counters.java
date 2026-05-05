@@ -114,7 +114,8 @@ public final class Counters extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Number of objects failed.
+   * Output only. The number of objects that failed due to user errors or
+   * service errors.
    * </pre>
    *
    * <code>int64 failed_object_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -163,6 +164,133 @@ public final class Counters extends com.google.protobuf.GeneratedMessage
     return totalBytesFound_;
   }
 
+  public static final int OBJECT_CUSTOM_CONTEXTS_CREATED_FIELD_NUMBER = 5;
+  private long objectCustomContextsCreated_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of object custom contexts created. This field is only
+   * populated for jobs with the UpdateObjectCustomContext transformation.
+   * </pre>
+   *
+   * <code>
+   * optional int64 object_custom_contexts_created = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the objectCustomContextsCreated field is set.
+   */
+  @java.lang.Override
+  public boolean hasObjectCustomContextsCreated() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of object custom contexts created. This field is only
+   * populated for jobs with the UpdateObjectCustomContext transformation.
+   * </pre>
+   *
+   * <code>
+   * optional int64 object_custom_contexts_created = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The objectCustomContextsCreated.
+   */
+  @java.lang.Override
+  public long getObjectCustomContextsCreated() {
+    return objectCustomContextsCreated_;
+  }
+
+  public static final int OBJECT_CUSTOM_CONTEXTS_DELETED_FIELD_NUMBER = 6;
+  private long objectCustomContextsDeleted_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of object custom contexts deleted. This field is only
+   * populated for jobs with the UpdateObjectCustomContext transformation.
+   * </pre>
+   *
+   * <code>
+   * optional int64 object_custom_contexts_deleted = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the objectCustomContextsDeleted field is set.
+   */
+  @java.lang.Override
+  public boolean hasObjectCustomContextsDeleted() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of object custom contexts deleted. This field is only
+   * populated for jobs with the UpdateObjectCustomContext transformation.
+   * </pre>
+   *
+   * <code>
+   * optional int64 object_custom_contexts_deleted = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The objectCustomContextsDeleted.
+   */
+  @java.lang.Override
+  public long getObjectCustomContextsDeleted() {
+    return objectCustomContextsDeleted_;
+  }
+
+  public static final int OBJECT_CUSTOM_CONTEXTS_UPDATED_FIELD_NUMBER = 7;
+  private long objectCustomContextsUpdated_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of object custom contexts updated. This counter tracks
+   * custom contexts where the key already existed, but the payload was
+   * modified. This field is only populated for jobs with the
+   * UpdateObjectCustomContext transformation.
+   * </pre>
+   *
+   * <code>
+   * optional int64 object_custom_contexts_updated = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the objectCustomContextsUpdated field is set.
+   */
+  @java.lang.Override
+  public boolean hasObjectCustomContextsUpdated() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Number of object custom contexts updated. This counter tracks
+   * custom contexts where the key already existed, but the payload was
+   * modified. This field is only populated for jobs with the
+   * UpdateObjectCustomContext transformation.
+   * </pre>
+   *
+   * <code>
+   * optional int64 object_custom_contexts_updated = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The objectCustomContextsUpdated.
+   */
+  @java.lang.Override
+  public long getObjectCustomContextsUpdated() {
+    return objectCustomContextsUpdated_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -189,6 +317,15 @@ public final class Counters extends com.google.protobuf.GeneratedMessage
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(4, totalBytesFound_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeInt64(5, objectCustomContextsCreated_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeInt64(6, objectCustomContextsDeleted_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeInt64(7, objectCustomContextsUpdated_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -209,6 +346,18 @@ public final class Counters extends com.google.protobuf.GeneratedMessage
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, totalBytesFound_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(5, objectCustomContextsCreated_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(6, objectCustomContextsDeleted_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(7, objectCustomContextsUpdated_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -233,6 +382,18 @@ public final class Counters extends com.google.protobuf.GeneratedMessage
     if (hasTotalBytesFound()) {
       if (getTotalBytesFound() != other.getTotalBytesFound()) return false;
     }
+    if (hasObjectCustomContextsCreated() != other.hasObjectCustomContextsCreated()) return false;
+    if (hasObjectCustomContextsCreated()) {
+      if (getObjectCustomContextsCreated() != other.getObjectCustomContextsCreated()) return false;
+    }
+    if (hasObjectCustomContextsDeleted() != other.hasObjectCustomContextsDeleted()) return false;
+    if (hasObjectCustomContextsDeleted()) {
+      if (getObjectCustomContextsDeleted() != other.getObjectCustomContextsDeleted()) return false;
+    }
+    if (hasObjectCustomContextsUpdated() != other.hasObjectCustomContextsUpdated()) return false;
+    if (hasObjectCustomContextsUpdated()) {
+      if (getObjectCustomContextsUpdated() != other.getObjectCustomContextsUpdated()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -253,6 +414,18 @@ public final class Counters extends com.google.protobuf.GeneratedMessage
     if (hasTotalBytesFound()) {
       hash = (37 * hash) + TOTAL_BYTES_FOUND_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTotalBytesFound());
+    }
+    if (hasObjectCustomContextsCreated()) {
+      hash = (37 * hash) + OBJECT_CUSTOM_CONTEXTS_CREATED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getObjectCustomContextsCreated());
+    }
+    if (hasObjectCustomContextsDeleted()) {
+      hash = (37 * hash) + OBJECT_CUSTOM_CONTEXTS_DELETED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getObjectCustomContextsDeleted());
+    }
+    if (hasObjectCustomContextsUpdated()) {
+      hash = (37 * hash) + OBJECT_CUSTOM_CONTEXTS_UPDATED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getObjectCustomContextsUpdated());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -398,6 +571,9 @@ public final class Counters extends com.google.protobuf.GeneratedMessage
       succeededObjectCount_ = 0L;
       failedObjectCount_ = 0L;
       totalBytesFound_ = 0L;
+      objectCustomContextsCreated_ = 0L;
+      objectCustomContextsDeleted_ = 0L;
+      objectCustomContextsUpdated_ = 0L;
       return this;
     }
 
@@ -448,6 +624,18 @@ public final class Counters extends com.google.protobuf.GeneratedMessage
         result.totalBytesFound_ = totalBytesFound_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.objectCustomContextsCreated_ = objectCustomContextsCreated_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.objectCustomContextsDeleted_ = objectCustomContextsDeleted_;
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.objectCustomContextsUpdated_ = objectCustomContextsUpdated_;
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -475,6 +663,15 @@ public final class Counters extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasTotalBytesFound()) {
         setTotalBytesFound(other.getTotalBytesFound());
+      }
+      if (other.hasObjectCustomContextsCreated()) {
+        setObjectCustomContextsCreated(other.getObjectCustomContextsCreated());
+      }
+      if (other.hasObjectCustomContextsDeleted()) {
+        setObjectCustomContextsDeleted(other.getObjectCustomContextsDeleted());
+      }
+      if (other.hasObjectCustomContextsUpdated()) {
+        setObjectCustomContextsUpdated(other.getObjectCustomContextsUpdated());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -526,6 +723,24 @@ public final class Counters extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 40:
+              {
+                objectCustomContextsCreated_ = input.readInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+            case 48:
+              {
+                objectCustomContextsDeleted_ = input.readInt64();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+            case 56:
+              {
+                objectCustomContextsUpdated_ = input.readInt64();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -663,7 +878,8 @@ public final class Counters extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Number of objects failed.
+     * Output only. The number of objects that failed due to user errors or
+     * service errors.
      * </pre>
      *
      * <code>int64 failed_object_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -679,7 +895,8 @@ public final class Counters extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Number of objects failed.
+     * Output only. The number of objects that failed due to user errors or
+     * service errors.
      * </pre>
      *
      * <code>int64 failed_object_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -699,7 +916,8 @@ public final class Counters extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Number of objects failed.
+     * Output only. The number of objects that failed due to user errors or
+     * service errors.
      * </pre>
      *
      * <code>int64 failed_object_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -789,6 +1007,266 @@ public final class Counters extends com.google.protobuf.GeneratedMessage
     public Builder clearTotalBytesFound() {
       bitField0_ = (bitField0_ & ~0x00000008);
       totalBytesFound_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long objectCustomContextsCreated_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of object custom contexts created. This field is only
+     * populated for jobs with the UpdateObjectCustomContext transformation.
+     * </pre>
+     *
+     * <code>
+     * optional int64 object_custom_contexts_created = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the objectCustomContextsCreated field is set.
+     */
+    @java.lang.Override
+    public boolean hasObjectCustomContextsCreated() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of object custom contexts created. This field is only
+     * populated for jobs with the UpdateObjectCustomContext transformation.
+     * </pre>
+     *
+     * <code>
+     * optional int64 object_custom_contexts_created = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The objectCustomContextsCreated.
+     */
+    @java.lang.Override
+    public long getObjectCustomContextsCreated() {
+      return objectCustomContextsCreated_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of object custom contexts created. This field is only
+     * populated for jobs with the UpdateObjectCustomContext transformation.
+     * </pre>
+     *
+     * <code>
+     * optional int64 object_custom_contexts_created = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The objectCustomContextsCreated to set.
+     * @return This builder for chaining.
+     */
+    public Builder setObjectCustomContextsCreated(long value) {
+
+      objectCustomContextsCreated_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of object custom contexts created. This field is only
+     * populated for jobs with the UpdateObjectCustomContext transformation.
+     * </pre>
+     *
+     * <code>
+     * optional int64 object_custom_contexts_created = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearObjectCustomContextsCreated() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      objectCustomContextsCreated_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long objectCustomContextsDeleted_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of object custom contexts deleted. This field is only
+     * populated for jobs with the UpdateObjectCustomContext transformation.
+     * </pre>
+     *
+     * <code>
+     * optional int64 object_custom_contexts_deleted = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the objectCustomContextsDeleted field is set.
+     */
+    @java.lang.Override
+    public boolean hasObjectCustomContextsDeleted() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of object custom contexts deleted. This field is only
+     * populated for jobs with the UpdateObjectCustomContext transformation.
+     * </pre>
+     *
+     * <code>
+     * optional int64 object_custom_contexts_deleted = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The objectCustomContextsDeleted.
+     */
+    @java.lang.Override
+    public long getObjectCustomContextsDeleted() {
+      return objectCustomContextsDeleted_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of object custom contexts deleted. This field is only
+     * populated for jobs with the UpdateObjectCustomContext transformation.
+     * </pre>
+     *
+     * <code>
+     * optional int64 object_custom_contexts_deleted = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The objectCustomContextsDeleted to set.
+     * @return This builder for chaining.
+     */
+    public Builder setObjectCustomContextsDeleted(long value) {
+
+      objectCustomContextsDeleted_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of object custom contexts deleted. This field is only
+     * populated for jobs with the UpdateObjectCustomContext transformation.
+     * </pre>
+     *
+     * <code>
+     * optional int64 object_custom_contexts_deleted = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearObjectCustomContextsDeleted() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      objectCustomContextsDeleted_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long objectCustomContextsUpdated_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of object custom contexts updated. This counter tracks
+     * custom contexts where the key already existed, but the payload was
+     * modified. This field is only populated for jobs with the
+     * UpdateObjectCustomContext transformation.
+     * </pre>
+     *
+     * <code>
+     * optional int64 object_custom_contexts_updated = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the objectCustomContextsUpdated field is set.
+     */
+    @java.lang.Override
+    public boolean hasObjectCustomContextsUpdated() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of object custom contexts updated. This counter tracks
+     * custom contexts where the key already existed, but the payload was
+     * modified. This field is only populated for jobs with the
+     * UpdateObjectCustomContext transformation.
+     * </pre>
+     *
+     * <code>
+     * optional int64 object_custom_contexts_updated = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The objectCustomContextsUpdated.
+     */
+    @java.lang.Override
+    public long getObjectCustomContextsUpdated() {
+      return objectCustomContextsUpdated_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of object custom contexts updated. This counter tracks
+     * custom contexts where the key already existed, but the payload was
+     * modified. This field is only populated for jobs with the
+     * UpdateObjectCustomContext transformation.
+     * </pre>
+     *
+     * <code>
+     * optional int64 object_custom_contexts_updated = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The objectCustomContextsUpdated to set.
+     * @return This builder for chaining.
+     */
+    public Builder setObjectCustomContextsUpdated(long value) {
+
+      objectCustomContextsUpdated_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Number of object custom contexts updated. This counter tracks
+     * custom contexts where the key already existed, but the payload was
+     * modified. This field is only populated for jobs with the
+     * UpdateObjectCustomContext transformation.
+     * </pre>
+     *
+     * <code>
+     * optional int64 object_custom_contexts_updated = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearObjectCustomContextsUpdated() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      objectCustomContextsUpdated_ = 0L;
       onChanged();
       return this;
     }
