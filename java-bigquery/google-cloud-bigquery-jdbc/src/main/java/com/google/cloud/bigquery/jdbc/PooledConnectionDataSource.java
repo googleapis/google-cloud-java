@@ -42,12 +42,18 @@ public class PooledConnectionDataSource extends DataSource implements Connection
       throw new BigQueryJdbcRuntimeException(
           "Cannot get pooled connection: unable to get underlying physical connection");
     }
-    Long connectionPoolSize = ((BigQueryConnection) bqConnection).getConnectionPoolSize();
+    BigQueryConnection physicalConnection;
+    if (bqConnection.isWrapperFor(BigQueryConnection.class)) {
+      physicalConnection = bqConnection.unwrap(BigQueryConnection.class);
+    } else {
+      physicalConnection = (BigQueryConnection) bqConnection;
+    }
+    Long connectionPoolSize = physicalConnection.getConnectionPoolSize();
     if (connectionPoolManager == null) {
       connectionPoolManager = new PooledConnectionListener(connectionPoolSize);
     }
     BigQueryPooledConnection bqPooledConnection =
-        new BigQueryPooledConnection((BigQueryConnection) bqConnection);
+        new BigQueryPooledConnection(physicalConnection);
     bqPooledConnection.addConnectionEventListener(connectionPoolManager);
     return bqPooledConnection;
   }
