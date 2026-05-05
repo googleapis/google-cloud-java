@@ -256,7 +256,7 @@ if [ -f "$SOURCE_REPO_NAME/.kokoro/conformance.sh" ]; then
     cp "$SOURCE_REPO_NAME/.kokoro/conformance.sh" ".kokoro/${SOURCE_REPO_NAME#java-}-conformance.sh"
     
     echo "Adapting conformance script paths and build scopes for monorepo root..."
-    PL_MODULES="${SOURCE_REPO_NAME}"
+    PL_MODULES="${SOURCE_REPO_NAME},sdk-platform-java/java-shared-dependencies"
     # Also include any child BOM modules to ensure snapshots install to local .m2 cache for test utilities
     for bom_dir in "${SOURCE_REPO_NAME}"/*-bom; do
         if [ -d "$bom_dir" ]; then
