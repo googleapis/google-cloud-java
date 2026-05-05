@@ -40,7 +40,7 @@ public class BigQueryJdbcSqlSyntaxErrorException extends SQLSyntaxErrorException
   }
 
   public BigQueryJdbcSqlSyntaxErrorException(String message, BigQueryException ex) {
-    super(message, ex);
-    LOG.severe(message, this);
+    super(BigQueryJdbcExceptionUtils.formatMessage(message, ex), ex);
+    LOG.severe(this.getMessage(), this);
   }
 }
