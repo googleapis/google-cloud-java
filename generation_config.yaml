@@ -3039,10 +3039,9 @@ libraries:
   release_level: stable
   client_documentation: https://cloud.google.com/java/docs/reference/proto-google-common-protos/latest/history
   distribution_name: com.google.api.grpc:proto-google-common-protos
-  excluded_dependencies: proto-google-common-protos,grpc-google-common-protos,proto-google-common-protos-parent
+  excluded_dependencies: grpc-google-common-protos,proto-google-common-protos,proto-google-common-protos-parent
   excluded_poms: proto-google-common-protos-bom,proto-google-common-protos
   library_type: OTHER
-
   GAPICs:
   - proto_path: google/api
   - proto_path: google/apps/card/v1
