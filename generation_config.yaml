@@ -649,32 +649,6 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/support/v2
   - proto_path: google/cloud/support/v2beta
-- api_shortname: common-protos
-  name_pretty: Common Protos
-  product_documentation: https://github.com/googleapis/api-common-protos
-  api_description: Protobuf classes for Google's common protos.
-  release_level: stable
-  client_documentation: 
-    https://cloud.google.com/java/docs/reference/proto-google-common-protos/latest/history
-  distribution_name: com.google.api.grpc:proto-google-common-protos
-  excluded_dependencies: 
-    proto-google-common-protos,grpc-google-common-protos,proto-google-common-protos-parent
-  excluded_poms: proto-google-common-protos-bom,proto-google-common-protos
-  library_type: OTHER
-
-  GAPICs:
-  - proto_path: google/api
-  - proto_path: google/apps/card/v1
-  - proto_path: google/cloud
-  - proto_path: google/cloud/audit
-  - proto_path: google/cloud/location
-  - proto_path: google/geo/type
-  - proto_path: google/logging/type
-  - proto_path: google/longrunning
-  - proto_path: google/rpc
-  - proto_path: google/rpc/context
-  - proto_path: google/shopping/type
-  - proto_path: google/type
 - api_shortname: compute
   name_pretty: Compute Engine
   product_documentation: https://cloud.google.com/compute/
