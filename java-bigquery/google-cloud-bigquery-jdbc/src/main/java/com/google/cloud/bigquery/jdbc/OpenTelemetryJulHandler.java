@@ -16,7 +16,9 @@
 
 package com.google.cloud.bigquery.jdbc;
 
+import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
+import com.google.cloud.logging.Payload;
 import io.opentelemetry.api.OpenTelemetry;
 import io.opentelemetry.api.baggage.Baggage;
 import io.opentelemetry.api.common.AttributeKey;
@@ -26,6 +28,7 @@ import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.context.Context;
 import java.time.Instant;
+import java.util.Collections;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -84,7 +87,35 @@ public class OpenTelemetryJulHandler extends Handler {
   }
 
   private void publishToGcp(LogRecord record, String traceId, String spanId, String connectionId) {
-    // TODO(b/491238299)
+    if (loggingClient == null) {
+      return;
+    }
+
+    LogEntry.Builder builder =
+        LogEntry.newBuilder(Payload.StringPayload.of(record.getMessage()))
+            .setSeverity(mapGcpSeverity(record.getLevel()))
+            .setTimestamp(record.getMillis());
+
+    if (traceId != null) {
+      builder.setTrace(traceId);
+    }
+    if (spanId != null) {
+      builder.setSpanId(spanId);
+    }
+    if (connectionId != null) {
+      builder.addLabel("jdbc.connection_id", connectionId);
+    }
+
+    loggingClient.write(Collections.singleton(builder.build()));
+  }
+
+  private com.google.cloud.logging.Severity mapGcpSeverity(Level level) {
+    if (level == Level.SEVERE) return com.google.cloud.logging.Severity.ERROR;
+    if (level == Level.WARNING) return com.google.cloud.logging.Severity.WARNING;
+    if (level == Level.INFO) return com.google.cloud.logging.Severity.INFO;
+    if (level == Level.CONFIG) return com.google.cloud.logging.Severity.INFO;
+    if (level == Level.FINE) return com.google.cloud.logging.Severity.DEBUG;
+    return com.google.cloud.logging.Severity.DEBUG;
   }
 
   private void publishToOTel(LogRecord record, String traceId, String spanId, String connectionId) {

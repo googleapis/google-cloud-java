@@ -18,7 +18,10 @@ package com.google.cloud.bigquery.jdbc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
+import com.google.cloud.logging.Logging;
 import io.opentelemetry.api.baggage.Baggage;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.logs.Severity;
@@ -88,5 +91,20 @@ public class OpenTelemetryJulHandlerTest {
       assertEquals(
           "test-uuid", log.getAttributes().get(AttributeKey.stringKey("jdbc.connection_id")));
     }
+  }
+
+  @Test
+  public void testPublishToGcp() {
+    Logging loggingClient = mock(Logging.class);
+    OpenTelemetryJulHandler handler =
+        new OpenTelemetryJulHandler(loggingClient, otelTesting.getOpenTelemetry(), true, null);
+
+    LogRecord record = new LogRecord(Level.INFO, "Test message");
+    record.setLoggerName("test.logger");
+    record.setMillis(System.currentTimeMillis());
+
+    handler.publish(record);
+
+    verify(loggingClient).write(org.mockito.ArgumentMatchers.any(Iterable.class));
   }
 }
