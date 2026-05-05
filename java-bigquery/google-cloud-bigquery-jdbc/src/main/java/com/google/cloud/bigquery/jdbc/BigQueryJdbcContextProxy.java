@@ -56,6 +56,30 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
 
   @Override
   public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+    // Handle standard Object methods explicitly
+    if (method.getDeclaringClass() == Object.class) {
+      String methodName = method.getName();
+      if (methodName.equals("equals")) {
+        Object other = args[0];
+        if (other == null) {
+          return false;
+        }
+        if (Proxy.isProxyClass(other.getClass())) {
+          InvocationHandler handler = Proxy.getInvocationHandler(other);
+          if (handler instanceof BigQueryJdbcContextProxy) {
+            return target.equals(((BigQueryJdbcContextProxy) handler).target);
+          }
+        }
+        return target.equals(other);
+      }
+      if (methodName.equals("hashCode")) {
+        return target.hashCode();
+      }
+      if (methodName.equals("toString")) {
+        return target.toString();
+      }
+    }
+
     // Support standard JDBC Wrapper unwrap operations
     if (method.getName().equals("unwrap") && args != null && args.length == 1) {
       Class<?> iface = (Class<?>) args[0];
