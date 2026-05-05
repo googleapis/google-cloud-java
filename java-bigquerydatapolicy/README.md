@@ -87,7 +87,7 @@ to add `google-cloud-bigquerydatapolicy` as a dependency in your code.
 ## About BigQuery DataPolicy API
 
 
-[BigQuery DataPolicy API][product-docs] 
+[BigQuery DataPolicy API][product-docs] Allows users to manage BigQuery data policies.
 
 See the [BigQuery DataPolicy API client library docs][javadocs] to learn how to
 use this BigQuery DataPolicy API Client Library.
