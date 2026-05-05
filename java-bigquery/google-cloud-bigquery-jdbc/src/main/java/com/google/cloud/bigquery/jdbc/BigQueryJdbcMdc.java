@@ -16,12 +16,8 @@
 
 package com.google.cloud.bigquery.jdbc;
 
-import java.util.UUID;
-import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Lightweight MDC implementation for the BigQuery JDBC driver using InheritableThreadLocal.
- */
+/** Lightweight MDC implementation for the BigQuery JDBC driver using InheritableThreadLocal. */
 class BigQueryJdbcMdc {
   private static final InheritableThreadLocal<String> currentConnectionId =
       new InheritableThreadLocal<>();

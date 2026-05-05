@@ -46,7 +46,8 @@ import java.util.Calendar;
 
 public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
     implements BigQueryResultSet {
-  protected final BigQueryJdbcCustomLogger LOG = new BigQueryJdbcCustomLogger(this.getClass().getName());
+  protected final BigQueryJdbcCustomLogger LOG =
+      new BigQueryJdbcCustomLogger(this.getClass().getName());
   private BigQuery bigQuery;
   private JobId jobId;
   private String queryId;
@@ -109,7 +110,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
   protected SQLException logAndCreateException(SQLException ex) {
     if (BigQueryJdbcRootLogger.isFileLoggingEnabled() && this.statement != null) {
-      try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(this.statement.connectionId)) {
+      try (BigQueryJdbcMdc.MdcCloseable mdc =
+          BigQueryJdbcMdc.registerInstance(this.statement.connectionId)) {
         LOG.severe(ex.getMessage(), ex);
       }
     }
@@ -132,26 +134,31 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
 
     if (isNested) {
       if (columnIndex == 1) {
-        return logAndCreateException(new BigQueryConversionException(
-            String.format("Cannot convert index column to type %s.", targetClass.getSimpleName()),
-            cause));
+        return logAndCreateException(
+            new BigQueryConversionException(
+                String.format(
+                    "Cannot convert index column to type %s.", targetClass.getSimpleName()),
+                cause));
       } else if (columnIndex == 2) {
         Field arrayField = this.schema.getFields().get(0);
         type = arrayField.getType().getStandardType();
         typeName = type.name();
       } else {
-        throw logAndCreateException(new SQLException(
-            "For a nested ResultSet from an Array, columnIndex must be 1 or 2.", cause));
+        throw logAndCreateException(
+            new SQLException(
+                "For a nested ResultSet from an Array, columnIndex must be 1 or 2.", cause));
       }
     } else {
       Field field = this.schemaFieldList.get(columnIndex - 1);
       type = field.getType().getStandardType();
       typeName = type.name();
     }
-    return logAndCreateException(new BigQueryConversionException(
-        String.format(
-            "Cannot convert value of type %s to type %s.", typeName, targetClass.getSimpleName()),
-        cause));
+    return logAndCreateException(
+        new BigQueryConversionException(
+            String.format(
+                "Cannot convert value of type %s to type %s.",
+                typeName, targetClass.getSimpleName()),
+            cause));
   }
 
   private StandardSQLTypeName getStandardSQLTypeName(int columnIndex) throws SQLException {
@@ -166,7 +173,8 @@ public abstract class BigQueryBaseResultSet extends BigQueryNoOpsResultSet
         Field arrayField = this.schema.getFields().get(0);
         return arrayField.getType().getStandardType();
       } else {
-        throw logAndCreateException("For a nested ResultSet from an Array, columnIndex must be 1 or 2.");
+        throw logAndCreateException(
+            "For a nested ResultSet from an Array, columnIndex must be 1 or 2.");
       }
     } else {
       if (this.schemaFieldList == null

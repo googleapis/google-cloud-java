@@ -81,7 +81,8 @@ public class BigQueryJdbcCustomLoggerTest {
 
   @Test
   public void testHotPathLoggerLogToDefaultWhenContextIsNull() {
-    BigQueryJdbcCustomLogger hotpathLogger = new BigQueryJdbcCustomLogger("com.google.cloud.bigquery.jdbc.BigQueryArrowResultSet");
+    BigQueryJdbcCustomLogger hotpathLogger =
+        new BigQueryJdbcCustomLogger("com.google.cloud.bigquery.jdbc.BigQueryArrowResultSet");
     TestHandler hotpathHandler = new TestHandler();
     hotpathLogger.addHandler(hotpathHandler);
     hotpathLogger.setLevel(Level.ALL);
@@ -96,7 +97,8 @@ public class BigQueryJdbcCustomLoggerTest {
 
   @Test
   public void testHotPathLoggerNotSilencedWhenContextIsPresent() {
-    BigQueryJdbcCustomLogger hotpathLogger = new BigQueryJdbcCustomLogger("com.google.cloud.bigquery.jdbc.BigQueryArrowResultSet");
+    BigQueryJdbcCustomLogger hotpathLogger =
+        new BigQueryJdbcCustomLogger("com.google.cloud.bigquery.jdbc.BigQueryArrowResultSet");
     TestHandler hotpathHandler = new TestHandler();
     hotpathLogger.addHandler(hotpathHandler);
     hotpathLogger.setLevel(Level.ALL);

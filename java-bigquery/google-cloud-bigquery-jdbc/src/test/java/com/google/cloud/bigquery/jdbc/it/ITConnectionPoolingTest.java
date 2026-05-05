@@ -322,8 +322,7 @@ public class ITConnectionPoolingTest extends ITBase {
 
     // Execute query with physical connection
     String query =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT"
-            + " 850";
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT" + " 850";
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));

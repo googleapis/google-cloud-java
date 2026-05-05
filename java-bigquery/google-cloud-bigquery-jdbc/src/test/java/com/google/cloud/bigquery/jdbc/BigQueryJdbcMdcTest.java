@@ -64,7 +64,7 @@ public class BigQueryJdbcMdcTest {
     childThread.start();
     assertTrue(latch.await(5, TimeUnit.SECONDS));
 
-    assertEquals("parent", childConnectionId.get());
+    assertEquals("JdbcConnection-parent", childConnectionId.get());
   }
 
   @Test
@@ -117,10 +117,10 @@ public class BigQueryJdbcMdcTest {
 
     assertTrue(testFinished.await(5, TimeUnit.SECONDS));
 
-    assertEquals("A", threadAIdBeforeB.get());
+    assertEquals("JdbcConnection-A", threadAIdBeforeB.get());
     assertNull(threadBIdBeforeRegister.get());
-    assertEquals("B", threadBIdAfterRegister.get());
-    assertEquals("A", threadAIdAfterB.get());
+    assertEquals("JdbcConnection-B", threadBIdAfterRegister.get());
+    assertEquals("JdbcConnection-A", threadAIdAfterB.get());
   }
 
   @Test

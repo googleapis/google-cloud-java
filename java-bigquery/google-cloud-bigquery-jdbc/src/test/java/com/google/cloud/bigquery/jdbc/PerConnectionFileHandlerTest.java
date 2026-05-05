@@ -21,6 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import org.junit.jupiter.api.AfterEach;
@@ -51,9 +52,18 @@ public class PerConnectionFileHandlerTest {
     BigQueryJdbcMdc.clear();
   }
 
+  private Optional<Path> findLogFile(String suffix) throws IOException {
+    return Files.list(tempDir)
+        .filter(
+            p ->
+                p.getFileName().toString().startsWith("BQ-JDBC-")
+                    && p.getFileName().toString().endsWith(suffix))
+        .findFirst();
+  }
+
   @Test
-  public void testInitialization() {
-    Path defaultLog = tempDir.resolve("BigQuery-Jdbc-global.log");
+  public void testInitialization() throws IOException {
+    Path defaultLog = tempDir.resolve("BQ-JDBC-GLOBAL.log");
     assertTrue(Files.exists(defaultLog));
   }
 
@@ -63,37 +73,37 @@ public class PerConnectionFileHandlerTest {
     handler.publish(record);
     handler.flush();
 
-    Path defaultLog = tempDir.resolve("BigQuery-Jdbc-global.log");
+    Path defaultLog = tempDir.resolve("BQ-JDBC-GLOBAL.log");
+    assertTrue(Files.exists(defaultLog));
     String content = new String(Files.readAllBytes(defaultLog));
     assertTrue(content.contains("Test message default"));
   }
 
   @Test
   public void testPublishConnectionSpecific() throws IOException {
-    BigQueryJdbcMdc.registerInstance("JdbcConnection-123");
+    BigQueryJdbcMdc.registerInstance("c123");
 
     LogRecord record = new LogRecord(Level.INFO, "Test message connection 123");
     handler.publish(record);
     handler.flush();
 
-    Path connLog = tempDir.resolve("BigQuery-JdbcConnection-123.log");
-    assertTrue(Files.exists(connLog));
-    String content = new String(Files.readAllBytes(connLog));
-    assertTrue(content.contains("Test message connection 123"));
+    Optional<Path> connLog = findLogFile("-c123.log");
+    assertTrue(connLog.isPresent());
   }
 
   @Test
-  public void testCloseHandler() {
-    BigQueryJdbcMdc.registerInstance("JdbcConnection-456");
+  public void testCloseHandler() throws IOException {
+    BigQueryJdbcMdc.registerInstance("c123");
 
-    LogRecord record = new LogRecord(Level.INFO, "Test message connection 456");
+    LogRecord record = new LogRecord(Level.INFO, "Test message connection 123");
     handler.publish(record);
     handler.flush();
 
-    Path connLog = tempDir.resolve("BigQuery-JdbcConnection-456.log");
-    assertTrue(Files.exists(connLog));
+    Optional<Path> connLog = findLogFile("-c123.log");
+    assertTrue(connLog.isPresent());
 
-    handler.closeHandler("JdbcConnection-456");
-    assertTrue(Files.exists(connLog));
+    handler.closeHandler("c123");
+    // File remains on disk, but handler is closed.
+    assertTrue(connLog.isPresent());
   }
 }

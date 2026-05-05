@@ -150,8 +150,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
 
   BigQueryConnection(String url, DataSource ds) throws IOException {
     this.connectionId = UUID.randomUUID().toString();
-    try (BigQueryJdbcMdc.MdcCloseable mdc =
-        BigQueryJdbcMdc.registerInstance(this.connectionId)) {
+    try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(this.connectionId)) {
       LOG.finest("++enter++");
 
       this.connectionUrl = url;
@@ -379,8 +378,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     checkClosed();
     if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
         || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY) {
-      throw new BigQueryJdbcSqlFeatureNotSupportedException(
-          "Unsupported createStatement feature.");
+      throw new BigQueryJdbcSqlFeatureNotSupportedException("Unsupported createStatement feature.");
     }
     return createStatement();
   }
@@ -406,8 +404,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
         || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY
         || resultSetHoldability != ResultSet.CLOSE_CURSORS_AT_COMMIT) {
-      throw new BigQueryJdbcSqlFeatureNotSupportedException(
-          "Unsupported createStatement feature");
+      throw new BigQueryJdbcSqlFeatureNotSupportedException("Unsupported createStatement feature");
     }
     return createStatement();
   }
@@ -444,8 +441,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
         || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY
         || resultSetHoldability != ResultSet.CLOSE_CURSORS_AT_COMMIT) {
-      throw new BigQueryJdbcSqlFeatureNotSupportedException(
-          "Unsupported prepareStatement feature");
+      throw new BigQueryJdbcSqlFeatureNotSupportedException("Unsupported prepareStatement feature");
     }
     return prepareStatement(sql);
   }
@@ -456,8 +452,7 @@ public class BigQueryConnection extends BigQueryNoOpsConnection {
     LOG.finest("++enter++");
     if (resultSetType != ResultSet.TYPE_FORWARD_ONLY
         || resultSetConcurrency != ResultSet.CONCUR_READ_ONLY) {
-      throw new BigQueryJdbcSqlFeatureNotSupportedException(
-          "Unsupported prepareStatement feature");
+      throw new BigQueryJdbcSqlFeatureNotSupportedException("Unsupported prepareStatement feature");
     }
     return prepareStatement(sql);
   }

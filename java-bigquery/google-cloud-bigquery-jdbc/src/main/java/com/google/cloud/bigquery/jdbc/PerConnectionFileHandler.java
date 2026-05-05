@@ -47,7 +47,7 @@ class PerConnectionFileHandler extends Handler {
         Files.createDirectories(this.baseLogPath);
       }
 
-      this.defaultHandler = createFileHandler("Jdbc-global");
+      this.defaultHandler = createFileHandler("Jdbc-default");
     } catch (IOException e) {
       reportError(
           "Failed to initialize default log file", e, java.util.logging.ErrorManager.OPEN_FAILURE);
@@ -55,6 +55,9 @@ class PerConnectionFileHandler extends Handler {
   }
 
   private String getLogFilePath(String id) {
+    if ("Jdbc-default".equals(id)) {
+      return baseLogPath.resolve("BQ-JDBC-GLOBAL.log").toString();
+    }
     String uuid = id;
     if (id.startsWith("BQ-JDBC-")) {
       uuid = id.substring("BQ-JDBC-".length());

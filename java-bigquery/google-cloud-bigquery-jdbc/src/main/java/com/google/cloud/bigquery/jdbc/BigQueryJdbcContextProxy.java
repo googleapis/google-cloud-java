@@ -22,10 +22,10 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * Dynamic InvocationHandler that transparently wraps JDBC operations.
- * Sets the connection context on the executing thread for connection routing,
- * and cleans it up upon method exit to prevent memory leaks and context bleeding.
- * Acts as the unified exception logger for Statement and Connection methods.
+ * Dynamic InvocationHandler that transparently wraps JDBC operations. Sets the connection context
+ * on the executing thread for connection routing, and cleans it up upon method exit to prevent
+ * memory leaks and context bleeding. Acts as the unified exception logger for Statement and
+ * Connection methods.
  */
 class BigQueryJdbcContextProxy implements InvocationHandler {
   private static final BigQueryJdbcCustomLogger LOG =
@@ -41,19 +41,17 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
     this.interfaceType = interfaceType;
   }
 
-  /**
-   * Wraps a target JDBC object with a dynamic proxy carrying the connection context.
-   */
+  /** Wraps a target JDBC object with a dynamic proxy carrying the connection context. */
   @SuppressWarnings("unchecked")
   static <T> T wrap(Object target, Class<T> interfaceType, String connectionId) {
     if (target == null) {
       return null;
     }
-    return (T) Proxy.newProxyInstance(
-        interfaceType.getClassLoader(),
-        new Class<?>[] { interfaceType },
-        new BigQueryJdbcContextProxy(target, connectionId, interfaceType)
-    );
+    return (T)
+        Proxy.newProxyInstance(
+            interfaceType.getClassLoader(),
+            new Class<?>[] {interfaceType},
+            new BigQueryJdbcContextProxy(target, connectionId, interfaceType));
   }
 
   @Override
@@ -72,7 +70,9 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
     }
     if (method.getName().equals("isWrapperFor") && args != null && args.length == 1) {
       Class<?> iface = (Class<?>) args[0];
-      iface.isInstance(target);
+      if (iface.isInstance(target)) {
+        return true;
+      }
       try {
         return method.invoke(target, args);
       } catch (InvocationTargetException e) {
@@ -103,10 +103,12 @@ class BigQueryJdbcContextProxy implements InvocationHandler {
     } catch (InvocationTargetException e) {
       Throwable cause = e.getCause();
 
-      // Unified Context Logger: Captures and logs every exception exactly once with the Connection context
+      // Unified Context Logger: Captures and logs every exception exactly once with the Connection
+      // context
       if (BigQueryJdbcRootLogger.isFileLoggingEnabled()) {
         try (BigQueryJdbcMdc.MdcCloseable mdc = BigQueryJdbcMdc.registerInstance(connectionId)) {
-          LOG.severe("Exception occurred during " + method.getName() + ": " + cause.getMessage(), cause);
+          LOG.severe(
+              "Exception occurred during " + method.getName() + ": " + cause.getMessage(), cause);
         }
       }
 

@@ -67,8 +67,7 @@ public class ITProxyBigQueryTest {
       assertFalse(connection.isClosed());
       Statement statement = connection.createStatement();
       boolean result =
-          statement.execute(
-              "Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180");
+          statement.execute("Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180");
       assertTrue(result);
       connection.close();
     }
@@ -131,8 +130,7 @@ public class ITProxyBigQueryTest {
       assertFalse(connection.isClosed());
       Statement statement = connection.createStatement();
       boolean result =
-          statement.execute(
-              "Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180");
+          statement.execute("Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180");
       assertTrue(result);
       connection.close();
     }
@@ -150,8 +148,7 @@ public class ITProxyBigQueryTest {
       assertFalse(connection.isClosed());
       Statement statement = connection.createStatement();
       boolean result =
-          statement.execute(
-              "Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180");
+          statement.execute("Select * FROM `bigquery-public-data.samples.shakespeare` LIMIT 180");
       assertTrue(result);
       connection.close();
     }

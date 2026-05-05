@@ -781,7 +781,8 @@ public class ITNightlyBigQueryTest {
     bigQueryStatement.execute(createTransactionTable);
 
     BigQueryConnection connection =
-        DriverManager.getConnection(session_enabled_connection_uri).unwrap(BigQueryConnection.class);
+        DriverManager.getConnection(session_enabled_connection_uri)
+            .unwrap(BigQueryConnection.class);
     connection.setAutoCommit(false);
     Statement statement = connection.createStatement();
     assertTrue(connection.isTransactionStarted());
@@ -825,7 +826,8 @@ public class ITNightlyBigQueryTest {
 
     bigQueryStatement.execute(createTransactionTable);
     BigQueryConnection connection =
-        DriverManager.getConnection(session_enabled_connection_uri).unwrap(BigQueryConnection.class);
+        DriverManager.getConnection(session_enabled_connection_uri)
+            .unwrap(BigQueryConnection.class);
     connection.setAutoCommit(false);
     Statement statement = connection.createStatement();
     assertTrue(connection.isTransactionStarted());
@@ -866,7 +868,8 @@ public class ITNightlyBigQueryTest {
 
     bigQueryStatement.execute(createTransactionTable);
     BigQueryConnection connection =
-        DriverManager.getConnection(session_enabled_connection_uri).unwrap(BigQueryConnection.class);
+        DriverManager.getConnection(session_enabled_connection_uri)
+            .unwrap(BigQueryConnection.class);
     connection.setAutoCommit(false);
     Statement statement = connection.createStatement();
     assertTrue(connection.isTransactionStarted());
@@ -909,7 +912,8 @@ public class ITNightlyBigQueryTest {
 
     bigQueryStatement.execute(createTransactionTable);
     BigQueryConnection connection =
-        DriverManager.getConnection(session_enabled_connection_uri).unwrap(BigQueryConnection.class);
+        DriverManager.getConnection(session_enabled_connection_uri)
+            .unwrap(BigQueryConnection.class);
     connection.setAutoCommit(false);
 
     Statement statement = connection.createStatement();
@@ -968,7 +972,8 @@ public class ITNightlyBigQueryTest {
             + "  ROLLBACK TRANSACTION;\n"
             + "END;";
     BigQueryConnection connection =
-        DriverManager.getConnection(session_enabled_connection_uri).unwrap(BigQueryConnection.class);
+        DriverManager.getConnection(session_enabled_connection_uri)
+            .unwrap(BigQueryConnection.class);
     Statement statement = connection.createStatement();
     statement.execute(transactionOnError);
 
@@ -1421,7 +1426,8 @@ public class ITNightlyBigQueryTest {
 
     bigQueryStatement.execute(createTransactionTable);
     BigQueryConnection connection =
-        DriverManager.getConnection(session_enabled_connection_uri).unwrap(BigQueryConnection.class);
+        DriverManager.getConnection(session_enabled_connection_uri)
+            .unwrap(BigQueryConnection.class);
     connection.setAutoCommit(false);
     Statement statement = connection.createStatement();
     assertTrue(connection.isTransactionStarted());
@@ -1526,7 +1532,8 @@ public class ITNightlyBigQueryTest {
     bigQueryStatement.execute(createTransactionTable);
 
     BigQueryConnection connection =
-        DriverManager.getConnection(session_enabled_connection_uri).unwrap(BigQueryConnection.class);
+        DriverManager.getConnection(session_enabled_connection_uri)
+            .unwrap(BigQueryConnection.class);
     connection.setAutoCommit(false);
     Statement statement = connection.createStatement();
     assertTrue(connection.isTransactionStarted());
@@ -1557,15 +1564,13 @@ public class ITNightlyBigQueryTest {
     Statement statement = bigQueryConnectionUseStateless.createStatement();
 
     String query =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT"
-            + " 850";
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT" + " 850";
     ResultSet jsonResultSet = statement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(850, resultSetRowCount(jsonResultSet));
 
     String queryEmpty =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT"
-            + " 0";
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT" + " 0";
     ResultSet jsonResultSetEmpty = statement.executeQuery(queryEmpty);
     assertTrue(jsonResultSetEmpty.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(0, resultSetRowCount(jsonResultSetEmpty));
@@ -1574,8 +1579,7 @@ public class ITNightlyBigQueryTest {
 
   @Test
   public void testFastQueryPathMedium() throws SQLException {
-    String query =
-        "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 9000";
+    String query = "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 9000";
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(9000, resultSetRowCount(jsonResultSet));
@@ -1583,8 +1587,7 @@ public class ITNightlyBigQueryTest {
 
   @Test
   public void testFastQueryPathLarge() throws SQLException {
-    String query =
-        "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 18000";
+    String query = "SELECT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 18000";
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(18000, resultSetRowCount(jsonResultSet));
@@ -1632,8 +1635,7 @@ public class ITNightlyBigQueryTest {
   @Test
   public void testFastQueryPathEmpty() throws SQLException {
     String query =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT"
-            + " 0";
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT" + " 0";
     ResultSet jsonResultSet = bigQueryStatement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
     assertEquals(0, resultSetRowCount(jsonResultSet));

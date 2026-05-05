@@ -70,8 +70,7 @@ public class ITPSCBigQueryTest {
         "APPLICATION_DEFAULT_CREDENTIALS",
         connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
 
-    String query =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
+    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
     assertThrows(BigQueryException.class, () -> statement.executeQuery(query));
   }
@@ -92,8 +91,7 @@ public class ITPSCBigQueryTest {
         "APPLICATION_DEFAULT_CREDENTIALS",
         connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
 
-    String query =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
+    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
@@ -117,8 +115,7 @@ public class ITPSCBigQueryTest {
         "PRE_GENERATED_TOKEN",
         connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
 
-    String query =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
+    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));
@@ -168,8 +165,7 @@ public class ITPSCBigQueryTest {
     assertEquals(
         "GOOGLE_SERVICE_ACCOUNT",
         connection.unwrap(BigQueryConnection.class).getAuthProperties().get("OAuthType"));
-    String query =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
+    String query = "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT 850";
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
     assertTrue(jsonResultSet.getClass().getName().contains("BigQueryJsonResultSet"));

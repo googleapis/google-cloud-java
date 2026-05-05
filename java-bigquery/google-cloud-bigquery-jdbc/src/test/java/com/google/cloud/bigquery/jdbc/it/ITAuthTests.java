@@ -72,8 +72,7 @@ public class ITAuthTests extends ITBase {
     assertNotNull(connection);
     assertFalse(connection.isClosed());
     String query =
-        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT"
-            + " 850";
+        "SELECT DISTINCT word FROM `bigquery-public-data.samples.shakespeare` LIMIT" + " 850";
     Statement statement = connection.createStatement();
     ResultSet jsonResultSet = statement.executeQuery(query);
     int totalRows = 0;
